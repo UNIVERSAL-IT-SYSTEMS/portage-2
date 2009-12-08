@@ -1,0 +1,26 @@
+# ChangeLog for media-video/elltube
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/elltube/ChangeLog,v 1.5 2009/06/25 11:42:06 hwoarang Exp $
+
+  25 Jun 2009; Markos Chandras <hwoarang@gentoo.org> -elltube-0.3.ebuild,
+  elltube-0.3-r1.ebuild:
+  Fix PyQt4 dependency ( bug 274756 ). Drop old ebuild
+
+*elltube-0.3-r1 (01 Jun 2009)
+
+  01 Jun 2009; Markos Chandras <hwoarang@gentoo.org> +elltube-0.3-r1.ebuild:
+  Adjust PyQt4 use deps wrt bug 272136
+
+  20 Mar 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  metadata.xml:
+  Fixed metadata.
+
+  22 Feb 2009; Markos Chandras <hwoarang@gentoo.org> elltube-0.3:
+  Adding ppc keyword
+
+*elltube-0.3 (15 Feb 2009)
+
+  15 Feb 2009; Markos Chandras <hwoarang@gentoo.org> +metadata.xml,
+  +elltube-0.3.ebuild:
+  Initial import. Fixes bug #238772
+

@@ -1,0 +1,48 @@
+# ChangeLog for sys-apps/halevt
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/halevt/ChangeLog,v 1.9 2009/10/03 15:40:04 hwoarang Exp $
+
+*halevt-0.1.5 (03 Oct 2009)
+
+  03 Oct 2009; Markos Chandras <hwoarang@gentoo.org> +halevt-0.1.5.ebuild:
+  Version bump
+
+  15 Aug 2009; Markus Meier <maekke@gentoo.org> halevt-0.1.4-r2.ebuild:
+  amd64/x86 stable, bug #281329
+
+  13 Aug 2009; Markos Chandras <hwoarang@gentoo.org> halevt-0.1.4-r2.ebuild:
+  Remove useless elog since hal allows root to mount devices without being
+  on
+  plugdev group
+
+  17 Jul 2009; Markos Chandras <hwoarang@gentoo.org> halevt-0.1.4-r2.ebuild:
+  Add elog message as discussed on bug 276997
+
+*halevt-0.1.4-r2 (19 Jun 2009)
+
+  19 Jun 2009; Markos Chandras <hwoarang@gentoo.org> -halevt-0.1.4.ebuild,
+  -halevt-0.1.4-r1.ebuild, +halevt-0.1.4-r2.ebuild, files/halevt:
+  New init script thanks to George Kargiotakis. Remove old ebuilds
+
+*halevt-0.1.4-r1 (17 Jun 2009)
+
+  17 Jun 2009; Markos Chandras <hwoarang@gentoo.org>
+  +halevt-0.1.4-r1.ebuild, files/halevt:
+  Init script fixed. Bug 274484 . Thanks to Laurence <loz.hurst@gmail.com>
+  for
+  the proposed patch
+
+  17 Jun 2009; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Fix proxy maintainers' e-mail
+
+  30 May 2009; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Fix typo
+
+*halevt-0.1.4 (30 May 2009)
+
+  30 May 2009; Markos Chandras <hwoarang@gentoo.org> +halevt-0.1.4.ebuild,
+  +files/halevt, +metadata.xml:
+  Initial commit of halevt application. Fixes bug 257933. Thanks to
+  Mike Gualtieri <mike.gualtieri@gmail.com> for the initial ebuild. Giorgos
+  Kargiotakis <kargig@void.gr> will be proxy maintainer.
+

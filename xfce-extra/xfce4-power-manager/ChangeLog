@@ -1,0 +1,83 @@
+# ChangeLog for xfce-extra/xfce4-power-manager
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-power-manager/ChangeLog,v 1.13 2009/11/21 21:18:24 angelos Exp $
+
+*xfce4-power-manager-0.8.4.2 (21 Nov 2009)
+
+  21 Nov 2009; Christoph Mende <angelos@gentoo.org>
+  +xfce4-power-manager-0.8.4.2.ebuild:
+  Version bump
+
+*xfce4-power-manager-0.8.4.1 (12 Nov 2009)
+
+  12 Nov 2009; Christoph Mende <angelos@gentoo.org>
+  +xfce4-power-manager-0.8.4.1.ebuild:
+  Version bump (bug 292626)
+
+  03 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-power-manager-0.8.4.ebuild:
+  amd64 stable
+
+*xfce4-power-manager-0.8.4 (29 Sep 2009)
+
+  29 Sep 2009; Jeremy Olexa <darkside@gentoo.org>
+  +xfce4-power-manager-0.8.4.ebuild:
+  Version bump, noteables include reduced memory usage and crash fix.
+  http://releases.xfce.org/feeds/project/xfce4-power-manager
+
+  07 Sep 2009; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-power-manager-0.8.3.1.ebuild:
+  librsvg (drop in runtime dep.) is required since there is no png icon for
+  panel.
+
+*xfce4-power-manager-0.8.3.1 (10 Aug 2009)
+
+  10 Aug 2009; Jeremy Olexa <darkside@gentoo.org>
+  +xfce4-power-manager-0.8.3.1.ebuild:
+  Version bump, upstream bug fixes
+
+*xfce4-power-manager-0.8.3 (02 Aug 2009)
+
+  02 Aug 2009; Jeremy Olexa <darkside@gentoo.org>
+  +xfce4-power-manager-0.8.3.ebuild:
+  version bump, convert to xfconf eclass. see release notes at bug 279953
+
+*xfce4-power-manager-0.8.2 (01 Aug 2009)
+
+  01 Aug 2009; Jeremy Olexa <darkside@gentoo.org>
+  -xfce4-power-manager-0.8.0_rc1.ebuild, +xfce4-power-manager-0.8.2.ebuild:
+  Version bump, bug 278842
+
+*xfce4-power-manager-0.8.0_rc1 (18 May 2009)
+
+  18 May 2009; Christoph Mende <angelos@gentoo.org>
+  -xfce4-power-manager-0.6.4.ebuild,
+  -xfce4-power-manager-0.8.0_alpha.ebuild,
+  -xfce4-power-manager-0.8.0_beta2.ebuild,
+  +xfce4-power-manager-0.8.0_rc1.ebuild:
+  Version bump
+
+*xfce4-power-manager-0.8.0_beta2 (14 Apr 2009)
+
+  14 Apr 2009; Christoph Mende <angelos@gentoo.org>
+  +xfce4-power-manager-0.8.0_beta2.ebuild:
+  Version bump
+
+*xfce4-power-manager-0.8.0_alpha (29 Mar 2009)
+
+  29 Mar 2009; Christoph Mende <angelos@gentoo.org>
+  +xfce4-power-manager-0.8.0_alpha.ebuild:
+  Version bump
+
+*xfce4-power-manager-0.6.5 (27 Mar 2009)
+
+  27 Mar 2009; Christoph Mende <angelos@gentoo.org>
+  +xfce4-power-manager-0.6.5.ebuild:
+  Version bump
+
+*xfce4-power-manager-0.6.4 (10 Mar 2009)
+
+  10 Mar 2009; Christoph Mende <angelos@gentoo.org>
+  +xfce4-power-manager-0.6.4.ebuild:
+  Initial import
+

@@ -1,0 +1,35 @@
+# ChangeLog for sys-apps/fakechroot
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/fakechroot/ChangeLog,v 1.7 2009/06/22 21:52:35 spock Exp $
+
+  22 Jun 2009; Michał Januszewski <spock@gentoo.org> fakechroot-2.9.ebuild,
+  +files/fakechroot-2.9-glibc-2.10-compat.patch:
+  Make fakechroot compatible with glibc 2.10 (bug #274077).
+
+*fakechroot-2.9 (09 Apr 2009)
+
+  09 Apr 2009; Michał Januszewski <spock@gentoo.org>
+  +fakechroot-2.9.ebuild:
+  Version bump.
+
+  24 Oct 2008; Markus Meier <maekke@gentoo.org> fakechroot-2.8.ebuild:
+  x86 stable, bug #242602
+
+  23 Oct 2008; Jeremy Olexa <darkside@gentoo.org> fakechroot-2.8.ebuild:
+  amd64 stable, bug 242602
+
+  20 Oct 2008; Michał Januszewski <spock@gentoo.org> fakechroot-2.8.ebuild:
+  Disable the test phase since the test provided by the package is broken.
+
+*fakechroot-2.8 (07 Sep 2008)
+
+  07 Sep 2008; Michał Januszewski <spock@gentoo.org>
+  +fakechroot-2.8.ebuild:
+  Version bump.
+
+*fakechroot-2.6 (10 Jun 2008)
+
+  10 Jun 2008; Michał Januszewski <spock@gentoo.org>
+  +files/fakechroot-2.6.patch, +metadata.xml, +fakechroot-2.6.ebuild:
+  Initial commit.
+

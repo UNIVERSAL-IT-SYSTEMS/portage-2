@@ -1,0 +1,121 @@
+# ChangeLog for sys-boot/unetbootin
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/unetbootin/ChangeLog,v 1.25 2009/11/28 15:56:58 jer Exp $
+
+  28 Nov 2009; Jeroen Roovers <jer@gentoo.org> -unetbootin-356.ebuild:
+  Remove old.
+
+*unetbootin-377-r1 (02 Nov 2009)
+
+  02 Nov 2009; Jeroen Roovers <jer@gentoo.org> -unetbootin-377.ebuild,
+  +unetbootin-377-r1.ebuild:
+  Install desktop entry thanks to Chris Mayo (bug #291362).
+
+  30 Oct 2009; Markus Meier <maekke@gentoo.org> unetbootin-372.ebuild:
+  amd64/x86 stable, bug #290227
+
+*unetbootin-377 (29 Oct 2009)
+
+  29 Oct 2009; Jeroen Roovers <jer@gentoo.org> +unetbootin-377.ebuild:
+  Version bump.
+
+*unetbootin-372 (21 Sep 2009)
+
+  21 Sep 2009; Jeroen Roovers <jer@gentoo.org> +unetbootin-372.ebuild:
+  Version bump.
+
+  31 Aug 2009; Jeroen Roovers <jer@gentoo.org> -unetbootin-344.ebuild:
+  Remove old.
+
+  31 Aug 2009; Christian Faulhammer <fauli@gentoo.org>
+  unetbootin-356.ebuild:
+  stable x86, bug 280253
+
+  07 Aug 2009; <chainsaw@gentoo.org> unetbootin-356.ebuild:
+  Marked stable on AMD64 as requested by Jeroen Roovers <jer@gentoo.org> in
+  bug #280253. Arch-tested by Chad A. Simmons on an Athlon64 X2 with the
+  2008.0 desktop profile.
+
+  22 Jul 2009; Jeroen Roovers <jer@gentoo.org> -unetbootin-323.ebuild:
+  Remove old.
+
+  22 Jul 2009; Jeremy Olexa <darkside@gentoo.org> unetbootin-344.ebuild:
+  amd64 stable, bug 275878
+
+  30 Jun 2009; Christian Faulhammer <fauli@gentoo.org>
+  unetbootin-344.ebuild:
+  stable x86, bug 275878
+
+*unetbootin-356 (16 Jun 2009)
+
+  16 Jun 2009; Jeroen Roovers <jer@gentoo.org> +unetbootin-356.ebuild:
+  Version bump.
+
+*unetbootin-344 (01 Jun 2009)
+
+  01 Jun 2009; Jeroen Roovers <jer@gentoo.org>
+  -files/unetbootin-312-gentoo.patch, -unetbootin-319.ebuild,
+  +unetbootin-344.ebuild:
+  Version bump. Remove old.
+
+  31 May 2009; Markus Meier <maekke@gentoo.org> unetbootin-323.ebuild:
+  amd64/x86 stable, bug #271228
+
+*unetbootin-323 (30 Apr 2009)
+
+  30 Apr 2009; Jeroen Roovers <jer@gentoo.org> +unetbootin-323.ebuild:
+  Version bump.
+
+  15 Apr 2009; Jeroen Roovers <jer@gentoo.org> -unetbootin-312.ebuild:
+  Remove old.
+
+  15 Apr 2009; Markus Meier <maekke@gentoo.org> unetbootin-319.ebuild:
+  amd64/x86 stable, bug #264580
+
+  02 Apr 2009; Jeroen Roovers <jer@gentoo.org>
+  -files/unetbootin-gentoo.patch:
+  Remove unneeded patch.
+
+  01 Apr 2009; Jeroen Roovers <jer@gentoo.org> -unetbootin-304-r1.ebuild,
+  -unetbootin-307.ebuild, -unetbootin-310.ebuild:
+  Remove old.
+
+*unetbootin-319 (11 Mar 2009)
+
+  11 Mar 2009; Jeroen Roovers <jer@gentoo.org>
+  +files/unetbootin-312-gentoo.patch, unetbootin-312.ebuild,
+  +unetbootin-319.ebuild:
+  Version bump.
+
+*unetbootin-312 (06 Feb 2009)
+
+  06 Feb 2009; Jeroen Roovers <jer@gentoo.org> +unetbootin-312.ebuild:
+  Version bump.
+
+*unetbootin-310 (02 Feb 2009)
+
+  02 Feb 2009; Jeroen Roovers <jer@gentoo.org>
+  -files/unetbootin-304-syslinux-gentoo.patch,
+  +files/unetbootin-gentoo.patch, unetbootin-304-r1.ebuild,
+  unetbootin-307.ebuild, +unetbootin-310.ebuild:
+  Rename patch. Version bump (and use qt4.eclass instead of INSTALL).
+
+*unetbootin-307 (26 Jan 2009)
+
+  26 Jan 2009; Jeroen Roovers <jer@gentoo.org> +unetbootin-307.ebuild:
+  Version bump.
+
+*unetbootin-304-r1 (11 Jan 2009)
+
+  11 Jan 2009; Jeroen Roovers <jer@gentoo.org>
+  +files/unetbootin-304-syslinux-gentoo.patch, -unetbootin-304.ebuild,
+  +unetbootin-304-r1.ebuild:
+  Marked ~amd64 thanks to Markos Chandras and Xavier Neys (bug #254316).
+  Apply syslinux patch thanks to Xavier Neys (bug #254419).
+
+*unetbootin-304 (08 Jan 2009)
+
+  08 Jan 2009; Jeroen Roovers <jer@gentoo.org> +metadata.xml,
+  +unetbootin-304.ebuild:
+  Initial commit (bug #245749).
+

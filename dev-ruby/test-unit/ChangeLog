@@ -1,0 +1,50 @@
+# ChangeLog for dev-ruby/test-unit
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/test-unit/ChangeLog,v 1.10 2009/10/31 21:42:00 volkmar Exp $
+
+  31 Oct 2009; Mounir Lamouri <volkmar@gentoo.org>
+  test-unit-2.0.2-r1.ebuild, test-unit-2.0.3.ebuild:
+  Keywording for ppc, bug 283229
+
+  24 Sep 2009; Raúl Porcel <armin76@gentoo.org> test-unit-2.0.3.ebuild:
+  Add ~ia64/~sparc wrt #283229
+
+*test-unit-2.0.3 (19 Jul 2009)
+
+  19 Jul 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  +test-unit-2.0.3.ebuild:
+  Version bump.
+
+  22 May 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  test-unit-2.0.2-r1.ebuild:
+  Add proper src_test.
+
+  15 May 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  test-unit-2.0.2-r1.ebuild:
+  Add ~x86-fbsd keyword.
+
+  14 Apr 2009; Hans de Graaff <graaff@gentoo.org> -test-unit-2.0.2.ebuild:
+  Remove old version.
+
+  12 Mar 2009; Alex Legler <a3li@gentoo.org> metadata.xml:
+  Remove flameeyes from metadata, as per his request.
+
+*test-unit-2.0.2-r1 (01 Mar 2009)
+
+  01 Mar 2009; Alex Legler <a3li@gentoo.org> test-unit-2.0.2.ebuild,
+  +test-unit-2.0.2-r1.ebuild:
+  Revbump changing USE_RUBY="any" to explicitly specified versions for Ruby
+  1.9 compatibility. Description adapted.
+
+  18 Jan 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  test-unit-2.0.2.ebuild:
+  Don't use rake to call the testsuite or it'll fail, as upstream suggested,
+  use the testrun script directly.
+
+*test-unit-2.0.2 (16 Jan 2009)
+
+  16 Jan 2009; Diego E. Pettenò <flameeyes@gentoo.org> +metadata.xml,
+  +test-unit-2.0.2.ebuild:
+  Initial import of improved Test::Unit, also supporting Ruby 1.9. Masked
+  because of test failures for now.
+

@@ -1,0 +1,36 @@
+# ChangeLog for virtual/mpi
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/mpi/ChangeLog,v 1.9 2009/07/10 20:37:17 jsbronder Exp $
+
+  10 Jul 2009; Justin Bronder <jsbronder@gentoo.org> mpi-2.0.ebuild:
+  Add romio USE flag.
+
+*mpi-2.0 (26 Jun 2009)
+
+  26 Jun 2009; Justin Bronder <jsbronder@gentoo.org> +mpi-2.0.ebuild:
+  Add a virtual for the 2.0 MPI spec. Also add deps for packages
+  needing c++ or fortran support. Can go stable once mpich2-1.0.8
+  and openmpi-1.2.9 are.
+
+  13 Jun 2009; Justin Bronder <jsbronder@gentoo.org> mpi-1.0.ebuild:
+  Remove sys-cluster/mpich from virtual/mpi. (#266565)
+
+  07 Nov 2008; Justin Bronder <jsbronder@gentoo.org> mpi-1.0.ebuild:
+  Fix default MPI implementation list, promoting openmpi to the default.
+
+  09 Apr 2008; Jeroen Roovers <jer@gentoo.org> mpi-1.0.ebuild:
+  Stable for HPPA (bug #216855).
+
+  18 May 2007; Raúl Porcel <armin76@gentoo.org> mpi-1.0.ebuild:
+  ia64 stable
+
+  26 Apr 2007; Donnie Berkholz <dberkholz@gentoo.org>; metadata.xml:
+  Update for cluster herd split to hp-cluster and ha-cluster.
+
+*mpi-1.0 (17 Oct 2006)
+
+  17 Oct 2006; Donnie Berkholz <dberkholz@gentoo.org>; +metadata.xml,
+  +mpi-1.0.ebuild:
+  New-style virtual for MPI implementation, so the default not being keyworded
+  for a certain arch doesn't screw up dependencies.
+

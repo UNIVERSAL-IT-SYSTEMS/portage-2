@@ -1,0 +1,40 @@
+# ChangeLog for media-tv/livestation
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-tv/livestation/ChangeLog,v 1.6 2009/12/01 17:03:29 ssuominen Exp $
+
+*livestation-3.0.0 (01 Dec 2009)
+
+  01 Dec 2009; Samuli Suominen <ssuominen@gentoo.org>
+  +livestation-3.0.0.ebuild:
+  Version bump.
+
+  05 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  livestation-2.7.0-r2.ebuild:
+  Use bundled copy of libopenal.so.0 (OpenAL Demo 0.0.8) because
+  app-emulation/emul-linux-x86-sdl-20091004_rc1 will ship libopenal.so.1
+  (OpenAL Soft 1.9.563).
+
+*livestation-2.7.0-r2 (21 Jul 2009)
+
+  21 Jul 2009; Samuli Suominen <ssuominen@gentoo.org>
+  +livestation-2.7.0-r2.ebuild:
+  Remove libopenal.so.0 because app-emulation/emul-linux-x86-sdl-20081109
+  has a copy of it.
+
+  10 Jun 2009; Samuli Suominen <ssuominen@gentoo.org>
+  livestation-2.7.0-r1.ebuild, +files/livestation_icon.svg:
+  Install desktop icon from livestation forums.
+
+*livestation-2.7.0-r1 (29 May 2009)
+
+  29 May 2009; Samuli Suominen <ssuominen@gentoo.org>
+  -livestation-2.7.0.ebuild, +livestation-2.7.0-r1.ebuild:
+  Remove libXtst.so.6 from the package, since emul-linux-x86-xlibs provides
+  it.
+
+*livestation-2.7.0 (29 Apr 2009)
+
+  29 Apr 2009; Samuli Suominen <ssuominen@gentoo.org>
+  +livestation-2.7.0.ebuild:
+  Initial commit.
+

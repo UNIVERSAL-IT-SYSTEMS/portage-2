@@ -1,0 +1,80 @@
+# ChangeLog for dev-haskell/x11
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/x11/ChangeLog,v 1.17 2009/10/26 22:56:59 kolmodin Exp $
+
+  26 Oct 2009; <kolmodin@gentoo.org> x11-1.4.6.1.ebuild:
+  Fix deps
+
+*x11-1.4.6.1 (26 Oct 2009)
+
+  26 Oct 2009; <kolmodin@gentoo.org> +x11-1.4.6.1.ebuild:
+  Version bump
+
+  16 Sep 2009; Petteri Räty <betelgeuse@gentoo.org> -x11-1.1.ebuild:
+  Remove old version with built_with_use call.
+
+  04 Aug 2009; Markus Meier <maekke@gentoo.org> x11-1.4.2.ebuild:
+  x86 stable, bug #278543
+
+*x11-1.4.5 (28 Jul 2009)
+
+  28 Jul 2009; Lennart Kolmodin <kolmodin@gentoo.org> +x11-1.4.5.ebuild:
+  Version bump.
+
+  21 Jul 2009; <chainsaw@gentoo.org> x11-1.4.2.ebuild:
+  Marked stable on AMD64 as requested by Lennart Kolmodin
+  <kolmodin@gentoo.org> in bug #278543. Dependency of x11-wm/xmonad.
+
+  07 Aug 2008; Jeroen Roovers <jer@gentoo.org> x11-1.4.2.ebuild:
+  Marked ~hppa too.
+
+  26 May 2008; Luis F. Araujo <araujo@gentoo.org> x11-1.4.2.ebuild:
+  Patch only if xinerama enabled
+
+  25 May 2008; Lennart Kolmodin <kolmodin@gentoo.org>
+  +files/x11-1.4.2-with-xinerama.patch:
+  Add missing patch.
+
+*x11-1.4.2 (25 May 2008)
+
+  25 May 2008; Lennart Kolmodin <kolmodin@gentoo.org> +x11-1.4.2.ebuild:
+  Version bump.
+
+  25 May 2008; Lennart Kolmodin <kolmodin@gentoo.org> x11-1.2.1.ebuild,
+  x11-1.4.0.ebuild, x11-1.4.1.ebuild:
+  Add IUSE="xinerama" and add missing dependency on libXinerama.
+  This requires >=cabal-1.2.3.0.
+  Reported by Prashanth Mundkur <prashanth.mundkur@gmail.com>.
+  This fixes bug #223377.
+  Fix minor repoman issue with x11-1.2.1.
+
+*x11-1.4.1 (16 Dec 2007)
+
+  16 Dec 2007; Lennart Kolmodin <kolmodin@gentoo.org> +x11-1.4.1.ebuild:
+  Version bump.
+
+  15 Dec 2007; Duncan Coutts <dcoutts@gentoo.org> x11-1.4.0.ebuild:
+  Added ~sparc.
+
+*x11-1.4.0 (13 Dec 2007)
+
+  13 Dec 2007; Duncan Coutts <dcoutts@gentoo.org> x11-1.2.1.ebuild,
+  +x11-1.4.0.ebuild:
+  New version. Fix quoting issue in older ebuild.
+
+  31 Oct 2007; Duncan Coutts <dcoutts@gentoo.org> x11-1.1.ebuild:
+  Drop virtual/ghc in favour of dev-lang/ghc
+
+  25 Jul 2007; Duncan Coutts <dcoutts@gentoo.org> x11-1.2.ebuild,
+  x11-1.2.1.ebuild, x11-1.2.2.ebuild:
+  Add missing x11-libs/libX11 dependency.
+
+*x11-1.2.2 (09 Jul 2007)
+*x11-1.2.1 (09 Jul 2007)
+*x11-1.2 (09 Jul 2007)
+*x11-1.1 (09 Jul 2007)
+
+  09 Jul 2007; Duncan Coutts <dcoutts@gentoo.org> +metadata.xml,
+  +x11-1.1.ebuild, +x11-1.2.ebuild, +x11-1.2.1.ebuild, +x11-1.2.2.ebuild:
+  Initial versions.
+

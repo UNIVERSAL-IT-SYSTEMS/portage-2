@@ -1,0 +1,37 @@
+# ChangeLog for dev-ruby/mkrf
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/mkrf/ChangeLog,v 1.10 2009/01/17 14:30:38 nixnut Exp $
+
+  17 Jan 2009; nixnut <nixnut@gentoo.org> mkrf-0.2.3.ebuild:
+  ppc stable #250933
+
+  11 Jan 2009; Raúl Porcel <armin76@gentoo.org> mkrf-0.2.3.ebuild:
+  ia64 stable wrt #250933
+
+  10 Jan 2009; Tobias Klausmann <klausman@gentoo.org> mkrf-0.2.3.ebuild:
+  Stable on alpha, bug #250933
+
+  05 Jan 2009; nixnut <nixnut@gentoo.org> mkrf-0.2.3.ebuild:
+  ~ppc'd wrt bug 250933
+
+  21 Dec 2008; Markus Meier <maekke@gentoo.org> mkrf-0.2.3.ebuild:
+  x86 stable, bug #250933
+
+  19 Dec 2008; Thomas Anderson <gentoofan23@gentoo.org> mkrf-0.2.3.ebuild:
+  stable amd64, bug 250933
+
+  14 Dec 2008; Ferris McCormick <fmccor@gentoo.org> mkrf-0.2.3.ebuild:
+  Sparc stable, part of Bug #250933.
+
+  09 Apr 2008; Raúl Porcel <armin76@gentoo.org> mkrf-0.2.3.ebuild:
+  Add ~ia64/~sparc wrt #216480
+
+  08 Apr 2008; Tobias Klausmann <klausman@gentoo.org> mkrf-0.2.3.ebuild:
+  Keyworded on alpha, bug #216480
+
+*mkrf-0.2.3 (06 Apr 2008)
+
+  06 Apr 2008; Hans de Graaff <graaff@gentoo.org> +metadata.xml,
+  +mkrf-0.2.3.ebuild:
+  Initial import; needed as dependency for new ruby-opengl versions
+

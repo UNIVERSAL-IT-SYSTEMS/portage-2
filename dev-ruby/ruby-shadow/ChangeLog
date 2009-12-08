@@ -1,0 +1,31 @@
+# ChangeLog for dev-ruby/ruby-shadow
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-shadow/ChangeLog,v 1.7 2009/08/09 12:22:17 nixnut Exp $
+
+  09 Aug 2009; nixnut <nixnut@gentoo.org> ruby-shadow-1.4.1.ebuild:
+  ppc stable #274170
+
+  05 Jul 2009; Markus Meier <maekke@gentoo.org> ruby-shadow-1.4.1.ebuild:
+  amd64 stable, bug #274170
+
+  17 Jun 2009; Christian Faulhammer <fauli@gentoo.org>
+  ruby-shadow-1.4.1.ebuild:
+  stable x86, bug 274170
+
+  19 May 2009; Ferris McCormick <fmccor@gentoo.org>
+  ruby-shadow-1.4.1.ebuild:
+  Sparc stable, required for Bug #270432.
+
+  12 Apr 2009; Friedrich Oslage <bluebird@gentoo.org>
+  ruby-shadow-1.4.1.ebuild:
+  Add ~sparc keyword, bug #263620
+
+  24 Mar 2009; Joseph Jezak <josejx@gentoo.org> ruby-shadow-1.4.1.ebuild:
+  Marked ~ppc for bug #263620.
+
+*ruby-shadow-1.4.1 (25 Nov 2008)
+
+  25 Nov 2008; Caleb Tennis <caleb@gentoo.org> +metadata.xml,
+  +ruby-shadow-1.4.1.ebuild:
+  Initial commit - ruby bindings for shadow
+

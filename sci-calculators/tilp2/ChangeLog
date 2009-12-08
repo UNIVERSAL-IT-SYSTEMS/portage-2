@@ -1,0 +1,44 @@
+# ChangeLog for sci-calculators/tilp2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-calculators/tilp2/ChangeLog,v 1.4 2009/11/11 19:33:16 ssuominen Exp $
+
+  11 Nov 2009; Samuli Suominen <ssuominen@gentoo.org> tilp2-1.12.ebuild:
+  Remove kde-base/kdelibs:3.5 support.
+
+  24 Mar 2009; Joseph Jezak <josejx@gentoo.org> tilp2-1.12.ebuild:
+  Marked ~ppc for bug #263593.
+
+*tilp2-1.12 (24 Mar 2009)
+
+  24 Mar 2009; Sébastien Fabbro <bicatali@gentoo.org> +tilp2-1.12.ebuild:
+  Version bump
+
+*tilp2-1.11 (03 Feb 2009)
+
+  03 Feb 2009; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
+  +tilp2-1.11.ebuild:
+  Initial import from sunrise, thanks to Christian Helbling and all
+  contributors in bug #146028
+
+  03 May 2008; Christian Helbling <helch@gmx.ch> -tilp2-1.10.ebuild,
+  +tilp2-1.11.ebuild:
+  version bump
+
+  18 Jan 2008; Christian Helbling <helch@gmx.ch> tilp2-1.10.ebuild:
+  changing SRC_URI back to sf mirrors
+
+  17 Jan 2008; Christian Helbling <helch@gmx.ch> -tilp2-1.07.ebuild,
+  +tilp2-1.10.ebuild:
+  Version bump
+
+  22 Sep 2007; Christian Helbling <helch@gmx.ch> -tilp2-1.03.ebuild,
+  +tilp2-1.07.ebuild:
+  version bump
+
+  15 Jun 2007; Ali Polatel (hawking) <polatel@gmail.com> tilp2-1.03.ebuild:
+  removed trailing blank line
+
+  15 Jun 2007; Christian Helbling <helch@gmx.ch> +tilp2-1.03.ebuild,
+  +metadata.xml:
+  New ebuild for bug 109220 thanks to Henning Schild
+

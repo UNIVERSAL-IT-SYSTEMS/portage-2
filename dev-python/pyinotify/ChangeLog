@@ -1,0 +1,72 @@
+# ChangeLog for dev-python/pyinotify
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyinotify/ChangeLog,v 1.17 2009/12/06 01:44:22 tcunha Exp $
+
+  06 Dec 2009; Tiago Cunha <tcunha@gentoo.org> pyinotify-0.8.8.ebuild:
+  stable sparc, bug 295699
+
+*pyinotify-0.8.8 (03 Nov 2009)
+
+  03 Nov 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  +pyinotify-0.8.8.ebuild:
+  Version bump. Set SUPPORT_PYTHON_ABIS.
+
+  04 Sep 2009; Patrick Lauer <patrick@gentoo.org> -pyinotify-0.6.3.ebuild,
+  -pyinotify-0.7.0.ebuild:
+  Remove old
+
+*pyinotify-0.8.6 (15 Jun 2009)
+
+  15 Jun 2009; Ioannis Aslanidis <iaslanidis@gentoo.org>
+  +files/pyinotify-0.8.6-libc-fix.patch, +pyinotify-0.8.6.ebuild:
+  Version bump. Dropped broken libc check with a custom patch.
+
+  14 Apr 2009; Raúl Porcel <armin76@gentoo.org> pyinotify-0.7.1.ebuild:
+  x86 stable wrt #261518
+
+  01 Apr 2009; Joseph Jezak <josejx@gentoo.org> pyinotify-0.7.1.ebuild:
+  Marked ppc stable for bug #261518.
+
+  31 Mar 2009; Tiago Cunha <tcunha@gentoo.org> pyinotify-0.7.1.ebuild:
+  stable amd64, bug 261518
+
+  31 Mar 2009; Ferris McCormick <fmccor@gentoo.org> pyinotify-0.7.1.ebuild:
+  Sparc stable, Bug #261518.
+
+  18 Jan 2009; Tiago Cunha <tcunha@gentoo.org> pyinotify-0.7.1.ebuild:
+  keyworded ~arch for sparc
+
+*pyinotify-0.7.1 (28 Mar 2008)
+
+  28 Mar 2008; Ali Polatel <hawking@gentoo.org> +pyinotify-0.7.1.ebuild:
+  Version bump.
+
+  01 Mar 2008; Christoph Mende <angelos@gentoo.org> pyinotify-0.7.0.ebuild:
+  Stable on amd64, bug #203522
+
+  17 Feb 2008; nixnut <nixnut@gentoo.org> pyinotify-0.7.0.ebuild:
+  Stable on ppc wrt bug 203522
+
+  16 Feb 2008; Dawid Węgliński <cla@gentoo.org> pyinotify-0.7.0.ebuild:
+  Stable on x86 (bug #203522)
+
+  07 Sep 2007; Joseph Jezak <josejx@gentoo.org> pyinotify-0.7.0.ebuild:
+  Marked ~ppc for bug #186636.
+
+*pyinotify-0.7.0 (17 Feb 2007)
+
+  17 Feb 2007; Lukasz Strzygowski <lucass@gentoo.org>
+  +pyinotify-0.7.0.ebuild:
+  Version bump: added NEED_PYTHON, added docs and examples controlled by USE
+  flags.
+
+  05 Feb 2007; Daniel Gryniewicz <dang@gentoo.org> pyinotify-0.6.3.ebuild:
+  Marked ~amd64
+
+*pyinotify-0.6.3 (03 Feb 2007)
+
+  03 Feb 2007; Bryan Østergaard <kloeri@gentoo.org> +metadata.xml,
+  +pyinotify-0.6.3.ebuild:
+  Initial import, bug 125960. Slightly updated ebuild from Panard
+  <panard.inzenet.org>
+

@@ -1,0 +1,42 @@
+# ChangeLog for x11-plugins/compiz-plugins-main
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/compiz-plugins-main/ChangeLog,v 1.7 2009/10/15 17:12:06 mrpouet Exp $
+
+*compiz-plugins-main-0.8.4 (15 Oct 2009)
+
+  15 Oct 2009; Romain Perier <mrpouet@gentoo.org>
+  +compiz-plugins-main-0.8.4.ebuild:
+  Version bump.
+
+*compiz-plugins-main-0.8.2-r1 (28 Aug 2009)
+
+  28 Aug 2009; Romain Perier <mrpouet@gentoo.org>
+  -compiz-plugins-main-0.8.2.ebuild,
+  +compiz-plugins-main-0.8.2-r1.ebuild:
+  Fix bug #265223, replace $(use_enable gnome gconf) by $(use_enable gnome
+  schemas) without it gconf schemas were not installed, Add inheritance from
+  gnome2-utils.eclass to use gnome2_gconf_* functions. Drop old revision.
+
+  25 Apr 2009; Brent Baude <ranger@gentoo.org>
+  compiz-plugins-main-0.8.2.ebuild:
+  Marking compiz-plugins-main-0.8.2 ~ppc for bug 246804
+
+  25 Apr 2009; Brent Baude <ranger@gentoo.org>
+  compiz-plugins-main-0.8.2.ebuild:
+  Marking compiz-plugins-main-0.8.2 ~ppc64 for bug 246804
+
+  03 Apr 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +files/compiz-plugins-main-0.8.2-xdamage-race.patch,
+  +files/compiz-plugins-main-no-gconf.patch:
+  Added another patch.
+
+  03 Apr 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +files/compiz-plugins-main-0.8.2-xdamage-race.patch:
+  Added missing patch.
+
+*compiz-plugins-main-0.8.2 (03 Apr 2009)
+
+  03 Apr 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +metadata.xml, +compiz-plugins-main-0.8.2.ebuild:
+  Bumped compiz to the 0.8.2 release.
+

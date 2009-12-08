@@ -1,0 +1,116 @@
+# ChangeLog for dev-ruby/haml
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/haml/ChangeLog,v 1.24 2009/12/08 06:50:56 graaff Exp $
+
+*haml-2.2.15 (08 Dec 2009)
+
+  08 Dec 2009; Hans de Graaff <graaff@gentoo.org> +haml-2.2.15.ebuild:
+  Version bump.
+
+*haml-2.2.14 (28 Nov 2009)
+
+  28 Nov 2009; Alex Legler <a3li@gentoo.org> +haml-2.2.14.ebuild:
+  Version bump
+
+*haml-2.2.13 (27 Nov 2009)
+
+  27 Nov 2009; Hans de Graaff <graaff@gentoo.org> +haml-2.2.13.ebuild:
+  Version bump.
+
+  25 Nov 2009; Hans de Graaff <graaff@gentoo.org> -haml-2.2.5.ebuild,
+  -haml-2.2.6.ebuild:
+  Remove old versions.
+
+*haml-2.2.9 (23 Oct 2009)
+
+  23 Oct 2009; Hans de Graaff <graaff@gentoo.org> +haml-2.2.9.ebuild:
+  Version bump.
+
+  03 Oct 2009; Alex Legler <a3li@gentoo.org> -haml-2.2.4.ebuild:
+  removing old
+
+*haml-2.2.6 (03 Oct 2009)
+
+  03 Oct 2009; Alex Legler <a3li@gentoo.org> +haml-2.2.6.ebuild:
+  Version bump
+
+*haml-2.2.5 (23 Sep 2009)
+
+  23 Sep 2009; Alex Legler <a3li@gentoo.org> -haml-2.2.2.ebuild,
+  -haml-2.2.3.ebuild, +haml-2.2.5.ebuild:
+  Version bump, enabling ruby19, cleaning a little
+
+*haml-2.2.4 (18 Sep 2009)
+
+  18 Sep 2009; Hans de Graaff <graaff@gentoo.org> +haml-2.2.4.ebuild:
+  Version bump.
+
+*haml-2.2.3 (26 Aug 2009)
+
+  26 Aug 2009; Alex Legler <a3li@gentoo.org> +haml-2.2.3.ebuild:
+  Version bump.
+
+  23 Aug 2009; Hans de Graaff <graaff@gentoo.org> -haml-2.0.9.ebuild,
+  -haml-2.2.1.ebuild:
+  Remove old versions.
+
+*haml-2.2.2 (28 Jul 2009)
+
+  28 Jul 2009; Hans de Graaff <graaff@gentoo.org> +haml-2.2.2.ebuild:
+  Version bump.
+
+*haml-2.2.1 (19 Jul 2009)
+
+  19 Jul 2009; Hans de Graaff <graaff@gentoo.org> +haml-2.2.1.ebuild:
+  Version bump with many improvements and new features. See
+  http://haml-lang.com/docs/yardoc/HAML_CHANGELOG.md.html for details.
+
+  19 Jul 2009; Hans de Graaff <graaff@gentoo.org> -haml-2.0.0.ebuild,
+  -haml-2.0.6.ebuild:
+  Remove old versions.
+
+*haml-2.0.9 (05 Mar 2009)
+
+  05 Mar 2009; Hans de Graaff <graaff@gentoo.org> +haml-2.0.9.ebuild:
+  Version bump.
+
+*haml-2.0.6 (20 Dec 2008)
+
+  20 Dec 2008; Hans de Graaff <graaff@gentoo.org> +haml-2.0.6.ebuild:
+  Version bump based on a3li's ebuild from the overlay
+
+  19 Dec 2008; Hans de Graaff <graaff@gentoo.org> -haml-1.7.1.ebuild,
+  -haml-1.8.2.ebuild:
+  Remove old versions
+
+*haml-2.0.0 (28 May 2008)
+
+  28 May 2008; Robin H. Johnson <robbat2@gentoo.org> +haml-2.0.0.ebuild:
+  Version bump fun.
+
+*haml-1.8.2 (10 Apr 2008)
+
+  10 Apr 2008; Robin H. Johnson <robbat2@gentoo.org> +haml-1.8.2.ebuild:
+  Version bump.
+
+  18 Oct 2007; Hans de Graaff <graaff@gentoo.org> -haml-1.7.0.ebuild:
+  Remove old version
+
+  18 Oct 2007; Hans de Graaff <graaff@gentoo.org> haml-1.7.1.ebuild:
+  Add a dependency on activesupport per bug 193859
+
+  14 Oct 2007; Tom Gall <tgall@gentoo.org> haml-1.7.1.ebuild:
+  added ~ppc64
+
+*haml-1.7.1 (27 Sep 2007)
+
+  27 Sep 2007; Hans de Graaff <graaff@gentoo.org> +haml-1.7.1.ebuild:
+  Version bump. Remove USE_RUBY as it does not apply to gems, remove SRC_URI as
+  the default for this is set in the eclass.
+
+*haml-1.7.0 (15 Aug 2007)
+
+  15 Aug 2007; Christian Parpart <trapni@gentoo.org> +metadata.xml,
+  +haml-1.7.0.ebuild:
+  initial import
+

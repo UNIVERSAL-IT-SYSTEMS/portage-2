@@ -1,0 +1,181 @@
+# ChangeLog for www-client/chromium
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/ChangeLog,v 1.30 2009/12/08 12:14:48 voyageur Exp $
+
+*chromium-4.0.266.0 (08 Dec 2009)
+
+  08 Dec 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  -chromium-4.0.248.0.ebuild, +chromium-4.0.266.0.ebuild:
+  Version bump, fixes some race-condition crashes, and maybe fix bug #295756
+
+  02 Dec 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +files/chromium-use_system_libevent-1.4.13.patch,
+  chromium-4.0.260.0.ebuild, chromium-9999.ebuild:
+  Update external libevent patch and re-enable it, crash was unrelated to it
+
+  01 Dec 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  chromium-4.0.260.0.ebuild, chromium-9999.ebuild:
+  Bump required nss version to 3.12.3
+
+*chromium-4.0.260.0 (01 Dec 2009)
+
+  01 Dec 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  -chromium-4.0.240.0.ebuild, +chromium-4.0.260.0.ebuild:
+  Version bump, enables bookmarks sync by default, allows again extensions
+  to access file:// elements (adblock+), external libevent disabled as it
+  crashes with it
+
+  24 Nov 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  chromium-4.0.251.0.ebuild, chromium-9999.ebuild:
+  Get correct proxy settings for KDE, bug #294321
+
+  19 Nov 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  chromium-4.0.251.0.ebuild, chromium-9999.ebuild:
+  Also install man page as chromium.1
+
+  19 Nov 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  chromium-4.0.251.0.ebuild, chromium-9999.ebuild, metadata.xml:
+  Make ffmpeg RDEPEND optional, bug #293666. Re-enable external libevent
+  (1.4.13 is available). Update live ebuild to latest changes
+
+*chromium-4.0.251.0 (18 Nov 2009)
+
+  18 Nov 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +chromium-4.0.251.0.ebuild:
+  Bump to fix bug #293539 (crash at startup for stable amd64)
+
+*chromium-4.0.248.0 (15 Nov 2009)
+
+  15 Nov 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  -chromium-4.0.223.5.ebuild, +chromium-4.0.248.0.ebuild:
+  Version bump, enables bookmarks sync (with --enable-sync), and fix menu
+  location for adblock+ extension
+
+  15 Nov 2009; Tomáš Chvátal <scarabeus@gentoo.org> chromium-9999.ebuild:
+  QA: Drop keywords on live ebuilds.
+
+  09 Nov 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  chromium-4.0.240.0.ebuild:
+  Re-enable system zlib, thanks to Elias Pipping. Also add gnome-icon-theme
+  to RDEPEND, thanks to Oleksandr Kovalenko <alx.kovalenko@gmail.com> in bug
+  #292201
+
+*chromium-4.0.240.0 (08 Nov 2009)
+
+  08 Nov 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  -chromium-4.0.237.1.ebuild, +chromium-4.0.240.0.ebuild:
+  Drop down menus were not fixed for select tags, so bump again
+
+*chromium-4.0.237.1 (07 Nov 2009)
+
+  07 Nov 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  -chromium-4.0.236.0.ebuild, +chromium-4.0.237.1.ebuild:
+  Remove 4.0.236.0 and bump, this version displayed all drop down menus as
+  blank
+
+*chromium-4.0.236.0 (05 Nov 2009)
+
+  05 Nov 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  -chromium-4.0.221.5_p27967.ebuild, -chromium-4.0.222.6_p28888.ebuild,
+  +chromium-4.0.236.0.ebuild, chromium-9999.ebuild:
+  Version bump
+
+  29 Oct 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  chromium-4.0.221.5_p27967.ebuild, chromium-4.0.222.6_p28888.ebuild,
+  chromium-4.0.223.5.ebuild, chromium-9999.ebuild:
+  Drop tcmalloc compile flag, by upstream recommendation
+
+*chromium-4.0.223.5 (20 Oct 2009)
+
+  20 Oct 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  -chromium-4.0.219.4_p27359.ebuild, +chromium-4.0.223.5.ebuild:
+  Version bump synced with release, should improve speed on amd64 and audio
+  stuttering with HTML5
+
+*chromium-4.0.222.6_p28888 (13 Oct 2009)
+
+  13 Oct 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +chromium-4.0.222.6_p28888.ebuild, chromium-9999.ebuild:
+  rootdir parameter finally fixed in compilation, YUV amd64 assembly and
+  other fixes. Next bumps will follow official releases, from
+  http://src.chromium.org/viewvc/chrome/releases/
+
+*chromium-4.0.222.6_p28807 (13 Oct 2009)
+
+  13 Oct 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +chromium-4.0.222.6_p28807.ebuild:
+  Version bump, includes 64 bit linux yuv (faster media)
+
+*chromium-4.0.221.5_p27967 (05 Oct 2009)
+
+  05 Oct 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +chromium-4.0.221.5_p27967.ebuild:
+  Bump, sync with VERSION file change in trunk svn
+
+  02 Oct 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  -chromium-4.0.212.0_p26805.ebuild, chromium-9999.ebuild:
+  Fix compilation in new native client part
+
+*chromium-9999 (01 Oct 2009)
+
+  01 Oct 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +chromium-9999.ebuild:
+  Add live ebuild for those who wonder what to do of their free diskspace
+
+  30 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  chromium-4.0.212.0_p26805.ebuild, chromium-4.0.219.4_p27359.ebuild:
+  Fix desktop entry so xdg-open works correctly with chromium as default
+  browser
+
+*chromium-4.0.219.4_p27359 (28 Sep 2009)
+
+  28 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +chromium-4.0.219.4_p27359.ebuild:
+  Version bump, this finally fixes the useless automatic recreation of
+  ~/Downloads
+
+  23 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  chromium-4.0.212.0_p26805.ebuild:
+  Use bundled libevent until 1.4.13, per upstream advice
+
+  23 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  chromium-4.0.212.0_p26805.ebuild:
+  Correctly set revision for about box, install man page
+
+*chromium-4.0.212.0_p26805 (22 Sep 2009)
+
+  22 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  -chromium-4.0.212.0_p26343.ebuild, +chromium-4.0.212.0_p26805.ebuild,
+  +files/chromium-use_system_libevent.patch:
+  Bump to fix truncated downloads, http://crbug.com/406 . Also use system
+  libevent
+
+  22 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  chromium-4.0.212.0_p26343.ebuild:
+  Fix .desktop entry as reported by nightmorph in bug #285922
+
+  16 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  files/chromium-launcher.sh:
+  Set CHROME_DESKTOP in the wrapper script
+
+*chromium-4.0.212.0_p26343 (16 Sep 2009)
+
+  16 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  -chromium-4.0.210.0_p26329.ebuild, +chromium-4.0.212.0_p26343.ebuild:
+  Version number was incorrect (they really change it often!), grab a V8
+  crash fix on amd64 too
+
+  16 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +files/chromium-drop_sse2.patch, chromium-4.0.210.0_p26329.ebuild:
+  Forgot patch for x86 users, to prevent automatic enabling of
+  -march=pentium4 -msse2
+
+*chromium-4.0.210.0_p26329 (16 Sep 2009)
+
+  16 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +chromium-4.0.210.0_p26329.ebuild, +files/chromium-launcher.sh,
+  +metadata.xml:
+  Initial commit, ebuild py Pawel Hajdan Jr <phajdan.jr@chromium.org> and
+  me, bug #278975. Tarball hosted on gentoo mirrors until upstream makes
+  official ones available
+

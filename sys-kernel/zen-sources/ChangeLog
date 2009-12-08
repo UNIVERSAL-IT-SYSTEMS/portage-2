@@ -1,0 +1,100 @@
+# ChangeLog for sys-kernel/zen-sources
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/zen-sources/ChangeLog,v 1.13 2009/11/30 19:42:08 hwoarang Exp $
+
+*zen-sources-2.6.31_p9 (30 Nov 2009)
+
+  30 Nov 2009; Markos Chandras <hwoarang@gentoo.org>
+  -zen-sources-2.6.31_p5-r2.ebuild, -zen-sources-2.6.31_p6.ebuild,
+  -zen-sources-2.6.31_p7.ebuild, +zen-sources-2.6.31_p9.ebuild:
+  Bump to 2.6.31-zen9-white-toast. Remove old 2.6.31 ebuilds
+
+*zen-sources-2.6.32_rc8_p1 (24 Nov 2009)
+
+  24 Nov 2009; Alex Alexander <wired@gentoo.org>
+  +zen-sources-2.6.32_rc8_p1.ebuild:
+  version bump
+
+*zen-sources-2.6.32_rc7_p1 (16 Nov 2009)
+
+  16 Nov 2009; Alex Alexander <wired@gentoo.org>
+  +zen-sources-2.6.32_rc7_p1.ebuild:
+  version bump
+
+*zen-sources-2.6.31_p8 (14 Nov 2009)
+
+  14 Nov 2009; Alex Alexander <wired@gentoo.org>
+  +zen-sources-2.6.31_p8.ebuild:
+  version bump
+
+  08 Nov 2009; Alex Alexander <wired@gentoo.org>
+  zen-sources-2.6.31_p7.ebuild, metadata.xml:
+  added USE flag for drm-next patch
+
+*zen-sources-2.6.31_p7 (07 Nov 2009)
+
+  07 Nov 2009; Markos Chandras <hwoarang@gentoo.org>
+  +zen-sources-2.6.31_p7.ebuild:
+  Bump to 2.6.31-zen7 "Masturbating Monkeys"
+
+*zen-sources-2.6.31_p6 (04 Nov 2009)
+*zen-sources-2.6.30_p10 (04 Nov 2009)
+
+  04 Nov 2009; Alex Alexander <wired@gentoo.org>
+  +zen-sources-2.6.30_p10.ebuild, -zen-sources-2.6.31_p4-r1.ebuild,
+  +zen-sources-2.6.31_p6.ebuild:
+  version bumps and old removal
+
+*zen-sources-9999 (04 Nov 2009)
+*zen-sources-2.6.32_rc6_p1 (04 Nov 2009)
+*zen-sources-2.6.32_rc5_p2-r1 (04 Nov 2009)
+
+  04 Nov 2009; Alex Alexander <wired@gentoo.org>
+  +zen-sources-2.6.32_rc5_p2-r1.ebuild, +zen-sources-2.6.32_rc6_p1.ebuild,
+  +zen-sources-9999.ebuild, metadata.xml:
+  added rc5, rc6 and 9999 ebuilds
+
+  01 Nov 2009; Markos Chandras <hwoarang@gentoo.org>
+  zen-sources-2.6.30_p9-r1.ebuild, zen-sources-2.6.31_p4-r1.ebuild,
+  zen-sources-2.6.31_p5-r2.ebuild:
+  Use static text on description
+
+*zen-sources-2.6.31_p5-r2 (30 Oct 2009)
+*zen-sources-2.6.31_p4-r1 (30 Oct 2009)
+*zen-sources-2.6.30_p9-r1 (30 Oct 2009)
+
+  30 Oct 2009; Alex Alexander <wired@gentoo.org>
+  -zen-sources-2.6.30_p9.ebuild, +zen-sources-2.6.30_p9-r1.ebuild,
+  -zen-sources-2.6.31_p4.ebuild, +zen-sources-2.6.31_p4-r1.ebuild,
+  -zen-sources-2.6.31_p5-r1.ebuild, +zen-sources-2.6.31_p5-r2.ebuild:
+  fixed install dir name fail :)
+
+*zen-sources-2.6.31_p5-r1 (30 Oct 2009)
+*zen-sources-2.6.31_p4 (30 Oct 2009)
+*zen-sources-2.6.30_p9 (30 Oct 2009)
+
+  30 Oct 2009; Alex Alexander <wired@gentoo.org>
+  -zen-sources-2.6.30-r9.ebuild, +zen-sources-2.6.30_p9.ebuild,
+  -zen-sources-2.6.31-r4.ebuild, -zen-sources-2.6.31-r5.ebuild,
+  +zen-sources-2.6.31_p4.ebuild, +zen-sources-2.6.31_p5-r1.ebuild,
+  +files/zen-sources-2.6.31_p5-config_fb_fix.patch:
+  modified versioning scheme to allow revisions of the same patchset. the
+  patchset version is now defined by _p. this was necessary in order to be
+  able to add hotfixes (like the one in 2.6.31_p5-r1).
+
+*zen-sources-2.6.31-r5 (29 Oct 2009)
+
+  29 Oct 2009; Alex Alexander <wired@gentoo.org>
+  +zen-sources-2.6.31-r5.ebuild:
+  version bump - 2.6.31-zen5
+
+*zen-sources-2.6.31-r4 (20 Oct 2009)
+*zen-sources-2.6.30-r9 (20 Oct 2009)
+
+  20 Oct 2009; Markos Chandras <hwoarang@gentoo.org>
+  +zen-sources-2.6.30-r9.ebuild, +zen-sources-2.6.31-r4.ebuild,
+  +metadata.xml:
+  Initial commit of zen-sources. Fixes bug #288512. Thanks to Brandon
+  Berhent
+  <cheater1034@gmail.com> for the initial ebuilds
+

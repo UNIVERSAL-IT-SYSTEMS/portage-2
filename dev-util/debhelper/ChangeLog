@@ -1,0 +1,79 @@
+# ChangeLog for dev-util/debhelper
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/debhelper/ChangeLog,v 1.14 2009/09/29 18:00:42 yvasilev Exp $
+
+*debhelper-7.3.13 (29 Sep 2009)
+
+  29 Sep 2009; <yvasilev@gentoo.org> +debhelper-7.3.13.ebuild:
+  Version dump to 7.3.13, can't go higher as starting from 7.3.14 pod2man
+  from perl-5.10.1 is needed.
+
+*debhelper-7.3.9 (05 Aug 2009)
+
+  05 Aug 2009; <yvasilev@gentoo.org> -debhelper-6.0.11.ebuild,
+  +debhelper-7.3.9.ebuild:
+  Removed 6.0.11, Version dump to 7.3.9
+
+*debhelper-7.2.16 (22 Jun 2009)
+
+  22 Jun 2009; <yvasilev@gentoo.org> +debhelper-7.2.16.ebuild,
+  +files/debhelper-7.2.16-conditional-nls.patch:
+  Version dump to 7.2.16
+
+*debhelper-7.1.1-r1 (02 Apr 2009)
+
+  02 Apr 2009; <yvasilev@gentoo.org> -debhelper-7.1.1.ebuild,
+  +debhelper-7.1.1-r1.ebuild:
+  Added virtual/perl-Getopt-Long to RDEPEND, dependency introduced in 7.1.x
+  (Closes bug #264643).
+
+*debhelper-7.1.1 (18 Dec 2008)
+
+  18 Dec 2008; Yuri Vasilevski <yvasilev@gentoo.org>
+  +debhelper-7.1.1.ebuild:
+  Version dump to 7.1.1
+
+  26 Oct 2008; Raúl Porcel <armin76@gentoo.org> debhelper-7.0.16.ebuild:
+  alpha/ia64/sparc stable wrt #242932
+
+  25 Oct 2008; Jeroen Roovers <jer@gentoo.org> debhelper-7.0.16.ebuild:
+  Stable for HPPA (bug #242932).
+
+  25 Oct 2008; nixnut <nixnut@gentoo.org> debhelper-7.0.16.ebuild:
+  Stable on ppc wrt bug 242932
+
+  23 Oct 2008; Markus Meier <maekke@gentoo.org> debhelper-7.0.16.ebuild:
+  amd64/x86 stable, bug #242932
+
+*debhelper-7.0.17 (20 Oct 2008)
+
+  20 Oct 2008; Yuri Vasilevski <yvasilev@gentoo.org>
+  +debhelper-7.0.17.ebuild:
+  debhelper v7.0.17 available
+
+*debhelper-7.0.16 (22 Aug 2008)
+
+  22 Aug 2008; Yuri Vasilevski <yvasilev@gentoo.org>
+  -debhelper-7.0.9.ebuild, -debhelper-7.0.10.ebuild,
+  +debhelper-7.0.16.ebuild:
+  Updated to v7.0.16.
+
+*debhelper-7.0.10 (09 Jun 2008)
+
+  09 Jun 2008; Yuri Vasilevski <yvasilev@gentoo.org>
+  +debhelper-7.0.10.ebuild:
+  Version dump.
+
+*debhelper-7.0.9 (29 May 2008)
+
+  29 May 2008; Yuri Vasilevski <yvasilev@gentoo.org>
+  +files/debhelper-7.0.9-conditional-nls.patch, metadata.xml,
+  +debhelper-7.0.9.ebuild:
+  Merge from app-arch/debhelper (Bug #223979) and version dump.
+
+*debhelper-6.0.11 (09 Apr 2008)
+
+  09 Apr 2008; Mike Frysinger <vapier@gentoo.org> +metadata.xml,
+  +debhelper-6.0.11.ebuild:
+  Initial ebuild by me.
+

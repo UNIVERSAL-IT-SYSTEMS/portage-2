@@ -1,0 +1,38 @@
+# ChangeLog for x11-drivers/xf86-input-wacom
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-input-wacom/ChangeLog,v 1.6 2009/12/02 20:52:21 ikelos Exp $
+
+*xf86-input-wacom-0.10.2-r1 (02 Dec 2009)
+
+  02 Dec 2009; Mike Auty <ikelos@gentoo.org>
+  +files/0.10.2-wheel-buttons.patch, +xf86-input-wacom-0.10.2-r1.ebuild:
+  Fix up wheel mouse bug with xf86-input-wacom-0.10.2.
+
+*xf86-input-wacom-0.10.2 (01 Dec 2009)
+
+  01 Dec 2009; Mike Auty <ikelos@gentoo.org>
+  +xf86-input-wacom-0.10.2.ebuild:
+  Version bump xf86-input-wacom to 0.10.2. This now supports hotplugging and
+  autoconfiguration for serial devices.
+
+*xf86-input-wacom-0.10.1 (20 Nov 2009)
+
+  20 Nov 2009; Mike Auty <ikelos@gentoo.org>
+  +xf86-input-wacom-0.10.1.ebuild:
+  Version bump, ebuild based on one courtesy of Matthew Turnbull (see bug
+  293797).
+
+  05 Nov 2009; Rémi Cardona <remi@gentoo.org>
+  xf86-input-wacom-0.10.0.ebuild:
+  add debug support, patch by Matthew Turnbull, see bug #290730
+
+  05 Nov 2009; Rémi Cardona <remi@gentoo.org>
+  xf86-input-wacom-0.10.0.ebuild:
+  add ppc keywords since the older driver used to work on those arches
+
+*xf86-input-wacom-0.10.0 (05 Nov 2009)
+
+  05 Nov 2009; Rémi Cardona <remi@gentoo.org>
+  +xf86-input-wacom-0.10.0.ebuild, +metadata.xml:
+  first official release, import from the x11 overlay
+

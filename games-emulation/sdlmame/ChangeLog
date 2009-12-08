@@ -1,0 +1,129 @@
+# ChangeLog for games-emulation/sdlmame
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/sdlmame/ChangeLog,v 1.25 2009/11/01 07:54:13 mr_bones_ Exp $
+
+*sdlmame-0.135 (01 Nov 2009)
+
+  01 Nov 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.135.ebuild:
+  version bump
+
+*sdlmame-0.134_p4 (27 Oct 2009)
+
+  27 Oct 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.134_p4.ebuild:
+  version bump
+
+*sdlmame-0.134_p1 (26 Sep 2009)
+
+  26 Sep 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.134_p1.ebuild:
+  version bump
+
+*sdlmame-0.133_p2 (13 Aug 2009)
+
+  13 Aug 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.133_p2.ebuild:
+  patch version update
+
+*sdlmame-0.133 (21 Jul 2009)
+
+  21 Jul 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.133.ebuild:
+  version bump
+
+*sdlmame-0.132 (10 Jun 2009)
+
+  10 Jun 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.132.ebuild:
+  version bump
+
+*sdlmame-0.131_p4 (06 Jun 2009)
+
+  06 Jun 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.131_p4.ebuild:
+  version bump
+
+*sdlmame-0.131_p3 (30 May 2009)
+
+  30 May 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.131_p3.ebuild:
+  version bump
+
+*sdlmame-0.131_p2 (18 May 2009)
+
+  18 May 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.131_p2.ebuild:
+  version bump
+
+*sdlmame-0.131_p1 (08 May 2009)
+
+  08 May 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.131_p1.ebuild:
+  version bump
+
+*sdlmame-0.131 (27 Apr 2009)
+
+  27 Apr 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.131.ebuild:
+  version bump
+
+*sdlmame-0.130_p4 (19 Apr 2009)
+
+  19 Apr 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.130_p4.ebuild:
+  version bump
+
+*sdlmame-0.130_p3 (11 Apr 2009)
+
+  11 Apr 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.130_p3.ebuild:
+  version bump
+
+*sdlmame-0.130_p2 (09 Apr 2009)
+
+  09 Apr 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.130_p2.ebuild:
+  version bump
+
+  18 Mar 2009; Brent Baude <ranger@gentoo.org> sdlmame-0.129.ebuild:
+  stable ppc, bug 259567
+
+  08 Mar 2009; Markus Meier <maekke@gentoo.org> sdlmame-0.129.ebuild:
+  amd64/x86 stable, bug #259567
+
+  06 Jan 2009; Michael Sterrett <mr_bones_@gentoo.org> sdlmame-0.129.ebuild:
+  EAPI=2; add slot- and use-based deps
+
+*sdlmame-0.129 (05 Jan 2009)
+
+  05 Jan 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdlmame-0.129.ebuild:
+  version bump
+
+  21 Oct 2008; Christian Birchinger <joker@gentoo.org> metadata.xml:
+  Removed myself as maintainer. See bug #232233
+
+*sdlmame-0.127 (16 Oct 2008)
+
+  16 Oct 2008; <tupone@gentoo.org> +sdlmame-0.127.ebuild:
+  Version bump. Bug #232233 by Alessio Cassibba (X-Drum)
+
+*sdlmame-0.125 (16 May 2008)
+
+  16 May 2008; Christian Birchinger <joker@gentoo.org>
+  +sdlmame-0.125.ebuild:
+  Version bump
+
+  24 Apr 2008; Samuli Suominen <drac@gentoo.org> sdlmame-0.124.ebuild,
+  sdlmame-0.124_p3.ebuild:
+  Sed -Werror out of makefile because we get more warnings with GCC 4.3.
+
+*sdlmame-0.124_p3 (24 Apr 2008)
+*sdlmame-0.124 (24 Apr 2008)
+
+  24 Apr 2008; Christian Birchinger <joker@gentoo.org> +files/joymap.dat,
+  +files/mame.ini.in, +files/vector.ini, +metadata.xml,
+  +sdlmame-0.124.ebuild, +sdlmame-0.124_p3.ebuild:
+  Initial release
+

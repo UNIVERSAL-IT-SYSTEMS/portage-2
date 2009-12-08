@@ -1,0 +1,155 @@
+# ChangeLog for kde-base/okteta
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-base/okteta/ChangeLog,v 1.36 2009/12/05 05:15:13 abcd Exp $
+
+  05 Dec 2009; Jonathan Callen <abcd@gentoo.org> okteta-4.3.3-r1.ebuild,
+  okteta-4.3.4.ebuild:
+  Tests hang, RESTRICTing until upstream fixes
+
+*okteta-4.3.4 (01 Dec 2009)
+
+  01 Dec 2009; Alex Alexander <wired@gentoo.org> +okteta-4.3.4.ebuild:
+  Version bump
+
+  30 Nov 2009; Joseph Jezak <josejx@gentoo.org> okteta-4.3.3-r1.ebuild:
+  Marked ppc/ppc64 stable for bug #292455.
+
+  29 Nov 2009; Raúl Porcel <armin76@gentoo.org> okteta-4.3.3-r1.ebuild:
+  Add ~sparc
+
+  29 Nov 2009; Samuli Suominen <ssuominen@gentoo.org>
+  okteta-4.3.3-r1.ebuild:
+  amd64 stable wrt #292455
+
+  22 Nov 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  +files/4.3.3-fix_variable_name.patch, okteta-4.3.3-r1.ebuild:
+  Add one more patch fixing the compilation.
+
+  22 Nov 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  files/4.3.3-detect_changes_correctly.patch:
+  Fix patch to apply correctly.
+
+*okteta-4.3.3-r1 (22 Nov 2009)
+
+  22 Nov 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  +files/4.3.3-detect_changes_correctly.patch, -okteta-4.3.3.ebuild,
+  +files/4.3.3-fix_inverse_save_logic.patch, +okteta-4.3.3-r1.ebuild:
+  Make okteta actualy functional. Per bug #292608.
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org> -okteta-4.3.2.ebuild:
+  Drop KDE 4.3.2
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org> -okteta-4.2.4.ebuild:
+  Drop KDE 4.2.4
+
+*okteta-4.3.3 (02 Nov 2009)
+
+  02 Nov 2009; Alex Alexander <wired@gentoo.org> +okteta-4.3.3.ebuild:
+  Version bump
+
+  18 Oct 2009; Markus Meier <maekke@gentoo.org> okteta-4.3.1.ebuild:
+  x86 stable, bug #287697
+
+  17 Oct 2009; Jonathan Callen <abcd@gentoo.org> okteta-4.3.1.ebuild,
+  okteta-4.3.2.ebuild:
+  Disable src_test, bug 289452
+
+  10 Oct 2009; Samuli Suominen <ssuominen@gentoo.org> okteta-4.3.1.ebuild:
+  amd64 stable wrt #287697
+
+  08 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org> -okteta-4.3.0.ebuild:
+  Drop KDE 4.3.0
+
+*okteta-4.3.2 (06 Oct 2009)
+
+  06 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org> +okteta-4.3.2.ebuild:
+  Version bump
+
+*okteta-4.3.1 (01 Sep 2009)
+
+  01 Sep 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +okteta-4.3.1.ebuild:
+  Version bump
+
+*okteta-4.3.0 (04 Aug 2009)
+
+  04 Aug 2009; Alex Alexander <wired@gentoo.org> +okteta-4.3.0.ebuild:
+  Version bump
+
+  14 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> -okteta-4.2.3.ebuild:
+  Drop KDE 4.2.3
+
+  05 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> ChangeLog:
+  Fix accidently added keywords
+
+*okteta-4.2.4 (04 Jun 2009)
+
+  04 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> +okteta-4.2.4.ebuild:
+  Version bump
+
+  03 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> -okteta-4.2.2.ebuild:
+  Drop KDE 4.2.2
+
+*okteta-4.2.3 (07 May 2009)
+
+  07 May 2009; Tomas Chvatal <scarabeus@gentoo.org> +okteta-4.2.3.ebuild:
+  Version bump
+
+  17 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org> -okteta-4.2.1.ebuild,
+  okteta-4.2.2:
+  Restore ~hppa keywords
+
+  16 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org> -okteta-4.2.1.ebuild:
+  Drop KDE 4.2.1
+
+*okteta-4.2.2 (11 Apr 2009)
+
+  11 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org> +okteta-4.2.2.ebuild:
+  Add KDE 4.2.2
+
+  11 Apr 2009; Raúl Porcel <armin76@gentoo.org> okteta-4.2.1.ebuild:
+  Add ~alpha/~ia64 wrt #260777
+
+  08 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org> -okteta-4.2.0.ebuild:
+  Drop KDE 4.2.0
+
+*okteta-4.2.1 (04 Mar 2009)
+
+  04 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org> +okteta-4.2.1.ebuild:
+  Bump KDE 4.2.1
+
+  17 Feb 2009; Alexey Shvetsov <alexxy@gentoo.org> -okteta-4.1.4.ebuild:
+  Drop KDE 4.1.4
+
+  01 Feb 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  okteta-4.2.0.ebuild:
+  Restored ~ppc and ~ppc64 keywords to KDE-4.2.0
+
+*okteta-4.2.0 (27 Jan 2009)
+
+  27 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> +okteta-4.2.0.ebuild:
+  Bump KDE-4.2.0
+
+  14 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> -okteta-4.1.2.ebuild,
+  -okteta-4.1.3.ebuild:
+  Drop KDE 4.1.2 and 4.1.3
+
+*okteta-4.1.4 (13 Jan 2009)
+
+  13 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> +okteta-4.1.4.ebuild:
+  Bump to 4.1.4
+
+  15 Nov 2008; Mike Frysinger <vapier@gentoo.org> okteta-4.1.3.ebuild:
+  Add ppc/ppc64 love #244306.
+
+*okteta-4.1.3 (08 Nov 2008)
+
+  08 Nov 2008; Tomas Chvatal <scarabeus@gentoo.org> +okteta-4.1.3.ebuild:
+  Version bump.
+
+*okteta-4.1.2 (02 Oct 2008)
+
+  02 Oct 2008; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +metadata.xml, +okteta-4.1.2.ebuild:
+  Add kde-4.1.2 into the tree from the kde-testing overlay.
+

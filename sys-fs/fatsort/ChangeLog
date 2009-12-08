@@ -1,0 +1,37 @@
+# ChangeLog for sys-fs/fatsort
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/fatsort/ChangeLog,v 1.5 2009/09/30 18:03:10 billie Exp $
+
+*fatsort-0.9.12.199 (30 Sep 2009)
+
+  30 Sep 2009; Pielmeier Daniel <billie@gentoo.org>
+  +fatsort-0.9.12.199.ebuild:
+  Version bump.
+
+*fatsort-0.9.11.196 (28 Sep 2009)
+
+  28 Sep 2009; Pielmeier Daniel <billie@gentoo.org> -fatsort-0.9.9.1.ebuild,
+  -fatsort-0.9.10.187.ebuild, +fatsort-0.9.11.196.ebuild:
+  Version bump. Remove old.
+
+*fatsort-0.9.10.187-r1 (29 May 2009)
+
+  29 May 2009; Pielmeier Daniel <billie@gentoo.org> metadata.xml,
+  +fatsort-0.9.10.187-r1.ebuild:
+  Taking the ebuild, thanks to darkside for proxy committing. Adding a new
+  revision to make use of EAPI 2.
+
+*fatsort-0.9.10.187 (08 Dec 2008)
+
+  08 Dec 2008; Jeremy Olexa <darkside@gentoo.org>
+  +fatsort-0.9.10.187.ebuild:
+  version bump by Daniel Pielmeier
+
+*fatsort-0.9.9.1 (04 Dec 2008)
+
+  04 Dec 2008; Jeremy Olexa <darkside@gentoo.org> +metadata.xml,
+  +fatsort-0.9.9.1.ebuild:
+  New package. sys-fs/fatsort, "Sorts files on FAT16/32 partitions, ideal for
+  basic audio players." ebuild by Daniel Pielmeier, initial ebuild by Joerg S.
+  bug #170425. Daniel will be the maintainer, I will proxy commit for him
+

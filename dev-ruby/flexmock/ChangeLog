@@ -1,0 +1,32 @@
+# ChangeLog for dev-ruby/flexmock
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/flexmock/ChangeLog,v 1.5 2009/08/22 22:56:48 graaff Exp $
+
+  22 Aug 2009; Hans de Graaff <graaff@gentoo.org> -flexmock-0.8.0.ebuild,
+  -flexmock-0.8.3.ebuild:
+  Remove old versions.
+
+  04 May 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  flexmock-0.8.6.ebuild:
+  Fix src_test when Ruby 1.9 is not present.
+
+*flexmock-0.8.6 (29 Apr 2009)
+
+  29 Apr 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  +flexmock-0.8.6.ebuild:
+  Version bump, move to use tarball and fake gem spec (with a new, nice
+  function to fake it!), and enable use with Ruby 1.9.
+
+*flexmock-0.8.3 (20 Dec 2008)
+
+  20 Dec 2008; Hans de Graaff <graaff@gentoo.org> +flexmock-0.8.3.ebuild:
+  Version bump with compatibility fixes for various packages
+
+*flexmock-0.8.0 (17 May 2008)
+
+  17 May 2008; Hans de Graaff <graaff@gentoo.org> +metadata.xml,
+  +flexmock-0.8.0.ebuild:
+  Initial import. Flexmock is a mocking framework used in testing that is used
+  by packages in the tree. Adding it allows these packages to run their tests
+  phase.
+

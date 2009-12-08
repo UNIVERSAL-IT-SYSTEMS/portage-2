@@ -1,0 +1,27 @@
+# ChangeLog for sys-apps/usb_modeswitch
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/usb_modeswitch/ChangeLog,v 1.4 2009/11/11 07:47:17 robbat2 Exp $
+
+  11 Nov 2009; Robin H. Johnson <robbat2@gentoo.org>
+  usb_modeswitch-0.9.4.ebuild, usb_modeswitch-1.0.2.ebuild:
+  Bug #282532: make sure to bring in virtual/libusb:0 so that libusb-1 is
+  not used.
+
+*usb_modeswitch-1.0.2 (27 Jun 2009)
+
+  27 Jun 2009; Hanno Boeck <hanno@gentoo.org> +usb_modeswitch-1.0.2.ebuild:
+  Version bump.
+
+  23 Feb 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  usb_modeswitch-0.9.4.ebuild:
+  Fix building with --as-needed and respect CPPFLAGS. Thanks to Kevin Pyle
+  in bug #248397 for the patch.
+
+*usb_modeswitch-0.9.4 (25 Aug 2008)
+
+  25 Aug 2008; Wolfram Schlich <wschlich@gentoo.org>
+  +files/91-usb_modeswitch.rules.udev-ge-106,
+  +files/91-usb_modeswitch.rules.udev-lt-106, +metadata.xml,
+  +usb_modeswitch-0.9.4.ebuild:
+  initial import
+

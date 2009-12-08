@@ -1,0 +1,32 @@
+# ChangeLog for media-gfx/freepv
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/freepv/ChangeLog,v 1.5 2009/09/29 09:25:14 maekke Exp $
+
+  29 Sep 2009; Markus Meier <maekke@gentoo.org> freepv-0.3.0-r1.ebuild:
+  amd64/x86 stable, bug #286347
+
+*freepv-0.3.0-r1 (15 Jul 2009)
+
+  15 Jul 2009; Bernard Cafarelli <voyageur@gentoo.org> -freepv-0.3.0.ebuild,
+  +freepv-0.3.0-r1.ebuild, files/freepv-0.3.0-gcc44.patch,
+  +files/freepv-0.3.0-xulrunner-1.9.1.patch:
+  Make it work with xulrunner-1.9, update gcc 4.4 patch (use upstream
+  commit)
+
+  13 Jun 2009; Bernard Cafarelli <voyageur@gentoo.org> freepv-0.3.0.ebuild,
+  +files/freepv-0.3.0-gcc44.patch:
+  GCC 4.4 love, bug #274041
+
+*freepv-0.3.0 (02 May 2009)
+
+  02 May 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  -freepv-0.3.0_beta1.ebuild, +freepv-0.3.0.ebuild:
+  Release version bump, identical to beta1 except it can use glut instead of
+  freeglut
+
+*freepv-0.3.0_beta1 (26 Feb 2009)
+
+  26 Feb 2009; Bernard Cafarelli <voyageur@gentoo.org> +metadata.xml,
+  +freepv-0.3.0_beta1.ebuild:
+  Initial commit
+

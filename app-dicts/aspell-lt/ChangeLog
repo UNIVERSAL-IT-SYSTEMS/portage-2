@@ -1,0 +1,36 @@
+# ChangeLog for app-dicts/aspell-lt
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/aspell-lt/ChangeLog,v 1.9 2009/03/18 18:19:35 ranger Exp $
+
+  18 Mar 2009; <baude@gentoo.org> aspell-lt-1.0.1.ebuild:
+  Marking aspell-lt-1.0.1 ~ppc for bug 254425
+
+  02 Mar 2009; Peter Volkov <pva@gentoo.org> aspell-lt-1.0.1.ebuild:
+  ~mips keyworded, bug #254425.
+
+  10 Feb 2009; Raúl Porcel <armin76@gentoo.org> aspell-lt-1.0.1.ebuild:
+  Add ~arm/~ia64/~s390/~sh wrt #254425
+
+  06 Feb 2009; Jeroen Roovers <jer@gentoo.org> aspell-lt-1.0.1.ebuild:
+  Marked ~hppa (bug #254425).
+
+  25 Jan 2009; Brent Baude <ranger@gentoo.org> aspell-lt-1.0.1.ebuild:
+  Marking aspell-lt-1.0.1 ~ppc64 for bug 254425
+
+  13 Jan 2009; Peter Volkov <pva@gentoo.org> aspell-lt-1.0.1.ebuild:
+  Define IUSE, thank Tiago Cunha for report in bug #254425.
+
+  13 Jan 2009; Tiago Cunha <tcunha@gentoo.org> aspell-lt-1.0.1.ebuild:
+  keyworded ~arch for sparc, bug 254425
+
+  03 Nov 2007; Roy Marples <uberlord@gentoo.org> aspell-lt-1.0.1.ebuild:
+  Keyworded ~sparc-fbsd and ~x86-fbsd
+
+*aspell-lt-1.0.1 (18 Aug 2007)
+
+  18 Aug 2007; Wulf C. Krueger <philantrop@gentoo.org> +metadata.xml,
+  +aspell-lt-1.0.1.ebuild:
+  Initial ebuild as provided by Andrius Štikonas on bug 180818. Thanks,
+  Andrius! And thanks to the guys in irc.ktu.lt/#lithuania who were a great
+  help in testing.
+

@@ -1,0 +1,57 @@
+# ChangeLog for media-sound/xwax
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/xwax/ChangeLog,v 1.12 2009/11/19 16:21:12 maekke Exp $
+
+  19 Nov 2009; Markus Meier <maekke@gentoo.org> xwax-0.6-r1.ebuild:
+  amd64/x86 stable, bug #293240
+
+  19 Nov 2009; Markus Meier <maekke@gentoo.org> xwax-0.5.ebuild:
+  amd64/x86 stable, bug #293240
+
+  15 Nov 2009; Joe Sapp <nixphoeni@gentoo.org> -xwax-0.4.ebuild,
+  -xwax-0.6.ebuild:
+  Removed old ebuilds
+
+*xwax-0.6-r1 (20 Sep 2009)
+
+  20 Sep 2009; Joe Sapp <nixphoeni@gentoo.org> +xwax-0.6-r1.ebuild,
+  +files/xwax-0.6-execlp.patch:
+  Added patch from Yves Adler
+  (http://sourceforge.net/mailarchive/message.php?msg_name=4AB236E1.3090001%
+  40googlemail.com) to search for extra binaries (xwax_import and xwax_scan)
+  in the PATH environment variable if they aren't found in the current
+  directory.
+
+  08 Sep 2009; Joe Sapp <nixphoeni@gentoo.org> xwax-0.4.ebuild,
+  xwax-0.5.ebuild, xwax-0.6.ebuild:
+  Only the optimization levels should be removed from CFLAGS and LDFLAGS to
+  allow for user customization
+
+*xwax-0.6 (08 Sep 2009)
+
+  08 Sep 2009; Joe Sapp <nixphoeni@gentoo.org> +xwax-0.6.ebuild:
+  Version bump
+
+*xwax-0.5 (07 Jul 2009)
+
+  07 Jul 2009; Joe Sapp <nixphoeni@gentoo.org> +xwax-0.5.ebuild:
+  Revision bump
+
+  07 Jun 2009; Samuli Suominen <ssuominen@gentoo.org> xwax-0.4.ebuild:
+  Use tc-export to respect CC.
+
+  07 Jun 2009; Joe Sapp <nixphoeni@gentoo.org> xwax-0.4.ebuild:
+  Changed exeinto/doexe to dobin and added '|| die' to verify it worked
+
+  07 Jun 2009; Joe Sapp <nixphoeni@gentoo.org> xwax-0.4.ebuild:
+  Fixed src_install() that was broken on update to EAPI 2
+
+  15 Sep 2008; Pieter Van den Abeele <pvdabeel@gentoo.org> xwax-0.4.ebuild:
+  Keyworded ~ppc. Closes #237590
+
+*xwax-0.4 (13 Sep 2008)
+
+  13 Sep 2008; Joe Sapp <nixphoeni@gentoo.org> +files/xwax-0.4-fonts.patch,
+  +metadata.xml, +xwax-0.4.ebuild:
+  Initial commit
+

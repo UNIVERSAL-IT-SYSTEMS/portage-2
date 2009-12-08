@@ -1,0 +1,23 @@
+# ChangeLog for rox-base/tasklist
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/rox-base/tasklist/ChangeLog,v 1.5 2009/05/31 13:27:55 nixnut Exp $
+
+  31 May 2009; nixnut <nixnut@gentoo.org> tasklist-0.5.ebuild:
+  ppc stable #270738
+
+  30 Aug 2008; Markus Meier <maekke@gentoo.org> tasklist-0.5.ebuild:
+  x86 stable, bug #236057
+
+  30 Aug 2008; Brent Baude <ranger@gentoo.org> tasklist-0.5.ebuild:
+  Marking tasklist-0.5 ~ppc for bug 236057
+
+  28 Aug 2008; Jim Ramsay <lack@gentoo.org> tasklist-0.5.ebuild:
+  Marked stable on amd64
+
+*tasklist-0.5 (31 Dec 2007)
+
+  31 Dec 2007; Jim Ramsay <lack@gentoo.org> +files/Tasklist-0.5.xml,
+  +files/choicespath.patch, +metadata.xml, +tasklist-0.5.ebuild:
+  New package - Tasklist is a ROX panel applet which lists all running windows
+  (Bug 81216)
+

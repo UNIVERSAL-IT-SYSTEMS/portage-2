@@ -1,0 +1,108 @@
+# ChangeLog for net-wireless/bluez
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez/ChangeLog,v 1.20 2009/11/30 06:33:54 josejx Exp $
+
+  30 Nov 2009; Joseph Jezak <josejx@gentoo.org> bluez-4.39-r2.ebuild:
+  Marked ppc64 stable.
+
+  21 Nov 2009; Raúl Porcel <armin76@gentoo.org> bluez-4.28.ebuild,
+  bluez-4.38.ebuild, bluez-4.39.ebuild, bluez-4.39-r1.ebuild,
+  bluez-4.39-r2.ebuild:
+  Drop sparc/sh keyword
+
+  24 Oct 2009; nixnut <nixnut@gentoo.org> bluez-4.39-r2.ebuild:
+  ppc stable #284661
+
+  11 Oct 2009; Markus Meier <maekke@gentoo.org> bluez-4.39-r2.ebuild:
+  x86 stable, bug #284661
+
+  11 Oct 2009; Markus Meier <maekke@gentoo.org> bluez-4.39-r2.ebuild:
+  arm stable, bug #284661
+
+  27 Sep 2009; Olivier Crête <tester@gentoo.org> bluez-4.39-r2.ebuild:
+  Stable on amd64, bug #284661
+
+*bluez-4.39-r2 (20 Sep 2009)
+
+  20 Sep 2009; Nirbheek Chauhan <nirbheek@gentoo.org> +bluez-4.39-r2.ebuild:
+  Add IUSE=consolekit to control pambase dep. Give all rights to users in
+  plugdev only if we're not using ConsoleKit. Also, use +consolekit
+  (upstream defaults)
+
+  20 Sep 2009; Nirbheek Chauhan <nirbheek@gentoo.org> bluez-4.28.ebuild,
+  bluez-4.38.ebuild, bluez-4.39.ebuild, bluez-4.39-r1.ebuild:
+  Fix elog info about password agents, bug 284664
+
+*bluez-4.39-r1 (05 Sep 2009)
+
+  05 Sep 2009; Patrick Lauer <patrick@gentoo.org> +bluez-4.39-r1.ebuild,
+  +files/bluez-plugdev.patch:
+  Adding plugdev policy. Fixes #283744. Thanks to Fabio Erculiani.
+
+*bluez-4.39 (11 May 2009)
+
+  11 May 2009; Tiziano Müller <dev-zero@gentoo.org> -bluez-4.21.ebuild,
+  -bluez-4.36.ebuild, -bluez-4.37.ebuild, +bluez-4.39.ebuild:
+  Version bump. Dropped old.
+
+*bluez-4.38 (04 May 2009)
+
+  04 May 2009; Tiziano Müller <dev-zero@gentoo.org> +bluez-4.38.ebuild:
+  Version bump.
+
+*bluez-4.37 (24 Apr 2009)
+
+  24 Apr 2009; Tiziano Müller <dev-zero@gentoo.org> -bluez-4.32.ebuild,
+  -bluez-4.34.ebuild, +bluez-4.37.ebuild:
+  Version bump. Dropped old.
+
+*bluez-4.36 (19 Apr 2009)
+
+  19 Apr 2009; Tiziano Müller <dev-zero@gentoo.org> +bluez-4.36.ebuild:
+  Version bump (seems to be a bugfix only release).
+
+*bluez-4.34 (07 Apr 2009)
+
+  07 Apr 2009; Tiziano Müller <dev-zero@gentoo.org>
+  +files/4.34-conditional_libsbc.patch, +bluez-4.34.ebuild:
+  Version bump, fixed build problems with --disable{alsa,gstreamer}. Bug
+  #260374 has already been solved in an earlier bump.
+
+  10 Mar 2009; Tiziano Müller <dev-zero@gentoo.org> bluez-4.32.ebuild:
+  Added pambase[consolekit] to RDEPEND to get at least the basics ready
+  needed to run bluez as user.
+
+*bluez-4.32 (04 Mar 2009)
+
+  04 Mar 2009; Tiziano Müller <dev-zero@gentoo.org> -bluez-4.31.ebuild,
+  +bluez-4.32.ebuild:
+  Version bump (fixes memory leaks and segfaults). Dropping old.
+
+*bluez-4.31 (27 Feb 2009)
+
+  27 Feb 2009; Tiziano Müller <dev-zero@gentoo.org>
+  +files/4.31-as_needed.patch, +bluez-4.31.ebuild:
+  Version bump.
+
+*bluez-4.28 (06 Feb 2009)
+
+  06 Feb 2009; Tiziano Müller <dev-zero@gentoo.org> +bluez-4.28.ebuild:
+  Version bump.
+
+*bluez-4.21 (04 Dec 2008)
+
+  04 Dec 2008; Tiziano Müller <dev-zero@gentoo.org> -bluez-4.19.ebuild,
+  +bluez-4.21.ebuild:
+  Version bump
+
+*bluez-4.19 (28 Nov 2008)
+
+  28 Nov 2008; Tiziano Müller <dev-zero@gentoo.org>
+  +files/bluez-4.18-udev.rules, +files/4.18/bluetooth-conf.d,
+  +files/4.18/conf.d-hidd, +files/bluez-4.18-udev.script,
+  +files/4.18/bluetooth-init.d, +files/4.18/cups-location.patch,
+  +files/4.18/init.d-hidd, +metadata.xml, +bluez-4.19.ebuild:
+  Initial commit, keeping the keywords the same as for bluez-libs/-utils
+  since it's mostly the same. Most patches are taken from bluez-libs/-utils.
+  (bug #236357)
+

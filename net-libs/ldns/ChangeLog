@@ -1,0 +1,18 @@
+# ChangeLog for net-libs/ldns
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/ldns/ChangeLog,v 1.3 2009/12/04 16:36:34 matsuu Exp $
+
+*ldns-1.6.3 (04 Dec 2009)
+
+  04 Dec 2009; MATSUU Takuto <matsuu@gentoo.org> +ldns-1.6.3.ebuild:
+  Version bumped.
+
+  30 Nov 2009; Torsten Veller <tove@gentoo.org> ldns-1.6.2.ebuild:
+  Add missing die: || "..." -> || die "..."
+
+*ldns-1.6.2 (21 Nov 2009)
+
+  21 Nov 2009; MATSUU Takuto <matsuu@gentoo.org> +ldns-1.6.2.ebuild,
+  +metadata.xml:
+  Initial import, bug #192728.
+

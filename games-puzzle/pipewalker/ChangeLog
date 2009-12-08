@@ -1,0 +1,17 @@
+# ChangeLog for games-puzzle/pipewalker
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/pipewalker/ChangeLog,v 1.3 2009/11/02 20:29:41 maekke Exp $
+
+  02 Nov 2009; Markus Meier <maekke@gentoo.org> pipewalker-0.7.2.ebuild:
+  amd64/x86 stable, bug #290952
+
+  28 Sep 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  pipewalker-0.7.2.ebuild, +files/pipewalker-0.7.2-saveload.patch:
+  fix loading save state - patch from Toralf Förster via bug #286763
+
+*pipewalker-0.7.2 (26 Aug 2009)
+
+  26 Aug 2009; Tristan Heaven <nyhm@gentoo.org> +pipewalker-0.7.2.ebuild,
+  +metadata.xml:
+  Initial commit, based on Tomáš Chvátal's ebuild from bug #236485
+

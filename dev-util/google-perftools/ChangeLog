@@ -1,0 +1,16 @@
+# ChangeLog for dev-util/google-perftools
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/google-perftools/ChangeLog,v 1.2 2009/10/26 18:01:40 swegener Exp $
+
+  26 Oct 2009; Sven Wegener <swegener@gentoo.org>
+  google-perftools-1.4.ebuild:
+  Add ~x86 keyword.
+
+*google-perftools-1.4 (23 Oct 2009)
+
+  23 Oct 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  +google-perftools-1.4.ebuild, +metadata.xml:
+  Initial import of google's perftools package, from Sven Wegener
+  (swegener)'s overlay, upon request by Pavel Stratil. Tests restricted as
+  per bug #290249.
+

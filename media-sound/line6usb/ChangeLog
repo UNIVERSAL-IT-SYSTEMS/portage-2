@@ -1,0 +1,31 @@
+# ChangeLog for media-sound/line6usb
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/line6usb/ChangeLog,v 1.5 2009/09/06 21:15:09 robbat2 Exp $
+
+  06 Sep 2009; Robin H. Johnson <robbat2@gentoo.org> line6usb-0.7.3.ebuild,
+  line6usb-0.8.1.ebuild:
+  Cleaning up for linux-info work: inherit linux-mod implies inherit
+  linux-info.
+
+  23 Jul 2009; Samuli Suominen <ssuominen@gentoo.org> line6usb-0.7.3.ebuild,
+  line6usb-0.8.1.ebuild:
+  Remove FEATURES checking wrt #278745.
+
+*line6usb-0.8.1 (18 Jul 2009)
+
+  18 Jul 2009; Steve Arnold <nerdboy@gentoo.org> line6usb-0.7.3.ebuild,
+  +line6usb-0.8.1.ebuild:
+  Updated to current upstream release with support for newer kernels 
+  (see bug # 278164).
+
+  18 Oct 2008; Steve Arnold <nerdboy@gentoo.org> line6usb-0.7.3.ebuild:
+  Updated Makefile by replacing uname-based paths with ebuild vars; fixes
+  bug #241958.
+
+*line6usb-0.7.3 (21 Mar 2008)
+
+  21 Mar 2008; Steve Arnold <nerdboy@gentoo.org> +metadata.xml,
+  +line6usb-0.7.3.ebuild:
+  Initial ebuild for Line6 USB driver; somewhat experimental but has 
+  history and should work on any arch's that support usb and alsa.
+

@@ -1,0 +1,128 @@
+# ChangeLog for x11-misc/rednotebook
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/rednotebook/ChangeLog,v 1.21 2009/11/21 04:52:55 hwoarang Exp $
+
+  21 Nov 2009; Markos Chandras <hwoarang@gentoo.org>
+  rednotebook-0.7.5.ebuild, rednotebook-0.8.9-r1.ebuild:
+  Update homepage URL
+
+*rednotebook-0.8.9-r1 (20 Nov 2009)
+
+  20 Nov 2009; Markos Chandras <hwoarang@gentoo.org>
+  -rednotebook-0.8.6.ebuild, -rednotebook-0.8.7.ebuild,
+  -rednotebook-0.8.9.ebuild, +rednotebook-0.8.9-r1.ebuild,
+  +files/rednotebook-0.8.9_disable_spell.patch:
+  Fix gtkspell-python automagic dependency ( bug #293765 ). Remove old
+  ebuilds
+
+*rednotebook-0.8.9 (09 Nov 2009)
+
+  09 Nov 2009; <hwoarang@gentoo.org> +rednotebook-0.8.9.ebuild:
+  Version bump
+
+*rednotebook-0.8.7 (03 Oct 2009)
+
+  03 Oct 2009; Markos Chandras <hwoarang@gentoo.org>
+  -rednotebook-0.8.1.ebuild, -rednotebook-0.8.2.ebuild,
+  -rednotebook-0.8.3.ebuild, +rednotebook-0.8.7.ebuild:
+  Version bump, remove old ebuilds
+
+*rednotebook-0.8.6 (13 Sep 2009)
+
+  13 Sep 2009; Alex Alexander <wired@gentoo.org> +rednotebook-0.8.6.ebuild:
+  version bump, bug 282863
+
+*rednotebook-0.8.3 (10 Aug 2009)
+
+  10 Aug 2009; Markos Chandras <hwoarang@gentoo.org>
+  +rednotebook-0.8.3.ebuild:
+  Version bump
+
+*rednotebook-0.8.2 (31 Jul 2009)
+
+  31 Jul 2009; Markos Chandras <hwoarang@gentoo.org>
+  +rednotebook-0.8.2.ebuild:
+  Version bump
+
+  27 Jul 2009; <chainsaw@gentoo.org> rednotebook-0.7.5.ebuild:
+  Marked stable on AMD64 as requested by Markos Chandras
+  <hwoarang@gentoo.org> in bug #277861. Compile-tested on a Core2 Duo.
+
+*rednotebook-0.8.1 (25 Jul 2009)
+
+  25 Jul 2009; Markos Chandras <hwoarang@gentoo.org>
+  -rednotebook-0.7.4.ebuild, -rednotebook-0.7.6.ebuild,
+  -rednotebook-0.8.0.ebuild, +rednotebook-0.8.1.ebuild:
+  Version bump. Remove old ebuilds
+
+*rednotebook-0.8.0 (22 Jul 2009)
+
+  22 Jul 2009; Markos Chandras <hwoarang@gentoo.org>
+  +rednotebook-0.8.0.ebuild:
+  Version bump
+
+  16 Jul 2009; Christian Faulhammer <fauli@gentoo.org>
+  rednotebook-0.7.5.ebuild:
+  stable x86, bug 277861. Again, all dependencies were stable!
+
+*rednotebook-0.7.6 (15 Jul 2009)
+
+  15 Jul 2009; Markos Chandras <hwoarang@gentoo.org>
+  rednotebook-0.7.5.ebuild, +rednotebook-0.7.6.ebuild, metadata.xml:
+  Version bump. Add libyaml use flag. Add ~x86 again on 0.7.5 until the rest
+  of
+  the dependencies are marked stable
+
+  15 Jul 2009; Christian Faulhammer <fauli@gentoo.org>
+  rednotebook-0.7.5.ebuild:
+  stable x86, bug 277861
+
+*rednotebook-0.7.5 (01 Jul 2009)
+
+  01 Jul 2009; Markos Chandras <hwoarang@gentoo.org>
+  +rednotebook-0.7.5.ebuild:
+  Version bump
+
+*rednotebook-0.7.4 (26 Jun 2009)
+
+  26 Jun 2009; Markos Chandras <hwoarang@gentoo.org>
+  -rednotebook-0.7.0.ebuild, -rednotebook-0.7.1.ebuild,
+  -rednotebook-0.7.2.ebuild, -rednotebook-0.7.3.ebuild,
+  +rednotebook-0.7.4.ebuild:
+  Version bump, remove old ebuilds
+
+*rednotebook-0.7.3 (22 Jun 2009)
+
+  22 Jun 2009; Markos Chandras <hwoarang@gentoo.org>
+  +rednotebook-0.7.3.ebuild:
+  Version bump
+
+*rednotebook-0.7.2 (25 May 2009)
+
+  25 May 2009; Markos Chandras <hwoarang@gentoo.org>
+  -rednotebook-0.6.9.ebuild, +rednotebook-0.7.2.ebuild:
+  Version bump, remove old ebuild
+
+*rednotebook-0.7.1 (21 May 2009)
+
+  21 May 2009; Markos Chandras <hwoarang@gentoo.org>
+  +rednotebook-0.7.1.ebuild:
+  Version bump
+
+*rednotebook-0.7.0 (20 May 2009)
+
+  20 May 2009; Markos Chandras <hwoarang@gentoo.org>
+  +rednotebook-0.7.0.ebuild:
+  Version bump
+
+  11 May 2009; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Adding Josh Saddler <nightmorph@gentoo.org> as proxy maintainer
+
+*rednotebook-0.6.9 (10 May 2009)
+
+  10 May 2009; Markos Chandras <hwoarang@gentoo.org>
+  +rednotebook-0.6.9.ebuild, +metadata.xml:
+  Moved from sunrise. Thanks to Adam Zajac. Changed category to x11-misc.
+  Thanks
+  to Josh Saddler for improved ebuild. Fixes bug 253399
+

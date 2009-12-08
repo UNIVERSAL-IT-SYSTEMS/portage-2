@@ -1,0 +1,43 @@
+# ChangeLog for virtual/perl-Time-Piece
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Time-Piece/ChangeLog,v 1.9 2009/12/04 13:56:38 tove Exp $
+
+  04 Dec 2009; Torsten Veller <tove@gentoo.org> perl-Time-Piece-1.15.ebuild:
+  Stable on amd64 (#288026)
+
+  04 Dec 2009; Christian Faulhammer <fauli@gentoo.org>
+  perl-Time-Piece-1.15.ebuild:
+  x86 stable, bug 288026
+
+  25 Aug 2009; Torsten Veller <tove@gentoo.org> perl-Time-Piece-1.15.ebuild:
+  Add support for perl-5.10.1
+
+*perl-Time-Piece-1.15 (29 Jun 2009)
+
+  29 Jun 2009; Torsten Veller <tove@gentoo.org>
+  +perl-Time-Piece-1.15.ebuild:
+  Version bump
+
+*perl-Time-Piece-1.14 (11 May 2009)
+
+  11 May 2009; Torsten Veller <tove@gentoo.org>
+  +perl-Time-Piece-1.14.ebuild:
+  Version bump
+
+  13 Mar 2009; Torsten Veller <tove@gentoo.org>
+  -perl-Time-Piece-1.12.ebuild:
+  Cleanup
+
+  14 Dec 2008; Alexis Ballier <aballier@gentoo.org>
+  perl-Time-Piece-1.13.ebuild:
+  keyword ~sparc-fbsd
+
+*perl-Time-Piece-1.13 (01 Nov 2008)
+*perl-Time-Piece-1.12 (01 Nov 2008)
+*perl-Time-Piece-1.11 (01 Nov 2008)
+
+  01 Nov 2008; Yuval Yaari <yuval@gentoo.org> +metadata.xml,
+  +perl-Time-Piece-1.11.ebuild, +perl-Time-Piece-1.12.ebuild,
+  +perl-Time-Piece-1.13.ebuild:
+  Adding virtuals for dual-lifed modules that come with perl-5.10
+

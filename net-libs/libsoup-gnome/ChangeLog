@@ -1,0 +1,70 @@
+# ChangeLog for net-libs/libsoup-gnome
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libsoup-gnome/ChangeLog,v 1.13 2009/12/03 16:53:23 ranger Exp $
+
+  03 Dec 2009; Brent Baude <ranger@gentoo.org>
+  libsoup-gnome-2.26.3-r1.ebuild:
+  Marking libsoup-gnome-2.26.3-r1 ppc64 stable for bug 281427
+
+  28 Nov 2009; Raúl Porcel <armin76@gentoo.org>
+  libsoup-gnome-2.26.3-r1.ebuild:
+  ia64/sparc stable
+
+  05 Nov 2009; Markus Meier <maekke@gentoo.org>
+  libsoup-gnome-2.26.3-r1.ebuild:
+  arm stable, bug #281427
+
+*libsoup-gnome-2.28.1 (29 Oct 2009)
+
+  29 Oct 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  +libsoup-gnome-2.28.1.ebuild,
+  +files/libsoup-gnome-2.28.1-system-lib.patch:
+  New version for GNOME 2.28.
+
+  13 Oct 2009; Jeremy Olexa <darkside@gentoo.org>
+  libsoup-gnome-2.26.3-r1.ebuild:
+  Add ~amd64-linux keyword
+
+  06 Oct 2009; Fabian Groffen <grobian@gentoo.org>
+  libsoup-gnome-2.26.3-r1.ebuild:
+  Marked ~x86-solaris, bug #287910
+
+  02 Oct 2009; Mounir Lamouri <volkmar@gentoo.org>
+  libsoup-gnome-2.26.3-r1.ebuild:
+  Stable for ppc, bug 271865
+
+  28 Sep 2009; Tobias Klausmann <klausman@gentoo.org>
+  libsoup-gnome-2.26.3-r1.ebuild:
+  Stable on alpha, bug #271865
+
+  28 Sep 2009; Christian Faulhammer <fauli@gentoo.org>
+  libsoup-gnome-2.26.3-r1.ebuild:
+  stable x86, security bug 271865
+
+  27 Sep 2009; Olivier Crête <tester@gentoo.org>
+  libsoup-gnome-2.26.3-r1.ebuild:
+  amd64 stable
+
+*libsoup-gnome-2.26.3-r1 (21 Sep 2009)
+
+  21 Sep 2009; Romain Perier <mrpouet@gentoo.org>
+  -libsoup-gnome-2.26.3.ebuild, +libsoup-gnome-2.26.3-r1.ebuild,
+  files/libsoup-gnome-2.26.3-system-lib.patch:
+  Fix patch which skipped link relationship to libsoup-2.4.so (found using
+  --no-undefined LDFLAG), remove old revision.
+
+  13 Sep 2009; Romain Perier <mrpouet@gentoo.org>
+  files/libsoup-gnome-2.26.3-system-lib.patch:
+  Fix bug #284760 and #284755 by adding docs subdirectory conditionnally
+  only when libsoup embedded lib is built (API docs was exactly the
+  same, and already installed by libsoup).
+
+*libsoup-gnome-2.26.3 (13 Sep 2009)
+
+  13 Sep 2009; Romain Perier <mrpouet@gentoo.org>
+  +libsoup-gnome-2.26.3.ebuild,
+  +metadata.xml,
+  +files/libsoup-gnome-2.26.3-system-lib.patch:
+  New ebuild per bug #269747, libsoup-gnome is a plugin for libsoup, this is
+  a solution to avoid circurlar deps by moving it into libsoup PDEPEND.
+

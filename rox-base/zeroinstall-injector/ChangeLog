@@ -1,0 +1,88 @@
+# ChangeLog for rox-base/zeroinstall-injector
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/rox-base/zeroinstall-injector/ChangeLog,v 1.18 2009/07/27 09:44:00 tcunha Exp $
+
+  27 Jul 2009; Tiago Cunha <tcunha@gentoo.org>
+  zeroinstall-injector-0.40.ebuild:
+  stable sparc, bug 275392
+
+  19 Jul 2009; nixnut <nixnut@gentoo.org> zeroinstall-injector-0.40.ebuild:
+  ppc stable #275392
+
+  08 Jul 2009; Markus Meier <maekke@gentoo.org>
+  zeroinstall-injector-0.40.ebuild:
+  amd64 stable, bug #275392
+
+  30 Jun 2009; Christian Faulhammer <fauli@gentoo.org>
+  zeroinstall-injector-0.40.ebuild:
+  stable x86, bug 275392
+
+  28 Jun 2009; Tobias Klausmann <klausman@gentoo.org>
+  zeroinstall-injector-0.40.ebuild:
+  Stable on alpha, bug #275392
+
+  21 May 2009; Jim Ramsay <lack@gentoo.org>
+  zeroinstall-injector-0.40.ebuild:
+  Require dev-lang/python[xml] (Bug #256018)
+
+*zeroinstall-injector-0.40 (21 May 2009)
+
+  21 May 2009; Jim Ramsay <lack@gentoo.org> +files/0distutils-r1,
+  +zeroinstall-injector-0.40.ebuild:
+  Version 0.40 is released. Also updates 0distutils script to handle changes
+  in rox-base/rox-2.9
+
+  09 Apr 2009; Jim Ramsay <lack@gentoo.org>
+  zeroinstall-injector-0.33.ebuild:
+  Fix pkg_postinst by setting PYTHON_MODNAME properly
+
+  31 Aug 2008; Raúl Porcel <armin76@gentoo.org>
+  zeroinstall-injector-0.33.ebuild:
+  alpha/sparc stable wrt #236057
+
+  30 Aug 2008; Markus Meier <maekke@gentoo.org>
+  zeroinstall-injector-0.33.ebuild:
+  x86 stable, bug #236057
+
+  30 Aug 2008; Brent Baude <ranger@gentoo.org>
+  zeroinstall-injector-0.33.ebuild:
+  Marking zeroinstall-injector-0.33 ppc stable for bug 236057
+
+  28 Aug 2008; Jim Ramsay <lack@gentoo.org>
+  -zeroinstall-injector-0.31-r2.ebuild, zeroinstall-injector-0.33.ebuild:
+  Marking stable on amd64
+
+*zeroinstall-injector-0.33 (12 May 2008)
+
+  12 May 2008; Jim Ramsay <lack@gentoo.org>
+  +zeroinstall-injector-0.33.ebuild:
+  New version 0.33 was released
+
+*zeroinstall-injector-0.31-r2 (26 Apr 2008)
+
+  26 Apr 2008; Jim Ramsay <lack@gentoo.org>
+  -zeroinstall-injector-0.31-r1.ebuild,
+  +zeroinstall-injector-0.31-r2.ebuild:
+  Changing manpage install path (Bug 207495)
+
+  14 Dec 2007; Jim Ramsay <lack@gentoo.org>
+  zeroinstall-injector-0.31-r1.ebuild:
+  Block <=rox-base/rox-session-0.30-r1 - Bug 202275
+
+  07 Dec 2007; Raúl Porcel <armin76@gentoo.org>
+  zeroinstall-injector-0.31-r1.ebuild:
+  Add ~alpha wrt #201354
+
+*zeroinstall-injector-0.31-r1 (05 Dec 2007)
+
+  05 Dec 2007; Jim Ramsay <lack@gentoo.org>
+  -zeroinstall-injector-0.31.ebuild, +zeroinstall-injector-0.31-r1.ebuild:
+  Added missing depedency on gnupg
+
+*zeroinstall-injector-0.31 (04 Dec 2007)
+
+  04 Dec 2007; Jim Ramsay <lack@gentoo.org> +files/0distutils,
+  +files/global.cfg, +metadata.xml, +zeroinstall-injector-0.31.ebuild:
+  New package: Zeroinstall Injector allows regular users to install software
+  themselves
+

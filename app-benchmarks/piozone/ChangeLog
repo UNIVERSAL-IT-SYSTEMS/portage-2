@@ -1,0 +1,38 @@
+# ChangeLog for app-benchmarks/piozone
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/piozone/ChangeLog,v 1.12 2009/10/12 19:04:55 halcy0n Exp $
+
+  12 Oct 2009; Mark Loeser <halcy0n@gentoo.org> piozone-1.0-r2.ebuild:
+  QA fixes; unquoted variables
+
+  23 Nov 2008; Patrick Lauer <patrick@gentoo.org> piozone-1.0-r2.ebuild:
+  Fixing Homepage.
+
+  08 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
+  Regenerate digest in Manifest2 format.
+
+  29 May 2005; Marcus D. Hanwell <marcus@gentoo.org> piozone-1.0-r2.ebuild:
+  Stable on amd64.
+
+  30 Mar 2005; Homer Parker <hparker@gentoo.org> piozone-1.0-r2.ebuild:
+  add ~amd64 to close #85039
+
+  05 Oct 2004; Pieter Van den Abeele <pvdabeel@gentoo.org>
+  piozone-1.0-r2.ebuild:
+  Masked piozone-1.0-r2.ebuild stable for ppc
+
+  13 Apr 2004; David Holm <dholm@gentoo.org> piozone-1.0-r2.ebuild:
+  Added to ~ppc.
+
+  29 Mar 2004; Michael Sterrett <mr_bones_@gentoo.org> piozone-1.0-r2.ebuild:
+  inherit eutils for epatch
+
+  12 Mar 2004; Michael Sterrett <mr_bones_@gentoo.org> piozone-1.0-r2.ebuild:
+  don't assign default to S; header fix; tidy
+
+*piozone-1.0-r2 (12 Aug 2003)
+
+  12 Aug 2003; Martin Holzer <mholzer@gentoo.org> piozone-1.0-r2.ebuild,
+  files/piozone-1.0-gentoo.diff:
+  Initial version. Submitted by Marcelo Góes <blueboard@terra.com.br> in #24250
+

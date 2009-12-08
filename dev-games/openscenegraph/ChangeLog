@@ -1,0 +1,68 @@
+# ChangeLog for dev-games/openscenegraph
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-games/openscenegraph/ChangeLog,v 1.14 2009/10/12 19:09:15 scarabeus Exp $
+
+*openscenegraph-2.8.2 (12 Oct 2009)
+
+  12 Oct 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  +openscenegraph-2.8.2.ebuild:
+  [QA] version bump. Makre src_configure play nicely with cmake-utils. Acked
+  by Mr_Bones_
+
+  10 Jul 2009; Michael Sterrett <mr_bones_@gentoo.org>
+  openscenegraph-2.8.0.ebuild:
+  specifically needs net-libs/xulrunner:1.8 (reported by nirbheek)
+
+  14 Apr 2009; Tristan Heaven <nyhm@gentoo.org> metadata.xml,
+  openscenegraph-2.8.0.ebuild:
+  Rename freetype USE flag to truetype
+
+  10 Apr 2009; Peter Alfredsen <loki_val@gentoo.org>
+  openscenegraph-2.8.0.ebuild:
+  Updating dev-games/openscenegraph for virtual/poppler-glib update; cairo
+  is the superior backend, always enable it anywhere it can be used.
+
+  30 Mar 2009; Peter Alfredsen <loki_val@gentoo.org>
+  openscenegraph-2.8.0.ebuild:
+  Update dependencies w.r.t. bug 264230, fully-split-out poppler transition.
+
+  20 Mar 2009; Joseph Jezak <josejx@gentoo.org> openscenegraph-2.8.0.ebuild:
+  Marked ~ppc for bug #260342.
+
+  12 Mar 2009; Alfredo Tupone <tupone@gentoo.org>
+  files/openscenegraph-2.8.0-magicoff.patch, metadata.xml,
+  openscenegraph-2.8.0.ebuild:
+  Enable the following USE flags: curl freetype gif jpeg png tiff xrandr
+
+  10 Mar 2009; Alfredo Tupone <tupone@gentoo.org>
+  files/openscenegraph-2.8.0-magicoff.patch, openscenegraph-2.8.0.ebuild:
+  Adding use flags: jpeg2k svg xine
+
+  08 Mar 2009; Tupone Alfredo <tupone@gentoo.org>
+  files/openscenegraph-2.8.0-magicoff.patch, openscenegraph-2.8.0.ebuild:
+  Adding use based dep on poppler bindings. Should fix bug #261575 by Andrey Sh.
+  Adding pdf use flag to eventually disable poppler usage.
+  Adding further dependency
+
+  03 Mar 2009; Alfredo Tupone <tupone@gentoo.org>
+  openscenegraph-2.8.0.ebuild:
+  Added ~amd64 keyword, Bug #260342
+
+  27 Feb 2009; Alfredo Tupone <tupone@gentoo.org> metadata.xml,
+  openscenegraph-2.8.0.ebuild:
+  Added applications as answer to Comment #1 by Ferris McCormick on bug #260342
+
+  26 Feb 2009; Ferris McCormick <fmccor@gentoo.org>
+  openscenegraph-2.8.0.ebuild:
+  Add ~sparc for testing, Bug #260342.
+
+  25 Feb 2009; Alfredo Tupone <tupone@gentoo.org>
+  +files/openscenegraph-2.8.0-magicoff.patch, openscenegraph-2.8.0.ebuild:
+  Making xulrunner an optional dependency. Bug #260187 by Christian Schmitt
+
+*openscenegraph-2.8.0 (24 Feb 2009)
+
+  24 Feb 2009; Alfredo Tupone <tupone@gentoo.org> +metadata.xml,
+  +openscenegraph-2.8.0.ebuild:
+  Package added. Release 2.8.0. Reference to bug #91526
+

@@ -1,0 +1,29 @@
+# ChangeLog for dev-python/pudge
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pudge/ChangeLog,v 1.6 2009/10/01 23:16:44 arfrever Exp $
+
+  02 Oct 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  pudge-0.1.3.ebuild:
+  Set SUPPORT_PYTHON_ABIS.
+
+  04 Jul 2007; Lukasz Strzygowski <lucass@gentoo.org> -pudge-0.1.2.ebuild,
+  pudge-0.1.3.ebuild:
+  Removed use_setuptools sed. Dropped old version.
+
+  04 Jul 2007; Rob Cakebread <pythonhead@gentoo.org> pudge-0.1.2.ebuild,
+  pudge-0.1.3.ebuild:
+  Removed setuptools sed. bug# 184039
+
+*pudge-0.1.3 (13 Apr 2007)
+
+  13 Apr 2007; Rob Cakebread <pythonhead@gentoo.org> +pudge-0.1.3.ebuild:
+  Version bump.
+
+  03 Feb 2007; Tiziano Müller <dev-zero@gentoo.org> pudge-0.1.2.ebuild:
+  Changed kid dependency. Small corrections.
+
+*pudge-0.1.2 (07 Jan 2007)
+
+  07 Jan 2007; Tiziano Müller <dev-zero@gentoo.org> +pudge-0.1.2.ebuild:
+  New ebuild for bug #155364
+

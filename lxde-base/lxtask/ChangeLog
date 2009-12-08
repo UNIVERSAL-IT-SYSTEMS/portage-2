@@ -1,0 +1,34 @@
+# ChangeLog for lxde-base/lxtask
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxtask/ChangeLog,v 1.8 2009/11/21 18:39:28 nixnut Exp $
+
+  21 Nov 2009; nixnut <nixnut@gentoo.org> lxtask-0.1.1.ebuild:
+  ppc stable #292698
+
+  20 Nov 2009; Markus Meier <maekke@gentoo.org> lxtask-0.1.1.ebuild:
+  amd64/x86 stable, bug #292698
+
+  05 Nov 2009; Víctor Ostorga <vostorga@gentoo.org> -lxtask-0.1.ebuild:
+  Cleaning out old ebuild
+
+  30 Jul 2009; Mounir Lamouri <volkmar@gentoo.org> lxtask-0.1.ebuild,
+  lxtask-0.1.1.ebuild:
+  Keywording for ppc. Bug 271148
+
+*lxtask-0.1.1 (15 Jul 2009)
+
+  15 Jul 2009; Víctor Ostorga <vostorga@gentoo.org> +lxtask-0.1.1.ebuild:
+  Version bump to 0.1.1
+
+  07 Dec 2008; Ben de Groot <yngwin@gentoo.org> lxtask-0.1.ebuild:
+  Add test restriction, see bug 249598. Do not install empty ChangeLog.
+
+  11 Nov 2008; Ben de Groot <yngwin@gentoo.org> lxtask-0.1.ebuild:
+  Fix RDEPEND/DEPEND switch.
+
+*lxtask-0.1 (07 Nov 2008)
+
+  07 Nov 2008; Ben de Groot <yngwin@gentoo.org> +metadata.xml,
+  +lxtask-0.1.ebuild:
+  Initial import of ebuild from lxde overlay
+

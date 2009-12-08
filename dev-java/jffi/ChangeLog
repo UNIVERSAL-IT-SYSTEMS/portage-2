@@ -1,0 +1,35 @@
+# ChangeLog for dev-java/jffi
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jffi/ChangeLog,v 1.5 2009/10/25 21:43:47 volkmar Exp $
+
+  25 Oct 2009; Mounir Lamouri <volkmar@gentoo.org> jffi-0.3-r3.ebuild,
+  jffi-0.5.ebuild:
+  Keywording for ppc, bug 270910
+
+*jffi-0.5 (07 Aug 2009)
+
+  07 Aug 2009; Alistair Bush <ali_bush@gentoo.org>
+  +files/0.5-makefile-flags.patch, +jffi-0.5.ebuild:
+  Version Bump.
+
+*jffi-0.4.1-r1 (03 Jun 2009)
+*jffi-0.3-r3 (03 Jun 2009)
+
+  03 Jun 2009; Vlastimil Babka <caster@gentoo.org>
+  +files/0.3-makefile-flags.patch, +jffi-0.3-r3.ebuild,
+  +files/0.4.1-makefile-flags.patch, +jffi-0.4.1-r1.ebuild:
+  Revbump that tries to fix flags problems reported in bug #271533. Use
+  virtual/libffi instead of gcc[libffi] as requested in bug #272058. Fix not
+  workin VM selection, bug #272373.
+
+*jffi-0.4.1 (27 May 2009)
+
+  27 May 2009; Alistair Bush <ali_bush@gentoo.org> +jffi-0.4.1.ebuild:
+  Version Bump. New slot for api changes.
+
+*jffi-0.3-r2 (22 May 2009)
+
+  22 May 2009; Vlastimil Babka <caster@gentoo.org> +jffi-0.3-r2.ebuild,
+  +metadata.xml:
+  New package, jruby dependency. Ebuild provided by chewi in java-overlay.
+

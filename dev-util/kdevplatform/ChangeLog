@@ -1,0 +1,60 @@
+# ChangeLog for dev-util/kdevplatform
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/kdevplatform/ChangeLog,v 1.14 2009/11/30 06:32:02 josejx Exp $
+
+  30 Nov 2009; Joseph Jezak <josejx@gentoo.org> kdevplatform-0.9.95.ebuild:
+  Marked ppc/ppc64 stable.
+
+  22 Nov 2009; Zac Medico <zmedico@gentoo.org> kdevplatform-0.9.96.ebuild:
+  Block <kdevelop-3.9.96:4 due to file collision.
+
+*kdevplatform-0.9.96 (12 Nov 2009)
+
+  12 Nov 2009; Romain Perier <mrpouet@gentoo.org>
+  +kdevplatform-0.9.96.ebuild:
+  Version bump, import from kde overlay , request per bug #292012.
+
+  08 Nov 2009; Joseph Jezak <josejx@gentoo.org> kdevplatform-0.9.95.ebuild:
+  Marked ~ppc/~ppc64 for bug #280312.
+
+  10 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  kdevplatform-0.9.95.ebuild:
+  amd64 stable wrt #287697
+
+*kdevplatform-0.9.95 (29 Aug 2009)
+
+  29 Aug 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +kdevplatform-0.9.95.ebuild:
+  Version bump, also fixes bug 274175
+
+  10 Jul 2009; Jeroen Roovers <jer@gentoo.org> kdevplatform-0.9.93.ebuild:
+  Marked ~hppa (bug #274175).
+
+*kdevplatform-0.9.93 (04 Jun 2009)
+
+  04 Jun 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  -kdevplatform-0.9.91.ebuild, +kdevplatform-0.9.93.ebuild:
+  Version bump, remove old, slot change to 4
+
+  26 Apr 2009; Zac Medico <zmedico@gentoo.org> kdevplatform-0.9.91.ebuild:
+  Block dev-util/kdevelop:0 due to file collision with
+  /usr/share/apps/kdevappwizard/kdevappwizard.rc.
+
+  26 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  kdevplatform-0.9.91.ebuild:
+  Dont call external stuff in global scope.
+
+  25 Mar 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  kdevplatform-0.9.91.ebuild:
+  small fix
+
+  01 Mar 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  kdevplatform-0.9.91.ebuild:
+  find kdevelop version with versionator
+
+*kdevplatform-0.9.91 (01 Mar 2009)
+
+  01 Mar 2009; Theo Chatzimichos <tampakrap@gentoo.org> +metadata.xml,
+  +kdevplatform-0.9.91.ebuild:
+  Initial import of KDevplatform
+

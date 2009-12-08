@@ -1,0 +1,59 @@
+# ChangeLog for x11-misc/pcmanfm
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/pcmanfm/ChangeLog,v 1.12 2009/11/21 18:42:33 nixnut Exp $
+
+  21 Nov 2009; nixnut <nixnut@gentoo.org> pcmanfm-0.5.2.ebuild:
+  ppc stable #292698
+
+  20 Nov 2009; Markus Meier <maekke@gentoo.org> pcmanfm-0.5.2.ebuild:
+  amd64/x86 stable, bug #292698
+
+  05 Nov 2009; Víctor Ostorga <vostorga@gentoo.org> -pcmanfm-0.5.ebuild,
+  -pcmanfm-0.5.1.ebuild, -pcmanfm-0.5.1-r1.ebuild,
+  -files/pcmanfm-0.5.1-shared-mime-info-0.70.patch:
+  Cleaning out old ebuilds
+
+  29 Oct 2009; Víctor Ostorga <vostorga@gentoo.org> pcmanfm-0.5.2.ebuild,
+  +files/pcmanfm-0.5.2-fix-ca-translation.patch:
+  Fixing broken catalan translation, bug #290983
+
+*pcmanfm-0.5.2 (29 Oct 2009)
+
+  29 Oct 2009; Ben de Groot <yngwin@gentoo.org> +pcmanfm-0.5.2.ebuild:
+  Version bump. Drop shared-mime-info patch as the issue has been fixed
+  upstream.
+
+*pcmanfm-0.5.1-r1 (25 Oct 2009)
+
+  25 Oct 2009; Víctor Ostorga <vostorga@gentoo.org>
+  +pcmanfm-0.5.1-r1.ebuild,
+  +files/pcmanfm-0.5.1-shared-mime-info-0.70.patch:
+  Allowing pcmanfm to work against shared-mime-info-0.70 , patch thanks to
+  Samuli Suominen <ssuominen@gentoo.org> bug 288820
+
+  15 Aug 2009; Mounir Lamouri <volkmar@gentoo.org> pcmanfm-0.5.1.ebuild:
+  Keywording for ppc. Bug 271148
+
+  12 Jul 2009; Víctor Ostorga <vostorga@gentoo.org> pcmanfm-0.5.ebuild:
+  Fixing tests, closes bug #262733
+
+  05 Jun 2009; Ben de Groot <yngwin@gentoo.org> pcmanfm-0.5.1.ebuild:
+  Don't forget to inherit autotools... bug 272729
+
+*pcmanfm-0.5.1 (05 Jun 2009)
+
+  05 Jun 2009; Ben de Groot <yngwin@gentoo.org> +pcmanfm-0.5.1.ebuild,
+  +files/pcmanfm-find.desktop.patch:
+  Version bump. Fix desktop file to not break Gnome and possibly other
+  environments, bug 272318.
+
+  04 Sep 2008; Ben de Groot <yngwin@gentoo.org> metadata.xml:
+  Reassigning maintainership to lxde team as a whole
+
+*pcmanfm-0.5 (31 Aug 2008)
+
+  31 Aug 2008; Ben de Groot <yngwin@gentoo.org> +metadata.xml,
+  +pcmanfm-0.5.ebuild:
+  Initial commit. Ebuild based on the work done in Sunrise and freshgen
+  overlays.
+

@@ -1,0 +1,30 @@
+# ChangeLog for www-client/conkeror
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/conkeror/ChangeLog,v 1.5 2009/12/05 22:02:02 ulm Exp $
+
+*conkeror-0.9.1 (05 Dec 2009)
+
+  05 Dec 2009; Ulrich Mueller <ulm@gentoo.org>
+  -conkeror-0.9_pre20090401.ebuild, -conkeror-0.9_pre20090724.ebuild,
+  +conkeror-0.9.1.ebuild, files/conkeror.desktop:
+  Version bump. Add icon. Remove old.
+
+*conkeror-0.9_pre20090724 (08 Aug 2009)
+
+  08 Aug 2009; Ulrich Mueller <ulm@gentoo.org>
+  +conkeror-0.9_pre20090724.ebuild:
+  New snapshot.
+
+  29 Apr 2009; Markus Meier <maekke@gentoo.org>
+  conkeror-0.9_pre20090401.ebuild:
+  add ~amd64, bug #265765
+
+  12 Apr 2009; Christian Faulhammer <fauli@gentoo.org> metadata.xml:
+  add real names
+
+*conkeror-0.9_pre20090401 (11 Apr 2009)
+
+  11 Apr 2009; Ulrich Mueller <ulm@gentoo.org> +files/conkeror.desktop,
+  +metadata.xml, +conkeror-0.9_pre20090401.ebuild:
+  Initial import, from Emacs overlay. Ebuild contributed by me. Bug 228699.
+

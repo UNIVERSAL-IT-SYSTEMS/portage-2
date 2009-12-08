@@ -1,0 +1,23 @@
+# ChangeLog for app-text/xiphos
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/xiphos/ChangeLog,v 1.4 2009/08/10 00:39:05 beandog Exp $
+
+*xiphos-3.1.1 (10 Aug 2009)
+
+  10 Aug 2009; Steve Dibb <beandog@gentoo.org> +xiphos-3.1.1.ebuild:
+  Version bump
+
+  01 Aug 2009; Steve Dibb <beandog@gentoo.org> xiphos-3.1.ebuild:
+  Restore old keywords, since this is just a version bump of gnomesword; bug
+  278971
+
+  24 Jul 2009; Steve Dibb <beandog@gentoo.org> xiphos-3.1.ebuild:
+  Add !gnomesword to dep
+
+*xiphos-3.1 (24 Jul 2009)
+
+  24 Jul 2009; Steve Dibb <beandog@gentoo.org> +xiphos-3.1.ebuild,
+  +metadata.xml:
+  Initial commit, bug 263309; Thanks to Greg <greg.hellings@gmail.com> for
+  original ebuild
+

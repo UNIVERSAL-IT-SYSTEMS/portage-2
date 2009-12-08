@@ -1,0 +1,40 @@
+# ChangeLog for sci-biology/mafft
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/mafft/ChangeLog,v 1.6 2009/07/27 05:53:45 dberkholz Exp $
+
+*mafft-6.707 (27 Jul 2009)
+
+  27 Jul 2009; Donnie Berkholz <dberkholz@gentoo.org>; +mafft-6.707.ebuild:
+  Bump to latest. Use no-extensions version because the extensions rely on a
+  bunch of bundled packages. That means you don't get RNA structural
+  alignment, sorry.
+
+  27 Jul 2009; Donnie Berkholz <dberkholz@gentoo.org>;
+  mafft-6.240-r1.ebuild:
+  Keyword ~amd64.
+
+*mafft-6.240-r1 (23 Sep 2008)
+
+  23 Sep 2008; Markus Dittrich <markusle@gentoo.org>
+  +files/mafft-6.240-mktemp.patch, -mafft-5.861-r1.ebuild,
+  -mafft-6.240.ebuild, +mafft-6.240-r1.ebuild:
+  Added patch to fix insecure tempfile handling (see bug #235804). 
+  Removed ebuilds for vulnerable versions.
+
+  08 Oct 2007; Markus Dittrich <markusle@gentoo.org> mafft-5.861-r1.ebuild, +mafft-6.240.ebuild:
+  Fixed wrongs SRC_URI and HOMEPAGE (see bug #195080). Also bumped
+  package to the most recent version.
+
+*mafft-5.861-r1 (09 Nov 2006)
+
+  09 Nov 2006; Donnie Berkholz <dberkholz@gentoo.org>; -mafft-5.861.ebuild,
+  +mafft-5.861-r1.ebuild:
+  (#154545) Install to correct locations and set PREFIX so it finds the
+  binaries automatically.
+
+*mafft-5.861 (21 Oct 2006)
+
+  21 Oct 2006; Donnie Berkholz <dberkholz@gentoo.org>; +metadata.xml,
+  +mafft-5.861.ebuild:
+  New package: Multiple sequence alignments using a variety of algorithms.
+

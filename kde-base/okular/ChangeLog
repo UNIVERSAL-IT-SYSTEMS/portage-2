@@ -1,0 +1,228 @@
+# ChangeLog for kde-base/okular
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-base/okular/ChangeLog,v 1.53 2009/12/01 11:27:58 wired Exp $
+
+*okular-4.3.4 (01 Dec 2009)
+
+  01 Dec 2009; Alex Alexander <wired@gentoo.org> +okular-4.3.4.ebuild:
+  Version bump
+
+  30 Nov 2009; Joseph Jezak <josejx@gentoo.org> okular-4.3.3.ebuild:
+  Marked ppc/ppc64 stable for bug #292455.
+
+  29 Nov 2009; Raúl Porcel <armin76@gentoo.org> okular-4.3.3.ebuild:
+  Add ~sparc
+
+  29 Nov 2009; Samuli Suominen <ssuominen@gentoo.org> okular-4.3.3.ebuild:
+  amd64 stable wrt #292455
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org> -okular-4.3.2.ebuild:
+  Drop KDE 4.3.2
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org> -okular-4.2.4.ebuild:
+  Drop KDE 4.2.4
+
+*okular-4.3.3 (02 Nov 2009)
+
+  02 Nov 2009; Alex Alexander <wired@gentoo.org> +okular-4.3.3.ebuild:
+  Version bump
+
+  22 Oct 2009; Alex Alexander <wired@gentoo.org> okular-4.3.1.ebuild,
+  okular-4.3.2.ebuild:
+  fixed poppler dependency
+
+  21 Oct 2009; Tomáš Chvátal <scarabeus@gentoo.org> okular-4.3.1.ebuild,
+  okular-4.3.2.ebuild:
+  Fix missing lcms useflag require on poppler with pdf. Bug #284783.
+
+  18 Oct 2009; Markus Meier <maekke@gentoo.org> okular-4.3.1.ebuild:
+  x86 stable, bug #287697
+
+  10 Oct 2009; Samuli Suominen <ssuominen@gentoo.org> okular-4.3.1.ebuild:
+  amd64 stable wrt #287697
+
+  08 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org> -okular-4.3.0.ebuild:
+  Drop KDE 4.3.0
+
+*okular-4.3.2 (06 Oct 2009)
+
+  06 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org> +okular-4.3.2.ebuild:
+  Version bump
+
+  09 Sep 2009; Jonathan Callen <abcd@gentoo.org> okular-4.3.0.ebuild,
+  okular-4.3.1.ebuild:
+  Revert change of dep for djvu to djview4, app-text/djvu was correct. This
+  fixes bug #276353.
+
+*okular-4.3.1 (01 Sep 2009)
+
+  01 Sep 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +okular-4.3.1.ebuild:
+  Version bump
+
+*okular-4.3.0 (04 Aug 2009)
+
+  04 Aug 2009; Alex Alexander <wired@gentoo.org> +okular-4.3.0.ebuild:
+  Version bump
+
+  14 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -files/kdegraphics-4.0.2-system-libspectre.patch:
+  Clean unneeded patches
+
+  14 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> -okular-4.2.3.ebuild:
+  Drop KDE 4.2.3
+
+  05 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> ChangeLog:
+  Fix accidently added keywords
+
+*okular-4.2.4 (04 Jun 2009)
+
+  04 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> +okular-4.2.4.ebuild:
+  Version bump
+
+  03 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> -okular-4.2.2.ebuild:
+  Drop KDE 4.2.2
+
+*okular-4.2.3 (07 May 2009)
+
+  07 May 2009; Tomas Chvatal <scarabeus@gentoo.org> +okular-4.2.3.ebuild:
+  Version bump
+
+  17 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org> -okular-4.2.1.ebuild,
+  okular-4.2.2:
+  Restore ~hppa keywords
+
+  16 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org> -okular-4.2.1.ebuild:
+  Drop KDE 4.2.1
+
+*okular-4.2.2 (11 Apr 2009)
+
+  11 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org> +okular-4.2.2.ebuild:
+  Add KDE 4.2.2
+
+  11 Apr 2009; Raúl Porcel <armin76@gentoo.org> okular-4.2.1.ebuild:
+  Add ~alpha/~ia64 wrt #260777
+
+  30 Mar 2009; Peter Alfredsen <loki_val@gentoo.org> okular-4.2.1.ebuild:
+  Update dependencies w.r.t. bug 264230, fully-split-out poppler transition.
+
+  08 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org> -okular-4.2.0.ebuild,
+  -okular-4.2.0-r1.ebuild:
+  Drop KDE 4.2.0
+
+  08 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org> -okular-4.2.0.ebuild,
+  -okular-4.2.0-r1.ebuild:
+  Drop KDE 4.2.0
+
+  08 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org> okular-4.2.1.ebuild:
+  Semi-automatic merge, Update deps.
+
+*okular-4.2.1 (04 Mar 2009)
+
+  04 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org> +okular-4.2.1.ebuild:
+  Bump KDE 4.2.1
+
+*okular-4.2.0-r1 (19 Feb 2009)
+
+  19 Feb 2009; Tomas Chvatal <scarabeus@gentoo.org> +okular-4.2.0-r1.ebuild:
+  Enable some stuff by default (+useflag). Per bug #258077.
+
+  17 Feb 2009; Alexey Shvetsov <alexxy@gentoo.org> -okular-4.1.4.ebuild:
+  Drop KDE 4.1.4
+
+  01 Feb 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  okular-4.2.0.ebuild:
+  Restored ~ppc and ~ppc64 keywords to KDE-4.2.0
+
+*okular-4.2.0 (27 Jan 2009)
+
+  27 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> +okular-4.2.0.ebuild:
+  Bump KDE-4.2.0
+
+  14 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> -okular-4.1.2.ebuild,
+  -okular-4.1.3.ebuild:
+  Drop KDE 4.1.2 and 4.1.3
+
+*okular-4.1.4 (13 Jan 2009)
+
+  13 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> +okular-4.1.4.ebuild:
+  Bump to 4.1.4
+
+  15 Nov 2008; Mike Frysinger <vapier@gentoo.org> okular-4.1.3.ebuild:
+  Add ppc/ppc64 love #244306.
+
+*okular-4.1.3 (08 Nov 2008)
+
+  08 Nov 2008; Tomas Chvatal <scarabeus@gentoo.org> +okular-4.1.3.ebuild:
+  Version bump.
+
+  21 Oct 2008; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  -okular-4.0.4.ebuild, -okular-4.0.5.ebuild:
+  Removing KDE-4.0.X packages now that 4.1.2 was put in the tree.
+
+  02 Oct 2008; Tobias Heinlein <keytoaster@gentoo.org> Manifest:
+  Fixing Manifests for the new kdegraphics tarballs which was changed
+  last-minute.
+
+*okular-4.1.2 (02 Oct 2008)
+
+  02 Oct 2008; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  metadata.xml, +okular-4.1.2.ebuild:
+  Add kde-4.1.2 into the tree from the kde-testing overlay.
+
+  09 Jun 2008; Tobias Heinlein <keytoaster@gentoo.org> -okular-4.0.2.ebuild,
+  -okular-4.0.3.ebuild:
+  Removed old versions.
+
+*okular-4.0.5 (05 Jun 2008)
+
+  05 Jun 2008; Tobias Heinlein <keytoaster@gentoo.org> +okular-4.0.5.ebuild:
+  Added the KDE 4.0.5 version of okular.
+
+  30 May 2008; Bo Ørsted Andresen <zlin@gentoo.org> okular-4.0.4.ebuild:
+  KDE4_BUILT_WITH_USE_CHECK is now always an array. Bug #216863.
+
+*okular-4.0.4 (15 May 2008)
+
+  15 May 2008; Ingmar Vanhassel <ingmar@gentoo.org> +okular-4.0.4.ebuild:
+  Added KDE 4.0.4 version of okular. Thanks to Jorge Manuel B. S. Vicetto.
+
+  13 May 2008; Peter Volkov <pva@gentoo.org> okular-4.0.2.ebuild,
+  okular-4.0.3.ebuild:
+  Moving app-doc/chmlib -> dev-libs/chmlib, bug #220741.
+
+*okular-4.0.3 (03 Apr 2008)
+
+  03 Apr 2008; Wulf C. Krueger <philantrop@gentoo.org> +okular-4.0.3.ebuild:
+  Version bump to KDE 4.0.3. This is still not intended for mainstream so DO
+  NOT KEYWORD IT without talking to the KDE herd first.
+
+  22 Mar 2008; Ingmar Vanhassel <ingmar@gentoo.org>
+  +files/kdegraphics-4.0.2-system-libspectre.patch, okular-4.0.2.ebuild:
+  Add missing patch.
+
+  20 Mar 2008; Ingmar Vanhassel <ingmar@gentoo.org>
+  -files/kdegraphics-4.0.1-system-libspectre.patch, -okular-4.0.1.ebuild:
+  Old.
+
+  20 Mar 2008; Ingmar Vanhassel <ingmar@gentoo.org>
+  -files/kdegraphics-4.0.1-system-libspectre.patch, -okular-4.0.1.ebuild:
+  Old.
+
+*okular-4.0.2 (10 Mar 2008)
+
+  10 Mar 2008; Wulf C. Krueger <philantrop@gentoo.org> +okular-4.0.2.ebuild:
+  Version bump to KDE 4.0.2
+
+  23 Feb 2008; Ingmar Vanhassel <ingmar@gentoo.org> okular-4.0.1.ebuild:
+  Remove traces of monolithic KDE 4.
+
+  16 Feb 2008; Ingmar Vanhassel <ingmar@gentoo.org> -okular-4.0.0.ebuild:
+  Spring cleaning
+
+*okular-4.0.0 (18 Jan 2008)
+
+  18 Jan 2008; Ingmar Vanhassel <ingmar@gentoo.org> +metadata.xml,
+  +okular-4.0.0.ebuild:
+  Added KDE 4.0.0's okular.
+

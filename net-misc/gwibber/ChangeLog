@@ -1,0 +1,36 @@
+# ChangeLog for net-misc/gwibber
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/gwibber/ChangeLog,v 1.5 2009/10/07 14:56:19 volkmar Exp $
+
+  07 Oct 2009; Mounir Lamouri <volkmar@gentoo.org>
+  gwibber-1.2.0_pre340.ebuild:
+  Keywording for ppc
+
+  27 Jul 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  gwibber-1.2.0_pre340.ebuild:
+  All the python extensions are needed at runtime too.
+
+*gwibber-1.2.0_pre340 (13 Jul 2009)
+
+  13 Jul 2009; Jesus Rivero <neurogeek@gentoo.org>
+  +files/gwibber-prefix.patch, +gwibber-1.2.0_pre340.ebuild:
+  Version bump
+
+  20 May 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  gwibber-0.7.ebuild:
+  Fix dependencies (bug #255975).
+
+  14 Mar 2009; Jesus Rivero <neurogeek@gentoo.org> +metadata.xml,
+  +gwibber-0.7.ebuild:
+  Package move from dev-python/gwibber to net-misc.
+
+  15 Dec 2008; Jesus Rivero <neurogeek@gentoo.org> gwibber-0.7.ebuild:
+  Added missing rdep
+
+*gwibber-0.7 (07 Dec 2008)
+
+  07 Dec 2008; Jesus Rivero <neurogeek@gentoo.org> +metadata.xml,
+  +gwibber-0.7.ebuild:
+  Initial commit. Proxy mantained by me for Sergio Rodriguez
+  <srinclan@gmail.com>
+

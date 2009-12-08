@@ -1,0 +1,35 @@
+# ChangeLog for dev-python/libgda-python
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/libgda-python/ChangeLog,v 1.8 2009/03/23 05:07:43 jer Exp $
+
+  23 Mar 2009; Jeroen Roovers <jer@gentoo.org> libgda-python-2.19.1.ebuild:
+  Stable for HPPA (bug #258040).
+
+  17 Mar 2009; Raúl Porcel <armin76@gentoo.org>
+  libgda-python-2.19.1.ebuild:
+  ia64/sparc stable wrt #258040
+
+  08 Mar 2009; Markus Meier <maekke@gentoo.org> libgda-python-2.19.1.ebuild:
+  amd64/x86 stable, bug #258040
+
+  05 Mar 2009; Brent Baude <ranger@gentoo.org> libgda-python-2.19.1.ebuild:
+  Marking libgda-python-2.19.1 ppc stable for bug 258040
+
+  03 Mar 2009; Brent Baude <ranger@gentoo.org> libgda-python-2.19.1.ebuild:
+  Marking libgda-python-2.19.1 ppc64 stable for bug 258040
+
+  14 Feb 2009; Tobias Klausmann <klausman@gentoo.org>
+  libgda-python-2.19.1.ebuild:
+  Stable on alpha, bug #258040
+
+  06 Jan 2009; Jesus Rivero <neurogeek@gentoo.org>
+  libgda-python-2.19.1.ebuild:
+  Updated DESCRIPTION var
+
+*libgda-python-2.19.1 (16 Oct 2008)
+
+  16 Oct 2008; Gilles Dartiguelongue <eva@gentoo.org> +metadata.xml,
+  +libgda-python-2.19.1.ebuild:
+  Initial import of gnome-python-extras split ebuilds. This package installs
+  bindings for the libgda-3 library.
+

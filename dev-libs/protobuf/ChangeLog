@@ -1,0 +1,61 @@
+# ChangeLog for dev-libs/protobuf
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/protobuf/ChangeLog,v 1.10 2009/11/28 10:41:39 nelchael Exp $
+
+  28 Nov 2009; Krzysiek Pawlik <nelchael@gentoo.org> protobuf-2.2.0a.ebuild:
+  Use correct versions of patches.
+
+*protobuf-2.2.0a (26 Nov 2009)
+
+  26 Nov 2009; Krzysiek Pawlik <nelchael@gentoo.org>
+  +protobuf-2.2.0a.ebuild:
+  Version bump.
+
+*protobuf-2.2.0 (21 Aug 2009)
+
+  21 Aug 2009; Krzysiek Pawlik <nelchael@gentoo.org> -protobuf-2.0.3.ebuild,
+  +protobuf-2.2.0.ebuild,
+  +files/protobuf-2.2.0-decoder_test_64bit_fix.patch,
+  +files/protobuf-2.2.0-fix-emacs-byte-compile.patch:
+  Version bump.
+
+  24 May 2009; Krzysiek Pawlik <nelchael@gentoo.org>
+  +files/70protobuf-gentoo.el, protobuf-2.1.0.ebuild,
+  +files/protobuf-2.1.0-fix-emacs-byte-compile.patch:
+  Add emacs USE flag, see bug #271007.
+
+  18 May 2009; Krzysiek Pawlik <nelchael@gentoo.org>
+  -protobuf-2.0.0_beta.ebuild, -protobuf-2.0.1.ebuild,
+  -files/protobuf-2.0.1-python-unittest.patch, protobuf-2.1.0.ebuild,
+  metadata.xml:
+  Add myself as maintainer, remove old versions, improve 2.1.0.
+
+*protobuf-2.1.0 (18 May 2009)
+
+  18 May 2009; Michał Januszewski <spock@gentoo.org>
+  protobuf-2.0.0_beta.ebuild, protobuf-2.0.1.ebuild, protobuf-2.0.3.ebuild,
+  +protobuf-2.1.0.ebuild:
+  Version bump. Add setuptools as dependency (bug #270207).
+
+*protobuf-2.0.3 (06 Dec 2008)
+
+  06 Dec 2008; Michał Januszewski <spock@gentoo.org>
+  +files/protobuf-2.0.3-decoder_test_64bit_fix.patch,
+  +protobuf-2.0.3.ebuild:
+  Version bump.
+
+  30 Oct 2008; Michał Januszewski <spock@gentoo.org> protobuf-2.0.1.ebuild:
+  Install the vim syntax file into vimfiles/syntax instead of vimfiles.
+
+*protobuf-2.0.1 (11 Sep 2008)
+
+  11 Sep 2008; Michał Januszewski <spock@gentoo.org>
+  +files/protobuf-2.0.1-python-unittest.patch, +protobuf-2.0.1.ebuild:
+  Version bump.
+
+*protobuf-2.0.0_beta (17 Jul 2008)
+
+  17 Jul 2008; Michał Januszewski <spock@gentoo.org> +metadata.xml,
+  +protobuf-2.0.0_beta.ebuild:
+  Initial commit (bug #231297).
+

@@ -1,0 +1,28 @@
+# ChangeLog for app-misc/gourmet
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/gourmet/ChangeLog,v 1.4 2009/11/24 13:34:21 nixphoeni Exp $
+
+  24 Nov 2009; Joe Sapp <nixphoeni@gentoo.org> gourmet-0.13.8.ebuild:
+  Fixed RDEPEND to try to address bug #288887. Also fixed DOCS based on
+  things I learned about distutils.
+
+*gourmet-0.15.0 (17 Oct 2009)
+
+  17 Oct 2009; Joe Sapp <nixphoeni@gentoo.org> gourmet-0.13.8.ebuild,
+  +gourmet-0.15.0.ebuild,
+  +files/gourmet-0.15.0-empty_dictionary_insert.patch, metadata.xml:
+  Version bump (bug #289056); added upstream info to metadata.xml
+
+  26 Jun 2009; Joe Sapp <nixphoeni@gentoo.org> -gourmet-0.13.4.ebuild,
+  +gourmet-0.13.8.ebuild, +files/gourmet-python-2.6-threading.patch,
+  metadata.xml:
+  Bumped to 0.13.8 (thanks eva) - bug #270944. Added patch to make threading
+  (and thus exporting) work with python 2.6.
+  Removed 0.13.4 and changed USE flag 'print' to 'gnome-print' to better
+  match other USE flags in existence.
+
+*gourmet-0.13.4 (15 Aug 2008)
+
+  15 Aug 2008; Joe Sapp <nixphoeni@gentoo.org> +gourmet-0.13.4.ebuild:
+  Initial commit - thanks to all who contributed to bug #73103
+

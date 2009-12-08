@@ -1,0 +1,28 @@
+# ChangeLog for dev-libs/libindicate
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libindicate/ChangeLog,v 1.4 2009/11/23 22:34:22 mrpouet Exp $
+
+  23 Nov 2009; Romain Perier <mrpouet@gentoo.org>
+  libindicate-0.2.3.ebuild,
+  files/libindicate-0.2.3-optional-gtk-support.patch:
+  Fix bug #294279, skip test programs installed in /usr/libexec and respect
+  $PF for examples code, many thanks to Flameeyes.
+
+  30 Oct 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  libindicate-0.2.3.ebuild,
+  files/libindicate-0.2.3-optional-gtk-support.patch:
+  Update the gtk patch to exclude docs too.
+
+  29 Oct 2009; Romain Perier <mrpouet@gentoo.org>
+  libindicate-0.2.3.ebuild,
+  files/libindicate-0.2.3-optional-gtk-support.patch:
+  Fix some QA : do not ever use ../something/something.la, it is prone to
+  breakage (parallel build). Add a missing die to dodoc. Thanks to EvaSDK.
+
+*libindicate-0.2.3 (29 Oct 2009)
+
+  29 Oct 2009; Romain Perier <mrpouet@gentoo.org>
+  +libindicate-0.2.3.ebuild,
+  +files/libindicate-0.2.3-optional-gtk-support.patch, +metadata.xml:
+  New package, necessary for libindicate-qt (kde team).
+

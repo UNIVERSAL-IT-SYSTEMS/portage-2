@@ -1,0 +1,82 @@
+# ChangeLog for dev-perl/mogilefs-server
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/mogilefs-server/ChangeLog,v 1.12 2009/11/29 01:01:09 robbat2 Exp $
+
+*mogilefs-server-2.33-r1 (29 Nov 2009)
+
+  29 Nov 2009; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.33-r1.ebuild:
+  Clean up the install warnings.
+
+  28 Nov 2009; Robin H. Johnson <robbat2@gentoo.org>
+  mogilefs-server-2.33.ebuild:
+  As of 2.33 Gearman is not needed anymore.
+
+*mogilefs-server-2.33 (26 Nov 2009)
+
+  26 Nov 2009; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.33.ebuild:
+  Version bump via perl-bump experimental tool.
+
+  04 Nov 2009; Robin H. Johnson <robbat2@gentoo.org>
+  files/mogilefsd-init.d-2.16, -files/mogilefsd.conf-2.16,
+  -files/mogstored-conf.d-2.16, -files/mogstored-init.d-2.16,
+  -files/mogilefs-server-2.16-Use-saner-name-in-process-listing.patch,
+  -mogilefs-server-2.20.ebuild, files/mogstored-init.d-2.30:
+  Cleanup and also ensure that mogilefsd only starts after postgres in case
+  that is the backend in use.
+
+*mogilefs-server-2.32 (04 Nov 2009)
+
+  04 Nov 2009; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.32.ebuild:
+  Version bump, now with official Postgres support.
+
+*mogilefs-server-2.30 (23 Feb 2009)
+
+  23 Feb 2009; Robin H. Johnson <robbat2@gentoo.org>
+  +files/mogilefsd.conf-2.30, +files/mogstored-conf.d-2.30,
+  +files/mogstored-init.d-2.30,
+  +files/mogilefs-server-2.30-pidfile-etc.patch,
+  +mogilefs-server-2.30.ebuild:
+  Version bump. mogstored now includes pidfile support.
+
+  30 Dec 2008; Torsten Veller <tove@gentoo.org>
+  -mogilefs-server-2.10.ebuild, -mogilefs-server-2.15.ebuild,
+  -mogilefs-server-2.16.ebuild, -mogilefs-server-2.17.ebuild:
+  Cleanup
+
+*mogilefs-server-2.20 (30 Sep 2008)
+
+  30 Sep 2008; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.20.ebuild:
+  Version bump.
+
+*mogilefs-server-2.17 (27 Oct 2007)
+
+  27 Oct 2007; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.17.ebuild:
+  Version bump.
+
+*mogilefs-server-2.16 (16 May 2007)
+
+  16 May 2007; Robin H. Johnson <robbat2@gentoo.org>
+  +files/mogilefsd-conf.d-2.16, +files/mogilefsd-init.d-2.16,
+  +files/mogilefsd.conf-2.16, +files/mogstored-conf.d-2.16,
+  +files/mogstored-init.d-2.16, +files/mogstored.conf-2.16,
+  +files/mogilefs-server-2.16-Use-saner-name-in-process-listing.patch,
+  +mogilefs-server-2.16.ebuild:
+  Version bump, now includes init scripts and all the other nice bits.
+
+*mogilefs-server-2.15 (09 May 2007)
+
+  09 May 2007; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.15.ebuild:
+  Version bump.
+
+*mogilefs-server-2.10 (30 Apr 2007)
+
+  30 Apr 2007; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +mogilefs-server-2.10.ebuild:
+  Initial commit, ebuild by Robin H. Johnson <robbat2@gentoo.org>.
+

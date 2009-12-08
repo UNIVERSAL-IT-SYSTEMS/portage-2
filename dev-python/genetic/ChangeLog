@@ -1,0 +1,15 @@
+# ChangeLog for dev-python/genetic
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/genetic/ChangeLog,v 1.2 2009/02/15 22:20:59 patrick Exp $
+
+  15 Feb 2009; Patrick Lauer <patrick@gentoo.org> genetic-0.1.1.ebuild:
+  Adding ~amd64 keyword
+
+*genetic-0.1.1 (15 Jul 2006)
+
+  15 Jul 2006; Donnie Berkholz <dberkholz@gentoo.org>;
+  +files/0.1.1-import-future-at-beginning.patch, +metadata.xml,
+  +genetic-0.1.1.ebuild:
+  A package for genetic algorithms in Python, will be used by
+  sci-chemistry/pymss.
+

@@ -1,0 +1,38 @@
+# ChangeLog for sys-apps/devicekit-power
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/devicekit-power/ChangeLog,v 1.5 2009/11/16 21:57:32 eva Exp $
+
+*devicekit-power-012-r1 (16 Nov 2009)
+
+  16 Nov 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  devicekit-power-011.ebuild, devicekit-power-012.ebuild,
+  +devicekit-power-012-r1.ebuild,
+  +files/devicekit-power-012-hibernate-encrypted-swap.patch:
+  Fix encrypted swap detection, bug #292090. Use slotted virtual/libusb
+  dependency in all ebuilds.
+
+*devicekit-power-012 (01 Nov 2009)
+
+  01 Nov 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  +devicekit-power-012.ebuild:
+  Version bump. Disable static libs, review missing dtds in DEPEND, add
+  missing DOCS. Do not hibernate on encrypted swap and bugfixes.
+
+*devicekit-power-011 (29 Oct 2009)
+
+  29 Oct 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  +devicekit-power-011.ebuild, metadata.xml:
+  Initial ebuild for GNOME 2.28.
+
+  08 Sep 2009; Mike Auty <ikelos@gentoo.org> devicekit-power-009.ebuild:
+  Making CONFIG_CHECK non-fatal for userland ebuilds, see bug 283320.
+
+*devicekit-power-009 (08 Aug 2009)
+
+  08 Aug 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  +files/devicekit-power-007-maintainer-cflags.patch,
+  +devicekit-power-009.ebuild,
+  +files/devicekit-power-009-build-gcc-4.1.2.patch, +metadata.xml:
+  Initial ebuild presumably from nirbheek. Dependency of
+  gnome-power-manager-2.26.
+

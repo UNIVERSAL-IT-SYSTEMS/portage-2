@@ -1,0 +1,95 @@
+# ChangeLog for xfce-base/exo
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/exo/ChangeLog,v 1.21 2009/12/03 20:36:27 ranger Exp $
+
+  03 Dec 2009; Brent Baude <ranger@gentoo.org> exo-0.3.105-r1.ebuild:
+  Marking exo-0.3.105-r1 ppc64 stable for bug 289179
+
+  30 Nov 2009; Raúl Porcel <armin76@gentoo.org> exo-0.3.105-r1.ebuild:
+  alpha/ia64/sparc stable wrt #289179
+
+  09 Nov 2009; Markus Meier <maekke@gentoo.org> exo-0.3.105-r1.ebuild:
+  arm stable, bug #289179
+
+  24 Oct 2009; nixnut <nixnut@gentoo.org> exo-0.3.105-r1.ebuild:
+  ppc stable #289179
+
+*exo-0.5.1 (24 Oct 2009)
+
+  24 Oct 2009; Samuli Suominen <ssuominen@gentoo.org> +exo-0.5.1.ebuild:
+  Version bump.
+
+*exo-0.3.105-r1 (21 Oct 2009)
+
+  21 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  +exo-0.3.105-r1.ebuild, +files/exo-0.3.105-sync.patch:
+  Revision bump for upstream patch: Avoid sync mount option with USB storage
+  wrt #289972.
+
+  20 Oct 2009; Christian Faulhammer <fauli@gentoo.org> exo-0.3.105.ebuild:
+  stable x86, bug 289179
+
+*exo-0.3.105 (19 Oct 2009)
+
+  19 Oct 2009; Jeremy Olexa <darkside@gentoo.org> +exo-0.3.105.ebuild:
+  Version bump for small bug fixes, including reading mount options from an
+  rc file
+
+  17 Oct 2009; Richard Freeman <rich0@gentoo.org> exo-0.3.104.ebuild:
+  amd64 stable - 289179
+
+*exo-0.3.104 (12 Oct 2009)
+
+  12 Oct 2009; Jeremy Olexa <darkside@gentoo.org> -exo-0.3.103-r1.ebuild,
+  +exo-0.3.104.ebuild:
+  Version bump, minor fixes include eject patch from upstream and typo fixes
+
+*exo-0.3.103-r1 (09 Oct 2009)
+
+  09 Oct 2009; Jeremy Olexa <darkside@gentoo.org> -exo-0.3.103.ebuild,
+  +exo-0.3.103-r1.ebuild, +files/exo-eject-upstream_patch.patch:
+  Add upstream patch for ejecting.
+
+*exo-0.3.103 (09 Oct 2009)
+
+  09 Oct 2009; Jeremy Olexa <darkside@gentoo.org>
+  files/exo-0.3.102-eject.patch, +exo-0.3.103.ebuild:
+  Version bump for bug fixes. http://releases.xfce.org/feeds/project/exo -
+  Dropped eject patch because it doesn't apply, complain to upstream:
+  http://bugzilla.xfce.org/show_bug.cgi?id=2968
+
+  06 Oct 2009; Samuli Suominen <ssuominen@gentoo.org> exo-0.3.102-r1.ebuild:
+  Don't build static libs. Remove USE doc because documentation has been
+  prebuilt.
+
+  05 Oct 2009; Jeremy Olexa <darkside@gentoo.org>
+  +files/exo-0.3.4-interix.patch, exo-0.3.102-r1.ebuild:
+  Port Gentoo Prefix ebuild to gentoo-x86
+
+  07 Sep 2009; Brent Baude <ranger@gentoo.org> exo-0.3.102-r1.ebuild:
+  Marking exo-0.3.102-r1 ppc64 for bug 282710
+
+  30 Aug 2009; nixnut <nixnut@gentoo.org> exo-0.3.102-r1.ebuild:
+  ppc stable #282710
+
+  29 Aug 2009; Raúl Porcel <armin76@gentoo.org> exo-0.3.102-r1.ebuild:
+  alpha/arm/ia64/sparc stable wrt #282710
+
+  26 Aug 2009; Jeroen Roovers <jer@gentoo.org> exo-0.3.102-r1.ebuild:
+  Stable for HPPA (bug #282710).
+
+  26 Aug 2009; Christian Faulhammer <fauli@gentoo.org>
+  exo-0.3.102-r1.ebuild:
+  stable x86, bug 282710
+
+  26 Aug 2009; Jeremy Olexa <darkside@gentoo.org> exo-0.3.102-r1.ebuild:
+  amd64 stable, bug 282710
+
+*exo-0.3.102-r1 (23 Aug 2009)
+*exo-0.3.101-r1 (23 Aug 2009)
+
+  23 Aug 2009; Samuli Suominen <ssuominen@gentoo.org>
+  +exo-0.3.101-r1.ebuild, +files/exo-0.3.101-iocharset.patch,
+  +exo-0.3.102-r1.ebuild, +files/exo-0.3.102-eject.patch:
+  Move from xfce-extra category.
+

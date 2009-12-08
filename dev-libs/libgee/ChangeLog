@@ -1,0 +1,37 @@
+# ChangeLog for dev-libs/libgee
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgee/ChangeLog,v 1.6 2009/12/07 17:40:03 ford_prefect Exp $
+
+  07 Dec 2009; Arun Raghavan <ford_prefect@gentoo.org> -libgee-0.1.6.ebuild,
+  -libgee-0.2.0.ebuild:
+  Clean out old versions
+
+*libgee-0.5.0 (07 Dec 2009)
+
+  07 Dec 2009; Arun Raghavan <ford_prefect@gentoo.org> +libgee-0.5.0.ebuild:
+  Bump to 0.5.0
+
+*libgee-0.3.0 (31 Aug 2009)
+
+  31 Aug 2009; Gilles Dartiguelongue <eva@gentoo.org> +libgee-0.3.0.ebuild:
+  Version bump.
+
+*libgee-0.2.0 (02 Aug 2009)
+
+  02 Aug 2009; Gilles Dartiguelongue <eva@gentoo.org> -libgee-0.1.5.ebuild,
+  +libgee-0.2.0.ebuild:
+  Version bump. Generate GIR file.
+
+*libgee-0.1.6 (23 Jul 2009)
+
+  23 Jul 2009; Gilles Dartiguelongue <eva@gentoo.org> +libgee-0.1.6.ebuild:
+  Version bump. Build fixes for vala 0.7.
+
+*libgee-0.1.5 (17 May 2009)
+
+  17 May 2009; Gilles Dartiguelongue <eva@gentoo.org> +libgee-0.1.5.ebuild,
+  +metadata.xml:
+  New ebuild written by yours truly, libgee is a collection library
+  providing GObject-based interfaces and classes for commonly used data
+  structures. Closes #269775.
+

@@ -1,0 +1,21 @@
+# ChangeLog for app-forensics/mac-robber
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-forensics/mac-robber/ChangeLog,v 1.5 2009/09/13 22:34:40 patrick Exp $
+
+  13 Sep 2009; Patrick Lauer <patrick@gentoo.org> mac-robber-1.00.ebuild:
+  Remove virtual/libc deps
+
+  08 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
+  Regenerate digest in Manifest2 format.
+
+  11 Aug 2005; Luis Medinas <metalgod@gentoo.org> mac-robber-1.00.ebuild:
+  Added ~amd64 keywords.
+
+  08 May 2005; Stephanie Lockwood-Childs <wormo@gentoo.org>
+  mac-robber-1.00.ebuild:
+  mark ~ppc
+
+  26 Jan 2005; Daniel Black <dragonheart@gentoo.org> 
+  +mac-robber-1.00.ebuild, +metadata.xml:
+  Initial import. Suggested by Michael Zanetta <mzanetta@telsys.ch>.
+

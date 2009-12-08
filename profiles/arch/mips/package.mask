@@ -1,0 +1,10 @@
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/mips/package.mask,v 1.6 2009/08/05 05:50:24 ssuominen Exp $
+
+# Unmask =mozilla-thunderbird-1.5* until 2.0 is keyworded and stabilized
+-=mail-client/mozilla-thunderbird-1.5*
+
+# Mask pam_ldap and nss_ldap - openldap dep missing.
+sys-auth/pam_ldap
+sys-auth/nss_ldap

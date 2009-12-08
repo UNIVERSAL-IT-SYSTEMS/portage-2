@@ -1,0 +1,35 @@
+# ChangeLog for x11-libs/xpyb
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/xpyb/ChangeLog,v 1.7 2009/09/29 11:25:17 remi Exp $
+
+  29 Sep 2009; Rémi Cardona <remi@gentoo.org> -xpyb-0.9.ebuild:
+  drop old ebuilds
+
+*xpyb-1.1 (29 Sep 2009)
+
+  29 Sep 2009; Rémi Cardona <remi@gentoo.org> +xpyb-1.1.ebuild:
+  bump to 1.1, sync with x11 overlay
+
+  04 May 2009; Samuli Suominen <ssuominen@gentoo.org> xpyb-0.9.ebuild,
+  xpyb-1.0.ebuild:
+  Move use_ functions out of global scope.
+
+*xpyb-1.0 (13 Jan 2009)
+
+  13 Jan 2009; Donnie Berkholz <dberkholz@gentoo.org>; +xpyb-1.0.ebuild:
+  Bump. Use correct conversion specifier for Py_ssize_t arguments. Fix
+  connect call when authorization info is not passed in.
+
+  30 Jul 2008; Donnie Berkholz <dberkholz@gentoo.org>; xpyb-0.9.ebuild:
+  Require xcb-proto 1.2 to make sure everything builds right. Even though it
+  seemed OK with 1.1, I'm not sure why.
+
+  30 Jul 2008; Donnie Berkholz <dberkholz@gentoo.org>; xpyb-0.9.ebuild:
+  Bugfix: USE=selinux didn't work as expected.
+
+*xpyb-0.9 (30 Jul 2008)
+
+  30 Jul 2008; Donnie Berkholz <dberkholz@gentoo.org>; +metadata.xml,
+  +xpyb-0.9.ebuild:
+  New package: XCB-based Python bindings for the X Window System.
+

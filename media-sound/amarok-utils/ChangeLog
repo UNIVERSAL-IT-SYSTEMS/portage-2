@@ -1,0 +1,50 @@
+# ChangeLog for media-sound/amarok-utils
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/amarok-utils/ChangeLog,v 1.9 2009/11/15 00:32:04 tampakrap Exp $
+
+  15 Nov 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  -amarok-utils-2.1.ebuild, -amarok-utils-2.1.1.ebuild:
+  Remove old 2.1 ebuilds
+
+*amarok-utils-2.2.1 (14 Nov 2009)
+
+  14 Nov 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +amarok-utils-2.2.1.ebuild:
+  Bumped amarok-utils to release 2.2.1.
+  This release like 2.2.0 segfauls on start if built with binutils-2.20
+  (bug 290662).
+
+  09 Nov 2009; Christian Faulhammer <fauli@gentoo.org>
+  amarok-utils-2.2.0.ebuild:
+  stable x86, bug 290483
+
+  26 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  amarok-utils-2.2.0.ebuild:
+  amd64 stable wrt #290483
+
+*amarok-utils-2.2.0 (02 Oct 2009)
+
+  02 Oct 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +amarok-utils-2.2.0.ebuild:
+  Bumped amarok-utils to version 2.2.0.
+
+*amarok-utils-2.1.1 (26 Jun 2009)
+
+  26 Jun 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +amarok-utils-2.1.1.ebuild:
+  Version bump, bug 275467
+
+  05 Jun 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  amarok-utils-2.1.ebuild:
+  Fix typo in description
+
+  04 Jun 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  amarok-utils-2.1.ebuild:
+  Small fix, slot is needed else it removes amarok-1.4
+
+*amarok-utils-2.1 (04 Jun 2009)
+
+  04 Jun 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +amarok-utils-2.1.ebuild, +metadata.xml:
+  Initial commit of amarok-utils-2.1
+

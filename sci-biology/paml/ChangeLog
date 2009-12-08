@@ -1,0 +1,45 @@
+# ChangeLog for sci-biology/paml
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/paml/ChangeLog,v 1.8 2009/11/13 17:12:58 weaver Exp $
+
+  13 Nov 2009; Andrey Kislyuk <weaver@gentoo.org> -paml-4.2b.ebuild,
+  -paml-4b.ebuild:
+  Drop old versions
+
+*paml-4.3a (13 Nov 2009)
+
+  13 Nov 2009; Andrey Kislyuk <weaver@gentoo.org> +paml-4.3a.ebuild:
+  Version bump
+
+*paml-4.2b-r1 (21 Jul 2009)
+
+  21 Jul 2009; Andrey Kislyuk <weaver@gentoo.org> +paml-4.2b-r1.ebuild:
+  Remove static linking, bug 273344
+
+*paml-4.2b (25 Apr 2009)
+
+  25 Apr 2009; Andrey Kislyuk <weaver@gentoo.org> +paml-4.2b.ebuild:
+  Version bump
+
+*paml-4.1 (07 Sep 2008)
+
+  07 Sep 2008; Markus Dittrich <markusle@gentoo.org> -paml-3.15.ebuild,
+  +paml-4.1.ebuild, -paml-4a.ebuild:
+  Version bump and removed old ebuilds.
+
+*paml-4b (20 Apr 2008)
+
+  20 Apr 2008; Markus Dittrich <markusle@gentoo.org> +paml-4b.ebuild:
+  Version bump (fixes bug #218232).
+
+*paml-4a (22 Nov 2007)
+
+  22 Nov 2007; Markus Dittrich <markusle@gentoo.org> +paml-4a.ebuild:
+  Version bump. See bug #191867.
+
+*paml-3.15 (21 Oct 2006)
+
+  21 Oct 2006; Donnie Berkholz <dberkholz@gentoo.org>; +metadata.xml,
+  +paml-3.15.ebuild:
+  New package: Phylogenetic Analysis by Maximum Likelihood.
+

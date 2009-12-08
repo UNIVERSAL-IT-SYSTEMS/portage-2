@@ -1,0 +1,50 @@
+# ChangeLog for dev-perl/Text-CSV
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Text-CSV/ChangeLog,v 1.24 2009/10/17 10:29:54 tove Exp $
+
+*Text-CSV-1.15 (17 Oct 2009)
+
+  17 Oct 2009; Torsten Veller <tove@gentoo.org> +Text-CSV-1.15.ebuild:
+  Version bump
+
+  12 Oct 2009; Torsten Veller <tove@gentoo.org> -Text-CSV-1.13.ebuild:
+  Cleanup
+
+*Text-CSV-1.14 (08 Oct 2009)
+
+  08 Oct 2009; Torsten Veller <tove@gentoo.org> +Text-CSV-1.14.ebuild:
+  Version bump
+
+  07 Sep 2009; Torsten Veller <tove@gentoo.org> -Text-CSV-1.12.ebuild:
+  Cleanup
+
+*Text-CSV-1.13 (02 Aug 2009)
+
+  02 Aug 2009; Torsten Veller <tove@gentoo.org> +Text-CSV-1.13.ebuild:
+  Version bump
+
+  03 Jun 2009; Torsten Veller <tove@gentoo.org> -Text-CSV-1.11.ebuild:
+  Cleanup
+
+*Text-CSV-1.12 (16 May 2009)
+
+  16 May 2009; Torsten Veller <tove@gentoo.org> +Text-CSV-1.12.ebuild:
+  Version bump
+
+  02 May 2009; Torsten Veller <tove@gentoo.org> -Text-CSV-1.10.ebuild:
+  Cleanup
+
+*Text-CSV-1.11 (21 Mar 2009)
+
+  21 Mar 2009; Torsten Veller <tove@gentoo.org> +Text-CSV-1.11.ebuild:
+  Version bump
+
+  17 Jan 2009; Robin H. Johnson <robbat2@gentoo.org> Text-CSV-1.10.ebuild:
+  Emerge on an empty system (without perl) failed due to lack of perl dep.
+
+*Text-CSV-1.10 (09 Dec 2008)
+
+  09 Dec 2008; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
+  +Text-CSV-1.10.ebuild:
+  Initial commit, dep for new dev-libs/OpenSRF-1.0.1
+

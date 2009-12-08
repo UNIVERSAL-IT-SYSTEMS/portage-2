@@ -1,0 +1,47 @@
+# ChangeLog for sci-astronomy/wcslib
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/wcslib/ChangeLog,v 1.8 2009/09/09 16:15:44 bicatali Exp $
+
+*wcslib-4.4.3 (09 Sep 2009)
+
+  09 Sep 2009; Sébastien Fabbro <bicatali@gentoo.org> +wcslib-4.4.3.ebuild:
+  Version bump
+
+*wcslib-4.4.2 (17 Aug 2009)
+
+  17 Aug 2009; Sébastien Fabbro <bicatali@gentoo.org> +wcslib-4.4.2.ebuild,
+  +files/wcslib-4.4.2-destdir.patch, +files/wcslib-4.4.2-flibs.patch:
+  Version bump, with documentation. New patch for respecting DESDIR
+
+  11 Aug 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  wcslib-4.3.3-r1.ebuild, +files/wcslib-4.3.3-tests.patch:
+  Cleaned an obsolete function, added a patch for test, and avoid
+  FORTIFY_SOURCE (but only fixes the C part, not the FORTRAN one)
+
+*wcslib-4.3.3-r1 (16 Jul 2009)
+
+  16 Jul 2009; Sébastien Fabbro <bicatali@gentoo.org> -wcslib-4.3.3.ebuild,
+  +wcslib-4.3.3-r1.ebuild, +files/wcslib-4.3.3-flibs.patch:
+  Fixed linking problem (bug #275804) and added a patch for tests
+
+*wcslib-4.3.3 (26 Jun 2009)
+
+  26 Jun 2009; Sébastien Fabbro <bicatali@gentoo.org> -wcslib-4.3.ebuild,
+  +wcslib-4.3.3.ebuild:
+  Version bump
+
+*wcslib-4.3-r1 (08 Dec 2008)
+
+  08 Dec 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  +wcslib-4.3-r1.ebuild:
+  Install a missing header and propagate LDFLAGS
+
+  05 Nov 2008; Sébastien Fabbro <bicatali@gentoo.org> wcslib-4.3.ebuild:
+  Added some die's
+
+*wcslib-4.3 (15 Jul 2008)
+
+  15 Jul 2008; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
+  +wcslib-4.3.ebuild:
+  Initial import
+

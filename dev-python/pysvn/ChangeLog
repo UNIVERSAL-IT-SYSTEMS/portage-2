@@ -1,0 +1,34 @@
+# ChangeLog for dev-python/pysvn
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pysvn/ChangeLog,v 1.6 2009/11/07 20:10:08 arfrever Exp $
+
+  07 Nov 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  pysvn-1.7.1.ebuild:
+  Fix building with USE="doc" or USE="examples" (bug #289806).
+
+*pysvn-1.7.1 (17 Oct 2009)
+
+  17 Oct 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  +pysvn-1.7.1.ebuild, +files/pysvn-1.7.1-skip_root_test.patch:
+  Version bump (bug #289376). Set SUPPORT_PYTHON_ABIS.
+
+  08 Oct 2009; Fabian Groffen <grobian@gentoo.org> pysvn-1.7.0.ebuild,
+  +files/pysvn-1.7.0-darwin-freebsd.patch:
+  Fix for and keyword ~x86-freebsd and ~ppc-macos, thanks Michael Yang for
+  the FreeBSD part of the patch, bug #287608
+
+  04 Sep 2009; Patrick Lauer <patrick@gentoo.org> -pysvn-1.6.3-r1.ebuild:
+  Remove old
+
+*pysvn-1.7.0 (21 Jun 2009)
+
+  21 Jun 2009; Patrick Lauer <patrick@gentoo.org> +pysvn-1.7.0.ebuild:
+  Bump to 1.7.0, fixes bug #274848
+
+*pysvn-1.6.3-r1 (01 Apr 2009)
+
+  01 Apr 2009; Patrick Lauer <patrick@gentoo.org>
+  +files/skip-root-test.patch, +metadata.xml, +pysvn-1.6.3-r1.ebuild:
+  Initial import, ebuild from sunrise overlay. Thanks to idl0r and all the
+  others who worked on this in the last 2 years.
+

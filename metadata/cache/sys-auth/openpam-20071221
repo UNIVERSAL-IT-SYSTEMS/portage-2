@@ -1,0 +1,22 @@
+sys-devel/make dev-lang/perl =sys-devel/automake-1.10* >=sys-devel/autoconf-2.61 sys-devel/libtool
+!virtual/pam
+0
+mirror://sourceforge/openpam/openpam-20071221.tar.gz
+
+http://www.openpam.org/
+BSD
+Open source PAM library.
+~sparc-fbsd ~x86-fbsd
+autotools eutils flag-o-matic libtool multilib portability toolchain-funcs
+debug vim-syntax
+
+sys-auth/pambase vim-syntax? ( app-vim/pam-syntax )
+virtual/pam
+
+
+compile install unpack
+
+
+
+
+

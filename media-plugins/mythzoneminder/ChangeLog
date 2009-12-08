@@ -1,0 +1,34 @@
+# ChangeLog for media-plugins/mythzoneminder
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/mythzoneminder/ChangeLog,v 1.6 2009/11/18 00:24:21 cardoe Exp $
+
+  18 Nov 2009; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
+  add MythTV herd
+
+*mythzoneminder-0.22_p22763 (08 Nov 2009)
+
+  08 Nov 2009; Doug Goldstein <cardoe@gentoo.org>
+  +mythzoneminder-0.22_p22763.ebuild:
+  add 0.22 final version
+
+  08 Nov 2009; Doug Goldstein <cardoe@gentoo.org>
+  mythzoneminder-0.21_p20671.ebuild:
+  move sed to src_prepapre
+
+  08 Nov 2009; Doug Goldstein <cardoe@gentoo.org>
+  -mythzoneminder-0.21_p17948.ebuild:
+  remove old version
+
+*mythzoneminder-0.21_p20671 (19 Jul 2009)
+
+  19 Jul 2009; Doug Goldstein <cardoe@gentoo.org>
+  mythzoneminder-0.21_p17948.ebuild, +mythzoneminder-0.21_p20671.ebuild:
+  new version bump. use new eclass bits.
+
+*mythzoneminder-0.21_p17948 (30 Jan 2009)
+
+  30 Jan 2009; Thomas Anderson <gentoofan23@gentoo.org> +metadata.xml,
+  +mythzoneminder-0.21_p17948.ebuild:
+  Initial import, ebuild by Thomas Anderson <gentoofan23@gentoo.org> for bug
+  #225131
+

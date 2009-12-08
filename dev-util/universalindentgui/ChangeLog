@@ -1,0 +1,35 @@
+# ChangeLog for dev-util/universalindentgui
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/universalindentgui/ChangeLog,v 1.6 2009/11/30 11:43:57 wired Exp $
+
+*universalindentgui-1.1.0-r2 (30 Nov 2009)
+
+  30 Nov 2009; Alex Alexander <wired@gentoo.org>
+  -universalindentgui-1.1.0-r1.ebuild, +universalindentgui-1.1.0-r2.ebuild:
+  fixed bug #295097
+
+  22 Oct 2009; Alex Alexander <wired@gentoo.org>
+  universalindentgui-1.1.0-r1.ebuild:
+  fixed qscintilla dependency, bug #290111, thanks to Thomas Beierlein
+
+  18 Jul 2009; Alex Alexander <wired@gentoo.org>
+  -universalindentgui-1.1.0.ebuild:
+  removed old ebuild
+
+*universalindentgui-1.1.0-r1 (18 Jul 2009)
+
+  18 Jul 2009; Alex Alexander <wired@gentoo.org>
+  +universalindentgui-1.1.0-r1.ebuild:
+  added desktop file / menu entry
+
+  18 Jul 2009; Alex Alexander <wired@gentoo.org>
+  universalindentgui-1.1.0.ebuild:
+  minor dep fix
+
+*universalindentgui-1.1.0 (18 Jul 2009)
+
+  18 Jul 2009; Alex Alexander <wired@gentoo.org>
+  +universalindentgui-1.1.0.ebuild, +metadata.xml:
+  ebuild for UniversalIndentGUI. Bug #215565. Thanks to Jiri Tyr, harry.tx
+  and Emil Wojak.
+

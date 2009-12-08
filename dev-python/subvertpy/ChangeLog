@@ -1,0 +1,31 @@
+# ChangeLog for dev-python/subvertpy
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/subvertpy/ChangeLog,v 1.5 2009/11/09 12:59:41 fauli Exp $
+
+  09 Nov 2009; Christian Faulhammer <fauli@gentoo.org>
+  -subvertpy-0.6.9.ebuild:
+  clean up
+
+*subvertpy-0.7.1 (09 Nov 2009)
+
+  09 Nov 2009; Christian Faulhammer <fauli@gentoo.org>
+  +subvertpy-0.7.1.ebuild:
+  version bump
+
+*subvertpy-0.7.0 (20 Oct 2009)
+
+  20 Oct 2009; Peter Volkov <pva@gentoo.org> +subvertpy-0.7.0.ebuild,
+  metadata.xml:
+  Version bump, thank jbergstroem for report. Moved maintenance to bazaar
+  herd.
+
+  06 Oct 2009; Peter Volkov <pva@gentoo.org> subvertpy-0.6.9.ebuild:
+  Test dependencies are not RDEPENDencies.
+
+*subvertpy-0.6.9 (06 Oct 2009)
+
+  06 Oct 2009; Peter Volkov <pva@gentoo.org> +subvertpy-0.6.9.ebuild,
+  +metadata.xml:
+  Initial import, ebuild initially from bazaar overlay. Fixes bug #270201,
+  thank Johan Bergström and Mark Lee.
+

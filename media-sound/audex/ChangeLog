@@ -1,0 +1,46 @@
+# ChangeLog for media-sound/audex
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audex/ChangeLog,v 1.7 2009/09/13 09:40:27 tgurr Exp $
+
+*audex-0.72_beta1 (13 Sep 2009)
+
+  13 Sep 2009; Timo Gurr <tgurr@gentoo.org> -audex-0.71_beta5.ebuild,
+  +audex-0.72_beta1.ebuild:
+  Version bump, remove old.
+
+*audex-0.71_beta5 (29 Jun 2009)
+
+  29 Jun 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  -audex-0.71_beta3.ebuild, +audex-0.71_beta5.ebuild:
+  Version bump. Per bug #275775.
+
+  24 Jun 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  audex-0.71_beta3.ebuild:
+  Fix wrong homepage. Per bug #275162.
+
+*audex-0.71_beta3 (17 Jun 2009)
+
+  17 Jun 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  -audex-0.71_beta2.ebuild, +audex-0.71_beta3.ebuild:
+  Version bump. Add KDE_LINGUAS. Per bug #274563.
+
+*audex-0.71_beta2 (20 May 2009)
+
+  20 May 2009; Timo Gurr <tgurr@gentoo.org> -audex-0.71_beta1.ebuild,
+  +audex-0.71_beta2.ebuild:
+  Version bump.
+
+*audex-0.71_beta1 (15 May 2009)
+
+  15 May 2009; Timo Gurr <tgurr@gentoo.org> -audex-0.70_beta1.ebuild,
+  +audex-0.71_beta1.ebuild:
+  Version bump. Various bugfixes, added translations and an optimized
+  MP4/M4A (AAC) preset, be sure to delete your profiles and create a new one
+  to make use of the improvements.
+
+*audex-0.70_beta1 (30 Apr 2009)
+
+  30 Apr 2009; Timo Gurr <tgurr@gentoo.org> +metadata.xml,
+  +audex-0.70_beta1.ebuild:
+  Initial ebuild.
+

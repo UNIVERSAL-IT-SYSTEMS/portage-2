@@ -1,0 +1,37 @@
+# ChangeLog for app-arch/xz-utils
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/xz-utils/ChangeLog,v 1.7 2009/12/06 00:02:10 vapier Exp $
+
+  06 Dec 2009; Mike Frysinger <vapier@gentoo.org>
+  xz-utils-4.999.9_beta.ebuild, xz-utils-9999.ebuild:
+  Fix up doc install #295834 by Diego E. Pettenò.
+
+  17 Oct 2009; Markus Meier <maekke@gentoo.org> metadata.xml:
+  remove static-libs description as it is global now
+
+  26 Sep 2009; Mike Frysinger <vapier@gentoo.org>
+  xz-utils-4.999.9_beta.ebuild, xz-utils-9999.ebuild, metadata.xml:
+  Add support for USE="nls static-libs threads" by Toffanin #286203 and
+  require libtool-2 #286068 by Nicolas Cornu.
+
+*xz-utils-4.999.9_beta (28 Aug 2009)
+
+  28 Aug 2009; Mike Frysinger <vapier@gentoo.org>
+  +xz-utils-4.999.9_beta.ebuild:
+  Version bump.
+
+*xz-utils-4.999.8_beta (05 Jul 2009)
+
+  05 Jul 2009; Mike Frysinger <vapier@gentoo.org>
+  +xz-utils-4.999.8_beta.ebuild:
+  Add ebuild for latest release #273732 by Sebastian Mingramm.
+
+  05 Jul 2009; Mike Frysinger <vapier@gentoo.org> xz-utils-9999.ebuild:
+  Pull in gettext/cvs when building autotools #272880 by David Watzke.
+
+*xz-utils-9999 (07 Feb 2009)
+
+  07 Feb 2009; Mike Frysinger <vapier@gentoo.org> +metadata.xml,
+  +xz-utils-9999.ebuild:
+  Initial ebuild by me.
+

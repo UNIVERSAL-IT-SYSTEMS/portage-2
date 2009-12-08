@@ -1,0 +1,45 @@
+# ChangeLog for app-emulation/lxc
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/lxc/ChangeLog,v 1.7 2009/12/08 07:45:34 swegener Exp $
+
+*lxc-0.6.4-r2 (08 Dec 2009)
+
+  08 Dec 2009; Sven Wegener <swegener@gentoo.org> +lxc-0.6.4-r2.ebuild,
+  +files/lxc-0.6.4-tty-malloc.patch:
+  Also include my tty malloc() fix, it prevents memory corruption.
+
+*lxc-0.6.4-r1 (07 Dec 2009)
+
+  07 Dec 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  -files/0.6.2-as-needed.patch, -lxc-0.6.3.ebuild, +lxc-0.6.4-r1.ebuild,
+  +files/lxc-0.6.4-fix-full-system.patch,
+  +files/lxc-0.6.4-lxc.network.pair.patch,
+  +files/lxc-0.6.4-move-rcfile.patch:
+  Backport fixes from upstream, including one to not break host systems if
+  lxc-start is launched in the old (pre-0.6.4) way. Thanks to Andrian Nord
+  in bug #296030.
+
+  25 Nov 2009; Diego E. Pettenò <flameeyes@gentoo.org> lxc-0.6.4.ebuild,
+  metadata.xml:
+  Enable doc USE flag by default and explicit in the description that it
+  enables the man pages as well.
+
+  24 Nov 2009; Diego E. Pettenò <flameeyes@gentoo.org> lxc-0.6.4.ebuild:
+  Remove autotools inherit and add the ~x86 KEYWORD.
+
+*lxc-0.6.4 (24 Nov 2009)
+
+  24 Nov 2009; Diego E. Pettenò <flameeyes@gentoo.org> +lxc-0.6.4.ebuild:
+  Version bump, improve checking of kernel features.
+
+  14 Nov 2009; Sven Wegener <swegener@gentoo.org> lxc-0.6.3.ebuild:
+  Add ~x86 keyword.
+
+*lxc-0.6.3 (24 Oct 2009)
+
+  24 Oct 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/0.6.2-as-needed.patch, +lxc-0.6.3.ebuild, +metadata.xml:
+  Initial import of lxc; based upon dev-zero's ebuild, modified by me. It
+  diverges a bit from upstream, in the path used, to stay more
+  Gentoo-styled. Init scripts will likely be added separately.
+

@@ -1,0 +1,67 @@
+# ChangeLog for dev-python/pyfits
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyfits/ChangeLog,v 1.14 2009/11/19 16:22:36 maekke Exp $
+
+  19 Nov 2009; Markus Meier <maekke@gentoo.org> pyfits-2.2.2.ebuild:
+  amd64/x86 stable, bug #293252
+
+*pyfits-2.2.2 (15 Oct 2009)
+
+  15 Oct 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  -pyfits-1.3.ebuild, -files/pyfits-1.3-test-table.patch,
+  -pyfits-2.2.ebuild, +pyfits-2.2.2.ebuild:
+  Version bump.
+
+  15 Oct 2009; Markus Meier <maekke@gentoo.org> pyfits-2.1.1.ebuild:
+  amd64/x86 stable, bug #288111
+
+  07 Oct 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  +pyfits-2.2.1.ebuild:
+  Version bump.
+
+*pyfits-2.2 (30 Sep 2009)
+
+  30 Sep 2009; Sébastien Fabbro <bicatali@gentoo.org> -pyfits-2.1.ebuild,
+  +pyfits-2.2.ebuild:
+  Version bump
+
+  08 Sep 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  pyfits-2.1.1.ebuild:
+  Set SUPPORT_PYTHON_ABIS.
+
+*pyfits-2.1.1 (07 Sep 2009)
+
+  07 Sep 2009; Patrick Lauer <patrick@gentoo.org> +pyfits-2.1.1.ebuild:
+  Bump
+
+*pyfits-2.1 (17 Apr 2009)
+
+  17 Apr 2009; Sébastien Fabbro <bicatali@gentoo.org> +pyfits-2.1.ebuild:
+  Bump
+
+  27 May 2008; Sébastien Fabbro <bicatali@gentoo.org> -pyfits-1.1.ebuild:
+  Removed older version, numarray dependent
+
+  23 May 2008; Markus Meier <maekke@gentoo.org> pyfits-1.3.ebuild:
+  amd64/x86 stable, bug #223257
+
+*pyfits-1.3 (26 Feb 2008)
+
+  26 Feb 2008; Sébastien Fabbro <bicatali@gentoo.org> -pyfits-1.0.1.ebuild,
+  pyfits-1.1.ebuild, +pyfits-1.3.ebuild:
+  Version bump
+
+*pyfits-1.1 (31 Jul 2007)
+
+  31 Jul 2007; Sébastien Fabbro <bicatali@gentoo.org> +pyfits-1.1.ebuild:
+  Version bump
+
+  07 Jun 2007; Joe Peterson <lavajoe@gentoo.org> pyfits-1.0.1.ebuild:
+  Add ~x86-fbsd keyword (bug #178370)
+
+*pyfits-1.0.1 (06 Feb 2007)
+
+  06 Feb 2007; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
+  +pyfits-1.0.1.ebuild:
+  Initial import. Close bug #65691.
+

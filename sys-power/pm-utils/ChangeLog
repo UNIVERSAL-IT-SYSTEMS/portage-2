@@ -1,0 +1,116 @@
+# ChangeLog for sys-power/pm-utils
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-power/pm-utils/ChangeLog,v 1.28 2009/11/30 06:36:23 josejx Exp $
+
+  30 Nov 2009; Joseph Jezak <josejx@gentoo.org> pm-utils-1.2.5.ebuild:
+  Marked ppc64 stable.
+
+  08 Nov 2009; Joseph Jezak <josejx@gentoo.org> pm-utils-1.2.5.ebuild:
+  Marked ~ppc64.
+
+  09 Aug 2009; nixnut <nixnut@gentoo.org> pm-utils-1.2.5.ebuild:
+  ppc stable #276217
+
+  11 Jul 2009; <chainsaw@gentoo.org> pm-utils-1.2.5.ebuild:
+  Marked stable on AMD64 for bug #276217; tested on a dual Opteron 2354.
+
+  08 Jul 2009; Christian Faulhammer <fauli@gentoo.org>
+  pm-utils-1.2.5.ebuild:
+  stable x86, bug 276217
+
+  12 May 2009; Nirbheek Chauhan <nirbheek@gentoo.org> pm-utils-1.2.5.ebuild:
+  Fix bug 269339 -- app-text/xmlto isn't compulsary (but still automagic)
+
+  26 Apr 2009; Brent Baude <ranger@gentoo.org> pm-utils-1.2.4.ebuild:
+  stable ppc, bug 266698
+
+  23 Apr 2009; Markus Meier <maekke@gentoo.org> pm-utils-1.2.4:
+  amd64/x86 stable, bug #266698
+
+*pm-utils-1.2.5 (20 Apr 2009)
+
+  20 Apr 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  +pm-utils-1.2.5.ebuild:
+  Bump to 1.2.5. Add support for KMS.
+
+  22 Mar 2009; Gilles Dartiguelongue <eva@gentoo.org> pm-utils-1.2.4.ebuild:
+  Remove -Werror from configure, bug #260943.
+
+  16 Feb 2009; <chainsaw@gentoo.org> pm-utils-1.2.3-r1.ebuild:
+  Stable on PowerPC for bug #259080, based on arch testing by Christian
+  Schmitt <chrschmitt@gmail.com>.
+
+*pm-utils-1.2.4 (15 Feb 2009)
+
+  15 Feb 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  +pm-utils-1.2.4.ebuild:
+  Bump to 1.2.4. Integrate service status patch and pkg-config fix.
+
+  15 Feb 2009; Markus Meier <maekke@gentoo.org> pm-utils-1.2.3-r1.ebuild:
+  amd64/x86 stable, bug #258482
+
+  18 Jan 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  +files/pm-utils-1.2.3-service-status.patch, pm-utils-1.2.3-r1.ebuild:
+  Fix service status detection, bug #255431.
+
+*pm-utils-1.2.3-r1 (18 Jan 2009)
+
+  18 Jan 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  -pm-utils-0.99.4.ebuild, +pm-utils-1.2.3-r1.ebuild:
+  Fix pkgconfig file, bug #254492. Fix generation of hook exception file,
+  bug #253835. Kill pm-utils-0.99.4, bug #240720.
+
+  15 Jan 2009; Peter Alfredsen <loki_val@gentoo.org> metadata.xml:
+  Compnerd retired.
+
+  15 Jan 2009; Markus Meier <maekke@gentoo.org> pm-utils-1.1.1.ebuild:
+  amd64/x86 stable, bug #252625
+
+  13 Jan 2009; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
+  gentopia is becoming freedesktop
+
+  09 Jan 2009; Joseph Jezak <josejx@gentoo.org> pm-utils-1.2.3.ebuild:
+  Marked ~ppc and added Christian Schmitt's change to prevent depending on x86
+  only apps. See bug #253868 for details.
+
+*pm-utils-1.2.3 (10 Dec 2008)
+
+  10 Dec 2008; Jeremy Olexa <darkside@gentoo.org> +pm-utils-1.2.3.ebuild:
+  (non maintainer commit) Version bump, bug 225443 with the removal of alsa
+  USE flag because upstream dropped support for it
+
+  23 Oct 2008; Rémi Cardona <remi@gentoo.org> pm-utils-1.1.1.ebuild,
+  pm-utils-1.1.2.1.ebuild:
+  pkgmove from xf86-video-i810 to xf86-video-intel
+
+  16 Aug 2008; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
+  add GLEP 56 USE flag desc from use.local.desc
+
+  28 Jul 2008; Raúl Porcel <armin76@gentoo.org> pm-utils-0.99.4.ebuild:
+  x86 stable wrt #222219
+
+  19 Jun 2008; Olivier Crête <tester@gentoo.org> pm-utils-0.99.4.ebuild:
+  amd64 stable, bug #222219
+
+*pm-utils-1.1.2.1 (29 May 2008)
+
+  29 May 2008; Saleem Abdulrasool <compnerd@gentoo.org>
+  +pm-utils-1.1.2.1.ebuild:
+  Version bump from upstream
+
+*pm-utils-1.1.1 (20 May 2008)
+
+  20 May 2008; Saleem Abdulrasool <compnerd@gentoo.org>
+  +pm-utils-1.1.1.ebuild:
+  Version bump from upstream
+
+  23 Nov 2007; Saleem Abdulrasool <compnerd@gentoo.org>
+  pm-utils-0.99.4.ebuild:
+  Add missing useflag
+
+*pm-utils-0.99.4 (23 Nov 2007)
+
+  23 Nov 2007; Saleem Abdulrasool <compnerd@gentoo.org> +metadata.xml,
+  +pm-utils-0.99.4.ebuild:
+  Initial commit of pm-utils for HAL 0.5.10
+

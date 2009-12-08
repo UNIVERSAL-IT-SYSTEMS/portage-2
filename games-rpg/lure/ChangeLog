@@ -1,0 +1,21 @@
+# ChangeLog for games-rpg/lure
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-rpg/lure/ChangeLog,v 1.4 2009/11/20 12:54:48 fauli Exp $
+
+  20 Nov 2009; Christian Faulhammer <fauli@gentoo.org> lure-1.1.ebuild:
+  stable x86, bug 285392
+
+  23 Oct 2009; Samuli Suominen <ssuominen@gentoo.org> lure-1.1.ebuild:
+  amd64 stable wrt #285392
+
+  12 Aug 2009; Michael Sterrett <mr_bones_@gentoo.org> lure-1.1.ebuild:
+  remove extra slash in SRC_URI - reported by Anton Romanov (bug #281171)
+
+*lure-1.1 (11 Aug 2009)
+
+  11 Aug 2009; Michael Sterrett <mr_bones_@gentoo.org> +lure-1.1.ebuild,
+  +metadata.xml:
+  initial commit - ebuild submitted by Andreas Thalhammer and Anton Romanov
+  in
+  bug #221991
+

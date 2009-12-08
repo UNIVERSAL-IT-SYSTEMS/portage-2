@@ -1,0 +1,18 @@
+# ChangeLog for x11-drivers/xf86-video-psb
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-psb/ChangeLog,v 1.2 2009/09/30 07:48:01 zmedico Exp $
+
+*xf86-video-psb-0.31.0_p14 (30 Sep 2009)
+
+  30 Sep 2009; Zac Medico <zmedico@gentoo.org>
+  +xf86-video-psb-0.31.0_p14.ebuild:
+  Bug #286753 - Version bump for compatibility with linux 2.6.31.
+
+*xf86-video-psb-0.31.0_p11 (13 Sep 2009)
+
+  13 Sep 2009; Patrick Lauer <patrick@gentoo.org>
+  +xf86-video-psb-0.31.0_p11.ebuild, +metadata.xml:
+  Initial import of the intel poulsbo graphics driver and support libs.
+  Fixes #274184. Thanks to Konrad Campowsky for the ebuilds and all the
+  people who tested them.
+

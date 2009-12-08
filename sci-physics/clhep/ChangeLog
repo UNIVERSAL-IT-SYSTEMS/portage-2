@@ -1,0 +1,57 @@
+# ChangeLog for sci-physics/clhep
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/clhep/ChangeLog,v 1.13 2009/12/07 18:16:11 jer Exp $
+
+  07 Dec 2009; Jeroen Roovers <jer@gentoo.org> clhep-2.0.4.3.ebuild:
+  Stable for HPPA (bug #294442).
+
+*clhep-2.0.4.3 (09 Sep 2009)
+
+  09 Sep 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  +clhep-2.0.4.3.ebuild:
+  Version bump
+
+  05 May 2009; Christian Faulhammer <fauli@gentoo.org> clhep-2.0.4.2.ebuild:
+  stable x86, bug 245875
+
+  17 Apr 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  -clhep-2.0.4.0.ebuild:
+  Removed old version
+
+  22 Mar 2009; Jeremy Olexa <darkside@gentoo.org> clhep-2.0.4.2.ebuild
+  amd64 stable, bug 245875
+
+  03 Mar 2009; Ferris McCormick <fmccor@gentoo.org> clhep-2.0.4.2.ebuild:
+  Sparc stable, part of Bug #245875.
+
+  06 Feb 2009; Brent Baude <ranger@gentoo.org> clhep-2.0.4.2.ebuild:
+  Marking clhep-2.0.4.2 ~ppc for bug 196282
+
+*clhep-2.0.4.2 (09 Dec 2008)
+
+  09 Dec 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  -files/clhep-2.0.3.3-gcc43.patch, -clhep-2.0.3.3.ebuild,
+  +clhep-2.0.4.2.ebuild:
+  Version bump
+
+*clhep-2.0.4.0 (22 Aug 2008)
+
+  22 Aug 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  +clhep-2.0.4.0.ebuild:
+  Version bump
+
+  06 Aug 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
+  Add USE flag description to metadata wrt GLEP 56.
+
+  15 Jul 2008; Ferris McCormick <fmccor@gentoo.org> clhep-2.0.3.3.ebuild:
+  Add ~sparc for testing, dependency required for Bug #230716.
+
+  06 Jul 2008; Jeroen Roovers <jer@gentoo.org> clhep-2.0.3.3.ebuild:
+  Marked ~hppa (bug #230716).
+
+*clhep-2.0.3.3 (06 Jun 2008)
+
+  06 Jun 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/clhep-2.0.3.3-gcc43.patch, +metadata.xml, +clhep-2.0.3.3.ebuild:
+  Initial import, closing bug #98233
+

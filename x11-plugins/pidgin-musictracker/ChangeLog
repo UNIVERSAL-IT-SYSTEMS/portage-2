@@ -1,0 +1,56 @@
+# ChangeLog for x11-plugins/pidgin-musictracker
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/pidgin-musictracker/ChangeLog,v 1.10 2009/07/08 21:11:54 maekke Exp $
+
+  08 Jul 2009; Markus Meier <maekke@gentoo.org>
+  pidgin-musictracker-0.4.18.ebuild:
+  amd64 stable, bug #275324
+
+  30 Jun 2009; Christian Faulhammer <fauli@gentoo.org>
+  pidgin-musictracker-0.4.18.ebuild:
+  stable x86, bug 275324
+
+*pidgin-musictracker-0.4.19 (24 Jun 2009)
+
+  24 Jun 2009; Serkan Kaba <serkan@gentoo.org>
+  -pidgin-musictracker-0.4.17.ebuild, +pidgin-musictracker-0.4.19.ebuild:
+  Version bump. Remove old.
+
+*pidgin-musictracker-0.4.18 (12 May 2009)
+
+  12 May 2009; Serkan Kaba <serkan@gentoo.org>
+  -pidgin-musictracker-0.4.16.ebuild, +pidgin-musictracker-0.4.18.ebuild:
+  Version bump. Remove old.
+
+*pidgin-musictracker-0.4.17 (14 Apr 2009)
+
+  14 Apr 2009; Serkan Kaba <serkan@gentoo.org>
+  +pidgin-musictracker-0.4.17.ebuild:
+  Version bump.
+
+  14 Apr 2009; Raúl Porcel <armin76@gentoo.org>
+  pidgin-musictracker-0.4.14.ebuild:
+  x86 stable wrt #263883
+
+  31 Mar 2009; Tiago Cunha <tcunha@gentoo.org>
+  pidgin-musictracker-0.4.14.ebuild:
+  stable amd64, bug 263883
+
+*pidgin-musictracker-0.4.16 (26 Mar 2009)
+
+  26 Mar 2009; Serkan Kaba <serkan@gentoo.org>
+  +pidgin-musictracker-0.4.16.ebuild:
+  Version bump wrt bug #263842. Thanks to Trustin Lee <trustin@gmail.com>
+  for reporting.
+
+  02 Mar 2009; Serkan Kaba <serkan@gentoo.org>
+  pidgin-musictracker-0.4.14.ebuild:
+  Filter out -Werror from compiler flags. Reported by Diego Pettenò
+  <flameeyes@gentoo.org> in bug #260953.
+
+*pidgin-musictracker-0.4.14 (10 Feb 2009)
+
+  10 Feb 2009; Serkan Kaba <serkan@gentoo.org> +metadata.xml,
+  +pidgin-musictracker-0.4.14.ebuild:
+  Initial import. Thanks to people in bug #180771 for help.
+

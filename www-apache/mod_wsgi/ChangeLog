@@ -1,0 +1,68 @@
+# ChangeLog for www-apache/mod_wsgi
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_wsgi/ChangeLog,v 1.14 2009/11/25 11:43:45 djc Exp $
+
+*mod_wsgi-2.8 (25 Nov 2009)
+
+  25 Nov 2009; Dirkjan Ochtman <djc@gentoo.org> +mod_wsgi-2.8.ebuild:
+  Bumping mod_wsgi to 2.8 (likely the last 2.x version).
+
+  21 Nov 2009; Dirkjan Ochtman <djc@gentoo.org> metadata.xml:
+  I'd like to help out with this.
+
+  07 Nov 2009; Mounir Lamouri <volkmar@gentoo.org> mod_wsgi-2.5.ebuild,
+  mod_wsgi-2.6.ebuild:
+  Keywording for ppc, bug 279109
+
+*mod_wsgi-2.6 (07 Nov 2009)
+
+  07 Nov 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  +mod_wsgi-2.6.ebuild:
+  Version bump (bug #292063).
+
+  19 Sep 2009; Markus Meier <maekke@gentoo.org> mod_wsgi-2.5.ebuild:
+  amd64/x86 stable, bug #285179
+
+  17 Sep 2009; Benedikt Böhm <hollow@gentoo.org> -mod_wsgi-2.1.ebuild,
+  -mod_wsgi-2.3.ebuild, -mod_wsgi-2.4.ebuild:
+  cleanup
+
+*mod_wsgi-2.5 (27 Jun 2009)
+
+  27 Jun 2009; Patrick Lauer <patrick@gentoo.org> +mod_wsgi-2.5.ebuild:
+  Bump to 2.5, fixes #274330
+
+*mod_wsgi-2.4 (07 May 2009)
+
+  07 May 2009; Thilo Bangert <bangert@gentoo.org> +mod_wsgi-2.4.ebuild:
+  version bump (bug #265734)
+
+*mod_wsgi-2.3 (25 Oct 2008)
+
+  25 Oct 2008; Benedikt Böhm <hollow@gentoo.org> -mod_wsgi-1.0.ebuild,
+  -mod_wsgi-2.0.ebuild, +mod_wsgi-2.3.ebuild:
+  version bump wrt #240246
+
+*mod_wsgi-2.1 (31 Jul 2008)
+
+  31 Jul 2008; Benedikt Böhm <hollow@gentoo.org> +mod_wsgi-2.1.ebuild:
+  version bump wrt #233513
+
+*mod_wsgi-2.0 (19 Apr 2008)
+
+  19 Apr 2008; Benedikt Böhm <hollow@gentoo.org> +mod_wsgi-2.0.ebuild:
+  version bump wrt #214625
+
+  31 Jan 2008; Benedikt Böhm <hollow@gentoo.org> files/70_mod_wsgi.conf,
+  metadata.xml, mod_wsgi-1.0.ebuild:
+  fix depend.apache usage wrt #208033; update metadata; cleanup
+
+  10 Sep 2007; Benedikt Böhm <hollow@gentoo.org> metadata.xml:
+  fix metadata
+
+*mod_wsgi-1.0 (08 Sep 2007)
+
+  08 Sep 2007; Benedikt Böhm <hollow@gentoo.org> +files/70_mod_wsgi.conf,
+  +metadata.xml, +mod_wsgi-1.0.ebuild:
+  initial version, #189209
+

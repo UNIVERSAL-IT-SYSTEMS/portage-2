@@ -1,0 +1,23 @@
+# ChangeLog for app-doc/repodoc
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-doc/repodoc/ChangeLog,v 1.4 2009/03/21 15:36:39 jmbsvicetto Exp $
+
+  21 Mar 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  metadata.xml:
+  Removing ferdy as a maintainer since he was retired.
+
+  09 Jan 2008; Jose Luis Rivero <yoswink@gentoo.org> repodoc-0.1.0.ebuild,
+  repodoc-9999.ebuild:
+  Add dev-util/pkgconfig as built dependency. Thanks to the misterious 'Evil
+  Compile Person' <bugs@dev.gentooexperimental.org>. Fix #205031
+
+  08 Aug 2007; Fernando J. Pereda <ferdy@gentoo.org> repodoc-9999.ebuild:
+  Change ebuild to reflect current upstream codebase.
+
+*repodoc-9999 (08 May 2007)
+*repodoc-0.1.0 (08 May 2007)
+
+  08 May 2007; Jose Luis Rivero <yoswink@gentoo.org> +metadata.xml,
+  +repodoc-0.1.0.ebuild, +repodoc-9999.ebuild:
+  Initial import.
+

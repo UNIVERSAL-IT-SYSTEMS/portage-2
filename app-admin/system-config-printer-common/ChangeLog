@@ -1,0 +1,47 @@
+# ChangeLog for app-admin/system-config-printer-common
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/system-config-printer-common/ChangeLog,v 1.8 2009/11/30 07:05:29 josejx Exp $
+
+  30 Nov 2009; Joseph Jezak <josejx@gentoo.org>
+  system-config-printer-common-1.1.13.ebuild:
+  Marked ppc/ppc64 stable for bug #292455.
+
+  29 Nov 2009; Raúl Porcel <armin76@gentoo.org>
+  system-config-printer-common-1.1.13.ebuild:
+  Add ~sparc
+
+  09 Nov 2009; Jeroen Roovers <jer@gentoo.org>
+  system-config-printer-common-1.1.12.ebuild,
+  system-config-printer-common-1.1.13.ebuild:
+  Marked ~hppa (bug #280312).
+
+  08 Nov 2009; Joseph Jezak <josejx@gentoo.org>
+  system-config-printer-common-1.1.13.ebuild:
+  Marked ~ppc/~ppc64 for bug #280312.
+
+*system-config-printer-common-1.1.13 (14 Oct 2009)
+
+  14 Oct 2009; Jonathan Callen <abcd@gentoo.org>
+  +system-config-printer-common-1.1.13.ebuild,
+  +files/system-config-printer-common-1.1.13-split.patch:
+  Version bump
+
+  12 Sep 2009; Raúl Porcel <armin76@gentoo.org>
+  system-config-printer-common-1.1.8.ebuild,
+  system-config-printer-common-1.1.12.ebuild:
+  Add ~alpha/~ia64 wrt #280312
+
+*system-config-printer-common-1.1.12 (01 Sep 2009)
+
+  01 Sep 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +system-config-printer-common-1.1.12.ebuild,
+  +files/system-config-printer-common-1.1.12-split.patch:
+  Version bump
+
+*system-config-printer-common-1.1.8 (04 Aug 2009)
+
+  04 Aug 2009; Alex Alexander <wired@gentoo.org>
+  +system-config-printer-common-1.1.8.ebuild,
+  +files/system-config-printer-common-1.1.8-split.patch, +metadata.xml:
+  new ebuild from kde-testing overlay
+

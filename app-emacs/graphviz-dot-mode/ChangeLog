@@ -1,0 +1,30 @@
+# ChangeLog for app-emacs/graphviz-dot-mode
+# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/graphviz-dot-mode/ChangeLog,v 1.8 2008/12/04 22:42:17 maekke Exp $
+
+  04 Dec 2008; Markus Meier <maekke@gentoo.org>
+  graphviz-dot-mode-0.3.4.ebuild:
+  amd64/x86 stable, bug #249580
+
+  02 Dec 2008; Ulrich Mueller <ulm@gentoo.org>
+  files/50graphviz-dot-mode-gentoo.el:
+  Add autoloading to site-init file.
+
+*graphviz-dot-mode-0.3.4 (02 Nov 2008)
+
+  02 Nov 2008; Christian Faulhammer <opfer@gentoo.org>
+  +graphviz-dot-mode-0.3.4.ebuild:
+  version bump (to a version from 2005); remove virtual/emacs from DEPEND;
+  revamp some minor details
+
+  06 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
+  Regenerate digest in Manifest2 format.
+
+  24 Oct 2005; Joseph Jezak <josejx@gentoo.org>
+  graphviz-dot-mode-0.2.ebuild:
+  Marked ~ppc.
+
+*graphviz-dot-mode-0.2 (20 Sep 2003)
+
+  20 Sep 2003; Matthew Kennedy <mkennedy@gentoo.org> :
+  Initial import.

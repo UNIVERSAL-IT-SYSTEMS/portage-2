@@ -1,0 +1,38 @@
+# ChangeLog for net-libs/libnetfilter_log
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libnetfilter_log/ChangeLog,v 1.7 2009/09/08 16:55:09 ikelos Exp $
+
+  08 Sep 2009; Mike Auty <ikelos@gentoo.org> libnetfilter_log-0.0.13.ebuild,
+  libnetfilter_log-0.0.15.ebuild, libnetfilter_log-0.0.16.ebuild:
+  Making CONFIG_CHECK non-fatal for userland ebuilds, see bug 283320.
+
+*libnetfilter_log-0.0.16 (26 May 2009)
+
+  26 May 2009; Jeroen Roovers <jer@gentoo.org>
+  +libnetfilter_log-0.0.16.ebuild:
+  Version bump.
+
+  15 Dec 2008; Peter Volkov <pva@gentoo.org> libnetfilter_log-0.0.15.ebuild:
+  Fixed net-libs/libnfnetlink dependency, bug #246708, thank Richard Ash for
+  report.
+
+*libnetfilter_log-0.0.15 (15 Sep 2008)
+
+  15 Sep 2008; Peter Volkov <pva@gentoo.org>
+  +libnetfilter_log-0.0.15.ebuild:
+  Version bump, bug #234148, thank Tim Harder for report.
+
+  01 Jul 2007; Sven Wegener <swegener@gentoo.org>
+  libnetfilter_log-0.0.13.ebuild:
+  Add ~amd64 keyword.
+
+  22 May 2007; Gustavo Zacarias <gustavoz@gentoo.org>
+  libnetfilter_log-0.0.13.ebuild:
+  Keyworded ~sparc
+
+*libnetfilter_log-0.0.13 (25 Nov 2006)
+
+  25 Nov 2006; Cedric Krier <cedk@gentoo.org> +metadata.xml,
+  +libnetfilter_log-0.0.13.ebuild:
+  New ebuild for bug #141998
+

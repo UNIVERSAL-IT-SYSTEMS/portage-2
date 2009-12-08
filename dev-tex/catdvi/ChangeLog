@@ -1,0 +1,22 @@
+# ChangeLog for dev-tex/catdvi
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/catdvi/ChangeLog,v 1.5 2008/09/17 07:29:18 ulm Exp $
+
+  17 Sep 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
+  Add package to tex herd.
+
+  11 Sep 2008; Markus Meier <maekke@gentoo.org> catdvi-0.14.ebuild:
+  amd64/x86 stable, bug #237266
+
+  02 Sep 2008; Ulrich Mueller <ulm@gentoo.org> catdvi-0.14.ebuild:
+  Replace tetex dependency by virtual/tex-base, bug 222501.
+
+  19 Nov 2007; Samuli Suominen <drac@gentoo.org> catdvi-0.14.ebuild:
+  Keyword ~amd64 wrt #199681, use tc-getCC.
+
+*catdvi-0.14 (20 May 2007)
+
+  20 May 2007; Ulrich Mueller <ulm@gentoo.org> +metadata.xml,
+  +catdvi-0.14.ebuild:
+  Initial import, fixes bug #107248.
+

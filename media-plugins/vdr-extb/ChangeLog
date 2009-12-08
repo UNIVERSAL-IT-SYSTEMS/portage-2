@@ -1,0 +1,25 @@
+# ChangeLog for media-plugins/vdr-extb
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-extb/ChangeLog,v 1.4 2009/06/20 23:56:07 flameeyes Exp $
+
+  20 Jun 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  -files/extb-wakeup-0.2.9.tar.gz, -files/vdr.extb:
+  Remove unused files (one of which was a compressed tarball).
+
+  17 Dec 2008; Matthias Schwarzott <zzam@gentoo.org>
+  +files/vdr-extb-0.3.0-gcc4.3.diff, vdr-extb-0.3.0.ebuild:
+  Fix compilation with gcc-4.3. Bug #251189.
+
+  30 Mar 2008; Joerg Bornkessel <hd_brummy@gentoo.org> -files/rc.irexec,
+  vdr-extb-0.2.9.ebuild, vdr-extb-0.3.0.ebuild:
+  removed initscript; always present by lirc; package collision
+
+*vdr-extb-0.3.0 (27 Mar 2008)
+*vdr-extb-0.2.9 (27 Mar 2008)
+
+  27 Mar 2008; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +files/vdr-extb-0.2.9-gentoo.diff, +files/extb-wakeup-0.2.9.tar.gz,
+  +files/rc.irexec, +files/vdr.extb, +metadata.xml, +vdr-extb-0.2.9.ebuild,
+  +vdr-extb-0.3.0.ebuild:
+  initial ebuild , moved from gentoo.de overlay
+

@@ -1,0 +1,39 @@
+# ChangeLog for dev-ruby/ruby-augeas
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-augeas/ChangeLog,v 1.9 2009/10/10 14:57:59 armin76 Exp $
+
+  10 Oct 2009; Raúl Porcel <armin76@gentoo.org> ruby-augeas-0.3.0.ebuild:
+  sparc stable wrt #282759
+
+  05 Sep 2009; Markus Meier <maekke@gentoo.org> ruby-augeas-0.2.0.ebuild:
+  amd64 stable, bug #270432
+
+  29 Aug 2009; nixnut <nixnut@gentoo.org> ruby-augeas-0.2.0.ebuild:
+  ppc stable #282759
+
+  27 Aug 2009; Christian Faulhammer <fauli@gentoo.org>
+  ruby-augeas-0.2.0.ebuild:
+  stable x86, bug 282759
+
+*ruby-augeas-0.3.0 (25 Aug 2009)
+
+  25 Aug 2009; MATSUU Takuto <matsuu@gentoo.org> +ruby-augeas-0.3.0.ebuild:
+  Version bumped.
+
+  19 May 2009; Ferris McCormick <fmccor@gentoo.org>
+  ruby-augeas-0.2.0.ebuild:
+  Sparc stable, required for Bug #270432.
+
+  12 Apr 2009; Friedrich Oslage <bluebird@gentoo.org>
+  ruby-augeas-0.2.0.ebuild:
+  Add ~sparc keyword, bug #263622
+
+  24 Mar 2009; Joseph Jezak <josejx@gentoo.org> ruby-augeas-0.2.0.ebuild:
+  Marked ~ppc for bug #263622.
+
+*ruby-augeas-0.2.0 (24 Feb 2009)
+
+  24 Feb 2009; MATSUU Takuto <matsuu@gentoo.org> +metadata.xml,
+  +ruby-augeas-0.2.0.ebuild:
+  Initial import, bug #229361.
+

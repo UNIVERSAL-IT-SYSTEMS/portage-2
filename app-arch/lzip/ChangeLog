@@ -1,0 +1,22 @@
+# ChangeLog for app-arch/lzip
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/lzip/ChangeLog,v 1.4 2009/09/27 12:05:17 maekke Exp $
+
+  27 Sep 2009; Markus Meier <maekke@gentoo.org> lzip-1.4.ebuild:
+  amd64/x86 stable, bug #286328
+
+*lzip-1.8 (26 Sep 2009)
+
+  26 Sep 2009; Mike Frysinger <vapier@gentoo.org> +lzip-1.8.ebuild:
+  Version bump.
+
+  14 Mar 2009; Mike Frysinger <vapier@gentoo.org>
+  +files/lzip-1.4-headers.patch, lzip-1.4.ebuild:
+  Add fix by Daniel J. for gcc-4.4 #262286.
+
+*lzip-1.4 (02 Feb 2009)
+
+  02 Feb 2009; Mike Frysinger <vapier@gentoo.org>
+  +files/lzip-1.4-build.patch, +metadata.xml, +lzip-1.4.ebuild:
+  Initial package by me.
+

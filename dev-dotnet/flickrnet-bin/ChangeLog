@@ -1,0 +1,19 @@
+# ChangeLog for dev-dotnet/flickrnet-bin
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/flickrnet-bin/ChangeLog,v 1.3 2009/11/06 16:34:05 volkmar Exp $
+
+  06 Nov 2009; Mounir Lamouri <volkmar@gentoo.org> flickrnet-bin-2.2.ebuild:
+  Keywording for ppc, bug 284473
+
+  30 Sep 2009; Christian Faulhammer <fauli@gentoo.org>
+  flickrnet-bin-2.2.ebuild:
+  add ~x86, bug 284473
+
+*flickrnet-bin-2.2 (10 Sep 2009)
+
+  10 Sep 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  +flickrnet-bin-2.2.ebuild, +metadata.xml:
+  Initial import of a flicrnet binary install; this is needed for the Flickr
+  Exporter of f-spot. Since MonoDevelop 2.0 cannot handle the VS2k3 project
+  used by the sources, until 2.2 the binary version will be used.
+

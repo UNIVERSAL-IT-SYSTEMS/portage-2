@@ -1,0 +1,31 @@
+# ChangeLog for dev-java/fec
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/fec/ChangeLog,v 1.6 2009/03/09 22:34:52 maekke Exp $
+
+  09 Mar 2009; Markus Meier <maekke@gentoo.org> fec-1.0.3-r1.ebuild:
+  amd64/x86 stable, bug #260958
+
+  08 Mar 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  fec-1.0.3-r1.ebuild:
+  Fix bug 261703
+
+  28 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  fec-1.0.3-r1.ebuild:
+  Add missing eclasses, fix lib path
+
+*fec-1.0.3-r1 (27 Jan 2009)
+
+  27 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> -files/build.xml,
+  -fec-1.0.3.ebuild, +fec-1.0.3-r1.ebuild:
+  Revision bump, add onion-common, include net-libs/fec, update deps
+
+  25 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  +files/libfec8path.patch:
+  Add missing patch
+
+*fec-1.0.3 (24 Jan 2009)
+
+  24 Jan 2009; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> +files/build.xml,
+  +fec-1.0.3.ebuild:
+  Initial commit. Fixes bug 238020
+

@@ -1,0 +1,32 @@
+# ChangeLog for sci-geosciences/openstreetmap-icons
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/openstreetmap-icons/ChangeLog,v 1.6 2009/08/22 23:22:34 nerdboy Exp $
+
+  22 Aug 2009; Steve Arnold <nerdboy@gentoo.org>
+  openstreetmap-icons-20090616.ebuild:
+  Updated to improve failure messages, add einfo, and move the map icons 
+  and geodata to a more appropriate place.
+
+  31 Jul 2009; Steve Arnold <nerdboy@gentoo.org>
+  openstreetmap-icons-20090616.ebuild:
+  Added missing dependency, but it still triggers exceptions on svg files.
+  At least the geoinfo perl script runs now...
+
+  30 Jun 2009; Alfredo Tupone <tupone@gentoo.org>
+  openstreetmap-icons-20090616.ebuild:
+  Fix missing dev-perl/DBD-SQLite requirement. Bug #275805 by Peter Gantner
+
+  25 Jun 2009; Tupone Alfredo <tupone@gentoo.org>
+  openstreetmap-icons-20090616.ebuild:
+  Fix missing File/Slurp. Bug #275367 by Kevin Woldt
+
+  22 Jun 2009; Alfredo Tupone <tupone@gentoo.org>
+  openstreetmap-icons-20090616.ebuild:
+  Rebuild icons and geoinfo db.
+
+*openstreetmap-icons-20090616 (20 Jun 2009)
+
+  20 Jun 2009; Tupone Alfredo <tupone@gentoo.org> +metadata.xml,
+  +openstreetmap-icons-20090616.ebuild:
+  Icons from openstreetmap
+

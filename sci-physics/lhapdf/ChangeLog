@@ -1,0 +1,46 @@
+# ChangeLog for sci-physics/lhapdf
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/lhapdf/ChangeLog,v 1.7 2009/11/16 20:19:32 bicatali Exp $
+
+*lhapdf-5.8.0 (16 Nov 2009)
+
+  16 Nov 2009; Sébastien Fabbro <bicatali@gentoo.org> -lhapdf-5.6.0.ebuild,
+  -lhapdf-5.7.0.ebuild, +lhapdf-5.8.0.ebuild:
+  Bump, thanks Ben Bannier bug #293331. Re-manifest 5.7.1, close #291598.
+  Removed old.
+
+*lhapdf-5.7.1 (24 Jul 2009)
+
+  24 Jul 2009; Sébastien Fabbro <bicatali@gentoo.org> +lhapdf-5.7.1.ebuild,
+  metadata.xml:
+  Version bump. Now installs PDFs data separately with a data use flag
+  (needs large disk space). Thanks Ben Bannier for his work, bug #278107.
+
+*lhapdf-5.7.0 (23 Feb 2009)
+
+  23 Feb 2009; Sébastien Fabbro <bicatali@gentoo.org> -lhapdf-5.5.1.ebuild,
+  +lhapdf-5.7.0.ebuild:
+  Version bump, removed older version
+
+  20 Feb 2009; Diego E. Pettenò <flameeyes@gentoo.org> lhapdf-5.5.1.ebuild,
+  lhapdf-5.6.0.ebuild:
+  Remove checks for swig USE flags since the last version does not have them
+  and they were unneeded before, too.
+
+*lhapdf-5.6.0 (25 Oct 2008)
+
+  25 Oct 2008; Markus Dittrich <markusle@gentoo.org> -lhapdf-5.5.0.ebuild,
+  +lhapdf-5.6.0.ebuild:
+  Version bump and removed old ebuild (fixes bug #243420).
+
+*lhapdf-5.5.1 (04 Oct 2008)
+
+  04 Oct 2008; Sébastien Fabbro <bicatali@gentoo.org> +lhapdf-5.5.1.ebuild:
+  Version bump, closing bug #239333
+
+*lhapdf-5.5.0 (07 Sep 2008)
+
+  07 Sep 2008; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
+  +lhapdf-5.5.0.ebuild:
+  Initial import, inspired from Benjamin Bannier's work (bug #236719)
+

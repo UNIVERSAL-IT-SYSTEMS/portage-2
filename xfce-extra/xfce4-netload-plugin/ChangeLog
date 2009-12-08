@@ -1,0 +1,46 @@
+# ChangeLog for xfce-extra/xfce4-netload-plugin
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-netload-plugin/ChangeLog,v 1.9 2009/12/03 20:37:23 ranger Exp $
+
+  03 Dec 2009; Brent Baude <ranger@gentoo.org>
+  xfce4-netload-plugin-0.4.0-r1.ebuild:
+  Marking xfce4-netload-plugin-0.4.0-r1 ppc64 stable for bug 289179
+
+  30 Nov 2009; Raúl Porcel <armin76@gentoo.org>
+  xfce4-netload-plugin-0.4.0-r1.ebuild:
+  alpha/ia64/sparc stable wrt #289179
+
+  09 Nov 2009; Markus Meier <maekke@gentoo.org>
+  xfce4-netload-plugin-0.4.0-r1.ebuild:
+  arm stable, bug #289179
+
+  24 Oct 2009; nixnut <nixnut@gentoo.org>
+  xfce4-netload-plugin-0.4.0-r1.ebuild:
+  ppc stable #289179
+
+  20 Oct 2009; Christian Faulhammer <fauli@gentoo.org>
+  xfce4-netload-plugin-0.4.0-r1.ebuild:
+  stable x86, bug 289179
+
+  08 Oct 2009; Jeremy Olexa <darkside@gentoo.org>
+  xfce4-netload-plugin-0.4.0-r1.ebuild:
+  add prefix keywords - migrate from Gentoo Prefix
+
+  03 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-netload-plugin-0.4.0-r1.ebuild:
+  amd64 stable
+
+*xfce4-netload-plugin-0.4.0-r1 (22 Sep 2009)
+
+  22 Sep 2009; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-netload-plugin-0.4.0-r1.ebuild,
+  +files/xfce4-netload-plugin-0.4.0-fix-tooltips-gtk2.16.patch:
+  Fix tooltips with new dev-libs/glib and x11-libs/gtk+ wrt #274024.
+
+*xfce4-netload-plugin-0.4.0 (25 Aug 2009)
+
+  25 Aug 2009; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-netload-plugin-0.4.0.ebuild,
+  +files/xfce4-netload-plugin-0.4.0-asneeded.patch:
+  Rename xfce4-netload to xfce4-netload-plugin.
+

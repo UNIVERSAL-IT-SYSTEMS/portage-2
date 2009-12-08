@@ -1,0 +1,19 @@
+# ChangeLog for sys-block/megarc
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-block/megarc/ChangeLog,v 1.4 2009/08/03 19:29:25 ssuominen Exp $
+
+  03 Aug 2009; Samuli Suominen <ssuominen@gentoo.org> megarc-1.11.ebuild:
+  Fix SRC_URI wrt #250426, thanks to Christophe LEFEBVRE for reporting.
+
+  11 Jul 2008; Wolfram Schlich <wschlich@gentoo.org> megarc-1.11.ebuild:
+  add multilib check
+
+  24 Apr 2008; Wolfram Schlich <wschlich@gentoo.org> files/megarc:
+  fix wrapper script
+
+*megarc-1.11 (23 Apr 2008)
+
+  23 Apr 2008; Wolfram Schlich <wschlich@gentoo.org> +files/megarc,
+  +metadata.xml, +megarc-1.11.ebuild:
+  initial import
+

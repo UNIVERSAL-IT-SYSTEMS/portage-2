@@ -1,0 +1,135 @@
+# ChangeLog for kde-base/kdeartwork-desktopthemes
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdeartwork-desktopthemes/ChangeLog,v 1.28 2009/12/01 10:12:35 wired Exp $
+
+*kdeartwork-desktopthemes-4.3.4 (01 Dec 2009)
+
+  01 Dec 2009; Alex Alexander <wired@gentoo.org>
+  +kdeartwork-desktopthemes-4.3.4.ebuild:
+  Version bump
+
+  30 Nov 2009; Joseph Jezak <josejx@gentoo.org>
+  kdeartwork-desktopthemes-4.3.3.ebuild:
+  Marked ppc/ppc64 stable for bug #292455.
+
+  29 Nov 2009; Raúl Porcel <armin76@gentoo.org>
+  kdeartwork-desktopthemes-4.3.3.ebuild:
+  Add ~sparc
+
+  29 Nov 2009; Samuli Suominen <ssuominen@gentoo.org>
+  kdeartwork-desktopthemes-4.3.3.ebuild:
+  amd64 stable wrt #292455
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -kdeartwork-desktopthemes-4.3.2.ebuild:
+  Drop KDE 4.3.2
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -kdeartwork-desktopthemes-4.2.4.ebuild:
+  Drop KDE 4.2.4
+
+*kdeartwork-desktopthemes-4.3.3 (02 Nov 2009)
+
+  02 Nov 2009; Alex Alexander <wired@gentoo.org>
+  +kdeartwork-desktopthemes-4.3.3.ebuild:
+  Version bump
+
+  18 Oct 2009; Markus Meier <maekke@gentoo.org>
+  kdeartwork-desktopthemes-4.3.1.ebuild:
+  x86 stable, bug #287697
+
+  10 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  kdeartwork-desktopthemes-4.3.1.ebuild:
+  amd64 stable wrt #287697
+
+  08 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -kdeartwork-desktopthemes-4.3.0.ebuild:
+  Drop KDE 4.3.0
+
+*kdeartwork-desktopthemes-4.3.2 (06 Oct 2009)
+
+  06 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  +kdeartwork-desktopthemes-4.3.2.ebuild:
+  Version bump
+
+*kdeartwork-desktopthemes-4.3.1 (01 Sep 2009)
+
+  01 Sep 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +kdeartwork-desktopthemes-4.3.1.ebuild:
+  Version bump
+
+*kdeartwork-desktopthemes-4.3.0 (04 Aug 2009)
+
+  04 Aug 2009; Alex Alexander <wired@gentoo.org>
+  +kdeartwork-desktopthemes-4.3.0.ebuild:
+  Version bump
+
+  14 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -kdeartwork-desktopthemes-4.2.3.ebuild:
+  Drop KDE 4.2.3
+
+  04 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> ChangeLog:
+  Fix accidently added keywords
+
+*kdeartwork-desktopthemes-4.2.4 (04 Jun 2009)
+
+  04 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  +kdeartwork-desktopthemes-4.2.4.ebuild:
+  Version bump
+
+  03 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -kdeartwork-desktopthemes-4.2.2.ebuild:
+  Drop KDE 4.2.2
+
+*kdeartwork-desktopthemes-4.2.3 (06 May 2009)
+
+  06 May 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  +kdeartwork-desktopthemes-4.2.3.ebuild:
+  Version bump
+
+  17 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  kdeartwork-desktopthemes-4.2.2:
+  Restore ~hppa keywords
+
+  16 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -kdeartwork-desktopthemes-4.2.1.ebuild:
+  Drop KDE 4.2.1
+
+*kdeartwork-desktopthemes-4.2.2 (11 Apr 2009)
+
+  11 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  +kdeartwork-desktopthemes-4.2.2.ebuild:
+  Add KDE 4.2.2
+
+  11 Apr 2009; Raúl Porcel <armin76@gentoo.org>
+  kdeartwork-desktopthemes-4.2.1.ebuild:
+  Add ~alpha/~ia64 wrt #260777
+
+  08 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -kdeartwork-desktopthemes-4.2.0.ebuild:
+  Drop KDE 4.2.0
+
+  08 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  kdeartwork-desktopthemes-4.2.1.ebuild:
+  Semi-automatic merge, Update deps.
+
+*kdeartwork-desktopthemes-4.2.1 (04 Mar 2009)
+
+  04 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  +kdeartwork-desktopthemes-4.2.1.ebuild:
+  Bump KDE 4.2.1
+
+  03 Feb 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  kdeartwork-desktopthemes-4.2.0.ebuild:
+  Add ~ppc/~ppc64 keywords as they was added to full kde-4.2
+
+  29 Jan 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  kdeartwork-desktopthemes-4.2.0.ebuild:
+  Patch wrong dependency. Fix bug 256748.
+
+*kdeartwork-desktopthemes-4.2.0 (27 Jan 2009)
+
+  27 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> +metadata.xml,
+  +kdeartwork-desktopthemes-4.2.0.ebuild:
+  Bump KDE-4.2.0
+

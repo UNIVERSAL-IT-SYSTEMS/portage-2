@@ -1,0 +1,51 @@
+# ChangeLog for sys-auth/bioapi
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/bioapi/ChangeLog,v 1.11 2009/07/25 20:28:44 ssuominen Exp $
+
+  25 Jul 2009; Samuli Suominen <ssuominen@gentoo.org>
+  bioapi-1.2.3-r2.ebuild, +files/bioapi-1.2.3-gcc44.patch:
+  Fix building with GCC 4.4 wrt #273159.
+
+*bioapi-1.2.3-r2 (08 Mar 2009)
+
+  08 Mar 2009; Mike Frysinger <vapier@gentoo.org>
+  +files/bioapi-1.2.3-no-delete.patch, +bioapi-1.2.3-r2.ebuild:
+  Do not let mod_install delete symlinks as that is the job of portage.
+
+  26 Oct 2008; Markus Meier <maekke@gentoo.org> bioapi-1.2.3-r1.ebuild:
+  amd64/x86 stable, bug #244447
+
+*bioapi-1.2.3-r1 (06 Sep 2008)
+
+  06 Sep 2008; Mike Frysinger <vapier@gentoo.org>
+  +files/bioapi-1.2.3-enroll-ret.patch, +bioapi-1.2.3-r1.ebuild:
+  Apply fix by kouyu for missing return value #236654.
+
+  27 Feb 2008; Mike Frysinger <vapier@gentoo.org> bioapi-1.2.3.ebuild:
+  Add missing eutils inherit for enewgroup as pointed out by Shufeng Zheng.
+
+*bioapi-1.2.3 (31 Dec 2007)
+
+  31 Dec 2007; Mike Frysinger <vapier@gentoo.org> +bioapi-1.2.3.ebuild:
+  Version bump and cleanup.
+
+  05 Sep 2007; Chris Gianelloni <wolf31o2@gentoo.org> metadata.xml:
+  Changed maintainer to Mike Frysinger <vapier@gentoo.org>.
+
+  09 Apr 2007; Chris Gianelloni <wolf31o2@gentoo.org> bioapi-1.2.2.ebuild:
+  Change insinto /etc/env.d ; doins -> doenvd for bug #173884.
+
+  27 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> bioapi-1.2.2.ebuild:
+  Add ~amd64 wrt bug #168336.
+
+  05 Oct 2006; Chris Gianelloni <wolf31o2@gentoo.org> bioapi-1.2.2.ebuild:
+  qt USE should be qt3.
+
+*bioapi-1.2.2 (05 Oct 2006)
+
+  05 Oct 2006; Chris Gianelloni <wolf31o2@gentoo.org>
+  +files/51-bioapi.rules, +files/bioapi-1.2.2_patch, +metadata.xml,
+  +bioapi-1.2.2.ebuild:
+  Initial import. Ebuild by Jochen Maes <jochen.maes@sejo.be> who will be
+  maintaining this package. I will be his proxy maintainer.
+

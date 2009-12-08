@@ -1,0 +1,167 @@
+# ChangeLog for app-emulation/open-vm-tools
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/open-vm-tools/ChangeLog,v 1.28 2009/11/10 16:51:16 vadimk Exp $
+
+  10 Nov 2009; Vadim Kuznetsov vadimk@gentoo.org
+  open-vm-tools-0.0.20091015.201664.ebuild:
+  Bug 292176.
+
+  07 Nov 2009; Vadim Kuznetsov vadimk@gentoo.org
+  open-vm-tools-0.0.20091015.201664.ebuild, +files/checkvm-pie-safety.patch:
+  Bug 200376. Thanks to Gordon Malm and Anthony Basile.
+
+*open-vm-tools-0.0.20091015.201664 (29 Oct 2009)
+
+  29 Oct 2009; Vadim Kuznetsov vadimk@gentoo.org
+  +files/default-scripts1.patch, -open-vm-tools-0.0.20090522.167859.ebuild,
+  -open-vm-tools-0.0.20090618.172495.ebuild,
+  +open-vm-tools-0.0.20091015.201664.ebuild, -files/wiper-warning-fix.patch:
+  version bump. ebuild split. see open-vm-tools-kmod.
+
+*open-vm-tools-0.0.20090824.187411 (27 Aug 2009)
+
+  27 Aug 2009; Vadim Kuznetsov vadimk@gentoo.org -files/10-vmware-tools,
+  -open-vm-tools-0.0.20090121.142982.ebuild,
+  +open-vm-tools-0.0.20090824.187411.ebuild,
+  -files/2.6.28.1-api-break.patch,
+  -open-vm-tools-0.0.20090318.154848.ebuild:
+  version bump. clean old ebuilds
+
+  23 Aug 2009; Vadim Kuznetsov vadimk@gentoo.org
+  -open-vm-tools-0.0.20080515.93241.ebuild,
+  -open-vm-tools-0.0.20080808.109361-r1.ebuild,
+  -open-vm-tools-0.0.20081223.137496.ebuild:
+  clean up old ebuilds
+
+*open-vm-tools-0.0.20090722.179896 (24 Jul 2009)
+
+  24 Jul 2009; Vadim Kuznetsov vadimk@gentoo.org
+  +open-vm-tools-0.0.20090722.179896.ebuild:
+  Version bump.
+
+*open-vm-tools-0.0.20090618.172495-r2 (10 Jul 2009)
+
+  10 Jul 2009; Vadim Kuznetsov vadimk@gentoo.org
+  -open-vm-tools-0.0.20090618.172495-r1.ebuild,
+  +open-vm-tools-0.0.20090618.172495-r2.ebuild:
+  re-fixing wmtoolsd plugin path
+
+*open-vm-tools-0.0.20090618.172495-r1 (09 Jul 2009)
+
+  09 Jul 2009; Vadim Kuznetsov vadimk@gentoo.org
+  +open-vm-tools-0.0.20090618.172495-r1.ebuild, metadata.xml:
+  Fixes bugs 273211, 270433, 260878. Hardcoded procpc, Werror, general
+  ebuild clean up and missing dependencies. USE flags are added: doc, fuse.
+  However, vmblock-fuse still needs init script changes.
+
+*open-vm-tools-0.0.20090618.172495 (30 Jun 2009)
+
+  30 Jun 2009; Vadim Kuznetsov vadimk@gentoo.org
+  open-vm-tools-0.0.20090522.167859.ebuild,
+  +open-vm-tools-0.0.20090618.172495.ebuild:
+  Version bump. Bug 273887 - missing dev-libs/glib dependency.
+
+  08 Jun 2009; Vadim Kuznetsov vadimk@gentoo.org
+  open-vm-tools-0.0.20090522.167859.ebuild:
+  with-x is correct.
+
+  08 Jun 2009; Vadim Kuznetsov vadimk@gentoo.org
+  +files/wiper-warning-fix.patch:
+  Missing patch.
+
+*open-vm-tools-0.0.20090522.167859 (07 Jun 2009)
+
+  07 Jun 2009; Vadim Kuznetsov vadimk@gentoo.org
+  +open-vm-tools-0.0.20090522.167859.ebuild, +files/open-vm-tools.initd:
+  Version bump.
+
+*open-vm-tools-0.0.20090318.154848 (04 Jun 2009)
+
+  04 Jun 2009; Vadim Kuznetsov vadimk@gentoo.org
+  +open-vm-tools-0.0.20090318.154848.ebuild:
+  Version bump. ebuild from overlay.
+
+*open-vm-tools-0.0.20090121.142982 (08 Feb 2009)
+
+  08 Feb 2009; Mike Auty <ikelos@gentoo.org>
+  +files/2.6.28.1-api-break.patch, +files/open-vm-tools.desktop,
+  +open-vm-tools-0.0.20090121.142982.ebuild:
+  Version bump, fixes bug 256678. Thanks to John Plesmid for the testing.
+
+  25 Jan 2009; Mike Auty <ikelos@gentoo.org>
+  open-vm-tools-0.0.20081223.137496.ebuild:
+  Remove warning about hardened from latest open-vm-tools. Closes bug
+  200376.
+
+  05 Jan 2009; Markus Meier <maekke@gentoo.org> metadata.xml:
+  drop local icu USE-flag description, as it's global now
+
+*open-vm-tools-0.0.20081223.137496 (31 Dec 2008)
+
+  31 Dec 2008; Mike Auty <ikelos@gentoo.org>
+  -open-vm-tools-0.0.20080123.74039.ebuild,
+  -open-vm-tools-0.0.20080414.87182.ebuild,
+  +open-vm-tools-0.0.20081223.137496.ebuild:
+  Version bump, builds with 2.6.27+ and fixes unity/xinerama issue (bug
+  249293 and bug 247324).
+
+  19 Nov 2008; Mike Auty <ikelos@gentoo.org>
+  open-vm-tools-0.0.20080808.109361-r1.ebuild:
+  Alter the hardened warning message.
+
+*open-vm-tools-0.0.20080808.109361-r1 (19 Oct 2008)
+
+  19 Oct 2008; Mike Auty <ikelos@gentoo.org>
+  -open-vm-tools-0.0.20080808.109361.ebuild,
+  +open-vm-tools-0.0.20080808.109361-r1.ebuild:
+  Bump to fix bug 231525.
+
+  31 Aug 2008; Mike Auty <ikelos@gentoo.org> +files/10-vmware-tools:
+  Add missing file 10-vmware-tools
+
+*open-vm-tools-0.0.20080808.109361 (30 Aug 2008)
+
+  30 Aug 2008; Mike Auty <ikelos@gentoo.org> metadata.xml,
+  +open-vm-tools-0.0.20080808.109361.ebuild:
+  Version bump, now with unity and 2.6.26 support.
+
+  28 Jul 2008; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
+  add GLEP 56 USE flag desc from use.local.desc
+
+*open-vm-tools-0.0.20080414.87182 (26 Apr 2008)
+
+  26 Apr 2008; Mike Auty <ikelos@gentoo.org>
+  +open-vm-tools-0.0.20080414.87182.ebuild:
+  Version bump.
+
+  01 Feb 2008; Diego Pettenò <flameeyes@gentoo.org> files/open-vm.initd:
+  Update init script to work with current development version of OpenRC
+  (checkroot -> root; checkfs -> fsck).
+
+  31 Jan 2008; Mike Auty <ikelos@gentoo.org> ChangeLog:
+  Re-sign digestless manifest.
+
+*open-vm-tools-0.0.20080123.74039 (30 Jan 2008)
+
+  30 Jan 2008; Mike Auty <ikelos@gentoo.org>
+  -files/open-vm-tools-kernel_stdint-soren.patch,
+  -open-vm-tools-0.0.20071121.64693-r1.ebuild,
+  +open-vm-tools-0.0.20080123.74039.ebuild:
+  Version bump and remove the broken masked version.
+
+*open-vm-tools-0.0.20071121.64693-r1 (28 Jan 2008)
+
+  28 Jan 2008; Mike Auty <ikelos@gentoo.org>
+  +files/open-vm-tools-kernel_stdint-soren.patch,
+  +open-vm-tools-0.0.20071121.64693-r1.ebuild:
+  Fix kernel build issues.
+
+*open-vm-tools-0.0.20071121.64693 (22 Dec 2007)
+
+  22 Dec 2007; Mike Auty <ikelos@gentoo.org> +files/disable-toolbox.patch,
+  +files/open-vm.confd, +files/open-vm.initd, +files/tools.conf,
+  +files/xautostart.conf, +metadata.xml,
+  +open-vm-tools-0.0.20071121.64693.ebuild:
+  Initial commit. This should be usable for both ESX server, workstation,
+  player and normal server.
+

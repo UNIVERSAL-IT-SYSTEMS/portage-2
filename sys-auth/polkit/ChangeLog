@@ -1,0 +1,21 @@
+# ChangeLog for sys-auth/polkit
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/polkit/ChangeLog,v 1.3 2009/11/14 16:16:57 nirbheek Exp $
+
+*polkit-0.95 (14 Nov 2009)
+
+  14 Nov 2009; Nirbheek Chauhan <nirbheek@gentoo.org> +polkit-0.95.ebuild:
+  Bump to 0.95 -- new lockdown API, last dev version till 1.0
+
+  30 Oct 2009; Nirbheek Chauhan <nirbheek@gentoo.org>
+  -files/polkit-0.92-zsh-completions.patch, polkit-0.94.ebuild:
+  Remove zsh-completion (bug 291114), force pam support on (bug 291116)
+
+*polkit-0.94 (29 Oct 2009)
+
+  29 Oct 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  +files/polkit-0.92-zsh-completions.patch,
+  +files/polkit-0.93-fix-daemon-name.patch, +polkit-0.94.ebuild,
+  +metadata.xml:
+  Initial ebuild for GNOME 2.28.
+

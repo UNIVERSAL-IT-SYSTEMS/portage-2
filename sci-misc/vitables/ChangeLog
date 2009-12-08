@@ -1,0 +1,17 @@
+# ChangeLog for sci-misc/vitables
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-misc/vitables/ChangeLog,v 1.3 2009/09/29 15:19:50 spock Exp $
+
+  29 Sep 2009; Michał Januszewski <spock@gentoo.org> vitables-2.0.ebuild:
+  Fix installation of icon and .desktop file.
+
+  25 Jun 2009; Ben de Groot <yngwin@gentoo.org> vitables-2.0.ebuild:
+  Drop illegal qt meta ebuild dependency (see 217161#c11). Add use dep for
+  PyQt4 (check for more, bug 272136). Whitespace.
+
+*vitables-2.0 (11 Jun 2009)
+
+  11 Jun 2009; Michał Januszewski <spock@gentoo.org> +vitables-2.0.ebuild,
+  +files/vitables-2.0-doc-examples.patch, +metadata.xml:
+  Initial commit (bug #268149).
+

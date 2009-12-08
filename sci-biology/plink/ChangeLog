@@ -1,0 +1,22 @@
+# ChangeLog for sci-biology/plink
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/plink/ChangeLog,v 1.4 2009/08/05 21:16:10 maekke Exp $
+
+  05 Aug 2009; Markus Meier <maekke@gentoo.org> plink-1.06.ebuild:
+  x86 stable, bug #279345
+
+  02 Aug 2009; <chainsaw@gentoo.org> plink-1.06.ebuild:
+  Marked stable on AMD64 as requested by Andrey "weaver" Kislyuk
+  <weaver@gentoo.org> in bug #279345. Arch-tested by Chad A. Simmons who
+  reports he has no test-suite; reporter confirmed and agreed compile-test
+  was sufficient.
+
+*plink-1.06 (21 Jun 2009)
+
+  21 Jun 2009; Andrey Kislyuk <weaver@gentoo.org>
+  -files/plink-1.05-gcc43.patch, -plink-1.05.ebuild, +plink-1.06.ebuild:
+  Version bump, change name to follow Debian, and drop old files
+
+  06 Mar 2009; Andrey Kislyuk <weaver@gentoo.org> ChangeLog:
+  New package, ebuild written by Neil Shephard <nshephard@gmail.com> and me
+

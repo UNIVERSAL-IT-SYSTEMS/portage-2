@@ -1,0 +1,31 @@
+# ChangeLog for app-crypt/keynote
+# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/keynote/ChangeLog,v 1.10 2008/12/30 18:37:26 angelos Exp $
+
+  30 Dec 2008; Christoph Mende <angelos@gentoo.org> keynote-2.3.ebuild:
+  Added missing die
+
+  30 Dec 2008; Christoph Mende <angelos@gentoo.org> keynote-2.3.ebuild:
+  QA: Respect CFLAGS and AR/CC/RANLIB
+
+  13 May 2007; Thilo Bangert <bangert@gentoo.org> metadata.xml:
+  add herd
+
+  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
+  Transition to Manifest2.
+
+  19 Aug 2005; Luis Medinas <metalgod@gentoo.org> keynote-2.3.ebuild:
+  Added ~amd64 keywords.
+
+  20 Jun 2004; <pyrania@gentoo.org> keynote-2.3.ebuild:
+  Stable on x86.
+
+  01 Jun 2004; Aron Griffis <agriffis@gentoo.org> keynote-2.3.ebuild:
+  Fix use invocation
+
+*keynote-2.3 (23 Dec 2003)
+
+  23 Dec 2003; <plasmaroo@gentoo.org> keynote-2.3.ebuild:
+  Initial commit. This ebuild was kindly contributed by Sebastien 
+  Estienne, bug #27279.
+

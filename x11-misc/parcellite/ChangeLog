@@ -1,0 +1,37 @@
+# ChangeLog for x11-misc/parcellite
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/parcellite/ChangeLog,v 1.7 2009/10/03 17:08:25 maekke Exp $
+
+  03 Oct 2009; Markus Meier <maekke@gentoo.org> parcellite-0.9.1.ebuild:
+  amd64/x86 stable, bug #287314
+
+  21 Mar 2009; Krzysiek Pawlik <nelchael@gentoo.org> -parcellite-0.9.ebuild:
+  Remove old versions.
+
+*parcellite-0.9.1 (21 Mar 2009)
+
+  21 Mar 2009; Krzysiek Pawlik <nelchael@gentoo.org>
+  +parcellite-0.9.1.ebuild:
+  Version bump, see bug #263020.
+
+*parcellite-0.9 (01 Dec 2008)
+
+  01 Dec 2008; <ssuominen@gentoo.org> +parcellite-0.9.ebuild:
+  Version bump for bug 249284, thanks to Roman V. Prikhodchenko for
+  reporting.
+
+*parcellite-0.8 (15 Sep 2008)
+
+  15 Sep 2008; Ben de Groot <yngwin@gentoo.org> +parcellite-0.8.ebuild:
+  Version bump. Updated homepage and src_uri. Added
+  fdo-mime_desktop_database_update as suggested in bug 234523. Fixes said
+  bug.
+
+  12 Aug 2008; Raúl Porcel <armin76@gentoo.org> parcellite-0.7.ebuild:
+  Add ~x86 wrt #223403
+
+*parcellite-0.7 (17 May 2008)
+
+  17 May 2008; Samuli Suominen <drac@gentoo.org> +parcellite-0.7.ebuild:
+  Initial commit wrt #211141, using ebuild by Peter Sterk.
+

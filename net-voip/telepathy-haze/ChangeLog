@@ -1,0 +1,44 @@
+# ChangeLog for net-voip/telepathy-haze
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-voip/telepathy-haze/ChangeLog,v 1.8 2009/10/25 17:16:16 tove Exp $
+
+  25 Oct 2009; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Remove coldwind from metadata.xml (#181764)
+
+*telepathy-haze-0.3.2 (27 Sep 2009)
+
+  27 Sep 2009; Olivier Crête <tester@gentoo.org>
+  -telepathy-haze-0.2.1.ebuild, -telepathy-haze-0.3.1.ebuild,
+  +telepathy-haze-0.3.2.ebuild:
+  Version bump
+
+*telepathy-haze-0.3.1 (08 Aug 2009)
+
+  08 Aug 2009; Olivier Crête <tester@gentoo.org>
+  +telepathy-haze-0.3.1.ebuild:
+  Version bump, enable tests
+
+  07 Jan 2009; Raúl Porcel <armin76@gentoo.org>
+  telepathy-haze-0.2.1.ebuild:
+  Add ~alpha/~ia64 wrt #245949
+
+  24 Dec 2008; Friedrich Oslage <bluebird@gentoo.org>
+  telepathy-haze-0.2.1.ebuild:
+  Add ~sparc keyword, bug #245949
+
+*telepathy-haze-0.2.1 (21 Aug 2008)
+
+  21 Aug 2008; Santiago M. Mola <coldwind@gentoo.org>
+  -telepathy-haze-0.2.0.ebuild, +telepathy-haze-0.2.1.ebuild:
+  Version bump.
+
+  10 Apr 2008; Nguyễn Thái Ngọc Duy <pclouds@gentoo.org>
+  telepathy-haze-0.2.0.ebuild:
+  Added ~x86
+
+*telepathy-haze-0.2.0 (15 Mar 2008)
+
+  15 Mar 2008; Santiago M. Mola <coldwind@gentoo.org> +metadata.xml,
+  +telepathy-haze-0.2.0.ebuild:
+  Initial ebuild.
+

@@ -1,0 +1,67 @@
+# ChangeLog for dev-python/pyfltk
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyfltk/ChangeLog,v 1.17 2009/11/24 00:03:53 bicatali Exp $
+
+  24 Nov 2009; Sébastien Fabbro <bicatali@gentoo.org> pyfltk-1.1.4.ebuild:
+  Forced opengl, the disable-opengl option was buggy, closing #294181
+
+  16 Oct 2009; Sébastien Fabbro <bicatali@gentoo.org> -pyfltk-1.1.2.ebuild,
+  -files/pyfltk-1.1.2-python25.patch:
+  Removed older version, closing #285198
+
+  16 Oct 2009; Markus Meier <maekke@gentoo.org> pyfltk-1.1.4.ebuild:
+  amd64 stable, bug #284976
+
+  27 Sep 2009; nixnut <nixnut@gentoo.org> pyfltk-1.1.4.ebuild:
+  ppc stable #284976
+
+  16 Sep 2009; Christian Faulhammer <fauli@gentoo.org> pyfltk-1.1.4.ebuild:
+  stable x86, bug 284976
+
+  06 Sep 2009; Christian Ruppert <idl0r@gentoo.org>
+  -files/pyfltk-1.1.3-python25.patch:
+  Remove unused patch.
+
+  04 Sep 2009; Patrick Lauer <patrick@gentoo.org> -pyfltk-1.1.3.ebuild:
+  Remove old
+
+  08 Aug 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  pyfltk-1.1.4.ebuild:
+  Set SUPPORT_PYTHON_ABIS.
+
+*pyfltk-1.1.4 (08 Aug 2009)
+
+  08 Aug 2009; Sébastien Fabbro <bicatali@gentoo.org> +pyfltk-1.1.4.ebuild:
+  Version bump
+
+  10 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/pyfltk-1.1.3-python25.patch, pyfltk-1.1.3.ebuild:
+  Updated patch for building on amd64 with python-2.5, closing bug #254387
+
+*pyfltk-1.1.3 (09 Jan 2009)
+
+  09 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org> +pyfltk-1.1.3.ebuild:
+  Version bump
+
+  14 Nov 2008; Santiago M. Mola <coldwind@gentoo.org> pyfltk-1.1.2.ebuild:
+  Restrict fltk dependency to SLOT 1.1 (bug #246445).
+
+  10 May 2008; nixnut <nixnut@gentoo.org> pyfltk-1.1.2.ebuild:
+  Stable on ppc wrt bug 221081
+
+  09 May 2008; Markus Meier <maekke@gentoo.org> pyfltk-1.1.2.ebuild:
+  amd64/x86 stable, bug #221081
+
+  01 Mar 2008; nixnut <nixnut@gentoo.org> pyfltk-1.1.2.ebuild:
+  Added ~ppc wrt bug 211751
+
+  09 Dec 2007; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/pyfltk-1.1.2-python25.patch, pyfltk-1.1.2.ebuild:
+  added opengl flag, fixed for python-2.5 (ssize_t) and install doc properly
+
+*pyfltk-1.1.2 (07 Dec 2007)
+
+  07 Dec 2007; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
+  +pyfltk-1.1.2.ebuild:
+  Initial import. Closing bug #144281, thanks to Tuna.
+

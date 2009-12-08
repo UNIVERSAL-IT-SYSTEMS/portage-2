@@ -1,0 +1,327 @@
+# ChangeLog for net-voip/telepathy-gabble
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-voip/telepathy-gabble/ChangeLog,v 1.54 2009/11/12 22:37:46 eva Exp $
+
+*telepathy-gabble-0.8.8 (12 Nov 2009)
+
+  12 Nov 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  +telepathy-gabble-0.8.8.ebuild:
+  Version bump. Re-enable tests except broken ones.
+
+*telepathy-gabble-0.8.5 (05 Oct 2009)
+
+  05 Oct 2009; Olivier Crête <tester@gentoo.org>
+  -telepathy-gabble-0.8.1.ebuild, -telepathy-gabble-0.8.2.ebuild,
+  +telepathy-gabble-0.8.5.ebuild:
+  Version bump
+
+  06 Sep 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  telepathy-gabble-0.8.2.ebuild:
+  Fix installation of multiple documentation directories.
+
+*telepathy-gabble-0.8.2 (03 Sep 2009)
+
+  03 Sep 2009; Olivier Crête <tester@gentoo.org>
+  +telepathy-gabble-0.8.2.ebuild:
+  Version bump, disabled tests because they fail
+
+  30 Aug 2009; Olivier Crête <tester@gentoo.org>
+  telepathy-gabble-0.8.1.ebuild:
+  Add libsoup dep, bug #283259
+
+*telepathy-gabble-0.8.1 (21 Aug 2009)
+
+  21 Aug 2009; Olivier Crête <tester@gentoo.org>
+  -telepathy-gabble-0.7.28.ebuild, -telepathy-gabble-0.7.30.ebuild,
+  -telepathy-gabble-0.7.31.ebuild, +telepathy-gabble-0.8.1.ebuild:
+  Bump to new stable series
+
+*telepathy-gabble-0.7.31 (05 Aug 2009)
+
+  05 Aug 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  +telepathy-gabble-0.7.31.ebuild:
+  Version bump.Fix a bunch of crashers and bug with un/subscription.
+
+*telepathy-gabble-0.7.30 (20 Jul 2009)
+
+  20 Jul 2009; Olivier Crête <tester@gentoo.org>
+  -telepathy-gabble-0.7.15.ebuild, -telepathy-gabble-0.7.16.ebuild,
+  -telepathy-gabble-0.7.17.ebuild, -telepathy-gabble-0.7.20.ebuild,
+  -telepathy-gabble-0.7.26.ebuild, +telepathy-gabble-0.7.30.ebuild:
+  Version bump, remove old
+
+*telepathy-gabble-0.7.28 (01 Jun 2009)
+
+  01 Jun 2009; Gilles Dartiguelongue <eva@gentoo.org>
+  +telepathy-gabble-0.7.28.ebuild:
+  Version bump. Replace loudmouth alternative deps since gnutls use flag
+  does not exist for defined revisions.
+
+*telepathy-gabble-0.7.26 (09 Apr 2009)
+
+  09 Apr 2009; Olivier Crête <tester@gentoo.org>
+  +telepathy-gabble-0.7.26.ebuild:
+  Version bump
+
+*telepathy-gabble-0.7.20 (11 Feb 2009)
+
+  11 Feb 2009; Olivier Crête <tester@gentoo.org>
+  +telepathy-gabble-0.7.20.ebuild:
+  Version bump
+
+  07 Jan 2009; Raúl Porcel <armin76@gentoo.org>
+  telepathy-gabble-0.7.17.ebuild:
+  Add ~alpha/~ia64 wrt #245949
+
+*telepathy-gabble-0.7.17 (30 Dec 2008)
+
+  30 Dec 2008; Olivier Crête <tester@gentoo.org>
+  +telepathy-gabble-0.7.17.ebuild:
+  Version bump
+
+  24 Dec 2008; Friedrich Oslage <bluebird@gentoo.org>
+  telepathy-gabble-0.7.16.ebuild:
+  Add ~sparc keyword, bug #245949
+
+*telepathy-gabble-0.7.16 (14 Dec 2008)
+
+  14 Dec 2008; Santiago M. Mola <coldwind@gentoo.org>
+  -telepathy-gabble-0.7.8.ebuild, -telepathy-gabble-0.7.9.ebuild,
+  +telepathy-gabble-0.7.16.ebuild:
+  Version bump, remove old versions.
+
+  09 Dec 2008; Brent Baude <ranger@gentoo.org>
+  telepathy-gabble-0.7.15.ebuild:
+  Marking telepathy-gabble-0.7.15 ~ppc64 for bug 245949
+
+*telepathy-gabble-0.7.15 (06 Nov 2008)
+
+  06 Nov 2008; Santiago M. Mola <coldwind@gentoo.org>
+  +telepathy-gabble-0.7.15.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.7.9 (03 Oct 2008)
+
+  03 Oct 2008; Santiago M. Mola <coldwind@gentoo.org>
+  +telepathy-gabble-0.7.9.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.7.8 (21 Aug 2008)
+
+  21 Aug 2008; Santiago M. Mola <coldwind@gentoo.org>
+  -telepathy-gabble-0.7.6.ebuild, -telepathy-gabble-0.7.7.ebuild,
+  +telepathy-gabble-0.7.8.ebuild:
+  Version bump, remove old.
+
+*telepathy-gabble-0.7.7 (04 Aug 2008)
+
+  04 Aug 2008; Santiago M. Mola <coldwind@gentoo.org>
+  -telepathy-gabble-0.5.14.ebuild, -telepathy-gabble-0.6.0.ebuild,
+  -telepathy-gabble-0.7.5.ebuild, +telepathy-gabble-0.7.7.ebuild:
+  Version bump, remove old.
+
+*telepathy-gabble-0.7.6 (13 Jun 2008)
+
+  13 Jun 2008; Santiago M. Mola <coldwind@gentoo.org>
+  -telepathy-gabble-0.7.3.ebuild, +telepathy-gabble-0.7.6.ebuild:
+  Version bump and remove old.
+
+*telepathy-gabble-0.7.5 (05 May 2008)
+
+  05 May 2008; Santiago M. Mola <coldwind@gentoo.org>
+  -telepathy-gabble-0.5.12.ebuild, -telepathy-gabble-0.5.13.ebuild,
+  -telepathy-gabble-0.7.1.ebuild, -telepathy-gabble-0.7.2.ebuild,
+  +telepathy-gabble-0.7.5.ebuild:
+  Bump to 0.7.5, remove some old versions.
+
+*telepathy-gabble-0.7.3 (16 Apr 2008)
+
+  16 Apr 2008; Santiago M. Mola <coldwind@gentoo.org>
+  +telepathy-gabble-0.7.3.ebuild:
+  Bump to 0.7.3. Added a check for TLS in net-libs/loudmouth,
+  --enable-backtrace removed.
+
+*telepathy-gabble-0.7.2 (28 Feb 2008)
+
+  28 Feb 2008; Gilles Dartiguelongue <eva@gentoo.org>
+  +telepathy-gabble-0.7.2.ebuild:
+  bump to 0.7.2
+
+*telepathy-gabble-0.7.1 (22 Nov 2007)
+
+  22 Nov 2007; Piotr Jaroszyński <peper@gentoo.org>
+  +telepathy-gabble-0.7.1.ebuild:
+  Add 0.7.1.
+
+*telepathy-gabble-0.6.0 (28 Sep 2007)
+
+  28 Sep 2007; Piotr Jaroszyński <peper@gentoo.org>
+  +telepathy-gabble-0.6.0.ebuild:
+  Add 0.6.0.
+
+*telepathy-gabble-0.5.14 (07 Sep 2007)
+
+  07 Sep 2007; Piotr Jaroszyński <peper@gentoo.org>
+  +telepathy-gabble-0.5.14.ebuild:
+  Add 0.5.14.
+
+*telepathy-gabble-0.5.13 (01 Sep 2007)
+
+  01 Sep 2007; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.5.11.ebuild, +telepathy-gabble-0.5.13.ebuild:
+  Add 0.5.13, remove old version.
+
+  30 Jun 2007; Piotr Jaroszyński <peper@gentoo.org>
+  telepathy-gabble-0.5.11.ebuild, telepathy-gabble-0.5.12.ebuild:
+  Clean up dbus deps wrt bug #183696.
+
+*telepathy-gabble-0.5.12 (21 Jun 2007)
+
+  21 Jun 2007; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.5.9.ebuild, -telepathy-gabble-0.5.10.ebuild,
+  +telepathy-gabble-0.5.12.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.5.11 (02 May 2007)
+
+  02 May 2007; Piotr Jaroszyński <peper@gentoo.org>
+  +telepathy-gabble-0.5.11.ebuild:
+  Version bump.
+
+  01 May 2007; Piotr Jaroszyński <peper@gentoo.org>
+  telepathy-gabble-0.5.9.ebuild, telepathy-gabble-0.5.10.ebuild:
+  Fix src_test.
+
+  22 Apr 2007; Piotr Jaroszyński <peper@gentoo.org>
+  telepathy-gabble-0.5.10.ebuild:
+  Add block for older versions.
+
+*telepathy-gabble-0.5.10 (20 Apr 2007)
+
+  20 Apr 2007; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.5.7.ebuild, -telepathy-gabble-0.5.8.ebuild,
+  +telepathy-gabble-0.5.10.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.5.9 (13 Apr 2007)
+
+  13 Apr 2007; Piotr Jaroszyński <peper@gentoo.org>
+  +telepathy-gabble-0.5.9.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.5.8 (13 Apr 2007)
+
+  13 Apr 2007; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.5.6.ebuild, +telepathy-gabble-0.5.8.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.5.7 (10 Apr 2007)
+
+  10 Apr 2007; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.5.4.ebuild, +telepathy-gabble-0.5.7.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.5.6 (23 Mar 2007)
+
+  23 Mar 2007; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.5.3.ebuild, +telepathy-gabble-0.5.6.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.5.4 (26 Feb 2007)
+
+  26 Feb 2007; Piotr Jaroszyński <peper@gentoo.org>
+  -files/telepathy-gabble-0.5.2-debug-fix.patch,
+  -telepathy-gabble-0.5.2.ebuild, +telepathy-gabble-0.5.4.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.5.3 (11 Feb 2007)
+
+  11 Feb 2007; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.5.1.ebuild, +telepathy-gabble-0.5.3.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.5.2 (07 Feb 2007)
+
+  07 Feb 2007; Piotr Jaroszyński <peper@gentoo.org>
+  +files/telepathy-gabble-0.5.2-debug-fix.patch,
+  -telepathy-gabble-0.5.0.ebuild, +telepathy-gabble-0.5.2.ebuild:
+  Version bump. Add a patch to fix compilation with debug disabled(already in
+  gabble repo).
+
+*telepathy-gabble-0.5.1 (31 Jan 2007)
+
+  31 Jan 2007; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.4.9.ebuild, +telepathy-gabble-0.5.1.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.5.0 (11 Dec 2006)
+
+  11 Dec 2006; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.4.8.ebuild, +telepathy-gabble-0.5.0.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.4.9 (06 Dec 2006)
+
+  06 Dec 2006; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.4.7.ebuild, +telepathy-gabble-0.4.9.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.4.8 (30 Nov 2006)
+
+  30 Nov 2006; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.4.6.ebuild, +telepathy-gabble-0.4.8.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.4.7 (23 Nov 2006)
+
+  23 Nov 2006; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.4.5.ebuild, +telepathy-gabble-0.4.7.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.4.6 (22 Nov 2006)
+
+  22 Nov 2006; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.4.4.ebuild, telepathy-gabble-0.4.5.ebuild,
+  +telepathy-gabble-0.4.6.ebuild:
+  Version bump and fix dbus dep wrt bug #154521.
+
+  13 Nov 2006; Piotr Jaroszyński <peper@gentoo.org>
+  telepathy-gabble-0.4.5.ebuild:
+  Fix src_test().
+
+*telepathy-gabble-0.4.5 (13 Nov 2006)
+
+  13 Nov 2006; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.4.3.ebuild, +telepathy-gabble-0.4.5.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.4.4 (08 Nov 2006)
+
+  08 Nov 2006; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.4.2.ebuild, +telepathy-gabble-0.4.4.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.4.3 (01 Nov 2006)
+
+  01 Nov 2006; Piotr Jaroszyński <peper@gentoo.org>
+  +telepathy-gabble-0.4.3.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.4.2 (25 Oct 2006)
+
+  25 Oct 2006; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.4.1.ebuild, +telepathy-gabble-0.4.2.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.4.1 (24 Oct 2006)
+
+  24 Oct 2006; Piotr Jaroszyński <peper@gentoo.org>
+  -telepathy-gabble-0.4.0.ebuild, +telepathy-gabble-0.4.1.ebuild:
+  Version bump.
+
+*telepathy-gabble-0.4.0 (22 Oct 2006)
+
+  22 Oct 2006; Piotr Jaroszyński <peper@gentoo.org> +metadata.xml,
+  +telepathy-gabble-0.4.0.ebuild:
+  Import from voip overlay.
+

@@ -1,0 +1,73 @@
+# ChangeLog for app-editors/juffed
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/juffed/ChangeLog,v 1.15 2009/11/09 16:11:40 maekke Exp $
+
+  09 Nov 2009; Markus Meier <maekke@gentoo.org> juffed-0.6.1.ebuild:
+  x86 stable, bug #291853
+
+  09 Nov 2009; Jonathan Callen <abcd@gentoo.org>
+  -files/juffed-0.3-configure.patch:
+  Drop unneeded patch
+
+  08 Nov 2009; nixnut <nixnut@gentoo.org> juffed-0.6.1.ebuild:
+  ppc stable #291853
+
+  04 Nov 2009; Ben de Groot <yngwin@gentoo.org> metadata.xml:
+  Reassign to qt herd
+
+  04 Nov 2009; Ben de Groot <yngwin@gentoo.org> -juffed-0.4.ebuild,
+  -juffed-0.5_beta1.ebuild:
+  Removing old versions
+
+*juffed-0.6.1 (25 Apr 2009)
+
+  25 Apr 2009; Patrick Lauer <patrick@gentoo.org> +juffed-0.6.1.ebuild:
+  Bump to 0.6.1, fixes #267430
+
+*juffed-0.5_beta1 (23 Mar 2009)
+
+  23 Mar 2009; Ben de Groot <yngwin@gentoo.org> +juffed-0.5_beta1.ebuild:
+  Version bump. Using cmake-utils now. Updated ebuild thanks to Daniel
+  Pielmeier.
+
+  17 Dec 2008; Ben de Groot <yngwin@gentoo.org> juffed-0.4.ebuild:
+  Move configure to src_configure, fixes bug 251244
+
+  11 Dec 2008; Ben de Groot <yngwin@gentoo.org> -juffed-0.3.ebuild,
+  juffed-0.4.ebuild:
+  Drop old. EAPI 1->2, adding qt4 use dep on qscintilla. Fixes bug 250642.
+
+*juffed-0.4 (06 Nov 2008)
+
+  06 Nov 2008; Ben de Groot <yngwin@gentoo.org> +juffed-0.4.ebuild:
+  Version bump
+
+*juffed-0.3 (05 Aug 2008)
+
+  26 Oct 2008; Pieter Van den Abeele <pvdabeel@gentoo.org> juffed-0.3.ebuild:
+  Keyworded ~ppc. Closes bug #231923
+
+  05 Aug 2008; Ben de Groot <yngwin@gentoo.org>
+  +files/juffed-0.3-configure.patch, -juffed-0.3_beta20080421.ebuild,
+  -juffed-0.3_beta20080705.ebuild, +juffed-0.3.ebuild:
+  Version bump. Removing betas. Patching the configure script to fix bug
+  231921 and to pass our currently set CXXFLAGS and LDFLAGS.
+
+  27 Jul 2008; Carsten Lohrke <carlo@gentoo.org>
+  juffed-0.3_beta20080421.ebuild, juffed-0.3_beta20080705.ebuild:
+  Fix broken split Qt 4.4 dependencies, cf. bug 217161 comment 11.
+
+*juffed-0.3_beta20080705 (07 Jul 2008)
+
+  07 Jul 2008; Ben de Groot <yngwin@gentoo.org>
+  +juffed-0.3_beta20080705.ebuild:
+  Version bump. This beta2 renamed to date, to prevent it looking like
+  a downgrade from the previous versioning cockup. Next time I will do
+  better - promise!
+
+*juffed-0.3_beta20080421 (04 Jun 2008)
+
+  04 Jun 2008; Ben de Groot <yngwin@gentoo.org> +metadata.xml,
+  +juffed-0.3_beta20080421.ebuild:
+  Initial import. Ebuild partly based on the submission in bug 212693.
+

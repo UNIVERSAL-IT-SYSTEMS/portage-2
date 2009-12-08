@@ -1,0 +1,28 @@
+# ChangeLog for x11-misc/xnots
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xnots/ChangeLog,v 1.6 2009/03/21 22:00:39 nelchael Exp $
+
+  21 Mar 2009; Krzysiek Pawlik <nelchael@gentoo.org> -xnots-0.2.ebuild:
+  Remove old versions.
+
+  02 Feb 2009; Krzysiek Pawlik <nelchael@gentoo.org> ChangeLog:
+  Fix ChangeLog entries.
+
+*xnots-0.2.1 (13 Jan 2009)
+
+  13 Jan 2009; Krzysiek Pawlik <nelchael@gentoo.org> +xnots-0.2.1.ebuild:
+  Version bump, bug #254594, ebuild improved by Gautam Iyer.
+
+  08 Jan 2009; Krzysiek Pawlik <nelchael@gentoo.org> xnots-0.2.ebuild:
+  Depend on pango with X use flag enabled.
+
+  19 Jun 2008; Krzysiek Pawlik <nelchael@gentoo.org> xnots-0.2.ebuild:
+  Add missing dev-util/pkgconfig to DEPEND, bug #228235.
+
+*xnots-0.2 (10 Apr 2008)
+
+  10 Apr 2008; Krzysiek Pawlik <nelchael@gentoo.org> +metadata.xml,
+  +xnots-0.2.ebuild:
+  New package: xNots: A desktop sticky note program for the unix geek.
+  Thanks to Gautam Iyer in bug #214824.
+

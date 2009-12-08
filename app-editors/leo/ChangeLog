@@ -1,0 +1,62 @@
+# ChangeLog for app-editors/leo
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/leo/ChangeLog,v 1.14 2009/10/15 11:38:16 maekke Exp $
+
+  15 Oct 2009; Markus Meier <maekke@gentoo.org> leo-4.6.3.ebuild:
+  amd64/x86 stable, bug #287946
+
+  11 Oct 2009; nixnut <nixnut@gentoo.org> leo-4.6.3.ebuild:
+  ppc stable #287946
+
+*leo-4.6.3 (05 Sep 2009)
+
+  05 Sep 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  +leo-4.6.3.ebuild:
+  Version bump. Set SUPPORT_PYTHON_ABIS.
+
+*leo-4.4.7-r1 (26 Oct 2008)
+
+  26 Oct 2008; Ali Polatel <hawking@gentoo.org> -leo-4.4.7.ebuild,
+  +leo-4.4.7-r1.ebuild:
+  Revbump. Use EAPI=2 and use dependencies.
+
+*leo-4.4.7 (01 Mar 2008)
+
+  01 Mar 2008; Tiziano Müller <dev-zero@gentoo.org>
+  -files/leoGlobals-4.4.1_beta2.patch, -leo-4.4.1_beta2.ebuild,
+  +leo-4.4.7.ebuild:
+  Version bump (bug #153233). Dropped old version.
+
+  23 Jun 2007; Ali Polatel <hawking@gentoo.org> leo-4.2.ebuild,
+  leo-4.4.1_beta2.ebuild:
+  check tk support for python (bug #154459, thanks to Cliff Yapp), fix
+  headers, cosmetics
+
+  21 Feb 2007; Piotr Jaroszyński <peper@gentoo.org> ChangeLog:
+  Transition to Manifest2.
+
+*leo-4.4.1_beta2 (25 Jun 2006)
+
+  25 Jun 2006; Lukasz Strzygowski <lucass@gentoo.org>
+  +files/leoGlobals-4.4.1_beta2.patch, +leo-4.4.1_beta2.ebuild:
+  Version bump: marked ~amd64, updated patch, ebuild cleanup, bug #137952.
+
+  16 Sep 2005; Michael Sterrett <mr_bones_@gentoo.org> leo-4.2.ebuild:
+  needs app-arch/unzip; tidy
+
+  05 Jun 2005; Michael Hanselmann <hansmi@gentoo.org> leo-4.2.ebuild:
+  Stable on ppc.
+
+  07 May 2005; Stephanie Lockwood-Childs <wormo@gentoo.org> leo-4.2.ebuild:
+  mark ~ppc
+
+  28 Feb 2005; Rob Cakebread <pythonhead@gentoo.org>
+  files/leoConfig.py.patch, leo-4.2.ebuild:
+  Fixed patch. bug# 83404
+
+*leo-4.2 (01 Dec 2004)
+
+  01 Dec 2004; Rob Cakebread <pythonhead@gentoo.org> +metadata.xml,
+  +files/leoConfig.py.patch, +leo-4.2.ebuild:
+  Initial commit. Closes bug# 69561
+

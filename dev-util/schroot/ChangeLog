@@ -1,0 +1,56 @@
+# ChangeLog for dev-util/schroot
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/schroot/ChangeLog,v 1.10 2009/11/26 17:18:50 maekke Exp $
+
+  26 Nov 2009; Markus Meier <maekke@gentoo.org> schroot-1.2.3-r4.ebuild:
+  amd64 stable, bug #289430
+
+  19 Nov 2009; Christian Faulhammer <fauli@gentoo.org>
+  schroot-1.2.3-r4.ebuild:
+  stable x86, bug 289430
+
+*schroot-1.2.3-r4 (18 Nov 2009)
+
+  18 Nov 2009; Jonathan Callen <abcd@gentoo.org> -schroot-1.2.3-r3.ebuild,
+  +schroot-1.2.3-r4.ebuild, files/schroot.initd:
+  Fix init script to actually end sessions when requested instead of recover
+  them (copy & paste error)
+
+*schroot-1.2.3-r3 (12 Nov 2009)
+
+  12 Nov 2009; Jonathan Callen <abcd@gentoo.org> -schroot-1.2.3-r2.ebuild,
+  +schroot-1.2.3-r3.ebuild, -files/schroot-1.2.3-pam.patch:
+  Use pamd_mimic_system to use the primary pam configuration; drop old
+  revision
+
+  17 Oct 2009; Jonathan Callen <abcd@gentoo.org> -schroot-1.2.3-r1.ebuild,
+  schroot-1.2.3-r2.ebuild:
+  Clean up installation of html docs; drop old revision
+
+*schroot-1.2.3-r2 (02 Oct 2009)
+
+  02 Oct 2009; Jonathan Callen <abcd@gentoo.org> +schroot-1.2.3-r2.ebuild:
+  Remove *.la files
+
+  14 Sep 2009; Jonathan Callen <abcd@gentoo.org> schroot-1.2.3-r1.ebuild:
+  Fix build error with FEATURES=-test (bug 284773). Thanks to Andy Kittner
+  <andkit@gmx.de>. Also add RDEPEND on debianutils.
+
+*schroot-1.2.3-r1 (14 Sep 2009)
+
+  14 Sep 2009; Jonathan Callen <abcd@gentoo.org> -schroot-1.2.3.ebuild,
+  +schroot-1.2.3-r1.ebuild:
+  Version bump due to missed patch.
+
+  11 Sep 2009; Jonathan Callen <abcd@gentoo.org> schroot-1.2.3.ebuild:
+  Keyword ~amd64
+
+*schroot-1.2.3 (11 Sep 2009)
+
+  11 Sep 2009; Jonathan Callen <abcd@gentoo.org> +schroot-1.2.3.ebuild,
+  +files/schroot-1.2.3-autotools.patch, +files/schroot-1.2.3-pam.patch,
+  +files/schroot-1.2.3-tests.patch, +files/schroot.confd,
+  +files/schroot.initd, +metadata.xml:
+  New ebuild. Thanks to Nick Fortino <nfortino@gmail.com> for initial ebuild
+  and patches (bug #257334).
+

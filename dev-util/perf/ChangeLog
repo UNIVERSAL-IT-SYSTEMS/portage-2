@@ -1,0 +1,45 @@
+# ChangeLog for dev-util/perf
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/perf/ChangeLog,v 1.7 2009/12/04 16:33:24 flameeyes Exp $
+
+*perf-2.6.32 (04 Dec 2009)
+
+  04 Dec 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  -perf-2.6.32_rc7.ebuild, +perf-2.6.32.ebuild:
+  Bump to final .32 version.
+
+*perf-2.6.32_rc7 (16 Nov 2009)
+
+  16 Nov 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  -perf-2.6.32_rc6.ebuild, +perf-2.6.32_rc7.ebuild:
+  Version bump to latest rc; make the linux-info checks non-fatal since the
+  package builds anyway.
+
+  04 Nov 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  perf-2.6.32_rc6.ebuild:
+  Fix typo, closes bug #291801 by Zeev Tarantov.
+
+*perf-2.6.32_rc6 (03 Nov 2009)
+
+  03 Nov 2009; Diego E. Pettenò <flameeyes@gentoo.org> -perf-2.6.31.ebuild,
+  -perf-2.6.32_rc5.ebuild, +perf-2.6.32_rc6.ebuild:
+  Version bump to latest rc, make sure the ebuild is fixed to fetch properly
+  (was broken before), remove previous stuff.
+
+  31 Oct 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  perf-2.6.32_rc5.ebuild, metadata.xml:
+  Add doc USE flag to build documentation and man pages.
+
+*perf-2.6.32_rc5 (30 Oct 2009)
+
+  30 Oct 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  +perf-2.6.32_rc5.ebuild:
+  Bump to version 2.6.32_rc5 already, add support for patching in an RC
+  version.
+
+*perf-2.6.31 (30 Oct 2009)
+
+  30 Oct 2009; Diego E. Pettenò <flameeyes@gentoo.org> +perf-2.6.31.ebuild,
+  +metadata.xml:
+  Initial import of the performance counter userland utility.
+

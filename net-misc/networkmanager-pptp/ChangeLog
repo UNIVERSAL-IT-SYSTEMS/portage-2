@@ -1,0 +1,44 @@
+# ChangeLog for net-misc/networkmanager-pptp
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager-pptp/ChangeLog,v 1.7 2009/12/02 11:39:42 dagger Exp $
+
+*networkmanager-pptp-0.7.2 (02 Dec 2009)
+
+  02 Dec 2009; Robert Piasek <dagger@gentoo.org>
+  -networkmanager-pptp-0.7.0.ebuild, networkmanager-pptp-0.7.1.ebuild,
+  +networkmanager-pptp-0.7.2.ebuild:
+  Version bump for NetworkManager pptp client.
+  Also fixes bug #294486
+
+*networkmanager-pptp-0.7.1 (22 Apr 2009)
+
+  22 Apr 2009; Robert Buchholz <rbu@gentoo.org>
+  networkmanager-pptp-0.1.0_p20070726.ebuild,
+  networkmanager-pptp-0.7.0.ebuild, +networkmanager-pptp-0.7.1.ebuild:
+  Version bump by Robert Piasek (bugs 266184 and 266606).
+  Hard-code NM minor dependency, and fix description in 0.1 ebuild (bug 202203).
+
+  05 Dec 2008; Robert Buchholz <rbu@gentoo.org> metadata.xml:
+  Add Robert Piasek to metadata
+
+*networkmanager-pptp-0.7.0 (04 Dec 2008)
+
+  04 Dec 2008; Tomas Chvatal <scarabeus@gentoo.org>
+  +networkmanager-pptp-0.7.0.ebuild:
+  New version. Thanks to robert.piasek@member.fsf.org for ebuild.
+
+  11 Mar 2008; Mart Raudsepp <leio@gentoo.org>
+  networkmanager-pptp-0.1.0_p20070726.ebuild:
+  Fix build with newer intltool
+
+  31 Dec 2007; Joseph Jezak <josejx@gentoo.org>
+  networkmanager-pptp-0.1.0_p20070726.ebuild:
+  Marked ~ppc.
+
+*networkmanager-pptp-0.1.0_p20070726 (23 Aug 2007)
+
+  23 Aug 2007; Robert Buchholz <rbu@gentoo.org>
+  +files/networkmanager-pptp-0.1.0_p20070726-service-name.patch,
+  +metadata.xml, +networkmanager-pptp-0.1.0_p20070726.ebuild:
+  Initial import to tree. Ebuild base by Stephen Klimaszewski
+

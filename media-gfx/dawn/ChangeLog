@@ -1,0 +1,31 @@
+# ChangeLog for media-gfx/dawn
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/dawn/ChangeLog,v 1.8 2009/07/06 21:50:56 jer Exp $
+
+  06 Jul 2009; Jeroen Roovers <jer@gentoo.org> dawn-3.88a.ebuild:
+  Stable for HPPA too.
+
+  05 May 2009; Christian Faulhammer <fauli@gentoo.org> dawn-3.88a.ebuild:
+  stable x86, bug 245875
+
+  22 Mar 2009; Jeremy Olexa <darkside@gentoo.org> dawn-3.88a.ebuild:
+  amd64 stable, bug 245875
+
+  03 Mar 2009; Ferris McCormick <fmccor@gentoo.org> dawn-3.88a.ebuild:
+  Sparc stable, part of Bug #245875.
+
+  06 Feb 2009; Brent Baude <ranger@gentoo.org> dawn-3.88a.ebuild:
+  Marking dawn-3.88a ~ppc for bug 196282
+
+  15 Jul 2008; Ferris McCormick <fmccor@gentoo.org> dawn-3.88a.ebuild:
+  Add ~sparc for testing, dependency required for Bug #230716.
+
+  07 Jul 2008; Jeroen Roovers <jer@gentoo.org> dawn-3.88a.ebuild:
+  Marked ~hppa (bug #230716).
+
+*dawn-3.88a (06 Jun 2008)
+
+  06 Jun 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/dawn-3.88a-no-interactive.patch, +metadata.xml, +dawn-3.88a.ebuild:
+  Initial import
+

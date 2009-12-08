@@ -1,0 +1,38 @@
+# ChangeLog for sci-biology/bowtie
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/bowtie/ChangeLog,v 1.7 2009/09/22 11:43:28 maekke Exp $
+
+  22 Sep 2009; Markus Meier <maekke@gentoo.org> bowtie-0.10.1.ebuild:
+  x86 stable, bug #282110
+
+  06 Sep 2009; Jeremy Olexa <darkside@gentoo.org> bowtie-0.10.1.ebuild:
+  amd64 stable, bug 282110
+
+*bowtie-0.10.1 (27 Jul 2009)
+
+  27 Jul 2009; Andrey Kislyuk <weaver@gentoo.org> +bowtie-0.10.1.ebuild:
+  Version bump
+
+*bowtie-0.10.0 (21 Jun 2009)
+
+  21 Jun 2009; Andrey Kislyuk <weaver@gentoo.org> -bowtie-0.9.9.1.ebuild,
+  +bowtie-0.10.0.ebuild:
+  Version bump
+
+*bowtie-0.9.9.2 (02 May 2009)
+
+  02 May 2009; Andrey Kislyuk <weaver@gentoo.org> +bowtie-0.9.9.2.ebuild:
+  Version bump
+
+  23 Apr 2009; Markus Meier <maekke@gentoo.org> bowtie-0.9.9.1:
+  amd64/x86 stable, bug #266869
+
+*bowtie-0.9.9.1 (15 Mar 2009)
+
+  15 Mar 2009; Andrey Kislyuk <weaver@gentoo.org> +metadata.xml,
+  +bowtie-0.9.9.1.ebuild:
+  Import from Science overlay
+
+  27 Feb 2009; Andrey Kislyuk <weaver@gentoo.org> ChangeLog:
+  New package sci-biology/bowtie, ebuild written by me
+

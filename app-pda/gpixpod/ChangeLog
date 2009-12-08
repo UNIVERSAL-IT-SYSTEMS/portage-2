@@ -1,0 +1,26 @@
+# ChangeLog for app-pda/gpixpod
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-pda/gpixpod/ChangeLog,v 1.7 2009/10/31 15:43:38 maekke Exp $
+
+  31 Oct 2009; Markus Meier <maekke@gentoo.org> gpixpod-0.6.2.ebuild:
+  QA: quote variables, fix ${D} variable and fix gpixpod binary
+
+  06 Sep 2008; Pieter Van den Abeele <pvdabeel@gentoo.org> gpixpod-0.6.2.ebuild:
+  Keyworded ~ppc, closes #217040
+
+  05 May 2008; Olivier Crête <tester@gentoo.org> gpixpod-0.6.2.ebuild:
+  Require pkg-config, fix python version
+
+  21 Dec 2006; Jim Ramsay <lack@gentoo.org> gpixpod-0.6.2.ebuild:
+  Adding keyword for ~x86
+
+  21 Dec 2006; Olivier Crête <tester@gentoo.org> gpixpod-0.6.2.ebuild:
+  Put all docs in the same place
+
+*gpixpod-0.6.2 (21 Dec 2006)
+
+  21 Dec 2006; Olivier Crête <tester@gentoo.org> +metadata.xml,
+  +gpixpod-0.6.2.ebuild:
+  Initial commit, thanks to the work done on bug #121744, based largely on
+  ebuild by Emiliano Vavassori
+

@@ -1,0 +1,32 @@
+# ChangeLog for app-emulation/kvm-kmod
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/kvm-kmod/ChangeLog,v 1.5 2009/09/21 14:59:42 dang Exp $
+
+  21 Sep 2009; Daniel Gryniewicz <dang@gentoo.org> metadata.xml:
+  Remove myself as maintainer
+
+*kvm-kmod-88-r1 (27 Jul 2009)
+
+  27 Jul 2009; Daniel Gryniewicz <dang@gentoo.org> -kvm-kmod-88.ebuild,
+  +kvm-kmod-88-r1.ebuild, +files/kvm-kmod-devel-88-2.6.30.patch:
+  Fix kvm-kmod for 2.6.30; bug #278804
+
+
+*kvm-kmod-88 (21 Jul 2009)
+
+  21 Jul 2009; Daniel Gryniewicz <dang@gentoo.org> +kvm-kmod-88.ebuild:
+  Bump to kvm-kmod-88
+
+
+*kvm-kmod-86 (28 May 2009)
+
+  28 May 2009; Daniel Gryniewicz <dang@gentoo.org> +kvm-kmod-86.ebuild:
+  Bump to kvm-kmod-86
+
+
+*kvm-kmod-85 (28 Apr 2009)
+
+  28 Apr 2009; Daniel Gryniewicz <dang@gentoo.org> +metadata.xml,
+  +kvm-kmod-85.ebuild:
+  New kvm modules package; upstream split them up
+

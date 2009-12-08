@@ -1,0 +1,61 @@
+# ChangeLog for app-office/homebank
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-office/homebank/ChangeLog,v 1.13 2009/11/04 14:43:25 calchan Exp $
+
+*homebank-4.1 (04 Nov 2009)
+
+  04 Nov 2009; Denis Dupeyron <calchan@gentoo.org> -homebank-4.0.2.ebuild,
+  -homebank-4.1_beta.ebuild, +homebank-4.1.ebuild:
+  Version bump, thanks to Arseny Solokha (bug #291808).
+
+*homebank-4.1_beta (07 Oct 2009)
+
+  07 Oct 2009; Denis Dupeyron <calchan@gentoo.org>
+  +homebank-4.1_beta.ebuild:
+  Version bump.
+
+*homebank-4.0.3 (27 May 2009)
+
+  27 May 2009; Denis Dupeyron <calchan@gentoo.org> +homebank-4.0.3.ebuild:
+  Version bump.
+
+  18 Apr 2009; Denis Dupeyron <calchan@gentoo.org> ChangeLog:
+  Fixed typo in Changelog.
+
+  18 Apr 2009; Denis Dupeyron <calchan@gentoo.org> -homebank-3.7.ebuild,
+  -homebank-3.8.ebuild, -homebank-4.0.1.ebuild:
+  Removed old ebuilds in order to avoid fixing them.
+
+  18 Apr 2009; Denis Dupeyron <calchan@gentoo.org> homebank-4.0.2:
+  Fixed deps, bug #238971. Fixed econf dies by itself.
+
+*homebank-4.0.2 (18 Apr 2009)
+
+  18 Apr 2009; Denis Dupeyron <calchan@gentoo.org> +homebank-4.0.2.ebuild:
+  Version bump, bug #264973.
+
+  19 Mar 2009; Joseph Jezak <josejx@gentoo.org> homebank-4.0.1.ebuild:
+  Marked ~ppc for bug #260507.
+
+*homebank-4.0.1 (27 Dec 2008)
+
+  27 Dec 2008; Denis Dupeyron <calchan@gentoo.org> +homebank-4.0.1.ebuild:
+  Version bump, thanks to Viaken (bug #250304).
+
+*homebank-3.8 (23 Apr 2008)
+
+  23 Apr 2008; Denis Dupeyron <calchan@gentoo.org> +homebank-3.8.ebuild:
+  Version bump.
+
+  01 Apr 2008; Denis Dupeyron <calchan@gentoo.org> homebank-3.7.ebuild:
+  eautoconf was enough, thanks to Tiziano Müller.
+
+  01 Apr 2008; Denis Dupeyron <calchan@gentoo.org> homebank-3.7.ebuild:
+  Oops, forgot librsvg dependency.
+
+*homebank-3.7 (01 Apr 2008)
+
+  01 Apr 2008; Denis Dupeyron <calchan@gentoo.org> +metadata.xml,
+  +homebank-3.7.ebuild:
+  Initial commit, thanks to everybody on bug #139634.
+

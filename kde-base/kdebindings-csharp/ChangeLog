@@ -1,0 +1,75 @@
+# ChangeLog for kde-base/kdebindings-csharp
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdebindings-csharp/ChangeLog,v 1.15 2009/12/01 10:19:42 wired Exp $
+
+*kdebindings-csharp-4.3.4 (01 Dec 2009)
+
+  01 Dec 2009; Alex Alexander <wired@gentoo.org>
+  +kdebindings-csharp-4.3.4.ebuild:
+  Version bump
+
+  30 Nov 2009; Joseph Jezak <josejx@gentoo.org>
+  kdebindings-csharp-4.3.3.ebuild:
+  Marked ppc stable for bug #292455.
+
+  29 Nov 2009; Samuli Suominen <ssuominen@gentoo.org>
+  kdebindings-csharp-4.3.3.ebuild:
+  amd64 stable wrt #292455
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -kdebindings-csharp-4.3.2.ebuild:
+  Drop KDE 4.3.2
+
+*kdebindings-csharp-4.3.3 (02 Nov 2009)
+
+  02 Nov 2009; Alex Alexander <wired@gentoo.org>
+  +kdebindings-csharp-4.3.3.ebuild:
+  Version bump
+
+  12 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  kdebindings-csharp-4.3.2.ebuild:
+  Restore ~keywords that was present in 4.3.1 but missing accidently in
+  4.3.2
+
+  10 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  kdebindings-csharp-4.3.1.ebuild:
+  amd64 stable wrt #287697
+
+  08 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -kdebindings-csharp-4.3.0.ebuild:
+  Drop KDE 4.3.0
+
+  07 Oct 2009; Joseph Jezak <josejx@gentoo.org>
+  kdebindings-csharp-4.3.1.ebuild:
+  Marked ~ppc for bug #280312.
+
+*kdebindings-csharp-4.3.2 (06 Oct 2009)
+
+  06 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  +kdebindings-csharp-4.3.2.ebuild:
+  Version bump
+
+  02 Sep 2009; Alex Alexander <wired@gentoo.org>
+  kdebindings-csharp-4.3.1.ebuild,
+  files/kdebindings-csharp-build-fixes.patch:
+  added plasma use, fixed -webkit build fail
+
+*kdebindings-csharp-4.3.1 (01 Sep 2009)
+
+  01 Sep 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +kdebindings-csharp-4.3.1.ebuild:
+  Version bump
+
+  20 Aug 2009; Alex Alexander <wired@gentoo.org> metadata.xml:
+  added missing use flag descriptions
+
+  04 Aug 2009; Alex Alexander <wired@gentoo.org> +metadata.xml:
+  added metadata...
+
+*kdebindings-csharp-4.3.0 (04 Aug 2009)
+
+  04 Aug 2009; Alex Alexander <wired@gentoo.org>
+  +kdebindings-csharp-4.3.0.ebuild,
+  +files/kdebindings-csharp-build-fixes.patch:
+  Version bump
+

@@ -1,0 +1,71 @@
+# ChangeLog for mail-client/roundcube
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/roundcube/ChangeLog,v 1.17 2009/12/01 07:44:58 hollow Exp $
+
+  01 Dec 2009; Benedikt Böhm <hollow@gentoo.org> roundcube-0.3.1.ebuild:
+  fix #294956 (sqlite should only be forced if neither postgres nor mysql
+  are selected)
+
+  30 Nov 2009; Brent Baude <ranger@gentoo.org> roundcube-0.3.1.ebuild:
+  Marking roundcube-0.3.1 ppc64 for bug 294679
+
+  30 Nov 2009; Markus Meier <maekke@gentoo.org> roundcube-0.3.1.ebuild:
+  amd64 stable, bug #294679
+
+  27 Nov 2009; Christian Faulhammer <fauli@gentoo.org>
+  roundcube-0.3.1.ebuild:
+  stable x86, security bug 294679
+
+*roundcube-0.3.1 (09 Nov 2009)
+
+  09 Nov 2009; Benedikt Böhm <hollow@gentoo.org> +roundcube-0.3.1.ebuild:
+  version bump wrt #292484
+
+  27 Sep 2009; nixnut <nixnut@gentoo.org> roundcube-0.2.2.ebuild:
+  ppc stable #272423
+
+  26 Sep 2009; Brent Baude <ranger@gentoo.org> roundcube-0.2.2.ebuild:
+  Marking roundcube-0.2.2 ppc64 for bug 272423
+
+  17 Sep 2009; Benedikt Böhm <hollow@gentoo.org> roundcube-0.3.ebuild:
+  convert most of the USE flag mess to EAPI2
+
+  17 Sep 2009; Benedikt Böhm <hollow@gentoo.org> roundcube-0.2.2.ebuild,
+  roundcube-0.3.ebuild:
+  stable on amd64; does not need php imap library
+
+  17 Sep 2009; Tomáš Chvátal <scarabeus@gentoo.org> roundcube-0.3.ebuild:
+  Depend on php with correct useflags enabled when spell useflag is called.
+
+  12 Sep 2009; Christian Faulhammer <fauli@gentoo.org>
+  roundcube-0.2.2.ebuild:
+  stable x86, bug 272423
+
+*roundcube-0.3 (04 Sep 2009)
+
+  04 Sep 2009; Benedikt Böhm <hollow@gentoo.org> -roundcube-0.2.ebuild,
+  -roundcube-0.2.1.ebuild, +roundcube-0.3.ebuild:
+  version bump wrt #274265
+
+*roundcube-0.2.2 (18 Jul 2009)
+
+  18 Jul 2009; Benedikt Böhm <hollow@gentoo.org> +roundcube-0.2.2.ebuild:
+  version bump wrt #272487
+
+*roundcube-0.2.1 (13 Apr 2009)
+
+  13 Apr 2009; Benedikt Böhm <hollow@gentoo.org> +roundcube-0.2.1.ebuild:
+  version bump wrt #262894
+
+  28 Jan 2009; Peter Volkov <pva@gentoo.org> roundcube-0.2.ebuild:
+  Fixed typo. For spell checking we need spell in php, not ssl.
+
+  07 Jan 2009; Brent Baude <ranger@gentoo.org> roundcube-0.2.ebuild:
+  Marking roundcube-0.2 ~ppc and ~ppc64 for bug 253492
+
+*roundcube-0.2 (02 Jan 2009)
+
+  02 Jan 2009; Benedikt Böhm <hollow@gentoo.org> +files/postinstall-en.txt,
+  +metadata.xml, +roundcube-0.2.ebuild:
+  initial commit
+

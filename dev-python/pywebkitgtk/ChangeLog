@@ -1,0 +1,38 @@
+# ChangeLog for dev-python/pywebkitgtk
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pywebkitgtk/ChangeLog,v 1.6 2009/10/07 14:41:49 volkmar Exp $
+
+  07 Oct 2009; Mounir Lamouri <volkmar@gentoo.org>
+  pywebkitgtk-1.1.6-r1.ebuild:
+  Keywording for ppc, bug 272367
+
+  16 Sep 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  pywebkitgtk-1.1.6-r1.ebuild:
+  Fix building with =sys-devel/libtool-1* (bug #284174).
+
+*pywebkitgtk-1.1.6-r1 (30 Aug 2009)
+
+  30 Aug 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  +pywebkitgtk-1.1.6-r1.ebuild:
+  Install .pth file (bug #283271). Add linking against libgthread-2.0 (bug
+  #283271).
+
+*pywebkitgtk-1.1.6 (29 Aug 2009)
+
+  29 Aug 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  -pywebkitgtk-1.0.2.ebuild, +pywebkitgtk-1.1.6.ebuild:
+  Version bump. Set SUPPORT_PYTHON_ABIS.
+
+*pywebkitgtk-1.1.5 (07 Jun 2009)
+
+  07 Jun 2009; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  +pywebkitgtk-1.1.5.ebuild:
+  Version bump. Fix building with with Python 2.6 (bug #265649).
+
+*pywebkitgtk-1.0.2 (07 Dec 2008)
+
+  07 Dec 2008; Jesus Rivero <neurogeek@gentoo.org> +metadata.xml,
+  +pywebkitgtk-1.0.2.ebuild:
+  Initial commit. Proxy mantained by me for Sergio Rodriguez
+  <srinclan@gmail.com>
+

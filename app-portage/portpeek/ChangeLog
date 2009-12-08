@@ -1,0 +1,219 @@
+# ChangeLog for app-portage/portpeek
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-portage/portpeek/ChangeLog,v 1.42 2009/10/19 17:23:12 mpagano Exp $
+
+*portpeek-1.9.17 (19 Oct 2009)
+
+  19 Oct 2009; Mike Pagano <mpagano@gentoo.org> -portpeek-1.9.16.ebuild,
+  +portpeek-1.9.17.ebuild:
+  Version bump to fix the identification tilde packages that are have no
+  more masked version are candidates for removal and the removal of the old
+  version.
+
+*portpeek-1.9.16 (18 Oct 2009)
+
+  18 Oct 2009; Mike Pagano <mpagano@gentoo.org> -portpeek-1.9.15.ebuild,
+  +portpeek-1.9.16.ebuild:
+  Version bump to fix bug concerning use of uninitialized var and old
+  version cleanup.
+
+*portpeek-1.9.15 (06 Oct 2009)
+
+  06 Oct 2009; Mike Pagano <mpagano@gentoo.org> +portpeek-1.9.15.ebuild:
+  Version bump to remove use of deprecated portage functionality
+
+*portpeek-1.9.14 (21 Sep 2009)
+
+  21 Sep 2009; Mike Pagano <mpagano@gentoo.org> -portpeek-1.9.13.ebuild,
+  +portpeek-1.9.14.ebuild:
+  Version bump to comply with portage changes and old version cleanup
+
+*portpeek-1.9.13 (03 Sep 2009)
+
+  03 Sep 2009; Mike Pagano <mpagano@gentoo.org> -portpeek-1.9.12.ebuild,
+  +portpeek-1.9.13.ebuild:
+  Another tilde fix. Display cleanup. Removal of broken version
+
+*portpeek-1.9.12 (02 Sep 2009)
+
+  02 Sep 2009; Mike Pagano <mpagano@gentoo.org> -portpeek-1.9.11.ebuild,
+  +portpeek-1.9.12.ebuild:
+  Fix for tilde masked packages that were being incorrectly marked as non
+  masked. Removal of broken old version
+
+*portpeek-1.9.11 (17 Aug 2009)
+
+  17 Aug 2009; Mike Pagano <mpagano@gentoo.org> -portpeek-1.9.10-r1.ebuild,
+  +portpeek-1.9.11.ebuild:
+  Fix for tilde package.unmask and package.keyword clean
+
+*portpeek-1.9.10-r1 (17 Aug 2009)
+
+  17 Aug 2009; Mike Pagano <mpagano@gentoo.org> -portpeek-1.9.10.ebuild,
+  +portpeek-1.9.10-r1.ebuild:
+  Version bump. Wrong package in tarball.
+
+  16 Aug 2009; Mike Pagano <mpagano@gentoo.org> +portpeek-1.9.7.ebuild:
+  Adding back version
+
+*portpeek-1.9.10 (16 Aug 2009)
+
+  16 Aug 2009; Mike Pagano <mpagano@gentoo.org> -portpeek-1.9.7.ebuild,
+  -portpeek-1.9.9.ebuild, +portpeek-1.9.10.ebuild:
+  Removal of broken version. Fix for package.unmask not showing package name
+
+*portpeek-1.9.9 (13 Aug 2009)
+
+  13 Aug 2009; Michael Pagano <mpagano@gentoo.org> -portpeek-1.9.8.ebuild,
+  +portpeek-1.9.9.ebuild:
+  Version bump to add package.use check to 'all' parameter
+
+*portpeek-1.9.8 (13 Aug 2009)
+
+  13 Aug 2009; Mike Pagano <mpagano@gentoo.org> +portpeek-1.9.8.ebuild:
+  Adding package.use management (-s)
+
+*portpeek-1.9.7 (08 Aug 2009)
+
+  08 Aug 2009; Mike Pagano <mpagano@gentoo.org> -portpeek-1.9.5.ebuild,
+  +portpeek-1.9.7.ebuild:
+  Bug fixes for tilde packages
+
+*portpeek-1.9.5 (06 Aug 2009)
+
+  06 Aug 2009; Mike Pagano <mpagano@gentoo.org> -portpeek-1.9.1.ebuild,
+  +portpeek-1.9.5.ebuild:
+  Fix tilde bug and remove broken version
+
+*portpeek-1.9.1 (04 Aug 2009)
+*portpeek-1.8.6 (04 Aug 2009)
+
+  04 Aug 2009; Mike Pagano <mpagano@gentoo.org> portpeek-1.8.5.ebuild,
+  +portpeek-1.8.6.ebuild, portpeek-1.9.0.ebuild, +portpeek-1.9.1.ebuild:
+  Bump for portage 2.2_rc35 and force rc33 for 1.8.5 and 1.9.0
+
+*portpeek-1.9.0 (27 Jul 2009)
+
+  27 Jul 2009; Mike Pagano <mpagano@gentoo.org> +portpeek-1.9.0.ebuild:
+  Fix for gentoolkit-0.3.0_rcX as per bug #278930 and thank-you to Fuzzyray
+  for heads up and patch assistance.
+
+*portpeek-1.8.5 (18 Jun 2009)
+
+  18 Jun 2009; Michael Pagano <mpagano@gentoo.org> +portpeek-1.8.5.ebuild:
+  Version bump with some defensive coding added
+
+*portpeek-1.8.1 (13 Jun 2009)
+
+  13 Jun 2009; Michael Pagano <mpagano@gentoo.org> +portpeek-1.8.1.ebuild:
+  Adding --no-color option to suppress color output
+
+*portpeek-1.8.0 (13 May 2009)
+
+  13 May 2009; Mike Pagano <mpagano@gentoo.org> +portpeek-1.8.0.ebuild:
+  New version that supports ~ (tilde) atom
+
+*portpeek-1.7.5 (17 Apr 2009)
+
+  17 Apr 2009; Mike Pagano <mpagano@gentoo.org> +portpeek-1.7.5.ebuild:
+  Portpeek version bump. Now displays filename alongside package.
+
+  17 Apr 2009; Mike Pagano <mpagano@gentoo.org> -portpeek-1.5.7.ebuild,
+  -portpeek-1.5.7-r1.ebuild, -portpeek-1.5.7.1.ebuild,
+  -portpeek-1.5.7.1-r1.ebuild, -portpeek-1.6.5.ebuild:
+  Removal of old ebuilds
+
+  18 Mar 2009; Brent Baude <ranger@gentoo.org> portpeek-1.5.7.2.ebuild:
+  stable ppc, bug 262127
+
+  14 Mar 2009; Tiago Cunha <tcunha@gentoo.org> portpeek-1.5.7.2.ebuild:
+  stable amd64, bug 262127
+
+  14 Mar 2009; Raúl Porcel <armin76@gentoo.org> portpeek-1.5.7.2.ebuild:
+  sparc stable wrt #262127
+
+  12 Mar 2009; Mike Pagano <mpagano@gentoo.org> portpeek-1.5.7.2.ebuild:
+  Stable on x86 in reference to bug #262127
+
+*portpeek-1.7.0 (30 Jan 2009)
+
+  30 Jan 2009; Mike Pagano <mpagano@gentoo.org> +portpeek-1.7.0.ebuild:
+  Version bump to fix issue where unmasked packages were not displaying as
+  removable.
+
+*portpeek-1.5.7.2 (30 Dec 2008)
+
+  30 Dec 2008; Mike Pagano <mpagano@gentoo.org> +portpeek-1.5.7.2.ebuild:
+  Remove use of deprecated portage modules
+
+  17 Dec 2008; Mike Pagano <mpagano@gentoo.org> +portpeek-1.5.7-r1.ebuild,
+  +portpeek-1.5.7.1-r1.ebuild, -portpeek-1.6.1.ebuild:
+  Removal of old version
+
+*portpeek-1.5.7.1-r1 (17 Dec 2008)
+*portpeek-1.5.7-r1 (17 Dec 2008)
+
+  17 Dec 2008; Mike Pagano <mpagano@gentoo.org> +portpeek-1.5.7-r1.ebuild,
+  +portpeek-1.5.7.1-r1.ebuild:
+  Adding gentoolkit RDEPEND as per bug #251336. Thanks for reporting Dustin.
+
+  25 Sep 2008; Alexis Ballier <aballier@gentoo.org> portpeek-1.6.7.ebuild:
+  keyword ~x86-fbsd thanks to Davide Italiano <dav_it@gentoo.org>, bug
+  #236213
+
+*portpeek-1.5.7.1 (05 Sep 2008)
+
+  05 Sep 2008; Mike Pagano <mpagano@gentoo.org> +portpeek-1.5.7.1.ebuild:
+  Backported incorrect mask determination bug to the 1.5.X series
+
+*portpeek-1.6.7 (29 Aug 2008)
+
+  29 Aug 2008; Mike Pagano <mpagano@gentoo.org> +portpeek-1.6.7.ebuild:
+  Version bump for bug fix concerning unmasked packages
+
+  08 Aug 2008; nixnut <nixnut@gentoo.org> portpeek-1.5.7.ebuild:
+  Stable on ppc wrt bug 233580
+
+  06 Aug 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  portpeek-1.5.7.ebuild:
+  stable amd64, bug 233580, remove redundant directory change to 'S'
+
+  01 Aug 2008; Ferris McCormick <fmccor@gentoo.org> portpeek-1.5.7.ebuild:
+  Sparc stable, Bug #233644.
+
+*portpeek-1.6.5 (01 Aug 2008)
+
+  01 Aug 2008; Mike Pagano <mpagano@gentoo.org> +portpeek-1.6.5.ebuild:
+  Version bump
+
+  26 Jun 2008; Ferris McCormick <fmccor@gentoo.org> portpeek-1.5.7.ebuild,
+  portpeek-1.6.1.ebuild:
+  Add ~sparc keyword at usr (Dustin Surawicz) request, Bug #229615.
+
+*portpeek-1.6.1 (26 Jun 2008)
+
+  26 Jun 2008; Mike Pagano <mpagano@gentoo.org> -portpeek-1.6.0.ebuild,
+  +portpeek-1.6.1.ebuild:
+  Fix leftover references to deprecated modules
+
+*portpeek-1.6.0 (22 Jun 2008)
+
+  22 Jun 2008; Mike Pagano <mpagano@gentoo.org> +portpeek-1.6.0.ebuild:
+  Remove use of deprecated portage modules
+
+  31 Mar 2008; Doug Goldstein <cardoe@gentoo.org> portpeek-1.5.7.ebuild:
+  Add ~amd64
+
+  30 Jan 2008; Dawid Węgliński <cla@gentoo.org> portpeek-1.5.7.ebuild:
+  Stable on x86 (bug #207748)
+
+  15 Oct 2007; Donnie Berkholz <dberkholz@gentoo.org>;
+  portpeek-1.5.7.ebuild:
+  Keyword ~ppc.
+
+*portpeek-1.5.7 (10 Oct 2007)
+
+  10 Oct 2007; Mike Pagano <mpagano@gentoo.org> +metadata.xml,
+  +portpeek-1.5.7.ebuild:
+  Initial ebuild for new package.
+

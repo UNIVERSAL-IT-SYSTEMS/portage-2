@@ -1,0 +1,25 @@
+# ChangeLog for net-misc/xrdp
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/xrdp/ChangeLog,v 1.4 2009/03/01 15:09:11 patrick Exp $
+
+*xrdp-0.4.1 (01 Mar 2009)
+
+  01 Mar 2009; Patrick Lauer <patrick@gentoo.org>
+  +files/xrdp-0.4.1-curdir.patch, +xrdp-0.4.1.ebuild:
+  Bump to 0.4.1. Fixes #171411. Ebuild contributed by schism@subverted.org,
+  patch by Christoph Brill.
+
+  21 Nov 2006; Joseph Jezak <josejx@gentoo.org> xrdp-0.3.1.ebuild:
+  Marked ~ppc for bug #143230.
+
+  02 Sep 2006; Jason Wever <weeve@gentoo.org> xrdp-0.3.1.ebuild:
+  Added ~sparc keyword wrt bug #145766.
+
+*xrdp-0.3.1 (02 Aug 2006)
+
+  02 Aug 2006; Patrick McLean <chutzpah@gentoo.org>
+  +files/xrdp-0.3.1-curdir.patch, +files/xrdp-0.3.1-respect-cflags.patch,
+  +files/startwm.sh, +files/xrdp-confd, +files/xrdp-initd, +metadata.xml,
+  +xrdp-0.3.1.ebuild:
+  Initial commit. New package, requested in bug #141753
+

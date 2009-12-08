@@ -1,0 +1,31 @@
+# ChangeLog for net-misc/ipsvd
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/ipsvd/ChangeLog,v 1.7 2009/11/20 09:09:25 bangert Exp $
+
+  20 Nov 2009; Thilo Bangert <bangert@gentoo.org> -ipsvd-0.13.0.ebuild:
+  remove old version
+
+  23 Sep 2009; Patrick Lauer <patrick@gentoo.org> ipsvd-0.13.0.ebuild,
+  ipsvd-1.0.0.ebuild:
+  Remove virtual/libc
+
+*ipsvd-1.0.0 (27 Jan 2009)
+
+  27 Jan 2009; Thilo Bangert <bangert@gentoo.org> +ipsvd-1.0.0.ebuild:
+  version bump
+
+  23 Aug 2008; Markus Meier <maekke@gentoo.org> ipsvd-0.13.0.ebuild:
+  add ~amd64, bug #212319
+
+  25 Jan 2008; Thilo Bangert <bangert@gentoo.org> ipsvd-0.13.0.ebuild:
+  fix quoting
+
+  27 Oct 2007; Thilo Bangert <bangert@gentoo.org> metadata.xml:
+  fix metadata.xml
+
+*ipsvd-0.13.0 (27 Oct 2007)
+
+  27 Oct 2007; Thilo Bangert <bangert@gentoo.org> +metadata.xml,
+  +ipsvd-0.13.0.ebuild:
+  initial release - ebuild thanks to Dean Hall - bug #76522
+

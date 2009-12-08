@@ -1,0 +1,175 @@
+# ChangeLog for sci-physics/geant
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/geant/ChangeLog,v 1.35 2009/12/07 18:25:00 jer Exp $
+
+  07 Dec 2009; Jeroen Roovers <jer@gentoo.org> geant-3.21.14-r2.ebuild,
+  geant-4.9.2_p02.ebuild:
+  Stable for HPPA (bug #294442).
+
+  04 Dec 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  geant-3.21.14-r2.ebuild:
+  Re-changing to old style patching at least until patch-2.6 is not buggy
+  and masked
+
+  26 Nov 2009; Markus Meier <maekke@gentoo.org> geant-4.9.2_p02.ebuild:
+  amd64 stable, bug #294442
+
+  26 Nov 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  geant-3.21.14-r2.ebuild:
+  Fixing patch application with more recent versions
+
+  26 Nov 2009; Christian Faulhammer <fauli@gentoo.org>
+  geant-4.9.2_p02.ebuild:
+  stable x86, bug 294442
+
+  06 Oct 2009; Dominik Kapusta <ayoy@gentoo.org> geant-4.9.2-r2.ebuild,
+  geant-4.9.2_p02.ebuild:
+  Removed alternative dependency on Qt metapackage
+
+*geant-4.9.2_p02 (23 Sep 2009)
+
+  23 Sep 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  -geant-4.9.1_p03.ebuild, -geant-4.9.2_p01.ebuild, +geant-4.9.2_p02.ebuild,
+  metadata.xml:
+  Version bump. Added aida USE flag, fixed Qt and GDML build options,
+  hopefully fixing examples compiling (bug #260102), thanks Matej and
+  Giovanni Fattori for their input
+
+  05 May 2009; Christian Faulhammer <fauli@gentoo.org>
+  geant-3.21.14-r2.ebuild, geant-4.9.2-r2.ebuild:
+  stable x86, bug 245875
+
+  17 Apr 2009; Sébastien Fabbro <bicatali@gentoo.org> geant-3.21.14-r2:
+  Fixed some latex font generation and made ebuild consistent with other
+  cernlib ebuilds
+
+  23 Mar 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  geant-4.9.2-r2.ebuild:
+  Added building of opengl qt4 driver, thanks merkel@kph.uni-mainz.de (bug
+  #263450) for noticing
+
+  22 Mar 2009; Jeremy Olexa <darkside@gentoo.org> geant-4.9.2-r2.ebuild:
+  amd64 stable, bug 245875
+  
+  22 Mar 2009; Jeremy Olexa <darkside@gentoo.org> geant-3.21.14-r2.ebuild:
+  amd64 stable, bug 245875
+
+*geant-4.9.2_p01 (18 Mar 2009)
+
+  18 Mar 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  geant-3.21.14-r2.ebuild, +geant-4.9.2_p01.ebuild:
+  Version bump (bug fixes only)
+
+  05 Mar 2009; Ferris McCormick <fmccor@gentoo.org> geant-4.9.2-r2.ebuild:
+  Sparc stable, although early. See Bug #245875 --- needed for gcc-4.3 (Bug
+  #245160).
+
+  05 Mar 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  geant-4.9.2-r2.ebuild:
+  Fixed linking qt4 libraries, added G4WORKDIR to make it work on paludis
+  and a bit of ebuild cleaning
+
+  03 Mar 2009; Ferris McCormick <fmccor@gentoo.org> geant-3.21.14-r2.ebuild:
+  Sparc stable, part of Bug #245875.
+
+*geant-4.9.2-r2 (27 Feb 2009)
+
+  27 Feb 2009; Sébastien Fabbro <bicatali@gentoo.org> -geant-4.9.2.ebuild,
+  -geant-4.9.2-r1.ebuild, +geant-4.9.2-r2.ebuild:
+  Adding fixes from Benjamin Bannier to include linking when building
+  examples, and a syntax error caught by Matej Batic, see bug #260102
+
+*geant-4.9.2-r1 (19 Jan 2009)
+
+  19 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/geant-4.9.2-zlib.patch, +geant-4.9.2-r1.ebuild:
+  Added a patch to avoid linking to G4zlib, closing bug #255017, thanks to
+  Benjamin Bannier for the hint
+
+*geant-4.9.2 (10 Jan 2009)
+
+  10 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org> +geant-4.9.2.ebuild:
+  Version bump. Switched to EAPI=2, added qt4 support, updated data files,
+  updated minimum dependencies, and now propagate LDFLAGS. Closing bug #253769.
+
+  24 Nov 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  -geant-4.9.1_p02.ebuild, geant-4.9.1_p03.ebuild:
+  Removed bundled zlib, closing bug #248423
+
+*geant-4.9.1_p03 (23 Sep 2008)
+
+  23 Sep 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  +geant-4.9.1_p03.ebuild:
+  Version bump. Closing bug #238132.
+
+  06 Aug 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
+  Add USE flag description to metadata wrt GLEP 56.
+
+  17 Jul 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  geant-4.9.1_p02.ebuild:
+  Fixed the make global step to not remove previous built granula libaries,
+  see bug #231314, thanks Benjamin Bannier.
+
+  15 Jul 2008; Ferris McCormick <fmccor@gentoo.org> geant-4.9.1_p02.ebuild:
+  Add ~sparc for testing and for sci-physics/root --- Bug #230716 which see
+  for comments.
+
+  15 Jul 2008; Ferris McCormick <fmccor@gentoo.org> geant-3.21.14-r2.ebuild:
+  Add ~sparc for testing, dependency required for Bug #230716.
+
+  15 Jul 2008; Jeroen Roovers <jer@gentoo.org> geant-4.9.1_p02.ebuild:
+  Marked ~hppa (bug #230716).
+
+  14 Jul 2008; Jeroen Roovers <jer@gentoo.org> geant-3.21.14-r2.ebuild:
+  Marked ~hppa (bug #230716).
+
+  10 Jul 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  geant-4.9.1_p02.ebuild:
+  Fix some global libraries issues, see bug #231314, thanks Benjamin Bannier
+  for his patch.
+
+  06 Jul 2008; Jeroen Roovers <jer@gentoo.org> geant-3.21.14-r1.ebuild:
+  Fix duplicate KEYWORDS definition.
+
+  06 Jul 2008; Jeroen Roovers <jer@gentoo.org> geant-3.21.14-r2.ebuild:
+  Fix duplicate KEYWORDS definition.
+
+  29 Jun 2008; Torsten Veller <tove@gentoo.org> geant-3.21.14-r1.ebuild,
+  geant-3.21.14-r2.ebuild:
+  Add missing die: || "..." -> || die "..."
+
+  27 Jun 2008; Ulrich Mueller <ulm@gentoo.org> geant-3.21.14-r1.ebuild,
+  geant-3.21.14-r2.ebuild, geant-4.9.1_p02.ebuild:
+  Change dependency from virtual/motif to x11-libs/openmotif, bug 224749.
+
+*geant-4.9.1_p02 (06 Jun 2008)
+*geant-3.21.14-r2 (06 Jun 2008)
+
+  06 Jun 2008; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml,
+  -geant-3.21.14.ebuild, +geant-3.21.14-r2.ebuild, +geant-4.9.1_p02.ebuild:
+  Added major version bump for geant-4, slotted. Thanks much to Benjamin
+  Bennier for his work (bug #212221). Now geant-3 is also slotted, and got a
+  revision bump
+
+*geant-4.9.1_p02 (06 Jun 2008)
+*geant-3.21.14-r2 (06 Jun 2008)
+
+  06 Jun 2008; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml,
+  -geant-3.21.14.ebuild, +geant-3.21.14-r2.ebuild, +geant-4.9.1_p02.ebuild:
+  Added major version bump for geant-4, slotted. Thanks much to Benjamin
+  Bennier for his work (bug #212221). Now geant-3 is also slotted, and got a
+  revision bump
+
+*geant-3.21.14-r1 (11 Mar 2008)
+
+  11 Mar 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  +geant-3.21.14-r1.ebuild:
+  New series of patches from Debian, more compatible with gfortran and better
+  tests. Much ebuild cleaning.
+
+*geant-3.21.14 (24 Aug 2007)
+
+  24 Aug 2007; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
+  +geant-3.21.14.ebuild:
+  Initial import.
+

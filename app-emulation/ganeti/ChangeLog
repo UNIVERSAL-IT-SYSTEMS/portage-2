@@ -1,0 +1,55 @@
+# ChangeLog for app-emulation/ganeti
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/ChangeLog,v 1.10 2009/10/02 22:12:18 ramereth Exp $
+
+*ganeti-2.0.4 (02 Oct 2009)
+*ganeti-2.0.3 (02 Oct 2009)
+
+  02 Oct 2009; Lance Albertson <ramereth@gentoo.org>
+  +files/ganeti-2.0.3-gentoo-brctl-path.patch, +ganeti-2.0.4.ebuild,
+  +files/ganeti2.initd, +ganeti-2.0.3.ebuild, metadata.xml:
+  Version bump to 2.x
+
+  Special thanks to Russell Haering <russell_h@osuosl.org>, and Ben Kero
+  <bkero@osuosl.org> for contributing to the ebuild.
+
+  24 Sep 2009; Lance Albertson <ramereth@gentoo.org> metadata.xml:
+  Set myself as the new maintainer, 2.x ebuilds forthcoming soon...
+
+  03 Jan 2009; Christoph Mende <angelos@gentoo.org> -ganeti-1.2.0.ebuild,
+  ganeti-1.2.1.ebuild:
+  QA: Cleanup, fixed dependencies (bug 239996)
+
+  05 Jul 2008; René Nussbaumer <killerfox@gentoo.org> metadata.xml:
+  Removing me as a maintainer
+
+*ganeti-1.2.1 (31 Jan 2008)
+
+  31 Jan 2008; Michael Hanselmann <hansmi@gentoo.org> metadata.xml,
+  -ganeti-1.2_beta3.ebuild, +ganeti-1.2.1.ebuild:
+  Version bump according to bug 207583 and set KillerFox as maintainer.
+
+*ganeti-1.2.0 (19 Dec 2007)
+
+  19 Dec 2007; Michael Hanselmann <hansmi@gentoo.org>
+  -ganeti-1.2_beta2-r1.ebuild, +ganeti-1.2.0.ebuild:
+  Version bump.
+
+*ganeti-1.2_beta3 (28 Nov 2007)
+
+  28 Nov 2007; Michael Hanselmann <hansmi@gentoo.org>
+  +ganeti-1.2_beta3.ebuild:
+  Version bump.
+
+*ganeti-1.2_beta2-r1 (23 Nov 2007)
+
+  23 Nov 2007; Michael Hanselmann <hansmi@gentoo.org> +files/ganeti.initd,
+  -ganeti-1.2_beta2.ebuild, +ganeti-1.2_beta2-r1.ebuild:
+  Add missing init script.
+
+*ganeti-1.2_beta2 (23 Nov 2007)
+
+  23 Nov 2007; Michael Hanselmann <hansmi@gentoo.org> +metadata.xml,
+  +ganeti-1.2_beta2.ebuild:
+  Added to portage, ebuild by me.
+

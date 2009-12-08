@@ -1,0 +1,38 @@
+# ChangeLog for media-libs/celt
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/celt/ChangeLog,v 1.7 2009/12/08 00:41:32 tgurr Exp $
+
+*celt-0.7.0-r2 (08 Dec 2009)
+
+  08 Dec 2009; Timo Gurr <tgurr@gentoo.org> -celt-0.7.0-r1.ebuild,
+  +celt-0.7.0-r2.ebuild:
+  Revert library versioning hack, upstream solution still a work in
+  progress.
+
+*celt-0.7.0-r1 (20 Nov 2009)
+
+  20 Nov 2009; Timo Gurr <tgurr@gentoo.org> -celt-0.7.0.ebuild,
+  +celt-0.7.0-r1.ebuild:
+  Introduce library versioning, needed to fix bug #293300. Thanks to Dennis
+  Schridde.
+
+*celt-0.7.0 (26 Oct 2009)
+
+  26 Oct 2009; Timo Gurr <tgurr@gentoo.org> +celt-0.7.0.ebuild:
+  Version bump, includes API changes in this release.
+
+  29 Sep 2009; Tobias Klausmann <klausman@gentoo.org> celt-0.6.1.ebuild:
+  Keyworded on alpha, bug #276355
+
+  29 Sep 2009; Timo Gurr <tgurr@gentoo.org> celt-0.6.1.ebuild:
+  Add fix for bug #281484.
+
+  12 Sep 2009; Mounir Lamouri <volkmar@gentoo.org> celt-0.6.1.ebuild:
+  Keywording for ppc.
+
+*celt-0.6.1 (12 Aug 2009)
+
+  12 Aug 2009; Timo Gurr <tgurr@gentoo.org> +celt-0.6.1.ebuild,
+  +metadata.xml:
+  Initial ebuild, thanks to Adeel. Fixes bug #250334.
+

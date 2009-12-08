@@ -1,0 +1,138 @@
+# ChangeLog for kde-base/krosspython
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-base/krosspython/ChangeLog,v 1.29 2009/12/01 11:00:45 wired Exp $
+
+*krosspython-4.3.4 (01 Dec 2009)
+
+  01 Dec 2009; Alex Alexander <wired@gentoo.org> +krosspython-4.3.4.ebuild:
+  Version bump
+
+  30 Nov 2009; Joseph Jezak <josejx@gentoo.org> krosspython-4.3.3.ebuild:
+  Marked ppc/ppc64 stable for bug #292455.
+
+  29 Nov 2009; Raúl Porcel <armin76@gentoo.org> krosspython-4.3.3.ebuild:
+  Add ~sparc
+
+  29 Nov 2009; Samuli Suominen <ssuominen@gentoo.org>
+  krosspython-4.3.3.ebuild:
+  amd64 stable wrt #292455
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -krosspython-4.3.2.ebuild:
+  Drop KDE 4.3.2
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -krosspython-4.2.4.ebuild:
+  Drop KDE 4.2.4
+
+*krosspython-4.3.3 (02 Nov 2009)
+
+  02 Nov 2009; Alex Alexander <wired@gentoo.org> +krosspython-4.3.3.ebuild:
+  Version bump
+
+  18 Oct 2009; Markus Meier <maekke@gentoo.org> krosspython-4.3.1.ebuild:
+  x86 stable, bug #287697
+
+  10 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  krosspython-4.3.1.ebuild:
+  amd64 stable wrt #287697
+
+  08 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -krosspython-4.3.0.ebuild:
+  Drop KDE 4.3.0
+
+*krosspython-4.3.2 (06 Oct 2009)
+
+  06 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  +krosspython-4.3.2.ebuild:
+  Version bump
+
+*krosspython-4.3.1 (01 Sep 2009)
+
+  01 Sep 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +krosspython-4.3.1.ebuild:
+  Version bump
+
+*krosspython-4.3.0 (04 Aug 2009)
+
+  04 Aug 2009; Alex Alexander <wired@gentoo.org> +krosspython-4.3.0.ebuild:
+  Version bump
+
+  14 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -krosspython-4.2.3.ebuild:
+  Drop KDE 4.2.3
+
+  05 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> ChangeLog:
+  Fix accidently added keywords
+
+*krosspython-4.2.4 (04 Jun 2009)
+
+  04 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  +krosspython-4.2.4.ebuild:
+  Version bump
+
+  03 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -krosspython-4.2.2.ebuild:
+  Drop KDE 4.2.2
+
+*krosspython-4.2.3 (06 May 2009)
+
+  06 May 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  +krosspython-4.2.3.ebuild:
+  Version bump
+
+  17 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -krosspython-4.2.1.ebuild, krosspython-4.2.2:
+  Restore ~hppa keywords
+
+  16 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -krosspython-4.2.1.ebuild:
+  Drop KDE 4.2.1
+
+*krosspython-4.2.2 (11 Apr 2009)
+
+  11 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  +krosspython-4.2.2.ebuild:
+  Add KDE 4.2.2
+
+  15 Mar 2009; Brent Baude <ranger@gentoo.org> krosspython-4.2.1.ebuild:
+  Marking krosspython-4.2.1 ~ppc64 for bug 257457
+
+  15 Mar 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  krosspython-4.2.1.ebuild:
+  Removed the double KEYWORDS entry.
+
+  08 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -krosspython-4.2.0.ebuild:
+  Drop KDE 4.2.0
+
+  08 Mar 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  krosspython-4.2.1.ebuild:
+  Semi-automatic merge, Update deps.
+
+*krosspython-4.2.1 (04 Mar 2009)
+
+  04 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  +krosspython-4.2.1.ebuild:
+  Bump KDE 4.2.1
+
+  05 Feb 2009; Brent Baude <ranger@gentoo.org> krosspython-4.2.0.ebuild:
+  Marking krosspython-4.2.0 ~ppc for bug 257421
+
+*krosspython-4.2.0 (27 Jan 2009)
+
+  27 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  +krosspython-4.2.0.ebuild:
+  Bump KDE-4.2.0
+
+  14 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -krosspython-4.1.2.ebuild:
+  Drop KDE 4.1.2 and 4.1.3
+
+*krosspython-4.1.2 (21 Oct 2008)
+
+  21 Oct 2008; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +metadata.xml, +krosspython-4.1.2.ebuild:
+  Added krosspython-4.1.2. Thanks to jkt for the ebuild. This 2nd part
+  completes the fix for bug 214408.
+

@@ -1,0 +1,40 @@
+# ChangeLog for dev-util/cmt
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/cmt/ChangeLog,v 1.7 2009/09/09 23:06:25 bicatali Exp $
+
+*cmt-1.20.20090520 (09 Sep 2009)
+
+  09 Sep 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  -cmt-1.20.20080222.ebuild, +cmt-1.20.20090520.ebuild:
+  Version bump
+
+*cmt-1.20.20081118 (21 Apr 2009)
+
+  21 Apr 2009; Sébastien Fabbro <bicatali@gentoo.org>
+  +cmt-1.20.20081118.ebuild:
+  Bump
+
+  13 Oct 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  files/80cmt-mode-gentoo.el, cmt-1.20.20080222.ebuild:
+  Fixed emacs site file and emacs file installation, thanks to ulm, closing
+  bug #241588.
+
+  09 Sep 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  -cmt-1.20.20070720.ebuild:
+  Removed older version
+
+*cmt-1.20.20080222 (04 Apr 2008)
+
+  04 Apr 2008; Sébastien Fabbro <bicatali@gentoo.org>
+  cmt-1.20.20070720.ebuild, +cmt-1.20.20080222.ebuild:
+  Version bump and fixed bug ##216108 for bad install of demo directory.
+
+  13 Feb 2008; Christian Faulhammer <opfer@gentoo.org> metadata.xml:
+  add no-herd
+
+*cmt-1.20.20070720 (15 Sep 2007)
+
+  15 Sep 2007; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/80cmt-mode-gentoo.el, +metadata.xml, +cmt-1.20.20070720.ebuild:
+  Initial import from science overlay, closing bug #65835.
+

@@ -1,0 +1,44 @@
+# ChangeLog for sci-biology/ncbi-tools++
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/ncbi-tools++/ChangeLog,v 1.7 2009/10/03 03:45:56 weaver Exp $
+
+  02 Oct 2009; Andrey Kislyuk <weaver@gentoo.org>
+  ncbi-tools++-2009.05.15-r1.ebuild:
+  Update description
+
+  19 Aug 2009; Andrey Kislyuk <weaver@gentoo.org>
+  ncbi-tools++-2009.05.15-r1.ebuild:
+  Fix collision with dynamic libs
+
+*ncbi-tools++-2009.05.15-r1 (18 Aug 2009)
+
+  18 Aug 2009; Andrey Kislyuk <weaver@gentoo.org>
+  -ncbi-tools++-2009.05.15.ebuild, +ncbi-tools++-2009.05.15-r1.ebuild:
+  Remove static linking and fix fPIC issues, re-keyword amd64
+
+  10 Aug 2009; Samuli Suominen <ssuominen@gentoo.org>
+  ncbi-tools++-2009.05.15.ebuild,
+  +files/ncbi-tools++-2009.05.15-gcc44.patch:
+  Fix building with GCC 4.4+ wrt #280237. Keyword -amd64 because the build
+  system doesn't support x86_64 (relocation R_X86_64_32S -fPIC issues).
+
+  27 Jul 2009; Andrey Kislyuk <weaver@gentoo.org>
+  ncbi-tools++-2009.05.15.ebuild:
+  Avoid collision with openrc
+
+  27 Jul 2009; Andrey Kislyuk <weaver@gentoo.org>
+  ncbi-tools++-2009.05.15.ebuild:
+  Fix typo
+
+*ncbi-tools++-2009.05.15 (27 Jul 2009)
+
+  27 Jul 2009; Andrey Kislyuk <weaver@gentoo.org> +metadata.xml,
+  +ncbi-tools++-2009.05.15.ebuild:
+  Import from Science overlay
+
+  25 Jul 2009; Andrey Kislyuk <weaver@gentoo.org> ChangeLog:
+  Version bump
+
+  28 Apr 2009; Andrey Kislyuk <weaver@gentoo.org> ChangeLog:
+  New package, ebuild written by me
+

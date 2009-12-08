@@ -1,0 +1,92 @@
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/prefix/windows/interix/use.mask,v 1.6 2009/09/02 12:51:57 mduft Exp $
+
+# Re-add Interix libc
+-elibc_Interix
+-kernel_Interix
+
+# these will more than likely never work on Interix
+3dfx
+acpi
+alsa
+altivec
+apm
+arts
+bluetooth
+cap
+caps
+cdr
+coreaudio
+dga
+directfb
+divx4linux
+djbfft
+dri
+dvdr
+# missing implementation for unexec()
+emacs
+xemacs
+emul-linux-x86
+fbcon
+fdftk
+fmod
+ggi
+glut
+gpm
+gps
+hal
+hardened
+hddtemp
+ibm
+icc
+icc-pgo
+ieee1394
+ifc
+ipod
+ipv6
+java
+lm_sensors
+matrox
+netboot
+old-linux
+# requires device-mapper
+on-the-fly-crypt
+opengl
+oss
+pam
+pcmcia
+pda
+rtc
+selinux
+scanner
+smartcard
+svga
+uclibc
+#  totally b0rked on interix
+unicode
+usb
+voodoo3
+pvm
+v4l
+v4l2
+wifi
+
+# these are USE flags that don't _currently_ work, but may will in the future.
+ffmpeg
+fftw
+flac
+jack
+joystick
+kerberos
+ladspa
+libedit
+# not working yet on interix
+openmp
+portaudio
+pulseaudio
+qt3
+qt4
+# libtiff only static, so avoid this!
+tiff
+timidity

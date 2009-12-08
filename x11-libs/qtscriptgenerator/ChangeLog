@@ -1,0 +1,47 @@
+# ChangeLog for x11-libs/qtscriptgenerator
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qtscriptgenerator/ChangeLog,v 1.9 2009/10/29 11:19:23 fauli Exp $
+
+  29 Oct 2009; Christian Faulhammer <fauli@gentoo.org>
+  qtscriptgenerator-0.1.0.ebuild:
+  stable x86, bug 290493
+
+  26 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  qtscriptgenerator-0.1.0.ebuild:
+  amd64 stable wrt #290493
+
+  26 Jun 2009; Markos Chandras <hwoarang@gentoo.org>
+  qtscriptgenerator-0.1.0.ebuild:
+  Use only one job on compilation. Fixes bug 274458
+
+  17 Jun 2009; Markos Chandras <hwoarang@gentoo.org>
+  qtscriptgenerator-0.1.0.ebuild:
+  Adding qt-webkit as dependency. Fixes bug 274409
+
+  12 Jun 2009; Ben de Groot <yngwin@gentoo.org>
+  qtscriptgenerator-0.1.0.ebuild,
+  -files/qtscriptgenerator-0.1.0-gcc44.patch,
+  +files/qtscriptgenerator-gcc44.patch:
+  Use a more correct gcc-4.4 patch. Minor ebuild cleanups.
+
+  05 Jun 2009; Ben de Groot <yngwin@gentoo.org>
+  qtscriptgenerator-0.1.0.ebuild:
+  Specify !kde for qt-phonon dep
+
+  29 May 2009; Ben de Groot <yngwin@gentoo.org>
+  qtscriptgenerator-0.1.0.ebuild:
+  Add kde useflag to make dependency calculation easier, bug 270188
+
+  08 May 2009; Peter Alfredsen <loki_val@gentoo.org>
+  qtscriptgenerator-0.1.0.ebuild,
+  +files/qtscriptgenerator-0.1.0-gcc44.patch:
+  Fix GCC 4.4 compatibility, bug 268086. Thanks to Andreas Sturmlechner
+  <andreas.sturmlechner@gmail.com> for the patch.
+
+*qtscriptgenerator-0.1.0 (15 Apr 2009)
+
+  15 Apr 2009; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +metadata.xml, +qtscriptgenerator-0.1.0.ebuild:
+  Initial import to the tree of qtscriptgenerator from the kde-testing
+  overlay. Thanks to hwoarang and reavertm for their work on the ebuild.
+

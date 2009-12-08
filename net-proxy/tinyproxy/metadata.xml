@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>net-proxy</herd>
+<longdescription>A lightweight HTTP/SSL proxy</longdescription>
+<use>
+	<flag name='transparent-proxy'>Enables support for transparent
+		proxies</flag>
+	<flag name='http-via-header'>Add Via field to HTTP headers</flag>
+</use>
+</pkgmetadata>

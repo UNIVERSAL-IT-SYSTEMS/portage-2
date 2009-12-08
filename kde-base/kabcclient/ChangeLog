@@ -1,0 +1,94 @@
+# ChangeLog for kde-base/kabcclient
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kabcclient/ChangeLog,v 1.21 2009/12/01 10:00:01 wired Exp $
+
+*kabcclient-4.3.4 (01 Dec 2009)
+
+  01 Dec 2009; Alex Alexander <wired@gentoo.org> +kabcclient-4.3.4.ebuild:
+  Version bump
+
+  30 Nov 2009; Joseph Jezak <josejx@gentoo.org> kabcclient-4.3.3.ebuild:
+  Marked ppc/ppc64 stable for bug #292455.
+
+  29 Nov 2009; Raúl Porcel <armin76@gentoo.org> kabcclient-4.3.3.ebuild:
+  Add ~sparc
+
+  29 Nov 2009; Samuli Suominen <ssuominen@gentoo.org>
+  kabcclient-4.3.3.ebuild:
+  amd64 stable wrt #292455
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org>
+  -kabcclient-4.3.2-r1.ebuild:
+  Drop KDE 4.3.2
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org> -kabcclient-4.2.4.ebuild:
+  Drop KDE 4.2.4
+
+*kabcclient-4.3.3 (02 Nov 2009)
+
+  02 Nov 2009; Alex Alexander <wired@gentoo.org> +kabcclient-4.3.3.ebuild:
+  Version bump
+
+  18 Oct 2009; Markus Meier <maekke@gentoo.org> kabcclient-4.3.1-r1.ebuild:
+  x86 stable, bug #287697
+
+  10 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  kabcclient-4.3.1-r1.ebuild:
+  amd64 stable wrt #287697
+
+*kabcclient-4.3.2-r1 (09 Oct 2009)
+*kabcclient-4.3.1-r1 (09 Oct 2009)
+
+  09 Oct 2009; Jonathan Callen <abcd@gentoo.org> -kabcclient-4.3.1.ebuild,
+  +kabcclient-4.3.1-r1.ebuild, -kabcclient-4.3.2.ebuild,
+  +kabcclient-4.3.2-r1.ebuild:
+  Fix RPATH issues in 4.3.x
+
+  08 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org> -kabcclient-4.3.0.ebuild:
+  Drop KDE 4.3.0
+
+*kabcclient-4.3.2 (06 Oct 2009)
+
+  06 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org> +kabcclient-4.3.2.ebuild:
+  Version bump
+
+*kabcclient-4.3.1 (01 Sep 2009)
+
+  01 Sep 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +kabcclient-4.3.1.ebuild:
+  Version bump
+
+*kabcclient-4.3.0 (03 Aug 2009)
+
+  03 Aug 2009; Alex Alexander <wired@gentoo.org> +kabcclient-4.3.0.ebuild:
+  Version bump
+
+  14 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> -kabcclient-4.2.3.ebuild:
+  Drop KDE 4.2.3
+
+  04 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> ChangeLog:
+  Fix accidently added keywords
+
+*kabcclient-4.2.4 (04 Jun 2009)
+
+  04 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> +kabcclient-4.2.4.ebuild:
+  Version bump
+
+  03 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> -kabcclient-4.2.2.ebuild:
+  Drop KDE 4.2.2
+
+*kabcclient-4.2.3 (06 May 2009)
+
+  06 May 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  +kabcclient-4.2.3.ebuild:
+  Version bump
+
+  17 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org> kabcclient-4.2.2:
+  Restore ~hppa keywords
+
+*kabcclient-4.2.2 (11 Apr 2009)
+
+  11 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org> +metadata.xml,
+  +kabcclient-4.2.2.ebuild:
+  Add KDE 4.2.2
+

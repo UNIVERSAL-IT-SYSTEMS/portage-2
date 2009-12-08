@@ -1,0 +1,74 @@
+# ChangeLog for kde-base/krossjava
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-base/krossjava/ChangeLog,v 1.17 2009/12/01 11:00:25 wired Exp $
+
+*krossjava-4.3.4 (01 Dec 2009)
+
+  01 Dec 2009; Alex Alexander <wired@gentoo.org> +krossjava-4.3.4.ebuild:
+  Version bump
+
+  29 Nov 2009; Samuli Suominen <ssuominen@gentoo.org>
+  krossjava-4.3.3.ebuild:
+  amd64 stable wrt #292455
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org> -krossjava-4.3.2.ebuild:
+  Drop KDE 4.3.2
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org> -krossjava-4.2.4.ebuild:
+  Drop KDE 4.2.4
+
+*krossjava-4.3.3 (02 Nov 2009)
+
+  02 Nov 2009; Alex Alexander <wired@gentoo.org> +krossjava-4.3.3.ebuild:
+  Version bump
+
+  18 Oct 2009; Markus Meier <maekke@gentoo.org> krossjava-4.3.1.ebuild:
+  x86 stable, bug #287697
+
+  10 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  krossjava-4.3.1.ebuild:
+  amd64 stable wrt #287697
+
+  08 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org> -krossjava-4.3.0.ebuild:
+  Drop KDE 4.3.0
+
+*krossjava-4.3.2 (06 Oct 2009)
+
+  06 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org> +krossjava-4.3.2.ebuild:
+  Version bump
+
+  02 Sep 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  krossjava-4.2.4.ebuild, krossjava-4.3.0.ebuild, krossjava-4.3.1.ebuild:
+  Add ~x86 keyword.
+
+*krossjava-4.3.1 (01 Sep 2009)
+
+  01 Sep 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +krossjava-4.3.1.ebuild:
+  Version bump
+
+*krossjava-4.3.0 (04 Aug 2009)
+
+  04 Aug 2009; Alex Alexander <wired@gentoo.org> +krossjava-4.3.0.ebuild:
+  Version bump
+
+  14 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> -krossjava-4.2.3.ebuild:
+  Drop KDE 4.2.3
+
+  05 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> ChangeLog:
+  Fix accidently added keywords
+
+*krossjava-4.2.4 (04 Jun 2009)
+
+  04 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> +krossjava-4.2.4.ebuild:
+  Version bump
+
+  03 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> ChangeLog:
+  Drop KDE 4.2.2
+
+*krossjava-4.2.3 (23 May 2009)
+
+  23 May 2009; Alistair Bush <ali_bush@gentoo.org> +krossjava-4.2.3.ebuild,
+  +files/krossjava-4.2.3_includes.patch, +metadata.xml:
+  New Package.
+

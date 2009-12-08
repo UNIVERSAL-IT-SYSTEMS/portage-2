@@ -1,0 +1,28 @@
+# ChangeLog for dev-ruby/color
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/color/ChangeLog,v 1.7 2009/04/25 17:44:58 armin76 Exp $
+
+  25 Apr 2009; Raúl Porcel <armin76@gentoo.org> color-1.4.0.ebuild:
+  ia64 stable wrt #265435
+
+  20 Apr 2009; Markus Meier <maekke@gentoo.org> color-1.4.0:
+  x86 stable, bug #265435
+
+  14 Apr 2009; Thomas Anderson <gentoofan23@gentoo.org> color-1.4.0.ebuild:
+  stable amd64, bug 265435
+
+  14 Apr 2009; Hans de Graaff <graaff@gentoo.org> color-1.4.0.ebuild:
+  Add USE_RUBY.
+
+  24 Mar 2008; Raúl Porcel <armin76@gentoo.org> color-1.4.0.ebuild:
+  Add ~ia64
+
+  12 Feb 2008; Christian Faulhammer <opfer@gentoo.org> color-1.4.0.ebuild:
+  keyworded ~arch for x86, bug 209691
+
+*color-1.4.0 (22 Jan 2008)
+
+  22 Jan 2008; Richard Brown <rbrown@gentoo.org> +metadata.xml,
+  +color-1.4.0.ebuild:
+  Initial import. For latest version of pdf-writer
+

@@ -1,0 +1,31 @@
+# ChangeLog for dev-libs/json-glib
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/json-glib/ChangeLog,v 1.5 2009/11/02 20:19:10 voyageur Exp $
+
+*json-glib-0.8.2 (02 Nov 2009)
+
+  02 Nov 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +json-glib-0.8.2.ebuild:
+  Version bump to stable release, spotted by EvaSDK
+
+  14 Sep 2009; Samuli Suominen <ssuominen@gentoo.org>
+  json-glib-0.7.6.ebuild:
+  Raise gtk-doc depend to 1.11 wrt #284831.
+
+*json-glib-0.7.6 (08 Sep 2009)
+
+  08 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +json-glib-0.7.6.ebuild:
+  Version bump to current developer snapshot, needed for pidgin-facebookchat
+
+  06 Jul 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  json-glib-0.6.2.ebuild, +files/json-glib-0.6.2-fixtests.patch:
+  Add upstream patch to fix tests, bug #276671
+
+*json-glib-0.6.2 (13 Jun 2009)
+
+  13 Jun 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +json-glib-0.6.2.ebuild, +metadata.xml:
+  Initial commit, thanks to Avuton Olrich <avuton@gmail.com> in bug #233715
+  for first ebuild
+

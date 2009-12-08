@@ -1,0 +1,90 @@
+# ChangeLog for kde-base/kde-env
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kde-env/ChangeLog,v 1.55 2009/12/01 10:20:45 wired Exp $
+
+*kde-env-4.3.4 (01 Dec 2009)
+
+  01 Dec 2009; Alex Alexander <wired@gentoo.org> +kde-env-4.3.4.ebuild:
+  Version bump
+
+  30 Nov 2009; Joseph Jezak <josejx@gentoo.org> kde-env-4.3.3.ebuild:
+  Marked ppc/ppc64 for bug #292455.
+
+  29 Nov 2009; Raúl Porcel <armin76@gentoo.org> kde-env-4.3.3.ebuild:
+  Add ~sparc
+
+  29 Nov 2009; Samuli Suominen <ssuominen@gentoo.org> kde-env-4.3.3.ebuild:
+  amd64 stable wrt #292455
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org> -kde-env-4.3.2.ebuild:
+  Drop KDE 4.3.2
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org> -kde-env-4.2.4.ebuild:
+  Drop KDE 4.2.4
+
+*kde-env-4.3.3 (02 Nov 2009)
+
+  02 Nov 2009; Alex Alexander <wired@gentoo.org> +kde-env-4.3.3.ebuild:
+  Version bump
+
+  18 Oct 2009; Markus Meier <maekke@gentoo.org> kde-env-4.3.1.ebuild:
+  x86 stable, bug #287697
+
+  10 Oct 2009; Samuli Suominen <ssuominen@gentoo.org> kde-env-4.3.1.ebuild:
+  amd64 stable wrt #287697
+
+  08 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org> -kde-env-4.3.0.ebuild:
+  Drop KDE 4.3.0
+
+*kde-env-4.3.2 (06 Oct 2009)
+
+  06 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org> +kde-env-4.3.2.ebuild:
+  Version bump
+
+*kde-env-4.3.1 (01 Sep 2009)
+
+  01 Sep 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +kde-env-4.3.1.ebuild:
+  Version bump
+
+*kde-env-4.3.0 (04 Aug 2009)
+
+  04 Aug 2009; Alex Alexander <wired@gentoo.org> +kde-env-4.3.0.ebuild:
+  Version bump
+
+  14 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> -kde-env-4.2.3.ebuild,
+  -kde-env-4.2.3-r1.ebuild:
+  Drop KDE 4.2.3
+
+  04 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> ChangeLog:
+  Fix accidently added keywords
+
+*kde-env-4.2.4 (04 Jun 2009)
+
+  04 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> +kde-env-4.2.4.ebuild:
+  Version bump
+
+  03 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> ChangeLog:
+  Drop KDE 4.2.2
+
+*kde-env-4.2.3-r1 (28 May 2009)
+
+  28 May 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  +kde-env-4.2.3-r1.ebuild:
+  Update kde-env from kde-testing. KDEDIRS no longer needed.
+
+  09 May 2009; Tomas Chvatal <scarabeus@gentoo.org> kde-env-4.2.3.ebuild:
+  Fix failiture with FEATURES=test. Per bug #269011.
+
+  08 May 2009; Tomas Chvatal <scarabeus@gentoo.org> kde-env-4.2.3:
+  Add kdelibs:3.5 blocker to avoid hard blocks.
+
+  07 May 2009; Alexey Shvetsov <alexxy@gentoo.org> kde-env-4.2.3.ebuild:
+  fix bug of scarabeus bump tool
+
+*kde-env-4.2.3 (06 May 2009)
+
+  06 May 2009; Tomas Chvatal <scarabeus@gentoo.org> +kde-env-4.2.3.ebuild,
+  +metadata.xml:
+  Version bump
+

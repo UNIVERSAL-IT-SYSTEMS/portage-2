@@ -1,0 +1,31 @@
+# ChangeLog for dev-ruby/webrat
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/webrat/ChangeLog,v 1.5 2009/12/06 08:06:21 graaff Exp $
+
+*webrat-0.6.0 (06 Dec 2009)
+
+  06 Dec 2009; Hans de Graaff <graaff@gentoo.org> -webrat-0.5.0.ebuild,
+  -webrat-0.5.1.ebuild, +webrat-0.6.0.ebuild:
+  Version bump with enhancements and minor incompatibilities.
+
+  11 Sep 2009; Diego E. Pettenò <flameeyes@gentoo.org> webrat-0.5.0.ebuild,
+  webrat-0.5.1.ebuild, webrat-0.5.3.ebuild:
+  Fix DEPEND/RDEPEND assignment.
+
+*webrat-0.5.3 (28 Aug 2009)
+
+  28 Aug 2009; Hans de Graaff <graaff@gentoo.org> +webrat-0.5.3.ebuild:
+  Version bump: remove unneeded requirements breaking with edge rails.
+
+*webrat-0.5.1 (23 Aug 2009)
+
+  23 Aug 2009; Hans de Graaff <graaff@gentoo.org> +webrat-0.5.1.ebuild:
+  Version bump.
+
+*webrat-0.5.0 (22 Aug 2009)
+
+  22 Aug 2009; Hans de Graaff <graaff@gentoo.org> +webrat-0.5.0.ebuild,
+  +metadata.xml:
+  Initial import from my overlay. Also reported by CS Shyam Sundar in
+  #280286.
+

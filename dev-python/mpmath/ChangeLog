@@ -1,0 +1,48 @@
+# ChangeLog for dev-python/mpmath
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/mpmath/ChangeLog,v 1.8 2009/08/17 16:55:05 grozin Exp $
+
+*mpmath-0.13 (17 Aug 2009)
+
+  17 Aug 2009; Andrey Grozin <grozin@gentoo.org> -mpmath-0.11.ebuild,
+  +mpmath-0.13.ebuild:
+  Version bump
+
+*mpmath-0.12-r1 (11 Jun 2009)
+
+  11 Jun 2009; Andrey Grozin <grozin@gentoo.org> -mpmath-0.12.ebuild,
+  +mpmath-0.12-r1.ebuild, +files/mpmath-0.12-test.patch:
+  2 failing tests fixed
+
+*mpmath-0.12 (10 Jun 2009)
+
+  10 Jun 2009; Andrey Grozin <grozin@gentoo.org> -mpmath-0.10.ebuild,
+  +mpmath-0.12.ebuild:
+  Version bump (it fails 2 tests, but this is a question to the upstream)
+
+  15 Feb 2009; Patrick Lauer <patrick@gentoo.org> mpmath-0.11.ebuild:
+  Adding ~amd64 keyword
+
+*mpmath-0.11 (28 Jan 2009)
+
+  28 Jan 2009; Andrey Grozin <grozin@gentoo.org> -mpmath-0.9.ebuild,
+  +mpmath-0.11.ebuild:
+  Version bump
+
+*mpmath-0.10 (20 Oct 2008)
+
+  20 Oct 2008; Andrey Grozin <grozin@gentoo.org> -mpmath-0.8.ebuild,
+  +mpmath-0.10.ebuild:
+  Version bump
+
+*mpmath-0.9 (26 Aug 2008)
+
+  26 Aug 2008; Andrey Grozin <grozin@gentoo.org> +mpmath-0.9.ebuild:
+  Version bump, new USE flag gmp
+
+*mpmath-0.8 (08 Jul 2008)
+
+  08 Jul 2008; Andrey Grozin <grozin@gentoo.org> +metadata.xml,
+  +mpmath-0.8.ebuild:
+  Initial import
+

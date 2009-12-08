@@ -1,0 +1,48 @@
+# ChangeLog for kde-misc/konq-plugins
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/konq-plugins/ChangeLog,v 1.8 2009/11/16 22:04:54 maekke Exp $
+
+  16 Nov 2009; Markus Meier <maekke@gentoo.org> konq-plugins-4.3.0.ebuild:
+  amd64/x86 stable, bug #292242
+
+*konq-plugins-4.3.3 (09 Nov 2009)
+
+  09 Nov 2009; Samuli Suominen <ssuominen@gentoo.org>
+  +konq-plugins-4.3.3.ebuild:
+  Version bump wrt #292242, thanks to Jean-Noël Rivasseau for reporting.
+
+  12 Aug 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  -konq-plugins-4.2.3.ebuild, -konq-plugins-4.2.4.ebuild:
+  Cleanup.
+
+*konq-plugins-4.3.0 (06 Aug 2009)
+
+  06 Aug 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +konq-plugins-4.3.0.ebuild:
+  Version bump to 4.3.0
+
+*konq-plugins-4.2.4-r1 (22 Jul 2009)
+
+  22 Jul 2009; Alex Alexander <wired@gentoo.org>
+  +konq-plugins-4.2.4-r1.ebuild:
+  updated ebuild with handbook use flag, added missing translations, thanks
+  to reavertm
+
+*konq-plugins-4.2.4 (05 Jun 2009)
+
+  05 Jun 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +konq-plugins-4.2.4.ebuild:
+  Version bump
+
+*konq-plugins-4.2.3 (25 May 2009)
+
+  25 May 2009; Tomas Chvatal <scarabeus@gentoo.org>
+  -konq-plugins-4.2.2.ebuild, +konq-plugins-4.2.3.ebuild:
+  Version bump. Remove old.
+
+*konq-plugins-4.2.2 (26 Apr 2009)
+
+  26 Apr 2009; Theo Chatzimichos <tampakrap@gentoo.org> +metadata.xml,
+  +konq-plugins-4.2.2.ebuild:
+  moving konq-plugins from kde-base to kde-misc
+

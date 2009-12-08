@@ -1,0 +1,35 @@
+# ChangeLog for sys-fs/nilfs-utils
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/nilfs-utils/ChangeLog,v 1.6 2009/09/19 04:50:11 robbat2 Exp $
+
+  19 Sep 2009; Robin H. Johnson <robbat2@gentoo.org>
+  nilfs-utils-2.0.14.ebuild:
+  Adding ~arm support. Tested on mv78100.arm.dev.gentoo.org thanks to
+  Marvell.
+
+  25 Jul 2009; MATSUU Takuto <matsuu@gentoo.org> -nilfs-utils-2.0.12.ebuild,
+  -nilfs-utils-2.0.13.ebuild:
+  Removed old versions.
+
+*nilfs-utils-2.0.14 (20 Jul 2009)
+
+  20 Jul 2009; MATSUU Takuto <matsuu@gentoo.org> +nilfs-utils-2.0.14.ebuild,
+  +files/nilfs-utils-2.0.14-gentoo.patch:
+  Version bumped.
+
+  12 Jul 2009; Tobias Klausmann <klausman@gentoo.org>
+  nilfs-utils-2.0.12.ebuild:
+  Keyworded on alpha, bug #276410
+
+*nilfs-utils-2.0.13 (24 Jun 2009)
+
+  24 Jun 2009; MATSUU Takuto <matsuu@gentoo.org> +nilfs-utils-2.0.13.ebuild:
+  Version bumped.
+
+*nilfs-utils-2.0.12 (17 Apr 2009)
+
+  17 Apr 2009; MATSUU Takuto <matsuu@gentoo.org>
+  +files/nilfs-utils-2.0.12-gentoo.patch, +metadata.xml,
+  +nilfs-utils-2.0.12.ebuild:
+  Initial import.
+

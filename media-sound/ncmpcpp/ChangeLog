@@ -1,0 +1,95 @@
+# ChangeLog for media-sound/ncmpcpp
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ncmpcpp/ChangeLog,v 1.22 2009/10/21 12:21:07 maekke Exp $
+
+  21 Oct 2009; Markus Meier <maekke@gentoo.org> ncmpcpp-0.3.5.ebuild:
+  x86 stable, bug #285872
+
+  12 Oct 2009; Jeroen Roovers <jer@gentoo.org> ncmpcpp-0.3.5.ebuild:
+  Stable for HPPA (bug #285872).
+
+*ncmpcpp-0.4.1 (07 Oct 2009)
+
+  07 Oct 2009; Ben de Groot <yngwin@gentoo.org> +ncmpcpp-0.4.1.ebuild,
+  metadata.xml:
+  Version bump, adding visualizer and fftw useflags
+
+  01 Oct 2009; Steve Dibb <beandog@gentoo.org> ncmpcpp-0.3.5.ebuild:
+  amd64 stable, bug 285872
+
+  22 Sep 2009; Jeroen Roovers <jer@gentoo.org> ncmpcpp-0.3.5.ebuild:
+  Marked ~hppa too.
+
+*ncmpcpp-0.3.5 (27 Jun 2009)
+
+  27 Jun 2009; Ben de Groot <yngwin@gentoo.org> +ncmpcpp-0.3.5.ebuild,
+  metadata.xml:
+  Version bump. Added iconv, outputs and threads useflags.
+
+*ncmpcpp-0.3.4 (19 May 2009)
+
+  19 May 2009; Ben de Groot <yngwin@gentoo.org> +ncmpcpp-0.3.4.ebuild:
+  Version bump
+
+  03 May 2009; Markus Meier <maekke@gentoo.org> ncmpcpp-0.3.2.ebuild:
+  amd64/x86 stable, bug #267986
+
+*ncmpcpp-0.3.3 (17 Apr 2009)
+
+  17 Apr 2009; Ben de Groot <yngwin@gentoo.org> +ncmpcpp-0.3.3.ebuild:
+  Version bump
+
+*ncmpcpp-0.3.2 (17 Mar 2009)
+
+  17 Mar 2009; Ben de Groot <yngwin@gentoo.org> +ncmpcpp-0.3.2.ebuild:
+  Version bump
+
+  29 Jan 2009; Ben de Groot <yngwin@gentoo.org> -ncmpcpp-0.3.ebuild,
+  ncmpcpp-0.3-r1.ebuild:
+  Drop the 0.3 ebuild that misses USE=clock and add message about changed
+  syntax.
+
+*ncmpcpp-0.3-r1 (27 Jan 2009)
+
+  27 Jan 2009; Ben de Groot <yngwin@gentoo.org> +ncmpcpp-0.3-r1.ebuild:
+  Adding clock useflag
+
+*ncmpcpp-0.3 (26 Jan 2009)
+
+  26 Jan 2009; Ben de Groot <yngwin@gentoo.org> +ncmpcpp-0.3.ebuild:
+  Version bump
+
+  11 Jan 2009; Markus Meier <maekke@gentoo.org> ncmpcpp-0.2.5.ebuild:
+  x86 stable, bug #254156
+
+  07 Jan 2009; Thomas Anderson <gentoofan23@gentoo.org>
+  -ncmpcpp-0.2.3.ebuild, ncmpcpp-0.2.5.ebuild:
+  stable amd64, remove old
+
+  17 Dec 2008; Ben de Groot <yngwin@gentoo.org> ncmpcpp-0.2.5.ebuild:
+  Several minor ebuild improvements, thanks to angelos.
+
+  12 Dec 2008; Raúl Porcel <armin76@gentoo.org> ncmpcpp-0.2.4.ebuild:
+  x86 stable wrt #249993
+
+  05 Dec 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  ncmpcpp-0.2.4.ebuild:
+  stable amd64, bug 249993
+
+*ncmpcpp-0.2.5 (05 Dec 2008)
+
+  05 Dec 2008; Ben de Groot <yngwin@gentoo.org> +ncmpcpp-0.2.5.ebuild:
+  Version bump, and move unicode to eapi-2 style use dep. Add minimal mpd
+  version supported as runtime dependency.
+
+*ncmpcpp-0.2.4 (15 Oct 2008)
+
+  15 Oct 2008; Ben de Groot <yngwin@gentoo.org> +ncmpcpp-0.2.4.ebuild:
+  Version bump. Add message about new config files location.
+
+*ncmpcpp-0.2.3 (23 Sep 2008)
+
+  23 Sep 2008; Ben de Groot <yngwin@gentoo.org> +metadata.xml,
+  +ncmpcpp-0.2.3.ebuild:
+  Initial commit. Ebuild based on the one from upstream.
+

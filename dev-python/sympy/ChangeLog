@@ -1,0 +1,37 @@
+# ChangeLog for dev-python/sympy
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/sympy/ChangeLog,v 1.6 2009/09/04 15:43:11 patrick Exp $
+
+  04 Sep 2009; Patrick Lauer <patrick@gentoo.org> -sympy-0.6.4.ebuild:
+  Remove old
+
+*sympy-0.6.5 (19 Jul 2009)
+
+  19 Jul 2009; Andrey Grozin <grozin@gentoo.org> -sympy-0.6.3.ebuild,
+  -files/sympy-0.6.3-sphinx.patch, +sympy-0.6.5.ebuild,
+  +files/sympy-0.6.5-sphinx.patch:
+  Version bump
+
+*sympy-0.6.4 (14 Apr 2009)
+
+  14 Apr 2009; Andrey Grozin <grozin@gentoo.org>
+  -files/sympy-0.6.2-sphinx.patch, +files/sympy-0.6.4-sphinx.patch,
+  -sympy-0.6.2.ebuild, +sympy-0.6.4.ebuild:
+  Version bump
+
+*sympy-0.6.3 (20 Nov 2008)
+
+  20 Nov 2008; Andrey Grozin <grozin@gentoo.org>
+  +files/sympy-0.6.3-sphinx.patch, +sympy-0.6.3.ebuild:
+  Version bump, should now work with python-2.6
+
+*sympy-0.6.2 (02 Sep 2008)
+
+  25 Oct 2008; Pieter Van den Abeele <pvdabeel@gentoo.org> sympy-0.6.2.ebuild:
+  Keyworded ~ppc. Closes bug #237720
+
+  02 Sep 2008; Andrey Grozin <grozin@gentoo.org>
+  +files/sympy-0.6.2-sphinx.patch, +metadata.xml, +sympy-0.6.2.ebuild:
+  Initial import. Based on the ebuild in sunrise, bug #192785. Thanks to
+  Thomas Pani, Thomas Sachau.
+

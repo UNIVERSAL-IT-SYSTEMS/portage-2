@@ -1,0 +1,36 @@
+# ChangeLog for sci-geosciences/tangogps
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/tangogps/ChangeLog,v 1.6 2009/11/25 08:51:16 bangert Exp $
+
+*tangogps-0.99.1 (25 Nov 2009)
+
+  25 Nov 2009; Thilo Bangert <bangert@gentoo.org> +tangogps-0.99.1.ebuild:
+  version bump - bug #294104
+
+*tangogps-0.9.9 (20 Nov 2009)
+
+  20 Nov 2009; Thilo Bangert <bangert@gentoo.org> -tangogps-0.9.5.ebuild,
+  -tangogps-0.9.6.ebuild, +tangogps-0.9.9.ebuild:
+  version bump - remove old versions
+
+*tangogps-0.9.7 (23 Sep 2009)
+
+  23 Sep 2009; Thilo Bangert <bangert@gentoo.org> +tangogps-0.9.7.ebuild:
+  version bump
+
+  08 Feb 2009; Thilo Bangert <bangert@gentoo.org> tangogps-0.9.5.ebuild,
+  tangogps-0.9.6.ebuild:
+  add missing dep on libexif (bug #258095)
+
+*tangogps-0.9.6 (05 Feb 2009)
+
+  05 Feb 2009; Thilo Bangert <bangert@gentoo.org> +tangogps-0.9.6.ebuild:
+  version bump - now with photo geocoding support
+
+*tangogps-0.9.5 (01 Feb 2009)
+
+  01 Feb 2009; Thilo Bangert <bangert@gentoo.org>
+  +files/tangogps-0.9.5-Makefile.in-honour-docdir.patch, +metadata.xml,
+  +tangogps-0.9.5.ebuild:
+  tangogps is an easy to use, fast and lightweight mapping application
+

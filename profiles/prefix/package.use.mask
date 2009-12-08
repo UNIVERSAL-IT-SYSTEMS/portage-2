@@ -1,0 +1,40 @@
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/prefix/package.use.mask,v 1.4 2009/09/30 10:19:52 haubi Exp $
+
+# Michael Haubenwallner <haubi@gentoo.org> (30 Sep 2009)
+# Most prefix platforms do/can not have an uuid implementation (#230981).
+x11-libs/libSM uuid
+
+# Jeremy Olexa <darkside@gentoo.org> (30 Sep 2009)
+# berkdb has hardcoded paths all over, breaks on linux at least. Use flag
+# disappearing in next bump: prefix can be early and force it to be not used to
+# save headaches.
+# NOTE to prefix devs: if it needs to not be a global mask, talk to me because
+# it currently causes failures on linux. It can be made a "less global" mask.
+dev-lang/python berkdb
+
+# Fabian Groffen <grobian@gentoo.org> (02 Sep 2009)
+# these don't work, proxying for darkside
+xfce-base/xfce-settings keyboard
+xfce-base/xfce4-meta session
+
+# Jeremy Olexa <darkside@gentoo.org> (13 Feb 2009)
+# Can't make USE=ssl to work, bad build system. bug 256699
+dev-lang/pike ssl
+
+# Elias Pipping <pipping@gentoo.org> (17 Jan 2008)
+# breaks emerge --sync
+dev-util/subversion nowebdav
+
+# Elias Pipping <pipping@gentoo.org> (18 Nov 2007)
+# feynmf fails to build documentation
+dev-tex/feynmf doc
+
+# Elias Pipping <pipping@gentoo.org> (18 Nov 2007)
+# draws in tetex as a dependency -- there's only tetex 2, which blocks texlive
+dev-util/darcs doc
+
+# Elias Pipping <pipping@gentoo.org> (15 Nov 2007)
+# pkg_postinst tries to create/delete a user, fails
+dev-libs/cyrus-sasl berkdb gdbm

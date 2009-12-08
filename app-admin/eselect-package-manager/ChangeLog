@@ -1,0 +1,26 @@
+# ChangeLog for app-admin/eselect-package-manager
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-package-manager/ChangeLog,v 1.5 2009/07/24 16:56:49 josejx Exp $
+
+  24 Jul 2009; Joseph Jezak <josejx@gentoo.org>
+  eselect-package-manager-20090604.ebuild:
+  Marked ~ppc/~ppc64 for bug #274365.
+
+  29 Jun 2009; Jeremy Olexa <darkside@gentoo.org>
+  eselect-package-manager-20090604.ebuild:
+  add ~amd64, bug 274365
+
+  17 Jun 2009; Raúl Porcel <armin76@gentoo.org>
+  eselect-package-manager-20090604.ebuild:
+  Add ~alpha/~arm/~ia64/~s390/~sh/sparc wrt #274365
+
+  16 Jun 2009; Jeroen Roovers <jer@gentoo.org>
+  eselect-package-manager-20090604.ebuild:
+  Marked ~hppa (bug #274365).
+
+*eselect-package-manager-20090604 (06 Jun 2009)
+
+  06 Jun 2009; Ulrich Mueller <ulm@gentoo.org>
+  +eselect-package-manager-20090604.ebuild, +metadata.xml:
+  Initial import. Ebuild contributed by me.
+

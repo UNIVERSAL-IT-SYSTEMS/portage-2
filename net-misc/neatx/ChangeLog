@@ -1,0 +1,32 @@
+# ChangeLog for net-misc/neatx
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/neatx/ChangeLog,v 1.6 2009/11/25 13:58:58 maekke Exp $
+
+  25 Nov 2009; Markus Meier <maekke@gentoo.org> neatx-0.3.1_p43-r1.ebuild:
+  x86 stable, bug #291619
+
+  10 Nov 2009; Richard Freeman <rich0@gentoo.org> neatx-0.3.1_p43-r1.ebuild:
+  amd64 stable - 291619
+
+  30 Sep 2009; Diego E. Pettenò <flameeyes@gentoo.org>
+  neatx-0.3.1_p43-r1.ebuild:
+  Fix typo in RDEPEND, thanks to Tim Harder in bug #286903.
+
+  19 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  neatx-0.3.1_p43-r1.ebuild:
+  Allow netcat6 too (with nc_path pointing to nc6), bug #285358
+
+*neatx-0.3.1_p43-r1 (15 Sep 2009)
+
+  15 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  -neatx-0.3.1_p43.ebuild, +neatx-0.3.1_p43-r1.ebuild:
+  Revision bump to fix a few things: neatx.conf default options,
+  netcat/gnu-netcat support, fix python objects precompilation. Thanks to
+  calchan for review and pointers
+
+*neatx-0.3.1_p43 (09 Sep 2009)
+
+  09 Sep 2009; Bernard Cafarelli <voyageur@gentoo.org>
+  +neatx-0.3.1_p43.ebuild, +metadata.xml:
+  Initial commit from the NX overlay, ebuild by ikelos and me
+

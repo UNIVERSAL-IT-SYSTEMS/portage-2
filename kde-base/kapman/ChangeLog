@@ -1,0 +1,107 @@
+# ChangeLog for kde-base/kapman
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kapman/ChangeLog,v 1.27 2009/12/01 10:02:32 wired Exp $
+
+*kapman-4.3.4 (01 Dec 2009)
+
+  01 Dec 2009; Alex Alexander <wired@gentoo.org> +kapman-4.3.4.ebuild:
+  Version bump
+
+  30 Nov 2009; Joseph Jezak <josejx@gentoo.org> kapman-4.3.3.ebuild:
+  Marked ppc/ppc64 stable for bug #292455.
+
+  29 Nov 2009; Raúl Porcel <armin76@gentoo.org> kapman-4.3.3.ebuild:
+  Add ~sparc
+
+  29 Nov 2009; Samuli Suominen <ssuominen@gentoo.org> kapman-4.3.3.ebuild:
+  amd64 stable wrt #292455
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org> -kapman-4.3.2.ebuild:
+  Drop KDE 4.3.2
+
+  08 Nov 2009; Alexey Shvetsov <alexxy@gentoo.org> -kapman-4.2.4.ebuild:
+  Drop KDE 4.2.4
+
+*kapman-4.3.3 (02 Nov 2009)
+
+  02 Nov 2009; Alex Alexander <wired@gentoo.org> +kapman-4.3.3.ebuild:
+  Version bump
+
+  18 Oct 2009; Markus Meier <maekke@gentoo.org> kapman-4.3.1.ebuild:
+  x86 stable, bug #287697
+
+  10 Oct 2009; Samuli Suominen <ssuominen@gentoo.org> kapman-4.3.1.ebuild:
+  amd64 stable wrt #287697
+
+  08 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org> -kapman-4.3.0.ebuild:
+  Drop KDE 4.3.0
+
+*kapman-4.3.2 (06 Oct 2009)
+
+  06 Oct 2009; Alexey Shvetsov <alexxy@gentoo.org> +kapman-4.3.2.ebuild:
+  Version bump
+
+*kapman-4.3.1 (01 Sep 2009)
+
+  01 Sep 2009; Theo Chatzimichos <tampakrap@gentoo.org>
+  +kapman-4.3.1.ebuild:
+  Version bump
+
+*kapman-4.3.0 (03 Aug 2009)
+
+  03 Aug 2009; Alex Alexander <wired@gentoo.org> +kapman-4.3.0.ebuild:
+  Version bump
+
+  14 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> -kapman-4.2.3.ebuild:
+  Drop KDE 4.2.3
+
+  04 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> ChangeLog:
+  Fix accidently added keywords
+
+*kapman-4.2.4 (04 Jun 2009)
+
+  04 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> +kapman-4.2.4.ebuild:
+  Version bump
+
+  03 Jun 2009; Alexey Shvetsov <alexxy@gentoo.org> -kapman-4.2.2.ebuild:
+  Drop KDE 4.2.2
+
+*kapman-4.2.3 (06 May 2009)
+
+  06 May 2009; Tomas Chvatal <scarabeus@gentoo.org> +kapman-4.2.3.ebuild:
+  Version bump
+
+  17 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org> kapman-4.2.2:
+  Restore ~hppa keywords
+
+  16 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org> -kapman-4.2.1.ebuild:
+  Drop KDE 4.2.1
+
+*kapman-4.2.2 (11 Apr 2009)
+
+  11 Apr 2009; Alexey Shvetsov <alexxy@gentoo.org> +kapman-4.2.2.ebuild:
+  Add KDE 4.2.2
+
+  11 Apr 2009; Raúl Porcel <armin76@gentoo.org> kapman-4.2.1.ebuild:
+  Add ~alpha/~ia64 wrt #260777
+
+  08 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org> -kapman-4.2.0.ebuild:
+  Drop KDE 4.2.0
+
+*kapman-4.2.1 (04 Mar 2009)
+
+  04 Mar 2009; Alexey Shvetsov <alexxy@gentoo.org> +kapman-4.2.1.ebuild:
+  Bump KDE 4.2.1
+
+  05 Feb 2009; Brent Baude <ranger@gentoo.org> kapman-4.2.0.ebuild:
+  Marking kapman-4.2.0 ~ppc64 for bug 257421
+
+  05 Feb 2009; Brent Baude <ranger@gentoo.org> kapman-4.2.0.ebuild:
+  Marking kapman-4.2.0 ~ppc for bug 257421
+
+*kapman-4.2.0 (27 Jan 2009)
+
+  27 Jan 2009; Alexey Shvetsov <alexxy@gentoo.org> +metadata.xml,
+  +kapman-4.2.0.ebuild:
+  Bump KDE-4.2.0
+

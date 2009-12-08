@@ -1,0 +1,18 @@
+# ChangeLog for app-emacs/scala-mode
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/scala-mode/ChangeLog,v 1.2 2009/10/15 17:51:28 ulm Exp $
+
+*scala-mode-2.7.5 (15 Oct 2009)
+
+  15 Oct 2009; Ulrich Mueller <ulm@gentoo.org> +scala-mode-2.7.5.ebuild:
+  Version bump.
+
+*scala-mode-2.7.3 (11 Feb 2009)
+
+  11 Feb 2009; Ulrich Mueller <ulm@gentoo.org>
+  +files/50scala-mode-gentoo.el,
+  +files/scala-mode-2.7.3-fix-bytecompile.patch, +metadata.xml,
+  +scala-mode-2.7.3.ebuild:
+  Initial import. Ebuild contributed by Anders Bach Nielsen
+  <abachn@daimi.au.dk> in bug 250688, with modifications by me.
+

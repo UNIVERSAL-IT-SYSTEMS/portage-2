@@ -1,0 +1,13 @@
+# ChangeLog for dev-lisp/cl-smtp
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lisp/cl-smtp/ChangeLog,v 1.2 2009/01/07 20:29:16 zmedico Exp $
+
+  07 Jan 2009; Zac Medico <zmedico@gentoo.org> cl-smtp-20060404.1.ebuild:
+  Bug #193627 - Set RESTRICT=fetch since distfiles are unavailable.
+
+*cl-smtp-20060404.1 (30 Jul 2006)
+
+  30 Jul 2006; Matthew Kennedy <mkennedy@gentoo.org> +metadata.xml,
+  +cl-smtp-20060404.1.ebuild:
+  Initial port.  Ebuild contributed by Matthew Kennedy <mkennedy@gentoo.org>.
+

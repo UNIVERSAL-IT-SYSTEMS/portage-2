@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <herd>sound</herd>
+  <use>
+    <flag name="systray">Enable system tray support</flag>
+    <flag name="ifp">Enable support for iRiver iFP portable audio players</flag>
+    <flag name="lua">Enable support for programmable title formatting with
+      <pkg>dev-lang/lua</pkg>
+    </flag>
+    <flag name="podcast">Enable podcast support</flag>
+  </use>
+</pkgmetadata>

@@ -1,0 +1,15 @@
+# ChangeLog for app-emulation/dynamips
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/dynamips/ChangeLog,v 1.2 2009/08/25 15:34:13 armin76 Exp $
+
+  25 Aug 2009; Raúl Porcel <armin76@gentoo.org> dynamips-0.2.8_rc2.ebuild:
+  Add ~x86 wrt #281315
+
+*dynamips-0.2.8_rc2 (07 Aug 2009)
+
+  07 Aug 2009; <chainsaw@gentoo.org> +dynamips-0.2.8_rc2.ebuild,
+  +files/dynamips-0.2.8_rc2-makefile.patch, +metadata.xml:
+  Initial commit, ebuild sourced from Sunrise overlay but modified slightly.
+  With a warm thank you to Sergey Khalavchuck, Chad A. Simmons, Duncan
+  Lockwood, Mark Silinio and "haad". Closes bug #154491.
+

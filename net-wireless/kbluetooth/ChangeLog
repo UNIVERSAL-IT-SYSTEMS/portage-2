@@ -1,0 +1,25 @@
+# ChangeLog for net-wireless/kbluetooth
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/kbluetooth/ChangeLog,v 1.4 2009/11/12 11:02:57 scarabeus Exp $
+
+  12 Nov 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  kbluetooth-0.4_rc2.ebuild:
+  Fix solidcontrol linking.
+
+*kbluetooth-0.4_rc2 (12 Nov 2009)
+
+  12 Nov 2009; Tomáš Chvátal <scarabeus@gentoo.org>
+  +kbluetooth-0.4_rc2.ebuild:
+  Version bump.
+
+  18 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  kbluetooth-0.4_rc1.ebuild:
+  Since bluez can't work as normal user, warn people about it wrt bug
+  #279616.
+
+*kbluetooth-0.4_rc1 (15 Oct 2009)
+
+  15 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
+  +kbluetooth-0.4_rc1.ebuild:
+  Initial commit wrt #286316, thanks to Andreas Eckstein for initial ebuild.
+

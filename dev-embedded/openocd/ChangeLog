@@ -1,0 +1,31 @@
+# ChangeLog for dev-embedded/openocd
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/openocd/ChangeLog,v 1.7 2009/06/17 10:04:16 vapier Exp $
+
+  17 Jun 2009; Mike Frysinger <vapier@gentoo.org> openocd-0.1.0.ebuild,
+  openocd-9999.ebuild, metadata.xml:
+  Now that libftd2xx supports amd64, split the ftdi/ftd2xx USE flags #255309
+  by Andrej Gelenberg.
+
+*openocd-0.1.0 (23 Feb 2009)
+
+  23 Feb 2009; Markus Meier <maekke@gentoo.org> +openocd-0.1.0.ebuild,
+  openocd-9999.ebuild:
+  bumb to first openocd release, also tweak the live ebuild, bug #259938
+
+  29 Nov 2008; Mike Frysinger <vapier@gentoo.org> openocd-9999.ebuild:
+  Make usb support optional #249211 by Scott.
+
+  26 Oct 2008; Mike Frysinger <vapier@gentoo.org> openocd-9999.ebuild:
+  Add support for ft2232 with amd64 multilib by Jason.
+
+  05 Aug 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
+  Add USE flag description to metadata wrt GLEP 56.
+
+  04 Jun 2008; Diego Pettenò <flameeyes@gentoo.org> openocd-9999.ebuild:
+  Use eautoreconf, not the bootstrap script.
+
+*openocd-9999 (19 Apr 2008)
+
+  19 Apr 2008; Mike Frysinger <vapier@gentoo.org> +openocd-9999.ebuild:
+  Initial ebuild by Claes Mogren and Kliakhandler Kosta and me #200689.
