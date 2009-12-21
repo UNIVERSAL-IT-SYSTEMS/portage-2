@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/nvidia-drivers-190.53.ebuild,v 1.1 2009/12/16 22:46:33 peper Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/nvidia-drivers-190.53.ebuild,v 1.5 2009/12/21 22:07:37 cardoe Exp $
 
 EAPI="2"
 
@@ -32,7 +32,7 @@ DEPEND="${COMMON}
 RDEPEND="${COMMON}
 	kernel_linux? ( virtual/modutils )
 	acpi? ( sys-power/acpid )"
-PDEPEND="x11-libs/libvdpau
+PDEPEND=">=x11-libs/libvdpau-0.3
 	gtk? ( media-video/nvidia-settings )"
 
 QA_TEXTRELS_x86="usr/lib/opengl/nvidia/lib/libnvidia-tls.so.${PV}
@@ -42,7 +42,7 @@ QA_TEXTRELS_x86="usr/lib/opengl/nvidia/lib/libnvidia-tls.so.${PV}
 	usr/lib/xorg/modules/drivers/nvidia_drv.so
 	usr/lib/libcuda.so.${PV}
 	usr/lib/libnvidia-cfg.so.${PV}
-	usr/lib/libvdpau_nvidia.so.${PV}
+	usr/lib/vdpau/libvdpau_nvidia.so.${PV}
 	usr/lib/libXvMCNVIDIA.so.${PV}"
 
 QA_TEXTRELS_x86_fbsd="boot/modules/nvidia.ko
@@ -56,7 +56,7 @@ QA_TEXTRELS_amd64="usr/lib32/opengl/nvidia/lib/libnvidia-tls.so.${PV}
 	usr/lib32/opengl/nvidia/lib/libGLcore.so.${PV}
 	usr/lib32/opengl/nvidia/lib/libGL.so.${PV}
 	usr/lib32/libcuda.so.${PV}
-	usr/lib32/libvdpau_nvidia.so.${PV}"
+	usr/lib32/vdpau/libvdpau_nvidia.so.${PV}"
 
 QA_EXECSTACK_x86="usr/lib/opengl/nvidia/lib/libGL.so.${PV}
 	usr/lib/opengl/nvidia/lib/libGLcore.so.${PV}
@@ -93,7 +93,7 @@ QA_DT_HASH_amd64="usr/lib32/libcuda.so.${PV}
 	usr/lib32/opengl/nvidia/lib/libGL.so.${PV}
 	usr/lib32/opengl/nvidia/lib/libGLcore.so.${PV}
 	usr/lib32/opengl/nvidia/lib/libnvidia-tls.so.${PV}
-	usr/lib32/libvdpau_nvidia.so.${PV}
+	usr/lib32/vdpau/libvdpau_nvidia.so.${PV}
 	usr/lib64/libXvMCNVIDIA.so.${PV}
 	usr/lib64/libcuda.so.${PV}
 	usr/lib64/libnvidia-cfg.so.${PV}
@@ -102,7 +102,7 @@ QA_DT_HASH_amd64="usr/lib32/libcuda.so.${PV}
 	usr/lib64/opengl/nvidia/lib/libnvidia-tls.so.${PV}
 	usr/lib64/opengl/nvidia/extensions/libglx.so.${PV}
 	usr/lib64/xorg/modules/drivers/nvidia_drv.so
-	usr/lib64/libvdpau_nvidia.so.${PV}
+	usr/lib64/vdpau/libvdpau_nvidia.so.${PV}
 	usr/bin/nvidia-smi
 	usr/bin/nvidia-xconfig"
 
@@ -114,7 +114,7 @@ QA_DT_HASH_x86="usr/lib/libcuda.so.${PV}
 	usr/lib/opengl/nvidia/extensions/libglx.so.${PV}
 	usr/lib/xorg/modules/drivers/nvidia_drv.so
 	usr/lib/libXvMCNVIDIA.so.${PV}
-	usr/lib/libvdpau_nvidia.so.${PV}
+	usr/lib/vdpau/libvdpau_nvidia.so.${PV}
 	usr/bin/nvidia-smi
 	usr/bin/nvidia-xconfig"
 
@@ -424,9 +424,11 @@ src_install-libs() {
 	fi
 
 	#vdpau
-	if [[ -f ${libdir}/libvdpau_nvidia.so.${sover} ]]; then
-		dolib.so ${libdir}/libvdpau_nvidia.so.${sover}
-		dosym libvdpau_nvidia.so.${sover} /usr/${inslibdir}/libvdpau_nvidia.so
+	if [[ -f ${libdir}/vdpau/libvdpau_nvidia.so.${sover} ]]; then
+		insinto /usr/${inslibdir}/vdpau
+		doins ${libdir}/vdpau/libvdpau_nvidia.so.${sover}
+		fperms 0755 /usr/${inslibdir}/vdpau/libvdpau_nvidia.so.${sover}
+		dosym libvdpau_nvidia.so.${sover} /usr/${inslibdir}/vdpau/libvdpau_nvidia.so
 	fi
 
 	# OpenCL
