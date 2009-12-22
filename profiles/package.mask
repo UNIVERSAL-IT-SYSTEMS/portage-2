@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.10983 2009/12/22 03:50:45 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.10985 2009/12/22 21:42:31 flameeyes Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,31 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Diego E. Pettenò <flameeyes@gentoo.org> (22 Dec 2009)
+#  on behalf of QA team
+#
+# Once again, removing libredblack; this was previously
+# saved from a 60-days removal back in August, since the
+# supplied patch *fails to apply*, this package will not be
+# deemed salvageable.
+#
+# Special note this time: last-rite time has been cut to
+# minimum 30 days, if you intend on saving this you should
+# talk *first* with QA.
+#
+# Removal on 2010-01-21
+dev-libs/libredblack
+
+# Diego E. Pettenò <flameeyes@gentoo.org> (22 Dec 2009)
+#  on behalf of QA team
+#
+# Fails to build and ebuild does not die (bug #297970);
+# ebuild unused, last bumped in 2005, then untouched till
+# 2007 for Manifest2 bumps, and never since then.
+#
+# Removal on 2010-02-20
+net-libs/libwhisker
 
 # Michael Sterrett <mr_bones_@gentoo.org> (21 Dec 2009)
 # Doesn't work anymore; the version in portage is no longer
