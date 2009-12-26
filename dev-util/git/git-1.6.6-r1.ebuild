@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/git/git-9999.ebuild,v 1.19 2009/12/26 00:44:34 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/git/git-1.6.6-r1.ebuild,v 1.1 2009/12/26 00:10:34 robbat2 Exp $
 
 EAPI=2
 
@@ -49,7 +49,7 @@ RDEPEND="${CDEPEND}
 			dev-perl/Authen-SASL
 			cgi? ( virtual/perl-CGI )
 			cvs? ( >=dev-util/cvsps-2.1 dev-perl/DBI dev-perl/DBD-SQLite )
-			subversion? ( dev-util/subversion[-dso,perl] dev-perl/libwww-perl dev-perl/TermReadKey )
+			subversion? ( dev-util/subversion[-dso] dev-perl/libwww-perl dev-perl/TermReadKey )
 			)
 	gtk?
 	(
