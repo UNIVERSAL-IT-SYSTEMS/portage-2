@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/bfin-toolchain/bfin-toolchain-2009.1_rc10.ebuild,v 1.2 2009/12/30 04:47:33 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/bfin-toolchain/bfin-toolchain-2009.1.1_rc2.ebuild,v 1.1 2009/12/30 04:49:52 vapier Exp $
 
 # this should skip pointless scanelf checks on the target libs
 CTARGET="bfin"
@@ -9,7 +9,7 @@ inherit rpm
 
 DESCRIPTION="toolchain for Blackfin processors"
 HOMEPAGE="http://blackfin.uclinux.org/"
-FRS_ID="449"
+FRS_ID="470"
 BASE_URI="http://blackfin.uclinux.org/gf/download/frsrelease/${FRS_ID}"
 MY_PN="blackfin-toolchain"
 MY_PV=${PV#20}
@@ -23,13 +23,13 @@ src_uri() {
 	echo ${BASE_URI}/$5/blackfin-jtag-tools-${MY_PV}.${arch}.tar.bz2
 }
 SRC_URI="
-	amd64? ( $(src_uri x86_64 6862 6864 6870 6860) )
-	x86?   ( $(src_uri i386   6843 6845 6848 6841) )
+	amd64? ( $(src_uri x86_64 7330 7332 7338 7328) )
+	x86?   ( $(src_uri i386   7316 7317 7320 7315) )
 "
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 RESTRICT="strip"
 
