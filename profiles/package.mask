@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11025 2010/01/01 21:46:59 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11028 2010/01/02 16:31:38 vostorga Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,9 +31,16 @@
 
 #--- END OF EXAMPLES ---
 
-# Víctor Ostorga <vostorga@gentoo.org> (1 Jan 2010)
+# Samuli Suominen <ssuominen@gentoo.org> (02 Jan 2009)
+# mirror restricted and distfile can't be downloaded
+# anymore wrt bug #288442. missing deps wrt bug #200085.
+# replaced by hamachi-gui in bug #215492.
+# removal in 60 days
+net-misc/ghamachi
+
+# Víctor Ostorga <vostorga@gentoo.org> (01 Jan 2010)
 # Masking for removal, qt3 package, has been segfaulting for 
-# 2 and half years, last release 6 years ago
+# 2 and half years, last release 6 years ago, bug #183103
 dev-db/mysqlnavigator
 
 # Samuli Suominen <ssuominen@gentoo.org> (31 Dec 2009)
@@ -234,9 +241,8 @@ x11-misc/bbconf
 =x11-plugins/msn-pecan-0.1*
 
 # Samuli Suominen <ssuominen@gentoo.org> (24 Dec 2009)
-# Several regressions over 22.7, bug 297423
-=sys-process/psmisc-22.8
-=sys-process/psmisc-22.8-r1
+# Broken fuser command, bug 297423
+=sys-process/psmisc-22.9
 
 # Diego E. Pettenò <flameeyes@gentoo.org> (23 Dec 2009)
 # Masked while we work on polishing the ebuild. Right now it lacks
