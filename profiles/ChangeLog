@@ -1,10 +1,23 @@
 # ChangeLog for profile directory
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.3762 2010/01/09 15:04:59 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.3766 2010/01/09 19:41:10 ulm Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  09 Jan 2010; Ulrich Mueller <ulm@gentoo.org> license_groups:
+  Add skype-eula to EULA license group, bug 296801.
+
+  09 Jan 2010; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  p.mask gcc-nios2, noarp, aewm++-goodies, libdsp, x3270, xxdiff, welcome2l.
+  See respective bug numbers in package.mask file
+
+  09 Jan 2010; Samuli Suominen <ssuominen@gentoo.org> package.mask:
+  Mask net-fs/netatalk for removal.
+
+  09 Jan 2010; MATSUU Takuto <matsuu@gentoo.org> updates/1Q-2010:
+  move app-i18n/ibus-table-jyutping app-i18n/ibus-table-cantonese
 
   09 Jan 2010; Alexis Ballier <aballier@gentoo.org>
   default/linux/mips/10.0/lemote/lm2e/fulong/n32/desktop/parent,
