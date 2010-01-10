@@ -1,5 +1,5 @@
->=sys-libs/ncurses-5.2-r5 dev-libs/lzo dev-lang/ruby =sys-devel/automake-1.10* >=sys-devel/autoconf-2.61 sys-devel/libtool >=dev-util/bzr-1.5
->=sys-libs/ncurses-5.2-r5 dev-libs/lzo
+>=sys-libs/ncurses-5.2-r5 dev-libs/lzo truetype? ( media-libs/freetype ) dev-lang/ruby =sys-devel/automake-1.10* >=sys-devel/autoconf-2.61 sys-devel/libtool >=dev-util/bzr-1.5
+>=sys-libs/ncurses-5.2-r5 dev-libs/lzo truetype? ( media-libs/freetype )
 0
 
 
@@ -8,7 +8,7 @@ GPL-3
 GNU GRUB 2 boot loader
 
 autotools bzr eutils flag-o-matic libtool mount-boot multilib portability toolchain-funcs
-custom-cflags debug multislot static
+custom-cflags debug truetype multislot static
 
 
 virtual/bootloader
