@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/eutils.eclass,v 1.326 2010/01/10 05:53:36 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/eutils.eclass,v 1.328 2010/01/10 15:58:58 scarabeus Exp $
 
 # @ECLASS: eutils.eclass
 # @MAINTAINER:
@@ -267,7 +267,10 @@ epatch() {
 
 			local ex
 			for ex in ${EPATCH_EXCLUDE} ; do
-				[[ ${patchname} == ${ex} ]] && continue
+				if [[ ${patchname} == ${ex} ]] ; then
+					eshopts_pop
+					continue 2
+				fi
 			done
 
 			eshopts_pop
