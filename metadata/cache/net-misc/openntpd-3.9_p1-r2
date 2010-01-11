@@ -1,5 +1,5 @@
-ssl? ( dev-libs/openssl ) selinux? ( sec-policy/selinux-ntp ) !<=net-misc/ntp-4.2.0-r2
-ssl? ( dev-libs/openssl ) selinux? ( sec-policy/selinux-ntp ) !<=net-misc/ntp-4.2.0-r2
+ssl? ( dev-libs/openssl ) selinux? ( sec-policy/selinux-ntp ) !<=net-misc/ntp-4.2.0-r2 !net-misc/ntp[-openntpd]
+ssl? ( dev-libs/openssl ) selinux? ( sec-policy/selinux-ntp ) !<=net-misc/ntp-4.2.0-r2 !net-misc/ntp[-openntpd]
 0
 mirror://openbsd/OpenNTPD/openntpd-3.9p1.tar.gz
 
