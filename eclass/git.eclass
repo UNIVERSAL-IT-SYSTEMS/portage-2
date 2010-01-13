@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/git.eclass,v 1.34 2010/01/13 09:51:53 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/git.eclass,v 1.36 2010/01/13 22:14:59 scarabeus Exp $
 
 # @ECLASS: git.eclass
 # @MAINTAINER:
@@ -52,7 +52,7 @@ DEPEND=">=dev-util/git-1.6"
 # @ECLASS-VARIABLE: EGIT_UPDATE_CMD
 # @DESCRIPTION:
 # Git fetch command.
-EGIT_UPDATE_CMD="git pull -f -u --all"
+EGIT_UPDATE_CMD="git pull -f -u"
 
 # @ECLASS-VARIABLE: EGIT_DIFFSTAT_CMD
 # @DESCRIPTION:
@@ -152,6 +152,22 @@ git_sumbodules() {
 	git submodule update
 }
 
+# @FUNCTION: git_branch
+# @DESCRIPTION:
+# Internal function that changes branch for the repo based on EGIT_TREE and
+# EGIT_BRANCH variables.
+git_branch() {
+	local branchname=branch-${EGIT_BRANCH} src=origin/${EGIT_BRANCH}
+	if [[ ${EGIT_COMMIT} != ${EGIT_BRANCH} ]]; then
+		branchname=tree-${EGIT_COMMIT}
+		src=${EGIT_COMMIT}
+	fi
+	debug-print "git checkout -b ${branchname} ${src}"
+	git checkout -b ${branchname} ${src} &> /dev/null
+
+	unset branchname src
+}
+
 # @FUNCTION: git_fetch
 # @DESCRIPTION:
 # Gets repository from EGIT_REPO_URI and store it in specified EGIT_STORE_DIR
@@ -238,6 +254,7 @@ git_fetch() {
 		cursha1=$(git rev-parse origin/${EGIT_BRANCH})
 		${elogcmd} "   at the commit:		${cursha1}"
 
+		git_branch
 		git_sumbodules
 		popd &> /dev/null
 	elif [[ -n ${EGIT_OFFLINE} ]] ; then
@@ -262,6 +279,7 @@ git_fetch() {
 		${EGIT_UPDATE_CMD} ${EGIT_OPTIONS} \
 			|| die "${EGIT}: can't update from ${EGIT_REPO_URI}."
 
+		git_branch
 		git_sumbodules
 		cursha1=$(git rev-parse origin/${EGIT_BRANCH})
 
@@ -301,27 +319,10 @@ git_fetch() {
 	${elogcmd} "   branch: 			${EGIT_BRANCH}"
 	${elogcmd} "   storage directory: 	\"${GIT_DIR}\""
 
-	popd &> /dev/null
-
 	# unpack to the ${S}
-	# "${EGIT_REPO_URI}"
-	debug-print "git clone -l -s -n \"${GIT_DIR}\" \"${S}\""
-	git clone -l -s -n "${GIT_DIR}" "${S}"
-
-	# set correct branch and the tree ebuild specified
-	pushd "${S}" > /dev/null
-	local branchname=branch-${EGIT_BRANCH} src=origin/${EGIT_BRANCH}
-	if [[ ${EGIT_COMMIT} != ${EGIT_BRANCH} ]]; then
-		branchname=tree-${EGIT_COMMIT}
-		src=${EGIT_COMMIT}
-	fi
-	debug-print "git checkout -b ${branchname} ${src}"
-	git checkout -b ${branchname} ${src} 2>&1 > /dev/null
-
-	git_sumbodules
-	popd > /dev/null
-
-	unset branchname src
+	popd &> /dev/null
+	debug-print "git clone -l -s \"${GIT_DIR}\" \"${S}\""
+	git clone -l -s "${GIT_DIR}" "${S}"
 
 	echo ">>> Unpacked to ${S}"
 }
