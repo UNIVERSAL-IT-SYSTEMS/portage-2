@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11111 2010/01/15 14:44:28 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11114 2010/01/15 20:06:40 hwoarang Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,10 +31,16 @@
 
 #--- END OF EXAMPLES ---
 
+# Markos Chandras <hwoarang@gentoo.org> (15 Jan 2010)
+# Qt3 only application. Bug #299746. Will be removed in 30 days
+app-i18n/qimhangul
+
 # Ben de Groot <yngwin@gentoo.org> (15 Jan 2010)
-# Masked for testing, see bug #tobeopened
+# Masked for testing, see bug #301105
 >=dev-python/sip-4.10
 >=dev-python/PyQt4-4.7
+>=x11-libs/qscintilla-2.4.1
+>=dev-python/qscintilla-python-2.4.1
 
 # Andreas Proschofsky <suka@gentoo.org> (14 Jan 2010)
 # New release Candidate for openoffice-bin, needs testing
@@ -823,14 +829,6 @@ sys-apps/hwinfo
 # Complete reorganization (and almost complete rewrite),
 # depends on perl-5.10, needs testing
 >=dev-perl/DateManip-6.0
-
-# Diego E. Pettenò <flameeyes@gentoo.org> (25 Nov 2009)
-#  on behalf of QA team
-#
-# Fails to build, bug #250372 opened in December 2008.
-#
-# Removal on 2010-01-24
-sci-visualization/gfsview
 
 # Diego E. Pettenò <flameeyes@gentoo.org> (25 Nov 2009)
 #  on behalf of QA team
