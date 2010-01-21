@@ -1,20 +1,20 @@
-dev-lang/perl
-dev-lang/perl
+dev-lang/perl[-build]
+dev-lang/perl[-build]
 0
 mirror://cpan/authors/id/M/MU/MUIR/modules/Net-Netmask-1.9015.tar.gz
 
 http://search.cpan.org/dist/Net-Netmask/
-Artistic
+as-is
 Parse, manipulate and lookup IP network blocks
-alpha amd64 ia64 mips ppc sparc x86
+alpha amd64 ia64 ~mips ppc sparc x86
 base eutils multilib perl-module portability toolchain-funcs
 
 
 
 
+2
 
-
-compile install postinst postrm preinst prerm setup test unpack
+compile configure install prepare test unpack
 
 
 
