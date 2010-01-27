@@ -1,7 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/man/man-1.6f-r3.ebuild,v 1.14 2010/01/27 02:31:10 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/man/man-1.6f-r4.ebuild,v 1.1 2010/01/27 02:35:14 vapier Exp $
 
+EAPI="2"
 inherit eutils toolchain-funcs
 
 DESCRIPTION="Standard commands to read man pages"
@@ -10,14 +11,14 @@ SRC_URI="http://primates.ximian.com/~flucifredi/man/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
 IUSE="lzma nls"
 
 DEPEND="nls? ( sys-devel/gettext )"
 RDEPEND="|| ( >=sys-apps/groff-1.19.2-r1 app-doc/heirloom-doctools )
 	!sys-apps/man-db
 	!app-arch/lzma
-	lzma? ( || ( app-arch/xz-utils app-arch/lzma-utils ) )"
+	lzma? ( app-arch/xz-utils )"
 PROVIDE="virtual/man"
 
 pkg_setup() {
@@ -25,11 +26,8 @@ pkg_setup() {
 	enewuser man 13 -1 /usr/share/man man
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}"/man-1.6f-man2html-compression.patch
+src_prepare() {
+	epatch "${FILESDIR}"/man-1.6f-man2html-compression-2.patch
 	epatch "${FILESDIR}"/man-1.6-cross-compile.patch
 	epatch "${FILESDIR}"/man-1.5p-search-order.patch
 	epatch "${FILESDIR}"/man-1.6f-unicode.patch #146315
@@ -39,13 +37,17 @@ src_unpack() {
 	epatch "${FILESDIR}"/man-1.5m2-apropos.patch
 	epatch "${FILESDIR}"/man-1.6d-fbsd.patch
 	epatch "${FILESDIR}"/man-1.6e-headers.patch
-	epatch "${FILESDIR}"/man-1.6f-so-search.patch
+	epatch "${FILESDIR}"/man-1.6f-so-search-2.patch
 	epatch "${FILESDIR}"/man-1.6f-compress.patch
-
-	strip-linguas $(eval $(grep ^LANGUAGES= configure) ; echo ${LANGUAGES//,/ })
+	epatch "${FILESDIR}"/man-1.6f-parallel-build.patch #207148 #258916
+	epatch "${FILESDIR}"/man-1.6f-xz.patch #302380
+	# make sure `less` handles escape sequences #287183
+	sed -i -e '/^DEFAULTLESSOPT=/s:"$:R":' configure
 }
 
-src_compile() {
+src_configure() {
+	strip-linguas $(eval $(grep ^LANGUAGES= configure) ; echo ${LANGUAGES//,/ })
+
 	unset NLSPATH #175258
 
 	tc-export CC BUILD_CC
@@ -71,8 +73,6 @@ src_compile() {
 		+sgid +fhs \
 		+lang ${mylang} \
 		|| die "configure failed"
-
-	emake || die "emake failed"
 }
 
 src_install() {
