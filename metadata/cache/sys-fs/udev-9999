@@ -1,4 +1,4 @@
-selinux? ( sys-libs/libselinux ) extras? ( sys-apps/acl >=sys-apps/usbutils-0.82 virtual/libusb:0 sys-apps/pciutils dev-libs/glib:2 ) >=sys-apps/util-linux-2.16 >=sys-libs/glibc-2.9 extras? ( dev-util/gperf ) >=sys-kernel/linux-headers-2.6.29 test? ( app-text/tree ) app-text/docbook-xsl-stylesheets app-text/docbook-xml-dtd dev-util/gtk-doc >=dev-util/git-1.6 =sys-devel/automake-1.10* >=sys-devel/autoconf-2.61 sys-devel/libtool
+selinux? ( sys-libs/libselinux ) extras? ( sys-apps/acl >=sys-apps/usbutils-0.82 virtual/libusb:0 sys-apps/pciutils dev-libs/glib:2 ) >=sys-apps/util-linux-2.16 >=sys-libs/glibc-2.9 extras? ( dev-util/gperf ) >=sys-kernel/linux-headers-2.6.29 test? ( app-text/tree ) app-text/docbook-xsl-stylesheets app-text/docbook-xml-dtd dev-util/gtk-doc >=dev-util/git-1.6 =sys-devel/automake-1.10* >=sys-devel/autoconf-2.61 >=sys-devel/libtool-2.2.6b
 selinux? ( sys-libs/libselinux ) extras? ( sys-apps/acl >=sys-apps/usbutils-0.82 virtual/libusb:0 sys-apps/pciutils dev-libs/glib:2 ) >=sys-apps/util-linux-2.16 >=sys-libs/glibc-2.9 !sys-apps/coldplug !<sys-fs/lvm2-2.02.45 !sys-fs/device-mapper >=sys-apps/baselayout-1.12.5
 0
 
