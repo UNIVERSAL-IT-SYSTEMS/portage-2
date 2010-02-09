@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5262 2010/02/09 07:47:41 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5265 2010/02/09 16:07:47 robbat2 Exp $
 # This file contains descriptions of local USE flags, and the ebuilds which
 # contain them.
 # Keep it sorted (use "LC_ALL=C sort -t: -k1,1 -k2 | LC_ALL=C sort -s -t/ -k1,1")
@@ -556,7 +556,6 @@ app-text/poppler:abiword - Enable support for app-office/abiword output. Require
 app-text/poppler:exceptions - Enable exceptions throwing.
 app-text/poppler:utils - Install command-line PDF converters and various utilities.
 app-text/poppler:xpdf-headers - Install xpdf headers.
-app-text/poppler-utils:abiword -  Enable support for app-office/abiword output. Requires dev-libs/libxml2. 
 app-text/sgmltools-lite:jadetex - Add support for app-text/jadetex (for processing tex files produced by the TeX backend of Jade)
 app-text/stardict:espeak - Enable text to speech synthesizer using espeak engine
 app-text/stardict:festival - Enable text to speech synthesizer using festival engine
@@ -848,8 +847,6 @@ dev-libs/openobex:irda - Enable IrDA support
 dev-libs/opensc:openct - Build using dev-libs/openct compatibility
 dev-libs/opensc:pcsc-lite - Build with sys-apps/pcsc-lite
 dev-libs/pkcs11-helper:nss - Enable NSS crypto engine
-dev-libs/poppler:abiword -  Enable support for app-office/abiword output. Requires dev-libs/libxml2. 
-dev-libs/poppler:poppler-data -  Pull in the free (as in beer) poppler-data package which is required at runtime for complete rendering of CJK PDFs. 
 dev-libs/ppl:prolog - Build SWI Prolog interface
 dev-libs/ppl:watchdog - Build the PPL Watchdog library - a C++ library for multiple, concurrent watchdog timers
 dev-libs/soprano:clucene - Enable dev-cpp/clucene backend support.
@@ -1317,8 +1314,6 @@ kde-base/plasma-workspace:rss - Enables building RSSNOW plasmoid (requires kde-b
 kde-base/powerdevil:pm-utils - Adds support for suspend/resume the system through sys-power/pm-utils
 kde-base/pykde4:akonadi - Builds Akonadi python language bindings
 kde-base/pykde4:semantic-desktop - Enables Nepomuk and Soprano python language bindings
-kde-base/rocs:R - Enable R backend support
-kde-base/rocs:ps - Enable rendering EPS files
 kde-base/smoke:akonadi - Compile bindings for kde-base/akonadi.
 kde-base/smoke:kdevplatform - Compile bindings for dev-util/kdevplatform.
 kde-base/smoke:phonon - Compile bindings for media-sound/phonon.
