@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11248 2010/02/23 21:06:47 nelchael Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11252 2010/02/25 09:11:41 phajdan.jr Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,6 +31,16 @@
 
 #--- END OF EXAMPLES ---
 
+# Torsten Veller <tove@gentoo.org> (25 Feb 2010)
+# Masked for removal as soon as possible
+# Merged in dev-perl/Email-MIME
+dev-perl/Email-MIME-Modifier
+dev-perl/Email-MIME-Creator
+# Merged in dev-perl/Email-Simple (#304683)
+#dev-perl/Email-Simple-Creator
+# Merged in dev-perl/XML-LibXML (#304685)
+#dev-perl/XML-LibXML-Common
+
 # Krzysiek Pawlik <nelchael@gentoo.org> (23 Feb 2010)
 # Masked for testing.
 >=dev-java/resin-servlet-api-4.0.3
@@ -45,14 +55,14 @@ dev-java/mojarra
 # Ben de Groot <yngwin@gentoo.org> (22 Feb 2010)
 # New version is written from scratch, considered experimental/alpha
 # by upstream. Annoying automount error messages on startup.
-=X11-LIBS/libfm-0.1*
+=x11-libs/libfm-0.1*
 =x11-misc/pcmanfm-0.9*
 
 # Samuli Suominen <ssuominen@gentoo.org> (21 Feb 2010)
 # libkleo doesn't install required include files anymore,
 # because they are meant only for internal usage. this means
 # kopete-cryptography won't compile anymore, and as such,
-# WILL BE removed from portage. bug 306199 and bug 306115.
+# will be removed from portage. bug 306199 and bug 306115.
 # masked for removal in 30 days
 kde-misc/kopete-cryptography
 
@@ -95,7 +105,7 @@ x11-libs/gtk+extra
 
 # Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (18 Feb 2010)
 # Mask prerelease versions
-=SYS-BOOT/syslinux-4.00_pre*
+=sys-boot/syslinux-4.00_pre*
 
 # Samuli Suominen <ssuominen@gentoo.org> (17 Feb 2010)
 # Doesn't compile with stable libc (#295980)
@@ -138,7 +148,7 @@ net-dialup/umtsmon
 #
 # Masked for removal in 30 days
 media-sound/cheesetracker
-MEDIA-SOUnd/djplay
+media-sound/djplay
 media-sound/kaconnect
 media-sound/kmp
 media-sound/museseq
@@ -181,7 +191,7 @@ x11-misc/bbrb
 dev-python/pyopencl
 
 # Robin H. Johnson <robbat2@gentoo.org> (01 Feb 2010)
-# uPSTREAm discontinued the split of -community and -enterprise specific
+# Upstream discontinued the split of -community and -enterprise specific
 # tarballs of source. You must move to dev-db/mysql as the -community split has
 # security vulnerabilities only fixed in the main package.
 # To be removed 2010/07/01.
@@ -224,7 +234,7 @@ dev-db/mysql-community
 media-video/dvbcut
 
 # Nirbheek Chauhan <nirbheek@gentoo.org> (25 Jan 2010)
-# fINAL Rc of networkmanager-0.8 and friends
+# Final rc of networkmanager-0.8 and friends
 # Mask for testing
 =net-misc/networkmanager-0.7.999*
 =net-misc/networkmanager-pptp-0.7.999*
@@ -310,7 +320,7 @@ media-tv/vdrplugin-rebuild
 net-misc/gfax
 
 # Jeremy Olexa <darkside@gentoo.org> (09 Jan 2009)
-# bUILDS against running kernel instead of /usr/src/linux. Removed in 60 days by
+# Builds against running kernel instead of /usr/src/linux. Removed in 60 days by
 # treecleaners. bug 239773
 net-misc/noarp
 
@@ -362,9 +372,8 @@ net-libs/libjingle
 # Pawel Hajdan jr <phajdan.jr@gentoo.org> (07 Jan 2010)
 # Dev channel releases are only for people who are developers or want more
 # experimental features and accept a more unstable release.
-~www-client/chromium-4.0.302.2
-~www-client/chromium-5.0.307.5
 ~www-client/chromium-5.0.322.2
+~www-client/chromium-5.0.335.0
 
 # Diego E. Pettenò <flameeyes@gentoo.org> (07 Jan 2010)
 #  on behalf of QA team
