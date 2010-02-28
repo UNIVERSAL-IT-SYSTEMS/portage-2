@@ -1,5 +1,5 @@
-net-zope/zope-browsermenu net-zope/zope-component net-zope/zope-configuration net-zope/zope-interface net-zope/zope-pagetemplate net-zope/zope-publisher net-zope/zope-schema net-zope/zope-security net-zope/zope-traversing app-arch/unzip dev-python/setuptools >=app-admin/eselect-python-20091230 virtual/python
-net-zope/zope-browsermenu net-zope/zope-component net-zope/zope-configuration net-zope/zope-interface net-zope/zope-pagetemplate net-zope/zope-publisher net-zope/zope-schema net-zope/zope-security net-zope/zope-traversing >=app-admin/eselect-python-20091230 virtual/python
+net-zope/zope-browsermenu net-zope/zope-component net-zope/zope-configuration net-zope/zope-interface net-zope/zope-pagetemplate net-zope/zope-publisher net-zope/zope-schema net-zope/zope-security net-zope/zope-traversing app-arch/unzip dev-python/setuptools >=app-admin/eselect-python-20091230 dev-lang/python
+net-zope/zope-browsermenu net-zope/zope-component net-zope/zope-configuration net-zope/zope-interface net-zope/zope-pagetemplate net-zope/zope-publisher net-zope/zope-schema net-zope/zope-security net-zope/zope-traversing >=app-admin/eselect-python-20091230 dev-lang/python
 0
 http://pypi.python.org/packages/source/z/zope.browserpage/zope.browserpage-3.11.0.zip
 
@@ -14,7 +14,7 @@ distutils multilib python toolchain-funcs
 
 2
 
-compile install postinst postrm prepare unpack
+compile install postinst postrm prepare
 
 
 

@@ -1,5 +1,5 @@
-virtual/python >=media-libs/taglib-1.4 || ( <dev-libs/boost-1.35.0-r5 >=dev-libs/boost-1.35.0-r5[python] ) dev-python/setuptools >=app-admin/eselect-python-20091230 virtual/python
-virtual/python >=media-libs/taglib-1.4 || ( <dev-libs/boost-1.35.0-r5 >=dev-libs/boost-1.35.0-r5[python] ) >=app-admin/eselect-python-20091230 virtual/python
+virtual/python >=media-libs/taglib-1.4 || ( <dev-libs/boost-1.35.0-r5 >=dev-libs/boost-1.35.0-r5[python] ) dev-python/setuptools >=app-admin/eselect-python-20091230 dev-lang/python
+virtual/python >=media-libs/taglib-1.4 || ( <dev-libs/boost-1.35.0-r5 >=dev-libs/boost-1.35.0-r5[python] ) >=app-admin/eselect-python-20091230 dev-lang/python
 0
 http://cheeseshop.python.org/packages/source/t/tagpy/tagpy-0.94.5.tar.gz
 
@@ -14,7 +14,7 @@ distutils multilib python toolchain-funcs
 
 2
 
-compile configure install postinst postrm prepare unpack
+compile configure install postinst postrm prepare
 
 
 

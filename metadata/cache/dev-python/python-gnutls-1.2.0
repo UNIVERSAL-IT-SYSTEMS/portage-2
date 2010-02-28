@@ -1,5 +1,5 @@
-net-libs/gnutls >=app-admin/eselect-python-20091230 virtual/python
-net-libs/gnutls >=app-admin/eselect-python-20091230 virtual/python
+net-libs/gnutls >=app-admin/eselect-python-20091230 dev-lang/python
+net-libs/gnutls >=app-admin/eselect-python-20091230 dev-lang/python
 0
 http://pypi.python.org/packages/source/p/python-gnutls/python-gnutls-1.2.0.tar.gz
 
@@ -14,7 +14,7 @@ examples
 
 2
 
-compile install postinst postrm prepare unpack
+compile install postinst postrm prepare
 
 
 

@@ -1,5 +1,5 @@
->=dev-lang/python-2.3 app-text/htmltidy dev-python/ctypes app-arch/unzip doc? ( dev-python/epydoc ) test? ( dev-python/twisted ) >=app-admin/eselect-python-20091230 virtual/python
->=dev-lang/python-2.3 app-text/htmltidy dev-python/ctypes >=app-admin/eselect-python-20091230 virtual/python
+>=dev-lang/python-2.3 app-text/htmltidy dev-python/ctypes app-arch/unzip doc? ( dev-python/epydoc ) test? ( dev-python/twisted ) >=app-admin/eselect-python-20091230 dev-lang/python
+>=dev-lang/python-2.3 app-text/htmltidy dev-python/ctypes >=app-admin/eselect-python-20091230 dev-lang/python
 0
 mirror://berlios/utidylib/uTidylib-0.2.zip
 
@@ -14,7 +14,7 @@ doc test
 
 2
 
-compile install postinst postrm prepare test unpack
+compile install postinst postrm prepare test
 
 
 

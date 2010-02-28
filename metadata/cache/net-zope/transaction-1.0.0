@@ -1,5 +1,5 @@
-net-zope/zope-interface dev-python/setuptools test? ( dev-python/nose net-zope/zope-testing ) >=app-admin/eselect-python-20091230 virtual/python
-net-zope/zope-interface >=app-admin/eselect-python-20091230 virtual/python
+net-zope/zope-interface dev-python/setuptools test? ( dev-python/nose net-zope/zope-testing ) >=app-admin/eselect-python-20091230 dev-lang/python
+net-zope/zope-interface >=app-admin/eselect-python-20091230 dev-lang/python
 0
 http://pypi.python.org/packages/source/t/transaction/transaction-1.0.0.tar.gz
 
@@ -14,7 +14,7 @@ test
 
 2
 
-compile install postinst postrm prepare test unpack
+compile install postinst postrm prepare test
 
 
 

@@ -1,5 +1,5 @@
-dev-python/clientform dev-python/mechanize dev-python/pytz net-zope/zope-app-testing net-zope/zope-interface net-zope/zope-schema app-arch/unzip dev-python/setuptools >=app-admin/eselect-python-20091230 virtual/python
-dev-python/clientform dev-python/mechanize dev-python/pytz net-zope/zope-app-testing net-zope/zope-interface net-zope/zope-schema >=app-admin/eselect-python-20091230 virtual/python
+dev-python/clientform dev-python/mechanize dev-python/pytz net-zope/zope-app-testing net-zope/zope-interface net-zope/zope-schema app-arch/unzip dev-python/setuptools >=app-admin/eselect-python-20091230 dev-lang/python
+dev-python/clientform dev-python/mechanize dev-python/pytz net-zope/zope-app-testing net-zope/zope-interface net-zope/zope-schema >=app-admin/eselect-python-20091230 dev-lang/python
 0
 http://pypi.python.org/packages/source/z/zope.testbrowser/zope.testbrowser-3.7.0.zip
 
@@ -14,7 +14,7 @@ distutils multilib python toolchain-funcs
 
 2
 
-compile install postinst postrm prepare unpack
+compile install postinst postrm prepare
 
 
 
