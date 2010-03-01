@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/speech-dispatcher/speech-dispatcher-0.6.7.ebuild,v 1.19 2010/02/28 23:50:31 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/speech-dispatcher/speech-dispatcher-0.6.7-r1.ebuild,v 1.3 2010/03/01 00:46:14 abcd Exp $
 
-EAPI="2"
+EAPI="3"
 PATCHVER=1
 
 inherit autotools eutils
@@ -14,7 +14,7 @@ SRC_URI="http://www.freebsoft.org/pub/projects/speechd/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~hppa ppc ~ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux"
 IUSE="alsa +espeak flite nas pulseaudio python"
 
 RDEPEND="dev-libs/dotconf
@@ -69,7 +69,7 @@ pkg_postinst() {
 		ewarn
 		ewarn "You have disabled espeak, which is speech-dispatcher's"
 		ewarn "default speech synthesizer."
-		ewarn "You must edit ${ROOT}/etc/speechd/speechd.conf"
+		ewarn "You must edit ${EROOT}etc/speechd/speechd.conf"
 	fi
 	elog
 	elog "To enable Festival support, you must install app-accessibility/festival-freebsoft-utils."
