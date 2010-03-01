@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/speech-dispatcher/speech-dispatcher-0.6.7-r1.ebuild,v 1.3 2010/03/01 00:46:14 abcd Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/speech-dispatcher/speech-dispatcher-0.6.7-r1.ebuild,v 1.6 2010/03/01 22:12:37 patrick Exp $
 
 EAPI="3"
 PATCHVER=1
