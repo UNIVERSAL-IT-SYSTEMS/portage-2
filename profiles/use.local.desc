@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5345 2010/03/05 20:27:38 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5349 2010/03/06 13:00:31 djc Exp $
 # This file contains descriptions of local USE flags, and the ebuilds which
 # contain them.
 # Keep it sorted (use "LC_ALL=C sort -t: -k1,1 -k2 | LC_ALL=C sort -s -t/ -k1,1")
@@ -517,7 +517,7 @@ app-portage/gatt:libpaludis - Do some dependency resolution by using a sys-apps/
 app-portage/layman:bazaar - Support dev-vcs/bzr based overlays
 app-portage/layman:darcs - Support dev-util/darcs based overlays
 app-portage/layman:git - Support dev-util/git based overlays
-app-portage/layman:mercurial - Support dev-util/mercurial based overlays
+app-portage/layman:mercurial - Support dev-vcs/mercurial based overlays
 app-portage/pfl:network-cron - Adds a cron job which does a weekly submit of the package database
 app-portage/portato:userpriv - Allow emerge processes as normal user
 app-shells/bash:bashlogger - Log ALL commands typed into bash; should ONLY be used in restricted environments such as honeypots
@@ -1037,9 +1037,6 @@ dev-util/kdevelop:qmake - Enable support for Qmake build system
 dev-util/kdevelop:qthelp - Enable support for QtHelp documentation browsing
 dev-util/kdevplatform:git - Add suport for git VCS
 dev-util/kdevplatform:mercurial - Add suport for mercurial VCS
-dev-util/mercurial:bugzilla - Support bugzilla integration.
-dev-util/mercurial:gpg - Support signing with GnuPG.
-dev-util/mercurial:tk - Install dev-lang/tk for hgk script.
 dev-util/metro:ccache - Enable support for ccache
 dev-util/metro:git - Enable support for git snapshots
 dev-util/metro:threads - Enable support for pbzip2 tarball packing/unpacking
@@ -1083,8 +1080,11 @@ dev-util/svk:pager - Enable perl pager selection support
 dev-util/svk:patch - Enable patch creation, import support
 dev-util/universalindentgui:html - Add support for HTML files
 dev-vcs/bzr:sftp - Enable sftp support
+dev-vcs/mercurial:bugzilla - Support bugzilla integration.
+dev-vcs/mercurial:gpg - Support signing with GnuPG.
+dev-vcs/mercurial:tk - Install dev-lang/tk for hgk script.
 dev-vcs/qct:bazaar -  Support for dev-vcs/bzr 
-dev-vcs/qct:mercurial -  Support for dev-util/mercurial 
+dev-vcs/qct:mercurial -  Support for dev-vcs/mercurial 
 dev-vcs/qct:monotone -  Support for dev-vcs/monotone 
 games-action/abuse:demo - Use the demo data instead of the full game
 games-action/abuse:levels - Install user-created levels (fRaBs)
