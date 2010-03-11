@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5371 2010/03/10 23:47:46 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5375 2010/03/11 12:27:44 robbat2 Exp $
 # This file contains descriptions of local USE flags, and the ebuilds which
 # contain them.
 # Keep it sorted (use "LC_ALL=C sort -t: -k1,1 -k2 | LC_ALL=C sort -s -t/ -k1,1")
@@ -1804,6 +1804,7 @@ media-sound/pulseaudio:doc - Build the doxygen-described API documentation.
 media-sound/pulseaudio:glib - Enable glib eventloop support
 media-sound/pulseaudio:gnome -  Use GConf to store user preferences on streams and so on. Don't enable this flag if you want to use a system wide instance. If unsure, enable this flag. 
 media-sound/pulseaudio:oss -  Enable OSS sink/source (output/input). Deprecated, upstream does not support this on systems where other sink/source systems are available (i.e.: Linux). The padsp wrapper is now always build if the system supports OSS at all. 
+media-sound/pulseaudio:realtime -  Makes PulseAudio use RealtimeKit (sys-auth/rtkit) to get real-time priority while running. 
 media-sound/pulseaudio:system-wide -  Allow preparation and installation of the system-wide init script for PulseAudio. Since this support is only supported for embedded situations, do not enable without reading the upstream instructions at http://pulseaudio.org/wiki/WhatIsWrongWithSystemMode . 
 media-sound/pulseaudio:udev -  Use sys-fs/udev for autodiscovery of sound devices; this replaces the deprecated sys-apps/hal autodiscovery code. 
 media-sound/qmmp:bs2b - Enable Bauer stereophonic-to-binaural headphone filter
@@ -3208,21 +3209,16 @@ sys-devel/llvm:llvm-gcc - Build LLVM with sys-devel/llvm-gcc
 sys-devel/llvm-gcc:bootstrap - Compile the final llvm-gcc executables with llvm-gcc itself
 sys-devel/llvm-gcc:objc - Build support for the Objective C code language
 sys-devel/llvm-gcc:objc++ - Build support for the Objective C++ language
-sys-freebsd/freebsd-lib:gpib - Enable General Purpose Interface Bus support
 sys-freebsd/freebsd-lib:hesiod - Enable support for net-dns/hesiod
 sys-freebsd/freebsd-lib:netware -  Build libraries and tools to work with NetWare protocols (IPX and NCP). 
 sys-freebsd/freebsd-sbin:ipfilter -  Build tools to administer the ipfilter firewall. 
 sys-freebsd/freebsd-sbin:netware -  Build libraries and tools to work with NetWare protocols (IPX and NCP). 
 sys-freebsd/freebsd-sbin:pf -  Build tools to administer the PF firewall. 
-sys-freebsd/freebsd-sbin:vinum - Enable vinum support (TODO improve description)
 sys-freebsd/freebsd-share:isdn - Enable ISDN support
 sys-freebsd/freebsd-ubin:audit -  Build auditing tools. 
 sys-freebsd/freebsd-ubin:netware -  Build libraries and tools to work with NetWare protocols (IPX and NCP). 
 sys-freebsd/freebsd-usbin:audit -  Build auditing tools. 
-sys-freebsd/freebsd-usbin:ipfilter - Enable building of ipfilter firewall support.
-sys-freebsd/freebsd-usbin:ipsec - Enable IPSec support.
 sys-freebsd/freebsd-usbin:isdn - Enable ISDN support.
-sys-freebsd/freebsd-usbin:nat - Enable Network Address Translation support daemon.
 sys-freebsd/freebsd-usbin:netware -  Build libraries and tools to work with NetWare protocols (IPX and NCP). 
 sys-fs/aufs2:debug - Enable additional debugging support
 sys-fs/aufs2:inotify - Enable inotify support
