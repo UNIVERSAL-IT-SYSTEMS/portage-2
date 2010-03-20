@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/armagetronad/armagetronad-0.2.8.3.1.ebuild,v 1.1 2010/03/19 18:40:42 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/armagetronad/armagetronad-0.2.8.3.1.ebuild,v 1.3 2010/03/19 23:23:34 ssuominen Exp $
 
 EAPI=2
 inherit autotools eutils gnome2-utils games
@@ -20,10 +20,9 @@ IUSE="dedicated"
 
 RDEPEND="dev-libs/libxml2
 	!dedicated? (
-		sys-libs/zlib
 		virtual/opengl
 		virtual/glu
-		media-libs/libsdl[X,audio,video]
+		media-libs/libsdl[X,audio,opengl,video]
 		media-libs/sdl-image[jpeg,png]
 		>=media-libs/jpeg-6b
 		>=media-libs/libpng-1.2.40

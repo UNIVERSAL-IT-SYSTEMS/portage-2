@@ -1,14 +1,16 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/atop/atop-1.23.ebuild,v 1.5 2010/03/20 04:13:11 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-process/atop/atop-1.24-r1.ebuild,v 1.1 2010/03/20 04:13:41 vapier Exp $
+
+inherit toolchain-funcs
 
 DESCRIPTION="Resource-specific view of processes"
-HOMEPAGE="http://www.atcomputing.nl/Tools/atop"
-SRC_URI="http://www.atconsultancy.nl/atop/packages/${P}.tar.gz"
+HOMEPAGE="http://www.atoptool.nl/"
+SRC_URI="http://www.atoptool.nl/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~hppa ppc x86"
+KEYWORDS="~amd64 ~hppa ~ppc ~x86"
 IUSE=""
 
 DEPEND="sys-process/acct"
@@ -19,7 +21,9 @@ src_unpack() {
 	sed -i \
 		-e '/^CFLAGS/s: = -O : += :' \
 		-e '/^LDFLAGS/s: = : += :' \
+		-e 's:\<cc\>:$(CC):' \
 		Makefile
+	tc-export CC
 	cp "${FILESDIR}"/atop.rc atop.init
 	chmod a+rx atop.init
 	sed -i 's: root : :' atop.cron #191926
@@ -27,5 +31,6 @@ src_unpack() {
 
 src_install() {
 	emake DESTDIR="${D}" INIPATH=/etc/init.d install || die
-	dodoc README
+	dodoc README "${D}"/etc/cron.d/*
+	rm -r "${D}"/etc/cron.d || die
 }
