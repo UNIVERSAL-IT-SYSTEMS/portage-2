@@ -1,5 +1,5 @@
-
-!app-text/hd2u !app-text/unix2dos
+virtual/libintl
+virtual/libintl !app-text/hd2u !app-text/unix2dos
 0
 http://www.xs4all.nl/~waterlan/dos2unix/dos2unix-5.0.tar.gz mirror://sourceforge/dos2unix/dos2unix-5.0.tar.gz
 
@@ -12,9 +12,9 @@ nls
 
 
 
-2
+3
 
-install prepare
+compile install prepare
 
 
 
