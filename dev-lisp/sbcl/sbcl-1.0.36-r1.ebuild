@@ -1,14 +1,14 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lisp/sbcl/sbcl-1.0.31.ebuild,v 1.4 2010/03/26 01:54:24 pchrist Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lisp/sbcl/sbcl-1.0.36-r1.ebuild,v 1.3 2010/03/26 01:40:04 pchrist Exp $
 
-EAPI=2
+EAPI=3
 
-inherit common-lisp-common-3 eutils flag-o-matic
+inherit multilib eutils
 
 #same order as http://www.sbcl.org/platform-table.html
-BV_X86=1.0.28
-BV_AMD64=1.0.28
+BV_X86=1.0.36
+BV_AMD64=1.0.29
 BV_PPC=1.0.28
 BV_SPARC=1.0.28
 BV_ALPHA=1.0.28
@@ -19,15 +19,12 @@ DESCRIPTION="Steel Bank Common Lisp (SBCL) is an implementation of ANSI Common L
 HOMEPAGE="http://sbcl.sourceforge.net/"
 SRC_URI="mirror://sourceforge/sbcl/${P}-source.tar.bz2
 	x86? ( mirror://sourceforge/sbcl/${PN}-${BV_X86}-x86-linux-binary.tar.bz2 )
-	amd64? ( mirror://sourceforge/sbcl/${PN}-${BV_AMD64}-x86-64-linux-binary.tar.bz2 )
+	amd64? ( mirror://sourceforge/sbcl/${PN}-${BV_AMD64}-x86_64-linux-binary-r2.tar.bz2 )
 	ppc? ( mirror://sourceforge/sbcl/${PN}-${BV_PPC}-powerpc-linux-binary.tar.bz2 )
 	sparc? ( mirror://sourceforge/sbcl/${PN}-${BV_SPARC}-sparc-linux-binary.tar.bz2 )
 	alpha? ( mirror://sourceforge/sbcl/${PN}-${BV_ALPHA}-alpha-linux-binary.tar.bz2 )
 	mips? ( !cobalt? ( mirror://sourceforge/sbcl/${PN}-${BV_MIPS}-mips-linux-binary.tar.bz2 ) )
 	mips? ( cobalt? ( mirror://sourceforge/sbcl/${PN}-${BV_MIPSEL}-mipsel-linux-binary.tar.bz2 ) )"
-
-# SRC_URI is part of the metadata cache; it's evaluated contents must be independent of the system that creates the metadata cache.
-# ILLEGAL: mips? ( mirror://sourceforge/sbcl/${PN}-${BV_MIPS}-$([[$(tc-endian) = big]] && echo mips || echo mipsel)-linux-binary.tar.bz2 )
 
 LICENSE="MIT"
 SLOT="0"
@@ -41,7 +38,7 @@ PDEPEND="dev-lisp/gentoo-init"
 PROVIDE="virtual/commonlisp"
 
 # Disable warnings about executable stacks, as this won't be fixed soon by upstream
-QA_EXECSTACK="usr/bin/sbcl usr/lib/sbcl/src/runtime/sbcl usr/lib/sbcl/src/runtime/*.o"
+QA_EXECSTACK="usr/bin/sbcl"
 
 pkg_setup() {
 	if built_with_use sys-devel/gcc hardened && gcc-config -c | grep -qv vanilla; then
@@ -50,6 +47,8 @@ pkg_setup() {
 		eerror "(the \"vanilla\" profile) and \"source /etc/profile\" before continuing."
 		die
 	fi
+	ewarn "This is a new ebuild, based on older ones, but with some internal"
+	ewarn "changes. If it fails, please, file a bug without hesitation."
 }
 
 CONFIG="${S}/customize-target-features.lisp"
@@ -95,6 +94,14 @@ src_prepare() {
 	sed "s,/usr/local/lib,/usr/$(get_libdir),g" -i src/runtime/runtime.c # #define SBCL_HOME ...
 
 	find . -type f -name .cvsignore -delete
+	epatch  "${FILESDIR}/${P}-fix_linux-os-c.patch"
+	#fix CFLAGS and LDFLAGS
+	pushd src/runtime
+	sed -i -e "s/CFLAGS = -g -Wall -Wsign-compare -O3/CFLAGS =${CFLAGS}/g" GNUmakefile
+	sed -i -e "s/CPPFLAGS = -I./CPPFLAGS = -I. ${CXXFLAGS}/g" GNUmakefile
+	sed -i -e "s/LINKFLAGS = -g/LINKFLAGS = -g ${LDFLAGS}/g" GNUmakefile
+	sed -i -e 's/-fno-omit-frame-pointer/ /g' Config*
+	popd
 }
 
 src_configure() {
@@ -109,8 +116,6 @@ src_configure() {
 src_compile() {
 	local bindir="${WORKDIR}"/sbcl-binary
 
-	append-ldflags $(no-as-needed) # see Bug #132992
-
 	# clear the environment to get rid of non-ASCII strings, see bug 174702
 	# set HOME for paludis
 	env - HOME="${T}" \
@@ -121,16 +126,16 @@ src_compile() {
 	# need to set HOME because libpango(used by graphviz) complains about it
 	if use doc; then
 		env - HOME="${T}" make -C doc/manual info html || die "Cannot build manual"
-		env - HOME="${T}" make -C doc/internals html || die "Cannot build internal docs"
+		env - HOME="${T}" make -C doc/internals info html || die "Cannot build internal docs"
 	fi
 }
 
 src_test() {
-#	FILES="exhaust.impure.lisp"
-	cd tests
-	sh run-tests.sh
-#	sh run-tests.sh ${FILES}
-#	sh run-tests.sh --break-on-failure ${FILES}
+	ewarn "Unfortunately, it is known that some tests fail eg."
+	ewarn "run-program.impure.lisp. This is an issue of the upstream's"
+	ewarn "development and not of Gentoo's side. Please, before filing"
+	ewarn "any bug(s) search for older submissions. Thank you."
+	time ( cd tests && sh run-tests.sh )
 }
 
 src_install() {
@@ -149,43 +154,35 @@ src_install() {
 EOF
 
 	# Install documentation
-	dodir /usr/share/man
-	dodir /usr/share/doc/${PF}
 	unset SBCL_HOME
-	INSTALL_ROOT="${D}"/usr DOC_DIR="${D}"/usr/share/doc/${PF} sh install.sh || die "install.sh failed"
+	INSTALL_ROOT="${D}/usr" DOC_DIR="${D}/usr/share/doc/${PF}" \
+		sh install.sh || die "install.sh failed"
 
 	# rm empty directories lest paludis complain about this
-	rmdir "${D}"/usr/$(get_libdir)/sbcl/{site-systems,sb-posix/test-lab,sb-cover/test-output} 2>/dev/null
+	# rmdir "${D}"/usr/$(get_libdir)/sbcl/{site-systems,sb-posix/test-lab,sb-cover/test-output} 2>/dev/null
+	find "${D}" -empty -type d -exec rmdir -v {} +
 
 	doman doc/sbcl-asdf-install.1
 
-	dodoc BUGS CREDITS INSTALL NEWS OPTIMIZATIONS PRINCIPLES README STYLE TLA TODO
-
 	if use doc; then
-		dohtml doc/html/*
-		doinfo doc/manual/*.info*
-		dohtml -r doc/internals/sbcl-internals
+		dodoc OPTIMIZATIONS PRINCIPLES README STYLE TLA TODO STYLE
+		pushd doc
+		dohtml -r internals/sbcl-internals
+		dodoc internals-notes/*
+		doinfo internals/sbcl-internals.info
+		popd
+	else
+		rm -Rv "${D}/usr/share/doc/${PF}"
 	fi
 
 	# install the SBCL source
 	if use source; then
 		./clean.sh
-		# for BSD cp compat use -pPR instead of -a (may not be needed anymore)
-		cp -pPR src "${D}"/usr/$(get_libdir)/sbcl/
+		cp -a -v src "${D}/usr/$(get_libdir)/sbcl/"
 	fi
 
 	# necessary for running newly-saved images
 	echo "SBCL_HOME=/usr/$(get_libdir)/${PN}" > "${ENVD}"
 	echo "SBCL_SOURCE_ROOT=/usr/$(get_libdir)/${PN}/src" >> "${ENVD}"
 	doenvd "${ENVD}"
-
-	impl-save-timestamp-hack sbcl || die
-}
-
-pkg_postinst() {
-	standard-impl-postinst sbcl
-}
-
-pkg_postrm() {
-	standard-impl-postrm sbcl /usr/bin/sbcl
 }
