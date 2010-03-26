@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5437 2010/03/25 22:47:41 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5440 2010/03/26 16:28:27 robbat2 Exp $
 # This file contains descriptions of local USE flags, and the ebuilds which
 # contain them.
 # Keep it sorted (use "LC_ALL=C sort -t: -k1,1 -k2 | LC_ALL=C sort -s -t/ -k1,1")
@@ -270,6 +270,7 @@ app-emulation/q4wine:development -  Enable developer related stuff
 app-emulation/q4wine:embedded-fuseiso -  Enable q4wine-mount tools 
 app-emulation/q4wine:icotools -  Enable icotools support
 app-emulation/q4wine:icoutils -  Enable icoutils support 
+app-emulation/q4wine:wineappdb -  Enable Win AppDB browser subsystem
 app-emulation/q4wine:winetools -  Enable winetools support
 app-emulation/q4wine:winetriks -  Enable winetricks support 
 app-emulation/qemu:alsa - Enable alsa output for sound emulation
@@ -1120,6 +1121,7 @@ games-action/d1x-rebirth:mpu401 - Enable MPU401 music support
 games-action/d2x-rebirth:awe32 - Enable AWE32 support
 games-action/d2x-rebirth:mpu401 - Enable MPU401 music support
 games-action/openlierox:breakpad -  Compile with support for breakpad crash reporting system 
+games-action/teeworlds:server - Enable compilation of server
 games-action/xshipwars:yiff - Add support for the YIFF sound server
 games-arcade/bomns:editor - enables building the level editor
 games-arcade/jumpnbump:music - Enable playing of background music
@@ -1127,7 +1129,6 @@ games-arcade/lbreakout2:themes - Install additional themes
 games-arcade/moleinvasion:music - Download and install the music files
 games-arcade/smc:music - Download and install the music files
 games-arcade/stepmania:force-oss - force using OSS
-games-arcade/teeworlds:server - Enable compilation of server
 games-arcade/triplexinvaders:psyco - psyco python accelerator
 games-arcade/tuxanci:sound - Enable sound
 games-arcade/ultrastar-ng:songs - Install a few demo songs
@@ -3603,6 +3604,7 @@ xfce-base/xfdesktop:thunar - Build support for application launchers using xfce-
 xfce-extra/thunar-thumbnailers:grace - Enable support for sci-visualization/grace thumbnails
 xfce-extra/thunar-vcs-plugin:git - Enable dev-vcs/git support
 xfce-extra/xfce4-mpc-plugin:libmpd - Build using media-libs/libmpd backend, instead of native fallback which is preferred
+xfce-extra/xfce4-notifyd:libsexy - Enable support for x11-libs/libsexy
 xfce-extra/xfce4-playercontrol-plugin:audacious - Enable Audacious support
 xfce-extra/xfce4-playercontrol-plugin:mpd - Enable Music Player Daemon support
 xfce-extra/xfce4-power-manager:plugins - Build panel plugins
