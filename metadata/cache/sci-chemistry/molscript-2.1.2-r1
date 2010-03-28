@@ -5,16 +5,16 @@ molscript-2.1.2.tar.gz
 fetch
 http://www.avatar.se/molscript/
 glut molscript
-Display molecular 3D structures, such as proteins, in both schematic and detailed representations.
-~amd64 ~ppc x86
+Display molecular 3D structures, such as proteins, in both schematic and detailed representations
+~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux
 eutils multilib portability toolchain-funcs
 
 
 
 
+3
 
-
-compile install nofetch unpack
+compile install nofetch prepare
 
 
 
