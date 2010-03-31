@@ -10,7 +10,7 @@ The GNOME Structured File Library
 autotools eutils fdo-mime gnome.org gnome2 gnome2-utils libtool multilib portability python toolchain-funcs
 bzip2 doc gnome gtk python thumbnail
 
-gnome? ( media-gfx/imagemagick )
+gnome? ( || ( media-gfx/imagemagick media-gfx/graphicsmagick[imagemagick] ) )
 
 2
 
