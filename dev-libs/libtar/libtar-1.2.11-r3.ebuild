@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libtar/libtar-1.2.11-r3.ebuild,v 1.1 2010/04/02 21:13:50 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libtar/libtar-1.2.11-r3.ebuild,v 1.3 2010/04/02 21:54:23 ssuominen Exp $
 
 EAPI=2
 inherit autotools eutils multilib
@@ -21,7 +21,13 @@ DEPEND="zlib? ( sys-libs/zlib )
 	!zlib? ( app-arch/gzip )"
 
 src_prepare() {
-	epatch "${WORKDIR}"/${PN}_${PV}-${p_level}.diff
+	epatch "${WORKDIR}"/${PN}_${PV}-${p_level}.diff \
+		"${FILESDIR}"/${P}-free.patch
+
+	sed -i \
+		-e '/INSTALL_PROGRAM/s:-s::' \
+		{doc,lib{,tar}}/Makefile.in || die
+
 	eautoreconf
 }
 
@@ -35,6 +41,9 @@ src_install() {
 	emake DESTDIR="${D}" install || die
 
 	dodoc ChangeLog* README TODO
+	newdoc compat/README README.compat
+	newdoc compat/TODO TODO.compat
+	newdoc listhash/TODO TODO.listhash
 	newdoc debian/changelog ChangeLog.debian
 
 	rm -f "${D}"/usr/$(get_libdir)/${PN}.la
