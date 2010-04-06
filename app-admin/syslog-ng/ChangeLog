@@ -1,7 +1,22 @@
 # ChangeLog for app-admin/syslog-ng
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/syslog-ng/ChangeLog,v 1.227 2010/03/02 21:29:03 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/syslog-ng/ChangeLog,v 1.229 2010/04/06 02:11:35 mr_bones_ Exp $
 
+*syslog-ng-3.1.0 (06 Apr 2010)
+
+  06 Apr 2010; Michael Sterrett <mr_bones_@gentoo.org>
+  syslog-ng-3.0.5-r1.ebuild, +syslog-ng-3.1.0.ebuild,
+  +files/syslog-ng.conf.gentoo.3, +files/syslog-ng.conf.gentoo.fbsd.3,
+  +files/syslog-ng.rc6.3:
+  syslog-ng 3.x version bump; updated files/ to be generic for 3.x
+
+  06 Apr 2010; Magnus Granberg <zorry@gentoo.org>
+  +syslog-ng-3.0.5-r1 syslog-ng.conf.gentoo.hardened
+  syslog-ng.logrotate.hardened:
+  Fix bug #284669 #232847 #291259 Thank you all
+
+*syslog-ng-3.0.5-r1 (06 Apr 2010)
+  
   02 Mar 2010; Michael Sterrett <mr_bones_@gentoo.org>
   syslog-ng-3.0.4.ebuild, syslog-ng-3.0.5.ebuild:
   skip trying to install the non-existing reference (bug #299079)
