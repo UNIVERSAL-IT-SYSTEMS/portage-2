@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11424 2010/04/06 20:14:06 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11426 2010/04/06 22:54:56 polynomial-c Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -475,10 +475,6 @@ net-libs/libjingle
 #dev-db/libpq
 #dev-db/postgresql
 
-# Patrick Lauer <patrick@gentoo.org> (07 Jan 2010)
-# Upstream changed all options around again, so masking until someone fixes it
-=app-misc/emelfm2-0.7.1
-
 # Pawel Hajdan jr <phajdan.jr@gentoo.org> (07 Jan 2010)
 # Dev channel releases are only for people who are developers or want more
 # experimental features and accept a more unstable release.
@@ -647,10 +643,6 @@ sys-auth/pam_keystore
 # Markus Meier <maekke@gentoo.org> (03 Oct 2009)
 # mask libpano13 beta versions for testing
 >=media-libs/libpano13-2.9.15_beta3
-
-# Jory A. Pratt <anarchy@gentoo.org> (24 Sep 2009)
-# Much testing needed, not ready for mainline by any means.
->=www-client/seamonkey-2.0_beta2
 
 # Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org> (13 Sep 2009)
 # Masked to enforce upgrade which looks like downgrade.
