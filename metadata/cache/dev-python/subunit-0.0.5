@@ -1,5 +1,5 @@
-dev-python/testtools dev-util/cppunit dev-lang/perl dev-util/pkgconfig >=app-admin/eselect-python-20091230 || ( =dev-lang/python-2.7* =dev-lang/python-2.6* )
->=app-admin/eselect-python-20091230 || ( =dev-lang/python-2.7* =dev-lang/python-2.6* )
+dev-python/testtools dev-lang/perl dev-libs/check dev-util/cppunit dev-util/pkgconfig >=app-admin/eselect-python-20091230 =dev-lang/python-2*
+dev-python/testtools >=app-admin/eselect-python-20091230 =dev-lang/python-2*
 0
 http://launchpad.net/subunit/trunk/0.0.5/+download/subunit-0.0.5.tar.gz
 
@@ -12,9 +12,9 @@ multilib python toolchain-funcs
 
 
 
+3
 
-
-install setup
+compile configure install postinst postrm prepare test
 
 
 
