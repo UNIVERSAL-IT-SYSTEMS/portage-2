@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11434 2010/04/08 18:00:24 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11436 2010/04/09 08:39:22 dagger Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,10 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Robert Piasek <dagger@gentoo.org> (09 Apr 2010)
+# Mask as it does have some regressions comparing to version 3
+=net-misc/modemmanager-0.3_p20100401
 
 # Patrick Lauer <patrick@gentoo.org> (07 Apr 2010)
 # Mask the 2.0_beta until release of 2.0 final
@@ -489,6 +493,7 @@ net-libs/libjingle
 ~www-client/chromium-5.0.360.0
 ~www-client/chromium-5.0.360.5
 ~www-client/chromium-5.0.366.2
+~www-client/chromium-5.0.371.0
 
 # Diego E. Pettenò <flameeyes@gentoo.org> (07 Jan 2010)
 #  on behalf of QA team
