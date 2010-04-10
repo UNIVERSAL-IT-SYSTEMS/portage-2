@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11440 2010/04/09 17:49:12 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11446 2010/04/10 19:00:03 pacho Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,16 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Pacho Ramos <pacho@gentoo.org> (10 Apr 2010)
+# This version provides packages from testing to let people using
+# latest Xorg (from ~arch or overlay) have 3D support. If you don't need it,
+# keep with unmasked versions.
+#
+# Please don't ask for including testing packages in other emul
+# packages, this is an exception to current policy because some people
+# from X11 team needed 3D support even with bleeding edge Xorg.
+=app-emulation/emul-linux-x86-opengl-20100410_pre
 
 # Pacho Ramos <pacho@gentoo.org> (09 Apr 2010)
 # Latest release in 2005, man pages obsolete, masked for removal
@@ -147,10 +157,6 @@ games-util/loki_setupdb
 ~dev-libs/boost-1.36.0
 ~dev-util/boost-build-1.36.0
 
-# Tomáš Chvátal <scarabeus@gentoo.org> (17 Mar 2010)
-# Depends on removed xorg-server. See bug #309985.
-=net-misc/tigervnc-1.0.1_pre20100306
-
 # Samuli Suominen <ssuominen@gentoo.org> (16 Mar 2010)
 # Masked for QA and security.
 #
@@ -224,13 +230,6 @@ x11-plugins/wmalms
 x11-plugins/wmsensormon
 x11-plugins/wmmsens
 
-# Doug Goldstein <cardoe@gentoo.org> (10 Mar 2010)
-# Explicitly mask these as per NVIDIA's request
-# These drivers will destroy your video card
-# http://www.nvnews.net/vbulletin/announcement.php?f=14
-=x11-drivers/nvidia-drivers-195.36.03
-=x11-drivers/nvidia-drivers-195.36.08
-
 # Jeroen Roovers <jer@gentoo.org> (10 Mar 2010)
 # Masked until the blockers of bug #305781 are fixed
 net-analyzer/iptraf-ng
@@ -251,10 +250,6 @@ net-voip/wengophone-bin
 # Is broken somehow
 =sci-libs/blas-atlas-3.9.23-r1
 =sci-libs/lapack-atlas-3.9.23-r1
-
-# Lance Albertson <ramereth@gentoo.org> (08 Mar 2010)
-# Mask development branch 
-=dev-db/mongodb-1.3*
 
 # Lance Albertson <ramereth@gentoo.org> (07 Mar 2010)
 # Cfengine 3 is mostly incompatible with Cfengine 2, so lets mask 3.x
@@ -425,7 +420,6 @@ dev-db/mysql-community
 # Nirbheek Chauhan <nirbheek@gentoo.org> (25 Jan 2010)
 # Final rc of networkmanager-0.8 and friends
 # Mask for testing
-=net-misc/networkmanager-0.7.999*
 =net-misc/networkmanager-pptp-0.7.999*
 =net-misc/networkmanager-vpnc-0.7.999*
 =net-misc/networkmanager-openvpn-0.7.999*
@@ -612,20 +606,17 @@ games-fps/quake3-urbanterror
 # See bug #264233 for reference
 =net-firewall/ipsec-tools-0.7.2
 
-# Gilles Dartiguelongue <eva@gentoo.org> (01 Nov 2009)
-# Broken on so many setups it is just insane.
-# 0.7 is API/ABI incompatible but is the way to go.
-# Masking to lower maintainance headache, bug #291501.
-=app-misc/tracker-0.6*
-
 # Samuli Suominen <ssuominen@gentoo.org> (24 Oct 2009)
 # Masked for testing. Waiting for xfdesktop release.
+#
 # See, http://bugs.gentoo.org/show_bug.cgi?id=289867
 # Relatively safe to unmask and test.
+#
+# Note that you need USE flags menu-plugin and thunar
+# disabled for old xfdesktop to test these
 >=xfce-base/exo-0.5.1
 >=xfce-base/xfce4-settings-4.7.0
 >=xfce-base/thunar-1.1.0
->=xfce-base/xfdesktop-4.6.1-r2
 >=xfce-extra/thunar-media-tags-plugin-0.1.2-r1
 >=xfce-base/xfce4-panel-4.7.0
 xfce-extra/thunar-vfs
@@ -758,11 +749,6 @@ net-misc/amazonmp3
 # Peter Alfredsen <loki_val@gentoo.org> (01 June 2009)
 # Development version, Work-In-Progress
 =media-sound/banshee-1.5*
-=media-plugins/banshee-community-extensions-1.5*
-
-# Peter Volkov <pva@gentoo.org> (17 May 2009)
-# Masked development/git sources
-=sys-kernel/openvz-sources-2.6.27.9999
 
 # Diego E. Pettenò <flameeyes@gentoo.org> (27 Apr 2009)
 # Mask libopensync 0.38 since no plugin was fixed for this
@@ -901,31 +887,20 @@ games-fps/doom3-chextrek
 games-fps/doom3-data
 games-fps/doom3-demo
 games-fps/doom3-ducttape
-games-fps/doom3-dungeon
 games-fps/doom3-eventhorizon
 games-fps/doom3-hellcampaign
 games-fps/doom3-inhell
 games-fps/doom3-lms
 games-fps/doom3-mitm
-games-fps/doom3-opencoop
 games-fps/doom3-phantasm
 games-fps/doom3-roe
 games-fps/quake4-bin
 games-fps/quake4-data
-games-fps/quake4-deltactf
 games-fps/quake4-demo
 
 # Alon Bar-Lev <alonbl@gentoo.org> (23 Feb 2008)
 # These are not yet stable.
 sys-fs/redirfs
-
-# Chris Gianelloni <wolf31o2@gentoo.org> (20 Feb 2008)
-# Masking these so people will quit installing them on their systems.  These
-# packages are designed for use on the LiveCD only and will do unspeakably
-# horrible and unexpected things on a normal system.  YOU HAVE BEEN WARNED!!!
-=app-misc/livecd-tools-1.2
-#sys-apps/hwsetup
-#x11-misc/mkxf86config
 
 # Raúl Porcel <armin76@gentoo.org> (18 Feb 2008)
 # Probably breaks a lot of stuff, needs testing
@@ -950,7 +925,6 @@ sys-fs/redirfs
 =app-pda/libopensync-plugin-google-calendar-9999
 =app-pda/libopensync-plugin-gpe-9999
 =app-pda/libopensync-plugin-irmc-9999
-=app-pda/libopensync-plugin-kdepim-9999
 =app-pda/libopensync-plugin-palm-9999
 =app-pda/libopensync-plugin-python-9999
 =app-pda/libopensync-plugin-syncml-9999
