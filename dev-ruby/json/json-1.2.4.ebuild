@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/json/json-1.2.0-r1.ebuild,v 1.10 2010/02/23 18:18:58 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/json/json-1.2.4.ebuild,v 1.1 2010/04/11 06:54:26 graaff Exp $
 
 EAPI=2
 USE_RUBY="ruby18 ruby19 jruby"
