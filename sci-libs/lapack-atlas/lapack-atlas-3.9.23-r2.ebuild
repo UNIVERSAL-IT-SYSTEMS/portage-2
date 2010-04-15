@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/lapack-atlas/lapack-atlas-3.9.23-r1.ebuild,v 1.3 2010/03/07 21:45:06 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/lapack-atlas/lapack-atlas-3.9.23-r2.ebuild,v 1.2 2010/04/15 20:28:06 jlec Exp $
 
 EAPI="3"
 
@@ -22,8 +22,8 @@ SRC_URI="${SRC_URI1} ${SRC_URI2}
 	mirror://gentoo/${L_PN}-reference-${L_PV}-autotools.patch.bz2"
 
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux"
 
 CDEPEND="virtual/blas
 	virtual/cblas
@@ -41,6 +41,7 @@ S="${WORKDIR}/ATLAS"
 S_LAPACK="${WORKDIR}/${L_PN}-lite-${L_PV}"
 BLD_DIR="${S}/gentoo-build"
 RPATH="${DESTTREE}/$(get_libdir)/${L_PN}/${MY_PN}"
+S_LAPACK="${WORKDIR}"/${L_PN}-lite-${L_PV}
 
 src_prepare() {
 	epatch "${DISTDIR}"/${MY_PN}-${PATCH_V}-shared-libs.2.patch.bz2
@@ -66,8 +67,7 @@ src_prepare() {
 	mkdir "${BLD_DIR}" || die "failed to generate build directory"
 	cd "${BLD_DIR}"
 	cp "${FILESDIR}"/war . && chmod a+x war || die "failed to install war"
-	sed -i -e '1c\#! '"${EPREFIX}"'/bin/bash' \
-		-e '/^\$ARCHIVER \$@$/i\shift' war
+	sed -i -e '1c\#! '"${EPREFIX}"'/bin/bash' war
 	cd "${S_LAPACK}"
 	epatch "${WORKDIR}"/${L_PN}-reference-${L_PV}-autotools.patch
 	epatch "${FILESDIR}"/${L_PN}-reference-${L_PV}-test-fix.patch
@@ -119,6 +119,8 @@ src_configure() {
 		-e "s:EXT_ETIME$:INT_CPU_TIME:" \
 		make.inc.example > make.inc \
 		|| die "Failed to set up make.inc"
+	cd "${S_LAPACK}"
+	econf || die "Failed to configure reference lapack lib"
 }
 
 src_compile() {
@@ -129,10 +131,7 @@ src_compile() {
 		make lib || die "Failed to make lib in ${d}"
 	done
 
-	# build rest of lapack
-	S_LAPACK="${WORKDIR}"/${L_PN}-lite-${L_PV}
 	cd "${S_LAPACK}"
-	econf || die "Failed to configure reference lapack lib"
 	emake || die "Failed to make reference lapack lib"
 
 	cd "${S_LAPACK}"/SRC
