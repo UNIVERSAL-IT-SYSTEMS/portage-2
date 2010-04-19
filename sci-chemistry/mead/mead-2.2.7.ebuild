@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/mead/mead-2.2.7.ebuild,v 1.2 2010/04/19 07:02:20 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/mead/mead-2.2.7.ebuild,v 1.3 2010/04/19 17:49:23 jlec Exp $
 
 inherit eutils
 
@@ -27,7 +27,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}"/${P}-respect-cflags.patch
+	epatch "${FILESDIR}"/${P}-respect-flags.patch
 	epatch "${FILESDIR}"/${P}-gcc43.patch
 }
 
