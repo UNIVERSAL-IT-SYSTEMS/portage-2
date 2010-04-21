@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/lvm2/lvm2-2.02.63.ebuild,v 1.1 2010/04/20 02:58:00 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/lvm2/lvm2-2.02.63-r1.ebuild,v 1.1 2010/04/20 23:04:25 robbat2 Exp $
 
 EAPI=2
 inherit eutils multilib toolchain-funcs autotools
@@ -134,7 +134,7 @@ src_configure() {
 	econf $(use_enable readline) \
 		$(use_enable selinux) \
 		--enable-pkgconfig \
-		--libdir=/usr/$(get_libdir) \
+		--libdir=/$(get_libdir) \
 		--enable-udev_rules \
 		--enable-udev_sync \
 		--with-udevdir=/$(get_libdir)/udev/rules.d/ \
@@ -155,18 +155,32 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}" install
 
+	# Upstream build script puts a lot of this stuff into /usr/lib regardless of
+	# libdir variable
 	dodir /$(get_libdir)
 	# Put these in root so we can reach before /usr is up
 	for i in \
-		libdevmapper-event{,-lvm2{mirror,snapshot}} \
+		libdevmapper-event{,-lvm2{,mirror,snapshot}} \
+		libdevmapper-event \
 		libdevmapper \
-		liblvm2{format1,snapshot,cmd} \
+		liblvm2{format1,snapshot,cmd,app} \
 		; do
-		b="${D}"/usr/$(get_libdir)/${i}
-		if [ -f "${b}".so ]; then
-			mv -f "${b}".so* "${D}"/$(get_libdir) || die
-			gen_usr_ldscript ${i}.so || die
-		fi
+		for d in $(get_libdir) lib ; do
+			b="${D}"/usr/${d}/${i}
+			#einfo "$i in $d : $b"
+			if [ -n "$(ls "${b}".so* 2>/dev/null)" ]; then
+				[ -s "$b.so" ] && rm -f $b
+				mv -f "${b}".so* "${D}"/$(get_libdir) || die
+				gen_usr_ldscript ${i}.so || die
+			fi
+			if [ "$d" != "$(get_libdir)" -a -f "${b}.a" ]; then
+				mv -f "${b}.a" "${D}"/usr/$(get_libdir) || die
+			fi
+		done
+		for d in $(get_libdir) lib ; do
+			b="${D}"/${d}/${i}
+			[ -s "$b.so" ] && rm -f $b
+		done
 	done
 
 	dodoc README VERSION WHATS_NEW doc/*.{conf,c,txt}
