@@ -1,20 +1,24 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php5/jpgraph/jpgraph-2.2.ebuild,v 1.6 2007/11/14 15:27:16 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php5/jpgraph/jpgraph-3.0.7.ebuild,v 1.1 2010/04/21 22:43:46 mabi Exp $
+
+EAPI="2"
 
 inherit php-lib-r1 eutils
 
-KEYWORDS="alpha amd64 hppa ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~sparc ~x86"
 
 DESCRIPTION="Fully OO graph drawing library for PHP."
 HOMEPAGE="http://www.aditus.nu/jpgraph/"
-SRC_URI="http://hem.bredband.net/jpgraph2/${P}.tar.gz"
+SRC_URI="http://hem.bredband.net/jpgraph2/${P}.tar.bz2"
 LICENSE="QPL-1.0"
 SLOT="0"
 IUSE="truetype"
 
 DEPEND=""
-RDEPEND="truetype? ( media-fonts/corefonts )"
+RDEPEND="truetype? ( media-fonts/corefonts )
+	dev-lang/php[gd]
+	"
 
 need_php_by_category
 
@@ -23,10 +27,7 @@ need_php_by_category
 pkg_setup() {
 	has_php
 
-	# we need the PHP GD functionality
-	require_gd
-
-	# check to wich user:group the cache dir will go
+	# check to which user:group the cache dir will go
 	if has_version "www-servers/apache" ; then
 		HTTPD_USER="apache"
 		HTTPD_GROUP="apache"
@@ -49,27 +50,27 @@ src_install() {
 	# patch 1:
 	# make jpgraph use the correct group for file permissions
 
-	sed -i "s|^DEFINE(\"CACHE_FILE_GROUP\",\"wwwadmin\");|DEFINE(\"CACHE_FILE_GROUP\",\"${HTTPD_GROUP}\");|" src/jpg-config.inc.php \
+	sed -i "s|^define('CACHE_FILE_GROUP','www');|define('CACHE_FILE_GROUP','${HTTPD_GROUP}');|" src/jpg-config.inc.php \
 		|| die "sed failed in patch 1"
 
 	# patch 2:
 	# make jpgraph use the correct directory for caching
 
-	sed -i "s|.*DEFINE(\"CACHE_DIR\",\"/tmp/jpgraph_cache/\");|DEFINE(\"CACHE_DIR\",\"${JPGRAPH_CACHEDIR}\");|" src/jpg-config.inc.php \
+	sed -i "s|.*define('CACHE_DIR','/tmp/jpgraph_cache/');|define('CACHE_DIR','${JPGRAPH_CACHEDIR}');|" src/jpg-config.inc.php \
 		|| die "sed failed in patch 2"
 
 	# patch 3:
 	# make jpgraph use the correct directory for the corefonts if the truetype USE flag is set
 
 	if use truetype ; then
-		sed -i "s|.*DEFINE(\"TTF_DIR\",\"/usr/X11R6/lib/X11/fonts/truetype/\");|DEFINE(\"TTF_DIR\",\"/usr/share/fonts/corefonts/\");|" src/jpg-config.inc.php \
+		sed -i "s|.*define('TTF_DIR','/usr/X11R6/lib/X11/fonts/truetype/');|define('TTF_DIR','/usr/share/fonts/corefonts/');|" src/jpg-config.inc.php \
 			|| die "sed failed in patch 3"
 	fi
 
 	# patch 4:
 	# disable READ_CACHE in jpgraph
 
-	sed -i "s|^DEFINE(\"READ_CACHE\",true);|DEFINE(\"READ_CACHE\",false);|" src/jpg-config.inc.php \
+	sed -i "s|^define('READ_CACHE',true);|define('READ_CACHE',false);|" src/jpg-config.inc.php \
 		|| die "sed failed in patch 4"
 
 	# install php files
@@ -78,9 +79,9 @@ src_install() {
 
 	# install documentation
 	einfo "Installing documentation"
-	dodoc-php README QPL.txt
+	dodoc-php README
 	insinto /usr/share/doc/${CATEGORY}/${PF}
-	doins -r docs/*
+	doins -r docportal/*
 
 	# setup the cache dir
 	einfo "Setting up the cache dir"
