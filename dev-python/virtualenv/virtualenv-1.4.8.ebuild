@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/virtualenv/virtualenv-1.4.6.ebuild,v 1.1 2010/04/02 16:58:00 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/virtualenv/virtualenv-1.4.8.ebuild,v 1.1 2010/04/23 00:07:45 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~x86-solaris"
 SLOT="0"
 IUSE=""
 
-RDEPEND=">=dev-python/setuptools-0.6_rc8"
+RDEPEND="dev-python/setuptools"
 DEPEND="${RDEPEND}"
 # 2.7: Bug #292409
 RESTRICT_PYTHON_ABIS="2.7 3.*"
