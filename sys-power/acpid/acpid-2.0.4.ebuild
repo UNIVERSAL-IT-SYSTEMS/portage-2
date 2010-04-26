@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/acpid/acpid-2.0.3.ebuild,v 1.2 2010/03/31 13:33:52 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/acpid/acpid-2.0.4.ebuild,v 1.1 2010/04/26 12:55:42 ssuominen Exp $
 
 EAPI=2
 inherit eutils toolchain-funcs
@@ -15,7 +15,7 @@ KEYWORDS="~alpha ~amd64 ~ia64 -ppc ~x86"
 IUSE=""
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}.patch
+	epatch "${FILESDIR}"/${PN}-2.0.3.patch
 }
 
 src_compile() {
@@ -31,11 +31,13 @@ src_install() {
 	newdoc kacpimon/README README.kacpimon
 
 	exeinto /etc/acpi
-	newexe "${FILESDIR}"/${PN}-1.0.6-default.sh default.sh || die
+	newexe "${FILESDIR}"/${PN}-2.0.4-default.sh default.sh || die
+	doexe samples/powerbtn/powerbtn.sh || die
+
 	insinto /etc/acpi/events
 	newins "${FILESDIR}"/${PN}-1.0.4-default default || die
 
-	newinitd "${FILESDIR}"/${PN}-1.0.6-init.d acpid || die
+	newinitd "${FILESDIR}"/${PN}-2.0.3-init.d acpid || die
 	newconfd "${FILESDIR}"/${PN}-1.0.6-conf.d acpid || die
 
 	prepalldocs
