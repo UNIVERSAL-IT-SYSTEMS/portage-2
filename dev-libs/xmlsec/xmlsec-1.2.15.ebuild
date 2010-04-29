@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/xmlsec/xmlsec-1.2.14.ebuild,v 1.1 2009/12/05 22:16:50 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/xmlsec/xmlsec-1.2.15.ebuild,v 1.1 2010/04/29 18:57:40 arfrever Exp $
 
-EAPI="2"
+EAPI="3"
 
 DESCRIPTION="Command line tool for signing, verifying, encrypting and decrypting XML"
 HOMEPAGE="http://www.aleksey.com/xmlsec"
@@ -42,10 +42,6 @@ src_configure() {
 }
 
 src_test() {
-	if has_version ${CATEGORY}/${PN} && ! has_version "=${CATEGORY}/${PF}"; then
-		ewarn "Tests will be probably skipped. First install ${CATEGORY}/${PF} and next reinstall it again with testing enabled."
-	fi
-
 	TMPFOLDER="${T}" emake check || die "emake check failed"
 }
 

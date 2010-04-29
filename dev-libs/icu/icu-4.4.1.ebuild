@@ -1,23 +1,23 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/icu/icu-4.4.ebuild,v 1.1 2010/03/19 12:01:01 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/icu/icu-4.4.1.ebuild,v 1.1 2010/04/29 18:22:54 arfrever Exp $
 
 EAPI="3"
 
 inherit flag-o-matic versionator
 
+MAJOR_MINOR_VERSION="$(get_version_component_range 1-2)"
+
 DESCRIPTION="International Components for Unicode"
-HOMEPAGE="http://www.icu-project.org/ http://ibm.com/software/globalization/icu/"
+HOMEPAGE="http://www.icu-project.org/"
 
-BASEURI="http://download.icu-project.org/files/${PN}4c/${PV}"
-DOCS_PV="$(get_version_component_range 1-2)"
-DOCS_BASEURI="http://download.icu-project.org/files/${PN}4c/${DOCS_PV}"
-DOCS_PV="${DOCS_PV/./_}"
-SRCPKG="${PN}4c-${PV//./_}-src.tgz"
-APIDOCS="${PN}4c-${DOCS_PV}-docs.zip"
+BASE_URI="http://download.icu-project.org/files/icu4c/${PV}"
+DOCS_BASE_URI="http://download.icu-project.org/files/icu4c/${MAJOR_MINOR_VERSION}"
+SRC_ARCHIVE="icu4c-${PV//./_}-src.tgz"
+DOCS_ARCHIVE="icu4c-${MAJOR_MINOR_VERSION//./_}-docs.zip"
 
-SRC_URI="${BASEURI}/${SRCPKG}
-	doc? ( ${DOCS_BASEURI}/${APIDOCS} )"
+SRC_URI="${BASE_URI}/${SRC_ARCHIVE}
+	doc? ( ${DOCS_BASE_URI}/${DOCS_ARCHIVE} )"
 
 LICENSE="BSD"
 SLOT="0"
@@ -29,12 +29,14 @@ RDEPEND=""
 
 S="${WORKDIR}/${PN}/source"
 
+QA_DT_NEEDED="/usr/lib.*/libicudata.so.${MAJOR_MINOR_VERSION/./}.0"
+
 src_unpack() {
-	unpack ${SRCPKG}
+	unpack "${SRC_ARCHIVE}"
 	if use doc; then
-		mkdir apidocs
-		pushd apidocs > /dev/null
-		unpack ${APIDOCS}
+		mkdir docs
+		pushd docs > /dev/null
+		unpack "${DOCS_ARCHIVE}"
 		popd > /dev/null
 	fi
 }
@@ -65,7 +67,7 @@ src_install() {
 	dohtml ../readme.html
 	dodoc ../unicode-license.txt
 	if use doc; then
-		insinto /usr/share/doc/${PF}/html/apidocs
-		doins -r "${WORKDIR}"/apidocs/*
+		insinto /usr/share/doc/${PF}/html/api
+		doins -r "${WORKDIR}/docs/"*
 	fi
 }
