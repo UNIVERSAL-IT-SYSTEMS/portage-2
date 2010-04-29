@@ -1,8 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-app-pagetemplate/zope-app-pagetemplate-3.10.1.ebuild,v 1.3 2010/02/14 19:17:15 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-app-pagetemplate/zope-app-pagetemplate-3.11.0.ebuild,v 1.1 2010/04/28 21:17:47 arfrever Exp $
 
-EAPI="2"
+EAPI="3"
+PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
@@ -19,13 +20,11 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~sparc"
 IUSE=""
 
-RDEPEND="net-zope/zope-browserpage
-	net-zope/zope-configuration
+RDEPEND=">=net-zope/zope-browserpage-3.12.0
 	net-zope/zope-dublincore
 	net-zope/zope-i18nmessageid
 	net-zope/zope-interface
 	net-zope/zope-pagetemplate
-	net-zope/zope-schema
 	net-zope/zope-security
 	net-zope/zope-size
 	net-zope/zope-tales
