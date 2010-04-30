@@ -1,12 +1,12 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/aircrack-ng/aircrack-ng-1.0_rc4.ebuild,v 1.6 2009/09/22 13:54:56 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/aircrack-ng/aircrack-ng-1.1.ebuild,v 1.1 2010/04/29 21:12:40 arfrever Exp $
 
-EAPI="2"
+EAPI="3"
 
-inherit versionator eutils toolchain-funcs
+inherit eutils flag-o-matic toolchain-funcs versionator
 
-MY_PV=$(replace_version_separator 2 '-')
+MY_PV="$(replace_version_separator 2 '-')"
 
 DESCRIPTION="WLAN tools for breaking 802.11 WEP/WPA keys"
 HOMEPAGE="http://www.aircrack-ng.org"
@@ -14,13 +14,13 @@ SRC_URI="http://download.aircrack-ng.org/${PN}-${MY_PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~arm ppc x86"
+KEYWORDS="~amd64 ~arm ~ppc ~x86 ~amd64-linux ~x86-linux"
 IUSE="+sqlite kernel_linux kernel_FreeBSD"
 
 DEPEND="dev-libs/openssl
 	sqlite? ( >=dev-db/sqlite-3.4 )"
 RDEPEND="${DEPEND}
-	kernel_linux? ( net-wireless/iw )"
+	kernel_linux? ( net-wireless/iw net-wireless/wireless-tools )"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 
@@ -28,23 +28,28 @@ have_sqlite() {
 	use sqlite && echo "true" || echo "false"
 }
 
+pkg_setup() {
+	# aircrack-ng fails to build with -fPIE.
+	filter-flags -fPIE
+}
+
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-1.0_rc3-respect_LDFLAGS.patch"
-	epatch "${FILESDIR}/${P}-fix_build.patch"
+	epatch "${FILESDIR}/${P}-respect_LDFLAGS.patch"
+	epatch "${FILESDIR}/${PN}-1.0_rc4-fix_build.patch"
 }
 
 src_compile() {
 	# UNSTABLE=true enables building of buddy-ng, easside-ng, tkiptun-ng and wesside-ng
-	emake CC="$(tc-getCC)" LD="$(tc-getLD)" sqlite=$(have_sqlite) UNSTABLE=true || die "emake failed"
+	emake CC="$(tc-getCC)" LD="$(tc-getLD)" sqlite="$(have_sqlite)" UNSTABLE=true || die "emake failed"
 }
 
 src_install() {
 	# UNSTABLE=true enables installation of buddy-ng, easside-ng, tkiptun-ng and wesside-ng
 	emake \
-		prefix="/usr" \
-		mandir="/usr/share/man/man1" \
+		prefix="${EPREFIX}/usr" \
+		mandir="${EPREFIX}/usr/share/man/man1" \
 		DESTDIR="${D}" \
-		sqlite=$(have_sqlite) \
+		sqlite="$(have_sqlite)" \
 		UNSTABLE=true \
 		install \
 		|| die "emake install failed"
