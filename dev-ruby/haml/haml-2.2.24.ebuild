@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/haml/haml-2.2.20.ebuild,v 1.1 2010/02/17 07:45:28 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/haml/haml-2.2.24.ebuild,v 1.1 2010/04/30 08:19:31 graaff Exp $
 
 EAPI=2
 
@@ -10,6 +10,8 @@ RUBY_FAKEGEM_TASK_DOC="doc"
 
 RUBY_FAKEGEM_EXTRADOC="CONTRIBUTING README.md"
 RUBY_FAKEGEM_DOCDIR="doc"
+
+RUBY_FAKEGEM_EXTRAINSTALL="init.rb"
 
 inherit ruby-fakegem
 
