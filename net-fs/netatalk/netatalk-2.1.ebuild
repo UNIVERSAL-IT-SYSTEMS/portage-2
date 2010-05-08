@@ -1,8 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/netatalk/netatalk-2.0.5.ebuild,v 1.1 2010/01/10 23:10:39 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/netatalk/netatalk-2.1.ebuild,v 1.1 2010/05/08 17:34:29 vapier Exp $
 
-inherit eutils pam autotools
+EAPI="2"
+
+inherit pam
 
 DESCRIPTION="Kernel level implementation of the AppleTalk Protocol Suite"
 HOMEPAGE="http://netatalk.sourceforge.net/"
@@ -11,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
-IUSE="ssl pam tcpd slp cups kerberos krb4 debug cracklib xfs"
+IUSE="cracklib cups debug kerberos krb4 pam slp ssl tcpd xfs"
 
 RDEPEND=">=sys-libs/db-4.2.52
 	cracklib? ( sys-libs/cracklib )
@@ -27,11 +29,7 @@ RDEPEND=">=sys-libs/db-4.2.52
 DEPEND="${RDEPEND}
 	xfs? ( sys-fs/xfsprogs <sys-kernel/linux-headers-2.6.16 )"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-control-pam.patch
-
+src_prepare() {
 	# until someone that understands their config script build
 	# system gets a patch pushed upstream to make
 	# --enable-srvloc passed to configure also add slpd to the
@@ -42,14 +40,14 @@ src_unpack() {
 	fi
 }
 
-src_compile() {
+src_configure() {
 	if ! use xfs ; then
 		eval $(printf '%s\n' {linux,xfs}/{dqblk_xfs,libxfs,xqm,xfs_fs}.h | \
 			sed -e 's:[/.]:_:g' -e 's:^:export ac_cv_header_:' -e 's:$:=no:')
 	fi
 
-	# Ignore --enable-gentoo, we install the init.d by hand and we avoid having to
-	# sed the Makefiles to not do rc-update.
+	# Ignore --enable-gentoo, we install the init.d by hand and we avoid having
+	# to sed the Makefiles to not do rc-update.
 	# --enable-shadow: let build system detect shadow.h in toolchain
 	econf \
 		$(use_with pam) \
@@ -62,10 +60,12 @@ src_compile() {
 		$(use_with ssl ssl-dir) \
 		$(use_with cracklib) \
 		$(use_with slp srvloc) \
-		$(use_with xfs) \
 		--disable-afs \
 		--enable-fhs \
 		--with-bdb=/usr
+}
+
+src_compile() {
 	emake || die
 
 	# Create the init script manually (it's more messy to --enable-gentoo)
@@ -88,4 +88,6 @@ src_install() {
 	# includepath then, but right now, nothing uses netatalk.
 	# On a side note, it also solves collisions with freebsd-lib and other libcs
 	mv "${D}"/usr/include/netatalk{,2} || die
+	sed -e 's/include <netatalk/include <netatalk2/g' \
+		-i "${D}"usr/include/{netatalk2,atalk}/* || die
 }
