@@ -1,18 +1,20 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nntp/nzbget/nzbget-0.6.0.ebuild,v 1.6 2010/05/09 08:37:44 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nntp/nzbget/nzbget-0.7.0.ebuild,v 1.1 2010/05/09 08:43:43 swegener Exp $
 
 EAPI="2"
 
 inherit eutils
 
+MY_P="${P/_pre/-testing-r}"
+
 DESCRIPTION="A command-line based binary newsgrapper supporting .nzb files"
 HOMEPAGE="http://nzbget.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ppc x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~x86"
 IUSE="debug ssl gnutls ncurses parcheck"
 
 DEPEND="dev-libs/libxml2
@@ -26,6 +28,8 @@ DEPEND="dev-libs/libxml2
 		dev-libs/libsigc++:2
 	)"
 RDEPEND="${DEPEND}"
+
+S="${WORKDIR}"/${P/_pre*/-testing}
 
 src_prepare() {
 	sed \
@@ -67,6 +71,9 @@ src_install() {
 
 	exeinto /usr/share/nzbget
 	doexe postprocess-example.sh
+
+	insinto /usr/share/nzbget
+	doins postprocess-example.conf
 
 	dodoc AUTHORS ChangeLog README nzbget.conf.example || die "dodoc failed"
 }
