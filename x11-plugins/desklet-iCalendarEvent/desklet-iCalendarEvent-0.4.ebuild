@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/desklet-iCalendarEvent/desklet-iCalendarEvent-0.3.ebuild,v 1.4 2010/05/09 00:48:11 nixphoeni Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/desklet-iCalendarEvent/desklet-iCalendarEvent-0.4.ebuild,v 1.1 2010/05/09 01:19:11 nixphoeni Exp $
 
 EAPI=2
 CONTROL_NAME="${PN#desklet-}"
@@ -17,5 +17,6 @@ IUSE=""
 RDEPEND="${RDEPEND}
 	>=dev-python/icalendar-2.0.1
 	>=dev-python/python-dateutil-1.2
-	dev-libs/libgamin[python]"
+	dev-libs/libgamin[python]
+	dev-libs/libxml2[python]"
 DOCS="Manifest"

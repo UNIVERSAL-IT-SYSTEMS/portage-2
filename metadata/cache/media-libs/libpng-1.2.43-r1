@@ -1,7 +1,7 @@
-sys-libs/zlib
-sys-libs/zlib
+sys-libs/zlib !<media-libs/libpng-1.2.43-r1 app-arch/xz-utils
+sys-libs/zlib !<media-libs/libpng-1.2.43-r1
 1.2
-mirror://sourceforge/libpng/libpng-1.2.43.tar.bz2
+mirror://sourceforge/libpng/libpng-1.2.43.tar.xz
 
 http://www.libpng.org/
 as-is
@@ -12,9 +12,9 @@ libtool multilib toolchain-funcs
 
 
 
+3
 
-
-install unpack
+configure install prepare setup
 
 
 
