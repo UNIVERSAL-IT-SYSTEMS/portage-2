@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/cssutils/cssutils-0.9.7_alpha3.ebuild,v 1.1 2010/03/15 18:52:35 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/cssutils/cssutils-0.9.7_alpha4.ebuild,v 1.1 2010/05/13 20:40:58 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
-RDEPEND=">=dev-python/setuptools-0.6_rc7-r1"
+RDEPEND="dev-python/setuptools"
 DEPEND="${RDEPEND}
 	app-arch/unzip
 	test? ( dev-python/minimock )"
@@ -31,5 +31,8 @@ S="${WORKDIR}/${MY_P}"
 src_install() {
 	distutils_src_install
 
-	rm -fr "${ED}"usr/lib*/python*/site-packages/tests
+	delete_tests() {
+		rm -fr "${ED}$(python_get_sitedir)/tests"
+	}
+	python_execute_function -q delete_tests
 }

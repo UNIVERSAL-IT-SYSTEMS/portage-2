@@ -1,8 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/astng/astng-0.19.3.ebuild,v 1.1 2009/12/19 17:38:00 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/astng/astng-0.20.1.ebuild,v 1.1 2010/05/13 18:18:39 arfrever Exp $
 
-EAPI="2"
+EAPI="3"
+PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
@@ -11,9 +12,9 @@ DESCRIPTION="Abstract Syntax Tree New Generation for logilab packages"
 HOMEPAGE="http://www.logilab.org/projects/astng/ http://pypi.python.org/pypi/logilab-astng"
 SRC_URI="ftp://ftp.logilab.org/pub/astng/logilab-${P}.tar.gz http://pypi.python.org/packages/source/l/logilab-astng/logilab-${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-macos"
+KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x64-macos ~x86-macos"
 IUSE="test"
 
 RDEPEND=">=dev-python/logilab-common-0.39.0"
@@ -49,7 +50,6 @@ src_install() {
 	distutils_src_install
 
 	deletion_of_unneeded_files() {
-		[[ -z "${ED}" ]] && local ED="${D}"
 		local sdir="${ED}$(python_get_sitedir)/logilab"
 
 		# we need to remove this file because it collides with the one
