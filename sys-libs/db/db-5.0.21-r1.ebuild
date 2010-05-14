@@ -1,7 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/db-5.0.21.ebuild,v 1.1 2010/05/11 08:01:45 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/db-5.0.21-r1.ebuild,v 1.1 2010/05/14 03:19:25 robbat2 Exp $
 
+EAPI=2
 inherit eutils db flag-o-matic java-pkg-opt-2 autotools libtool
 
 #Number of official patches
@@ -40,6 +41,9 @@ RDEPEND="tcl? ( dev-lang/tcl )
 
 src_unpack() {
 	unpack "${MY_P}".tar.gz
+}
+
+src_prepare() {
 	cd "${WORKDIR}"/"${MY_P}"
 	for (( i=1 ; i<=${PATCHNO} ; i++ ))
 	do
@@ -51,6 +55,9 @@ src_unpack() {
 	# use the includes from the prefix
 	epatch "${FILESDIR}"/${PN}-4.6-jni-check-prefix-first.patch
 	epatch "${FILESDIR}"/${PN}-4.3-listen-to-java-options.patch
+
+	# upstream autoconf fails to build DBM when it's supposed to
+	epatch "${FILESDIR}"/${PN}-5.0.21-enable-dbm-autoconf.patch
 
 	# Upstream release script grabs the dates when the script was run, so lets
 	# end-run them to keep the date the same.
@@ -88,7 +95,7 @@ src_unpack() {
 	done
 }
 
-src_compile() {
+src_configure() {
 	local myconf=''
 
 	# compilation with -O0 fails on amd64, see bug #171231
@@ -140,7 +147,9 @@ src_compile() {
 		${myconf} \
 		$(use_enable test) \
 		"$@"
+}
 
+src_compile() {
 	emake || die "make failed"
 }
 
