@@ -1,6 +1,14 @@
-# ChangeLog for virtual/flim
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/flim/ChangeLog,v 1.5 2009/12/15 20:00:12 abcd Exp $
+# ChangeLog for virtual/emacs-flim
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/emacs-flim/ChangeLog,v 1.1 2010/05/14 14:38:19 ulm Exp $
+
+*emacs-flim-0 (14 May 2010)
+
+  14 May 2010; Ulrich Mueller <ulm@gentoo.org> +emacs-flim-0.ebuild,
+  +metadata.xml:
+  Move package from flim to emacs-flim. Names of GNU Emacs virtuals should
+  begin with "emacs-", in order to avoid namespace collisions with XEmacs.
+  Add missing keywords from app-emacs/flim.
 
   15 Dec 2009; Jonathan Callen <abcd@gentoo.org> flim-0.ebuild:
   QA: Add prefix keywords
