@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-workbench/mysql-workbench-5.2.17-r1.ebuild,v 1.1 2010/04/09 14:55:24 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-workbench/mysql-workbench-5.2.21.ebuild,v 1.1 2010/05/15 06:55:54 graaff Exp $
 
 EAPI="2"
 GCONF_DEBUG="no"
@@ -27,7 +27,7 @@ RDEPEND=">=x11-libs/gtk+-2.6
 	>=dev-cpp/glibmm-2.14
 	>=dev-cpp/gtkmm-2.14
 	dev-libs/libzip
-	>=virtual/mysql-5.0
+	>=virtual/mysql-5.1
 	dev-libs/libpcre
 	virtual/opengl
 	>=dev-lang/lua-5.1[deprecated]
@@ -47,7 +47,6 @@ S="${WORKDIR}"/"${MY_P}"
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-5.2.17-python-libs.patch"
-	epatch "${FILESDIR}/${PN}-5.2.17-as-needed.patch"
 	epatch "${FILESDIR}/${PN}-5.2.17-as-needed-modules.patch"
 	eautoreconf
 }
