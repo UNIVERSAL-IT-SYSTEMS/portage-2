@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/automoc/automoc-0.9.88.ebuild,v 1.20 2010/01/13 17:28:09 abcd Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/automoc/automoc-0.9.88.ebuild,v 1.1 2010/05/15 13:43:00 reavertm Exp $
 
 EAPI="2"
 
