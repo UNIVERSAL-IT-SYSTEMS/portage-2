@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/gchemutils/gchemutils-0.10.3.ebuild,v 1.3 2009/08/08 08:44:25 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/gchemutils/gchemutils-0.10.12.ebuild,v 1.2 2010/05/16 02:59:01 je_fro Exp $
 
 EAPI=2
 GCONF_DEBUG=no
@@ -19,8 +19,8 @@ IUSE=""
 
 RDEPEND="gnome-base/libglade:2.0
 	>=gnome-base/libgnomeprintui-2.4
-	>=gnome-extra/libgsf-1.14[gnome]
-	>=x11-libs/goffice-0.6.5:0.6[gnome]
+	>=gnome-extra/libgsf-1.14
+	>=x11-libs/goffice-0.6.5:0.6
 	x11-libs/gtkglext
 	app-text/gnome-doc-utils
 	>=sci-chemistry/openbabel-2.1.1
@@ -29,14 +29,13 @@ RDEPEND="gnome-base/libglade:2.0
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	app-text/rarian
-	dev-util/intltool
-	!sci-chemistry/gchempaint"
+	dev-util/intltool"
 
 S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	gnome2_src_prepare
-	epatch "${FILESDIR}"/${P}-glibc-2.10.patch
+#	epatch "${FILESDIR}"/${P}-glibc-2.10.patch
 	eautoreconf
 }
 

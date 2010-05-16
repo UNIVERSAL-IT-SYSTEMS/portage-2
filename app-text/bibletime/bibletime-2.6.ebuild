@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/bibletime/bibletime-2.5.ebuild,v 1.1 2009/12/25 17:35:23 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/bibletime/bibletime-2.6.ebuild,v 1.1 2010/05/16 02:03:03 beandog Exp $
 
-EAPI=2
+EAPI="2"
 inherit cmake-utils
 
 DESCRIPTION="Qt4 Bible study application using the SWORD library."
@@ -13,6 +13,9 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="debug"
+
+# bug 313657
+RESTRICT="test"
 
 RDEPEND=">=app-text/sword-1.6.0
 	>=dev-cpp/clucene-0.9.16a

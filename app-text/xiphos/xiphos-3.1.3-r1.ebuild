@@ -1,10 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/xiphos/xiphos-3.1.3.ebuild,v 1.1 2010/04/21 13:40:32 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/xiphos/xiphos-3.1.3-r1.ebuild,v 1.1 2010/05/16 00:29:08 beandog Exp $
 
 EAPI=2
 GCONF_DEBUG=no
-inherit gnome2
+
+inherit gnome2 flag-o-matic
 
 DESCRIPTION="GTK+ based Bible study software, formerly gnomesword"
 HOMEPAGE="http://xiphos.org/"
@@ -29,7 +30,8 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	sys-devel/gettext
 	app-text/rarian
-	>=app-text/gnome-doc-utils-0.3.2"
+	>=app-text/gnome-doc-utils-0.3.2
+	dev-libs/nspr"
 
 pkg_setup() {
 	G2CONF="--docdir=/usr/share/doc/${PF}
@@ -38,6 +40,8 @@ pkg_setup() {
 	if ! use xulrunner; then
 		G2CONF="${G2CONF} --without-gecko"
 	fi
+
+	append-cppflags -I/usr/include/nspr
 }
 
 src_install() {
