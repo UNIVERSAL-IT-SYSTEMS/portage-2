@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5570 2010/05/18 03:14:47 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5574 2010/05/18 20:27:48 robbat2 Exp $
 # This file contains descriptions of local USE flags, and the ebuilds which
 # contain them.
 # Keep it sorted (use "LC_ALL=C sort -t: -k1,1 -k2 | LC_ALL=C sort -s -t/ -k1,1")
@@ -862,8 +862,9 @@ dev-libs/boolstuff:static - Enable static linking
 dev-libs/boost:eselect - Run "eselect boost update" even if version is already selected
 dev-libs/boost:tools - Build and install the boost tools (bcp, quickbook, inspect, wave)
 dev-libs/crypto++:sse3 - Enable optimizations via sse3 assembly code
-dev-libs/cyberjack:noudev - Disable installation of udev rules
+dev-libs/cyberjack:fox - Enable installation of x11-libs/fox based fxcyberjack program
 dev-libs/cyberjack:pcsc-lite - Enable installation of sys-apps/pcsc-lite driver
+dev-libs/cyberjack:udev - Enable installation of udev rules
 dev-libs/cyrus-sasl:authdaemond - Enable Courier-IMAP authdaemond's unix socket support (net-mail/courier-imap, mail-mta/courier) 
 dev-libs/cyrus-sasl:ntlm_unsupported_patch - Add NTLM net-fs/samba NOT supported patch
 dev-libs/cyrus-sasl:sample - Build sample client and server
@@ -1081,7 +1082,6 @@ dev-util/global:vim - Integrate the GNU GLOBAL source code tag system with Vim
 dev-util/kdevelop:cmake - Enable support for CMAKE build system
 dev-util/kdevelop:qmake - Enable support for Qmake build system
 dev-util/kdevelop:qthelp - Enable support for QtHelp documentation browsing
-dev-util/kdevplatform:git - Add suport for git VCS
 dev-util/kdevplatform:mercurial - Add suport for mercurial VCS
 dev-util/metro:ccache - Enable support for ccache
 dev-util/metro:git - Enable support for git snapshots
@@ -2562,6 +2562,7 @@ net-libs/libpcap:libnl - link with dev-libs/libnl (used to put wireless interfac
 net-libs/libpri:bri - Enable ISDN BRI support (bristuff)
 net-libs/libproxy:gnome - Enable support for reading proxy settings from GNOME using gnome-base/gconf
 net-libs/libproxy:kde - Enable support for reading proxy settings from KDE
+net-libs/libproxy:vala - Enable support for the Vala programming language
 net-libs/libproxy:webkit - Enable support for reading proxy settings from net-libs/webkit-gtk
 net-libs/libproxy:xulrunner - Enable support for reading proxy settings from net-libs/xulrunner
 net-libs/libsrtp:aesicm - Use AES ICM cryptographic algorithm
@@ -3388,7 +3389,6 @@ sys-kernel/vanilla-sources:deblob - Remove binary blobs from kernel sources to p
 sys-kernel/vserver-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/xen-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/zen-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
-sys-kernel/zen-sources:drm-next - Enable the drm-next patch
 sys-kernel/zen-sources:stable - Clone stable git tree
 sys-libs/glibc:glibc-compat20 - Enable the glibc-compat addon
 sys-libs/glibc:glibc-omitfp - Configure glibc with --enable-omitfp which lets the build system determine when it is safe to use -fomit-frame-pointer
