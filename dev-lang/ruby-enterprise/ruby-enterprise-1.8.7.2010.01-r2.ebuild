@@ -1,55 +1,52 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ruby-1.9.1_p376.ebuild,v 1.4 2010/05/18 22:59:44 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby-enterprise/ruby-enterprise-1.8.7.2010.01-r2.ebuild,v 1.1 2010/05/18 23:10:00 flameeyes Exp $
 
 EAPI=2
 
 inherit autotools eutils flag-o-matic multilib versionator
 
 MY_P="${PN}-$(replace_version_separator 3 '-')"
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}/source"
 
 SLOT=$(get_version_component_range 1-2)
-MY_SUFFIX=$(delete_version_separator 1 ${SLOT})
+MY_SUFFIX="ee$(delete_version_separator 1 ${SLOT})"
 # 1.8 and 1.9 series disagree on this
-RUBYVERSION=$(get_version_component_range 1-3)
+RUBYVERSION=$(get_version_component_range 1-2)
 
-DESCRIPTION="An object-oriented scripting language"
-HOMEPAGE="http://www.ruby-lang.org/"
-SRC_URI="mirror://ruby/${MY_P}.tar.bz2
-		 http://dev.gentoo.org/~flameeyes/ruby-team/${PN}-patches-${PVR}.tar.bz2"
+DESCRIPTION="Ruby Enterprise Edition is a branch of Ruby including various enhancements"
+HOMEPAGE="http://www.rubyenterpriseedition.com/"
+SRC_URI="mirror://rubyforge/emm-ruby/${MY_P}.tar.gz
+		 http://www.flameeyes.eu/gentoo-distfiles/${PN}-patches-${PVR}.tar.bz2"
 
 LICENSE="|| ( Ruby GPL-2 )"
-KEYWORDS="~amd64 ~hppa ~x86 ~x86-fbsd"
-IUSE="berkdb debug doc examples gdbm ipv6 rubytests socks5 ssl tk xemacs ncurses +readline libedit"
+KEYWORDS="~amd64 ~x86"
+IUSE="tcmalloc +berkdb debug doc examples +gdbm ipv6 rubytests ssl threads tk xemacs ncurses +readline libedit"
 
 RDEPEND="
 	berkdb? ( sys-libs/db )
 	gdbm? ( sys-libs/gdbm )
-	ssl? ( dev-libs/openssl )
-	socks5? ( >=net-proxy/dante-1.1.13 )
-	tk? ( dev-lang/tk[threads] )
+	ssl? ( >=dev-libs/openssl-0.9.8m )
+	tk? ( dev-lang/tk[threads=] )
 	ncurses? ( sys-libs/ncurses )
 	libedit? ( dev-libs/libedit )
 	!libedit? ( readline? ( sys-libs/readline ) )
 	sys-libs/zlib
 	>=app-admin/eselect-ruby-20100402
-	!=dev-lang/ruby-cvs-${SLOT}*
-	!<dev-ruby/rdoc-2
-	!dev-ruby/rexml"
+	tcmalloc? ( dev-util/google-perftools )"
 DEPEND="${RDEPEND}"
+# TODO rubygems
 PDEPEND="xemacs? ( app-xemacs/ruby-modes )"
 
 PROVIDE="virtual/ruby"
 
 src_prepare() {
 	EPATCH_FORCE="yes" EPATCH_SUFFIX="patch" \
-	epatch "${WORKDIR}/patches-${PVR}"
+		epatch "${WORKDIR}/patches"
 
-	einfo "Removing rake and rubygems..."
-	# Strip rake and rubygems
-	rm -rf bin/rake lib/rake.rb lib/rake || die "rm rake failed"
-	rm -rf bin/gem || die "rm gem failed"
+	if use tcmalloc ; then
+		sed -i 's:^EXTLIBS.*:EXTLIBS = -ltcmalloc_minimal:' Makefile.in
+	fi
 
 	# Fix a hardcoded lib path in configure script
 	sed -i -e "s:\(RUBY_LIB_PREFIX=\"\${prefix}/\)lib:\1$(get_libdir):" \
@@ -66,14 +63,6 @@ src_configure() {
 	# In many places aliasing rules are broken; play it safe
 	# as it's risky with newer compilers to leave it as it is.
 	append-flags -fno-strict-aliasing
-
-	# Socks support via dante
-	if use socks5 ; then
-		# Socks support can't be disabled as long as SOCKS_SERVER is
-		# set and socks library is present, so need to unset
-		# SOCKS_SERVER in that case.
-		unset SOCKS_SERVER
-	fi
 
 	# Increase GC_MALLOC_LIMIT if set (default is 8000000)
 	if [ -n "${RUBY_GC_MALLOC_LIMIT}" ] ; then
@@ -96,9 +85,8 @@ src_configure() {
 	econf \
 		--program-suffix="${MY_SUFFIX}" \
 		--enable-shared \
-		--enable-pthread \
-		$(use_enable socks5 socks) \
 		$(use_enable doc install-doc) \
+		$(use_enable threads pthread) \
 		--enable-ipv6 \
 		$(use_enable debug) \
 		$(use_with berkdb dbm) \
@@ -107,6 +95,8 @@ src_configure() {
 		$(use_with tk) \
 		$(use_with ncurses curses) \
 		${myconf} \
+		--with-sitedir=/usr/$(get_libdir)/rubyee/site_ruby \
+		--with-vendordir=/usr/$(get_libdir)/rubyee/vendor_ruby \
 		--enable-option-checking=no \
 		|| die "econf failed"
 }
@@ -141,7 +131,7 @@ src_install() {
 	local MINIRUBY=$(echo -e 'include Makefile\ngetminiruby:\n\t@echo $(MINIRUBY)'|make -f - getminiruby)
 
 	LD_LIBRARY_PATH="${D}/usr/$(get_libdir)${LD_LIBRARY_PATH+:}${LD_LIBRARY_PATH}"
-	RUBYLIB="${S}:${D}/usr/$(get_libdir)/ruby19/${RUBYVERSION}"
+	RUBYLIB="${S}:${D}/usr/$(get_libdir)/rubyee/${RUBYVERSION}"
 	for d in $(find "${S}/ext" -type d) ; do
 		RUBYLIB="${RUBYLIB}:$d"
 	done
@@ -161,12 +151,7 @@ src_install() {
 		doins -r sample
 	fi
 
-	dosym "libruby${MY_SUFFIX}$(get_libname ${PV%_*})" \
-		"/usr/$(get_libdir)/libruby$(get_libname ${PV%.*})"
-	dosym "libruby${MY_SUFFIX}$(get_libname ${PV%_*})" \
-		"/usr/$(get_libdir)/libruby$(get_libname ${PV%_*})"
-
-	dodoc ChangeLog NEWS doc/NEWS-1.8.7 README* ToDo || die
+	dodoc ChangeLog NEWS README* ToDo || die
 
 	if use rubytests; then
 		pushd test
@@ -180,6 +165,12 @@ pkg_postinst() {
 	if [[ ! -n $(readlink "${ROOT}"usr/bin/ruby) ]] ; then
 		eselect ruby set ruby${MY_SUFFIX}
 	fi
+
+	ewarn
+	ewarn "Ruby Enterprise Edition is not guaranteed to be binary-compatible to"
+	ewarn "MRI (dev-lang/ruby). Exercise care especially with C extensions!"
+	ewarn "Gentoo does *not* accept any bugs regarding such failures."
+	ewarn
 
 	elog
 	elog "To switch between available Ruby profiles, execute as root:"
