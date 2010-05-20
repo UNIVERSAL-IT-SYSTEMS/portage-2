@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/ivtv-utils/ivtv-utils-1.4.0.ebuild,v 1.1 2010/01/19 05:18:14 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/ivtv-utils/ivtv-utils-1.4.0-r1.ebuild,v 1.2 2010/05/20 15:32:45 beandog Exp $
 
 EAPI=2
 
@@ -28,9 +28,10 @@ PDEPEND=">=media-tv/ivtv-firmware-20070217
 pkg_setup() {
 	linux-info_pkg_setup
 
-	MODULE_NAMES="saa717x(extra:${S}/i2c-drivers)"
+	### Commented out following line because it causes failure and because the module should already be in the kernel
+	#       MODULE_NAMES="saa717x(extra:${S}/i2c-drivers)"
 	BUILD_TARGETS="all"
-	CONFIG_CHECK="~EXPERIMENTAL ~KMOD ~HAS_IOMEM ~FW_LOADER ~I2C ~I2C_ALGOBIT
+	CONFIG_CHECK="~EXPERIMENTAL ~MODULES ~HAS_IOMEM ~FW_LOADER ~I2C ~I2C_ALGOBIT
 		~VIDEO_DEV ~VIDEO_CAPTURE_DRIVERS ~VIDEO_V4L1 ~VIDEO_V4L2 ~VIDEO_IVTV"
 
 	if ! ( kernel_is ge 2 6 29 ); then
@@ -46,32 +47,29 @@ pkg_setup() {
 		die "This only works on 2.6.29 or newer kernels"
 	fi
 
-	ewarn ""
 	ewarn "Make sure that your I2C and V4L kernel drivers are loaded as"
 	ewarn "modules, and not compiled into the kernel, or IVTV will not"
 	ewarn "work."
-	ewarn ""
 
 	linux-mod_pkg_setup
 
 	BUILD_PARAMS="KDIR=${KV_DIR}"
 }
 
-src_compile() {
-	emake  || die "failed to build"
-
-	linux-mod_src_compile
-}
-
 src_install() {
 	make DESTDIR="${D}" PREFIX="/usr" install || die "failed to install"
 	use perl && dobin utils/perl/*.pl
 
+	# Shouldn't be installing linux headers, bug 273165
+	rm "${D}"/usr/include/linux/ivtv.h
+	rm "${D}"/usr/include/linux/ivtvfb.h
+
+	# Installed separately now
+	rm "${D}"/usr/bin/v4l2-ctl
+
 	cd "${S}"
 	dodoc README doc/* ChangeLog
 	use perl && dodoc utils/perl/README.ptune
-
-	linux-mod_src_install
 }
 
 pkg_postinst() {
