@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/tar/tar-1.23-r1.ebuild,v 1.1 2010/04/25 16:44:23 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/tar/tar-1.23-r2.ebuild,v 1.1 2010/05/21 06:18:35 vapier Exp $
 
 inherit flag-o-matic eutils
 
@@ -23,6 +23,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
+	epatch "${FILESDIR}"/${P}-revert-pipe.patch #309001
 	epatch "${FILESDIR}"/${P}-strncpy.patch #317139
 
 	if ! use userland_GNU ; then
