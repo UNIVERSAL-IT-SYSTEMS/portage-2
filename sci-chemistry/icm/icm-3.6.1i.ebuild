@@ -1,18 +1,21 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/icm-browser/icm-browser-3.6.1h.ebuild,v 1.2 2010/03/09 11:41:34 abcd Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/icm/icm-3.6.1i.ebuild,v 1.1 2010/05/21 12:36:43 alexxy Exp $
+
+EAPI="3"
 
 inherit rpm eutils versionator
 
 MY_PV=$(replace_version_separator 2 '-' )
 MY_P="$PN-${MY_PV}"
-DESCRIPTION="MolSoft LCC ICM Browser"
+DESCRIPTION="MolSoft LCC ICM Pro"
 SRC_URI="${MY_P}.i386.rpm"
-HOMEPAGE="http://www.molsoft.com/icm_browser.html"
+HOMEPAGE="http://www.molsoft.com/icm_pro.html"
 LICENSE="MolSoft"
 
 SLOT=0
-DEPEND="!sci-chemistry/icm
+
+DEPEND="!sci-chemistry/icm-browser
 		amd64? (
 				app-emulation/emul-linux-x86-compat
 				app-emulation/emul-linux-x86-xlibs
@@ -21,10 +24,12 @@ DEPEND="!sci-chemistry/icm
 				virtual/libstdc++
 				)"
 RDEPEND="$DEPEND"
+
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 RESTRICT="fetch"
-S="${WORKDIR}/usr/${PN}-pro-${MY_PV}"
+
+S="${WORKDIR}/usr/${MY_P}"
 
 pkg_nofetch() {
 	einfo "Please download ${SRC_URI} from "
@@ -34,32 +39,32 @@ pkg_nofetch() {
 
 src_unpack() {
 	rpm_src_unpack
+	cd "${S}" || die
 }
 
 src_install () {
-	instdir=/opt/icm-browser
+	instdir=/opt/icm
 	dodir "${instdir}"
 	dodir "${instdir}/licenses"
 	cp -pPR * "${D}/${instdir}"
-	doenvd "${FILESDIR}/90icm-browser" || die
+	doenvd "${FILESDIR}/90icm" || die
 	exeinto ${instdir}
-	doexe "${S}/icmbrowserpro" || die
+	doexe "${S}/icm" || die
 	doexe "${S}/lmhostid" || die
 	doexe "${S}/txdoc" || die
-	dosym "${instdir}/icmbrowserpro"  /opt/bin/icmbrowserpro || die
+	dosym "${instdir}/icm"  /opt/bin/icm || die
 	dosym "${instdir}/txdoc"  /opt/bin/txdoc || die
 	dosym "${instdir}/lmhostid"  /opt/bin/lmhostid || die
 	# make desktop entry
-	doicon "${FILESDIR}"/${PN}.png
-	make_desktop_entry "icmbrowserpro -g" "ICM Browser" ${PN} Chemistry
+	doicon "${FILESDIR}/${PN}.png"
+	make_desktop_entry "icm -g" "ICM Pro" ${PN} Chemistry
 }
 
 pkg_postinst () {
 	einfo
 	einfo "Documentation can be found in ${instdir}/man/"
 	einfo
-	einfo "If you want to upgrade free version of browser to pro version"
-	einfo "you should purchaise license from ${HOMEPAGE} and place it to"
-	einfo "${instdir}/licenses"
+	einfo "You will need to place your license in ${instdir}/licenses/"
 	einfo
+
 }
