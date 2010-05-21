@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/lirc/lirc-0.8.6-r2.ebuild,v 1.2 2010/03/10 09:31:37 josejx Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/lirc/lirc-0.8.6-r3.ebuild,v 1.1 2010/05/21 02:32:35 beandog Exp $
 
 inherit eutils linux-mod flag-o-matic autotools
 
@@ -256,6 +256,12 @@ src_unpack() {
 	# Apply patches needed for some special device-types
 	use lirc_devices_audio || epatch "${FILESDIR}"/lirc-0.8.4-portaudio_check.patch
 	use lirc_devices_remote_wonder_plus && epatch "${FILESDIR}"/lirc-0.8.3_pre1-remotewonderplus.patch
+
+	# Don't wig out with evdev input, bug 299030
+	epatch "${FILESDIR}"/${P}-send-evsyn.diff
+
+	# bug 296739
+	epatch "${FILESDIR}"/${P}-i2c.patch
 
 	# remove parallel driver on SMP systems
 	if linux_chkconfig_present SMP ; then
