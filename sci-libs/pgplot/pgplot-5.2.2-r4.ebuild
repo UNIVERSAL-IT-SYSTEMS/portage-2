@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/pgplot/pgplot-5.2.2-r3.ebuild,v 1.7 2010/05/22 07:01:22 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/pgplot/pgplot-5.2.2-r4.ebuild,v 1.1 2010/05/22 06:50:38 jlec Exp $
 
 EAPI=2
 inherit eutils toolchain-funcs
@@ -28,6 +28,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-makemake.patch
 	epatch "${FILESDIR}"/${PN}-compile-setup.patch
 	epatch "${FILESDIR}"/${PN}-headers.patch
+	epatch "${FILESDIR}"/${PN}-ldflags.patch
 
 	# gfortran < 4.3 does not compile gif, pp and wd drivers
 	if [[ "$(tc-getFC)" == gfortran ]] &&
@@ -80,7 +81,7 @@ src_compile() {
 	./makemake . linux
 	einfo "Doing static libs and execs"
 	emake all cpg || die "emake static failed"
-	emake clean
+	emake -j1 clean
 	einfo "Doing shared libs"
 	emake \
 		CFLAGS="${CFLAGS} -fPIC" \
@@ -97,7 +98,7 @@ src_compile() {
 	fi
 
 	# this just cleans out not needed files
-	emake clean
+	emake -j1 clean
 }
 
 src_test() {
