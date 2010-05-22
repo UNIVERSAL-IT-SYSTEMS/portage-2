@@ -1,5 +1,5 @@
->=x11-libs/cairo-1.2.0[svg?] dev-util/pkgconfig ruby_targets_ruby18? ( dev-lang/ruby:1.8 ) test? ( virtual/rubygems[ruby_targets_ruby18?] )
->=x11-libs/cairo-1.2.0[svg?] ruby_targets_ruby18? ( dev-lang/ruby:1.8 ) virtual/rubygems[ruby_targets_ruby18?]
+>=x11-libs/cairo-1.2.0[svg?] dev-util/pkgconfig ruby_targets_ruby18? ( dev-lang/ruby:1.8 ) test? ( ruby_targets_ruby18? ( virtual/rubygems[ruby_targets_ruby18] ) )
+>=x11-libs/cairo-1.2.0[svg?] ruby_targets_ruby18? ( dev-lang/ruby:1.8 ) ruby_targets_ruby18? ( virtual/rubygems[ruby_targets_ruby18] )
 0
 mirror://rubygems/cairo-1.8.1.gem
 
@@ -8,7 +8,7 @@ http://cairographics.org/rcairo/
 Ruby bindings for cairo
 ~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86
 eutils multilib portability ruby-fakegem ruby-ng toolchain-funcs
-svg ruby_targets_ruby18 test
+svg ruby_targets_ruby18
 
 
 
