@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9.11.ebuild,v 1.5 2010/04/07 20:39:16 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9.11-r4.ebuild,v 1.2 2010/05/23 20:47:48 vapier Exp $
 
 EAPI="2"
 
-inherit eutils
+inherit eutils python
 
 # Use XBMC_ESVN_REPO_URI to track a different branch
 ESVN_REPO_URI=${XBMC_ESVN_REPO_URI:-http://xbmc.svn.sourceforge.net/svnroot/xbmc/trunk}
@@ -26,18 +26,18 @@ HOMEPAGE="http://xbmc.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="aac alsa altivec avahi css debug joystick midi opengl profile pulseaudio sse sse2 vdpau xrandr"
+IUSE="aac alsa altivec avahi css debug joystick midi profile pulseaudio sse sse2 vdpau xrandr"
 
-RDEPEND="opengl? ( virtual/opengl )
+RDEPEND="virtual/opengl
 	app-arch/bzip2
 	app-arch/unrar
 	app-arch/unzip
 	app-arch/zip
 	app-i18n/enca
-	>=dev-lang/python-2.4
+	dev-lang/python:2.4
 	dev-libs/boost
 	dev-libs/fribidi
-	dev-libs/libcdio
+	dev-libs/libcdio[-minimal]
 	dev-libs/libpcre
 	dev-libs/lzo
 	>=dev-python/pysqlite-2
@@ -51,7 +51,7 @@ RDEPEND="opengl? ( virtual/opengl )
 	media-libs/glew
 	media-libs/jasper
 	media-libs/jbigkit
-	media-libs/jpeg
+	media-libs/jpeg:0
 	>=media-libs/libass-0.9.7
 	media-libs/libdca
 	css? ( media-libs/libdvdcss )
@@ -60,7 +60,7 @@ RDEPEND="opengl? ( virtual/opengl )
 	media-libs/libmpeg2
 	media-libs/libogg
 	media-libs/libsamplerate
-	media-libs/libsdl[alsa,audio,video,X]
+	media-libs/libsdl[alsa,audio,opengl,video,X]
 	media-libs/libvorbis
 	media-libs/sdl-gfx
 	media-libs/sdl-image[gif,jpeg,png]
@@ -107,7 +107,14 @@ src_unpack() {
 }
 
 src_prepare() {
+	has_version ">=media-libs/libpng-1.4" && \
+		epatch "${FILESDIR}"/${P}-libpng14.patch #319113
+
+	epatch "${FILESDIR}"/${P}-TexturePacker-parallel-build.patch
+	epatch "${FILESDIR}"/${P}-shader-upscalers.patch #306661
 	epatch "${FILESDIR}"/${P}-wavpack.patch
+	epatch "${FILESDIR}"/${P}-jpeg-speedup.patch #300909
+	epatch "${FILESDIR}"/${P}-use-cdio-system-headers-on-non-win32.patch #303030, upstream: #8026
 	# http://xbmc.org/trac/ticket/8218
 	sed -i \
 		-e 's: ftell64: dll_ftell64:' \
@@ -159,19 +166,21 @@ src_configure() {
 	export ac_cv_path_LATEX=no
 	# Avoid help2man
 	export HELP2MAN=$(type -P help2man || echo true)
+	# Force python-2.4 for now #304521
+	export ac_cv_lib_python2_{5,6}_main=no
 
 	econf \
 		--disable-ccache \
 		--disable-optimizations \
 		--enable-external-libraries \
 		--enable-goom \
+		--enable-gl \
 		$(use_enable avahi) \
 		$(use_enable css dvdcss) \
 		$(use_enable debug) \
 		$(use_enable aac faac) \
 		$(use_enable joystick) \
 		$(use_enable midi mid) \
-		$(use_enable opengl gl) \
 		$(use_enable profile profiling) \
 		$(use_enable pulseaudio pulse) \
 		$(use_enable vdpau) \
@@ -188,8 +197,12 @@ src_install() {
 	doins tools/Linux/xbmc.desktop
 	doicon tools/Linux/xbmc.png
 
-	dodoc README.linux known_issues.txt
+	dodoc README.linux
 	rm "${D}"/usr/share/xbmc/{README.linux,LICENSE.GPL,*.txt}
+
+	insinto "$(python_get_sitedir)" #309885
+	doins tools/EventClients/lib/python/xbmcclient.py || die
+	newbin "tools/EventClients/Clients/XBMC Send/xbmc-send.py" xbmc-send || die
 }
 
 pkg_postinst() {

@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.51 2010/04/07 20:39:16 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.55 2010/05/23 21:00:45 vapier Exp $
 
 EAPI="2"
 
-inherit eutils
+inherit eutils python
 
 # Use XBMC_ESVN_REPO_URI to track a different branch
 ESVN_REPO_URI=${XBMC_ESVN_REPO_URI:-http://xbmc.svn.sourceforge.net/svnroot/xbmc/trunk}
@@ -26,7 +26,7 @@ HOMEPAGE="http://xbmc.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="aac alsa altivec avahi css debug joystick midi profile pulseaudio sse sse2 vdpau xrandr"
+IUSE="aac alsa altivec avahi css debug hal joystick midi profile pulseaudio sse sse2 vaapi vdpau xrandr"
 
 RDEPEND="virtual/opengl
 	app-arch/bzip2
@@ -37,7 +37,7 @@ RDEPEND="virtual/opengl
 	>=dev-lang/python-2.4
 	dev-libs/boost
 	dev-libs/fribidi
-	dev-libs/libcdio
+	dev-libs/libcdio[-minimal]
 	dev-libs/libpcre
 	dev-libs/lzo
 	>=dev-python/pysqlite-2
@@ -61,7 +61,7 @@ RDEPEND="virtual/opengl
 	media-libs/libmpeg2
 	media-libs/libogg
 	media-libs/libsamplerate
-	media-libs/libsdl[alsa,audio,video,X]
+	media-libs/libsdl[alsa,audio,opengl,video,X]
 	media-libs/libvorbis
 	media-libs/sdl-gfx
 	media-libs/sdl-image[gif,jpeg,png]
@@ -75,11 +75,12 @@ RDEPEND="virtual/opengl
 	net-misc/curl
 	|| ( >=net-fs/samba-3.4.6[smbclient] <net-fs/samba-3.3 )
 	sys-apps/dbus
-	sys-apps/hal
+	hal? ( sys-apps/hal )
 	sys-libs/zlib
 	virtual/mysql
 	x11-apps/xdpyinfo
 	x11-apps/mesa-progs
+	vaapi? ( x11-libs/libva )
 	vdpau? (
 		|| ( x11-libs/libvdpau >=x11-drivers/nvidia-drivers-180.51 )
 		media-video/ffmpeg[vdpau]
@@ -166,10 +167,12 @@ src_configure() {
 		$(use_enable css dvdcss) \
 		$(use_enable debug) \
 		$(use_enable aac faac) \
+		$(use_enable hal) \
 		$(use_enable joystick) \
 		$(use_enable midi mid) \
 		$(use_enable profile profiling) \
 		$(use_enable pulseaudio pulse) \
+		$(use_enable vaapi) \
 		$(use_enable vdpau) \
 		$(use_enable xrandr)
 }
@@ -177,15 +180,16 @@ src_configure() {
 src_install() {
 	einstall || die "Install failed!"
 
-	insinto /usr/share/xbmc/web/styles/
-	doins -r "${S}"/web/*/styles/*/ || die
-
 	insinto /usr/share/applications
 	doins tools/Linux/xbmc.desktop
 	doicon tools/Linux/xbmc.png
 
-	dodoc README.linux known_issues.txt
+	dodoc README.linux
 	rm "${D}"/usr/share/xbmc/{README.linux,LICENSE.GPL,*.txt}
+
+	insinto "$(python_get_sitedir)" #309885
+	doins tools/EventClients/lib/python/xbmcclient.py || die
+	newbin "tools/EventClients/Clients/XBMC Send/xbmc-send.py" xbmc-send || die
 }
 
 pkg_postinst() {
