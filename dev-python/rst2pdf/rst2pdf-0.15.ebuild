@@ -1,32 +1,32 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/rst2pdf/rst2pdf-0.13.1.ebuild,v 1.1 2010/03/21 15:49:10 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/rst2pdf/rst2pdf-0.15.ebuild,v 1.1 2010/05/25 17:03:28 arfrever Exp $
 
-EAPI=3
+EAPI="3"
 PYTHON_DEPEND="2"
+SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
 
 DESCRIPTION="Tool for transforming reStructuredText to PDF using ReportLab"
-HOMEPAGE="http://rst2pdf.googlecode.com/"
+HOMEPAGE="http://rst2pdf.googlecode.com/ http://pypi.python.org/pypi/rst2pdf"
 SRC_URI="http://rst2pdf.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
-IUSE="test"
+KEYWORDS="~amd64 ~x86"
+IUSE=""
 
-RDEPEND="dev-python/docutils
+DEPEND="dev-python/docutils
 	dev-python/imaging
 	dev-python/pygments
 	>=dev-python/reportlab-2.4"
-DEPEND="${RDEPEND}
-	test? ( dev-python/pyPdf )"
+RDEPEND="${DEPEND}"
 RESTRICT_PYTHON_ABIS="3.*"
 
 src_install() {
 	distutils_src_install
-	doman doc/rst2pdf.1 || die
+
 	dodoc {README,CHANGES,Contributors}.txt || die
 	dodoc doc/* || die
 	insinto /usr/share/doc/${PF}/examples
@@ -34,6 +34,8 @@ src_install() {
 }
 
 pkg_postinst() {
+	distutils_pkg_postinst
+
 	elog 'rst2pdf can work with the following packages for additional functionality:'
 	elog '   dev-python/sphinx       - versatile documentation creation'
 	elog '   dev-python/pythonmagick - image processing with ImageMagick'
