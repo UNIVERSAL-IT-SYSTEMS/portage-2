@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/extensionclass/extensionclass-2.13.0.ebuild,v 1.1 2010/03/12 18:16:36 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/extensionclass/extensionclass-2.13.1.ebuild,v 1.1 2010/05/30 19:13:30 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -19,17 +19,16 @@ SRC_URI="http://pypi.python.org/packages/source/${MY_PN:0:1}/${MY_PN}/${MY_P}.zi
 LICENSE="ZPL"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
-IUSE="test"
+IUSE=""
 
-DEPEND="app-arch/unzip
-	test? ( net-zope/zope-testing )"
+DEPEND="app-arch/unzip"
 RDEPEND=""
 RESTRICT_PYTHON_ABIS="3.*"
 
 S="${WORKDIR}/${MY_P}"
 
-PYTHON_MODNAME="ComputedAttribute ExtensionClass MethodObject"
 DOCS="CHANGES.txt README.txt"
+PYTHON_MODNAME="ComputedAttribute ExtensionClass MethodObject"
 
 distutils_src_test_pre_hook() {
 	local module
@@ -40,7 +39,5 @@ distutils_src_test_pre_hook() {
 
 src_install() {
 	distutils_src_install
-
-	# Don't install C sources.
-	find "${D}"usr/$(get_libdir)/python*/site-packages -name "*.c" -o -name "*.h" | xargs rm -f
+	python_clean_installation_image
 }

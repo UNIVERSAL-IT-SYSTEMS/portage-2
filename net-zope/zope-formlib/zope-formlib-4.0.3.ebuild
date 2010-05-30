@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-formlib/zope-formlib-4.0.2.ebuild,v 1.1 2010/03/12 18:41:16 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-formlib/zope-formlib-4.0.3.ebuild,v 1.1 2010/05/30 19:07:15 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -39,5 +39,5 @@ RESTRICT_PYTHON_ABIS="3.*"
 
 S="${WORKDIR}/${MY_P}"
 
-PYTHON_MODNAME="${PN/-//}"
 DOCS="CHANGES.txt README.txt"
+PYTHON_MODNAME="${PN/-//}"

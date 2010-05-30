@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/cssutils/cssutils-0.9.7_alpha6.ebuild,v 1.1 2010/05/26 14:05:27 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/cssutils/cssutils-0.9.7_beta1.ebuild,v 1.1 2010/05/30 18:34:46 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -9,7 +9,7 @@ DISTUTILS_SRC_TEST="nosetests"
 
 inherit distutils
 
-MY_P="${PN}-${PV/_alpha/a}"
+MY_P="${PN}-${PV/_beta/b}"
 
 DESCRIPTION="CSS Cascading Style Sheets parser and library for Python"
 HOMEPAGE="http://code.google.com/p/cssutils http://pypi.python.org/pypi/cssutils"
