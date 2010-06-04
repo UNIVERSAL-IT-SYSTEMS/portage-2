@@ -1,8 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-block/mbuffer/mbuffer-20070911.ebuild,v 1.4 2007/12/04 17:45:52 nixnut Exp $
-
-inherit eutils autotools
+# $Header: /var/cvsroot/gentoo-x86/sys-block/mbuffer/mbuffer-20100526.ebuild,v 1.1 2010/06/04 18:26:59 vapier Exp $
 
 DESCRIPTION="M(easuring)buffer is a replacement for buffer with additional functionality"
 HOMEPAGE="http://www.maier-komor.de/mbuffer.html"
@@ -10,17 +8,16 @@ SRC_URI="http://www.maier-komor.de/software/mbuffer/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="debug ssl"
 
-RDEPEND="ssl? ( dev-libs/openssl )"
+DEPEND="ssl? ( dev-libs/openssl )"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${PN}-20070317-configure.patch
-	epatch "${FILESDIR}"/${PN}-20070317-mandir.patch
-	sed -i 's: -O : :' Makefile.in
+	sed -i 's:/bin/ksh:/bin/sh:' Makefile.in #258359
+	ln -s "${DISTDIR}"/${P}.tgz test.tar #258881
 }
 
 src_compile() {
