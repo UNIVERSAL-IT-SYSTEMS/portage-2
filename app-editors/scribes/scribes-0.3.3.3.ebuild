@@ -1,10 +1,13 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/scribes/scribes-0.3.3.3.ebuild,v 1.4 2008/05/29 15:37:32 hawking Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/scribes/scribes-0.3.3.3.ebuild,v 1.7 2010/06/06 12:13:00 arfrever Exp $
 
-NEED_PYTHON=2.5
+EAPI=3
 
-inherit gnome2 multilib python
+PYTHON_DEPEND="2:2.6"
+GCONF_DEBUG=no
+
+inherit autotools eutils gnome2 python
 
 DESCRIPTION="a text editor that is simple, slim and sleek, yet powerful."
 HOMEPAGE="http://scribes.sourceforge.net"
@@ -31,24 +34,32 @@ DEPEND="${RDEPEND}
 DOCS="AUTHORS ChangeLog CONTRIBUTORS NEWS README TODO TRANSLATORS"
 
 pkg_setup() {
-	G2CONF="${G2CONF} --disable-scrollkeeper"
+	python_set_active_version 2
+	G2CONF="--disable-scrollkeeper"
 }
 
-src_unpack() {
-	gnome2_src_unpack
-	find . -iname *.py[co] -exec rm -f {} \;
-	rm -f compile.py py-compile
-	touch compile.py py-compile
-	fperms +x compile.py py-compile
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-sandbox.patch \
+		"${FILESDIR}"/${P}-desktop_entry.patch
+	eautoreconf
+
+	ln -nfs $(type -P true) py-compile || die
+	python_convert_shebangs -r 2 .
+
+	gnome2_src_prepare
+}
+
+src_install() {
+	gnome2_src_install
+	python_clean_installation_image
 }
 
 pkg_postinst() {
 	gnome2_pkg_postinst
-	python_version
-	python_mod_optimize /usr/$(get_libdir)/python${PYVER}/site-packages/SCRIBES
+	python_mod_optimize SCRIBES
 }
 
 pkg_postrm() {
 	gnome2_pkg_postrm
-	python_mod_cleanup
+	python_mod_cleanup SCRIBES
 }
