@@ -1,10 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/logilab-common/logilab-common-0.50.1.ebuild,v 1.1 2010/04/28 17:18:38 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/logilab-common/logilab-common-0.50.3.ebuild,v 1.1 2010/06/08 00:00:46 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils eutils
 
@@ -12,7 +13,7 @@ DESCRIPTION="Useful miscellaneous modules used by Logilab projects"
 HOMEPAGE="http://www.logilab.org/projects/common/ http://pypi.python.org/pypi/logilab-common"
 SRC_URI="ftp://ftp.logilab.org/pub/common/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86 ~amd64-linux ~ia64-linux ~x86-linux ~x64-macos ~x86-macos"
 IUSE="test"
@@ -23,7 +24,6 @@ DEPEND="test? (
 		!dev-python/psycopg[-mxdatetime]
 	)"
 RDEPEND=""
-RESTRICT_PYTHON_ABIS="3.*"
 
 PYTHON_MODNAME="logilab"
 # Extra documentation (html/pdf) needs some love
@@ -31,7 +31,9 @@ PYTHON_MODNAME="logilab"
 src_prepare() {
 	distutils_src_prepare
 
-	# Disable broken test.
+	# Disable broken tests.
+	sed -e "s/test_moved/_&/" -i test/unittest_deprecation.py
+	sed -e "s/test_manpage/_&/" -i test/unittest_configuration.py
 	sed -e "s/test_knownValues_is_standard_module_4/_&/" -i test/unittest_modutils.py
 
 	# Disable tests failing when stdout is not a tty.
