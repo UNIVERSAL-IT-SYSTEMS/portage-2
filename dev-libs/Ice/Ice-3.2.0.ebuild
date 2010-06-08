@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/Ice/Ice-3.2.1.ebuild,v 1.5 2008/12/17 21:58:29 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/Ice/Ice-3.2.0.ebuild,v 1.1 2010/06/08 08:25:34 dev-zero Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.zeroc.com/download/Ice/3.2/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="ncurses test debug"
 
 RDEPEND=">=dev-libs/expat-2.0
@@ -35,34 +35,31 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}"/${P}-Makefile.patch
-	epatch "${FILESDIR}"/${P}-gcc43.patch
-
-	MAKE_RULES="${S}/config/Make.rules"
 
 	if use amd64; then
-		sed -i -e "s:^#LP64:LP64:g" "${MAKE_RULES}" \
+		sed -i -e "s:^#LP64:LP64:g" ${S}/config/Make.rules \
 		|| die "Failed to set lib64 directory"
 	fi
 
 	if ! use ncurses; then
 		sed -i -e "s#^USE_READLINE.*#USE_READLINE      ?= yes#g" \
-		"${MAKE_RULES}" || die "Failed to set no readline"
+		${S}/config/Make.rules || die "Failed to set no readline"
 	fi
 
 	if ! use debug; then
 		sed -i -e "s:#OPTIMIZE:OPTIMIZE:" \
-		"${MAKE_RULES}" || die "Failed to remove debug"
+		${S}/config/Make.rules || die "Failed to remove debug"
 	fi
 
 	sed -i -e \
 	"s:.*CXXFLAGS[^\+]*\=\s:CXXFLAGS = ${CXXFLAGS} :g" \
-	"${MAKE_RULES}.Linux" || die "CXXFLAGS patching failed!"
+	${S}/config/Make.rules.Linux || die "CXXFLAGS patching failed!"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "Install Failed!"
+	make DESTDIR="${D}" install || die "Install Failed!"
 }
 
 src_test() {
-	emake test || die "Test failed"
+	make test || die "Test failed"
 }

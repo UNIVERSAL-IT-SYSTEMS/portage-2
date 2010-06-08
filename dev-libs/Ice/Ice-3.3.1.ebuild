@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/Ice/Ice-3.3.1.ebuild,v 1.2 2009/11/19 14:32:54 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/Ice/Ice-3.3.1.ebuild,v 1.1 2010/06/08 08:25:34 dev-zero Exp $
 
 EAPI=2
 
