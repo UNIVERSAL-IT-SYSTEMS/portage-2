@@ -1,7 +1,7 @@
 dbus? ( sys-apps/dbus ) nls? ( sys-devel/gettext net-dns/libidn ) || ( app-arch/xz-utils app-arch/lzma-utils )
 dbus? ( sys-apps/dbus ) nls? ( sys-devel/gettext net-dns/libidn )
 0
-http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.51.tar.lzma
+http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.55.tar.lzma
 
 http://www.thekelleys.org.uk/dnsmasq/
 GPL-2
@@ -14,7 +14,7 @@ dbus +dhcp ipv6 nls tftp
 
 2
 
-compile configure install prepare setup
+compile configure install prepare
 
 
 
