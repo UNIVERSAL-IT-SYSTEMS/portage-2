@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11614 2010/06/10 13:02:01 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11618 2010/06/11 14:31:48 pacho Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,19 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Pacho Ramos <pacho@gentoo.org> (11 Jun 2010)
+# Drop old and deprecated bluez-libs and bluez-utils. Use bluez instead.
+# Masked for removal in 30 days.
+# See bug 301630.
+net-wireless/bluez-libs
+net-wireless/bluez-utils
+
+# Samuli Suominen <ssuominen@gentoo.org> (11 Jun 2010)
+# Only used by old bluez-libs and bluez-utils. 
+# Masked for removal in 30 days.
+# See bug 301630.
+gnome-extra/gnome-vfs-obexftp
 
 # Markus Meier <maekke@gentoo.org> (10 Jun 2010)
 # mask inkscape prereleases for testing
@@ -427,6 +440,7 @@ games-strategy/xscorch
 # packages, this is an exception to current policy because some people
 # from X11 team needed 3D support even with bleeding edge Xorg.
 =app-emulation/emul-linux-x86-opengl-20100410_pre
+=app-emulation/emul-linux-x86-opengl-20100611-r99
 
 # Robert Piasek <dagger@gentoo.org> (09 Apr 2010)
 # Mask as it does have some regressions comparing to version 3
@@ -921,12 +935,6 @@ net-misc/amazonmp3
 # Benedikt Böhm <hollow@gentoo.org> (19 Apr 2009)
 # masked for testing
 =net-analyzer/centreon-1.4.2.7
-
-# Christian Faulhammer <fauli@gentoo.org> (13 Apr 2009)
-# Ulrich Mueller <ulm@gentoo.org>
-# Thomas Anderson <gentoofan23@gentoo.org>
-# Live version
-~app-doc/pms-99999999
 
 # Tiziano Müller <dev-zero@gentoo.org> (08 Apr 2009)
 # pre-releases
