@@ -1,8 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/gobject-introspection/gobject-introspection-0.6.7.ebuild,v 1.1 2010/02/26 23:41:36 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/gobject-introspection/gobject-introspection-0.6.14.ebuild,v 1.1 2010/06/11 06:45:19 ford_prefect Exp $
 
-EAPI="2"
+EAPI="3"
+
+PYTHON_DEPEND="2:2.5"
 
 inherit python gnome2
 
@@ -12,15 +14,15 @@ HOMEPAGE="http://live.gnome.org/GObjectIntrospection/"
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+IUSE="doc test"
 
 RDEPEND=">=dev-libs/glib-2.19.0
-	>=dev-lang/python-2.5
 	virtual/libffi"
 DEPEND="${RDEPEND}
 	doc? ( >=dev-util/gtk-doc-1.12 )
 	dev-util/pkgconfig
-	sys-devel/flex"
+	sys-devel/flex
+	test? ( x11-libs/cairo )"
 
 src_prepare() {
 	G2CONF="${G2CONF} --disable-static"
@@ -32,11 +34,15 @@ src_prepare() {
 	ln -sf $(type -P true) py-compile
 }
 
+src_configure() {
+	econf $(use_enable test tests) || die "econf failed"
+}
+
 pkg_postinst() {
-	python_mod_optimize /usr/$(get_libdir)/${PN}/giscanner/*
+	python_mod_optimize /usr/$(get_libdir)/${PN}/giscanner
 	python_need_rebuild
 }
 
 pkg_postrm() {
-	python_mod_cleanup /usr/lib*/${PN}/giscanner/*
+	python_mod_cleanup /usr/lib*/${PN}/giscanner
 }
