@@ -1,9 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libvpx/libvpx-9999.ebuild,v 1.2 2010/06/10 16:02:38 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libvpx/libvpx-9999.ebuild,v 1.4 2010/06/12 21:11:14 spatz Exp $
 
 EAPI=2
-inherit eutils multilib toolchain-funcs git
+inherit multilib toolchain-funcs git
 
 EGIT_REPO_URI="git://review.webmproject.org/${PN}.git"
 
@@ -16,7 +16,8 @@ KEYWORDS=""
 IUSE="debug doc postproc +threads"
 
 RDEPEND=""
-DEPEND="dev-lang/yasm
+DEPEND="amd64? ( dev-lang/yasm )
+	x86? ( dev-lang/yasm )
 	doc? (
 		app-doc/doxygen
 		dev-lang/php
