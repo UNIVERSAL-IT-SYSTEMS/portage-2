@@ -1,10 +1,19 @@
 # ChangeLog for profile directory
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.4266 2010/06/13 20:55:35 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.4269 2010/06/14 14:44:52 pva Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  14 Jun 2010; Peter Volkov <pva@gentoo.org> package.mask:
+  mask wireshark-1.4.0 release candidates
+
+  14 Jun 2010; Andreas Proschofsky <suka@gentoo.org> package.mask:
+  Remove mask on openoffice[-bin] 3.2.1
+
+  14 Jun 2010; Bernard Cafarelli <voyageur@gentoo.org> package.mask:
+  Update net-ftp/filezilla mask
 
   13 Jun 2010; Pacho Ramos <pacho@gentoo.org> arch/alpha/ChangeLog,
   arch/alpha/package.use.mask, arch/ia64/ChangeLog,
