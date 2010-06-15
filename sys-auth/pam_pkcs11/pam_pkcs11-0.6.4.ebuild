@@ -1,12 +1,12 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_pkcs11/pam_pkcs11-0.6.1-r1.ebuild,v 1.1 2009/10/07 13:02:25 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_pkcs11/pam_pkcs11-0.6.4.ebuild,v 1.1 2010/06/14 21:59:21 arfrever Exp $
 
-EAPI=2
+EAPI="3"
 
-inherit pam autotools multilib
+inherit multilib pam
 
-DESCRIPTION="PKCS11 Pam library"
+DESCRIPTION="PKCS#11 PAM library"
 HOMEPAGE="http://www.opensc-project.org/pam_pkcs11"
 SRC_URI="http://www.opensc-project.org/files/pam_pkcs11/${P}.tar.gz"
 
@@ -24,18 +24,14 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-properinstall.patch
-
 	# Fix the example files to be somewhat decent, and usable as
 	# default configuration
 	sed -i \
 		-e '/try_first_pass/s:false:true:' \
 		-e '/debug =/s:true:false:' \
 		-e "s:/usr/lib:/usr/$(get_libdir):g" \
-		etc/pam_pkcs11.conf.example \
-		etc/pkcs11_eventmgr.conf.example || die
-
-	eautoreconf
+		etc/pam_pkcs11.conf.example.in \
+		etc/pkcs11_eventmgr.conf.example || die "sed failed"
 }
 
 src_configure() {
@@ -47,8 +43,7 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install \
-		pamdir=$(getpam_mod_dir) || die "emake install failed"
+	emake DESTDIR="${D}" pamdir="$(getpam_mod_dir)" install || die "emake install failed"
 
 	# These are all dlopened plugins, so .la files are useless.
 	find "${D}" -name '*.la' -delete || die
@@ -69,12 +64,13 @@ src_install() {
 }
 
 pkg_config() {
+	local dir
 	for dir in "${ROOT}"/etc/${PN}/{cacerts,crl}; do
-		pushd $dir &>/dev/null
-		ebegin "Creating hash links in ${dir}"
+		pushd "${dir}" &> /dev/null
+		ebegin "Creating hash links in '${dir}'"
 		"${ROOT}"/usr/share/${PN}/make_hash_link.sh || die
 		eend $?
-		popd &>/dev/null
+		popd &> /dev/null
 	done
 }
 
