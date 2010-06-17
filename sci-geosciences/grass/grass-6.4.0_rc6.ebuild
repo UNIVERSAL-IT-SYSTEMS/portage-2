@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/grass/grass-6.4.0_rc6.ebuild,v 1.8 2010/06/17 14:22:58 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/grass/grass-6.4.0_rc6.ebuild,v 1.10 2010/06/17 21:03:51 patrick Exp $
 
 EAPI="3"
 
@@ -45,8 +45,8 @@ RDEPEND="
 	png? ( media-libs/libpng )
 	postgres? (
 		|| (
-			>=virtual/postgresql-base-8.4
-			>=virtual/postgresql-server-8.4
+			>=dev-db/postgresql-base-8.4
+			>=dev-db/postgresql-server-8.4
 		)
 	)
 	readline? ( sys-libs/readline )
@@ -201,7 +201,7 @@ src_configure() {
 		$(use_enable largefile) \
 		$(use_with mysql) \
 		--with-mysql-includes=/usr/include/mysql \
-		--with-mysql-libs=/usr/$(get_libdir)/mysql
+		--with-mysql-libs=/usr/$(get_libdir)/mysql \
 		$(use_with nls) \
 		$(use_with odbc) \
 		$(use_with png) \
