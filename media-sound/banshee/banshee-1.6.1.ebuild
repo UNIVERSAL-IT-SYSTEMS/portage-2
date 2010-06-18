@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/banshee-1.5.6.ebuild,v 1.1 2010/03/25 21:05:58 ford_prefect Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/banshee-1.6.1.ebuild,v 1.1 2010/06/18 19:51:56 ford_prefect Exp $
 
 EAPI=2
 
@@ -26,11 +26,10 @@ RDEPEND=">=dev-lang/mono-2.4.3
 	x11-themes/gnome-icon-theme
 	sys-apps/dbus
 	>=dev-dotnet/gtk-sharp-2.12
-	>=dev-dotnet/glade-sharp-2.12
 	>=dev-dotnet/gconf-sharp-2.24.0
-	>=dev-dotnet/gnome-sharp-2.24.0
 	>=dev-dotnet/notify-sharp-0.4.0_pre20080912-r1
 	>=media-libs/gstreamer-0.10.21-r3
+	>=media-libs/gst-plugins-base-0.10.25.2
 	>=media-libs/gst-plugins-bad-${GVER}
 	>=media-libs/gst-plugins-good-${GVER}
 	>=media-libs/gst-plugins-ugly-${GVER}
@@ -84,13 +83,19 @@ DOCS="AUTHORS ChangeLog HACKING NEWS README"
 
 S=${WORKDIR}/${PN}-1-${PV}
 
+src_prepare () {
+	# Fix intltool b0rkage similar to
+	# https://bugzilla.gnome.org/show_bug.cgi?id=577133
+	sed "s:'\^\$\$lang\$\$':\^\$\$lang\$\$:g" -i po/Makefile.in.in \
+		|| die "sed failed"
+}
+
 src_configure() {
-	# Disable the gapless plugin till we have >=gst-plugins-base-0.10.25.2
 	local myconf="--disable-dependency-tracking --disable-static
 		--enable-gnome --enable-schemas-install
 		--with-gconf-schema-file-dir=/etc/gconf/schemas
 		--with-vendor-build-id=Gentoo/${PN}/${PVR}
-		--disable-gapless-playback
+		--enable-gapless-playback
 		--disable-torrent
 		--disable-shave"
 
