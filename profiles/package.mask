@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11666 2010/06/19 20:29:38 jmbsvicetto Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11669 2010/06/20 14:45:01 nirbheek Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,12 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Markos Chandras <hwoarang@gentoo.org> (20 Jun 2010)
+# Bundles ffmpeg copy, doens't work with systems' ffmpeg
+# Bug #258042. Replacement is media-video/recordmydesktop
+# Pending removal in 2010-07-20
+x11-misc/xvidcap
 
 # Markos Chandras <hwoarang@gentoo.org> (19 Jun 2010)
 # Multiple failures. Look at bugs #197617, #297946, #297947. #299753
@@ -698,13 +704,6 @@ net-irc/ircd-hybrid
 # Development release
 =app-admin/sysstat-9.1*
 
-# Nirbheek Chauhan <nirbheek@gentoo.org> (27 Feb 2010)
-# Introspection support is sketchy, and untested
-# introspection USE-flag is already use.masked
-# gir-repository has problems being a nice package too
-dev-libs/gobject-introspection
-dev-libs/gir-repository
-
 # Theo Chatzimichos <tampakrap@gentoo.org> (26 Feb 2010)
 # Mask knetworkmanager as it is crashy, unusable, under
 # heavy development, and snapshot
@@ -750,14 +749,6 @@ dev-db/mysql-community
 =virtual/mysql-5.4*
 >=dev-db/mysql-5.5
 >=virtual/mysql-5.5
-
-# Patrick Lauer <patrick@gentoo.org> (26 Jan 2010)
-# Masking alpha for testing
->=dev-db/postgresql-base-8.5_alpha3
->=dev-db/postgresql-server-8.5_alpha3
->=dev-db/postgresql-docs-8.5_alpha3
->=virtual/postgresql-base-8.5
->=virtual/postgresql-server-8.5
 
 # Lennart Kolmodin <kolmodin@gentoo.org> (26 Jan 2010)
 # Masked GHC and friends for testing.
@@ -806,10 +797,6 @@ dev-db/postgresql
 # Removal on 2010-03-08
 # Masking breaks deps for ia64.  Address before re-masking (mr_bones_@gentoo.org)
 #dev-java/jrockit-jdk-bin
-
-# Patrick Lauer <patrick@gentoo.org> (06 Jan 2010)
-# New xen kernel needs more testing.
-=sys-kernel/xen-sources-2.6.31*
 
 # Christian Parpart <trapni@gentoo.org> (23 Dec 2009)
 # Masked for testing/feedback.
