@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-1.1.41.ebuild,v 1.5 2010/06/20 04:43:25 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-1.2_rc3.ebuild,v 1.1 2010/06/20 04:49:00 vapier Exp $
 
 EAPI="2"
 
@@ -15,11 +15,11 @@ if [[ ${PV} == "9999" ]] ; then
 else
 	MY_P="${PN}-${PV/_/-}"
 	SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
-	KEYWORDS="-* amd64 x86 ~x86-fbsd"
+	KEYWORDS="-* ~amd64 ~x86 ~x86-fbsd"
 	S=${WORKDIR}/${MY_P}
 fi
 
-pulse_patches() { echo "$1"/winepulse-{0.36,0.35-configure.ac,0.34-winecfg}.patch ; }
+pulse_patches() { echo "$1"/winepulse-{0.36,0.35-configure.ac,0.36-winecfg}.patch ; }
 GV="1.0.0-x86"
 DESCRIPTION="free implementation of Windows(tm) on Unix"
 HOMEPAGE="http://www.winehq.org/"

@@ -1,12 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/mingw-runtime/mingw-runtime-3.15.1.ebuild,v 1.4 2009/11/05 23:03:41 vapier Exp $
-
-# This version does not work as the configure script expects the installed
-# cross-compiler to be able to link binaries ... except we haven't provided
-# any of the crt objects yet so it is impossible to link binaries.
-# Older mingw-runtime packages hacked around the issue, but this version seems
-# to have dropped said hack thus breaking the package.
+# $Header: /var/cvsroot/gentoo-x86/dev-util/mingw-runtime/mingw-runtime-3.18.ebuild,v 1.1 2010/06/20 04:27:50 vapier Exp $
 
 export CBUILD=${CBUILD:-${CHOST}}
 export CTARGET=${CTARGET:-${CHOST}}
@@ -16,7 +10,7 @@ if [[ ${CTARGET} == ${CHOST} ]] ; then
 	fi
 fi
 
-inherit eutils flag-o-matic
+inherit flag-o-matic
 
 MY_P="mingwrt-${PV}-mingw32"
 DESCRIPTION="Free Win32 runtime and import library definitions"
@@ -25,7 +19,7 @@ SRC_URI="mirror://sourceforge/mingw/${MY_P}-src.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="crosscompile_opts_headers-only"
 RESTRICT="strip"
 
@@ -50,7 +44,9 @@ src_unpack() {
 	sed -i \
 		-e "/W32API_INCLUDE/s:=.*:='-I /usr/${CTARGET}/usr/include':" \
 		$(find -name configure) || die
-	epatch "${FILESDIR}"/${PN}-3.12-DESTDIR.patch
+	sed -i \
+		-e '/^install_dlls_host:/s:$: install-dirs:' \
+		Makefile.in || die # fix parallel install
 }
 
 src_compile() {
