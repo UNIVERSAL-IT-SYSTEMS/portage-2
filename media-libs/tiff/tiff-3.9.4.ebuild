@@ -1,9 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/tiff/tiff-3.9.2.ebuild,v 1.10 2010/01/22 17:19:11 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/tiff/tiff-3.9.4.ebuild,v 1.1 2010/06/20 22:28:22 ssuominen Exp $
 
-EAPI=2
-inherit eutils libtool
+EAPI=3
+inherit libtool
 
 DESCRIPTION="Library for manipulation of TIFF (Tag Image File Format) images"
 HOMEPAGE="http://www.remotesensing.org/libtiff/"
@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.remotesensing.org/pub/libtiff/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 IUSE="jpeg jbig +cxx zlib"
 
 DEPEND="jpeg? ( >=media-libs/jpeg-6b:0 )
@@ -19,12 +19,10 @@ DEPEND="jpeg? ( >=media-libs/jpeg-6b:0 )
 	zlib? ( sys-libs/zlib )"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-3.8.2-CVE-2009-2285.patch
 	elibtoolize
 }
 
 src_configure() {
-	use prefix || EPREFIX=
 	econf \
 		--disable-dependency-tracking \
 		$(use_enable cxx) \
