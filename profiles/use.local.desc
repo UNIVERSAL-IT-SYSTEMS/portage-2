@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5689 2010/06/21 19:07:57 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5693 2010/06/21 23:47:49 robbat2 Exp $
 # This file contains descriptions of local USE flags, and the ebuilds which
 # contain them.
 # Keep it sorted (use "LC_ALL=C sort -t: -k1,1 -k2 | LC_ALL=C sort -s -t/ -k1,1")
@@ -605,10 +605,8 @@ dev-cpp/sptk:excel - Enable Excel support
 dev-db/drizzle:curl -  Enable the HTTP authentication plugin (using net-misc/curl). This is needed for the tests to apply properly. 
 dev-db/drizzle:doc -  Build the API documentation for the package, using app-doc/doxygen. Warning, this might take over an hour on slower machines. 
 dev-db/drizzle:gearman -  Enable the gearman plugins for user-defined functions and logging (using sys-cluster/gearman). 
-dev-db/drizzle:gnutls -  Enable the MD5 plugin for user-defined functions (using net-libs/gnutls). Note: when enabling both this flag and the curl flag, net-misc/curl has to be built with the gnutls USE flag or with no SSL support at all to avoid runtime linking conflicts. 
 dev-db/drizzle:md5 -  Enable the MD5 plugin, using dev-libs/libgcrypt; this replaces the older openssl and gnutls USE flags. 
 dev-db/drizzle:memcache -  Enable the memcache plugin for user-defined functions and statistics in I_S tables (using dev-libs/libmemcached). Currently restricts tests because of an upstream testsuite bug. 
-dev-db/drizzle:openssl -  Enable the MD5 plugin for user-defined functions (using dev-libs/openssl). Note: when enabling both this flag and the curl flag, net-misc/curl has to be built with the openssl USE flag or with no SSL support at all to avoid runtime linking conflicts. 
 dev-db/drizzle:pam -  Enable the PAM authentication plugin (using sys-libs/pam). The configuration file created will be /etc/pam.d/drizzle. 
 dev-db/drizzle:tcmalloc -  Use the dev-util/google-perftools libraries to replace the malloc() implementation with a possibly faster one. 
 dev-db/ingres:client - Disable dbms component
@@ -1600,7 +1598,6 @@ media-gfx/digikam:lensfun - Enable support for lens-correnction library
 media-gfx/digikam:thumbnails - Allow thumbnail previews for images/photos
 media-gfx/enblend:gpu - GPU support for Enblend
 media-gfx/enblend:image-cache - allow for processing of large images
-media-gfx/exact-image:agg - Adds Anti-Grain Geometry supportx11-libs/agg
 media-gfx/exact-image:swig - Adds Swig support dev-lang/swig
 media-gfx/exiv2:contrib -  Build additional contrib components 
 media-gfx/f-spot:beagle - Enable app-misc/beagle support for searches
@@ -1745,8 +1742,6 @@ media-libs/swfdec:gtk - Enable GTK+ convenience library while is necessary for a
 media-libs/swfdec:oss - Use Open Sound System for audio output
 media-libs/swfdec:pulseaudio - Use media-sound/pulseaudio for audio output
 media-libs/taglib:asf - Provide support for Microsoft's 'advanced systems format' media container.
-media-libs/tiff:bigtiff - Provide support for very large tiff files.
-media-libs/tiff:mdi - Provide support for MDI format graphics.
 media-libs/urt:gs - Add support for postscript
 media-libs/win32codecs:real - Installs the real video codecs
 media-libs/x264:pic - disable optimized assembly code that is not PIC friendly
@@ -2311,7 +2306,6 @@ net-analyzer/snort:gre - Enable GRE support
 net-analyzer/snort:inline - Enable snort-inline for accepting packets from net-firewall/iptables, via libipq, rather than net-libs/libpcap.
 net-analyzer/snort:inline-init-failopen - Enable inline-init-failopen support
 net-analyzer/snort:linux-smp-stats - Enable statistics reporting through proc on smp systems
-net-analyzer/snort:memory-cleanup - Enable memory-cleanup support
 net-analyzer/snort:mpls - Enable support for mpls networks
 net-analyzer/snort:perfprofiling - Enable preprocessor and rule performance profiling
 net-analyzer/snort:ppm - Enable ppm support
@@ -3129,7 +3123,6 @@ sci-libs/gdal:ogdi - Enable support for the open geographic datastore interface 
 sci-libs/gerris:dx - Enable support for sci-visualization/opendx
 sci-libs/gsl:cblas - Link gsl with external cblas provided by (virtual/cblas)
 sci-libs/hdf5:hlapi - Enable support for high-level library
-sci-libs/hdf5:tools - Install support and test tools
 sci-libs/indilib:fits - Enable support for the FITS image format through cfitsio
 sci-libs/indilib:nova - Enable support for nova celestial mechanics calculations
 sci-libs/libgeda:threads - Enable (posix) threads for the GTK GUI
