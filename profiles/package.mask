@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11682 2010/06/22 13:34:32 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11686 2010/06/22 20:00:12 phajdan.jr Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,6 +31,10 @@
 
 #--- END OF EXAMPLES ---
 
+# Pawel Hajdan jr <phajdan.jr@gentoo.org> (22 Jun 2010)
+# Masked for testing. It's quite "challenging" to package.
+>=sci-mathematics/nusmv-2.5.0
+
 # Samuli Suominen <ssuominen@gentoo.org> (22 Jun 2010)
 # Replaced by sys-kernel/dracut
 #
@@ -52,8 +56,8 @@ x11-misc/gaia
 >=sys-cluster/heartbeat-3.0.3
 
 # Thomas Beierlein <tomjbe@gentoo.org> (22 Jun 2010)
-# Restrict mask to only sci-libs/libgeda-1.4.3 as otherwise the stable 
-# sci-electronics/geda-1.4.0 misses a dep.
+# Restrict mask to only the sci-libs/libgeda-1.4.3* ebuilds as 
+# otherwise the stable sci-electronics/geda-1.4.0 misses a dep.
 #
 # Diego E. Pettenò <flameeyes@gentoo.org> (21 Jun 2010)
 #  on behalf of QA team
@@ -66,8 +70,8 @@ x11-misc/gaia
 # between them.
 #
 # Removal on 2010-08-20
-=sci-electronics/geda-1.4.3-r1
-=sci-libs/libgeda-1.4.3
+=sci-electronics/geda-1.4.3*
+=sci-libs/libgeda-1.4.3*
 sci-electronics/geda-gattrib
 sci-electronics/geda-gnetlist
 sci-electronics/geda-gschem
@@ -120,6 +124,7 @@ virtual/postgresql-server
 # see <http://my.opera.com/desktopteam/blog/>
 =www-client/opera-10.60_pre6372
 =www-client/opera-10.60_pre6374
+=www-client/opera-10.60_pre6378
 
 # Alexis Ballier <aballier@gentoo.org> (17 Jun 2010)
 # Beta release
