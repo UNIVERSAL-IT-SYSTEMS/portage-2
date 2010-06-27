@@ -1,6 +1,14 @@
 # ChangeLog for sys-fs/encfs
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/encfs/ChangeLog,v 1.41 2009/08/07 10:45:25 ssuominen Exp $
+# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/encfs/ChangeLog,v 1.43 2010/06/27 21:00:25 ssuominen Exp $
+
+  27 Jun 2010; Samuli Suominen <ssuominen@gentoo.org> encfs-1.6.ebuild:
+  Remove USE="nls" wrt #277239 by Martin Väth.
+
+*encfs-1.6 (27 Jun 2010)
+
+  27 Jun 2010; Samuli Suominen <ssuominen@gentoo.org> +encfs-1.6.ebuild:
+  Version bump.
 
   07 Aug 2009; Samuli Suominen <ssuominen@gentoo.org> encfs-1.5.ebuild,
   +files/encfs-1.5-glibc-2.10.patch:
