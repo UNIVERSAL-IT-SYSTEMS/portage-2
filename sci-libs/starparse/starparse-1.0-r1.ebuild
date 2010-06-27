@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/starparse/starparse-1.0.ebuild,v 1.1 2010/06/24 11:02:54 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/starparse/starparse-1.0-r1.ebuild,v 1.1 2010/06/27 12:33:35 xarthisius Exp $
 
 EAPI="2"
 
-inherit autotools
+inherit autotools eutils
 
 DESCRIPTION="Library for parsing NMR star files (peak-list format) and CIF files"
 HOMEPAGE="http://burrow-owl.sourceforge.net/"
@@ -18,9 +18,11 @@ KEYWORDS="~amd64 ~x86"
 IUSE="guile"
 
 RDEPEND="guile? ( dev-scheme/guile )"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-guile1.8.patch
 	eautoreconf
 }
 
@@ -30,4 +32,12 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+}
+
+src_test() {
+	if use guile; then
+		emake check || die
+	else
+		ewarn "Skipping tests because USE guile is disabled"
+	fi
 }
