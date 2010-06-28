@@ -1,14 +1,16 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/trousers/trousers-0.3.2.ebuild,v 1.1 2009/08/22 17:56:56 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/trousers/trousers-0.3.5.ebuild,v 1.1 2010/06/27 22:38:43 arfrever Exp $
 
-EAPI="2"
+EAPI="3"
 
-inherit autotools base eutils linux-info
+inherit autotools eutils linux-info
+
+#MY_P="${PN}-${PV%.*}-${PV##*.}"
 
 DESCRIPTION="An open-source TCG Software Stack (TSS) v1.1 implementation"
 HOMEPAGE="http://trousers.sf.net"
-SRC_URI="mirror://sourceforge/trousers/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/trousers/${P}.tar.gz"
 LICENSE="CPL-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -21,7 +23,7 @@ RDEPEND=">=dev-libs/glib-2
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-PATCHES=(	"${FILESDIR}/${PN}-0.2.3-nouseradd.patch" )
+S="${WORKDIR}/${P}git"
 
 pkg_setup() {
 	# Check for driver (not sure it can be an rdep, because ot depends on the
@@ -29,18 +31,22 @@ pkg_setup() {
 	linux-info_pkg_setup
 	local tpm_kernel_version tpm_kernel_present tpm_module
 	kernel_is ge 2 6 12 && tpm_kernel_version="yes"
-	linux_chkconfig_present TCG_TPM && tpm_kernel_present="yes"
+	if linux_config_exists; then
+		linux_chkconfig_present TCG_TPM && tpm_kernel_present="yes"
+	else
+		ewarn "No kernel configuration could be found."
+	fi
 	has_version app-crypt/tpm-emulator && tpm_module="yes"
-	if [[ -n "${tpm_kernel_present}" ]] ; then
+	if [[ -n "${tpm_kernel_present}" ]]; then
 		einfo "Good, you seem to have in-kernel TPM support."
-	elif [[ -n "${tpm_module}" ]] ; then
+	elif [[ -n "${tpm_module}" ]]; then
 		einfo "Good, you seem to have TPM support with the external module."
-		if [[ -n "${tpm_kernel_version}" ]] ; then
+		if [[ -n "${tpm_kernel_version}" ]]; then
 			elog
 			elog "Note that since you have a >=2.6.12 kernel, you could use"
 			elog "the in-kernel driver instead of (CONFIG_TCG_TPM)."
 		fi
-	elif [[ -n "${tpm_kernel_version}" ]] ; then
+	elif [[ -n "${tpm_kernel_version}" ]]; then
 		eerror
 		eerror "To use this package, you will have to activate TPM support"
 		eerror "in your kernel configuration. That's at least CONFIG_TCG_TPM,"
@@ -61,9 +67,9 @@ pkg_setup() {
 }
 
 src_prepare() {
-	base_src_prepare
+	epatch "${FILESDIR}/${P}-nouseradd.patch"
 
-	sed -e "s/-Werror //" -i configure.in
+	sed -e "s/ -Werror//" -i configure.in
 	eautoreconf
 }
 
