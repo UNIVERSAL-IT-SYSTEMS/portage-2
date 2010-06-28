@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/guile-gtk/guile-gtk-2.1.ebuild,v 1.2 2009/12/28 23:34:11 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/guile-gtk/guile-gtk-2.1.ebuild,v 1.4 2010/06/28 21:35:34 angelos Exp $
 
 inherit virtualx eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnu.org/software/guile-gtk/"
 SRC_URI="ftp://ftp.gnu.org/gnu/guile-gtk/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND="dev-scheme/guile
@@ -17,6 +17,9 @@ RDEPEND="dev-scheme/guile
 	=gnome-base/libglade-2*
 	>=x11-libs/gtkglarea-1.90"
 DEPEND="${RDEPEND}"
+
+# needs X
+RESTRICT="test"
 
 pkg_setup() {
 	if has_version =dev-scheme/guile-1.8*; then
@@ -32,9 +35,9 @@ src_unpack() {
 	epatch "${FILESDIR}/${PN}-2.0-g-object-ref.diff"
 }
 
-src_test() {
-	Xemake check || die "tests failed"
-}
+#src_test() {
+#	Xemake check || die "tests failed"
+#}
 
 src_install() {
 	# bug #298803
