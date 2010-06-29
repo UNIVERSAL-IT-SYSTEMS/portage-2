@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pcsc-lite/pcsc-lite-1.5.3.ebuild,v 1.8 2009/06/15 03:25:48 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pcsc-lite/pcsc-lite-1.6.1.ebuild,v 1.1 2010/06/28 23:39:00 arfrever Exp $
+
+EAPI="3"
 
 inherit multilib
 
@@ -8,11 +10,11 @@ DESCRIPTION="PC/SC Architecture smartcard middleware library"
 HOMEPAGE="http://www.linuxnet.com/middle.html"
 
 if [[ "${PV}" = "9999" ]]; then
-	inherit subversion autotools
+	inherit autotools subversion
 	ESVN_REPO_URI="svn://svn.debian.org/pcsclite/trunk"
 	S="${WORKDIR}/trunk"
 else
-	STUPID_NUM="3017"
+	STUPID_NUM="3298"
 	MY_P="${PN}-${PV/_/-}"
 	SRC_URI="http://alioth.debian.org/download.php/${STUPID_NUM}/${MY_P}.tar.bz2"
 	S="${WORKDIR}/${MY_P}"
@@ -20,10 +22,10 @@ fi
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="amd64 arm hppa ia64 m68k ppc ppc64 s390 sh sparc x86"
+KEYWORDS="~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="hal static usb"
 
-RDEPEND="usb? ( =virtual/libusb-0* )
+RDEPEND="usb? ( virtual/libusb:0 )
 	hal? ( sys-apps/hal )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
@@ -35,19 +37,15 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	if [ "${PV}" != "9999" ]; then
-		unpack ${A}
-		cd "${S}"
-	else
-		subversion_src_unpack
+if [[ "${PV}" == "9999" ]]; then
+	src_prepare() {
 		S="${WORKDIR}/trunk/PCSC"
 		cd "${S}"
 		AT_M4DIR="m4" eautoreconf
-	fi
-}
+	}
+fi
 
-src_compile() {
+src_configure() {
 	local myconf
 	if use hal; then
 		myconf="--enable-libhal --disable-libusb"
@@ -60,7 +58,6 @@ src_compile() {
 		--enable-usbdropdir="/usr/$(get_libdir)/readers/usb" \
 		${myconf} \
 		$(use_enable static)
-	emake || die "emake failed"
 }
 
 src_install() {
