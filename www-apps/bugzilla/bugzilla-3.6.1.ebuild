@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/bugzilla/bugzilla-3.4.6.ebuild,v 1.2 2010/03/14 11:42:18 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/bugzilla/bugzilla-3.6.1.ebuild,v 1.1 2010/06/30 09:19:51 tove Exp $
 
 EAPI="2"
 
@@ -14,7 +14,7 @@ HOMEPAGE="http://www.bugzilla.org"
 
 LICENSE="MPL-1.1 NPL-1.1"
 # KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~sparc ~x86"
 
 IUSE="modperl extras graphviz mysql postgres"
 
@@ -33,7 +33,7 @@ RDEPEND="
 	>=dev-perl/MIME-tools-5.427
 	>=dev-perl/Template-Toolkit-2.22
 	>=dev-perl/TimeDate-1.16
-	>=virtual/perl-CGI-3.29
+	>=virtual/perl-CGI-3.33
 	>=virtual/perl-Digest-SHA-5.46
 	>=virtual/perl-File-Spec-3.27.01
 	>=virtual/perl-MIME-Base64-3.07
@@ -57,11 +57,13 @@ RDEPEND="
 		dev-perl/GDTextUtil
 		>=dev-perl/HTML-Parser-3.60
 		dev-perl/HTML-Scrubber
+		dev-perl/JSON-RPC
 		dev-perl/libwww-perl
 		>=dev-perl/PatchReader-0.9.5
 		dev-perl/perl-ldap
 		dev-perl/SOAP-Lite
 		dev-perl/Template-GD
+		dev-perl/Test-Taint
 		dev-perl/XML-Twig
 		media-gfx/imagemagick[perl]
 		dev-perl/TheSchwartz
