@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/gedit/gedit-2.30.2.ebuild,v 1.1 2010/06/13 19:34:52 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/gedit/gedit-2.30.2.ebuild,v 1.3 2010/07/05 12:57:47 pacho Exp $
 
 GCONF_DEBUG="no"
 
-inherit gnome2 python
+inherit gnome2 python eutils
 
 DESCRIPTION="A text editor for the GNOME desktop"
 HOMEPAGE="http://www.gnome.org/"
@@ -17,7 +17,7 @@ IUSE="doc python spell"
 RDEPEND=">=gnome-base/gconf-2
 	>=x11-libs/libSM-1.0
 	>=dev-libs/libxml2-2.5.0
-	>=dev-libs/glib-2.22
+	>=dev-libs/glib-2.23.1
 	>=x11-libs/gtk+-2.16.0
 	>=x11-libs/gtksourceview-2.9.7
 	spell? (
@@ -57,6 +57,9 @@ pkg_setup() {
 
 src_unpack() {
 	gnome2_src_unpack
+
+	# Do not fail if remote mounting is not supported.
+	epatch "${FILESDIR}/${P}-tests-skip.patch"
 
 	# disable pyc compiling
 	mv "${S}"/py-compile "${S}"/py-compile.orig
