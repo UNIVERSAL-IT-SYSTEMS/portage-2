@@ -1,10 +1,14 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-0.7.6-r1.ebuild,v 1.4 2010/04/29 02:18:25 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-0.8.2.ebuild,v 1.2 2010/07/06 17:10:35 cardoe Exp $
 
-BACKPORTS=
+#BACKPORTS=1
 
 EAPI="2"
+
+PYTHON_DEPEND="python? 2:2.4"
+#RESTRICT_PYTHON_ABIS="3.*"
+#SUPPORT_PYTHON_ABIS="1"
 
 inherit eutils python
 
@@ -15,8 +19,8 @@ SRC_URI="http://libvirt.org/sources/${P}.tar.gz
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="avahi caps iscsi +libvirtd lvm +lxc +network nfs nls numa openvz \
-	parted phyp policykit python qemu sasl selinux uml virtualbox xen udev"
+IUSE="avahi caps iscsi +libvirtd lvm +lxc macvtap +network nfs nls numa openvz \
+	parted pcap phyp policykit python qemu sasl selinux uml virtualbox xen udev"
 # IUSE=one : bug #293416 & bug# 299011
 
 # Some tests are simply broken in the released tarball, ignore them
@@ -26,9 +30,8 @@ RESTRICT=test
 RDEPEND="sys-libs/readline
 	sys-libs/ncurses
 	>=net-misc/curl-7.18.0
-	>=dev-libs/libxml2-2.7.6[python?]
+	>=dev-libs/libxml2-2.7.6
 	>=net-libs/gnutls-1.0.25
-	dev-lang/python
 	sys-fs/sysfsutils
 	sys-apps/util-linux
 	>=net-analyzer/netcat6-1.0-r2
@@ -37,10 +40,12 @@ RDEPEND="sys-libs/readline
 	iscsi? ( sys-block/open-iscsi )
 	libvirtd? ( net-misc/bridge-utils )
 	lvm? ( >=sys-fs/lvm2-2.02.48-r2 )
+	macvtap? ( >=dev-libs/libnl-1.1 )
 	nfs? ( net-fs/nfs-utils )
 	numa? ( sys-process/numactl )
 	openvz? ( sys-kernel/openvz-sources )
 	parted? ( >=sys-apps/parted-1.8 )
+	pcap? ( >=net-libs/libpcap-1.0.0 )
 	phyp? ( net-libs/libssh2 )
 	policykit? ( >=sys-auth/polkit-0.9 )
 	qemu? ( || ( app-emulation/qemu-kvm >=app-emulation/qemu-0.10.0 ) )
@@ -54,11 +59,13 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	nls? ( sys-devel/gettext )"
 
+pkg_setup() {
+	python_set_active_version 2
+}
+
 src_prepare() {
 	[[ -n ${BACKPORTS} ]] && \
 		EPATCH_SUFFIX="patch" EPATCH_SOURCE="${S}/patches" epatch
-
-	epatch "${FILESDIR}"/${P}-virt-pki-validate-sysconfdir.patch
 }
 
 src_configure() {
@@ -106,6 +113,10 @@ src_configure() {
 	## auth stuff
 	myconf="${myconf} $(use_with policykit polkit)"
 	myconf="${myconf} $(use_with sasl)"
+
+	# network biits
+	myconf="${myconf} $(use_with libpcap)"
+	myconf="${myconf} $(use_with macvtap)"
 
 	## other
 	myconf="${myconf} $(use_enable nls)"
@@ -166,13 +177,19 @@ pkg_preinst() {
 	if [[ -e "${ROOT}"/etc/libvirt/qemu/networks/default.xml ]]; then
 		rm -rf "${D}"/etc/libvirt/qemu/networks/default.xml
 	fi
+
+	# We really don't want to use or support old PolicyKit cause it
+	# screws with the new polkit integration
+	if has_version sys-auth/policykit; then
+		rm -rf "${D}"/usr/share/PolicyKit/policy/org.libvirt.unix.policy
+	fi
 }
 
 pkg_postinst() {
 	use python && python_mod_optimize $(python_get_sitedir)/libvirt.py
 
 	elog
-	if use policykit; then
+	if use policykit && has_version sys-auth/policykit; then
 		elog "You must have run the following at least once:"
 		elog
 		elog "$ polkit-auth --grant org.libvirt.unix.manage --user \"USERNAME\""
@@ -203,5 +220,5 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	use python && python_mod_cleanup
+	use python && python_mod_cleanup $(python_get_sitedir)/libvirt.py
 }
