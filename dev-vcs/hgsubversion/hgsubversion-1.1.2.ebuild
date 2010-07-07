@@ -1,10 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/hgsubversion/hgsubversion-1.0.ebuild,v 1.2 2010/06/22 18:48:33 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/hgsubversion/hgsubversion-1.1.2.ebuild,v 1.1 2010/07/06 23:56:33 arfrever Exp $
 
-EAPI="2"
+EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 
@@ -14,22 +15,22 @@ SRC_URI="http://bitbucket.org/durin42/${PN}/get/${PV}.tar.gz -> ${PN}-${PV}.tar.
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~ppc-macos ~x86-solaris"
 IUSE="test"
 
 RDEPEND=">=dev-vcs/mercurial-1.4
 		>=dev-vcs/subversion-1.5[python]"
 DEPEND="test? ( dev-python/nose )"
-RESTRICT_PYTHON_ABIS="3.*"
-
-DOCS="README"
 
 S="${WORKDIR}/${PN}"
 
+DOCS="README"
+
 src_test() {
-	cd "${S}/tests"
+	cd tests
+
 	testing() {
-		"$(PYTHON)" run.py
+		PYTHONPATH="../build-${PYTHON_ABI}/lib" "$(PYTHON)" run.py
 	}
 	python_execute_function testing
 }

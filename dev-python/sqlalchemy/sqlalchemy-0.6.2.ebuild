@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/sqlalchemy/sqlalchemy-0.6.0.ebuild,v 1.3 2010/04/25 17:07:23 the_paya Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/sqlalchemy/sqlalchemy-0.6.2.ebuild,v 1.1 2010/07/07 00:50:23 arfrever Exp $
 
 EAPI="3"
 SUPPORT_PYTHON_ABIS="1"
@@ -39,6 +39,8 @@ DEPEND="dev-python/setuptools
 
 S="${WORKDIR}/${MY_P}"
 
+PYTHON_CFLAGS=("2.* + -fno-strict-aliasing")
+
 src_prepare() {
 	# Disable tests hardcoding function call counts specific to Python versions.
 	sed \
@@ -47,10 +49,27 @@ src_prepare() {
 		-i test/aaa_profiling/test_pool.py
 }
 
+set_global_options() {
+	# Extension modules fail to build with Python 3.
+	if [[ "${PYTHON_ABI}" == 2.* ]]; then
+		DISTUTILS_GLOBAL_OPTIONS=("--with-cextensions")
+	else
+		DISTUTILS_GLOBAL_OPTIONS=()
+	fi
+}
+
+distutils_src_compile_pre_hook() {
+	set_global_options
+}
+
+distutils_src_install_pre_hook() {
+	set_global_options
+}
+
 src_test() {
 	testing() {
 		[[ "${PYTHON_ABI}" == 3.* ]] && return
-		PYTHONPATH="build-${PYTHON_ABI}/lib" nosetests
+		PYTHONPATH="$(ls -d build-${PYTHON_ABI}/lib*)" nosetests
 	}
 	python_execute_function testing
 }

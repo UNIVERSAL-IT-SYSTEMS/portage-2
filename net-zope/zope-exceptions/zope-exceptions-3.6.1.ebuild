@@ -1,9 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-proxy/zope-proxy-3.6.0.ebuild,v 1.1 2010/05/27 17:35:17 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-exceptions/zope-exceptions-3.6.1.ebuild,v 1.1 2010/07/07 00:09:09 arfrever Exp $
 
 EAPI="3"
-PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 DISTUTILS_SRC_TEST="setup.py"
 
@@ -12,8 +11,8 @@ inherit distutils
 MY_PN="${PN/-/.}"
 MY_P="${MY_PN}-${PV}"
 
-DESCRIPTION="Generic Transparent Proxies"
-HOMEPAGE="http://pypi.python.org/pypi/zope.proxy"
+DESCRIPTION="Zope Exceptions"
+HOMEPAGE="http://pypi.python.org/pypi/zope.exceptions"
 SRC_URI="http://pypi.python.org/packages/source/${MY_PN:0:1}/${MY_PN}/${MY_P}.zip"
 
 LICENSE="ZPL"
@@ -22,10 +21,11 @@ KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 RDEPEND="net-zope/zope-interface"
+# net-zope/zope-fixers is required for building with Python 3.
 DEPEND="${RDEPEND}
 	app-arch/unzip
-	dev-python/setuptools"
-RESTRICT_PYTHON_ABIS="3.*"
+	dev-python/setuptools
+	net-zope/zope-fixers"
 
 S="${WORKDIR}/${MY_P}"
 
