@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/datetime/datetime-2.12.3.ebuild,v 1.1 2010/07/09 23:03:25 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/datetime/datetime-2.12.4.ebuild,v 1.1 2010/07/12 21:33:48 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"

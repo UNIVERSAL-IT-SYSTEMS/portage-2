@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11761 2010/07/12 10:17:46 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.11763 2010/07/12 20:22:23 polynomial-c Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,6 +31,11 @@
 
 #--- END OF EXAMPLES ---
 
+# Lars Wendler <polynomial-c@gentoo.org> (12 Jul 2010)
+# Masked for removal in 30 days.
+# No active maintainer.
+www-client/seamonkey-bin
+
 # Pacho Ramos <pacho@gentoo.org> (12 Jul 2010)
 # Masked for removal in 30 days.
 # No longer developed by upstream, fails with forced as-needed (bug #277169),
@@ -38,6 +43,7 @@
 gnome-base/eel
 gnome-extra/nautilus-cd-burner
 dev-python/nautilus-cd-burner-python
+dev-dotnet/nautilusburn-sharp
  
 # Patrick Lauer <patrick@gentoo.org> (11 Jul 2010)
 # Upstream has EOL'ed 7.4 and 8.0. EOL for 8.1 is November.

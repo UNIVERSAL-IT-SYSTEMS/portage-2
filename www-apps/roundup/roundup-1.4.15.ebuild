@@ -1,10 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/roundup/roundup-1.4.11.ebuild,v 1.6 2010/02/20 14:54:40 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/roundup/roundup-1.4.15.ebuild,v 1.1 2010/07/12 21:17:31 arfrever Exp $
 
-EAPI="2"
+EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 
@@ -14,22 +15,23 @@ SRC_URI="http://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT ZPL"
 SLOT="0"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=sys-libs/db-3.2.9"
 RDEPEND="${DEPEND}"
-RESTRICT_PYTHON_ABIS="3.*"
 
 src_install() {
 	distutils_src_install
+
 	dodoc CHANGES.txt doc/*.txt
 	dohtml doc/*.html
 	dobin "${FILESDIR}/roundup" || die "dobin failed"
 }
 
 pkg_postinst() {
-	ewarn
+	distutils_pkg_postinst
+
 	ewarn "As a non privileged user! (not root)"
 	ewarn "Run 'roundup-admin install' to set up a roundup instance"
 	ewarn "Then edit your config.ini file in the tracker home you setup"
