@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/nitrogen/nitrogen-1.5.ebuild,v 1.1 2010/02/03 16:28:56 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/nitrogen/nitrogen-1.5.1.ebuild,v 1.1 2010/07/12 12:33:50 xarthisius Exp $
 
 EAPI=2
 
@@ -31,5 +31,5 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog NEWS README
+	dodoc AUTHORS ChangeLog NEWS README || die
 }
