@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/unittest2/unittest2-0.5.0.ebuild,v 1.1 2010/07/11 18:27:57 djc Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/unittest2/unittest2-0.5.1.ebuild,v 1.1 2010/07/12 21:41:24 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
