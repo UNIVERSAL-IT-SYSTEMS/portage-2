@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Email-Sender/Email-Sender-0.100460.ebuild,v 1.2 2010/03/28 13:58:11 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Email-Sender/Email-Sender-0.101760.ebuild,v 1.1 2010/07/14 04:52:15 tove Exp $
 
 EAPI=2
 
@@ -25,7 +25,14 @@ RDEPEND="virtual/perl-Scalar-List-Utils
 	dev-perl/Moose
 	dev-perl/Email-Address"
 DEPEND="${RDEPEND}
-	test? ( dev-perl/Capture-Tiny
+	>=virtual/perl-ExtUtils-MakeMaker-6.31
+	test? ( >=dev-perl/Capture-Tiny-0.08
 			dev-perl/Test-MockObject )"
 
 SRC_TEST=do
+
+src_test() {
+	# https://rt.cpan.org/Public/Bug/Display.html?id=54642
+	mv ${S}/t/smtp-via-mock.t{,.disable} || die
+	perl-module_src_test
+}
