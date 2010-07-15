@@ -1,10 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-publisher/zope-publisher-3.12.3.ebuild,v 1.1 2010/05/27 18:35:34 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-publisher/zope-publisher-3.12.4.ebuild,v 1.1 2010/07/15 17:37:24 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 
@@ -34,7 +35,6 @@ RDEPEND="dev-python/setuptools
 	net-zope/zope-schema
 	net-zope/zope-security"
 DEPEND="${RDEPEND}"
-RESTRICT_PYTHON_ABIS="3.*"
 
 S="${WORKDIR}/${MY_P}"
 
