@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/couchdb/couchdb-0.10.1.ebuild,v 1.6 2010/03/15 19:27:05 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/couchdb/couchdb-1.0.0.ebuild,v 1.1 2010/07/16 10:57:56 djc Exp $
 
 EAPI="2"
 
@@ -12,10 +12,10 @@ SRC_URI="mirror://apache/couchdb/${PV}/apache-${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="test"
 
-RDEPEND="dev-libs/icu
+RDEPEND=">=dev-libs/icu-4.3.1
 		dev-lang/erlang[ssl]
 		>=dev-libs/openssl-0.9.8j
 		>=net-misc/curl-7.18.2
@@ -48,6 +48,9 @@ src_install() {
 		/var/run/couchdb \
 		/var/lib/couchdb \
 		/var/log/couchdb
+
+	fowners root:couchdb /etc/couchdb/*.ini
+	fperms 660 /etc/couchdb/*.ini
 
 	newinitd "${FILESDIR}/couchdb.init-0.10" couchdb || die
 	newconfd "${FILESDIR}/couchdb.conf-0.10" couchdb || die
