@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/flask/flask-0.4.ebuild,v 1.1 2010/06/18 18:55:19 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/flask/flask-0.5.2.ebuild,v 1.1 2010/07/15 22:44:14 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -29,7 +29,12 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
-PYTHON_MODNAME="flask.py"
+src_prepare() {
+	distutils_src_prepare
+
+	# Delete reference to nonexistent artwork/LICENSE file.
+	sed -e "41,48d" -i docs/license.rst || die "sed failed"
+}
 
 src_compile() {
 	distutils_src_compile
@@ -43,14 +48,13 @@ src_compile() {
 
 src_test() {
 	testing() {
-		PYTHONPATH=. "$(PYTHON)" tests/flask_tests.py
+		PYTHONPATH="." "$(PYTHON)" tests/flask_tests.py
 	}
 	python_execute_function testing
 }
 
 src_install() {
 	distutils_src_install
-#	python_clean_installation_image
 
 	if use doc; then
 		dohtml -r docs/_build/html/* || die "Installation of documentation failed"
