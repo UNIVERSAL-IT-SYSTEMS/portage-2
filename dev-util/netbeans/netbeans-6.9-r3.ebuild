@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/netbeans/netbeans-6.7.ebuild,v 1.3 2010/06/22 18:41:49 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/netbeans/netbeans-6.9-r3.ebuild,v 1.1 2010/07/17 18:54:42 fordfrog Exp $
 
 EAPI="2"
 WANT_SPLIT_ANT="true"
@@ -9,9 +9,11 @@ inherit eutils java-pkg-2 java-ant-2
 DESCRIPTION="NetBeans IDE for Java"
 HOMEPAGE="http://www.netbeans.org"
 
-SLOT="6.7"
-SRC_URI="http://bits.netbeans.org/netbeans/6.7/community/fcs/zip/netbeans-6.7-200906261335-src.zip
-	mirror://gentoo/netbeans-6.7-l10n-20090626125342.tar.bz2"
+SLOT="6.9"
+# netbeans distributes sources without jar files now so we need our own tarball
+# netbeans does not distribute tarball with localizations at all
+SRC_URI="mirror://gentoo/netbeans-6.9.tar.bz2
+	mirror://gentoo/netbeans-6.9-l10n.tar.bz2"
 
 LICENSE="|| ( CDDL GPL-2-with-linking-exception )"
 KEYWORDS="~amd64 ~x86"
@@ -32,37 +34,48 @@ IUSE_NETBEANS_MODULES="
 	netbeans_modules_php
 	netbeans_modules_profiler
 	netbeans_modules_ruby
-	netbeans_modules_webcommon
 	+netbeans_modules_websvccommon"
 IUSE_LINGUAS="
+	linguas_af
 	linguas_ar
+	linguas_ca
 	linguas_cs
 	linguas_de
+	linguas_el
 	linguas_es
 	linguas_fr
 	linguas_gl
+	linguas_hi_IN
 	linguas_id
 	linguas_it
 	linguas_ja
 	linguas_ko
+	linguas_lt
 	linguas_nl
 	linguas_pl
 	linguas_pt_BR
+	linguas_pt_PT
+	linguas_ro
 	linguas_ru
 	linguas_sq
+	linguas_sr
 	linguas_sv
+	linguas_tl
 	linguas_tr
+	linguas_vi
 	linguas_zh_CN
 	linguas_zh_TW"
-IUSE="debug doc ${IUSE_NETBEANS_MODULES} ${IUSE_LINGUAS}"
+IUSE="debug doc keychain ${IUSE_NETBEANS_MODULES} ${IUSE_LINGUAS}"
 
-RDEPEND=">=virtual/jdk-1.5
+RDEPEND=">=virtual/jdk-1.6
 	java-virtuals/jdk-with-com-sun
 	>=dev-java/javahelp-2:0
 	dev-java/jna:0
-	dev-java/jsr223:0
-	>=dev-java/junit-4:4
 	>=dev-java/swing-layout-1:1
+	keychain? (
+		net-misc/keychain:0
+		net-misc/x11-ssh-askpass:0
+	)
 	netbeans_modules_enterprise? (
 		>=dev-java/antlr-2.7.7:0[java]
 		>=dev-java/asm-3.1:3
@@ -78,30 +91,29 @@ RDEPEND=">=virtual/jdk-1.5
 		>=dev-java/httpunit-1.6:0
 		dev-java/jakarta-jstl:0
 		>=dev-java/jakarta-oro-2:2.0
-		dev-java/jdom:1.0
 		>=dev-java/jettison-1.0:0
 		dev-java/jsr311-api:0
-		>=dev-java/rome-0.9:0
 	)
 	netbeans_modules_harness? (
-		dev-java/asm:2.2
+		>=dev-java/asm-3.1:3
 		>=dev-java/jakarta-oro-2:2.0
 		>=dev-java/log4j-1.2:0
 	)
 	netbeans_modules_ide? (
 		>=dev-java/commons-codec-1.3:0
 		>=dev-java/commons-httpclient-3.1:3
+		>=dev-java/commons-io-1.1:1
 		>=dev-java/commons-lang-2.3:2.1
 		>=dev-java/commons-logging-1.1:0
 		>=dev-java/commons-net-1.4:0
 		>=dev-java/flute-1.3:0
 		>=dev-java/freemarker-2.3.8:2.3
 		>=dev-java/jakarta-oro-2:2.0
-		>=dev-java/jaxb-2:2
 		>=dev-java/jdbc-mysql-5.1:0
 		>=dev-java/jdbc-postgresql-8.3_p603:0
 		>=dev-java/jsch-0.1.39:0
 		dev-java/jsr173:0
+		>=dev-java/jzlib-1.0.7:0
 		>=dev-java/jvyamlb-0.2.3:0
 		dev-java/lucene:2.4
 		>=dev-java/sac-1.3:0
@@ -113,6 +125,7 @@ RDEPEND=">=virtual/jdk-1.5
 	netbeans_modules_java? (
 		>=dev-java/ant-1.7:0
 		>=dev-java/antlr-2.7.7:0[java]
+		>=dev-java/appframework-1.03:0
 		dev-java/asm:2.2
 		>=dev-java/beansbinding-1.2.1:0
 		>=dev-java/cglib-2.2_beta:2.2
@@ -131,8 +144,8 @@ RDEPEND=">=virtual/jdk-1.5
 		dev-java/jtidy:0
 		>=dev-java/junit-3.8.2:0
 		dev-java/saaj:0
-		dev-java/sjsxp:0
 		dev-java/stax-ex:0
+		>=dev-java/swing-worker-1.1:0
 		dev-java/xmlstreambuffer:0
 	)
 	netbeans_modules_mobility? (
@@ -152,21 +165,21 @@ RDEPEND=">=virtual/jdk-1.5
 		dev-java/jna-posix:0
 		dev-java/joda-time:0
 		dev-java/joni:0
-		dev-java/jruby:0
+		>=dev-java/jruby-1.5:0
 		dev-util/jay:0[java]
 	)"
 
-DEPEND=">=virtual/jdk-1.5
+DEPEND=">=virtual/jdk-1.6
 	java-virtuals/jdk-with-com-sun
-	app-arch/unzip
 	>=dev-java/ant-core-1.7.1:0
 	>=dev-java/ant-nodeps-1.7.1:0
 	dev-java/ant-trax:0
 	>=dev-java/javahelp-2:0
 	dev-java/jna:0
-	dev-java/jsr223:0
-	>=dev-java/junit-4:4
 	>=dev-java/swing-layout-1:1
+	netbeans_modules_cnd? (
+		>=dev-java/stringtemplate-3.2:0
+	)
 	netbeans_modules_enterprise? (
 		>=dev-java/commons-fileupload-1:0
 		dev-java/glassfish-deployment-api:1.2
@@ -175,13 +188,14 @@ DEPEND=">=virtual/jdk-1.5
 		dev-java/tomcat-servlet-api:2.3
 	)
 	netbeans_modules_harness? (
-		dev-java/asm:2.2
+		>=dev-java/asm-3.1:3
 		>=dev-java/jakarta-oro-2:2.0
 		>=dev-java/log4j-1.2:0
 	)
 	netbeans_modules_ide? (
 		>=dev-java/commons-codec-1.3:0
 		>=dev-java/commons-httpclient-3.1:3
+		>=dev-java/commons-io-1.1:1
 		>=dev-java/commons-lang-2.3:2.1
 		>=dev-java/commons-logging-1.1:0
 		>=dev-java/commons-net-1.4.1:0
@@ -189,11 +203,11 @@ DEPEND=">=virtual/jdk-1.5
 		>=dev-java/freemarker-2.3.8:2.3
 		>=dev-java/jakarta-oro-2:2.0
 		>=dev-java/javacc-3.2:0
-		>=dev-java/jaxb-2.1:2
 		>=dev-java/jdbc-mysql-5.1:0
 		>=dev-java/jdbc-postgresql-8.3_p603:0
 		>=dev-java/jsch-0.1.39:0
 		dev-java/jsr173:0
+		>=dev-java/jzlib-1.0.7:0
 		dev-java/jvyamlb:0
 		dev-java/lucene:2.4
 		>=dev-java/sac-1.3:0
@@ -203,10 +217,12 @@ DEPEND=">=virtual/jdk-1.5
 		>=dev-vcs/subversion-1.6:0[java]
 	)
 	netbeans_modules_java? (
+		>=dev-java/appframework-1.03:0
 		dev-java/beansbinding:0
 		>=dev-java/cglib-2.2_beta:2.2
 		dev-java/jdom:1.0
 		>=dev-java/junit-3.8:0
+		>=dev-java/swing-worker-1.1:0
 	)
 	netbeans_modules_mobility? (
 		>=dev-java/ant-contrib-1.0_beta:0
@@ -225,9 +241,6 @@ DEPEND=">=virtual/jdk-1.5
 
 S="${WORKDIR}"
 BUILDDESTINATION="${S}/nbbuild/netbeans"
-ENTERPRISE="5"
-IDE_VERSION="11"
-PLATFORM="10"
 MY_FDIR="${FILESDIR}/${SLOT}"
 DESTINATION="/usr/share/netbeans-${SLOT}"
 JAVA_PKG_BSFIX="off"
@@ -248,7 +261,6 @@ pkg_setup() {
 	local need_php=""
 	local need_profiler=""
 	local need_ruby=""
-	local need_webcommon=""
 	local need_websvccommon=""
 
 	# direct deps: harness, ide, java
@@ -258,9 +270,10 @@ pkg_setup() {
 		need_java="1"
 	fi
 
-	# direct deps: dlight, ide
+	# direct deps: dlight, harness, ide
 	if use netbeans_modules_cnd ; then
 		need_dlight="1"
+		need_harness="1"
 		need_ide="1"
 	fi
 
@@ -269,12 +282,12 @@ pkg_setup() {
 		need_ide="1"
 	fi
 
-	# direct deps: ide, java, profiler, webcommon
+	# direct deps: harness, ide, java, profiler
 	if use netbeans_modules_enterprise ; then
+		need_harness="1"
 		need_ide="1"
 		need_java="1"
 		need_profiler="1"
-		need_webcommon="1"
 	fi
 
 	# direct deps: ide
@@ -295,14 +308,15 @@ pkg_setup() {
 		need_java="1"
 	fi
 
-	# direct deps: ide, websvccommon
+	# direct deps: harness, ide, websvccommon
 	if use netbeans_modules_java ; then
+		#need_harness="1"
 		need_ide="1"
 		need_websvccommon="1"
 	fi
 
 	# direct deps: apisupport, enterprise, ide, java
-	# dependency on enterprise cluster: http://www.netbeans.org/issues/show_bug.cgi?id=151535
+	# dependency on enterprise cluster: http://netbeans.org/bugzilla/show_bug.cgi?id=158064
 	if use netbeans_modules_mobility ; then
 		need_apisupport="1"
 		need_enterprise="1"
@@ -316,10 +330,9 @@ pkg_setup() {
 		need_ide="1"
 	fi
 
-	# direct deps: ide, webcommon, websvccommon
+	# direct deps: ide, websvccommon
 	if use netbeans_modules_php ; then
 		need_ide="1"
-		need_webcommon="1"
 		need_websvccommon="1"
 	fi
 
@@ -329,14 +342,9 @@ pkg_setup() {
 		need_java="1"
 	fi
 
-	# direct deps: ide, webcommon
+	# direct deps: harness, ide
 	if use netbeans_modules_ruby ; then
-		need_ide="1"
-		need_webcommon="1"
-	fi
-
-	# direct deps: ide
-	if use netbeans_modules_webcommon ; then
+		need_harness="1"
 		need_ide="1"
 	fi
 
@@ -347,25 +355,26 @@ pkg_setup() {
 
 	# currently we require all clusters when building javadoc, can be tested
 	# what clusters are really needed to build javadoc
-	if use doc ; then
-		need_apisupport="1"
-		need_cnd="1"
-		need_dlight="1"
-		need_enterprise="1"
-		need_ergonomics="1"
-		need_groovy="1"
-		need_harness="1"
-		need_ide="1"
-		need_identity="1"
-		need_java="1"
-		need_mobility="1"
-		need_nb="1"
-		need_php="1"
-		need_profiler="1"
-		need_ruby="1"
-		need_webcommon="1"
-		need_websvccommon="1"
-	fi
+	# disabled for now as building javadoc now fails with providing clusters
+	# so trying to drop this requirement
+	#if use doc ; then
+	#	need_apisupport="1"
+	#	need_cnd="1"
+	#	need_dlight="1"
+	#	need_enterprise="1"
+	#	need_ergonomics="1"
+	#	need_groovy="1"
+	#	need_harness="1"
+	#	need_ide="1"
+	#	need_identity="1"
+	#	need_java="1"
+	#	need_mobility="1"
+	#	need_nb="1"
+	#	need_php="1"
+	#	need_profiler="1"
+	#	need_ruby="1"
+	#	need_websvccommon="1"
+	#fi
 
 	if [ -n "${need_apisupport}" ] ; then
 		need_harness="1"
@@ -381,7 +390,6 @@ pkg_setup() {
 		need_ide="1"
 		need_java="1"
 		need_profiler="1"
-		need_webcommon="1"
 	fi
 
 	if [ -n "${need_groovy}" ] ; then
@@ -401,10 +409,6 @@ pkg_setup() {
 
 	if [ -n "${need_nb}" ] ; then
 		need_harness="1"
-		need_ide="1"
-	fi
-
-	if [ -n "${need_webcommon}" ] ; then
 		need_ide="1"
 	fi
 
@@ -428,12 +432,11 @@ pkg_setup() {
 	[ -n "${need_php}" ] && ! use netbeans_modules_php && missing="${missing} php"
 	[ -n "${need_profiler}" ] && ! use netbeans_modules_profiler && missing="${missing} profiler"
 	[ -n "${need_ruby}" ] && ! use netbeans_modules_ruby && missing="${missing} ruby"
-	[ -n "${need_webcommon}" ] && ! use netbeans_modules_webcommon && missing="${missing} webcommon"
 	[ -n "${need_websvccommon}" ] && ! use netbeans_modules_websvccommon && missing="${missing} websvccommon"
 
 	if [ -n "${missing}" ] ; then
 		eerror "You need to add these modules to NETBEANS_MODULES because they are needed by modules you have selected."
-		use doc && eerror "With \"doc\" USE flag enabled, all modules are required."
+		# use doc && eerror "With \"doc\" USE flag enabled, all modules are required."
 		eerror "   Missing NETBEANS_MODULES:${missing}"
 		die "Missing NETBEANS_MODULES"
 	fi
@@ -452,9 +455,21 @@ src_prepare () {
 	epatch "${FILESDIR}"/${SLOT}/nbbuild_build.xml.patch \
 		"${FILESDIR}"/${SLOT}/nbbuild_templates_projectized.xml.patch
 
+	if use keychain ; then
+		epatch "${FILESDIR}"/${SLOT}/netbeans-keychain.patch
+	fi
+
+	if [ -z "${JAVA_PKG_NB_TRY_JRUBY}" ] ; then
+		epatch "${FILESDIR}"/${SLOT}/o.jruby.distro_disable.patch
+	fi
+
 	# Clean up nbbuild
 	einfo "Removing prebuilt *.class files from nbbuild"
-	find "${S}" -name "*.class" | xargs rm -v
+	local class_files=`find "${S}" -name "*.class"`
+
+	if [ -n "${class_files}" ] ; then
+		rm -v ${class_files}
+	fi
 
 	if [ -z "${JAVA_PKG_NB_USE_BUNDLED}" ] ; then
 		place_unpack_symlinks
@@ -469,79 +484,106 @@ src_prepare () {
 		einfo "Removing rest of the bundled jars..."
 		find "${S}" -type f -name "*.jar" > ${tmpfile} || die "Cannot put jars in tmp file"
 
+		filter_file "libs.felix/external/felix-2.0.3.jar" ${tmpfile}
+		filter_file "libs.felix/external/felix-main-2.0.2.jar" ${tmpfile}
+		filter_file "libs.junit4/external/junit-4.5.jar" ${tmpfile}
+		filter_file "libs.osgi/external/osgi.cmpn-4.2.jar" ${tmpfile}
+		filter_file "libs.osgi/external/osgi.core-4.2.jar" ${tmpfile}
+
+		if use netbeans_modules_cnd ; then
+			filter_file "cnd.antlr3/external/antlr-3.1.3.jar" ${tmpfile}
+			filter_file "cnd.antlr3/external/antlr-runtime-3.1.3.jar" ${tmpfile}
+		fi
+
 		if use netbeans_modules_dlight ; then
-			filter_file "dlight.db.h2/external/h2-1.0.79.jar" ${tmpfile}
-			filter_file "dlight.derby.support/external/derby-10.2.2.0.jar" ${tmpfile}
+			filter_file "dlight.db.derby/external/derby-10.2.2.0.jar" ${tmpfile}
+			filter_file "dlight.libs.h2/external/h2-1.0.79.jar" ${tmpfile}
 		fi
 
 		if use netbeans_modules_enterprise ; then
+			filter_file "javaee.api/external/javaee-api-6.0.jar" ${tmpfile}
+			filter_file "javaee.api/external/javaee-web-api-6.0.jar" ${tmpfile}
+			filter_file "javaee.api/external/javax.annotation.jar" ${tmpfile}
+			filter_file "javaee.api/external/jaxb-api-osgi.jar" ${tmpfile}
+			filter_file "javaee.api/external/webservices-api-osgi.jar" ${tmpfile}
 			filter_file "j2ee.sun.appsrv81/external/appservapis-2.0.58.3.jar" ${tmpfile}
 			filter_file "j2ee.sun.appsrv81/external/org-netbeans-modules-j2ee-sun-appsrv81.jar" ${tmpfile}
 			filter_file "libs.glassfish_logging/external/glassfish-logging-2.0.jar" ${tmpfile}
 			# http://www.netbeans.org/issues/show_bug.cgi?id=164334
 			filter_file "servletjspapi/external/servlet2.5-jsp2.1-api.jar" ${tmpfile}
-			filter_file "spring.webmvc/external/spring-webmvc-2.5.jar" ${tmpfile}
+			filter_file "spring.webmvc/external/spring-webmvc-2.5.6.SEC01.jar" ${tmpfile}
 			filter_file "web.jspparser/external/glassfish-jspparser-2.0.jar" ${tmpfile}
 			# api documentation packaged as jar
-			filter_file "websvc.restlib/external/jersey-api-doc.jar" ${tmpfile}
-			# api documentation packaged as jar
-			filter_file "websvc.restlib/external/jsr311-api-doc.jar" ${tmpfile}
+			filter_file "websvc.restlib/external/jersey-client-1.1.5.1-javadoc.jar" ${tmpfile}
+			filter_file "websvc.restlib/external/jersey-core-1.1.5.1-javadoc.jar" ${tmpfile}
+			filter_file "websvc.restlib/external/jersey-json-1.1.5.1-javadoc.jar" ${tmpfile}
+			filter_file "websvc.restlib/external/jersey-spring-1.1.5.1-javadoc.jar" ${tmpfile}
+			filter_file "websvc.restlib/external/jsr311-api-1.1.1-javadoc.jar" ${tmpfile}
+			filter_file "websvc.restlib/external/oauth-client-1.1.5.1-javadoc.jar" ${tmpfile}
+			filter_file "websvc.restlib/external/oauth-signature-1.1.5.1-javadoc.jar" ${tmpfile}
 		fi
 
 		if use netbeans_modules_groovy ; then
 			# heavily repackaged
-			filter_file "groovy.editor/external/groovy-all-1.5.7.jar" ${tmpfile}
+			filter_file "groovy.editor/external/groovy-all-1.6.4.jar" ${tmpfile}
 		fi
 
 		if use netbeans_modules_harness ; then
-			filter_file "apisupport.harness/external/cobertura-1.9.jar" ${tmpfile}
-			filter_file "apisupport.harness/external/openjdk-javac-6-b12.jar" ${tmpfile}
+			filter_file "apisupport.harness/external/bindex-2.2.jar" ${tmpfile}
+			filter_file "apisupport.tc.cobertura/external/cobertura-1.9.3.jar" ${tmpfile}
 			filter_file "jemmy/external/jemmy-2.3.0.0.jar" ${tmpfile}
 		fi
 
 		if use netbeans_modules_ide ; then
+			filter_file "extexecution.destroy/external/libpam4j-1.1.jar" ${tmpfile}
+			# org.netbeans.processtreekiller package
+			filter_file "extexecution.destroy/external/processtreekiller-1.0.1.jar" ${tmpfile}
+			filter_file "extexecution.destroy/external/winp-1.14-patched.jar" ${tmpfile}
 			# very old stuff
 			filter_file "httpserver/external/tomcat-webserver-3.2.jar" ${tmpfile}
-			filter_file "libs.bugtracking/external/org.eclipse.mylyn.commons.core_3.1.1.jar" ${tmpfile}
-			filter_file "libs.bugtracking/external/org.eclipse.mylyn.commons.net_3.1.1.jar" ${tmpfile}
-			filter_file "libs.bugtracking/external/org.eclipse.mylyn.tasks.core_3.1.1.jar" ${tmpfile}
-			filter_file "libs.bugzilla/external/org.eclipse.mylyn.bugzilla.core_3.1.1.jar" ${tmpfile}
+			filter_file "libs.bugtracking/external/org.eclipse.mylyn.commons.core_3.3.1.jar" ${tmpfile}
+			filter_file "libs.bugtracking/external/org.eclipse.mylyn.commons.net_3.3.0.jar" ${tmpfile}
+			filter_file "libs.bugtracking/external/org.eclipse.mylyn.tasks.core_3.3.1.jar" ${tmpfile}
+			filter_file "libs.bugzilla/external/org.eclipse.mylyn.bugzilla.core_3.3.1.jar" ${tmpfile}
 			filter_file "libs.bytelist/external/bytelist-0.1.jar" ${tmpfile}
 			filter_file "libs.ini4j/external/ini4j-0.4.1.jar" ${tmpfile}
 			filter_file "libs.svnClientAdapter/external/svnClientAdapter-1.6.0.jar" ${tmpfile}
 			filter_file "libs.swingx/external/swingx-0.9.5.jar" ${tmpfile}
 			filter_file "libs.smack/external/smack.jar" ${tmpfile}
 			filter_file "libs.smack/external/smackx.jar" ${tmpfile}
-			# packaged in a different way than we do
+			# packaged in a different way than we do (also netbeans seems to require JAXB 2.2)
 			filter_file "libs.jaxb/external/jaxb-impl.jar" ${tmpfile}
+			filter_file "libs.jaxb/external/jaxb1-impl.jar" ${tmpfile}
 			# packaged in a different way than we do
 			filter_file "libs.jaxb/external/jaxb-xjc.jar" ${tmpfile}
 			# patched version of apache resolver
 			filter_file "o.apache.xml.resolver/external/resolver-1.2.jar" ${tmpfile}
+			filter_file "swing.validation/external/ValidationAPI.jar" ${tmpfile}
 			# system core-renderer.jar causes deadlocks (in logging) when openning css files
 			filter_file "web.flyingsaucer/external/core-renderer-R7final.jar" ${tmpfile}
+			filter_file "xml.jaxb.api/external/jaxb-api.jar" ${tmpfile}
 		fi
 
 		if use netbeans_modules_java ; then
+			filter_file "j2ee.eclipselink/external/eclipselink-2.0.2.jar" ${tmpfile}
+			filter_file "j2ee.eclipselink/external/eclipselink-javax.persistence-2.0.jar" ${tmpfile}
 			# netbeans bundles also toplink-essentials in the jar
 			filter_file "j2ee.toplinklib/external/glassfish-persistence-v2ur1-build-09d.jar" ${tmpfile}
-			# some patch
-			filter_file "junit/external/Ant-1.7.1-binary-patch-72080.jar" ${tmpfile}
+			# a patch
+			filter_file "junit/external/Ant-1.8.0-binary-patch-72080.jar" ${tmpfile}
 			# junit sources
 			filter_file "junit/external/junit-4.5-src.jar" ${tmpfile}
 			# some netbeans stuff
 			filter_file "libs.javacapi/external/javac-api-nb-7.0-b07.jar" ${tmpfile}
 			# some netbeans stuff
 			filter_file "libs.javacimpl/external/javac-impl-nb-7.0-b07.jar" ${tmpfile}
-			filter_file "libs.springframework/external/spring-2.5.jar" ${tmpfile}
+			filter_file "libs.springframework/external/spring-2.5.6.SEC01.jar" ${tmpfile}
 			# maven stuff - ignoring for now
 			filter_file "maven.embedder/external/maven-dependency-tree-1.2.jar" ${tmpfile}
 			# maven stuff - ignoring for now
 			filter_file "maven.embedder/external/maven-embedder-2.1-20080623-patched.jar" ${tmpfile}
 			# maven stuff - ignoring for now
 			filter_file "maven.indexer/external/nexus-indexer-2.0.0-shaded.jar" ${tmpfile}
-			filter_file "swingapp/external/appframework-1.0.3.jar" ${tmpfile}
-			filter_file "swingapp/external/swing-worker-1.1.jar" ${tmpfile}
 		fi
 
 		if use netbeans_modules_mobility ; then
@@ -581,12 +623,13 @@ src_prepare () {
 }
 
 src_compile() {
-	local antflags="-Dstop.when.broken.modules=true -Dpermit.jdk6.builds=true"
+	local antflags="-Dstop.when.broken.modules=true"
 
 	if use debug; then
 		antflags="${antflags} -Dbuild.compiler.debug=true"
 		antflags="${antflags} -Dbuild.compiler.deprecation=true"
 	else
+		antflags="${antflags} -Dbuild.compiler.debug=false"
 		antflags="${antflags} -Dbuild.compiler.deprecation=false"
 	fi
 
@@ -605,30 +648,42 @@ src_compile() {
 		mkdir -p "${BUILDDESTINATION}" || die
 	fi
 
-	# Fails to compile
-	java-pkg_filter-compiler ecj-3.2 ecj-3.3 ecj-3.4
-
-	# Build the clusters
-	local heap=""
-	if use doc ; then
-		heap="-Xmx1536m"
-	else
-		heap="-Xmx1g"
+	local extra_flags=""
+	if use netbeans_modules_ergonomics ; then
+		mkdir "${S}"/nbbuild/ergonomics_build_fix || die
+		extra_flags="-Dergonomic.clusters.extra=../../ergonomics_build_fix"
 	fi
 
-	ANT_TASKS="ant-nodeps ant-trax" ANT_OPTS="${heap} -Djava.awt.headless=true" \
-		eant ${antflags} ${clusters} -f nbbuild/build.xml ${build_target} $(use_doc build-javadoc)
+	# Fails to compile
+	java-pkg_filter-compiler ecj-3.2 ecj-3.3 ecj-3.4 ecj-3.5
+
+	ANT_TASKS="ant-nodeps ant-trax" ANT_OPTS="-Xmx1g -Djava.awt.headless=true" \
+		eant ${antflags} ${clusters} -f nbbuild/build.xml ${extra_flags} ${build_target}
+
+	if use doc ; then
+		ANT_TASKS="ant-nodeps ant-trax" ANT_OPTS="-Xmx1536m -Djava.awt.headless=true" \
+			eant ${antflags} -f nbbuild/build.xml ${extra_flags} build-javadoc
+	fi
 
 	local locales=""
 	for lang in ${IUSE_LINGUAS} ; do
 		local mylang=${lang/linguas_/}
-		if use ${lang} ; then
-			if [ "${mylang}" = "gl" ] ; then
-				mylang="gl_ES"
-			elif [ "${mylang}" = "id" ] ; then
-				mylang="in_ID"
-			fi
 
+		if [[ "${mylang}" = "ar" ]] ; then
+			mylang="ar_EG,ar_SA"
+		elif [[ "${mylang}" = "es" ]] ; then
+			mylang="es,es_CO"
+		elif [[ "${mylang}" = "gl" ]] ; then
+			mylang="gl_ES"
+		elif [[ "${mylang}" = "id" ]] ; then
+			mylang="in_ID"
+		elif [[ "${mylang}" = "nl" ]] ; then
+			mylang="nl_BE,nl_NL"
+		elif [[ "${mylang}" = "tl" ]] ; then
+			mylang="fil_PH"
+		fi
+
+		if use ${lang} ; then
 			if [ -z "${locales}" ] ; then
 				locales="${mylang}"
 			else
@@ -653,21 +708,16 @@ src_compile() {
 		| grep -v "/profiler3/" | xargs rm -fv
 
 	if use netbeans_modules_cnd ; then
-		rm -fv "${BUILDDESTINATION}"/cnd2/bin/*-SunOS-*
-		rm -fv "${BUILDDESTINATION}"/cnd2/bin/*-Mac_OS_X-*
+		rm -fv "${BUILDDESTINATION}"/cnd/bin/*-SunOS-*
+		rm -fv "${BUILDDESTINATION}"/cnd/bin/*-Mac_OS_X-*
 	fi
-
-	# Removing external stuff. They are api docs from external libs.
-	rm -f "${BUILDDESTINATION}"/ide${IDE_VERSION}/docs/*.zip
-
-	# Remove zip files from generated javadocs.
-	rm -f "${BUILDDESTINATION}"/javadoc/*.zip
 
 	# Use the system ant
 	if use netbeans_modules_java ; then
-		cd "${BUILDDESTINATION}"/java2/ant || die "Cannot cd to "${BUILDDESTINATION}"/java2/ant"
+		cd "${BUILDDESTINATION}"/java/ant || die "Cannot cd to "${BUILDDESTINATION}"/java/ant"
 		rm -fr lib
 		rm -fr bin
+		rm -fr etc
 	fi
 
 	# Set initial default jdk
@@ -677,13 +727,13 @@ src_compile() {
 
 	# Install Gentoo Netbeans ID
 	# This ID is used to identify our netbeans package while contacting update center
-	mkdir -p  "${BUILDDESTINATION}"/nb${SLOT}/config || die
-	echo "NBGNT" > "${BUILDDESTINATION}"/nb${SLOT}/config/productid || die "Could not set Gentoo Netbeans ID"
+	mkdir -p  "${BUILDDESTINATION}"/nb/config || die
+	echo "NBGNT" > "${BUILDDESTINATION}"/nb/config/productid || die "Could not set Gentoo Netbeans ID"
 
 	# fix paths per bug# 163483
 	if [[ -e "${BUILDDESTINATION}"/bin/netbeans ]]; then
-		sed -i -e 's:"$progdir"/../etc/:/etc/netbeans-6.7/:' "${BUILDDESTINATION}"/bin/netbeans
-		sed -i -e 's:"${userdir}"/etc/:/etc/netbeans-6.7/:' "${BUILDDESTINATION}"/bin/netbeans
+		sed -i -e 's:"$progdir"/../etc/:/etc/netbeans-6.9/:' "${BUILDDESTINATION}"/bin/netbeans
+		sed -i -e 's:"${userdir}"/etc/:/etc/netbeans-6.9/:' "${BUILDDESTINATION}"/bin/netbeans
 	fi
 }
 
@@ -721,43 +771,49 @@ src_install() {
 		fperms 755 "${DESTINATION}/bin/netbeans" || die
 	fi
 	if use netbeans_modules_cnd ; then
-		cd "${D}"/${DESTINATION}/cnd2/bin || die
+		cd "${D}"/${DESTINATION}/cnd/bin || die
 		for file in *.sh ; do
 			fperms 755 ${file} || die
 		done
-		for file in *.so ; do
+		for file in `find -name "*.so"` ; do
 			fperms 755 ${file} || die
 		done
 	fi
-	if use netbeans_modules_dlight ; then
-		cd "${D}"/${DESTINATION}/dlight1/bin/nativeexecution || die
+	if use netbeans_modules_ide ; then
+		cd "${D}"/${DESTINATION}/ide/bin/nativeexecution || die
 		fperms 755 dorun.sh || die
 	fi
 	if use netbeans_modules_profiler ; then
-		cd "${D}"/${DESTINATION}/profiler3/remote-pack-defs || die
+		cd "${D}"/${DESTINATION}/profiler/remote-pack-defs || die
 		for file in *.sh ; do
 			fperms 755 ${file} || die
 		done
 	fi
-	if use netbeans_modules_ruby ; then
-		cd "${D}"/${DESTINATION}/ruby2/jruby-1.2.0/bin || die
-		for file in * ; do
-			fperms 755 ${file} || die
-		done
+
+	# DISABLED FOR NOW BECAUSE BUILDING BUNDLED JRUBY FAILS
+	# see: http://netbeans.org/bugzilla/show_bug.cgi?id=186736
+	if [ -n "${JAVA_PKG_NB_TRY_JRUBY}" ] ; then
+		if use netbeans_modules_ruby ; then
+			cd "${D}"/${DESTINATION}/ruby/jruby-1.5.0/bin || die
+			for file in * ; do
+				fperms 755 ${file} || die
+			done
+		fi
 	fi
 
 	# Link netbeans executable from bin
 	if [[ -f "${D}"/${DESTINATION}/bin/netbeans ]]; then
 		dosym ${DESTINATION}/bin/netbeans /usr/bin/${PN}-${SLOT}
 	else
-		dosym ${DESTINATION}/platform7/lib/nbexec /usr/bin/${PN}-${SLOT}
+		dosym ${DESTINATION}/platform/lib/nbexec /usr/bin/${PN}-${SLOT}
 	fi
 
 	# Ant installation
 	if use netbeans_modules_java ; then
-		local ANTDIR="${DESTINATION}/java2/ant"
+		local ANTDIR="${DESTINATION}/java/ant"
 		dosym /usr/share/ant/lib ${ANTDIR}/lib
 		dosym /usr/share/ant-core/bin ${ANTDIR}/bin
+		dosym /usr/share/ant-core/etc ${ANTDIR}/etc
 	fi
 
 	# Documentation
@@ -776,7 +832,10 @@ src_install() {
 	if use netbeans_modules_nb ; then
 		einfo "Installing icon..."
 		dodir /usr/share/icons/hicolor/32x32/apps
-		dosym ${DESTINATION}/nb${SLOT}/netbeans.png /usr/share/icons/hicolor/32x32/apps/netbeans-${SLOT}.png
+		dosym ${DESTINATION}/nb/netbeans.png /usr/share/icons/hicolor/32x32/apps/netbeans-${SLOT}.png
+		dodir /usr/share/icons/hicolor/128x128/apps
+		cp "${FILESDIR}"/${SLOT}/netbeans.png "${D}"/usr/share/icons/hicolor/128x128/apps/netbeans-${SLOT}.png
+		dosym /usr/share/icons/hicolor/128x128/apps/netbeans-${SLOT}.png /usr/share/pixmaps/netbeans-${SLOT}.png
 	fi
 
 	make_desktop_entry netbeans-${SLOT} "Netbeans ${SLOT}" netbeans-${SLOT} Development
@@ -790,6 +849,57 @@ pkg_postinst() {
 		einfo "${PN}-${SLOT} --locale de"
 		einfo "${PN}-${SLOT} --locale pt:BR"
 	fi
+
+	if use linguas_ar ; then
+		einfo
+		einfo "You selected Arabic locale so you can choose either ar:EG or ar:SA variant."
+	fi
+
+	if use linguas_es ; then
+		einfo
+		einfo "You selected Spanish locale so you can choose either es or es:CO variant."
+	fi
+
+	if use linguas_gl ; then
+		einfo
+		einfo "You selected Galician locale which has locale code gl:ES in Netbeans."
+	fi
+
+	if use linguas_id ; then
+		einfo
+		einfo "You selected Indonesian locale which has locale code in:ID in Netbeans."
+	fi
+
+	if use linguas_nl ; then
+		einfo
+		einfo "You selected Dutch locale so you can choose either nl:BE or nl:NL variant."
+	fi
+
+	if use linguas_tl ; then
+		einfo
+		einfo "You selected Tagalog locale which has for Filipino locale code fil:PH in Netbeans."
+	fi
+
+	if use netbeans_modules_ruby ; then
+		einfo
+		ewarn "Due to issue with building jruby-1.5.0, bundled jruby is completely removed from"
+		ewarn "build, and also Glassfish JRuby module is removed. Nevertheless you should be able"
+		ewarn "to use Gentoo JRuby package with Netbeans without any problems."
+	fi
+
+	if use keychain ; then
+		einfo
+		einfo "You enabled keychain support, that means NetBeans will use keychain for managing"
+		einfo "your keys while connecting to ssh protected repositories. If you want to load some"
+		einfo "keys on NetBeans startup, create file keychain-keys.txt in your userdir"
+		einfo "(~/.netbeans/${SLOT}/keychain-keys.txt) and put names of your keys in the file,"
+		einfo "each key on single line, for example:"
+		einfo "id_dsa"
+		einfo "id_dsa_gentoo"
+		einfo "If on NetBeans startup key will not be handled by keychain yet, you will be asked"
+		einfo "for key password (only this time and never again). You can find more information"
+		einfo "about keychain at http://www.gentoo.org/doc/en/keychain-guide.xml"
+	fi
 }
 
 # Supporting functions for this ebuild
@@ -801,10 +911,12 @@ place_unpack_symlinks() {
 
 	dosymcompilejar "apisupport.harness/external" javahelp jhall.jar jsearch-2.0_05.jar
 	dosymcompilejar "javahelp/external" javahelp jh.jar jh-2.0_05.jar
-	dosymcompilejar "o.jdesktop.layout/external" swing-layout-1 swing-layout.jar swing-layout-1.0.3.jar
+	dosymcompilejar "o.jdesktop.layout/external" swing-layout-1 swing-layout.jar swing-layout-1.0.4.jar
 	dosymcompilejar "libs.jna/external" jna jna.jar jna-3.0.9.jar
-	dosymcompilejar "libs.jsr223/external" jsr223 script-api.jar jsr223-api.jar
-	dosymcompilejar "libs.junit4/external" junit-4 junit.jar junit-4.5.jar
+
+	if use netbeans_modules_cnd ; then
+		dosymcompilejar "cnd.antlr3/external" stringtemplate stringtemplate.jar stringtemplate-3.2.jar
+	fi
 
 	if use netbeans_modules_enterprise ; then
 		dosymcompilejar "j2eeapis/external" glassfish-deployment-api-1.2 glassfish-deployment-api.jar jsr88javax.jar
@@ -816,21 +928,23 @@ place_unpack_symlinks() {
 	fi
 
 	if use netbeans_modules_harness ; then
-		dosymcompilejar "apisupport.harness/external" asm-2.2 asm.jar asm-2.2.1.jar
-		dosymcompilejar "apisupport.harness/external" asm-2.2 asm-tree.jar asm-tree-2.2.1.jar
-		dosymcompilejar "apisupport.harness/external" jakarta-oro-2.0 jakarta-oro.jar jakarta-oro-2.0.8.jar
-		dosymcompilejar "apisupport.harness/external" log4j log4j.jar log4j-1.2.9.jar
+		dosymcompilejar "apisupport.tc.cobertura/external" asm-3 asm.jar asm-3.0.jar
+		dosymcompilejar "apisupport.tc.cobertura/external" asm-3 asm-tree.jar asm-tree-3.0.jar
+		dosymcompilejar "apisupport.tc.cobertura/external" jakarta-oro-2.0 jakarta-oro.jar jakarta-oro-2.0.8.jar
+		dosymcompilejar "apisupport.tc.cobertura/external" log4j log4j.jar log4j-1.2.9.jar
 	fi
 
 	if use netbeans_modules_ide ; then
+		dosymcompilejar "extexecution.destroy/external" commons-io-1 commons-io.jar commons-io-1.4.jar
 		dosymcompilejar "libs.commons_codec/external" commons-codec commons-codec.jar apache-commons-codec-1.3.jar
 		dosymcompilejar "libs.commons_logging/external" commons-logging commons-logging.jar commons-logging-1.1.jar
 		dosymcompilejar "libs.bugtracking/external" commons-httpclient-3 commons-httpclient.jar commons-httpclient-3.1.jar
 		dosymcompilejar "libs.bugtracking/external" commons-lang-2.1 commons-lang.jar commons-lang-2.3.jar
 		dosymcompilejar "libs.jsch/external" jsch jsch.jar jsch-0.1.41.jar
 		dosymcompilejar "libs.jvyamlb/external" jvyamlb jvyamlb.jar jvyamlb-0.2.3.jar
+		dosymcompilejar "libs.jzlib/external" jzlib jzlib.jar jzlib-1.0.7.jar
 		dosymcompilejar "libs.svnClientAdapter/external" subversion svn-javahl.jar svnjavahl-1.6.0.jar
-		dosymcompilejar "libs.lucene/external" lucene-2.4 lucene-core.jar lucene-core-2.3.2.jar
+		dosymcompilejar "libs.lucene/external" lucene-2.4 lucene-core.jar lucene-core-2.4.1.jar
 		dosymcompilejar "css.visual/external" sac sac.jar sac-1.3.jar
 		dosymcompilejar "css.visual/external" flute flute.jar flute-1.3.jar
 		dosymcompilejar "db.drivers/external" jdbc-mysql jdbc-mysql.jar mysql-connector-java-5.1.6-bin.jar
@@ -841,9 +955,8 @@ place_unpack_symlinks() {
 		dosymcompilejar "libs.jakarta_oro/external" jakarta-oro-2.0 jakarta-oro.jar jakarta-oro-2.0.8.jar
 		dosymcompilejar "libs.commons_net/external" commons-net commons-net.jar commons-net-1.4.1.jar
 		dosymcompilejar "libs.freemarker/external" freemarker-2.3 freemarker.jar freemarker-2.3.8.jar
-		dosymcompilejar "libs.jaxb/external" jaxb-2 jaxb-api.jar jaxb-api.jar
-		dosymcompilejar "libs.jaxb/external" jsr173 jsr173.jar jsr173_api.jar
-		dosymcompilejar "libs.jaxb/external" sun-jaf activation.jar activation.jar
+		dosymcompilejar "xml.jaxb.api/external" jsr173 jsr173.jar jsr173_api.jar
+		dosymcompilejar "xml.jaxb.api/external" sun-jaf activation.jar activation.jar
 	fi
 
 	if use netbeans_modules_java ; then
@@ -851,6 +964,8 @@ place_unpack_symlinks() {
 		dosymcompilejar "maven.embedder/external" jdom-1.0 jdom.jar jdom-1.0.jar
 		dosymcompilejar "junit/external" junit junit.jar junit-3.8.2.jar
 		dosymcompilejar "libs.cglib/external" cglib-2.2 cglib.jar cglib-2.2.jar
+		dosymcompilejar "swingapp/external" appframework appframework.jar appframework-1.0.3.jar
+		dosymcompilejar "swingapp/external" swing-worker swing-worker.jar swing-worker-1.1.jar
 	fi
 
 	if use netbeans_modules_mobility ; then
@@ -860,7 +975,7 @@ place_unpack_symlinks() {
 		dosymcompilejar "mobility.deployment.webdav/external" commons-httpclient-3 commons-httpclient.jar commons-httpclient-3.0.1.jar
 		dosymcompilejar "mobility.deployment.webdav/external" jdom-1.0 jdom.jar jdom-1.0.jar
 		dosymcompilejar "mobility.deployment.webdav/external" jakarta-slide-webdavclient jakarta-slide-webdavlib.jar jakarta-slide-webdavlib-2.1.jar
-		dosymcompilejar "mobility.proguard/external" proguard proguard.jar proguard4.2.jar
+		dosymcompilejar "mobility.proguard/external" proguard proguard.jar proguard4.4.jar
 	fi
 
 	if use netbeans_modules_php ; then
@@ -881,21 +996,19 @@ symlink_extjars() {
 
 	einfo "Symlinking runtime jars"
 
-	targetdir="platform${PLATFORM}/modules/ext"
+	targetdir="platform/modules/ext"
 	dosyminstjar ${targetdir} javahelp jh.jar jh-2.0_05.jar
 	dosyminstjar ${targetdir} jna jna.jar jna-3.0.9.jar
-	dosyminstjar ${targetdir} jsr223 script-api.jar script-api.jar
-	dosyminstjar ${targetdir} junit-4 junit.jar junit-4.5.jar
-	dosyminstjar ${targetdir} swing-layout-1 swing-layout.jar swing-layout-1.0.3.jar
+	dosyminstjar ${targetdir} swing-layout-1 swing-layout.jar swing-layout-1.0.4.jar
 
 	if use netbeans_modules_dlight ; then
-		targetdir="dlight1/modules/ext"
+		targetdir="dlight/modules/ext"
 		# derby-10.2.2.0.jar
 		# h2-1.0.79.jar
 	fi
 
 	if use netbeans_modules_enterprise ; then
-		targetdir="/enterprise5/modules/ext"
+		targetdir="/enterprise/modules/ext"
 		dosyminstjar ${targetdir} commons-fileupload commons-fileupload.jar commons-fileupload-1.0.jar
 		# glassfish-jspparser-2.0.jar
 		# glassfish-logging-2.0.jar
@@ -904,16 +1017,16 @@ symlink_extjars() {
 		dosyminstjar ${targetdir} jakarta-jstl standard.jar standard.jar
 		dosyminstjar ${targetdir} glassfish-deployment-api-1.2 glassfish-deployment-api.jar jsr88javax.jar
 		# servlet2.5-jsp2.1-api.jar
-		targetdir="enterprise5/modules/ext/spring"
+		targetdir="enterprise/modules/ext/spring"
 		# spring-webmvc-2.5.jar
-		targetdir="enterprise5/modules/ext/jsf-1_2"
+		targetdir="enterprise/modules/ext/jsf-1_2"
 		dosyminstjar ${targetdir} commons-beanutils-1.7 commons-beanutils.jar commons-beanutils.jar
 		dosyminstjar ${targetdir} commons-collections commons-collections.jar commons-collections.jar
 		dosyminstjar ${targetdir} commons-digester commons-digester.jar commons-digester.jar
 		dosyminstjar ${targetdir} commons-logging commons-logging.jar commons-logging.jar
 		# jsf-api.jar
 		# jsf-impl.jar
-		targetdir="enterprise5/modules/ext/struts"
+		targetdir="enterprise/modules/ext/struts"
 		dosyminstjar ${targetdir} antlr antlr.jar antlr-2.7.2.jar
 		dosyminstjar ${targetdir} bsf-2.3 bsf.jar bsf-2.3.0.jar
 		dosyminstjar ${targetdir} commons-beanutils-1.7 commons-beanutils.jar commons-beanutils-1.7.0.jar
@@ -934,22 +1047,20 @@ symlink_extjars() {
 		# struts-scripting-1.3.8.jar
 		# struts-taglib-1.3.8.jar
 		# struts-tiles-1.3.8.jar
-		targetdir="enterprise5/modules/ext/metro"
+		targetdir="enterprise/modules/ext/metro"
 		# webservices-api.jar
 		# webservices-extra.jar
 		# webservices-extra-api.jar
 		# webservices-rt.jar
 		# webservices-tools.jar
-		targetdir="/enterprise5/modules/ext/rest"
+		targetdir="/enterprise/modules/ext/rest"
 		dosyminstjar ${targetdir} asm-3 asm.jar asm-3.1.jar
 		# grizzly-servlet-webserver-1.7.3.2.jar
 		# http.jar - com.sun.net.httpserver - part of JavaSE 6
-		dosyminstjar ${targetdir} jdom-1.0 jdom.jar jdom-1.0.jar
 		# jersey.jar
 		# jersey-spring.jar
-		dosyminstjar ${targetdir} jettison jettison.jar jettison-1.0-RC1.jar
-		dosyminstjar ${targetdir} jsr311-api jsr311-api.jar jsr311-api.jar
-		dosyminstjar ${targetdir} rome rome.jar rome-0.9.jar
+		dosyminstjar ${targetdir} jettison jettison.jar jettison-1.1.jar
+		dosyminstjar ${targetdir} jsr311-api jsr311-api.jar jsr311-api-1.1.1.jar
 		# wadl2java.jar - atm do not know what to do with it
 	fi
 
@@ -964,17 +1075,18 @@ symlink_extjars() {
 		targetdir="harness/testcoverage/cobertura"
 		# cobertura-1.9.jar
 		targetdir="harness/testcoverage/cobertura/lib"
-		dosyminstjar ${targetdir} asm-2.2 asm.jar asm-2.2.1.jar
-		dosyminstjar ${targetdir} asm-2.2 asm-tree.jar asm-tree-2.2.1.jar
+		dosyminstjar ${targetdir} asm-3 asm.jar asm-3.0.jar
+		dosyminstjar ${targetdir} asm-3 asm-tree.jar asm-tree-3.0.jar
 		dosyminstjar ${targetdir} jakarta-oro-2.0 jakarta-oro.jar jakarta-oro-2.0.8.jar
 		dosyminstjar ${targetdir} log4j log4j.jar log4j-1.2.9.jar
 	fi
 
 	if use netbeans_modules_ide ; then
-		targetdir="ide${IDE_VERSION}/modules/ext"
+		targetdir="ide/modules/ext"
 		# bytelist-0.1.jar
 		dosyminstjar ${targetdir} commons-codec commons-codec.jar apache-commons-codec-1.3.jar
 		dosyminstjar ${targetdir} commons-httpclient-3 commons-httpclient.jar commons-httpclient-3.1.jar
+		dosyminstjar ${targetdir} commons-io-1 commons-io.jar commons-io-1.4.jar
 		dosyminstjar ${targetdir} commons-lang-2.1 commons-lang.jar commons-lang-2.3.jar
 		dosyminstjar ${targetdir} commons-logging commons-logging.jar commons-logging-1.1.jar
 		dosyminstjar ${targetdir} commons-net commons-net.jar commons-net-1.4.1.jar
@@ -987,7 +1099,8 @@ symlink_extjars() {
 		dosyminstjar ${targetdir} jdbc-postgresql jdbc-postgresql.jar postgresql-8.3-603.jdbc3.jar
 		dosyminstjar ${targetdir} jsch jsch.jar jsch-0.1.41.jar
 		dosyminstjar ${targetdir} jvyamlb jvyamlb.jar jvyamlb-0.2.3.jar
-		dosyminstjar ${targetdir} lucene-2.4 lucene-core.jar lucene-core-2.3.2.jar
+		dosyminstjar ${targetdir} jzlib jzlib.jar jzlib-1.0.7.jar
+		dosyminstjar ${targetdir} lucene-2.4 lucene-core.jar lucene-core-2.4.1.jar
 		# org.eclipse.mylyn.bugzilla.core_3.0.5.jar
 		# org.eclipse.mylyn.commons.core_3.0.5.jar
 		# org.eclipse.mylyn.commons.net_3.0.5.jar
@@ -1003,26 +1116,24 @@ symlink_extjars() {
 		dosyminstjar ${targetdir} tomcat-servlet-api-2.2 servlet.jar servlet-2.2.jar
 		# webserver.jar
 		dosyminstjar ${targetdir} xerces-2 xercesImpl.jar xerces-2.8.0.jar
-		targetdir="ide${IDE_VERSION}/modules/ext/jaxb"
-		dosyminstjar ${targetdir} sun-jaf activation.jar activation.jar
 		# jaxb-impl.jar
 		# jaxb-xjc.jar
-		targetdir="ide${IDE_VERSION}/modules/ext/jaxb/api"
-		dosyminstjar ${targetdir} jaxb-2 jaxb-api.jar jaxb-api.jar
+		targetdir="ide/modules/ext/jaxb/api"
+		# jaxb-api.jar
 		dosyminstjar ${targetdir} jsr173 jsr173.jar jsr173_api.jar
+		targetdir="ide/modules/ext/jaxb"
+		dosyminstjar ${targetdir} sun-jaf activation.jar activation.jar
 	fi
 
 	if use netbeans_modules_java ; then
-		targetdir="java2/ant/etc"
-		dosyminstjar ${targetdir} ant ant-bootstrap.jar ant-bootstrap.jar
-		targetdir="java2/ant/nblib"
+		targetdir="java/ant/nblib"
 		# bridge.jar
-		targetdir="java2/ant/patches"
+		targetdir="java/ant/patches"
 		# 72080.jar
-		targetdir="java2/modules"
+		targetdir="java/modules"
 		# org-apache-tools-ant-module.jar
-		targetdir="java2/modules/ext"
-		# appframework-1.0.3.jar
+		targetdir="java/modules/ext"
+		dosyminstjar ${targetdir} appframework appframework.jar appframework-1.0.3.jar
 		dosyminstjar ${targetdir} beansbinding beansbinding.jar beansbinding-1.2.1.jar
 		dosyminstjar ${targetdir} cglib-2.2 cglib.jar cglib-2.2.jar
 		# javac-api-nb-7.0-b07.jar
@@ -1032,23 +1143,26 @@ symlink_extjars() {
 		# maven-embedder-2.1-20080623-patched.jar
 		# nexus-indexer-2.0.0-shaded.jar
 		dosyminstjar ${targetdir} junit junit.jar junit-3.8.2.jar
-		# swing-worker-1.1.jar
-		targetdir="java2/modules/ext/jaxws21"
+		dosyminstjar ${targetdir} swing-worker swing-worker.jar swing-worker-1.1.jar
+		targetdir="java/modules/ext/jaxws22"
 		dosyminstjar ${targetdir} fastinfoset fastinfoset.jar FastInfoset.jar
+		# gmbal-api-only.jar
 		# http.jar
 		# jaxws-rt.jar
 		# jaxws-tools.jar
+		# management-api.jar
 		# mimepull.jar - atm do not know what to do with it
+		# policy.jar
 		dosyminstjar ${targetdir} saaj saaj.jar saaj-impl.jar
-		dosyminstjar ${targetdir} sjsxp sjsxp.jar sjsxp.jar
 		dosyminstjar ${targetdir} stax-ex stax-ex.jar stax-ex.jar
 		dosyminstjar ${targetdir} xmlstreambuffer streambuffer.jar streambuffer.jar
-		targetdir="java2/modules/ext/jaxws21/api"
+		# woodstox.jar
+		targetdir="java/modules/ext/jaxws22/api"
 		# jaxws-api.jar
 		dosyminstjar ${targetdir} jsr250 jsr250.jar jsr250-api.jar
 		dosyminstjar ${targetdir} jsr67 jsr67.jar saaj-api.jar
 		dosyminstjar ${targetdir} jsr181 jsr181.jar jsr181-api.jar
-		targetdir="java2/modules/ext/hibernate"
+		targetdir="java/modules/ext/hibernate"
 		dosyminstjar ${targetdir} antlr antlr.jar antlr-2.7.6.jar
 		dosyminstjar ${targetdir} asm-2.2 asm.jar asm.jar
 		dosyminstjar ${targetdir} asm-2.2 asm-attrs.jar asm-attrs.jar
@@ -1066,15 +1180,15 @@ symlink_extjars() {
 		dosyminstjar ${targetdir} javassist-3 javassist.jar javassist.jar
 		# jdbc2_0-stdext.jar - obsolete package
 		dosyminstjar ${targetdir} jtidy Tidy.jar jtidy-r8-20060801.jar
-		targetdir="java2/modules/ext/spring"
+		targetdir="java/modules/ext/spring"
 		# spring-2.5.jar
-		targetdir="java2/modules/ext/toplink"
+		targetdir="java/modules/ext/toplink"
 		# toplink-essentials.jar
 		# toplink-essentials-agent.jar
 	fi
 
 	if use netbeans_modules_mobility ; then
-		targetdir="mobility8/modules/ext"
+		targetdir="mobility/modules/ext"
 		dosyminstjar ${targetdir} ant-contrib ant-contrib.jar ant-contrib-1.0b3.jar
 		# cdc-agui-swing-layout.jar - atm do not know what to do with it
 		# cdc-pp-awt-layout.jar - atm do not know what to do with it
@@ -1088,17 +1202,17 @@ symlink_extjars() {
 		# jmunit4cldc11-1.2.1.jar
 		# perseus-nb-1.0.jar
 		# RicohAntTasks-2.0.jar
-		targetdir="mobility8/external/proguard"
-		dosyminstjar ${targetdir} proguard proguard.jar proguard4.2.jar
+		targetdir="mobility/external/proguard"
+		dosyminstjar ${targetdir} proguard proguard.jar proguard4.4.jar
 	fi
 
 	if use netbeans_modules_php ; then
-		targetdir="php1/modules/ext"
+		targetdir="php/modules/ext"
 		dosyminstjar ${targetdir} javacup javacup.jar java-cup-11a.jar
 	fi
 
 	if use netbeans_modules_ruby ; then
-		targetdir="ruby2/modules/ext"
+		targetdir="ruby/modules/ext"
 		dosyminstjar ${targetdir} asm-3 asm.jar asm-3.0.jar
 		dosyminstjar ${targetdir} asm-3 asm-analysis.jar asm-analysis-3.0.jar
 		dosyminstjar ${targetdir} asm-3 asm-commons.jar asm-commons-3.0.jar
