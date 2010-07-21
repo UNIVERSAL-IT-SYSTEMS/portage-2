@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pcfclock/pcfclock-0.44-r4.ebuild,v 1.1 2008/07/14 23:04:18 sbriesen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pcfclock/pcfclock-0.44-r6.ebuild,v 1.2 2010/07/20 22:17:03 sbriesen Exp $
+
+EAPI="2"
 
 inherit eutils linux-mod
 
@@ -10,7 +12,7 @@ SRC_URI="http://www-stud.ims.uni-stuttgart.de/~voegelas/pcfclock/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~amd64 ~x86 ~ppc"
 IUSE=""
 
 DEPEND="virtual/linux-sources"
@@ -31,11 +33,9 @@ pkg_setup() {
 	)
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}/${P}-kernel-2.6.26.diff"
+src_prepare() {
+	epatch "${FILESDIR}/${P}-kernel-2.6.27.diff"
+	epatch "${FILESDIR}/${P}-configure.diff"
 	convert_to_m "linux/Makefile.in"
 }
 
@@ -46,9 +46,7 @@ src_install() {
 	dodoc AUTHORS ChangeLog NEWS README THANKS
 
 	# Add configuration for udev
-	if [ -e "${ROOT}dev/.udev" ]; then
-		dodir /etc/udev/rules.d
-		echo 'KERNEL=="pcfclock*", NAME="%k", MODE="0444"' \
-			> "${D}/etc/udev/rules.d/55-${PN}.rules"
-	fi
+	dodir /etc/udev/rules.d
+	echo 'KERNEL=="pcfclock*", NAME="%k", MODE="0444"' \
+		> "${D}/etc/udev/rules.d/55-${PN}.rules"
 }
