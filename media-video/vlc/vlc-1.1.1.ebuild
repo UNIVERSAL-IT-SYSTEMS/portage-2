@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-1.1.0.ebuild,v 1.8 2010/07/03 04:48:09 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/vlc/vlc-1.1.1.ebuild,v 1.1 2010/07/21 07:48:06 aballier Exp $
 
 EAPI="3"
 
@@ -24,7 +24,7 @@ MY_PV="${MY_PV/-beta/-test}"
 MY_P="${PN}-${MY_PV}"
 VLC_SNAPSHOT_TIME="0013"
 
-PATCHLEVEL="85"
+PATCHLEVEL="87"
 DESCRIPTION="VLC media player - Video player and streamer"
 HOMEPAGE="http://www.videolan.org/vlc/"
 if [ "${PV%9999}" != "${PV}" ] ; then # Live ebuild
@@ -93,7 +93,7 @@ RDEPEND="
 		live? ( >=media-plugins/live-2008.07.06 )
 		lua? ( >=dev-lang/lua-5.1 )
 		matroska? (	>=dev-libs/libebml-0.7.6 >=media-libs/libmatroska-0.8.0 )
-		modplug? ( >=media-libs/libmodplug-0.8 )
+		modplug? ( >=media-libs/libmodplug-0.8.8.1 )
 		mp3? ( media-libs/libmad )
 		mpeg? ( >=media-libs/libmpeg2-0.3.2 )
 		mtp? ( >=media-libs/libmtp-1.0.0 )
