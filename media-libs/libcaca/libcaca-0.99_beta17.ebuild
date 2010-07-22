@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libcaca/libcaca-0.99_beta17.ebuild,v 1.5 2010/07/22 09:19:32 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libcaca/libcaca-0.99_beta17.ebuild,v 1.8 2010/07/22 10:48:55 ssuominen Exp $
 
 EAPI=2
 inherit autotools mono multilib java-pkg-opt-2
@@ -40,7 +40,10 @@ src_prepare() {
 		-e 's:-g -O2 -fno-strength-reduce -fomit-frame-pointer::' \
 		configure.ac || die
 
-	sed -i -e 's:$(JAVAC):$(JAVAC) $(JAVACFLAGS):' java/Makefile.am || die
+	sed -i \
+		-e 's:$(JAVAC):$(JAVAC) $(JAVACFLAGS):' \
+		-e 's:libcaca_java_la_CPPFLAGS =:libcaca_java_la_CPPFLAGS = -I../caca:' \
+		java/Makefile.am || die
 
 	if ! use truetype; then
 		sed -i -e '/PKG_CHECK_MODULES/s:ftgl:dIsAbLe&:' configure.ac || die
@@ -74,5 +77,11 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS NOTES README THANKS
+
+	if use java; then
+		rm -rf "${D}"/usr/share/java
+		java-pkg_newjar java/libjava.jar
+	fi
+
 	find "${D}" -name '*.la' -delete
 }
