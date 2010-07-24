@@ -1,18 +1,18 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/groff/groff-1.20.1.ebuild,v 1.3 2009/03/09 05:13:53 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/groff/groff-1.20.1-r3.ebuild,v 1.1 2010/07/24 08:18:34 vapier Exp $
 
-inherit eutils toolchain-funcs autotools
+inherit autotools eutils toolchain-funcs
 
 DESCRIPTION="Text formatter used for man pages"
 HOMEPAGE="http://www.gnu.org/software/groff/groff.html"
 SRC_URI="mirror://gnu/groff/${P}.tar.gz
-	cjk? ( mirror://gentoo/groff-1.19.2-japanese.patch.bz2 )"
+	linguas_ja? ( mirror://gentoo/${P}-r2-japanese.patch.bz2 )"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="cjk X"
+IUSE="examples X linguas_ja"
 
 DEPEND=">=sys-apps/texinfo-4.7-r1
 	X? (
@@ -29,6 +29,15 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}"/${PN}-1.19.2-man-unicode-dashes.patch #16108 #17580 #121502
+	epatch "${FILESDIR}"/${P}-tmac-ec.patch #263524
+	epatch "${FILESDIR}"/${P}-Thtml-mem-leak.patch #294045
+	epatch "${FILESDIR}"/${P}-double-frees-mem-leaks.patch #294045
+
+	# put the docs in the Gentoo-specific spot
+	sed -i \
+		-e '/^docdir=/s/=.*/=@docdir@/' \
+		Makefile.in \
+		|| die "sed failed"
 
 	# Make sure we can cross-compile this puppy
 	if tc-is-cross-compiler ; then
@@ -36,26 +45,33 @@ src_unpack() {
 			-e '/^GROFFBIN=/s:=.*:=/usr/bin/groff:' \
 			-e '/^TROFFBIN=/s:=.*:=/usr/bin/troff:' \
 			-e '/^GROFF_BIN_PATH=/s:=.*:=:' \
-			contrib/mom/Makefile.sub \
+			-e '/^GROFF_BIN_DIR=/s:=.*:=:' \
+			contrib/*/Makefile.sub \
 			doc/Makefile.in \
 			doc/Makefile.sub || die "cross-compile sed failed"
 	fi
 
-	if use cjk ; then
-		epatch "${WORKDIR}"/groff-1.19.2-japanese.patch #134377
-		eautoreconf
+	cat <<-EOF >> tmac/mdoc.local
+	.ds volume-operating-system Gentoo
+	.ds operating-system Gentoo/${KERNEL}
+	.ds default-operating-system Gentoo/${KERNEL}
+	EOF
+
+	if use linguas_ja ; then
+		epatch "${WORKDIR}"/${PF}-japanese.patch #255292
+		eautoconf
+		eautoheader
 	fi
 }
 
 src_compile() {
 	# Fix problems with not finding g++
 #	tc-export CC CXX
-
 	econf \
 		--with-appresdir=/usr/share/X11/app-defaults \
+		--docdir=/usr/share/doc/${PF} \
 		$(use_with X x) \
-		$(use_enable cjk japanese) \
-		|| die
+		$(use linguas_ja && echo --enable-japanese)
 	emake || die
 }
 
@@ -68,4 +84,8 @@ src_install() {
 
 	dodoc BUG-REPORT ChangeLog MORE.STUFF NEWS \
 		PROBLEMS PROJECTS README REVISION TODO VERSION
+
+	if ! use examples ; then
+		rm -rf "${D}"/usr/share/doc/${PF}/examples
+	fi
 }
