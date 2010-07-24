@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/sqlalchemy-migrate/sqlalchemy-migrate-0.5.4.ebuild,v 1.4 2010/07/09 12:28:58 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/sqlalchemy-migrate/sqlalchemy-migrate-0.6.ebuild,v 1.1 2010/07/24 03:06:07 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -20,7 +20,8 @@ IUSE=""
 
 DEPEND="dev-python/decorator
 	dev-python/setuptools
-	dev-python/sqlalchemy"
+	>=dev-python/sqlalchemy-0.5
+	dev-python/tempita"
 RDEPEND="${DEPEND}"
 
 PYTHON_MODNAME="migrate"
