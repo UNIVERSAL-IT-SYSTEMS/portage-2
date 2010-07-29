@@ -1,10 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pythonmagick/pythonmagick-0.9.1.ebuild,v 1.6 2010/05/29 15:50:32 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pythonmagick/pythonmagick-0.9.2.ebuild,v 1.1 2010/07/29 19:52:15 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 PYTHON_EXPORT_PHASE_FUNCTIONS="1"
 
 inherit autotools eutils python
@@ -25,12 +26,14 @@ RDEPEND=">=media-gfx/imagemagick-6.4
 	>=dev-libs/boost-1.35.0[python]"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
-RESTRICT_PYTHON_ABIS="3.*"
 
 S="${WORKDIR}/${MY_P}"
 
+PYTHON_CXXFLAGS=("2.* + -fno-strict-aliasing")
+
 src_prepare() {
-	epatch "${FILESDIR}/${P}-use_active_python_version.patch"
+	epatch "${FILESDIR}/${PN}-0.9.1-use_active_python_version.patch"
+	epatch "${FILESDIR}/${PN}-0.9.2-fix_detection_of_python_includedir.patch"
 	eautoreconf
 
 	# Disable byte-compilation.
