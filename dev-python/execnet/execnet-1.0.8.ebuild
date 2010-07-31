@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/execnet/execnet-1.0.6.ebuild,v 1.2 2010/05/03 20:54:31 grozin Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/execnet/execnet-1.0.8.ebuild,v 1.1 2010/07/31 18:09:13 arfrever Exp $
 
 EAPI="3"
 SUPPORT_PYTHON_ABIS="1"
@@ -24,16 +24,16 @@ RDEPEND=""
 src_prepare() {
 	distutils_src_prepare
 
-	# fixing test with nice, bug #301417
-	epatch "${FILESDIR}/${P}-test-nice.patch"
+	# Fix test with nice (bug #301417).
+	epatch "${FILESDIR}/${PN}-1.0.6-test-nice.patch"
 }
 
 src_compile() {
 	distutils_src_compile
 
 	if use doc; then
-		cd doc
 		einfo "Generation of documentation"
+		cd doc
 		emake html || die "Generation of documentation failed"
 	fi
 }
