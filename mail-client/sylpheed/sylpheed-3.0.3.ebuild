@@ -1,6 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/sylpheed/sylpheed-2.7.1.ebuild,v 1.2 2010/03/13 16:03:24 hattya Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/sylpheed/sylpheed-3.0.3.ebuild,v 1.1 2010/07/31 07:44:22 hattya Exp $
+
+EAPI="2"
 
 inherit autotools eutils
 
@@ -11,7 +13,7 @@ HOMEPAGE="http://sylpheed.sraoss.jp/"
 SRC_URI="http://sylpheed.sraoss.jp/${PN}/v${PV%.*}/${P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2.1"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 SLOT="0"
 
 COMMON_DEPEND=">=x11-libs/gtk+-2.4
@@ -31,12 +33,10 @@ RDEPEND="${COMMON_DEPEND}
 
 AT_M4DIR="ac"
 
-src_unpack() {
+src_prepare() {
 
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}"/${PN}-2.[457]-*.diff
+	epatch "${FILESDIR}"/${PN}-2.7-*.diff
+	epatch "${FILESDIR}"/${PN}-3.*.diff
 
 	use crypt || cp ac/missing/gpgme.m4 ac
 
@@ -44,7 +44,7 @@ src_unpack() {
 
 }
 
-src_compile() {
+src_configure() {
 
 	local htmldir=/usr/share/doc/${PF}/html
 
@@ -58,8 +58,8 @@ src_compile() {
 		$(use_enable xface compface) \
 		--with-manualdir=${htmldir}/manual \
 		--with-faqdir=${htmldir}/faq \
+		--disable-updatecheck \
 		|| die
-	emake || die
 
 }
 
