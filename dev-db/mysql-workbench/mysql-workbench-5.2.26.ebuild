@@ -1,13 +1,13 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-workbench/mysql-workbench-5.2.24.ebuild,v 1.2 2010/06/27 18:17:52 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-workbench/mysql-workbench-5.2.26.ebuild,v 1.1 2010/08/07 06:56:52 graaff Exp $
 
 EAPI="2"
 GCONF_DEBUG="no"
 
 inherit gnome2 eutils flag-o-matic autotools
 
-MY_P="${PN}-ce-${PV}"
+MY_P="${PN}-gpl-${PV}"
 
 DESCRIPTION="MySQL Workbench"
 HOMEPAGE="http://dev.mysql.com/workbench/"
