@@ -1,8 +1,10 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/bison/bison-2.4-r1.ebuild,v 1.3 2008/11/14 08:50:29 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/bison/bison-2.4.3.ebuild,v 1.1 2010/08/07 22:37:15 vapier Exp $
 
-inherit toolchain-funcs flag-o-matic
+EAPI="2"
+
+inherit flag-o-matic
 
 DESCRIPTION="A yacc-compatible parser generator"
 HOMEPAGE="http://www.gnu.org/software/bison/bison.html"
@@ -10,26 +12,15 @@ SRC_URI="mirror://gnu/bison/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
 IUSE="nls static"
 
-# need flex since we patch scan-code.l in ${P}-compat.patch
-DEPEND="nls? ( sys-devel/gettext )
-	sys-devel/flex"
+DEPEND="nls? ( sys-devel/gettext )"
 RDEPEND="sys-devel/m4"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-compat.patch
-	# since we patch sources, update mtimes on docs so we dont regen
-	touch doc/bison.1 doc/bison.info doc/cross-options.texi
-}
-
-src_compile() {
+src_configure() {
 	use static && append-ldflags -static
-	econf $(use_enable nls) || die
-	emake || die
+	econf $(use_enable nls)
 }
 
 src_install() {
