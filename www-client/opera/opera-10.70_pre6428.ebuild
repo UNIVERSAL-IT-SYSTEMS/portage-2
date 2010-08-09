@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera/opera-10.70_pre6423.ebuild,v 1.1 2010/08/04 14:23:21 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera/opera-10.70_pre6428.ebuild,v 1.1 2010/08/09 15:56:25 jer Exp $
 
 EAPI="2"
 
@@ -33,7 +33,7 @@ done
 
 O_V="${PV/_pre/-}"
 O_P="${PN}-${O_V}"
-O_U="http://snapshot.opera.com/unix/30534_${O_V}/"
+O_U="http://snapshot.opera.com/unix/heyprrresto_${O_V}/"
 
 SRC_URI="
 	amd64? ( ${O_U}${O_P}.x86_64.linux.tar.bz2 )
