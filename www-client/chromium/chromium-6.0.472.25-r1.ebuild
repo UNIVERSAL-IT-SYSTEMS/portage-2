@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/chromium-6.0.472.25-r1.ebuild,v 1.2 2010/08/10 19:36:59 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/chromium-6.0.472.25-r1.ebuild,v 1.4 2010/08/11 03:20:06 phajdan.jr Exp $
 
 EAPI="2"
 
@@ -59,6 +59,12 @@ remove_bundled_lib() {
 }
 
 src_prepare() {
+	# Fix compilation, bug #332131.
+	epatch "${FILESDIR}"/${PN}-make-3.82-compatibility-r0.patch
+
+	# Add Gentoo plugin paths.
+	epatch "${FILESDIR}"/${PN}-plugins-path-r0.patch
+
 	remove_bundled_lib "third_party/bzip2"
 	remove_bundled_lib "third_party/codesighs"
 	remove_bundled_lib "third_party/cros"
@@ -204,9 +210,6 @@ src_install() {
 
 	doexe out/Release/ffmpegsumo_nolink || die
 	doexe out/Release/libffmpegsumo.so || die
-
-	# Use system plugins by default.
-	dosym /usr/$(get_libdir)/nsbrowser/plugins "$(get_chromium_home)/plugins"
 
 	# Install icon and desktop entry.
 	newicon out/Release/product_logo_48.png ${PN}-browser.png
