@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-plugins/adobe-flash/adobe-flash-10.1.53.64-r1.ebuild,v 1.3 2010/07/26 15:47:55 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-plugins/adobe-flash/adobe-flash-10.1.82.76-r1.ebuild,v 1.2 2010/08/12 14:24:29 mr_bones_ Exp $
 
 EAPI=1
 inherit nsplugins rpm multilib toolchain-funcs
@@ -10,10 +10,10 @@ MY_32B_URI="http://fpdownload.macromedia.com/get/flashplayer/current/flash-plugi
 DESCRIPTION="Adobe Flash Player"
 SRC_URI="${MY_32B_URI}"
 HOMEPAGE="http://www.adobe.com/"
-IUSE="multilib"
+IUSE="multilib nspluginwrapper"
 SLOT="0"
 
-KEYWORDS="-* amd64 x86"
+KEYWORDS="-* ~amd64 ~x86"
 LICENSE="AdobeFlash-10.1"
 RESTRICT="strip mirror"
 
@@ -31,6 +31,7 @@ EMUL_DEPS=">=app-emulation/emul-linux-x86-gtklibs-20100409-r1
 RDEPEND="x86? ( $NATIVE_DEPS )
 	amd64? ( $EMUL_DEPS )
 	|| ( media-fonts/liberation-fonts media-fonts/corefonts )"
+DEPEND="nspluginwrapper? ( www-plugins/nspluginwrapper )"
 
 # Where should this all go? (Bug #328639)
 INSTALL_BASE="opt/Adobe/flash-player"
@@ -88,7 +89,7 @@ src_install() {
 	fi
 
 	if [[ $amd64_32bit ]]; then
-		oldabi="${ABI}"
+		local oldabi="${ABI}"
 		ABI="x86"
 
 		# 32b plugin
@@ -112,46 +113,47 @@ pkg_postinst() {
 		elog "Adobe has released 10.1 in only a 32-bit version and upgrading"
 		elog "is required to close a major security vulnerability:"
 		elog "  http://bugs.gentoo.org/322855"
-		elog
-		elog "Furthermore, there are stability problems when running 10.1 in a"
-		elog "64-bit browser with nspluginwrapper.  The current recommended"
-		elog "configuration is to use a 32-bit browser such as"
-		elog "www-client/firefox-bin:"
-		elog "  http://bugs.gentoo.org/324365"
-		elog
-		# Temporarily skip automatic nspluginwrapper stuff, since it is fraught
-		# with peril (Bug #324365):
-		#
-		#if has_version 'www-plugins/nspluginwrapper'; then
-		#	if [[ $native_install ]]; then
-		#		# TODO: Perhaps parse the output of 'nspluginwrapper -l'
-		#		#       However, the 64b flash plugin makes 'nspluginwrapper -l' segfault.
-		#		local FLASH_WRAPPER="${ROOT}/usr/lib64/nsbrowser/plugins/npwrapper.libflashplayer.so"
-		#		if [[ -f ${FLASH_WRAPPER} ]]; then
-		#			einfo "Removing duplicate 32-bit plugin wrapper: Native 64-bit plugin installed"
-		#			nspluginwrapper -r "${FLASH_WRAPPER}"
-		#		fi
-		#		if [[ $need_lahf_wrapper ]]; then
-		#			ewarn "Your processor does not support the 'lahf' instruction which is used"
-		#			ewarn "by Adobe's 64-bit flash binary.  We have installed a wrapper which"
-		#			ewarn "should allow this plugin to run.  If you encounter problems, please"
-		#			ewarn "adjust your USE flags to install only the 32-bit version and reinstall:"
-		#			ewarn "  ${CATEGORY}/$PN[+32bit -64bit]"
-		#		fi
-		#	else
-		#		oldabi="${ABI}"
-		#		ABI="x86"
-		#		local FLASH_SOURCE="${ROOT}/usr/$(get_libdir)/${PLUGINS_DIR}/libflashplayer.so"
-		#
-		#		einfo "nspluginwrapper detected: Installing plugin wrapper"
-		#		nspluginwrapper -i "${FLASH_SOURCE}"
-		#
-		#		ABI="${oldabi}"
-		#	fi
-		#elif [[ ! $native_install ]]; then
-		#	einfo "To use the 32-bit flash player in a native 64-bit firefox,"
-		#	einfo "you must install www-plugins/nspluginwrapper"
-		#fi
+		if has_version 'www-plugins/nspluginwrapper'; then
+			if [[ $native_install ]]; then
+				# Note: This code branch is dead (no native 64-bit flash player
+				# available yet for 10.1), but I'm keeping it around in the hope
+				# that some day it will be back...
+				#  - Jim Ramsay <lack@gentoo.org>
+
+				# TODO: Perhaps parse the output of 'nspluginwrapper -l'
+				#       However, the 64b flash plugin makes
+				#       'nspluginwrapper -l' segfault.
+				local FLASH_WRAPPER="${ROOT}/usr/lib64/nsbrowser/plugins/npwrapper.libflashplayer.so"
+				if [[ -f ${FLASH_WRAPPER} ]]; then
+					einfo "Removing duplicate 32-bit plugin wrapper: Native 64-bit plugin installed"
+					nspluginwrapper -r "${FLASH_WRAPPER}"
+				fi
+				if [[ $need_lahf_wrapper ]]; then
+					ewarn "Your processor does not support the 'lahf' instruction which is used"
+					ewarn "by Adobe's 64-bit flash binary.  We have installed a wrapper which"
+					ewarn "should allow this plugin to run.  If you encounter problems, please"
+					ewarn "adjust your USE flags to install only the 32-bit version and reinstall:"
+					ewarn "  ${CATEGORY}/$PN[+32bit -64bit]"
+				fi
+			else
+				einfo "nspluginwrapper detected: Installing plugin wrapper"
+				local oldabi="${ABI}"
+				ABI="x86"
+				local FLASH_SOURCE="${ROOT}/${INSTALL_BASE}/libflashplayer.so"
+				nspluginwrapper -i "${FLASH_SOURCE}"
+				ABI="${oldabi}"
+
+				ewarn "Using adobe-flash-10.1 in a 64-bit browser is unstable:"
+				ewarn "  http://bugs.gentoo.org/324365"
+				ewarn "The recommended configuration is to use the 32-bit plugin"
+				ewarn "in a 32-bit browser such as www-client/firefox-bin"
+			fi
+		elif [[ ! $native_install ]]; then
+			elog "To use the 32-bit flash player in a native 64-bit firefox,"
+			elog "you must install www-plugins/nspluginwrapper, though this"
+			elog "configuration is not recommended:"
+			elog "  http://bugs.gentoo.org/324365"
+		fi
 	fi
 
 	ewarn "Flash player is closed-source, with a long history of security"
