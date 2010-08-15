@@ -1,7 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/busybox/busybox-1.15.2.ebuild,v 1.2 2010/03/31 18:10:01 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/busybox/busybox-1.17.1.ebuild,v 1.1 2010/08/15 03:22:41 vapier Exp $
 
+EAPI=2
 inherit eutils flag-o-matic savedconfig toolchain-funcs
 
 ################################################################################
@@ -57,7 +58,7 @@ fi
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
-IUSE="debug make-symlinks pam selinux static elibc_glibc"
+IUSE="debug ipv6 make-symlinks +mdev -pam selinux static elibc_glibc"
 RESTRICT="test"
 
 DEPEND="selinux? ( sys-libs/libselinux )
@@ -78,18 +79,13 @@ busybox_config_option() {
 	einfo $(grep "CONFIG_$2[= ]" .config || echo Could not find CONFIG_$2 ...)
 }
 
-src_unpack() {
+src_prepare() {
 	unset KBUILD_OUTPUT #88088
 
-	unpack ${MY_P}.tar.bz2
-	cd "${S}"
-
 	# patches go here!
-	epatch "${FILESDIR}"/busybox-1.15.2-bb.patch
-	#epatch "${FILESDIR}"/busybox-${PV}-*.patch
+	epatch "${FILESDIR}"/busybox-1.17.0-bb.patch
+	epatch "${FILESDIR}"/busybox-${PV}-*.patch
 
-	# work around broken ass powerpc compilers
-	use ppc64 && append-flags -mminimal-toc
 	# flag cleanup
 	sed -i -r \
 		-e 's:[[:space:]]?-(Werror|Os|falign-(functions|jumps|loops|labels)=1|fomit-frame-pointer)\>::g' \
@@ -99,6 +95,7 @@ src_unpack() {
 	use elibc_glibc && sed -i 's:-Wl,--gc-sections::' Makefile
 	sed -i \
 		-e "/^CROSS_COMPILE/s:=.*:= ${CHOST}-:" \
+		-e "/^CC/s:=.*:= $(tc-getCC):" \
 		-e "/^HOSTCC/s:=.*:= $(tc-getBUILD_CC):" \
 		Makefile || die
 
@@ -126,6 +123,13 @@ src_unpack() {
 	# all calls to system() will fail.
 	busybox_config_option y FEATURE_SH_IS_ASH
 	busybox_config_option n FEATURE_SH_IS_NONE
+
+	# disable ipv6 applets
+	if ! use ipv6; then
+		busybox_config_option n FEATURE_IPV6
+		busybox_config_option n TRACEROUTE6
+		busybox_config_option n PING6
+	fi
 
 	if use static && use pam ; then
 		ewarn "You cannot have USE='static pam'.  Assuming static is more important."
@@ -189,9 +193,17 @@ src_install() {
 	else
 		dobin bb || die
 	fi
+	if use mdev; then
+		dodir /$(get_libdir)/mdev/
+		use make-symlinks || dosym /bin/bb /sbin/mdev
+		cp "${S}"/examples/mdev_fat.conf "${D}"/etc/mdev.conf
 
-	insinto /$(get_libdir)/rcscripts/addons
-	doins "${FILESDIR}"/mdev-start.sh || die
+		exeinto /$(get_libdir)/mdev/
+		doexe "${FILESDIR}"/mdev/*
+
+		insinto /$(get_libdir)/rcscripts/addons
+		doins "${FILESDIR}"/mdev-start.sh || die
+	fi
 
 	# bundle up the symlink files for use later
 	emake install || die
@@ -208,7 +220,7 @@ src_install() {
 	dodoc *.txt
 	docinto pod
 	dodoc *.pod
-	dohtml *.html *.sgml
+	dohtml *.html
 
 	cd ../examples || die
 	docinto examples
