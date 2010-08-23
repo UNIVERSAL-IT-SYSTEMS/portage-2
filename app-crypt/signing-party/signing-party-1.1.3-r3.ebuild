@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/signing-party/signing-party-1.1.3-r2.ebuild,v 1.1 2010/08/20 18:03:12 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/signing-party/signing-party-1.1.3-r3.ebuild,v 1.1 2010/08/23 17:55:19 robbat2 Exp $
 
 EAPI="2"
 
@@ -66,21 +66,21 @@ src_install() {
 	# gpgparticipants
 	dobin gpgparticipants/gpgparticipants
 	# gpgwrap
-	dobin gpgwrap/src/gpgwrap
+	dobin gpgwrap/bin/gpgwrap
 	docinto gpgwrap
 	dodoc gpgwrap/{LICENSE,NEWS,README}
 	doman gpgwrap/doc/gpgwrap.1
 	# gpgsigs
 	dobin gpgsigs/gpgsigs
 	insinto /usr/share/signing-party
-	doins gpgsigs-eps-helper
+	doins gpgsigs/gpgsigs-eps-helper
 	# keyanalyze
 	# TODO: some of the scripts are intended for webpages, and not really
 	# packaging, so they are NOT installed yet.
-	newbin pgpring/pgpring pgpring-keyanalyze
+	newbin keyanalyze/pgpring/pgpring pgpring-keyanalyze
 	dobin keyanalyze/{keyanalyze,process_keys}
 	docinto keyanalyze
-	dodoc keyanalyze/{README,ChangeLog}
+	dodoc keyanalyze/{README,Changelog}
 	# See app-crypt/keylookup instead
 	#dobin keylookup/keylookup
 	#docinto keylookup
