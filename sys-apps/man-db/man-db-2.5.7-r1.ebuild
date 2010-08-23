@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/man-db/man-db-2.5.6.ebuild,v 1.2 2009/10/02 22:13:26 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/man-db/man-db-2.5.7-r1.ebuild,v 1.1 2010/08/23 09:16:52 vapier Exp $
 
-EAPI=2
+EAPI="2"
 
-inherit eutils autotools
+inherit eutils
 
 DESCRIPTION="a man replacement that utilizes berkdb instead of flat files"
 HOMEPAGE="http://www.nongnu.org/man-db/"
@@ -30,9 +30,8 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-fix-no-groff.patch
-
-	eautoreconf
+	epatch "${FILESDIR}"/${P}-non-gnu-nroff.patch #309635
+	epatch "${FILESDIR}"/${P}-uncompressed-non-en.patch #327347
 }
 
 src_configure() {
@@ -47,5 +46,5 @@ src_configure() {
 
 src_install() {
 	emake install DESTDIR="${D}" || die
-	dodoc README ChangeLog NEWS docs/{HACKING,TODO} || die
+	dodoc README ChangeLog NEWS docs/{HACKING,TODO}
 }
