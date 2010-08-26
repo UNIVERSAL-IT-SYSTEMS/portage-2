@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Email-Sender/Email-Sender-0.102360.ebuild,v 1.1 2010/08/25 07:46:56 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Email-Sender/Email-Sender-0.102370.ebuild,v 1.2 2010/08/26 13:11:43 tove Exp $
 
 EAPI=2
 
@@ -18,7 +18,6 @@ RDEPEND="virtual/perl-Scalar-List-Utils
 	>=dev-perl/Email-Abstract-3
 	dev-perl/Email-Simple
 	dev-perl/List-MoreUtils
-	dev-perl/Sys-Hostname-Long
 	dev-perl/Throwable
 	dev-perl/Try-Tiny
 	virtual/perl-libnet
@@ -33,6 +32,6 @@ SRC_TEST=do
 
 src_test() {
 	# https://rt.cpan.org/Public/Bug/Display.html?id=54642
-	mv ${S}/t/smtp-via-mock.t{,.disable} || die
+	mv "${S}"/t/smtp-via-mock.t{,.disable} || die
 	perl-module_src_test
 }
