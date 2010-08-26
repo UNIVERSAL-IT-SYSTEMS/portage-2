@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/mc/mc-4.7.2.ebuild,v 1.1 2010/05/05 22:01:13 wired Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/mc/mc-4.7.3-r3.ebuild,v 1.1 2010/08/25 22:04:16 wired Exp $
 
 EAPI=3
 
@@ -34,6 +34,13 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${MY_P}
 
+# bug #327573
+PATCHES=(
+	"${FILESDIR}/${P}_advanced_chown_segfault_fix.patch"
+	"${FILESDIR}/${P}_mcedit_quit_dialog_default.patch"
+	"${FILESDIR}/${P}_copy_move_dialog_to_field_fix.patch"
+)
+
 src_configure() {
 	local myscreen=ncurses
 	use slang && myscreen=slang
@@ -56,6 +63,12 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS README
+
+	# fix bug #334383
+	fowners root:tty /usr/libexec/mc/cons.saver ||
+		die "setting cons.saver's owner failed"
+	fperms g+s /usr/libexec/mc/cons.saver ||
+		die "setting cons.saver's permissions failed"
 }
 
 pkg_postinst() {
