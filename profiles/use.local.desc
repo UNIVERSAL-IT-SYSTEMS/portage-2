@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5908 2010/08/31 21:54:14 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.5911 2010/09/01 20:33:52 robbat2 Exp $
 # This file contains descriptions of local USE flags, and the ebuilds which
 # contain them.
 # Keep it sorted (use "LC_ALL=C sort -t: -k1,1 -k2 | LC_ALL=C sort -s -t/ -k1,1")
@@ -850,6 +850,7 @@ dev-lang/ruby:rdoc -  Install dev-ruby/rdoc after installing Ruby.
 dev-lang/ruby:readline -  Use the sys-libs/readline library to provide the readline extension, used for instance by the irb tool. This flag is meaningful only if the libedit USE flag is disabled. If neither libedit nor readline USE flags are enabled, the readline extension will not be built (and irb will lose line editing functionality). 
 dev-lang/ruby:rubytests -  Install ruby tests that can only be run after ruby is installed 
 dev-lang/ruby:yaml -  Use the dev-libs/libyaml library to build the psych extension, available since Ruby 1.9.2_rc2, in alternative to the bundled syck-based parser. 
+dev-lang/ruby-enterprise:fastthreading -  EXPERIMENTAL Enables fast threading routines. Removes support for callcc. 
 dev-lang/ruby-enterprise:libedit -  Use the dev-libs/libedit library to provide the readline extension, used for instance by the irb tool. This flag will take precedence over the readline USE flag. If neither libedit nor readline USE flags are enabled, the readline extension will not be built (and irb will lose line editing functionality). 
 dev-lang/ruby-enterprise:readline -  Use the sys-libs/readline library to provide the readline extension, used for instance by the irb tool. This flag is meaningful only if the libedit USE flag is disabled. If neither libedit nor readline USE flags are enabled, the readline extension will not be built (and irb will lose line editing functionality). 
 dev-lang/ruby-enterprise:rubytests -  Install ruby tests that can only be run after ruby is installed 
@@ -2817,6 +2818,14 @@ net-misc/asterisk-moh-opsound:siren7 - Install the sounds files for the siren7 c
 net-misc/asterisk-moh-opsound:sln16 - Install the sounds files for the sln16 codec.
 net-misc/asterisk-moh-opsound:ulaw - Install the sounds files for the ulaw codec.
 net-misc/asterisk-moh-opsound:wav - Install the sounds files for the wav codec.
+net-misc/cfengine:html - Install HTML documentation
+net-misc/cfengine:libvirt - Enable support for virtual machine management through app-emulation/libvirt
+net-misc/cfengine:mysql - Use dev-db/mysql as database backend, default would be Berkeley DB (sys-libs/db)
+net-misc/cfengine:pcre - Use PCRE rather than GNU Regex from libc
+net-misc/cfengine:postgres - Use dev-db/postgresql-server as database backend, default would be Berkeley DB (sys-libs/db)
+net-misc/cfengine:qdbm - Use dev-db/qdbm as database backend, default would be Berkeley DB (sys-libs/db)
+net-misc/cfengine:tests - Install test files
+net-misc/cfengine:tokyocabinet - Use dev-db/tokyocabinet as database backend, default would be Berkeley DB (sys-libs/db)
 net-misc/connman:dhclient - Use dhclient from net-misc/dhcp for getting ip.
 net-misc/connman:dnsproxy - Enable dnsproxy support.
 net-misc/connman:ethernet - Enable ethernet support.
@@ -3586,6 +3595,7 @@ sys-kernel/mips-sources:ip30 - Enables support for SGI Octane (IP30, 'Speedracer
 sys-kernel/mips-sources:ip32r10k - Enables experimental support for IP32 R10K kernels (SGI O2, 'Moosehead')
 sys-kernel/mm-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/openvz-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
+sys-kernel/pf-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/sparc-sources:ultra1 - If you have a SUN Ultra 1 with a HME interface
 sys-kernel/tuxonice-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/vanilla-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.

@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby-enterprise/ruby-enterprise-1.8.7.2010.01-r2.ebuild,v 1.3 2010/08/06 17:04:32 a3li Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby-enterprise/ruby-enterprise-1.8.7.2010.02-r1.ebuild,v 1.1 2010/09/01 17:24:40 a3li Exp $
 
 EAPI=2
 
@@ -14,19 +14,29 @@ MY_SUFFIX="ee$(delete_version_separator 1 ${SLOT})"
 # 1.8 and 1.9 series disagree on this
 RUBYVERSION=$(get_version_component_range 1-2)
 
+if [[ -n ${PATCHSET} ]]; then
+	if [[ ${PVR} == ${PV} ]]; then
+		PATCHSET="${PV}-r0.${PATCHSET}"
+	else
+		PATCHSET="${PVR}.${PATCHSET}"
+	fi
+else
+	PATCHSET="${PVR}"
+fi
+
 DESCRIPTION="Ruby Enterprise Edition is a branch of Ruby including various enhancements"
 HOMEPAGE="http://www.rubyenterpriseedition.com/"
 SRC_URI="mirror://rubyforge/emm-ruby/${MY_P}.tar.gz
-		 http://dev.gentoo.org/~flameeyes/ruby-team/${PN}-patches-${PVR}.tar.bz2"
+		 http://dev.gentoo.org/~flameeyes/ruby-team/${PN}-patches-${PATCHSET}.tar.bz2"
 
 LICENSE="|| ( Ruby GPL-2 )"
 KEYWORDS="~amd64 ~x86"
-IUSE="tcmalloc +berkdb debug doc examples +gdbm ipv6 rubytests ssl threads tk xemacs ncurses +readline libedit"
+IUSE="+berkdb debug doc examples fastthreading +gdbm ipv6 rubytests ssl tcmalloc threads tk xemacs ncurses +readline libedit"
 
 RDEPEND="
 	berkdb? ( sys-libs/db )
 	gdbm? ( sys-libs/gdbm )
-	ssl? ( >=dev-libs/openssl-0.9.8m <dev-libs/openssl-1 )
+	ssl? ( >=dev-libs/openssl-0.9.8m )
 	tk? ( dev-lang/tk[threads=] )
 	ncurses? ( sys-libs/ncurses )
 	libedit? ( dev-libs/libedit )
@@ -43,6 +53,18 @@ PROVIDE="virtual/ruby"
 src_prepare() {
 	EPATCH_FORCE="yes" EPATCH_SUFFIX="patch" \
 		epatch "${WORKDIR}/patches"
+
+	if use fastthreading; then
+		einfo
+		elog "NOTE: The fast threading feature in dev-lang/ruby-enterprise is"
+		elog "considered as EXPERIMENTAL. It also disables callcc. Use with care."
+		einfo
+	else
+		einfo "Restoring vanilla threading..."
+		EPATCH_OPTS="${EPATCH_OPTS} -R" \
+			epatch "${WORKDIR}/patches/999-fast-threading-NOAPPLY.diff" \
+			|| die "Reverting the fast-threading patch failed"
+	fi
 
 	if use tcmalloc ; then
 		sed -i 's:^EXTLIBS.*:EXTLIBS = -ltcmalloc_minimal:' Makefile.in
