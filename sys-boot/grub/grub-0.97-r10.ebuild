@@ -1,13 +1,13 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/grub-0.97-r10.ebuild,v 1.4 2010/07/31 22:26:42 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/grub-0.97-r10.ebuild,v 1.6 2010/09/02 21:19:37 robbat2 Exp $
 
 # XXX: we need to review menu.lst vs grub.conf handling.  We've been converting
 #      all systems to grub.conf (and symlinking menu.lst to grub.conf), but
 #      we never updated any of the source code (it still all wants menu.lst),
 #      and there is no indication that upstream is making the transition.
 
-inherit mount-boot eutils flag-o-matic toolchain-funcs autotools linux-info
+inherit mount-boot eutils flag-o-matic toolchain-funcs autotools linux-info pax-utils
 
 PATCHVER="1.10" # Should match the revision ideally
 DESCRIPTION="GNU GRUB Legacy boot loader"
@@ -22,10 +22,11 @@ SLOT="0"
 KEYWORDS="amd64 x86 ~x86-fbsd"
 IUSE="custom-cflags ncurses netboot static"
 
-DEPEND="ncurses? (
+RDEPEND="ncurses? (
 		>=sys-libs/ncurses-5.2-r5
 		amd64? ( app-emulation/emul-linux-x86-baselibs )
 	)"
+DEPEND="${RDEPEND}"
 PROVIDE="virtual/bootloader"
 
 pkg_setup() {
@@ -157,6 +158,9 @@ src_install() {
 		exeinto /usr/lib/grub/${CHOST}
 		doexe nbgrub pxegrub stage2/stage2.netboot || die "netboot install"
 	fi
+
+	# bug 330745
+	pax-mark -m "${D}"/sbin/grub
 
 	dodoc AUTHORS BUGS ChangeLog NEWS README THANKS TODO
 	newdoc docs/menu.lst grub.conf.sample
