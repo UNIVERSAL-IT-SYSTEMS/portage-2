@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfdesktop/xfdesktop-4.6.2.ebuild,v 1.12 2010/09/06 17:50:44 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfdesktop/xfdesktop-4.6.2.ebuild,v 1.14 2010/09/07 02:08:34 ssuominen Exp $
 
 EAPI=3
 EAUTORECONF=yes
@@ -74,6 +74,12 @@ src_prepare() {
 			-e 's:xfce-stripes.png:gentoo-minimal-1280x1024.jpg:' \
 			common/xfdesktop-common.h || die
 	fi
+
+	# Outdated files and we install HTML files to $PF
+	sed -i \
+		-e '/xfce4-help.desktop/d' \
+		modules/menu/menu-data/{Makefile.am,xfce-applications.menu} || die
+
 	xfconf_src_prepare
 }
 
