@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/nvclock/nvclock-9999.ebuild,v 1.3 2010/08/17 23:37:23 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/nvclock/nvclock-9999.ebuild,v 1.1 2010/09/08 05:37:38 jer Exp $
 
 EAPI="2"
 
