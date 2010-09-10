@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/cairo/cairo-1.10.0-r1.ebuild,v 1.4 2010/09/09 19:37:28 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/cairo/cairo-1.10.0-r3.ebuild,v 1.1 2010/09/10 10:30:53 scarabeus Exp $
 
 EAPI=3
 
@@ -61,6 +61,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.8.8-interix.patch
+	epatch "${FILESDIR}"/${P}-buggy_gradients.patch #336696
+	epatch "${FILESDIR}"/${P}-install-sh.patch #336329
 
 	# Slightly messed build system YAY
 	if [[ ${PV} == *9999* ]]; then
@@ -141,6 +143,4 @@ src_install() {
 	# parallel make install fails
 	emake -j1 DESTDIR="${D}" install || die "Installation failed"
 	dodoc AUTHORS ChangeLog NEWS README || die
-
-	use static-libs || find "${D}" -type f -name '*.la' -exec rm -f '{}' \;
 }
