@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-base.eclass,v 1.69 2010/09/09 17:02:30 reavertm Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-base.eclass,v 1.72 2010/09/11 05:18:35 reavertm Exp $
 
 # @ECLASS: kde4-base.eclass
 # @MAINTAINER:
@@ -62,9 +62,9 @@ case ${KDEBASE} in
 		# Determine SLOT from PVs
 		case ${PV} in
 			*.9999*) SLOT="${PV/.9999*/}" ;; # stable live
-			4.6* | 4.5.[6-9]*) SLOT="4.6" ;;
-			4.5* | 4.4.[6-9]*) SLOT="4.5" ;;
-			4.4* | 4.3.[6-9]*) SLOT="4.4" ;;
+			4.6* | 4.5.[6-9][0-9]*) SLOT="4.6" ;;
+			4.5* | 4.4.[6-9][0-9]*) SLOT="4.5" ;;
+			4.4* | 4.3.[6-9][0-9]*) SLOT="4.4" ;;
 			9999*) SLOT="live" ;; # regular live
 			*) die "Unsupported ${PV}" ;;
 		esac
@@ -479,15 +479,18 @@ case ${BUILD_TYPE} in
 			case ${KDEBASE} in
 				kde-base)
 					case ${PV} in
-						4.[45].8[05] | 4.[45].9[02568])
-							# Normally packed unstable releases
-							SRC_URI="mirror://kde/unstable/${PV}/src/${_kmname_pv}.tar.bz2" ;;
-						4.[45].[6-9]*)
-							# Repacked tarballs: need to depend on xz-utils to ensure that they can be unpacked
-							SRC_URI="http://dev.gentooexperimental.org/~alexxy/kde/${PV}/src/${_kmname_pv}.tar.xz"
-							DEPEND+=" app-arch/xz-utils"
+						4.[456].8[05] | 4.[456].9[023568])
+							# Unstable KDE SC releases
+							SRC_URI="mirror://kde/unstable/${PV}/src/${_kmname_pv}.tar.bz2"
 							;;
-						*)	SRC_URI="mirror://kde/stable/${PV}/src/${_kmname_pv}.tar.bz2" ;;
+						4.4.6)
+							# Only kdepim here
+							SRC_URI="mirror://kde/stable/kdepim-${PV}/src/${_kmname_pv}.tar.bz2"
+							;;
+						*)
+							# Stable KDE SC releases
+							SRC_URI="mirror://kde/stable/${PV}/src/${_kmname_pv}.tar.bz2"
+							;;
 					esac
 					;;
 				koffice)
