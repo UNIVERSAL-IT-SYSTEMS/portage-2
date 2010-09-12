@@ -1,11 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/nokogiri/nokogiri-1.4.2.ebuild,v 1.4 2010/07/30 15:20:50 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/nokogiri/nokogiri-1.4.3.1-r1.ebuild,v 1.1 2010/09/12 08:45:02 graaff Exp $
 
 EAPI=2
 
 # jruby → needs weakling for testing , will add back in a bit
-USE_RUBY="ruby18 ruby19"
+USE_RUBY="ruby18 ruby19 ree18"
 
 RUBY_FAKEGEM_TASK_DOC="docs"
 RUBY_FAKEGEM_DOCDIR="doc"
@@ -42,8 +42,6 @@ ruby_add_rdepend "ffi? ( virtual/ruby-ffi )"
 # 	ruby_add_bdepend "test? ( dev-ruby/weakling )"
 
 all_ruby_prepare() {
-	epatch "${FILESDIR}"/${P}+ruby-1.9.2.patch
-
 	sed -i \
 		-e '/tasks\/cross_compile/s:^:#:' \
 		-e '/:test.*prerequisites/s:^:#:' \
