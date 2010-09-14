@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libnfsidmap/libnfsidmap-0.23.ebuild,v 1.1 2010/07/27 00:18:22 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libnfsidmap/libnfsidmap-0.23-r1.ebuild,v 1.1 2010/09/14 12:32:22 vapier Exp $
 
-EAPI=2
+EAPI="2"
 
 inherit autotools
 
@@ -17,7 +17,7 @@ IUSE="ldap"
 
 DEPEND="ldap? ( net-nds/openldap )"
 RDEPEND="${DEPEND}
-	!<net-fs/nfs-utils-1.1.4
+	!<net-fs/nfs-utils-1.2.2
 	!net-fs/idmapd"
 
 src_prepare() {
@@ -27,16 +27,18 @@ src_prepare() {
 }
 
 src_configure() {
-	econf --disable-static \
+	econf \
 		--disable-dependency-tracking \
-		$(use_enable ldap) || die
+		$(use_enable ldap)
 }
 
 src_install() {
 	emake install DESTDIR="${D}" || die
-	find "${D}" -name '*.la' -delete || die
+	dodoc AUTHORS ChangeLog NEWS README
 
 	insinto /etc
 	doins idmapd.conf || die
-	dodoc AUTHORS ChangeLog NEWS README
+
+	# remove useless files
+	rm "${D}"/usr/lib*/libnfsidmap/*.{a,la} || die
 }
