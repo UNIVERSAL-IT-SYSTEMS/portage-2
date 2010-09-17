@@ -1,9 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-app-publisher/zope-app-publisher-3.10.1.ebuild,v 1.3 2010/02/14 19:17:32 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-app-publisher/zope-app-publisher-3.10.2.ebuild,v 1.1 2010/09/17 15:07:22 arfrever Exp $
 
-EAPI="2"
+EAPI="3"
+PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 
@@ -12,7 +14,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Implementations and means for configuration of Zope 3-style views and resources."
 HOMEPAGE="http://pypi.python.org/pypi/zope.app.publisher"
-SRC_URI="http://pypi.python.org/packages/source/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
+SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.zip"
 
 LICENSE="ZPL"
 SLOT="0"
@@ -34,10 +36,10 @@ RDEPEND="net-zope/zope-browsermenu
 	net-zope/zope-schema
 	net-zope/zope-security"
 DEPEND="${RDEPEND}
+	app-arch/unzip
 	dev-python/setuptools"
-RESTRICT_PYTHON_ABIS="3.*"
 
 S="${WORKDIR}/${MY_P}"
 
-PYTHON_MODNAME="${PN//-//}"
 DOCS="CHANGES.txt README.txt"
+PYTHON_MODNAME="${PN//-//}"
