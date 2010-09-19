@@ -1,9 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyproj/pyproj-1.8.6.ebuild,v 1.1 2009/11/04 11:25:50 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyproj/pyproj-1.8.8.ebuild,v 1.1 2010/09/19 21:16:21 arfrever Exp $
 
-EAPI="2"
+EAPI="3"
+PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 
@@ -18,4 +20,5 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=""
-RESTRICT_PYTHON_ABIS="3.*"
+
+PYTHON_CFLAGS=("2.* + -fno-strict-aliasing")

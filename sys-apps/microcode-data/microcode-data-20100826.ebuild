@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/microcode-data/microcode-data-20090927.ebuild,v 1.1 2009/12/06 08:21:13 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/microcode-data/microcode-data-20100826.ebuild,v 1.1 2010/09/19 19:19:46 vapier Exp $
 
-NUM="18148"
+NUM="19299"
 DESCRIPTION="Intel IA32 microcode update data"
 HOMEPAGE="http://urbanmyth.org/microcode/"
 SRC_URI="http://downloadmirror.intel.com/${NUM}/eng/microcode-${PV}.tgz"
@@ -11,6 +11,8 @@ LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+RDEPEND="!<sys-apps/microcode-ctl-1.17-r2" #268586
 
 S=${WORKDIR}
 

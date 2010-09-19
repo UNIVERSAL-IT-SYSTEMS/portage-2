@@ -1,7 +1,7 @@
 >=dev-libs/glib-2.14 sys-devel/flex || ( sys-devel/bison dev-util/byacc dev-util/yacc ) dev-util/pkgconfig dev-libs/libxslt test? ( dev-libs/dbus-glib ) >=sys-apps/sed-4
 >=dev-libs/glib-2.14
-0
-mirror://gnome/sources/vala/0.9/vala-0.9.5.tar.bz2
+0.10
+mirror://gnome/sources/vala/0.10/vala-0.10.0.tar.bz2
 
 http://live.gnome.org/Vala
 LGPL-2.1
@@ -12,9 +12,9 @@ test +vapigen coverage
 
 
 
-1
+2
 
-compile install postinst postrm preinst setup unpack
+compile configure install postinst postrm preinst prepare setup unpack
 
 
 
