@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/mpi4py/mpi4py-1.2.ebuild,v 1.1 2009/12/29 21:08:44 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/mpi4py/mpi4py-1.2.2.ebuild,v 1.1 2010/09/22 16:09:24 arfrever Exp $
 
-EAPI="2"
+EAPI="3"
 SUPPORT_PYTHON_ABIS="1"
 
 inherit distutils
@@ -11,9 +11,9 @@ DESCRIPTION="Message Passing Interface for Python"
 HOMEPAGE="http://code.google.com/p/mpi4py/ http://pypi.python.org/pypi/mpi4py"
 SRC_URI="http://mpi4py.googlecode.com/files/${P}.tar.gz"
 
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-LICENSE="BSD"
 IUSE="doc examples"
 
 DEPEND="virtual/mpi"
