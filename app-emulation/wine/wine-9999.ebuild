@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.60 2010/09/21 21:31:57 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.62 2010/09/21 22:19:42 vapier Exp $
 
 EAPI="2"
 
@@ -27,7 +27,7 @@ HOMEPAGE="http://www.winehq.org/"
 SRC_URI="${SRC_URI}
 	gecko? (
 		mirror://sourceforge/wine/wine_gecko-${GV}-x86.cab
-		mirror://sourceforge/wine/wine_gecko-${GV}-x86_64.cab
+		win64? ( mirror://sourceforge/wine/wine_gecko-${GV}-x86_64.cab )
 	)
 	pulseaudio? ( `pulse_patches http://art.ified.ca/downloads/winepulse` )"
 
@@ -114,6 +114,7 @@ src_prepare() {
 		EPATCH_OPTS=-p1 epatch `pulse_patches "${DISTDIR}"`
 		eautoreconf
 	fi
+	epatch "${FILESDIR}"/${PN}-1.3-shell32-fortify.patch #336887
 	epatch "${FILESDIR}"/${PN}-1.1.15-winegcc.patch #260726
 	epatch_user #282735
 	sed -i '/^UPDATE_DESKTOP_DATABASE/s:=.*:=true:' tools/Makefile.in || die
