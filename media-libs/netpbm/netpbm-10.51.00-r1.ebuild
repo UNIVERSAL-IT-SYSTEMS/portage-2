@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/netpbm/netpbm-10.51.00.ebuild,v 1.2 2010/09/19 22:04:41 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/netpbm/netpbm-10.51.00-r1.ebuild,v 1.1 2010/09/22 22:09:05 vapier Exp $
 
 EAPI="3"
 
@@ -80,6 +80,7 @@ netpbm_config() {
 src_prepare() {
 	epatch "${FILESDIR}"/netpbm-10.31-build.patch
 	epatch "${FILESDIR}"/${P}-ppmtompeg-free.patch
+	epatch "${FILESDIR}"/${P}-pnmconvol-nooffset.patch #338230
 
 	# make sure we use system urt
 	sed -i '/SUPPORT_SUBDIRS/s:urt::' GNUmakefile || die
@@ -150,7 +151,9 @@ src_compile() {
 }
 
 src_install() {
-	emake package pkgdir="${D}"/usr || die "make package failed"
+	# Subdir make targets like to use `mkdir` all over the place
+	# without any actual dependencies, thus the -j1.
+	emake -j1 package pkgdir="${D}"/usr || die
 
 	[[ $(get_libdir) != "lib" ]] && mv "${D}"/usr/lib "${D}"/usr/$(get_libdir)
 
