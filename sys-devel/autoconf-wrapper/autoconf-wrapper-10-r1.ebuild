@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/autoconf-wrapper/autoconf-wrapper-10.ebuild,v 1.1 2010/09/22 23:52:55 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/autoconf-wrapper/autoconf-wrapper-10-r1.ebuild,v 1.1 2010/09/24 02:20:33 vapier Exp $
 
 inherit multilib
 
