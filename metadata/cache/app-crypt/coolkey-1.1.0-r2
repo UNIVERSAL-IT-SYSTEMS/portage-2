@@ -1,7 +1,7 @@
 sys-apps/pcsc-lite sys-libs/zlib dev-util/pkgconfig
 sys-apps/pcsc-lite sys-libs/zlib
 0
-http://directory.fedora.redhat.com/download/coolkey/coolkey-1.1.0.tar.gz
+http://directory.fedora.redhat.com/download/coolkey/coolkey-1.1.0.tar.gz mirror://gentoo/coolkey-patches.tar.gz
 
 http://directory.fedora.redhat.com/wiki/CoolKey
 LGPL-2.1
@@ -12,9 +12,9 @@ debug
 
 
 
+3
 
-
-compile install unpack
+compile configure install prepare
 
 
 
