@@ -1,13 +1,17 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/cucumber-rails/cucumber-rails-0.2.4.ebuild,v 1.1 2010/01/20 07:23:04 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/cucumber-rails/cucumber-rails-0.3.2-r1.ebuild,v 1.1 2010/09/26 07:20:44 graaff Exp $
 
 EAPI=2
-USE_RUBY="ruby18"
+USE_RUBY="ruby18 ree18"
 
 RUBY_FAKEGEM_TASK_DOC=""
-RUBY_FAKEGEM_TASK_TEST="-f tasks/rspec.rake spec"
-RUBY_FAKEGEM_EXTRAINSTALL="generators"
+
+# There are also cucumber features which depend on aruba which we
+# don't have in our tree yet.
+RUBY_FAKEGEM_TASK_TEST="spec"
+RUBY_FAKEGEM_EXTRAINSTALL="generators templates"
+RUBY_FAKEGEM_EXTRADOC="HACKING.rdoc History.txt README.rdoc"
 
 inherit ruby-fakegem
 
@@ -27,8 +31,4 @@ each_ruby_install() {
 	each_fakegem_install
 
 	ruby_fakegem_doins VERSION
-}
-
-all_ruby_install() {
-	dodoc History.txt README.rdoc
 }
