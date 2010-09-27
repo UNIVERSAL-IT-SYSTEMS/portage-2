@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/conspire/conspire-1.0_beta1.ebuild,v 1.1 2009/06/16 23:26:45 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/conspire/conspire-1.0.1.ebuild,v 1.1 2010/09/26 21:39:10 chainsaw Exp $
 
 inherit eutils
 
@@ -8,7 +8,7 @@ MY_P="${P/_/-}"
 S="${WORKDIR}/${MY_P}"
 DESCRIPTION="A high quality IRC client which uses a multitude of interfaces"
 HOMEPAGE="http://www.nenolod.net/conspire/"
-SRC_URI="http://distfiles.atheme.org/${MY_P}.tgz"
+SRC_URI="http://distfiles.atheme.org/${MY_P}.tbz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~sparc ~x86"

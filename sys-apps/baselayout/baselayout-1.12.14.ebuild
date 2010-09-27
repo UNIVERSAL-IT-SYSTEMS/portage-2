@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/baselayout-1.12.12.ebuild,v 1.2 2008/03/31 00:46:06 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout/baselayout-1.12.14.ebuild,v 1.1 2010/09/26 22:21:17 vapier Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib
 
@@ -55,7 +55,7 @@ src_unpack() {
 
 	# Use correct path to filefuncs.so on multilib systems
 	sed -i -e "s:/lib/rcscripts:/$(get_libdir)/rcscripts:" \
-		"${S}"/src/awk/{cachedepends,genenviron}.awk || die
+		src/awk/cachedepends.awk sbin/functions.sh || die
 }
 
 src_compile() {
@@ -187,7 +187,7 @@ src_install() {
 	kdir /etc/env.d
 	dodir /etc/init.d			# .keep file might mess up init.d stuff
 	kdir /etc/modules.autoload.d
-	kdir /etc/modules.d
+	kdir /etc/modprobe.d
 	kdir /etc/opt
 	kdir /home
 	kdir ${rcscripts_dir}
@@ -260,7 +260,7 @@ src_install() {
 	#
 	insopts -m0644
 	insinto /etc
-	doins -r "${S}"/etc/*
+	doins -r "${S}"/etc/* || die
 	fperms 0640 /etc/sysctl.conf
 
 	# Install some files to /usr/share/baselayout instead of /etc to keep from
@@ -268,7 +268,7 @@ src_install() {
 	# attempting to merge files, (3) accidentally packaging up personal files
 	# with quickpkg
 	fperms 0600 /etc/shadow
-	mv "${D}"/etc/{passwd,shadow,group,fstab,hosts,issue.devfix} "${D}"/usr/share/baselayout
+	mv "${D}"/etc/{passwd,shadow,group,fstab,hosts,issue.devfix} "${D}"/usr/share/baselayout || die
 
 	# doinitd doesnt respect symlinks
 	dodir /etc/init.d
@@ -277,9 +277,9 @@ src_install() {
 	doconfd "${S}"/etc/conf.d/* || die "doconfd"
 	doenvd "${S}"/etc/env.d/* || die "doenvd"
 	insinto /etc/modules.autoload.d
-	doins "${S}"/etc/modules.autoload.d/*
-	insinto /etc/modules.d
-	doins "${S}"/etc/modules.d/*
+	doins "${S}"/etc/modules.autoload.d/* || die
+	insinto /etc/modprobe.d
+	doins "${S}"/etc/modprobe.d/* || die
 
 	# Special-case uglyness... For people updating from lib32 -> lib amd64
 	# profiles, keep lib32 in the search path while it's around
@@ -327,7 +327,7 @@ src_install() {
 	dosym rc-update /sbin/update-rc
 	# These moved from /etc/init.d/ to /sbin to help newb systems
 	# from breaking
-	dosbin runscript.sh functions.sh
+	dosbin runscript.sh functions.sh || die
 
 	# Compat symlinks between /etc/init.d and /sbin
 	# (some stuff have hardcoded paths)
@@ -342,22 +342,14 @@ src_install() {
 	#
 	cd "${S}"/sbin
 	exeinto ${rcscripts_dir}/sh
-	doexe rc-services.sh rc-daemon.sh rc-help.sh
+	doexe rc-services.sh rc-daemon.sh rc-help.sh || die
 
-	# We can only install new, fast awk versions of scripts
-	# if 'build' or 'bootstrap' is not in USE.  This will
-	# change if we have sys-apps/gawk-3.1.1-r1 or later in
-	# the build image ...
-	if ! use build; then
-		# This is for new depscan.sh and env-update.sh
-		# written in awk
-		cd "${S}"/sbin
-		into /
-		dosbin depscan.sh
-		dosbin env-update.sh
-		insinto ${rcscripts_dir}/awk
-		doins "${S}"/src/awk/*.awk
-	fi
+	# This is for new depscan.sh written in awk
+	cd "${S}"/sbin
+	into /
+	dosbin depscan.sh
+	insinto ${rcscripts_dir}/awk
+	doins "${S}"/src/awk/*.awk
 
 	# Original design had these in /etc/net.modules.d but that is too
 	# problematic with CONFIG_PROTECT
@@ -370,7 +362,7 @@ src_install() {
 	#
 	doman "${S}"/man/*.*
 	docinto /
-	dodoc "${S}"/ChangeLog
+	dodoc "${S}"/ChangeLog{,.svn}
 
 	#
 	# Install baselayout utilities
@@ -379,7 +371,7 @@ src_install() {
 	[[ ${SYMLINK_LIB} == "yes" ]] && libdir=$(get_abi_LIBDIR "${DEFAULT_ABI}")
 
 	cd "${S}"/src
-	make DESTDIR="${D}" LIBDIR="${libdir}" install || die
+	emake DESTDIR="${D}" LIBDIR="${libdir}" install || die
 
 	# Hack to fix bug 9849, continued in pkg_postinst
 	unkdir
