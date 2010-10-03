@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zctextindex/zctextindex-2.13.0.ebuild,v 1.1 2010/09/17 22:10:38 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zctextindex/zctextindex-2.13.1.ebuild,v 1.1 2010/10/03 00:25:30 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
@@ -37,10 +37,3 @@ S="${WORKDIR}/${MY_P}"
 
 DOCS="CHANGES.txt src/Products/ZCTextIndex/README.txt"
 PYTHON_MODNAME="${MY_PN/.//}"
-
-src_prepare() {
-	distutils_src_prepare
-
-	# http://svn.zope.org/?rev=114425&view=rev
-	sed -e "/packages=/a namespace_packages=['Products']," -i setup.py || die "sed failed"
-}

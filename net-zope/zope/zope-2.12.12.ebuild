@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zope/zope-2.12.9.ebuild,v 1.1 2010/09/11 21:52:18 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zope/zope-2.12.12.ebuild,v 1.1 2010/10/03 01:00:37 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
@@ -13,7 +13,7 @@ MY_PN="Zope2"
 MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Zope 2 application server / web framework"
-HOMEPAGE="http://www.zope.org http://zope2.zope.org http://pypi.python.org/pypi/Zope2"
+HOMEPAGE="http://www.zope.org http://zope2.zope.org http://pypi.python.org/pypi/Zope2 https://launchpad.net/zope2"
 SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.zip"
 
 LICENSE="ZPL"
@@ -85,15 +85,10 @@ PDEPEND="net-zope/zsqlmethods"
 
 S="${WORKDIR}/${MY_P}"
 
-ZUID="zope"
-ZGID="zope"
-
-ZOPE_INSTALLATION_DIR="/usr/$(get_libdir)/${PN}-${SLOT}"
-
-# Narrow the scope of ownership/permissions.
-# Security plan:
-# * ZUID is the superuser for all zope instances.
-# * ZGID is for a single instance's administration.
+pkg_setup() {
+	python_pkg_setup
+	ZOPE_INSTALLATION_DIR="usr/$(get_libdir)/${PN}-${SLOT}"
+}
 
 src_compile() {
 	distutils_src_compile
@@ -152,25 +147,14 @@ src_install() {
 	fi
 
 	# Copy the init script skeleton to skel directory of our installation.
-	insinto "${ZOPE_INSTALLATION_DIR}/skel"
+	insinto "/${ZOPE_INSTALLATION_DIR}/skel"
 	doins "${FILESDIR}/zope.initd" || die "doins failed"
 }
 
 pkg_postinst() {
-#	python_mod_optimize --allow-evaluated-non-sitedir-paths "${ZOPE_INSTALLATION_DIR}/lib/python-\${PYTHON_ABI}"
-	byte-compilation() {
-		"$(PYTHON)" "$(python_get_libdir)/compileall.py" -q ${ZOPE_INSTALLATION_DIR}/lib/python-${PYTHON_ABI}
-		"$(PYTHON)" -O "$(python_get_libdir)/compileall.py" -q ${ZOPE_INSTALLATION_DIR}/lib/python-${PYTHON_ABI}
-	}
-	python_execute_function -q byte-compilation
-
-	# Create the zope user and group for backward compatibility.
-	enewgroup ${ZGID} 261
-	usermod -g ${ZGID} ${ZUID} 2>&1 >/dev/null || \
-	enewuser ${ZUID} 261 -1 /var/$(get_libdir)/zope  ${ZGID}
+	python_mod_optimize --allow-evaluated-non-sitedir-paths "/${ZOPE_INSTALLATION_DIR}/lib/python-\${PYTHON_ABI}"
 }
 
 pkg_postrm() {
-#	python_mod_cleanup --allow-evaluated-non-sitedir-paths "${ZOPE_INSTALLATION_DIR}/lib/python-\${PYTHON_ABI}"
-	SUPPORT_PYTHON_ABIS="" python_mod_cleanup ${ZOPE_INSTALLATION_DIR}/lib
+	python_mod_cleanup --allow-evaluated-non-sitedir-paths "/${ZOPE_INSTALLATION_DIR}/lib/python-\${PYTHON_ABI}"
 }

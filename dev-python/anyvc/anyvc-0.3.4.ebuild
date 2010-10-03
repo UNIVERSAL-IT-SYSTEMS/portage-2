@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/anyvc/anyvc-0.3.3.ebuild,v 1.1 2010/09/14 21:43:08 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/anyvc/anyvc-0.3.4.ebuild,v 1.1 2010/10/02 23:23:46 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -16,36 +16,35 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="bazaar git mercurial subversion"
-# IUSE="bazaar doc git mercurial subversion"
+IUSE="bazaar doc git mercurial subversion"
 
-RDEPEND="dev-python/execnet
+RDEPEND="dev-python/apipkg
+	dev-python/execnet
 	dev-python/py
 	bazaar? ( dev-vcs/bzr )
 	git? ( dev-python/dulwich )
 	mercurial? ( dev-vcs/mercurial )
 	subversion? ( dev-python/subvertpy )"
 DEPEND="${RDEPEND}
-	dev-python/setuptools"
-#	doc? ( dev-python/sphinx )
+	dev-python/setuptools
+	doc? ( dev-python/sphinx )"
 
 src_compile() {
 	distutils_src_compile
 
-#	Documentation fails to build.
-#	if use doc; then
-#		einfo "Generation of documentation"
-#		sphinx-build -b html docs docs_output || die "Generation of documentation failed"
-#	fi
+	if use doc; then
+		einfo "Generation of documentation"
+		sphinx-build -b html docs docs_output || die "Generation of documentation failed"
+	fi
 }
 
 src_install() {
 	distutils_src_install
 
-#	if use doc; then
-#		pushd docs_output > /dev/null
-#		docinto html
-#		cp -R [a-z]* _static "${ED}usr/share/doc/${PF}/html" || die "Installation of documentation failed"
-#		popd > /dev/null
-#	fi
+	if use doc; then
+		pushd docs_output > /dev/null
+		docinto html
+		cp -R [a-z]* _static "${ED}usr/share/doc/${PF}/html" || die "Installation of documentation failed"
+		popd > /dev/null
+	fi
 }
