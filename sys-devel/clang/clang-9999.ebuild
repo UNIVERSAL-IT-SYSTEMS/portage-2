@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/clang/clang-9999.ebuild,v 1.8 2010/09/21 16:14:35 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/clang/clang-9999.ebuild,v 1.9 2010/10/06 09:06:16 voyageur Exp $
 
 EAPI=3
 
@@ -145,8 +145,8 @@ src_install() {
 	# to just fix this, so we correct it post-install
 	if [[ ${CHOST} == *-darwin* ]] ; then
 		for lib in libCIndex.dylib ; do
-			install_name_tool -id "${EPREFIX}"/usr/lib/${lib} \
-				"${ED}"/usr/lib/${lib}
+			install_name_tool -id "${EPREFIX}"/usr/lib/llvm/${lib} \
+				"${ED}"/usr/lib/llvm/${lib}
 		done
 	fi
 }
