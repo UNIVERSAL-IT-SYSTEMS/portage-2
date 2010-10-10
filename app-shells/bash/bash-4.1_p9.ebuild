@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/bash-4.1_p5.ebuild,v 1.1 2010/04/07 18:07:45 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/bash-4.1_p9.ebuild,v 1.1 2010/10/09 22:03:22 vapier Exp $
 
 EAPI="1"
 
@@ -70,8 +70,7 @@ src_unpack() {
 	[[ ${READLINE_PLEVEL} -gt 0 ]] && epatch $(patches -s ${READLINE_PLEVEL} readline ${READLINE_VER})
 	cd ../..
 
-	epatch "${FILESDIR}"/${PN}-4.x-deferred-heredocs.patch
-	epatch "${FILESDIR}"/${PN}-4.1-fbsd-eaccess.patch # bug 303411
+	epatch "${FILESDIR}"/${PN}-4.1-fbsd-eaccess.patch #303411
 
 	if ! use vanilla ; then
 		sed -i '1i#define NEED_FPURGE_DECL' execute_cmd.c # needs fpurge() decl
@@ -108,6 +107,8 @@ src_compile() {
 	# Force linking with system curses ... the bundled termcap lib
 	# sucks bad compared to ncurses
 	myconf="${myconf} --with-curses"
+
+	myconf="${myconf} --without-lispdir" #335896
 
 	use plugins && append-ldflags -Wl,-rpath,/usr/$(get_libdir)/bash
 	econf \
