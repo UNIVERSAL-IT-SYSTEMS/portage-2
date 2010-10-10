@@ -1,10 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/bzr/bzr-2.1.1.ebuild,v 1.3 2010/05/18 11:19:30 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/bzr/bzr-2.2.1.ebuild,v 1.1 2010/10/10 14:41:55 fauli Exp $
 
-EAPI=3
-
-PYTHON_DEPEND=2
+EAPI="3"
+PYTHON_DEPEND="2"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit bash-completion distutils elisp-common eutils versionator
 
@@ -22,9 +23,9 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-
 IUSE="curl doc emacs +sftp test"
 
 # Disable until https://bugs.launchpad.net/bzr/+bug/392127 is fixed
-RESTRICT=test
+RESTRICT="test"
 
-RDEPEND="|| ( >=dev-lang/python-2.5 dev-python/celementtree )
+RDEPEND="|| ( dev-lang/python:2.7[xml] dev-lang/python:2.6[xml] dev-lang/python:2.5[xml] dev-python/celementtree )
 	curl? ( dev-python/pycurl )
 	sftp? ( dev-python/paramiko )"
 
@@ -37,15 +38,18 @@ DEPEND="emacs? ( virtual/emacs )
 	)"
 
 S="${WORKDIR}/${MY_P}"
-PYTHON_MODNAME="bzrlib"
-SITEFILE=71bzr-gentoo.el
+
+PYTHON_CFLAGS=("2.* + -fno-strict-aliasing")
+
 DOCS="doc/*.txt"
+PYTHON_MODNAME="bzrlib"
+SITEFILE="71bzr-gentoo.el"
 
 src_prepare() {
 	distutils_src_prepare
 
 	# Don't regenerate .c files from .pyx when pyrex is found.
-	epatch "${FILESDIR}/${PN}-2.1.1-no-pyrex-citon.patch"
+	epatch "${FILESDIR}/${PN}-2.2.0-no-pyrex-citon.patch"
 	# Don't run lock permission tests when running as root
 	epatch "${FILESDIR}/${PN}-0.90-tests-fix_root.patch"
 	# Fix permission errors when run under directories with setgid set.
@@ -60,8 +64,32 @@ src_compile() {
 	fi
 }
 
+src_test() {
+	# Some tests expect the usual pyc compiling behaviour.
+	python_enable_pyc
+
+	# Define tests which are known to fail below.
+	local skip_tests="("
+	# https://bugs.launchpad.net/bzr/+bug/456471
+	skip_tests+="bzrlib.tests.blackbox.test_version.*|"
+	# https://bugs.launchpad.net/bzr/+bug/392127
+	skip_tests+="test_http.*"
+	skip_tests+=")"
+	if [[ -n ${skip_tests} ]]; then
+		einfo "Skipping tests known to fail: ${skip_tests}"
+	fi
+
+	testing() {
+		LC_ALL="C" "$(PYTHON -A)" bzr --no-plugins selftest ${skip_tests:+-x} ${skip_tests}
+	}
+	python_execute_function testing
+
+	# Just to make sure we don't hit any errors on later stages.
+	python_disable_pyc
+}
+
 src_install() {
-	distutils_src_install --install-data "${EPREFIX}"/usr/share
+	distutils_src_install --install-data "${EPREFIX}/usr/share"
 
 	if use doc; then
 		docinto developers
@@ -81,8 +109,6 @@ src_install() {
 		touch "${ED}${SITELISP}/${PN}/.nosearch"
 	fi
 
-	insinto /usr/share/zsh/site-functions
-	doins contrib/zsh/_bzr
 	dobashcompletion contrib/bash/bzr
 }
 
@@ -103,25 +129,4 @@ pkg_postinst() {
 pkg_postrm() {
 	distutils_pkg_postrm
 	use emacs && elisp-site-regen
-}
-
-src_test() {
-	export LC_ALL=C
-	# Define tests which are known to fail below.
-	local skip_tests="("
-	#https://bugs.launchpad.net/bzr/+bug/456471
-	skip_tests+="bzrlib.tests.blackbox.test_version.*|"
-	# https://bugs.launchpad.net/bzr/+bug/392127
-	skip_tests+="test_http.*"
-	skip_tests+=")"
-	# Some tests expect the usual pyc compiling behaviour.
-	python_enable_pyc
-	if [[ -n ${skip_tests} ]]; then
-		einfo "Skipping tests known to fail: ${skip_tests}"
-		"$(PYTHON -A)" bzr --no-plugins selftest -x ${skip_tests} || die
-	else
-		"$(PYTHON -A)" bzr --no-plugins selftest || die
-	fi
-	# Just to make sure we don't hit any errors on later stages.
-	python_disable_pyc
 }
