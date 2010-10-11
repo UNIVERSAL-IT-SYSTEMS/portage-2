@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/gramps/gramps-3.2.2.ebuild,v 1.1 2010/04/26 09:17:22 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/gramps/gramps-3.2.4.ebuild,v 1.1 2010/10/11 11:41:58 fauli Exp $
 
 EAPI=2
 
@@ -29,6 +29,7 @@ RDEPEND="dev-python/bsddb3
 	reports? ( media-gfx/graphviz )
 	webkit? ( dev-python/pywebkitgtk )"
 DEPEND="${RDEPEND}
+	dev-util/intltool
 	sys-devel/gettext
 	virtual/libiconv
 	dev-util/pkgconfig"
@@ -42,6 +43,8 @@ pkg_setup() {
 
 src_prepare() {
 	gnome2_src_prepare
+
+	epatch "${FILESDIR}"/${PN}-3.2.4-use_bsddb3.patch
 
 	eautoreconf
 
