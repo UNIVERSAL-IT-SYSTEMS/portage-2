@@ -1,6 +1,37 @@
 # ChangeLog for sys-apps/portage
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/ChangeLog,v 1.748 2010/10/11 00:15:40 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/ChangeLog,v 1.751 2010/10/12 06:28:04 zmedico Exp $
+
+*portage-2.2_rc94 (12 Oct 2010)
+
+  12 Oct 2010; Zac Medico <zmedico@gentoo.org> +portage-2.2_rc94.ebuild:
+  2.2_rc94 version bump. This fixes a regression in repoman $Header handling
+  since 2.2_rc93, caused by an error in changes from bug #340475.
+
+*portage-2.1.9.16 (12 Oct 2010)
+
+  12 Oct 2010; Zac Medico <zmedico@gentoo.org> +portage-2.1.9.16.ebuild:
+  2.1.9.16 version bump. This fixes a regression in repoman $Header handling
+  since 2.1.9.15, caused by an error in changes from bug #340475.
+
+  12 Oct 2010; Zac Medico <zmedico@gentoo.org> -portage-2.1.9.15.ebuild,
+  -portage-2.2_rc93.ebuild:
+  Remove releases due to a repoman regression.
+
+*portage-2.2_rc93 (12 Oct 2010)
+
+  12 Oct 2010; Zac Medico <zmedico@gentoo.org> +portage-2.2_rc93.ebuild:
+  2.2_rc93 version bump. This includes all of the fixes in portage-2.1.9.15,
+  and also fixes bug #340545 (regression in emerge -b option parsing since
+  2.2_rc92). Bug #210077 tracks all bugs fixed since 2.1.x.
+
+*portage-2.1.9.15 (12 Oct 2010)
+
+  12 Oct 2010; Zac Medico <zmedico@gentoo.org> +portage-2.1.9.15.ebuild:
+  2.1.9.15 version bump. This fixes bug #340459 (emerge consumes too much
+  time when processing a large number of slot conflicts) and bug #340475
+  (repoman does unnecessary svn commits for manifests, triggered by
+  $Header). Bug #335925 tracks all bugs fixed since 2.1.8.x.
 
 *portage-2.2_rc92 (10 Oct 2010)
 
