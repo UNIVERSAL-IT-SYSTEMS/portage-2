@@ -1,13 +1,13 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-workbench/mysql-workbench-5.2.27.ebuild,v 1.1 2010/09/04 06:32:18 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-workbench/mysql-workbench-5.2.29.ebuild,v 1.1 2010/10/13 17:03:03 graaff Exp $
 
 EAPI="2"
 GCONF_DEBUG="no"
 
 inherit gnome2 eutils flag-o-matic autotools
 
-MY_P="${PN}-gpl-${PV}"
+MY_P="${PN}-gpl-${PV}-src"
 
 DESCRIPTION="MySQL Workbench"
 HOMEPAGE="http://dev.mysql.com/workbench/"
@@ -23,6 +23,7 @@ RDEPEND=">=x11-libs/gtk+-2.6
 	gnome-base/libglade:2.0
 	dev-libs/libsigc++:2
 	dev-libs/boost
+	>=dev-cpp/ctemplate-0.95
 	>=dev-libs/libxml2-2.6.2
 	>=dev-cpp/glibmm-2.14
 	>=dev-cpp/gtkmm-2.14
@@ -40,7 +41,6 @@ RDEPEND=">=x11-libs/gtk+-2.6
 	dev-python/paramiko
 	readline? ( sys-libs/readline )"
 DEPEND="${RDEPEND}
-	>=dev-cpp/ctemplate-0.95
 	dev-util/pkgconfig"
 
 S="${WORKDIR}"/"${MY_P}"
