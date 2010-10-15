@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/activerecord/activerecord-2.3.9.ebuild,v 1.1 2010/09/05 09:18:15 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/activerecord/activerecord-2.3.10.ebuild,v 1.1 2010/10/15 07:51:55 graaff Exp $
 
 EAPI=2
 USE_RUBY="ruby18 ree18 jruby"
@@ -40,8 +40,6 @@ ruby_add_bdepend "
 all_ruby_prepare() {
 	# Custom template not found in package
 	sed -i -e '/horo/d' Rakefile || die
-
-	epatch "${FILESDIR}/${PN}-2.3.8-add-index-with-symbol.patch"
 }
 
 each_ruby_test() {
@@ -54,8 +52,4 @@ each_ruby_test() {
 			fi
 			;;
 	esac
-#
-#	if use sqlite; then
-#		${RUBY} -S rake test_sqlite || die "sqlite3 tests failed"
-#	fi
 }

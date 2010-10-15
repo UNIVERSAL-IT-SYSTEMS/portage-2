@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rails/rails-2.3.9.ebuild,v 1.1 2010/09/05 09:22:59 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rails/rails-2.3.10.ebuild,v 1.1 2010/10/15 07:52:59 graaff Exp $
 
 EAPI=2
 USE_RUBY="ruby18 ree18"

@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12045 2010/10/13 15:26:39 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12048 2010/10/15 09:00:29 fauli Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,14 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Christian Faulhammer <fauli@gentoo.org> (15 Oct 2010)
+# Mask for removal in 30 days
+# Has lots of bundled libraries for ages (bug 250049), even as so
+# files, upstream does not care, even with security vulnerable expat
+# library, about that
+# No real use in the last couple of years
+dev-tex/mpm
 
 # Bernard Cafarelli <voyageur@gentoo.org> (13 Oct 2010)
 # New Objective-C Runtime for GNUstep
@@ -749,16 +757,6 @@ app-i18n/imhangul-status-applet
 # Removal on 2010-09-23
 dev-python/boostpythongenerator
 
-# Christian Faulhammer <fauli@gentoo.org> (19 Aug 2010)
-# Mask for removal in 30 days
-# Has a bundled library for ages (bug 221925), upstream does not care
-# about that
-# GtkHTML development is a bit stalled
-# There are two other HTML display facilities for Claws:
-# mail-client/claws-mail-fancy (WebKit) and USE=dillo on
-# mail-client/claws-mail
-mail-client/claws-mail-gtkhtml
-
 # Alex Legler <a3li@gentoo.org> (18 Aug 2010)
 # Fails to install with the latest stable versions of OpenSSL and Tk.
 # The 1.8.6 packages will be removed in 60 days. Reference: Bug 332597.
@@ -1304,10 +1302,6 @@ sys-auth/pam_keystore
 # conflicts (#259700).
 dev-lang/nemerle
 
-# Christian Faulhammer <fauli@gentoo.org> (24 Aug 2009)
-# Has bundled security-vulnerable expat library, see bug 250049
-dev-tex/mpm
-
 # Diego E. Pettenò <flameeyes@gentoo.org> (8 Aug 2009)
 #  on behalf of QA Team
 #
@@ -1331,7 +1325,6 @@ net-misc/netcomics-cvs
 dev-lisp/cl-ansi-tests-cvs
 app-portage/layman-dbtools
 dev-util/gprof2dot
-dev-java/jsr305
 
 # Federico Ferri <mescalinum@gentoo.org> (08 Aug 2009)
 # Doesn't build with Tcl 8.5, has several bugs open

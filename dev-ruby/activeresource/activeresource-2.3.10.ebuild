@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/activeresource/activeresource-2.3.9.ebuild,v 1.1 2010/09/05 09:19:29 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/activeresource/activeresource-2.3.10.ebuild,v 1.1 2010/10/15 07:49:10 graaff Exp $
 
 EAPI=2
 
