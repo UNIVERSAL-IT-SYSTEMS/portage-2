@@ -1,13 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/mtools/mtools-4.0.12.ebuild,v 1.2 2010/03/02 15:20:25 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/mtools/mtools-4.0.14.ebuild,v 1.1 2010/10/17 04:22:24 vapier Exp $
 
-inherit eutils
+EAPI="2"
 
 DESCRIPTION="utilities to access MS-DOS disks from Unix without mounting them"
 HOMEPAGE="http://mtools.linux.lu/"
-SRC_URI="http://mtools.linux.lu/${P}.tar.bz2
-	mirror://gnu/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://gnu/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -22,20 +21,16 @@ DEPEND="
 		x11-libs/libX11
 		x11-libs/libXt
 	)"
+RDEPEND="${DEPEND}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${PN}-3.9.11-flags.patch #232766
+src_prepare() {
 	sed -i 's:/usr/local/etc:/etc:g' mtools.5 mtools.texi
 }
 
-src_compile() {
+src_configure() {
 	econf \
 		--sysconfdir=/etc/mtools \
-		$(use_with X x) \
-		|| die
-	emake || die "emake failed"
+		$(use_with X x)
 }
 
 src_install() {
