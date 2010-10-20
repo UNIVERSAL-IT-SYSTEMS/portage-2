@@ -1,7 +1,7 @@
 
 !minimal? ( virtual/mailx )
 0
-mirror://sourceforge/smartmontools/smartmontools-5.38.tar.gz
+mirror://sourceforge/smartmontools/smartmontools-5.40.tar.gz
 
 http://smartmontools.sourceforge.net/
 GPL-2
@@ -12,9 +12,9 @@ static minimal
 
 
 
+2
 
-
-compile install
+configure install prepare unpack
 
 
 
