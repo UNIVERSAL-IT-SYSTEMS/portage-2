@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/DateManip/DateManip-6.12.ebuild,v 1.1 2010/09/28 12:37:06 tove Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/DateManip/DateManip-6.14.ebuild,v 1.1 2010/10/21 08:49:14 tove Exp $
 
 EAPI=3
 

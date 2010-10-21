@@ -1,7 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/whois/whois-4.7.36.ebuild,v 1.6 2009/11/17 19:49:49 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/whois/whois-5.0.8.ebuild,v 1.1 2010/10/21 07:39:55 vapier Exp $
 
+EAPI=3
 inherit eutils toolchain-funcs
 
 MY_P=${P/-/_}
@@ -11,18 +12,15 @@ SRC_URI="mirror://debian/pool/main/w/whois/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
-IUSE="nls"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux"
+IUSE="iconv idn nls"
 RESTRICT="test" #59327
 
-RDEPEND="net-dns/libidn"
+RDEPEND="idn? ( net-dns/libidn )"
 DEPEND="${RDEPEND}
 	>=dev-lang/perl-5"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${PN}-4.7.26-gentoo-security.patch
+src_prepare() {
 	epatch "${FILESDIR}"/${PN}-4.7.2-config-file.patch
 
 	if use nls ; then
@@ -32,19 +30,24 @@ src_unpack() {
 	fi
 }
 
+src_configure() { :;} # expected no-op
+
 src_compile() {
+	unset HAVE_ICONV HAVE_LIBIDN
+	use iconv && export HAVE_ICONV=1
+	use idn && export HAVE_LIBIDN=1
 	tc-export CC
-	emake CFLAGS="${CFLAGS} ${CPPFLAGS}" HAVE_LIBIDN=1 || die
+	emake CFLAGS="${CFLAGS} ${CPPFLAGS}" || die
 }
 
 src_install() {
-	emake BASEDIR="${D}" prefix=/usr install || die
+	emake BASEDIR="${ED}" prefix=/usr install || die
 	insinto /etc
 	doins whois.conf
 	dodoc README debian/changelog
 
 	if [[ ${USERLAND} != "GNU" ]]; then
-		mv "${D}"/usr/share/man/man1/{whois,mdwhois}.1
-		mv "${D}"/usr/bin/{whois,mdwhois}
+		mv "${ED}"/usr/share/man/man1/{whois,mdwhois}.1
+		mv "${ED}"/usr/bin/{whois,mdwhois}
 	fi
 }
