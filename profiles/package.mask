@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12081 2010/10/21 21:57:36 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12084 2010/10/22 08:42:30 voyageur Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,32 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Diego E. Pettenò <flameeyes@gentoo.org> (22 Oct 2010)
+#  on behalf of QA team
+#
+# Obsolete even by upstream standard, since version 0.1.2
+# is out since 2007 (and has a version bump request in bug
+# #223299 since May 2008); uses “obsolete” tail/head
+# syntax (bug #159606, the warning has since been removed
+# from coreutils); more importantly autotools are rebuilt by
+# a maintainer-mode-triggered check, but no dependency over
+# autotools, with or without the correct version is present
+# (bug #318487; automake 1.8 is nowadays not that common to
+# find installed).
+#
+# Removal on 2010-12-21
+sys-fs/dd-rhelp
+
+# Diego E. Pettenò <flameeyes@gentoo.org> (22 Oct 2010)
+#  on behalf of QA team
+#
+# Fails to work properly, upstream doesn't seem to care. As
+# maintainer I'm going to remove this, and eventually package
+# something for mod_security to query it.
+#
+# Removal on 2010-11-21
+www-apache/mod_httpbl
 
 # Michael Sterrett <mr_bones_@gentoo.org> (21 Oct 2010)
 # Dead upstream
@@ -1135,6 +1161,7 @@ net-libs/libjingle
 # experimental features and accept a more unstable release.
 ~www-client/chromium-7.0.544.0
 ~www-client/chromium-8.0.552.0
+~www-client/chromium-8.0.552.11
 
 # Christian Parpart <trapni@gentoo.org> (23 Dec 2009)
 # Masked for testing/feedback.
