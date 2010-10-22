@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libaio/libaio-0.3.109.ebuild,v 1.2 2010/08/26 02:51:45 reavertm Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libaio/libaio-0.3.109-r1.ebuild,v 1.1 2010/10/21 23:56:38 vapier Exp $
 
 EAPI="3"
 
@@ -18,11 +18,15 @@ IUSE="static-libs"
 RESTRICT="test"
 
 src_prepare() {
-	# FIXME epatch "${FILESDIR}"/${PN}-0.3.107-sparc.patch        # not applicable anymore, may need porting
-	# FIXME epatch "${FILESDIR}"/${PN}-0.3.107-generic-arch.patch # not applicable anymore but arm support now upstream
+	epatch "${FILESDIR}"/${PN}-0.3.109-unify-bits-endian.patch
+	epatch "${FILESDIR}"/${PN}-0.3.109-generic-arch.patch
 	epatch "${FILESDIR}"/${PN}-0.3.106-build.patch
 	epatch "${FILESDIR}"/${PN}-0.3.107-ar-ranlib.patch
-	epatch "${FILESDIR}"/${P}-install.patch
+	epatch "${FILESDIR}"/${PN}-0.3.109-install.patch
+	sed -i \
+		-e "/^libdir=/s:lib$:$(get_libdir):" \
+		-e "/^prefix=/s:/usr:${EPREFIX}/usr:" \
+		src/Makefile Makefile || die
 }
 
 src_configure() {
@@ -32,20 +36,20 @@ src_configure() {
 src_test() {
 	cd "${S}"/harness
 	mkdir testdir
-	emake check prefix="${S}/src" libdir="${S}/src"
+	emake check prefix="${S}/src" libdir="${S}/src" || die
 }
 
 src_install() {
-	emake install DESTDIR="${D}" LIBDIR=$(get_libdir) || die
+	emake install DESTDIR="${ED}" || die
 	doman man/*
 	dodoc ChangeLog TODO
 
-	if ! use static-libs; then
+	# move crap to / for multipath-tools #325355
+	gen_usr_ldscript -a aio
+	if ! use static-libs ; then
 		rm "${ED}"usr/lib*/*.a || die
-	else
-		gen_usr_ldscript libaio.so
 	fi
 
 	# remove stuff provided by man-pages now
-	rm "${ED}"usr/share/man/man3/aio_{cancel,error,fsync,read,return,suspend,write}.*
+	rm "${ED}"usr/share/man/man3/aio_{cancel,error,fsync,init,read,return,suspend,write}.*
 }
