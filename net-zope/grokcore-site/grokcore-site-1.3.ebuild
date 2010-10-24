@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/grokcore-site/grokcore-site-1.2.ebuild,v 1.1 2010/09/19 23:47:38 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/grokcore-site/grokcore-site-1.3.ebuild,v 1.1 2010/10/23 21:42:55 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -29,7 +29,6 @@ RDEPEND="dev-python/martian
 	net-zope/zope-container
 	net-zope/zope-interface
 	net-zope/zope-lifecycleevent
-	net-zope/zope-location
 	net-zope/zope-site"
 DEPEND="${RDEPEND}
 	dev-python/setuptools"
