@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/tar/tar-1.21-r1.ebuild,v 1.2 2009/02/02 19:00:01 dirtyepic Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/tar/tar-1.24.ebuild,v 1.1 2010/10/25 05:18:08 vapier Exp $
+
+EAPI="2"
 
 inherit flag-o-matic eutils
 
@@ -19,12 +21,8 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 	nls? ( >=sys-devel/gettext-0.10.35 )"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}"/${P}-revert-pipe.patch #252680
-	epatch "${FILESDIR}"/${P}-testsuite.patch   #253122
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-1.23-strncpy.patch #317139
 
 	if ! use userland_GNU ; then
 		sed -i \
@@ -34,7 +32,7 @@ src_unpack() {
 	fi
 }
 
-src_compile() {
+src_configure() {
 	local myconf
 	use static && append-ldflags -static
 	use userland_GNU || myconf="--program-prefix=g"
@@ -45,15 +43,14 @@ src_compile() {
 		--bindir=/bin \
 		--libexecdir=/usr/sbin \
 		$(use_enable nls) \
-		${myconf} || die
-	emake || die "emake failed"
+		${myconf}
 }
 
 src_install() {
 	local p=""
 	use userland_GNU || p=g
 
-	emake DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die
 
 	if [[ -z ${p} ]] ; then
 		# a nasty yet required piece of baggage
@@ -61,7 +58,7 @@ src_install() {
 		doexe "${FILESDIR}"/rmt || die
 	fi
 
-	dodoc AUTHORS ChangeLog* NEWS README* PORTS THANKS
+	dodoc AUTHORS ChangeLog* NEWS README* THANKS
 	newman "${FILESDIR}"/tar.1 ${p}tar.1
 	mv "${D}"/usr/sbin/${p}backup{,-tar}
 	mv "${D}"/usr/sbin/${p}restore{,-tar}
