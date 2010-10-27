@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/tar/tar-1.24.ebuild,v 1.2 2010/10/26 06:31:44 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/tar/tar-1.24-r1.ebuild,v 1.1 2010/10/27 18:19:39 ssuominen Exp $
 
 EAPI="2"
 
@@ -21,8 +21,12 @@ RDEPEND=""
 DEPEND="${RDEPEND}
 	nls? ( >=sys-devel/gettext-0.10.35 )"
 
+RESTRICT="test" # Remove this from 1.25
+
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.23-strncpy.patch #317139
+	epatch "${FILESDIR}"/${P}-mkdirat.patch #342735
+	epatch "${FILESDIR}"/${P}-transform{,-2}.patch #342785
 
 	if ! use userland_GNU ; then
 		sed -i \
