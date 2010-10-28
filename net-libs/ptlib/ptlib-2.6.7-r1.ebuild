@@ -1,15 +1,16 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/ptlib/ptlib-2.6.6.ebuild,v 1.1 2010/02/18 19:02:37 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/ptlib/ptlib-2.6.7-r1.ebuild,v 1.1 2010/10/28 00:06:15 volkmar Exp $
 
 EAPI="2"
 
 inherit eutils
 
+HTMLV="2.6.6" # There no 2.6.7 release of htmldoc
 DESCRIPTION="Network focused portable C++ class library providing high level functions"
 HOMEPAGE="http://www.opalvoip.org/"
 SRC_URI="mirror://sourceforge/opalvoip/${P}.tar.bz2
-	doc? ( mirror://sourceforge/opalvoip/${P}-htmldoc.tar.bz2 )"
+	doc? ( mirror://sourceforge/opalvoip/${PN}-${HTMLV}-htmldoc.tar.bz2 )"
 
 LICENSE="MPL-1.0"
 SLOT="0"
@@ -231,7 +232,8 @@ src_install() {
 	dodoc History.txt ReadMe.txt ReadMe_QOS.txt || die "dodoc failed"
 
 	# ChangeLog is not standard
-	dodoc ChangeLog-${PN}-v${PV//./_}.txt || die "dodoc failed"
+	# This version (2.6.7) doesn't have a ChangeLog file.
+	#dodoc ChangeLog-${PN}-v${PV//./_}.txt || die "dodoc failed"
 
 	if use audio || use video; then
 		newdoc plugins/ReadMe.txt ReadMe-Plugins.txt || die "newdoc failed"
