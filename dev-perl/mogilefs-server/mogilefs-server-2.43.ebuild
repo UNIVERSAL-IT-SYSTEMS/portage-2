@@ -1,9 +1,13 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/mogilefs-server/mogilefs-server-2.33-r1.ebuild,v 1.1 2009/11/29 01:01:09 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/mogilefs-server/mogilefs-server-2.43.ebuild,v 1.1 2010/10/29 03:34:52 robbat2 Exp $
 
 EAPI=2
 MODULE_AUTHOR="DORMANDO"
+MY_PN=MogileFS-Server
+MY_P="${MY_PN}-${PV}"
+MODULE_A="${MY_P}.tar.gz"
+S="${WORKDIR}/${MY_P}"
 inherit perl-module
 
 DESCRIPTION="Server for the MogileFS distributed file system"
@@ -18,17 +22,19 @@ KEYWORDS="~amd64 ~ppc ~x86"
 # Upstream site recommends this,
 # but it breaks Perlbal
 # dev-perl/Perlbal-XS-HTTPHeaders
-DEPEND="dev-perl/Net-Netmask
+RDEPEND="dev-perl/Net-Netmask
 		>=dev-perl/Danga-Socket-1.61
 		>=dev-perl/Sys-Syscall-0.22
-		>=dev-perl/Perlbal-1.73
+		>=dev-perl/Perlbal-1.74
 		dev-perl/IO-AIO
 		dev-perl/libwww-perl
-		>=dev-perl/MogileFS-Client-1.09
+		>=dev-perl/MogileFS-Client-1.11
+		>=dev-perl/MogileFS-Utils-2.16
 		dev-perl/Cache-Memcached
 		mysql? ( dev-perl/DBD-mysql )
 		postgres? ( dev-perl/DBD-Pg )
 		sqlite? ( dev-perl/DBD-SQLite )"
+DEPEND="${RDEPEND}"
 mydoc="CHANGES TODO"
 
 # You need a local MySQL or Postgresql server for this
