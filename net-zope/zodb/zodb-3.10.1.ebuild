@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zodb/zodb-3.10.0.ebuild,v 1.1 2010/10/17 18:57:40 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zodb/zodb-3.10.1.ebuild,v 1.1 2010/10/30 04:53:26 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"

@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zope/zope-2.13.0_alpha4.ebuild,v 1.2 2010/09/25 17:34:37 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zope/zope-2.13.0_rc1.ebuild,v 1.1 2010/10/30 05:08:23 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
@@ -10,7 +10,7 @@ RESTRICT_PYTHON_ABIS="2.4 2.5 3.*"
 inherit distutils eutils multilib versionator
 
 MY_PN="Zope2"
-MY_P="${MY_PN}-${PV/_alpha/a}"
+MY_P="${MY_PN}-${PV/_rc/c}"
 
 DESCRIPTION="Zope 2 application server / web framework"
 HOMEPAGE="http://www.zope.org http://zope2.zope.org http://pypi.python.org/pypi/Zope2 https://launchpad.net/zope2"
@@ -97,14 +97,6 @@ S="${WORKDIR}/${MY_P}"
 pkg_setup() {
 	python_pkg_setup
 	ZOPE_INSTALLATION_DIR="usr/$(get_libdir)/${PN}-${SLOT}"
-}
-
-src_prepare() {
-	distutils_src_prepare
-
-	# https://bugs.launchpad.net/zope2/+bug/634942
-	# http://svn.zope.org/?rev=116933&view=rev
-	sed -e "/nt_svcutils/d" -i setup.py
 }
 
 src_compile() {
