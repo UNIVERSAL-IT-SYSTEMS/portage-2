@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pygraphviz/pygraphviz-1.0.ebuild,v 1.1 2010/09/15 19:51:05 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pygraphviz/pygraphviz-1.0-r1.ebuild,v 1.1 2010/10/29 21:40:13 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -24,11 +24,12 @@ DEPEND="${RDEPEND}"
 src_prepare() {
 	distutils_src_prepare
 	epatch "${FILESDIR}/${P}-setup.py.patch"
+	epatch "${FILESDIR}/${P}-avoid_tests.patch"
 }
 
 src_test() {
 	testing() {
-		"$(PYTHON)" -c "import sys; sys.path.insert(0, '$(ls -d build-${PYTHON_ABI}/lib.*)'); import pygraphviz; pygraphviz.test()"
+		"$(PYTHON)" -c "import sys; sys.path.insert(0, '$(ls -d build-${PYTHON_ABI}/lib.*)'); import pygraphviz.tests; pygraphviz.tests.run()"
 	}
 	python_execute_function testing
 }
@@ -38,7 +39,7 @@ src_install() {
 
 	if use examples; then
 		insinto /usr/share/doc/${PF}
-		doins -r examples || die
+		doins -r examples || die "Installation of examples failed"
 	fi
 
 	delete_tests() {
