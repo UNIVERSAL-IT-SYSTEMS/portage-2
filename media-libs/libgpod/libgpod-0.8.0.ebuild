@@ -1,12 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libgpod/libgpod-0.8.0.ebuild,v 1.1 2010/10/31 16:07:46 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libgpod/libgpod-0.8.0.ebuild,v 1.3 2010/10/31 19:29:42 ssuominen Exp $
 
 EAPI=3
 
 PYTHON_DEPEND="python? 2:2.6"
 
-inherit eutils mono python
+inherit mono python
 
 DESCRIPTION="Shared library to access the contents of an iPod"
 HOMEPAGE="http://www.gtkpod.org/libgpod/"
@@ -63,7 +63,7 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS README NEWS README* TROUBLESHOOTING
+	dodoc AUTHORS NEWS README* TROUBLESHOOTING
 
 	find "${D}" -name '*.la' -exec rm -f '{}' +
 }
