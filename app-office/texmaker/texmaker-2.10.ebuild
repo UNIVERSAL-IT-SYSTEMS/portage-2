@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/texmaker/texmaker-2.0.ebuild,v 1.3 2010/10/23 14:48:48 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/texmaker/texmaker-2.10.ebuild,v 1.1 2010/10/30 21:36:24 aballier Exp $
 
 EAPI="3"
 
@@ -23,7 +23,7 @@ SRC_URI="http://www.xm1math.net/texmaker/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
 IUSE=""
 
 S="${WORKDIR}/${MY_P}"
@@ -32,9 +32,9 @@ COMMON_DEPEND="
 	app-text/poppler[qt4]
 	x11-libs/libX11
 	x11-libs/libXext
-	x11-libs/qt-gui:4
-	x11-libs/qt-webkit:4
-	x11-libs/qt-xmlpatterns:4
+	>=x11-libs/qt-gui-4.6.1:4
+	>=x11-libs/qt-core-4.6.1:4
+	>=x11-libs/qt-webkit-4.6.1:4
 	>=app-text/hunspell-1.2.4"
 RDEPEND="${COMMON_DEPEND}
 	virtual/latex-base

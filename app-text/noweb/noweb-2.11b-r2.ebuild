@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/noweb/noweb-2.11b.ebuild,v 1.9 2008/08/25 17:15:29 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/noweb/noweb-2.11b-r2.ebuild,v 1.1 2010/10/30 22:23:22 aballier Exp $
 
 inherit eutils toolchain-funcs elisp-common
 
@@ -10,13 +10,14 @@ SRC_URI="http://www.eecs.harvard.edu/~nr/noweb/dist/${P}.tgz"
 
 LICENSE="freedist emacs? ( GPL-2 )"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="emacs examples"
 
 DEPEND="virtual/tex-base
 	dev-lang/icon
 	sys-apps/debianutils
 	emacs? ( virtual/emacs )"
+RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${P}/src
 
@@ -26,11 +27,21 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
+	# glibc2.10 compat (bug 270757)
+#	mkdir d && cp -r c/* d/
+	sed "s:getline (:getline_nonlibc (:" -i c/getline.{c,h} || die
+	sed "s:getline(:getline_nonlibc(:" -i c/{notangle.c,getline.c,finduses.c} || die
+#	diff -u d/ c/
+
 	epatch "${FILESDIR}"/${PN}-2.9-security.patch
 	# dont run texhash...
 	sed -i -e "s/texhash/true/" Makefile
 	# dont strip...
 	sed -i -e "s/strip/true/" Makefile
+
+	cd "${WORKDIR}/${P}"
+	epatch "${FILESDIR}"/${P}-recmake.patch
+	epatch "${FILESDIR}"/${P}-ldflags.patch
 }
 
 src_compile() {
