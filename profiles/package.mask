@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12143 2010/11/01 21:13:23 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12146 2010/11/02 21:51:24 eva Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,11 +31,19 @@
 
 #--- END OF EXAMPLES ---
 
-# Markos Chandras <hwoarang@gentoo.org> (1 Nov 2010)
+# Samuli Suominen <ssuominen@gentoo.org> (02 Nov 2010)
+# acerhk fails to build with Linux >= 2.6.30 wrt #277598
+# acer_acpi is included in Linux since >= 2.6.25 wrt #208577
+# and fails parallel make too
+# Removal in 30 days
+app-laptop/acerhk
+app-laptop/acer_acpi
+
+# Markos Chandras <hwoarang@gentoo.org> (01 Nov 2010)
 # Masking alpha releases
 net-analyzer/ncrack
 
-# Tomáš Chvátal <scarabeus@gentoo.org> (1 Nov 2010)
+# Tomáš Chvátal <scarabeus@gentoo.org> (01 Nov 2010)
 # Useless since we don't have xfs. Remove in 30 days.
 x11-apps/xfsinfo
 
@@ -666,26 +674,12 @@ app-benchmarks/xfbsuite
 >=dev-lang/vala-0.11
 >=sys-power/upower-0.9.6
 
-# Pacho Ramos <pacho@gentoo.org> (24 Sep 2010)
-# Broken since more than a year when using nvidia-drivers (bug #260433),
-# upstream no longer develops neither maintains it, most common
-# distributions have already dropped it.
-# Please use net-wireless/gnome-bluetooth:2 instead. Will be removed at 24 Nov 2010.
-net-wireless/bluez-gnome
-
 # Samuli Suominen <ssuominen@gentoo.org> (22 Sep 2010)
 # Package is masked because of missing exo-0.5 and garcon support.
 # exo-0.3 and libxfce4menu is deprecated, no reason to provide vala bindings to them anymore
 # Also missing vala-0.10.0 support, pulls in old slot of vala
 # Unless 4.7.0 is out in 60 days, the package will be removed
 xfce-extra/xfce4-vala
-
-# Nirbheek Chauhan <nirbheek@gentoo.org> (22 Sep 2010)
-# Dead upstream, doesn't work anymore
-# Masked for removal in 30 days
-# Replacement is net-wireless/gnome-bluetooth:2
-net-wireless/libbtctl
-=net-wireless/gnome-bluetooth-0*
 
 # Rémi Cardona <remi@gentoo.org> (21 Sep 2010)
 # Dead upstream, ebuild does more work than its Makefiles,
@@ -1091,12 +1085,6 @@ app-admin/webmin
 # <http://my.opera.com/desktopteam/blog>
 =www-client/opera-10.70*
 =www-client/opera-11*
-
-# Sergei Trofimovich <slyfox@gentoo.org> (1 Aug 2010)
-# Masked for removal in 30 days. Bunch of serious
-# bugs (bug #303665), and minor ones (bug #240036).
-# Dead upstream.
-dev-lang/hugs98
 
 # Pawel Hajdan jr <phajdan.jr@gentoo.org> (25 Jul 2010)
 # The v8 package is still very experimental and not ready for general use.
