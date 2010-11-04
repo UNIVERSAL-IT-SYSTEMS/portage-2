@@ -1,20 +1,20 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/cinelerra/cinelerra-20100320.ebuild,v 1.8 2010/09/23 17:38:34 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/cinelerra/cinelerra-20101104.ebuild,v 1.2 2010/11/04 00:38:11 ssuominen Exp $
 
-EAPI=2
+EAPI=3
 inherit autotools eutils multilib flag-o-matic
 
 DESCRIPTION="Professional Video Editor (Unofficial GIT-snapshot)"
 HOMEPAGE="http://www.cinelerra.org/"
-SRC_URI="mirror://gentoo/${P}.tar.bz2"
+SRC_URI="http://dev.gentoo.org/~ssuominen/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="3dnow alsa altivec css ieee1394 mmx opengl oss"
 
-RDEPEND="media-libs/libpng
+RDEPEND=">=media-libs/libpng-1.4.0
 	>=media-libs/libdv-1.0.0
 	media-libs/faad2
 	media-libs/faac
@@ -37,31 +37,24 @@ RDEPEND="media-libs/libpng
 	x11-libs/libXext
 	x11-libs/libXvMC
 	x11-libs/libXft
+	virtual/jpeg
 	alsa? ( media-libs/alsa-lib )
 	ieee1394? ( media-libs/libiec61883
 		>=sys-libs/libraw1394-1.2.0
 		>=sys-libs/libavc1394-0.5.0 )
 	opengl? ( virtual/opengl )"
 DEPEND="${RDEPEND}
+	app-arch/xz-utils
 	dev-util/pkgconfig
 	mmx? ( dev-lang/nasm )"
 
 src_prepare() {
-	sed -i -e '/Debian/d' admin/nasm || die #318155
-	epatch \
-		"${FILESDIR}"/${PN}-libavutil50.patch \
-		"${FILESDIR}"/${P}-pkgconfig-x264.patch \
-		"${FILESDIR}"/${PN}-x264.patch \
-		"${FILESDIR}"/${PN}-jpeg-7.patch \
-		"${FILESDIR}"/${P}-libpng14.patch \
-		"${FILESDIR}"/${P}-gcc45.patch \
-		"${FILESDIR}"/${P}-glibc212.patch
 	AT_M4DIR="m4" eautoreconf
 }
 
 src_configure() {
-	#bug #321945 (UINT64_C vs ffmpeg headers)
-	append-flags -D__STDC_CONSTANT_MACROS
+	append-flags -D__STDC_CONSTANT_MACROS #321945
+
 	econf \
 		--disable-dependency-tracking \
 		$(use_enable oss) \
@@ -81,10 +74,12 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die
 	dohtml -a png,html,texi,sdw -r doc/*
-	# workaround
+
 	rm -rf "${D}"/usr/include
-	mv -v "${D}"/usr/bin/mpeg3cat "${D}"/usr/bin/mpeg3cat.hv
-	mv -v "${D}"/usr/bin/mpeg3dump "${D}"/usr/bin/mpeg3dump.hv
-	mv -v "${D}"/usr/bin/mpeg3toc "${D}"/usr/bin/mpeg3toc.hv
+	mv -vf "${D}"/usr/bin/mpeg3cat{,.hv} || die
+	mv -vf "${D}"/usr/bin/mpeg3dump{,.hv} || die
+	mv -vf "${D}"/usr/bin/mpeg3toc{,.hv} || die
 	dosym /usr/bin/mpeg2enc /usr/$(get_libdir)/cinelerra/mpeg2enc.plugin
+
+	find "${D}" -name '*.la' -exec rm -f '{}' +
 }
