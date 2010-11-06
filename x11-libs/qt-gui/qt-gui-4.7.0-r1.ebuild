@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-gui/qt-gui-4.7.0.ebuild,v 1.6 2010/11/06 09:35:21 wired Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-gui/qt-gui-4.7.0-r1.ebuild,v 1.2 2010/11/06 09:35:21 wired Exp $
 
 EAPI="3"
 inherit confutils qt4-build
@@ -82,6 +82,9 @@ src_prepare() {
 
 	# Don't build plugins this go around, because they depend on qt3support lib
 	sed -i -e "s:CONFIG(shared:# &:g" "${S}"/tools/designer/src/src.pro
+
+	# http://bugreports.qt.nokia.com/browse/QTBUG-13567
+	epatch "${FILESDIR}"/"${P}"-qtreeview-regression-fix.patch
 }
 
 src_configure() {
