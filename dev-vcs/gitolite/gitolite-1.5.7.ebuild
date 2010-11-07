@@ -1,25 +1,24 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitolite-gentoo/gitolite-gentoo-1.5.6-r1.ebuild,v 1.2 2010/11/06 23:05:05 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitolite/gitolite-1.5.7.ebuild,v 1.1 2010/11/07 00:42:01 ramereth Exp $
 
 EAPI=3
 
 inherit eutils perl-module
 
-DESCRIPTION="Highly flexible server for git directory version tracker, Gentoo fork"
-HOMEPAGE="http://git.overlays.gentoo.org/gitweb/?p=proj/gitolite-gentoo.git;a=summary"
-SRC_URI="mirror://gentoo/${P}.tar.bz2"
+DESCRIPTION="Highly flexible server for git directory version tracker"
+HOMEPAGE="http://github.com/sitaramc/gitolite"
+SRC_URI="http://github.com/sitaramc/${PN}/tarball/v${PV} -> ${PN}-git-${PV}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="contrib vim-syntax"
+IUSE="vim-syntax"
 
 DEPEND="dev-lang/perl
 	>=dev-vcs/git-1.6.2"
 RDEPEND="${DEPEND}
-	!dev-vcs/gitolite
-	dev-perl/Net-SSH-AuthorizedKeysFile
+	!dev-vcs/gitolite-gentoo
 	vim-syntax? ( app-vim/gitolite-syntax )"
 
 pkg_setup() {
@@ -28,32 +27,31 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/gl-setup-tempfile.patch"
-	epatch "${FILESDIR}/gitolite-require.patch"
+	rm Makefile doc/COPYING
+}
 
-	rm -rf Makefile doc/COPYING contrib/{autotoc,gitweb,vim}
-
-	echo "${PF}-gentoo" > conf/VERSION
+src_unpack() {
+	unpack ${A}
+	mv "${WORKDIR}"/sitaramc-"${PN}"-* "${S}" || die
 }
 
 src_install() {
 	dodir /usr/share/gitolite/{conf,hooks} /usr/bin || die
+	echo "${PF}" > conf/VERSION
 
+	# install using upstream method
 	./src/gl-system-install "${D}"/usr/bin \
 		"${D}"/usr/share/gitolite/conf "${D}"/usr/share/gitolite/hooks || die
 	dosed "s:${D}::g" usr/bin/gl-setup \
 		usr/share/gitolite/conf/example.gitolite.rc || die
 
-	rm "${D}/usr/bin/gitolite.pm"
+	rm "${D}"/usr/bin/gitolite.pm
 	insinto "${VENDOR_LIB}"
 	doins src/gitolite.pm || die
 
 	dodoc README.mkd doc/*
-
-	if use contrib; then
-		insinto /usr/share/doc/${PF}
-		doins -r contrib/ || die
-	fi
+	insinto /usr/share/doc/${P}
+	doins -r contrib
 
 	keepdir /var/lib/gitolite
 	fowners git:git /var/lib/gitolite
