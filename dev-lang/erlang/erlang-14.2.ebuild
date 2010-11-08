@@ -1,11 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/erlang/erlang-14.1.ebuild,v 1.6 2010/09/30 19:29:19 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/erlang/erlang-14.2.ebuild,v 1.1 2010/11/08 00:47:30 fauli Exp $
 
 EAPI=3
 WX_GTK_VER="2.8"
 
-inherit autotools elisp-common eutils multilib versionator wxwidgets
+inherit elisp-common eutils multilib versionator wxwidgets
 
 # NOTE: If you need symlinks for binaries please tell maintainers or
 # open up a bug to let it be created.
@@ -16,7 +16,7 @@ inherit autotools elisp-common eutils multilib versionator wxwidgets
 
 # the next line selects the right source.
 ERL_VER=($(get_version_components))
-MY_PV="R$(get_major_version)A${ERL_VER[2]}"
+MY_PV="R$(get_major_version)B${ERL_VER[2]}"
 
 # ATTN!! Take care when processing the C, etc version!
 MY_P=otp_src_${MY_PV}
@@ -53,6 +53,9 @@ pkg_setup() {
 src_prepare() {
 	use odbc || sed -i 's: odbc : :' lib/Makefile
 
+	# bug 263129, don't ignore LDFLAGS, reported upstream
+	sed -e 's:LDFLAGS = \$(DED_LDFLAGS):LDFLAGS += \$(DED_LDFLAGS):' -i "${S}"/lib/megaco/src/flex/Makefile.in || die
+
 	if ! use wxwidgets; then
 		sed -i 's: wx : :' lib/Makefile
 		rm -rf lib/wx
@@ -66,14 +69,12 @@ src_prepare() {
 		ewarn
 	fi
 
-	# fixes as-needed issues and has been incorporated for 14A by upstream
-	epatch "${FILESDIR}"/${P}-lm.patch
+	# Nasty workaround, reported upstream
+	cp "${S}"/lib/configure.in.src "${S}"/lib/configure.in || die
 
 	# prevent configure from injecting -m32 by default on Darwin, bug #334155
 	sed -i -e 's/Darwin-i386/Darwin-NO/' configure.in || die
 	sed -i -e '/\<\(LD\|C\)FLAGS="-m32/s/-m32//' erts/configure.in || die
-
-	eautoreconf
 }
 
 src_configure() {
@@ -160,6 +161,8 @@ src_install() {
 	# prepare erl for SMP, fixes bug #188112
 	use smp && sed -i -e 's:\(exec.*erlexec\):\1 -smp:' \
 		"${ED}/${ERL_LIBDIR}/bin/erl"
+
+	newinitd "${FILESDIR}"/epmd.init epmd || die
 }
 
 pkg_postinst() {

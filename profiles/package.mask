@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12175 2010/11/07 22:36:08 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12177 2010/11/08 02:12:40 mr_bones_ Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,11 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Michael Sterrett <mr_bones_@gentoo.org> (07 Oct 2010)
+# No release since 2002; uses gnome-vfs
+# Mask for removal on 20101207
+games-mud/panache
 
 # Pacho Ramos <pacho@gentoo.org> (06 Nov 2010)
 # No longer maintained neither developed by upstream since 
@@ -941,10 +946,6 @@ net-misc/netcf
 # Mask dev-libs/seed; several ebuild issues, and missing pure-runtime deps
 # Also needs USE=introspection to be unmasked
 dev-libs/seed
-
-# Christian Faulhammer <fauli@gentoo.org> (28 Jun 2010)
-# Beta version
-~dev-lang/erlang-14.1
 
 # Pawel Hajdan jr <phajdan.jr@gentoo.org> (22 Jun 2010)
 # Masked for testing. It's quite "challenging" to package.
