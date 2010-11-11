@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/sdlmame/sdlmame-0.139_p3.ebuild,v 1.3 2010/10/13 15:06:31 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/sdlmame/sdlmame-0.140_p1.ebuild,v 1.1 2010/11/11 06:37:53 mr_bones_ Exp $
 
 EAPI=2
 inherit eutils flag-o-matic games
@@ -24,14 +24,14 @@ IUSE="debug opengl"
 
 RDEPEND=">=media-libs/libsdl-1.2.10[audio,joystick,opengl?,video]
 	dev-libs/expat
-	x11-libs/libXinerama
 	debug? (
 		x11-libs/gtk+:2
 		gnome-base/gconf
+		x11-libs/libXinerama
 	)"
 DEPEND="${RDEPEND}
 	app-arch/unzip
-	x11-proto/xineramaproto"
+	debug? ( x11-proto/xineramaproto )"
 
 S=${WORKDIR}
 
@@ -47,7 +47,7 @@ disable_feature() {
 enable_feature() {
 	sed -i \
 		-e "/^#.*$1.*=/s:^# ::"  \
-		"${S}"/makefile \
+		"${S}"/${2:-makefile} \
 		|| die "sed failed"
 }
 
@@ -87,28 +87,29 @@ src_prepare() {
 	fi
 
 	if use debug; then
-		einfo "Enabling DEBUG support"
+		einfo "Enabling debug support"
 		enable_feature DEBUG
+	else
+		einfo "Disabling debug support"
+		enable_feature NO_X11 src/osd/sdl/sdl.mak
+	fi
+
+	if ! use opengl ; then
+		einfo "Disabling opengl support"
+		enable_feature NO_OPENGL src/osd/sdl/sdl.mak
 	fi
 }
 
 src_compile() {
-	local make_opts
-
-	use opengl || make_opts="${make_opts} NO_OPENGL=1"
-
 	emake \
 		NAME="${PN}" \
 		OPT_FLAGS='-DINI_PATH=\"\$$HOME/.'${PN}'\;'"${GAMES_SYSCONFDIR}/${PN}"'\"'" ${CXXFLAGS}" \
 		CC="${CXX}" \
-		SUFFIX="" \
-		${make_opts} \
-		all \
-		|| die "emake failed"
+		all || die
 }
 
 src_install() {
-	dogamesbin ${PN}$(use amd64 && echo 64) || die
+	newgamesbin ${PN}$(use amd64 && echo 64)$(use debug && echo d) ${PN} || die
 
 	# Avoid collision on /usr/games/bin/jedutil
 	exeinto "$(games_get_libdir)/${PN}"
