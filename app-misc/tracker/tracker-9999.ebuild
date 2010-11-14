@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/tracker-9999.ebuild,v 1.27 2010/11/14 16:17:32 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/tracker-9999.ebuild,v 1.28 2010/11/14 17:43:22 eva Exp $
 
 EAPI="2"
 G2CONF_DEBUG="no"
@@ -20,6 +20,7 @@ KEYWORDS=""
 IUSE="applet doc eds exif flac gif gnome-keyring gsf gstreamer gtk hal iptc +jpeg laptop mp3 nautilus networkmanager pdf playlist rss strigi test +tiff upnp +vorbis xine +xml xmp"
 
 # TODO: rest -> flickr, qt vs. gdk
+# vala is built with debug by default (see VALAFLAGS)
 RDEPEND="
 	>=app-i18n/enca-1.9
 	>=dev-db/sqlite-3.7[threadsafe]
@@ -82,13 +83,16 @@ DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.20
 	dev-util/gtk-doc-am
 	>=dev-util/gtk-doc-1.8
-	applet? ( dev-lang/vala )
+	applet? ( >=dev-lang/vala-0.11.1:0.12 )
 	gtk? (
-		dev-lang/vala
+		>=dev-lang/vala-0.11.1:0.12
 		>=dev-libs/libgee-0.3 )
 	doc? (
 		media-gfx/graphviz )
-	test? ( sys-apps/dbus[X] )"
+	test? (
+		>=dev-libs/dbus-glib-0.82-r1
+		>=sys-apps/dbus-1.3.1[X] )
+"
 
 function inotify_enabled() {
 	if linux_config_exists; then
@@ -126,6 +130,10 @@ pkg_setup() {
 		G2CONF="${G2CONF} $(use_enable hal) $(use_enable !hal upower)"
 	else
 		G2CONF="${G2CONF} --disable-hal --disable-upower"
+	fi
+
+	if use applet || use gtk; then
+		G2CONF="${G2CONF} VALAC=$(type -P valac-0.12)"
 	fi
 
 	# unicode-support: libunistring, libicu or glib ?
