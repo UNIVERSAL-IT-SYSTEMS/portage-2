@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/banshee-1.8.0.ebuild,v 1.2 2010/10/23 14:36:16 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/banshee-1.8.0-r1.ebuild,v 1.1 2010/11/15 05:34:04 ford_prefect Exp $
 
 EAPI=2
 
@@ -93,6 +93,9 @@ src_prepare () {
 	# https://bugzilla.gnome.org/show_bug.cgi?id=577133
 	sed "s:'\^\$\$lang\$\$':\^\$\$lang\$\$:g" -i po/Makefile.in.in \
 		|| die "sed failed"
+
+	# Fix security issue with LD_LIBRARY_PATH usage (bug #345567)
+	epatch "${FILESDIR}/${P}-fix-insecure-lib-path.patch"
 
 	epatch "${FILESDIR}/${PN}-1.7.4-make-webkit-optional.patch"
 	AT_M4DIR="-I build/m4/banshee -I build/m4/shamrock -I build/m4/shave" \
