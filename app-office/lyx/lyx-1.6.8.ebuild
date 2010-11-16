@@ -1,10 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/lyx/lyx-1.6.5.ebuild,v 1.10 2010/06/22 18:31:55 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/lyx/lyx-1.6.8.ebuild,v 1.1 2010/11/16 11:46:26 aballier Exp $
 
-EAPI=1
+EAPI=2
 
-inherit qt4 eutils flag-o-matic font toolchain-funcs
+PYTHON_DEPEND="2"
+
+inherit qt4 eutils flag-o-matic font python toolchain-funcs
 
 MY_P="${P/_}"
 
@@ -20,10 +22,10 @@ SRC_URI="ftp://ftp.devel.lyx.org/pub/lyx/stable/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
-IUSE="cups debug nls latex monolithic-build html rtf dot docbook dia subversion rcs"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+IUSE="cups debug nls latex monolithic-build html rtf dot docbook dia subversion rcs svg"
 
-LANGS="ar ca cs de en es eu fi fr gl he hu id it ja nb nn pl pt ro ru sk tr uk zh_CN zh_TW"
+LANGS="ar ca cs de el en es eu fi fr gl he hu id it ja nb nn pl pt ro ru sk tr uk zh_CN zh_TW"
 for X in ${LANGS}; do
 	IUSE="${IUSE} linguas_${X}"
 done
@@ -43,14 +45,13 @@ COMMONDEPEND="x11-libs/qt-gui:4
 	dev-libs/libxml2
 	app-text/aiksaurus
 	virtual/aspell-dict
-	>=dev-lang/python-2.3.4
 	media-libs/fontconfig
 	media-libs/freetype
 	>=dev-libs/boost-1.34"
 
 RDEPEND="${COMMONDEPEND}
 	|| ( dev-texlive/texlive-fontsextra app-text/ptex )
-	media-gfx/imagemagick
+	|| ( media-gfx/imagemagick media-gfx/graphicsmagick )
 	cups? ( virtual/lpr )
 	latex? (
 		virtual/latex-base
@@ -80,14 +81,26 @@ RDEPEND="${COMMONDEPEND}
 	dot? ( media-gfx/graphviz )
 	dia? ( app-office/dia )
 	subversion? ( dev-vcs/subversion )
-	rcs? ( dev-vcs/rcs )"
+	rcs? ( dev-vcs/rcs )
+	svg? ( || ( gnome-base/librsvg media-gfx/inkscape ) )"
 
 DEPEND="${COMMONDEPEND}
 	x11-proto/xproto
 	dev-util/pkgconfig
 	nls? ( sys-devel/gettext )"
 
-src_compile() {
+pkg_setup() {
+	python_set_active_version 2
+	font_pkg_setup
+}
+
+src_prepare() {
+	epatch "${FILESDIR}"/1.6.7-python.patch
+	echo "#!/bin/sh" > config/py-compile
+	sed "s:python -tt:$(PYTHON) -tt:g" -i lib/configure.py || die
+}
+
+src_configure() {
 	tc-export CXX
 	#bug 221921
 	export VARTEXFONTS=${T}/fonts
@@ -97,20 +110,19 @@ src_compile() {
 		$(use_enable debug) \
 		$(use_enable monolithic-build) \
 		--with-aspell --without-included-boost --disable-stdlib-debug
-	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
-	dodoc ANNOUNCE NEWS README RELEASE-NOTES UPGRADING "${FONT_S}"/*.txt
+	dodoc ANNOUNCE NEWS README RELEASE-NOTES UPGRADING "${FONT_S}"/*.txt || die
 
 	if use linguas_he ; then
 		echo "\bind_file cua" > "${T}"/hebrew.bind
 		echo "\bind \"F12\" \"language hebrew\"" >> "${T}"/hebrew.bind
 
 		insinto /usr/share/lyx/bind
-		doins "${T}"/hebrew.bind
+		doins "${T}"/hebrew.bind || die
 	fi
 
 	doicon ${PN} "$S/development/Win32/packaging/icons/lyx_32x32.png"
@@ -118,11 +130,13 @@ src_install() {
 
 	# fix for bug 91108
 	if use latex ; then
-		dosym ../../../lyx/tex /usr/share/texmf/tex/latex/lyx
+		dosym ../../../lyx/tex /usr/share/texmf/tex/latex/lyx || die
 	fi
 
 	# fonts needed for proper math display, see also bug #15629
 	font_src_install
+
+	python_convert_shebangs -r 2 "${D}"/usr/share/${PN}
 }
 
 pkg_postinst() {
@@ -143,12 +157,6 @@ pkg_postinst() {
 		elog "and make sure the \"Right-to-left language support\" is checked"
 		elog
 	fi
-
-	elog
-	elog "Be warned that LyX 1.6 changed syntax of key-binding functions."
-	elog "If some of usual editation keys stopped working you may need to fix"
-	elog "your private settings of shortcuts done for version 1.5."
-	elog
 }
 
 pkg_postrm() {
