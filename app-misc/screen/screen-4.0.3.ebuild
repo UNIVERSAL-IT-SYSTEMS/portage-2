@@ -1,12 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/screen/screen-4.0.3.ebuild,v 1.22 2010/10/19 06:22:06 leio Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/screen/screen-4.0.3.ebuild,v 1.23 2010/11/17 14:51:18 jlec Exp $
 
 WANT_AUTOCONF="2.5"
 
 inherit eutils flag-o-matic toolchain-funcs pam autotools
 
-DESCRIPTION="Screen - A full-screen window manager that multiplexes physical terminals between several processes"
+DESCRIPTION="Full-screen window manager that multiplexes physical terminals between several processes"
 HOMEPAGE="http://www.gnu.org/software/screen/"
 SRC_URI="ftp://ftp.uni-erlangen.de/pub/utilities/${PN}/${P}.tar.gz"
 
