@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/wireshark-1.4.2.ebuild,v 1.2 2010/11/30 15:26:48 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/wireshark-1.4.2.ebuild,v 1.5 2010/11/30 20:51:27 pva Exp $
 
 EAPI=2
 PYTHON_DEPEND="python? 2"
@@ -13,7 +13,7 @@ SRC_URI="http://www.wireshark.org/download/src/all-versions/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~x86 ~x86-fbsd"
 IUSE="adns ares doc doc-pdf gtk ipv6 lua gcrypt geoip kerberos
 profile +pcap pcre portaudio python +caps selinux smi ssl threads zlib"
 
@@ -21,10 +21,10 @@ RDEPEND=">=dev-libs/glib-2.14.0:2
 	zlib? ( sys-libs/zlib
 		!=sys-libs/zlib-1.2.4 )
 	smi? ( net-libs/libsmi )
-	x11-misc/xdg-utils
 	gtk? ( >=x11-libs/gtk+-2.4.0:2
 		x11-libs/pango
-		dev-libs/atk )
+		dev-libs/atk
+		x11-misc/xdg-utils )
 	ssl? ( net-libs/gnutls )
 	gcrypt? ( dev-libs/libgcrypt )
 	pcap? ( net-libs/libpcap )
@@ -210,8 +210,8 @@ pkg_postinst() {
 		fcaps 0:wireshark 550 cap_net_raw,cap_net_admin "${ROOT}"/usr/bin/dumpcap
 	fi
 	echo
-	ewarn "NOTE: To run wireshark as normal user you have to add yourself into"
-	ewarn "wireshark group. This security measure ensures that only trusted"
-	ewarn "users allowed to sniff your traffic."
+	ewarn "NOTE: To run wireshark as normal user you have to add yourself to"
+	ewarn "the wireshark group. This security measure ensures that only trusted"
+	ewarn "users are allowed to sniff your traffic."
 	echo
 }
