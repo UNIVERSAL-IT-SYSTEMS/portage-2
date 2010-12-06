@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-testing/zope-testing-3.10.0.ebuild,v 1.1 2010/09/11 21:36:03 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-testing/zope-testing-3.10.2.ebuild,v 1.1 2010/12/06 02:10:02 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -30,9 +30,3 @@ S="${WORKDIR}/${MY_P}"
 
 DOCS="CHANGES.txt README.txt"
 PYTHON_MODNAME="${PN/-//}"
-
-pkg_postinst() {
-	distutils_pkg_postinst
-
-	elog "zope-testrunner script has been moved to net-zope/zope-testrunner package."
-}
