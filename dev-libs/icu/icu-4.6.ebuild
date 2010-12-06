@@ -1,23 +1,19 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/icu/icu-4.6_rc2.ebuild,v 1.1 2010/11/28 02:36:56 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/icu/icu-4.6.ebuild,v 1.1 2010/12/06 14:54:15 arfrever Exp $
 
 EAPI="3"
 
 inherit versionator
 
-#MAJOR_MINOR_VERSION="$(get_version_component_range 1-2)"
-#MICRO_VERSION="$(get_version_component_range 3)"
-MAJOR_MINOR_VERSION="$(get_version_component_range 1-3)"
-MICRO_VERSION="$(get_version_component_range 4)"
+MAJOR_MINOR_VERSION="$(get_version_component_range 1-2)"
+MICRO_VERSION="$(get_version_component_range 3)"
 
 DESCRIPTION="International Components for Unicode"
 HOMEPAGE="http://www.icu-project.org/"
 
-#BASE_URI="http://download.icu-project.org/files/icu4c/${PV}"
-#DOCS_BASE_URI="http://download.icu-project.org/files/icu4c/${MAJOR_MINOR_VERSION}"
-BASE_URI="http://download.icu-project.org/files/icu4c/${PV/_/}"
-DOCS_BASE_URI="http://download.icu-project.org/files/icu4c/${PV/_/}"
+BASE_URI="http://download.icu-project.org/files/icu4c/${PV}"
+DOCS_BASE_URI="http://download.icu-project.org/files/icu4c/${MAJOR_MINOR_VERSION}"
 SRC_ARCHIVE="icu4c-${PV//./_}-src.tgz"
 DOCS_ARCHIVE="icu4c-${MAJOR_MINOR_VERSION//./_}-docs.zip"
 
@@ -34,8 +30,7 @@ RDEPEND=""
 
 S="${WORKDIR}/${PN}/source"
 
-#QA_DT_NEEDED="/usr/lib.*/libicudata.so.${MAJOR_MINOR_VERSION/./}.${MICRO_VERSION:-0}"
-QA_DT_NEEDED="/usr/lib.*/libicudata.so.46.${MICRO_VERSION:-0}"
+QA_DT_NEEDED="/usr/lib.*/libicudata.so.${MAJOR_MINOR_VERSION/./}.${MICRO_VERSION:-0}"
 
 src_unpack() {
 	unpack "${SRC_ARCHIVE}"

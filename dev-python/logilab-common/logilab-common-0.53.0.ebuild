@@ -1,11 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/logilab-common/logilab-common-0.52.0.ebuild,v 1.3 2010/10/24 17:24:52 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/logilab-common/logilab-common-0.53.0.ebuild,v 1.1 2010/12/06 14:37:30 arfrever Exp $
 
 EAPI="3"
-PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils eutils
 
@@ -15,7 +13,7 @@ SRC_URI="ftp://ftp.logilab.org/pub/common/${P}.tar.gz mirror://pypi/${PN:0:1}/${
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~s390 ~sparc ~x86 ~amd64-linux ~ia64-linux ~x86-linux ~x64-macos ~x86-macos"
+KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86 ~amd64-linux ~ia64-linux ~x86-linux ~x64-macos ~x86-macos"
 IUSE="test"
 
 RDEPEND="dev-python/setuptools"
@@ -28,30 +26,22 @@ DEPEND="${RDEPEND}
 		!dev-python/psycopg[-mxdatetime]
 	)"
 
+DISTUTILS_USE_SEPARATE_SOURCE_DIRECTORIES="1"
+
 PYTHON_MODNAME="logilab"
 
 src_prepare() {
+	epatch "${FILESDIR}/${P}-fix_indentation.patch"
 	distutils_src_prepare
 
-	epatch "${FILESDIR}/${PN}-0.51.1-python-2.7.patch"
+	conversion() {
+		[[ "${PYTHON_ABI}" == 2.* ]] && return
+		find -name "*.py" ! -name "setup.py" -print | xargs 2to3-${PYTHON_ABI} -nw --no-diffs
 
-	# Disable broken tests.
-	sed -e "s/test_knownValues_is_standard_module_4/_&/" -i test/unittest_modutils.py
-
-	# Disable tests failing when stdout is not a tty.
-	sed \
-		-e "s/test_both_capture/_&/" \
-		-e "s/test_capture_core/_&/" \
-		-i test/unittest_testlib.py
-
-	if [[ "${EUID}" -eq 0 ]]; then
-		# Disable tests failing with root permissions.
-		sed \
-			-e "s/test_mode_change/_&/" \
-			-e "s/test_mode_change_on_append/_&/" \
-			-e "s/test_restore_on_close/_&/" \
-			-i test/unittest_fileutils.py
-	fi
+		# Ignore errors during transformation of data of tests.
+		:
+	}
+	python_execute_function -s conversion
 }
 
 src_test() {
@@ -60,14 +50,19 @@ src_test() {
 		local tpath="${T}/test-${PYTHON_ABI}"
 		local spath="${tpath}$(python_get_sitedir)"
 
-		"$(PYTHON)" setup.py build -b "build-${PYTHON_ABI}" install --root="${tpath}" || die "Installation for tests failed with $(python_get_implementation) $(python_get_version)"
+		"$(PYTHON)" setup.py install --root="${tpath}" || die "Installation for tests failed with $(python_get_implementation) $(python_get_version)"
 
 		# pytest uses tests placed relatively to the current directory.
 		pushd "${spath}" > /dev/null || return 1
-		PYTHONPATH="${spath}" "$(PYTHON)" "${tpath}/usr/bin/pytest" -v || return 1
+		if [[ "${PYTHON_ABI}" == 3.* ]]; then
+			# Support for Python 3 is experimental. Many tests are known to fail.
+			PYTHONPATH="${spath}" "$(PYTHON)" "${tpath}/usr/bin/pytest" -v
+		else
+			PYTHONPATH="${spath}" "$(PYTHON)" "${tpath}/usr/bin/pytest" -v || return 1
+		fi
 		popd > /dev/null || return 1
 	}
-	python_execute_function testing
+	python_execute_function -s testing
 }
 
 src_install() {
