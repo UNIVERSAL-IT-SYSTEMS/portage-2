@@ -1,10 +1,19 @@
 # ChangeLog for profile directory
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.4839 2010/12/06 20:02:24 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.4842 2010/12/07 02:54:06 mattst88 Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  07 Dec 2010; Matt Turner <mattst88@gentoo.org> profiles.desc:
+  Added default/linux/mips/10.0 to profiles.desc
+
+  07 Dec 2010; Ulrich Mueller <ulm@gentoo.org> package.mask:
+  Remove mask for app-emacs/proofgeneral-4.0.
+
+  07 Dec 2010; Joerg Bornkessel <hd_brummy@gentoo.org> package.mask:
+  masked media-tv/gentoo-vdr-scripts-0.4.8_rc2, #263956
 
   06 Dec 2010; Hans de Graaff <graaff@gentoo.org> package.mask:
   Mask dev-lang/wml for removal.
