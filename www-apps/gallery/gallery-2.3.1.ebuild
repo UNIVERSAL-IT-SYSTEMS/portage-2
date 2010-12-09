@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/gallery/gallery-2.3-r2.ebuild,v 1.2 2010/12/09 08:19:09 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/gallery/gallery-2.3.1.ebuild,v 1.2 2010/12/09 09:20:20 radhermit Exp $
 
 EAPI="2"
 
@@ -12,17 +12,18 @@ SRC_URI="mirror://sourceforge/${PN}/${P}-full.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
-IUSE="ffmpeg gd imagemagick mysql netpbm postgres raw sqlite unzip zip"
+IUSE="ffmpeg +gd imagemagick +mysql netpbm postgres raw sqlite unzip zip"
 
-RDEPEND="raw? ( >=media-gfx/dcraw-8.03 )
-	ffmpeg? ( >=media-video/ffmpeg-0.4.9_p20051216 )
-	imagemagick? ( >media-gfx/imagemagick-6.2.4 )
-	netpbm? ( >=media-libs/netpbm-9.12 >=media-gfx/jhead-2.2 )
+RDEPEND="raw? ( media-gfx/dcraw )
+	ffmpeg? ( media-video/ffmpeg )
+	imagemagick? ( || ( media-gfx/imagemagick media-gfx/graphicsmagick[imagemagick] ) )
+	netpbm? ( media-libs/netpbm media-gfx/jhead )
 	unzip? ( app-arch/unzip )
 	zip? ( app-arch/zip )
 	sqlite? ( dev-lang/php[pdo] )
 	gd? ( || ( dev-lang/php[gd] dev-lang/php[gd-external] ) )
-	dev-lang/php[mysql?,session,postgres?]
+	mysql? ( || ( dev-lang/php[mysql] dev-lang/php[mysqli] ) )
+	dev-lang/php[mysql?,session,postgres?,sqlite?]
 	|| ( <dev-lang/php-5.3[pcre] >=dev-lang/php-5.3 )"
 
 S=${WORKDIR}/${PN}2
@@ -52,7 +53,7 @@ src_install() {
 
 pkg_postinst() {
 	elog "You are strongly encouraged to back up your database"
-	elog "and the g2data directory, as upgrading to 2.2 will make"
+	elog "and the g2data directory, as upgrading may make"
 	elog "irreversible changes to both."
 	elog
 	elog "g2data dir: cp -Rf /path/to/g2data/ /path/to/backup"
