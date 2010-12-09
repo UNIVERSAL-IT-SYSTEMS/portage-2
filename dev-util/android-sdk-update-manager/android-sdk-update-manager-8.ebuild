@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/android-sdk-update-manager/android-sdk-update-manager-6-r1.ebuild,v 1.1 2010/08/17 00:38:06 rich0 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/android-sdk-update-manager/android-sdk-update-manager-8.ebuild,v 1.1 2010/12/09 18:17:14 rich0 Exp $
 
-EAPI="2"
+EAPI="3"
 
 inherit eutils
 
@@ -26,7 +26,7 @@ RDEPEND=">=virtual/jdk-1.5
 	amd64? ( app-emulation/emul-linux-x86-gtklibs )
 	x86? ( x11-libs/gtk+:2 )"
 
-ANDROID_SDK_DIR="${ROOT}/opt/${PN}"
+ANDROID_SDK_DIR="/opt/${PN}"
 QA_DT_HASH_x86="
 	${ANDROID_SDK_DIR/\/}/tools/emulator
 	${ANDROID_SDK_DIR/\/}/tools/adb
@@ -45,7 +45,7 @@ pkg_setup() {
 }
 
 src_prepare(){
-	epatch "${FILESDIR}/${PN}-6-swt.patch"
+	epatch "${FILESDIR}/${PN}-8-swt.patch"
 
 	rm -rf tools/lib/x86*
 }
@@ -54,12 +54,8 @@ src_install(){
 	dodoc tools/NOTICE.txt "SDK Readme.txt" || die
 	rm -f tools/NOTICE.txt "SDK Readme.txt"
 
-	insinto "${ANDROID_SDK_DIR}/tools"
-	doins -r tools/lib || die "failed to doins tools/lib"
-	rm -rf tools/lib || die
-
-	exeinto "${ANDROID_SDK_DIR}/tools"
-	doexe tools/* || die "failed to doexe tools/"
+	dodir "${ANDROID_SDK_DIR}/tools"
+	cp -pPR tools/* "${ED}${ANDROID_SDK_DIR}/tools" || die "failed to install tools"
 
 	# Maybe this is needed for the tools directory too.
 	#keepdir "${ANDROID_SDK_DIR}"/{add-ons,docs,platforms,temp} || die "failed to keepdir"
@@ -68,7 +64,7 @@ src_install(){
 	fowners root:android "${ANDROID_SDK_DIR}"/{,add-ons,docs,platforms,temp} || die
 	fperms 0775 "${ANDROID_SDK_DIR}"/{,add-ons,docs,platforms,temp} || die
 
-	echo "PATH=\"${ANDROID_SDK_DIR}/tools\"" > "${T}/80${PN}" || die
+	echo "PATH=\"${EPREFIX}${ANDROID_SDK_DIR}/tools:${EPREFIX}${ANDROID_SDK_DIR}/platform-tools\"" > "${T}/80${PN}" || die
 	doenvd "${T}/80${PN}" || die
 }
 
