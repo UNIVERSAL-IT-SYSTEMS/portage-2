@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-workbench/mysql-workbench-5.2.28.ebuild,v 1.2 2010/09/21 06:13:36 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-workbench/mysql-workbench-5.2.31.ebuild,v 1.1 2010/12/15 18:37:00 graaff Exp $
 
-EAPI="2"
+EAPI="3"
 GCONF_DEBUG="no"
 
 inherit gnome2 eutils flag-o-matic autotools
@@ -15,10 +15,11 @@ SRC_URI="mirror://mysql/Downloads/MySQLGUITools/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="debug nls readline static-libs"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+IUSE="debug doc nls readline static-libs"
 
-RDEPEND=">=x11-libs/gtk+-2.6
+CDEPEND="dev-db/sqlite:3
+	>=x11-libs/gtk+-2.6
 	dev-libs/glib:2
 	gnome-base/libglade:2.0
 	dev-libs/libsigc++:2
@@ -39,15 +40,22 @@ RDEPEND=">=x11-libs/gtk+-2.6
 	>=x11-libs/cairo-1.5.12[svg]
 	dev-python/pexpect
 	dev-python/paramiko
+	doc? ( dev-python/pysqlite:2 )
+	nls? ( sys-devel/gettext )
 	readline? ( sys-libs/readline )"
-DEPEND="${RDEPEND}
+RDEPEND="${CDEPEND}
+	app-admin/sudo
+	sys-apps/net-tools"
+DEPEND="${CDEPEND}
 	dev-util/pkgconfig"
 
 S="${WORKDIR}"/"${MY_P}"
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-5.2.17-python-libs.patch"
-	epatch "${FILESDIR}/${PN}-5.2.17-as-needed-modules.patch"
+	# ifconfig isn't in the normal path
+	sed -i -e 's:ifconfig:/sbin/ifconfig:' plugins/wb.admin/backend/wb_server_control.py || die
+
+	epatch "${FILESDIR}/${PN}-5.2.31-python-libs.patch"
 	eautoreconf
 
 	# Remove bundled ctemplate version to make sure we use the system version.
@@ -64,5 +72,5 @@ src_configure() {
 
 src_install() {
 	emake install DESTDIR="${D}" || die
-	find "${D}" -name '*.la' -delete || die
+	find "${ED}" -name '*.la' -delete || die
 }
