@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/dcraw/dcraw-8.99.ebuild,v 1.3 2010/06/21 12:08:41 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/dcraw/dcraw-9.05.ebuild,v 1.1 2010/12/20 18:22:30 pva Exp $
 
 EAPI="2"
 
@@ -9,7 +9,7 @@ inherit eutils toolchain-funcs
 DESCRIPTION="Converts the native (RAW) format of various digital cameras into netpbm portable pixmap (.ppm) image"
 HOMEPAGE="http://www.cybercom.net/~dcoffin/dcraw/"
 SRC_URI="http://www.cybercom.net/~dcoffin/dcraw/archive/${P}.tar.gz
-	mirror://gentoo/parse-1.69.tar.bz2
+	mirror://gentoo/parse-1.71.tar.bz2
 	gimp? ( mirror://gentoo/rawphoto-1.32.tar.bz2 )"
 
 LICENSE="freedist GPL-2"
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~x86-solaris"
 IUSE="nls gimp jpeg lcms"
 
-COMMON_DEPEND="jpeg? ( >=media-libs/jpeg-8a )
+COMMON_DEPEND="jpeg? ( virtual/jpeg )
 	lcms? ( =media-libs/lcms-1* )
 	gimp? ( media-gfx/gimp )"
 DEPEND="${COMMON_DEPEND}
@@ -60,19 +60,10 @@ src_prepare() {
 src_compile() {
 	local ECFLAGS="-O2" # Without optimisation build fails
 	local ELIBS="-lm"
-	if use lcms; then
-		ELIBS="-llcms ${ELIBS}"
-	else
-		ECFLAGS+=" -DNO_LCMS=yes"
-	fi
-	if use jpeg; then
-		ELIBS="-ljpeg ${ELIBS}"
-	else
-		ECFLAGS+=" -DNO_JPEG=yes"
-	fi
-	if use nls; then
-		ECFLAGS+=" -DLOCALEDIR=\"/usr/share/locale/\""
-	fi
+
+	use lcms && ELIBS="-llcms ${ELIBS}" || ECFLAGS+=" -DNO_LCMS=yes"
+	use jpeg && ELIBS="-ljpeg ${ELIBS}" || ECFLAGS+=" -DNO_JPEG=yes"
+	use nls && ECFLAGS+=" -DLOCALEDIR=\"/usr/share/locale/\""
 
 	run_build $(tc-getCC) ${ECFLAGS} ${CFLAGS} ${LDFLAGS} \
 				-o dcraw dcraw.c ${ELIBS}
