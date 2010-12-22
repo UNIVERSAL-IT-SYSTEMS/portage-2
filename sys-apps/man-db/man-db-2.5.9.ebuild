@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/man-db/man-db-2.5.7.ebuild,v 1.2 2010/03/29 05:48:25 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/man-db/man-db-2.5.9.ebuild,v 1.1 2010/12/22 18:40:23 vapier Exp $
 
 EAPI="2"
 
@@ -29,18 +29,13 @@ pkg_setup() {
 	enewuser man 13 -1 /usr/share/man man
 }
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-non-gnu-nroff.patch #309635
-}
-
 src_configure() {
 	local db="gdbm"
 	use berkdb && ! use gdbm && db="db"
 	econf \
 		--with-sections="1 1p 8 2 3 3p 4 5 6 7 9 0p tcl n l p o 1x 2x 3x 4x 5x 6x 7x 8x" \
 		$(use_enable nls) \
-		--with-db=${db} \
-		|| die
+		--with-db=${db}
 }
 
 src_install() {
