@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/chromium-9999.ebuild,v 1.117 2010/12/22 09:00:36 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/chromium-9999.ebuild,v 1.118 2010/12/22 11:51:41 phajdan.jr Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
@@ -36,6 +36,7 @@ RDEPEND="app-arch/bzip2
 	virtual/jpeg
 	media-libs/libpng
 	media-libs/libvpx
+	media-libs/speex
 	>=media-video/ffmpeg-0.6_p25767[threads]
 	cups? ( >=net-print/cups-1.3.11 )
 	sys-libs/zlib
@@ -161,6 +162,8 @@ src_prepare() {
 	# Make sure we don't use bundled libvpx headers.
 	epatch "${FILESDIR}"/${PN}-system-vpx-r1.patch
 
+	epatch "${FILESDIR}"/${PN}-system-speex-r0.patch
+
 	remove_bundled_lib "third_party/bzip2"
 	remove_bundled_lib "third_party/codesighs"
 	remove_bundled_lib "third_party/icu"
@@ -174,11 +177,16 @@ src_prepare() {
 	remove_bundled_lib "third_party/libxslt"
 	remove_bundled_lib "third_party/lzma_sdk"
 	remove_bundled_lib "third_party/molokocacao"
+	remove_bundled_lib "third_party/speex"
 	remove_bundled_lib "third_party/ocmock"
 	remove_bundled_lib "third_party/yasm"
 	# TODO: also remove third_party/ffmpeg (needs to be compile-tested).
 	# TODO: also remove third_party/zlib. For now the compilation fails if we
 	# remove it (minizip-related).
+
+	# Provide our own gyp file that links with the system speex.
+	# TODO: move this upstream.
+	cp "${FILESDIR}"/speex.gyp third_party/speex || die
 
 	local v8_bundled="$(v8-extract-version v8/src/version.cc)"
 	if use system-v8; then
