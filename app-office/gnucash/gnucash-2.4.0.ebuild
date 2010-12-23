@@ -1,13 +1,13 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/gnucash/gnucash-2.3.15.ebuild,v 1.2 2010/11/05 15:34:19 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/gnucash/gnucash-2.4.0.ebuild,v 1.1 2010/12/23 11:39:50 tove Exp $
 
 EAPI=3
 
 #PYTHON_DEPEND="python? 2:2.4"
 
-#inherit eutils python gnome2
 inherit eutils gnome2
+inherit python
 
 DOC_VER="2.2.0"
 
@@ -18,9 +18,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
-
-#IUSE="+doc ofx hbci chipcard debug mysql python quotes sqlite postgres webkit"
-IUSE="+doc ofx hbci chipcard debug mysql quotes sqlite postgres webkit"
+IUSE="+doc ofx hbci chipcard debug mysql python quotes sqlite postgres webkit"
 
 # FIXME: rdepend on dev-libs/qof when upstream fix their mess (see configure.in)
 
@@ -37,7 +35,11 @@ RDEPEND=">=dev-libs/glib-2.6.3
 	>=gnome-base/gconf-2
 	>=x11-libs/goffice-0.6[gnome]
 	ofx? ( >=dev-libs/libofx-0.9.1 )
-	hbci? ( >=net-libs/aqbanking-4.2[qt4]
+	hbci? (
+		|| (
+			>=net-libs/aqbanking-5
+			<net-libs/aqbanking-5[qt4]
+		)
 		chipcard? ( sys-libs/libchipcard )
 	)
 	quotes? ( dev-perl/DateManip
@@ -58,23 +60,13 @@ DEPEND="${RDEPEND}
 	>=app-text/scrollkeeper-0.3"
 
 PDEPEND="doc? ( >=app-doc/gnucash-docs-${DOC_VER} )"
-ELTCONF="--patch-only"
+#ELTCONF="--patch-only"
 DOCS="doc/README.OFX doc/README.HBCI"
 
 # FIXME: no the best thing to do but it'd be even better to fix autofoo
 MAKEOPTS="${MAKEOPTS} -j1"
 
 pkg_setup() {
-	ewarn "This is one of several unstable 2.3.x releases of the GnuCash Free"
-	ewarn "Accounting Software which will eventually lead to the stable version"
-	ewarn "2.4.0."
-	ewarn "This release is intended for developers and testers who want to help"
-	ewarn "tracking down all those bugs that are still in there."
-	ewarn ""
-	ewarn "WARNING WARNING WARNING"
-	ewarn "Make sure you make backups of any files used in testing versions of"
-	ewarn "GnuCash in the 2.3.x series."
-
 	if use webkit ; then
 		G2CONF+=" --with-html-engine=webkit"
 	else
@@ -90,20 +82,15 @@ pkg_setup() {
 		$(use_enable debug)
 		$(use_enable ofx)
 		$(use_enable hbci aqbanking)
+		$(use_enable python python-bindings)
 		--disable-doxygen
 		--enable-locale-specific-tax
 		--disable-error-on-warning"
-#		$(use_enable python python-bindings)
 
-#	if use python ; then
-#		python_set_active_version 2
-#		python_pkg_setup
-#	fi
-}
-
-src_unpack() {
-	default
-	cp "${FILESDIR}"/test-dbi-business-stuff.h "${S}"/src/backend/dbi/test || die
+	if use python ; then
+		python_set_active_version 2
+		python_pkg_setup
+	fi
 }
 
 src_prepare() {
