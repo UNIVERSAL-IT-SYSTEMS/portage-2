@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/coreutils-8.6.ebuild,v 1.1 2010/10/26 01:58:31 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/coreutils-8.8.ebuild,v 1.1 2010/12/23 01:11:00 vapier Exp $
 
 EAPI="3"
 
@@ -45,6 +45,9 @@ src_prepare() {
 		EPATCH_EXCLUDE="001_all_coreutils-gen-progress-bar.patch" \
 		epatch
 	fi
+
+	# Avoid perl dep for compiled in dircolors default #348642
+	has_version dev-lang/perl || touch src/dircolors.h
 
 	# Since we've patched many .c files, the make process will try to
 	# re-build the manpages by running `./bin --help`.  When doing a
