@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12299 2010/12/25 11:08:02 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12301 2010/12/25 21:42:42 rafaelmartins Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,10 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Alexis Ballier <aballier@gentoo.org> (25 Dec 2010)
+# Breaks www-servers/ocsigen, unmask when fixed
+>=dev-ml/lwt-2.2.0
 
 # Samuli Suominen <ssuominen@gentoo.org> (25 Dec 2010)
 #
@@ -492,11 +496,6 @@ dev-util/autotoolset
 #
 # Removal on 2010-12-01
 net-nntp/nntpswitch
-
-# Rafael G. Martins <rafaelmartins@gentoo.org> (01 Oct 2010)
-# Upstream moved the source control from SVN to BZR.
-# The live ebuild will be masked until fix bug #339374
-=sci-electronics/kicad-99999999
 
 # Diego E. Pettenò <flameeyes@gentoo.org> (01 Oct 2010)
 #  on behalf of QA team
