@@ -1,12 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/cython/cython-0.14.ebuild,v 1.2 2010/12/23 11:19:40 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/cython/cython-0.14-r1.ebuild,v 1.1 2010/12/24 23:33:06 arfrever Exp $
 
 EAPI="3"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="*-jython"
 
-inherit distutils
+inherit distutils eutils
 
 MY_PN="Cython"
 MY_P="${MY_PN}-${PV/_/.}"
@@ -29,6 +29,13 @@ PYTHON_CFLAGS=("2.* + -fno-strict-aliasing")
 
 DOCS="README.txt ToDo.txt USAGE.txt"
 PYTHON_MODNAME="Cython cython.py pyximport"
+
+src_prepare() {
+	distutils_src_prepare
+
+	epatch "${FILESDIR}/${P}-python-3.patch"
+	epatch "${FILESDIR}/${P}-__new__.patch"
+}
 
 src_test() {
 	testing() {
