@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmudmount/wmudmount-1.5.ebuild,v 1.1 2010/05/19 09:43:17 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmudmount/wmudmount-1.8.ebuild,v 1.1 2010/12/26 13:01:52 ssuominen Exp $
 
 EAPI=2
 inherit gnome2-utils
@@ -17,7 +17,7 @@ IUSE="gnome-keyring libnotify"
 RDEPEND=">=x11-libs/gtk+-2.18:2
 	dev-libs/dbus-glib
 	sys-fs/udisks
-	gnome-keyring? ( gnome-base/gnome-keyring )
+	gnome-keyring? ( gnome-base/libgnome-keyring )
 	libnotify? ( x11-libs/libnotify )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
