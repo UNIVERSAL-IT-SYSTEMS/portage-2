@@ -1,6 +1,11 @@
-# ChangeLog for app-dicts/goldendict
+# ChangeLog for app-text/goldendict
 # Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/goldendict/ChangeLog,v 1.3 2010/12/06 19:09:38 wired Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/goldendict/ChangeLog,v 1.1 2010/12/29 09:06:33 pva Exp $
+
+  29 Dec 2010; Peter Volkov <pva@gentoo.org>
+  +goldendict-0.9.0_p20100410.ebuild, +files/goldendict-0.9.0-gcc4.4.patch,
+  +metadata.xml:
+  Move from app-dicts per bug #347535, thank Rion for report.
 
   06 Dec 2010; Alex Alexander <wired@gentoo.org> -goldendict-0.9.0.ebuild:
   old, depends on qt 4.5

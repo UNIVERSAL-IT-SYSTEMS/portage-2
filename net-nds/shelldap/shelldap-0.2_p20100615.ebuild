@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/shelldap/shelldap-0.2_p20100615.ebuild,v 1.1 2010/12/24 14:03:09 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nds/shelldap/shelldap-0.2_p20100615.ebuild,v 1.1 2010/12/29 09:00:46 pva Exp $
 
 EAPI=3
 

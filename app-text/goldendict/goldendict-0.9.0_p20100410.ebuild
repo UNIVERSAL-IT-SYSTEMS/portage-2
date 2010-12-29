@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/goldendict/goldendict-0.9.0_p20100410.ebuild,v 1.1 2010/04/10 20:49:05 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/goldendict/goldendict-0.9.0_p20100410.ebuild,v 1.1 2010/12/29 09:06:33 pva Exp $
 
 EAPI="3"
 LANGSLONG="ar_SA bg_BG cs_CZ de_DE el_GR lt_LT ru_RU zh_CN"
