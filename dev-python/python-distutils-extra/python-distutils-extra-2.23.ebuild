@@ -1,10 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-distutils-extra/python-distutils-extra-2.15.ebuild,v 1.1 2010/02/07 02:42:39 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-distutils-extra/python-distutils-extra-2.23.ebuild,v 1.1 2010/12/30 22:41:04 arfrever Exp $
 
-EAPI="2"
+EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 
@@ -19,28 +20,28 @@ IUSE=""
 
 DEPEND="dev-python/setuptools"
 RDEPEND="${DEPEND}"
-# Tests are broken.
-RESTRICT="test"
-RESTRICT_PYTHON_ABIS="3.*"
 
-PYTHON_MODNAME="DistUtilsExtra"
 DOCS="doc/FAQ doc/README doc/setup.cfg.example doc/setup.py.example"
+PYTHON_MODNAME="DistUtilsExtra"
 
 src_prepare() {
+	distutils_src_prepare
+
 	# Disable broken tests.
 	sed \
 		-e "s/test_desktop/_&/" \
+		-e "s/test_po(/_&/" \
 		-e "s/test_policykit/_&/" \
 		-e "s/test_requires_provides/_&/" \
-		-i test/auto.py || die "sed failed"
+		-i test/auto.py
 }
 
 src_test() {
-	# 4 tests fail with disabled byte-compilation.
+	# 5 tests fail with disabled byte-compilation.
 	python_enable_pyc
 
 	testing() {
-		"$(PYTHON)" test/auto.py
+		PYTHONPATH="build-${PYTHON_ABI}/lib" "$(PYTHON)" test/auto.py
 	}
 	python_execute_function testing
 
