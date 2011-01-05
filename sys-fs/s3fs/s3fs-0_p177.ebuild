@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/s3fs/s3fs-177.ebuild,v 1.2 2009/03/31 22:43:57 caleb Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/s3fs/s3fs-0_p177.ebuild,v 1.2 2011/01/05 01:04:06 xmw Exp $
 
-MY_PV="r${PV}-source"
+MY_PV="r177-source"
 
 DESCRIPTION="Amazon mounting S3 via fuse"
 HOMEPAGE="http://s3fs.googlecode.com/"
