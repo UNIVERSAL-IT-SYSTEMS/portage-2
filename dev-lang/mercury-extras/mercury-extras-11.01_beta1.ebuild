@@ -1,23 +1,28 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/mercury-extras/mercury-extras-10.04.2-r1.ebuild,v 1.7 2011/01/12 07:51:57 keri Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/mercury-extras/mercury-extras-11.01_beta1.ebuild,v 1.1 2011/01/12 07:49:16 keri Exp $
+
+EAPI=2
 
 inherit eutils
 
-PATCHSET_VER="1"
+PATCHSET_VER="0"
+MY_PV=${PV/%?/-2010-12-22}
+MY_P=${PN}-${MY_PV/_/-}
 
 DESCRIPTION="Additional libraries and tools that are not part of the Mercury standard library"
 HOMEPAGE="http://www.cs.mu.oz.au/research/mercury/index.html"
-SRC_URI="http://www.mercury.cs.mu.oz.au/download/files/${P}.tar.gz
+SRC_URI="http://www.mercury.cs.mu.oz.au/download/files/beta-releases/11.01-beta/${MY_P}.tar.gz
 	mirror://gentoo/${P}-gentoo-patchset-${PATCHSET_VER}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
-IUSE="X examples glut iodbc ncurses odbc opengl ssl tcl tk xml"
+IUSE="X cairo examples glut iodbc ncurses odbc opengl ssl tcl tk xml"
 
 RDEPEND="~dev-lang/mercury-${PV}
+	cairo? ( >=x11-libs/cairo-1.10.0 )
 	glut? ( media-libs/freeglut )
 	odbc? ( dev-db/unixODBC )
 	iodbc? ( !odbc? ( dev-db/libiodbc ) )
@@ -31,8 +36,10 @@ RDEPEND="~dev-lang/mercury-${PV}
 
 DEPEND="${RDEPEND}"
 
-src_unpack() {
-	unpack ${A}
+S="${WORKDIR}"/${MY_P}
+
+src_prepare() {
+	cd "${WORKDIR}"
 
 	EPATCH_FORCE=yes
 	EPATCH_SUFFIX=patch
@@ -45,24 +52,28 @@ src_unpack() {
 	fi
 
 	cd "${S}"
-	sed -i	-e "s:posix:posix quickcheck:" \
-		-e "s:references:solver_types/library:" \
-		-e "s:windows_installer_generator ::" \
+	sed -i	-e "s:references:references solver_types/library:" \
+		-e "s:windows_installer_generator::" \
 		Mmakefile || die "sed default packages failed"
+
+	if use cairo; then
+		sed -i -e "s: lex : graphics/mercury_cairo lex :" Mmakefile \
+			|| die "sed cairo failed"
+	fi
 
 	if use glut; then
 		sed -i -e "s: lex : graphics/mercury_glut lex :" Mmakefile \
 			|| die "sed glut failed"
 	fi
 
-	if use tcl && use tk; then
-		sed -i -e "s: lex : graphics/mercury_tcltk lex :" Mmakefile \
-			|| die "sed tcltk failed"
-	fi
-
 	if use opengl; then
 		sed -i -e "s: lex : graphics/mercury_opengl lex :" Mmakefile \
 			|| die "sed opengl failed"
+	fi
+
+	if use tcl && use tk; then
+		sed -i -e "s: lex : graphics/mercury_tcltk lex :" Mmakefile \
+			|| die "sed tcltk failed"
 	fi
 
 	if use odbc || use iodbc; then
@@ -85,7 +96,7 @@ src_unpack() {
 		|| die "sed libdir failed"
 
 	# disable broken packages
-	sed -i  -e "s:lazy_evaluation ::" -e "s:quickcheck::" Mmakefile \
+	sed -i -e "s:lazy_evaluation::" -e "s:references::" Mmakefile \
 		|| die "sed broken packages failed"
 }
 
@@ -119,9 +130,6 @@ src_install() {
 		insinto /usr/share/doc/${PF}/samples/complex_numbers
 		doins complex_numbers/samples/* || die
 
-		insinto /usr/share/doc/${PF}/samples/concurrency
-		doins concurrency/* || die
-
 		insinto /usr/share/doc/${PF}/samples/dynamic_linking
 		doins dynamic_linking/hello.m || die
 
@@ -139,6 +147,9 @@ src_install() {
 
 		insinto /usr/share/doc/${PF}/samples/log4m
 		doins log4m/*.m || die
+
+		insinto /usr/share/doc/${PF}/samples/monte
+		doins monte/*.m || die
 
 		insinto /usr/share/doc/${PF}/samples/moose
 		doins moose/samples/* || die
