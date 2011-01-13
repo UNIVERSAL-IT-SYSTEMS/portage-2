@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/nut/nut-14.1.ebuild,v 1.3 2011/01/13 14:35:12 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/nut/nut-14.1.ebuild,v 1.4 2011/01/13 17:52:43 jlec Exp $
 
 EAPI=2
 
@@ -15,9 +15,6 @@ SLOT="0"
 KEYWORDS="~alpha amd64 ~amd64 ~arm ppc ~x86"
 IUSE=""
 
-DEPEND=""
-RDEPEND=""
-
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-build-fixes.patch
 }
@@ -28,9 +25,8 @@ src_compile() {
 }
 
 src_install() {
-	dodir /usr/share/nut
 	insinto /usr/share/nut
-	doins raw.data/*
-	dobin nut
-	doman nut.1
+	doins raw.data/* || die
+	dobin nut || die
+	doman nut.1 || die
 }
