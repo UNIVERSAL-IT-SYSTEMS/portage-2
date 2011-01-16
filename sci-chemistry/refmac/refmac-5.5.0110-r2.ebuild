@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/refmac/refmac-5.5.0110-r2.ebuild,v 1.6 2011/01/16 11:18:43 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/refmac/refmac-5.5.0110-r2.ebuild,v 1.8 2011/01/16 21:56:04 tomka Exp $
 
 EAPI="2"
 
@@ -14,7 +14,7 @@ SRC_URI="
 
 SLOT="0"
 LICENSE="ccp4"
-KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~ppc x86 ~amd64-linux ~x86-linux"
 IUSE="test"
 
 RDEPEND="
@@ -53,7 +53,7 @@ src_compile() {
 
 src_test() {
 	einfo "Starting tests ..."
-	source "${EPREFIX}/etc/profile"
+	source "${EPREFIX}/etc/profile.d/40ccp4.setup.sh"
 	export PATH="${WORKDIR}/test-framework/scripts:${S}:${PATH}"
 	export CCP4_TEST="${WORKDIR}"/test-framework
 	export CCP4_SCR="${T}"
