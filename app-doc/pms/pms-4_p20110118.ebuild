@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/pms/pms-4.ebuild,v 1.1 2010/12/30 16:05:19 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-doc/pms/pms-4_p20110118.ebuild,v 1.1 2011/01/18 13:24:00 ulm Exp $
 
 EAPI=2
 
@@ -18,5 +18,5 @@ src_unpack() {
 }
 
 src_install() {
-	dodoc "${DISTDIR}/${P}.pdf" || die
+	newdoc "${DISTDIR}"/${P}.pdf pms.pdf || die
 }
