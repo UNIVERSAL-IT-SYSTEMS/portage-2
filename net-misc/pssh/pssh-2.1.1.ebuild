@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/pssh/pssh-2.1.1.ebuild,v 1.4 2010/06/11 19:42:44 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/pssh/pssh-2.1.1.ebuild,v 1.1 2011/01/19 04:46:28 xarthisius Exp $
 
 PYTHON_DEPEND="*:2.4"
 inherit distutils multilib python
