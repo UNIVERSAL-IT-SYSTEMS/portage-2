@@ -1,8 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/awesome/awesome-3.4.6.ebuild,v 1.4 2010/11/05 23:42:06 rafaelmartins Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/awesome/awesome-3.4.9.ebuild,v 1.1 2011/01/20 16:00:15 matsuu Exp $
 
 EAPI="3"
+CMAKE_MIN_VERSION="2.8"
 inherit cmake-utils eutils
 
 DESCRIPTION="A dynamic floating and tiling window manager"
@@ -12,7 +13,7 @@ SRC_URI="http://awesome.naquadah.org/download/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
-IUSE="dbus doc elibc_FreeBSD bash-completion"
+IUSE="dbus doc elibc_FreeBSD"
 
 RDEPEND=">=dev-lang/lua-5.1[deprecated]
 	dev-libs/libev
@@ -30,10 +31,9 @@ RDEPEND=">=dev-lang/lua-5.1[deprecated]
 DEPEND="${RDEPEND}
 	>=app-text/asciidoc-8.4.5
 	app-text/xmlto
-	>=dev-util/cmake-2.6
 	dev-util/gperf
 	dev-util/pkgconfig
-	media-gfx/imagemagick[png]
+	|| ( media-gfx/imagemagick[png] media-gfx/graphicsmagick[imagemagick,png] )
 	>=x11-proto/xcb-proto-1.5
 	>=x11-proto/xproto-7.0.15
 	doc? (
@@ -44,21 +44,46 @@ DEPEND="${RDEPEND}
 
 RDEPEND="${RDEPEND}
 	app-shells/bash
-	bash-completion? ( app-shells/bash-completion )
+	app-shells/bash-completion
 	|| (
 		x11-misc/gxmessage
 		x11-apps/xmessage
 	)"
 
-DOCS="AUTHORS BUGS PATCHES README STYLE"
+# bug #321433: Need one of these to for awsetbg.
+# imagemagick provides 'display' and is further down the default list, but
+# listed here for completeness.  'display' however is only usable with
+# x11-apps/xwininfo also present.
+RDEPEND="${RDEPEND}
+	|| (
+	( x11-apps/xwininfo
+	  || ( media-gfx/imagemagick media-gfx/graphicsmagick[imagemagick] )
+	)
+	x11-misc/habak
+	media-gfx/feh
+	x11-misc/hsetroot
+	media-gfx/qiv
+	media-gfx/xv
+	x11-misc/xsri
+	media-gfx/xli
+	x11-apps/xsetroot
+	)"
 
-mycmakeargs="-DPREFIX=${EPREFIX}/usr
-	-DSYSCONFDIR=${EPREFIX}/etc
-	$(cmake-utils_use_with dbus DBUS)
-	$(cmake-utils_use doc GENERATE_LUADOC)"
+DOCS="AUTHORS BUGS PATCHES README STYLE"
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-3.4.2-backtrace.patch"
+}
+
+src_configure() {
+	mycmakeargs=(
+		-DPREFIX="${EPREFIX}"/usr
+		-DSYSCONFDIR="${EPREFIX}"/etc
+		$(cmake-utils_use_with dbus DBUS)
+		$(cmake-utils_use doc GENERATE_LUADOC)
+		)
+
+	cmake-utils_src_configure
 }
 
 src_compile() {

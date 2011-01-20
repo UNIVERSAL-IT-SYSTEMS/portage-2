@@ -1,13 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zope/zope-2.13.0.ebuild,v 1.3 2010/12/26 12:13:31 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zope/zope-2.13.2.ebuild,v 1.1 2011/01/20 13:47:42 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="2.4 2.5 3.* *-jython"
 
-inherit distutils eutils multilib versionator
+inherit distutils multilib versionator
 
 MY_PN="Zope2"
 MY_P="${MY_PN}-${PV}"
@@ -18,7 +18,7 @@ SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.zip"
 
 LICENSE="ZPL"
 SLOT="$(get_version_component_range 1-2)"
-KEYWORDS="~alpha ~amd64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 IUSE="doc"
 RESTRICT="test"
 
@@ -90,6 +90,7 @@ PDEPEND=">=net-zope/btreefolder2-2.13.0
 	net-zope/ofsp
 	net-zope/pythonscripts
 	net-zope/standardcachemanagers
+	net-zope/zcatalog
 	net-zope/zctextindex"
 
 S="${WORKDIR}/${MY_P}"
