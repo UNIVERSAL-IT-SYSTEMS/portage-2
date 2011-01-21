@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.6296 2011/01/21 15:13:38 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/use.local.desc,v 1.6300 2011/01/21 20:53:31 robbat2 Exp $
 # This file contains descriptions of local USE flags, and the ebuilds which
 # contain them.
 # Keep it sorted (use "LC_ALL=C sort -t: -k1,1 -k2 | LC_ALL=C sort -s -t/ -k1,1")
@@ -345,6 +345,7 @@ app-emulation/libvirt:pcap -  Support auto learning IP addreses for routing
 app-emulation/libvirt:phyp -  Support management of virtualisation through the PHYP hypervisor protocol. 
 app-emulation/libvirt:qemu -  Support management of QEmu virtualisation (one of app-emulation/qemu, app-emulation/qemu-kvm or app-emulation/qemu-spice) 
 app-emulation/libvirt:uml -  Support management of User Mode Linux virtualisation 
+app-emulation/libvirt:virt-network -  To help people out, this flag includes the dependencies for NATed network mode. Effectively any network setup that relies on libvirt to setup and configure network interfaces on your host. This does not include bridged or routed networks. 
 app-emulation/libvirt:virtualbox -  Support management of VirtualBox virtualisation (one of app-emulation/virtualbox or app-emulation/virtualbox-ose) 
 app-emulation/libvirt:xen -  Support management of Xen virtualisation (app-emulation/xen) 
 app-emulation/lxc:vanilla -  Avoid adding Gentoo Linux-specific modifications, which include the custom init script. This is present as a flag to avoid forcing dependencies over users that might not want have them around as they use LXC in contexts where the init script is not useful. 
@@ -2681,11 +2682,15 @@ net-ftp/ftpcube:sftp - Enable sftp connection support
 net-ftp/proftpd:authfile - Enable support for the auth-file module
 net-ftp/proftpd:ban - Enable support for the mod_ban module
 net-ftp/proftpd:case - Enable support for the mod_case module
+net-ftp/proftpd:copy - Enable support for the mod_copy module
 net-ftp/proftpd:ctrls - Enable support for the mod_ctrls and mod_ctrls_admin modules
 net-ftp/proftpd:deflate - Enable support for the mod_deflate module
+net-ftp/proftpd:diskuse - Enable support for the mod_diskuse module
 net-ftp/proftpd:exec - Enable support for the mod_exec module. WARNING: this could be a security risk
 net-ftp/proftpd:ident - Enable support for the mod_ident module
 net-ftp/proftpd:ifsession - Enable support for the ifsession module
+net-ftp/proftpd:ifversion - Enable support for the mod_ifversion module
+net-ftp/proftpd:qos - Enable support for the mod_qos module
 net-ftp/proftpd:ratio - Enable support for the mod_ratio module
 net-ftp/proftpd:readme - Enable support for the mod_readme module
 net-ftp/proftpd:rewrite - Enable support for the rewrite module
@@ -3070,6 +3075,7 @@ net-misc/cfengine:tokyocabinet - Use dev-db/tokyocabinet as database backend, de
 net-misc/connman:dnsproxy - Enable dnsproxy support.
 net-misc/connman:ethernet - Enable ethernet support.
 net-misc/connman:google - Enable Google Public DNS support.
+net-misc/connman:ntpd - Use net-misc/ntp for nptd plugin.
 net-misc/connman:ofono - Use net-misc/ofono for telephony support.
 net-misc/connman:openvpn - Use net-misc/openvpn for openvpn support.
 net-misc/connman:tools - Enable testing tools.
@@ -3087,6 +3093,15 @@ net-misc/dnetstats:gnome - Use gksu to gain root access
 net-misc/dnetstats:kde - Use kdesu to gain root access
 net-misc/dropbear:bsdpty - Add support for legacy BSD pty's rather than dynamic UNIX pty's -- do not use this flag unless you are absolutely sure you actually want it
 net-misc/dropbear:multicall - Build all the programs as one little binary (to save space)
+net-misc/freerdp:X - Install also GUI client
+net-misc/freerdp:alsa - Enable sound support (using alsa)
+net-misc/freerdp:cups - Enable printing support (using cups)
+net-misc/freerdp:debug - Enable all debugging options
+net-misc/freerdp:gnutls - Use GnuTLS as crypto backend
+net-misc/freerdp:largefile - Support for large files
+net-misc/freerdp:nss - Use NSS as crypto backend
+net-misc/freerdp:polarssl - Use PolarSSL as crypto backend
+net-misc/freerdp:ssl - Use OpenSSL as crypto backend
 net-misc/gwget:epiphany - Build epiphany extensions
 net-misc/htbinit:esfq - Add support for Enhanced Stochastic Fairness queueing discipline.
 net-misc/hylafax:html - Adds HTML documentation
