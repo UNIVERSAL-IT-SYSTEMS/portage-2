@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/openssh/openssh-5.7_p1.ebuild,v 1.1 2011/01/24 02:55:47 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/openssh/openssh-5.7_p1-r1.ebuild,v 1.1 2011/01/25 06:40:21 vapier Exp $
 
 EAPI="2"
 inherit eutils flag-o-matic multilib autotools pam
@@ -9,9 +9,9 @@ inherit eutils flag-o-matic multilib autotools pam
 # and _p? releases.
 PARCH=${P/_/}
 
-#HPN_PATCH="${PARCH}-hpn13v10.diff.gz"
-#LDAP_PATCH="${PARCH/openssh/openssh-lpk}-0.3.13.patch.gz"
-#X509_VER="6.2.3" X509_PATCH="${PARCH/5.7/5.6}+x509-${X509_VER}.diff.gz"
+HPN_PATCH="${PARCH}-hpn13v10.diff.bz2"
+LDAP_PATCH="${PARCH/-/-lpk-}-0.3.13.patch.gz"
+X509_VER="6.2.4" X509_PATCH="${PARCH}+x509-${X509_VER}.diff.gz"
 
 DESCRIPTION="Port of OpenBSD's free SSH release"
 HOMEPAGE="http://www.openssh.org/"
@@ -75,10 +75,8 @@ src_prepare() {
 	cp version.h version.h.pristine
 
 	if use X509 ; then
-		# Apply X509 patch
 		epatch "${DISTDIR}"/${X509_PATCH}
-		# Apply glue so that HPN will still work after X509
-		epatch "${FILESDIR}"/${PN}-5.6_p1-x509-hpn-glue.patch
+		epatch "${FILESDIR}"/${PN}-5.7_p1-x509-hpn-glue.patch
 	fi
 	if ! use X509 ; then
 		if [[ -n ${LDAP_PATCH} ]] && use ldap ; then
@@ -95,17 +93,10 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-4.7_p1-GSSAPI-dns.patch #165444 integrated into gsskex
 	if [[ -n ${HPN_PATCH} ]] && use hpn; then
 		epatch "${DISTDIR}"/${HPN_PATCH}
-		epatch "${FILESDIR}"/${P}-hpn-progressmeter.patch
+		epatch "${FILESDIR}"/${PN}-5.6_p1-hpn-progressmeter.patch
 		# version.h patch conflict avoidence
 		mv version.h version.h.hpn
 		cp -f version.h.pristine version.h
-		# The AES-CTR multithreaded variant is temporarily broken, and
-		# causes random hangs when combined with the -f switch of ssh.
-		# To avoid this, we change the internal table to use the non-multithread
-		# version for the meantime.
-		sed -i \
-			-e '/aes...-ctr.*SSH_CIPHER_SSH2/s,evp_aes_ctr_mt,evp_aes_128_ctr,' \
-			cipher.c || die
 	fi
 	epatch "${FILESDIR}"/${PN}-5.2_p1-autoconf.patch
 
@@ -115,23 +106,12 @@ src_prepare() {
 	sed -i -e 's:^PATH=/:#PATH=/:' configure || die
 
 	# Now we can build a sane merged version.h
-	t="${T}"/version.h
-	m="${t}.merge" f="${t}.final"
-	cat version.h.{hpn,pristine,lpk} 2>/dev/null \
-		| sed '/^#define SSH_RELEASE/d' \
-		| sort | uniq >"${m}"
-	sed -n -r \
-		-e '/^\//p' \
-		<"${m}" >"${f}"
-	sed -n -r \
-		-e '/SSH_LPK/s,"lpk","-lpk",g' \
-		-e '/^#define/p' \
-		<"${m}" >>"${f}"
-	v="SSH_VERSION SSH_PORTABLE"
-	[[ -f version.h.hpn ]] && v="${v} SSH_HPN"
-	[[ -f version.h.lpk ]] && v="${v} SSH_LPK"
-	echo "#define SSH_RELEASE ${v}" >>"${f}"
-	cp "${f}" version.h
+	(
+		sed '/^#define SSH_RELEASE/d' version.h.* | sort -u
+		printf '#define SSH_RELEASE SSH_VERSION SSH_PORTABLE %s %s\n' \
+			"$([ -e version.h.hpn ] && echo SSH_HPN)" \
+			"$([ -e version.h.lpk ] && echo SSH_LPK)"
+	) > version.h
 
 	eautoreconf
 }
@@ -178,10 +158,15 @@ src_configure() {
 src_install() {
 	emake install-nokeys DESTDIR="${D}" || die
 	fperms 600 /etc/ssh/sshd_config
-	dobin contrib/ssh-copy-id
+	dobin contrib/ssh-copy-id || die
 	newinitd "${FILESDIR}"/sshd.rc6.2 sshd
 	newconfd "${FILESDIR}"/sshd.confd sshd
 	keepdir /var/empty
+
+	# not all openssl installs support ecc, or are functional #352645
+	if ! grep -q '#define OPENSSL_HAS_ECC 1' config.h ; then
+		dosed 's:&& gen_key ecdsa::' /etc/init.d/sshd || die
+	fi
 
 	newpamd "${FILESDIR}"/sshd.pam_include.2 sshd
 	if use pam ; then
