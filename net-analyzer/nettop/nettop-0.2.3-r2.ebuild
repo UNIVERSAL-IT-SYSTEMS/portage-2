@@ -1,8 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nettop/nettop-0.2.3-r1.ebuild,v 1.5 2011/02/03 09:44:21 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nettop/nettop-0.2.3-r2.ebuild,v 1.1 2011/02/03 09:43:19 jlec Exp $
 
-inherit eutils
+EAPI="3"
+
+inherit eutils toolchain-funcs
 
 DESCRIPTION="top like program for network activity"
 SRC_URI="http://srparish.net/scripts/${P}.tar.gz"
@@ -10,7 +12,7 @@ HOMEPAGE="http://srparish.net/software/"
 
 SLOT="0"
 LICENSE="BSD"
-KEYWORDS="amd64 ~arm ppc sparc x86"
+KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86"
 IUSE=""
 
 DEPEND="
@@ -22,18 +24,17 @@ pkg_setup() {
 	ewarn "This is known to break with distcc, see bug #169245 for details"
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-gcc411.patch
-	epatch "${FILESDIR}"/${P}-offbyone.patch
+src_prepare() {
+	epatch \
+		"${FILESDIR}"/${P}-gcc411.patch \
+		"${FILESDIR}"/${P}-offbyone.patch
+	tc-export CC
 }
 
-src_compile() {
+src_configure() {
 	local myconf
 	myconf="--prefix=/usr"
 	./configure ${myconf} || die "configure failed"
-	emake || die "emake failed"
 }
 
 src_install() {
