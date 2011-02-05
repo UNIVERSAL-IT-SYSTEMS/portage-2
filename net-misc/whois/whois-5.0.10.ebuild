@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/whois/whois-5.0.7.ebuild,v 1.1 2010/09/25 06:05:06 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/whois/whois-5.0.10.ebuild,v 1.1 2011/02/05 08:36:27 vapier Exp $
 
 EAPI=3
 inherit eutils toolchain-funcs
@@ -13,10 +13,10 @@ SRC_URI="mirror://debian/pool/main/w/whois/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux"
-IUSE="nls"
+IUSE="iconv idn nls"
 RESTRICT="test" #59327
 
-RDEPEND="net-dns/libidn"
+RDEPEND="idn? ( net-dns/libidn )"
 DEPEND="${RDEPEND}
 	>=dev-lang/perl-5"
 
@@ -33,8 +33,11 @@ src_prepare() {
 src_configure() { :;} # expected no-op
 
 src_compile() {
+	unset HAVE_ICONV HAVE_LIBIDN
+	use iconv && export HAVE_ICONV=1
+	use idn && export HAVE_LIBIDN=1
 	tc-export CC
-	emake CFLAGS="${CFLAGS} ${CPPFLAGS}" HAVE_LIBIDN=1 || die
+	emake CFLAGS="${CFLAGS} ${CPPFLAGS}" || die
 }
 
 src_install() {
