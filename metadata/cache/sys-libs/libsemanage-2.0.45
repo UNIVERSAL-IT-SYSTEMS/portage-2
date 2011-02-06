@@ -1,5 +1,5 @@
->=sys-libs/libsepol-2.0.41 >=sys-libs/libselinux-2.0.94 dev-libs/ustr >=app-admin/eselect-python-20091230
->=sys-libs/libsepol-2.0.41 >=sys-libs/libselinux-2.0.94 dev-libs/ustr >=app-admin/eselect-python-20091230
+>=sys-libs/libsepol-2.0.41 >=sys-libs/libselinux-2.0.94 dev-libs/ustr >=app-admin/eselect-python-20091230 dev-lang/python
+>=sys-libs/libsepol-2.0.41 >=sys-libs/libselinux-2.0.94 dev-libs/ustr >=app-admin/eselect-python-20091230 dev-lang/python
 0
 http://userspace.selinuxproject.org/releases/20100525/devel/libsemanage-2.0.45.tar.gz
 test
@@ -7,14 +7,14 @@ http://userspace.selinuxproject.org
 GPL-2
 SELinux kernel and policy management library
 ~amd64 ~x86
-eutils multilib portability python toolchain-funcs
+multilib python toolchain-funcs
 
 
 
 
+2
 
-
-compile install postinst postrm unpack
+compile install postinst postrm prepare
 
 
 
