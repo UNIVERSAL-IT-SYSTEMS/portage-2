@@ -1,9 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libsemanage/libsemanage-2.0.45.ebuild,v 1.3 2011/02/06 14:57:34 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/libsemanage/libsemanage-2.0.45.ebuild,v 1.5 2011/02/06 21:46:27 arfrever Exp $
 
 EAPI="2"
-PYTHON_DEPEND="*"
+PYTHON_DEPEND="python? *"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="*-jython"
 
@@ -19,17 +19,24 @@ SRC_URI="http://userspace.selinuxproject.org/releases/20100525/devel/${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="python ruby"
 
 RDEPEND=">=sys-libs/libsepol-${SEPOL_VER}
 	>=sys-libs/libselinux-${SELNX_VER}
-	dev-libs/ustr"
+	dev-libs/ustr
+	ruby? ( dev-lang/ruby )"
 DEPEND="${RDEPEND}
-	dev-lang/swig"
+	ruby? ( dev-lang/swig )"
 
 # tests are not meant to be run outside of the
 # full SELinux userland repo
 RESTRICT="test"
+
+pkg_setup() {
+	if use python; then
+		python_pkg_setup
+	fi
+}
 
 src_prepare() {
 	echo "# Set this to true to save the linked policy." >> "${S}/src/semanage.conf"
@@ -59,11 +66,17 @@ src_prepare() {
 src_compile() {
 	emake AR="$(tc-getAR)" CC="$(tc-getCC)" all || die
 
-	python_copy_sources src
-	building() {
-		emake CC="$(tc-getCC)" PYLIBVER="python$(python_get_version)" pywrap
-	}
-	python_execute_function -s --source-dir src building
+	if use python; then
+		python_copy_sources src
+		building() {
+			emake CC="$(tc-getCC)" PYLIBVER="python$(python_get_version)" pywrap
+		}
+		python_execute_function -s --source-dir src building
+	fi
+
+	if use ruby; then
+		emake -C src CC="$(tc-getCC)" rubywrap || die
+	fi
 }
 
 src_install() {
@@ -74,20 +87,33 @@ src_install() {
 		install || die
 	dosym "../../$(get_libdir)/libsemanage.so.1" "/usr/$(get_libdir)/libsemanage.so" || die
 
-	installation() {
-		emake \
+	if use python; then
+		installation() {
+			emake \
+				DESTDIR="${D}" \
+				PYLIBVER="python$(python_get_version)" \
+				LIBDIR="${D}usr/$(get_libdir)" \
+				install-pywrap
+		}
+		python_execute_function -s --source-dir src installation
+	fi
+
+	if use ruby; then
+		emake -C src \
 			DESTDIR="${D}" \
-			PYLIBVER="python$(python_get_version)" \
 			LIBDIR="${D}usr/$(get_libdir)" \
-			install-pywrap
-	}
-	python_execute_function -s --source-dir src installation
+			install-rubywrap || die
+	fi
 }
 
 pkg_postinst() {
-	python_mod_optimize semanage.py
+	if use python; then
+		python_mod_optimize semanage.py
+	fi
 }
 
 pkg_postrm() {
-	python_mod_cleanup semanage.py
+	if use python; then
+		python_mod_cleanup semanage.py
+	fi
 }

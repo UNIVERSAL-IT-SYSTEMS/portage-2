@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zope/zope-2.13.1.ebuild,v 1.4 2011/02/04 22:24:14 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zope/zope-2.12.15.ebuild,v 1.1 2011/02/06 18:30:51 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
@@ -25,11 +25,10 @@ RESTRICT="test"
 RDEPEND="dev-python/docutils
 	dev-python/restrictedpython
 	dev-python/setuptools
-	net-zope/accesscontrol
 	net-zope/acquisition
 	net-zope/datetime
-	net-zope/documenttemplate
 	net-zope/extensionclass
+	net-zope/five-formlib
 	net-zope/initgroups
 	net-zope/missing
 	net-zope/multimapping
@@ -37,17 +36,16 @@ RDEPEND="dev-python/docutils
 	net-zope/persistence
 	net-zope/record
 	net-zope/tempstorage
+	net-zope/threadlock
 	net-zope/transaction
 	net-zope/zconfig
 	net-zope/zdaemon
-	net-zope/zexceptions
 	net-zope/zlog
 	>=net-zope/zodb-3.9
 	net-zope/zope-app-form
-	net-zope/zope-browser
-	net-zope/zope-browsermenu
-	net-zope/zope-browserpage
-	net-zope/zope-browserresource
+	net-zope/zope-app-publication
+	net-zope/zope-app-publisher
+	net-zope/zope-app-schema
 	net-zope/zope-component
 	net-zope/zope-configuration
 	net-zope/zope-container
@@ -62,19 +60,19 @@ RDEPEND="dev-python/docutils
 	net-zope/zope-interface
 	net-zope/zope-lifecycleevent
 	net-zope/zope-location
+	net-zope/zope-mkzeoinstance
 	net-zope/zope-pagetemplate
 	net-zope/zope-processlifetime
 	net-zope/zope-proxy
-	net-zope/zope-ptresource
 	net-zope/zope-publisher
 	net-zope/zope-schema
 	net-zope/zope-security
-	net-zope/zope-sendmail
+	<net-zope/zope-sendmail-3.7.0
 	net-zope/zope-sequencesort
 	net-zope/zope-site
 	net-zope/zope-size
 	net-zope/zope-structuredtext
-	>=net-zope/zope-tales-3.5.0
+	net-zope/zope-tales
 	net-zope/zope-testbrowser
 	net-zope/zope-testing
 	net-zope/zope-traversing
@@ -83,14 +81,7 @@ RDEPEND="dev-python/docutils
 DEPEND="${RDEPEND}
 	app-arch/unzip
 	doc? ( dev-python/sphinx )"
-PDEPEND=">=net-zope/btreefolder2-2.13.0
-	net-zope/externalmethod
-	net-zope/mailhost
-	net-zope/mimetools
-	net-zope/ofsp
-	net-zope/pythonscripts
-	net-zope/standardcachemanagers
-	net-zope/zctextindex"
+PDEPEND="net-zope/zsqlmethods"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -114,6 +105,9 @@ distutils_src_install_post_hook() {
 
 src_install() {
 	distutils_src_install --home="${ZOPE_INSTALLATION_DIR}"
+
+	# Don't install C sources.
+	find "${D}${ZOPE_INSTALLATION_DIR}" -name "*.c" | xargs rm -f
 
 	local file
 	for file in "${D}${ZOPE_INSTALLATION_DIR}/bin/"*; do

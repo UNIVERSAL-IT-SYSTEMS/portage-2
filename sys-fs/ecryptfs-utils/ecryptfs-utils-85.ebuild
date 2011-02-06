@@ -1,9 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/ecryptfs-utils/ecryptfs-utils-82.ebuild,v 1.1 2009/11/27 19:44:24 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/ecryptfs-utils/ecryptfs-utils-85.ebuild,v 1.1 2011/02/06 21:59:43 arfrever Exp $
 
-EAPI="2"
+EAPI="3"
+PYTHON_DEPEND="python? 2:2.5"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="2.4 3.* *-jython"
 
 inherit flag-o-matic pam python
 
@@ -27,23 +29,29 @@ RDEPEND=">=sys-apps/keyutils-1.0
 		>=dev-libs/openssl-0.9.7
 		>=dev-libs/pkcs11-helper-1.04
 	)
-	python? ( >=dev-lang/python-2.5 )
 	tpm? ( app-crypt/trousers )"
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.9.0
+	sys-devel/gettext
+	dev-util/intltool
 	python? ( dev-lang/swig )"
-RESTRICT_PYTHON_ABIS="2.4 3.*"
 
 pkg_setup() {
-	append-flags -D_FILE_OFFSET_BITS=64
+	if use python; then
+		python_pkg_setup
+	fi
 }
 
 src_prepare() {
+	echo "#!/bin/sh" > py-compile
+
 	# Python bindings are built/installed manually.
 	sed -e "/SUBDIRS =/s/ libecryptfs-swig//" -i src/Makefile.{am,in} || die "sed failed"
 }
 
 src_configure() {
+	append-flags -D_FILE_OFFSET_BITS=64
+
 	econf \
 		--docdir="/usr/share/doc/${PF}" \
 		--enable-nss \
@@ -67,9 +75,9 @@ src_compile() {
 			emake \
 				PYTHON="$(PYTHON)" \
 				PYTHON_CPPFLAGS="-I$(python_get_includedir)" \
-				PYTHON_LDFLAGS="-L$(python_get_libdir) -lpython${PYTHON_ABI}" \
+				PYTHON_LDFLAGS="-L$(python_get_libdir) $(python_get_library -l)" \
 				PYTHON_SITE_PKG="$(python_get_sitedir)" \
-				PYTHON_VERSION="${PYTHON_ABI}" \
+				PYTHON_VERSION="$(python_get_version)" \
 				SWIG_PYTHON_CPPFLAGS="-I$(python_get_includedir)" \
 				pyexecdir="$(python_get_sitedir)" \
 				pythondir="$(python_get_sitedir)"
@@ -87,27 +95,39 @@ src_install(){
 				DESTDIR="${D}" \
 				PYTHON="$(PYTHON)" \
 				PYTHON_CPPFLAGS="-I$(python_get_includedir)" \
-				PYTHON_LDFLAGS="-L$(python_get_libdir) -lpython${PYTHON_ABI}" \
+				PYTHON_LDFLAGS="-L$(python_get_libdir) $(python_get_library -l)" \
 				PYTHON_SITE_PKG="$(python_get_sitedir)" \
-				PYTHON_VERSION="${PYTHON_ABI}" \
+				PYTHON_VERSION="$(python_get_version)" \
 				SWIG_PYTHON_CPPFLAGS="-I$(python_get_includedir)" \
 				pyexecdir="$(python_get_sitedir)" \
 				pythondir="$(python_get_sitedir)" \
 				install || return 1
-			echo "ecryptfs-utils" > "${D}$(python_get_sitedir)/ecryptfs-utils.pth"
+			echo "ecryptfs-utils" > "${ED}$(python_get_sitedir)/ecryptfs-utils.pth"
 		}
 		python_execute_function -s --source-dir src/libecryptfs-swig installation
+
+		python_clean_installation_image
 	fi
 
 	use suid && fperms u+s /sbin/mount.ecryptfs_private
 }
 
 pkg_postinst() {
+	if use python; then
+		python_mod_optimize ecryptfs-utils
+	fi
+
 	if use suid; then
 		ewarn
 		ewarn "You have chosen to install ${PN} with the binary setuid root. This"
 		ewarn "means that if there are any undetected vulnerabilities in the binary,"
 		ewarn "then local users may be able to gain root access on your machine."
 		ewarn
+	fi
+}
+
+pkg_postrm() {
+	if use python; then
+		python_mod_cleanup ecryptfs-utils
 	fi
 }
