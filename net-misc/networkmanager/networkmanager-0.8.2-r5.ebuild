@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/networkmanager-0.8.2-r4.ebuild,v 1.2 2011/01/31 15:17:30 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/networkmanager-0.8.2-r5.ebuild,v 1.1 2011/02/06 15:06:17 qiaomuf Exp $
 
 EAPI="2"
 
-inherit eutils gnome.org linux-info
+inherit autotools eutils gnome.org linux-info
 
 # NetworkManager likes itself with capital letters
 MY_PN=${PN/networkmanager/NetworkManager}
@@ -93,6 +93,11 @@ src_prepare() {
 	epatch "${FILESDIR}/${P}-shared-connection.patch"
 	# Backports #1
 	epatch "${FILESDIR}/${P}-1.patch"
+	# won't crash upon startup for 32bit machines wrt bug #353807
+	epatch "${FILESDIR}/${P}-fix-timestamp.patch"
+	# fix tests wrt bug #353549
+	epatch "${FILESDIR}/${P}-fix-tests.patch"
+	eautoreconf
 }
 
 src_configure() {
