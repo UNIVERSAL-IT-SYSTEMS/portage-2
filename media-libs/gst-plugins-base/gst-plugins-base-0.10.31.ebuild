@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-base/gst-plugins-base-0.10.31.ebuild,v 1.1 2011/01/12 17:33:30 ford_prefect Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-base/gst-plugins-base-0.10.31.ebuild,v 1.3 2011/02/07 08:41:14 leio Exp $
 
 EAPI=1
 
@@ -24,12 +24,17 @@ RDEPEND=">=dev-libs/glib-2.20
 	!<media-libs/gst-plugins-bad-0.10.10"
 DEPEND="${RDEPEND}
 	nls? ( >=sys-devel/gettext-0.11.5 )
-	dev-util/pkgconfig
-	dev-util/gtk-doc-am"
+	dev-util/pkgconfig"
+	# Only if running eautoreconf: dev-util/gtk-doc-am
 
 GST_PLUGINS_BUILD=""
 
 DOCS="AUTHORS NEWS README RELEASE"
+
+src_unpack() {
+	gnome2_src_unpack
+	epatch "$FILESDIR/${P}-fix-tag-test-linking.patch"
+}
 
 src_compile() {
 	# gst doesnt handle opts well, last tested with 0.10.15
