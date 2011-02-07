@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/five-localsitemanager/five-localsitemanager-2.0.4.ebuild,v 1.1 2010/11/08 14:16:54 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/five-localsitemanager/five-localsitemanager-2.0.5.ebuild,v 1.1 2011/02/06 22:15:59 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="2.4 2.5 3.*"
+RESTRICT_PYTHON_ABIS="2.4 2.5 3.* *-jython"
 
 inherit distutils
 
@@ -29,7 +29,6 @@ RDEPEND="net-zope/acquisition
 	net-zope/zope-lifecycleevent
 	net-zope/zope-location
 	net-zope/zope-site
-	net-zope/zope-traversing
 	>=net-zope/zope-2.12"
 DEPEND="${RDEPEND}
 	app-arch/unzip

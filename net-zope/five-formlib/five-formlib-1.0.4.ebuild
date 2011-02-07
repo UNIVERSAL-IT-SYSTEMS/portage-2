@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/five-formlib/five-formlib-1.0.3.ebuild,v 1.4 2011/01/13 22:29:22 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/five-formlib/five-formlib-1.0.4.ebuild,v 1.1 2011/02/06 22:09:33 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
