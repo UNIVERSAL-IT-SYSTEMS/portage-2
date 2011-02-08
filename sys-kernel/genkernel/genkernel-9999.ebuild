@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/genkernel-9999.ebuild,v 1.24 2011/01/23 18:33:09 sping Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/genkernel-9999.ebuild,v 1.25 2011/02/08 16:53:08 sping Exp $
 
 # genkernel-9999        -> latest Git master
 # genkernel-99999       -> latest Git experimental
@@ -12,7 +12,7 @@ VERSION_DMRAID='1.0.0.rc14'
 VERSION_MDADM='3.1.4'
 VERSION_E2FSPROGS='1.41.14'
 VERSION_FUSE='2.7.4'
-VERSION_ISCSI='2.0-871'
+VERSION_ISCSI='2.0-872'
 VERSION_LVM='2.02.74'
 VERSION_UNIONFS_FUSE='0.22'
 VERSION_GPG='1.4.11'
@@ -30,7 +30,7 @@ COMMON_URI="${DM_HOME}/dmraid-${VERSION_DMRAID}.tar.bz2
 		${RH_HOME}/dm/device-mapper.${VERSION_DMAP}.tgz
 		${RH_HOME}/dm/old/device-mapper.${VERSION_DMAP}.tgz
 		${BB_HOME}/busybox-${VERSION_BUSYBOX}.tar.bz2
-		http://www.open-iscsi.org/bits/open-iscsi-${VERSION_ISCSI}.tar.gz
+		mirror://kernel/linux/kernel/people/mnc/open-iscsi/releases/open-iscsi-${VERSION_ISCSI}.tar.gz
 		mirror://sourceforge/e2fsprogs/e2fsprogs-${VERSION_E2FSPROGS}.tar.gz
 		mirror://sourceforge/fuse/fuse-${VERSION_FUSE}.tar.gz
 		http://podgorny.cz/unionfs-fuse/releases/unionfs-fuse-${VERSION_UNIONFS_FUSE}.tar.bz2

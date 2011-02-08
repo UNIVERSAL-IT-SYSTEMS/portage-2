@@ -1,12 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/eric/eric-4.4.9.ebuild,v 1.3 2010/11/17 11:08:20 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/eric/eric-4.4.12.ebuild,v 1.1 2011/02/08 21:53:47 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 # 2.4 and 2.5 are restricted to avoid conditional dependency on dev-python/simplejson.
-RESTRICT_PYTHON_ABIS="2.4 2.5 3.*"
+RESTRICT_PYTHON_ABIS="2.4 2.5 3.* *-jython"
 
 inherit eutils python
 
@@ -21,7 +21,7 @@ SRC_URI="${BASE_URI}/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="4"
-KEYWORDS="amd64 ~ppc ~ppc64 x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="kde spell"
 
 DEPEND="dev-python/PyQt4[assistant,svg,webkit,X]
@@ -43,6 +43,8 @@ unset L
 
 S="${WORKDIR}/${MY_P}"
 
+PYTHON_VERSIONED_EXECUTABLES=("/usr/bin/.*")
+
 src_prepare() {
 	epatch "${FILESDIR}/eric-4.4-no-interactive.patch"
 	epatch "${FILESDIR}/remove_coverage.patch"
@@ -58,11 +60,12 @@ src_install() {
 		"$(PYTHON)" install.py \
 			-z \
 			-b "${EPREFIX}/usr/bin" \
-			-i "${D}" \
+			-i "${T}/images/${PYTHON_ABI}" \
 			-d "${EPREFIX}$(python_get_sitedir)" \
 			-c
 	}
 	python_execute_function installation
+	python_merge_intermediate_installation_images "${T}/images"
 
 	doicon eric/icons/default/eric.png || die "doicon failed"
 	make_desktop_entry "${MY_PN} --nosplash" ${MY_PN} eric "Development;IDE;Qt"
