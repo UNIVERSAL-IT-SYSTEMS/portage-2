@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/gibbler/gibbler-0.8.4.ebuild,v 1.3 2010/09/09 18:02:14 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/gibbler/gibbler-0.8.7.ebuild,v 1.1 2011/02/09 08:02:06 graaff Exp $
 
 EAPI=2
 
@@ -26,11 +26,11 @@ IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/attic-0.4.0"
 
-ruby_add_bdepend "test? ( dev-ruby/tryouts:0 )"
+ruby_add_bdepend "test? ( dev-ruby/tryouts:2 )"
 
-SRC_URI="http://github.com/delano/${PN}/tarball/v${PV} -> ${PN}-git-${PV}.tgz"
+SRC_URI="https://github.com/delano/${PN}/tarball/v${PV} -> ${PN}-git-${PV}.tgz"
 S="${WORKDIR}/delano-${PN}-*"
 
 each_ruby_test() {
-	${RUBY} -S sergeant || die "tests failed"
+	${RUBY} -S try || die "tests failed"
 }
