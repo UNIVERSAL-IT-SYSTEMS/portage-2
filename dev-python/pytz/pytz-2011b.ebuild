@@ -1,30 +1,31 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pytz/pytz-2010h.ebuild,v 1.9 2010/07/06 20:07:17 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pytz/pytz-2011b.ebuild,v 1.1 2011/02/11 16:13:11 arfrever Exp $
 
 EAPI="3"
-PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils eutils
 
-DESCRIPTION="World Timezone Definitions for Python"
+DESCRIPTION="World timezone definitions for Python"
 HOMEPAGE="http://pypi.python.org/pypi/pytz http://pytz.sourceforge.net/"
-SRC_URI="http://pypi.python.org/packages/source/${PN:0:1}/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.zip"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 s390 sh sparc x86 ~x86-fbsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
 IUSE=""
 
 RDEPEND="dev-python/setuptools
 	>=sys-libs/timezone-data-${PV}"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	app-arch/unzip"
 
 DOCS="CHANGES.txt"
 
 src_prepare() {
+	distutils_src_prepare
+
 	# Use timezone-data zoneinfo.
 	epatch "${FILESDIR}/${PN}-2009j-zoneinfo.patch"
 }
