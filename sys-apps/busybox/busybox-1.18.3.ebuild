@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/busybox/busybox-1.17.1-r1.ebuild,v 1.3 2010/11/16 12:14:41 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/busybox/busybox-1.18.3.ebuild,v 1.1 2011/02/13 23:57:50 vapier Exp $
 
 EAPI=2
 inherit eutils flag-o-matic savedconfig toolchain-funcs
@@ -84,7 +84,7 @@ src_prepare() {
 	append-flags -fno-strict-aliasing #310413
 
 	# patches go here!
-	epatch "${FILESDIR}"/busybox-1.17.0-bb.patch
+	epatch "${FILESDIR}"/busybox-1.18.0-bb.patch
 	epatch "${FILESDIR}"/busybox-${PV}-*.patch
 
 	# flag cleanup
@@ -96,7 +96,9 @@ src_prepare() {
 	use elibc_glibc && sed -i 's:-Wl,--gc-sections::' Makefile
 	sed -i \
 		-e "/^CROSS_COMPILE/s:=.*:= ${CHOST}-:" \
-		-e "/^CC/s:=.*:= $(tc-getCC):" \
+		-e "/^AR\>/s:=.*:= $(tc-getAR):" \
+		-e "/^CC\>/s:=.*:= $(tc-getCC):" \
+		-e "/^LD\>/s:=.*:= $(tc-getLD):" \
 		-e "/^HOSTCC/s:=.*:= $(tc-getBUILD_CC):" \
 		Makefile || die
 }
@@ -194,13 +196,13 @@ src_install() {
 
 	into /
 	newbin busybox_unstripped busybox || die
-	if use static || use pam ; then
+	if use static ; then
 		dosym busybox /bin/bb || die
 		dosym bb /bin/busybox.static || die
 	else
 		dobin bb || die
 	fi
-	if use mdev; then
+	if use mdev ; then
 		dodir /$(get_libdir)/mdev/
 		use make-symlinks || dosym /bin/bb /sbin/mdev
 		cp "${S}"/examples/mdev_fat.conf "${D}"/etc/mdev.conf
