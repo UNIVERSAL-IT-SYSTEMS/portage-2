@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bashdb/bashdb-4.0.0.4.ebuild,v 1.1 2010/05/08 17:19:32 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bashdb/bashdb-4.2.0.6.ebuild,v 1.1 2011/02/15 03:39:06 vapier Exp $
 
 MY_P="${PN}-${PV:0:3}-${PV:4}"
 DESCRIPTION="bash source code debugging"
@@ -12,7 +12,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="!>=app-shells/bash-4.1"
+DEPEND="!>=app-shells/bash-${PV:0:1}.$((${PV:2:1}+1))"
 
 S=${WORKDIR}/${MY_P}
 

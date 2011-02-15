@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/readline/readline-6.0_p4.ebuild,v 1.12 2010/03/12 18:14:16 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/readline/readline-6.2.ebuild,v 1.1 2011/02/15 03:37:10 vapier Exp $
 
 inherit autotools eutils multilib toolchain-funcs flag-o-matic
 
@@ -8,6 +8,7 @@ inherit autotools eutils multilib toolchain-funcs flag-o-matic
 # See ftp://ftp.cwru.edu/pub/bash/readline-6.0-patches/
 PLEVEL=${PV##*_p}
 MY_PV=${PV/_p*}
+MY_PV=${MY_PV/_/-}
 MY_P=${PN}-${MY_PV}
 [[ ${PV} != *_p* ]] && PLEVEL=0
 patches() {
@@ -31,7 +32,7 @@ SRC_URI="mirror://gnu/${PN}/${MY_P}.tar.gz $(patches)"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
 IUSE=""
 
 # We must be certain that we have a bash that is linked
@@ -48,7 +49,6 @@ src_unpack() {
 	cd "${S}"
 	[[ ${PLEVEL} -gt 0 ]] && epatch $(patches -s)
 	epatch "${FILESDIR}"/${PN}-5.0-no_rpath.patch
-	epatch "${FILESDIR}"/${PN}-6.0-rlfe-build.patch #151174
 	epatch "${FILESDIR}"/${PN}-5.2-no-ignore-shlib-errors.patch #216952
 
 	# force ncurses linking #71420
@@ -58,15 +58,14 @@ src_unpack() {
 	# objformat for years, so we don't want to rely on that.
 	sed -i -e '/objformat/s:if .*; then:if true; then:' support/shobj-conf || die
 
-	# the bundled rlfe had its configure.in updated, but no one actually
-	# ran autoconf to have the configure file updated
-	ln -s ../.. examples/rlfe/readline # for headers
-	cd examples/rlfe
-	eautoconf
+	ln -s ../.. examples/rlfe/readline # for local readline headers
 }
 
 src_compile() {
+	# fix implicit decls with widechar funcs
 	append-cppflags -D_GNU_SOURCE
+	# http://lists.gnu.org/archive/html/bug-readline/2010-07/msg00013.html
+	append-cppflags -Dxrealloc=_rl_realloc -Dxmalloc=_rl_malloc -Dxfree=_rl_free
 
 	econf --with-curses || die
 	emake || die
