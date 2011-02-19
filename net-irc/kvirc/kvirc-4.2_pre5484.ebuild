@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/kvirc/kvirc-4.2_pre5124.ebuild,v 1.3 2010/12/12 17:43:49 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/kvirc/kvirc-4.2_pre5484.ebuild,v 1.1 2011/02/19 13:23:28 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
@@ -13,7 +13,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="kvirc"
 SLOT="4"
-KEYWORDS="~alpha amd64 ~ppc ~ppc64 x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~x86"
 IUSE="audiofile dcc_video +dcc_voice debug doc gsm +ipc ipv6 kde +nls oss +perl +phonon profile +python +qt-dbus qt-webkit +ssl theora +transparency"
 
 RDEPEND=">=dev-libs/crypto++-5.6.0-r1
@@ -61,21 +61,20 @@ pkg_setup() {
 
 src_prepare() {
 	VERSIO_PRAESENS="${PV#*_pre}"
-	elog "Setting revision number to ${VERSIO_PRAESENS}"
-	sed -e "/#define KVI_DEFAULT_FRAME_CAPTION/s/KVI_VERSION/& \" r${VERSIO_PRAESENS}\"/" -i src/kvirc/ui/kvi_frame.cpp || die "Failed to set revision number"
+	einfo "Setting of revision number to ${VERSIO_PRAESENS}"
+	sed -e "/#define KVI_DEFAULT_FRAME_CAPTION/s/KVI_VERSION/& \" r${VERSIO_PRAESENS}\"/" -i src/kvirc/ui/KviMainWindow.cpp || die "Setting of revision number failed"
 }
 
 src_configure() {
 	local libdir="$(get_libdir)"
-	local mycmakeargs="
-		-DCMAKE_INSTALL_PREFIX=/usr
-		-DCOEXISTENCE=1
+	local mycmakeargs=(
 		-DLIB_SUFFIX=${libdir#lib}
 		-DMANUAL_REVISION=${VERSIO_PRAESENS}
-		-DUSE_ENV_FLAGS=1
-		-DVERBOSE=1
+		-DWANT_COEXISTENCE=1
 		-DWANT_CRYPT=1
-		-DWANT_NO_EMBEDDED_CODE=1
+		-DWANT_CRYPTOPP=1
+		-DWANT_ENV_FLAGS=1
+		-DWANT_VERBOSE=1
 		$(cmake-utils_use_want audiofile AUDIOFILE)
 		$(cmake-utils_use_want dcc_video DCC_VIDEO)
 		$(cmake-utils_use_want dcc_voice DCC_VOICE)
@@ -95,7 +94,8 @@ src_configure() {
 		$(cmake-utils_use_want qt-webkit QTWEBKIT)
 		$(cmake-utils_use_want ssl OPENSSL)
 		$(cmake-utils_use_want theora OGG_THEORA)
-		$(cmake-utils_use_want transparency TRANSPARENCY)"
+		$(cmake-utils_use_want transparency TRANSPARENCY)
+	)
 
 	cmake-utils_src_configure
 }
