@@ -7,14 +7,14 @@ http://chromium.org/
 BSD
 Open-source version of Google Chrome web browser
 
-eutils flag-o-matic multilib pax-utils portability python subversion toolchain-funcs versionator virtualx
+eutils fdo-mime flag-o-matic multilib pax-utils portability python subversion toolchain-funcs versionator virtualx
 cups +gecko-mediaplayer gnome gnome-keyring test
 
 
 
 3
 
-compile configure install preinst prepare setup test unpack
+compile configure install postinst preinst prepare setup test unpack
 
 
 
