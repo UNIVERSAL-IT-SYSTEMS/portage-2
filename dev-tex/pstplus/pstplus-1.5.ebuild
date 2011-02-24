@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/pstplus/pstplus-1.4.1.ebuild,v 1.3 2009/12/26 19:26:03 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/pstplus/pstplus-1.5.ebuild,v 1.1 2011/02/24 11:58:44 aballier Exp $
 
-EAPI=1
+EAPI=3
 
-inherit eutils qt4
+inherit eutils qt4-r2
 
 DESCRIPTION="A PSTricks GUI"
 HOMEPAGE="http://www.xm1math.net/pstplus/"
@@ -27,15 +27,10 @@ RDEPEND="${DEPEND}
 	app-text/ghostscript-gpl
 	media-libs/netpbm"
 
-src_compile() {
-	eqmake4 pstplus.pro || die "qmake failed"
-	emake || die "emake failed"
-}
+DOCS="utilities/AUTHORS"
 
 src_install() {
-	emake INSTALL_ROOT="${D}" install || die "make install failed"
-
-	dodoc utilities/AUTHORS || die "dodoc failed"
+	qt4-r2_src_install
 
 	newicon utilities/pstplus48x48.png pstplus.png
 	make_desktop_entry pstplus Pstplus "pstplus" Office
