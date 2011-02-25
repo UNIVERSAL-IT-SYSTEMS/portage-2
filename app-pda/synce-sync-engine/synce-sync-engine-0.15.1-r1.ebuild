@@ -1,9 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-pda/synce-sync-engine/synce-sync-engine-0.15.1.ebuild,v 1.2 2011/02/25 16:28:43 ssuominen Exp $
-
-# TODO:
-# Figure out synce-opensync-plugin-2x.py and synce-opensync-plugin-3x.py install path when libopensync is unmasked.
+# $Header: /var/cvsroot/gentoo-x86/app-pda/synce-sync-engine/synce-sync-engine-0.15.1-r1.ebuild,v 1.3 2011/02/25 22:13:34 ssuominen Exp $
 
 EAPI=3
 
@@ -13,7 +10,7 @@ RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils
 
-DESCRIPTION="A sync engine for SynCE"
+DESCRIPTION="A synchronization engine for SynCE"
 HOMEPAGE="http://www.synce.org/"
 SRC_URI="mirror://sourceforge/synce/${P}.tar.gz"
 
@@ -23,16 +20,19 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-libs/librapi2[python]
+	dev-libs/librra[python]
+	dev-libs/librtfcomp[python]
 	dev-libs/libxml2[python]
 	dev-libs/libxslt[python]
 	dev-python/dbus-python
 	dev-python/pygobject"
 DEPEND="${RDEPEND}"
 
-PYTHON_MODNAME="plugins SyncEngine"
+PYTHON_MODNAME="SyncEngine"
 
 src_prepare() {
-	sed -i -e 's:share/doc/sync-engine:tmp:' setup.py || die
+	sed -i -e 's:share/doc/sync-engine:foobar:' setup.py || die
+
 	distutils_src_prepare
 }
 
@@ -40,10 +40,23 @@ src_install() {
 	insinto /usr/share/dbus-1/services
 	doins config/org.synce.SyncEngine.service || die
 
-	insinto /usr/share/${PN}
+	insinto /etc
 	doins config/syncengine.conf.xml || die
 
 	distutils_src_install
 
-	rm -rf "${D}"/tmp
+	# opensync plug-in begin
+	find "${D}" -type d -name plugins -exec rm -rf {} +
+
+	docinto synce-opensync-plugin
+	dodoc plugins/synce-opensync-plugin-* || die
+	# end
+
+	rm -rf "${D}"/usr/foobar
+}
+
+pkg_postinst() {
+	distutils_pkg_postinst
+
+	einfo "See /usr/share/doc/${PF}/synce-opensync-plugin for opensync plug-in."
 }
