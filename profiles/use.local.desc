@@ -254,7 +254,6 @@ app-editors/emacs-vcs:gzip-el - Compress bundled Emacs Lisp source
 app-editors/emacs-vcs:hesiod - Enable support for net-dns/hesiod
 app-editors/emacs-vcs:imagemagick - Use media-gfx/imagemagick for image processing
 app-editors/emacs-vcs:libxml2 - Use dev-libs/libxml2 to parse XML instead of the internal Lisp implementations
-app-editors/emacs-vcs:sound - Enable sound
 app-editors/emacs-vcs:toolkit-scroll-bars - Use the selected toolkit's scrollbars in preference to Emacs' own scrollbars
 app-editors/fe:sendmail - Send mail after editor abend
 app-editors/gedit-plugins:bookmarks - Advanced Bookmarking, it remembers all the bookmarks you ever toggled, highlights them in the text and allows you to navigate through a list with the navigation pane
@@ -1724,7 +1723,7 @@ mail-client/nail:net - Enable support for network protocols (POP, IMAP and SMTP)
 mail-client/nail:ssl - If network is enabled, this adds support for S/MIME and SSL/TLS-powered protocols through dev-libs/openssl.
 mail-client/pine:largeterminal - Add support for large terminals by doubling the size of pine's internal display buffer
 mail-client/pine:passfile - Adds support for caching IMAP passwords into a file between sessions
-mail-client/postler:indicate - Enable Messaging Menu support (Ayatana)
+mail-client/postler:ayatana - Enable Messaging Menu support via dev-libs/libindicate
 mail-client/squirrelmail:filter - Enable mail-filter/amavisd-new filtering
 mail-client/thunderbird:custom-optimization - Enable user CFLAGS
 mail-client/thunderbird:lightning - Enable calendar support
@@ -2827,6 +2826,7 @@ net-im/jabberd2:memdebug - Enable nad and pool debug. Requires USE="debug" to be
 net-im/kadu:phonon - Enable phonon audio plugin
 net-im/kadu:speech - Enables speech module
 net-im/kmess:konqueror - Enable integration with konqueror
+net-im/kmess:libnotify - Enable desktop notifications using the knotify library
 net-im/mcabber:aspell - Adds support for app-text/aspell spell checker.
 net-im/mcabber:otr - Enable encrypted conversations using Off-The-Records messaging
 net-im/minbif:video - Add video support
