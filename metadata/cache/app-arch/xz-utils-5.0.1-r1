@@ -1,7 +1,7 @@
 !<app-arch/lzma-4.63 !app-arch/lzma-utils !<app-arch/p7zip-4.57
 !<app-arch/lzma-4.63 !app-arch/lzma-utils !<app-arch/p7zip-4.57
 0
-http://tukaani.org/xz/xz-5.0.0.tar.gz
+http://tukaani.org/xz/xz-5.0.1.tar.gz
 
 http://tukaani.org/xz/
 LGPL-2.1
@@ -14,7 +14,7 @@ nls static-libs +threads
 
 2
 
-configure install postinst preinst
+configure install postinst preinst prepare
 
 
 

@@ -1,13 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/bash-4.2.ebuild,v 1.2 2011/02/19 17:20:15 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/bash-4.2_p5.ebuild,v 1.1 2011/03/01 00:41:23 vapier Exp $
 
 EAPI="1"
 
 inherit eutils flag-o-matic toolchain-funcs multilib
 
 # Official patchlevel
-# See ftp://ftp.cwru.edu/pub/bash/bash-3.2-patches/
+# See ftp://ftp.cwru.edu/pub/bash/bash-4.2-patches/
 PLEVEL=${PV##*_p}
 MY_PV=${PV/_p*}
 MY_PV=${MY_PV/_/-}
@@ -69,10 +69,6 @@ src_unpack() {
 	cd lib/readline
 	[[ ${READLINE_PLEVEL} -gt 0 ]] && epatch $(patches -s ${READLINE_PLEVEL} readline ${READLINE_VER})
 	cd ../..
-
-	epatch "${FILESDIR}"/${P}-patmatch.patch
-	epatch "${FILESDIR}"/${P}-vidomove.patch
-	epatch "${FILESDIR}"/${P}-rhs-split.patch
 }
 
 src_compile() {

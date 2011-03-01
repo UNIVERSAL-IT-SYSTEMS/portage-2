@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/xz-utils/xz-utils-5.0.0.ebuild,v 1.3 2011/01/06 02:49:41 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/xz-utils/xz-utils-5.0.1-r1.ebuild,v 1.1 2011/03/01 01:54:09 vapier Exp $
 
 # Remember: we cannot leverage autotools in this ebuild in order
 #           to avoid circular deps with autotools
@@ -41,6 +41,10 @@ src_prepare() {
 	eautoreconf
 }
 fi
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-xzgrep-typo.patch #356627
+}
 
 src_configure() {
 	econf \
