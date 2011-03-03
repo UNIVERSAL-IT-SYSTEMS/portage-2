@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-app-locales/zope-app-locales-3.6.2.ebuild,v 1.1 2010/11/15 13:40:03 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-app-locales/zope-app-locales-3.7.0.ebuild,v 1.1 2011/03/03 01:42:28 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="3.* *-jython"
 
 inherit distutils
 
@@ -23,6 +23,7 @@ IUSE=""
 
 RDEPEND="net-zope/zope-app-applicationcontrol
 	net-zope/zope-app-appsetup
+	net-zope/zope-i18n
 	net-zope/zope-i18nmessageid
 	net-zope/zope-interface
 	net-zope/zope-tal"
