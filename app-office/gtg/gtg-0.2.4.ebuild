@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/gtg/gtg-0.2.4.ebuild,v 1.1 2010/04/19 04:25:35 steev Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/gtg/gtg-0.2.4.ebuild,v 1.2 2011/03/05 09:52:40 jlec Exp $
 
 inherit fdo-mime gnome2-utils distutils
 
-DESCRIPTION="GTG is a personal organizer for the GNOME desktop environment."
+DESCRIPTION="Personal organizer for the GNOME desktop environment"
 HOMEPAGE="http://gtg.fritalk.com/"
 SRC_URI="http://launchpad.net/${PN}/${PV:0:3}/${PV}/+download/${P}.tar.gz"
 
@@ -13,12 +13,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-python/pygtk
+RDEPEND="
+	dev-python/configobj
+	dev-python/dbus-python
 	dev-python/pycairo
 	dev-python/pygobject
-	dev-python/configobj
+	dev-python/pygtk
 	dev-python/pyxdg
-	dev-python/dbus-python"
+	dev-python/simplejson"
 DEPEND="${RDEPEND}"
 
 pkg_preinst() {

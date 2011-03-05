@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php5/phptal/phptal-1.2.1.ebuild,v 1.1 2010/01/02 01:01:53 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/phptal/phptal-1.2.1.ebuild,v 1.1 2011/03/05 09:38:39 olemarkus Exp $
 
 EAPI="2"
 inherit depend.php
