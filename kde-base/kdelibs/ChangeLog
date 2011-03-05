@@ -1,6 +1,14 @@
 # ChangeLog for kde-base/kdelibs
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/ChangeLog,v 1.721 2011/03/05 12:37:45 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/ChangeLog,v 1.723 2011/03/05 18:35:06 dilfridge Exp $
+
+  05 Mar 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  kdelibs-4.6.1-r1.ebuild:
+  Make kfmclient or xdg-utils PDEPEND instead
+
+  05 Mar 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  kdelibs-4.6.1-r1.ebuild:
+  Added kfmclient or xdg-utils RDEPEND, bug 300592
 
 *kdelibs-4.6.1-r1 (05 Mar 2011)
 
