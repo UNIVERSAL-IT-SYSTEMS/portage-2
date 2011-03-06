@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/ltris/ltris-1.0.14.ebuild,v 1.6 2010/11/14 17:26:40 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/ltris/ltris-1.0.16.ebuild,v 1.1 2011/03/06 09:02:33 mr_bones_ Exp $
 
 EAPI=2
 inherit autotools eutils games
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/lgames/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="nls"
 
 RDEPEND="media-libs/libsdl[video]
