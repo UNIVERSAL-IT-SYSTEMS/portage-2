@@ -1,13 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bitescript/bitescript-0.0.5.ebuild,v 1.1 2010/02/15 23:38:10 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bitescript/bitescript-0.0.8.ebuild,v 1.1 2011/03/08 06:46:23 graaff Exp $
 
 EAPI=2
 
 USE_RUBY="jruby"
 
-RUBY_FAKGEM_TASK_DOC="docs"
-RUBY_FAKEGEM_DOC_DIR="doc"
+RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="README.txt History.txt"
 
 inherit ruby-fakegem eutils
