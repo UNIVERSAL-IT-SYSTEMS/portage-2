@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12528 2011/03/08 19:04:22 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12530 2011/03/09 03:25:34 vapier Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,6 +31,10 @@
 
 #--- END OF EXAMPLES ---
 
+# Diego E. Pettenò <flameeyes@gentoo.org> (01 Mar 2011)
+# Messed up build system, automagic dependencies.
+dev-util/perf
+
 # Tomáš Chvátal <scarabeus@gentoo.org> (08 Mar 2011)
 # Broken ldflags, should not work
 # Masked for removal in 30 days per bug #335586
@@ -38,6 +42,7 @@ media-libs/glide-v3
 
 # Samuli Suominen <ssuominen@gentoo.org> (07 Mar 2011)
 # No longer needed package wrt #330397. Removal in 30 days.
+# Note: Make sure to revdep-rebuild after unmerging.
 media-libs/glitz
 
 # Torsten Veller <tove@gentoo.org> (06 Mar 2011)
