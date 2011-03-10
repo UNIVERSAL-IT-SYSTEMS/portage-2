@@ -680,7 +680,6 @@ app-text/cuneiform:imagemagick - Enables support of various input formats using 
 app-text/dictd:judy - Build Judy-based (dev-libs/judy) plugin implementing fast "exact" and especially "lev" strategies
 app-text/dictd:minimal - Don't build server but dict client, dictzip and dictfmt only.
 app-text/docbook-sgml-utils:jadetex - Add support for app-text/jadetex (for processing tex files produced by the TeX backend of Jade)
-app-text/dos2unix:largefile - Support for large files
 app-text/dvipng:t1lib - Enable support for T1lib font rendering (media-libs/t1lib)
 app-text/enchant:aspell - Adds support for app-text/aspell spell checker
 app-text/enchant:hunspell - Adds support for app-text/hunspell spell checker
@@ -3494,7 +3493,6 @@ sci-biology/bioperl:run - Install sci-biology/bioperl-run
 sci-biology/clustalw-mpi:mpi_njtree - Use MPI (as opposed to serial) code for computing neighbor-joining trees
 sci-biology/clustalw-mpi:static_pairalign - Use static (as opposed to dynamic) scheduling for pair alignments
 sci-biology/emboss:largefile - Support for large files
-sci-biology/exonerate:largefile - Enable largefile support on 32 bit systems
 sci-biology/exonerate:utils - Install all utilities
 sci-biology/fasta:icc - Use intel compiler instead of gcc
 sci-biology/hmmer:pvm - Add support for parallel virtual machine (sys-cluster/pvm)
@@ -3573,7 +3571,6 @@ sci-geosciences/gpsd:ocean - Enable OceanServer support
 sci-geosciences/gpsd:pl2303 - Enable udev rules for PL2303 USB-serial converter
 sci-geosciences/gpsd:tntc - Enable True North Technologies digital compass support
 sci-geosciences/grass:gmath - Enable gmath wrapper for BLAS/Lapack (virtual/blas, virtual/lapack)
-sci-geosciences/grass:largefile - Enable LFS support for huge files
 sci-geosciences/mapnik:gdal - Enable sci-libs/gdal library support
 sci-geosciences/mapserver:agg - Enable x11-libs/agg library support
 sci-geosciences/mapserver:flash - Add support for creating SWF files using media-libs/ming
