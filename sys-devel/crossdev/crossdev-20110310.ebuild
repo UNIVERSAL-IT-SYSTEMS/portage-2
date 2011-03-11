@@ -1,6 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/crossdev/crossdev-20100620.ebuild,v 1.4 2011/02/06 11:31:49 leio Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/crossdev/crossdev-20110310.ebuild,v 1.1 2011/03/11 04:26:22 vapier Exp $
+
+EAPI="3"
 
 if [[ ${PV} == "99999999" ]] ; then
 	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/crossdev.git"
@@ -8,9 +10,9 @@ if [[ ${PV} == "99999999" ]] ; then
 	SRC_URI=""
 	#KEYWORDS=""
 else
-	SRC_URI="mirror://gentoo/${P}.tar.lzma
-		http://dev.gentoo.org/~vapier/dist/${P}.tar.lzma"
-	KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
+	SRC_URI="mirror://gentoo/${P}.tar.xz
+		http://dev.gentoo.org/~vapier/dist/${P}.tar.xz"
+	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 fi
 
 DESCRIPTION="Gentoo Cross-toolchain generator"
