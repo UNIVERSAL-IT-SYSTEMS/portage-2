@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/open-vm-tools-kmod/open-vm-tools-kmod-0.0.20100223.236320.ebuild,v 1.1 2010/03/16 16:15:37 vadimk Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/open-vm-tools-kmod/open-vm-tools-kmod-0.0.20110223.368700-r1.ebuild,v 1.1 2011/03/11 16:14:18 vadimk Exp $
+
+EAPI="2"
 
 inherit linux-mod versionator
 
@@ -31,7 +33,7 @@ pkg_setup() {
 	linux-mod_pkg_setup
 
 	VMWARE_MOD_DIR="modules/linux"
-	VMWARE_MODULE_LIST="pvscsi vmblock vmci vmhgfs vmsync vmmemctl vmxnet vsock"
+	VMWARE_MODULE_LIST="vmblock vmci vmhgfs vmsync vmxnet vsock"
 
 	MODULE_NAMES=""
 	BUILD_TARGETS="auto-build HEADER_DIR=${KERNEL_DIR}/include BUILD_DIR=${KV_OUT_DIR} OVT_SOURCE_DIR=${S}"
@@ -47,7 +49,30 @@ pkg_setup() {
 		MODULE_NAMES="${MODULE_NAMES} ${mod}(${MODTARGET}:${S}/${VMWARE_MOD_DIR}/${mod})"
 	done
 }
+
+src_prepare() {
+	sed -i.bak -e '/\smake\s/s/make/$(MAKE)/g' modules/linux/{vmblock,vmci,vmhgfs,vmsync,vmxnet,vsock}/Makefile\
+		|| die "Sed failed."
+}
+
+src_configure() {
+	:				# do nothing at all
+}
+
+src_install() {
+	linux-mod_src_install
+
+	local udevrules="${T}/60-vmware.rules"
+	cat > "${udevrules}" <<-EOF
+		KERNEL=="vsock", GROUP="vmware", MODE=660
+	EOF
+	insinto /etc/udev/rules.d/
+	doins "${udevrules}"
+}
+
 pkg_postinst() {
 	linux-mod_pkg_postinst
 	elog "vmxnet3 for Linux is now upstream (as of Linux 2.6.32)"
+	elog "pvscsi for Linux is now upstream (vmw_pvscsi) (as of Linux 2.6.33)"
+	elog "vmmemctl for Linux is now upstream (vmw_balloon) (as of Linux 2.6.34)"
 }
