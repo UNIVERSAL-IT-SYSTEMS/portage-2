@@ -1,79 +1,57 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/polkit/polkit-0.96-r2.ebuild,v 1.6 2010/08/14 17:08:08 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/polkit/polkit-0.101.ebuild,v 1.1 2011/03/11 19:07:32 ssuominen Exp $
 
-EAPI="2"
-
-inherit autotools eutils multilib pam
+EAPI=3
+inherit pam
 
 DESCRIPTION="Policy framework for controlling privileges for system-wide services"
-HOMEPAGE="http://hal.freedesktop.org/docs/PolicyKit"
-SRC_URI="http://hal.freedesktop.org/releases/${P}.tar.gz
-!pam? ( mirror://gentoo/${P}-r1-shadow-support.patch.lzma )"
+HOMEPAGE="http://hal.freedesktop.org/docs/polkit/"
+SRC_URI="http://hal.freedesktop.org/releases/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
-IUSE="debug doc examples +introspection nls pam"
+IUSE="debug doc examples gtk +introspection kde nls pam"
 
-# not mature enough
-RDEPEND=">=dev-libs/glib-2.21.4
-	>=dev-libs/eggdbus-0.6
+RDEPEND=">=dev-libs/glib-2.28
 	dev-libs/expat
-	introspection? ( dev-libs/gobject-introspection )
+	introspection? ( >=dev-libs/gobject-introspection-0.6.2 )
 	pam? ( virtual/pam )"
 DEPEND="${RDEPEND}
-	!!>=sys-auth/policykit-0.92
+	!!sys-auth/policykit
 	dev-libs/libxslt
 	app-text/docbook-xsl-stylesheets
-	>=dev-util/pkgconfig-0.18
+	dev-util/pkgconfig
 	>=dev-util/intltool-0.36
-	>=dev-util/gtk-doc-am-1.13
 	doc? ( >=dev-util/gtk-doc-1.13 )"
-PDEPEND=">=sys-auth/consolekit-0.4[policykit]"
-# gtk-doc-am-1.13 needed for eautoreconf
-
-src_prepare() {
-	epatch "${FILESDIR}/${P}-getcwd.patch"
-	if ! use pam; then
-		# Experimental shadow support, bug 291116
-		epatch "${WORKDIR}/${P}-r1-shadow-support.patch"
-		eautoreconf
-	fi
-}
+PDEPEND=">=sys-auth/consolekit-0.4[policykit]
+	gtk? ( || ( >=gnome-extra/polkit-gnome-0.96-r1 lxde-base/lxpolkit ) )
+	kde? ( || ( sys-auth/polkit-kde-agent sys-auth/polkit-kde ) )"
 
 src_configure() {
-	local conf
+	local myauth="--with-authfw=shadow"
+	use pam && myauth="--with-authfw=pam --with-pam-module-dir=$(getpam_mod_dir)"
 
-	if use pam; then
-		conf="${conf} --with-authfw=pam
-			--with-pam-module-dir=$(getpam_mod_dir)"
-	else
-		conf="${conf} --with-authfw=shadow"
-	fi
-
-	# We define libexecdir due to fdo bug #22951
-	# easier to maintain than patching everything
-	econf ${conf} \
-		--disable-ansi \
-		--disable-examples \
-		--enable-fast-install \
-		--enable-libtool-lock \
-		--enable-man-pages \
+	econf \
+		--localstatedir="${EPREFIX}"/var \
 		--disable-dependency-tracking \
-		--with-os-type=gentoo \
-		--localstatedir=/var \
-		--libexecdir='${exec_prefix}/libexec/polkit-1' \
+		--disable-static \
 		$(use_enable debug verbose-mode) \
+		--enable-man-pages \
 		$(use_enable doc gtk-doc) \
 		$(use_enable introspection) \
-		$(use_enable nls)
+		--disable-examples \
+		$(use_enable nls) \
+		--with-os-type=gentoo \
+		${myauth}
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" install || die
+	dodoc docs/TODO HACKING NEWS README
 
-	dodoc NEWS README AUTHORS ChangeLog || die "dodoc failed"
+	find "${D}" -name '*.la' -exec rm -f {} +
 
 	# We disable example compilation above, and handle it here
 	if use examples; then
