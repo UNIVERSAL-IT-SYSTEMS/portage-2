@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php5/eaccelerator/eaccelerator-0.9.6.1-r1.ebuild,v 1.3 2011/01/04 15:18:20 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/eaccelerator/eaccelerator-0.9.6.1-r3.ebuild,v 1.1 2011/03/13 08:08:22 olemarkus Exp $
 
 PHP_EXT_NAME="eaccelerator"
 PHP_EXT_INI="yes"
@@ -12,7 +12,7 @@ EAPI="2"
 
 inherit php-ext-source-r2 eutils depend.apache
 
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="A PHP Accelerator & Encoder."
 HOMEPAGE="http://www.eaccelerator.net/"
@@ -52,13 +52,13 @@ pkg_setup() {
 	fi
 }
 
-src_compile() {
+src_configure() {
 	my_conf="--enable-eaccelerator=shared --with-eaccelerator-userid=`id -u ${HTTPD_USER}`"
 	use debug && my_conf="${my_conf} --with-eaccelerator-debug"
 	use disassembler && my_conf="${my_conf} --with-eaccelerator-disassembler"
 	! use inode && my_conf="${my_conf} --without-eaccelerator-use-inode"
 	use doccommentinclusion && my_conf="${my_conf} --with-eaccelerator-doc-comment-inclusion"
-	php-ext-source-r2_src_compile
+	php-ext-source-r2_src_configure
 }
 
 src_install() {
@@ -68,7 +68,7 @@ src_install() {
 	fowners ${HTTPD_USER}:${HTTPD_GROUP} "${EACCELERATOR_CACHEDIR}"
 	fperms 750 "${EACCELERATOR_CACHEDIR}"
 
-	insinto "/usr/share/${PVR}"
+	insinto "/usr/share/${PF}"
 	doins -r doc/php/
 	dodoc AUTHORS ChangeLog NEWS README
 
@@ -87,7 +87,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Please see the files in ${ROOT}usr/share/${PVR}/ for some"
+	elog "Please see the files in ${ROOT}usr/share/${PF}/ for some"
 	elog "examples and informations on how to use the functions that"
 	elog "eAccelerator adds to PHP."
 }
