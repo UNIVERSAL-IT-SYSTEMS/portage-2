@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-serialport/ruby-serialport-1.0.3.ebuild,v 1.4 2010/06/07 18:00:58 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/serialport/serialport-1.0.3.ebuild,v 1.1 2011/03/13 10:53:46 graaff Exp $
 
 EAPI="2"
 
@@ -10,8 +10,6 @@ USE_RUBY="ruby18"
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_TASK_TEST=""
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG README"
-
-RUBY_FAKEGEM_NAME=${PN/ruby-/}
 
 inherit ruby-fakegem
 

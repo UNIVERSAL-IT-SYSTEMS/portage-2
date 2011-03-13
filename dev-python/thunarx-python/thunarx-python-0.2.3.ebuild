@@ -1,14 +1,14 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/thunarx-python/thunarx-python-0.2.0.ebuild,v 1.5 2011/02/05 12:40:39 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/thunarx-python/thunarx-python-0.2.3.ebuild,v 1.1 2011/03/13 10:56:34 ssuominen Exp $
 
 EAPI=3
 PYTHON_DEPEND=2
 inherit python xfconf
 
 DESCRIPTION="Python bindings for the Thunar file manager"
-HOMEPAGE="http://code.google.com/p/rabbitvcs"
-SRC_URI="http://rabbitvcs.googlecode.com/files/${P}.tar.gz"
+HOMEPAGE="http://goodies.xfce.org/projects/bindings/thunarx-python"
+SRC_URI="mirror://xfce/src/bindings/${PN}/0.2/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -20,7 +20,7 @@ RDEPEND="x11-libs/gtk+:2
 	>=dev-python/gnome-python-base-2.12
 	>=dev-python/pygobject-2.16:2
 	dev-python/pygtk:2
-	>=xfce-base/thunar-1.2.0"
+	>=xfce-base/thunar-1.1.0"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
@@ -33,6 +33,7 @@ pkg_setup() {
 	DOCS="AUTHORS ChangeLog NEWS README"
 
 	python_set_active_version 2
+	python_pkg_setup
 }
 
 src_install() {

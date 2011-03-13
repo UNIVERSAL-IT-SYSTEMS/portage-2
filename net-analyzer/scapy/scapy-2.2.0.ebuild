@@ -1,6 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/scapy/scapy-2.0.0.11.ebuild,v 1.2 2009/11/20 12:57:57 ikelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/scapy/scapy-2.2.0.ebuild,v 1.2 2011/03/13 15:47:16 ikelos Exp $
+
+EAPI="2"
+
+PYTHON_DEPEND="2:2.6"
 
 inherit distutils
 
@@ -19,6 +23,7 @@ RDEPEND="net-analyzer/tcpdump
 	pyx? ( dev-python/pyx )
 	crypt? ( dev-python/pycrypto )
 	graphviz? ( media-gfx/graphviz )
-	imagemagick? ( media-gfx/imagemagick )
+	imagemagick? ( || ( media-gfx/imagemagick
+						media-gfx/graphicsmagick[imagemagick] ) )
 	visual? ( dev-python/visual )
 	tcpreplay? ( net-analyzer/tcpreplay )"
