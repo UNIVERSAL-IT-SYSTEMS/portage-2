@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/obconf/obconf-9999.ebuild,v 1.4 2010/06/22 09:17:08 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/obconf/obconf-9999.ebuild,v 1.6 2011/03/14 17:04:00 hwoarang Exp $
 
 EAPI="2"
 
@@ -30,13 +30,12 @@ src_prepare() {
 }
 
 src_configure() {
-	econf \
-		$(use_enable nls) \
-		|| die "econf failed"
+	econf $(use_enable nls)
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+	dodoc AUTHORS CHANGELOG README || die "dodoc failed"
 }
 
 pkg_postinst() {

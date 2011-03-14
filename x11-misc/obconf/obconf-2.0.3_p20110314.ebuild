@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/obconf/obconf-2.0.3_p20110314.ebuild,v 1.3 2011/03/14 16:03:39 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/obconf/obconf-2.0.3_p20110314.ebuild,v 1.5 2011/03/14 17:04:00 hwoarang Exp $
 
 EAPI=2
 inherit autotools fdo-mime
@@ -36,6 +36,7 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
+	dodoc AUTHORS CHANGELOG README || die "dodoc failed"
 }
 
 pkg_postinst() {
