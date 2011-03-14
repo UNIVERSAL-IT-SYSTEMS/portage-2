@@ -1,15 +1,17 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php5/PEAR-DbUnit/PEAR-DbUnit-1.0.0.ebuild,v 1.1 2010/10/04 22:47:54 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-php/dbunit/dbunit-1.0.0.ebuild,v 1.2 2011/03/14 15:40:32 mr_bones_ Exp $
 
-inherit php-pear-r1 depend.php eutils
+PHP_PEAR_CHANNEL="pear.phpunit.de"
+PHP_PEAR_PN="DbUnit"
+inherit php-pear-lib-r1
 
 DESCRIPTION="DbUnit port for PHP/PHPUnit"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
-SRC_URI="http://pear.phpunit.de/get/DbUnit-${PV}.tgz"
+HOMEPAGE="http://www.phpunit.de"
 
 RDEPEND="${RDEPEND}
 	>=dev-php5/ezc-ConsoleTools-1.6
