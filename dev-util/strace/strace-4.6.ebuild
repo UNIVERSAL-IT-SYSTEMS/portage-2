@@ -1,15 +1,14 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/strace/strace-4.5.20-r2.ebuild,v 1.3 2011/03/16 01:11:24 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/strace/strace-4.6.ebuild,v 1.1 2011/03/16 01:11:53 vapier Exp $
 
-EAPI="2"
+EAPI="3"
 
-inherit flag-o-matic eutils
+inherit flag-o-matic
 
 DESCRIPTION="A useful diagnostic, instructional, and debugging tool"
 HOMEPAGE="http://sourceforge.net/projects/strace/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
-	http://dev.gentoo.org/~flameeyes/patches/${PN}/${P}-ioctls.patch.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.xz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -20,11 +19,6 @@ IUSE="static aio"
 DEPEND="aio? ( >=dev-libs/libaio-0.3.106 )
 	sys-kernel/linux-headers"
 RDEPEND=""
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-sparc.patch #336939
-	epatch "${WORKDIR}"/${P}-ioctls.patch
-}
 
 src_configure() {
 	filter-lfs-flags # configure handles this sanely
