@@ -1,10 +1,27 @@
 # ChangeLog for profile directory
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.5157 2011/03/18 15:18:52 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.5162 2011/03/18 22:09:10 vapier Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  18 Mar 2011: Mike Frysinger <vapier@gentoo.org> **/make.defaults:
+  Drop CDEFINE_<abi> variables now that nothing uses them.
+
+  18 Mar 2011; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Drop gupnp-av and gupnp-vala mask since gstreamer-0.10.32 has been added to
+  the tree.
+
+  18 Mar 2011; Pacho Ramos <pacho@gentoo.org> arch/x86-fbsd/package.use.mask:
+  Mask dev-libs/totem-pl-parser USE flags due missing keywords on deps.
+
+  18 Mar 2011; Sébastien Fabbro <bicatali@gentoo.org> package.mask:
+  Unmasking sci-physics/geant:4
+
+  18 Mar 2011; Pacho Ramos <pacho@gentoo.org> arch/x86-fbsd/ChangeLog,
+  arch/x86-fbsd/package.use.mask:
+  Mask media-plugins/gst-plugins-meta USE flags due missing keywords on deps.
 
   18 Mar 2011; Jeroen Roovers <jer@gentoo.org> package.mask:
   Mask new snapshots of www-client/opera.
