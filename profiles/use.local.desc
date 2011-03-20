@@ -1795,7 +1795,6 @@ mail-filter/opendkim:unbound - Use the unbound dnssec library to perform DKIM DN
 mail-filter/postgrey:targrey - Enables the targrey patch
 mail-filter/qmail-scanner:spamassassin - Build faster mail-filter/spamassassin checks into qmail-scanner
 mail-filter/spamassassin:qmail - Build qmail functionality and docs
-mail-filter/spamassassin:tools - Enables tools for spamassassin
 mail-filter/spamassassin-fuzzyocr:amavis - Enable support for mail-filter/amavisd-new
 mail-filter/spamassassin-fuzzyocr:gocr - Enable support for the gocr OCR engine
 mail-filter/spamassassin-fuzzyocr:logrotate - Install support files for app-admin/logrotate
@@ -1959,6 +1958,7 @@ media-libs/glide-v3:voodoo2 - Support 3DFX Voodoo2 video cards
 media-libs/glide-v3:voodoo5 - Support 3DFX Voodoo4 and Voodoo5 video cards
 media-libs/gst-plugins-base:introspection - Use dev-libs/gobject-introspection for introspection
 media-libs/gst-plugins-base:orc - Use dev-lang/orc for runtime optimisations
+media-libs/gst-plugins-good:orc - Use dev-lang/orc for runtime optimisations
 media-libs/gstreamer:introspection - Use dev-libs/gobject-introspection for introspection
 media-libs/imlib:deprecated - Enable deprecated GTK+-1.2 support
 media-libs/libass:enca - Enables support for charset discovery and conversion.
