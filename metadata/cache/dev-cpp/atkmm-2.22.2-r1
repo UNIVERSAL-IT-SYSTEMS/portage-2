@@ -1,7 +1,7 @@
->=dev-cpp/glibmm-2.24[doc?] >=dev-libs/atk-1.12 dev-libs/libsigc++:2 !<dev-cpp/gtkmm-2.22.0 dev-util/pkgconfig >=sys-apps/sed-4
+>=dev-cpp/glibmm-2.24[doc?] >=dev-libs/atk-1.12 dev-libs/libsigc++:2 !<dev-cpp/gtkmm-2.22.0 dev-util/pkgconfig doc? ( >=dev-cpp/mm-common-0.9.3 ) >=sys-apps/sed-4
 >=dev-cpp/glibmm-2.24[doc?] >=dev-libs/atk-1.12 dev-libs/libsigc++:2 !<dev-cpp/gtkmm-2.22.0
 0
-mirror://gnome/sources/atkmm/2.22/atkmm-2.22.1.tar.bz2
+mirror://gnome/sources/atkmm/2.22/atkmm-2.22.2.tar.bz2
 
 http://www.gtkmm.org
 LGPL-2.1
@@ -14,7 +14,7 @@ doc
 
 3
 
-compile configure install postinst postrm preinst prepare setup unpack
+compile configure install postinst postrm preinst prepare unpack
 
 
 
