@@ -3077,6 +3077,7 @@ net-libs/ptlib:vxml - Enable VoiceXML support
 net-libs/ptlib:wav - Enable WAVFILE support
 net-libs/telepathy-glib:introspection - Use dev-libs/gobject-introspection for introspection
 net-libs/telepathy-glib:vala - Enable bindings for dev-lang/vala
+net-libs/telepathy-qt4:farsight - Enable support for farsight connection manager
 net-libs/telepathy-qt4:glib - Enable support for various telepathy/glib related packages
 net-libs/webkit-gtk:coverage - Enable code coverage support
 net-libs/webkit-gtk:introspection - Use dev-libs/gobject-introspection for introspection
@@ -3197,6 +3198,8 @@ net-misc/curl:nss - Prefer NSS over openssl as the crypto engine
 net-misc/curl:ssl - Enable crypto engine support (via openssl if USE='-gnutls -nss')
 net-misc/dahdi:flash - Support (short) flash on FXS
 net-misc/dahdi-tools:ppp - Enables PPP/DAHDIRAS support
+net-misc/dhcp:client - Install the dhclient program
+net-misc/dhcp:server - Install the dhcpd and dhcrelay programs
 net-misc/dhcpcd:compat - Enable commandline compatibility with dhcpcd-3.x
 net-misc/directvnc:mouse - Adds mouse support
 net-misc/dnetstats:gnome - Use gksu to gain root access
@@ -3749,6 +3752,7 @@ sci-visualization/veusz:fits - Add FITS format via dev-python/pyfits
 sec-policy/selinux-base-policy:open_perms - Enable the open permissions for file object classes (SELinux policy capability).
 sec-policy/selinux-base-policy:peer_perms - Enable the labeled networking peer permissions (SELinux policy capability).
 sys-apps/acl:nfs - add support for NFS acls
+sys-apps/baselayout-prefix:prefix-chaining - install in a chained Prefix environment
 sys-apps/busybox:make-symlinks - Create all the appropriate symlinks in /bin and /sbin.
 sys-apps/busybox:mdev - Create the appropriate symlink in /sbin and install mdev.conf and support files
 sys-apps/flashrom:atahpt - Highpoint (HPT) ATA/RAID controller support
