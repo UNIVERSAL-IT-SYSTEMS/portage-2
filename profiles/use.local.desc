@@ -2785,6 +2785,7 @@ net-fs/samba:quota - Enables support for user quotas
 net-fs/samba:server - Enables the server part
 net-fs/samba:smbclient - Enable smbclient tool
 net-fs/samba:smbsharemodes - Enable special smb share modes (?)
+net-fs/samba:smbtav2 - Enable Samba Traffic Analyzer version 2
 net-fs/samba:swat - Enables support for swat configuration gui
 net-fs/samba:tools - Enable extra tools
 net-fs/samba:winbind - Enables support for the winbind auth daemon
@@ -4095,6 +4096,7 @@ sys-process/fcron:pam - Enable PAM support for fcron. This means that fcron will
 sys-process/htop:openvz - Enable openvz support
 sys-process/htop:vserver - Enable vserver support
 sys-process/procps:n32 - Enable n32 ABI support on mips
+virtual/ffmpeg:vdpau - Enables VDPAU decoders (requires nVidia video cards to offload CPU processing to video card
 virtual/mpi:romio - Enable romio, a high-performance portable MPI-IO
 virtual/mysql:embedded - Build embedded server (libmysqld)
 www-apache/mod_extract_forwarded:mod_proxy - Enable support for Apache's internal proxy
