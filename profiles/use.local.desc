@@ -2248,6 +2248,7 @@ media-sound/qtscrobbler:cli - Build commandline client
 media-sound/rezound:16bittmp - Use 16bit temporary files (default 32bit float), useful for slower computers
 media-sound/rezound:soundtouch - compile with support for soundtouch
 media-sound/rhythmbox:daap - Enable support for local network music sharing via daap
+media-sound/rhythmbox:lastfm - Enable support for Last.fm scrobbling
 media-sound/rhythmbox:upnp - Enable support for local network music sharing via upnp
 media-sound/rhythmbox:webkit - Enable context panel plugin.
 media-sound/rubyripper:cdrdao - Add support for advanced toc scanning using app-cdr/cdrdao
@@ -2868,7 +2869,8 @@ net-im/gajim:trayicon - Enable support for trayicon
 net-im/gajim:xhtml - Enable XHTML support
 net-im/gnugadu:tlen - Enable Tlen.pl protocol support
 net-im/jabberd2:memdebug - Enable nad and pool debug. Requires USE="debug" to be set.
-net-im/kadu:phonon - Enable phonon audio plugin
+net-im/kadu:gadu - Enables Gadu communication protocol
+net-im/kadu:phonon - Enables phonon audio plugin
 net-im/kadu:speech - Enables speech module
 net-im/kmess:konqueror - Enable integration with konqueror
 net-im/kmess:libnotify - Enable desktop notifications using the knotify library
