@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pylzma/pylzma-0.4.3.ebuild,v 1.1 2011/01/29 00:43:01 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pylzma/pylzma-0.4.4.ebuild,v 1.1 2011/03/24 16:20:20 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"

@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/webhelpers/webhelpers-1.2.ebuild,v 1.1 2010/09/16 16:23:57 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/webhelpers/webhelpers-1.3.ebuild,v 1.1 2011/03/24 16:13:15 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -33,6 +33,7 @@ S="${WORKDIR}/${MY_P}"
 src_prepare() {
 	distutils_src_prepare
 
+	# https://bitbucket.org/bbangert/webhelpers/issue/67
 	sed \
 		-e '/import datetime/a import os' \
 		-e 's:"/tmp/feed":os.environ.get("TMPDIR", "/tmp") + "/feed":' \
@@ -44,8 +45,9 @@ src_compile() {
 
 	if use doc; then
 		einfo "Generation of documentation"
-		cd docs
+		pushd docs > /dev/null
 		emake html || die "Generation of documentation failed"
+		popd > /dev/null
 	fi
 }
 
@@ -53,8 +55,10 @@ src_install() {
 	distutils_src_install
 
 	if use doc; then
-		cd docs/_build/html
+		pushd docs/_build/html > /dev/null
 		docinto html
-		cp -R [a-z]* _static "${ED}usr/share/doc/${PF}/html" || die "Installation of documentation failed"
+		insinto /usr/share/doc/${PF}/html
+		doins -r [a-z]* _static || die "Installation of documentation failed"
+		popd > /dev/null
 	fi
 }
