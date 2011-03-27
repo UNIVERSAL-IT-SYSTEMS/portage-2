@@ -420,6 +420,9 @@ app-emulation/virtualbox-bin:headless - Install without any graphic frontend
 app-emulation/virtualbox-bin:rdesktop-vrdp - Install the rdesktop client integration
 app-emulation/virtualbox-bin:sdk - Enable building of SDK
 app-emulation/virtualbox-bin:vboxwebsrv - Install the VirtualBox webservice
+app-emulation/vmware-player:vmware-tools - Install VMware Tools images
+app-emulation/vmware-workstation:vix - Install VIX. The VIX API allows you to write programs and scripts that automate virtual machine operations, and run programs or manipulate files within guest operating systems.
+app-emulation/vmware-workstation:vmware-tools - Install VMware Tools images
 app-emulation/vov:gprof - build with profiling support
 app-emulation/wine:capi - Enable ISDN support via CAPI
 app-emulation/wine:custom-cflags - Bypass strip-flags; use are your own peril
@@ -1530,7 +1533,6 @@ gnome-base/gdm:consolekit - Allow proper handling of removable media according t
 gnome-base/gdm:dmx - Enables Distributed Multihead X (DMX) support
 gnome-base/gdm:remote - Enables support for secure remote connections
 gnome-base/gdm:xklavier - Use x11-libs/libxklavier for keyboard management
-gnome-base/gnome-applets:battstat - Enable deprecated battery applet for people unable to use gnome-extra/gnome-power-manager instead.
 gnome-base/gnome-light:automount - Use gnome-base/gvfs[gdu] for automounting of drives in nautilus
 gnome-base/gnome-menus:introspection - Use dev-libs/gobject-introspection for introspection
 gnome-base/gnome-mount:nautilus - Enables the Nautilus plugin
@@ -1965,7 +1967,7 @@ media-libs/libcanberra:gstreamer - Enables gstreamer sound driver. Not useful wh
 media-libs/libcanberra:gtk - Enables building of gtk+ helper library, gtk+ runtime sound effects and the canberra-gtk-play utility. To enable the gtk+ sound effects add canberra-gtk-module to the colon separated list of modules in the GTK_MODULES environment variable.
 media-libs/libcanberra:pulseaudio - Enables PulseAudio sound driver that should be able to support positional event sounds. This is the preferred choice for best sound events experience and picked by default if compiled in and possible to use at runtime.
 media-libs/libcanberra:sound - Install x11-themes/sound-theme-freedesktop to get sounds on Gnome and Xfce.
-media-libs/libcanberra:tdb - Enables Trivial Database support
+media-libs/libcanberra:tdb - Enables Trivial Database support for caching purposes.
 media-libs/libchamplain:html - Install gtk-doc html version for this package
 media-libs/libchamplain:introspection - Use dev-libs/gobject-introspection for introspection
 media-libs/libggi:vis - Enables sparc vis support for libggi
@@ -4096,6 +4098,7 @@ sys-process/fcron:pam - Enable PAM support for fcron. This means that fcron will
 sys-process/htop:openvz - Enable openvz support
 sys-process/htop:vserver - Enable vserver support
 sys-process/procps:n32 - Enable n32 ABI support on mips
+virtual/ffmpeg:vaapi - Enables VAAPI (Video Acceleration API) for hardware decoding
 virtual/ffmpeg:vdpau - Enables VDPAU decoders (requires nVidia video cards to offload CPU processing to video card
 virtual/mpi:romio - Enable romio, a high-performance portable MPI-IO
 virtual/mysql:embedded - Build embedded server (libmysqld)
