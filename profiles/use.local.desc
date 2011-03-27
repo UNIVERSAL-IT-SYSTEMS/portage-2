@@ -302,8 +302,6 @@ app-emacs/slime:xref - Install xref.lisp cross-referencing tool
 app-emacs/vm:bbdb - Include support for app-emacs/bbdb
 app-emacs/wanderlust:bbdb - Include support for app-emacs/bbdb
 app-emacs/wikipedia-mode:outline-magic - Enable support for outline-mode extensions (app-emacs/outline-magic)
-app-emulation/basiliskII-jit:fbdev - Enables framebuffer support
-app-emulation/basiliskII-jit:jit - Enables the jit compiler
 app-emulation/bochs:debugger - Enable the bochs debugger
 app-emulation/e-uae:capslib - Add CAPS library support
 app-emulation/e-uae:sdl-sound - Use media-libs/sdl-sound for audio output
@@ -1007,7 +1005,6 @@ dev-libs/apr:older-kernels-compatibility - Enable binary compatibility with olde
 dev-libs/apr:urandom - Use /dev/urandom instead of /dev/random
 dev-libs/apr:uuid - Enable UUID support
 dev-libs/atk:introspection - Use dev-libs/gobject-introspection for introspection
-dev-libs/boolstuff:static - Enable static linking
 dev-libs/boost:eselect - Run "eselect boost update" even if version is already selected
 dev-libs/boost:tools - Build and install the boost tools (bcp, quickbook, inspect, wave)
 dev-libs/cyberjack:fox - Enable installation of x11-libs/fox based fxcyberjack program
@@ -3790,7 +3787,6 @@ sys-apps/hal:disk-partition - Allows HAL to use libparted from sys-block/parted 
 sys-apps/hal:doc - Generates documentation that describes HAL's fdi format.
 sys-apps/hal:laptop - Adds support for power management scripts (sys-power/pm-utils)
 sys-apps/hal:selinux - Installs SELinux policies and links HAL to the SELinux libraries.
-sys-apps/halevt:rpath - Hardcode runtime library paths
 sys-apps/hwdata-gentoo:binary-drivers - Adds support for ATI/NVIDIA binary drivers
 sys-apps/ipmitool:openipmi - Use the system OpenIPMI implementation.
 sys-apps/iproute2:iptables - include support for iptables filtering
