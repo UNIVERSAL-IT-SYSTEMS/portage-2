@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12630 2011/03/29 07:18:26 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12632 2011/03/29 14:17:16 jer Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,17 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Samuli Suominen <ssuominen@gentoo.org> (29 Mar 2011)
+# Use more freedesktop.org compatible icon theme instead, such as
+# tango-icon-theme or gnome-icon-theme.   This one is outdated one
+# from Xfce 4.4.0 and doesn't provide useful icon links to Xfce 4.8.0
+# anymore.
+#
+# http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html
+# http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html
+#
+x11-themes/xfce4-icon-theme
 
 # Sebastien Fabbro <bicatali@gentoo.org> (28 Mar 2011)
 # Still beta 
@@ -736,7 +747,7 @@ net-analyzer/ncrack
 
 # Jeroen Roovers <jer@gentoo.org> (25 Oct 2010)
 # Masked until reverse dependencies are sorted out (bug #342461)
-=dev-libs/libnl-2*
+>dev-libs/libnl-2
 
 # Samuli Suominen <ssuominen@gentoo.org> (16 Oct 2010)
 # dev-libs/soprano with USE redland is unported to raptor2 API
