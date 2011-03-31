@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/firefox-bin/firefox-bin-3.6.16.ebuild,v 1.4 2011/03/30 23:16:13 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/firefox-bin/firefox-bin-4.0.ebuild,v 1.1 2011/03/30 23:44:34 anarchy Exp $
 
 EAPI="2"
 
@@ -8,11 +8,12 @@ inherit eutils mozilla-launcher multilib mozextension
 
 # Can be updated using scripts/get_langs.sh from mozilla overlay
 # '\' at EOL is needed for ${LANG} matching in linguas() below
-LANGS="af ar as be bg bn-BD bn-IN ca cs cy da de el en en-GB en-US eo es-AR \
-es-CL es-ES es-MX et eu fa fi fr fy-NL ga-IE gl gu-IN he hi-IN hr hu id is it \
-ja ka kk kn ko ku lt lv mk ml mr nb-NO nl nn-NO oc or pa-IN pl pt-BR pt-PT rm \
-ro ru si sk sl sq sr sv-SE ta ta-LK te th tr uk vi zh-CN zh-TW"
-NOSHORTLANGS="en-GB es-AR pt-BR zh-CN"
+LANGS="af ak ar ast be bg bn-BD bn-IN br bs ca cs cy da de \
+el en en-ZA eo es-ES et eu fa fi fr fy-NL ga-IE gd gl gu-IN \
+he hi-IN hr hu hy-AM id is it ja kk kn ko ku lg lt lv mai mk \
+ml mr nb-NO nl nn-NO nso or pa-IN pl pt-PT rm ro ru si sk sl \
+son sq sr sv-SE ta ta-LK te th tr uk vi zu"
+NOSHORTLANGS="en-GB es-AR es-CL es-MX pt-BR zh-CN zh-TW"
 
 MY_PV="${PV/_rc/rc}"
 MY_PN="${PN/-bin}"
@@ -25,7 +26,7 @@ SRC_URI="${REL_URI}/${MY_PV}/linux-i686/en-US/${MY_P}.tar.bz2
 HOMEPAGE="http://www.mozilla.com/firefox"
 RESTRICT="strip mirror"
 
-KEYWORDS="-* amd64 ~x86"
+KEYWORDS="-* ~amd64 ~x86"
 SLOT="0"
 LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )"
 IUSE="startup-notification"
