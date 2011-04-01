@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/vzctl/vzctl-9999.ebuild,v 1.6 2011/03/22 16:28:14 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/vzctl/vzctl-9999.ebuild,v 1.7 2011/04/01 11:34:55 pva Exp $
 
 EAPI="4"
 
@@ -19,8 +19,7 @@ RDEPEND="
 	net-firewall/iptables
 	sys-apps/ed
 	sys-apps/iproute2
-	sys-fs/vzquota
-	virtual/cron"
+	sys-fs/vzquota"
 
 DEPEND="${RDEPEND}"
 
@@ -77,16 +76,9 @@ pkg_postinst() {
 	ewarn " postup() {"
 	ewarn "     /usr/sbin/vzifup-post \${IFACE}"
 	ewarn " }"
-
-	elog "NOTE: Starting with vzctl-3.0.22 the mechanism for choosing the"
-	elog "interfaces to send ARP requests to has been improved (see description"
-	elog "of NEIGHBOUR_DEVS in vz.conf(5) man page). In case CT IP addresses"
-	elog "are not on the same subnet as HN IPs, it may lead to such CTs being"
-	elog "unreachable from the outside world."
-	elog
-	elog "The solution is to set up a device route(s) for the network your CTs are"
-	elog "in. For more details, see http://bugzilla.openvz.org/show_bug.cgi?id=771#c1"
-	elog
-	elog "The old vzctl behavior can be restored by setting NEIGHBOUR_DEVS to any"
-	elog 'value other than "detect" in /etc/vz/vz.conf.'
+	ewarn
+	ewarn "Starting with 3.0.25 there is new vzeventd service to reboot CTs."
+	ewarn "Please, drop /usr/share/vzctl/scripts/vpsnetclean and"
+	ewarn "/usr/share/vzctl/scripts/vpsreboot from crontab and use"
+	ewarn "/etc/init.d/vzeventd."
 }
