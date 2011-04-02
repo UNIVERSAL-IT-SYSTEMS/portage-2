@@ -1,7 +1,7 @@
 >=dev-lang/lua-5.1
 >=dev-lang/lua-5.1
 0
-http://byronbradley.co.uk/piccontrol/qcontrol-0.4.2.tar.gz
+mirror://debian/pool/main/q/qcontrol/qcontrol_0.4.2.orig.tar.gz mirror://debian/pool/main/q/qcontrol/qcontrol_0.4.2-6.diff.gz
 
 http://qnap.nas-central.org/index.php/PIC_Control_Software
 GPL-3
@@ -14,7 +14,7 @@ eutils multilib portability toolchain-funcs
 
 
 
-compile install unpack
+compile install postinst unpack
 
 
 

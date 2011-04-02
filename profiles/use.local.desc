@@ -1212,6 +1212,7 @@ dev-python/paste:openid - enable OpenID support
 dev-python/psycopg:mxdatetime - Enable support for MX DateTime and use it instead of Python's built-in datetime module
 dev-python/pygobject:introspection - Use dev-libs/gobject-introspection for introspection
 dev-python/pygobject:libffi - Enable support to connect to signals on python objects from C.
+dev-python/pygtk:glade - Enable gnome-base/libglade bindings compilation
 dev-python/pylons:genshi - Add optional genshi support
 dev-python/pylons:jinja - Add optional jinja support
 dev-python/pyudev:pygobject - Install PyGobject binding
@@ -4124,7 +4125,9 @@ sys-power/nvclock:gtk - Install the GTK+ based graphical interface
 sys-power/phctool:sudo - Enable support for sudo to run gui from non-root user
 sys-power/pm-utils:ntp - Install support for net-misc/ntp
 sys-power/powerman:genders - Add support for selecting power control targets using genders (-g option)
+sys-power/powerman:h8power - Add support for h8 based power controllers
 sys-power/powerman:httppower - Add support for HTTP based power controllers
+sys-power/powerman:snmppower - Add support for SNMP based power controllers
 sys-power/powermgmt-base:pm-utils - Adds support for on_ac_power through sys-power/pm-utils
 sys-power/suspend:crypt - Allows suspend and resume from encrypted disk
 sys-power/suspend:fbsplash - Add support for framebuffer splash
