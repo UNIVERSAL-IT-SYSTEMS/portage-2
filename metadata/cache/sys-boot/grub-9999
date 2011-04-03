@@ -1,17 +1,17 @@
->=sys-libs/ncurses-5.2-r5 dev-libs/lzo truetype? ( media-libs/freetype >=media-fonts/unifont-5 ) >=sys-devel/autogen-5.10 >=dev-lang/python-2.5.2 sys-apps/help2man || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.61 >=sys-devel/libtool-2.2.6b >=dev-vcs/bzr-2.0.1
->=sys-libs/ncurses-5.2-r5 dev-libs/lzo truetype? ( media-libs/freetype >=media-fonts/unifont-5 )
+>=sys-libs/ncurses-5.2-r5 dev-libs/lzo debug? ( sdl? ( media-libs/libsdl ) ) device-mapper? ( >=sys-fs/lvm2-2.02.45 ) truetype? ( media-libs/freetype >=media-fonts/unifont-5 ) >=dev-lang/python-2.5.2 >=sys-devel/autogen-5.10 sys-apps/help2man || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.61 >=sys-devel/libtool-2.2.6b >=dev-vcs/bzr-2.0.1
+>=sys-libs/ncurses-5.2-r5 dev-libs/lzo debug? ( sdl? ( media-libs/libsdl ) ) device-mapper? ( >=sys-fs/lvm2-2.02.45 ) truetype? ( media-libs/freetype >=media-fonts/unifont-5 )
 0
 
 
 http://www.gnu.org/software/grub/
 GPL-3
-GNU GRUB 2 boot loader
+GNU GRUB boot loader
 
 autotools bzr eutils flag-o-matic libtool mount-boot multilib portability toolchain-funcs
-custom-cflags debug truetype multislot static
+custom-cflags debug device-mapper multislot static sdl truetype
 
 
-virtual/bootloader
+
 
 
 compile install postinst postrm preinst prerm unpack

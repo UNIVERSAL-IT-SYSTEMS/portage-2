@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/grub-9999.ebuild,v 1.29 2011/03/15 19:40:05 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/grub-9999.ebuild,v 1.32 2011/04/03 18:18:12 vapier Exp $
 
 # XXX: need to implement a grub.conf migration in pkg_postinst before we ~arch
 
@@ -15,22 +15,24 @@ else
 		mirror://gentoo/${P}.tar.gz"
 fi
 
-DESCRIPTION="GNU GRUB 2 boot loader"
+DESCRIPTION="GNU GRUB boot loader"
 HOMEPAGE="http://www.gnu.org/software/grub/"
 
 LICENSE="GPL-3"
 use multislot && SLOT="2" || SLOT="0"
 KEYWORDS=""
-IUSE="custom-cflags debug truetype multislot static"
+IUSE="custom-cflags debug device-mapper multislot static sdl truetype"
 
 RDEPEND=">=sys-libs/ncurses-5.2-r5
 	dev-libs/lzo
+	debug? (
+		sdl? ( media-libs/libsdl )
+	)
+	device-mapper? ( >=sys-fs/lvm2-2.02.45 )
 	truetype? ( media-libs/freetype >=media-fonts/unifont-5 )"
 DEPEND="${RDEPEND}
-	>=sys-devel/autogen-5.10
 	>=dev-lang/python-2.5.2"
-[[ ${PV} == "9999" ]] && DEPEND+=" sys-apps/help2man"
-PROVIDE="virtual/bootloader"
+[[ ${PV} == "9999" ]] && DEPEND+=" >=sys-devel/autogen-5.10 sys-apps/help2man"
 
 export STRIP_MASK="*/grub/*/*.mod"
 QA_EXECSTACK="sbin/grub-probe sbin/grub-setup sbin/grub-mkdevicemap bin/grub-script-check bin/grub-fstest"
@@ -42,7 +44,6 @@ src_unpack() {
 		unpack ${A}
 	fi
 	cd "${S}"
-	epatch "${FILESDIR}"/${PN}-1.99-genkernel.patch #256335
 	epatch_user
 
 	# autogen.sh does more than just run autotools
@@ -63,20 +64,24 @@ src_compile() {
 		--bindir=/bin \
 		--libdir=/$(get_libdir) \
 		--disable-efiemu \
+		$(use_enable device-mapper) \
 		$(use_enable truetype grub-mkfont) \
 		$(use_enable debug mm-debug) \
-		$(use_enable debug grub-emu) \
-		$(use_enable debug grub-emu-usb) \
-		$(use_enable debug grub-fstest)
+		$(use sdl && use_enable debug grub-emu-sdl) \
+		$(use_enable debug grub-emu-usb)
 	emake -j1 || die "making regular stuff"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS README THANKS TODO
+
+	insinto /etc/defaults
+	doins "${FILESDIR}"/defaults || die
 	cat <<-EOF >> "${D}"/lib*/grub/grub-mkconfig_lib
 	GRUB_DISTRIBUTOR="Gentoo"
 	EOF
+
 	if use multislot ; then
 		sed -i "s:grub-install:grub2-install:" "${D}"/sbin/grub-install || die
 		mv "${D}"/sbin/grub{,2}-install || die
