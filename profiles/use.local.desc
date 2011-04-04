@@ -1079,6 +1079,8 @@ dev-libs/libunique:introspection - Use dev-libs/gobject-introspection for intros
 dev-libs/link-grammar:aspell - Adds support for app-text/aspell spell checker
 dev-libs/link-grammar:hunspell - Adds support for app-text/hunspell spell checker
 dev-libs/log4cxx:smtp - Offer SMTP support via net-libs/libesmtp
+dev-libs/m17n-lib:X - Builds the Graphical User Interface API and utilities for the package.
+dev-libs/m17n-lib:gd - Build API and utilities based on media-libs/gd. This flag is only meaningful if the X USE flag is also enabled.
 dev-libs/nss:utils - Install utilities included with the library
 dev-libs/opencryptoki:tpm - Enable support for Trusted Platform Module (TPM) using app-crypt/trousers
 dev-libs/openct:pcsc-lite - Enable support for sys-apps/pcsc-lite
@@ -1359,7 +1361,6 @@ dev-util/qt-creator:bazaar - Add support for bazaar version control system
 dev-util/qt-creator:bineditor - enable bineditor plugin
 dev-util/qt-creator:bookmarks - enable bookmarks plugin
 dev-util/qt-creator:cmake - enable cmake project manager plugin
-dev-util/qt-creator:debugger - enable debugger plugin
 dev-util/qt-creator:designer - enable designer plugin
 dev-util/qt-creator:fakevim - enable vim-like key bindings plugin
 dev-util/qt-creator:git - enable git plugin
@@ -1753,7 +1754,10 @@ mail-client/pine:largeterminal - Add support for large terminals by doubling the
 mail-client/pine:passfile - Adds support for caching IMAP passwords into a file between sessions
 mail-client/postler:ayatana - Enable Messaging Menu support via dev-libs/libindicate
 mail-client/squirrelmail:filter - Enable mail-filter/amavisd-new filtering
+mail-client/thunderbird:crashreporter - Enable crash reporter for bugs
 mail-client/thunderbird:custom-optimization - Enable user CFLAGS
+mail-client/thunderbird:gconf - Enable gnome2 gconf support
+mail-client/thunderbird:ipc - Use inter-process communication between tabs and plugins. Allows for greater stability in case of plugin crashes
 mail-client/thunderbird:lightning - Enable calendar support
 mail-client/thunderbird:mozdom - Enable Mozilla's DOM inspector
 mail-client/thunderbird:system-sqlite - Use the system-wide dev-db/sqlite installation with secure-delete enabled
@@ -1958,6 +1962,7 @@ media-libs/freeverb3:forcefpu - Disable assembly code
 media-libs/freeverb3:plugdouble - Build plugins in double precision mode (default is float)
 media-libs/freeverb3:sse3 - Enable SSE3 support
 media-libs/freeverb3:sse4 - Enable SSE4 support
+media-libs/gegl:umfpack - Enable sparse solving via sci-libs/umfpack.
 media-libs/giflib:rle - Build converters for RLE format (utah raster toolkit)
 media-libs/glide-v3:voodoo1 - Support 3DFX Voodoo1 video cards
 media-libs/glide-v3:voodoo2 - Support 3DFX Voodoo2 video cards
@@ -2841,6 +2846,7 @@ net-ftp/proftpd:exec - Enable support for the mod_exec module. WARNING: this cou
 net-ftp/proftpd:ident - Enable support for the mod_ident module
 net-ftp/proftpd:ifsession - Enable support for the ifsession module
 net-ftp/proftpd:ifversion - Enable support for the mod_ifversion module
+net-ftp/proftpd:memcache - Enable support for the mod_memcache module, for using memcached servers
 net-ftp/proftpd:qos - Enable support for the mod_qos module
 net-ftp/proftpd:ratio - Enable support for the mod_ratio module
 net-ftp/proftpd:readme - Enable support for the mod_readme module
@@ -3131,6 +3137,7 @@ net-libs/wt:resources - Install resources directory
 net-libs/wt:server - Compile in stand-alone httpd connector
 net-libs/xulrunner:crashreporter - Enable crash reporter for bugs
 net-libs/xulrunner:custom-optimization - Fine-tune custom compiler optimizations
+net-libs/xulrunner:gconf - Enable gnome2 gconf support
 net-libs/xulrunner:ipc - Use inter-process communication between tabs and plugins. Allows for greater stability in case of plugin crashes
 net-libs/xulrunner:system-sqlite - Use the system-wide dev-db/sqlite installation with secure-delete enabled
 net-libs/xulrunner:webm - Use system libvpx media-libs/libvpx
