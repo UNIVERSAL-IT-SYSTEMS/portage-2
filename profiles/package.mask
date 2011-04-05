@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12657 2011/04/04 13:11:50 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.12659 2011/04/05 17:44:06 voyageur Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -63,10 +63,6 @@ media-video/linux-uvc
 # http://bugs.gentoo.org/show_bug.cgi?id=359793#c2
 # Removal in 30 days.
 media-video/mvc
-
-# Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (31 Mar 2011)
-# Mask libdrm-2.4.23 incompatible version
-=x11-drivers/xf86-video-nouveau-0.0.16_pre20110323
 
 # Pacho Ramos <pacho@gentoo.org> (31 Mar 2011)
 # Upstream dead for a long time, packages still needing it
@@ -989,11 +985,6 @@ games-puzzle/glickomania
 games-puzzle/xpuyopuyo
 games-simulation/corewars
 games-strategy/xscorch
-
-# Bernard Cafarelli <voyageur@gentoo.org> (12 Apr 2010)
-# Mask until bug #314833 is fixed
-=net-ftp/filezilla-3.3.2.1-r1
-=net-ftp/filezilla-3.3.3-r1
 
 # Pacho Ramos <pacho@gentoo.org> (10 Apr 2010)
 # This version provides packages from testing to let people using
