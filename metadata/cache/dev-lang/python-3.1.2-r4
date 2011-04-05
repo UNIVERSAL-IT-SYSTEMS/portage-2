@@ -11,7 +11,7 @@ autotools eutils flag-o-matic libtool multilib pax-utils portability python tool
 build doc elibc_uclibc examples gdbm ipv6 +ncurses +readline sqlite +ssl +threads tk +wide-unicode wininst +xml
 
 >=app-admin/python-updater-0.8 || ( dev-lang/python:2.7[gdbm?,ipv6?,ncurses?,readline?,sqlite?,ssl?,threads?,tk?,xml?] dev-lang/python:2.6[gdbm?,ipv6?,ncurses?,readline?,sqlite?,ssl?,threads?,tk?,xml?] )
-virtual/python
+
 3
 
 compile configure install postinst postrm preinst prepare setup test
