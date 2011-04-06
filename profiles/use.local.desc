@@ -3466,6 +3466,7 @@ net-p2p/mldonkey:guionly - enable client build only
 net-p2p/mldonkey:magic - enable use of libmagic
 net-p2p/rtorrent:daemon - Uses app-misc/screen to daemonize this application
 net-p2p/transmission:libcanberra - Enable sound event support with media-libs/libcanberra
+net-p2p/transmission:utp - Adds support for µTP (Micro Transport Protocol)
 net-print/hplip:X - Enables scanner GUI dependencies with USE="scanner" where media-gfx/xsane is preferred over media-gfx/sane-frontends
 net-print/hplip:doc - Build documentation
 net-print/hplip:fax - Enable fax on multifunction devices which support it
@@ -4348,6 +4349,8 @@ x11-libs/qt-gui:private-headers - Install Qt declarative private headers require
 x11-libs/qt-gui:qt3support - Enable the Qt3Support libraries for Qt4. Note that this does not mean you can compile pure Qt3 programs with Qt4.
 x11-libs/qt-gui:raster - Use the alternative raster graphicssystem as default rendering engine
 x11-libs/qt-gui:trace - Build the new 'trace' graphicsssytem engine which allows to record all drawing operations into a trace buffer. Later it can be replayed with the qttracereplay utility
+x11-libs/qt-meta:kde - Select media-sound/phonon as phonon variant needed for kde
+x11-libs/qt-meta:qt3support - Enable the Qt3Support libraries for Qt4
 x11-libs/qt-multimedia:exceptions - Add support for exceptions - like catching them inside the event loop (recommended by Nokia)
 x11-libs/qt-opengl:egl - Use EGL instead of default GLX to manage OpenGL contexts on the desktop
 x11-libs/qt-opengl:exceptions - Add support for exceptions - like catching them inside the event loop (recommended by Nokia)
