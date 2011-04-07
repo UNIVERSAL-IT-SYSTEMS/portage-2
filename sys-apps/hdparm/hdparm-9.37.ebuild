@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/hdparm/hdparm-9.33.ebuild,v 1.1 2010/10/07 01:57:28 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/hdparm/hdparm-9.37.ebuild,v 1.1 2011/04/07 00:56:33 vapier Exp $
 
 inherit toolchain-funcs
 
