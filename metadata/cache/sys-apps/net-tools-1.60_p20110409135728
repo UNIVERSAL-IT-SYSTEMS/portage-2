@@ -1,7 +1,7 @@
-|| ( app-arch/xz-utils app-arch/lzma-utils )
+app-arch/xz-utils
 
 0
-mirror://gentoo/net-tools-1.60_p20100101055920.tar.lzma mirror://gentoo/net-tools-1.60_p20100101055920-patches-1.tar.lzma
+mirror://gentoo/net-tools-1.60_p20110409135728.tar.xz mirror://gentoo/net-tools-1.60_p20110409135728-patches-1.tar.xz
 
 http://net-tools.berlios.de/
 GPL-2
@@ -12,9 +12,9 @@ nls static
 
 
 
+3
 
-
-compile install postinst setup unpack
+configure install postinst prepare setup
 
 
 
