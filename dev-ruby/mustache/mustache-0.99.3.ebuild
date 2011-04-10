@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/mustache/mustache-0.98.0.ebuild,v 1.1 2011/02/25 19:14:05 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/mustache/mustache-0.99.3.ebuild,v 1.1 2011/04/10 06:44:57 graaff Exp $
 
 EAPI=2
 
