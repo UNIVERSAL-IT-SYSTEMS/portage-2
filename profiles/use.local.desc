@@ -144,6 +144,7 @@ app-admin/lcap:lids - If you have the Linux Intrusion Detection System
 app-admin/mcollective:client - Install client utilities
 app-admin/prelude-manager:tcpwrapper - Add support for tcp_wrappers
 app-admin/puppet:augeas - Enable augeas support
+app-admin/puppet:diff - Enable diff support
 app-admin/puppet:rrdtool - Enable rrdtool support
 app-admin/puppet:shadow - Enable shadow support
 app-admin/rsyslog:extras - Add support for the UDP spoofing module (omudpspoof) using net-libs/libnet
@@ -2426,10 +2427,11 @@ media-video/hwdecode-demos:vdpau - Enables VDPAU decoders (requires nVidia video
 media-video/kino:gpac - Enable GPAC support when exporting to 3GPP format
 media-video/kmplayer:npp - Compile the npp backend that plays xembed style browser plugins.
 media-video/libav:3dnowext - Enable manually-optimised routines using the AMD 3DNow!Ex SIMD instruction set, present in modern AMD CPUs. (Check for 3dnowext in /proc/cpuinfo to know whether your CPU supports it).
+media-video/libav:aac - Use external vo-aacenc library for AAC encoding
 media-video/libav:amr - Enables Adaptive Multi-Rate Audio support
 media-video/libav:cpudetection - Enables runtime CPU detection (useful for bindist, compatibility on other CPUs)
 media-video/libav:dirac - Enable Dirac video support (an advanced royalty-free video compression format) via the reference library: dirac.
-media-video/libav:faac - Use external faac library for AAC encoding
+media-video/libav:faac - Use external faac library for AAC encoding (notice: the resulting binaries are unredistributable)
 media-video/libav:frei0r - Enable frei0r wrapping in libavfilter
 media-video/libav:hardcoded-tables - Use pre-calculated tables rather than calculating them on the fly.
 media-video/libav:mmxext - Enables mmx2 support
