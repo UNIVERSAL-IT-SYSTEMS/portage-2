@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/xml-simple/xml-simple-1.0.13.ebuild,v 1.1 2011/01/22 07:09:20 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/xml-simple/xml-simple-1.0.15.ebuild,v 1.1 2011/04/11 05:36:25 graaff Exp $
 
 EAPI=2
 USE_RUBY="ruby18 ruby19 jruby ree18"
