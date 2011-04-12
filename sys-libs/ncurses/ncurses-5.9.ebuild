@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/ncurses/ncurses-5.8.ebuild,v 1.2 2011/03/09 23:15:45 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/ncurses/ncurses-5.9.ebuild,v 1.1 2011/04/12 02:49:30 vapier Exp $
 
 EAPI="1"
 inherit eutils flag-o-matic toolchain-funcs
