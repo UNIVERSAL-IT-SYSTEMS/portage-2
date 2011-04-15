@@ -1,11 +1,11 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/file/file-5.04.ebuild,v 1.10 2011/04/07 20:41:09 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/file/file-5.06.ebuild,v 1.1 2011/04/15 08:04:03 vapier Exp $
 
 EAPI="2"
-PYTHON_DEPEND="python? 2"
+PYTHON_DEPEND="python? *"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="*-jython"
 
 inherit eutils distutils libtool flag-o-matic
 
@@ -16,17 +16,15 @@ SRC_URI="ftp://ftp.astron.com/pub/file/${P}.tar.gz
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="python"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
+IUSE="python static-libs"
+
+PYTHON_MODNAME="magic.py"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-4.15-libtool.patch #99593
-
 	elibtoolize
 	epunt_cxx
 
-	# make sure python links against the current libmagic #54401
-	sed -i "/library_dirs/s:'\.\./src':'../src/.libs':" python/setup.py
 	# dont let python README kill main README #60043
 	mv python/README{,.python}
 }
@@ -35,7 +33,7 @@ src_configure() {
 	# file uses things like strndup() and wcwidth()
 	append-flags -D_GNU_SOURCE
 
-	econf
+	econf $(use_enable static-libs static)
 }
 
 src_compile() {
@@ -45,10 +43,11 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die
 	dodoc ChangeLog MAINT README
 
 	use python && cd python && distutils_src_install
+	use static-libs || rm -f "${D}"/usr/lib*/libmagic.la
 }
 
 pkg_postinst() {
