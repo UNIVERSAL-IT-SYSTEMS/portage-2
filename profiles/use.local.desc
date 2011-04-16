@@ -2084,10 +2084,8 @@ media-plugins/audacious-plugins:adplug - Build with AdPlug (Adlib sound card emu
 media-plugins/audacious-plugins:bs2b - Enable Bauer Bauer stereophonic-to-binaural headphone filter
 media-plugins/audacious-plugins:cue - Support CUE sheets using the libcue library
 media-plugins/audacious-plugins:fluidsynth - Support FluidSynth as MIDI synth backend
-media-plugins/audacious-plugins:icecast - Support for Icecast2 streaming
 media-plugins/audacious-plugins:midi - Build with amidi-plug (MIDI synth) support
 media-plugins/audacious-plugins:mms - Build with mms (Microsoft Media Server) support
-media-plugins/audacious-plugins:projectm - Build with ProjectM visualization
 media-plugins/audacious-plugins:scrobbler - Build with scrobbler/LastFM submission support
 media-plugins/audacious-plugins:sid - Build with SID (Commodore 64 Audio) support
 media-plugins/banshee-community-extensions:lastfmfingerprint - Enable support to ientify your music automatically, using the Last.fm online service.
@@ -3498,7 +3496,7 @@ net-print/hplip:scanner - Enable scanner on multifunction devices which support 
 net-print/hplip:snmp - Add support for net-analyzer/net-snmp which enables this driver to work over networks (both for server and client)
 net-print/hplip:static-ppds - Use statically-generated PPDs instead of Dynamic PPDs. Although this is deprecated some printers may still need it to work properly. Use this flag if hp-setup fails to find/create a valid PPD file
 net-print/hplip:udev-acl - Install udev acl rules which needs sys-fs/udev with acl support
-net-print/magicfilter:lprng-failsafe - Build version that doesn't take options for compability with certain LPRng releases.
+net-print/magicfilter:lprng-failsafe - Refuse options for compability with certain LPRng versions.
 net-print/pkpgcounter:psyco - psyco python accelerator
 net-proxy/dansguardian:kaspersky - Adds support for Kaspersky AntiVirus software
 net-proxy/dansguardian:ntlm - Enable support for the NTLM auth plugin
