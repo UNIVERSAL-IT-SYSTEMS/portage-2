@@ -1,4 +1,4 @@
->=net-libs/libtorrent-0.12.7 >=dev-libs/libsigc++-2.2.2:2 >=net-misc/curl-7.19.1 sys-libs/ncurses xmlrpc? ( dev-libs/xmlrpc-c ) dev-util/pkgconfig
+>=net-libs/libtorrent-0.12.7 >=dev-libs/libsigc++-2.2.2:2 >=net-misc/curl-7.19.1 sys-libs/ncurses xmlrpc? ( dev-libs/xmlrpc-c ) test? ( dev-util/cppunit ) dev-util/pkgconfig
 >=net-libs/libtorrent-0.12.7 >=dev-libs/libsigc++-2.2.2:2 >=net-misc/curl-7.19.1 sys-libs/ncurses xmlrpc? ( dev-libs/xmlrpc-c ) daemon? ( app-misc/screen )
 0
 http://libtorrent.rakshasa.no/downloads/rtorrent-0.8.7.tar.gz
@@ -8,13 +8,13 @@ GPL-2
 BitTorrent Client using libtorrent
 ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd
 eutils multilib portability toolchain-funcs
-daemon debug ipv6 xmlrpc
+color daemon debug ipv6 xmlrpc
 
 
 
 2
 
-configure install prepare
+configure install postinst prepare
 
 
 
