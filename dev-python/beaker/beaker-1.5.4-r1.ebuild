@@ -1,9 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/beaker/beaker-1.5.4.ebuild,v 1.7 2011/02/09 01:41:20 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/beaker/beaker-1.5.4-r1.ebuild,v 1.1 2011/04/18 23:15:48 arfrever Exp $
 
 EAPI="3"
 SUPPORT_PYTHON_ABIS="1"
+#PYTHON_TESTS_RESTRICTED_ABIS="3.*"
 #DISTUTILS_SRC_TEST="nosetests"
 
 inherit distutils
@@ -25,6 +26,13 @@ DEPEND="dev-python/setuptools
 RDEPEND=""
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	distutils_src_prepare
+
+	# Workaround for http://bugs.python.org/issue11276.
+	sed -e "s/import anydbm/& as anydbm/" -i beaker/container.py
+}
 
 src_test() {
 	testing() {

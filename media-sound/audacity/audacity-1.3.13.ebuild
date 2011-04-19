@@ -1,12 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/audacity-1.3.12.ebuild,v 1.11 2011/04/19 02:18:40 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audacity/audacity-1.3.13.ebuild,v 1.1 2011/04/19 02:13:50 radhermit Exp $
 
-EAPI=2
+EAPI=4
 
 inherit eutils wxwidgets autotools versionator
-
-IUSE="alsa ffmpeg flac id3tag jack ladspa libsamplerate midi mp3 soundtouch twolame vamp vorbis"
 
 MY_PV=$(replace_version_separator 3 -)
 MY_P="${PN}-src-${MY_PV}-beta"
@@ -17,7 +15,8 @@ SRC_URI="http://${PN}.googlecode.com/files/${MY_T}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~hppa ppc ppc64 sparc x86"
+KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
+IUSE="alsa ffmpeg flac id3tag jack ladspa libsamplerate midi mp3 soundtouch twolame vamp vorbis"
 RESTRICT="test"
 
 COMMON_DEPEND="x11-libs/wxGTK:2.8[X]
@@ -49,10 +48,6 @@ S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}-automagic.patch"
-	epatch "${FILESDIR}/${P}-gcc45.patch"
-	epatch "${FILESDIR}/${P}-ffmpeg.patch"
-	epatch "${FILESDIR}/${P}-portaudio-shell.patch"
-	epatch "${FILESDIR}/${P}-widget-extra-only-needed-cflags.patch"
 	AT_M4DIR="${S}/m4" eautoreconf
 }
 
@@ -88,7 +83,7 @@ src_configure() {
 # $(use_with ladspa liblrdf) \
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install
 
 	# Remove bad doc install
 	rm -rf "${D}"/usr/share/doc
