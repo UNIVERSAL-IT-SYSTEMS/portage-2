@@ -1846,6 +1846,7 @@ mail-mta/qpsmtpd:async - Add deps + support for asynchronous mail reception/proc
 mail-mta/qpsmtpd:postfix - create user with permissions for proper postfix interaction
 mail-mta/ssmtp:maxsysuid - Allow to define a MinUserId
 mail-mta/ssmtp:md5sum - Enables MD5 summing for ssmtp
+mail-mta/ssmtp:mta - Install symlinks for sendmail-compatible MTA.
 media-fonts/culmus:ancient - Install ancient semitic scripts
 media-fonts/culmus:fancy - Install fancy fonts
 media-fonts/culmus:fontforge - Use media-gfx/fontforge to build fonts from source
