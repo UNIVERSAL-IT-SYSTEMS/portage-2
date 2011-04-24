@@ -1,5 +1,5 @@
-sys-libs/zlib >=sys-apps/baselayout-2.0.1 !virtual/modutils
-sys-libs/zlib >=sys-apps/baselayout-2.0.1 !virtual/modutils
+sys-libs/zlib >=sys-apps/baselayout-2.0.1 !sys-apps/modutils
+sys-libs/zlib >=sys-apps/baselayout-2.0.1 !sys-apps/modutils
 0
 mirror://kernel/linux/utils/kernel/module-init-tools/module-init-tools-3.10.tar.bz2
 
@@ -11,7 +11,7 @@ eutils multilib portability toolchain-funcs
 
 
 
-virtual/modutils
+
 
 
 compile install postinst test unpack

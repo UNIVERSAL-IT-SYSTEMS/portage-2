@@ -1054,6 +1054,7 @@ dev-libs/eina:mempool-pass-through - Compile "pass-through" (system's malloc) me
 dev-libs/elfutils:lzma - Support automatic decompression of LZMA-compressed files and kernel images.
 dev-libs/fcgi:html - Install HTML documentation
 dev-libs/ferrisloki:stlport - Include support for dev-libs/STLport
+dev-libs/gdl:introspection - Use dev-libs/gobject-introspection for introspection
 dev-libs/geoip:perl-geoipupdate - Install pure perl version of geoipupdate, with Proxy Server support via via the "http_proxy" environment variable and easy to customize.
 dev-libs/glib:introspection - Use dev-libs/gobject-introspection for introspection
 dev-libs/jemalloc:stats - Enable statistics calculation/reporting
@@ -2017,6 +2018,7 @@ media-libs/libsdl:video - Control video support (disable at your own risk)
 media-libs/libvpx:postproc - Enable additional post processing filters
 media-libs/libvpx:sse3 - Enable optimization for SSE3 capable chips
 media-libs/libvpx:ssse3 - faster floating point optimization for SSSE3 capable chips (Intel Core 2 and later chips)
+media-libs/libwpg:tools - Build miscellaneous tools
 media-libs/mediastreamer:amr - Use of AMR Narrow Band codec plugin
 media-libs/mediastreamer:ilbc - Use of iLBC (RFC3951) codec plugin
 media-libs/mediastreamer:video - Enable video support
