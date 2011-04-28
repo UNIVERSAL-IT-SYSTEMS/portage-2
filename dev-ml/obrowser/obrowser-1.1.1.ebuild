@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ml/obrowser/obrowser-1.1.ebuild,v 1.3 2011/02/15 21:17:11 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ml/obrowser/obrowser-1.1.1.ebuild,v 1.1 2011/04/28 14:46:19 aballier Exp $
 
 EAPI=3
 
-inherit findlib eutils
+inherit findlib
 
 DESCRIPTION="OCaml virtual machine written in Javascript, to run OCaml program in browsers"
 HOMEPAGE="http://ocsigen.org/obrowser/"
@@ -15,15 +15,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-lang/ocaml-3.11.0"
+RDEPEND=">=dev-lang/ocaml-3.12.0"
 DEPEND="${RDEPEND}
 	app-arch/sharutils"
-
-S=${WORKDIR}/${PN}
-
-src_prepare() {
-	has_version '>=dev-lang/ocaml-3.12' && epatch "${FILESDIR}/${P}-ocaml312.patch"
-}
 
 src_compile() {
 	emake -j1 EXAMPLES_TARGETS="" || die
