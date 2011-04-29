@@ -3341,7 +3341,6 @@ net-misc/openvpn:eurephia - Apply eurephia patch
 net-misc/openvpn:iproute2 - Enabled iproute2 support instead of net-tools
 net-misc/openvpn:passwordsave - Enables openvpn to save passwords
 net-misc/openvpn:pkcs11 - Enable PKCS#11 smartcard support
-net-misc/pino:indicate - Use dev-libs/libindicate to notify other apps
 net-misc/plowshare:scripts - Install some additional helper scripts
 net-misc/plowshare:view-captcha - View captcha with aview
 net-misc/ps3mediaserver:transcode - Install optional dependencies for transcoding support via media-video/mplayer
@@ -4331,6 +4330,7 @@ x11-libs/agg:gpc - Enable gpc polygon clipper library
 x11-libs/cairo:cleartype - Add ClearType-style behavior for sub-pixel hinting. Patch taken from Arch Linux
 x11-libs/cairo:drm - Use Linux DRM for backend acceleration
 x11-libs/cairo:gallium - Use Mesa's Gallium backend for acceleration
+x11-libs/cairo:glib - Compile with GLib Object System support
 x11-libs/cairo:lcdfilter - Add FreeType LCD filtering, ClearType-style behavior for sub-pixel-hinting. Overrides cleartype USE flag. Patch taken from Ubuntu
 x11-libs/cairo:opengl - Use Mesa backend for acceleration
 x11-libs/cairo:openvg - Use OpenVG for backend acceleration
@@ -4419,7 +4419,6 @@ x11-misc/etm:ical - Enable export of ical format files by depending on dev-pytho
 x11-misc/fbpager:xrender - Enable transparency support via x11-libs/libXrender
 x11-misc/google-gadgets:soup - Enables XML HTTP request extension based on net-libs/libsoup
 x11-misc/google-gadgets:webkit - Enables browser element and script runtime based on net-libs/webkit-gtk
-x11-misc/lightdm:introspection - Use dev-libs/gobject-introspection for introspection
 x11-misc/rednotebook:libyaml - enable libyaml support
 x11-misc/rednotebook:webkit - enable previews using webkit engine
 x11-misc/rss-glx:quesoglc - Enable support for OpenGL Character Renderer
