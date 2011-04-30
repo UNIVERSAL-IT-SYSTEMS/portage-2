@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.34 2011/04/15 21:55:18 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.36 2011/04/30 13:15:40 zzam Exp $
 
 EAPI="1"
 
@@ -84,8 +84,6 @@ udev_check_KV() {
 pkg_setup() {
 	linux-info_pkg_setup
 
-	udev_libexec_dir="/$(get_libdir)/udev"
-
 	# udev requires signalfd introduced in kernel 2.6.25,
 	# but a glibc compiled against >=linux-headers-2.6.27 uses the
 	# new signalfd syscall introduced in kernel 2.6.27 without falling back
@@ -129,10 +127,6 @@ pkg_setup() {
 	fi
 }
 
-sed_libexec_dir() {
-	sed -e "s#/lib/udev#${udev_libexec_dir}#" -i "$@"
-}
-
 src_unpack() {
 	unpack ${A}
 	if [[ ${PV} == "9999" ]] ; then
@@ -174,21 +168,10 @@ src_unpack() {
 		fi
 	fi
 
-	sed_libexec_dir \
-		rules/rules.d/50-udev-default.rules \
-		rules/rules.d/78-sound-card.rules \
-		extras/rule_generator/write_*_rules \
-		|| die "sed failed"
-
 	if [[ ${PV} == 9999 ]]; then
 		gtkdocize --copy || die "gtkdocize failed"
+		eautoreconf
 	fi
-	eautoreconf
-
-	cd "${WORKDIR}/${scriptname}"
-	sed_libexec_dir \
-		helpers/* \
-		rc/*/*
 }
 
 src_compile() {
@@ -200,12 +183,13 @@ src_compile() {
 		--sbindir=/sbin \
 		--libdir=/usr/$(get_libdir) \
 		--with-rootlibdir=/$(get_libdir) \
-		--libexecdir="${udev_libexec_dir}" \
+		--libexecdir=/lib/udev \
 		--enable-logging \
 		--enable-static \
 		$(use_with selinux) \
 		$(use_enable extras) \
-		--disable-introspection
+		--disable-introspection \
+		--without-systemdsystemunitdir
 	# we don't have gobject-introspection in portage tree
 
 	emake || die "compiling udev failed"
@@ -213,20 +197,20 @@ src_compile() {
 
 src_install() {
 	emake -C "${WORKDIR}/${scriptname}" \
-		DESTDIR="${D}" LIBDIR="$(get_libdir)" \
+		DESTDIR="${D}" \
 		KV_min="${KV_min}" KV_reliable="${KV_reliable}" \
 		install || die "make install failed"
 
 	into /
 	emake DESTDIR="${D}" install || die "make install failed"
 
-	exeinto "${udev_libexec_dir}"
-	keepdir "${udev_libexec_dir}"/state
-	keepdir "${udev_libexec_dir}"/devices
+	exeinto /lib/udev
+	keepdir /lib/udev/state
+	keepdir /lib/udev/devices
 
 	# create symlinks for these utilities to /sbin
 	# where multipath-tools expect them to be (Bug #168588)
-	dosym "..${udev_libexec_dir}/scsi_id" /sbin/scsi_id
+	dosym "../lib/udev/scsi_id" /sbin/scsi_id
 
 	# Add gentoo stuff to udev.conf
 	echo "# If you need to change mount-options, do it in /etc/fstab" \
@@ -237,7 +221,7 @@ src_install() {
 
 	# Now installing rules
 	cd "${S}"/rules
-	insinto "${udev_libexec_dir}"/rules.d/
+	insinto /lib/udev/rules.d/
 
 	# support older kernels
 	doins misc/30-kernel-compat.rules
