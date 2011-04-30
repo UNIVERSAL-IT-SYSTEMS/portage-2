@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/sharutils/sharutils-4.9.ebuild,v 1.2 2010/03/07 14:40:26 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/sharutils/sharutils-4.11.1.ebuild,v 1.1 2011/04/29 23:50:34 vapier Exp $
+
+EAPI="2"
 
 inherit eutils
 
@@ -20,10 +22,9 @@ RDEPEND=""
 
 S=${WORKDIR}/${MY_P}
 
-src_compile() {
+src_configure() {
 	strip-linguas -u po
 	econf $(use_enable nls)
-	emake || die
 }
 
 src_install() {

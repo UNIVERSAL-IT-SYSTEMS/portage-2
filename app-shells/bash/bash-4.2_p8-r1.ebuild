@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/bash-4.2_p8.ebuild,v 1.1 2011/03/15 19:41:24 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/bash/bash-4.2_p8-r1.ebuild,v 1.1 2011/04/29 22:54:34 vapier Exp $
 
 EAPI="1"
 
@@ -66,6 +66,7 @@ src_unpack() {
 
 	# Include official patches
 	[[ ${PLEVEL} -gt 0 ]] && epatch $(patches -s)
+	epatch "${FILESDIR}"/${PN}-4.2-print-heredoc.patch #363371
 	cd lib/readline
 	[[ ${READLINE_PLEVEL} -gt 0 ]] && epatch $(patches -s ${READLINE_PLEVEL} readline ${READLINE_VER})
 	cd ../..
