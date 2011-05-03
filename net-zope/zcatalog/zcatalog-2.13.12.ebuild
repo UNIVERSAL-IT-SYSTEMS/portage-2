@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zcatalog/zcatalog-2.13.10.ebuild,v 1.1 2011/04/21 23:43:30 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zcatalog/zcatalog-2.13.12.ebuild,v 1.1 2011/05/02 22:01:49 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
