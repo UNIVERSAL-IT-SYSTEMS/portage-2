@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/mpich2/mpich2-1.4_rc2.ebuild,v 1.1 2011/05/04 03:29:40 jsbronder Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/mpich2/mpich2-1.4_rc2.ebuild,v 1.3 2011/05/04 03:58:13 jsbronder Exp $
 
 EAPI=2
 
@@ -59,7 +59,7 @@ src_configure() {
 	# don't all show up in the top level configure, however, they
 	# are picked up in the children directories.
 
-	use debug && c="${c} --enable-g=all --enable-debuginfo"
+	use debug && c="${c} --enable-g=dbg --enable-debuginfo"
 
 	if use mpi-threads; then
 		# MPI-THREAD requries threading.
@@ -133,7 +133,7 @@ src_test() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	emake -j1 DESTDIR="${D}" install || die
 
 	dodir /usr/share/doc/${PF}
 	dodoc COPYRIGHT README CHANGES RELEASE_NOTES || die
