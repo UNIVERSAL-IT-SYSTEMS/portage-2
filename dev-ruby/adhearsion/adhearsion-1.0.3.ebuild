@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/adhearsion/adhearsion-1.0.1.ebuild,v 1.1 2011/02/23 07:13:53 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/adhearsion/adhearsion-1.0.3.ebuild,v 1.1 2011/05/06 14:33:23 graaff Exp $
 
 EAPI=2
 USE_RUBY="ruby18"
@@ -30,7 +30,8 @@ ruby_add_rdepend ">=dev-ruby/rubigen-1.5.6
 	>=dev-ruby/activesupport-2.1.0
 	dev-ruby/i18n
 	>=dev-ruby/log4r-1.0.5
-	>=dev-ruby/bundler-1.0.10"
+	>=dev-ruby/bundler-1.0.10
+	dev-ruby/rake"
 
 all_ruby_install() {
 	all_fakegem_install
