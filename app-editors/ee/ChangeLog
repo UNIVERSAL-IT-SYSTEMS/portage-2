@@ -1,6 +1,24 @@
-# ChangeLog for app-editors/easyedit
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/easyedit/ChangeLog,v 1.22 2010/10/19 06:24:01 leio Exp $
+# ChangeLog for app-editors/ee
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/ee/ChangeLog,v 1.3 2011/05/07 21:12:14 ulm Exp $
+
+  07 May 2011; Ulrich Mueller <ulm@gentoo.org> ee-1.4.6.ebuild,
+  ee-1.4.7.ebuild, ee-1.5.2.ebuild:
+  Block against app-editors/ersatz-emacs, since both install /usr/bin/ee.
+  Reorder ebuild variables.
+
+*ee-1.5.2 (07 May 2011)
+
+  07 May 2011; Akinori Hattori <hattya@gentoo.org> +ee-1.5.2.ebuild,
+  +files/ee-init-location.diff:
+  new upstream release. fixes bug #332729.
+
+*ee-1.4.7 (07 May 2011)
+*ee-1.4.6 (07 May 2011)
+
+  07 May 2011; Akinori Hattori <hattya@gentoo.org> +ee-1.4.6.ebuild,
+  +ee-1.4.7.ebuild, +metadata.xml:
+  moved from app-editors/easyedit to app-editors/ee.
 
   19 Oct 2010; Mart Raudsepp <leio@gentoo.org> easyedit-1.4.6.ebuild:
   Drop to ~mips
