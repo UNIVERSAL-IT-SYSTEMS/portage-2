@@ -1,9 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-debug/ruby-debug-0.10.3-r5.ebuild,v 1.1 2010/08/13 13:12:09 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-debug/ruby-debug-0.10.4.ebuild,v 1.1 2011/05/07 08:30:20 graaff Exp $
 
 EAPI="2"
-USE_RUBY="ruby18 jruby"
+USE_RUBY="ruby18 ree18"
 
 # The Rakefile has targets that are part of ruby-debug-base, so avoid
 # hitting it for now.
@@ -20,7 +20,7 @@ DESCRIPTION="CLI interface to ruby-debug"
 HOMEPAGE="http://rubyforge.org/projects/ruby-debug/"
 
 LICENSE="BSD-2"
-KEYWORDS="~amd64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
+KEYWORDS="~amd64 ~hppa ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 IUSE="doc emacs"
 SLOT="0"
 SRC_URI="mirror://rubygems/${P}.gem
@@ -36,11 +36,9 @@ RDEPEND="${RDEPEND} emacs? ( >=virtual/emacs-22 )"
 
 # The original extension is used for MRI (ruby18)
 USE_RUBY="ruby18" \
-	ruby_add_rdepend "ruby_targets_ruby18? ( =dev-ruby/ruby-debug-base-0.10.3* )"
-
-# An alternative extension is used for JRuby
-USE_RUBY="jruby" \
-	ruby_add_rdepend "ruby_targets_jruby? ( =dev-ruby/jruby-debug-base-0.10.3* )"
+	ruby_add_rdepend "ruby_targets_ruby18? ( ~dev-ruby/ruby-debug-base-${PV} )"
+USE_RUBY="ree18" \
+	ruby_add_rdepend "ruby_targets_ruby18? ( ~dev-ruby/ruby-debug-base-${PV} )"
 
 all_ruby_compile() {
 	all_fakegem_compile
