@@ -1,12 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/xapian-bindings/xapian-bindings-1.2.3.ebuild,v 1.1 2010/09/20 16:43:40 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/xapian-bindings/xapian-bindings-1.2.5.ebuild,v 1.1 2011/05/09 15:09:29 arfrever Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
 PYTHON_USE_WITH="threads"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="3.* *-jython"
 
 inherit java-pkg-opt-2 mono python
 
@@ -85,6 +85,7 @@ src_test() {
 				PYTHON_INC="$(python_get_includedir)" \
 				PYTHON_LIB="$(python_get_libdir)" \
 				pkgpylibdir="$(python_get_sitedir)/xapian" \
+				VERBOSE="1" \
 				check
 		}
 		python_execute_function -s --source-dir python testing
