@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-block/nbd/nbd-2.9.19.ebuild,v 1.1 2011/01/16 02:47:27 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-block/nbd/nbd-2.9.21.ebuild,v 1.1 2011/05/09 23:38:59 vapier Exp $
 
 EAPI="2"
 
