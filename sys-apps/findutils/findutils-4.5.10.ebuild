@@ -1,19 +1,17 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/findutils/findutils-4.4.0.ebuild,v 1.9 2008/10/29 02:07:01 rich0 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/findutils/findutils-4.5.10.ebuild,v 1.1 2011/05/11 15:00:56 vapier Exp $
 
 inherit eutils flag-o-matic toolchain-funcs multilib
 
-SELINUX_PATCH="findutils-4.3.12-selinux.diff"
-
 DESCRIPTION="GNU utilities for finding files"
 HOMEPAGE="http://www.gnu.org/software/findutils/"
-SRC_URI="ftp://alpha.gnu.org/gnu/${PN}/${P}.tar.gz
-	mirror://gnu/${PN}/${P}.tar.gz"
+SRC_URI="ftp://alpha.gnu.org/gnu/${PN}/${P}.tar.gz"
+#	mirror://gnu/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="nls selinux static"
 
 RDEPEND="selinux? ( sys-libs/libselinux )
@@ -28,8 +26,6 @@ src_unpack() {
 	# Don't build or install locate because it conflicts with slocate,
 	# which is a secure version of locate.  See bug 18729
 	sed -i '/^SUBDIRS/s/locate//' Makefile.in
-
-	use selinux && epatch "${FILESDIR}/${SELINUX_PATCH}"
 }
 
 src_compile() {
