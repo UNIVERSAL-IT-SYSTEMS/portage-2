@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/exim/exim-4.76.ebuild,v 1.1 2011/05/10 16:32:03 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/exim/exim-4.76.ebuild,v 1.3 2011/05/12 18:15:50 grobian Exp $
 
 EAPI="3"
 
@@ -51,7 +51,8 @@ RDEPEND="${DEPEND}
 	!mail-mta/courier
 	!mail-mta/esmtp
 	!mail-mta/mini-qmail
-	!mail-mta/msmtp
+	!<mail-mta/msmtp-1.4.19-r1
+	!>=mail-mta/msmtp-1.4.19-r1[mta]
 	!mail-mta/nbsmtp
 	!mail-mta/netqmail
 	!mail-mta/nullmailer
@@ -74,7 +75,10 @@ src_prepare() {
 	epatch "${FILESDIR}"/exim-4.75-makefile-freebsd.patch
 
 	use maildir && epatch "${FILESDIR}"/exim-4.20-maildir.patch
-	use dsn && epatch "${DISTDIR}"/exim_${DSN_EXIM_V}_dsn_${DSN_V}.patch
+
+	cp "${DISTDIR}"/exim_${DSN_EXIM_V}_dsn_${DSN_V}.patch . || die
+	epatch "${FILESDIR}"/${P}-dsn.patch
+	use dsn && epatch exim_${DSN_EXIM_V}_dsn_${DSN_V}.patch
 }
 
 src_configure() {
