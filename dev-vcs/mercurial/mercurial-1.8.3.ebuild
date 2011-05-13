@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/mercurial/mercurial-1.7.5.ebuild,v 1.1 2011/02/02 08:55:46 djc Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/mercurial/mercurial-1.8.3.ebuild,v 1.1 2011/05/13 07:19:08 djc Exp $
 
 EAPI=3
 PYTHON_DEPEND="2"
@@ -16,7 +16,7 @@ SRC_URI="http://mercurial.selenic.com/release/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x64-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE="bugzilla emacs gpg test tk zsh-completion"
 
 RDEPEND="bugzilla? ( dev-python/mysql-python )
@@ -34,6 +34,14 @@ PYTHON_CFLAGS=(
 
 PYTHON_MODNAME="${PN} hgext"
 SITEFILE="70${PN}-gentoo.el"
+
+src_prepare() {
+	distutils_src_prepare
+
+	# fix up logic that won't work in Gentoo Prefix (also won't outside in
+	# certain cases), bug #362891
+	sed -i -e 's:xcodebuild:nocodebuild:' setup.py || die
+}
 
 src_compile() {
 	distutils_src_compile
