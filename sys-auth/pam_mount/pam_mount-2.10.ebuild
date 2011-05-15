@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_mount/pam_mount-2.10.ebuild,v 1.2 2011/05/14 20:27:42 mattst88 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_mount/pam_mount-2.10.ebuild,v 1.1 2011/04/17 00:58:13 hanno Exp $
 
-EAPI=4
+EAPI=3
 
 inherit multilib
 
@@ -14,28 +14,26 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 
-IUSE="crypt ssl selinux"
-
-COMMON_DEPEND=">=sys-libs/pam-0.99
+IUSE="crypt"
+DEPEND=">=sys-libs/pam-0.99
+	dev-libs/openssl
 	>=sys-libs/libhx-3.10.1
 	dev-libs/libxml2
-	crypt? ( >=sys-fs/cryptsetup-1.1.0 )
-	ssl? ( dev-libs/openssl )
-	selinux? ( sys-libs/libselinux )"
-DEPEND="${COMMON_DEPEND}
+	>=sys-fs/cryptsetup-1.1.0
 	dev-util/pkgconfig
 	app-arch/xz-utils"
-RDEPEND="${COMMON_DEPEND}
+RDEPEND=">=sys-libs/pam-0.99
+	dev-libs/openssl
+	>=sys-libs/libhx-3.10.1
+	dev-libs/libxml2
+	>=sys-fs/cryptsetup-1.1.0
 	sys-process/lsof"
 
 src_configure() {
-	econf --with-slibdir="/$(get_libdir)" \
-			$(use_with crypt cryptsetup) \
-			$(use_with ssl crypto) \
-			$(use_with selinux)
+	econf --with-slibdir="/$(get_libdir)" || die "econf failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
-	dodoc doc/*.txt
+	emake DESTDIR="${D}" install || die "make install failed"
+	dodoc doc/*.txt || die "dodoc failed"
 }
