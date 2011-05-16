@@ -808,6 +808,7 @@ dev-db/mysql:raid - Deprecated option, removed in the 5.0 series
 dev-db/mysql:test - Install upstream testsuites for end use.
 dev-db/mysql:xtradb - Add experimental support for Percona's InnoDB replacement: XtraDB
 dev-db/mysql-connector-c++:gcov - Build coverage support
+dev-db/phpmyadmin:setup - Installs the phpMyAdmin setup utility. Users who don't use the utility should disable this USE flag for security reasons as the setup tool was the target of various exploits in the past.
 dev-db/postgis:geos - Add the sci-libs/geos library for exact topological tests
 dev-db/postgis:gtk - Build shp2pgsql-gui a graphical interface to shp2pgsql
 dev-db/postgis:proj - Add the sci-libs/proj library for reprojection features
@@ -1128,6 +1129,7 @@ dev-libs/soprano:virtuoso - Enables support for dev-db/virtuoso storage backend.
 dev-libs/tinyxml:stl - Compile with TIXML_USE_STL support
 dev-libs/tntnet:sdk - Enable tntnet SDK
 dev-libs/tntnet:server - Enable tntnet server daemon
+dev-libs/totem-pl-parser:archive - Enables support for accessing media files in archives transparently via app-arch/libarchive
 dev-libs/totem-pl-parser:introspection - Use dev-libs/gobject-introspection for introspection
 dev-libs/totem-pl-parser:quvi - Use media-libs/quvi for parsing video links
 dev-libs/udis86:pic - Force shared libraries to be built as PIC
@@ -4359,7 +4361,7 @@ www-misc/vdradmin-am:vdr - Support for media-video/vdr. Disable this if the VDR 
 www-misc/xxv:themes - Enable more themes via x11-themes/xxv-skins
 www-plugins/adobe-flash:32bit - For amd64-multilib, installs the 32-bit plugin
 www-plugins/adobe-flash:64bit - For amd64-multilib, installs the native 64-bit plugin
-www-plugins/adobe-flash:nspluginwrapper - For amd64-multilib, installs www-plugins/nspluginwrapper to allow use in a 64-bit browser. (May be unstable, see http://bugs.gentoo.org/324365)
+www-plugins/adobe-flash:kde - Enables a KCM plugin for configuring flash player preferences (32-bit KDE4 only)
 www-plugins/adobe-flash:vdpau - Enables VDPAU support to offload video processing (32-bit flash player only)
 www-plugins/gnash:agg - Rendering based on the Anti-Grain Geometry Rendering Engine library
 www-plugins/gnash:cygnal - Enable building of the cygnal server
@@ -4615,3 +4617,4 @@ xfce-extra/thunar-vcs-plugin:git - Enable dev-vcs/git support
 xfce-extra/xfce4-mpc-plugin:libmpd - Build using media-libs/libmpd backend, instead of native fallback which is preferred
 xfce-extra/xfce4-playercontrol-plugin:audacious - Enable Audacious support
 xfce-extra/xfce4-playercontrol-plugin:mpd - Enable Music Player Daemon support
+xfce-extra/xfce4-sensors-plugin:nvidia - Use nvctrl to obtain Nvidia GPU temperature value
