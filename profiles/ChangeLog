@@ -1,10 +1,59 @@
 # ChangeLog for profile directory
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.5363 2011/05/13 07:38:09 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.5377 2011/05/16 23:25:29 arfrever Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  16 May 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  package.mask:
+  Mask Python 2.7.1-r2.
+
+  16 May 2011; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Removed pmask of sys-apps/linux-gpib, seems to work fine
+
+  16 May 2011; Tomáš Chvátal <scarabeus@gentoo.org> base/make.defaults,
+  desc/calligra_features.desc:
+  Add more calligra features.
+
+  15 May 2011; Hans de Graaff <graaff@gentoo.org> package.mask:
+  Mask forthcoming dev-lang/ruby-enterprise version for testing.
+
+  15 May 2011; Hans de Graaff <graaff@gentoo.org> updates/2Q-2011:
+  Slotmove latest cucumber-rails into a new slot.
+
+  15 May 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  +desc/calligra_features.desc, base/make.defaults:
+  Add calligra options to the USE_EXPAND and enable all of them by default.
+
+  15 May 2011; Markos Chandras <hwoarang@gentoo.org> package.mask:
+  Mask kde-misc/quickaccess for removal
+
+  14 May 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  package.mask:
+  Unmask NumPy 1.6.
+
+  14 May 2011; Andreas K. Huettel <dilfridge@gentoo.org> updates/2Q-2011:
+  Filelight is now part of kde-base, bug 361199
+
+  14 May 2011; Jim Ramsay <lack@gentoo.org> arch/amd64/package.use.mask:
+  Masking USE=kde for www-plugins/adobe-flash under amd64 since the config
+  plugin is 32-bit only.
+
+  14 May 2011; Jim Ramsay <lack@gentoo.org> package.mask:
+  Removed old adobe-flash versions as foretold in package.mask
+
+  13 May 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
+  package.mask:
+  Unmask Python 3.2.
+
+  13 May 2011; Nathan Phillip Brink <binki@gentoo.org> package.mask:
+  Mask net-irc/oer and net-irc/oer-mysql for removal due to no more support
+  from upstream and QA issues.
+
+  13 May 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> package.mask:
+  Mask dev-lang/v8-3.3, update reason for masking v8-3.2 (failing tests).
 
   13 May 2011; Eray Aslan <eras@gentoo.org> package.mask:
   Unmask cyrus-imapd-2.4.8 and cyrus-imap-admin-2.4.8

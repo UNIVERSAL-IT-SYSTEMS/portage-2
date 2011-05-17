@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/attr/attr-2.4.46.ebuild,v 1.1 2011/05/09 19:11:10 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/attr/attr-2.4.46.ebuild,v 1.3 2011/05/16 20:34:44 vapier Exp $
 
 EAPI="4"
 
@@ -21,12 +21,13 @@ RDEPEND=""
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.4.44-gettext.patch
+	epatch "${FILESDIR}"/${PN}-2.4.46-config-shell.patch #366671
 	sed -i \
 		-e "/^PKG_DOC_DIR/s:@pkg_name@:${PF}:" \
 		-e '/HAVE_ZIPPED_MANPAGES/s:=.*:=false:' \
 		include/builddefs.in \
 		|| die "failed to update builddefs"
-	strip-linguas po
+	strip-linguas -u po
 }
 
 src_configure() {

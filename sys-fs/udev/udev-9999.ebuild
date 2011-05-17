@@ -1,13 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.36 2011/04/30 13:15:40 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.37 2011/05/14 14:00:34 zzam Exp $
 
 EAPI="1"
 
 inherit eutils flag-o-matic multilib toolchain-funcs linux-info autotools
 
 #PATCHSET=${P}-gentoo-patchset-v1
-scriptversion=164-v2
+scriptversion=v3
 scriptname=${PN}-gentoo-scripts-${scriptversion}
 
 if [[ ${PV} == "9999" ]]; then
@@ -197,7 +197,7 @@ src_compile() {
 
 src_install() {
 	emake -C "${WORKDIR}/${scriptname}" \
-		DESTDIR="${D}" \
+		DESTDIR="${D}" LIBDIR="$(get_libdir)" \
 		KV_min="${KV_min}" KV_reliable="${KV_reliable}" \
 		install || die "make install failed"
 
