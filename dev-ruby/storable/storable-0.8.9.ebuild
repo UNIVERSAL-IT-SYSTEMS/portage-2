@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/storable/storable-0.8.6.ebuild,v 1.1 2011/02/18 07:14:33 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/storable/storable-0.8.9.ebuild,v 1.1 2011/05/22 06:10:03 graaff Exp $
 
 EAPI=2
 
