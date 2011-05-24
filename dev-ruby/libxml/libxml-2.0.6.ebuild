@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/libxml/libxml-2.0.0.ebuild,v 1.1 2011/04/17 06:53:15 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/libxml/libxml-2.0.6.ebuild,v 1.1 2011/05/24 05:45:23 graaff Exp $
 
 EAPI=2
 
@@ -27,6 +27,9 @@ DEPEND="${DEPEND} dev-libs/libxml2"
 all_ruby_prepare() {
 	# Remove grancher tasks only needed for publishing the website
 	sed -i -e '/grancher/d' -e '/Grancher/,$d' Rakefile || die
+
+	# We don't have the hanna template available.
+	sed -i -e 's/hanna/rake/' Rakefile || die
 }
 
 each_ruby_configure() {
