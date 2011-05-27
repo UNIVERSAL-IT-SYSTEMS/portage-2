@@ -1,33 +1,38 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/bind-9.6.2_p3-r1.ebuild,v 1.7 2010/12/29 10:45:55 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/bind-9.8.0_p2.ebuild,v 1.1 2011/05/27 18:53:03 idl0r Exp $
 
 EAPI="3"
 
-inherit eutils autotools toolchain-funcs flag-o-matic
+inherit eutils autotools toolchain-funcs flag-o-matic multilib
 
 MY_PV="${PV/_p/-P}"
+MY_PV="${MY_PV/_rc/rc}"
 MY_P="${PN}-${MY_PV}"
 
-SDB_LDAP_VER="1.1.0"
+SDB_LDAP_VER="1.1.0-fc14"
 
 GEOIP_PV=1.3
-GEOIP_SRC_URI_BASE="http://bind-geoip.googlecode.com/"
+#GEOIP_PV_AGAINST="${MY_PV}"
+GEOIP_PV_AGAINST="9.7.2-P2"
 GEOIP_P="bind-geoip-${GEOIP_PV}"
+GEOIP_PATCH_A="${GEOIP_P}-${GEOIP_PV_AGAINST}.patch"
+GEOIP_DOC_A="${GEOIP_P}-readme.txt"
+GEOIP_SRC_URI_BASE="http://bind-geoip.googlecode.com/"
 
 DESCRIPTION="BIND - Berkeley Internet Name Domain - Name Server"
 HOMEPAGE="http://www.isc.org/software/bind"
 SRC_URI="ftp://ftp.isc.org/isc/bind9/${MY_PV}/${MY_P}.tar.gz
 	doc? ( mirror://gentoo/dyndns-samples.tbz2 )
-	geoip? ( ${GEOIP_SRC_URI_BASE}/files/${GEOIP_P}-readme.txt
-			 ${GEOIP_SRC_URI_BASE}/files/${GEOIP_P}.patch )"
-#	sdb-ldap? ( mirror://gentoo/bind-sdb-ldap-${SDB_LDAP_VER}.tar.bz2 )
+	geoip? ( ${GEOIP_SRC_URI_BASE}/files/${GEOIP_DOC_A}
+			 ${GEOIP_SRC_URI_BASE}/files/${GEOIP_PATCH_A} )
+	sdb-ldap? ( http://ftp.disconnected-by-peer.at/pub/bind-sdb-ldap-${SDB_LDAP_VER}.patch.bz2 )"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="ssl ipv6 doc dlz postgres berkdb mysql odbc ldap selinux idn threads
-	resolvconf urandom xml geoip gssapi" # sdb-ldap
+	resolvconf urandom xml geoip gssapi sdb-ldap"
 
 DEPEND="ssl? ( >=dev-libs/openssl-0.9.6g )
 	mysql? ( >=virtual/mysql-4.0 )
@@ -38,8 +43,8 @@ DEPEND="ssl? ( >=dev-libs/openssl-0.9.6g )
 	threads? ( >=sys-libs/libcap-2.1.0 )
 	xml? ( dev-libs/libxml2 )
 	geoip? ( >=dev-libs/geoip-1.4.6 )
-	gssapi? ( virtual/krb5 )"
-#	sdb-ldap? ( net-nds/openldap )
+	gssapi? ( virtual/krb5 )
+	sdb-ldap? ( net-nds/openldap )"
 
 RDEPEND="${DEPEND}
 	selinux? ( sec-policy/selinux-bind )
@@ -63,9 +68,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# bug 278364 (workaround)
-	epatch "${FILESDIR}/${PN}-9.6.1-parallel.patch"
-
 	# Adjusting PATHs in manpages
 	for i in bin/{named/named.8,check/named-checkconf.8,rndc/rndc.8} ; do
 		sed -i \
@@ -76,18 +78,14 @@ src_prepare() {
 	done
 
 	if use dlz; then
-		epatch "${FILESDIR}"/${PN}-9.4.0-dlzbdb-close_cursor.patch
-
 		# bind fails to reconnect to MySQL5 databases, bug #180720, patch by Nicolas Brousse
 		# (http://www.shell-tips.com/2007/09/04/bind-950-patch-dlz-mysql-5-for-auto-reconnect/)
 		if use mysql && has_version ">=dev-db/mysql-5"; then
 			epatch "${FILESDIR}"/bind-dlzmysql5-reconnect.patch
 		fi
 
-		if use ldap; then
-			# bug 238681
-			epatch "${FILESDIR}/bind-9.6.1-dlz-patch-ldap-url.patch" \
-				"${FILESDIR}/bind-9.6.1-dlz-patch-dollar2.patch"
+		if use odbc; then
+			epatch "${FILESDIR}/${P}-odbc-dlz-detect.patch"
 		fi
 	fi
 
@@ -96,15 +94,19 @@ src_prepare() {
 
 	# sdb-ldap patch as per  bug #160567
 	# Upstream URL: http://bind9-ldap.bayour.com/
-	# FIXME: bug 302735
-#	use sdb-ldap && epatch "${WORKDIR}"/sdb-ldap/${PN}-sdb-ldap-${SDB_LDAP_VER}.patch
+	# New patch take from bug 302735
+	if use sdb-ldap; then
+		epatch "${WORKDIR}"/${PN}-sdb-ldap-${SDB_LDAP_VER}.patch
+		cp -fp contrib/sdb/ldap/ldapdb.[ch] bin/named
+		cp -fp contrib/sdb/ldap/{ldap2zone.1,ldap2zone.c} bin/tools
+		cp -fp contrib/sdb/ldap/{zone2ldap.1,zone2ldap.c} bin/tools
+	fi
 
 	if use geoip; then
-		cp "${DISTDIR}"/${GEOIP_P}.patch "${S}" || die
-		sed -i -e 's/-RELEASEVER=2/-RELEASEVER=3/' \
-			-e 's/+RELEASEVER=2-geoip-1.3/+RELEASEVER=3-geoip-1.3/' \
-			${GEOIP_P}.patch || die
-		epatch ${GEOIP_P}.patch
+		cp "${DISTDIR}"/${GEOIP_PATCH_A} "${S}" || die
+		sed -i -e 's:MINORVER=7:MINORVER=8:' \
+			-e 's:PATCHVER=2:PATCHVER=0:' ${GEOIP_PATCH_A} || die
+		epatch ${GEOIP_PATCH_A}
 	fi
 
 	# bug #220361
@@ -179,10 +181,10 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die
 
-	dodoc CHANGES FAQ KNOWN-DEFECTS README
+	dodoc CHANGES FAQ README
 
 	if use idn; then
-		dodoc README.idnkit || die
+		dodoc contrib/idn/README.idnkit || die
 	fi
 
 	if use doc; then
@@ -223,8 +225,14 @@ src_install() {
 	newins "${FILESDIR}"/127.zone-r1 127.zone || die
 	newins "${FILESDIR}"/localhost.zone-r3 localhost.zone || die
 
-	newinitd "${FILESDIR}"/named.init-r8 named || die
-	newconfd "${FILESDIR}"/named.confd-r4 named || die
+	newinitd "${FILESDIR}"/named.init-r10 named || die
+	newconfd "${FILESDIR}"/named.confd-r6 named || die
+
+	if use ssl && [ -e /usr/lib/engines/libgost.so ]; then
+		sed -i -e 's/^OPENSSL_LIBGOST=${OPENSSL_LIBGOST:-0}$/OPENSSL_LIBGOST=${OPENSSL_LIBGOST:-1}/' "${D}/etc/init.d/named" || die
+	else
+		sed -i -e 's/^OPENSSL_LIBGOST=${OPENSSL_LIBGOST:-1}$/OPENSSL_LIBGOST=${OPENSSL_LIBGOST:-0}/' "${D}/etc/init.d/named" || die
+	fi
 
 	newenvd "${FILESDIR}"/10bind.env 10bind || die
 
@@ -237,15 +245,16 @@ src_install() {
 	dosym /var/bind/named.cache /var/bind/root.cache || die
 	dosym /var/bind/pri /etc/bind/pri || die
 	dosym /var/bind/sec /etc/bind/sec || die
-	keepdir /var/bind/sec
+	dosym /var/bind/dyn /etc/bind/dyn || die
+	keepdir /var/bind/{pri,sec,dyn}
 
 	dodir /var/{run,log}/named || die
 
-	fowners root:named /{etc,var}/bind /var/{run,log}/named /var/bind/{sec,pri}
-	fowners root:named /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/named.conf
-	fperms 0640 /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/named.conf
+	fowners root:named /{etc,var}/bind /var/{run,log}/named /var/bind/{sec,pri,dyn}
+	fowners root:named /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/{bind.keys,named.conf}
+	fperms 0640 /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/{bind.keys,named.conf}
 	fperms 0750 /etc/bind /var/bind/pri
-	fperms 0770 /var/{run,log}/named /var/bind/{,sec}
+	fperms 0770 /var/{run,log}/named /var/bind/{,sec,dyn}
 }
 
 pkg_postinst() {
@@ -295,17 +304,18 @@ pkg_postinst() {
 	ewarn
 	ewarn "NOTE: If you upgrade from <net-dns/bind-9.4.3_p5-r1, you may encounter permission problems"
 	ewarn "To fix the permissions do:"
-	ewarn "chown root:named /{etc,var}/bind /var/{run,log}/named /var/bind/{sec,pri}"
+	ewarn "chown root:named /{etc,var}/bind /var/{run,log}/named /var/bind/{sec,pri,dyn}"
 	ewarn "chown root:named /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/{bind.keys,named.conf}"
 	ewarn "chmod 0640 /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/{bind.keys,named.conf}"
 	ewarn "chmod 0750 /etc/bind /var/bind/pri"
-	ewarn "chmod 0770 /var/{run,log}/named /var/bind/{,sec}"
+	ewarn "chmod 0770 /var/{run,log}/named /var/bind/{,sec,dyn}"
 	ewarn
 }
 
 pkg_config() {
 	CHROOT=$(source /etc/conf.d/named; echo ${CHROOT})
 	CHROOT_NOMOUNT=$(source /etc/conf.d/named; echo ${CHROOT_NOMOUNT})
+	CHROOT_GEOIP=$(source /etc/conf.d/named; echo ${CHROOT_GEOIP})
 
 	if [[ -z "${CHROOT}" ]]; then
 		eerror "This config script is designed to automate setting up"
@@ -329,9 +339,16 @@ pkg_config() {
 	mkdir -m 0755 -p ${CHROOT}/{dev,etc,var/{run,log}}
 	mkdir -m 0750 -p ${CHROOT}/etc/bind
 	mkdir -m 0770 -p ${CHROOT}/var/{bind,{run,log}/named}
+	# As of bind 9.8.0
+	if has_version net-dns/bind[ssl] -a -e /usr/lib/engines/libgost.so; then
+		if [ "$(get_libdir)" = "lib64" ]; then
+			mkdir -m 0755 -p ${CHROOT}/usr/lib64/engines
+			ln -s lib64 ${CHROOT}/usr/lib
+		else
+			mkdir -m 0755 -p ${CHROOT}/usr/lib/engines
+		fi
+	fi
 	chown root:named ${CHROOT} ${CHROOT}/var/{bind,{run,log}/named} ${CHROOT}/etc/bind
-
-	cp /etc/localtime ${CHROOT}/etc/localtime
 
 	mknod ${CHROOT}/dev/null c 1 3
 	chmod 0666 ${CHROOT}/dev/null
@@ -350,6 +367,10 @@ pkg_config() {
 	if [ "${CHROOT_NOMOUNT:-0}" -ne 0 ]; then
 		cp -a /etc/bind ${CHROOT}/etc/
 		cp -a /var/bind ${CHROOT}/var/
+	fi
+
+	if [ "${CHROOT_GEOIP:-0}" -eq 1 ]; then
+		mkdir -m 0755 -p ${CHROOT}/usr/share/GeoIP
 	fi
 
 	elog "You may need to add the following line to your syslog-ng.conf:"

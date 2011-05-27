@@ -1,13 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/bind-9.8.0_p1.ebuild,v 1.2 2011/05/08 23:08:32 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/bind-9.7.3_p1.ebuild,v 1.1 2011/05/27 18:53:03 idl0r Exp $
 
 EAPI="3"
 
-inherit eutils autotools toolchain-funcs flag-o-matic multilib
+inherit eutils autotools toolchain-funcs flag-o-matic
 
 MY_PV="${PV/_p/-P}"
-MY_PV="${MY_PV/_rc/rc}"
 MY_P="${PN}-${MY_PV}"
 
 SDB_LDAP_VER="1.1.0-fc14"
@@ -104,8 +103,7 @@ src_prepare() {
 
 	if use geoip; then
 		cp "${DISTDIR}"/${GEOIP_PATCH_A} "${S}" || die
-		sed -i -e 's/MINORVER=7/MINORVER=8/' \
-			-e 's/PATCHVER=2/PATCHVER=0/' \
+		sed -i -e 's:PATCHVER=2:PATCHVER=3:' \
 			-e 's/-RELEASEVER=2/-RELEASEVER=1/' \
 			-e 's/+RELEASEVER=2-geoip-1.3/+RELEASEVER=1-geoip-1.3/' \
 			${GEOIP_PATCH_A} || die
@@ -231,12 +229,6 @@ src_install() {
 	newinitd "${FILESDIR}"/named.init-r10 named || die
 	newconfd "${FILESDIR}"/named.confd-r6 named || die
 
-	if use ssl && [ -e /usr/lib/engines/libgost.so ]; then
-		sed -i -e 's/^OPENSSL_LIBGOST=${OPENSSL_LIBGOST:-0}$/OPENSSL_LIBGOST=${OPENSSL_LIBGOST:-1}/' "${D}/etc/init.d/named" || die
-	else
-		sed -i -e 's/^OPENSSL_LIBGOST=${OPENSSL_LIBGOST:-1}$/OPENSSL_LIBGOST=${OPENSSL_LIBGOST:-0}/' "${D}/etc/init.d/named" || die
-	fi
-
 	newenvd "${FILESDIR}"/10bind.env 10bind || die
 
 	# Let's get rid of those tools and their manpages since they're provided by bind-tools
@@ -342,15 +334,6 @@ pkg_config() {
 	mkdir -m 0755 -p ${CHROOT}/{dev,etc,var/{run,log}}
 	mkdir -m 0750 -p ${CHROOT}/etc/bind
 	mkdir -m 0770 -p ${CHROOT}/var/{bind,{run,log}/named}
-	# As of bind 9.8.0
-	if has_version net-dns/bind[ssl] -a -e /usr/lib/engines/libgost.so; then
-		if [ "$(get_libdir)" = "lib64" ]; then
-			mkdir -m 0755 -p ${CHROOT}/usr/lib64/engines
-			ln -s lib64 ${CHROOT}/usr/lib
-		else
-			mkdir -m 0755 -p ${CHROOT}/usr/lib/engines
-		fi
-	fi
 	chown root:named ${CHROOT} ${CHROOT}/var/{bind,{run,log}/named} ${CHROOT}/etc/bind
 
 	mknod ${CHROOT}/dev/null c 1 3
