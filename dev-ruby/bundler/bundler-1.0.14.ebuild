@@ -1,12 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bundler/bundler-1.0.12.ebuild,v 1.1 2011/04/09 05:44:24 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bundler/bundler-1.0.14.ebuild,v 1.1 2011/05/28 06:48:45 graaff Exp $
 
 EAPI=2
 
 # ruby19 → uncountable number of test failures
 # jruby → needs to be tested because jruby-1.5.1 fails in multiple
-# ways unrelated to this package
+# ways unrelated to this package.
 USE_RUBY="ruby18 ree18"
 
 RUBY_FAKEGEM_TASK_TEST="spec"
@@ -22,12 +22,12 @@ HOMEPAGE="http://github.com/carlhuda/bundler"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
 ruby_add_rdepend dev-ruby/rubygems
 
-ruby_add_bdepend "test? ( dev-ruby/rspec:2 )"
+ruby_add_bdepend "test? ( app-text/ronn dev-ruby/rspec:2 )"
 
 RDEPEND="${RDEPEND}
 	dev-vcs/git"
@@ -38,7 +38,7 @@ RUBY_PATCHES=( "${FILESDIR}"/${PN}-1.0.3-gentoo.patch )
 
 all_ruby_prepare() {
 	# Reported upstream: http://github.com/carlhuda/bundler/issues/issue/738
-	sed -i -e '685s/should/should_not/' spec/runtime/setup_spec.rb || die
+	sed -i -e '707s/should/should_not/' spec/runtime/setup_spec.rb || die
 
 	# Fails randomly and no clear cause can be found. Might be related
 	# to bug 346357. This was broken in previous releases without a
