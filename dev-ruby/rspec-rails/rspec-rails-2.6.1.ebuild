@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rspec-rails/rspec-rails-2.4.1.ebuild,v 1.3 2011/02/13 21:37:11 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rspec-rails/rspec-rails-2.6.1.ebuild,v 1.1 2011/05/29 06:47:39 graaff Exp $
 
 EAPI=2
 
@@ -32,5 +32,5 @@ each_ruby_test() {
 	${RUBY} -S rspec spec || die "Tests failed."
 
 	# There are also features but they require aruba which we don't have
-	# yet.
+	# yet and it requires local install of various rails versions.
 }
