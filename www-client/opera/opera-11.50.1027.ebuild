@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/opera-next/opera-next-11.50.1027.ebuild,v 1.2 2011/05/31 07:17:30 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/opera/opera-11.50.1027.ebuild,v 1.1 2011/05/31 07:16:06 jer Exp $
 
 EAPI="3"
 
@@ -17,14 +17,14 @@ IUSE="elibc_FreeBSD gtk kde +gstreamer"
 O_V="$(get_version_component_range 1-2)" # Major version, i.e. 11.00
 O_B="$(get_version_component_range 3)"   # Build version, i.e. 1156
 
-O_D="b_${O_V}-${O_B}"
+O_D="${O_V/.}b1"
 O_P="${PN}-${O_V}-${O_B}"
-O_U="http://snapshot.opera.com/unix/"
+O_U="mirror://opera/"
 
 SRC_URI="
-	amd64? ( ${O_U}${O_D}/${O_P}.x86_64.linux.tar.xz )
-	x86? ( ${O_U}${O_D}/${O_P}.i386.linux.tar.xz )
-	x86-fbsd? ( ${O_U}${O_D}/${O_P}.i386.freebsd.tar.xz )
+	amd64? ( ${O_U}linux/${O_D}/${O_P}.x86_64.linux.tar.xz )
+	x86? ( ${O_U}linux/${O_D}/${O_P}.i386.linux.tar.xz )
+	x86-fbsd? ( ${O_U}unix/${O_D}/${O_P}.i386.freebsd.tar.xz )
 "
 
 OPREFIX="/usr/$(get_libdir)"
@@ -139,11 +139,13 @@ src_prepare() {
 		-e "s:@@{_SUFFIX}::g" \
 		-e "s:@@{USUFFIX}::g" \
 		-e "s:opera:${PN}:g" \
+		share/mime/packages/${PN}-widget.xml \
 		share/man/man1/* \
 		share/applications/${PN}-browser.desktop \
+		share/applications/${PN}-widget-manager.desktop \
 		|| die "sed failed"
 
-	# Create /usr/bin/opera wrapper
+	# Create /usr/bin/${PN} wrapper
 	echo '#!/bin/sh' > ${PN}
 	echo 'export OPERA_DIR=/usr/share/'"${PN}" >> ${PN}
 	echo 'export OPERA_PERSONALDIR=${OPERA_PERSONALDIR:-"${HOME}/.'${PN}'"}' \
@@ -182,7 +184,7 @@ src_install() {
 	mv share/ "${D}/usr/" || die "mv share/ failed"
 
 	# Install startup scripts
-	dobin ${PN} || die "dobin failed"
+	dobin ${PN} ${PN}-widget-manager || die "dobin failed"
 
 	# Stop revdep-rebuild from checking opera binaries
 	dodir /etc/revdep-rebuild
