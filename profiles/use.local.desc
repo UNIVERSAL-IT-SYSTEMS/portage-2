@@ -4203,9 +4203,18 @@ sys-fs/owfs:parport - Enable support for the DS1410E parallel port adapter
 sys-fs/owfs:server - Enable building the OWFS server (owserver)
 sys-fs/pysize:psyco - Adds psyco support
 sys-fs/quota:rpc - Enable quota interaction via RPC
+sys-fs/udev:action_modeswitch - switch Mobile Action cables into serial mode
 sys-fs/udev:devfs-compat - Install rules for devfs compatible device names
+sys-fs/udev:edd - create /dev/disk/by-id/edd-* links for BIOS EDD data
 sys-fs/udev:extras - Compile udev-extras requiring external dependencies
+sys-fs/udev:floppy - create historical floppy kernel device nodes (/dev/fd0h1440, ...)
+sys-fs/udev:gudev - enable libudev gobject interface
+sys-fs/udev:hwdb - read vendor/device string database and add it to udev database
+sys-fs/udev:introspection - Use dev-libs/gobject-introspection for introspection
+sys-fs/udev:keymap - map custom hardware's multimedia keys
 sys-fs/udev:old-hd-rules - Install rules for /dev/hd* devices, removed upstream at udev-148
+sys-fs/udev:rule_generator - enable persistent network and optical device rule generator
+sys-fs/udev:udev_acl - apply ACLs for users with local forground sessions
 sys-fs/udisks:remote-access - Control whether connections from other clients over LAN are allowed
 sys-fs/unionfs:nfs - Adds support for NFS file system
 sys-kernel/ck-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.

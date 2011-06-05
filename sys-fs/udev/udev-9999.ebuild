@@ -1,14 +1,14 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.38 2011/06/02 20:26:43 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.40 2011/06/05 21:09:22 robbat2 Exp $
 
 EAPI="1"
 
-inherit eutils flag-o-matic multilib toolchain-funcs linux-info autotools
+inherit eutils flag-o-matic multilib toolchain-funcs linux-info systemd
 
-#PATCHSET=${P}-gentoo-patchset-v1
+PATCHSET=${P}-gentoo-patchset-v1
 scriptversion=v3
-scriptname=${PN}-gentoo-scripts-${scriptversion}
+scriptname=udev-gentoo-scripts-${scriptversion}
 
 if [[ ${PV} == "9999" ]]; then
 	SRC_URI="mirror://gentoo/${scriptname}.tar.bz2"
@@ -28,29 +28,29 @@ HOMEPAGE="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="selinux extras test"
+IUSE="selinux test debug +rule_generator +hwdb +udev_acl +gudev introspection +keymap floppy edd action_modeswitch"
 
 COMMON_DEPEND="selinux? ( sys-libs/libselinux )
-	extras? (
-		sys-apps/acl
-		>=sys-apps/usbutils-0.82
-		virtual/libusb:0
-		sys-apps/pciutils
-		dev-libs/glib:2
-	)
+	udev_acl? ( sys-apps/acl dev-libs/glib:2 )
+	gudev? ( dev-libs/glib:2 )
+	introspection? ( dev-libs/gobject-introspection )
+	action_modeswitch? ( virtual/libusb:0 )
 	>=sys-apps/util-linux-2.16
 	>=sys-libs/glibc-2.9"
 
 DEPEND="${COMMON_DEPEND}
-	extras? (
-		dev-util/gperf
-		dev-util/pkgconfig
-	)
+	keymap? ( dev-util/gperf )
+	dev-util/pkgconfig
 	virtual/os-headers
 	!<sys-kernel/linux-headers-2.6.29
 	test? ( app-text/tree )"
 
 RDEPEND="${COMMON_DEPEND}
+	hwdb?
+	(
+		>=sys-apps/usbutils-0.82
+		sys-apps/pciutils
+	)
 	!sys-apps/coldplug
 	!<sys-fs/lvm2-2.02.45
 	!sys-fs/device-mapper
@@ -68,9 +68,13 @@ fi
 CONFIG_CHECK="~INOTIFY_USER ~SIGNALFD ~!SYSFS_DEPRECATED ~!SYSFS_DEPRECATED_V2
 	~!IDE"
 
+# Return values:
+# 2 - reliable
+# 1 - unreliable
+# 0 - too old
 udev_check_KV() {
 	local ok=0
-	if [[ ${KV_MAJOR} == 2 && ${KV_MINOR} == 6 ]]
+	if [[ ${KV_MAJOR} == 2 && ${KV_MINOR} == 6 ]] || [[ ${KV_MAJOR} == 3 ]]
 	then
 		if kernel_is -ge 2 6 ${KV_PATCH_reliable} ; then
 			ok=2
@@ -88,8 +92,8 @@ pkg_setup() {
 	# but a glibc compiled against >=linux-headers-2.6.27 uses the
 	# new signalfd syscall introduced in kernel 2.6.27 without falling back
 	# to the old one. So we just depend on 2.6.27 here, see Bug #281312.
-	KV_PATCH_min=25
-	KV_PATCH_reliable=31
+	KV_PATCH_min=32
+	KV_PATCH_reliable=32
 	KV_min=2.6.${KV_PATCH_min}
 	KV_reliable=2.6.${KV_PATCH_reliable}
 
@@ -187,10 +191,19 @@ src_compile() {
 		--enable-logging \
 		--enable-static \
 		$(use_with selinux) \
-		$(use_enable extras) \
-		--disable-introspection \
-		--without-systemdsystemunitdir
-	# we don't have gobject-introspection in portage tree
+		$(use_enable debug) \
+		$(use_enable rule_generator) \
+		$(use_enable hwdb) \
+		--with-pci-ids-path=/usr/share/misc/pci.ids \
+		--with-usb-ids-path=/usr/share/misc/usb.ids \
+		$(use_enable udev_acl) \
+		$(use_enable gudev) \
+		$(use_enable introspection) \
+		$(use_enable keymap) \
+		$(use_enable floppy) \
+		$(use_enable edd) \
+		$(use_enable action_modeswitch) \
+		$(systemd_with_unitdir)
 
 	emake || die "compiling udev failed"
 }
@@ -242,7 +255,7 @@ src_install() {
 
 	# keep doc in just one directory, Bug #281137
 	rm -rf "${D}/usr/share/doc/${PN}"
-	if use extras; then
+	if use keymap; then
 		dodoc extras/keymap/README.keymap.txt || die "failed installing docs"
 	fi
 }
