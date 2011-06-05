@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/uw-imap/uw-imap-2007e-r1.ebuild,v 1.2 2011/06/04 08:20:22 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/uw-imap/uw-imap-2007e-r1.ebuild,v 1.4 2011/06/05 13:40:00 eras Exp $
 
 EAPI=4
 
@@ -15,11 +15,10 @@ HOMEPAGE="http://www.washington.edu/imap/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86"
 IUSE="ipv6 +ssl kerberos clearpasswd"
 
-DEPEND="!net-mail/vimap
-	!net-libs/c-client
+DEPEND="!net-libs/c-client
 	>=sys-libs/pam-0.72
 	>=net-mail/mailbase-0.00-r8[pam]
 	ssl? ( dev-libs/openssl )
