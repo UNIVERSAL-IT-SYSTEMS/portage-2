@@ -1,11 +1,11 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/erlang/erlang-14.2.2.ebuild,v 1.1 2011/04/29 18:35:24 djc Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/erlang/erlang-14.2.3.ebuild,v 1.1 2011/06/06 08:53:33 djc Exp $
 
 EAPI=3
 WX_GTK_VER="2.8"
 
-inherit elisp-common eutils multilib versionator wxwidgets
+inherit elisp-common eutils java-pkg-opt-2 multilib versionator wxwidgets
 
 # NOTE: If you need symlinks for binaries please tell maintainers or
 # open up a bug to let it be created.
@@ -30,7 +30,7 @@ SRC_URI="http://www.erlang.org/download/${MY_P}.tar.gz
 LICENSE="EPL"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x64-solaris"
-IUSE="doc emacs hipe java kpoll odbc smp sctp ssl tk wxwidgets"
+IUSE="doc emacs halfword hipe java kpoll odbc smp sctp ssl tk wxwidgets"
 
 RDEPEND=">=dev-lang/perl-5.6.1
 	!<app-accessibility/speech-dispatcher-0.7.1-r1
@@ -64,7 +64,6 @@ src_prepare() {
 
 	# Nasty workaround, reported upstream
 	cp "${S}"/lib/configure.in.src "${S}"/lib/configure.in || die
-	epatch "${FILESDIR}/${P}-interface.patch" || die
 
 	# prevent configure from injecting -m32 by default on Darwin, bug #334155
 	# Nasty hack
@@ -79,6 +78,7 @@ src_configure() {
 		--enable-threads \
 		--enable-shared-zlib \ \
 		$(use_enable sctp) \
+		$(use_enable halfword halfword-emulator) \
 		$(use_enable hipe) \
 		$(use_with ssl ssl "${EPREFIX}"/usr) \
 		$(use_enable ssl dynamic-ssl-lib) \
