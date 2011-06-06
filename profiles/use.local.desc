@@ -1253,6 +1253,9 @@ dev-python/pygobject:introspection - Use dev-libs/gobject-introspection for intr
 dev-python/pygobject:libffi - Enable support to connect to signals on python objects from C.
 dev-python/pylons:genshi - Add optional genshi support
 dev-python/pylons:jinja - Add optional jinja support
+dev-python/pypy:jit - Enable the JIT compiler
+dev-python/pypy:sandbox - Enable sandboxing functionality
+dev-python/pypy:stackless - Run in stackless mode
 dev-python/pyudev:pygobject - Install PyGobject binding
 dev-python/pyudev:pyqt4 - Install PyQt4 binding
 dev-python/pyudev:pyside - Install PySide binding
@@ -3524,6 +3527,7 @@ net-nds/openldap:odbc - Enable ODBC and SQL backend options
 net-nds/openldap:overlays - Enable contributed OpenLDAP overlays
 net-nds/openldap:smbkrb5passwd - Enable overlay for syncing ldap, unix and lanman passwords
 net-nds/tac_plus:finger - Adds support for checking user counts via fingering the NAS
+net-nds/tac_plus:maxsess - Enforce a limit on maximum sessions per user
 net-news/liferea:dbus - Enables the DBUS connector for liferea, so feeds can be managed from external programs
 net-news/liferea:libnotify - Enable popup notifications
 net-news/liferea:lua - Enable lua scripting
