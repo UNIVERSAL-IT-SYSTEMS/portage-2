@@ -1,5 +1,5 @@
-selinux? ( sys-libs/libselinux ) udev_acl? ( sys-apps/acl dev-libs/glib:2 ) gudev? ( dev-libs/glib:2 ) introspection? ( dev-libs/gobject-introspection ) action_modeswitch? ( virtual/libusb:0 ) >=sys-apps/util-linux-2.16 >=sys-libs/glibc-2.9 keymap? ( dev-util/gperf ) dev-util/pkgconfig virtual/os-headers !<sys-kernel/linux-headers-2.6.29 test? ( app-text/tree ) app-text/docbook-xsl-stylesheets app-text/docbook-xml-dtd dev-util/gtk-doc >=dev-vcs/git-1.6 || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.61 >=sys-devel/libtool-2.2.6b
-selinux? ( sys-libs/libselinux ) udev_acl? ( sys-apps/acl dev-libs/glib:2 ) gudev? ( dev-libs/glib:2 ) introspection? ( dev-libs/gobject-introspection ) action_modeswitch? ( virtual/libusb:0 ) >=sys-apps/util-linux-2.16 >=sys-libs/glibc-2.9 hwdb? ( >=sys-apps/usbutils-0.82 sys-apps/pciutils ) !sys-apps/coldplug !<sys-fs/lvm2-2.02.45 !sys-fs/device-mapper >=sys-apps/baselayout-1.12.5
+selinux? ( sys-libs/libselinux ) acl? ( sys-apps/acl dev-libs/glib:2 ) gudev? ( dev-libs/glib:2 ) introspection? ( dev-libs/gobject-introspection ) action_modeswitch? ( virtual/libusb:0 ) >=sys-apps/util-linux-2.16 >=sys-libs/glibc-2.9 keymap? ( dev-util/gperf ) dev-util/pkgconfig virtual/os-headers !<sys-kernel/linux-headers-2.6.29 test? ( app-text/tree ) app-text/docbook-xsl-stylesheets app-text/docbook-xml-dtd dev-util/gtk-doc
+selinux? ( sys-libs/libselinux ) acl? ( sys-apps/acl dev-libs/glib:2 ) gudev? ( dev-libs/glib:2 ) introspection? ( dev-libs/gobject-introspection ) action_modeswitch? ( virtual/libusb:0 ) >=sys-apps/util-linux-2.16 >=sys-libs/glibc-2.9 hwdb? ( >=sys-apps/usbutils-0.82 sys-apps/pciutils ) !sys-apps/coldplug !<sys-fs/lvm2-2.02.45 !sys-fs/device-mapper >=sys-apps/baselayout-1.12.5
 0
 mirror://gentoo/udev-gentoo-scripts-v3.tar.bz2
 
@@ -7,14 +7,14 @@ http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html
 GPL-2
 Linux dynamic and persistent device naming support (aka userspace devfs)
 
-autotools eutils flag-o-matic git libtool linux-info multilib portability systemd toolchain-funcs versionator
-selinux test debug +rule_generator +hwdb +udev_acl +gudev introspection +keymap floppy edd action_modeswitch
+eutils flag-o-matic linux-info multilib portability systemd toolchain-funcs versionator
+selinux test debug +rule_generator +hwdb +acl +gudev introspection +keymap floppy edd action_modeswitch
 
 
 
-1
+4
 
-compile install postinst preinst setup unpack
+compile configure install postinst preinst prepare setup unpack
 
 
 
