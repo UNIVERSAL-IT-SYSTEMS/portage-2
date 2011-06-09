@@ -388,7 +388,6 @@ app-emulation/qemu-kvm:brltty - Adds support for braille displays using brltty
 app-emulation/qemu-kvm:esd - Enable esound output for sound emulation
 app-emulation/qemu-kvm:fdt - Enables firmware device tree support
 app-emulation/qemu-kvm:jpeg - Enable JPEG compression for the VNC console server
-app-emulation/qemu-kvm:kvm-trace - Allows you to use KVM tracing
 app-emulation/qemu-kvm:ncurses - Enable the ncurses-based console
 app-emulation/qemu-kvm:png - Enable PNG compression for the VNC console server
 app-emulation/qemu-kvm:pulseaudio - Enable pulseaudio output for sound emulation
@@ -4032,6 +4031,7 @@ sys-apps/util-linux:cramfs - build mkfs/fsck helpers for cramfs filesystems
 sys-apps/util-linux:loop-aes - include support for Loop AES encryption
 sys-apps/util-linux:perl - install the chkdupexe helper script
 sys-apps/v86d:x86emu - Use x86emu for Video BIOS calls
+sys-apps/watchdog:nfs - enable support for checking nfs mounts
 sys-auth/consolekit:policykit - Use the PolicyKit framework (sys-auth/polkit) to get authorization for suspend/shutdown.
 sys-auth/munge:gcrypt - Use libgcrypt instead of openssl
 sys-auth/pam_mktemp:prevent-removal - If supported, set EXT2_APPEND_FL on /tmp/.private to prevent temporary directories from being removed
