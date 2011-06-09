@@ -3077,6 +3077,8 @@ net-im/vacuum:vcard - Enable obtaining peer's personal contact information
 net-im/vacuum:vcs-revision - Add VCS revision to version number, INSECURE.
 net-im/vacuum:xmppuriqueries - Allow other plugins to handle XMPP URI queries
 net-irc/atheme-services:largenet - Enable support/tweaks for large networks
+net-irc/atheme-services:ldap - Enable ldap-backed authentication module
+net-irc/atheme-services:perl - Install a perl module which wraps around the services' XML-RPC interface
 net-irc/bip:freenode - Enables freenode-specific functionality. Currently that is only support for mute lists (MODE #channel +q).
 net-irc/bip:noctcp - Disable the automatic CTCP VERSION reply which is often exploited by malicious people to cause a DoS (reconnect due to flooding).
 net-irc/bip:oidentd - Enable oidentd support
