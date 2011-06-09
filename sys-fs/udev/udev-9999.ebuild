@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.44 2011/06/08 15:30:14 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.46 2011/06/09 13:18:21 zzam Exp $
 
 EAPI=4
 
@@ -128,7 +128,7 @@ src_unpack() {
 	unpack ${A}
 	if [[ ${PV} == "9999" ]]
 	then
-		git_src_unpack
+		git-2_src_unpack
 	fi
 }
 
@@ -493,11 +493,6 @@ pkg_postinst() {
 			rm -f "${ROOT}"/etc/udev/rules.d/64-device-mapper.rules
 			einfo "Removed unneeded file 64-device-mapper.rules"
 	fi
-
-	# requested in bug #275974, added 2009/09/05
-	ewarn
-	ewarn "If after the udev update removable devices or CD/DVD drives"
-	ewarn "stop working, try re-emerging HAL before filling a bug report"
 
 	# requested in Bug #225033:
 	elog
