@@ -1,6 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/hardened-sources/hardened-sources-2.6.37-r5.ebuild,v 1.1 2011/03/07 03:41:46 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/hardened-sources/hardened-sources-2.6.39-r1.ebuild,v 1.1 2011/06/11 10:44:26 blueness Exp $
+
+EAPI="4"
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
@@ -9,7 +11,7 @@ K_GENPATCHES_VER="2"
 inherit kernel-2
 detect_version
 
-HGPV="${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-6"
+HGPV="${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-2"
 HGPV_URI="http://dev.gentoo.org/~blueness/hardened-sources/hardened-patches/hardened-patches-${HGPV}.extras.tar.bz2"
 SRC_URI="${KERNEL_URI} ${HGPV_URI} ${GENPATCHES_URI} ${ARCH_URI}"
 
@@ -25,7 +27,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 pkg_postinst() {
 	kernel-2_pkg_postinst
 
-	local GRADM_COMPAT="sys-apps/gradm-2.2.1*"
+	local GRADM_COMPAT="sys-apps/gradm-2.2.2*"
 
 	ewarn
 	ewarn "Hardened Gentoo provides three different predefined grsecurity level:"
