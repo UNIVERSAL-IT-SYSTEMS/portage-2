@@ -4321,7 +4321,6 @@ sys-process/fcron:debug - Enable debug code and output. Since version 3.0.5 this
 sys-process/fcron:pam - Enable PAM support for fcron. This means that fcron will pass through the "fcron" stack before executing the jobs, and fcrontab will use the "fcrontab" stack to authenticate the user before editing its crontab file.
 sys-process/htop:openvz - Enable openvz support
 sys-process/htop:vserver - Enable vserver support
-sys-process/procps:n32 - Enable n32 ABI support on mips
 virtual/ffmpeg:vaapi - Enables VAAPI (Video Acceleration API) for hardware decoding
 virtual/ffmpeg:vdpau - Enables VDPAU decoders (requires nVidia video cards to offload CPU processing to video card
 virtual/mpi:romio - Enable romio, a high-performance portable MPI-IO
