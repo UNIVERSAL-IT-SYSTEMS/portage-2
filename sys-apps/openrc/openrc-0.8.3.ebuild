@@ -1,26 +1,24 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/openrc-0.6.8.ebuild,v 1.1 2010/12/08 04:48:45 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/openrc-0.8.3.ebuild,v 1.1 2011/06/20 03:28:15 williamh Exp $
 
-EAPI="1"
+EAPI=4
 
-inherit eutils flag-o-matic multilib toolchain-funcs
+EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/${PN}.git"
+[[ ${PV} == "9999" ]] && SCM_ECLASS="git-2"
+inherit eutils flag-o-matic multilib toolchain-funcs ${SCM_ECLASS}
+unset SCM_ECLASS
 
-if [[ ${PV} == "9999" ]] ; then
-	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/openrc.git"
-	inherit git
-	KEYWORDS=""
-else
+DESCRIPTION="OpenRC manages the services, startup and shutdown of a host"
+HOMEPAGE="http://www.gentoo.org/proj/en/base/openrc/"
+if [[ ${PV} != "9999" ]] ; then
 	SRC_URI="mirror://gentoo/${P}.tar.bz2"
 	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 fi
 
-DESCRIPTION="OpenRC manages the services, startup and shutdown of a host"
-HOMEPAGE="http://www.gentoo.org/proj/en/base/openrc/"
-
 LICENSE="BSD-2"
 SLOT="0"
-IUSE="debug elibc_glibc ncurses pam unicode kernel_linux kernel_FreeBSD"
+IUSE="debug elibc_glibc ncurses pam selinux unicode kernel_linux kernel_FreeBSD"
 
 RDEPEND="virtual/init
 	kernel_FreeBSD? ( sys-process/fuser-bsd )
@@ -48,6 +46,9 @@ make_args() {
 		MAKE_ARGS="${MAKE_ARGS} OS=FreeBSD"
 		brand="FreeBSD"
 	fi
+	if use selinux; then
+			MAKE_ARGS="${MAKE_ARGS} MKSELINUX=yes"
+	fi
 	export BRANDING="Gentoo ${brand}"
 }
 
@@ -57,16 +58,14 @@ pkg_setup() {
 	export MKTERMCAP=$(usev ncurses)
 }
 
-src_unpack() {
+src_prepare() {
+	sed -i 's:0444:0644:' mk/sys.mk || die
+	sed -i "/^DIR/s:/openrc:/${PF}:" doc/Makefile || die #241342
+
 	if [[ ${PV} == "9999" ]] ; then
-		git_src_unpack
-	else
-		unpack ${A}
+		local ver="git-${EGIT_VERSION:0:6}"
+		sed -i "/^GITVER[[:space:]]*=/s:=.*:=${ver}:" mk/git.mk || die
 	fi
-	cd "${S}"
-	sed -i 's:0444:0644:' mk/sys.mk
-	sed -i "/^DIR/s:/openrc:/${PF}:" doc/Makefile #241342
-	sed -i '/^CFLAGS+=.*_CC_FLAGS_SH/d' mk/cc.mk #289264
 
 	# Allow user patches to be applied without modifying the ebuild
 	epatch_user
@@ -75,13 +74,8 @@ src_unpack() {
 src_compile() {
 	make_args
 
-	if [[ ${PV} == "9999" ]] ; then
-		local ver="git-$(echo ${EGIT_VERSION} | cut -c1-8)"
-		sed -i "/^GITVER[[:space:]]*=/s:=.*:=${ver}:" mk/git.mk
-	fi
-
 	tc-export CC AR RANLIB
-	emake ${MAKE_ARGS} || die "emake ${MAKE_ARGS} failed"
+	emake ${MAKE_ARGS}
 }
 
 # set_config <file> <option name> <yes value> <no value> test
@@ -92,16 +86,17 @@ set_config() {
 	[[ ${val} == "#" ]] && com="#" && val='\2'
 	sed -i -r -e "/^#?${var}=/{s:=([\"'])?([^ ]*)\1?:=\1${val}\1:;s:^#?:${com}:}" "${file}"
 }
+
 set_config_yes_no() {
 	set_config "$1" "$2" YES NO "${@:3}"
 }
 
 src_install() {
 	make_args
-	emake ${MAKE_ARGS} DESTDIR="${D}" install || die
+	emake ${MAKE_ARGS} DESTDIR="${D}" install
 
 	# install the readme for the new network scripts
-	dodoc README.net
+	dodoc README.newnet
 
 	# move the shared libs back to /usr so ldscript can install
 	# more of a minimal set of files
@@ -130,6 +125,11 @@ src_install() {
 
 	# Cater to the norm
 	set_config_yes_no /etc/conf.d/keymaps windowkeys '(' use x86 '||' use amd64 ')'
+
+	# On HPPA, do not run consolefont by default (bug #222889)
+	if use hppa; then
+		rm -f "${D}"/usr/share/openrc/runlevels/boot/consolefont
+	fi
 
 	# Support for logfile rotation
 	insinto /etc/logrotate.d
@@ -282,7 +282,7 @@ migrate_from_baselayout_1() {
 	elog "init.d scripts.  If you use such a thing, make sure you have the"
 	elog "required init.d scripts added to your boot runlevel."
 
-	# Upgrade out state for baselayout-1 users
+	# Upgrade our state for baselayout-1 users
 	if [[ ! -e ${ROOT}${LIBDIR}/rc/init.d/started ]] ; then
 		(
 		[[ -e ${ROOT}/etc/conf.d/rc ]] && source "${ROOT}"/etc/conf.d/rc
@@ -336,20 +336,6 @@ migrate_from_baselayout_1() {
 			rmdir "${ROOT}"/etc/modules.autoload.d 2>/dev/null
 		fi
 	fi
-
-	# Handle the conf.d/local.{start,stop} -> conf.d/local transition
-	if path_exists -o "${ROOT}"/etc/conf.d/local.{start,stop} ; then
-		elog "Converting your /etc/conf.d/local.{start,stop} files to /etc/conf.d/local"
-		(
-		sed -n '0,/local_start/p' "${D}"/etc/conf.d/local
-		sed 's:^:\t:' "${ROOT}"/etc/conf.d/local.start 2>/dev/null
-		sed -n '/local_start/,/local_stop/{s:^local_start.*::;p}' "${D}"/etc/conf.d/local
-		sed 's:^:\t:' "${ROOT}"/etc/conf.d/local.stop 2>/dev/null
-		sed -n '/local_stop/,${s:^local_stop.*::;p}' "${D}"/etc/conf.d/local
-		) > "${T}"/conf.d.local
-		mv "${T}"/conf.d.local "${D}"/etc/conf.d/local
-		touch "${D}"/etc/conf.d/local.{start,stop}
-	fi
 }
 
 pkg_postinst() {
@@ -357,6 +343,7 @@ pkg_postinst() {
 
 	# Remove old baselayout links
 	rm -f "${ROOT}"/etc/runlevels/boot/{check{fs,root},rmnologin}
+	rm -f "${ROOT}"/etc/init.d/{depscan,runscript}.sh
 
 	# Make our runlevels if they don't exist
 	if [[ ! -e ${ROOT}/etc/runlevels ]] || [[ -e ${ROOT}/etc/runlevels/.add_boot_init.created ]] ; then
@@ -411,9 +398,19 @@ pkg_postinst() {
 		ewarn "your files to /etc/conf.d/modules and delete the directory."
 	fi
 
-	if path_exists -o "${ROOT}"/etc/conf.d/local.{start,stop} ; then
-		ewarn "/etc/conf.d/local.{start,stop} are deprecated.  Please convert"
-		ewarn "your files to /etc/conf.d/local and delete the files."
+	if use hppa; then
+		elog "Setting the console font does not work on all HPPA consoles."
+		elog "You can still enable it by running:"
+		elog "# rc-update add consolefont boot"
+	fi
+
+	# Handle the conf.d/local.{start,stop} -> local.d transition
+	if path_exists -o "${ROOT}"etc/conf.d/local.{start,stop} ; then
+		elog "Moving your ${ROOT}etc/conf.d/local.{start,stop}"
+		elog "files to ${ROOT}etc/local.d"
+		mv "${ROOT}"etc/conf.d/local.start "${ROOT}"etc/local.d/baselayout1.start
+		mv "${ROOT}"etc/conf.d/local.stop "${ROOT}"etc/local.d/baselayout1.stop
+		chmod +x "${ROOT}"etc/local.d/*{start,stop}
 	fi
 
 	# update the dependency tree after touching all files #224171
