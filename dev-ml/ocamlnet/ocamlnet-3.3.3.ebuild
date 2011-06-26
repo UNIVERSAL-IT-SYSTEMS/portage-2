@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ml/ocamlnet/ocamlnet-3.3.0_beta1.ebuild,v 1.1 2011/04/14 19:05:09 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ml/ocamlnet/ocamlnet-3.3.3.ebuild,v 1.1 2011/06/26 17:09:28 aballier Exp $
 
 EAPI="2"
 
@@ -14,14 +14,14 @@ SRC_URI="http://download.camlcity.org/download/${MY_P}.tar.gz"
 LICENSE="as-is GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~x86-fbsd"
-IUSE="cryptokit gtk ssl tk httpd +ocamlopt zip"
+IUSE="cryptokit gtk ssl tk httpd +ocamlopt +pcre zip"
 RESTRICT="installsources"
 
 # the auth-dh compile flag has been disabled as well, since it depends on
 # ocaml-cryptgps, which is not available.
 
 DEPEND=">=dev-ml/findlib-1.0
-		>=dev-ml/pcre-ocaml-5
+		pcre? ( >=dev-ml/pcre-ocaml-5 )
 		>=dev-lang/ocaml-3.10.2[tk?,ocamlopt?]
 		cryptokit? ( dev-ml/cryptokit )
 		gtk? ( >=dev-ml/lablgtk-2 )
@@ -54,6 +54,7 @@ src_configure() {
 		-datadir /usr/share/${PN} \
 		$(ocamlnet_use_enable cryptokit crypto) \
 		$(ocamlnet_use_enable gtk gtk2) \
+		$(ocamlnet_use_enable pcre pcre) \
 		$(ocamlnet_use_enable ssl ssl) \
 		$(ocamlnet_use_enable tk tcl) \
 		$(ocamlnet_use_enable zip zip) \
