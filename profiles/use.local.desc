@@ -4129,6 +4129,7 @@ sys-cluster/pvfs2:server - Enable compilation of server code
 sys-cluster/resource-agents:libnet - Force use of net-libs/libnet
 sys-cluster/torque:cpusets - Enable pbs_mom to utilize linux cpusets if available.
 sys-cluster/torque:drmaa - Enable the Distributed Resource Management Application API.
+sys-cluster/torque:munge - Enable authentication via munge.
 sys-cluster/torque:server - Enable compilation of pbs_server and pbs_sched.
 sys-devel/binutils:multislot - Allow for multiple versions of binutils to be emerged at once for same CTARGET
 sys-devel/binutils:multitarget - Adds support to binutils for cross compiling (does not work with gas)
