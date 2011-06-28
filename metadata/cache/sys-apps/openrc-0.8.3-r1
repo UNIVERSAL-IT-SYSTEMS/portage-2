@@ -1,0 +1,22 @@
+virtual/init kernel_FreeBSD? ( sys-process/fuser-bsd ) elibc_glibc? ( >=sys-libs/glibc-2.5 ) ncurses? ( sys-libs/ncurses ) pam? ( virtual/pam ) >=sys-apps/baselayout-2.0.0 kernel_linux? ( !<sys-apps/module-init-tools-3.2.2-r2 ) !<sys-fs/udev-133 !<sys-apps/sysvinit-2.86-r11 virtual/os-headers
+virtual/init kernel_FreeBSD? ( sys-process/fuser-bsd ) elibc_glibc? ( >=sys-libs/glibc-2.5 ) ncurses? ( sys-libs/ncurses ) pam? ( virtual/pam ) >=sys-apps/baselayout-2.0.0 kernel_linux? ( !<sys-apps/module-init-tools-3.2.2-r2 ) !<sys-fs/udev-133 !<sys-apps/sysvinit-2.86-r11
+0
+mirror://gentoo/openrc-0.8.3.tar.bz2
+
+http://www.gentoo.org/proj/en/base/openrc/
+BSD-2
+OpenRC manages the services, startup and shutdown of a host
+~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd
+eutils flag-o-matic multilib portability toolchain-funcs
+debug elibc_glibc ncurses pam selinux unicode kernel_linux kernel_FreeBSD
+
+
+
+4
+
+compile install postinst preinst prepare setup
+
+
+
+
+
