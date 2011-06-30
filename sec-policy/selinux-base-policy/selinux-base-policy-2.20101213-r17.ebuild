@@ -1,9 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-base-policy/selinux-base-policy-2.20101213-r11.ebuild,v 1.1 2011/04/16 13:02:44 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-base-policy/selinux-base-policy-2.20101213-r17.ebuild,v 1.1 2011/06/30 10:17:35 blueness Exp $
 
 EAPI="1"
-IUSE="+peer_perms open_perms"
+IUSE="+peer_perms +open_perms +ubac"
 
 inherit eutils
 
@@ -51,7 +51,7 @@ src_unpack() {
 		cp -a "${S}/refpolicy" "${S}/${i}"
 
 		cd "${S}/${i}";
-		make conf || die "${i} reconfiguration failed"
+		make conf || die "Make conf in ${i} failed"
 
 		cp "${FILESDIR}/modules.conf.${i}.${MOD_CONF_VER}" \
 			"${S}/${i}/policy/modules.conf" \
@@ -59,6 +59,10 @@ src_unpack() {
 		sed -i -e '/^QUIET/s/n/y/' -e '/^MONOLITHIC/s/y/n/' \
 			-e "/^NAME/s/refpolicy/$i/" "${S}/${i}/build.conf" \
 			|| die "build.conf setup failed."
+
+		if ! use ubac; then
+			sed -i -e 's:^UBAC = y:UBAC = n:g' "${S}/${i}/build.conf"
+		fi
 
 		echo "DISTRO = gentoo" >> "${S}/${i}/build.conf"
 
@@ -105,6 +109,11 @@ src_install() {
 	doins "${FILESDIR}/config"
 }
 
+pkg_preinst() {
+	has_version "<${CATEGORY}/${PN}-2.20101213-r13"
+	previous_less_than_r13=$?
+}
+
 pkg_postinst() {
 	[ -z "${POLICY_TYPES}" ] && local POLICY_TYPES="strict targeted"
 
@@ -112,6 +121,9 @@ pkg_postinst() {
 		einfo "Inserting base module into ${i} module store."
 
 		cd "/usr/share/selinux/${i}"
-		semodule -s "${i}" -b base.pp
+		semodule -s "${i}" -b base.pp || die "Could not load in new base policy"
 	done
+	elog "Updates on policies might require you to relabel files. If you, after"
+	elog "installing new SELinux policies, get 'permission denied' errors,"
+	elog "relabelling your system using 'rlpkg -a -r' might resolve the issues."
 }
