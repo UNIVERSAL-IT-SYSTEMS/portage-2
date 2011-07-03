@@ -1,4 +1,4 @@
-ncurses? ( >=sys-libs/ncurses-5.2-r5 amd64? ( app-emulation/emul-linux-x86-baselibs ) ) || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.61 >=sys-devel/libtool-2.2.6b hardened? ( app-misc/pax-utils sys-apps/paxctl )
+ncurses? ( >=sys-libs/ncurses-5.2-r5 amd64? ( app-emulation/emul-linux-x86-baselibs ) ) || ( =sys-devel/automake-1.11* ) >=sys-devel/autoconf-2.61 >=sys-devel/libtool-2.2.6b
 ncurses? ( >=sys-libs/ncurses-5.2-r5 amd64? ( app-emulation/emul-linux-x86-baselibs ) )
 0
 mirror://gentoo/grub-0.97.tar.gz ftp://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz mirror://gentoo/splash.xpm.gz mirror://gentoo/grub-0.97-patches-1.10.tar.bz2
@@ -8,7 +8,7 @@ GPL-2
 GNU GRUB Legacy boot loader
 amd64 x86 ~x86-fbsd
 autotools eutils flag-o-matic libtool linux-info mount-boot multilib pax-utils portability toolchain-funcs versionator
-custom-cflags ncurses netboot static hardened
+custom-cflags ncurses netboot static
 
 
 
