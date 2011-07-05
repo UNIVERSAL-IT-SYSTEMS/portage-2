@@ -445,6 +445,7 @@ app-emulation/wine:custom-cflags - Bypass strip-flags; use are your own peril
 app-emulation/wine:gecko - Add support for the Gecko engine when using iexplore
 app-emulation/wine:hal - Enable obsolete sys-apps/hal support
 app-emulation/wine:mousewarp - Add mouse warp patch -- enable this if you primarily play games (http://bugs.winehq.org/show_bug.cgi?id=6971)
+app-emulation/wine:opencl - Enable OpenCL support
 app-emulation/wine:perl - Install helpers written in perl (winedump/winemaker)
 app-emulation/wine:samba - Add support for NTLM auth. see http://wiki.winehq.org/NtlmAuthSetupGuide and http://wiki.winehq.org/NtlmSigningAndSealing
 app-emulation/wine:win32 - Build a 32bit version of Wine (won't run Win64 binaries)
