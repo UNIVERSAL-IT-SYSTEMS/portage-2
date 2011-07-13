@@ -1,17 +1,17 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/hardened-sources/hardened-sources-2.6.39-r2.ebuild,v 1.1 2011/06/17 01:20:56 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/hardened-sources/hardened-sources-2.6.39-r6.ebuild,v 1.1 2011/07/13 14:46:17 blueness Exp $
 
 EAPI="4"
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="2"
+K_GENPATCHES_VER="4"
 
 inherit kernel-2
 detect_version
 
-HGPV="${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-3"
+HGPV="${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-7"
 HGPV_URI="http://dev.gentoo.org/~blueness/hardened-sources/hardened-patches/hardened-patches-${HGPV}.extras.tar.bz2"
 SRC_URI="${KERNEL_URI} ${HGPV_URI} ${GENPATCHES_URI} ${ARCH_URI}"
 
