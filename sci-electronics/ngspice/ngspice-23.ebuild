@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/ng-spice-rework/ng-spice-rework-21.ebuild,v 1.2 2010/10/03 14:51:04 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/ngspice/ngspice-23.ebuild,v 1.1 2011/07/15 22:45:58 calchan Exp $
 
 EAPI="3"
 
@@ -8,16 +8,12 @@ inherit autotools eutils
 
 DESCRIPTION="The Next Generation Spice (Electronic Circuit Simulator)."
 SRC_URI="mirror://sourceforge/ngspice/${P}.tar.gz
-	doc? ( http://users.ece.gatech.edu/~mrichard/Xspice/Xspice_Users_Manual.pdf \
-		http://users.ece.gatech.edu/~mrichard/Xspice/XSpice_SoftwareDesignDoc_Sep92.pdf \
-		http://users.ece.gatech.edu/~mrichard/Xspice/XSpice_InterfaceDesignDoc_Sep92.pdf \
-		http://users.ece.gatech.edu/~mrichard/Xspice/XSpice_CodeModelSubsysSoftwareDesign.pdf \
-		http://users.ece.gatech.edu/~mrichard/Xspice/XSpice_CodeModelSubsysInterfaceDesign.pdf )"
+	mirror://sourceforge/ngspice/${PN}${PV}-manual.pdf.gz"
 HOMEPAGE="http://ngspice.sourceforge.net"
 LICENSE="BSD GPL-2"
 
 SLOT="0"
-IUSE="X debug doc readline"
+IUSE="X debug readline"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
 DEPEND="readline? ( >=sys-libs/readline-5.0 )
@@ -26,25 +22,10 @@ DEPEND="readline? ( >=sys-libs/readline-5.0 )
 		x11-libs/libX11
 		sci-visualization/xgraph )"
 
-S="${WORKDIR}"/ngspice-${PV}
+RDEPEND="$DEPEND"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-nostrip.patch
-	rm -rf xgraph
-	epatch "${FILESDIR}"/${P}-src_makefile.patch
-	sed -i -e 's/\-O2//' configure.in || die "sed failed"
-
-	# fix potential buffer overflow (bug 339541)
-	sed -i -e "s/fgets(buf, BSIZE_SP/fgets(buf, sizeof(buf)/g" \
-		src/frontend/misccoms.c || die
-
-	if use doc ; then
-		cp "${DISTDIR}"/Xspice_Users_Manual.pdf "${S}"
-		cp "${DISTDIR}"/XSpice_SoftwareDesignDoc_Sep92.pdf "${S}"
-		cp "${DISTDIR}"/XSpice_InterfaceDesignDoc_Sep92.pdf "${S}"
-		cp "${DISTDIR}"/XSpice_CodeModelSubsysSoftwareDesign.pdf "${S}"
-		cp "${DISTDIR}"/XSpice_CodeModelSubsysInterfaceDesign.pdf "${S}"
-	fi
+	epatch "${FILESDIR}"/${P}-flags.patch
 	eautoreconf
 }
 
@@ -73,15 +54,22 @@ src_configure() {
 
 	econf \
 		${MYCONF} \
-		--enable-intnoise \
 		--enable-xspice \
-		--enable-numparam \
-		--enable-dot-global \
+		--enable-cider \
+		--enable-ndev \
 		--disable-xgraph \
 		--disable-dependency-tracking \
+		--disable-rpath \
 		$(use_with X x) \
 		$(use_with readline)
 }
+
+# These will need to be looked at some day:
+# --enable-adms
+# --enable-nodelimiting
+# --enable-predictor
+# --enable-newtrunc
+# --enable-openmp
 
 src_install () {
 	local infoFile
@@ -96,14 +84,11 @@ src_install () {
 	dodoc ANALYSES AUTHORS BUGS ChangeLog DEVICES NEWS \
 		README Stuarts_Poly_Notes || die "failed to install documentation"
 
-	if use doc ; then
-		insinto /usr/share/doc/${PF}
-		doins doc/ngspice.pdf
-		doins *.pdf
-	fi
+	insinto /usr/share/doc/${PF}
+	doins ../${PN}${PV}-manual.pdf || die "failed to install manual"
 
-	# We don't need makeidx to be installed
-	rm "${D}"/usr/bin/makeidx
+	# We don't need ngmakeidx to be installed
+	rm "${D}"/usr/bin/ngmakeidx
 }
 
 src_test () {

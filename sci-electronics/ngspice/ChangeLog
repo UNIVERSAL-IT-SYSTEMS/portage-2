@@ -1,6 +1,13 @@
-# ChangeLog for sci-electronics/ng-spice-rework
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/ng-spice-rework/ChangeLog,v 1.20 2010/10/03 14:51:04 tomjbe Exp $
+# ChangeLog for sci-electronics/ngspice
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/ngspice/ChangeLog,v 1.1 2011/07/15 22:45:58 calchan Exp $
+
+*ngspice-23 (15 Jul 2011)
+
+  15 Jul 2011; Denis Dupeyron <calchan@gentoo.org> +ngspice-23.ebuild,
+  +files/ngspice-23-flags.patch, +metadata.xml:
+  Start the move from sci-electronics/ng-spice-rework to
+  sci-electronics/ngspice. Bump to ngspice-23.
 
   03 Oct 2010; Thomas Beierlein <tomjbe@gentoo.org>
   ng-spice-rework-21.ebuild:
