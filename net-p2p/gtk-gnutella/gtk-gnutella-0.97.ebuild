@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/gtk-gnutella/gtk-gnutella-0.97.ebuild,v 1.1 2011/07/18 09:17:18 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/gtk-gnutella/gtk-gnutella-0.97.ebuild,v 1.3 2011/07/18 10:41:11 graaff Exp $
 
 EAPI="2"
 
@@ -16,7 +16,7 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
 
-RDEPEND=">=dev-libs/libxml2-2.6.0
+RDEPEND="
 	gtk? ( >=x11-libs/gtk+-2.2.1:2 )
 	dbus? ( >=sys-apps/dbus-0.35.2 )
 	ssl? ( >=net-libs/gnutls-1.0.16 )
@@ -55,4 +55,8 @@ src_install() {
 	dodir /usr/bin
 	emake INSTALL_PREFIX="${D}" install || die "Install failed"
 	dodoc AUTHORS ChangeLog README TODO
+
+	# Touch the symbols file into the future to avoid warnings from
+	# gtk-gnutella later on, since we will most likely strip the binary.
+	touch --date="next minute" "${D}/usr/lib/gtk-gnutella/gtk-gnutella.nm" || die
 }
