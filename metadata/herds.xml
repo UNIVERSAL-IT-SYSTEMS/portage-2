@@ -20,7 +20,7 @@
    always a description without a lang attribute. Also there are no overlapping
    descriptions allowed (multiple description tags with the same language)
 
-   $Header: /var/cvsroot/gentoo/xml/htdocs/proj/en/metastructure/herds/herds.xml,v 1.838 2011/07/20 15:10:18 pacho Exp $
+   $Header: /var/cvsroot/gentoo/xml/htdocs/proj/en/metastructure/herds/herds.xml,v 1.846 2011/07/20 17:59:16 pacho Exp $
 
 -->
 <herds>
@@ -137,10 +137,6 @@
   <maintainer>
     <email>vapier@gentoo.org</email>
     <role>dcron</role>
-  </maintainer>
-  <maintainer>
-    <email>bangert@gentoo.org</email>
-    <role>bcron and more</role>
   </maintainer>
   <maintainer>
     <email>wschlich@gentoo.org</email>
@@ -528,10 +524,6 @@
     <name>Thomas Raschbacher</name>
   </maintainer>
   <maintainer>
-    <email>carlo@gentoo.org</email>
-    <name>Carsten Lohrke</name>
-  </maintainer>
-  <maintainer>
     <email>dev-zero@gentoo.org</email>
     <name>Tiziano Müller</name>
   </maintainer>
@@ -676,11 +668,6 @@
     <role>PaX/Grsecurity project lead</role>
   </maintainer>
   <maintainer>
-    <email>battousai@gentoo.org</email>
-    <name>Bryan D. Stine</name>
-    <role>Bastille</role>
-  </maintainer>
-  <maintainer>
     <email>gengor@gentoo.org</email>
     <name>Gordon Malm</name>
     <role>hardened-sources</role>
@@ -759,10 +746,6 @@
   <maintainer>
       <email>vapier@gentoo.org</email>
       <role>mini-qmail</role>
-  </maintainer>
-  <maintainer>
-      <email>bangert@gentoo.org</email>
-      <name>Thilo Bangert</name>
   </maintainer>
   <maintainer>
       <email>tupone@gentoo.org</email>
@@ -858,14 +841,6 @@
     <role>Earth science, mapping, and modeling stuff</role>
   </maintainer>
   <maintainer>
-    <email>cryos@gentoo.org</email>
-    <name>Marcus D. Hanwell</name>
-  </maintainer>
-  <maintainer>
-    <email>markusle@gentoo.org</email>
-    <name>Markus Dittrich</name>
-  </maintainer>
-  <maintainer>
   <email>je_fro@gentoo.org</email>
   <name>Jeff Gardner</name>
   </maintainer>
@@ -908,10 +883,6 @@
   <email>sci-biology@gentoo.org</email>
   <description>Packages related to biological sciences</description>
   <maintainer>
-    <email>markusle@gentoo.org</email>
-    <name>Markus Dittrich</name>
-  </maintainer>
-  <maintainer>
   <email>je_fro@gentoo.org</email>
   <name>Jeff Gardner</name>
   </maintainer>
@@ -934,17 +905,9 @@
     <name>Donnie Berkholz</name>
   </maintainer>
   <maintainer>
-    <email>markusle@gentoo.org</email>
-    <name>Markus Dittrich</name>
-  </maintainer>
-  <maintainer>
     <email>phosphan@gentoo.org</email>
     <name>Patrick Kursawe</name>
     <role>bugzilla scanner with not much time</role>
-  </maintainer>
-  <maintainer>
-    <email>cryos@gentoo.org</email>
-    <name>Marcus D. Hanwell</name>
   </maintainer>
   <maintainer>
     <email>je_fro@gentoo.org</email>
@@ -969,10 +932,6 @@
     <name>Denis Dupeyron</name>
   </maintainer>
   <maintainer>
-    <email>cryos@gentoo.org</email>
-    <name>Marcus D. Hanwell</name>
-  </maintainer>
-  <maintainer>
       <email>tomjbe@gentoo.org</email>
       <name>Thomas Beierlein</name>
   </maintainer>
@@ -989,10 +948,6 @@
   <name>sci-mathematics</name>
   <email>sci-mathematics@gentoo.org</email>
   <description>Mathematics related packages</description>
-  <maintainer>
-    <email>markusle@gentoo.org</email>
-    <name>Markus Dittrich</name>
-  </maintainer>
   <maintainer>
     <email>bicatali@gentoo.org</email>
     <name>Sébastien Fabbro</name>
@@ -1015,14 +970,6 @@
   <email>sci-physics@gentoo.org</email>
   <description>Physics related packages</description>
   <maintainer>
-    <email>cryos@gentoo.org</email>
-    <name>Marcus D. Hanwell</name>
-  </maintainer>
-  <maintainer>
-    <email>markusle@gentoo.org</email>
-    <name>Markus Dittrich</name>
-  </maintainer>
-  <maintainer>
     <email>bicatali@gentoo.org</email>
     <name>Sébastien Fabbro</name>
   </maintainer>
@@ -1043,10 +990,6 @@
   <name>sci-geosciences</name>
   <email>sci-geosciences@gentoo.org</email>
   <description>Geosciences related packages</description>
-  <maintainer>
-    <email>djay@gentoo.org</email>
-    <name>Gerald Fenoy</name>
-  </maintainer>
   <maintainer>
     <email>nerdboy@gentoo.org</email>
     <name>Steve Arnold</name>
@@ -1221,10 +1164,6 @@
     <email>voyageur@gentoo.org</email>
     <name>Bernard Cafarelli</name>
   </maintainer>
-  <maintainer>
-    <email>truedfx@gentoo.org</email>
-    <name>Harald van Dĳk</name>
-  </maintainer>
 </herd>
 <herd>
   <name>cluster</name>
@@ -1241,10 +1180,6 @@
   <maintainer>
     <email>jsbronder@gentoo.org</email>
     <name>Justin Bronder</name>
-  </maintainer>
-  <maintainer>
-    <email>markusle@gentoo.org</email>
-    <name>Markus Dittrich</name>
   </maintainer>
   <maintainer>
     <email>pchrist@gentoo.org</email>
@@ -1483,11 +1418,6 @@
   <name>text-markup</name>
   <email>text-markup@gentoo.org</email>
   <description>Docbook-xml, Docbook-sgml, TeX and text utilities</description>
-  <maintainer>
-    <email>cryos@gentoo.org</email>
-    <name>Marcus D. Hanwell</name>
-    <role>LaTeX and related packages</role>
-  </maintainer>
 </herd>
 <herd>
   <name>antivirus</name>
@@ -1554,11 +1484,6 @@
     <email>nelchael@gentoo.org</email>
     <name>Krzysztof Pawlik</name>
     <role>tuxonice-sources, vanilla-sources</role>
-  </maintainer>
-  <maintainer>
-    <email>asn@gentoo.org</email>
-    <name>George Kadianakis</name>
-    <role>gentoo-sources</role>
   </maintainer>
   <maintainer>
     <email>psomas@gentoo.org</email>
@@ -2016,10 +1941,6 @@
     <name>George Shapovalov</name>
     <role>initiator of the herd, maintain some of the packages (see individual metadata)</role>
   </maintainer>
-  <maintainer>
-    <email>truedfx@gentoo.org</email>
-    <name>Harald van Dĳk</name>
-  </maintainer>
 </herd>
 <herd>
   <name>netmon</name>
@@ -2328,10 +2249,6 @@
     <email>bass@gentoo.org</email>
     <name>José Alberto Suárez López</name>
   </maintainer>
-  <maintainer>
-    <email>bangert@gentoo.org</email>
-    <name>Thilo Bangert</name>
-  </maintainer>
 </herd>
 <herd>
   <name>nx</name>
@@ -2349,10 +2266,6 @@
   <maintainer>
     <email>mrness@gentoo.org</email>
     <name>Alin Nastac</name>
-  </maintainer>
-  <maintainer>
-    <email>cryos@gentoo.org</email>
-    <name>Marcus D. Hanwell</name>
   </maintainer>
   <maintainer>
     <email>wschlich@gentoo.org</email>
@@ -2430,11 +2343,6 @@
     <email>pva@gentoo.org</email>
     <name>Peter Volkov</name>
     <role>OpenVZ</role>
-  </maintainer>
-  <maintainer>
-    <email>bangert@gentoo.org</email>
-    <name>Thilo Bangert</name>
-    <name>OpenVZ, KVM</name>
   </maintainer>
 </herd>
 <herd>
