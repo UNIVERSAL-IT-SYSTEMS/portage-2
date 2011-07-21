@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/mysql-5.1.58.ebuild,v 1.1 2011/07/13 07:37:01 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/mysql-5.1.58-r1.ebuild,v 1.1 2011/07/21 05:59:30 jmbsvicetto Exp $
 
 EAPI="2"
 
-MY_EXTRAS_VER="20110713-0702Z"
+MY_EXTRAS_VER="20110721-0450Z"
 # PBXT
 PBXT_VERSION='1.0.11-6-pre-ga'
 # XtraDB
@@ -37,7 +37,7 @@ src_prepare() {
 	sed -i \
 		-e '/^noinst_PROGRAMS/s/basic-t//g' \
 		"${S}"/unittest/mytap/t/Makefile.am
-	mysql_src_prepare
+	mysql-v2_src_prepare
 }
 
 # Official test instructions:
