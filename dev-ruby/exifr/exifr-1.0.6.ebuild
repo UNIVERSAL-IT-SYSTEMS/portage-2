@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/exifr/exifr-1.0.4.ebuild,v 1.1 2011/02/23 19:35:54 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/exifr/exifr-1.0.6.ebuild,v 1.1 2011/07/24 06:05:48 graaff Exp $
 
 EAPI=2
 
