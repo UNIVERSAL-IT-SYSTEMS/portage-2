@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-3.4.2.2.ebuild,v 1.9 2011/07/25 14:54:33 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-3.4.2.2.ebuild,v 1.12 2011/07/25 18:15:43 scarabeus Exp $
 
 EAPI=3
 
@@ -96,8 +96,8 @@ unset ADDONS_URI
 unset EXT_URI
 unset ADDONS_SRC
 
-IUSE="binfilter cups custom-cflags dbus debug eds gnome gstreamer
-gtk kde ldap mysql nsplugin odk offlinehelp opengl pch python templates webdav"
+IUSE="binfilter cups custom-cflags dbus debug eds gnome gstreamer gtk kde ldap
+mysql nsplugin odk offlinehelp opengl python templates test +vba webdav"
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
@@ -400,6 +400,7 @@ src_configure() {
 	# --disable-gnome-vfs: old gnome virtual fs support
 	# --disable-kdeab: kde3 adressbook
 	# --disable-kde: kde3 support
+	# --disable-pch: precompiled headers cause build crashes
 	# --disable-rpath: relative runtime path is not desired
 	# --disable-static-gtk: ensure that gtk is linked dynamically
 	# --disable-zenity: disable build icon
@@ -431,6 +432,7 @@ src_configure() {
 		--disable-kdeab \
 		--disable-kde \
 		--disable-online-update \
+		--disable-pch \
 		--disable-rpath \
 		--disable-static-gtk \
 		--disable-zenity \
@@ -471,9 +473,10 @@ src_configure() {
 		$(use_enable nsplugin mozilla) \
 		$(use_enable odk) \
 		$(use_enable opengl) \
-		$(use_enable pch) \
 		$(use_enable python) \
 		$(use_enable python ext-scripting-python) \
+		$(use_enable vba) \
+		$(use_enable vba activex-component) \
 		$(use_enable webdav neon) \
 		$(use_with java) \
 		$(use_with ldap openldap) \
