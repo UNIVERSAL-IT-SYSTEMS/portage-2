@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-3.4.2.3.ebuild,v 1.1 2011/07/27 11:48:22 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-3.4.2.3.ebuild,v 1.4 2011/07/27 20:50:35 mattst88 Exp $
 
 EAPI=3
 
@@ -19,7 +19,7 @@ inherit base autotools check-reqs eutils java-pkg-opt-2 kde4-base pax-utils pref
 
 DESCRIPTION="LibreOffice, a full office productivity suite."
 HOMEPAGE="http://www.libreoffice.org"
-SRC_URI="branding? ( http://dev.gentooexperimental.org/~scarabeus/${PN}-branding-gentoo-0.1.tar.xz )"
+SRC_URI="branding? ( http://dev.gentooexperimental.org/~scarabeus/${PN}-branding-gentoo-0.2.tar.xz )"
 
 # Shiny split sources with so many packages...
 MODULES="artwork base calc components extensions extras filters help
@@ -290,7 +290,7 @@ src_unpack() {
 	local mod dest tmplfile tmplname
 
 	if use branding; then
-		unpack "${PN}-branding-gentoo-0.1.tar.xz"
+		unpack "${PN}-branding-gentoo-0.2.tar.xz"
 	fi
 
 	#first the bootstrap files
@@ -413,7 +413,6 @@ src_configure() {
 	# --enable-unix-qstart-libpng: use libpng splashscreen that is faster
 	# --disable-broffice: do not use brazillian brand just be uniform
 	# --enable-cairo: ensure that cairo is always required
-	# --disable-graphite: no package in gentoo
 	# --enable-*-link: link to the library rather than just dlopen on runtime
 	# --disable-fetch-external: prevent dowloading during compile phase
 	# --disable-gnome-vfs: old gnome virtual fs support
