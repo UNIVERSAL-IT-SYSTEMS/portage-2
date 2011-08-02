@@ -1,12 +1,12 @@
 kernel_linux? ( sys-apps/module-init-tools ) sys-apps/sed kernel_linux? ( virtual/linux-sources )
 kernel_linux? ( sys-apps/module-init-tools )
 0
-mirror://sourceforge/kvm/kvm-kmod-2.6.36.1.tar.bz2
-test
-http://www.linux-kvm.org
-GPL-2
-Kernel-based Virtual Machine kernel modules
--* ~amd64 ~x86
+mirror://gentoo/nouveau-drm-20110801.tar.gz
+
+http://nouveau.freedesktop.org/
+MIT
+Nouveau DRM Kernel Modules for X11
+~amd64 ~x86
 eutils linux-info linux-mod multilib portability toolchain-funcs versionator
 kernel_linux
 
@@ -14,7 +14,7 @@ kernel_linux
 
 2
 
-compile configure install postinst postrm preinst setup
+compile install postinst postrm preinst setup
 
 
 
