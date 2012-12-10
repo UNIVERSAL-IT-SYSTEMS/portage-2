@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/Ice/Ice-3.4.2-r1.ebuild,v 1.1 2012/12/10 01:07:54 ottxor Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/Ice/Ice-3.4.2-r1.ebuild,v 1.3 2012/12/10 07:21:04 polynomial-c Exp $
 
 EAPI="4"
 
@@ -15,7 +15,8 @@ inherit toolchain-funcs versionator python mono ruby-ng db-use
 DESCRIPTION="ICE middleware C++ library and generator tools"
 HOMEPAGE="http://www.zeroc.com/"
 SRC_URI="http://www.zeroc.com/download/Ice/$(get_version_component_range 1-2)/${P}.tar.gz
-	doc? ( http://www.zeroc.com/download/Ice/$(get_version_component_range 1-2)/${P}.pdf.gz )"
+	doc? ( http://www.zeroc.com/download/Ice/$(get_version_component_range 1-2)/${P}.pdf.gz )
+	http://dev.gentoo.org/~ssuominen/${P}-gcc47.patch.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ia64 ~x86 ~x64-macos ~x86-linux"
@@ -23,7 +24,7 @@ IUSE="doc examples +ncurses mono python ruby test debug"
 
 RDEPEND=">=dev-libs/expat-2.0.1
 	>=app-arch/bzip2-1.0.5
-	>=dev-libs/openssl-0.9.8o
+	>=dev-libs/openssl-0.9.8o:0
 	>=sys-libs/db-4.8.30[cxx]
 	~dev-cpp/libmcpp-2.7.2
 	ruby? ( $(ruby_implementation_depend ruby18) )
