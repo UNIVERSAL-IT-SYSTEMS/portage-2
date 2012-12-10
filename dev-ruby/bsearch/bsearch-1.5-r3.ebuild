@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-bsearch/ruby-bsearch-1.5-r3.ebuild,v 1.6 2012/11/07 05:10:59 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bsearch/bsearch-1.5-r3.ebuild,v 1.1 2012/12/10 18:42:59 graaff Exp $
 
 EAPI="4"
 USE_RUBY="ruby18 ruby19 ree18 jruby"
@@ -9,7 +9,7 @@ inherit ruby-ng
 
 DESCRIPTION="A binary search library for Ruby"
 HOMEPAGE="http://0xcc.net/ruby-bsearch/"
-SRC_URI="http://0xcc.net/ruby-bsearch/${P}.tar.gz"
+SRC_URI="http://0xcc.net/ruby-bsearch/ruby-${P}.tar.gz"
 LICENSE="Ruby"
 SLOT="0"
 KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 sparc x86 ~amd64-linux ~x86-linux ~ppc-macos"
