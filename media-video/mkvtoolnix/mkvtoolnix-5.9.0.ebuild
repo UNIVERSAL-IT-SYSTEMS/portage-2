@@ -1,9 +1,9 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mkvtoolnix/mkvtoolnix-5.7.0.ebuild,v 1.1 2012/07/11 07:41:41 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mkvtoolnix/mkvtoolnix-5.9.0.ebuild,v 1.1 2012/12/10 03:19:26 radhermit Exp $
 
-EAPI=4
-inherit eutils toolchain-funcs versionator wxwidgets
+EAPI=5
+inherit eutils multilib toolchain-funcs versionator wxwidgets multiprocessing autotools
 
 DESCRIPTION="Tools to create, alter, and inspect Matroska files"
 HOMEPAGE="http://www.bunkus.org/videotools/mkvtoolnix"
@@ -11,7 +11,7 @@ SRC_URI="http://www.bunkus.org/videotools/mkvtoolnix/sources/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE="bzip2 debug lzo pch qt4 wxwidgets"
 
 RDEPEND="
@@ -34,11 +34,11 @@ RDEPEND="
 	wxwidgets? ( x11-libs/wxGTK:2.8[X] )
 "
 DEPEND="${RDEPEND}
-	dev-ruby/rake
+	dev-lang/ruby
 	virtual/pkgconfig
 "
 
-pkg_setup() {
+pkg_pretend() {
 	# http://bugs.gentoo.org/419257
 	local ver=4.6
 	local msg="You need at least GCC ${ver}.x for C++11 range-based 'for' and nullptr support."
@@ -49,18 +49,18 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-5.6.0-system-pugixml.patch
+	epatch "${FILESDIR}"/${PN}-5.8.0-system-pugixml.patch \
+		"${FILESDIR}"/${PN}-5.8.0-boost-configure.patch
+	eautoreconf
 }
 
 src_configure() {
 	local myconf
 
-	use pch || myconf+=" --disable-precompiled-headers"
-
 	if use wxwidgets ; then
 		WX_GTK_VER="2.8"
 		need-wxwidgets unicode
-		myconf+=" --with-wx-config=${WX_CONFIG}"
+		myconf="--with-wx-config=${WX_CONFIG}"
 	fi
 
 	econf \
@@ -69,21 +69,21 @@ src_configure() {
 		$(use_enable lzo) \
 		$(use_enable qt4 qt) \
 		$(use_enable wxwidgets) \
+		$(usex pch "" --disable-precompiled-headers) \
 		${myconf} \
-		--docdir=/usr/share/doc/${PF} \
-		--with-boost-regex=boost_regex \
-		--with-boost-filesystem=boost_filesystem \
-		--with-boost-system=boost_system \
+		--disable-optimization \
+		--docdir="${EPREFIX}"/usr/share/doc/${PF} \
+		--with-boost="${EPREFIX}"/usr \
+		--with-boost-libdir="${EPREFIX}"/usr/$(get_libdir) \
 		--without-curl
 }
 
 src_compile() {
-	rake || die "rake failed"
+	./drake V=1 -j$(makeopts_jobs) || die
 }
 
 src_install() {
-	# Don't run strip while installing stuff, leave to portage the job.
-	DESTDIR="${D}" rake install || die
+	DESTDIR="${D}" ./drake -j$(makeopts_jobs) install || die
 
 	dodoc AUTHORS ChangeLog README TODO
 	doman doc/man/*.1
