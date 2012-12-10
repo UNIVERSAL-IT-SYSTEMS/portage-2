@@ -1236,8 +1236,6 @@ dev-lang/ghc:llvm - Enable llvm code geenrator for ghc (-fllvm).
 dev-lang/icc:eclipse - Install the dev-util/eclipse-sdk plugins
 dev-lang/icon:iplsrc - install the icon programming library source
 dev-lang/idb:eclipse - Install the dev-util/eclipse-sdk plugins
-dev-lang/idb:icc - Use dev-lang/icc to install idb (default)
-dev-lang/idb:ifc - Use dev-lang/ifc to install idb
 dev-lang/io:clutter - Build add-on for media-libs/clutter
 dev-lang/io:editline - Build add-on for dev-libs/libedit
 dev-lang/io:google - Build the google search add-on
@@ -4899,7 +4897,6 @@ sci-biology/bioperl:run - Install sci-biology/bioperl-run
 sci-biology/clustalw-mpi:mpi_njtree - Use MPI (as opposed to serial) code for computing neighbor-joining trees
 sci-biology/clustalw-mpi:static_pairalign - Use static (as opposed to dynamic) scheduling for pair alignments
 sci-biology/exonerate:utils - Install all utilities
-sci-biology/fasta:icc - Use intel compiler instead of gcc
 sci-biology/gmap:goby - Enable support for goby
 sci-biology/gmap:samtools - Enable support for samtools
 sci-biology/goby:cpp - Compile C/C++ API
@@ -5557,6 +5554,10 @@ sys-fs/ecryptfs-utils:gpg - Enable app-crypt/gnupg key module
 sys-fs/ecryptfs-utils:openssl - Enable dev-libs/openssl key module
 sys-fs/ecryptfs-utils:pkcs11 - Enable PKCS#11 (Smartcards) key module
 sys-fs/ecryptfs-utils:tpm - Enable support for Trusted Platform Module (TPM) using app-crypt/trousers
+sys-fs/eudev:action_modeswitch - for eudev-0: switch Mobile Action cables into serial mode
+sys-fs/eudev:edd - for eudev-0: create /dev/disk/by-id/edd-* links for BIOS EDD data
+sys-fs/eudev:extras - for eudev-0: Compile udev-extras requiring external dependencies
+sys-fs/eudev:floppy - for eudev-0: create historical floppy kernel device nodes (/dev/fd0h1440, ...)
 sys-fs/eudev:gudev - enable libudev gobject interface
 sys-fs/eudev:hwdb - read vendor/device string database and add it to udev database
 sys-fs/eudev:introspection - Use dev-libs/gobject-introspection for introspection
@@ -5564,6 +5565,7 @@ sys-fs/eudev:keymap - map custom hardware's multimedia keys
 sys-fs/eudev:kmod - enable module loading through libkmod (requires modules)
 sys-fs/eudev:modutils - enable module loading support
 sys-fs/eudev:openrc - install the OpenRC init scripts
+sys-fs/eudev:rule_generator - for eudev-0: enable persistent network and optical device rule generator
 sys-fs/fur:void-chmod - Enable fake hook for "chmod" that will only return 0
 sys-fs/lessfs:filelog - Enable the ability to log to a file instead of syslog
 sys-fs/lessfs:memtrace - Enable leefs to create a report regarding the memory allocation. This feature should be used for debugging purposes to avoid performance degradation

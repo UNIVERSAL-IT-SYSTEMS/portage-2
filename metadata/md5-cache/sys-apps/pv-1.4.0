@@ -1,4 +1,4 @@
-DEFINED_PHASES=compile configure
+DEFINED_PHASES=compile configure test
 DESCRIPTION=Pipe Viewer: a tool for monitoring the progress of data through a pipe
 EAPI=4
 HOMEPAGE=http://www.ivarch.com/programs/pv.shtml
@@ -8,4 +8,4 @@ LICENSE=Artistic-2
 SLOT=0
 SRC_URI=http://www.ivarch.com/programs/sources/pv-1.4.0.tar.gz
 _eclasses_=multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4
-_md5_=d6f78002e4e7f255c3c6c3d290382336
+_md5_=50ce97e61c805d857f22ef0b9c8f6842
