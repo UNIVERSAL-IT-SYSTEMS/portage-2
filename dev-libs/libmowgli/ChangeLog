@@ -1,6 +1,120 @@
 # ChangeLog for dev-libs/libmowgli
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libmowgli/ChangeLog,v 1.49 2011/02/06 19:51:06 chainsaw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libmowgli/ChangeLog,v 1.81 2012/07/29 17:02:22 armin76 Exp $
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> libmowgli-2.0.0.ebuild:
+  alpha/sparc stable wrt #417145
+
+  31 May 2012; Jeroen Roovers <jer@gentoo.org> libmowgli-2.0.0.ebuild:
+  Stable for HPPA (bug #417145).
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> libmowgli-2.0.0.ebuild:
+  Marking libmowgli-2.0.0 ppc for bug 417145
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> libmowgli-2.0.0.ebuild:
+  Marking libmowgli-2.0.0 ppc64 for bug 417145
+
+  23 May 2012; Agostino Sarubbo <ago@gentoo.org> libmowgli-2.0.0.ebuild:
+  Stable for amd64, wrt bug #417145
+
+  23 May 2012; Jeff Horelick <jdhore@gentoo.org> libmowgli-2.0.0.ebuild:
+  marked x86 per bug 417145
+
+  17 May 2012; Jeff Horelick <jdhore@gentoo.org> libmowgli-9999.ebuild:
+  Fix typo.
+
+  17 May 2012; Jeff Horelick <jdhore@gentoo.org> libmowgli-9999.ebuild:
+  Update the EGIT_REPO_URI as atheme.org git has moved to GitHub.
+
+  08 May 2012; Jeff Horelick <jdhore@gentoo.org> -libmowgli-0.6.1.ebuild,
+  -libmowgli-0.7.0.ebuild, -libmowgli-0.9.50.ebuild, -libmowgli-0.9.95.ebuild:
+  Remove old.
+
+  20 Apr 2012; Jeff Horelick <jdhore@gentoo.org> libmowgli-2.0.0.ebuild:
+  Change the libmowgli-2.0.0 SRC_URI to atheme.org/downloads/ since cgit
+  apparently generates tarballs on-the-fly making them fail verification.
+
+*libmowgli-2.0.0 (20 Apr 2012)
+
+  20 Apr 2012; Jeff Horelick <jdhore@gentoo.org> +libmowgli-2.0.0.ebuild,
+  -libmowgli-2.0.0_alpha1.ebuild, libmowgli-9999.ebuild:
+  Version bump to 2.0.0, remove alpha1 and fix some issues in the live ebuild.
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> libmowgli-1.0.0.ebuild:
+  alpha/sparc stable wrt #407585
+
+  13 Mar 2012; Jeroen Roovers <jer@gentoo.org> libmowgli-1.0.0.ebuild:
+  Stable for HPPA (bug #407585).
+
+  12 Mar 2012; Brent Baude <ranger@gentoo.org> libmowgli-1.0.0.ebuild:
+  Marking libmowgli-1.0.0 ppc64 for bug 407585
+
+  12 Mar 2012; Jeff Horelick <jdhore@gentoo.org> libmowgli-1.0.0.ebuild:
+  marked x86 per bug 407585
+
+  11 Mar 2012; Agostino Sarubbo <ago@gentoo.org> libmowgli-1.0.0.ebuild:
+  Stable for amd64, wrt bug #407585
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org> libmowgli-1.0.0.ebuild:
+  Marking libmowgli-1.0.0 ppc for bug 407585
+
+  20 Feb 2012; Jeff Horelick <jdhore@gentoo.org> libmowgli-1.0.0.ebuild,
+  libmowgli-2.0.0_alpha1.ebuild:
+  Drop the examples USE flag from some of the ~arch ebuilds as it never
+  installed anything anyway and just building the examples is a bit pointless.
+
+*libmowgli-9999 (20 Feb 2012)
+
+  20 Feb 2012; Jeff Horelick <jdhore@gentoo.org> +libmowgli-9999.ebuild:
+  Add a live ebuild for libmowgli. This allows developers to use still slightly
+  experimental stuff (like the VIO layer) and allows for the addition of an
+  atheme-services live ebuild.
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> libmowgli-0.9.50.ebuild:
+  sparc stable wrt #383991
+
+  03 Feb 2012; Nathan Phillip Brink <binki@gentoo.org> metadata.xml:
+  Add myself as co-maintainer.
+
+  03 Feb 2012; Nathan Phillip Brink <binki@gentoo.org>
+  libmowgli-2.0.0_alpha1.ebuild:
+  Move dev-libs/libmowgli-2* to SLOT=2 as it has an (almost superficially)
+  different API from libmowgli-1. EAPI=4 code cleanup.
+
+*libmowgli-2.0.0_alpha1 (31 Jan 2012)
+
+  31 Jan 2012; Jeff Horelick <jdhore@gentoo.org> +libmowgli-2.0.0_alpha1.ebuild:
+  Version bump. Masked as it's an alpha. Also EAPI bumped.
+
+*libmowgli-1.0.0 (28 Jan 2012)
+
+  28 Jan 2012; Jeff Horelick <jdhore@gentoo.org> +libmowgli-1.0.0.ebuild:
+  Version bump.
+
+  28 Jan 2012; Jeff Horelick <jdhore@gentoo.org> metadata.xml:
+  Take ownership of libmowgli. Signed-off by Tony Vroon (chainsaw).
+
+  19 Jan 2012; Tobias Klausmann <klausman@gentoo.org> libmowgli-0.9.50.ebuild:
+  Stable on alpha, bug #383991
+
+  19 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> libmowgli-0.9.50.ebuild:
+  ppc/ppc64 stable wrt #383991
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> libmowgli-0.9.50.ebuild:
+  Stable for HPPA (bug #380575).
+
+*libmowgli-0.9.95 (26 Sep 2011)
+
+  26 Sep 2011; Tony Vroon <chainsaw@gentoo.org> +libmowgli-0.9.95.ebuild:
+  Version bump.
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> libmowgli-0.9.50.ebuild:
+  x86 stable, bug #380575
+
+  25 Aug 2011; Tony Vroon <chainsaw@gentoo.org> libmowgli-0.9.50.ebuild:
+  Marked stable on AMD64 as a dependency of media-sound/audacious-2.5.4 based
+  on arch testing by Agostino "ago" Sarubbo and Elijah El Lazkani in bug
+  #380575.
 
   06 Feb 2011; Tony Vroon <chainsaw@gentoo.org> libmowgli-0.6.1.ebuild,
   libmowgli-0.7.0.ebuild, libmowgli-0.9.50.ebuild:

@@ -1,6 +1,49 @@
 # ChangeLog for x11-drivers/xf86-video-vesa
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-vesa/ChangeLog,v 1.52 2011/02/13 19:08:04 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-vesa/ChangeLog,v 1.62 2012/11/18 12:22:32 ago Exp $
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-vesa-2.3.2.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-vesa-2.3.2.ebuild:
+  Stable for amd64, wrt bug #440872
+
+  10 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xf86-video-vesa-2.3.1.ebuild, xf86-video-vesa-2.3.2.ebuild:
+  Add dependency on libpciaccess, bug #423977.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> xf86-video-vesa-2.3.1.ebuild:
+  alpha/ia64 stable wrt #419473
+
+*xf86-video-vesa-2.3.2 (21 Jul 2012)
+
+  21 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-vesa-2.3.2.ebuild:
+  Version bump.
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-vesa-2.3.1.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-vesa-2.3.1.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org>
+  xf86-video-vesa-2.3.1.ebuild:
+  keyword ~amd64-fbsd (compile tested only)
+
+*xf86-video-vesa-2.3.1 (22 Mar 2012)
+
+  22 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-vesa-2.3.1.ebuild:
+  Version bump.
+
+*xf86-video-vesa-2.3.0-r1 (18 Mar 2012)
+
+  18 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/xf86-video-vesa-2.3.0-pci-domains.patch,
+  +files/xf86-video-vesa-2.3.0-xorg-server-1.12.patch,
+  +xf86-video-vesa-2.3.0-r1.ebuild:
+  Fix building against xorg-server-1.12.
 
   13 Feb 2011; Tomáš Chvátal <scarabeus@gentoo.org>
   -xf86-video-vesa-2.2.1.ebuild:
@@ -246,4 +289,3 @@
   08 Aug 2005; Donnie Berkholz <dberkholz@gentoo.org>;
   +xf86-video-vesa-1.0.0.ebuild:
   Initial commit for modular X.
-

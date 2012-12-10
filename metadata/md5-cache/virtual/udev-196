@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DESCRIPTION=Virtual for udev implementation and number of it's features
+EAPI=2
+IUSE=acl gudev hwdb introspection keymap selinux static-libs
+KEYWORDS=~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86
+RDEPEND=>=sys-fs/udev-196-r1[acl?,gudev?,hwdb?,introspection?,keymap?,selinux?,static-libs?]
+SLOT=0
+_md5_=8bab0b68c446d3a995f8f4dc8d4bc295

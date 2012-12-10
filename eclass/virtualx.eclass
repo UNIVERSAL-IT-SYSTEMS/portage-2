@@ -1,12 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/virtualx.eclass,v 1.39 2011/06/09 21:42:58 mattst88 Exp $
-
-# Original author: Martin Schlemmer <azarah@gentoo.org>
+# $Header: /var/cvsroot/gentoo-x86/eclass/virtualx.eclass,v 1.43 2012/10/03 22:47:12 chithanh Exp $
 
 # @ECLASS: virtualx.eclass
 # @MAINTAINER:
 # x11@gentoo.org
+# @AUTHOR:
+# Original author: Martin Schlemmer <azarah@gentoo.org>
 # @BLURB: This eclass can be used for packages that needs a working X environment to build.
 
 # @ECLASS-VARIABLE: VIRTUALX_REQUIRED
@@ -70,7 +70,7 @@ case ${VIRTUALX_REQUIRED} in
 esac
 
 # @FUNCTION: virtualmake
-# @DESCRIPTION: 
+# @DESCRIPTION:
 # Function which attach to running X session or start new Xvfb session
 # where the VIRTUALX_COMMAND variable content gets executed.
 virtualmake() {
@@ -81,7 +81,7 @@ virtualmake() {
 	local OLD_SANDBOX_ON="${SANDBOX_ON}"
 	local XVFB=$(type -p Xvfb)
 	local XHOST=$(type -p xhost)
-	local xvfbargs="-screen 0 800x600x24"
+	local xvfbargs="-screen 0 1280x1024x24"
 
 	# backcompat for maketype
 	if [[ -n ${maketype} ]]; then
@@ -144,8 +144,13 @@ virtualmake() {
 		# Do not break on error, but setup $retval, as we need
 		# to kill Xvfb
 		debug-print "${FUNCNAME}: ${VIRTUALX_COMMAND} \"$@\""
-		${VIRTUALX_COMMAND} "$@"
-		retval=$?
+		if has "${EAPI}" 2 3; then
+			${VIRTUALX_COMMAND} "$@"
+			retval=$?
+		else
+			nonfatal ${VIRTUALX_COMMAND} "$@"
+			retval=$?
+		fi
 
 		# Now kill Xvfb
 		kill $(cat /tmp/.X${XDISPLAY}-lock)
@@ -164,7 +169,7 @@ virtualmake() {
 }
 
 # @FUNCTION: Xmake
-# @DESCRIPTION: 
+# @DESCRIPTION:
 # Same as "make", but set up the Xvfb hack if needed.
 # Deprecated call.
 Xmake() {
@@ -176,7 +181,7 @@ Xmake() {
 }
 
 # @FUNCTION: Xemake
-# @DESCRIPTION: 
+# @DESCRIPTION:
 # Same as "emake", but set up the Xvfb hack if needed.
 Xemake() {
 	debug-print-function ${FUNCNAME} "$@"
@@ -185,8 +190,8 @@ Xemake() {
 }
 
 # @FUNCTION: Xeconf
-# @DESCRIPTION: 
-#  Same as "econf", but set up the Xvfb hack if needed.
+# @DESCRIPTION:
+# Same as "econf", but set up the Xvfb hack if needed.
 Xeconf() {
 	debug-print-function ${FUNCNAME} "$@"
 

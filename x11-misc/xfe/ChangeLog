@@ -1,6 +1,53 @@
 # ChangeLog for x11-misc/xfe
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xfe/ChangeLog,v 1.66 2011/05/27 07:21:52 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xfe/ChangeLog,v 1.79 2012/10/17 03:37:36 phajdan.jr Exp $
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xfe-1.32.5.ebuild:
+  x86 stable wrt bug #437014
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> xfe-1.32.5.ebuild:
+  Marking xfe-1.32.5 ppc64 for bug 437014
+
+  04 Oct 2012; Brent Baude <ranger@gentoo.org> xfe-1.32.5.ebuild:
+  Marking xfe-1.32.5 ppc for bug 437014
+
+  03 Oct 2012; Agostino Sarubbo <ago@gentoo.org> xfe-1.32.5.ebuild:
+  Stable for amd64, wrt bug #437014
+
+*xfe-1.33 (02 Oct 2012)
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> +xfe-1.33.ebuild:
+  Version bump. Add LINGUAS support.
+
+*xfe-1.32.5 (12 May 2012)
+
+  12 May 2012; Michael Weber <xmw@gentoo.org> +xfe-1.32.5.ebuild:
+  Version bump (thanks df, bug 415639)
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -xfe-1.32.1.ebuild,
+  -files/xfe-1.32.1-inline.patch, -xfe-1.32.3.ebuild:
+  old
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> xfe-1.32.4.ebuild:
+  ppc64/x86 stable wrt #405263
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> xfe-1.32.4.ebuild:
+  Marking xfe-1.32.4 ppc for bug 405263
+
+  23 Feb 2012; Jeroen Roovers <jer@gentoo.org> xfe-1.32.4.ebuild:
+  Fix DEPEND/RDEPEND by Agostino Sarubbo (bug #405263).
+
+  23 Feb 2012; Jeroen Roovers <jer@gentoo.org> xfe-1.32.4.ebuild:
+  Remove --disable-dependency-tracking from econf by Agostino Sarubbo (bug
+  #405263).
+
+  23 Feb 2012; Agostino Sarubbo <ago@gentoo.org> xfe-1.32.4.ebuild:
+  Stable for amd64, wrt bug #405263
+
+*xfe-1.32.4 (15 Nov 2011)
+
+  15 Nov 2011; Jeroen Roovers <jer@gentoo.org> +xfe-1.32.4.ebuild:
+  Version bump thanks to teidakankan (bug #377625).
 
 *xfe-1.32.3 (27 May 2011)
 

@@ -1,6 +1,38 @@
 # ChangeLog for mail-client/claws-mail-fetchinfo
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail-fetchinfo/ChangeLog,v 1.30 2010/11/23 08:51:02 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail-fetchinfo/ChangeLog,v 1.38 2012/11/26 22:53:21 fauli Exp $
+
+  26 Nov 2012; Christian Faulhammer <fauli@gentoo.org> Manifest:
+  Update Manifest for upstream changed tarball without notice, fixes bug 444392
+
+  20 Nov 2012; Christian Faulhammer <fauli@gentoo.org>
+  -claws-mail-fetchinfo-0.4.24.ebuild:
+  clean up
+
+  31 Oct 2012; Andreas Schuerch <nativemad@gentoo.org>
+  claws-mail-fetchinfo-0.4.25.ebuild:
+  x86 stable, see bug 437814
+
+  24 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  claws-mail-fetchinfo-0.4.25.ebuild:
+  Stable for amd64, wrt bug #437814
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  claws-mail-fetchinfo-0.4.25.ebuild:
+  stable ppc64, bug #437814
+
+*claws-mail-fetchinfo-0.4.25 (30 Jun 2012)
+
+  30 Jun 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-fetchinfo-0.4.25.ebuild:
+  version bump
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  claws-mail-fetchinfo-0.4.24.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  04 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #206112
 
   23 Nov 2010; Christian Faulhammer <fauli@gentoo.org>
   claws-mail-fetchinfo-0.4.24.ebuild:
@@ -133,4 +165,3 @@
   19 Dec 2006; Andrej Kacian <ticho@gentoo.org> +metadata.xml,
   +claws-mail-fetchinfo-0.4.17.ebuild:
   This is the new name of mail-client/sylpheed-claws-fetchinfo.
-

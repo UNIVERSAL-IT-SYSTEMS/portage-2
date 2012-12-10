@@ -1,6 +1,100 @@
 # ChangeLog for mail-filter/dspam
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/dspam/ChangeLog,v 1.131 2010/06/17 21:44:20 patrick Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/dspam/ChangeLog,v 1.154 2012/09/25 11:42:59 eras Exp $
+
+  25 Sep 2012; Eray Aslan <eras@gentoo.org> -dspam-3.10.1-r1.ebuild,
+  -dspam-3.10.2.ebuild:
+  Drop old
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> dspam-3.10.2-r1.ebuild:
+  x86 stable wrt bug #433299
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> dspam-3.10.2-r1.ebuild:
+  Stable for amd64, wrt bug #433299
+
+*dspam-3.10.2-r1 (22 Jul 2012)
+
+  22 Jul 2012; Eray Aslan <eras@gentoo.org> +dspam-3.10.2-r1.ebuild:
+  Remove hash and sqlite blockers for virtual users - bug #427138. Thanks to
+  Tom Hendrikx
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> dspam-3.10.2.ebuild:
+  x86 stable wrt bug #419017
+
+  04 Jun 2012; Zac Medico <zmedico@gentoo.org> dspam-3.10.1-r1.ebuild,
+  dspam-3.10.2.ebuild:
+  inherit user for egetent, enewgroup, and enewuser
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> dspam-3.10.2.ebuild:
+  Stable for amd64, wrt bug #419017
+
+*dspam-3.10.2 (24 Apr 2012)
+
+  24 Apr 2012; Eray Aslan <eras@gentoo.org> +dspam-3.10.2.ebuild:
+  Version bump. Fixes bug #392407
+
+  06 Apr 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #63588
+
+  04 Mar 2012; Tim Harder <radhermit@gentoo.org> -dspam-3.8.0-r15.ebuild,
+  -files/README.postfix, -files/README.qmail, -files/dspam.cron-r3,
+  -files/dspam.rc, -files/logrotate.dspam, -files/pgsql_createdb.py,
+  -files/pgsql_purge.py, metadata.xml:
+  Remove old.
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> dspam-3.8.0-r15.ebuild,
+  dspam-3.10.1-r1.ebuild:
+  Drop alpha/sparc keywords
+
+  06 Dec 2011; Tim Harder <radhermit@gentoo.org> files/dspam.initd:
+  Replace opts with extra_commands (bug #393113 by Sven Schwyn) and remove
+  extra whitespace.
+
+  25 Nov 2011; Markos Chandras <hwoarang@gentoo.org> dspam-3.10.1-r1.ebuild:
+  Stable on amd64 wrt bug #391121
+
+  22 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> dspam-3.10.1-r1.ebuild:
+  x86 stable wrt bug #391121
+
+  10 Sep 2011; Tim Harder <radhermit@gentoo.org> files/dspam.initd:
+  Fix init script to properly return (bug #382443 by Leeman Strout).
+
+  26 Aug 2011; Tim Harder <radhermit@gentoo.org> -dspam-3.10.0.ebuild,
+  -dspam-3.10.0-r1.ebuild, -dspam-3.10.1.ebuild:
+  Remove old.
+
+*dspam-3.10.1-r1 (24 Aug 2011)
+
+  24 Aug 2011; Tim Harder <radhermit@gentoo.org> +dspam-3.10.1-r1.ebuild:
+  Install the dspamc binary setgid so it can read its config file when called
+  by any user similar to the dspam binary.
+
+  13 Aug 2011; Eray Aslan <eras@gentoo.org> dspam-3.10.1.ebuild:
+  stop logwatch from complaining - bug #378877
+
+*dspam-3.10.1 (11 Aug 2011)
+
+  11 Aug 2011; Eray Aslan <eras@gentoo.org> +dspam-3.10.1.ebuild:
+  version bump
+
+  07 Aug 2011; Eray Aslan <eras@gentoo.org> dspam-3.10.0-r1.ebuild:
+  Fix small-scale use flag - bug #378075
+
+*dspam-3.10.0-r1 (06 Aug 2011)
+
+  06 Aug 2011; Eray Aslan <eras@gentoo.org> +dspam-3.10.0-r1.ebuild,
+  metadata.xml:
+  Add support for small-scale filesystem scale
+
+  06 Aug 2011; Tim Harder <radhermit@gentoo.org> dspam-3.10.0.ebuild:
+  Enable hash storage driver by default.
+
+*dspam-3.10.0 (05 Aug 2011)
+
+  05 Aug 2011; Eray Aslan <eras@gentoo.org> +dspam-3.10.0.ebuild,
+  +files/dspam.confd, +files/dspam.cron, +files/dspam.initd,
+  +files/dspam.logrotate, metadata.xml:
+  version bump - bug #299090. Ebuild thanks to Tom Hendrikx
 
   17 Jun 2010; Patrick Lauer <patrick@gentoo.org> dspam-3.8.0-r15.ebuild:
   Really migrating away from deprecated postgres virtuals
@@ -654,4 +748,3 @@
   Initial commit.  Most of the ebuild was thanks to work done by Mark Renouf
   <mark@tweakt.net> on bug #26744.  I just tried harder to be anal about it. :)
   Closing bug.
-

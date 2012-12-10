@@ -1,6 +1,87 @@
 # ChangeLog for x11-themes/gnome-icon-theme
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/gnome-icon-theme/ChangeLog,v 1.203 2011/07/23 10:21:51 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/gnome-icon-theme/ChangeLog,v 1.223 2012/10/28 16:38:26 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> gnome-icon-theme-3.4.0.ebuild:
+  ia64/sh/sparc stable wrt #427544
+
+  16 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-icon-theme-3.2.1.2.ebuild, gnome-icon-theme-3.4.0.ebuild:
+  Add workaround for people experiencing AM_INIT_AUTOMAKE version mismatch
+  error (bugs #438296, #432376). (The root cause is probably in
+  autotools.eclass - see bug #419933.)
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  gnome-icon-theme-3.4.0.ebuild:
+  stable ppc, bug #427544
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> gnome-icon-theme-3.4.0.ebuild:
+  Stable on alpha, bug 427544.
+
+  14 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  gnome-icon-theme-3.4.0.ebuild:
+  stable ppc64, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> gnome-icon-theme-3.4.0.ebuild:
+  arm stable, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gnome-icon-theme-3.4.0.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gnome-icon-theme-3.4.0.ebuild:
+  x86 stable wrt bug #427544
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org>
+  gnome-icon-theme-3.4.0.ebuild:
+  keyword ~amd64-fbsd
+
+*gnome-icon-theme-3.4.0 (14 May 2012)
+
+  14 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -gnome-icon-theme-2.91.7.ebuild, -gnome-icon-theme-3.0.0.ebuild,
+  gnome-icon-theme-3.2.1.2.ebuild, +gnome-icon-theme-3.4.0.ebuild:
+  Version bump, adds trophy and uninterruptible power supply icons. Correct
+  license. Drop old.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  gnome-icon-theme-2.30.3.ebuild, gnome-icon-theme-2.91.7.ebuild,
+  gnome-icon-theme-3.0.0.ebuild, gnome-icon-theme-3.2.1.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  gnome-icon-theme-3.2.1.2.ebuild:
+  alpha/ia64/sh/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> gnome-icon-theme-3.2.1.2.ebuild:
+  Marking gnome-icon-theme-3.2.1.2 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> gnome-icon-theme-3.2.1.2.ebuild:
+  Marking gnome-icon-theme-3.2.1.2 ppc64 stable for bug 393007
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org>
+  gnome-icon-theme-3.2.1.2.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org>
+  gnome-icon-theme-3.2.1.2.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> gnome-icon-theme-3.2.1.2.ebuild:
+  amd64 stable, bug 393007
+
+*gnome-icon-theme-3.2.1.2 (30 Oct 2011)
+
+  30 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gnome-icon-theme-3.2.1.2.ebuild:
+  Bump to 3.2.1.2 from the gnome overlay.
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gnome-icon-theme-3.0.0.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> gnome-icon-theme-3.0.0.ebuild:
+  alpha/ia64/sh/sparc stable wrt #369909
 
   23 Jul 2011; Pacho Ramos <pacho@gentoo.org> gnome-icon-theme-3.0.0.ebuild:
   Fix DESCRIPTION, bug #376039 by Alexandre Rostovtsev.

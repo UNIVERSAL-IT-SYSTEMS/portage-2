@@ -1,6 +1,25 @@
 # ChangeLog for dev-libs/dvutil
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/dvutil/ChangeLog,v 1.40 2010/04/16 15:01:02 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/dvutil/ChangeLog,v 1.44 2012/05/04 18:35:45 jdhore Exp $
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> dvutil-1.0.10-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -dvutil-1.0.10.ebuild,
+  -dvutil-1.0.10-r1.ebuild:
+  old
+
+*dvutil-1.0.10-r2 (21 Mar 2012)
+
+  21 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +dvutil-1.0.10-r2.ebuild:
+  Restore libdvutil.la with empty dependency_libs wrt #409125 by Piotr Szymaniak
+
+*dvutil-1.0.10-r1 (25 Feb 2012)
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +dvutil-1.0.10-r1.ebuild:
+  USE="static-libs" and remove libtool archive when it's disabled. Remove
+  --all-static and -all-static LDFLAGS from dvutil/Makefile.am for bugs #273334
+  and #362669. Thanks to Diego Elio Pettenò for reporting.
 
   16 Apr 2010; Brent Baude <ranger@gentoo.org> dvutil-1.0.10.ebuild:
   stable ppc, bug 309169

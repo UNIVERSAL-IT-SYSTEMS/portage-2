@@ -1,6 +1,86 @@
 # ChangeLog for app-office/dia
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/dia/ChangeLog,v 1.131 2011/04/14 18:28:15 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-office/dia/ChangeLog,v 1.154 2012/10/28 15:22:42 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> dia-0.97.2-r1.ebuild:
+  ia64/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> dia-0.97.2-r1.ebuild:
+  stable ppc, bug #427544
+
+  16 Oct 2012; Matt Turner <mattst88@gentoo.org> dia-0.97.2-r1.ebuild:
+  Stable on alpha, bug 427544.
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> dia-0.97.2-r1.ebuild:
+  stable ppc64, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> dia-0.97.2-r1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> dia-0.97.2-r1.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> dia-0.97.2-r1.ebuild:
+  Stable for HPPA (bug #427544).
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> dia-0.97.2.ebuild:
+  alpha/ia64/sparc stable wrt #410611
+
+  07 Jul 2012; Michał Górny <mgorny@gentoo.org>
+  +files/dia-0.97.2-underlinking.patch, dia-0.97.2-r1.ebuild:
+  Fix underlinking (bug #420685). Also remove intltoolize call which is
+  redundant with newer eautoreconf.
+
+  09 Jun 2012; Justin Lecher <jlec@gentoo.org> dia-0.97.2-r1.ebuild:
+  Prefix fix
+
+  02 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> dia-0.97.2-r1.ebuild:
+  Pull in correct SLOT of media-libs/libpng for headers and symlink.
+
+*dia-0.97.2-r1 (02 Jun 2012)
+
+  02 Jun 2012; Sebastian Pipping <sping@gentoo.org> +dia-0.97.2-r1.ebuild:
+  Install second desktop file for integrated mode (bug #415495)
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> dia-0.97.2.ebuild:
+  ppc stable wrt #410611
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> dia-0.97.2.ebuild:
+  Stable for HPPA (bug #410611).
+
+  08 May 2012; Mike Frysinger <vapier@gentoo.org> dia-0.97.2.ebuild:
+  Add arm love.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> dia-0.97.1.ebuild,
+  dia-0.97.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> dia-0.97.2.ebuild:
+  x86 stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> dia-0.97.2.ebuild:
+  Marking dia-0.97.2 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> dia-0.97.2.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  08 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> dia-0.97.2.ebuild,
+  +files/dia-0.97.2-glib-2.31.patch:
+  Fix building against >=glib-2.31 (bug #401331, thanks to Maciej Piechotka for
+  reporting).
+
+*dia-0.97.2 (22 Dec 2011)
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +dia-0.97.2.ebuild:
+  Version bump.
+
+  15 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> dia-0.97.1.ebuild:
+  QA: eautoreconf should be before gnome2_src_prepare.
+
+  07 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> dia-0.97.1.ebuild,
+  +files/dia-0.97.1-libpng15.patch:
+  Fix building with libpng15 wrt #373871 by Stuart Longland. Remove automagic
+  USE="png zlib" and always depend on libpng and zlib.
 
   14 Apr 2011; Jonathan Callen <abcd@gentoo.org> dia-0.97.1.ebuild:
   Add prefix support and keywords

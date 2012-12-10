@@ -1,6 +1,24 @@
 # ChangeLog for www-apache/mod_wsgi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_wsgi/ChangeLog,v 1.31 2011/05/11 19:12:59 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_wsgi/ChangeLog,v 1.36 2012/11/27 19:37:31 pacho Exp $
+
+  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop apache herd as discussed in http://www.gossamer-
+  threads.com/lists/gentoo/dev/262834
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> mod_wsgi-3.4.ebuild:
+  Stable for x86, wrt bug #441540
+
+  06 Nov 2012; <ago@gentoo.org> mod_wsgi-3.4.ebuild:
+  Stable for amd64, wrt bug #441540
+
+  03 Nov 2012; Anthony G. Basile <blueness@gentoo.org> mod_wsgi-3.4.ebuild:
+  stable ppc, bug #441540
+
+*mod_wsgi-3.4 (30 Sep 2012)
+
+  30 Sep 2012; Dirkjan Ochtman <djc@gentoo.org> +mod_wsgi-3.4.ebuild:
+  Version bump to 3.4.
 
   11 May 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   files/mod_wsgi-3.3-python-3.2.patch:
@@ -126,4 +144,3 @@
   08 Sep 2007; Benedikt Böhm <hollow@gentoo.org> +files/70_mod_wsgi.conf,
   +metadata.xml, +mod_wsgi-1.0.ebuild:
   initial version, #189209
-

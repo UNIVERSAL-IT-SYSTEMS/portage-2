@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/passepartout/passepartout-0.7.0.ebuild,v 1.4 2010/03/23 03:25:07 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/passepartout/passepartout-0.7.0.ebuild,v 1.8 2012/05/03 20:00:38 jdhore Exp $
 
 EAPI=2
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.stacken.kth.se/project/pptout/"
 IUSE="gnome"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="amd64 x86"
 
 COMMON_DEPS="dev-cpp/libxmlpp:2.6
 	>=dev-libs/libxml2-2
@@ -33,7 +33,7 @@ RDEPEND="${COMMON_DEPS}
 	app-text/ghostscript-gpl"
 
 DEPEND="${COMMON_DEPS}
-	>=dev-util/pkgconfig-0.9"
+	virtual/pkgconfig"
 
 DOCS="AUTHORS BUGS NEWS README"
 
@@ -62,10 +62,6 @@ PATCHES=(
 		"${FILESDIR}/${P}-libxmlpp-2.6-depend.patch"
 	)
 
-pkg_setup() {
-	G2CONF="$(use_with gnome)"
-}
-
 src_unpack() {
 	base_src_unpack
 }
@@ -78,6 +74,8 @@ src_prepare() {
 }
 
 src_configure() {
+	# Bug 367867: Broken AC_ARG_WITH
+	use gnome && G2CONF="--with-gnome"
 	gnome2_src_configure
 }
 

@@ -1,12 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/afterstep/afterstep-2.2.9.ebuild,v 1.16 2010/11/08 13:43:13 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/afterstep/afterstep-2.2.9.ebuild,v 1.20 2011/12/23 07:54:11 ssuominen Exp $
 
-EAPI=2
+EAPI=4
+
 inherit autotools flag-o-matic eutils
 
-DESCRIPTION="AfterStep is a feature rich NeXTish window manager"
-HOMEPAGE="http://www.afterstep.org"
+DESCRIPTION="A feature rich NeXTish window manager"
+HOMEPAGE="http://www.afterstep.org/"
 SRC_URI="ftp://ftp.afterstep.org/stable/AfterStep-${PV}.tar.bz2"
 
 # libAfterBase/libAfterImage are LGPL
@@ -15,15 +16,16 @@ SLOT="0"
 KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE="alsa debug dbus gif gtk jpeg mmx nls png svg tiff xinerama"
 
-RDEPEND="media-libs/freetype
+RDEPEND="
+	media-libs/freetype
 	alsa? ( media-libs/alsa-lib )
 	dbus? ( sys-apps/dbus )
 	jpeg? ( virtual/jpeg )
 	gif?  ( >=media-libs/giflib-4.1.0 )
 	gtk? ( x11-libs/gtk+:2 )
-	png? ( >=media-libs/libpng-1.2.5 )
+	png? ( media-libs/libpng:0 )
 	svg? ( gnome-base/librsvg:2 )
-	tiff? ( >=media-libs/tiff-3.5.7 )
+	tiff? ( media-libs/tiff:0 )
 	x11-libs/libICE
 	x11-libs/libXext
 	x11-libs/libSM
@@ -38,15 +40,17 @@ DEPEND="${RDEPEND}
 	x11-proto/xextproto
 	x11-proto/xproto
 	xinerama? ( x11-proto/xineramaproto )
-	!media-libs/libafterimage"
+	!!media-libs/libafterimage"
 
 S=${WORKDIR}/AfterStep-${PV}
 
 src_prepare() {
-	epatch "${FILESDIR}"/no-alternatives-${PV}.patch \
+	epatch \
+		"${FILESDIR}"/no-alternatives-${PV}.patch \
 		"${FILESDIR}"/${P}-make_session_data_file.patch \
 		"${FILESDIR}"/${P}-alpha.patch \
-		"${FILESDIR}"/${P}-ldflags.patch
+		"${FILESDIR}"/${P}-ldflags.patch \
+		"${FILESDIR}"/${P}-libpng15.patch
 
 	sed -i \
 		-e '/CFLAGS="-O3"/d' \
@@ -64,12 +68,6 @@ src_prepare() {
 	eautoreconf
 	cp "${S}"/autoconf/autoconf/config.h.in "${S}"/autoconf || die
 	cp "${S}"/autoconf/configure "${S}" || die
-}
-
-src_compile() {
-	# gcc: ../libAfterConf/libAfterConf.a: No such file or directory
-	# make[1]: *** [PrintDesktopEntries] Error 1
-	emake -j1 || die
 }
 
 src_configure() {
@@ -105,11 +103,17 @@ src_configure() {
 		--disable-availability \
 		--disable-staticlibs \
 		--enable-ascp=no \
-		${myconf} || die "configure failed"
+		${myconf}
+}
+
+src_compile() {
+	# gcc: ../libAfterConf/libAfterConf.a: No such file or directory
+	# make[1]: *** [PrintDesktopEntries] Error 1
+	emake -j1
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install
 
 	# Create a symlink from MonitorWharf to Wharf
 	rm "${D}"/usr/bin/MonitorWharf

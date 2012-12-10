@@ -1,6 +1,86 @@
 # ChangeLog for dev-perl/Apache-Test
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Apache-Test/ChangeLog,v 1.72 2011/04/03 06:56:08 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Apache-Test/ChangeLog,v 1.96 2012/12/08 16:55:48 jer Exp $
+
+  08 Dec 2012; Jeroen Roovers <jer@gentoo.org> Apache-Test-1.380.0.ebuild:
+  Stable for HPPA (bug #441208).
+
+  06 Dec 2012; Agostino Sarubbo <ago@gentoo.org> Apache-Test-1.380.0.ebuild:
+  Stable for ppc64, wrt bug #441208
+
+  06 Dec 2012; Agostino Sarubbo <ago@gentoo.org> Apache-Test-1.380.0.ebuild:
+  Stable for ppc, wrt bug #441208
+
+  06 Dec 2012; <ago@gentoo.org> Apache-Test-1.380.0.ebuild:
+  Stable for x86, wrt bug #441208
+
+  06 Dec 2012; <ago@gentoo.org> Apache-Test-1.380.0.ebuild:
+  Stable for amd64, wrt bug #441208
+
+*Apache-Test-1.380.0 (08 Sep 2012)
+
+  08 Sep 2012; Torsten Veller <tove@gentoo.org> +Apache-Test-1.380.0.ebuild:
+  Version bump
+
+  02 Sep 2012; Raúl Porcel <armin76@gentoo.org> Apache-Test-1.370.0.ebuild:
+  alpha/ia64/sparc stable wrt #418783
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> Apache-Test-1.370.0.ebuild:
+  x86 stable, bug #418783
+
+  09 Aug 2012; Brent Baude <ranger@gentoo.org> Apache-Test-1.370.0.ebuild:
+  Marking Apache-Test-1.370.0 ppc for bug 418783
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> Apache-Test-1.370.0.ebuild:
+  Marking Apache-Test-1.370.0 ppc64 for bug 418783
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> Apache-Test-1.370.0.ebuild:
+  Stable for amd64, wrt bug #418783
+
+  02 Aug 2012; Jeroen Roovers <jer@gentoo.org> Apache-Test-1.370.0.ebuild:
+  Stable for HPPA (bug #418783).
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Apache-Test-1.29.ebuild:
+  Cleanup
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> Apache-Test-1.360.0.ebuild:
+  ia64/sparc stable wrt #400033
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Apache-Test-1.360.0.ebuild:
+  x86 stable wrt bug #400033
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> Apache-Test-1.360.0.ebuild:
+  Marking Apache-Test-1.360.0 ppc64 for bug 400033
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> Apache-Test-1.360.0.ebuild:
+  Marking Apache-Test-1.360.0 ppc for bug 400033
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> Apache-Test-1.360.0.ebuild:
+  Stable for HPPA (bug #400033).
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  Apache-Test-1.360.0.ebuild:
+  Stable on alpha, bug #400033
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Apache-Test-1.360.0.ebuild:
+  Stable for amd64, wrt bug #400033
+
+*Apache-Test-1.370.0 (31 Jan 2012)
+
+  31 Jan 2012; Torsten Veller <tove@gentoo.org> +Apache-Test-1.370.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Apache-Test-1.360.ebuild:
+  Cleanup
+
+*Apache-Test-1.360.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org> +Apache-Test-1.360.0.ebuild:
+  Change version scheme
 
   03 Apr 2011; Torsten Veller <tove@gentoo.org> -Apache-Test-1.33.ebuild,
   -Apache-Test-1.340.ebuild, -Apache-Test-1.350.ebuild:
@@ -302,4 +382,3 @@
   20 Jun 2003; Michael Cummings <mcummings@gentoo.org>
   Apache-Test-1.03.ebuild:
   Apache test is actually to fill other deps, including the new libapreq
-

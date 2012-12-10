@@ -1,6 +1,93 @@
 # ChangeLog for x11-misc/obconf
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/obconf/ChangeLog,v 1.82 2011/06/18 10:51:19 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/obconf/ChangeLog,v 1.103 2012/08/25 00:10:58 hwoarang Exp $
+
+  25 Aug 2012; Markos Chandras <hwoarang@gentoo.org> -obconf-2.0.3-r1.ebuild,
+  -obconf-2.0.3.ebuild:
+  Remove old ebuilds as openbox-3.5.0 does not work with them
+
+  14 Aug 2012; Johannes Huber <johu@gentoo.org> obconf-2.0.3_p20111019.ebuild:
+  Stable for x86, wrt bug #430494
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> obconf-2.0.3_p20111019.ebuild:
+  Stable for amd64, wrt bug #430494
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  obconf-2.0.3_p20111019.ebuild:
+  Stable arm, bug #430494
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  obconf-2.0.3_p20111019.ebuild:
+  Stable ppc, bug #430494
+
+  16 May 2012; Markos Chandras <hwoarang@gentoo.org> obconf-2.0.3-r1.ebuild,
+  obconf-2.0.3.ebuild, obconf-2.0.3_p20110314-r1.ebuild,
+  obconf-2.0.3_p20110314.ebuild, obconf-2.0.3_p20111019.ebuild,
+  obconf-9999.ebuild:
+  Update HOMEPAGE per bug #416155. Thanks to df <demmamussabebonk@gmail.com>
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> obconf-2.0.3.ebuild,
+  obconf-2.0.3-r1.ebuild, obconf-2.0.3_p20110314.ebuild,
+  obconf-2.0.3_p20110314-r1.ebuild, obconf-2.0.3_p20111019.ebuild,
+  obconf-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org>
+  obconf-2.0.3_p20110314-r1.ebuild:
+  Marking obconf-2.0.3_p20110314-r1 ppc for bug 383475
+
+  09 Mar 2012; Brent Baude <ranger@gentoo.org>
+  obconf-2.0.3_p20110314-r1.ebuild:
+  Marking obconf-2.0.3_p20110314-r1 ppc64 for bug 383475
+
+  02 Mar 2012; Markos Chandras <hwoarang@gentoo.org>
+  obconf-2.0.3_p20111019.ebuild, obconf-9999.ebuild:
+  Remove lxde useflag. Thanks to SN(Enlik) <slawomir.nizio@sabayon.org> for
+  testing. Bug #406097
+
+  29 Feb 2012; Markos Chandras <hwoarang@gentoo.org>
+  obconf-2.0.3_p20111019.ebuild:
+  Fix typo in openbox's version
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org>
+  obconf-2.0.3_p20110314-r1.ebuild:
+  alpha/sparc stable wrt #383475
+
+*obconf-2.0.3_p20111019 (18 Oct 2011)
+
+  18 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  +obconf-2.0.3_p20111019.ebuild:
+  new snapshot
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org>
+  obconf-2.0.3_p20110314-r1.ebuild:
+  Stable for HPPA (bug #383475).
+
+  05 Oct 2011; Markus Meier <maekke@gentoo.org>
+  obconf-2.0.3_p20110314-r1.ebuild:
+  arm stable, bug #383475
+
+  21 Sep 2011; Tony Vroon <chainsaw@gentoo.org>
+  obconf-2.0.3_p20110314-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #383475.
+
+  21 Sep 2011; Andreas Schuerch <nativemad@gentoo.org>
+  obconf-2.0.3_p20110314-r1.ebuild:
+  x86 stable, thanks JD, bug 383475
+
+  20 Sep 2011; Michał Górny <mgorny@gentoo.org> obconf-9999.ebuild:
+  Migrate to git-2.
+
+  10 Sep 2011; Markos Chandras <hwoarang@gentoo.org> obconf-9999.ebuild:
+  Always depend on openbox-9999 to avoid nasty compilation problems due to API
+  changes
+
+  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> obconf-9999.ebuild:
+  Patch applied upstream
+
+  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> obconf-9999.ebuild:
+  Sync with 2.0.3_p* ebuilds
 
 *obconf-2.0.3_p20110314-r1 (18 Jun 2011)
 
@@ -294,4 +381,3 @@
 
   09 Sep 2003; Brandon Hale <tseng@gentoo.org> obconf-1.0.ebuild:
   Initial commit.
-

@@ -1,6 +1,73 @@
 # ChangeLog for net-libs/ptlib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/ptlib/ChangeLog,v 1.24 2011/04/04 20:44:52 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/ptlib/ChangeLog,v 1.38 2012/12/03 23:16:28 neurogeek Exp $
+
+*ptlib-2.10.9 (03 Dec 2012)
+
+  03 Dec 2012; Jesus Rivero <neurogeek@gentoo.org> -ptlib-2.10.8.ebuild,
+  -files/ptlib-2.10.8-disable-telnet-symbols.patch,
+  -files/ptlib-2.10.8-pkgconfig_ldflags.patch,
+  -files/ptlib-2.10.8-respect_cxxflags.patch,
+  -files/ptlib-2.10.8-svn_revision_override.patch, +ptlib-2.10.9.ebuild,
+  +files/ptlib-2.10.9-disable-telnet-symbols.patch,
+  +files/ptlib-2.10.9-pkgconfig_ldflags.patch,
+  +files/ptlib-2.10.9-respect_cxxflags.patch,
+  +files/ptlib-2.10.9-svn_revision_override.patch:
+  Version bump. Added pulseaudio USE wrt bug #442458
+
+  23 Oct 2012; Jesus Rivero <neurogeek@gentoo.org> +ptlib-2.10.8.ebuild,
+  +files/ptlib-2.10.8-disable-telnet-symbols.patch,
+  +files/ptlib-2.10.8-pkgconfig_ldflags.patch,
+  +files/ptlib-2.10.8-respect_cxxflags.patch,
+  +files/ptlib-2.10.8-svn_revision_override.patch, metadata.xml:
+  Version bump. Closes several bugs. Added myself as maintainer
+
+  23 Oct 2012; Jesus Rivero <neurogeek@gentoo.org> +ptlib-2.10.8.ebuild,
+  +files/ptlib-2.10.8-disable-telnet-symbols.patch,
+  +files/ptlib-2.10.8-pkgconfig_ldflags.patch,
+  +files/ptlib-2.10.8-respect_cxxflags.patch,
+  +files/ptlib-2.10.8-svn_revision_override.patch, metadata.xml:
+  Version bump. Closes several bugs. Added myself as maintainer
+
+*ptlib-2.10.8 (22 Oct 2012)
+
+  22 Oct 2012; Jesus Rivero <neurogeek@gentoo.org> +ptlib-2.10.8.ebuild,
+  +files/ptlib-2.10.8-pkgconfig_ldflags.patch,
+  +files/ptlib-2.10.8-svn_revision_override.patch:
+  Version bump. Closes bug #338319 and some other related bugs
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> ptlib-2.6.7-r1.ebuild:
+  alpha stable wrt #397617
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> ptlib-2.6.7-r1.ebuild:
+  ia64/sparc stable wrt #397617
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> ptlib-2.6.7-r1.ebuild:
+  Stable for ppc/ppc64; bug #397617
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> ptlib-2.6.7-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Set herd as primary maintainer as talked with volkmar.
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> ptlib-2.6.7-r1.ebuild:
+  Remove USE="esd" because media-sound/esound isn't in tree anymore.
+
+  09 Jan 2012; Agostino Sarubbo <ago@gentoo.org> ptlib-2.6.7-r1.ebuild:
+  Stable for AMD64, wrt bug #397617
+
+  04 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> ptlib-2.6.7-r1.ebuild:
+  Make installation of static libraries optional, reported by ago
+
+  30 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> ptlib-2.6.7-r1.ebuild:
+  Rename obsolete USE="v4l2" to USE="v4l" wrt #385241
+
+  13 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> -ptlib-2.6.7.ebuild:
+  old
+
+  13 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> ptlib-2.6.7-r1.ebuild:
+  Remove <media-libs/libdc1394-2 and v4l1 support wrt #367085 by Steve Williams
 
   04 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org> ptlib-2.6.7.ebuild:
   Use virtual/ffmpeg in all versions.

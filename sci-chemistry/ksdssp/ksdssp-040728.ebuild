@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ksdssp/ksdssp-040728.ebuild,v 1.2 2010/03/07 11:28:32 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ksdssp/ksdssp-040728.ebuild,v 1.3 2012/10/18 16:30:03 jlec Exp $
 
-EAPI="3"
+EAPI=4
 
 inherit toolchain-funcs
 
@@ -37,9 +37,9 @@ src_compile() {
 		LINKER="$(tc-getCXX)" \
 		OPT="${CXXFLAGS}" \
 		LFLAGS="${LDFLAGS}" \
-		${PN} ${PN}.csh || die
+		${PN} ${PN}.csh
 }
 
 src_install() {
-	dobin ${PN}{,.csh} || die
+	dobin ${PN}{,.csh}
 }

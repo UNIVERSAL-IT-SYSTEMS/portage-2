@@ -1,6 +1,36 @@
 # ChangeLog for app-admin/pwgen
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/pwgen/ChangeLog,v 1.55 2011/02/06 05:19:15 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/pwgen/ChangeLog,v 1.65 2012/10/14 21:52:18 aballier Exp $
+
+  14 Oct 2012; Alexis Ballier <aballier@gentoo.org> pwgen-2.06-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> pwgen-2.06-r1.ebuild:
+  alpha/sparc stable wrt #421565
+
+  08 Jul 2012; Akinori Hattori <hattya@gentoo.org> pwgen-2.06-r1.ebuild:
+  ia64 stable wrt bug #421565
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> pwgen-2.06-r1.ebuild:
+  Marking pwgen-2.06-r1 ppc for bug 421565
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> pwgen-2.06-r1.ebuild:
+  Remove empty DEPEND.
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> pwgen-2.06-r1.ebuild:
+  Stable for HPPA (bug #421565).
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> pwgen-2.06-r1.ebuild:
+  Marking pwgen-2.06-r1 ppc64 for bug 421565
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> pwgen-2.06-r1.ebuild:
+  marked x86 per bug 421565
+
+  17 Jun 2012; Agostino Sarubbo <ago@gentoo.org> pwgen-2.06-r1.ebuild:
+  Stable for amd64, wrt bug #421565
+
+  18 Aug 2011; Fabian Groffen <grobian@gentoo.org> pwgen-2.06-r1.ebuild:
+  Marked ~x64-macos
 
   06 Feb 2011; Mart Raudsepp <leio@gentoo.org> pwgen-2.04.ebuild:
   Drop to ~mips

@@ -1,6 +1,39 @@
 # ChangeLog for sci-chemistry/molden
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/molden/ChangeLog,v 1.38 2011/06/21 16:03:06 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/molden/ChangeLog,v 1.45 2012/10/19 09:55:01 jlec Exp $
+
+  19 Oct 2012; Justin Lecher <jlec@gentoo.org> molden-4.8-r2.ebuild,
+  molden-5.0.ebuild:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  15 Jul 2012; Justin Lecher <jlec@gentoo.org> -molden-4.7.ebuild,
+  -files/molden-4.7-glibc-2.11.patch, -files/molden-4.7-ldflags.patch:
+  Drop old
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> molden-4.7.ebuild,
+  molden-4.8-r2.ebuild, molden-5.0.ebuild:
+  Drop alpha/ia64 keywords
+
+  26 Jun 2012; Agostino Sarubbo <ago@gentoo.org> molden-4.8-r2.ebuild:
+  Stable for amd64, wrt bug #423175
+
+  25 Jun 2012; Jeff Horelick <jdhore@gentoo.org> molden-4.8-r2.ebuild:
+  marked x86 per bug 423175
+
+  23 Jun 2012; Justin Lecher <jlec@gentoo.org> molden-5.0.ebuild,
+  +files/molden-5.0-overflow.patch:
+  Add missing patch
+
+*molden-5.0 (23 Jun 2012)
+*molden-4.8-r2 (23 Jun 2012)
+
+  23 Jun 2012; Justin Lecher <jlec@gentoo.org> -molden-4.7-r1.ebuild,
+  -molden-4.8.ebuild, -molden-4.8-r1.ebuild, +molden-4.8-r2.ebuild,
+  files/molden-4.8-overflow.patch, +molden-5.0.ebuild,
+  +files/molden-5.0-ambfor.patch, metadata.xml:
+  Fix buffer overflow, #342907; Version Bump, #355741; Fix build failures,
+  #358917, #423015; drop old
 
   21 Jun 2011; Justin Lecher <jlec@gentoo.org> molden-4.7.ebuild,
   molden-4.7-r1.ebuild, molden-4.8.ebuild, molden-4.8-r1.ebuild:

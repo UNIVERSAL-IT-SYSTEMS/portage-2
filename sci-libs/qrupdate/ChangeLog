@@ -1,6 +1,34 @@
 # ChangeLog for sci-libs/qrupdate
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/qrupdate/ChangeLog,v 1.20 2011/06/21 14:46:14 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/qrupdate/ChangeLog,v 1.27 2012/10/24 22:27:56 naota Exp $
+
+  24 Oct 2012;  <naota@gentoo.org> +files/qrupdate-1.1.2-install.patch,
+  qrupdate-1.1.2.ebuild:
+  Add patch to replace install usage. Add ~x86-fbsd. #303909
+
+  16 Oct 2012; Justin Lecher <jlec@gentoo.org> qrupdate-1.1.0.ebuild,
+  qrupdate-1.1.1.ebuild, qrupdate-1.1.2.ebuild:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> qrupdate-1.1.0.ebuild,
+  qrupdate-1.1.1.ebuild, qrupdate-1.1.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*qrupdate-1.1.2 (26 Apr 2012)
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> +qrupdate-1.1.2.ebuild,
+  metadata.xml:
+  Version Bump
+
+  20 Dec 2011; Sébastien Fabbro <bicatali@gentoo.org> qrupdate-1.1.0.ebuild:
+  Fixed soname linking
+
+  19 Dec 2011; Kacper Kowalik <xarthisius@gentoo.org> qrupdate-1.1.1.ebuild:
+  Mark ~amd64-linux
+
+  17 Dec 2011; Sébastien Fabbro <bicatali@gentoo.org> qrupdate-1.1.1.ebuild:
+  Fixed missing link, bug #394693
 
   21 Jun 2011; Justin Lecher <jlec@gentoo.org> qrupdate-1.1.0.ebuild,
   qrupdate-1.1.1.ebuild:
@@ -83,4 +111,3 @@
   11 Sep 2009; Markus Dittrich <markusle@gentoo.org> +qrupdate-1.0.1.ebuild,
   +files/qrupdate-1.0.1-makefile.patch, +metadata.xml:
   Initial import into portage tree (fixes bug #282203).
-

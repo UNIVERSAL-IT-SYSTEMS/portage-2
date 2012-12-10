@@ -1,6 +1,34 @@
 # ChangeLog for dev-perl/Data-UUID
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Data-UUID/ChangeLog,v 1.53 2011/04/24 16:02:29 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Data-UUID/ChangeLog,v 1.61 2012/06/24 12:58:24 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Data-UUID-1.202.ebuild:
+  Cleanup
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> Data-UUID-1.202.ebuild,
+  Data-UUID-1.217.0.ebuild:
+  Drop ia64/sparc keywords
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Data-UUID-1.217.0.ebuild:
+  x86 stable wrt bug #400075
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> Data-UUID-1.217.0.ebuild:
+  Marking Data-UUID-1.217.0 ppc for bug 400075
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Data-UUID-1.217.0.ebuild:
+  Stable for amd64, wrt bug #400075
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Data-UUID-1.217.ebuild:
+  Cleanup
+
+*Data-UUID-1.217.0 (31 Aug 2011)
+
+  31 Aug 2011; Torsten Veller <tove@gentoo.org> +Data-UUID-1.217.0.ebuild:
+  Change version scheme
 
   24 Apr 2011; Fabian Groffen <grobian@gentoo.org> Data-UUID-1.217.ebuild:
   Marked ~x86-solaris, bug #296509
@@ -212,4 +240,3 @@
 
   05 Dec 2005; <mcumming@gentoo.org> +metadata.xml, +Data-UUID-0.11.ebuild:
   Bug 114071, dep for asterisk/festival scripts
-

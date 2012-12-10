@@ -1,6 +1,50 @@
 # ChangeLog for net-wireless/wireless-regdb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/wireless-regdb/ChangeLog,v 1.19 2011/03/18 16:18:28 chainsaw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/wireless-regdb/ChangeLog,v 1.29 2012/11/20 19:45:52 zerochaos Exp $
+
+  20 Nov 2012; Rick Farina <zerochaos@gentoo.org> metadata.xml:
+  adding myself as co-maintainer to help with bugs and enhance functionality
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+  03 Nov 2012; Tony Vroon <chainsaw@gentoo.org> wireless-regdb-20090115.ebuild,
+  wireless-regdb-20110428-r1.ebuild:
+  This is ISC-licensed code, which I should have known as I had to sign off on
+  them... rightfully pointed out by Ben Sagal in bug #437168.
+
+  02 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  wireless-regdb-20110428-r1.ebuild:
+  Keyword ~arm, bug #416403.
+
+  29 May 2012; Brent Baude <ranger@gentoo.org>
+  wireless-regdb-20110428-r1.ebuild:
+  Marking wireless-regdb-20110428-r1 ppc64 for bug 404849
+
+  05 May 2012; Brent Baude <ranger@gentoo.org>
+  wireless-regdb-20110428-r1.ebuild:
+  Marking wireless-regdb-20110428-r1 ppc for bug 404849
+
+  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org>
+  wireless-regdb-20110428-r1.ebuild:
+  marked x86 per bug 404849
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org>
+  wireless-regdb-20110428-r1.ebuild:
+  Stable for amd64, wrt bug #404849
+
+*wireless-regdb-20110428-r1 (12 Nov 2011)
+
+  12 Nov 2011; <gurligebis@gentoo.org> -wireless-regdb-20091104.ebuild,
+  -wireless-regdb-20091125.ebuild, -wireless-regdb-20101124.ebuild,
+  -wireless-regdb-20110428.ebuild, +wireless-regdb-20110428-r1.ebuild:
+  Removing old versions and fixing public key install path.
+
+*wireless-regdb-20110428 (06 Sep 2011)
+
+  06 Sep 2011; Matt Turner <mattst88@gentoo.org>
+  +wireless-regdb-20110428.ebuild:
+  Version bump. Add ~mips, bug 374735.
 
 *wireless-regdb-20101124 (18 Mar 2011)
 
@@ -106,4 +150,3 @@
   27 Nov 2008; <chainsaw@gentoo.org> +metadata.xml,
   +wireless-regdb-20081117.ebuild:
   Initial commit, ebuild by me.
-

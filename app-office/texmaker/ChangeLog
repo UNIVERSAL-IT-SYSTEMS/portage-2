@@ -1,6 +1,151 @@
 # ChangeLog for app-office/texmaker
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/texmaker/ChangeLog,v 1.84 2011/07/15 16:20:11 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-office/texmaker/ChangeLog,v 1.113 2012/12/08 12:36:41 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> texmaker-3.3.4.ebuild:
+  Stable for ppc64, wrt bug #427198
+
+*texmaker-3.5.2 (07 Nov 2012)
+
+  07 Nov 2012; Justin Lecher <jlec@gentoo.org> +texmaker-3.5.2.ebuild,
+  +files/texmaker-3.5.2-hunspell.patch:
+  Version Bump, #442186
+
+*texmaker-3.5.1 (02 Nov 2012)
+
+  02 Nov 2012; Justin Lecher <jlec@gentoo.org> +texmaker-3.5.1.ebuild,
+  +files/texmaker-3.5.1-hunspell.patch:
+  Version Bump
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> texmaker-3.5.ebuild:
+  Avoid double prefix
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> texmaker-3.1.ebuild,
+  texmaker-3.3.4.ebuild, texmaker-3.5.ebuild:
+  Use doicon instead insinto + doins to install icon files
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> -texmaker-3.4.ebuild,
+  -texmaker-3.4.1.ebuild, -files/texmaker-3.4.1-hunspell.patch,
+  -files/texmaker-3.4-hunspell.patch:
+  Drop old
+
+*texmaker-3.5 (26 Aug 2012)
+
+  26 Aug 2012; Justin Lecher <jlec@gentoo.org> +texmaker-3.5.ebuild,
+  +files/texmaker-3.5-hunspell.patch:
+  Version BUmp; #432476
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> texmaker-3.3.4.ebuild:
+  Marking texmaker-3.3.4 ppc for bug 427198
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> texmaker-3.3.4.ebuild:
+  Stable for amd64, wrt bug #427198
+
+*texmaker-3.4.1 (23 Jul 2012)
+
+  23 Jul 2012; Justin Lecher <jlec@gentoo.org> +texmaker-3.4.1.ebuild,
+  +files/texmaker-3.4.1-hunspell.patch:
+  Version Bump, #427134
+
+  19 Jul 2012; Jeff Horelick <jdhore@gentoo.org> texmaker-3.3.4.ebuild:
+  marked x86 per bug 427198
+
+*texmaker-3.4 (19 Jul 2012)
+
+  19 Jul 2012; Justin Lecher <jlec@gentoo.org> -texmaker-3.3.1.ebuild,
+  -files/texmaker-3.3.1-hunspell.patch, -texmaker-3.3.2.ebuild,
+  -files/texmaker-3.3.2-hunspell.patch, -files/texmaker-3.3.2-qt48.patch,
+  -texmaker-3.3.3.ebuild, -files/texmaker-3.3.3-hunspell.patch,
+  +texmaker-3.4.ebuild, +files/texmaker-3.4-hunspell.patch:
+  Version Bump, #427134; use pkg-config for poppler-qt4 instead of manual hack;
+  define PREFIX instead of using prefix.eclass to fix offset; drop old
+
+*texmaker-3.3.4 (26 May 2012)
+
+  26 May 2012; Justin Lecher <jlec@gentoo.org>
+  -files/texmaker-1.91-hunspell.patch, -files/texmaker-2.30-hunspell.patch,
+  -files/texmaker-3.00-hunspell.patch, -files/texmaker-3.01-hunspell.patch,
+  -texmaker-3.2.ebuild, -texmaker-3.2.1.ebuild,
+  -files/texmaker-3.2.1-hunspell.patch, -texmaker-3.2.2.ebuild,
+  -files/texmaker-3.2.2-hunspell.patch, -files/texmaker-3.02-hunspell.patch,
+  -files/texmaker-3.2-hunspell.patch, +texmaker-3.3.4.ebuild,
+  +files/texmaker-3.3.4-hunspell.patch:
+  Version Bump, #417423; drop old
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> texmaker-3.1.ebuild,
+  texmaker-3.2.ebuild, texmaker-3.2.1.ebuild, texmaker-3.2.2.ebuild,
+  texmaker-3.3.1.ebuild, texmaker-3.3.2.ebuild, texmaker-3.3.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*texmaker-3.3.3 (23 Apr 2012)
+
+  23 Apr 2012; Justin Lecher <jlec@gentoo.org> texmaker-3.3.2.ebuild,
+  +files/texmaker-3.3.2-qt48.patch, +texmaker-3.3.3.ebuild,
+  +files/texmaker-3.3.3-hunspell.patch, +files/texmaker-3.3.3-qt48.patch:
+  Version Bump and compatibility with qt48
+
+  13 Mar 2012; Justin Lecher <jlec@gentoo.org> -texmaker-2.30.ebuild:
+  Dropped old
+
+  12 Mar 2012; Brent Baude <ranger@gentoo.org> texmaker-3.1.ebuild:
+  Marking texmaker-3.1 ppc64 for bug 395053
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> texmaker-3.1.ebuild:
+  Marking texmaker-3.1 ppc for bug 395053
+
+*texmaker-3.3.2 (06 Mar 2012)
+
+  06 Mar 2012; Justin Lecher <jlec@gentoo.org> +texmaker-3.3.2.ebuild,
+  +files/texmaker-3.3.2-hunspell.patch:
+  Version Bump
+
+*texmaker-3.3.1 (28 Feb 2012)
+
+  28 Feb 2012; Justin Lecher <jlec@gentoo.org> +texmaker-3.3.1.ebuild,
+  +files/texmaker-3.3.1-hunspell.patch:
+  Version Bump, #406205
+
+*texmaker-3.2.2 (12 Jan 2012)
+
+  12 Jan 2012; Justin Lecher <jlec@gentoo.org> +texmaker-3.2.2.ebuild,
+  +files/texmaker-3.2.2-hunspell.patch:
+  Version Bump
+
+*texmaker-3.2.1 (05 Jan 2012)
+
+  05 Jan 2012; Justin Lecher <jlec@gentoo.org> -texmaker-1.92.ebuild,
+  -texmaker-3.00.ebuild, -texmaker-3.01.ebuild, -texmaker-3.02.ebuild,
+  +texmaker-3.2.1.ebuild, +files/texmaker-3.2.1-hunspell.patch,
+  files/texmaker-3.2-hunspell.patch:
+  Version Bump
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> texmaker-3.1.ebuild:
+  x86 stable wrt bug #395053
+
+*texmaker-3.2 (22 Dec 2011)
+
+  22 Dec 2011; Justin Lecher <jlec@gentoo.org> +texmaker-3.2.ebuild,
+  +files/texmaker-3.2-hunspell.patch:
+  Version Bump
+
+  20 Dec 2011; Justin Lecher <jlec@gentoo.org> texmaker-3.1.ebuild:
+  Add dep on sys-libs/zlib requested by ago
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> texmaker-3.1.ebuild:
+  Stable for AMD64, wrt bug #395053
+
+  04 Dec 2011; Justin Lecher <jlec@gentoo.org> texmaker-3.1.ebuild,
+  files/texmaker-3.1-hunspell.patch:
+  Respect EPREFIX in all places, fixes poppler-qt4.h: No such file or directory
+
+  28 Nov 2011; Justin Lecher <jlec@gentoo.org> texmaker-3.1.ebuild:
+  Keyworded for prefix, tested by me
+
+*texmaker-3.1 (14 Aug 2011)
+
+  14 Aug 2011; Justin Lecher <jlec@gentoo.org> +texmaker-3.1.ebuild,
+  +files/texmaker-3.1-hunspell.patch, metadata.xml:
+  Version Bump, #377145
 
   15 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> texmaker-2.30.ebuild:
   ppc64 stable wrt #363937
@@ -344,4 +489,3 @@
   +texmaker-1.11.ebuild:
   Initial import. Ebuild submitted by Alex Linke <incubation.11@freenet.de>;
   bug #68439.
-

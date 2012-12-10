@@ -1,6 +1,23 @@
 # ChangeLog for sys-apps/rng-tools
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/rng-tools/ChangeLog,v 1.30 2010/11/08 12:18:52 nelchael Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/rng-tools/ChangeLog,v 1.33 2012/11/11 06:24:22 vapier Exp $
+
+*rng-tools-4-r1 (11 Nov 2012)
+
+  11 Nov 2012; Mike Frysinger <vapier@gentoo.org> +files/rngd-confd-4,
+  +files/rngd-initd-4, +rng-tools-4-r1.ebuild, -rng-tools-4.ebuild:
+  Update init.d script to match latest version #442036 by Manuel Rüger.
+
+*rng-tools-4 (06 Nov 2012)
+
+  06 Nov 2012; Mike Frysinger <vapier@gentoo.org> +rng-tools-4.ebuild:
+  Version bump #438648 by Manuel Rüger.
+
+*rng-tools-3-r1 (19 Jul 2012)
+
+  19 Jul 2012; Anthony G. Basile <blueness@gentoo.org> +rng-tools-3-r1.ebuild,
+  +files/test-for-argp.patch:
+  Patch configure.ac to search for arpg in glibc or libargp, bug #292191
 
 *rng-tools-3 (08 Nov 2010)
 
@@ -119,4 +136,3 @@
 
   20 Aug 2003; Hanno Boeck <hanno@gentoo.org> files/rngd:
   New package for using random number generators.
-

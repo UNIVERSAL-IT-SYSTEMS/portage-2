@@ -1,6 +1,89 @@
 # ChangeLog for dev-libs/cyrus-imap-dev
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyrus-imap-dev/ChangeLog,v 1.68 2011/07/25 13:49:58 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyrus-imap-dev/ChangeLog,v 1.88 2012/12/06 14:04:29 eras Exp $
+
+*cyrus-imap-dev-2.4.17 (06 Dec 2012)
+
+  06 Dec 2012; Eray Aslan <eras@gentoo.org> +cyrus-imap-dev-2.4.17.ebuild:
+  Version bump
+
+  06 Aug 2012; Eray Aslan <eras@gentoo.org> cyrus-imap-dev-2.4.16.ebuild:
+  sign
+
+  06 Aug 2012; Eray Aslan <eras@gentoo.org> -cyrus-imap-dev-2.4.12.ebuild,
+  -cyrus-imap-dev-2.4.13.ebuild, -cyrus-imap-dev-2.4.14.ebuild:
+  Remove old
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> cyrus-imap-dev-2.4.12.ebuild,
+  cyrus-imap-dev-2.4.13.ebuild, cyrus-imap-dev-2.4.14.ebuild,
+  cyrus-imap-dev-2.4.16.ebuild:
+  Drop sparc keywords
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  cyrus-imap-dev-2.4.16.ebuild:
+  x86 stable wrt bug #418739
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> cyrus-imap-dev-2.4.16.ebuild:
+  Marking cyrus-imap-dev-2.4.16 ppc for bug 418739
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> cyrus-imap-dev-2.4.16.ebuild:
+  Marking cyrus-imap-dev-2.4.16 ppc64 for bug 418739
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> cyrus-imap-dev-2.4.16.ebuild:
+  Stable for amd64, wrt bug #418739
+
+*cyrus-imap-dev-2.4.16 (19 Apr 2012)
+
+  19 Apr 2012; Eray Aslan <eras@gentoo.org> +cyrus-imap-dev-2.4.16.ebuild:
+  version bump
+
+*cyrus-imap-dev-2.4.14 (12 Mar 2012)
+
+  12 Mar 2012; Eray Aslan <eras@gentoo.org> +cyrus-imap-dev-2.4.14.ebuild:
+  version bump
+
+  04 Mar 2012; Eray Aslan <eras@gentoo.org> -cyrus-imap-dev-2.3.14.ebuild,
+  -cyrus-imap-dev-2.3.15.ebuild, -cyrus-imap-dev-2.3.16.ebuild,
+  -files/cyrus-imapd-2.3.16+db-5.0.patch, -cyrus-imap-dev-2.4.8.ebuild,
+  -cyrus-imap-dev-2.4.9.ebuild, -cyrus-imap-dev-2.4.10.ebuild,
+  -cyrus-imap-dev-2.4.11.ebuild, -files/cyrus-imapd-libwrap.patch:
+  remove old
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> cyrus-imap-dev-2.4.12.ebuild:
+  Marking cyrus-imap-dev-2.4.12 ppc64 for bug 388341
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> cyrus-imap-dev-2.4.12.ebuild:
+  Marking cyrus-imap-dev-2.4.12 ppc for bug 388341
+
+*cyrus-imap-dev-2.4.13 (04 Jan 2012)
+
+  04 Jan 2012; Eray Aslan <eras@gentoo.org> +cyrus-imap-dev-2.4.13.ebuild:
+  version bump
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> cyrus-imap-dev-2.4.12.ebuild:
+  sparc stable wrt #388341
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  cyrus-imap-dev-2.4.12.ebuild:
+  x86 stable wrt bug #388341
+
+  26 Oct 2011; Tony Vroon <chainsaw@gentoo.org> cyrus-imap-dev-2.4.12.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #388341.
+
+*cyrus-imap-dev-2.4.12 (06 Oct 2011)
+
+  06 Oct 2011; Eray Aslan <eras@gentoo.org> +cyrus-imap-dev-2.4.12.ebuild:
+  version bump
+
+  19 Sep 2011; Eray Aslan <eras@gentoo.org> cyrus-imap-dev-2.4.10.ebuild,
+  cyrus-imap-dev-2.4.11.ebuild:
+  Fix SRC_URI and HOMEPAGE
+
+*cyrus-imap-dev-2.4.11 (09 Sep 2011)
+
+  09 Sep 2011; Eray Aslan <eras@gentoo.org> +cyrus-imap-dev-2.4.11.ebuild:
+  version bump
 
   25 Jul 2011; Eray Aslan <eras@gentoo.org> cyrus-imap-dev-2.4.10.ebuild:
   Add blocker to net-mail/cyrus-imapd - bug #375677
@@ -305,4 +388,3 @@
 
   01 Oct 2002; Alexander Holler <holler@ahsoftware.de>
   Initial checkin of this package.
-

@@ -1,6 +1,93 @@
 # ChangeLog for media-sound/rhythmbox
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/rhythmbox/ChangeLog,v 1.207 2011/07/26 16:28:51 neurogeek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/rhythmbox/ChangeLog,v 1.223 2012/12/03 02:33:36 ssuominen Exp $
+
+  03 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
+  rhythmbox-0.12.8-r1.ebuild, rhythmbox-0.13.3.ebuild, rhythmbox-2.96.ebuild,
+  rhythmbox-2.97.ebuild, rhythmbox-2.98.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+  03 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
+  rhythmbox-0.12.8-r1.ebuild, rhythmbox-0.13.3.ebuild, rhythmbox-2.96.ebuild,
+  rhythmbox-2.97.ebuild, rhythmbox-2.98.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+*rhythmbox-2.98 (25 Oct 2012)
+
+  25 Oct 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  rhythmbox-0.12.8-r1.ebuild, rhythmbox-0.13.3.ebuild, rhythmbox-2.96.ebuild,
+  rhythmbox-2.97.ebuild, +rhythmbox-2.98.ebuild:
+  Version bump but masked since it is too broken, bug #438560. Pin gstreamer
+  dependencies to slot 0.10.
+
+  16 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  rhythmbox-2.96.ebuild, rhythmbox-2.97.ebuild:
+  Slot media-libs/grilo.
+
+*rhythmbox-2.97 (02 Jul 2012)
+
+  02 Jul 2012; Nirbheek Chauhan <nirbheek@gentoo.org> +rhythmbox-2.97.ebuild,
+  -rhythmbox-2.95.ebuild:
+  Bump to 2.97. Last.fm plugin is now always built because the dependency is not
+  optional any more.
+
+  04 Jun 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  rhythmbox-2.95.ebuild, rhythmbox-2.96.ebuild:
+  Need gst-plugins-base[introspection] (bug #416041, thanks to Andrea Arteaga).
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> rhythmbox-0.12.8-r1.ebuild,
+  rhythmbox-0.13.3.ebuild, rhythmbox-2.95.ebuild, rhythmbox-2.96.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  rhythmbox-0.12.8-r1.ebuild, rhythmbox-0.13.3.ebuild:
+  Remove unused net-libs/xulrunner from dependencies because
+  librhythmbox-itms-detection-plugin.so is using internal np*.h headers within
+  rhythmbox tarball wrt #412339
+
+*rhythmbox-2.96 (29 Mar 2012)
+
+  29 Mar 2012; Nirbheek Chauhan <nirbheek@gentoo.org> +rhythmbox-2.96.ebuild:
+  Bump to 2.96, remove old later
+
+  14 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  rhythmbox-2.95.ebuild:
+  Add missing dependency on gnome-icon-theme-symbolic (bug #403503).
+
+  10 Feb 2012; Patrick Lauer <patrick@gentoo.org> rhythmbox-0.13.3.ebuild:
+  Changing python deps in preparation for 2.4 removal
+
+  07 Feb 2012; Justin Lecher <jlec@gentoo.org> rhythmbox-2.95.ebuild,
+  metadata.xml:
+  Enable support for zeitgeist plugin
+
+  30 Jan 2012; Pacho Ramos <pacho@gentoo.org> rhythmbox-0.12.8-r1.ebuild:
+  Fix build/running when python3 is main interpreter, bug #401047 by Alexander
+  Sulfrian
+
+  17 Jan 2012; Pacho Ramos <pacho@gentoo.org> rhythmbox-2.95.ebuild:
+  >=x11-libs/gtk+-3.2 is needed, bug #399121 by erhard.furtner and Matthias
+  Bethke.
+
+*rhythmbox-2.95 (16 Jan 2012)
+
+  16 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +files/rhythmbox-2.95-fix-db-dbus-interface.patch,
+  +files/rhythmbox-2.95-port-im-status-plugin.patch,
+  +files/rhythmbox-2.95-port-rb-set-rating-py-example.patch,
+  +rhythmbox-2.95.ebuild, -rhythmbox-2.90.1_pre20111001.ebuild:
+  Bump to 2.95 + patches, remove old, drop ~ppc64 due to unsatisfied deps
+
+  05 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  rhythmbox-0.12.8-r1.ebuild, rhythmbox-0.13.3.ebuild,
+  rhythmbox-2.90.1_pre20111001.ebuild:
+  Fix py-compile idiom for automake-1.11.2 compatibility (bug #396585).
+
+*rhythmbox-2.90.1_pre20111001 (01 Oct 2011)
+
+  01 Oct 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +rhythmbox-2.90.1_pre20111001.ebuild, metadata.xml:
+  Add a gtk3 git snapshot for rhythmbox
 
   26 Jul 2011; Jesus Rivero <neurogeek@gentoo.org>
   rhythmbox-0.12.8-r1.ebuild:

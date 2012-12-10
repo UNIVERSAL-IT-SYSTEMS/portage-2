@@ -1,6 +1,65 @@
 # ChangeLog for dev-perl/Try-Tiny
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Try-Tiny/ChangeLog,v 1.21 2011/07/07 23:03:49 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Try-Tiny/ChangeLog,v 1.39 2012/09/09 16:18:49 armin76 Exp $
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> Try-Tiny-0.110.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #418803
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> Try-Tiny-0.110.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> Try-Tiny-0.110.0.ebuild:
+  Marking Try-Tiny-0.110.0 ppc64 for bug 418803
+
+  05 Aug 2012; Markus Meier <maekke@gentoo.org> Try-Tiny-0.110.0.ebuild:
+  arm stable, bug #418803
+
+  02 Aug 2012; Jeroen Roovers <jer@gentoo.org> Try-Tiny-0.110.0.ebuild:
+  Stable for HPPA (bug #418803).
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  21 Apr 2012; Torsten Veller <tove@gentoo.org> -Try-Tiny-0.90.0.ebuild:
+  Cleanup
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> Try-Tiny-0.110.0.ebuild:
+  Marking Try-Tiny-0.110.0 ppc for bug 404693
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> Try-Tiny-0.110.0.ebuild:
+  marked x86 per bug 404693
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> Try-Tiny-0.110.0.ebuild:
+  Stable for amd64, wrt bug #404693
+
+  24 Mar 2012; Fabian Groffen <grobian@gentoo.org> Try-Tiny-0.110.0.ebuild:
+  Marked ~amd64-linux, bug #403413
+
+  07 Nov 2011; Fabian Groffen <grobian@gentoo.org> Try-Tiny-0.110.0.ebuild:
+  Added Prefix keywords, bug #389001
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org> Try-Tiny-0.110.0.ebuild:
+  Marked ~x64-macos
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Try-Tiny-0.06.ebuild,
+  -Try-Tiny-0.90.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Try-Tiny-0.90.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Try-Tiny-0.110.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +Try-Tiny-0.110.0.ebuild:
+  Version bump
+
+*Try-Tiny-0.90.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +Try-Tiny-0.90.0.ebuild:
+  Change version scheme
+
+  13 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> Try-Tiny-0.90.ebuild:
+  ppc stable wrt #343479
 
   07 Jul 2011; Alexis Ballier <aballier@gentoo.org> Try-Tiny-0.90.ebuild:
   keyword ~x86-fbsd, bug #346449
@@ -77,4 +136,3 @@
   17 Sep 2009; Torsten Veller <tove@gentoo.org> +Try-Tiny-0.02.ebuild,
   +metadata.xml:
   Initial commit
-

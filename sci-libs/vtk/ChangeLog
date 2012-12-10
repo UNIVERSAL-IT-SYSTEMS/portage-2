@@ -1,6 +1,60 @@
 # ChangeLog for sci-libs/vtk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/vtk/ChangeLog,v 1.86 2011/07/20 17:01:36 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/vtk/ChangeLog,v 1.100 2012/12/06 19:36:02 bicatali Exp $
+
+  06 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> vtk-5.10.0.ebuild:
+  Keyword amd64-linux and x86-linux
+
+  04 Sep 2012; Justin Lecher <jlec@gentoo.org> -vtk-5.6.1.ebuild,
+  -vtk-5.8.0.ebuild:
+  Drop old
+
+*vtk-5.10.0 (07 Jun 2012)
+
+  07 Jun 2012; Justin Lecher <jlec@gentoo.org> files/vtk-5.8.0-boost.patch,
+  +vtk-5.10.0.ebuild, metadata.xml:
+  Version Bump, #420103; Update boost patch, #412945
+
+  20 Mar 2012; Jeroen Roovers <jer@gentoo.org> vtk-5.8.0.ebuild:
+  Sort IUSE entries. Remove IUSE=tk duplicate by zvasylvv (bug #408871).
+
+  27 Feb 2012; Justin Lecher <jlec@gentoo.org> vtk-5.8.0.ebuild:
+  Fix typo in Changelog and commit fix for #401839
+
+  13 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> vtk-5.8.0.ebuild:
+  Add missing dependency on media-video/nvidia-settings
+
+  10 Feb 2012; Justin Lecher <jlec@gentoo.org> vtk-5.8.0.ebuild,
+  +files/vtk-5.8.0-boost.patch:
+  Backport patch for boost-1.48, #400901
+
+  10 Feb 2012; Justin Lecher <jlec@gentoo.org> -vtk-5.4.2-r1.ebuild,
+  -vtk-5.6.0-r2.ebuild, -vtk-5.6.0-r3.ebuild, vtk-5.6.1.ebuild,
+  vtk-5.8.0.ebuild:
+  Use selected python ABI, #401839, patch by JTRiley; dropped old
+
+  29 Dec 2011; Justin Lecher <jlec@gentoo.org> vtk-5.8.0.ebuild:
+  Correct PYTHON_SETUP_ARGS to VTK_PYTHON_SETUP_ARGS, #396297
+
+  29 Dec 2011; Justin Lecher <jlec@gentoo.org> vtk-5.8.0.ebuild:
+  Add missing deps for hdf5 and PyQt4/sip support
+
+*vtk-5.8.0 (27 Dec 2011)
+
+  27 Dec 2011; Justin Lecher <jlec@gentoo.org> +vtk-5.8.0.ebuild,
+  +files/vtk-5.8.0-R.patch:
+  Version Bump, #396119
+
+  16 Nov 2011; Justin Lecher <jlec@gentoo.org> vtk-5.6.1.ebuild,
+  +files/vtk-5.6.1-libav-0.8.patch, metadata.xml:
+  Add debian patch for building against libav-0.8, #380681
+
+  13 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> vtk-5.6.1.ebuild,
+  +files/vtk-5.6.1-libpng15.patch:
+  Fix building with libpng15 wrt #378393 by Diego Elio Pettenò
+
+  04 Aug 2011; Fabian Groffen <grobian@gentoo.org> vtk-5.6.1.ebuild:
+  Allow to find Python from Prefix, bug #376917
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #105599
@@ -367,4 +421,3 @@
   10 May 2005; Patrick Dawson <pkdawson@gentoo.org>
   +files/vtk-4.2.6-gcc34.patch, +vtk-4.2.6.ebuild:
   Initial import. See bug #25335.
-

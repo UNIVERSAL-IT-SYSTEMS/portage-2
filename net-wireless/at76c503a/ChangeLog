@@ -1,6 +1,14 @@
 # ChangeLog for net-wireless/at76c503a
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/at76c503a/ChangeLog,v 1.18 2007/09/30 20:53:54 genstef Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/at76c503a/ChangeLog,v 1.20 2012/11/18 11:03:02 pacho Exp $
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> -at76c503a-0.14_beta1.ebuild,
+  metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML, remove old.
+
+  23 Apr 2012; Michał Górny <mgorny@gentoo.org> at76c503a-0.14_beta1.ebuild,
+  at76c503a-0.16.ebuild:
+  Use mirror:// in SRC_URI.
 
 *at76c503a-0.16 (30 Sep 2007)
 
@@ -102,4 +110,3 @@
   29 Jan 2005; Stefan Schweizer <genstef@gentoo.org> +metadata.xml,
   +at76c503a-0.12_beta19.ebuild:
   New ebuild thanks to Walter White <walterjwhite@hotmail.com> in bug 78271
-

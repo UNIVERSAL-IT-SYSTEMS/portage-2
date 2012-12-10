@@ -1,6 +1,18 @@
 # ChangeLog for net-misc/blogtk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/blogtk/ChangeLog,v 1.22 2011/01/14 10:13:54 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/blogtk/ChangeLog,v 1.26 2012/06/08 12:56:10 pacho Exp $
+
+  08 Jun 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer from metadata as talked with him, bug #90641.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> blogtk-2.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  05 Feb 2012; Mike Gilbert <floppym@gentoo.org> blogtk-2.0.ebuild:
+  Inherit multilib.
+
+  24 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> blogtk-2.0.ebuild:
+  Depend on correct slot of pygobject.
 
   14 Jan 2011; Gilles Dartiguelongue <eva@gentoo.org> -blogtk-1.0.ebuild,
   -files/blogtk-1.0-destdir.patch, -blogtk-1.1.ebuild,

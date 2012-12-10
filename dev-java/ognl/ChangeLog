@@ -1,6 +1,16 @@
 # ChangeLog for dev-java/ognl
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/ognl/ChangeLog,v 1.8 2007/03/19 03:37:47 wltjr Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/ognl/ChangeLog,v 1.10 2012/12/02 08:33:38 ulm Exp $
+
+  02 Dec 2012; Ulrich Müller <ulm@gentoo.org> ognl-2.6.9-r1.ebuild,
+  ognl-2.6.9-r2.ebuild:
+  Update LICENSE, this is identical with the Apache-1.1 license, bug 444848.
+
+*ognl-2.6.9-r2 (27 Sep 2012)
+
+  27 Sep 2012; Ralph Sennhauser <sera@gentoo.org> +ognl-2.6.9-r2.ebuild:
+  Drop all unused deps including javacc. #315557
+  EAPI bump and cleanup.
 
   19 Mar 2007; William L. Thomson Jr. <wltjr@gentoo.org> -ognl-2.6.9.ebuild:
   Removed older version that dep'd on slot 3.1 of javassist.

@@ -1,6 +1,37 @@
 # ChangeLog for sci-biology/ncbi-tools++
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/ncbi-tools++/ChangeLog,v 1.20 2011/05/05 13:05:51 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/ncbi-tools++/ChangeLog,v 1.26 2012/11/05 11:22:49 jlec Exp $
+
+  05 Nov 2012; Justin Lecher <jlec@gentoo.org>
+  ncbi-tools++-0.2010.06.15-r1.ebuild:
+  Correct patch naming again
+
+  03 Nov 2012; Justin Lecher <jlec@gentoo.org>
+  ncbi-tools++-0.2010.06.15-r1.ebuild:
+  Correct for new version number
+
+*ncbi-tools++-0.2010.06.15-r1 (02 Nov 2012)
+
+  02 Nov 2012; Justin Lecher <jlec@gentoo.org>
+  +ncbi-tools++-0.2010.06.15-r1.ebuild, -ncbi-tools++-2010.06.15.ebuild:
+  Drop old, duplicate with lower version number for new versioning schema
+
+  03 Jun 2012; Justin Lecher <jlec@gentoo.org>
+  ncbi-tools++-2010.06.15-r1.ebuild,
+  +files/ncbi-tools++-2010.06.15-gcc47.patch:
+  Fix for gcc-4.7; add rpath on prefix
+
+  24 Nov 2011; Justin Lecher <jlec@gentoo.org>
+  ncbi-tools++-2010.06.15-r1.ebuild,
+  +files/ncbi-tools++-2010.06.15-glibc-214.patch:
+  Fix compilation against glbc-2.1.4 (changed declaration of type for
+  __malloc_initialize_hook from void to volatile
+
+  23 Sep 2011; Lars Wendler <polynomial-c@gentoo.org>
+  ncbi-tools++-2010.06.15-r1.ebuild,
+  +files/ncbi-tools++-2010.06.15-libpng15.patch:
+  non-maintainer commit: Added a patch to fix compilation with libpng15 (bug
+  #383721).
 
   05 May 2011; Justin Lecher <jlec@gentoo.org>
   ncbi-tools++-2010.06.15-r1.ebuild,

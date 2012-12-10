@@ -1,6 +1,25 @@
 # ChangeLog for dev-cpp/libfrontend-elements
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/libfrontend-elements/ChangeLog,v 1.1 2010/10/20 06:01:22 dev-zero Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/libfrontend-elements/ChangeLog,v 1.6 2012/11/30 15:09:28 ago Exp $
+
+  30 Nov 2012; <ago@gentoo.org> libfrontend-elements-1.1.4.ebuild:
+  Stable for ppc, wrt bug #442394
+
+  23 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
+  libfrontend-elements-1.1.4.ebuild:
+  Stable for x86, wrt bug #442394
+
+  23 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
+  libfrontend-elements-1.1.4.ebuild:
+  Stable for amd64, wrt bug #442394
+
+  17 Oct 2012; Markus Meier <maekke@gentoo.org>
+  libfrontend-elements-1.1.4.ebuild:
+  add ~arm, bug #430072
+
+  01 Jun 2012; Tiziano Müller <dev-zero@gentoo.org>
+  libfrontend-elements-1.1.4.ebuild:
+  Make sure we depend on patched libcult for gcc-4.7 compat.
 
 *libfrontend-elements-1.1.4 (20 Oct 2010)
 

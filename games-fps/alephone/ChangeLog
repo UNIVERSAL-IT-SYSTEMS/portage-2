@@ -1,6 +1,18 @@
 # ChangeLog for games-fps/alephone
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/alephone/ChangeLog,v 1.38 2011/01/20 23:34:46 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-fps/alephone/ChangeLog,v 1.41 2012/10/15 08:50:20 tupone Exp $
+
+  15 Oct 2012; Tupone Alfredo <tupone@gentoo.org> alephone-20100424.ebuild,
+  +files/alephone-20100424-gcc47.patch:
+  Fix build with gcc-4.7 Bug #423037 by Samuli Suominen
+  Moved to EAPI 4
+
+  23 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> alephone-20100424.ebuild:
+  Fix building with sys-devel/automake >= 1.12 wrt #422557
+
+  13 Sep 2011; Tupone Alfredo <tupone@gentoo.org> alephone-20100424.ebuild,
+  +files/alephone-20100424-png15.patch:
+  Build with media-libs/libpng-1.5 Bug #380765 by Diego Elio Pettenò
 
   20 Jan 2011; Tupone Alfredo <tupone@gentoo.org> alephone-20100424.ebuild,
   +files/alephone-20100424-boost_145.patch:

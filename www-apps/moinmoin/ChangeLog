@@ -1,6 +1,51 @@
 # ChangeLog for www-apps/moinmoin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/moinmoin/ChangeLog,v 1.72 2011/04/20 19:11:38 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apps/moinmoin/ChangeLog,v 1.85 2012/11/30 09:37:47 radhermit Exp $
+
+  30 Nov 2012; Tim Harder <radhermit@gentoo.org> -moinmoin-1.8.8.ebuild,
+  -moinmoin-1.9.4.ebuild, -files/reconfig-3, -files/postinstall-en.txt:
+  Remove old.
+
+  27 Sep 2012; Andreas Schuerch <nativemad@gentoo.org> moinmoin-1.9.5.ebuild:
+  x86 stable, see bug 433898
+
+  25 Sep 2012; Anthony G. Basile <blueness@gentoo.org> moinmoin-1.9.5.ebuild:
+  stable ppc, bug #433898
+
+  25 Sep 2012; Agostino Sarubbo <ago@gentoo.org> moinmoin-1.9.5.ebuild:
+  Stable for amd64, wrt bug #433898
+
+*moinmoin-1.9.5 (24 Sep 2012)
+
+  24 Sep 2012; Tim Harder <radhermit@gentoo.org> +moinmoin-1.9.5.ebuild:
+  Version bump.
+
+  22 Sep 2012; Anthony G. Basile <blueness@gentoo.org> moinmoin-1.9.4.ebuild:
+  keyword ~arm, bug #433978
+
+  22 Sep 2012; Anthony G. Basile <blueness@gentoo.org> moinmoin-1.9.4.ebuild:
+  keyword ~ppc, bug #433978
+
+  18 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  13 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> moinmoin-1.9.4.ebuild:
+  x86 stable wrt bug #339295
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> moinmoin-1.8.8.ebuild:
+  Drop sparc keywords
+
+  06 Sep 2012; Agostino Sarubbo <ago@gentoo.org> moinmoin-1.9.4.ebuild:
+  Stable for amd64, wrt bug #339295
+
+  05 Sep 2012; Mike Gilbert <floppym@gentoo.org> moinmoin-1.9.4.ebuild:
+  Require Python[xml]. Patch by Arfrever.
+
+*moinmoin-1.9.4 (05 Sep 2012)
+
+  05 Sep 2012; Tim Harder <radhermit@gentoo.org> +files/reconfig-1.9.4,
+  +moinmoin-1.9.4.ebuild, +files/postinstall-en-1.9.4.txt:
+  Version bump (bug #374389 by Robert Trace).
 
   20 Apr 2011; Tim Harder <radhermit@gentoo.org> moinmoin-1.8.8.ebuild:
   Restrict to at most dev-lang/python-2.6* since 2.7 won't work.

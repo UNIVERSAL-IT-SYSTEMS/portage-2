@@ -1,6 +1,25 @@
 # ChangeLog for net-misc/axel
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/axel/ChangeLog,v 1.59 2011/05/01 14:49:25 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/axel/ChangeLog,v 1.64 2012/07/29 21:21:27 ottxor Exp $
+
+  29 Jul 2012; Christoph Junghans <ottxor@gentoo.org> axel-2.4-r2.ebuild:
+  added ~x64-macos (bug #428542)
+
+  06 Jul 2012; Justin Lecher <jlec@gentoo.org> axel-2.4-r2.ebuild,
+  +files/axel-2.4-max-redir.patch:
+  Increase max redirections to 25, as this services like github need this
+
+*axel-2.4-r2 (06 Jul 2012)
+
+  06 Jul 2012; Justin Lecher <jlec@gentoo.org> +axel-2.4-r2.ebuild,
+  +files/axel-2.4-bffr-overflow.patch, +files/axel-2.4-buildsystem.patch:
+  Move to EAPI=4, fix buildsystem, #424822, fix potential buffer overflow
+
+  24 Nov 2011; Justin Lecher <jlec@gentoo.org> metadata.xml:
+  Take the package
+
+  24 Nov 2011; Pacho Ramos <pacho@gentoo.org> -axel-2.4.ebuild, metadata.xml:
+  Drop maintainer due retirement, bug #290906; drop old.
 
 *axel-2.4-r1 (01 May 2011)
 

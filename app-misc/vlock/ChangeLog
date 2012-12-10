@@ -1,6 +1,33 @@
 # ChangeLog for app-misc/vlock
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/vlock/ChangeLog,v 1.41 2011/01/05 16:54:09 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/vlock/ChangeLog,v 1.49 2012/06/01 02:05:04 zmedico Exp $
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> vlock-2.2.3.ebuild:
+  inherit user for enewgroup
+
+  04 Mar 2012; Justin Lecher <jlec@gentoo.org> -vlock-2.2.2-r2.ebuild:
+  Clean old
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> vlock-2.2.3.ebuild:
+  Marking vlock-2.2.3 ppc64 for bug 392351
+
+  11 Feb 2012; nixnut <nixnut@gentoo.org> vlock-2.2.3.ebuild:
+  ppc stable #392351
+
+  04 Dec 2011; Raúl Porcel <armin76@gentoo.org> vlock-2.2.3.ebuild:
+  alpha/ia64/sparc/x86 stable wrt #392351
+
+  02 Dec 2011; Jeroen Roovers <jer@gentoo.org> vlock-2.2.3.ebuild:
+  Stable for HPPA (bug #392351).
+
+  29 Nov 2011; Tony Vroon <chainsaw@gentoo.org> vlock-2.2.3.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #392351.
+
+*vlock-2.2.3 (18 Sep 2011)
+
+  18 Sep 2011; Tim Harder <radhermit@gentoo.org> +vlock-2.2.3.ebuild:
+  Version bump. Update to EAPI 4.
 
   05 Jan 2011; Justin Lecher <jlec@gentoo.org> vlock-2.2.2-r2.ebuild:
   Some Clean up

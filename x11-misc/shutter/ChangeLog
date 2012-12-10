@@ -1,6 +1,55 @@
 # ChangeLog for x11-misc/shutter
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/shutter/ChangeLog,v 1.23 2011/07/05 09:00:19 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/shutter/ChangeLog,v 1.34 2012/08/17 17:57:39 hwoarang Exp $
+
+*shutter-0.89.1 (17 Aug 2012)
+
+  17 Aug 2012; Markos Chandras <hwoarang@gentoo.org> +shutter-0.89.1.ebuild,
+  -shutter-0.88.3.ebuild, -shutter-0.89.ebuild:
+  Version bump
+
+*shutter-0.89 (03 Aug 2012)
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> +shutter-0.89.ebuild:
+  Version bump
+
+  21 May 2012; Markos Chandras <hwoarang@gentoo.org> shutter-0.88.3.ebuild:
+  Add missing dependency and execute bit for upload plugins. Bug #414889. Thanks
+  to antu456@googlemail.com
+
+*shutter-0.88.3 (04 May 2012)
+
+  04 May 2012; Markos Chandras <hwoarang@gentoo.org> +shutter-0.88.3.ebuild,
+  -shutter-0.87.2.ebuild, -shutter-0.87.3.ebuild, -shutter-0.88.2.ebuild,
+  -shutter-0.88.ebuild:
+  version bump and clean up. Bug #414283
+
+  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org> shutter-0.88.1.ebuild:
+  marked x86 per bug 404891
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> shutter-0.88.1.ebuild:
+  Stable for amd64, wrt bug #404891
+
+*shutter-0.88.2 (02 Mar 2012)
+
+  02 Mar 2012; Markos Chandras <hwoarang@gentoo.org> +shutter-0.88.2.ebuild:
+  version bump
+
+*shutter-0.88.1 (04 Dec 2011)
+
+  04 Dec 2011; Markos Chandras <hwoarang@gentoo.org> +shutter-0.88.1.ebuild:
+  Version bump
+
+*shutter-0.88 (26 Nov 2011)
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> +shutter-0.88.ebuild:
+  version bump
+
+  25 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> shutter-0.87.3.ebuild:
+  x86 stable wrt bug #387743
+
+  22 Oct 2011; Markos Chandras <hwoarang@gentoo.org> shutter-0.87.3.ebuild:
+  Stable on amd64 wrt bug #387743
 
 *shutter-0.87.3 (05 Jul 2011)
 
@@ -112,4 +161,3 @@
   +files/disable_goocanvas.patch, +files/disable_webphoto.patch,
   +metadata.xml:
   Initial commit of shutter screen capture program. Fixes bug 249058
-

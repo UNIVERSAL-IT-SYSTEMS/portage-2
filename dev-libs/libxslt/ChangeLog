@@ -1,6 +1,145 @@
 # ChangeLog for dev-libs/libxslt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxslt/ChangeLog,v 1.214 2011/03/18 17:30:53 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxslt/ChangeLog,v 1.246 2012/11/29 13:23:08 ssuominen Exp $
+
+  29 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/libxslt-1.1.23-parallel-install.patch, -libxslt-1.1.26-r3.ebuild,
+  -libxslt-1.1.26-r4.ebuild, -files/libxslt-1.1.26-generate-id-crash.patch,
+  -files/libxslt-1.1.26-id-generation.patch,
+  -files/libxslt-1.1.26-node-type-1.patch,
+  -files/libxslt-1.1.26-node-type-2.patch,
+  -files/libxslt-1.1.26-node-type-3.patch,
+  -files/libxslt-1.1.26-pattern-compile-crash.patch,
+  -files/libxslt-1.1.26-pattern-out-of-bounds-read.patch,
+  -files/libxslt-1.1.26-posix-comparison.patch,
+  -files/libxslt-1.1.26-undefined.patch:
+  old
+
+*libxslt-1.1.28 (29 Nov 2012)
+
+  29 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> +libxslt-1.1.28.ebuild:
+  Version bump wrt #445016 by Andrew Oakley
+
+  29 Sep 2012; Jeroen Roovers <jer@gentoo.org> libxslt-1.1.27.ebuild:
+  Stable for HPPA (bug #436284).
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org> libxslt-1.1.27.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #436284
+
+  28 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> libxslt-1.1.27.ebuild:
+  ppc/ppc64 stable wrt #436284
+
+  28 Sep 2012; Johannes Huber <johu@gentoo.org> libxslt-1.1.27.ebuild:
+  Stable for x86, wrt bug #436284
+
+  27 Sep 2012; Agostino Sarubbo <ago@gentoo.org> libxslt-1.1.27.ebuild:
+  Stable for amd64, wrt bug #436284
+
+  27 Sep 2012; Agostino Sarubbo <ago@gentoo.org> libxslt-1.1.27.ebuild:
+  mv python files only when python USE is active, drop --disable-dependency-
+  tracking enabled by EAPI4
+
+  23 Sep 2012; Raúl Porcel <armin76@gentoo.org> libxslt-1.1.26-r4.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #433603
+
+  22 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libxslt-1.1.27.ebuild, +files/libxslt-1.1.27-python-config.patch,
+  +files/libxslt-1.1.27-python-includes.patch:
+  Fix build failure with USE=python (bug #435900, thanks to Jouni Rinne, Rafał
+  Mużyło, Sander Sweers et al.)
+
+*libxslt-1.1.27 (22 Sep 2012)
+
+  22 Sep 2012; Pacho Ramos <pacho@gentoo.org> +libxslt-1.1.27.ebuild,
+  -libxslt-1.1.26-r2.ebuild:
+  Version bump (thanks to ssuominen for reporting), drop old.
+
+  16 Sep 2012; Andreas Schuerch <nativemad@gentoo.org> libxslt-1.1.26-r4.ebuild:
+  manifest forgotten...
+
+  16 Sep 2012; Andreas Schuerch <nativemad@gentoo.org>
+  libxslt-1.1.26-r4.ebuild:
+  x86 stable, see bug 433603
+
+  11 Sep 2012; Agostino Sarubbo <ago@gentoo.org> libxslt-1.1.26-r4.ebuild:
+  Stable for amd64, wrt bug #433603
+
+  10 Sep 2012; Jeroen Roovers <jer@gentoo.org> libxslt-1.1.26-r4.ebuild:
+  Stable for HPPA (bug #433603).
+
+  10 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -files/0002-Hardening-ofcodecheckingnodetypesinvariousentrypoint.patch:
+  Remove duplicate patch file.
+
+*libxslt-1.1.26-r4 (10 Sep 2012)
+
+  10 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/0002-Hardening-ofcodecheckingnodetypesinvariousentrypoint.patch,
+  +libxslt-1.1.26-r4.ebuild, +files/libxslt-1.1.26-generate-id-crash.patch,
+  +files/libxslt-1.1.26-node-type-1.patch,
+  +files/libxslt-1.1.26-node-type-2.patch,
+  +files/libxslt-1.1.26-node-type-3.patch,
+  +files/libxslt-1.1.26-pattern-compile-crash.patch,
+  +files/libxslt-1.1.26-posix-comparison.patch:
+  Ensure special treatment for namespace nodes (CVE-2012-2871) and fix
+  use-after-free errors (CVE-2012-2870); bug #433603, thanks to Paweł Hajdan,
+  Jr. Fix non-posix comparison in configure; bug #420335, thanks to Richard
+  Yao.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libxslt-1.1.26-r3.ebuild:
+  keyword ~amd64-fbsd
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> libxslt-1.1.26-r3.ebuild:
+  ppc64 stable wrt #402861
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> libxslt-1.1.26-r3.ebuild:
+  Marking libxslt-1.1.26-r3 ppc for bug 402861
+
+  11 Feb 2012; Raúl Porcel <armin76@gentoo.org> libxslt-1.1.26-r3.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #402861
+
+  10 Feb 2012; Jeff Horelick <jdhore@gentoo.org> libxslt-1.1.26-r3.ebuild:
+  x86 stable per security bug 402861
+
+  10 Feb 2012; Jeroen Roovers <jer@gentoo.org> libxslt-1.1.26-r3.ebuild:
+  Stable for HPPA (bug #402861).
+
+  10 Feb 2012; Agostino Sarubbo <ago@gentoo.org> libxslt-1.1.26-r3.ebuild:
+  Stable for AMD64, wrt security bug #402861
+
+*libxslt-1.1.26-r3 (09 Feb 2012)
+
+  09 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -libxslt-1.1.26.ebuild, -libxslt-1.1.26-r1.ebuild, +libxslt-1.1.26-r3.ebuild,
+  +files/libxslt-1.1.26-pattern-out-of-bounds-read.patch:
+  Fix out-of-bounds read in xsltCompilePatternInternal (bug #402861,
+  CVE-2011-3970, thanks to Agostino Sarubbo for reporting). Update to EAPI4.
+  Drop old.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> libxslt-1.1.26-r2.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> libxslt-1.1.26-r2.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  libxslt-1.1.26-r2.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> libxslt-1.1.26-r2.ebuild:
+  Stable for HPPA (bug #385699).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> libxslt-1.1.26-r2.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libxslt-1.1.26-r2.ebuild:
+  amd64 stable wrt #385699
+
+*libxslt-1.1.26-r2 (14 Aug 2011)
+
+  14 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +libxslt-1.1.26-r2.ebuild:
+  USE=static-libs support, bug 378253
 
   18 Mar 2011; Raúl Porcel <armin76@gentoo.org> libxslt-1.1.26-r1.ebuild:
   arm/ia64/s390/sh/sparc stable wrt #358615

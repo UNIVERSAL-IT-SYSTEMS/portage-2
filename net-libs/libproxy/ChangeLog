@@ -1,6 +1,125 @@
 # ChangeLog for net-libs/libproxy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libproxy/ChangeLog,v 1.67 2011/07/31 18:46:25 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libproxy/ChangeLog,v 1.97 2012/11/26 02:40:55 tetromino Exp $
+
+  26 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libproxy-0.4.10-r1.ebuild, +files/libproxy-0.4.10-cmake-2.8.10.patch:
+  Fix build failure with USE=mono and >=cmake-2.8.10 (bug #444204, thanks to
+  onip and Chris Reffett).
+
+  25 Nov 2012; Raúl Porcel <armin76@gentoo.org> libproxy-0.4.10-r1.ebuild:
+  ia64/sh/sparc stable wrt #442152
+
+  21 Nov 2012; Markus Meier <maekke@gentoo.org> libproxy-0.4.10-r1.ebuild:
+  arm stable, bug #439122
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> libproxy-0.4.10-r1.ebuild:
+  Stable for x86, wrt bug #439122
+
+  27 Oct 2012; Jeroen Roovers <jer@gentoo.org> libproxy-0.4.10-r1.ebuild:
+  Stable for HPPA (bug #439122).
+
+  27 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  libproxy-0.4.10-r1.ebuild:
+  stable ppc ppc64, bug #439122
+
+  27 Oct 2012; Tobias Klausmann <klausman@gentoo.org>
+  libproxy-0.4.10-r1.ebuild:
+  Stable on alpha, bug #438146
+
+  24 Oct 2012; Agostino Sarubbo <ago@gentoo.org> libproxy-0.4.10-r1.ebuild:
+  Stable for amd64, wrt bug #439122
+
+  21 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libproxy-0.4.10.ebuild, +libproxy-0.4.10-r1.ebuild:
+  Undo previous commit, re-add 0.4.10-r1: as pointed out by Chris Reffett,
+  adding the automoc dependency can change the set of installed files due to no
+  longer silently failing to build the kde plugin.
+
+  21 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libproxy-0.4.10.ebuild, -libproxy-0.4.10-r1.ebuild:
+  Add the automoc dependency to 0.4.10, make it conditional on USE=kde, remove
+  0.4.10-r1 ebuild since it differs from 0.4.10 only in the dependency list.
+
+*libproxy-0.4.10-r1 (21 Oct 2012)
+
+  21 Oct 2012; Chris Reffett <creffett@gentoo.org> +libproxy-0.4.10-r1.ebuild:
+  Add automoc to DEPEND per bug 438714
+
+  19 Oct 2012; Andreas Schuerch <nativemad@gentoo.org> libproxy-0.4.10.ebuild:
+  x86 stable, see bug 438146
+
+  18 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libproxy-0.4.10.ebuild, metadata.xml:
+  Turns out we shouldn't enable webkit by default, it creates a dependency
+  loop: libproxy[webkit] -> webkit-gtk -> libsoup -> glib-networking[libproxy]
+  -> libproxy.
+
+  17 Oct 2012; Markus Meier <maekke@gentoo.org> libproxy-0.4.10.ebuild:
+  arm stable, bug #438146
+
+  17 Oct 2012; Jeroen Roovers <jer@gentoo.org> libproxy-0.4.10.ebuild:
+  Stable for HPPA (bug #438146).
+
+  17 Oct 2012; Agostino Sarubbo <ago@gentoo.org> libproxy-0.4.10.ebuild:
+  Stable for amd64, wrt bug #438146
+
+  17 Oct 2012; Anthony G. Basile <blueness@gentoo.org> libproxy-0.4.10.ebuild:
+  stable ppc ppc64, bug #438146
+
+*libproxy-0.4.10 (16 Oct 2012)
+
+  16 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libproxy-0.4.6-r3.ebuild, libproxy-0.4.7.ebuild, +libproxy-0.4.10.ebuild,
+  +files/libproxy-0.4.10-disable-pac-test.patch,
+  +files/libproxy-0.4.10-mozjs185.pc.patch, metadata.xml:
+  Version bump; fixes buffer overflow (bug #438146, CVE-2012-4504, thanks to
+  Agostino Sarubbo). Re-add USE=webkit since it now works correctly (bug
+  #412573, thanks to Lucian Muresan) and it enable by default to provide PAC
+  and WPAD support. Alternatively, spidermonkey could be used for PAC instead
+  (but might lead to firefox crashes, see bug #373397). Update license.
+
+  26 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libproxy-0.4.7.ebuild, +files/libproxy-0.4.7-gcc-4.7.patch:
+  Fix building with gcc-4.7 (bug #412363, thanks to Alphat-PC, Philipp Richter
+  et al.)
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libproxy-0.4.6-r3.ebuild,
+  libproxy-0.4.7.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> libproxy-0.4.7.ebuild:
+  ppc64 stable wrt #394363
+
+  30 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> libproxy-0.4.7.ebuild:
+  Add note about bug 373397 so it doesn't get forgotten
+
+  10 Jan 2012; Brent Baude <ranger@gentoo.org> libproxy-0.4.7.ebuild:
+  Marking libproxy-0.4.7 ppc for bug 394363
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> libproxy-0.4.7.ebuild:
+  alpha/ia64/sh/sparc stable wrt #394363
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> libproxy-0.4.7.ebuild:
+  x86 stable, bug #394363
+
+  18 Dec 2011; Markus Meier <maekke@gentoo.org> libproxy-0.4.7.ebuild:
+  arm stable, bug #394363
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> libproxy-0.4.7.ebuild:
+  Stable for AMD64, wrt bug #394363
+
+  12 Dec 2011; Jeroen Roovers <jer@gentoo.org> libproxy-0.4.7.ebuild:
+  Stable for HPPA (bug #394363).
+
+*libproxy-0.4.7 (18 Oct 2011)
+
+  18 Oct 2011; Pacho Ramos <pacho@gentoo.org> +libproxy-0.4.7.ebuild,
+  -libproxy-0.4.6.ebuild, metadata.xml:
+  Version bump, remove old.
+
+  06 Aug 2011; Zac Medico <zmedico@gentoo.org> libproxy-0.4.6-r3.ebuild:
+  Add ~x86-linux keyword.
 
   31 Jul 2011; Jeroen Roovers <jer@gentoo.org> libproxy-0.4.6-r3.ebuild:
   Stable for HPPA (bug #372813).
@@ -271,4 +390,3 @@
   +libproxy-0.2.3.ebuild:
   libproxy is a library for automatic proxy configuration management, initial
   ebuild by nirbheek, closes bug #244028.
-

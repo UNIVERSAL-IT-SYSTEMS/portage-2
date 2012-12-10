@@ -1,6 +1,80 @@
 # ChangeLog for app-misc/tomboy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tomboy/ChangeLog,v 1.122 2011/06/30 14:13:02 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tomboy/ChangeLog,v 1.139 2012/12/07 04:52:29 phajdan.jr Exp $
+
+  07 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> tomboy-1.10.1.ebuild:
+  x86 stable wrt bug #435202
+
+*tomboy-1.12.1 (20 Oct 2012)
+
+  20 Oct 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/tomboy-1.12.1-force-gmime26.patch, +tomboy-1.12.1.ebuild,
+  -tomboy-1.12.0.ebuild:
+  Version bump (forcing gmime-2.6 usage also), drop old.
+
+*tomboy-1.12.0 (29 Sep 2012)
+
+  29 Sep 2012; Pacho Ramos <pacho@gentoo.org> +tomboy-1.12.0.ebuild:
+  Version bump.
+
+  24 Sep 2012; Anthony G. Basile <blueness@gentoo.org> tomboy-1.10.1.ebuild:
+  stable ppc, bug #435202
+
+  22 Sep 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/tomboy-1.10.1-gmime26.patch, -files/tomboy-1.4.2-insecure-path.patch,
+  -tomboy-1.4.2-r1.ebuild, metadata.xml, tomboy-1.10.1.ebuild:
+  Fix build with gmime-2.6[mono], bug #435854 by Anthony Basile. Drop old.
+
+  16 Sep 2012; Agostino Sarubbo <ago@gentoo.org> tomboy-1.10.1.ebuild:
+  Stable for amd64, wrt bug #435202
+
+  18 Aug 2012; Michael Weber <xmw@gentoo.org> tomboy-1.8.3.ebuild:
+  ppc stable (bug 407701)
+
+  16 Jun 2012; Agostino Sarubbo <ago@gentoo.org> -tomboy-1.6.1.ebuild:
+  Remove old as requested by Pacho Ramos, <pacho@gentoo.org>
+
+  22 May 2012; Agostino Sarubbo <ago@gentoo.org> tomboy-1.8.3.ebuild:
+  Stable for amd64, wrt bug #407701
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> tomboy-1.4.2-r1.ebuild,
+  tomboy-1.6.1.ebuild, tomboy-1.8.3.ebuild, tomboy-1.10.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*tomboy-1.10.1 (19 Apr 2012)
+
+  19 Apr 2012; Pacho Ramos <pacho@gentoo.org> +tomboy-1.10.1.ebuild,
+  -tomboy-1.10.0.ebuild:
+  Version bump, remove old.
+
+  09 Apr 2012; Markus Meier <maekke@gentoo.org> tomboy-1.8.3.ebuild:
+  x86 stable, bug #407701
+
+*tomboy-1.10.0 (27 Mar 2012)
+
+  27 Mar 2012; Pacho Ramos <pacho@gentoo.org> +tomboy-1.10.0.ebuild:
+  Version bump.
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> tomboy-1.4.2-r1.ebuild,
+  tomboy-1.6.1.ebuild, tomboy-1.8.3.ebuild, metadata.xml:
+  Remove USE="applet" in order to lastrite deprecated
+  dev-dotnet/gnome-panel-sharp package wrt #398639
+
+*tomboy-1.8.3 (20 Nov 2011)
+
+  20 Nov 2011; Pacho Ramos <pacho@gentoo.org> +tomboy-1.8.3.ebuild,
+  -tomboy-1.8.0.ebuild:
+  Version bump, remove old.
+
+  27 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  tomboy-1.4.2-r1.ebuild, tomboy-1.6.1.ebuild, tomboy-1.8.0.ebuild:
+  Slot gtkspell dependency to 2 in preparation for gtkspell-3.
+
+*tomboy-1.8.0 (26 Sep 2011)
+
+  26 Sep 2011; Pacho Ramos <pacho@gentoo.org> -tomboy-1.6.0.ebuild,
+  +tomboy-1.8.0.ebuild:
+  Version bump, remove old.
 
   30 Jun 2011; Christoph Mende <angelos@gentoo.org> tomboy-1.6.1.ebuild:
   Stable on amd64 wrt bug #371163
@@ -548,4 +622,3 @@
   28 Oct 2004; Peter Johanson <latexer@gentoo.org> +metadata.xml,
   +tomboy-0.2.2.ebuild:
   Initial commit. Ebuild simultaneously by yours truly. See bug #64554
-

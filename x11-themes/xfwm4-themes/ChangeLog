@@ -1,6 +1,36 @@
 # ChangeLog for x11-themes/xfwm4-themes
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/xfwm4-themes/ChangeLog,v 1.20 2009/12/01 18:05:21 darkside Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/xfwm4-themes/ChangeLog,v 1.28 2012/11/28 12:37:20 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfwm4-themes-4.10.0.ebuild:
+  EAPI5
+
+  07 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfwm4-themes-4.6.0.ebuild:
+  old
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> xfwm4-themes-4.10.0.ebuild:
+  arm stable, bug #416233
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> xfwm4-themes-4.10.0.ebuild:
+  marked x86 per bug 416233
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfwm4-themes-4.10.0.ebuild:
+  ppc/ppc64 stable wrt #416233
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> xfwm4-themes-4.10.0.ebuild:
+  Stable for amd64, wrt bug #416233
+
+  17 May 2012; Jeroen Roovers <jer@gentoo.org> xfwm4-themes-4.10.0.ebuild:
+  Stable for HPPA (bug #416233).
+
+*xfwm4-themes-4.10.0 (29 Apr 2012)
+
+  29 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfwm4-themes-4.10.0.ebuild:
+  Version bump.
 
   01 Dec 2009; Jeremy Olexa <darkside@gentoo.org> xfwm4-themes-4.6.0.ebuild:
   Add Prefix keywords, as tested in the prefix overlay

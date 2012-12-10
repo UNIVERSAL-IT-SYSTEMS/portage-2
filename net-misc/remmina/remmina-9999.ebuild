@@ -1,60 +1,70 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/remmina/remmina-9999.ebuild,v 1.1 2011/06/24 14:41:36 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/remmina/remmina-9999.ebuild,v 1.26 2012/11/22 03:45:43 floppym Exp $
 
-EAPI=2
-EGIT_REPO_URI="git://remmina.git.sourceforge.net/gitroot/remmina/remmina"
-EGIT_PROJECT="remmina"
-EGIT_SOURCEDIR="${WORKDIR}"
+EAPI="4"
 
-inherit autotools git-2 eutils gnome2-utils
+inherit gnome2-utils cmake-utils
+
+if [[ ${PV} != 9999 ]]; then
+	SRC_URI="mirror://github/FreeRDP/Remmina/${P}.tar.gz
+		mirror://gentoo/${P}.tar.gz
+		http://dev.gentoo.org/~floppym/distfiles/${P}.tar.gz"
+	KEYWORDS="~amd64 ~x86"
+else
+	inherit git-2
+	SRC_URI=""
+	EGIT_REPO_URI="git://github.com/FreeRDP/Remmina.git
+		https://github.com/FreeRDP/Remmina.git"
+	KEYWORDS=""
+fi
 
 DESCRIPTION="A GTK+ RDP, VNC, XDMCP and SSH client"
 HOMEPAGE="http://remmina.sourceforge.net/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
-IUSE="avahi crypt debug nls ssh unique vte"
+IUSE="ayatana avahi crypt debug freerdp gnome-keyring nls ssh telepathy vte"
 
-RDEPEND="x11-libs/gtk+:2
-	avahi? ( net-dns/avahi )
+RDEPEND="
+	x11-libs/gtk+:3
+	>=net-libs/libvncserver-0.9.8.2
+	x11-libs/libxkbfile
+	avahi? ( net-dns/avahi[gtk3] )
+	ayatana? ( dev-libs/libappindicator )
 	crypt? ( dev-libs/libgcrypt )
-	nls? ( virtual/libintl )
+	freerdp? ( >=net-misc/freerdp-1.1.0_pre20121004 )
+	gnome-keyring? ( gnome-base/libgnome-keyring )
 	ssh? ( net-libs/libssh[sftp] )
-	unique? ( dev-libs/libunique:1 )
-	vte? ( x11-libs/vte:0 )"
+	telepathy? ( net-libs/telepathy-glib )
+	vte? ( x11-libs/vte:2.90 )
+"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	dev-util/pkgconfig
-	nls? ( sys-devel/gettext )"
+	virtual/pkgconfig
+	nls? ( sys-devel/gettext )
+"
+RDEPEND+="
+	!net-misc/remmina-plugins
+"
 
-S="${WORKDIR}/${PN}"
-
-src_prepare() {
-	intltoolize --force --copy --automake
-	eautoreconf
-}
+DOCS=( README )
 
 src_configure() {
-	if use ssh && ! use vte; then
-		ewarn "Enabling ssh without vte only provides sftp support."
-	fi
-
-	econf \
-		--disable-dependency-tracking \
-		$(use_enable avahi) \
-		$(use_enable crypt gcrypt) \
-		$(use_enable debug) \
-		$(use_enable nls) \
-		$(use_enable ssh) \
-		$(use_enable unique) \
-		$(use_enable vte)
-}
-
-src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog README || die "dodoc failed"
+	local mycmakeargs=(
+		$(cmake-utils_use_with ayatana APPINDICATOR)
+		$(cmake-utils_use_with avahi AVAHI)
+		$(cmake-utils_use_with crypt GCRYPT)
+		$(cmake-utils_use_with freerdp FREERDP)
+		$(cmake-utils_use_with gnome-keyring GNOMEKEYRING)
+		$(cmake-utils_use_with nls GETTEXT)
+		$(cmake-utils_use_with ssh LIBSSH)
+		$(cmake-utils_use_with telepathy TELEPATHY)
+		$(cmake-utils_use_with vte VTE)
+		-DGTK_VERSION=3
+		-DHAVE_PTHREAD=ON
+	)
+	cmake-utils_src_configure
 }
 
 pkg_preinst() {
@@ -62,8 +72,6 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	elog "You need to install net-misc/remmina-plugins which"
-	elog "provide all the necessary network protocols required by ${PN}"
 	gnome2_icon_cache_update
 }
 

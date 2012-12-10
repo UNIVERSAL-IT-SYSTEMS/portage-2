@@ -1,6 +1,44 @@
 # ChangeLog for media-sound/denemo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/denemo/ChangeLog,v 1.32 2011/05/05 17:54:55 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/denemo/ChangeLog,v 1.40 2012/09/29 05:07:14 radhermit Exp $
+
+  29 Sep 2012; Tim Harder <radhermit@gentoo.org> denemo-0.9.6.ebuild,
+  +files/denemo-0.9.6-jack.patch:
+  Add missing header files to fix build with jack enabled (bug #436376 by
+  Dominique Michel).
+
+*denemo-0.9.6 (22 Sep 2012)
+
+  22 Sep 2012; Tim Harder <radhermit@gentoo.org> +denemo-0.9.6.ebuild,
+  +files/denemo-0.9.6-alsa.patch, +files/denemo-0.9.6-desktop.patch,
+  +files/denemo-0.9.6-implicit-declarations.patch:
+  Version bump.
+
+*denemo-0.9.4 (11 Jul 2012)
+
+  11 Jul 2012; Tim Harder <radhermit@gentoo.org> +denemo-0.9.4.ebuild,
+  metadata.xml:
+  Version bump. Build for gtk3 and add alsa and portmidi use flags.
+
+  15 May 2012; Samuli Suominen <ssuominen@gentoo.org> denemo-0.9.2.ebuild,
+  +files/denemo-0.9.2-glib-2.31.patch:
+  Fix building with dev-libs/glib >= 2.31 by "jesterchen" from Gentoo Forums.
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> denemo-0.9.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  13 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -denemo-0.8.16.ebuild,
+  -denemo-0.8.2.ebuild, -denemo-0.9.0.ebuild:
+  old
+
+  08 Oct 2011; Raúl Porcel <armin76@gentoo.org> denemo-0.8.2.ebuild,
+  denemo-0.8.16.ebuild, denemo-0.9.0.ebuild:
+  Drop sparc keywords
+
+*denemo-0.9.2 (01 Oct 2011)
+
+  01 Oct 2011; Tim Harder <radhermit@gentoo.org> +denemo-0.9.2.ebuild:
+  Version bump.
 
 *denemo-0.9.0 (05 May 2011)
 

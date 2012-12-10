@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout-prefix/baselayout-prefix-1.12.14.ebuild,v 1.5 2011/06/14 17:08:29 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout-prefix/baselayout-prefix-1.12.14.ebuild,v 1.9 2012/05/24 04:14:39 vapier Exp $
 
 EAPI=3
 
-inherit eutils toolchain-funcs multilib prefix flag-o-matic autotools
+inherit eutils toolchain-funcs multilib prefix flag-o-matic user
 
 # last part in e.g. 1.12.14.1704
 PVER=1709
@@ -52,6 +52,9 @@ src_prepare() {
 		sbin/rc-services.sh
 	# add the host OS MANPATH
 	echo 'MANPATH="/usr/share/man"' > etc/env.d/99basic || die "can't make file"
+
+	# avoid a re-automake run
+	touch -r gnulib/configure.ac gnulib/Makefile.in gnulib/aclocal.m4 || die
 }
 
 src_configure() {
@@ -65,8 +68,8 @@ src_compile() {
 	emake || die "Cannot build gnulib"
 	popd > /dev/null
 
-	# use gnulib
-	append-flags -I../gnulib -I../gnulib/gllib
+	# use gnulib (buildsystem doesn't respect cppflags)
+	append-cflags -I../gnulib -I../gnulib/gllib
 	append-ldflags -L../gnulib/gllib
 	append-libs gnu
 

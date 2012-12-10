@@ -1,6 +1,43 @@
 # ChangeLog for dev-python/twisted
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/twisted/ChangeLog,v 1.149 2011/07/17 10:57:03 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/twisted/ChangeLog,v 1.158 2012/10/08 13:49:11 marienz Exp $
+
+  08 Oct 2012; Marien Zwart <marienz@gentoo.org> twisted-12.2.0.ebuild:
+  Tighten python version dependency (spotted by Arfrever).
+
+  05 Oct 2012; Marien Zwart <marienz@gentoo.org> twisted-10.2.0.ebuild,
+  twisted-11.0.0.ebuild:
+  Restrict pypy in twisted < 11.1.0 (bug #420653).
+
+*twisted-12.2.0 (27 Sep 2012)
+
+  27 Sep 2012; Marien Zwart <marienz@gentoo.org>
+  +files/twisted-12.1.0-remove-tests-conch-dependency.patch,
+  +twisted-12.2.0.ebuild:
+  Bump to 12.2.0 (bug #423777) with some test-related ebuild improvements.
+
+  08 May 2012; Alexis Ballier <aballier@gentoo.org> twisted-12.0.0.ebuild:
+  keyword ~amd64-fbsd
+
+  13 Apr 2012; Marien Zwart <marienz@gentoo.org>
+  +files/twisted-12.0.0-fix-test-timeFormatting.patch, twisted-12.0.0.ebuild:
+  Fix a test that fails in some timezones (bug #409329).
+
+*twisted-12.0.0 (22 Mar 2012)
+
+  22 Mar 2012; Patrick Lauer <patrick@gentoo.org> +twisted-12.0.0.ebuild:
+  Bump
+
+  29 Dec 2011; Mike Gilbert <floppym@gentoo.org> twisted-11.1.0.ebuild:
+  Fix line wrapping.
+
+  29 Dec 2011; Mike Gilbert <floppym@gentoo.org> twisted-11.1.0.ebuild:
+  Call python_get_implementation_and_version from src_test.
+
+*twisted-11.1.0 (27 Dec 2011)
+
+  27 Dec 2011; Mike Gilbert <floppym@gentoo.org> +twisted-11.1.0.ebuild:
+  Version bump for bug 395825 by Ian Delaney. Bits and pieces by Arfrever.
 
   17 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> twisted-11.0.0.ebuild:
   ppc64 stable wrt #366131
@@ -649,4 +686,3 @@
 
 
   Ebuild submitted by Gontran Zepeda <gontran@gontran.net>.
-

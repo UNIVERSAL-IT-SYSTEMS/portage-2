@@ -1,6 +1,46 @@
 # ChangeLog for dev-java/junit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/junit/ChangeLog,v 1.62 2011/05/03 18:27:50 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/junit/ChangeLog,v 1.73 2012/05/12 03:14:17 aballier Exp $
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> junit-3.8.2-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  23 Apr 2012; Michał Górny <mgorny@gentoo.org> junit-4.8.2-r1.ebuild,
+  junit-4.10.ebuild:
+  Use mirror://github.
+
+  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> junit-3.8.2-r1.ebuild,
+  junit-4.8.2-r1.ebuild:
+  Add back ia64 love #349020 by Dennis Schridde.
+
+  09 Mar 2012; Brent Baude <ranger@gentoo.org> junit-4.8.2-r1.ebuild:
+  Marking junit-4.8.2-r1 ppc64 for bug 403161
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> junit-4.8.2-r1.ebuild:
+  Marking junit-4.8.2-r1 ppc for bug 403161
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> junit-4.8.2-r1.ebuild:
+  x86 stable wrt bug #403161
+
+  13 Feb 2012; Agostino Sarubbo <ago@gentoo.org> junit-4.8.2-r1.ebuild:
+  Stable for amd64, wrt bug #403161
+
+  11 Feb 2012; Ralph Sennhauser <sera@gentoo.org> junit-4.8.2-r1.ebuild,
+  junit-4.10.ebuild:
+  Add missing die wrt #403161
+
+  01 Jan 2012; Ralph Sennhauser <sera@gentoo.org> junit-3.8.2-r1.ebuild,
+  junit-4.6.ebuild, junit-4.8.2-r1.ebuild, junit-4.10.ebuild:
+  Drop ia64 support #345433
+
+  30 Dec 2011; Miroslav Šulc <fordfrog@gentoo.org> junit-4.10.ebuild:
+  Fixed failing tests (bug #396367, thanks to Xake >xake@rymdraket.net> for the
+  fix)
+
+*junit-4.10 (25 Dec 2011)
+
+  25 Dec 2011; Miroslav Šulc <fordfrog@gentoo.org> +junit-4.10.ebuild:
+  Version bump
 
   03 May 2011; Fabian Groffen <grobian@gentoo.org> junit-4.8.2-r1.ebuild:
   Marked ~x64-freebsd

@@ -1,6 +1,80 @@
 # ChangeLog for sci-libs/arpack
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/arpack/ChangeLog,v 1.28 2011/06/21 15:42:33 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/arpack/ChangeLog,v 1.46 2012/10/19 10:39:22 jlec Exp $
+
+  19 Oct 2012; Justin Lecher <jlec@gentoo.org> arpack-0.96-r3.ebuild:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  19 Oct 2012; Justin Lecher <jlec@gentoo.org> +arpack-0.96-r3.ebuild,
+  -arpack-96-r3.ebuild:
+  drop old
+
+  18 Oct 2012; Justin Lecher <jlec@gentoo.org> -arpack-0.96-r3.ebuild,
+  arpack-3.0.2.ebuild, arpack-3.1.1.ebuild, arpack-3.1.2.ebuild,
+  arpack-96-r3.ebuild:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  15 Oct 2012;  <naota@gentoo.org> arpack-3.1.2.ebuild, arpack-96-r3.ebuild:
+  Add ~x86-fbsd
+
+*arpack-3.1.2 (05 Sep 2012)
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> +arpack-3.1.2.ebuild,
+  +files/arpack-3.1.2-test.patch:
+  Version bump
+
+*arpack-0.96-r3 (13 Jun 2012)
+
+  13 Jun 2012; Justin Lecher <jlec@gentoo.org> +arpack-0.96-r3.ebuild,
+  -arpack-96-r2.ebuild:
+  Change Version numbers from 96 to 0.96 in order to be able to follow upstream
+  new versioning scheme; Drop old unstable
+
+  30 May 2012; Justin Lecher <jlec@gentoo.org> arpack-3.1.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*arpack-3.1.1 (30 May 2012)
+
+  30 May 2012; Justin Lecher <jlec@gentoo.org> +arpack-3.1.1.ebuild:
+  Version BUmp
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> arpack-3.0.2.ebuild,
+  arpack-96-r2.ebuild, arpack-96-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> arpack-3.0.2.ebuild,
+  arpack-96-r2.ebuild, arpack-96-r3.ebuild:
+  Drop sparc keywords
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> arpack-96-r3.ebuild:
+  Marking arpack-96-r3 ppc64 for bug 388475
+
+  29 Feb 2012; Brent Baude <ranger@gentoo.org> arpack-96-r3.ebuild:
+  Marking arpack-96-r3 ppc for bug 388475
+
+*arpack-3.0.2 (26 Jan 2012)
+
+  26 Jan 2012; Justin Lecher <jlec@gentoo.org> +arpack-3.0.2.ebuild,
+  metadata.xml:
+  version Bump and new upstream, bundles mostly all downstream patches, old
+  upstream is dead
+
+  23 Jan 2012; Tobias Klausmann <klausman@gentoo.org> arpack-96-r3.ebuild:
+  Stable on alpha, bug #388475
+
+  22 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> arpack-96-r3.ebuild:
+  x86 stable wrt bug #388475
+
+  19 Nov 2011; Markos Chandras <hwoarang@gentoo.org> arpack-96-r3.ebuild:
+  Stable on amd64 wrt bug #388475
+
+  18 Nov 2011; Jeroen Roovers <jer@gentoo.org> arpack-96-r3.ebuild:
+  Stable for HPPA (bug #388475).
+
+  25 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> arpack-96-r3.ebuild:
+  Remove all copies of bundled mpif.h
 
   21 Jun 2011; Justin Lecher <jlec@gentoo.org> arpack-96-r2.ebuild,
   arpack-96-r3.ebuild:
@@ -116,4 +190,3 @@
   +files/arpack-autotools.patch, +metadata.xml, +arpack-96.ebuild:
   Initial import, closing bug #69241. Thanks David Grant
   <david.grant@telus.net> for the initial ebuild.
-

@@ -1,6 +1,80 @@
 # ChangeLog for app-editors/gummi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/gummi/ChangeLog,v 1.24 2011/05/24 21:06:23 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/gummi/ChangeLog,v 1.43 2012/12/08 09:59:38 pinkbyte Exp $
+
+  08 Dec 2012; Sergey Popov <pinkbyte@gentoo.org> gummi-0.6.5.ebuild:
+  Stable on amd64, wrt bug #442434
+
+*gummi-0.6.5 (23 Oct 2012)
+
+  23 Oct 2012; Markos Chandras <hwoarang@gentoo.org> +gummi-0.6.5.ebuild:
+  Version bump. Bug #439300
+
+  18 Aug 2012; Johannes Huber <johu@gentoo.org>
+  -files/gummi-0.5.5-halt-on-error.patch, -gummi-0.5.8-r1.ebuild,
+  -gummi-0.6.3.ebuild:
+  Remove old.
+
+  18 Aug 2012; Johannes Huber <johu@gentoo.org> gummi-0.6.4.ebuild:
+  Stable for x86, wrt bug #428854
+
+  18 Aug 2012; Agostino Sarubbo <ago@gentoo.org> gummi-0.6.4.ebuild:
+  Stable for amd64, wrt bug #428854
+
+  18 Aug 2012; Agostino Sarubbo <ago@gentoo.org> -gummi-0.6.0.ebuild,
+  -gummi-0.6.1.ebuild, -gummi-0.6.2.ebuild:
+  Remove old
+
+*gummi-0.6.4 (25 Jun 2012)
+
+  25 Jun 2012; Markos Chandras <hwoarang@gentoo.org> +gummi-0.6.4.ebuild:
+  Version bump. Thanks to Alexander van der Mey <alexvandermey@gmail.com>
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> gummi-0.6.3.ebuild:
+  marked x86 per bug 413841
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gummi-0.6.3.ebuild:
+  Stable for amd64, wrt bug #413841
+
+*gummi-0.6.3 (28 Mar 2012)
+
+  28 Mar 2012; Markos Chandras <hwoarang@gentoo.org> +gummi-0.6.3.ebuild:
+  version bump
+
+*gummi-0.6.2 (18 Mar 2012)
+
+  18 Mar 2012; Markos Chandras <hwoarang@gentoo.org> +gummi-0.6.2.ebuild:
+  Version bump. Thanks to Alexander van der Mey <alexvandermey@gmail.com>
+
+  01 Mar 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  add proxy-maintainers as herd
+
+  21 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gummi-0.6.1.ebuild:
+  x86 stable wrt bug #397653
+
+  17 Jan 2012; Agostino Sarubbo <ago@gentoo.org> gummi-0.6.1.ebuild:
+  Stable for amd64, wrt bug #398605
+
+  04 Jan 2012; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  Fix crappy tag order.
+
+*gummi-0.6.1 (02 Dec 2011)
+
+  02 Dec 2011; Markos Chandras <hwoarang@gentoo.org> +gummi-0.6.1.ebuild:
+  version bump
+
+*gummi-0.6.0 (13 Nov 2011)
+
+  13 Nov 2011; Markos Chandras <hwoarang@gentoo.org> +gummi-0.6.0.ebuild,
+  -gummi-0.5.5-r1.ebuild, -gummi-0.5.5.ebuild:
+  Version bump thanks to Alexander van der Mey <alexvandermey@gmail.com>
+
+  27 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> gummi-0.5.5.ebuild,
+  gummi-0.5.5-r1.ebuild, gummi-0.5.8-r1.ebuild, gummi-9999.ebuild:
+  Slot gtkspell dependency to 2 in preparation for gtkspell-3.
+
+  15 Sep 2011; Markos Chandras <hwoarang@gentoo.org> gummi-9999.ebuild:
+  Update SVN uri
 
   24 May 2011; Markus Meier <maekke@gentoo.org> gummi-0.5.8-r1.ebuild:
   x86 stable, bug #366549
@@ -104,4 +178,3 @@
   +metadata.xml:
   Moved from sunrise overlay. Bug #282876. Thanks to Alexander van der Mey
   <alexvandermey@gmail.com> for the ebuild
-

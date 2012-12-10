@@ -1,6 +1,82 @@
 # ChangeLog for sys-devel/binutils-config
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils-config/ChangeLog,v 1.44 2011/07/10 23:39:04 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils-config/ChangeLog,v 1.63 2012/11/18 07:54:46 vapier Exp $
+
+  18 Nov 2012; Mike Frysinger <vapier@gentoo.org> files/binutils-config-3:
+  Add elfedit and ld.{bfd,gold} to uninstall list.
+
+  18 Aug 2012; Mike Frysinger <vapier@gentoo.org> files/binutils-config-3:
+  Fix relative ROOT handling #431104 by Greg Turner.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> binutils-config-3-r3.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #420355
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> binutils-config-3-r3.ebuild:
+  Marking binutils-config-3-r3 ppc for bug 420355
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> binutils-config-3-r3.ebuild:
+  Marking binutils-config-3-r3 ppc64 for bug 420355
+
+  17 Jun 2012; Markus Meier <maekke@gentoo.org> binutils-config-3-r3.ebuild:
+  arm stable, bug #420355
+
+  14 Jun 2012; Jeroen Roovers <jer@gentoo.org> binutils-config-3-r3.ebuild:
+  Stable for HPPA (bug #420355).
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> binutils-config-3-r3.ebuild:
+  Stable for amd64, wrt bug #420355
+
+  09 Jun 2012; Jeff Horelick <jdhore@gentoo.org> binutils-config-3-r3.ebuild:
+  marked x86 per bug 420355
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  binutils-config-3-r3.ebuild:
+  keyword ~amd64-fbsd
+
+*binutils-config-3-r3 (02 Mar 2012)
+
+  02 Mar 2012; Mike Frysinger <vapier@gentoo.org> files/binutils-config-3,
+  -binutils-config-3-r2.ebuild, +binutils-config-3-r3.ebuild:
+  Fix uninstall handling to work even after most files are removed.
+
+*binutils-config-3-r2 (01 Mar 2012)
+
+  01 Mar 2012; Mike Frysinger <vapier@gentoo.org> files/binutils-config-3,
+  -binutils-config-3-r1.ebuild, +binutils-config-3-r2.ebuild:
+  Drop old upgrade logic that is only there for systems 4.5+ years old as it is
+  causing issues with newer ones, and 4.5+ upgrade time is plenty #381633 by
+  Tim Harder.
+
+  05 Dec 2011; Mike Frysinger <vapier@gentoo.org> binutils-config-3-r1.ebuild:
+  Use a blocker dep to avoid pulling in packages we do not need.
+
+*binutils-config-3-r1 (29 Sep 2011)
+
+  29 Sep 2011; Mike Frysinger <vapier@gentoo.org> files/binutils-config-3,
+  -binutils-config-3.ebuild, +binutils-config-3-r1.ebuild:
+  Make linker switching more general, and add a `die` helper.
+
+  29 Aug 2011; Mike Frysinger <vapier@gentoo.org> files/binutils-config-3:
+  Make profile switching more atomic #380759.
+
+  23 Aug 2011; Mike Frysinger <vapier@gentoo.org> files/binutils-config-3:
+  Make sure all the profile specs still work after previous rework.
+
+  12 Aug 2011; Mike Frysinger <vapier@gentoo.org> files/binutils-config-3,
+  files/binutils-config.8:
+  Add support for profile selection based on the active version of a specified
+  target.
+
+  12 Aug 2011; Mike Frysinger <vapier@gentoo.org> files/binutils-config-3:
+  Also support linker switching for current profile, and add some helpful user
+  output so they can see what is going on.
+
+*binutils-config-3 (12 Aug 2011)
+
+  12 Aug 2011; Mike Frysinger <vapier@gentoo.org> +files/binutils-config-3,
+  +binutils-config-3.ebuild, files/binutils-config.8:
+  Add options to switch the linker on the fly between gold and bfd, and clean
+  up the tangled profile/target logic.
 
   10 Jul 2011; Mark Loeser <halcy0n@gentoo.org> binutils-config-2-r1.ebuild:
   Stable for ppc64; bug #361849

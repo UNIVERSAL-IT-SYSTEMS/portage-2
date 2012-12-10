@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/libav/libav-9999.ebuild,v 1.13 2011/07/21 21:38:10 mattst88 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/libav/libav-9999.ebuild,v 1.54 2012/10/23 17:36:10 lu_zero Exp $
 
 EAPI=4
 
@@ -17,73 +17,106 @@ HOMEPAGE="http://libav.org/"
 if [[ ${PV} == *9999 ]] ; then
 	SRC_URI=""
 elif [[ ${PV%_p*} != ${PV} ]] ; then # Gentoo snapshot
-	SRC_URI="mirror://gentoo/${P}.tar.xz"
+	SRC_URI="http://dev.gentoo.org/~lu_zero/libav/${P}.tar.xz"
 else # Official release
 	SRC_URI="http://${PN}.org/releases/${P}.tar.xz"
 fi
 
-LICENSE="LGPL-2 gpl? ( GPL-3 )"
+LICENSE="LGPL-2.1  gpl? ( GPL-3 )"
 SLOT="0"
 [[ ${PV} == *9999 ]] || KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64
 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos
 ~x64-solaris ~x86-solaris"
-IUSE="+3dnow +3dnowext aac alsa altivec amr bindist +bzip2 cpudetection custom-cflags debug dirac doc +encode faac frei0r +gpl gsm +hardcoded-tables ieee1394 jack jpeg2k +mmx +mmxext mp3 network oss pic qt-faststart rtmp schroedinger sdl speex +ssse3 static-libs test theora threads v4l v4l2 vaapi vdpau vorbis vpx X x264 xvid +zlib"
+IUSE="aac alsa amr bindist +bzip2 cdio cpudetection custom-cflags debug doc
+	+encode faac fdk frei0r +gpl gsm +hardcoded-tables ieee1394 jack jpeg2k mp3
+	network openssl oss pic pulseaudio rtmp schroedinger sdl speex ssl
+	static-libs test theora threads tools truetype v4l vaapi vdpau vorbis vpx X
+	x264 xvid +zlib"
 
-VIDEO_CARDS="nvidia"
-for x in ${VIDEO_CARDS}; do
-	IUSE="${IUSE} video_cards_${x}"
+# String for CPU features in the useflag[:configure_option] form
+# if :configure_option isn't set, it will use 'useflag' as configure option
+CPU_FEATURES="3dnow:amd3dnow 3dnowext:amd3dnowext altivec avx mmx mmxext neon ssse3 vis"
+for i in ${CPU_FEATURES} ; do
+	IUSE+=" ${i%:*}"
 done
+
+TOOLS="aviocat graph2dot ismindex pktdumper qt-faststart trasher"
 
 RDEPEND="
 	!media-video/ffmpeg
 	alsa? ( media-libs/alsa-lib )
 	amr? ( media-libs/opencore-amr )
 	bzip2? ( app-arch/bzip2 )
-	dirac? ( media-video/dirac )
+	cdio? ( dev-libs/libcdio )
 	encode? (
 		aac? ( media-libs/vo-aacenc )
 		amr? ( media-libs/vo-amrwbenc )
 		faac? ( media-libs/faac )
+		fdk? ( media-libs/fdk-aac )
 		mp3? ( >=media-sound/lame-3.98.3 )
-		theora? ( >=media-libs/libtheora-1.1.1[encode] media-libs/libogg )
+		theora? (
+			>=media-libs/libtheora-1.1.1[encode]
+			media-libs/libogg
+		)
 		vorbis? ( media-libs/libvorbis media-libs/libogg )
-		x264? ( >=media-libs/x264-0.0.20110426 )
+		x264? ( >=media-libs/x264-0.0.20111017 )
 		xvid? ( >=media-libs/xvid-1.1.0 )
 	)
 	frei0r? ( media-plugins/frei0r-plugins )
 	gsm? ( >=media-sound/gsm-1.0.12-r1 )
-	ieee1394? ( media-libs/libdc1394 sys-libs/libraw1394 )
+	ieee1394? (
+		media-libs/libdc1394
+		sys-libs/libraw1394
+	)
 	jack? ( media-sound/jack-audio-connection-kit )
 	jpeg2k? ( >=media-libs/openjpeg-1.3-r2 )
+	pulseaudio? ( media-sound/pulseaudio )
 	rtmp? ( >=media-video/rtmpdump-2.2f )
+	ssl? (
+		openssl? ( dev-libs/openssl )
+		!openssl? ( net-libs/gnutls )
+	)
 	sdl? ( >=media-libs/libsdl-1.2.13-r1[audio,video] )
 	schroedinger? ( media-libs/schroedinger )
 	speex? ( >=media-libs/speex-1.2_beta3 )
+	truetype? ( media-libs/freetype:2 )
 	vaapi? ( x11-libs/libva )
-	video_cards_nvidia? ( vdpau? ( x11-libs/libvdpau ) )
+	vdpau? ( x11-libs/libvdpau )
 	vpx? ( >=media-libs/libvpx-0.9.6 )
-	X? ( x11-libs/libX11 x11-libs/libXext )
+	X? (
+		x11-libs/libX11
+		x11-libs/libXext
+		x11-libs/libXfixes
+	)
 	zlib? ( sys-libs/zlib )
 "
 
 DEPEND="${RDEPEND}
 	>=sys-devel/make-3.81
-	dirac? ( dev-util/pkgconfig )
 	doc? ( app-text/texi2html )
+	ieee1394? ( virtual/pkgconfig )
 	mmx? ( dev-lang/yasm )
-	rtmp? ( dev-util/pkgconfig )
-	schroedinger? ( dev-util/pkgconfig )
-	test? ( net-misc/wget )
+	rtmp? ( virtual/pkgconfig )
+	schroedinger? ( virtual/pkgconfig )
+	ssl? ( virtual/pkgconfig )
+	test? ( sys-devel/bc )
+	truetype? ( virtual/pkgconfig )
 	v4l? ( sys-kernel/linux-headers )
-	v4l2? ( sys-kernel/linux-headers )
 "
 
 # faac can't be binary distributed
+# openssl support marked as nonfree
 # faac and aac are concurent implementations
-# amr and aac require gpl
-REQUIRED_USE="bindist? ( !faac )
-	faac? ( !aac ) aac? ( !faac )
-	amr? ( gpl ) aac? ( gpl )"
+# amr and aac require at least lgpl3
+# x264 requires gpl2
+REQUIRED_USE="bindist? ( !faac !openssl !fdk )
+	rtmp? ( network )
+	amr? ( gpl ) aac? ( gpl ) x264? ( gpl ) X? ( gpl ) cdio? ( gpl )
+	test? ( encode zlib )
+"
+
+# Test on live ebuild are not possible as they require trunk fate
+RESTRICT="test"
 
 src_prepare() {
 	# if we have snapshot then we need to hardcode the version
@@ -93,40 +126,45 @@ src_prepare() {
 }
 
 src_configure() {
-	local myconf="${EXTRA_FFMPEG_CONF}"
+	local myconf="${EXTRA_LIBAV_CONF}"
 	local uses i
 
-	myconf="
+	use zlib && TOOLS+=" cws2fws"
+
+	myconf+="
 		$(use_enable gpl)
 		$(use_enable gpl version3)
-		--enable-postproc
 		--enable-avfilter
 	"
 
 	# enabled by default
-	uses="debug doc network vaapi zlib"
+	uses="debug doc network zlib"
 	for i in ${uses}; do
 		use ${i} || myconf+=" --disable-${i}"
 	done
 	use bzip2 || myconf+=" --disable-bzlib"
-	use sdl || myconf+=" --disable-ffplay"
+	use sdl || myconf+=" --disable-avplay"
+
+	if use ssl; then
+		use openssl && myconf+=" --enable-openssl --enable-nonfree" \
+			|| myconf+=" --enable-gnutls"
+	fi
 
 	use custom-cflags && myconf+=" --disable-optimizations"
 	use cpudetection && myconf+=" --enable-runtime-cpudetect"
 
-	#for i in h264_vdpau mpeg1_vdpau mpeg_vdpau vc1_vdpau wmv3_vdpau; do
-	#	use video_cards_nvidia || myconf="${myconf} --disable-decoder=${i}"
-	#	use vdpau || myconf="${myconf} --disable-decoder=${i}"
-	#done
-	use video_cards_nvidia && use vdpau || myconf+=" --disable-vdpau"
+	use vdpau || myconf+=" --disable-vdpau"
+
+	use vaapi && myconf+=" --enable-vaapi"
 
 	# Encoders
 	if use encode; then
+		use faac && myconf+=" --enable-nonfree"
+		use fdk && myconf+=" --enable-nonfree --enable-libfdk-aac"
 		use mp3 && myconf+=" --enable-libmp3lame"
 		use amr && myconf+=" --enable-libvo-amrwbenc"
-		use faac && myconf+=" --enable-libfaac --enable-nonfree"
 		use aac && myconf+=" --enable-libvo-aacenc"
-		uses="theora vorbis x264 xvid"
+		uses="faac theora vorbis x264 xvid"
 		for i in ${uses}; do
 			use ${i} && myconf+=" --enable-lib${i}"
 		done
@@ -135,9 +173,15 @@ src_configure() {
 	fi
 
 	# libavdevice options
+	use cdio && myconf+=" --enable-libcdio"
 	use ieee1394 && myconf+=" --enable-libdc1394"
+	use pulseaudio && myconf+=" --enable-libpulse"
+
 	# Indevs
-	for i in v4l v4l2 alsa oss jack; do
+	# v4l1 is gone since linux-headers-2.6.38
+	myconf+=" --disable-indev=v4l"
+	use v4l || myconf+=" --disable-indev=v4l2"
+	for i in alsa oss jack; do
 		use ${i} || myconf+=" --disable-indev=${i}"
 	done
 	use X && myconf+=" --enable-x11grab"
@@ -147,30 +191,31 @@ src_configure() {
 	done
 	# libavfilter options
 	use frei0r && myconf+=" --enable-frei0r"
+	use truetype &&  myconf+=" --enable-libfreetype"
 
 	# Threads; we only support pthread for now but ffmpeg supports more
 	use threads && myconf+=" --enable-pthreads"
 
 	# Decoders
 	use amr && myconf+=" --enable-libopencore-amrwb --enable-libopencore-amrnb"
-	uses="gsm dirac rtmp schroedinger speex vpx"
+	uses="gsm rtmp schroedinger speex vpx"
 	for i in ${uses}; do
 		use ${i} && myconf+=" --enable-lib${i}"
 	done
 	use jpeg2k && myconf+=" --enable-libopenjpeg"
 
 	# CPU features
-	uses="mmx ssse3 altivec"
-	for i in ${uses}; do
-		use ${i} || myconf+=" --disable-${i}"
+	for i in ${CPU_FEATURES}; do
+		use ${i%:*} || myconf+=" --disable-${i#*:}"
 	done
-	use mmxext || myconf+=" --disable-mmx2"
-	use 3dnow || myconf+=" --disable-amd3dnow"
-	use 3dnowext || myconf+=" --disable-amd3dnowext"
+
+	# pass the right -mfpu as extra
+	use neon && myconf+=" --extra-cflags=-mfpu=neon"
+
 	# disable mmx accelerated code if PIC is required
 	# as the provided asm decidedly is not PIC for x86.
 	if use pic && use x86 ; then
-		myconf+=" --disable-mmx --disable-mmx2"
+		myconf+=" --disable-mmx --disable-mmxext"
 	fi
 
 	# Option to force building pic
@@ -182,8 +227,7 @@ src_configure() {
 	# If they contain an unknown CPU it will not hurt since ffmpeg's configure
 	# will just ignore it.
 	for i in $(get-flag march) $(get-flag mcpu) $(get-flag mtune) ; do
-		[ "${i}" = "native" ] && i="host" # bug #273421
-		[[ ${i} = *-sse3 ]] && i="${i%-sse3}" # bug 283968
+		[[ "${i}" == "native" ]] && i="host" # bug #273421
 		myconf+=" --cpu=${i}"
 		break
 	done
@@ -224,46 +268,63 @@ src_configure() {
 
 	cd "${S}"
 	./configure \
-		--prefix="$EPREFIX"/usr \
-		--libdir="$EPREFIX"/usr/$(get_libdir) \
-		--shlibdir="$EPREFIX"/usr/$(get_libdir) \
-		--mandir="$EPREFIX"/usr/share/man \
+		--prefix="${EPREFIX}"/usr \
+		--libdir="${EPREFIX}"/usr/$(get_libdir) \
+		--shlibdir="${EPREFIX}"/usr/$(get_libdir) \
+		--mandir="${EPREFIX}"/usr/share/man \
 		--enable-shared \
 		--cc="$(tc-getCC)" \
+		--ar="$(tc-getAR)" \
+		--optflags="${CFLAGS}" \
+		--extra-cflags="${CFLAGS}" \
 		$(use_enable static-libs static) \
 		${myconf} || die
+
+	MAKEOPTS+=" V=1"
 }
 
 src_compile() {
-	emake version.h
+	local i
+
 	emake
 
-	if use qt-faststart; then
+	if use tools; then
 		tc-export CC
-		emake -C tools qt-faststart
+
+		for i in ${TOOLS}; do
+			emake tools/${i}
+		done
 	fi
 }
 
 src_install() {
+	local i
+
 	emake DESTDIR="${D}" install install-man
 
 	dodoc Changelog README INSTALL
-	dodoc doc/*
+	dodoc doc/*.txt
+	use doc && dodoc doc/*.html
 
-	if use qt-faststart; then
-		dobin tools/qt-faststart
+	if use tools; then
+		for i in ${TOOLS}; do
+			dobin tools/${i}
+		done
 	fi
+
+	for i in $(usex sdl avplay "") $(usex network avserver "") avprobe; do
+		dosym  ${i} /usr/bin/${i/av/ff}
+	done
+}
+
+pkg_postinst() {
+	elog "Please note that the programs formerly known as ffplay, ffserver"
+	elog "and ffprobe are now called avplay, avserver and avprobe."
+	elog
+	elog "ffmpeg had been replaced by the feature incompatible avconv"
 }
 
 src_test() {
-	local i tests
-	if use encode; then
-		tests="codectest lavftest seektest"
-		for i in ${tests}; do
-			LD_LIBRARY_PATH="${S}/libavcore:${S}/libpostproc:${S}/libswscale:${S}/libavcodec:${S}/libavdevice:${S}/libavfilter:${S}/libavformat:${S}/libavutil" \
-				emake ${i}
-		done
-	else
-		ewarn "Tests fail without USE=encode, skipping"
-	fi
+	LD_LIBRARY_PATH="${S}/libavcore:${S}/libswscale:${S}/libavcodec:${S}/libavdevice:${S}/libavfilter:${S}/libavformat:${S}/libavutil" \
+		emake -j1 fate
 }

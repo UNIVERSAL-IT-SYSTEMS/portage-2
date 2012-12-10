@@ -1,8 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/tilda/tilda-0.9.6.ebuild,v 1.8 2011/03/23 06:21:38 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/tilda/tilda-0.9.6.ebuild,v 1.10 2012/07/21 13:40:06 pacho Exp $
 
-EAPI=2
+EAPI=4
+
 inherit eutils
 
 DESCRIPTION="A drop down terminal, similar to the consoles found in first person shooters"
@@ -15,17 +16,13 @@ KEYWORDS="amd64 ppc x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND="x11-libs/vte:0
-	>=dev-libs/glib-2.8.4
+	>=dev-libs/glib-2.8.4:2
 	dev-libs/confuse
 	gnome-base/libglade"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-0.9.6-gdk_resources.patch
-}
-
-src_install() {
-	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog README TODO
+	epatch "${FILESDIR}"/${PN}-0.9.6-glib-single-include.patch
 }

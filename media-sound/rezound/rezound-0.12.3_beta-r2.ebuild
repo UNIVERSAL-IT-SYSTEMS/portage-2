@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/rezound/rezound-0.12.3_beta-r2.ebuild,v 1.4 2010/08/20 22:38:07 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/rezound/rezound-0.12.3_beta-r2.ebuild,v 1.8 2012/07/25 10:58:41 aballier Exp $
 
-EAPI=2
+EAPI=4
 MY_P=${P/_/}
-PATCHLEVEL=5
+PATCHLEVEL=6
 
 inherit autotools eutils flag-o-matic
 
@@ -19,7 +19,7 @@ KEYWORDS="amd64 ~ppc -sparc x86"
 IUSE="16bittmp alsa flac jack nls oss portaudio soundtouch vorbis"
 
 RDEPEND="=sci-libs/fftw-2*
-	>=x11-libs/fox-1.6.19
+	>=x11-libs/fox-1.6.19:1.6
 	>=media-libs/audiofile-0.2.3
 	>=media-libs/ladspa-sdk-1.12
 	>=media-libs/ladspa-cmt-1.15
@@ -31,7 +31,7 @@ RDEPEND="=sci-libs/fftw-2*
 	vorbis? ( media-libs/libvorbis media-libs/libogg )"
 DEPEND="${RDEPEND}
 	sys-devel/bison
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/flex
 	dev-util/reswrap"
 
@@ -39,8 +39,6 @@ S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	EPATCH_SUFFIX="patch" epatch "${WORKDIR}/patches"
-	epatch "${FILESDIR}"/${P}-gcc44.patch \
-		"${FILESDIR}"/${P}-m4.patch
 	AT_M4DIR="config/m4" eautoreconf
 }
 
@@ -68,12 +66,11 @@ src_configure() {
 		$(use_enable soundtouch) \
 		${sampletype} \
 		--enable-ladspa \
-		--enable-largefile \
-		|| die "configure failed"
+		--enable-largefile
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	make DESTDIR="${D}" install
 
 	# remove wrong doc directory
 	rm -rf "${D}/usr/doc"

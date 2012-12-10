@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quake4-data/quake4-data-1.0.2147.12.ebuild,v 1.11 2010/07/14 18:07:21 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/quake4-data/quake4-data-1.0.2147.12.ebuild,v 1.13 2012/01/16 19:24:33 ulm Exp $
 
-inherit eutils games
+inherit eutils cdrom games
 
 DESCRIPTION="sequel to Quake 2, an id 3D first-person shooter"
 HOMEPAGE="http://www.quake4game.com/"
@@ -12,7 +12,6 @@ LICENSE="QUAKE4"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
 IUSE=""
-PROPERTIES="interactive"
 RESTRICT="strip"
 
 DEPEND="app-arch/bzip2
@@ -22,7 +21,6 @@ PDEPEND="games-fps/quake4-bin"
 
 S=${WORKDIR}
 
-GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/quake4
 Ddir=${D}/${dir}
 

@@ -1,17 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/default/bsd/fbsd/package.use.mask,v 1.12 2011/03/31 08:31:25 scarabeus Exp $
-
-# Jim Ramsay <lack@gentoo.org> (5 Nov 2008)
-# app-admin/gkrellm may pull in net-libs/libntlm, which is not keyworded
-app-admin/gkrellm ntlm
+# $Header: /var/cvsroot/gentoo-x86/profiles/default/bsd/fbsd/package.use.mask,v 1.33 2012/10/14 22:29:37 naota Exp $
 
 # As per UberLord's requests
 sys-apps/openrc pam
-
-# Doug Goldstein <cardoe@gentoo.org> (10 Sep 2007)
-# ConsoleKit now works with everything but the pam module
-sys-auth/consolekit pam
 
 # Jim Ramsay <lack@gentoo.org> (7 Sep 2007)
 # app-admin/gkrellm may pull in hddtemp, which is not yet available here
@@ -39,25 +31,12 @@ x11-misc/xscreensaver new-login
 # net-wireless/aircrack-ng - wireless capture tools not needed.
 net-wireless/aircrack-ng wifi
 
-# sane-backends not yet keyworded, xv doesn't build
-dev-python/imaging scanner X
-
-# Uses consolekit, which currently doesn't build
-gnome-base/gdm pam
-
-# Accessibility stuff uses festival, which doesn't build
-gnome-base/gnome accessibility
-
-# Test this later
-gnome-base/gnome ldap 
-
-# spell causes epiphany to segfault, so disable for the time being
-www-client/epiphany spell
-
 # Gilles Dartiguelongue <eva@gentoo.org> (22 Oct 2007)
 # GNU attr isn't supported
 dev-libs/glib xattr
 gnome-base/gnome-vfs acl
+# https://bugs.gentoo.org/show_bug.cgi?id=435474
+sys-devel/patch xattr
 
 # Joe Peterson <lavajoe@gentoo.org> (21 Nov 2007)
 # The following new swig USE flags are not supported (yet):
@@ -65,14 +44,13 @@ dev-lang/swig clisp
 dev-lang/swig chicken
 
 # Diego Pettenò <flameeyes@gentoo.org> (21 Feb 2008)
-# ConsoleKit's PAM module only works on Linux right now.
 # pam_cracklib is only provided by Linux-PAM which is not usable on
 # Gentoo/FreeBSD.
 # Javier Villavicencio <the_paya@gentoo.org> (31 Jul 2008)
 # pam_ssh deps on Linux-PAM.
 # Diego Pettenò <flameeyes@gentoo.org> (1 Aug 2008)
 # sha512 is only supported by Linux-PAM's pam_unix for now
-sys-auth/pambase consolekit cracklib ssh sha512
+sys-auth/pambase cracklib pam_ssh sha512
 
 # Alexis Ballier <aballier@gentoo.org> (7 Apr 2008)
 # bug #216855
@@ -86,6 +64,40 @@ dev-lang/swig octave
 gnome-base/nautilus tracker
 media-video/totem tracker
 
-# Alexis Ballier <aballier@gentoo.org> (15 May 2009)
-# Needs xulrunner 1.9
-net-libs/libproxy xulrunner
+# Naohiro Aota <naota@gentoo.org> (04 Aug 2011)
+# ads require krb5, which is maksed on FreeBSD
+# cluster require ctdb, which doesn't support FreeBSD
+net-fs/samba ads cluster
+
+# Naohiro Aota <naota@gentoo.org> (08 Nov 2011)
+# capi require Linux features
+# hardened require prelink which depends on glibc
+app-emulation/wine capi
+
+# Naohiro Aota <naota@gentoo.org> (24 Nov 2011)
+# Masked because kerberos is masked
+net-dns/bind gssapi
+
+# Naohiro Aota <naota@gentoo.org> (13 Dec 2011)
+# Masked because sun-j2me-bin does not support BSD
+dev-java/proguard j2me
+
+# Naohiro Aota <naota@gentoo.org> (20 Feb 2012)
+# Upstream does not support FreeBSD wifi nor crashreporter
+www-client/firefox wifi crashreporter
+
+# Naohiro Aota <naota@gentoo.org> (03 Oct 2012)
+# Mask gbm, udev is not supported on FreeBSD.
+media-libs/mesa gbm
+
+# Naohiro Aota <naota@gentoo.org> (06 Oct 2012)
+# Mask rpm, app-arch/rpm needs elfutils
+net-analyzer/net-snmp rpm
+
+# Naohiro Aota <naota@gentoo.org> (09 Oct 2012)
+# Mask dmpai, sys-apps/dmapi cannot build on BSD
+net-fs/samba dmapi
+
+# Naohiro Aota <naota@gentoo.org> (15 Oct 2012)
+# Mask numa on sys-apps/hwloc. numactl not available on FreeBSD
+sys-apps/hwloc numa

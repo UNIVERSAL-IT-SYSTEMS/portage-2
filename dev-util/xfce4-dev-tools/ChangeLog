@@ -1,6 +1,87 @@
 # ChangeLog for dev-util/xfce4-dev-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/xfce4-dev-tools/ChangeLog,v 1.44 2011/02/14 18:59:05 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/xfce4-dev-tools/ChangeLog,v 1.62 2012/11/28 12:32:48 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-dev-tools-4.10.0.ebuild:
+  EAPI5
+
+  23 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  xfce4-dev-tools-4.10.0.ebuild:
+  Keyword ~mips
+
+  02 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-dev-tools-4.9.1.ebuild, -xfce4-dev-tools-4.9.2.ebuild:
+  old
+
+  02 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-dev-tools-4.10.0.ebuild:
+  alpha/arm/ia64/sparc stable wrt #416233
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> xfce4-dev-tools-4.10.0.ebuild:
+  marked x86 per bug 416233
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-dev-tools-4.10.0.ebuild:
+  ppc/ppc64 stable wrt #416233
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> xfce4-dev-tools-4.10.0.ebuild:
+  Stable for amd64, wrt bug #416233
+
+  17 May 2012; Jeroen Roovers <jer@gentoo.org> xfce4-dev-tools-4.10.0.ebuild:
+  Stable for HPPA (bug #416233).
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> xfce4-dev-tools-4.9.1.ebuild,
+  xfce4-dev-tools-4.9.2.ebuild, xfce4-dev-tools-4.10.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*xfce4-dev-tools-4.10.0 (29 Apr 2012)
+
+  29 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-dev-tools-4.10.0.ebuild:
+  Version bump.
+
+*xfce4-dev-tools-4.9.2 (14 Apr 2012)
+
+  14 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-dev-tools-4.9.2.ebuild:
+  Version bump to development release.
+
+  23 Mar 2012; Christoph Mende <angelos@gentoo.org>
+  xfce4-dev-tools-4.9.1.ebuild:
+  Add slot dep on glib
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-dev-tools-4.8.0.ebuild:
+  old
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-dev-tools-4.9.1.ebuild:
+  Stabilize for everyone.
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-dev-tools-4.9.0.ebuild, -xfce4-dev-tools-4.9.0-r1.ebuild,
+  -files/xfce4-dev-tools-4.9.0-update_libtool_syntax.patch:
+  old
+
+*xfce4-dev-tools-4.9.1 (16 Jan 2012)
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-dev-tools-4.9.1.ebuild:
+  Version bump to development release.
+
+*xfce4-dev-tools-4.9.0-r1 (18 Nov 2011)
+
+  18 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-dev-tools-4.9.0-r1.ebuild,
+  +files/xfce4-dev-tools-4.9.0-update_libtool_syntax.patch:
+  Upstream patch to support LT_PREREQ and LT_INIT libtool syntax.
+
+*xfce4-dev-tools-4.9.0 (15 Oct 2011)
+
+  15 Oct 2011; Christoph Mende <angelos@gentoo.org>
+  +xfce4-dev-tools-4.9.0.ebuild:
+  Version bump to development release.
 
   14 Feb 2011; Samuli Suominen <ssuominen@gentoo.org>
   xfce4-dev-tools-4.8.0.ebuild:

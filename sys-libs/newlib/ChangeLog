@@ -1,6 +1,23 @@
 # ChangeLog for sys-libs/newlib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/newlib/ChangeLog,v 1.15 2011/02/12 23:49:27 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/newlib/ChangeLog,v 1.19 2012/11/20 14:21:39 lu_zero Exp $
+
+  20 Nov 2012; Luca Barbato <lu_zero@gentoo.org> newlib-1.18.0.ebuild,
+  newlib-1.19.0.ebuild, newlib-1.20.0.ebuild:
+  Do not enable mathfp, it is considered unstable/broken code.
+
+  27 Apr 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/newlib-1.20.0-arm-targets.patch, newlib-1.20.0.ebuild:
+  Add fix from upstream for arm* targets #413547 by Christopher Friedt.
+
+  23 Mar 2012; Mike Frysinger <vapier@gentoo.org> newlib-1.20.0.ebuild,
+  +files/newlib-1.20.0-cris-install.patch:
+  Fix install for cris targets. Update to EAPI 4.
+
+*newlib-1.20.0 (14 Jan 2012)
+
+  14 Jan 2012; Mike Frysinger <vapier@gentoo.org> +newlib-1.20.0.ebuild:
+  Version bump.
 
 *newlib-1.19.0 (12 Feb 2011)
 

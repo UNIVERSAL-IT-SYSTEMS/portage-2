@@ -1,6 +1,34 @@
 # ChangeLog for dev-cpp/gflags
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/gflags/ChangeLog,v 1.12 2011/02/12 21:54:14 nelchael Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/gflags/ChangeLog,v 1.18 2012/11/19 18:09:19 bicatali Exp $
+
+  19 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> gflags-2.0.ebuild:
+  Keyworded ~amd64-linux and ~x86-linux
+
+  03 Mar 2012; Krzysztof Pawlik <nelchael@gentoo.org> -gflags-1.5.ebuild,
+  -gflags-1.6.ebuild:
+  Remove old versions.
+
+  16 Feb 2012; Mike Frysinger <vapier@gentoo.org> gflags-1.5.ebuild,
+  gflags-1.6.ebuild, gflags-1.7.ebuild, gflags-2.0.ebuild:
+  Touch up style -- no functional changes.
+
+*gflags-2.0 (16 Feb 2012)
+*gflags-1.7 (16 Feb 2012)
+
+  16 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org> +gflags-1.7.ebuild,
+  +gflags-2.0.ebuild:
+  Version bumps.
+
+  11 Nov 2011; Mike Frysinger <vapier@gentoo.org> gflags-1.5.ebuild,
+  gflags-1.6.ebuild:
+  Add arm love.
+
+*gflags-1.6 (01 Sep 2011)
+
+  01 Sep 2011; Krzysztof Pawlik <nelchael@gentoo.org> -gflags-1.4.ebuild,
+  +gflags-1.6.ebuild:
+  Version bump.
 
 *gflags-1.5 (12 Feb 2011)
 
@@ -55,4 +83,3 @@
   09 Mar 2008; Alec Warner <antarus@gentoo.org> +metadata.xml,
   +gflags-0.7.ebuild:
   -m Initial import of gflags
-

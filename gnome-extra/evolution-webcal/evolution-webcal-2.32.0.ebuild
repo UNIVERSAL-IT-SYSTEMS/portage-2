@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/evolution-webcal/evolution-webcal-2.32.0.ebuild,v 1.7 2011/03/23 08:02:32 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/evolution-webcal/evolution-webcal-2.32.0.ebuild,v 1.9 2012/08/28 15:47:58 tetromino Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
 
-inherit gnome2
+inherit eutils gnome2
 
 DESCRIPTION="A GNOME URL handler for web-published ical calendar files"
 HOMEPAGE="http://www.gnome.org/"
@@ -21,7 +21,12 @@ RDEPEND=">=gnome-base/gconf-2:2
 	>=x11-libs/gtk+-2.18:2
 	>=gnome-extra/evolution-data-server-1.10"
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.9
+	virtual/pkgconfig
 	>=dev-util/intltool-0.40"
 
 DOCS="AUTHORS ChangeLog NEWS TODO"
+
+src_prepare() {
+	epatch "${FILESDIR}/${P}-g_thread_init.patch" #433040
+	gnome2_src_prepare
+}

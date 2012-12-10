@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/arm-fdisk/arm-fdisk-3.0.6-r1.ebuild,v 1.2 2010/11/12 13:03:15 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/arm-fdisk/arm-fdisk-3.0.6-r1.ebuild,v 1.10 2012/10/05 19:33:35 ago Exp $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 DEB_VER=6.2
 DESCRIPTION="edit disk partitions on Acorn machines"
@@ -12,7 +12,7 @@ SRC_URI="ftp://ftp.arm.linux.org.uk/pub/armlinux/source/other/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~s390 ~sh ~sparc ~x86"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc s390 sh sparc x86"
 IUSE=""
 
 DEPEND=""
@@ -28,6 +28,12 @@ src_unpack() {
 		-e "/^CFLAGS/s:=:+=:" \
 		-e "/^LDFLAGS/s:=:+=:" \
 		-e '/^STRIP/s:strip:true:'
+}
+
+src_compile() {
+	emake \
+		CC="$(tc-getCC)" \
+		AR="$(tc-getAR)" || die
 }
 
 src_install() {

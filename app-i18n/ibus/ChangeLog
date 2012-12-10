@@ -1,6 +1,118 @@
 # ChangeLog for app-i18n/ibus
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus/ChangeLog,v 1.87 2011/05/28 01:55:14 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus/ChangeLog,v 1.114 2012/10/13 23:49:23 naota Exp $
+
+*ibus-1.4.99.20121006 (13 Oct 2012)
+
+  13 Oct 2012;  <naota@gentoo.org> +ibus-1.4.99.20121006.ebuild, metadata.xml:
+  Add unstable version of ibus: ibus-1.4.99.20121006, which is required by
+  gnome-3.6. #437794
+
+  08 Oct 2012;  <naota@gentoo.org> ibus-1.4.1.ebuild, ibus-1.4.2.ebuild:
+  Drop needless "use gconf ||" line.
+
+  08 Oct 2012;  <naota@gentoo.org> ibus-1.4.2.ebuild:
+  Fix epatch target file name. #433393
+
+*ibus-1.4.2 (29 Aug 2012)
+
+  29 Aug 2012; Naohiro Aota <naota@gentoo.org> +ibus-1.4.2.ebuild:
+  Version bump. #432580
+
+  18 Jun 2012; Ben de Groot <yngwin@gentoo.org> ibus-1.4.1.ebuild:
+  Enable X useflag by default to fix bug #421767
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> ibus-1.4.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  28 Mar 2012; Mike Frysinger <vapier@gentoo.org> ibus-1.4.1.ebuild:
+  Utilize REQUIRED_USE rather than confutils, and fix USE=-python build
+  failure.
+
+  28 Mar 2012; Mike Frysinger <vapier@gentoo.org> ibus-1.4.1.ebuild:
+  Add arm love.
+
+  26 Mar 2012; Naohiro Aota <naota@gentoo.org> +files/ibus-1.4.1-gir.patch,
+  ibus-1.4.1.ebuild:
+  Add patch not to loook for ibus-1.0.pc generating GIR. #409191
+
+  09 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> ibus-1.4.1.ebuild,
+  +files/ibus-gconf-2.m4.patch:
+  Enable introspection by default. Patch gconf-2.m4 to m4/ directory for
+  eautoreconf wrt #395239 by Mori Rámar
+
+  09 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -ibus-1.2.0.20100111.ebuild, -ibus-1.3.9.ebuild, -ibus-1.3.9-r2.ebuild,
+  -files/ibus-1.3.9-remove-unused-build.patch, -ibus-1.4.0-r1.ebuild,
+  -files/ibus-1.4.0-doc-typo.patch:
+  old
+
+  09 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> ibus-1.4.1.ebuild:
+  amd64/x86 stable wrt #405777
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> ibus-1.4.1.ebuild:
+  Marking ibus-1.4.1 ppc for bug 405777
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> ibus-1.4.1.ebuild:
+  Marking ibus-1.4.1 ppc64 for bug 405777
+
+  06 Mar 2012; Naohiro Aota <naota@gentoo.org> ibus-1.4.1.ebuild:
+  Add missing dependency dev-util/intltool
+
+  06 Mar 2012; Naohiro Aota <naota@gentoo.org> ibus-1.3.9-r2.ebuild:
+  Add missing dependency dev-util/intltool. Empty py-compile script #397497
+
+*ibus-1.4.1 (05 Feb 2012)
+
+  05 Feb 2012; MATSUU Takuto <matsuu@gentoo.org> -ibus-1.3.99.20110817.ebuild,
+  -ibus-1.4.0.ebuild, +ibus-1.4.1.ebuild, +files/ibus-1.4.1-no-gconf.patch:
+  Version bumped.
+
+  05 Feb 2012; Mike Gilbert <floppym@gentoo.org> ibus-1.2.0.20100111.ebuild,
+  ibus-1.3.9.ebuild:
+  Inherit multilib.
+
+  03 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> ibus-1.4.0-r1.ebuild:
+  Empty py-compile script instead of symlinking it wrt #397497 by "arnk"
+
+*ibus-1.4.0-r1 (23 Dec 2011)
+
+  23 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +ibus-1.4.0-r1.ebuild,
+  +files/ibus-1.4.0-machine-id-fallback.patch:
+  Support /etc/machine-id fallback wrt #390463 by "Alphat-PC"
+
+  22 Nov 2011; Naohiro Aota <naota@gentoo.org> ibus-1.2.0.20100111.ebuild,
+  ibus-1.3.9.ebuild, ibus-1.3.9-r2.ebuild, ibus-1.3.99.20110817.ebuild,
+  ibus-1.4.0.ebuild:
+  Add ~x86-fbsd. Bug #305025
+
+  23 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  ibus-1.2.0.20100111.ebuild:
+  Use correct slot of pygobject.
+
+  01 Oct 2011; Naohiro Aota <naota@gentoo.org> ibus-1.4.0.ebuild,
+  +files/ibus-1.4.0-doc-typo.patch:
+  Add tiny typo fix patch, which cause access violation with USE=doc Bug
+  #384507
+
+*ibus-1.4.0 (23 Sep 2011)
+
+  23 Sep 2011; MATSUU Takuto <matsuu@gentoo.org> -ibus-1.3.9-r1.ebuild,
+  +ibus-1.4.0.ebuild, metadata.xml:
+  Version bumped. Added dconf local USE flag. Removed old version.
+
+  05 Sep 2011; Naohiro Aota <naota@gentoo.org> -ibus-1.3.99.20110419-r1.ebuild,
+  -ibus-1.3.99.20110419-r2.ebuild:
+  Drop old version
+
+  05 Sep 2011; Naohiro Aota <naota@gentoo.org> ibus-1.3.9.ebuild,
+  ibus-1.3.9-r1.ebuild, ibus-1.3.9-r2.ebuild, ibus-1.3.99.20110817.ebuild:
+  Add X? ( sys-apps/dbus[X] ) dependency. Bug #380309.
+
+*ibus-1.3.99.20110817 (04 Sep 2011)
+
+  04 Sep 2011; Naohiro Aota <naota@gentoo.org> +ibus-1.3.99.20110817.ebuild:
+  Version bump.
 
 *ibus-1.3.99.20110419-r2 (28 May 2011)
 
@@ -489,4 +601,3 @@
   05 Sep 2008; MATSUU Takuto <matsuu@gentoo.org> +metadata.xml,
   +ibus-0.1.1.20080901.ebuild:
   Initial import. Submitted by Hong Hao, bug 236277.
-

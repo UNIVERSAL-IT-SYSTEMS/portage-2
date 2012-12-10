@@ -1,6 +1,113 @@
 # ChangeLog for dev-python/setuptools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/setuptools/ChangeLog,v 1.138 2011/06/24 19:14:42 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/setuptools/ChangeLog,v 1.165 2012/12/10 00:02:49 jer Exp $
+
+  10 Dec 2012; Jeroen Roovers <jer@gentoo.org> setuptools-0.6.30-r1.ebuild:
+  Stable for HPPA (bug #446496).
+
+  01 Dec 2012; Michał Górny <mgorny@gentoo.org> setuptools-0.6.30-r1.ebuild:
+  Force in-source build in the older version too.
+
+  01 Dec 2012; Michał Górny <mgorny@gentoo.org> setuptools-0.6.32.ebuild:
+  Force in-source build due to build system modifying sources.
+
+*setuptools-0.6.32 (30 Nov 2012)
+
+  30 Nov 2012; Tim Harder <radhermit@gentoo.org> +setuptools-0.6.32.ebuild:
+  Version bump.
+
+  20 Nov 2012; Michał Górny <mgorny@gentoo.org> setuptools-0.6.30-r1.ebuild:
+  Re-keyword ~hppa after adding necessary masks.
+
+*setuptools-0.6.30-r1 (05 Nov 2012)
+
+  05 Nov 2012; Michał Górny <mgorny@gentoo.org> +setuptools-0.6.30-r1.ebuild:
+  Migrate to distutils-r1. Fixes bug #441788.
+
+*setuptools-0.6.30 (22 Oct 2012)
+
+  22 Oct 2012; Tim Harder <radhermit@gentoo.org> +setuptools-0.6.30.ebuild:
+  Version bump.
+
+  05 Oct 2012; Dirkjan Ochtman <djc@gentoo.org>
+  -files/distribute-0.6.12-disable_versioned_easy_install.patch,
+  -files/distribute-0.6.12-fix_deprecation_warnings.patch,
+  -setuptools-0.6.14.ebuild, -setuptools-0.6.15.ebuild,
+  -setuptools-0.6.16.ebuild, -setuptools-0.6.19.ebuild,
+  -setuptools-0.6.24.ebuild, -setuptools-0.6.25.ebuild:
+  Remove old versions.
+
+*setuptools-0.6.28 (20 Sep 2012)
+
+  20 Sep 2012; Tim Harder <radhermit@gentoo.org> +setuptools-0.6.28.ebuild:
+  Version bump.
+
+  05 Aug 2012; Richard Yao <ryao@gentoo.org> setuptools-0.6.27.ebuild:
+  Keyword ~x64-freebsd
+
+*setuptools-0.6.27 (20 May 2012)
+
+  20 May 2012; Mike Gilbert <floppym@gentoo.org> +setuptools-0.6.27.ebuild:
+  Version bump for #414427 by Johan Bergström.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> setuptools-0.6.25.ebuild:
+  keyword ~amd64-fbsd
+
+*setuptools-0.6.25 (14 Mar 2012)
+
+  14 Mar 2012; Mike Gilbert <floppym@gentoo.org> +setuptools-0.6.25.ebuild:
+  Version bump for bug 408095. EAPI=4. Replace find | xargs with find -exec.
+
+  13 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> setuptools-0.6.21.ebuild:
+  ppc64 stable wrt #386061
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> setuptools-0.6.21.ebuild:
+  Marking setuptools-0.6.21 ppc for bug 386061
+
+*setuptools-0.6.24 (27 Dec 2011)
+
+  27 Dec 2011; Patrick Lauer <patrick@gentoo.org> +setuptools-0.6.24.ebuild:
+  Bump for #396123
+
+  16 Nov 2011; Markos Chandras <hwoarang@gentoo.org> setuptools-0.6.14.ebuild,
+  setuptools-0.6.15.ebuild, setuptools-0.6.16.ebuild, setuptools-0.6.19.ebuild,
+  setuptools-0.6.21.ebuild:
+  Update LICENSE. Patch by Arfrever.
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> setuptools-0.6.21.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #386061
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> setuptools-0.6.21.ebuild:
+  Stable for HPPA (bug #386061).
+
+  15 Oct 2011; Markus Meier <maekke@gentoo.org> setuptools-0.6.21.ebuild:
+  arm stable, bug #386061
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  setuptools-0.6.21.ebuild:
+  x86 stable wrt bug #386061
+
+  09 Oct 2011; Markos Chandras <hwoarang@gentoo.org> setuptools-0.6.21.ebuild:
+  Stable on amd64 wrt bug #386061
+
+  16 Sep 2011; Jeroen Roovers <jer@gentoo.org> setuptools-0.6.19.ebuild:
+  Stable for HPPA (bug #381129).
+
+  03 Sep 2011; Raúl Porcel <armin76@gentoo.org> setuptools-0.6.19.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc/x86 stable wrt #381129
+
+  31 Aug 2011; Tony Vroon <chainsaw@gentoo.org> setuptools-0.6.19.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella" Delaney in bug #381129 filed by Dirkjan "djc" Ochtman.
+
+*setuptools-0.6.21 (30 Aug 2011)
+
+  30 Aug 2011; Dirkjan Ochtman <djc@gentoo.org> +setuptools-0.6.21.ebuild:
+  Version bump setuptools.
+
+  19 Aug 2011; Markos Chandras <hwoarang@gentoo.org> setuptools-0.6.15.ebuild,
+  setuptools-0.6.16.ebuild:
+  Block new versions of Python. Patch by Arfrever.
 
   24 Jun 2011; Markos Chandras <hwoarang@gentoo.org> setuptools-0.6.19.ebuild:
   Add ~m68k keyword
@@ -580,4 +687,3 @@
   +setuptools-0.6_alpha5.ebuild:
   Initial commit. Thank you Geoffrey Clements <geoff@electron.me.uk> and
   Thomas Fullhart <kayos@genetikayos.com> for the ebuild. bug #108227
-

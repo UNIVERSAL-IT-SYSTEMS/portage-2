@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3-bin/quake3-bin-1.32c.ebuild,v 1.11 2010/03/09 12:36:34 abcd Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3-bin/quake3-bin-1.32c.ebuild,v 1.13 2012/02/05 06:15:23 vapier Exp $
 
-inherit eutils games
+inherit eutils unpacker games
 
 DESCRIPTION="3rd installment of the classic id 3D first-person shooter"
 HOMEPAGE="http://www.idsoftware.com/"
@@ -13,7 +13,6 @@ LICENSE="Q3AEULA"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
 IUSE="cdinstall dedicated opengl teamarena"
-PROPERTIES="interactive"
 RESTRICT="strip"
 
 UIDEPEND="virtual/opengl
@@ -42,7 +41,6 @@ RDEPEND="sys-libs/glibc
 
 S=${WORKDIR}
 
-GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/quake3
 Ddir=${D}/${dir}
 

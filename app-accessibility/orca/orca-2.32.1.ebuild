@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/orca/orca-2.32.1.ebuild,v 1.6 2011/03/22 20:03:52 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/orca/orca-2.32.1.ebuild,v 1.10 2012/05/03 01:48:59 jdhore Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -18,18 +18,18 @@ IUSE=""
 
 # liblouis is not in portage yet
 # it is used to provide contracted braille support
-RDEPEND=">=dev-libs/glib-2.10
-	>=gnome-extra/at-spi-1.32
+RDEPEND=">=dev-libs/glib-2.10:2
+	>=gnome-extra/at-spi-1.32:1
 	>=gnome-base/orbit-2
 	>=dev-python/pyorbit-2.24
 	>=gnome-base/libbonobo-2.24
 	>=dev-python/libbonobo-python-2.24
 
-	dev-python/pygobject
+	dev-python/pygobject:2
 	dev-python/pycairo
 	dev-python/pyxdg
 	>=dev-python/dbus-python-0.83
-	>=dev-python/pygtk-2.12
+	>=dev-python/pygtk-2.12:2
 
 	>=dev-python/libwnck-python-2.24
 	>=dev-python/gconf-python-2.24
@@ -40,7 +40,7 @@ RDEPEND=">=dev-libs/glib-2.10
 
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.40
-	>=dev-util/pkgconfig-0.9"
+	virtual/pkgconfig"
 
 pkg_setup() {
 	DOCS="AUTHORS ChangeLog MAINTAINERS NEWS README TODO"
@@ -51,8 +51,7 @@ src_prepare() {
 	gnome2_src_prepare
 
 	# disable pyc compiling
-	mv py-compile py-compile.orig
-	ln -s $(type -P true) py-compile
+	echo > py-compile
 }
 
 src_configure() {

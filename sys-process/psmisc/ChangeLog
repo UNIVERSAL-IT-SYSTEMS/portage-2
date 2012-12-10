@@ -1,6 +1,110 @@
 # ChangeLog for sys-process/psmisc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/psmisc/ChangeLog,v 1.114 2011/07/06 12:33:09 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-process/psmisc/ChangeLog,v 1.140 2012/10/09 04:30:31 vapier Exp $
+
+  09 Oct 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/psmisc-22.20-selinux.patch, psmisc-22.20.ebuild:
+  Add fix from upstream for building on selinux systems #437332 by Amadeusz
+  Sławiński.
+
+*psmisc-22.20 (03 Oct 2012)
+
+  03 Oct 2012; Tim Harder <radhermit@gentoo.org> +psmisc-22.20.ebuild:
+  Version bump.
+
+  31 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/psmisc-22.13-no-nls.patch, -psmisc-22.14.ebuild, -psmisc-22.18.ebuild,
+  -psmisc-22.19.ebuild:
+  old
+
+*psmisc-22.19-r1 (31 Aug 2012)
+
+  31 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> +psmisc-22.19-r1.ebuild:
+  Upstream patch for fuser to work with unix sockets wrt #398811. Thanks to
+  Piotr Karbowski and Mike Frysinger.
+
+  25 Aug 2012; Mike Frysinger <vapier@gentoo.org> psmisc-22.16.ebuild,
+  psmisc-22.18.ebuild, psmisc-22.19.ebuild:
+  Drop useless -vf args to mv #432632 by Joshua B. Kahlenberg.
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> psmisc-22.16.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #420047
+
+*psmisc-22.19 (30 Jun 2012)
+
+  30 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +psmisc-22.19.ebuild:
+  Version bump.
+
+  19 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -psmisc-22.15.ebuild,
+  -files/psmisc-22.15-COMM_LEN-to-18.patch, -psmisc-22.17.ebuild:
+  old
+
+*psmisc-22.18 (19 Jun 2012)
+
+  19 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +psmisc-22.18.ebuild:
+  Version bump.
+
+  19 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> psmisc-22.16.ebuild:
+  ppc64 stable wrt #420047
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> psmisc-22.16.ebuild:
+  Stable for amd64, wrt bug #420047
+
+  09 Jun 2012; Markus Meier <maekke@gentoo.org> psmisc-22.16.ebuild:
+  arm stable, bug #420047
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> psmisc-22.16.ebuild:
+  Marking psmisc-22.16 ppc for bug 420047
+
+  07 Jun 2012; Johannes Huber <johu@gentoo.org> psmisc-22.16.ebuild:
+  Stable for x86, wrt bug #420047
+
+  07 Jun 2012; Jeroen Roovers <jer@gentoo.org> psmisc-22.16.ebuild:
+  Stable for HPPA (bug #420047).
+
+*psmisc-22.17 (07 Jun 2012)
+
+  07 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +psmisc-22.17.ebuild:
+  Version bump.
+
+  17 May 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/psmisc-22.16-fuser-pic.patch, psmisc-22.16.ebuild:
+  Fix TEXTRELs when building fuser as a PIE #394443 by Attila Tóth.
+
+*psmisc-22.16 (12 Mar 2012)
+
+  12 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +psmisc-22.16.ebuild:
+  Version bump.
+
+  31 Jan 2012; Mike Frysinger <vapier@gentoo.org> psmisc-22.15.ebuild:
+  Drop autotool usage since we no longer patch autotool files.
+
+*psmisc-22.15 (28 Jan 2012)
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +psmisc-22.15.ebuild,
+  +files/psmisc-22.15-COMM_LEN-to-18.patch:
+  Version bump. Backport -COMM_LEN-to-18.patch from git to prevent pstree
+  crashing.
+
+  26 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/psmisc-22.5-no-nls.patch, -psmisc-22.12.ebuild,
+  -files/psmisc-22.12-peekfd.patch, -psmisc-22.13.ebuild:
+  old
+
+  26 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> psmisc-22.14.ebuild:
+  ppc64 stable wrt #392641
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> psmisc-22.14.ebuild:
+  Marking psmisc-22.14 ppc for bug 392641
+
+  04 Dec 2011; Raúl Porcel <armin76@gentoo.org> psmisc-22.14.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc/x86 stable wrt #392641
+
+  02 Dec 2011; Markos Chandras <hwoarang@gentoo.org> psmisc-22.14.ebuild:
+  Stable on amd64 wrt bug #392641
+
+  30 Nov 2011; Jeroen Roovers <jer@gentoo.org> psmisc-22.14.ebuild:
+  Stable for HPPA (bug #392641).
 
 *psmisc-22.14 (06 Jul 2011)
 

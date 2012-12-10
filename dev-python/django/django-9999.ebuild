@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/django/django-9999.ebuild,v 1.9 2011/02/09 18:16:28 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/django/django-9999.ebuild,v 1.15 2012/11/01 07:56:06 patrick Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
-inherit bash-completion distutils subversion webapp
+inherit bash-completion-r1 distutils subversion webapp
 
 DESCRIPTION="High-level Python web framework"
 HOMEPAGE="http://www.djangoproject.com/ http://pypi.python.org/pypi/Django"
@@ -30,12 +30,26 @@ S="${WORKDIR}"
 
 ESVN_REPO_URI="http://code.djangoproject.com/svn/django/trunk/"
 
-DOCS="docs/* AUTHORS"
 WEBAPP_MANUAL_SLOT="yes"
 
 pkg_setup() {
 	python_pkg_setup
 	webapp_pkg_setup
+}
+
+src_prepare() {
+	distutils_src_prepare
+
+	# Disable tests requiring network connection.
+	sed \
+		-e "s/test_correct_url_value_passes/_&/" \
+		-e "s/test_correct_url_with_redirect/_&/" \
+		-i tests/modeltests/validation/tests.py
+	sed \
+		-e "s/test_urlfield_3/_&/" \
+		-e "s/test_urlfield_4/_&/" \
+		-e "s/test_urlfield_10/_&/" \
+		-i tests/regressiontests/forms/tests/fields.py
 }
 
 src_compile() {
@@ -61,7 +75,7 @@ src_test() {
 src_install() {
 	distutils_src_install
 
-	dobashcompletion extras/django_bash_completion
+	newbashcomp extras/django_bash_completion ${PN} || die
 
 	if use doc; then
 		rm -fr docs/_build/html/_sources
@@ -69,8 +83,7 @@ src_install() {
 	fi
 
 	insinto "${MY_HTDOCSDIR#${EPREFIX}}"
-	doins -r django/contrib/admin/media/* || die "doins failed"
-
+	doins -r django/contrib/admin/static/admin/* || die "doins failed"
 	webapp_src_install
 }
 
@@ -79,7 +92,6 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	bash-completion_pkg_postinst
 	distutils_pkg_postinst
 
 	einfo "Now, Django has the best of both worlds with Gentoo,"

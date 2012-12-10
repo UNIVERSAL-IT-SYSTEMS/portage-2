@@ -1,6 +1,92 @@
 # ChangeLog for sys-cluster/keepalived
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/keepalived/ChangeLog,v 1.80 2011/06/08 05:44:11 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/keepalived/ChangeLog,v 1.99 2012/09/25 18:19:32 idl0r Exp $
+
+*keepalived-1.2.7-r1 (25 Sep 2012)
+
+  25 Sep 2012; Christian Ruppert <idl0r@gentoo.org> -keepalived-1.2.7.ebuild,
+  +keepalived-1.2.7-r1.ebuild, files/init-keepalived, +files/keepalived.confd,
+  files/keepalived.init:
+  Don't use $opts in init.d / conf.d, bug 436066
+
+*keepalived-1.2.7 (22 Sep 2012)
+
+  22 Sep 2012; Christian Ruppert <idl0r@gentoo.org> +keepalived-1.2.7.ebuild,
+  +files/keepalived.init, metadata.xml:
+  Version bump, bug 435512. Improve init script and some cleanup/fixes of the
+  ebuild.
+
+  15 Sep 2012; Raúl Porcel <armin76@gentoo.org> keepalived-1.2.2-r4.ebuild:
+  alpha/ia64/s390/sparc/x86 stable wrt #433361
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> keepalived-1.2.2-r4.ebuild:
+  Stable for amd64, wrt bug #433361
+
+  07 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  keepalived-1.2.2-r4.ebuild:
+  Stable ppc ppc64, bug #433361
+
+  07 Sep 2012; Jeroen Roovers <jer@gentoo.org> keepalived-1.2.2-r4.ebuild:
+  Stable for HPPA (bug #433361).
+
+*keepalived-1.2.2-r4 (11 Jul 2012)
+
+  11 Jul 2012; Ultrabug <ultrabug@gentoo.org> +keepalived-1.2.2-r4.ebuild,
+  +files/keepalived-1.2.2-fix-ipv4-addr-compare.patch,
+  +files/keepalived-1.2.2-libipvs-fix-backup-daemon.patch,
+  +files/keepalived-1.2.2-libipvs-fix-ipv6.patch:
+  Fix #403133 by Alexander Holler, thanks to Greg for testing. Fix #425082
+  thanks to Ruslan Lutsenko. Add ipv6 USE flag.
+
+  06 Jun 2012; Brent Baude <ranger@gentoo.org> keepalived-1.2.2-r3.ebuild:
+  Marking keepalived-1.2.2-r3 ppc64 for bug 371469
+
+  25 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/keepalived-1.1.13-linux-2.6.21-ip_vs.h, -keepalived-1.2.2.ebuild,
+  -keepalived-1.2.2-r1.ebuild, -keepalived-1.2.2-r2.ebuild:
+  old
+
+  17 Mar 2012; Raúl Porcel <armin76@gentoo.org> keepalived-1.2.2-r3.ebuild:
+  ia64/s390/sparc stable wrt #371469
+
+  03 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  keepalived-1.2.2-r3.ebuild:
+  x86 stable wrt bug #371469
+
+  02 Mar 2012; Tobias Klausmann <klausman@gentoo.org>
+  keepalived-1.2.2-r3.ebuild:
+  Stable on alpha, bug #371469
+
+  29 Feb 2012; Agostino Sarubbo <ago@gentoo.org> keepalived-1.2.2-r3.ebuild:
+  Stable for AMD64, wrt security bug #371469
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> keepalived-1.2.2-r3.ebuild:
+  Marking keepalived-1.2.2-r3 ppc for bug 371469
+
+  28 Feb 2012; Jeroen Roovers <jer@gentoo.org> keepalived-1.2.2-r3.ebuild:
+  Stable for HPPA (bug #371469).
+
+*keepalived-1.2.2-r3 (28 Feb 2012)
+
+  28 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> +files/conf-keepalived,
+  +keepalived-1.2.2-r3.ebuild, files/init-keepalived:
+  Merge debian patch. Support passing options to daemon, and improve init.d for
+  BL2. Bug #371469: Fix CVE-2011-1784 pidfile perms.
+
+*keepalived-1.2.2-r2 (10 Dec 2011)
+
+  10 Dec 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +keepalived-1.2.2-r2.ebuild, +files/keepalived-1.2.2-bind-afunspec.patch:
+  Bug #394257: Add patch needed for correct functioning on 3.x kernels where
+  binding to AF_UNSPEC sockets fails.
+
+  27 Oct 2011; Jeroen Roovers <jer@gentoo.org> keepalived-1.2.2.ebuild,
+  keepalived-1.2.2-r1.ebuild:
+  Fix libnl dependency (bug #382473).
+
+  10 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  keepalived-1.2.2-r1.ebuild:
+  Move to eapi4.
 
 *keepalived-1.2.2-r1 (08 Jun 2011)
 

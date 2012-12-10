@@ -1,6 +1,30 @@
 # ChangeLog for media-sound/sonic-visualiser
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/sonic-visualiser/ChangeLog,v 1.20 2011/07/29 09:35:13 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/sonic-visualiser/ChangeLog,v 1.26 2012/06/24 04:11:08 radhermit Exp $
+
+  24 Jun 2012; Tim Harder <radhermit@gentoo.org> -sonic-visualiser-1.8.ebuild:
+  Remove old.
+
+  24 Jun 2012; Tim Harder <radhermit@gentoo.org> sonic-visualiser-1.9.ebuild:
+  Enable portaudio backend by default (fixes bug #422809).
+
+  31 May 2012; Tim Harder <radhermit@gentoo.org> sonic-visualiser-1.9.ebuild,
+  +files/sonic-visualiser-1.9-gcc47.patch:
+  Fix build with gcc-4.7 (bug #417367 by David Kredba).
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> sonic-visualiser-1.8.ebuild,
+  sonic-visualiser-1.9.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*sonic-visualiser-1.9 (07 Jan 2012)
+
+  07 Jan 2012; Alexis Ballier <aballier@gentoo.org>
+  +sonic-visualiser-1.9.ebuild:
+  version bump
+
+  11 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -sonic-visualiser-1.7.2.ebuild:
+  [This is a placeholder. Please ignore.]
 
   29 Jul 2011; Samuli Suominen <ssuominen@gentoo.org>
   sonic-visualiser-1.8.ebuild:

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/tar/tar-1.26.ebuild,v 1.1 2011/03/13 20:46:42 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/tar/tar-1.26.ebuild,v 1.11 2012/09/07 18:07:26 vapier Exp $
 
 EAPI="3"
 
@@ -8,13 +8,12 @@ inherit flag-o-matic
 
 DESCRIPTION="Use this to make tarballs :)"
 HOMEPAGE="http://www.gnu.org/software/tar/"
-SRC_URI="http://ftp.gnu.org/gnu/tar/${P}.tar.bz2
-	ftp://alpha.gnu.org/gnu/tar/${P}.tar.bz2
-	mirror://gnu/tar/${P}.tar.bz2"
+SRC_URI="mirror://gnu/tar/${P}.tar.bz2
+	mirror://gnu-alpha/tar/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~x86-fbsd ~x64-freebsd ~x86-freebsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~ppc-aix ~x86-fbsd ~x64-freebsd ~x86-freebsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE="nls static userland_GNU"
 
 RDEPEND=""
@@ -22,6 +21,7 @@ DEPEND="${RDEPEND}
 	nls? ( >=sys-devel/gettext-0.10.35 )"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-no-gets.patch
 	if ! use userland_GNU ; then
 		sed -i \
 			-e 's:/backup\.sh:/gbackup.sh:' \

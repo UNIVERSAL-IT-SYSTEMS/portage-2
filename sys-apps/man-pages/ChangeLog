@@ -1,6 +1,134 @@
 # ChangeLog for sys-apps/man-pages
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/man-pages/ChangeLog,v 1.153 2010/12/05 18:23:39 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/man-pages/ChangeLog,v 1.184 2012/11/17 07:57:01 vapier Exp $
+
+*man-pages-3.44 (17 Nov 2012)
+
+  17 Nov 2012; Mike Frysinger <vapier@gentoo.org> +man-pages-3.44.ebuild:
+  Version bump.
+
+  17 Nov 2012; Mike Frysinger <vapier@gentoo.org> man-pages-3.43.ebuild:
+  Stabilize for all.
+
+  11 Nov 2012; Mike Frysinger <vapier@gentoo.org> man-pages-3.43.ebuild:
+  Drop whatis warning as most people will be using a crond #421637 by Pacho
+  Ramos.
+
+*man-pages-3.43 (21 Oct 2012)
+
+  21 Oct 2012; Mike Frysinger <vapier@gentoo.org> +man-pages-3.43.ebuild:
+  Version bump.
+
+  01 Oct 2012; Mike Frysinger <vapier@gentoo.org> man-pages-3.42.ebuild:
+  Stabilize for all #436694.
+
+  25 Sep 2012; Ulrich Müller <ulm@gentoo.org> man-pages-3.28.ebuild,
+  man-pages-3.29.ebuild, man-pages-3.30.ebuild, man-pages-3.31.ebuild,
+  man-pages-3.32.ebuild, man-pages-3.33.ebuild, man-pages-3.34.ebuild,
+  man-pages-3.35.ebuild, man-pages-3.36.ebuild, man-pages-3.37.ebuild,
+  man-pages-3.38.ebuild, man-pages-3.39.ebuild, man-pages-3.40.ebuild,
+  man-pages-3.41.ebuild, man-pages-3.42.ebuild:
+  Specify LICENSE more precisely.
+
+*man-pages-3.42 (24 Aug 2012)
+
+  24 Aug 2012; Mike Frysinger <vapier@gentoo.org> +man-pages-3.42.ebuild:
+  Version bump.
+
+  22 Aug 2012; Mike Frysinger <vapier@gentoo.org> man-pages-3.41.ebuild:
+  Stabilize for all #432278.
+
+*man-pages-3.41 (30 May 2012)
+
+  30 May 2012; Mike Frysinger <vapier@gentoo.org> +man-pages-3.41.ebuild:
+  Version bump.
+
+  30 May 2012; Mike Frysinger <vapier@gentoo.org> man-pages-3.40.ebuild:
+  Stabilize for all.
+
+*man-pages-3.40 (03 May 2012)
+
+  03 May 2012; Mike Frysinger <vapier@gentoo.org> +man-pages-3.40.ebuild:
+  Version bump.
+
+  03 May 2012; Mike Frysinger <vapier@gentoo.org> man-pages-3.38.ebuild:
+  Stabilize for all.
+
+*man-pages-3.39 (23 Apr 2012)
+
+  23 Apr 2012; Mike Frysinger <vapier@gentoo.org> +man-pages-3.39.ebuild:
+  Version bump.
+
+*man-pages-3.38 (02 Apr 2012)
+
+  02 Apr 2012; Mike Frysinger <vapier@gentoo.org> +man-pages-3.38.ebuild:
+  Version bump.
+
+  02 Apr 2012; Mike Frysinger <vapier@gentoo.org> man-pages-3.36.ebuild:
+  Stabilize for all.
+
+*man-pages-3.37 (10 Mar 2012)
+
+  10 Mar 2012; Mike Frysinger <vapier@gentoo.org> +man-pages-3.37.ebuild:
+  Version bump.
+
+  06 Mar 2012; Pacho Ramos <pacho@gentoo.org> man-pages-3.28.ebuild,
+  man-pages-3.29.ebuild, man-pages-3.30.ebuild, man-pages-3.31.ebuild,
+  man-pages-3.32.ebuild, man-pages-3.33.ebuild, man-pages-3.34.ebuild,
+  man-pages-3.35.ebuild, man-pages-3.36.ebuild:
+  Drop app-i18n/man-pages-cs support, bug #403377.
+
+*man-pages-3.36 (04 Mar 2012)
+
+  04 Mar 2012; Mike Frysinger <vapier@gentoo.org> +man-pages-3.36.ebuild:
+  Version bump.
+
+  04 Mar 2012; Mike Frysinger <vapier@gentoo.org> man-pages-3.35.ebuild:
+  Stabilize for all.
+
+  29 Dec 2011; Mark Loeser <halcy0n@gentoo.org> man-pages-3.32.ebuild:
+  Stable for ppc64; bug #379917
+
+  04 Oct 2011; Robin H. Johnson <robbat2@gentoo.org> man-pages-3.33.ebuild,
+  man-pages-3.34.ebuild, man-pages-3.35.ebuild:
+  Add alternative download URL per upstream announcement.
+
+*man-pages-3.35 (04 Oct 2011)
+
+  04 Oct 2011; Mike Frysinger <vapier@gentoo.org> +man-pages-3.35.ebuild:
+  Version bump.
+
+  25 Sep 2011; Mike Frysinger <vapier@gentoo.org> man-pages-3.34.ebuild:
+  Use elog rather than einfo #384337 by William Throwe.
+
+*man-pages-3.34 (23 Sep 2011)
+
+  23 Sep 2011; Mike Frysinger <vapier@gentoo.org> +man-pages-3.34.ebuild:
+  Version bump.
+
+*man-pages-3.33 (20 Sep 2011)
+
+  20 Sep 2011; Mike Frysinger <vapier@gentoo.org> +man-pages-3.33.ebuild:
+  Version bump.
+
+  16 Sep 2011; Jeroen Roovers <jer@gentoo.org> man-pages-3.32.ebuild:
+  Stable for HPPA (bug #379917).
+
+  27 Aug 2011; Raúl Porcel <armin76@gentoo.org> man-pages-3.32.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #379917
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> man-pages-3.32.ebuild:
+  x86 stable, bug #379917
+
+  22 Aug 2011; Tony Vroon <chainsaw@gentoo.org> man-pages-3.32.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #379917.
+
+  21 Aug 2011; nixnut <nixnut@gentoo.org> man-pages-3.32.ebuild:
+  ppc stable #379917
+
+  20 Aug 2011; Mike Frysinger <vapier@gentoo.org> man-pages-3.32.ebuild:
+  Add blocker to autoresolve man page collision #341953.
 
 *man-pages-3.32 (05 Dec 2010)
 

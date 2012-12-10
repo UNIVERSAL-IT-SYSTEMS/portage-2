@@ -1,6 +1,30 @@
 # ChangeLog for net-im/gnomeicu
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/gnomeicu/ChangeLog,v 1.52 2011/03/29 14:24:59 tester Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-im/gnomeicu/ChangeLog,v 1.59 2012/05/04 06:22:13 jdhore Exp $
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gnomeicu-0.99.12.ebuild,
+  gnomeicu-0.99.16.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> gnomeicu-0.99.16.ebuild:
+  alpha/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> gnomeicu-0.99.16.ebuild:
+  Marking gnomeicu-0.99.16 ppc stable for bug 393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> gnomeicu-0.99.16.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> gnomeicu-0.99.16.ebuild:
+  amd64 stable, bug 393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> -gnomeicu-0.99.14.ebuild,
+  gnomeicu-0.99.16.ebuild:
+  Use proper configure option, drop old.
+
+  27 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnomeicu-0.99.12.ebuild, gnomeicu-0.99.14.ebuild, gnomeicu-0.99.16.ebuild:
+  Slot gtkspell dependency to 2 in preparation for gtkspell-3.
 
 *gnomeicu-0.99.16 (29 Mar 2011)
 

@@ -1,6 +1,59 @@
 # ChangeLog for sys-power/nut
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/nut/ChangeLog,v 1.93 2011/04/27 19:05:14 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-power/nut/ChangeLog,v 1.106 2012/12/03 02:05:51 ssuominen Exp $
+
+  03 Dec 2012; Samuli Suominen <ssuominen@gentoo.org> nut-2.6.0-r1.ebuild,
+  nut-2.6.2.ebuild, nut-2.6.3.ebuild, nut-2.6.5.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+*nut-2.6.5 (16 Oct 2012)
+
+  16 Oct 2012; Robin H. Johnson <robbat2@gentoo.org> +nut-2.6.5.ebuild:
+  Bump.
+
+  20 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> nut-2.6.3.ebuild:
+  ppc64 stable wrt #419377
+
+  06 Sep 2012; Anthony G. Basile <blueness@gentoo.org> nut-2.6.3.ebuild:
+  Keyword ~arm
+
+  09 Jun 2012; Raúl Porcel <armin76@gentoo.org> nut-2.6.0-r1.ebuild,
+  nut-2.6.2.ebuild, nut-2.6.3.ebuild:
+  Drop alpha/sparc keywords
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> nut-2.6.3.ebuild:
+  x86 stable wrt bug #419377
+
+  03 Jun 2012; Michael Weber <xmw@gentoo.org> nut-2.6.3.ebuild:
+  ppc stable (bug 419377)
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> nut-2.6.3.ebuild:
+  Stable for amd64, wrt bug #419377
+
+*nut-2.6.3 (02 Jun 2012)
+
+  02 Jun 2012; Michael Weber <xmw@gentoo.org> +nut-2.6.3.ebuild,
+  +files/nut-2.6.3-CVE-2012-2944.patch:
+  Version bump (bug 406099, thanks Matthew Stapleton and Guillaume Castagnino).
+  Include ubuntus CVE-2012-2944.patch to fix bug 419377.
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> nut-2.6.0-r1.ebuild,
+  nut-2.6.2.ebuild:
+  Inherit user for enewuser/etc...
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> nut-2.6.0-r1.ebuild,
+  nut-2.6.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  04 Dec 2011; Sven Wegener <swegener@gentoo.org> files/nut-2.2.2-init.d-upsd,
+  files/nut-2.2.2-init.d-upsdrv, files/nut-2.2.2-init.d-upsmon:
+  replace opts with extra_commands
+
+*nut-2.6.2 (07 Nov 2011)
+
+  07 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> +nut-2.6.2.ebuild,
+  +files/nut-2.6.2-lowspeed-buffer-size.patch:
+  Version bump, bug #371641.
 
   27 Apr 2011; Raúl Porcel <armin76@gentoo.org> nut-2.6.0-r1.ebuild:
   sparc stable wrt #360739

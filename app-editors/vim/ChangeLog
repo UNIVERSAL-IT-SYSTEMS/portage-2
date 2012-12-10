@@ -1,6 +1,142 @@
 # ChangeLog for app-editors/vim
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/vim/ChangeLog,v 1.386 2011/07/17 22:02:58 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/vim/ChangeLog,v 1.418 2012/08/30 00:13:35 lack Exp $
+
+*vim-7.3.646 (30 Aug 2012)
+
+  30 Aug 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.646.ebuild:
+  Version bump: 7.3.646 is released
+
+*vim-7.3.600 (12 Jul 2012)
+
+  12 Jul 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.600.ebuild:
+  Version bump: 7.3.600 is released
+
+*vim-7.3.566 (27 Jun 2012)
+
+  27 Jun 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.566.ebuild:
+  Version bump: 7.3.566 is released
+
+*vim-7.3.556 (19 Jun 2012)
+
+  19 Jun 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.556.ebuild:
+  Version bump: 7.3.556 is released
+
+*vim-7.3.537 (01 Jun 2012)
+
+  01 Jun 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.537.ebuild:
+  Version bump: 7.3.537 is released
+
+*vim-7.3.515 (02 May 2012)
+
+  02 May 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.515.ebuild:
+  Version bump: 7.3.515 is released
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> vim-7.3.502.ebuild:
+  keyword ~amd64-fbsd
+
+*vim-7.3.502 (23 Apr 2012)
+
+  23 Apr 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.502.ebuild:
+  Version bump: 7.3.502 is released
+
+*vim-7.3.498 (20 Apr 2012)
+
+  20 Apr 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.498.ebuild:
+  Version bump: 7.3.498 is released
+
+  29 Mar 2012; Jim Ramsay <jim_ramsay@gentoo.org> -vim-7.2.442.ebuild,
+  -vim-7.3.135.ebuild, -vim-7.3.189.ebuild, -vim-7.3.219.ebuild,
+  -vim-7.3.244.ebuild, -vim-7.3.322.ebuild, -vim-7.3.353.ebuild,
+  -vim-7.3.372.ebuild, -vim-7.3.393.ebuild:
+  Version cleanup: Removing unused versions
+
+*vim-7.3.487 (28 Mar 2012)
+
+  28 Mar 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.487.ebuild:
+  Version bump: 7.3.487 is released
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> vim-7.3.409.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #406427
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> vim-7.3.409.ebuild:
+  Marking vim-7.3.409 ppc for bug 406427
+
+*vim-7.3.462 (05 Mar 2012)
+
+  05 Mar 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.462.ebuild:
+  Version bump: 7.3.462 is released
+
+  05 Mar 2012; Jeff Horelick <jdhore@gentoo.org> vim-7.3.409.ebuild:
+  marked x86 per bug 406427
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> vim-7.3.409.ebuild:
+  Marking vim-7.3.409 ppc64 for bug 406427
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> vim-7.3.266.ebuild:
+  Marking vim-7.3.266 ppc64 for bug 384381
+
+  02 Mar 2012; Agostino Sarubbo <ago@gentoo.org> vim-7.3.409.ebuild:
+  Stable for amd64, wrt bug #406427
+
+  01 Mar 2012; Jeroen Roovers <jer@gentoo.org> vim-7.3.409.ebuild:
+  Stable for HPPA (bug #406427).
+
+*vim-7.3.456 (28 Feb 2012)
+
+  28 Feb 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.456.ebuild:
+  Version bump: 7.3.456 is released
+
+*vim-7.3.444 (13 Feb 2012)
+
+  13 Feb 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.444.ebuild:
+  Version bump: 7.3.444 is released
+
+*vim-7.3.409 (21 Jan 2012)
+
+  21 Jan 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.409.ebuild:
+  Version bump: 7.3.409 is released
+
+*vim-7.3.393 (05 Jan 2012)
+
+  05 Jan 2012; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.393.ebuild:
+  Version bump: 7.3.393 is released
+
+*vim-7.3.372 (09 Dec 2011)
+
+  09 Dec 2011; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.372.ebuild:
+  Version bump: 7.3.372 is released
+
+*vim-7.3.353 (28 Nov 2011)
+
+  28 Nov 2011; Jim Ramsay <jim_ramsay@gentoo.org> +vim-7.3.353.ebuild:
+  Version bump: 7.3.353 is released
+
+  06 Nov 2011; Brent Baude <ranger@gentoo.org> vim-7.3.266.ebuild:
+  Marking vim-7.3.266 ppc for bug 384381
+
+  08 Oct 2011; Raúl Porcel <armin76@gentoo.org> vim-7.3.266.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #384381
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> vim-7.3.266.ebuild:
+  Stable for HPPA (bug #384381).
+
+  04 Oct 2011; Andreas Schuerch <nativemad@gentoo.org> vim-7.3.266.ebuild:
+  x86 stable, thanks JD, bug 384381
+
+  26 Sep 2011; Tony Vroon <chainsaw@gentoo.org> vim-7.3.266.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani, Tomáš "Mepho" Pružina & Agostino "ago" Sarubbo in bug #384381.
+
+*vim-7.3.322 (23 Sep 2011)
+
+  23 Sep 2011; Jim Ramsay <lack@gentoo.org> +vim-7.3.322.ebuild:
+  Version bump: 7.3.322 is released
+
+*vim-7.3.266 (02 Aug 2011)
+
+  02 Aug 2011; Jim Ramsay <lack@gentoo.org> +vim-7.3.266.ebuild:
+  Version bump: 7.3.266 is released
 
   17 Jul 2011; Mark Loeser <halcy0n@gentoo.org> vim-7.3.189.ebuild:
   Stable for ppc64; bug #371977

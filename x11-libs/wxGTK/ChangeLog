@@ -1,6 +1,123 @@
 # ChangeLog for x11-libs/wxGTK
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/wxGTK/ChangeLog,v 1.269 2011/07/16 09:32:34 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/wxGTK/ChangeLog,v 1.297 2012/11/23 04:53:30 zerochaos Exp $
+
+  23 Nov 2012; Rick Farina <zerochaos@gentoo.org> wxGTK-2.8.12.1.ebuild,
+  wxGTK-2.9.3.1.ebuild, wxGTK-2.9.4.1.ebuild:
+  add virtual/glu build time dep per bug #443684 , does not appear to be an rdep
+
+  25 Sep 2012; Mike Frysinger <vapier@gentoo.org> wxGTK-2.8.12.1.ebuild:
+  Fix setup of wx_cv_std_libpath #421851 by Xavier Miller.
+
+  17 Sep 2012; Ryan Hill <dirtyepic@gentoo.org> wxGTK-2.9.3.1.ebuild:
+  SLOT gstreamer deps.
+
+  17 Sep 2012; Ryan Hill <dirtyepic@gentoo.org> +wxGTK-2.9.3.1.ebuild:
+  Restore.
+
+  16 Sep 2012; Ryan Hill <dirtyepic@gentoo.org> wxGTK-2.8.12.1.ebuild,
+  -wxGTK-2.9.3.1.ebuild, wxGTK-2.9.4.1.ebuild:
+  Make gstreamer SLOT explicit. Remove old.
+
+*wxGTK-2.9.4.1 (28 Jul 2012)
+
+  28 Jul 2012; Ryan Hill <dirtyepic@gentoo.org>
+  -files/wxGTK-2.8.11-libpng15.patch, -wxGTK-2.8.11.0.ebuild,
+  -wxGTK-2.8.12.0.ebuild, -wxGTK-2.9.1.1.ebuild,
+  -files/wxGTK-2.9.1.1-collision.patch, +wxGTK-2.9.4.1.ebuild,
+  +files/wxGTK-2.9.4.1-collision.patch:
+  Version bump, remove old.
+
+  31 May 2012; Justin Lecher <jlec@gentoo.org> wxGTK-2.8.12.1.ebuild:
+  Correct searchpath to be sane on prefix without influence on plain
+  installations
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> wxGTK-2.8.12.1.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> wxGTK-2.8.11.0.ebuild,
+  wxGTK-2.8.12.0.ebuild, wxGTK-2.8.12.1.ebuild, wxGTK-2.9.1.1.ebuild,
+  wxGTK-2.9.3.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> wxGTK-2.8.12.1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #403235
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> wxGTK-2.8.12.1.ebuild:
+  Marking wxGTK-2.8.12.1 ppc64 for bug 403235
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> wxGTK-2.8.12.1.ebuild:
+  Marking wxGTK-2.8.12.1 ppc for bug 403235
+
+  22 Feb 2012; Jeroen Roovers <jer@gentoo.org> wxGTK-2.8.12.1.ebuild:
+  Stable for HPPA (bug #403235).
+
+  16 Feb 2012; Markus Meier <maekke@gentoo.org> wxGTK-2.8.12.1.ebuild:
+  arm stable, bug #403235
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> wxGTK-2.8.12.1.ebuild:
+  x86 stable wrt bug #403235
+
+  13 Feb 2012; Agostino Sarubbo <ago@gentoo.org> wxGTK-2.8.12.1.ebuild:
+  Stable for amd64, wrt bug #403235
+
+*wxGTK-2.9.3.1 (12 Feb 2012)
+
+  12 Feb 2012; Ryan Hill <dirtyepic@gentoo.org> +wxGTK-2.9.3.1.ebuild,
+  +files/wxGTK-2.9.3.1-collision.patch:
+  Version bump (bug #384037 by radhermit).
+
+  09 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -files/wxGTK-2.6.3-unicode-odbc.patch, -wxGTK-2.6.4.0-r6.ebuild,
+  -files/wxGTK-2.6.4.0-g_free.patch, -files/wxGTK-2.6.4.0-wxrc_link_fix.patch,
+  -files/wxGTK-2.6.4-collision.patch, -files/wxGTK-2.6.4-mmedia.patch,
+  -files/wxGTK-2.8.10.1-CVE-2009-2369.patch,
+  -files/wxGTK-2.8.10.1-gsocket.patch,
+  -files/wxGTK-2.8.10.1-wxTimer-unbounded-hook.patch:
+  old
+
+*wxGTK-2.8.12.1 (09 Dec 2011)
+
+  09 Dec 2011; Ryan Hill <dirtyepic@gentoo.org> +wxGTK-2.8.12.1.ebuild:
+  Version bump.
+
+  09 Dec 2011; Ryan Hill <dirtyepic@gentoo.org> wxGTK-2.8.12.0.ebuild:
+  Prefix should pay more attention when they ignore metadata.xml (bug
+  #384037c12).
+
+  09 Dec 2011; Ryan Hill <dirtyepic@gentoo.org>
+  files/wxGTK-2.8.11-collision.patch:
+  Remove stray DESTDIR from collision patch that created a broken symlink in
+  binpkgs (bug #384725 by Thomas Rausch).
+
+  09 Dec 2011; Ryan Hill <dirtyepic@gentoo.org> -wxGTK-2.8.10.1-r5.ebuild,
+  -files/wxGTK-2.8.10-collision.patch:
+  Remove old.
+
+  12 Nov 2011; Justin Lecher <jlec@gentoo.org> wxGTK-2.6.4.0-r6.ebuild,
+  wxGTK-2.8.10.1-r5.ebuild, wxGTK-2.8.11.0.ebuild, wxGTK-2.8.12.0.ebuild,
+  wxGTK-2.9.1.1.ebuild:
+  Corrected Slotting and versioning, thanks leio spotting that
+
+  12 Nov 2011; Justin Lecher <jlec@gentoo.org> wxGTK-2.9.1.1.ebuild:
+  Import prefix changes, all are triggered by USE=aqua
+
+  12 Nov 2011; Justin Lecher <jlec@gentoo.org> wxGTK-2.6.4.0-r6.ebuild,
+  wxGTK-2.8.10.1-r5.ebuild, wxGTK-2.8.11.0.ebuild, wxGTK-2.8.12.0.ebuild,
+  wxGTK-2.9.1.1.ebuild, metadata.xml:
+  Corrected slotting for png and tiff, resorted ebuild to fit common sense
+  order, removed unnessesary die
+
+  25 Oct 2011; Ryan Hill <dirtyepic@gentoo.org> wxGTK-2.9.1.1.ebuild:
+  Apply libpng-1.5 patch to 2.9 as well.
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> wxGTK-2.8.12.0.ebuild,
+  wxGTK-2.9.1.1.ebuild:
+  Missing gst-plugins-base depend for -lgstinterfaces-0.10 checked by
+  configure.in.
+
+  15 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> wxGTK-2.6.4.0-r6.ebuild:
+  Fix building with libpng15 wrt #380833 by Diego Elio Pettenò
 
   16 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> wxGTK-2.8.11.0.ebuild:
   ppc64 stable wrt #364203

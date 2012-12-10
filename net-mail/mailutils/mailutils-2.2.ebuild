@@ -1,18 +1,19 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/mailutils/mailutils-2.2.ebuild,v 1.5 2011/07/29 18:50:17 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/mailutils/mailutils-2.2.ebuild,v 1.9 2012/08/11 16:01:29 jer Exp $
 
 EAPI="3"
+PYTHON_DEPEND="python? 2"
 
 inherit eutils flag-o-matic libtool python
 
 DESCRIPTION="A useful collection of mail servers, clients, and filters."
 HOMEPAGE="http://www.gnu.org/software/mailutils/mailutils.html"
-SRC_URI="http://ftp.gnu.org/gnu/mailutils/${P}.tar.bz2"
+SRC_URI="mirror://gnu/mailutils/${P}.tar.bz2"
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 
-KEYWORDS="~alpha amd64 ~hppa ~ppc ~sparc x86 ~ppc-macos ~x64-macos ~x86-macos"
+KEYWORDS="amd64 ~hppa ~ppc x86 ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="bidi gdbm guile ldap mysql nls pam postgres python test tokyocabinet"
 
 RDEPEND="!mail-client/nmh
@@ -32,9 +33,20 @@ RDEPEND="!mail-client/nmh
 DEPEND="${RDEPEND}
 	test? ( dev-util/dejagnu )"
 
+pkg_setup() {
+	if use python; then
+		python_set_active_version 2
+		python_pkg_setup
+	fi
+}
+
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-2.1-python.patch
+	epatch "${FILESDIR}"/${PN}-2.1-python.patch \
+		"${FILESDIR}"/${P}-gets.patch
 	elibtoolize  # for Darwin bundles
+
+	# Disable bytecompilation of Python modules.
+	echo "#!/bin/sh" > build-aux/py-compile
 }
 
 src_configure() {
@@ -57,8 +69,7 @@ src_configure() {
 		$(use_enable pam) \
 		$(use_with postgres) \
 		$(use_with python) \
-		$(use_with tokyocabinet) \
-		|| die "configure failed"
+		$(use_with tokyocabinet)
 }
 
 src_install() {
@@ -66,8 +77,21 @@ src_install() {
 	# mail.rc stolen from mailx, resolve bug #37302.
 	insinto /etc
 	doins "${FILESDIR}/mail.rc"
+
+	if use python; then
+		python_clean_installation_image
+		rm -f "${ED}$(python_get_sitedir)/mailutils/c_api.a"
+	fi
 }
 
 pkg_postinst() {
-	python_mod_optimize "$(python_get_libdir)/site-packages/mailutils"
+	if use python; then
+		python_mod_optimize mailutils
+	fi
+}
+
+pkg_postrm() {
+	if use python; then
+		python_mod_cleanup mailutils
+	fi
 }

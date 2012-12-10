@@ -1,6 +1,37 @@
 # ChangeLog for app-dicts/aspell-da
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/aspell-da/ChangeLog,v 1.34 2011/01/18 18:48:11 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/aspell-da/ChangeLog,v 1.43 2012/08/26 18:30:33 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> aspell-da-1.6.34.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #418527
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> aspell-da-1.6.34.ebuild:
+  Marking aspell-da-1.6.34 ppc64 for bug 418527
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> aspell-da-1.6.34.ebuild:
+  Marking aspell-da-1.6.34 ppc for bug 418527
+
+  04 Aug 2012; Johannes Huber <johu@gentoo.org> aspell-da-1.6.34.ebuild:
+  Stable for x86, wrt bug #418527
+
+  02 Aug 2012; Markos Chandras <hwoarang@gentoo.org> aspell-da-1.6.34.ebuild:
+  Stable on amd64 wrt bug #418527
+
+  02 Aug 2012; Markus Meier <maekke@gentoo.org> aspell-da-1.6.34.ebuild:
+  arm stable, bug #418527
+
+  01 Aug 2012; Jeroen Roovers <jer@gentoo.org> aspell-da-1.6.34.ebuild:
+  Stable for HPPA (bug #418527).
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> aspell-da-1.6.0.ebuild,
+  aspell-da-1.6.34.ebuild:
+  keyword ~amd64-fbsd
+
+*aspell-da-1.6.34 (10 Apr 2012)
+
+  10 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> +aspell-da-1.6.34.ebuild,
+  -aspell-da-1.4.54.ebuild, aspell-da-1.6.0.ebuild:
+  Update to latest 1.6 series version. Drop older. Drop stable on m68k.
 
   18 Jan 2011; Fabian Groffen <grobian@gentoo.org> aspell-da-1.6.0.ebuild:
   Marked ~ppc-macos, bug #351946

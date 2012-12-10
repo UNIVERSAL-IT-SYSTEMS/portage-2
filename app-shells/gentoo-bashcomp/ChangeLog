@@ -1,6 +1,48 @@
 # ChangeLog for app-shells/gentoo-bashcomp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/gentoo-bashcomp/ChangeLog,v 1.45 2011/01/24 16:10:15 darkside Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-shells/gentoo-bashcomp/ChangeLog,v 1.54 2012/10/24 04:34:01 dirtyepic Exp $
+
+*gentoo-bashcomp-20121024 (24 Oct 2012)
+
+  24 Oct 2012; Ryan Hill <dirtyepic@gentoo.org>
+  +gentoo-bashcomp-20121024.ebuild:
+  Version bump. Fixes bug #424777 (/etc/portage/make.conf support) and
+  bug #431576 (handle md5 metadata cache format). Also includes a
+  reimplementation of repoman completion.
+
+  11 Oct 2012; Jeroen Roovers <jer@gentoo.org>
+  gentoo-bashcomp-20101217-r1.ebuild:
+  Stable for HPPA (bug #437384).
+
+  07 Oct 2012; Raúl Porcel <armin76@gentoo.org>
+  gentoo-bashcomp-20101217-r1.ebuild:
+  alpha/ia64/s390/sh/sparc/x86 stable wrt #437384
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  gentoo-bashcomp-20101217-r1.ebuild:
+  stable arm, bug #437384
+
+  06 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  gentoo-bashcomp-20101217-r1.ebuild:
+  stable ppc ppc64, bug #437384
+
+  06 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  gentoo-bashcomp-20101217-r1.ebuild:
+  Stable for amd64, wrt bug #437384
+
+  06 Oct 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/gentoo-bashcomp-20101217-make_globals.patch:
+  Commit forgotten patch, thanks to ago for noticing.
+
+*gentoo-bashcomp-20101217-r1 (06 Oct 2012)
+
+  06 Oct 2012; Pacho Ramos <pacho@gentoo.org>
+  +gentoo-bashcomp-20101217-r1.ebuild:
+  Fix breakage after /etc/make.globals, bug #431034.
+
+  04 May 2012; Alexis Ballier <aballier@gentoo.org>
+  gentoo-bashcomp-20101217.ebuild:
+  keyword ~amd64-fbsd
 
   24 Jan 2011; Jeremy Olexa <darkside@gentoo.org>
   -gentoo-bashcomp-20100613.ebuild, gentoo-bashcomp-20101217.ebuild:
@@ -215,4 +257,3 @@
   +gentoo-bashcomp-20050316.ebuild:
   New release; broken out from app-shells/bash-completion and into its own
   ebuild.
-

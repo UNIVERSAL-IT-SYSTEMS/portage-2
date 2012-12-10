@@ -1,6 +1,23 @@
 # ChangeLog for media-sound/ripperx
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ripperx/ChangeLog,v 1.38 2011/05/27 04:56:04 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ripperx/ChangeLog,v 1.44 2012/05/05 08:49:23 mgorny Exp $
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> ripperx-2.7.2.ebuild,
+  ripperx-2.7.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> ripperx-2.7.2.ebuild,
+  ripperx-2.7.3.ebuild:
+  Drop sparc keywords
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> ripperx-2.7.3.ebuild:
+  Marking ripperx-2.7.3 ppc for bug 387923
+
+  26 Jan 2012; Thomas Kahle <tomka@gentoo.org> ripperx-2.7.3.ebuild:
+  x86 stable per bug 387923
+
+  20 Jan 2012; Agostino Sarubbo <ago@gentoo.org> ripperx-2.7.3.ebuild:
+  Stable for amd64, wrt bug #387923
 
 *ripperx-2.7.3 (27 May 2011)
 

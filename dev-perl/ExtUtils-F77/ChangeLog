@@ -1,6 +1,43 @@
 # ChangeLog for dev-perl/ExtUtils-F77
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/ExtUtils-F77/ChangeLog,v 1.40 2011/01/12 21:06:44 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/ExtUtils-F77/ChangeLog,v 1.51 2012/06/24 12:59:22 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -ExtUtils-F77-1.16.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> ExtUtils-F77-1.170.0.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #400111
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  ExtUtils-F77-1.170.0.ebuild:
+  x86 stable wrt bug #400111
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> ExtUtils-F77-1.170.0.ebuild:
+  Marking ExtUtils-F77-1.170.0 ppc for bug 400111
+
+  29 Feb 2012; Markus Meier <maekke@gentoo.org> ExtUtils-F77-1.170.0.ebuild:
+  arm stable, bug #400111
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> ExtUtils-F77-1.170.0.ebuild:
+  Stable for HPPA (bug #400111).
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  ExtUtils-F77-1.170.0.ebuild:
+  Stable on alpha, bug #400111
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> ExtUtils-F77-1.170.0.ebuild:
+  Stable for amd64, wrt bug #400111
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -ExtUtils-F77-1.170.ebuild:
+  Cleanup
+
+*ExtUtils-F77-1.170.0 (31 Aug 2011)
+
+  31 Aug 2011; Torsten Veller <tove@gentoo.org> +ExtUtils-F77-1.170.0.ebuild:
+  Change version scheme
 
 *ExtUtils-F77-1.170 (12 Jan 2011)
 

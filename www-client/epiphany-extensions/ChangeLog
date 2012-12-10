@@ -1,6 +1,59 @@
 # ChangeLog for www-client/epiphany-extensions
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/epiphany-extensions/ChangeLog,v 1.148 2011/06/05 09:56:32 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/epiphany-extensions/ChangeLog,v 1.159 2012/05/19 21:50:59 tetromino Exp $
+
+*epiphany-extensions-3.4.0 (19 May 2012)
+
+  19 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +epiphany-extensions-3.4.0.ebuild:
+  Version bump for gnome-3.4 with a better ad blocker.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  epiphany-extensions-2.30.1.ebuild, epiphany-extensions-2.32.0.ebuild,
+  epiphany-extensions-2.32.0-r1.ebuild, epiphany-extensions-3.2.0-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*epiphany-extensions-3.2.0-r1 (19 Nov 2011)
+
+  19 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -epiphany-extensions-3.2.0.ebuild, +epiphany-extensions-3.2.0-r1.ebuild,
+  +files/epiphany-extensions-3.2.0-dbus-libs.patch:
+  Add patch to prevent immediate crash when rss extension is loaded. Thanks to
+  Travis Glenn Hansen (thansen) for reporting on IRC.
+
+*epiphany-extensions-3.2.0 (06 Nov 2011)
+
+  06 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -epiphany-extensions-3.0.0-r1.ebuild, +epiphany-extensions-3.2.0.ebuild:
+  Bump to 3.2.0 from the gnome overlay, drop old. Drop python dependency
+  (epiphany-extensions have not used python since gnome-2 days). Notable
+  changes: fixes adblock crash.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org>
+  epiphany-extensions-2.32.0-r1.ebuild:
+  alpha/ia64/sparc stable wrt #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  epiphany-extensions-2.32.0-r1.ebuild:
+  x86 stable wrt bug #385699
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  epiphany-extensions-2.32.0-r1.ebuild:
+  ppc stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  epiphany-extensions-2.32.0-r1.ebuild:
+  amd64 stable wrt #385699
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  epiphany-extensions-2.32.0.ebuild:
+  ppc stable wrt #369909
+
+*epiphany-extensions-3.0.0-r1 (19 Aug 2011)
+
+  19 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +epiphany-extensions-3.0.0-r1.ebuild:
+  Bump to 3.0.0, from gnome overlay for GNOME 3
 
 *epiphany-extensions-2.32.0-r1 (05 Jun 2011)
 

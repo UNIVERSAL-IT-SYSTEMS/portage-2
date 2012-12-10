@@ -1,6 +1,41 @@
 # ChangeLog for media-libs/libmpdclient
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libmpdclient/ChangeLog,v 1.35 2011/07/06 17:54:28 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libmpdclient/ChangeLog,v 1.45 2012/07/29 17:41:29 angelos Exp $
+
+  29 Jul 2012; Christoph Mende <angelos@gentoo.org> -libmpdclient-2.4.ebuild,
+  -libmpdclient-2.5.ebuild, -libmpdclient-2.6.ebuild:
+  Remove old
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> libmpdclient-2.7.ebuild:
+  sparc stable wrt #404791
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> libmpdclient-2.7.ebuild:
+  marked x86 per bug 404791
+
+  30 Mar 2012; Markus Meier <maekke@gentoo.org> libmpdclient-2.7.ebuild:
+  arm stable, bug #404791
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> libmpdclient-2.7.ebuild:
+  Marking libmpdclient-2.7 ppc64 for bug 404791
+
+  25 Mar 2012; Agostino Sarubbo <ago@gentoo.org> libmpdclient-2.7.ebuild:
+  Stable for amd64, wrt bug #404791
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> libmpdclient-2.7.ebuild:
+  Marking libmpdclient-2.7 ppc for bug 404791
+
+  24 Mar 2012; Jeroen Roovers <jer@gentoo.org> libmpdclient-2.7.ebuild:
+  Stable for HPPA (bug #404791).
+
+*libmpdclient-2.7 (19 Feb 2012)
+
+  19 Feb 2012; Alexis Ballier <aballier@gentoo.org> +libmpdclient-2.7.ebuild:
+  version bump
+
+*libmpdclient-2.6 (29 Oct 2011)
+
+  29 Oct 2011; Christoph Mende <angelos@gentoo.org> +libmpdclient-2.6.ebuild:
+  Version bump
 
   06 Jul 2011; Christoph Mende <angelos@gentoo.org> libmpdclient-2.5.ebuild:
   Bump to EAPI4, add IUSE=doc
@@ -127,4 +162,3 @@
   30 Oct 2009; Christoph Mende <angelos@gentoo.org>
   +libmpdclient-2.0.ebuild:
   Initial import
-

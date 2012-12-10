@@ -1,6 +1,47 @@
 # ChangeLog for media-sound/teamspeak-server-bin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/teamspeak-server-bin/ChangeLog,v 1.21 2011/06/03 00:40:21 trapni Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/teamspeak-server-bin/ChangeLog,v 1.28 2012/11/18 10:13:29 pacho Exp $
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org>
+  -teamspeak-server-bin-3.0.0_beta30.ebuild,
+  -teamspeak-server-bin-3.0.0_rc1.ebuild, -teamspeak-server-bin-3.0.5-r1.ebuild,
+  -teamspeak-server-bin-3.0.5-r2.ebuild, -teamspeak-server-bin-3.0.5.ebuild,
+  metadata.xml:
+  Reassign to proxy-maint as talked with Markos as looks like somebody from that
+  team wants to take care of this. Remove old.
+
+*teamspeak-server-bin-3.0.6.1 (12 Oct 2012)
+
+  12 Oct 2012; <trapni@gentoo.org> +teamspeak-server-bin-3.0.6.1.ebuild:
+  version bump to 3.0.6.1
+
+  09 Jun 2012; Zac Medico <zmedico@gentoo.org>
+  teamspeak-server-bin-3.0.0_beta30.ebuild,
+  teamspeak-server-bin-3.0.0_rc1.ebuild, teamspeak-server-bin-3.0.5-r1.ebuild,
+  teamspeak-server-bin-3.0.5-r2.ebuild, teamspeak-server-bin-3.0.5.ebuild:
+  inherit user for enewuser
+
+*teamspeak-server-bin-3.0.5-r2 (09 Jun 2012)
+
+  09 Jun 2012; <trapni@gentoo.org> +teamspeak-server-bin-3.0.5-r2.ebuild:
+  fixes build issue
+
+*teamspeak-server-bin-3.0.5-r1 (10 May 2012)
+
+  10 May 2012; <trapni@gentoo.org> +files/systemd/teamspeak3.conf,
+  +files/systemd/teamspeak3.service, +teamspeak-server-bin-3.0.5-r1.ebuild:
+  added systemd support
+
+*teamspeak-server-bin-3.0.5 (10 May 2012)
+
+  10 May 2012; <trapni@gentoo.org> files/teamspeak3-server.rc,
+  +teamspeak-server-bin-3.0.5.ebuild:
+  closes #392443 - Thanks to Jarry and bumped to 3.0.5. Yay :-)
+
+  14 Apr 2012; Pacho Ramos <pacho@gentoo.org>
+  teamspeak-server-bin-3.0.0_beta30.ebuild,
+  teamspeak-server-bin-3.0.0_rc1.ebuild:
+  Fix bug #411003.
 
 *teamspeak-server-bin-3.0.0_rc1 (03 Jun 2011)
 
@@ -129,4 +170,3 @@
   23 Dec 2009; Christian Parpart <trapni@gentoo.org>
   +teamspeak-server-bin-3.0.0_beta5.ebuild, +metadata.xml:
   initial commit of TeamSpeak server, version 3 (beta)
-

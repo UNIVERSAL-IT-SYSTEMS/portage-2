@@ -1,5 +1,5 @@
 # /lib/rcscripts/addons/lvm-start.sh
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/lvm2/files/lvm2-start.sh-2.02.67-r1,v 1.1 2010/06/09 22:41:45 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/lvm2/files/lvm2-start.sh-2.02.67-r1,v 1.2 2012/03/27 03:20:56 robbat2 Exp $
 
 config='global { locking_dir = "/dev/.lvm" }'
 
@@ -39,4 +39,4 @@ if [ -z "${CDBOOT}" -a -x /sbin/vgscan ] ; then
 	fi
 fi
 
-# vim:ts=4
+# vim:ts=4 ft=sh noet:

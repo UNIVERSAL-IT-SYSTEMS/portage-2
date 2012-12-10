@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/shigofumi/shigofumi-9999.ebuild,v 1.4 2011/05/03 11:26:15 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/shigofumi/shigofumi-9999.ebuild,v 1.8 2012/10/30 12:00:05 blueness Exp $
 
-EAPI=4
+EAPI=5
 
-[[ ${PV} = 9999* ]] && GIT="git-2 autotools"
 EGIT_REPO_URI='git://repo.or.cz/shigofumi.git'
 WANT_AUTOMAKE="1.11"
-inherit base ${GIT}
+inherit base
+[[ ${PV} = 9999* ]] && inherit git-2 autotools
 
 DESCRIPTION="Command line client for ISDS"
 HOMEPAGE="http://xpisar.wz.cz/shigofumi/"
@@ -16,22 +16,24 @@ if [[ ${PV} = 9999* ]]; then
 	KEYWORDS=""
 else
 	SRC_URI="http://xpisar.wz.cz/${PN}/dist/${P}.tar.bz2"
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64 ~mips ~x86"
 fi
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="debug nls xattr"
+IUSE="debug doc nls xattr"
 
-RDEPEND=">=net-libs/libisds-0.3
+RDEPEND="dev-libs/confuse
+	dev-libs/libxml2
 	sys-libs/readline
-	dev-libs/confuse
-	dev-libs/libxml2"
+	>=net-libs/libisds-0.6"
 DEPEND="${RDEPEND}
-	nls? ( sys-devel/gettext )
-	dev-libs/libxslt
-	dev-util/pkgconfig
-	app-text/docbook-xsl-stylesheets"
+	virtual/pkgconfig
+	doc? (
+		app-text/docbook-xsl-stylesheets
+		dev-libs/libxslt
+	)
+	nls? ( sys-devel/gettext )"
 
 DOCS=( NEWS README AUTHORS ChangeLog )
 
@@ -43,6 +45,7 @@ src_configure() {
 	econf \
 		--disable-fatalwarnings \
 		$(use_enable debug) \
+		$(use_enable doc) \
 		$(use_enable nls) \
 		$(use_enable xattr)
 }

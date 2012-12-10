@@ -1,6 +1,18 @@
 # ChangeLog for app-arch/par2cmdline
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/par2cmdline/ChangeLog,v 1.23 2010/01/15 01:30:02 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/par2cmdline/ChangeLog,v 1.26 2012/01/16 16:01:42 ssuominen Exp $
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  par2cmdline-0.4-r2.ebuild:
+  Update the ebuild from EAPI=0 to EAPI=4.
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -par2cmdline-0.5.ebuild:
+  Revert last commit because of unclear upstream status.
+
+*par2cmdline-0.5 (15 Jan 2012)
+
+  15 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +par2cmdline-0.5.ebuild:
+  Version bump.
 
   15 Jan 2010; Jonathan Callen <abcd@gentoo.org> par2cmdline-0.4-r2.ebuild:
   Add prefix keywords

@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/gtk-sharp-module.eclass,v 1.31 2011/07/29 13:57:29 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/gtk-sharp-module.eclass,v 1.36 2012/09/27 16:35:41 axs Exp $
 
 # @ECLASS: gtk-sharp-module.eclass
 # @MAINTAINER:
@@ -17,7 +17,7 @@ WANT_AUTOCONF=none
 inherit eutils mono multilib libtool autotools base versionator
 
 case ${EAPI:-0} in
-	2|3|4) ;;
+	2|3|4|5) ;;
 	*) die "Unknown EAPI." ;;
 esac
 
@@ -125,6 +125,7 @@ case ${GTK_SHARP_MODULE} in
 		TARBALL="gnome-desktop-sharp"
 		add_depend "=dev-dotnet/gtk-sharp-${GTK_SHARP_REQUIRED_VERSION}*"
 		add_depend "=dev-dotnet/gnome-sharp-2.24*"
+		add_depend "gnome-base/gnome-desktop:2"
 		add_bdepend "=dev-dotnet/gtk-sharp-gapi-${GTK_SHARP_REQUIRED_VERSION}*"
 		;;
 	*)
@@ -256,14 +257,14 @@ DESCRIPTION="GtkSharp's ${GTK_SHARP_MODULE} module of the ${TARBALL} tarball"
 # @DESCRIPTION:
 # Default value: http://www.mono-project.com/GtkSharp
 HOMEPAGE="http://www.mono-project.com/GtkSharp"
-# @ECLASS-VARIABLE: DESCRIPTION
+# @ECLASS-VARIABLE: LICENSE
 # @DESCRIPTION:
 # Default value: LGPL-2.1
 LICENSE="LGPL-2.1"
 
 add_depend	">=dev-lang/mono-2.0.1"
 add_bdepend	">=sys-apps/sed-4"
-add_bdepend	">=dev-util/pkgconfig-0.23"
+add_bdepend	"virtual/pkgconfig"
 add_bdepend	">=app-shells/bash-3.1"
 
 IUSE="debug"
@@ -325,6 +326,7 @@ get_sharp_assemblies() {
 
 # @FUNCTION: phase_hook
 # @USAGE: <prefix>
+# @DESCRIPTION:
 # Looks for functions named <prefix>_caller_suffix and executes them.
 # _caller_suffix is the calling function with the prefix
 # gtk-sharp-module removed.

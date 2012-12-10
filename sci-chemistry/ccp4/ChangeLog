@@ -1,6 +1,32 @@
 # ChangeLog for sci-chemistry/ccp4
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ccp4/ChangeLog,v 1.28 2011/06/21 16:05:14 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ccp4/ChangeLog,v 1.35 2012/10/19 09:42:41 jlec Exp $
+
+  19 Oct 2012; Justin Lecher <jlec@gentoo.org> ccp4-6.1.3-r1.ebuild:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> -ccp4-6.0.1-r1.ebuild,
+  -ccp4-6.0.2.ebuild, -ccp4-6.0.2-r1.ebuild, -ccp4-6.1.3.ebuild:
+  Drop old
+
+  14 Apr 2012; Andreas Schuerch <nativemad@gentoo.org> ccp4-6.1.3-r1.ebuild:
+  x86 stable, see bug 376463
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> ccp4-6.1.3-r1.ebuild:
+  amd64 restable
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> ccp4-6.1.3-r1.ebuild:
+  Revert back to ~arch for security and libpng porting.
+
+  06 Oct 2011; Tony Vroon <chainsaw@gentoo.org> ccp4-6.1.3-r1.ebuild:
+  Marked stable on AMD64 without rigorous testing as it is part of a tangled
+  web of intricate dependencies for unfetchable/untestable packages. For bug
+  #376463 by Agostino "ago" Sarubbo.
+
+  07 Sep 2011; Justin Lecher <jlec@gentoo.org> ccp4-6.1.3-r1.ebuild,
+  metadata.xml:
+  keyworded *-linux, tested by me
 
   21 Jun 2011; Justin Lecher <jlec@gentoo.org> ccp4-6.0.1-r1.ebuild,
   ccp4-6.0.2.ebuild, ccp4-6.0.2-r1.ebuild, ccp4-6.1.3.ebuild,

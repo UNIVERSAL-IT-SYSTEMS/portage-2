@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/deskbar-applet/deskbar-applet-2.32.0.ebuild,v 1.10 2011/03/22 19:22:06 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/deskbar-applet/deskbar-applet-2.32.0.ebuild,v 1.13 2012/10/23 06:40:00 tetromino Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
-PYTHON_DEPEND="2:2.4"
+PYTHON_DEPEND="2:2.5"
 
 inherit eutils gnome2 python
 
@@ -39,7 +39,7 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35
 	app-text/scrollkeeper
 	app-text/gnome-doc-utils
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	app-text/docbook-xml-dtd:4.2"
 
 pkg_setup() {
@@ -52,11 +52,11 @@ pkg_setup() {
 }
 
 src_prepare() {
+	epatch "${FILESDIR}/${P}-glib-2.32.patch" #439194
+
 	gnome2_src_prepare
 
-	# disable pyc compiling
-	mv py-compile py-compile.orig
-	ln -s $(type -P true) py-compile
+	python_clean_py-compile_files
 
 	python_convert_shebangs -r 2 .
 }

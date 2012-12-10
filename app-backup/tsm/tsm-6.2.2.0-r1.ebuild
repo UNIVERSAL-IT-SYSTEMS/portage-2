@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/tsm-6.2.2.0-r1.ebuild,v 1.2 2011/04/20 13:19:05 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/tsm-6.2.2.0-r1.ebuild,v 1.6 2012/07/12 14:16:32 axs Exp $
 
 EAPI=3
 
-inherit versionator multilib eutils rpm
+inherit versionator multilib eutils rpm pax-utils user
 
 DESCRIPTION="Tivoli Storage Manager (TSM) Backup/Archive (B/A) Client and API"
 HOMEPAGE="http://www.tivoli.com/"
@@ -21,7 +21,7 @@ SRC_TAR="${MY_PVR_ALLDOTS}-TIV-TSMBAC-LinuxX86.tar"
 SRC_URI="${BASE_URI}${SRC_TAR}"
 
 RESTRICT="strip" # Breaks libPiIMG.ss and libPiSNAP.so
-LICENSE="as-is Apache-1.1 JDOM gSOAP"
+LICENSE="as-is Apache-1.1 JDOM gSOAP GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="hsm"
@@ -209,4 +209,11 @@ pkg_postinst() {
 			chmod 0660 $i
 		fi
 	done
+}
+
+pkg_postinst()
+{
+	pax-mark psme /opt/tivoli/tsm/client/ba/bin/dsmc
+	# most likely some of the other executables (e.g. dsm) need this as well, but I
+	# cannot test it at the moment. - dilfridge
 }

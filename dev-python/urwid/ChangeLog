@@ -1,6 +1,69 @@
 # ChangeLog for dev-python/urwid
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/urwid/ChangeLog,v 1.43 2010/05/23 18:15:38 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/urwid/ChangeLog,v 1.59 2012/11/24 02:04:27 radhermit Exp $
+
+*urwid-1.1.1 (24 Nov 2012)
+
+  24 Nov 2012; Tim Harder <radhermit@gentoo.org> urwid-1.1.0.ebuild,
+  +urwid-1.1.1.ebuild:
+  Version bump. Fix html docs build with python-3.
+
+  05 Nov 2012; Tim Harder <radhermit@gentoo.org> urwid-0.9.9.1.ebuild,
+  urwid-1.0.2.ebuild, urwid-1.1.0.ebuild:
+  Add testing dep on twisted (bug #441942).
+
+*urwid-1.1.0 (24 Oct 2012)
+
+  24 Oct 2012; Tim Harder <radhermit@gentoo.org> +urwid-1.1.0.ebuild,
+  +files/urwid-1.1.0-sphinx.patch:
+  Version bump. Add doc use flag to build sphinx docs.
+
+  22 Oct 2012; Tim Harder <radhermit@gentoo.org> -urwid-1.0.0.ebuild,
+  -urwid-1.0.1.ebuild:
+  Remove old.
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> urwid-1.0.2.ebuild:
+  x86 stable wrt bug #433275
+
+  12 Sep 2012; Anthony G. Basile <blueness@gentoo.org> urwid-1.0.2.ebuild:
+  Stable ppc ppc64, bug #433275
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> urwid-1.0.2.ebuild:
+  Stable for amd64, wrt bug #433275
+
+  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org> urwid-1.0.2.ebuild:
+  Keyword ~arm
+
+*urwid-1.0.2 (14 Jul 2012)
+
+  14 Jul 2012; Tim Harder <radhermit@gentoo.org> +urwid-1.0.2.ebuild:
+  Version bump.
+
+  31 May 2012; Anthony G. Basile <blueness@gentoo.org> urwid-1.0.1.ebuild:
+  Keyword ~mips
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> urwid-1.0.1.ebuild:
+  Stable for ppc/ppc64; bug #404719
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> urwid-1.0.1.ebuild:
+  x86 stable wrt bug #404719
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> urwid-1.0.1.ebuild:
+  Stable for amd64, wrt bug #404719
+
+*urwid-1.0.1 (02 Dec 2011)
+
+  02 Dec 2011; Tim Harder <radhermit@gentoo.org> +urwid-1.0.1.ebuild:
+  Version bump.
+
+  04 Nov 2011; Markos Chandras <hwoarang@gentoo.org> urwid-1.0.0.ebuild:
+  Fix dependencies. Restrict Jython ABIs. Ignore tests failures with Python 3.1.
+  Avoid breaking strict-aliasing rules with Python 2. Patch by Arfrever
+
+*urwid-1.0.0 (22 Sep 2011)
+
+  22 Sep 2011; Tim Harder <radhermit@gentoo.org> +urwid-1.0.0.ebuild:
+  Version bump.
 
   23 May 2010; Pacho Ramos <pacho@gentoo.org> urwid-0.9.9.1.ebuild:
   stable amd64, bug 307259

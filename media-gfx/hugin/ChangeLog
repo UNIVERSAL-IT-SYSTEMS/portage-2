@@ -1,6 +1,55 @@
 # ChangeLog for media-gfx/hugin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/ChangeLog,v 1.114 2011/07/05 19:41:43 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/hugin/ChangeLog,v 1.125 2012/11/18 16:19:09 maekke Exp $
+
+  18 Nov 2012; Markus Meier <maekke@gentoo.org> hugin-2012.0.0.ebuild:
+  add missing media-libs/lensfun dependency by Christian Schmitt and Nikoli,
+  bug #443770
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> hugin-2011.4.0-r1.ebuild:
+  Stable for amd64, wrt bug #443754
+
+*hugin-2012.0.0 (18 Nov 2012)
+
+  18 Nov 2012; Markus Meier <maekke@gentoo.org> +hugin-2012.0.0.ebuild:
+  version bump
+
+*hugin-2011.4.0-r1 (30 Jun 2012)
+
+  30 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +hugin-2011.4.0-r1.ebuild, +files/hugin-2011.4.0-boost148.patch,
+  +files/hugin-2011.4.0-gcc47.patch:
+  Add simple build fixes for gcc-4.7 and boost-1.48+ from upstream.
+  Unfortunately boost-1.48 has an ugly bug with gcc-4.7 itself (bug 424319)
+  which means we need boost-1.49.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> hugin-2011.0.0.ebuild,
+  hugin-2011.2.0.ebuild, hugin-2011.4.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*hugin-2011.4.0 (18 Dec 2011)
+
+  18 Dec 2011; Markus Meier <maekke@gentoo.org> +hugin-2011.4.0.ebuild:
+  version bump
+
+  17 Oct 2011; Markus Meier <maekke@gentoo.org> -hugin-2010.2.0.ebuild:
+  old
+
+  17 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> hugin-2011.0.0.ebuild:
+  ppc stable wrt #379089
+
+*hugin-2011.2.0 (02 Oct 2011)
+
+  02 Oct 2011; Markus Meier <maekke@gentoo.org> -hugin-2010.0.0.ebuild,
+  -files/hugin-2010.0.0_rc1-libpng14.patch, -hugin-2010.4.0.ebuild,
+  +hugin-2011.2.0.ebuild:
+  version bump, remove old
+
+  15 Sep 2011; Andreas Schuerch <nativemad@gentoo.org> hugin-2011.0.0.ebuild:
+  x86 stable, Thanks JD, bug 379089
+
+  18 Aug 2011; Tony Vroon <chainsaw@gentoo.org> hugin-2011.0.0.ebuild:
+  Marked stable based on arch testing by Agostino "ago" Sarubbo in bug #379089.
 
   05 Jul 2011; Markus Meier <maekke@gentoo.org> hugin-2010.0.0.ebuild,
   hugin-2010.2.0.ebuild, hugin-2010.4.0.ebuild, hugin-2011.0.0.ebuild:

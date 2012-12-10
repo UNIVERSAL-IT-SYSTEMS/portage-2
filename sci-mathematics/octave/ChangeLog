@@ -1,6 +1,137 @@
 # ChangeLog for sci-mathematics/octave
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/octave/ChangeLog,v 1.106 2011/07/25 10:13:48 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/octave/ChangeLog,v 1.132 2012/12/04 18:45:04 bicatali Exp $
+
+  04 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> octave-3.6.3.ebuild:
+  Added virtual/glu, thanks Niklas Johansson bug #445810
+
+  22 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/octave-3.6.3-legendtext.patch, -files/octave-3.4.3-gets.patch,
+  -octave-3.6.1.ebuild, -octave-3.6.2-r1.ebuild, -octave-3.6.2.ebuild,
+  metadata.xml, octave-3.6.3.ebuild:
+  Adding a patch to fix legend text with FLTK backend, thanks Thomas Ilnseher
+  (bug #437868). Removed old
+
+*octave-3.6.3 (26 Oct 2012)
+
+  26 Oct 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  files/octave-3.4.3-pkgbuilddir.patch, +octave-3.6.3.ebuild,
+  +files/octave-3.6.3-rcond.patch:
+  Version bump
+
+  25 Oct 2012;  <naota@gentoo.org> octave-3.6.2-r1.ebuild:
+  Add ~x86-fbsd. #303915
+
+  05 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/octave-3.4.3-gets.patch, octave-3.6.2-r1.ebuild:
+  Fixed for newer glib and added a prefix hack to link with fltk for native
+  graphics
+
+*octave-3.6.2-r1 (11 Jun 2012)
+
+  11 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org> +octave-3.6.2-r1.ebuild:
+  Re-add hdf5, some octave packages might need it. Do in source configuring for
+  preventing more bugs. Drop hppa (needs hdf5)
+
+*octave-3.6.2 (06 Jun 2012)
+
+  06 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  -files/octave-3.2.0_as_needed.patch, -files/octave-3.2.0_parallel_make.patch,
+  -octave-3.2.4-r1.ebuild, -files/octave-3.2.4-curl-headers.patch,
+  -files/octave-3.2.4-fltk-magic.patch, -files/octave-3.2.4-imread.patch,
+  -files/octave-3.2.4-ldflags.patch, -octave-3.6.0.ebuild,
+  +octave-3.6.2.ebuild:
+  Version bump
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> octave-3.2.4-r1.ebuild,
+  octave-3.4.3-r1.ebuild, octave-3.6.0.ebuild, octave-3.6.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  24 Apr 2012; Michał Górny <mgorny@gentoo.org> octave-3.2.4-r1.ebuild,
+  octave-3.4.3-r1.ebuild, octave-3.6.0.ebuild, octave-3.6.1.ebuild:
+  Update to use mirror://.
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> octave-3.2.4-r1.ebuild,
+  octave-3.4.3-r1.ebuild, octave-3.6.0.ebuild, octave-3.6.1.ebuild:
+  Drop ia64/sparc
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> octave-3.2.4-r1.ebuild,
+  octave-3.4.3-r1.ebuild, octave-3.6.0.ebuild, octave-3.6.1.ebuild:
+  Drop alpha/sparc keywords
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> octave-3.4.3-r1.ebuild:
+  Marking octave-3.4.3-r1 ppc64 for bug 402199
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> octave-3.4.3-r1.ebuild:
+  Marking octave-3.4.3-r1 ppc for bug 402199
+
+*octave-3.6.1 (27 Feb 2012)
+
+  27 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> +octave-3.6.1.ebuild:
+  Version bump, add a gnuplot flag (bug #402705), and fix occasional failures
+  on install (bug #401189)
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> octave-3.4.3-r1.ebuild:
+  x86 stable wrt bug #402199
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> octave-3.4.3-r1.ebuild:
+  Stable for HPPA (bug #402199).
+
+  07 Feb 2012; Agostino Sarubbo <ago@gentoo.org> octave-3.4.3-r1.ebuild:
+  Stable for amd64, wrt bug #402199
+
+  05 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> octave-3.4.3-r1.ebuild,
+  octave-3.6.0.ebuild:
+  Added readline dependency
+
+  31 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> octave-3.4.3-r1.ebuild,
+  +files/octave-3.4.3-texi.patch, octave-3.6.0.ebuild:
+  Remove openmp (too experimental, do it with EXTRA_ECONF if interested), fixed
+  a parallel build issue (bug #401189), remove obsolete configure option
+
+  21 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> octave-3.4.3-r1.ebuild:
+  Applying pkg_setup to earlier version
+
+  20 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> octave-3.6.0.ebuild:
+  Move pkg_pretend -> pkg_setup for openmp check, bug #399557
+
+  19 Jan 2012; Kacper Kowalik <xarthisius@gentoo.org> Manifest:
+  Fix manifest
+
+*octave-3.6.0 (19 Jan 2012)
+
+  19 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  -files/octave-3.2.4-addpath.patch, -files/octave-3.2.4-dlmread-speedup.patch,
+  -files/octave-3.2.4-filter-empty-vector.patch,
+  -files/octave-3.2.4-fltk-1.3.patch, -files/octave-3.2.4-imshow.patch,
+  -files/octave-3.2.4-interp2.patch, -files/octave-3.2.4-no-helvetica.patch,
+  -files/octave-3.2.4-normal-marker-size.patch,
+  -files/octave-3.4.0-curl-headers.patch, -files/octave-3.4.0-fftshift.patch,
+  -files/octave-3.4.0-fltk.patch, -files/octave-3.4.0-gcc46.patch,
+  octave-3.4.3-r1.ebuild, +files/octave-3.4.3-help.patch,
+  +files/octave-3.4.3-pkgbuilddir.patch, +octave-3.6.0.ebuild:
+  Version bump. Fixed configure option for imagemagick/graphicsmagick
+
+  17 Jan 2012; Kacper Kowalik <xarthisius@gentoo.org> octave-3.4.3-r1.ebuild:
+  Add prefix keywords
+
+*octave-3.4.3-r1 (03 Jan 2012)
+
+  03 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> -octave-3.2.4-r3.ebuild,
+  -octave-3.4.0-r2.ebuild, -octave-3.4.3.ebuild, +octave-3.4.3-r1.ebuild,
+  metadata.xml:
+  Added glpk, qhull, qrupdate use flags to allow minimal no graphics build and
+  take care of some automagic. Removed fltk flag, the native graphics need
+  opengl anyway. Gnuplot is not a dependencency anymore (more a suggested one).
+
+*octave-3.4.3 (25 Nov 2011)
+
+  25 Nov 2011; Sébastien Fabbro <bicatali@gentoo.org> +octave-3.4.3.ebuild:
+  Version bump. Removed some patches applied upstream
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> octave-3.2.4-r1.ebuild,
+  octave-3.2.4-r3.ebuild, octave-3.4.0-r2.ebuild:
+  remove ptex dep as it is going away
 
   25 Jul 2011; Christoph Mende <angelos@gentoo.org> octave-3.2.4-r1.ebuild,
   octave-3.2.4-r3.ebuild, +files/octave-3.2.4-curl-headers.patch,
@@ -20,7 +151,7 @@
 
 *octave-3.4.0-r1 (09 Jun 2011)
 
-  09 Jun 2011; Sébastien Fabbro <bicatali@gentoo.org> -octave-3.2.4-r2.ebuild,
+   09 Jun 2011; Sébastien Fabbro <bicatali@gentoo.org> -octave-3.2.4-r2.ebuild,
   -octave-3.4.0.ebuild, +octave-3.4.0-r1.ebuild,
   +files/octave-3.4.0-fltk.patch, +files/octave-3.4.0-gcc46.patch,
   +files/octave-3.4.0-help.patch, +files/octave-3.4.0-pkgbuilddir.patch:
@@ -663,4 +794,3 @@
   19 Feb 2002; T.Neidt <tod@gentoo.org> ChangeLog, octave-2.0.16.ebuild :
   Initial commit. GNU Octave is a high-level language, primarily intended
   for numerical computations. It is mostly compatible with Matlab.
-

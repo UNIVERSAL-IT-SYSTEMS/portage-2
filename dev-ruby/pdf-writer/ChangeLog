@@ -1,6 +1,30 @@
 # ChangeLog for dev-ruby/pdf-writer
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/pdf-writer/ChangeLog,v 1.21 2010/06/27 06:23:24 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/pdf-writer/ChangeLog,v 1.27 2012/09/27 09:16:06 ssuominen Exp $
+
+  27 Sep 2012; Samuli Suominen <ssuominen@gentoo.org>
+  pdf-writer-1.1.8-r2.ebuild:
+  Keyword ~ppc/~ppc64 wrt #417513
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> pdf-writer-1.1.8-r1.ebuild,
+  pdf-writer-1.1.8-r2.ebuild:
+  Drop ia64/sparc keywords
+
+*pdf-writer-1.1.8-r2 (18 Sep 2011)
+
+  18 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  +pdf-writer-1.1.8-r2.ebuild:
+  Add support for ree18.
+
+  20 Aug 2011; Hans de Graaff <graaff@gentoo.org> -pdf-writer-1.1.8.ebuild:
+  Remove old version.
+
+  07 Aug 2011; Hans de Graaff <graaff@gentoo.org> pdf-writer-1.1.8-r1.ebuild:
+  Move stable keywords forward since only the eclass installing the files
+  changed.
 
 *pdf-writer-1.1.8-r1 (27 Jun 2010)
 
@@ -87,4 +111,3 @@
   +pdf-writer-1.1.1.ebuild:
   Initial import; ebuild submitted by Mathias Gumz <akira@fluxbox.org> in bug
   #100549
-

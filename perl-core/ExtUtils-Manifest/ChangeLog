@@ -1,6 +1,48 @@
 # ChangeLog for perl-core/ExtUtils-Manifest
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/perl-core/ExtUtils-Manifest/ChangeLog,v 1.11 2011/07/26 18:21:50 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/perl-core/ExtUtils-Manifest/ChangeLog,v 1.20 2012/09/13 19:10:14 tove Exp $
+
+*ExtUtils-Manifest-1.610.0 (13 Sep 2012)
+
+  13 Sep 2012; Torsten Veller <tove@gentoo.org>
+  +ExtUtils-Manifest-1.610.0.ebuild:
+  Version bump
+
+  05 Aug 2012; Markus Meier <maekke@gentoo.org>
+  ExtUtils-Manifest-1.600.0.ebuild:
+  arm stable, bug #418803
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  28 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  ExtUtils-Manifest-1.600.0.ebuild:
+  keyword ~amd64-fbsd
+
+  24 Mar 2012; Fabian Groffen <grobian@gentoo.org>
+  ExtUtils-Manifest-1.600.0.ebuild:
+  Add Prefix keywords
+
+  14 Feb 2012; Alexis Ballier <aballier@gentoo.org>
+  ExtUtils-Manifest-1.600.0.ebuild:
+  keyword ~x86-fbsd
+
+  04 Feb 2012; Raúl Porcel <armin76@gentoo.org>
+  ExtUtils-Manifest-1.580.0.ebuild, ExtUtils-Manifest-1.590.0.ebuild,
+  ExtUtils-Manifest-1.600.0.ebuild:
+  Add ~arm/~s390/~sh
+
+*ExtUtils-Manifest-1.600.0 (25 Aug 2011)
+
+  25 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +ExtUtils-Manifest-1.600.0.ebuild:
+  Version bump
+
+*ExtUtils-Manifest-1.590.0 (09 Aug 2011)
+
+  09 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +ExtUtils-Manifest-1.590.0.ebuild:
+  Version bump
 
   26 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org>
   ExtUtils-Manifest-1.580.0.ebuild:
@@ -62,4 +104,3 @@
 
   11 May 2009; Kent Fredric <kentfredric@gmail.com> +metadata.xml:
   Added for Dist::ZIlla
-

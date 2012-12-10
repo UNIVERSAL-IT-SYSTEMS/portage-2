@@ -1,6 +1,54 @@
 # ChangeLog for dev-perl/Unicode-Map
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Unicode-Map/ChangeLog,v 1.17 2010/09/23 08:38:52 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Unicode-Map/ChangeLog,v 1.32 2012/09/01 12:00:48 grobian Exp $
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> Unicode-Map-0.112.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  07 Aug 2012; Naohiro Aota <naota@gentoo.org> Unicode-Map-0.112.0.ebuild:
+  Add ~x86-fbsd; #428248
+
+  06 Aug 2012; Alexis Ballier <aballier@gentoo.org> Unicode-Map-0.112.0.ebuild:
+  keyword ~amd64-fbsd
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Unicode-Map-0.112.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> Unicode-Map-0.112.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #400255
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Unicode-Map-0.112.0.ebuild:
+  x86 stable wrt bug #400255
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> Unicode-Map-0.112.0.ebuild:
+  Marking Unicode-Map-0.112.0 ppc64 for bug 400255
+
+  02 Mar 2012; Markus Meier <maekke@gentoo.org> Unicode-Map-0.112.0.ebuild:
+  arm stable, bug #400255
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> Unicode-Map-0.112.0.ebuild:
+  Marking Unicode-Map-0.112.0 ppc for bug 400255
+
+  24 Feb 2012; Jeroen Roovers <jer@gentoo.org> Unicode-Map-0.112.0.ebuild:
+  Stable for HPPA (bug #400255).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Unicode-Map-0.112.0.ebuild:
+  Stable for amd64, wrt bug #400255
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Unicode-Map-0.112-r1.ebuild:
+  Cleanup
+
+*Unicode-Map-0.112.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +Unicode-Map-0.112.0.ebuild:
+  Change version scheme
+
+  08 Aug 2011; Fabian Groffen <grobian@gentoo.org> Unicode-Map-0.112-r1.ebuild:
+  Marked ~x64-macos
 
   23 Sep 2010; Fabian Groffen <grobian@gentoo.org>
   Unicode-Map-0.112-r1.ebuild:
@@ -63,4 +111,3 @@
   06 Jun 2004; Michael Cummings <mcummings@gentoo.org>
   Unicode-Map-0.112.ebuild, metadata.xml:
   dep for new mime-tools
-

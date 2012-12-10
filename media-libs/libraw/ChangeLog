@@ -1,6 +1,117 @@
 # ChangeLog for media-libs/libraw
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libraw/ChangeLog,v 1.7 2011/07/16 19:20:55 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libraw/ChangeLog,v 1.36 2012/12/09 22:01:36 radhermit Exp $
+
+*libraw-0.15.0_beta2 (09 Dec 2012)
+
+  09 Dec 2012; Tim Harder <radhermit@gentoo.org> +libraw-0.15.0_beta2.ebuild:
+  Version bump.
+
+  15 Oct 2012; Tim Harder <radhermit@gentoo.org> libraw-0.15.0_beta1.ebuild:
+  Add jpeg use flag.
+
+  15 Oct 2012; Tim Harder <radhermit@gentoo.org> -libraw-0.14.5.ebuild,
+  -libraw-0.14.6.ebuild:
+  Remove old.
+
+*libraw-0.15.0_beta1 (15 Oct 2012)
+
+  15 Oct 2012; Tim Harder <radhermit@gentoo.org> +libraw-0.15.0_beta1.ebuild:
+  Version bump.
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libraw-0.14.7.ebuild:
+  x86 stable wrt bug #429124
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> libraw-0.14.7.ebuild:
+  Stable for amd64, wrt bug #429124
+
+  29 Jun 2012; Jeff Horelick <jdhore@gentoo.org> libraw-0.14.6.ebuild:
+  marked x86 per bug 419093
+
+  28 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libraw-0.14.6.ebuild:
+  Stable for amd64, wrt bug #419093
+
+*libraw-0.14.7 (28 Jun 2012)
+
+  28 Jun 2012; Tim Harder <radhermit@gentoo.org> +libraw-0.14.7.ebuild,
+  +files/libraw-0.14.7-pkgconfig.patch:
+  Version bump.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libraw-0.14.5.ebuild,
+  libraw-0.14.6.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*libraw-0.14.6 (04 Apr 2012)
+
+  04 Apr 2012; Tim Harder <radhermit@gentoo.org> +libraw-0.14.6.ebuild:
+  Version bump.
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libraw-0.14.5.ebuild:
+  x86 stable wrt bug #404303
+
+  23 Feb 2012; Tim Harder <radhermit@gentoo.org> libraw-0.14.5.ebuild:
+  No need to enable the openmp use flag by default since that's already done in
+  the standard linux profile.
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> libraw-0.14.5.ebuild:
+  Stable for amd64, wrt bug #404303
+
+  17 Feb 2012; Tim Harder <radhermit@gentoo.org> libraw-0.14.5.ebuild:
+  Check for openmp toolchain support, remove unnecessary quotes, and set
+  autoreconf variable.
+
+  10 Feb 2012; Tim Harder <radhermit@gentoo.org> -libraw-0.14.3.ebuild,
+  -libraw-0.14.4.ebuild:
+  Remove old.
+
+*libraw-0.14.5 (26 Dec 2011)
+
+  26 Dec 2011; Tim Harder <radhermit@gentoo.org> +libraw-0.14.5.ebuild:
+  Version bump.
+
+*libraw-0.14.4 (13 Dec 2011)
+
+  13 Dec 2011; Tim Harder <radhermit@gentoo.org> +libraw-0.14.4.ebuild:
+  Version bump.
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org> libraw-0.14.3.ebuild:
+  Fix autotools-utils usage.
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org> libraw-0.14.3.ebuild:
+  Build in the source tree.
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org> -libraw-0.13.8.ebuild,
+  -libraw-0.14.0.ebuild, -libraw-0.14.1.ebuild, -libraw-0.14.2.ebuild:
+  Remove old.
+
+*libraw-0.14.3 (26 Oct 2011)
+
+  26 Oct 2011; Tim Harder <radhermit@gentoo.org> +libraw-0.14.3.ebuild:
+  Version bump. Add jpeg2k use flag.
+
+*libraw-0.14.2 (19 Oct 2011)
+
+  19 Oct 2011; Tim Harder <radhermit@gentoo.org> +libraw-0.14.2.ebuild:
+  Version bump.
+
+  12 Oct 2011; Tim Harder <radhermit@gentoo.org> -libraw-0.13.6.ebuild,
+  -files/libraw-0.13.6-makefile.patch, -libraw-0.13.7.ebuild:
+  Remove old.
+
+*libraw-0.14.1 (12 Oct 2011)
+
+  12 Oct 2011; Tim Harder <radhermit@gentoo.org> +libraw-0.14.1.ebuild:
+  Version bump.
+
+*libraw-0.14.0 (22 Sep 2011)
+
+  22 Sep 2011; Tim Harder <radhermit@gentoo.org> +libraw-0.14.0.ebuild:
+  Version bump.
+
+*libraw-0.13.8 (10 Aug 2011)
+
+  10 Aug 2011; Tim Harder <radhermit@gentoo.org> +libraw-0.13.8.ebuild:
+  Version bump
 
 *libraw-0.13.7 (16 Jul 2011)
 

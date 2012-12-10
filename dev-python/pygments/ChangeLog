@@ -1,6 +1,46 @@
 # ChangeLog for dev-python/pygments
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pygments/ChangeLog,v 1.75 2011/03/02 17:20:33 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pygments/ChangeLog,v 1.87 2012/11/09 12:07:43 idella4 Exp $
+
+  10 Nov 2012; Ian Delaney <idella4@gentoo.org> pygments-1.5.ebuild:
+  Added missing dep dev-texlive/texlive-latexrecommended under test?, fixes Bug
+  #432440
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> pygments-1.5.ebuild:
+  alpha/s390/sh/sparc stable wrt #418909
+
+  12 Jul 2012; Akinori Hattori <hattya@gentoo.org> pygments-1.5.ebuild:
+  ia64 stable wrt bug #418909
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> pygments-1.5.ebuild:
+  Stable for HPPA (bug #418909).
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> pygments-1.5.ebuild:
+  Marking pygments-1.5 ppc for bug 418909
+
+  06 Jun 2012; Markus Meier <maekke@gentoo.org> pygments-1.5.ebuild:
+  arm stable, bug #418909
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> pygments-1.5.ebuild:
+  marked x86 per bug 418909
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> pygments-1.5.ebuild:
+  Marking pygments-1.5 ppc64 for bug 418909
+
+  01 Jun 2012; Agostino Sarubbo <ago@gentoo.org> pygments-1.5.ebuild:
+  Stable for amd64, wrt bug #418909
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> pygments-1.5.ebuild:
+  keyword ~amd64-fbsd
+
+  24 Mar 2012; Mike Gilbert <floppym@gentoo.org> pygments-1.5.ebuild:
+  Per Arfrever, add setuptools dependency.
+
+*pygments-1.5 (19 Mar 2012)
+
+  19 Mar 2012; Rafael G. Martins <rafaelmartins@gentoo.org>
+  +pygments-1.5.ebuild:
+  Version bump.
 
   02 Mar 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   -pygments-1.3.1.ebuild:
@@ -292,4 +332,3 @@
   +files/pygments-0.7.1-other.py-ebuild.patch, +metadata.xml,
   +pygments-0.7.1.ebuild:
   Initial commit. Thanks Georg Brandl <g.brandl@gmx.net> bug #167115
-

@@ -1,6 +1,56 @@
 # ChangeLog for dev-perl/DBD-SQLite
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/DBD-SQLite/ChangeLog,v 1.94 2011/07/30 10:23:21 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/DBD-SQLite/ChangeLog,v 1.109 2012/09/02 17:30:27 tove Exp $
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -DBD-SQLite-0.31-r1.ebuild,
+  -DBD-SQLite-1.31.ebuild, -DBD-SQLite-1.330.0.ebuild:
+  Cleanup
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> DBD-SQLite-1.370.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> DBD-SQLite-1.350.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #413007
+
+*DBD-SQLite-1.370.0 (10 Jun 2012)
+
+  10 Jun 2012; Torsten Veller <tove@gentoo.org> +DBD-SQLite-1.370.0.ebuild:
+  Version bump
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> DBD-SQLite-1.350.0.ebuild:
+  keyword ~amd64-fbsd
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> DBD-SQLite-1.350.0.ebuild:
+  Marking DBD-SQLite-1.350.0 ppc for bug 413007
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> DBD-SQLite-1.350.0.ebuild:
+  Stable for HPPA (bug #413007).
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> DBD-SQLite-1.350.0.ebuild:
+  arm stable, bug #413007
+
+  24 Apr 2012; Jeff Horelick <jdhore@gentoo.org> DBD-SQLite-1.350.0.ebuild:
+  marked x86 per bug 413007
+
+  23 Apr 2012; Brent Baude <ranger@gentoo.org> DBD-SQLite-1.350.0.ebuild:
+  Marking DBD-SQLite-1.350.0 ppc64 for bug 413007
+
+  22 Apr 2012; Agostino Sarubbo <ago@gentoo.org> DBD-SQLite-1.350.0.ebuild:
+  Stable for amd64, wrt bug #413007
+
+*DBD-SQLite-1.350.0 (02 Dec 2011)
+
+  02 Dec 2011; Torsten Veller <tove@gentoo.org> +DBD-SQLite-1.350.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> +DBD-SQLite-0.31-r1.ebuild:
+  Readding 0.31 for net-proxy/vultureng again
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -DBD-SQLite-0.31-r1.ebuild:
+  Cleanup
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> DBD-SQLite-0.31-r1.ebuild,
   DBD-SQLite-1.31.ebuild, DBD-SQLite-1.330.0.ebuild:
@@ -377,4 +427,3 @@
   31 Mar 2004; Michael Cummings <mcummings@gentoo.org> DBD-SQLite-0.31.ebuild,
   metadata.xml:
   bug 32824
-

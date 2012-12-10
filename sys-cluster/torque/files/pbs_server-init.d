@@ -1,6 +1,6 @@
 #!/sbin/runscript
-# Copyright 1999-2005 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the Torque 2.5+ License
 
 . /etc/conf.d/torque 
 PBS_SERVER_HOME="$(. /etc/env.d/25torque; echo ${PBS_SERVER_HOME})"
@@ -20,14 +20,12 @@ checkconfig() {
         fi
     done
 
-    for i in "acl_svr/operators" "serverdb"; do
-        if [ ! -e "${PBS_SERVER_HOME}/server_priv/${i}" ]; then
-            eerror "Torque has not been fully configured to run."
-            eerror "Missing ${i}"
-            return 1
-        fi
-    done
-    
+    if [ ! -e "${PBS_SERVER_HOME}/server_priv/serverdb" ]; then
+        eerror "Torque has not been fully configured to run."
+        eerror "Missing ${PBS_SERVER_HOME}/server_priv/serverdb"
+        return 1
+    fi
+
     if [ -z "$(grep 'queue_type' ${PBS_SERVER_HOME}/server_priv/queues/*)" ]; then
         eerror "No queues have been defined yet."
         return 1

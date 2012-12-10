@@ -1,6 +1,112 @@
 # ChangeLog for dev-util/eric
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/eric/ChangeLog,v 1.165 2011/07/06 19:38:47 djc Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/eric/ChangeLog,v 1.186 2012/11/07 09:09:53 pesa Exp $
+
+  07 Nov 2012; Davide Pesavento <pesa@gentoo.org> -eric-4.5.4.ebuild,
+  -eric-5.2.3.ebuild, eric-4.5.6.ebuild, eric-5.2.5.ebuild:
+  x86 stable wrt bug 439046, remove old.
+
+  24 Oct 2012; <ago@gentoo.org> eric-5.2.5.ebuild:
+  Stable for amd64, wrt bug #439046
+
+  24 Oct 2012; Agostino Sarubbo <ago@gentoo.org> eric-4.5.6.ebuild:
+  Stable for amd64, wrt bug #439046
+
+*eric-4.5.7 (20 Oct 2012)
+*eric-5.2.6 (20 Oct 2012)
+
+  20 Oct 2012; Davide Pesavento <pesa@gentoo.org> +eric-4.5.7.ebuild,
+  +eric-5.2.6.ebuild:
+  Version bumps.
+
+*eric-5.2.5 (08 Sep 2012)
+*eric-4.5.6 (08 Sep 2012)
+
+  08 Sep 2012; Davide Pesavento <pesa@gentoo.org> +eric-4.5.6.ebuild,
+  +eric-5.2.5.ebuild, -eric-4.5.5.ebuild, -eric-5.2.4.ebuild:
+  Bump. Remove old versions that are not going stable.
+
+*eric-5.2.4 (12 Aug 2012)
+*eric-4.5.5 (12 Aug 2012)
+
+  12 Aug 2012; Davide Pesavento <pesa@gentoo.org> +eric-4.5.5.ebuild,
+  +eric-5.2.4.ebuild:
+  Version bumps.
+
+  02 Aug 2012; Davide Pesavento <pesa@gentoo.org> -eric-4.5.3.ebuild,
+  -eric-5.2.2.ebuild, eric-4.5.4.ebuild, eric-5.2.3.ebuild:
+  amd64/x86 stable wrt bug 429054
+
+*eric-4.5.4 (02 Jul 2012)
+
+  02 Jul 2012; Davide Pesavento <pesa@gentoo.org> +eric-4.5.4.ebuild:
+  Bump eric:4 too.
+
+*eric-5.2.3 (28 Jun 2012)
+
+  28 Jun 2012; Patrick Lauer <patrick@gentoo.org> +eric-5.2.3.ebuild:
+  Bump
+
+  03 Jun 2012; Davide Pesavento <pesa@gentoo.org> -eric-4.5.0.ebuild,
+  -eric-5.2.0.ebuild, eric-4.5.3.ebuild, eric-5.2.2.ebuild:
+  x86 stable wrt bug 418953, remove old.
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> eric-4.5.3.ebuild,
+  eric-5.2.2.ebuild:
+  stable for amd64, wrt to bug #418953
+
+  23 May 2012; Johannes Huber <johu@gentoo.org> -eric-4.4.14.ebuild,
+  -eric-5.1.2.ebuild, -files/eric-5.0.2-remove_coverage.patch,
+  -files/remove_coverage.patch:
+  Remove old.
+
+  23 May 2012; Jeff Horelick <jdhore@gentoo.org> eric-4.5.0.ebuild,
+  eric-5.2.0.ebuild:
+  marked x86 per bug 410035
+
+*eric-5.2.2 (02 May 2012)
+*eric-4.5.3 (02 May 2012)
+
+  02 May 2012; Davide Pesavento <pesa@gentoo.org> +eric-4.5.3.ebuild,
+  +eric-5.2.2.ebuild, -eric-4.5.2.ebuild, -eric-5.2.1.ebuild:
+  Version bumps.
+
+  30 Apr 2012; Davide Pesavento <pesa@gentoo.org> eric-4.5.0.ebuild:
+  Also stabilize 4.5.0 on amd64, ack'ed by ago on irc.
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> eric-5.2.0.ebuild:
+  Stable for amd64, wrt bug #410035
+
+*eric-5.2.1 (10 Apr 2012)
+*eric-4.5.2 (10 Apr 2012)
+
+  10 Apr 2012; Davide Pesavento <pesa@gentoo.org> +eric-4.5.2.ebuild,
+  +eric-5.2.1.ebuild, -eric-4.5.1.ebuild:
+  Version bump.
+
+*eric-4.5.1 (28 Mar 2012)
+
+  28 Mar 2012; Davide Pesavento <pesa@gentoo.org> +eric-4.5.1.ebuild,
+  -eric-4.4.19.ebuild, -eric-5.1.7.ebuild:
+  Version bump; remove old.
+
+  28 Feb 2012; Davide Pesavento <pesa@gentoo.org> eric-4.4.14.ebuild,
+  eric-4.4.19.ebuild, eric-5.1.2.ebuild, eric-5.1.7.ebuild:
+  Restrict pypy on older versions too.
+
+*eric-4.5.0 (28 Feb 2012)
+*eric-5.2.0 (28 Feb 2012)
+
+  28 Feb 2012; Davide Pesavento <pesa@gentoo.org> +eric-4.5.0.ebuild,
+  +eric-5.2.0.ebuild:
+  Version bumps.
+
+*eric-4.4.19 (01 Jan 2012)
+*eric-5.1.7 (01 Jan 2012)
+
+  01 Jan 2012; Davide Pesavento <pesa@gentoo.org> +eric-4.4.19.ebuild,
+  +eric-5.1.7.ebuild, -eric-5.1.4.ebuild:
+  Version bumps, #382183 by Michael Mair-Keimberger.
 
 *eric-5.1.4 (06 Jul 2011)
 

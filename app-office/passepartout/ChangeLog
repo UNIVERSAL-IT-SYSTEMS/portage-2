@@ -1,6 +1,23 @@
 # ChangeLog for app-office/passepartout
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/passepartout/ChangeLog,v 1.13 2011/03/28 18:48:29 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-office/passepartout/ChangeLog,v 1.19 2012/06/14 21:59:38 floppym Exp $
+
+  14 Jun 2012; Mike Gilbert <floppym@gentoo.org> -passepartout-0.6_p1.ebuild:
+  Remove broken version for bug 387789.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> passepartout-0.6_p1.ebuild,
+  passepartout-0.7.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org> passepartout-0.7.0.ebuild:
+  marked x86 per bug 410243
+
+  02 Apr 2012; Agostino Sarubbo <ago@gentoo.org> passepartout-0.7.0.ebuild:
+  Stable for amd64, wrt bug #410243
+
+  25 Mar 2012; Mike Gilbert <floppym@gentoo.org> passepartout-0.7.0.ebuild:
+  Build system calls AC_ARG_WITH incorrectly, causing --without-gnome to enable
+  gnome support. Bug 367867.
 
   28 Mar 2011; Christoph Mende <angelos@gentoo.org> passepartout-0.6_p1.ebuild:
   Fixed slot deps

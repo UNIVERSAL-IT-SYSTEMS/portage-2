@@ -1,5 +1,5 @@
 #!/sbin/runscript
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 #---------------------------------------------------------------------------
@@ -29,18 +29,18 @@ start() {
 	# Start mountd
 	ebegin "Starting NFS mountd"
 	start-stop-daemon --start --quiet --exec \
-		$mountd -- ${mountdopts} ${exporstfile}
+		$mountd -- ${mountdopts} ${exportsfile}
 	eend $? "Error starting NFS mountd"
 }
 
 stop() {
 	ebegin "Stopping NFS mountd"
-	start-stop-daemon --stop --quiet --oknodo --exec $mountd \
+	start-stop-daemon --stop --quiet --exec $mountd \
 		--pidfile /var/run/mountd.pid
 	eend $? "Error stopping NFS mountd"
 
 	ebegin "Stopping NFS daemon"
-	start-stop-daemon --stop --quiet --oknodo \
+	start-stop-daemon --stop --signal USR1 --quiet \
 		--name nfsd --user root
 	eend $? "Error stopping NFS daemon"
 }

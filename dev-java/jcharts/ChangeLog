@@ -1,6 +1,18 @@
 # ChangeLog for dev-java/jcharts
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jcharts/ChangeLog,v 1.8 2009/10/03 20:30:14 caster Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jcharts/ChangeLog,v 1.11 2012/06/29 05:49:50 jdhore Exp $
+
+  29 Jun 2012; Jeff Horelick <jdhore@gentoo.org> jcharts-0.7.5-r2.ebuild:
+  marked x86 per bug 417867
+
+  28 Jun 2012; Agostino Sarubbo <ago@gentoo.org> jcharts-0.7.5-r2.ebuild:
+  Stable for amd64, wrt bug #417867
+
+*jcharts-0.7.5-r2 (27 May 2012)
+
+  27 May 2012; Ralph Sennhauser <sera@gentoo.org> +jcharts-0.7.5-r2.ebuild:
+  Restrict to <=jdk:1.6, depends on removed api. #180437
+  dev-java/servletapi -> java-virtuals/servlet-api #398689
 
   03 Oct 2009; Vlastimil Babka <caster@gentoo.org> -jcharts-0.7.5.ebuild:
   Remove old.

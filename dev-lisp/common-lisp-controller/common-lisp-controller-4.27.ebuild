@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lisp/common-lisp-controller/common-lisp-controller-4.27.ebuild,v 1.10 2009/10/13 16:58:24 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lisp/common-lisp-controller/common-lisp-controller-4.27.ebuild,v 1.12 2012/04/07 10:20:00 neurogeek Exp $
 
 inherit eutils
 
@@ -13,9 +13,10 @@ SLOT="0"
 KEYWORDS="amd64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 
-DEPEND="app-misc/realpath
-	>=dev-lisp/cl-asdf-1.84
+DEPEND="|| ( >=sys-apps/coreutils-8.15 app-misc/realpath )
+	>=dev-lisp/asdf-1.84
 	dev-lang/perl"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
 

@@ -1,6 +1,13 @@
 # ChangeLog for www-apache/mod_cband
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_cband/ChangeLog,v 1.13 2009/06/28 11:40:26 nelchael Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_cband/ChangeLog,v 1.15 2012/11/27 19:11:07 pacho Exp $
+
+  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop apache herd as discussed in http://www.gossamer-
+  threads.com/lists/gentoo/dev/262834
+
+  12 Oct 2012; Patrick Lauer <patrick@gentoo.org> mod_cband-0.9.7.5.ebuild:
+  Restricting to apache 2.2
 
   28 Jun 2009; Krzysiek Pawlik <nelchael@gentoo.org>
   mod_cband-0.9.7.5.ebuild:
@@ -57,4 +64,3 @@
   28 Feb 2006; Krzysiek Pawlik <nelchael@gentoo.org>
   +files/10_mod_cband.conf, +metadata.xml, +mod_cband-0.9.7.2.ebuild:
   Initial version.
-

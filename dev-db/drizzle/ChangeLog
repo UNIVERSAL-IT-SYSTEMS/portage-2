@@ -1,6 +1,64 @@
 # ChangeLog for dev-db/drizzle
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/drizzle/ChangeLog,v 1.22 2011/03/04 18:28:10 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-db/drizzle/ChangeLog,v 1.33 2012/11/11 02:18:49 flameeyes Exp $
+
+  11 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> drizzle-7.2.4.ebuild,
+  files/drizzle.init.d.2:
+  Fix bug #419429 (build failure with Python 3 selected), thanks to Julian for
+  the patch. Also fix a missing 'use logger' in the init script.
+
+  11 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> -drizzle-7.2.3.ebuild:
+  Remove old version.
+
+*drizzle-7.2.4 (11 Nov 2012)
+
+  11 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> +drizzle-7.2.4.ebuild,
+  +files/drizzle-7.2.4+boost-1.50.patch, +files/drizzle.init.d.2, metadata.xml:
+  Version bump; support boost-1.50 and later; add a dependency on libaio, and an
+  optional one on v8 (unstable); install a new init script that supports /run
+  more easily; the init script is known to fail with RANDMMAP is enabled,
+  problem not fixed yet.
+
+*drizzle-7.2.3 (19 Sep 2012)
+
+  19 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org> +drizzle-7.2.3.ebuild,
+  +files/drizzle-7.2.3+automake-1.12.patch, +files/drizzle-7.2.3-libtool.patch:
+  Version bump (masked).
+
+  24 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata, helps my own bug templating script.
+
+  21 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  -drizzle-7.0.2011.03.13.ebuild, -files/drizzle-2009.12.1240-nolint.patch,
+  drizzle-7.1.33.ebuild:
+  Remove old; use append-cppflags where it makes sense; fix on automake 1.11 as
+  it fails with 1.12.
+
+  04 Jun 2012; Zac Medico <zmedico@gentoo.org> drizzle-7.0.2011.03.13.ebuild,
+  drizzle-7.1.33.ebuild:
+  inherit user for enewuser
+
+*drizzle-7.0.2011.03.13 (10 Apr 2012)
+
+  10 Apr 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +drizzle-7.0.2011.03.13.ebuild:
+  Accidently removed my work that should have committed due to bad hotel wifi.
+  Sorry. Add the last version of 7.0 back instead now, was all ~arch anyway.
+
+*drizzle-7.1.33 (10 Apr 2012)
+
+  10 Apr 2012; Robin H. Johnson <robbat2@gentoo.org> +drizzle-7.1.33.ebuild,
+  -drizzle-7.2010.12.06.ebuild, -drizzle-7.2011.02.09.ebuild,
+  -drizzle-7.2011.03.11.ebuild:
+  Alter version numbering to include full branch number, so we can introduce the
+  last 7.0 release, and the final 7.1 release.
+
+  14 Jan 2012; Kacper Kowalik <xarthisius@gentoo.org> metadata.xml:
+  tcmalloc is now global
+
+  04 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  drizzle-7.2011.03.11.ebuild:
+  Append -DBOOST_FILESYSTEM_VERSION=2 to C{XX}FLAGS. Bug #362901
 
 *drizzle-7.2011.03.11 (04 Mar 2011)
 
@@ -147,4 +205,3 @@
   Initial import of drizzle, masked, some things are definitely yet to
   polish, like PAM integration, upstream as well as in Gentoo. Once again
   thanks to Pavel Stratil for the base ebuild and testing work.
-

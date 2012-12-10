@@ -1,6 +1,29 @@
 # ChangeLog for dev-libs/ace
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/ace/ChangeLog,v 1.61 2011/07/20 13:56:04 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/ace/ChangeLog,v 1.67 2012/07/29 16:15:56 armin76 Exp $
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> ace-5.5-r1.ebuild,
+  ace-5.7.2.ebuild:
+  Drop alpha/sparc keywords
+
+  06 Jun 2012; Zac Medico <zmedico@gentoo.org> ace-5.5-r1.ebuild,
+  ace-5.7.2.ebuild:
+  inherit multilib for get_libdir
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> ace-5.7.2.ebuild:
+  Marking ace-5.7.2 ppc for bug 273186
+
+  22 Apr 2012; Markus Meier <maekke@gentoo.org> ace-5.7.2.ebuild:
+  x86 stable, bug #273186
+
+  22 Apr 2012; Agostino Sarubbo <ago@gentoo.org> ace-5.7.2.ebuild:
+  Stable for amd64, wrt bug #273186
+
+  20 Apr 2012; Pacho Ramos <pacho@gentoo.org> -ace-5.6.1.ebuild,
+  -ace-5.6.5-r1.ebuild, -ace-5.6.5-r2.ebuild, -ace-5.6.5.ebuild,
+  ace-5.7.2.ebuild:
+  Drop -O3 flag per bug #322941, letting it be the only version still compiling
+  for me in the tree.
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #34534

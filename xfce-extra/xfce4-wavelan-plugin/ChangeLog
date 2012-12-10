@@ -1,6 +1,67 @@
 # ChangeLog for xfce-extra/xfce4-wavelan-plugin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-wavelan-plugin/ChangeLog,v 1.13 2011/03/29 13:17:08 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-wavelan-plugin/ChangeLog,v 1.28 2012/11/28 12:23:52 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-wavelan-plugin-0.5.11.ebuild:
+  EAPI5
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-wavelan-plugin-0.5.10.ebuild:
+  old
+
+  16 Nov 2012; Andreas Schuerch <nativemad@gentoo.org>
+  xfce4-wavelan-plugin-0.5.11.ebuild:
+  x86 stable, see bug 429484
+
+  27 Oct 2012; <ago@gentoo.org> xfce4-wavelan-plugin-0.5.11.ebuild:
+  Stable for amd64, wrt bug #429484
+
+*xfce4-wavelan-plugin-0.5.11 (30 Jun 2012)
+
+  30 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-wavelan-plugin-0.5.11.ebuild:
+  Version bump.
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-wavelan-plugin-0.5.6.ebuild:
+  old
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  xfce4-wavelan-plugin-0.5.10.ebuild:
+  marked x86 per bug 416233
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-wavelan-plugin-0.5.10.ebuild:
+  ppc/ppc64 stable wrt #416233
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  xfce4-wavelan-plugin-0.5.10.ebuild:
+  Stable for amd64, wrt bug #416233
+
+  17 May 2012; Jeroen Roovers <jer@gentoo.org>
+  xfce4-wavelan-plugin-0.5.10.ebuild:
+  Stable for HPPA (bug #416233).
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org>
+  xfce4-wavelan-plugin-0.5.6.ebuild, xfce4-wavelan-plugin-0.5.10.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  20 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-wavelan-plugin-0.5.8.ebuild:
+  old
+
+*xfce4-wavelan-plugin-0.5.10 (14 Apr 2012)
+
+  14 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-wavelan-plugin-0.5.10.ebuild:
+  Version bump.
+
+*xfce4-wavelan-plugin-0.5.8 (10 Apr 2012)
+
+  10 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-wavelan-plugin-0.5.8.ebuild:
+  Version bump.
 
   29 Mar 2011; Jeroen Roovers <jer@gentoo.org>
   xfce4-wavelan-plugin-0.5.6.ebuild:

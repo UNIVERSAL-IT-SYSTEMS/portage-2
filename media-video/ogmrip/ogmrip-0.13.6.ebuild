@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ogmrip/ogmrip-0.13.6.ebuild,v 1.2 2011/02/06 17:01:45 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/ogmrip/ogmrip-0.13.6.ebuild,v 1.5 2012/05/05 08:58:59 jdhore Exp $
 
 EAPI=2
 GCONF_DEBUG=no
-inherit eutils gnome2
+inherit autotools eutils gnome2
 
 DESCRIPTION="Graphical frontend and libraries for ripping DVDs and encoding to AVI/OGM/MKV/MP4"
 HOMEPAGE="http://ogmrip.sourceforge.net/"
@@ -48,7 +48,7 @@ RDEPEND="${COMMON_DEPEND}
 DEPEND="${COMMON_DEPEND}
 	nls? ( sys-devel/gettext
 		dev-util/intltool )
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 pkg_setup() {
 	DOCS="AUTHORS ChangeLog README TODO"
@@ -74,12 +74,13 @@ pkg_setup() {
 }
 
 src_prepare() {
-	sed -i \
-		-e '/DISABLE_DEPRECATED/d' \
-		configure || die
+	# Drop DEPRECATED flags
+	sed -i -e 's:-D[A-Z_]*DISABLE_DEPRECATED::g' \
+		configure.in configure || die
 
 	epatch "${FILESDIR}"/${P}-libnotify-0.7.patch
-
+	epatch "${FILESDIR}"/${P}-libpng15.patch
+	eautoreconf
 	gnome2_src_prepare
 }
 

@@ -1,6 +1,446 @@
 # ChangeLog for mail-client/thunderbird
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/ChangeLog,v 1.85 2011/07/31 14:58:39 anarchy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/ChangeLog,v 1.181 2012/12/09 18:48:53 axs Exp $
+
+*thunderbird-17.0-r2 (09 Dec 2012)
+
+  09 Dec 2012; Ian Stakenvicius <axs@gentoo.org> -thunderbird-17.0-r1.ebuild,
+  +thunderbird-17.0-r2.ebuild:
+  revbump to fix various bugs in 17 series
+
+  05 Dec 2012; Agostino Sarubbo <ago@gentoo.org> thunderbird-10.0.11.ebuild:
+  Stable for ppc64, wrt bug #444318
+
+  03 Dec 2012; Andreas Schuerch <nativemad@gentoo.org>
+  thunderbird-10.0.11.ebuild:
+  x86 stable, see bug 440764
+
+  30 Nov 2012; Agostino Sarubbo <ago@gentoo.org> thunderbird-10.0.11.ebuild:
+  Stable for ppc, wrt bug #444318
+
+  27 Nov 2012; Agostino Sarubbo <ago@gentoo.org> thunderbird-10.0.11.ebuild:
+  Stable for amd64, wrt bug #444318
+
+*thunderbird-17.0-r1 (25 Nov 2012)
+
+  25 Nov 2012; <anarchy@gentoo.org> -thunderbird-16.0.1-r1.ebuild,
+  -thunderbird-17.0.ebuild, +thunderbird-17.0-r1.ebuild:
+  Fix about:memory useage with jemalloc-3
+
+*thunderbird-17.0 (24 Nov 2012)
+*thunderbird-10.0.11 (24 Nov 2012)
+
+  24 Nov 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -thunderbird-10.0.5.ebuild, -thunderbird-10.0.9.ebuild,
+  +thunderbird-10.0.11.ebuild, +thunderbird-17.0.ebuild:
+  Version bump. Removed old.
+
+  03 Nov 2012; <ago@gentoo.org> thunderbird-10.0.10.ebuild:
+  Stable for amd64, wrt bug #439960
+
+*thunderbird-10.0.10 (30 Oct 2012)
+
+  30 Oct 2012; Ian Stakenvicius <axs@gentoo.org> +thunderbird-10.0.10.ebuild:
+  ESR bump for security bug 439960
+
+*thunderbird-16.0.1-r1 (28 Oct 2012)
+
+  28 Oct 2012; <anarchy@gentoo.org> -thunderbird-16.0.1.ebuild,
+  +thunderbird-16.0.1-r1.ebuild:
+  Fix bugs #433960, #439818, #439348, #439278
+
+  23 Oct 2012; <ago@gentoo.org> thunderbird-10.0.9.ebuild:
+  Stable for amd64, wrt bug #437780
+
+  21 Oct 2012; <anarchy@gentoo.org> thunderbird-16.0.1.ebuild:
+  Bump patchset for misc jemalloc-3 fixes
+
+*thunderbird-16.0.1 (21 Oct 2012)
+*thunderbird-10.0.9 (21 Oct 2012)
+
+  21 Oct 2012; <anarchy@gentoo.org> +thunderbird-10.0.9.ebuild,
+  -thunderbird-15.0.1.ebuild, +thunderbird-16.0.1.ebuild:
+  Security bump, bug #437780
+
+  15 Sep 2012; Andreas Schuerch <nativemad@gentoo.org>
+  thunderbird-10.0.7.ebuild:
+  x86 stable, see bug 433383
+
+*thunderbird-15.0.1 (12 Sep 2012)
+
+  12 Sep 2012; <anarchy@gentoo.org> -thunderbird-14.0.ebuild,
+  -thunderbird-15.0.ebuild, +thunderbird-15.0.1.ebuild:
+  Bumped thunderbird-15.0 to thunderbird-15.0.1. As it's a privacy relevant bug
+  fix
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> thunderbird-10.0.7.ebuild:
+  Stable for amd64, wrt bug #433383
+
+  07 Sep 2012; <anarchy@gentoo.org> thunderbird-10.0.7.ebuild:
+  Exclude failing resource_urls patch in esr release
+
+*thunderbird-15.0 (01 Sep 2012)
+*thunderbird-10.0.7 (01 Sep 2012)
+
+  01 Sep 2012; <anarchy@gentoo.org> +thunderbird-10.0.7.ebuild,
+  +thunderbird-15.0.ebuild:
+  Security/Version bump
+
+  25 Aug 2012; Michael Weber <xmw@gentoo.org> thunderbird-10.0.6.ebuild:
+  ppc stable (bug 427224)
+
+  14 Aug 2012; Rick Farina <zerochaos@gentoo.org> thunderbird-14.0.ebuild:
+  Anarchy gave me this required fix to allow building with +debug
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> thunderbird-10.0.5.ebuild,
+  thunderbird-10.0.6.ebuild, thunderbird-14.0.ebuild:
+  Drop alpha
+
+  28 Jul 2012; Agostino Sarubbo <ago@gentoo.org> thunderbird-10.0.6.ebuild:
+  Stable for amd64, wrt bug #427224
+
+  24 Jul 2012; Jeff Horelick <jdhore@gentoo.org> thunderbird-10.0.6.ebuild:
+  marked x86 per bug 427224
+
+  23 Jul 2012; Jory A. Pratt <anarchy@gentoo.org> thunderbird-10.0.6.ebuild:
+  Disable tracejit on esr release, bug #427074
+
+*thunderbird-14.0 (19 Jul 2012)
+*thunderbird-10.0.6 (19 Jul 2012)
+
+  19 Jul 2012; Jory A. Pratt <anarchy@gentoo.org> +thunderbird-10.0.6.ebuild,
+  +thunderbird-14.0.ebuild, -thunderbird-10.0.4.ebuild,
+  -thunderbird-13.0.ebuild, thunderbird-10.0.5.ebuild:
+  Security bump  bug #427224
+
+  06 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/1001-xulrunner_fix_jemalloc_vs_aslr.patch, -files/libnotify-0.7.patch,
+  -files/enigmail-1.1.2-20110124-locale-fixup.diff,
+  -files/enigmail-1.3.3-bug373733.patch,
+  -files/thunderbird-xul-1.9.2-arm-fixes.patch,
+  -files/1002_fix-system-hunspell-dict-detections.patch,
+  -files/cups-1.4.4-fixup.patch, -files/xulrunner-1.9.2-gtk+-2.21.patch,
+  -files/thunderbird-gentoo-default-prefs-1.js,
+  -files/thunderbird-3.1-gcc45.patch,
+  -files/2000-thunderbird_gentoo_install_dirs.patch,
+  -thunderbird-3.1.12.ebuild, -thunderbird-3.1.14.ebuild,
+  -files/thunderbird-3.1-noalsa-fixup.patch,
+  -files/thunderbird-3.3-gconf-config-update.patch, -files/bug-606109.patch,
+  -files/icon/thunderbird-icon.png, -files/icon/thunderbird-icon-unbranded.png,
+  -files/thunderbird-gentoo-default-prefs.js,
+  -files/thunderbird-respect-ldflags.patch:
+  old
+
+  04 Jul 2012; Jory A. Pratt <anarchy@gentoo.org> thunderbird-10.0.4.ebuild,
+  thunderbird-10.0.5.ebuild, thunderbird-13.0.ebuild:
+  Fix license on >=thunderbird-10.*
+
+  02 Jul 2012; Jory A. Pratt <anarchy@gentoo.org> thunderbird-13.0.ebuild:
+  Update license on thunderbird-13 to MPL-2.0
+
+  19 Jun 2012; Andreas Schuerch <nativemad@gentoo.org>
+  thunderbird-10.0.5.ebuild:
+  x86 stable, thanks Mikle Kolyada
+
+  12 Jun 2012; Lars Wendler <polynomial-c@gentoo.org>
+  thunderbird-10.0.5.ebuild, thunderbird-13.0.ebuild:
+  Fixed dependency on libpng.
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> thunderbird-10.0.5.ebuild:
+  Stable for amd64, wrt bug #420125
+
+  08 Jun 2012; Jory A. Pratt <anarchy@gentoo.org> thunderbird-13.0.ebuild:
+  Update ff patchset, bug #419801
+
+*thunderbird-10.0.5 (06 Jun 2012)
+
+  06 Jun 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -thunderbird-10.0.3.ebuild, +thunderbird-10.0.5.ebuild:
+  Security bump. Removed old.
+
+  06 Jun 2012; Jory A. Pratt <anarchy@gentoo.org> thunderbird-13.0.ebuild:
+  Fix nss/nspr dep
+
+*thunderbird-13.0 (06 Jun 2012)
+
+  06 Jun 2012; Jory A. Pratt <anarchy@gentoo.org>
+  -thunderbird-12.0.1-r2.ebuild, +thunderbird-13.0.ebuild:
+  Version bump to 13.0
+
+*thunderbird-12.0.1-r2 (28 May 2012)
+
+  28 May 2012; <anarchy@gentoo.org> -thunderbird-12.0.1-r1.ebuild,
+  +thunderbird-12.0.1-r2.ebuild:
+  Revert to using system cairo
+
+  28 May 2012; <anarchy@gentoo.org> thunderbird-12.0.1-r1.ebuild:
+  Finish adding support for gcc-4.7, bug #410557
+
+  24 May 2012; Mike Gilbert <floppym@gentoo.org> thunderbird-10.0.4.ebuild,
+  thunderbird-12.0.1-r1.ebuild:
+  Convert DOS line-endings in shell scripts. Bug 391889.
+
+  24 May 2012; Jory A. Pratt <anarchy@gentoo.org> thunderbird-12.0.1-r1.ebuild:
+  Fix bug #417329, thanks floppym@gentoo.org
+
+*thunderbird-12.0.1-r1 (24 May 2012)
+
+  24 May 2012; Jory A. Pratt <anarchy@gentoo.org> -thunderbird-12.0.1.ebuild,
+  +thunderbird-12.0.1-r1.ebuild:
+  Add jit useflag fix patchset from firefox
+
+  08 May 2012; Lars Wendler <polynomial-c@gentoo.org>
+  thunderbird-12.0.1.ebuild:
+  Added threadsafe USE flag to sqlite dependency. Thanks to Xarthisius for
+  reporting this in bug #415095.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> thunderbird-10.0.3.ebuild,
+  thunderbird-10.0.4.ebuild, thunderbird-12.0.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 May 2012; Lars Wendler <polynomial-c@gentoo.org>
+  thunderbird-12.0.1.ebuild:
+  Fixed dependency on sqlite. Thanks to Florian Schmaus who reported this in
+  bug #414407.
+
+  02 May 2012; Andreas Schuerch <nativemad@gentoo.org>
+  thunderbird-10.0.4.ebuild:
+  x86 stable, see bug 413657. Thanks Mikle Kolyada.
+
+*thunderbird-12.0.1 (30 Apr 2012)
+
+  30 Apr 2012; Jory A. Pratt <anarchy@gentoo.org> -thunderbird-11.0.1.ebuild,
+  +thunderbird-12.0.1.ebuild:
+  Remove tb-11.0.1, add tb-12.0.1
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> thunderbird-10.0.4.ebuild:
+  Stable for AMD64, wrt bug #413657
+
+*thunderbird-10.0.4 (26 Apr 2012)
+
+  26 Apr 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -thunderbird-3.1.13.ebuild, -thunderbird-8.0-r1.ebuild,
+  -thunderbird-9.0.ebuild, -thunderbird-10.0.ebuild,
+  -thunderbird-10.0.1.ebuild, -thunderbird-10.0.1-r1.ebuild,
+  +thunderbird-10.0.4.ebuild:
+  Security bump. Removed some old versions.
+
+*thunderbird-11.0.1 (30 Mar 2012)
+
+  30 Mar 2012; Jory A. Pratt <anarchy@gentoo.org> -thunderbird-11.0-r1.ebuild,
+  +thunderbird-11.0.1.ebuild:
+  Fix possible imap issues, fix issue where mail rules might be erronously
+  changed
+
+  28 Mar 2012; Jory A. Pratt <anarchy@gentoo.org> -thunderbird-11.0.ebuild,
+  thunderbird-11.0-r1.ebuild:
+  remove stale version, fix bug #409747
+
+  25 Mar 2012; Thomas Kahle <tomka@gentoo.org> thunderbird-10.0.3.ebuild:
+  marked x86 per bug 408161
+
+*thunderbird-11.0-r1 (24 Mar 2012)
+
+  24 Mar 2012; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +thunderbird-11.0-r1.ebuild:
+  Move over Anarchy's changes from the overlay, fixes bug 408613 and bug 408799
+
+  24 Mar 2012; Jory A. Pratt <anarchy@gentoo.org> thunderbird-10.0.3.ebuild:
+  Fix bug #409331
+
+  22 Mar 2012; Agostino Sarubbo <ago@gentoo.org> thunderbird-10.0.3.ebuild:
+  Stable for amd64, wrt bug #408161
+
+*thunderbird-10.0.3 (21 Mar 2012)
+
+  21 Mar 2012; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +thunderbird-10.0.3.ebuild, thunderbird-11.0.ebuild:
+  Bump to 10.0.3esr, the same code is also in 11.0, and should be carried
+  forward to 15.0.1esr.
+
+*thunderbird-11.0 (16 Mar 2012)
+
+  16 Mar 2012; Jory A. Pratt <anarchy@gentoo.org> +thunderbird-11.0.ebuild:
+  Security bump, 10.0.3esr to follow for stable
+
+  01 Mar 2012; Agostino Sarubbo <ago@gentoo.org> thunderbird-10.0.1-r1.ebuild:
+  Stable for amd64, wrt bug #401985
+
+*thunderbird-10.0.1-r1 (01 Mar 2012)
+
+  01 Mar 2012; Jory A. Pratt <anarchy@gentoo.org>
+  +thunderbird-10.0.1-r1.ebuild:
+  Fix libvpx-1.0.0 support, bug #401985
+
+  20 Feb 2012; Thomas Kahle <tomka@gentoo.org> thunderbird-10.0.1.ebuild:
+  marked x86 per bug 403183
+
+  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> thunderbird-10.0.1.ebuild:
+  Stable for amd64, wrt bug #403183
+
+*thunderbird-10.0.1 (12 Feb 2012)
+
+  12 Feb 2012; Jory A. Pratt <anarchy@gentoo.org> +thunderbird-10.0.1.ebuild,
+  metadata.xml:
+  Security Bump
+
+*thunderbird-10.0 (06 Feb 2012)
+
+  06 Feb 2012; Nirbheek Chauhan <nirbheek@gentoo.org> +thunderbird-10.0.ebuild:
+  Bump to 10.0, from overlay
+
+  28 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> metadata.xml:
+  Add USE=bindist description, bug 369247
+
+  28 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org>
+  thunderbird-8.0-r1.ebuild, thunderbird-9.0.ebuild:
+  Add yasm to DEPEND, just like for firefox, bug 380231
+
+  12 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> thunderbird-9.0.ebuild:
+  x86 stable wrt bug #395431
+
+  11 Jan 2012; Agostino Sarubbo <ago@gentoo.org> thunderbird-9.0.ebuild:
+  Stable for AMD64, wrt security bug #395431
+
+  10 Jan 2012; Lars Wendler <polynomial-c@gentoo.org> thunderbird-9.0.ebuild:
+  Another bunch of dependency adjustments.
+
+  10 Jan 2012; Lars Wendler <polynomial-c@gentoo.org> thunderbird-9.0.ebuild:
+  Adjusted dependencies.
+
+  05 Jan 2012; Jory A. Pratt <anarchy@gentoo.org>
+  +files/thunderbird-gentoo-default-prefs-1.js-1:
+  Add missing file bug #397773, Remove ppc/ppc64 keywords as drop'd
+  by Mark Loeser.
+
+  05 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> Manifest:
+  fix gpg manifest problems
+
+*thunderbird-9.0 (05 Jan 2012)
+
+  05 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> +thunderbird-9.0.ebuild:
+  Security bump + hardened merge fix
+
+  27 Dec 2011; Mark Loeser <halcy0n@gentoo.org> thunderbird-7.0.1-r1.ebuild,
+  thunderbird-8.0-r1.ebuild:
+  Drop ppc/ppc64; bug #381245
+
+  08 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  thunderbird-8.0-r1.ebuild:
+  x86 stable wrt bug #389923
+
+  06 Dec 2011; <anarchy@gentoo.org> metadata.xml:
+  Clarify crypt useflag, bug #392489
+
+  29 Nov 2011; Tony Vroon <chainsaw@gentoo.org> thunderbird-8.0-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo,
+  Elijah "Armageddon" El Lazkani, Michael "n0idx80" Harrison & Tomáš "Mepho"
+  Pružina in security bug #389923.
+
+  21 Nov 2011; Jory A. Pratt <anarchy@gentoo.org> thunderbird-8.0-r1.ebuild:
+  Fix hardened support with omnijar, bug #391051
+
+*thunderbird-8.0-r1 (16 Nov 2011)
+
+  16 Nov 2011; Jory A. Pratt <anarchy@gentoo.org> -thunderbird-8.0.ebuild,
+  +thunderbird-8.0-r1.ebuild:
+  Enable startup cache for all, bug #390717,390703
+
+  14 Nov 2011; Nirbheek Chauhan <nirbheek@gentoo.org> thunderbird-3.1.12.ebuild,
+  thunderbird-7.0.1-r1.ebuild, thunderbird-3.1.14.ebuild,
+  thunderbird-8.0.ebuild, thunderbird-3.1.13.ebuild:
+  Remove obsolete lightning dep
+
+  14 Nov 2011; Nirbheek Chauhan <nirbheek@gentoo.org> thunderbird-8.0.ebuild:
+  Port linguas to new code, add more LANGS
+
+  13 Nov 2011; Lars Wendler <polynomial-c@gentoo.org> thunderbird-8.0.ebuild:
+  Ensure omnijar build does not fail (bug #390227). Committed for Anarchy.
+
+  13 Nov 2011; Markus Meier <maekke@gentoo.org> thunderbird-7.0.1-r1.ebuild:
+  x86 stable, bug #381245
+
+  11 Nov 2011; Jory A. Pratt <anarchy@gentoo.org>
+  +files/enigmail-1.3.3-bug373733.patch, thunderbird-8.0.ebuild:
+  Ensure enigmail connects to gpg agent, bug #373733
+
+*thunderbird-8.0 (11 Nov 2011)
+
+  11 Nov 2011; Jory A. Pratt <anarchy@gentoo.org> +thunderbird-8.0.ebuild:
+  Version bump, security bug #389923
+
+  28 Oct 2011; Tony Vroon <chainsaw@gentoo.org> thunderbird-7.0.1-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "ago" Sarubbo in security bug #381245.
+
+  07 Oct 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  thunderbird-7.0.1-r1.ebuild:
+  Add calendar to mimetype and categories, reuse emid in ebuild logic
+
+*thunderbird-7.0.1-r1 (03 Oct 2011)
+
+  03 Oct 2011; Jory A. Pratt <anarchy@gentoo.org> -thunderbird-7.0.1.ebuild,
+  +thunderbird-7.0.1-r1.ebuild,
+  -files/Copy_xpcshell_only_if_tests_are_enabled.patch:
+  multiple bug fixes, enable system libffi, multiple archs now supported.
+
+*thunderbird-7.0.1 (01 Oct 2011)
+
+  01 Oct 2011; Jory A. Pratt <anarchy@gentoo.org> -thunderbird-6.0.ebuild,
+  -thunderbird-6.0.2.ebuild, +thunderbird-7.0.1.ebuild,
+  +files/Copy_xpcshell_only_if_tests_are_enabled.patch,
+  -files/fix-thunderbird-calender-support.patch:
+  Security bump with addon updater fixed
+
+*thunderbird-6.0.2 (26 Sep 2011)
+*thunderbird-3.1.14 (26 Sep 2011)
+
+  26 Sep 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -thunderbird-3.1.10.ebuild, +thunderbird-3.1.14.ebuild,
+  +thunderbird-6.0.2.ebuild:
+  Security bump. Removed old.
+
+  11 Sep 2011; Raúl Porcel <armin76@gentoo.org> thunderbird-3.1.12.ebuild:
+  alpha/ia64/sparc stable wrt #379549
+
+  04 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  thunderbird-3.1.12.ebuild:
+  x86 stable wrt security bug #379549
+
+  03 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  thunderbird-3.1.12.ebuild:
+  ppc/ppc64 stable wrt #379549
+
+*thunderbird-3.1.13 (31 Aug 2011)
+
+  31 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -thunderbird-3.1.11.ebuild, +thunderbird-3.1.13.ebuild:
+  Security bump. Removed old.
+
+  29 Aug 2011; Markos Chandras <hwoarang@gentoo.org> thunderbird-3.1.12.ebuild:
+  Stable on amd64 wrt bug #380913
+
+*thunderbird-3.1.12 (28 Aug 2011)
+
+  28 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  +thunderbird-3.1.12.ebuild:
+  Security bump.
+
+  21 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> thunderbird-6.0.ebuild:
+  Port over linguas changes from firefox-6.0, and updated the language pack
+  list
+
+*thunderbird-6.0 (21 Aug 2011)
+
+  21 Aug 2011; Jory A. Pratt <anarchy@gentoo.org>
+  -thunderbird-3.3_alpha3-r2.ebuild, -thunderbird-5.0.ebuild,
+  +thunderbird-6.0.ebuild, +files/fix-thunderbird-calender-support.patch:
+  Version bump, misc bug fixes
+
+  04 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  files/icon/thunderbird.desktop, files/icon/thunderbird-unbranded.desktop:
+  Added %U to Exec field of .desktop files. Thanks to Brad Laue for reporting
+  this in bug #365461.
 
   31 Jul 2011; Jory A. Pratt <anarchy@gentoo.org> thunderbird-5.0.ebuild:
   Fix system-sqlite dep, bug #374705
@@ -1848,4 +2288,3 @@
   Update to 0.7.3 for security meta-bug 59419. This is the first of the mozilla
   ebuilds to use mozilla.eclass. Remove unused amd64 patch which exceeds
   repoman's filesize limit.
-

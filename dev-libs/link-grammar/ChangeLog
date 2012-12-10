@@ -1,6 +1,63 @@
 # ChangeLog for dev-libs/link-grammar
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/link-grammar/ChangeLog,v 1.39 2011/07/24 11:07:24 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/link-grammar/ChangeLog,v 1.53 2012/11/30 19:28:09 ulm Exp $
+
+  30 Nov 2012; Ulrich Müller <ulm@gentoo.org> link-grammar-4.7.4.ebuild,
+  link-grammar-4.7.6.ebuild, link-grammar-4.7.8.ebuild:
+  Fix LICENSE, 3-clause BSD license according to README and LICENSE files,
+  bug 445258.
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> link-grammar-4.7.6.ebuild:
+  ia64/sparc stable wrt #427544
+
+*link-grammar-4.7.8 (19 Oct 2012)
+
+  19 Oct 2012; Pacho Ramos <pacho@gentoo.org> +link-grammar-4.7.8.ebuild:
+  Version bump, add missing depend on ant-core (#438266 by Ferenc Erki).
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  link-grammar-4.7.6.ebuild:
+  stable ppc, bug #427544
+
+  15 Oct 2012; Matt Turner <mattst88@gentoo.org> link-grammar-4.7.6.ebuild:
+  Stable on alpha, bug 427544.
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  link-grammar-4.7.6.ebuild:
+  stable ppc64, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> link-grammar-4.7.6.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  link-grammar-4.7.6.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> link-grammar-4.7.6.ebuild:
+  Stable for HPPA (bug #427544).
+
+  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  link-grammar-4.7.6.ebuild:
+  Keyword ~arm
+
+*link-grammar-4.7.6 (28 Apr 2012)
+
+  28 Apr 2012; Pacho Ramos <pacho@gentoo.org> +link-grammar-4.7.6.ebuild,
+  -link-grammar-4.7.5.ebuild:
+  Version bump, remove broken version.
+
+*link-grammar-4.7.5 (19 Apr 2012)
+
+  19 Apr 2012; Pacho Ramos <pacho@gentoo.org> +link-grammar-4.7.5.ebuild,
+  -link-grammar-4.2.4-r1.ebuild, -link-grammar-4.7.2.ebuild:
+  Version bump, remove old.
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  link-grammar-4.7.4.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> link-grammar-4.7.4.ebuild:
+  Stable for HPPA (bug #372349).
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> link-grammar-4.7.4.ebuild:
   alpha/ia64/sparc stable wrt #372349
@@ -156,4 +213,3 @@
   of English, based on link grammar, an original theory of English syntax. The
   system is written in generic C code, and runs on any platform with a C
   compiler.
-

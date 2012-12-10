@@ -1,6 +1,23 @@
 # ChangeLog for net-proxy/dansguardian
-# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/dansguardian/ChangeLog,v 1.48 2009/07/05 00:04:17 mrness Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/dansguardian/ChangeLog,v 1.53 2012/09/16 10:31:07 phajdan.jr Exp $
+
+*dansguardian-2.10.1.1-r2 (16 Sep 2012)
+
+  16 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  +dansguardian-2.10.1.1-r2.ebuild, +files/dansguardian-2.10.1.1-pcre830.patch:
+  Fix dansguardian being unusable after upgrade to pcre-8.30, bug #417679 by
+  Tomas Mozes. Patch from Debian, http://bugs.debian.org/667664 .
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> dansguardian-2.10.0.3.ebuild,
+  dansguardian-2.10.1.1.ebuild, dansguardian-2.10.1.1-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*dansguardian-2.10.1.1-r1 (11 Nov 2011)
+
+  11 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  +dansguardian-2.10.1.1-r1.ebuild:
+  Run as a dedicated user instead of nobody, bug #360177.
 
 *dansguardian-2.10.1.1 (05 Jul 2009)
 

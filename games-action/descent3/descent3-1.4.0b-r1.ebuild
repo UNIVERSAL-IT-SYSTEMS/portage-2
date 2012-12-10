@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/descent3/descent3-1.4.0b-r1.ebuild,v 1.15 2009/04/14 07:23:44 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/descent3/descent3-1.4.0b-r1.ebuild,v 1.18 2012/02/05 05:22:29 vapier Exp $
 
-inherit eutils multilib games
+inherit eutils unpacker cdrom multilib games
 
 IUSE="nocd videos"
 DESCRIPTION="Descent 3 - 3-Dimensional indoor/outdoor spaceship combat"
@@ -14,7 +14,6 @@ LICENSE="LOKI-EULA"
 SLOT="0"
 KEYWORDS="amd64 x86"
 RESTRICT="strip"
-PROPERTIES="interactive"
 
 DEPEND=""
 RDEPEND="sys-libs/glibc
@@ -30,7 +29,6 @@ RDEPEND="sys-libs/glibc
 		app-emulation/emul-linux-x86-sdl
 		>=sys-libs/lib-compat-loki-0.2 )"
 
-GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/${PN}
 Ddir=${D}/${dir}
 

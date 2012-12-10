@@ -1,6 +1,46 @@
 # ChangeLog for games-fps/doomsday
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/doomsday/ChangeLog,v 1.38 2011/05/16 14:40:29 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-fps/doomsday/ChangeLog,v 1.48 2012/07/16 10:32:00 kensington Exp $
+
+  16 Jul 2012; Michael Palimaka <kensington@gentoo.org> doomsday-1.9.8.ebuild:
+  Add missing slot dependencies on Qt.
+
+  06 Jul 2012; Agostino Sarubbo <ago@gentoo.org> doomsday-1.9.8.ebuild:
+  Stable for amd64, wrt bug #424519
+
+  03 Jul 2012; Jeff Horelick <jdhore@gentoo.org> doomsday-1.9.8.ebuild:
+  marked x86 per bug 424519
+
+  31 May 2012; Maxim Koltsov <maksbotan@gentoo.org>
+  +files/doomsday-1.9.8-2to3.patch:
+  Mark 2to3 patch as binary to prevent $ expansion by CVS
+
+  30 May 2012; Maxim Koltsov <maksbotan@gentoo.org> doomsday-1.9.8.ebuild,
+  files/doomsday-1.9.8-2to3.patch:
+  Fix ebuild by games herd standards, thanks to Mr_Bones_
+
+  30 May 2012; Maxim Koltsov <maksbotan@gentoo.org> doomsday-1.9.8.ebuild,
+  files/doomsday-1.9.8-2to3.patch:
+  Fix 2to3 patch
+
+*doomsday-1.9.8 (30 May 2012)
+
+  30 May 2012; Maxim Koltsov <maksbotan@gentoo.org> +doomsday-1.9.8.ebuild,
+  +files/doomsday-1.9.8-2to3.patch, +files/doomsday-1.9.8-openal-link.patch,
+  metadata.xml:
+  Bump to 1.9.8, bug 410043. Remake wrapper generation, bump to eapi4
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -doomsday-1.9.0_beta62.ebuild:
+  old
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  doomsday-1.9.0_beta69.ebuild:
+  ppc stable wrt #385793
+
+  16 Sep 2011; Tupone Alfredo <tupone@gentoo.org> doomsday-1.9.0_beta69.ebuild,
+  +files/doomsday-1.9.0_beta69-png15.patch:
+  Build with png-1.5 Bug #383219 by Diego Elio Pettenò
 
   16 May 2011; Tupone Alfredo <tupone@gentoo.org> doomsday-1.9.0_beta69.ebuild,
   +files/doomsday-1.9.0_beta69-underlink.patch:

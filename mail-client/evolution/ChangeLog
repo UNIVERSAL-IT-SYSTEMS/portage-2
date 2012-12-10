@@ -1,6 +1,179 @@
 # ChangeLog for mail-client/evolution
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/evolution/ChangeLog,v 1.341 2011/07/14 10:41:07 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/evolution/ChangeLog,v 1.376 2012/11/26 16:19:56 tetromino Exp $
+
+  26 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evolution-3.2.3-r1.ebuild, evolution-3.4.4.ebuild:
+  Don't call PYTHON before python_pkg_setup.
+
+  26 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evolution-2.32.3-r1.ebuild, evolution-3.2.3-r1.ebuild,
+  evolution-3.4.4.ebuild:
+  Fix build failure with python3 as system interpreter (bug #444694, thanks to
+  Jens Kasten).
+
+  17 Nov 2012; Pacho Ramos <pacho@gentoo.org> -evolution-2.32.3.ebuild,
+  evolution-2.32.3-r1.ebuild:
+  Fix building with latest automake dropping last -Werror instance we missed
+  before (#442242 by evgenn), show message for changing browser only when people
+  don't have gnome-default-applications-properties provider. Remove old.
+
+  27 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evolution-3.4.4.ebuild:
+  Requires gtk+-3.4 (bug #433896, thanks to Jaakko Perttilä).
+
+  17 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -evolution-2.32.2-r3.ebuild, evolution-2.32.3.ebuild,
+  evolution-2.32.3-r1.ebuild, -evolution-3.2.3.ebuild,
+  evolution-3.2.3-r1.ebuild, -evolution-3.4.3.ebuild, evolution-3.4.4.ebuild:
+  Drop useless USE=doc, it only regenerated documentation. Update license.
+  Update homepage. Drop old.
+
+  06 Oct 2012; Anthony G. Basile <blueness@gentoo.org> evolution-3.4.4.ebuild:
+  keyword ~ppc, bug #437372
+
+*evolution-3.4.4 (13 Aug 2012)
+
+  13 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -evolution-3.4.1.ebuild, -evolution-3.4.2.ebuild, +evolution-3.4.4.ebuild:
+  Version bump with various bugfixes; drop old.
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> evolution-2.32.3-r1.ebuild:
+  alpha/ia64/sparc stable wrt #410611
+
+*evolution-3.4.3 (24 Jun 2012)
+
+  24 Jun 2012; Nirbheek Chauhan <nirbheek@gentoo.org> +evolution-3.4.3.ebuild:
+  Bump to 3.4.3
+
+  21 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  evolution-3.2.3-r1.ebuild:
+  Fix sys-devel/automake >= 1.12 compability wrt #421307
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  evolution-2.32.3-r1.ebuild:
+  ppc stable wrt #410611
+
+  21 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evolution-2.32.2-r3.ebuild, evolution-2.32.3.ebuild,
+  evolution-2.32.3-r1.ebuild:
+  Need eutils for epatch.
+
+*evolution-3.4.2 (20 May 2012)
+
+  20 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +evolution-3.4.2.ebuild:
+  Version bump with various bugfixes.
+
+*evolution-3.4.1 (07 May 2012)
+
+  07 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/evolution-3.3.91-spamassassin-paths.patch, +evolution-3.4.1.ebuild:
+  Version bump for gnome-3.4.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> evolution-2.32.2-r3.ebuild,
+  evolution-2.32.3.ebuild, evolution-2.32.3-r1.ebuild, evolution-3.2.3.ebuild,
+  evolution-3.2.3-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> evolution-2.32.3-r1.ebuild:
+  x86 stable, bug #410611
+
+*evolution-3.2.3-r1 (20 Apr 2012)
+
+  20 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -evolution-3.2.2.ebuild, +evolution-3.2.3-r1.ebuild,
+  files/evolution-3.2.3-g_thread_init.patch,
+  +files/evolution-3.2.3-gtkhtml-4.4.patch:
+  Improve glib-2.32 fix (bug #412239, thanks to Dmitry K). Fix crash and build
+  failure with gtkhtml-4.4. Drop old.
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> evolution-2.32.3-r1.ebuild:
+  Marking evolution-2.32.3-r1 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> evolution-2.32.3-r1.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  16 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evolution-2.32.3-r1.ebuild, +files/evolution-2.32.3-g_thread_init.patch,
+  evolution-3.2.3.ebuild, +files/evolution-3.2.3-g_thread_init.patch:
+  Add another glib-2.32 fix, thanks to Yaw_e and Dmitry K (bug #412239).
+
+  15 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evolution-2.32.3-r1.ebuild, +files/evolution-2.32.3-gmodule-explicit.patch,
+  evolution-3.2.3.ebuild, +files/evolution-3.2.3-gmodule-explicit.patch:
+  Fix building with glib-2.32 (bug #412111, thanks to Peter Alfredsen).
+
+  10 Feb 2012; Patrick Lauer <patrick@gentoo.org> evolution-2.32.2-r3.ebuild,
+  evolution-2.32.3-r1.ebuild, evolution-2.32.3.ebuild, evolution-3.2.2.ebuild,
+  evolution-3.2.3.ebuild:
+  Changing python deps in preparation for 2.4 removal
+
+  05 Feb 2012; Mike Gilbert <floppym@gentoo.org> evolution-2.32.2-r3.ebuild:
+  Inherit multilib.
+
+*evolution-3.2.3 (20 Jan 2012)
+
+  20 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -evolution-3.2.1.ebuild, +evolution-3.2.3.ebuild:
+  Bump, fixes assorted bugs and crashes. Drop old.
+
+  07 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evolution-2.32.2-r3.ebuild, evolution-2.32.3.ebuild,
+  evolution-2.32.3-r1.ebuild:
+  Do not pull in libgweather-3 (bug #393253, thanks to megabaks for reporting).
+
+*evolution-3.2.2 (16 Nov 2011)
+
+  16 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evolution-2.32.2-r3.ebuild, evolution-2.32.3.ebuild,
+  evolution-2.32.3-r1.ebuild, -evolution-3.0.3.ebuild, +evolution-3.2.2.ebuild:
+  Bump to 3.2.2 with assorted bugfixes. Drop old.
+  Also, QA: eautoreconf should be before gnome2_src_prepare.
+
+*evolution-3.2.1 (31 Oct 2011)
+
+  31 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evolution-2.32.2-r3.ebuild, evolution-2.32.3.ebuild,
+  evolution-2.32.3-r1.ebuild, evolution-3.0.3.ebuild, +evolution-3.2.1.ebuild,
+  +files/evolution-3.2.1-reorder-mx-clutter-gtk.patch, metadata.xml:
+  Bump to 3.2.1 from the gnome overlay. Add a patch to fix building when
+  clutter-gtk:0.10 is installed. Switch to EAPI4 and add a REQUIRED_USE. Update
+  the CPPFLAGS sed for configure.ac changes.
+  In addition, fix clutter dependencies in existing evolution ebuilds.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> evolution-2.32.3.ebuild:
+  alpha/ia64/sparc stable wrt #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> evolution-2.32.3.ebuild:
+  x86 stable wrt bug #385699
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> evolution-2.32.3.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> evolution-2.32.3.ebuild:
+  amd64 stable wrt #385699
+
+*evolution-2.32.3-r1 (08 Oct 2011)
+
+  08 Oct 2011; Pacho Ramos <pacho@gentoo.org> -evolution-2.32.2.ebuild,
+  evolution-2.32.3.ebuild, +evolution-2.32.3-r1.ebuild:
+  Drop connman support for version to be stabilized as it cannot go to stable
+  yet, remove .la files, drop old.
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  evolution-2.32.2-r3.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+*evolution-3.0.3 (30 Sep 2011)
+
+  30 Sep 2011; Nirbheek Chauhan <nirbheek@gentoo.org> +evolution-3.0.3.ebuild,
+  metadata.xml:
+  Add evolution-3, from gnome overlay for GNOME 3 (TODO: file bug for USE=map
+  keywording)
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> evolution-2.32.2-r3.ebuild:
+  alpha/ia64/sparc stable wrt #369909
 
   14 Jul 2011; Thomas Kahle <tomka@gentoo.org> evolution-2.32.2-r3.ebuild:
   x86 stable per bug 369909

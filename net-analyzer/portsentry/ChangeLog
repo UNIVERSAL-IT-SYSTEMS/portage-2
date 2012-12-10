@@ -1,6 +1,20 @@
 # ChangeLog for net-analyzer/portsentry
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/portsentry/ChangeLog,v 1.23 2010/09/10 14:27:17 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/portsentry/ChangeLog,v 1.27 2012/02/06 18:46:18 ranger Exp $
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> portsentry-1.2-r1.ebuild:
+  Marking portsentry-1.2-r1 ppc for bug 397137
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> portsentry-1.2.ebuild,
+  portsentry-1.2-r1.ebuild:
+  Drop sparc keywords
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  portsentry-1.2-r1.ebuild:
+  x86 stable wrt bug #397137
+
+  03 Jan 2012; Jeroen Roovers <jer@gentoo.org> portsentry-1.2-r1.ebuild:
+  Fix quoting issues. Do not install LICENSE file.
 
 *portsentry-1.2-r1 (10 Sep 2010)
 

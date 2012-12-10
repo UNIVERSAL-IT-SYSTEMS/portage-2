@@ -1,6 +1,25 @@
 # ChangeLog for dev-java/slf4j-api
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/slf4j-api/ChangeLog,v 1.13 2010/10/17 12:26:35 caster Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/slf4j-api/ChangeLog,v 1.18 2012/12/08 16:00:48 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> slf4j-api-1.6.6.ebuild:
+  Stable for ppc64, wrt bug #441172
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> slf4j-api-1.6.6.ebuild:
+  Stable for ppc, wrt bug #441172
+
+  07 Dec 2012; <ago@gentoo.org> slf4j-api-1.6.6.ebuild:
+  Stable for x86, wrt bug #441172
+
+  07 Dec 2012; <ago@gentoo.org> slf4j-api-1.6.6.ebuild:
+  Stable for amd64, wrt bug #441172
+
+*slf4j-api-1.6.6 (03 Aug 2012)
+
+  03 Aug 2012; Vlastimil Babka <caster@gentoo.org>
+  +files/slf4j-api_maven-build.xml, +slf4j-api-1.6.6.ebuild:
+  Version bump, bug #395639. Thanks to Ivan Baidakou <the.dmol@gmail.com> for
+  the ebuild and build.xml base.
 
   17 Oct 2010; Vlastimil Babka <caster@gentoo.org> -slf4j-api-1.5.2.ebuild:
   Remove old.

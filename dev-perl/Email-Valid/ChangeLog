@@ -1,6 +1,67 @@
 # ChangeLog for dev-perl/Email-Valid
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Email-Valid/ChangeLog,v 1.49 2011/01/14 17:49:46 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Email-Valid/ChangeLog,v 1.64 2012/12/05 11:27:02 grobian Exp $
+
+  05 Dec 2012; Fabian Groffen <grobian@gentoo.org> Email-Valid-0.190.0.ebuild:
+  Marked ~x86-linux, bug #444950
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org>
+  -files/0.181-disable-online-test.patch, -Email-Valid-0.184.ebuild,
+  -Email-Valid-0.187.0.ebuild, -Email-Valid-0.188.0.ebuild:
+  Cleanup
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> Email-Valid-0.184.ebuild,
+  Email-Valid-0.187.0.ebuild, Email-Valid-0.188.0.ebuild,
+  Email-Valid-0.190.0.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> Email-Valid-0.190.0.ebuild:
+  Marking Email-Valid-0.190.0 ppc for bug 413001
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> Email-Valid-0.190.0.ebuild:
+  Stable for HPPA (bug #413001).
+
+  24 Apr 2012; Jeff Horelick <jdhore@gentoo.org> Email-Valid-0.190.0.ebuild:
+  marked x86 per bug 413001
+
+  23 Apr 2012; Brent Baude <ranger@gentoo.org> Email-Valid-0.190.0.ebuild:
+  Marking Email-Valid-0.190.0 ppc64 for bug 413001
+
+  22 Apr 2012; Agostino Sarubbo <ago@gentoo.org> Email-Valid-0.190.0.ebuild:
+  Stable for amd64, wrt bug #413001
+
+*Email-Valid-0.190.0 (29 Mar 2012)
+
+  29 Mar 2012; Torsten Veller <tove@gentoo.org> +Email-Valid-0.190.0.ebuild:
+  Version bump
+
+*Email-Valid-0.188.0 (17 Mar 2012)
+
+  17 Mar 2012; Torsten Veller <tove@gentoo.org> +Email-Valid-0.188.0.ebuild:
+  Version bump
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org> -Email-Valid-0.185.0.ebuild,
+  -Email-Valid-0.186.0.ebuild:
+  Cleanup
+
+*Email-Valid-0.187.0 (28 Jan 2012)
+
+  28 Jan 2012; Torsten Veller <tove@gentoo.org> +Email-Valid-0.187.0.ebuild:
+  Version bump
+
+*Email-Valid-0.186.0 (24 Jan 2012)
+
+  24 Jan 2012; Torsten Veller <tove@gentoo.org> +Email-Valid-0.186.0.ebuild:
+  Version bump
+
+*Email-Valid-0.185.0 (16 Aug 2011)
+
+  16 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +files/0.185-disable-online-test.patch, +Email-Valid-0.185.0.ebuild:
+  Version bump
 
   14 Jan 2011; Torsten Veller <tove@gentoo.org> -Email-Valid-0.179.ebuild,
   -Email-Valid-0.181.ebuild:
@@ -191,4 +252,3 @@
   Initial import from bug 4919. Thanks to Erwann CORVELLEC
   <Erwann.Corvellec@free.fr>. g-cpan.pl can almost handle this one, except for
   the Net-DNS dependency.
-

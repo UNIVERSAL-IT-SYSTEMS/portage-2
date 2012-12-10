@@ -1,6 +1,29 @@
 # ChangeLog for app-misc/tdl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tdl/ChangeLog,v 1.30 2011/06/13 11:24:01 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tdl/ChangeLog,v 1.36 2012/10/06 15:17:25 jlec Exp $
+
+  06 Oct 2012; Justin Lecher <jlec@gentoo.org> -tdl-1.5.2-r1.ebuild:
+  Drop old
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> tdl-1.5.2-r1.ebuild,
+  tdl-1.5.2-r2.ebuild:
+  Drop alpha keywords
+
+  28 Jun 2012; Brent Baude <ranger@gentoo.org> tdl-1.5.2-r2.ebuild:
+  Marking tdl-1.5.2-r2 ppc for bug 418617
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> tdl-1.5.2-r2.ebuild:
+  Stable for amd64, wrt bug #418617
+
+  09 Jun 2012; Jeff Horelick <jdhore@gentoo.org> tdl-1.5.2-r2.ebuild:
+  marked x86 per bug 418617
+
+*tdl-1.5.2-r2 (21 Feb 2012)
+
+  21 Feb 2012; Justin Lecher <jlec@gentoo.org> +tdl-1.5.2-r2.ebuild,
+  +files/tdl-1.5.2-list.c.patch, +files/tdl-1.5.2-main.c.patch,
+  +files/tdl-1.5.2-man.patch:
+  Add paches from debian, fixes timestamp calculation, #350614
 
   13 Jun 2011; Justin Lecher <jlec@gentoo.org> tdl-1.5.2-r1.ebuild,
   -files/screenshot.png:

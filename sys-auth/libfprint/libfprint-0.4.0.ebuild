@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/libfprint/libfprint-0.4.0.ebuild,v 1.1 2011/06/16 23:28:59 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/libfprint/libfprint-0.4.0.ebuild,v 1.7 2012/10/31 18:27:06 ssuominen Exp $
 
-EAPI=3
+EAPI=4
 
-inherit autotools
+inherit autotools eutils udev
 
 MY_PV="v_${PV//./_}"
 DESCRIPTION="library to add support for consumer fingerprint readers"
@@ -13,17 +13,14 @@ SRC_URI="http://cgit.freedesktop.org/${PN}/${PN}/snapshot/${MY_PV}.tar.bz2 -> ${
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug static-libs"
 
-RDEPEND="dev-libs/glib:2
-	dev-libs/libusb:1
+RDEPEND="virtual/libusb:1
 	dev-libs/nss
-	x11-libs/gtk+:2
-	|| ( media-gfx/imagemagick media-gfx/graphicsmagick[imagemagick] )"
-
-DEPEND="${DEPEND}
-	dev-util/pkgconfig"
+	|| ( media-gfx/imagemagick media-gfx/graphicsmagick[imagemagick] x11-libs/gdk-pixbuf )"
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${MY_PV}
 
@@ -39,15 +36,17 @@ pkg_setup() {
 }
 
 src_configure() {
-	econf ${my_conf} \
+	econf \
 		$(use_enable debug debug-log) \
-		$(use_enable static-libs static) || die
+		$(use_enable static-libs static)
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-	if ! use static-libs ; then
-		rm -v "${D}"/usr/lib64/libfprint.la || die
-	fi
-	dodoc AUTHORS HACKING NEWS README THANKS TODO || die
+	emake \
+		DESTDIR="${D}" \
+		udev_rulesdir="$(udev_get_udevdir)/rules.d" \
+		install
+
+	prune_libtool_files
+	dodoc AUTHORS HACKING NEWS README THANKS TODO
 }

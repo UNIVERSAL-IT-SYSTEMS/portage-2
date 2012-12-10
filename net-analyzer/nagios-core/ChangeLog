@@ -1,6 +1,39 @@
 # ChangeLog for net-analyzer/nagios-core
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios-core/ChangeLog,v 1.177 2011/07/28 19:45:21 dertobi123 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios-core/ChangeLog,v 1.186 2012/09/06 01:02:43 blueness Exp $
+
+  06 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  nagios-core-3.3.1.ebuild:
+  Keyword ~arm, bug #389113
+
+  19 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Re-assign to sysadmin herd.
+
+  12 Jun 2012; Zac Medico <zmedico@gentoo.org> nagios-core-3.2.3.ebuild,
+  nagios-core-3.3.1.ebuild:
+  inherit multilib for get_libdir, and user for enewgroup and enewuser
+
+  09 Feb 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #85926
+
+  30 Dec 2011; Lars Wendler <polynomial-c@gentoo.org> files/nagios3:
+  non-maintainer commit: Massively rewrote init script with help from idl0r.
+  Fixed deprecated s-s-d options. Let reload function use s-s-d as well. Thanks
+  to Michael Kensington for reporting this in bug #392929 and providing a
+  patch.
+
+  27 Aug 2011; Raúl Porcel <armin76@gentoo.org> nagios-core-3.3.1.ebuild:
+  alpha/sparc stable wrt #371302
+
+  19 Aug 2011; Thomas Kahle <tomka@gentoo.org> nagios-core-3.3.1.ebuild:
+  x86 stable per bug 371302
+
+  18 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> nagios-core-3.3.1.ebuild:
+  ppc/ppc64 stable wrt #371302
+
+  18 Aug 2011; Tony Vroon <chainsaw@gentoo.org> nagios-core-3.3.1.ebuild:
+  Marked stable on AMD64 as a dependency of net-analyzer/nagios-3.3.1 as per
+  arch testing by Agostino "ago" Sarubbo in security bug #371302.
 
   28 Jul 2011; Tobias Scherbaum <dertobi123@gentoo.org>
   nagios-core-3.3.1.ebuild:
@@ -820,4 +853,3 @@
   Initial import. Ebuild submitted by Dean Bailey <alron@gentoo.org>.
   Christian - Manny Calavera - Neumair <christian-neumair@web.de> also
   had submitted a bug report about nagios.
-

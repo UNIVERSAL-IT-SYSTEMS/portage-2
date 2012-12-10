@@ -1,6 +1,32 @@
 # ChangeLog for x11-misc/bbsload
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/bbsload/ChangeLog,v 1.20 2011/04/16 17:46:53 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/bbsload/ChangeLog,v 1.26 2012/11/29 20:32:05 ranger Exp $
+
+  29 Nov 2012; Brent Baude <ranger@gentoo.org> bbsload-0.2.9.ebuild:
+  Marking bbsload-0.2.9 ppc for bug 429234
+
+  25 Nov 2012; Kacper Kowalik <xarthisius@gentoo.org> bbsload-0.2.8.ebuild,
+  bbsload-0.2.9.ebuild:
+  Add missing dependency on helvetica font wrt #429234 c#3 by Agostino Sarubbo
+  <ago@gentoo.org>. Thanks to James Cloos <cloos@jhcloos.com> for providing
+  solution
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> bbsload-0.2.8.ebuild,
+  bbsload-0.2.9.ebuild:
+  Drop sparc keywords
+
+  16 Aug 2012; Johannes Huber <johu@gentoo.org> bbsload-0.2.8.ebuild,
+  bbsload-0.2.9.ebuild:
+  Drop x86 to ~, doesnt pass runtime tests, noticed while processing bug
+  #429234.
+
+*bbsload-0.2.9 (04 Jun 2012)
+
+  04 Jun 2012; Michael Weber <xmw@gentoo.org> +bbsload-0.2.9.ebuild:
+  Version bump, adding ~amd64 keyword (reported by df, bug 415815)
+
+  04 Jun 2012; Michael Weber <xmw@gentoo.org> bbsload-0.2.8.ebuild:
+  Fix HOMEPAGE, EAPI-4 (reported by df, bug 415815)
 
   16 Apr 2011; Ulrich Mueller <ulm@gentoo.org> bbsload-0.2.8.ebuild:
   Remove bogus dependency on virtual/blackbox, bug 358825.

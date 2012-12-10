@@ -1,6 +1,112 @@
 # ChangeLog for media-libs/sdl-mixer
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/sdl-mixer/ChangeLog,v 1.82 2011/07/30 17:03:27 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/sdl-mixer/ChangeLog,v 1.111 2012/11/17 18:04:05 mr_bones_ Exp $
+
+  17 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  -files/sdl-mixer-1.2.11-midi.patch, -files/sdl-mixer-1.2.11-multilib.patch,
+  -sdl-mixer-1.2.11-r1.ebuild:
+  old
+
+  20 Oct 2012; Raúl Porcel <armin76@gentoo.org> sdl-mixer-1.2.12-r1.ebuild:
+  ia64 stable wrt #436124
+
+  24 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  sdl-mixer-1.2.12-r1.ebuild:
+  re-add dropped ia64 keyword
+
+  23 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org> -sdl-mixer-1.2.12.ebuild:
+  old
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> sdl-mixer-1.2.12-r1.ebuild:
+  alpha/sh/sparc stable wrt #422125
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> sdl-mixer-1.2.12-r1.ebuild:
+  Stable for HPPA (bug #422125).
+
+  29 Jun 2012; Brent Baude <ranger@gentoo.org> sdl-mixer-1.2.12-r1.ebuild:
+  Marking sdl-mixer-1.2.12-r1 ppc for bug 422125
+
+  27 Jun 2012; Markus Meier <maekke@gentoo.org> sdl-mixer-1.2.12-r1.ebuild:
+  arm stable, bug #422125
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> sdl-mixer-1.2.12-r1.ebuild:
+  Marking sdl-mixer-1.2.12-r1 ppc64 for bug 422125
+
+  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> sdl-mixer-1.2.12-r1.ebuild:
+  Stable for amd64, wrt bug #422125
+
+  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> sdl-mixer-1.2.12-r1.ebuild:
+  marked x86 per bug 422125
+
+  16 May 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  sdl-mixer-1.2.12-r1.ebuild:
+  set RDEPEND (bug #416197)
+
+*sdl-mixer-1.2.12-r1 (18 Apr 2012)
+
+  18 Apr 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdl-mixer-1.2.12-r1.ebuild, metadata.xml:
+  Formalize the USE flag setting with REQUIRED_USE (bug #412407)
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> sdl-mixer-1.2.12.ebuild:
+  Marking sdl-mixer-1.2.12 ppc64 for bug 411531
+
+  17 Apr 2012; Michael Sterrett <mr_bones_@gentoo.org> sdl-mixer-1.2.12.ebuild:
+  link the midi-related use flags more (bug #412407)
+
+  17 Apr 2012; Michael Sterrett <mr_bones_@gentoo.org> sdl-mixer-1.2.12.ebuild:
+  more midi-related dep cleanup from James Le Cuirot
+
+  17 Apr 2012; Michael Sterrett <mr_bones_@gentoo.org> sdl-mixer-1.2.12.ebuild:
+  add a midi-related warning (bug #412035)
+
+  16 Apr 2012; Markus Meier <maekke@gentoo.org> sdl-mixer-1.2.12.ebuild:
+  arm stable, bug #411531
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> sdl-mixer-1.2.12.ebuild:
+  Marking sdl-mixer-1.2.12 ppc for bug 411531
+
+  14 Apr 2012; Michael Sterrett <mr_bones_@gentoo.org> sdl-mixer-1.2.12.ebuild:
+  use LDFLAGS for playtools (bug #411735)
+
+  13 Apr 2012; Agostino Sarubbo <ago@gentoo.org> sdl-mixer-1.2.12.ebuild:
+  Stable for amd64, wrt bug #411531
+
+  11 Apr 2012; Jeff Horelick <jdhore@gentoo.org> sdl-mixer-1.2.12.ebuild:
+  marked x86 per bug 411531
+
+  11 Apr 2012; Jeroen Roovers <jer@gentoo.org> sdl-mixer-1.2.12.ebuild:
+  Stable for HPPA (bug #411531).
+
+  04 Mar 2012; Michael Sterrett <mr_bones_@gentoo.org> sdl-mixer-1.2.12.ebuild,
+  +files/sdl-mixer-1.2.12-wav.patch:
+  add upstream patch for failure to load wav situation (bug #406739)
+
+  08 Feb 2012; Michael Sterrett <mr_bones_@gentoo.org> sdl-mixer-1.2.12.ebuild:
+  correct modplug configure option (bug #402735)
+
+  18 Jan 2012; Michael Sterrett <mr_bones_@gentoo.org> sdl-mixer-1.2.12.ebuild:
+  drop the midi default until a good reason to do so appears (bug #399249)
+
+  17 Jan 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdl-mixer-1.2.12.ebuild, metadata.xml:
+  version bump
+
+*sdl-mixer-1.2.12 (16 Jan 2012)
+
+  16 Jan 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdl-mixer-1.2.12.ebuild:
+  version bump
+
+*sdl-mixer-1.2.11-r2 (02 Jan 2012)
+
+  02 Jan 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  +sdl-mixer-1.2.11-r2.ebuild, +files/sdl-mixer-1.2.11-midi.patch:
+  add upstream patch for playing some midi files (bug #397333)
+
+  09 Dec 2011; Tupone Alfredo <tupone@gentoo.org> sdl-mixer-1.2.11-r1.ebuild,
+  metadata.xml:
+  Installing playmus/playwave. Bug #46656 by Gerry
 
   30 Jul 2011; Michael Sterrett <mr_bones_@gentoo.org>
   sdl-mixer-1.2.11-r1.ebuild, +files/sdl-mixer-1.2.11-multilib.patch:

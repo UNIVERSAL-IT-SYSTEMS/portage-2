@@ -1,6 +1,20 @@
 # ChangeLog for sci-biology/tree-puzzle
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/tree-puzzle/ChangeLog,v 1.15 2010/01/01 21:44:45 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/tree-puzzle/ChangeLog,v 1.19 2012/08/01 15:41:29 jlec Exp $
+
+  01 Aug 2012; Justin Lecher <jlec@gentoo.org> tree-puzzle-5.2.ebuild,
+  +files/tree-puzzle-impl-dec.patch:
+  Mask stupid test, which fails due to precision reached depending on
+  optimization used at compile time, #297646; fix move to EAPI=4, #429354
+
+  24 May 2012; Justin Lecher <jlec@gentoo.org> tree-puzzle-5.2.ebuild:
+  Corrected dep from sys-cluster/lam-mpi to virtual/mpi, #415765
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> tree-puzzle-5.2.ebuild:
+  Add missing quotes
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> tree-puzzle-5.2.ebuild:
+  Move to EAPI=4
 
   01 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
   tree-puzzle-5.2.ebuild:

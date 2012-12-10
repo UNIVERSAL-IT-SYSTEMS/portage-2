@@ -1,6 +1,59 @@
 # ChangeLog for app-office/grisbi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/grisbi/ChangeLog,v 1.49 2011/07/24 11:03:24 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-office/grisbi/ChangeLog,v 1.61 2012/10/16 04:06:35 blueness Exp $
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> grisbi-0.8.9-r1.ebuild:
+  stable ppc, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> grisbi-0.8.9-r1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> grisbi-0.8.9-r1.ebuild:
+  x86 stable wrt bug #427544
+
+*grisbi-0.8.9-r1 (08 Jul 2012)
+
+  08 Jul 2012; Rémi Cardona <remi@gentoo.org>
+  +files/0.8.9-fix-ofx-support.patch, +grisbi-0.8.9-r1.ebuild:
+  Fix broken OFX disabling, see bug #424785
+
+*grisbi-0.8.9 (30 Jun 2012)
+
+  30 Jun 2012; Pacho Ramos <pacho@gentoo.org> +grisbi-0.8.9.ebuild,
+  -files/0.6.0_rc2-properly-detect-gmodule.patch,
+  -files/0.8.2-0001-fixes-bug-1289.patch,
+  -files/0.8.2-0002-fixes-a-crash-when-importing-a-file-without-extensio.patch,
+  -files/0.8.2-0003-fixes-bug-1293-Problem-of-updating-of-the-pointing-b.patch,
+  -files/0.8.2-0004-fix-memory-leaks-thanks-Philippe-D.patch,
+  -files/0.8.2-0005-fixes-bug-of-compilation.patch, -files/grisbi.desktop,
+  -grisbi-0.6.0_rc2.ebuild, -grisbi-0.8.2.ebuild:
+  Version bump, remove old.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> grisbi-0.6.0_rc2.ebuild,
+  grisbi-0.8.2.ebuild, grisbi-0.8.8.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> grisbi-0.8.8.ebuild:
+  x86 stable wrt bug #385699
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> grisbi-0.8.8.ebuild:
+  ppc stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> grisbi-0.8.8.ebuild:
+  amd64 stable wrt #385699
+
+  10 Oct 2011; Pacho Ramos <pacho@gentoo.org>
+  -files/grisbi-0.5.6-latex-unicode.patch, -grisbi-0.6.0.ebuild,
+  -grisbi-0.8.1.ebuild, grisbi-0.8.8.ebuild:
+  Drop .la files, bug #386665 by Ago. Drop old.
+
+  09 Oct 2011; Rémi Cardona <remi@gentoo.org> grisbi-0.8.8.ebuild:
+  Disable CUnit/tests support, fixes bug #356951.
+
+*grisbi-0.8.8 (02 Oct 2011)
+
+  02 Oct 2011; Rémi Cardona <remi@gentoo.org> +grisbi-0.8.8.ebuild:
+  Bump to 0.8.8
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> grisbi-0.6.0_rc2.ebuild,
   grisbi-0.6.0.ebuild, grisbi-0.8.1.ebuild, grisbi-0.8.2.ebuild:
@@ -211,4 +264,3 @@
   new accounting office package. Ebuild submitted by: Guillaume Castagnino
   <guilc@fr.st> in bug #52595. Guillaume will be the third party maintainer for
   this package. Seemant will be his gentoo proxy
-

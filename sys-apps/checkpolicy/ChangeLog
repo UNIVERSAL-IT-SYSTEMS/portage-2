@@ -1,6 +1,45 @@
 # ChangeLog for sys-apps/checkpolicy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/checkpolicy/ChangeLog,v 1.59 2011/07/15 20:54:05 blueness Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/checkpolicy/ChangeLog,v 1.69 2012/11/17 16:57:55 swift Exp $
+
+  17 Nov 2012; Sven Vermeulen checkpolicy-2.1.11.ebuild:
+  Stabilize SELinux userspace utilities
+
+  13 Oct 2012; <swift@gentoo.org> checkpolicy-2.1.11.ebuild:
+  Supporting user-provided patches using epatch_user
+
+*checkpolicy-2.1.11 (09 Oct 2012)
+
+  09 Oct 2012; <swift@gentoo.org> +checkpolicy-2.1.11.ebuild:
+  Introducing new upstream version
+
+  13 May 2012; <swift@gentoo.org> -checkpolicy-2.1.0.ebuild:
+  Removing obsoleted ebuild
+
+  29 Apr 2012; <swift@gentoo.org> checkpolicy-2.1.8.ebuild:
+  Stabilization
+
+*checkpolicy-2.1.8 (31 Mar 2012)
+
+  31 Mar 2012; <swift@gentoo.org> +checkpolicy-2.1.8.ebuild:
+  Bump to version 2.1.8
+
+  12 Nov 2011; <swift@gentoo.org> -checkpolicy-2.0.21.ebuild,
+  -checkpolicy-2.0.23.ebuild:
+  Removing obsoleted ebuilds
+
+  23 Oct 2011; <swift@gentoo.org> checkpolicy-2.1.0.ebuild:
+  Stabilization (tracker #384231)
+
+  12 Aug 2011; Anthony G. Basile <blueness@gentoo.org>
+  -checkpolicy-2.0.16.ebuild, -checkpolicy-2.0.19.ebuild:
+  Removed deprecated versions
+
+*checkpolicy-2.1.0 (03 Aug 2011)
+
+  03 Aug 2011; Anthony G. Basile <blueness@gentoo.org>
+  +checkpolicy-2.1.0.ebuild:
+  Bump to 20110727 SELinux userspace
 
 *checkpolicy-2.0.23 (15 Jul 2011)
 
@@ -258,4 +297,3 @@
   03 Aug 2003; Chris PeBenito <pebenito@gentoo.org> checkpolicy-1.0.ebuild,
   metadata.xml, files/checkpolicy-1.0-gentoo.diff:
   Initial commit
-

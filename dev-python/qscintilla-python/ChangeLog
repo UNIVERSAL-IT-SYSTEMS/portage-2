@@ -1,6 +1,78 @@
 # ChangeLog for dev-python/qscintilla-python
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/qscintilla-python/ChangeLog,v 1.78 2011/07/25 20:40:34 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/qscintilla-python/ChangeLog,v 1.94 2012/09/09 15:53:55 armin76 Exp $
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org>
+  qscintilla-python-2.6.2.ebuild:
+  alpha/ia64/sparc stable wrt #429042
+
+  20 Aug 2012; Johannes Huber <johu@gentoo.org> qscintilla-python-2.6.2.ebuild:
+  Stable for x86, wrt bug #429042
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
+  qscintilla-python-2.6.2.ebuild:
+  Stable for amd64, wrt bug #429042
+
+  11 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  qscintilla-python-2.6.2.ebuild:
+  Stable ppc64, bug #429042
+
+  10 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  qscintilla-python-2.6.2.ebuild:
+  Stable ppc, bug #429042
+
+  09 Jul 2012; Davide Pesavento <pesa@gentoo.org>
+  -files/qscintilla-python-2.4-nostrip.patch, -qscintilla-python-2.4.5.ebuild:
+  Remove old.
+
+  09 Jul 2012; Raúl Porcel <armin76@gentoo.org>
+  qscintilla-python-2.6.1.ebuild:
+  alpha/ia64/sparc stable wrt #412929
+
+*qscintilla-python-2.6.2 (27 Jun 2012)
+
+  27 Jun 2012; Davide Pesavento <pesa@gentoo.org>
+  +qscintilla-python-2.6.2.ebuild, -qscintilla-python-2.4.6.ebuild,
+  -qscintilla-python-2.6.ebuild:
+  Version bump and remove old.
+
+  14 Jun 2012; Ben de Groot <yngwin@gentoo.org> qscintilla-python-2.4.5.ebuild:
+  Destabling to ~ia64 because last available stable qt will be masked pending
+  removal
+
+  23 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  qscintilla-python-2.6.1.ebuild:
+  marked x86 per bug 412929
+
+  24 Apr 2012; Agostino Sarubbo <ago@gentoo.org>
+  qscintilla-python-2.6.1.ebuild:
+  Stable for amd64, wrt bug #412929
+
+  25 Mar 2012; Davide Pesavento <pesa@gentoo.org>
+  qscintilla-python-2.4.5.ebuild, qscintilla-python-2.4.6.ebuild,
+  qscintilla-python-2.5.1.ebuild, qscintilla-python-2.6.1.ebuild,
+  qscintilla-python-2.6.ebuild:
+  Drop ~x86-fbsd because of missing keyword on dev-python/PyQt4.
+
+*qscintilla-python-2.6.1 (04 Mar 2012)
+
+  04 Mar 2012; Markos Chandras <hwoarang@gentoo.org>
+  +qscintilla-python-2.6.1.ebuild:
+  version bump
+
+  27 Feb 2012; Davide Pesavento <pesa@gentoo.org> metadata.xml:
+  Add <upstream> tag to metadata.
+
+  27 Feb 2012; Patrick Lauer <patrick@gentoo.org>
+  qscintilla-python-2.4.5.ebuild, qscintilla-python-2.4.6.ebuild,
+  qscintilla-python-2.5.1.ebuild, qscintilla-python-2.6.ebuild:
+  Restricting pypy
+
+*qscintilla-python-2.6 (12 Nov 2011)
+
+  12 Nov 2011; Markos Chandras <hwoarang@gentoo.org>
+  +qscintilla-python-2.6.ebuild:
+  version bump
 
   25 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org>
   qscintilla-python-2.5.1.ebuild:
@@ -348,4 +420,3 @@
   +qscintilla-python-2.1.ebuild:
   split dev-python/qscintilla to x11-libs/qscintilla and
   dev-python/qscintilla-python, to break circular dependency bug 199543.
-

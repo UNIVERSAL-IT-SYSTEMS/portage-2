@@ -1,6 +1,13 @@
 # ChangeLog for app-cdr/gaffitter
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/gaffitter/ChangeLog,v 1.6 2011/05/01 20:22:55 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/gaffitter/ChangeLog,v 1.8 2011/12/14 09:26:05 phajdan.jr Exp $
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gaffitter-0.6.0-r1.ebuild:
+  x86 stable wrt bug #393843
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org> gaffitter-0.6.0-r1.ebuild:
+  Stable for AMD64, wrt bug #393843
 
   01 May 2011; Markos Chandras <hwoarang@gentoo.org> gaffitter-0.6.0-r1.ebuild:
   Guard script sed command with an if statement

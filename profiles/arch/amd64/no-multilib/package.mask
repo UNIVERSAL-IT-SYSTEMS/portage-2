@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/amd64/no-multilib/package.mask,v 1.106 2011/07/23 13:36:29 reavertm Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/amd64/no-multilib/package.mask,v 1.122 2012/12/01 21:03:09 flameeyes Exp $
 
 # AMD64 Team <amd64@gentoo.org>
 # Mask packages that rely on amd64 multilib
@@ -17,16 +17,16 @@ app-emulation/virtualbox
 app-emulation/virtualbox-extpack-oracle
 app-emulation/virtualbox-guest-additions
 app-emulation/vmware-player
-app-emulation/vmware-server
-=app-emulation/vmware-modules-208.2
-app-emulation/vmware-server-console
 >=app-i18n/atokx3-3.0.0
 app-office/ooextras
 app-emulation/emul-linux-x86-baselibs
 app-emulation/emul-linux-x86-compat
 app-emulation/emul-linux-x86-cpplibs
+app-emulation/emul-linux-x86-db
+app-emulation/emul-linux-x86-gstplugins
 app-emulation/emul-linux-x86-gtklibs
 app-emulation/emul-linux-x86-gtkmmlibs
+app-emulation/emul-linux-x86-jna
 app-emulation/emul-linux-x86-medialibs
 app-emulation/emul-linux-x86-motif
 app-emulation/emul-linux-x86-opengl
@@ -35,11 +35,9 @@ app-emulation/emul-linux-x86-sdl
 app-emulation/emul-linux-x86-soundlibs
 app-emulation/emul-linux-x86-xlibs
 app-emulation/emul-linux-x86-java
-app-emulation/wine
 app-emulation/winetricks
 app-emulation/wine-doors
 app-text/acroread
-app-text/bibus
 dev-embedded/libftd2xx
 dev-embedded/openocd
 >=dev-java/sun-j2me-bin-2.5.2.01
@@ -53,7 +51,7 @@ dev-util/android-sdk-update-manager
 dev-util/biew
 dev-util/dialogblocks
 dev-util/helpblocks
-dev-util/nvidia-cuda-profiler
+games-action/cs2d
 games-action/descent3
 games-action/descent3-demo
 games-action/heretic2
@@ -96,7 +94,6 @@ games-fps/enemy-territory
 games-fps/etqw-bin
 games-fps/etqw-data
 games-fps/etqw-demo
-games-fps/fuhquake-bin
 games-fps/glxquake-bin
 games-fps/legends
 games-fps/postal2
@@ -111,12 +108,15 @@ games-fps/rtcw
 games-fps/rtcwmp-demo
 games-fps/rtcwsp-demo
 games-fps/sauerbraten
+games-fps/serious-sam-tfe
+games-fps/serious-sam-tse
 games-fps/soldieroffortune
 games-fps/soldieroffortune-demo
 games-fps/unreal-tournament
 games-fps/ut2003
 games-fps/ut2003-demo
 games-fps/ut2004-demo
+games-puzzle/drod-bin
 games-puzzle/hoh-bin
 games-roguelike/adom
 games-rpg/eschalon-book-1-demo
@@ -140,19 +140,20 @@ games-strategy/darwinia
 games-strategy/darwinia-demo
 games-strategy/defcon-demo
 games-strategy/dominions2
+games-strategy/dominions2-demo
 games-strategy/heroes3
 games-strategy/heroes3-demo
 games-strategy/majesty-demo
 games-strategy/savage-bin
 games-strategy/smac
+games-strategy/spaz
 games-strategy/x2
 games-strategy/x2-demo
-<mail-client/thunderbird-bin-5.0
 media-fonts/acroread-asianfonts
 media-gfx/picasa
 media-libs/realcodecs
 media-libs/win32codecs
-media-plugins/mythnetvision
+media-sound/aucdtect
 media-sound/shoutcast-server-bin
 media-sound/shoutcast-trans-bin
 media-sound/skype-call-recorder
@@ -162,7 +163,7 @@ media-tv/livestation
 media-video/binkplayer
 media-video/tsmuxer
 net-im/skype
-net-im/skysentials
+net-im/skypetab-ng
 net-misc/icaclient
 net-misc/ps3mediaserver
 net-p2p/sancho-bin
@@ -177,14 +178,15 @@ sci-geosciences/googleearth
 sci-libs/ipp
 sys-apps/memtest86
 sys-apps/memtest86+
-sys-block/hpacucli
 sys-libs/lib-compat-loki
-<www-client/firefox-bin-5.0
-<www-client/seamonkey-bin-2.2
 <www-plugins/adobe-flash-11.0.1.60_beta201107131
 www-plugins/nspluginwrapper
-www-plugins/google-talkplugin
 
 # AMD64 Team; <amd64@gentoo.org>
-# grub is not available on no-multilib-profiles; use sys-boot/grub-static
-sys-boot/grub
+# grub-1 is not available on no-multilib-profiles
+<sys-boot/grub-1.99
+
+# Diego Elio Pettenò <flameeyes@gentoo.org>
+# older hpacucli shipped only with 32-bit binaries
+<sys-block/hpacucli-9.30.15.0
+

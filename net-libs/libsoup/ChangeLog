@@ -1,6 +1,147 @@
 # ChangeLog for net-libs/libsoup
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libsoup/ChangeLog,v 1.257 2011/07/28 18:30:39 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libsoup/ChangeLog,v 1.295 2012/10/28 16:28:10 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> libsoup-2.38.1.ebuild:
+  ia64/sh/sparc stable wrt #427544
+
+  20 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libsoup-2.36.1.ebuild, libsoup-2.36.1-r1.ebuild, libsoup-2.38.1.ebuild:
+  trivial: reorder src_prepare and src_configure.
+
+  20 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libsoup-2.36.1.ebuild, libsoup-2.36.1-r1.ebuild, libsoup-2.38.1.ebuild:
+  Disable apache-using tests in a cleaner way.
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> libsoup-2.38.1.ebuild:
+  stable ppc, bug #427544
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> libsoup-2.38.1.ebuild:
+  Stable on alpha, bug 427544.
+
+  10 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -files/libsoup-2.30.1-fix-build-without-gnome-with-doc.patch,
+  -libsoup-2.34.3.ebuild, libsoup-2.36.1.ebuild, libsoup-2.36.1-r1.ebuild,
+  -libsoup-2.38.0.ebuild, libsoup-2.38.1.ebuild:
+  Drop useless USE=doc flag. Update license. Drop old.
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> libsoup-2.38.1.ebuild:
+  stable ppc64, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> libsoup-2.38.1.ebuild:
+  arm stable, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> libsoup-2.38.1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libsoup-2.38.1.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> libsoup-2.38.1.ebuild:
+  Stable for HPPA (bug #427544).
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> libsoup-2.36.1-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #410611
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> libsoup-2.36.1-r1.ebuild:
+  ppc stable wrt #410611
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> libsoup-2.36.1-r1.ebuild:
+  Stable for HPPA (bug #410611).
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org> libsoup-2.38.1.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libsoup-2.34.3.ebuild,
+  libsoup-2.36.1.ebuild, libsoup-2.36.1-r1.ebuild, libsoup-2.38.0.ebuild,
+  libsoup-2.38.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> libsoup-2.36.1-r1.ebuild:
+  x86 stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> libsoup-2.36.1-r1.ebuild:
+  arm stable, bug #410611
+
+*libsoup-2.38.1 (20 Apr 2012)
+
+  20 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +libsoup-2.38.1.ebuild:
+  Version bump, fixes crashes and leaks.
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> libsoup-2.36.1-r1.ebuild:
+  Marking libsoup-2.36.1-r1 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> libsoup-2.36.1-r1.ebuild:
+  Stable for amd64, wrt bug #410611
+
+*libsoup-2.38.0 (13 Apr 2012)
+
+  13 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +libsoup-2.38.0.ebuild:
+  Version bump with numerous bugfixes and optimizations.
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> libsoup-2.36.1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> libsoup-2.36.1.ebuild:
+  Marking libsoup-2.36.1 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> libsoup-2.36.1.ebuild:
+  Marking libsoup-2.36.1 ppc64 stable for bug 393007
+
+  30 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libsoup-2.34.3.ebuild, libsoup-2.36.1.ebuild, libsoup-2.36.1-r1.ebuild:
+  Move gnome2_src_prepare after eautoreconf (bug #401415, thanks to Martin von
+  Gagern for reporting).
+
+*libsoup-2.36.1-r1 (27 Jan 2012)
+
+  27 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +libsoup-2.36.1-r1.ebuild,
+  +files/libsoup-2.36.1-SoupHTTPInputStream-GCancellable.patch:
+  Add patch from 2.37.x fixing "Too many open files" crash when loading some
+  webpages. Thanks to Priit Laes for reporting.
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> libsoup-2.36.1.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> libsoup-2.36.1.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> libsoup-2.36.1.ebuild:
+  amd64 stable, bug 393007
+
+  28 Dec 2011; Pacho Ramos <pacho@gentoo.org> -libsoup-2.32.2.ebuild,
+  -libsoup-2.34.2.ebuild:
+  Drop old.
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> libsoup-2.36.1.ebuild:
+  Stable for HPPA (bug #393007).
+
+*libsoup-2.36.1 (30 Oct 2011)
+
+  30 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +libsoup-2.36.1.ebuild, metadata.xml:
+  Bump to 2.36.1 from the gnome overlay.
+  Notable changes: lots of https and caching improvements; supports NTLM single
+  sign-on using samba's ntlm_auth.
+
+  18 Sep 2011; Raúl Porcel <armin76@gentoo.org> libsoup-2.34.3.ebuild:
+  alpha/ia64/sh/sparc stable wrt #376793
+
+  12 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> libsoup-2.34.3.ebuild:
+  ppc/ppc64 stable wrt #376793
+
+  09 Sep 2011; Jeroen Roovers <jer@gentoo.org> libsoup-2.34.3.ebuild:
+  Stable for HPPA (bug #376793).
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> libsoup-2.34.3.ebuild:
+  arm/x86 stable, bug #376793
+
+  04 Sep 2011; Tony Vroon <chainsaw@gentoo.org> libsoup-2.34.3.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #376793 filed by Pacho Ramos.
 
 *libsoup-2.34.3 (28 Jul 2011)
 
@@ -1003,4 +1144,3 @@
 
   14 Mar 2003; Alastair Tse <liquidx@gentoo.org> libsoup-1.99.12.ebuild:
   inital ebuild. new version of soup that uses glib2 rather than glib1.
-

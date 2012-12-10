@@ -1,6 +1,20 @@
 # ChangeLog for net-analyzer/mbrowse
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/mbrowse/ChangeLog,v 1.13 2011/05/08 20:43:11 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/mbrowse/ChangeLog,v 1.17 2012/09/28 06:43:42 pinkbyte Exp $
+
+  28 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> mbrowse-0.4.3.ebuild:
+  amd64 stable, wrt bug #436446
+
+  19 Dec 2011; Tim Harder <radhermit@gentoo.org> -files/0.3.1-gentoo.patch,
+  -mbrowse-0.3.1.ebuild:
+  Remove old.
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> mbrowse-0.3.1.ebuild,
+  mbrowse-0.4.3.ebuild:
+  Drop sparc keywords
+
+  11 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> mbrowse-0.4.3.ebuild:
+  x86 stable wrt bug #389587
 
 *mbrowse-0.4.3 (08 May 2011)
 

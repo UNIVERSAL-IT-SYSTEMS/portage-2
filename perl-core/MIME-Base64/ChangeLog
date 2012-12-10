@@ -1,6 +1,18 @@
 # ChangeLog for perl-core/MIME-Base64
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/perl-core/MIME-Base64/ChangeLog,v 1.33 2011/07/30 12:19:50 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/perl-core/MIME-Base64/ChangeLog,v 1.37 2012/06/24 15:38:58 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  05 May 2012; Alexis Ballier <aballier@gentoo.org> MIME-Base64-3.130.0.ebuild:
+  keyword ~amd64-fbsd
+
+  22 Apr 2012; Torsten Veller <tove@gentoo.org> MIME-Base64-3.130.0.ebuild:
+  Add ~m68k to keep repoman quiet (#317869)
+
+  10 Dec 2011; Fabian Groffen <grobian@gentoo.org> MIME-Base64-3.130.0.ebuild:
+  Marked ~x64-freebsd
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> MIME-Base64-3.130.0.ebuild:
   Drop ~sparc-fbsd KEYWORD
@@ -250,4 +262,3 @@
   comments should well explained and written in clean English. The details about
   writing correct changelogs are explained in the skel.ChangeLog file which you
   can find in the root directory of the portage repository.
-

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/matplotlib/matplotlib-1.0.1-r1.ebuild,v 1.5 2011/04/14 20:10:23 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/matplotlib/matplotlib-1.0.1-r1.ebuild,v 1.12 2012/05/04 15:12:15 patrick Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -21,7 +21,11 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
 IUSE="cairo doc excel examples fltk gtk latex qt4 traits tk wxwidgets"
 SLOT="0"
 KEYWORDS="amd64 ppc ~ppc64 x86 ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
-LICENSE="PYTHON BSD"
+# Main license: matplotlib
+# Some modules: BSD
+# matplotlib/backends/qt4_editor: MIT
+# Fonts: BitstreamVera, OFL-1.1
+LICENSE="BitstreamVera BSD matplotlib MIT OFL-1.1"
 
 CDEPEND="dev-python/numpy
 	dev-python/python-dateutil
@@ -33,7 +37,7 @@ CDEPEND="dev-python/numpy
 
 DEPEND="${CDEPEND}
 	dev-python/pycxx
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? (
 		app-text/dvipng
 		dev-python/imaging
@@ -41,17 +45,9 @@ DEPEND="${CDEPEND}
 		dev-python/xlwt
 		dev-python/sphinx
 		media-gfx/graphviz[cairo]
-		|| (
-			(
-				dev-texlive/texlive-latexextra
-				dev-texlive/texlive-fontsrecommended
-				dev-texlive/texlive-latexrecommended
-			)
-			(
-				app-text/ptex
-				dev-tex/latex-unicode
-			)
-		)
+		dev-texlive/texlive-latexextra
+		dev-texlive/texlive-fontsrecommended
+		dev-texlive/texlive-latexrecommended
 	)"
 
 RDEPEND="${CDEPEND}
@@ -69,10 +65,7 @@ RDEPEND="${CDEPEND}
 		app-text/ghostscript-gpl
 		app-text/dvipng
 		app-text/poppler[utils]
-		|| (
-			dev-texlive/texlive-fontsrecommended
-			app-text/ptex
-		)
+		dev-texlive/texlive-fontsrecommended
 	)"
 
 PYTHON_CFLAGS=("2.* + -fno-strict-aliasing")
@@ -151,6 +144,7 @@ src_prepare() {
 
 	epatch "${FILESDIR}"/${P}-libpng15.patch
 	epatch "${FILESDIR}"/${P}-sphinx.patch
+	epatch "${FILESDIR}"/${P}-linux3.patch
 }
 
 src_compile() {

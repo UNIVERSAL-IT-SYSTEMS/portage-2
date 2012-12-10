@@ -1,6 +1,20 @@
 # ChangeLog for sci-biology/emboss
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/emboss/ChangeLog,v 1.65 2011/07/26 19:28:04 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/emboss/ChangeLog,v 1.68 2012/11/19 10:36:45 jlec Exp $
+
+*emboss-6.3.1_p4-r1 (19 Nov 2012)
+
+  19 Nov 2012; Justin Lecher <jlec@gentoo.org> +emboss-6.3.1_p4-r1.ebuild,
+  +files/emboss-6.3.1_p4-r1_plcol.patch:
+  Fix compilation problem with toplplot, #391669, thanks Juergen Rose for the
+  patch
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> -emboss-6.1.0.ebuild:
+  Drop old
+
+  20 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> emboss-6.3.1_p4.ebuild,
+  emboss-6.1.0.ebuild, emboss-6.1.0-r1.ebuild, emboss-6.0.1.ebuild:
+  Fix SRC_URI
 
   26 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> emboss-6.0.1.ebuild,
   emboss-6.1.0.ebuild, emboss-6.1.0-r1.ebuild, emboss-6.3.1_p4.ebuild:

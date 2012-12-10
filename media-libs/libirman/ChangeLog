@@ -1,6 +1,54 @@
 # ChangeLog for media-libs/libirman
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libirman/ChangeLog,v 1.23 2010/01/03 21:00:47 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libirman/ChangeLog,v 1.34 2012/09/15 10:33:47 scarabeus Exp $
+
+  15 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> libirman-0.4.5.ebuild:
+  Stable ppc. Wrt bug#429112.
+
+  14 Sep 2012; Ian Stakenvicius <axs@gentoo.org> +libirman-0.4.2-r1.ebuild,
+  +files/libirman-0.4.2-PICShared.patch, +files/libirman-0.4.2-destdir.patch,
+  +files/libirman-0.4.2-format.patch, +files/libirman-0.4.2-gcc4.patch:
+  undid premature removal so ppc-stable lirc RDEPEND can still be satisfied
+
+  14 Sep 2012; Ian Stakenvicius <axs@gentoo.org> +libirman-0.4.2-r1.ebuild,
+  +files/libirman-0.4.2-PICShared.patch, +files/libirman-0.4.2-destdir.patch,
+  +files/libirman-0.4.2-format.patch, +files/libirman-0.4.2-gcc4.patch:
+  undid premature removal so ppc-stable lirc RDEPEND can still be satisfied
+
+  29 Aug 2012; Michael Palimaka <kensington@gentoo.org>
+  -files/libirman-0.4.2-PICShared.patch, -files/libirman-0.4.2-destdir.patch,
+  -files/libirman-0.4.2-format.patch, -files/libirman-0.4.2-gcc4.patch,
+  -libirman-0.4.2-r1.ebuild:
+  Remove old.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> libirman-0.4.2-r1.ebuild,
+  libirman-0.4.5.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> libirman-0.4.5.ebuild:
+  Marking libirman-0.4.5 ppc64 for bug 429122
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> libirman-0.4.5.ebuild:
+  Stable for amd64, wrt bug #429122
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> libirman-0.4.5.ebuild:
+  Stable for amd64, wrt bug #429122
+
+  02 Aug 2012; Jeff Horelick <jdhore@gentoo.org> libirman-0.4.5.ebuild:
+  marked x86 per bug 429122
+
+  30 Jun 2012; Justin Lecher <jlec@gentoo.org> libirman-0.4.2-r1.ebuild,
+  libirman-0.4.5.ebuild, metadata.xml:
+  Regenerate autotool files in order to allow parallel install, #423879
+
+*libirman-0.4.5 (06 May 2012)
+
+  06 May 2012; Pacho Ramos <pacho@gentoo.org> +libirman-0.4.5.ebuild,
+  -files/libirman-0.4.4-destdir.patch, -libirman-0.4.4.ebuild:
+  Version bump, remove old.
+
+  06 May 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  lcd herd is empty
 
   03 Jan 2010; Diego E. Pettenò <flameeyes@gentoo.org>
   libirman-0.4.4.ebuild:

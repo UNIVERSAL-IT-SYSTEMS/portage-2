@@ -1,6 +1,20 @@
 # ChangeLog for dev-ruby/bones
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bones/ChangeLog,v 1.15 2011/06/02 07:07:30 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/bones/ChangeLog,v 1.19 2012/10/12 05:18:32 graaff Exp $
+
+  12 Oct 2012; Hans de Graaff <graaff@gentoo.org> bones-3.8.0.ebuild:
+  Raise minimum version numbers to match gemspec.
+
+*bones-3.8.0 (14 Aug 2012)
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +bones-3.8.0.ebuild:
+  Version bump; skip tests on JRuby as java itself crashes.
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> bones-3.7.0.ebuild:
+  Port to rspec helper for testing. Bump to EAPI 4.
+
+  02 Feb 2012; Thomas Kahle <tomka@gentoo.org> bones-3.7.0.ebuild:
+  ~x86 per bug 325471
 
 *bones-3.7.0 (02 Jun 2011)
 
@@ -74,4 +88,3 @@
   31 Jan 2010; Diego E. Pettenò <flameeyes@gentoo.org> +bones-3.2.0.ebuild,
   +metadata.xml:
   Initial import of bones and related dependencies.
-

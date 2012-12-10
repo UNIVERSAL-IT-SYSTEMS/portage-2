@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/qoauth/qoauth-1.0.1.ebuild,v 1.6 2010/11/08 20:48:24 ayoy Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/qoauth/qoauth-1.0.1.ebuild,v 1.10 2012/09/06 13:28:54 scarabeus Exp $
 
-EAPI="2"
+EAPI=4
 
 inherit qt4-r2
 
@@ -12,30 +12,37 @@ SRC_URI="http://files.ayoy.net/qoauth/release/${PV}/src/${P}-src.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 ppc ~ppc64 x86"
 IUSE="debug doc static-libs test"
 
 COMMON_DEPEND="app-crypt/qca:2[debug?]"
 DEPEND="${COMMON_DEPEND}
 	doc? ( app-doc/doxygen )
-	test? ( x11-libs/qt-test )"
+	test? ( x11-libs/qt-test:4 )
+"
 RDEPEND="${COMMON_DEPEND}
-	app-crypt/qca-ossl:2[debug?]"
+	app-crypt/qca-ossl:2[debug?]
+"
 
-S="${WORKDIR}/${P}-src"
+S=${WORKDIR}/${P}-src
+
+DOCS="README CHANGELOG"
+PATCHES=(
+	# disable functional tests that require network connection
+	# and rely on 3rd party external server (bug #341267)
+	"${FILESDIR}/${P}-disable-ft.patch"
+)
 
 src_prepare() {
-	# disable functional tests that require network connection and rely
-	# on 3rd party external server (bug #341267)
-	epatch "${FILESDIR}/${P}-disable-ft.patch"
+	qt4-r2_src_prepare
 
 	if ! use test; then
 		sed -i -e '/SUBDIRS/s/tests//' ${PN}.pro || die "sed failed"
 	fi
 
 	sed -i -e '/^ *docs \\$/d' \
-		   -e '/^ *build_all \\$/d' \
-		   -e 's/^\#\(!macx\)/\1/' \
+		-e '/^ *build_all \\$/d' \
+		-e 's/^\#\(!macx\)/\1/' \
 		src/src.pro || die "sed failed"
 
 	sed -i -e "s/\(.*\)lib$/\1$(get_libdir)/" src/pcfile.sh || die "sed failed"
@@ -44,20 +51,19 @@ src_prepare() {
 src_compile() {
 	default
 	if use static-libs; then
-		emake -C src static || die "emake failed"
+		emake -C src static
 	fi
 }
 
 src_install() {
-	emake INSTALL_ROOT="${D}" install || die "emake install failed"
-	dodoc README CHANGELOG || die "dodoc failed"
+	qt4-r2_src_install
 
 	if use static-libs; then
-		dolib.a "${S}/lib/lib${PN}.a" || die "dolib failed"
+		dolib.a "${S}"/lib/lib${PN}.a
 	fi
 
 	if use doc; then
-		doxygen "${S}/Doxyfile" || die "Failed to generate documentation"
-		dohtml "${S}"/doc/html/* || die "Failed to install documentation"
+		doxygen "${S}"/Doxyfile || die "failed to generate documentation"
+		dohtml "${S}"/doc/html/*
 	fi
 }

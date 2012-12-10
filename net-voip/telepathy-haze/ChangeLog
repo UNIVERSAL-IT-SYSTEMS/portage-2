@@ -1,6 +1,48 @@
 # ChangeLog for net-voip/telepathy-haze
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/telepathy-haze/ChangeLog,v 1.25 2011/07/25 11:19:13 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-voip/telepathy-haze/ChangeLog,v 1.36 2012/10/28 16:30:29 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> telepathy-haze-0.6.0.ebuild:
+  ia64/sparc stable wrt #427544
+
+  16 Oct 2012; Matt Turner <mattst88@gentoo.org> telepathy-haze-0.6.0.ebuild:
+  Stable on alpha, bug 427544.
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  telepathy-haze-0.6.0.ebuild:
+  stable ppc, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> telepathy-haze-0.6.0.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  telepathy-haze-0.6.0.ebuild:
+  x86 stable wrt bug #427544
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> telepathy-haze-0.5.0.ebuild,
+  telepathy-haze-0.6.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*telepathy-haze-0.6.0 (23 Apr 2012)
+
+  23 Apr 2012; Pacho Ramos <pacho@gentoo.org> +telepathy-haze-0.6.0.ebuild,
+  -telepathy-haze-0.4.0-r1.ebuild:
+  Version bump, remove old.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> telepathy-haze-0.5.0.ebuild:
+  alpha/ia64/sparc stable wrt #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  telepathy-haze-0.5.0.ebuild:
+  x86 stable wrt bug #385699
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  telepathy-haze-0.5.0.ebuild:
+  ppc stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  telepathy-haze-0.5.0.ebuild:
+  amd64 stable wrt #385699
 
 *telepathy-haze-0.5.0 (25 Jul 2011)
 
@@ -109,4 +151,3 @@
   15 Mar 2008; Santiago M. Mola <coldwind@gentoo.org> +metadata.xml,
   +telepathy-haze-0.2.0.ebuild:
   Initial ebuild.
-

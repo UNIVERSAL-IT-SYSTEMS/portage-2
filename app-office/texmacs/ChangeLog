@@ -1,6 +1,64 @@
 # ChangeLog for app-office/texmacs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/texmacs/ChangeLog,v 1.95 2011/04/02 15:46:11 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-office/texmacs/ChangeLog,v 1.105 2012/09/16 04:52:45 grozin Exp $
+
+*texmacs-1.0.7.16-r1 (16 Sep 2012)
+
+  16 Sep 2012; Andrey Grozin <grozin@gentoo.org> -texmacs-1.0.7.16.ebuild,
+  +texmacs-1.0.7.16-r1.ebuild, +files/texmacs-updates.patch,
+  -files/texmacs-mime.patch:
+  Moving necessary actions to postinst/postrm
+
+*texmacs-1.0.7.16 (13 Sep 2012)
+
+  13 Sep 2012; Andrey Grozin <grozin@gentoo.org> +texmacs-1.0.7.16.ebuild,
+  +files/texmacs-mime.patch, +files/texmacs-plugins.patch:
+  Version bump
+
+  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  texmacs-1.0.7.15-r1.ebuild, texmacs-1.0.7.2-r1.ebuild:
+  Add missing inheritance of eutils.eclass
+
+*texmacs-1.0.7.15-r1 (02 May 2012)
+
+  02 May 2012; Andrey Grozin <grozin@gentoo.org> texmacs-1.0.7.2-r1.ebuild,
+  -texmacs-1.0.7.14.ebuild, -texmacs-1.0.7.15.ebuild,
+  +texmacs-1.0.7.15-r1.ebuild, +files/texmacs-1.0.7.15-tm-files.patch:
+  Remove dependency on ispell closing #413363. Fixed an annoying typo in
+  tm-file.scm in 1.0.7.15.
+
+  24 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> texmacs-1.0.7.15.ebuild:
+  Slight whitespace.
+
+*texmacs-1.0.7.15 (19 Mar 2012)
+
+  19 Mar 2012; Andrey Grozin <grozin@gentoo.org> -texmacs-1.0.7.13.ebuild,
+  +texmacs-1.0.7.15.ebuild:
+  Version bump
+
+*texmacs-1.0.7.14 (19 Oct 2011)
+
+  19 Oct 2011; Andrey Grozin <grozin@gentoo.org> -texmacs-1.0.7.12.ebuild,
+  +texmacs-1.0.7.14.ebuild:
+  Version bump
+
+*texmacs-1.0.7.13 (22 Sep 2011)
+
+  22 Sep 2011; Andrey Grozin <grozin@gentoo.org> -texmacs-1.0.7.11.ebuild,
+  +texmacs-1.0.7.13.ebuild:
+  Version bump
+
+*texmacs-1.0.7.12 (08 Sep 2011)
+
+  08 Sep 2011; Andrey Grozin <grozin@gentoo.org> -texmacs-1.0.7.10-r1.ebuild,
+  +texmacs-1.0.7.12.ebuild:
+  Version bump
+
+*texmacs-1.0.7.11 (07 Sep 2011)
+
+  07 Sep 2011; Andrey Grozin <grozin@gentoo.org> -texmacs-1.0.7.2.ebuild,
+  +texmacs-1.0.7.11.ebuild:
+  Version bump
 
   02 Apr 2011; Raúl Porcel <armin76@gentoo.org> texmacs-1.0.7.2-r1.ebuild:
   alpha/sparc stable wrt #337532

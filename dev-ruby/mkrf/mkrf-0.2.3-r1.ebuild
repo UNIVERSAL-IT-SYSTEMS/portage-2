@@ -1,9 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/mkrf/mkrf-0.2.3-r1.ebuild,v 1.9 2010/10/20 21:49:27 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/mkrf/mkrf-0.2.3-r1.ebuild,v 1.12 2012/07/01 18:31:42 armin76 Exp $
 
 EAPI="2"
-USE_RUBY="ruby18 ruby19"
+USE_RUBY="ruby18"
 
 RUBY_FAKEGEM_EXTRADOC="CHANGELOG README"
 RUBY_FAKEGEM_DOCDIR="html"
@@ -20,7 +20,7 @@ HOMEPAGE="http://mkrf.rubyforge.org/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc sparc x86"
+KEYWORDS="amd64 ppc x86"
 
 IUSE=""
 

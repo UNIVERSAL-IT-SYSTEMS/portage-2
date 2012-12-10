@@ -1,6 +1,49 @@
 # ChangeLog for app-editors/bluefish
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/bluefish/ChangeLog,v 1.77 2011/06/05 09:33:51 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/bluefish/ChangeLog,v 1.88 2012/07/29 16:41:52 armin76 Exp $
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> bluefish-2.2.2.ebuild:
+  alpha/ia64/sparc stable wrt #408189
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> bluefish-2.2.2.ebuild:
+  Marking bluefish-2.2.2 ppc64 for bug 408189
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> bluefish-1.0.7.ebuild,
+  bluefish-2.2.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> bluefish-2.2.2.ebuild:
+  x86 stable, bug #408189
+
+  19 Apr 2012; Agostino Sarubbo <ago@gentoo.org> bluefish-2.2.2.ebuild:
+  Stable for amd64, wrt bug #408189
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> bluefish-2.2.2.ebuild:
+  Marking bluefish-2.2.2 ppc for bug 408189
+
+  10 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> bluefish-2.2.2.ebuild:
+  Do not inherit autotools eclass as it is no longer used. Per bug#408189c#4.
+
+  10 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> bluefish-2.2.2.ebuild:
+  Links also to zlib. Per bug#408189c#5.
+
+*bluefish-2.2.2 (29 Mar 2012)
+
+  29 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> +bluefish-2.2.2.ebuild,
+  -bluefish-2.2.1.ebuild:
+  Version bump to the latest bugfix release. Drop older as the stablereq is hang
+  on gnome team.
+
+  30 Dec 2011; Tomáš Chvátal <scarabeus@gentoo.org> bluefish-2.2.1.ebuild:
+  Restrict tests as they do nothing.
+
+*bluefish-2.2.1 (30 Dec 2011)
+
+  30 Dec 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  -files/bluefish-2.0.0-gucharmap-automagic.patch, -bluefish-2.0.3.ebuild,
+  +bluefish-2.2.1.ebuild, metadata.xml:
+  Version bump to the latest. Solve issues with non-working translations. Fixes
+  bugs #362035 #370309 and #392295.
 
 *bluefish-2.0.3 (05 Jun 2011)
 

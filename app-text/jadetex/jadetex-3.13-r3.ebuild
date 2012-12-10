@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/jadetex/jadetex-3.13-r3.ebuild,v 1.3 2011/02/19 18:54:21 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/jadetex/jadetex-3.13-r3.ebuild,v 1.13 2012/05/09 14:27:46 aballier Exp $
 
 inherit latex-package texlive-common
 
@@ -8,15 +8,15 @@ DESCRIPTION="TeX macros used by Jade TeX output"
 HOMEPAGE="http://jadetex.sourceforge.net/"
 SRC_URI="mirror://sourceforge/jadetex/${P}.tar.gz"
 
-LICENSE="freedist"
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-macos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 IUSE=""
 RESTRICT="test"
 
 DEPEND=">=app-text/openjade-1.3.1
-	|| ( dev-texlive/texlive-fontsrecommended app-text/ptex )
-	|| ( dev-texlive/texlive-genericrecommended app-text/ptex )"
+	dev-texlive/texlive-fontsrecommended
+	dev-texlive/texlive-genericrecommended"
 
 src_compile() {
 	VARTEXFONTS="${T}/fonts" emake || die "emake failed"

@@ -1,6 +1,140 @@
 # ChangeLog for www-plugins/gnash
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-plugins/gnash/ChangeLog,v 1.65 2011/07/19 17:31:38 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-plugins/gnash/ChangeLog,v 1.91 2012/11/04 04:38:36 flameeyes Exp $
+
+  04 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> gnash-0.8.10-r2.ebuild:
+  Remove pointless version check after unslotting boost.
+
+  31 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org> gnash-0.8.10-r2.ebuild,
+  gnash-0.8.10_p20120903.ebuild:
+  Remove blocker on unslotted boost, now that it's unslotted.
+
+*gnash-0.8.10_p20120903 (16 Oct 2012)
+
+  16 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/gnash-0.8.10-boost-1.50.patch, +gnash-0.8.10_p20120903.ebuild,
+  metadata.xml:
+  New snapshot to address gcc-4.7 and boost-1.50 build failures, bug #425442,
+  bug #432874 and bug #432876.
+
+  18 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gnash-0.8.10-r2.ebuild:
+  Depend on virtual/glu, bug #434432.
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> gnash-0.8.10-r2.ebuild:
+  Force net-misc/npapi-sdk for USE="nsplugin" instead of having || ( )
+  dependency block with net-libs/xulrunner which is obsolete and vulnerable.
+
+  16 May 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -files/gnash-0.8.3-boost-dynamic-link.patch, -files/gnash-0.8.5-klash.patch,
+  -files/gnash-0.8.7-amf-include.patch, -files/gnash-0.8.7-moc-qt4.patch,
+  -files/gnash-0.8.8-documentation-paths.patch,
+  -files/gnash-0.8.8-external-dejagnu.patch, -files/gnash-0.8.8-klash.patch,
+  -files/gnash-0.8.8-secure-tempfile-creation.patch,
+  -files/gnash-0.8.9-cve-2011-4328.patch,
+  -files/gnash-0.8.9-cygnal-sshclient.patch,
+  -files/gnash-0.8.9-documentation-paths.patch,
+  -files/gnash-0.8.9-ffmpeg-detection.patch,
+  -files/gnash-0.8.9-find-openvg.patch,
+  -files/gnash-0.8.9-libavcodec-version.patch,
+  -files/gnash-0.8.9-look-harder-for-version_h.patch,
+  -files/gnash-0.8.9-no-deprecated-avcodec-audio-resample.patch,
+  -files/gnash-0.8.9-no-deprecated-avcodec-decode-audio.patch,
+  -files/gnash-0.8.9-no-deprecated-avcodec-decode-video.patch,
+  -files/gnash-0.8.9-no-deprecated-avcodec-parser.patch,
+  -files/gnash-0.8.9-no-deprecated-avformat-metadata.patch,
+  -gnash-0.8.10-r1.ebuild, -gnash-0.8.8.ebuild, -gnash-0.8.9-r2.ebuild,
+  -gnash-0.8.9.ebuild, gnash-0.8.10-r2.ebuild:
+  Stable on ppc wrt bug#408209. Remove old.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gnash-0.8.8.ebuild,
+  gnash-0.8.9.ebuild, gnash-0.8.9-r2.ebuild, gnash-0.8.10-r1.ebuild,
+  gnash-0.8.10-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Mar 2012; Thomas Kahle <tomka@gentoo.org> gnash-0.8.10-r2.ebuild:
+  marked x86 per bug 408209
+
+  15 Mar 2012; Agostino Sarubbo <ago@gentoo.org> gnash-0.8.10-r2.ebuild:
+  Stable for amd64, wrt bug #408209
+
+  15 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gnash-0.8.10-r2.ebuild:
+  Move dependencies for nsplugin building to RDEPEND, bug #408259.
+
+*gnash-0.8.10-r2 (14 Mar 2012)
+
+  14 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/gnash-0.8.10-cve-2012-1175.patch, +gnash-0.8.10-r2.ebuild:
+  Add patch to fix security bug #408209.
+
+  06 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gnash-0.8.10-r1.ebuild, metadata.xml:
+  Add USE flag for gnash-dump, bug #406991.
+
+*gnash-0.8.10-r1 (29 Feb 2012)
+
+  29 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -gnash-0.8.10.ebuild, +gnash-0.8.10-r1.ebuild,
+  +files/gnash-0.8.10-jemalloc-aslr-fix.patch:
+  Add patch to fix broken jemalloc, bug #405993.
+
+  27 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gnash-0.8.10.ebuild, +files/gnash-0.8.10-npapi-sdk.patch:
+  Allow building nsplugin against npapi-sdk, bug #383071.
+
+  27 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gnash-0.8.10.ebuild:
+  Fix dependencies and REQUIRED_USE for building openvg, bug #405799.
+
+  24 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gnash-0.8.10.ebuild, metadata.xml:
+  Make gconf support optional.
+
+  24 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gnash-0.8.10.ebuild:
+  Don't download tarball from savannah.
+
+*gnash-0.8.10 (24 Feb 2012)
+
+  24 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +gnash-0.8.10.ebuild, +files/gnash-0.8.10-amf-include.patch,
+  +files/gnash-0.8.10-gettext-macro.patch, metadata.xml:
+  Version bump, bug #403177. Force python-2 during build, bug #392969.
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> gnash-0.8.9-r2.ebuild:
+  Mistakenly commited. Back to ~ppc gnash-0.8.9-r2
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> gnash-0.8.9-r2.ebuild:
+  Marking gnash-0.8.9-r2 ppc for bug 391283
+
+  08 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> gnash-0.8.9-r2.ebuild:
+  x86 stable wrt bug #391283
+
+  02 Dec 2011; Steve Dibb <beandog@gentoo.org> gnash-0.8.9-r2.ebuild:
+  amd64 stable, bug 391283
+
+  26 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gnash-0.8.9-r2.ebuild, +files/gnash-0.8.9-cygnal-sshclient.patch:
+  Fix building of cygnal sshclient, bug #391915.
+
+*gnash-0.8.9-r2 (25 Nov 2011)
+
+  25 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -gnash-0.8.9-r1.ebuild, +gnash-0.8.9-r2.ebuild,
+  +files/gnash-0.8.9-kde4-libdir.patch:
+  Fix kde multilib library path, bug #391283.
+
+*gnash-0.8.9-r1 (21 Nov 2011)
+
+  21 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +gnash-0.8.9-r1.ebuild, +files/gnash-0.8.9-cve-2011-4328.patch:
+  Add patch for security bug #391283
+
+  16 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gnash-0.8.9.ebuild:
+  Add tslib dependency that was previously automagic. warn user against
+  multiple boost versions, bug #366407.
 
   19 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #266794
@@ -625,4 +759,3 @@
   10 Jan 2006; Stefan Schweizer <genstef@gentoo.org> +metadata.xml,
   +gnash-0.7_alpha20060110.ebuild:
   Alpha ebuild for gnash, closes bug 118527
-

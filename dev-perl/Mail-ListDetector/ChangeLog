@@ -1,6 +1,44 @@
 # ChangeLog for dev-perl/Mail-ListDetector
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Mail-ListDetector/ChangeLog,v 1.18 2011/07/29 18:19:20 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Mail-ListDetector/ChangeLog,v 1.28 2012/06/24 12:59:41 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org>
+  Mail-ListDetector-1.40.0.ebuild:
+  Drop alpha keywords
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Mail-ListDetector-1.01.ebuild:
+  Cleanup
+
+  24 Mar 2012; Raúl Porcel <armin76@gentoo.org> Mail-ListDetector-1.01.ebuild,
+  Mail-ListDetector-1.40.0.ebuild:
+  Drop ia64/sparc keywords
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Mail-ListDetector-1.40.0.ebuild:
+  x86 stable wrt bug #400169
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> Mail-ListDetector-1.40.0.ebuild:
+  Marking Mail-ListDetector-1.40.0 ppc for bug 400169
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  Mail-ListDetector-1.40.0.ebuild:
+  Stable on alpha, bug #400169
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  Mail-ListDetector-1.40.0.ebuild:
+  Stable for amd64, wrt bug #400169
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Mail-ListDetector-1.40.ebuild:
+  Cleanup
+
+*Mail-ListDetector-1.40.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +Mail-ListDetector-1.40.0.ebuild:
+  Change version scheme
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org> -Mail-ListDetector-1.02.ebuild:
   Cleanup
@@ -79,4 +117,3 @@
   20 Aug 2006; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Mail-ListDetector-0.34.ebuild:
   Dep for Mail-Audit
-

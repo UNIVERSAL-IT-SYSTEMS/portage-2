@@ -54,7 +54,6 @@ fusion
 pike
 R
 octave
-hal
 bluetooth
 autotrace
 lqr
@@ -62,6 +61,9 @@ policykit
 bash-completion
 latex
 nettle
+systemd
+tk
+clang
 
 # USE=audit masked prior to testing on alpha, arm, hppa, ppc64, s390, sh.
 # Bug #184563, 18 Sep 2007 
@@ -79,3 +81,12 @@ pango
 # Masking since net-dns/avahi and net-misc/mDNSResponder are masked
 avahi
 zeroconf
+
+# Michał Górny <mgorny@gentoo.org> (31 Oct 2012)
+# Mask PYTHON_TARGETS for implementations not keyworded on this arch.
+python_targets_pypy1_8
+python_targets_pypy1_9
+python_targets_jython2_5
+python_single_target_pypy1_8
+python_single_target_pypy1_9
+python_single_target_jython2_5

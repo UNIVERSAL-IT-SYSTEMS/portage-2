@@ -1,6 +1,56 @@
 # ChangeLog for net-mail/uw-imap
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/uw-imap/ChangeLog,v 1.126 2011/07/17 07:43:28 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-mail/uw-imap/ChangeLog,v 1.141 2012/09/30 17:12:47 armin76 Exp $
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> uw-imap-2007f-r1.ebuild:
+  alpha/ia64/sparc stable wrt #433329
+
+  27 Sep 2012; Anthony G. Basile <blueness@gentoo.org> uw-imap-2007f-r1.ebuild:
+  stable ppc ppc64, bug #433329
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> uw-imap-2007f-r1.ebuild:
+  x86 stable wrt bug #433329
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> uw-imap-2007f-r1.ebuild:
+  Stable for amd64, wrt bug #433329
+
+  05 Sep 2012; Jeroen Roovers <jer@gentoo.org> uw-imap-2007f-r1.ebuild:
+  Stable for HPPA (bug #433329).
+
+*uw-imap-2007f-r1 (11 Jul 2012)
+
+  11 Jul 2012; Eray Aslan <eras@gentoo.org> +uw-imap-2007f-r1.ebuild:
+  Make build system multilib aware
+
+  09 Mar 2012; Eray Aslan <eras@gentoo.org> -uw-imap-2007e-r1.ebuild,
+  -uw-imap-2007e-r2.ebuild:
+  remove old
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> uw-imap-2007f.ebuild:
+  Marking uw-imap-2007f ppc64 for bug 391349
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> uw-imap-2007f.ebuild:
+  Marking uw-imap-2007f ppc for bug 391349
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> uw-imap-2007f.ebuild:
+  alpha/ia64/sparc stable wrt #391349
+
+  24 Dec 2011; Eray Aslan <eras@gentoo.org> uw-imap-2007f.ebuild:
+  Fix building with -ssl USE flag - bug #395855
+
+  22 Dec 2011; Markus Meier <maekke@gentoo.org> uw-imap-2007f.ebuild:
+  x86 stable, bug #391349
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> uw-imap-2007f.ebuild:
+  Stable on amd64 wrt bug #391349
+
+  22 Nov 2011; Jeroen Roovers <jer@gentoo.org> uw-imap-2007f.ebuild:
+  Stable for HPPA (bug #391349).
+
+*uw-imap-2007f (12 Sep 2011)
+
+  12 Sep 2011; Eray Aslan <eras@gentoo.org> +uw-imap-2007f.ebuild:
+  version bump
 
 *uw-imap-2007e-r2 (17 Jul 2011)
 

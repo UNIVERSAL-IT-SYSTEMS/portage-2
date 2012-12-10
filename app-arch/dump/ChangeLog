@@ -1,6 +1,31 @@
 # ChangeLog for app-arch/dump
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/dump/ChangeLog,v 1.64 2011/06/20 08:11:49 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/dump/ChangeLog,v 1.71 2012/05/03 01:58:54 jdhore Exp $
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> dump-0.4.44-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  31 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/dump-0.4b43-pkg_config4blkid.patch,
+  -files/dump-0.4b43-pkg_config4crypto.patch,
+  -files/dump-0.4b43-pkg_config4ext2fs.patch, -dump-0.4.41.ebuild,
+  -dump-0.4.42.ebuild, -dump-0.4.43.ebuild, -dump-0.4.44.ebuild:
+  old
+
+  31 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> dump-0.4.44-r1.ebuild:
+  ppc64 stable wrt #395883
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> dump-0.4.44-r1.ebuild:
+  alpha/ia64/sparc stable wrt #395883
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> dump-0.4.44-r1.ebuild:
+  Marking dump-0.4.44-r1 ppc for bug 395883
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> dump-0.4.44-r1.ebuild:
+  x86 stable wrt bug #395883
+
+  31 Dec 2011; Agostino Sarubbo <ago@gentoo.org> dump-0.4.44-r1.ebuild:
+  Stable for AMD64, wrt bug #395883
 
 *dump-0.4.44-r1 (20 Jun 2011)
 

@@ -1,6 +1,38 @@
 # ChangeLog for app-text/tesseract
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/tesseract/ChangeLog,v 1.29 2010/11/20 11:37:09 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/tesseract/ChangeLog,v 1.37 2012/12/01 02:37:14 tomka Exp $
+
+  01 Dec 2012; Thomas Kahle <tomka@gentoo.org> tesseract-3.01.ebuild,
+  tesseract-3.02.ebuild:
+  Fix installation of docs (bug 443844). Thanks Ian Abbott
+
+*tesseract-3.02 (16 Nov 2012)
+
+  16 Nov 2012; Thomas Kahle <tomka@gentoo.org> +tesseract-3.02.ebuild,
+  -files/includes.patch:
+  Bump to 3.02 (bug 443276), remove unneeded patch (bug 344611)
+
+  26 Oct 2012; Anthony G. Basile <blueness@gentoo.org> tesseract-3.01.ebuild:
+  keyword ~ppc ~ppc64, bug #437670
+
+  18 Oct 2012; Markus Meier <maekke@gentoo.org> tesseract-3.01.ebuild:
+  add ~arm, bug #437670
+
+  10 Oct 2012; Julian Ospald <hasufell@gentoo.org> tesseract-3.01.ebuild:
+  fix language file installation wrt #437776
+
+  09 Oct 2012; Thomas Kahle <tomka@gentoo.org> tesseract-3.01.ebuild:
+  Fix building with gcc-4.7 (Bug 437742)
+
+*tesseract-3.01 (09 Oct 2012)
+
+  09 Oct 2012; Thomas Kahle <tomka@gentoo.org> +tesseract-3.01.ebuild,
+  metadata.xml:
+  Bump to 3.01 per bug 343211. Thanks to all contributors.
+
+  04 Jun 2012; Justin Lecher <jlec@gentoo.org> tesseract-2.04-r1.ebuild,
+  +files/tesseract-2.04-gcc47.patch:
+  Include fix for gcc47, #413937
 
   20 Nov 2010; Raúl Porcel <armin76@gentoo.org> tesseract-2.04-r1.ebuild:
   Add ~arm wrt #345735
@@ -130,4 +162,3 @@
   +tesseract-1.02.02022007.ebuild:
   Initial commit, ebuild based on ebuild contributed by Dan Davis
   <d-web-gentoo@dandavis.com>. Closes bug #146390.
-

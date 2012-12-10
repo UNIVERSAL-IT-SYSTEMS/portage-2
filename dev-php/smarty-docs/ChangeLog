@@ -1,6 +1,21 @@
 # ChangeLog for dev-php/smarty-docs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/smarty-docs/ChangeLog,v 1.51 2011/02/14 11:02:16 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/smarty-docs/ChangeLog,v 1.56 2012/02/16 18:32:00 phajdan.jr Exp $
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> smarty-docs-3.0.ebuild:
+  x86 stable wrt bug #397003
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> smarty-docs-3.0.ebuild:
+  Stable for HPPA (bug #397003).
+
+  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> smarty-docs-3.0.ebuild:
+  Stable for amd64, wrt bug #397003
+
+  07 Sep 2011; Ole Markus With <olemarkus@gentoo.org> +smarty-docs-2.6.ebuild:
+  Readded 2.6 and cleaned it up
+
+  07 Sep 2011; Ole Markus With <olemarkus@gentoo.org> -smarty-docs-2.6.ebuild:
+  Removed older version that used confutils
 
   14 Feb 2011; Tomáš Chvátal <scarabeus@gentoo.org> smarty-docs-3.0.ebuild:
   QA: Use required use instead of confutils.

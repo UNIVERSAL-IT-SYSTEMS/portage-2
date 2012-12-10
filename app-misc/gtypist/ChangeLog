@@ -1,6 +1,31 @@
 # ChangeLog for app-misc/gtypist
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/gtypist/ChangeLog,v 1.27 2011/07/27 00:49:00 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/gtypist/ChangeLog,v 1.33 2012/12/07 04:24:33 pinkbyte Exp $
+
+  07 Dec 2012; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
+  Assign David Abbott as primary maintainer, adding proxy maintainers herd
+
+  06 Aug 2012; Jeremy Olexa <darkside@gentoo.org> metadata.xml:
+  Drop maintainership since I no longer use application
+
+*gtypist-2.9.1 (01 Dec 2011)
+
+  01 Dec 2011; Jeremy Olexa <darkside@gentoo.org> +gtypist-2.9.1.ebuild:
+  very, very minor upstream version bump including UTF-8 fixes, bug 392555
+
+  30 Sep 2011; Jeremy Olexa <darkside@gentoo.org> -gtypist-2.8.5.ebuild,
+  gtypist-2.8.5-r1.ebuild:
+  stabilize for all since the revbump only installs a new noarch file, remove
+  old version
+
+  26 Sep 2011; Jeremy Olexa <darkside@gentoo.org> gtypist-2.8.5-r1.ebuild:
+  style changes, add Gentoo Prefix support
+
+*gtypist-2.8.5-r1 (24 Sep 2011)
+
+  24 Sep 2011; Jeremy Olexa <darkside@gentoo.org> +gtypist-2.8.5-r1.ebuild,
+  metadata.xml:
+  revision bump to include colemak typing lesson for fun, take maintainership
 
   27 Jul 2011; Michael Weber <xmw@gentoo.org> -gtypist-2.8.3.ebuild:
   Drop old version

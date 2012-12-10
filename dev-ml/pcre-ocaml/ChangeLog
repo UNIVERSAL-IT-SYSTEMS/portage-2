@@ -1,6 +1,46 @@
 # ChangeLog for dev-ml/pcre-ocaml
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ml/pcre-ocaml/ChangeLog,v 1.39 2011/07/24 19:50:42 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ml/pcre-ocaml/ChangeLog,v 1.49 2012/10/10 11:46:26 aballier Exp $
+
+*pcre-ocaml-7.0.2 (10 Oct 2012)
+
+  10 Oct 2012; Alexis Ballier <aballier@gentoo.org> +pcre-ocaml-7.0.2.ebuild:
+  version bump
+
+  22 Aug 2012; Alexis Ballier <aballier@gentoo.org> pcre-ocaml-6.2.5.ebuild:
+  set empty CLIBS, fixing bug #422663
+
+  05 Jul 2012; Alexis Ballier <aballier@gentoo.org> -pcre-ocaml-6.1.1.ebuild,
+  -pcre-ocaml-6.2.2.ebuild:
+  remove old
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> pcre-ocaml-6.2.5.ebuild:
+  Marking pcre-ocaml-6.2.5 ppc for bug 416533
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> pcre-ocaml-6.2.5.ebuild:
+  marked x86 per bug 416533
+
+  19 May 2012; Agostino Sarubbo <ago@gentoo.org> pcre-ocaml-6.2.5.ebuild:
+  Stable for amd64, wrt bug #416533
+
+  23 Feb 2012; Alexis Ballier <aballier@gentoo.org> -pcre-ocaml-6.2.3.ebuild,
+  -pcre-ocaml-6.2.4.ebuild:
+  remove old
+
+*pcre-ocaml-6.2.5 (16 Jan 2012)
+
+  16 Jan 2012; Alexis Ballier <aballier@gentoo.org> +pcre-ocaml-6.2.5.ebuild:
+  version bump
+
+*pcre-ocaml-6.2.4 (31 Dec 2011)
+
+  31 Dec 2011; Alexis Ballier <aballier@gentoo.org> +pcre-ocaml-6.2.4.ebuild:
+  version bump
+
+*pcre-ocaml-6.2.3 (07 Dec 2011)
+
+  07 Dec 2011; Alexis Ballier <aballier@gentoo.org> +pcre-ocaml-6.2.3.ebuild:
+  version bump
 
   24 Jul 2011; Thomas Kahle <tomka@gentoo.org> pcre-ocaml-6.2.2.ebuild:
   x86 stable per bug 374971

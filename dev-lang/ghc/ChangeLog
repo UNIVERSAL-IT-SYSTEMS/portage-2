@@ -1,6 +1,104 @@
 # ChangeLog for dev-lang/ghc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ChangeLog,v 1.206 2011/07/05 18:30:32 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ChangeLog,v 1.229 2012/11/14 09:34:39 slyfox Exp $
+
+*ghc-7.4.2 (14 Nov 2012)
+
+  14 Nov 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/ghc-7.4.1-ticket-7339-fix-unaligned-unreg.patch, +ghc-7.4.2.ebuild,
+  metadata.xml:
+  Version bump up to 7.4.2.
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> ghc-6.12.3-r2.ebuild:
+  move dev-lang/ghc/ghc-6.12.3-r2.ebuild ebuild to mirror://hackage
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> ghc-7.4.1.ebuild:
+  move dev-lang/ghc/ghc-7.4.1.ebuild ebuild to mirror://hackage
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> ghc-7.0.4.ebuild:
+  move dev-lang/ghc/ghc-7.0.4.ebuild ebuild to mirror://hackage
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> ghc-6.12.3.ebuild:
+  move dev-lang/ghc/ghc-6.12.3.ebuild ebuild to mirror://hackage
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> ghc-6.10.4-r1.ebuild:
+  move dev-lang/ghc/ghc-6.10.4-r1.ebuild ebuild to mirror://hackage
+
+  03 May 2012; Fabian Groffen <grobian@gentoo.org> ghc-7.0.4.ebuild:
+  Drop *-macos and *-solaris keywords from 7.0.4, it's not tested/prepared,
+  7.4.1 is.
+
+  03 May 2012; Fabian Groffen <grobian@gentoo.org> ghc-7.4.1-r1.ebuild:
+  Drop ppc-macos keyword, upstream dropped support for building on 10.5.  Up the
+  bootstrap binaries to >6.12.3, as requested by configure.
+
+  01 May 2012; Fabian Groffen <grobian@gentoo.org>
+  +files/ghc-7.4.1-darwin-CHOST.patch, ghc-7.4.1-r1.ebuild:
+  Restore and fix support for darwin and solaris keywords, introduced and marked
+  ~x64-macos support
+
+  30 Apr 2012; Fabian Groffen <grobian@gentoo.org> ghc-6.12.3-r2.ebuild:
+  Avoid errors for platforms we don't use Gentoo's binaries
+
+*ghc-7.4.1-r1 (27 Apr 2012)
+
+  27 Apr 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/ghc-7.4.2-system-libffi.patch, +ghc-7.4.1-r1.ebuild:
+  Switched to using system's libffi. Thanks for the fix to Martin von Gagern
+  (bug #411925). Added new variable to override disabled parallel build:
+  'I_DEMAND_MY_CORES_LOADED' (Brave Hearts only).
+
+  13 Apr 2012; Sergei Trofimovich <slyfox@gentoo.org> ghc-6.10.4-r1.ebuild,
+  ghc-6.12.3-r2.ebuild, ghc-6.12.3.ebuild, ghc-7.4.1.ebuild:
+  Disable parallel make due to build system failures: bug #409631 by Anton
+  Kochkov, bug #409873 by Todd Goodman.
+
+  04 Apr 2012; Sergei Trofimovich <slyfox@gentoo.org> ghc-6.12.3-r2.ebuild:
+  alpha/ia64/ppc/ppc64/sparc stable wrt bug #407835
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ghc-6.12.3-r2.ebuild:
+  x86 stable wrt bug #407835
+
+  20 Mar 2012; Agostino Sarubbo <ago@gentoo.org> ghc-6.12.3-r2.ebuild:
+  Stable for amd64, wrt bug #407835
+
+  11 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> ghc-7.4.1.ebuild:
+  Added binaries for alpha/amd64/ppc/ppc64/x86 platforms. Dropped dev-
+  haskell/random and dev-haskell/syb from PDEPEND. Removed 'apply-gmp-hack' call
+  as all binaries are against gmp-5 ABI.
+
+  09 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> ghc-7.0.4.ebuild:
+  Added prebuild ppc64 binary (bug #394361).
+
+  04 Mar 2012; Mark Wright <gienah@gentoo.org> ghc-7.4.1.ebuild:
+  Fix QA Notice: dobashcompletion: command not found
+
+*ghc-7.4.1 (04 Mar 2012)
+
+  04 Mar 2012; Mark Wright <gienah@gentoo.org> ghc-7.0.4.ebuild,
+  +files/ghc-7.2.1-freebsd-CHOST.patch,
+  +files/ghc-7.4-rc2-macos-prefix-respect-gcc.patch, +ghc-7.4.1.ebuild:
+  Bump ghc to 7.4.1
+
+  28 Dec 2011; Joseph Jezak <josejx@gentoo.org> ghc-7.0.4.ebuild,
+  +files/ghc-7.0.4-fix-ppc-linker.patch:
+  Added patch for compilation on ppc32 and added binary build.
+
+  23 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> ghc-7.0.4.ebuild,
+  +files/ghc-7.0.4-nxstack.patch:
+  QA: Fixed executable stack in AdjustorAsm.o
+
+  23 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> ghc-7.0.4.ebuild:
+  Once again USE=unicode for ncurses is a required depend (bug #380241 by
+  Michael 'gentoo at scribeofthenile.com')
+
+*ghc-7.0.4 (03 Aug 2011)
+
+  03 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/ghc-7.0.2-CHOST.patch, +ghc-7.0.4.ebuild,
+  +files/ghc-7.0.4-CHOST-prefix.patch, +files/ghc-7.0.4-CHOST-softfloat.patch,
+  +files/ghc-7.0.4-darwin8.patch, metadata.xml:
+  Version bump. Bump request by Alexandru Scvortov (bug #352498)
 
   05 Jul 2011; Sergei Trofimovich <slyfox@gentoo.org> ghc-6.12.3.ebuild,
   ghc-6.12.3-r2.ebuild:

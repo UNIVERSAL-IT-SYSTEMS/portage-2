@@ -1,19 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/pcmanfm/pcmanfm-9999.ebuild,v 1.9 2011/06/25 18:19:04 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/pcmanfm/pcmanfm-9999.ebuild,v 1.18 2012/07/21 10:50:13 hwoarang Exp $
 
-EAPI=2
+EAPI=3
 
-if [[ ${PV} == 9999 ]]; then
-	EGIT_REPO_URI="git://pcmanfm.git.sourceforge.net/gitroot/pcmanfm/${PN}"
-	inherit autotools git-2
-	SRC_URI=""
-else
-	SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm ~ppc ~x86"
-fi
+EGIT_REPO_URI="git://pcmanfm.git.sourceforge.net/gitroot/pcmanfm/${PN}"
 
-inherit fdo-mime
+inherit autotools git-2 fdo-mime
 
 DESCRIPTION="Fast lightweight tabbed filemanager"
 HOMEPAGE="http://pcmanfm.sourceforge.net/"
@@ -21,28 +14,34 @@ HOMEPAGE="http://pcmanfm.sourceforge.net/"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="debug"
+KEYWORDS=""
 
 COMMON_DEPEND=">=dev-libs/glib-2.18:2
 	>=x11-libs/gtk+-2.22.1:2
 	>=lxde-base/menu-cache-0.3.2
-	>=x11-libs/libfm-0.1.15"
+	>=x11-libs/libfm-9999"
 RDEPEND="${COMMON_DEPEND}
-	virtual/eject"
+	virtual/eject
+	virtual/freedesktop-icon-theme"
 DEPEND="${COMMON_DEPEND}
 	>=dev-util/intltool-0.40
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
 
+RESTRICT="test"
+
 src_prepare() {
-	if [[ ${PV} == 9999 ]]; then
-		intltoolize --force --copy --automake || die
-		eautoreconf
-	fi
+	intltoolize --force --copy --automake || die
+	# drop -O0 -g. Bug #382265 and #382265
+	sed -i -e "s:-O0::" -e "/-DG_ENABLE_DEBUG/s: -g::" "${S}"/configure.ac || die
+	#Remove -Werror for automake-1.12. Bug #421101
+	sed -i "s:-Werror::" configure.ac || die
+	eautoreconf
 }
 
 src_configure() {
 	econf \
-		--sysconfdir=/etc \
+		--sysconfdir="${EPREFIX}/etc" \
 		$(use_enable debug)
 }
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-util/xqf/xqf-1.0.5.ebuild,v 1.9 2011/06/14 19:36:52 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-util/xqf/xqf-1.0.5.ebuild,v 1.11 2012/05/03 03:41:15 jdhore Exp $
 
 EAPI=2
 inherit base eutils
@@ -20,12 +20,13 @@ RDEPEND="x11-libs/gtk+:2
 	geoip? ( dev-libs/geoip )
 	bzip2? ( app-arch/bzip2 )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 # bug #288853
 PATCHES=( "${FILESDIR}"/${P}-cpu-overrun.patch
-	"${FILESDIR}"/${P}-underlink.patch )
+	"${FILESDIR}"/${P}-underlink.patch
+	"${FILESDIR}"/${P}-zlib-1.2.5.1-compile-fix.patch )
 
 src_configure() {
 	econf \

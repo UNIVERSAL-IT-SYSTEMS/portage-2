@@ -1,6 +1,152 @@
 # ChangeLog for sys-libs/freeipmi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/freeipmi/ChangeLog,v 1.35 2011/07/01 07:31:26 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/freeipmi/ChangeLog,v 1.62 2012/12/06 04:16:41 phajdan.jr Exp $
+
+  06 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> freeipmi-1.2.2.ebuild:
+  x86 stable wrt bug #441536
+
+*freeipmi-1.2.3-r1 (15 Nov 2012)
+
+  15 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> +files/freeipmi.icinga,
+  +freeipmi-1.2.3-r1.ebuild, metadata.xml:
+  Add a nagios USE flag to install the nagios plugin.
+
+*freeipmi-1.2.3 (14 Nov 2012)
+
+  14 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> +freeipmi-1.2.3.ebuild:
+  Version bump.
+
+  03 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> -freeipmi-1.2.1.ebuild:
+  Remove old version.
+
+*freeipmi-1.2.2 (03 Oct 2012)
+
+  03 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org> +freeipmi-1.2.2.ebuild,
+  -freeipmi-1.1.5.ebuild:
+  Version bump.
+
+  26 Aug 2012; Christian Ruppert <idl0r@gentoo.org> freeipmi-1.1.7.ebuild:
+  x86 stable wrt bug 432312.
+
+  26 Aug 2012; Christian Ruppert <idl0r@gentoo.org> freeipmi-1.1.7.ebuild:
+  amd64 stable wrt bug 432312.
+
+*freeipmi-1.2.1 (22 Aug 2012)
+
+  22 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +files/ipmiseld.confd,
+  +freeipmi-1.2.1.ebuild, -freeipmi-1.2.0_beta0.ebuild:
+  Version bump; add ipmiseld init script and config file.
+
+  22 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  files/freeipmi-1.1.6-thresholds.patch:
+  Cleanup patch so that it doesn't remove ChangeLog and NEWS with alpha versions
+  of sys-devel/patch.
+
+  19 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> -freeipmi-1.1.6.ebuild,
+  metadata.xml:
+  Remove old; keep it to sysadmin herd, drop me.
+
+*freeipmi-1.1.7 (31 Jul 2012)
+*freeipmi-1.2.0_beta0 (31 Jul 2012)
+
+  31 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/bmc-watchdog.initd.4, +files/ipmidetectd.confd, +freeipmi-1.1.7.ebuild,
+  +freeipmi-1.2.0_beta0.ebuild, -freeipmi-1.1.6-r1.ebuild:
+  Version bump to 1.1.7, and add the new beta. The new beta simplifies the init
+  scripts as well.
+
+*freeipmi-1.1.6-r1 (29 Jul 2012)
+
+  29 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/freeipmi-1.1.6-thresholds.patch, +freeipmi-1.1.6-r1.ebuild:
+  Backport the threshold patch from upstream.
+
+  05 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  -files/freeipmi-1.0.5-strictaliasing.patch, -freeipmi-1.0.8.ebuild,
+  freeipmi-1.1.5.ebuild:
+  Mark freeipmi 1.1.5 stable as per bug #424109. Remove old.
+
+*freeipmi-1.1.6 (29 Jun 2012)
+
+  29 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org> +freeipmi-1.1.6.ebuild,
+  -freeipmi-1.1.1.ebuild, -freeipmi-1.1.4.ebuild:
+  Version bump; remove old non-stable candidates.
+
+*freeipmi-1.1.5 (17 May 2012)
+
+  17 May 2012; Diego E. Pettenò <flameeyes@gentoo.org> +freeipmi-1.1.5.ebuild:
+  Version bump.
+
+*freeipmi-1.1.4 (24 Apr 2012)
+
+  24 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org> +freeipmi-1.1.4.ebuild,
+  -freeipmi-1.0.10.ebuild, -freeipmi-1.0.9.ebuild:
+  Version bump; cleanup old.
+
+*freeipmi-1.1.1 (21 Jan 2012)
+
+  21 Jan 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/freeipmi-1.1.1-strictaliasing.patch, +freeipmi-1.1.1.ebuild:
+  Version bump.
+
+*freeipmi-1.0.10 (14 Dec 2011)
+
+  14 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org> +freeipmi-1.0.10.ebuild,
+  -files/bmc-watchdog.initd, -files/ipmidetectd.initd, -freeipmi-0.8.9.ebuild:
+  Version bump and remove old.
+
+  09 Dec 2011; Markos Chandras <hwoarang@gentoo.org> freeipmi-1.0.8.ebuild:
+  Stable on amd64 wrt bug #364485
+
+*freeipmi-1.0.9 (22 Nov 2011)
+
+  22 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org> +freeipmi-1.0.9.ebuild,
+  -files/bmc-watchdog.initd.2, -files/ipmidetectd.initd.2,
+  -freeipmi-1.0.7-r1.ebuild, -freeipmi-1.0.7.ebuild:
+  Version bump.
+
+  10 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> freeipmi-0.8.9.ebuild:
+  Drop stable x86 keywords wrt bug #364485.
+
+*freeipmi-1.0.8 (28 Oct 2011)
+
+  28 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> +freeipmi-1.0.8.ebuild:
+  Version bump.
+
+*freeipmi-1.0.7-r1 (18 Oct 2011)
+
+  18 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  +freeipmi-1.0.7-r1.ebuild, +files/bmc-watchdog.initd.3,
+  +files/ipmidetectd.initd.3:
+  Revbump with more OpenRC-style init scripts.
+
+*freeipmi-1.0.7 (28 Sep 2011)
+
+  28 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  -freeipmi-1.0.6-r2.ebuild, -files/freeipmi-1.0.6-bmc-watchdog-pidfile.patch,
+  +freeipmi-1.0.7.ebuild:
+  Version bump, the bmc-watchdog patch is properly upstreamed.
+
+*freeipmi-1.0.6-r2 (26 Sep 2011)
+
+  26 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  -freeipmi-1.0.6-r1.ebuild, +freeipmi-1.0.6-r2.ebuild:
+  Fix bug #383793, proper fix has been sent upstream.
+
+*freeipmi-1.0.6-r1 (07 Sep 2011)
+
+  07 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> -freeipmi-1.0.5.ebuild,
+  -freeipmi-1.0.6.ebuild, +freeipmi-1.0.6-r1.ebuild,
+  +files/freeipmi-1.0.6-bmc-watchdog-pidfile.patch,
+  +files/bmc-watchdog.initd.2, +files/ipmidetectd.initd.2:
+  Bump with a patch that allows bmc-watchdog to behave and the init script to
+  work correctly in Gentoo for the first time.
+
+*freeipmi-1.0.6 (03 Sep 2011)
+
+  03 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> -freeipmi-1.0.4.ebuild,
+  +freeipmi-1.0.6.ebuild:
+  Version bump. TODO: review init scripts and logrotate compatibility.
 
 *freeipmi-1.0.5 (01 Jul 2011)
 
@@ -186,4 +332,3 @@
   25 Mar 2005; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +freeipmi-0.1.3.ebuild:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

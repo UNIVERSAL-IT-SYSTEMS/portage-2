@@ -1,6 +1,25 @@
 # ChangeLog for net-news/blam
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-news/blam/ChangeLog,v 1.56 2010/10/07 20:37:31 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-news/blam/ChangeLog,v 1.61 2012/08/18 12:36:22 xmw Exp $
+
+  18 Aug 2012; Michael Weber <xmw@gentoo.org> blam-1.8.9.ebuild:
+  ppc stable (bug 407701)
+
+  22 May 2012; Agostino Sarubbo <ago@gentoo.org> blam-1.8.9.ebuild:
+  Stable for amd64, wrt bug #407701
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> blam-1.8.6.ebuild,
+  blam-1.8.9.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Apr 2012; Markus Meier <maekke@gentoo.org> blam-1.8.9.ebuild:
+  x86 stable, bug #407701
+
+*blam-1.8.9 (22 Jan 2012)
+
+  22 Jan 2012; Pacho Ramos <pacho@gentoo.org> +blam-1.8.9.ebuild,
+  +files/blam-1.8.9-use-elif.patch:
+  Version bump.
 
   07 Oct 2010; Pacho Ramos <pacho@gentoo.org> -blam-1.8.4.ebuild,
   -files/blam-1.8.4_pre2-gtk-sharp-2.10-compat.diff,
@@ -242,4 +261,3 @@
   02 Aug 2004; Peter Johanson <latexer@gentoo.org> +metadata.xml,
   +blam-1.0.54.ebuild:
   Initial commit. Ebuild by yours truly.
-

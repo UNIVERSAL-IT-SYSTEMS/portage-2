@@ -1,6 +1,46 @@
 # ChangeLog for dev-perl/Digest-SHA1
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Digest-SHA1/ChangeLog,v 1.59 2011/07/30 10:29:02 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Digest-SHA1/ChangeLog,v 1.71 2012/06/24 12:59:19 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Digest-SHA1-2.12.ebuild:
+  Cleanup
+
+  24 Mar 2012; Raúl Porcel <armin76@gentoo.org> Digest-SHA1-2.130.0.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #400093
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Digest-SHA1-2.130.0.ebuild:
+  x86 stable wrt bug #400093
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> Digest-SHA1-2.130.0.ebuild:
+  Marking Digest-SHA1-2.130.0 ppc64 for bug 400093
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> Digest-SHA1-2.130.0.ebuild:
+  Marking Digest-SHA1-2.130.0 ppc for bug 400093
+
+  29 Feb 2012; Markus Meier <maekke@gentoo.org> Digest-SHA1-2.130.0.ebuild:
+  arm stable, bug #400093
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> Digest-SHA1-2.130.0.ebuild:
+  Stable for HPPA (bug #400093).
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  Digest-SHA1-2.130.0.ebuild:
+  Stable on alpha, bug #400093
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Digest-SHA1-2.130.0.ebuild:
+  Stable for amd64, wrt bug #400093
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Digest-SHA1-2.13.ebuild:
+  Cleanup
+
+*Digest-SHA1-2.130.0 (31 Aug 2011)
+
+  31 Aug 2011; Torsten Veller <tove@gentoo.org> +Digest-SHA1-2.130.0.ebuild:
+  Change version scheme
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> Digest-SHA1-2.12.ebuild,
   Digest-SHA1-2.13.ebuild:

@@ -1,6 +1,40 @@
 # ChangeLog for net-libs/telepathy-farsight
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-farsight/ChangeLog,v 1.24 2011/07/14 10:51:27 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-farsight/ChangeLog,v 1.32 2012/03/25 17:27:29 armin76 Exp $
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  telepathy-farsight-0.0.19.ebuild:
+  alpha/ia64/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org>
+  telepathy-farsight-0.0.19.ebuild:
+  Marking telepathy-farsight-0.0.19 ppc stable for bug 393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org>
+  telepathy-farsight-0.0.19.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> telepathy-farsight-0.0.19.ebuild:
+  amd64 stable, bug 393007
+
+*telepathy-farsight-0.0.19 (09 Nov 2011)
+
+  09 Nov 2011; Arun Raghavan <ford_prefect@gentoo.org>
+  +telepathy-farsight-0.0.19.ebuild:
+  Bump to 0.0.19. Mostly minor fixes.
+
+  24 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  telepathy-farsight-0.0.15.ebuild, telepathy-farsight-0.0.16.ebuild,
+  telepathy-farsight-0.0.17.ebuild:
+  Depend on correct slot of pygobject.
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org>
+  telepathy-farsight-0.0.17.ebuild:
+  alpha/ia64/sparc stable wrt #369909
+
+  06 Aug 2011; Zac Medico <zmedico@gentoo.org>
+  telepathy-farsight-0.0.17.ebuild:
+  Add ~x86-linux keyword.
 
   14 Jul 2011; Thomas Kahle <tomka@gentoo.org>
   telepathy-farsight-0.0.17.ebuild:

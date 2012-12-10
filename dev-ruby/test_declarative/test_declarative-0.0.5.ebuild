@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/test_declarative/test_declarative-0.0.5.ebuild,v 1.4 2011/07/24 09:39:54 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/test_declarative/test_declarative-0.0.5.ebuild,v 1.7 2012/07/26 17:47:57 graaff Exp $
 
-EAPI=2
+EAPI=4
 
-USE_RUBY="ruby18 ree18 jruby"
+USE_RUBY="ruby18 ree18 jruby ruby19"
 
 RUBY_FAKEGEM_TASK_TEST=""
 RUBY_FAKEGEM_TASK_DOC=""
@@ -16,11 +16,11 @@ inherit ruby-fakegem
 DESCRIPTION="Simply adds a declarative test method syntax to test/unit."
 HOMEPAGE="https://github.com/svenfuchs/test_declarative"
 SRC_URI="https://github.com/svenfuchs/test_declarative/tarball/v${PV} -> ${P}.tgz"
-S="${WORKDIR}/svenfuchs-test_declarative-*"
+RUBY_S="svenfuchs-test_declarative-*"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~x86"
 IUSE=""
 
 each_ruby_test() {

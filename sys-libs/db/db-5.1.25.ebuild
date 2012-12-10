@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/db-5.1.25.ebuild,v 1.1 2011/02/08 18:38:18 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/db-5.1.25.ebuild,v 1.4 2012/11/25 19:23:39 ulm Exp $
 
 EAPI=2
-inherit eutils db flag-o-matic java-pkg-opt-2 autotools libtool
+inherit eutils db flag-o-matic java-pkg-opt-2 autotools multilib
 
 #Number of official patches
 #PATCHNO=`echo ${PV}|sed -e "s,\(.*_p\)\([0-9]*\),\2,"`
@@ -26,10 +26,10 @@ for (( i=1 ; i<=${PATCHNO} ; i++ )) ; do
 	export SRC_URI="${SRC_URI} http://www.oracle.com/technology/products/berkeley-db/db/update/${MY_PV}/patch.${MY_PV}.${i}"
 done
 
-LICENSE="OracleDB"
+LICENSE="Sleepycat"
 SLOT="5.1"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="doc java nocxx tcl test"
+IUSE="doc java cxx tcl test"
 
 # the entire testsuite needs the TCL functionality
 DEPEND="tcl? ( >=dev-lang/tcl-8.4 )
@@ -142,8 +142,8 @@ src_configure() {
 		--disable-sql_compat \
 		$(use arm && echo --with-mutex=ARM/gcc-assembly) \
 		$(use amd64 && echo --with-mutex=x86/gcc-assembly) \
-		$(use_enable !nocxx cxx) \
-		$(use_enable !nocxx stl) \
+		$(use_enable cxx) \
+		$(use_enable cxx stl) \
 		$(use_enable java) \
 		${myconf} \
 		$(use_enable test) \

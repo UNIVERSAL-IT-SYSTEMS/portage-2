@@ -1,21 +1,21 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/nlopt/nlopt-2.2.4.ebuild,v 1.1 2011/07/28 23:51:14 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/nlopt/nlopt-2.2.4.ebuild,v 1.9 2012/07/09 17:14:28 bicatali Exp $
 
-EAPI=3
+EAPI=4
 
 SUPPORT_PYTHON_ABIS="1"
 PYTHON_DEPEND="python? *"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="3.* 2.7-pypy-* *-jython"
 
-inherit eutils python
+inherit python autotools-utils
 
 DESCRIPTION="Non-linear optimization library"
 HOMEPAGE="http://ab-initio.mit.edu/nlopt/"
 SRC_URI="${HOMEPAGE}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1 MIT"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 SLOT="0"
 IUSE="cxx guile octave python static-libs"
 
@@ -25,6 +25,8 @@ DEPEND="
 	python? ( dev-python/numpy )"
 RDEPEND="${DEPEND}"
 
+AUTOTOOLS_IN_SOURCE_BUILD=1
+
 src_prepare() {
 	if use python; then
 		sed -i \
@@ -32,6 +34,8 @@ src_prepare() {
 			swig/Makefile.in || die
 		echo '#!/bin/sh' > py-compile
 	fi
+	epatch "${FILESDIR}"/${P}-fix-nlopt_hpp-location.patch
+	eautoreconf
 }
 
 src_configure() {
@@ -41,46 +45,47 @@ src_configure() {
 	else
 		export MKOCTFILE=None
 	fi
-	econf \
-		--enable-shared \
-		$(use_enable static-libs static) \
-		$(use_with cxx) \
-		$(use_with guile) \
-		$(use_with octave) \
+	myeconfargs+=(
+		$(use_with cxx)
+		$(use_with guile)
+		$(use_with octave)
 		$(use_with python)
-	use python && python_copy_sources swig
+		--without-matlab
+	)
+	autotools-utils_src_configure
 }
 
 src_compile() {
-	default
+	autotools-utils_src_compile
 	if use python; then
+		python_copy_sources swig
 		compilation() {
-			emake \
-				PYTHON_CPPFLAGS="-I$(python_get_includedir)" \
-				PYTHON_LDFLAGS="$(python_get_library -l)" \
-				PYTHON_SITE_PKG="$(python_get_sitedir)" \
-				PYTHON_VERSION="$(python_get_version)" \
-				pyexecdir="$(python_get_sitedir)"
+			autotools-utils_src_compile \
+				PYTHON_CPPFLAGS="-I${EPREFIX}$(python_get_includedir)" \
+				PYTHON_LDFLAGS="${EPREFIX}$(python_get_library -l)" \
+				PYTHON_SITE_PKG="${EPREFIX}$(python_get_sitedir)" \
+				PYTHON_VERSION="${EPREFIX}$(python_get_version)" \
+				PYTHON_INCLUDES="${EPREFIX}$(python_get_includedir)" \
+				pythondir="${EPREFIX}$(python_get_sitedir)" \
+				pyexecdir="${EPREFIX}$(python_get_sitedir)"
 		}
 		python_execute_function -s --source-dir swig compilation
 	fi
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	autotools-utils_src_install
 	if use python; then
 		installation() {
-			emake \
-				DESTDIR="${D}" \
-				pyexecdir="$(python_get_sitedir)" \
-				pythondir="$(python_get_sitedir)" \
-				install
+			rm *.la
+			emake DESTDIR=${D} install \
+				pyexecdir="${EPREFIX}$(python_get_sitedir)" \
+				pythondir="${EPREFIX}$(python_get_sitedir)"
 		}
 		python_execute_function -s --source-dir swig installation
 		python_clean_installation_image
 	fi
-
-	dodoc AUTHORS ChangeLog NEWS README || die
+	local r
 	for r in */README; do newdoc ${r} README.$(dirname ${r}); done
 }
 

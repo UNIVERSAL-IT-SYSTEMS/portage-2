@@ -1,8 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/potamus/potamus-0.12.ebuild,v 1.1 2011/04/21 19:36:14 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/potamus/potamus-0.12.ebuild,v 1.3 2012/05/05 08:47:10 mgorny Exp $
 
-EAPI=2
+EAPI=4
+
 inherit gnome2
 
 DESCRIPTION="a lightweight audio player with a simple interface and an emphasis on high audio quality."
@@ -26,9 +27,16 @@ RDEPEND="x11-libs/gtk+:2
 	media-libs/flac
 	media-sound/jack-audio-connection-kit"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
+
+src_prepare() {
+	gnome2_src_prepare
+
+	sed -i -e \
+		's:CODEC_TYPE_AUDIO:AVMEDIA_TYPE_AUDIO:g' \
+		src/input-avcodec.c || die
+}
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc NEWS README TODO
+	default
 }

@@ -1,6 +1,67 @@
 # ChangeLog for media-sound/quodlibet
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/quodlibet/ChangeLog,v 1.79 2011/04/03 10:31:02 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/quodlibet/ChangeLog,v 1.94 2012/12/08 12:33:20 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> quodlibet-2.4.ebuild:
+  Stable for ppc64, wrt bug #420045
+
+  23 Aug 2012; Michael Weber <xmw@gentoo.org> quodlibet-2.4.ebuild:
+  ppc stable (bug 420045).
+
+  12 Jun 2012; Jeff Horelick <jdhore@gentoo.org> quodlibet-2.4.ebuild:
+  marked x86 per bug 420045
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> quodlibet-2.4.ebuild:
+  Stable for amd64, wrt bug #420045
+
+  07 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> quodlibet-2.4.ebuild:
+  Load libudev.so.1 instead of libudev.so.0 with sys-fs/udev >= 183
+
+  17 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  quodlibet-2.3.92-r1.ebuild, quodlibet-2.4.ebuild:
+  Remove alpha/sparc keywording wrt #397531
+
+*quodlibet-2.4 (20 Mar 2012)
+
+  20 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +quodlibet-2.4.ebuild:
+  Version bump.
+
+  29 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> -quodlibet-2.2.1.ebuild:
+  old
+
+  29 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  quodlibet-2.3.92-r1.ebuild:
+  ppc/ppc64/x86 stable wrt #405091
+
+  28 Feb 2012; Patrick Lauer <patrick@gentoo.org> quodlibet-2.2.1.ebuild,
+  quodlibet-2.3.92-r1.ebuild:
+  Restricting python
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> quodlibet-2.3.92-r1.ebuild:
+  Stable for amd64, wrt bug #405091
+
+  20 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> -quodlibet-2.3.ebuild,
+  -quodlibet-2.3.92.ebuild:
+  old
+
+*quodlibet-2.3.92-r1 (20 Feb 2012)
+
+  20 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +quodlibet-2.3.92-r1.ebuild, +files/quodlibet-2.3.92-xine-lib-1.2.0.patch:
+  Upstream patch for media-libs/xine-lib >= 1.2.0 compability wrt #397919 by
+  Piotr Szymaniak
+
+  18 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> quodlibet-2.2.1.ebuild,
+  quodlibet-2.3.ebuild:
+  Update RDEPEND to <media-libs/xine-lib-1.2.0 because there is no support.
+
+*quodlibet-2.3.92 (18 Jan 2012)
+
+  18 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +quodlibet-2.3.92.ebuild:
+  Version bump wrt #378021 by Sebastian Pipping. Missing
+  app-misc/media-player-info RDEPEND wrt #384261 by Alexander S. Remove support
+  for media-libs/xine-lib because lack of support for 1.2 series wrt #397919 by
+  Piotr Szymaniak.
 
 *quodlibet-2.3 (03 Apr 2011)
 
@@ -366,4 +427,3 @@
 
   08 Nov 2004; Patrick Dawson <pkdawson@gentoo.org> +quodlibet-0.3.ebuild:
   Initial import.
-

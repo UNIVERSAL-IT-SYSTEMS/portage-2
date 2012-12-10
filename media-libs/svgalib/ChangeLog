@@ -1,6 +1,43 @@
 # ChangeLog for media-libs/svgalib
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/svgalib/ChangeLog,v 1.90 2010/11/19 21:35:37 lxnay Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/svgalib/ChangeLog,v 1.98 2012/09/14 20:29:28 pacho Exp $
+
+  14 Sep 2012; Pacho Ramos <pacho@gentoo.org> -files/svgalib-1.9.25-fPIC.patch,
+  -files/svgalib-1.9.25-linux2.6.36.patch, -svgalib-1.9.25-r1.ebuild:
+  Drop old, thanks to Andrew Savchenko for remembering.
+
+  22 Jul 2012; Jeff Horelick <jdhore@gentoo.org> svgalib-1.9.25-r4.ebuild:
+  marked x86 per bug 427542
+
+  30 Jun 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/svgalib-1.9.25-kernel3.4.patch, svgalib-1.9.25-r4.ebuild:
+  Fix compilation with kernel 3.4, bug #421753 by Len Meakin.
+
+*svgalib-1.9.25-r4 (16 Jun 2012)
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> +files/svgalib-1.9.25-qa.patch,
+  +svgalib-1.9.25-r4.ebuild, -svgalib-1.9.25-r3.ebuild:
+  Fix QA warnings and installation of some files, by Andrew Savchenko. Drop old.
+
+*svgalib-1.9.25-r3 (07 Apr 2012)
+
+  07 Apr 2012; Pacho Ramos <pacho@gentoo.org> +svgalib-1.9.25-r3.ebuild,
+  -svgalib-1.9.25-r2.ebuild, metadata.xml:
+  Fix link installation (#341393#c19), this is now proxy maintained.
+
+*svgalib-1.9.25-r2 (03 Mar 2012)
+
+  03 Mar 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/svgalib-1.9.25-build2.patch,
+  +files/svgalib-1.9.25-fPIC.patch, +files/svgalib-1.9.25-linux2.6.36-r1.patch,
+  +files/svgalib-1.9.25-segfault.patch, +svgalib-1.9.25-r2.ebuild:
+  Respect LDFLAGS (bug #339873 by Andrew Savchenko), install svgalib_helper.h
+  (bug #341393 by Andrew Savchenko), fix build with recent kernels (bug #344663
+  by Rene Hertell), fix segfault (bug #402831 by O.Sezer).
+
+  03 Oct 2011; Michael Sterrett <mr_bones_@gentoo.org>
+  svgalib-1.9.25-r1.ebuild:
+  sed patch to fix bug #369095
 
   19 Nov 2010; Fabio Erculiani <lxnay@gentoo.org>
   files/svgalib-1.9.25-linux2.6.36.patch:

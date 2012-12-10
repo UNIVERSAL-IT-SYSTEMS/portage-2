@@ -1,25 +1,32 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/catalyst/catalyst-9999.ebuild,v 1.15 2011/07/17 00:29:56 mattst88 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/catalyst/catalyst-9999.ebuild,v 1.24 2012/10/14 05:51:29 mattst88 Exp $
 
 # catalyst-9999         -> latest Git
 # catalyst-2.9999       -> catalyst_2 branch from Git
+# catalyst-3.9999       -> catalyst_3 branch from Git
 # catalyst-VER          -> normal catalyst release
 
-EAPI=2
+EAPI=3
+PYTHON_DEPEND="2"
 
-if [[ ${PV} == 9999* || ${PV} == 2.9999* ]]; then
+if [[ ${PV} == *9999* ]]; then
 	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/catalyst.git"
 	inherit git-2
 	SRC_URI=""
 	S="${WORKDIR}/${PN}"
 	KEYWORDS=""
+
+	case ${PV} in
+		2.9999) EGIT_BRANCH="catalyst_2" ;;
+		3.9999) EGIT_BRANCH="catalyst_3" ;;
+	esac
 else
 	SRC_URI="mirror://gentoo/${P}.tar.bz2
 		http://dev.gentoo.org/~jmbsvicetto/distfiles/${P}.tar.bz2"
 	KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
 fi
-inherit eutils multilib
+inherit eutils multilib python
 
 DESCRIPTION="release metatool used for creating releases based on Gentoo Linux"
 HOMEPAGE="http://www.gentoo.org/proj/en/releng/catalyst/"
@@ -27,10 +34,10 @@ HOMEPAGE="http://www.gentoo.org/proj/en/releng/catalyst/"
 LICENSE="GPL-2"
 SLOT="0"
 RESTRICT=""
-IUSE="ccache"
+IUSE="ccache kernel_linux"
 
 DEPEND="app-text/asciidoc"
-RDEPEND="dev-lang/python
+RDEPEND="app-arch/lbzip2
 	app-crypt/shash
 	virtual/cdrtools
 	ccache? ( dev-util/ccache )
@@ -51,20 +58,25 @@ pkg_setup() {
 	einfo "and they are considered to be the authorative source of information"
 	einfo "on catalyst."
 	echo
-	if [[ ${PV} == 9999* || ${PV} == 2.9999* ]]; then
+	if [[ ${PV} == *9999* ]]; then
 		ewarn "The ${EGIT_BRANCH:-master} branch (what you get with this ${PV} ebuild) contains"
 		ewarn "work-in-progress code. Be aware that it's likely that it will not"
 		ewarn "be in a working state at any given point. Please do not file bugs"
 		ewarn "until you have posted on the gentoo-catalyst mailing list and we"
 		ewarn "have asked you to do so."
 	fi
+	python_set_active_version 2
+}
+
+src_prepare() {
+	python_convert_shebangs 2 catalyst modules/catalyst_lock.py
 }
 
 src_install() {
 	insinto /usr/$(get_libdir)/${PN}
 	exeinto /usr/$(get_libdir)/${PN}
 	doexe catalyst || die "copying catalyst"
-	if [[ ${PV} == 9999* ]]; then
+	if [[ ${PV} == 3.9999* ]]; then
 		doins -r modules files || die "copying files"
 	else
 		doins -r arch modules livecd || die "copying files"

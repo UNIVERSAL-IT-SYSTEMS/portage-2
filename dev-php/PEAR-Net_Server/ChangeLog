@@ -1,6 +1,53 @@
 # ChangeLog for dev-php/PEAR-Net_Server
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Net_Server/ChangeLog,v 1.27 2007/12/06 00:41:57 jokey Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Net_Server/ChangeLog,v 1.40 2012/12/08 17:06:23 jer Exp $
+
+  08 Dec 2012; Jeroen Roovers <jer@gentoo.org> PEAR-Net_Server-1.0.3.ebuild:
+  Stable for HPPA (bug #441268).
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> PEAR-Net_Server-1.0.3.ebuild:
+  Stable for ppc64, wrt bug #441268
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> PEAR-Net_Server-1.0.3.ebuild:
+  Stable for ppc, wrt bug #441268
+
+  07 Dec 2012; <ago@gentoo.org> PEAR-Net_Server-1.0.3.ebuild:
+  Stable for x86, wrt bug #441268
+
+  07 Dec 2012; <ago@gentoo.org> PEAR-Net_Server-1.0.3.ebuild:
+  Stable for amd64, wrt bug #441268
+
+*PEAR-Net_Server-1.0.3 (05 Aug 2012)
+
+  05 Aug 2012; Matti Bickel <mabi@gentoo.org> +PEAR-Net_Server-1.0.3.ebuild,
+  -PEAR-Net_Server-1.0.2.ebuild:
+  version bump & remove old
+
+  05 Aug 2012; Raúl Porcel <armin76@gentoo.org>
+  PEAR-Net_Server-1.0.2-r1.ebuild:
+  alpha/ia64/sparc stable wrt #418893
+
+  04 Jul 2012; Jeroen Roovers <jer@gentoo.org> PEAR-Net_Server-1.0.2-r1.ebuild:
+  Stable for HPPA (bug #418893).
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> PEAR-Net_Server-1.0.2-r1.ebuild:
+  Marking PEAR-Net_Server-1.0.2-r1 ppc for bug 418893
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> PEAR-Net_Server-1.0.2-r1.ebuild:
+  Marking PEAR-Net_Server-1.0.2-r1 ppc64 for bug 418893
+
+  13 Jun 2012; Jeff Horelick <jdhore@gentoo.org>
+  PEAR-Net_Server-1.0.2-r1.ebuild:
+  marked x86 per bug 418893
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  PEAR-Net_Server-1.0.2-r1.ebuild:
+  Stable for amd64, wrt bug #418893
+
+*PEAR-Net_Server-1.0.2-r1 (18 Jan 2012)
+
+  18 Jan 2012; Matti Bickel <mabi@gentoo.org> +PEAR-Net_Server-1.0.2-r1.ebuild:
+  EAPI bump, license fix
 
   06 Dec 2007; Markus Ullmann <jokey@gentoo.org>
   -PEAR-Net_Server-0.12.0-r1.ebuild, PEAR-Net_Server-1.0.2.ebuild:
@@ -122,4 +169,3 @@
   02 Jul 2005; Sebastian Bergmann <sebastian@gentoo.org> +metadata.xml,
   +PEAR-Net_Server-0.12.0.ebuild:
   Initial ebuild, closes bug 96058.
-

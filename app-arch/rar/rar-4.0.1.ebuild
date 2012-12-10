@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/rar/rar-4.0.1.ebuild,v 1.1 2011/07/02 18:07:01 serkan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/rar/rar-4.0.1.ebuild,v 1.4 2012/09/24 00:40:40 vapier Exp $
 
 DESCRIPTION="RAR compressor/uncompressor"
 HOMEPAGE="http://www.rarsoft.com/"
@@ -17,7 +17,7 @@ SRC_URI="x86? ( ${URI_x86} )
 
 LICENSE="RAR"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86"
+KEYWORDS="-* amd64 x86"
 IUSE="all_sfx static"
 
 DEPEND="all_sfx? ( app-arch/unrar )"
@@ -25,7 +25,7 @@ RDEPEND="sys-libs/glibc"
 
 S=${WORKDIR}/${PN}
 
-QA_DT_HASH="opt/rar/default.sfx
+QA_FLAGS_IGNORED="opt/rar/default.sfx
 	opt/rar/default-elf32.sfx
 	opt/rar/default-elf64.sfx
 	opt/rar/default-win32.sfx
@@ -36,7 +36,7 @@ QA_DT_HASH="opt/rar/default.sfx
 	opt/rar/Zip64.SFX
 	opt/rar/unrar
 	opt/rar/rar"
-QA_PRESTRIPPED=${QA_DT_HASH}
+QA_PRESTRIPPED=${QA_FLAGS_IGNORED}
 
 src_unpack() {
 	use x86 && unpack ${URI_x86##*/}

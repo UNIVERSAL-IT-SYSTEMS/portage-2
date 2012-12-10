@@ -1,6 +1,45 @@
 # ChangeLog for app-admin/eselect-php
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-php/ChangeLog,v 1.28 2011/02/28 12:34:04 olemarkus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-php/ChangeLog,v 1.38 2012/09/12 03:04:01 ottxor Exp $
+
+  12 Sep 2012; Christoph Junghans <ottxor@gentoo.org> eselect-php-0.6.7.ebuild:
+  added prefix keywords
+
+  11 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  eselect-php-0.6.7.ebuild:
+  Keyword ~mips, works on true multilib systems, bugs #425486
+
+  10 Jul 2012; Ole Markus With <olemarkus@gentoo.org> eselect-php-0.6.7.ebuild:
+  Moved eselect-php file to devspace
+
+  10 Jul 2012; Patrick Lauer <patrick@gentoo.org> eselect-php-0.6.7.ebuild:
+  Fixing path for #425542
+
+*eselect-php-0.6.7 (09 Jul 2012)
+
+  09 Jul 2012; Ole Markus With <olemarkus@gentoo.org> +eselect-php-0.6.7.ebuild:
+  Version bump
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> eselect-php-0.6.6.ebuild:
+  keyword ~amd64-fbsd
+
+  30 Nov 2011; Fabian Groffen <grobian@gentoo.org> eselect-php-0.6.6.ebuild:
+  Marked ~x86-macos and ~x64-macos, bug #388163
+
+  08 Nov 2011; Naohiro Aota <naota@gentoo.org> eselect-php-0.6.6.ebuild:
+  Add ~x86-fbsd
+
+*eselect-php-0.6.6 (02 Sep 2011)
+
+  02 Sep 2011; Ole Markus With <olemarkus@gentoo.org>
+  -eselect-php-0.6.5.ebuild, +eselect-php-0.6.6.ebuild:
+  Bumped eselect.php. Fixes bug 363473. Thanks to Fabian Groffen
+
+*eselect-php-0.6.5 (30 Aug 2011)
+
+  30 Aug 2011; Ole Markus With <olemarkus@gentoo.org>
+  +eselect-php-0.6.5.ebuild:
+  Version bump. Fixes bug 374417
 
   28 Feb 2011; Ole Markus With <olemarkus@gentoo.org>
   -eselect-php-0.6.1.ebuild, +eselect-php-0.6.4.ebuild:
@@ -88,4 +127,3 @@
   06 Oct 2010; <olemarkus@gentoo.org> +eselect-php-0.5.ebuild,
   +metadata.xml:
   Added eselect module for PHP
-

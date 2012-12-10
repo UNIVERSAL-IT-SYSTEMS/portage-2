@@ -1,6 +1,27 @@
 # ChangeLog for dev-python/h5py
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/h5py/ChangeLog,v 1.6 2011/07/17 10:54:57 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/h5py/ChangeLog,v 1.11 2012/10/17 09:30:09 patrick Exp $
+
+  17 Oct 2012; Patrick Lauer <patrick@gentoo.org> h5py-2.0.1.ebuild,
+  h5py-2.1.0.ebuild:
+  Restricting py 3.3
+
+*h5py-2.1.0 (04 Oct 2012)
+
+  04 Oct 2012; Kacper Kowalik <xarthisius@gentoo.org> +h5py-2.1.0.ebuild:
+  Version bump
+
+  23 Feb 2012; Patrick Lauer <patrick@gentoo.org> h5py-2.0.1.ebuild:
+  Restricting pypy and jython
+
+  17 Jan 2012; Kacper Kowalik <xarthisius@gentoo.org> h5py-2.0.1.ebuild:
+  Add prefix love
+
+*h5py-2.0.1 (05 Oct 2011)
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> -h5py-2.0.0.ebuild,
+  +h5py-2.0.1.ebuild:
+  Version bump, drop old.
 
 *h5py-2.0.0 (17 Jul 2011)
 
@@ -61,4 +82,3 @@
   04 Nov 2008; Tim Cera <timcera@earthlink.net> +h5py-0.3.1.ebuild,
   +metadata.xml:
   Initial ebuild.
-

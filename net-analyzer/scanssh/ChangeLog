@@ -1,6 +1,15 @@
 # ChangeLog for net-analyzer/scanssh
-# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/scanssh/ChangeLog,v 1.21 2008/07/11 02:28:08 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/scanssh/ChangeLog,v 1.24 2012/07/20 01:32:11 blueness Exp $
+
+  20 Jul 2012; Anthony G. Basile <blueness@gentoo.org> scanssh-2.1.ebuild:
+  Keyword ~ppc64
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org> scanssh-2.1.ebuild:
+  Add explicit RDEPEND.
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org> scanssh-2.1.ebuild:
+  Update to EAPI 4 and respect CFLAGS (bug #392199).
 
   11 Jul 2008; Jeroen Roovers <jer@gentoo.org> scanssh-2.1.ebuild:
   Stable for HPPA too. Fix quoting.

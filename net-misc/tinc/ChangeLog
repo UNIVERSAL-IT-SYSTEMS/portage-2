@@ -1,6 +1,80 @@
 # ChangeLog for net-misc/tinc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/tinc/ChangeLog,v 1.22 2011/07/20 14:57:54 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/tinc/ChangeLog,v 1.37 2012/06/26 13:59:16 blueness Exp $
+
+  26 Jun 2012; Anthony G. Basile <blueness@gentoo.org> -tinc-1.0.16-r4.ebuild,
+  -tinc-1.0.17.ebuild, -files/fix-compile-vde-uml.patch,
+  -files/fix-missing-vde.patch, metadata.xml:
+  Remove older versions
+
+*tinc-1.0.19 (26 Jun 2012)
+
+  26 Jun 2012; Anthony G. Basile <blueness@gentoo.org> +tinc-1.0.19.ebuild:
+  Version bump
+
+  12 May 2012; Benda Xu <heroxbd@gentoo.org> tinc-1.0.18.ebuild:
+  keyword ~amd64-linux
+
+  26 Mar 2012; Anthony G. Basile <blueness@gentoo.org> -tinc-1.0.13.ebuild,
+  -tinc-1.0.16.ebuild, -files/tincd, -files/tincd.conf, -files/tincd.lo:
+  Remove older unstable versions
+
+  26 Mar 2012; Anthony G. Basile <blueness@gentoo.org> tinc-1.0.18.ebuild,
+  files/fix-ac-arg-enable.patch:
+  Force disable tunemu, fix bug #409749
+
+*tinc-1.0.18 (26 Mar 2012)
+
+  26 Mar 2012; Anthony G. Basile <blueness@gentoo.org> +tinc-1.0.18.ebuild,
+  +files/fix-ac-arg-enable.patch:
+  Version bump with patch to fix AC_ARG_ENABLE
+
+*tinc-1.0.17 (11 Mar 2012)
+
+  11 Mar 2012; Anthony G. Basile <blueness@gentoo.org> tinc-1.0.16-r4.ebuild,
+  +tinc-1.0.17.ebuild, files/tincd.lo.1:
+  Version bump, some cosmetic cleanups
+
+*tinc-1.0.16-r4 (02 Feb 2012)
+
+  02 Feb 2012; Anthony G. Basile <blueness@gentoo.org> -tinc-1.0.16-r3.ebuild,
+  +tinc-1.0.16-r4.ebuild, files/tincd.1, files/tincd.lo.1:
+  Fix bug #401873
+
+*tinc-1.0.16-r3 (31 Jan 2012)
+
+  31 Jan 2012; Anthony G. Basile <blueness@gentoo.org> -tinc-1.0.16-r1.ebuild,
+  -tinc-1.0.16-r2.ebuild, +tinc-1.0.16-r3.ebuild, files/tincd.1,
+  files/tincd.lo.1:
+  Fix bug #401423 and removed older ~arch
+
+  15 Jan 2012; Torsten Veller <tove@gentoo.org> tinc-1.0.16-r1.ebuild,
+  tinc-1.0.16-r2.ebuild:
+  Fix cvs keyword in the header (#398773)
+
+*tinc-1.0.16-r2 (21 Dec 2011)
+
+  21 Dec 2011; Anthony G. Basile <blueness@gentoo.org> +tinc-1.0.16-r2.ebuild,
+  +files/fix-compile-vde-uml.patch, +files/fix-missing-vde.patch, metadata.xml:
+  Added USE flags for raw, uml and vde sockets, bug #371131
+
+  04 Dec 2011; Sven Wegener <swegener@gentoo.org> files/tincd, files/tincd.1,
+  files/tincd.lo, files/tincd.lo.1:
+  reload is extra_started_commands
+
+*tinc-1.0.16-r1 (26 Sep 2011)
+
+  26 Sep 2011; Anthony G. Basile <blueness@gentoo.org> +tinc-1.0.16-r1.ebuild,
+  +files/tincd.1, +files/tincd.conf.1, +files/tincd.lo.1:
+  Rewrite of initd system, added syslog/logfile support, bug #371357
+
+*tinc-1.0.16 (23 Sep 2011)
+
+  23 Sep 2011; Anthony G. Basile <blueness@gentoo.org> +tinc-1.0.16.ebuild:
+  Version bump to latest upstream stable
+
+  23 Sep 2011; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
+  Added myself as maintainer.
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> -tinc-1.0.8.ebuild,
   -tinc-1.0.9.ebuild, -tinc-1.0.11.ebuild, metadata.xml:

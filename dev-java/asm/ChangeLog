@@ -1,6 +1,28 @@
 # ChangeLog for dev-java/asm
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/asm/ChangeLog,v 1.71 2010/04/24 17:57:07 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/asm/ChangeLog,v 1.76 2012/10/18 12:53:08 ottxor Exp $
+
+  18 Oct 2012; Christoph Junghans <ottxor@gentoo.org> asm-2.0-r1.ebuild:
+  added prefix support (bug #435436)
+
+  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> asm-2.0-r1.ebuild,
+  asm-2.2.3-r1.ebuild, asm-3.0.ebuild, asm-3.1.ebuild, asm-3.2.ebuild,
+  asm-3.3.1.ebuild:
+  Add back ia64 love #349020 by Dennis Schridde.
+
+  01 Jan 2012; Ralph Sennhauser <sera@gentoo.org> asm-2.0-r1.ebuild:
+  Drop ia64 support #345433
+
+*asm-4.0 (25 Dec 2011)
+
+  25 Dec 2011; Miroslav Šulc <fordfrog@gentoo.org> +asm-4.0.ebuild:
+  Version bump (thanks to James Le Cuirot <chewi@aura-online.co.uk> for the
+  ebuild)
+
+*asm-3.3.1 (25 Dec 2011)
+
+  25 Dec 2011; Miroslav Šulc <fordfrog@gentoo.org> +asm-3.3.1.ebuild:
+  Version bump
 
   24 Apr 2010; Fabian Groffen <grobian@gentoo.org> asm-3.2.ebuild:
   Marked ~sparc-solaris ~x86-solaris, bug #314093

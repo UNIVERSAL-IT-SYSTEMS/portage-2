@@ -1,6 +1,105 @@
 # ChangeLog for dev-lang/tcl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/tcl/ChangeLog,v 1.138 2011/03/23 19:05:10 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/tcl/ChangeLog,v 1.162 2012/12/05 08:51:01 ulm Exp $
+
+  05 Dec 2012; Ulrich Müller <ulm@gentoo.org> tcl-8.4.19.ebuild,
+  tcl-8.5.10-r1.ebuild, tcl-8.5.11-r1.ebuild, tcl-8.5.13.ebuild:
+  Specify LICENSE more precisely, bug 445468.
+
+  29 Nov 2012; Justin Lecher <jlec@gentoo.org> tcl-8.5.13.ebuild:
+  Renaming done wrong
+
+  29 Nov 2012; Justin Lecher <jlec@gentoo.org> tcl-8.5.13.ebuild:
+  Enable test phase
+
+*tcl-8.5.13 (29 Nov 2012)
+
+  29 Nov 2012; Justin Lecher <jlec@gentoo.org>
+  -files/tcl-8.4.11-multilib.patch, -tcl-8.4.18.ebuild, -tcl-8.5.7.ebuild,
+  -tcl-8.5.8-r1.ebuild, -tcl-8.5.8-r2.ebuild, -files/tcl-8.5.8-fortify.patch,
+  -tcl-8.5.9.ebuild, +files/tcl-8.5.10-conf.patch, -tcl-8.5.11.ebuild,
+  +tcl-8.5.13.ebuild, +files/tcl-8.5.13-autopath.patch:
+  Version Bump, #444296; Cleaned old
+
+*tcl-8.5.11-r1 (07 Jun 2012)
+
+  07 Jun 2012; Justin Lecher <jlec@gentoo.org> +tcl-8.5.11-r1.ebuild:
+  Drop standard lib locataion from tclConfig.sh, #420129; thanks Ian
+  Stakenvicius for the patch
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> tcl-8.5.11.ebuild:
+  keyword ~amd64-fbsd
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> tcl-8.5.10-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #406607
+
+  19 Mar 2012; Markus Meier <maekke@gentoo.org> tcl-8.5.10-r1.ebuild:
+  arm stable, bug #406607
+
+  19 Mar 2012; Justin Lecher <jlec@gentoo.org> tcl-8.5.11.ebuild:
+  Drop unnessecary stripping of slashes, #408261, thanks Kevin Pyle for the
+  patch
+
+  11 Mar 2012; Jeff Horelick <jdhore@gentoo.org> tcl-8.5.10-r1.ebuild:
+  marked x86 per bug 406607
+
+  10 Mar 2012; Justin Lecher <jlec@gentoo.org> tcl-8.5.10-r1.ebuild:
+  Backport to version in stabilization
+
+  10 Mar 2012; Petteri Räty <betelgeuse@gentoo.org> tcl-8.5.11.ebuild:
+  Use EAPI 4 to make use of REPLACING_VERSIONS which enables us to show
+  pkg_postinst warnings only when they are needed.
+
+  06 Mar 2012; Jeroen Roovers <jer@gentoo.org> tcl-8.5.10-r1.ebuild:
+  Stable for HPPA (bug #406607).
+
+*tcl-8.5.10-r1 (06 Mar 2012)
+
+  06 Mar 2012; Justin Lecher <jlec@gentoo.org> -tcl-8.5.10.ebuild,
+  +tcl-8.5.10-r1.ebuild:
+  Revbump to force rebuild, which is needed because of the removed static
+  archives
+
+  06 Mar 2012; Fabian Groffen <grobian@gentoo.org> tcl-8.5.10.ebuild,
+  tcl-8.5.11.ebuild:
+  Fix logix after added || die from rev 1.4, thanks Charles Davis in bug #407059
+
+  05 Mar 2012; Agostino Sarubbo <ago@gentoo.org> tcl-8.5.10.ebuild:
+  Stable for amd64, wrt bug #406607
+
+  04 Mar 2012; Justin Lecher <jlec@gentoo.org> tcl-8.5.10.ebuild,
+  tcl-8.5.11.ebuild:
+  Revert static-libs handling, #406905; push changes from 8.5.10 to .11
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> tcl-8.5.10.ebuild:
+  Marking tcl-8.5.10 ppc64 for bug 406607
+
+  02 Mar 2012; Justin Lecher <jlec@gentoo.org> tcl-8.5.10.ebuild:
+  Add missing dies, remove unnessecary dies, handle static-libs
+
+  02 Mar 2012; Justin Lecher <jlec@gentoo.org> +tcl-8.5.11.ebuild:
+  Version Bump
+
+*tcl-8.5.11 (02 Mar 2012)
+
+  02 Mar 2012; Justin Lecher <jlec@gentoo.org> +tcl-8.5.11.ebuild:
+  Version Bump
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> tcl-8.5.10.ebuild:
+  Marking tcl-8.5.10 ppc for bug 280934
+
+  29 Nov 2011; Fabian Groffen <grobian@gentoo.org> tcl-8.5.10.ebuild:
+  Fix installation on FreeMiNT (bug #390545), use get_libname for shared library
+  extension, keyworded ~x64-macos
+
+*tcl-8.5.10 (04 Oct 2011)
+
+  04 Oct 2011; Justin Lecher <jlec@gentoo.org> +tcl-8.5.10.ebuild:
+  Version Bump
+
+  05 Aug 2011; Naohiro Aota <naota@gentoo.org> tcl-8.5.9.ebuild,
+  +files/tcl-8.5.9-gentoo-fbsd.patch:
+  Apply shared object versioning policy on Gentoo/FreeBSD. Bug 354067
 
   23 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org> tcl-8.5.9.ebuild:
   ppc64 stable wrt #353854

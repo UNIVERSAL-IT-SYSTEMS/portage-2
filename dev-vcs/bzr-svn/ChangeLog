@@ -1,6 +1,41 @@
 # ChangeLog for dev-vcs/bzr-svn
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/bzr-svn/ChangeLog,v 1.9 2011/02/25 22:31:12 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/bzr-svn/ChangeLog,v 1.18 2012/10/13 11:45:14 hwoarang Exp $
+
+  13 Oct 2012; Markos Chandras <hwoarang@gentoo.org> bzr-svn-1.2.1.ebuild:
+  Stable on amd64 wrt bug #418969
+
+*bzr-svn-1.2.2 (08 Oct 2012)
+
+  08 Oct 2012; Christian Faulhammer <fauli@gentoo.org> +bzr-svn-1.2.2.ebuild:
+  version bump
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> bzr-svn-1.1.0.ebuild,
+  bzr-svn-1.2.1.ebuild:
+  Drop alpha keywords
+
+  24 Mar 2012; Serkan Kaba <serkan@gentoo.org> bzr-svn-1.2.1.ebuild:
+  Bump subverty dependency.
+
+*bzr-svn-1.2.1 (16 Mar 2012)
+
+  16 Mar 2012; Christian Faulhammer <fauli@gentoo.org> -bzr-svn-1.0.4.ebuild,
+  +bzr-svn-1.2.1.ebuild:
+  version bump and clean up
+
+  23 Jan 2012; Thomas Kahle <tomka@gentoo.org> bzr-svn-1.1.0.ebuild:
+  x86 stable per bug 383751
+
+  21 Jan 2012; Tobias Klausmann <klausman@gentoo.org> bzr-svn-1.1.0.ebuild:
+  Stable on alpha, bug #383751
+
+  30 Oct 2011; Markos Chandras <hwoarang@gentoo.org> bzr-svn-1.1.0.ebuild:
+  Stable on amd64 wrt bug #383751
+
+*bzr-svn-1.1.0 (29 Aug 2011)
+
+  29 Aug 2011; Christian Faulhammer <fauli@gentoo.org> +bzr-svn-1.1.0.ebuild:
+  version bump
 
   25 Feb 2011; Christian Faulhammer <fauli@gentoo.org>
   -bzr-svn-1.0.1.ebuild, -bzr-svn-1.0.3.ebuild:
@@ -69,4 +104,3 @@
   06 Oct 2009; Peter Volkov <pva@gentoo.org> +bzr-svn-1.0.0.ebuild,
   +metadata.xml:
   Initial import. ebuild originated from bazaar overlay, IIRC.
-

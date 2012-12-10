@@ -1,6 +1,118 @@
 # ChangeLog for net-analyzer/linkchecker
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/linkchecker/ChangeLog,v 1.56 2011/07/11 21:25:58 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/linkchecker/ChangeLog,v 1.82 2012/11/12 18:34:05 jlec Exp $
+
+*linkchecker-8.2 (12 Nov 2012)
+
+  12 Nov 2012; Justin Lecher <jlec@gentoo.org> +linkchecker-8.2.ebuild:
+  Version Bump
+
+*linkchecker-8.1 (14 Oct 2012)
+
+  14 Oct 2012; Justin Lecher <jlec@gentoo.org> +linkchecker-8.1.ebuild:
+  Version BUmp
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> linkchecker-7.9.ebuild:
+  x86 stable wrt bug #429154
+
+  03 Sep 2012; Michael Palimaka <kensington@gentoo.org> linkchecker-7.9.ebuild,
+  linkchecker-8.0.ebuild:
+  Add missing slot dependencies on Qt.
+
+*linkchecker-8.0 (03 Sep 2012)
+
+  03 Sep 2012; Justin Lecher <jlec@gentoo.org> +files/8.0-missing-files.patch,
+  +linkchecker-8.0.ebuild, +files/linkchecker-8.0-desktop.patch, metadata.xml:
+  Version Bump
+
+  26 Aug 2012; Justin Lecher <jlec@gentoo.org> -files/5.2-missing-files.patch,
+  -linkchecker-7.1.ebuild, -linkchecker-7.6.ebuild, -linkchecker-7.7.ebuild,
+  -linkchecker-7.8.ebuild:
+  Drop old
+
+  24 Aug 2012; Michael Weber <xmw@gentoo.org> linkchecker-7.8.ebuild:
+  ppc stable (bug 420633).
+
+  18 Aug 2012; Anthony G. Basile <blueness@gentoo.org> linkchecker-7.9.ebuild:
+  Stable ppc, bug #429154
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> linkchecker-7.9.ebuild:
+  Stable for amd64, wrt bug #429154
+
+  04 Jul 2012; Jeff Horelick <jdhore@gentoo.org> linkchecker-7.8.ebuild:
+  marked x86 per bug 420633
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> linkchecker-7.8.ebuild:
+  Stable for amd64, wrt bug #420633
+
+*linkchecker-7.9 (11 Jun 2012)
+
+  11 Jun 2012; Justin Lecher <jlec@gentoo.org> +linkchecker-7.9.ebuild:
+  Version Bump
+
+*linkchecker-7.8 (13 May 2012)
+
+  13 May 2012; Justin Lecher <jlec@gentoo.org> +linkchecker-7.8.ebuild:
+  Version BUmp
+
+  23 Apr 2012; Justin Lecher <jlec@gentoo.org> -linkchecker-5.2.ebuild,
+  -linkchecker-7.4.ebuild, -linkchecker-7.5.ebuild:
+  Cleaned old
+
+*linkchecker-7.7 (23 Apr 2012)
+
+  23 Apr 2012; Justin Lecher <jlec@gentoo.org> +linkchecker-7.7.ebuild:
+  Version Bump
+
+*linkchecker-7.6 (31 Mar 2012)
+
+  31 Mar 2012; Justin Lecher <jlec@gentoo.org> +linkchecker-7.6.ebuild:
+  Version BUmp
+
+  02 Mar 2012; Justin Lecher <jlec@gentoo.org> ChangeLog:
+  Dropped old broken, #386671
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> linkchecker-7.1.ebuild:
+  Marking linkchecker-7.1 ppc for bug 386673
+
+*linkchecker-7.5 (13 Feb 2012)
+
+  13 Feb 2012; Justin Lecher <jlec@gentoo.org> -linkchecker-5.5.ebuild,
+  -linkchecker-6.9.ebuild, -linkchecker-7.0.ebuild, -linkchecker-7.2.ebuild,
+  -linkchecker-7.3.ebuild, +linkchecker-7.5.ebuild:
+  Version Bump, dropped old
+
+*linkchecker-7.4 (07 Jan 2012)
+
+  07 Jan 2012; Justin Lecher <jlec@gentoo.org> +files/7.4-missing-files.patch,
+  linkchecker-6.9.ebuild, linkchecker-7.0.ebuild, linkchecker-7.1.ebuild,
+  linkchecker-7.2.ebuild, linkchecker-7.3.ebuild, +linkchecker-7.4.ebuild:
+  Version Bump
+
+*linkchecker-7.3 (25 Dec 2011)
+
+  25 Dec 2011; Justin Lecher <jlec@gentoo.org> +linkchecker-7.3.ebuild:
+  Version Bump
+
+  11 Dec 2011; Markus Meier <maekke@gentoo.org> linkchecker-7.1.ebuild:
+  x86 stable, bug #386673
+
+  19 Nov 2011; Markos Chandras <hwoarang@gentoo.org> linkchecker-7.1.ebuild:
+  Stable on amd64 wrt bug #386673
+
+*linkchecker-7.2 (20 Oct 2011)
+
+  20 Oct 2011; Justin Lecher <jlec@gentoo.org> +linkchecker-7.2.ebuild,
+  metadata.xml:
+  Version Bump
+
+*linkchecker-7.1 (14 Aug 2011)
+
+  14 Aug 2011; Justin Lecher <jlec@gentoo.org> +linkchecker-7.1.ebuild:
+  Version Bump
+
+  08 Aug 2011; Markos Chandras <hwoarang@gentoo.org> linkchecker-7.0.ebuild:
+  Restrict 2.4 and 2.5 Python ABIs. Update HOMEPAGE. Patch by Arfrever.
 
   11 Jul 2011; Justin Lecher <jlec@gentoo.org> linkchecker-6.9.ebuild,
   linkchecker-7.0.ebuild, metadata.xml:
@@ -236,4 +348,3 @@
   23 Apr 2004; Stuart Herbert <stuart@gentoo.org> linkchecker-1.12.0.ebuild,
   metadata.xml:
   Initial import; thanks to Carlo <current@myrealbox.com>; bug #40259
-

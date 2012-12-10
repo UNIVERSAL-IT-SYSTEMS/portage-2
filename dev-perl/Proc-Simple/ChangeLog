@@ -1,6 +1,40 @@
 # ChangeLog for dev-perl/Proc-Simple
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Proc-Simple/ChangeLog,v 1.33 2011/07/25 09:08:25 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Proc-Simple/ChangeLog,v 1.42 2012/11/18 18:56:58 tove Exp $
+
+*Proc-Simple-1.310.0 (18 Nov 2012)
+
+  18 Nov 2012; Torsten Veller <tove@gentoo.org> +Proc-Simple-1.310.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Proc-Simple-1.24.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> Proc-Simple-1.24.ebuild,
+  Proc-Simple-1.300.0.ebuild:
+  Drop ia64/sparc keywords
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Proc-Simple-1.300.0.ebuild:
+  x86 stable wrt bug #400207
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> Proc-Simple-1.300.0.ebuild:
+  Marking Proc-Simple-1.300.0 ppc for bug 400207
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Proc-Simple-1.300.0.ebuild:
+  Stable for amd64, wrt bug #400207
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Proc-Simple-1.27.ebuild,
+  -Proc-Simple-1.280.0.ebuild, -Proc-Simple-1.290.0.ebuild:
+  Cleanup
+
+*Proc-Simple-1.300.0 (03 Aug 2011)
+
+  03 Aug 2011; Torsten Veller <tove@gentoo.org> +Proc-Simple-1.300.0.ebuild:
+  Version bump
 
 *Proc-Simple-1.290.0 (25 Jul 2011)
 

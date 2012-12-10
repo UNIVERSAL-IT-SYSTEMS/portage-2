@@ -1,6 +1,15 @@
 # ChangeLog for app-forensics/rifiuti
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-forensics/rifiuti/ChangeLog,v 1.6 2011/06/26 06:31:52 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-forensics/rifiuti/ChangeLog,v 1.9 2012/11/25 09:51:10 radhermit Exp $
+
+  25 Nov 2012; Tim Harder <radhermit@gentoo.org> rifiuti-20040505_p1.ebuild:
+  Fix LICENSE (bug #444482 by ulm).
+
+  27 Oct 2012; Agostino Sarubbo <ago@gentoo.org> rifiuti-20040505_p1.ebuild:
+  Add ~amd64, wrt bug #439810
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant metadata.
 
   26 Jun 2011; Tim Harder <radhermit@gentoo.org> rifiuti-20040505_p1.ebuild:
   Respect LDFLAGS (bug #331827).
@@ -20,4 +29,3 @@
   13 Dec 2004; Daniel Black <dragonheart@gentoo.org> +metadata.xml,
   +rifiuti-20040505_p1.ebuild:
   Initial commit as per bug #73300
-

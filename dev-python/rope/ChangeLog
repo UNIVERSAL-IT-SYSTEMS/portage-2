@@ -1,6 +1,34 @@
 # ChangeLog for dev-python/rope
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/rope/ChangeLog,v 1.8 2010/07/01 04:34:23 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/rope/ChangeLog,v 1.15 2012/05/29 12:07:58 ago Exp $
+
+  29 May 2012; Agostino Sarubbo <ago@gentoo.org> rope-0.9.3.ebuild:
+  Stable for amd64, wrt bug #394851
+
+  29 May 2012; Jeff Horelick <jdhore@gentoo.org> rope-0.9.3.ebuild:
+  marked x86 per bug 394851
+
+  28 May 2012; Mike Gilbert <floppym@gentoo.org> rope-0.9.3.ebuild,
+  rope-0.9.4.ebuild:
+  Depend on setuptools, as suggested by Arfrever.
+
+  28 May 2012; Kacper Kowalik <xarthisius@gentoo.org> rope-0.9.3.ebuild:
+  Clean up PYTHON_* vars in stable candidate
+
+*rope-0.9.4 (28 May 2012)
+
+  28 May 2012; Kacper Kowalik <xarthisius@gentoo.org> +rope-0.9.4.ebuild:
+  Version bump wrt #417503. Thanks to Ian Delaney <johneed@hotmail.com> for
+  patch
+
+  12 Apr 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  files/rope-0.9.3-python2.7.patch:
+  Fix patch description. Thanks to Arfrever
+
+  12 Apr 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/rope-0.9.3-python2.7.patch, rope-0.9.3.ebuild:
+  Apply upstream changesets to fix tests failures with python 2.7 wrt #326401 by
+  Arfrever Frehtes Taifersar Arahesis
 
   01 Jul 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   rope-0.9.3.ebuild, +files/rope-0.9.3-fix_tests_results.patch:

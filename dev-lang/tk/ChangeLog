@@ -1,6 +1,98 @@
 # ChangeLog for dev-lang/tk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/tk/ChangeLog,v 1.154 2011/03/23 19:05:54 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/tk/ChangeLog,v 1.177 2012/12/05 08:51:37 ulm Exp $
+
+  05 Dec 2012; Ulrich Müller <ulm@gentoo.org> tk-8.4.19-r1.ebuild,
+  tk-8.5.10-r1.ebuild, tk-8.5.11-r1.ebuild, tk-8.5.13.ebuild:
+  Specify LICENSE more precisely, bug 445468.
+
+  05 Dec 2012; Justin Lecher <jlec@gentoo.org> tk-8.5.13.ebuild,
+  +files/tk-8.5.13-multilib.patch:
+  Avoid problems with autotools by only modifying configure.in, #445432
+
+*tk-8.5.13 (29 Nov 2012)
+
+  29 Nov 2012; Justin Lecher <jlec@gentoo.org>
+  -files/remove-control-v-8.4.9.diff, files/tk-8.4.15-aqua.patch,
+  -tk-8.4.18.ebuild, -tk-8.4.18-r1.ebuild, -tk-8.5.7.ebuild,
+  -tk-8.5.7-r1.ebuild, -tk-8.5.8-r1.ebuild, -tk-8.5.9-r1.ebuild,
+  +files/tk-8.5.10-conf.patch, -tk-8.5.11.ebuild, +tk-8.5.13.ebuild,
+  -files/tk-CVE-2007-4851.patch:
+  Version Bump, #444296; Cleaned old
+
+  04 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  +files/tk-8.5.11-fix-name-collision-uclibc.patch, tk-8.5.11-r1.ebuild,
+  tk-8.5.11.ebuild:
+  Patch 8.5.11 to build on uclibc, bug #441630
+
+  03 Aug 2012; Mike Frysinger <vapier@gentoo.org> tk-8.5.11-r1.ebuild:
+  Make sure we link against fontconfig since we use it.
+
+*tk-8.5.11-r1 (07 Jun 2012)
+
+  07 Jun 2012; Justin Lecher <jlec@gentoo.org> +tk-8.5.11-r1.ebuild:
+  Drop standard lib location from tkConfig.sh equal to tcl, #420129
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> tk-8.5.11.ebuild:
+  keyword ~amd64-fbsd
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  +files/tcl-8.5.9-gentoo-fbsd.patch, tk-8.5.11.ebuild:
+  port tcl fbsd patch to let it build sanely on FreeBSD: the patch is for
+  tcl.m4 and tk bundles it own unfixed version...
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> tk-8.5.10-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #406607
+
+  19 Mar 2012; Markus Meier <maekke@gentoo.org> tk-8.5.10-r1.ebuild:
+  arm stable, bug #406607
+
+  19 Mar 2012; Justin Lecher <jlec@gentoo.org> tk-8.5.11.ebuild:
+  Drop unnessecary stripping of slashes, #408261, thanks Kevin Pyle for the
+  patch
+
+  11 Mar 2012; Jeff Horelick <jdhore@gentoo.org> tk-8.5.10-r1.ebuild:
+  marked x86 per bug 406607
+
+  06 Mar 2012; Jeroen Roovers <jer@gentoo.org> tk-8.5.10-r1.ebuild:
+  Stable for HPPA (bug #406607).
+
+*tk-8.5.10-r1 (06 Mar 2012)
+
+  06 Mar 2012; Justin Lecher <jlec@gentoo.org> -tk-8.5.10.ebuild,
+  +tk-8.5.10-r1.ebuild:
+  Revbump to force rebuild, which is needed because of the removed static
+  archives
+
+  06 Mar 2012; Justin Lecher <jlec@gentoo.org> tk-8.5.10.ebuild:
+  Remove last bit of bad handling of static-libs, #407083
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> tk-8.5.10.ebuild:
+  Marking tk-8.5.10 ppc for bug 406607
+
+  05 Mar 2012; Agostino Sarubbo <ago@gentoo.org> tk-8.5.10.ebuild:
+  Stable for amd64, wrt bug #406607
+
+  04 Mar 2012; Justin Lecher <jlec@gentoo.org> tk-8.5.10.ebuild,
+  tk-8.5.11.ebuild:
+  Revert static-libs handling, #406905; push changes from 8.5.10 to .11
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> tk-8.5.10.ebuild:
+  Marking tk-8.5.10 ppc64 for bug 406607
+
+  02 Mar 2012; Justin Lecher <jlec@gentoo.org> tk-8.5.10.ebuild:
+  Add missing dies, remove unnessecary dies, handle static-libs
+
+*tk-8.5.11 (02 Mar 2012)
+
+  02 Mar 2012; Justin Lecher <jlec@gentoo.org> +tk-8.5.11.ebuild,
+  +files/tk-8.5.11-fedora-xft.patch:
+  Version Bump
+
+*tk-8.5.10 (04 Oct 2011)
+
+  04 Oct 2011; Justin Lecher <jlec@gentoo.org> +tk-8.5.10.ebuild, metadata.xml:
+  Version Bump
 
   23 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org> tk-8.5.9-r1.ebuild:
   ppc64 stable wrt #353854

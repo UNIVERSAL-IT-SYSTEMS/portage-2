@@ -1,4 +1,4 @@
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/mips/use.mask,v 1.44 2011/07/14 18:02:35 mattst88 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/mips/use.mask,v 1.59 2012/11/24 21:38:12 floppym Exp $
 
 # Unmask the flag which corresponds to ARCH.
 -mips
@@ -28,8 +28,6 @@ openexr
 # Ryan Hill <dirtyepic@gentoo.org>
 # Various Gnome flags
 beagle
-esd
-gstreamer
 gtkhtml
 gnome
 
@@ -38,18 +36,12 @@ gnome
 mpi
 
 # Ryan Hill <dirtyepic@gentoo.org>
-# No version of xulrunner keyworded at the moment
-xulrunner
-
-# Ryan Hill <dirtyepic@gentoo.org>
 # virtual/blas virtual/cblas and virtual/lapack not keyworded
 lapack
 blas
 
 # Ryan Hill <dirtyepic@gentoo.org>
-# We have neither.
 dell
-laptop
 
 # Alexander Færøy <eroyf@gentoo.org>
 # Masking for now.
@@ -140,6 +132,17 @@ video_cards_trident
 video_cards_vmware
 video_cards_voodoo
 
+# Matt Turner <mattst88@gentoo.org>
+# Mask more VIDEO_CARDs added with mesa-8.0
+video_cards_r100
+video_cards_r200
+video_cards_r300
+video_cards_r600
+video_cards_i915
+video_cards_i965
+# vmware wasn't added with mesa-8.0, but it should still be masked
+video_cards_vmware
+
 # 2006/02/05 - Donnie Berkholz <dberkholz@gentoo.org>
 # Modular X: mask for architectures on which they aren't available
 video_cards_apm
@@ -152,21 +155,15 @@ video_cards_intel
 video_cards_neomagic
 video_cards_nsc
 video_cards_rendition
-video_cards_siliconmotion
 video_cards_tga
 video_cards_tseng
 video_cards_vesa
 video_cards_vga
-video_cards_radeonhd
 video_cards_ast
 
 # Diego Pettenò <flameeyes@gentoo.org>
 # Until xine-lib's keywording can be maintained, please leave it masked.
 xine
-
-# Stephen P. Becker <geoman@gentoo.org>
-# remasking hal because of numerous dependency issues
-hal
 
 # Stephen P. Becker <geoman@gentoo.org>
 # masking mono because it doesn't work on mips
@@ -190,10 +187,6 @@ pcmcia
 # John N. Laliberte <allanonjl@gentoo.org>
 # mask scanner support
 scanner
-
-# Stephen P. Becker <geoman@gentoo.org>
-# mad just spits out static on mips (ip22)
-mad
 
 # Armando Di Cianno <fafhrd@gentoo.org>
 # gnustep is currently unbuildable on mips - masking this to repair windowmaker
@@ -271,14 +264,18 @@ voodoo3
 smartcard
 emacs
 
-# see email to gentoo-dev with subject "use.mask and PHP5's crazy IUSE"
-# Dated Sat, 31 Jul 2004 14:49:28 -0700, from robbat2@gentoo.org
-# all of these are binary-only, and not presently available on this
-# architecture.
-php
+#
+# Anthony G. Basile <blueness@gentoo.org> (18 Jul 2012)
+# php is an old mask which works now
+# pike is no longer a use flag
+#
+## see email to gentoo-dev with subject "use.mask and PHP5's crazy IUSE"
+## Dated Sat, 31 Jul 2004 14:49:28 -0700, from robbat2@gentoo.org
+## all of these are binary-only, and not presently available on this
+## architecture.
+#php
+#pike
 djbfft
-glitz
-pike
 timidity
 
 # Mask all non-mips arch keywords
@@ -319,15 +316,6 @@ qdbm
 smartcard
 openct
 
-# mips doesn't support cpufeq, at least on
-# the machines we use.
-#
-# Same goes for battery support.  No one has
-# seen a mips laptop since the dinosaurs
-# lived.
-cpufreq
-battery
-
 # kumba (02 Jun 2007)
 # pulseaudio hasn't been tested on mips; maybe someday
 pulseaudio
@@ -365,6 +353,18 @@ xemacs
 # no native mips/linux code generation, see bug 319649
 ocamlopt
 
+# Matt Turner <mattst88@gentoo.org) (10 Feb 2012)
+# mask d3d since we don't have wine
+d3d
+
+# Matt Turner <mattst88@gentoo.org) (10 Feb 2012)
+# mask wayland since dev-libs/wayland isn't keyworded
+wayland
+
+# Michael Sterrett <mr_bones_@gentoo.org) (24 Aug 2012)
+# media-sound/fluidsynth isn't keyworded
+fluidsynth
+
 # Mips USE flags
 -n32
 -n64
@@ -372,3 +372,12 @@ ocamlopt
 -ip28
 -ip30
 -fixed-point
+
+# Michał Górny <mgorny@gentoo.org> (31 Oct 2012)
+# Mask PYTHON_TARGETS for implementations not keyworded on this arch.
+python_targets_pypy1_8
+python_targets_pypy1_9
+python_targets_jython2_5
+python_single_target_pypy1_8
+python_single_target_pypy1_9
+python_single_target_jython2_5

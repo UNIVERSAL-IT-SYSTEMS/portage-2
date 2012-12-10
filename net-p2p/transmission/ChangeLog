@@ -1,6 +1,310 @@
 # ChangeLog for net-p2p/transmission
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/transmission/ChangeLog,v 1.155 2011/07/24 08:54:10 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/transmission/ChangeLog,v 1.220 2012/11/21 14:34:50 ssuominen Exp $
+
+  21 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -transmission-2.61.ebuild:
+  old
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> transmission-2.73.ebuild:
+  Stable for x86, wrt bug #440644
+
+  15 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> transmission-2.73.ebuild:
+  Raise EAPI to 5 for verbose build log wrt #441854
+
+  04 Nov 2012; <ago@gentoo.org> transmission-2.73.ebuild:
+  Stable for amd64, wrt bug #440644
+
+  01 Nov 2012; Anthony G. Basile <blueness@gentoo.org> transmission-2.73.ebuild:
+  stable ppc ppc64, bug #440644
+
+  31 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -transmission-2.71.ebuild, -transmission-2.72.ebuild:
+  old
+
+*transmission-2.73 (31 Oct 2012)
+
+  31 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transmission-2.73.ebuild:
+  Version bump.
+
+*transmission-2.72 (23 Oct 2012)
+
+  23 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transmission-2.72.ebuild:
+  Version bump wrt #439022 by Andrew Savchenko
+
+  15 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> transmission-2.61.ebuild,
+  transmission-2.71.ebuild:
+  Pull in >=dev-libs/glib-2 always for glib-gettextize command and eautoreconf
+  wrt #437972
+
+  15 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/transmission-2.51-fbsd.patch, -transmission-2.52.ebuild,
+  -transmission-9999.ebuild:
+  old
+
+  08 Oct 2012; Andreas Schuerch <nativemad@gentoo.org>
+  transmission-2.61.ebuild:
+  x86 stable, see bug 428196
+
+  06 Oct 2012; Anthony G. Basile <blueness@gentoo.org> transmission-2.61.ebuild:
+  stable ppc ppc64, bug #428196
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> transmission-2.61.ebuild:
+  Stable for amd64, wrt bug #428196
+
+*transmission-2.71 (29 Sep 2012)
+
+  29 Sep 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transmission-2.71.ebuild:
+  Version bump.
+
+  25 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> transmission-2.61.ebuild,
+  transmission-9999.ebuild:
+  Punt ebuild LINGUAS handling since it is breaking GTK+ translation
+  installation wrt #428160 by Guillaume Ayoub
+
+  12 Aug 2012; Christoph Junghans <ottxor@gentoo.org> transmission-2.52.ebuild,
+  transmission-2.61.ebuild, transmission-9999.ebuild:
+  added prefix keywords
+
+  27 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> transmission-2.61.ebuild,
+  transmission-9999.ebuild:
+  Force at least x11-libs/gtk+ >= 3.4 wrt #428272
+
+  25 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -transmission-2.51.ebuild, -transmission-2.60.ebuild:
+  old
+
+  25 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> transmission-2.52.ebuild:
+  ppc stable wrt #421537
+
+*transmission-2.61 (25 Jul 2012)
+
+  25 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transmission-2.61.ebuild, transmission-9999.ebuild:
+  Version bump.
+
+*transmission-2.60 (10 Jul 2012)
+
+  10 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transmission-2.60.ebuild, transmission-9999.ebuild:
+  Version bump.
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> transmission-2.52.ebuild:
+  Marking transmission-2.52 ppc64 for bug 421537
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> transmission-2.52.ebuild:
+  marked x86 per bug 421537
+
+  17 Jun 2012; Agostino Sarubbo <ago@gentoo.org> transmission-2.52.ebuild:
+  Stable for amd64, wrt bug #421537
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> transmission-2.51.ebuild,
+  transmission-2.52.ebuild, transmission-9999.ebuild:
+  tweak inherits so repoman can parse them, and inherit user for enewgroup and
+  enewuser
+
+*transmission-2.52 (24 May 2012)
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transmission-2.52.ebuild, transmission-9999.ebuild:
+  Version bump. Remove call to intltoolize --force --copy --automake because
+  autotools.eclass runs it on it's own. Require more recent net-libs/miniupnpc
+  and dev-libs/libappindicator.
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> transmission-2.51.ebuild,
+  +files/transmission-2.51-fbsd.patch:
+  Fix building for ~x86-fbsd wrt #400929 by Naohiro Aota
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -transmission-2.50-r1.ebuild, -transmission-2.50-r2.ebuild,
+  -files/transmission-2.50-build-with-natpmp1.patch,
+  -files/transmission-2.50-punt_broken_CXX_check.patch,
+  -files/transmission-2.50-segfault.patch:
+  old
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> transmission-2.51.ebuild:
+  ppc/ppc64/x86 stable wrt #416591
+
+  19 May 2012; Agostino Sarubbo <ago@gentoo.org> transmission-2.51.ebuild:
+  Stable for AMD64, wrt bug #416591
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> transmission-2.50-r1.ebuild,
+  transmission-2.50-r2.ebuild, transmission-2.51.ebuild,
+  transmission-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*transmission-2.51 (12 Apr 2012)
+
+  12 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transmission-2.51.ebuild, transmission-9999.ebuild:
+  Version bump. Stop applying -build-with-natpmp1.patch because upstream
+  updated the internal copy of libnatpmp which is now compatible with our
+  system copy. Move eautoreconf after intltoolize to avoid hitting maintainer
+  mode in src_compile().
+
+*transmission-2.50-r2 (08 Apr 2012)
+
+  08 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transmission-2.50-r2.ebuild, +files/transmission-2.50-segfault.patch:
+  Fix segmentation fault when opening a torrent file on systems that don't
+  define G_USER_DIRECTORY_DOWNLOAD wrt #408067 by Elijah El Lazkani
+
+  21 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -transmission-2.22.ebuild, -transmission-2.42-r1.ebuild,
+  -files/transmission-daemon.initd.6, metadata.xml:
+  old
+
+  21 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  transmission-2.50-r1.ebuild:
+  x86 stable wrt #406035
+
+  13 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  transmission-2.50-r1.ebuild:
+  amd64 stable wrt #406035
+
+  12 Mar 2012; Markus Meier <maekke@gentoo.org> transmission-2.50-r1.ebuild:
+  add ~arm, bug #400929
+
+  10 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  transmission-2.50-r1.ebuild,
+  +files/transmission-2.50-punt_broken_CXX_check.patch:
+  Punt broken AC_CHECK_PROG check for CXX wrt #407137
+
+  06 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  transmission-2.50-r1.ebuild, transmission-9999.ebuild:
+  Remove pointless USE="nls" wrt #407045 by Luis Carrera
+
+  03 Mar 2012; Markus Meier <maekke@gentoo.org> transmission-2.42-r1.ebuild:
+  add ~arm, bug #400929
+
+*transmission-9999 (02 Mar 2012)
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transmission-9999.ebuild:
+  Version control ebuild for testing.
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  transmission-2.50-r1.ebuild, metadata.xml:
+  Remove USE="kde" and always install transmission-magnet.protocol file when
+  USE="qt4" is enabled. USE="lightweight" for low-resource systems.
+  Run `lrelease` command in src_compile() instead of src_install() phase.
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/transmission-2.33-0001-configure.ac.patch,
+  -files/transmission-2.33-0002-config.in-4-qt.pro.patch,
+  -transmission-2.41.ebuild,
+  -files/transmission-2.41-0003-system-miniupnpc.patch,
+  -files/transmission-2.41-noutp.patch, -transmission-2.50.ebuild,
+  metadata.xml:
+  old
+
+*transmission-2.50-r1 (02 Mar 2012)
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transmission-2.50-r1.ebuild,
+  +files/transmission-2.50-build-with-natpmp1.patch:
+  Fix regression introduced in ebuild version 2.50 by restoring
+  use of system libnatpmp.
+
+*transmission-2.50 (01 Mar 2012)
+
+  01 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transmission-2.50.ebuild:
+  Version bump wrt #405569 using Qt4 translation patch from #403027.
+  Thanks to Alejandro Ojeda and "Nikoli".
+
+  14 Feb 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  ayatana is now global per http://archives.gentoo.org/gentoo-
+  dev/msg_f2eb26947d0c86020625a9aeca6f25e4.xml
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  transmission-2.42-r1.ebuild:
+  Rekeyword ~ppc/~ppc64 wrt #400929
+
+  26 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Help to maintain transmission.
+
+  26 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -transmission-2.31.ebuild, -transmission-2.31-r1.ebuild,
+  -files/transmission-2.31-0001-configure.ac.patch,
+  -files/transmission-2.31-0002-config.in-4-qt.pro.patch,
+  -files/transmission-2.31-0003-system-miniupnpc.patch,
+  -files/transmission-2.31-no-tests.patch,
+  -files/transmission-2.31-qt-libutp.patch, -transmission-2.33.ebuild,
+  -transmission-2.33-r1.ebuild,
+  -files/transmission-2.33-0003-system-miniupnpc.patch,
+  -transmission-2.42.ebuild, -files/transmission-2.42-0001-configure.ac.patch,
+  -files/transmission-2.42-0003-system-miniupnpc.patch,
+  -files/transmission-2.42-0005-build-with-natpmp1.patch,
+  -files/transmission-2.42-natpmp-system.patch,
+  -files/transmission-2.42-respect-cflags.patch,
+  -files/transmission-daemon.initd.7:
+  old
+
+*transmission-2.42-r1 (26 Jan 2012)
+
+  26 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transmission-2.42-r1.ebuild:
+  USE="ayatana" for libappindicator wrt #400815 by Luis Medinas. Remove
+  USE="utp" because USE"-utp" fails to build wrt #400865 by Ben Kohler. Fix
+  patch for building with USE="qt4" wrt #400923. Remove deprecated support
+  for GTK+-2.x and enable GTK+-3.x with USE="gtk".
+
+  26 Jan 2012; Mike Gilbert <floppym@gentoo.org>
+  +files/transmission-2.42-natpmp-system.patch:
+  Restore patch with keyword substitution disabled.
+
+  26 Jan 2012; Mike Gilbert <floppym@gentoo.org>
+  -files/transmission-2.42-natpmp-system.patch:
+  Remove bad patch due to cvs keyword substitution.
+
+*transmission-2.42 (25 Jan 2012)
+
+  25 Jan 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +transmission-2.42.ebuild, +files/transmission-2.42-0001-configure.ac.patch,
+  +files/transmission-2.42-0003-system-miniupnpc.patch,
+  +files/transmission-2.42-0005-build-with-natpmp1.patch,
+  +files/transmission-2.42-natpmp-system.patch,
+  +files/transmission-2.42-respect-cflags.patch, metadata.xml:
+  Initial commit of 2.42. Fixes bugs #389167 and #376647.
+
+  03 Jan 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  transmission-2.41.ebuild:
+  Use doc array to make everyone happy.
+
+  02 Jan 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  transmission-2.41.ebuild:
+  Make it build on my system - add intltool/gettext to hard deps, fixes bug
+  #379887. Reorder deps alphabetically. Depend on any ssl provided by curl.
+
+  04 Dec 2011; Sven Wegener <swegener@gentoo.org>
+  files/transmission-daemon.initd.6, files/transmission-daemon.initd.7,
+  files/transmission-daemon.initd.8:
+  reload is extra_started_commands
+
+  26 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org> transmission-2.41.ebuild,
+  +files/transmission-2.41-noutp.patch:
+  Fix build issue when USE=-utp, bug #290737.
+
+  19 Oct 2011; Peter Volkov <pva@gentoo.org> transmission-2.41.ebuild:
+  Drop noexistent configure options.
+
+*transmission-2.41 (19 Oct 2011)
+
+  19 Oct 2011; Peter Volkov <pva@gentoo.org> +transmission-2.41.ebuild,
+  +files/transmission-2.41-0003-system-miniupnpc.patch:
+  Version bump, bug 387035 wrt lexa and Daniel T. Do not reset permissions, bug
+  349867 thank Tony Levi for report and Nikolaj Sjujskij for getting me back on
+  issue.
+
+*transmission-2.33-r1 (05 Aug 2011)
+
+  05 Aug 2011; Peter Volkov <pva@gentoo.org> +transmission-2.33-r1.ebuild,
+  files/transmission-2.33-0003-system-miniupnpc.patch:
+  Make compatible with system miniupnpc-1.6, bug #376795 wrt Oleg.
 
 *transmission-2.33 (24 Jul 2011)
 
@@ -760,4 +1064,3 @@
   +transmission-0.5.ebuild:
   Initial import. Thanks to Eric Johney <ericjohney@gmail.com> for this ebuild
   in #124721.
-

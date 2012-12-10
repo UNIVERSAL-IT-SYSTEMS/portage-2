@@ -1,6 +1,26 @@
 # ChangeLog for sci-visualization/xyscan
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/xyscan/ChangeLog,v 1.11 2011/07/20 17:03:54 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/xyscan/ChangeLog,v 1.16 2012/08/07 04:52:22 bicatali Exp $
+
+  07 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml,
+  xyscan-3.3.1.ebuild:
+  keyword amd64-linux, x86-linux, cleaned up ebuild
+
+  21 May 2012; Johannes Huber <johu@gentoo.org> -xyscan-3.2.1.ebuild,
+  -xyscan-3.2.2.ebuild, -xyscan-3.3.0.ebuild:
+  Remove old wrt bug #311481.
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xyscan-3.3.1.ebuild:
+  x86 stable wrt bug #414011
+
+  08 May 2012; Agostino Sarubbo <ago@gentoo.org> xyscan-3.3.1.ebuild:
+  Stable for amd64, wrt bug #414011
+
+*xyscan-3.3.1 (29 Mar 2012)
+
+  29 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> +xyscan-3.3.1.ebuild:
+  Version bump.. Respect for LINGUAS, add missing dep, and bump EAPI to 4.
+  Thanks kensington, bug #409777
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #105599
@@ -47,4 +67,3 @@
   +files/xyscan-3.02-docs.patch, +metadata.xml, +xyscan-3.02.ebuild:
   New package (see bug #226481). Thanks much to Benjamin Bannier
   <benni@netronaut.de> for his ebuild.
-

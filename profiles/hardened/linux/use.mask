@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/hardened/linux/use.mask,v 1.12 2011/07/06 22:37:55 anarchy Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/hardened/linux/use.mask,v 1.17 2012/10/23 22:47:18 zorry Exp $
 
 -hardened
 
@@ -15,9 +15,6 @@ pch
 # prelink is masked for hardened
 prelink
 
-# opencl is used by nvidia drivers, bug #367225
-opencl
+# orc is jit (dev-lang/orc)
+orc
 
-# Will continue to break mozilla products on hardend
-methodjit
-pgo

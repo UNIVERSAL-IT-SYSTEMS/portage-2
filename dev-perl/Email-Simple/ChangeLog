@@ -1,6 +1,63 @@
 # ChangeLog for dev-perl/Email-Simple
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Email-Simple/ChangeLog,v 1.52 2010/03/18 19:33:57 darkside Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Email-Simple/ChangeLog,v 1.68 2012/11/22 10:14:03 ago Exp $
+
+  22 Nov 2012; Agostino Sarubbo <ago@gentoo.org> Email-Simple-2.102.0.ebuild:
+  Stable for x86, tested by Vincent Olivert Riera <peratu@carrosses.com>, wrt
+  bug #433247
+
+  11 Oct 2012; Agostino Sarubbo <ago@gentoo.org> Email-Simple-2.102.0.ebuild:
+  Stable for amd64, wrt bug #433247
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  Email-Simple-2.102.0.ebuild:
+  stable ppc64, bug #433247
+
+  10 Oct 2012; Brent Baude <ranger@gentoo.org> Email-Simple-2.102.0.ebuild:
+  Marking Email-Simple-2.102.0 ppc for bug 433247
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -Email-Simple-2.100.0.ebuild:
+  Cleanup
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> Email-Simple-2.100.0.ebuild,
+  Email-Simple-2.101.0.ebuild, Email-Simple-2.102.0.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  09 Aug 2012; Brent Baude <ranger@gentoo.org> Email-Simple-2.101.0.ebuild:
+  Marking Email-Simple-2.101.0 ppc for bug 418809
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> Email-Simple-2.101.0.ebuild:
+  Marking Email-Simple-2.101.0 ppc64 for bug 418809
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> Email-Simple-2.101.0.ebuild:
+  Stable for amd64, wrt bug #418809
+
+  01 Aug 2012; Jeff Horelick <jdhore@gentoo.org> Email-Simple-2.101.0.ebuild:
+  marked x86 per bug 418809
+
+*Email-Simple-2.102.0 (13 Jul 2012)
+
+  13 Jul 2012; Torsten Veller <tove@gentoo.org> +Email-Simple-2.102.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*Email-Simple-2.101.0 (09 Jan 2012)
+
+  09 Jan 2012; Torsten Veller <tove@gentoo.org> +Email-Simple-2.101.0.ebuild:
+  Version bump. Documentation updates
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Email-Simple-2.100.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Email-Simple-2.100.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Email-Simple-2.100.0 (31 Aug 2011)
+
+  31 Aug 2011; Torsten Veller <tove@gentoo.org> +Email-Simple-2.100.0.ebuild:
+  Change version scheme
 
   18 Mar 2010; Jeremy Olexa <darkside@gentoo.org> Email-Simple-2.100.ebuild:
   add ~x86-solaris ~sparc-solaris kw, as tested on bug 308683
@@ -209,4 +266,3 @@
   20 Aug 2006; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Email-Simple-1.970.ebuild:
   Dep for Email-Abstract
-

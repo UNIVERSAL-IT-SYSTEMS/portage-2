@@ -1,6 +1,53 @@
 # ChangeLog for kde-misc/kanyremote
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/kanyremote/ChangeLog,v 1.19 2011/03/24 10:15:46 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/kanyremote/ChangeLog,v 1.31 2012/10/23 20:39:33 hwoarang Exp $
+
+*kanyremote-6.1 (23 Oct 2012)
+
+  23 Oct 2012; Markos Chandras <hwoarang@gentoo.org> +kanyremote-6.1.ebuild:
+  Version bump
+
+  10 Sep 2012; Johannes Huber <johu@gentoo.org> -kanyremote-5.13.ebuild,
+  -kanyremote-6.0.ebuild:
+  Remove old.
+
+  10 Sep 2012; Johannes Huber <johu@gentoo.org> kanyremote-6.0.1.ebuild:
+  Stable for x86, wrt bug #432896
+
+  09 Sep 2012; Agostino Sarubbo <ago@gentoo.org> kanyremote-6.0.1.ebuild:
+  Stable for amd64, wrt bug #432896
+
+  26 Aug 2012; Chris Reffett <creffett@gentoo.org> kanyremote-6.0.1.ebuild:
+  Bump 6.0.1 to EAPI 4, fix the most problematic .desktop validation issue.
+
+*kanyremote-6.0.1 (17 Aug 2012)
+
+  17 Aug 2012; Markos Chandras <hwoarang@gentoo.org> +kanyremote-6.0.1.ebuild:
+  Version bump
+
+  21 Jul 2012; Johannes Huber <johu@gentoo.org> kanyremote-5.13.ebuild,
+  kanyremote-6.0.ebuild:
+  Move from SLOT 0 to 4.
+
+*kanyremote-6.0 (09 Jun 2012)
+
+  09 Jun 2012; Markos Chandras <hwoarang@gentoo.org> +kanyremote-6.0.ebuild:
+  Version bump. Bug #420229
+
+  25 Mar 2012; Johannes Huber <johu@gentoo.org> -kanyremote-5.11.9.ebuild,
+  -kanyremote-5.12.ebuild:
+  Remove old.
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> kanyremote-5.13.ebuild:
+  x86 stable wrt bug #404771
+
+  11 Mar 2012; Agostino Sarubbo <ago@gentoo.org> kanyremote-5.13.ebuild:
+  Stable for amd64, wrt bug #404771
+
+*kanyremote-5.13 (10 Dec 2011)
+
+  10 Dec 2011; Markos Chandras <hwoarang@gentoo.org> +kanyremote-5.13.ebuild:
+  version bump
 
 *kanyremote-5.12 (24 Mar 2011)
 
@@ -81,4 +128,3 @@
   21 Apr 2009; Markos Chandras <hwoarang@gentoo.org> +metadata.xml,
   +kanyremote-5.8.2.ebuild:
   Initial commit of kanyremote program. Fixes bug #209689
-

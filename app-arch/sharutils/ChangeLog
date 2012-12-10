@@ -1,6 +1,34 @@
 # ChangeLog for app-arch/sharutils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/sharutils/ChangeLog,v 1.77 2011/07/20 13:42:12 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/sharutils/ChangeLog,v 1.86 2012/07/06 04:21:44 vapier Exp $
+
+  06 Jul 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/sharutils-4.11.1-no-gets.patch, sharutils-4.11.1.ebuild:
+  Fix building with glibc-2.16 #424994 by Stevan Bajić.
+
+  13 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> sharutils-4.11.1.ebuild:
+  ppc64 stable wrt #396763
+
+  22 Jan 2012; Agostino Sarubbo <ago@gentoo.org> sharutils-4.11.1.ebuild:
+  Stable for AMD64, wrt bug #396763
+
+  22 Jan 2012; Raúl Porcel <armin76@gentoo.org> sharutils-4.11.1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #396763
+
+  16 Jan 2012; Jeroen Roovers <jer@gentoo.org> sharutils-4.11.1.ebuild:
+  Stable for HPPA (bug #396763).
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> sharutils-4.11.1.ebuild:
+  x86 stable wrt bug #396763
+
+  12 Jan 2012; Markus Meier <maekke@gentoo.org> sharutils-4.11.1.ebuild:
+  arm stable, bug #396763
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> sharutils-4.11.1.ebuild:
+  Marking sharutils-4.11.1 ppc for bug 396763
+
+  02 Jan 2012; Agostino Sarubbo <ago@gentoo.org> sharutils-4.11.ebuild:
+  Stable for AMD64, wrt bug #396763
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #34534

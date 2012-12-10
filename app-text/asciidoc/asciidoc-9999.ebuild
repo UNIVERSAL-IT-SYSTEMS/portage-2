@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/asciidoc/asciidoc-9999.ebuild,v 1.5 2011/06/30 00:30:38 sping Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/asciidoc/asciidoc-9999.ebuild,v 1.9 2012/09/10 03:04:04 floppym Exp $
 
 EAPI="3"
 
@@ -19,7 +19,7 @@ if [ "$PV" == "9999" ]; then
 	S=${WORKDIR}/hg
 else
 	SRC_URI="mirror://sourceforge/project/${PN}/${PN}/${PV}/${P}.tar.gz"
-	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
+	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 fi
 
 LICENSE="GPL-2"
@@ -30,7 +30,7 @@ RDEPEND=">=app-text/docbook-xsl-stylesheets-1.75
 		dev-libs/libxslt
 		graphviz? ( media-gfx/graphviz )
 		app-text/docbook-xml-dtd:4.5
-		highlight? ( dev-util/source-highlight )
+		highlight? ( || ( dev-python/pygments dev-util/source-highlight ) )
 "
 DEPEND="test? ( dev-util/source-highlight
 			media-sound/lilypond
@@ -53,7 +53,7 @@ pkg_setup() {
 
 src_prepare() {
 	if ! use vim-syntax; then
-		sed -i -e '/^install/s/install-vim//' Makefile.in
+		sed -i -e '/^install/s/install-vim//' Makefile.in || die
 	else
 		sed -i\
 			-e "/^vimdir/s:@sysconfdir@/vim:${EPREFIX}/usr/share/vim/vimfiles:" \

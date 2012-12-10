@@ -1,6 +1,89 @@
 # ChangeLog for media-gfx/luminance-hdr
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/luminance-hdr/ChangeLog,v 1.7 2011/05/22 11:50:07 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/luminance-hdr/ChangeLog,v 1.25 2012/09/25 03:25:29 radhermit Exp $
+
+  25 Sep 2012; Tim Harder <radhermit@gentoo.org> -luminance-hdr-2.0.0.ebuild,
+  -luminance-hdr-2.2.1.ebuild, -files/luminance-hdr-2.2.1-no-git.patch:
+  Remove old.
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  luminance-hdr-2.3.0.ebuild:
+  x86 stable wrt bug #434302
+
+  09 Sep 2012; Tim Harder <radhermit@gentoo.org> luminance-hdr-2.3.0.ebuild:
+  Add check for SSE2 support (bug #369447 by Diego Elio Pettenò).
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> luminance-hdr-2.3.0.ebuild:
+  Stable for amd64, wrt bug #434302
+
+  10 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  luminance-hdr-2.3.0.ebuild:
+  Fix dependency over fftw. Thanks to Karl-Johan Karlsson in bug #425646.
+
+  09 Jul 2012; Tim Harder <radhermit@gentoo.org>
+  -luminance-hdr-2.3.0_beta1.ebuild:
+  Remove old.
+
+*luminance-hdr-2.3.0 (09 Jul 2012)
+
+  09 Jul 2012; Tim Harder <radhermit@gentoo.org> +luminance-hdr-2.3.0.ebuild:
+  Version bump.
+
+  30 Jun 2012; Tim Harder <radhermit@gentoo.org> -luminance-hdr-2.1.0.ebuild,
+  -files/luminance-hdr-2.1.0-libraw.patch, -luminance-hdr-2.2.0.ebuild,
+  -files/luminance-hdr-2.2.0-docs.patch,
+  -files/luminance-hdr-2.2.0-no-git.patch,
+  -files/luminance-hdr-2.2.0-openmp-automagic.patch:
+  Remove old.
+
+*luminance-hdr-2.3.0_beta1 (30 Jun 2012)
+
+  30 Jun 2012; Tim Harder <radhermit@gentoo.org>
+  +luminance-hdr-2.3.0_beta1.ebuild,
+  +files/luminance-hdr-2.3.0_beta1-no-git.patch:
+  Version bump.
+
+*luminance-hdr-2.2.1 (13 Mar 2012)
+
+  13 Mar 2012; Tim Harder <radhermit@gentoo.org> +luminance-hdr-2.2.1.ebuild,
+  +files/luminance-hdr-2.2.1-docs.patch,
+  +files/luminance-hdr-2.2.1-no-git.patch,
+  +files/luminance-hdr-2.2.1-openmp-automagic.patch:
+  Version bump (bug #407967).
+
+  23 Feb 2012; Tim Harder <radhermit@gentoo.org> luminance-hdr-2.2.0.ebuild:
+  Respect user CFLAGS and use epatch directly instead of the PATCHES array.
+
+  14 Feb 2012; Tim Harder <radhermit@gentoo.org> -luminance-hdr-2.0.1.ebuild,
+  -luminance-hdr-2.0.2.ebuild:
+  Remove old.
+
+  14 Feb 2012; Tim Harder <radhermit@gentoo.org> luminance-hdr-2.1.0.ebuild:
+  Use slot deps for fftw, properly check for openmp support, and die on
+  nonexistent files.
+
+  14 Feb 2012; Tim Harder <radhermit@gentoo.org> luminance-hdr-2.2.0.ebuild:
+  Die when trying to remove a nonexistent file.
+
+*luminance-hdr-2.2.0 (14 Feb 2012)
+
+  14 Feb 2012; Tim Harder <radhermit@gentoo.org> +luminance-hdr-2.2.0.ebuild,
+  +files/luminance-hdr-2.2.0-docs.patch,
+  +files/luminance-hdr-2.2.0-no-git.patch,
+  +files/luminance-hdr-2.2.0-openmp-automagic.patch:
+  Version bump (bug #399767).
+
+  23 Sep 2011; Tim Harder <radhermit@gentoo.org> luminance-hdr-2.1.0.ebuild:
+  Add dependency on qt-sql (bug #382305 by Martin Thierer).
+
+  23 Sep 2011; Tim Harder <radhermit@gentoo.org> luminance-hdr-2.1.0.ebuild,
+  +files/luminance-hdr-2.1.0-libraw.patch:
+  Fix build with libraw-0.14.0 (bug #384191).
+
+*luminance-hdr-2.1.0 (26 Aug 2011)
+
+  26 Aug 2011; Tim Harder <radhermit@gentoo.org> +luminance-hdr-2.1.0.ebuild:
+  Version bump.
 
 *luminance-hdr-2.0.2 (22 May 2011)
 
@@ -111,4 +194,3 @@
   17 Dec 2007; Markus Meier <maekke@gentoo.org> +metadata.xml,
   +qtpfsgui-1.9.0.ebuild:
   initial import of qtpfsgui, bug #179887 (and bug #162080)
-

@@ -8,7 +8,6 @@
 <use>
 	<flag name="3dnowext">Enable 3dnowext cpu instructions</flag>
 	<flag name="amr">Enables Adaptive Multi-Rate format support</flag>
-	<flag name="ass">SRT/SSA/ASS (SubRip / SubStation Alpha) subtitle support</flag>
 	<flag name="bl">Blinkenlights video output</flag>
 	<flag name="bluray">Enable playback of Blu-ray filesystems</flag>
 	<flag name="bs2b">Enable Bauer stereophonic-to-binaural headphone filter</flag>
@@ -34,7 +33,7 @@
 	<flag name="pvr">Enable Video4Linux2 MPEG PVR</flag>
 	<flag name="radio">Enable V4L2 radio interface and support</flag>
 	<flag name="rar">Enable Unique RAR File Library</flag>
-	<flag name="real">Adds real audo/video support</flag>
+	<flag name="real">Adds Real audio/video support</flag>
 	<flag name="rtc">Enables usage of the linux real time clock. The alternative is software emulation of rtc</flag>
 	<flag name="rtmp">Enables RTMPDump Streaming Media support</flag>
 	<flag name="schroedinger">Enable Dirac video support (an advanced royalty-free video compression format) via libschroedinger (high-speed implementation in C of the Dirac codec).</flag>
@@ -44,7 +43,6 @@
 	<flag name="toolame">Enable toolame MPEG-2 encoding</flag>
 	<flag name="tremor">Enable internal support for Vorbis</flag>
 	<flag name="twolame">Enable twolame MPEG-2 encoding</flag>
-	<flag name="vdpau">Enables experimental VDPAU support (requires nVidia video cards) to offload MPEG2/MPEG4/VC1/WMV CPU processing to video card</flag>
 	<flag name="vpx">Enables vp8 codec support using libvpx: Decoding vp8 does not require this to be enabled but libvpx can also be used for decoding; encoding vp8 requires this useflag to be enabled though.</flag>
 	<flag name="vidix">Support for vidix video output</flag>
 	<flag name="xanim">Enables support for xanim based codecs</flag>

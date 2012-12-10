@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/rox.eclass,v 1.33 2010/04/01 17:03:47 lack Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/rox.eclass,v 1.36 2012/05/02 18:31:42 jdhore Exp $
 
 # ROX eclass Version 3
 
@@ -38,7 +38,7 @@
 #       APPMIME="a/foo-1;a/foo-2
 #                $(usemime three "a/three")
 #                text/plain"
-#    will be expanded to either "a/foo-1;a/foo-2;a/three;text/plain" if 
+#    will be expanded to either "a/foo-1;a/foo-2;a/three;text/plain" if
 #    USE=three or "a/foo-1;a/foo-2;text/plain" if not.
 #    WARNING: the 'usemime' function cannot be used in global scope. You should
 #    set APPMIME (or at least the USE-dependant parts) in your own src_install
@@ -72,7 +72,7 @@ if [[ ${ROX_CLIB_VER} ]]; then
 		>=rox-base/rox-clib-${ROX_CLIB_VER}"
 	DEPEND="${DEPEND}
 		>=rox-base/rox-clib-${ROX_CLIB_VER}
-		>=dev-util/pkgconfig-0.20"
+		virtual/pkgconfig"
 fi
 
 # This is the new wrapper name (for /usr/bin/)

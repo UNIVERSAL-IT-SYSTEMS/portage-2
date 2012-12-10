@@ -1,6 +1,53 @@
 # ChangeLog for dev-perl/XML-SAX
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-SAX/ChangeLog,v 1.68 2011/05/29 18:11:44 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-SAX/ChangeLog,v 1.82 2012/06/24 12:58:19 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> XML-SAX-0.990.0.ebuild:
+  keyword ~amd64-fbsd
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -XML-SAX-0.16.ebuild,
+  -XML-SAX-0.960.0.ebuild:
+  Cleanup
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> XML-SAX-0.990.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #400269
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> XML-SAX-0.990.0.ebuild:
+  Marking XML-SAX-0.990.0 ppc for bug 400117
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> XML-SAX-0.990.0.ebuild:
+  Marking XML-SAX-0.990.0 ppc64 for bug 400269
+
+  02 Mar 2012; Markus Meier <maekke@gentoo.org> XML-SAX-0.990.0.ebuild:
+  arm stable, bug #400269
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> XML-SAX-0.990.0.ebuild:
+  x86 stable wrt bug #400269
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> XML-SAX-0.990.0.ebuild:
+  Stable for amd64, wrt bug #400269
+
+  18 Feb 2012; Jeroen Roovers <jer@gentoo.org> XML-SAX-0.990.0.ebuild:
+  Stable for HPPA (bug #400269).
+
+  19 Sep 2011; Torsten Veller <tove@gentoo.org> XML-SAX-0.990.0.ebuild:
+  Depend on XML-SAX-Base which was split from XML-SAX again
+
+*XML-SAX-0.990.0 (19 Sep 2011)
+
+  19 Sep 2011; Robin H. Johnson <robbat2@gentoo.org> +XML-SAX-0.990.0.ebuild:
+  Version bump via perl-bump experimental tool.
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -XML-SAX-0.96.ebuild:
+  Cleanup
+
+*XML-SAX-0.960.0 (27 Aug 2011)
+
+  27 Aug 2011; Torsten Veller <tove@gentoo.org> +XML-SAX-0.960.0.ebuild:
+  Change version scheme
 
   29 May 2011; Fabian Groffen <grobian@gentoo.org> XML-SAX-0.96.ebuild:
   Marked ~x64-macos, bug #368563

@@ -1,6 +1,17 @@
 # ChangeLog for app-misc/mouseremote
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/mouseremote/ChangeLog,v 1.14 2010/08/13 16:34:19 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/mouseremote/ChangeLog,v 1.17 2012/05/10 15:15:10 ago Exp $
+
+  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -mouseremote-0.90.ebuild:
+  Remove old
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  mouseremote-0.90-r1.ebuild:
+  x86 stable wrt bug #391491
+
+  28 Nov 2011; Tony Vroon <chainsaw@gentoo.org> mouseremote-0.90-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #391491. Correct overquoting.
 
   13 Aug 2010; Markos Chandras <hwoarang@gentoo.org>
   mouseremote-0.90-r1.ebuild, +files/mouseremote-gentoo-0.90-r1.diff,

@@ -1,6 +1,21 @@
 # ChangeLog for x11-misc/cairo-clock
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/cairo-clock/ChangeLog,v 1.9 2011/03/02 18:41:04 signals Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/cairo-clock/ChangeLog,v 1.12 2012/05/05 04:53:53 jdhore Exp $
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> cairo-clock-0.3.3.ebuild,
+  cairo-clock-0.3.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*cairo-clock-0.3.4 (12 Nov 2011)
+
+  12 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +cairo-clock-0.3.4.ebuild:
+  Version bump wrt #381733 by Jesse Adelman
+
+  24 Sep 2011; Tony Vroon <chainsaw@gentoo.org> cairo-clock-0.3.3.ebuild,
+  +files/cairo-clock-0.3.3-gcc46.patch:
+  Debian patch scavenged by Pacho Ramos enables building on GCC 4.6; closes bug
+  #362261 by Diego Elio Pettenò.
 
   02 Mar 2011; Kevin McCarthy <signals@gentoo.org> cairo-clock-0.3.3.ebuild:
   Reverting previous unnecessary commit

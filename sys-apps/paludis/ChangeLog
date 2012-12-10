@@ -1,6 +1,113 @@
 # ChangeLog for sys-apps/paludis
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/ChangeLog,v 1.206 2011/07/18 06:40:47 mgorny Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/ChangeLog,v 1.227 2012/11/17 08:29:45 dev-zero Exp $
+
+*paludis-0.82.0 (17 Nov 2012)
+
+  17 Nov 2012; Tiziano Müller <dev-zero@gentoo.org> +paludis-0.82.0.ebuild,
+  -paludis-0.80.1.ebuild:
+  Version bump. Drop old.
+
+*paludis-0.80.2 (23 Oct 2012)
+
+  23 Oct 2012; Tiziano Müller <dev-zero@gentoo.org> +paludis-0.80.2.ebuild,
+  -paludis-0.80.0.ebuild:
+  Version bump. Drop old.
+
+*paludis-0.80.1 (14 Oct 2012)
+
+  14 Oct 2012; Tiziano Müller <dev-zero@gentoo.org> +paludis-0.80.1.ebuild:
+  Version bump.
+
+*paludis-0.80.0 (23 Sep 2012)
+
+  23 Sep 2012; Tiziano Müller <dev-zero@gentoo.org> +paludis-0.80.0.ebuild,
+  -paludis-0.72.0.ebuild, -paludis-0.78.1.ebuild:
+  Version bump. Drop old.
+
+*paludis-0.78.2 (13 Sep 2012)
+
+  13 Sep 2012; Tiziano Müller <dev-zero@gentoo.org> +paludis-0.78.2.ebuild:
+  Version bump.
+
+*paludis-0.78.1 (13 Aug 2012)
+
+  13 Aug 2012; Tiziano Müller <dev-zero@gentoo.org> +paludis-0.78.1.ebuild:
+  Version bump (bug #431010), also added test USE flag (bug #423729).
+
+  27 Jun 2012; Tiziano Müller <dev-zero@gentoo.org> paludis-0.76.0.ebuild:
+  Raise dependency for libarchive to 3.0.4.
+
+*paludis-0.76.0 (26 Jun 2012)
+
+  26 Jun 2012; Tiziano Müller <dev-zero@gentoo.org> +paludis-0.76.0.ebuild:
+  Version bump (adjust dep for libarchive, drop dependency on allison).
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> paludis-0.66.0.ebuild,
+  paludis-0.68.0.ebuild, paludis-0.70.2.ebuild, paludis-0.72.0.ebuild,
+  paludis-0.72.2.ebuild, paludis-0.74.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*paludis-0.74.1 (25 Apr 2012)
+
+  25 Apr 2012; Robert Piasek <dagger@gentoo.org> -paludis-0.74.0.ebuild,
+  +paludis-0.74.1.ebuild:
+  Add version 0.74.1
+
+  21 Apr 2012; Robert Piasek <dagger@gentoo.org> -paludis-0.58.5.ebuild,
+  -paludis-0.60.4.ebuild, -paludis-0.62.2.ebuild, -paludis-0.64.0.ebuild,
+  -paludis-0.64.3.ebuild, +paludis-0.74.0.ebuild:
+  Add version 0.74.0. Drop older versions
+
+*paludis-0.72.2 (02 Mar 2012)
+
+  02 Mar 2012; Robert Piasek <dagger@gentoo.org> -paludis-0.70.0.ebuild,
+  -paludis-0.70.1.ebuild, +paludis-0.72.2.ebuild:
+  Add version 0.72.2. Remove older versions
+
+*paludis-0.72.0 (17 Feb 2012)
+
+  17 Feb 2012; Robert Piasek <dagger@gentoo.org> +paludis-0.72.0.ebuild:
+  Add version 0.72.0
+
+*paludis-0.70.2 (27 Jan 2012)
+
+  27 Jan 2012; Robert Piasek <dagger@gentoo.org> +paludis-0.70.2.ebuild:
+  Add version 0.70.2
+
+  11 Nov 2011; Mike Frysinger <vapier@gentoo.org> paludis-0.62.2.ebuild,
+  paludis-0.64.0.ebuild, paludis-0.64.3.ebuild, paludis-0.66.0.ebuild,
+  paludis-0.68.0.ebuild, paludis-0.70.0.ebuild, paludis-0.70.1.ebuild:
+  Update gtest depend after category migration #387155.
+
+*paludis-0.70.1 (01 Nov 2011)
+
+  01 Nov 2011; Robert Piasek <dagger@gentoo.org> -paludis-0.64.1.ebuild,
+  -paludis-0.64.2.ebuild, +paludis-0.70.1.ebuild:
+  Add version 0.70.1. Remove older 0.64.x ebuilds
+
+*paludis-0.70.0 (23 Oct 2011)
+
+  23 Oct 2011; Robert Piasek <dagger@gentoo.org> +paludis-0.70.0.ebuild:
+  Add version 0.70.0
+
+*paludis-0.68.0 (20 Sep 2011)
+
+  20 Sep 2011; Piotr Jaroszyński <peper@gentoo.org> +paludis-0.68.0.ebuild:
+  Add 0.68.0
+
+  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #225633
+
+*paludis-0.66.0 (06 Sep 2011)
+
+  06 Sep 2011; Robert Piasek <dagger@gentoo.org> +paludis-0.66.0.ebuild:
+  Add version 0.66.0
+
+*paludis-0.64.3 (24 Aug 2011)
+
+  24 Aug 2011; Piotr Jaroszyński <peper@gentoo.org> +paludis-0.64.3.ebuild:
+  Add 0.64.3
 
 *paludis-0.64.2 (18 Jul 2011)
 
@@ -1068,5 +1175,3 @@
   03 May 2006; Stephen Bennett <spb@gentoo.org> +metadata.xml,
   +paludis-0.2.1.ebuild:
   Added new package.
-
-

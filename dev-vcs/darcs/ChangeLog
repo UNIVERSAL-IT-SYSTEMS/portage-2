@@ -1,6 +1,93 @@
 # ChangeLog for dev-vcs/darcs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/darcs/ChangeLog,v 1.21 2011/06/05 12:10:57 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/darcs/ChangeLog,v 1.39 2012/12/07 18:14:36 ago Exp $
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> darcs-2.8.0.ebuild:
+  Stable for ppc64, wrt bug #421351
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> darcs-2.8.0.ebuild:
+  Stable for ppc, wrt bug #421351
+
+*darcs-2.8.3-r1 (25 Nov 2012)
+
+  25 Nov 2012; Mark Wright <gienah@gentoo.org> +darcs-2.8.3-r1.ebuild,
+  +files/darcs-2.8.1-tar-0.4.patch, +files/darcs-2.8.3-ghc-7.6.patch.bz2,
+  +files/darcs-2.8.3-hack-for-haskeline-0.7-breaks-non-utf8.patch:
+  Thanks to slyfox for patching darcs-2.8.3 for ghc 7.6.1
+
+  25 Sep 2012; Andreas Schuerch <nativemad@gentoo.org> darcs-2.8.0.ebuild:
+  x86 stable, see bug 421351
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> darcs-2.4.4-r1.ebuild,
+  darcs-2.5.2-r1.ebuild, darcs-2.5.2-r2.ebuild, darcs-2.8.0.ebuild:
+  move dev-vcs/darcs/darcs-2.8.0.ebuild ebuild to mirror://hackage
+
+  07 Sep 2012; Agostino Sarubbo <ago@gentoo.org> darcs-2.8.0.ebuild:
+  Stable for amd64, wrt bug #421351
+
+  09 Aug 2012; Sergei Trofimovich <slyfox@gentoo.org> darcs-2.8.0.ebuild:
+  Rekeyworded
+  ~alpha/~ia64/~ppc/~ppc64/~sparc/~x86-fbsd/~x86-freebsd/~amd64-linux/~x86-linux
+  /~ppc-macos/~x86-macos/~x86-solaris
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> darcs-2.5.2-r1.ebuild,
+  darcs-2.5.2-r2.ebuild, darcs-2.8.0.ebuild:
+  Inherit eutils for epatch.
+
+*darcs-2.8.0 (05 May 2012)
+
+  05 May 2012; Mark Wright <gienah@gentoo.org> +darcs-2.8.0.ebuild,
+  +files/darcs-2.8.0-mtl-2.1.patch:
+  Bump darcs to 2.8.0.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> darcs-2.4.4-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*darcs-2.5.2-r2 (13 Apr 2012)
+
+  13 Apr 2012; Mark Wright <gienah@gentoo.org> +darcs-2.5.2-r2.ebuild,
+  +files/darcs-2.5.2-mtl-2.1.patch, -darcs-2.5.2.ebuild:
+  Allow darcs 2.5.2-r2 to build with mtl-2.1
+
+  25 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> darcs-2.5.2-r1.ebuild,
+  darcs-2.5.2.ebuild:
+  Add missing dev-haskell/random depend. Noticed by Alexis Ballier in bug
+  #409655.
+
+  06 Mar 2012; Mark Wright <gienah@gentoo.org> darcs-2.5.2.ebuild:
+  Set the darcs-2.5.2 keywords the same as darcs-2.5.2-r1
+
+  04 Mar 2012; Mark Wright <gienah@gentoo.org> darcs-2.4.4-r1.ebuild,
+  darcs-2.5.2.ebuild, darcs-2.5.2-r1.ebuild:
+  Fix QA Notice: dobashcompletion: command not found
+
+  04 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> darcs-2.5.2-r1.ebuild:
+  Rekeyworded ~ia64 (works fine on ghc-6.12.3)
+
+*darcs-2.5.2-r1 (04 Mar 2012)
+
+  04 Mar 2012; Mark Wright <gienah@gentoo.org> darcs-2.5.2-r1.ebuild,
+  +files/darcs-2.5.2-ghc-7.4.patch,
+  +files/darcs-2.5.2-relax-http-libs-deps.patch:
+  Patch darcs 2.5.2 for ghc 7.4.1, patches sent upstream and applied to darcs
+  repo. Remove ia64 keyword.
+
+*darcs-2.5.2 (04 Mar 2012)
+
+  04 Mar 2012; Mark Wright <gienah@gentoo.org> darcs-2.4.4-r1.ebuild,
+  Add [profile?] to haskell library dependencies.
+
+  08 Dec 2011; Sergei Trofimovich <slyfox@gentoo.org> darcs-2.4.4-r1.ebuild,
+  darcs-2.5.2.ebuild:
+  Drop tests/external.sh from tests as it reloes on ecample.com layout.
+  Partially fixes bug #392647 by Paweł Hajdan, Jr.
+
+  04 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> +darcs-2.5.2.ebuild,
+  +files/darcs-2.5.2-ghc-7.2.patch,
+  +files/darcs-2.5.2-relax-regex-libs-deps.patch,
+  +files/darcs-2.5.2-tests-ghc-7.2.patch:
+  Version bump (ghc-7 support). Dropped ~alpha/~ia64/~ppc/~ppc64/~sparc
+  keywords until deps are keyworded.
 
   05 Jun 2011; Sergei Trofimovich <slyfox@gentoo.org> darcs-2.4.4-r1.ebuild:
   restored lost ~x86-freebsd ~amd64-linux ~x86-linux ~x86-solaris
@@ -57,7 +144,10 @@
   darcs-2.0.2.ebuild, darcs-2.1.0-r1.ebuild, darcs-2.2.1.ebuild:
   Drop support for ghc and darcs.
 
-*darcs-2.4.4-r1 (28 Jun 2010)
+*darcs-2.4.4-r1 (04 Mar 2012)
+
+  04 Mar 2012; Mark Wright <gienah@gentoo.org> darcs-2.4.4-r1.ebuild,
+  Add [profile?] to haskell library dependencies.
 
   28 Jun 2010; Lennart Kolmodin <kolmodin@gentoo.org>
   +darcs-2.4.4-r1.ebuild,
@@ -574,4 +664,3 @@
   Initial import. darcs is a version control system with advanced underlying
   theory. It is written in Haskell. Thanks to Peter Simons
   <simons+gentoo@cryp.to> for pushing me (bug 23771) to do this.
-

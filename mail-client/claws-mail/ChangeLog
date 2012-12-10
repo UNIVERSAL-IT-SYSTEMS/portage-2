@@ -1,6 +1,178 @@
 # ChangeLog for mail-client/claws-mail
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail/ChangeLog,v 1.183 2011/07/31 10:33:50 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail/ChangeLog,v 1.218 2012/11/20 20:17:33 fauli Exp $
+
+*claws-mail-3.9.0 (20 Nov 2012)
+
+  20 Nov 2012; Christian Faulhammer <fauli@gentoo.org>
+  -claws-mail-3.8.0.ebuild, -claws-mail-3.8.1.ebuild,
+  -claws-mail-3.8.1-r1.ebuild, +claws-mail-3.9.0.ebuild:
+  version bump and clean up
+
+  11 Nov 2012; Raúl Porcel <armin76@gentoo.org> claws-mail-3.8.1-r2.ebuild:
+  sparc stable wrt #437814
+
+*claws-mail-3.8.1-r3 (04 Nov 2012)
+
+  04 Nov 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-3.8.1-r3.ebuild, +files/claws-mail-3.8.1_fix-gnutls-3.1.3.patch:
+  add patch for bug 440898 by John Brendler, valuable input from Duncan and
+  others
+
+  31 Oct 2012; Andreas Schuerch <nativemad@gentoo.org>
+  claws-mail-3.8.1-r2.ebuild:
+  x86 stable, see bug 437814
+
+  27 Oct 2012; Tobias Klausmann <klausman@gentoo.org>
+  claws-mail-3.8.1-r2.ebuild:
+  Stable on alpha, bug #437814
+
+  24 Oct 2012; Agostino Sarubbo <ago@gentoo.org> claws-mail-3.8.1-r2.ebuild:
+  Stable for amd64, wrt bug #437814
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  claws-mail-3.8.1-r2.ebuild:
+  stable ppc ppc64, bug #437814
+
+  14 Oct 2012; Jeroen Roovers <jer@gentoo.org> claws-mail-3.8.1-r2.ebuild:
+  Stable for HPPA (bug #437814).
+
+*claws-mail-3.8.1-r2 (11 Oct 2012)
+
+  11 Oct 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-3.8.1-r2.ebuild, +files/claws-mail-3.8.1_procmime-vuln.patch:
+  version bump for security bug 437814 (CVE 2012-4507), null pointer exception
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> claws-mail-3.8.0.ebuild,
+  claws-mail-3.8.1-r1.ebuild, claws-mail-3.8.1.ebuild:
+  Use domenu instead insinto + doins to install .desktop files
+
+  29 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  claws-mail-3.8.1-r1.ebuild:
+  Keyword ~arm
+
+  26 Jul 2012; Christian Faulhammer <fauli@gentoo.org>
+  claws-mail-3.8.1-r1.ebuild:
+  Restore user patches support according bug 427096 by mgorny
+
+*claws-mail-3.8.1-r1 (17 Jul 2012)
+
+  17 Jul 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-3.8.1-r1.ebuild, +files/claws-mail-3.8.1_fix-signature.patch:
+  Fix segfault with signature checking as reported in bug 424882 by Alexander
+  Tsoy, patch from upstream.
+
+*claws-mail-3.8.1 (30 Jun 2012)
+
+  30 Jun 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-3.8.1.ebuild:
+  Version bump, mainly bug fixes
+
+  30 May 2012; Anthony G. Basile <blueness@gentoo.org> claws-mail-3.8.0.ebuild:
+  Keyword ~mips
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> claws-mail-3.8.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  11 Apr 2012; Christian Faulhammer <fauli@gentoo.org>
+  -claws-mail-3.7.9-r1.ebuild, -files/claws-mail-3.7.9-fix-nossl.patch,
+  -files/claws-mail-3.7.9_notify_crash.patch, -claws-mail-3.7.10.ebuild:
+  clean up
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> claws-mail-3.8.0.ebuild:
+  x86 stable, bug #387547
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> claws-mail-3.8.0.ebuild:
+  sparc stable wrt #387547
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> claws-mail-3.8.0.ebuild:
+  Marking claws-mail-3.8.0 ppc64 stable for bug 387547
+
+  04 Mar 2012; Tobias Klausmann <klausman@gentoo.org> claws-mail-3.8.0.ebuild:
+  Stable on alpha, bug #387547
+
+  04 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #206112
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> claws-mail-3.8.0.ebuild:
+  Marking claws-mail-3.8.0 ppc stable for bug 387547
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> claws-mail-3.8.0.ebuild:
+  Stable for HPPA (bug #387547).
+
+  25 Feb 2012; Agostino Sarubbo <ago@gentoo.org> claws-mail-3.8.0.ebuild:
+  Stable for amd64, wrt bug #387547
+
+  14 Jan 2012; Christian Faulhammer <fauli@gentoo.org> claws-mail-3.8.0.ebuild:
+  Remove IUSE=gnutls as USE=ssl only has one provider, as pointed out by mgorny
+
+  14 Jan 2012; Michał Górny <mgorny@gentoo.org> claws-mail-3.8.0.ebuild:
+  Use autotools-utils -- suport user patches with autoreconf.
+
+*claws-mail-3.8.0 (26 Dec 2011)
+
+  26 Dec 2011; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-3.8.0.ebuild:
+  version bump for bug 395381 by Justin
+
+  GnuTLS 2.2 is now a minimum requirement if encrypted connections to
+
+  servers are required.
+
+  The list displays have been updated to use newer GTK+ functions,
+
+  this means that the expanders look different and the optional
+
+  dotted
+
+  lines have been dropped.
+
+  A hidden option, 'summary_from_show', which controls the display
+
+  in
+
+  the From column of the Message List: 0 (default): show name,
+
+  1: show address, 2: show name + address
+
+  The image viewer now uses the EXIF Orientation.
+
+  'Generate X-Mailer header' has been added as an Account option.
+
+  /View/Message scroll has been added, allowing keyboard shortcuts
+
+  to
+
+  be added and used for message scrolling.
+
+  Home and End keys now function in the Message View.
+
+  /Message/Print has been added to the Compose window.
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> claws-mail-3.7.10.ebuild:
+  alpha/sparc stable wrt #387547
+
+  06 Nov 2011; Brent Baude <ranger@gentoo.org> claws-mail-3.7.10.ebuild:
+  Marking claws-mail-3.7.10 ppc stable for bug 387547
+
+  29 Oct 2011; Markos Chandras <hwoarang@gentoo.org> claws-mail-3.7.10.ebuild:
+  Stable on amd64 wrt bug #387547
+
+  25 Oct 2011; Jeroen Roovers <jer@gentoo.org> claws-mail-3.7.10.ebuild:
+  Stable for HPPA (bug #387547).
+
+  24 Oct 2011; Markus Meier <maekke@gentoo.org> claws-mail-3.7.10.ebuild:
+  x86 stable, bug #387547
+
+  30 Aug 2011; Christian Faulhammer <fauli@gentoo.org>
+  claws-mail-3.7.10.ebuild:
+  Add gdata plugin to list of supported plugins
+
+*claws-mail-3.7.10 (30 Aug 2011)
+
+  30 Aug 2011; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-3.7.10.ebuild:
+  version bump
 
   31 Jul 2011; Christian Faulhammer <fauli@gentoo.org>
   -claws-mail-3.7.8.ebuild, -claws-mail-3.7.9.ebuild:

@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/yabause/yabause-0.9.10.ebuild,v 1.4 2010/09/16 16:53:36 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/yabause/yabause-0.9.10.ebuild,v 1.7 2012/10/10 15:18:12 ranger Exp $
 
 EAPI=2
 inherit games
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="openal sdl opengl"
 
 RDEPEND="x11-libs/gtk+:2
@@ -22,7 +22,7 @@ RDEPEND="x11-libs/gtk+:2
 	openal? ( media-libs/openal )
 	sdl? ( media-libs/libsdl[opengl?,video] )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_configure() {
 	egamesconf \

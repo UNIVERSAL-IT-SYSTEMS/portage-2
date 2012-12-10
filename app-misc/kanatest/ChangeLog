@@ -1,6 +1,17 @@
 # ChangeLog for app-misc/kanatest
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/kanatest/ChangeLog,v 1.32 2011/03/27 12:04:10 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/kanatest/ChangeLog,v 1.35 2012/08/07 16:31:47 naota Exp $
+
+  07 Aug 2012; Naohiro Aota <naota@gentoo.org>
+  +files/kanatest-0.4.8-cflags.patch, kanatest-0.4.8.ebuild:
+  Respect CFLAGS. #428244
+
+  01 Jul 2012; Naohiro Aota <naota@gentoo.org>
+  +files/kanatest-0.4.8-autoconf.patch, kanatest-0.4.8.ebuild:
+  Patch not to detect portability warnings. #424087
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> kanatest-0.4.8.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   27 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org> kanatest-0.4.8.ebuild:
   Fix slot-dep on gtk+
@@ -111,4 +122,3 @@
   metadata.xml:
   Initial import. Thanks to Jeroen Hoek <jeroen.hoek@datacenter-friesland.nl>
   for submitting the ebuild in bug #39973
-

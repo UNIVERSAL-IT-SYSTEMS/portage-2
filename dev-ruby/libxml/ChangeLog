@@ -1,6 +1,114 @@
 # ChangeLog for dev-ruby/libxml
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/libxml/ChangeLog,v 1.45 2011/07/31 19:05:43 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/libxml/ChangeLog,v 1.73 2012/12/02 13:53:09 graaff Exp $
+
+  02 Dec 2012; Hans de Graaff <graaff@gentoo.org> libxml-2.2.1.ebuild,
+  libxml-2.3.3.ebuild:
+  Fix license, bug 445456.
+
+  25 Aug 2012; Hans de Graaff <graaff@gentoo.org> -libxml-2.0.5.ebuild,
+  -libxml-2.2.2.ebuild, -libxml-2.3.0.ebuild, -libxml-2.3.2.ebuild:
+  Cleanup.
+
+*libxml-2.3.3 (21 Jul 2012)
+
+  21 Jul 2012; Hans de Graaff <graaff@gentoo.org> +libxml-2.3.3.ebuild:
+  Version bump.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> libxml-2.0.5.ebuild,
+  libxml-2.2.1.ebuild, libxml-2.2.2.ebuild, libxml-2.3.0.ebuild,
+  libxml-2.3.2.ebuild:
+  Drop ia64/sparc keywords
+
+*libxml-2.3.2 (08 Apr 2012)
+
+  08 Apr 2012; Hans de Graaff <graaff@gentoo.org> +libxml-2.3.2.ebuild:
+  Version bump.
+
+*libxml-2.3.0 (19 Mar 2012)
+
+  19 Mar 2012; Hans de Graaff <graaff@gentoo.org> +libxml-2.3.0.ebuild:
+  Version bump.
+
+  11 Mar 2012; Brent Baude <ranger@gentoo.org> libxml-2.2.1.ebuild:
+  Marking libxml-2.2.1 ppc64 for bug 395991
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> libxml-2.2.1.ebuild:
+  Marking libxml-2.2.1 ppc for bug 395991
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> libxml-2.2.1.ebuild:
+  ia64/sparc stable wrt #395991
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libxml-2.2.1.ebuild:
+  x86 stable wrt bug #395991
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> libxml-2.2.2.ebuild:
+  Add Prefix keywords, bug #396547
+
+  29 Dec 2011; Jeroen Roovers <jer@gentoo.org> libxml-2.2.1.ebuild:
+  Stable for HPPA (bug #395991).
+
+  26 Dec 2011; Agostino Sarubbo <ago@gentoo.org> libxml-2.2.1.ebuild:
+  Stable for AMD64, wrt bug #395991
+
+  25 Dec 2011; Hans de Graaff <graaff@gentoo.org> libxml-2.2.1.ebuild:
+  Drop ruby19 to create a new stable candidate.
+
+  25 Dec 2011; Hans de Graaff <graaff@gentoo.org> -libxml-1.1.3.ebuild,
+  -libxml-2.1.1.ebuild, -libxml-2.2.0.ebuild:
+  Remove old versions.
+
+  08 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org> libxml-2.2.2.ebuild:
+  Add missing virtual/ruby-test-unit dependency to stay on the safe side; fix
+  tests with Ruby 1.9, both in the call and by replacing an ulimit call from
+  within Ruby.
+
+  05 Dec 2011; Naohiro Aota <naota@gentoo.org> libxml-2.2.2.ebuild:
+  Add ~x86-fbsd.
+
+*libxml-2.2.2 (11 Sep 2011)
+
+  11 Sep 2011; Hans de Graaff <graaff@gentoo.org> +libxml-2.2.2.ebuild:
+  Version bump.
+
+  03 Sep 2011; Raúl Porcel <armin76@gentoo.org> libxml-2.0.5.ebuild:
+  ia64 stable wrt #370399
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> libxml-2.0.5.ebuild:
+  x86 stable, bug #370399
+
+  15 Aug 2011; Hans de Graaff <graaff@gentoo.org> libxml-2.1.1.ebuild:
+  Fix typo: ruby_add_depend does not exist.
+
+*libxml-2.2.1 (15 Aug 2011)
+
+  15 Aug 2011; Hans de Graaff <graaff@gentoo.org> +libxml-2.2.1.ebuild:
+  Version bump.
+
+  15 Aug 2011; Hans de Graaff <graaff@gentoo.org> -libxml-2.0.6.ebuild,
+  -libxml-2.0.9.ebuild, -libxml-2.1.2.ebuild:
+  Remove old versions.
+
+  15 Aug 2011; Hans de Graaff <graaff@gentoo.org> libxml-2.1.1.ebuild:
+  Also apply doc fix to stable candidate for x86.
+
+  14 Aug 2011; Hans de Graaff <graaff@gentoo.org> libxml-2.2.0.ebuild:
+  Add missing rdoc dependency, fixes bug 379171.
+
+*libxml-2.2.0 (10 Aug 2011)
+
+  10 Aug 2011; Hans de Graaff <graaff@gentoo.org> +libxml-2.2.0.ebuild:
+  Version bump.
+
+*libxml-2.1.2 (04 Aug 2011)
+
+  04 Aug 2011; Hans de Graaff <graaff@gentoo.org> +libxml-2.1.2.ebuild:
+  Version bump.
+
+*libxml-2.1.1 (02 Aug 2011)
+
+  02 Aug 2011; Hans de Graaff <graaff@gentoo.org> +libxml-2.1.1.ebuild:
+  Version bump.
 
   31 Jul 2011; Jeroen Roovers <jer@gentoo.org> libxml-2.0.5.ebuild:
   Stable for HPPA (bug #370399).

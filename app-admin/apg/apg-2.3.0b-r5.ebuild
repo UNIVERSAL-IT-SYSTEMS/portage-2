@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/apg/apg-2.3.0b-r5.ebuild,v 1.7 2011/05/25 18:39:27 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/apg/apg-2.3.0b-r5.ebuild,v 1.10 2012/12/07 19:00:37 ulm Exp $
 
 EAPI="2"
 
@@ -10,9 +10,9 @@ DESCRIPTION="Another Password Generator"
 HOMEPAGE="http://www.adel.nursat.kz/apg/"
 SRC_URI="http://www.adel.nursat.kz/apg/download/${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 hppa ppc x86 ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos"
+KEYWORDS="~alpha amd64 hppa ppc ~ppc64 x86 ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos"
 IUSE="cracklib"
 
 DEPEND="cracklib? ( sys-libs/cracklib )"

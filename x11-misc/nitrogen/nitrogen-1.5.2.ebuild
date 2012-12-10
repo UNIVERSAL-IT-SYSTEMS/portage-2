@@ -1,8 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/nitrogen/nitrogen-1.5.2.ebuild,v 1.1 2011/07/19 12:43:09 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/nitrogen/nitrogen-1.5.2.ebuild,v 1.3 2012/08/18 18:02:10 jer Exp $
 
-EAPI=2
+EAPI=4
+inherit autotools eutils
 
 DESCRIPTION="A background browser and setter for X"
 HOMEPAGE="http://projects.l3ib.org/nitrogen/"
@@ -18,9 +19,14 @@ RDEPEND=">=dev-cpp/gtkmm-2.10:2.4
 	>=x11-libs/gtk+-2.10:2
 	xinerama? ( x11-libs/libXinerama )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )
 	xinerama? ( x11-proto/xineramaproto )"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-gold.patch
+	eautoreconf
+}
 
 src_configure() {
 	econf \
@@ -29,7 +35,4 @@ src_configure() {
 		$(use_enable xinerama)
 }
 
-src_install() {
-	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog NEWS README || die
-}
+DOCS=( AUTHORS ChangeLog NEWS README )

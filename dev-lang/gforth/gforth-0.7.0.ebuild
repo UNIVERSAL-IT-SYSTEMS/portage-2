@@ -1,16 +1,16 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/gforth/gforth-0.7.0.ebuild,v 1.8 2010/09/11 12:24:17 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/gforth/gforth-0.7.0.ebuild,v 1.10 2012/04/24 09:55:47 mgorny Exp $
 
 inherit elisp-common eutils toolchain-funcs flag-o-matic
 
 DESCRIPTION="GNU Forth is a fast and portable implementation of the ANSI Forth language"
 HOMEPAGE="http://www.gnu.org/software/gforth"
-SRC_URI="ftp://ftp.gnu.org/pub/gnu/gforth/${P}.tar.gz"
+SRC_URI="mirror://gnu/gforth/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ppc x86 ~x86-fbsd ~x86-freebsd ~x86-linux ~ppc-macos"
+KEYWORDS="amd64 ppc x86 ~x86-fbsd ~x86-freebsd ~x86-linux ~ppc-macos ~sparc-solaris"
 IUSE="emacs"
 
 DEPEND="dev-libs/ffcall

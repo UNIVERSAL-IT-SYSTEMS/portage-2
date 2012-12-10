@@ -1,6 +1,70 @@
 # ChangeLog for dev-ruby/rcairo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rcairo/ChangeLog,v 1.63 2011/06/04 05:52:35 naota Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rcairo/ChangeLog,v 1.78 2012/09/28 15:42:28 ssuominen Exp $
+
+  28 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> rcairo-1.10.2-r1.ebuild:
+  ppc stable wrt #428040
+
+*rcairo-1.12.2 (15 Sep 2012)
+
+  15 Sep 2012; Hans de Graaff <graaff@gentoo.org> +rcairo-1.12.2.ebuild:
+  Version bump.
+
+  15 Sep 2012; Hans de Graaff <graaff@gentoo.org> -rcairo-1.10.2.ebuild:
+  Cleanup.
+
+  17 Aug 2012; Johannes Huber <johu@gentoo.org> rcairo-1.10.2-r1.ebuild:
+  Stable for x86, wrt bug #428040
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> rcairo-1.10.2-r1.ebuild:
+  Stable for amd64, wrt bug #428040
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> rcairo-1.10.0-r3.ebuild,
+  rcairo-1.10.2.ebuild:
+  Drop alpha keywords
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> rcairo-1.10.0-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> rcairo-1.10.0-r3.ebuild,
+  rcairo-1.10.2.ebuild:
+  Drop ia64/sparc keywords
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> rcairo-1.10.2-r1.ebuild:
+  Marking rcairo-1.10.2-r1 ~ppc for bug 371353
+
+*rcairo-1.10.2-r1 (01 Jan 2012)
+
+  01 Jan 2012; Hans de Graaff <graaff@gentoo.org> -rcairo-1.10.0-r4.ebuild,
+  -rcairo-1.10.1.ebuild, rcairo-1.10.2.ebuild, +rcairo-1.10.2-r1.ebuild:
+  Create new revision for ruby19. Drop old versions and remove ruby19 from
+  fully keyworded version due to missing dependencies.
+
+  31 Dec 2011; Hans de Graaff <graaff@gentoo.org> -rcairo-1.10.0-r4.ebuild,
+  -rcairo-1.10.1.ebuild:
+  Remove old versions.
+
+  04 Dec 2011; Raúl Porcel <armin76@gentoo.org> rcairo-1.10.2.ebuild:
+  Add ~alpha/~ia64/~sparc wrt #391759
+
+*rcairo-1.10.2 (24 Nov 2011)
+
+  24 Nov 2011; Hans de Graaff <graaff@gentoo.org> +rcairo-1.10.2.ebuild:
+  Version bump for missing pkg-config dependency. Drop alpha,ia64,sparc
+  keywords accordingly, bug 391759.
+
+*rcairo-1.10.1 (30 Oct 2011)
+
+  30 Oct 2011; Hans de Graaff <graaff@gentoo.org> +rcairo-1.10.1.ebuild:
+  Version bump with support for cairo 1.10.2.
+
+  30 Oct 2011; Hans de Graaff <graaff@gentoo.org> -rcairo-1.8.1.ebuild,
+  -rcairo-1.10.0-r2.ebuild:
+  Remove old versions.
+
+  18 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  rcairo-1.10.0-r4.ebuild:
+  Add support for ree18.
 
 *rcairo-1.10.0-r4 (04 Jun 2011)
 

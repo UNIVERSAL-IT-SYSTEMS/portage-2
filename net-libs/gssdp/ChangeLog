@@ -1,6 +1,69 @@
 # ChangeLog for net-libs/gssdp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gssdp/ChangeLog,v 1.37 2011/06/05 21:28:58 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gssdp/ChangeLog,v 1.53 2012/10/28 16:23:09 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> gssdp-0.12.2.1.ebuild:
+  ia64/sparc stable wrt #427544
+
+  15 Oct 2012; Matt Turner <mattst88@gentoo.org> gssdp-0.12.2.1.ebuild:
+  Stable on alpha, bug 427544.
+
+  06 Oct 2012; Pacho Ramos <pacho@gentoo.org> -gssdp-0.10.0.ebuild,
+  -gssdp-0.12.1.ebuild, gssdp-0.12.2.1.ebuild:
+  Fix blocker, bug #437078 by Flameeyes and Gilles, drop old.
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gssdp-0.12.1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gssdp-0.12.1.ebuild:
+  x86 stable wrt bug #427544
+
+  01 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gssdp-0.12.2.1.ebuild:
+  x86 stable wrt bug #427560
+
+  19 Sep 2012; Jeroen Roovers <jer@gentoo.org> gssdp-0.12.2.1.ebuild:
+  Stable for HPPA (bug #434300).
+
+  18 Sep 2012; Anthony G. Basile <blueness@gentoo.org> gssdp-0.12.2.1.ebuild:
+  stabe ppc ppc64, bug #434300
+
+  07 Sep 2012; Agostino Sarubbo <ago@gentoo.org> gssdp-0.12.2.1.ebuild:
+  Stable for amd64, wrt bug #427560
+
+*gssdp-0.12.2.1 (24 Aug 2012)
+
+  24 Aug 2012; Gilles Dartiguelongue <eva@gentoo.org> -gssdp-0.7.1.ebuild,
+  -gssdp-0.12.0.ebuild, +gssdp-0.12.2.1.ebuild:
+  Version bump. Now handles its vala vapi files itself through introspection.
+  Drop old revision.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gssdp-0.7.1.ebuild,
+  gssdp-0.7.2.ebuild, gssdp-0.10.0.ebuild, gssdp-0.12.0.ebuild,
+  gssdp-0.12.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Jan 2012; Tobias Klausmann <klausman@gentoo.org> gssdp-0.7.2.ebuild:
+  Stable on alpha, bug #330657
+
+  21 Dec 2011; Gilles Dartiguelongue <eva@gentoo.org> metadata.xml:
+  Add gnome to metadata.xml.
+
+*gssdp-0.12.1 (21 Dec 2011)
+
+  21 Dec 2011; Gilles Dartiguelongue <eva@gentoo.org> -gssdp-0.6.4.ebuild,
+  gssdp-0.7.1.ebuild, -gssdp-0.8.2.ebuild, -gssdp-0.9.2.ebuild,
+  +gssdp-0.12.1.ebuild:
+  Version bump. Increase UDP buffer size, fix UDN search. Clean up old
+  revisions.
+
+  08 Sep 2011; Gilles Dartiguelongue <eva@gentoo.org> gssdp-0.12.0.ebuild:
+  Also remove useless la file.
+
+*gssdp-0.12.0 (08 Sep 2011)
+
+  08 Sep 2011; Gilles Dartiguelongue <eva@gentoo.org> +gssdp-0.12.0.ebuild:
+  Version bump. Work on UPnP CTT 1.5, DLNA 7.2.3.4, 7.2.4.3 and 7.2.4.5
+  requirements.
 
 *gssdp-0.10.0 (05 Jun 2011)
 
@@ -131,4 +194,3 @@
 
   23 Aug 2007; Samuli Suominen <ssuominen@gentoo.org> +gssdp-0.4.ebuild:
   Initial commit.
-

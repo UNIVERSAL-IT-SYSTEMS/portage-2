@@ -1,6 +1,43 @@
 # ChangeLog for dev-php/PEAR-Crypt_CHAP
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Crypt_CHAP/ChangeLog,v 1.25 2010/11/05 04:33:46 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Crypt_CHAP/ChangeLog,v 1.36 2012/06/09 14:42:29 mabi Exp $
+
+  09 Jun 2012; Matti Bickel <mabi@gentoo.org> -PEAR-Crypt_CHAP-1.0.1.ebuild,
+  -PEAR-Crypt_CHAP-1.0.2.ebuild:
+  remove old
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> PEAR-Crypt_CHAP-1.5.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #408743
+
+  28 Mar 2012; Markus Meier <maekke@gentoo.org> PEAR-Crypt_CHAP-1.5.0.ebuild:
+  arm stable, bug #408743
+
+  26 Mar 2012; Jeroen Roovers <jer@gentoo.org> PEAR-Crypt_CHAP-1.5.0.ebuild:
+  Stable for HPPA (bug #408743).
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> PEAR-Crypt_CHAP-1.5.0.ebuild:
+  Marking PEAR-Crypt_CHAP-1.5.0 ppc64 for bug 408743
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> PEAR-Crypt_CHAP-1.5.0.ebuild:
+  Marking PEAR-Crypt_CHAP-1.5.0 ppc for bug 408743
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  PEAR-Crypt_CHAP-1.5.0.ebuild:
+  x86 stable wrt bug #408743
+
+  20 Mar 2012; Agostino Sarubbo <ago@gentoo.org> PEAR-Crypt_CHAP-1.5.0.ebuild:
+  Stable for amd64, wrt bug #408743
+
+  18 Jan 2012; Matti Bickel <mabi@gentoo.org> PEAR-Crypt_CHAP-1.5.0.ebuild:
+  fix has_version call
+
+  18 Jan 2012; Matti Bickel <mabi@gentoo.org> -PEAR-Crypt_CHAP-1.0.0.ebuild:
+  remove old
+
+*PEAR-Crypt_CHAP-1.5.0 (18 Jan 2012)
+
+  18 Jan 2012; Matti Bickel <mabi@gentoo.org> +PEAR-Crypt_CHAP-1.5.0.ebuild:
+  version bump
 
   05 Nov 2010; Jeroen Roovers <jer@gentoo.org> PEAR-Crypt_CHAP-1.0.2.ebuild:
   Stable for HPPA (bug #336869).

@@ -1,6 +1,63 @@
 # ChangeLog for dev-perl/Parse-RecDescent
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Parse-RecDescent/ChangeLog,v 1.44 2011/04/24 15:31:04 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Parse-RecDescent/ChangeLog,v 1.58 2012/12/09 17:03:22 maekke Exp $
+
+  09 Dec 2012; Markus Meier <maekke@gentoo.org>
+  Parse-RecDescent-1.967.9.ebuild:
+  arm stable, bug #441248
+
+  08 Dec 2012; Jeroen Roovers <jer@gentoo.org> Parse-RecDescent-1.967.9.ebuild:
+  Stable for HPPA (bug #441248).
+
+  06 Dec 2012; Agostino Sarubbo <ago@gentoo.org>
+  Parse-RecDescent-1.967.9.ebuild:
+  Stable for ppc, wrt bug #441248
+
+  06 Dec 2012; <ago@gentoo.org> Parse-RecDescent-1.967.9.ebuild:
+  Stable for x86, wrt bug #441248
+
+  06 Dec 2012; <ago@gentoo.org> Parse-RecDescent-1.967.9.ebuild:
+  Stable for amd64, wrt bug #441248
+
+  22 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  Parse-RecDescent-1.967.9.ebuild:
+  keyword ~ppc64, bug #384677
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  Parse-RecDescent-1.967.9.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  08 Aug 2012; Naohiro Aota <naota@gentoo.org> Parse-RecDescent-1.967.9.ebuild:
+  Add ~x86-fbsd wrt bug #428248
+
+  06 Aug 2012; Alexis Ballier <aballier@gentoo.org>
+  Parse-RecDescent-1.967.9.ebuild:
+  keyword ~amd64-fbsd
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  21 Apr 2012; Torsten Veller <tove@gentoo.org>
+  -Parse-RecDescent-1.967.3.ebuild, -Parse-RecDescent-1.967.6.ebuild:
+  Cleanup
+
+*Parse-RecDescent-1.967.9 (17 Mar 2012)
+
+  17 Mar 2012; Torsten Veller <tove@gentoo.org>
+  +Parse-RecDescent-1.967.9.ebuild:
+  Version bump
+
+*Parse-RecDescent-1.967.6 (12 Feb 2012)
+
+  12 Feb 2012; Torsten Veller <tove@gentoo.org>
+  +Parse-RecDescent-1.967.6.ebuild:
+  Version bump
+
+*Parse-RecDescent-1.967.3 (31 Jan 2012)
+
+  31 Jan 2012; Torsten Veller <tove@gentoo.org>
+  +Parse-RecDescent-1.967.3.ebuild:
+  Version bump
 
   24 Apr 2011; Fabian Groffen <grobian@gentoo.org>
   Parse-RecDescent-1.965.1.ebuild:

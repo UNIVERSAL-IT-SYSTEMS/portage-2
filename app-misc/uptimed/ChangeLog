@@ -1,6 +1,14 @@
 # ChangeLog for app-misc/uptimed
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/uptimed/ChangeLog,v 1.80 2009/08/25 15:11:26 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/uptimed/ChangeLog,v 1.82 2012/05/23 13:23:07 xarthisius Exp $
+
+  23 May 2012; Kacper Kowalik <xarthisius@gentoo.org> uptimed-0.3.16-r4.ebuild:
+  Add missing user.eclass for enewgroup. Fixes #417153 by Eugene Ho
+  <blasterol@gmail.com>
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> -uptimed-0.3.12.ebuild,
+  files/uptimed.init:
+  Fix init script, bug #377783
 
   25 Aug 2009; Raúl Porcel <armin76@gentoo.org> uptimed-0.3.16-r4.ebuild:
   Add ~arm wrt #282190

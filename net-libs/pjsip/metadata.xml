@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>no-herd</herd>
 	<maintainer>
 		<email>elvanor@gentoo.org</email>
 		<name>Jean-Noël Rivasseau</name>
@@ -12,6 +11,7 @@
 		embedded/non-embedded VoIP applications.
 	</longdescription>
 	<use>
+		<flag name="cli">Installs pjsua, a simple command-line SIP client</flag>
 		<flag name="epoll">epoll system call support</flag>
 		<flag name="ext-sound">External sound device support</flag>
 		<flag name="g711">Builds the G711 codec</flag>

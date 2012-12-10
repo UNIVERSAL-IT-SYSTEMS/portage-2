@@ -1,6 +1,25 @@
 # ChangeLog for app-text/xchm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/xchm/ChangeLog,v 1.17 2011/06/25 08:42:19 dirtyepic Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/xchm/ChangeLog,v 1.22 2012/09/18 11:56:56 johu Exp $
+
+  18 Sep 2012; Johannes Huber <johu@gentoo.org> xchm-1.20.ebuild:
+  Stable for x86, wrt bug #434398
+
+  09 Sep 2012; Agostino Sarubbo <ago@gentoo.org> xchm-1.20.ebuild:
+  Stable for amd64, wrt bug #434398
+
+  09 Sep 2012; Anthony G. Basile <blueness@gentoo.org> xchm-1.20.ebuild:
+  Stable ppc, bug #434398
+
+*xchm-1.21 (09 Sep 2012)
+
+  09 Sep 2012; Ryan Hill <dirtyepic@gentoo.org> +xchm-1.21.ebuild,
+  files/xchm.desktop:
+  Version bump.
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> xchm-1.18.ebuild,
+  xchm-1.20.ebuild:
+  Use domenu instead insinto + doins to install .desktop files
 
 *xchm-1.20 (25 Jun 2011)
 

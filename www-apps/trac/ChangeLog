@@ -1,6 +1,49 @@
 # ChangeLog for www-apps/trac
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/trac/ChangeLog,v 1.120 2011/03/22 10:17:22 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apps/trac/ChangeLog,v 1.131 2012/10/13 19:26:32 djc Exp $
+
+  13 Oct 2012; Dirkjan Ochtman <djc@gentoo.org> files/postinst-en.txt,
+  files/postupgrade-en.txt:
+  Fix links in install/upgrade notes (bug 438210).
+
+  03 Oct 2012; Dirkjan Ochtman <djc@gentoo.org> trac-1.0.ebuild:
+  Cope with moved cgi scripts (bug 436748).
+
+  30 Sep 2012; Dirkjan Ochtman <djc@gentoo.org> -trac-0.12.2-r1.ebuild:
+  Remove old version.
+
+*trac-1.0 (30 Sep 2012)
+
+  30 Sep 2012; Dirkjan Ochtman <djc@gentoo.org> +trac-1.0.ebuild:
+  Version bump to 1.0 (for bug 436026).
+
+  02 Jul 2012; Johannes Huber <johu@gentoo.org> trac-0.12.3.ebuild:
+  Stable for x86, wrt bug #422241
+
+  29 Jun 2012; Brent Baude <ranger@gentoo.org> trac-0.12.3.ebuild:
+  Marking trac-0.12.3 ppc for bug 422241
+
+  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> trac-0.12.3.ebuild:
+  Stable for amd64, wrt bug #422241
+
+  16 Mar 2012; Mike Gilbert <floppym@gentoo.org> trac-0.12.3.ebuild:
+  Use EAPI="4". Restrict Jython ABIs. Inherit only user.eclass for enewgroup()
+  and enewuser(). Update HOMEPAGE. Use REQUIRED_USE. Backported from Progress
+  Overlay. Patch by Arfrever.
+
+*trac-0.12.3 (12 Feb 2012)
+
+  12 Feb 2012; Dirkjan Ochtman <djc@gentoo.org> +trac-0.12.3.ebuild:
+  Version bump to 0.12.3.
+
+*trac-0.12.2-r1 (31 Dec 2011)
+
+  31 Dec 2011; Christian Ruppert <idl0r@gentoo.org> -trac-0.12.2.ebuild,
+  +trac-0.12.2-r1.ebuild, files/tracd.initd:
+  Revbump. Don't use deprecated start-stop-daemon options, bug 380607.
+
+  13 Dec 2011; Naohiro Aota <naota@gentoo.org> trac-0.12.2.ebuild:
+  Add ~x86-fbsd wrt #336211
 
   22 Mar 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   -trac-0.12.1.ebuild:
@@ -535,4 +578,3 @@
   28 Apr 2004; Stuart Herbert <stuart@gentoo.org> metadata.xml,
   trac-0.6.1.ebuild, files/postinst-en.txt:
   Initial import; thanks to dju` <dju@elegiac.net>; see bug #48818
-

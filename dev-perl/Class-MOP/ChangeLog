@@ -1,6 +1,27 @@
 # ChangeLog for dev-perl/Class-MOP
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-MOP/ChangeLog,v 1.58 2011/04/03 06:48:34 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-MOP/ChangeLog,v 1.64 2012/06/24 12:59:03 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  10 Apr 2012; Torsten Veller <tove@gentoo.org> Class-MOP-1.120.0.ebuild:
+  Drop amd64 and x86 keywords. Install a newer Moose
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Class-MOP-0.94.ebuild,
+  -Class-MOP-1.120.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Class-MOP-1.120.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Class-MOP-1.120.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org> +Class-MOP-1.120.0.ebuild:
+  Change version scheme
+
+  13 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> Class-MOP-1.120.ebuild:
+  ppc stable wrt #350853
 
   03 Apr 2011; Torsten Veller <tove@gentoo.org> -Class-MOP-1.08.ebuild:
   Cleanup
@@ -260,4 +281,3 @@
   14 Jan 2009; Torsten Veller <tove@gentoo.org> +metadata.xml,
   +Class-MOP-0.75.ebuild:
   Initial commit. From the perl overlay
-

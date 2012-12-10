@@ -1,6 +1,69 @@
 # ChangeLog for media-libs/ming
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/ming/ChangeLog,v 1.79 2011/06/28 15:24:19 olemarkus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/ming/ChangeLog,v 1.97 2012/12/09 18:24:57 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> ming-0.4.4.ebuild:
+  Stable for ppc64, wrt bug #445440
+
+  06 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ming-0.4.4.ebuild:
+  x86 stable wrt bug #445440
+
+  05 Dec 2012; Jeroen Roovers <jer@gentoo.org> ming-0.4.4.ebuild:
+  Stable for HPPA (bug #445440).
+
+  01 Dec 2012; <ago@gentoo.org> ming-0.4.4.ebuild:
+  Stable for amd64, wrt bug #445440
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> ming-0.4.3-r2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419719
+
+  29 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ming-0.4.4.ebuild:
+  add back ~amd64
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> ming-0.4.3-r2.ebuild:
+  Stable for HPPA (bug #419719).
+
+  14 Jun 2012; Jeff Horelick <jdhore@gentoo.org> ming-0.4.3-r2.ebuild:
+  marked x86 per bug 419719
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ming-0.4.4.ebuild:
+  Stable for amd64, wrt bug #419719
+
+  09 Jun 2012; Markus Meier <maekke@gentoo.org> ming-0.4.3-r2.ebuild:
+  arm stable, bug #419719
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> ming-0.4.3-r2.ebuild:
+  Marking ming-0.4.3-r2 ppc for bug 419719
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> ming-0.4.3-r2.ebuild:
+  Marking ming-0.4.3-r2 ppc64 for bug 419719
+
+  05 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ming-0.4.3-r2.ebuild:
+  Stable for amd64, wrt bug #419721
+
+*ming-0.4.4 (05 Jun 2012)
+
+  05 Jun 2012; Justin Lecher <jlec@gentoo.org> +ming-0.4.4.ebuild,
+  +files/ming-0.4.4-vasprintf.patch:
+  Version Bump, moved to EAPI=4 and autotools-utils.eclass, add fix for
+  gcc-4.7, #417499
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> ming-0.4.3-r2.ebuild:
+  keyword ~amd64-fbsd
+
+*ming-0.4.3-r2 (16 Nov 2011)
+
+  16 Nov 2011; Michael Weber <xmw@gentoo.org> +ming-0.4.3-r2.ebuild,
+  +files/ming-0.4.3-perl-5.14.patch:
+  Revbump to add perl-5.14 support w/ Debian patch (thanks to turtle, bug
+  380153)
+
+  15 Nov 2011; Michael Weber <xmw@gentoo.org> ming-0.4.3-r1.ebuild:
+  Adding virtual/yacc as DEPEND on stable ebuild (reported by David Owen, bug
+  390291)
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> ming-0.4.3-r1.ebuild:
+  USE="static-libs" and remove useless libtool archive.
 
   28 Jun 2011; Ole Markus With <olemarkus@gentoo.org> -ming-0.4.3.ebuild:
   Non-maintainer commit: Removing ebuild depending on older PHP versions. Bug

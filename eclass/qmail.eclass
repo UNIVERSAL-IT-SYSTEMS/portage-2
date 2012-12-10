@@ -1,13 +1,13 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/qmail.eclass,v 1.3 2011/04/29 14:07:43 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/qmail.eclass,v 1.7 2012/09/15 16:16:53 zmedico Exp $
 
 # @ECLASS: qmail.eclass
-# @MAINTAINER: qmail-bugs@gentoo.org
+# @MAINTAINER:
+# qmail-bugs@gentoo.org
 # @BLURB: common qmail functions
 
 inherit flag-o-matic toolchain-funcs fixheadtails
-DESCRIPTION="Based on the ${ECLASS} eclass"
 
 # hardcoded paths
 QMAIL_HOME="/var/qmail"
@@ -98,14 +98,14 @@ dosupervise() {
 # because a user supplied patch might apply changes to these files, too.
 # See bug #165981.
 qmail_set_cc() {
-	cc=$(head -n 1 ./conf-cc | sed -e "s#^g\?cc\s\+\(-O2\)\?#$(tc-getCC) #")
-	ld=$(head -n 1 ./conf-ld | sed -e "s#^g\?cc\s\+\(-s\)\?#$(tc-getCC) #")
+	local cc=$(head -n 1 ./conf-cc | sed -e "s#^g\?cc\s\+\(-O2\)\?#$(tc-getCC) #")
+	local ld=$(head -n 1 ./conf-ld | sed -e "s#^g\?cc\s\+\(-s\)\?#$(tc-getCC) #")
 
-	echo "${cc} ${CFLAGS}"  > ./conf-cc || die 'Patching conf-cc failed.'
+	echo "${cc} ${CFLAGS} ${CPPFLAGS}"  > ./conf-cc || die 'Patching conf-cc failed.'
 	echo "${ld} ${LDFLAGS}" > ./conf-ld || die 'Patching conf-ld failed.'
 }
 
-# @FUNCTION: qmail_create_users
+# @FUNCTION: qmail_create_groups
 # @DESCRIPTION:
 # Keep qmail groups in sync across ebuilds
 qmail_create_groups() {

@@ -1,6 +1,15 @@
 # ChangeLog for dev-perl/Config-Any
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Config-Any/ChangeLog,v 1.11 2011/07/30 08:50:32 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Config-Any/ChangeLog,v 1.14 2012/11/18 11:11:09 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> Config-Any-0.230.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> -Config-Any-0.20.ebuild,
   -Config-Any-0.210.0.ebuild, -Config-Any-0.220.0.ebuild:
@@ -51,4 +60,3 @@
   23 Jun 2009; Robin H. Johnson <robbat2@gentoo.org>
   +Config-Any-0.17.ebuild, +metadata.xml:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

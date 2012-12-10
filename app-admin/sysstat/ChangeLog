@@ -1,6 +1,140 @@
 # ChangeLog for app-admin/sysstat
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/sysstat/ChangeLog,v 1.200 2011/07/18 11:47:52 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/sysstat/ChangeLog,v 1.238 2012/10/07 18:15:07 jer Exp $
+
+*sysstat-10.1.2 (07 Oct 2012)
+
+  07 Oct 2012; Jeroen Roovers <jer@gentoo.org> +sysstat-10.1.2.ebuild:
+  Version bump.
+
+  16 Sep 2012; Jeroen Roovers <jer@gentoo.org> files/crontab:
+  Remove & in cron jobs by Christian Ruppert (idl0r) (bug #435172).
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> sysstat-10.0.5.ebuild:
+  alpha/sparc stable wrt #427894
+
+  06 Aug 2012; Anthony G. Basile <blueness@gentoo.org> sysstat-10.0.5.ebuild,
+  sysstat-10.1.1.ebuild:
+  Keyword ~arm
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> sysstat-10.0.5.ebuild:
+  Stable on amd64 wrt bug #427894
+
+*sysstat-10.1.1 (02 Aug 2012)
+
+  02 Aug 2012; Jeroen Roovers <jer@gentoo.org> +sysstat-10.1.1.ebuild:
+  Version bump.
+
+  25 Jul 2012; Jeroen Roovers <jer@gentoo.org> sysstat-10.0.5.ebuild:
+  Stable for HPPA (bug #427894).
+
+  24 Jul 2012; Jeff Horelick <jdhore@gentoo.org> sysstat-10.0.5.ebuild:
+  marked x86 per bug 427894
+
+  24 Jul 2012; Anthony G. Basile <blueness@gentoo.org> sysstat-10.0.5.ebuild:
+  Stable ppc/ppc64
+
+  19 May 2012; Anthony G. Basile <blueness@gentoo.org> sysstat-10.0.5.ebuild:
+  Keyword mips
+
+*sysstat-10.0.5 (17 May 2012)
+
+  17 May 2012; Jeroen Roovers <jer@gentoo.org> +sysstat-10.0.5.ebuild:
+  Version bump.
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> sysstat-10.0.4-r1.ebuild:
+  Stable for HPPA (bug #414483).
+
+*sysstat-10.0.4-r1 (14 May 2012)
+
+  14 May 2012; Jeroen Roovers <jer@gentoo.org> -sysstat-10.0.4.ebuild,
+  +sysstat-10.0.4-r1.ebuild, files/sysstat.init.d:
+  Run sa1 instead of running sadc directly (bug #415381). Bump to get the
+  (trivial) fix in for everybody.
+
+  09 May 2012; Jeff Horelick <jdhore@gentoo.org> sysstat-10.0.4.ebuild:
+  marked x86 per bug 414483
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> sysstat-10.0.4.ebuild:
+  Marking sysstat-10.0.4 ppc64 for bug 414483
+
+  06 May 2012; Agostino Sarubbo <ago@gentoo.org> sysstat-10.0.4.ebuild:
+  Stable for amd64, wrt bug #414483
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> sysstat-10.0.4.ebuild:
+  Marking sysstat-10.0.4 ppc for bug 414483
+
+  07 Apr 2012; Jeroen Roovers <jer@gentoo.org> sysstat-10.0.4.ebuild:
+  Clean up src_configure().
+
+  19 Mar 2012; Jeroen Roovers <jer@gentoo.org> -sysstat-10.0.2.ebuild:
+  Old.
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> sysstat-10.0.3.ebuild:
+  alpha/sparc stable wrt #397481
+
+*sysstat-10.0.4 (09 Mar 2012)
+
+  09 Mar 2012; Jeroen Roovers <jer@gentoo.org>
+  files/sysstat-10.0.0-flags.patch, files/sysstat-10.0.0-nls.patch,
+  files/sysstat-10.0.1-nls.patch, +sysstat-10.0.4.ebuild,
+  +files/sysstat-10.0.4-flags.patch:
+  Version bump. Clean up patches.
+
+  06 Mar 2012; Jeroen Roovers <jer@gentoo.org> -sysstat-10.0.1.ebuild:
+  Old.
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> sysstat-10.0.3.ebuild:
+  Marking sysstat-10.0.3 ppc64 for bug 397481
+
+  21 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> sysstat-10.0.3.ebuild:
+  x86 stable wrt bug #397481
+
+  14 Jan 2012; Jeroen Roovers <jer@gentoo.org> sysstat-10.0.3.ebuild:
+  Stable for HPPA (bug #397481).
+
+  09 Jan 2012; Brent Baude <ranger@gentoo.org> sysstat-10.0.3.ebuild:
+  Marking sysstat-10.0.3 ppc for bug 397481
+
+  06 Jan 2012; Agostino Sarubbo <ago@gentoo.org> sysstat-10.0.3.ebuild:
+  Stable for AMD64, wrt bug #397481
+
+*sysstat-10.0.3 (29 Nov 2011)
+
+  29 Nov 2011; Jeroen Roovers <jer@gentoo.org> +sysstat-10.0.3.ebuild:
+  Version bump.
+
+  03 Oct 2011; Jeroen Roovers <jer@gentoo.org> sysstat-10.0.2.ebuild:
+  Stable for HPPA (bug #384867).
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> sysstat-10.0.2.ebuild:
+  alpha/sparc/x86 stable wrt #384867
+
+  30 Sep 2011; Steve Dibb <beandog@gentoo.org> sysstat-10.0.2.ebuild:
+  amd64 stable, bug 384867
+
+  26 Sep 2011; Jeroen Roovers <jer@gentoo.org> -sysstat-10.0.0.ebuild:
+  ^
+
+  25 Sep 2011; Raúl Porcel <armin76@gentoo.org> sysstat-10.0.1.ebuild:
+  alpha/sparc stable wrt #377433
+
+*sysstat-10.0.2 (28 Aug 2011)
+
+  28 Aug 2011; Jeroen Roovers <jer@gentoo.org> +sysstat-10.0.2.ebuild:
+  Version bump.
+
+  09 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> sysstat-10.0.1.ebuild:
+  ppc/ppc64 stable wrt #377433
+
+  07 Aug 2011; Jeroen Roovers <jer@gentoo.org> sysstat-10.0.1.ebuild:
+  Stable for HPPA (bug #377433).
+
+  07 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> sysstat-10.0.1.ebuild:
+  x86 stable wrt bug #377433
+
+  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> sysstat-10.0.1.ebuild:
+  Stable on amd64 wrt bug #377433
 
   18 Jul 2011; Jeroen Roovers <jer@gentoo.org> -sysstat-9.0.6.1.ebuild:
   ^

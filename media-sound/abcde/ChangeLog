@@ -1,6 +1,61 @@
 # ChangeLog for media-sound/abcde
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/abcde/ChangeLog,v 1.51 2010/07/23 19:38:39 beandog Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/abcde/ChangeLog,v 1.65 2012/11/25 09:32:49 ssuominen Exp $
+
+  25 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> abcde-2.5.2.ebuild,
+  abcde-2.5.4.ebuild, metadata.xml:
+  - Rename USE="id3" to USE="id3tag" wrt #421873 by Nikolaj Sjujskij
+  - Missing dev-python/eyeD3 runtime dependency with USE="id3tag" wrt #444616
+    by Charles Nérot
+  - Missing virtual/cdrtools runtime dependency with USE="cdr" wrt
+    #427112 by Manuel Rüger
+
+  25 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> -abcde-2.4.2-r1.ebuild,
+  -abcde-2.5.3.ebuild:
+  old
+
+  25 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> abcde-2.5.2.ebuild:
+  ppc64 stable wrt #421795
+
+*abcde-2.5.4 (21 Nov 2012)
+
+  21 Nov 2012; Alexis Ballier <aballier@gentoo.org> +abcde-2.5.4.ebuild:
+  version bump
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> abcde-2.5.2.ebuild:
+  ppc stable (bug 421795).
+
+  18 Jun 2012; Jeff Horelick <jdhore@gentoo.org> abcde-2.5.2.ebuild:
+  marked x86 per bug 421795
+
+  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> abcde-2.5.2.ebuild:
+  Stable for amd64, wrt bug #421795
+
+*abcde-2.5.3 (18 Jun 2012)
+
+  18 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +abcde-2.5.3.ebuild:
+  Version bump.
+
+*abcde-2.5.2 (10 May 2012)
+
+  10 May 2012; Samuli Suominen <ssuominen@gentoo.org> +abcde-2.5.2.ebuild:
+  Version bump wrt #415319 as reported by "Roger"
+
+  15 Feb 2012; Tim Harder <radhermit@gentoo.org> -abcde-2.4.1.ebuild:
+  Remove old.
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> abcde-2.4.2-r1.ebuild:
+  ppc/ppc64 stable wrt #394017
+
+  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> abcde-2.4.2-r1.ebuild:
+  x86 stable wrt bug #394017
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> abcde-2.4.1.ebuild,
+  abcde-2.4.2-r1.ebuild:
+  Drop sparc keywords
+
+  16 Dec 2011; Agostino Sarubbo <ago@gentoo.org> abcde-2.4.2-r1.ebuild:
+  Stable for AMD64, wrt bug #394017
 
 *abcde-2.4.2-r1 (23 Jul 2010)
 

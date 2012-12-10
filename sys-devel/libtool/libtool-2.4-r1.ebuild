@@ -1,10 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/libtool/libtool-2.4-r1.ebuild,v 1.6 2011/08/01 19:01:17 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/libtool/libtool-2.4-r1.ebuild,v 1.11 2012/04/09 00:32:11 vapier Exp $
 
 EAPI="2" #356089
 
 LIBTOOLIZE="true" #225559
+WANT_LIBTOOL="none"
 inherit eutils autotools multilib
 
 DESCRIPTION="A shared library tool for developers"
@@ -13,15 +14,15 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="2"
-KEYWORDS="~alpha amd64 arm ~hppa ~ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh ~sparc x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="vanilla"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
+IUSE="test vanilla"
 
 RDEPEND="sys-devel/gnuconfig
 	!<sys-devel/autoconf-2.62:2.5
 	!<sys-devel/automake-1.11.1:1.11
 	!=sys-devel/libtool-2*:1.5"
 DEPEND="${RDEPEND}
-	>=sys-devel/binutils-2.20
+	test? ( !<sys-devel/binutils-2.20 )
 	app-arch/xz-utils"
 
 src_unpack() {
@@ -31,7 +32,6 @@ src_unpack() {
 
 src_prepare() {
 	if ! use vanilla ; then
-		epunt_cxx
 		cd libltdl/m4
 		epatch "${FILESDIR}"/1.5.20/${PN}-1.5.20-use-linux-version-in-fbsd.patch #109105
 		cd ..

@@ -1,6 +1,20 @@
 # ChangeLog for x11-misc/gtkdialog
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/gtkdialog/ChangeLog,v 1.20 2009/06/01 16:58:01 nixnut Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/gtkdialog/ChangeLog,v 1.23 2012/10/30 20:21:50 jer Exp $
+
+*gtkdialog-0.8.2 (30 Oct 2012)
+
+  30 Oct 2012; Jeroen Roovers <jer@gentoo.org> +gtkdialog-0.8.2.ebuild:
+  Version bump.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gtkdialog-0.7.20.ebuild,
+  gtkdialog-0.8.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*gtkdialog-0.8.0 (12 Oct 2011)
+
+  12 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +gtkdialog-0.8.0.ebuild:
+  Version bump wrt #386933 by "Walther"
 
   01 Jun 2009; nixnut <nixnut@gentoo.org> gtkdialog-0.7.20.ebuild:
   ppc stable #272045

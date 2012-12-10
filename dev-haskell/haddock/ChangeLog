@@ -1,6 +1,67 @@
 # ChangeLog for dev-haskell/haddock
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haddock/ChangeLog,v 1.84 2011/06/05 12:20:59 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haddock/ChangeLog,v 1.95 2012/11/18 13:42:07 gienah Exp $
+
+*haddock-2.13.1 (18 Nov 2012)
+
+  18 Nov 2012; Mark Wright <gienah@gentoo.org>
+  +files/haddock-2.13.1-drop-tools.patch, +haddock-2.13.1.ebuild:
+  Bump haddock to 2.13.1 with no keywords, as depends on ghc 7.6.1 which is not
+  yet in portage
+
+*haddock-2.10.0-r2 (21 Oct 2012)
+
+  21 Oct 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/haddock-2.10.0-ticket-202.patch, +haddock-2.10.0-r2.ebuild,
+  -haddock-2.10.0-r1.ebuild, haddock-2.10.0.ebuild:
+  Fix build error against nonbundled cabal (bug #435726 by Alex and Kyle Blake).
+
+  14 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> haddock-2.10.0-r1.ebuild,
+  haddock-2.10.0.ebuild, haddock-2.4.2.ebuild, haddock-2.6.1.ebuild,
+  haddock-2.9.2.ebuild:
+  adding mirror://hackage
+
+  20 Aug 2012; Christoph Junghans <ottxor@gentoo.org> haddock-2.10.0-r1.ebuild:
+  added prefix keywords
+
+*haddock-2.10.0-r1 (02 Jun 2012)
+
+  02 Jun 2012; Mark Wright <gienah@gentoo.org>
+  +files/haddock-2.10.0-dont-crash-on-unicode-strings-in-doc-comments.patch,
+  +haddock-2.10.0-r1.ebuild:
+  Apply patch from upstream: Don't crash on unicode strings in doc comments.
+
+  25 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/haddock-2.10.0-drop-tools.patch, haddock-2.10.0.ebuild:
+  Get rid of dev-haskell/happy and dev-haskell/alex depends (reported by judu).
+
+  18 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/haddock-2.9.2-cabal-1.10.patch, haddock-2.9.2.ebuild:
+  dev-haskell/haddock: restrict haddock down to cabal-1.10 (fails with 1.14)
+
+  09 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/haddock-2.6.1-cabal-1.8.patch, haddock-2.6.1.ebuild:
+  Fix build failure against system's cabal-1.10 (use cabal bundled with ghc).
+  Fixes bug #383707 by Niklas Johansson and others.
+
+*haddock-2.10.0 (06 Mar 2012)
+
+  06 Mar 2012; Mark Wright <gienah@gentoo.org>
+  -haddock-2.10.0_pre20120202.ebuild, +haddock-2.10.0.ebuild:
+  Bump to 2.10.0, which is the same version included in ghc 7.4.1. Remove
+  haddock-2.10.0_pre20120202, since the haddock 2.10.0 included in ghc 7.4.1 is
+  now on hackage.
+
+*haddock-2.10.0_pre20120202 (04 Mar 2012)
+
+  04 Mar 2012; Mark Wright <gienah@gentoo.org> haddock-2.9.2.ebuild,
+  +haddock-2.10.0_pre20120202.ebuild:
+  Add haddock 2.10.0_pre20120202 that is included in ghc 7.4.1
+
+*haddock-2.9.2 (03 Aug 2011)
+
+  03 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> +haddock-2.9.2.ebuild:
+  Version bump (ghc-7 compatible).
 
   05 Jun 2011; Sergei Trofimovich <slyfox@gentoo.org> -haddock-0.8.ebuild,
   -haddock-0.9.ebuild, -haddock-2.4.1.ebuild:
@@ -314,4 +375,3 @@
   already by Thomas L. Bevan <tom@regex.com.au>. Thanks for that.
   Haddock is a documentation tool for Haskell that is used by GHC
   itself to document most of its libraries.
-

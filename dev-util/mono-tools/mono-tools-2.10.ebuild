@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/mono-tools/mono-tools-2.10.ebuild,v 1.4 2011/05/11 19:30:27 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/mono-tools/mono-tools-2.10.ebuild,v 1.7 2012/05/04 17:51:44 jdhore Exp $
 
-EAPI=2
+EAPI="4"
 
 inherit go-mono mono autotools
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.mono-project.com/"
 LICENSE="GPL-2 MIT"
 SLOT="0"
 KEYWORDS="amd64 ppc x86"
-IUSE="webkit gtkhtml +xulrunner"
+IUSE="+webkit gtkhtml"
 
 RDEPEND="=virtual/monodoc-${GO_MONO_REL_PV}*
 	>=dev-dotnet/gtk-sharp-2.12.6:2
@@ -20,21 +20,21 @@ RDEPEND="=virtual/monodoc-${GO_MONO_REL_PV}*
 	>=dev-dotnet/gconf-sharp-2:2
 	gtkhtml? ( >=dev-dotnet/gtkhtml-sharp-2.24.0:2 )
 	webkit? ( >=dev-dotnet/webkit-sharp-0.2-r1 )
-	xulrunner? ( >=dev-dotnet/gluezilla-2.6 )
 	"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
-	>=dev-util/pkgconfig-0.19"
+	virtual/pkgconfig"
 
-PATCHES=( "${FILESDIR}/${PN}-2.8-html-renderer-fixes.patch" )
+PATCHES=( "${FILESDIR}/${PN}-2.8-html-renderer-fixes.patch"
+		"${FILESDIR}/${PN}-2.10-autoconf.patch" )
 
 #Fails parallel make.
 MAKEOPTS="${MAKEOPTS} -j1"
 
 pkg_setup() {
-	if ! use webkit && ! use gtkhtml && ! use xulrunner
+	if ! use webkit && ! use gtkhtml
 	then
-		die "You must USE either webkit, gtkhtml or xulrunner"
+		die "You must USE either webkit or gtkhtml"
 	fi
 }
 
@@ -42,7 +42,7 @@ src_prepare() {
 	go-mono_src_prepare
 
 	# Stop getting ACLOCAL_FLAGS command not found problem like bug #298813
-	sed -i -e '/ACLOCAL_FLAGS/d' Makefile.am
+	sed -i -e '/ACLOCAL_FLAGS/d' Makefile.am || die
 
 	eautoreconf
 }
@@ -52,6 +52,5 @@ src_configure() {
 		--disable-gecko \
 		$(use_enable gtkhtml) \
 		$(use_enable webkit) \
-		$(use_enable xulrunner monowebbrowser) \
-		|| die "configure failed"
+		--disable-monowebbrowser
 }

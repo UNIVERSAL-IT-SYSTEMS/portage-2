@@ -1,6 +1,228 @@
 # ChangeLog for media-plugins/audacious-plugins
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/audacious-plugins/ChangeLog,v 1.215 2011/07/26 09:27:55 chainsaw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/audacious-plugins/ChangeLog,v 1.260 2012/10/20 14:47:31 jdhore Exp $
+
+*audacious-plugins-3.3.2 (20 Oct 2012)
+
+  20 Oct 2012; Jeff Horelick <jdhore@gentoo.org>
+  +audacious-plugins-3.3.2.ebuild:
+  Version Bump
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> audacious-plugins-3.2.2-r1.ebuild:
+  ppc stable (bug 417143).
+
+  31 Jul 2012; Jeff Horelick <jdhore@gentoo.org> audacious-plugins-3.3.ebuild:
+  Add small hack to fix bug 428632. Thanks Christian!
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org>
+  audacious-plugins-3.2.2-r1.ebuild:
+  alpha/sparc stable wrt #417143
+
+*audacious-plugins-3.3 (27 Jul 2012)
+
+  27 Jul 2012; Jeff Horelick <jdhore@gentoo.org> +audacious-plugins-3.3.ebuild,
+  -audacious-plugins-3.3_beta2.ebuild:
+  Version bump on 3.3 branch and add keywords as it is finalized upstream.
+
+*audacious-plugins-3.3_beta2 (18 Jul 2012)
+
+  18 Jul 2012; Jeff Horelick <jdhore@gentoo.org>
+  +audacious-plugins-3.3_beta2.ebuild, -audacious-plugins-3.3_beta1.ebuild:
+  Beta version bump
+
+*audacious-plugins-3.2.4 (05 Jul 2012)
+*audacious-plugins-3.3_beta1 (05 Jul 2012)
+
+  05 Jul 2012; Jeff Horelick <jdhore@gentoo.org>
+  +audacious-plugins-3.2.4.ebuild, +audacious-plugins-3.3_beta1.ebuild,
+  -audacious-plugins-3.3_alpha1.ebuild:
+  Version bump on 3.2 and 3.3 branches.
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org>
+  audacious-plugins-3.3_alpha1.ebuild:
+  Drop oss and mtp USE flags as the plugins were dropped upstream.
+
+*audacious-plugins-3.3_alpha1 (17 Jun 2012)
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org>
+  +audacious-plugins-3.3_alpha1.ebuild:
+  Version bump to 3.3_alpha1 (with no keywords). This version is using gtk+:3.
+
+  10 Jun 2012; Jeff Horelick <jdhore@gentoo.org> audacious-plugins-3.2.3.ebuild:
+  Drop gtk3 support for now as it is currently a bit broken.
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org>
+  audacious-plugins-3.2.2-r1.ebuild:
+  Stable for HPPA (bug #417143).
+
+  29 May 2012; Brent Baude <ranger@gentoo.org>
+  audacious-plugins-3.2.2-r1.ebuild:
+  Marking audacious-plugins-3.2.2-r1 ppc64 for bug 417143
+
+  27 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  -audacious-plugins-3.2.1.ebuild, -audacious-plugins-3.2.ebuild:
+  Remove some old versions.
+
+*audacious-plugins-3.2.3 (27 May 2012)
+
+  27 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  +audacious-plugins-3.2.3.ebuild:
+  Version bump and cleanups.
+
+  25 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  +files/audacious-plugins-2.x-fix-skins-build-glib-2.32.patch,
+  audacious-plugins-2.4.4-r1.ebuild, audacious-plugins-2.5.4.ebuild:
+  Add a patch to fix compilation of 2.x versions with >=dev-libs/glib-2.32
+
+  24 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  audacious-plugins-3.2.2-r1.ebuild:
+  marked x86 per bug 417143
+
+  23 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  audacious-plugins-3.2.2-r1.ebuild:
+  Stable for amd64, wrt bug #417143
+
+  07 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  +files/audacious-plugins-3.2.2-fix-build-sdl.patch,
+  audacious-plugins-3.2.2-r1.ebuild:
+  Add patch from upstream for fixing build with sdl (upstream commit
+  b6df18997dabe). Gentoo bug #414999
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  audacious-plugins-2.4.4-r1.ebuild, audacious-plugins-2.5.4.ebuild,
+  audacious-plugins-3.0.3.ebuild, audacious-plugins-3.1.ebuild,
+  audacious-plugins-3.1.1.ebuild, audacious-plugins-3.2.ebuild,
+  audacious-plugins-3.2.1.ebuild, audacious-plugins-3.2.2-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*audacious-plugins-3.2.2-r1 (16 Apr 2012)
+
+  16 Apr 2012; Jeff Horelick <jdhore@gentoo.org>
+  +audacious-plugins-3.2.2-r1.ebuild,
+  +files/audacious-plugins-3.2.2-fix-build-gmodule.patch,
+  -audacious-plugins-3.2.2.ebuild:
+  Revision bump to fix building for some people(?). Also, drop broken 3.2.2
+
+*audacious-plugins-3.2.2 (15 Apr 2012)
+
+  15 Apr 2012; Jeff Horelick <jdhore@gentoo.org>
+  +audacious-plugins-3.2.2.ebuild:
+  Version bump.
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  audacious-plugins-2.5.4.ebuild:
+  alpha/sparc stable wrt #380575
+
+  11 Mar 2012; Brent Baude <ranger@gentoo.org> audacious-plugins-3.1.ebuild:
+  Marking audacious-plugins-3.1 ppc64 for bug 383991
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org> audacious-plugins-3.1.ebuild:
+  Marking audacious-plugins-3.1 ppc for bug 383991
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> audacious-plugins-3.1.ebuild:
+  sparc stable wrt #383991
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> audacious-plugins-3.1.ebuild:
+  sparc stable wrt #383991
+
+*audacious-plugins-3.2.1 (18 Feb 2012)
+
+  18 Feb 2012; Jeff Horelick <jdhore@gentoo.org>
+  +audacious-plugins-3.2.1.ebuild:
+  Version bump.
+
+  02 Feb 2012; Jeff Horelick <jdhore@gentoo.org> audacious-plugins-3.2.ebuild:
+  Default the gtk USE flag on to be consistent with media-sound/audacious.
+
+  02 Feb 2012; Jeff Horelick <jdhore@gentoo.org> audacious-plugins-3.1.1.ebuild,
+  audacious-plugins-3.1.ebuild:
+  Kill off the sse2 USE flag from the 3.1 ebuilds as its been dropped. Closes
+  bug #393371.
+
+*audacious-plugins-3.2 (02 Feb 2012)
+
+  02 Feb 2012; Jeff Horelick <jdhore@gentoo.org> +audacious-plugins-3.2.ebuild,
+  metadata.xml:
+  Version bump. New ebuild also includes many improvements such as gtk+:2
+  support re-added, old configure switches dropped and more. Fixes bugs #393371
+  and #401293. Also, set myself as the new maintainer.
+
+  17 Jan 2012; Tobias Klausmann <klausman@gentoo.org>
+  audacious-plugins-3.1.ebuild:
+  Stable on alpha, bug #383991
+
+  15 Jan 2012; Tobias Klausmann <klausman@gentoo.org>
+  audacious-plugins-3.1.ebuild:
+  Stable on alpha, bug #383991
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  audacious-plugins-3.1.ebuild:
+  x86 stable wrt security bug #383991
+
+*audacious-plugins-3.1.1 (05 Dec 2011)
+
+  05 Dec 2011; Tony Vroon <chainsaw@gentoo.org>
+  +audacious-plugins-3.1.1.ebuild:
+  New release on the 3.1 branch.
+
+  15 Nov 2011; Jeroen Roovers <jer@gentoo.org> audacious-plugins-3.1.ebuild:
+  Stable for HPPA (bug #383991).
+
+  15 Nov 2011; Tony Vroon <chainsaw@gentoo.org> audacious-plugins-3.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in security bug #383991.
+
+  14 Nov 2011; Tony Vroon <chainsaw@gentoo.org> audacious-plugins-3.0.3.ebuild,
+  audacious-plugins-3.1.ebuild:
+  Do not try to set non-existent configure option; from arch testing by
+  Agostino "ago" Sarubbo.
+
+  14 Nov 2011; Tony Vroon <chainsaw@gentoo.org> audacious-plugins-3.0.3.ebuild,
+  audacious-plugins-3.1.ebuild:
+  Missed dependency due to internal/external library changes.
+
+*audacious-plugins-3.1 (14 Nov 2011)
+
+  14 Nov 2011; Tony Vroon <chainsaw@gentoo.org> audacious-plugins-3.0.3.ebuild,
+  +audacious-plugins-3.1.ebuild:
+  Version bump, as requested by J.D. Horelick on IRC. Make GTK+ dependency
+  suitably strict.
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> audacious-plugins-2.5.4.ebuild:
+  Stable for HPPA (bug #380575).
+
+  23 Sep 2011; Tony Vroon <chainsaw@gentoo.org> audacious-plugins-3.0.3.ebuild:
+  Remove obsolete USE-flags as per Joost Ruis in bug #384171.
+
+  22 Sep 2011; Tony Vroon <chainsaw@gentoo.org> audacious-plugins-3.0.3.ebuild,
+  metadata.xml:
+  That was indeed the core ebuild and not the plugins ebuild. My apologies, and
+  thanks to robbat2 for pointing it out.
+
+*audacious-plugins-3.0.3 (22 Sep 2011)
+
+  22 Sep 2011; Tony Vroon <chainsaw@gentoo.org>
+  -audacious-plugins-3.0.2.ebuild, +audacious-plugins-3.0.3.ebuild,
+  metadata.xml:
+  Version bump. Ebuild improvements by Agostino "ago" Sarubbo close bugs
+  #380577, #383357 & #383649. Remove vulnerable version for security bug
+  #383991.
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> audacious-plugins-2.5.4.ebuild:
+  x86 stable, bug #380575
+
+  25 Aug 2011; Tony Vroon <chainsaw@gentoo.org> audacious-plugins-2.5.4.ebuild:
+  Marked stable on AMD64 as a dependency of media-sound/audacious-2.5.4 based
+  on arch testing by Agostino "ago" Sarubbo and Elijah El Lazkani in bug
+  #380575.
+
+*audacious-plugins-3.0.2 (24 Aug 2011)
+
+  24 Aug 2011; Tony Vroon <chainsaw@gentoo.org> -audacious-plugins-3.0.ebuild,
+  +audacious-plugins-3.0.2.ebuild:
+  Version bump to newest 3.x branch ebuild. Tighten up ffmpeg dependency to
+  prevent the breakage that Alessandro Surace pointed out in bug #377671.
+  Removed old ebuild.
 
   26 Jul 2011; Tony Vroon <chainsaw@gentoo.org>
   -audacious-plugins-2.5.3.ebuild:
@@ -1179,4 +1401,3 @@
   18 Sep 2006; Tony Vroon <chainsaw@gentoo.org> +metadata.xml,
   +audacious-plugins-1.2.0.ebuild:
   Initial commit, ebuild by me.
-

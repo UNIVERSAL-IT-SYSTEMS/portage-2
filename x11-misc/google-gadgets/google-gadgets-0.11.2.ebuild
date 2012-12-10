@@ -1,10 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/google-gadgets/google-gadgets-0.11.2.ebuild,v 1.11 2011/07/13 14:50:56 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/google-gadgets/google-gadgets-0.11.2.ebuild,v 1.20 2012/07/16 10:25:26 kensington Exp $
 
-EAPI=2
-
-inherit base autotools multilib eutils fdo-mime
+EAPI=4
+inherit autotools eutils fdo-mime multilib
 
 MY_PN=${PN}-for-linux
 MY_P=${MY_PN}-${PV}
@@ -16,7 +15,8 @@ SRC_URI="http://${MY_PN}.googlecode.com/files/${MY_P}.tar.bz2"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~alpha amd64 ~ia64 ppc ppc64 x86"
-IUSE="+dbus debug +gtk +qt4 +gstreamer networkmanager soup startup-notification webkit +xulrunner"
+IUSE="+dbus debug +gtk +qt4 +gstreamer networkmanager soup startup-notification"
+REQUIRED_USE="|| ( gtk qt4 )"
 
 # Weird things happen when we start mix-n-matching, so for the time being
 # I've just locked the deps to the versions I had as of Summer 2008. With any
@@ -43,36 +43,25 @@ RDEPEND="
 	)
 	networkmanager? ( net-misc/networkmanager )
 	qt4? (
-		>=x11-libs/qt-core-4.4.0
-		>=x11-libs/qt-opengl-4.4.0
-		>=x11-libs/qt-script-4.4.0
-		>=x11-libs/qt-webkit-4.4.0
-		>=x11-libs/qt-xmlpatterns-4.4.0
-		dbus? ( >=x11-libs/qt-dbus-4.4.0 )
+		>=x11-libs/qt-core-4.4.0:4
+		>=x11-libs/qt-opengl-4.4.0:4
+		>=x11-libs/qt-script-4.4.0:4
+		>=x11-libs/qt-webkit-4.4.0:4
+		>=x11-libs/qt-xmlpatterns-4.4.0:4
+		dbus? ( >=x11-libs/qt-dbus-4.4.0:4 )
 	)
 	soup? ( >=net-libs/libsoup-2.26:2.4 )
-	startup-notification? ( x11-libs/startup-notification )
-	webkit? ( >=net-libs/webkit-gtk-1.0.3:2 )
-	xulrunner? ( =net-libs/xulrunner-1.9*:1.9 )
-"
+	startup-notification? ( x11-libs/startup-notification )"
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.20
-"
+	virtual/pkgconfig"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 RESTRICT="test"
 
-pkg_setup() {
-	# If a non-google, non-qt4 and non-gtk host system for google-gadgets is ever developed,
-	# I'll consider changing the error below.
-	if ! use gtk && ! use qt4; then
-		eerror "You must choose which toolkit to build for. Either qt4 or gtk can be"
-		eerror "chosen. For qt4, see also above. To enable \$toolkit, do:"
-		eerror "echo \"${CATEGORY}/${PN} \$toolkit\" >> /etc/portage/package.use"
-		die "You need to choose a toolkit"
-	fi
+DOCS="ChangeLog README"
 
+pkg_setup() {
 	if ! use gstreamer; then
 		ewarn "Disabling gstreamer disables the multimedia functions of ${PN}."
 		ewarn "This is not recommended. To enable gstreamer, do:"
@@ -81,14 +70,20 @@ pkg_setup() {
 }
 
 src_prepare() {
-	sed -i -r \
-		-e '/^GGL_SYSDEPS_INCLUDE_DIR/ c\GGL_SYSDEPS_INCLUDE_DIR=$GGL_INCLUDE_DIR' \
-		configure.ac||die "404"
+	epatch "${FILESDIR}"/${P}-configure_ggl_nm.patch
+	epatch "${FILESDIR}"/${P}-glib-2.31.patch
+	epatch "${FILESDIR}"/${P}-gcc-4.7.patch
+	epatch "${FILESDIR}"/${P}-networkmanager-0.9.patch
+
+	# zlib-1.2.5.1-r1 renames the OF macro in zconf.h, bug 385477.
+	has_version '>=sys-libs/zlib-1.2.5.1-r1' && sed -i -e \
+		'1i#define OF(x) x' third_party/unzip/ioapi.h
+
 	eautoreconf
 }
 
 src_configure() {
-	local myconf="--disable-dependency-tracking \
+	econf \
 		--disable-update-desktop-database \
 		--disable-update-mime-database \
 		--disable-werror \
@@ -100,9 +95,8 @@ src_configure() {
 		$(use_enable dbus libggadget-dbus) \
 		$(use_enable gstreamer gst-audio-framework) \
 		$(use_enable gstreamer gst-video-element) \
+		$(use_with networkmanager) \
 		$(use_enable soup soup-xml-http-request) \
-		$(use_enable webkit webkit-script-runtime) \
-		$(use_enable webkit gtkwebkit-browser-element) \
 		$(use_enable gtk gtk-host) \
 		$(use_enable gtk libggadget-gtk ) \
 		$(use_enable gtk gtk-edit-element) \
@@ -115,21 +109,11 @@ src_configure() {
 		$(use_enable qt4 qt-system-framework) \
 		$(use_enable qt4 qtwebkit-browser-element) \
 		$(use_enable qt4 qt-xml-http-request) \
-		$(use_enable qt4 qt-script-runtime)"
-	if use xulrunner; then
-		myconf="${myconf} \
-			$(use_enable gtk gtkmoz-browser-element) \
-			--with-gtkmozembed=libxul \
-			--enable-smjs-script-runtime \
-			--with-smjs-cppflags=-I/usr/include/nspr \
-			--with-smjs-libdir=/usr/$(get_libdir)/xulrunner-1.9 \
-			--with-smjs-incdir=/usr/include/xulrunner-1.9/unstable"
-	else
-		myconf="${myconf} --disable-gtkmoz-browser-element \
-			--disable-smjs-script-runtime"
-	fi
-
-	econf ${myconf}
+		$(use_enable qt4 qt-script-runtime) \
+		--disable-gtkmoz-browser-element \
+		--disable-smjs-script-runtime \
+		--disable-gtkwebkit-browser-element \
+		--disable-webkit-script-runtime
 }
 
 src_test() {
@@ -138,12 +122,12 @@ src_test() {
 	make check &> "${WORKDIR}"/check
 }
 
-src_install() {
-	base_src_install
-	dodoc ChangeLog README
+pkg_postinst() {
+	fdo-mime_desktop_database_update
+	fdo-mime_mime_database_update
 }
 
-pkg_postinst() {
+pkg_postrm() {
 	fdo-mime_desktop_database_update
 	fdo-mime_mime_database_update
 }

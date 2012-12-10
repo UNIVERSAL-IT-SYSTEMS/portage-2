@@ -1,6 +1,35 @@
 # ChangeLog for app-i18n/imhangul
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/imhangul/ChangeLog,v 1.33 2011/07/08 11:03:15 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/imhangul/ChangeLog,v 1.40 2012/05/03 19:24:27 jdhore Exp $
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> imhangul-0.9.12.ebuild,
+  imhangul-0.9.16.ebuild, imhangul-2.0.0.ebuild, imhangul-2.1.0.ebuild,
+  imhangul-3.0.0.ebuild, imhangul-3.1.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> imhangul-2.0.0.ebuild:
+  Marking imhangul-2.0.0 ppc for bug 393011
+
+*imhangul-3.1.0 (11 Jan 2012)
+*imhangul-2.1.0 (11 Jan 2012)
+
+  11 Jan 2012; MATSUU Takuto <matsuu@gentoo.org> +imhangul-2.1.0.ebuild,
+  +imhangul-3.1.0.ebuild:
+  Version bumped.
+
+  22 Dec 2011; Markus Meier <maekke@gentoo.org> imhangul-2.0.0.ebuild:
+  x86 stable, bug #393011
+
+  14 Dec 2011; Agostino Sarubbo <ago@gentoo.org> imhangul-2.0.0.ebuild:
+  Stable for AMD64, wrt bug #393011
+
+  21 Oct 2011; Pacho Ramos <pacho@gentoo.org> imhangul-2.0.0.ebuild,
+  imhangul-3.0.0.ebuild:
+  Drop DEPRECATED flags, bug #387825
+
+  25 Sep 2011; Raúl Porcel <armin76@gentoo.org> imhangul-0.9.12.ebuild,
+  imhangul-0.9.16.ebuild, imhangul-2.0.0.ebuild, imhangul-3.0.0.ebuild:
+  Drop alpha keywords
 
   08 Jul 2011; Samuli Suominen <ssuominen@gentoo.org> imhangul-0.9.12.ebuild:
   Convert from "useq" to "use".

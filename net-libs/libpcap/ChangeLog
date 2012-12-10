@@ -1,6 +1,110 @@
 # ChangeLog for net-libs/libpcap
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libpcap/ChangeLog,v 1.148 2011/04/02 12:57:21 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libpcap/ChangeLog,v 1.177 2012/09/30 16:26:28 armin76 Exp $
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> libpcap-1.3.0.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #433263
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libpcap-1.3.0.ebuild:
+  x86 stable wrt bug #433263
+
+  18 Sep 2012; Jeroen Roovers <jer@gentoo.org> libpcap-1.3.0.ebuild:
+  Stable for HPPA (bug #433263).
+
+  11 Sep 2012; Jeroen Roovers <jer@gentoo.org> libpcap-1.3.0.ebuild,
+  +files/libpcap-1.3.0-canusb.patch, metadata.xml:
+  Make CAN USB support optional by Alexander Zubkov (bug #434538).
+
+  07 Sep 2012; Agostino Sarubbo <ago@gentoo.org> libpcap-1.3.0.ebuild:
+  Stable for amd64, wrt bug #433263
+
+  03 Sep 2012; Anthony G. Basile <blueness@gentoo.org> libpcap-1.3.0.ebuild:
+  Stable ppc64, bug #433263
+
+  03 Sep 2012; Anthony G. Basile <blueness@gentoo.org> libpcap-1.3.0.ebuild:
+  Stable ppc, bug #433263
+
+  03 Sep 2012; Anthony G. Basile <blueness@gentoo.org> libpcap-1.3.0.ebuild:
+  Stable arm, bug #433263
+
+  27 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> -libpcap-1.2.0.ebuild,
+  -libpcap-1.2.1.ebuild, libpcap-1.1.1-r1.ebuild, libpcap-1.3.0.ebuild,
+  metadata.xml:
+  Remove old; replace libnl USE flag with netlink, as that is what other
+  packages are using, with the same meaning.
+
+*libpcap-1.3.0 (19 Jun 2012)
+
+  19 Jun 2012; Jeroen Roovers <jer@gentoo.org> +libpcap-1.3.0.ebuild:
+  Version bump.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libpcap-1.2.1.ebuild:
+  keyword ~amd64-fbsd
+
+  29 Feb 2012; Jeroen Roovers <jer@gentoo.org> -libpcap-1.1.1.ebuild:
+  Old.
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> libpcap-1.1.1-r1.ebuild:
+  Marking libpcap-1.1.1-r1 ppc for bug 385875
+
+  19 Feb 2012; Fabian Groffen <grobian@gentoo.org> libpcap-1.2.1.ebuild:
+  Make sure we use -fPIC on sparc64-solaris targets, bug #396345
+
+  12 Feb 2012; Tony Vroon <chainsaw@gentoo.org> libpcap-1.1.1-r1.ebuild:
+  Marked stable on PPC64 as requested by Francisco "klondike" Blas Izquierdo
+  Riera in bug #385875. Compile tested on a PowerMac7,3 (64UL) with GCC
+  4.5.3.
+
+*libpcap-1.2.1 (04 Jan 2012)
+
+  04 Jan 2012; Tim Harder <radhermit@gentoo.org> +libpcap-1.2.1.ebuild:
+  Version bump.
+
+  17 Dec 2011; Jeroen Roovers <jer@gentoo.org> libpcap-1.1.1-r1.ebuild:
+  Restore old version (bug #395033).
+
+  16 Dec 2011; Jeroen Roovers <jer@gentoo.org> libpcap-1.2.0.ebuild:
+  Restore libnl:1.1 dependency.
+
+*libpcap-1.2.0 (16 Dec 2011)
+
+  16 Dec 2011; Jeroen Roovers <jer@gentoo.org> libpcap-1.1.1-r1.ebuild,
+  +libpcap-1.2.0.ebuild, +files/libpcap-1.2.0-cross-linux.patch:
+  Version bump thanks to Michael (kensington) and Yun Zheng Hu (bug #393085).
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> libpcap-1.1.1-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #385875
+
+  08 Dec 2011; Markus Meier <maekke@gentoo.org> libpcap-1.1.1-r1.ebuild:
+  arm stable, bug #385875
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libpcap-1.1.1-r1.ebuild:
+  x86 stable wrt bug #385875
+
+  05 Dec 2011; Jeroen Roovers <jer@gentoo.org> libpcap-1.1.1-r1.ebuild:
+  Stable for HPPA (bug #385875).
+
+  04 Dec 2011; Markos Chandras <hwoarang@gentoo.org> libpcap-1.1.1-r1.ebuild:
+  Stable on amd64 wrt bug #385875
+
+  04 Dec 2011; Jeroen Roovers <jer@gentoo.org> libpcap-1.1.1-r1.ebuild,
+  -files/libpcap-1.1.1-libidn2.patch:
+  Restore dependency on dev-libs/libnl:1.1, remove faulty patch (bug #385875,
+  comment #1).
+
+  22 Nov 2011; Jeroen Roovers <jer@gentoo.org> libpcap-1.1.1-r1.ebuild:
+  Add IUSE=static-libs thanks to Piotr Karbowski (bug #391375).
+
+  28 Oct 2011; Jeroen Roovers <jer@gentoo.org> libpcap-1.1.1.ebuild:
+  Fix libnl dependency (bug #342461).
+
+  12 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> libpcap-1.1.1-r1.ebuild:
+  Move to eapi4, remove static libs, fix building with >libnl-2. Closes bug
+  #343621. Remove older overshadowed versions.
+
+  11 Aug 2011; Mike Frysinger <vapier@gentoo.org> libpcap-1.1.1.ebuild,
+  libpcap-1.1.1-r1.ebuild:
+  Pull in yacc #378423 by Zachary Richley.
 
   02 Apr 2011; Samuli Suominen <ssuominen@gentoo.org> libpcap-0.9.8-r2.ebuild,
   libpcap-1.0.0-r2.ebuild, libpcap-1.0.1_pre20090812.ebuild,

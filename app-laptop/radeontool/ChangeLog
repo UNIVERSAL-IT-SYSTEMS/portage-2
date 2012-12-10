@@ -1,6 +1,32 @@
 # ChangeLog for app-laptop/radeontool
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-laptop/radeontool/ChangeLog,v 1.24 2010/05/26 09:58:02 bangert Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-laptop/radeontool/ChangeLog,v 1.31 2012/12/05 04:48:25 kensington Exp $
+
+  05 Dec 2012; Michael Palimaka <kensington@gentoo.org>
+  -files/radeontool-1.5-mmap.patch, -files/radeontool-1.5-pagesize.patch,
+  -files/radeontool-1.5-vga-ati.patch, -radeontool-1.5-r3.ebuild:
+  Remove old.
+
+  03 Dec 2012;  <ago@gentoo.org> radeontool-1.6.3.ebuild:
+  Stable for x86, wrt bug #329959
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> radeontool-1.6.3.ebuild:
+  Stable for amd64, wrt bug #329959
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> radeontool-1.6.3.ebuild:
+  Add missing dep, bug 409421
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> radeontool-1.6.3.ebuild:
+  Fix depend, bug #329959
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> -radeontool-1.6.0.ebuild,
+  -radeontool-1.6.1.ebuild, metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML, remove old.
+
+*radeontool-1.6.3 (21 Mar 2012)
+
+  21 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> +radeontool-1.6.3.ebuild:
+  Version bump so I can poke my R600 HDMI more.
 
 *radeontool-1.6.1 (26 May 2010)
 

@@ -1,6 +1,104 @@
 # ChangeLog for sys-apps/less
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/less/ChangeLog,v 1.129 2011/06/09 18:37:30 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/less/ChangeLog,v 1.156 2012/11/22 04:20:15 vapier Exp $
+
+  22 Nov 2012; Mike Frysinger <vapier@gentoo.org> files/lesspipe.sh:
+  Pass the -d flag to lzip for .lz files #444122 by Vincent Tai.
+
+*less-456 (09 Nov 2012)
+
+  09 Nov 2012; Mike Frysinger <vapier@gentoo.org> +less-456.ebuild,
+  -less-452.ebuild:
+  Version bump to fix -Pm handling #439422 by Nikolaj Sjujskij.
+
+*less-452 (23 Oct 2012)
+
+  23 Oct 2012; Tim Harder <radhermit@gentoo.org> +less-452.ebuild:
+  Version bump.
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> less-451.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #431956
+
+  04 Sep 2012; Mike Frysinger <vapier@gentoo.org> files/lesspipe.sh:
+  Use the --wide flag when calling readelf to avoid truncating long symbol names
+  #433637 by Raphaël Droz.
+
+  21 Aug 2012; Anthony G. Basile <blueness@gentoo.org> less-451.ebuild:
+  Stable arm, bug #431956
+
+  20 Aug 2012; Anthony G. Basile <blueness@gentoo.org> less-451.ebuild:
+  Stable ppc ppc64, bug #431956
+
+  20 Aug 2012; Johannes Huber <johu@gentoo.org> less-451.ebuild:
+  Stable for x86, wrt bug #431956
+
+  20 Aug 2012; Agostino Sarubbo <ago@gentoo.org> less-451.ebuild:
+  Stable for amd64, wrt bug #431956
+
+  20 Aug 2012; Jeroen Roovers <jer@gentoo.org> less-451.ebuild:
+  Stable for HPPA (bug #431956).
+
+*less-451 (22 Jul 2012)
+
+  22 Jul 2012; Mike Frysinger <vapier@gentoo.org> +less-451.ebuild:
+  Version bump.
+
+*less-450 (16 Jul 2012)
+
+  16 Jul 2012; Tim Harder <radhermit@gentoo.org> +less-450.ebuild:
+  Version bump.
+
+*less-449 (27 Jun 2012)
+
+  27 Jun 2012; Mike Frysinger <vapier@gentoo.org> +less-449.ebuild:
+  Version bump.
+
+  04 Jun 2012; Fabian Groffen <grobian@gentoo.org> less-445-r1.ebuild:
+  Fix for Prefix, add Prefix keywords, bug #388209
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> less-445-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  31 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> less-444.ebuild:
+  ppc64 stable wrt #389995
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> less-444.ebuild:
+  Marking less-444 ppc for bug 389995
+
+  07 Dec 2011; Mike Frysinger <vapier@gentoo.org> files/lesspipe.sh:
+  Also check for `7zr` when processing 7z archives.
+
+  03 Dec 2011; Raúl Porcel <armin76@gentoo.org> less-444.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #389995
+
+  17 Nov 2011; Ulrich Mueller <ulm@gentoo.org> less-445-r1.ebuild:
+  Fix dependency on app-misc/editor-wrapper.
+
+  13 Nov 2011; Markus Meier <maekke@gentoo.org> less-444.ebuild:
+  arm stable, bug #389995
+
+  11 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> less-444.ebuild:
+  x86 stable wrt bug #389995
+
+  10 Nov 2011; Jeroen Roovers <jer@gentoo.org> less-444.ebuild:
+  Stable for HPPA (bug #389995).
+
+  10 Nov 2011; Tony Vroon <chainsaw@gentoo.org> less-444.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #389995.
+
+*less-445-r1 (09 Nov 2011)
+
+  09 Nov 2011; Mike Frysinger <vapier@gentoo.org> +less-445-r1.ebuild:
+  Update to EAPI=2, add editor-wrapper support, and USE=pcre support #389935.
+
+*less-445 (28 Oct 2011)
+
+  28 Oct 2011; Tim Harder <radhermit@gentoo.org> +less-445.ebuild:
+  Version bump.
+
+  09 Oct 2011; Mike Frysinger <vapier@gentoo.org> files/lesspipe.sh:
+  Only run cd-info when the .cue file exists #285507 by Martin von Gagern.
 
 *less-444 (09 Jun 2011)
 

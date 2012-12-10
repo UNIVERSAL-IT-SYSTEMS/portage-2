@@ -1,6 +1,42 @@
 # ChangeLog for app-emacs/emacs-daemon
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/emacs-daemon/ChangeLog,v 1.47 2011/07/17 20:25:45 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/emacs-daemon/ChangeLog,v 1.58 2012/10/04 07:53:06 naota Exp $
+
+  04 Oct 2012;  <naota@gentoo.org> emacs-daemon-0.19.ebuild:
+  Add ~x86-fbsd wrt bug #263222
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> emacs-daemon-0.19.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #433185
+
+  27 Sep 2012; Anthony G. Basile <blueness@gentoo.org> emacs-daemon-0.19.ebuild:
+  stable ppc ppc64, bug #433185
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  emacs-daemon-0.19.ebuild:
+  x86 stable wrt bug #433185
+
+  23 Sep 2012; Matt Turner <mattst88@gentoo.org> emacs-daemon-0.19.ebuild:
+  Added ~mips, bug 263222.
+
+  16 Sep 2012; Markus Meier <maekke@gentoo.org> emacs-daemon-0.19.ebuild:
+  arm stable, bug #433185
+
+  13 Sep 2012; Jeroen Roovers <jer@gentoo.org> emacs-daemon-0.19.ebuild:
+  Stable for HPPA (bug #433185).
+
+  09 Sep 2012; Naohiro Aota <naota@gentoo.org> emacs-daemon-0.19.ebuild:
+  Add ~x86-fbsd. #263222
+
+  06 Sep 2012; Agostino Sarubbo <ago@gentoo.org> emacs-daemon-0.19.ebuild:
+  Stable for amd64, wrt bug #433185
+
+*emacs-daemon-0.19 (21 Jul 2012)
+
+  21 Jul 2012; Ulrich Müller <ulm@gentoo.org> +emacs-daemon-0.19.ebuild:
+  Version bump, dropping compatibility with baselayout-1.
+
+  24 Aug 2011; Ulrich Mueller <ulm@gentoo.org> emacs-daemon-0.18.ebuild:
+  Warn about problems in GTK+, bug 292471.
 
   17 Jul 2011; Ulrich Mueller <ulm@gentoo.org> -emacs-daemon-0.17.ebuild:
   Remove old.
@@ -175,4 +211,3 @@
   30 Nov 2008; Ulrich Mueller <ulm@gentoo.org> +metadata.xml,
   +emacs-daemon-0.7.ebuild:
   Initial import. Ebuild contributed by me.
-

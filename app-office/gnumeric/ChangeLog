@@ -1,6 +1,35 @@
 # ChangeLog for app-office/gnumeric
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/gnumeric/ChangeLog,v 1.227 2011/07/31 18:16:38 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-office/gnumeric/ChangeLog,v 1.235 2012/05/23 12:11:14 scarabeus Exp $
+
+  23 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Drop unused local desc.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gnumeric-1.10.17.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  15 Apr 2012; Gilles Dartiguelongue <eva@gentoo.org> -gnumeric-1.10.13.ebuild,
+  -gnumeric-1.10.15.ebuild, -gnumeric-1.10.16.ebuild:
+  Clean up old revisions.
+
+  10 Feb 2012; Patrick Lauer <patrick@gentoo.org> gnumeric-1.10.13.ebuild,
+  gnumeric-1.10.15.ebuild, gnumeric-1.10.16.ebuild, gnumeric-1.10.17.ebuild:
+  Changing python deps in preparation for 2.4 removal
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> gnumeric-1.10.17.ebuild:
+  alpha/ia64/sparc stable wrt #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> gnumeric-1.10.17.ebuild:
+  x86 stable wrt bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> gnumeric-1.10.17.ebuild:
+  x86 stable wrt bug #385699
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> gnumeric-1.10.17.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> gnumeric-1.10.17.ebuild:
+  amd64 stable wrt #385699
 
 *gnumeric-1.10.17 (31 Jul 2011)
 

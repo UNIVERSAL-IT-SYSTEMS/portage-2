@@ -1,6 +1,19 @@
 # ChangeLog for app-editors/leo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/leo/ChangeLog,v 1.23 2011/06/23 14:57:14 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/leo/ChangeLog,v 1.26 2012/11/01 10:12:09 ulm Exp $
+
+  01 Nov 2012; Ulrich Müller <ulm@gentoo.org> leo-4.8.ebuild, leo-4.10.ebuild:
+  Specify LICENSE more precisely, MIT according to LICENSE.TXT in zipball.
+
+  10 Apr 2012; Mike Gilbert <floppym@gentoo.org>
+  +files/leo-4.10-fix_syntax_errors.patch, leo-4.10.ebuild:
+  Add missing patch.
+
+*leo-4.10 (08 Apr 2012)
+
+  08 Apr 2012; Mike Gilbert <floppym@gentoo.org> +leo-4.10.ebuild,
+  leo-4.8.ebuild:
+  Version bump, #411057 by Ian Delaney. Restrict pypy.
 
   23 Jun 2011; Markos Chandras <hwoarang@gentoo.org> -leo-4.7.1.ebuild,
   -files/leo-4.7.1-fix_syntax_errors.patch:

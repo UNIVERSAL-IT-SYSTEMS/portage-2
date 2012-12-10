@@ -1,6 +1,70 @@
 # ChangeLog for dev-cpp/pangomm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/pangomm/ChangeLog,v 1.41 2011/07/17 21:33:21 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/pangomm/ChangeLog,v 1.60 2012/05/04 03:44:56 jdhore Exp $
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> pangomm-2.28.2.ebuild,
+  pangomm-2.28.3.ebuild, pangomm-2.28.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> pangomm-2.28.4.ebuild:
+  alpha/ia64/sh/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> pangomm-2.28.4.ebuild:
+  Marking pangomm-2.28.4 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> pangomm-2.28.4.ebuild:
+  Marking pangomm-2.28.4 ppc64 stable for bug 393007
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> pangomm-2.28.4.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> pangomm-2.28.4.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> pangomm-2.28.4.ebuild:
+  amd64 stable, bug 393007
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> pangomm-2.28.4.ebuild:
+  Stable for HPPA (bug #393007).
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> pangomm-2.28.3.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> pangomm-2.28.3.ebuild:
+  arm stable, bug #385699
+
+*pangomm-2.28.4 (26 Oct 2011)
+
+  26 Oct 2011; Pacho Ramos <pacho@gentoo.org> -pangomm-2.26.3.ebuild,
+  +pangomm-2.28.4.ebuild:
+  Version bump, remove old.
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> pangomm-2.28.3.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> pangomm-2.28.3.ebuild:
+  Stable for HPPA (bug #385699).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> pangomm-2.28.3.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> pangomm-2.28.3.ebuild:
+  amd64 stable wrt #385699
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> pangomm-2.28.2.ebuild:
+  Stable for HPPA (bug #372353).
+
+*pangomm-2.28.3 (27 Sep 2011)
+
+  27 Sep 2011; Pacho Ramos <pacho@gentoo.org> -pangomm-2.28.1.ebuild,
+  +pangomm-2.28.3.ebuild:
+  Version bump, remove old.
+
+  25 Sep 2011; Raúl Porcel <armin76@gentoo.org> pangomm-2.28.2.ebuild:
+  alpha/ia64/sh/sparc stable wrt #372353
+
+  08 Sep 2011; Fabian Groffen <grobian@gentoo.org> pangomm-2.28.2.ebuild:
+  Marked ~sparc-solaris
 
   17 Jul 2011; Markus Meier <maekke@gentoo.org> pangomm-2.28.2.ebuild:
   arm stable, bug #372353

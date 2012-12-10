@@ -1,6 +1,69 @@
 # ChangeLog for net-voip/ekiga
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/ekiga/ChangeLog,v 1.26 2011/03/27 13:20:56 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-voip/ekiga/ChangeLog,v 1.43 2012/12/05 01:25:08 neurogeek Exp $
+
+*ekiga-4.0.0-r1 (05 Dec 2012)
+
+  05 Dec 2012; Jesus Rivero <neurogeek@gentoo.org> -ekiga-4.0.0.ebuild,
+  +ekiga-4.0.0-r1.ebuild:
+  Revbump. Fixed deps.
+
+*ekiga-4.0.0 (03 Dec 2012)
+
+  03 Dec 2012; Jesus Rivero <neurogeek@gentoo.org> -ekiga-3.9.90.ebuild,
+  +ekiga-4.0.0.ebuild:
+  Version bump. Fixes to bugs #444992 #445846 and #442728
+
+  08 Nov 2012; Jesus Rivero <neurogeek@gentoo.org> metadata.xml:
+  Added myself as a maintainer
+
+*ekiga-3.9.90 (08 Nov 2012)
+
+  08 Nov 2012; Jesus Rivero <neurogeek@gentoo.org> +ekiga-3.9.90.ebuild:
+  Version bump
+
+  24 Oct 2012; Jesus Rivero <neurogeek@gentoo.org> ekiga-3.2.7.ebuild:
+  Restricting net-libs/ptlib and net-libs/opal DEPS to avoid selecting the new
+  ones
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> ekiga-3.2.7.ebuild:
+  alpha stable wrt #397617
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> ekiga-3.2.7.ebuild:
+  ia64/sparc stable wrt #397617
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> ekiga-3.2.7.ebuild:
+  Stable for ppc; bug #398847
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> ekiga-2.0.12.ebuild,
+  ekiga-3.2.7.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 May 2012; Gilles Dartiguelongue <eva@gentoo.org> ekiga-3.2.7.ebuild:
+  Adapt ebuild to new gnome2 eclass scrollkeeper support, see bug#301311.
+
+  25 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Set herd as primary maintainer as talked with volkmar.
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> ekiga-2.0.12.ebuild:
+  Remove media-sound/esound from dependencies because it's not in tree anymore.
+
+  09 Jan 2012; Agostino Sarubbo <ago@gentoo.org> ekiga-3.2.7.ebuild:
+  Stable for AMD64, wrt bug #397617
+
+  09 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> ekiga-3.2.7.ebuild:
+  Fix build failure due to DISABLE_DEPRECATED flags, bug 398245
+
+  04 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> ekiga-3.2.7.ebuild:
+  Add ldap? dep to ptlib, fixes bug 393059
+
+  04 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> ekiga-3.2.7.ebuild:
+  Add v4l? dep on ptlib, fixes bug 396719
+
+  04 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> ekiga-2.0.12.ebuild:
+  Add pulseaudio as an alternative to esound since esd is being last-rited. Not
+  sure if this works properly. Either someone will test this, or we'll
+  stabilize 3.x, or we'll remove ekiga.
 
   27 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org> ekiga-2.0.12.ebuild:
   Fix slot-dep on gtk+

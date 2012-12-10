@@ -1,6 +1,25 @@
 # ChangeLog for net-irc/anope
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/anope/ChangeLog,v 1.18 2011/01/18 21:34:37 gurligebis Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/anope/ChangeLog,v 1.21 2012/07/01 21:07:35 binki Exp $
+
+  01 Jul 2012; Nathan Phillip Brink <binki@gentoo.org> anope-1.8.7.ebuild:
+  Ensure that /var/lib/anope/backups directory exists so that database backups
+  succeed, fixing bug #410741.
+
+  12 Jan 2012; Nathan Phillip Brink <binki@gentoo.org> anope-1.8.7.ebuild,
+  +files/anope-1.8.7-mariadb.patch:
+  Fix compilation with =mariadb-5.2*, bug #381119 reported by Flameeyes with
+  patch from Adam from upstream.
+
+*anope-1.8.7 (28 Dec 2011)
+
+  28 Dec 2011; <gurligebis@gentoo.org> -anope-1.8.5.ebuild,
+  +anope-1.8.7.ebuild, +files/anope-1.8.7-ldflags-fix.patch,
+  +files/anope-1.8.7-libdir-gentoo.patch, +files/anope-conf.d,
+  +files/anope-init.d, -files/anope.confd, -files/anope.initd,
+  -files/ldflags-fix.patch:
+  Bumping to 1.8.7, removing old version and moving out of /opt.
+  Thanks to everybody who helped out. Fixing bug #395089
 
   18 Jan 2011; <gurligebis@gentoo.org> files/ldflags-fix.patch:
   Fixing patch to work with portage-multilib, fixing bug #351414
@@ -84,4 +103,3 @@
 
   29 Aug 2006; Bjarke Istrup Pedersen <gurligebis@gentoo.org> :
   Initial import.  Based on ebuild by Björn Stiddien <keeper@anope.org>.
-

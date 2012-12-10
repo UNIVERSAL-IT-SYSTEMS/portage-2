@@ -1,6 +1,35 @@
 # ChangeLog for sci-electronics/xcircuit
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/xcircuit/ChangeLog,v 1.49 2010/07/18 13:36:50 nixnut Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/xcircuit/ChangeLog,v 1.56 2012/07/11 18:24:21 jlec Exp $
+
+  11 Jul 2012; Justin Lecher <jlec@gentoo.org> xcircuit-3.7.40.ebuild,
+  xcircuit-3.8.24.ebuild, metadata.xml:
+  Add fix for atumake-1.12, #425746; add fix for automake-1.13; move to EAPI=4
+  and autotools-utils; drop implicit deps
+
+  19 Jun 2012; Michael Weber <xmw@gentoo.org> xcircuit-3.7.39.ebuild:
+  ppc stable (bug 420981)
+
+  15 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xcircuit-3.7.39.ebuild:
+  Stable for amd64, wrt bug #420981
+
+  15 Jun 2012; Jeff Horelick <jdhore@gentoo.org> xcircuit-3.7.39.ebuild:
+  marked x86 per bug 420981
+
+*xcircuit-3.8.24 (13 Jun 2012)
+
+  13 Jun 2012; Michael Weber <xmw@gentoo.org> +xcircuit-3.8.24.ebuild:
+  Version bump (thanks euscan), force automake-1.11
+
+*xcircuit-3.7.40 (13 Jun 2012)
+
+  13 Jun 2012; Michael Weber <xmw@gentoo.org> +xcircuit-3.7.40.ebuild:
+  Version bump (thanks euscan)
+
+*xcircuit-3.7.39 (12 May 2012)
+
+  12 May 2012; Thomas Beierlein <tomjbe@gentoo.org> +xcircuit-3.7.39.ebuild:
+  Version bump
 
   18 Jul 2010; <nixnut@gentoo.org> xcircuit-3.6.165.ebuild:
   ppc stable #324117

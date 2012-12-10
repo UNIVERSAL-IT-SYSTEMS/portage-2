@@ -1,6 +1,87 @@
 # ChangeLog for net-misc/mediatomb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/mediatomb/ChangeLog,v 1.22 2011/04/04 12:19:35 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/mediatomb/ChangeLog,v 1.40 2012/11/25 15:16:05 lu_zero Exp $
+
+  25 Nov 2012; Luca Barbato <lu_zero@gentoo.org> mediatomb-0.12.1-r4.ebuild,
+  +files/mediatomb-0.12.1-libav9.patch,
+  +files/mediatomb-0.12.1-no-thumbnail.patch:
+  Update to libav-9 api and fix thumbnail support
+
+*mediatomb-0.12.1-r4 (07 Nov 2012)
+
+  07 Nov 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/mediatomb-0.12.1-inotify-hard-links.patch,
+  +files/mediatomb-0.12.1-thumb-cache.patch, +mediatomb-0.12.1-r4.ebuild:
+  Fix inotify and hard links.  Add support for caching thumbnails.
+
+  04 Oct 2012; Mike Frysinger <vapier@gentoo.org> mediatomb-0.12.1-r3.ebuild:
+  Require newer spidermonkey #437038 by BT.
+
+  02 Oct 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/mediatomb-0.12.1-mozjs187.patch, mediatomb-0.12.1-r3.ebuild:
+  Support spidermonkey-1.8.7 #423991 by Ian Stakenvicius.
+
+  02 Oct 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/mediatomb-0.12.1-libextractor.patch, mediatomb-0.12.1-r3.ebuild:
+  Port to libextractor-0.6.x by me #435394 by BT.
+
+*mediatomb-0.12.1-r3 (02 Oct 2012)
+
+  02 Oct 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/mediatomb-0.12.1-system-uuid.patch, +files/mediatomb-0.12.1.initd,
+  +mediatomb-0.12.1-r3.ebuild, metadata.xml:
+  Use system libuuid from util-linux #270830 by Diego Elio Pettenò.  Make mysql
+  init script optional all the time to support external services #368409 by
+  David Carlos Manuelda.  Update to EAPI=4 and split up USE flags to make things
+  more explicit.
+
+  02 Jul 2012; Jeff Horelick <jdhore@gentoo.org> mediatomb-0.12.1-r2.ebuild:
+  marked x86 per bug 422919
+
+  28 Jun 2012; Ian Stakenvicius <axs@gentoo.org> mediatomb-0.12.1-r1.ebuild,
+  mediatomb-0.12.1-r2.ebuild:
+  set proper version dep on spidermonkey, interim fix for bug 423991
+
+  28 Jun 2012; Jeremy Olexa <darkside@gentoo.org> metadata.xml:
+  remove myself from maintainer since I don't use this software anymore,
+  looking for a new dedicated maintainer
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> mediatomb-0.12.1-r2.ebuild:
+  Stable for amd64, wrt bug #422919
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  mediatomb-0.12.1-r1.ebuild, mediatomb-0.12.1-r2.ebuild:
+  Ensure libmp4v2 headers are present by forcing correct SLOT
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org> -mediatomb-0.12.1.ebuild:
+  old
+
+*mediatomb-0.12.1-r2 (11 Apr 2012)
+
+  11 Apr 2012; Ryan Hill <dirtyepic@gentoo.org> +mediatomb-0.12.1-r2.ebuild,
+  +files/mediatomb-0.12.1-gcc47.patch, +files/mediatomb-0.12.1-libmp4v2.patch:
+  Fix bug #407753 (GCC 4.7 build failure) and bug #410235 (libmp4v2 API
+  breakage, patch by Peter Asplund).
+
+  11 Mar 2012; Jeremy Olexa <darkside@gentoo.org> mediatomb-0.12.1-r1.ebuild:
+  stabilize for amd64/x86 (compilation failure that didn't need to be a
+  revbump) bug 405725
+
+*mediatomb-0.12.1-r1 (07 Dec 2011)
+
+  07 Dec 2011; Jeff Gardner <je_fro@gentoo.org> +mediatomb-0.12.1-r1.ebuild,
+  +files/mediatomb-0.12.1-libav7.patch:
+  Add libav-0.7 support, thanks to Daniel van Vugt (vanvugt)
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org> mediatomb-0.12.1.ebuild:
+  Revert to autotools eclass (fixes bug #392119).
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org> mediatomb-0.12.1.ebuild:
+  Build in the source tree.
+
+  17 Nov 2011; Ian Stakenvicius <axs@gentoo.org> mediatomb-0.12.1.ebuild,
+  +files/mediatomb-0.12.1-mozjs185.patch:
+  in-place update to support dev-lang/spidermonkey-1.8.5 for bug 376993
 
   04 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org> mediatomb-0.12.1.ebuild:
   Move to virtual/ffmpeg from media-video/ffmpeg.
@@ -102,4 +183,3 @@
   +mediatomb-0.11.0.ebuild:
   Initial import of mediatomb, an UPnP media server compatible with Sony
   PlayStation 3. Thanks to BT in bug #172799 for the ebuild.
-

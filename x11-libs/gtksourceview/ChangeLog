@@ -1,6 +1,144 @@
 # ChangeLog for x11-libs/gtksourceview
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtksourceview/ChangeLog,v 1.205 2011/07/24 13:23:46 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtksourceview/ChangeLog,v 1.236 2012/10/28 16:35:19 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> gtksourceview-3.4.2.ebuild:
+  ia64/sh/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  gtksourceview-3.4.2.ebuild:
+  stable ppc, bug #427544
+
+  14 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gtksourceview-2.10.5-r1.ebuild, gtksourceview-2.10.5-r2.ebuild,
+  gtksourceview-3.2.3.ebuild, -gtksourceview-3.4.1.ebuild,
+  gtksourceview-3.4.2.ebuild:
+  Update 3.4.2's intltool dep, thanks to Matt Turner. Update license. Drop
+  useless doc USE flag, it only regenerated api documentation. Drop old.
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> gtksourceview-3.4.2.ebuild:
+  Stable on alpha, bug 427544.
+
+  14 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  gtksourceview-3.4.2.ebuild:
+  stable ppc64, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> gtksourceview-3.4.2.ebuild:
+  arm stable, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gtksourceview-3.4.2.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  04 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gtksourceview-3.4.2.ebuild:
+  x86 stable wrt bug #427544
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org>
+  gtksourceview-2.10.5-r2.ebuild, gtksourceview-3.2.3.ebuild:
+  alpha/ia64/sh/sparc stable wrt #410611
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gtksourceview-2.10.5-r2.ebuild, gtksourceview-3.2.3.ebuild:
+  ppc stable wrt #410611
+
+*gtksourceview-3.4.2 (22 May 2012)
+
+  22 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gtksourceview-3.4.2.ebuild:
+  Version bump with completion improvements.
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org>
+  gtksourceview-2.10.5-r2.ebuild, gtksourceview-3.4.1.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  gtksourceview-2.10.5-r1.ebuild, gtksourceview-2.10.5-r2.ebuild,
+  gtksourceview-3.2.3.ebuild, gtksourceview-3.4.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gtksourceview-3.4.1.ebuild:
+  Depend on >=gtk+-3.3.8 (bug #413739, thanks to lynx).
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gtksourceview-2.10.5-r2.ebuild:
+  x86 stable, bug #410611
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gtksourceview-3.2.3.ebuild:
+  x86 stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> gtksourceview-2.10.5-r2.ebuild:
+  arm stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> gtksourceview-3.2.3.ebuild:
+  arm stable, bug #410611
+
+*gtksourceview-3.4.1 (22 Apr 2012)
+
+  22 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gtksourceview-3.4.1.ebuild:
+  Version bump with some bugfixes and updated python and php highlighting.
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> gtksourceview-2.10.5-r2.ebuild,
+  gtksourceview-3.2.3.ebuild:
+  Marking gtksourceview-2.10.5-r2 ppc64 stable for bug 410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> gtksourceview-3.2.3.ebuild:
+  Marking gtksourceview-3.2.3 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org>
+  gtksourceview-2.10.5-r2.ebuild, gtksourceview-3.2.3.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  22 Jan 2012; Jeroen Roovers <jer@gentoo.org> gtksourceview-3.2.3.ebuild:
+  Remove duplicate KEYWORDS entry by zvasylvv (bug #399575).
+
+*gtksourceview-2.10.5-r2 (17 Dec 2011)
+
+  17 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gtksourceview-2.10.5-r2.ebuild,
+  +files/gtksourceview-2.10.5-G_CONST_RETURN.patch:
+  Add patch from gtksourceview-3.x to not use G_CONST_RETURN in public headers
+  (bug #394925, thanks to Rion for reporting).
+
+  22 Nov 2011; Pacho Ramos <pacho@gentoo.org> gtksourceview-2.10.5-r1.ebuild,
+  -gtksourceview-3.2.2.ebuild:
+  Skip broken test (bug #339441) as upstream doesn't care at all.
+
+*gtksourceview-3.2.3 (05 Nov 2011)
+
+  05 Nov 2011; Pacho Ramos <pacho@gentoo.org> +gtksourceview-3.2.3.ebuild,
+  -gtksourceview-3.0.5-r1.ebuild, -gtksourceview-3.2.0.ebuild,
+  -gtksourceview-3.2.1.ebuild:
+  Version bump, remove old.
+
+*gtksourceview-3.2.2 (16 Oct 2011)
+
+  16 Oct 2011; Pacho Ramos <pacho@gentoo.org> +gtksourceview-3.2.2.ebuild:
+  Version bump.
+
+*gtksourceview-3.2.1 (15 Oct 2011)
+
+  15 Oct 2011; Pacho Ramos <pacho@gentoo.org> +gtksourceview-3.2.1.ebuild:
+  Version bump.
+
+*gtksourceview-3.2.0 (28 Sep 2011)
+
+  28 Sep 2011; Pacho Ramos <pacho@gentoo.org> +gtksourceview-3.2.0.ebuild:
+  Version bump, bug #383527 by Sebastian Pipping and Alexandre Rostovtsev.
+
+  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> -gtksourceview-1.8.5-r1.ebuild:
+  Remove old.
+
+  28 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  -gtksourceview-3.0.3.ebuild, -gtksourceview-3.0.4.ebuild,
+  -gtksourceview-3.0.5.ebuild:
+  Remove old.
+
+*gtksourceview-3.0.5-r1 (26 Aug 2011)
+
+  26 Aug 2011; Sebastian Pipping <sping@gentoo.org>
+  +gtksourceview-3.0.5-r1.ebuild:
+  Fix compilation against GTK 3.1.x (bug #380387, thanks to tetromino!)
 
 *gtksourceview-3.0.5 (24 Jul 2011)
 

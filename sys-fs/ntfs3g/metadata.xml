@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>no-herd</herd>
+	<herd>base-system</herd>
 	<maintainer>
 		<email>chutzpah@gentoo.org</email>
 		<name>Patrick McLean</name>
+	</maintainer>
+	<maintainer>
+		<email>ssuominen@gentoo.org</email>
+		<name>Samuli Suominen</name>
 	</maintainer>
 	<longdescription lang="en">
 The ntfs-3g driver is an open source, GPL licensed, third generation Linux 
@@ -16,6 +20,7 @@ file ownership, access right.
 	<use>
 		<flag name='external-fuse'>Use external FUSE library instead of internal
 		one. Must be disabled for unprivileged mounting to work.</flag>
+		<flag name='extras'>Enable extra ntfsprogs utilities.</flag>
 		<flag name='udev'>Install udev rule to make udisks use ntfs-3g instead
 		of the kernel NTFS driver.</flag>
 		<flag name='crypt'>Add support for encrypted NTFS drives/partitions.</flag>

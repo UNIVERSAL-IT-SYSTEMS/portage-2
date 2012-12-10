@@ -1,6 +1,54 @@
 # ChangeLog for media-sound/rubyripper
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/rubyripper/ChangeLog,v 1.33 2011/05/02 21:24:52 billie Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/rubyripper/ChangeLog,v 1.45 2012/10/19 16:52:10 billie Exp $
+
+  19 Oct 2012; Daniel Pielmeier <billie@gentoo.org> -rubyripper-0.6.2.ebuild:
+  Remove old.
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  rubyripper-0.6.2-r1.ebuild:
+  x86 stable wrt bug #436848
+
+  03 Oct 2012; Agostino Sarubbo <ago@gentoo.org> rubyripper-0.6.2-r1.ebuild:
+  Stable for amd64, wrt bug #436848
+
+*rubyripper-0.6.2-r1 (18 Sep 2012)
+
+  18 Sep 2012; Daniel Pielmeier <billie@gentoo.org>
+  +rubyripper-0.6.2-r1.ebuild:
+  Switch to EAPI 4 and rework dependencies. Add support for ruby19 which fixes
+  bug #434122. Thanks to poncho for the report.
+
+  07 Apr 2012; Daniel Pielmeier <billie@gentoo.org> -rubyripper-0.6.1.ebuild:
+  Remove old.
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> rubyripper-0.6.2.ebuild:
+  x86 stable wrt bug #400811
+
+  28 Jan 2012; Agostino Sarubbo <ago@gentoo.org> rubyripper-0.6.2.ebuild:
+  Stable for AMD64, wrt bug #400811
+
+*rubyripper-0.6.2 (18 Jan 2012)
+
+  18 Jan 2012; Daniel Pielmeier <billie@gentoo.org>
+  -rubyripper-0.5.5-r1.ebuild, +rubyripper-0.6.2.ebuild:
+  Version bump. Remove old.
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> rubyripper-0.5.5-r1.ebuild,
+  rubyripper-0.6.1.ebuild:
+  Drop sparc keywords
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org> rubyripper-0.6.1.ebuild:
+  Stable on amd64 wrt bug #388985
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> rubyripper-0.6.1.ebuild:
+  x86 stable wrt bug #388985
+
+*rubyripper-0.6.1 (16 Oct 2011)
+
+  16 Oct 2011; Daniel Pielmeier <billie@gentoo.org> -rubyripper-0.5.7.ebuild,
+  -rubyripper-0.6.0.ebuild, +rubyripper-0.6.1.ebuild:
+  Version bump. This should fix bug #306883. Remove old.
 
   02 May 2011; Daniel Pielmeier <billie@gentoo.org> rubyripper-0.5.5-r1.ebuild,
   rubyripper-0.5.7.ebuild, rubyripper-0.6.0.ebuild:

@@ -1,6 +1,116 @@
 # ChangeLog for x11-libs/libwnck
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libwnck/ChangeLog,v 1.266 2011/06/02 15:39:42 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libwnck/ChangeLog,v 1.295 2012/11/21 23:06:43 eva Exp $
+
+*libwnck-3.4.4 (21 Nov 2012)
+
+  21 Nov 2012; Gilles Dartiguelongue <eva@gentoo.org> -libwnck-3.4.0.ebuild,
+  -libwnck-3.4.2.ebuild, +libwnck-3.4.4.ebuild:
+  Version bump. Clean up old revisions.
+
+*libwnck-3.4.3 (04 Sep 2012)
+
+  04 Sep 2012; Nirbheek Chauhan <nirbheek@gentoo.org> +libwnck-3.4.3.ebuild:
+  Bump to 3.4.3
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> libwnck-3.2.1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #410611
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> libwnck-2.31.0.ebuild:
+  alpha/ia64/sh/sparc stable wrt #416333
+
+  27 May 2012; Markus Meier <maekke@gentoo.org> libwnck-2.31.0.ebuild:
+  arm stable, bug #416333
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> libwnck-3.2.1.ebuild:
+  ppc stable wrt #410611
+
+  21 May 2012; Jeff Horelick <jdhore@gentoo.org> libwnck-2.31.0.ebuild:
+  marked x86 per bug 416333
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> libwnck-2.31.0.ebuild:
+  ppc/ppc64 stable wrt #416333
+
+*libwnck-3.4.2 (20 May 2012)
+
+  20 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +libwnck-3.4.2.ebuild, metadata.xml:
+  Version bump; tool installation is now optional.
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> libwnck-2.31.0.ebuild:
+  Stable for amd64, wrt bug #416333
+
+  17 May 2012; Jeroen Roovers <jer@gentoo.org> libwnck-2.31.0.ebuild:
+  Stable for HPPA (bug #416233).
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org> libwnck-2.31.0.ebuild,
+  libwnck-3.2.1.ebuild, libwnck-3.4.0.ebuild:
+  keyword ~amd64-fbsd
+
+*libwnck-3.4.0 (14 May 2012)
+
+  14 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -libwnck-3.0.2.ebuild, +libwnck-3.4.0.ebuild:
+  Version bump for gnome-3.4. Drop old.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libwnck-2.30.7.ebuild,
+  libwnck-2.31.0.ebuild, libwnck-3.0.2.ebuild, libwnck-3.2.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> libwnck-3.2.1.ebuild:
+  x86 stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> libwnck-3.2.1.ebuild:
+  arm stable, bug #410611
+
+*libwnck-2.31.0 (24 Apr 2012)
+
+  24 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +libwnck-2.31.0.ebuild:
+  Bump, adds pager layout policy API used in >=xfce4-panel-4.9.2 (bug #412823,
+  thanks to Derk W te Bokkel).
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> libwnck-3.2.1.ebuild:
+  Marking libwnck-3.2.1 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> libwnck-3.2.1.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  15 Apr 2012; Gilles Dartiguelongue <eva@gentoo.org> -libwnck-2.30.6.ebuild:
+  Clean up old revision.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> libwnck-2.30.7.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385699
+
+*libwnck-3.2.1 (28 Oct 2011)
+
+  28 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +libwnck-3.2.1.ebuild:
+  Add libwnck-3.2.1 from the gnome overlay. Notable changes: new API for
+  getting class group/instance name of a WnckWindow.
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> libwnck-2.30.7.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libwnck-2.30.7.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> libwnck-2.30.7.ebuild:
+  Stable for HPPA (bug #385699).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> libwnck-2.30.7.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libwnck-2.30.7.ebuild:
+  amd64 stable wrt #385699
+
+*libwnck-2.30.7 (08 Sep 2011)
+
+  08 Sep 2011; Gilles Dartiguelongue <eva@gentoo.org> +libwnck-2.30.7.ebuild:
+  Version bump. Explicitly link against libm and libX11.
+
+  16 Aug 2011; Markus Duft <mduft@gentoo.org> libwnck-3.0.2.ebuild:
+  updated interix prefix dependency to itx-bind to (correctly) be a RDEPEND
 
 *libwnck-3.0.2 (02 Jun 2011)
 

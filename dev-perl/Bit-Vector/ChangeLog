@@ -1,6 +1,49 @@
 # ChangeLog for dev-perl/Bit-Vector
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Bit-Vector/ChangeLog,v 1.43 2011/02/09 16:37:54 idl0r Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Bit-Vector/ChangeLog,v 1.56 2012/09/02 17:42:57 tove Exp $
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -Bit-Vector-7.100.0.ebuild:
+  Cleanup
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> Bit-Vector-7.200.0.ebuild:
+  alpha/ia64/s390/sparc stable wrt #418791
+
+  09 Aug 2012; Brent Baude <ranger@gentoo.org> Bit-Vector-7.200.0.ebuild:
+  Marking Bit-Vector-7.200.0 ppc for bug 418791
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> Bit-Vector-7.200.0.ebuild:
+  Marking Bit-Vector-7.200.0 ppc64 for bug 418791
+
+  05 Aug 2012; Markus Meier <maekke@gentoo.org> Bit-Vector-7.200.0.ebuild:
+  arm stable, bug #418791
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> Bit-Vector-7.200.0.ebuild:
+  Stable for amd64, wrt bug #418791
+
+  02 Aug 2012; Jeff Horelick <jdhore@gentoo.org> Bit-Vector-7.200.0.ebuild:
+  marked x86 per bug 418791
+
+  02 Aug 2012; Jeroen Roovers <jer@gentoo.org> Bit-Vector-7.200.0.ebuild:
+  Stable for HPPA (bug #418791).
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*Bit-Vector-7.200.0 (13 Mar 2012)
+
+  13 Mar 2012; Torsten Veller <tove@gentoo.org> +Bit-Vector-7.200.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Bit-Vector-7.1.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Bit-Vector-7.100.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Bit-Vector-7.100.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org> +Bit-Vector-7.100.0.ebuild:
+  Change version scheme
 
   14 Jan 2011; Torsten Veller <tove@gentoo.org> -Bit-Vector-6.4.ebuild:
   Cleanup

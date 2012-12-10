@@ -1,6 +1,29 @@
 # ChangeLog for sys-apps/groff
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/groff/ChangeLog,v 1.120 2011/05/07 18:02:54 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/groff/ChangeLog,v 1.125 2012/11/13 19:52:24 vapier Exp $
+
+  13 Nov 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/groff-1.21-gnulib-cross.patch, groff-1.21-r1.ebuild, groff-1.21.ebuild:
+  Add fix from upstream for cross-compiling gnulib #363647 by Dennis 'dlan' Lan.
+
+  08 Jun 2012; Mike Frysinger <vapier@gentoo.org> groff-1.21-r1.ebuild,
+  groff-1.21.ebuild:
+  Depend on yacc when LINGUAS=ja #385613 by Bryan Gardiner.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> groff-1.21-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  21 Dec 2011; Mike Frysinger <vapier@gentoo.org> groff-1.20.1-r3.ebuild,
+  +files/groff-1.20.1-pdfmark-parallel.patch, groff-1.21.ebuild,
+  groff-1.21-r1.ebuild:
+  Fix parallel build failure in pdfmark subdir.
+
+*groff-1.21-r1 (23 Oct 2011)
+
+  23 Oct 2011; Fabian Groffen <grobian@gentoo.org> +groff-1.21-r1.ebuild,
+  +files/groff-1.21-makefile.patch, +files/groff-1.21-gnulib.patch:
+  Revbump for Prefix changes, bump to EAPI3, add necessary patches from
+  upstream, added Prefix keywords, bug #388193
 
   07 May 2011; Raúl Porcel <armin76@gentoo.org> groff-1.21.ebuild:
   alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #362561

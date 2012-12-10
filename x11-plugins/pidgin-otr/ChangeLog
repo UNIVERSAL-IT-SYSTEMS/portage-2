@@ -1,6 +1,33 @@
 # ChangeLog for x11-plugins/pidgin-otr
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/pidgin-otr/ChangeLog,v 1.21 2009/12/21 15:40:49 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/pidgin-otr/ChangeLog,v 1.28 2012/10/18 16:16:42 kensington Exp $
+
+*pidgin-otr-4.0.0 (18 Oct 2012)
+
+  18 Oct 2012; Michael Palimaka <kensington@gentoo.org>
+  +pidgin-otr-4.0.0.ebuild:
+  Version bump, wrt bug #433940.
+
+  09 Jun 2012; Raúl Porcel <armin76@gentoo.org> pidgin-otr-3.2.0.ebuild,
+  pidgin-otr-3.2.1.ebuild:
+  Drop sparc keywords
+
+  08 Jun 2012; Brent Baude <ranger@gentoo.org> pidgin-otr-3.2.1.ebuild:
+  Marking pidgin-otr-3.2.1 ppc for bug 416263
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> pidgin-otr-3.2.1.ebuild:
+  marked x86 per bug 416263
+
+  19 May 2012; Agostino Sarubbo <ago@gentoo.org> pidgin-otr-3.2.1.ebuild:
+  Stable for amd64, wrt bug #416263
+
+*pidgin-otr-3.2.1 (17 May 2012)
+
+  17 May 2012; Lars Wendler <polynomial-c@gentoo.org> +pidgin-otr-3.2.1.ebuild:
+  non-maintainer commit: Security bump (bug #416263).
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> pidgin-otr-3.2.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   21 Dec 2009; Raúl Porcel <armin76@gentoo.org> pidgin-otr-3.2.0.ebuild:
   sparc stable wrt #281643
@@ -86,4 +113,3 @@
   New ebuild wrt bug #177441.
   Patch taken from otr-dev mailing list.
   Thanks to Andrea Perotti for testing.
-

@@ -1,6 +1,52 @@
 # ChangeLog for sys-devel/autogen
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/autogen/ChangeLog,v 1.76 2011/06/29 02:55:20 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/autogen/ChangeLog,v 1.90 2012/12/01 18:38:19 armin76 Exp $
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> autogen-5.15.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc/x86 stable wrt #439162
+
+  02 Nov 2012; Fabian Groffen <grobian@gentoo.org> autogen-5.15.ebuild:
+  Marked ~x64-macos
+
+  30 Oct 2012; Jeroen Roovers <jer@gentoo.org> autogen-5.15.ebuild:
+  Stable for HPPA (bug #439162).
+
+  28 Oct 2012; Markos Chandras <hwoarang@gentoo.org> autogen-5.15.ebuild:
+  Stable on amd64 wrt bug #439162
+
+  27 Oct 2012; Anthony G. Basile <blueness@gentoo.org> autogen-5.15.ebuild:
+  stable arm ppc ppc64, bug #439162
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> autogen-5.15.ebuild:
+  keyword ~amd64-fbsd
+
+*autogen-5.15 (03 Mar 2012)
+
+  03 Mar 2012; Mike Frysinger <vapier@gentoo.org> +autogen-5.15.ebuild:
+  Version bump #406691 by Tim Harder.
+
+  24 Feb 2012; Mike Frysinger <vapier@gentoo.org> autogen-5.14.ebuild:
+  Explicitly setup DEPEND/RDEPEND #405353 by Nikoli.
+
+  13 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> autogen-5.12.ebuild:
+  ppc/ppc64 stable wrt #397221
+
+*autogen-5.14 (09 Feb 2012)
+
+  09 Feb 2012; Mike Frysinger <vapier@gentoo.org> +autogen-5.14.ebuild:
+  Version bump.
+
+  16 Jan 2012; Jeroen Roovers <jer@gentoo.org> autogen-5.12.ebuild:
+  Stable for HPPA (bug #397221).
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> autogen-5.12.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc/x86 stable wrt #397221
+
+  12 Jan 2012; Markus Meier <maekke@gentoo.org> autogen-5.12.ebuild:
+  arm stable, bug #397221
+
+  02 Jan 2012; Agostino Sarubbo <ago@gentoo.org> autogen-5.12.ebuild:
+  Stable for AMD64, wrt bug #397221
 
 *autogen-5.12 (29 Jun 2011)
 
@@ -248,4 +294,3 @@
   15 Aug 2006; Stephanie Lockwood-Childs <wormo@gentoo.org> metadata.xml,
   +autogen-5.8.3.ebuild:
   version bump -- thanks to François Périchon (Bug #127043)
-

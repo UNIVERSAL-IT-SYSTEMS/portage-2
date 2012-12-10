@@ -1,6 +1,33 @@
 # ChangeLog for net-dns/hesiod
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/hesiod/ChangeLog,v 1.36 2010/07/11 11:12:27 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dns/hesiod/ChangeLog,v 1.45 2012/08/08 20:24:42 ranger Exp $
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> hesiod-3.1.0.ebuild:
+  Marking hesiod-3.1.0 ppc for bug 419715
+
+  05 Aug 2012; Raúl Porcel <armin76@gentoo.org> hesiod-3.1.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419715
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> hesiod-3.1.0.ebuild:
+  Stable for HPPA (bug #419715).
+
+  14 Jun 2012; Jeff Horelick <jdhore@gentoo.org> hesiod-3.1.0.ebuild:
+  marked x86 per bug 419715
+
+  09 Jun 2012; Markus Meier <maekke@gentoo.org> hesiod-3.1.0.ebuild:
+  arm stable, bug #419715
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> hesiod-3.1.0.ebuild:
+  Marking hesiod-3.1.0 ppc64 for bug 419715
+
+  05 Jun 2012; Agostino Sarubbo <ago@gentoo.org> hesiod-3.1.0.ebuild:
+  Stable for amd64, wrt bug #419715
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> hesiod-3.1.0.ebuild:
+  keyword ~amd64-fbsd
+
+  25 Apr 2012; Justin Lecher <jlec@gentoo.org> hesiod-3.0.2-r2.ebuild:
+  Drop unnessecary die
 
 *hesiod-3.1.0 (11 Jul 2010)
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/games-ggz.eclass,v 1.6 2011/04/19 21:19:11 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/games-ggz.eclass,v 1.9 2012/09/27 16:35:41 axs Exp $
 
 inherit base
 
@@ -8,7 +8,7 @@ inherit base
 
 GAMES_GGZ_EXPF="src_compile src_install pkg_postinst pkg_postrm"
 case "${EAPI:-0}" in
-	2|3|4) GAMES_GGZ_EXPF+=" src_configure" ;;
+	2|3|4|5) GAMES_GGZ_EXPF+=" src_configure" ;;
 	0|1) : ;;
 	*) die "EAPI=${EAPI} is not supported" ;;
 esac
@@ -20,9 +20,11 @@ SRC_URI="mirror://ggz/${PV}/${P}.tar.gz"
 GGZ_MODDIR="/usr/share/ggz/modules"
 
 games-ggz_src_configure() {
+	local reg="--enable-noregistry=\"${GGZ_MODDIR}\""
+	[[ ${PN} == ggz-client-libs ]] && reg=''
 	econf \
 		--disable-dependency-tracking \
-		--enable-noregistry="${GGZ_MODDIR}" \
+		$reg \
 		$(has debug ${IUSE} && ! use debug && echo --disable-debug) \
 		"$@"
 }
@@ -55,7 +57,7 @@ games-ggz_update_modules() {
 	mkdir -p "${confdir}"
 	echo -n > "${confdir}"/ggz.modules
 	if [[ -d ${moddir} ]] ; then
-		ebegin "Installing GGZ modules"
+		ebegin "Updating GGZ modules"
 		cd "${moddir}"
 		find . -type f -name '*.dsc' | while read dsc ; do
 			DESTDIR=${ROOT} ggz-config -Dim "${dsc}" || ((rval++))

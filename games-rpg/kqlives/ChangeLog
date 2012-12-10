@@ -1,6 +1,12 @@
 # ChangeLog for games-rpg/kqlives
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-rpg/kqlives/ChangeLog,v 1.4 2011/03/26 17:20:52 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-rpg/kqlives/ChangeLog,v 1.6 2012/05/02 21:10:33 jdhore Exp $
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> kqlives-0.99.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  14 Oct 2011; Mike Frysinger <vapier@gentoo.org> kqlives-0.99.ebuild:
+  Use a SLOT dep instead of "<" for allegro.
 
   26 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> kqlives-0.99.ebuild:
   Pin media-libs/allegro to old version.

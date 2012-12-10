@@ -1,6 +1,30 @@
 # ChangeLog for dev-python/pyspf
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyspf/ChangeLog,v 1.13 2011/07/22 12:06:45 neurogeek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyspf/ChangeLog,v 1.19 2012/05/09 03:20:55 floppym Exp $
+
+  09 May 2012; Mike Gilbert <floppym@gentoo.org> pyspf-2.0.5.ebuild,
+  pyspf-2.0.6.ebuild, pyspf-2.0.7.ebuild:
+  Restrict python 2.5; bug 404919.
+
+*pyspf-2.0.7 (24 Apr 2012)
+
+  24 Apr 2012; Kacper Kowalik <xarthisius@gentoo.org> +pyspf-2.0.7.ebuild:
+  Version bump wrt #410875 by Ian Delaney <johneed@hotmail.com>
+
+  08 Apr 2012; Mike Gilbert <floppym@gentoo.org> pyspf-2.0.5.ebuild,
+  pyspf-2.0.6.ebuild:
+  Add slot to dev-python/pydns dependency. #411035 by Lutz Schildt.
+
+  08 Feb 2012; Patrick Lauer <patrick@gentoo.org> Manifest:
+  Manifest fix
+
+*pyspf-2.0.6 (08 Feb 2012)
+
+  08 Feb 2012; Patrick Lauer <patrick@gentoo.org> +pyspf-2.0.6.ebuild:
+  Bump for #401971
+
+  04 Nov 2011; Markos Chandras <hwoarang@gentoo.org> pyspf-2.0.5.ebuild:
+  Update LICENSE. Patch by Arfrever.
 
   22 Jul 2011; Jesus Rivero <neurogeek@gentoo.org> metadata.xml:
   Changed herd to python

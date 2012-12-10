@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/regexxer/regexxer-0.9.ebuild,v 1.5 2011/03/28 18:43:16 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/regexxer/regexxer-0.9.ebuild,v 1.8 2012/06/04 17:44:03 xmw Exp $
 
 EAPI=3
 GCONF_DEBUG=no
-inherit gnome2
+inherit gnome2 eutils
 
 DESCRIPTION="An interactive tool for performing search and replace operations"
 HOMEPAGE="http://regexxer.sourceforge.net"
@@ -21,7 +21,11 @@ RDEPEND=">=dev-cpp/libglademm-2.4:2.4
 	>=dev-libs/libpcre-4
 	>=dev-cpp/gconfmm-2.6.1"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-0.10-glib-2.32.patch
+}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"

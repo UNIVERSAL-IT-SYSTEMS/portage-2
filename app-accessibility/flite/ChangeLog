@@ -1,6 +1,23 @@
 # ChangeLog for app-accessibility/flite
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/flite/ChangeLog,v 1.38 2010/02/28 23:14:49 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/flite/ChangeLog,v 1.42 2012/09/22 11:34:31 pacho Exp $
+
+  22 Sep 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/flite-1.4-audio-interface.patch, flite-1.4-r1.ebuild:
+  Fix undefined reference, #305539 by Diego Elio Pettenò and Michael Palimaka
+  (kensington).
+
+  13 Apr 2012; Jesus Rivero <neurogeek@gentoo.org> flite-1.4-r1.ebuild:
+  Added media-libs/alsa-lib as DEPEND and bumped EAPI. Fixes bug #390597
+
+  22 Feb 2012; Jeroen Roovers <jer@gentoo.org> flite-1.4-r1.ebuild:
+  Does not work on HPPA (bug #307241).
+
+  22 Feb 2012; Jeroen Roovers <jer@gentoo.org> flite-1.4-r1.ebuild,
+  +files/flite-1.4-ldflags.patch:
+  Add patch by Christopher Brannon to respect LDFLAGS (bug #334031). Fix -rpath
+  directory (bug #405339). Remove static libraries in case LIBDIR is not
+  /usr/lib/.
 
   28 Feb 2010; Jeroen Roovers <jer@gentoo.org> flite-1.3.ebuild:
   Segfaults on HPPA, keywording -hppa (bug #307241).

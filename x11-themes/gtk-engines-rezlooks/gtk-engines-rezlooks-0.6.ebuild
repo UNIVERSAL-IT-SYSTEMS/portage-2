@@ -1,9 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-rezlooks/gtk-engines-rezlooks-0.6.ebuild,v 1.8 2010/08/16 20:50:46 abcd Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-rezlooks/gtk-engines-rezlooks-0.6.ebuild,v 1.10 2012/07/24 17:20:56 pacho Exp $
 
-EAPI=3
-inherit autotools
+EAPI=4
+inherit autotools eutils
 
 DESCRIPTION="Rezlooks GTK+ Engine"
 HOMEPAGE="http://www.gnome-look.org/content/show.php?content=39179"
@@ -16,7 +16,7 @@ IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2.8:2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/rezlooks-${PV}
 
@@ -26,6 +26,8 @@ src_prepare() {
 	mv Changelog{,.1}
 	mv Changelog.1 ChangeLog
 
+	epatch "${FILESDIR}/${PN}-0.6-glib-single-include.patch"
+
 	eautoreconf # required for interix
 }
 
@@ -34,6 +36,6 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed."
-	dodoc AUTHORS ChangeLog CREDITS NEWS README
+	default
+	find "${D}" -name '*.la' -exec rm -f {} + || die "la file removal failed"
 }

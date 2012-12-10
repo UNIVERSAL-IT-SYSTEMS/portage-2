@@ -1,6 +1,51 @@
 # ChangeLog for app-text/build-docbook-catalog
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/build-docbook-catalog/ChangeLog,v 1.28 2011/03/29 02:17:56 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/build-docbook-catalog/ChangeLog,v 1.38 2012/12/06 03:04:25 floppym Exp $
+
+  06 Dec 2012; Mike Gilbert <floppym@gentoo.org>
+  build-docbook-catalog-1.19.1.ebuild:
+  RDEPEND on libxml2 for the xmlcatalog utility.
+
+  06 Dec 2012; Mike Gilbert <floppym@gentoo.org>
+  -build-docbook-catalog-1.19.ebuild, -build-docbook-catalog-1.4.ebuild,
+  -build-docbook-catalog-1.6.ebuild:
+  Remove old.
+
+  06 Dec 2012; Mike Gilbert <floppym@gentoo.org>
+  build-docbook-catalog-1.19.1.ebuild:
+  Stable on x86 wrt bug 437024. armin76 accidentally removed x86 from CC.
+
+  06 Oct 2012; Raúl Porcel <armin76@gentoo.org>
+  build-docbook-catalog-1.19.1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc/x86 stable wrt #437024
+
+  04 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  build-docbook-catalog-1.19.1.ebuild:
+  stable arm ppc ppc64, bug #437024
+
+  03 Oct 2012; Jeroen Roovers <jer@gentoo.org>
+  build-docbook-catalog-1.19.1.ebuild:
+  Stable for HPPA (bug #437024).
+
+  03 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  build-docbook-catalog-1.19.1.ebuild:
+  Stable for amd64, wrt bug #437024
+
+*build-docbook-catalog-1.19.1 (02 Oct 2012)
+
+  02 Oct 2012; Mike Gilbert <floppym@gentoo.org>
+  +build-docbook-catalog-1.19.1.ebuild:
+  Version bump for bug 437004. Don't install /etc/xml/.keep.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  build-docbook-catalog-1.19.ebuild:
+  keyword ~amd64-fbsd
+
+*build-docbook-catalog-1.19 (28 Mar 2012)
+
+  28 Mar 2012; Mike Frysinger <vapier@gentoo.org>
+  +build-docbook-catalog-1.19.ebuild:
+  Version bump.
 
 *build-docbook-catalog-1.6 (29 Mar 2011)
 
@@ -117,4 +162,3 @@
   29 Jun 2004; Aron Griffis <agriffis@gentoo.org> +metadata.xml,
   +build-docbook-catalog-1.1.ebuild:
   New package to generate docbook-xml catalogs.  Submitted by myself in bug 52725
-

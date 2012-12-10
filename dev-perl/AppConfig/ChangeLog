@@ -1,6 +1,23 @@
 # ChangeLog for dev-perl/AppConfig
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/AppConfig/ChangeLog,v 1.66 2011/02/09 16:37:12 idl0r Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/AppConfig/ChangeLog,v 1.71 2012/09/01 11:12:19 grobian Exp $
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> AppConfig-1.660.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -AppConfig-1.66.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> AppConfig-1.660.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*AppConfig-1.660.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org> +AppConfig-1.660.0.ebuild:
+  Change version scheme
 
   03 Dec 2010; Michael Weber <xmw@gentoo.org> AppConfig-1.66.ebuild:
   add ~arm (bug 302981)
@@ -226,4 +243,3 @@
 *AppConfig-1.52 (07 AUG 2002)
 
   07 AUG 2002; achim <achim@gentoo.org> Initial version
-

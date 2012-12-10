@@ -1,6 +1,45 @@
 # ChangeLog for app-dicts/aspell-it
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/aspell-it/ChangeLog,v 1.21 2010/10/08 00:10:27 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/aspell-it/ChangeLog,v 1.32 2012/08/26 18:31:17 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> aspell-it-2.4.20070901.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #418529
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> aspell-it-2.4.20070901.ebuild:
+  Marking aspell-it-2.4.20070901 ppc64 for bug 418529
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> aspell-it-2.4.20070901.ebuild:
+  Marking aspell-it-2.4.20070901 ppc for bug 418529
+
+  04 Aug 2012; Johannes Huber <johu@gentoo.org> aspell-it-2.4.20070901.ebuild:
+  Stable for x86, wrt bug #418529
+
+  02 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  aspell-it-2.4.20070901.ebuild:
+  Stable on amd64 wrt bug #418529
+
+  02 Aug 2012; Markus Meier <maekke@gentoo.org> aspell-it-2.4.20070901.ebuild:
+  arm stable, bug #418529
+
+  01 Aug 2012; Jeroen Roovers <jer@gentoo.org> aspell-it-2.4.20070901.ebuild:
+  Stable for HPPA (bug #418529).
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org>
+  aspell-it-2.2.20050523.ebuild, aspell-it-2.4.20070901.ebuild:
+  keyword ~amd64-fbsd
+
+*aspell-it-2.4.20070901 (19 Apr 2012)
+
+  19 Apr 2012; Davide Pesavento <pesa@gentoo.org>
+  +aspell-it-2.4.20070901.ebuild:
+  Version bump.
+
+  19 Apr 2012; Davide Pesavento <pesa@gentoo.org> -aspell-it-0.50.2.ebuild,
+  -aspell-it-0.53.0.ebuild:
+  Remove old.
+
+  17 Mar 2012; Matt Turner <mattst88@gentoo.org> aspell-it-2.2.20050523.ebuild:
+  Added ~mips. How did this get dropped?
 
   08 Oct 2010; Mart Raudsepp <leio@gentoo.org> aspell-it-0.50.2.ebuild,
   aspell-it-0.53.0.ebuild:

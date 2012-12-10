@@ -1,6 +1,60 @@
 # ChangeLog for app-crypt/md5deep
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/md5deep/ChangeLog,v 1.57 2011/06/08 18:33:59 nyhm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/md5deep/ChangeLog,v 1.71 2012/10/17 03:35:21 phajdan.jr Exp $
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> md5deep-4.0.1.ebuild:
+  x86 stable wrt bug #418523
+
+  05 Oct 2012; Tristan Heaven <tristan@gentoo.org> md5deep-4.2.ebuild:
+  RESTRICT=test as it only checks against an installed version's output
+  (package would depend on itself), bug #425256
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> md5deep-3.9.1.ebuild,
+  md5deep-4.0.0.ebuild, md5deep-4.0.1.ebuild, md5deep-4.2.ebuild:
+  Drop sparc keywords
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> md5deep-4.0.1.ebuild:
+  Marking md5deep-4.0.1 ppc for bug 418523
+
+  09 Jul 2012; Agostino Sarubbo <ago@gentoo.org> md5deep-4.0.1.ebuild:
+  Stable for amd64, wrt bug #418523
+
+*md5deep-4.2 (08 Jul 2012)
+
+  08 Jul 2012; Tristan Heaven <tristan@gentoo.org> +md5deep-4.2.ebuild,
+  +files/md5deep-4.2-strict-aliasing.patch:
+  Version bump
+
+  24 Mar 2012; Raúl Porcel <armin76@gentoo.org> md5deep-3.9.1.ebuild,
+  md5deep-4.0.0.ebuild, md5deep-4.0.1.ebuild:
+  sparc stable
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> md5deep-3.4.ebuild,
+  md5deep-3.7.ebuild, md5deep-3.9.ebuild, md5deep-3.9.1.ebuild,
+  md5deep-4.0.0.ebuild, md5deep-4.0.1.ebuild:
+  Drop sparc keywords
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> md5deep-3.9.1.ebuild:
+  Marking md5deep-3.9.1 ppc for bug 396777
+
+*md5deep-4.0.1 (29 Jan 2012)
+
+  29 Jan 2012; Tristan Heaven <tristan@gentoo.org> +md5deep-4.0.1.ebuild:
+  Version bump
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> md5deep-3.9.1.ebuild:
+  x86 stable wrt bug #396777
+
+*md5deep-4.0.0 (06 Jan 2012)
+
+  06 Jan 2012; Tristan Heaven <tristan@gentoo.org> +md5deep-4.0.0.ebuild:
+  Version bump, bug #397663
+
+  04 Jan 2012; Agostino Sarubbo <ago@gentoo.org> md5deep-3.9.1.ebuild:
+  Stable for AMD64, wrt bug #396777
+
+  17 Nov 2011; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Change developer's email
 
 *md5deep-3.9.1 (08 Jun 2011)
 

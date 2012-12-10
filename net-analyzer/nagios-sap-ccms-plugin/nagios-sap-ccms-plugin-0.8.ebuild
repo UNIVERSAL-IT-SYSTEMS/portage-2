@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios-sap-ccms-plugin/nagios-sap-ccms-plugin-0.8.ebuild,v 1.3 2010/10/20 00:31:55 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios-sap-ccms-plugin/nagios-sap-ccms-plugin-0.8.ebuild,v 1.5 2012/09/24 00:47:14 vapier Exp $
 
 EAPI="2"
 
-inherit eutils toolchain-funcs
+inherit eutils multilib toolchain-funcs
 
 MY_P="sap-ccms-plugin-${PV}"
 
@@ -19,7 +19,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 QA_PRESTRIPPED="/usr/lib/librfccm.so"
-QA_DT_HASH="/usr/lib/librfccm.so"
+QA_FLAGS_IGNORED="/usr/lib/librfccm.so"
 
 DEPEND="
 	net-analyzer/nagios-core

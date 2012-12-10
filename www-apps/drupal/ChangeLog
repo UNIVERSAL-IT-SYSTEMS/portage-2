@@ -1,6 +1,82 @@
 # ChangeLog for www-apps/drupal
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/drupal/ChangeLog,v 1.73 2011/07/28 08:51:23 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apps/drupal/ChangeLog,v 1.89 2012/11/11 16:56:11 blueness Exp $
+
+  11 Nov 2012; Anthony G. Basile <blueness@gentoo.org> -drupal-7.15.ebuild:
+  Drop 7.x before 7.16, bug #442756
+
+*drupal-7.17 (09 Nov 2012)
+
+  09 Nov 2012; Tim Harder <radhermit@gentoo.org> +drupal-7.17.ebuild:
+  Version bump.
+
+  22 Oct 2012; Tim Harder <radhermit@gentoo.org> -drupal-6.25.ebuild,
+  -drupal-7.12.ebuild, -drupal-7.14.ebuild:
+  Remove old.
+
+*drupal-7.16 (22 Oct 2012)
+
+  22 Oct 2012; Tim Harder <radhermit@gentoo.org> +drupal-7.16.ebuild:
+  Version bump.
+
+*drupal-7.15 (02 Aug 2012)
+
+  02 Aug 2012; Tim Harder <radhermit@gentoo.org> +drupal-7.15.ebuild:
+  Version bump.
+
+  29 May 2012; Tim Harder <radhermit@gentoo.org> -drupal-6.24.ebuild:
+  Remove old.
+
+  21 May 2012; Alexey Shvetsov <alexxy@gentoo.org> drupal-7.12.ebuild,
+  drupal-7.14.ebuild:
+  [www-apps/drupal] D7 also need dev-php/pecl-apc and dev-php/pecl-
+  uploadprogress for normal operation
+
+*drupal-6.26 (21 May 2012)
+*drupal-7.14 (21 May 2012)
+
+  21 May 2012; Theo Chatzimichos <tampakrap@gentoo.org> +drupal-6.26.ebuild,
+  +drupal-7.14.ebuild:
+  Version bumps
+
+*drupal-6.25 (03 Mar 2012)
+
+  03 Mar 2012; Tim Harder <radhermit@gentoo.org> +drupal-6.25.ebuild:
+  Version bump.
+
+  03 Mar 2012; Tim Harder <radhermit@gentoo.org> drupal-6.24.ebuild,
+  drupal-7.12.ebuild:
+  Update php use flag dependencies.
+
+  03 Mar 2012; Tim Harder <radhermit@gentoo.org> -drupal-5.23.ebuild,
+  -drupal-6.22.ebuild, -drupal-7.10.ebuild:
+  Remove old.
+
+  05 Feb 2012; Tim Harder <radhermit@gentoo.org> -drupal-7.4.ebuild,
+  -drupal-7.7.ebuild, -drupal-7.8.ebuild, -drupal-7.9.ebuild:
+  Remove old.
+
+*drupal-7.12 (05 Feb 2012)
+*drupal-6.24 (05 Feb 2012)
+
+  05 Feb 2012; Tim Harder <radhermit@gentoo.org> +drupal-6.24.ebuild,
+  +drupal-7.12.ebuild:
+  Version bumps.
+
+*drupal-7.10 (09 Dec 2011)
+
+  09 Dec 2011; Tim Harder <radhermit@gentoo.org> +drupal-7.10.ebuild:
+  Version bump.
+
+*drupal-7.9 (11 Nov 2011)
+
+  11 Nov 2011; Tim Harder <radhermit@gentoo.org> +drupal-7.9.ebuild:
+  Version bump.
+
+*drupal-7.8 (05 Sep 2011)
+
+  05 Sep 2011; Tim Harder <radhermit@gentoo.org> +drupal-7.8.ebuild:
+  Version bump.
 
 *drupal-7.7 (28 Jul 2011)
 
@@ -363,4 +439,3 @@
 
   27 Apr 2005; Jose Luis Rivero <yoswink@gentoo.org> drupal-4.5.2.ebuild:
   keyworded ~alpha
-

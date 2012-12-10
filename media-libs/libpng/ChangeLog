@@ -1,6 +1,317 @@
 # ChangeLog for media-libs/libpng
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libpng/ChangeLog,v 1.297 2011/07/16 15:56:29 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libpng/ChangeLog,v 1.384 2012/11/14 14:12:30 jlec Exp $
+
+  14 Nov 2012; Justin Lecher <jlec@gentoo.org> libpng-1.2.50.ebuild:
+  Keyworded for ~linux, tested by me
+
+  16 Oct 2012; Jeroen Roovers <jer@gentoo.org> libpng-1.2.49.ebuild:
+  Marked ~hppa too.
+
+  14 Oct 2012; Raúl Porcel <armin76@gentoo.org> libpng-1.2.50.ebuild,
+  libpng-1.5.13-r1.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc/x86 stable wrt #436592
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> libpng-1.5.13-r1.ebuild:
+  Stable for amd64, wrt bug #436592
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> libpng-1.2.50.ebuild:
+  Stable for AMD64, wrt bug #436592
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org> libpng-1.5.13-r1.ebuild:
+  stable ppc, bug #436592
+
+  11 Oct 2012; Markus Meier <maekke@gentoo.org> libpng-1.5.13-r1.ebuild:
+  arm stable, bug #436592
+
+  09 Oct 2012; Jeroen Roovers <jer@gentoo.org> libpng-1.5.13-r1.ebuild:
+  Stable for HPPA (bug #436592).
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> libpng-1.2.50.ebuild,
+  libpng-1.5.13-r1.ebuild:
+  Marking libpng-1.2.50 and libpng-1.5.13-r1 for bug 436592 
+
+  02 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> -libpng-1.5.13.ebuild:
+  old
+
+*libpng-1.5.13-r1 (02 Oct 2012)
+
+  02 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> +libpng-1.5.13-r1.ebuild:
+  Restore old libtool file removal find because prune_libtool_files --all fails
+  to remove libpng.la dead symlink wrt #436996 by Francesco Turco
+
+  29 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> -libpng-1.5.11.ebuild,
+  -libpng-1.5.12.ebuild:
+  old
+
+*libpng-1.5.13 (29 Sep 2012)
+
+  29 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> +libpng-1.5.13.ebuild:
+  Version bump.
+
+  28 Sep 2012; Ulrich Müller <ulm@gentoo.org> libpng-1.2.49.ebuild,
+  libpng-1.2.50.ebuild, libpng-1.5.10.ebuild, libpng-1.5.11.ebuild,
+  libpng-1.5.12.ebuild:
+  Specify LICENSE more precisely.
+
+*libpng-1.5.12 (13 Jul 2012)
+*libpng-1.2.50 (13 Jul 2012)
+
+  13 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +libpng-1.2.50.ebuild,
+  +libpng-1.5.12.ebuild:
+  Version bump.
+
+*libpng-1.5.11 (16 Jun 2012)
+
+  16 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +libpng-1.5.11.ebuild:
+  Version bump.
+
+  16 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -libpng-1.2.47.ebuild,
+  -libpng-1.5.8.ebuild, -libpng-1.5.9.ebuild:
+  old
+
+  28 Apr 2012; Raúl Porcel <armin76@gentoo.org> libpng-1.5.10.ebuild:
+  alpha/sparc stable wrt #410153
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libpng-1.5.10.ebuild:
+  keyword ~amd64-fbsd
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> libpng-1.5.10.ebuild:
+  Marking libpng-1.5.10 ppc64 for bug 410153
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> libpng-1.5.10.ebuild:
+  Marking libpng-1.5.10 ppc for bug 410153
+
+  04 Apr 2012; Mike Frysinger <vapier@gentoo.org> libpng-1.2.49.ebuild,
+  libpng-1.5.10.ebuild:
+  Mark arm/ia64/s390/sh stable #410153.
+
+  03 Apr 2012; Thomas Kahle <tomka@gentoo.org> libpng-1.2.49.ebuild,
+  libpng-1.5.10.ebuild:
+  marked x86 per bug 410153
+
+  02 Apr 2012; Agostino Sarubbo <ago@gentoo.org> libpng-1.2.49.ebuild,
+  libpng-1.5.10.ebuild:
+  Stable for amd64, wrt bug #410153
+
+  31 Mar 2012; Jeroen Roovers <jer@gentoo.org> libpng-1.5.10.ebuild:
+  Stable for HPPA (bug #410153).
+
+*libpng-1.5.10 (30 Mar 2012)
+*libpng-1.2.49 (30 Mar 2012)
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +libpng-1.2.49.ebuild,
+  +libpng-1.5.10.ebuild:
+  Version bump wrt #410153 by Thomas D.
+
+  03 Mar 2012; Raúl Porcel <armin76@gentoo.org> libpng-1.5.9.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #404197
+
+  03 Mar 2012; Markus Meier <maekke@gentoo.org> libpng-1.5.9.ebuild:
+  arm stable, bug #404197
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> libpng-1.5.9.ebuild:
+  ppc64 stable wrt #404197
+
+  02 Mar 2012; Tobias Klausmann <klausman@gentoo.org> libpng-1.5.9.ebuild:
+  Stable on alpha, bug #404197
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> libpng-1.5.9.ebuild:
+  Marking libpng-1.5.9 ppc for bug 404197
+
+  20 Feb 2012; Jeroen Roovers <jer@gentoo.org> libpng-1.5.9.ebuild:
+  Stable for HPPA (bug #404197).
+
+  20 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> -libpng-1.2.46.ebuild,
+  -libpng-1.4.8-r2.ebuild:
+  old
+
+  20 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> libpng-1.2.47.ebuild:
+  amd64/x86 stable
+
+*libpng-1.2.47 (20 Feb 2012)
+
+  20 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +libpng-1.2.47.ebuild:
+  Version bump.
+
+  19 Feb 2012; Jeff Horelick <jdhore@gentoo.org> libpng-1.5.9.ebuild:
+  marked x86 per security bug 404197
+
+  19 Feb 2012; Agostino Sarubbo <ago@gentoo.org> libpng-1.5.9.ebuild:
+  Stable for AMD64, wrt security bug #404197
+
+  19 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> libpng-1.5.9.ebuild:
+  Use correct apng patchset for the 1.5.9 release
+
+*libpng-1.5.9 (19 Feb 2012)
+
+  19 Feb 2012; Tim Harder <radhermit@gentoo.org> +libpng-1.5.9.ebuild:
+  Version bump.
+
+  06 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> -libpng-1.5.6.ebuild,
+  -libpng-1.5.7.ebuild:
+  old
+
+  06 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> libpng-1.5.8.ebuild:
+  ppc64 stable wrt #401987
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> libpng-1.5.8.ebuild:
+  Marking libpng-1.5.8 ppc for bug 401987
+
+  04 Feb 2012; Raúl Porcel <armin76@gentoo.org> libpng-1.5.8.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #401987
+
+  03 Feb 2012; Jeroen Roovers <jer@gentoo.org> libpng-1.5.8.ebuild:
+  Stable for HPPA (bug #401987).
+
+  02 Feb 2012; Agostino Sarubbo <ago@gentoo.org> libpng-1.5.8.ebuild:
+  Stable for X86, wrt security bug #401987
+
+  02 Feb 2012; Agostino Sarubbo <ago@gentoo.org> libpng-1.5.8.ebuild:
+  Stable for AMD64, wrt security bug #401987
+
+*libpng-1.5.8 (01 Feb 2012)
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +libpng-1.5.8.ebuild:
+  Version bump.
+
+  01 Feb 2012; Jeroen Roovers <jer@gentoo.org> libpng-1.5.7.ebuild:
+  Stable for HPPA (bug #401119).
+
+  31 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> libpng-1.5.7.ebuild:
+  ppc/ppc64 stable wrt #401119
+
+  29 Jan 2012; Jeff Horelick <jdhore@gentoo.org> libpng-1.5.7.ebuild:
+  x86 stable per bug 401119
+
+  28 Jan 2012; Agostino Sarubbo <ago@gentoo.org> libpng-1.5.7.ebuild:
+  Stable for amd64, wrt bug #401119
+
+  02 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  USE description for flag "neon" is in use.desc now.
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> -libpng-1.5.5.ebuild:
+  old
+
+*libpng-1.5.7 (22 Dec 2011)
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +libpng-1.5.7.ebuild,
+  metadata.xml:
+  Version bump.
+
+  04 Dec 2011; Raúl Porcel <armin76@gentoo.org> libpng-1.5.6.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #392293
+
+  30 Nov 2011; Jeroen Roovers <jer@gentoo.org> libpng-1.5.6.ebuild:
+  Stable for HPPA (bug #392293).
+
+  28 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> libpng-1.5.6.ebuild:
+  amd64/ppc/ppc64/x86 stable wrt #392293
+
+*libpng-1.5.6 (04 Nov 2011)
+
+  04 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +libpng-1.5.6.ebuild:
+  Version bump.
+
+  30 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -libpng-1.4.8-r1.ebuild:
+  old
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> libpng-1.5.5.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #384701
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> libpng-1.5.5.ebuild:
+  arm stable, bug #384701
+
+  21 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libpng-1.5.5.ebuild:
+  x86 stable wrt #384701
+
+  20 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libpng-1.5.5.ebuild:
+  Move blockers from RDEPEND to DEPEND as per recommendation by "few" from
+  Freenode
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> libpng-1.5.5.ebuild:
+  Stable for HPPA (bug #384701).
+
+  17 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> libpng-1.5.5.ebuild:
+  ppc/ppc64 stable wrt #384701
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libpng-1.5.5.ebuild:
+  Block <libsexy-0.1.11-r3 and <libview-0.6.6-r2 for polluting pkg-config
+  Libs: with versioned -lpng
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libpng-1.5.5.ebuild:
+  amd64 stable wrt #384701
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -libpng-1.2.45.ebuild,
+  -files/libpng-1.2.45-build.patch, -libpng-1.4.8.ebuild,
+  -files/libpng-1.4.8-build.patch, -libpng-1.5.4-r1.ebuild,
+  -files/libpng-1.5.4-CVE-2011-3328.patch:
+  old
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libpng-1.4.8-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #384285
+
+  11 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libpng-1.5.5.ebuild:
+  Don't execute symbols check with apng patch wrt #378111 by Diego Elio
+  Pettenò
+
+  08 Oct 2011; Markus Meier <maekke@gentoo.org> libpng-1.4.8-r1.ebuild:
+  arm stable, bug #384285
+
+  06 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libpng-1.5.5.ebuild:
+  Block <x11-libs/gdk-pixbuf-2.24.0-r1 to avoid Requires.private: libpng14 
+  entry wrt #383655
+
+  05 Oct 2011; Jeroen Roovers <jer@gentoo.org> libpng-1.4.8-r1.ebuild:
+  Stable for HPPA (bug #384285).
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> libpng-1.4.8-r1.ebuild:
+  Marked ppc/ppc64 stable for bug #384285.
+
+  01 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libpng-1.2.46.ebuild:
+  x86 stable wrt bug #384285
+
+  01 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libpng-1.4.8-r1.ebuild:
+  x86 stable wrt bug #384285
+
+  24 Sep 2011; Tony Vroon <chainsaw@gentoo.org> libpng-1.2.46.ebuild,
+  libpng-1.4.8-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #384285.
+
+*libpng-1.5.5 (24 Sep 2011)
+
+  24 Sep 2011; Mike Frysinger <vapier@gentoo.org> +libpng-1.5.5.ebuild:
+  Version bump #384247.
+
+*libpng-1.5.4-r1 (23 Sep 2011)
+
+  23 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> -libpng-1.5.4.ebuild,
+  +libpng-1.5.4-r1.ebuild, +files/libpng-1.5.4-CVE-2011-3328.patch:
+  Revbump for CVE-2011-3328, till proper apng patch is rolled out
+
+  20 Sep 2011; Fabian Groffen <grobian@gentoo.org> libpng-1.4.8-r2.ebuild:
+  Fix installation on Darwin
+
+  17 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> libpng-1.4.8-r2.ebuild:
+  Improve pkg_setup() logic for deleting old library as per example in
+  dev-libs/openssl:0.9.8.
+
+  17 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> -libpng-1.2.44.ebuild,
+  -libpng-1.4.5.ebuild, -libpng-1.4.7.ebuild, -libpng-1.5.2.ebuild:
+  [This is a placeholder. Please ignore.]
+
+*libpng-1.4.8-r2 (17 Sep 2011)
+
+  17 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> +libpng-1.4.8-r2.ebuild,
+  libpng-1.5.4.ebuild:
+  Commit binary compat ebuild for SONAME libpng14.so.14 and release libpng15
+  for general consumption.
+
+*libpng-1.2.46 (13 Sep 2011)
+
+  13 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> +libpng-1.2.46.ebuild:
+  Version bump.
 
   16 Jul 2011; Raúl Porcel <armin76@gentoo.org> libpng-1.4.8.ebuild:
   alpha/ia64/m68k/s390/sh/sparc stable wrt #373967

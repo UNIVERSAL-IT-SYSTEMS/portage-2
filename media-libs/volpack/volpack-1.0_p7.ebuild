@@ -1,11 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/volpack/volpack-1.0_p7.ebuild,v 1.1 2009/11/23 23:46:18 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/volpack/volpack-1.0_p7.ebuild,v 1.4 2012/04/12 23:07:37 bicatali Exp $
 
-EAPI=2
-inherit eutils
+EAPI=4
 
 MYP=${PN}-${PV/_p/c}
+
 DESCRIPTION="Volume rendering library"
 HOMEPAGE="http://amide.sourceforge.net/packages.html"
 SRC_URI="mirror://sourceforge/amide/${MYP}.tgz"
@@ -13,24 +13,28 @@ SRC_URI="mirror://sourceforge/amide/${MYP}.tgz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc examples"
+IUSE="doc examples static-libs"
+
+RDEPEND=""
+DEPEND="${RDEPEND}
+	sys-devel/m4"
 
 S="${WORKDIR}/${MYP}"
 
+src_configure() {
+	econf $(use_enable static-libs static)
+}
+
 src_compile() {
-	emake -j1 || die "emake failed"
+	emake -j1
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS README ChangeLog
-	insinto /usr/share/doc/${PF}/
-	if use doc; then
-		doins doc/*.pdf || die
-		dohtml doc/*.html || die
-	fi
+	default
+	use doc && dodoc doc/*.pdf && dohtml doc/*.html
 	if use examples; then
-		dodoc -r examples || die
+		insinto /usr/share/doc/${PF}
+		doins -r examples
 	fi
 
 }

@@ -1,6 +1,32 @@
 # ChangeLog for dev-ruby/rubyzip
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubyzip/ChangeLog,v 1.18 2011/02/11 19:29:27 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubyzip/ChangeLog,v 1.25 2012/09/27 19:06:12 johu Exp $
+
+  27 Sep 2012; Johannes Huber <johu@gentoo.org> rubyzip-0.9.9.ebuild:
+  Stable for x86, wrt bug #435824
+
+  24 Sep 2012; Agostino Sarubbo <ago@gentoo.org> rubyzip-0.9.9.ebuild:
+  Stable for amd64, wrt bug #435824
+
+  08 Jul 2012; Hans de Graaff <graaff@gentoo.org> -rubyzip-0.9.4-r1.ebuild:
+  Remove old version.
+
+*rubyzip-0.9.9 (08 Jul 2012)
+
+  08 Jul 2012; Hans de Graaff <graaff@gentoo.org> +rubyzip-0.9.9.ebuild:
+  Version bump.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> rubyzip-0.9.4.ebuild,
+  rubyzip-0.9.4-r1.ebuild, rubyzip-0.9.5.ebuild:
+  Drop ia64/sparc keywords
+
+  05 Dec 2011; Naohiro Aota <naota@gentoo.org> rubyzip-0.9.5.ebuild:
+  Add ~x86-fbsd.
+
+*rubyzip-0.9.5 (27 Nov 2011)
+
+  27 Nov 2011; Hans de Graaff <graaff@gentoo.org> +rubyzip-0.9.5.ebuild:
+  Version bump. Add ruby19.
 
   11 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org>
   rubyzip-0.9.4-r1.ebuild:

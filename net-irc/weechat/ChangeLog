@@ -1,6 +1,126 @@
 # ChangeLog for net-irc/weechat
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/weechat/ChangeLog,v 1.94 2011/05/27 08:01:01 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/weechat/ChangeLog,v 1.124 2012/12/05 14:10:57 scarabeus Exp $
+
+  05 Dec 2012; Tomáš Chvátal <scarabeus@gentoo.org> -weechat-0.3.8.ebuild:
+  Drop sec-vuln version.
+
+  21 Nov 2012;  <ago@gentoo.org> weechat-0.3.9.2.ebuild:
+  Stable for x86, wrt bug #442600
+
+  20 Nov 2012; Anthony G. Basile <blueness@gentoo.org> weechat-0.3.9.2.ebuild:
+  stable ppc, bug #442600
+
+  20 Nov 2012;  <ago@gentoo.org> weechat-0.3.9.2.ebuild:
+  Stable for amd64, wrt bug #442600
+
+  19 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> weechat-0.3.9.2.ebuild,
+  weechat-9999.ebuild:
+  Depend on gcrypt with irc, it fails to link with ssl disabled otherwise. Fixes
+  bug#441960.
+
+*weechat-0.3.9.2 (19 Nov 2012)
+
+  19 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> +weechat-0.3.9.2.ebuild,
+  -weechat-0.3.9.1.ebuild, -weechat-0.3.9.ebuild:
+  Version bump to latest security release, remove older affected.
+
+*weechat-0.3.9.1 (10 Nov 2012)
+
+  10 Nov 2012;  <lejonet@gentoo.org> +weechat-0.3.9.1.ebuild:
+  Bumped the version
+
+  05 Oct 2012; Tomáš Chvátal <scarabeus@gentoo.org> weechat-0.3.9.ebuild,
+  weechat-9999.ebuild:
+  Drop useless message.
+
+  05 Oct 2012; Tomáš Chvátal <scarabeus@gentoo.org> weechat-0.3.9.ebuild,
+  weechat-9999.ebuild:
+  Also switch script updater tool under scripts useflag.
+
+*weechat-0.3.9 (05 Oct 2012)
+
+  05 Oct 2012; Tomáš Chvátal <scarabeus@gentoo.org> +weechat-0.3.9.ebuild:
+  Version bump to latest.
+
+  21 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> -weechat-0.3.7.ebuild,
+  weechat-0.3.8.ebuild, weechat-9999.ebuild:
+  Sort out the dependency over py2/3 wrt bug#426330. Stabilise 0.3.8 on all
+  archs. Remove older.
+
+*weechat-0.3.8 (07 Jun 2012)
+
+  07 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> +weechat-0.3.8.ebuild:
+  Version bump to 0.3.8. Wrt bug#420119.
+
+  31 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> weechat-9999.ebuild:
+  Do not use ruby-ng eclass as the optional work is completely fucked.
+
+  23 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> -weechat-0.3.5.ebuild:
+  Punt older.
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> weechat-0.3.7.ebuild:
+  Marking weechat-0.3.7 ppc for bug 393649
+
+  06 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> weechat-0.3.7.ebuild:
+  Shutup repoman minorsyn warning.
+
+  06 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> weechat-0.3.7.ebuild:
+  Actually use the guile useflag in cmake optinos.
+
+  05 Apr 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> weechat-0.3.7.ebuild:
+  x86 stable wrt bug #393649
+
+  05 Apr 2012; Agostino Sarubbo <ago@gentoo.org> weechat-0.3.7.ebuild:
+  Stable for amd64, wrt bug #393649
+
+  31 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> weechat-0.3.7.ebuild,
+  weechat-9999.ebuild:
+  Run the ruby and python phases only when the useflag is enabled wrt
+  bug#410331.
+
+  31 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> weechat-0.3.7.ebuild,
+  weechat-9999.ebuild:
+  Some eclass fuck up S declaration in eapi4 :/
+
+  31 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> weechat-0.3.7.ebuild,
+  weechat-9999.ebuild:
+  Add support for linguas switching. Fixes bug#402297.
+
+  31 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> weechat-0.3.7.ebuild,
+  weechat-9999.ebuild:
+  Add new dependencies. Fixes bug#401547. Thanks to Marco Paolone for the patch.
+
+*weechat-0.3.7 (27 Feb 2012)
+
+  27 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org> +weechat-0.3.7.ebuild,
+  -weechat-0.3.6.ebuild, weechat-9999.ebuild:
+  Version bump to latest. This version should fully support py3.
+
+  19 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  maintain
+
+  31 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> weechat-0.3.5.ebuild,
+  weechat-0.3.6.ebuild, weechat-9999.ebuild:
+  Fix wording of elogs pointing to the weeget.py weechat script, thanks jdhore.
+
+  30 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> weechat-0.3.5.ebuild:
+  Drop USE_RUBY=ruby19 from weechat-0.3.5 because it has stable keywords and
+  ruby:1.9 is unstable, thanks Mr_Bones_.
+
+  11 Nov 2011; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Drop me from maint.
+
+*weechat-0.3.6 (22 Oct 2011)
+
+  22 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> +weechat-0.3.6.ebuild,
+  weechat-9999.ebuild:
+  Version bump to latest release.
+
+  19 Sep 2011; Nathan Phillip Brink <binki@gentoo.org> weechat-0.3.5.ebuild,
+  weechat-9999.ebuild:
+  Add missing dependency on ruby required for ruby scripting support, reported
+  by jdhore.
 
   27 May 2011; Tomáš Chvátal <scarabeus@gentoo.org> -weechat-0.3.4.ebuild,
   weechat-0.3.5.ebuild:
@@ -399,4 +519,3 @@
   weechat-0.0.2.ebuild:
   Initial version, ebuild by psk <gentoo@feeleas.org>.
   Closes #29823.
-

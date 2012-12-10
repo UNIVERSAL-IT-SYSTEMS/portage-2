@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/gtk-doc/gtk-doc-1.17.ebuild,v 1.5 2011/07/17 20:50:46 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/gtk-doc/gtk-doc-1.17.ebuild,v 1.11 2012/05/04 17:51:45 jdhore Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.gtk.org/gtk-doc/"
 
 LICENSE="GPL-2 FDL-1.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~sparc-fbsd ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x64-solaris"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x64-solaris"
 IUSE="debug doc emacs highlight vim test"
 
 # dev-tex/tex4ht blocker needed due bug #315287
@@ -27,14 +27,14 @@ RDEPEND=">=dev-libs/glib-2.6:2
 	>=app-text/docbook-dsssl-stylesheets-1.40
 	emacs? ( virtual/emacs )
 	highlight? (
-		vim? ( app-editors/vim )
+		vim? ( || ( app-editors/vim app-editors/gvim ) )
 		!vim? ( dev-util/source-highlight )
 	)
 	!!<dev-tex/tex4ht-20090611_p1038-r1"
 
 DEPEND="${RDEPEND}
 	~dev-util/gtk-doc-am-${PV}
-	>=dev-util/pkgconfig-0.19
+	virtual/pkgconfig
 	>=app-text/scrollkeeper-0.3.14
 	>=app-text/gnome-doc-utils-0.3.2
 	test? ( app-text/scrollkeeper-dtd )"

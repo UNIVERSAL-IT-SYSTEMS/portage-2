@@ -1,6 +1,20 @@
 # ChangeLog for app-misc/socnetv
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/socnetv/ChangeLog,v 1.14 2011/05/17 20:52:53 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/socnetv/ChangeLog,v 1.18 2012/11/20 20:45:56 ago Exp $
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> socnetv-0.90.ebuild:
+  Stable for x86, wrt bug #441094
+
+  04 Nov 2012; Agostino Sarubbo <ago@gentoo.org> socnetv-0.90.ebuild:
+  Stable for amd64, wrt bug #441094
+
+*socnetv-0.90 (26 Aug 2012)
+
+  26 Aug 2012; Markos Chandras <hwoarang@gentoo.org> +socnetv-0.90.ebuild:
+  Version bump
+
+  24 Nov 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #290906
 
   17 May 2011; Markos Chandras <hwoarang@gentoo.org> -socnetv-0.80.ebuild,
   -socnetv-0.81.ebuild:
@@ -64,4 +78,3 @@
   26 Mar 2009; Markos Chandras <hwoarang@gentoo.org> +metadata.xml,
   +socnetv-0.51.ebuild:
   Initial commit for socnetv application
-

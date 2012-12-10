@@ -1,6 +1,25 @@
 # ChangeLog for dev-haskell/drift
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/drift/ChangeLog,v 1.21 2011/08/01 21:47:08 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/drift/ChangeLog,v 1.27 2012/05/13 09:37:20 slyfox Exp $
+
+  13 May 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/drift-2.2.3-ghc-7.4.patch, drift-2.2.3.ebuild:
+  Fix build failure against ghc-7.4.
+
+  17 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> drift-2.2.3.ebuild:
+  alpha/ia64/sparc stable (bug #399981).
+
+  12 Mar 2012; Brent Baude <ranger@gentoo.org> drift-2.2.3.ebuild:
+  Marking drift-2.2.3 ppc64 for bug 399981
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> drift-2.2.3.ebuild:
+  x86 stable wrt bug #399981
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> drift-2.2.3.ebuild:
+  Marking drift-2.2.3 ppc for bug 399981
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> drift-2.2.3.ebuild:
+  Stable for amd64, wrt bug #399981
 
   01 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> -drift-2.1.2.ebuild:
   Removed old.

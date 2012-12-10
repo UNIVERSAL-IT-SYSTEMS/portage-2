@@ -1,6 +1,38 @@
 # ChangeLog for dev-haskell/cgi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/cgi/ChangeLog,v 1.15 2011/05/14 19:52:21 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/cgi/ChangeLog,v 1.23 2012/11/18 13:58:00 gienah Exp $
+
+*cgi-3001.1.8.3 (18 Nov 2012)
+
+  18 Nov 2012; Mark Wright <gienah@gentoo.org> +cgi-3001.1.8.3.ebuild:
+  Bump cgi to 3001.1.8.3
+
+*cgi-3001.1.7.4 (28 Oct 2012)
+
+  28 Oct 2012; Sergei Trofimovich <slyfox@gentoo.org> +cgi-3001.1.7.4.ebuild:
+  Version bump straight to stable (fixes build breakage in bug #413641 by
+  vitorbrandao.pt at gmail.com).
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> cgi-3001.1.5.1.ebuild,
+  cgi-3001.1.7.1.ebuild, cgi-3001.1.8.2.ebuild:
+  move dev-haskell/cgi/cgi-3001.1.7.1.ebuild ebuild to mirror://hackage
+
+*cgi-3001.1.8.2 (11 Apr 2012)
+
+  11 Apr 2012; Sergei Trofimovich <slyfox@gentoo.org> +cgi-3001.1.8.2.ebuild:
+  Version bump. Dropped alpha/ppc/sparc due to new depend. Will rekeyword.
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> cgi-3001.1.7.1.ebuild:
+  x86 stable, bug #394051
+
+  19 Dec 2011; Agostino Sarubbo <ago@gentoo.org> cgi-3001.1.7.1.ebuild:
+  Stable for AMD64, wrt bug #394051
+
+  18 Dec 2011; Agostino Sarubbo <ago@gentoo.org> cgi-3001.1.7.1.ebuild:
+  Reverted for AMD64 because of bug #395187
+
+  18 Dec 2011; Agostino Sarubbo <ago@gentoo.org> cgi-3001.1.7.1.ebuild:
+  Stable for AMD64, wrt bug #394051
 
   14 May 2011; Sergei Trofimovich <slyfox@gentoo.org> cgi-3001.1.5.1.ebuild:
   Fixed build failure against ghc-6.12 (base-4) noticed by mekeor.
@@ -56,4 +88,3 @@
   17 Mar 2007; Lennart Kolmodin <kolmodin@gentoo.org> +metadata.xml,
   +cgi-2006.9.6.ebuild:
   Add modular lib to ghc 6.6. See bug 151012
-

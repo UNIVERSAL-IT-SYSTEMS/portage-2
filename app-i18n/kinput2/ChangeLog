@@ -1,6 +1,21 @@
 # ChangeLog for app-i18n/kinput2
-# Copyright 2002-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/kinput2/ChangeLog,v 1.23 2006/10/27 18:18:22 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/kinput2/ChangeLog,v 1.27 2012/11/25 22:40:59 naota Exp $
+
+  25 Nov 2012;  <naota@gentoo.org> kinput2-3.1-r1.ebuild, kinput2-3.1-r2.ebuild:
+  Update LICENSE field. #444490
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> kinput2-3.1-r2.ebuild:
+  x86 stable wrt bug #418585
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> kinput2-3.1-r2.ebuild:
+  Stable for amd64, wrt bug #418585
+
+*kinput2-3.1-r2 (22 Jan 2012)
+
+  22 Jan 2012; MATSUU Takuto <matsuu@gentoo.org> +files/xinput-kinput2,
+  +kinput2-3.1-r2.ebuild:
+  Added imsettings related file. Clean up.
 
   27 Oct 2006; Diego Pettenò <flameeyes@gentoo.org> kinput2-3.1-r1.ebuild:
   Ebuild cleanup, fix for modular X support only (thanks Patrick Lauer for
@@ -84,4 +99,3 @@
 
   26 June 2002; Stuart Bouyer <stubear@gentoo.org> kinput2-3.1_beta4.ebuild :
   Added Kinput2 3.1 beta4
-

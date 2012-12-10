@@ -1,16 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/linux-mod.eclass,v 1.102 2011/06/01 06:51:30 robbat2 Exp $
-
-# Author(s): John Mylchreest <johnm@gentoo.org>,
-#            Stefan Schweizer <genstef@gentoo.org>
-# Maintainer: kernel-misc@gentoo.org
-#
-# Please direct your bugs to the current eclass maintainer :)
+# $Header: /var/cvsroot/gentoo-x86/eclass/linux-mod.eclass,v 1.108 2012/09/15 16:16:53 zmedico Exp $
 
 # @ECLASS: linux-mod.eclass
 # @MAINTAINER:
 # kernel-misc@gentoo.org
+# @AUTHOR:
+# John Mylchreest <johnm@gentoo.org>,
+# Stefan Schweizer <genstef@gentoo.org>
 # @BLURB: It provides the functionality required to install external modules against a kernel source tree.
 # @DESCRIPTION:
 # This eclass is used to interface with linux-info.eclass in such a way
@@ -37,7 +34,7 @@
 
 # @ECLASS-VARIABLE: BUILD_TARGETS
 # @DESCRIPTION:
-# It's a string with the build targets to pass to make. The default value is "clean modules"
+# It's a string with the build targets to pass to make. The default value is "clean module"
 
 # @ECLASS-VARIABLE: MODULE_NAMES
 # @DESCRIPTION:
@@ -125,18 +122,12 @@
 # @DESCRIPTION:
 # It's a read-only variable. It contains the extension of the kernel modules.
 
-# The order of these is important as both of linux-info and eutils contain
-# set_arch_to_kernel and set_arch_to_portage functions and the ones in eutils
-# are deprecated in favor of the ones in linux-info.
-# See http://bugs.gentoo.org/show_bug.cgi?id=127506
-
 inherit eutils linux-info multilib
 EXPORT_FUNCTIONS pkg_setup pkg_preinst pkg_postinst src_install src_compile pkg_postrm
 
 IUSE="kernel_linux"
 SLOT="0"
-DESCRIPTION="Based on the $ECLASS eclass"
-RDEPEND="kernel_linux? ( sys-apps/module-init-tools )"
+RDEPEND="kernel_linux? ( virtual/modutils )"
 DEPEND="${RDEPEND}
 	sys-apps/sed
 	kernel_linux? ( virtual/linux-sources )"
@@ -231,7 +222,7 @@ update_depmod() {
 	ebegin "Updating module dependencies for ${KV_FULL}"
 	if [ -r "${KV_OUT_DIR}"/System.map ]
 	then
-		depmod -ae -F "${KV_OUT_DIR}"/System.map -b "${ROOT}" -r ${KV_FULL}
+		depmod -ae -F "${KV_OUT_DIR}"/System.map -b "${ROOT}" ${KV_FULL}
 		eend $?
 	else
 		ewarn

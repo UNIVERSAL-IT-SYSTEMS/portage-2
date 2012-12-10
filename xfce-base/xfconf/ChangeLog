@@ -1,6 +1,92 @@
 # ChangeLog for xfce-base/xfconf
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfconf/ChangeLog,v 1.51 2011/05/20 17:47:26 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfconf/ChangeLog,v 1.76 2012/11/28 12:29:35 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> xfconf-4.10.0.ebuild:
+  EAPI5
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> xfconf-4.10.0.ebuild:
+  Insert missing files to po/POTFILES.skip for "make check" to pass wrt #444996
+  by Dan Dexter
+
+  09 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> -xfconf-4.8.1.ebuild,
+  -xfconf-4.9.1.ebuild:
+  old
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> xfconf-4.10.0.ebuild:
+  alpha/ia64/sh/sparc stable wrt #416233
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> xfconf-4.10.0.ebuild:
+  arm stable, bug #416233
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> xfconf-4.10.0.ebuild:
+  marked x86 per bug 416233
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> xfconf-4.10.0.ebuild:
+  ppc/ppc64 stable wrt #416233
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> xfconf-4.10.0.ebuild:
+  Stable for amd64, wrt bug #416233
+
+  19 May 2012; Anthony G. Basile <blueness@gentoo.org> xfconf-4.10.0.ebuild:
+  Keyword mips
+
+  17 May 2012; Jeroen Roovers <jer@gentoo.org> xfconf-4.10.0.ebuild:
+  Stable for HPPA (bug #416233).
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org> xfconf-4.10.0.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> xfconf-4.8.1.ebuild,
+  xfconf-4.9.1.ebuild, xfconf-4.10.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*xfconf-4.10.0 (29 Apr 2012)
+
+  29 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +xfconf-4.10.0.ebuild:
+  Version bump.
+
+  22 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -xfconf-4.8.0.ebuild:
+  old
+
+  22 Apr 2012; Raúl Porcel <armin76@gentoo.org> xfconf-4.8.1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #401229
+
+  20 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -xfconf-4.9.0.ebuild:
+  old
+
+*xfconf-4.9.1 (14 Apr 2012)
+
+  14 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +xfconf-4.9.1.ebuild:
+  Version bump to development release.
+
+  07 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> xfconf-4.9.0.ebuild:
+  Raise some dependencies according to upstream git.
+
+*xfconf-4.9.0 (30 Mar 2012)
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +xfconf-4.9.0.ebuild:
+  Version bump to development release.
+
+  23 Mar 2012; Christoph Mende <angelos@gentoo.org> xfconf-4.8.1.ebuild:
+  Add slot dep on glib
+
+  13 Feb 2012; Markus Meier <maekke@gentoo.org> xfconf-4.8.1.ebuild:
+  arm stable, bug #401229
+
+  10 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> xfconf-4.8.1.ebuild:
+  ppc/ppc64/x86 stable wrt #401229
+
+  09 Feb 2012; Jeroen Roovers <jer@gentoo.org> xfconf-4.8.1.ebuild:
+  Stable for HPPA (bug #401229).
+
+  30 Jan 2012; Agostino Sarubbo <ago@gentoo.org> xfconf-4.8.1.ebuild:
+  Stable for amd64, wrt bug #401229
+
+*xfconf-4.8.1 (27 Dec 2011)
+
+  27 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +xfconf-4.8.1.ebuild:
+  Version bump.
 
   20 May 2011; Fabian Groffen <grobian@gentoo.org> xfconf-4.8.0.ebuild:
   Add --disable-visibility on Darwin, bug #366857

@@ -1,6 +1,32 @@
 # ChangeLog for dev-perl/WWW-Curl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/WWW-Curl/ChangeLog,v 1.22 2011/01/14 15:45:08 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/WWW-Curl/ChangeLog,v 1.30 2012/11/18 11:41:04 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -WWW-Curl-4.13.ebuild:
+  Cleanup
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> WWW-Curl-4.150.0.ebuild:
+  x86 stable wrt bug #400263
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> WWW-Curl-4.150.0.ebuild:
+  Marking WWW-Curl-4.150.0 ppc for bug 400263
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> WWW-Curl-4.150.0.ebuild:
+  Stable for amd64, wrt bug #400263
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -WWW-Curl-4.15.ebuild:
+  Cleanup
+
+*WWW-Curl-4.150.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +WWW-Curl-4.150.0.ebuild:
+  Change version scheme
 
   14 Jan 2011; Torsten Veller <tove@gentoo.org> -WWW-Curl-4.09.ebuild,
   -WWW-Curl-4.11.ebuild, -WWW-Curl-4.12.ebuild, -WWW-Curl-4.14.ebuild:
@@ -91,4 +117,3 @@
   +WWW-Curl-4.05.ebuild:
   New ebuild by Robin H. Johnson <robbat2@gentoo.org>. Used for some of the
   external qpsmtpd plugins.
-

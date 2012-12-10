@@ -1,6 +1,17 @@
 # ChangeLog for xfce-extra/xfce4-volumed
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-volumed/ChangeLog,v 1.17 2011/05/19 20:00:43 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-volumed/ChangeLog,v 1.22 2012/11/28 12:20:40 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-volumed-0.1.13.ebuild:
+  EAPI5
+
+  01 Jul 2012; Christoph Mende <angelos@gentoo.org>
+  xfce4-volumed-0.1.13.ebuild:
+  Depend on dev-libs/keybinder:0 wrt #423919
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> xfce4-volumed-0.1.13.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   19 May 2011; Samuli Suominen <ssuominen@gentoo.org>
   xfce4-volumed-0.1.13.ebuild:
@@ -15,7 +26,8 @@
 
 *xfce4-volumed-0.1.13 (03 Mar 2011)
 
-  03 Mar 2011; <angelos@gentoo.org> +xfce4-volumed-0.1.13.ebuild:
+  03 Mar 2011; Christoph Mende <angelos@gentoo.org>
+  +xfce4-volumed-0.1.13.ebuild:
   Version bump
 
 *xfce4-volumed-0.1.11 (29 Jan 2011)
@@ -86,4 +98,3 @@
   06 Sep 2009; Samuli Suominen <ssuominen@gentoo.org>
   +xfce4-volumed-0.1.4.ebuild:
   Initial commit wrt #283808, thanks to Jeremy Olexa for reporting.
-

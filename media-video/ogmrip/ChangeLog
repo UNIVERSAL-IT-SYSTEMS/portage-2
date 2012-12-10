@@ -1,6 +1,35 @@
 # ChangeLog for media-video/ogmrip
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ogmrip/ChangeLog,v 1.44 2011/02/06 17:01:45 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/ogmrip/ChangeLog,v 1.51 2012/06/24 18:38:45 hanno Exp $
+
+*ogmrip-0.13.8 (24 Jun 2012)
+
+  24 Jun 2012; Hanno Boeck <hanno@gentoo.org> +ogmrip-0.13.8.ebuild:
+  Version bump.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> ogmrip-0.13.6.ebuild,
+  ogmrip-0.13.7.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org> ogmrip-0.13.7.ebuild:
+  Revert to autotools eclass.
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org> ogmrip-0.13.7.ebuild:
+  Build in the source tree.
+
+*ogmrip-0.13.7 (18 Nov 2011)
+
+  18 Nov 2011; Tim Harder <radhermit@gentoo.org> +ogmrip-0.13.7.ebuild,
+  +files/ogmrip-0.13.7-deprecated.patch:
+  Version bump (bug #386587 by Olivier Rolland).
+
+  01 Nov 2011; Pacho Ramos <pacho@gentoo.org> ogmrip-0.13.6.ebuild:
+  Drop DEPRECATED flags to make it compile with glib-2.30 and upcoming releases.
+
+  20 Sep 2011; Markos Chandras <hwoarang@gentoo.org> ogmrip-0.13.6.ebuild,
+  +files/ogmrip-0.13.6-libpng15.patch:
+  Add libpng-1.5 patch thanks to Olivier Rolland <billl@users.sf.net>. Bug
+  #383593
 
   06 Feb 2011; Samuli Suominen <ssuominen@gentoo.org> ogmrip-0.13.6.ebuild,
   +files/ogmrip-0.13.6-libnotify-0.7.patch:

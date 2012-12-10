@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/autotools.eclass,v 1.103 2011/05/16 03:44:26 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/autotools.eclass,v 1.149 2012/09/20 18:04:59 scarabeus Exp $
 
 # @ECLASS: autotools.eclass
 # @MAINTAINER:
@@ -9,10 +9,14 @@
 # @DESCRIPTION:
 # This eclass is for safely handling autotooled software packages that need to
 # regenerate their build scripts.  All functions will abort in case of errors.
-#
-# NB:  If you add anything, please comment it!
 
-inherit eutils libtool
+# Note: We require GNU m4, as does autoconf.  So feel free to use any features
+# from the GNU version of m4 without worrying about other variants (i.e. BSD).
+
+if [[ ${___ECLASS_ONCE_AUTOTOOLS} != "recur -_+^+_- spank" ]] ; then
+___ECLASS_ONCE_AUTOTOOLS="recur -_+^+_- spank"
+
+inherit libtool multiprocessing
 
 # @ECLASS-VARIABLE: WANT_AUTOCONF
 # @DESCRIPTION:
@@ -24,24 +28,39 @@ inherit eutils libtool
 # The major version of automake your package needs
 : ${WANT_AUTOMAKE:=latest}
 
+# @ECLASS-VARIABLE: WANT_LIBTOOL
+# @DESCRIPTION:
+# Do you want libtool?  Valid values here are "latest" and "none".
+: ${WANT_LIBTOOL:=latest}
+
 # @ECLASS-VARIABLE: _LATEST_AUTOMAKE
 # @INTERNAL
 # @DESCRIPTION:
 # CONSTANT!
-# The latest major version/slot of automake available on each arch.
-# If a newer version is stable on any arch, and is NOT reflected in this list,
+# The latest major version/slot of automake available on each arch.  #312315
+# If a newer slot is stable on any arch, and is NOT reflected in this list,
 # then circular dependencies may arise during emerge @system bootstraps.
 # Do NOT change this variable in your ebuilds!
-_LATEST_AUTOMAKE='1.11'
+# If you want to force a newer minor version, you can specify the correct
+# WANT value by using a colon:  <PV>:<WANT_AUTOMAKE>
+_LATEST_AUTOMAKE=( 1.11.1:1.11 1.12:1.12 )
 
 _automake_atom="sys-devel/automake"
 _autoconf_atom="sys-devel/autoconf"
 if [[ -n ${WANT_AUTOMAKE} ]]; then
 	case ${WANT_AUTOMAKE} in
-		none)   _automake_atom="" ;; # some packages don't require automake at all
-		# if you change the "latest" version here, change also autotools_run_tool
-		# this MUST reflect the latest stable major version for each arch!
-		latest) _automake_atom="|| ( `printf '=sys-devel/automake-%s* ' ${_LATEST_AUTOMAKE}` )" ;;
+		# Even if the package doesn't use automake, we still need to depend
+		# on it because we run aclocal to process m4 macros.  This matches
+		# the autoreconf tool, so this requirement is correct.  #401605
+		none) ;;
+		latest)
+			# Use SLOT deps if we can.  For EAPI=0, we get pretty close.
+			if [[ ${EAPI:-0} != 0 ]] ; then
+				_automake_atom="|| ( `printf '>=sys-devel/automake-%s:%s ' ${_LATEST_AUTOMAKE[@]/:/ }` )"
+			else
+				_automake_atom="|| ( `printf '>=sys-devel/automake-%s ' ${_LATEST_AUTOMAKE[@]/%:*}` )"
+			fi
+			;;
 		*)      _automake_atom="=sys-devel/automake-${WANT_AUTOMAKE}*" ;;
 	esac
 	export WANT_AUTOMAKE
@@ -51,15 +70,24 @@ if [[ -n ${WANT_AUTOCONF} ]] ; then
 	case ${WANT_AUTOCONF} in
 		none)       _autoconf_atom="" ;; # some packages don't require autoconf at all
 		2.1)        _autoconf_atom="=sys-devel/autoconf-${WANT_AUTOCONF}*" ;;
-		# if you change the “latest” version here, change also autotools_run_tool
-		latest|2.5) _autoconf_atom=">=sys-devel/autoconf-2.61" ;;
-		*)          _autoconf_atom="INCORRECT-WANT_AUTOCONF-SETTING-IN-EBUILD" ;;
+		# if you change the "latest" version here, change also autotools_env_setup
+		latest|2.5) _autoconf_atom=">=sys-devel/autoconf-2.68" ;;
+		*)          die "Invalid WANT_AUTOCONF value '${WANT_AUTOCONF}'" ;;
 	esac
 	export WANT_AUTOCONF
 fi
 
-AUTOTOOLS_DEPEND="${_automake_atom} ${_autoconf_atom}"
-[[ ${CATEGORY}/${PN} != "sys-devel/libtool" ]] && AUTOTOOLS_DEPEND="${AUTOTOOLS_DEPEND} >=sys-devel/libtool-2.2.6b"
+_libtool_atom="sys-devel/libtool"
+if [[ -n ${WANT_LIBTOOL} ]] ; then
+	case ${WANT_LIBTOOL} in
+		none)   _libtool_atom="" ;;
+		latest) ;;
+		*)      die "Invalid WANT_LIBTOOL value '${WANT_LIBTOOL}'" ;;
+	esac
+	export WANT_LIBTOOL
+fi
+
+AUTOTOOLS_DEPEND="${_automake_atom} ${_autoconf_atom} ${_libtool_atom}"
 RDEPEND=""
 
 # @ECLASS-VARIABLE: AUTOTOOLS_AUTO_DEPEND
@@ -80,6 +108,13 @@ unset _automake_atom _autoconf_atom
 # Additional options to pass to automake during
 # eautoreconf call.
 
+# @ECLASS-VARIABLE: AT_NOEAUTOMAKE
+# @DEFAULT_UNSET
+# @DESCRIPTION:
+# Don't run eautomake command if set to 'yes'; only used to workaround
+# broken packages.  Generally you should, instead, fix the package to
+# not call AM_INIT_AUTOMAKE if it doesn't actually use automake.
+
 # @ECLASS-VARIABLE: AT_NOELIBTOOLIZE
 # @DEFAULT_UNSET
 # @DESCRIPTION:
@@ -87,11 +122,18 @@ unset _automake_atom _autoconf_atom
 # useful when elibtoolize needs to be ran with
 # particular options
 
-# XXX: M4DIR should be deprecated
 # @ECLASS-VARIABLE: AT_M4DIR
 # @DESCRIPTION:
 # Additional director(y|ies) aclocal should search
-: ${AT_M4DIR:=${M4DIR}}
+: ${AT_M4DIR:=}
+
+# @ECLASS-VARIABLE: AT_SYS_M4DIR
+# @INTERNAL
+# @DESCRIPTION:
+# For system integrators, a list of additional aclocal search paths.
+# This variable gets eval-ed, so you can use variables in the definition
+# that may not be valid until eautoreconf & friends are run.
+: ${AT_SYS_M4DIR:=}
 
 # @FUNCTION: eautoreconf
 # @DESCRIPTION:
@@ -102,41 +144,133 @@ unset _automake_atom _autoconf_atom
 # Should do a full autoreconf - normally what most people will be interested in.
 # Also should handle additional directories specified by AC_CONFIG_SUBDIRS.
 eautoreconf() {
-	local x auxdir g
+	local x g multitop
 
-	if [[ -z ${AT_NO_RECURSIVE} ]]; then
+	if [[ -z ${AT_TOPLEVEL_EAUTORECONF} ]] ; then
+		AT_TOPLEVEL_EAUTORECONF="yes"
+		multitop="yes"
+		multijob_init
+	fi
+
+	if [[ -z ${AT_NO_RECURSIVE} ]] ; then
 		# Take care of subdirs
-		for x in $(autotools_get_subdirs); do
+		for x in $(autotools_check_macro_val AC_CONFIG_SUBDIRS) ; do
 			if [[ -d ${x} ]] ; then
 				pushd "${x}" >/dev/null
-				AT_NOELIBTOOLIZE="yes" eautoreconf
+				AT_NOELIBTOOLIZE="yes" multijob_child_init eautoreconf || die
 				popd >/dev/null
 			fi
 		done
 	fi
 
-	auxdir=$(autotools_get_auxdir)
-
 	einfo "Running eautoreconf in '${PWD}' ..."
-	[[ -n ${auxdir} ]] && mkdir -p ${auxdir}
+
+	local m4dirs=$(autotools_check_macro_val AC_CONFIG_{AUX,MACRO}_DIR)
+	[[ -n ${m4dirs} ]] && mkdir -p ${m4dirs}
+
+	# Run all the tools before aclocal so we can gather the .m4 files.
+	local i tools=(
+		# <tool> <was run> <command>
+		glibgettext false "autotools_run_tool glib-gettextize --copy --force"
+		gettext     false "autotools_run_tool --at-missing autopoint --force"
+		# intltool must come after autopoint.
+		intltool    false "autotools_run_tool intltoolize --automake --copy --force"
+		gtkdoc      false "autotools_run_tool --at-missing gtkdocize --copy"
+		gnomedoc    false "autotools_run_tool --at-missing gnome-doc-prepare --copy --force"
+		libtool     false "_elibtoolize --install --copy --force"
+	)
+	for (( i = 0; i < ${#tools[@]}; i += 3 )) ; do
+		if _at_uses_${tools[i]} ; then
+			tools[i+1]=true
+			${tools[i+2]}
+		fi
+	done
+
+	# Generate aclocal.m4 with our up-to-date m4 files.
+	local rerun_aclocal=false
 	eaclocal
-	[[ ${CHOST} == *-darwin* ]] && g=g
-	if ${LIBTOOLIZE:-${g}libtoolize} -n --install >& /dev/null ; then
-		_elibtoolize --copy --force --install
-	else
-		_elibtoolize --copy --force
-	fi
+
+	# Check to see if we had macros expanded by other macros or in other
+	# m4 files that we couldn't detect early.  This is uncommon, but some
+	# packages do this, so we have to handle it correctly.
+	for (( i = 0; i < ${#tools[@]}; i += 3 )) ; do
+		if ! ${tools[i+1]} && _at_uses_${tools[i]} ; then
+			${tools[i+2]}
+			rerun_aclocal=true
+		fi
+	done
+	${rerun_aclocal} && eaclocal
+
 	eautoconf
 	eautoheader
-	FROM_EAUTORECONF="yes" eautomake ${AM_OPTS}
+	[[ ${AT_NOEAUTOMAKE} != "yes" ]] && FROM_EAUTORECONF="yes" eautomake ${AM_OPTS}
 
-	[[ ${AT_NOELIBTOOLIZE} == "yes" ]] && return 0
+	if [[ ${AT_NOELIBTOOLIZE} != "yes" ]] ; then
+		# Call it here to prevent failures due to elibtoolize called _before_
+		# eautoreconf.  We set $S because elibtoolize runs on that #265319
+		S=${PWD} elibtoolize --force
+	fi
 
-	# Call it here to prevent failures due to elibtoolize called _before_
-	# eautoreconf.  We set $S because elibtoolize runs on that #265319
-	S=${PWD} elibtoolize
+	if [[ -n ${multitop} ]] ; then
+		unset AT_TOPLEVEL_EAUTORECONF
+		multijob_finish || die
+	fi
 
 	return 0
+}
+
+# @FUNCTION: _at_uses_pkg
+# @USAGE: <macros>
+# @INTERNAL
+# See if the specified macros are enabled.
+_at_uses_pkg() {
+	if [[ -n $(autotools_check_macro "$@") ]] ; then
+		return 0
+	else
+		# If the trace didn't find it (perhaps because aclocal.m4 hasn't
+		# been generated yet), cheat, but be conservative.
+		local macro args=()
+		for macro ; do
+			args+=( -e "^[[:space:]]*${macro}\>" )
+		done
+		egrep -q "${args[@]}" configure.??
+	fi
+}
+_at_uses_autoheader()  { _at_uses_pkg AC_CONFIG_HEADERS; }
+_at_uses_automake()    { _at_uses_pkg AM_INIT_AUTOMAKE; }
+_at_uses_gettext()     { _at_uses_pkg AM_GNU_GETTEXT_VERSION; }
+_at_uses_glibgettext() { _at_uses_pkg AM_GLIB_GNU_GETTEXT; }
+_at_uses_intltool()    { _at_uses_pkg {AC,IT}_PROG_INTLTOOL; }
+_at_uses_gtkdoc()      { _at_uses_pkg GTK_DOC_CHECK; }
+_at_uses_gnomedoc()    { _at_uses_pkg GNOME_DOC_INIT; }
+_at_uses_libtool()     { _at_uses_pkg A{C,M}_PROG_LIBTOOL LT_INIT; }
+
+# @FUNCTION: eaclocal_amflags
+# @DESCRIPTION:
+# Extract the ACLOCAL_AMFLAGS value from the Makefile.am and try to handle
+# (most) of the crazy crap that people throw at us.
+eaclocal_amflags() {
+	local aclocal_opts amflags_file
+
+	for amflags_file in GNUmakefile.am Makefile.am GNUmakefile.in Makefile.in ; do
+		[[ -e ${amflags_file} ]] || continue
+		# setup the env in case the pkg does something crazy
+		# in their ACLOCAL_AMFLAGS.  like run a shell script
+		# which turns around and runs autotools. #365401
+		# or split across multiple lines. #383525
+		autotools_env_setup
+		aclocal_opts=$(sed -n \
+			"/^ACLOCAL_AMFLAGS[[:space:]]*=/{ \
+			  # match the first line
+			  s:[^=]*=::p; \
+			  # then gobble up all escaped lines
+			  : nextline /\\\\$/{ n; p; b nextline; } \
+			}" ${amflags_file})
+		eval aclocal_opts=\""${aclocal_opts}"\"
+		break
+	done
+
+	echo ${aclocal_opts}
 }
 
 # @FUNCTION: eaclocal
@@ -147,51 +281,33 @@ eautoreconf() {
 # They also force installing the support files for safety.
 # Respects AT_M4DIR for additional directories to search for macro's.
 eaclocal() {
-	local aclocal_opts
-
-	local amflags_file
-	for amflags_file in GNUmakefile.am Makefile.am GNUmakefile.in Makefile.in ; do
-		[[ -e ${amflags_file} ]] || continue
-		# setup the env in case the pkg does something crazy
-		# in their ACLOCAL_AMFLAGS.  like run a shell script
-		# which turns around and runs autotools #365401
-		autotools_env_setup
-		aclocal_opts=$(sed -n '/^ACLOCAL_AMFLAGS[[:space:]]*=/s:[^=]*=::p' ${amflags_file})
-		eval aclocal_opts=\"${aclocal_opts}\"
-		break
-	done
-
 	[[ ! -f aclocal.m4 || -n $(grep -e 'generated.*by aclocal' aclocal.m4) ]] && \
-		autotools_run_tool aclocal $(autotools_m4dir_include) "$@" ${aclocal_opts}
+		autotools_run_tool --at-m4flags aclocal "$@" $(eaclocal_amflags)
 }
 
 # @FUNCTION: _elibtoolize
 # @DESCRIPTION:
-# Runs libtoolize.  Note the '_' prefix .. to not collide with elibtoolize() from
-# libtool.eclass.
+# Runs libtoolize.  If --install is the first arg, automatically drop it if
+# the active libtool version doesn't support it.
+#
+# Note the '_' prefix .. to not collide with elibtoolize() from libtool.eclass.
 _elibtoolize() {
-	local opts g=
+	local LIBTOOLIZE=${LIBTOOLIZE:-$(type -P glibtoolize > /dev/null && echo glibtoolize || echo libtoolize)}
 
-	# Check if we should run libtoolize (AM_PROG_LIBTOOL is an older macro,
-	# check for both it and the current AC_PROG_LIBTOOL)
-	[[ -n $(autotools_check_macro AC_PROG_LIBTOOL AM_PROG_LIBTOOL LT_INIT) ]] || return 0
+	[[ -f GNUmakefile.am || -f Makefile.am ]] && set -- "$@" --automake
+	if [[ $1 == "--install" ]] ; then
+		${LIBTOOLIZE} -n --install >& /dev/null || shift
+	fi
 
-	[[ -f GNUmakefile.am || -f Makefile.am ]] && opts="--automake"
-
-	[[ ${CHOST} == *-darwin* ]] && g=g
-	autotools_run_tool ${LIBTOOLIZE:-${g}libtoolize} "$@" ${opts}
-
-	# Need to rerun aclocal
-	eaclocal
+	autotools_run_tool ${LIBTOOLIZE} "$@" ${opts}
 }
 
 # @FUNCTION: eautoheader
 # @DESCRIPTION:
 # Runs autoheader.
 eautoheader() {
-	# Check if we should run autoheader
-	[[ -n $(autotools_check_macro "AC_CONFIG_HEADERS") ]] || return 0
-	NO_FAIL=1 autotools_run_tool autoheader $(autotools_m4dir_include) "$@"
+	_at_uses_autoheader || return 0
+	autotools_run_tool --at-no-fail --at-m4flags autoheader "$@"
 }
 
 # @FUNCTION: eautoconf
@@ -205,7 +321,7 @@ eautoconf() {
 		die "No configure.{ac,in} present!"
 	fi
 
-	autotools_run_tool autoconf $(autotools_m4dir_include) "$@"
+	autotools_run_tool --at-m4flags autoconf "$@"
 }
 
 # @FUNCTION: eautomake
@@ -217,17 +333,13 @@ eautomake() {
 
 	# Run automake if:
 	#  - a Makefile.am type file exists
-	#  - a Makefile.in type file exists and the configure
-	#    script is using the AM_INIT_AUTOMAKE directive
-	for makefile_name in {GNUmakefile,{M,m}akefile}.{am,in} "" ; do
+	#  - the configure script is using the AM_INIT_AUTOMAKE directive
+	for makefile_name in {GNUmakefile,{M,m}akefile}.am "" ; do
 		[[ -f ${makefile_name} ]] && break
 	done
-	[[ -z ${makefile_name} ]] && return 0
 
-	if [[ ${makefile_name} == *.in ]] ; then
-		if ! grep -qs AM_INIT_AUTOMAKE configure.?? ; then
-			return 0
-		fi
+	if [[ -z ${makefile_name} ]] ; then
+		_at_uses_automake || return 0
 
 	elif [[ -z ${FROM_EAUTORECONF} && -f ${makefile_name%.am}.in ]]; then
 		local used_automake
@@ -246,7 +358,7 @@ eautomake() {
 		fi
 	fi
 
-	[[ -f INSTALL && -f AUTHORS && -f ChangeLog && -f NEWS ]] \
+	[[ -f INSTALL && -f AUTHORS && -f ChangeLog && -f NEWS && -f README ]] \
 		|| extra_opts="${extra_opts} --foreign"
 
 	# --force-missing seems not to be recognized by some flavours of automake
@@ -260,25 +372,72 @@ eautopoint() {
 	autotools_run_tool autopoint "$@"
 }
 
-# Internal function to run an autotools' tool
+# @FUNCTION: config_rpath_update
+# @USAGE: [destination]
+# @DESCRIPTION:
+# Some packages utilize the config.rpath helper script, but don't
+# use gettext directly.  So we have to copy it in manually since
+# we can't let `autopoint` do it for us.
+config_rpath_update() {
+	local dst src=$(type -P gettext | sed 's:bin/gettext:share/gettext/config.rpath:')
+
+	[[ $# -eq 0 ]] && set -- $(find -name config.rpath)
+	[[ $# -eq 0 ]] && return 0
+
+	einfo "Updating all config.rpath files"
+	for dst in "$@" ; do
+		einfo "   ${dst}"
+		cp "${src}" "${dst}" || die
+	done
+}
+
+# @FUNCTION: autotools_env_setup
+# @INTERNAL
+# @DESCRIPTION:
+# Process the WANT_AUTO{CONF,MAKE} flags.
 autotools_env_setup() {
-	# We do the “latest” → version switch here because it solves
+	# We do the "latest" → version switch here because it solves
 	# possible order problems, see bug #270010 as an example.
 	if [[ ${WANT_AUTOMAKE} == "latest" ]]; then
 		local pv
-		for pv in ${_LATEST_AUTOMAKE} ; do
+		for pv in ${_LATEST_AUTOMAKE[@]/#*:} ; do
 			# has_version respects ROOT, but in this case, we don't want it to,
 			# thus "ROOT=/" prefix:
-			ROOT=/ has_version "=sys-devel/automake-${pv}*" && export WANT_AUTOMAKE="$pv"
+			ROOT=/ has_version "=sys-devel/automake-${pv}*" && export WANT_AUTOMAKE="${pv}"
 		done
 		[[ ${WANT_AUTOMAKE} == "latest" ]] && \
 			die "Cannot find the latest automake! Tried ${_LATEST_AUTOMAKE}"
 	fi
 	[[ ${WANT_AUTOCONF} == "latest" ]] && export WANT_AUTOCONF=2.5
 }
+
+# @FUNCTION: autotools_run_tool
+# @USAGE: [--at-no-fail] [--at-m4flags] [--at-missing] <autotool> [tool-specific flags]
+# @INTERNAL
+# @DESCRIPTION:
+# Run the specified autotool helper, but do logging and error checking
+# around it in the process.
 autotools_run_tool() {
+	# Process our own internal flags first
+	local autofail=true m4flags=false missing_ok=false
+	while [[ -n $1 ]] ; do
+		case $1 in
+		--at-no-fail) autofail=false;;
+		--at-m4flags) m4flags=true;;
+		--at-missing) missing_ok=true;;
+		# whatever is left goes to the actual tool
+		*) break;;
+		esac
+		shift
+	done
+
 	if [[ ${EBUILD_PHASE} != "unpack" && ${EBUILD_PHASE} != "prepare" ]]; then
 		ewarn "QA Warning: running $1 in ${EBUILD_PHASE} phase"
+	fi
+
+	if ${missing_ok} && ! type -P ${1} >/dev/null ; then
+		einfo "Skipping '$*' due $1 not installed"
+		return 0
 	fi
 
 	autotools_env_setup
@@ -287,16 +446,23 @@ autotools_run_tool() {
 	# most of the time, there will only be one run, but if there are
 	# more, make sure we get unique log filenames
 	if [[ -e ${STDERR_TARGET} ]] ; then
-		STDERR_TARGET="${T}/$1-$$.out"
+		local i=1
+		while :; do
+			STDERR_TARGET="${T}/$1-${i}.out"
+			[[ -e ${STDERR_TARGET} ]] || break
+			: $(( i++ ))
+		done
+	fi
+
+	if ${m4flags} ; then
+		set -- "${1}" $(autotools_m4dir_include) "${@:2}" $(autotools_m4sysdir_include)
 	fi
 
 	printf "***** $1 *****\n***** PWD: ${PWD}\n***** $*\n\n" > "${STDERR_TARGET}"
 
 	ebegin "Running $@"
 	"$@" >> "${STDERR_TARGET}" 2>&1
-	eend $?
-
-	if [[ $? != 0 && ${NO_FAIL} != 1 ]] ; then
+	if ! eend $? && ${autofail} ; then
 		echo
 		eerror "Failed Running $1 !"
 		eerror
@@ -309,62 +475,78 @@ autotools_run_tool() {
 }
 
 # Internal function to check for support
+
+# Keep a list of all the macros we might use so that we only
+# have to run the trace code once.  Order doesn't matter.
+ALL_AUTOTOOLS_MACROS=(
+	AC_PROG_LIBTOOL AM_PROG_LIBTOOL LT_INIT
+	AC_CONFIG_HEADERS
+	AC_CONFIG_SUBDIRS
+	AC_CONFIG_AUX_DIR AC_CONFIG_MACRO_DIR
+	AM_INIT_AUTOMAKE
+	AM_GLIB_GNU_GETTEXT
+	AM_GNU_GETTEXT_VERSION
+	{AC,IT}_PROG_INTLTOOL
+	GTK_DOC_CHECK
+	GNOME_DOC_INIT
+)
 autotools_check_macro() {
 	[[ -f configure.ac || -f configure.in ]] || return 0
-	local macro
+
+	# We can run in multiple dirs, so we have to cache the trace
+	# data in $PWD rather than an env var.
+	local trace_file=".__autoconf_trace_data"
+	if [[ ! -e ${trace_file} ]] || [[ ! aclocal.m4 -ot ${trace_file} ]] ; then
+		WANT_AUTOCONF="2.5" autoconf \
+			$(autotools_m4dir_include) \
+			${ALL_AUTOTOOLS_MACROS[@]/#/--trace=} > ${trace_file} 2>/dev/null
+	fi
+
+	local macro args=()
 	for macro ; do
-		WANT_AUTOCONF="2.5" autoconf $(autotools_m4dir_include) --trace="${macro}" 2>/dev/null
+		has ${macro} ${ALL_AUTOTOOLS_MACROS[@]} || die "internal error: add ${macro} to ALL_AUTOTOOLS_MACROS"
+		args+=( -e ":${macro}:" )
 	done
-	return 0
+	grep "${args[@]}" ${trace_file}
 }
 
-# Internal function to get additional subdirs to configure
-autotools_get_subdirs() {
-	local subdirs_scan_out
+# @FUNCTION: autotools_check_macro_val
+# @USAGE: <macro> [macros]
+# @INTERNAL
+# @DESCRIPTION:
+# Look for a macro and extract its value.
+autotools_check_macro_val() {
+	local macro scan_out
 
-	subdirs_scan_out=$(autotools_check_macro "AC_CONFIG_SUBDIRS")
-	[[ -n ${subdirs_scan_out} ]] || return 0
-
-	echo "${subdirs_scan_out}" | gawk \
-	'($0 !~ /^[[:space:]]*(#|dnl)/) {
-		if (match($0, /AC_CONFIG_SUBDIRS:(.*)$/, res))
-			print res[1]
-	}' | uniq
-
-	return 0
-}
-
-autotools_get_auxdir() {
-	local auxdir_scan_out
-
-	auxdir_scan_out=$(autotools_check_macro "AC_CONFIG_AUX_DIR")
-	[[ -n ${auxdir_scan_out} ]] || return 0
-
-	echo ${auxdir_scan_out} | gawk \
-	'($0 !~ /^[[:space:]]*(#|dnl)/) {
-		if (match($0, /AC_CONFIG_AUX_DIR:(.*)$/, res))
-			print res[1]
-	}' | uniq
+	for macro ; do
+		autotools_check_macro "${macro}" | \
+			gawk -v macro="${macro}" \
+				'($0 !~ /^[[:space:]]*(#|dnl)/) {
+					if (match($0, macro ":(.*)$", res))
+						print res[1]
+				}' | uniq
+	done
 
 	return 0
 }
 
-autotools_m4dir_include() {
-	[[ -n ${AT_M4DIR} ]] || return
+_autotools_m4dir_include() {
+	local x include_opts
 
-	local include_opts=
-
-	for x in ${AT_M4DIR} ; do
-		case "${x}" in
-			"-I")
-				# We handle it below
-				;;
+	for x in "$@" ; do
+		case ${x} in
+			# We handle it below
+			-I) ;;
 			*)
 				[[ ! -d ${x} ]] && ewarn "autotools.eclass: '${x}' does not exist"
-				include_opts="${include_opts} -I ${x}"
+				include_opts+=" -I ${x}"
 				;;
 		esac
 	done
 
-	echo $include_opts
+	echo ${include_opts}
 }
+autotools_m4dir_include()    { _autotools_m4dir_include ${AT_M4DIR} ; }
+autotools_m4sysdir_include() { _autotools_m4dir_include $(eval echo ${AT_SYS_M4DIR}) ; }
+
+fi

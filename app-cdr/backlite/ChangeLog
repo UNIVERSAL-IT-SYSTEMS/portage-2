@@ -1,6 +1,37 @@
 # ChangeLog for app-cdr/backlite
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/backlite/ChangeLog,v 1.22 2011/07/26 17:09:18 billie Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/backlite/ChangeLog,v 1.32 2012/11/18 13:15:17 billie Exp $
+
+*backlite-1.0.3-r1 (18 Nov 2012)
+
+  18 Nov 2012; Daniel Pielmeier <billie@gentoo.org> +backlite-1.0.3-r1.ebuild:
+  Fix desktop files to follow the new specification.
+
+  11 Apr 2012; Daniel Pielmeier <billie@gentoo.org>
+  -files/backlite-1.0.2-ffmpeg.patch:
+  Remove unused patch.
+
+  05 Apr 2012; Daniel Pielmeier <billie@gentoo.org> -backlite-1.0.2.ebuild:
+  Remove old.
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> backlite-1.0.3.ebuild:
+  x86 stable wrt bug #400797
+
+  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org> backlite-1.0.3.ebuild:
+  Stable for amd64, wrt bug #400797
+
+*backlite-1.0.3 (20 Dec 2011)
+
+  20 Dec 2011; Daniel Pielmeier <billie@gentoo.org> +backlite-1.0.3.ebuild:
+  Version bump.
+
+  07 Aug 2011; Daniel Pielmeier <billie@gentoo.org> backlite-1.0.2.ebuild:
+  Restore stable keywords.
+
+  07 Aug 2011; Daniel Pielmeier <billie@gentoo.org> backlite-1.0.2.ebuild,
+  +files/backlite-1.0.2-ffmpeg.patch:
+  Switch to EAPI 4. Add patch to build with latest ffmpeg/libav just like for
+  k9copy.
 
   26 Jul 2011; Daniel Pielmeier <billie@gentoo.org> -backlite-1.0.1.ebuild:
   Remove old.

@@ -1,6 +1,97 @@
 # ChangeLog for net-wireless/kismet
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/kismet/ChangeLog,v 1.108 2010/04/15 01:32:42 steev Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/kismet/ChangeLog,v 1.128 2012/11/18 11:19:32 pacho Exp $
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+  23 Jul 2012; Rick Farina <zerochaos@gentoo.org>
+  +files/kismet-2011.03.2-cflags-backport.patch, kismet-2011.03.2-r3.ebuild:
+  closing Bug 426766, making plugins respect cxxflags
+
+  06 Jul 2012; Rick Farina <zerochaos@gentoo.org> kismet-9999.ebuild:
+  fixing missing SRC_URI in live conditional
+
+  05 Jul 2012; Rick Farina <zerochaos@gentoo.org> kismet-9999.ebuild:
+  kismet development has officially switched to git, so we follow
+
+  03 Jul 2012; Rick Farina <zerochaos@gentoo.org> kismet-9999.ebuild:
+  simplfy bluez deps and turn dot15d4 off due to build failure
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> kismet-2011.03.2-r3.ebuild:
+  Marking kismet-2011.03.2-r3 ppc for bug 420615
+
+  13 Jun 2012; Jeff Horelick <jdhore@gentoo.org> kismet-2011.03.2-r3.ebuild:
+  marked x86 per bug 420615
+
+  13 Jun 2012; Rick Farina <zerochaos@gentoo.org> kismet-2011.03.2-r3.ebuild,
+  kismet-9999.ebuild:
+  fix inherit lines, remove unneeded toolchain-funcs and add explicit inherits
+  for multilib and user
+
+*kismet-9999 (12 Jun 2012)
+
+  12 Jun 2012; Rick Farina <zerochaos@gentoo.org> +kismet-9999.ebuild,
+  metadata.xml:
+  add live ebuild for bleeding edge users
+
+  11 Jun 2012; Rick Farina <zerochaos@gentoo.org> metadata.xml:
+  fixing metadata to include my official info
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> kismet-2011.03.2-r3.ebuild:
+  Stable for amd64, wrt bug #420615
+
+  11 Jun 2012; Rick Farina <zerochaos@gentoo.org> -kismet-2010.01.1.ebuild,
+  metadata.xml:
+  -kismet-2010.01.1.ebuild remove obsolete version
+
+  11 Jun 2012; Rick Farina <zerochaos@gentoo.org> metadata.xml:
+  Updating metadata.xml to take maintainership
+
+*kismet-2011.03.2-r3 (11 Jun 2012)
+
+  11 Jun 2012; Steev Klimaszewski <steev@gentoo.org> -kismet-2007.10.1.ebuild,
+  -kismet-2010.01.1-r1.ebuild, -kismet-2011.03.2-r1.ebuild,
+  +kismet-2011.03.2-r3.ebuild, +files/use-hostname-by-default.patch:
+  Remove old versions. Add new revision with patch to use the hostname as the
+  kismet server name by default
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  kismet-2011.03.2-r1.ebuild, kismet-2011.03.2-r2.ebuild:
+  Use virtual/libusb instead of dev-libs/libusb.
+
+*kismet-2011.03.2-r2 (22 May 2012)
+
+  22 May 2012; Steev Klimaszewski <steev@gentoo.org>
+  +kismet-2011.03.2-r2.ebuild:
+  Revision bump, remove ncurses useflag in favor of client, to simplify ebuild.
+  Also no longer require linux-info eclass since the stable linux headers are
+  no longer impossible to build against.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> kismet-2010.01.1.ebuild,
+  kismet-2010.01.1-r1.ebuild, kismet-2011.03.2-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*kismet-2011.03.2-r1 (21 Feb 2012)
+
+  21 Feb 2012; Steev Klimaszewsk <steev@gentoo.org>
+  +files/header_alignment_r3326.patch, -kismet-2011.03.2.ebuild,
+  +kismet-2011.03.2-r1.ebuild:
+  Remove kismest 2011.03.2 ebuild. Revbump to add a critical patch from svn.
+  Fix the bluez dependency issue.
+
+*kismet-2011.03.2 (17 Feb 2012)
+
+  17 Feb 2012; Steev Klimaszewsk <steev@gentoo.org>
+  +files/bluechanfix_r3184.patch, +kismet-2011.03.2.ebuild,
+  +files/kismet-console-scrolling-backport.patch, +files/makefile.patch,
+  +files/plugins-ldflags.patch, metadata.xml:
+  New Kismet release, courtesy of ZeroChaos of Pentoo. He's also offered to
+  proxy-maintain, so add him as proxy-maintainer, myself as committer.
+
+  27 Oct 2011; Jeroen Roovers <jer@gentoo.org> kismet-2010.01.1.ebuild,
+  kismet-2010.01.1-r1.ebuild:
+  Fix libnl dependency (bug #388657).
 
 *kismet-2010.01.1-r1 (15 Apr 2010)
 

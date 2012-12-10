@@ -1,6 +1,28 @@
 # ChangeLog for app-shells/fish
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/fish/ChangeLog,v 1.49 2011/07/07 10:41:38 polynomial-c Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-shells/fish/ChangeLog,v 1.55 2012/11/29 04:05:09 jdhore Exp $
+
+  29 Nov 2012; Jeff Horelick <jdhore@gentoo.org> metadata.xml:
+  Adopt fish
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> fish-1.23.1-r2.ebuild:
+  marked x86 per bug 419725
+
+  05 Jun 2012; Michael Weber <xmw@gentoo.org> fish-1.23.1-r2.ebuild:
+  ppc stable (bug 419725)
+
+  05 Jun 2012; Markos Chandras <hwoarang@gentoo.org> fish-1.23.1-r2.ebuild:
+  Stable on amd64 wrt bug #419725
+
+  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -fish-1.23.1-r1.ebuild:
+  Remove old
+
+*fish-1.23.1-r2 (12 Nov 2011)
+
+  12 Nov 2011; Michael Weber <xmw@gentoo.org> +fish-1.23.1-r2.ebuild,
+  +files/fish-1.23.1-multi-line_prompts.patch:
+  Revbump to optionally include multi-line prompt patch by Ben Hoskings as
+  suggested by James Bowlin (bug 205809)
 
   07 Jul 2011; Lars Wendler <polynomial-c@gentoo.org> -fish-1.23.0.ebuild,
   fish-1.23.1.ebuild, fish-1.23.1-r1.ebuild:
@@ -234,4 +256,3 @@
   The Friendly Interactive SHell. Has command-line syntax highlighting, tab
   completion by default, 'open' to use .desktop files for opening any type of
   file, and other cool stuff.
-

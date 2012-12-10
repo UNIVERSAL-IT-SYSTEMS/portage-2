@@ -1,19 +1,19 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/babel/babel-1.6-r1.ebuild,v 1.3 2011/06/25 18:08:12 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/babel/babel-1.6-r1.ebuild,v 1.8 2012/03/06 16:11:28 ranger Exp $
 
 EAPI=4
 
 inherit eutils
 
 DESCRIPTION="Interconvert file formats used in molecular modeling"
-SRC_URI="http://smog.com/chem/babel/files/${P}.tar.Z"
 HOMEPAGE="http://smog.com/chem/babel/"
+SRC_URI="http://smog.com/chem/babel/files/${P}.tar.Z"
 
-KEYWORDS="~amd64 ~ppc ~x86"
 SLOT="0"
 LICENSE="as-is"
 IUSE=""
+KEYWORDS="amd64 ppc x86"
 
 #Doesn't really seem to depend on anything (?)
 DEPEND="!sci-chemistry/openbabel"
@@ -27,7 +27,7 @@ src_prepare() {
 }
 
 src_install () {
-	default
+	emake DESTDIR="${D}"/usr/bin install
 
 	insinto /usr/share/${PN}
 	doins *.lis

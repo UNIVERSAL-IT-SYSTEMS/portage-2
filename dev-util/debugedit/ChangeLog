@@ -1,6 +1,42 @@
 # ChangeLog for dev-util/debugedit
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/debugedit/ChangeLog,v 1.22 2009/11/14 09:14:33 swegener Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/debugedit/ChangeLog,v 1.31 2012/07/29 18:26:20 armin76 Exp $
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> debugedit-4.4.6-r1.ebuild,
+  debugedit-4.4.6-r2.ebuild, debugedit-5.1.9.ebuild, debugedit-5.3.5.ebuild,
+  debugedit-5.3.5-r1.ebuild:
+  Drop sparc keywords
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> debugedit-5.3.5-r1.ebuild:
+  Stable for HPPA (bug #418947).
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  debugedit-5.3.5-r1.ebuild:
+  x86 stable wrt bug #418947
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> debugedit-5.3.5-r1.ebuild:
+  Marking debugedit-5.3.5-r1 ppc for bug 418947
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> debugedit-5.3.5-r1.ebuild:
+  Marking debugedit-5.3.5-r1 ppc64 for bug 418947
+
+  02 Jun 2012; Markos Chandras <hwoarang@gentoo.org> debugedit-5.3.5-r1.ebuild:
+  Stable on amd64 wrt bug #418947
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> debugedit-5.3.5-r1.ebuild:
+  Add ~amd64-linux and ~x86-linux keywords.
+
+*debugedit-5.3.5-r1 (25 Jan 2012)
+
+  25 Jan 2012; Mike Frysinger <vapier@gentoo.org> +debugedit-5.3.5-r1.ebuild,
+  +files/debugedit-5.3.5-DWARF-4.patch:
+  Add DWARF 4 support #400663 by Francesco Riosa.
+
+*debugedit-5.3.5 (11 Oct 2011)
+
+  11 Oct 2011; Mike Frysinger <vapier@gentoo.org> +debugedit-5.3.5.ebuild,
+  +files/Makefile, +files/update.sh:
+  Version bump.
 
 *debugedit-5.1.9 (14 Nov 2009)
 

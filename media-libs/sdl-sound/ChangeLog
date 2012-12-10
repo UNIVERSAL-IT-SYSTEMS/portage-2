@@ -1,6 +1,23 @@
 # ChangeLog for media-libs/sdl-sound
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/sdl-sound/ChangeLog,v 1.39 2010/07/27 00:33:06 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/sdl-sound/ChangeLog,v 1.44 2012/11/25 09:16:25 grobian Exp $
+
+  25 Nov 2012; Fabian Groffen <grobian@gentoo.org> sdl-sound-1.0.3.ebuild:
+  Marked ~x64-macos
+
+  03 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  sdl-sound-1.0.3.ebuild:
+  Keyword ~arm.
+
+  21 Aug 2012; Julian Ospald <hasufell@gentoo.org> sdl-sound-1.0.3.ebuild,
+  +files/sdl-sound-1.0.3-underlinking.patch:
+  fix underlinking issues wrt #432192
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> sdl-sound-1.0.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  17 Jan 2012; Michael Sterrett <mr_bones_@gentoo.org> sdl-sound-1.0.3.ebuild:
+  EAPI=2; split mod support between mikmod and modplug
 
   27 Jul 2010; Michael Sterrett <mr_bones_@gentoo.org>
   sdl-sound-1.0.3.ebuild:

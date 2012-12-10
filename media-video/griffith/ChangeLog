@@ -1,6 +1,27 @@
 # ChangeLog for media-video/griffith
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/griffith/ChangeLog,v 1.55 2011/06/04 17:36:33 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/griffith/ChangeLog,v 1.60 2012/07/22 09:26:58 hwoarang Exp $
+
+  22 Jul 2012; Markos Chandras <hwoarang@gentoo.org> -griffith-0.12.1.ebuild,
+  griffith-0.13.ebuild:
+  Stable on amd64 wrt bug #427240. Remove old ebuild
+
+  19 Jul 2012; Jeff Horelick <jdhore@gentoo.org> griffith-0.13.ebuild:
+  marked x86 per bug 427240
+
+*griffith-0.13 (22 Mar 2012)
+
+  22 Mar 2012; Markos Chandras <hwoarang@gentoo.org> +griffith-0.13.ebuild,
+  griffith-9999.ebuild:
+  Version bump. Ebuild clean up. EAPI4
+
+  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> griffith-9999.ebuild:
+  Comply with EAPI3 standards
+
+  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> griffith-0.12.1.ebuild,
+  +files/griffith-0.12.1-sqlalchemy-0.7.patch, griffith-9999.ebuild:
+  EAPI3, apply conditional patch for sqlalchemy-0.7.1. Add post_inst message
+  about optional runtime dependencies. Bug #377789
 
   04 Jun 2011; Pacho Ramos <pacho@gentoo.org> griffith-0.12.1.ebuild,
   griffith-9999.ebuild:
@@ -236,4 +257,3 @@
   27 Sep 2006; Krzysiek Pawlik <nelchael@gentoo.org> +metadata.xml,
   +griffith-0.6.2.ebuild:
   Initial version, see bug #100003.
-

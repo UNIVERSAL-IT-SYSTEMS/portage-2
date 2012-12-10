@@ -1,6 +1,62 @@
 # ChangeLog for dev-ruby/hoe-seattlerb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/hoe-seattlerb/ChangeLog,v 1.29 2011/07/10 22:51:21 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/hoe-seattlerb/ChangeLog,v 1.44 2012/11/06 17:10:26 jer Exp $
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> hoe-seattlerb-1.2.8.ebuild:
+  Stable for HPPA (bug #426668).
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> hoe-seattlerb-1.2.4.ebuild,
+  hoe-seattlerb-1.2.8.ebuild:
+  alpha stable
+
+  27 Oct 2012; Raúl Porcel <armin76@gentoo.org> hoe-seattlerb-1.2.8.ebuild:
+  ia64/sparc stable wrt #421525
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  hoe-seattlerb-1.2.8.ebuild:
+  Stable ppc64, bug #421525
+
+  22 Jul 2012; <nixnut@gentoo.org> hoe-seattlerb-1.2.8.ebuild:
+  ppc stable #421525
+
+  30 Jun 2012; Andreas Schuerch <nativemad@gentoo.org>
+  hoe-seattlerb-1.2.8.ebuild:
+  x86 stable, see bug 421525
+
+  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> hoe-seattlerb-1.2.8.ebuild:
+  Stable for amd64, wrt bug #421525
+
+  17 Jun 2012; Hans de Graaff <graaff@gentoo.org> -hoe-seattlerb-1.2.6.ebuild,
+  -hoe-seattlerb-1.2.7.ebuild:
+  Remove old versions.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> hoe-seattlerb-1.2.8.ebuild:
+  Add Prefix keywords, bug #396547
+
+*hoe-seattlerb-1.2.8 (18 Dec 2011)
+
+  18 Dec 2011; Hans de Graaff <graaff@gentoo.org> +hoe-seattlerb-1.2.8.ebuild:
+  Version bump.
+
+  05 Dec 2011; Naohiro Aota <naota@gentoo.org> hoe-seattlerb-1.2.7.ebuild:
+  Add ~x86-fbsd.
+
+*hoe-seattlerb-1.2.7 (16 Oct 2011)
+
+  16 Oct 2011; Hans de Graaff <graaff@gentoo.org> +hoe-seattlerb-1.2.7.ebuild:
+  Version bump.
+
+  16 Oct 2011; Hans de Graaff <graaff@gentoo.org> -hoe-seattlerb-1.2.2.ebuild,
+  -hoe-seattlerb-1.2.4-r1.ebuild, -hoe-seattlerb-1.2.5.ebuild:
+  Remove old versions.
+
+  14 Sep 2011; Jeroen Roovers <jer@gentoo.org> hoe-seattlerb-1.2.4.ebuild:
+  Stable for HPPA (bug #369573).
+
+*hoe-seattlerb-1.2.6 (20 Aug 2011)
+
+  20 Aug 2011; Hans de Graaff <graaff@gentoo.org> +hoe-seattlerb-1.2.6.ebuild:
+  Version bump.
 
   10 Jul 2011; Mark Loeser <halcy0n@gentoo.org> hoe-seattlerb-1.2.4.ebuild:
   Stable for ppc64; bug #354609

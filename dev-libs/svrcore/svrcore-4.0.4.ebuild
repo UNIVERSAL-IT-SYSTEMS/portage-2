@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/svrcore/svrcore-4.0.4.ebuild,v 1.1 2010/07/07 13:43:55 lxnay Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/svrcore/svrcore-4.0.4.ebuild,v 1.3 2012/07/11 18:15:41 lxnay Exp $
 
 EAPI=2
 
-inherit multilib autotools
+inherit multilib autotools eutils
 
 DESCRIPTION="Mozilla LDAP C SDK"
 HOMEPAGE="http://wiki.mozilla.org/LDAP_C_SDK"
@@ -12,7 +12,7 @@ SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/directory/svrcore/releases/"${PV
 
 LICENSE="MPL-1.1 GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 DEPEND=">=dev-libs/nss-3.11

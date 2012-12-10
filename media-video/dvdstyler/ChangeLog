@@ -1,6 +1,56 @@
 # ChangeLog for media-video/dvdstyler
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/dvdstyler/ChangeLog,v 1.43 2011/07/20 14:34:39 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/dvdstyler/ChangeLog,v 1.54 2012/11/07 11:03:26 aballier Exp $
+
+*dvdstyler-2.3.4 (07 Nov 2012)
+
+  07 Nov 2012; Alexis Ballier <aballier@gentoo.org> +dvdstyler-2.3.4.ebuild:
+  version bump, should fix bugs #424952 and bug #433573
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> dvdstyler-2.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  23 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> dvdstyler-2.1.ebuild:
+  Fix building with FFmpeg >= 0.9 wrt #395793 by Helmut Jarausch
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -dvdstyler-2.0_rc1.ebuild, -dvdstyler-2.0_rc2.ebuild:
+  old
+
+*dvdstyler-2.1 (22 Dec 2011)
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +dvdstyler-2.1.ebuild:
+  Version bump. Missing -ljpeg (in wxVillaLib/ for imagjpg.cpp) wrt #367863 by
+  Diego Elio Pettenò.
+
+*dvdstyler-2.0_rc2 (16 Oct 2011)
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +dvdstyler-2.0_rc2.ebuild:
+  Version bump.
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -dvdstyler-1.8.1.ebuild,
+  -files/dvdstyler-1.8.1-cast.patch:
+  old
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -dvdstyler-1.7.4.ebuild,
+  -files/dvdstyler-1.7.4-autoconf.patch, -dvdstyler-1.8.1_beta1.ebuild:
+  old
+
+*dvdstyler-2.0_rc1 (09 Oct 2011)
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +dvdstyler-2.0_rc1.ebuild:
+  Version bump wrt #353478 by Thomas Rausch. This will also fix building with
+  recent FFmpeg wrt #374797 by Diego Elio Pettenò.
+
+  16 Sep 2011; Steve Dibb <beandog@gentoo.org> dvdstyler-1.7.4.ebuild,
+  dvdstyler-1.8.1_beta1.ebuild, dvdstyler-1.8.1.ebuild:
+  Use ffmpeg virtual, bug 362129
+
+  13 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> dvdstyler-1.7.4.ebuild,
+  dvdstyler-1.8.1_beta1.ebuild, dvdstyler-1.8.1.ebuild:
+  Dropped ppc keywords wrt #361737
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #34534

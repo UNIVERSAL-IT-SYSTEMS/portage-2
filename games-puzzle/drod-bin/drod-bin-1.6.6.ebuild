@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/drod-bin/drod-bin-1.6.6.ebuild,v 1.7 2011/07/27 17:51:26 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/drod-bin/drod-bin-1.6.6.ebuild,v 1.10 2012/02/08 21:30:15 vapier Exp $
 
-inherit eutils games
+inherit eutils unpacker games
 
 DESCRIPTION="Deadly Rooms Of Death: face room upon room of deadly things, armed with only a sword and your wits"
 HOMEPAGE="http://www.drod.net/"
@@ -14,9 +14,22 @@ KEYWORDS="-* ~amd64 x86"
 IUSE=""
 RESTRICT="strip"
 
-RDEPEND=""
+DEPEND=""
+RDEPEND="
+	x86? (
+		x11-libs/libX11
+		media-libs/freetype
+		media-libs/libsdl
+		media-libs/sdl-ttf
+		sys-libs/libstdc++-v3
+	)
+	amd64? (
+		app-emulation/emul-linux-x86-xlibs
+		app-emulation/emul-linux-x86-sdl
+		app-emulation/emul-linux-x86-compat
+	)"
 
-S=${WORKDIR}
+S="${WORKDIR}"
 
 src_unpack() {
 	unpack_makeself
@@ -24,7 +37,7 @@ src_unpack() {
 }
 
 src_install() {
-	./install.sh -R "${D}" -s "${GDIR}" -al -pn -o -I \
+	./install.sh -R "${D}" -s "${GDIR}" -rl -pn -o -I \
 		|| die "install.sh failed"
 	dodir "${GAMES_BINDIR}"
 	dosym "${GDIR}/drod" "${GAMES_BINDIR}/drod"

@@ -1,6 +1,119 @@
 # ChangeLog for media-sound/mpg123
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpg123/ChangeLog,v 1.244 2011/07/18 06:53:57 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpg123/ChangeLog,v 1.273 2012/12/09 18:31:28 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> mpg123-1.14.4.ebuild:
+  Stable for ppc64, wrt bug #441400
+
+  09 Dec 2012; Markus Meier <maekke@gentoo.org> mpg123-1.14.4.ebuild:
+  arm stable, bug #441400
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> mpg123-1.14.4.ebuild:
+  Stable for ppc, wrt bug #441400
+
+  08 Dec 2012; <ago@gentoo.org> mpg123-1.14.4.ebuild:
+  Stable for amd64, wrt bug #441400
+
+*mpg123-1.14.4 (08 Sep 2012)
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> +mpg123-1.14.4.ebuild,
+  metadata.xml:
+  Version bump. Add int-quality use flag (bug #426578).
+
+  01 Aug 2012; Fabian Groffen <grobian@gentoo.org> mpg123-1.14.3.ebuild:
+  Disable CPU features for 32-bits Mac OS X due to asm failures.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> mpg123-1.14.2.ebuild:
+  alpha/ia64/sparc stable wrt #422127
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> mpg123-1.14.2.ebuild:
+  Stable for HPPA (bug #422127).
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> mpg123-1.14.2.ebuild:
+  Marking mpg123-1.14.2 ppc for bug 422127
+
+  30 Jun 2012; Tim Harder <radhermit@gentoo.org> -mpg123-1.13.8.ebuild,
+  -mpg123-1.14.1.ebuild:
+  Remove old.
+
+*mpg123-1.14.3 (30 Jun 2012)
+
+  30 Jun 2012; Tim Harder <radhermit@gentoo.org> +mpg123-1.14.3.ebuild:
+  Version bump.
+
+  27 Jun 2012; Markus Meier <maekke@gentoo.org> mpg123-1.14.2.ebuild:
+  arm stable, bug #422127
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> mpg123-1.14.2.ebuild:
+  Marking mpg123-1.14.2 ppc64 for bug 422127
+
+  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> mpg123-1.14.2.ebuild:
+  marked x86 per bug 422127
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> mpg123-1.14.2.ebuild:
+  Stable for amd64, wrt bug #422127
+
+  12 May 2012; Tim Harder <radhermit@gentoo.org> -mpg123-1.13.7.ebuild,
+  -mpg123-1.14.0.ebuild:
+  Remove old.
+
+*mpg123-1.14.2 (12 May 2012)
+
+  12 May 2012; Tim Harder <radhermit@gentoo.org> +mpg123-1.14.2.ebuild:
+  Version bump.
+
+*mpg123-1.14.1 (08 May 2012)
+
+  08 May 2012; Tim Harder <radhermit@gentoo.org> +mpg123-1.14.1.ebuild:
+  Version bump.
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> mpg123-1.13.2.ebuild,
+  mpg123-1.13.7.ebuild, mpg123-1.13.8.ebuild, mpg123-1.14.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  01 May 2012; Tim Harder <radhermit@gentoo.org> -mpg123-1.13.3.ebuild,
+  -mpg123-1.13.4.ebuild, -mpg123-1.13.5.ebuild, -mpg123-1.13.6.ebuild:
+  Remove old.
+
+*mpg123-1.14.0 (01 May 2012)
+
+  01 May 2012; Tim Harder <radhermit@gentoo.org> +mpg123-1.14.0.ebuild:
+  Version bump.
+
+*mpg123-1.13.8 (12 Apr 2012)
+
+  12 Apr 2012; Tim Harder <radhermit@gentoo.org> +mpg123-1.13.8.ebuild:
+  Version bump.
+
+  25 Mar 2012; Tim Harder <radhermit@gentoo.org> mpg123-1.13.7.ebuild:
+  Fix whitespace.
+
+*mpg123-1.13.7 (25 Mar 2012)
+
+  25 Mar 2012; Tim Harder <radhermit@gentoo.org> +mpg123-1.13.7.ebuild:
+  Version bump.
+
+*mpg123-1.13.6 (11 Mar 2012)
+
+  11 Mar 2012; Tim Harder <radhermit@gentoo.org> +mpg123-1.13.6.ebuild:
+  Version bump.
+
+*mpg123-1.13.5 (07 Mar 2012)
+
+  07 Mar 2012; Tim Harder <radhermit@gentoo.org> +mpg123-1.13.5.ebuild:
+  Version bump.
+
+  16 Feb 2012; Magnus Granberg <zorry@gentoo.org> mpg123-1.13.4.ebuild:
+  Disable mmx, sse, 3dnow, 3dnowext on hardened x86 bug 164504
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> mpg123-1.13.4.ebuild:
+  Reset dependency_libs to '' in libtool files (libltdl is using them to load
+  output plugins) wrt #386577
+
+*mpg123-1.13.4 (29 Aug 2011)
+
+  29 Aug 2011; Tim Harder <radhermit@gentoo.org> +mpg123-1.13.4.ebuild:
+  Version bump.
 
   18 Jul 2011; Tim Harder <radhermit@gentoo.org> -mpg123-1.12.1.ebuild,
   -mpg123-1.12.3.ebuild, -mpg123-1.12.5.ebuild, -mpg123-1.13.1.ebuild:

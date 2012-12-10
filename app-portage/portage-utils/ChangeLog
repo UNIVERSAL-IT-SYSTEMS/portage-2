@@ -1,6 +1,92 @@
 # ChangeLog for app-portage/portage-utils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/portage-utils/ChangeLog,v 1.113 2011/05/22 02:15:54 naota Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-portage/portage-utils/ChangeLog,v 1.137 2012/10/28 10:38:01 vapier Exp $
+
+*portage-utils-0.20 (28 Oct 2012)
+
+  28 Oct 2012; Mike Frysinger <vapier@gentoo.org> +portage-utils-0.20.ebuild:
+  Version bump.
+
+*portage-utils-0.11 (14 Aug 2012)
+
+  14 Aug 2012; Mike Frysinger <vapier@gentoo.org> +portage-utils-0.11.ebuild:
+  Version bump.
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> portage-utils-0.10.ebuild:
+  Marking portage-utils-0.10 ppc for bug 419663
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> portage-utils-0.10.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #419663
+
+  09 Jun 2012; Markus Meier <maekke@gentoo.org> portage-utils-0.10.ebuild:
+  arm stable, bug #419663
+
+  09 Jun 2012; Jeff Horelick <jdhore@gentoo.org> portage-utils-0.10.ebuild:
+  marked x86 per bug 419663
+
+  08 Jun 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/portage-utils-0.10-x86-test.patch, portage-utils-0.10.ebuild:
+  Fix tests failing on x86 #412067 by Toralf Förster.
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org> portage-utils-0.10.ebuild:
+  Stable for HPPA (bug #419663).
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> portage-utils-0.10.ebuild:
+  Marking portage-utils-0.10 ppc64 for bug 419663
+
+  05 Jun 2012; Agostino Sarubbo <ago@gentoo.org> portage-utils-0.10.ebuild:
+  Stable for amd64, wrt bug #419663
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> portage-utils-0.10.ebuild:
+  keyword ~amd64-fbsd
+
+*portage-utils-0.10 (15 Apr 2012)
+
+  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> +portage-utils-0.10.ebuild:
+  Version bump.
+
+  06 Feb 2012; Mike Frysinger <vapier@gentoo.org> portage-utils-0.8.ebuild:
+  Mark ppc/ppc64 stable #395317.
+
+  06 Jan 2012; Mike Frysinger <vapier@gentoo.org> portage-utils-0.8.ebuild,
+  portage-utils-0.9.ebuild:
+  Use gnulib fall back for old crusty installs #397573 by Mark Wagner.
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> portage-utils-0.8.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc/x86 stable wrt #395317
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> portage-utils-0.9.ebuild:
+  Added Prefix changes, bug #395827.  Added Prefix keywords.
+
+*portage-utils-0.9 (22 Dec 2011)
+
+  22 Dec 2011; Mike Frysinger <vapier@gentoo.org> +portage-utils-0.9.ebuild:
+  Version bump to fix a few more bugs.
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> portage-utils-0.8.ebuild:
+  Stable for HPPA (bug #395317).
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> portage-utils-0.8.ebuild:
+  Stable for AMD64, wrt bug #395317
+
+*portage-utils-0.8 (19 Dec 2011)
+
+  19 Dec 2011; Mike Frysinger <vapier@gentoo.org> -portage-utils-0.7.ebuild,
+  +portage-utils-0.8.ebuild:
+  Version bump to fix previous broken release.
+
+  18 Dec 2011; Naohiro Aota <naota@gentoo.org> portage-utils-0.7.ebuild:
+  Re-keyword ~x86-fbsd
+
+*portage-utils-0.7 (11 Dec 2011)
+
+  11 Dec 2011; Mike Frysinger <vapier@gentoo.org> +portage-utils-0.7.ebuild:
+  Version bump with autotools support.
+
+*portage-utils-0.6 (03 Oct 2011)
+
+  03 Oct 2011; Mike Frysinger <vapier@gentoo.org> +portage-utils-0.6.ebuild:
+  Version bump.
 
   22 May 2011; Naohiro Aota <naota@gentoo.org> portage-utils-0.5.ebuild:
   Drop ~x86-fbsd keyword
@@ -579,4 +665,3 @@
   +qfile-0.0.1.ebuild:
   - initial creation of qfile package. A very small and fast c implementation of
   portage query file tool
-

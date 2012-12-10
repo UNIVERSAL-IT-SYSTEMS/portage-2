@@ -1,6 +1,153 @@
 # ChangeLog for dev-util/glade
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/glade/ChangeLog,v 1.135 2011/07/17 20:49:05 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/glade/ChangeLog,v 1.176 2012/11/26 19:59:15 eva Exp $
+
+  26 Nov 2012; Gilles Dartiguelongue <eva@gentoo.org> -glade-3.10.2.ebuild,
+  glade-3.12.2.ebuild:
+  Add suggestion to install devhelp, bug #416495.
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> glade-3.12.1.ebuild:
+  ia64/sh/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> glade-3.12.1.ebuild:
+  stable ppc, bug #427544
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> glade-3.12.1.ebuild:
+  Stable on alpha, bug 427544.
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> glade-3.12.1.ebuild:
+  stable ppc64, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> glade-3.12.1.ebuild:
+  arm stable, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> glade-3.12.1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  04 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> glade-3.12.1.ebuild:
+  x86 stable wrt bug #427544
+
+*glade-3.12.2 (22 Sep 2012)
+
+  22 Sep 2012; Pacho Ramos <pacho@gentoo.org> +glade-3.12.2.ebuild,
+  -glade-3.8.1.ebuild:
+  Version bump, drop old.
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> glade-3.8.2.ebuild:
+  alpha/ia64/sh/sparc stable wrt #410611
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> -glade-2.12.2-r1.ebuild:
+  Drop old.
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> glade-3.8.2.ebuild:
+  ppc stable wrt #410611
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org> glade-3.8.2.ebuild:
+  keyword ~amd64-fbsd
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> glade-3.12.1.ebuild:
+  keyword ~amd64-fbsd
+
+  09 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> glade-3.12.1.ebuild:
+  Add missing build-time deps (bug #415287, thanks to Matt Turner).
+
+  09 May 2012; Matt Turner <mattst88@gentoo.org> glade-3.12.1.ebuild:
+  Added ~mips.
+
+*glade-3.12.1 (07 May 2012)
+
+  07 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +glade-3.12.1.ebuild, +files/glade-3.12.1-doc-version.patch:
+  Version bump, adds inline margin/alignment editing and support for some
+  additional widgets. Improve documentation slotting.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> glade-2.12.2-r1.ebuild,
+  glade-3.8.1.ebuild, glade-3.8.2.ebuild, glade-3.10.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> glade-3.8.2.ebuild:
+  x86 stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> glade-3.8.2.ebuild:
+  arm stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> glade-3.8.2.ebuild:
+  Marking glade-3.8.2 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> glade-3.8.2.ebuild:
+  Stable for amd64, wrt bug #410611
+
+*glade-3.8.2 (27 Mar 2012)
+
+  27 Mar 2012; Pacho Ramos <pacho@gentoo.org> +glade-3.8.2.ebuild,
+  -glade-3.10.0-r1.ebuild, -glade-3.8.0.ebuild:
+  Version bump, remove old.
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> glade-3.8.1.ebuild,
+  glade-3.10.2.ebuild:
+  alpha/ia64/sh/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> glade-3.8.1.ebuild,
+  glade-3.10.2.ebuild:
+  Marking glade-3.10.2 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> glade-3.8.1.ebuild,
+  glade-3.10.2.ebuild:
+  Marking glade-3.10.2 ppc64 stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> glade-3.8.1.ebuild:
+  Marking glade-3.8.1 ppc64 stable for bug 393007
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> glade-3.10.2.ebuild:
+  arm stable, bug #393007
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> glade-3.8.1.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> glade-3.10.2.ebuild:
+  x86 stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> glade-3.8.1.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> glade-3.8.1.ebuild,
+  glade-3.10.2.ebuild:
+  amd64 stable, bug 393007
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> glade-3.10.0-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> glade-3.10.0-r1.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> glade-3.10.0-r1.ebuild:
+  x86 stable wrt bug #385699
+
+  19 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  glade-3.10.0-r1.ebuild, glade-3.10.2.ebuild:
+  Depend on correct slot of pygobject.
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> glade-3.10.0-r1.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+*glade-3.10.2 (16 Oct 2011)
+*glade-3.8.1 (16 Oct 2011)
+
+  16 Oct 2011; Pacho Ramos <pacho@gentoo.org> -glade-3.6.7.ebuild,
+  +glade-3.8.1.ebuild, +glade-3.10.2.ebuild:
+  Version bump, remove old.
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> glade-3.10.0-r1.ebuild:
+  amd64 stable wrt #385699
+
+  06 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> glade-3.8.0.ebuild:
+  Remove useless libtool archive (libgladeui-1.la).
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> glade-3.8.0.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> glade-3.8.0.ebuild:
+  alpha/ia64/sh/sparc stable wrt #369909
 
   17 Jul 2011; Markus Meier <maekke@gentoo.org> glade-3.8.0.ebuild:
   arm stable, bug #369909

@@ -1,6 +1,226 @@
 # ChangeLog for dev-libs/gobject-introspection
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/gobject-introspection/ChangeLog,v 1.39 2011/07/09 19:03:28 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/gobject-introspection/ChangeLog,v 1.84 2012/12/09 18:33:49 tetromino Exp $
+
+  09 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gobject-introspection-1.30.0-r2.ebuild, gobject-introspection-1.32.1.ebuild,
+  -gobject-introspection-1.34.0.ebuild, -gobject-introspection-1.34.1.1.ebuild:
+  Pin to a specific range of glib versions to avoid problems like bug #446622.
+  Drop old.
+
+*gobject-introspection-1.34.2 (21 Nov 2012)
+
+  21 Nov 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  +gobject-introspection-1.34.2.ebuild:
+  Version bump.
+
+*gobject-introspection-1.34.1.1 (30 Oct 2012)
+
+  30 Oct 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  +gobject-introspection-1.34.1.1.ebuild:
+  Version bump. Drop useless USE=doc, it served no useful purpose.
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org>
+  gobject-introspection-1.32.1.ebuild:
+  ia64/s390/sh/sparc stable wrt #427544
+
+  06 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  gobject-introspection-1.32.1.ebuild:
+  stable ppc ppc64, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org>
+  gobject-introspection-1.32.1.ebuild:
+  arm stable, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  gobject-introspection-1.32.1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gobject-introspection-1.32.1.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org>
+  gobject-introspection-1.32.1.ebuild:
+  Stable for HPPA (bug #427544).
+
+  26 Sep 2012; Matt Turner <mattst88@gentoo.org>
+  gobject-introspection-1.32.1.ebuild:
+  Stable on alpha, bug 427544.
+
+*gobject-introspection-1.34.0 (25 Sep 2012)
+
+  25 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gobject-introspection-1.30.0-r2.ebuild, gobject-introspection-1.32.1.ebuild,
+  +gobject-introspection-1.34.0.ebuild:
+  Version bump with an improved (and more strict) annotation parser and
+  glib-2.34 updates. Make license more precise.
+
+  07 Jul 2012; Pacho Ramos <pacho@gentoo.org>
+  gobject-introspection-1.32.1.ebuild:
+  Prevent crosscompiling problems, bug #414105 by Jimmy.Jazz.
+
+  04 Jun 2012; Pacho Ramos <pacho@gentoo.org>
+  -files/gobject-introspection-0.10.8-build-tests.patch,
+  -gobject-introspection-0.10.8.ebuild, -gobject-introspection-1.30.0-r1.ebuild,
+  -gobject-introspection-1.32.0.ebuild:
+  Drop old.
+
+  04 Jun 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gobject-introspection-0.10.8.ebuild, gobject-introspection-1.30.0-r1.ebuild,
+  gobject-introspection-1.30.0-r2.ebuild, gobject-introspection-1.32.0.ebuild,
+  gobject-introspection-1.32.1.ebuild:
+  Need PYTHON_USE_WITH="xml"(bug #418083, thanks to Arfrever).
+
+  21 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gobject-introspection-1.30.0-r1.ebuild,
+  gobject-introspection-1.30.0-r2.ebuild:
+  Need eutils for epatch.
+
+  06 May 2012; Fabian Groffen <grobian@gentoo.org>
+  gobject-introspection-1.32.1.ebuild:
+  Remove bashism from configure script
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  gobject-introspection-0.10.8.ebuild, gobject-introspection-1.30.0-r1.ebuild,
+  gobject-introspection-1.30.0-r2.ebuild, gobject-introspection-1.32.0.ebuild,
+  gobject-introspection-1.32.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  gobject-introspection-1.32.1.ebuild:
+  keyword ~amd64-fbsd
+
+*gobject-introspection-1.32.1 (20 Apr 2012)
+
+  20 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gobject-introspection-1.32.1.ebuild:
+  Version bump with various bugfixes.
+
+  16 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gobject-introspection-1.32.0.ebuild:
+  Fix glib dependency to match installed gir data and fix test failure (bug
+  #412059, thanks to Hans de Graaff).
+
+*gobject-introspection-1.32.0 (28 Mar 2012)
+
+  28 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -gobject-introspection-1.30.0.ebuild, +gobject-introspection-1.32.0.ebuild,
+  metadata.xml:
+  Version bump with a new documentation tool and numerous bugfixes. Autotools
+  macros were split off into a separate package, gobject-introspection-common.
+  Drop old.
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  gobject-introspection-1.30.0-r2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org>
+  gobject-introspection-1.30.0-r2.ebuild:
+  Marking gobject-introspection-1.30.0-r2 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org>
+  gobject-introspection-1.30.0-r2.ebuild:
+  Marking gobject-introspection-1.30.0-r2 ppc64 stable for bug 393007
+
+  07 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gobject-introspection-0.10.8.ebuild, gobject-introspection-1.30.0.ebuild,
+  gobject-introspection-1.30.0-r1.ebuild,
+  gobject-introspection-1.30.0-r2.ebuild:
+  Directly inherit multilib, thanks to Arfrever for reporting.
+
+  07 Feb 2012; Jeroen Roovers <jer@gentoo.org>
+  gobject-introspection-1.30.0-r2.ebuild:
+  Stable for HPPA (bug #399529).
+
+  29 Jan 2012; Markus Meier <maekke@gentoo.org>
+  gobject-introspection-1.30.0-r2.ebuild:
+  arm stable, bug #399529
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gobject-introspection-1.30.0-r2.ebuild:
+  x86 stable wrt bug #399529
+
+  20 Jan 2012; Agostino Sarubbo <ago@gentoo.org>
+  gobject-introspection-1.30.0-r2.ebuild:
+  Stable for AMD64, wrt bug #399529
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org>
+  gobject-introspection-1.30.0-r1.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org>
+  gobject-introspection-1.30.0-r1.ebuild:
+  x86 stable, bug #393007
+
+  08 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gobject-introspection-1.30.0-r2.ebuild,
+  -files/gobject-introspection-1.30.0-forced-cairo.patch:
+  Update fix for bug #391213 to not use eautoreconf.
+
+*gobject-introspection-1.30.0-r2 (08 Jan 2012)
+
+  08 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gobject-introspection-1.30.0-r2.ebuild,
+  +files/gobject-introspection-1.30.0-forced-cairo.patch:
+  Force building cairo-gobject support, and add a PDEPEND on cairo[glib]
+  (PDEPEND instead of RDEPEND to avoid circular dependencies). Fixes bug
+  #391213; thanks to Pacho Ramos, Rafał Mużyło, and the many helpful
+  testers.
+
+  31 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gobject-introspection-0.10.8.ebuild, gobject-introspection-1.30.0.ebuild,
+  gobject-introspection-1.30.0-r1.ebuild:
+  Fix py-compile idiom for automake-1.11.2 compatibility (bug #396585).
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org>
+  gobject-introspection-1.30.0-r1.ebuild:
+  amd64 stable, bug 393007
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org>
+  gobject-introspection-1.30.0-r1.ebuild:
+  Stable for HPPA (bug #393007).
+
+  15 Nov 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  gobject-introspection-1.30.0-r1.ebuild:
+  Port to EAPI 4
+
+*gobject-introspection-1.30.0-r1 (30 Oct 2011)
+
+  30 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gobject-introspection-1.30.0-r1.ebuild:
+  Add useful upstream patches to take into account struct padding on ppc and
+  arm, improve stability, report better error messages, fix memory leaks, fix
+  distcc incompatibility, and fix potential glib-2.31.x incompatibility.
+
+  28 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  gobject-introspection-1.30.0.ebuild:
+  Use virtual/libffi instead of dev-libs/libffi in case we have to switch to
+  using copy from GCC in future.
+
+*gobject-introspection-1.30.0 (27 Sep 2011)
+
+  27 Sep 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +gobject-introspection-1.30.0.ebuild:
+  Bump to 1.30, from the GNOME overlay. Ebuild updates by tetromino.
+
+  20 Sep 2011; Matt Turner <mattst88@gentoo.org>
+  gobject-introspection-0.10.8.ebuild:
+  Add missing dependency on bison, bug 382987
+
+  12 Sep 2011; Pacho Ramos <pacho@gentoo.org>
+  gobject-introspection-0.10.8.ebuild,
+  +files/gobject-introspection-0.10.8-build-tests.patch:
+  Build tests only on make check, bug #379929 by Dave Kemper and patch by
+  Alexandre Rostovtsev.
+
+  16 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  gobject-introspection-0.10.8.ebuild:
+  Make the DESCRIPTION a bit more descriptive
+
+  14 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  gobject-introspection-0.10.8.ebuild:
+  DEPEND on virtual/yacc since bison is no longer in the system set, bug 378535
 
   09 Jul 2011; Matt Turner <mattst88@gentoo.org>
   gobject-introspection-0.10.8.ebuild:
@@ -210,4 +430,3 @@
   +gobject-introspection-0.6.7.ebuild, +metadata.xml:
   Add initial ebuild for gobject-introspection, infrastructure for
   generation of gobject library bindings
-

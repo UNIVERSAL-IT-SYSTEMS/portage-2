@@ -1,6 +1,207 @@
 # ChangeLog for net-misc/dhcp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcp/ChangeLog,v 1.180 2011/05/01 09:50:20 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcp/ChangeLog,v 1.230 2012/12/09 21:16:16 ulm Exp $
+
+  09 Dec 2012; Ulrich Müller <ulm@gentoo.org> dhcp-3.1.2_p1.ebuild,
+  dhcp-3.1.3_p1.ebuild, dhcp-4.2.1_p1.ebuild, dhcp-4.2.2.ebuild,
+  dhcp-4.2.2-r1.ebuild, dhcp-4.2.2-r2.ebuild, dhcp-4.2.2-r3.ebuild,
+  dhcp-4.2.3_p1.ebuild, dhcp-4.2.3_p2.ebuild, dhcp-4.2.4_p1.ebuild,
+  dhcp-4.2.4_p2.ebuild, dhcp-4.2.4_p2-r1.ebuild:
+  Fix LICENSE, bugs 446536 and 426054.
+
+  11 Nov 2012; Mike Frysinger <vapier@gentoo.org> dhcp-4.2.4_p2-r1.ebuild,
+  files/dhcpd.init5, files/dhcrelay.init3:
+  Add slapd to use in init.d depends when built with USE=ldap #442560 by Tiziano
+  Müller.
+
+  11 Nov 2012; Mike Frysinger <vapier@gentoo.org> dhcp-4.2.4_p2-r1.ebuild:
+  Drop NetworkManager dbus patch as NM handles this itself now #441968 by Pavel
+  Šimerda.
+
+  13 Oct 2012; Raúl Porcel <armin76@gentoo.org> dhcp-4.2.4_p2.ebuild:
+  alpha/s390/sh/sparc stable wrt #434880
+
+  12 Oct 2012; Mike Frysinger <vapier@gentoo.org> dhcp-4.2.4_p2-r1.ebuild:
+  Set AR ourselves since dhcp's build system doesn't do it for us #437980 by
+  Agostino Sarubbo.
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org> dhcp-4.2.4_p2.ebuild:
+  stable ppc ppc64, bug #434880
+
+  11 Oct 2012; Agostino Sarubbo <ago@gentoo.org> dhcp-4.2.4_p2.ebuild:
+  Stable for amd64, wrt bug #434880
+
+  11 Oct 2012; Andreas Schuerch <nativemad@gentoo.org> dhcp-4.2.4_p2.ebuild:
+  x86 stable, see bug 434880
+
+  11 Oct 2012; Markus Meier <maekke@gentoo.org> dhcp-4.2.4_p2.ebuild:
+  arm stable, bug #434880
+
+  10 Oct 2012; Jeroen Roovers <jer@gentoo.org> dhcp-4.2.4_p2.ebuild:
+  Stable for HPPA (bug #434880).
+
+*dhcp-4.2.4_p2-r1 (10 Oct 2012)
+
+  10 Oct 2012; Mike Frysinger <vapier@gentoo.org> +dhcp-4.2.4_p2-r1.ebuild,
+  +files/dhcp-4.2.4-always-accept-4.patch, +files/dhcp-4.2.4-quieter-ping.patch:
+  Quiet ping output by default #296921 by Martin Mokrejš.  Always accept the -4
+  option even when USE=-ipv6 #437108 by Stefan Reimer.
+
+*dhcp-4.2.4_p2 (07 Oct 2012)
+
+  07 Oct 2012; Mike Frysinger <vapier@gentoo.org> +dhcp-4.2.4_p2.ebuild,
+  +files/dhcp-4.2.1-dhclient-parse_option_param-Bad-format-a.patch:
+  Version bump. Add fix from OpenSUSE for parsing "a" options #432998 by Andreas
+  Steinmetz.
+
+  20 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> dhcp-4.2.4_p1.ebuild:
+  ppc64 stable wrt #428120
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> dhcp-4.2.4_p1.ebuild:
+  alpha/s390/sh/sparc stable wrt #428120
+
+  09 Aug 2012; Brent Baude <ranger@gentoo.org> dhcp-4.2.4_p1.ebuild:
+  Marking dhcp-4.2.4_p1 ppc for bug 428120
+
+  02 Aug 2012; Markus Meier <maekke@gentoo.org> dhcp-4.2.4_p1.ebuild:
+  arm stable, bug #428120
+
+  26 Jul 2012; Jeroen Roovers <jer@gentoo.org> dhcp-4.2.4_p1.ebuild:
+  Stable for HPPA (bug #428120).
+
+  26 Jul 2012; Johannes Huber <johu@gentoo.org> dhcp-4.2.4_p1.ebuild:
+  Stable for x86, wrt bug #428120
+
+  26 Jul 2012; Richard Freeman <rich0@gentoo.org> dhcp-4.2.4_p1.ebuild:
+  amd64 stable - 428120
+
+*dhcp-4.2.4_p1 (26 Jul 2012)
+
+  26 Jul 2012; Tony Vroon <chainsaw@gentoo.org> +dhcp-4.2.4_p1.ebuild:
+  Security upgrade addressing an IPv6-only buffer overflow (CVE-2012-3570),
+  remotely triggerable infinite loop (CVE-2012-3571) and remotely triggerable
+  memory leaks (CVE-2012-3954).
+
+  16 May 2012; Mike Frysinger <vapier@gentoo.org> files/dhcrelay.init3,
+  files/dhcrelay6.conf:
+  Drop use of IFACE for dhcrelay6 #415957#5 by Spooky Ghost.
+
+*dhcp-4.2.3_p2 (16 May 2012)
+
+  16 May 2012; Mike Frysinger <vapier@gentoo.org> +dhcp-4.2.3_p2.ebuild,
+  +files/dhcrelay.init3, +files/dhcrelay6.conf:
+  Version bump, and add dhcrelay6 init.d support #415957 by Spooky Ghost.
+
+  28 Apr 2012; Alexis Ballier <aballier@gentoo.org> dhcp-4.2.3_p1.ebuild:
+  keyword ~amd64-fbsd
+
+  21 Mar 2012; Diego E. Pettenò <flameeyes@gentoo.org> dhcp-4.2.3_p1.ebuild:
+  Only depend on net-tools with client USE flag enabled (it's used by the
+  dhclient script).
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> dhcp-4.2.3_p1.ebuild:
+  alpha/s390/sh/sparc stable wrt #393617
+
+  22 Dec 2011; Mark Loeser <halcy0n@gentoo.org> dhcp-4.2.3_p1.ebuild:
+  Stable for ppc/ppc64; bug #393617
+
+  14 Dec 2011; Markus Meier <maekke@gentoo.org> dhcp-4.2.3_p1.ebuild:
+  arm stable, bug #393617
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> dhcp-4.2.3_p1.ebuild:
+  x86 stable wrt bug #393617
+
+  11 Dec 2011; Agostino Sarubbo <ago@gentoo.org> dhcp-4.2.3_p1.ebuild:
+  Stable for AMD64, wrt security bug #393617
+
+  09 Dec 2011; Jeroen Roovers <jer@gentoo.org> dhcp-4.2.3_p1.ebuild:
+  Stable for HPPA (bug #393617).
+
+*dhcp-4.2.3_p1 (08 Dec 2011)
+
+  08 Dec 2011; Mike Frysinger <vapier@gentoo.org> +dhcp-4.2.3_p1.ebuild:
+  Version bump #393617 by Agostino Sarubbo.
+
+*dhcp-4.2.2-r3 (04 Dec 2011)
+
+  04 Dec 2011; Mike Frysinger <vapier@gentoo.org> +dhcp-4.2.2-r3.ebuild,
+  +files/dhcpd.init5:
+  Enable --enable-early-chroot so config files can be per-chroot #388395 by
+  Touch. Fix up path to dhcprelay pid files #309129#2 by Milan Dadok.
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> dhcp-4.2.2-r2.ebuild:
+  Stable for HPPA (bug #378799).
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> dhcp-4.2.2-r2.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #378799
+
+  25 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> dhcp-4.2.2-r2.ebuild:
+  ppc/ppc64 stable wrt #378799
+
+  23 Sep 2011; Andreas Schuerch <nativemad@gentoo.org> dhcp-4.2.2-r2.ebuild:
+  x86 stable. Thanks Myckel SpanKY and all. bug 378799
+
+  23 Sep 2011; Mike Frysinger <vapier@gentoo.org> dhcp-4.2.2-r2.ebuild:
+  Install newer init.d script #383961 by Andreas Schürch.
+
+  22 Sep 2011; Mike Frysinger <vapier@gentoo.org> dhcp-4.2.2-r2.ebuild,
+  files/dhcpd.init4:
+  Install the default config files commented out since they aren't useful in
+  the real world other than as examples #384087 by Nick Bowler.
+
+  22 Sep 2011; Mike Frysinger <vapier@gentoo.org> dhcp-4.2.2-r2.ebuild:
+  Disable symtable support in local bind as it requires perl #383837 by Albert
+  W. Hopkins.
+
+  20 Sep 2011; Tony Vroon <chainsaw@gentoo.org> dhcp-4.2.2-r2.ebuild:
+  Marked stable on AMD64 based on explicit recommendation by Markos "hwoarang"
+  Chandras in #gentoo-amd64-dev.
+
+  19 Sep 2011; Markos Chandras <hwoarang@gentoo.org> dhcp-4.2.2-r1.ebuild:
+  Stable on amd64 wrt bug #378799
+
+  18 Sep 2011; Mike Frysinger <vapier@gentoo.org> dhcp-4.2.2-r2.ebuild,
+  files/dhcpd.conf2:
+  Drop old `emerge --config` comment #362535#9 by Petr Pisar.
+
+*dhcp-4.2.2-r2 (17 Sep 2011)
+
+  17 Sep 2011; Mike Frysinger <vapier@gentoo.org> +dhcp-4.2.2-r2.ebuild,
+  +files/dhcpd.conf2, +files/dhcpd.init4:
+  Rewrite chroot usage to work with newer versions #362535 by Andrew Savchenko.
+
+  29 Aug 2011; Mike Frysinger <vapier@gentoo.org>
+  files/dhcp-4.2.2-bind-build-flags.patch:
+  Use BUILD_LIBS when creating build "gen" binary to fix cross-compiling cases
+  where the target uses libcap.
+
+  29 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> dhcp-4.2.2-r1.ebuild:
+  Make sure the bind sub-build doesn't find libcap or it can rely on it for the
+  build process (disrupting cross-compilation). Also make the vim syntax
+  package a runtime dependency only, not a build-time one.
+
+*dhcp-4.2.2-r1 (27 Aug 2011)
+
+  27 Aug 2011; Mike Frysinger <vapier@gentoo.org> +dhcp-4.2.2-r1.ebuild:
+  Fix up some bad paths to conf/run files #380829 by Agostino Sarubbo.
+
+  27 Aug 2011; Mike Frysinger <vapier@gentoo.org> dhcp-4.2.2.ebuild,
+  +files/dhcp-4.2.2-bind-build-flags.patch,
+  +files/dhcp-4.2.2-bind-disable.patch,
+  +files/dhcp-4.2.2-bind-parallel-build.patch:
+  Fix parallel build #380717 by Cédric Jeanneret, and clean up bind tweaks
+  with patches.
+
+  26 Aug 2011; Thomas Kahle <tomka@gentoo.org> dhcp-4.2.2.ebuild:
+  x86 stable per bug 378799
+
+*dhcp-4.2.2 (26 Aug 2011)
+
+  26 Aug 2011; Mike Frysinger <vapier@gentoo.org> +dhcp-4.2.2.ebuild,
+  +files/dhcp-4.2.2-dhclient-resolvconf.patch,
+  +files/dhcp-4.2.2-dhclient-stdin-conf.patch,
+  +files/dhcp-4.2.2-nogateway.patch:
+  Version bump for security #378799, and fix cross-compiling.
 
   01 May 2011; Kacper Kowalik <xarthisius@gentoo.org> dhcp-3.1.3_p1.ebuild:
   ppc64 stable wrt #360047

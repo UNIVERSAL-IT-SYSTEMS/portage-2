@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/jack-rack/jack-rack-1.4.7-r1.ebuild,v 1.7 2011/07/29 12:05:32 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/jack-rack/jack-rack-1.4.7-r1.ebuild,v 1.10 2012/05/05 08:30:51 mgorny Exp $
 
 EAPI=4
 inherit autotools eutils flag-o-matic toolchain-funcs
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/jack-rack/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE="alsa gnome lash nls xml"
 
 RDEPEND="x11-libs/gtk+:2
@@ -24,7 +24,7 @@ RDEPEND="x11-libs/gtk+:2
 	xml? ( dev-libs/libxml2
 		media-libs/liblrdf )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 DOCS=( AUTHORS BUGS ChangeLog NEWS README THANKS TODO WISHLIST )

@@ -1,6 +1,393 @@
 # ChangeLog for sys-boot/grub
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/ChangeLog,v 1.156 2011/06/28 16:33:29 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/ChangeLog,v 1.242 2012/10/22 08:43:55 jer Exp $
+
+  22 Oct 2012; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  Fix maintainer Assignee/CC preferences.
+
+  20 Oct 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00-r1.ebuild,
+  grub-9999.ebuild:
+  Add pkg_pretend check to bail out if we are using the gold linker. Bug 439082
+  by Ambroz Bizjak.
+
+  18 Oct 2012; Christoph Junghans <ottxor@gentoo.org>
+  +files/grub-2.00-hardcoded-awk.patch, grub-2.00-r1.ebuild, grub-9999.ebuild:
+  fixed hardcoded awk (bug #424137)
+
+*grub-2.00-r1 (16 Oct 2012)
+
+  16 Oct 2012; Mike Gilbert <floppym@gentoo.org>
+  +files/grub-2.00-tftp-endian.patch, +grub-2.00-r1.ebuild, -grub-2.00.ebuild,
+  grub-9999.ebuild:
+  Apply upstream patch to fix TFTP issue, bug 438612 by Alexander Zubkov.
+
+  11 Oct 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00.ebuild,
+  grub-9999.ebuild:
+  Install modules in /usr/lib/grub.
+
+  22 Sep 2012; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Clarify metadata.
+
+  07 Aug 2012; Markos Chandras <hwoarang@gentoo.org> grub-0.97-r12.ebuild:
+  Stable on amd64 wrt bug #418393
+
+  06 Aug 2012; Agostino Sarubbo <ago@gentoo.org> grub-0.97-r12.ebuild:
+  Stable for X86, wrt bug #418393
+
+  24 Jul 2012; Mike Frysinger <vapier@gentoo.org> grub-0.97-r13.ebuild:
+  Touch up style/messages to match grub-static -- no functional changes.
+
+  23 Jul 2012; Ryan Hill <dirtyepic@gentoo.org> grub-0.97-r13.ebuild:
+  Remove ebeep due to EAPI 4. Improve output readability.
+
+*grub-0.97-r13 (23 Jul 2012)
+
+  23 Jul 2012; Mike Frysinger <vapier@gentoo.org> +grub-0.97-r13.ebuild:
+  Update to EAPI=4 so we can depend on ncurses[static-libs] when building with
+  USE=static #427600 by Myckel Habets.
+
+  22 Jul 2012; Mike Gilbert <floppym@gentoo.org>
+  +files/grub-2.00-config-quoting.patch, -files/grub-2.00-gettext_printf.patch,
+  grub-2.00.ebuild, grub-9999.ebuild:
+  Replace previous patch with better version from upstream.
+
+  22 Jul 2012; Mike Gilbert <floppym@gentoo.org>
+  +files/grub-2.00-gettext_printf.patch, grub-2.00.ebuild, grub-9999.ebuild:
+  Fix problem with single quotes in translated messages in grub-mkconfig. Bug
+  426364 by Alex Domingo.
+
+  18 Jul 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00.ebuild,
+  grub-9999.ebuild:
+  Optionally install html docs, bug 426738 by Chris Mayo.
+
+  13 Jul 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00.ebuild,
+  grub-9999.ebuild:
+  Add mulitprocessing.eclass magic to src_configure.
+
+  07 Jul 2012; Mike Gilbert <floppym@gentoo.org>
+  +files/grub-2.00-parallel-make.patch, -files/grub-2.00-manpage-race.patch,
+  grub-2.00.ebuild, grub-9999.ebuild:
+  Add additional fix for bug 424231.
+
+  05 Jul 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/grub-2.00-no-gets.patch, grub-2.00.ebuild:
+  Fix building with glibc-2.16 #424703 by Martin Jansa.
+
+  01 Jul 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00.ebuild,
+  grub-9999.ebuild:
+  Unset CCASFLAGS. Reported by tommy.
+
+  01 Jul 2012; Mike Gilbert <floppym@gentoo.org>
+  +files/grub-2.00-manpage-race.patch,
+  -files/grub-2.00-10_linux-genkernel.patch, grub-2.00.ebuild, grub-9999.ebuild:
+  Add patch to fix build race for bug 424231 by Wonko.
+
+  29 Jun 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00.ebuild,
+  grub-9999.ebuild:
+  Extend workaround for sandbox bug 404013.
+
+  29 Jun 2012; Mike Gilbert <floppym@gentoo.org> grub-0.97-r12.ebuild:
+  grub-0.97 does not actually install files in /usr/lib, so don't copy that
+  directory's content to /boot/grub.
+
+  29 Jun 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00.ebuild,
+  grub-9999.ebuild:
+  Replace lzo with xz-utils, bug 424045 by Andrey Volkov.
+
+  29 Jun 2012; Jeff Horelick <jdhore@gentoo.org> grub-2.00.ebuild:
+  Keyword ~x86 wrt bug 424019
+
+  29 Jun 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00.ebuild,
+  grub-9999.ebuild:
+  Add ~amd64 keyword for grub:2.
+
+  29 Jun 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00.ebuild,
+  grub-9999.ebuild:
+  Add required use for qemu/truetype, bug 405741 by jlec.
+
+  29 Jun 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00.ebuild,
+  grub-9999.ebuild:
+  Depend on bison, bug 380019.
+
+  28 Jun 2012; Mike Gilbert <floppym@gentoo.org> files/grub.default-2:
+  Fix typos in grub.default, #424005 by Chris Mayo.
+
+  28 Jun 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00.ebuild:
+  Add ewarn message with instructions for adding grub:0 to the world file.
+
+*grub-2.00 (28 Jun 2012)
+
+  28 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> +files/grub.default-2,
+  -grub-2.00_beta0.ebuild, -grub-2.00_beta1.ebuild, -grub-2.00_beta2.ebuild,
+  -grub-2.00_beta2-r1.ebuild, -grub-2.00_beta3.ebuild,
+  -grub-2.00_beta3-r2.ebuild, -grub-2.00_beta5.ebuild, -grub-2.00_rc1.ebuild,
+  +grub-2.00.ebuild, grub-9999.ebuild:
+  Version bump to 2.00. Depend also on dejavu (otherwise starfield is not
+  distributed). Add info about themes to default config file. Remove older
+  betas/rcs apart from latest beta to ensure fallback if 2.00 has regressions.
+
+*grub-2.00_rc1 (25 Jun 2012)
+
+  25 Jun 2012; Mike Gilbert <floppym@gentoo.org> +grub-2.00_rc1.ebuild,
+  grub-9999.ebuild:
+  Version bump. Tweak efiemu configure option, bug 422835 by Rafał Mużyło.
+
+  17 Jun 2012; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Remove redundant maintainer node.
+
+  09 Jun 2012; Mike Gilbert <floppym@gentoo.org> grub-9999.ebuild:
+  Stub out autopoint before calling eautoreconf.
+
+  05 Jun 2012; Mike Gilbert <floppym@gentoo.org> grub-9999.ebuild:
+  Call autoreconf directly (via autogen.sh) since eautoreconf insists on callign
+  autopoint. Bug 418081.
+
+*grub-2.00_beta6 (02 Jun 2012)
+
+  02 Jun 2012; Mike Gilbert <floppym@gentoo.org> +grub-2.00_beta6.ebuild,
+  grub-9999.ebuild:
+  Version bump. Fix links in grub2.info. #416035 by Martin Väth.
+
+  02 Jun 2012; Mike Frysinger <vapier@gentoo.org> grub-0.97-r12.ebuild:
+  Expand insns for creating grub-static binpkg so it runs more smoothly.
+
+*grub-0.97-r12 (31 May 2012)
+
+  31 May 2012; Mike Frysinger <vapier@gentoo.org> +grub-0.97-r12.ebuild:
+  Build stage1/stage2 with -march=i[3456]86 based on target tuple to keep
+  SSE/etc... insns from sneaking into the generated output #360513#115.
+
+  31 May 2012; Mike Frysinger <vapier@gentoo.org> grub-0.97-r3.ebuild,
+  grub-0.97-r4.ebuild, grub-0.97-r5.ebuild, grub-0.97-r6.ebuild,
+  grub-0.97-r8.ebuild, grub-0.97-r9.ebuild, grub-0.97-r10.ebuild,
+  grub-0.97-r11.ebuild, grub-1.99-r2.ebuild:
+  Inherit multilib eclass in ebuilds that use it.
+
+  29 May 2012; Kacper Kowalik <xarthisius@gentoo.org> grub-0.97-r11.ebuild:
+  Bump patchver and add it's digest
+
+*grub-0.97-r11 (29 May 2012)
+
+  29 May 2012; Richard Yao <ryao@gentoo.org> +grub-0.97-r11.ebuild:
+  Add xarthisius' patch for bug #360513 to GRUB 0.97 patchset, reviewed by
+  myself and jdhore, approved by Chainsaw in IRC
+
+  18 May 2012; Joseph Jezak <josejx@gentoo.org> grub-1.99-r2.ebuild,
+  grub-2.00_beta5.ebuild, grub-9999.ebuild:
+  Add runtime dep on tools required to find the OFPATH on PowerPC.
+
+*grub-2.00_beta5 (09 May 2012)
+
+  09 May 2012; Mike Gilbert <floppym@gentoo.org> +grub-2.00_beta5.ebuild,
+  grub-9999.ebuild:
+  Version bump. Should resolve bug 412497. Repleace dependencies on os-prober
+  and libisoburn with elog messages.
+
+  28 Apr 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00_beta3-r2.ebuild,
+  grub-9999.ebuild:
+  Depend on static versions of bzip2, freetype, and zlib when USE=static.
+
+*grub-2.00_beta3-r2 (26 Apr 2012)
+
+  26 Apr 2012; Mike Gilbert <floppym@gentoo.org> +grub-2.00_beta3-r2.ebuild,
+  -grub-2.00_beta3-r1.ebuild, files/grub-2.00-10_linux-genkernel.patch:
+  Replace 10_linux patch with the changeset from upstream.
+  Bug 413505 by Jan De Luyck.
+
+  11 Apr 2012; Mike Gilbert <floppym@gentoo.org>
+  files/grub-2.00-10_linux-genkernel.patch:
+  Adjust patch to use uname -m in place of a shell glob.
+
+  11 Apr 2012; Mike Gilbert <floppym@gentoo.org>
+  files/grub-2.00-10_linux-genkernel.patch:
+  Remove real_root logic from patch, #411421 by Xake.
+
+  07 Apr 2012; Mike Gilbert <floppym@gentoo.org> grub-9999.ebuild:
+  Synchronize live ebuild.
+
+*grub-2.00_beta3-r1 (07 Apr 2012)
+
+  07 Apr 2012; Mike Gilbert <floppym@gentoo.org>
+  +files/grub-2.00-10_linux-genkernel.patch, +grub-2.00_beta3-r1.ebuild:
+  Add patch to support genkernel initramfs in 10_linux.
+
+*grub-2.00_beta3 (01 Apr 2012)
+
+  01 Apr 2012; Mike Gilbert <floppym@gentoo.org> +grub-2.00_beta3.ebuild:
+  Version bump.
+
+  24 Mar 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00_beta2-r1.ebuild,
+  grub-9999.ebuild:
+  Point users at the quick start guide.
+
+*grub-2.00_beta2-r1 (20 Mar 2012)
+
+  20 Mar 2012; Mike Gilbert <floppym@gentoo.org> +grub-2.00_beta2-r1.ebuild:
+  Fix sort order of kernels in grub2-mkconfig. Bug 408195.
+
+  18 Mar 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00_beta2.ebuild,
+  grub-9999.ebuild:
+  Pass -Os in TARGET_CFLAGS for efi-64 on x86. Don't clobber TARGET variables in
+  case the user wants to play with them. Set CTARGET to pass --target option to
+  configure.
+
+  17 Mar 2012; Mike Gilbert <floppym@gentoo.org> grub-9999.ebuild:
+  Sync live ebuild.
+
+  17 Mar 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00_beta2.ebuild:
+  Enable building x86_64-efi target on an x86 host. Bug 408545.
+
+*grub-2.00_beta2 (11 Mar 2012)
+
+  11 Mar 2012; Mike Gilbert <floppym@gentoo.org> +grub-2.00_beta2.ebuild:
+  Version bump.
+
+  08 Mar 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00_beta1.ebuild,
+  grub-9999.ebuild:
+  Simplify efi-32/64 logic a bit.
+
+*grub-2.00_beta1 (07 Mar 2012)
+
+  07 Mar 2012; Mike Gilbert <floppym@gentoo.org> +grub-2.00_beta1.ebuild:
+  Version bump.
+
+  06 Mar 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00_beta0.ebuild,
+  grub-9999.ebuild:
+  Add runtime dep on efibootmgr for efi platforms.
+
+  06 Mar 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00_beta0.ebuild,
+  grub-9999.ebuild:
+  Don't use the platform to tranform the utility names; it's pointless. Users
+  may need to specify the --target option if grub2-install fails to auto-detect
+  it.
+
+  04 Mar 2012; Mike Gilbert <floppym@gentoo.org> grub-2.00_beta0.ebuild,
+  grub-9999.ebuild:
+  Dont mess with grub.texi; this is causing the live ebuild to not generate any
+  info page at all.
+
+  29 Feb 2012; Mike Gilbert <floppym@gentoo.org> grub-0.92-r1.ebuild,
+  grub-0.94-r1.ebuild, grub-0.96-r1.ebuild, grub-0.96-r2.ebuild,
+  grub-0.96-r3.ebuild, grub-0.97-r10.ebuild, grub-0.97-r2.ebuild,
+  grub-0.97-r3.ebuild, grub-0.97-r4.ebuild, grub-0.97-r5.ebuild,
+  grub-0.97-r6.ebuild, grub-0.97-r8.ebuild, grub-0.97-r9.ebuild,
+  grub-0.97.ebuild, grub-1.99-r2.ebuild, grub-2.00_beta0.ebuild,
+  grub-9999.ebuild:
+  Use mirror://gnu-alpha.
+
+  29 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org> grub-1.99-r2.ebuild,
+  grub-2.00_beta0.ebuild, grub-9999.ebuild:
+  Rather point people to the wiki than to the stale doc in my devspace.
+
+*grub-2.00_beta0 (29 Feb 2012)
+
+  29 Feb 2012; Mike Gilbert <floppym@gentoo.org> +grub-2.00_beta0.ebuild,
+  files/grub.default, grub-9999.ebuild, metadata.xml:
+  Updates for grub-2.00_beta0 release.
+  
+  * Move binaries to /usr.
+  * If GRUB_PLATFORMS is set, install binaries as grub2-${platform}-foo.
+  * Add mount and libzfs USE flags.
+  * Drop pkg_config. Need to figure out if this is feasible with multiple
+    platforms.
+
+  30 Jan 2012; Tomáš Chvátal <scarabeus@gentoo.org> grub-1.99-r2.ebuild,
+  grub-9999.ebuild:
+  Add more relaxed pax marking to work on hardened. Fixes bug #396371.
+
+  15 Jan 2012; Mike Gilbert <floppym@gentoo.org> grub-9999.ebuild:
+  1.99-call_proper_grub_probe.patch has been applied upstream.
+
+  14 Jan 2012; Mike Frysinger <vapier@gentoo.org> grub-0.94-r1.ebuild,
+  grub-0.96-r1.ebuild, grub-0.96-r3.ebuild, grub-0.97.ebuild:
+  Drop has_m32 as this is the only package to use it, and we do not really
+  *need* to do so.
+
+  06 Jan 2012; Mike Frysinger <vapier@gentoo.org> grub-0.97-r10.ebuild:
+  Fix building with newer automakes.
+
+  18 Nov 2011; Mike Frysinger <vapier@gentoo.org> grub-1.99-r2.ebuild,
+  grub-9999.ebuild:
+  Simplify GRUB_PLATFORMS handling, and move masking here.
+
+  11 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org> grub-1.99-r2.ebuild,
+  grub-9999.ebuild:
+  Fix build of live ebuild after info manual fixes (bug #389685).
+
+  11 Nov 2011; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Drop me from maint.
+
+  02 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org> grub-1.99-r2.ebuild,
+  grub-9999.ebuild:
+  Fix info manual (was referencing old name); factor out autoreconf handling if
+  we were to execute that on a non-live ebuild.
+
+  04 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> grub-1.99-r2.ebuild,
+  grub-9999.ebuild:
+  Include option to prompt for grub1 configuration. Thanks to Robert Trace
+  rtrace{at}farcaster.org for the patch.
+
+  03 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> grub-1.99-r2.ebuild,
+  grub-9999.ebuild:
+  Include minor fixes from Robert Trace <rtrace{at}farcaster.org>
+
+  14 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> grub-1.99-r2.ebuild,
+  grub-9999.ebuild:
+  Run the configure phase for the package only in the pkg_config. Fixes bug
+  #382769.
+
+  10 Sep 2011; Ryan Hill <dirtyepic@gentoo.org> grub-0.97-r10.ebuild:
+  Release patchset 1.11 to work around miscompilation with gcc-4.6 (bug
+  #360513). No rev-bump as per maintainer.
+
+  06 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> grub-1.99-r2.ebuild,
+  grub-9999.ebuild:
+  Do not show qa warnings about exec. Fixes bug #381041.
+
+*grub-1.99-r2 (04 Sep 2011)
+
+  04 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  +files/1.99-do_not_stat_so_often.patch, +files/1.99-improve_devmapper.patch,
+  +files/1.99-stat_root_device_properly-p1.patch, -grub-1.99-r1.ebuild,
+  +files/1.99-stat_root_device_properly-p2.patch, +grub-1.99-r2.ebuild:
+  Backport patches to fix esissues with non-existant /dev/root. Fixes bug
+  #381491.
+
+  31 Aug 2011; Alexey Shvetsov <alexxy@gentoo.org> grub-1.99-r1.ebuild,
+  grub-9999.ebuild:
+  Fix grub2 install on hardened systems
+
+  30 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org> files/grub.default:
+  Fix typo entrys -> entries.
+
+*grub-1.99-r1 (28 Aug 2011)
+
+  28 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  +files/1.99-call_proper_grub_probe.patch, -grub-1.99.ebuild,
+  +grub-1.99-r1.ebuild, grub-9999.ebuild:
+  Fix hardcoded grub-probe call. Fixes bug #380879. Revision bump so everyone
+  gets the update.
+
+  28 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org> grub-1.99.ebuild,
+  grub-9999.ebuild, metadata.xml:
+  Add efiemu useflag for grub2. Fixes bug #380863.
+
+*grub-1.99 (28 Aug 2011)
+
+  28 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  -files/grub-1.96-genkernel.patch, -grub-1.98.ebuild, -grub-1.99_rc1.ebuild,
+  +grub-1.99.ebuild, -files/grub-1.99-genkernel.patch, grub-9999.ebuild,
+  +files/grub.default, -files/defaults, metadata.xml:
+  Bump to grub 1.99. Drop older grub2 versions. Take maintainership of grub:2
+  series.
+
+  21 Aug 2011; Mike Frysinger <vapier@gentoo.org> grub-1.98.ebuild,
+  grub-1.99_rc1.ebuild, grub-9999.ebuild:
+  Depend on virtual/yacc, not bison.
+
+  21 Aug 2011; Matt Turner <mattst88@gentoo.org> grub-1.98.ebuild,
+  grub-1.99_rc1.ebuild, grub-9999.ebuild:
+  Add missing DEPEND on flex and bison, bug 380019.
 
   28 Jun 2011; Mike Frysinger <vapier@gentoo.org> grub-1.99_rc1.ebuild,
   grub-9999.ebuild:

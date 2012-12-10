@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/tsclient/tsclient-2.0.1-r1.ebuild,v 1.1 2011/04/24 14:48:25 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/tsclient/tsclient-2.0.1-r1.ebuild,v 1.5 2012/06/25 00:38:39 tetromino Exp $
 
 EAPI=2
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 # Too broken upstream to support
@@ -29,7 +29,7 @@ RDEPEND="x11-libs/gtk+:2
 DEPEND="${RDEPEND}
 	gnome-base/gconf
 	>=dev-util/intltool-0.27
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 RDEPEND="${RDEPEND}
 	>=net-misc/rdesktop-1.3.0"
@@ -38,7 +38,8 @@ src_prepare() {
 	# Fix .desktop file as per upstream changes, bug #351386
 	epatch "${FILESDIR}"/${P}-no-networkmanager.patch \
 		"${FILESDIR}"/${P}-libnotify-0.7.patch \
-		"${FILESDIR}"/${P}-desktop-file.patch
+		"${FILESDIR}"/${P}-desktop-file.patch \
+		"${FILESDIR}"/${P}-glib-2.32.patch
 
 	# For recent libgnomeui
 	sed -i -e 's:libgnome-2\.0:\0 libgnomeui-2\.0:' \

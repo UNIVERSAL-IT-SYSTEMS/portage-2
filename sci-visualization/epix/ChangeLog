@@ -1,6 +1,61 @@
 # ChangeLog for sci-visualization/epix
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/epix/ChangeLog,v 1.36 2011/07/27 21:51:05 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/epix/ChangeLog,v 1.49 2012/12/05 07:48:50 jlec Exp $
+
+  05 Dec 2012; Justin Lecher <jlec@gentoo.org> -epix-1.2.6.ebuild,
+  metadata.xml:
+  Drop old
+
+  04 Dec 2012; <ago@gentoo.org> epix-1.2.10.ebuild:
+  Stable for x86, wrt bug #442570
+
+  30 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> epix-1.2.10.ebuild,
+  files/epix-1.2.10-autotools.patch, metadata.xml:
+  Respect AR (bug #443136) and rename bash-completion file
+
+  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org> epix-1.2.10.ebuild:
+  Stable for amd64, wrt bug #442570
+
+  10 Nov 2012; Anthony G. Basile <blueness@gentoo.org> epix-1.2.10.ebuild:
+  stable ppc, bug #442570
+
+  10 Nov 2012; Justin Lecher <jlec@gentoo.org> epix-1.2.6.ebuild,
+  +files/epix-1.2.6-automake.patch, -epix-1.2.9.ebuild, epix-1.2.10.ebuild,
+  metadata.xml:
+  Drop old; backport patch for automake-1.11.6 compatibility, #442476
+
+  06 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> epix-1.2.10.ebuild:
+  keyword amd64-linux, x86-linux
+
+  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org> epix-1.2.10.ebuild,
+  epix-1.2.6.ebuild, epix-1.2.9.ebuild:
+  Add missing inheritance of eutils.eclass
+
+*epix-1.2.10 (25 Apr 2012)
+
+  25 Apr 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  files/epix-1.2.9-autotools.patch, +epix-1.2.10.ebuild,
+  +files/epix-1.2.10-autotools.patch:
+  Version bump
+
+  19 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  -files/epix-1.2.7-doc-gentoo.patch, -epix-1.2.8.ebuild, epix-1.2.9.ebuild,
+  -files/epix-1.2.9-automake.patch, +files/epix-1.2.9-autotools.patch:
+  More recent autotools update fixes, remove old
+
+  30 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> epix-1.2.9.ebuild,
+  +files/epix-1.2.9-automake.patch:
+  Fixed for automake-1.11.2, bug #401195
+
+*epix-1.2.9 (27 Nov 2011)
+
+  27 Nov 2011; Sébastien Fabbro <bicatali@gentoo.org> -epix-1.2.7.ebuild,
+  +epix-1.2.9.ebuild:
+  Version bump
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> epix-1.2.6.ebuild,
+  epix-1.2.7.ebuild, epix-1.2.8.ebuild:
+  remove ptex dep as it is going away
 
   27 Jul 2011; Sébastien Fabbro <bicatali@gentoo.org> epix-1.2.8.ebuild:
   Small prefix change

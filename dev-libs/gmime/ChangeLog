@@ -1,6 +1,255 @@
 # ChangeLog for dev-libs/gmime
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/gmime/ChangeLog,v 1.153 2011/07/17 20:44:49 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/gmime/ChangeLog,v 1.214 2012/11/24 18:54:51 eva Exp $
+
+*gmime-2.6.12 (24 Nov 2012)
+
+  24 Nov 2012; Gilles Dartiguelongue <eva@gentoo.org> +gmime-2.6.12.ebuild:
+  Version bump. Switch to EAPI=5.
+
+*gmime-2.4.33 (24 Nov 2012)
+
+  24 Nov 2012; Gilles Dartiguelongue <eva@gentoo.org> +gmime-2.4.33.ebuild:
+  Version bump. Switch to EAPI=5.
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> gmime-2.6.10.ebuild:
+  ia64/sparc stable wrt #427544
+
+  19 Oct 2012; Pacho Ramos <pacho@gentoo.org> gmime-2.6.11.ebuild:
+  dodoc now skips html files by default with eapi4 and, then, doins workaround
+  is no longer needed. Thanks a lot to Zac Medico in bug #438978 for the
+  explanation.
+
+*gmime-2.6.11 (19 Oct 2012)
+
+  19 Oct 2012; Pacho Ramos <pacho@gentoo.org> +gmime-2.6.11.ebuild,
+  -gmime-2.2.27.ebuild, -gmime-2.4.28.ebuild, -gmime-2.6.1.ebuild,
+  -gmime-2.6.9.ebuild:
+  Version bump, drop old.
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gmime-2.6.10.ebuild:
+  stable ppc, bug #427544
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> gmime-2.6.10.ebuild:
+  Stable on alpha, bug 427544.
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gmime-2.6.10.ebuild:
+  stable ppc64, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> gmime-2.6.10.ebuild:
+  arm stable, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gmime-2.6.10.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gmime-2.6.10.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> gmime-2.6.10.ebuild:
+  Stable for HPPA (bug #427544).
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> gmime-2.4.32.ebuild,
+  gmime-2.6.7.ebuild:
+  alpha/ia64/sparc stable wrt #410611
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> gmime-2.2.27-r1.ebuild:
+  alpha/ia64/sparc stable wrt #413145
+
+*gmime-2.6.10 (16 Jun 2012)
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> +gmime-2.6.10.ebuild:
+  Version bump.
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> gmime-2.2.27-r1.ebuild,
+  gmime-2.4.32.ebuild, gmime-2.6.7.ebuild:
+  ppc stable wrt #413145, #410611
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> gmime-2.2.27-r1.ebuild:
+  Marking gmime-2.2.27-r1 ppc64 for bug 413145
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gmime-2.2.27.ebuild,
+  gmime-2.2.27-r1.ebuild, gmime-2.4.28.ebuild, gmime-2.4.32.ebuild,
+  gmime-2.6.1.ebuild, gmime-2.6.7.ebuild, gmime-2.6.9.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gmime-2.4.32.ebuild:
+  x86 stable, bug #410611
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gmime-2.6.7.ebuild:
+  x86 stable, bug #410611
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gmime-2.2.27-r1.ebuild:
+  x86 stable, bug #413145
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> gmime-2.2.27-r1.ebuild,
+  gmime-2.4.32.ebuild, gmime-2.6.7.ebuild:
+  Stable for HPPA (bug #413145).
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> gmime-2.2.27-r1.ebuild:
+  arm stable, bug #413145
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> gmime-2.4.32.ebuild:
+  arm stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> gmime-2.6.7.ebuild:
+  arm stable, bug #410611
+
+  24 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gmime-2.2.27-r1.ebuild:
+  Stable for amd64, wrt bug #413145
+
+*gmime-2.2.27-r1 (23 Apr 2012)
+
+  23 Apr 2012; Pacho Ramos <pacho@gentoo.org> +gmime-2.2.27-r1.ebuild:
+  Prevent file collision, bug #413145 by Markus Meier.
+
+*gmime-2.6.9 (23 Apr 2012)
+
+  23 Apr 2012; Pacho Ramos <pacho@gentoo.org> +gmime-2.6.9.ebuild,
+  -gmime-2.4.26.ebuild, -gmime-2.6.0.ebuild, -gmime-2.6.6.ebuild:
+  Version bump, remove old.
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> gmime-2.4.32.ebuild,
+  gmime-2.6.7.ebuild:
+  Marking gmime-2.4.32 ppc64 stable for bug 410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> gmime-2.6.7.ebuild:
+  Marking gmime-2.6.7 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gmime-2.4.32.ebuild,
+  gmime-2.6.7.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> gmime-2.6.1.ebuild:
+  alpha/ia64/sparc stable wrt #393007
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> gmime-2.4.28.ebuild:
+  alpha/ia64/sparc stable wrt #393007
+
+*gmime-2.6.7 (17 Mar 2012)
+
+  17 Mar 2012; Pacho Ramos <pacho@gentoo.org> +gmime-2.6.7.ebuild,
+  -gmime-2.4.31.ebuild, -gmime-2.6.4.ebuild:
+  Version bump, remove old.
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> gmime-2.4.28.ebuild,
+  gmime-2.6.1.ebuild:
+  Marking gmime-2.6.1 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> gmime-2.4.28.ebuild,
+  gmime-2.6.1.ebuild:
+  Marking gmime-2.6.1 ppc64 stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> gmime-2.4.28.ebuild:
+  Marking gmime-2.4.28 ppc64 stable for bug 393007
+
+*gmime-2.4.32 (25 Feb 2012)
+*gmime-2.6.6 (25 Feb 2012)
+
+  25 Feb 2012; Pacho Ramos <pacho@gentoo.org> +gmime-2.4.32.ebuild,
+  +gmime-2.6.6.ebuild, -gmime-2.4.30.ebuild, -gmime-2.6.3.ebuild:
+  Version bump, drop old.
+
+*gmime-2.6.4 (20 Jan 2012)
+*gmime-2.4.31 (20 Jan 2012)
+
+  20 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gmime-2.4.31.ebuild, +files/gmime-2.4.31-fix-tutorial.patch,
+  +gmime-2.6.4.ebuild, +files/gmime-2.6.4-fix-tutorial.patch:
+  Version bump. Fixes a memory leak, improves build system, allowing simpler
+  ebuilds.
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> gmime-2.6.1.ebuild:
+  arm stable, bug #393007
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> gmime-2.4.28.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> gmime-2.6.1.ebuild:
+  x86 stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> gmime-2.4.28.ebuild:
+  x86 stable, bug #393007
+
+*gmime-2.4.30 (31 Dec 2011)
+*gmime-2.6.3 (31 Dec 2011)
+
+  31 Dec 2011; Pacho Ramos <pacho@gentoo.org> +gmime-2.4.30.ebuild,
+  +gmime-2.6.3.ebuild:
+  Version bump.
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> gmime-2.4.28.ebuild,
+  gmime-2.6.1.ebuild:
+  amd64 stable, bug 393007
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> gmime-2.6.1.ebuild:
+  Stable for HPPA (bug #393007).
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> gmime-2.4.28.ebuild:
+  Stable for HPPA (bug #393007).
+
+*gmime-2.6.1 (15 Nov 2011)
+
+  15 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org> +gmime-2.6.1.ebuild:
+  Version bump for 2.6 slot.
+
+*gmime-2.4.28 (15 Nov 2011)
+
+  15 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org> -gmime-2.4.24.ebuild,
+  +gmime-2.4.28.ebuild:
+  Version bump. Clean up old revision in 2.4 slot.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> gmime-2.6.0.ebuild:
+  alpha/ia64/sparc stable wrt #385699
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> gmime-2.4.26.ebuild:
+  alpha/ia64/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> gmime-2.6.0.ebuild:
+  arm stable, bug #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> gmime-2.4.26.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> gmime-2.4.26.ebuild,
+  gmime-2.6.0.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> gmime-2.4.26.ebuild,
+  gmime-2.6.0.ebuild:
+  Stable for HPPA (bug #385699).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> gmime-2.4.26.ebuild,
+  gmime-2.6.0.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  16 Oct 2011; Gilles Dartiguelongue <eva@gentoo.org> -gmime-2.2.26.ebuild,
+  -gmime-2.4.22.ebuild, -gmime-2.4.25.ebuild:
+  Clean up old revisions.
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> gmime-2.4.26.ebuild,
+  gmime-2.6.0.ebuild:
+  amd64 stable wrt #385699
+
+*gmime-2.6.0 (28 Aug 2011)
+*gmime-2.4.26 (28 Aug 2011)
+
+  28 Aug 2011; Pacho Ramos <pacho@gentoo.org> +gmime-2.4.26.ebuild,
+  +gmime-2.6.0.ebuild:
+  Version bump for 2.4.x series, also bump to the new 2.6.0 version on its own
+  SLOT.
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> gmime-2.2.27.ebuild,
+  gmime-2.4.24.ebuild:
+  Stable for HPPA (bug #369909).
+
+  14 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> gmime-2.4.25.ebuild:
+  USE=static-libs support, bug 378769
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> gmime-2.4.24.ebuild:
+  alpha/ia64/sparc stable wrt #369909
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> gmime-2.2.27.ebuild:
+  alpha/ia64/sparc stable wrt #369909
 
   17 Jul 2011; Markus Meier <maekke@gentoo.org> gmime-2.4.24.ebuild:
   arm stable, bug #369909
@@ -640,4 +889,3 @@
   Initial version. Ebuild submitted by Torsten Stets
   <mai98bmg@studserv.uni-leipzig.de> and tove <bugs@veller.net>. Closes
   #57197.
-

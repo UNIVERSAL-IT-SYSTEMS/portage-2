@@ -1,6 +1,30 @@
 # ChangeLog for x11-plugins/wmnd
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmnd/ChangeLog,v 1.48 2010/09/06 12:56:10 s4t4n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmnd/ChangeLog,v 1.54 2012/08/21 08:35:19 voyageur Exp $
+
+*wmnd-0.4.17 (21 Aug 2012)
+
+  21 Aug 2012; Bernard Cafarelli <voyageur@gentoo.org> -wmnd-0.4.13.ebuild,
+  +wmnd-0.4.17.ebuild:
+  Version bump, drop old version
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> wmnd-0.4.13.ebuild,
+  wmnd-0.4.16.ebuild:
+  Drop sparc keywords
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> wmnd-0.4.16.ebuild:
+  Marking wmnd-0.4.16 ppc for bug 422403
+
+  26 Jun 2012; Jeff Horelick <jdhore@gentoo.org> wmnd-0.4.16.ebuild:
+  marked x86 per bug 422403
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> wmnd-0.4.16.ebuild:
+  Stable for amd64, wrt bug #422403
+
+*wmnd-0.4.16 (15 Feb 2012)
+
+  15 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org> +wmnd-0.4.16.ebuild:
+  Version bump, spotted with euscan, cleaned ebuild
 
   06 Sep 2010; Michele Noberasco <s4t4n@gentoo.org> wmnd-0.4.13.ebuild:
   Fix DEPEND and RDEPEND. Closes bug #276405.

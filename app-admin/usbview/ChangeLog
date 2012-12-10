@@ -1,6 +1,29 @@
 # ChangeLog for app-admin/usbview
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/usbview/ChangeLog,v 1.33 2010/07/27 01:59:59 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/usbview/ChangeLog,v 1.38 2012/10/23 15:56:20 ssuominen Exp $
+
+  23 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> usbview-2.0.ebuild:
+  Ensure CONFIG_DEBUG_FS is enabled for /sys/kernel/debug/usb/devices.
+
+  23 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> usbview-2.0.ebuild:
+  Remove pointless doman line since Makefile.am is handling manpage
+  installation. Correct GTK+ dependency from 2.x to 3.x as per configure.ac.
+
+*usbview-2.0 (22 Oct 2012)
+
+  22 Oct 2012; Jeroen Roovers <jer@gentoo.org> -usbview-1.1-r1.ebuild,
+  -files/usbview-1.1-missing-usbfs.patch, +usbview-2.0.ebuild:
+  Version bump by Gary E. Miller (bug #439290).
+
+*usbview-1.1-r1 (21 Oct 2012)
+
+  21 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> +usbview-1.1-r1.ebuild,
+  +files/usbview-1.1-missing-usbfs.patch:
+  Use /sys instead of /proc to avoid missing usbfs wrt #433096 by
+  Gary E. Miller
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> usbview-1.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   27 Jul 2010; Jeroen Roovers <jer@gentoo.org> usbview-1.1.ebuild:
   Stable for HPPA too.

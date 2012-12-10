@@ -1,6 +1,29 @@
 # ChangeLog for sci-chemistry/gperiodic
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/gperiodic/ChangeLog,v 1.15 2011/03/02 13:17:20 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/gperiodic/ChangeLog,v 1.21 2012/09/05 07:03:30 jlec Exp $
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> gperiodic-2.0.10.ebuild,
+  gperiodic-2.0.10-r2.ebuild:
+  Bump EAPI to 4; fix desktop file
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gperiodic-2.0.10.ebuild,
+  gperiodic-2.0.10-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Jan 2012; Justin Lecher <jlec@gentoo.org> gperiodic-2.0.10-r2.ebuild,
+  +files/gperiodic-2.0.10-nls.patch, metadata.xml:
+  Fix installation with USE=-nls, #395125
+
+  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> gperiodic-2.0.10-r2.ebuild:
+  Stable for AMD64, wrt bug #392791
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gperiodic-2.0.10-r2.ebuild:
+  x86 stable wrt bug #392791
+
+  20 Nov 2011; Pacho Ramos <pacho@gentoo.org>
+  files/gperiodic-2.0.10-makefile.patch:
+  Drop DEPRECATED flags, bug #391099
 
   02 Mar 2011; Justin Lecher <jlec@gentoo.org> gperiodic-2.0.10.ebuild:
   Correct Slots for gtk 3 introduction to tree

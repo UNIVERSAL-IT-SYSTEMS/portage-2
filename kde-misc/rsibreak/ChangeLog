@@ -1,6 +1,22 @@
 # ChangeLog for kde-misc/rsibreak
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/rsibreak/ChangeLog,v 1.36 2011/01/31 06:39:18 tampakrap Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/rsibreak/ChangeLog,v 1.41 2012/11/15 15:21:59 kensington Exp $
+
+  15 Nov 2012; Michael Palimaka <kensington@gentoo.org> rsibreak-0.11.ebuild:
+  Update HOMEPAGE and SRC_URI, wrt bug #443044.
+
+  24 Feb 2012; Johannes Huber <johu@gentoo.org>
+  -files/rsibreak-0.10-gcc45.patch, -rsibreak-0.10.ebuild:
+  Remove old.
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> rsibreak-0.11.ebuild:
+  x86 stable wrt bug #404583
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> rsibreak-0.11.ebuild:
+  Stable for amd64, wrt bug #404583
+
+  29 Oct 2011; Jonathan Callen <abcd@gentoo.org> rsibreak-0.11.ebuild:
+  Bump to EAPI=4; set KDE_HANDBOOK
 
 *rsibreak-0.11 (31 Jan 2011)
 
@@ -144,4 +160,3 @@
   +rsibreak-0.5.0.ebuild:
   Initial import; ebuild based on the one submitted by Tobias Roeser
   <le.petit.fou@web.de> in bug #124174.
-

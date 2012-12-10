@@ -1,11 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/grande-KXL/grande-KXL-0.6.ebuild,v 1.10 2009/06/03 13:20:10 nyhm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/grande-KXL/grande-KXL-0.6.ebuild,v 1.12 2012/08/08 20:10:21 hasufell Exp $
 
 inherit autotools eutils games
 
 DESCRIPTION="ZANAC type game"
-HOMEPAGE="http://kxl.orz.hm/"
+HOMEPAGE="http://triring.net/ps2linux/games/kxl/kxlgames.html"
 SRC_URI="mirror://gentoo/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${PV}-configure.in.patch
+	epatch "${FILESDIR}"/${P}-{configure.in,cflags}.patch
 	eautoreconf
 }
 

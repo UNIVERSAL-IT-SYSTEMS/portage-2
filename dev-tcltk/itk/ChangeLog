@@ -1,6 +1,26 @@
 # ChangeLog for dev-tcltk/itk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/itk/ChangeLog,v 1.31 2011/06/04 18:58:19 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/itk/ChangeLog,v 1.34 2012/10/07 17:49:27 jlec Exp $
+
+  07 Oct 2012; Justin Lecher <jlec@gentoo.org> -itk-3.3-r1.ebuild,
+  -itk-3.3.1_pre20090417-r1.ebuild, itk-3.4_pre20090417.ebuild,
+  itk-3.4_pre20090417-r1.ebuild:
+  Drop old; fix dep versions
+
+  07 Oct 2012; Justin Lecher <jlec@gentoo.org> itk-3.4_pre20090417.ebuild,
+  itk-3.4_pre20090417-r1.ebuild:
+  Drop old; fix dep versions
+
+  28 Aug 2011; Justin Lecher <jlec@gentoo.org>
+  files/itk-3.4_pre20090417-install.patch:
+  Corrected install.patch to work with patch-2.5.9, #379467
+
+*itk-3.4_pre20090417-r1 (15 Aug 2011)
+
+  15 Aug 2011; Justin Lecher <jlec@gentoo.org> itk-3.4_pre20090417.ebuild,
+  +itk-3.4_pre20090417-r1.ebuild, +files/itk-3.4_pre20090417-install.patch,
+  metadata.xml:
+  Install itkConfig.sh, #379243, thanks Priit Laes for the patch
 
   04 Jun 2011; Raúl Porcel <armin76@gentoo.org> itk-3.4_pre20090417.ebuild:
   alpha/ia64/sparc stable wrt #363991

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/mu/mu-0.9.6.ebuild,v 1.4 2011/07/07 17:04:47 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/mu/mu-0.9.6.ebuild,v 1.6 2012/12/02 20:30:00 tomka Exp $
 
 EAPI=3
 
@@ -19,7 +19,8 @@ DEPEND=">=dev-libs/gmime-2.4:2.4
 	dev-libs/xapian
 	>=dev-libs/glib-2.22:2
 	gui? ( x11-libs/gtk+:2
-		net-libs/webkit-gtk:2 ) "
+		net-libs/webkit-gtk:2 )
+	!net-mail/mailutils"
 RDEPEND="${DEPEND}"
 
 src_configure() {
@@ -30,7 +31,7 @@ src_configure() {
 		guiconf="--with-gui=none"
 	fi
 
-	econf "${guiconf}"
+	econf --disable-silent-rules "${guiconf}"
 }
 
 src_install () {

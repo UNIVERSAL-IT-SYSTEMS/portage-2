@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/pythia/pythia-6.4.24.ebuild,v 1.8 2011/06/21 14:39:48 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/pythia/pythia-6.4.24.ebuild,v 1.10 2012/11/30 22:08:58 bicatali Exp $
 
 EAPI=2
 
@@ -12,13 +12,14 @@ DOC_PV=0613
 EX_PV=6.4.18
 
 DESCRIPTION="Lund Monte Carlo high-energy physics event generator"
-HOMEPAGE="http://projects.hepforge.org/pythia6/"
+HOMEPAGE="http://pythia6.hepforge.org/"
 
 # pythia6 from root is needed for some files to interface pythia6 with root.
 # To produce a split version on mirror do, replace the 6.4.x by the current version
 # svn export http://svn.hepforge.org/pythia6/tags/v_6_4_x/ pythia-6.4.x
 # tar cjf pythia-6.4.x.tar.bz2
-SRC_URI="mirror://gentoo/${P}.tar.bz2
+SRC_URI="
+	mirror://gentoo/${P}.tar.bz2
 	ftp://root.cern.ch/root/pythia6.tar.gz
 	doc? ( http://home.thep.lu.se/~torbjorn/pythia/lutp${DOC_PV}man2.pdf )
 	examples? ( mirror://gentoo/${PN}-${EX_PV}-examples.tar.bz2 )"
@@ -27,9 +28,6 @@ SLOT="6"
 LICENSE="public-domain"
 KEYWORDS="amd64 x86"
 IUSE="doc examples static-libs"
-
-DEPEND="virtual/fortran"
-RDEPEND="${DEPEND}"
 
 src_prepare() {
 	cp ../pythia6/tpythia6_called_from_cc.F .

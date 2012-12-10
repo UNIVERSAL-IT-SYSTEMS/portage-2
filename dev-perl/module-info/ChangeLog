@@ -1,6 +1,44 @@
 # ChangeLog for dev-perl/module-info
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/module-info/ChangeLog,v 1.57 2010/09/09 05:29:30 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/module-info/ChangeLog,v 1.68 2012/06/24 12:58:59 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  05 Apr 2012; Torsten Veller <tove@gentoo.org> -module-info-0.31.ebuild:
+  Cleanup
+
+  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> module-info-0.31.ebuild,
+  module-info-0.320.0.ebuild:
+  Drop ia64/sparc keywords
+
+  31 Mar 2012; Tobias Klausmann <klausman@gentoo.org>
+  module-info-0.320.0.ebuild:
+  Stable on alpha, bug #400303
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  module-info-0.320.0.ebuild:
+  x86 stable wrt bug #400303
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> module-info-0.320.0.ebuild:
+  Marking module-info-0.320.0 ppc64 for bug 400303
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> module-info-0.320.0.ebuild:
+  Marking module-info-0.320.0 ppc for bug 400303
+
+  24 Feb 2012; Jeroen Roovers <jer@gentoo.org> module-info-0.320.0.ebuild:
+  Stable for HPPA (bug #400303).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> module-info-0.320.0.ebuild:
+  Stable for amd64, wrt bug #400303
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -module-info-0.32.ebuild:
+  Cleanup
+
+*module-info-0.320.0 (27 Aug 2011)
+
+  27 Aug 2011; Torsten Veller <tove@gentoo.org> +module-info-0.320.0.ebuild:
+  Change version scheme
 
 *module-info-0.32 (09 Sep 2010)
 
@@ -213,4 +251,3 @@
   26 Jun 2003; Michael Cummings <mcummings@gentoo.org>
   module-info-0.20.ebuild:
   Dep for module-build, part of the alzabo deps
-

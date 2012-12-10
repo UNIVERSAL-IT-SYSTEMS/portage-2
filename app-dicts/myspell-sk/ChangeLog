@@ -1,6 +1,19 @@
 # ChangeLog for app-dicts/myspell-sk
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-sk/ChangeLog,v 1.18 2010/09/27 23:42:36 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-sk/ChangeLog,v 1.21 2012/06/13 16:22:13 scarabeus Exp $
+
+  13 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> -myspell-sk-20060316.ebuild,
+  myspell-sk-20110224.ebuild:
+  Stable it and remove older.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> myspell-sk-20060316.ebuild,
+  myspell-sk-20110224.ebuild:
+  keyword ~amd64-fbsd
+
+*myspell-sk-20110224 (24 Apr 2012)
+
+  24 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> +myspell-sk-20110224.ebuild:
+  Bump slovak dict to latest version. Using the date from ftp folder.
 
   27 Sep 2010; Mart Raudsepp <leio@gentoo.org> myspell-sk-20060316.ebuild:
   Add ~mips

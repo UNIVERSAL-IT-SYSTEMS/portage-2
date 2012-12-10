@@ -1,6 +1,89 @@
 # ChangeLog for net-fs/nfs-utils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/nfs-utils/ChangeLog,v 1.183 2011/06/19 23:04:36 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-fs/nfs-utils/ChangeLog,v 1.204 2012/12/06 04:36:14 phajdan.jr Exp $
+
+  06 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> nfs-utils-1.2.6.ebuild:
+  x86 stable wrt bug #445564
+
+  04 Dec 2012; Anthony G. Basile <blueness@gentoo.org> nfs-utils-1.2.6.ebuild:
+  stable arm ppc ppc64, bug #445564
+
+  02 Dec 2012; Markos Chandras <hwoarang@gentoo.org> nfs-utils-1.2.6.ebuild:
+  Stable on amd64 wrt bug #445564
+
+  16 Sep 2012; Mike Frysinger <vapier@gentoo.org> nfs-utils-1.2.6.ebuild:
+  Pull in sqlite when USE=nfsdcld #433062 by Guillaume Castagnino.
+
+  18 May 2012; Mike Frysinger <vapier@gentoo.org> nfs-utils-1.2.6.ebuild:
+  Update request-key.d config settings #415625 by Maciej Szmigiero.
+
+  17 May 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/nfs-utils-1.2.6-conditionals.patch, nfs-utils-1.2.6.ebuild:
+  Fix build with USE=-nfsv4.
+
+*nfs-utils-1.2.6 (17 May 2012)
+
+  17 May 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/nfs-utils-1.2.6-cross-build.patch,
+  +files/nfs-utils-1.2.6-osd-install.patch, +nfs-utils-1.2.6.ebuild,
+  metadata.xml:
+  Version bump #416189 by teidakankan.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> nfs-utils-1.2.4.ebuild,
+  nfs-utils-1.2.5.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Jan 2012; Justin Lecher <jlec@gentoo.org> nfs-utils-1.2.5.ebuild:
+  Don't use default src_install function, in order to install only valid docs,
+  thanks ssuominen
+
+  16 Jan 2012; Justin Lecher <jlec@gentoo.org> nfs-utils-1.2.5.ebuild:
+  Add missing dep on sys-fs/lvm2, #399051; corrected target path in src install
+  $ED to $D
+
+  14 Jan 2012; Mike Frysinger <vapier@gentoo.org> nfs-utils-1.2.5.ebuild:
+  Require newer version of libgssglue #398901 by Marien Zwart.
+
+*nfs-utils-1.2.5 (14 Jan 2012)
+
+  14 Jan 2012; Mike Frysinger <vapier@gentoo.org> +nfs-utils-1.2.5.ebuild:
+  Version bump #384465 by teidakankan with updates by Justin Lecher.
+
+  28 Dec 2011; <swift@gentoo.org> nfs-utils-1.2.4.ebuild:
+  Add selinux triggered dependencies on selinux-rpc and selinux-rpcbind
+
+  08 Dec 2011; Mike Frysinger <vapier@gentoo.org> nfs-utils-1.2.4.ebuild,
+  +files/nfs-utils-1.2.4-no-nfsctl.patch:
+  Fix building with arches that do not support nfsctl syscalls.
+
+  17 Oct 2011; Mike Frysinger <vapier@gentoo.org> nfs-utils-1.2.4.ebuild:
+  Pull in pkg-config since we use it #387365 by bay.
+
+  18 Sep 2011; Mike Frysinger <vapier@gentoo.org> files/nfs.initd:
+  Convert to extra_started_commands #381887 by teidakankan.
+
+  02 Sep 2011; Mike Frysinger <vapier@gentoo.org> nfs-utils-1.2.4.ebuild,
+  +files/nfs-utils-1.2.4-cross-build.patch:
+  Fix cross-compiling with native helper tools.
+
+  02 Sep 2011; Mike Frysinger <vapier@gentoo.org> nfs-utils-1.2.4.ebuild,
+  +files/nfs-utils-1.2.4-nfsidmap.patch, metadata.xml:
+  Add USE="nfsidmap nfsv41" to control new deps and features #381459 by
+  Krzysztof Pawlik.
+
+  01 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> nfs-utils-1.2.4.ebuild,
+  +files/nfs-utils-1.2.4-conditional.patch:
+  Fix build with USE=-nfsv4, by importing two (folded) patches from git.
+
+*nfs-utils-1.2.4 (01 Sep 2011)
+
+  01 Sep 2011; Mike Frysinger <vapier@gentoo.org> +nfs-utils-1.2.4.ebuild,
+  +files/nfs-utils-1.2.4-exportfs-skip-dir.patch,
+  +files/nfs-utils-1.2.4-exportfs-xlog.patch:
+  Version bump #373651 by teidakankan.
+
+  01 Sep 2011; Mike Frysinger <vapier@gentoo.org> files/nfs.initd:
+  Drop --oknodo usage #377765 by Michael Mair-Keimberger.
 
   19 Jun 2011; Mike Frysinger <vapier@gentoo.org> files/rpc.pipefs.initd:
   Remove shortcuts that result in silent errors #372297 by Sebastian Pipping.

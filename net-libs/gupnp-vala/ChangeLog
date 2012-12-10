@@ -1,6 +1,37 @@
 # ChangeLog for net-libs/gupnp-vala
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gupnp-vala/ChangeLog,v 1.7 2011/07/24 14:59:24 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gupnp-vala/ChangeLog,v 1.13 2012/10/19 19:03:36 pacho Exp $
+
+*gupnp-vala-0.10.5 (19 Oct 2012)
+
+  19 Oct 2012; Pacho Ramos <pacho@gentoo.org> +gupnp-vala-0.10.5.ebuild,
+  -gupnp-vala-0.10.3.ebuild, -gupnp-vala-0.8.0.ebuild:
+  Version bump, drop old.
+
+*gupnp-vala-0.10.4 (24 Aug 2012)
+
+  24 Aug 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  -gupnp-vala-0.10.2.ebuild, +gupnp-vala-0.10.4.ebuild, metadata.xml:
+  Version bump. Drop old revision.
+
+*gupnp-vala-0.10.3 (22 Jul 2012)
+
+  22 Jul 2012; Gilles Dartiguelongue <eva@gentoo.org> +gupnp-vala-0.10.3.ebuild:
+  Version bump.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gupnp-vala-0.8.0.ebuild,
+  gupnp-vala-0.10.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*gupnp-vala-0.10.2 (20 Nov 2011)
+
+  20 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org>
+  +gupnp-vala-0.10.2.ebuild:
+  Version bump. Update for gupnp-0.17 and linked libraries.
+
+  14 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> -gupnp-vala-0.6.2.ebuild,
+  -gupnp-vala-0.6.12.ebuild, -gupnp-vala-0.7.5.ebuild, gupnp-vala-0.8.0.ebuild:
+  Remove old, use EAPI 4
 
 *gupnp-vala-0.8.0 (24 Jul 2011)
 
@@ -36,4 +67,3 @@
   09 Dec 2009; Arun Raghavan <ford_prefect@gentoo.org>
   +gupnp-vala-0.6.2.ebuild, +metadata.xml:
   Initial commit.
-

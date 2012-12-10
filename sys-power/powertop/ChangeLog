@@ -1,6 +1,126 @@
 # ChangeLog for sys-power/powertop
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/powertop/ChangeLog,v 1.45 2011/05/03 11:34:23 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-power/powertop/ChangeLog,v 1.74 2012/12/09 20:48:24 zerochaos Exp $
+
+  09 Dec 2012; Rick Farina <zerochaos@gentoo.org> -powertop-1.11.ebuild,
+  -powertop-2.0.ebuild, -powertop-2.1-r1.ebuild, -powertop-2.1.ebuild,
+  powertop-2.2-r1.ebuild:
+  fix gettext deps per bug #398977 and clean out old ebuilds
+
+*powertop-2.2-r1 (23 Nov 2012)
+
+  23 Nov 2012; Rick Farina <zerochaos@gentoo.org>
+  +files/powertop-2.2-use-package_version.patch, +powertop-2.2-r1.ebuild,
+  -powertop-2.2.ebuild:
+  fix powertop 2.2 to report proper version tag wrt bug #444466
+
+  22 Nov 2012; Rick Farina <zerochaos@gentoo.org> powertop-2.2.ebuild:
+  fix bug #444370 by switching to EAPI5, there goes my cherry
+
+*powertop-2.2 (22 Nov 2012)
+
+  22 Nov 2012; Rick Farina <zerochaos@gentoo.org> +powertop-2.2.ebuild:
+  bump to 2.2
+
+  22 Nov 2012; Rick Farina <zerochaos@gentoo.org> powertop-2.1-r1.ebuild,
+  powertop-9999.ebuild:
+  SND_HDA_POWER_SAVE deprecated in kernel 3.7.0 so we conditionalize the check
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+  20 Sep 2012; Rick Farina <zerochaos@gentoo.org> powertop-2.1-r1.ebuild,
+  powertop-9999.ebuild:
+  match linux_config_exists format from other ebuilds to quiet reported warnings
+
+  18 Sep 2012; Rick Farina <zerochaos@gentoo.org> powertop-2.1-r1.ebuild,
+  powertop-9999.ebuild:
+  quiet a few useless warnings and fix live ebuild
+
+  17 Sep 2012; Rick Farina <zerochaos@gentoo.org> powertop-2.1-r1.ebuild:
+  reorder a few things, hopefully this is safer and avoids env pollution
+
+  14 Sep 2012; Rick Farina <zerochaos@gentoo.org> powertop-2.1-r1.ebuild:
+  my attempt to clarify kconfig requirements, and adjust SND_HDA stuff based on
+  complain in bug 434824
+
+  14 Sep 2012; Rick Farina <zerochaos@gentoo.org> powertop-2.1-r1.ebuild:
+  make kconfig checks non-fatal to accomodate builders who don't use powertop
+
+  14 Sep 2012; Rick Farina <zerochaos@gentoo.org> metadata.xml:
+  tired of seaching for powertop bugs so now I'm the maintainer
+
+  14 Sep 2012; Rick Farina <zerochaos@gentoo.org> powertop-2.1-r1.ebuild:
+  bug #417485 requested xset become optional for users without X
+
+  11 Sep 2012; Rick Farina <zerochaos@gentoo.org> powertop-2.1-r1.ebuild:
+  addressing some concerns from bug# 414803
+
+*powertop-2.1-r1 (10 Sep 2012)
+
+  10 Sep 2012; Rick Farina <zerochaos@gentoo.org> +powertop-2.1-r1.ebuild:
+  properly check required kernel options, based on bug #414803
+
+  07 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> powertop-2.1.ebuild:
+  Revert back src_configure logic and ncurses dependency, make it correct.
+  Thanks to leio for pointing on this issue
+
+  07 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> powertop-2.1.ebuild:
+  Add proper unicode flag handling. Fixes bug #415535
+
+  06 Sep 2012; Rick Farina <zerochaos@gentoo.org> powertop-2.1.ebuild:
+  refactor deps a big based on feedback from hasufell. likely more things can be
+  moved out of depend as well
+
+  06 Sep 2012; Rick Farina <zerochaos@gentoo.org> powertop-2.1.ebuild:
+  address dep issues, missing pkgconfig and libnl:3 requires slot
+
+*powertop-2.1 (05 Sep 2012)
+
+  05 Sep 2012; Rick Farina <zerochaos@gentoo.org> +powertop-2.1.ebuild:
+  version bump to 2.1
+
+  01 Jun 2012; Mike Frysinger <vapier@gentoo.org> powertop-2.0.ebuild:
+  Drop hardcoded CXXFLAGS that break things.
+
+  01 Jun 2012; Mike Frysinger <vapier@gentoo.org> +files/csstoh,
+  powertop-2.0.ebuild:
+  Fix cross-compiling; already sent upstream.
+
+  01 Jun 2012; Mike Frysinger <vapier@gentoo.org> powertop-2.0.ebuild,
+  powertop-9999.ebuild:
+  Sync keywords with newer versions.
+
+*powertop-2.0 (10 May 2012)
+
+  10 May 2012; Mike Frysinger <vapier@gentoo.org> +powertop-2.0.ebuild,
+  -powertop-1.97-r1.ebuild, -powertop-1.98.ebuild, powertop-9999.ebuild:
+  Version bump.
+
+  20 Apr 2012; Mike Frysinger <vapier@gentoo.org> powertop-1.98.ebuild,
+  powertop-9999.ebuild:
+  Update git URL to new home.
+
+  19 Apr 2012; Mike Frysinger <vapier@gentoo.org> powertop-1.98.ebuild,
+  +files/powertop-1.98-gcc-4.7.patch, powertop-9999.ebuild:
+  Fix building with gcc-4.7.
+
+  19 Apr 2012; Mike Frysinger <vapier@gentoo.org> powertop-1.98.ebuild,
+  files/powertop-1.98-build.patch, +files/powertop-1.98-build-libnl-3.patch,
+  powertop-9999.ebuild:
+  Revert incorrect libnl change (powertop works with libnl ver 1, 2, or 3), and
+  further clean up the build.
+
+  27 Oct 2011; Jeroen Roovers <jer@gentoo.org> powertop-1.97-r1.ebuild,
+  powertop-1.98.ebuild:
+  Fix libnl dependency (bug #382471).
+
+*powertop-1.98 (23 Aug 2011)
+
+  23 Aug 2011; Mike Frysinger <vapier@gentoo.org> +powertop-1.98.ebuild,
+  +files/powertop-1.98-build.patch, +files/powertop-1.98-build-cc.patch,
+  powertop-9999.ebuild:
+  Version bump and merging of live/release ebuilds.
 
   03 May 2011; Tomáš Chvátal <scarabeus@gentoo.org> powertop-9999.ebuild:
   Move to git-2 and use eapi4 features more nicely.
@@ -187,4 +307,3 @@
   +powertop-1.0.ebuild:
   New ebuild thanks to Christian Merkle <gentoo-bugzilla@luemmel.org> in bug
   178130
-

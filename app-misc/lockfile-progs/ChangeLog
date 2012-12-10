@@ -1,6 +1,27 @@
 # ChangeLog for app-misc/lockfile-progs
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/lockfile-progs/ChangeLog,v 1.12 2010/09/27 18:35:24 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/lockfile-progs/ChangeLog,v 1.18 2012/08/26 19:03:49 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> lockfile-progs-0.1.16.ebuild:
+  s390/sh/sparc stable wrt #428394
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> lockfile-progs-0.1.16.ebuild:
+  arm stable, bug #428394
+
+  05 Aug 2012; Agostino Sarubbo <ago@gentoo.org> lockfile-progs-0.1.16.ebuild:
+  Stable for amd64, wrt bug #428394
+
+  02 Aug 2012; Jeff Horelick <jdhore@gentoo.org> lockfile-progs-0.1.16.ebuild:
+  marked x86 per bug 428394
+
+  04 Jun 2012; Michael Weber <xmw@gentoo.org> lockfile-progs-0.1.16.ebuild:
+  ppc stable (bug 400757)
+
+*lockfile-progs-0.1.16 (25 Jan 2012)
+
+  25 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  -lockfile-progs-0.1.13.ebuild, +lockfile-progs-0.1.16.ebuild:
+  Version bump. Remove old.
 
   27 Sep 2010; Mart Raudsepp <leio@gentoo.org> lockfile-progs-0.1.15.ebuild:
   Marked ~mips for bug #306633

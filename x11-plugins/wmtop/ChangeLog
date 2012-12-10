@@ -1,6 +1,25 @@
 # ChangeLog for x11-plugins/wmtop
-# Copyright 2002-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmtop/ChangeLog,v 1.14 2010/09/06 07:59:28 s4t4n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmtop/ChangeLog,v 1.19 2012/07/29 18:36:49 armin76 Exp $
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> wmtop-0.9.0.ebuild,
+  wmtop-0.9.0-r1.ebuild:
+  Drop sparc keywords
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> wmtop-0.9.0-r1.ebuild:
+  Marking wmtop-0.9.0-r1 ppc for bug 422405
+
+  26 Jun 2012; Jeff Horelick <jdhore@gentoo.org> wmtop-0.9.0-r1.ebuild:
+  marked x86 per bug 422405
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> wmtop-0.9.0-r1.ebuild:
+  Stable for amd64, wrt bug #422405
+
+*wmtop-0.9.0-r1 (18 Apr 2012)
+
+  18 Apr 2012; Bernard Cafarelli <voyageur@gentoo.org> +wmtop-0.9.0-r1.ebuild,
+  +files/wmtop-0.9.0-meminfo.patch:
+  Fix memory usage monitor, report and patch by wbk in bug #410093
 
   06 Sep 2010; Michele Noberasco <s4t4n@gentoo.org> wmtop-0.9.0.ebuild:
   Honour Gentoo LDFLAGS. Closes bug #335953.

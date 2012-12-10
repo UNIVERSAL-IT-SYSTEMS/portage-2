@@ -1,6 +1,71 @@
 # ChangeLog for mail-client/claws-mail-fancy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail-fancy/ChangeLog,v 1.28 2011/07/31 10:06:06 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail-fancy/ChangeLog,v 1.43 2012/11/20 20:33:48 fauli Exp $
+
+*claws-mail-fancy-0.9.17 (20 Nov 2012)
+
+  20 Nov 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-fancy-0.9.17.ebuild:
+  version bump
+
+  20 Nov 2012; Christian Faulhammer <fauli@gentoo.org>
+  -claws-mail-fancy-0.9.15.ebuild:
+  clean up
+
+  31 Oct 2012; Andreas Schuerch <nativemad@gentoo.org>
+  claws-mail-fancy-0.9.16.ebuild:
+  x86 stable, see bug 437814
+
+  24 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  claws-mail-fancy-0.9.16.ebuild:
+  Stable for amd64, wrt bug #437814
+
+*claws-mail-fancy-0.9.16 (30 Jun 2012)
+
+  30 Jun 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-fancy-0.9.16.ebuild:
+  version bump
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  claws-mail-fancy-0.9.15.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  11 Apr 2012; Christian Faulhammer <fauli@gentoo.org>
+  -claws-mail-fancy-0.9.14.ebuild:
+  clean up
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> claws-mail-fancy-0.9.15.ebuild:
+  x86 stable, bug #387547
+
+  04 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #206112
+
+  25 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  claws-mail-fancy-0.9.15.ebuild:
+  Stable for amd64, wrt bug #387547
+
+*claws-mail-fancy-0.9.15 (26 Dec 2011)
+
+  26 Dec 2011; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-fancy-0.9.15.ebuild:
+  version bump for bug 395381 by Justin
+
+  26 Dec 2011; Christian Faulhammer <fauli@gentoo.org>
+  -claws-mail-fancy-0.9.13.ebuild:
+  clean up
+
+  29 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  claws-mail-fancy-0.9.14.ebuild:
+  Stable on amd64 wrt bug #387547
+
+  24 Oct 2011; Markus Meier <maekke@gentoo.org> claws-mail-fancy-0.9.14.ebuild:
+  x86 stable, bug #387547
+
+*claws-mail-fancy-0.9.14 (30 Aug 2011)
+
+  30 Aug 2011; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-fancy-0.9.14.ebuild:
+  version bump
 
   31 Jul 2011; Christian Faulhammer <fauli@gentoo.org>
   -claws-mail-fancy-0.9.12.ebuild:

@@ -1,6 +1,75 @@
 # ChangeLog for dev-util/buildbot-slave
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/buildbot-slave/ChangeLog,v 1.17 2011/03/23 21:31:08 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/buildbot-slave/ChangeLog,v 1.34 2012/12/01 19:57:59 armin76 Exp $
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> buildbot-slave-0.8.7.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #441306
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> buildbot-slave-0.8.7.ebuild:
+  Stable for x86, wrt bug #441306
+
+  13 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  buildbot-slave-0.8.7.ebuild:
+  stable arm, bug #441306
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> buildbot-slave-0.8.7.ebuild:
+  Stable for HPPA (bug #441306).
+
+  06 Nov 2012; Agostino Sarubbo <ago@gentoo.org> buildbot-slave-0.8.7.ebuild:
+  Stable for amd64, wrt bug #441306
+
+  06 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  buildbot-slave-0.8.7.ebuild:
+  stable ppc ppc64, bug #441306
+
+  01 Oct 2012; Dirkjan Ochtman <djc@gentoo.org> buildbot-slave-0.8.7.ebuild:
+  Fix dependency on Twisted.
+
+*buildbot-slave-0.8.7 (30 Sep 2012)
+
+  30 Sep 2012; Dirkjan Ochtman <djc@gentoo.org> +buildbot-slave-0.8.7.ebuild:
+  Version bump to 0.8.7.
+
+  30 Sep 2012; Dirkjan Ochtman <djc@gentoo.org> files/buildslave.initd:
+  Let s-s-d know about custom pidfile (bug 397759, thanks to jbergstroem).
+
+  08 Jun 2012; Tim Harder <radhermit@gentoo.org> buildbot-slave-0.8.3.ebuild,
+  buildbot-slave-0.8.5.ebuild, buildbot-slave-0.8.6.ebuild,
+  buildbot-slave-0.8.6_p1.ebuild:
+  Drop unused eutils inherit.
+
+  07 Jun 2012; Zac Medico <zmedico@gentoo.org> buildbot-slave-0.8.3.ebuild,
+  buildbot-slave-0.8.5.ebuild, buildbot-slave-0.8.6.ebuild,
+  buildbot-slave-0.8.6_p1.ebuild:
+  inherit user for enewuser
+
+*buildbot-slave-0.8.6_p1 (23 Apr 2012)
+
+  23 Apr 2012; Patrick Lauer <patrick@gentoo.org>
+  +buildbot-slave-0.8.6_p1.ebuild:
+  Bump
+
+  29 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> -buildbot-slave-0.8.4.ebuild:
+  Remove old version.
+
+*buildbot-slave-0.8.6 (29 Mar 2012)
+
+  29 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> +buildbot-slave-0.8.6.ebuild:
+  Version bump to 0.8.6.
+
+*buildbot-slave-0.8.5 (26 Dec 2011)
+
+  26 Dec 2011; Dirkjan Ochtman <djc@gentoo.org> +buildbot-slave-0.8.5.ebuild:
+  Version bump to 0.8.5.
+
+*buildbot-slave-0.8.4 (03 Sep 2011)
+
+  03 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> +buildbot-slave-0.8.4.ebuild,
+  files/buildslave.initd:
+  Version bump to 0.8.4.
+
+  22 Aug 2011; Markus Duft <mduft@gentoo.org> buildbot-slave-0.8.3.ebuild:
+  keyworded ~x86-interix
 
   23 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org>
   buildbot-slave-0.8.3.ebuild:
@@ -65,4 +134,3 @@
   +buildbot-slave-0.8.2.ebuild, +files/buildslave.confd,
   +files/buildslave.initd, +metadata.xml:
   Initial addition. Ebuild written by me.
-

@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/xdvik/xdvik-22.84.16.ebuild,v 1.13 2010/11/11 15:54:15 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/xdvik/xdvik-22.84.16.ebuild,v 1.18 2012/10/24 19:01:38 ulm Exp $
 
 EAPI=3
 inherit eutils flag-o-matic elisp-common toolchain-funcs
@@ -18,12 +18,19 @@ RDEPEND=">=media-libs/t1lib-5.0.2
 	x11-libs/libXmu
 	x11-libs/libXp
 	x11-libs/libXpm
-	motif? ( >=x11-libs/openmotif-2.3:0 )
-	!motif? ( neXt? ( x11-libs/neXtaw )
-		!neXt? ( Xaw3d? ( x11-libs/Xaw3d ) ) )
+	motif? ( >=x11-libs/motif-2.3:0 )
+	!motif? (
+		neXt? ( x11-libs/neXtaw )
+		!neXt? (
+			Xaw3d? ( x11-libs/libXaw3d )
+			!Xaw3d? ( x11-libs/libXaw )
+		)
+	)
 	virtual/latex-base
 	!<app-text/texlive-2007"
-DEPEND="${RDEPEND}"
+DEPEND="sys-devel/flex
+	virtual/yacc
+	${RDEPEND}"
 TEXMF_PATH=/usr/share/texmf
 S=${WORKDIR}/${P}/texk/xdvik
 
@@ -46,8 +53,11 @@ src_configure() {
 
 	if use motif ; then
 		toolkit="motif"
+		use neXt && ewarn "neXt USE flag ignored (superseded by motif)"
+		use Xaw3d && ewarn "Xaw3d USE flag ignored (superseded by motif)"
 	elif use neXt ; then
 		toolkit="neXtaw"
+		use Xaw3d && ewarn "Xaw3d USE flag ignored (superseded by neXt)"
 	elif use Xaw3d ; then
 		toolkit="xaw3d"
 	else

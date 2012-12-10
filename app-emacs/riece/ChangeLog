@@ -1,6 +1,30 @@
 # ChangeLog for app-emacs/riece
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/riece/ChangeLog,v 1.78 2009/12/01 12:22:22 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/riece/ChangeLog,v 1.85 2012/10/02 08:01:56 kensington Exp $
+
+  02 Oct 2012; Michael Palimaka <kensington@gentoo.org> -riece-6.1.0.ebuild:
+  Remove old.
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> riece-6.1.0.ebuild,
+  riece-8.0.0.ebuild:
+  Drop alpha keywords
+
+  22 May 2012; Brent Baude <ranger@gentoo.org> riece-8.0.0.ebuild:
+  Marking riece-8.0.0 ppc for bug 415067
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> riece-8.0.0.ebuild:
+  x86 stable wrt bug #415067
+
+  08 May 2012; Agostino Sarubbo <ago@gentoo.org> riece-8.0.0.ebuild:
+  Stable for amd64, wrt bug #415067
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> riece-8.0.0.ebuild:
+  Marking riece-8.0.0 ppc64 for bug 415067
+
+*riece-8.0.0 (19 Mar 2012)
+
+  19 Mar 2012; Ulrich Müller <ulm@gentoo.org> +riece-8.0.0.ebuild:
+  Version bump.
 
   01 Dec 2009; Christian Faulhammer <fauli@gentoo.org> -riece-5.0.0.ebuild:
   clean up
@@ -307,4 +331,3 @@
   07 Aug 2003; Mamoru KOMACHI <usata@gentoo.org> riece-0.0.4.ebuild,
   files/50riece-gentoo.el:
   Initial import
-

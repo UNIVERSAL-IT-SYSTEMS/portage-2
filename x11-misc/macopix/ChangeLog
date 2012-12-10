@@ -1,6 +1,18 @@
 # ChangeLog for x11-misc/macopix
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/macopix/ChangeLog,v 1.20 2011/03/02 17:44:48 signals Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/macopix/ChangeLog,v 1.24 2012/10/12 17:40:56 ago Exp $
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> macopix-1.7.4.ebuild:
+  Stable for amd64, wrt bug #322851
+
+  12 Oct 2012; Sergey Popov <pinkbyte@gentoo.org> macopix-1.7.4.ebuild:
+  Fix QA issues: add missing die statements, escape variables
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> macopix-1.7.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  04 Dec 2011; Jeroen Roovers <jer@gentoo.org> macopix-1.7.4.ebuild:
+  Fix underlinking (bug #368891).
 
   02 Mar 2011; Kevin McCarthy <signals@gentoo.org> macopix-1.7.4.ebuild:
   Slotted gtk+ and glib depends and EAPI=2 bump to support it.

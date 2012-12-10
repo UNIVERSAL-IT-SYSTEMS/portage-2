@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/autoconf/autoconf-2.13.ebuild,v 1.19 2011/03/15 23:08:03 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/autoconf/autoconf-2.13.ebuild,v 1.21 2012/09/26 05:06:03 vapier Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="${PV:0:3}"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 IUSE=""
 
 DEPEND=">=sys-apps/texinfo-4.3
@@ -41,6 +41,12 @@ src_compile() {
 	#
 	# need to force locale to C to avoid bugs in the old
 	# configure script breaking the install paths #351982
+	#
+	# force to `awk` so that we don't encode another awk that
+	# happens to currently be installed, but might later be
+	# uninstalled (like mawk).  same for m4.
+	ac_cv_path_M4=m4 \
+	ac_cv_prog_AWK=awk \
 	LC_ALL=C \
 	econf \
 		--exec-prefix=/usr \

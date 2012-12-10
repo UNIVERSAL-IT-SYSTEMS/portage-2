@@ -1,6 +1,104 @@
 # ChangeLog for app-cdr/xfburn
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/xfburn/ChangeLog,v 1.34 2011/04/27 20:24:50 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/xfburn/ChangeLog,v 1.55 2012/11/28 12:36:56 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfburn-0.4.3_p20120601.ebuild,
+  -files/xfburn-0.4.3-empty_directory_segmentation_fault-2.patch:
+  old
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfburn-0.4.3_p20121021.ebuild:
+  EAPI=5
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfburn-0.4.3_p20121021.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfburn-0.4.3_p20121021.ebuild:
+  ppc stable wrt #429484
+
+  16 Nov 2012; Andreas Schuerch <nativemad@gentoo.org>
+  xfburn-0.4.3_p20121021.ebuild:
+  x86 stable, see bug 429484
+
+  27 Oct 2012; <ago@gentoo.org> xfburn-0.4.3_p20121021.ebuild:
+  Stable for amd64, wrt bug #429484
+
+  21 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> -xfburn-0.4.3-r3.ebuild,
+  -files/xfburn-0.4.3-gobject_h.patch,
+  -files/xfburn-0.4.3-update_desktop_entry.patch:
+  old
+
+*xfburn-0.4.3_p20121021 (21 Oct 2012)
+
+  21 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfburn-0.4.3_p20121021.ebuild:
+  New snapshot which allows dropping the last patch and sed hackery from the
+  ebuild.
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> xfburn-0.4.3_p20120601.ebuild:
+  Marking xfburn-0.4.3_p20120601 ppc for bug 424537
+
+  03 Jul 2012; Agostino Sarubbo <ago@gentoo.org> xfburn-0.4.3_p20120601.ebuild:
+  Stable for amd64, wrt bug #424537
+
+  03 Jul 2012; Jeff Horelick <jdhore@gentoo.org> xfburn-0.4.3_p20120601.ebuild:
+  marked x86 per bug 424537
+
+  15 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfburn-0.4.3_p20120601.ebuild:
+  Stop using eautoreconf to avoid glib-gettextize and call intltoolize,
+  _elibtoolize, eaclocal, eautoconf, eautoheader and eautomake by hand wrt
+  #420639
+
+*xfburn-0.4.3_p20120601 (31 May 2012)
+
+  31 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfburn-0.4.3_p20120601.ebuild:
+  Use latest from git which should be reasonable stable.
+
+  31 May 2012; Zac Medico <zmedico@gentoo.org> xfburn-0.4.3-r3.ebuild:
+  inherit eutils for epatch
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> xfburn-0.4.3-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  03 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> xfburn-0.4.3-r3.ebuild,
+  +files/xfburn-0.4.3-gobject_h.patch:
+  Fix building with dev-libs/glib >= 2.32 and Xfce 4.10 pre1 (missing #include
+  for glib-object.h)
+
+  02 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -xfburn-0.4.3-r1.ebuild,
+  -xfburn-0.4.3-r2.ebuild,
+  -files/xfburn-0.4.3-empty_directory_segmentation_fault.patch:
+  old
+
+  02 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> xfburn-0.4.3-r3.ebuild:
+  ppc stable wrt #395727
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> xfburn-0.4.3-r3.ebuild:
+  x86 stable wrt #395727
+
+  23 Dec 2011; Agostino Sarubbo <ago@gentoo.org> xfburn-0.4.3-r3.ebuild:
+  Stable for AMD64, wrt bug #395727
+
+*xfburn-0.4.3-r3 (24 Nov 2011)
+
+  24 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +xfburn-0.4.3-r3.ebuild,
+  +files/xfburn-0.4.3-empty_directory_segmentation_fault-2.patch:
+  Use Debian patchset to port from obsolete thunar-vfs layer to libgio-2.0.
+
+  29 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> xfburn-0.4.3-r2.ebuild,
+  +files/xfburn-0.4.3-update_desktop_entry.patch:
+  Update .desktop entry to latest specification wrt #388827 by Klaus Kusche
+
+*xfburn-0.4.3-r2 (23 Oct 2011)
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +xfburn-0.4.3-r2.ebuild,
+  +files/xfburn-0.4.3-empty_directory_segmentation_fault.patch:
+  Fix segmentation fault with empty directories wrt #331135 by "Vladimir"
 
   27 Apr 2011; Christoph Mende <angelos@gentoo.org> xfburn-0.4.3-r1.ebuild:
   Fixed gstreamer slot deps

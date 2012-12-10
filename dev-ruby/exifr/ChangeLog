@@ -1,6 +1,34 @@
 # ChangeLog for dev-ruby/exifr
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/exifr/ChangeLog,v 1.23 2011/07/24 06:05:49 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/exifr/ChangeLog,v 1.30 2012/08/14 18:33:46 flameeyes Exp $
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  05 Aug 2012; Hans de Graaff <graaff@gentoo.org> -exifr-1.1.1.ebuild,
+  -exifr-1.1.2.ebuild:
+  Cleanup.
+
+*exifr-1.1.3 (05 Jul 2012)
+
+  05 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> +exifr-1.1.3.ebuild:
+  Version bump.
+
+*exifr-1.1.2 (21 Feb 2012)
+
+  21 Feb 2012; Hans de Graaff <graaff@gentoo.org> +exifr-1.1.2.ebuild:
+  Version bump.
+
+  21 Feb 2012; Hans de Graaff <graaff@gentoo.org> -exifr-1.0.6.ebuild:
+  Remove old version.
+
+*exifr-1.1.1 (13 Sep 2011)
+
+  13 Sep 2011; Hans de Graaff <graaff@gentoo.org> +exifr-1.1.1.ebuild:
+  Version bump.
+
+  13 Sep 2011; Hans de Graaff <graaff@gentoo.org> -exifr-1.0.5.ebuild:
+  Remove old version.
 
 *exifr-1.0.6 (24 Jul 2011)
 
@@ -101,4 +129,3 @@
   15 Jan 2008; Aggelos Orfanakos <agorf@gentoo.org> +metadata.xml,
   +exifr-0.10.6.ebuild:
   Initial import.
-

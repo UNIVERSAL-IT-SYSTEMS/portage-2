@@ -1,6 +1,34 @@
 # ChangeLog for dev-perl/ShipIt
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/ShipIt/ChangeLog,v 1.8 2010/06/11 05:37:55 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/ShipIt/ChangeLog,v 1.15 2012/11/18 11:35:07 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+*ShipIt-0.580.0 (12 Nov 2012)
+
+  12 Nov 2012; Torsten Veller <tove@gentoo.org> +ShipIt-0.580.0.ebuild:
+  Version bump
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -ShipIt-0.550.0.ebuild:
+  Cleanup
+
+*ShipIt-0.570.0 (24 Jul 2012)
+
+  24 Jul 2012; Torsten Veller <tove@gentoo.org> +ShipIt-0.570.0.ebuild,
+  metadata.xml:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -ShipIt-0.55.ebuild:
+  Cleanup
+
+*ShipIt-0.550.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +ShipIt-0.550.0.ebuild:
+  Change version scheme
 
   11 Jun 2010; Torsten Veller <tove@gentoo.org> -ShipIt-0.53.ebuild:
   Cleanup
@@ -34,4 +62,3 @@
   06 Feb 2008; Robin H. Johnson <robbat2@gentoo.org> +ShipIt-0.51.ebuild,
   +metadata.xml:
   Add useful CPAN handling tool. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

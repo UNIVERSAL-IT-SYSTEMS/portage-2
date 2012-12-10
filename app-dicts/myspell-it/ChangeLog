@@ -1,6 +1,22 @@
 # ChangeLog for app-dicts/myspell-it
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-it/ChangeLog,v 1.18 2010/09/27 23:35:37 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-it/ChangeLog,v 1.21 2012/06/13 13:36:47 scarabeus Exp $
+
+*myspell-it-20081129-r1 (13 Jun 2012)
+
+  13 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -myspell-it-20060316.ebuild, -myspell-it-20081129.ebuild,
+  +myspell-it-20081129-r1.ebuild:
+  Revision bump to latest dictionary and stable it. Punt older.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> myspell-it-20060316.ebuild,
+  myspell-it-20081129.ebuild:
+  keyword ~amd64-fbsd
+
+*myspell-it-20081129 (19 Apr 2012)
+
+  19 Apr 2012; Davide Pesavento <pesa@gentoo.org> +myspell-it-20081129.ebuild:
+  Version bump, now with thesaurus too.
 
   27 Sep 2010; Mart Raudsepp <leio@gentoo.org> myspell-it-20060316.ebuild:
   Add ~mips

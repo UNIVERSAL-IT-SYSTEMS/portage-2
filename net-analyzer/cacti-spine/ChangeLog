@@ -1,6 +1,42 @@
 # ChangeLog for net-analyzer/cacti-spine
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cacti-spine/ChangeLog,v 1.26 2011/04/01 17:24:06 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/cacti-spine/ChangeLog,v 1.35 2012/05/21 19:10:55 xarthisius Exp $
+
+  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org> cacti-spine-0.8.7g.ebuild,
+  cacti-spine-0.8.7h.ebuild, cacti-spine-0.8.7i.ebuild:
+  Add missing inheritance of eutils.eclass
+
+  05 Apr 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  cacti-spine-0.8.7i.ebuild:
+  x86 stable wrt bug #404807
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> cacti-spine-0.8.7g.ebuild,
+  cacti-spine-0.8.7h.ebuild, cacti-spine-0.8.7i.ebuild:
+  Drop sparc keywords
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> cacti-spine-0.8.7i.ebuild:
+  Stable for amd64, wrt bug #404807
+
+  23 Dec 2011; Mark Loeser <halcy0n@gentoo.org> cacti-spine-0.8.7g.ebuild:
+  Drop stable ppc/ppc64
+
+*cacti-spine-0.8.7i (12 Dec 2011)
+
+  12 Dec 2011; Peter Volkov <pva@gentoo.org> +cacti-spine-0.8.7i.ebuild:
+  Version bump.
+
+  13 Nov 2011; Markus Meier <maekke@gentoo.org> cacti-spine-0.8.7h.ebuild:
+  x86 stable, bug #387661
+
+  20 Oct 2011; Tony Vroon <chainsaw@gentoo.org> cacti-spine-0.8.7h.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #387661.
+
+*cacti-spine-0.8.7h (02 Oct 2011)
+
+  02 Oct 2011; Peter Volkov <pva@gentoo.org> -cacti-spine-0.8.7e-r1.ebuild,
+  +cacti-spine-0.8.7h.ebuild:
+  Version bump. Drop old.
 
   01 Apr 2011; Kacper Kowalik <xarthisius@gentoo.org>
   cacti-spine-0.8.7g.ebuild:

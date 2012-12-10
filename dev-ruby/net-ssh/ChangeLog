@@ -1,6 +1,75 @@
 # ChangeLog for dev-ruby/net-ssh
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/net-ssh/ChangeLog,v 1.90 2011/06/04 17:06:29 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/net-ssh/ChangeLog,v 1.108 2012/12/08 12:31:56 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> net-ssh-2.2.2.ebuild:
+  Stable for ppc64, wrt bug #421345
+
+*net-ssh-2.6.2 (25 Nov 2012)
+
+  25 Nov 2012; Hans de Graaff <graaff@gentoo.org> +net-ssh-2.6.2.ebuild:
+  Version bump.
+
+*net-ssh-2.6.1 (23 Nov 2012)
+
+  23 Nov 2012; Hans de Graaff <graaff@gentoo.org> +net-ssh-2.6.1.ebuild:
+  Version bump. Ruby 1.8 is no longer supported upstream.
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  11 Aug 2012; Benedikt Böhm <hollow@gentoo.org> net-ssh-2.2.2.ebuild:
+  add ruby19 support
+
+  22 Jul 2012; <nixnut@gentoo.org> net-ssh-2.2.2.ebuild:
+  ppc stable #421345
+
+  26 Jun 2012; Jeff Horelick <jdhore@gentoo.org> net-ssh-2.2.2.ebuild:
+  marked x86 per bug 421345
+
+  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> net-ssh-2.2.2.ebuild:
+  Stable for amd64, wrt bug #421345
+
+  17 Jun 2012; Hans de Graaff <graaff@gentoo.org> net-ssh-2.2.2.ebuild:
+  Drop ruby19 to create a new stable candidate, too many dependencies are not
+  stable yet.
+
+  17 Jun 2012; Hans de Graaff <graaff@gentoo.org> -net-ssh-2.2.1.ebuild:
+  Remove old version.
+
+*net-ssh-2.4.0 (19 May 2012)
+
+  19 May 2012; Hans de Graaff <graaff@gentoo.org> +net-ssh-2.4.0.ebuild:
+  Version bump.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> net-ssh-2.0.23.ebuild,
+  net-ssh-2.1.3.ebuild, net-ssh-2.2.1.ebuild, net-ssh-2.2.2.ebuild:
+  Drop ia64/sparc keywords
+
+*net-ssh-2.2.2 (05 Jan 2012)
+
+  05 Jan 2012; Hans de Graaff <graaff@gentoo.org> +net-ssh-2.2.2.ebuild:
+  Version bump.
+
+  28 Dec 2011; Hans de Graaff <graaff@gentoo.org> -net-ssh-2.1.4.ebuild,
+  -net-ssh-2.2.0.ebuild:
+  Remove old versions.
+
+  28 Dec 2011; Hans de Graaff <graaff@gentoo.org> net-ssh-2.0.23.ebuild:
+  Drop ruby19 from stable version.
+
+*net-ssh-2.2.1 (26 Aug 2011)
+
+  26 Aug 2011; Hans de Graaff <graaff@gentoo.org> +net-ssh-2.2.1.ebuild:
+  Version bump.
+
+*net-ssh-2.2.0 (18 Aug 2011)
+
+  18 Aug 2011; Hans de Graaff <graaff@gentoo.org> +net-ssh-2.2.0.ebuild:
+  Version bump.
+
+  07 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> net-ssh-2.1.4.ebuild:
+  Add missing dependency over virtual/ruby-ssl.
 
   04 Jun 2011; Raúl Porcel <armin76@gentoo.org> net-ssh-2.1.3.ebuild:
   ia64 stable wrt #321103
@@ -364,4 +433,3 @@
   10 Aug 2005; Michael Kohl <citizen428@gentoo.org> +metadata.xml,
   +net-ssh-1.0.2.ebuild:
   Initial import as requested in bug #101243.
-

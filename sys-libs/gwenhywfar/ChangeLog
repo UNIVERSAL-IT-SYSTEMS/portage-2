@@ -1,6 +1,53 @@
 # ChangeLog for sys-libs/gwenhywfar
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/gwenhywfar/ChangeLog,v 1.90 2011/03/13 15:39:06 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/gwenhywfar/ChangeLog,v 1.105 2012/08/21 09:48:31 johu Exp $
+
+  21 Aug 2012; Johannes Huber <johu@gentoo.org> gwenhywfar-4.3.3.ebuild:
+  Stable for x86, wrt bug #422227
+
+  15 Aug 2012; Jeroen Roovers <jer@gentoo.org> gwenhywfar-4.3.3.ebuild:
+  Stable for HPPA (bug #422227).
+
+  13 Aug 2012; Anthony G. Basile <blueness@gentoo.org> gwenhywfar-4.3.3.ebuild:
+  Stable ppc, bug #422227
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> gwenhywfar-4.3.3.ebuild:
+  Stable for amd64, wrt bug #422227
+
+  07 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> -gwenhywfar-4.0.2.ebuild,
+  -gwenhywfar-4.0.7.ebuild, -gwenhywfar-4.3.1.ebuild:
+  old
+
+*gwenhywfar-4.3.3 (13 May 2012)
+
+  13 May 2012; Hanno Boeck <hanno@gentoo.org> +gwenhywfar-4.3.3.ebuild:
+  Version bump.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gwenhywfar-4.0.2.ebuild,
+  gwenhywfar-4.0.7.ebuild, gwenhywfar-4.2.1.ebuild, gwenhywfar-4.3.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> gwenhywfar-4.2.1.ebuild:
+  x86 stable, bug #397851
+
+  17 Jan 2012; Jeroen Roovers <jer@gentoo.org> gwenhywfar-4.2.1.ebuild:
+  Stable for HPPA (bug #397851).
+
+  09 Jan 2012; Agostino Sarubbo <ago@gentoo.org> gwenhywfar-4.2.1.ebuild:
+  Stable for AMD64, wrt bug #397851
+
+  09 Jan 2012; Brent Baude <ranger@gentoo.org> gwenhywfar-4.2.1.ebuild:
+  Marking gwenhywfar-4.2.1 ppc for bug 397851
+
+*gwenhywfar-4.3.1 (06 Jan 2012)
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +gwenhywfar-4.3.1.ebuild:
+  Version bump wrt #395085 by Hannan Sadar
+
+*gwenhywfar-4.2.1 (21 Aug 2011)
+
+  21 Aug 2011; Hanno Boeck <hanno@gentoo.org> +gwenhywfar-4.2.1.ebuild:
+  Version bump.
 
   13 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org> gwenhywfar-4.0.2.ebuild:
   ppc stable wrt #355077
@@ -368,4 +415,3 @@
 
   24 Nov 2004; Hanno Boeck <hanno@gentoo.org> +gwenhywfar-1.3.ebuild:
   Initial commit, ebuild by Florian Müller in bug #65401.
-

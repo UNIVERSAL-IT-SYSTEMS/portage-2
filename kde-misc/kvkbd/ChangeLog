@@ -1,6 +1,13 @@
 # ChangeLog for kde-misc/kvkbd
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/kvkbd/ChangeLog,v 1.5 2011/06/17 13:21:18 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/kvkbd/ChangeLog,v 1.7 2011/10/29 00:25:05 abcd Exp $
+
+  29 Oct 2011; Jonathan Callen <abcd@gentoo.org> kvkbd-0.6.ebuild:
+  Bump to EAPI=4
+
+  11 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org> kvkbd-0.6.ebuild,
+  +files/kvkbd-0.6-underlinking.patch:
+  Fix underlinking, bug 372051
 
   17 Jun 2011; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
   Switch maintainers from desktop-misc to kde.

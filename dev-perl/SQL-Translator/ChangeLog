@@ -1,6 +1,70 @@
 # ChangeLog for dev-perl/SQL-Translator
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/SQL-Translator/ChangeLog,v 1.19 2011/07/29 17:06:04 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/SQL-Translator/ChangeLog,v 1.32 2012/11/18 11:36:38 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+  11 Nov 2012; Torsten Veller <tove@gentoo.org>
+  SQL-Translator-0.110.160.ebuild:
+  Depends on Moo-1.0.3 or later (#442626)
+
+*SQL-Translator-0.110.160 (03 Nov 2012)
+
+  03 Nov 2012; Torsten Veller <tove@gentoo.org>
+  +SQL-Translator-0.110.160.ebuild:
+  Version bump
+
+*SQL-Translator-0.110.150 (07 Oct 2012)
+
+  07 Oct 2012; Torsten Veller <tove@gentoo.org>
+  +SQL-Translator-0.110.150.ebuild, metadata.xml:
+  Version bump
+
+*SQL-Translator-0.110.130 (23 Sep 2012)
+
+  23 Sep 2012; Torsten Veller <tove@gentoo.org>
+  +SQL-Translator-0.110.130.ebuild:
+  Version bump
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  SQL-Translator-0.110.120.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  29 Jul 2012; Torsten Veller <tove@gentoo.org>
+  -SQL-Translator-0.110.100.ebuild, -SQL-Translator-0.110.110.ebuild:
+  Cleanup
+
+*SQL-Translator-0.110.120 (03 Jul 2012)
+
+  03 Jul 2012; Torsten Veller <tove@gentoo.org>
+  +SQL-Translator-0.110.120.ebuild, metadata.xml:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*SQL-Translator-0.110.110 (20 May 2012)
+
+  20 May 2012; Robin H. Johnson <robbat2@gentoo.org>
+  SQL-Translator-0.110.100.ebuild, +SQL-Translator-0.110.110.ebuild:
+  Version bump via perl-bump experimental tool.
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org>
+  -SQL-Translator-0.110.80.ebuild, -SQL-Translator-0.110.90.ebuild:
+  Cleanup
+
+*SQL-Translator-0.110.100 (19 Oct 2011)
+
+  19 Oct 2011; Torsten Veller <tove@gentoo.org>
+  +SQL-Translator-0.110.100.ebuild:
+  Version bump
+
+*SQL-Translator-0.110.90 (05 Sep 2011)
+
+  05 Sep 2011; Torsten Veller <tove@gentoo.org>
+  +SQL-Translator-0.110.90.ebuild:
+  Version bump
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org>
   -SQL-Translator-0.110.70.ebuild:
@@ -98,4 +162,3 @@
   23 Jun 2009; Robin H. Johnson <robbat2@gentoo.org>
   +SQL-Translator-0.09006.ebuild, +metadata.xml:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

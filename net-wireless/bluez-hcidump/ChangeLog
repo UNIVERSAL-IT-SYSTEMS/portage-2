@@ -1,6 +1,110 @@
 # ChangeLog for net-wireless/bluez-hcidump
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez-hcidump/ChangeLog,v 1.49 2011/05/15 16:16:10 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez-hcidump/ChangeLog,v 1.78 2012/12/07 23:09:44 ago Exp $
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> bluez-hcidump-2.4.ebuild:
+  Stable for ppc64, wrt bug #411015
+
+  18 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Remove pda@ because this isn't exactly related to PDAs.
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> -bluez-hcidump-2.0.ebuild,
+  -bluez-hcidump-2.2.ebuild, -bluez-hcidump-2.3.ebuild,
+  -files/bluez-hcidump-2.0-bluez-4.9x.patch, metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML, remove old.
+
+  24 Aug 2012; Michael Weber <xmw@gentoo.org> bluez-hcidump-2.4.ebuild:
+  ppc stable (bug 422161).
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> bluez-hcidump-2.3.ebuild:
+  ppc stable (bug 411015).
+
+  12 Jul 2012; Jeroen Roovers <jer@gentoo.org> bluez-hcidump-2.4.ebuild:
+  Stable for HPPA (bug #422161).
+
+  08 Jul 2012; Johannes Huber <johu@gentoo.org> bluez-hcidump-2.4.ebuild:
+  Stable for x86, wrt bug #422161
+
+  08 Jul 2012; Markos Chandras <hwoarang@gentoo.org> bluez-hcidump-2.4.ebuild:
+  Stable on amd64 wrt bug #422161
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> bluez-hcidump-2.0.ebuild,
+  bluez-hcidump-2.2.ebuild, bluez-hcidump-2.3.ebuild, bluez-hcidump-2.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Mike Frysinger <vapier@gentoo.org> bluez-hcidump-2.3.ebuild,
+  bluez-hcidump-2.4.ebuild:
+  Add arm love.
+
+*bluez-hcidump-2.4 (26 Apr 2012)
+
+  26 Apr 2012; Pacho Ramos <pacho@gentoo.org> +bluez-hcidump-2.4.ebuild:
+  Version bump.
+
+  11 Apr 2012; Jeff Horelick <jdhore@gentoo.org> bluez-hcidump-2.3.ebuild:
+  marked x86 per bug 411015
+
+  11 Apr 2012; Jeroen Roovers <jer@gentoo.org> bluez-hcidump-2.3.ebuild:
+  Stable for HPPA (bug #411015).
+
+  10 Apr 2012; Agostino Sarubbo <ago@gentoo.org> bluez-hcidump-2.3.ebuild:
+  Stable for amd64, wrt bug #411015
+
+*bluez-hcidump-2.3 (08 Mar 2012)
+
+  08 Mar 2012; Pacho Ramos <pacho@gentoo.org> +bluez-hcidump-2.3.ebuild:
+  Version bump.
+
+  05 Mar 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Remove betelgeuse
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> bluez-hcidump-2.2.ebuild:
+  ppc stable wrt #399745
+
+  12 Feb 2012; Jeff Horelick <jdhore@gentoo.org> bluez-hcidump-2.2.ebuild:
+  x86 stable per bug 399745
+
+  09 Feb 2012; Pacho Ramos <pacho@gentoo.org> -bluez-hcidump-2.1.ebuild,
+  metadata.xml:
+  Reorder maintainers per their availability.
+
+  07 Feb 2012; Jeroen Roovers <jer@gentoo.org> bluez-hcidump-2.2.ebuild:
+  Stable for HPPA (bug #399745).
+
+  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> bluez-hcidump-2.2.ebuild:
+  Stable for amd64, wrt bug #399745
+
+  22 Jan 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Adding me as comaintainer.
+
+*bluez-hcidump-2.2 (22 Jan 2012)
+
+  22 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +bluez-hcidump-2.2.ebuild:
+  Version bump wrt #399547 by Talamona Francesco
+
+*bluez-hcidump-2.1 (04 Nov 2011)
+
+  04 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +bluez-hcidump-2.1.ebuild:
+  Version bump wrt #389283 by "df"
+
+  02 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -bluez-hcidump-1.42.ebuild:
+  old
+
+  26 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> bluez-hcidump-2.0.ebuild:
+  ppc stable wrt #377029
+
+  16 Sep 2011; Jeroen Roovers <jer@gentoo.org> bluez-hcidump-2.0.ebuild:
+  Stable for HPPA (bug #377029).
+
+  07 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  bluez-hcidump-2.0.ebuild:
+  x86 stable wrt bug #377029
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> bluez-hcidump-2.0.ebuild:
+  Stable on amd64 wrt bug #377029
 
 *bluez-hcidump-2.0 (15 May 2011)
 

@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/openocd/openocd-0.4.0.ebuild,v 1.1 2011/02/22 17:09:37 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/openocd/openocd-0.4.0.ebuild,v 1.5 2012/06/01 02:26:43 zmedico Exp $
 
-EGIT_REPO_URI="git://openocd.git.sourceforge.net/gitroot/openocd/openocd"
-inherit eutils
+EGIT_REPO_URI="git://${PN}.git.sourceforge.net/gitroot/${PN}/${PN}"
+inherit eutils multilib
 if [[ ${PV} == "9999" ]] ; then
-	inherit git autotools
+	inherit git-2 autotools
 	#KEYWORDS=""
 	SRC_URI=""
 else
@@ -14,7 +14,7 @@ else
 fi
 
 DESCRIPTION="OpenOCD - Open On-Chip Debugger"
-HOMEPAGE="http://openocd.berlios.de/web/"
+HOMEPAGE="http://openocd.sourceforge.net"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -22,7 +22,7 @@ IUSE="ftd2xx ftdi parport presto usb"
 RESTRICT="strip" # includes non-native binaries
 
 # libftd2xx is the default because it is reported to work better.
-DEPEND="usb? ( dev-libs/libusb )
+DEPEND="usb? ( =virtual/libusb-0* )
 	presto? ( dev-embedded/libftd2xx )
 	ftd2xx? ( dev-embedded/libftd2xx )
 	ftdi? ( dev-embedded/libftdi )"
@@ -37,7 +37,7 @@ pkg_setup() {
 
 src_unpack() {
 	if [[ ${PV} == "9999" ]] ; then
-		git_src_unpack
+		git-2_src_unpack
 		cd "${S}"
 		eautoreconf
 	else

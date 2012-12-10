@@ -1,18 +1,18 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/premake/premake-4.3.ebuild,v 1.1 2011/05/01 21:57:24 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/premake/premake-4.3.ebuild,v 1.5 2012/02/22 12:14:03 titanofold Exp $
 
 EAPI="4"
 
 inherit eutils
 
 DESCRIPTION="A makefile generation tool"
-HOMEPAGE="http://premake.berlios.de/"
+HOMEPAGE="http://industriousone.com/premake"
 SRC_URI="mirror://sourceforge/premake/${P}-src.zip"
 
-LICENSE="GPL-2"
+LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 DEPEND="app-arch/unzip"
@@ -28,5 +28,5 @@ src_compile() {
 }
 
 src_install() {
-	dobin bin/release/premake4 || die
+	dobin bin/release/premake4
 }

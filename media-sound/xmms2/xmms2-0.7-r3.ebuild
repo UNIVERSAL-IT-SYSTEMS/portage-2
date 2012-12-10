@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/xmms2/xmms2-0.7-r3.ebuild,v 1.2 2011/04/03 21:12:49 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/xmms2/xmms2-0.7-r3.ebuild,v 1.6 2012/11/16 09:30:51 slyfox Exp $
 
 EAPI=3
 
@@ -44,7 +44,7 @@ RDEPEND="server? (
 		mms? ( virtual/ffmpeg
 			>=media-libs/libmms-0.3 )
 		modplug? ( media-libs/libmodplug )
-		mad? ( media-sound/madplay )
+		mad? ( media-libs/libmad )
 		mp3? ( >=media-sound/mpg123-1.5.1 )
 		musepack? ( media-sound/musepack-tools )
 		ofa? ( media-libs/libofa )
@@ -69,12 +69,14 @@ RDEPEND="server? (
 DEPEND="${RDEPEND}
 	=dev-lang/python-2*
 	python? ( dev-python/pyrex )
-	dev-util/pkgconfig"
+	perl? ( virtual/perl-Module-Build )
+	virtual/pkgconfig"
 
 S="${WORKDIR}/${MY_P}"
 
 PATCHES=("${FILESDIR}/xmms2-0.7DrNo-windres-build-fix.patch"
-	"${FILESDIR}/xmms2-0.7DrNo-missing-protos.patch")
+	"${FILESDIR}/xmms2-0.7DrNo-missing-protos.patch"
+	"${FILESDIR}/xmms2-0.7DrNo-XsParse-3.patch")
 
 # use_enable() is taken as proto
 # $1 - useflag
@@ -237,7 +239,7 @@ src_install() {
 
 pkg_postinst() {
 	elog "This version is built on experimental development code"
-	elog "If you encounter any errors report them at http://bugs.xmms2.xmms.se"
+	elog "If you encounter any errors report them at http://bugs.xmms2.org"
 	elog "and visit #xmms2 at irc://irc.freenode.net"
 	if use phonehome ; then
 		einfo ""

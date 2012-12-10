@@ -1,6 +1,39 @@
 # ChangeLog for perl-core/Time-HiRes
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/perl-core/Time-HiRes/ChangeLog,v 1.69 2011/06/10 11:47:26 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/perl-core/Time-HiRes/ChangeLog,v 1.79 2012/06/24 15:39:02 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> Time-HiRes-1.972.200.ebuild:
+  Marking Time-HiRes-1.972.200 ppc64 for bug 391567
+
+  02 Feb 2012; Brent Baude <ranger@gentoo.org> Time-HiRes-1.972.200.ebuild:
+  Marking Time-HiRes-1.972.200 ppc for bug 391567
+
+*Time-HiRes-1.972.500 (02 Feb 2012)
+
+  02 Feb 2012; Torsten Veller <tove@gentoo.org> +Time-HiRes-1.972.500.ebuild:
+  Version bump
+
+  17 Dec 2011; Raúl Porcel <armin76@gentoo.org> Time-HiRes-1.972.200.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #391567
+
+  14 Dec 2011; Agostino Sarubbo <ago@gentoo.org> Time-HiRes-1.972.200.ebuild:
+  Stable for AMD64, wrt bug #391567
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Time-HiRes-1.972.200.ebuild:
+  x86 stable wrt bug #391567
+
+  09 Dec 2011; Naohiro Aota <naota@gentoo.org> Time-HiRes-1.972.400.ebuild:
+  Add ~x86-fbsd
+
+  04 Dec 2011; Markus Meier <maekke@gentoo.org> Time-HiRes-1.972.200.ebuild:
+  arm stable, bug #391567
+
+  30 Nov 2011; Jeroen Roovers <jer@gentoo.org> Time-HiRes-1.972.200.ebuild:
+  Stable for HPPA (bug #391567).
 
 *Time-HiRes-1.972.400 (10 Jun 2011)
 

@@ -1,6 +1,170 @@
 # ChangeLog for sys-auth/consolekit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/consolekit/ChangeLog,v 1.111 2011/07/24 17:48:17 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/consolekit/ChangeLog,v 1.146 2012/11/28 23:07:02 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild, consolekit-0.4.5_p20120320-r1.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+  22 Nov 2012; Anthony G. Basile <blueness@gentoo.org> ChangeLog:
+  Fix failed gpg signing of manifest
+
+  22 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  consolekit-0.4.5_p20120320-r1.ebuild:
+  stable arm, bug #436666
+
+  22 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  consolekit-0.4.5_p20120320-r1.ebuild:
+  stable ppc64, bug #436666
+
+  22 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
+  consolekit-0.4.5_p20120320-r1.ebuild:
+  Stable for x86, tested by Vincent Olivert Riera <peratu@carrosses.com>, wrt
+  bug #436666
+
+  21 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  consolekit-0.4.5_p20120320-r1.ebuild:
+  stable ppc, bug #436666, thanks peratu
+
+  22 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild, consolekit-0.4.5_p20120320-r1.ebuild:
+  Revert last commit. We really don't want anyone using =sys-fs/udev-171* to
+  enable USE="extras" since it's obsolete for a long time now.
+
+  22 Oct 2012; William Hubbs <williamh@gentoo.org>
+  consolekit-0.4.5_p20120320-r1.ebuild, consolekit-0.4.5_p20120320.ebuild:
+  Emergency fix: I was told that the revision number 99 in the udev blockers
+  makes it impossible to install consolekit with stable udev when using the
+  desktop profiles.  I have dropped the udev revision number in the blocker to
+  8, which is the last valid stable udev revision instead of 99.
+
+  21 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild, consolekit-0.4.5_p20120320-r1.ebuild:
+  Update sys-fs/udev dependency because stable udev was revision bumped.
+
+  15 Oct 2012; Jeroen Roovers <jer@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild, consolekit-0.4.5_p20120320-r1.ebuild:
+  Drop HPPA keywording (bug #438368).
+
+  07 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  consolekit-0.4.5_p20120320-r1.ebuild:
+  Stable for amd64, wrt bug #436666
+
+  05 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  consolekit-0.4.5_p20120320-r1.ebuild:
+  Use prune_libtool_files and call it with the --all argument for libtool files
+  in /lib/security.
+
+*consolekit-0.4.5_p20120320-r1 (08 Aug 2012)
+
+  08 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +consolekit-0.4.5_p20120320-r1.ebuild:
+  Dummy revision bump to let upstream ./configure determine udevdir from
+  udev.pc pkg-config file.
+
+  30 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild:
+  Use temporary COMMON_DEPEND variable to move strictly runtime dependencies
+  out from DEPEND.
+
+  27 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> -files/consolekit-0.1.rc,
+  -files/consolekit-0.2.10-cleanup_console_tags.patch,
+  -files/consolekit-0.4.0-multilib.patch,
+  -files/consolekit-0.4.0-polkit-automagic.patch,
+  -files/consolekit-0.4.1-shutdown-reboot-without-policies.patch,
+  -consolekit-0.4.5-r1.ebuild:
+  old
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild:
+  alpha/ia64/sh/sparc stable wrt #416653
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild:
+  Stable for HPPA (bug #416653).
+
+  30 Jun 2012; <swift@gentoo.org> consolekit-0.4.5-r1.ebuild,
+  consolekit-0.4.5_p20120320.ebuild:
+  Add SELinux consolekit dependency when USE=selinux is set
+
+  28 May 2012; Markus Meier <maekke@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild:
+  arm stable, bug #416653
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild:
+  marked x86 per bug 416653
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild:
+  Regenerate docbook documentation for testsuite wrt #416721
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild:
+  Keyword ~alpha/~ia64/~sparc wrt #408967
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild:
+  ppc/ppc64 stable wrt #416653
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  consolekit-0.4.5_p20120320.ebuild:
+  Stable for amd64, wrt bug #416653
+
+  14 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -consolekit-0.4.5-r2.ebuild, -consolekit-0.4.5-r3.ebuild,
+  -files/consolekit-0.4.5-udev-acl.patch,
+  -files/consolekit-0.4.5-udev-acl-install_to_usr_and_missing_seat_d_symlink.pa
+  tch, -files/consolekit-0.4.5-udev-acl-missing-AC_SUBST.patch:
+  old
+
+*consolekit-0.4.5_p20120320 (14 May 2012)
+
+  14 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +consolekit-0.4.5_p20120320.ebuild,
+  +files/consolekit-0.4.5-polkit-automagic.patch,
+  +files/consolekit-cleanup_console_tags.patch,
+  +files/consolekit-shutdown-reboot-without-policies.patch,
+  +files/consolekit-udev-acl-install_to_usr.patch:
+  Use snapshot from upstream git to clean up patchset.
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> consolekit-0.4.5-r3.ebuild:
+  keyword ~amd64-fbsd
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> consolekit-0.4.5-r1.ebuild,
+  consolekit-0.4.5-r2.ebuild, consolekit-0.4.5-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  20 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  consolekit-0.4.5-r3.ebuild:
+  Check for kernel option TMPFS_POSIX_ACL with USE="acl" and ensure
+  sys-apps/coreutils is emerged with same wrt #376939 by Arne Stäcker
+
+  20 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  files/consolekit-0.4.5-udev-acl-install_to_usr_and_missing_seat_d_symlink.pat
+  ch:
+  Missing mkdir -p for $(DESTDIR)$(UDEVDIR) wrt #408973 by Richard Grenville
+
+*consolekit-0.4.5-r3 (20 Mar 2012)
+
+  20 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +consolekit-0.4.5-r3.ebuild, +files/consolekit-0.4.5-udev-acl.patch,
+  +files/consolekit-0.4.5-udev-acl-install_to_usr_and_missing_seat_d_symlink.pa
+  tch, +files/consolekit-0.4.5-udev-acl-missing-AC_SUBST.patch:
+  Move udev-acl from sys-fs/udev to here wrt #408713 by Rafał Mużyło
+
+*consolekit-0.4.5-r2 (20 Oct 2011)
+
+  20 Oct 2011; Ian Stakenvicius <axs@gentoo.org> +files/consolekit-0.2.rc,
+  +consolekit-0.4.5-r2.ebuild:
+  Removed keepdir on /var/run/ConsoleKit as per bug 387901
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -consolekit-0.4.4.ebuild,
+  -consolekit-0.4.5.ebuild:
+  old
+
+  20 Sep 2011; Jeroen Roovers <jer@gentoo.org> consolekit-0.4.5-r1.ebuild:
+  Stable for HPPA (bug #374687).
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> consolekit-0.4.5-r1.ebuild:
   alpha/ia64/sh/sparc stable wrt #374687
@@ -457,4 +621,3 @@
   24 Mar 2007; Steev Klimaszewski <steev@gentoo.org>
   +files/consolekit-0.1.rc, +metadata.xml, +consolekit-0.2.0.ebuild:
   New package, needed for GDM, but will hopefully soon replace pam_console
-

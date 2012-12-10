@@ -1,6 +1,39 @@
 # ChangeLog for mail-client/balsa
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/balsa/ChangeLog,v 1.111 2011/04/16 11:02:37 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/balsa/ChangeLog,v 1.120 2012/10/28 15:56:20 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> balsa-2.4.12.ebuild:
+  alpha/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> balsa-2.4.12.ebuild:
+  stable ppc, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> balsa-2.4.12.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> balsa-2.4.12.ebuild:
+  x86 stable wrt bug #427544
+
+*balsa-2.4.12 (30 Jun 2012)
+
+  30 Jun 2012; Pacho Ramos <pacho@gentoo.org> +balsa-2.4.12.ebuild:
+  Version bump.
+
+  08 May 2012; Julian Ospald <hasufell@gentoo.org> metadata.xml:
+  webkit is now global wrt #285743
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> balsa-2.4.8.ebuild,
+  balsa-2.4.11.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*balsa-2.4.11 (14 Apr 2012)
+
+  14 Apr 2012; Gilles Dartiguelongue <eva@gentoo.org> +balsa-2.4.11.ebuild,
+  +files/balsa-2.4.11-doc-fixes.patch:
+  Version bump, closes: #388169.
+
+  27 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> balsa-2.4.8.ebuild:
+  Use a slot dependency for gtkspell.
 
   16 Apr 2011; Ulrich Mueller <ulm@gentoo.org> balsa-2.4.8.ebuild:
   Fix dependency on aspell, bug 363379.

@@ -1,6 +1,74 @@
 # ChangeLog for dev-libs/librep
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/librep/ChangeLog,v 1.58 2011/07/20 16:46:58 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/librep/ChangeLog,v 1.78 2012/10/28 15:42:35 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> librep-0.92.2.1.ebuild:
+  ia64/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> librep-0.92.2.1.ebuild:
+  stable ppc, bug #427544
+
+  15 Oct 2012; Matt Turner <mattst88@gentoo.org> librep-0.92.2.1.ebuild:
+  Stable on alpha, bug 427544.
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> librep-0.92.2.1.ebuild:
+  stable ppc64, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> librep-0.92.2.1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> librep-0.92.2.1.ebuild:
+  x86 stable wrt bug #427544
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> librep-0.92.2.ebuild:
+  alpha/ia64/sparc stable wrt #410611
+
+*librep-0.92.2.1 (08 Jul 2012)
+
+  08 Jul 2012; Pacho Ramos <pacho@gentoo.org> +librep-0.92.2.1.ebuild:
+  Version bump.
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> librep-0.92.2.ebuild:
+  ppc/ppc64 stable wrt #410611
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> librep-0.92.2.ebuild:
+  x86 stable, bug #410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> librep-0.92.2.ebuild:
+  Stable for amd64, wrt bug #410611
+
+*librep-0.92.2 (27 Mar 2012)
+
+  27 Mar 2012; Pacho Ramos <pacho@gentoo.org> +librep-0.92.2.ebuild,
+  -librep-0.17-r2.ebuild, -librep-0.90.6.ebuild:
+  Version bump, remove old.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> librep-0.92.1.ebuild:
+  alpha/ia64/sparc stable wrt #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> librep-0.92.1.ebuild:
+  x86 stable wrt bug #385699
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> librep-0.92.1.ebuild:
+  ppc stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> librep-0.92.1.ebuild:
+  amd64 stable wrt #385699
+
+*librep-0.92.1 (12 Sep 2011)
+
+  12 Sep 2011; Pacho Ramos <pacho@gentoo.org> -librep-0.17.3.ebuild,
+  +files/librep-0.92.0-disable-elisp.patch, +librep-0.92.1.ebuild:
+  Version bump, drop .la files, remove old.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> librep-0.90.6.ebuild:
+  alpha/ia64/sparc stable wrt #376345
+
+  06 Aug 2011; Markus Meier <maekke@gentoo.org> librep-0.90.6.ebuild:
+  x86 stable, bug #376345
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> librep-0.90.6.ebuild:
+  Stable on amd64 wrt bug #376345
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Move to gnome herd as we were the backup herd for sawfish and both need to be

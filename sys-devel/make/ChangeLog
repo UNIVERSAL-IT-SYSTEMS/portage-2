@@ -1,6 +1,99 @@
 # ChangeLog for sys-devel/make
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/make/ChangeLog,v 1.82 2011/07/09 09:17:29 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/make/ChangeLog,v 1.106 2012/12/09 18:29:41 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> make-3.82-r4.ebuild:
+  Stable for ppc64, wrt bug #441528
+
+  09 Dec 2012; Markus Meier <maekke@gentoo.org> make-3.82-r4.ebuild:
+  arm stable, bug #441528
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> make-3.82-r4.ebuild:
+  Stable for ppc, wrt bug #441528
+
+  17 Oct 2012; Christoph Junghans <ottxor@gentoo.org>
+  +files/make-3.82-darwin-library_search-dylib.patch, make-3.82-r4.ebuild:
+  added prefix support (bug #434514)
+
+  05 Oct 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/make-3.82-construct-command-line.patch,
+  +files/make-3.82-intermediate-parallel.patch,
+  +files/make-3.82-long-command-line.patch, -files/make-3.82-long-cmdline.patch,
+  make-3.82-r4.ebuild:
+  Add some more fixes from upstream #431250 by Vladimir.
+
+  02 Sep 2012; Raúl Porcel <armin76@gentoo.org> make-3.82-r3.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #419941
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> make-3.82-r3.ebuild:
+  x86 stable, bug #419941
+
+  09 Aug 2012; Jeroen Roovers <jer@gentoo.org> make-3.82-r3.ebuild:
+  Stable for HPPA (bug #419941).
+
+  07 Aug 2012; Agostino Sarubbo <ago@gentoo.org> make-3.82-r3.ebuild:
+  Stable for amd64, wrt bug #419941
+
+  06 Aug 2012; Anthony G. Basile <blueness@gentoo.org> make-3.82-r3.ebuild:
+  Stable arm, bug #419941
+
+  06 Aug 2012; Anthony G. Basile <blueness@gentoo.org> make-3.82-r3.ebuild:
+  Stable ppc ppc64, bug #419941
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> make-3.81-r1.ebuild,
+  make-3.81-r2.ebuild, make-3.81.ebuild:
+  Inherit eutils for epatch.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> make-3.82-r3.ebuild:
+  keyword ~amd64-fbsd
+
+  30 Dec 2011; Mark Loeser <halcy0n@gentoo.org> make-3.82-r1.ebuild:
+  Stable for ppc64; bug #381199
+
+*make-3.82-r4 (03 Dec 2011)
+
+  03 Dec 2011; Mike Frysinger <vapier@gentoo.org> +make-3.82-r4.ebuild,
+  +files/make-3.82-copy-on-expand.patch, +files/make-3.82-long-cmdline.patch,
+  +files/make-3.82-oneshell.patch, +files/make-3.82-parallel-remake.patch:
+  Add some more fixes from upstream, and forward port the long cmdline patch
+  from 3.81 #300867 by Alexander Vershilov.
+
+  20 Oct 2011; Brent Baude <ranger@gentoo.org> make-3.82-r1.ebuild:
+  Marking make-3.82-r1 ppc for bug 381199
+
+  24 Sep 2011; Raúl Porcel <armin76@gentoo.org> make-3.82-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #381199
+
+  18 Sep 2011; Markus Meier <maekke@gentoo.org> make-3.82-r1.ebuild:
+  arm stable, bug #381199
+
+*make-3.82-r3 (17 Sep 2011)
+
+  17 Sep 2011; Mike Frysinger <vapier@gentoo.org> +make-3.82-r3.ebuild,
+  +files/make-3.82-glob-speedup.patch:
+  Add more complete glob optimization patch from upstream #382845 by Tomáš
+  Chvátal.
+
+  17 Sep 2011; Mike Frysinger <vapier@gentoo.org> -make-3.82-r2.ebuild,
+  -files/make-3.82-glob-speedup.patch:
+  Punt broken glob build #383311 by Lars Wendler.
+
+*make-3.82-r2 (17 Sep 2011)
+
+  17 Sep 2011; Mike Frysinger <vapier@gentoo.org> +make-3.82-r2.ebuild,
+  +files/make-3.82-glob-speedup.patch:
+  Add glob optimization patch from upstream #382845 by Tomáš Chvátal.
+
+  05 Sep 2011; Jeroen Roovers <jer@gentoo.org> make-3.82-r1.ebuild:
+  Stable for HPPA (bug #381199).
+
+  04 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> make-3.82-r1.ebuild:
+  x86 stable wrt bug #381199
+
+  31 Aug 2011; Tony Vroon <chainsaw@gentoo.org> make-3.82-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "ago" Sarubbo in bug #381199 filed by Mike "SpanKY"
+  Frysinger.
 
   09 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> make-3.82.ebuild:
   ppc/ppc64 stable wrt #367265

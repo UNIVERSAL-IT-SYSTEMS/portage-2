@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>sci</herd>
-<maintainer><email>nerdboy@gentoo.org</email></maintainer>
+<herd>sci-astronomy</herd>
 <longdescription lang="en">
   CFITSIO is a library of C and Fortran subroutines for reading and
   writing data files in FITS (Flexible Image Transport System) data
@@ -12,4 +11,8 @@
   features for manipulating and filtering the information in FITS
   files.
 </longdescription>
+<use>
+  <flag name="tools">Build execs fpack, funpack, imcopy, fitscopy, listhead
+  </flag>
+</use>
 </pkgmetadata>

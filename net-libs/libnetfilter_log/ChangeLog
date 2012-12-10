@@ -1,6 +1,34 @@
 # ChangeLog for net-libs/libnetfilter_log
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libnetfilter_log/ChangeLog,v 1.10 2010/10/07 04:28:53 wormo Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libnetfilter_log/ChangeLog,v 1.16 2012/10/07 09:59:21 pacho Exp $
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #72682
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> -libnetfilter_log-0.0.13.ebuild,
+  -libnetfilter_log-0.0.15.ebuild, -libnetfilter_log-0.0.16.ebuild,
+  -libnetfilter_log-1.0.0.ebuild, metadata.xml:
+  Wormo will only take care of bug wrangling, keep she only CCed to keep an eye
+  on this. Drop old.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  libnetfilter_log-0.0.15.ebuild, libnetfilter_log-0.0.16.ebuild,
+  libnetfilter_log-1.0.0.ebuild, libnetfilter_log-1.0.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  05 Jan 2012; Tim Harder <radhermit@gentoo.org> libnetfilter_log-1.0.1.ebuild:
+  Add static-libs use flag.
+
+  05 Jan 2012; Tim Harder <radhermit@gentoo.org>
+  libnetfilter_log-0.0.15.ebuild, libnetfilter_log-0.0.16.ebuild,
+  libnetfilter_log-1.0.0.ebuild:
+  Add pkgconfig build dep.
+
+*libnetfilter_log-1.0.1 (05 Jan 2012)
+
+  05 Jan 2012; Tim Harder <radhermit@gentoo.org>
+  +libnetfilter_log-1.0.1.ebuild:
+  Version bump. Update to EAPI 4.
 
 *libnetfilter_log-1.0.0 (07 Oct 2010)
 
@@ -50,4 +78,3 @@
   25 Nov 2006; Cedric Krier <cedk@gentoo.org> +metadata.xml,
   +libnetfilter_log-0.0.13.ebuild:
   New ebuild for bug #141998
-

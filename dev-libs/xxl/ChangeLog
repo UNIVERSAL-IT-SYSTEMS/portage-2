@@ -1,6 +1,15 @@
 # ChangeLog for dev-libs/xxl
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/xxl/ChangeLog,v 1.10 2010/01/15 19:50:02 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/xxl/ChangeLog,v 1.12 2012/11/08 10:03:23 pinkbyte Exp $
+
+*xxl-1.0.1-r1 (08 Nov 2012)
+
+  08 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> +xxl-1.0.1-r1.ebuild:
+  Revision bump: bump to EAPI 4, add 'static-libs' and 'threads' USE-flags,
+  keyword on ~amd64 wrt bug #441958, thanks to Vicente Olivert Riera
+
+  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -xxl-1.0.0.ebuild:
+  Remove old
 
   15 Jan 2010; Ulrich Mueller <ulm@gentoo.org> xxl-1.0.0.ebuild,
   xxl-1.0.1.ebuild:

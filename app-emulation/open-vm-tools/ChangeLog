@@ -1,6 +1,101 @@
 # ChangeLog for app-emulation/open-vm-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/open-vm-tools/ChangeLog,v 1.52 2011/07/17 13:23:00 vadimk Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/open-vm-tools/ChangeLog,v 1.67 2012/12/09 14:12:28 vadimk Exp $
+
+*open-vm-tools-9.2.2.893683 (09 Dec 2012)
+*open-vm-tools-2012.10.14.874563 (09 Dec 2012)
+
+  09 Dec 2012; Vadim Kuznetsov vadimk@gentoo.org
+  +open-vm-tools-2012.10.14.874563.ebuild, +open-vm-tools-9.2.2.893683.ebuild,
+  -open-vm-tools-2012.03.13.651368.ebuild:
+  version bump
+
+  02 Jun 2012; Vadim Kuznetsov vadimk@gentoo.org
+  open-vm-tools-2012.05.21.724730.ebuild:
+  inherit multilib for get_libdir and user for enewgroup dev-util/pkgconfig ->
+  virtual/pkgconfig
+
+*open-vm-tools-2012.05.21.724730 (02 Jun 2012)
+
+  02 Jun 2012; Vadim Kuznetsov vadimk@gentoo.org
+  +open-vm-tools-2012.05.21.724730.ebuild:
+  version bump
+
+  02 Jun 2012; Vadim Kuznetsov vadimk@gentoo.org
+  -open-vm-tools-2011.11.20.535097.ebuild:
+  clean up
+
+  31 May 2012; Zac Medico <zmedico@gentoo.org>
+  open-vm-tools-2011.11.20.535097.ebuild,
+  open-vm-tools-2012.03.13.651368.ebuild, open-vm-tools-8.8.2.590212.ebuild:
+  inherit multilib for get_libdir and user for enewgroup
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  open-vm-tools-8.8.2.590212.ebuild, open-vm-tools-2011.11.20.535097.ebuild,
+  open-vm-tools-2012.03.13.651368.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*open-vm-tools-2012.03.13.651368 (24 Mar 2012)
+*open-vm-tools-8.8.2.590212 (24 Mar 2012)
+
+  24 Mar 2012; Vadim Kuznetsov <vadimk@gentoo.org>
+  +open-vm-tools-2012.03.13.651368.ebuild, +open-vm-tools-8.8.2.590212.ebuild,
+  -open-vm-tools-8.8.1.528969.ebuild:
+  version bump
+
+  17 Mar 2012; Vadim Kuznetsov <vadimk@gentoo.org>
+  -open-vm-tools-0.0.20111026.514583.ebuild:
+  cleanup
+
+  10 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  open-vm-tools-2011.11.20.535097.ebuild:
+  Fix detection of libprocps from >=sys-process/procps-3.3.2 wrt #402279
+
+*open-vm-tools-2011.11.20.535097 (03 Dec 2011)
+*open-vm-tools-8.8.1.528969 (03 Dec 2011)
+
+  03 Dec 2011; Vadim Kuznetsov <vadimk@gentoo.org>
+  -open-vm-tools-0.0.20110124.354108.ebuild,
+  -open-vm-tools-0.0.20110223.368700.ebuild,
+  -open-vm-tools-0.0.20110328.387002-r2.ebuild,
+  -open-vm-tools-0.0.20110627.437995.ebuild,
+  -open-vm-tools-0.0.20110821.471295.ebuild,
+  -open-vm-tools-0.0.20110923.491607.ebuild,
+  open-vm-tools-0.0.20111026.514583.ebuild, +open-vm-tools-8.8.1.528969.ebuild,
+  +open-vm-tools-2011.11.20.535097.ebuild, +files/open-vm-tools.confd,
+  -files/checkvm-pie-safety.patch, -files/default-scripts.patch,
+  -files/open-vm.confd, -files/vmguestlib-pkg-config.patch:
+  version bump and cleanup.
+  8.8.1 is matching the Workstation 8.0.1 release
+
+  15 Nov 2011; Vadim Kuznetsov <vadimk@gentoo.org>
+  -open-vm-tools-0.0.20100616.268169-r1.ebuild,
+  -open-vm-tools-0.0.20100824.292196-r1.ebuild,
+  -open-vm-tools-0.0.20100919.301124.ebuild,
+  -open-vm-tools-0.0.20101219.339835-r1.ebuild:
+  cleanup
+
+  15 Nov 2011; Vadim Kuznetsov <vadimk@gentoo.org> files/network:
+  fixed default network script
+
+*open-vm-tools-0.0.20111026.514583 (11 Nov 2011)
+
+  11 Nov 2011; Vadim Kuznetsov <vadimk@gentoo.org>
+  open-vm-tools-0.0.20110923.491607.ebuild,
+  +open-vm-tools-0.0.20111026.514583.ebuild, +files/network:
+  version bump
+
+*open-vm-tools-0.0.20110923.491607 (17 Oct 2011)
+
+  17 Oct 2011; Vadim Kuznetsov <vadimk@gentoo.org>
+  +open-vm-tools-0.0.20110923.491607.ebuild:
+  version bump
+
+*open-vm-tools-0.0.20110821.471295 (04 Sep 2011)
+
+  04 Sep 2011; Vadim Kuznetsov <vadimk@gentoo.org>
+  +open-vm-tools-0.0.20110821.471295.ebuild:
+  version bump
 
   17 Jul 2011; Vadim Kuznetsov <vadimk@gentoo.org> files/open-vm-tools.initd:
   chuid is deprecated
@@ -319,4 +414,3 @@
   +open-vm-tools-0.0.20071121.64693.ebuild:
   Initial commit. This should be usable for both ESX server, workstation,
   player and normal server.
-

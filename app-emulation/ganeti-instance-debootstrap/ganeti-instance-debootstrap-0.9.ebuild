@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti-instance-debootstrap/ganeti-instance-debootstrap-0.9.ebuild,v 1.2 2011/01/22 20:08:10 ramereth Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti-instance-debootstrap/ganeti-instance-debootstrap-0.9.ebuild,v 1.3 2012/05/13 05:47:45 ramereth Exp $
 
 EAPI=2
 
@@ -20,7 +20,7 @@ RDEPEND="app-arch/dpkg
 	app-arch/dump
 	app-emulation/ganeti
 	dev-util/debootstrap
-	|| ( >=sys-apps/coreutils-6.10-r1 sys-apps/mktemp )
+	>=sys-apps/coreutils-6.10-r1
 	sys-apps/util-linux
 	sys-fs/e2fsprogs"
 

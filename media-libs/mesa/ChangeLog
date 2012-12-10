@@ -1,6 +1,351 @@
 # ChangeLog for media-libs/mesa
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/ChangeLog,v 1.357 2011/08/01 23:50:29 chithanh Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/ChangeLog,v 1.438 2012/12/08 17:41:30 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> mesa-7.11.2.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> mesa-9.0.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  03 Dec 2012; Samuli Suominen <ssuominen@gentoo.org> mesa-7.11.ebuild,
+  mesa-7.11.2.ebuild, mesa-8.0.3.ebuild, mesa-8.0.4-r1.ebuild, mesa-9.0.ebuild,
+  mesa-9.0.1.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+  03 Dec 2012; Samuli Suominen <ssuominen@gentoo.org> mesa-7.11.ebuild,
+  mesa-7.11.2.ebuild, mesa-8.0.3.ebuild, mesa-8.0.4-r1.ebuild, mesa-9.0.ebuild,
+  mesa-9.0.1.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+  02 Dec 2012; Agostino Sarubbo <ago@gentoo.org> mesa-8.0.4-r1.ebuild:
+  Stable for ppc64, wrt bug #432400
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> mesa-9.0.ebuild:
+  Marking mesa-9.0 ppc stable for bug 440872
+
+  26 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Update to global useflag.
+
+*mesa-9.0.1 (19 Nov 2012)
+
+  19 Nov 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-9.0.1.ebuild, -mesa-8.0.3-r1.ebuild, -mesa-8.0.4.ebuild,
+  -mesa-8.1_rc1_pre20120724.ebuild, -mesa-8.1_rc1_pre20120814.ebuild,
+  -mesa-9.0_pre20120918.ebuild, -mesa-9_pre20120831-r1.ebuild,
+  -mesa-9_pre20120831.ebuild:
+  Version bump. Drop some prereleases and vulnerable versions.
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> mesa-9.0.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> mesa-9.0.ebuild:
+  Stable for amd64, wrt bug #440872
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> mesa-7.10.3.ebuild,
+  mesa-7.11.ebuild, mesa-7.11.2.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+*mesa-9.0 (09 Oct 2012)
+
+  09 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-9.0.ebuild:
+  Version bump.
+
+  05 Oct 2012;  <naota@gentoo.org> mesa-8.1_rc1_pre20120724.ebuild,
+  mesa-8.1_rc1_pre20120814.ebuild, mesa-9.0_pre20120918.ebuild,
+  mesa-9_pre20120831-r1.ebuild, mesa-9_pre20120831.ebuild:
+  Use cat as INDENT to workaround build failure on non-GNU system. #428112
+
+  04 Oct 2012;  <naota@gentoo.org> +files/mesa-8.0.4-configure-bsd.patch,
+  mesa-8.0.3-r1.ebuild, mesa-8.0.3.ebuild, mesa-8.0.4-r1.ebuild,
+  mesa-8.0.4.ebuild, mesa-8.1_rc1_pre20120724.ebuild,
+  mesa-8.1_rc1_pre20120814.ebuild:
+  Add patch to fix non-POSIX test. #435496
+
+  24 Sep 2012; Raúl Porcel <armin76@gentoo.org> mesa-8.0.4-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #432400
+
+  21 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  mesa-9.0_pre20120918.ebuild:
+  Fix overzealous removal of dri2proto/glproto dependencies, thanks to slyfox
+  for noticing.
+
+*mesa-9.0_pre20120918 (18 Sep 2012)
+
+  18 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-9.0_pre20120918.ebuild:
+  New snapshot.
+
+  16 Sep 2012; Markus Meier <maekke@gentoo.org> mesa-8.0.4-r1.ebuild:
+  arm stable, bug #432400
+
+  12 Sep 2012; Andreas Schuerch <nativemad@gentoo.org> mesa-8.0.4-r1.ebuild:
+  x86 stable, see bug 432400
+
+  06 Sep 2012; Matt Turner <mattst88@gentoo.org> mesa-8.0.3-r1.ebuild,
+  mesa-8.0.3.ebuild, mesa-8.0.4-r1.ebuild, mesa-8.0.4.ebuild,
+  mesa-8.1_rc1_pre20120724.ebuild, mesa-8.1_rc1_pre20120814.ebuild,
+  mesa-9_pre20120831-r1.ebuild, mesa-9_pre20120831.ebuild, metadata.xml:
+  Drop d3d USE flag. It's broken, unmaintained, and disabled upstream.
+
+*mesa-9_pre20120831-r1 (05 Sep 2012)
+
+  05 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-9_pre20120831-r1.ebuild:
+  New revision to address i965 crashes.
+
+  04 Sep 2012; Jeroen Roovers <jer@gentoo.org> mesa-8.0.4-r1.ebuild:
+  Stable for HPPA (bug #432400).
+
+  02 Sep 2012; Agostino Sarubbo <ago@gentoo.org> mesa-8.0.4-r1.ebuild:
+  Stable for amd64, wrt bug #432400
+
+*mesa-8.0.4-r1 (01 Sep 2012)
+*mesa-9_pre20120831 (01 Sep 2012)
+
+  01 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-8.0.4-r1.ebuild, +mesa-9_pre20120831.ebuild:
+  Update patch tarball and snapshot for security bug #432400.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> mesa-8.0.3.ebuild:
+  alpha/ia64/sh/sparc stable wrt #419473
+
+*mesa-8.1_rc1_pre20120814 (14 Aug 2012)
+
+  14 Aug 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-8.1_rc1_pre20120814.ebuild:
+  New snapshot. Installs gl.pc even when osmesa is enabled, bug #428164. Fixes
+  building with gbm and i915g, bug #428508. Does not build some tests when
+  shared-glapi is enabled, bug #429720.
+
+  11 Aug 2012; Matt Turner <mattst88@gentoo.org>
+  mesa-8.1_rc1_pre20120724.ebuild:
+  Remove indent dependency since only compiled code is indented.
+
+  27 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  mesa-8.1_rc1_pre20120724.ebuild:
+  Make dev-util/indent buildtime-only dependency. Do not depend on it on
+  x86-fbsd, bug #427952.
+
+  25 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/eselect-mesa.conf.8.1,
+  +files/mesa-8.1-dont-require-llvm-for-r300.patch:
+  Add missing files, bug #428027
+
+  25 Jul 2012; Ben de Groot <yngwin@gentoo.org> mesa-8.1_rc1_pre20120724.ebuild:
+  Hide dev-util/indent behind !amd-fbsd wrt bug #427952
+
+*mesa-8.1_rc1_pre20120724 (24 Jul 2012)
+
+  24 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-8.1_rc1_pre20120724.ebuild, metadata.xml:
+  New snapshot.
+
+*mesa-8.0.4 (21 Jul 2012)
+
+  21 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-8.0.4.ebuild:
+  Version bump, bug #426872.
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> mesa-8.0.3.ebuild:
+  Marking mesa-8.0.3 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> mesa-8.0.3.ebuild:
+  Marking mesa-8.0.3 ppc64 stable for bug 419473
+
+  29 Jun 2012; Markus Meier <maekke@gentoo.org> mesa-8.0.3.ebuild:
+  arm stable, bug #419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> mesa-8.0.3.ebuild:
+  Stable for HPPA (bug #419473).
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> mesa-8.0.3.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> mesa-8.0.3.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  11 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> mesa-8.0.3-r1.ebuild:
+  Fix die on missing VG include dir with -openvg. Fixes bug#420369.
+
+  06 Jun 2012; Luca Barbato <lu_zero@gentoo.org> mesa-8.0.3-r1.ebuild:
+  Fix glproto dep
+
+*mesa-8.0.3-r1 (05 Jun 2012)
+
+  05 Jun 2012; Luca Barbato <lu_zero@gentoo.org> +mesa-8.0.3-r1.ebuild:
+  New revision to support new opengl-eselect layout
+
+  01 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -files/eselect-mesa.conf.7.9, -files/eselect-mesa.conf.8.0,
+  -mesa-7.9.2.ebuild, -mesa-8.0.1-r2.ebuild, -mesa-8.0.1.ebuild,
+  -mesa-8.0.2.ebuild, -mesa-8.0.ebuild:
+  Cleanup some overshadowed versions and remove oldest as it failed to build for
+  me on stable.
+
+  28 May 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  mesa-8.0.3.ebuild:
+  Add one more patch for llvm-3.1 compatibility.
+
+*mesa-8.0.3 (28 May 2012)
+
+  28 May 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-8.0.3.ebuild:
+  Version bump, bug #416823. Apply patches identified by marienz to allow
+  building against llvm-3.1, bug #417363.
+
+  11 May 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  mesa-7.10.3.ebuild, mesa-7.11.2.ebuild, mesa-7.11.ebuild,
+  mesa-8.0.1-r2.ebuild, mesa-8.0.1.ebuild, mesa-8.0.2.ebuild, mesa-8.0.ebuild:
+  Adjust dependencies for nouveau API change.
+
+  10 May 2012; Alexis Ballier <aballier@gentoo.org> mesa-8.0.2.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> mesa-7.9.2.ebuild,
+  mesa-7.10.3.ebuild, mesa-7.11.ebuild, mesa-7.11.2.ebuild, mesa-8.0.ebuild,
+  mesa-8.0.1.ebuild, mesa-8.0.1-r2.ebuild, mesa-8.0.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  mesa-8.0.1-r2.ebuild, mesa-8.0.1.ebuild, mesa-8.0.2.ebuild, mesa-8.0.ebuild:
+  Require recent enough libXvMC, bug #410185.
+
+*mesa-8.0.2 (29 Mar 2012)
+
+  29 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-8.0.2.ebuild:
+  Version bump, bug #410119. Make tests not fail when python-3 is selected as
+  default, bug #407887.
+
+  14 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  mesa-8.0.1-r2.ebuild, metadata.xml:
+  Add USE flag for XA architecture.
+
+  04 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -mesa-8.0.1-r1.ebuild:
+  Drop broken revision, bug #406641.
+
+  04 Mar 2012; Justin Lecher <jlec@gentoo.org> mesa-7.9.2.ebuild,
+  mesa-7.10.3.ebuild, mesa-7.11.ebuild, mesa-7.11.2.ebuild:
+  block x11-libs/libGLw with USE=motif
+
+*mesa-8.0.1-r2 (03 Mar 2012)
+
+  03 Mar 2012; Luca Barbato <lu_zero@gentoo.org> mesa-8.0.1-r1.ebuild,
+  +mesa-8.0.1-r2.ebuild:
+  Revert header placement
+
+*mesa-8.0.1-r1 (02 Mar 2012)
+
+  02 Mar 2012; Luca Barbato <lu_zero@gentoo.org> +mesa-8.0.1-r1.ebuild:
+  Support switching GLES implementations as well, fix bug #406501
+
+  24 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  mesa-8.0.1.ebuild:
+  Fix patching failure, reported by ryao on IRC.
+
+*mesa-8.0.1 (24 Feb 2012)
+
+  24 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-8.0.1.ebuild, +files/eselect-mesa.conf.8.0.1:
+  Version bump, bug #405207.
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> mesa-7.11.2.ebuild:
+  alpha/ia64/sh/sparc stable wrt #394393
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> mesa-7.11.2.ebuild:
+  Marking mesa-7.11.2 ppc stable for bug 394393
+
+  11 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  mesa-8.0.ebuild:
+  switch to xorg-x11 and back if necessary, bug #374647 comment 11
+
+*mesa-8.0 (10 Feb 2012)
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> +mesa-8.0.ebuild,
+  +files/mesa-8.0-dont-require-llvm-for-r300.patch,
+  +files/eselect-mesa.conf.8.0, metadata.xml:
+  Version bump. Move to EAPI4. New USE flags gles1, gles2, wayland, g3dvl,
+  vdpau, xvmc, and d3d. New split VIDEO_CARDS: i915, i965, r100, r200, r300,
+  r600. Fixes bugs 308497, 377013, 380303.
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> mesa-7.11.2.ebuild:
+  x86 stable, bug #394393
+
+  21 Dec 2011; Markus Meier <maekke@gentoo.org> mesa-7.11.2.ebuild:
+  arm stable, bug #394393
+
+  21 Dec 2011; Matt Turner <mattst88@gentoo.org> mesa-7.11.2.ebuild:
+  Fix osmesa USE flag, bug 395527.
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> mesa-7.11.2.ebuild:
+  Stable for AMD64, wrt bug #394393
+
+  03 Dec 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -mesa-7.10.2.ebuild, -mesa-7.10.2-r1.ebuild, mesa-7.10.3.ebuild,
+  mesa-7.11.ebuild, -mesa-7.11.1.ebuild, mesa-7.11.2.ebuild:
+  Add patches to build against llvm-3 to unstable ebuild, depend on earlier
+  versions for stable ebuilds, bug #375847. Clean up some old ebuilds.
+
+*mesa-7.11.2 (30 Nov 2011)
+
+  30 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-7.11.2.ebuild:
+  Version bump.
+
+*mesa-7.11.1 (18 Nov 2011)
+
+  18 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mesa-7.11.1.ebuild, metadata.xml:
+  Version bump, bug #390875. Add USE flag for libOSMesa, thanks to
+  mattst88 in bug #155109.
+
+  06 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> mesa-7.11.ebuild:
+  Workaround TOC issues wrt #386545 by Stephen Lewis
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> mesa-7.11.ebuild:
+  Marked ppc/ppc64 stable for bug #380421.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> mesa-7.11.ebuild:
+  alpha/ia64/sh/sparc stable wrt #380421
+
+  21 Sep 2011; Jeroen Roovers <jer@gentoo.org> mesa-7.11.ebuild:
+  Stable for HPPA (bug #380421).
+
+  18 Sep 2011; Matt Turner <mattst88@gentoo.org> mesa-7.11.ebuild:
+  Only allow openvg to be enabled with USE=gallium, bug 377689
+
+  16 Sep 2011; Matt Turner <mattst88@gentoo.org> mesa-7.9.2.ebuild,
+  mesa-7.10.2.ebuild, mesa-7.10.2-r1.ebuild, mesa-7.10.3.ebuild,
+  mesa-7.11.ebuild:
+  Correct the LICENSEs.
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org> mesa-7.11.ebuild:
+  arm stable, bug #380421
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> mesa-7.11.ebuild:
+  x86 stable, bug #380421
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> mesa-7.11.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380421 filed by Chí-Thanh Christopher Nguyễn.
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> mesa-7.10.3.ebuild:
+  Stable for HPPA (bug #371857).
+
+  20 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  mesa-7.11.ebuild:
+  Relax dependency on sys-devel/llvm.
+
+  16 Aug 2011; Matt Turner <mattst88@gentoo.org> metadata.xml:
+  Correct metadata.xml about which USE flags are related to Gallium3D.
+
+  02 Aug 2011; Magnus Granberg <zorry@gentoo.org> mesa-7.11.ebuild,
+  metadata.xml:
+  Added pax_kernel as local use flag
 
   01 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
   mesa-7.11.ebuild:
@@ -1194,7 +1539,7 @@
   +files/6.5-re-order-context-destruction.patch, +mesa-6.5-r1.ebuild:
   Add some upstream fixes that re-order GL context destruction in the ati
   drivers to avoid a possible NULL dereference.
-  
+
   I've also restored the entire ChangeLog, as it appears to have been truncated
   during Diego's last commit.
 
@@ -1549,7 +1894,7 @@
   Add ~alpha
 
   06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
+
 *mesa-3.5 (22 Jul 2002)
 
   22 Jul 2002; Seemant Kulleen <seemant@gentoo.org> mesa-3.5.ebuild
@@ -1561,7 +1906,7 @@
 *mesa-3.4.2 (1 Feb 2002)
 
   1 Feb 2002; G.Bevin <gbevin@gentoo.org> ChangeLog :
-  
+
   Added initial ChangeLog which should be updated whenever the package is
   updated in any way. This changelog is targetted to users. This means that the
   comments should well explained and written in clean English. The details about

@@ -1,6 +1,360 @@
 # ChangeLog for dev-vcs/git
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/git/ChangeLog,v 1.97 2011/07/13 07:03:15 mduft Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/git/ChangeLog,v 1.164 2012/12/06 18:59:29 robbat2 Exp $
+
+  06 Dec 2012; Robin H. Johnson <robbat2@gentoo.org> git-1.8.0-r1.ebuild,
+  git-9999.ebuild:
+  Bug #441740: Update doc build deps.
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> git-9999.ebuild:
+  Bug #439154: Copy latest ebuild back to 9999 revision.
+
+  09 Nov 2012; Fabian Groffen <grobian@gentoo.org> git-1.8.0-r1.ebuild,
+  git-9999.ebuild:
+  Fix linking on Solaris, it needs libiconv
+
+*git-1.8.0-r1 (02 Nov 2012)
+
+  02 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.8.0-r1.ebuild:
+  Update contrib extras, per bug #434098.
+
+*git-1.8.0 (02 Nov 2012)
+
+  02 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.8.0.ebuild:
+  Bump.
+
+  31 Oct 2012; Mike Frysinger <vapier@gentoo.org> metadata.xml:
+  Add information on USE=curl.
+
+*git-1.7.12.4 (18 Oct 2012)
+
+  18 Oct 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.12.4.ebuild:
+  Bump.
+
+*git-1.7.12.3-r1 (11 Oct 2012)
+
+  11 Oct 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.12.3-r1.ebuild:
+  1.7.12.3 was based off 1.7.12-r1 instead of 1.7.12-r2, revbump to get the
+  other fixes again.
+
+*git-1.7.12.3 (10 Oct 2012)
+
+  10 Oct 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.12.3.ebuild:
+  Version bump per bug 437870.
+
+  24 Aug 2012; Robin H. Johnson <robbat2@gentoo.org>
+  -files/git-1.7.10.2-optional-cvs.patch,
+  -files/git-1.7.11.1-optional-cvs.patch, -files/git-1.7.5-interix.patch,
+  -files/git-1.7.6-interix.patch,
+  -files/git-1.7.8-git-svn-1.7-canonical-path.patch, -git-1.7.10.2.ebuild,
+  -git-1.7.10.ebuild, -git-1.7.11.1.ebuild, -git-1.7.9.1.ebuild,
+  -git-1.7.9.2.ebuild, -git-1.7.9.3.ebuild, -git-1.7.9.4.ebuild,
+  -git-1.7.9.7.ebuild, -git-1.7.9.ebuild, -git-1.7.9_rc2.ebuild:
+  Trim versions that were always masked.
+
+  24 Aug 2012; Robin H. Johnson <robbat2@gentoo.org> git-1.7.12-r2.ebuild,
+  git-1.7.8.6.ebuild:
+  Warn about the bash completion split: prompt is now in a seperate bashcomp
+  file.
+
+  24 Aug 2012; Zac Medico <zmedico@gentoo.org> git-1.7.10.2.ebuild,
+  git-1.7.10.ebuild, git-1.7.11.1.ebuild, git-1.7.12-r1.ebuild,
+  git-1.7.12-r2.ebuild, git-1.7.12.ebuild, git-1.7.9.1.ebuild,
+  git-1.7.9.2.ebuild, git-1.7.9.3.ebuild, git-1.7.9.4.ebuild,
+  git-1.7.9.7.ebuild, git-1.7.9.ebuild, git-1.7.9_rc2.ebuild, git-9999.ebuild:
+  Fix IUSE.missing for new highlight flag.
+
+  23 Aug 2012; Robin H. Johnson <robbat2@gentoo.org> git-1.6.4.5.ebuild,
+  git-1.7.10.2.ebuild, git-1.7.10.ebuild, git-1.7.11.1.ebuild,
+  git-1.7.12-r1.ebuild, git-1.7.12-r2.ebuild, git-1.7.12.ebuild,
+  git-1.7.2.5.ebuild, git-1.7.3.4-r1.ebuild, git-1.7.8.6.ebuild,
+  git-1.7.9.1.ebuild, git-1.7.9.2.ebuild, git-1.7.9.3.ebuild,
+  git-1.7.9.4.ebuild, git-1.7.9.7.ebuild, git-1.7.9.ebuild,
+  git-1.7.9_rc2.ebuild, git-9999.ebuild, metadata.xml:
+  Bug #432388: Make app-text/highlight optional as has heavy dependencies and is
+  disabled by default in gitweb.
+
+*git-1.7.12-r2 (23 Aug 2012)
+
+  23 Aug 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.12-r2.ebuild,
+  files/git-daemon.confd:
+  Bug #373335: missing --base-path in conf.d/git. Bug #414437: OpenSSL is
+  required for more parts of Git now. Bug #423605: OSX keychain helper. Bug
+  #432328: Upstream has split the bash completion in two parts: git & git-
+  prompt; the latter defines __git_ps1 for your nice prompt.
+
+  22 Aug 2012; Zac Medico <zmedico@gentoo.org> git-1.7.12-r1.ebuild:
+  Quick fix for USE=-perl.
+
+  22 Aug 2012; Robin H. Johnson <robbat2@gentoo.org> git-1.7.12-r1.ebuild,
+  git-1.7.12.ebuild, git-9999.ebuild:
+  ~amd64-fbsd was not placed in all ebuilds. Also sync live ebuild.
+
+*git-1.7.12-r1 (22 Aug 2012)
+*git-1.7.12 (22 Aug 2012)
+
+  22 Aug 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/git-1.7.12-git-svn-backport.patch,
+  +files/git-1.7.12-optional-cvs.patch, +git-1.7.12-r1.ebuild,
+  +git-1.7.12.ebuild:
+  Finally, a Git that works with SVN 1.7, per bug #418431! 1.7.12-r1 contains
+  backported ms/git-svn-1.7 branch that will be merged into Git 1.7.13.
+  1.7.12-r0 excludes that backport but is otherwise identical. Thanks to Michael
+  Schwern for the development work!
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> git-1.7.8.6.ebuild:
+  alpha/s390/sh/sparc stable wrt #418381
+
+  27 Jul 2012; Fabian Groffen <grobian@gentoo.org> git-1.7.8.6.ebuild,
+  git-1.7.9.7.ebuild:
+  Fix compilation on Solaris (libiconv), set perl path correctly for Prefix,
+  drop applied/commented out interix patches
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> git-1.7.8.6.ebuild:
+  arm stable, bug #418381
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> git-1.7.8.6.ebuild:
+  Marking git-1.7.8.6 ppc64 for bug 418381
+
+  10 Jul 2012; Akinori Hattori <hattya@gentoo.org> git-1.7.8.6.ebuild:
+  ia64 stable wrt bug #418381
+
+  08 Jul 2012; Michael Weber <xmw@gentoo.org> git-1.7.8.6.ebuild:
+  ppc stable (bug 418381)
+
+*git-1.7.11.1 (07 Jul 2012)
+
+  07 Jul 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/git-1.7.11.1-optional-cvs.patch, +git-1.7.11.1.ebuild:
+  Version bump. Still suffers from bug #391707: git-svn failures.
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> git-1.7.8.6.ebuild:
+  Stable for HPPA (bug #418381).
+
+  02 Jul 2012; Jeff Horelick <jdhore@gentoo.org> git-1.7.8.6.ebuild:
+  marked x86 per bug 418381
+
+  27 Jun 2012; Agostino Sarubbo <ago@gentoo.org> git-1.7.8.6.ebuild:
+  Stable for amd64, wrt bug #418381
+
+  26 Jun 2012; Jeremy Olexa <darkside@gentoo.org> -git-1.7.3.5-r2.ebuild,
+  -git-1.7.4.5.ebuild, -git-1.7.5.3.ebuild, -git-1.7.6.4.ebuild,
+  -git-1.7.7.6.ebuild, -git-1.7.7.7.ebuild, -git-1.7.8.ebuild,
+  -git-1.7.8.1.ebuild, -git-1.7.8.2.ebuild, -git-1.7.8.3.ebuild,
+  -git-1.7.8.4.ebuild, -git-1.7.8.5.ebuild:
+  Cleanup some unstable ebuilds
+
+  14 Jun 2012; Mike Frysinger <vapier@gentoo.org> git-1.7.10.2.ebuild,
+  git-1.7.10.ebuild, git-1.7.9.1.ebuild, git-1.7.9.2.ebuild, git-1.7.9.3.ebuild,
+  git-1.7.9.4.ebuild, git-1.7.9.7.ebuild, git-1.7.9.ebuild, git-9999.ebuild,
+  metadata.xml:
+  Put gpg dep behind a USE flag as this signing requirement only really matters
+  to the client side when signing is in use.
+
+  14 Jun 2012; Mike Frysinger <vapier@gentoo.org> git-1.7.9.1.ebuild,
+  git-1.7.9.2.ebuild, git-1.7.9.3.ebuild, git-1.7.9.4.ebuild,
+  git-1.7.9.7.ebuild, git-1.7.9.ebuild, git-1.7.10.ebuild,
+  git-1.7.10.2.ebuild, git-9999.ebuild:
+  Add USE=nls support to control gettext requirement.
+
+  14 Jun 2012; Mike Frysinger <vapier@gentoo.org> git-1.7.8.1.ebuild,
+  git-1.7.8.2.ebuild, git-1.7.8.3.ebuild, git-1.7.8.4.ebuild,
+  git-1.7.8.5.ebuild, git-1.7.8.6.ebuild, git-1.7.8.ebuild, git-1.7.9.1.ebuild,
+  git-1.7.9.2.ebuild, git-1.7.9.3.ebuild, git-1.7.9.4.ebuild,
+  git-1.7.9.7.ebuild, git-1.7.9.ebuild, git-1.7.9_rc2.ebuild,
+  git-1.7.10.ebuild, git-1.7.10.2.ebuild, git-9999.ebuild:
+  Re-enable USE=-iconv support now that the bug originally disabling it was
+  fixed in upstream, and make sure we default to USE=iconv so that
+  unicode/etc... messages "just work" out of the box #355467 by Tom Lloyd.
+
+*git-1.7.10.2 (20 May 2012)
+
+  20 May 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/git-1.7.10.2-optional-cvs.patch, +files/git-1.7.11-optional-cvs.patch,
+  +git-1.7.10.2.ebuild, git-9999.ebuild:
+  Version bump, update optional CVS patch to apply on latest git HEAD and
+  1.7.10.2 release. Port libpcre changes to live ebuild.
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> git-1.7.8.6.ebuild:
+  keyword ~amd64-fbsd
+
+*git-1.7.9.7 (26 Apr 2012)
+*git-1.7.7.7 (26 Apr 2012)
+*git-1.7.8.6 (26 Apr 2012)
+
+  26 Apr 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.7.7.ebuild,
+  +git-1.7.8.6.ebuild, +git-1.7.9.7.ebuild:
+  Version bump.
+
+  23 Apr 2012; Mike Frysinger <vapier@gentoo.org> git-1.7.10.ebuild,
+  git-1.7.9.1.ebuild, git-1.7.9.2.ebuild, git-1.7.9.3.ebuild,
+  git-1.7.9.4.ebuild, git-1.7.9.ebuild:
+  Kill spurious backslash.
+
+*git-1.7.10 (08 Apr 2012)
+
+  08 Apr 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.10.ebuild:
+  Version bump. Still no keywords due to major git-svn breakage.
+
+*git-1.7.9.4 (12 Mar 2012)
+
+  12 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.9.4.ebuild:
+  Version bump.
+
+*git-1.7.9.3 (06 Mar 2012)
+
+  06 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.9.3.ebuild:
+  Version bump. SVN problem still not fixed by upstream.
+
+*git-1.7.8.5 (28 Feb 2012)
+
+  28 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.8.5.ebuild:
+  Version bump.
+
+*git-1.7.9.2 (23 Feb 2012)
+
+  23 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.9.2.ebuild:
+  Version bump.
+
+*git-1.7.9.1 (15 Feb 2012)
+
+  15 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.9.1.ebuild:
+  Version bump.
+
+*git-1.7.9 (05 Feb 2012)
+
+  05 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.9.ebuild:
+  Version bump. Please be careful of git-svn functionality with SVN 1.7 if your
+  SVN repo URL, branch name or tag names contains characters that need URL
+  escaping.
+
+  28 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> git-1.7.9_rc2.ebuild,
+  git-9999.ebuild:
+  Bug #384233: Fix the gitweb syntax highlighting implicit dependency on
+  highlight.
+
+  20 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> -git-1.7.3.5-r1.ebuild,
+  -git-1.7.3.5.ebuild, -git-1.7.4.1.ebuild, -git-1.7.4.4.ebuild,
+  -git-1.7.4.ebuild, -git-1.7.5_rc1.ebuild, -git-1.7.5_rc3.ebuild,
+  -git-1.7.6.1.ebuild, -git-1.7.6.ebuild, -git-1.7.7.1-r1.ebuild,
+  -git-1.7.7.1.ebuild, -git-1.7.7.2.ebuild, -git-1.7.7.3.ebuild,
+  -git-1.7.7.4.ebuild, -git-1.7.7.ebuild:
+  Clean up some unstable ebuilds.
+
+*git-1.7.7.6 (20 Jan 2012)
+*git-1.7.8.4 (20 Jan 2012)
+
+  20 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.7.6.ebuild,
+  +git-1.7.8.4.ebuild:
+  Version bump.
+
+*git-1.7.9_rc2 (20 Jan 2012)
+
+  20 Jan 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/git-1.7.8-git-svn-1.7-canonical-path.patch, +git-1.7.9_rc2.ebuild,
+  git-9999.ebuild:
+  Version bump, keywords temporarily removed as git-svn has issues still.
+
+  13 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> git-9999.ebuild:
+  Propogate libpcre change to live ebuild.
+
+*git-1.7.8.3 (07 Jan 2012)
+
+  07 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.8.3.ebuild:
+  Version bump.
+
+*git-1.7.8.2 (02 Jan 2012)
+
+  02 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.8.2.ebuild:
+  Version bump.
+
+*git-1.7.8.1 (21 Dec 2011)
+
+  21 Dec 2011; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.8.1.ebuild:
+  Version bump.
+
+*git-1.7.8 (03 Dec 2011)
+
+  03 Dec 2011; Robin H. Johnson <robbat2@gentoo.org> -git-1.7.8_rc1.ebuild,
+  -git-1.7.8_rc1-r1.ebuild, -git-1.7.8_rc3.ebuild, -git-1.7.8_rc4.ebuild,
+  +git-1.7.8.ebuild:
+  Version bump.
+
+*git-1.7.8_rc4 (29 Nov 2011)
+
+  29 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.8_rc4.ebuild:
+  Version bump.
+
+  22 Nov 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #195316
+
+*git-1.7.7.4 (18 Nov 2011)
+
+  18 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.7.4.ebuild:
+  Version bump.
+
+*git-1.7.8_rc3 (17 Nov 2011)
+
+  17 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.8_rc3.ebuild:
+  Version bump.
+
+*git-1.7.8_rc1-r1 (16 Nov 2011)
+
+  16 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.8_rc1-r1.ebuild:
+  Bug #377883: build correctly with libpcre for git-grep -P.
+
+*git-1.7.7.3 (09 Nov 2011)
+
+  09 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.7.3.ebuild:
+  Version bump.
+
+*git-1.7.8_rc1 (08 Nov 2011)
+
+  08 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.8_rc1.ebuild:
+  Version bump.
+
+*git-1.7.7.2 (02 Nov 2011)
+
+  02 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.7.2.ebuild:
+  Version bump.
+
+*git-1.7.7.1-r1 (24 Oct 2011)
+
+  24 Oct 2011; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.7.1-r1.ebuild,
+  git-9999.ebuild:
+  EAPI=4 and bash-completion-r1 support now that python.eclass has EAPI4, now
+  uses REQUIRED_USE instead of warning blocks. Patch by Tomas Chvatal
+  <scarabeus@gentoo.org>.
+
+*git-1.7.7.1 (24 Oct 2011)
+
+  24 Oct 2011; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.7.1.ebuild:
+  Version bump.
+
+  03 Oct 2011; Robin H. Johnson <robbat2@gentoo.org> git-9999.ebuild:
+  Update live ebuild to sync.
+
+*git-1.7.7 (01 Oct 2011)
+*git-1.7.6.4 (01 Oct 2011)
+
+  01 Oct 2011; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.6.4.ebuild,
+  +git-1.7.7.ebuild:
+  Version bump. Was delayed by getting html/manpage tarballs on the alternative
+  mirroring location.
+
+*git-1.7.6.1 (25 Aug 2011)
+
+  25 Aug 2011; Robin H. Johnson <robbat2@gentoo.org> +git-1.7.6.1.ebuild:
+  Version bump.
+
+  19 Aug 2011; Jeremy Olexa <darkside@gentoo.org> git-1.7.2.5.ebuild,
+  git-1.7.3.4-r1.ebuild, git-1.7.3.5.ebuild, git-1.7.3.5-r1.ebuild,
+  git-1.7.3.5-r2.ebuild, git-1.7.4.ebuild, git-1.7.4.1.ebuild,
+  git-1.7.4.4.ebuild, git-1.7.4.5.ebuild, git-1.7.5_rc1.ebuild,
+  git-1.7.5_rc3.ebuild, git-1.7.5.3.ebuild, git-1.7.6.ebuild, git-9999.ebuild:
+  Remove useless/redundant built_with_use check for subversion[perl] since the
+  addition of USE-deps. Signed off by maintainer. Tangentially related to bug
+  250179
 
   13 Jul 2011; Markus Duft <mduft@gentoo.org> git-1.7.6.ebuild,
   +files/git-1.7.6-interix.patch:
@@ -2344,4 +2698,3 @@
 
   15 Apr 2005; Carlos Silva <r3pek@gentoo.org> +metadata.xml:
   Initial import
-

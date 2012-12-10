@@ -1,6 +1,54 @@
 # ChangeLog for media-fonts/sil-doulos
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-fonts/sil-doulos/ChangeLog,v 1.9 2009/09/27 10:05:44 volkmar Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-fonts/sil-doulos/ChangeLog,v 1.24 2012/03/18 19:33:02 armin76 Exp $
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> sil-doulos-4.110.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #404777
+
+  05 Mar 2012; Markus Meier <maekke@gentoo.org> sil-doulos-4.110.ebuild:
+  arm stable, bug #404777
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> sil-doulos-4.110.ebuild:
+  Marking sil-doulos-4.110 ppc64 for bug 404777
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> sil-doulos-4.110.ebuild:
+  x86 stable wrt bug #404777
+
+  23 Feb 2012; Brent Baude <ranger@gentoo.org> sil-doulos-4.110.ebuild:
+  Marking sil-doulos-4.110 ppc for bug 404777
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> sil-doulos-4.110.ebuild:
+  Stable for HPPA (bug #404777).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> sil-doulos-4.110.ebuild:
+  Stable for amd64, wrt bug #404777
+
+  07 Jan 2012; Ryan Hill <dirtyepic@gentoo.org> sil-doulos-4.110.ebuild:
+  Fix docs installation, only install pdfs w/ USE=doc.
+
+  07 Jan 2012; Ryan Hill <dirtyepic@gentoo.org> -sil-doulos-4.100.0.ebuild,
+  -sil-doulos-4.104.ebuild, sil-doulos-4.106.ebuild:
+  Stabilize on ppc/ppc64 (bug #393709).
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> sil-doulos-4.106.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #393709
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> sil-doulos-4.106.ebuild:
+  Stable for AMD64, wrt bug #393709
+
+  14 Dec 2011; Markus Meier <maekke@gentoo.org> sil-doulos-4.106.ebuild:
+  arm stable, bug #393709
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> sil-doulos-4.106.ebuild:
+  x86 stable wrt bug #393709
+
+  12 Dec 2011; Jeroen Roovers <jer@gentoo.org> sil-doulos-4.106.ebuild:
+  Stable for HPPA (bug #393709).
+
+*sil-doulos-4.110 (12 Dec 2011)
+
+  12 Dec 2011; Peter Volkov <pva@gentoo.org> +sil-doulos-4.110.ebuild:
+  Version bump.
 
   27 Sep 2009; Mounir Lamouri <volkmar@gentoo.org> sil-doulos-4.104.ebuild:
   Stable for ppc. Fix bug 283915

@@ -1,19 +1,20 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/qsynth/qsynth-0.3.6.ebuild,v 1.1 2011/04/15 21:05:22 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/qsynth/qsynth-0.3.6.ebuild,v 1.7 2012/05/09 04:20:27 yngwin Exp $
 
-EAPI=2
+EAPI=4
+LANGS="cs de es ru"
 
-inherit qt4 eutils flag-o-matic
+inherit qt4-r2 eutils flag-o-matic
 
 DESCRIPTION="A Qt application to control FluidSynth"
 HOMEPAGE="http://qsynth.sourceforge.net/"
 SRC_URI="mirror://sourceforge/qsynth/${P}.tar.gz"
-LICENSE="GPL-2"
 
+LICENSE="GPL-2"
 SLOT="0"
 IUSE="debug jack alsa pulseaudio"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ppc x86"
 
 DEPEND=">=x11-libs/qt-core-4.2:4
 	>=x11-libs/qt-gui-4.2:4
@@ -21,6 +22,16 @@ DEPEND=">=x11-libs/qt-core-4.2:4
 	x11-libs/libX11
 	!pulseaudio? ( !jack? ( !alsa? ( >=media-sound/fluidsynth-1.0.7a[oss] ) ) )"
 RDEPEND="${DEPEND}"
+
+DOCS="AUTHORS ChangeLog README TODO TRANSLATORS"
+
+src_prepare() {
+	sed -e '/@install/,/share\/locale$/d' -i Makefile.in || die "sed translations failed"
+
+	sed -e 's/@make/@\$(MAKE)/' -i Makefile.in || die "sed Makefile failed"
+
+	qt4-r2_src_prepare
+}
 
 src_configure() {
 	# Stupidly, qsynth's configure does *not* use pkg-config to
@@ -32,19 +43,25 @@ src_configure() {
 	append-ldflags -L/usr/$(get_libdir)/qt4
 
 	econf \
-		$(use_enable debug) \
-		|| die "econf failed"
+		$(use_enable debug)
 	eqmake4 "${PN}.pro" -o "${PN}.mak"
 }
 
 src_compile() {
-	lupdate  "${PN}.pro" || die
-	emake || die
+	lupdate "${PN}.pro" || die "lupdate failed"
+	qt4-r2_src_compile
 }
 
 src_install () {
-	emake DESTDIR="${D}" install || die "make install failed"
-	dodoc AUTHORS ChangeLog README TODO
+	qt4-r2_src_install
+
+	insinto /usr/share/locale
+	local lang
+	for lang in ${LANGS} ; do
+		if use linguas_${lang} ; then
+			doins "src/translations/${PN}_${lang}.qm"
+		fi
+	done
 
 	# The desktop file is invalid, and we also change the command
 	# depending on useflags

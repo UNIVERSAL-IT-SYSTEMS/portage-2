@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/hdbc-sqlite/hdbc-sqlite-2.3.0.0.ebuild,v 1.1 2011/06/12 19:52:57 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/hdbc-sqlite/hdbc-sqlite-2.3.0.0.ebuild,v 1.3 2012/12/07 10:35:19 slyfox Exp $
 
 CABAL_FEATURES="bin lib profile haddock hscolour"
 inherit haskell-cabal
@@ -10,7 +10,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Sqlite v3 driver for HDBC"
 HOMEPAGE="http://software.complete.org/hdbc-sqlite3"
-SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="2"
@@ -28,7 +28,6 @@ DEPEND="${RDEPEND}
 		test? ( dev-haskell/convertible
 			dev-haskell/hunit
 			dev-haskell/testpack
-			dev-haskell/time
 		)
 	"
 

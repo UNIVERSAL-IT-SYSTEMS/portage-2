@@ -1,6 +1,15 @@
 # ChangeLog for dev-python/pyme
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyme/ChangeLog,v 1.32 2010/10/02 15:10:33 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyme/ChangeLog,v 1.34 2012/05/18 09:25:39 aidecoe Exp $
+
+*pyme-0.8.1-r1 (18 May 2012)
+
+  18 May 2012; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  +files/0.8.1-libgpgme11-1.2-compatibility-fix.patch, +pyme-0.8.1-r1.ebuild:
+  Fixed bug #416473.
+
+  24 Feb 2012; Patrick Lauer <patrick@gentoo.org> pyme-0.8.1.ebuild:
+  Restricting jython
 
   02 Oct 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   pyme-0.8.1.ebuild:

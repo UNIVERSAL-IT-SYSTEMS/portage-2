@@ -1,6 +1,56 @@
 # ChangeLog for dev-ruby/snmplib
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/snmplib/ChangeLog,v 1.28 2010/07/08 19:06:54 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/snmplib/ChangeLog,v 1.43 2012/09/28 22:09:18 blueness Exp $
+
+  28 Sep 2012; Anthony G. Basile <blueness@gentoo.org> snmplib-1.1.0.ebuild:
+  stable ppc, bug #435966
+
+  27 Sep 2012; Johannes Huber <johu@gentoo.org> snmplib-1.1.0.ebuild:
+  Stable for x86, wrt bug #435966
+
+  24 Sep 2012; Agostino Sarubbo <ago@gentoo.org> snmplib-1.1.0.ebuild:
+  Stable for amd64, wrt bug #435966
+
+  23 Sep 2012; Hans de Graaff <graaff@gentoo.org> -snmplib-1.0.4.ebuild:
+  Cleanup.
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> snmplib-1.0.3.ebuild,
+  snmplib-1.0.4.ebuild, snmplib-1.1.0.ebuild:
+  Drop ia64/sparc keywords
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> snmplib-1.0.3.ebuild:
+  Marking snmplib-1.0.3 ppc for bug 379019
+
+*snmplib-1.1.0 (25 Dec 2011)
+
+  25 Dec 2011; Hans de Graaff <graaff@gentoo.org> +snmplib-1.1.0.ebuild:
+  Version bump.
+
+  06 Dec 2011; Hans de Graaff <graaff@gentoo.org> -snmplib-1.0.2.ebuild:
+  Remove old version.
+
+*snmplib-1.0.4 (27 Oct 2011)
+
+  27 Oct 2011; Hans de Graaff <graaff@gentoo.org> +snmplib-1.0.4.ebuild:
+  Version bump. Add ruby19, ree18.
+
+  28 Aug 2011; Raúl Porcel <armin76@gentoo.org> snmplib-1.0.3.ebuild:
+  ia64 stable wrt #379019
+
+  21 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> snmplib-1.0.3.ebuild:
+  x86 stable wrt bug #379019
+
+  14 Aug 2011; Markos Chandras <hwoarang@gentoo.org> snmplib-1.0.3.ebuild:
+  Stable on amd64 wrt bug #379019
+
+  13 Aug 2011; Hans de Graaff <graaff@gentoo.org> snmplib-1.0.3.ebuild:
+  Whitespace.
+
+  13 Aug 2011; Hans de Graaff <graaff@gentoo.org> snmplib-1.0.3.ebuild:
+  Fix broken tests, bug 323423.
 
   08 Jul 2010; Hans de Graaff <graaff@gentoo.org> snmplib-1.0.3.ebuild:
   Use RUBY_FAKEGEM_NAME
@@ -112,4 +162,3 @@
   08 Nov 2004; Michael Kohl <citizen428@gentoo.org> +metadata.xml,
   +snmplib-0.3.0.ebuild:
   Initial import. Ebuild submitted by pyon <gentoo@pyon.net>, closing bug #67047
-

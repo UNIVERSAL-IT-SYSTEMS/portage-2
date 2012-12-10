@@ -1,6 +1,28 @@
 # ChangeLog for xfce-extra/xfce4-notifyd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-notifyd/ChangeLog,v 1.12 2011/05/01 09:29:58 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-notifyd/ChangeLog,v 1.17 2012/11/28 12:42:34 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-notifyd-0.2.2.ebuild:
+  EAPI5
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> xfce4-notifyd-0.2.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-notifyd-0.2.1.ebuild, -xfce4-notifyd-0.2.1_p20110501.ebuild:
+  old
+
+  06 Aug 2011; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-notifyd-0.2.2.ebuild:
+  amd64/x86 stable for renamed dbus service file (note: last snapshot was
+  almost same as 0.2.2)
+
+*xfce4-notifyd-0.2.2 (06 Aug 2011)
+
+  06 Aug 2011; Christoph Mende <angelos@gentoo.org>
+  +xfce4-notifyd-0.2.2.ebuild:
+  Version bump
 
 *xfce4-notifyd-0.2.1_p20110501 (01 May 2011)
 

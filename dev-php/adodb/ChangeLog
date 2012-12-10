@@ -1,6 +1,34 @@
 # ChangeLog for dev-php/adodb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/adodb/ChangeLog,v 1.111 2011/03/30 19:18:54 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/adodb/ChangeLog,v 1.118 2012/06/10 12:12:11 mabi Exp $
+
+*adodb-5.17 (10 Jun 2012)
+
+  10 Jun 2012; Matti Bickel <mabi@gentoo.org> +adodb-5.17.ebuild,
+  -adodb-5.08a.ebuild, -adodb-5.11.ebuild:
+  version bump & remove old
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> adodb-5.14.ebuild:
+  Stable for HPPA (bug #400841).
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> adodb-5.14.ebuild:
+  ppc/ppc64 stable wrt #400841
+
+  29 Jan 2012; Raúl Porcel <armin76@gentoo.org> adodb-5.14.ebuild:
+  alpha/ia64/sparc stable
+
+  13 Nov 2011; Markus Meier <maekke@gentoo.org> adodb-5.14.ebuild:
+  x86 stable, bug #387661
+
+  20 Oct 2011; Tony Vroon <chainsaw@gentoo.org> adodb-5.14.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #387661.
+
+*adodb-5.14 (02 Oct 2011)
+
+  02 Oct 2011; Peter Volkov <pva@gentoo.org> -adodb-5.05.ebuild,
+  -adodb-5.09a.ebuild, -adodb-5.10.ebuild, +adodb-5.14.ebuild:
+  Version bump. Drop old.
 
   30 Mar 2011; Michael Weber <xmw@gentoo.org> adodb-5.11.ebuild:
   added ~arm (bug 302981)

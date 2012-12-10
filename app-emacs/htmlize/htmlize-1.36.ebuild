@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/htmlize/htmlize-1.36.ebuild,v 1.5 2009/12/02 14:48:50 tcunha Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/htmlize/htmlize-1.36.ebuild,v 1.7 2012/12/01 19:48:24 armin76 Exp $
 
 inherit elisp
 
@@ -9,9 +9,9 @@ HOMEPAGE="http://www.emacswiki.org/cgi-bin/wiki.pl?SaveAsHtml
 	http://fly.srk.fer.hr/~hniksic/emacs/"
 SRC_URI="mirror://gentoo/${P}.el.bz2"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc x86"
 IUSE=""
 
 SITEFILE="50${PN}-gentoo.el"

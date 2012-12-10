@@ -1,6 +1,250 @@
 # ChangeLog for profile directory
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/default/bsd/ChangeLog,v 1.60 2011/07/10 17:38:20 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/default/bsd/ChangeLog,v 1.136 2012/11/24 21:16:53 ssuominen Exp $
+
+  24 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> package.mask:
+  Put virtual/udev masked next to existing sys-fs/udev entry.
+
+  24 Nov 2012; Alexis Ballier <aballier@gentoo.org> fbsd/package.mask:
+  unmask libarchive 3.0.4-r1, works fine here and bug #421191 has no activity
+  since months.
+
+  28 Oct 2012; <naota@gentoo.org> fbsd/use.mask:
+  Mask polkit on FreeBSD. It doesn't work due to FreeBSD API bug.
+
+  15 Oct 2012; Alexis Ballier <aballier@gentoo.org> fbsd/packages.build:
+  remove portage and add virtual/package-manager
+
+  15 Oct 2012; Alexis Ballier <aballier@gentoo.org> fbsd/packages.build:
+  move findutils up as on linux
+
+  15 Oct 2012; Alexis Ballier <aballier@gentoo.org> fbsd/make.defaults:
+  add python2 to BOOTSTRAP_USE so that python2 gets set as default python
+  interpreter
+
+  15 Oct 2012; Alexis Ballier <aballier@gentoo.org> fbsd/packages.build:
+  remove python and perl from packages.build, add autotools, like on linux
+
+  14 Oct 2012; <naota@gentoo.org> fbsd/package.use.mask:
+  Mask numa on sys-apps/hwloc
+
+  09 Oct 2012; <naota@gentoo.org> fbsd/package.use.mask:
+  Mask USE=dmpai on net-fs/samba. #430720
+
+  03 Oct 2012; <naota@gentoo.org> fbsd/package.use.mask:
+  Mask USE=gbm for media-libs/mesa
+
+  19 Sep 2012; Alexis Ballier <aballier@gentoo.org> -fbsd/sparc/8.2/deprecated:
+  revert sparc-fbsd profile deprecation otherwise repoman warns on every
+  package with sparc-fbsd keywords since it has no valid profile
+
+  19 Sep 2012; Alexis Ballier <aballier@gentoo.org> +fbsd/sparc/8.2/deprecated,
+  +fbsd/x86/8.2/deprecated:
+  deprecate fbsd 8.2 profiles, bug #435500
+
+  19 Sep 2012; Alexis Ballier <aballier@gentoo.org> fbsd/package.use.mask:
+  mask patch[xattr] as it requires gnu attr, bug #435474
+
+  07 Aug 2012; Alexis Ballier <aballier@gentoo.org>
+  +fbsd/amd64/9.1/make.defaults, +fbsd/amd64/9.1/parent,
+  +fbsd/x86/9.1/make.defaults, +fbsd/x86/9.1/parent:
+  add FreeBSD 9.1 profiles from overlay
+
+  04 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> fbsd/package.use.mask:
+  Remove obsolete net-libs/xulrunner entry wrt #424617
+
+  02 Jun 2012; Alexis Ballier <aballier@gentoo.org> fbsd/use.mask:
+  xemacs is fine, unmask
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/use.mask:
+  remove another bunch of old use masks... to be tested, may not 6 years later
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/use.mask:
+  there has not been apache 1.x in tree since a while, remove use mask
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/use.mask:
+  there is no more beagle useflag and its going away
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/package.use.mask:
+  libproxy has no more xulrunner useflag, remove mask
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/package.use.mask:
+  we dont have any keyword on epiphany, remove useless masks
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/package.use.mask:
+  we dont have any keyword on gnome-base/gnome, remove useless masks
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/package.use.mask:
+  consolekit is fine these days
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/package.use.mask:
+  remove no longer valid mask
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/package.use.mask:
+  libntlm is keyworded these days, remove useless mask
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> use.mask:
+  remove antique usemasks
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> use.mask:
+  drop usemasks about no longer in use flags
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> use.mask:
+  it seems there is no more termcap-compat useflag. removing mask
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> use.mask:
+  remove another useless mask: only package using the useflag isnt keyworded
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> use.mask:
+  no need to mask java nor gcj these days: we have a binary jdk and gcj seems
+  fine...
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> use.mask:
+  remove usemasks on non-existant flags
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> use.mask:
+  mpm-itk is no longer an useflag, removing mask
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> package.use.mask:
+  catalyst doesnt have a cdr useflag anymore, remove useless mask
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> package.use.mask:
+  pkcs11-helper is keyworded these days, removing useless mask
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> package.use.mask:
+  evolution has no pda useflag, neither gnome-applets has an apm one, removing
+  useless mask
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> package.use.mask:
+  openmpi useflags have been renamed but not the usemasks, fixing...
+
+  30 May 2012; Alexis Ballier <aballier@gentoo.org> package.use.mask:
+  mask gvfs[udisks]
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> package.use.mask:
+  fbosd for vlc is linux only
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> use.mask:
+  jack is not linux-specific
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/profile.bashrc:
+  Remove bash as CONFIG_SHELL: we should rather fix the bugs, and it makes
+  other packages fail
+
+  27 May 2012; Naohiro Aota <naota@gentoo.org> fbsd/package.mask:
+  Unask >x11-libs/cairo-1.10. Workaround to disable cairo-trace on FreeBSD is
+  adeed.
+
+  25 May 2012; Naohiro Aota <naota@gentoo.org> fbsd/package.mask:
+  Mask >x11-libs/cairo-1.10 till bug #390449 is solved
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> use.mask:
+  mask inotify as its linux only
+
+  16 May 2012; Naohiro Aota <naota@gentoo.org> package.use.mask:
+  Mask connman for x11-libs/qt-bearer
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> package.use.mask:
+  mask kdelibs[udisks,upower] as they require udev
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/package.use.mask:
+  unmask pambase[consolekit]
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/package.use.mask,
+  package.use.mask:
+  consoleki[pam] seems to work, unmask
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> use.mask:
+  mask systemd globally as its linux only
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/make.defaults:
+  bring back pcre in default useflags
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/make.defaults:
+  factorize and cleanup a bit
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/make.defaults:
+  remove some more default enabled use flags (cli, pcre, session)
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/make.defaults:
+  remove perl and python from make.default USE, as on linux
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> use.mask:
+  mask pax_kernel as this is hardened linux kernel
+
+  05 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/packages.build:
+  add freebsd-mk-defs to stage1 for the same reason
+
+  04 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/packages:
+  add freebsd-mk-defs to the system set as its needed by bsdmake
+
+  04 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/package.use.mask:
+  pambase[ssh] was renamed to pambase[pam_ssh] some time ago...
+
+  04 May 2012; Alexis Ballier <aballier@gentoo.org> fbsd/make.defaults:
+  bootstrap with USE=mta to let virtual/mta pick ssmtp[mta], by Yuta SATOH in
+  bug #408587
+
+  02 May 2012; Naohiro Aota <naota@gentoo.org> profile.bashrc:
+  Match only for the word beginning
+
+  25 Apr 2012; Alexis Ballier <aballier@gentoo.org> +fbsd/amd64/7.2/deprecated,
+  +fbsd/amd64/8.0/deprecated, +fbsd/sparc/7.2/deprecated,
+  +fbsd/sparc/8.0/deprecated, +fbsd/x86/7.2/deprecated,
+  +fbsd/x86/8.0/deprecated:
+  deprecate old fbsd profiles
+
+  21 Apr 2012; Alexis Ballier <aballier@gentoo.org> package.use.mask:
+  mask xine-lib[fusion] as thats linux only
+
+  02 Apr 2012; Naohiro Aota <naota@gentoo.org> fbsd/use.mask, packages:
+  Mask wayland since it does not support BSDs
+
+  08 Mar 2012; Naohiro Aota <naota@gentoo.org> fbsd/package.use.mask:
+  Mask wifi and crashreporter also on www-client/firefox
+
+  08 Mar 2012; Naohiro Aota <naota@gentoo.org> use.mask:
+  Drop removed USE flag sysfs. Bug #405875
+
+  28 Feb 2012; Naohiro Aota <naota@gentoo.org> fbsd/package.use.mask:
+  Mask crashreporter for net-libs/xulrunner
+
+  25 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> packages:
+  sys-apps/module-init-tools replaced by virtual/modutils in base/packages, so
+  match up here too.
+
+  20 Feb 2012; Naohiro Aota <naota@gentoo.org> fbsd/package.use.mask:
+  Mask wifi for net-libs/xulrunner
+
+  14 Feb 2012; Alexis Ballier <aballier@gentoo.org> packages:
+  remove virtual/modutils from system by Yuta SATOH, bug #402389
+
+  18 Dec 2011; Alexis Ballier <aballier@gentoo.org> use.mask:
+  usemask libv4l, linux only
+
+  13 Dec 2011; Naohiro Aota <naota@gentoo.org> fbsd/package.use.mask:
+  Mask j2me for dev-java/proguard
+
+  06 Dec 2011; Naohiro Aota <naota@gentoo.org> fbsd/package.use.mask:
+  mask gssapi for net-dns/bind
+
+  14 Nov 2011; Mike Frysinger <vapier@gentoo.org> packages:
+  sys-apps/net-tools is no longer in base profile.
+
+  08 Nov 2011; Naohiro Aota <naota@gentoo.org> +fbsd/package.use.force,
+  fbsd/package.use.mask:
+  app-emulation/wine: force hardened and restrict capi
+
+  02 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  +fbsd/amd64/9.0/make.defaults, +fbsd/amd64/9.0/parent,
+  +fbsd/x86/9.0/make.defaults, +fbsd/x86/9.0/parent:
+  add 9.0 profiles for amd64 and x86
+
+  01 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> use.mask:
+  Remove obsolete entry for USE="v4l2"
+
+  18 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Remove obsolete entry for sys-apps/hal.
 
   10 Jul 2011; Alexis Ballier <aballier@gentoo.org> package.use.mask:
   mask sctp for openmpi, linux only

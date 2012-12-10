@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/soldieroffortune/soldieroffortune-1.06a.ebuild,v 1.26 2011/07/12 17:45:22 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/soldieroffortune/soldieroffortune-1.06a.ebuild,v 1.30 2012/09/19 15:16:06 mr_bones_ Exp $
 
-inherit eutils games
+inherit eutils unpacker cdrom games
 
 DESCRIPTION="First-person shooter based on the mercenary trade"
 HOMEPAGE="http://www.lokigames.com/products/sof/"
@@ -12,7 +12,6 @@ LICENSE="LOKI-EULA"
 SLOT="0"
 KEYWORDS="amd64 x86"
 RESTRICT="strip"
-PROPERTIES="interactive"
 IUSE=""
 
 DEPEND="sys-libs/glibc
@@ -34,7 +33,6 @@ RDEPEND="virtual/opengl
 
 S=${WORKDIR}
 
-GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/${PN}
 Ddir=${D}/${dir}
 
@@ -72,7 +70,7 @@ src_install() {
 
 	games_make_wrapper sof ./sof "${dir}" "${dir}"
 	sed -i \
-		-e 's/^exec /__GL_ExtensionStringVersion=17700 exec /'
+		-e 's/^exec /__GL_ExtensionStringVersion=17700 exec /' \
 		"${D}/${GAMES_BINDIR}/sof" || die
 	doicon "${CDROM_ROOT}"/sof.xpm
 	make_desktop_entry sof "Soldier of Fortune" sof

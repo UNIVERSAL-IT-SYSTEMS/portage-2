@@ -1,6 +1,121 @@
 # ChangeLog for media-gfx/gthumb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/gthumb/ChangeLog,v 1.132 2011/07/14 10:42:01 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/gthumb/ChangeLog,v 1.158 2012/12/05 22:18:46 tetromino Exp $
+
+  05 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -files/gthumb-no-brasero3.patch, gthumb-2.14.4.ebuild, -gthumb-3.0.0.ebuild,
+  gthumb-3.0.2.ebuild:
+  Drop slideshow USE flag for gthumb-2 due to pending clutter-gtk-0.10 removal
+  (bug #435164). Drop old. Update to EAPI5.
+
+*gthumb-3.0.2 (25 Oct 2012)
+
+  25 Oct 2012; Gilles Dartiguelongue <eva@gentoo.org> -gthumb-2.14.3.ebuild,
+  gthumb-2.14.4.ebuild, gthumb-3.0.0.ebuild, +gthumb-3.0.2.ebuild:
+  Pin gstreamer dependencies to slot 0.10.
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gthumb-2.14.4.ebuild:
+  stable ppc, bug #427544
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gthumb-2.14.4.ebuild:
+  stable ppc64, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gthumb-2.14.4.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gthumb-2.14.4.ebuild:
+  x86 stable wrt bug #427544
+
+  21 Aug 2012; Christoph Junghans <ottxor@gentoo.org> gthumb-3.0.0.ebuild:
+  added prefix keywords
+
+*gthumb-2.14.4 (25 May 2012)
+
+  25 May 2012; Pacho Ramos <pacho@gentoo.org> +gthumb-2.14.4.ebuild,
+  -gthumb-2.14.0.ebuild, gthumb-3.0.0.ebuild:
+  Version bump, drop old. Rekeyword on ppc/ppc64 as looks it makes repoman happy
+  (and don't remember why were dropped).
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> gthumb-2.14.3.ebuild:
+  ppc stable wrt #410611
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gthumb-2.14.0.ebuild,
+  gthumb-2.14.3.ebuild, gthumb-3.0.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gthumb-2.14.3.ebuild:
+  x86 stable, bug #410611
+
+*gthumb-3.0.0 (28 Apr 2012)
+
+  28 Apr 2012; Pacho Ramos <pacho@gentoo.org> +gthumb-3.0.0.ebuild,
+  -gthumb-2.14.2.ebuild, -gthumb-2.14.3-r300.ebuild:
+  Version bump, remove old.
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> gthumb-2.14.3.ebuild:
+  Marking gthumb-2.14.3 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gthumb-2.14.3.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  13 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gthumb-2.14.3-r300.ebuild:
+  Add RDEPEND on gsettings-desktop-schemas (bug #411695, thanks to mummenschanz
+  for reporting).
+
+*gthumb-2.14.3 (26 Mar 2012)
+*gthumb-2.14.3-r300 (26 Mar 2012)
+
+  26 Mar 2012; Pacho Ramos <pacho@gentoo.org> +gthumb-2.14.3-r300.ebuild,
+  +gthumb-2.14.3.ebuild, -gthumb-2.12.3.ebuild, -gthumb-2.14.1.ebuild,
+  -gthumb-2.14.2-r300.ebuild:
+  Version bump, remove old.
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> gthumb-2.14.0.ebuild:
+  Marking gthumb-2.14.0 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> gthumb-2.14.0.ebuild:
+  Marking gthumb-2.14.0 ppc64 stable for bug 393007
+
+*gthumb-2.14.2-r300 (25 Jan 2012)
+*gthumb-2.14.2 (25 Jan 2012)
+
+  25 Jan 2012; Pacho Ramos <pacho@gentoo.org> +gthumb-2.14.2-r300.ebuild,
+  +gthumb-2.14.2.ebuild, -gthumb-2.12.4.ebuild:
+  Drop old, version bump: upstream fixes, add a jpeg USE flag and have a
+  revision for gnome3 (bug #387917 by Torsten Stets.
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> gthumb-2.14.0.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> gthumb-2.14.0.ebuild:
+  amd64 stable, bug 393007
+
+*gthumb-2.14.1 (12 Dec 2011)
+
+  12 Dec 2011; Gilles Dartiguelongue <eva@gentoo.org> +gthumb-2.14.1.ebuild:
+  Version bump. Fix some infinite loop, crashes and memory leaks. Translation
+  updates.
+
+  27 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gthumb-2.12.3.ebuild, gthumb-2.12.4.ebuild, gthumb-2.14.0.ebuild:
+  Add bison and flex build-time deps.
+
+*gthumb-2.14.0 (26 Oct 2011)
+
+  26 Oct 2011; Pacho Ramos <pacho@gentoo.org> -gthumb-2.13.1.ebuild,
+  +gthumb-2.14.0.ebuild:
+  Version bump, remove old.
+
+*gthumb-2.12.4 (16 Oct 2011)
+
+  16 Oct 2011; Pacho Ramos <pacho@gentoo.org>
+  -files/gthumb-2.12.1-new-exiv2.patch, -gthumb-2.12.2.ebuild,
+  +gthumb-2.12.4.ebuild:
+  Version bump, remove old.
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> gthumb-2.12.3.ebuild:
+  ppc/ppc64 stable wrt #369909
 
   14 Jul 2011; Thomas Kahle <tomka@gentoo.org> gthumb-2.12.3.ebuild:
   x86 stable per bug 369909

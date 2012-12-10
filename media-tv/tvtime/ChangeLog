@@ -1,6 +1,57 @@
 # ChangeLog for media-tv/tvtime
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/tvtime/ChangeLog,v 1.50 2011/06/02 11:41:44 a3li Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-tv/tvtime/ChangeLog,v 1.60 2012/07/09 14:29:08 a3li Exp $
+
+  09 Jul 2012; Alex Legler <a3li@gentoo.org> metadata.xml:
+  Removing from metadata
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  tvtime-1.0.2_p20110131-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  08 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -tvtime-1.0.2-r2.ebuild,
+  -files/tvtime-1.0.2+linux-headers-2.6.18.patch,
+  -files/tvtime-1.0.2-autotools.patch, -files/tvtime-1.0.2-gcc41.patch,
+  -files/tvtime-1.0.2-glibc-2.10.patch, -files/tvtime-1.0.2-libsupc++.patch:
+  old
+
+  06 Jan 2012; Brent Baude <ranger@gentoo.org>
+  tvtime-1.0.2_p20110131-r3.ebuild:
+  Marking tvtime-1.0.2_p20110131-r3 ppc for bug 385353
+
+  18 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  tvtime-1.0.2_p20110131-r3.ebuild:
+  x86 stable wrt bug #385353
+
+  15 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  tvtime-1.0.2_p20110131-r3.ebuild:
+  Stable on amd64 wrt bug #385353
+
+*tvtime-1.0.2_p20110131-r3 (14 Oct 2011)
+
+  14 Oct 2011; Alex Legler <a3li@gentoo.org> -tvtime-1.0.2_p20110131-r2.ebuild,
+  +tvtime-1.0.2_p20110131-r3.ebuild,
+  +files/tvtime-1.0.2_p20110131-underlinking.patch, metadata.xml:
+  Add additional patch to fix alsa issues, bug 384215. Minor ebuild fixes from
+  bug 385353 and idl0r.
+
+*tvtime-1.0.2_p20110131-r2 (13 Oct 2011)
+
+  13 Oct 2011; Alex Legler <a3li@gentoo.org> -tvtime-1.0.2_p20110131.ebuild,
+  -tvtime-1.0.2_p20110131-r1.ebuild, +tvtime-1.0.2_p20110131-r2.ebuild:
+  Revbump, hide unstable alsa patch behind masked use flag until it has matured
+  (and things like bug 384215 don't happen anymore). Removing old versions.
+
+  10 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> tvtime-1.0.2-r2.ebuild:
+  Missing #include <zlib.h> for Z_BEST_COMPRESSION. Required by libpng >= 1.5
+  stabilization.
+
+*tvtime-1.0.2_p20110131-r1 (14 Aug 2011)
+
+  14 Aug 2011; Alex Legler <a3li@gentoo.org> +tvtime-1.0.2_p20110131-r1.ebuild:
+  Revision bump. Fixes underlinking, bug 370025 by flameeyes; Adds alsa
+  patches, bug 323797 by Henrik Johansson; Renames desktop file, bug 308297 by
+  Florian Scandella. Add dependency on alsa, and die more.
 
   02 Jun 2011; Alex Legler <a3li@gentoo.org> tvtime-1.0.2_p20110131.ebuild,
   +files/tvtime-libpng-1.5.patch:

@@ -1,6 +1,83 @@
 # ChangeLog for media-video/avidemux
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/avidemux/ChangeLog,v 1.185 2011/06/13 15:11:40 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/avidemux/ChangeLog,v 1.200 2012/11/04 11:08:13 hwoarang Exp $
+
+*avidemux-2.6.0 (04 Nov 2012)
+
+  04 Nov 2012; Markos Chandras <hwoarang@gentoo.org> +avidemux-2.6.0.ebuild,
+  metadata.xml:
+  Version bump. #431748. Moved from Qt overlay
+
+  01 Sep 2012; Davide Pesavento <pesa@gentoo.org> avidemux-2.5.6-r2.ebuild:
+  Replace -O0 with -O1 on x86, wrt bug 432322.
+
+*avidemux-2.5.6-r2 (12 Aug 2012)
+
+  12 Aug 2012; Davide Pesavento <pesa@gentoo.org> +avidemux-2.5.6-r2.ebuild,
+  -avidemux-2.5.6-r1.ebuild:
+  Fix desktop file, thanks to redneb in bug 430500.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> avidemux-2.5.6-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Apr 2012; Johannes Huber <johu@gentoo.org> -avidemux-2.5.4-r2.ebuild,
+  -files/avidemux-2.5.4-dummy-sound-fix.patch,
+  -files/avidemux-2.5.4-openfileqt.patch,
+  -files/avidemux-2.5.4-x264-build115.patch,
+  -files/avidemux-2.5.4-x264-version-fix.patch,
+  -files/avidemux-2.5.4-x264.patch, -files/avidemux-2.5.4-xvid.patch:
+  Remove old.
+
+  21 Apr 2012; Jeff Horelick <jdhore@gentoo.org> avidemux-2.5.6-r1.ebuild:
+  marked x86 per bug 412529
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> avidemux-2.5.6-r1.ebuild:
+  Stable for amd64, wrt bug #412529
+
+  18 Apr 2012; Davide Pesavento <pesa@gentoo.org>
+  +files/avidemux-2.5.6-ffmpeg-symbol-visibility.patch, -avidemux-2.5.5.ebuild,
+  -avidemux-2.5.6.ebuild, avidemux-2.5.6-r1.ebuild, metadata.xml:
+  Add upstream patch to fix undefined reference during linking, thanks to
+  everyone in bug 403253. Remove old versions.
+
+  19 Mar 2012; Davide Pesavento <pesa@gentoo.org> avidemux-2.5.6-r1.ebuild:
+  Revert to bundled spidermonkey (bug #408813).
+
+*avidemux-2.5.6-r1 (18 Mar 2012)
+
+  18 Mar 2012; Davide Pesavento <pesa@gentoo.org> +avidemux-2.5.6-r1.ebuild,
+  metadata.xml:
+  Use system copy of dev-lang/spidermonkey, remove obsolete dts USE flag, add
+  vpx USE flag, add missing deps, general ebuild cleanup.
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> avidemux-2.5.4-r2.ebuild,
+  avidemux-2.5.5.ebuild, avidemux-2.5.6.ebuild:
+  Remove USE="esd" because media-sound/esound isn't in tree anymore.
+
+  11 Mar 2012; Markos Chandras <hwoarang@gentoo.org> avidemux-2.5.6.ebuild:
+  Add opengl useflag. Bug #406955. Patch by Ian Delaney
+
+*avidemux-2.5.6 (02 Jan 2012)
+
+  02 Jan 2012; Markos Chandras <hwoarang@gentoo.org> +avidemux-2.5.6.ebuild:
+  version bump
+
+  12 Nov 2011; Tim Harder <radhermit@gentoo.org>
+  -files/2.5.3_field_asm_fix.diff, -files/avidemux-2.4-cmake264.patch,
+  -files/avidemux-2.4.4-gcc-4.4.patch, -files/avidemux-2.4-i18n.patch,
+  -files/avidemux-2.4-ts-cmake.patch, -avidemux-2.5.1_p5428.ebuild,
+  -files/avidemux-2.5.1-build-plugins-fix.patch, -avidemux-2.5.2.ebuild,
+  -files/avidemux-2.5.2-altivec-bool.patch, -avidemux-2.5.3-r3.ebuild,
+  -files/avidemux-2.5.3-build-plugins-fix.patch,
+  -files/avidemux-2.5.3-fix-fgets-fortify.patch, -avidemux-2.5.4-r1.ebuild,
+  -files/avidemux-pulseaudiosimple.patch,
+  -files/lavcodec-mpegvideo_mmx-asm-fix.patch:
+  Remove old.
+
+*avidemux-2.5.5 (24 Aug 2011)
+
+  24 Aug 2011; Tim Harder <radhermit@gentoo.org> +avidemux-2.5.5.ebuild:
+  Version bump (bug #373067).
 
   13 Jun 2011; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
   Remove myself from metadata.xml

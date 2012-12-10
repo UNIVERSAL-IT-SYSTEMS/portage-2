@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/tremulous/tremulous-1.1.0-r4.ebuild,v 1.7 2011/05/18 19:30:04 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/tremulous/tremulous-1.1.0-r4.ebuild,v 1.10 2012/11/08 21:04:00 tupone Exp $
 
-EAPI=2
+EAPI=4
 
 inherit eutils toolchain-funcs games
 
@@ -21,7 +21,7 @@ IUSE="dedicated openal +opengl +vorbis"
 
 UIDEPEND="
 	virtual/jpeg
-	media-libs/libsdl[opengl?]
+	media-libs/libsdl[joystick,opengl?]
 	vorbis? ( media-libs/libogg media-libs/libvorbis )
 	openal? ( media-libs/openal )
 	x11-libs/libXau
@@ -67,6 +67,7 @@ src_compile() {
 	fi
 
 	emake \
+		-j1 \
 		$(use amd64 && echo ARCH=x86_64) \
 		BUILD_CLIENT=${client} \
 		BUILD_CLIENT_SMP=${client} \
@@ -78,23 +79,20 @@ src_compile() {
 		USE_CODEC_VORBIS=$(buildit vorbis) \
 		USE_OPENAL=$(buildit openal) \
 		USE_LOCAL_HEADERS=0 \
-		OPTIMIZE= \
-		|| die "emake failed"
+		OPTIMIZE=
 }
 
 src_install() {
 	insinto "${GAMES_DATADIR}"/${PN}
-	doins -r ../base || die "doins -r failed"
+	doins -r ../base
 	dodoc ChangeLog ../manual.pdf
 	if use opengl || ! use dedicated ; then
-		newgamesbin build/release-linux-*/${PN}-smp.* ${PN} \
-			|| die "newgamesbin ${PN}"
+		newgamesbin build/release-linux-*/${PN}-smp.* ${PN}
 		newicon "${WORKDIR}"/tyrant.xpm ${PN}.xpm
 		make_desktop_entry ${PN} Tremulous
 	fi
 	if use dedicated ; then
-		newgamesbin build/release-linux-*/tremded.* ${PN}-ded \
-			|| die "newgamesbin ${PN}-ded failed"
+		newgamesbin build/release-linux-*/tremded.* ${PN}-ded
 	fi
 	prepgamesdirs
 }

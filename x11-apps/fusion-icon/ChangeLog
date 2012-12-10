@@ -1,6 +1,35 @@
 # ChangeLog for x11-apps/fusion-icon
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-apps/fusion-icon/ChangeLog,v 1.8 2011/04/18 21:58:54 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-apps/fusion-icon/ChangeLog,v 1.15 2012/09/07 08:26:41 pinkbyte Exp $
+
+  07 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> fusion-icon-0.1-r2.ebuild,
+  fusion-icon-0.1-r3.ebuild:
+  Set proper homepage
+
+*fusion-icon-0.1-r3 (07 Sep 2012)
+
+  07 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> +fusion-icon-0.1-r3.ebuild,
+  +files/fusion-icon-0.1-qt4-interface-subprocess-call.patch:
+  Revision bump. Add patch which uses subprocess call routine in qt4 interface
+  for newer Python
+
+  31 Aug 2012; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
+  Remove myself and proxy maintainer from maintainers
+
+  26 Jun 2012; Naohiro Aota <naota@gentoo.org> fusion-icon-0.1-r2.ebuild:
+  Make USE=gtk as default.
+
+  22 Jun 2012; Naohiro Aota <naota@gentoo.org> metadata.xml:
+  Update maintainer mail address.
+
+  20 Apr 2012; Naohiro Aota <naota@gentoo.org> metadata.xml:
+  Assign Pinkbyte as maintainer.
+
+*fusion-icon-0.1-r2 (13 Nov 2011)
+
+  13 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  +fusion-icon-0.1-r2.ebuild, -fusion-icon-0.1-r1.ebuild:
+  Revision bump to move to EAPI=4 and ensure that either gtk or qt4 are enabled.
 
   18 Apr 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   fusion-icon-0.1-r1.ebuild:

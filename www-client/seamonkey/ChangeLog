@@ -1,6 +1,418 @@
 # ChangeLog for www-client/seamonkey
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/ChangeLog,v 1.322 2011/07/26 12:27:51 polynomial-c Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/ChangeLog,v 1.416 2012/12/04 07:55:27 polynomial-c Exp $
+
+  04 Dec 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.14.1.ebuild:
+  Use latest ff patchset.
+
+  03 Dec 2012; Andreas Schuerch <nativemad@gentoo.org> seamonkey-2.14-r1.ebuild:
+  x86 stable, see bug 444318
+
+*seamonkey-2.14.1 (30 Nov 2012)
+
+  30 Nov 2012; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.13.2.ebuild,
+  +seamonkey-2.14.1.ebuild:
+  Version bump. Removed old.
+
+  27 Nov 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-2.14-r1.ebuild:
+  Stable for amd64, wrt bug #444318
+
+*seamonkey-2.14-r1 (25 Nov 2012)
+
+  25 Nov 2012; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.14.ebuild,
+  +seamonkey-2.14-r1.ebuild:
+  Fix about:memory use for jemalloc-3.
+
+*seamonkey-2.14 (20 Nov 2012)
+
+  20 Nov 2012; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.13.1.ebuild,
+  +seamonkey-2.14.ebuild:
+  Version bump. Removed old.
+
+  03 Nov 2012; <ago@gentoo.org> seamonkey-2.13.2.ebuild:
+  Stable for amd64, wrt bug #439960
+
+*seamonkey-2.13.2 (01 Nov 2012)
+
+  01 Nov 2012; <anarchy@gentoo.org> +seamonkey-2.13.2.ebuild:
+  Security bump, bug #439960
+
+  23 Oct 2012; <ago@gentoo.org> seamonkey-2.13.1.ebuild:
+  Stable for amd64, wrt bug #437780
+
+*seamonkey-2.13.1 (19 Oct 2012)
+
+  19 Oct 2012; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.11.ebuild,
+  +seamonkey-2.13.1.ebuild:
+  Security bump. Removed old.
+
+  15 Sep 2012; Andreas Schuerch <nativemad@gentoo.org> seamonkey-2.12.1.ebuild:
+  x86 stable, see bug 433383
+
+*seamonkey-2.12.1 (10 Sep 2012)
+
+  10 Sep 2012; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.12.ebuild,
+  +seamonkey-2.12.1.ebuild:
+  Bumped seamonkey-2.12 to 2.12.1. As it's a privacy relevant bugfix release I
+  bumped it straight to stable for amd64 (which had 2.12 stable already).
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-2.12.ebuild:
+  Stable for amd64, wrt bug #433383
+
+*seamonkey-2.12 (30 Aug 2012)
+
+  30 Aug 2012; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.10.1.ebuild,
+  +seamonkey-2.12.ebuild, +files/firefox-15.0-fix-gstreamer-html5-crash.patch:
+  Version bump. Removed old.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> seamonkey-2.10.1.ebuild,
+  seamonkey-2.11.ebuild:
+  Drop alpha keywords
+
+  28 Jul 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-2.11.ebuild:
+  Stable for amd64, wrt bug #427224
+
+  24 Jul 2012; Jeff Horelick <jdhore@gentoo.org> seamonkey-2.11.ebuild:
+  marked x86 per bug 427224
+
+  18 Jul 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.11.ebuild:
+  Use latest stable ff patchset.
+
+  18 Jul 2012; Jory A. Pratt <anarchy@gentoo.org> seamonkey-2.11.ebuild:
+  Remove libvpx hack, mozconfig-3 updated to support pkg-config
+
+  17 Jul 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.11.ebuild:
+  Fixed build with webm USE flag being set. (bug #427016).
+
+*seamonkey-2.11 (17 Jul 2012)
+
+  17 Jul 2012; Lars Wendler <polynomial-c@gentoo.org> +seamonkey-2.11.ebuild:
+  Version bump.
+
+  04 Jul 2012; Jory A. Pratt <anarchy@gentoo.org> seamonkey-2.0.14-r1.ebuild,
+  seamonkey-2.4.1-r1.ebuild, seamonkey-2.10.1.ebuild:
+  Fix license on >=seamonkey-*
+
+  02 Jul 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.10.1.ebuild:
+  Update license on >=seamonkey-2.10.1 to MPL-2.0
+
+  27 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.10.1.ebuild:
+  Added missing languages.
+
+  20 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.9.ebuild,
+  -seamonkey-2.9.1-r2.ebuild, -seamonkey-2.10.ebuild:
+  Removed old versions.
+
+  19 Jun 2012; Andreas Schuerch <nativemad@gentoo.org> seamonkey-2.10.1.ebuild:
+  x86 stable, thanks
+
+  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-2.10.1.ebuild:
+  Stable for amd64, wrt bug #419917
+
+*seamonkey-2.10.1 (16 Jun 2012)
+
+  16 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> +seamonkey-2.10.1.ebuild:
+  Version bump.
+
+  15 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.10.ebuild:
+  Use latest ff patchset.
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-2.10.ebuild:
+  Stable for amd64, wrt bug #420125
+
+  10 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.10.ebuild:
+  Fixed dependency on libpng. Thanks to Nathan Phillip Brink who reported this
+  in bug #420457.
+
+  08 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.10.ebuild:
+  Added new ff-patchset to fix bug #419801.
+
+  06 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.10.ebuild:
+  Fixing dependencies on nss/nspr.
+
+*seamonkey-2.10 (06 Jun 2012)
+
+  06 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> +seamonkey-2.10.ebuild:
+  Version bump.
+
+*seamonkey-2.9.1-r2 (29 May 2012)
+
+  29 May 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -seamonkey-2.9.1-r1.ebuild, +seamonkey-2.9.1-r2.ebuild:
+  Revision bump to incorporate gcc-4.7 fixes and a better patch for
+  system-cairo support.
+
+  24 May 2012; Mike Gilbert <floppym@gentoo.org> seamonkey-2.9.1-r1.ebuild,
+  seamonkey-2.9.ebuild:
+  Convert DOS line-endings in shell scripts. Bug 391889.
+
+  24 May 2012; Lars Wendler <polynomial-c@gentoo.org>
+  seamonkey-2.9.1-r1.ebuild:
+  No KEYWORDS for pre-releases.
+
+*seamonkey-2.9.1-r1 (24 May 2012)
+
+  24 May 2012; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.9.1.ebuild,
+  +seamonkey-2.9.1-r1.ebuild:
+  Add jit useflag fix patchset from firefox.
+
+  08 May 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.9.1.ebuild:
+  Use latest firefox patchset (v0.2).
+
+  08 May 2012; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.8.ebuild,
+  -seamonkey-2.8-r1.ebuild, seamonkey-2.9.ebuild, seamonkey-2.9.1.ebuild:
+  Added threadsafe USE flag to sqlite dependency. Thanks to Xarthisius for
+  reporting this in bug #415095. Removed old versions.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> seamonkey-2.0.14-r1.ebuild,
+  seamonkey-2.4.1-r1.ebuild, seamonkey-2.8.ebuild, seamonkey-2.8-r1.ebuild,
+  seamonkey-2.9.ebuild, seamonkey-2.9.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 May 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.9.ebuild,
+  seamonkey-2.9.1.ebuild:
+  Fixed dependency on sqlite. Thanks to Florian Schmaus who reported this in
+  bug #414407.
+
+  02 May 2012; Andreas Schuerch <nativemad@gentoo.org> seamonkey-2.9.ebuild:
+  x86 stable, see bug 413657. Thanks Mikle Kolyada.
+
+*seamonkey-2.9.1 (30 Apr 2012)
+
+  30 Apr 2012; Lars Wendler <polynomial-c@gentoo.org> +seamonkey-2.9.1.ebuild:
+  Version bump.
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-2.9.ebuild:
+  Stable for amd64, wrt bug #413657
+
+  26 Apr 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.9.ebuild,
+  -files/seamonkey-2.9-revert-system-cairo-breakage.patch.bz2:
+  Moved binary patch away from portage-tree.
+
+*seamonkey-2.9 (24 Apr 2012)
+
+  24 Apr 2012; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.7.1.ebuild,
+  -seamonkey-2.7.1-r1.ebuild, +seamonkey-2.9.ebuild,
+  +files/seamonkey-2.9-revert-system-cairo-breakage.patch.bz2:
+  Version bump. Removed old.
+
+  28 Mar 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.8-r1.ebuild:
+  Bump to latest ff-11 patchset (v0.4).
+
+*seamonkey-2.8-r1 (25 Mar 2012)
+
+  25 Mar 2012; Lars Wendler <polynomial-c@gentoo.org> +seamonkey-2.8-r1.ebuild:
+  Revbump for latest ff-11 patchset (v0.3).
+
+  25 Mar 2012; Thomas Kahle <tomka@gentoo.org> seamonkey-2.8.ebuild:
+  marked x86 per bug 408161
+
+  22 Mar 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-2.8.ebuild:
+  Stable for amd64, wrt bug #408161
+
+  14 Mar 2012; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.8.ebuild:
+  Fixed dependencies.
+
+  14 Mar 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -files/enigmail/enigmail-1.3.3-bug373733.patch,
+  -files/seamonkey-2.1b3-restore-tabbar-scrolling-from-2.1b2.diff:
+  Removed unused files from FILESDIR.
+
+*seamonkey-2.8 (14 Mar 2012)
+
+  14 Mar 2012; Lars Wendler <polynomial-c@gentoo.org>
+  seamonkey-2.0.14-r1.ebuild, seamonkey-2.4.1-r1.ebuild,
+  -seamonkey-2.6.1.ebuild, -seamonkey-2.7.ebuild, seamonkey-2.7.1.ebuild,
+  seamonkey-2.7.1-r1.ebuild, +seamonkey-2.8.ebuild:
+  Version bump. Removed old. Dropped keywords from vulnerable versions where
+  possible.
+
+  01 Mar 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-2.7.1-r1.ebuild:
+  Stable for amd64, wrt bug #401985
+
+*seamonkey-2.7.1-r1 (01 Mar 2012)
+
+  01 Mar 2012; Jory A. Pratt <anarchy@gentoo.org> +seamonkey-2.7.1-r1.ebuild:
+  Fix libvpx-1.0.0 support, bug #401985
+
+  20 Feb 2012; Thomas Kahle <tomka@gentoo.org> seamonkey-2.7.1.ebuild:
+  marked x86 per bug 403183
+
+  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-2.7.1.ebuild:
+  Stable for amd64, wrt bug #403183
+
+*seamonkey-2.7.1 (13 Feb 2012)
+
+  13 Feb 2012; Lars Wendler <polynomial-c@gentoo.org> +seamonkey-2.7.1.ebuild:
+  Version bump.
+
+  07 Feb 2012; Lars Wendler <polynomial-c@gentoo.org> +files/all-gentoo-1.js,
+  seamonkey-2.7.ebuild:
+  Added all-gentoo-1.js to FILESDIR. Thanks to Torsten Kaiser for reporting
+  this in bug #402583. Adjusted dependency on libvpx as mentioned by jdhore.
+
+*seamonkey-2.7 (07 Feb 2012)
+
+  07 Feb 2012; Lars Wendler <polynomial-c@gentoo.org> +seamonkey-2.7.ebuild:
+  Version bump.
+
+  12 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> seamonkey-2.6.1.ebuild:
+  x86 stable wrt bug #395431
+
+  11 Jan 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-2.6.1.ebuild:
+  Stable for AMD64, wrt security bug #395431
+
+  26 Dec 2011; Mark Loeser <halcy0n@gentoo.org> seamonkey-2.4.1-r1.ebuild,
+  seamonkey-2.6.1.ebuild:
+  Stable for ppc, drop ppc64; bug #381245
+
+  23 Dec 2011; Lars Wendler <polynomial-c@gentoo.org> Manifest:
+  Really fixed patchset this time
+
+  23 Dec 2011; Lars Wendler <polynomial-c@gentoo.org> Manifest:
+  Fixed patchset.
+
+*seamonkey-2.6.1 (23 Dec 2011)
+
+  23 Dec 2011; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.6.ebuild,
+  +seamonkey-2.6.1.ebuild:
+  Version bump. Removed old.
+
+  20 Dec 2011; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.6.ebuild:
+  Fixed dependencies. Thanks to jdhore.
+
+*seamonkey-2.6 (20 Dec 2011)
+
+  20 Dec 2011; Lars Wendler <polynomial-c@gentoo.org>
+  seamonkey-2.0.14-r1.ebuild, -seamonkey-2.4.1-r2.ebuild,
+  -seamonkey-2.5.ebuild, -seamonkey-2.5-r1.ebuild, +seamonkey-2.6.ebuild:
+  Version bump. Removed old. Removed some keywords from unsupported
+  seamonkey-2.0.14 ebuild.
+
+*seamonkey-2.5-r1 (04 Dec 2011)
+
+  04 Dec 2011; Lars Wendler <polynomial-c@gentoo.org> +seamonkey-2.5-r1.ebuild:
+  Revbump for new enigmail version.
+
+  23 Nov 2011; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.5.ebuild:
+  Use nsplugins.eclass to handle the plugins directory.
+
+*seamonkey-2.5 (23 Nov 2011)
+
+  23 Nov 2011; Lars Wendler <polynomial-c@gentoo.org>
+  +files/enigmail/enigmail-1.3.3-bug373733.patch, +seamonkey-2.5.ebuild:
+  Version bump.
+
+  13 Nov 2011; Markus Meier <maekke@gentoo.org> seamonkey-2.4.1-r1.ebuild:
+  x86 stable, bug #381245
+
+*seamonkey-2.4.1-r2 (07 Nov 2011)
+
+  07 Nov 2011; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.3.1.ebuild,
+  -seamonkey-2.3.3-r1.ebuild, +seamonkey-2.4.1-r2.ebuild:
+  Revbump for inclusion of enigmail-1.3.3. Removed old versions.
+
+  31 Oct 2011; Jeroen Roovers <jer@gentoo.org> seamonkey-2.0.14-r1.ebuild,
+  seamonkey-2.3.1.ebuild, seamonkey-2.3.3-r1.ebuild, seamonkey-2.4.1-r1.ebuild:
+  Drop HPPA keywording.
+
+  28 Oct 2011; Tony Vroon <chainsaw@gentoo.org> seamonkey-2.4.1-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "ago" Sarubbo in security bug #381245.
+
+  02 Oct 2011; Lars Wendler <polynomial-c@gentoo.org>
+  seamonkey-2.4.1-r1.ebuild:
+  Small ebuild improvement.
+
+*seamonkey-2.4.1-r1 (02 Oct 2011)
+
+  02 Oct 2011; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.4.ebuild,
+  -seamonkey-2.4.1.ebuild, +seamonkey-2.4.1-r1.ebuild,
+  +files/Copy_xpcshell_only_if_tests_are_enabled.patch:
+  Revision bump to make use of new patchset. Removed old.
+
+*seamonkey-2.4.1 (30 Sep 2011)
+
+  30 Sep 2011; Lars Wendler <polynomial-c@gentoo.org> +seamonkey-2.4.1.ebuild:
+  Version bump.
+
+  28 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> seamonkey-2.3.1.ebuild,
+  seamonkey-2.3.3-r1.ebuild, seamonkey-2.4.ebuild:
+  Use virtual/libffi instead of dev-libs/libffi in case we have to switch to
+  using copy from GCC in future.
+
+*seamonkey-2.4 (26 Sep 2011)
+*seamonkey-2.3.3-r1 (26 Sep 2011)
+
+  26 Sep 2011; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.3.2.ebuild,
+  -seamonkey-2.3.3.ebuild, +seamonkey-2.3.3-r1.ebuild, +seamonkey-2.4.ebuild:
+  Version bump. Added new enigmail version to seamonkey-2.3.3-r1.
+
+  05 Sep 2011; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.3.3.ebuild:
+  Fixed patchset.
+
+*seamonkey-2.3.3 (05 Sep 2011)
+
+  05 Sep 2011; Lars Wendler <polynomial-c@gentoo.org>
+  +files/seamonkey-2.3.1-scrollbar-mouse-interaction-improvement.patch,
+  +seamonkey-2.3.3.ebuild:
+  Security bump.
+
+  04 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> seamonkey-2.3.1.ebuild:
+  x86 stable wrt security bug #379549
+
+  03 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> seamonkey-2.3.1.ebuild:
+  ppc stable wrt #379549
+
+*seamonkey-2.3.2 (31 Aug 2011)
+
+  31 Aug 2011; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.3.1.ebuild,
+  +seamonkey-2.3.2.ebuild, metadata.xml:
+  Security bump. Added ipc USE flag as requested in bug #381191.
+
+  29 Aug 2011; Markos Chandras <hwoarang@gentoo.org> seamonkey-2.3.1.ebuild:
+  Stable on amd64 wrt bug #380913
+
+*seamonkey-2.3.1 (22 Aug 2011)
+
+  22 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -files/enigmail/enigmail-1.2.1-seamonkey-2.3-versionfix.patch,
+  -seamonkey-2.2-r2.ebuild,
+  -files/seamonkey-2.2-fix-dates-in-mail-printing.patch, -seamonkey-2.3.ebuild,
+  -seamonkey-2.3-r1.ebuild, +seamonkey-2.3.1.ebuild:
+  Version bump. Removed old.
+
+*seamonkey-2.3-r1 (17 Aug 2011)
+
+  17 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -files/enigmail/enigmail-1.2-seamonkey-2.1-lowercaseequalsliteralfix.patch,
+  -seamonkey-2.1.ebuild, +seamonkey-2.3-r1.ebuild:
+  Revbumped to enigmail-1.3. Removed 2.1 version.
+
+  16 Aug 2011; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.3.ebuild:
+  Fixed dependency on nss and nspr (bug #379341).
+
+  15 Aug 2011; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.3.ebuild:
+  Use mozilla's FTP mirror as long as the releases server doesn't contain the
+  2.3 version files.
+
+*seamonkey-2.3 (15 Aug 2011)
+
+  15 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  +files/enigmail/enigmail-1.2.1-seamonkey-2.3-versionfix.patch,
+  seamonkey-2.2-r2.ebuild, +seamonkey-2.3.ebuild:
+  Added >=x11-libs/cairo-1.10 to RDEPEND (bug #379219). Version bump to 2.3.
+
+  10 Aug 2011; Lars Wendler <polynomial-c@gentoo.org> seamonkey-2.2-r2.ebuild,
+  +files/seamonkey-2.2-fix-dates-in-mail-printing.patch:
+  Fixed dates when printing mails (mozilla bug #669385). Thanks to Martin
+  Mokrejs for reporting this via mail.
+
+*seamonkey-2.2-r2 (03 Aug 2011)
+
+  03 Aug 2011; Lars Wendler <polynomial-c@gentoo.org> -seamonkey-2.2-r1.ebuild,
+  +seamonkey-2.2-r2.ebuild, -files/enigmail/enigmail-updates.patch:
+  Updated enigmail version to 1.2.1
 
   26 Jul 2011; Lars Wendler <polynomial-c@gentoo.org>
   seamonkey-2.0.14-r1.ebuild,
@@ -1236,4 +1648,3 @@
   +files/seamonkey-rebuild-databases.pl, +metadata.xml,
   +seamonkey-1.0.ebuild:
   initial import,much appreciation wrt bug #116231
-

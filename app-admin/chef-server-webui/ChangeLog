@@ -1,6 +1,37 @@
 # ChangeLog for app-admin/chef-server-webui
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-server-webui/ChangeLog,v 1.7 2011/07/25 09:13:38 hollow Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/chef-server-webui/ChangeLog,v 1.12 2012/08/11 12:46:54 hollow Exp $
+
+*chef-server-webui-10.12.0 (11 Aug 2012)
+
+  11 Aug 2012; Benedikt Böhm <hollow@gentoo.org>
+  -chef-server-webui-0.10.2.ebuild, -chef-server-webui-0.10.8.ebuild,
+  -chef-server-webui-0.10.10_beta1.ebuild, +chef-server-webui-10.12.0.ebuild:
+  version bump + ruby 19 support + remove old versions
+
+*chef-server-webui-0.10.10 (17 Jun 2012)
+
+  17 Jun 2012; Benedikt Böhm <hollow@gentoo.org>
+  +chef-server-webui-0.10.10.ebuild:
+  version bump
+
+  31 May 2012; Zac Medico <zmedico@gentoo.org>
+  chef-server-webui-0.10.10_beta1.ebuild, chef-server-webui-0.10.2.ebuild,
+  chef-server-webui-0.10.8.ebuild:
+  inherit user for enewgroup and enewuser
+
+*chef-server-webui-0.10.10_beta1 (29 Apr 2012)
+
+  29 Apr 2012; Benedikt Böhm <hollow@gentoo.org>
+  +chef-server-webui-0.10.10_beta1.ebuild:
+  version bump to resolve dependency conflicts (see #410385)
+
+*chef-server-webui-0.10.8 (29 Jan 2012)
+
+  29 Jan 2012; Benedikt Böhm <hollow@gentoo.org>
+  -chef-server-webui-0.9.12.ebuild, +chef-server-webui-0.10.8.ebuild,
+  files/initd/chef-server-webui:
+  version bump wrt #396693
 
 *chef-server-webui-0.10.2 (25 Jul 2011)
 

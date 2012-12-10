@@ -1,6 +1,58 @@
 # ChangeLog for dev-lang/erlang
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/erlang/ChangeLog,v 1.211 2011/06/06 08:53:33 djc Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/erlang/ChangeLog,v 1.223 2012/10/05 08:22:04 djc Exp $
+
+  05 Oct 2012; Dirkjan Ochtman <djc@gentoo.org> -erlang-13.2.4.ebuild,
+  -files/erlang-14.2.2-interface.patch, -erlang-14.2.4.ebuild:
+  Remove old versions.
+
+*erlang-15.2.2 (05 Oct 2012)
+
+  05 Oct 2012; Dirkjan Ochtman <djc@gentoo.org> +erlang-15.2.2.ebuild:
+  Version bump to 15.2.2, fix bugs 434870, 434832, 434150 (thanks to
+  billiob@gmail.com).
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> erlang-15.2.ebuild:
+  alpha/sparc stable wrt #413825
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> erlang-15.2.ebuild:
+  x86 stable wrt bug #413825
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org> erlang-15.2.ebuild:
+  ppc/ppc64 stable wrt #413825
+
+  18 May 2012; Agostino Sarubbo <ago@gentoo.org> erlang-15.2.ebuild:
+  Stable for amd64, wrt bug #413825
+
+*erlang-15.2.1 (14 May 2012)
+
+  14 May 2012; Dirkjan Ochtman <djc@gentoo.org> +erlang-15.2.1.ebuild:
+  Version bump to 15.2.1.
+
+  29 Apr 2012; Fabian Groffen <grobian@gentoo.org> erlang-15.2.ebuild:
+  Fixed compilation for x64-macos, keyworded, thanks to Jan Rieger in bug
+  #413961
+
+  01 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> -erlang-14.2.2-r1.ebuild,
+  -erlang-14.2.3.ebuild:
+  Remove old versions.
+
+*erlang-15.2 (01 Mar 2012)
+
+  01 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> +erlang-15.2.ebuild,
+  metadata.xml:
+  Version bump to 15.2 (bug 399155) and include compat-ethread USE flag (bug
+  392669).
+
+  07 Dec 2011; Ulrich Mueller <ulm@gentoo.org> erlang-13.2.4.ebuild,
+  erlang-14.2.2-r1.ebuild, erlang-14.2.3.ebuild, erlang-14.2.4.ebuild:
+  The Erlang Public License file has been renamed from EPL to ErlPL-1.1,
+  in order to avoid confusion with the Eclipse Public License, bug 389705.
+
+*erlang-14.2.4 (30 Nov 2011)
+
+  30 Nov 2011; Dirkjan Ochtman <djc@gentoo.org> +erlang-14.2.4.ebuild:
+  Version bump to 14.2.4, fix bug 383697, remove blocker.
 
 *erlang-14.2.3 (06 Jun 2011)
 

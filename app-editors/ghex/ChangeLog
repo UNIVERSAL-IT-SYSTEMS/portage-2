@@ -1,6 +1,53 @@
 # ChangeLog for app-editors/ghex
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/ghex/ChangeLog,v 1.62 2011/01/24 13:12:44 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/ghex/ChangeLog,v 1.75 2012/10/16 04:02:20 blueness Exp $
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> ChangeLog:
+  stable ppc, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> ghex-3.4.1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  04 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ghex-3.4.1.ebuild:
+  x86 stable wrt bug #427544
+
+  04 Sep 2012; Mart Raudsepp <leio@gentoo.org> -ghex-2.24.0.ebuild:
+  Remove old
+
+  24 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> ghex-3.4.1.ebuild:
+  Duplicate dependency.
+
+*ghex-3.4.1 (19 May 2012)
+
+  19 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +ghex-3.4.1.ebuild:
+  Version bump with UI improvements.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> ghex-2.24.0.ebuild,
+  ghex-3.0.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> ghex-3.0.0.ebuild:
+  Marking ghex-3.0.0 ppc stable for bug 393007
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> ghex-2.24.0.ebuild,
+  ghex-3.0.0.ebuild:
+  Drop sparc keywords
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> ghex-3.0.0.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> ghex-3.0.0.ebuild:
+  amd64 stable, bug 393007
+
+  27 Sep 2011; Pacho Ramos <pacho@gentoo.org> ghex-3.0.0.ebuild:
+  popt and scrollkeeper/rarian are no longer required, thanks to tetromino for
+  noticing.
+
+*ghex-3.0.0 (26 Sep 2011)
+
+  26 Sep 2011; Pacho Ramos <pacho@gentoo.org> +ghex-3.0.0.ebuild:
+  Version bump, it finally drops RDEPEND on old libgnomeprint stuff and other
+  deprecated packages.
 
   24 Jan 2011; Gilles Dartiguelongue <eva@gentoo.org> ghex-2.24.0.ebuild:
   Pin gtk+ dependency to slot 2. Update ebuild to EAPI 3.

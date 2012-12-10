@@ -1,6 +1,256 @@
 # ChangeLog for x11-drivers/xf86-video-intel
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-intel/ChangeLog,v 1.69 2011/07/04 20:37:17 chithanh Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-intel/ChangeLog,v 1.116 2012/12/03 23:47:57 remi Exp $
+
+*xf86-video-intel-2.20.15 (03 Dec 2012)
+
+  03 Dec 2012; Rémi Cardona <remi@gentoo.org>
+  +xf86-video-intel-2.20.15.ebuild:
+  Bump to 2.20.15.
+
+  02 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xf86-video-intel-2.20.10.ebuild, xf86-video-intel-2.20.12.ebuild,
+  xf86-video-intel-2.20.13.ebuild, xf86-video-intel-2.20.14.ebuild:
+  Use virtual/udev instead of sys-fs/udev
+
+*xf86-video-intel-2.20.14 (26 Nov 2012)
+
+  26 Nov 2012; Rémi Cardona <remi@gentoo.org>
+  +xf86-video-intel-2.20.14.ebuild:
+  Bump to 2.20.14.
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
+  xf86-video-intel-2.20.13.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
+  xf86-video-intel-2.20.13.ebuild:
+  Stable for amd64, wrt bug #440872
+
+  12 Nov 2012; Rémi Cardona <remi@gentoo.org> -xf86-video-intel-2.20.8.ebuild,
+  -xf86-video-intel-2.20.9.ebuild:
+  Prune older 2.20.x revisions.
+
+*xf86-video-intel-2.20.13 (12 Nov 2012)
+
+  12 Nov 2012; Rémi Cardona <remi@gentoo.org>
+  +xf86-video-intel-2.20.13.ebuild:
+  Bump to 2.20.13.
+
+  24 Oct 2012; Rémi Cardona <remi@gentoo.org> +xf86-video-intel-2.20.2.ebuild:
+  Bring 2.20.2 back from the dead for bug #439420.
+
+  21 Oct 2012; Rémi Cardona <remi@gentoo.org> -xf86-video-intel-2.20.0.ebuild,
+  -xf86-video-intel-2.20.1.ebuild, -xf86-video-intel-2.20.2.ebuild,
+  -xf86-video-intel-2.20.3.ebuild, -xf86-video-intel-2.20.5.ebuild,
+  -xf86-video-intel-2.20.6.ebuild, -xf86-video-intel-2.20.7.ebuild:
+  Prune older 2.20.x revisions.
+
+*xf86-video-intel-2.20.12 (21 Oct 2012)
+
+  21 Oct 2012; Rémi Cardona <remi@gentoo.org>
+  +xf86-video-intel-2.20.12.ebuild:
+  Bump to 2.20.12.
+
+*xf86-video-intel-2.20.10 (16 Oct 2012)
+
+  16 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/xf86-video-intel-2.20.10-filter-blend-flags.patch,
+  +xf86-video-intel-2.20.10.ebuild:
+  Version bump.
+
+*xf86-video-intel-2.20.9 (30 Sep 2012)
+
+  30 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-intel-2.20.9.ebuild:
+  Version bump.
+
+  17 Sep 2012; Rémi Cardona <remi@gentoo.org> xf86-video-intel-2.20.8.ebuild:
+  Add udev USE flag, see bug #434794.
+
+*xf86-video-intel-2.20.8 (17 Sep 2012)
+
+  17 Sep 2012; Rémi Cardona <remi@gentoo.org> +xf86-video-intel-2.20.8.ebuild:
+  Bump to 2.20.8.
+
+  13 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xf86-video-intel-2.20.7.ebuild:
+  Require at least one acceleration method at build time, bug #434920.
+
+  11 Sep 2012; Rémi Cardona <remi@gentoo.org> xf86-video-intel-2.20.7.ebuild,
+  metadata.xml:
+  Add USE=xvmc, patch by Nikoli, see bug #434720.
+
+*xf86-video-intel-2.20.7 (10 Sep 2012)
+
+  10 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-intel-2.20.7.ebuild, metadata.xml:
+  Version bump. Import USE flag #434336 and dependency #434330 changes from the
+  x11 overlay.
+
+  03 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xf86-video-intel-2.18.0.ebuild, xf86-video-intel-2.19.0.ebuild,
+  xf86-video-intel-2.20.0.ebuild, xf86-video-intel-2.20.1.ebuild,
+  xf86-video-intel-2.20.2.ebuild, xf86-video-intel-2.20.3.ebuild,
+  xf86-video-intel-2.20.5.ebuild, xf86-video-intel-2.20.6.ebuild:
+  Depend on pixman unconditionally, bug #410813 comment 3.
+
+*xf86-video-intel-2.20.6 (02 Sep 2012)
+
+  02 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-intel-2.20.6.ebuild:
+  Version bump.
+
+*xf86-video-intel-2.20.5 (01 Sep 2012)
+
+  01 Sep 2012; Rémi Cardona <remi@gentoo.org> +xf86-video-intel-2.20.5.ebuild:
+  Bump to 2.20.5, closes bug #432030.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org>
+  xf86-video-intel-2.19.0.ebuild:
+  ia64 stable wrt #419473
+
+*xf86-video-intel-2.20.3 (04 Aug 2012)
+
+  04 Aug 2012; Rémi Cardona <remi@gentoo.org> +xf86-video-intel-2.20.3.ebuild:
+  Bump to 2.20.3.
+
+*xf86-video-intel-2.20.2 (27 Jul 2012)
+
+  27 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-intel-2.20.2.ebuild:
+  Version bump.
+
+*xf86-video-intel-2.20.1 (23 Jul 2012)
+
+  23 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-intel-2.20.1.ebuild:
+  Version bump, bug #427736.
+
+*xf86-video-intel-2.20.0 (19 Jul 2012)
+
+  19 Jul 2012; Rémi Cardona <remi@gentoo.org> +xf86-video-intel-2.20.0.ebuild:
+  Bump to 2.20.0, sync with x11 overlay, see bug #426854.
+
+  04 Jul 2012; Rémi Cardona <remi@gentoo.org>
+  xf86-video-intel-2.10.0-r1.ebuild, xf86-video-intel-2.11.0.ebuild,
+  xf86-video-intel-2.13.0.ebuild, xf86-video-intel-2.14.0.ebuild,
+  xf86-video-intel-2.15.0-r1.ebuild, xf86-video-intel-2.16.0.ebuild,
+  xf86-video-intel-2.17.0-r3.ebuild, xf86-video-intel-2.18.0.ebuild,
+  xf86-video-intel-2.19.0.ebuild:
+  Fix automagic dependency on xcb-aux (provided by x11-libs/xcb-utils), see bug
+  ##352573.
+
+  26 Jun 2012; Robin H. Johnson <robbat2@gentoo.org>
+  xf86-video-intel-2.10.0-r1.ebuild, xf86-video-intel-2.11.0.ebuild,
+  xf86-video-intel-2.13.0.ebuild, xf86-video-intel-2.14.0.ebuild,
+  xf86-video-intel-2.15.0-r1.ebuild, xf86-video-intel-2.16.0.ebuild,
+  xf86-video-intel-2.17.0-r3.ebuild, xf86-video-intel-2.18.0.ebuild,
+  xf86-video-intel-2.19.0.ebuild, xf86-video-intel-2.8.1.ebuild,
+  xf86-video-intel-2.9.1.ebuild:
+  Bug #364041: Ebuild produced strange warnings because it did not trigger
+  linux-info_pkg_setup after inheriting linux-info.
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  xf86-video-intel-2.19.0.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  xf86-video-intel-2.19.0.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  03 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xf86-video-intel-2.8.1.ebuild, xf86-video-intel-2.9.1.ebuild:
+  Drop non-bsd keywords.
+
+  24 May 2012; Matt Turner <mattst88@gentoo.org>
+  xf86-video-intel-2.18.0.ebuild, xf86-video-intel-2.19.0.ebuild:
+  Bump pixman requirement to 0.24, bug 410813.
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org>
+  xf86-video-intel-2.19.0.ebuild:
+  keyword ~amd64-fbsd (compile tested only)
+
+*xf86-video-intel-2.19.0 (01 May 2012)
+
+  01 May 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-intel-2.19.0.ebuild, metadata.xml:
+  Version bump, bug #414097.
+
+*xf86-video-intel-2.18.0 (24 Feb 2012)
+
+  24 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-intel-2.18.0.ebuild:
+  Version bump.
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org>
+  xf86-video-intel-2.17.0-r3.ebuild:
+  ia64 stable wrt #394393
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org>
+  xf86-video-intel-2.17.0-r3.ebuild:
+  x86 stable, bug #394393
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org>
+  xf86-video-intel-2.17.0-r3.ebuild:
+  Stable for AMD64, wrt bug #394393
+
+*xf86-video-intel-2.17.0-r3 (11 Dec 2011)
+
+  11 Dec 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -xf86-video-intel-2.17.0-r2.ebuild, +xf86-video-intel-2.17.0-r3.ebuild,
+  +files/xf86-video-intel-2.17-sna-pipeline-flush.patch:
+  Add patch for bug #393427
+
+*xf86-video-intel-2.17.0-r2 (26 Nov 2011)
+
+  26 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -xf86-video-intel-2.17.0-r1.ebuild, +xf86-video-intel-2.17.0-r2.ebuild:
+  Actually apply the patch from bug #391819.
+
+*xf86-video-intel-2.17.0-r1 (25 Nov 2011)
+
+  25 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -xf86-video-intel-2.17.0.ebuild, +xf86-video-intel-2.17.0-r1.ebuild,
+  +files/xf86-video-intel-2.17-sna-offsets.patch:
+  Add patch to fix screen corruption, bug #391819.
+
+*xf86-video-intel-2.17.0 (17 Nov 2011)
+
+  17 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -xf86-video-intel-2.16.902.ebuild, +xf86-video-intel-2.17.0.ebuild:
+  Version bump.
+
+*xf86-video-intel-2.16.902 (13 Nov 2011)
+
+  13 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -xf86-video-intel-2.16.901.ebuild, +xf86-video-intel-2.16.902.ebuild:
+  Bump to latest development release.
+
+*xf86-video-intel-2.16.901 (31 Oct 2011)
+
+  31 Oct 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-intel-2.16.901.ebuild:
+  Bump to latest development release.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org>
+  xf86-video-intel-2.15.0-r1.ebuild:
+  ia64 stable wrt #380421
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org>
+  xf86-video-intel-2.15.0-r1.ebuild:
+  x86 stable, bug #380421
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org>
+  xf86-video-intel-2.15.0-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380421 filed by Chí-Thanh Christopher Nguyễn.
+
+*xf86-video-intel-2.16.0 (11 Aug 2011)
+
+  11 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-intel-2.16.0.ebuild, metadata.xml:
+  Version bump.
 
   04 Jul 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
   xf86-video-intel-2.15.0-r1.ebuild:

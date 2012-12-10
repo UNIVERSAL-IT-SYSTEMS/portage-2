@@ -1,6 +1,34 @@
 # ChangeLog for app-text/rnv
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/rnv/ChangeLog,v 1.12 2011/01/07 18:57:17 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/rnv/ChangeLog,v 1.19 2012/11/27 11:08:45 pinkbyte Exp $
+
+  27 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> -rnv-1.7.8-r2.ebuild,
+  -rnv-1.7.10-r1.ebuild, rnv-1.7.11.ebuild:
+  Fix direct AR calls, wrt bug #444042, drop old versions
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> rnv-1.7.11.ebuild:
+  Stable for x86, wrt bug #441118
+
+  20 Nov 2012;  <ago@gentoo.org> rnv-1.7.11.ebuild:
+  Stable for amd64, wrt bug #441118
+
+*rnv-1.7.11 (03 Oct 2012)
+
+  03 Oct 2012; Sebastian Pipping <sping@gentoo.org> +rnv-1.7.11.ebuild:
+  Bump to 1.7.11
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> rnv-1.7.10-r1.ebuild:
+  marked x86 per bug 404621
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> rnv-1.7.10-r1.ebuild:
+  Stable for amd64, wrt bug #404621
+
+*rnv-1.7.10-r1 (04 Dec 2011)
+
+  04 Dec 2011; Markos Chandras <hwoarang@gentoo.org> +rnv-1.7.10-r1.ebuild,
+  -rnv-1.7.10.ebuild, metadata.xml:
+  Add missing src_install function. Thanks to Jeroen Roovers  <jer@gentoo.org>.
+  Bug #391837. Add proxy-maint@gentoo.org to metadata.xml
 
   07 Jan 2011; Christian Faulhammer <fauli@gentoo.org> metadata.xml:
   Drop maintainership
@@ -49,4 +77,3 @@
   03 Mar 2008; Christian Faulhammer <opfer@gentoo.org> +metadata.xml,
   +rnv-1.7.8-r1:
   initial commit for bug 192501
-

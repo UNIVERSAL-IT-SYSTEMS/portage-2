@@ -1,6 +1,18 @@
 # ChangeLog for java-virtuals/jaf
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/java-virtuals/jaf/ChangeLog,v 1.16 2011/05/03 18:17:56 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/java-virtuals/jaf/ChangeLog,v 1.20 2012/10/04 17:34:07 sera Exp $
+
+  04 Oct 2012; Ralph Sennhauser <sera@gentoo.org> jaf-1.1-r1.ebuild:
+  Change license to public-domain. #426800
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> jaf-1.1-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  01 Jan 2012; Ralph Sennhauser <sera@gentoo.org> jaf-1.1-r1.ebuild:
+  Drop ia64 support #345433
+
+  07 Dec 2011; Fabian Groffen <grobian@gentoo.org> jaf-1.1-r1.ebuild:
+  Marked ~sparc64-solaris
 
   03 May 2011; Fabian Groffen <grobian@gentoo.org> jaf-1.1-r1.ebuild:
   Marked ~x64-freebsd

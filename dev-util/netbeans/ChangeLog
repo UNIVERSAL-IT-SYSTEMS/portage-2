@@ -1,6 +1,91 @@
 # ChangeLog for dev-util/netbeans
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/netbeans/ChangeLog,v 1.154 2011/04/21 10:37:57 fordfrog Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/netbeans/ChangeLog,v 1.173 2012/12/09 19:36:57 ago Exp $
+
+  09 Dec 2012; <ago@gentoo.org> netbeans-7.2.ebuild:
+  Stable for x86, wrt bug #441170
+
+  09 Dec 2012; <ago@gentoo.org> netbeans-7.2.ebuild:
+  Stable for amd64, wrt bug #441170
+
+  07 Oct 2012; Kacper Kowalik <xarthisius@gentoo.org> metadata.xml:
+  Drop dev-tools from metadata.xml
+
+  22 Aug 2012; Miroslav Šulc <fordfrog@gentoo.org> netbeans-7.2.ebuild:
+  fixed emerge when bg locale is specified (bug #432172)
+
+  25 Jul 2012; Miroslav Šulc <fordfrog@gentoo.org>
+  -files/6.8/nbbuild_build.xml.patch,
+  -files/6.8/nbbuild_templates_projectized.xml.patch, -netbeans-6.8-r1.ebuild:
+  netbeans 6.8 has been moved to java-overlay because it is pretty old now
+
+*netbeans-7.2 (25 Jul 2012)
+
+  25 Jul 2012; Miroslav Šulc <fordfrog@gentoo.org> +netbeans-7.2.ebuild:
+  netbeans 7.2 release
+
+  30 May 2012; Johannes Huber <johu@gentoo.org> netbeans-7.1.2.ebuild:
+  Stable for x86, wrt bug #417799
+
+  28 May 2012; Agostino Sarubbo <ago@gentoo.org> netbeans-7.1.2.ebuild:
+  Stable for amd64, wrt bug #417799
+
+  07 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> netbeans-7.1.1.ebuild:
+  x86 stable wrt bug #414387
+
+  06 May 2012; Agostino Sarubbo <ago@gentoo.org> netbeans-7.1.1.ebuild:
+  Stable for amd64, wrt bug #414387
+
+*netbeans-7.1.2 (26 Apr 2012)
+
+  26 Apr 2012; Miroslav Šulc <fordfrog@gentoo.org> +netbeans-7.1.2.ebuild:
+  Version bump in 7.1 slot
+
+*netbeans-7.1.1 (05 Mar 2012)
+
+  05 Mar 2012; Miroslav Šulc <fordfrog@gentoo.org> -netbeans-7.1-r1.ebuild,
+  +netbeans-7.1.1.ebuild:
+  Version bump
+
+*netbeans-7.1-r1 (06 Jan 2012)
+
+  06 Jan 2012; Miroslav Šulc <fordfrog@gentoo.org> +netbeans-7.1-r1.ebuild:
+  Version bump
+
+*netbeans-7.0.1-r2 (01 Nov 2011)
+
+  01 Nov 2011; Miroslav Šulc <fordfrog@gentoo.org> -netbeans-7.0.1-r1.ebuild,
+  +netbeans-7.0.1-r2.ebuild:
+  Added missing call to overriden pkg_setup (thanks sera)
+
+  24 Oct 2011; Miroslav Šulc <fordfrog@gentoo.org>
+  -files/6.5/all-visualweb.insync.JspxSerializer.java.patch,
+  -netbeans-6.5-r4.ebuild, -files/6.5/nbbuild_build.xml.patch,
+  -netbeans-6.7.1.ebuild, -files/6.5/nbbuild_templates_projectized.xml.patch,
+  -netbeans-6.9-r2.ebuild, -files/6.7/nbbuild_build.xml.patch,
+  -netbeans-6.9-r3.ebuild, -files/6.7/nbbuild_templates_projectized.xml.patch,
+  -netbeans-6.9.1.ebuild, -files/6.9/cnd.model.services-build.xml.patch,
+  -netbeans-7.0.1.ebuild, -files/6.9/nbbuild_build.xml.patch,
+  -files/6.9/nbbuild_templates_projectized.xml.patch,
+  -files/6.9/netbeans-keychain.patch, -files/6.9/o.jruby.distro_disable.patch,
+  metadata.xml:
+  Moving obsolete ebuilds to java-overlay
+
+*netbeans-7.0.1-r1 (03 Oct 2011)
+
+  03 Oct 2011; Miroslav Šulc <fordfrog@gentoo.org> +netbeans-7.0.1-r1.ebuild:
+  Updated translation sources
+
+  16 Sep 2011; Miroslav Šulc <fordfrog@gentoo.org> netbeans-7.0.1.ebuild:
+  Building NetBeans is supported only with JDK 1.6
+
+  22 Aug 2011; Miroslav Šulc <fordfrog@gentoo.org> -netbeans-7.0.ebuild:
+  Removed obsolete version
+
+*netbeans-7.0.1 (05 Aug 2011)
+
+  05 Aug 2011; Miroslav Šulc <fordfrog@gentoo.org> +netbeans-7.0.1.ebuild:
+  Version bump
 
 *netbeans-7.0 (21 Apr 2011)
 

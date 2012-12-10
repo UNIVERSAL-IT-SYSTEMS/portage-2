@@ -1,6 +1,95 @@
 # ChangeLog for media-gfx/shotwell
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/shotwell/ChangeLog,v 1.21 2011/07/09 21:39:58 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/shotwell/ChangeLog,v 1.40 2012/11/13 19:06:04 hwoarang Exp $
+
+  13 Nov 2012; Markos Chandras <hwoarang@gentoo.org> shotwell-0.12.3.ebuild,
+  shotwell-0.13.1.ebuild:
+  Fix HOMEPAGE
+
+*shotwell-0.13.1 (28 Oct 2012)
+
+  28 Oct 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/shotwell-0.13.1-ldflags.patch, +shotwell-0.13.1.ebuild:
+  Respect ldflags. Bug #435048. Version bump. #438604
+
+  26 Aug 2012; Markos Chandras <hwoarang@gentoo.org> -files/0.10-ldflags.patch,
+  -files/0.11.0-ldflags.patch, -files/shotwell-0.10.1-libraw-config.patch,
+  -files/shotwell-0.11.2-libraw-0.14.patch, -shotwell-0.12.1.ebuild,
+  -shotwell-0.12.2.ebuild:
+  Remove old ebuilds. Clean up files
+
+  21 May 2012; Markos Chandras <hwoarang@gentoo.org> shotwell-0.12.3.ebuild:
+  respect LINGUAS. Bug #407853
+
+*shotwell-0.12.3 (21 May 2012)
+
+  21 May 2012; Markos Chandras <hwoarang@gentoo.org> +shotwell-0.12.3.ebuild:
+  Version bump. BUg #416279
+
+  11 May 2012; Markos Chandras <hwoarang@gentoo.org> -shotwell-0.11.3.ebuild,
+  -shotwell-0.11.5.ebuild, -shotwell-0.11.6.ebuild, shotwell-0.12.2.ebuild:
+  Add sys-devel/m4 to DEPEND. Fixes bug #415003. Remove old ebuilds
+
+*shotwell-0.12.2 (07 May 2012)
+
+  07 May 2012; Justin Lecher <jlec@gentoo.org> +shotwell-0.12.2.ebuild:
+  Non-maintainer Version Bump
+
+  29 Mar 2012; Justin Lecher <jlec@gentoo.org> shotwell-0.12.1.ebuild:
+  Add missing DEP in net-libs/rest, #410161
+
+*shotwell-0.12.1 (29 Mar 2012)
+
+  29 Mar 2012; Justin Lecher <jlec@gentoo.org> +shotwell-0.12.1.ebuild:
+  Non-maintainer Version Bump
+
+  24 Mar 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Adopt package
+
+*shotwell-0.11.6 (10 Nov 2011)
+
+  10 Nov 2011; Christoph Mende <angelos@gentoo.org> -shotwell-0.10.1.ebuild,
+  -shotwell-0.11.1.ebuild, -shotwell-0.11.2.ebuild, +shotwell-0.11.6.ebuild:
+  Version bump, clean up
+
+*shotwell-0.11.5 (20 Oct 2011)
+
+  20 Oct 2011; Christoph Mende <angelos@gentoo.org> +shotwell-0.11.5.ebuild:
+  Version bump
+
+*shotwell-0.11.3 (14 Oct 2011)
+
+  14 Oct 2011; Christoph Mende <angelos@gentoo.org> +shotwell-0.11.3.ebuild:
+  Version bump
+
+  04 Oct 2011; Tim Harder <radhermit@gentoo.org> shotwell-0.11.2.ebuild,
+  +files/shotwell-0.11.2-libraw-0.14.patch:
+  Fix build with libraw-0.14.0 (bug #384165, patch by Alexandre Rostovtsev).
+
+*shotwell-0.11.2 (23 Sep 2011)
+
+  23 Sep 2011; Christoph Mende <angelos@gentoo.org> +shotwell-0.11.2.ebuild:
+  Version bump
+
+  17 Sep 2011; Christoph Mende <angelos@gentoo.org> shotwell-0.10.1.ebuild,
+  shotwell-0.11.1.ebuild:
+  Fix libgee dependency (bug #382671)
+
+*shotwell-0.11.1 (10 Sep 2011)
+
+  10 Sep 2011; Christoph Mende <angelos@gentoo.org> -shotwell-0.11.0.ebuild,
+  +shotwell-0.11.1.ebuild:
+  Version bump
+
+  05 Sep 2011; Justin Lecher <jlec@gentoo.org> shotwell-0.10.1.ebuild,
+  shotwell-0.11.0.ebuild:
+  Cleaned commented code
+
+*shotwell-0.11.0 (05 Sep 2011)
+
+  05 Sep 2011; Justin Lecher <jlec@gentoo.org> +files/0.11.0-ldflags.patch,
+  +shotwell-0.11.0.ebuild:
+  Non-maintainer Version Bump, #381765; thanks Christoph Brill for the patch
 
   09 Jul 2011; Christoph Mende <angelos@gentoo.org> -shotwell-0.10.ebuild,
   shotwell-0.10.1.ebuild, +files/shotwell-0.10.1-libraw-config.patch:
@@ -106,4 +195,3 @@
   07 Apr 2010; Benedikt Böhm <hollow@gentoo.org> +shotwell-0.5.0.ebuild,
   +metadata.xml:
   initial ebuild wrt #309615
-

@@ -1,6 +1,70 @@
 # ChangeLog for sys-fs/mdadm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/mdadm/ChangeLog,v 1.145 2011/06/11 21:12:39 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/mdadm/ChangeLog,v 1.159 2012/11/11 07:53:37 vapier Exp $
+
+  11 Nov 2012; Mike Frysinger <vapier@gentoo.org> mdadm-3.2.6.ebuild:
+  Drop unused init.d munging and only show elog messages at first install.
+
+*mdadm-3.2.6 (26 Oct 2012)
+
+  26 Oct 2012; Tim Harder <radhermit@gentoo.org> +mdadm-3.2.6.ebuild:
+  Version bump.
+
+  13 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  files/mdadm-3.2.x-udevdir.patch:
+  Tweak -udevdir.patch in a way PKG_CONFIG is read from environment if
+  exported.
+
+  12 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> mdadm-3.2.5-r1.ebuild,
+  +files/mdadm-3.2.x-udevdir.patch:
+  Use patch instead of sed for the udevdir wrt #430900, Comment #9 by Nikolay
+  S. Rybaloff
+
+  12 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> mdadm-3.1.4.ebuild,
+  mdadm-3.1.5.ebuild, mdadm-3.2.3-r2.ebuild, mdadm-3.2.5-r1.ebuild:
+  Inherit multilib.eclass for function get_libdir as noted by repoman.
+
+  12 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> -mdadm-3.2.3-r1.ebuild,
+  -mdadm-3.2.5.ebuild:
+  old
+
+*mdadm-3.2.5-r1 (12 Aug 2012)
+*mdadm-3.2.3-r2 (12 Aug 2012)
+
+  12 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> +mdadm-3.2.3-r2.ebuild,
+  +mdadm-3.2.5-r1.ebuild:
+  Query value of udevdir from udev.pc pkg-config file wrt #430900 by Nikolay S.
+  Rybaloff
+
+*mdadm-3.2.5 (24 May 2012)
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> +mdadm-3.2.5.ebuild,
+  -mdadm-3.2.4.ebuild:
+  Version bump #416687 by Manfred Knick.
+
+*mdadm-3.2.4 (11 May 2012)
+
+  11 May 2012; Mike Frysinger <vapier@gentoo.org> +mdadm-3.2.4.ebuild:
+  Version bump #415411 by Matthew Marlowe.
+
+*mdadm-3.2.3-r1 (16 Feb 2012)
+
+  16 Feb 2012; Mike Frysinger <vapier@gentoo.org> -mdadm-3.2.1.ebuild,
+  -files/mdadm-3.2.1-syslog-updates.patch, -mdadm-3.2.3.ebuild,
+  +mdadm-3.2.3-r1.ebuild, +files/mdadm-3.2.3-segv-assemble.patch:
+  Fix by Nikita Kozlov for segfault when assembling #403593.
+
+  02 Feb 2012; Mike Frysinger <vapier@gentoo.org> mdadm-3.2.3.ebuild:
+  Move into ~arch.
+
+*mdadm-3.2.3 (21 Jan 2012)
+
+  21 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> +mdadm-3.2.3.ebuild:
+  Bug #399565: version bump.
+
+  12 Nov 2011; Mike Frysinger <vapier@gentoo.org> mdadm-3.2.1.ebuild,
+  +files/mdraid.rc:
+  Drop support for baselayout-1, and move to EAPI=2.
 
   11 Jun 2011; Markus Meier <maekke@gentoo.org> mdadm-3.1.4.ebuild,
   mdadm-3.1.5.ebuild:

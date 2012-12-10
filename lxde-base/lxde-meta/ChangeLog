@@ -1,6 +1,61 @@
 # ChangeLog for lxde-base/lxde-meta
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxde-meta/ChangeLog,v 1.35 2011/07/28 18:32:30 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxde-meta/ChangeLog,v 1.50 2012/08/24 23:59:37 hwoarang Exp $
+
+  24 Aug 2012; Markos Chandras <hwoarang@gentoo.org> -lxde-meta-0.5.5-r1.ebuild,
+  -lxde-meta-0.5.5.ebuild:
+  Remove old LXDE packages
+
+  24 Aug 2012; Markos Chandras <hwoarang@gentoo.org> lxde-meta-0.5.5-r2.ebuild:
+  Add lxde-base/menu-cache as dependency
+
+  14 Aug 2012; Johannes Huber <johu@gentoo.org> lxde-meta-0.5.5-r2.ebuild:
+  Stable for x86, wrt bug #430494
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> lxde-meta-0.5.5-r2.ebuild:
+  Stable for amd64, wrt bug #430494
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  lxde-meta-0.5.5-r2.ebuild:
+  Stable arm, bug #430494
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  lxde-meta-0.5.5-r2.ebuild:
+  Stable ppc, bug #430494
+
+*lxde-meta-0.5.5-r2 (21 Jun 2012)
+
+  21 Jun 2012; Markos Chandras <hwoarang@gentoo.org> +lxde-meta-0.5.5-r2.ebuild,
+  -lxde-meta-0.5.0-r6.ebuild, -lxde-meta-0.5.0-r7.ebuild:
+  Roll out new revbump for new lxpanel
+
+  05 Jun 2012; Michael Weber <xmw@gentoo.org> lxde-meta-0.5.5.ebuild:
+  ppc stable (bug 385189)
+
+*lxde-meta-0.5.5-r1 (12 May 2012)
+
+  12 May 2012; Markos Chandras <hwoarang@gentoo.org> +lxde-meta-0.5.5-r1.ebuild:
+  Revbump for new lxpanel and lxde-icon-theme
+
+  03 Mar 2012; Markos Chandras <hwoarang@gentoo.org> lxde-meta-0.5.5.ebuild:
+  Fix typo. Bug #406751
+
+  02 Mar 2012; Markos Chandras <hwoarang@gentoo.org> lxde-meta-0.5.5.ebuild:
+  Adjust obconf dependencies
+
+  09 Oct 2011; Markus Meier <maekke@gentoo.org> lxde-meta-0.5.5.ebuild:
+  arm stable, bug #385189
+
+  07 Oct 2011; Markos Chandras <hwoarang@gentoo.org> lxde-meta-0.5.5.ebuild:
+  Stable on amd64 wrt bug #385189
+
+  05 Oct 2011; Andreas Schuerch <nativemad@gentoo.org> lxde-meta-0.5.5.ebuild:
+  x86 stable, bug 385189
+
+*lxde-meta-0.5.5 (04 Aug 2011)
+
+  04 Aug 2011; <vostorga@gentoo.org> +lxde-meta-0.5.5.ebuild:
+  Bumping meta package
 
   28 Jul 2011; Markos Chandras <hwoarang@gentoo.org> lxde-meta-0.5.0-r7.ebuild:
   Adjust lxterminal and lxsession dependencies. Thanks to Halcy0n
@@ -148,4 +203,3 @@
   07 Nov 2008; Ben de Groot <yngwin@gentoo.org> +metadata.xml,
   +lxde-meta-0.3.2.1.ebuild:
   Initial import. Ebuild by me.
-

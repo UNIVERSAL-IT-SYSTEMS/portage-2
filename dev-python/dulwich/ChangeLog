@@ -1,6 +1,97 @@
 # ChangeLog for dev-python/dulwich
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/dulwich/ChangeLog,v 1.31 2011/06/06 08:31:12 djc Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/dulwich/ChangeLog,v 1.55 2012/11/13 08:27:52 patrick Exp $
+
+*dulwich-0.8.6 (13 Nov 2012)
+
+  13 Nov 2012; Patrick Lauer <patrick@gentoo.org> +dulwich-0.8.6.ebuild:
+  Bump
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> dulwich-0.8.1.ebuild,
+  dulwich-0.8.3.ebuild, dulwich-0.8.5.ebuild:
+  Drop alpha keywords
+
+  21 Jun 2012; Jeff Horelick <jdhore@gentoo.org> dulwich-0.8.5.ebuild:
+  marked x86 per bug 422061
+
+  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> dulwich-0.8.5.ebuild:
+  Stable for amd64, wrt bug #422061
+
+*dulwich-0.8.5 (08 May 2012)
+
+  08 May 2012; Dirkjan Ochtman <djc@gentoo.org> -dulwich-0.8.4.ebuild,
+  +dulwich-0.8.5.ebuild:
+  Remove 0.8.4 in favor of 0.8.5, silly me.
+
+*dulwich-0.8.4 (08 May 2012)
+
+  08 May 2012; Dirkjan Ochtman <djc@gentoo.org> +dulwich-0.8.4.ebuild:
+  Version bump to 0.8.4.
+
+  08 May 2012; Dirkjan Ochtman <djc@gentoo.org> -dulwich-0.8.2.ebuild:
+  Remove old version.
+
+*dulwich-0.8.3 (01 Mar 2012)
+
+  01 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> +dulwich-0.8.3.ebuild:
+  Version bump to 0.8.3 for bug 404173 (thanks to Ian Delaney).
+
+  01 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> -dulwich-0.7.1.ebuild,
+  -dulwich-0.8.0.ebuild:
+  Remove old versions.
+
+  21 Jan 2012; Tobias Klausmann <klausman@gentoo.org> dulwich-0.8.2.ebuild:
+  Keyword 0.8.2 on alpha
+
+  21 Jan 2012; Tobias Klausmann <klausman@gentoo.org> dulwich-0.8.1.ebuild:
+  Stable on alpha, bug #383751
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> dulwich-0.8.1.ebuild:
+  x86 stable wrt bug #395713
+
+  23 Dec 2011; Agostino Sarubbo <ago@gentoo.org> dulwich-0.8.1.ebuild:
+  Stable for AMD64, wrt bug #395713
+
+*dulwich-0.8.2 (22 Dec 2011)
+
+  22 Dec 2011; Fabian Groffen <grobian@gentoo.org> +dulwich-0.8.2.ebuild:
+  Version bump to 0.8.2
+
+  05 Dec 2011; Fabian Groffen <grobian@gentoo.org> dulwich-0.8.1.ebuild:
+  Marked ~sparc-solaris, ~sparc64-solaris
+
+  11 Nov 2011; Markos Chandras <hwoarang@gentoo.org> dulwich-0.8.1.ebuild:
+  Don't inherit unused eclass. Fix dependencies. Simplify
+  distutils_src_test_pre_hook(). Patch by Arfrever.
+
+  10 Nov 2011; Fabian Groffen <grobian@gentoo.org> dulwich-0.8.1.ebuild:
+  Marked ~x86-linux
+
+  10 Nov 2011; Fabian Groffen <grobian@gentoo.org> dulwich-0.8.1.ebuild:
+  Marked ~amd64-linux
+
+*dulwich-0.8.1 (31 Oct 2011)
+
+  31 Oct 2011; Fabian Groffen <grobian@gentoo.org> +dulwich-0.8.1.ebuild:
+  Version bump, fixes: https://launchpad.net/dulwich/+milestone/0.8.1
+
+  01 Sep 2011; Fabian Groffen <grobian@gentoo.org> metadata.xml:
+  Take co-maintainership of dulwhich
+
+  01 Sep 2011; Fabian Groffen <grobian@gentoo.org> dulwich-0.8.0.ebuild,
+  +files/dulwich-0.8.0-darwin.patch:
+  Fix compilation on older Darwin hosts, upstream bug 822427
+
+  01 Sep 2011; Fabian Groffen <grobian@gentoo.org> dulwich-0.8.0.ebuild:
+  Marked ~amd64-linux dulwich-0.8.0.ebuild
+
+  18 Aug 2011; Fabian Groffen <grobian@gentoo.org> dulwich-0.8.0.ebuild:
+  Marked ~x64-macos
+
+*dulwich-0.8.0 (12 Aug 2011)
+
+  12 Aug 2011; Dirkjan Ochtman <djc@gentoo.org> +dulwich-0.8.0.ebuild:
+  Version bump to 0.8.0.
 
   06 Jun 2011; Dirkjan Ochtman <djc@gentoo.org> -dulwich-0.7.0.ebuild:
   Remove old version.
@@ -120,4 +211,3 @@
 
   20 Oct 2009; <djc@gentoo.org> +dulwich-0.4.0.ebuild, +metadata.xml:
   Initial version for the portage tree.
-

@@ -1,19 +1,22 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ruby-ng-gnome2.eclass,v 1.7 2011/05/29 13:47:14 naota Exp $
-#
+# $Header: /var/cvsroot/gentoo-x86/eclass/ruby-ng-gnome2.eclass,v 1.16 2012/08/18 07:28:39 graaff Exp $
+
 # @ECLASS: ruby-ng-gnome2.eclass
 # @MAINTAINER:
 # Ruby herd <ruby@gentoo.org>
-#
+# @AUTHOR:
 # Author: Hans de Graaff <graaff@gentoo.org>
-#
 # @BLURB: An eclass to simplify handling of various ruby-gnome2 parts.
 # @DESCRIPTION:
 # This eclass simplifies installation of the various pieces of
 # ruby-gnome2 since they share a very common installation procedure.
 
-inherit ruby-ng multilib versionator
+RUBY_FAKEGEM_NAME="${RUBY_FAKEGEM_NAME:-${PN#ruby-}}"
+RUBY_FAKEGEM_TASK_TEST=""
+RUBY_FAKEGEM_TASK_DOC=""
+
+inherit ruby-fakegem multilib versionator
 
 IUSE=""
 
@@ -25,8 +28,14 @@ if [ $(get_version_component_range "1-2") == "0.19" ]; then
 	subbinding=${subbinding/%2}
 else
 	subbinding=${subbinding/-/_}
+	DEPEND="virtual/pkgconfig"
+	ruby_add_bdepend "dev-ruby/pkg-config"
 fi
-S=${WORKDIR}/ruby-gnome2-all-${PV}/${subbinding}
+if has "${EAPI:-0}" 0 1 2 3 ; then
+	S=${WORKDIR}/ruby-gnome2-all-${PV}/${subbinding}
+else
+	RUBY_S=ruby-gnome2-all-${PV}/${subbinding}
+fi
 SRC_URI="mirror://sourceforge/ruby-gnome2/ruby-gnome2-all-${PV}.tar.gz"
 HOMEPAGE="http://ruby-gnome2.sourceforge.jp/"
 LICENSE="Ruby"
@@ -64,6 +73,8 @@ each_ruby_install() {
 	dodir ${archdir#${EPREFIX}} /usr/$(get_libdir)/pkgconfig
 
 	emake DESTDIR="${D}" install || die "make install failed"
+
+	each_fakegem_install
 }
 
 # @FUNCTION: all_ruby_install
@@ -77,4 +88,6 @@ all_ruby_install() {
 		insinto /usr/share/doc/${PF}
 		doins -r sample || die "sample install failed"
 	fi
+
+	all_fakegem_install
 }

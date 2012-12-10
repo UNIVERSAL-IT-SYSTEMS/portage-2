@@ -1,11 +1,25 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License, v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/sparc/use.mask,v 1.74 2011/05/29 16:14:15 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/sparc/use.mask,v 1.99 2012/12/01 19:11:03 armin76 Exp $
 
 # Unmask the flag which corresponds to ARCH.
 -sparc
 
 # This file contains a list of useflags that cannot be used on sparc.
+
+# Diego Elio Pettenò <flameeyes@gentoo.org> (17 Aug 2012)
+# qstat is not available on sparc, as it is
+nagios-game
+
+# Samuli Suominen <ssuominen@gentoo.org> (07 May 2012)
+# Missing keywording in www-client/firefox wrt #360427,
+# as used by, for example, x11-themes/gtk-engines-qtcurve
+mozilla
+
+# Alexandre Rostovtsev <tetromino@gmail.com> (28 Oct 2011)
+# x11-misc/colord and app-admin/packagekit-base not tested. Bug #387959.
+colord
+packagekit
 
 # Raúl Porcel <armin76@gentoo.org>
 # Stuff that sigbuses
@@ -16,6 +30,8 @@ srtp
 tokyocabinet
 # bug 235685
 webkit
+# bug 359963
+webp
 
 # Gustavo Zacarias <gustavoz@gentoo.org> 14 Feb 2007
 # Mono needs gcc4 and it's not yet stable
@@ -74,7 +90,6 @@ xfs
 # Need testing
 musepack
 pyste
-v4l2
 topal
 lqr
 epos
@@ -97,6 +112,15 @@ barcode
 xmms2
 gme
 quvi
+aacplus
+systemd
+soundcloud
+devil
+gts
+clang
+metalink
+tremor
+fdk
 
 # No hardware to test
 ifp
@@ -115,6 +139,9 @@ ios
 mtp
 pda
 apcupsd
+bluray
+ups
+gps
 
 # Stuff we don't want
 schroedinger
@@ -147,14 +174,11 @@ java
 java-internal
 java-external
 lirc
-mod
-modplug
 mpm-peruser
 mythtv
 netbeans
 networkmanager
 nvtv
-oracle
 pbs
 pcmcia
 rar
@@ -210,9 +234,15 @@ video_cards_apm
 video_cards_intel
 video_cards_nv
 video_cards_vesa
-video_cards_radeonhd
 video_cards_ast
 video_cards_nouveau
+
+# Matt Turner <mattst88@gentoo.org>
+# Mask more VIDEO_CARDs added with mesa-8.0
+video_cards_i915
+video_cards_i965
+# vmware wasn't added with mesa-8.0, but it should still be masked
+video_cards_vmware
 
 # Diego Pettenò <flameeyes@gentoo.org> (6 Dec 2006)
 # Unmask the Sun-specific drivers
@@ -270,3 +300,20 @@ multilib
 # Ben de Groot <yngwin@gentoo.org> 11 Feb 2009
 # both x11-libs/qt-phonon and media-sound/phonon are unkeyworded
 phonon
+
+# Matt Turner <mattst88@gentoo.org) (10 Feb 2012)
+# mask d3d since we don't have wine
+d3d
+
+# Matt Turner <mattst88@gentoo.org) (10 Feb 2012)
+# mask wayland since dev-libs/wayland isn't keyworded
+wayland
+
+# Michał Górny <mgorny@gentoo.org> (31 Oct 2012)
+# Mask PYTHON_TARGETS for implementations not keyworded on this arch.
+python_targets_pypy1_8
+python_targets_pypy1_9
+python_targets_jython2_5
+python_single_target_pypy1_8
+python_single_target_pypy1_9
+python_single_target_jython2_5

@@ -1,6 +1,39 @@
 # ChangeLog for gnustep-apps/gorm
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/gnustep-apps/gorm/ChangeLog,v 1.38 2010/08/22 12:52:01 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/gnustep-apps/gorm/ChangeLog,v 1.46 2012/09/23 07:51:15 phajdan.jr Exp $
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gorm-1.2.18.ebuild:
+  x86 stable wrt bug #429074
+
+  14 Aug 2012; Agostino Sarubbo <ago@gentoo.org> gorm-1.2.18.ebuild:
+  Stable for amd64, wrt bug #429074
+
+*gorm-1.2.18 (20 Jun 2012)
+
+  20 Jun 2012; Bernard Cafarelli <voyageur@gentoo.org> -gorm-1.2.12.ebuild,
+  -files/gorm-1.2.12-objc2_support.patch, +gorm-1.2.18.ebuild:
+  Version bump, code cleanup, stability fixes and support for newer runtimes.
+  Remove old
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> gorm-1.2.16.ebuild:
+  x86 stable, bug #410601
+
+  05 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gorm-1.2.16.ebuild:
+  Stable for amd64, wrt bug #410601
+
+*gorm-1.2.16 (08 Feb 2012)
+
+  08 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org> +gorm-1.2.16.ebuild:
+  Version bump, includes XIB reading and bugfixes
+
+  19 Aug 2011; Bernard Cafarelli <voyageur@gentoo.org> -gorm-1.2.8.ebuild,
+  -gorm-1.2.10.ebuild, gorm-1.2.12.ebuild,
+  +files/gorm-1.2.12-objc2_support.patch:
+  Fix objc2 support, bug #374813. Remove old
+
+  12 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> gorm-1.2.8.ebuild,
+  gorm-1.2.10.ebuild, gorm-1.2.12.ebuild:
+  Drop ppc keyword wrt #332259
 
   22 Aug 2010; Markus Meier <maekke@gentoo.org> gorm-1.2.12.ebuild:
   amd64/x86 stable, bug #332259

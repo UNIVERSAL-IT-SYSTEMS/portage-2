@@ -1,6 +1,29 @@
 # ChangeLog for lxde-base/lxshortcut
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxshortcut/ChangeLog,v 1.10 2011/07/26 22:22:04 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxshortcut/ChangeLog,v 1.17 2012/08/25 00:05:13 hwoarang Exp $
+
+  25 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  -files/lxshortcut-0.1.1-intltool.patch, -lxshortcut-0.1.1.ebuild:
+  Remove old LXDE packages
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> lxshortcut-0.1.2.ebuild:
+  Stable for amd64, wrt bug #430494
+
+  05 Jun 2012; Michael Weber <xmw@gentoo.org> lxshortcut-0.1.2.ebuild:
+  ppc stable (bug 385189)
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> lxshortcut-0.1.1.ebuild,
+  lxshortcut-0.1.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Oct 2011; Markus Meier <maekke@gentoo.org> lxshortcut-0.1.2.ebuild:
+  arm stable, bug #385189
+
+  07 Oct 2011; Markos Chandras <hwoarang@gentoo.org> lxshortcut-0.1.2.ebuild:
+  Stable on amd64 wrt bug #385189
+
+  05 Oct 2011; Andreas Schuerch <nativemad@gentoo.org> lxshortcut-0.1.2.ebuild:
+  x86 stable, bug 385189
 
 *lxshortcut-0.1.2 (26 Jul 2011)
 
@@ -39,4 +62,3 @@
   04 Aug 2009; Ben de Groot <yngwin@gentoo.org> +lxshortcut-0.1.1.ebuild,
   +metadata.xml:
   Initial import. Ebuild based on the live one in lxde overlay.
-

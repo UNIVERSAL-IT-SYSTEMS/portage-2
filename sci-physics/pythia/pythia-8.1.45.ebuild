@@ -1,16 +1,16 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/pythia/pythia-8.1.45.ebuild,v 1.9 2011/06/21 14:32:06 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/pythia/pythia-8.1.45.ebuild,v 1.11 2012/11/30 22:08:58 bicatali Exp $
 
 EAPI=2
 
-inherit eutils versionator
+inherit eutils fortran-2 versionator
 
 MV=$(get_major_version)
 MY_P=${PN}$(replace_all_version_separators "" ${PV})
 
 DESCRIPTION="Lund Monte Carlo high-energy physics event generator"
-HOMEPAGE="http://home.thep.lu.se/~torbjorn/Pythia.html"
+HOMEPAGE="http://pythia8.hepforge.org/"
 SRC_URI="http://home.thep.lu.se/~torbjorn/${PN}${MV}/${MY_P}.tgz"
 
 SLOT="8"
@@ -19,9 +19,7 @@ KEYWORDS="amd64 x86"
 IUSE="doc examples +hepmc static-libs"
 
 DEPEND="hepmc? ( sci-physics/hepmc )"
-RDEPEND="
-	virtual/fortran
-${DEPEND}"
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 

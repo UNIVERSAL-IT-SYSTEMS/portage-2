@@ -1,6 +1,50 @@
 # ChangeLog for dev-libs/apr
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/apr/ChangeLog,v 1.174 2011/07/07 10:21:09 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/apr/ChangeLog,v 1.186 2012/11/28 04:40:54 ottxor Exp $
+
+*apr-1.4.6-r1 (28 Nov 2012)
+
+  28 Nov 2012; Christoph Junghans <ottxor@gentoo.org> +apr-1.4.6-r1.ebuild,
+  +files/apr-1.4.6-mint.patch:
+  added prefix support
+
+  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop apache herd as discussed in http://www.gossamer-
+  threads.com/lists/gentoo/dev/262834
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> apr-1.4.6.ebuild:
+  keyword ~amd64-fbsd
+
+*apr-1.4.6 (28 Feb 2012)
+
+  28 Feb 2012; Christian Ruppert <idl0r@gentoo.org> +apr-1.4.6.ebuild,
+  metadata.xml:
+  Version bump, CVE-2012-0840, bug 403731
+
+  11 Nov 2011; Markos Chandras <hwoarang@gentoo.org> -apr-1.4.4.ebuild:
+  remove old ebuild
+
+  11 Nov 2011; Markos Chandras <hwoarang@gentoo.org> apr-1.4.5.ebuild:
+   Use EAPI=4. Add static-libs USE flag. Patch by Arfrever.
+
+  29 Oct 2011; Raúl Porcel <armin76@gentoo.org> apr-1.4.5.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #385859
+
+  24 Oct 2011; Markus Meier <maekke@gentoo.org> apr-1.4.5.ebuild:
+  x86 stable, bug #385859
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> apr-1.4.5.ebuild:
+  arm stable, bug #385859
+
+  22 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> apr-1.4.5.ebuild:
+  ppc/ppc64 stable wrt #385859
+
+  19 Oct 2011; Jeroen Roovers <jer@gentoo.org> apr-1.4.5.ebuild:
+  Stable for HPPA (bug #385859).
+
+  19 Oct 2011; Tony Vroon <chainsaw@gentoo.org> apr-1.4.5.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in security bug #385859.
 
 *apr-1.4.5 (07 Jul 2011)
 
@@ -633,4 +677,3 @@
 
   29 Mar 2003; Dylan Carlson <absinthe@gentoo.org> apr-0.9.2.ebuild:
   Initial import.
-

@@ -1,6 +1,76 @@
 # ChangeLog for dev-util/intltool
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/intltool/ChangeLog,v 1.141 2010/07/07 16:30:10 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/intltool/ChangeLog,v 1.164 2012/05/28 16:08:34 ssuominen Exp $
+
+  28 May 2012; Samuli Suominen <ssuominen@gentoo.org> -intltool-0.50.0.ebuild:
+  old
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> intltool-0.50.2.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #411177
+
+  13 May 2012; Fabian Groffen <grobian@gentoo.org> intltool-0.50.2.ebuild:
+  Marked ~m68k-mint, bug #415405
+
+  13 May 2012; Fabian Groffen <grobian@gentoo.org> intltool-0.50.2.ebuild:
+  Marked ~x64-freebsd
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> intltool-0.50.2.ebuild:
+  keyword ~amd64-fbsd
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> intltool-0.50.2.ebuild:
+  Marking intltool-0.50.2 ppc64 for bug 411177
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> intltool-0.50.2.ebuild:
+  Marking intltool-0.50.2 ppc for bug 411177
+
+  15 Apr 2012; Markus Meier <maekke@gentoo.org> intltool-0.50.2.ebuild:
+  arm stable, bug #411177
+
+  11 Apr 2012; Jeroen Roovers <jer@gentoo.org> intltool-0.50.2.ebuild:
+  Stable for HPPA (bug #411177).
+
+  09 Apr 2012; Agostino Sarubbo <ago@gentoo.org> intltool-0.50.2.ebuild:
+  Stable for amd64, wrt bug #411177
+
+  07 Apr 2012; Jeff Horelick <jdhore@gentoo.org> intltool-0.50.2.ebuild:
+  marked x86 per bug 411177
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -intltool-0.41.1.ebuild,
+  -intltool-0.50.1.ebuild:
+  old
+
+*intltool-0.50.2 (02 Mar 2012)
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +intltool-0.50.2.ebuild:
+  Version bump.
+
+*intltool-0.50.1 (17 Feb 2012)
+
+  17 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +intltool-0.50.1.ebuild:
+  Version bump.
+
+  12 Feb 2012; Raúl Porcel <armin76@gentoo.org> intltool-0.50.0.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #399151
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> intltool-0.50.0.ebuild:
+  ppc/ppc64 stable wrt #399151
+
+  29 Jan 2012; Markus Meier <maekke@gentoo.org> intltool-0.50.0.ebuild:
+  arm stable, bug #399151
+
+  25 Jan 2012; Jeff Horelick <jdhore@gentoo.org> intltool-0.50.0.ebuild:
+  x86 stable per bug 399151
+
+  18 Jan 2012; Jeroen Roovers <jer@gentoo.org> intltool-0.50.0.ebuild:
+  Stable for HPPA (bug #399151).
+
+  17 Jan 2012; Agostino Sarubbo <ago@gentoo.org> intltool-0.50.0.ebuild:
+  Stable for amd64, wrt bug #399151
+
+*intltool-0.50.0 (03 Dec 2011)
+
+  03 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +intltool-0.50.0.ebuild:
+  Version bump.
 
   07 Jul 2010; Samuli Suominen <ssuominen@gentoo.org>
   intltool-0.41.1.ebuild:

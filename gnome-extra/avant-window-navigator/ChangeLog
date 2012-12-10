@@ -1,6 +1,43 @@
 # ChangeLog for gnome-extra/avant-window-navigator
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/avant-window-navigator/ChangeLog,v 1.28 2011/04/25 20:43:46 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/avant-window-navigator/ChangeLog,v 1.37 2012/06/19 13:45:15 ssuominen Exp $
+
+  19 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  avant-window-navigator-0.4.0.ebuild:
+  Missing dev-python/dbus-python RDEPEND (awn-settings/awnClass.py has "import
+  dbus") wrt #420249 by Christopher Howard
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  avant-window-navigator-0.4.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  22 Jan 2012; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  metadata.xml:
+  [metadata] Transfer awn to the desktop-misc herd.
+
+  15 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  avant-window-navigator-0.4.0.ebuild:
+  Empty py-compile script instead of symlinking it to /path/to/true for
+  automake-1.11.2 compability.
+
+  06 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  avant-window-navigator-0.4.0.ebuild:
+  Add missing dev-vcs/bzr depend which is required for running awn-settings.
+
+  06 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -avant-window-navigator-0.3.2.1.ebuild:
+  old
+
+*avant-window-navigator-0.4.0 (06 Nov 2011)
+
+  06 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +avant-window-navigator-0.4.0.ebuild:
+  Version bump wrt #317165 by Amit Prakash Ambasta
+
+  07 Aug 2011; Samuli Suominen <ssuominen@gentoo.org>
+  avant-window-navigator-0.3.2.1.ebuild:
+  Set GNOME2_LA_PUNT="yes" in order to delete main libawn.la and python module
+  awn.la wrt #362887 by Cesko Voeten
 
   25 Apr 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   avant-window-navigator-0.3.2.1.ebuild:

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/kernel-2.eclass,v 1.253 2011/06/03 20:20:23 mpagano Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/kernel-2.eclass,v 1.277 2012/06/24 17:52:38 mpagano Exp $
 
 # Description: kernel.eclass rewrite for a clean base regarding the 2.6
 #              series of kernel with back-compatibility for 2.4
@@ -70,7 +70,7 @@
 #						  order, so they are applied in the order passed
 
 inherit eutils toolchain-funcs versionator multilib
-EXPORT_FUNCTIONS pkg_setup src_unpack src_compile src_test src_install pkg_preinst pkg_postinst
+EXPORT_FUNCTIONS pkg_setup src_unpack src_compile src_test src_install pkg_preinst pkg_postinst pkg_postrm
 
 # Added by Daniel Ostrow <dostrow@gentoo.org>
 # This is an ugly hack to get around an issue with a 32-bit userland on ppc64.
@@ -83,20 +83,18 @@ if [[ ${CTARGET} == ${CHOST} && ${CATEGORY/cross-} != ${CATEGORY} ]]; then
 fi
 
 HOMEPAGE="http://www.kernel.org/ http://www.gentoo.org/ ${HOMEPAGE}"
-[[ -z ${LICENSE} ]] && \
-	LICENSE="GPL-2"
+: ${LICENSE:="GPL-2"}
 
 # This is the latest KV_PATCH of the deblob tool available from the
 # libre-sources upstream. If you bump this, you MUST regenerate the Manifests
 # for ALL kernel-2 consumer packages where deblob is available.
-[[ -z ${DEBLOB_MAX_VERSION} ]] && DEBLOB_MAX_VERSION=38
+: ${DEBLOB_MAX_VERSION:=38}
 
 # No need to run scanelf/strip on kernel sources/headers (bug #134453).
 RESTRICT="binchecks strip"
 
 # set LINUX_HOSTCFLAGS if not already set
-[[ -z ${LINUX_HOSTCFLAGS} ]] && \
-	LINUX_HOSTCFLAGS="-Wall -Wstrict-prototypes -Os -fomit-frame-pointer -I${S}/include"
+: ${LINUX_HOSTCFLAGS:="-Wall -Wstrict-prototypes -Os -fomit-frame-pointer -I${S}/include"}
 
 # debugging functions
 #==============================================================
@@ -106,7 +104,7 @@ RESTRICT="binchecks strip"
 debug-print-kernel2-variables() {
 	for v in PVR CKV OKV KV KV_FULL KV_MAJOR KV_MINOR KV_PATCH RELEASETYPE \
 			RELEASE UNIPATCH_LIST_DEFAULT UNIPATCH_LIST_GENPATCHES \
-			UNIPATCH_LIST S KERNEL_URI ; do
+			UNIPATCH_LIST S KERNEL_URI K_WANT_GENPATCHES ; do
 		debug-print "${v}: ${!v}"
 	done
 }
@@ -117,10 +115,28 @@ handle_genpatches() {
 	local tarball
 	[[ -z ${K_WANT_GENPATCHES} || -z ${K_GENPATCHES_VER} ]] && return 1
 
+	debug-print "Inside handle_genpatches"
+	local OKV_ARRAY
+	IFS="." read -r -a OKV_ARRAY <<<"${OKV}"
+
+	# for > 3.0 kernels, handle genpatches tarball name
+	# genpatches for 3.0 and 3.0.1 might be named
+	# genpatches-3.0-1.base.tar.bz2 and genpatches-3.0-2.base.tar.bz2
+	# respectively.  Handle this.
+
 	for i in ${K_WANT_GENPATCHES} ; do
+	if [[ ${KV_MAJOR} -ge 3 ]]; then
+		if [[ ${#OKV_ARRAY[@]} -ge 3 ]]; then
+			tarball="genpatches-${KV_MAJOR}.${KV_MINOR}-${K_GENPATCHES_VER}.${i}.tar.bz2"
+		else
+			tarball="genpatches-${KV_MAJOR}.${KV_PATCH}-${K_GENPATCHES_VER}.${i}.tar.bz2"
+		fi
+	else
 		tarball="genpatches-${OKV}-${K_GENPATCHES_VER}.${i}.tar.bz2"
-		GENPATCHES_URI="${GENPATCHES_URI} mirror://gentoo/${tarball}"
-		UNIPATCH_LIST_GENPATCHES="${UNIPATCH_LIST_GENPATCHES} ${DISTDIR}/${tarball}"
+	fi
+	debug-print "genpatches tarball: $tarball"
+	GENPATCHES_URI="${GENPATCHES_URI} mirror://gentoo/${tarball}"
+	UNIPATCH_LIST_GENPATCHES="${UNIPATCH_LIST_GENPATCHES} ${DISTDIR}/${tarball}"
 	done
 }
 
@@ -130,14 +146,8 @@ detect_version() {
 	# - KV: Kernel Version (2.6.0-gentoo/2.6.0-test11-gentoo-r1)
 	# - EXTRAVERSION: The additional version appended to OKV (-gentoo/-gentoo-r1)
 
-	if [[ -n ${KV_FULL} ]]; then
-		# we will set this for backwards compatibility.
-		KV=${KV_FULL}
-
-		# we know KV_FULL so lets stop here. but not without resetting S
-		S=${WORKDIR}/linux-${KV_FULL}
-		return
-	fi
+	# We've already run, so nothing to do here.
+	[[ -n ${KV_FULL} ]] && return 0
 
 	# CKV is used as a comparison kernel version, which is used when
 	# PV doesnt reflect the genuine kernel version.
@@ -151,9 +161,13 @@ detect_version() {
 	OKV=${OKV/_p*}
 
 	KV_MAJOR=$(get_version_component_range 1 ${OKV})
+	# handle if OKV is X.Y or X.Y.Z (e.g. 3.0 or 3.0.1)
+	local OKV_ARRAY
+	IFS="." read -r -a OKV_ARRAY <<<"${OKV}"
 
 	# if KV_MAJOR >= 3, then we have no more KV_MINOR
-	if [[ ${KV_MAJOR} -lt 3 ]]; then
+	#if [[ ${KV_MAJOR} -lt 3 ]]; then
+	if [[ ${#OKV_ARRAY[@]} -ge 3 ]]; then
 		KV_MINOR=$(get_version_component_range 2 ${OKV})
 		KV_PATCH=$(get_version_component_range 3 ${OKV})
 		if [[ ${KV_MAJOR}${KV_MINOR}${KV_PATCH} -ge 269 ]]; then
@@ -168,10 +182,13 @@ detect_version() {
 		KV_EXTRA=${KV_EXTRA/[-_]*}
 	fi
 
+	debug-print "KV_EXTRA is ${KV_EXTRA}"
+
 	KV_PATCH=${KV_PATCH/[-_]*}
 
 	local v n=0 missing
-	if [[ ${KV_MAJOR} -lt 3 ]]; then
+	#if [[ ${KV_MAJOR} -lt 3 ]]; then
+	if [[ ${#OKV_ARRAY[@]} -ge 3 ]]; then
 		for v in CKV OKV KV_{MAJOR,MINOR,PATCH} ; do
 			[[ -z ${!v} ]] && n=1 && missing="${missing}${v} ";
 		done
@@ -186,18 +203,42 @@ detect_version() {
 		die "Failed to extract kernel version (try explicit CKV in ebuild)!"
 	unset v n missing
 
-	if [[ ${KV_MAJOR} -ge 3 ]]; then
+#	if [[ ${KV_MAJOR} -ge 3 ]]; then
+	if [[ ${#OKV_ARRAY[@]} -lt 3 ]]; then
 		KV_PATCH_ARR=(${KV_PATCH//\./ })
-		KERNEL_BASE_URI="mirror://kernel/linux/kernel/v${KV_MAJOR}.${KV_PATCH_ARR}"
+
+		# at this point 031412, Linus is putting all 3.x kernels in a 
+		# 3.x directory, may need to revisit when 4.x is released
+		KERNEL_BASE_URI="mirror://kernel/linux/kernel/v${KV_MAJOR}.x"
+
 		[[ -n "${K_LONGTERM}" ]] &&
 			KERNEL_BASE_URI="${KERNEL_BASE_URI}/longterm/v${KV_MAJOR}.${KV_PATCH_ARR}"
 	else
-		KERNEL_BASE_URI="mirror://kernel/linux/kernel/v${KV_MAJOR}.${KV_MINOR}"
+		#KERNEL_BASE_URI="mirror://kernel/linux/kernel/v${KV_MAJOR}.0"
+		#KERNEL_BASE_URI="mirror://kernel/linux/kernel/v${KV_MAJOR}.${KV_MINOR}"
+		if [[ ${KV_MAJOR} -ge 3 ]]; then
+			KERNEL_BASE_URI="mirror://kernel/linux/kernel/v${KV_MAJOR}.x"
+		else
+			KERNEL_BASE_URI="mirror://kernel/linux/kernel/v${KV_MAJOR}.${KV_MINOR}"
+		fi
+
 		[[ -n "${K_LONGTERM}" ]] &&
+			#KERNEL_BASE_URI="${KERNEL_BASE_URI}/longterm"
 			KERNEL_BASE_URI="${KERNEL_BASE_URI}/longterm/v${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}"
 	fi
 
-	KERNEL_URI="${KERNEL_BASE_URI}/linux-${OKV}.tar.bz2"
+	debug-print "KERNEL_BASE_URI is ${KERNEL_BASE_URI}"
+
+	if [[ ${#OKV_ARRAY[@]} -ge 3 ]] && [[ ${KV_MAJOR} -ge 3 ]]; then
+		# handle non genpatch using sources correctly
+		if [[ -z ${K_WANT_GENPATCHES} && -z ${K_GENPATCHES_VER} && ${KV_PATCH} -gt 0 ]]; then
+			KERNEL_URI="${KERNEL_BASE_URI}/patch-${OKV}.bz2"
+			UNIPATCH_LIST_DEFAULT="${DISTDIR}/patch-${CKV}.bz2"
+		fi
+		KERNEL_URI="${KERNEL_URI} ${KERNEL_BASE_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.bz2"
+	else
+		KERNEL_URI="${KERNEL_BASE_URI}/linux-${OKV}.tar.bz2"
+	fi
 
 	RELEASE=${CKV/${OKV}}
 	RELEASE=${RELEASE/_beta}
@@ -215,7 +256,7 @@ detect_version() {
 	# first of all, we add the release
 	EXTRAVERSION="${RELEASE}"
 	debug-print "0 EXTRAVERSION:${EXTRAVERSION}"
-	[[ -n ${KV_EXTRA} ]] && EXTRAVERSION=".${KV_EXTRA}${EXTRAVERSION}"
+	[[ -n ${KV_EXTRA} ]] && [[ ${KV_MAJOR} -lt 3 ]] && EXTRAVERSION=".${KV_EXTRA}${EXTRAVERSION}"
 
 	debug-print "1 EXTRAVERSION:${EXTRAVERSION}"
 	if [[ -n "${K_NOUSEPR}" ]]; then
@@ -301,7 +342,7 @@ detect_version() {
 				OKV="${KV_MAJOR}.$((${KV_PATCH_ARR} - 1))"
 			fi
 			KERNEL_URI="${KERNEL_BASE_URI}/testing/patch-${CKV//_/-}.bz2
-						${KERNEL_BASE_URI}/testing/linux-${OKV}.tar.bz2"
+						${KERNEL_BASE_URI}/linux-${OKV}.tar.bz2"
 			UNIPATCH_LIST_DEFAULT="${DISTDIR}/patch-${CKV//_/-}.bz2"
 		fi
 
@@ -334,6 +375,7 @@ detect_version() {
 	handle_genpatches
 }
 
+# Note: duplicated in linux-info.eclass
 kernel_is() {
 	# ALL of these should be set before we can safely continue this function.
 	# some of the sources have in the past had only one set.
@@ -343,9 +385,9 @@ kernel_is() {
 	unset v n
 
 	# Now we can continue
-	local operator test value x=0 y=0 z=0
+	local operator test value
 
-	case ${1} in
+	case ${1#-} in
 	  lt) operator="-lt"; shift;;
 	  gt) operator="-gt"; shift;;
 	  le) operator="-le"; shift;;
@@ -353,24 +395,11 @@ kernel_is() {
 	  eq) operator="-eq"; shift;;
 	   *) operator="-eq";;
 	esac
+	[[ $# -gt 3 ]] && die "Error in kernel-2_kernel_is(): too many parameters"
 
-	for x in ${@}; do
-		for((y=0; y<$((3 - ${#x})); y++)); do value="${value}0"; done
-		value="${value}${x}"
-		z=$((${z} + 1))
-
-		case ${z} in
-		  1) for((y=0; y<$((3 - ${#KV_MAJOR})); y++)); do test="${test}0"; done;
-			 test="${test}${KV_MAJOR}";;
-		  2) for((y=0; y<$((3 - ${#KV_MINOR})); y++)); do test="${test}0"; done;
-			 test="${test}${KV_MINOR}";;
-		  3) for((y=0; y<$((3 - ${#KV_PATCH})); y++)); do test="${test}0"; done;
-			 test="${test}${KV_PATCH}";;
-		  *) die "Error in kernel-2_kernel_is(): Too many parameters.";;
-		esac
-	done
-
-	[ ${test} ${operator} ${value} ] && return 0 || return 1
+	: $(( test = (KV_MAJOR << 16) + (KV_MINOR << 8) + KV_PATCH ))
+	: $(( value = (${1:-${KV_MAJOR}} << 16) + (${2:-${KV_MINOR}} << 8) + ${3:-${KV_PATCH}} ))
+	[ ${test} ${operator} ${value} ]
 }
 
 kernel_is_2_4() {
@@ -386,7 +415,8 @@ if [[ ${ETYPE} == sources ]]; then
 	DEPEND="!build? ( sys-apps/sed
 					  >=sys-devel/binutils-2.11.90.0.31 )"
 	RDEPEND="!build? ( >=sys-libs/ncurses-5.2
-					   sys-devel/make )"
+					   sys-devel/make 
+					   dev-lang/perl )"
 	PDEPEND="!build? ( virtual/dev-manager )"
 
 	SLOT="${PVR}"
@@ -410,6 +440,10 @@ if [[ ${ETYPE} == sources ]]; then
 				DEBLOB_PV="${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}"
 			else
 				DEBLOB_PV="${KV_MAJOR}.${KV_PATCH}"
+			fi
+
+			if [[ ${KV_MAJOR} -ge 3 ]]; then
+				DEBLOB_PV="${KV_MAJOR}.${KV_MINOR}"
 			fi
 
 			DEBLOB_A="deblob-${DEBLOB_PV}"
@@ -443,11 +477,7 @@ elif [[ ${ETYPE} == headers ]]; then
 	# lets unset it here.
 	unset KBUILD_OUTPUT
 
-	if [[ ${CTARGET} = ${CHOST} ]]; then
-		SLOT="0"
-	else
-		SLOT="${CTARGET}"
-	fi
+	SLOT="0"
 else
 	eerror "Unknown ETYPE=\"${ETYPE}\", must be \"sources\" or \"headers\""
 	die "Unknown ETYPE=\"${ETYPE}\", must be \"sources\" or \"headers\""
@@ -513,13 +543,35 @@ unpack_2_6() {
 }
 
 universal_unpack() {
+	debug-print "Inside universal_unpack"
+
+	local OKV_ARRAY
+	IFS="." read -r -a OKV_ARRAY <<<"${OKV}"
+
 	cd "${WORKDIR}"
-	unpack linux-${OKV}.tar.bz2
+	if [[ ${#OKV_ARRAY[@]} -ge 3 ]] && [[ ${KV_MAJOR} -ge 3 ]]; then
+		unpack linux-${KV_MAJOR}.${KV_MINOR}.tar.bz2
+	else
+		unpack linux-${OKV}.tar.bz2
+	fi
+
 	if [[ -d "linux" ]]; then
+		debug-print "Moving linux to linux-${KV_FULL}"
 		mv linux linux-${KV_FULL} \
 			|| die "Unable to move source tree to ${KV_FULL}."
 	elif [[ "${OKV}" != "${KV_FULL}" ]]; then
-		mv linux-${OKV} linux-${KV_FULL} \
+		if [[ ${#OKV_ARRAY[@]} -ge 3 ]] && [[ ${KV_MAJOR} -ge 3 ]] &&
+			[[ "${ETYPE}" = "sources" ]]; then
+			debug-print "moving linux-${KV_MAJOR}.${KV_MINOR} to linux-${KV_FULL} "
+			mv linux-${KV_MAJOR}.${KV_MINOR} linux-${KV_FULL} \
+				|| die "Unable to move source tree to ${KV_FULL}."
+		else
+			debug-print "moving linux-${OKV} to linux-${KV_FULL} "
+			mv linux-${OKV} linux-${KV_FULL} \
+				|| die "Unable to move source tree to ${KV_FULL}."
+		fi
+	elif [[ ${#OKV_ARRAY[@]} -ge 3 ]] && [[ ${KV_MAJOR} -ge 3 ]]; then
+		mv linux-${KV_MAJOR}.${KV_MINOR} linux-${KV_FULL} \
 			|| die "Unable to move source tree to ${KV_FULL}."
 	fi
 	cd "${S}"
@@ -527,19 +579,6 @@ universal_unpack() {
 	# remove all backup files
 	find . -iname "*~" -exec rm {} \; 2> /dev/null
 
-	# fix a problem on ppc where TOUT writes to /usr/src/linux breaking sandbox
-	# only do this for kernel < 2.6.27 since this file does not exist in later
-	# kernels
-	if [[ -n ${KV_MINOR} &&  ${KV_MAJOR}.${KV_MINOR}.${KV_PATCH} < 2.6.27 ]]
-	then
-		sed -i \
-			-e 's|TOUT	:= .tmp_gas_check|TOUT	:= $(T).tmp_gas_check|' \
-			"${S}"/arch/ppc/Makefile
-	else
-		sed -i \
-			-e 's|TOUT	:= .tmp_gas_check|TOUT	:= $(T).tmp_gas_check|' \
-			"${S}"/arch/powerpc/Makefile
-	fi
 }
 
 unpack_set_extraversion() {
@@ -1051,67 +1090,6 @@ detect_arch() {
 	done
 }
 
-# sparc nastiness
-#==============================================================
-# This script generates the files in /usr/include/asm for sparc systems
-# during installation of sys-kernel/linux-headers.
-# Will no longer be needed when full 64 bit support is used on sparc64
-# systems.
-#
-# Shamefully ripped from Debian
-# ----------------------------------------------------------------------
-
-# Idea borrowed from RedHat's kernel package
-
-# This is gonna get replaced by something in multilib.eclass soon...
-# --eradicator
-generate_sparc_asm() {
-	local name
-
-	cd $1 || die
-	mkdir asm
-
-	for h in `( ls asm-sparc; ls asm-sparc64 ) | grep '\.h$' | sort -u`; do
-		name="$(echo $h | tr a-z. A-Z_)"
-		# common header
-		echo "/* All asm/ files are generated and point to the corresponding
- * file in asm-sparc or asm-sparc64.
- */
-
-#ifndef __SPARCSTUB__${name}__
-#define __SPARCSTUB__${name}__
-" > asm/${h}
-
-		# common for sparc and sparc64
-		if [ -f asm-sparc/$h -a -f asm-sparc64/$h ]; then
-			echo "#ifdef __arch64__
-#include <asm-sparc64/$h>
-#else
-#include <asm-sparc/$h>
-#endif
-" >> asm/${h}
-
-		# sparc only
-		elif [ -f asm-sparc/$h ]; then
-echo "#ifndef __arch64__
-#include <asm-sparc/$h>
-#endif
-" >> asm/${h}
-
-		# sparc64 only
-		else
-echo "#ifdef __arch64__
-#include <asm-sparc64/$h>
-#endif
-" >> asm/${h}
-		fi
-
-		# common footer
-		echo "#endif /* !__SPARCSTUB__${name}__ */" >> asm/${h}
-	done
-	return 0
-}
-
 headers___fix() {
 	# Voodoo to partially fix broken upstream headers.
 	# note: do not put inline/asm/volatile together (breaks "inline asm volatile")
@@ -1165,6 +1143,20 @@ kernel-2_src_unpack() {
 		cp "${DISTDIR}/${DEBLOB_CHECK_A}" "${T}/deblob-check" || die "cp ${DEBLOB_CHECK_A} failed"
 		chmod +x "${T}/${DEBLOB_A}" "${T}/deblob-check" || die "chmod deblob scripts failed"
 	fi
+
+	# fix a problem on ppc where TOUT writes to /usr/src/linux breaking sandbox
+	# only do this for kernel < 2.6.27 since this file does not exist in later
+	# kernels
+	if [[ -n ${KV_MINOR} &&  ${KV_MAJOR}.${KV_MINOR}.${KV_PATCH} < 2.6.27 ]]
+	then
+		sed -i \
+			-e 's|TOUT	:= .tmp_gas_check|TOUT	:= $(T).tmp_gas_check|' \
+			"${S}"/arch/ppc/Makefile
+	else
+		sed -i \
+			-e 's|TOUT	:= .tmp_gas_check|TOUT	:= $(T).tmp_gas_check|' \
+			"${S}"/arch/powerpc/Makefile
+	fi
 }
 
 kernel-2_src_compile() {
@@ -1202,7 +1194,7 @@ kernel-2_pkg_postinst() {
 
 kernel-2_pkg_setup() {
 	if kernel_is 2 4; then
-		if [ "$( gcc-major-version )" -eq "4" ] ; then
+		if [[ $(gcc-major-version) -ge 4 ]] ; then
 			echo
 			ewarn "Be warned !! >=sys-devel/gcc-4.0.0 isn't supported with linux-2.4!"
 			ewarn "Either switch to another gcc-version (via gcc-config) or use a"
@@ -1218,4 +1210,19 @@ kernel-2_pkg_setup() {
 	ABI="${KERNEL_ABI}"
 	[[ ${ETYPE} == headers ]] && setup_headers
 	[[ ${ETYPE} == sources ]] && echo ">>> Preparing to unpack ..."
+}
+
+kernel-2_pkg_postrm() {
+	# This warning only makes sense for kernel sources.
+	[[ ${ETYPE} == headers ]] && return 0
+
+	# If there isn't anything left behind, then don't complain.
+	[[ -e ${ROOT}usr/src/linux-${KV_FULL} ]] || return 0
+	echo
+	ewarn "Note: Even though you have successfully unmerged "
+	ewarn "your kernel package, directories in kernel source location: "
+	ewarn "${ROOT}usr/src/linux-${KV_FULL}"
+	ewarn "with modified files will remain behind. By design, package managers"
+	ewarn "will not remove these modified files and the directories they reside in."
+	echo
 }

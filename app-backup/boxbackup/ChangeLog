@@ -1,6 +1,22 @@
 # ChangeLog for app-backup/boxbackup
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.23 2010/10/30 10:29:54 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/boxbackup/ChangeLog,v 1.27 2012/05/24 04:36:57 vapier Exp $
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> boxbackup-0.10.ebuild,
+  boxbackup-0.11.1.ebuild:
+  Inherit user for enewuser/etc...
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> boxbackup-0.11.1.ebuild:
+  x86 stable wrt bug #399913
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> boxbackup-0.11.1.ebuild:
+  Stable for amd64, wrt bug #399913
+
+*boxbackup-0.11.1 (30 Aug 2011)
+
+  30 Aug 2011; Patrick Lauer <patrick@gentoo.org> -boxbackup-0.11_rc8.ebuild,
+  +boxbackup-0.11.1.ebuild:
+  Bump and install fix for #299411
 
   30 Oct 2010; Diego E. Pettenò <flameeyes@gentoo.org>
   boxbackup-0.11_rc8.ebuild:

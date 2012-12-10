@@ -1,6 +1,18 @@
 # ChangeLog for perl-core/Getopt-Long
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/perl-core/Getopt-Long/ChangeLog,v 1.37 2011/05/21 06:15:04 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/perl-core/Getopt-Long/ChangeLog,v 1.41 2012/08/27 17:40:29 armin76 Exp $
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> Getopt-Long-2.380.0.ebuild:
+  arm/s390/sh stable
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> Getopt-Long-2.380.0.ebuild:
+  keyword ~amd64-fbsd
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> Getopt-Long-2.380.0.ebuild:
+  keyword ~x86-fbsd
 
 *Getopt-Long-2.380.0 (21 May 2011)
 
@@ -180,4 +192,3 @@
   16 Jun 2003; Michael Cummings <mcummings@gentoo.org>
   Getopt-Long-2.33.ebuild:
   Updated CPAN package; dep for othe ebuilds
-

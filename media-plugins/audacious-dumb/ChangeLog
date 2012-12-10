@@ -1,6 +1,61 @@
 # ChangeLog for media-plugins/audacious-dumb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/audacious-dumb/ChangeLog,v 1.35 2011/01/20 16:06:16 joker Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/audacious-dumb/ChangeLog,v 1.45 2012/07/27 17:02:28 joker Exp $
+
+*audacious-dumb-0.81 (27 Jul 2012)
+
+  27 Jul 2012; Christian Birchinger <joker@gentoo.org>
+  +audacious-dumb-0.81.ebuild:
+  New version for Audacious 3.3
+
+  27 Jul 2012; Christian Birchinger <joker@gentoo.org>
+  -audacious-dumb-0.70.ebuild, audacious-dumb-0.73.ebuild,
+  audacious-dumb-0.74.ebuild, audacious-dumb-0.80.ebuild:
+  Narrowd dependencies down and removed versions that have no supported core
+  anymore
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> audacious-dumb-0.65.ebuild,
+  audacious-dumb-0.70.ebuild, audacious-dumb-0.73.ebuild,
+  audacious-dumb-0.74.ebuild, audacious-dumb-0.80.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*audacious-dumb-0.80 (27 Feb 2012)
+
+  27 Feb 2012; Christian Birchinger <joker@gentoo.org>
+  +audacious-dumb-0.80.ebuild:
+  New version with support for Audacious 3.2.1
+
+*audacious-dumb-0.74 (11 Dec 2011)
+
+  11 Dec 2011; Christian Birchinger <joker@gentoo.org>
+  +audacious-dumb-0.74.ebuild:
+  New version that requires Audacious 3.1 final, not alpha.
+
+*audacious-dumb-0.73 (26 Nov 2011)
+
+  26 Nov 2011; Christian Birchinger <joker@gentoo.org>
+  +audacious-dumb-0.73.ebuild:
+  Added new version that supports Audacious 3.1
+
+  05 Oct 2011; Christian Birchinger <joker@gentoo.org>
+  -audacious-dumb-0.72.ebuild:
+  0.72 is wont be usable until Audacious 3.1 is released
+
+*audacious-dumb-0.72 (05 Oct 2011)
+
+  05 Oct 2011; Christian Birchinger <joker@gentoo.org>
+  +audacious-dumb-0.72.ebuild:
+  Version bump
+
+*audacious-dumb-0.70 (20 Aug 2011)
+
+  20 Aug 2011; Christian Birchinger <joker@gentoo.org>
+  audacious-dumb-0.65.ebuild, +audacious-dumb-0.70.ebuild:
+  Added new version with support for Audacious 3.0 and Gtk+ 3.0
+
+  18 Aug 2011; Christian Birchinger <joker@gentoo.org>
+  -audacious-dumb-0.64.ebuild:
+  Remove old version
 
 *audacious-dumb-0.65 (20 Jan 2011)
 

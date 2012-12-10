@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/mogilefs-server/mogilefs-server-2.43.ebuild,v 1.1 2010/10/29 03:34:52 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/mogilefs-server/mogilefs-server-2.43.ebuild,v 1.3 2012/06/03 16:31:18 tove Exp $
 
 EAPI=2
 MODULE_AUTHOR="DORMANDO"
@@ -8,7 +8,7 @@ MY_PN=MogileFS-Server
 MY_P="${MY_PN}-${PV}"
 MODULE_A="${MY_P}.tar.gz"
 S="${WORKDIR}/${MY_P}"
-inherit perl-module
+inherit user perl-module
 
 DESCRIPTION="Server for the MogileFS distributed file system"
 HOMEPAGE="http://www.danga.com/mogilefs/"
@@ -84,7 +84,6 @@ src_install() {
 	diropts -m 700 -o ${MOGILE_USER}
 	keepdir /var/run/mogile
 	keepdir /var/mogdata
-	keepdir /mnt/mogilefs
 	diropts -m 755 -o root
 
 	dodir /etc/mogilefs

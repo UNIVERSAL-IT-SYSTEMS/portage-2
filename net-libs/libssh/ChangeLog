@@ -1,6 +1,79 @@
 # ChangeLog for net-libs/libssh
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libssh/ChangeLog,v 1.49 2011/07/15 10:44:29 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libssh/ChangeLog,v 1.70 2012/12/03 11:14:57 nativemad Exp $
+
+  03 Dec 2012; Andreas Schuerch <nativemad@gentoo.org> libssh-0.5.3.ebuild:
+  x86 stable, see bug 444147. Thanks Dan Dexter for testing.
+
+  01 Dec 2012; Anthony G. Basile <blueness@gentoo.org> libssh-0.5.3.ebuild:
+  stable ppc64, bug #444147
+
+  29 Nov 2012; <ago@gentoo.org> libssh-0.5.3.ebuild:
+  Stable for ppc, wrt bug #444147
+
+  25 Nov 2012; Tim Harder <radhermit@gentoo.org> libssh-0.5.3.ebuild:
+  Build static libs when tests are enabled and drop REQUIRED_USE.
+
+  25 Nov 2012; <ago@gentoo.org> libssh-0.5.3.ebuild:
+  Stable for amd64, wrt bug #444147
+
+*libssh-0.5.3 (24 Nov 2012)
+
+  24 Nov 2012; Tim Harder <radhermit@gentoo.org> +libssh-0.5.3.ebuild:
+  Version bump to fix security issues (bug #444147).
+
+  20 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> -libssh-0.5.1.ebuild,
+  libssh-0.5.2.ebuild:
+  Stable on ppc64 wrt bug#419273. Remove older.
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> libssh-0.5.2.ebuild:
+  Marking libssh-0.5.2 ppc for bug 419273
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> libssh-0.5.2.ebuild:
+  marked x86 per bug 419273
+
+  04 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libssh-0.5.2.ebuild:
+  Stable for amd64, wrt bug #419273
+
+  21 May 2012; Jeroen Roovers <jer@gentoo.org> -libssh-0.4.8.ebuild:
+  Old.
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> libssh-0.5.1.ebuild:
+  Stable for ppc64; bug #382499
+
+  26 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> libssh-0.5.1.ebuild:
+  Stable ppc wrt bug#382499.
+
+  24 Feb 2012; Tim Harder <radhermit@gentoo.org> -libssh-0.4.91.ebuild,
+  -libssh-0.5.0.ebuild, -files/libssh-0.5.0-no-server.patch:
+  Remove old.
+
+*libssh-0.5.2 (17 Sep 2011)
+
+  17 Sep 2011; Tim Harder <radhermit@gentoo.org> +libssh-0.5.2.ebuild:
+  Version bump.
+
+  16 Sep 2011; Tony Vroon <chainsaw@gentoo.org> libssh-0.5.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #382499.
+
+  16 Sep 2011; Andreas Schuerch <nativemad@gentoo.org> libssh-0.5.1.ebuild:
+  x86 stable, thanks JD on bug 382499
+
+  10 Sep 2011; Tim Harder <radhermit@gentoo.org> libssh-0.5.1.ebuild:
+  Explicitly require static libraries to be built if testing is enabled since
+  the tests currently require them.
+
+  24 Aug 2011; Jeremy Olexa <darkside@gentoo.org> libssh-0.5.1.ebuild:
+  add prefix keywords, bug 374401
+
+*libssh-0.5.1 (10 Aug 2011)
+
+  10 Aug 2011; Tim Harder <radhermit@gentoo.org> +libssh-0.5.1.ebuild:
+  Version bump
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> libssh-0.5.0.ebuild:
+  Add ~s390/~sparc wrt #374401
 
   15 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> libssh-0.5.0.ebuild:
   Marked ~ppc/~ppc64 wrt #374401

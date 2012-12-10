@@ -1,6 +1,64 @@
 # ChangeLog for x11-misc/xnee
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xnee/ChangeLog,v 1.14 2011/02/01 19:23:56 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xnee/ChangeLog,v 1.26 2012/10/10 15:20:36 jer Exp $
+
+*xnee-3.14 (10 Oct 2012)
+
+  10 Oct 2012; Jeroen Roovers <jer@gentoo.org> -xnee-3.12.ebuild,
+  +xnee-3.14.ebuild:
+  Version bump.
+
+*xnee-3.13 (07 Jun 2012)
+
+  07 Jun 2012; Michael Weber <xmw@gentoo.org> +xnee-3.13.ebuild,
+  -xnee-3.10.ebuild, -xnee-3.11.ebuild:
+  Version bump (bug 415657 by df), remove old.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> xnee-3.10.ebuild,
+  xnee-3.11.ebuild, xnee-3.12.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*xnee-3.12 (15 Feb 2012)
+
+  15 Feb 2012; Tim Harder <radhermit@gentoo.org> +xnee-3.12.ebuild:
+  Version bump.
+
+*xnee-3.11 (23 Dec 2011)
+
+  23 Dec 2011; Tim Harder <radhermit@gentoo.org> +xnee-3.11.ebuild:
+  Version bump.
+
+  02 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> xnee-3.10.ebuild:
+  Remove support for building applet for gnome-panel-2.x (because it doesn't
+  build with gnome-panel-3.x)
+
+  02 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -files/xnee-3.05-asneeded.patch, -xnee-3.07.ebuild, -xnee-3.08.ebuild,
+  -xnee-3.09.ebuild:
+  old
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org> xnee-3.09.ebuild,
+  xnee-3.10.ebuild:
+  Remove unused autotools setting.
+
+  27 Nov 2011; Jeroen Roovers <jer@gentoo.org> xnee-3.09.ebuild,
+  xnee-3.10.ebuild:
+  Do not use autotools-utils.eclass (bug #392133).
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org> xnee-3.09.ebuild,
+  xnee-3.10.ebuild:
+  Build in the source tree.
+
+*xnee-3.10 (19 Nov 2011)
+
+  19 Nov 2011; Tim Harder <radhermit@gentoo.org> +xnee-3.10.ebuild:
+  Version bump.
+
+*xnee-3.09 (09 Aug 2011)
+
+  09 Aug 2011; Jeroen Roovers <jer@gentoo.org> +xnee-3.09.ebuild:
+  Version bump. Clean up ebuild. Add more library dependencies. Remove obsolete
+  patching. Add IUSE=static-libs.
 
 *xnee-3.08 (01 Feb 2011)
 

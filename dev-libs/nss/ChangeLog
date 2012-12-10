@@ -1,6 +1,226 @@
 # ChangeLog for dev-libs/nss
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/nss/ChangeLog,v 1.209 2011/07/31 14:29:18 anarchy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/nss/ChangeLog,v 1.270 2012/11/29 23:41:51 blueness Exp $
+
+  29 Nov 2012; Anthony G. Basile <blueness@gentoo.org> nss-3.14.ebuild:
+  stable ppc64, bug #439586
+
+  29 Nov 2012; <ago@gentoo.org> nss-3.14.ebuild:
+  Stable for ppc, wrt bug #439586
+
+  25 Nov 2012; Raúl Porcel <armin76@gentoo.org> nss-3.14.ebuild:
+  alpha/ia64/sparc stable wrt #439586
+
+  21 Nov 2012; Markus Meier <maekke@gentoo.org> nss-3.14.ebuild:
+  arm stable, bug #439586
+
+  21 Nov 2012;  <ago@gentoo.org> nss-3.14.ebuild:
+  Stable for x86, wrt bug #439586
+
+  16 Nov 2012; Jeroen Roovers <jer@gentoo.org> nss-3.14.ebuild:
+  Stable for HPPA (bug #439586).
+
+  15 Nov 2012; <ago@gentoo.org> nss-3.14.ebuild:
+  Stable for amd64, wrt bug #439586
+
+*nss-3.14 (28 Oct 2012)
+
+  28 Oct 2012; <anarchy@gentoo.org> +nss-3.14.ebuild:
+  Version bump
+
+  15 Sep 2012; Andreas Schuerch <nativemad@gentoo.org> nss-3.13.6.ebuild:
+  x86 stable, see bug 433383
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> nss-3.13.6.ebuild:
+  Stable for amd64, wrt bug #433383
+
+  04 Sep 2012; Jeroen Roovers <jer@gentoo.org> nss-3.13.6.ebuild:
+  Stable for HPPA (bug #433383).
+
+*nss-3.13.6 (01 Sep 2012)
+
+  01 Sep 2012; <anarchy@gentoo.org> +nss-3.13.6.ebuild:
+  Security bump
+
+  25 Aug 2012; Michael Weber <xmw@gentoo.org> nss-3.13.5.ebuild:
+  ppc stable (bug 427224)
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> nss-3.13.5.ebuild:
+  alpha/ia64/sparc stable wrt #427224
+
+  23 Jul 2012; Jeroen Roovers <jer@gentoo.org> nss-3.13.5.ebuild:
+  Stable for HPPA (bug #427224).
+
+*nss-3.13.5-r1 (22 Jun 2012)
+
+  22 Jun 2012; Jory A. Pratt <anarchy@gentoo.org> +nss-3.13.5-r1.ebuild,
+  +files/nss-3.13.5-x32.patch:
+  Add support for x32, bug #421817
+
+  19 Jun 2012; Andreas Schuerch <nativemad@gentoo.org> nss-3.13.5.ebuild:
+  x86 stable, thanks Mikle Kolyada
+
+  11 Jun 2012; Jory A. Pratt <anarchy@gentoo.org> nss-3.13.5.ebuild:
+  Bug #420659, Ensure nspr is listed in Depend
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> nss-3.13.5.ebuild:
+  Stable for amd64, wrt bug #420125
+
+  08 Jun 2012; Michael Weber <xmw@gentoo.org> nss-3.13.4.ebuild:
+  ppc stable (bug 414963)
+
+*nss-3.13.5 (06 Jun 2012)
+
+  06 Jun 2012; Jory A. Pratt <anarchy@gentoo.org> +nss-3.13.5.ebuild:
+  Version bump, NSS parsing errors with zero length item
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> nss-3.13.4.ebuild:
+  sparc stable
+
+  26 May 2012; Raúl Porcel <armin76@gentoo.org> nss-3.13.4.ebuild:
+  alpha/ia64 stable
+
+  26 May 2012; Markus Meier <maekke@gentoo.org> nss-3.13.4.ebuild:
+  arm stable, bug #414963
+
+  08 May 2012; Lars Wendler <polynomial-c@gentoo.org> nss-3.13.4.ebuild:
+  Sync up with nss from mozilla overlay.
+
+  08 May 2012; Andreas Schuerch <nativemad@gentoo.org> nss-3.13.4.ebuild:
+  x86 stable, see bug 414963
+
+  07 May 2012; Markos Chandras <hwoarang@gentoo.org> nss-3.13.4.ebuild:
+  Stable on amd64 wrt bug #414963
+
+*nss-3.13.4 (07 May 2012)
+
+  07 May 2012; Lars Wendler <polynomial-c@gentoo.org> -nss-3.13.1-r2.ebuild,
+  +nss-3.13.4.ebuild:
+  Security bump (bug #414963). Removed old.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> nss-3.12.11-r1.ebuild,
+  nss-3.13.1-r2.ebuild, nss-3.13.2.ebuild, nss-3.13.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> nss-3.13.3.ebuild:
+  keyword ~amd64-fbsd
+
+  25 Mar 2012; Thomas Kahle <tomka@gentoo.org> nss-3.13.3.ebuild:
+  marked x86 per bug 408161
+
+  22 Mar 2012; Agostino Sarubbo <ago@gentoo.org> nss-3.13.3.ebuild:
+  Stable for amd64, wrt bug #408161
+
+*nss-3.13.3 (11 Mar 2012)
+
+  11 Mar 2012; Jory A. Pratt <anarchy@gentoo.org> +nss-3.13.3.ebuild,
+  +files/nss-3.13-gentoo-fixup.patch:
+  Version bump, make minor changes to pkg-config file bug #407743
+
+*nss-3.13.2 (26 Feb 2012)
+
+  26 Feb 2012; Jory A. Pratt <anarchy@gentoo.org> -nss-3.12.9-r1.ebuild,
+  -nss-3.12.10.ebuild, -nss-3.13.1-r1.ebuild, +nss-3.13.2.ebuild:
+  Remove stale versions, version bump
+
+  20 Feb 2012; Thomas Kahle <tomka@gentoo.org> nss-3.13.1-r2.ebuild:
+  marked x86 per bug 403183
+
+  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> nss-3.13.1-r2.ebuild:
+  Stable for amd64, wrt bug #403183
+
+*nss-3.13.1-r2 (27 Jan 2012)
+
+  27 Jan 2012; <anarchy@gentoo.org> +nss-3.13.1-r2.ebuild:
+  add ca cert support to database
+
+  12 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> nss-3.13.1-r1.ebuild:
+  x86 stable wrt bug #395431
+
+  11 Jan 2012; Agostino Sarubbo <ago@gentoo.org> nss-3.13.1-r1.ebuild:
+  Stable for AMD64, wrt security bug #395431
+
+  10 Jan 2012; Agostino Sarubbo <ago@gentoo.org> nss-3.13.1-r1.ebuild:
+  Add zlib as RDEPEND and 'die' where missing
+
+*nss-3.13.1-r1 (19 Dec 2011)
+
+  19 Dec 2011; Jory A. Pratt <anarchy@gentoo.org> -nss-3.13.1.ebuild,
+  +nss-3.13.1-r1.ebuild, +files/nss-3.13.1-pkcs11n-header-fix.patch:
+  Fix pkcs11n header, fix mulitlib portage compilation
+
+  25 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> nss-3.12.11-r1.ebuild:
+  ppc64 stable wrt #388045
+
+  21 Nov 2011; Jory A. Pratt <anarchy@gentoo.org> nss-3.13.1.ebuild:
+  Fix buildtime deps, bug #381585,381591
+
+  19 Nov 2011; Raúl Porcel <armin76@gentoo.org> nss-3.12.11-r1.ebuild:
+  alpha/ia64/sparc stable wrt #388045
+
+  06 Nov 2011; Brent Baude <ranger@gentoo.org> nss-3.12.11-r1.ebuild:
+  Marking nss-3.12.11-r1 ppc for bug 388045
+
+  05 Nov 2011; Markus Meier <maekke@gentoo.org> nss-3.12.11-r1.ebuild:
+  arm stable, bug #388045
+
+*nss-3.13.1 (05 Nov 2011)
+
+  05 Nov 2011; Lars Wendler <polynomial-c@gentoo.org> -nss-3.12.8.ebuild,
+  -nss-3.12.9.ebuild, -nss-3.12.11.ebuild, +nss-3.13.1.ebuild,
+  +files/nss-3.13.1-solaris-gcc.patch:
+  Version bump. Removed old.
+
+  30 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> nss-3.12.11-r1.ebuild:
+  x86 stable wrt bug #388045
+
+  28 Oct 2011; Jeroen Roovers <jer@gentoo.org> nss-3.12.11-r1.ebuild:
+  Stable for HPPA (bug #388045).
+
+  28 Oct 2011; Tony Vroon <chainsaw@gentoo.org> nss-3.12.11-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in security bug #388045.
+
+*nss-3.12.11-r1 (27 Oct 2011)
+
+  27 Oct 2011; Lars Wendler <polynomial-c@gentoo.org> +nss-3.12.11-r1.ebuild,
+  +files/nss-3.12.11-CVE-2011-3640.patch:
+  Revbump to fix CVE-2011-3640 (bug #388045).
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> nss-3.12.9-r1.ebuild:
+  Fix linux-3.0 support on stable as well, bug #372001
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org> nss-3.12.11.ebuild:
+  Avoid brute force install_name_tooling by hacking the makefiles
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org> nss-3.12.11.ebuild:
+  Fixup library ids and references, not to use @executable_path on Darwin
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org> nss-3.12.11.ebuild:
+  Fix pkg-config and nss-config for Darwin where the linker doesn't understand
+  (and need) -R arguments
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org> nss-3.12.11.ebuild:
+  Marked ~x64-macos, libnaming fixes, and disable resigning of libs on Darwin,
+  since Darwin doesn't do ELF
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> nss-3.12.10.ebuild:
+  arm stable, bug #379549
+
+  03 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> nss-3.12.10.ebuild:
+  x86 stable wrt bug #380913
+
+  03 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> nss-3.12.10.ebuild:
+  ppc/ppc64 stable wrt #379549
+
+  28 Aug 2011; Tony Vroon <chainsaw@gentoo.org> nss-3.12.10.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380913 filed by Chí-Thanh Christopher Nguyễn.
+
+*nss-3.12.11 (27 Aug 2011)
+
+  27 Aug 2011; Jory A. Pratt <anarchy@gentoo.org> +nss-3.12.11.ebuild:
+  Version bump, misc fixes
 
   31 Jul 2011; Jory A. Pratt <anarchy@gentoo.org> nss-3.12.10.ebuild:
   Add support for Linux-3.0, bug #372001
@@ -793,4 +1013,3 @@
   11 Jul 2003; Alastair Tse <liquidx@gentoo.org> nss-3.8.ebuild:
   intial ebuild for NSS. this will be used by evolution to avoid the mozilla
   dependency
-

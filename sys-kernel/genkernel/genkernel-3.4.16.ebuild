@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/genkernel-3.4.16.ebuild,v 1.4 2011/07/26 21:17:54 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/genkernel-3.4.16.ebuild,v 1.11 2012/07/15 19:01:56 sping Exp $
 
 # genkernel-9999        -> latest Git branch "master"
 # genkernel-VERSION     -> normal genkernel release
@@ -29,7 +29,7 @@ COMMON_URI="${DM_HOME}/dmraid-${VERSION_DMRAID}.tar.bz2
 		${RH_HOME}/dm/device-mapper.${VERSION_DMAP}.tgz
 		${RH_HOME}/dm/old/device-mapper.${VERSION_DMAP}.tgz
 		${BB_HOME}/busybox-${VERSION_BUSYBOX}.tar.bz2
-		mirror://kernel/linux/kernel/people/mnc/open-iscsi/releases/open-iscsi-${VERSION_ISCSI}.tar.gz
+		http://www.open-iscsi.org/bits/open-iscsi-${VERSION_ISCSI}.tar.gz
 		mirror://sourceforge/e2fsprogs/e2fsprogs-${VERSION_E2FSPROGS}.tar.gz
 		mirror://sourceforge/fuse/fuse-${VERSION_FUSE}.tar.gz
 		http://podgorny.cz/unionfs-fuse/releases/unionfs-fuse-${VERSION_UNIONFS_FUSE}.tar.bz2
@@ -39,18 +39,18 @@ if [[ ${PV} == 9999* ]]
 then
 	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/genkernel.git"
 	EGIT_BRANCH=master
-	inherit git bash-completion eutils
+	inherit git-2 bash-completion-r1 eutils
 	S="${WORKDIR}/${PN}"
 	SRC_URI="${COMMON_URI}"
 	KEYWORDS=""
 else
-	inherit bash-completion eutils
+	inherit bash-completion-r1 eutils
 	SRC_URI="mirror://gentoo/${P}.tar.bz2
 		${MY_HOME}/sources/genkernel/${P}.tar.bz2
 		${COMMON_URI}"
 	# Please don't touch individual KEYWORDS.  Since this is maintained/tested by
 	# Release Engineering, it's easier for us to deal with all arches at once.
-	KEYWORDS="~alpha amd64 arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc x86"
+	KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sparc x86"
 fi
 
 DESCRIPTION="Gentoo automatic kernel building scripts"
@@ -130,7 +130,7 @@ src_install() {
 		"${DISTDIR}"/open-iscsi-${VERSION_ISCSI}.tar.gz \
 		"${D}"/var/cache/genkernel/src || die "Copying distfiles..."
 
-	dobashcompletion "${FILESDIR}"/genkernel.bash
+	newbashcomp "${FILESDIR}"/genkernel.bash "${PN}"
 }
 
 pkg_postinst() {
@@ -149,6 +149,4 @@ pkg_postinst() {
 	ewarn "The LUKS support has changed from versions prior to 3.4.4.  Now,"
 	ewarn "you use crypt_root=/dev/blah instead of real_root=luks:/dev/blah."
 	echo
-
-	bash-completion_pkg_postinst
 }

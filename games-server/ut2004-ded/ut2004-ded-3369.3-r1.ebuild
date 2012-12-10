@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-server/ut2004-ded/ut2004-ded-3369.3-r1.ebuild,v 1.3 2010/11/09 15:13:43 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-server/ut2004-ded/ut2004-ded-3369.3-r1.ebuild,v 1.5 2011/12/14 17:31:42 vapier Exp $
 
 EAPI=2
 inherit games
@@ -22,7 +22,6 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 RESTRICT="mirror strip"
-PROPERTIES="interactive"
 
 DEPEND="app-arch/unzip
 	app-arch/p7zip"
@@ -33,7 +32,6 @@ RDEPEND="sys-libs/glibc
 
 S=${WORKDIR}
 
-GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/${PN}
 
 src_prepare() {
@@ -87,7 +85,7 @@ src_install() {
 pkg_postinst() {
 	games_pkg_postinst
 	ewarn "You should take the time to edit the default server INI."
-	ewarn "Consult the INI Reference at http://unrealadmin.org/"
+	ewarn "Consult the INI Reference at http://www.unrealadmin.org/"
 	ewarn "for assistance in adjusting the following file:"
 	ewarn "${dir}/System/Default.ini"
 	ewarn

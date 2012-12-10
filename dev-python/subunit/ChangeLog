@@ -1,6 +1,33 @@
 # ChangeLog for dev-python/subunit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/subunit/ChangeLog,v 1.12 2011/04/16 16:05:16 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/subunit/ChangeLog,v 1.19 2012/07/28 13:07:59 blueness Exp $
+
+  28 Jul 2012; Anthony G. Basile <blueness@gentoo.org> subunit-0.0.8.ebuild:
+  Keyword ~mips, bug #428356
+
+  24 Jun 2012; Mike Gilbert <floppym@gentoo.org> subunit-0.0.8.ebuild:
+  Improve comment explaining pypy restriction.
+
+  20 May 2012; Mike Gilbert <floppym@gentoo.org> subunit-0.0.8.ebuild:
+  Remove PYTHON_DEPEND.
+
+*subunit-0.0.8 (19 May 2012)
+
+  19 May 2012; Mike Gilbert <floppym@gentoo.org> +subunit-0.0.8.ebuild:
+  Version bump for bug 415233. Enable python 3. Thanks to Ian Delaney for the
+  heads-up on missing files.
+
+  04 May 2012; Patrick Lauer <patrick@gentoo.org> subunit-0.0.6.ebuild,
+  subunit-0.0.7.ebuild:
+  Migrating dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> subunit-0.0.7.ebuild:
+  keyword ~amd64-fbsd
+
+*subunit-0.0.7 (08 Feb 2012)
+
+  08 Feb 2012; Patrick Lauer <patrick@gentoo.org> +subunit-0.0.7.ebuild:
+  Bump for #401959
 
   16 Apr 2011; Raúl Porcel <armin76@gentoo.org> subunit-0.0.6.ebuild:
   ia64 stable wrt #343309
@@ -45,4 +72,3 @@
   08 Apr 2010; Christian Faulhammer <fauli@gentoo.org>
   +subunit-0.0.5.ebuild, +metadata.xml:
   initial commit by me
-

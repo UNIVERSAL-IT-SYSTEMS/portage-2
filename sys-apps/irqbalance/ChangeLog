@@ -1,6 +1,86 @@
 # ChangeLog for sys-apps/irqbalance
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/irqbalance/ChangeLog,v 1.27 2011/01/21 15:25:09 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/irqbalance/ChangeLog,v 1.47 2012/12/09 15:13:07 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> irqbalance-1.0.4.ebuild:
+  Stable for ppc, wrt bug #441512
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> irqbalance-1.0.4.ebuild:
+  Stable for amd64, wrt bug #441512
+
+*irqbalance-1.0.5 (04 Dec 2012)
+
+  04 Dec 2012; Doug Goldstein <cardoe@gentoo.org> +irqbalance-1.0.5.ebuild:
+  Version bump
+
+*irqbalance-1.0.4 (05 Sep 2012)
+
+  05 Sep 2012; Tim Harder <radhermit@gentoo.org> +irqbalance-1.0.4.ebuild:
+  Version bump.
+
+  14 Aug 2012; Johannes Huber <johu@gentoo.org> irqbalance-1.0.3.ebuild:
+  Stable for x86, wrt bug #422177
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> irqbalance-1.0.3.ebuild:
+  Marking irqbalance-1.0.3 ppc for bug 422177
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> irqbalance-1.0.3.ebuild:
+  Stable for amd64, wrt bug #422177
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> irqbalance-0.55-r2.ebuild,
+  irqbalance-0.56.ebuild, irqbalance-1.0.1.ebuild, irqbalance-1.0.2-r1.ebuild,
+  irqbalance-1.0.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*irqbalance-1.0.3 (06 Apr 2012)
+
+  06 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org> +files/irqbalance.init.2,
+  +irqbalance-1.0.3.ebuild:
+  Version bump, reduce init script.
+
+  08 Jan 2012; Michał Górny <mgorny@gentoo.org> files/irqbalance.service:
+  Update .service file path as well.
+
+  07 Jan 2012; Mike Frysinger <vapier@gentoo.org> irqbalance-1.0.2-r1.ebuild,
+  files/irqbalance.init:
+  Move irqbalance to /usr #398065 by Michał Górny.
+
+  18 Dec 2011; Michał Górny <mgorny@gentoo.org> files/irqbalance.service:
+  Add Description= to the systemd unit.
+
+*irqbalance-1.0.2-r1 (11 Dec 2011)
+
+  11 Dec 2011; Michał Górny <mgorny@gentoo.org> -irqbalance-1.0.2.ebuild,
+  +irqbalance-1.0.2-r1.ebuild, +files/irqbalance.service:
+  Add systemd unit file.
+
+  11 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> irqbalance-0.56.ebuild:
+  x86 stable wrt bug #383955
+
+  07 Nov 2011; Tony Vroon <chainsaw@gentoo.org> irqbalance-0.56.ebuild:
+  Marked stable on AMD64 based on arch tesitng by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #383955.
+
+  06 Nov 2011; Brent Baude <ranger@gentoo.org> irqbalance-0.56.ebuild:
+  Marking irqbalance-0.56 ppc for bug 383955
+
+*irqbalance-1.0.2 (05 Nov 2011)
+
+  05 Nov 2011; Mike Frysinger <vapier@gentoo.org> +files/irqbalance.confd-1,
+  +irqbalance-1.0.2.ebuild, files/irqbalance.init:
+  Version bump, and improve init.d #389503 by Justin Lecher.
+
+*irqbalance-1.0.1 (04 Nov 2011)
+
+  04 Nov 2011; Justin Lecher <jlec@gentoo.org> -irqbalance-1.0.ebuild,
+  +irqbalance-1.0.1.ebuild, -files/irqbalance-1.0-build.patch, metadata.xml:
+  Version Bump with permission of robbat2, fixes Segf on non-NUMA systems
+
+*irqbalance-1.0 (03 Nov 2011)
+
+  03 Nov 2011; Mike Frysinger <vapier@gentoo.org> +irqbalance-1.0.ebuild,
+  +files/irqbalance-1.0-build.patch, metadata.xml:
+  Version bump #389429 by poncho.
 
   21 Jan 2011; Mike Frysinger <vapier@gentoo.org> irqbalance-0.56.ebuild:
   Depend on glib by SLOT rather than version #352209 by Jan Psota.

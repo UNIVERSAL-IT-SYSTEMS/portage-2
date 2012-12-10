@@ -1,6 +1,52 @@
 # ChangeLog for dev-python/paramiko
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/paramiko/ChangeLog,v 1.59 2011/07/06 19:31:33 djc Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/paramiko/ChangeLog,v 1.73 2012/11/11 11:24:20 radhermit Exp $
+
+*paramiko-1.9.0 (11 Nov 2012)
+
+  11 Nov 2012; Tim Harder <radhermit@gentoo.org> +paramiko-1.9.0.ebuild:
+  Version bump.
+
+  06 Nov 2012; Mike Gilbert <floppym@gentoo.org> paramiko-1.7.7.2.ebuild:
+  DEPEND on app-arch/unzip, bug 438072 by Christian.
+
+*paramiko-1.7.7.2 (17 Aug 2012)
+
+  17 Aug 2012; Patrick Lauer <patrick@gentoo.org> +paramiko-1.7.7.2.ebuild:
+  Bump for #426232
+
+  01 Aug 2012; Ulrich Müller <ulm@gentoo.org> paramiko-1.7.7.1.ebuild:
+  Add ~amd64-fbsd keyword, with permission from ryao.
+
+  28 Jul 2012; Anthony G. Basile <blueness@gentoo.org> paramiko-1.7.7.1.ebuild:
+  Keyword ~mips, bug #428356
+
+  13 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> paramiko-1.7.7.1.ebuild:
+  ppc64 stable wrt #386789
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> paramiko-1.7.7.1.ebuild:
+  Marking paramiko-1.7.7.1 ppc for bug 386789
+
+  11 Nov 2011; Markos Chandras <hwoarang@gentoo.org> paramiko-1.7.7.1.ebuild:
+  Don't inherit unused eclass. Set PYTHONPATH in src_test(). Patch by Arfrever
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> paramiko-1.7.7.1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #386879
+
+  17 Oct 2011; Markus Meier <maekke@gentoo.org> paramiko-1.7.7.1.ebuild:
+  arm stable, bug #386789
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> paramiko-1.7.7.1.ebuild:
+  Stable for HPPA (bug #386789).
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> paramiko-1.7.7.1.ebuild:
+  x86 stable wrt bug #386789
+
+  12 Oct 2011; Markos Chandras <hwoarang@gentoo.org> paramiko-1.7.7.1.ebuild:
+  Stable on amd64 wrt bug #386789
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org> paramiko-1.7.7.1.ebuild:
+  Marked ~x64-macos
 
 *paramiko-1.7.7.1 (06 Jul 2011)
 
@@ -232,4 +278,3 @@
   15 Aug 2004; Lukasz Strzygowski <lucass@gentoo.org> +metadata.xml,
   +paramiko-0.9h.ebuild:
   Initial commit. Thanks for submittion to Sourav Mandal in #57324.
-

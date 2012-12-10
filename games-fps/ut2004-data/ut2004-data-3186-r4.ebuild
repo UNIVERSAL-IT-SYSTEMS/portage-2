@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/ut2004-data/ut2004-data-3186-r4.ebuild,v 1.3 2010/12/16 19:21:34 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/ut2004-data/ut2004-data-3186-r4.ebuild,v 1.6 2012/02/05 06:10:53 vapier Exp $
 
-inherit eutils portability games
+inherit eutils unpacker cdrom portability games
 
 DESCRIPTION="Unreal Tournament 2004 - This is the data portion of UT2004"
 HOMEPAGE="http://www.unrealtournament2004.com/"

@@ -1,6 +1,12 @@
 # ChangeLog for app-pda/orange
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-pda/orange/ChangeLog,v 1.16 2010/11/04 20:03:59 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-pda/orange/ChangeLog,v 1.19 2012/06/15 09:08:58 ssuominen Exp $
+
+  15 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> orange-0.4.ebuild:
+  Switch from obsolete dev-libs/libsynce to app-pda/synce-core.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> orange-0.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   04 Nov 2010; Samuli Suominen <ssuominen@gentoo.org> orange-0.4.ebuild:
   Fix missing file, pkg-config and zlib depend. USE static-libs.

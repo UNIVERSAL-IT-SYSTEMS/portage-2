@@ -1,6 +1,388 @@
 # ChangeLog for sys-apps/openrc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/ChangeLog,v 1.164 2011/07/12 18:30:17 williamh Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/ChangeLog,v 1.254 2012/12/09 18:23:36 maekke Exp $
+
+  09 Dec 2012; Markus Meier <maekke@gentoo.org> openrc-0.11.8.ebuild:
+  arm stable, bug #435756
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> openrc-0.11.8.ebuild:
+  Stable for ppc64, wrt bug #435756
+
+  08 Dec 2012; Markus Meier <maekke@gentoo.org> openrc-0.11.6.ebuild:
+  arm stable, bug #435756
+
+*openrc-0.11.8 (07 Dec 2012)
+
+  07 Dec 2012; William Hubbs <williamh@gentoo.org> +openrc-0.11.8.ebuild:
+  dont try to remove the /init.d directory while root is ro, bug
+
+  07 Dec 2012; William Hubbs <williamh@gentoo.org> -openrc-0.11.7.ebuild:
+  remove broken version
+
+*openrc-0.11.7 (07 Dec 2012)
+
+  07 Dec 2012; William Hubbs <williamh@gentoo.org> +openrc-0.11.7.ebuild:
+  This reworks the migration from /lib*/rc/init.d to /run/openrc so that
+  it does not require a reboot (reported by Chainsaw), and adds a fix for
+  systems that have the /usr merge so that /run is not looked for under
+  /usr. Again this is going directly to stable where 0.11.x is stable
+  because it is part of the upgrade path.
+
+  02 Dec 2012; William Hubbs <williamh@gentoo.org> -openrc-0.11.5.ebuild:
+  remove broken version
+
+*openrc-0.11.6 (30 Nov 2012)
+
+  30 Nov 2012; William Hubbs <williamh@gentoo.org> +openrc-0.11.6.ebuild:
+  This fixes #443996 and #445116.
+  Also, we now unmount /usr if it was not pre-mounted by an initramfs on
+  Linux systems.
+  I am taking this to stable on all arches where 0.11.5 was stable because
+  these issues were not reported to me until we started stabilizing.
+
+  25 Nov 2012; William Hubbs <williamh@gentoo.org> ChangeLog:
+  sign manifest; the previous commit was mine as well. signing was not
+  completely set up.
+
+  25 Nov 2012; William Hubbs <williamh@gentoo.org> openrc-0.11.5.ebuild,
+  openrc-9999.ebuild:
+  add blocker for <udev-init-scripts-17 wrt bug #435756.
+
+  21 Nov 2012; Anthony G. Basile <blueness@gentoo.org> openrc-0.11.5.ebuild:
+  stable ppc, bug #435756, thanks peratu
+
+  19 Nov 2012; Agostino Sarubbo <ago@gentoo.org> openrc-0.11.5.ebuild:
+  Stable for x86, wrt bug #435756
+
+  19 Nov 2012; Agostino Sarubbo <ago@gentoo.org> openrc-0.11.5.ebuild:
+  Stable for amd64, wrt bug #435756
+
+*openrc-0.11.5 (10 Nov 2012)
+
+  10 Nov 2012; William Hubbs <williamh@gentoo.org> +openrc-0.11.5.ebuild:
+  version bump
+
+  07 Nov 2012; William Hubbs <williamh@gentoo.org> ChangeLog:
+  Fix references to $EROOT and $ED. References to $EROOT should be quoted
+  and not followed with /. References to $ED should be quoted. This is for
+  bug #442020. This applies to my last commit for openrc-9999.
+
+  05 Nov 2012; William Hubbs <williamh@gentoo.org> -openrc-0.10.4.ebuild,
+  -openrc-0.11.2.ebuild, -openrc-0.11.3.ebuild:
+  remove several broken versions
+
+*openrc-0.11.4 (05 Nov 2012)
+
+  05 Nov 2012; William Hubbs <williamh@gentoo.org> +openrc-0.11.4.ebuild:
+  version bump
+
+*openrc-0.11.3 (05 Nov 2012)
+
+  05 Nov 2012; William Hubbs <williamh@gentoo.org> +openrc-0.11.3.ebuild:
+  version bump
+
+*openrc-0.11.2 (22 Oct 2012)
+
+  22 Oct 2012; William Hubbs <williamh@gentoo.org> +openrc-0.11.2.ebuild:
+  Version bump for bug #439008. This fixes the non-bootable issue when systemd
+  was installed.
+
+*openrc-0.11.1 (20 Oct 2012)
+
+  20 Oct 2012; William Hubbs <williamh@gentoo.org> +openrc-0.11.1.ebuild:
+  version bump for bug #438932
+
+*openrc-0.11 (18 Oct 2012)
+
+  18 Oct 2012; William Hubbs <williamh@gentoo.org> +openrc-0.11.ebuild:
+  version bump, bug #417391 tracks fixes.
+
+  18 Oct 2012; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  Only show warning about adding the net script to the boot runlevel if
+  necessary.
+
+  17 Oct 2012; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  Add a warning about adding the appropriate network script to the boot
+  runlevel.
+
+  29 Sep 2012; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  The code in pkg_setup and make_args is only run once at the start of
+  src_compile, so we can move it into that function, thanks to Zac Medico for
+  the input.
+
+  29 Sep 2012; Benda Xu <heroxbd@gentoo.org> openrc-9999.ebuild:
+  make_args should be called only once; ED -> D in src_install to avoid double
+  prefix. close 415899
+
+  28 Sep 2012; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  fix typo
+
+  28 Sep 2012; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  Fix the ebuild so we can use pre/postinst on prefix systems as well.
+  Originally I did not think we needed this, but thinking it over it is better
+  to have them.  Also this reworks the live portion of the ebuild to use a
+  separate inherit call.
+
+  27 Sep 2012; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  Add prefix support for bug #415899. I would like to thank Benda Xu for working
+  with me on this.
+
+  09 Sep 2012; William Hubbs <williamh@gentoo.org> -openrc-0.10.1.ebuild,
+  -openrc-0.10.2.ebuild, -openrc-0.10.3.ebuild, -openrc-0.10.ebuild,
+  -openrc-0.9.9.1.ebuild, -openrc-0.9.9.2.ebuild, -openrc-0.9.9.3.ebuild,
+  -openrc-0.9.9.ebuild:
+  remove old versions
+
+*openrc-0.10.5 (04 Jul 2012)
+
+  04 Jul 2012; William Hubbs <williamh@gentoo.org> +openrc-0.10.5.ebuild:
+  version bump
+
+*openrc-0.10.4 (02 Jul 2012)
+
+  02 Jul 2012; William Hubbs <williamh@gentoo.org> +openrc-0.10.4.ebuild:
+  version bump
+
+*openrc-0.10.3 (11 Jun 2012)
+
+  11 Jun 2012; William Hubbs <williamh@gentoo.org> +openrc-0.10.3.ebuild:
+  version bump
+
+*openrc-0.10.2 (27 May 2012)
+
+  27 May 2012; William Hubbs <williamh@gentoo.org> +openrc-0.10.2.ebuild:
+  version bump to fix termencoding to not run on lxc.
+
+*openrc-0.10.1 (24 May 2012)
+
+  24 May 2012; William Hubbs <williamh@gentoo.org> +openrc-0.10.1.ebuild:
+  version bump to fix regression in bug #417227
+
+*openrc-0.10 (22 May 2012)
+
+  22 May 2012; William Hubbs <williamh@gentoo.org> +openrc-0.10.ebuild:
+  version bump, bug #405503 tracks changes
+
+  16 May 2012; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  update live ebuild for migration to /run on linux systems.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> openrc-0.9.9.3.ebuild,
+  openrc-9999.ebuild:
+  keyword ~amd64-fbsd
+
+  02 Apr 2012; William Hubbs <williamh@gentoo.org> -openrc-0.8.3-r1.ebuild,
+  -openrc-0.9.4.ebuild:
+  remove old stable versions
+
+*openrc-0.9.9.3 (11 Mar 2012)
+
+  11 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> +openrc-0.9.9.3.ebuild:
+  Version bump, includes critical fix for bug 407757 ifconfig binary move.
+
+*openrc-0.9.9.2 (26 Feb 2012)
+
+  26 Feb 2012; William Hubbs <williamh@gentoo.org> +openrc-0.9.9.2.ebuild:
+  version bump for bug #405713
+
+*openrc-0.9.9.1 (24 Feb 2012)
+
+  24 Feb 2012; William Hubbs <williamh@gentoo.org> +openrc-0.9.9.1.ebuild:
+  version bump for bug #386623
+
+  23 Feb 2012; William Hubbs <williamh@gentoo.org> openrc-0.8.3-r1.ebuild,
+  openrc-0.9.4.ebuild, openrc-0.9.8.4.ebuild, openrc-0.9.9.ebuild,
+  openrc-9999.ebuild:
+  repoman fixes
+
+*openrc-0.9.9 (22 Feb 2012)
+
+  22 Feb 2012; William Hubbs <williamh@gentoo.org> +openrc-0.9.9.ebuild:
+  version bump, bug #399185 tracks changes.
+
+  13 Feb 2012; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  add swapfiles to the boot runlevel
+
+  08 Feb 2012; William Hubbs <williamh@gentoo.org> -openrc-0.9.8.1.ebuild,
+  -openrc-0.9.8.2.ebuild, -openrc-0.9.8.ebuild:
+  remove unstable 0.9.8.x versions
+
+  04 Feb 2012; Raúl Porcel <armin76@gentoo.org> openrc-0.9.8.4.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #401593
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> openrc-0.9.8.4.ebuild:
+  ppc/ppc64 stable wrt #401593
+
+  31 Jan 2012; Jeroen Roovers <jer@gentoo.org> openrc-0.9.8.4.ebuild:
+  Stable for HPPA (bug #401593).
+
+  31 Jan 2012; Agostino Sarubbo <ago@gentoo.org> openrc-0.9.8.4.ebuild:
+  Stable for amd64, wrt bug #401593
+
+  31 Jan 2012; Jeff Horelick <jdhore@gentoo.org> openrc-0.9.8.4.ebuild:
+  x86 fast stable wrt bug 401593
+
+*openrc-0.9.8.4 (30 Jan 2012)
+
+  30 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> +openrc-0.9.8.4.ebuild,
+  -openrc-0.9.8.3.ebuild:
+  Version bump, release tracker bug #401555, I screwed up 0.9.8.3 and it was
+  identical to 0.9.8.2 instead of having the needed fixes.
+
+*openrc-0.9.8.3 (30 Jan 2012)
+
+  30 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> +openrc-0.9.8.3.ebuild:
+  Version bump, release tracker bug #401555.
+
+  28 Jan 2012; Raúl Porcel <armin76@gentoo.org> openrc-0.9.8.2.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #399793
+
+  25 Jan 2012; Agostino Sarubbo <ago@gentoo.org> openrc-0.9.8.2.ebuild:
+  Stable for AMD64, wrt bug #399793
+
+  25 Jan 2012; Jeff Horelick <jdhore@gentoo.org> openrc-0.9.8.2.ebuild:
+  x86 stable per bug 399793
+
+  25 Jan 2012; Jeroen Roovers <jer@gentoo.org> openrc-0.9.8.2.ebuild:
+  Stable for HPPA (bug #399793).
+
+*openrc-0.9.8.2 (25 Jan 2012)
+
+  25 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> +openrc-0.9.8.2.ebuild:
+  Bugfix release with two oldnet fixes: ethtool (#399037) and bonding (#400613).
+
+  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> openrc-0.9.8.1.ebuild:
+  Stable for AMD64, wrt bug #399793
+
+  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> openrc-0.9.8.1.ebuild:
+  Stable for X86, wrt bug #399793
+
+*openrc-0.9.8.1 (14 Jan 2012)
+
+  14 Jan 2012; William Hubbs <williamh@gentoo.org> +openrc-0.9.8.1.ebuild:
+  version bump, bug #398727 tracks changes.
+
+  12 Jan 2012; William Hubbs <williamh@gentoo.org> -openrc-0.9.7.ebuild:
+  remove old version
+
+*openrc-0.9.8 (07 Jan 2012)
+
+  07 Jan 2012; William Hubbs <williamh@gentoo.org> +openrc-0.9.8.ebuild:
+  version bump, bug #394205 tracks changes since openrc-0.9.7.
+
+  17 Dec 2011; Raúl Porcel <armin76@gentoo.org> openrc-0.9.4.ebuild:
+  sparc stable wrt #391271
+
+  14 Dec 2011; William Hubbs <williamh@gentoo.org> openrc-0.9.4.ebuild,
+  openrc-0.9.7.ebuild, openrc-9999.ebuild:
+  Update pam dependency for bug #392995. Now we depend on sys-auth/pambase
+  instead of virtual/pam.
+
+*openrc-0.9.7 (10 Dec 2011)
+
+  10 Dec 2011; William Hubbs <williamh@gentoo.org> +openrc-0.9.7.ebuild:
+  Version bump, bug #387433 tracks changes.
+
+  09 Dec 2011; Mike Frysinger <vapier@gentoo.org> openrc-0.9.4.ebuild:
+  Mark alpha/ia64/s390/sh stable #391271 by Christian Ruppert.
+
+  04 Dec 2011; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  migrate-run service was dropped from git, so we can remove it here.
+
+  03 Dec 2011; William Hubbs <williamh@gentoo.org> -openrc-0.9.2.ebuild,
+  -openrc-0.9.3.ebuild, -openrc-0.9.3-r1.ebuild:
+  remove older 0.9.x versions since 0.9.4 is going stable.
+
+  03 Dec 2011; Markus Meier <maekke@gentoo.org> openrc-0.9.4.ebuild:
+  arm stable, bug #391271
+
+  30 Nov 2011; Mike Frysinger <vapier@gentoo.org> openrc-0.8.3-r1.ebuild,
+  openrc-0.9.2.ebuild, openrc-0.9.3.ebuild, openrc-0.9.3-r1.ebuild,
+  openrc-0.9.4.ebuild, openrc-9999.ebuild:
+  Depend on psmisc since we want fuser.
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> openrc-0.9.4.ebuild:
+  x86 stable wrt bug #391271
+
+  26 Nov 2011; William Hubbs <williamh@gentoo.org> -openrc-0.9.6.ebuild:
+  remove release that did not work with rc_parallel
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> openrc-0.9.4.ebuild:
+  Stable on amd64 wrt bug #391271
+
+  25 Nov 2011; William Hubbs <williamh@gentoo.org> openrc-0.9.6.ebuild,
+  openrc-9999.ebuild:
+  update a comment
+
+*openrc-0.9.6 (25 Nov 2011)
+
+  25 Nov 2011; William Hubbs <williamh@gentoo.org> +openrc-0.9.6.ebuild,
+  openrc-9999.ebuild:
+  version bump, bug #387433 tracks changes since openrc-0.9.4.
+
+  22 Nov 2011; Jeroen Roovers <jer@gentoo.org> openrc-0.9.4.ebuild:
+  Stable for HPPA (bug #391271).
+
+  22 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> openrc-0.9.4.ebuild:
+  ppc/ppc64 stable wrt #391271
+
+  21 Nov 2011; Mike Frysinger <vapier@gentoo.org> openrc-0.9.4.ebuild,
+  openrc-9999.ebuild:
+  Move baselayout-1 internal cleanup to baselayout as suggested by William.
+
+  21 Nov 2011; Mike Frysinger <vapier@gentoo.org> openrc-0.9.4.ebuild,
+  openrc-9999.ebuild:
+  Trim old baselayout-1 dirs in /lib/.
+
+  18 Nov 2011; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  Add static-libs use flag for bug #378267
+
+  16 Nov 2011; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  Since oldnet is now the default upstream, we do not need to force this
+  in the ebuild.
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org> openrc-0.8.3-r1.ebuild,
+  openrc-0.9.2.ebuild, openrc-0.9.3.ebuild, openrc-0.9.3-r1.ebuild,
+  openrc-0.9.4.ebuild, openrc-9999.ebuild:
+  A new fuser is provided by freebsd-ubin starting from FreeBSD 9, change deps
+  to reflect that.
+
+*openrc-0.9.4 (16 Oct 2011)
+
+  16 Oct 2011; Christian Ruppert <idl0r@gentoo.org> +openrc-0.9.4.ebuild:
+  Version bump to 0.9.4.
+
+*openrc-0.9.3-r1 (10 Sep 2011)
+
+  10 Sep 2011; William Hubbs <williamh@gentoo.org> +openrc-0.9.3-r1.ebuild,
+  openrc-9999.ebuild:
+  revert change to LIBEXEC for bug 381783.
+
+*openrc-0.9.3 (08 Sep 2011)
+
+  08 Sep 2011; William Hubbs <williamh@gentoo.org> +openrc-0.9.3.ebuild:
+  version bump for bug #381783.
+
+*openrc-0.9.2 (02 Sep 2011)
+
+  02 Sep 2011; William Hubbs <williamh@gentoo.org> -openrc-0.9.1.ebuild,
+  +openrc-0.9.2.ebuild:
+  version bump, bug #381523 tracks changes since 0.9.1.
+
+*openrc-0.9.1 (01 Sep 2011)
+
+  01 Sep 2011; William Hubbs <williamh@gentoo.org> -openrc-0.9.0.ebuild,
+  +openrc-0.9.1.ebuild:
+  version bump , bug #381463 tracks fixes since openrc-0.9.0.
+
+*openrc-0.9.0 (01 Sep 2011)
+
+  01 Sep 2011; William Hubbs <williamh@gentoo.org> +openrc-0.9.0.ebuild:
+  version bump, bug #374183 tracks changes since openrc-0.8.3.
+
+  01 Sep 2011; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild,
+  +files/start-stop-daemon.pam:
+  Make start-stop-daemon use system-services PAM stack.
+  This closes bug #365149.
 
   12 Jul 2011; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
   libexecdir should use "lib" instead of "$(get_libdir)"
@@ -802,4 +1184,3 @@
   23 Mar 2008; Mike Frysinger <vapier@gentoo.org> +metadata.xml,
   +openrc-9999.ebuild:
   Initial ebuild #212696.
-

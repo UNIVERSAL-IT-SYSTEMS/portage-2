@@ -1,9 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/xtables-addons/xtables-addons-1.37.ebuild,v 1.2 2011/07/28 16:43:53 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/xtables-addons/xtables-addons-1.37.ebuild,v 1.7 2011/09/25 15:49:11 swegener Exp $
 
 EAPI="4"
-inherit eutils linux-info linux-mod multilib autotools
+inherit eutils linux-info linux-mod multilib
 
 DESCRIPTION="extensions not yet accepted in the main kernel/iptables (patch-o-matic(-ng) successor)"
 HOMEPAGE="http://xtables-addons.sourceforge.net/"
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/xtables-addons/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="modules"
 
 REQUIRED_USE="
@@ -49,9 +49,9 @@ pkg_setup()	{
 			SKIP_IPV6_MODULES="ip6table_rawpost ipset6"
 			ewarn "No IPV6 support in kernel. Disabling: ${SKIP_IPV6_MODULES}"
 		fi
-		if ! (use xtables_addons_ipset4 || use xtables_addons_ipset6) &&
+		if (use xtables_addons_ipset4 || use xtables_addons_ipset6) &&
 			kernel_is -lt 2 6 35; then
-			die "${PN} with ipset requires kernel version >= 2.6.29"
+			die "${PN} with ipset requires kernel version >= 2.6.35"
 		fi
 		kernel_is -lt 2 6 29 && die "${PN} requires kernel version >= 2.6.29"
 		if use xtables_addons_tee && kernel_is -gt 2 6 35; then

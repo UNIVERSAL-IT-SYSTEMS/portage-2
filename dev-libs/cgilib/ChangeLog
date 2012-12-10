@@ -1,6 +1,27 @@
 # ChangeLog for dev-libs/cgilib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/cgilib/ChangeLog,v 1.27 2011/07/06 14:48:45 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/cgilib/ChangeLog,v 1.34 2012/03/02 21:22:01 ranger Exp $
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> cgilib-0.7.ebuild:
+  Marking cgilib-0.7 ppc64 for bug 400007
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> cgilib-0.7.ebuild:
+  Marking cgilib-0.7 ppc for bug 400007
+
+  31 Jan 2012; Jeroen Roovers <jer@gentoo.org> cgilib-0.7.ebuild:
+  Stable for HPPA (bug #400007).
+
+  28 Jan 2012; Raúl Porcel <armin76@gentoo.org> cgilib-0.7.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #400007
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> cgilib-0.7.ebuild:
+  x86 stable wrt bug #400007
+
+  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org> cgilib-0.7.ebuild:
+  Stable for amd64, wrt bug #400007
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org> cgilib-0.7.ebuild:
+  Fix autotools-utils usage (bug #392141).
 
 *cgilib-0.7 (06 Jul 2011)
 

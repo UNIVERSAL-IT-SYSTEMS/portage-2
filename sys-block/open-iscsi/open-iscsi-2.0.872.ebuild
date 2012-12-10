@@ -1,14 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-block/open-iscsi/open-iscsi-2.0.872.ebuild,v 1.2 2011/06/13 01:47:26 sping Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-block/open-iscsi/open-iscsi-2.0.872.ebuild,v 1.6 2012/04/03 17:13:59 sping Exp $
 
 EAPI=2
-inherit versionator linux-info eutils flag-o-matic
+inherit versionator linux-info eutils flag-o-matic toolchain-funcs
 
 DESCRIPTION="Open-iSCSI is a high performance, transport independent, multi-platform implementation of RFC3720"
 HOMEPAGE="http://www.open-iscsi.org/"
 MY_PV="${PN}-$(replace_version_separator 2 "-" $MY_PV)"
-SRC_URI="mirror://kernel/linux/kernel/people/mnc/open-iscsi/releases/${MY_PV}.tar.gz"
+SRC_URI="http://www.open-iscsi.org/bits/${MY_PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~mips ~ppc ~x86"
@@ -34,7 +34,7 @@ pkg_setup() {
 	CONFIG_CHECK_MODULES="SCSI_ISCSI_ATTRS ISCSI_TCP"
 	if linux_config_exists; then
 		for module in ${CONFIG_CHECK_MODULES}; do
-			linux_chkconfig_module ${module} || die "${module} needs to be built as module (builtin doesn't work)"
+			linux_chkconfig_module ${module} || ewarn "${module} needs to be built as module (builtin doesn't work)"
 		done
 	fi
 }
@@ -45,6 +45,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-glibc212.patch
 	epatch "${FILESDIR}"/${P}-dont-call-configure.patch
 	epatch "${FILESDIR}"/${P}-ldflags.patch
+	epatch "${FILESDIR}"/${P}-isns-slp.patch
+	epatch "${FILESDIR}"/${PN}-2.0.872-makefile-cleanup-pass2.patch
 }
 
 src_configure() {
@@ -56,8 +58,14 @@ src_compile() {
 	use debug && append-flags -DDEBUG_TCP -DDEBUG_SCSI
 
 	einfo "Building userspace"
+	local SLP_LIBS
+	use slp && SLP_LIBS="-lslp"
 	cd "${S}" && \
-	KSRC="${KV_DIR}" CFLAGS="" emake OPTFLAGS="${CFLAGS}" user \
+	KSRC="${KV_DIR}" CFLAGS="" \
+	emake \
+		OPTFLAGS="${CFLAGS}" SLP_LIBS="${SLP_LIBS}" \
+		AR="$(tc-getAR)" CC="$(tc-getCC)" \
+		user \
 		|| die "emake failed"
 }
 

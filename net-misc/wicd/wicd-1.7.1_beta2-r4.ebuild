@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/wicd/wicd-1.7.1_beta2-r4.ebuild,v 1.6 2011/07/17 19:55:00 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/wicd/wicd-1.7.1_beta2-r4.ebuild,v 1.10 2012/07/17 11:58:23 tomka Exp $
 
 EAPI=3
 
@@ -16,7 +16,7 @@ MY_P=${P/_beta/b}
 S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="A lightweight wired and wireless network manager for Linux"
-HOMEPAGE="http://wicd.sourceforge.net/"
+HOMEPAGE="https://launchpad.net/wicd"
 SRC_URI="http://downloads.wicd.net/src/testing/1.7.x/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
@@ -32,7 +32,6 @@ RDEPEND="
 	dev-python/dbus-python
 	X? ( gtk? ( dev-python/pygtk
 		|| (
-			x11-misc/ktsuss
 			x11-libs/gksu
 			kde-base/kdesu
 			)
@@ -49,12 +48,13 @@ RDEPEND="
 		sys-apps/net-tools
 		sys-apps/ethtool
 	)
-	!gtk? ( dev-python/pygobject )
+	!gtk? ( dev-python/pygobject:2 )
 	ioctl? ( dev-python/python-iwscan dev-python/python-wpactrl )
 	libnotify? ( dev-python/notify-python )
 	ncurses? (
 		>=dev-python/urwid-0.9.9.1
-		dev-python/pygobject
+		<dev-python/urwid-1.0.0
+		dev-python/pygobject:2
 	)
 	pm-utils? ( >=sys-power/pm-utils-1.1.1 )
 	"

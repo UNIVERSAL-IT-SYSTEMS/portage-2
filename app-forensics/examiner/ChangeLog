@@ -1,6 +1,29 @@
 # ChangeLog for app-forensics/examiner
-# Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-forensics/examiner/ChangeLog,v 1.7 2007/02/08 22:01:30 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-forensics/examiner/ChangeLog,v 1.14 2012/11/25 09:42:51 radhermit Exp $
+
+  25 Nov 2012; Tim Harder <radhermit@gentoo.org> -examiner-0.5-r1.ebuild:
+  Remove old.
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> examiner-0.5-r2.ebuild:
+  Stable for x86, wrt bug #442960
+
+  15 Nov 2012; Anthony G. Basile <blueness@gentoo.org> examiner-0.5-r2.ebuild:
+  stable ppc, bug #442960
+
+  14 Nov 2012; <ago@gentoo.org> examiner-0.5-r2.ebuild:
+  Stable for amd64, wrt bug #442960
+
+  06 Oct 2012; Agostino Sarubbo <ago@gentoo.org> examiner-0.5-r2.ebuild:
+  Add ~amd64 and code improvements, wrt bug #437374
+
+*examiner-0.5-r2 (06 Oct 2012)
+
+  06 Oct 2012; Sergey Popov <pinkbyte@gentoo.org> +examiner-0.5-r2.ebuild:
+  New revision, fixes bug #241256 and a lot of QA issues. Bumped to EAPI 4
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
 
   08 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
   Regenerate digest in Manifest2 format.
@@ -36,5 +59,3 @@
 
   19 Aug 2002; Bruce A. Locke <blocke@shivan.org> examiner-0.5.ebuild:
   Initial import.
-
-

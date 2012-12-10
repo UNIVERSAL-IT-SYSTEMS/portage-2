@@ -1,14 +1,14 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-server/halflife-steam/halflife-steam-2.0.ebuild,v 1.12 2007/03/12 17:56:25 genone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-server/halflife-steam/halflife-steam-2.0.ebuild,v 1.14 2012/07/11 17:23:56 mr_bones_ Exp $
 
-inherit eutils games
+inherit games unpacker
 
 DESCRIPTION="client for Valve Software's Steam content delivery program"
 HOMEPAGE="http://www.steampowered.com/"
 SRC_URI="http://www.steampowered.com/download/hldsupdatetool.bin"
 
-LICENSE="ValveServer"
+LICENSE="ValveServer GPL-2" # bug #425948 gpl for init script
 SLOT="0"
 KEYWORDS="-* x86"
 IUSE=""

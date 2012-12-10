@@ -1,6 +1,36 @@
 # ChangeLog for dev-tcltk/tkTheme
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/tkTheme/ChangeLog,v 1.21 2010/03/22 20:43:12 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/tkTheme/ChangeLog,v 1.30 2012/03/19 08:02:58 jlec Exp $
+
+  19 Mar 2012; Justin Lecher <jlec@gentoo.org> -tkTheme-1.0-r1.ebuild:
+  Cleaned old
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> tkTheme-1.0-r1.ebuild,
+  tkTheme-1.0-r2.ebuild:
+  Drop sparc keywords
+
+  02 Mar 2012; Tobias Klausmann <klausman@gentoo.org> tkTheme-1.0-r2.ebuild:
+  Stable on alpha, bug #397011
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> tkTheme-1.0-r2.ebuild:
+  Marking tkTheme-1.0-r2 ppc for bug 397011
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> tkTheme-1.0-r2.ebuild:
+  x86 stable wrt bug #397011
+
+  06 Jan 2012; Justin Lecher <jlec@gentoo.org> tkTheme-1.0-r2.ebuild:
+  Aded missing RDEP on x11-libs/libX11
+
+  06 Jan 2012; Agostino Sarubbo <ago@gentoo.org> tkTheme-1.0-r2.ebuild:
+  Stable for AMD64, wrt bug #397011
+
+  02 Jan 2012; Justin Lecher <jlec@gentoo.org> -tkTheme-1.0.ebuild:
+  Removed old
+
+  02 Jan 2012; Justin Lecher <jlec@gentoo.org> +files/1.0-cflags.patch,
+  tkTheme-1.0-r2.ebuild, files/1.0-Makefile.in.diff, metadata.xml:
+  Moved to EAPI=4 and autotools-utils.eclass, handle examples static-libs and
+  threading support correctly, added missing deps
 
 *tkTheme-1.0-r2 (22 Mar 2010)
 

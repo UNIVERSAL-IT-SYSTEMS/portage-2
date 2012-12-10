@@ -1,6 +1,54 @@
 # ChangeLog for dev-perl/gtk2-perl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/gtk2-perl/ChangeLog,v 1.124 2011/05/11 08:41:41 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/gtk2-perl/ChangeLog,v 1.137 2012/09/02 07:50:20 tove Exp $
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -gtk2-perl-1.222.ebuild,
+  -gtk2-perl-1.224.0.ebuild, -gtk2-perl-1.240.0.ebuild:
+  Cleanup
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> gtk2-perl-1.242.0.ebuild:
+  alpha/ia64/sparc stable wrt #412989
+
+*gtk2-perl-1.244.0 (26 May 2012)
+
+  26 May 2012; Torsten Veller <tove@gentoo.org> +gtk2-perl-1.244.0.ebuild:
+  Version bump
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> gtk2-perl-1.242.0.ebuild:
+  Marking gtk2-perl-1.242.0 ppc for bug 412989
+
+  26 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gtk2-perl-1.242.0.ebuild:
+  Stable for amd64, wrt bug #412989
+
+  26 Apr 2012; Jeff Horelick <jdhore@gentoo.org> gtk2-perl-1.242.0.ebuild:
+  marked x86 per bug 412989
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> gtk2-perl-1.242.0.ebuild:
+  Stable for HPPA (bug #412989).
+
+  23 Apr 2012; Brent Baude <ranger@gentoo.org> gtk2-perl-1.242.0.ebuild:
+  Marking gtk2-perl-1.242.0 ppc64 for bug 412989
+
+*gtk2-perl-1.242.0 (24 Jan 2012)
+
+  24 Jan 2012; Torsten Veller <tove@gentoo.org> +gtk2-perl-1.242.0.ebuild:
+  Version bump
+
+*gtk2-perl-1.240.0 (20 Oct 2011)
+
+  20 Oct 2011; Torsten Veller <tove@gentoo.org> +gtk2-perl-1.240.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -gtk2-perl-1.223.0.ebuild:
+  Cleanup
+
+*gtk2-perl-1.224.0 (05 Aug 2011)
+
+  05 Aug 2011; Torsten Veller <tove@gentoo.org> +gtk2-perl-1.224.0.ebuild:
+  Version bump
 
   11 May 2011; Michael Weber <xmw@gentoo.org> gtk2-perl-1.223.0.ebuild:
   added ~arm keyword (bug 264983)
@@ -522,4 +570,3 @@
   05 Jul 2003; Michael Cummings <mcummings@gentoo.org> gtk2-perl-0.12.ebuild:
   Fills bug 17222; original version of ebuild submitted by Kfir Ozer
   <ufk2k@yahoo.com>
-

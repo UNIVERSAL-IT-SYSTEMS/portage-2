@@ -1,6 +1,107 @@
 # ChangeLog for dev-ruby/rspec-core
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rspec-core/ChangeLog,v 1.13 2011/07/23 14:36:52 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rspec-core/ChangeLog,v 1.40 2012/12/03 19:31:55 graaff Exp $
+
+*rspec-core-2.12.1 (03 Dec 2012)
+
+  03 Dec 2012; Hans de Graaff <graaff@gentoo.org> +rspec-core-2.12.1.ebuild:
+  Version bump.
+
+*rspec-core-2.12.0 (15 Nov 2012)
+
+  15 Nov 2012; Hans de Graaff <graaff@gentoo.org> +rspec-core-2.12.0.ebuild:
+  Version bump.
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> rspec-core-2.6.4-r1.ebuild:
+  Stable for HPPA (bug #426668).
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> rspec-core-2.6.4.ebuild,
+  rspec-core-2.6.4-r1.ebuild, rspec-core-2.10.1.ebuild,
+  rspec-core-2.11.1.ebuild:
+  alpha stable, add ~alpha
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> rspec-core-2.6.4-r1.ebuild:
+  ia64/sparc stable wrt #426668
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  rspec-core-2.6.4-r1.ebuild:
+  Stable ppc64, bug #426668
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  rspec-core-2.6.4-r1.ebuild:
+  Stable ppc, bug #426668
+
+  23 Jul 2012; Andreas Schuerch <nativemad@gentoo.org>
+  rspec-core-2.10.1.ebuild:
+  x86 keyworded, see bug 417587
+
+  22 Jul 2012; Jeff Horelick <jdhore@gentoo.org> rspec-core-2.6.4-r1.ebuild:
+  marked x86 per bug 426668
+
+  19 Jul 2012; Hans de Graaff <graaff@gentoo.org> -rspec-core-2.11.0.ebuild:
+  Remove broken version.
+
+*rspec-core-2.11.1 (19 Jul 2012)
+
+  19 Jul 2012; Hans de Graaff <graaff@gentoo.org> +rspec-core-2.11.1.ebuild:
+  Version bump.
+
+  15 Jul 2012; Agostino Sarubbo <ago@gentoo.org> rspec-core-2.6.4-r1.ebuild:
+  Stable for amd64, wrt bug #426668
+
+*rspec-core-2.11.0 (15 Jul 2012)
+
+  15 Jul 2012; Hans de Graaff <graaff@gentoo.org> +rspec-core-2.11.0.ebuild:
+  Version bump.
+
+  29 Jun 2012; Hans de Graaff <graaff@gentoo.org> rspec-core-2.10.1.ebuild:
+  Avoid dependency on git. Add dependency on yard to build documentation since
+  that is what is actually used. Avoid Rakefile with all its dependencies when
+  building documentation, fixing bug 421669.
+
+*rspec-core-2.10.1 (10 Jun 2012)
+
+  10 Jun 2012; Hans de Graaff <graaff@gentoo.org> +rspec-core-2.10.1.ebuild:
+  Version bump. Drop x86 keyword, bug 417587.
+
+  06 May 2012; Kacper Kowalik <xarthisius@gentoo.org> rspec-core-2.6.4.ebuild:
+  ppc64 stable wrt #369573
+
+  02 Mar 2012; Naohiro Aota <naota@gentoo.org> rspec-core-2.6.4-r1.ebuild:
+  Add ~x86-fbsd
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> rspec-core-2.6.4-r1.ebuild:
+  Add Prefix keywords, bug #396547
+
+*rspec-core-2.6.4-r1 (28 Dec 2011)
+
+  28 Dec 2011; Hans de Graaff <graaff@gentoo.org> rspec-core-2.6.4.ebuild,
+  +rspec-core-2.6.4-r1.ebuild:
+  Revision bump to drop ruby19 from stable version.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> rspec-core-2.6.4.ebuild:
+  ia64/sparc stable wrt #369573
+
+  19 Sep 2011; Markus Meier <maekke@gentoo.org> rspec-core-2.6.4.ebuild:
+  x86 stable, bug #369573
+
+  19 Sep 2011; Hans de Graaff <graaff@gentoo.org> -rspec-core-2.5.1.ebuild:
+  Remove old version.
+
+  14 Sep 2011; Jeroen Roovers <jer@gentoo.org> rspec-core-2.6.4.ebuild:
+  Stable for HPPA (bug #369573).
+
+  27 Aug 2011; Fabian Groffen <grobian@gentoo.org> rspec-core-2.6.4.ebuild:
+  Marked ~x64-macos
+
+  25 Aug 2011; Hans de Graaff <graaff@gentoo.org> rspec-core-2.6.4.ebuild:
+  Add missing nokogiri dependency, bug 369573.
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> rspec-core-2.6.4.ebuild:
+  Stable on amd64 wrt bug #369573
 
   23 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> rspec-core-2.6.4.ebuild:
   ppc stable wrt #369573
@@ -58,4 +159,3 @@
   13 Sep 2010; Hans de Graaff <graaff@gentoo.org>
   +rspec-core-2.0.0_beta22.ebuild, +metadata.xml:
   Initial import of rspec-2.
-

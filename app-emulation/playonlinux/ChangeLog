@@ -1,6 +1,34 @@
 # ChangeLog for app-emulation/playonlinux
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/playonlinux/ChangeLog,v 1.14 2011/05/25 14:29:40 volkmar Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/playonlinux/ChangeLog,v 1.19 2012/07/14 18:22:55 hwoarang Exp $
+
+*playonlinux-4.1.1-r1 (14 Jul 2012)
+
+  14 Jul 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/playonlinux-4.1.1-not-exclude-ipv6.patch, +playonlinux-4.1.1-r1.ebuild,
+  metadata.xml:
+  Add Ipv6 support thanks to Michael Mol <mikemol@gmail.com>. Bug #425330
+
+*playonlinux-4.1.1 (16 Jun 2012)
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> +playonlinux-4.1.1.ebuild,
+  -playonlinux-4.0.14.ebuild, metadata.xml:
+  Version bump, remove old.
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> -playonlinux-3.8.12.ebuild,
+  -playonlinux-3.8.8.ebuild, metadata.xml:
+  Drop maintainer as he is not able to maintain this anymore, drop old.
+
+*playonlinux-4.0.14 (15 Dec 2011)
+
+  15 Dec 2011; Ian Whyman <thev00d00@gentoo.org> -playonlinux-4.0.12.ebuild,
+  +playonlinux-4.0.14.ebuild:
+  Bump to 4.0.14, fix bug #392575
+
+*playonlinux-4.0.12 (03 Oct 2011)
+
+  03 Oct 2011; Ian Whyman <thev00d00@gentoo.org> +playonlinux-4.0.12.ebuild:
+  version bump to 4.0.12, close bug #383095
 
   25 May 2011; Mounir Lamouri <volkmar@gentoo.org> playonlinux-3.8.12.ebuild:
   Add missing games_pkg_setup.
@@ -72,4 +100,3 @@
   16 May 2009; Mounir Lamouri <volkmar@gentoo.org> +metadata.xml,
   +playonlinux-3.5.ebuild:
   Initial commit. See bug 213287
-

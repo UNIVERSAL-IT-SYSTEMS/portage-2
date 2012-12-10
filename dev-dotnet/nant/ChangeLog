@@ -1,6 +1,41 @@
 # ChangeLog for dev-dotnet/nant
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/nant/ChangeLog,v 1.36 2011/03/21 20:24:19 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/nant/ChangeLog,v 1.46 2012/12/07 04:53:53 phajdan.jr Exp $
+
+  07 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> nant-0.92.ebuild:
+  x86 stable wrt bug #435202
+
+  22 Sep 2012; Anthony G. Basile <blueness@gentoo.org> nant-0.92.ebuild:
+  stable ppc, bug #435202
+
+  16 Sep 2012; Agostino Sarubbo <ago@gentoo.org> nant-0.92.ebuild:
+  Stable for amd64, wrt bug #435202
+
+  18 Aug 2012; Michael Weber <xmw@gentoo.org> nant-0.91.ebuild:
+  ppc stable (bug 407701)
+
+*nant-0.92 (15 Jul 2012)
+
+  15 Jul 2012; Alistair Bush <ali_bush@gentoo.org> +nant-0.92.ebuild:
+  Version Bump.
+
+  22 May 2012; Agostino Sarubbo <ago@gentoo.org> nant-0.91.ebuild:
+  Stable for amd64, wrt bug #407701
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> nant-0.90.ebuild,
+  nant-0.91.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Apr 2012; Markus Meier <maekke@gentoo.org> nant-0.91.ebuild:
+  x86 stable, bug #407701
+
+*nant-0.91 (22 Jan 2012)
+
+  22 Jan 2012; Pacho Ramos <pacho@gentoo.org> +nant-0.91.ebuild:
+  Version bump.
+
+  10 Sep 2011; Pacho Ramos <pacho@gentoo.org> -nant-0.86_beta1-r1.ebuild:
+  Remove old.
 
   21 Mar 2011; Brent Baude <ranger@gentoo.org> nant-0.90.ebuild:
   Marking nant-0.90 ppc stable for bug 359651
@@ -154,4 +189,3 @@
   +nant-0.85_rc2.ebuild:
   Initial import. Ebuild by yours truly, but lots of help from everyone on bug
   #63758.
-

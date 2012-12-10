@@ -1,6 +1,59 @@
 # ChangeLog for media-libs/jasper
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/jasper/ChangeLog,v 1.59 2011/04/04 19:11:12 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/jasper/ChangeLog,v 1.74 2012/10/06 17:01:02 jlec Exp $
+
+  06 Oct 2012; Justin Lecher <jlec@gentoo.org> -jasper-1.900.1-r3.ebuild,
+  -jasper-1.900.1-r4.ebuild, metadata.xml:
+  Drop old
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> jasper-1.900.1-r5.ebuild:
+  ia64/s390/sh/sparc stable wrt #429120
+
+  27 Sep 2012; Matt Turner <mattst88@gentoo.org> jasper-1.900.1-r5.ebuild:
+  Stable on alpha, bug 429120.
+
+  27 Sep 2012; Anthony G. Basile <blueness@gentoo.org> jasper-1.900.1-r5.ebuild:
+  stable ppc ppc64, bug #429120
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  jasper-1.900.1-r5.ebuild:
+  x86 stable wrt bug #429120
+
+  17 Sep 2012; Jeroen Roovers <jer@gentoo.org> jasper-1.900.1-r5.ebuild:
+  Stable for HPPA (bug #429120).
+
+  14 Sep 2012; Markus Meier <maekke@gentoo.org> jasper-1.900.1-r5.ebuild:
+  arm stable, bug #429120
+
+  06 Sep 2012; Agostino Sarubbo <ago@gentoo.org> jasper-1.900.1-r5.ebuild:
+  Stable for amd64, wrt bug #429120
+
+*jasper-1.900.1-r5 (11 Jun 2012)
+
+  11 Jun 2012; Patrick Kursawe <phosphan@gentoo.org> +jasper-1.900.1-r5.ebuild:
+  Made a new patch bundle because of bug #420349. Used most patches from
+  Fedora.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> jasper-1.900.1-r4.ebuild:
+  keyword ~amd64-fbsd
+
+  27 Dec 2011; Mark Loeser <halcy0n@gentoo.org> jasper-1.900.1-r4.ebuild:
+  Stable for ppc/ppc64; bug #394879
+
+  19 Dec 2011; Jeroen Roovers <jer@gentoo.org> jasper-1.900.1-r4.ebuild:
+  Stable for HPPA (bug #394879).
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> jasper-1.900.1-r4.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #394879
+
+  18 Dec 2011; Agostino Sarubbo <ago@gentoo.org> jasper-1.900.1-r4.ebuild:
+  Stable for X86/AMD64, wrt security bug #394879
+
+*jasper-1.900.1-r4 (17 Dec 2011)
+
+  17 Dec 2011; Patrick Kursawe <phosphan@gentoo.org> +jasper-1.900.1-r4.ebuild,
+  +files/CVE-2011-4516+7.patch:
+  Security fixes from Fedora, CVE-2011-4516 CVE-2011-4517, see bug #394879.
 
   04 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org>
   jasper-1.900.1-r3.ebuild:
@@ -215,4 +268,3 @@
 
   17 Dec 2003; Patrick Kursawe <phosphan@gentoo.org> jasper-1.700.5.ebuild:
   Initial import.
-

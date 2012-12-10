@@ -1,6 +1,35 @@
 # ChangeLog for sys-fs/avfs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/avfs/ChangeLog,v 1.35 2011/07/12 00:31:58 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/avfs/ChangeLog,v 1.43 2012/09/30 18:02:06 armin76 Exp $
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> avfs-0.9.9.ebuild,
+  avfs-1.0.0.ebuild, avfs-1.0.1.ebuild:
+  Drop alpha keywords
+
+  13 Jun 2012; Tim Harder <radhermit@gentoo.org> avfs-0.9.9.ebuild,
+  avfs-1.0.0.ebuild:
+  Make pkgconfig dep conditional on lzma use flag.
+
+  13 Jun 2012; Tim Harder <radhermit@gentoo.org> avfs-0.9.9.ebuild,
+  avfs-1.0.0.ebuild:
+  Add pkgconfig dependency.
+
+*avfs-1.0.1 (13 Jun 2012)
+
+  13 Jun 2012; Tim Harder <radhermit@gentoo.org> +avfs-1.0.1.ebuild:
+  Version bump.
+
+  20 Mar 2012; Agostino Sarubbo <ago@gentoo.org> avfs-1.0.0.ebuild:
+  Stable for amd64, wrt bug #400503
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> avfs-1.0.0.ebuild:
+  x86 stable wrt bug #400503
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> avfs-1.0.0.ebuild:
+  Marking avfs-1.0.0 ppc for bug 400503
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> avfs-1.0.0.ebuild:
+  Marking avfs-1.0.0 ppc64 for bug 400503
 
 *avfs-1.0.0 (12 Jul 2011)
 

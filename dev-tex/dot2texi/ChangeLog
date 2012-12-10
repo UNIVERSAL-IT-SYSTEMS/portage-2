@@ -1,6 +1,39 @@
 # ChangeLog for dev-tex/dot2texi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/dot2texi/ChangeLog,v 1.10 2011/06/14 05:42:46 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/dot2texi/ChangeLog,v 1.21 2012/04/22 18:30:13 grobian Exp $
+
+  22 Apr 2012; Fabian Groffen <grobian@gentoo.org> dot2texi-3.0.ebuild:
+  Marked ~amd64-linux, bug #411655
+
+  16 Feb 2012; Fabian Groffen <grobian@gentoo.org> dot2texi-3.0.ebuild:
+  Marked ~sparc-solaris
+
+  16 Dec 2011; Naohiro Aota <naota@gentoo.org> dot2texi-3.0.ebuild:
+  Add ~x86-fbsd
+
+  16 Oct 2011; Fabian Groffen <grobian@gentoo.org> dot2texi-3.0.ebuild:
+  Marked ~x86-macos
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> dot2texi-3.0.ebuild:
+  Stable for HPPA (bug #355085).
+
+  18 Sep 2011; Raúl Porcel <armin76@gentoo.org> dot2texi-3.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #355085
+
+  28 Aug 2011; Fabian Groffen <grobian@gentoo.org> dot2texi-3.0.ebuild:
+  Marked ~x64-macos
+
+  14 Aug 2011; Markus Meier <maekke@gentoo.org> dot2texi-3.0.ebuild:
+  arm stable, bug #355085
+
+  12 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> dot2texi-3.0.ebuild:
+  ppc/ppc64 stable wrt #355085
+
+  12 Aug 2011; Thomas Kahle <tomka@gentoo.org> dot2texi-3.0.ebuild:
+  x86 stable per bug 355085
+
+  09 Aug 2011; Markos Chandras <hwoarang@gentoo.org> dot2texi-3.0.ebuild:
+  Stable on amd64 wrt bug #355085
 
   14 Jun 2011; Matt Turner <mattst88@gentoo.org> dot2texi-3.0.ebuild:
   Added ~mips, bug 352300

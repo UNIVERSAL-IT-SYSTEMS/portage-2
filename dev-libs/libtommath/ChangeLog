@@ -1,6 +1,36 @@
 # ChangeLog for dev-libs/libtommath
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libtommath/ChangeLog,v 1.40 2011/06/25 17:25:02 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libtommath/ChangeLog,v 1.48 2012/08/12 04:58:14 vapier Exp $
+
+  12 Aug 2012; Mike Frysinger <vapier@gentoo.org> libtommath-0.42.0-r1.ebuild,
+  libtommath-0.42.0.ebuild:
+  Add s390/sh love.
+
+  27 Nov 2011; Jeroen Roovers <jer@gentoo.org> libtommath-0.42.0-r1.ebuild:
+  Do not use autotools-utils.eclass (bug #392097).
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org> libtommath-0.42.0-r1.ebuild:
+  Build in the source tree.
+
+  09 Sep 2011; Tim Harder <radhermit@gentoo.org>
+  files/libtommath-0.42.0-makefile.patch:
+  Remove whitespace.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> libtommath-0.42.0.ebuild:
+  alpha/ia64/sparc stable wrt #376163
+
+*libtommath-0.42.0-r1 (02 Aug 2011)
+
+  02 Aug 2011; Jeroen Roovers <jer@gentoo.org> +libtommath-0.42.0-r1.ebuild:
+  Split long line. Use autotools-utils eclass instead of find.
+
+  02 Aug 2011; Jeroen Roovers <jer@gentoo.org> -libtommath-0.36-r1.ebuild,
+  -files/libtommath-0.36-CC.patch, -files/libtommath-0.36-LDFLAGS.patch,
+  -files/libtommath-0.36-shared-lib.patch, -libtommath-0.41.ebuild,
+  -files/libtommath-0.41-CC.patch, -files/libtommath-0.41-LDFLAGS.patch,
+  libtommath-0.42.0.ebuild:
+  Remove old (bug #328383). Set DEPEND on sys-devel/libtool thanks to Bruno
+  (bug #377031).
 
   25 Jun 2011; Raúl Porcel <armin76@gentoo.org> libtommath-0.42.0.ebuild:
   Add ~sparc wrt #370959

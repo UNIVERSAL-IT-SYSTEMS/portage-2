@@ -1,6 +1,56 @@
 # ChangeLog for sys-fs/dosfstools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/dosfstools/ChangeLog,v 1.82 2011/07/29 08:04:35 zmedico Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/dosfstools/ChangeLog,v 1.96 2012/10/05 17:57:47 ranger Exp $
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> dosfstools-3.0.12.ebuild:
+  Marking dosfstools-3.0.12 ppc64 for bug 432330
+
+  03 Oct 2012; Brent Baude <ranger@gentoo.org> dosfstools-3.0.12.ebuild:
+  Marking dosfstools-3.0.12 ppc for bug 432330
+
+  29 Sep 2012; Zac Medico <zmedico@gentoo.org> dosfstools-3.0.13.ebuild:
+  Fix for prefix.
+
+*dosfstools-3.0.13 (14 Sep 2012)
+
+  14 Sep 2012; Mike Frysinger <vapier@gentoo.org> +dosfstools-3.0.13.ebuild,
+  +files/dosfstools-3.0.13-reserved-sectors-hack.patch:
+  Version bump based on work by Manuel Rüger #434938.  Convert to EAPI=4.  Add
+  hack for embedded systems.
+
+  11 Sep 2012; Raúl Porcel <armin76@gentoo.org> dosfstools-3.0.12.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #432330
+
+  01 Sep 2012; Markus Meier <maekke@gentoo.org> dosfstools-3.0.12.ebuild:
+  arm stable, bug #432330
+
+  24 Aug 2012; Jeroen Roovers <jer@gentoo.org> dosfstools-3.0.12.ebuild:
+  Stable for HPPA (bug #432330).
+
+  23 Aug 2012; Mike Frysinger <vapier@gentoo.org> dosfstools-3.0.12.ebuild:
+  Restore prepalldocs so docs get compressed.
+
+  23 Aug 2012; Johannes Huber <johu@gentoo.org> dosfstools-3.0.12.ebuild:
+  Stable for x86, wrt bug #432330
+
+  23 Aug 2012; Agostino Sarubbo <ago@gentoo.org> dosfstools-3.0.12.ebuild:
+  Stable for amd64, wrt bug #432330
+
+  23 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> dosfstools-3.0.12.ebuild:
+  Remove prepalldocs call.
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> dosfstools-3.0.11.ebuild,
+  dosfstools-3.0.12.ebuild:
+  Inherit eutils for epatch.
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> dosfstools-3.0.12.ebuild:
+  Add ~amd64-linux keyword.
+
+*dosfstools-3.0.12 (12 Nov 2011)
+
+  12 Nov 2011; Mike Frysinger <vapier@gentoo.org> +dosfstools-3.0.12.ebuild,
+  +files/dosfstools-3.0.12-name-ext.patch:
+  Version bump. #371793 by Martin Mokrejš.
 
   29 Jul 2011; Zac Medico <zmedico@gentoo.org> dosfstools-3.0.11.ebuild:
   Add ~x86-linux keyword.

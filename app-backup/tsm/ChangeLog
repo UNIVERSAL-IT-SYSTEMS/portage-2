@@ -1,6 +1,42 @@
 # ChangeLog for app-backup/tsm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.8 2011/04/20 13:19:05 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/tsm/ChangeLog,v 1.15 2012/07/12 14:16:32 axs Exp $
+
+  12 Jul 2012; Ian Stakenvicius <axs@gentoo.org> tsm-6.2.2.0-r1.ebuild,
+  tsm-6.3.0.0-r1.ebuild, tsm-6.3.0.5-r1.ebuild:
+  Added GPL-2 to LICENSE to cover init scripts, bug 425886
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> tsm-6.2.2.0-r1.ebuild,
+  tsm-6.3.0.0-r1.ebuild, tsm-6.3.0.5-r1.ebuild:
+  Inherit user for enewuser/etc...
+
+*tsm-6.3.0.5-r1 (22 May 2012)
+*tsm-6.3.0.0-r1 (22 May 2012)
+
+  22 May 2012; Pacho Ramos <pacho@gentoo.org> +tsm-6.3.0.0-r1.ebuild,
+  +tsm-6.3.0.5-r1.ebuild, -tsm-6.3.0.0.ebuild, -tsm-6.3.0.5.ebuild:
+  Previous changes need a revbump, obviously.
+
+  22 May 2012; Pacho Ramos <pacho@gentoo.org> tsm-6.3.0.0.ebuild,
+  tsm-6.3.0.5.ebuild:
+  Install missing symlinks, bug #416503 by Horst Prote and fix by Martin von
+  Gagern.
+
+*tsm-6.3.0.5 (14 May 2012)
+*tsm-6.3.0.0 (14 May 2012)
+
+  14 May 2012; Pacho Ramos <pacho@gentoo.org> +tsm-6.3.0.0.ebuild,
+  +tsm-6.3.0.5.ebuild, files/dsmc.conf.d, files/dsmc.init.d,
+  files/dsmcad.init.d, files/tsm.logrotate, metadata.xml, tsm-6.2.2.0-r1.ebuild:
+  Version bump (#390581) that also fixes logrotate config file (#375041), thanks
+  a lot to Martin von Gagern that also becomes maintainer with me as proxy.
+
+  12 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org> tsm-6.2.2.0-r1.ebuild,
+  files/dsmc.init.d:
+  Add locale patches, bug 302633
+
+  09 Feb 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #85926
 
   20 Apr 2011; Justin Lecher <jlec@gentoo.org> tsm-6.2.2.0-r1.ebuild:
   Remove unaccessable directories from env file

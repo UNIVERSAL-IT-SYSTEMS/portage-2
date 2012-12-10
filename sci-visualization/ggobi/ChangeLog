@@ -1,6 +1,21 @@
 # ChangeLog for sci-visualization/ggobi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/ggobi/ChangeLog,v 1.9 2011/07/27 23:19:11 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/ggobi/ChangeLog,v 1.12 2012/08/07 01:05:27 bicatali Exp $
+
+  07 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> ggobi-2.1.9-r1.ebuild,
+  metadata.xml:
+  keyword amd64-linux, x86-linux
+
+*ggobi-2.1.9-r1 (26 Jun 2012)
+
+  26 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/ggobi-2.1.9-as-needed.patch, +ggobi-2.1.9-r1.ebuild,
+  -ggobi-2.1.9.ebuild:
+  Fixed for as-needed. Install plugins in libdir (bug #423363)
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> ggobi-2.1.8.ebuild,
+  ggobi-2.1.9.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   27 Jul 2011; Sébastien Fabbro <bicatali@gentoo.org> ggobi-2.1.9.ebuild:
   Added doc flag to allow remove unwanted docs
@@ -41,4 +56,3 @@
   29 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org>
   +sci-visualization/ggobi/metadata.xml:
   Initial import
-

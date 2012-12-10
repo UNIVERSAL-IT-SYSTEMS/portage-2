@@ -1,6 +1,27 @@
 # ChangeLog for kde-misc/krecipes
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/krecipes/ChangeLog,v 1.41 2011/01/31 06:03:37 tampakrap Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/krecipes/ChangeLog,v 1.46 2012/08/06 11:44:33 kensington Exp $
+
+*krecipes-2.0_beta2-r1 (06 Aug 2012)
+
+  06 Aug 2012; Michael Palimaka <kensington@gentoo.org>
+  +krecipes-2.0_beta2-r1.ebuild, -krecipes-2.0_beta2.ebuild:
+  Turn previous commit into a revision bump.
+
+  06 Aug 2012; Michael Palimaka <kensington@gentoo.org>
+  krecipes-2.0_beta2.ebuild:
+  Fix inherit placement, thanks to Trinine.
+
+  25 Jul 2012; Chris Reffett <creffett@gentoo.org>
+  +files/krecipes-2.0_beta2-remove-mx2test.patch, krecipes-2.0_beta2.ebuild:
+  Re-enable tests and add patch to remove failing test, bug 330065
+
+  30 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  krecipes-2.0_beta2.ebuild:
+  Project is dead upstream, no need to track failing tests anymore. Bug 330065.
+
+  29 Oct 2011; Jonathan Callen <abcd@gentoo.org> krecipes-2.0_beta2.ebuild:
+  Bump to EAPI=4; set KDE_HANDBOOK
 
   31 Jan 2011; Theo Chatzimichos <tampakrap@gentoo.org>
   -krecipes-2.0_beta1.ebuild, krecipes-2.0_beta2.ebuild:
@@ -190,4 +211,3 @@
   04 Jul 2004; Dominik Stadler <centic@gentoo.org> +metadata.xml,
   +krecipes-0.5_beta.ebuild:
   Add new application, fixes Bug 34246.
-

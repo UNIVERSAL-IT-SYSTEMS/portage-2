@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/xsd/xsd-3.3.0.ebuild,v 1.2 2010/10/21 05:49:02 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/xsd/xsd-3.3.0.ebuild,v 1.8 2012/11/30 15:12:16 ago Exp $
 
 EAPI="2"
 
@@ -11,12 +11,12 @@ HOMEPAGE="http://www.codesynthesis.com/products/xsd/"
 SRC_URI="http://www.codesynthesis.com/download/${PN}/$(get_version_component_range 1-2)/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~arm ppc x86"
 IUSE="ace doc examples zlib"
 
 RDEPEND=">=dev-libs/xerces-c-3
 	>=dev-libs/boost-1.40.0
-	>=dev-cpp/libcult-1.4.6
+	>=dev-cpp/libcult-1.4.6-r1
 	>=dev-cpp/libxsd-frontend-1.17.0
 	>=dev-cpp/libbackend-elements-1.7.2
 	ace? ( dev-libs/ace )
@@ -30,7 +30,8 @@ src_prepare() {
 		"${FILESDIR}/${PV}-disable_examples_and_tests.patch" \
 		"${FILESDIR}/${PV}-xsdcxx-rename.patch" \
 		"${FILESDIR}/${PV}-fix_include.patch" \
-		"${FILESDIR}/${PV}-fix_tests.patch"
+		"${FILESDIR}/${PV}-fix_tests.patch" \
+		"${FILESDIR}/${PV}-boost-filesystem-v2-deprecation.patch"
 }
 
 use_yesno() {

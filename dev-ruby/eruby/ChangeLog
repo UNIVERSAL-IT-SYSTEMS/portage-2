@@ -1,6 +1,14 @@
 # ChangeLog for dev-ruby/eruby
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/eruby/ChangeLog,v 1.39 2010/10/19 05:39:35 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/eruby/ChangeLog,v 1.41 2012/07/01 18:31:40 armin76 Exp $
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> eruby-1.0.5-r1.ebuild,
+  eruby-1.0.5-r2.ebuild:
+  Drop alpha keywords
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> eruby-1.0.5-r1.ebuild,
+  eruby-1.0.5-r2.ebuild:
+  Drop ia64/sparc keywords
 
   19 Oct 2010; Mart Raudsepp <leio@gentoo.org> eruby-1.0.5-r1.ebuild:
   Drop to ~mips

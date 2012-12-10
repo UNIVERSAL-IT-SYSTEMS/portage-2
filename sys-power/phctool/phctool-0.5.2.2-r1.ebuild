@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/phctool/phctool-0.5.2.2-r1.ebuild,v 1.2 2011/02/06 18:01:20 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/phctool/phctool-0.5.2.2-r1.ebuild,v 1.4 2012/05/24 05:46:22 vapier Exp $
 
 EAPI=2
 
 PYTHON_DEPEND="2"
-inherit eutils python
+inherit eutils python user
 
 DESCRIPTION="Processor Hardware Control userland configuration tool"
 HOMEPAGE="http://www.linux-phc.org/"
@@ -26,7 +26,7 @@ pkg_setup() {
 	MY_PROGDIR="/usr/share/${PN}"
 	if use sudo ; then
 		MY_GROUPNAME="phcusers"
-		enewgroup ${MY_GROUPNAME} || die
+		enewgroup ${MY_GROUPNAME}
 	fi
 }
 

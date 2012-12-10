@@ -1,6 +1,18 @@
 # ChangeLog for media-fonts/sil-gentium
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-fonts/sil-gentium/ChangeLog,v 1.7 2011/06/14 18:02:07 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-fonts/sil-gentium/ChangeLog,v 1.9 2012/05/27 12:38:20 yngwin Exp $
+
+  27 May 2012; Ben de Groot <yngwin@gentoo.org> -sil-gentium-1.0.2.ebuild,
+  sil-gentium-1.508.ebuild:
+  Mark 1.508 stable. Remove old.
+
+*sil-gentium-1.508 (08 Jan 2012)
+
+  08 Jan 2012; Ryan Hill <dirtyepic@gentoo.org> +sil-gentium-1.508.ebuild,
+  metadata.xml:
+  Version bump. Switch to using Gentium Plus for Opentype and Graphite
+  features such as correct diacritics and alternates, as well as expanded glyph
+  coverage.
 
   14 Jun 2011; Fabian Groffen <grobian@gentoo.org> sil-gentium-1.0.2.ebuild:
   Marked ~x86-macos (#369547) and ~ppc-macos

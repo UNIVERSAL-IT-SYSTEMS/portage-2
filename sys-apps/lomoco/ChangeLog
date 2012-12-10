@@ -1,6 +1,44 @@
 # ChangeLog for sys-apps/lomoco
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/lomoco/ChangeLog,v 1.13 2011/04/05 11:28:04 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/lomoco/ChangeLog,v 1.22 2012/11/21 10:10:57 ago Exp $
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> lomoco-1.0-r9.ebuild:
+  Stable for x86, wrt bug #441514
+
+  06 Nov 2012; <ago@gentoo.org> lomoco-1.0-r9.ebuild:
+  Stable for amd64, wrt bug #441514
+
+*lomoco-1.0-r9 (22 Sep 2012)
+
+  22 Sep 2012; Markos Chandras <hwoarang@gentoo.org> +lomoco-1.0-r9.ebuild,
+  files/lomoco-1.0-gentoo-hardware-support.patch:
+  Add patch for logitech MX-518. Thanks to Roman Porizka and Anton Bolshakov.
+  Bug #392583
+
+*lomoco-1.0-r8 (19 Aug 2012)
+
+  19 Aug 2012; Markos Chandras <hwoarang@gentoo.org> +lomoco-1.0-r8.ebuild,
+  files/lomoco-1.0-updated-udev.patch, files/lomoco.conf, metadata.xml:
+  New revbump to fix problems with suspend/hibernate. Bug #345351. Thanks to
+  Anton Bolshakov <anton.bugs@gmail.com> for the patches. He will proxy-
+  maintainer it
+
+  14 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> -lomoco-1.0-r4.ebuild,
+  -lomoco-1.0-r6.ebuild, -files/lomoco-pm-utils:
+  old
+
+  14 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> lomoco-1.0-r7.ebuild:
+  amd64/x86 stable wrt #431264
+
+*lomoco-1.0-r7 (13 Aug 2012)
+
+  13 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> +lomoco-1.0-r7.ebuild,
+  +files/lomoco-pm-utils-r1:
+  Use udevdir value from udev.pc pkg-config file to determine correct install
+  path(s) for the helpers and rules wrt #362821 by Anton Bolshakov
+
+  08 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Drop myself out of metadata.
 
 *lomoco-1.0-r6 (05 Apr 2011)
 
@@ -66,4 +104,3 @@
   20 Apr 2006; Benedikt Boehm <hollow@gentoo.org> +metadata.xml,
   +lomoco-1.0.ebuild:
   initial version, thanks to Ruud Althuizen <ruud@il.fontys.nl>, fixes #117622
-

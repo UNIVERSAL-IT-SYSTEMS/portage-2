@@ -1,6 +1,40 @@
 # ChangeLog for app-text/libpaper
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/libpaper/ChangeLog,v 1.43 2011/06/03 21:28:41 dilfridge Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/libpaper/ChangeLog,v 1.53 2012/04/26 20:47:07 aballier Exp $
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libpaper-1.1.24-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> libpaper-1.1.24-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #401085
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> libpaper-1.1.24-r1.ebuild:
+  Marking libpaper-1.1.24-r1 ppc64 for bug 401085
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  libpaper-1.1.24-r1.ebuild:
+  x86 stable wrt bug #401085
+
+  13 Feb 2012; Markus Meier <maekke@gentoo.org> libpaper-1.1.24-r1.ebuild:
+  arm stable, bug #401085
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> libpaper-1.1.24-r1.ebuild:
+  Stable for HPPA (bug #401085).
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> libpaper-1.1.24-r1.ebuild:
+  Marking libpaper-1.1.24-r1 ppc for bug 401085
+
+  28 Jan 2012; Agostino Sarubbo <ago@gentoo.org> libpaper-1.1.24-r1.ebuild:
+  Stable for amd64, wrt bug #401085
+
+*libpaper-1.1.24-r1 (09 Sep 2011)
+
+  09 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> -libpaper-1.1.24.ebuild,
+  +libpaper-1.1.24-r1.ebuild:
+  Revision bump in order to remove all static libraries and libtool archives.
+
+  28 Aug 2011; Fabian Groffen <grobian@gentoo.org> libpaper-1.1.24.ebuild:
+  Marked ~x64-macos
 
   03 Jun 2011; Andreas K. Huettel <dilfridge@gentoo.org>
   libpaper-1.1.24.ebuild:

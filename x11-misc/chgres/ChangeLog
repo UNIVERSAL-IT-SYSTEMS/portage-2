@@ -1,6 +1,18 @@
 # ChangeLog for x11-misc/chgres
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/chgres/ChangeLog,v 1.15 2010/09/17 01:28:06 jer Exp $
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/chgres/ChangeLog,v 1.19 2011/12/19 17:43:31 radhermit Exp $
+
+  19 Dec 2011; Tim Harder <radhermit@gentoo.org> -chgres-0.1.ebuild:
+  Remove old.
+
+  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> chgres-0.1-r1.ebuild:
+  Stable for AMD64, wrt bug #392815
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> chgres-0.1-r1.ebuild:
+  x86 stable wrt bug #392815
+
+  10 Dec 2011; Tim Harder <radhermit@gentoo.org> chgres-0.1-r1.ebuild:
+  Update to EAPI 4.
 
   17 Sep 2010; Jeroen Roovers <jer@gentoo.org> files/chgres-0.1-flags.patch,
   files/chgres-0.1-includes.patch:

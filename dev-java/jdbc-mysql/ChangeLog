@@ -1,6 +1,22 @@
 # ChangeLog for dev-java/jdbc-mysql
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jdbc-mysql/ChangeLog,v 1.78 2011/03/24 19:25:42 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jdbc-mysql/ChangeLog,v 1.82 2012/09/28 13:14:09 johu Exp $
+
+  28 Sep 2012; Johannes Huber <johu@gentoo.org> jdbc-mysql-5.1.18.ebuild:
+  Stable for x86, wrt bug #418713
+
+  28 Sep 2012; Agostino Sarubbo <ago@gentoo.org> jdbc-mysql-5.1.18.ebuild:
+  Stable for amd64, wrt bug #418713
+
+*jdbc-mysql-5.1.18 (25 Dec 2011)
+
+  25 Dec 2011; Miroslav Šulc <fordfrog@gentoo.org> +jdbc-mysql-5.1.18.ebuild:
+  Version bump
+
+  25 Dec 2011; Miroslav Šulc <fordfrog@gentoo.org> -jdbc-mysql-5.1.11.ebuild,
+  jdbc-mysql-5.1.14.ebuild:
+  Restricted compilation to JDK 1.6 because of JDBC incompatibility with JDK
+  1.7 (bug #395321). Also removed old version.
 
   24 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org> jdbc-mysql-5.1.14.ebuild:
   ppc/ppc64 stable wrt #356803

@@ -1,14 +1,16 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/bzr.eclass,v 1.15 2011/07/26 23:22:35 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/bzr.eclass,v 1.19 2012/09/18 06:41:45 ulm Exp $
 #
 # @ECLASS: bzr.eclass
 # @MAINTAINER:
-# Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>,
-# Ulrich Müller <ulm@gentoo.org>,
-# Christian Faulhammer <fauli@gentoo.org>,
-# Mark Lee <bzr-gentoo-overlay@lazymalevolence.com>,
-# and anyone who wants to help
+# Emacs team <emacs@gentoo.org>
+# Bazaar team <bazaar@gentoo.org>
+# @AUTHOR:
+# Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+# Mark Lee <bzr-gentoo-overlay@lazymalevolence.com>
+# Ulrich Müller <ulm@gentoo.org>
+# Christian Faulhammer <fauli@gentoo.org>
 # @BLURB: generic fetching functions for the Bazaar VCS
 # @DESCRIPTION:
 # The bzr.eclass provides functions to fetch, unpack, patch, and
@@ -26,9 +28,6 @@ case "${EAPI:-0}" in
 	0|1) EXPORT_FUNCTIONS src_unpack ;;
 	*)   EXPORT_FUNCTIONS src_unpack src_prepare ;;
 esac
-
-HOMEPAGE="http://bazaar-vcs.org/"
-DESCRIPTION="Based on the ${EBZR} eclass"
 
 DEPEND=">=dev-vcs/bzr-2.0.1"
 case "${EAPI:-0}" in
@@ -61,6 +60,11 @@ esac
 # @DESCRIPTION:
 # The Bazaar command to export a branch.
 : ${EBZR_EXPORT_CMD:="bzr export"}
+
+# @ECLASS-VARIABLE: EBZR_CHECKOUT_CMD
+# @DESCRIPTION:
+# The Bazaar command to checkout a branch.
+: ${EBZR_CHECKOUT_CMD:="bzr checkout --lightweight -q"}
 
 # @ECLASS-VARIABLE: EBZR_REVNO_CMD
 # @DESCRIPTION:
@@ -146,6 +150,12 @@ esac
 # by users.
 : ${EBZR_OFFLINE=${EVCS_OFFLINE}}
 
+# @ECLASS-VARIABLE: EBZR_WORKDIR_CHECKOUT
+# @DEFAULT_UNSET
+# @DESCRIPTION:
+# If this variable is set to a non-empty value, EBZR_CHECKOUT_CMD will
+# be used instead of EBZR_EXPORT_CMD to copy the sources to WORKDIR.
+
 # @FUNCTION: bzr_initial_fetch
 # @USAGE: <repository URI> <branch directory>
 # @DESCRIPTION:
@@ -197,11 +207,11 @@ bzr_update() {
 # working copy.
 bzr_fetch() {
 	local repo_dir branch_dir
+	local save_sandbox_write=${SANDBOX_WRITE}
 
 	[[ -n ${EBZR_REPO_URI} ]] || die "${EBZR}: EBZR_REPO_URI is empty"
 
 	if [[ ! -d ${EBZR_STORE_DIR} ]] ; then
-		local save_sandbox_write=${SANDBOX_WRITE}
 		addwrite /
 		mkdir -p "${EBZR_STORE_DIR}" \
 			|| die "${EBZR}: can't mkdir ${EBZR_STORE_DIR}"
@@ -216,22 +226,9 @@ bzr_fetch() {
 
 	addwrite "${EBZR_STORE_DIR}"
 
-	# Clean up if the existing local copy is a checkout (as was the case
-	# with an older version of bzr.eclass).
-	# This test can be removed after 1 Mar 2012.
-	if [[ ${EBZR_FETCH_CMD} != *checkout* && -d ${repo_dir}/.bzr/checkout ]]
-	then
-		local tmpname=$(mktemp -u "${repo_dir}._old_.XXXXXX")
-		ewarn "checkout from old version of ${EBZR} found, moving it to:"
-		ewarn "${tmpname}"
-		ewarn "you may manually remove it"
-		mv "${repo_dir}" "${tmpname}" \
-			|| die "${EBZR}: can't move old checkout out of the way"
-	fi
-
 	if [[ ! -d ${branch_dir}/.bzr ]]; then
 		if [[ ${repo_dir} != "${branch_dir}" && ! -d ${repo_dir}/.bzr ]]; then
-			einfo "creating shared bzr repository"
+			einfo "creating shared bzr repository: ${repo_dir}"
 			${EBZR_INIT_REPO_CMD} "${repo_dir}" \
 				|| die "${EBZR}: can't create shared repository"
 		fi
@@ -253,14 +250,23 @@ bzr_fetch() {
 		bzr_update "${EBZR_REPO_URI}" "${branch_dir}"
 	fi
 
+	# Restore sandbox environment
+	SANDBOX_WRITE=${save_sandbox_write}
+
 	cd "${branch_dir}" || die "${EBZR}: can't chdir to ${branch_dir}"
 
 	# Save revision number in environment. #311101
 	export EBZR_REVNO=$(${EBZR_REVNO_CMD})
 
-	einfo "exporting ..."
-	${EBZR_EXPORT_CMD} ${EBZR_REVISION:+-r ${EBZR_REVISION}} \
-		"${WORKDIR}/${P}" . || die "${EBZR}: export failed"
+	if [[ -n ${EBZR_WORKDIR_CHECKOUT} ]]; then
+		einfo "checking out ..."
+		${EBZR_CHECKOUT_CMD} ${EBZR_REVISION:+-r ${EBZR_REVISION}} \
+			. "${WORKDIR}/${P}" || die "${EBZR}: checkout failed"
+	else
+		einfo "exporting ..."
+		${EBZR_EXPORT_CMD} ${EBZR_REVISION:+-r ${EBZR_REVISION}} \
+			"${WORKDIR}/${P}" . || die "${EBZR}: export failed"
+	fi
 	einfo "revision ${EBZR_REVISION:-${EBZR_REVNO}} is now in ${WORKDIR}/${P}"
 
 	popd > /dev/null

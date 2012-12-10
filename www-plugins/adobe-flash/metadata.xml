@@ -11,16 +11,15 @@
 		<flag name='64bit'>For amd64-multilib, installs the native 64-bit
 			plugin</flag>
 		<flag name='32bit'>For amd64-multilib, installs the 32-bit plugin</flag>
-		<flag name='bindist'>With USE="-bindist", applies a binary patch to the
-			native 64-bit plugin for compatibility with glibc-2.13 (Bug
-			#354073).  Required due to the non-modification clause in Adobe's
-			license.</flag>
 
-		<flag name='vdpau'>Enables VDPAU support to offload video processing
-			(32-bit flash player only)</flag>
-
-		<!-- www-plugins/adobe-flash-10.3 has a KDE KCM thingy -->
+		<!-- www-plugins/adobe-flash-10.3 and later has a KDE KCM thingy -->
 		<flag name='kde'>Enables a KCM plugin for configuring flash player
-			preferences (32-bit KDE4 only)</flag>
+			preferences</flag>
+
+		<!-- www-plugins/adobe-flash-11.2 requries SSE2 instructions (Bug #410547) -->
+		<flag name='sse2check'>This flag, enabled by default, will check for sse2
+			support on your cpu and die if not found. If you are remote-building
+			this package, you can disable this flag but you have been
+			warned</flag>
 	</use>
 </pkgmetadata>

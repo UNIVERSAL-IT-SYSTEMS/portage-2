@@ -1,6 +1,44 @@
 # ChangeLog for dev-libs/xerces-c
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/xerces-c/ChangeLog,v 1.94 2011/02/26 13:13:34 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/xerces-c/ChangeLog,v 1.104 2012/10/17 18:51:43 maekke Exp $
+
+  17 Oct 2012; Markus Meier <maekke@gentoo.org> xerces-c-3.1.1-r1.ebuild:
+  add ~arm, bug #430072
+
+  16 Sep 2012; Pacho Ramos <pacho@gentoo.org> -xerces-c-3.1.0.ebuild,
+  -xerces-c-3.1.1.ebuild, metadata.xml:
+  Drop versions still supporting libwww (#320253).
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> xerces-c-3.1.1-r1.ebuild:
+  alpha/sparc stable wrt #409545
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org> xerces-c-3.1.1-r1.ebuild:
+  Stable for HPPA (bug #409545).
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> xerces-c-3.1.1-r1.ebuild:
+  Marking xerces-c-3.1.1-r1 ppc for bug 409545
+
+  24 May 2012; Tiziano Müller <dev-zero@gentoo.org>
+  -files/3.0.1-disable-thread-tests.patch, -xerces-c-3.0.0.ebuild,
+  -xerces-c-3.0.0-r1.ebuild, -xerces-c-3.0.1.ebuild, -xerces-c-3.0.1-r1.ebuild,
+  -files/xerces-c-3.0.1-CVE-2009-2625.patch,
+  -files/xerces-c-3.0.1-libicu.patch:
+  Dropped old unused versions and it's patches (fixes bug #248966).
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> xerces-c-3.1.1-r1.ebuild:
+  Marking xerces-c-3.1.1-r1 ppc64 for bug 409545
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  xerces-c-3.1.1-r1.ebuild:
+  x86 stable wrt bug #409545
+
+  18 May 2012; Agostino Sarubbo <ago@gentoo.org> xerces-c-3.1.1-r1.ebuild:
+  Stable for amd64, wrt bug #409545
+
+*xerces-c-3.1.1-r1 (13 May 2012)
+
+  13 May 2012; Pacho Ramos <pacho@gentoo.org> +xerces-c-3.1.1-r1.ebuild:
+  Drop libwww support, #409545.
 
   26 Feb 2011; Raúl Porcel <armin76@gentoo.org> xerces-c-3.1.0.ebuild:
   alpha stable wrt #308009
@@ -405,4 +443,3 @@
 
   09 Jun 2003; <zhen@gentoo.org> xerces-c-2.3.0.ebuild:
   Initial commit of this package, please ref bug # 15260
-

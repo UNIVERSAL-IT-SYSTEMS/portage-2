@@ -1,17 +1,17 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/codeblocks/codeblocks-9999.ebuild,v 1.2 2011/07/12 00:03:51 dirtyepic Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/codeblocks/codeblocks-9999.ebuild,v 1.4 2012/11/02 06:03:31 dirtyepic Exp $
 
-EAPI="2"
+EAPI="4"
 WX_GTK_VER="2.8"
 
-inherit autotools flag-o-matic subversion wxwidgets
+inherit autotools eutils flag-o-matic subversion wxwidgets
 
 DESCRIPTION="The open source, cross platform, free C++ IDE."
 HOMEPAGE="http://www.codeblocks.org/"
 ESVN_REPO_URI="svn://svn.berlios.de/${PN}/trunk"
 SRC_URI=""
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
 IUSE="contrib debug pch static-libs"
@@ -20,7 +20,8 @@ RDEPEND="x11-libs/wxGTK:2.8[X]"
 DEPEND="${RDEPEND}
 	app-arch/zip
 	dev-libs/libgamin
-	sys-devel/libtool:2"
+	sys-devel/libtool:2
+	virtual/pkgconfig"
 
 src_unpack(){
 	subversion_src_unpack
@@ -50,10 +51,11 @@ src_configure() {
 }
 
 src_compile() {
-	emake clean-zipfiles || die '"emake clean-zipfiles" failed'
-	emake || die "emake failed"
+	emake clean-zipfiles
+	emake
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "Install failed"
+	default
+	prune_libtool_files
 }

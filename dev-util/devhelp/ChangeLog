@@ -1,6 +1,73 @@
 # ChangeLog for dev-util/devhelp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/devhelp/ChangeLog,v 1.124 2011/03/31 04:13:01 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/devhelp/ChangeLog,v 1.141 2012/10/28 15:48:19 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> devhelp-3.4.1.ebuild:
+  alpha/ia64/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> devhelp-3.4.1.ebuild:
+  stable ppc, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> devhelp-3.4.1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> devhelp-3.4.1.ebuild:
+  x86 stable wrt bug #427544
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> devhelp-3.2.0.ebuild:
+  sparc stable wrt #410611
+
+  05 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  devhelp-2.32.0.ebuild, devhelp-3.2.0.ebuild, devhelp-3.4.1.ebuild:
+  Update description.
+
+  06 Jun 2012; Markus Meier <maekke@gentoo.org> devhelp-3.4.1.ebuild:
+  add ~arm, bug #416571
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> devhelp-3.4.1.ebuild:
+  keyword ~amd64-fbsd
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> devhelp-3.2.0.ebuild:
+  ppc stable wrt #410611
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> devhelp-2.32.0.ebuild,
+  devhelp-3.2.0.ebuild, devhelp-3.4.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*devhelp-3.4.1 (03 May 2012)
+
+  03 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +devhelp-3.4.1.ebuild, +files/devhelp-3.4.1-gsettings-fonts.patch:
+  Version bump, now supports globs in search tab. Add patch to use gsettings
+  instead of libgnome's gconf keys for default fonts (bug #396637, thanks to
+  Rafał Mużyło).
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> devhelp-3.2.0.ebuild:
+  x86 stable, bug #410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> devhelp-3.2.0.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  31 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  devhelp-2.32.0.ebuild, devhelp-3.2.0.ebuild:
+  Add libgnome dependency, needed at runtime for its gconf keys (thanks to
+  Rafał Mużyło for reporting); update py-compile idiom for automake-1.11.2
+  compatibility (bug #396585).
+
+  06 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  devhelp-3.2.0.ebuild:
+  python_set_active_version must be called before python_pkg_setup, not after.
+
+*devhelp-3.2.0 (28 Oct 2011)
+
+  28 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -devhelp-3.0.0.ebuild, +devhelp-3.2.0.ebuild:
+  Bump to 3.2.0 and drop old. Switch to EAPI4. Notable changes: minor UI fixes.
+
+*devhelp-3.0.0 (15 Aug 2011)
+
+  15 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> +devhelp-3.0.0.ebuild:
+  Bump to 3.0.0, from gnome overlay for GNOME 3
 
   31 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> devhelp-2.32.0.ebuild:
   sparc stable wrt #353436, Comment #29. Thanks to Alex Buell for testing.

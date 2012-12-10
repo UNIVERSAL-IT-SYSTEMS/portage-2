@@ -1,6 +1,152 @@
 # ChangeLog for app-misc/tracker
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/ChangeLog,v 1.110 2011/07/24 10:31:22 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/tracker/ChangeLog,v 1.136 2012/11/21 23:04:42 eva Exp $
+
+*tracker-0.14.4 (21 Nov 2012)
+
+  21 Nov 2012; Gilles Dartiguelongue <eva@gentoo.org> +tracker-0.14.4.ebuild,
+  metadata.xml:
+  Version bump. Add XPS support.
+
+  07 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org> tracker-9999.ebuild:
+  Slot gstreamer dependencies in preparation for gstreamer-1.0.
+
+  25 Oct 2012; Gilles Dartiguelongue <eva@gentoo.org> -tracker-0.10.35.ebuild,
+  -tracker-0.12.10.ebuild, tracker-0.12.10-r1.ebuild, tracker-0.14.2-r1.ebuild,
+  tracker-0.14.3.ebuild, metadata.xml:
+  Add missing gstreamer slots. Drop unused local USE flag descriptions.
+
+*tracker-0.14.3 (25 Oct 2012)
+
+  25 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -tracker-0.14.2.ebuild, +tracker-0.14.3.ebuild, tracker-9999.ebuild,
+  metadata.xml:
+  Version bump with various crash fixes and performance improvements. The
+  tracker-miner-fs filesystem indexer is now optional. Drop old.
+
+  28 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -tracker-0.10.27.ebuild, tracker-0.10.35.ebuild, tracker-0.12.10.ebuild,
+  tracker-0.12.10-r1.ebuild, -tracker-0.14.1.ebuild, tracker-0.14.2.ebuild,
+  tracker-0.14.2-r1.ebuild, files/tracker-0.14.2-icu-no-LC_ALL.patch,
+  tracker-9999.ebuild:
+  Evolution plugin fundamentally incompatible with evolution-3.6, see bug
+  #436460. Update license. Unify tracker-0.14.2-r1 and -9999 ebuilds as much as
+  possible for ease of maintenance. Update icu patch to upstreamed version.
+  Vala is not needed for 0.14.2 tarball release. Drop old versions.
+
+  08 Sep 2012; Nirbheek Chauhan <nirbheek@gentoo.org> tracker-0.14.2-r1.ebuild:
+  Use either vala-0.14, or vala-0.18
+
+*tracker-0.14.2-r1 (20 Jul 2012)
+*tracker-0.12.10-r1 (20 Jul 2012)
+
+  20 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +tracker-0.12.10-r1.ebuild, +tracker-0.14.2-r1.ebuild,
+  +files/tracker-0.14.2-icu-no-LC_ALL.patch:
+  Fix the "Error initializing libicu support: 'U_ILLEGAL_ARGUMENT_ERROR'" error
+  (bug #426276; thanks to Juergen Rose and Bernd Feige).
+
+*tracker-0.14.2 (05 Jul 2012)
+
+  05 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +tracker-0.14.2.ebuild:
+  Version bump, fixes various crashes.
+
+*tracker-0.14.1 (07 May 2012)
+
+  07 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -tracker-0.12.9.ebuild, +tracker-0.14.1.ebuild, tracker-9999.ebuild,
+  metadata.xml:
+  Version bump for gnome-3.4, adds support for extracting metadata from CD
+  images, lots of bugfixes and performance improvements. Update live ebuild.
+  Drop old.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> tracker-0.10.27.ebuild,
+  tracker-0.10.35.ebuild, tracker-0.12.9.ebuild, tracker-0.12.10.ebuild,
+  tracker-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  tracker-0.12.9.ebuild, tracker-0.12.10.ebuild, tracker-9999.ebuild:
+  Drop unneeded odt2txt dependency.
+
+*tracker-0.12.10 (16 Feb 2012)
+
+  16 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -tracker-0.12.8.ebuild, +tracker-0.12.10.ebuild:
+  Version bump, lots of bugs fixed. Drop old.
+
+  18 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  tracker-0.10.27.ebuild, tracker-0.10.35.ebuild, tracker-0.12.8.ebuild,
+  tracker-0.12.9.ebuild, tracker-9999.ebuild:
+  Update homepage URL (bug #398963, thanks to Wicher Minnaard).
+
+  28 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  tracker-0.12.9.ebuild:
+  Update to EAPI4.
+
+*tracker-0.12.9 (28 Dec 2011)
+
+  28 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -tracker-0.12.7.ebuild, +tracker-0.12.9.ebuild:
+  Version bump. Notable changes: fixes crashes and memory leaks, improves
+  glib-2.31 compatibility, adds support for TRACKER_USE_CONFIG_FILES env
+  variable (makes tracker store settings in text files in ~/.config/tracker/
+  instead of using gsettings). Drop old.
+
+*tracker-0.12.8 (26 Nov 2011)
+
+  26 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  tracker-0.12.7.ebuild, +tracker-0.12.8.ebuild:
+  Bump, fixes a number of crashes and leaks. Also, loosen version restriction
+  on nautilus-tracker-tags to make updates easier.
+
+  08 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org> tracker-0.12.7.ebuild,
+  tracker-9999.ebuild:
+  Sync live ebuild with 0.12 series ebuild.
+
+*tracker-0.10.35 (08 Nov 2011)
+
+  08 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org> -tracker-0.8.17.ebuild,
+  -tracker-0.10.26.ebuild, +tracker-0.10.35.ebuild, metadata.xml:
+  Version bump for 0.10 series. Clean up old revisions.
+
+*tracker-0.12.7 (02 Nov 2011)
+
+  02 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/tracker-0.12.3-strigi.patch, +tracker-0.12.7.ebuild, metadata.xml:
+  Add 0.12.7 from the gnome overlay. Used by gnome-3.2. Lots of changes and
+  improvements, including optional firefox and thunderbird support (firefox
+  support is controlled by USE=firefox-bookmarks so that users don't enable it
+  by accident, since it can slow down the browser). Some ugly hacks are
+  required to avoid thunderbird- and firefox-related access violations. The
+  nautilus extension has been split off into a separate package
+  (nautilus-tracker-tags) to avoid circular dependencies with nautilus-3.2.
+
+  20 Sep 2011; Michał Górny <mgorny@gentoo.org> tracker-9999.ebuild:
+  Migrate to git-2.
+
+*tracker-0.10.27 (15 Sep 2011)
+
+  15 Sep 2011; Gilles Dartiguelongue <eva@gentoo.org> tracker-0.8.17.ebuild,
+  -tracker-0.10.24.ebuild, tracker-0.10.26.ebuild, +tracker-0.10.27.ebuild,
+  tracker-9999.ebuild:
+  Version bump. Pin dependency on libgee to slot 0.
+
+  09 Sep 2011; Gilles Dartiguelongue <eva@gentoo.org> tracker-0.10.26.ebuild:
+  Fix a typo in gstreamer backend selection.
+
+*tracker-0.10.26 (08 Sep 2011)
+
+  08 Sep 2011; Gilles Dartiguelongue <eva@gentoo.org> -tracker-0.10.16.ebuild,
+  -tracker-0.10.21.ebuild, +tracker-0.10.26.ebuild, tracker-9999.ebuild:
+  Version bump.
+
+*tracker-0.10.24 (29 Aug 2011)
+
+  29 Aug 2011; Gilles Dartiguelongue <eva@gentoo.org> +tracker-0.10.24.ebuild,
+  tracker-9999.ebuild:
+  Version bump. Bug fixes.
 
 *tracker-0.10.21 (24 Jul 2011)
 
@@ -563,4 +709,3 @@
   21 Nov 2006; Saleem Abdulrasool <compnerd@gentoo.org>
   +files/tracker-0.5.2-configure.in.patch, +tracker-0.5.2.ebuild:
   Initial import, patch and ebuild by Saleem Abdulrasool <compnerd@gentoo.org>
-

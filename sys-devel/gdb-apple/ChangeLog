@@ -1,6 +1,35 @@
 # ChangeLog for sys-devel/gdb-apple
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gdb-apple/ChangeLog,v 1.12 2011/07/12 05:49:45 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gdb-apple/ChangeLog,v 1.18 2012/03/04 16:15:04 grobian Exp $
+
+*gdb-apple-1752 (04 Mar 2012)
+
+  04 Mar 2012; Fabian Groffen <grobian@gentoo.org> +gdb-apple-1752.ebuild:
+  Bump to version from Developer Tools 4.3
+
+*gdb-apple-1708 (05 Nov 2011)
+
+  05 Nov 2011; Fabian Groffen <grobian@gentoo.org> +gdb-apple-1708.ebuild:
+  Bump to version from Developer Tools 4.2
+
+  16 Oct 2011; Fabian Groffen <grobian@gentoo.org> gdb-apple-768-r1.ebuild,
+  gdb-apple-1461.ebuild, gdb-apple-1518.ebuild, gdb-apple-1346.ebuild,
+  gdb-apple-966.ebuild, gdb-apple-960.ebuild, gdb-apple-1344.ebuild,
+  gdb-apple-1705.ebuild, gdb-apple-563.ebuild, gdb-apple-962.ebuild:
+  Fix quoting
+
+  25 Sep 2011; Fabian Groffen <grobian@gentoo.org> gdb-apple-1705.ebuild,
+  +files/gdb-apple-1705-darwin8-10.patch:
+  Add patch to fix compilation on Darwin prior OS X Lion, bug #382337
+
+  03 Sep 2011; Fabian Groffen <grobian@gentoo.org> gdb-apple-1705.ebuild:
+  Add note to inform people that FSF gdb also works for them, and probably is
+  the better choice.
+
+*gdb-apple-1705 (03 Sep 2011)
+
+  03 Sep 2011; Fabian Groffen <grobian@gentoo.org> +gdb-apple-1705.ebuild:
+  Version bump to version from Developer Tools 4.1
 
   12 Jul 2011; Fabian Groffen <grobian@gentoo.org>
   files/gdb-apple-1518-darwin8-9.patch, files/gdb-apple-1518-darwin8.patch:

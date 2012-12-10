@@ -1,6 +1,28 @@
 # ChangeLog for net-nds/ypbind
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/ypbind/ChangeLog,v 1.68 2011/06/17 03:12:18 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-nds/ypbind/ChangeLog,v 1.75 2012/06/27 18:13:20 kensington Exp $
+
+  27 Jun 2012; Michael Palimaka <kensington@gentoo.org> -ypbind-1.32-r1.ebuild,
+  -ypbind-1.32.ebuild:
+  Remove old.
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> ypbind-1.33.ebuild:
+  alpha/ia64/sparc stable wrt #404843
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> ypbind-1.33.ebuild:
+  Marking ypbind-1.33 ppc64 for bug 404843
+
+  24 Feb 2012; Brent Baude <ranger@gentoo.org> ypbind-1.33.ebuild:
+  Marking ypbind-1.33 ppc for bug 404843
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ypbind-1.33.ebuild:
+  x86 stable wrt bug #404843
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> ypbind-1.33.ebuild:
+  Stable for HPPA (bug #404843).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> ypbind-1.33.ebuild:
+  Stable for amd64, wrt bug #404843
 
 *ypbind-1.33 (17 Jun 2011)
 

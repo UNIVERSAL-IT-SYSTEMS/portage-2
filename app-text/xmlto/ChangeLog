@@ -1,6 +1,44 @@
 # ChangeLog for app-text/xmlto
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/xmlto/ChangeLog,v 1.68 2011/07/30 22:10:37 patrick Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/xmlto/ChangeLog,v 1.78 2012/04/26 17:23:43 aballier Exp $
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> xmlto-0.0.25.ebuild:
+  keyword ~amd64-fbsd
+
+*xmlto-0.0.25 (12 Jan 2012)
+
+  12 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +xmlto-0.0.25.ebuild:
+  Version bump.
+
+  12 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -xmlto-0.0.22.ebuild,
+  -files/xmlto-0.0.22-parallelmake.patch, -xmlto-0.0.23.ebuild,
+  -xmlto-0.0.24.ebuild:
+  old
+
+  12 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> xmlto-0.0.24-r1.ebuild:
+  ppc64 stable wrt #388273
+
+  07 Nov 2011; Brent Baude <ranger@gentoo.org> xmlto-0.0.24-r1.ebuild:
+  Marking xmlto-0.0.24-r1 ppc for bug 388273
+
+  05 Nov 2011; Raúl Porcel <armin76@gentoo.org> xmlto-0.0.24-r1.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #388273
+
+  29 Oct 2011; Jeroen Roovers <jer@gentoo.org> xmlto-0.0.24-r1.ebuild:
+  Stable for HPPA (bug #388273).
+
+  25 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> xmlto-0.0.24-r1.ebuild:
+  x86 stable wrt bug #388273
+
+  24 Oct 2011; Markos Chandras <hwoarang@gentoo.org> xmlto-0.0.24-r1.ebuild:
+  Stable on amd64 wrt bug #388273
+
+*xmlto-0.0.24-r1 (19 Aug 2011)
+
+  19 Aug 2011; Mike Frysinger <vapier@gentoo.org> +xmlto-0.0.24-r1.ebuild,
+  +files/xmlto-0.0.24-parallelmake.patch:
+  Use portable fix for parallel make, include man pages in the dist to avoid
+  CBUILD vs CHOST issues, and drop autotool regeneration to speed things up.
 
 *xmlto-0.0.24 (30 Jul 2011)
 

@@ -1,6 +1,39 @@
 # ChangeLog for net-print/splix
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/splix/ChangeLog,v 1.20 2011/05/13 22:17:48 voyageur Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-print/splix/ChangeLog,v 1.27 2012/03/12 19:10:48 scarabeus Exp $
+
+  12 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  splix-2.0.0_p20111206.ebuild:
+  Stabilise 2.0.0_p20111206 per latest commit on amd64 and x86.
+
+  12 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  splix-2.0.0_p20111206.ebuild:
+  Update the cms file from the samsung driver and place the cms to proper
+  folder. Makes this work on my clp315.
+
+*splix-2.0.0_p20111206 (30 Jan 2012)
+
+  30 Jan 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  +splix-2.0.0_p20111206.ebuild:
+  New snapshot, bugfixes and support for newer printers, ebuild cleanups
+
+  31 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -splix-2.0.0.ebuild,
+  -splix-2.0.0_p20110219.ebuild,
+  -files/splix-2.0.0-algo0x0d_one_scanline_over_fix.patch,
+  -files/splix-2.0.0-gcc45.patch:
+  old
+
+  24 Sep 2011; Tony Vroon <chainsaw@gentoo.org>
+  splix-2.0.0_p20110219-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney &
+  Agostino "ago" Sarubbo in bug #383625.
+
+  21 Sep 2011; Thomas Kahle <tomka@gentoo.org> splix-2.0.0_p20110219-r1.ebuild:
+  x86 stable per bug 383625
+
+  14 Sep 2011; Bernard Cafarelli <voyageur@gentoo.org> splix-2.0.0.ebuild,
+  splix-2.0.0_p20110219-r1.ebuild:
+  Drop cupsddk dependency, bug #336475
 
 *splix-2.0.0_p20110219-r1 (13 May 2011)
 

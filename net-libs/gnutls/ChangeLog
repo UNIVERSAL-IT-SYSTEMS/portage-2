@@ -1,6 +1,360 @@
 # ChangeLog for net-libs/gnutls
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/ChangeLog,v 1.312 2011/07/11 00:09:02 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/ChangeLog,v 1.391 2012/11/24 19:16:35 flameeyes Exp $
+
+*gnutls-3.1.5 (24 Nov 2012)
+
+  24 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> +gnutls-3.1.5.ebuild,
+  -files/gnutls-3.1.4-nodane.patch, -gnutls-3.1.4.ebuild:
+  Version bump; remove 3.1.4 and its patch.
+
+*gnutls-3.1.4 (10 Nov 2012)
+
+  10 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/gnutls-3.1.4-nodane.patch, +gnutls-3.1.4.ebuild:
+  Version bump; a patch is needed for a test failure with USE=-dane.
+
+  04 Nov 2012; Tim Harder <radhermit@gentoo.org> gnutls-3.1.3.ebuild:
+  Don't try to install the postscript doc since it's not built by default
+  anymore (bug #440720).
+
+  30 Oct 2012; Rick Farina <zerochaos@gentoo.org> gnutls-2.12.20.ebuild:
+  gnutls-2 is not compatible with libtasn1-3 so adjust deps accordingly
+
+  19 Oct 2012; Dane Smith <c1pher@gentoo.org> -gnutls-2.12.18.ebuild,
+  gnutls-2.12.20.ebuild, +files/gnutls-2.12.20-guile-parallelmake.patch,
+  gnutls-3.1.3.ebuild, +files/gnutls-3.1.3-guile-parallelmake.patch:
+  Add patches to fix parallel make issues in bug 427844 and bug 437256.
+  Update ebuilds for 2.12.20 and 3.1.3 to make use of said patches.
+  Drop old.
+
+*gnutls-3.1.3 (13 Oct 2012)
+
+  13 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org> +gnutls-3.1.3.ebuild,
+  -gnutls-3.0.23.ebuild, -gnutls-3.0.24.ebuild, -gnutls-3.1.1.ebuild,
+  -gnutls-3.1.2.ebuild, metadata.xml:
+  Version bump to 3.1.3 adding support for building the DANE library. Remove
+  older version that make up the old stable branch for upstream.
+
+  06 Oct 2012; Raúl Porcel <armin76@gentoo.org> gnutls-2.12.20.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc/x86 stable wrt #436368
+
+  03 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gnutls-2.12.20.ebuild:
+  Stable for amd64, wrt bug #436368
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> gnutls-2.12.20.ebuild:
+  Stable for HPPA (bug #436368).
+
+  28 Sep 2012; Anthony G. Basile <blueness@gentoo.org> gnutls-2.12.20.ebuild:
+  stable arm, bug #436368
+
+  27 Sep 2012; Anthony G. Basile <blueness@gentoo.org> gnutls-2.12.20.ebuild:
+  stable ppc ppc64, bug #436368
+
+  26 Sep 2012; Tim Harder <radhermit@gentoo.org> gnutls-2.12.20.ebuild,
+  +files/gnutls-2.12.20-glibc-2.16.patch, +files/gnutls-2.12.20-libadd.patch:
+  Fix build with glibc-2.16 (bug #424988 by Christian Hagau) and link against
+  the built libgnutls library instead of the system version (bug #436146 by
+  Bartosz Brachaczek).
+
+  26 Sep 2012; Tim Harder <radhermit@gentoo.org> -gnutls-2.12.19.ebuild,
+  -gnutls-3.0.20.ebuild, -gnutls-3.0.21.ebuild, -gnutls-3.0.22.ebuild,
+  -gnutls-3.1.0.ebuild:
+  Remove old.
+
+*gnutls-3.1.2 (26 Sep 2012)
+*gnutls-3.0.24 (26 Sep 2012)
+
+  26 Sep 2012; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.24.ebuild,
+  +gnutls-3.1.2.ebuild:
+  Version bumps.
+
+*gnutls-3.1.1 (02 Sep 2012)
+*gnutls-3.0.23 (02 Sep 2012)
+
+  02 Sep 2012; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.23.ebuild,
+  +gnutls-3.1.1.ebuild:
+  Version bumps.
+
+*gnutls-3.1.0 (15 Aug 2012)
+
+  15 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +gnutls-3.1.0.ebuild:
+  Version bump; disable TPM support for now until it can be tested by somebody
+  with a TPM device.
+
+*gnutls-3.0.22 (05 Aug 2012)
+
+  05 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +gnutls-3.0.22.ebuild:
+  Version bump.
+
+  02 Aug 2012; Tim Harder <radhermit@gentoo.org> gnutls-2.12.18.ebuild,
+  gnutls-2.12.19.ebuild, gnutls-2.12.20.ebuild, gnutls-3.0.20.ebuild,
+  gnutls-3.0.21.ebuild:
+  Enable verbose build (bug #429312).
+
+*gnutls-3.0.21 (04 Jul 2012)
+
+  04 Jul 2012; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.21.ebuild:
+  Version bump.
+
+  17 Jun 2012; Fabian Groffen <grobian@gentoo.org>
+  +files/gnutls-2.12.20-AF_UNIX.patch, gnutls-2.12.20.ebuild:
+  Add backport of AF_LOCAL/AF_UNIX fix from upstream to fix compilation on e.g.
+  Solaris.
+
+  15 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/gnutls-3.0.20-parallelmake.patch, gnutls-3.0.20.ebuild:
+  Add patch to build properly with parallel make; also build tests in parallel.
+
+*gnutls-2.12.20 (11 Jun 2012)
+
+  11 Jun 2012; Tim Harder <radhermit@gentoo.org> +gnutls-2.12.20.ebuild:
+  Version bump.
+
+  10 Jun 2012; Tim Harder <radhermit@gentoo.org> -gnutls-3.0.19.ebuild:
+  Remove old.
+
+  10 Jun 2012; Tim Harder <radhermit@gentoo.org> gnutls-2.12.18.ebuild,
+  gnutls-2.12.19.ebuild:
+  Drop -Werror flag from all relevant configure files.
+
+  10 Jun 2012; Tim Harder <radhermit@gentoo.org> gnutls-2.12.18.ebuild,
+  gnutls-2.12.19.ebuild:
+  Don't make automake warnings into errors.
+
+  09 Jun 2012; Tim Harder <radhermit@gentoo.org> gnutls-3.0.20.ebuild:
+  Don't make automake warnings into errors.
+
+  06 Jun 2012; Tim Harder <radhermit@gentoo.org> -gnutls-3.0.18.ebuild:
+  Remove old.
+
+*gnutls-3.0.20 (06 Jun 2012)
+
+  06 Jun 2012; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.20.ebuild:
+  Version bump.
+
+  28 May 2012; Fabian Groffen <grobian@gentoo.org> gnutls-2.12.19.ebuild,
+  gnutls-3.0.19.ebuild:
+  Transferred Prefix keywords, fixed for Prefix
+
+  10 May 2012; Tim Harder <radhermit@gentoo.org> -gnutls-2.10.5.ebuild:
+  Remove old, insecure version.
+
+  09 May 2012; Matt Turner <mattst88@gentoo.org> gnutls-2.12.19.ebuild:
+  Added ~mips, bug 402959.
+
+*gnutls-2.12.19 (07 May 2012)
+
+  07 May 2012; Tim Harder <radhermit@gentoo.org> +gnutls-2.12.19.ebuild:
+  Version bump.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gnutls-2.12.18.ebuild,
+  gnutls-3.0.18.ebuild, gnutls-3.0.19.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> gnutls-2.12.18.ebuild:
+  keyword ~amd64-fbsd
+
+  22 Apr 2012; Tim Harder <radhermit@gentoo.org> -gnutls-3.0.16.ebuild:
+  Remove old.
+
+*gnutls-3.0.19 (22 Apr 2012)
+
+  22 Apr 2012; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.19.ebuild:
+  Version bump.
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> gnutls-2.12.18.ebuild:
+  Marking gnutls-2.12.18 ppc for bug 409287
+
+  08 Apr 2012; Raúl Porcel <armin76@gentoo.org> gnutls-2.12.18.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #409287
+
+  08 Apr 2012; Tim Harder <radhermit@gentoo.org> gnutls-3.0.16.ebuild,
+  gnutls-3.0.18.ebuild:
+  Update LICENSE.
+
+*gnutls-3.0.18 (03 Apr 2012)
+
+  03 Apr 2012; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.18.ebuild:
+  Version bump.
+
+  31 Mar 2012; Markus Meier <maekke@gentoo.org> gnutls-2.12.18.ebuild:
+  arm stable, bug #409287
+
+  31 Mar 2012; Nirbheek Chauhan <nirbheek@gentoo.org> gnutls-2.12.18.ebuild:
+  Fix p11kit dependency to be >=0.11
+
+  29 Mar 2012; Tim Harder <radhermit@gentoo.org> -gnutls-2.12.17.ebuild,
+  -gnutls-3.0.15.ebuild:
+  Remove old.
+
+  29 Mar 2012; Tim Harder <radhermit@gentoo.org> gnutls-3.0.16.ebuild:
+  Add pkgconfig build dependency.
+
+  28 Mar 2012; Brent Baude <ranger@gentoo.org> gnutls-2.12.18.ebuild:
+  Marking gnutls-2.12.18 ppc64 for bug 409287
+
+  28 Mar 2012; Jeroen Roovers <jer@gentoo.org> gnutls-2.12.18.ebuild:
+  Stable for HPPA (bug #409287).
+
+  28 Mar 2012; Diego E. Pettenò <flameeyes@gentoo.org> gnutls-2.12.18.ebuild:
+  Add missing pkgconfig dependency, thanks to Nikoli in bug #410015.
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> gnutls-2.12.18.ebuild:
+  Stable for amd64, wrt bug #409287
+
+  27 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gnutls-2.12.18.ebuild:
+  x86 stable wrt bug #409287
+
+  17 Mar 2012; Naohiro Aota <naota@gentoo.org> gnutls-2.12.18.ebuild:
+  Add ~x86-fbsd. #402959
+
+  17 Mar 2012; Tim Harder <radhermit@gentoo.org> gnutls-3.0.16.ebuild:
+  Use local variable.
+
+  16 Mar 2012; Tim Harder <radhermit@gentoo.org> -gnutls-2.12.16.ebuild,
+  -gnutls-3.0.13.ebuild, -files/gnutls-3.0.13-test-kill.patch,
+  -gnutls-3.0.14.ebuild:
+  Remove old.
+
+*gnutls-3.0.16 (16 Mar 2012)
+
+  16 Mar 2012; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.16.ebuild:
+  Version bump.
+
+*gnutls-2.12.18 (16 Mar 2012)
+
+  16 Mar 2012; Tim Harder <radhermit@gentoo.org> +gnutls-2.12.18.ebuild:
+  Version bump.
+
+  16 Mar 2012; Tim Harder <radhermit@gentoo.org> gnutls-2.12.17.ebuild:
+  Keyword newer version for ~ppc64 as well.
+
+  09 Mar 2012; Brent Baude <ranger@gentoo.org> gnutls-2.12.16.ebuild:
+  Marking gnutls-2.12.16 ~ppc64 for bug 402959
+
+*gnutls-3.0.15 (03 Mar 2012)
+
+  03 Mar 2012; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.15.ebuild:
+  Version bump. Explicity disable valgrind tests since they now require the git
+  repo.
+
+*gnutls-2.12.17 (02 Mar 2012)
+
+  02 Mar 2012; Tim Harder <radhermit@gentoo.org> +gnutls-2.12.17.ebuild:
+  Version bump.
+
+  25 Feb 2012; Tim Harder <radhermit@gentoo.org> -gnutls-3.0.11.ebuild:
+  Remove old.
+
+*gnutls-3.0.14 (25 Feb 2012)
+
+  25 Feb 2012; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.14.ebuild:
+  Version bump.
+
+  22 Feb 2012; Brent Baude <ranger@gentoo.org> gnutls-2.12.16.ebuild:
+  Marking gnutls-2.12.16 ~ppc for bug 402959
+
+*gnutls-3.0.13 (20 Feb 2012)
+
+  20 Feb 2012; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.13.ebuild,
+  +files/gnutls-3.0.13-test-kill.patch:
+  Version bump.
+
+  19 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org> gnutls-2.10.5.ebuild,
+  gnutls-2.12.16.ebuild, gnutls-3.0.11.ebuild:
+  Support for user patches wrt bug#395253.
+
+  10 Feb 2012; Tim Harder <radhermit@gentoo.org> -gnutls-2.12.14.ebuild,
+  -gnutls-3.0.8.ebuild, -gnutls-3.0.9.ebuild, -gnutls-3.0.10.ebuild:
+  Remove old.
+
+  10 Feb 2012; Tim Harder <radhermit@gentoo.org> gnutls-2.12.14.ebuild,
+  gnutls-2.12.16.ebuild:
+  Drop KEYWORDS for arches that haven't keyworded p11-kit yet.
+
+*gnutls-3.0.11 (13 Jan 2012)
+*gnutls-2.12.16 (13 Jan 2012)
+
+  13 Jan 2012; Tim Harder <radhermit@gentoo.org> +gnutls-2.12.16.ebuild,
+  +gnutls-3.0.11.ebuild:
+  Version bumps.
+
+*gnutls-3.0.10 (05 Jan 2012)
+
+  05 Jan 2012; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.10.ebuild:
+  Version bump.
+
+*gnutls-3.0.9 (14 Dec 2011)
+
+  14 Dec 2011; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.9.ebuild:
+  Version bump.
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org> gnutls-2.12.14.ebuild,
+  gnutls-3.0.8.ebuild:
+  Revert to autotools eclass (fixes bug #392163).
+
+  26 Nov 2011; Tim Harder <radhermit@gentoo.org> gnutls-2.12.14.ebuild,
+  -gnutls-3.0.7.ebuild, gnutls-3.0.8.ebuild:
+  Remove old and build in the source tree.
+
+*gnutls-3.0.8 (12 Nov 2011)
+
+  12 Nov 2011; Tim Harder <radhermit@gentoo.org> -gnutls-2.12.12.ebuild,
+  -gnutls-3.0.5.ebuild, +gnutls-3.0.8.ebuild:
+  Version bump and remove old.
+
+*gnutls-3.0.7 (08 Nov 2011)
+*gnutls-2.12.14 (08 Nov 2011)
+
+  08 Nov 2011; Tim Harder <radhermit@gentoo.org> +gnutls-2.12.14.ebuild,
+  +gnutls-3.0.7.ebuild:
+  Version bump to latest releases. Update gnutls-2.12.14 to use EAPI 4 and add
+  pkcs11/static-libs use flags.
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org> gnutls-2.12.12.ebuild,
+  gnutls-3.0.5.ebuild:
+  Delete obsolete comments. Patch by Arfrever.
+
+*gnutls-3.0.5 (28 Oct 2011)
+
+  28 Oct 2011; Tim Harder <radhermit@gentoo.org> -gnutls-3.0.3.ebuild,
+  -gnutls-3.0.4.ebuild, +gnutls-3.0.5.ebuild:
+  Version bump and remove old.
+
+*gnutls-2.12.12 (21 Oct 2011)
+
+  21 Oct 2011; Tim Harder <radhermit@gentoo.org> -gnutls-2.12.10.ebuild,
+  -gnutls-2.12.11.ebuild, +gnutls-2.12.12.ebuild:
+  Version bump and remove old.
+
+*gnutls-3.0.4 (15 Oct 2011)
+
+  15 Oct 2011; Tim Harder <radhermit@gentoo.org> +gnutls-3.0.4.ebuild:
+  Version bump.
+
+  21 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> -gnutls-3.0.2.ebuild,
+  gnutls-3.0.3.ebuild, metadata.xml:
+  Make pkcs11 support optional. Drop older 3.0 ebuild that fails with that.
+
+*gnutls-3.0.3 (21 Sep 2011)
+*gnutls-2.12.11 (21 Sep 2011)
+
+  21 Sep 2011; Tim Harder <radhermit@gentoo.org> +gnutls-2.12.11.ebuild,
+  +gnutls-3.0.3.ebuild:
+  Version bump to latest releases.
+
+*gnutls-3.0.2 (18 Sep 2011)
+*gnutls-2.12.10 (18 Sep 2011)
+
+  18 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> -gnutls-2.10.4.ebuild,
+  -gnutls-2.11.6.ebuild, -gnutls-2.11.7.ebuild, -gnutls-2.12.0.ebuild,
+  -gnutls-2.12.0-r1.ebuild, -files/gnutls-2.12.0-C++.patch,
+  -gnutls-2.12.1.ebuild, -gnutls-2.12.2.ebuild, -gnutls-2.12.3.ebuild,
+  -gnutls-2.12.4.ebuild, -gnutls-2.12.5.ebuild, -gnutls-2.12.6.1.ebuild,
+  -gnutls-2.12.7.ebuild, +gnutls-2.12.10.ebuild, +gnutls-3.0.2.ebuild:
+  Version bump to latest 2.12 release and to 3.0.2. Drop older overshadowed
+  versions.
 
   10 Jul 2011; Mark Loeser <halcy0n@gentoo.org> gnutls-2.10.5.ebuild:
   Stable for ppc64; bug #361525
@@ -1356,4 +1710,3 @@
 
   02 Sep 2003; Alastair Tse <liquidx@gentoo.org> gnutls-0.8.10.ebuild:
   initial ebuild. thanks to Marshall T. Vandegrift <vandem2@rpi.edu> (#19339)
-

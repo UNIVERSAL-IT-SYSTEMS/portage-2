@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/squirrelmail/squirrelmail-1.4.22.ebuild,v 1.1 2011/07/13 18:50:27 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/squirrelmail/squirrelmail-1.4.22.ebuild,v 1.9 2012/10/26 07:55:00 eras Exp $
 
 EAPI=2
 
@@ -39,14 +39,14 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2
 HOMEPAGE="http://www.squirrelmail.org/"
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="alpha amd64 ~ppc ~ppc64 sparc x86"
 
 DEPEND=""
 
-RDEPEND="dev-lang/php[session]
+RDEPEND="dev-lang/php:5.3[session]
 	virtual/perl-DB_File
 	ldap? ( net-nds/openldap )
-	spell? ( || ( app-text/aspell app-text/ispell ) )
+	spell? ( app-text/aspell )
 	filter? ( mail-filter/amavisd-new dev-php/PEAR-Log dev-php/PEAR-DB dev-php/PEAR-Net_SMTP )
 	postgres? ( dev-php/PEAR-DB )
 	mysql? ( dev-php/PEAR-DB )"
@@ -59,13 +59,8 @@ src_unpack() {
 
 	mv config/config_default.php config/config.php || die
 
-	sed -i "s:'/var/local/squirrelmail/data/':SM_PATH . 'data/':" \
-		config/config.php || die
-
 	# Now do the plugins
 	cd "${S}/plugins" || die
-
-	sed -i 's:/usr/games/fortune:/usr/bin/fortune:g' fortune/setup.php || die "Unable to fix fortunes plugin."
 
 	unpack compatibility-${COMPATIBILITY_VER}.tar.gz
 
@@ -78,9 +73,7 @@ src_unpack() {
 		mv amavisnewsql/config.php.dist amavisnewsql/config.php
 
 	use ldap &&
-		unpack ldapuserdata-${LDAP_USERDATA_VER}.tar.gz &&
-		epatch "${FILESDIR}"/ldapuserdata-${LDAP_USERDATA_VER}-gentoo.patch &&
-		mv ldapuserdata/config_sample.php ldapuserdata/config.php
+		unpack ldapuserdata-${LDAP_USERDATA_VER}.tar.gz
 
 	use ssl &&
 		unpack secure_login-${SECURELOGIN_VER}.tar.gz &&
@@ -91,6 +84,17 @@ src_unpack() {
 	use nls &&
 		cd "${S}" &&
 		unpack all_locales-${LOCALES_VER}.tar.bz2
+}
+
+src_prepare() {
+	sed -i "s:'/var/local/squirrelmail/data/':SM_PATH . 'data/':" \
+		config/config.php || die
+
+	cd "${S}/plugins" || die
+	if use ldap; then
+		epatch "${FILESDIR}"/ldapuserdata-${LDAP_USERDATA_VER}-gentoo.patch
+		mv ldapuserdata/config_sample.php ldapuserdata/config.php || die
+	fi
 }
 
 src_configure() {

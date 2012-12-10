@@ -1,6 +1,16 @@
 # ChangeLog for games-fps/ut2004-data
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/ut2004-data/ChangeLog,v 1.27 2010/12/16 19:21:34 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-fps/ut2004-data/ChangeLog,v 1.30 2012/02/05 06:10:53 vapier Exp $
+
+  05 Feb 2012; Mike Frysinger <vapier@gentoo.org> ut2004-data-3186-r4.ebuild:
+  Move to new unpacker eclass for unpack_makeself.
+
+  16 Jan 2012; Ulrich Müller <ulm@gentoo.org> ut2004-data-3186-r4.ebuild:
+  Migrate to cdrom.eclass, bug 398809.
+
+  25 Sep 2011; Michael Sterrett <mr_bones_@gentoo.org>
+  ut2004-data-3186-r4.ebuild:
+  add interactive property (bug #384455)
 
   16 Dec 2010; Michael Sterrett <mr_bones_@gentoo.org>
   ut2004-data-3186-r4.ebuild:

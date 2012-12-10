@@ -1,6 +1,59 @@
 # ChangeLog for media-libs/mediastreamer
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mediastreamer/ChangeLog,v 1.45 2011/05/16 18:28:59 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mediastreamer/ChangeLog,v 1.57 2012/11/22 14:08:52 mgorny Exp $
+
+  22 Nov 2012; Michał Górny <mgorny@gentoo.org>
+  files/mediastreamer-2.8.2-v4l-automagic.patch:
+  Replace the V4L patch with a correct one.
+
+*mediastreamer-2.8.2 (19 Nov 2012)
+
+  19 Nov 2012; Michał Górny <mgorny@gentoo.org>
+  +files/mediastreamer-2.8.2-autopoint.patch,
+  +files/mediastreamer-2.8.2-v4l-automagic.patch, +mediastreamer-2.8.2.ebuild,
+  metadata.xml:
+  Version bump wrt bug #399737. Thanks to Andrew Savchenko for his effort on
+  linphone ebuilds.
+
+  07 Nov 2012; Alexis Ballier <aballier@gentoo.org>
+  mediastreamer-2.7.3-r3.ebuild, +files/mediastreamer-2.7.3-ffmpeg-0.11.patch,
+  +files/mediastreamer-2.7.3-videoenc_282.patch:
+  Fix build with recent ffmpeg versions, bug #419453
+
+  16 May 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -mediastreamer-2.3.0-r1.ebuild:
+  Punt version that depended only on media-video/ffmpeg.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> mediastreamer-2.3.0-r1.ebuild,
+  mediastreamer-2.7.3-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Set volkmar as second maintainer as talked with him.
+
+  06 Jan 2012; Brent Baude <ranger@gentoo.org> mediastreamer-2.7.3-r3.ebuild:
+  Marking mediastreamer-2.7.3-r3 ppc stable for bug 363311
+
+  06 Nov 2011; Fabian Groffen <grobian@gentoo.org>
+  mediastreamer-2.7.3-r3.ebuild:
+  Drop ~ppc-macos, since 2.7 no longer compiles on OSX 10.5 (last ppc version)
+
+  23 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  -mediastreamer-2.2.3_p1-r1.ebuild,
+  -files/mediastreamer-2.2.3_p1-autodeps.patch, -mediastreamer-2.5.0.ebuild,
+  -mediastreamer-2.6.0.ebuild, mediastreamer-2.7.3-r3.ebuild:
+  Punt static libraries and libtool archives, remove overshadowed versions.
+
+  14 Oct 2011; Peter Volkov <pva@gentoo.org> mediastreamer-2.7.3-r3.ebuild:
+  Allow building with pulseaudio only, bug #384961 wrt niks1024 AT gmail.com
+
+  01 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  mediastreamer-2.7.3-r3.ebuild:
+  Rename USE="v4l2" to USE="v4l" wrt #385241
+
+  29 Aug 2011; Fabian Groffen <grobian@gentoo.org>
+  mediastreamer-2.7.3-r3.ebuild:
+  Marked *-macos, bug #362691
 
   16 May 2011; Kacper Kowalik <xarthisius@gentoo.org>
   mediastreamer-2.7.3-r3.ebuild:
@@ -193,4 +246,3 @@
   +mediastreamer-2.2.3.ebuild:
   Initial commit. Actually, new-born (and bump) for this package removed a few
   months ago.
-

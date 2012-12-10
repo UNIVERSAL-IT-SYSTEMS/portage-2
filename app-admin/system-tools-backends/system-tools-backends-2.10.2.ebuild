@@ -1,18 +1,18 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/system-tools-backends/system-tools-backends-2.10.2.ebuild,v 1.3 2011/07/14 09:56:10 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/system-tools-backends/system-tools-backends-2.10.2.ebuild,v 1.9 2012/05/31 02:45:53 zmedico Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
 
-inherit eutils gnome2
+inherit eutils gnome2 user
 
 DESCRIPTION="Tools aimed to make easy the administration of UNIX systems"
 HOMEPAGE="http://projects.gnome.org/gst/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~ia64 ~ppc ~sparc x86"
+KEYWORDS="alpha amd64 ia64 ppc sparc x86"
 IUSE=""
 
 RDEPEND="!<app-admin/gnome-system-tools-1.1.91
@@ -22,10 +22,10 @@ RDEPEND="!<app-admin/gnome-system-tools-1.1.91
 	>=dev-perl/Net-DBus-0.33.4
 	dev-lang/perl
 	>=sys-auth/polkit-0.94
-	userland_GNU? ( sys-apps/shadow )"
+	userland_GNU? ( virtual/shadow )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	>=dev-util/intltool-0.40"
 
 pkg_setup() {
@@ -33,7 +33,7 @@ pkg_setup() {
 	G2CONF="${G2CONF}
 		--localstatedir=/var"
 
-	enewgroup stb-admin || die "Failed to create stb-admin group"
+	enewgroup stb-admin
 }
 
 src_prepare() {

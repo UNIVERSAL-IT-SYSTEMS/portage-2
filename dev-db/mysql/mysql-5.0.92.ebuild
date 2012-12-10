@@ -1,11 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/mysql-5.0.92.ebuild,v 1.1 2011/07/13 07:45:33 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql/mysql-5.0.92.ebuild,v 1.3 2012/04/13 18:00:05 ulm Exp $
 
+EAPI="4"
 MY_EXTRAS_VER="20110713-0702Z"
-EAPI=2
-# 5.0.91 tarball has wrong version number in the directory.
-#MY_SOURCEDIR='mysql-5.0.90'
 
 inherit toolchain-funcs mysql
 # only to make repoman happy. it is really set in the eclass

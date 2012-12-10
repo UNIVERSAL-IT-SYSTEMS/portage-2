@@ -1,6 +1,42 @@
 # ChangeLog for net-libs/udns
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/udns/ChangeLog,v 1.16 2009/12/15 14:46:07 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/udns/ChangeLog,v 1.26 2012/09/05 15:51:52 jer Exp $
+
+*udns-0.2 (05 Sep 2012)
+
+  05 Sep 2012; Jeroen Roovers <jer@gentoo.org> +udns-0.2.ebuild:
+  Version bump. Respect CC. Install NEWS.
+
+  21 Jul 2012; Anthony G. Basile <blueness@gentoo.org> udns-0.1.ebuild:
+  Keyword ~ppc64
+
+  14 Feb 2012; Brent Baude <ranger@gentoo.org> udns-0.1.ebuild:
+  Marking udns-0.1 ppc for bug 389741
+
+  20 Dec 2011; Naohiro Aota <naota@gentoo.org> udns-0.1.ebuild:
+  Add ~x86-fbsd
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> udns-0.0.9.ebuild,
+  udns-0.1.ebuild:
+  Drop alpha keywords, sparc stable wrt #389741
+
+  12 Nov 2011; Markos Chandras <hwoarang@gentoo.org> udns-0.1.ebuild:
+  Stable on amd64 wrt bug #389741
+
+  11 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> udns-0.1.ebuild:
+  x86 stable wrt bug #389741
+
+  11 Oct 2011; Peter Volkov <pva@gentoo.org> metadata.xml:
+  Take maintaining.
+
+*udns-0.1 (02 Oct 2011)
+
+  02 Oct 2011; Peter Volkov <pva@gentoo.org> +udns-0.1.ebuild,
+  +files/udns-0.1-respect-LDFLAGS.patch:
+  Version bump. Respect LDFLAGS, bug #336040 wrt Diego Elio Pettenò.
+
+  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #225633
 
   15 Dec 2009; Peter Volkov <pva@gentoo.org> metadata.xml:
   metadata.xml: added required herd tag.

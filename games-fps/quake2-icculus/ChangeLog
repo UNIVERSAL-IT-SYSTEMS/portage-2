@@ -1,6 +1,24 @@
 # ChangeLog for games-fps/quake2-icculus
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quake2-icculus/ChangeLog,v 1.42 2011/07/27 10:24:01 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-fps/quake2-icculus/ChangeLog,v 1.46 2012/04/06 19:23:15 tupone Exp $
+
+  06 Apr 2012; Tupone Alfredo <tupone@gentoo.org>
+  quake2-icculus-0.16.1-r1.ebuild,
+  +files/quake2-icculus-0.16.1-x11_mouse.patch:
+  Fix x11 mouse. Patch from bug #358955 by ocrbj
+
+  01 Apr 2012; Tupone Alfredo <tupone@gentoo.org>
+  quake2-icculus-0.16.1-r1.ebuild, +files/quake2-icculus-0.16.1-x11_soft.patch:
+  Enable software rasterizer on amd64. From bug #358955 by ocrbj
+
+  01 Apr 2012; Tupone Alfredo <tupone@gentoo.org>
+  quake2-icculus-0.16.1-r1.ebuild,
+  +files/quake2-icculus-0.16.1-gnusource.patch:
+  Fix run on amd64. Bug #158415 by B Douglas Hilton
+
+  28 Mar 2012; Tupone Alfredo <tupone@gentoo.org>
+  quake2-icculus-0.16.1-r1.ebuild, +files/quake2-icculus-0.16.1-alsa.patch:
+  Re-add alsa use flag. Patch from bug #158415 by Grzegorz {NineX} Krzystek
 
   27 Jul 2011; Tupone Alfredo <tupone@gentoo.org>
   quake2-icculus-0.16.1-r1.ebuild:

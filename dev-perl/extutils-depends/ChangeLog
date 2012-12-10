@@ -1,6 +1,50 @@
 # ChangeLog for dev-perl/extutils-depends
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/extutils-depends/ChangeLog,v 1.54 2011/04/02 07:10:54 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/extutils-depends/ChangeLog,v 1.66 2012/06/24 12:58:15 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org>
+  extutils-depends-0.304.0.ebuild:
+  keyword ~amd64-fbsd
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -extutils-depends-0.302.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  extutils-depends-0.304.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #400283
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  extutils-depends-0.304.0.ebuild:
+  x86 stable wrt bug #400283
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> extutils-depends-0.304.0.ebuild:
+  Marking extutils-depends-0.304.0 ppc64 for bug 400283
+
+  02 Mar 2012; Markus Meier <maekke@gentoo.org>
+  extutils-depends-0.304.0.ebuild:
+  arm stable, bug #400283
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> extutils-depends-0.304.0.ebuild:
+  Marking extutils-depends-0.304.0 ppc for bug 400283
+
+  24 Feb 2012; Jeroen Roovers <jer@gentoo.org> extutils-depends-0.304.0.ebuild:
+  Stable for HPPA (bug #400283).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  extutils-depends-0.304.0.ebuild:
+  Stable for amd64, wrt bug #400283
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -extutils-depends-0.304.ebuild:
+  Cleanup
+
+*extutils-depends-0.304.0 (27 Aug 2011)
+
+  27 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +extutils-depends-0.304.0.ebuild:
+  Change version scheme
 
   02 Apr 2011; Torsten Veller <tove@gentoo.org> -extutils-depends-0.303.ebuild:
   Cleanup
@@ -223,4 +267,3 @@
   20 Jul 2003; Michael Cummings <mcummings@gentoo.org>
   extutils-depends-0.101.ebuild:
   dep for new gtk2-perl, submitted by Rigo Ketelings <rigo@home.nl> in bug 24036
-

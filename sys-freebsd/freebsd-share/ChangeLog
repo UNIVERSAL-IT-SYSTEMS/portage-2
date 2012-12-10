@@ -1,6 +1,62 @@
 # ChangeLog for sys-freebsd/freebsd-share
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-share/ChangeLog,v 1.37 2011/07/06 06:08:41 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-share/ChangeLog,v 1.48 2012/11/06 12:57:25 aballier Exp $
+
+*freebsd-share-9.1_rc3 (06 Nov 2012)
+
+  06 Nov 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-share-9.1_rc3.ebuild:
+  bump to rc3
+
+*freebsd-share-9.1_rc2 (14 Oct 2012)
+
+  14 Oct 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-share-9.1_rc2.ebuild:
+  bump to 9.1_rc2
+
+*freebsd-share-9.1_rc1 (11 Sep 2012)
+
+  11 Sep 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-share-9.1_rc1.ebuild:
+  bump to 9.1_rc1 from bsd overlay by Yuta SATOH, bug #426838
+
+  16 Jun 2012; Naohiro Aota <naota@gentoo.org> freebsd-share-9.0.ebuild:
+  Drop rc.conf{,.local} man pages. #420797
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> freebsd-share-9.0.ebuild:
+  keyword ~amd64-fbsd
+
+  30 Mar 2012; Alexis Ballier <aballier@gentoo.org> freebsd-share-9.0.ebuild,
+  +files/freebsd-share-9.0-gentoowaydir.patch:
+  do not create a lib32 dir, by Yuta SATOH in bug #408595
+
+  30 Mar 2012; Alexis Ballier <aballier@gentoo.org>
+  -freebsd-share-9.0_rc1.ebuild, -freebsd-share-9.0_rc2.ebuild,
+  -freebsd-share-9.0_rc3.ebuild:
+  remove old
+
+*freebsd-share-9.0 (16 Jan 2012)
+
+  16 Jan 2012; Alexis Ballier <aballier@gentoo.org> +freebsd-share-9.0.ebuild:
+  bump to 9.0
+
+*freebsd-share-9.0_rc3 (09 Dec 2011)
+
+  09 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-share-9.0_rc3.ebuild:
+  bump to 9.0_rc3
+
+*freebsd-share-9.0_rc2 (07 Dec 2011)
+
+  07 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-share-9.0_rc2.ebuild:
+  bump to rc2
+
+*freebsd-share-9.0_rc1 (07 Nov 2011)
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-share-9.0_rc1.ebuild:
+  bump to 9.0_rc1
 
 *freebsd-share-8.2 (06 Jul 2011)
 

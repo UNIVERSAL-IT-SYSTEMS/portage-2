@@ -1,6 +1,84 @@
 # ChangeLog for x11-libs/libxklavier
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libxklavier/ChangeLog,v 1.153 2011/06/14 07:17:35 mduft Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libxklavier/ChangeLog,v 1.175 2012/10/14 11:37:27 ssuominen Exp $
+
+*libxklavier-5.3 (14 Oct 2012)
+
+  14 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> +libxklavier-5.3.ebuild:
+  Version bump. Install compability symlink for dev-util/devhelp.
+
+  22 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> -libxklavier-5.1.ebuild,
+  -libxklavier-5.2.ebuild, -files/libxklavier-5.2-include-top_srcdir.patch:
+  old
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> libxklavier-5.2.1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #422363
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> libxklavier-5.2.1.ebuild:
+  arm stable, bug #422363
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> libxklavier-5.2.1.ebuild:
+  Stable for HPPA (bug #422363).
+
+  29 Jun 2012; Brent Baude <ranger@gentoo.org> libxklavier-5.2.1.ebuild:
+  Marking libxklavier-5.2.1 ppc for bug 422363
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> libxklavier-5.2.1.ebuild:
+  Marking libxklavier-5.2.1 ppc64 for bug 422363
+
+  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> libxklavier-5.2.1.ebuild:
+  marked x86 per bug 422363
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libxklavier-5.2.1.ebuild:
+  Stable for amd64, wrt bug #422363
+
+  19 May 2012; Anthony G. Basile <blueness@gentoo.org>
+  libxklavier-5.2.1.ebuild:
+  Keyword mips
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org> libxklavier-5.2.1.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libxklavier-5.1.ebuild,
+  libxklavier-5.2.ebuild, libxklavier-5.2.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*libxklavier-5.2.1 (17 Feb 2012)
+
+  17 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +libxklavier-5.2.1.ebuild:
+  Version bump and raise xkeyboard-config dependency to non-vulnerable version.
+
+  23 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> libxklavier-5.2.ebuild,
+  +files/libxklavier-5.2-include-top_srcdir.patch:
+  Insert missing $(top_srcdir) reference to introspection CFLAGS wrt #399871 by
+  Markus Wernig
+
+*libxklavier-5.2 (19 Jan 2012)
+
+  19 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +libxklavier-5.2.ebuild:
+  Version bump.
+
+  19 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -libxklavier-5.0.ebuild:
+  old
+
+  14 Jan 2012; Raúl Porcel <armin76@gentoo.org> libxklavier-5.1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #379371
+
+  30 Dec 2011; Jeroen Roovers <jer@gentoo.org> libxklavier-5.1.ebuild:
+  Stable for HPPA (bug #379371).
+
+  29 Dec 2011; Mark Loeser <halcy0n@gentoo.org> libxklavier-5.1.ebuild:
+  Stable for ppc/ppc64; bug #379371
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> libxklavier-5.1.ebuild:
+  x86 stable, bug #379371
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> libxklavier-5.1.ebuild:
+  arm stable, bug #379371
+
+  23 Dec 2011; Agostino Sarubbo <ago@gentoo.org> libxklavier-5.1.ebuild:
+  Stable for AMD64, wrt bug #379371
 
   14 Jun 2011; Markus Duft <mduft@gentoo.org> libxklavier-5.1.ebuild:
   added ~x86-interix prefix keyword

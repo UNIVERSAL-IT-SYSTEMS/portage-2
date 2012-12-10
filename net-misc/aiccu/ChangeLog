@@ -1,6 +1,40 @@
 # ChangeLog for net-misc/aiccu
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/aiccu/ChangeLog,v 1.27 2011/06/24 18:58:46 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/aiccu/ChangeLog,v 1.35 2012/12/01 20:52:08 xmw Exp $
+
+  01 Dec 2012; Michael Weber <xmw@gentoo.org> metadata.xml:
+  Removing Maciej from metadata.xml
+
+  01 Aug 2012; Michael Weber <xmw@gentoo.org>
+  +files/aiccu-2007.01.15-uclibc.patch, aiccu-2007.01.15-r2.ebuild:
+  Add uclibc fix (bug 230091), add CONFIG_CHECK for TUN.
+
+  01 Aug 2012; Michael Weber <xmw@gentoo.org> metadata.xml:
+  Add Maciej Grela as maintainer.
+
+*aiccu-2007.01.15-r2 (01 Aug 2012)
+
+  01 Aug 2012; Michael Weber <xmw@gentoo.org> +aiccu-2007.01.15-r2.ebuild,
+  +files/aiccu-2007.01.15-r2-init.gentoo.patch,
+  +files/aiccu-2007.01.15-setupscript.patch, aiccu-2007.01.15-r1.ebuild:
+  Add after ntpd (bug 390611, thanks Ewoud Kohl van Wijngaarden), fix
+  setupscript functionality (bug 353803, thanks Mateusz Dziadko), assign RDEPEND
+
+  01 Aug 2012; Michael Weber <xmw@gentoo.org> metadata.xml:
+  Add myself as maintainer.
+
+  31 Jul 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> metadata.xml:
+  Removed myself from <maintainer/>.
+
+  22 May 2012; Pacho Ramos <pacho@gentoo.org>
+  -files/aiccu-2007.01.15-as-needed.patch, metadata.xml:
+  New maintainer per http://archives.gentoo.org/gentoo-
+  dev/msg_d7cd530212d9d1c28ff256a8a4cca3b6.xml . Drop old files.
+
+  14 May 2012; Pacho Ramos <pacho@gentoo.org> -aiccu-2007.01.15.ebuild,
+  metadata.xml:
+  Drop maintainer as he will not take care of this stuff in the near future as
+  talked with him via mail.
 
   24 Jun 2011; Brent Baude <ranger@gentoo.org> aiccu-2007.01.15-r1.ebuild:
   Marking aiccu-2007.01.15-r1 ppc for bug 357265
@@ -110,4 +144,3 @@
 
   27 Mar 2005; Guy Martin <gmsoft@gentoo.org> +aiccu-2005.01.31.ebuild:
   Initital commit of the aiccu ebuild (close #64409).
-

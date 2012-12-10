@@ -1,6 +1,40 @@
 # ChangeLog for dev-haskell/haskell-src
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haskell-src/ChangeLog,v 1.37 2011/02/27 19:34:30 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haskell-src/ChangeLog,v 1.45 2012/09/12 15:32:33 qnikst Exp $
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org>
+  haskell-src-1.0.1.3.ebuild, haskell-src-1.0.1.4.ebuild,
+  haskell-src-1.0.1.5.ebuild:
+  move dev-haskell/haskell-src/haskell-src-1.0.1.4.ebuild ebuild to
+  mirror://hackage
+
+  17 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  haskell-src-1.0.1.4.ebuild:
+  alpha/ia64/sparc stable (bug #399983).
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> haskell-src-1.0.1.4.ebuild:
+  Marking haskell-src-1.0.1.4 ppc64 for bug 399983
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  haskell-src-1.0.1.4.ebuild:
+  x86 stable wrt bug #399983
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> haskell-src-1.0.1.4.ebuild:
+  Marking haskell-src-1.0.1.4 ppc for bug 399983
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> haskell-src-1.0.1.4.ebuild:
+  Stable for amd64, wrt bug #399983
+
+*haskell-src-1.0.1.5 (23 Jan 2012)
+
+  23 Jan 2012; Mark Wright <gienah@gentoo.org> +haskell-src-1.0.1.5.ebuild:
+  Bump haskell-src to 1.0.1.5
+
+*haskell-src-1.0.1.4 (02 Aug 2011)
+
+  02 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org>
+  +haskell-src-1.0.1.4.ebuild, +files/haskell-src-1.0.1.4-ghc-7.2.patch:
+  Version bump.
 
   27 Feb 2011; Sergei Trofimovich <slyfox@gentoo.org>
   -haskell-src-1.0.ebuild, -haskell-src-1.0-r1.ebuild,
@@ -150,4 +184,3 @@
 
   11 Mar 2007; <kolmodin@gentoo.org> +metadata.xml, +haskell-src-1.0.ebuild:
   Add dummy package meant for GHC 6.4
-

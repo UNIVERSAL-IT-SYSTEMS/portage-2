@@ -1,6 +1,42 @@
 # ChangeLog for dev-php/eaccelerator
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/eaccelerator/ChangeLog,v 1.22 2011/03/13 08:47:58 olemarkus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/eaccelerator/ChangeLog,v 1.30 2012/08/23 16:33:52 olemarkus Exp $
+
+  23 Aug 2012; Ole Markus With <olemarkus@gentoo.org>
+  -eaccelerator-0.9.6.1-r1.ebuild, -eaccelerator-0.9.6.1-r3.ebuild,
+  -eaccelerator-0.9.6.1-r4.ebuild:
+  Removing old ebuilds
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> eaccelerator-0.9.6.1-r5.ebuild:
+  x86 stable, bug #418897
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
+  eaccelerator-0.9.6.1-r5.ebuild:
+  Stable for amd64, wrt bug #418897
+
+  07 Jun 2012; Zac Medico <zmedico@gentoo.org> eaccelerator-0.9.6.1-r1.ebuild,
+  eaccelerator-0.9.6.1-r3.ebuild, eaccelerator-0.9.6.1-r4.ebuild,
+  eaccelerator-0.9.6.1-r5.ebuild:
+  inherit user for enewgroup and enewuser
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> eaccelerator-0.9.6.1-r1.ebuild,
+  eaccelerator-0.9.6.1-r3.ebuild, eaccelerator-0.9.6.1-r4.ebuild,
+  eaccelerator-0.9.6.1-r5.ebuild:
+  Move EAPI assignment to top of ebuild, bug 411875.
+
+*eaccelerator-0.9.6.1-r5 (16 Feb 2012)
+
+  16 Feb 2012; Ole Markus With <olemarkus@gentoo.org>
+  +eaccelerator-0.9.6.1-r5.ebuild:
+  Revbump fixing bug 391039
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  eaccelerator-0.9.6.1-r4.ebuild:
+  x86 stable wrt bug #388523
+
+  29 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  eaccelerator-0.9.6.1-r4.ebuild:
+  Stable on amd64 wrt bug #388523
 
   13 Mar 2011; <olemarkus@gentoo.org> -eaccelerator-0.9.5.3-r1.ebuild,
   -eaccelerator-0.9.6.ebuild, -eaccelerator-0.9.6.1.ebuild,
@@ -177,4 +213,3 @@
   05 Mar 2006; Sebastian Bergmann <sebastian@gentoo.org> +metadata.xml,
   +eaccelerator-0.9.5_beta1.ebuild:
   Initial ebuild.
-

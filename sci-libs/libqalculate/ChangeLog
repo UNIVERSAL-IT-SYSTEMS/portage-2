@@ -1,6 +1,24 @@
 # ChangeLog for sci-libs/libqalculate
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/libqalculate/ChangeLog,v 1.47 2011/03/02 20:59:42 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/libqalculate/ChangeLog,v 1.51 2012/08/04 21:40:15 bicatali Exp $
+
+  04 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  libqalculate-0.9.7-r1.ebuild:
+  Fixed for prefix
+
+*libqalculate-0.9.7-r1 (10 Jul 2012)
+
+  10 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +libqalculate-0.9.7-r1.ebuild:
+  Optionalize sci-visualization/gnuplot with USE="gnuplot" wrt #425622 by Maxim
+  Kammerer (and workaround hardcoded HTML reference directory in install phase)
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> libqalculate-0.9.7.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  libqalculate-0.9.7.ebuild:
+  USE="static-libs" and remove libtool file
 
   02 Mar 2011; Justin Lecher <jlec@gentoo.org> libqalculate-0.9.7.ebuild:
   Correct Slots for gtk 3 introduction to tree
@@ -200,4 +218,3 @@
   +libqalculate-0.8.0.ebuild:
   Initial import. This package, along with "qalculate-gtk" and "qalculate-kde"
   will eventually replace the "qalculate" package.
-

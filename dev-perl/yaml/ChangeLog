@@ -1,6 +1,63 @@
 # ChangeLog for dev-perl/yaml
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/yaml/ChangeLog,v 1.90 2011/07/30 10:50:34 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/yaml/ChangeLog,v 1.105 2012/09/02 07:38:17 tove Exp $
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -yaml-0.71.ebuild,
+  -yaml-0.730.0.ebuild, -yaml-0.750.0.ebuild, -yaml-0.770.0.ebuild,
+  -yaml-0.800.0.ebuild:
+  Cleanup
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> yaml-0.810.0.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #423227
+
+  19 Jul 2012; Markus Meier <maekke@gentoo.org> yaml-0.810.0.ebuild:
+  arm stable, bug #423227
+
+*yaml-0.840.0 (14 Jul 2012)
+
+  14 Jul 2012; Torsten Veller <tove@gentoo.org> +yaml-0.840.0.ebuild:
+  Version bump
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> yaml-0.810.0.ebuild:
+  Marking yaml-0.810.0 ppc64 for bug 423227
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> yaml-0.810.0.ebuild:
+  Marking yaml-0.810.0 ppc for bug 423227
+
+  01 Jul 2012; Akinori Hattori <hattya@gentoo.org> yaml-0.810.0.ebuild:
+  ia64 stable wrt bug #423227.
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> yaml-0.810.0.ebuild:
+  Stable for HPPA (bug #423227).
+
+  25 Jun 2012; Jeff Horelick <jdhore@gentoo.org> yaml-0.810.0.ebuild:
+  marked x86 per bug 423227
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> yaml-0.810.0.ebuild:
+  Stable for amd64, wrt bug #423227
+
+*yaml-0.810.0 (19 Apr 2012)
+
+  19 Apr 2012; Torsten Veller <tove@gentoo.org> +yaml-0.810.0.ebuild:
+  Version bump
+
+*yaml-0.800.0 (12 Feb 2012)
+
+  12 Feb 2012; Torsten Veller <tove@gentoo.org> +yaml-0.800.0.ebuild:
+  Version bump
+
+*yaml-0.770.0 (01 Oct 2011)
+
+  01 Oct 2011; Torsten Veller <tove@gentoo.org> +yaml-0.770.0.ebuild:
+  Version bump
+
+*yaml-0.750.0 (27 Sep 2011)
+
+  27 Sep 2011; Torsten Veller <tove@gentoo.org> +yaml-0.750.0.ebuild:
+  Version bump
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> yaml-0.71.ebuild,
   yaml-0.730.0.ebuild:
@@ -315,4 +372,3 @@
 
   26 Jun 2003; Michael Cummings <mcummings@gentoo.org> yaml-0.35.ebuild:
   YAML is a dep for alzabo
-

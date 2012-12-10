@@ -2,17 +2,13 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
   <herd>crypto</herd>
-  <maintainer>
-    <email>crypto@gentoo.org</email>
-    <name>Crypto Herd</name>
-  </maintainer>
   <longdescription>
     GnuPG is a complete and free replacement for PGP. Because it does
     not use the patented IDEA algorithm, it can be used without any
     restrictions. GnuPG is a RFC2440 (OpenPGP) compliant application.
   </longdescription>
   <use>
-    <flag name='idea'>Use the patented IDEA algorithm</flag>
+    <flag name='idea'>Add support for the IDEA algorithm</flag>
     <flag name='openct'>
       Bring in <pkg>dev-libs/openct</pkg> as a dependency; enable
       scdaemon.

@@ -1,20 +1,20 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/file/file-5.07-r2.ebuild,v 1.1 2011/06/06 23:50:24 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/file/file-5.07-r2.ebuild,v 1.3 2012/11/06 06:58:25 ulm Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? *"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="*-jython"
 
-inherit eutils distutils libtool flag-o-matic
+inherit eutils distutils libtool flag-o-matic toolchain-funcs
 
 DESCRIPTION="identify a file's format by scanning binary data for patterns"
 HOMEPAGE="ftp://ftp.astron.com/pub/file/"
 SRC_URI="ftp://ftp.astron.com/pub/file/${P}.tar.gz
 	ftp://ftp.gw.com/mirrors/pub/unix/file/${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
 IUSE="python static-libs zlib"
@@ -36,7 +36,7 @@ src_prepare() {
 
 usex() { use $1 && echo ${2:-yes} || echo ${3:-no} ; }
 
-wd() { echo ${WORKDIR}/build-${CHOST}; }
+wd() { echo "${WORKDIR}"/build-${CHOST}; }
 do_configure() {
 	ECONF_SOURCE=${S}
 

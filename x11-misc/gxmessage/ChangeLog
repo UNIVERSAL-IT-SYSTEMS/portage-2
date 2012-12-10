@@ -1,6 +1,36 @@
 # ChangeLog for x11-misc/gxmessage
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/gxmessage/ChangeLog,v 1.29 2011/03/02 17:09:35 signals Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/gxmessage/ChangeLog,v 1.38 2012/07/29 23:32:34 jer Exp $
+
+  29 Jul 2012; Jeroen Roovers <jer@gentoo.org> -gxmessage-2.6.2.ebuild:
+  Ancient.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> gxmessage-2.12.4.ebuild:
+  sparc stable wrt #391233
+
+  22 May 2012; Brent Baude <ranger@gentoo.org> gxmessage-2.12.4.ebuild:
+  Marking gxmessage-2.12.4 ppc for bug 391233
+
+  18 May 2012; Jeff Horelick <jdhore@gentoo.org> gxmessage-2.12.4.ebuild:
+  marked x86 per bug 391233
+
+*gxmessage-2.20.0 (17 May 2012)
+
+  17 May 2012; Samuli Suominen <ssuominen@gentoo.org> +gxmessage-2.20.0.ebuild:
+  Version bump wrt #416295 by "df"
+
+  08 May 2012; Agostino Sarubbo <ago@gentoo.org> gxmessage-2.12.4.ebuild:
+  Stable for amd64, wrt bug #391233
+
+  08 May 2012; Samuli Suominen <ssuominen@gentoo.org> gxmessage-2.12.4.ebuild:
+  Update hicolor icon cache for gxmessage.png.
+
+  08 May 2012; Samuli Suominen <ssuominen@gentoo.org> gxmessage-2.12.4.ebuild:
+  Remove USE="nls" because dev-util/intltool is always required wrt #374457
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gxmessage-2.6.2.ebuild,
+  gxmessage-2.12.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   02 Mar 2011; Kevin McCarthy <signals@gentoo.org> gxmessage-2.6.2.ebuild:
   Slotted gtk+ depends and EAPI=2 bump to support it.

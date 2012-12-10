@@ -1,6 +1,38 @@
 # ChangeLog for app-doc/php-docs
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/php-docs/ChangeLog,v 1.49 2010/10/30 10:14:24 olemarkus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-doc/php-docs/ChangeLog,v 1.58 2012/05/29 16:55:57 aballier Exp $
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org>
+  php-docs-20101029-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> php-docs-20101029-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #399923
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  php-docs-20101029-r1.ebuild:
+  x86 stable wrt bug #399923
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> php-docs-20101029-r1.ebuild:
+  Marking php-docs-20101029-r1 ppc64 for bug 399923
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> php-docs-20101029-r1.ebuild:
+  Marking php-docs-20101029-r1 ppc for bug 399923
+
+  29 Feb 2012; Markus Meier <maekke@gentoo.org> php-docs-20101029-r1.ebuild:
+  arm stable, bug #399923
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> php-docs-20101029-r1.ebuild:
+  Stable for HPPA (bug #399923).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> php-docs-20101029-r1.ebuild:
+  Stable for amd64, wrt bug #399923
+
+*php-docs-20101029-r1 (09 Sep 2011)
+
+  09 Sep 2011; Ole Markus With <olemarkus@gentoo.org>
+  +php-docs-20101029-r1.ebuild:
+  Revbump which force users to add a supported language to LINGUAS
 
   30 Oct 2010; <olemarkus@gentoo.org> -php-docs-20101022.ebuild,
   +php-docs-20101029.ebuild:

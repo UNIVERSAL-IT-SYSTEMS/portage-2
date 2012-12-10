@@ -1,6 +1,47 @@
 # ChangeLog for dev-perl/Geography-Countries
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Geography-Countries/ChangeLog,v 1.20 2010/01/10 09:41:37 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Geography-Countries/ChangeLog,v 1.30 2012/06/24 13:00:03 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org>
+  -Geography-Countries-1.4.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  Geography-Countries-1.4.ebuild, Geography-Countries-2009041301.0.0.ebuild:
+  Drop ia64/sparc keywords
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Geography-Countries-2009041301.0.0.ebuild:
+  x86 stable wrt bug #400127
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org>
+  Geography-Countries-2009041301.0.0.ebuild:
+  Marking Geography-Countries-2009041301.0.0 ppc64 for bug 400127
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org>
+  Geography-Countries-2009041301.0.0.ebuild:
+  Marking Geography-Countries-2009041301.0.0 ppc for bug 400127
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org>
+  Geography-Countries-2009041301.0.0.ebuild:
+  Stable for HPPA (bug #400127).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  Geography-Countries-2009041301.0.0.ebuild:
+  Stable for amd64, wrt bug #400127
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org>
+  -Geography-Countries-2009041301.ebuild:
+  Cleanup
+
+*Geography-Countries-2009041301.0.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +Geography-Countries-2009041301.0.0.ebuild:
+  Change version scheme
 
   10 Jan 2010; Fabian Groffen <grobian@gentoo.org>
   Geography-Countries-2009041301.ebuild:
@@ -85,4 +126,3 @@
   22 Sep 2004; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Geography-Countries-1.4.ebuild:
   Dep for a package for spamassassin
-

@@ -1,6 +1,36 @@
 # ChangeLog for app-dicts/myspell-de
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-de/ChangeLog,v 1.26 2010/09/27 22:44:00 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-de/ChangeLog,v 1.31 2012/08/18 09:20:02 johu Exp $
+
+*myspell-de-2012.06.17 (18 Aug 2012)
+
+  18 Aug 2012; Johannes Huber <johu@gentoo.org> +myspell-de-2012.06.17.ebuild,
+  -myspell-de-2012.06.17-r1.ebuild:
+  Restore -r0 remove newer as it is broken by scarabeus.
+
+*myspell-de-2012.06.17-r1 (17 Aug 2012)
+
+  17 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +myspell-de-2012.06.17-r1.ebuild, -myspell-de-2012.06.17.ebuild:
+  Remove the frami suffix from dict files to solve bug#430468.
+
+*myspell-de-2012.06.17 (13 Aug 2012)
+
+  13 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +myspell-de-2012.06.17.ebuild:
+  Version bump.
+
+*myspell-de-2012.06.10 (17 Jun 2012)
+
+  17 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +myspell-de-2012.06.10.ebuild, -myspell-de-20060316.ebuild,
+  -myspell-de-20080915-r1.ebuild:
+  Version bump to latest release wrt bug#305725. Remove older which represent
+  itself as newer.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> myspell-de-20060316.ebuild,
+  myspell-de-20080915-r1.ebuild:
+  keyword ~amd64-fbsd
 
   27 Sep 2010; Mart Raudsepp <leio@gentoo.org>
   myspell-de-20080915-r1.ebuild:
@@ -99,4 +129,3 @@
   01 May 2006; Kevin F. Quinn <kevquinn@gentoo.org> +metadata.xml,
   +myspell-de-20060316.ebuild:
   New ebuild for German myspell dictionary
-

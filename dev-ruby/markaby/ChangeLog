@@ -1,6 +1,35 @@
 # ChangeLog for dev-ruby/markaby
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/markaby/ChangeLog,v 1.24 2011/02/26 16:33:08 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/markaby/ChangeLog,v 1.32 2012/05/01 18:24:28 armin76 Exp $
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> markaby-0.7.2.ebuild:
+  Drop ia64/sparc keywords
+
+  01 Jan 2012; Hans de Graaff <graaff@gentoo.org> -markaby-0.5.ebuild:
+  Remove old version.
+
+  27 Dec 2011; Mark Loeser <halcy0n@gentoo.org> markaby-0.5.ebuild:
+  Revert back to ~ppc64; bug #368723
+
+  06 Dec 2011; Hans de Graaff <graaff@gentoo.org> -markaby-0.6.9-r1.ebuild,
+  -markaby-0.7.1.ebuild:
+  Remove old versions.
+
+  04 Dec 2011; Markos Chandras <hwoarang@gentoo.org> markaby-0.7.2.ebuild:
+  Stable on amd64 wrt bug #368723
+
+  28 Aug 2011; Hans de Graaff <graaff@gentoo.org> markaby-0.7.1.ebuild,
+  markaby-0.7.2.ebuild:
+  Fix spec order issue in a different way to cater to even more variation.
+
+  24 Aug 2011; Hans de Graaff <graaff@gentoo.org> markaby-0.7.1.ebuild:
+  Also apply fix for bug 343693.
+
+*markaby-0.7.2 (24 Aug 2011)
+
+  24 Aug 2011; Hans de Graaff <graaff@gentoo.org> markaby-0.7.1.ebuild,
+  +markaby-0.7.2.ebuild:
+  Version bump. Also fix bug 343693.
 
   26 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org> markaby-0.7.1.ebuild:
   Marked ~ppc64 wrt #339588

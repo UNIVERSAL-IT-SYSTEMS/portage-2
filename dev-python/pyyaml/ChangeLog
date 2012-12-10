@@ -1,6 +1,21 @@
 # ChangeLog for dev-python/pyyaml
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyyaml/ChangeLog,v 1.23 2011/07/10 12:31:55 sbriesen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyyaml/ChangeLog,v 1.28 2012/07/01 15:53:42 hattya Exp $
+
+  01 Jul 2012; Akinori Hattori <hattya@gentoo.org> pyyaml-3.10.ebuild:
+  keyword ~ia64.
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pyyaml-3.10.ebuild:
+  x86 stable wrt bug #400337
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> pyyaml-3.10.ebuild:
+  Marking pyyaml-3.10 ppc64 for bug 400337
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> pyyaml-3.10.ebuild:
+  Marking pyyaml-3.10 ppc for bug 400337
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> pyyaml-3.10.ebuild:
+  Stable for amd64, wrt bug #400337
 
 *pyyaml-3.10 (10 Jul 2011)
 

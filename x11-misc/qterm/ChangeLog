@@ -1,6 +1,35 @@
 # ChangeLog for x11-misc/qterm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/qterm/ChangeLog,v 1.38 2011/01/29 18:21:58 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/qterm/ChangeLog,v 1.46 2012/08/21 01:14:41 naota Exp $
+
+  21 Aug 2012; Naohiro Aota <naota@gentoo.org>
+  +files/qterm-0.5.12-glibc216.patch, qterm-0.5.12.ebuild:
+  Add patch from upstrem to fix build failure with gcc 4.7. #427490
+
+  19 Jul 2012; Michael Palimaka <kensington@gentoo.org> qterm-0.5.12.ebuild:
+  Add missing slot dependencies on Qt.
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> qterm-0.5.12.ebuild:
+  Marking qterm-0.5.12 ppc for bug 400531
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> qterm-0.5.12.ebuild:
+  x86 stable wrt bug #400531
+
+  20 Mar 2012; Agostino Sarubbo <ago@gentoo.org> qterm-0.5.12.ebuild:
+  Stable for amd64, wrt bug #400531
+
+  14 Mar 2012; Naohiro Aota <naota@gentoo.org> qterm-0.5.11.ebuild:
+  Add workaround patch to drop cmake 2.6.x compatible statement. Bug #407997
+
+  14 Mar 2012; Naohiro Aota <naota@gentoo.org> qterm-0.5.12.ebuild:
+  Add missing dependency: kde-base/kdelibs and x11-libs/qt-assistant. Bug
+  #405577
+
+*qterm-0.5.12 (18 Aug 2011)
+
+  18 Aug 2011; Naohiro Aota <naota@gentoo.org> +qterm-0.5.12.ebuild,
+  +files/qterm-0.5.12-qt4.patch:
+  Version bump; Add patch to drop cmake 2.6.x compatible statement
 
   29 Jan 2011; Tomáš Chvátal <scarabeus@gentoo.org> -qterm-0.5.2-r2.ebuild,
   -files/qterm-0.5.2-abs.patch, -files/qterm-0.5.2-as-needed.patch,
@@ -167,4 +196,3 @@
   Initial import. Thanks to <b88901143@ms88.ntu.edu.tw>, Lu Ran
   <hephooey@hotmail.com>, Li Zhengang <022021199@fudan.edu.cn> and
   Ming Zhao <zhaoming@tsinghua.org.cn>. Closing bug #47487
-

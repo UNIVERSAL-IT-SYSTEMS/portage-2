@@ -1,6 +1,43 @@
 # ChangeLog for net-misc/chrony
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/chrony/ChangeLog,v 1.80 2011/07/15 04:06:59 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/chrony/ChangeLog,v 1.90 2012/11/27 04:22:49 blueness Exp $
+
+  27 Nov 2012; Anthony G. Basile <blueness@gentoo.org> chrony-1.27_pre1.ebuild:
+  keyword ~arm, bug #444714
+
+  11 Apr 2012; Jeroen Roovers <jer@gentoo.org> chrony-1.27_pre1.ebuild:
+  Do not use dev-libs/nss either, even if it would work.
+
+*chrony-1.27_pre1 (11 Apr 2012)
+
+  11 Apr 2012; Jeroen Roovers <jer@gentoo.org> +chrony-1.27_pre1.ebuild,
+  chrony-1.26.ebuild:
+  Do not use dev-libs/libtomcrypt even if found (bug #262601). Add pre-release
+  version, reintroduce USE=ipv6, clean up a lot.
+
+  15 Feb 2012; Jeroen Roovers <jer@gentoo.org> -chrony-1.25.ebuild,
+  -files/chrony-1.25-linux3.patch:
+  Old.
+
+  14 Feb 2012; Brent Baude <ranger@gentoo.org> chrony-1.26.ebuild:
+  Marking chrony-1.26 ppc for bug 383687
+
+  29 Dec 2011; Jeroen Roovers <jer@gentoo.org> chrony-1.25.ebuild,
+  -chrony-1.25-r1.ebuild, -chrony-1.26_pre1.ebuild:
+  Remove old.
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> chrony-1.26.ebuild:
+  sparc stable wrt #383687
+
+  01 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> chrony-1.26.ebuild:
+  x86 stable wrt bug #383687
+
+  20 Sep 2011; Jeroen Roovers <jer@gentoo.org> chrony-1.26.ebuild:
+  Stable for HPPA (bug #383687).
+
+  20 Sep 2011; Tony Vroon <chainsaw@gentoo.org> chrony-1.26.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #383687.
 
   15 Jul 2011; Jeroen Roovers <jer@gentoo.org> -files/chrony-1.21-hppa.patch,
   -chrony-1.24-r2.ebuild:

@@ -1,6 +1,90 @@
 # ChangeLog for sys-libs/libcap-ng
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libcap-ng/ChangeLog,v 1.30 2011/02/19 19:23:31 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/libcap-ng/ChangeLog,v 1.53 2012/11/24 02:36:09 radhermit Exp $
+
+  24 Nov 2012; Tim Harder <radhermit@gentoo.org> -libcap-ng-0.7.ebuild:
+  Remove old.
+
+*libcap-ng-0.7.3 (24 Nov 2012)
+
+  24 Nov 2012; Tim Harder <radhermit@gentoo.org> +libcap-ng-0.7.3.ebuild:
+  Version bump.
+
+  02 Nov 2012; Tim Harder <radhermit@gentoo.org> libcap-ng-0.7.1.ebuild:
+  Drop unused sys-apps/attr dep as noted by Arfrever.
+
+*libcap-ng-0.7.1 (02 Nov 2012)
+
+  02 Nov 2012; Tim Harder <radhermit@gentoo.org> +libcap-ng-0.7.1.ebuild:
+  Version bump.
+
+  26 Jul 2012; Tim Harder <radhermit@gentoo.org> libcap-ng-0.6.6.ebuild,
+  libcap-ng-0.7.ebuild:
+  Remove unused eutils inherit.
+
+*libcap-ng-0.7 (25 Jul 2012)
+
+  25 Jul 2012; Tim Harder <radhermit@gentoo.org> +libcap-ng-0.7.ebuild:
+  Version bump.
+
+  19 May 2012; Anthony G. Basile <blueness@gentoo.org> libcap-ng-0.6.6.ebuild:
+  Keyword mips
+
+  06 Apr 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #63588
+
+  03 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -libcap-ng-0.6.2.ebuild,
+  -libcap-ng-0.6.4.ebuild, -files/libcap-ng-0.6.4-fix_tests_building.patch,
+  -files/libcap-ng-0.6.4-python.patch, -libcap-ng-0.6.5.ebuild,
+  -files/libcap-ng-gentoo.patch:
+  old
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> libcap-ng-0.6.6.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #407773
+
+  25 Mar 2012; Markus Meier <maekke@gentoo.org> libcap-ng-0.6.6.ebuild:
+  arm stable, bug #407773
+
+  16 Mar 2012; Thomas Kahle <tomka@gentoo.org> libcap-ng-0.6.6.ebuild:
+  marked x86 per bug 407773
+
+  15 Mar 2012; Jeroen Roovers <jer@gentoo.org> libcap-ng-0.6.6.ebuild:
+  Stable for HPPA (bug #407773).
+
+  13 Mar 2012; Brent Baude <ranger@gentoo.org> libcap-ng-0.6.6.ebuild:
+  Marking libcap-ng-0.6.6 ppc for bug 407773
+
+  12 Mar 2012; Brent Baude <ranger@gentoo.org> libcap-ng-0.6.6.ebuild:
+  Marking libcap-ng-0.6.6 ppc64 for bug 407773
+
+  11 Mar 2012; Agostino Sarubbo <ago@gentoo.org> libcap-ng-0.6.6.ebuild:
+  Stable for amd64, wrt bug #407773
+
+  11 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> libcap-ng-0.6.6.ebuild:
+  Raise dev-lang/swig dependency wrt #407693 by "godfath3rr"
+
+  10 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> libcap-ng-0.6.6.ebuild:
+  Restrict *-jython as per comment from Arfrever.
+
+  10 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> libcap-ng-0.6.6.ebuild:
+  USE="static-libs" and remove useless libtool archive.
+
+  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> libcap-ng-0.6.4.ebuild,
+  libcap-ng-0.6.5.ebuild, libcap-ng-0.6.6.ebuild:
+  Restricting pypy #403813
+
+  08 Jan 2012; Raúl Porcel <armin76@gentoo.org> libcap-ng-0.6.5.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #396137
+
+*libcap-ng-0.6.6 (10 Nov 2011)
+
+  10 Nov 2011; Alin Năstac <mrness@gentoo.org> -libcap-ng-0.6.1.ebuild,
+  +libcap-ng-0.6.6.ebuild:
+  Version bump bug #389253 (also fixes test failure, see bug #370473).
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> libcap-ng-0.6.1.ebuild,
+  libcap-ng-0.6.2.ebuild, libcap-ng-0.6.4.ebuild, libcap-ng-0.6.5.ebuild:
+  Add ~s390/~sh
 
   19 Feb 2011; Markus Meier <maekke@gentoo.org> libcap-ng-0.6.5.ebuild:
   arm stable, bug #353448

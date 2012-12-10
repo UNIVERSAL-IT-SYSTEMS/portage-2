@@ -1,20 +1,20 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-murrine/gtk-engines-murrine-0.98.1.1.ebuild,v 1.1 2011/04/04 23:24:53 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-murrine/gtk-engines-murrine-0.98.1.1.ebuild,v 1.6 2012/06/03 03:11:11 xmw Exp $
 
-EAPI="2"
+EAPI="4"
 GNOME_ORG_MODULE="murrine"
+GNOME_TARBALL_SUFFIX="bz2"
 
-inherit eutils gnome.org
+inherit gnome.org
 
-MY_PN="${GNOME_ORG_MODULE}"
 DESCRIPTION="Murrine GTK+2 Cairo Engine"
 
 HOMEPAGE="http://www.cimitan.com/murrine/"
 
 LICENSE="LGPL-2.1 LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ppc x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux"
 IUSE="+themes animation-rtl"
 
 RDEPEND=">=x11-libs/gtk+-2.18:2
@@ -24,9 +24,9 @@ PDEPEND="themes? ( x11-themes/murrine-themes )"
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.37.1
 	sys-devel/gettext
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
-S="${WORKDIR}/${MY_PN}-${PV}"
+DOCS="AUTHORS ChangeLog NEWS TODO"
 
 src_configure() {
 	econf --enable-animation \
@@ -35,7 +35,7 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-
-	dodoc AUTHORS ChangeLog NEWS TODO
+	default
+	# Remove useless .la files
+	find "${D}" -name '*.la' -exec rm -f {} + || die
 }

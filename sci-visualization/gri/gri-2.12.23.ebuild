@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/gri/gri-2.12.23.ebuild,v 1.1 2011/07/28 00:10:12 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/gri/gri-2.12.23.ebuild,v 1.6 2012/08/01 23:39:06 bicatali Exp $
 
 EAPI=4
 
@@ -12,12 +12,13 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc emacs examples"
 
-DEPEND="sci-libs/netcdf
+DEPEND="
+	>=sci-libs/netcdf-4
 	virtual/latex-base
-	|| ( media-gfx/imagemagick[png] media-gfx/graphicsmagick[png] )
+	|| ( media-gfx/imagemagick[png] media-gfx/graphicsmagick[png,imagemagick] )
 	app-text/ghostscript-gpl
 	emacs? ( virtual/emacs )"
 RDEPEND="${DEPEND}"
@@ -25,10 +26,18 @@ RDEPEND="${DEPEND}"
 SITEFILE="50gri-gentoo.el"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-2.12.18-postscript.patch
+	epatch \
+		"${FILESDIR}"/${PN}-2.12.18-postscript.patch \
+		"${FILESDIR}"/${P}-perl-5.16.patch
+	# Makefile.am contains a call to the missing script that triggers gentoo qa
+	sed -i -e 's|${SHELL} ../missing --run tex|tex|g' \
+		doc/Makefile.in || die
 }
 
 src_compile() {
+	# gentoo bug #302621
+	use hdf5 && has_version sci-libs/hdf5[mpi] && \
+		export CXX=mpicxx CC=mpicc
 	VARTEXFONTS="${T}/fonts" emake
 	use emacs && elisp-compile src/*.el
 }
@@ -36,25 +45,25 @@ src_compile() {
 src_install() {
 	default
 	# license text not necessary
-	rm "${ED}"/usr/share/gri/doc/license.txt
+	rm "${ED}"/usr/share/gri/doc/license.txt || die
 
 	# install target installs it always and in the wrong location
 	# remove it here and call elisp-install in case of USE=emacs below
-	rm -rf "${ED}"/usr/share/emacs
+	rm -rf "${ED}"/usr/share/emacs || die
 
 	if ! use doc; then
-		sed -i -e "s/Manual at.*//" "${ED}"/usr/share/gri/startup.msg
-		rm "${ED}"/usr/share/gri/doc/{cmd,}refcard.ps
-		rm -rf "${D}"/usr/share/gri/doc/html
+		sed -i -e "s/Manual at.*//" "${ED}"/usr/share/gri/startup.msg || die
+		rm "${ED}"/usr/share/gri/doc/{cmd,}refcard.ps || die
+		rm -rf "${ED}"/usr/share/gri/doc/html || die
 	fi
 	if ! use examples; then
-		sed -i -e "s/Examples at.*//" "${ED}"/usr/share/gri/startup.msg
-		rm -rf "${ED}"/usr/share/gri/doc/examples
+		sed -i -e "s/Examples at.*//" "${ED}"/usr/share/gri/startup.msg || die
+		rm -rf "${ED}"/usr/share/gri/doc/examples || die
 	fi
-
 	#move docs to the proper place
-	mv "${ED}"/usr/share/gri/doc/* "${ED}"/usr/share/doc/${PF}
-	rmdir "${ED}"/usr/share/gri/doc
+	use doc || use examples && \
+		mv -f "${ED}"/usr/share/gri/doc/* "${ED}"/usr/share/doc/${PF}
+	rm -rf "${ED}"/usr/share/gri/doc || die
 
 	if use emacs; then
 		cd src

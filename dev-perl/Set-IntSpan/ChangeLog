@@ -1,6 +1,42 @@
 # ChangeLog for dev-perl/Set-IntSpan
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Set-IntSpan/ChangeLog,v 1.38 2011/01/14 15:58:59 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Set-IntSpan/ChangeLog,v 1.48 2012/11/30 06:07:23 bicatali Exp $
+
+  30 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  Set-IntSpan-1.160.0.ebuild:
+  Keyword amd64-linux and x86-linux
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Set-IntSpan-1.14.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> Set-IntSpan-1.14.ebuild,
+  Set-IntSpan-1.160.0.ebuild:
+  Drop ia64/sparc keywords
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Set-IntSpan-1.160.0.ebuild:
+  x86 stable wrt bug #400215
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  Set-IntSpan-1.160.0.ebuild:
+  Stable on alpha, bug #400215
+
+  24 Feb 2012; Jeroen Roovers <jer@gentoo.org> Set-IntSpan-1.160.0.ebuild:
+  Stable for HPPA (bug #400215).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Set-IntSpan-1.160.0.ebuild:
+  Stable for amd64, wrt bug #400215
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Set-IntSpan-1.160.ebuild:
+  Cleanup
+
+*Set-IntSpan-1.160.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +Set-IntSpan-1.160.0.ebuild:
+  Change version scheme
 
   14 Jan 2011; Torsten Veller <tove@gentoo.org> -Set-IntSpan-1.12.ebuild,
   -Set-IntSpan-1.13.ebuild, -Set-IntSpan-1.15.ebuild:
@@ -153,4 +189,3 @@
 
   23 Dec 2003; <rac@gentoo.org> Set-IntSpan-1.07.ebuild:
   Initial import based on bug 34203
-

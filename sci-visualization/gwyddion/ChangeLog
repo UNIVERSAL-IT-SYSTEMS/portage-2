@@ -1,6 +1,64 @@
 # ChangeLog for sci-visualization/gwyddion
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/gwyddion/ChangeLog,v 1.29 2011/07/27 23:24:33 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/gwyddion/ChangeLog,v 1.44 2012/12/06 10:11:45 jlec Exp $
+
+  06 Dec 2012; Justin Lecher <jlec@gentoo.org> -gwyddion-2.25.ebuild:
+  Drop old
+
+  06 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gwyddion-2.29.ebuild:
+  x86 stable wrt bug #442060
+
+*gwyddion-2.30 (30 Nov 2012)
+
+  30 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> +gwyddion-2.30.ebuild:
+  Version bump
+
+  30 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> -gwyddion-2.28.ebuild,
+  gwyddion-2.29.ebuild:
+  Verbose build log (bug #443084)
+
+  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org> gwyddion-2.29.ebuild:
+  Stable for amd64, wrt bug #442060
+
+  07 Nov 2012; Justin Lecher <jlec@gentoo.org> gwyddion-2.29.ebuild:
+  Fix typo, #442234
+
+*gwyddion-2.29 (01 Aug 2012)
+
+  01 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> +gwyddion-2.29.ebuild,
+  -gwyddion-2.27.ebuild:
+  Version bump
+
+*gwyddion-2.28 (06 Jun 2012)
+
+  06 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org> +gwyddion-2.28.ebuild:
+  Version bump. Forcing in source building, hopefully fixing bug #419899
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gwyddion-2.25.ebuild,
+  gwyddion-2.27.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*gwyddion-2.27 (25 Apr 2012)
+
+  25 Apr 2012; Sébastien Fabbro <bicatali@gentoo.org> +gwyddion-2.27.ebuild:
+  Version bump
+
+  17 Oct 2011; Justin Lecher <jlec@gentoo.org> ChangeLog:
+  Cleaned old
+
+  15 Oct 2011; Markus Meier <maekke@gentoo.org> gwyddion-2.25.ebuild:
+  x86 stable, bug #385805
+
+  14 Oct 2011; Markos Chandras <hwoarang@gentoo.org> gwyddion-2.25.ebuild:
+  Stable on amd64 wrt bug #385805
+
+  14 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> gwyddion-2.25.ebuild,
+  +files/gwyddion-2.25-libpng15.patch:
+  Fix building with libpng15 (missing zlib.h include) wrt #380635 by Diego Elio
+  Pettenò
+
+  25 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> gwyddion-2.25.ebuild:
+  QA: add missing libpng dependency.
 
 *gwyddion-2.25 (27 Jul 2011)
 
@@ -144,4 +202,3 @@
   +gwyddion-1.12.ebuild:
   Initial import of ebuild, thanks to Aaron Rubinstein <mrodenstein@web.de>
   for the original ebuild, closes bug 54327.
-

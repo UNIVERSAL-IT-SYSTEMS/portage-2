@@ -1,6 +1,82 @@
 # ChangeLog for x11-apps/mkfontscale
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-apps/mkfontscale/ChangeLog,v 1.78 2011/07/01 23:55:39 chithanh Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-apps/mkfontscale/ChangeLog,v 1.101 2012/08/26 16:27:19 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> mkfontscale-1.1.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> mkfontscale-1.1.0.ebuild:
+  Marking mkfontscale-1.1.0 ppc stable for bug 419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> mkfontscale-1.1.0.ebuild:
+  Stable for HPPA (bug #419473).
+
+  27 Jun 2012; Markus Meier <maekke@gentoo.org> mkfontscale-1.1.0.ebuild:
+  arm stable, bug #419473
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> mkfontscale-1.1.0.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> mkfontscale-1.1.0.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> mkfontscale-1.1.0.ebuild:
+  keyword ~amd64-fbsd
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> mkfontscale-1.0.9-r1.ebuild:
+  Marking mkfontscale-1.0.9-r1 ppc64 stable for bug 394393
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> mkfontscale-1.1.0.ebuild:
+  Marking mkfontscale-1.1.0 ppc64 for bug 400369
+
+*mkfontscale-1.1.0 (24 Feb 2012)
+
+  24 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +mkfontscale-1.1.0.ebuild:
+  Version bump.
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> mkfontscale-1.0.9-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #394393
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> mkfontscale-1.0.9-r1.ebuild:
+  Marking mkfontscale-1.0.9-r1 ppc stable for bug 394393
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> mkfontscale-1.0.9-r1.ebuild:
+  x86 stable, bug #394393
+
+  21 Dec 2011; Markus Meier <maekke@gentoo.org> mkfontscale-1.0.9-r1.ebuild:
+  arm stable, bug #394393
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> mkfontscale-1.0.9-r1.ebuild:
+  Stable for HPPA (bug #394393).
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> mkfontscale-1.0.9-r1.ebuild:
+  Stable for AMD64, wrt bug #394393
+
+*mkfontscale-1.0.9-r1 (15 Oct 2011)
+
+  15 Oct 2011; Peter Volkov <pva@gentoo.org> +mkfontscale-1.0.9-r1.ebuild,
+  +files/mkfontscale-1.0.9-heavy-support.txt:
+  Support 'ExtraLight' and 'Heavy' weights, bug #386715.
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> mkfontscale-1.0.9.ebuild:
+  Marked ppc/ppc64 stable for bug #380421.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> mkfontscale-1.0.9.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #380421
+
+  21 Sep 2011; Jeroen Roovers <jer@gentoo.org> mkfontscale-1.0.9.ebuild:
+  Stable for HPPA (bug #380421).
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org> mkfontscale-1.0.9.ebuild:
+  arm stable, bug #380421
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> mkfontscale-1.0.9.ebuild:
+  x86 stable, bug #380421
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> mkfontscale-1.0.9.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380421 filed by Chí-Thanh Christopher Nguyễn.
 
 *mkfontscale-1.0.9 (01 Jul 2011)
 

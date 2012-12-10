@@ -1,6 +1,78 @@
 # ChangeLog for dev-libs/fribidi
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/fribidi/ChangeLog,v 1.40 2010/11/04 08:19:32 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/fribidi/ChangeLog,v 1.61 2012/12/03 07:52:32 ssuominen Exp $
+
+*fribidi-0.19.5 (03 Dec 2012)
+
+  03 Dec 2012; Samuli Suominen <ssuominen@gentoo.org> +fribidi-0.19.5.ebuild:
+  Version bump (to gain Unicode 6.2.0 support)
+
+*fribidi-0.19.4 (03 Sep 2012)
+
+  03 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> +fribidi-0.19.4.ebuild:
+  Version bump.
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> fribidi-0.19.2-r2.ebuild:
+  Temporarily RESTRICT="test" wrt #397347
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> -fribidi-0.10.7.ebuild,
+  -fribidi-0.19.2-r1.ebuild, -files/fribidi-0.19.2-glib.patch:
+  old
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> fribidi-0.19.2-r2.ebuild:
+  alpha/arm/ia64/ppc/ppc64/sh/sparc/x86 stable wrt #416079
+
+  18 May 2012; Agostino Sarubbo <ago@gentoo.org> fribidi-0.19.2-r2.ebuild:
+  Stable for amd64, wrt bug #416079
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> fribidi-0.19.2-r2.ebuild:
+  Stable for HPPA (bug #416079).
+
+*fribidi-0.19.2-r2 (15 May 2012)
+
+  15 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +fribidi-0.19.2-r2.ebuild, +files/fribidi-0.19.2-glib-2.31.patch:
+  Pass --with-glib=yes to ensure fribidi.pc has "Requires: glib-2.0" line wrt
+  #345621. Only #include glib.h for dev-libs/glib >= 2.31 compability wrt
+  #415721. Thanks to Thomas Sachau for reporting both bugs.
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> fribidi-0.19.2-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> fribidi-0.19.2-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> fribidi-0.19.2-r1.ebuild:
+  Marking fribidi-0.19.2-r1 ppc64 for bug 385239
+
+  11 Feb 2012; nixnut <nixnut@gentoo.org> fribidi-0.19.2-r1.ebuild:
+  ppc stable #385239
+
+  27 Nov 2011; Raúl Porcel <armin76@gentoo.org> fribidi-0.19.2-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385239
+
+  05 Nov 2011; Fabian Groffen <grobian@gentoo.org> fribidi-0.19.2-r1.ebuild:
+  Marked ~x86-macos
+
+  29 Oct 2011; Markus Meier <maekke@gentoo.org> fribidi-0.19.2-r1.ebuild:
+  arm stable, bug #385239
+
+  25 Oct 2011; Jeroen Roovers <jer@gentoo.org> fribidi-0.19.2-r1.ebuild:
+  Stable for HPPA (bug #385239).
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> fribidi-0.19.2-r1.ebuild:
+  x86 stable, bug #385239
+
+  23 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> -fribidi-0.10.9.ebuild,
+  -fribidi-0.19.1.ebuild, -fribidi-0.19.2.ebuild, fribidi-0.19.2-r1.ebuild,
+  -files/fribidi-macos.patch:
+  Punt overshadowed versions, make static libs optional.
+
+  14 Oct 2011; Steve Dibb <beandog@gentoo.org> fribidi-0.19.2-r1.ebuild:
+  amd64 stable, bug 385239
+
+  14 Oct 2011; Steve Dibb <beandog@gentoo.org> fribidi-0.19.2.ebuild:
+  amd64 stable, bug 385239
 
 *fribidi-0.19.2-r1 (04 Nov 2010)
 

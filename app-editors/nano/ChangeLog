@@ -1,6 +1,81 @@
 # ChangeLog for app-editors/nano
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/nano/ChangeLog,v 1.264 2011/05/11 15:04:28 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/nano/ChangeLog,v 1.286 2012/11/29 22:01:01 jlec Exp $
+
+  29 Nov 2012; Justin Lecher <jlec@gentoo.org> files/gentoo.nanorc:
+  Add EAPI=5 highlighting
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> nano-2.3.1-r2.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #436126
+
+  27 Sep 2012; Anthony G. Basile <blueness@gentoo.org> nano-2.3.1-r2.ebuild:
+  stable ppc ppc64, bug #436126
+
+  27 Sep 2012; Anthony G. Basile <blueness@gentoo.org> nano-2.3.1-r2.ebuild:
+  stable arm, bug #436126
+
+  26 Sep 2012; Agostino Sarubbo <ago@gentoo.org> nano-2.3.1-r2.ebuild:
+  Stable for X86, wrt bug #436126
+
+  26 Sep 2012; Agostino Sarubbo <ago@gentoo.org> nano-2.3.1-r2.ebuild:
+  Stable for AMD64, wrt bug #436126
+
+  26 Sep 2012; Jeroen Roovers <jer@gentoo.org> nano-2.3.1-r2.ebuild:
+  Stable for HPPA (bug #436126).
+
+  10 Sep 2012; Mike Frysinger <vapier@gentoo.org> nano-2.3.1-r2.ebuild:
+  Move GDP documentation to HOMEPAGE so emerge is less spammy.
+
+  06 Sep 2012; Mike Frysinger <vapier@gentoo.org> nano-2.3.1-r2.ebuild:
+  Make man-html removal non-fatal #432958 by Oleg.
+
+*nano-2.3.1-r2 (26 Aug 2012)
+
+  26 Aug 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/nano-2.3.1-bind-unbind-docs.patch, +files/nano-2.3.1-drop-target.patch,
+  +files/nano-2.3.1-gentoo-nanorc.patch, +files/nano-2.3.1-shell-nanorc.patch,
+  +nano-2.3.1-r2.ebuild, metadata.xml:
+  Update nanorc files #397413 by Davide Pesavento.  Split USE=nls dependency
+  #398975 by Maxim Kammerer.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> nano-2.3.1-r1.ebuild:
+  alpha/sparc stable wrt #413897
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> nano-2.3.1-r1.ebuild:
+  Marking nano-2.3.1-r1 ppc for bug 413897
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> nano-2.3.1-r1.ebuild:
+  Marking nano-2.3.1-r1 ppc64 for bug 413897
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> nano-2.3.1-r1.ebuild:
+  x86 stable wrt bug #413897
+
+  17 May 2012; Jeroen Roovers <jer@gentoo.org> nano-2.3.1-r1.ebuild:
+  Stable for HPPA (bug #413897).
+
+  06 May 2012; Mike Frysinger <vapier@gentoo.org> nano-2.3.1-r1.ebuild:
+  Mark ia64/m68k/s390/sh stable #413897.
+
+  04 May 2012; Alexis Ballier <aballier@gentoo.org> nano-2.3.1-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  03 May 2012; Markus Meier <maekke@gentoo.org> nano-2.3.1-r1.ebuild:
+  arm stable, bug #413897
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> nano-2.3.1-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  01 May 2012; Agostino Sarubbo <ago@gentoo.org> nano-2.3.1-r1.ebuild:
+  Stable for amd64, wrt bug #413897
+
+  01 Jan 2012; Mike Frysinger <vapier@gentoo.org> nano-2.3.1-r1.ebuild,
+  +files/nano-2.3.1-ncurses-pkg-config.patch:
+  Search for ncurses via pkg-config files.
+
+*nano-2.3.1-r1 (29 Aug 2011)
+
+  29 Aug 2011; Fabian Groffen <grobian@gentoo.org> +nano-2.3.1-r1.ebuild:
+  Add fixes for Prefix, bug #361251
 
 *nano-2.3.1 (11 May 2011)
 

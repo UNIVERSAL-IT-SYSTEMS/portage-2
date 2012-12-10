@@ -1,6 +1,102 @@
 # ChangeLog for net-misc/modemmanager
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/modemmanager/ChangeLog,v 1.20 2011/07/06 16:12:49 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/modemmanager/ChangeLog,v 1.39 2012/12/02 22:46:07 ssuominen Exp $
+
+  02 Dec 2012; Samuli Suominen <ssuominen@gentoo.org> modemmanager-0.4.ebuild,
+  modemmanager-0.5.2.0-r2.ebuild, modemmanager-0.5.2.0-r3.ebuild,
+  modemmanager-0.6.0.0.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  modemmanager-0.5.2.0-r3.ebuild:
+  stable ppc ppc64, bug #430370
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer as talked with him.
+
+*modemmanager-0.6.0.0 (13 Sep 2012)
+
+  13 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -modemmanager-0.4_p20110205-r1.ebuild, -modemmanager-0.5.ebuild,
+  -modemmanager-0.5.2.0.ebuild, +modemmanager-0.6.0.0.ebuild:
+  Version bump with lots of SMS fixes and improved hardware support. Drop old.
+
+  23 Aug 2012; Markus Meier <maekke@gentoo.org> modemmanager-0.5.2.0-r3.ebuild:
+  arm stable, bug #430370
+
+  17 Aug 2012; Johannes Huber <johu@gentoo.org> modemmanager-0.5.2.0-r3.ebuild:
+  Stable for x86, wrt bug #430370
+
+  16 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
+  modemmanager-0.5.2.0-r3.ebuild:
+  Stable for amd64, wrt bug #430370
+
+*modemmanager-0.5.2.0-r3 (11 Aug 2012)
+
+  11 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +modemmanager-0.5.2.0-r3.ebuild:
+  Query udev.pc pkg-config file for correct udevdir value.
+
+*modemmanager-0.5.2.0-r2 (05 Jul 2012)
+
+  05 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -modemmanager-0.5.2.0-r1.ebuild, +modemmanager-0.5.2.0-r2.ebuild:
+  Move polkit rules.d file to /usr/share (bug #421577 comment #12, thanks to
+  Dennis Lissov).
+
+  04 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  files/01-org.freedesktop.ModemManager.rules:
+  Add a comment to the polkit-1/rules.d file.
+
+*modemmanager-0.5.2.0-r1 (04 Jul 2012)
+
+  04 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/01-org.freedesktop.ModemManager.rules,
+  +modemmanager-0.5.2.0-r1.ebuild:
+  Install polkit-1/rules.d file for polkit-0.106 support (bug #421581, thanks
+  to Samuli Suominen).
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> modemmanager-0.4.ebuild,
+  modemmanager-0.4_p20110205-r1.ebuild, modemmanager-0.5.ebuild,
+  modemmanager-0.5.2.0.ebuild:
+  inherit multilib.eclass for get_libdir function
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  modemmanager-0.5.2.0.ebuild:
+  .pkla files are only used by <sys-auth/polkit-0.106 wrt #421581
+
+  24 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  modemmanager-0.4.ebuild, modemmanager-0.4_p20110205-r1.ebuild,
+  +files/modemmanager-0.5-glib-2.31.patch, modemmanager-0.5.ebuild:
+  Fix building old versions against >=glib-2.31.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> modemmanager-0.4.ebuild,
+  modemmanager-0.4_p20110205-r1.ebuild, modemmanager-0.5.ebuild,
+  modemmanager-0.5.2.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  27 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  modemmanager-0.5.2.0.ebuild:
+  Fix pkg_postinst message.
+
+*modemmanager-0.5.2.0 (27 Mar 2012)
+
+  27 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/01-org.freedesktop.ModemManager.pkla, +modemmanager-0.5.2.0.ebuild,
+  metadata.xml:
+  Version bump with lots of bugfixes. Allow users in plugdev group full control
+  over their modems if USE=policykit (bug #406421, thanks to Priit Laes). Add
+  myself to maintainers.
+
+  16 Feb 2012; Mike Frysinger <vapier@gentoo.org> modemmanager-0.5.ebuild:
+  Fix USE=doc depend and install so it actually does something.
+
+*modemmanager-0.5 (14 Aug 2011)
+
+  14 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> -modemmanager-0.3.ebuild,
+  -modemmanager-0.4_p20101211.ebuild, -modemmanager-0.4_p20110205.ebuild,
+  +modemmanager-0.5.ebuild:
+  Bump to 0.5, from gnome overlay, bug 378729
 
 *modemmanager-0.4_p20110205-r1 (06 Jul 2011)
 
@@ -105,4 +201,3 @@
   13 Aug 2009; Robert Piasek <dagger@gentoo.org>
   +modemmanager-0.2_p20090806.ebuild, +metadata.xml:
   Initial ebuild of modemmanager
-

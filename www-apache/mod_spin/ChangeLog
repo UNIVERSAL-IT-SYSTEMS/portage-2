@@ -1,6 +1,15 @@
 # ChangeLog for www-apache/mod_spin
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_spin/ChangeLog,v 1.7 2009/09/18 15:33:57 hollow Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_spin/ChangeLog,v 1.9 2012/11/27 19:32:02 pacho Exp $
+
+  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> -mod_spin-1.1.7.ebuild,
+  metadata.xml:
+  Drop apache herd as discussed in http://www.gossamer-
+  threads.com/lists/gentoo/dev/262834
+
+  16 Oct 2012; Patrick Lauer <patrick@gentoo.org> mod_spin-1.1.7.ebuild,
+  mod_spin-1.1.9.ebuild:
+  Restricting to apache 2.2
 
 *mod_spin-1.1.9 (18 Sep 2009)
 
@@ -32,4 +41,3 @@
   08 Sep 2007; Benedikt Böhm <hollow@gentoo.org> +files/80_mod_spin.conf,
   +metadata.xml, +mod_spin-1.0.12.ebuild:
   initial version; #59413
-

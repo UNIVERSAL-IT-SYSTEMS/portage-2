@@ -1,6 +1,59 @@
 # ChangeLog for media-gfx/potrace
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/potrace/ChangeLog,v 1.28 2011/01/14 00:11:58 dirtyepic Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/potrace/ChangeLog,v 1.44 2012/09/08 08:46:04 radhermit Exp $
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> -potrace-1.8.ebuild,
+  -potrace-1.9.ebuild, -potrace-1.10.ebuild:
+  Remove old.
+
+  26 May 2012; Raúl Porcel <armin76@gentoo.org> potrace-1.10-r1.ebuild:
+  alpha/ia64 stable wrt #404785
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> potrace-1.10-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> potrace-1.10-r1.ebuild:
+  Marking potrace-1.10-r1 ppc for bug 404785
+
+  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org> potrace-1.10-r1.ebuild:
+  marked x86 per bug 404785
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> potrace-1.10-r1.ebuild:
+  Stable for amd64, wrt bug #404785
+
+  12 Jan 2012; Markus Meier <maekke@gentoo.org> potrace-1.10-r1.ebuild:
+  add ~arm, bug #390671
+
+  09 Dec 2011; Naohiro Aota <naota@gentoo.org> potrace-1.10-r1.ebuild:
+  Add ~x86-fbsd
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org> potrace-1.10-r1.ebuild:
+  Fix autotools-utils usage (bug #392183).
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org> potrace-1.10-r1.ebuild:
+  Build in the source tree.
+
+  20 Nov 2011; Fabian Groffen <grobian@gentoo.org> potrace-1.10-r1.ebuild:
+  Marked ~x64-macos
+
+  20 Nov 2011; Fabian Groffen <grobian@gentoo.org> potrace-1.10-r1.ebuild:
+  Fix out-of-prefix installation of docs
+
+  16 Nov 2011; Jeroen Roovers <jer@gentoo.org> potrace-1.10-r1.ebuild:
+  Marked ~hppa (bug #390671).
+
+*potrace-1.10-r1 (15 Nov 2011)
+
+  15 Nov 2011; Tim Harder <radhermit@gentoo.org> +potrace-1.10-r1.ebuild:
+  Revbump to build/install library. Explicitly depend on zlib.
+
+*potrace-1.10 (19 Aug 2011)
+
+  19 Aug 2011; Tim Harder <radhermit@gentoo.org> +potrace-1.10.ebuild:
+  Version bump. Update to EAPI 4.
 
 *potrace-1.9 (14 Jan 2011)
 

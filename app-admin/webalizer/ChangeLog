@@ -1,6 +1,44 @@
 # ChangeLog for app-admin/webalizer
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/webalizer/ChangeLog,v 1.81 2010/10/28 03:35:18 sping Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/webalizer/ChangeLog,v 1.91 2012/11/29 12:25:08 blueness Exp $
+
+  29 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  -files/geolizer-2.01.10_p20070115-strip.patch, -files/webalizer-db4.2.patch,
+  -files/webalizer-storage-size.patch, -webalizer-2.01.10-r15.ebuild,
+  -webalizer-2.01.10-r16.ebuild, -webalizer-2.01.10-r17.ebuild,
+  webalizer-2.21.02.ebuild, webalizer-2.23.05.ebuild:
+  Remove very old versions, fix home page
+
+*webalizer-2.23.05 (29 Nov 2012)
+
+  29 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  +webalizer-2.23.05.ebuild:
+  Version bump, bug #385291
+
+  28 Oct 2012; Sven Wegener <swegener@gentoo.org> webalizer-2.21.02.ebuild:
+  Add support for on-the-fly bzip2 decompression.
+
+  03 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  webalizer-2.21.02.ebuild:
+  Keyword ~arm, bug #389541
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> webalizer-2.21.02.ebuild:
+  Marking webalizer-2.21.02 ppc64 for bug 287931
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> webalizer-2.21.02.ebuild:
+  sparc/x86 stable wrt #287931
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> webalizer-2.21.02.ebuild:
+  Marking webalizer-2.21.02 ppc for bug 287931
+
+  17 Feb 2012; Tobias Klausmann <klausman@gentoo.org> webalizer-2.21.02.ebuild:
+  Stable on alpha, bug #287931
+
+  09 Feb 2012; Jeroen Roovers <jer@gentoo.org> webalizer-2.21.02.ebuild:
+  Stable for HPPA (bug #287931).
+
+  04 Feb 2012; Agostino Sarubbo <ago@gentoo.org> webalizer-2.21.02.ebuild:
+  Stable for amd64, wrt bug #287931
 
   28 Oct 2010; Sebastian Pipping <sping@gentoo.org>
   webalizer-2.01.10-r15.ebuild, webalizer-2.01.10-r16.ebuild,

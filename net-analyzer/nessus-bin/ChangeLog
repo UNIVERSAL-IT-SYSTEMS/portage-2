@@ -1,6 +1,18 @@
 # ChangeLog for net-analyzer/nessus-bin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nessus-bin/ChangeLog,v 1.14 2011/04/20 12:21:00 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nessus-bin/ChangeLog,v 1.17 2012/10/06 17:35:27 pinkbyte Exp $
+
+*nessus-bin-5.0.1 (06 Oct 2012)
+
+  06 Oct 2012; Sergey Popov <pinkbyte@gentoo.org> +nessus-bin-5.0.1.ebuild:
+  Version bump wrt bug #437376
+
+  13 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> nessus-bin-4.4.1.ebuild:
+  Add GPL-2 to LICENSE variable, cause init.d script are under it, wrt bug
+  #425998
+
+  12 Jun 2012; Zac Medico <zmedico@gentoo.org> nessus-bin-4.4.1.ebuild:
+  inherit multilib for get_libdir
 
 *nessus-bin-4.4.1 (20 Apr 2011)
 

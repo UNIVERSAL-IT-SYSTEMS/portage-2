@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audacious/audacious-2.5.4.ebuild,v 1.1 2011/07/15 13:29:00 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audacious/audacious-2.5.4.ebuild,v 1.7 2012/05/05 08:11:04 mgorny Exp $
 
 EAPI=4
 
@@ -13,13 +13,13 @@ SRC_URI="http://distfiles.atheme.org/${MY_P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux"
+KEYWORDS="alpha amd64 hppa ~ppc ~ppc64 sparc x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux"
 IUSE="altivec chardet nls session sse2"
 
 RDEPEND=">=dev-libs/dbus-glib-0.60
 	>=dev-libs/glib-2.16
 	>=dev-libs/libmcs-0.7.1-r2
-	>=dev-libs/libmowgli-0.9.50
+	>=dev-libs/libmowgli-0.9.50:0
 	dev-libs/libxml2
 	>=x11-libs/cairo-1.2.6
 	>=x11-libs/gtk+-2.14:2
@@ -27,7 +27,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.60
 	session? ( x11-libs/libSM )"
 
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.9.0
+	virtual/pkgconfig
 	chardet? ( app-i18n/libguess )
 	nls? ( dev-util/intltool )"
 

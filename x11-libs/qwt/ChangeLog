@@ -1,6 +1,62 @@
 # ChangeLog for x11-libs/qwt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qwt/ChangeLog,v 1.86 2011/06/15 06:15:49 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qwt/ChangeLog,v 1.102 2012/08/31 06:51:31 jlec Exp $
+
+*qwt-6.0.1-r1 (31 Aug 2012)
+
+  31 Aug 2012; Justin Lecher <jlec@gentoo.org> qwt-6.0.0.ebuild,
+  qwt-6.0.1.ebuild, +qwt-6.0.1-r1.ebuild:
+  Fix svg support, #421559
+
+  04 Mar 2012; Justin Lecher <jlec@gentoo.org> -qwt-5.2.0.ebuild, metadata.xml:
+  Clean old
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> qwt-6.0.0.ebuild:
+  Marking qwt-6.0.0 ppc64 for bug 395341
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> qwt-5.2.1.ebuild:
+  Marking qwt-5.2.1 ppc64 for bug 395339
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> qwt-6.0.0.ebuild:
+  Marking qwt-6.0.0 ppc for bug 395341
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> qwt-5.2.1.ebuild:
+  Marking qwt-5.2.1 ppc for bug 395339
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> qwt-5.2.1.ebuild,
+  qwt-6.0.0.ebuild:
+  sparc stable wrt #395339 and #395341
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> qwt-6.0.0.ebuild:
+  x86 stable wrt bug #395341
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> qwt-5.2.1.ebuild:
+  x86 stable wrt bug #395339
+
+  21 Dec 2011; Justin Lecher <jlec@gentoo.org> qwt-6.0.1.ebuild:
+  Migrated to EAPI=4 noted by arfrever
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> qwt-5.2.1.ebuild:
+  Stable for AMD64, wrt bug #395339
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> qwt-6.0.0.ebuild:
+  Stable for HPPA (bug #395341).
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> qwt-5.2.1.ebuild:
+  Stable for HPPA (bug #395339).
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> qwt-6.0.0.ebuild:
+  Stable for AMD64, wrt bug #395341
+
+  19 Dec 2011; Justin Lecher <jlec@gentoo.org> qwt-5.2.1.ebuild,
+  qwt-6.0.0.ebuild:
+  Move to EAPI=4
+
+*qwt-6.0.1 (19 Dec 2011)
+
+  19 Dec 2011; Justin Lecher <jlec@gentoo.org> -qwt-6.0.0_rc5-r2.ebuild,
+  +qwt-6.0.1.ebuild:
+  Version Bump, cleaned old
 
   15 Jun 2011; Justin Lecher <jlec@gentoo.org> qwt-5.2.0.ebuild,
   qwt-5.2.1.ebuild:

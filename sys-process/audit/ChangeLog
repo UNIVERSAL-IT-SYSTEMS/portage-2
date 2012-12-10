@@ -1,6 +1,54 @@
 # ChangeLog for sys-process/audit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/audit/ChangeLog,v 1.69 2011/04/26 17:17:33 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-process/audit/ChangeLog,v 1.80 2012/07/03 19:48:08 jer Exp $
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> audit-2.1.3-r1.ebuild:
+  Stable for HPPA (bug #418395).
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> audit-2.1.3-r1.ebuild:
+  Marking audit-2.1.3-r1 ppc for bug 418395
+
+  28 Jun 2012; Jeff Horelick <jdhore@gentoo.org> audit-2.1.3-r1.ebuild:
+  marked x86 per bug 418395
+
+  27 Jun 2012; Agostino Sarubbo <ago@gentoo.org> audit-2.1.3-r1.ebuild:
+  Stable for amd64, wrt bug #418395
+
+  27 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org> audit-2.1.3-r1.ebuild:
+  Use explicit filenames for dodoc instead of shell glob wrt #415081 by David J
+  Cozatt <ygdrasil@comcast.net>
+
+  21 May 2012; Mike Frysinger <vapier@gentoo.org> audit-1.7.17.ebuild,
+  audit-1.7.4.ebuild, audit-2.0.5.ebuild, audit-2.1.3-r1.ebuild,
+  audit-2.1.3.ebuild:
+  Inherit eutils for epatch.
+
+  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org> audit-1.7.17.ebuild,
+  audit-1.7.4.ebuild:
+  Add missing inheritance of eutils.eclass
+
+  26 Feb 2012; Patrick Lauer <patrick@gentoo.org> audit-2.0.5.ebuild,
+  audit-2.1.3-r1.ebuild, audit-2.1.3.ebuild:
+  Restricting pypy
+
+*audit-2.1.3-r1 (04 Feb 2012)
+
+  04 Feb 2012; Mike Frysinger <vapier@gentoo.org> +audit-2.1.3-r1.ebuild:
+  Make python support optional.
+
+  11 Sep 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +files/auditd-conf.d-2.1.3, +files/auditd-init.d-2.1.3, audit-2.1.3.ebuild,
+  files/audit.rules, files/audit.rules.stop.pre, +files/audit.rules-2.1.3:
+  Get this into shape for full usage with OpenRC, and also the pending cleanup
+  for the package.mask. Please see the new configuration options in the conf.d
+  file. The upstream AUDITD_CLEAN_STOP and AUDITD_STOP_DISABLE sysconfig
+  options are represented by the audit.rules.stop.pre sequence now.
+
+*audit-2.1.3 (10 Sep 2011)
+
+  10 Sep 2011; Robin H. Johnson <robbat2@gentoo.org> +audit-2.1.3.ebuild,
+  +files/audit-2.1.3-python.patch:
+  Version bump.
 
   26 Apr 2011; Kacper Kowalik <xarthisius@gentoo.org> audit-1.7.4.ebuild:
   ppc stable wrt #341167

@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gupnp/gupnp-0.16.1.ebuild,v 1.1 2011/06/05 21:38:03 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gupnp/gupnp-0.16.1.ebuild,v 1.4 2012/05/05 02:54:30 jdhore Exp $
 
-EAPI=3
+EAPI="4"
 
-DESCRIPTION="an object-oriented framework for creating UPnP devs and control points."
+DESCRIPTION="An object-oriented framework for creating UPnP devs and control points"
 HOMEPAGE="http://gupnp.org/"
 SRC_URI="http://gupnp.org/sites/all/files/sources/${P}.tar.gz"
 
@@ -21,8 +21,10 @@ RDEPEND=">=net-libs/gssdp-0.9.2[introspection?]
 	introspection? ( >=dev-libs/gobject-introspection-0.6.4 )
 	networkmanager? ( >=dev-libs/glib-2.26 )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
+
+DOCS="AUTHORS ChangeLog NEWS README"
 
 src_configure() {
 	local backend=unix
@@ -30,6 +32,7 @@ src_configure() {
 
 	econf \
 		$(use_enable introspection) \
+		--disable-static \
 		--disable-dependency-tracking \
 		--disable-gtk-doc \
 		--with-context-manager=${backend} \
@@ -37,6 +40,7 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog NEWS README
+	default
+	# Remove pointless .la files
+	find "${D}" -name '*.la' -exec rm -f {} + || die
 }

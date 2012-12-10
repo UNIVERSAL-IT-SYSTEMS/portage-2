@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-drivers/xorg-drivers-1.11.ebuild,v 1.2 2011/06/29 12:54:53 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-drivers/xorg-drivers-1.11.ebuild,v 1.11 2012/10/06 20:46:33 ulm Exp $
 
 EAPI=4
 
@@ -8,9 +8,9 @@ DESCRIPTION="Meta package containing deps on all xorg drivers"
 HOMEPAGE="http://www.gentoo.org/"
 SRC_URI=""
 
-LICENSE="as-is"
+LICENSE="metapackage"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd"
 
 IUSE_INPUT_DEVICES="
 	input_devices_acecad
@@ -25,7 +25,6 @@ IUSE_INPUT_DEVICES="
 	input_devices_mutouch
 	input_devices_penmount
 	input_devices_tslib
-	input_devices_virtualbox
 	input_devices_vmmouse
 	input_devices_void
 	input_devices_synaptics
@@ -99,7 +98,6 @@ PDEPEND="
 	input_devices_mutouch?     ( x11-drivers/xf86-input-mutouch )
 	input_devices_penmount?    ( x11-drivers/xf86-input-penmount )
 	input_devices_tslib?       ( x11-drivers/xf86-input-tslib )
-	input_devices_virtualbox?  ( x11-drivers/xf86-input-virtualbox )
 	input_devices_vmmouse?     ( x11-drivers/xf86-input-vmmouse )
 	input_devices_void?        ( x11-drivers/xf86-input-void )
 	input_devices_synaptics?   ( x11-drivers/xf86-input-synaptics )

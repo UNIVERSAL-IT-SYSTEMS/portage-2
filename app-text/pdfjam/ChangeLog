@@ -1,6 +1,28 @@
 # ChangeLog for app-text/pdfjam
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/pdfjam/ChangeLog,v 1.30 2011/06/30 15:08:12 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/pdfjam/ChangeLog,v 1.37 2012/05/09 17:14:25 aballier Exp $
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> pdfjam-2.08.ebuild:
+  keyword ~amd64-fbsd
+
+  02 Nov 2011; Alexis Ballier <aballier@gentoo.org> pdfjam-2.08.ebuild:
+  keyword ~x86-fbsd
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> pdfjam-2.05.ebuild:
+  Stable for HPPA (bug #355085).
+
+  18 Sep 2011; Raúl Porcel <armin76@gentoo.org> pdfjam-2.05.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #355085
+
+  28 Aug 2011; Fabian Groffen <grobian@gentoo.org> pdfjam-2.05.ebuild,
+  pdfjam-2.08.ebuild:
+  Transferred Prefix keywords
+
+  14 Aug 2011; Markus Meier <maekke@gentoo.org> pdfjam-2.05.ebuild:
+  arm stable, bug #355085
+
+  12 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> pdfjam-2.05.ebuild:
+  ppc/ppc64 stable wrt #355085
 
   30 Jun 2011; Brent Baude <ranger@gentoo.org> pdfjam-2.05.ebuild:
   Marking pdfjam-2.05 ppc for bug 334399

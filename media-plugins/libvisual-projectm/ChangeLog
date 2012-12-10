@@ -1,6 +1,22 @@
 # ChangeLog for media-plugins/libvisual-projectm
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/libvisual-projectm/ChangeLog,v 1.9 2009/12/10 20:00:12 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/libvisual-projectm/ChangeLog,v 1.13 2012/05/08 07:28:41 nativemad Exp $
+
+  08 May 2012; Andreas Schuerch <nativemad@gentoo.org>
+  libvisual-projectm-2.0.1.ebuild:
+  x86 stable, see bug 408487
+
+  07 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  libvisual-projectm-2.0.1.ebuild:
+  Stable for amd64, wrt bug #408487
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  libvisual-projectm-1.2.0.ebuild, libvisual-projectm-2.0.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> +files/2.0.1-gcc4.6.patch,
+  libvisual-projectm-2.0.1.ebuild:
+  Add patch for gcc-4.6. Fixes bug#363167.
 
 *libvisual-projectm-2.0.1 (10 Dec 2009)
 

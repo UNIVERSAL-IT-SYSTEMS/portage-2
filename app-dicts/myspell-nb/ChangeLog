@@ -1,6 +1,31 @@
 # ChangeLog for app-dicts/myspell-nb
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-nb/ChangeLog,v 1.20 2010/09/27 23:38:50 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-nb/ChangeLog,v 1.26 2012/07/23 13:39:05 scarabeus Exp $
+
+*myspell-nb-2.0.10 (23 Jul 2012)
+
+  23 Jul 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +myspell-nb-2.0.10.ebuild, -myspell-nb-20060316.ebuild,
+  -myspell-nb-20060530.ebuild, -myspell-nb-20080310.ebuild:
+  Use the upstream versioning. Basically equal to 20080310.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> myspell-nb-20060316.ebuild,
+  myspell-nb-20060530.ebuild, myspell-nb-20080310.ebuild:
+  keyword ~amd64-fbsd
+
+  02 Mar 2012; Tobias Klausmann <klausman@gentoo.org>
+  myspell-nb-20080310.ebuild:
+  Stable on alpha, bug #396785
+
+  17 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  myspell-nb-20080310.ebuild:
+  x86 stable wrt bug #396785
+
+  14 Feb 2012; Brent Baude <ranger@gentoo.org> myspell-nb-20080310.ebuild:
+  Marking myspell-nb-20080310 ppc for bug 396785
+
+  02 Feb 2012; Agostino Sarubbo <ago@gentoo.org> myspell-nb-20080310.ebuild:
+  Stable for amd64, wrt bug #396785
 
   27 Sep 2010; Mart Raudsepp <leio@gentoo.org> myspell-nb-20080310.ebuild:
   Add ~mips

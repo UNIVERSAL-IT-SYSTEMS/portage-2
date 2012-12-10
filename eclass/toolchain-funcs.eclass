@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain-funcs.eclass,v 1.104 2011/07/12 14:29:41 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/toolchain-funcs.eclass,v 1.119 2012/09/28 15:07:30 axs Exp $
 
 # @ECLASS: toolchain-funcs.eclass
 # @MAINTAINER:
@@ -13,28 +13,36 @@
 # in such a way that you can rely on the function always returning
 # something sane.
 
-___ECLASS_RECUR_TOOLCHAIN_FUNCS="yes"
-[[ -z ${___ECLASS_RECUR_MULTILIB} ]] && inherit multilib
+if [[ ${___ECLASS_ONCE_TOOLCHAIN_FUNCS} != "recur -_+^+_- spank" ]] ; then
+___ECLASS_ONCE_TOOLCHAIN_FUNCS="recur -_+^+_- spank"
 
-DESCRIPTION="Based on the ${ECLASS} eclass"
+inherit multilib
 
-tc-getPROG() {
-	local var=$1
-	local prog=$2
+# tc-getPROG <VAR [search vars]> <default> [tuple]
+_tc-getPROG() {
+	local tuple=$1
+	local v var vars=$2
+	local prog=$3
 
-	if [[ -n ${!var} ]] ; then
-		echo "${!var}"
-		return 0
-	fi
+	var=${vars%% *}
+	for v in ${vars} ; do
+		if [[ -n ${!v} ]] ; then
+			export ${var}="${!v}"
+			echo "${!v}"
+			return 0
+		fi
+	done
 
 	local search=
-	[[ -n $3 ]] && search=$(type -p "$3-${prog}")
-	[[ -z ${search} && -n ${CHOST} ]] && search=$(type -p "${CHOST}-${prog}")
+	[[ -n $4 ]] && search=$(type -p "$4-${prog}")
+	[[ -z ${search} && -n ${!tuple} ]] && search=$(type -p "${!tuple}-${prog}")
 	[[ -n ${search} ]] && prog=${search##*/}
 
 	export ${var}=${prog}
 	echo "${!var}"
 }
+tc-getBUILD_PROG() { _tc-getPROG CBUILD "BUILD_$1 $1_FOR_BUILD HOST$1" "${@:2}"; }
+tc-getPROG() { _tc-getPROG CHOST "$@"; }
 
 # @FUNCTION: tc-getAR
 # @USAGE: [toolchain prefix]
@@ -101,29 +109,50 @@ tc-getRC() { tc-getPROG RC windres "$@"; }
 # @RETURN: name of the Windows dllwrap utility
 tc-getDLLWRAP() { tc-getPROG DLLWRAP dllwrap "$@"; }
 
+# @FUNCTION: tc-getBUILD_AR
+# @USAGE: [toolchain prefix]
+# @RETURN: name of the archiver for building binaries to run on the build machine
+tc-getBUILD_AR() { tc-getBUILD_PROG AR ar "$@"; }
+# @FUNCTION: tc-getBUILD_AS
+# @USAGE: [toolchain prefix]
+# @RETURN: name of the assembler for building binaries to run on the build machine
+tc-getBUILD_AS() { tc-getBUILD_PROG AS as "$@"; }
 # @FUNCTION: tc-getBUILD_CC
 # @USAGE: [toolchain prefix]
 # @RETURN: name of the C compiler for building binaries to run on the build machine
-tc-getBUILD_CC() {
-	local v
-	for v in CC_FOR_BUILD BUILD_CC HOSTCC ; do
-		if [[ -n ${!v} ]] ; then
-			export BUILD_CC=${!v}
-			echo "${!v}"
-			return 0
-		fi
-	done
-
-	local search=
-	if [[ -n ${CBUILD} ]] ; then
-		search=$(type -p ${CBUILD}-gcc)
-		search=${search##*/}
-	fi
-	search=${search:-gcc}
-
-	export BUILD_CC=${search}
-	echo "${search}"
-}
+tc-getBUILD_CC() { tc-getBUILD_PROG CC gcc "$@"; }
+# @FUNCTION: tc-getBUILD_CPP
+# @USAGE: [toolchain prefix]
+# @RETURN: name of the C preprocessor for building binaries to run on the build machine
+tc-getBUILD_CPP() { tc-getBUILD_PROG CPP cpp "$@"; }
+# @FUNCTION: tc-getBUILD_CXX
+# @USAGE: [toolchain prefix]
+# @RETURN: name of the C++ compiler for building binaries to run on the build machine
+tc-getBUILD_CXX() { tc-getBUILD_PROG CXX g++ "$@"; }
+# @FUNCTION: tc-getBUILD_LD
+# @USAGE: [toolchain prefix]
+# @RETURN: name of the linker for building binaries to run on the build machine
+tc-getBUILD_LD() { tc-getBUILD_PROG LD ld "$@"; }
+# @FUNCTION: tc-getBUILD_STRIP
+# @USAGE: [toolchain prefix]
+# @RETURN: name of the strip program for building binaries to run on the build machine
+tc-getBUILD_STRIP() { tc-getBUILD_PROG STRIP strip "$@"; }
+# @FUNCTION: tc-getBUILD_NM
+# @USAGE: [toolchain prefix]
+# @RETURN: name of the symbol/object thingy for building binaries to run on the build machine
+tc-getBUILD_NM() { tc-getBUILD_PROG NM nm "$@"; }
+# @FUNCTION: tc-getBUILD_RANLIB
+# @USAGE: [toolchain prefix]
+# @RETURN: name of the archiver indexer for building binaries to run on the build machine
+tc-getBUILD_RANLIB() { tc-getBUILD_PROG RANLIB ranlib "$@"; }
+# @FUNCTION: tc-getBUILD_OBJCOPY
+# @USAGE: [toolchain prefix]
+# @RETURN: name of the object copier for building binaries to run on the build machine
+tc-getBUILD_OBJCOPY() { tc-getBUILD_PROG OBJCOPY objcopy "$@"; }
+# @FUNCTION: tc-getBUILD_PKG_CONFIG
+# @USAGE: [toolchain prefix]
+# @RETURN: name of the pkg-config tool for building binaries to run on the build machine
+tc-getBUILD_PKG_CONFIG() { tc-getBUILD_PROG PKG_CONFIG pkg-config "$@"; }
 
 # @FUNCTION: tc-export
 # @USAGE: <list of toolchain variables>
@@ -148,36 +177,29 @@ tc-is-cross-compiler() {
 # See if this toolchain is a softfloat based one.
 # @CODE
 # The possible return values:
-#  - only: the target is always softfloat (never had fpu)
-#  - yes:  the target should support softfloat
-#  - no:   the target doesn't support softfloat
+#  - only:   the target is always softfloat (never had fpu)
+#  - yes:    the target should support softfloat
+#  - softfp: (arm specific) the target should use hardfloat insns, but softfloat calling convention
+#  - no:     the target doesn't support softfloat
 # @CODE
 # This allows us to react differently where packages accept
 # softfloat flags in the case where support is optional, but
 # rejects softfloat flags where the target always lacks an fpu.
 tc-is-softfloat() {
+	local CTARGET=${CTARGET:-${CHOST}}
 	case ${CTARGET} in
 		bfin*|h8300*)
 			echo "only" ;;
 		*)
-			[[ ${CTARGET//_/-} == *-softfloat-* ]] \
-				&& echo "yes" \
-				|| echo "no"
+			if [[ ${CTARGET//_/-} == *-softfloat-* ]] ; then
+				echo "yes"
+			elif [[ ${CTARGET//_/-} == *-softfp-* ]] ; then
+				echo "softfp"
+			else
+				echo "no"
+			fi
 			;;
 	esac
-}
-
-# @FUNCTION: tc-is-hardfloat
-# @DESCRIPTION:
-# See if this toolchain is a hardfloat based one.
-# @CODE
-# The possible return values:
-#  - yes:  the target should support hardfloat
-#  - no:   the target doesn't support hardfloat
-tc-is-hardfloat() {
-	[[ ${CTARGET//_/-} == *-hardfloat-* ]] \
-		&& echo "yes" \
-		|| echo "no"
 }
 
 # @FUNCTION: tc-is-static-only
@@ -189,6 +211,87 @@ tc-is-static-only() {
 
 	# *MiNT doesn't have shared libraries, only platform so far
 	return $([[ ${host} == *-mint* ]])
+}
+
+# @FUNCTION: tc-export_build_env
+# @USAGE: [compiler variables]
+# @DESCRIPTION:
+# Export common build related compiler settings.
+tc-export_build_env() {
+	tc-export "$@"
+	: ${BUILD_CFLAGS:=-O1 -pipe}
+	: ${BUILD_CXXFLAGS:=-O1 -pipe}
+	: ${BUILD_CPPFLAGS:=}
+	: ${BUILD_LDFLAGS:=}
+	export BUILD_{C,CXX,CPP,LD}FLAGS
+}
+
+# @FUNCTION: tc-env_build
+# @USAGE: <command> [command args]
+# @INTERNAL
+# @DESCRIPTION:
+# Setup the compile environment to the build tools and then execute the
+# specified command.  We use tc-getBUILD_XX here so that we work with
+# all of the semi-[non-]standard env vars like $BUILD_CC which often
+# the target build system does not check.
+tc-env_build() {
+	tc-export_build_env
+	CFLAGS=${BUILD_CFLAGS} \
+	CXXFLAGS=${BUILD_CXXFLAGS} \
+	CPPFLAGS=${BUILD_CPPFLAGS} \
+	LDFLAGS=${BUILD_LDFLAGS} \
+	AR=$(tc-getBUILD_AR) \
+	AS=$(tc-getBUILD_AS) \
+	CC=$(tc-getBUILD_CC) \
+	CPP=$(tc-getBUILD_CPP) \
+	CXX=$(tc-getBUILD_CXX) \
+	LD=$(tc-getBUILD_LD) \
+	NM=$(tc-getBUILD_NM) \
+	PKG_CONFIG=$(tc-getBUILD_PKG_CONFIG) \
+	RANLIB=$(tc-getBUILD_RANLIB) \
+	"$@"
+}
+
+# @FUNCTION: econf_build
+# @USAGE: [econf flags]
+# @DESCRIPTION:
+# Sometimes we need to locally build up some tools to run on CBUILD because
+# the package has helper utils which are compiled+executed when compiling.
+# This won't work when cross-compiling as the CHOST is set to a target which
+# we cannot natively execute.
+#
+# For example, the python package will build up a local python binary using
+# a portable build system (configure+make), but then use that binary to run
+# local python scripts to build up other components of the overall python.
+# We cannot rely on the python binary in $PATH as that often times will be
+# a different version, or not even installed in the first place.  Instead,
+# we compile the code in a different directory to run on CBUILD, and then
+# use that binary when compiling the main package to run on CHOST.
+#
+# For example, with newer EAPIs, you'd do something like:
+# @CODE
+# src_configure() {
+# 	ECONF_SOURCE=${S}
+# 	if tc-is-cross-compiler ; then
+# 		mkdir "${WORKDIR}"/${CBUILD}
+# 		pushd "${WORKDIR}"/${CBUILD} >/dev/null
+# 		econf_build --disable-some-unused-stuff
+# 		popd >/dev/null
+# 	fi
+# 	... normal build paths ...
+# }
+# src_compile() {
+# 	if tc-is-cross-compiler ; then
+# 		pushd "${WORKDIR}"/${CBUILD} >/dev/null
+# 		emake one-or-two-build-tools
+# 		ln/mv build-tools to normal build paths in ${S}/
+# 		popd >/dev/null
+# 	fi
+# 	... normal build paths ...
+# }
+# @CODE
+econf_build() {
+	tc-env_build econf --build=${CBUILD:-${CHOST}} "$@"
 }
 
 # @FUNCTION: tc-has-openmp
@@ -254,7 +357,12 @@ ninj() { [[ ${type} == "kern" ]] && echo $1 || echo $2 ; }
 	local host=$2
 	[[ -z ${host} ]] && host=${CTARGET:-${CHOST}}
 
+	local KV=${KV:-${KV_FULL}}
+	[[ ${type} == "kern" ]] && [[ -z ${KV} ]] && \
+	ewarn "QA: Kernel version could not be determined, please inherit kernel-2 or linux-info"
+
 	case ${host} in
+		aarch64*)	ninj aarch64 arm;;
 		alpha*)		echo alpha;;
 		arm*)		echo arm;;
 		avr*)		ninj avr32 avr;;
@@ -341,6 +449,8 @@ tc-endian() {
 	host=${host%%-*}
 
 	case ${host} in
+		aarch64*be)	echo big;;
+		aarch64)	echo little;;
 		alpha*)		echo big;;
 		arm*b*)		echo big;;
 		arm*)		echo little;;
@@ -507,6 +617,14 @@ gen_usr_ldscript() {
 
 	tc-is-static-only && return
 
+	# Eventually we'd like to get rid of this func completely #417451
+	case ${CTARGET:-${CHOST}} in
+	*-darwin*) ;;
+	*linux*|*-freebsd*|*-openbsd*|*-netbsd*)
+		use prefix && return 0 ;;
+	*) return 0 ;;
+	esac
+
 	# Just make sure it exists
 	dodir /usr/${libdir}
 
@@ -573,65 +691,6 @@ gen_usr_ldscript() {
 			ln -snf "../../${libdir}/${tlib}" "${lib}"
 			popd > /dev/null
 			;;
-		*-aix*|*-irix*|*64*-hpux*|*-interix*|*-winnt*)
-			if ${auto} ; then
-				mv "${ED}"/usr/${libdir}/${lib}* "${ED}"/${libdir}/ || die
-				# no way to retrieve soname on these platforms (?)
-				tlib=$(readlink "${ED}"/${libdir}/${lib})
-				tlib=${tlib##*/}
-				if [[ -z ${tlib} ]] ; then
-					# ok, apparently was not a symlink, don't remove it and
-					# just link to it
-					tlib=${lib}
-				else
-					rm -f "${ED}"/${libdir}/${lib}
-				fi
-			else
-				tlib=${lib}
-			fi
-
-			# we don't have GNU binutils on these platforms, so we symlink
-			# instead, which seems to work fine.  Keep it relative, otherwise
-			# we break some QA checks in Portage
-			# on interix, the linker scripts would work fine in _most_
-			# situations. if a library links to such a linker script the
-			# absolute path to the correct library is inserted into the binary,
-			# which is wrong, since anybody linking _without_ libtool will miss
-			# some dependencies, since the stupid linker cannot find libraries
-			# hardcoded with absolute paths (as opposed to the loader, which
-			# seems to be able to do this).
-			# this has been seen while building shared-mime-info which needs
-			# libxml2, but links without libtool (and does not add libz to the
-			# command line by itself).
-			pushd "${ED}/usr/${libdir}" > /dev/null
-			ln -snf "../../${libdir}/${tlib}" "${lib}"
-			popd > /dev/null
-			;;
-		hppa*-hpux*) # PA-RISC 32bit (SOM) only, others (ELF) match *64*-hpux* above.
-			if ${auto} ; then
-				tlib=$(chatr "${ED}"/usr/${libdir}/${lib} | sed -n '/internal name:/{n;s/^ *//;p;q}')
-				[[ -z ${tlib} ]] && tlib=${lib}
-				tlib=${tlib##*/} # 'internal name' can have a path component
-				mv "${ED}"/usr/${libdir}/${lib}* "${ED}"/${libdir}/ || die
-				# some SONAMEs are funky: they encode a version before the .so
-				if [[ ${tlib} != ${lib}* ]] ; then
-					mv "${ED}"/usr/${libdir}/${tlib}* "${ED}"/${libdir}/ || die
-				fi
-				[[ ${tlib} != ${lib} ]] &&
-				rm -f "${ED}"/${libdir}/${lib}
-			else
-				tlib=$(chatr "${ED}"/${libdir}/${lib} | sed -n '/internal name:/{n;s/^ *//;p;q}')
-				[[ -z ${tlib} ]] && tlib=${lib}
-				tlib=${tlib##*/} # 'internal name' can have a path component
-			fi
-			pushd "${ED}"/usr/${libdir} >/dev/null
-			ln -snf "../../${libdir}/${tlib}" "${lib}"
-			# need the internal name in usr/lib too, to be available at runtime
-			# when linked with /path/to/lib.sl (hardcode_direct_absolute=yes)
-			[[ ${tlib} != ${lib} ]] &&
-			ln -snf "../../${libdir}/${tlib}" "${tlib}"
-			popd >/dev/null
-			;;
 		*)
 			if ${auto} ; then
 				tlib=$(scanelf -qF'%S#F' "${ED}"/usr/${libdir}/${lib})
@@ -663,3 +722,5 @@ gen_usr_ldscript() {
 		fperms a+x "/usr/${libdir}/${lib}" || die "could not change perms on ${lib}"
 	done
 }
+
+fi

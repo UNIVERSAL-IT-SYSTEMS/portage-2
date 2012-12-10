@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libdmapsharing/libdmapsharing-2.1.13.ebuild,v 1.2 2011/04/08 21:51:49 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libdmapsharing/libdmapsharing-2.1.13.ebuild,v 1.5 2012/10/04 08:40:11 ago Exp $
 
 EAPI="3"
 
@@ -12,7 +12,7 @@ SRC_URI="http://www.flyn.org/projects/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="2.2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="doc"
 
 RDEPEND="
@@ -27,7 +27,7 @@ RDEPEND="
 		x11-libs/gtk+:2 )
 "
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( >=dev-util/gtk-doc-1 )
 "
 
@@ -47,6 +47,9 @@ src_prepare() {
 
 	# Fix build order, bug #361067
 	epatch "${FILESDIR}/${P}-build-order.patch"
+
+	# Fix building with >=glib-2.31
+	epatch "${FILESDIR}/${P}-glib-2.31.patch"
 
 	AT_M4DIR="m4" eautoreconf
 }

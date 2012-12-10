@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-pda/gnome-pilot/gnome-pilot-2.32.1.ebuild,v 1.5 2011/07/14 09:59:59 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-pda/gnome-pilot/gnome-pilot-2.32.1.ebuild,v 1.7 2012/05/03 20:20:58 jdhore Exp $
 
 EAPI="3"
 G2CONF_DEBUG="no"
@@ -11,7 +11,7 @@ DESCRIPTION="Gnome Palm Pilot and Palm OS Device Syncing Library"
 HOMEPAGE="http://live.gnome.org/GnomePilot"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="eds"
 
 RDEPEND="
@@ -23,7 +23,7 @@ RDEPEND="
 	>=dev-libs/dbus-glib-0.88
 	eds? ( >=gnome-extra/evolution-data-server-2 )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext
 	>=dev-util/gob-2.0.5:2
 	>=dev-lang/perl-5.6

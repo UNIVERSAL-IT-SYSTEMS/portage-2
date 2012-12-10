@@ -1,6 +1,45 @@
 # ChangeLog for sys-fs/nilfs-utils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/nilfs-utils/ChangeLog,v 1.11 2011/01/30 00:50:43 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/nilfs-utils/ChangeLog,v 1.20 2012/07/12 07:29:47 naota Exp $
+
+*nilfs-utils-2.1.4 (12 Jul 2012)
+
+  12 Jul 2012; Naohiro Aota <naota@gentoo.org> +nilfs-utils-2.1.4.ebuild:
+  Version bump to 2.1.4. #425642
+
+*nilfs-utils-2.1.3 (29 Jun 2012)
+
+  29 Jun 2012; Naohiro Aota <naota@gentoo.org> +nilfs-utils-2.1.3.ebuild:
+  Version bump. #423901
+
+*nilfs-utils-2.1.1 (16 May 2012)
+
+  16 May 2012; Naohiro Aota <naota@gentoo.org> +nilfs-utils-2.1.1.ebuild:
+  Version bumped. #408501
+
+*nilfs-utils-2.1.0-r1 (16 May 2012)
+
+  16 May 2012; Naohiro Aota <naota@gentoo.org> +nilfs-utils-2.1.0-r1.ebuild:
+  Move /usr/lib/* to /lib #398079
+
+  27 Mar 2012; Naohiro Aota <naota@gentoo.org> nilfs-utils-2.1.0.ebuild:
+  Don't strictly depend on POSIX_MQUEUE. Just check and warn for it. #396159
+
+  19 Mar 2012; Naohiro Aota <naota@gentoo.org> nilfs-utils-2.1.0.ebuild:
+  Check POSIX_MQUEUE kernel config. #396159
+
+  22 Feb 2012; Jeroen Roovers <jer@gentoo.org> nilfs-utils-2.1.0.ebuild:
+  Marked ~hppa (bug #276410).
+
+*nilfs-utils-2.0.23 (28 Nov 2011)
+
+  28 Nov 2011; Naohiro Aota <naota@gentoo.org> +nilfs-utils-2.0.23.ebuild:
+  Version bumped. #377129
+
+*nilfs-utils-2.1.0 (25 Nov 2011)
+
+  25 Nov 2011; Naohiro Aota <naota@gentoo.org> +nilfs-utils-2.1.0.ebuild:
+  Version bump. Bug #379069
 
   30 Jan 2011; MATSUU Takuto <matsuu@gentoo.org> -nilfs-utils-2.0.14.ebuild,
   -nilfs-utils-2.0.16.ebuild, -nilfs-utils-2.0.17.ebuild,
@@ -64,4 +103,3 @@
   +files/nilfs-utils-2.0.12-gentoo.patch, +metadata.xml,
   +nilfs-utils-2.0.12.ebuild:
   Initial import.
-

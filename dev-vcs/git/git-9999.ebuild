@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/git/git-9999.ebuild,v 1.22 2011/06/27 19:56:45 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/git/git-9999.ebuild,v 1.40 2012/12/06 18:59:29 robbat2 Exp $
 
-EAPI=3
+EAPI=4
 
 GENTOO_DEPEND_ON_PERL=no
 
@@ -11,7 +11,7 @@ PYTHON_DEPEND="python? 2"
 [[ ${PV} == *9999 ]] && SCM="git-2"
 EGIT_REPO_URI="git://git.kernel.org/pub/scm/git/git.git"
 
-inherit toolchain-funcs eutils elisp-common perl-module bash-completion python ${SCM}
+inherit toolchain-funcs eutils elisp-common perl-module bash-completion-r1 python ${SCM}
 
 MY_PV="${PV/_rc/.rc}"
 MY_P="${PN}-${MY_PV}"
@@ -21,10 +21,18 @@ DOC_VER=${MY_PV}
 DESCRIPTION="GIT - the stupid content tracker, the revision control system heavily used by the Linux kernel team"
 HOMEPAGE="http://www.git-scm.com/"
 if [[ ${PV} != *9999 ]]; then
-	SRC_URI="mirror://kernel/software/scm/git/${MY_P}.tar.bz2
-			mirror://kernel/software/scm/git/${PN}-manpages-${DOC_VER}.tar.bz2
-			doc? ( mirror://kernel/software/scm/git/${PN}-htmldocs-${DOC_VER}.tar.bz2 )"
-	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~ia64-hpux ~x86-interix ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+	SRC_URI_SUFFIX="gz"
+	SRC_URI_GOOG="http://git-core.googlecode.com/files"
+	SRC_URI_KORG="mirror://kernel/software/scm/git"
+	SRC_URI="${SRC_URI_GOOG}/${MY_P}.tar.${SRC_URI_SUFFIX}
+			${SRC_URI_KORG}/${MY_P}.tar.${SRC_URI_SUFFIX}
+			${SRC_URI_GOOG}/${PN}-manpages-${DOC_VER}.tar.${SRC_URI_SUFFIX}
+			${SRC_URI_KORG}/${PN}-manpages-${DOC_VER}.tar.${SRC_URI_SUFFIX}
+			doc? (
+			${SRC_URI_KORG}/${PN}-htmldocs-${DOC_VER}.tar.${SRC_URI_SUFFIX}
+			${SRC_URI_GOOG}/${PN}-htmldocs-${DOC_VER}.tar.${SRC_URI_SUFFIX}
+			)"
+	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~ia64-hpux ~x86-interix ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 else
 	SRC_URI=""
 	KEYWORDS=""
@@ -32,25 +40,28 @@ fi
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="+blksha1 +curl cgi doc emacs gtk iconv +perl +python ppcsha1 tk +threads +webdav xinetd cvs subversion"
+IUSE="+blksha1 +curl cgi doc emacs gnome-keyring +gpg gtk highlight +iconv +nls +pcre +perl +python ppcsha1 tk +threads +webdav xinetd cvs subversion test"
 
 # Common to both DEPEND and RDEPEND
 CDEPEND="
-	!blksha1? ( dev-libs/openssl )
+	dev-libs/openssl
 	sys-libs/zlib
-	perl?   ( dev-lang/perl[-build] )
-	tk?     ( dev-lang/tk )
-	curl?   (
+	pcre? ( dev-libs/libpcre )
+	perl? ( dev-lang/perl[-build] )
+	tk? ( dev-lang/tk )
+	curl? (
 		net-misc/curl
 		webdav? ( dev-libs/expat )
 	)
-	emacs?  ( virtual/emacs )"
+	emacs? ( virtual/emacs )
+	gnome-keyring? ( gnome-base/gnome-keyring )"
 
 RDEPEND="${CDEPEND}
+	gpg? ( app-crypt/gnupg )
 	perl? ( dev-perl/Error
 			dev-perl/Net-SMTP-SSL
 			dev-perl/Authen-SASL
-			cgi? ( virtual/perl-CGI )
+			cgi? ( virtual/perl-CGI highlight? ( app-text/highlight ) )
 			cvs? ( >=dev-vcs/cvsps-2.1 dev-perl/DBI dev-perl/DBD-SQLite )
 			subversion? ( dev-vcs/subversion[-dso,perl] dev-perl/libwww-perl dev-perl/TermReadKey )
 			)
@@ -66,31 +77,33 @@ RDEPEND="${CDEPEND}
 #   .texi         --(makeinfo)---------> .info
 DEPEND="${CDEPEND}
 	app-arch/cpio
-	doc?    (
+	doc? (
 		app-text/asciidoc
 		app-text/docbook2X
 		sys-apps/texinfo
+		app-text/xmlto
+	)
+	test? (
+		app-crypt/gnupg
 	)"
 
 # Live ebuild builds man pages and HTML docs, additionally
 if [[ ${PV} == *9999 ]]; then
 	DEPEND="${DEPEND}
-		app-text/asciidoc
-		app-text/xmlto"
+		app-text/asciidoc"
 fi
 
 SITEFILE=50${PN}-gentoo.el
 S="${WORKDIR}/${MY_P}"
 
+REQUIRED_USE="
+	cgi? ( perl )
+	cvs? ( perl )
+	subversion? ( perl )
+	webdav? ( curl )
+"
+
 pkg_setup() {
-	if ! use perl ; then
-		use cgi && ewarn "gitweb needs USE=perl, ignoring USE=cgi"
-		use cvs && ewarn "CVS integration needs USE=perl, ignoring USE=cvs"
-		use subversion && ewarn "git-svn needs USE=perl, it won't work"
-	fi
-	if use webdav && ! use curl ; then
-		ewarn "USE=webdav needs USE=curl. Ignoring"
-	fi
 	if use subversion && has_version dev-vcs/subversion && built_with_use --missing false dev-vcs/subversion dso ; then
 		ewarn "Per Gentoo bugs #223747, #238586, when subversion is built"
 		ewarn "with USE=dso, there may be weird crashes in git-svn. You"
@@ -131,13 +144,13 @@ exportmakeopts() {
 	sed -i -e '/\/usr\/local/s/BASIC_/#BASIC_/' Makefile
 
 	use iconv \
-		|| einfo "Forcing iconv for ${PVR} due to bugs #321895, #322205."
-	#	|| myopts="${myopts} NO_ICONV=YesPlease"
-	# because, above, we need to do this unconditionally (no "&& use iconv")
-	use !elibc_glibc && myopts="${myopts} NEEDS_LIBICONV=YesPlease"
-
+		|| myopts="${myopts} NO_ICONV=YesPlease"
+	use nls \
+		|| myopts="${myopts} NO_GETTEXT=YesPlease"
 	use tk \
 		|| myopts="${myopts} NO_TCLTK=YesPlease"
+	use pcre \
+		&& myopts="${myopts} USE_LIBPCRE=yes"
 	use perl \
 		&& myopts="${myopts} INSTALLDIRS=vendor" \
 		|| myopts="${myopts} NO_PERL=YesPlease"
@@ -164,6 +177,9 @@ exportmakeopts() {
 	if [[ ${CHOST} == *-*-aix* ]]; then
 		myopts="${myopts} NO_FNMATCH_CASEFOLD=YesPlease"
 	fi
+	if [[ ${CHOST} == *-solaris* ]]; then
+		myopts="${myopts} NEEDS_LIBICONV=YesPlease"
+	fi
 
 	has_version '>=app-text/asciidoc-8.0' \
 		&& myopts="${myopts} ASCIIDOC8=YesPlease"
@@ -179,12 +195,12 @@ exportmakeopts() {
 
 src_unpack() {
 	if [[ ${PV} != *9999 ]]; then
-		unpack ${MY_P}.tar.bz2
+		unpack ${MY_P}.tar.${SRC_URI_SUFFIX}
 		cd "${S}"
-		unpack ${PN}-manpages-${DOC_VER}.tar.bz2
+		unpack ${PN}-manpages-${DOC_VER}.tar.${SRC_URI_SUFFIX}
 		use doc && \
 			cd "${S}"/Documentation && \
-			unpack ${PN}-htmldocs-${DOC_VER}.tar.bz2
+			unpack ${PN}-htmldocs-${DOC_VER}.tar.${SRC_URI_SUFFIX}
 		cd "${S}"
 	else
 		git-2_src_unpack
@@ -195,32 +211,12 @@ src_unpack() {
 }
 
 src_prepare() {
-	# Noperl is being merged to upstream as of 2009/04/05
-	#epatch "${FILESDIR}"/20090305-git-1.6.2-noperl.patch
-
-	# GetOpt-Long v2.38 is strict
-	# Merged in 1.6.3 final 2009/05/07
-	#epatch "${FILESDIR}"/20090505-git-1.6.2.5-getopt-fixes.patch
-
-	# JS install fixup
-	# Merged in 1.7.5.x
-	#epatch "${FILESDIR}"/git-1.7.2-always-install-js.patch
-
-	# USE=-iconv causes segfaults, fixed post 1.7.1
-	# Gentoo bug #321895
-	#epatch "${FILESDIR}"/git-1.7.1-noiconv-segfault-fix.patch
-
-	# Fix false positives with t3404 due to SHELL=/bin/false for the portage
-	# user.
-	# Merged upstream
-	#epatch "${FILESDIR}"/git-1.7.3.4-avoid-shell-issues.patch
-
-	# bug #350075: t9001: fix missing prereq on some tests
-	# Merged upstream
-	#epatch "${FILESDIR}"/git-1.7.3.4-fix-perl-test-prereq.patch
+	# bug #418431 - stated for upstream 1.7.13. Developed by Michael Schwern,
+	# funded as a bounty by the Gentoo Foundation. Merged upstream in 1.8.0.
+	#epatch "${FILESDIR}"/git-1.7.12-git-svn-backport.patch
 
 	# bug #350330 - automagic CVS when we don't want it is bad.
-	epatch "${FILESDIR}"/git-1.7.3.5-optional-cvs.patch
+	epatch "${FILESDIR}"/git-1.7.12-optional-cvs.patch
 
 	sed -i \
 		-e 's:^\(CFLAGS =\).*$:\1 $(OPTCFLAGS) -Wall:' \
@@ -240,12 +236,11 @@ src_prepare() {
 	sed -i 's/DOCBOOK2X_TEXI=docbook2x-texi/DOCBOOK2X_TEXI=docbook2texi.pl/' \
 		Documentation/Makefile || die "sed failed"
 
-	# bug #318289
-	# Merged upstream
-	#epatch "${FILESDIR}"/git-1.7.3.2-interix.patch
-
-	# merged upstream
-	#epatch "${FILESDIR}"/git-1.7.5-interix.patch
+	# Fix git-subtree missing DESTDIR
+	sed -i \
+		-e '/$(INSTALL)/s/ $(libexecdir)/ $(DESTDIR)$(libexecdir)/g' \
+		-e '/$(INSTALL)/s/ $(man1dir)/ $(DESTDIR)$(man1dir)/g'  \
+		contrib/subtree/Makefile
 }
 
 git_emake() {
@@ -276,6 +271,10 @@ src_configure() {
 }
 
 src_compile() {
+	if use perl ; then
+	git_emake perl/PM.stamp || die "emake perl/PM.stamp failed"
+	git_emake perl/perl.mak || die "emake perl/perl.mak failed"
+	fi
 	git_emake || die "emake failed"
 
 	if use emacs ; then
@@ -287,6 +286,11 @@ src_compile() {
 		git_emake \
 			gitweb/gitweb.cgi \
 			|| die "emake gitweb/gitweb.cgi failed"
+	fi
+
+	if [[ ${CHOST} == *-darwin* ]]; then
+		cd "${S}"/contrib/credential/osxkeychain || die "cd credential/osxkeychain"
+		git_emake || die "emake credential-osxkeychain"
 	fi
 
 	cd "${S}"/Documentation
@@ -303,12 +307,34 @@ src_compile() {
 				|| die "emake info html failed"
 		fi
 	fi
+
+	if use subversion ; then
+		cd "${S}"/contrib/svn-fe
+		git_emake || die "emake svn-fe failed"
+		if use doc ; then
+			git_emake svn-fe.{1,html} || die "emake svn-fe.1 svn-fe.html failed"
+		fi
+		cd "${S}"
+	fi
+
+	if use gnome-keyring ; then
+		cd "${S}"/contrib/credential/gnome-keyring
+		git_emake || die "emake git-credential-gnome-keyring failed"
+	fi
+
+	cd "${S}"/contrib/subtree
+	git_emake
+	use doc && git_emake doc
 }
 
 src_install() {
 	git_emake \
 		install || \
 		die "make install failed"
+
+	if [[ ${CHOST} == *-darwin* ]]; then
+		dobin contrib/credential/osxkeychain/git-credential-osxkeychain
+	fi
 
 	# Depending on the tarball and manual rebuild of the documentation, the
 	# manpages may exist in either OR both of these directories.
@@ -326,7 +352,8 @@ src_install() {
 	# Upstream does not ship this pre-built :-(
 	use doc && doinfo Documentation/{git,gitman}.info
 
-	dobashcompletion contrib/completion/git-completion.bash ${PN}
+	newbashcomp contrib/completion/git-completion.bash ${PN}
+	newbashcomp contrib/completion/git-prompt.sh ${PN}-prompt
 
 	if use emacs ; then
 		elisp-install ${PN} contrib/emacs/git.{el,elc} || die
@@ -344,25 +371,67 @@ src_install() {
 		dodoc "${S}"/contrib/gitview/gitview.txt
 	fi
 
-	dobin contrib/fast-import/git-p4
-	dodoc contrib/fast-import/git-p4.txt
+	#dobin contrib/fast-import/git-p4 # Moved upstream
+	#dodoc contrib/fast-import/git-p4.txt # Moved upstream
 	newbin contrib/fast-import/import-tars.perl import-tars
 	newbin contrib/git-resurrect.sh git-resurrect
+
+	# git-subtree
+	cd "${S}"/contrib/subtree
+	git_emake install || die "Failed to emake install git-subtree"
+	if use doc ; then
+		git_emake install-man install-doc || die "Failed to emake install-doc install-mangit-subtree"
+	fi
+	newdoc README README.git-subtree
+	dodoc git-subtree.txt
+	cd "${S}"
+
+	# git-diffall
+	dobin contrib/diffall/git-diffall
+	newdoc contrib/diffall/README git-diffall.txt
+
+	# diff-highlight
+	dobin contrib/diff-highlight/diff-highlight
+	newdoc contrib/diff-highlight/README README.diff-highlight
+
+	# git-jump
+	dobin contrib/git-jump/git-jump
+	newdoc contrib/git-jump/README git-jump.txt
+
+	if use gnome-keyring ; then
+		cd "${S}"/contrib/credential/gnome-keyring
+		dobin git-credential-gnome-keyring
+	fi
+
+	if use subversion ; then
+		cd "${S}"/contrib/svn-fe
+		dobin svn-fe
+		dodoc svn-fe.txt
+		use doc && doman svn-fe.1 && dohtml svn-fe.html
+		cd "${S}"
+	fi
 
 	dodir /usr/share/${PN}/contrib
 	# The following are excluded:
 	# completion - installed above
+	# credential/gnome-keyring TODO
+	# diff-highlight - done above
+	# diffall - done above
 	# emacs - installed above
 	# examples - these are stuff that is not used in Git anymore actually
+	# git-jump - done above
 	# gitview - installed above
 	# p4import - excluded because fast-import has a better one
 	# patches - stuff the Git guys made to go upstream to other places
+	# persistent-https - TODO
+	# mw-to-git - TODO
+	# subtree - build  seperately
 	# svnimport - use git-svn
 	# thunderbird-patch-inline - fixes thunderbird
 	for i in \
 		blameview buildsystems ciabot continuous convert-objects fast-import \
-		hg-to-git hooks remotes2config.sh remotes2config.sh rerere-train.sh \
-		stats svn-fe vim workdir \
+		hg-to-git hooks remotes2config.sh rerere-train.sh \
+		stats vim workdir \
 		; do
 		cp -rf \
 			"${S}"/contrib/${i} \
@@ -426,6 +495,8 @@ src_test() {
 		t1004-read-tree-m-u-wf.sh \
 		t3700-add.sh \
 		t7300-clean.sh"
+	# t9100 still fails with symlinks in SVN 1.7
+	local test_svn="t9100-git-svn-basic.sh"
 
 	# Unzip is used only for the testcase code, not by any normal parts of Git.
 	if ! has_version app-arch/unzip ; then
@@ -461,6 +532,9 @@ src_test() {
 		disabled="${disabled} ${tests_perl}"
 	fi
 
+	einfo "Disabling tests that fail with SVN 1.7"
+	disabled="${disabled} ${test_svn}"
+
 	# Reset all previously disabled tests
 	cd "${S}/t"
 	for i in *.sh.DISABLED ; do
@@ -475,21 +549,23 @@ src_test() {
 	sed -e '/^[[:space:]]*$(MAKE) clean/s,^,#,g' \
 		-i "${S}"/t/Makefile
 
-	# Clean old results first
+	# Clean old results first, must always run
 	cd "${S}/t"
-	git_emake clean
+	nonfatal git_emake clean
 
-	# Now run the tests
+	# Now run the tests, keep going if we hit an error, and don't terminate on
+	# failure
 	cd "${S}"
 	einfo "Start test run"
-	git_emake test
+	#MAKEOPTS=-j1
+	nonfatal git_emake --keep-going test
 	rc=$?
 
-	# Display nice results
+	# Display nice results, now print the results
 	cd "${S}/t"
-	git_emake aggregate-results
+	nonfatal git_emake aggregate-results
 
-	# And exit
+	# And bail if there was a problem
 	[ $rc -eq 0 ] || die "tests failed. Please file a bug."
 }
 
@@ -502,12 +578,9 @@ showpkgdeps() {
 pkg_postinst() {
 	use emacs && elisp-site-regen
 	use python && python_mod_optimize git_remote_helpers
-	use bash-completion && \
-		einfo "Please read /usr/share/bash-completion/git for Git bash completion"
-	if use subversion && has_version dev-vcs/subversion && ! built_with_use --missing false dev-vcs/subversion perl ; then
-		ewarn "You must build dev-vcs/subversion with USE=perl"
-		ewarn "to get the full functionality of git-svn!"
-	fi
+	einfo "Please read /usr/share/bash-completion/git for Git bash command completion"
+	einfo "Please read /usr/share/bash-completion/git-prompt for Git bash prompt"
+	einfo "Note that the prompt bash code is now in the seperate script"
 	elog "These additional scripts need some dependencies:"
 	echo
 	showpkgdeps git-quiltimport "dev-util/quilt"

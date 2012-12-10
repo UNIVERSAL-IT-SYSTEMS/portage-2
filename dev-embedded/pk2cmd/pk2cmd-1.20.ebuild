@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/pk2cmd/pk2cmd-1.20.ebuild,v 1.2 2010/09/16 02:42:52 josejx Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/pk2cmd/pk2cmd-1.20.ebuild,v 1.4 2012/05/25 08:01:20 ssuominen Exp $
+
+EAPI=1
 
 inherit eutils toolchain-funcs
 
@@ -13,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ppc ppc64 ~x86"
 IUSE=""
 
-DEPEND="dev-libs/libusb"
+DEPEND="virtual/libusb:0"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}v${PV}LinuxMacSource"

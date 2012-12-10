@@ -1,6 +1,43 @@
 # ChangeLog for dev-vcs/tig
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/tig/ChangeLog,v 1.8 2011/07/15 20:25:58 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/tig/ChangeLog,v 1.18 2012/10/13 16:42:07 radhermit Exp $
+
+*tig-1.1 (13 Oct 2012)
+
+  13 Oct 2012; Tim Harder <radhermit@gentoo.org> +tig-1.1.ebuild:
+  Version bump.
+
+  24 Jul 2012; Tim Harder <radhermit@gentoo.org> -tig-0.18.ebuild:
+  Remove old.
+
+  30 Jun 2012; Agostino Sarubbo <ago@gentoo.org> tig-1.0.ebuild:
+  Stable for amd64, wrt bug #422081
+
+  29 Jun 2012; Jeff Horelick <jdhore@gentoo.org> tig-1.0.ebuild:
+  marked x86 per bug 422081
+
+*tig-1.0 (12 May 2012)
+
+  12 May 2012; Tim Harder <radhermit@gentoo.org> +tig-1.0.ebuild:
+  Version bump.
+
+  03 Nov 2011; Tim Harder <radhermit@gentoo.org> -tig-0.17.ebuild:
+  Remove old.
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> tig-0.18.ebuild:
+  x86 stable wrt bug #388505
+
+  27 Oct 2011; Tony Vroon <chainsaw@gentoo.org> tig-0.18.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "ago" Sarubbo in bug #388505.
+
+  09 Sep 2011; Michał Górny <mgorny@gentoo.org> tig-0.18.ebuild:
+  Migrate to bash-completion-r1.
+
+*tig-0.18 (29 Aug 2011)
+
+  29 Aug 2011; Tim Harder <radhermit@gentoo.org> +tig-0.18.ebuild:
+  Version bump.
 
   15 Jul 2011; Tim Harder <radhermit@gentoo.org> -tig-0.14.1.ebuild,
   -tig-0.15.ebuild, -tig-0.16.ebuild, -tig-0.16.1.ebuild, -tig-0.16.2.ebuild:

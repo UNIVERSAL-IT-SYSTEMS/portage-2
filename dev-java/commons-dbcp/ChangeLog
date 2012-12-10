@@ -1,6 +1,40 @@
 # ChangeLog for dev-java/commons-dbcp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/commons-dbcp/ChangeLog,v 1.54 2011/02/27 14:26:39 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/commons-dbcp/ChangeLog,v 1.63 2012/06/07 21:24:10 ranger Exp $
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> commons-dbcp-1.4-r2.ebuild:
+  Marking commons-dbcp-1.4-r2 ppc for bug 348594
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> commons-dbcp-1.4-r2.ebuild:
+  Marking commons-dbcp-1.4-r2 ppc64 for bug 348594
+
+  31 May 2012; Jeff Horelick <jdhore@gentoo.org> commons-dbcp-1.4-r2.ebuild:
+  marked x86 per bug 348594
+
+  30 May 2012; Agostino Sarubbo <ago@gentoo.org> commons-dbcp-1.4-r2.ebuild:
+  Stable for amd64, wrt bug #348594
+
+*commons-dbcp-1.4-r2 (25 May 2012)
+
+  25 May 2012; Ralph Sennhauser <sera@gentoo.org> +commons-dbcp-1.4-r2.ebuild:
+  Revbump, add missing deps, drop unused deps, fixes #205245.
+  Fix generating javadocs.
+  EAPI bump and make better use of eclasses.
+  Disable test depending on unpackaged geronimo. #348853
+  Disble one failing test as this version is already stable on some archs.
+
+  12 Mar 2012; Brent Baude <ranger@gentoo.org> commons-dbcp-1.4-r1.ebuild:
+  Marking commons-dbcp-1.4-r1 ppc64 for bug 348594
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org> commons-dbcp-1.4-r1.ebuild:
+  Marking commons-dbcp-1.4-r1 ppc for bug 395923
+
+  19 Oct 2011; Miroslav Šulc <fordfrog@gentoo.org> -commons-dbcp-1.4.ebuild:
+  Removed obsolete ebuild
+
+  19 Oct 2011; Miroslav Šulc <fordfrog@gentoo.org> commons-dbcp-1.4-r1.ebuild:
+  Fixed compilation of version 1.4 by restricting it to compile with JDK 1.6
+  (bug #387241)
 
   27 Feb 2011; Markos Chandras <hwoarang@gentoo.org>
   commons-dbcp-1.4-r1.ebuild:

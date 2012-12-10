@@ -1,6 +1,51 @@
 # ChangeLog for perl-core/Attribute-Handlers
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/perl-core/Attribute-Handlers/ChangeLog,v 1.17 2011/05/29 18:21:46 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/perl-core/Attribute-Handlers/ChangeLog,v 1.28 2012/09/01 12:05:39 grobian Exp $
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  Attribute-Handlers-0.930.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  24 Mar 2012; Fabian Groffen <grobian@gentoo.org>
+  Attribute-Handlers-0.930.0.ebuild:
+  Add Prefix keywords, bug #403413
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org>
+  Attribute-Handlers-0.910.0.ebuild:
+  Marking Attribute-Handlers-0.910.0 ppc64 for bug 394039
+
+  02 Feb 2012; Brent Baude <ranger@gentoo.org>
+  Attribute-Handlers-0.910.0.ebuild:
+  Marking Attribute-Handlers-0.910.0 ppc for bug 394039
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org>
+  Attribute-Handlers-0.910.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #394039
+
+  22 Dec 2011; Markus Meier <maekke@gentoo.org>
+  Attribute-Handlers-0.910.0.ebuild:
+  x86 stable, bug #394039
+
+  21 Dec 2011; Markus Meier <maekke@gentoo.org>
+  Attribute-Handlers-0.910.0.ebuild:
+  arm stable, bug #394039
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org>
+  Attribute-Handlers-0.910.0.ebuild:
+  Stable for HPPA (bug #394039).
+
+*Attribute-Handlers-0.930.0 (19 Dec 2011)
+
+  19 Dec 2011; Torsten Veller <tove@gentoo.org>
+  +Attribute-Handlers-0.930.0.ebuild:
+  Version bump
+
+  17 Dec 2011; Agostino Sarubbo <ago@gentoo.org>
+  Attribute-Handlers-0.910.0.ebuild:
+  Stable for AMD64, wrt bug #394039
 
   29 May 2011; Fabian Groffen <grobian@gentoo.org>
   Attribute-Handlers-0.910.0.ebuild:
@@ -72,4 +117,3 @@
   23 Nov 2009; Torsten Veller <tove@gentoo.org>
   +Attribute-Handlers-0.87.ebuild, +metadata.xml:
   Initial commit (#294206)
-

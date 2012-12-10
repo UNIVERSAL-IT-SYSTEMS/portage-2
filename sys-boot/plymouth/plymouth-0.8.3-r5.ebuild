@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/plymouth/plymouth-0.8.3-r5.ebuild,v 1.1 2011/07/03 10:06:14 aidecoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/plymouth/plymouth-0.8.3-r5.ebuild,v 1.5 2012/05/03 04:50:13 jdhore Exp $
 
 EAPI="3"
 
@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 IUSE_VIDEO_CARDS="video_cards_intel video_cards_nouveau video_cards_radeon"
-IUSE="${IUSE_VIDEO_CARDS} gdm +openrc +pango static-libs"
+IUSE="${IUSE_VIDEO_CARDS} debug gdm +openrc +pango static-libs"
 
 COMMON_DEPEND=">=media-libs/libpng-1.2.16
 	>=x11-libs/gtk+-2.12:2
@@ -26,11 +26,11 @@ COMMON_DEPEND=">=media-libs/libpng-1.2.16
 	video_cards_radeon? ( x11-libs/libdrm[video_cards_radeon] )
 	"
 DEPEND="${COMMON_DEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	"
 RDEPEND="${COMMON_DEPEND}
 	>=sys-kernel/dracut-008-r1[dracut_modules_plymouth]
-	openrc? ( sys-boot/plymouth-openrc-plugin )
+	openrc? ( sys-boot/plymouth-openrc-plugin !sys-apps/systemd )
 	"
 
 DOCS=(AUTHORS ChangeLog NEWS README TODO)
@@ -49,6 +49,7 @@ src_prepare() {
 src_configure() {
 	local myeconfargs=(
 		--localstatedir=/var
+		$(use_enable debug tracing)
 		$(use_enable pango)
 		$(use_enable gdm gdm-transition)
 		$(use_enable video_cards_intel libdrm_intel)
@@ -62,13 +63,15 @@ src_install() {
 	autotools-utils_src_install
 
 	if use static-libs; then
-		mv "${D}/$(get_libdir)"/libply{,-splash-core}.{a,la} \
-			"${D}/usr/$(get_libdir)"/ || die 'mv *.{a,la} files failed'
+		mv "${D}/$(get_libdir)"/libply{,-splash-core}.a \
+			"${D}/usr/$(get_libdir)"/ || die 'mv *.a files failed'
 		gen_usr_ldscript libply.so libply-splash-core.so
 	else
-		einfo "Removing /usr/$(get_libdir)/plymouth/*.la"
-		rm "${D}/usr/$(get_libdir)"/plymouth/{*.la,renderers/*.la} \
-			|| die 'rm *.la'
+		local la
+		for la in "${D}/usr/$(get_libdir)"/plymouth/{*.la,renderers/*.la}; do
+			einfo "Removing left ${la#${D}}"
+			rm "${la}" || die "rm '${la}'"
+		done
 	fi
 
 	insinto /usr/share/plymouth

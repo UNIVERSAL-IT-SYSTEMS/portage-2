@@ -1,12 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyglet/pyglet-1.1.4.ebuild,v 1.4 2010/12/21 02:18:10 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyglet/pyglet-1.1.4.ebuild,v 1.6 2012/04/11 00:03:31 floppym Exp $
 
 EAPI=2
 
-PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="3.* 2.7-pypy-*"
 
 inherit distutils
 
@@ -24,7 +23,7 @@ RDEPEND="
 	alsa? ( media-libs/alsa-lib[alisp] )
 	gtk? ( x11-libs/gtk+:2 )
 	openal? ( media-libs/openal )"
-DEPEND="${REDEPEND}"
+DEPEND="${RDEPEND}"
 #	ffmpeg? ( media-libs/avbin-bin )
 
 DOCS="NOTICE"

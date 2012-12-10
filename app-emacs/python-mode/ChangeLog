@@ -1,6 +1,79 @@
 # ChangeLog for app-emacs/python-mode
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/python-mode/ChangeLog,v 1.50 2011/02/20 13:48:07 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/python-mode/ChangeLog,v 1.65 2012/11/03 10:57:51 ulm Exp $
+
+*python-mode-6.0.12 (03 Nov 2012)
+
+  03 Nov 2012; Ulrich Müller <ulm@gentoo.org> -python-mode-6.0.10.ebuild,
+  +python-mode-6.0.12.ebuild:
+  Version bump. Remove old.
+
+*python-mode-6.0.11 (26 Sep 2012)
+
+  26 Sep 2012; Ulrich Müller <ulm@gentoo.org> python-mode-5.2.0.ebuild,
+  -python-mode-6.0.5.ebuild, python-mode-6.0.10.ebuild,
+  +python-mode-6.0.11.ebuild:
+  Version bump. Specify LICENSE more precisely. Remove old.
+
+  10 Aug 2012; Christian Faulhammer <fauli@gentoo.org>
+  -python-mode-6.0.3-r1.ebuild, -files/python-mode-6.0.3-obsolete-vars.patch,
+  -python-mode-6.0.4-r1.ebuild:
+  clean up
+
+*python-mode-6.0.10 (10 Aug 2012)
+
+  10 Aug 2012; Christian Faulhammer <fauli@gentoo.org>
+  +python-mode-6.0.10.ebuild:
+  version bump
+
+*python-mode-6.0.5 (07 Mar 2012)
+
+  07 Mar 2012; Ulrich Müller <ulm@gentoo.org> +python-mode-6.0.5.ebuild:
+  Version bump.
+
+*python-mode-6.0.4-r1 (07 Mar 2012)
+
+  07 Mar 2012; Ulrich Müller <ulm@gentoo.org> -python-mode-6.0.4.ebuild,
+  +python-mode-6.0.4-r1.ebuild:
+  Don't remove highlight-indentation.el, bug 407179.
+
+*python-mode-6.0.4 (02 Mar 2012)
+
+  02 Mar 2012; Ulrich Müller <ulm@gentoo.org> -python-mode-5.1.0.ebuild,
+  -files/60python-mode-gentoo-5.1.el, +python-mode-6.0.4.ebuild:
+  Version bump. Remove old.
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> python-mode-5.2.0.ebuild:
+  Marking python-mode-5.2.0 ppc64 for bug 391725
+
+  06 Jan 2012; Brent Baude <ranger@gentoo.org> python-mode-5.2.0.ebuild:
+  Marking python-mode-5.2.0 ppc for bug 391725
+
+  04 Dec 2011; Raúl Porcel <armin76@gentoo.org> python-mode-5.2.0.ebuild:
+  arm/ia64/s390/sh/sparc/x86 stable wrt #391725
+
+  03 Dec 2011; Ulrich Mueller <ulm@gentoo.org> python-mode-5.2.0.ebuild,
+  python-mode-6.0.3-r1.ebuild:
+  Make use of new elisp.eclass variable for removal of files.
+
+  29 Nov 2011; Jeroen Roovers <jer@gentoo.org> python-mode-5.2.0.ebuild:
+  Stable for HPPA (bug #391725).
+
+  28 Nov 2011; Tony Vroon <chainsaw@gentoo.org> python-mode-5.2.0.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "ago" Sarubbo in bug #391725.
+
+*python-mode-6.0.3-r1 (23 Nov 2011)
+
+  23 Nov 2011; Ulrich Mueller <ulm@gentoo.org> -python-mode-6.0.3.ebuild,
+  +python-mode-6.0.3-r1.ebuild, +files/python-mode-6.0.3-obsolete-vars.patch:
+  Define obsolete variables properly, in order to prevent a crash with
+  dev-python/ipython. Fixes bug 391403.
+
+*python-mode-6.0.3 (21 Nov 2011)
+
+  21 Nov 2011; Ulrich Mueller <ulm@gentoo.org> +python-mode-6.0.3.ebuild:
+  Version bump.
 
 *python-mode-5.2.0 (20 Feb 2011)
 

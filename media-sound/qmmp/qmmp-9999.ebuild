@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/qmmp/qmmp-9999.ebuild,v 1.15 2011/03/26 15:30:27 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/qmmp/qmmp-9999.ebuild,v 1.21 2012/11/04 11:14:10 hwoarang Exp $
 
 EAPI="2"
 
@@ -21,7 +21,7 @@ fi
 LICENSE="GPL-2"
 SLOT="0"
 # KEYWORDS further up
-IUSE="aac +alsa +dbus bs2b cdda cover enca ffmpeg flac jack kde ladspa
+IUSE="aac +alsa +dbus bs2b cdda cover enca ffmpeg flac jack game kde ladspa
 libsamplerate lyrics +mad mms modplug mplayer mpris musepack notifier oss
 projectm pulseaudio scrobbler sndfile tray udev +vorbis wavpack"
 
@@ -32,13 +32,16 @@ RDEPEND="x11-libs/qt-qt3support:4
 	cdda? ( dev-libs/libcdio )
 	dbus? ( sys-apps/dbus )
 	aac? ( media-libs/faad2 )
+	game? ( media-libs/game-music-emu )
 	enca? ( app-i18n/enca )
 	flac? ( media-libs/flac )
 	ladspa? ( media-libs/ladspa-cmt )
 	libsamplerate? ( media-libs/libsamplerate )
 	mad? ( media-libs/libmad )
 	mms? ( media-libs/libmms )
-	mplayer? ( media-video/mplayer )
+	mplayer? ( || ( media-video/mplayer
+		media-video/mplayer2 )
+	)
 	musepack? ( >=media-sound/musepack-tools-444 )
 	modplug? ( >=media-libs/libmodplug-0.8.4 )
 	vorbis? ( media-libs/libvorbis
@@ -49,7 +52,7 @@ RDEPEND="x11-libs/qt-qt3support:4
 	projectm? ( media-libs/libprojectm
 		x11-libs/qt-opengl:4 )
 	pulseaudio? ( >=media-sound/pulseaudio-0.9.9 )
-	udev? ( sys-fs/udisks )
+	udev? ( sys-fs/udisks:0 )
 	wavpack? ( media-sound/wavpack )
 	scrobbler? ( net-misc/curl )
 	sndfile? ( media-libs/libsndfile )"
@@ -70,6 +73,7 @@ src_configure() {
 		$(cmake-utils_use_use enca)
 		$(cmake-utils_use_use ffmpeg)
 		$(cmake-utils_use_use flac)
+		$(cmake-utils_use_use game GME)
 		-DUSE_HAL=OFF
 		$(cmake-utils_use_use jack)
 		$(cmake-utils_use_use kde KDENOTIFY)

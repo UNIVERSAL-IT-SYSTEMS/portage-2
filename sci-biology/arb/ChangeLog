@@ -1,6 +1,27 @@
 # ChangeLog for sci-biology/arb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/arb/ChangeLog,v 1.5 2011/06/20 07:34:40 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/arb/ChangeLog,v 1.9 2012/10/24 19:28:55 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> arb-5.1-r1.ebuild,
+  arb-5.2.ebuild, arb-5.3.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+*arb-5.3 (14 Aug 2012)
+
+  14 Aug 2012; Justin Lecher <jlec@gentoo.org> arb-5.2.ebuild,
+  +files/arb-5.2-gcc-47.patch, +arb-5.3.ebuild:
+  Version BUmp; add fix for gcc-4.7, #431228
+
+  04 Mar 2012; Justin Lecher <jlec@gentoo.org> arb-5.1-r1.ebuild,
+  arb-5.2.ebuild:
+  Adopt deps to unbundled x11-libs/libGLw situation
+
+  11 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/5.2-libpng15.patch, arb-5.2.ebuild:
+  Add missing dependency on sys-process/time and fix building with libpng-1.5
+  wrt #378353. Thanks to Diego Elio Pettenò <flameeyes@gentoo.org> for the
+  report and Samuli Suominen <ssuominen@gentoo.org> for the patch
 
 *arb-5.2 (20 Jun 2011)
 

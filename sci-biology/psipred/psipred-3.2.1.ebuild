@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/psipred/psipred-3.2.1.ebuild,v 1.1 2011/05/24 12:18:04 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/psipred/psipred-3.2.1.ebuild,v 1.4 2012/07/11 06:21:27 jlec Exp $
 
 EAPI=4
 
@@ -15,7 +15,7 @@ SRC_URI="http://bioinf.cs.ucl.ac.uk/downloads/${PN}/${MY_P}.tar.gz"
 LICENSE="psipred"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
-IUSE=""
+IUSE="test"
 
 RDEPEND="
 	sci-biology/ncbi-tools
@@ -43,6 +43,7 @@ src_install() {
 	insinto /usr/share/${PN}
 	doins -r data
 	dodoc README
+	newdoc BLAST+/README README-blast
 }
 
 pkg_postinst() {

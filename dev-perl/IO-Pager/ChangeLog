@@ -1,6 +1,61 @@
 # ChangeLog for dev-perl/IO-Pager
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/IO-Pager/ChangeLog,v 1.18 2010/01/10 12:52:10 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/IO-Pager/ChangeLog,v 1.32 2012/12/06 18:41:47 ago Exp $
+
+  06 Dec 2012; Agostino Sarubbo <ago@gentoo.org> IO-Pager-0.300.0.ebuild:
+  Stable for ppc, wrt bug #441230
+
+  06 Dec 2012; <ago@gentoo.org> IO-Pager-0.300.0.ebuild:
+  Stable for x86, wrt bug #441230
+
+  06 Dec 2012; <ago@gentoo.org> IO-Pager-0.300.0.ebuild:
+  Stable for amd64, wrt bug #441230
+
+*IO-Pager-0.300.0 (07 Sep 2012)
+
+  07 Sep 2012; Torsten Veller <tove@gentoo.org> +IO-Pager-0.300.0.ebuild:
+  Version bump
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -IO-Pager-0.60.0.ebuild:
+  Cleanup
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> IO-Pager-0.60.0.ebuild,
+  IO-Pager-0.240.0.ebuild:
+  Drop ia64/sparc keywords
+
+  09 Aug 2012; Brent Baude <ranger@gentoo.org> IO-Pager-0.240.0.ebuild:
+  Marking IO-Pager-0.240.0 ppc for bug 418817
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> IO-Pager-0.240.0.ebuild:
+  Stable for amd64, wrt bug #418817
+
+  31 Jul 2012; Johannes Huber <johu@gentoo.org> IO-Pager-0.240.0.ebuild:
+  Stable for x86, wrt bug #418817
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*IO-Pager-0.240.0 (26 Feb 2012)
+
+  26 Feb 2012; Torsten Veller <tove@gentoo.org> +IO-Pager-0.240.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -IO-Pager-0.06.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> IO-Pager-0.60.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +IO-Pager-0.60.0.ebuild:
+  Change version scheme
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +IO-Pager-0.60.0.ebuild:
+  Change version scheme
+
+*IO-Pager-0.60.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +IO-Pager-0.60.0.ebuild:
+  Change version scheme
 
   10 Jan 2010; Fabian Groffen <grobian@gentoo.org> IO-Pager-0.06.ebuild:
   Transfer Prefix keywords
@@ -61,4 +116,3 @@
 
   15 May 2005; <pclouds@gentoo.org> +metadata.xml, +IO-Pager-0.05.ebuild:
   Initial ebuild
-

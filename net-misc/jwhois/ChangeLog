@@ -1,6 +1,33 @@
 # ChangeLog for net-misc/jwhois
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/jwhois/ChangeLog,v 1.34 2010/10/17 09:30:28 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/jwhois/ChangeLog,v 1.43 2012/12/09 18:24:26 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> jwhois-4.0-r1.ebuild:
+  Stable for ppc64, wrt bug #441472
+
+  09 Dec 2012; Markus Meier <maekke@gentoo.org> jwhois-4.0-r1.ebuild:
+  arm stable, bug #441472
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> jwhois-4.0-r1.ebuild:
+  Stable for ppc, wrt bug #441472
+
+  08 Dec 2012; <ago@gentoo.org> jwhois-4.0-r1.ebuild:
+  Stable for amd64, wrt bug #441472
+
+  08 Dec 2012; Jeroen Roovers <jer@gentoo.org> jwhois-4.0-r1.ebuild:
+  Stable for HPPA (bug #441472).
+
+  07 Dec 2012; Sergey Popov <pinkbyte@gentoo.org> jwhois-4.0-r1.ebuild:
+  Add EPREFIX to localstatedir option in src_configure
+
+*jwhois-4.0-r1 (18 Aug 2012)
+
+  18 Aug 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/jwhois-4.0-connect-logic.patch, +jwhois-4.0-r1.ebuild:
+  Fix network connect bug #208875 by Gordon Malm.
+
+  14 Jun 2012; Agostino Sarubbo <ago@gentoo.org> jwhois-4.0.ebuild:
+  stable for amd64
 
   17 Oct 2010; Mart Raudsepp <leio@gentoo.org> jwhois-3.2.3-r1.ebuild:
   Drop to ~mips

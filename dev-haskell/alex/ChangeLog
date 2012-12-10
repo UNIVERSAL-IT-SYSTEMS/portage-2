@@ -1,6 +1,56 @@
 # ChangeLog for dev-haskell/alex
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/alex/ChangeLog,v 1.46 2011/07/31 15:38:07 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/alex/ChangeLog,v 1.60 2012/09/12 14:51:30 qnikst Exp $
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> alex-2.3.5.ebuild,
+  alex-3.0.2.ebuild:
+  move dev-haskell/alex/alex-2.3.5.ebuild ebuild to mirror://hackage
+
+  16 Aug 2012; Andreas Schuerch <nativemad@gentoo.org> alex-3.0.2.ebuild:
+  x86 stable, see bug 422015
+
+  09 Aug 2012; Sergei Trofimovich <slyfox@gentoo.org> alex-3.0.2.ebuild:
+  Stable on alpha/ia64/sparc (bug #422015)
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> alex-3.0.2.ebuild:
+  Marking alex-3.0.2 ppc for bug 422015
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> alex-3.0.2.ebuild:
+  Marking alex-3.0.2 ppc64 for bug 422015
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> alex-3.0.2.ebuild:
+  Stable for amd64, wrt bug #422015
+
+*alex-3.0.2 (13 May 2012)
+
+  13 May 2012; Sergei Trofimovich <slyfox@gentoo.org> +alex-3.0.2.ebuild,
+  alex-2.3.5.ebuild, metadata.xml:
+  Version bump.
+
+  25 Apr 2012; Justin Lecher <jlec@gentoo.org> alex-2.3.5.ebuild:
+  Drop unnessecary die
+
+  20 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> -alex-2.3.1.ebuild,
+  -alex-2.3.2.ebuild:
+  Dropped old.
+
+  17 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> alex-2.3.5.ebuild:
+  alpha/ia64/sparc stable (bug #399965). Passed upstream tests.
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> alex-2.3.5.ebuild:
+  Marking alex-2.3.5 ppc64 for bug 399965
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> alex-2.3.5.ebuild:
+  x86 stable wrt bug #399965
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> alex-2.3.5.ebuild:
+  Marking alex-2.3.5 ppc for bug 399965
+
+  24 Feb 2012; Brent Baude <ranger@gentoo.org> alex-2.3.5.ebuild:
+  Marking alex-2.3.5 ppc for bug 399965
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> alex-2.3.5.ebuild:
+  Stable for amd64, wrt bug #399965
 
 *alex-2.3.5 (31 Jul 2011)
 
@@ -159,4 +209,3 @@
 
   22 Sep 2003; Andres Loeh <kosmikus@gentoo.org> alex-2.0.ebuild:
   Initial import. Alex is a lexical analyzer generator for Haskell.
-

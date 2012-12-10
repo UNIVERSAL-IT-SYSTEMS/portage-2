@@ -1,19 +1,24 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/tree-puzzle/tree-puzzle-5.2.ebuild,v 1.10 2010/01/01 21:44:45 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/tree-puzzle/tree-puzzle-5.2.ebuild,v 1.14 2012/08/01 15:41:29 jlec Exp $
 
-inherit toolchain-funcs
+EAPI=4
 
-DESCRIPTION="Maximum likelihood analysis for nucleotide, amino acid, and two-state data."
+inherit eutils toolchain-funcs
+
+DESCRIPTION="Maximum likelihood analysis for nucleotide, amino acid, and two-state data"
 HOMEPAGE="http://www.tree-puzzle.de"
 SRC_URI="http://www.tree-puzzle.de/${P}.tar.gz"
-LICENSE="GPL-2"
 
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc x86 ~amd64-linux ~x86-linux ~ppc-macos"
 IUSE="mpi"
 
-DEPEND="mpi? ( sys-cluster/lam-mpi )"
+DEPEND="mpi? ( virtual/mpi )"
+RDEPEND="${DEPEND}"
+
+RESTRICT="test"
 
 pkg_setup () {
 	use mpi && [ $(tc-getCC) = icc ] && die "The parallelized version of tree-puzzle cannot be compiled using icc.
@@ -21,16 +26,19 @@ pkg_setup () {
 	version of the program, or use gcc as your compiler (CC=\"gcc\")."
 }
 
-src_compile() {
-	econf || die
-	cd ${S}/src
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-impl-dec.patch
+}
+
+src_configure() {
+	default
+
 	if ! use mpi; then
-		sed -e 's:bin_PROGRAMS = puzzle$(EXEEXT) ppuzzle:bin_PROGRAMS = puzzle :' \
-			-e 's:DIST_SOURCES = $(ppuzzle_SOURCES) $(puzzle_SOURCES):DIST_SOURCES = $(puzzle_SOURCES):' \
-			-i Makefile || die
+			sed \
+				-e 's:bin_PROGRAMS = puzzle$(EXEEXT) ppuzzle:bin_PROGRAMS = puzzle :' \
+				-e 's:DIST_SOURCES = $(ppuzzle_SOURCES) $(puzzle_SOURCES):DIST_SOURCES = $(puzzle_SOURCES):' \
+				-i "${S}"/src/Makefile || die
 	fi
-	cd ${S}
-	emake || die
 }
 
 src_install() {

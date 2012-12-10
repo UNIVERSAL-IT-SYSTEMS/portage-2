@@ -1,6 +1,27 @@
 # ChangeLog for dev-lang/gnu-smalltalk
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/gnu-smalltalk/ChangeLog,v 1.46 2010/12/21 01:04:11 araujo Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/gnu-smalltalk/ChangeLog,v 1.50 2012/06/06 03:07:09 zmedico Exp $
+
+  06 Jun 2012; Zac Medico <zmedico@gentoo.org> gnu-smalltalk-3.2.1.ebuild,
+  gnu-smalltalk-3.2.2.ebuild, gnu-smalltalk-3.2.3.ebuild,
+  gnu-smalltalk-3.2.4.ebuild:
+  inherit multilib for get_libdir
+
+  24 Apr 2012; Michał Górny <mgorny@gentoo.org> gnu-smalltalk-3.2.1.ebuild,
+  gnu-smalltalk-3.2.2.ebuild, gnu-smalltalk-3.2.3.ebuild,
+  gnu-smalltalk-3.2.4.ebuild:
+  Update to use mirror://.
+
+  10 Oct 2011; Luis F. Araujo <araujo@gentoo.org> gnu-smalltalk-3.2.4.ebuild:
+  Use newer EAPI features. Add EAPI=3
+
+*gnu-smalltalk-3.2.4 (09 Oct 2011)
+
+  09 Oct 2011; Luis F. Araujo <araujo@gentoo.org> +gnu-smalltalk-3.2.4.ebuild,
+  +files/SequenceableCollection-size-3.2.4.patch:
+  Fix: dev-lang/gnu-smalltalk should DEPEND on app-arch/zip (bug#364731).
+  dev-lang/gnu-smalltalk crashes by SequenceableCollection new (bug#364733).
+  dev-lang/gnu-smalltalk-3.2.4 has been released (bug#381609)
 
 *gnu-smalltalk-3.2.3 (21 Dec 2010)
 

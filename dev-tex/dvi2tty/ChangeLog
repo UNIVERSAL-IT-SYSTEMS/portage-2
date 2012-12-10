@@ -1,6 +1,43 @@
 # ChangeLog for dev-tex/dvi2tty
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/dvi2tty/ChangeLog,v 1.23 2010/02/02 22:08:00 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/dvi2tty/ChangeLog,v 1.35 2012/12/05 01:37:15 jer Exp $
+
+  05 Dec 2012; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  Change maintainer tag (bug #390951).
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> dvi2tty-5.3.4.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #404725
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> dvi2tty-5.3.4.ebuild:
+  keyword ~amd64-fbsd
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> dvi2tty-5.3.4.ebuild:
+  Marking dvi2tty-5.3.4 ppc64 for bug 404725
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> dvi2tty-5.3.4.ebuild:
+  Marking dvi2tty-5.3.4 ppc for bug 404725
+
+  05 Apr 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> dvi2tty-5.3.4.ebuild:
+  x86 stable wrt bug #404725
+
+  04 Apr 2012; Jeroen Roovers <jer@gentoo.org> dvi2tty-5.3.4.ebuild:
+  Stable for HPPA (bug #404725).
+
+  30 Mar 2012; Markus Meier <maekke@gentoo.org> dvi2tty-5.3.4.ebuild:
+  arm stable, bug #404725
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> dvi2tty-5.3.4.ebuild:
+  Stable for amd64, wrt bug #404725
+
+  05 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  files/dvi2tty-5.3.4-cflags.patch:
+  Remove forced -O2 optimization and respect CC from environment again.
+
+*dvi2tty-5.3.4 (05 Nov 2011)
+
+  05 Nov 2011; Maxim Koltsov <maksbotan@gentoo.org> +dvi2tty-5.3.4.ebuild,
+  +files/dvi2tty-5.3.4-cflags.patch, metadata.xml:
+  Bump to 5.3.4, add Ian Delaney as proxy maintainer
 
   02 Feb 2010; Jonathan Callen <abcd@gentoo.org> dvi2tty-5.3.1.ebuild:
   Add ~amd64-linux/~x86-linux keywords

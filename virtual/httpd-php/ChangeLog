@@ -1,6 +1,54 @@
 # ChangeLog for virtual/httpd-php
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/httpd-php/ChangeLog,v 1.14 2011/03/27 17:06:44 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/httpd-php/ChangeLog,v 1.27 2012/11/04 08:08:30 olemarkus Exp $
+
+*httpd-php-5.3-r1 (04 Nov 2012)
+*httpd-php-5.4-r2 (04 Nov 2012)
+
+  04 Nov 2012; Ole Markus With <olemarkus@gentoo.org> +httpd-php-5.3-r1.ebuild,
+  +httpd-php-5.4-r2.ebuild:
+  Prefer php-fpm over apache2 as default
+
+  21 Oct 2012; Markus Meier <maekke@gentoo.org> httpd-php-5.4-r1.ebuild:
+  x86 stable, bug #432994
+
+  17 Sep 2012; Anthony G. Basile <blueness@gentoo.org> httpd-php-5.4-r1.ebuild:
+  stable arm, bug #432994
+
+  16 Sep 2012; Anthony G. Basile <blueness@gentoo.org> httpd-php-5.4-r1.ebuild:
+  Stable ppc ppc64, bug #432994
+
+  06 Sep 2012; Tony Vroon <chainsaw@gentoo.org> httpd-php-5.4-r1.ebuild:
+  Marked stable on AMD64 as requested by David Flogeras in bug #432994.
+
+  05 Sep 2012; Jeroen Roovers <jer@gentoo.org> httpd-php-5.4-r1.ebuild:
+  Stable for HPPA (bug #432994).
+
+  29 Aug 2012; Ole Markus With <olemarkus@gentoo.org> -httpd-php-5.4.ebuild:
+  Removing silly ebuild (5.4 depping on 5.3)
+
+*httpd-php-5.4-r1 (29 Aug 2012)
+
+  29 Aug 2012; Ole Markus With <olemarkus@gentoo.org> +httpd-php-5.4-r1.ebuild:
+  Revbump making the 5.4 virtual depend on php:5.4
+
+  24 Aug 2012; Jeroen Roovers <jer@gentoo.org> httpd-php-5.4.ebuild:
+  Stable for HPPA (bug #427024).
+
+  11 Jul 2012; Anthony G. Basile <blueness@gentoo.org> httpd-php-5.3.ebuild,
+  httpd-php-5.4.ebuild:
+  Keyword ~mips
+
+  21 Jan 2012; Ole Markus With <olemarkus@gentoo.org> -httpd-php-5.2.ebuild:
+  Removing PHP 5.2. Bye bye
+
+*httpd-php-5.4 (11 Nov 2011)
+
+  11 Nov 2011; Ole Markus With <olemarkus@gentoo.org> +httpd-php-5.4.ebuild:
+  Added virtual for php5.4
+
+  22 Aug 2011; Mark Loeser <halcy0n@gentoo.org> httpd-php-5.3.ebuild:
+  Add ppc64
 
   27 Mar 2011; Brent Baude <ranger@gentoo.org> httpd-php-5.3.ebuild:
   Marking httpd-php-5.3 ppc for bug 3532933
@@ -45,4 +93,3 @@
   05 Jul 2010; Matti Bickel <mabi@gentoo.org> +httpd-php-5.2.ebuild,
   +httpd-php-5.3.ebuild, +metadata.xml:
   initial import (bug #319623)
-

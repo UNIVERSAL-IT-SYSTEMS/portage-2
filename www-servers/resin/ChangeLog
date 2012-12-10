@@ -1,6 +1,42 @@
 # ChangeLog for www-servers/resin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/resin/ChangeLog,v 1.107 2011/03/15 20:12:40 nelchael Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-servers/resin/ChangeLog,v 1.116 2012/05/07 05:21:02 nativemad Exp $
+
+  07 May 2012; Andreas Schuerch <nativemad@gentoo.org> resin-4.0.22.ebuild:
+  x86 stable, see bug 403199
+
+*resin-4.0.26 (04 Mar 2012)
+
+  04 Mar 2012; Krzysztof Pawlik <nelchael@gentoo.org> +files/4.0.26/resin.conf,
+  +files/4.0.26/resin.init, +resin-4.0.26.ebuild:
+  Version bump.
+
+  24 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org> resin-4.0.25.ebuild:
+  Update ebuild for EAPI 4.
+
+  24 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org> resin-4.0.22.ebuild:
+  Improve ebuild, see bug #405585 and bug #405587.
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> resin-4.0.22.ebuild:
+  Stable for amd64, wrt bug #403199
+
+  23 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org> resin-4.0.25.ebuild:
+  Use -r1 of patches for Resin 4.0.25, fixes build issues.
+
+  23 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org> resin-4.0.22.ebuild:
+  Use -r1 of patches for Resin 4.0.22, fixes build issues, see bug #405433.
+
+*resin-4.0.25 (11 Feb 2012)
+
+  11 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org> +files/4.0.25/resin.conf,
+  +files/4.0.25/resin.init, +resin-4.0.25.ebuild:
+  Version bump.
+
+*resin-4.0.22 (06 Sep 2011)
+
+  06 Sep 2011; Krzysztof Pawlik <nelchael@gentoo.org> +files/4.0.22/resin.conf,
+  +files/4.0.22/resin.init, +resin-4.0.22.ebuild:
+  Version bump.
 
 *resin-4.0.15 (15 Mar 2011)
 

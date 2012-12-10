@@ -1,6 +1,34 @@
 # ChangeLog for net-libs/libmrss
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libmrss/ChangeLog,v 1.14 2009/06/09 09:29:14 dev-zero Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libmrss/ChangeLog,v 1.22 2012/05/31 15:48:34 radhermit Exp $
+
+  31 May 2012; Tim Harder <radhermit@gentoo.org> -libmrss-0.17.1.ebuild,
+  -libmrss-0.18.0.ebuild:
+  Remove old.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libmrss-0.17.1.ebuild,
+  libmrss-0.18.0.ebuild, libmrss-0.19.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libmrss-0.19.2.ebuild:
+  x86 stable wrt bug #397157
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> libmrss-0.19.2.ebuild:
+  Marking libmrss-0.19.2 ppc for bug 397157
+
+  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> libmrss-0.19.2.ebuild:
+  Stable for amd64, wrt bug #397157
+
+  24 Nov 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #158470
+
+  26 Sep 2011; Tim Harder <radhermit@gentoo.org> libmrss-0.19.2.ebuild:
+  Update to EAPI 4, add static-libs use flag, and drop currently unused php use
+  flag.
+
+  26 Sep 2011; Tim Harder <radhermit@gentoo.org> libmrss-0.17.1.ebuild,
+  libmrss-0.18.0.ebuild, libmrss-0.19.2.ebuild:
+  Update HOMEPAGE and SRC_URI.
 
 *libmrss-0.19.2 (09 Jun 2009)
 

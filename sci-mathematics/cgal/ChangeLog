@@ -1,6 +1,53 @@
 # ChangeLog for sci-mathematics/cgal
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/cgal/ChangeLog,v 1.8 2010/11/01 21:43:15 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/cgal/ChangeLog,v 1.19 2012/11/09 14:01:53 jlec Exp $
+
+  09 Nov 2012; Justin Lecher <jlec@gentoo.org> cgal-4.0.2.ebuild, metadata.xml:
+  Addmissing dep on virtual/glu, #438504
+
+  09 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -cgal-3.9.ebuild,
+  -cgal-4.0.ebuild, -files/cgal-4.0-gcc47.patch, cgal-4.0.2.ebuild:
+  keyword amd64-linux x86-linux
+
+*cgal-4.0.2 (07 Jul 2012)
+
+  07 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> +cgal-4.0.2.ebuild:
+  Version bump
+
+  10 May 2012; Sébastien Fabbro <bicatali@gentoo.org> -cgal-3.7.ebuild,
+  cgal-4.0.ebuild:
+  examples are not configured, only installed (fixing bug #415349) together
+  with demos. lapack dependency is removed, only used for examples.
+
+  08 May 2012; Sébastien Fabbro <bicatali@gentoo.org> cgal-4.0.ebuild,
+  +files/cgal-4.0-gcc47.patch:
+  Fix for gcc-4.7, thanks Jimmy Jazz (bug #414029)
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> cgal-3.7.ebuild,
+  cgal-3.9.ebuild, cgal-4.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*cgal-4.0 (18 Apr 2012)
+
+  18 Apr 2012; Sébastien Fabbro <bicatali@gentoo.org> +cgal-4.0.ebuild:
+  Version bump
+
+  17 Dec 2011; Sébastien Fabbro <bicatali@gentoo.org> cgal-3.9.ebuild:
+  Added mpfi support, thanks Martin von Gagern, bug #393651. Switched to EAPI4
+
+*cgal-3.9 (25 Nov 2011)
+
+  25 Nov 2011; Sébastien Fabbro <bicatali@gentoo.org> -cgal-3.6.1.ebuild,
+  +cgal-3.9.ebuild:
+  Version bump
+
+  14 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org> cgal-3.6.1.ebuild,
+  cgal-3.7.ebuild:
+  QA: cxx conditional was broken, fix it.
+
+  13 Nov 2011; Mike Frysinger <vapier@gentoo.org> cgal-3.6.1.ebuild,
+  cgal-3.7.ebuild:
+  Convert gmp[-nocxx] to gmp[cxx].
 
 *cgal-3.7 (01 Nov 2010)
 
@@ -40,4 +87,3 @@
   +files/cgal-3.3.1-qt.patch, +files/cgal-3.3.1-rpath.patch, +metadata.xml,
   +cgal-3.3.1.ebuild:
   Initial import. Closing bug #167944.
-

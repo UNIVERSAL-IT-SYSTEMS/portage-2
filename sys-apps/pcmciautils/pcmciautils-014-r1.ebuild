@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pcmciautils/pcmciautils-014-r1.ebuild,v 1.9 2009/10/16 19:19:38 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pcmciautils/pcmciautils-014-r1.ebuild,v 1.11 2012/11/01 08:12:43 ssuominen Exp $
 
 inherit eutils toolchain-funcs linux-info
 
@@ -15,7 +15,7 @@ KEYWORDS="amd64 arm ppc sh x86"
 
 IUSE="debug static staticsocket"
 RDEPEND=">=sys-fs/sysfsutils-1.2.0-r1
-	>=sys-apps/module-init-tools-3.2_pre4"
+	virtual/modutils"
 DEPEND="${RDEPEND}
 	dev-util/yacc
 	sys-devel/flex
@@ -43,22 +43,22 @@ src_unpack() {
 		-e "s:^\(KERNEL_DIR\) = .*:\1 = ${KV_DIR}:" \
 		-e "s:^\(V\) = false:\1 = true:" \
 		-e "s:^\(CFLAGS \:=.*\):\1 ${CFLAGS}:" \
-		${S}/Makefile || die
+		"${S}"/Makefile || die
 
 	if use debug; then
-		sed -i -e "s:^\(DEBUG\) = .*:\1 = true:" ${S}/Makefile || die
+		sed -i -e "s:^\(DEBUG\) = .*:\1 = true:" "${S}"/Makefile || die
 	fi
 
 	if use static; then
-		sed -i -e "s:^\(STATIC\) = .*:\1 = true:" ${S}/Makefile || die
+		sed -i -e "s:^\(STATIC\) = .*:\1 = true:" "${S}"/Makefile || die
 	fi
 
 	if use staticsocket; then
-		sed -i -e "s:^\(STARTUP\) = .*:\1 = false:" ${S}/Makefile || die
+		sed -i -e "s:^\(STARTUP\) = .*:\1 = false:" "${S}"/Makefile || die
 	fi
 
 	# we always use udev
-	sed -i -e "s:^\(UDEV\) = .*:\1 = true:" ${S}/Makefile || die
+	sed -i -e "s:^\(UDEV\) = .*:\1 = true:" "${S}"/Makefile || die
 }
 
 src_compile() {

@@ -1,6 +1,589 @@
 # ChangeLog for net-misc/asterisk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/ChangeLog,v 1.337 2011/07/26 13:53:33 chainsaw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/ChangeLog,v 1.426 2012/12/02 11:37:20 ago Exp $
+
+  02 Dec 2012; <ago@gentoo.org> asterisk-1.8.18.0-r2.ebuild:
+  Stable for amd64, wrt bug #445182
+
+*asterisk-11.0.1-r2 (01 Dec 2012)
+*asterisk-10.10.0-r2 (01 Dec 2012)
+*asterisk-1.8.18.0-r2 (01 Dec 2012)
+
+  01 Dec 2012; Tony Vroon <chainsaw@gentoo.org> +files/1.8.0/asterisk.initd4,
+  -asterisk-1.8.18.0-r1.ebuild, +asterisk-1.8.18.0-r2.ebuild,
+  -asterisk-10.10.0-r1.ebuild, +asterisk-10.10.0-r2.ebuild,
+  -asterisk-11.0.1-r1.ebuild, +asterisk-11.0.1-r2.ebuild:
+  OpenRC has seen fit to overhaul /var/run; as identified by Vincent Brillault
+  in bug #445182 our init scripts require immediate adjustments. With thanks to
+  Jaco Kroon for review. Updating all three branches and removing all
+  non-stable now unusable ebuilds.
+
+*asterisk-1.8.18.0-r1 (21 Nov 2012)
+
+  21 Nov 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.16.0.ebuild,
+  -asterisk-1.8.17.0.ebuild, -asterisk-1.8.18.0.ebuild,
+  +asterisk-1.8.18.0-r1.ebuild:
+  Fix by Jaco Kroon to avoid spurious errors in the AMI ShowDialPlan
+  application, closes bug #440278. Prevent pwlib configure hooks catching on
+  ptlib, closes bug #440278 by Diego Elio "Flameeyes" Pettenò. Remove older
+  ebuilds up to last stable. Contrary to earlier news, this -r1 ebuild is the
+  new stable candidate.
+
+*asterisk-10.10.0-r1 (21 Nov 2012)
+
+  21 Nov 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-10.10.0.ebuild,
+  +asterisk-10.10.0-r1.ebuild:
+  Fix by Jaco Kroon to avoid spurious errors in the AMI ShowDialPlan
+  application, closes bug #440278. Prevent pwlib configure hooks catching on
+  ptlib, closes bug #440278 by Diego Elio "Flameeyes" Pettenò.
+
+*asterisk-11.0.1-r1 (21 Nov 2012)
+
+  21 Nov 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-10.9.0.ebuild,
+  -asterisk-11.0.0.ebuild, -asterisk-11.0.1.ebuild, +asterisk-11.0.1-r1.ebuild:
+  Fix by Jaco Kroon to avoid spurious errors in the AMI ShowDialPlan
+  application, closes bug #440278. Prevent pwlib configure hooks catching on
+  ptlib, closes bug #440278 by Diego Elio "Flameeyes" Pettenò.
+
+*asterisk-10.10.0 (13 Nov 2012)
+
+  13 Nov 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-10.10.0.ebuild:
+  Patch by Jaco Kroon adds subscribe context to SipShowPeers AMI command,
+  closes bug #440250. Please consider upgrading from 10 to 11 at this point. If
+  anything is keeping you on 10, I need to know and you should file me a bug.
+
+*asterisk-1.8.18.0 (13 Nov 2012)
+
+  13 Nov 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.18.0.ebuild:
+  IAX provisioning fixes restore operation of the IAXy adapter, closes bug
+  #437740 by Joseph. Patch by Jaco Kroon adds subscribe context to SipShowPeers
+  AMI command, closes bug #440250. This is a new stable candidate.
+
+*asterisk-11.0.1 (08 Nov 2012)
+
+  08 Nov 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-10.7.1.ebuild,
+  -asterisk-10.8.0.ebuild, +asterisk-11.0.1.ebuild:
+  Second release on the 11 branch. Among other things, this prevents the
+  registry getting cleared on a sip reload. Conference bridge recording AMI/CLI
+  commands now work. Remove older 10 branch ebuilds.
+
+*asterisk-11.0.0 (30 Oct 2012)
+
+  30 Oct 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-11.0.0.ebuild,
+  metadata.xml:
+  Initial release on 11 (LTS) branch. Distro patchset & ebuild menuselect logic
+  ported by Oliver Jaksch. Build system tamed and parallelised by Erik Wallin.
+  Closes bug #432894. Patch from Pacho Ramos inverts logic in gmime detection
+  and facilitates the pending removal of 2.4 from the portage tree, closes bug
+  #439846. This is currently masked and not recommended for deployment.
+
+*asterisk-10.9.0 (09 Oct 2012)
+*asterisk-1.8.17.0 (09 Oct 2012)
+
+  09 Oct 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.17.0.ebuild,
+  +asterisk-10.9.0.ebuild:
+  Bugfix release on the 1.8 & 10 branches, addresses among other things a
+  channel reference leak in ChanSpy, DTMF recognition issues in the absence of
+  any interdigit delay, last queue member not being deleted, CEL PostgreSQL
+  memory leak and a DUNDi message routing issue. Distro patchset unchanged.
+
+*asterisk-10.8.0 (18 Sep 2012)
+*asterisk-1.8.16.0 (18 Sep 2012)
+
+  18 Sep 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.13.1.ebuild,
+  +asterisk-1.8.16.0.ebuild, +asterisk-10.8.0.ebuild:
+  Upgrade on the 1.8 & 10 branches that addresses a severe memory leak in the
+  CEL logging modules, only recreates SRTP sessions when needed & copes better
+  with (extremely) out of order RFC2833 DTMF. Removed vulnerable stable ebuild
+  now that keywording for security bug #433750 is complete.
+
+  13 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  asterisk-1.8.15.1.ebuild:
+  x86 stable wrt bug #433750
+
+  03 Sep 2012; Agostino Sarubbo <ago@gentoo.org> asterisk-1.8.15.1.ebuild:
+  Stable for amd64, wrt bug #433750
+
+*asterisk-10.7.1 (03 Sep 2012)
+
+  03 Sep 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.14.1.ebuild,
+  -asterisk-1.8.15.0.ebuild, -asterisk-10.6.1.ebuild, -asterisk-10.7.0.ebuild,
+  +asterisk-10.7.1.ebuild:
+  Security upgrade on the 10 branch, addressing a privilege escalation in the
+  manager interface and a failure to apply IAX2 ACLs when using Asterisk
+  Realtime Architecture (ARA). Fixes by Jaco Kroon address bug #429492 and bug
+  #432464. Clean out all vulnerable non-stable ebuilds.
+
+*asterisk-1.8.15.1 (03 Sep 2012)
+
+  03 Sep 2012; Tony Vroon <chainsaw@gentoo.org> +files/1.8.0/asterisk.initd3,
+  +asterisk-1.8.15.1.ebuild:
+  Security upgrade on the 1.8 branch, addressing a privilege escalation in the
+  manager interface and a failure to apply IAX2 ACLs when using Asterisk
+  Realtime Architecture (ARA). Fixes by Jaco Kroon address bug #429492 and bug
+  #432464.
+
+  25 Aug 2012; <swift@gentoo.org> asterisk-1.8.14.1.ebuild,
+  asterisk-1.8.15.0.ebuild, asterisk-10.6.1.ebuild, asterisk-10.7.0.ebuild:
+  Adding dependency on SELinux asterisk policy module
+
+*asterisk-1.8.15.0 (31 Jul 2012)
+
+  31 Jul 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.15.0.ebuild:
+  Bugfix release on the 1.8 branch. Fixes, among other things, a null pointer
+  dereference in ast_sockaddr_prase, a potential deadlock in
+  ast_set_hangupsource & routing issues around outboundproxy.
+
+*asterisk-10.7.0 (31 Jul 2012)
+
+  31 Jul 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-10.5.2.ebuild,
+  +asterisk-10.7.0.ebuild:
+  Bugfix release on the 10 branch. Fixes, among other things, a null pointer
+  dereference in ast_sockaddr_prase, a potential deadlock in
+  ast_set_hangupsource & routing issues around outboundproxy.
+
+*asterisk-1.8.14.1 (18 Jul 2012)
+
+  18 Jul 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.14.0.ebuild,
+  +asterisk-1.8.14.1.ebuild:
+  Bugfix release on the 1.8 branch which addresses SSL/TLS related severe
+  instability. The affected (non-stable) ebuild has been removed.
+
+*asterisk-10.6.1 (18 Jul 2012)
+
+  18 Jul 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-10.6.0.ebuild,
+  +asterisk-10.6.1.ebuild:
+  Bugfix release on the 10 branch that addresses SSL/TLS related severe
+  instability. This removes the affected release which had already been masked.
+
+  18 Jul 2012; Rajiv Aaron Manglani <rajiv@gentoo.org> asterisk-10.5.2.ebuild:
+  correct SRC_URI.
+
+*asterisk-10.6.0 (11 Jul 2012)
+*asterisk-1.8.14.0 (11 Jul 2012)
+
+  11 Jul 2012; Tony Vroon <chainsaw@gentoo.org> asterisk-1.8.13.1.ebuild,
+  +asterisk-1.8.14.0.ebuild, +asterisk-10.6.0.ebuild:
+  Bugfix release on the 1.8 & 10 branches which drops chan_usbradio support.
+  Amend SRC_URI as per Jaco Kroon in bug #425754. This fixes, among other
+  things, a potential crash in mp3_read, a sip_pvt reference leak and
+  overoptimisation for local channel chains. Adds voicemail storage backend
+  selection support to 10.6.0, also by Jaco Kroon and first introduced for 1.8
+  ebuilds. Distro patchset unchanged.
+
+  09 Jul 2012; Jeff Horelick <jdhore@gentoo.org> -asterisk-1.8.12.1.ebuild:
+  Remove old wrt bug 425050
+
+  09 Jul 2012; Jeff Horelick <jdhore@gentoo.org> asterisk-1.8.13.1.ebuild:
+  marked x86 per security bug 425050
+
+  06 Jul 2012; Agostino Sarubbo <ago@gentoo.org> asterisk-1.8.13.1.ebuild:
+  Stable for amd64, wrt bug #425050
+
+*asterisk-10.5.2 (06 Jul 2012)
+*asterisk-1.8.13.1 (06 Jul 2012)
+
+  06 Jul 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.13.0.ebuild,
+  -asterisk-1.8.13.0-r1.ebuild, +asterisk-1.8.13.1.ebuild,
+  -asterisk-10.5.1.ebuild, +asterisk-10.5.2.ebuild:
+  Upgrades on the 1.8 & 10 branches to address a potential resource leak when a
+  re-invite transaction is not completed (AST-2012-010) and on the 1.8 branch
+  only for a remote crash vulnerability in the voicemail application
+  (AST-2012-011). Both covered under CVE-2012-3812. Removed any non-stable
+  vulnerable ebuild.
+
+*asterisk-1.8.13.0-r1 (22 Jun 2012)
+
+  22 Jun 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.13.0-r1.ebuild:
+  Voicemail storage backends are now configurable. Work by Jaco Kroon, closes
+  bug #421037.
+
+*asterisk-10.5.1 (15 Jun 2012)
+
+  15 Jun 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-10.4.1.ebuild,
+  -asterisk-10.5.0.ebuild, +asterisk-10.5.1.ebuild:
+  Security upgrade on the 10.5 branch addressing a remote crash vulnerability
+  in the SCCP channel driver, CVE-2012-3553/AST-2012-009. Remove vulnerable
+  ebuilds.
+
+*asterisk-10.5.0 (06 Jun 2012)
+*asterisk-1.8.13.0 (06 Jun 2012)
+
+  06 Jun 2012; Tony Vroon <chainsaw@gentoo.org> +files/1.8.0/find_call_ids.sh,
+  +files/1.8.0/find_call_sip_trace.sh, +asterisk-1.8.13.0.ebuild,
+  +asterisk-10.5.0.ebuild:
+  Bugfix releases on both the 1.8 & 10 branches, squelches a warning with bind
+  address set to "any", prevents an overflow on 32-bit systems for
+  ast_tvdiff_ms calculation and various rerouting/transfer fixes. Updated
+  helper scripts by Jaco Kroon, closes bug #414585.
+
+  30 May 2012; Agostino Sarubbo <ago@gentoo.org> -asterisk-1.8.11.1.ebuild:
+  Remove old
+
+  30 May 2012; Agostino Sarubbo <ago@gentoo.org> asterisk-1.8.12.1.ebuild:
+  Stable for amd64, wrt bug #418189
+
+  30 May 2012; Jeff Horelick <jdhore@gentoo.org> asterisk-1.8.12.1.ebuild:
+  marked x86 per bug 418189
+
+*asterisk-10.4.1 (29 May 2012)
+*asterisk-1.8.12.1 (29 May 2012)
+
+  29 May 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.12.0.ebuild,
+  +asterisk-1.8.12.1.ebuild, -asterisk-10.3.1.ebuild, -asterisk-10.4.0.ebuild,
+  +asterisk-10.4.1.ebuild:
+  Security updates in the 1.8 & 10 branches for an IAX2 remote crash, bug
+  #418189 (AST-2012-007/CVE-2012-2947) and an SCCP channel driver remote crash,
+  bug #418191 (AST-2012-008/CVE-2012-2948). Both filed by Rajiv Aaron Manglani.
+  Removed vulnerable ebuilds up to last stable.
+
+  25 May 2012; Samuli Suominen <ssuominen@gentoo.org> asterisk-1.8.11.1.ebuild,
+  asterisk-1.8.12.0.ebuild, asterisk-10.3.1.ebuild, asterisk-10.4.0.ebuild:
+  Pull in SLOT="0" of virtual/libusb because libusb-1 is not supported.
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org> asterisk-1.8.11.1.ebuild,
+  asterisk-1.8.12.0.ebuild, asterisk-10.3.1.ebuild, asterisk-10.4.0.ebuild:
+  Use virtual/libusb instead of dev-libs/libusb.
+
+  16 May 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  asterisk-1.8.12.0.ebuild, asterisk-10.4.0.ebuild:
+  Apply correction to REQUIRED_USE, bug #416245.
+
+  08 May 2012; Tony Vroon <chainsaw@gentoo.org> asterisk-1.8.12.0.ebuild,
+  asterisk-10.4.0.ebuild:
+  Patch by Jaco Kroon to express USE-flag dependencies in REQUIRED_USE
+  statement. Closes bug #415141 by Matthew "prometheanfire" Thode.
+
+*asterisk-1.8.12.0 (03 May 2012)
+
+  03 May 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.10.1.ebuild,
+  +asterisk-1.8.12.0.ebuild:
+  Bugfix release; double FD closure patch by Jaco Kroon finally applied
+  upstream. Also prevents chanspy from binding to zombie channels and removes
+  an unnecessary ISDN hold restrictions on non-bridged calls. Removed
+  vulnerable 1.8 branch ebuild now that a secure version is stable.
+
+*asterisk-10.4.0 (03 May 2012)
+
+  03 May 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-10.4.0.ebuild:
+  Bugfix release; double FD closure patch by Jaco Kroon finally applied
+  upstream. Also prevents chanspy from binding to zombie channels and removes
+  an unnecessary ISDN hold restrictions on non-bridged calls.
+
+  27 Apr 2012; Agostino Sarubbo <ago@gentoo.org> asterisk-1.8.11.1.ebuild:
+  Stable for X86, wrt bug #413353
+
+  24 Apr 2012; Agostino Sarubbo <ago@gentoo.org> asterisk-1.8.11.1.ebuild:
+  Stable for amd64, wrt bug #413353
+
+  24 Apr 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.11.0.ebuild,
+  -asterisk-10.2.1.ebuild, -asterisk-10.3.0.ebuild:
+  Removing vulnerable non-stable ebuilds from tree.
+
+*asterisk-10.3.1 (24 Apr 2012)
+*asterisk-1.8.11.1 (24 Apr 2012)
+
+  24 Apr 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.11.1.ebuild,
+  +asterisk-10.3.1.ebuild:
+  Updates on the 1.8 & 10 branches addressing a permission escalation in the
+  manager interface (AST-2012-004/CVE-2012-2414), a heap buffer overflow in the
+  SCCP channel driver (AST-2012-005/CVE-2012-2415) and a remote crash
+  vulnerability in the SIP channel driver (AST-2012-006/CVE-2012-2416).
+
+  10 Apr 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.8.2.ebuild:
+  Remove vulnerable ebuild for security bug #408431 by Tim Sammut.
+
+*asterisk-1.8.11.0 (10 Apr 2012)
+
+  10 Apr 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.11.0.ebuild:
+  Upstream bugfix release, addressing a potential buffer overrun & memory leak
+  for sip show peers, ACK routing for non-2xx responses, insufficient locking
+  in res_odbc, blind transfer parking issues, loss of CDR variables when
+  bridging and a desync between analog signalling & DAHDI with regard to the
+  outgoing flag. Trunk frequency fixes now partially applied upstream, still
+  carrying one patch by Jaco Kroon. Downstream patchset down to 13 patches now.
+
+*asterisk-10.3.0 (30 Mar 2012)
+
+  30 Mar 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-10.3.0.ebuild:
+  New upstream bugfix release, addressing a potential buffer overrun & memory
+  leak for sip show peers, ACK routing for non-2xx responses, insufficient
+  locking in res_odbc, blind transfer parking issues, loss of CDR variables
+  when bridging and a desync between analog signalling & DAHDI with regard to
+  the outgoing flag. Trunk frequency fixes now partially applied upstream,
+  still carrying one patch by Jaco Kroon. Downstream patchset down to 12
+  patches now.
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  asterisk-1.8.10.1.ebuild:
+  x86 stable wrt bug #408431
+
+  16 Mar 2012; Tony Vroon <chainsaw@gentoo.org> asterisk-1.8.10.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Maurizio "k01" Camisaschi &
+  Elijah "Armageddon" El Lazkani in security bug #408431.
+
+  16 Mar 2012; Tony Vroon <chainsaw@gentoo.org> asterisk-1.8.10.1.ebuild,
+  asterisk-10.2.1.ebuild:
+  Add missed RDEPENDs, as pointed out by Maurizio "k01" Camisaschi in security
+  bug #408431. Only touching stable candidate and 10 branch.
+
+*asterisk-1.8.10.1 (16 Mar 2012)
+
+  16 Mar 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.9.2.ebuild,
+  -asterisk-1.8.9.3.ebuild, -asterisk-1.8.10.0.ebuild,
+  +asterisk-1.8.10.1.ebuild:
+  Security update, fixing a remote DoS (no code execution, AST-2012-002) in
+  app_milliwatt and a stack buffer overflow in the HTTP manager interface
+  (remote code injection, AST-2012-003). As per bug #408431 by Tim Sammut.
+  Actually honour the IAX2 trunk frequency, as per Jaco Kroon in bug #408033.
+  Remove vulnerable ebuilds up to last stable from tree.
+
+*asterisk-10.2.1 (16 Mar 2012)
+
+  16 Mar 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-10.0.1.ebuild,
+  -asterisk-10.1.0.ebuild, -asterisk-10.1.2.ebuild, -asterisk-10.1.3.ebuild,
+  -asterisk-10.2.0.ebuild, +asterisk-10.2.1.ebuild:
+  Security update, fixing a remote DoS (no code execution, AST-2012-002) in
+  app_milliwatt and a stack buffer overflow in the HTTP manager interface
+  (remote code injection, AST-2012-003). As per bug #408431 by Tim Sammut.
+  Actually honour the IAX2 trunk frequency, as per Jaco Kroon in bug #408033.
+  Remove vulnerable ebuilds from tree.
+
+*asterisk-1.8.10.0 (13 Mar 2012)
+
+  13 Mar 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.10.0.ebuild:
+  Add correct divisor to trunk frequency for IAX2 channels, from an upstream
+  commit by seanbright. Chained certificate support & correct handling of
+  non-blocking I/O for TLS/SSL, as reported by Matthias Nagl in bugs #407781 &
+  #407919. Upstream has fixed the port number in outbound SIP NOTIFY packets,
+  included iLBC, fixed the caller ID in originated calls and stopped UDPTL from
+  being created unneccesarily. Also the SIP timer should no longer be stopped
+  prematurely.
+
+*asterisk-10.2.0 (13 Mar 2012)
+
+  13 Mar 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-10.2.0.ebuild:
+  Add correct divisor to trunk frequency for IAX2 channels, from an upstream
+  commit by seanbright. Chained certificate support & correct handling of
+  non-blocking I/O for TLS/SSL, as reported by Matthias Nagl in bugs #407781 &
+  #407919. Upstream has fixed the port number in outbound SIP NOTIFY packets,
+  included iLBC, fixed the caller ID in originated calls and stopped UDPTL from
+  being created unneccesarily. Also the SIP timer should no longer be stopped
+  prematurely.
+
+  02 Mar 2012; Tony Vroon <chainsaw@gentoo.org> asterisk-1.8.8.2.ebuild,
+  asterisk-1.8.9.2.ebuild, asterisk-1.8.9.3.ebuild, asterisk-10.0.1.ebuild,
+  asterisk-10.1.0.ebuild, asterisk-10.1.2.ebuild, asterisk-10.1.3.ebuild:
+  Depend on virtual/mysql, not dev-db/mysql. This allows the use of mariadb. As
+  pointed out by Simon Cadman in bug #406481.
+
+*asterisk-10.1.3 (28 Feb 2012)
+*asterisk-1.8.9.3 (28 Feb 2012)
+
+  28 Feb 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.9.3.ebuild,
+  +asterisk-10.1.3.ebuild:
+  Upstream bugfix releases on both the 1.8 & 10 branches. These address an ACK
+  routing issue for non-2xx responses and a route-set creation regression for
+  early dialogs.
+
+*asterisk-1.8.9.2 (20 Feb 2012)
+
+  20 Feb 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.9.2.ebuild:
+  New upstream bugfix release; addresses among other things deadlocks in
+  chan_agent, an infinite loop in T.38 passthrough, SIP INFO DTMF handling for
+  non-numeric codes and a crash in ParkAndAnnounce. Distro patchset: trie
+  explosion fix committed upstream & T.38 rediffed.
+
+*asterisk-10.1.2 (20 Feb 2012)
+
+  20 Feb 2012; Tony Vroon <chainsaw@gentoo.org> +asterisk-10.1.2.ebuild:
+  New upstream bugfix release; addresses among other things deadlocks in
+  chan_agent, an infinite loop in T.38 passthrough, SIP INFO DTMF handling for
+  non-numeric codes and a crash in ParkAndAnnounce. Distro patchset unchanged.
+
+*asterisk-10.1.0 (03 Feb 2012)
+
+  03 Feb 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.7.2.ebuild,
+  +asterisk-10.1.0.ebuild:
+  Version bump. ast_streamfile no longer unconditionally seeks, allowing
+  playback of more formats. Music on hold no longer runs at the same priority
+  as its timing source, fixing obscure reload bugs. Blind transfers no longer
+  fail if a h extension is present. An RTP reference leak was plugged.
+  Distribution patchset unchanged.
+
+  23 Jan 2012; Thomas Kahle <tomka@gentoo.org> asterisk-1.8.8.2.ebuild:
+  x86 stable per bug 399507
+
+  20 Jan 2012; Agostino Sarubbo <ago@gentoo.org> asterisk-1.8.8.2.ebuild:
+  Stable for AMD64, wrt security bug #399507
+
+*asterisk-10.0.1 (20 Jan 2012)
+*asterisk-1.8.8.2 (20 Jan 2012)
+
+  20 Jan 2012; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.7.1.ebuild,
+  -asterisk-1.8.8.0.ebuild, +asterisk-1.8.8.2.ebuild,
+  -asterisk-10.0.0_rc3.ebuild, -asterisk-10.0.0.ebuild,
+  +asterisk-10.0.1.ebuild:
+  New releases on the 1.8 & 10 branches that address AST-2012-001 /
+  CVE-2012-0885 SRTP video remote crash vulnerability. Culled vulnerable
+  non-stable ebuilds.
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> asterisk-1.8.7.2.ebuild:
+  x86 stable, bug #394095
+
+*asterisk-10.0.0 (17 Dec 2011)
+
+  17 Dec 2011; Tony Vroon <chainsaw@gentoo.org> +asterisk-10.0.0.ebuild:
+  First release on the long-term support 10 branch. If you have not tried this
+  on your production deployment yet, please set aside time now. This will be a
+  stable candidate early in the new year. Patch by Jaco Kroon addresses bug
+  #394459 by Agostino "ago" Sarubbo.
+
+*asterisk-1.8.8.0 (17 Dec 2011)
+
+  17 Dec 2011; Tony Vroon <chainsaw@gentoo.org> +files/1.8.0/asterisk.initd2,
+  -files/1.6.2/asterisk.initd2, -files/1.6.2/asterisk.initd3,
+  +asterisk-1.8.8.0.ebuild:
+  Version bump on the 1.8 branch; primarily a bugfix release. Patch by Jaco
+  Kroon addresses bug #394459 by Agostino "ago" Sarubbo.
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org> asterisk-1.8.7.2.ebuild:
+  Stable for AMD64, wrt security bug #394095
+
+*asterisk-1.8.7.2 (12 Dec 2011)
+
+  12 Dec 2011; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.7.1-r1.ebuild,
+  -asterisk-1.8.7.1-r2.ebuild, +asterisk-1.8.7.2.ebuild:
+  Security update addresses AST-2011-013 (disparate general/peer NAT settings
+  exposing valid usernames) and AST-2011-014 (null pointer dereference in INFO
+  command reply if automon feature is enabled). Cull the 1.8 branch by removing
+  vulnerable ebuilds except current stable. For security bug #394095.
+
+*asterisk-10.0.0_rc3 (12 Dec 2011)
+
+  12 Dec 2011; Tony Vroon <chainsaw@gentoo.org> -asterisk-10.0.0_rc2.ebuild,
+  -asterisk-10.0.0_rc2-r1.ebuild, +asterisk-10.0.0_rc3.ebuild:
+  Security update addresses AST-2011-013 (disparate general/peer NAT settings
+  exposing valid usernames) and AST-2011-014 (null pointer derefence in INFO
+  command reply if automon feature is enabled). Cull the 10 branch by removing
+  vulnerable ebuilds. For security bug #394095.
+
+*asterisk-10.0.0_rc2-r1 (05 Dec 2011)
+
+  05 Dec 2011; Tony Vroon <chainsaw@gentoo.org> +asterisk-10.0.0_rc2-r1.ebuild:
+  Remove ability to disable SQLite3 as per Diego Elio "Flameeyes" Pettenò in
+  bug #390855. Fix regression in database show; upstream bug #ASTERISK-18886.
+
+*asterisk-10.0.0_rc2 (16 Nov 2011)
+
+  16 Nov 2011; Tony Vroon <chainsaw@gentoo.org> +asterisk-10.0.0_rc2.ebuild:
+  Release candidate for the long-term-support 10 branch; this will follow the
+  1.8 series up soon. Digium reports new T38 features, but you already had
+  backports of these in 1.8 ebuilds. ConfBridge has been greatly improved.
+
+*asterisk-1.8.7.1-r2 (04 Nov 2011)
+
+  04 Nov 2011; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.7.1-r2.ebuild:
+  Broken SSL USE-flag removed, now hardcoded on. Module selection clean-up by
+  Diego Elio Pettenò closes bug #389271.
+
+*asterisk-1.8.7.1-r1 (26 Oct 2011)
+
+  26 Oct 2011; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.7.1-r1.ebuild:
+  Patch by Erik Wallin to restore PRI symbols solves lack of working BRI PTMP
+  signalling in DAHDI. Closes bug #388179 by Felix Tiede.
+
+  21 Oct 2011; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.6.0.ebuild:
+  Purge vulnerable ebuilds for security bug #387453 now that stabling has
+  completed.
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> asterisk-1.8.7.1.ebuild:
+  x86 stable wrt security bug #387453
+
+  18 Oct 2011; Tony Vroon <chainsaw@gentoo.org> asterisk-1.8.7.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in security bug #387453.
+
+*asterisk-1.8.7.1 (18 Oct 2011)
+
+  18 Oct 2011; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.7.0-r1.ebuild,
+  +asterisk-1.8.7.1.ebuild:
+  Update to fix remote crash vulnerability (caused by unitialised variable) in
+  SIP channel driver, remove vulnerable versions except last stable. Advisories
+  CVE-2011-4063 & AST-2011-012.
+
+  13 Oct 2011; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.5.0-r3.ebuild,
+  asterisk-1.8.6.0.ebuild, -asterisk-1.8.7.0.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney &
+  Agostino "ago" Sarubbo in bug #386879. Removed old stable and unpatched
+  1.8.7.0 release.
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> asterisk-1.8.6.0.ebuild:
+  x86 stable wrt bug #386879
+
+*asterisk-1.8.7.0-r1 (12 Oct 2011)
+
+  12 Oct 2011; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.8.7.0_rc2.ebuild,
+  +asterisk-1.8.7.0-r1.ebuild:
+  Install the provided radius dictionary, closes bug #383911 by Oleg Gawriloff.
+  Close manager file descriptors once, not twice as per Jaco Kroon in bug
+  #386633. Remove release candidate now that the final release is available.
+
+  11 Oct 2011; Tony Vroon <chainsaw@gentoo.org> metadata.xml:
+  Drop now unused h323 local USE-flag description.
+
+  11 Oct 2011; Tony Vroon <chainsaw@gentoo.org> asterisk-1.8.5.0-r3.ebuild,
+  asterisk-1.8.6.0.ebuild, asterisk-1.8.7.0_rc2.ebuild,
+  asterisk-1.8.7.0.ebuild:
+  More forcefully disable broken & unsupported H323 functionality in all
+  ebuilds. As per Ionic on #gentoo-voip.
+
+*asterisk-1.8.7.0 (04 Oct 2011)
+
+  04 Oct 2011; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.7.0.ebuild:
+  This contains major fixes to res_timing_timerfd that hopefully prevent
+  deadlocks. Distro patchset unchanged.
+
+*asterisk-1.8.7.0_rc2 (22 Sep 2011)
+
+  22 Sep 2011; Tony Vroon <chainsaw@gentoo.org> +asterisk-1.8.7.0_rc2.ebuild:
+  Release candidate which should be a big step up from 1.8.6.0; backported T38
+  gateway support as requested by Jaco Kroon in bug #383979. All patches either
+  rediffed by or created by Erik Wallin in bug #383987.
+
+  20 Sep 2011; Tony Vroon <chainsaw@gentoo.org> asterisk-1.8.5.0-r3.ebuild,
+  asterisk-1.8.6.0.ebuild:
+  Explicitly block against the abandoned net-libs/openh323 package in the tree.
+  Closes bug #345635 by Grigoriy Puzankin and bug #383629 by Aidan Marks.
+
+*asterisk-1.8.6.0 (01 Sep 2011)
+
+  01 Sep 2011; Tony Vroon <chainsaw@gentoo.org> +files/1.8.0/asterisk.confd,
+  +files/1.8.0/asterisk.initd, +asterisk-1.8.6.0.ebuild:
+  Version bump. New & improved init script by Jaco Kroon closes bug #363267.
+  EAPI 4 porting by Agostino "ago" Sarubbo closes bug #380359.
+
+  01 Sep 2011; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.6.2.18.2.ebuild,
+  -asterisk-1.6.2.19-r2.ebuild:
+  As announced, the 1.6.2 branch is no longer packaged in Gentoo. If you have
+  any issues migrating from 1.6.2 to 1.8, please join us in #gentoo-voip and we
+  will try to assist you.
+
+  28 Aug 2011; Pacho Ramos <pacho@gentoo.org> asterisk-1.8.5.0-r3.ebuild:
+  RDEPEND on specific gmime slot to prevent future problems when newer gmime
+  versions land tree.
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> asterisk-1.8.5.0-r3.ebuild:
+  x86 stable, bug #378757
+
+  11 Aug 2011; Tony Vroon <chainsaw@gentoo.org> -asterisk-1.6.2.19-r1.ebuild,
+  -asterisk-1.8.4.4-r1.ebuild, -asterisk-1.8.5.0-r2.ebuild:
+  Initial clean-up before X86 keywording. The 1.6.2 branch is dead,
+  development-wise. Please upgrade at your earliest convenience.
+
+  11 Aug 2011; Tony Vroon <chainsaw@gentoo.org> asterisk-1.8.5.0-r3.ebuild:
+  Mark stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #378757.
 
 *asterisk-1.8.5.0-r3 (26 Jul 2011)
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/eclipse-ecj/eclipse-ecj-3.3.0-r3.ebuild,v 1.7 2010/05/21 22:13:24 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/eclipse-ecj/eclipse-ecj-3.3.0-r3.ebuild,v 1.10 2011/12/31 14:25:23 sera Exp $
 
 inherit eutils java-pkg-2
 
@@ -13,14 +13,14 @@ HOMEPAGE="http://www.eclipse.org/"
 SRC_URI="http://archive.eclipse.org/eclipse/downloads/drops/${DMF/.0}/${MY_PN}src.zip"
 
 LICENSE="EPL-1.0"
-KEYWORDS="amd64 ~ia64 ppc ppc64 x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-solaris"
+KEYWORDS="amd64 ppc ppc64 x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-solaris"
 SLOT="3.3"
 IUSE=""
 
 COMMON_DEPEND="app-admin/eselect-ecj"
 RDEPEND=">=virtual/jre-1.4
 	${COMMON_DEPEND}"
-DEPEND=">=virtual/jdk-1.4
+DEPEND="<virtual/jdk-1.7
 	sys-apps/findutils
 	app-arch/unzip
 	${COMMON_DEPEND}"

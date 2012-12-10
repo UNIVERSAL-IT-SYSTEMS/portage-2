@@ -1,6 +1,110 @@
 # ChangeLog for sys-kernel/vserver-sources
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vserver-sources/ChangeLog,v 1.159 2011/03/07 21:17:49 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vserver-sources/ChangeLog,v 1.176 2012/10/09 03:23:07 patrick Exp $
+
+*vserver-sources-2.3.4.3 (09 Oct 2012)
+
+  09 Oct 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.4.3.ebuild:
+  Bump
+
+*vserver-sources-2.3.4.1-r1 (24 Aug 2012)
+
+  24 Aug 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.4.1-r1.ebuild:
+  Adding bump for 3.5.2 kernel
+
+*vserver-sources-2.3.4.1 (17 Aug 2012)
+
+  17 Aug 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.4.1.ebuild:
+  Bump
+
+*vserver-sources-2.3.4 (30 Jul 2012)
+
+  30 Jul 2012; Patrick Lauer <patrick@gentoo.org> +vserver-sources-2.3.4.ebuild:
+  Bump
+
+*vserver-sources-2.3.3.5-r1 (19 Jul 2012)
+
+  19 Jul 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.3.5-r1.ebuild:
+  Bump for rebase on new kernel version
+
+*vserver-sources-2.3.3.5 (05 Jul 2012)
+
+  05 Jul 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.3.5.ebuild:
+  Bump
+
+*vserver-sources-2.3.3.4-r1 (18 Jun 2012)
+
+  18 Jun 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.3.4-r1.ebuild:
+  small bump
+
+*vserver-sources-2.3.3.4 (31 May 2012)
+
+  31 May 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.3.4.ebuild:
+  Bump
+
+*vserver-sources-2.3.3.3 (12 May 2012)
+
+  12 May 2012; Benedikt Böhm <hollow@gentoo.org>
+  -vserver-sources-2.3.2.7-r1.ebuild, -vserver-sources-2.3.3.1.ebuild,
+  +vserver-sources-2.3.3.3.ebuild:
+  version bump wrt #414667; cleanup
+
+*vserver-sources-2.3.3.2 (07 Apr 2012)
+
+  07 Apr 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.3.2.ebuild:
+  Bump
+
+*vserver-sources-2.3.3.1 (21 Mar 2012)
+
+  21 Mar 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.3.1.ebuild:
+  Bump
+
+*vserver-sources-2.3.2.8 (16 Mar 2012)
+
+  16 Mar 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.2.8.ebuild, -vserver-sources-2.3.1.ebuild,
+  -vserver-sources-2.3.2.6.ebuild, -vserver-sources-2.3.2.7.ebuild:
+  Bump, clean up old
+
+*vserver-sources-2.3.2.7-r1 (05 Mar 2012)
+
+  05 Mar 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.2.7-r1.ebuild:
+  Bump, kernel version changed while patch version is same
+
+*vserver-sources-2.3.2.7 (28 Feb 2012)
+
+  28 Feb 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.2.7.ebuild:
+  Bump
+
+*vserver-sources-2.3.2.6 (30 Jan 2012)
+
+  30 Jan 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.2.6.ebuild, -vserver-sources-2.3.2.5.ebuild:
+  Bump
+
+*vserver-sources-2.3.2.5 (21 Jan 2012)
+
+  21 Jan 2012; Patrick Lauer <patrick@gentoo.org>
+  +vserver-sources-2.3.2.5.ebuild:
+  Non-maintainer commit: version bump
+
+*vserver-sources-2.3.1 (27 Oct 2011)
+
+  27 Oct 2011; Benedikt Böhm <hollow@gentoo.org>
+  -vserver-sources-2.2.0.7.ebuild, -vserver-sources-2.2.0.7-r1.ebuild,
+  -vserver-sources-2.3.0.36.31.ebuild, +vserver-sources-2.3.1.ebuild:
+  version bump (now without genpatches)
 
   07 Mar 2011; Jeroen Roovers <jer@gentoo.org>
   vserver-sources-2.3.0.36.32.ebuild:

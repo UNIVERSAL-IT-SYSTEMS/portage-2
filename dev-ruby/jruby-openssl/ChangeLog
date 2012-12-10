@@ -1,6 +1,24 @@
 # ChangeLog for dev-ruby/jruby-openssl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/jruby-openssl/ChangeLog,v 1.14 2011/06/14 19:02:12 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/jruby-openssl/ChangeLog,v 1.18 2012/08/21 18:36:34 graaff Exp $
+
+*jruby-openssl-0.7.7 (21 Aug 2012)
+
+  21 Aug 2012; Hans de Graaff <graaff@gentoo.org> +jruby-openssl-0.7.7.ebuild:
+  Version bump.
+
+  21 Aug 2012; Hans de Graaff <graaff@gentoo.org> -jruby-openssl-0.6-r1.ebuild:
+  Cleanup.
+
+  09 Jul 2012; Hans de Graaff <graaff@gentoo.org> metadata.xml:
+  Put ruby herd as the primary herd so match actual work done, as dicussed with
+  sera.
+
+*jruby-openssl-0.7.6.1 (13 May 2012)
+
+  13 May 2012; Hans de Graaff <graaff@gentoo.org>
+  +jruby-openssl-0.7.6.1.ebuild:
+  Version bump.
 
   14 Jun 2011; Markus Meier <maekke@gentoo.org> jruby-openssl-0.7.4.ebuild:
   amd64/x86 stable, bug #369553

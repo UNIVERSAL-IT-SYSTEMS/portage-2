@@ -1,6 +1,39 @@
 # ChangeLog for app-text/sword
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/sword/ChangeLog,v 1.59 2011/06/11 17:52:00 beandog Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/sword/ChangeLog,v 1.68 2012/09/16 19:00:59 dirtyepic Exp $
+
+  17 Sep 2012; Ryan Hill <dirtyepic@gentoo.org> sword-1.6.2.ebuild,
+  +files/sword-1.6.2-gcc47.patch:
+  Fix build with GCC 4.7 (bug #419505).
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> sword-1.6.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Remove unused description for USE="lucene"
+
+  16 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -sword-1.5.8-r2.ebuild,
+  -sword-1.5.9-r2.ebuild, -sword-1.5.10-r2.ebuild,
+  -files/sword-1.5.10+gcc-4.3.patch, -sword-1.5.11.ebuild,
+  -files/sword-1.5.11-gcc44.patch, -sword-1.6.0.ebuild, -sword-1.6.1.ebuild,
+  -files/escape_range.patch, -files/sword.conf:
+  old
+
+  16 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> sword-1.6.2.ebuild:
+  x86 stable wrt #408255
+
+  16 Mar 2012; Brent Baude <ranger@gentoo.org> sword-1.6.2.ebuild:
+  Marking sword-1.6.2 ppc for bug 408255
+
+  15 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> sword-1.6.2.ebuild:
+  Remove -Werror and other unnecessary flags from ./configure wrt #408289.
+  USE="static-libs" and remove useless libtool files.
+
+  15 Mar 2012; Agostino Sarubbo <ago@gentoo.org> sword-1.6.2.ebuild:
+  Stable for amd64, wrt bug #408255
+
+  14 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> sword-1.6.2.ebuild:
+  Fix building with net-misc/curl >= 7.21.7 wrt #378055 by Andrew Savchenko
 
 *sword-1.6.2 (11 Jun 2011)
 

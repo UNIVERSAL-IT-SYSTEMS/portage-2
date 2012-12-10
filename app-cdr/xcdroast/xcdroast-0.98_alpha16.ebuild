@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/xcdroast/xcdroast-0.98_alpha16.ebuild,v 1.6 2009/06/01 16:21:33 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/xcdroast/xcdroast-0.98_alpha16.ebuild,v 1.8 2012/05/03 07:51:50 jdhore Exp $
 
 EAPI=2
 inherit gnome2-utils eutils
@@ -17,7 +17,7 @@ IUSE="nls"
 RDEPEND=">=x11-libs/gtk+-2:2
 	app-cdr/cdrtools"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${P/_/}
 
@@ -35,13 +35,14 @@ src_configure() {
 }
 
 src_compile() {
-	emake PREFIX=/usr || die "emake failed"
+	emake PREFIX=/usr || die
 }
 
 src_install() {
-	emake PREFIX=/usr DESTDIR="${D}" install || die "emake install failed"
+	emake PREFIX=/usr DESTDIR="${D}" install || die
 
-	dodoc AUTHORS ChangeLog README doc/* doc/manual/README.txt
+	dodoc AUTHORS ChangeLog README doc/{README*,DOCUMENTATION,FAQ,TRANS*} \
+		doc/manual/README.txt
 
 	insinto /usr/share/doc/${PF}/manual
 	doins doc/manual/xcdroast-manual.pdf

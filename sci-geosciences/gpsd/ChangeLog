@@ -1,6 +1,93 @@
 # ChangeLog for sci-geosciences/gpsd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/ChangeLog,v 1.73 2011/07/18 07:09:17 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/ChangeLog,v 1.92 2012/10/07 09:04:49 pacho Exp $
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #24135.
+
+  12 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> gpsd-2.95-r1.ebuild,
+  gpsd-2.96-r1.ebuild:
+  Inherit user.eclass for function enewuser as noted by repoman.
+
+  12 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> gpsd-3.7.ebuild,
+  gpsd-9999.ebuild:
+  Query udev.pc pkg-config file for udevdir value (in order to install
+  25-gpsd.rules and gpsd.hotplug to correct directory)
+
+*gpsd-3.7 (01 Aug 2012)
+
+  01 Aug 2012; Mike Frysinger <vapier@gentoo.org> +files/gpsd-3.7-rpath.patch,
+  +gpsd-3.7.ebuild, gpsd-9999.ebuild:
+  Version bump.
+
+  26 Jul 2012; Michael Palimaka <kensington@gentoo.org> gpsd-2.95-r1.ebuild,
+  gpsd-2.96-r1.ebuild, gpsd-3.6.ebuild, gpsd-9999.ebuild:
+  Add missing slot dependencies on Qt.
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -gpsd-3.3-r1.ebuild,
+  -gpsd-3.3.ebuild, -gpsd-3.4.ebuild, -gpsd-3.5.ebuild, gpsd-3.6.ebuild,
+  gpsd-9999.ebuild:
+  Seems to build also with chrony. Fixes bug#406339. Do not keep so much ebuilds
+  around for no reason.
+
+*gpsd-3.6 (23 May 2012)
+
+  23 May 2012; Mike Frysinger <vapier@gentoo.org> +files/gpsd-3.6-debug.patch,
+  +files/gpsd-3.6-rpath.patch, +gpsd-3.6.ebuild:
+  Version bump.
+
+*gpsd-3.5 (21 May 2012)
+
+  21 May 2012; Mike Frysinger <vapier@gentoo.org> +files/gpsd-3.5-clock.patch,
+  +gpsd-3.5.ebuild, gpsd-9999.ebuild:
+  Version bump.
+
+  21 May 2012; Mike Frysinger <vapier@gentoo.org> gpsd-3.4.ebuild,
+  +files/gpsd-3.4-no-man-gen.patch:
+  Do not regen man pages since the tarball includes them.
+
+*gpsd-9999 (09 Feb 2012)
+
+  09 Feb 2012; Mike Frysinger <vapier@gentoo.org> gpsd-3.4.ebuild,
+  +files/gpsd-3.4-always-install-man-pages.patch, +gpsd-9999.ebuild:
+  Do not require xmlto for releases since the tarball includes the man pages
+  already, and add a live git ebuild.
+
+*gpsd-3.4 (13 Jan 2012)
+
+  13 Jan 2012; Mike Frysinger <vapier@gentoo.org> +gpsd-3.4.ebuild,
+  +files/gpsd-3.4-cfgetispeed.patch, +files/gpsd-3.4-chrpath.patch,
+  +files/gpsd-3.4-gpsmon-lm.patch, +files/gpsd-3.4-strptime.patch:
+  Version bump.
+
+  06 Dec 2011; Mike Frysinger <vapier@gentoo.org> gpsd-3.3-r1.ebuild:
+  Fix typos in export options pointed out by Yufeng Shen.
+
+*gpsd-3.3-r1 (06 Dec 2011)
+
+  06 Dec 2011; Mike Frysinger <vapier@gentoo.org> +gpsd-3.3-r1.ebuild,
+  +files/gpsd-3.3-msocks-init.patch, metadata.xml:
+  Add fix from upstream for socket setup, and add USE flags to control shared
+  memory/socket interfaces.
+
+  22 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/gpsd-3.3-ldflags.patch, gpsd-3.3.ebuild:
+  QA: fix handling of LDFLAGS #391299 by Maciej Piechotka.
+
+  22 Nov 2011; Mike Frysinger <vapier@gentoo.org> gpsd-3.3.ebuild:
+  Replace STAGING_PREFIX with SYSROOT.
+
+  21 Nov 2011; Mike Frysinger <vapier@gentoo.org> gpsd-3.3.ebuild,
+  +files/gpsd-3.3-pkg-config.patch:
+  Respect PKG_CONFIG env var when building.
+
+*gpsd-3.3 (20 Nov 2011)
+
+  20 Nov 2011; Mike Frysinger <vapier@gentoo.org> +gpsd-3.3.ebuild,
+  +files/gpsd-3.3-release-rev.patch, +files/gpsd-3.3-setup.py,
+  +files/gpsd-3.3-udev-install.patch:
+  Version bump #380883 by Andreas K. Hüttel and Ed Wildgoose. Add USE=X
+  support for #369261 by Patrick.
 
   18 Jul 2011; Tomáš Chvátal <scarabeus@gentoo.org> gpsd-2.96-r1.ebuild:
   Add sys-devel/bc as test dep. Fixes bug #363203.
@@ -350,4 +437,3 @@
   28 May 2005; Steve Arnold <nerdboy@gentoo.org> +files/40-usb-serial.rules,
   +files/gpsd.conf, +files/gpsd.init, +metadata.xml, +gpsd-2.25.ebuild:
   adding current version of gpsd (most other gps daemons are dead now)
-

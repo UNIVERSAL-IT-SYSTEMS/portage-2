@@ -1,6 +1,72 @@
 # ChangeLog for app-misc/sphinx
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/sphinx/ChangeLog,v 1.36 2011/05/29 15:31:35 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/sphinx/ChangeLog,v 1.52 2012/11/20 18:17:27 graaff Exp $
+
+*sphinx-2.0.6 (20 Nov 2012)
+
+  20 Nov 2012; Hans de Graaff <graaff@gentoo.org> +sphinx-2.0.6.ebuild:
+  Version bump.
+
+  20 Sep 2012; Hans de Graaff <graaff@gentoo.org> -sphinx-0.9.8.1.ebuild:
+  Cleanup.
+
+  20 Sep 2012; Hans de Graaff <graaff@gentoo.org> sphinx-2.0.5.ebuild:
+  Whitespace.
+
+*sphinx-2.0.5 (20 Sep 2012)
+
+  20 Sep 2012; Hans de Graaff <graaff@gentoo.org> +sphinx-2.0.5.ebuild:
+  Version bump.
+
+  08 Aug 2012; Hans de Graaff <graaff@gentoo.org> sphinx-2.0.4-r1.ebuild:
+  Avoid eautoreconf and thus the problem reported in bug 425380, thanks to
+  grobian.
+
+*sphinx-2.0.4-r1 (21 Jul 2012)
+
+  21 Jul 2012; Hans de Graaff <graaff@gentoo.org> +sphinx-2.0.4-r1.ebuild,
+  +files/sphinx-2.0.4_gcc-4.7.patch:
+  Revision bump to fix building with gcc 4.7. Thanks to Brennan Shacklett in
+  bug 425522 for finding and cleaning up the debian patch for it.
+
+  09 Jul 2012; Hans de Graaff <graaff@gentoo.org> -sphinx-0.9.9-r2.ebuild,
+  -sphinx-1.10_beta-r1.ebuild, -sphinx-2.0.3.ebuild:
+  Remove old versions.
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> sphinx-2.0.4.ebuild:
+  Add ~alpha/~ia64/~sparc wrt #412475
+
+  22 Apr 2012; Markus Meier <maekke@gentoo.org> sphinx-2.0.4.ebuild:
+  x86 stable, bug #411783
+
+  21 Apr 2012; Markus Meier <maekke@gentoo.org> sphinx-2.0.4.ebuild:
+  add ~arm, bug #412475
+
+  14 Apr 2012; Agostino Sarubbo <ago@gentoo.org> sphinx-2.0.4.ebuild:
+  Stable for amd64, wrt bug #411783
+
+*sphinx-2.0.4 (14 Mar 2012)
+
+  14 Mar 2012; Hans de Graaff <graaff@gentoo.org> +sphinx-2.0.4.ebuild:
+  Version bump. Bug 408055.
+
+  14 Mar 2012; Hans de Graaff <graaff@gentoo.org> -sphinx-2.0.1_beta.ebuild,
+  -sphinx-2.0.2_beta.ebuild:
+  Remove old versions.
+
+*sphinx-2.0.3 (30 Dec 2011)
+
+  30 Dec 2011; Hans de Graaff <graaff@gentoo.org> +sphinx-2.0.3.ebuild:
+  Version bump to new stable upstream release.
+
+*sphinx-2.0.2_beta (28 Nov 2011)
+
+  28 Nov 2011; Hans de Graaff <graaff@gentoo.org> +sphinx-2.0.2_beta.ebuild:
+  Version bump.
+
+  28 Sep 2011; Fabian Groffen <grobian@gentoo.org> sphinx-2.0.1_beta.ebuild,
+  +files/sphinx-2.0.1_beta-solaris.patch:
+  Fixed for and marked ~sparc-solaris, ~sparc64-solaris
 
   29 May 2011; Fabian Groffen <grobian@gentoo.org> sphinx-2.0.1_beta.ebuild,
   +files/sphinx-2.0.1_beta-darwin8.patch:

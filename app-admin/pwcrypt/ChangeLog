@@ -1,6 +1,20 @@
 # ChangeLog for app-admin/pwcrypt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/pwcrypt/ChangeLog,v 1.13 2011/06/14 15:06:32 hattya Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/pwcrypt/ChangeLog,v 1.17 2012/10/07 09:39:20 nixnut Exp $
+
+  07 Oct 2012; nixnut <nixnut@gentoo.org> pwcrypt-1.2.2-r1.ebuild:
+  ppc stable #436774
+
+  06 Oct 2012; Agostino Sarubbo <ago@gentoo.org> pwcrypt-1.2.2-r1.ebuild:
+  Stable for amd64, wrt bug #436774
+
+  06 Oct 2012; Agostino Sarubbo <ago@gentoo.org> pwcrypt-1.2.2-r1.ebuild,
+  pwcrypt-1.2.2.ebuild:
+  Add die where is needed, improve code
+
+  23 Aug 2011; Akinori Hattori <hattya@gentoo.org> pwcrypt-1.2.2.ebuild,
+  pwcrypt-1.2.2-r1.ebuild:
+  update to EAPI 4.
 
   14 Jun 2011; Akinori Hattori <hattya@gentoo.org> pwcrypt-1.2.2-r1.ebuild:
   stable on x86.
@@ -37,4 +51,3 @@
   pwcrypt-1.2.2.ebuild:
   Initial revision. Ebuild submitted by Greg Bowyer <bg115@gre.ac.uk> in bug
   #37701.
-

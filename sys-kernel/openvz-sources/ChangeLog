@@ -1,6 +1,89 @@
 # ChangeLog for sys-kernel/openvz-sources
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/openvz-sources/ChangeLog,v 1.167 2011/07/28 07:10:46 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/openvz-sources/ChangeLog,v 1.180 2012/10/21 16:04:27 pva Exp $
+
+*openvz-sources-2.6.32.62.2 (21 Oct 2012)
+
+  21 Oct 2012; Peter Volkov <pva@gentoo.org> openvz-sources-2.6.32.53.5.ebuild,
+  +openvz-sources-2.6.32.62.2.ebuild:
+  Version bump. Stabilize 2.6.32.53.5.
+
+*openvz-sources-2.6.32.53.5 (03 May 2012)
+
+  03 May 2012; Peter Volkov <pva@gentoo.org>
+  -openvz-sources-2.6.18.028.095.1.ebuild, +openvz-sources-2.6.32.53.5.ebuild:
+  Version bump, bug #411153, thank Dennis Schridde for report. Drop old.
+
+  19 Mar 2012; Peter Volkov <pva@gentoo.org>
+  -openvz-sources-2.6.32.39.11.ebuild, -openvz-sources-2.6.32.39.11-r1.ebuild,
+  -openvz-sources-2.6.32.44.11.ebuild, openvz-sources-2.6.32.49.6.ebuild:
+  amd64/x86 stable, bug #198632. Drop old.
+
+*openvz-sources-2.6.18.028.099.3 (19 Mar 2012)
+
+  19 Mar 2012; Peter Volkov <pva@gentoo.org>
+  +openvz-sources-2.6.18.028.099.3.ebuild:
+  Bump RHEL5-based kernel.
+
+*openvz-sources-2.6.32.49.6 (24 Feb 2012)
+
+  24 Feb 2012; Peter Volkov <pva@gentoo.org>
+  +openvz-sources-2.6.32.49.6.ebuild:
+  Version bump, should fix bug #402077, thank slepnoga for report.
+
+*openvz-sources-2.6.32.44.11 (22 Dec 2011)
+
+  22 Dec 2011; Peter Volkov <pva@gentoo.org>
+  +openvz-sources-2.6.32.44.11.ebuild:
+  Version bump.
+
+*openvz-sources-2.6.32.39.11-r1 (13 Dec 2011)
+
+  13 Dec 2011; Peter Volkov <pva@gentoo.org>
+  +openvz-sources-2.6.32.39.11-r1.ebuild:
+  Set extraversion to correct value.
+
+*openvz-sources-2.6.32.39.11 (12 Dec 2011)
+*openvz-sources-2.6.18.028.095.1 (12 Dec 2011)
+
+  12 Dec 2011; Peter Volkov <pva@gentoo.org>
+  -openvz-sources-2.6.18.028.094.3.ebuild,
+  +openvz-sources-2.6.18.028.095.1.ebuild, -openvz-sources-2.6.27.9.1.ebuild,
+  openvz-sources-2.6.32.11.1.ebuild, -openvz-sources-2.6.32.39.3.ebuild,
+  +openvz-sources-2.6.32.39.11.ebuild,
+  +files/openvz-sources-2.6.32.39-binutils.patch:
+  Version bump. Drop old. Cleanup - made sources again installable. Fixed build
+  issue in 2.6.32 with new toolchain, bug #388103 wrt Aleksandr Zagzin and
+  Peter Gantner.
+
+  21 Oct 2011; Peter Volkov <pva@gentoo.org> openvz-sources-2.6.32.39.3.ebuild:
+  Fix url, bug #387763 wrt Vladimir Berezhnoy.
+
+*openvz-sources-2.6.32.39.3 (18 Oct 2011)
+
+  18 Oct 2011; Peter Volkov <pva@gentoo.org>
+  -openvz-sources-2.6.18.028.093.2.ebuild, -openvz-sources-2.6.32.37.1.ebuild,
+  +openvz-sources-2.6.32.39.3.ebuild:
+  Version bump RHEL6 kernel. Drop old.
+
+*openvz-sources-2.6.18.028.094.3 (02 Oct 2011)
+
+  02 Oct 2011; Peter Volkov <pva@gentoo.org>
+  +openvz-sources-2.6.18.028.094.3.ebuild:
+  Bump rhel5 branch.
+
+*openvz-sources-2.6.32.37.1 (29 Sep 2011)
+
+  29 Sep 2011; Peter Volkov <pva@gentoo.org>
+  -openvz-sources-2.6.18.028.092.2.ebuild, +openvz-sources-2.6.32.37.1.ebuild:
+  Drop old. Add masked RHEL6 kernel. Test it and report issues.
+
+*openvz-sources-2.6.18.028.093.2 (07 Sep 2011)
+
+  07 Sep 2011; Peter Volkov <pva@gentoo.org>
+  -openvz-sources-2.6.18.028.091.1.ebuild,
+  +openvz-sources-2.6.18.028.093.2.ebuild:
+  Version bump RHEL5 kernel. Drop old.
 
 *openvz-sources-2.6.18.028.092.2 (28 Jul 2011)
 

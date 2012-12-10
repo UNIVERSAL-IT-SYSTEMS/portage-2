@@ -1,6 +1,39 @@
 # ChangeLog for app-i18n/libhangul
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/libhangul/ChangeLog,v 1.22 2011/01/27 23:24:15 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/libhangul/ChangeLog,v 1.32 2012/05/03 19:24:26 jdhore Exp $
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> libhangul-0.0.12.ebuild,
+  libhangul-0.1.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> libhangul-0.1.0.ebuild:
+  Remove libhangul.la libtool archive in favour of libhangul.pc pkg-config
+  file.
+
+  21 Mar 2012; Thomas Kahle <tomka@gentoo.org> libhangul-0.1.0.ebuild:
+  marked x86 per bug 407691
+
+  13 Mar 2012; Agostino Sarubbo <ago@gentoo.org> libhangul-0.1.0.ebuild:
+  Stable for amd64, wrt bug #407691
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> libhangul-0.0.12.ebuild:
+  Marking libhangul-0.0.12 ppc for bug 381947
+
+*libhangul-0.1.0 (28 Nov 2011)
+
+  28 Nov 2011; Naohiro Aota <naota@gentoo.org> +libhangul-0.1.0.ebuild:
+  Version bumped. Bug #391871
+
+  01 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libhangul-0.0.12.ebuild:
+  x86 stable wrt bug #381947
+
+  25 Sep 2011; Raúl Porcel <armin76@gentoo.org> libhangul-0.0.10.ebuild,
+  libhangul-0.0.12.ebuild:
+  Drop alpha keywords
+
+  06 Sep 2011; Tony Vroon <chainsaw@gentoo.org> libhangul-0.0.12.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney &
+  Agostino "ago" Sarubbo in bug #381947 filed by Takuto Matsuu.
 
 *libhangul-0.0.12 (27 Jan 2011)
 

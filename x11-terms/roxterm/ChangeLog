@@ -1,6 +1,116 @@
 # ChangeLog for x11-terms/roxterm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/roxterm/ChangeLog,v 1.41 2011/07/09 17:05:25 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/roxterm/ChangeLog,v 1.71 2012/07/31 06:12:20 ssuominen Exp $
+
+*roxterm-2.6.5 (31 Jul 2012)
+
+  31 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +roxterm-2.6.5.ebuild:
+  Version bump.
+
+  31 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> -roxterm-2.3.4.ebuild,
+  -roxterm-2.5.2.ebuild:
+  old
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> roxterm-2.6.3.ebuild:
+  Marking roxterm-2.6.3 ppc for bug 422429
+
+  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> roxterm-2.6.3.ebuild:
+  Stable for amd64, wrt bug #422429
+
+  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> roxterm-2.6.3.ebuild:
+  marked x86 per bug 422429
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> roxterm-2.6.3.ebuild:
+  Remove PYTHON_DEPEND because we don't want dev-lang/python:2.7 in RDEPEND.
+  It's only required as a DEPEND for the "maitch" build system.
+
+*roxterm-2.6.3 (20 May 2012)
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> +roxterm-2.6.3.ebuild:
+  Version bump.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> roxterm-2.3.4.ebuild,
+  roxterm-2.5.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  15 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -roxterm-2.2.2.ebuild,
+  -roxterm-2.3.1.ebuild:
+  old
+
+  15 Mar 2012; Jeff Horelick <jdhore@gentoo.org> roxterm-2.3.4.ebuild:
+  marked x86 per bug 407429
+
+  13 Mar 2012; Agostino Sarubbo <ago@gentoo.org> roxterm-2.3.4.ebuild:
+  Stable for amd64, wrt bug #407429
+
+  13 Mar 2012; Brent Baude <ranger@gentoo.org> roxterm-2.3.4.ebuild:
+  Marking roxterm-2.3.4 ppc for bug 407429
+
+  09 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> roxterm-2.5.2.ebuild:
+  Stab the build system to respect full compiler name.
+
+  08 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> roxterm-2.5.2.ebuild,
+  metadata.xml:
+  Remove USE="gtk3" and always enable GTK+-3 wrt #374057
+
+*roxterm-2.5.2 (28 Feb 2012)
+
+  28 Feb 2012; Jim Ramsay <jim_ramsay@gentoo.org> +roxterm-2.5.2.ebuild,
+  metadata.xml:
+  Version bump, plus Bug #396539: Adding gtk3 USE flag
+
+*roxterm-2.3.4 (30 Dec 2011)
+
+  30 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +roxterm-2.3.4.ebuild:
+  Version bump.
+
+*roxterm-2.3.1 (06 Dec 2011)
+
+  06 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +roxterm-2.3.1.ebuild:
+  Version bump.
+
+  20 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> -roxterm-1.22.2.ebuild:
+  old
+
+  11 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> roxterm-2.2.2.ebuild:
+  x86 stable wrt bug #389583
+
+  07 Nov 2011; Brent Baude <ranger@gentoo.org> roxterm-2.2.2.ebuild:
+  Marking roxterm-2.2.2 ppc for bug 389583
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org> roxterm-2.2.2.ebuild:
+  Stable on amd64 wrt bug #389583
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -roxterm-2.1.1.ebuild,
+  -roxterm-2.2.1.ebuild:
+  old
+
+*roxterm-2.2.2 (14 Oct 2011)
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +roxterm-2.2.2.ebuild:
+  Version bump.
+
+*roxterm-2.2.1 (29 Sep 2011)
+
+  29 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> +roxterm-2.2.1.ebuild:
+  Version bump.
+
+  12 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -files/roxterm-1.16.3-docdir.patch, -files/roxterm-1.18.5-docdir.patch,
+  -roxterm-1.16.3.ebuild, -roxterm-1.18.5.ebuild:
+  [This is a placeholder. Please ignore.]
+
+  12 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> roxterm-1.22.2.ebuild:
+  ppc/x86 stable wrt #382303
+
+  09 Sep 2011; Tony Vroon <chainsaw@gentoo.org> roxterm-1.22.2.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "ago" Sarubbo in bug #382303 filed by Samuli Suominen.
+
+*roxterm-2.1.1 (08 Sep 2011)
+
+  08 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> +roxterm-2.1.1.ebuild:
+  Version bump.
 
 *roxterm-1.22.2 (09 Jul 2011)
 

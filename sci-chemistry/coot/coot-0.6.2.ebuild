@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/coot/coot-0.6.2.ebuild,v 1.4 2011/07/16 13:14:36 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/coot/coot-0.6.2.ebuild,v 1.11 2012/03/07 19:33:39 jlec Exp $
 
 EAPI=3
 
 PYTHON_DEPEND="2"
 
-inherit autotools base eutils python toolchain-funcs versionator
+inherit autotools base eutils flag-o-matic python toolchain-funcs versionator
 
 MY_S2_PV=$(replace_version_separator 2 - ${PV})
 MY_S2_P=${PN}-${MY_S2_PV/pre1/pre-1}
@@ -22,7 +22,7 @@ SRC_URI="
 
 SLOT="0"
 LICENSE="GPL-3"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="+openmp test"
 
 SCIDEPS="
@@ -70,6 +70,7 @@ S="${WORKDIR}/${MY_P}"
 pkg_setup() {
 	if use openmp; then
 		tc-has-openmp || die "Please use an OPENMP capable compiler"
+		has_version '<sys-devel/libtool-2.4-r2' && append-ldflags $(no-as-needed)
 	fi
 	python_set_active_version 2
 }
@@ -80,9 +81,14 @@ PATCHES=(
 	"${FILESDIR}"/${PV}-gl.patch
 	"${FILESDIR}"/${PV}-test.patch
 	"${FILESDIR}"/${PV}-ssm.patch
+	"${FILESDIR}"/${PV}-libpng15.patch
 	)
 
 src_prepare() {
+	sed \
+		-e "s:AM_COOT_SYS_BUILD_TYPE:COOT_SYS_BUILD_TYPE=Gentoo-Linux-$(PYTHON)-gtk2 ; AC_MSG_RESULT([\$COOT_SYS_BUILD_TYPE]); AC_SUBST(COOT_SYS_BUILD_TYPE):g" \
+		-i configure.in || die
+
 	base_src_prepare
 
 	eautoreconf

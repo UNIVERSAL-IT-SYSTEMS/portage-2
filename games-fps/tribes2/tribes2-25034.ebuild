@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/tribes2/tribes2-25034.ebuild,v 1.20 2009/09/22 18:57:22 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/tribes2/tribes2-25034.ebuild,v 1.23 2012/02/05 06:09:54 vapier Exp $
 
-inherit eutils games
+inherit eutils unpacker cdrom games
 
 IUSE=""
 DESCRIPTION="Tribes 2 - Team Combat on an Epic Scale"
@@ -17,7 +17,6 @@ SLOT="0"
 # someone does fix the patching.
 KEYWORDS="-amd64 x86"
 RESTRICT="mirror strip"
-PROPERTIES="interactive"
 
 DEPEND="sys-libs/glibc
 	games-util/loki_patch"
@@ -26,7 +25,6 @@ RDEPEND="${DEPEND}
 
 S=${WORKDIR}
 
-GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/${PN}
 Ddir=${D}/${dir}
 

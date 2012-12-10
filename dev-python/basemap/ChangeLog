@@ -1,6 +1,50 @@
 # ChangeLog for dev-python/basemap
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/basemap/ChangeLog,v 1.21 2011/07/18 14:31:56 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/basemap/ChangeLog,v 1.30 2012/11/19 23:17:58 bicatali Exp $
+
+  19 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> basemap-1.0.5.ebuild,
+  metadata.xml:
+  Fixed testing. Keyworded for ~amd64-linux and ~x86-linux
+
+  09 Nov 2012; Justin Lecher <jlec@gentoo.org> basemap-1.0.3.ebuild,
+  basemap-1.0.4.ebuild, basemap-1.0.5.ebuild, metadata.xml:
+  Inherit missing virtualx, #440040
+
+*basemap-1.0.5 (24 Aug 2012)
+
+  24 Aug 2012; Patrick Lauer <patrick@gentoo.org> +basemap-1.0.5.ebuild:
+  Bump
+
+*basemap-1.0.4 (27 Jun 2012)
+
+  27 Jun 2012; Patrick Lauer <patrick@gentoo.org> +basemap-1.0.4.ebuild:
+  Bump for #423735
+
+  29 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> basemap-1.0.3.ebuild:
+  Fix typo in REQUIRED_USE. Thanks to tomjbe for the spotting.
+
+*basemap-1.0.3 (24 May 2012)
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> +basemap-1.0.3.ebuild,
+  -basemap-1.0.2-r1.ebuild, -basemap-1.0.2.ebuild:
+  Version bump to the latest. Make tests work. Per bug#417257. Patch done by Ian
+  Delaney.
+
+  23 Feb 2012; Patrick Lauer <patrick@gentoo.org> basemap-1.0.2-r1.ebuild,
+  basemap-1.0.2.ebuild:
+  Restricting python
+
+*basemap-1.0.2-r1 (04 Jan 2012)
+
+  04 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  -files/basemap-0.99.3-datadir.patch, -files/basemap-0.99.3-syslib.patch,
+  -basemap-1.0.1.ebuild, +basemap-1.0.2-r1.ebuild:
+  Fix for datadir, bug #396493. Added httplib2 required run dependency
+
+*basemap-1.0.2 (25 Dec 2011)
+
+  25 Dec 2011; Patrick Lauer <patrick@gentoo.org> +basemap-1.0.2.ebuild:
+  Bump for #393591
 
   18 Jul 2011; Tomáš Chvátal <scarabeus@gentoo.org> -basemap-1.0.ebuild:
   old
@@ -113,4 +157,3 @@
   +files/basemap-syslib.patch, +metadata.xml, +basemap-0.9.4.ebuild:
   Initial import. Close bug #105482 together with dev-python/basemap-data.
   Thanks Mike Elson <mike.elson@tiscali.de> for his initial ebuild.
-

@@ -1,6 +1,71 @@
 # ChangeLog for app-emulation/spice-protocol
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/spice-protocol/ChangeLog,v 1.9 2011/07/25 09:18:23 dev-zero Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/spice-protocol/ChangeLog,v 1.25 2012/11/18 11:10:45 ago Exp $
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> spice-protocol-0.12.2.ebuild:
+  Stable for x86, wrt bug #440876
+
+  04 Nov 2012; <ago@gentoo.org> spice-protocol-0.12.2.ebuild:
+  Stable for amd64, wrt bug #440876
+
+  17 Oct 2012; Agostino Sarubbo <ago@gentoo.org> spice-protocol-0.10.3.ebuild:
+  Stable for amd64, wrt bug #437208
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  spice-protocol-0.10.3.ebuild:
+  x86 stable wrt bug #437208
+
+  04 Oct 2012; Doug Goldstein <cardoe@gentoo.org> metadata.xml:
+  Add the virtualization herd so we see the bugs.
+
+*spice-protocol-0.12.2 (04 Oct 2012)
+
+  04 Oct 2012; Doug Goldstein <cardoe@gentoo.org>
+  +spice-protocol-0.12.2.ebuild:
+  Version bump
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  spice-protocol-0.10.1.ebuild:
+  x86 stable wrt bug #407357
+
+*spice-protocol-0.10.3 (07 Jul 2012)
+
+  07 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  +spice-protocol-0.10.3.ebuild:
+  Version bump
+
+  15 Mar 2012; Agostino Sarubbo <ago@gentoo.org> spice-protocol-0.10.1.ebuild:
+  Stable for amd64, wrt bug #407357
+
+  07 Mar 2012; Doug Goldstein <cardoe@gentoo.org> -spice-protocol-0.8.1.ebuild:
+  Remove older version
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  spice-protocol-0.10.0.ebuild:
+  x86 stable wrt bug #399715
+
+  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> spice-protocol-0.10.0.ebuild:
+  Stable for amd64, wrt bug #399715
+
+*spice-protocol-0.10.1 (19 Jan 2012)
+
+  19 Jan 2012; Tiziano Müller <dev-zero@gentoo.org>
+  +spice-protocol-0.10.1.ebuild:
+  Version bump (required for spice-gtk-0.8).
+
+*spice-protocol-0.10.0 (14 Nov 2011)
+
+  14 Nov 2011; Tiziano Müller <dev-zero@gentoo.org>
+  +spice-protocol-0.10.0.ebuild, -spice-protocol-0.6.4.ebuild,
+  -spice-protocol-0.8.0-r1.ebuild:
+  Version bump. Dropped old.
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> spice-protocol-0.8.1.ebuild:
+  x86 stable, bug #369601
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> spice-protocol-0.8.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #369601.
 
 *spice-protocol-0.8.1 (25 Jul 2011)
 
@@ -56,4 +121,3 @@
   11 Aug 2010; Tiziano Müller <dev-zero@gentoo.org>
   +spice-protocol-0.5.3.ebuild, +metadata.xml:
   Initial commit, ebuild written by me.
-

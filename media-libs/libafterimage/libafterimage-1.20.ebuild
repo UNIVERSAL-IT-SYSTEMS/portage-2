@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libafterimage/libafterimage-1.20.ebuild,v 1.2 2011/03/28 18:07:53 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libafterimage/libafterimage-1.20.ebuild,v 1.13 2012/05/05 08:02:44 jdhore Exp $
 
 EAPI=3
 inherit eutils autotools
@@ -13,24 +13,24 @@ SRC_URI="ftp://ftp.afterstep.org/stable/${MY_PN}/${MY_PN}-${PV}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE="gif jpeg mmx nls png svg tiff examples static-libs truetype"
 
 RDEPEND="x11-libs/libSM
 	x11-libs/libXext
 	x11-libs/libXrender
-	png?  ( >=media-libs/libpng-1.4 )
+	png?  ( >=media-libs/libpng-1.4:0 )
 	jpeg? ( virtual/jpeg )
 	gif?  ( media-libs/giflib )
 	svg? ( gnome-base/librsvg )
-	tiff? ( media-libs/tiff )
+	tiff? ( media-libs/tiff:0 )
 	truetype? ( media-libs/freetype )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	x11-proto/xextproto
-	!x11-wm/afterstep"
+	!!x11-wm/afterstep"
 
-S="${WORKDIR}/${MY_PN}-${PV}"
+S=${WORKDIR}/${MY_PN}-${PV}
 
 src_prepare() {
 	# fix some ldconfig problem in makefile.in
@@ -39,6 +39,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-config.patch
 	# fix gif unbundle
 	epatch "${FILESDIR}"/${PN}-gif.patch
+	# fix for libpng15 compability
+	epatch "${FILESDIR}"/${PN}-libpng15.patch
 	# remove forced flags
 	sed -i \
 		-e 's/CFLAGS="-O3"//' \
@@ -71,7 +73,7 @@ src_configure() {
 
 src_install() {
 	emake \
-		DESTDIR="${ED}" \
+		DESTDIR="${D}" \
 		AFTER_DOC_DIR="${ED}/usr/share/doc/${PF}" \
 		install || die "emake install failed"
 	dodoc ChangeLog README || die

@@ -1,6 +1,125 @@
 # ChangeLog for dev-libs/libusb
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libusb/ChangeLog,v 1.110 2010/10/12 16:44:02 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libusb/ChangeLog,v 1.146 2012/11/18 10:44:31 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+  09 Nov 2012; Richard Yao <ryao@gentoo.org> libusb-1.0.9.ebuild:
+  keyword -x86-amd64 for now, its not supported
+
+  23 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -libusb-1.0.9_rc3.ebuild:
+  old
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> libusb-1.0.9.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #416333
+
+  28 May 2012; Markus Meier <maekke@gentoo.org> libusb-1.0.9.ebuild:
+  arm stable, bug #417135
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> libusb-1.0.9.ebuild:
+  ppc/ppc64 stable wrt #417135
+
+  24 May 2012; Jeroen Roovers <jer@gentoo.org> libusb-1.0.9.ebuild:
+  Stable for HPPA (bug #417135).
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> libusb-1.0.9.ebuild:
+  marked x86 per bug 417135
+
+  22 May 2012; Agostino Sarubbo <ago@gentoo.org> libusb-1.0.9.ebuild:
+  Stable for amd64, wrt bug #417135
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org> libusb-1.0.9_rc3.ebuild,
+  libusb-1.0.9.ebuild, metadata.xml:
+  Block dev-libs/libusbx:1 and include base-system in metadata.xml
+
+  20 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -libusb-1.0.8.ebuild:
+  old
+
+*libusb-1.0.9 (20 Apr 2012)
+
+  20 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +libusb-1.0.9.ebuild:
+  Version bump wrt #412745 by Peter Stuge
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> libusb-1.0.9_rc3.ebuild:
+  ppc64 stable wrt #399713
+
+  12 Feb 2012; Raúl Porcel <armin76@gentoo.org> libusb-1.0.9_rc3.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #399713
+
+  07 Feb 2012; Jeroen Roovers <jer@gentoo.org> libusb-1.0.9_rc3.ebuild:
+  Stable for HPPA (bug #399713).
+
+  05 Feb 2012; Markus Meier <maekke@gentoo.org> libusb-1.0.9_rc3.ebuild:
+  arm stable, bug #399713
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> libusb-1.0.9_rc3.ebuild:
+  Marking libusb-1.0.9_rc3 ppc for bug 399713
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libusb-1.0.9_rc3.ebuild:
+  x86 stable wrt bug #399713
+
+  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> libusb-1.0.9_rc3.ebuild:
+  Stable for amd64, wrt bug #399713
+
+*libusb-1.0.9_rc3 (09 Jan 2012)
+
+  09 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +libusb-1.0.9_rc3.ebuild:
+  Version bump to release candidate wrt #391677 by Luis Medinas. This is
+  required for compability with usbredir.
+
+  09 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -libusb-0.1.12-r5.ebuild,
+  -libusb-0.1.12-r6.ebuild:
+  old
+
+  09 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> libusb-0.1.12-r7.ebuild:
+  ppc/ppc64 stable wrt #390441
+
+  01 Jan 2012; Fabian Groffen <grobian@gentoo.org> libusb-1.0.8.ebuild:
+  Fix bashism in configure script causing build-failure when using non-bash
+  CONFIG_SHELL.
+
+  06 Dec 2011; Robin H. Johnson <robbat2@gentoo.org> libusb-0.1.12-r5.ebuild,
+  libusb-0.1.12-r6.ebuild, libusb-0.1.12-r7.ebuild:
+  Drop the DTD reference mangling. I introduced it myself in 0.1.12-r1, in
+  April 2007, when the SGML catalog was in much worse shape. Fixes bug #390509
+  that was causing network access for fetching the DTD otherwise.
+
+  03 Dec 2011; Raúl Porcel <armin76@gentoo.org> libusb-0.1.12-r7.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #390441
+
+  23 Nov 2011; Markus Meier <maekke@gentoo.org> libusb-0.1.12-r7.ebuild:
+  arm stable, bug #390441
+
+  17 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libusb-0.1.12-r7.ebuild:
+  x86 stable wrt bug #390441
+
+  15 Nov 2011; Markos Chandras <hwoarang@gentoo.org> libusb-0.1.12-r7.ebuild:
+  Stable on amd64 wrt bug #390441
+
+  15 Nov 2011; Jeroen Roovers <jer@gentoo.org> libusb-0.1.12-r7.ebuild:
+  Stable for HPPA (bug #390441).
+
+  13 Nov 2011; Mike Frysinger <vapier@gentoo.org> libusb-0.1.12-r7.ebuild:
+  Use URL to find dockbook dtd rather than filesystem path.
+
+  13 Nov 2011; Mike Frysinger <vapier@gentoo.org> libusb-0.1.12-r7.ebuild:
+  Convert USE=nocxx to USE=cxx.
+
+  13 Nov 2011; Mike Frysinger <vapier@gentoo.org> -libusb-0.1.11.ebuild,
+  -libusb-0.1.12.ebuild, -libusb-0.1.12-r1.ebuild, -libusb-0.1.12-r2.ebuild,
+  -libusb-0.1.12-r3.ebuild, -libusb-0.1.12-r4.ebuild, -libusb-1.0.1.ebuild,
+  -libusb-1.0.2.ebuild, -libusb-1.0.3.ebuild, -libusb-1.0.4.ebuild,
+  -libusb-1.0.5.ebuild, -libusb-1.0.6.ebuild, -libusb-1.0.7.ebuild:
+  Punt old ebuilds.
+
+  28 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> libusb-0.1.12-r7.ebuild,
+  libusb-1.0.8.ebuild:
+  USE="static-libs" and remove useless libtool files.
+
+  27 Sep 2011; Fabian Groffen <grobian@gentoo.org> libusb-0.1.12-r7.ebuild,
+  libusb-1.0.8.ebuild:
+  Marked ~x64-macos
 
   12 Oct 2010; Raúl Porcel <armin76@gentoo.org> libusb-1.0.8.ebuild:
   sparc stable wrt #304149

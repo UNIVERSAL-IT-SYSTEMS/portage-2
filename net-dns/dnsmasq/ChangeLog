@@ -1,6 +1,102 @@
 # ChangeLog for net-dns/dnsmasq
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/ChangeLog,v 1.209 2011/05/22 23:57:47 josejx Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dns/dnsmasq/ChangeLog,v 1.231 2012/11/14 18:31:00 chutzpah Exp $
+
+*dnsmasq-2.63-r1 (14 Nov 2012)
+
+  14 Nov 2012; Patrick McLean <chutzpah@gentoo.org> +dnsmasq-2.63-r1.ebuild,
+  metadata.xml:
+  Revision bump, add new "dhcp-tools" USE flag that installs extra tools for
+  manually managing dhcp leases.
+
+  08 Oct 2012; Patrick McLean <chutzpah@gentoo.org> -dnsmasq-2.57.ebuild,
+  -dnsmasq-2.61.ebuild, -files/dnsmasq.confd, -files/dnsmasq-init:
+  Clean out older versions.
+
+  07 Oct 2012; Raúl Porcel <armin76@gentoo.org> dnsmasq-2.63.ebuild:
+  alpha/ia64/s390/sh/sparc/x86 stable wrt #436894
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> dnsmasq-2.61.ebuild:
+  Marking dnsmasq-2.61 ppc64 for bug 433076
+
+  04 Oct 2012; Anthony G. Basile <blueness@gentoo.org> dnsmasq-2.63.ebuild:
+  stable arm, bug #436894
+
+  04 Oct 2012; Anthony G. Basile <blueness@gentoo.org> dnsmasq-2.63.ebuild:
+  stable ppc ppc64, bug #436894
+
+  03 Oct 2012; Agostino Sarubbo <ago@gentoo.org> dnsmasq-2.63.ebuild:
+  Stable for amd64, wrt bug #436894
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> dnsmasq-2.63.ebuild:
+  Stable for HPPA (bug #436894).
+
+  02 Oct 2012; Patrick McLean <chutzpah@gentoo.org> files/dnsmasq-init-r2:
+  Use kill -HUP instead of s-s-d for reloading (bug #436430).
+
+  11 Sep 2012; Raúl Porcel <armin76@gentoo.org> dnsmasq-2.61.ebuild:
+  alpha/ia64/s390/sh/sparc/x86 stable wrt #433076
+
+  05 Sep 2012; Jeroen Roovers <jer@gentoo.org> dnsmasq-2.61.ebuild:
+  Stable for HPPA (bug #433076).
+
+  02 Sep 2012; Anthony G. Basile <blueness@gentoo.org> dnsmasq-2.61.ebuild:
+  Stable arm, bug #433076
+
+  02 Sep 2012; Markos Chandras <hwoarang@gentoo.org> dnsmasq-2.61.ebuild:
+  Stable on amd64 wrt bug #433076
+
+  02 Sep 2012; Michael Weber <xmw@gentoo.org> dnsmasq-2.61.ebuild:
+  ppc stable (bug 433076).
+
+  28 Aug 2012; Patrick McLean <chutzpah@gentoo.org> dnsmasq-2.63.ebuild:
+  Make dnsmasq-2.63 respect LINGUAS and remove no-longer-necessary MY_*
+  wrangling.
+
+*dnsmasq-2.63 (28 Aug 2012)
+
+  28 Aug 2012; Patrick McLean <chutzpah@gentoo.org> -dnsmasq-2.57-r1.ebuild,
+  -dnsmasq-2.59.ebuild, -dnsmasq-2.60.ebuild, dnsmasq-2.61.ebuild,
+  +dnsmasq-2.63.ebuild, +files/dnsmasq.service,
+  -files/dnsmasq-fbsd-config.patch, -files/dnsmasq-init-r1:
+  Version bump (bug #431836). Add installation of a systemd unit (bug #
+  371871). Make sure LDFLAGS are respected (bug #414223). Clean up some older
+  versions.
+
+  14 Jun 2012; Zac Medico <zmedico@gentoo.org> dnsmasq-2.57-r1.ebuild,
+  dnsmasq-2.59.ebuild, dnsmasq-2.60.ebuild, dnsmasq-2.61.ebuild:
+  inherit user for enewgroup and enewuser
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> dnsmasq-2.57.ebuild,
+  dnsmasq-2.57-r1.ebuild, dnsmasq-2.59.ebuild, dnsmasq-2.60.ebuild,
+  dnsmasq-2.61.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*dnsmasq-2.61 (30 Apr 2012)
+
+  30 Apr 2012; Patrick McLean <chutzpah@gentoo.org> +dnsmasq-2.61.ebuild:
+  Version bump.
+
+*dnsmasq-2.60 (07 Mar 2012)
+
+  07 Mar 2012; Patrick McLean <chutzpah@gentoo.org> -dnsmasq-2.52.ebuild,
+  -dnsmasq-2.55.ebuild, -dnsmasq-2.56.ebuild, dnsmasq-2.57.ebuild,
+  dnsmasq-2.57-r1.ebuild, dnsmasq-2.59.ebuild, +dnsmasq-2.60.ebuild,
+  +files/dnsmasq-init-r2, -files/resolvconf.dnsmasq, metadata.xml:
+  Version bump, rework configuration a bit to use a helper function. Add lua
+  and script USE flags, and enable dhcpv6 if both the dhcp and ipv6 USE flags
+  are enabled. Drop some older versions. Update copyright headers.
+
+  04 Dec 2011; Sven Wegener <swegener@gentoo.org> files/dnsmasq-init,
+  files/dnsmasq-init-r1:
+  reload is extra_started_commands
+
+*dnsmasq-2.59 (09 Nov 2011)
+
+  09 Nov 2011; Patrick McLean <chutzpah@gentoo.org> +dnsmasq-2.59.ebuild,
+  +files/dnsmasq-init-r1, metadata.xml:
+  Version bump (bug #383257). Change opts to extra_commands in new init script
+  (bug #386763). Change license to GPL-2 or GPL-3 (bug #383259).
 
   22 May 2011; Joseph Jezak <josejx@gentoo.org> dnsmasq-2.57.ebuild:
   Marked ppc/ppc64 stable for bug #361149.

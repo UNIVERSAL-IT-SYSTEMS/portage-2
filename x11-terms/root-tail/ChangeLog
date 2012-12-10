@@ -1,6 +1,33 @@
 # ChangeLog for x11-terms/root-tail
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/root-tail/ChangeLog,v 1.44 2010/09/17 04:17:18 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/root-tail/ChangeLog,v 1.52 2012/07/11 14:56:42 kensington Exp $
+
+  11 Jul 2012; Michael Palimaka <kensington@gentoo.org>
+  -root-tail-1.2-r2.ebuild:
+  Remove old.
+
+  15 May 2012; Julian Ospald <hasufell@gentoo.org> root-tail-1.2-r2.ebuild,
+  root-tail-1.2-r3.ebuild:
+  fix HOMEPAGE and SRC_URI wrt #415629
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> root-tail-1.2-r2.ebuild,
+  root-tail-1.2-r3.ebuild:
+  Drop alpha/sparc keywords
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> root-tail-1.2-r3.ebuild:
+  Marking root-tail-1.2-r3 ppc64 for bug 403987
+
+  24 Feb 2012; Brent Baude <ranger@gentoo.org> root-tail-1.2-r3.ebuild:
+  Marking root-tail-1.2-r3 ppc for bug 403987
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> root-tail-1.2-r3.ebuild:
+  x86 stable wrt bug #403987
+
+  16 Feb 2012; Agostino Sarubbo <ago@gentoo.org> root-tail-1.2-r3.ebuild:
+  Stable for amd64, wrt bug #403987
+
+  16 Feb 2012; Jeroen Roovers <jer@gentoo.org> root-tail-1.2-r3.ebuild:
+  make -> emake.
 
 *root-tail-1.2-r3 (17 Sep 2010)
 

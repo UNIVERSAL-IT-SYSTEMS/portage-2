@@ -1,6 +1,101 @@
 # ChangeLog for net-misc/connman
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/connman/ChangeLog,v 1.39 2011/06/16 12:11:51 dagger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/connman/ChangeLog,v 1.60 2012/11/15 23:59:46 chainsaw Exp $
+
+*connman-1.9 (16 Nov 2012)
+*connman-1.8 (16 Nov 2012)
+*connman-1.7 (16 Nov 2012)
+*connman-1.6 (16 Nov 2012)
+*connman-1.5 (16 Nov 2012)
+
+  16 Nov 2012; Tony Vroon <chainsaw@gentoo.org> -connman-1.1.ebuild,
+  -connman-1.2.ebuild, -connman-1.3.ebuild, +connman-1.5.ebuild,
+  +connman-1.6.ebuild, +connman-1.7.ebuild, +connman-1.8.ebuild,
+  +connman-1.9.ebuild:
+  Version bumps as requested by José Romildo Malaquias in bug #438108. Please
+  note that cm has gone in 1.7, and has been replaced with connmanctl. No
+  compatibility symlink, as the actual interface is completely different.
+  Removed some older non-stable ebuilds.
+
+  04 Aug 2012; Anthony G. Basile <blueness@gentoo.org> connman-1.0-r1.ebuild:
+  Stable ppc ppc64, bug #427552
+
+*connman-1.4 (31 Jul 2012)
+*connman-1.3 (31 Jul 2012)
+*connman-1.2 (31 Jul 2012)
+*connman-1.1 (31 Jul 2012)
+
+  31 Jul 2012; Tony Vroon <chainsaw@gentoo.org> +connman-1.1.ebuild,
+  +connman-1.2.ebuild, +connman-1.3.ebuild, +connman-1.4.ebuild, metadata.xml:
+  Version bump as requested by "teidakankan" in bug #427568. Also adding
+  intermediate versions in case any bugs got introduced by the rather extensive
+  feature additions. Remove now unused google & ntpd local USE flag
+  descriptions.
+
+  19 Jul 2012; Markus Meier <maekke@gentoo.org> connman-1.0-r1.ebuild:
+  arm stable, bug #424625
+
+  11 May 2012; Agostino Sarubbo <ago@gentoo.org> -connman-0.78.ebuild,
+  -connman-0.79.ebuild, -connman-0.80.ebuild:
+  Remove old
+
+  11 May 2012; Agostino Sarubbo <ago@gentoo.org> connman-1.0-r1.ebuild:
+  Stable for amd64, wrt bug #415415
+
+  11 May 2012; Jeff Horelick <jdhore@gentoo.org> connman-1.0-r1.ebuild:
+  marked x86 per bug 415415
+
+*connman-1.0-r1 (10 May 2012)
+
+  10 May 2012; Tony Vroon <chainsaw@gentoo.org> -connman-1.0.ebuild,
+  +connman-1.0-r1.ebuild:
+  Can not allow an experimental dependency to interfere with security stabling.
+  As per arch testing by Elijah "Armageddon" El Lazkani in bug #415415.
+
+*connman-1.0 (10 May 2012)
+
+  10 May 2012; Tony Vroon <chainsaw@gentoo.org> +connman-1.0.ebuild:
+  First stable branch with APIs set in stone.
+
+*connman-0.80 (20 Apr 2012)
+*connman-0.79 (20 Apr 2012)
+
+  20 Apr 2012; Tony Vroon <chainsaw@gentoo.org> -connman-0.73.ebuild,
+  -connman-0.75.ebuild, +connman-0.79.ebuild,
+  +files/connman-0.79-glib-include.patch, +connman-0.80.ebuild,
+  -files/fix-for-iptables-1.4.11.patch:
+  Version bump to 0.79 and 0.80 as requested by Vadim Efimov & Alessandro
+  Capogna in bug #407563.
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> connman-0.78.ebuild:
+  Stable for amd64, wrt bug #410613
+
+  15 Apr 2012; Markus Meier <maekke@gentoo.org> connman-0.78.ebuild:
+  x86 stable, bug #410613
+
+  12 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> connman-0.78.ebuild:
+  Revert back to ~ppc64 because this is not ready to be stabilized.
+
+  12 Mar 2012; Brent Baude <ranger@gentoo.org> connman-0.78.ebuild:
+  Marking connman-0.78 ppc64 stable for bug 407643
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> connman-0.78.ebuild:
+  Marking connman-0.78 ~ppc64 for bug 387959
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> connman-0.78.ebuild:
+  Marking connman-0.78 ~ppc for bug 387959
+
+  25 Dec 2011; Tony Vroon <chainsaw@gentoo.org> metadata.xml:
+  Taking maintainership whilst dagger is away.
+
+*connman-0.78 (25 Dec 2011)
+
+  25 Dec 2011; Tony Vroon <chainsaw@gentoo.org> +connman-0.78.ebuild:
+  Version bump, as requested by Gustavo Sverzut Barbieri in bug #388811.
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> connman-0.75.ebuild:
+  Raise linux-headers dependencies to 2.6.39 for linux/if_alg.h wrt #386139 by
+  Ian Delaney
 
 *connman-0.75 (16 Jun 2011)
 

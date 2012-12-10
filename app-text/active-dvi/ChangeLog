@@ -1,6 +1,28 @@
 # ChangeLog for app-text/active-dvi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/active-dvi/ChangeLog,v 1.40 2011/07/24 12:02:03 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/active-dvi/ChangeLog,v 1.45 2012/08/07 16:18:16 aballier Exp $
+
+  07 Aug 2012; Alexis Ballier <aballier@gentoo.org>
+  -files/active-dvi-1.7.3-asneeded.patch, -active-dvi-1.8.ebuild,
+  -active-dvi-1.9.ebuild:
+  remove old
+
+  24 Jul 2012; Johannes Huber <johu@gentoo.org> active-dvi-1.10.2.ebuild:
+  Stable for x86, wrt bug #416525
+
+  16 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> active-dvi-1.8.ebuild,
+  active-dvi-1.9.ebuild, active-dvi-1.10.2.ebuild:
+  Use global USE flag "postscript" instead of local USE flag "gs" for
+  PostScript support
+
+*active-dvi-1.10.2 (10 Apr 2012)
+
+  10 Apr 2012; Alexis Ballier <aballier@gentoo.org> +active-dvi-1.10.2.ebuild:
+  version bump
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> active-dvi-1.8.ebuild,
+  active-dvi-1.9.ebuild:
+  remove ptex dep as it is going away
 
   24 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> active-dvi-1.9.ebuild:
   Marked ~ppc wrt #316131

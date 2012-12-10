@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/crystalspace/crystalspace-1.4.0.ebuild,v 1.8 2011/02/25 18:34:11 signals Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-games/crystalspace/crystalspace-1.4.0.ebuild,v 1.11 2012/07/17 12:33:39 tupone Exp $
 
 EAPI=2
 inherit eutils flag-o-matic multilib java-pkg-opt-2 autotools wxwidgets versionator
@@ -47,7 +47,7 @@ DEPEND="${COMMON_DEP}
 		dev-java/ant-core )
 	dev-util/ftjam
 	dev-lang/swig
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${MY_P}
 
@@ -59,7 +59,9 @@ src_prepare() {
 		Jamfile.in \
 		docs/Jamfile \
 		|| die "sed failed"
-	epatch "${FILESDIR}"/${P}-bullet.patch
+	epatch "${FILESDIR}"/${P}-bullet.patch \
+		"${FILESDIR}"/${P}-png15.patch \
+		"${FILESDIR}"/${P}-gcc47.patch
 	AT_M4DIR=mk/autoconf
 	eautoreconf
 }

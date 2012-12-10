@@ -1,6 +1,84 @@
 # ChangeLog for sys-libs/ncurses
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/ncurses/ChangeLog,v 1.189 2011/05/22 18:19:56 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/ncurses/ChangeLog,v 1.212 2012/10/23 20:07:18 vapier Exp $
+
+  23 Oct 2012; Mike Frysinger <vapier@gentoo.org> ncurses-5.9-r2.ebuild:
+  Bypass dumb pkg-config install checks #438922 by Benjamin Peterson.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> ncurses-5.9-r2.ebuild:
+  alpha/sparc stable wrt #413897
+
+  24 Jun 2012; Mike Frysinger <vapier@gentoo.org> ncurses-5.7-r7.ebuild,
+  ncurses-5.9-r1.ebuild, ncurses-5.9-r2.ebuild, ncurses-5.9.ebuild:
+  Do not delete C++ libs when USE=-static-libs since there are only static libs
+  for that #421241 by Keepun.
+
+  14 Jun 2012; Mike Frysinger <vapier@gentoo.org> ncurses-5.9-r2.ebuild:
+  Export all BUILD_xxx variables for cross-compiling #391363 by Marcin Mirosław.
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> ncurses-5.9-r2.ebuild:
+  Marking ncurses-5.9-r2 ppc for bug 413897
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> ncurses-5.9-r2.ebuild:
+  Marking ncurses-5.9-r2 ppc64 for bug 413897
+
+  29 May 2012; Richard Yao <ryao@gentoo.org>
+  +files/ncurses-5.9-fix-clang-build.patch, ncurses-5.9-r2.ebuild:
+  Fix illegal C++ code, bug #417763, approved by Chainsaw
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ncurses-5.9-r2.ebuild:
+  x86 stable wrt bug #413897
+
+  17 May 2012; Jeroen Roovers <jer@gentoo.org> ncurses-5.9-r2.ebuild:
+  Stable for HPPA (bug #413897).
+
+  06 May 2012; Mike Frysinger <vapier@gentoo.org> ncurses-5.9-r2.ebuild:
+  Mark ia64/m68k/s390/sh stable #413897.
+
+  03 May 2012; Markus Meier <maekke@gentoo.org> ncurses-5.9-r2.ebuild:
+  arm stable, bug #413897
+
+  01 May 2012; Agostino Sarubbo <ago@gentoo.org> ncurses-5.9-r2.ebuild:
+  Stable for amd64, wrt bug #413897
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> ncurses-5.9-r2.ebuild:
+  keyword ~amd64-fbsd
+
+  11 Mar 2012; Mike Frysinger <vapier@gentoo.org> ncurses-5.9-r2.ebuild:
+  Make sure gpm is in RDEPEND too #407061 by Maxim Kammerer.
+
+*ncurses-5.9-r2 (29 Feb 2012)
+
+  29 Feb 2012; Alex Alexander <wired@gentoo.org> +ncurses-5.9-r2.ebuild,
+  +files/ncurses-5.9-rxvt-unicode-9.15.patch:
+  updated rxvt-unicode terminfo. fixes bug #383871. acked by robbat2
+
+  28 Dec 2011; Mark Loeser <halcy0n@gentoo.org> ncurses-5.9.ebuild:
+  Stable for ppc/ppc64; bug #377631
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> ncurses-5.9.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #377631
+
+  03 Dec 2011; Markus Meier <maekke@gentoo.org> ncurses-5.9.ebuild:
+  arm stable, bug #377631
+
+  02 Dec 2011; Steve Dibb <beandog@gentoo.org> ncurses-5.9.ebuild:
+  amd64 stable, bug 377631
+
+  30 Nov 2011; Jeroen Roovers <jer@gentoo.org> ncurses-5.9.ebuild:
+  Stable for HPPA (bug #377631).
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ncurses-5.9.ebuild:
+  x86 stable wrt bug #377631
+
+*ncurses-5.9-r1 (21 Nov 2011)
+
+  21 Nov 2011; Mike Frysinger <vapier@gentoo.org> +ncurses-5.9-r1.ebuild:
+  Install pkg-config files.
+
+  13 Nov 2011; Mike Frysinger <vapier@gentoo.org> -ncurses-5.6-r2.ebuild,
+  -ncurses-5.7-r3.ebuild, -ncurses-5.7-r5.ebuild, -ncurses-5.7-r6.ebuild:
+  Drop old ebuilds (to lose USE=nocxx).
 
   22 May 2011; Kacper Kowalik <xarthisius@gentoo.org> ncurses-5.7-r7.ebuild:
   ppc64 stable wrt #353437

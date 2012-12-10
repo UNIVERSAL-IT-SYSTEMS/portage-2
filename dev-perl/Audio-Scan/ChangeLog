@@ -1,6 +1,41 @@
 # ChangeLog for dev-perl/Audio-Scan
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Audio-Scan/ChangeLog,v 1.22 2011/07/30 09:16:44 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Audio-Scan/ChangeLog,v 1.30 2012/06/24 13:00:39 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  16 Jun 2012; Torsten Veller <tove@gentoo.org> -Audio-Scan-0.82.ebuild,
+  -Audio-Scan-0.840.ebuild, -Audio-Scan-0.870.0.ebuild,
+  -Audio-Scan-0.880.0.ebuild, -Audio-Scan-0.900.0.ebuild,
+  -Audio-Scan-0.910.0.ebuild, -Audio-Scan-0.920.0.ebuild:
+  Cleanup
+
+  18 Nov 2011; Fabian Groffen <grobian@gentoo.org>
+  Audio-Scan-0.870.0.ebuild, Audio-Scan-0.880.0.ebuild,
+  Audio-Scan-0.930.0.ebuild:
+  Marked ~x86-solaris
+
+*Audio-Scan-0.930.0 (17 Sep 2011)
+
+  17 Sep 2011; Torsten Veller <tove@gentoo.org> +Audio-Scan-0.930.0.ebuild:
+  Version bump
+
+*Audio-Scan-0.920.0 (13 Sep 2011)
+
+  13 Sep 2011; Torsten Veller <tove@gentoo.org> +Audio-Scan-0.920.0.ebuild:
+  Version bump
+
+*Audio-Scan-0.910.0 (07 Sep 2011)
+
+  07 Sep 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +Audio-Scan-0.910.0.ebuild:
+  Version bump via perl-bump experimental tool.
+
+*Audio-Scan-0.900.0 (05 Aug 2011)
+
+  05 Aug 2011; Torsten Veller <tove@gentoo.org> +Audio-Scan-0.900.0.ebuild:
+  Version bump
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> -Audio-Scan-0.850.ebuild,
   -Audio-Scan-0.860.0.ebuild:
@@ -110,4 +145,3 @@
   09 Feb 2010; Torsten Veller <tove@gentoo.org> +Audio-Scan-0.59.ebuild,
   +metadata.xml:
   Initial commit (#287264)
-

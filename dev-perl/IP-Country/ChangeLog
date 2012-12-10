@@ -1,6 +1,21 @@
 # ChangeLog for dev-perl/IP-Country
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/IP-Country/ChangeLog,v 1.40 2010/01/10 13:10:16 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/IP-Country/ChangeLog,v 1.44 2012/06/24 12:58:18 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> IP-Country-2.23.ebuild,
+  IP-Country-2.270.0.ebuild:
+  Drop ia64/sparc keywords
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -IP-Country-2.27.ebuild:
+  Cleanup
+
+*IP-Country-2.270.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +IP-Country-2.270.0.ebuild:
+  Change version scheme
 
   10 Jan 2010; Fabian Groffen <grobian@gentoo.org> IP-Country-2.27.ebuild:
   Transfer Prefix keywords
@@ -166,4 +181,3 @@
   22 Sep 2004; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +IP-Country-2.17.ebuild:
   Optional dep for spamassassin 3
-

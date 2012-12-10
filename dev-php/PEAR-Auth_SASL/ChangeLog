@@ -1,6 +1,32 @@
 # ChangeLog for dev-php/PEAR-Auth_SASL
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Auth_SASL/ChangeLog,v 1.37 2010/02/16 04:21:55 beandog Exp $
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Auth_SASL/ChangeLog,v 1.44 2011/12/03 17:46:48 armin76 Exp $
+
+  03 Dec 2011; Raúl Porcel <armin76@gentoo.org> PEAR-Auth_SASL-1.0.6.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #388763
+
+  25 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  PEAR-Auth_SASL-1.0.6.ebuild:
+  ppc/ppc64 stable wrt #388613
+
+  13 Nov 2011; Markus Meier <maekke@gentoo.org> PEAR-Auth_SASL-1.0.6.ebuild:
+  arm stable, bug #388763
+
+  10 Nov 2011; Jeroen Roovers <jer@gentoo.org> PEAR-Auth_SASL-1.0.6.ebuild:
+  Stable for HPPA (bug #388763).
+
+  04 Nov 2011; Andreas Schuerch <nativemad@gentoo.org>
+  PEAR-Auth_SASL-1.0.6.ebuild:
+  x86 stable, see bug 388763
+
+  03 Nov 2011; Tony Vroon <chainsaw@gentoo.org> PEAR-Auth_SASL-1.0.6.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney &
+  Agostino "ago" Sarubbo in bug #388763.
+
+*PEAR-Auth_SASL-1.0.6 (01 Oct 2011)
+
+  01 Oct 2011; Peter Volkov <pva@gentoo.org> +PEAR-Auth_SASL-1.0.6.ebuild:
+  Version bump.
 
   16 Feb 2010; Steve Dibb <beandog@gentoo.org>
   PEAR-Auth_SASL-1.0.1-r1.ebuild, PEAR-Auth_SASL-1.0.2.ebuild,

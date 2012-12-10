@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/java-access-bridge/java-access-bridge-1.26.0.ebuild,v 1.6 2011/03/22 20:03:21 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/java-access-bridge/java-access-bridge-1.26.0.ebuild,v 1.9 2012/05/21 23:17:23 vapier Exp $
 
 EAPI="2"
-inherit java-pkg-2 gnome2 autotools
+inherit java-pkg-2 gnome2 eutils autotools
 
 DESCRIPTION="Gnome Java Accessibility Bridge"
 HOMEPAGE="http://developer.gnome.org/projects/gap/"
@@ -14,7 +14,7 @@ KEYWORDS="amd64 ppc ppc64 x86"
 IUSE=""
 
 COMMON_DEPEND=">=gnome-base/libbonobo-2
-	>=gnome-extra/at-spi-1.7.10
+	>=gnome-extra/at-spi-1.7.10:1
 	x11-apps/xprop"
 
 RDEPEND="$COMMON_DEPEND
@@ -22,7 +22,7 @@ RDEPEND="$COMMON_DEPEND
 
 DEPEND="$COMMON_DEPEND
 	>=virtual/jdk-1.4
-	>=dev-util/pkgconfig-0.9"
+	virtual/pkgconfig"
 
 DOCS="AUTHORS ChangeLog NEWS README"
 

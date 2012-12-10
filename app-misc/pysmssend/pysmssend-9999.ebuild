@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/pysmssend/pysmssend-9999.ebuild,v 1.4 2011/06/25 08:58:50 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/pysmssend/pysmssend-9999.ebuild,v 1.6 2012/09/09 08:08:54 hwoarang Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"
@@ -38,11 +38,26 @@ src_install() {
 		doins   Icons/* || die "doins failed"
 		doicon  Icons/pysmssend.png || die "doicon failed"
 		dobin   pysmssend pysmssendcmd || die "failed to create executables"
-		make_desktop_entry pysmssend pySMSsend pysmssend \
-			"Applications;Network" || die "make_desktop_entry failed"
+		domenu	${PN}.desktop || die "make_desktop_entry failed"
 	else
 		dobin   pysmssendcmd || die "failed to create executable"
 		dosym   pysmssendcmd /usr/bin/pysmssend || die "dosym failed"
 	fi
 	dodoc README AUTHORS TODO || die "dodoc failed"
+}
+
+pkg_postinst() {
+	distutils_pkg_postinst
+	elog
+	elog "${PN} can use dev-python/python-gnupg"
+	elog "for keeping your account data encrypted"
+	elog "and secured. If you want to use it,"
+	elog "first install dev-python/python-gnupg using"
+	elog "emerge -av dev-python/python/gnupg"
+	elog "and then edit your ~/.pysmssend/config"
+	elog "file and set:"
+	elog
+	elog "pysmssend_gpg_support=1"
+	elog "pysmssend_gpg_key=<your_gpg_key_id>"
+	elog
 }

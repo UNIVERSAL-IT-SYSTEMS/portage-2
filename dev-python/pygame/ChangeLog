@@ -1,6 +1,53 @@
 # ChangeLog for dev-python/pygame
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pygame/ChangeLog,v 1.80 2011/07/07 07:28:43 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pygame/ChangeLog,v 1.90 2012/08/22 15:21:56 xmw Exp $
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org>
+  pygame-1.9.2_pre20120101-r1.ebuild:
+  ppc stable (bug 418283).
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org>
+  pygame-1.9.2_pre20120101-r1.ebuild:
+  Stable for HPPA (bug #418283).
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org>
+  pygame-1.9.2_pre20120101-r1.ebuild:
+  alpha/ia64/sparc stable wrt #418283
+
+  31 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  pygame-1.9.2_pre20120101-r1.ebuild:
+  Stable for amd64, wrt bug #418283
+
+  31 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  pygame-1.9.2_pre20120101-r1.ebuild:
+  marked x86 per bug 418283
+
+*pygame-1.9.2_pre20120101-r1 (30 May 2012)
+
+  30 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +pygame-1.9.2_pre20120101-r1.ebuild, -pygame-1.9.2_pre20120101.ebuild:
+  Apply fix for invalid import with python3 by Arfrever Frehtes Taifersar
+  Arahesis <arfrever.fta@gmail.com>. Fixes bug #415593 by Eric Mercier
+  <mercier.eric@gmail.com>. Drop old
+
+  20 Feb 2012; Patrick Lauer <patrick@gentoo.org>
+  pygame-1.9.2_pre20120101.ebuild, pygame-1.9.2_pre3082.ebuild,
+  pygame-1.9.2_pre3203.ebuild:
+  Fixing pypy restricts to actually work
+
+*pygame-1.9.2_pre20120101 (08 Jan 2012)
+
+  08 Jan 2012; Markos Chandras <hwoarang@gentoo.org>
+  +pygame-1.9.2_pre20120101.ebuild:
+  Version bump. Ebuild by Arfrever. Backported from Progress Overlay.
+
+  21 Sep 2011; Mike Gilbert <floppym@gentoo.org> pygame-1.9.2_pre3203.ebuild:
+  Fix broken automagic dep with portmidi, bug 383927 by sping.
+
+*pygame-1.9.2_pre3203 (20 Sep 2011)
+
+  20 Sep 2011; Mike Gilbert <floppym@gentoo.org> +pygame-1.9.2_pre3203.ebuild:
+  Version bump. Ebuild by Arfrever. Backported from Progress Overlay.
 
   07 Jul 2011; Markos Chandras <hwoarang@gentoo.org>
   -files/pygame-1.9.1-linux-headers-2.6.38.patch, -files/config.patch:

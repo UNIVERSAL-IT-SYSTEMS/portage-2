@@ -1,6 +1,142 @@
 # ChangeLog for app-editors/zile
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/zile/ChangeLog,v 1.146 2011/05/29 17:30:07 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/zile/ChangeLog,v 1.183 2012/11/02 07:48:34 ulm Exp $
+
+  27 Oct 2012; Ulrich Müller <ulm@gentoo.org> zile-2.3.24-r1.ebuild,
+  -zile-2.4.6.ebuild, zile-2.4.7.ebuild, zile-2.4.8.ebuild:
+  Specify LICENSE more precisely. Remove old.
+
+  13 Oct 2012;  <naota@gentoo.org> zile-2.4.8.ebuild:
+  Add ~x86-fbsd. #384445
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> zile-2.4.7.ebuild:
+  alpha/sparc stable wrt #417343
+
+*zile-2.4.8 (13 Jul 2012)
+
+  13 Jul 2012; Ulrich Müller <ulm@gentoo.org> +zile-2.4.8.ebuild:
+  Version bump, fixes bug 425104.
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> zile-2.4.7.ebuild:
+  Marking zile-2.4.7 ppc for bug 417343
+
+  25 May 2012; Naohiro Aota <naota@gentoo.org> zile-2.4.7.ebuild:
+  Remove -x86-fbsd. #417347
+
+  24 May 2012; Agostino Sarubbo <ago@gentoo.org> zile-2.4.7.ebuild:
+  Stable for amd64, wrt bug #417343
+
+  24 May 2012; Jeff Horelick <jdhore@gentoo.org> zile-2.4.7.ebuild:
+  marked x86 per bug 417343
+
+  03 Apr 2012; Naohiro Aota <naota@gentoo.org> zile-2.4.6.ebuild,
+  zile-2.4.7.ebuild:
+  Drop ~x86-fbsd. boehm-gc not yet keyworded.
+
+  02 Apr 2012; Ulrich Müller <ulm@gentoo.org> zile-2.4.6.ebuild,
+  zile-2.4.7.ebuild:
+  Add perl to DEPEND because tests need it.
+
+  01 Apr 2012; Ulrich Müller <ulm@gentoo.org> -zile-2.4.2.ebuild:
+  Remove old.
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> zile-2.4.6.ebuild:
+  alpha/sparc stable wrt #408899
+
+*zile-2.4.7 (01 Apr 2012)
+
+  01 Apr 2012; Ulrich Müller <ulm@gentoo.org> zile-2.3.24-r1.ebuild,
+  -zile-2.4.3.ebuild, +zile-2.4.7.ebuild:
+  Version bump. Remove intermediate version. Drop livecd USE flag.
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> zile-2.4.6.ebuild:
+  Marking zile-2.4.6 ppc for bug 408899
+
+  22 Mar 2012; Jeff Horelick <jdhore@gentoo.org> zile-2.4.6.ebuild:
+  marked x86 per bug 408899
+
+  20 Mar 2012; Agostino Sarubbo <ago@gentoo.org> zile-2.4.6.ebuild:
+  Stable for amd64, wrt bug #408899
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> zile-2.4.2.ebuild:
+  sparc stable wrt #391699
+
+  19 Feb 2012; Tobias Klausmann <klausman@gentoo.org> zile-2.4.2.ebuild:
+  Stable on alpha, bug #391699
+
+*zile-2.4.6 (18 Feb 2012)
+
+  18 Feb 2012; Ulrich Müller <ulm@gentoo.org> -zile-2.4.5.ebuild,
+  +zile-2.4.6.ebuild:
+  Version bump. Remove intermediate version.
+
+*zile-2.4.5 (15 Feb 2012)
+
+  15 Feb 2012; Ulrich Müller <ulm@gentoo.org> +zile-2.4.5.ebuild:
+  Version bump.
+
+  14 Feb 2012; Brent Baude <ranger@gentoo.org> zile-2.4.2.ebuild:
+  Marking zile-2.4.2 ppc for bug 391699
+
+  06 Jan 2012; Ulrich Mueller <ulm@gentoo.org> -zile-2.3.23.ebuild:
+  Remove old.
+
+  06 Jan 2012; Brent Baude <ranger@gentoo.org> zile-2.3.24-r1.ebuild:
+  Marking zile-2.3.24-r1 ppc for bug 382597
+
+*zile-2.4.3 (22 Dec 2011)
+
+  22 Dec 2011; Ulrich Mueller <ulm@gentoo.org> +zile-2.4.3.ebuild:
+  Version bump.
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> zile-2.4.2.ebuild:
+  x86 stable wrt bug #391699
+
+  29 Nov 2011; Naohiro Aota <naota@gentoo.org> zile-2.4.2.ebuild:
+  Add ~x86-fbsd. Bug #384445
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> zile-2.4.2.ebuild:
+  Stable on amd64 wrt bug #391699
+
+  25 Oct 2011; Ulrich Mueller <ulm@gentoo.org> -zile-2.4.1.ebuild,
+  zile-2.4.2.ebuild:
+  Remove valgrind USE flag because tests fail with valgrind; looks like it
+  doesn't play nice with boehm-gc. Remove intermediate version.
+
+*zile-2.4.2 (08 Oct 2011)
+
+  08 Oct 2011; Ulrich Mueller <ulm@gentoo.org> +zile-2.4.2.ebuild:
+  Version bump. Drop livecd USE flag.
+
+  26 Sep 2011; Fabian Groffen <grobian@gentoo.org> zile-2.4.1.ebuild:
+  Fix docdir for Prefix
+
+  26 Sep 2011; Fabian Groffen <grobian@gentoo.org> zile-2.4.1.ebuild:
+  Marked ~x86-freebsd
+
+*zile-2.4.1 (25 Sep 2011)
+
+  25 Sep 2011; Ulrich Mueller <ulm@gentoo.org> +zile-2.4.1.ebuild:
+  Version bump. All BSD and Interix beywords dropped because of new dependency
+  on dev-libs/boehm-gc.
+
+  24 Sep 2011; Raúl Porcel <armin76@gentoo.org> zile-2.3.24-r1.ebuild:
+  alpha/sparc stable wrt #382597
+
+  15 Sep 2011; Andreas Schuerch <nativemad@gentoo.org> zile-2.3.24-r1.ebuild:
+  x86 stable, thanks JD, bug 382597
+
+  13 Sep 2011; Markos Chandras <hwoarang@gentoo.org> zile-2.3.24-r1.ebuild:
+  Stable on amd64 wrt bug #382597
+
+  11 Sep 2011; Ulrich Mueller <ulm@gentoo.org> -zile-2.3.24.ebuild:
+  Remove intermediate version.
+
+*zile-2.3.24-r1 (11 Aug 2011)
+
+  11 Aug 2011; Ulrich Mueller <ulm@gentoo.org> +zile-2.3.24-r1.ebuild,
+  +files/zile-2.3.24-userhome.patch:
+  Fix canonicalisation of user home directory. Reported by flameeyes.
 
   29 May 2011; Ulrich Mueller <ulm@gentoo.org> -zile-2.3.20.ebuild:
   Remove old.

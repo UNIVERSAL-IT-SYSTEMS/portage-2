@@ -1,6 +1,32 @@
 # ChangeLog for x11-misc/xpad
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xpad/ChangeLog,v 1.69 2010/07/18 11:08:19 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xpad/ChangeLog,v 1.76 2012/08/27 17:58:15 armin76 Exp $
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> xpad-4.0.ebuild,
+  xpad-4.1.ebuild:
+  Drop alpha/sparc keywords
+
+  08 Aug 2012; Anthony G. Basile <blueness@gentoo.org> xpad-4.1.ebuild:
+  Stable ppc, bug #428052
+
+  02 Aug 2012; Markos Chandras <hwoarang@gentoo.org> xpad-4.1.ebuild:
+  Stable on amd64 wrt bug #428052
+
+  26 Jul 2012; Johannes Huber <johu@gentoo.org> xpad-4.1.ebuild:
+  Stable for x86, wrt bug #428052
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> xpad-4.0.ebuild,
+  xpad-4.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  03 May 2012; Jeroen Roovers <jer@gentoo.org> xpad-4.1.ebuild,
+  +files/xpad-4.1-glib_includes.patch:
+  Fix building against dev-libs/glib-2.32 by Derk W te Bokkel (bug #414389).
+
+*xpad-4.1 (29 Dec 2011)
+
+  29 Dec 2011; Jeroen Roovers <jer@gentoo.org> +xpad-4.1.ebuild:
+  Version bump.
 
   18 Jul 2010; Kacper Kowalik <xarthisius@gentoo.org> -xpad-2.14.ebuild,
   -xpad-3.0.ebuild, xpad-4.0.ebuild:

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/tomoe/tomoe-0.6.0-r1.ebuild,v 1.1 2011/05/26 22:44:21 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/tomoe/tomoe-0.6.0-r1.ebuild,v 1.6 2012/06/22 02:13:29 naota Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/tomoe/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="doc hyperestraier mysql ruby python static-libs subversion"
 
 RDEPEND=">=dev-libs/glib-2.4
@@ -30,7 +30,9 @@ RDEPEND=">=dev-libs/glib-2.4
 #	test? ( app-dicts/uconv )
 
 DEPEND="${DEPEND}
-	dev-util/pkgconfig
+	dev-util/gtk-doc-am
+	dev-util/intltool
+	virtual/pkgconfig
 	doc? ( dev-util/gtk-doc )"
 
 RESTRICT="test"
@@ -44,7 +46,8 @@ pkg_setup() {
 src_prepare() {
 	epatch \
 		"${FILESDIR}/${P}-export-symbols.patch" \
-		"${FILESDIR}/${P}-ldflags.patch"
+		"${FILESDIR}/${P}-ldflags.patch" \
+		"${FILESDIR}/${P}-glib232.patch"
 
 	if ! use hyperestraier ; then
 		sed -i -e "s/use_est=yes/use_est=no/" configure.ac || die

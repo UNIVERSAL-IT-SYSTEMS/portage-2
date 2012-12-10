@@ -1,6 +1,27 @@
 # ChangeLog for app-misc/livecd-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/livecd-tools/ChangeLog,v 1.119 2011/07/14 01:17:19 williamh Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/livecd-tools/ChangeLog,v 1.124 2012/10/11 00:56:20 williamh Exp $
+
+*livecd-tools-2.0.3 (11 Oct 2012)
+
+  11 Oct 2012; William Hubbs <williamh@gentoo.org> +livecd-tools-2.0.3.ebuild:
+  Version bump for #392685 and #408533.
+
+  22 May 2012; William Hubbs <williamh@gentoo.org> livecd-tools-2.0.2.ebuild,
+  livecd-tools-9999.ebuild:
+  add dependency on net-dialup/mingetty
+
+*livecd-tools-2.0.2 (26 Oct 2011)
+
+  26 Oct 2011; William Hubbs <williamh@gentoo.org> +livecd-tools-2.0.2.ebuild:
+  version bump
+
+  25 Oct 2011; William Hubbs <williamh@gentoo.org> livecd-tools-9999.ebuild:
+  drop spind from live ebuild
+
+  29 Aug 2011; Raúl Porcel <armin76@gentoo.org> livecd-tools-2.0.1.ebuild,
+  livecd-tools-9999.ebuild:
+  bashlogin should go to /bin
 
 *livecd-tools-2.0.1 (14 Jul 2011)
 

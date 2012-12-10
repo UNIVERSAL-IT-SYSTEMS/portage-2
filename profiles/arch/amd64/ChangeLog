@@ -1,6 +1,184 @@
 # ChangeLog for Gentoo/AMD64 profile directory
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/amd64/ChangeLog,v 1.140 2011/07/29 17:44:40 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/amd64/ChangeLog,v 1.195 2012/12/09 08:02:53 tetromino Exp $
+
+  09 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask,
+  use.mask:
+  dev-lang/orc is used in many packages, so move orc from package.use.mask to
+  use.mask
+
+  30 Nov 2012; Christoph Junghans <ottxor@gentoo.org> package.use.mask:
+  unmasked cuda for sci-chemistry/gromacs
+
+  26 Nov 2012; Anthony G. Basile <blueness@gentoo.org> package.use.mask:
+  No need to unmask net-misc/tor[nat-pmp,upnp] on amd64
+
+  24 Nov 2012; Mike Gilbert <floppym@gentoo.org> use.mask:
+  Unmask python_single_target_jython2_5
+
+  12 Nov 2012; Mike Gilbert <floppym@gentoo.org> make.defaults:
+  Move PYTHON_TARGETS=python3_2 from arch profiles to base.
+
+  05 Nov 2012; Sergei Trofimovich <slyfox@gentoo.org> package.use:
+  Fixed typo qemu_softmmu_target{,s}_.
+
+  04 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> package.use.mask:
+  Unmask dane USE flag for net-libs/gnutls.
+
+  29 Oct 2012; Doug Goldstein <cardoe@gentoo.org> +package.use:
+  Add package.use so we can enable the native arch as the default qemu target
+  for bug #437788
+
+  07 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Restore USE="systemd" mask to sys-auth/polkit for stabilization.
+
+  15 Sep 2012; Johannes Huber <johu@gentoo.org> package.use.mask:
+  Masked media-libs/phonon[zeitgeist] for stabilization as the use flag pulls a
+  dep tree of hell.
+
+  22 Aug 2012; Mike Frysinger <vapier@gentoo.org> make.defaults:
+  Update default CHOST for x32 targets.
+
+  31 Jul 2012; Ralph Sennhauser <sera@gentoo.org> use.mask:
+  Unmask python_targets_jython2_5 as it's available on amd64.
+
+  04 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Remove obsolete entries for net-libs/xulrunner and www-client/icecat wrt
+  #424617
+
+  29 Jun 2012; Mike Gilbert <floppym@gentoo.org> package.use.mask:
+  Unmask libzfs flag for grub on amd64.
+
+  26 Jun 2012; Davide Pesavento <pesa@gentoo.org> package.use.mask:
+  Mask USE=jit for qt-script wrt bug 423141.
+
+  24 Jun 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +no-multilib/package.use.force, no-multilib/package.mask,
+  no-multilib/package.use.mask:
+  Allow win64-only wine on amd64/no-multilib (bug #351436).
+
+  14 Jun 2012; Davide Pesavento <pesa@gentoo.org> package.use.mask:
+  Consolidate USE=jit masking/unmasking for qt-script and qt-webkit.
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> package.use.mask:
+  media-libs/mlt mmx code is compatible with x86_64 these days, remove that 5
+  years old mask i added back then.
+
+  25 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Remove webkit-gtk's USE mask, the flags are now masked in specific arches.
+
+  24 May 2012; Arun Raghavan <ford_prefect@gentoo.org> package.use.mask:
+  For PulseAudio, mask xen USE flag by default, unmask on x86/amd64 where it is
+  supported.
+
+  15 May 2012; Mike Gilbert <floppym@gentoo.org> make.defaults:
+  Default PYTHON_TARGETS should include python-3 for arches where it is stable.
+  See bug 415575.
+
+  28 Apr 2012; Justin Lecher <jlec@gentoo.org> no-multilib/package.mask:
+  Remove mask on app-text/bibus, noreason for that, #408247
+
+  13 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Mask webkit-gtk[geoloc] in base and unmask on arches where app-misc/geoclue
+  and app-accessibility/at-spi2-core are available.
+
+  13 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Consolidate USE=systemd mask, and add gnome-system-monitor.
+
+  12 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Temporary mask-in-base, unmask-in-arch for dev-python/mako keywording for
+  gobject-introspection[doctool], bug #411761.
+
+  11 Apr 2012; Michał Górny <mgorny@gentoo.org> package.use.mask:
+  Unmask USE=jit on libzpaq for x86/amd64.
+
+  28 Mar 2012; Arun Raghavan <ford_prefect@gentoo.org> package.use.mask:
+  webrtc-audio-processing is only supported on x86/amd64. Possibly arm can be
+  added.
+
+  27 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Allow networkmanager[systemd] on amd64.
+
+  22 Mar 2012; Tim Harder <radhermit@gentoo.org> no-multilib/package.use.mask:
+  Remove redundant use flag mask.
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Remove mask for USE="esd" because there is no such flag in tree anymore.
+
+  17 Mar 2012; Tim Harder <radhermit@gentoo.org> no-multilib/package.use.mask:
+  Mask USE="skype" for bitlbee on non-multilib systems.
+
+  05 Mar 2012; Joerg Bornkessel <hd_brummy@gentoo.org> use.mask:
+  dxr3 unmask, works with v4l2, #350211
+
+  28 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> use.mask:
+  Remove mask for USE="vidix" because it's masked in base/use.mask. Remove
+  obsolete mask for USE="asm".
+
+  27 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org> package.use.mask:
+  Allow gnustep-make[libobjc2] on amd64
+
+  11 Feb 2012; Sergei Trofimovich <slyfox@gentoo.org> no-multilib/package.mask:
+  Mask skypetab-ng as it's a library for x86-only skype.
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> no-multilib/use.mask:
+  USE mask d3d on amd64/no-multilib since wine is 32-bit.
+
+  08 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org> package.use.mask:
+  Drop arch-speficic mask on gnustep-base/gnustep-make[libobjc2]
+
+  30 Jan 2012; Tupone Alfredo <tupone@gentoo.org> no-multilib/package.mask:
+  Adding games-puzzle/drod-bin. Binary package 32 bits only
+
+  09 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Unmask USE="jit" for webkit-gtk (bug #396313).
+
+  07 Dec 2011; Mike Frysinger <vapier@gentoo.org> make.defaults:
+  Add settings for x32 ABI, and make amd64 explicit in case it is not the
+  default ABI.
+
+  29 Nov 2011; Davide Pesavento <pesa@gentoo.org> package.use.mask:
+  Unmask USE="jit" for qt-webkit.
+
+  21 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> package.use.mask:
+  Drop hearbeat mask wrt #387685 by Marcin Mirosław <bug@mejor.pl>
+
+  21 Oct 2011; Hans de Graaff <graaff@gentoo.org> use.mask:
+  Unmask Rubinius since it is keyworded for amd64.
+
+  21 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Undo poorly thought out masking of USE="colord packagekit" on gtk+; need to
+  get it keyworded properly (bug #387959)
+
+  19 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Unmask USE="colord" and "packagekit" for x11-libs/gtk+.
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Unmask USE="bluray" for gnome-base/gvfs.
+
+  14 Oct 2011; Mike Frysinger <vapier@gentoo.org> make.defaults:
+  Drop unused ASFLAGS_x86 variable.
+
+  03 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> use.mask:
+  Mask USE="dxr3" again wrt #350211.
+
+  29 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> package.use.mask:
+  Remove now-pointless masking of xfs USE flag on netatalk.
+
+  29 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Unmask USE="nls" for app-emulation/wine wrt #351224
+
+  27 Sep 2011; Nirbheek Chauhan <nirbheek@gentoo.org> package.use.mask:
+  Mask dev-libs/glib[systemtap] and unmask for amd64/x86, bug 384647
+
+  18 Sep 2011; Maxim Koltsov <maksbotan@gentoo.org> no-multilib/package.mask:
+  Mask 32bit only games-action/cs2d on no-multilib profile
+
+  18 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Remove obsolete USE="hal" mask for app-emulation/wine.
+
+  26 Aug 2011; Tim Harder <radhermit@gentoo.org> package.use.mask:
+  Remove USE="sse2" mask for libsoundtouch.
 
   29 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> package.use.mask:
   Mask dev-lang/path64[assembler] as it currently fails to build

@@ -1,6 +1,55 @@
 # ChangeLog for sys-fs/xfsdump
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/xfsdump/ChangeLog,v 1.79 2011/04/12 17:56:17 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/xfsdump/ChangeLog,v 1.93 2012/07/15 17:44:29 armin76 Exp $
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> xfsdump-3.1.0.ebuild:
+  alpha/ia64 stable wrt #422223
+
+  28 Jun 2012; Brent Baude <ranger@gentoo.org> xfsdump-3.1.0.ebuild:
+  Marking xfsdump-3.1.0 ppc for bug 422223
+
+  27 Jun 2012; Jeroen Roovers <jer@gentoo.org> xfsdump-3.1.0.ebuild:
+  Stable for HPPA (bug #422223).
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> xfsdump-3.1.0.ebuild:
+  Marking xfsdump-3.1.0 ppc64 for bug 422223
+
+  21 Jun 2012; Jeff Horelick <jdhore@gentoo.org> xfsdump-3.1.0.ebuild:
+  marked x86 per bug 422223
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xfsdump-3.1.0.ebuild:
+  Stable for amd64, wrt bug #422223
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> xfsdump-3.0.6.ebuild:
+  alpha/ia64 stable wrt #404865
+
+*xfsdump-3.1.0 (26 Apr 2012)
+
+  26 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> +xfsdump-3.1.0.ebuild,
+  -files/xfsdump-2.2.42-Makefile-deps.patch, -files/xfsdump-3.0.4-headers.patch,
+  -xfsdump-2.2.48.ebuild, -xfsdump-3.0.4-r1.ebuild, -xfsdump-3.0.5.ebuild:
+  Version bump to latest xfsdump, update to eapi4. Cleanup older versions.
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> xfsdump-3.0.6.ebuild:
+  ppc64 stable wrt #404865
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xfsdump-3.0.6.ebuild:
+  x86 stable wrt bug #404865
+
+  23 Feb 2012; Brent Baude <ranger@gentoo.org> xfsdump-3.0.6.ebuild:
+  Marking xfsdump-3.0.6 ppc for bug 404865
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> xfsdump-3.0.6.ebuild:
+  Stable for HPPA (bug #404865).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> xfsdump-3.0.6.ebuild:
+  Stable for amd64, wrt bug #404865
+
+*xfsdump-3.0.6 (06 Nov 2011)
+
+  06 Nov 2011; Mike Frysinger <vapier@gentoo.org> +xfsdump-3.0.6.ebuild,
+  +files/xfsdump-3.0.6-path-overflow.patch:
+  Version bump, and fix fortify overflows #370949 by Diego Elio Pettenò.
 
 *xfsdump-3.0.5 (12 Apr 2011)
 

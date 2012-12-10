@@ -1,6 +1,31 @@
 # ChangeLog for dev-perl/Tree-Simple
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Tree-Simple/ChangeLog,v 1.28 2008/11/18 15:41:35 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Tree-Simple/ChangeLog,v 1.35 2012/06/24 12:58:36 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Tree-Simple-1.17.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> Tree-Simple-1.17.ebuild,
+  Tree-Simple-1.180.0.ebuild:
+  Drop ia64/sparc keywords
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Tree-Simple-1.180.0.ebuild:
+  x86 stable wrt bug #400251
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Tree-Simple-1.180.0.ebuild:
+  Stable for amd64, wrt bug #400251
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Tree-Simple-1.18.ebuild:
+  Cleanup
+
+*Tree-Simple-1.180.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +Tree-Simple-1.180.0.ebuild:
+  Change version scheme
 
   18 Nov 2008; Torsten Veller <tove@gentoo.org> Tree-Simple-1.17.ebuild,
   Tree-Simple-1.18.ebuild:
@@ -120,4 +145,3 @@
   25 Aug 2004; Renat Lumpau <rl03@gentoo.org> +metadata.xml,
   +Tree-Simple-1.05.ebuild:
   Initial ebuild. RT dependency. OK'd by mcummings.
-

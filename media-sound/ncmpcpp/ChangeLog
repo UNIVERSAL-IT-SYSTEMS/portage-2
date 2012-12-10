@@ -1,6 +1,86 @@
 # ChangeLog for media-sound/ncmpcpp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ncmpcpp/ChangeLog,v 1.53 2011/06/11 12:02:49 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ncmpcpp/ChangeLog,v 1.76 2012/07/29 17:49:30 jer Exp $
+
+  29 Jul 2012; Jeroen Roovers <jer@gentoo.org> -ncmpcpp-0.5.8.ebuild,
+  -ncmpcpp-0.5.9.ebuild:
+  Old.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> ncmpcpp-0.5.9.ebuild,
+  ncmpcpp-0.5.10.ebuild:
+  sparc stable
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ncmpcpp-0.5.10.ebuild:
+  x86 stable wrt bug #419129
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> ncmpcpp-0.5.10.ebuild:
+  Marking ncmpcpp-0.5.10 ppc for bug 419129
+
+  06 Jun 2012; Markus Meier <maekke@gentoo.org> ncmpcpp-0.5.10.ebuild:
+  arm stable, bug #419129
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org> ncmpcpp-0.5.10.ebuild:
+  Stable for HPPA (bug #419129).
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ncmpcpp-0.5.10.ebuild:
+  Stable for amd64, wrt bug #419129
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> ncmpcpp-0.5.9.ebuild:
+  Marking ncmpcpp-0.5.9 ppc for bug 412405
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> ncmpcpp-0.5.8.ebuild,
+  ncmpcpp-0.5.9.ebuild, ncmpcpp-0.5.10.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> ncmpcpp-0.5.9.ebuild:
+  arm stable, bug #412405
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> ncmpcpp-0.5.9.ebuild:
+  Stable for amd64, wrt bug #412405
+
+  18 Apr 2012; Jeroen Roovers <jer@gentoo.org> ncmpcpp-0.5.9.ebuild:
+  Stable for HPPA (bug #412405).
+
+  18 Apr 2012; Jeroen Roovers <jer@gentoo.org> ncmpcpp-0.5.9.ebuild,
+  ncmpcpp-0.5.10.ebuild:
+  Use USE=bash-completion by Jeff Horelick (bug #412405 comment #1).
+
+  18 Apr 2012; Jeff Horelick <jdhore@gentoo.org> ncmpcpp-0.5.9.ebuild:
+  marked x86 per bug 412405
+
+*ncmpcpp-0.5.10 (02 Apr 2012)
+
+  02 Apr 2012; Jeroen Roovers <jer@gentoo.org> +ncmpcpp-0.5.10.ebuild:
+  Version bump.
+
+*ncmpcpp-0.5.9 (17 Mar 2012)
+
+  17 Mar 2012; Jeroen Roovers <jer@gentoo.org> +ncmpcpp-0.5.9.ebuild:
+  Version bump.
+
+  05 Jan 2012; Jeroen Roovers <jer@gentoo.org> -ncmpcpp-0.5.6.ebuild,
+  -ncmpcpp-0.5.7.ebuild:
+  Old.
+
+  05 Jan 2012; Michael Weber <xmw@gentoo.org> ncmpcpp-0.5.8.ebuild:
+  ppc stable (bug 392245), added sparc stable.
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ncmpcpp-0.5.8.ebuild:
+  x86 stable wrt bug #392245
+
+  04 Dec 2011; Markus Meier <maekke@gentoo.org> ncmpcpp-0.5.8.ebuild:
+  arm stable, bug #392245
+
+  03 Dec 2011; Jeroen Roovers <jer@gentoo.org> ncmpcpp-0.5.8.ebuild:
+  Stable for HPPA (bug #392245).
+
+  03 Dec 2011; Markos Chandras <hwoarang@gentoo.org> ncmpcpp-0.5.8.ebuild:
+  Stable on amd64 wrt bug #392245
+
+*ncmpcpp-0.5.8 (16 Oct 2011)
+
+  16 Oct 2011; Jeroen Roovers <jer@gentoo.org> +ncmpcpp-0.5.8.ebuild:
+  Version bump. EAPI bump. Eclass bump.
 
   11 Jun 2011; Markus Meier <maekke@gentoo.org> ncmpcpp-0.5.7.ebuild:
   arm stable, bug #369335

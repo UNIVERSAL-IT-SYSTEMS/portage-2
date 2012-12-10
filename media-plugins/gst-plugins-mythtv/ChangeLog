@@ -1,6 +1,25 @@
 # ChangeLog for media-plugins/gst-plugins-mythtv
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-mythtv/ChangeLog,v 1.33 2011/07/29 08:51:10 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-mythtv/ChangeLog,v 1.37 2012/12/03 08:20:19 eva Exp $
+
+  03 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  -gst-plugins-mythtv-0.10.19.ebuild, -gst-plugins-mythtv-0.10.21.ebuild,
+  gst-plugins-mythtv-0.10.22.ebuild:
+  Apply same changes as other ebuilds had with new gstreamer eclasses. Fixes
+  egencache usage. Thanks to Samuli for noticing.
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gst-plugins-mythtv-0.10.22.ebuild:
+  ppc/ppc64 stable wrt #382225
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org>
+  gst-plugins-mythtv-0.10.22.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #382225.
+
+  20 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gst-plugins-mythtv-0.10.22.ebuild:
+  x86 stable wrt bug #382225
 
 *gst-plugins-mythtv-0.10.22 (29 Jul 2011)
 

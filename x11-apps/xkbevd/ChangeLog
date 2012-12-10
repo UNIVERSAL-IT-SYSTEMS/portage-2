@@ -1,6 +1,36 @@
 # ChangeLog for x11-apps/xkbevd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-apps/xkbevd/ChangeLog,v 1.53 2011/03/07 21:16:26 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-apps/xkbevd/ChangeLog,v 1.62 2012/08/26 16:54:55 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> xkbevd-1.1.3.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> xkbevd-1.1.3.ebuild:
+  Marking xkbevd-1.1.3 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> xkbevd-1.1.3.ebuild:
+  Marking xkbevd-1.1.3 ppc64 stable for bug 419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> xkbevd-1.1.3.ebuild:
+  Stable for HPPA (bug #419473).
+
+  28 Jun 2012; Markus Meier <maekke@gentoo.org> xkbevd-1.1.3.ebuild:
+  arm stable, bug #419473
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xkbevd-1.1.3.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xkbevd-1.1.3.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> xkbevd-1.1.3.ebuild:
+  keyword ~amd64-fbsd
+
+*xkbevd-1.1.3 (23 Mar 2012)
+
+  23 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xkbevd-1.1.3.ebuild:
+  Version bump.
 
   07 Mar 2011; Tomáš Chvátal <scarabeus@gentoo.org> -xkbevd-1.1.1.ebuild:
   old

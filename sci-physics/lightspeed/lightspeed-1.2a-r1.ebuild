@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/lightspeed/lightspeed-1.2a-r1.ebuild,v 1.12 2011/04/07 18:37:15 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/lightspeed/lightspeed-1.2a-r1.ebuild,v 1.16 2012/08/07 17:35:36 bicatali Exp $
 
-EAPI=2
+EAPI=4
 
 inherit autotools eutils
 
@@ -16,7 +16,7 @@ SRC_URI="
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux"
 
 IUSE="nls truetype"
 LANGS="es"
@@ -31,16 +31,19 @@ RDEPEND="
 	x11-libs/gtkglext
 	x11-libs/gtkglarea:2
 	x11-libs/gtk+:2
+	x11-libs/libXmu
 	truetype? ( media-libs/ftgl )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S2="${WORKDIR}/objects"
 
 src_prepare() {
 	epatch "${WORKDIR}/${DEB_PATCH}.diff"
-	epatch "${FILESDIR}"/${P}-autoconf.patch
+	epatch \
+		"${FILESDIR}"/${P}-autoconf.patch \
+		"${FILESDIR}"/${P}-libpng15.patch
 	eautoreconf
 }
 
@@ -52,22 +55,22 @@ src_configure() {
 }
 
 src_compile() {
-	emake || die "emake failed"
+	emake
+	local i
 	for i in ${LANGS}; do
 		use linguas_${i} && emake ${i}.gmo
 	done
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	default
 	newicon src/icon.xpm lightspeed.xpm
 	make_desktop_entry ${PN} "Light Speed! Relativistic Simulator"
-	dodoc AUTHORS ChangeLog MATH NEWS README TODO || die
-	newdoc debian/changelog ChangeLog.Debian || die
+	newdoc debian/changelog ChangeLog.Debian
 	cd ${S2}
-	newdoc README objects-README || die
+	newdoc README objects-README
 	insinto /usr/share/${PN}
-	doins *.3ds *.lwo || die
+	doins *.3ds *.lwo
 }
 
 pkg_postinst() {

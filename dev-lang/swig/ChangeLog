@@ -1,6 +1,89 @@
 # ChangeLog for dev-lang/swig
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/swig/ChangeLog,v 1.157 2011/07/17 10:24:43 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/swig/ChangeLog,v 1.178 2012/11/29 14:58:22 jer Exp $
+
+  29 Nov 2012; Jeroen Roovers <jer@gentoo.org> swig-2.0.8.ebuild:
+  Stable for HPPA (bug #442510).
+
+  24 Nov 2012; Anthony G. Basile <blueness@gentoo.org> swig-2.0.8.ebuild:
+  stable arm ppc64, bug #442510
+
+  23 Nov 2012; Anthony G. Basile <blueness@gentoo.org> swig-2.0.8.ebuild:
+  stable ppc, requested by ago
+
+  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org> swig-2.0.8.ebuild:
+  Stable for x86, wrt bug #442510
+
+  10 Nov 2012; Richard Freeman <rich0@gentoo.org> swig-2.0.8.ebuild:
+  amd64 stable - 442510
+
+*swig-2.0.8 (21 Aug 2012)
+
+  21 Aug 2012; Tim Harder <radhermit@gentoo.org> +swig-2.0.8.ebuild:
+  Version bump.
+
+  07 Aug 2012; Tim Harder <radhermit@gentoo.org> -swig-2.0.0.ebuild,
+  -swig-2.0.1.ebuild, -swig-2.0.2.ebuild, -swig-2.0.3.ebuild,
+  -swig-2.0.4_pre12643.ebuild, -swig-2.0.4.ebuild:
+  Remove old.
+
+*swig-2.0.7-r2 (07 Aug 2012)
+
+  07 Aug 2012; Tim Harder <radhermit@gentoo.org> +swig-2.0.7-r2.ebuild,
+  +files/swig-2.0.7-python3.patch, metadata.xml:
+  Revision bump. Apply fix for python 3 (bug #426428, patch from Debian). Add
+  myself as a maintainer.
+
+  12 Jul 2012; Tim Harder <radhermit@gentoo.org> -swig-2.0.7.ebuild:
+  Remove old.
+
+*swig-2.0.7-r1 (12 Jul 2012)
+
+  12 Jul 2012; Tim Harder <radhermit@gentoo.org> +swig-2.0.7-r1.ebuild,
+  +files/swig-2.0.7-illegal-destructors-warning.patch:
+  Revision bump. Apply upstream fix for segfault when warning of illegal
+  destructors (bug #417823 by Cyprien Nicolas).
+
+*swig-2.0.7 (11 Jul 2012)
+
+  11 Jul 2012; Tim Harder <radhermit@gentoo.org> +swig-2.0.7.ebuild:
+  Version bump (bug #417751). Update to EAPI 4.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> swig-2.0.4-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  03 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> swig-2.0.4-r1.ebuild:
+  ppc64 stable wrt #395843
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> swig-2.0.4-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #395843
+
+  08 Jan 2012; Markus Meier <maekke@gentoo.org> swig-2.0.4-r1.ebuild:
+  arm stable, bug #395843
+
+  06 Jan 2012; Jeroen Roovers <jer@gentoo.org> swig-2.0.4-r1.ebuild:
+  Stable for HPPA (bug #395843).
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> swig-2.0.4-r1.ebuild:
+  Marking swig-2.0.4-r1 ppc for bug 395843
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> swig-2.0.4-r1.ebuild:
+  x86 stable wrt bug #395843
+
+  02 Jan 2012; Agostino Sarubbo <ago@gentoo.org> swig-2.0.4-r1.ebuild:
+  Stable for AMD64, wrt bug #395843
+
+  01 Jan 2012; Panagiotis Christopoulos <pchrist@gentoo.org>
+  swig-2.0.4-r1.ebuild:
+  Add zlib dependency when ccache USE flag is ON, minor change requested by
+  Agostino Sarubbo (ago at gentoo dot org), as this version is going stable,
+  bug #395843
+
+*swig-2.0.4-r1 (13 Nov 2011)
+
+  13 Nov 2011; Andreas K. Huettel <dilfridge@gentoo.org> +swig-2.0.4-r1.ebuild,
+  +files/swig-2.0.4-typedef.patch:
+  Backport upstream fix for bug 357483, acked by pchrist
 
   17 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> swig-2.0.2.ebuild:
   ppc/ppc64 stable wrt #365315

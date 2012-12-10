@@ -1,6 +1,32 @@
 # ChangeLog for sci-libs/libticables2
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/libticables2/ChangeLog,v 1.4 2011/03/15 21:18:16 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/libticables2/ChangeLog,v 1.10 2012/08/04 15:02:20 bicatali Exp $
+
+  04 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  -libticables2-1.3.1.ebuild, libticables2-1.3.3.ebuild:
+  keyword amd64-linux, x86-linux, removed old
+
+  25 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  libticables2-1.3.1.ebuild, libticables2-1.3.3.ebuild:
+  Pull in SLOT="0" of virtual/libusb because --enable-libusb is used instead of
+  --enable-libusb10.
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  libticables2-1.3.1.ebuild, libticables2-1.3.3.ebuild:
+  Use virtual/libusb instead of dev-libs/libusb.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> libticables2-1.3.1.ebuild,
+  libticables2-1.3.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  19 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> libticables2-1.3.3.ebuild:
+  Add multilib eclass for get_libdir
+
+*libticables2-1.3.3 (19 Feb 2012)
+
+  19 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +libticables2-1.3.3.ebuild, -libticables2-1.2.0.ebuild:
+  Version bump, remove .la file, drop old
 
 *libticables2-1.3.1 (15 Mar 2011)
 
@@ -60,4 +86,3 @@
   04 Sep 2006; Christian Helbling <helch@gmx.ch>
   +libticables2-20060723.ebuild, +metadata.xml:
   New ebuild for bug 146028
-

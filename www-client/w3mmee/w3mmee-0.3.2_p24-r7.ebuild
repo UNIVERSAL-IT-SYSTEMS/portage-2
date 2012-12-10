@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/w3mmee/w3mmee-0.3.2_p24-r7.ebuild,v 1.2 2011/07/17 05:46:37 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/w3mmee/w3mmee-0.3.2_p24-r7.ebuild,v 1.9 2012/10/09 22:48:37 blueness Exp $
 
-inherit alternatives eutils
+inherit alternatives eutils toolchain-funcs multilib
 
 IUSE="gpm imlib nls ssl xface"
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://pub.ks-and-ks.ne.jp/prog/w3mmee/"
 
 SLOT="0"
 LICENSE="public-domain"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ppc x86"
 
 DEPEND=">=sys-libs/ncurses-5.2-r3
 	>=sys-libs/zlib-1.1.3-r2
@@ -82,7 +82,7 @@ src_compile() {
 	accept_lang=en
 	EOF
 
-	env ${myuse} ./configure -nonstop \
+	env CC=$(tc-getCC) ${myuse} ./configure -nonstop \
 		-prefix=/usr \
 		-suffix=mee \
 		-auxbindir=/usr/$(get_libdir)/w3mmee \
@@ -94,7 +94,7 @@ src_compile() {
 		-libmoe=/usr/$(get_libdir) \
 		-mb_h=/usr/include/moe \
 		-mk_btri=/usr/libexec/moe \
-		-cflags=${CFLAGS} -ldflags=${LDFLAGS} \
+		-cflags="${CFLAGS}" -ldflags="${LDFLAGS}" \
 		${myconf} || die
 
 	emake || die "emake failed"

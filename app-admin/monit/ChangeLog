@@ -1,6 +1,63 @@
 # ChangeLog for app-admin/monit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/monit/ChangeLog,v 1.60 2011/05/28 12:21:05 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/monit/ChangeLog,v 1.72 2012/10/05 06:06:50 patrick Exp $
+
+*monit-5.5 (05 Oct 2012)
+
+  05 Oct 2012; Patrick Lauer <patrick@gentoo.org> +monit-5.5.ebuild:
+  Bump
+
+  20 Aug 2012; Benda Xu <heroxbd@gentoo.org> monit-5.4-r1.ebuild:
+  keyword ~amd64-linux
+
+*monit-5.4-r1 (18 May 2012)
+
+  18 May 2012; Patrick Lauer <patrick@gentoo.org> +monit-5.4-r1.ebuild,
+  -monit-5.4.ebuild:
+  Adding pam useflag for #416053
+
+*monit-5.4 (14 May 2012)
+
+  14 May 2012; Patrick Lauer <patrick@gentoo.org> +monit-5.4.ebuild,
+  -monit-5.2.3-r2.ebuild:
+  Bump
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> monit-5.2.3-r2.ebuild,
+  monit-5.3.2.ebuild:
+  Drop sparc keywords
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> monit-5.3.2.ebuild:
+  x86 stable wrt bug #408113
+
+  16 Mar 2012; Brent Baude <ranger@gentoo.org> monit-5.3.2.ebuild:
+  Marking monit-5.3.2 ppc for bug 408113
+
+  15 Mar 2012; Agostino Sarubbo <ago@gentoo.org> monit-5.3.2.ebuild:
+  Stable for amd64, wrt bug #408113
+
+  14 Mar 2012; Patrick Lauer <patrick@gentoo.org> -monit-5.1.1-r1.ebuild,
+  -monit-5.2.5-r1.ebuild:
+  Remove old
+
+*monit-5.3.2 (16 Feb 2012)
+
+  16 Feb 2012; Patrick Lauer <patrick@gentoo.org> +monit-5.3.2.ebuild:
+  Bump
+
+*monit-5.2.5-r1 (31 Dec 2011)
+*monit-5.2.3-r2 (31 Dec 2011)
+*monit-5.1.1-r1 (31 Dec 2011)
+
+  31 Dec 2011; Christian Ruppert <idl0r@gentoo.org> -monit-5.1.1.ebuild,
+  +monit-5.1.1-r1.ebuild, -monit-5.2.3.ebuild, +monit-5.2.3-r2.ebuild,
+  -monit-5.2.5.ebuild, +monit-5.2.5-r1.ebuild, files/monit.initd-5.0,
+  files/monit.initd-5.0-r1:
+  Revbump. Don't use the deprecated $opts variable, bug 381895.
+
+  31 Dec 2011; Christian Ruppert <idl0r@gentoo.org> -monit-4.10.1.ebuild,
+  -monit-5.2.1.ebuild, -monit-5.2.2.ebuild, -monit-5.2.3-r1.ebuild,
+  -files/monit.initd-4.10.1:
+  Some cleanup.
 
   28 May 2011; Brent Baude <ranger@gentoo.org> monit-5.2.3.ebuild:
   Marking monit-5.2.3 ppc for bug 355567
@@ -246,4 +303,3 @@
 
   01 Oct 2003; Markus Nigbur <pyrania@gentoo.org> monit-4.0.ebuild:
   Initial ebuild. Thanks to rladams@kelsey-seybold.com (bug #16044).
-

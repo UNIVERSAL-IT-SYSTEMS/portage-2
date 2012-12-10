@@ -1,6 +1,76 @@
 # ChangeLog for dev-perl/Astro-FITS-Header
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Astro-FITS-Header/ChangeLog,v 1.17 2011/04/03 06:54:10 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Astro-FITS-Header/ChangeLog,v 1.35 2012/10/02 00:40:28 blueness Exp $
+
+  02 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  Astro-FITS-Header-3.50.0.ebuild:
+  stable ppc, bug #428978
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org>
+  Astro-FITS-Header-3.30.0.ebuild, Astro-FITS-Header-3.50.0.ebuild:
+  Drop alpha/ia64/s390/sh/sparc keywords
+
+  18 Sep 2012; Jeroen Roovers <jer@gentoo.org> Astro-FITS-Header-3.50.0.ebuild:
+  Stable for HPPA (bug #428978).
+
+  14 Sep 2012; Markus Meier <maekke@gentoo.org>
+  Astro-FITS-Header-3.50.0.ebuild:
+  arm stable, bug #428978
+
+  12 Sep 2012; Johannes Huber <johu@gentoo.org>
+  Astro-FITS-Header-3.50.0.ebuild:
+  Stable for x86, wrt bug #428978
+
+  12 Sep 2012; Agostino Sarubbo <ago@gentoo.org>
+  Astro-FITS-Header-3.50.0.ebuild:
+  Stable for amd64, wrt bug #428978
+
+*Astro-FITS-Header-3.50.0 (28 Jun 2012)
+
+  28 Jun 2012; Torsten Veller <tove@gentoo.org>
+  +Astro-FITS-Header-3.50.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Astro-FITS-Header-3.0.ebuild:
+  Cleanup
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  Astro-FITS-Header-3.30.0.ebuild:
+  ia64/s390/sh/sparc stable wrt #400035
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Astro-FITS-Header-3.30.0.ebuild:
+  x86 stable wrt bug #400035
+
+  29 Feb 2012; Markus Meier <maekke@gentoo.org>
+  Astro-FITS-Header-3.30.0.ebuild:
+  arm stable, bug #400035
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> Astro-FITS-Header-3.30.0.ebuild:
+  Marking Astro-FITS-Header-3.30.0 ppc for bug 400035
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> Astro-FITS-Header-3.30.0.ebuild:
+  Stable for HPPA (bug #400035).
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  Astro-FITS-Header-3.30.0.ebuild:
+  Stable on alpha, bug #400035
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  Astro-FITS-Header-3.30.0.ebuild:
+  Stable for amd64, wrt bug #400035
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Astro-FITS-Header-3.30.ebuild:
+  Cleanup
+
+*Astro-FITS-Header-3.30.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org>
+  +Astro-FITS-Header-3.30.0.ebuild:
+  Change version scheme
 
   03 Apr 2011; Torsten Veller <tove@gentoo.org> -Astro-FITS-Header-3.01.ebuild:
   Cleanup
@@ -70,4 +140,3 @@
   06 Feb 2007; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Astro-FITS-Header-3.0.ebuild:
   New dep for PDL
-

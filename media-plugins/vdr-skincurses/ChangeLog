@@ -1,6 +1,33 @@
 # ChangeLog for media-plugins/vdr-skincurses
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-skincurses/ChangeLog,v 1.11 2009/03/29 16:58:21 hd_brummy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-skincurses/ChangeLog,v 1.17 2012/10/14 18:28:53 hd_brummy Exp $
+
+  14 Oct 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  -vdr-skincurses-0.1.10.ebuild:
+  moved to overlay vdr-devel, need vdr-1.7.x?
+
+  13 Aug 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-skincurses-0.1.10.ebuild:
+  fixed depend, reverted last stable amd64 x86 commit
+
+  13 Aug 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-skincurses-0.1.10.ebuild:
+  fixed include in Makefile, bug 430170
+
+  06 May 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-skincurses-0.1.10.ebuild:
+  vdr-plugin-2.eclass
+
+
+*vdr-skincurses-0.1.10 (18 Mar 2012)
+
+  18 Mar 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +vdr-skincurses-0.1.10.ebuild:
+  bump; fixed also gcc-4.6 issue on bug #363235
+
+  18 Mar 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/vdr-skincurses-0.1.7-gcc46.patch, vdr-skincurses-0.1.7.ebuild:
+  Fix build with gcc-4.6, bug #363235.
 
   29 Mar 2009; Joerg Bornkessel <hd_brummy@gentoo.org>
   -vdr-skincurses-0.1.2.ebuild, vdr-skincurses-0.1.7.ebuild:

@@ -1,6 +1,46 @@
 # ChangeLog for dev-python/markdown
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/markdown/ChangeLog,v 1.17 2011/07/07 21:10:53 neurogeek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/markdown/ChangeLog,v 1.27 2012/11/17 19:14:03 floppym Exp $
+
+  17 Nov 2012; Mike Gilbert <floppym@gentoo.org> markdown-2.2.0.ebuild:
+  Restrict python 2.5.
+
+  13 Nov 2012; Agostino Sarubbo <ago@gentoo.org> markdown-2.1.1.ebuild:
+  Stable for amd64, wrt bug #437288
+
+*markdown-2.2.0 (11 Nov 2012)
+
+  11 Nov 2012; Ian Delaney <idella4@gentoo.org>
+  +files/markdown-2.2.0-tests.patch, +markdown-2.2.0.ebuild,
+  -markdown-2.0.3.ebuild:
+  Dropped version-2.0.3, bumped version-2.2.0, upstream patch fixes broken test,
+  upstream issue #112, fixes Bug #437290
+
+  07 Oct 2012; Raúl Porcel <armin76@gentoo.org> markdown-2.1.1.ebuild:
+  alpha/ia64/sparc/x86 stable wrt #437288
+
+  07 Oct 2012; nixnut <nixnut@gentoo.org> markdown-2.1.1.ebuild:
+  ppc stable #437288
+
+  06 Oct 2012; Mike Gilbert <floppym@gentoo.org> markdown-2.1.0.ebuild,
+  markdown-2.1.1.ebuild:
+  Depend on nose for tests, bug 437442 by Vicente Olivert Riera.
+
+  10 May 2012; Mike Gilbert <floppym@gentoo.org> markdown-2.1.1.ebuild:
+  Call 2to3-${PYTHON_ABI}, spotted by Arfrever.
+
+  09 May 2012; Mike Gilbert <floppym@gentoo.org> markdown-2.1.1.ebuild:
+  Unrestrict python 3, bug 407925 by W. Trevor King.
+
+*markdown-2.1.1 (20 Feb 2012)
+
+  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> +markdown-2.1.1.ebuild:
+  Bump for #404543
+
+*markdown-2.1.0 (01 Dec 2011)
+
+  01 Dec 2011; Dirkjan Ochtman <djc@gentoo.org> +markdown-2.1.0.ebuild:
+  Version bump, add testing.
 
   07 Jul 2011; Jesus Rivero <neurogeek@gentoo.org> markdown-2.0.3.ebuild:
   Added doc USE flag. Fixed dodoc on dir wrt bug #367689
@@ -69,4 +109,3 @@
   +markdown-2.0.ebuild:
   Initial import. Fixes #156999. Thanks to Naoaki Shindo, Torsten Rehn and
   Priit Laes for working on the ebuild.
-

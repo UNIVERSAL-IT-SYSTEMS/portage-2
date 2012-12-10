@@ -1,6 +1,63 @@
 # ChangeLog for x11-libs/libXaw
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libXaw/ChangeLog,v 1.95 2011/06/22 18:57:33 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libXaw/ChangeLog,v 1.111 2012/12/08 17:13:54 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> libXaw-1.0.11-r1.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> libXaw-1.0.11-r1.ebuild:
+  Marking libXaw-1.0.11-r1 ppc stable for bug 440872
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> libXaw-1.0.11-r1.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> libXaw-1.0.11-r1.ebuild:
+  Stable for amd64, wrt bug #440872
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> libXaw-1.0.11.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  11 Aug 2012; Matt Turner <mattst88@gentoo.org> libXaw-1.0.11-r1.ebuild:
+  Spell 'deprecated' correctly.
+
+*libXaw-1.0.11-r1 (11 Aug 2012)
+
+  11 Aug 2012; Matt Turner <mattst88@gentoo.org> +libXaw-1.0.11-r1.ebuild,
+  metadata.xml:
+  Add deprecated USE flag to control Xaw6 library.
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> libXaw-1.0.11.ebuild:
+  Marking libXaw-1.0.11 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> libXaw-1.0.11.ebuild:
+  Marking libXaw-1.0.11 ppc64 stable for bug 419473
+
+  29 Jun 2012; Markus Meier <maekke@gentoo.org> libXaw-1.0.11.ebuild:
+  arm stable, bug #419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> libXaw-1.0.11.ebuild:
+  Stable for HPPA (bug #419473).
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libXaw-1.0.11.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libXaw-1.0.11.ebuild:
+  Stable for amd64, wrt bug #419473
+
+*libXaw-1.0.11 (02 Jun 2012)
+
+  02 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libXaw-1.0.11.ebuild:
+  Version bump.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libXaw-1.0.10.ebuild:
+  keyword ~amd64-fbsd
+
+*libXaw-1.0.10 (23 Mar 2012)
+
+  23 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libXaw-1.0.10.ebuild:
+  Version bump.
 
   22 Jun 2011; Fabian Groffen <grobian@gentoo.org> libXaw-1.0.9.ebuild:
   Marked ~x64-macos, bug #371861
@@ -335,4 +392,3 @@
   08 Aug 2005; Donnie Berkholz <spyderous@gentoo.org>;
   +libXaw-0.99.0.ebuild:
   Initial commit for modular X.
-

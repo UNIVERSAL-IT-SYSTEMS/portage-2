@@ -1,6 +1,21 @@
 # ChangeLog for sci-calculators/qalculate-bases
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-calculators/qalculate-bases/ChangeLog,v 1.16 2011/03/02 13:28:37 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-calculators/qalculate-bases/ChangeLog,v 1.20 2012/08/04 21:42:35 bicatali Exp $
+
+  04 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml,
+  qalculate-bases-0.9.4-r2.ebuild:
+  keyword amd64-linux, x86-linux
+
+  21 May 2012; Mike Frysinger <vapier@gentoo.org>
+  qalculate-bases-0.9.4-r2.ebuild:
+  Inherit eutils for epatch.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  qalculate-bases-0.9.4-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> qalculate-bases-0.9.4-r2.ebuild:
+  Move to EAPI=4
 
   02 Mar 2011; Justin Lecher <jlec@gentoo.org> qalculate-bases-0.9.4-r2.ebuild:
   Correct Slots for gtk 3 introduction to tree
@@ -88,4 +103,3 @@
   18 Oct 2005; Olivier Fisette <ribosome@gentoo.org> +metadata.xml,
   +qalculate-bases-0.8.2.ebuild:
   Initial import.
-

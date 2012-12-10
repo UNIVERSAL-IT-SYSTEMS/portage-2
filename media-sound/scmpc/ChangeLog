@@ -1,6 +1,31 @@
 # ChangeLog for media-sound/scmpc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/scmpc/ChangeLog,v 1.14 2011/07/19 20:19:39 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/scmpc/ChangeLog,v 1.21 2012/09/17 02:33:36 tomka Exp $
+
+  17 Sep 2012; Thomas Kahle <tomka@gentoo.org> scmpc-0.4.0.ebuild:
+  marked x86 per bug 433315
+
+  02 Sep 2012; Markos Chandras <hwoarang@gentoo.org> scmpc-0.4.0.ebuild:
+  Stable on amd64 wrt bug #433315
+
+  23 Jul 2012; Christoph Mende <angelos@gentoo.org> scmpc-0.4.0.ebuild:
+  Fix README filename
+
+*scmpc-0.4.0 (23 Jul 2012)
+
+  23 Jul 2012; Christoph Mende <angelos@gentoo.org> +scmpc-0.4.0.ebuild:
+  Version bump
+
+  27 May 2012; Christoph Mende <angelos@gentoo.org> -scmpc-0.2.2.ebuild:
+  Remove old
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> scmpc-0.2.2.ebuild,
+  scmpc-0.3.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  23 Apr 2012; Michał Górny <mgorny@gentoo.org> scmpc-0.2.2.ebuild,
+  scmpc-0.3.1.ebuild:
+  Use mirror:// in SRC_URI.
 
   19 Jul 2011; Markus Meier <maekke@gentoo.org> scmpc-0.3.1.ebuild:
   x86 stable, bug #374607
@@ -56,4 +81,3 @@
   26 Jun 2007; Christoph Mende <angelos@gentoo.org> +metadata.xml,
   +scmpc-0.2.2.ebuild:
   Initial import
-

@@ -1,6 +1,54 @@
 # ChangeLog for x11-misc/util-macros
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/util-macros/ChangeLog,v 1.110 2011/06/29 12:48:09 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/util-macros/ChangeLog,v 1.120 2012/11/28 00:45:21 chithanh Exp $
+
+  28 Nov 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -util-macros-1.14.0.ebuild, -util-macros-1.15.0.ebuild,
+  -util-macros-1.16.0.ebuild, -util-macros-1.16.1.ebuild,
+  -util-macros-1.16.2.ebuild:
+  Drop old.
+
+  13 Jun 2012; Mike Frysinger <vapier@gentoo.org> util-macros-1.14.0.ebuild,
+  util-macros-1.15.0.ebuild, util-macros-1.16.0.ebuild,
+  util-macros-1.16.1.ebuild, util-macros-1.16.2.ebuild, util-macros-1.17.ebuild:
+  Drop useless DEPEND variables.
+
+  03 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  util-macros-1.17.ebuild:
+  Add stable keyword for s390, which was missed by `ekeyword all'.
+
+  04 May 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  util-macros-1.17.ebuild:
+  Stabilize latest version.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> util-macros-1.17.ebuild:
+  keyword ~amd64-fbsd
+
+*util-macros-1.17 (14 Mar 2012)
+
+  14 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +util-macros-1.17.ebuild:
+  Version bump.
+
+*util-macros-1.16.2 (07 Mar 2012)
+
+  07 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +util-macros-1.16.2.ebuild:
+  Version bump.
+
+*util-macros-1.16.1 (25 Jan 2012)
+
+  25 Jan 2012; Matt Turner <mattst88@gentoo.org> +util-macros-1.16.1.ebuild:
+  Version bump.
+
+*util-macros-1.16.0 (11 Dec 2011)
+
+  11 Dec 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +util-macros-1.16.0.ebuild:
+  Version bump.
+
+  20 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  util-macros-1.15.0.ebuild:
+  Stabilize latest version.
 
 *util-macros-1.15.0 (29 Jun 2011)
 
@@ -478,4 +526,3 @@
   08 Aug 2005; Donnie Berkholz <spyderous@gentoo.org>;
   +util-macros-0.99.0.ebuild:
   Initial commit for modular X
-

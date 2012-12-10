@@ -1,6 +1,25 @@
 # ChangeLog for www-apache/mod_fastcgi
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_fastcgi/ChangeLog,v 1.11 2010/02/09 15:50:48 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_fastcgi/ChangeLog,v 1.16 2012/11/27 20:23:56 neurogeek Exp $
+
+  27 Nov 2012; Jesus Rivero <neurogeek@gentoo.org> metadata.xml:
+  Added myself as maintainer
+
+  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> -mod_fastcgi-2.4.6-r1.ebuild,
+  -mod_fastcgi-2.4.6.ebuild, -mod_fastcgi-2.4.7_pre0811090952.ebuild,
+  metadata.xml:
+  Drop apache herd as discussed in http://www.gossamer-
+  threads.com/lists/gentoo/dev/262834
+
+  16 Oct 2012; Patrick Lauer <patrick@gentoo.org> mod_fastcgi-2.4.6-r1.ebuild,
+  mod_fastcgi-2.4.6.ebuild, mod_fastcgi-2.4.7_pre0811090952.ebuild,
+  mod_fastcgi-2.4.7_pre0910052141.ebuild:
+  Restricting to apache 2.2
+
+  02 Jan 2012; Ulrich Mueller <ulm@gentoo.org> mod_fastcgi-2.4.6.ebuild,
+  mod_fastcgi-2.4.6-r1.ebuild, mod_fastcgi-2.4.7_pre0811090952.ebuild,
+  mod_fastcgi-2.4.7_pre0910052141.ebuild:
+  Fix LICENSE, bug 395257.
 
   09 Feb 2010; Pacho Ramos <pacho@gentoo.org>
   mod_fastcgi-2.4.7_pre0910052141.ebuild:
@@ -56,4 +75,3 @@
   +files/20_mod_fastcgi.conf, +metadata.xml,
   +mod_fastcgi-2.4.4_pre20070916.ebuild:
   readd mod_fastcgi; #133563
-

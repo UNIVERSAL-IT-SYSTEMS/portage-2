@@ -1,18 +1,18 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/root-tail/root-tail-1.2-r3.ebuild,v 1.1 2010/09/17 04:17:18 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/root-tail/root-tail-1.2-r3.ebuild,v 1.8 2012/05/15 15:36:23 hasufell Exp $
 
 EAPI="2"
 
 inherit eutils flag-o-matic toolchain-funcs
 
 DESCRIPTION="Terminal to display (multiple) log files on the root window"
-HOMEPAGE="http://www.goof.com/pcg/marc/root-tail.html"
-SRC_URI="http://www.goof.com/pcg/marc/data/${P}.tar.gz"
+HOMEPAGE="http://oldhome.schmorp.de/marc/root-tail.html"
+SRC_URI="http://oldhome.schmorp.de/marc/data/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ppc ppc64 x86"
 IUSE="kde debug"
 
 RDEPEND="x11-libs/libXext
@@ -42,6 +42,6 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install install.man || die "make install failed"
+	emake DESTDIR="${D}" install install.man || die "make install failed"
 	dodoc Changes README
 }

@@ -1,6 +1,25 @@
 # ChangeLog for dev-perl/Class-DBI
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-DBI/ChangeLog,v 1.46 2011/04/24 15:43:20 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-DBI/ChangeLog,v 1.52 2012/06/24 13:00:24 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org> -Class-DBI-3.0.16.ebuild:
+  Cleanup
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> Class-DBI-3.0.17.ebuild:
+  ppc64 stable wrt #391581
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> Class-DBI-3.0.16.ebuild,
+  Class-DBI-3.0.17.ebuild:
+  Drop ia64/sparc keywords
+
+  03 Dec 2011; Markos Chandras <hwoarang@gentoo.org> Class-DBI-3.0.17.ebuild:
+  Stable on amd64 wrt bug #391581
+
+  01 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> Class-DBI-3.0.17.ebuild:
+  x86 stable wrt bug #391581
 
   24 Apr 2011; Fabian Groffen <grobian@gentoo.org> Class-DBI-3.0.17.ebuild:
   Marked ~x86-solaris, bug #296509
@@ -175,4 +194,3 @@
   31 Mar 2004; Michael Cummings <mcummings@gentoo.org> Class-DBI-0.95.ebuild,
   metadata.xml:
   dep for class-dbi-mysql
-

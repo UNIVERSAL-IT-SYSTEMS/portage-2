@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-desktop/gnome-desktop-2.30.2.ebuild,v 1.10 2011/03/16 10:36:28 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-desktop/gnome-desktop-2.30.2.ebuild,v 1.12 2012/05/05 05:38:10 jdhore Exp $
 
 EAPI="2"
 
@@ -21,14 +21,14 @@ RDEPEND=">=x11-libs/gtk+-2.18.0:2
 	>=x11-libs/startup-notification-0.5"
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.40
-	>=dev-util/pkgconfig-0.9
+	virtual/pkgconfig
 	>=app-text/gnome-doc-utils-0.3.2
 	doc? ( >=dev-util/gtk-doc-1.4 )
 	~app-text/docbook-xml-dtd-4.1.2
 	x11-proto/xproto
 	>=x11-proto/randrproto-1.2"
 PDEPEND=">=dev-python/pygtk-2.8
-	>=dev-python/pygobject-2.14"
+	>=dev-python/pygobject-2.14:2"
 
 # Includes X11/Xatom.h in libgnome-desktop/gnome-bg.c which comes from xproto
 # Includes X11/extensions/Xrandr.h that includes randr.h from randrproto (and

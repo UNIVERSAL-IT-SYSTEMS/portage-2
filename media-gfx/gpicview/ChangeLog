@@ -1,6 +1,42 @@
 # ChangeLog for media-gfx/gpicview
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/gpicview/ChangeLog,v 1.17 2011/07/26 08:05:52 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/gpicview/ChangeLog,v 1.28 2012/10/03 18:07:02 ranger Exp $
+
+  03 Oct 2012; Brent Baude <ranger@gentoo.org> gpicview-0.2.3.ebuild:
+  Marking gpicview-0.2.3 ppc for bug 432646
+
+  27 Sep 2012; Anthony G. Basile <blueness@gentoo.org> gpicview-0.2.3.ebuild:
+  stable ppc, bug #432646
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gpicview-0.2.3.ebuild:
+  x86 stable wrt bug #432646
+
+  01 Sep 2012; Markus Meier <maekke@gentoo.org> gpicview-0.2.3.ebuild:
+  arm stable, bug #432646
+
+  25 Aug 2012; Agostino Sarubbo <ago@gentoo.org> gpicview-0.2.3.ebuild:
+  Stable for amd64, wrt bug #432646
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> gpicview-0.2.2.ebuild:
+  Marking gpicview-0.2.2 ppc for bug 427264
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> gpicview-0.2.2.ebuild:
+  Stable for amd64, wrt bug #427264
+
+  23 Jul 2012; Markus Meier <maekke@gentoo.org> gpicview-0.2.2.ebuild:
+  arm stable, bug #427264
+
+  19 Jul 2012; Jeff Horelick <jdhore@gentoo.org> gpicview-0.2.2.ebuild:
+  marked x86 per bug 427264
+
+*gpicview-0.2.3 (19 Jul 2012)
+
+  19 Jul 2012; Markos Chandras <hwoarang@gentoo.org> +gpicview-0.2.3.ebuild:
+  Version bump
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gpicview-0.2.1.ebuild,
+  gpicview-0.2.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
 *gpicview-0.2.2 (26 Jul 2011)
 
@@ -71,4 +107,3 @@
 
   08 Jan 2008; Samuli Suominen <drac@gentoo.org> +gpicview-0.1.7.ebuild:
   Initial commit wrt #199724.
-

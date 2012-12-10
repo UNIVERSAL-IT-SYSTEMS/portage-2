@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/pg/pg-0.11.0.ebuild,v 1.1 2011/04/30 06:54:08 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/pg/pg-0.11.0.ebuild,v 1.9 2012/05/01 18:24:04 armin76 Exp $
 
 EAPI=2
-USE_RUBY="ruby18 ree18 ruby19"
+USE_RUBY="ruby18 ree18"
 
 RUBY_FAKEGEM_TEST_TASK=""
 
@@ -18,7 +18,7 @@ HOMEPAGE="http://bitbucket.org/ged/ruby-pg/"
 
 LICENSE="|| ( GPL-2 Ruby )"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
+KEYWORDS="amd64 ~hppa ppc ppc64 x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 IUSE=""
 
 RDEPEND="${RDEPEND}
@@ -30,7 +30,6 @@ DEPEND="${DEPEND}
 ruby_add_bdepend "
 	doc? (
 		dev-ruby/rake-compiler
-		dev-ruby/rubygems
 		|| ( >=dev-ruby/yard-0.6.1 dev-ruby/rdoc ) )
 	test? ( dev-ruby/rspec:2 )"
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/prefix/package.mask,v 1.92 2011/04/25 14:59:33 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/prefix/package.mask,v 1.114 2012/11/10 09:14:39 grobian Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked.  This file is for
@@ -9,6 +9,49 @@
 # NOTE: Please add your entry at the top!
 #
 
+
+# Fabian Groffen <grobian@gentoo.org> (09 Nov 2012)
+# fails to properly run config.status (and thus create libtool) on
+# non-Linux platforms, fails with hard error when not using bash, caused
+# by EAPI 4's --disable-dependency-tracking (#383863 c12)
+=dev-libs/libgpg-error-1.10-r1
+
+# Fabian Groffen <grobian@gentoo.org> (27 Oct 2012)
+# fails to compile with parallel make (help2man issues)
+# fails to link wrt libiconv
+=sys-apps/coreutils-8.20
+
+# Benda Xu <heroxbd@gentoo.org> (07 Aug 2012)
+# mask new revision for testing out openrc. bug #415895. 
+>=sys-apps/baselayout-prefix-1.12.14-r1
+
+# Fabian Groffen <grobian@gentoo.org> (01 Aug 2012)
+# Causes spurious errors due to considering some small files being
+# binary, bug #425668, comment #21.
+=sys-apps/grep-2.13
+
+# Fabian Groffen <grobian@gentoo.org> (29 Apr 2012)
+# AT_FDCWD, openat, faccessat, etc. issues on probably all but Linux
+# platforms, masking for now.
+>=app-misc/pax-utils-0.3
+
+# Jeremy Olexa <darkside@gentoo.org> (28 Oct 2011)
+# Masking selective games-*, www-apps/*, net-proxy/* packages because:
+# 1) It is unclear if there are any users
+# 2) We would like to NOT migrate packages (to gentoo-x86) if we don't have to.
+#
+# If this is a package that you would like to see in the tree, please open a bug
+# report for inclusion (search first).
+# This mask will be lifted in 60 days and the packages will not be supporting
+# Gentoo Prefix at that time.
+games-arcade/rocksndiamonds
+games-board/xscrabble
+games-misc/cowsay
+games-misc/fortune-mod-gentoo-dev
+games-misc/rfksay
+games-sports/bygfoot
+net-proxy/tinyproxy
+www-apps/trac
 
 # Fabian Groffen <grobian@gentoo.org> (21 Apr 2011)
 # Fails to link anything, since it crt1.o cannot be found.  They haven't
@@ -28,10 +71,6 @@
 # for upstream to sanitise their code (or someone else to do it, since
 # many people are affected: uClibc, BSD, ...)
 =sys-fs/e2fsprogs-1.41.14
-
-# Jeremy Olexa <darkside@gentoo.org> (14 Jul 2010)
-# Needs testing from the brave users.
-=app-admin/python-updater-0.8
 
 # Jeremy Olexa <darkside@gentoo.org> (21 Aug 2009)
 # python-3 will most certainly cause problems if it ever gets unleashed without
@@ -68,12 +107,6 @@ net-wireless/aircrack-ng
 # See bug 248809 for more details.
 net-fs/openafs
 
-# Jeremy Olexa <darkside@gentoo.org> (16 May 2008)
-# distcc-config --install is rather 'interesting' in prefix and I am not 
-# convinced that it works correctly. Also, you will have to add CHOST=<...> to
-# your make.conf. bug #210268
-sys-devel/distcc
-
 # Markus Duft <mduft@gentoo.org> (17 Apr 2008)
 # Breaks things like gettext and fastjar because it introduces some
 # circular dependencies while running aclocal (bug #218122)
@@ -103,8 +136,3 @@ app-emacs/jde
 # Don't use this, it is only provided for experimentation and as tool to
 # recover from broken linker situations.
 sys-devel/native-cctools
-
-# Fabian Groffen <grobian@gentoo.org> (21 Jan 2007)
-# dies with "exhausted memory" errors on Darwin, doesn't understand
-# arguments on Solaris.  Probably more problems...
-=dev-vcs/cvs-1.12.12*

@@ -1,6 +1,92 @@
 # ChangeLog for dev-util/strace
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/strace/ChangeLog,v 1.159 2011/03/16 01:11:53 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/strace/ChangeLog,v 1.185 2012/09/24 17:48:59 armin76 Exp $
+
+  24 Sep 2012; Raúl Porcel <armin76@gentoo.org> strace-4.7.ebuild:
+  alpha/s390/sh/sparc stable wrt #419803
+
+  12 Jul 2012; Akinori Hattori <hattya@gentoo.org> strace-4.7.ebuild:
+  ia64 stable wrt bug #419803
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> strace-4.7.ebuild:
+  Stable for amd64, wrt bug #419803
+
+  09 Jun 2012; Markus Meier <maekke@gentoo.org> strace-4.7.ebuild:
+  arm stable, bug #419803
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> strace-4.7.ebuild:
+  Marking strace-4.7 ppc for bug 419803
+
+  07 Jun 2012; Jeroen Roovers <jer@gentoo.org> strace-4.7.ebuild:
+  Stable for HPPA (bug #419803).
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> strace-4.7.ebuild:
+  marked x86 per bug 419803
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> strace-4.7.ebuild:
+  Marking strace-4.7 ppc64 for bug 419803
+
+  04 Jun 2012; Mike Frysinger <vapier@gentoo.org> +files/strace-4.7-x32.patch,
+  strace-4.7.ebuild:
+  Update x32 syscall table.
+
+  13 May 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/strace-4.7-glibc-2.15.patch, strace-4.7.ebuild:
+  Fix building with glibc-2.15 and old kernel headers #414637 by toogle.
+
+*strace-4.7 (02 May 2012)
+
+  02 May 2012; Mike Frysinger <vapier@gentoo.org> +strace-4.7.ebuild,
+  strace-9999.ebuild:
+  Version bump.
+
+*strace-9999 (14 Feb 2012)
+
+  14 Feb 2012; Mike Frysinger <vapier@gentoo.org> +strace-9999.ebuild:
+  Add live git ebuild.
+
+  14 Feb 2012; Mike Frysinger <vapier@gentoo.org> strace-4.6.ebuild:
+  Add x32 support.
+
+  13 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> strace-4.6.ebuild:
+  ppc64 stable wrt #391655
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> strace-4.6.ebuild:
+  Marking strace-4.6 ppc for bug 391655
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> strace-4.6.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #391655
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> strace-4.6.ebuild:
+  x86 stable wrt bug #391655
+
+  04 Dec 2011; Markus Meier <maekke@gentoo.org> strace-4.6.ebuild:
+  arm stable, bug #391655
+
+  25 Nov 2011; Markos Chandras <hwoarang@gentoo.org> strace-4.6.ebuild:
+  Stable on amd64 wrt bug #391655
+
+  25 Nov 2011; Jeroen Roovers <jer@gentoo.org> strace-4.6.ebuild:
+  Stable for HPPA (bug #391655).
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> strace-4.5.20-r2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #384661
+
+  09 Oct 2011; Jeroen Roovers <jer@gentoo.org> strace-4.5.20-r2.ebuild:
+  Stable for HPPA (bug #384661).
+
+  09 Oct 2011; Markus Meier <maekke@gentoo.org> strace-4.5.20-r2.ebuild:
+  arm stable, bug #384661
+
+  04 Oct 2011; Andreas Schuerch <nativemad@gentoo.org> strace-4.5.20-r2.ebuild:
+  x86 stable, thanks JD. Bug 384661
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> strace-4.5.20-r2.ebuild:
+  Marked ppc/ppc64 stable for bug #384661.
+
+  27 Sep 2011; Tony Vroon <chainsaw@gentoo.org> strace-4.5.20-r2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo,
+  Elijah "Armageddon" El Lazkani & Blain "doc235" Anderson in bug #384661.
 
 *strace-4.6 (16 Mar 2011)
 

@@ -1,6 +1,28 @@
 # ChangeLog for dev-libs/ossp-uuid
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/ossp-uuid/ChangeLog,v 1.26 2011/07/24 13:50:51 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/ossp-uuid/ChangeLog,v 1.31 2012/08/21 04:09:52 ottxor Exp $
+
+  21 Aug 2012; Christoph Junghans <ottxor@gentoo.org> ossp-uuid-1.6.2-r2.ebuild:
+  added prefix keywords
+
+*ossp-uuid-1.6.2-r2 (24 May 2012)
+
+  24 May 2012; Tiziano Müller <dev-zero@gentoo.org>
+  -files/ossp-uuid-1.6.1-gentoo.patch, +ossp-uuid-1.6.2-r2.ebuild,
+  +files/ossp-uuid-1.6.2-gentoo-perl.patch, +files/ossp-uuid-1.6.2-php.patch:
+  Add support for perl bindings (bug #350558, thanks to Scott Thomson). Added
+  static-libs USE flag. Support for building with php-5.4.
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> ossp-uuid-1.6.2-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  21 Aug 2011; Ole Markus With <olemarkus@gentoo.org> -ossp-uuid-1.6.1.ebuild,
+  -ossp-uuid-1.6.2.ebuild:
+  Non-maintainer commit: removing older ebuilds that depend on dev-lang/php:5
+  (bug 363809)
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> ossp-uuid-1.6.2-r1.ebuild:
+  Stable for HPPA (bug #373357).
 
   24 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org>
   ossp-uuid-1.6.2-r1.ebuild:
@@ -97,4 +119,3 @@
   +files/ossp-uuid-1.6.1-gentoo.patch, +metadata.xml,
   +ossp-uuid-1.6.1.ebuild:
   Initial commit (bug #167649, ebuild written by me).
-

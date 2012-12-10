@@ -1,6 +1,61 @@
 # ChangeLog for dev-java/java-sdk-docs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/java-sdk-docs/ChangeLog,v 1.75 2011/03/23 20:21:21 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/java-sdk-docs/ChangeLog,v 1.86 2012/08/23 20:31:41 caster Exp $
+
+*java-sdk-docs-1.7.0.6 (23 Aug 2012)
+
+  23 Aug 2012; Vlastimil Babka <caster@gentoo.org>
+  +java-sdk-docs-1.7.0.6.ebuild:
+  Bump, bug #67266
+
+  09 Jul 2012; Jeff Horelick <jdhore@gentoo.org> java-sdk-docs-1.7.0.4.ebuild:
+  marked x86 as required for bug 421073 currently
+
+*java-sdk-docs-1.7.0.4 (22 May 2012)
+
+  22 May 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +java-sdk-docs-1.7.0.4.ebuild:
+  New distfile from upstream, bump from bug #67266 since it bit me.
+
+*java-sdk-docs-1.6.0.30 (10 Mar 2012)
+
+  10 Mar 2012; Vlastimil Babka <caster@gentoo.org>
+  +java-sdk-docs-1.6.0.30.ebuild:
+  Version bump, bug #67266.
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> java-sdk-docs-1.6.0.25.ebuild:
+  Marking java-sdk-docs-1.6.0.25 ppc for bug 387681
+
+  18 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  java-sdk-docs-1.7.0.2.ebuild:
+  x86 stable wrt security bug #404071
+
+*java-sdk-docs-1.7.0.2 (04 Jan 2012)
+
+  04 Jan 2012; Krzysztof Pawlik <nelchael@gentoo.org>
+  +java-sdk-docs-1.7.0.2.ebuild:
+  Version bump for new release 1.7.0.2 (7u2).
+
+  25 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  java-sdk-docs-1.6.0.25.ebuild:
+  x86 stable wrt bug #387681
+
+  22 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  java-sdk-docs-1.6.0.25.ebuild:
+  Stable on amd64 wrt bug #387681
+
+*java-sdk-docs-1.7.0 (02 Sep 2011)
+
+  02 Sep 2011; Vlastimil Babka <caster@gentoo.org>
+  -java-sdk-docs-1.6.0.10.ebuild, -java-sdk-docs-1.6.0.18.ebuild,
+  +java-sdk-docs-1.7.0.ebuild:
+  Version bump for Java 7.
+
+*java-sdk-docs-1.6.0.25 (12 Aug 2011)
+
+  12 Aug 2011; Krzysztof Pawlik <nelchael@gentoo.org>
+  +java-sdk-docs-1.6.0.25.ebuild:
+  Version bump, Oracle changed license and download location.
 
   23 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org>
   java-sdk-docs-1.6.0.23.ebuild:

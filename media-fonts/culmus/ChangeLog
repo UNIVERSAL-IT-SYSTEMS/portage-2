@@ -1,6 +1,51 @@
 # ChangeLog for media-fonts/culmus
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-fonts/culmus/ChangeLog,v 1.64 2011/07/26 17:06:40 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-fonts/culmus/ChangeLog,v 1.77 2012/03/31 17:20:48 armin76 Exp $
+
+  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> culmus-0.120-r3.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #400369
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> culmus-0.120-r3.ebuild:
+  x86 stable wrt bug #400369
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> culmus-0.120-r3.ebuild:
+  Marking culmus-0.120-r3 ppc64 for bug 400369
+
+  02 Mar 2012; Markus Meier <maekke@gentoo.org> culmus-0.120-r3.ebuild:
+  arm stable, bug #400369
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> culmus-0.120-r3.ebuild:
+  Marking culmus-0.120-r3 ppc for bug 400369
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> culmus-0.120-r3.ebuild:
+  Stable for HPPA (bug #400369).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> culmus-0.120-r3.ebuild:
+  Stable for amd64, wrt bug #400369
+
+*culmus-0.120-r3 (18 Oct 2011)
+
+  18 Oct 2011; Peter Volkov <pva@gentoo.org> +culmus-0.120-r3.ebuild:
+  Add horev font. Depend on >=x11-apps/mkfontscale-1.0.9-r1 as Heavy weight is
+  required for this font.
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> culmus-0.120-r1.ebuild:
+  Stable for HPPA (bug #376347).
+
+*culmus-0.120-r2 (03 Sep 2011)
+
+  03 Sep 2011; Peter Volkov <pva@gentoo.org> -culmus-0.105-r1.ebuild,
+  -culmus-0.105-r2.ebuild, -culmus-0.110.ebuild, +culmus-0.120-r2.ebuild:
+  Bump revision to update dorian fonts. Drop old.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> culmus-0.120-r1.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #376347
+
+  06 Aug 2011; Markus Meier <maekke@gentoo.org> culmus-0.120-r1.ebuild:
+  x86 stable, bug #376347
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> culmus-0.120-r1.ebuild:
+  Stable on amd64 wrt bug #376347
 
   26 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> culmus-0.120-r1.ebuild:
   ppc/ppc64 stable wrt #376347

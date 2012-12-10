@@ -1,6 +1,24 @@
 # ChangeLog for games-strategy/freecol
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/freecol/ChangeLog,v 1.37 2009/10/25 12:20:32 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/freecol/ChangeLog,v 1.42 2012/07/16 19:02:46 mr_bones_ Exp $
+
+  16 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> -freecol-0.8.4.ebuild:
+  old
+
+  01 Jun 2012; Jeff Horelick <jdhore@gentoo.org> freecol-0.10.5.ebuild:
+  marked x86 per bug 418043
+
+  29 May 2012; Agostino Sarubbo <ago@gentoo.org> freecol-0.10.5.ebuild:
+  Stable for amd64, wrt bug #418043
+
+  28 May 2012; Michael Sterrett <mr_bones_@gentoo.org> freecol-0.10.5.ebuild:
+  tidy
+
+*freecol-0.10.5 (03 Mar 2012)
+
+  03 Mar 2012; Tupone Alfredo <tupone@gentoo.org> +freecol-0.10.5.ebuild,
+  +files/freecol-0.10.5-gentoo.patch:
+  Version bump. Bug #300585 by Thomas Kahle
 
   25 Oct 2009; Markus Meier <maekke@gentoo.org> freecol-0.8.4.ebuild:
   amd64/x86 stable, bug #288643

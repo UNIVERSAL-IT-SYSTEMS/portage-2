@@ -1,6 +1,45 @@
 # ChangeLog for net-irc/xchat
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/xchat/ChangeLog,v 1.302 2011/07/12 07:39:59 polynomial-c Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/xchat/ChangeLog,v 1.313 2012/05/03 06:27:14 jdhore Exp $
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> xchat-2.8.6-r2.ebuild,
+  xchat-2.8.8-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  12 Apr 2012; Lars Wendler <polynomial-c@gentoo.org> -xchat-2.8.8-r1.ebuild,
+  xchat-2.8.8-r2.ebuild, +files/xchat-2.8.8-glib-2.31.patch:
+  Fixed compilation with >=dev-libs/glib-2.31. Thanks to Alexandre Rostovtsev
+  (tetromino) for filing bug #411195 and providing a working patch.
+
+  27 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  xchat-2.8.6-r2.ebuild, xchat-2.8.8-r1.ebuild, xchat-2.8.8-r2.ebuild:
+  Slot gtkspell dependency to 2 in preparation for gtkspell-3.
+
+  03 Sep 2011; Raúl Porcel <armin76@gentoo.org> xchat-2.8.8-r2.ebuild:
+  alpha/ia64/sparc stable wrt #378665
+
+  30 Aug 2011; Jeroen Roovers <jer@gentoo.org> xchat-2.8.8-r2.ebuild:
+  Stable for HPPA (bug #378665).
+
+  28 Aug 2011; Markus Meier <maekke@gentoo.org> xchat-2.8.8-r2.ebuild:
+  arm stable, bug #378665
+
+  21 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> xchat-2.8.8-r2.ebuild:
+  x86 stable wrt bug #378665
+
+  11 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> xchat-2.8.8-r2.ebuild:
+  ppc/ppc64 stable wrt #378665
+
+  11 Aug 2011; Tony Vroon <chainsaw@gentoo.org> xchat-2.8.8-r2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #378665.
+
+  10 Aug 2011; Lars Wendler <polynomial-c@gentoo.org> xchat-2.8.8-r2.ebuild:
+  Don't install .la files.
+
+  10 Aug 2011; Lars Wendler <polynomial-c@gentoo.org> xchat-2.8.8-r2.ebuild,
+  +files/xchat-2.8.8-cflags.patch:
+  Don't force "-g -pipe" on CFLAGS (bug #378647).
 
   12 Jul 2011; Lars Wendler <polynomial-c@gentoo.org> xchat-2.8.8-r1.ebuild,
   xchat-2.8.8-r2.ebuild:

@@ -1,6 +1,25 @@
 # ChangeLog for dev-python/tlslite
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/tlslite/ChangeLog,v 1.11 2009/12/31 16:29:12 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/tlslite/ChangeLog,v 1.16 2012/06/25 07:43:28 jdhore Exp $
+
+  25 Jun 2012; Jeff Horelick <jdhore@gentoo.org> tlslite-0.4.0.ebuild:
+  marked x86 per bug 418921
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> tlslite-0.4.0.ebuild:
+  Stable for amd64, wrt bug #418921
+
+*tlslite-0.4.1 (24 Jun 2012)
+
+  24 Jun 2012; Stefan Briesenick <sbriesen@gentoo.org> +tlslite-0.4.1.ebuild:
+  version bump, solving bug #419953.
+
+  13 Mar 2012; Mike Gilbert <floppym@gentoo.org> tlslite-0.4.0.ebuild:
+  Fix dependencies. Don't inherit unused eclass. Patch by Arfrever.
+
+*tlslite-0.4.0 (02 Mar 2012)
+
+  02 Mar 2012; Stefan Briesenick <sbriesen@gentoo.org> +tlslite-0.4.0.ebuild:
+  version bump, solving bug #405329.
 
   31 Dec 2009; Christian Faulhammer <fauli@gentoo.org>
   tlslite-0.3.8-r2.ebuild:

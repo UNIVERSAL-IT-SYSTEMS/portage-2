@@ -1,6 +1,26 @@
 # ChangeLog for net-irc/rbot
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/rbot/ChangeLog,v 1.47 2011/04/10 21:02:40 a3li Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/rbot/ChangeLog,v 1.52 2012/06/01 03:58:21 zmedico Exp $
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> rbot-0.9.15.ebuild,
+  rbot-9999-r10.ebuild:
+  inherit user for enewuser
+
+  24 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> rbot-0.9.15.ebuild,
+  rbot-9999-r10.ebuild:
+  Use hunspell as default (much better solution than dict-based spellcheck) ->
+  dropping hunspell useflag. Remove ispell as whole as it is way worse than
+  aspell.
+
+  18 Apr 2012; Raúl Porcel <armin76@gentoo.org> rbot-0.9.10-r1.ebuild,
+  rbot-0.9.15.ebuild:
+  Drop sparc keywords
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> rbot-0.9.15.ebuild:
+  x86 stable, bug #399581
+
+  21 Sep 2011; Michał Górny <mgorny@gentoo.org> rbot-9999-r10.ebuild:
+  Migrate to git-2.
 
   10 Apr 2011; Alex Legler <a3li@gentoo.org> rbot-0.9.15.ebuild:
   Bump locale dependency to fix compile issue reported in bug 330227. Remove

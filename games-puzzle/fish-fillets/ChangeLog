@@ -1,6 +1,27 @@
 # ChangeLog for games-puzzle/fish-fillets
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/fish-fillets/ChangeLog,v 1.51 2011/03/04 13:03:11 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/fish-fillets/ChangeLog,v 1.56 2012/05/04 04:45:27 jdhore Exp $
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> fish-fillets-1.0.0.ebuild,
+  fish-fillets-1.0.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  10 Jan 2012; Brent Baude <ranger@gentoo.org> fish-fillets-1.0.1.ebuild:
+  Marking fish-fillets-1.0.1 ppc for bug 386585
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  fish-fillets-1.0.1.ebuild:
+  x86 stable wrt bug #386585
+
+  12 Oct 2011; Tony Vroon <chainsaw@gentoo.org> fish-fillets-1.0.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney &
+  Agostino "ago" Sarubbo in bug #386585.
+
+*fish-fillets-1.0.1 (09 Sep 2011)
+
+  09 Sep 2011; Michael Sterrett <mr_bones_@gentoo.org>
+  +fish-fillets-1.0.1.ebuild:
+  version bump
 
   04 Mar 2011; Brent Baude <ranger@gentoo.org> fish-fillets-1.0.0.ebuild:
   stable ppc, bug 354527

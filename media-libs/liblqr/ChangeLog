@@ -1,6 +1,15 @@
 # ChangeLog for media-libs/liblqr
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/liblqr/ChangeLog,v 1.14 2009/12/10 18:11:08 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/liblqr/ChangeLog,v 1.17 2012/05/09 17:32:37 aballier Exp $
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> liblqr-0.4.1.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> liblqr-0.4.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  04 Dec 2011; Markos Chandras <hwoarang@gentoo.org> liblqr-0.4.1.ebuild:
+  add missing pkgconfig build time dependency. Bug #391983 thanks to David Owen
 
   10 Dec 2009; Raúl Porcel <armin76@gentoo.org> liblqr-0.4.1.ebuild:
   arm stable wrt #284425

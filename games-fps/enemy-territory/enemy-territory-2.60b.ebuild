@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/enemy-territory/enemy-territory-2.60b.ebuild,v 1.18 2010/09/03 08:45:07 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/enemy-territory/enemy-territory-2.60b.ebuild,v 1.20 2012/09/24 00:33:35 vapier Exp $
 
-inherit eutils games
+inherit eutils unpacker games
 
 DESCRIPTION="standalone multi-player game based on Return to Castle Wolfenstein"
 HOMEPAGE="http://www.idsoftware.com/"
@@ -42,7 +42,7 @@ QA_EXECSTACK="${dir:1}/et.x86
 	${dir:1}/etmain/cgame.mp.i386.so
 	${dir:1}/etmain/qagame.mp.i386.so
 	${dir:1}/etmain/ui.mp.i386.so"
-QA_DT_HASH="${QA_TEXTRELS}
+QA_FLAGS_IGNORED="${QA_TEXTRELS}
 	${QA_EXECSTACK}
 	${dir:1}/pb/pbweb.x86"
 QA_EXECSTACK_x86=${QA_EXECSTACK}

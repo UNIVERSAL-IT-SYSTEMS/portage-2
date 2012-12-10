@@ -1,6 +1,78 @@
 # ChangeLog for www-client/httrack
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/httrack/ChangeLog,v 1.30 2011/04/21 16:40:31 vanquirius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/httrack/ChangeLog,v 1.45 2012/10/15 12:09:09 ago Exp $
+
+  15 Oct 2012; Agostino Sarubbo <ago@gentoo.org> httrack-3.45.4.ebuild:
+  Stable for amd64, wrt bug #436892
+
+*httrack-3.46.1 (29 Sep 2012)
+
+  29 Sep 2012; Sebastian Pipping <sping@gentoo.org> +httrack-3.46.1.ebuild,
+  +files/httrack-3.46.1-parallel.patch:
+  Bump to 3.46.1
+
+  26 Aug 2012; Michael Weber <xmw@gentoo.org> httrack-3.45.4.ebuild:
+  ppc stable (bug 425692).
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> httrack-3.42.3.ebuild,
+  httrack-3.44.5.ebuild, httrack-3.45.2.ebuild, httrack-3.45.3.ebuild,
+  httrack-3.45.4.ebuild:
+  Drop sparc keywords
+
+  14 Jul 2012; Sebastian Pipping <sping@gentoo.org>
+  files/httrack-3.45.4-htmldir.patch:
+  Fix regression on /usr/share/httrack/html reported by ago (bug #425692)
+
+  10 Jul 2012; Johannes Huber <johu@gentoo.org> httrack-3.45.4.ebuild:
+  Stable for x86, wrt bug #425692
+
+  10 Jul 2012; Sebastian Pipping <sping@gentoo.org> httrack-3.45.4.ebuild,
+  +files/httrack-3.45.4-cflags.patch, +files/httrack-3.45.4-htmldir.patch:
+  Fix QA issues (bug #425712)
+
+  22 Jun 2012; Sebastian Pipping <sping@gentoo.org> httrack-3.45.4.ebuild,
+  +files/httrack-3.45.4-install-once.patch,
+  +files/httrack-3.45.4-parallel.patch:
+  Fix parallel make issue (bug #421499) and installing two files twice
+
+*httrack-3.45.4 (02 May 2012)
+
+  02 May 2012; Sebastian Pipping <sping@gentoo.org> +httrack-3.45.4.ebuild:
+  Bump to 3.45.4, new license GPL-3
+
+*httrack-3.45.3 (26 Mar 2012)
+
+  26 Mar 2012; Sebastian Pipping <sping@gentoo.org> +httrack-3.45.3.ebuild:
+  Bump to 3.45.3, looks trivial
+
+*httrack-3.45.2 (20 Mar 2012)
+
+  20 Mar 2012; Sebastian Pipping <sping@gentoo.org> +httrack-3.45.2.ebuild,
+  metadata.xml:
+  Bump to 3.45.2, looks trivial. Add sping as maintainer
+
+*httrack-3.44.5 (11 Feb 2012)
+
+  11 Feb 2012; Pacho Ramos <pacho@gentoo.org> +httrack-3.44.5.ebuild,
+  -httrack-3.44.1-r1.ebuild, -httrack-3.44.1.ebuild:
+  Version bump (should fix bug #351813 by Michael Orlitzky and Xavier Roche),
+  install docs in proper place (bug #241466 by flameeyes and Gef Lebster). Drop
+  old.
+
+  30 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> httrack-3.44.1-r1.ebuild:
+  Raise sys-libs/zlib depend since httrack-3.44.1+zlib-1.2.5.1.patch is not
+  backwards compatible.
+
+*httrack-3.44.1-r1 (30 Nov 2011)
+
+  30 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/httrack-3.44.1+zlib-1.2.5.1.patch, +httrack-3.44.1-r1.ebuild:
+  Add patch to fix building with recent zlib, thanks to Lars Wendler in bug
+  #383805. Bump to EAPI=4.
+
+  22 Nov 2011; Pacho Ramos <pacho@gentoo.org> -httrack-3.43.7.ebuild,
+  -httrack-3.43.9.ebuild, metadata.xml:
+  Drop maintainer due retirement, bug #82110; remove old.
 
 *httrack-3.44.1 (21 Apr 2011)
 

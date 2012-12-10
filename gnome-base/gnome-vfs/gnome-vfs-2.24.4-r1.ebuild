@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-vfs/gnome-vfs-2.24.4-r1.ebuild,v 1.2 2011/03/27 07:33:15 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-vfs/gnome-vfs-2.24.4-r1.ebuild,v 1.6 2012/05/15 23:41:59 aballier Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="2"
-KEYWORDS="alpha amd64 arm ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm ia64 ~mips ppc ppc64 sh sparc x86 ~amd64-fbsd ~x86-fbsd"
 IUSE="acl avahi doc fam gnutls ipv6 kerberos samba ssl"
 
 RDEPEND=">=gnome-base/gconf-2
@@ -41,7 +41,7 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	gnome-base/gnome-common
 	>=dev-util/intltool-0.40
-	>=dev-util/pkgconfig-0.9
+	virtual/pkgconfig
 	>=dev-util/gtk-doc-am-1.13
 	doc? ( >=dev-util/gtk-doc-1 )"
 
@@ -71,8 +71,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	gnome2_src_prepare
-
 	# Allow the Trash on afs filesystems (#106118)
 	epatch "${FILESDIR}"/${PN}-2.12.0-afs.patch
 
@@ -91,7 +89,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.24.4-home_dir_fakeroot.patch
 
 	# Configure with gnutls-2.7, bug #253729
-	epatch "${FILESDIR}"/${PN}-2.24.0-gnutls27.patch
+	# Fix building with gnutls-2.12, bug #388895
+	epatch "${FILESDIR}"/${PN}-2.24.4-gnutls27.patch
 
 	# Prevent duplicated volumes, bug #193083
 	epatch "${FILESDIR}"/${PN}-2.24.0-uuid-mount.patch
@@ -114,6 +113,8 @@ src_prepare() {
 
 	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
+
+	gnome2_src_prepare
 }
 
 src_test() {

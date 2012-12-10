@@ -1,6 +1,30 @@
 # ChangeLog for net-libs/libinfinity
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libinfinity/ChangeLog,v 1.10 2011/04/30 09:48:18 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libinfinity/ChangeLog,v 1.15 2012/10/22 06:47:50 xarthisius Exp $
+
+*libinfinity-0.5.3 (22 Oct 2012)
+
+  22 Oct 2012; Kacper Kowalik <xarthisius@gentoo.org> +libinfinity-0.5.3.ebuild,
+  libinfinity-0.5.2.ebuild:
+  Version bump, add missing user.eclass to inherit (enewgroup/enewuser)
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libinfinity-0.5.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*libinfinity-0.5.2 (25 Mar 2012)
+
+  25 Mar 2012; Kacper Kowalik <xarthisius@gentoo.org> +libinfinity-0.5.2.ebuild,
+  -libinfinity-0.5.1.ebuild:
+  Version bump, drop old
+
+  02 Nov 2011; Eray Aslan <eras@gentoo.org> libinfinity-0.5.1.ebuild:
+  Move to unversioned virtual/gsasl
+
+*libinfinity-0.5.1 (02 Aug 2011)
+
+  02 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  -libinfinity-0.5.0.ebuild, +libinfinity-0.5.1.ebuild:
+  Version bump, drop old
 
 *libinfinity-0.5.0 (30 Apr 2011)
 
@@ -50,4 +74,3 @@
   +files/infinoted.confd-0.2, +files/infinoted.initd-0.2, +metadata.xml,
   +libinfinity-0.2.0.ebuild:
   Initial commit (ebuild written by me) for new version of gobby.
-

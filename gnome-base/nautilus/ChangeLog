@@ -1,6 +1,108 @@
 # ChangeLog for gnome-base/nautilus
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/nautilus/ChangeLog,v 1.379 2011/07/18 11:52:57 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/nautilus/ChangeLog,v 1.399 2012/07/15 17:31:31 armin76 Exp $
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> nautilus-2.32.2.1-r2.ebuild:
+  alpha/ia64/sh/sparc stable wrt #410611
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  nautilus-2.32.2.1-r2.ebuild:
+  ppc stable wrt #410611
+
+*nautilus-3.4.2 (20 May 2012)
+
+  20 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +nautilus-3.4.2.ebuild:
+  Version bump with several bugfixes.
+
+*nautilus-3.4.1 (07 May 2012)
+
+  07 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +nautilus-3.4.1.ebuild, +files/nautilus-3.4.1-gmount-double-unref.patch:
+  Version bump for gnome-3.4; adds undo support for common operations.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> nautilus-2.32.2.1.ebuild,
+  nautilus-2.32.2.1-r1.ebuild, nautilus-2.32.2.1-r2.ebuild,
+  nautilus-3.2.1.ebuild, nautilus-3.2.1-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  30 Apr 2012; Justin Lecher <jlec@gentoo.org> nautilus-3.2.1-r1.ebuild,
+  +files/nautilus-3.2.1-gold-glib2.32.patch:
+  Add fix for problems with glib-2.32 and gold linker, #414121
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> nautilus-2.32.2.1-r2.ebuild:
+  x86 stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> nautilus-2.32.2.1-r2.ebuild:
+  arm stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> nautilus-2.32.2.1-r2.ebuild:
+  Marking nautilus-2.32.2.1-r2 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> nautilus-2.32.2.1-r2.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  02 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  nautilus-3.2.1-r1.ebuild:
+  Forgot to inherit eutils.
+
+*nautilus-2.32.2.1-r2 (19 Dec 2011)
+
+  19 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +nautilus-2.32.2.1-r2.ebuild:
+  Revbump with no changes to get a gnome-2 version in ~arch with an unmasked
+  introspection USE flag, needed for evince-2.32.0-r4 (thanks to Allan Gottlieb
+  for reporting).
+
+*nautilus-3.2.1-r1 (15 Dec 2011)
+
+  15 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +nautilus-3.2.1-r1.ebuild,
+  +files/nautilus-3.2.1-autostart-only-show-in.patch,
+  +files/nautilus-3.2.1-delete.patch,
+  +files/nautilus-3.2.1-key-press-forwarding.patch:
+  Restore the Delete keyboard shortcut for deleting files (bug #393663, thanks
+  to Pacho for reporting). Do not handle keyboard shortcuts in NautilusWindow
+  if a text entry is focused (prevents files from getting deleted when pressing
+  Delete in search entry). Only autostart in GNOME and Unity (bug #394379,
+  thanks to Marc Schiffbauer for reporting).
+
+  25 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -nautilus-3.0.2.ebuild,
+  -files/nautilus-3.0.2-segfault-in-gtk_icon_info_load_symbolic.patch:
+  Drop old.
+
+*nautilus-3.2.1 (02 Nov 2011)
+
+  02 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +nautilus-3.2.1.ebuild, metadata.xml:
+  Add 3.2.1 from the gnome overlay. The internal media previewer is gone,
+  gnome-extra/sushi is used for previewing instead. Has more-or-less working
+  app-misc/tracker support.
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  nautilus-2.32.2.1-r1.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+  01 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  nautilus-2.32.2.1-r1.ebuild:
+  Remove -DG_DISABLE_DEPRECATED and -DGDK_PIXBUF_DISABLE_DEPRECATED also from
+  Makefile in eel/ to allow building against glib-2.30 and pango-1.28.
+
+  22 Sep 2011; Pacho Ramos <pacho@gentoo.org> nautilus-2.32.2.1-r1.ebuild,
+  nautilus-3.0.2.ebuild:
+  gnome-base/dconf is needed as RDEPEND to prevent connection problems as
+  reported in bug #375101 (by Christian Bönnhoff).
+
+*nautilus-3.0.2 (15 Aug 2011)
+
+  15 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> +nautilus-3.0.2.ebuild,
+  +files/nautilus-3.0.2-segfault-in-gtk_icon_info_load_symbolic.patch,
+  metadata.xml:
+  Bump to 3.0.2, from gnome overlay for GNOME 3
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> nautilus-2.32.2.1-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #369909
 
   18 Jul 2011; Pacho Ramos <pacho@gentoo.org> nautilus-2.32.2.1-r1.ebuild:
   Raise glib version in RDEPEND, bug #375477 by gentoo at jesshaas dot com.

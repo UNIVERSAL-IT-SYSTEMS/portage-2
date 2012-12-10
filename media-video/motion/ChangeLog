@@ -1,6 +1,41 @@
 # ChangeLog for media-video/motion
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/motion/ChangeLog,v 1.33 2011/05/19 18:50:35 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/motion/ChangeLog,v 1.41 2012/06/09 23:36:03 zmedico Exp $
+
+  09 Jun 2012; Zac Medico <zmedico@gentoo.org> motion-3.2.12-r2.ebuild:
+  inherit user for enewuser
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -motion-3.2.12-r1.ebuild:
+  old
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> motion-3.2.12-r2.ebuild:
+  amd64/x86 stable
+
+*motion-3.2.12-r2 (10 Dec 2011)
+
+  10 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +motion-3.2.12-r2.ebuild,
+  +files/motion-3.2.12-workaround-v4l1_deprecation.patch:
+  Since motion doesn't separate v4l1 and v4l2 support, use the
+  libv4l1-videodev.h include from libv4l to allow succesful compilation of both
+  backends. This should be only temporary workaround since upstream has
+  separated the backends in version control. See bug 376225.
+
+  03 Dec 2011; Alexis Ballier <aballier@gentoo.org> +files/ffmpeg08.patch,
+  motion-3.2.12-r1.ebuild:
+  fix build with ffmpeg 0.8, bug #392695
+
+  14 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> -motion-3.2.11.1.ebuild,
+  -motion-3.2.12.ebuild, -files/motion.init-r1, -files/motion.initd:
+  old
+
+  06 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> motion-3.2.12-r1.ebuild:
+  amd64 stable wrt #385359
+
+*motion-3.2.12-r1 (02 Oct 2011)
+
+  02 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +motion-3.2.12-r1.ebuild,
+  +files/motion.initd-r2:
+  Use more recent s-s-d syntax wrt #380279 by Tom Hendrikx
 
 *motion-3.2.12 (19 May 2011)
 

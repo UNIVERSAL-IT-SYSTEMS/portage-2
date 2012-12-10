@@ -1,6 +1,39 @@
 # ChangeLog for x11-apps/xauth
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-apps/xauth/ChangeLog,v 1.76 2011/07/30 10:34:30 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-apps/xauth/ChangeLog,v 1.86 2012/08/26 16:32:50 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> xauth-1.0.7.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> xauth-1.0.7.ebuild:
+  Marking xauth-1.0.7 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> xauth-1.0.7.ebuild:
+  Marking xauth-1.0.7 ppc64 stable for bug 419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> xauth-1.0.7.ebuild:
+  Stable for HPPA (bug #419473).
+
+  27 Jun 2012; Markus Meier <maekke@gentoo.org> xauth-1.0.7.ebuild:
+  arm stable, bug #419473
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xauth-1.0.7.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xauth-1.0.7.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  07 May 2012; Alexis Ballier <aballier@gentoo.org> xauth-1.0.7.ebuild:
+  keyword ~amd64-fbsd
+
+*xauth-1.0.7 (23 Mar 2012)
+
+  23 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xauth-1.0.7.ebuild:
+  Version bump.
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> xauth-1.0.6.ebuild:
+  Stable for HPPA (bug #371857).
 
   30 Jul 2011; Raúl Porcel <armin76@gentoo.org> xauth-1.0.6.ebuild:
   alpha/ia64/s390/sh/sparc stable wrt #371857

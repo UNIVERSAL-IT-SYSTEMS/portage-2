@@ -1,6 +1,73 @@
 # ChangeLog for net-analyzer/fping
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/fping/ChangeLog,v 1.36 2011/06/13 20:22:44 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/fping/ChangeLog,v 1.53 2012/09/06 01:34:15 blueness Exp $
+
+  06 Sep 2012; Anthony G. Basile <blueness@gentoo.org> fping-3.4.ebuild:
+  Keyword ~arm
+
+*fping-3.4 (05 Sep 2012)
+
+  05 Sep 2012; Jeroen Roovers <jer@gentoo.org> -fping-3.3.ebuild,
+  +fping-3.4.ebuild:
+  Version bump, fixes bug #433139.
+
+*fping-3.3 (20 Aug 2012)
+
+  20 Aug 2012; Tim Harder <radhermit@gentoo.org> +fping-3.3.ebuild:
+  Version bump. Add suid use flag.
+
+  29 May 2012; Tim Harder <radhermit@gentoo.org>
+  +fping-2.4_beta2_p161-r1.ebuild, +files/fping-2.4_beta2_p161-min-time.patch:
+  Re-add fping-2.4 for net-analyzer/zabbix.
+
+  29 May 2012; Tim Harder <radhermit@gentoo.org>
+  -fping-2.4_beta2_p161-r1.ebuild, -files/fping-2.4_beta2_p161-min-time.patch,
+  -fping-3.1_rc1.ebuild:
+  Remove old.
+
+*fping-3.2 (29 May 2012)
+
+  29 May 2012; Tim Harder <radhermit@gentoo.org> +fping-3.2.ebuild:
+  Version bump. Use append-cppflags for preprocessor flags.
+
+*fping-3.1 (03 May 2012)
+
+  03 May 2012; Jeroen Roovers <jer@gentoo.org> +fping-3.1.ebuild:
+  Version bump.
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> fping-3.0.ebuild:
+  alpha/ia64/sparc stable wrt #407153
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> fping-3.0.ebuild:
+  x86 stable wrt bug #407153
+
+  13 Mar 2012; Jeroen Roovers <jer@gentoo.org> fping-3.0.ebuild:
+  Stable for HPPA (bug #407153).
+
+  09 Mar 2012; Brent Baude <ranger@gentoo.org> fping-3.0.ebuild:
+  Marking fping-3.0 ppc64 for bug 407153
+
+  08 Mar 2012; Markos Chandras <hwoarang@gentoo.org> fping-3.0.ebuild:
+  Stable on amd64 wrt bug #407153
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> fping-3.0.ebuild:
+  Marking fping-3.0 ppc for bug 407153
+
+  07 Mar 2012; Jeroen Roovers <jer@gentoo.org> fping-3.1_rc1.ebuild:
+  Fix file paths in src_install(). Use some EAPI 4 defaults.
+
+*fping-3.1_rc1 (06 Mar 2012)
+
+  06 Mar 2012; Jeroen Roovers <jer@gentoo.org> +fping-3.1_rc1.ebuild:
+  Version bump.
+
+*fping-3.0 (05 Jan 2012)
+
+  05 Jan 2012; Tim Harder <radhermit@gentoo.org> +fping-3.0.ebuild:
+  Version bump. Bump to EAPI 4 and use new upstream.
+
+  08 Aug 2011; Jeroen Roovers <jer@gentoo.org> fping-2.4_beta2_p161-r1.ebuild:
+  Fix HOMEPAGE thanks to kahrl (bug #378365).
 
   13 Jun 2011; Jeroen Roovers <jer@gentoo.org> -fping-2.4_beta2-r2.ebuild,
   -fping-2.4_beta2_p161.ebuild:

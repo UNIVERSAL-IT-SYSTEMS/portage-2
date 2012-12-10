@@ -1,6 +1,49 @@
 # ChangeLog for sci-mathematics/coq
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/coq/ChangeLog,v 1.65 2011/07/06 18:41:39 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/coq/ChangeLog,v 1.74 2012/10/06 21:07:26 aballier Exp $
+
+  07 Oct 2012; Alexis Ballier <aballier@gentoo.org> coq-8.4.ebuild,
+  metadata.xml:
+  add camlp5 useflag to allow building coq with it, bug #434230 by Christian D.
+
+*coq-8.4 (24 Aug 2012)
+
+  24 Aug 2012; Alexis Ballier <aballier@gentoo.org> +coq-8.4.ebuild,
+  +files/coq-8.4-lablgtk216.patch:
+  version bump, use camlp4 and switch the desktop entry to make_desktop_entry
+
+  24 Aug 2012; Alexis Ballier <aballier@gentoo.org> files/coqide.desktop:
+  Add Science category to the desktop entry, fixing a repoman warning.
+
+  24 Aug 2012; Alexis Ballier <aballier@gentoo.org> +files/lablgtk216.patch,
+  coq-8.3_p4.ebuild:
+  fix build with lablgtk 2.16
+
+*coq-8.3_p4 (17 May 2012)
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> +coq-8.3_p4.ebuild:
+  version bump, by Christian D., bug #416389
+
+  24 Mar 2012; Mark Wright <gienah@gentoo.org> coq-8.3_p2.ebuild,
+  coq-8.3_p3.ebuild:
+  Fix coq 8.3_p2 and 8.3_p3 builds with dev-ml/camlp5-6.05. Stdpp.Exc_located
+  is an alias for Ploc.Exc, it has been deprecated for a while, and was removed
+  in dev-ml/camlp5-6.05. Fixed by upstream in svn repo:
+  https://coq.inria.fr/bugs/show_bug.cgi?id=2728
+
+*coq-8.3_p3 (23 Feb 2012)
+
+  23 Feb 2012; Alexis Ballier <aballier@gentoo.org> +coq-8.3_p3.ebuild:
+  version bump
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> coq-8.3_p1.ebuild,
+  coq-8.3_p2.ebuild:
+  remove ptex dep as it is going away
+
+*coq-8.3_p2 (13 Aug 2011)
+
+  13 Aug 2011; Thomas Kahle <tomka@gentoo.org> +coq-8.3_p2.ebuild:
+  bump to pl2
 
   06 Jul 2011; Alexis Ballier <aballier@gentoo.org> -coq-8.2_p1-r1.ebuild,
   -coq-8.2_p2.ebuild, -files/coq-8.2_p2-camlp5-6-compat.patch,

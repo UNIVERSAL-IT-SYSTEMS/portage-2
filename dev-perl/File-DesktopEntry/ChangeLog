@@ -1,6 +1,41 @@
 # ChangeLog for dev-perl/File-DesktopEntry
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/File-DesktopEntry/ChangeLog,v 1.24 2011/07/31 16:40:45 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/File-DesktopEntry/ChangeLog,v 1.33 2012/06/24 12:59:20 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  06 May 2012; Alexis Ballier <aballier@gentoo.org>
+  File-DesktopEntry-0.40.0.ebuild:
+  keyword ~amd64-fbsd
+
+  18 Mar 2012; Matt Turner <mattst88@gentoo.org>
+  File-DesktopEntry-0.40.0.ebuild:
+  Added ~mips.
+
+  26 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  File-DesktopEntry-0.40.0.ebuild:
+  Marked ~x86-macos
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -File-DesktopEntry-0.04.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org>
+  File-DesktopEntry-0.40.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*File-DesktopEntry-0.40.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +File-DesktopEntry-0.40.0.ebuild:
+  Change version scheme
+
+  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  File-DesktopEntry-0.04.ebuild:
+  keyword ~sparc-solaris
+
+  05 Aug 2011; Naohiro Aota <naota@gentoo.org> File-DesktopEntry-0.04.ebuild:
+  Add ~x86-fbsd.
 
   31 Jul 2011; Raúl Porcel <armin76@gentoo.org> File-DesktopEntry-0.04.ebuild:
   s390/sh stable
@@ -95,4 +130,3 @@
   01 May 2006; <mcumming@gentoo.org> +metadata.xml,
   +File-DesktopEntry-0.02.ebuild:
   Bug 131128, ebuild submitted by Filip Dudek in support of zim in bug 112957
-

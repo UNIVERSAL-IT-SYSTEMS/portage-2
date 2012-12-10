@@ -1,6 +1,58 @@
 # ChangeLog for sci-libs/itpp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/itpp/ChangeLog,v 1.101 2011/07/20 17:00:41 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/itpp/ChangeLog,v 1.116 2012/08/03 19:24:33 bicatali Exp $
+
+  03 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> itpp-4.2-r2.ebuild:
+  Keyword amd64-linux x86-linux
+
+  17 Jul 2012; Justin Lecher <jlec@gentoo.org> itpp-4.2-r1.ebuild,
+  itpp-4.2-r2.ebuild, +files/itpp-4.2-pkg-config.patch:
+  Add patch for pkg-config file creation
+
+*itpp-4.2-r2 (17 Jul 2012)
+
+  17 Jul 2012; Justin Lecher <jlec@gentoo.org> +itpp-4.2-r2.ebuild:
+  revbump, because stable automake do not like AM_PROG_AR, #426402
+
+  15 Jul 2012; Justin Lecher <jlec@gentoo.org> itpp-4.2-r1.ebuild,
+  files/itpp-4.2-automake-1.12.patch:
+  Fixes to automake-1.12 patch
+
+  06 Jul 2012; Justin Lecher <jlec@gentoo.org> itpp-4.0.6.ebuild,
+  itpp-4.2-r1.ebuild, +files/itpp-4.2-automake-1.12.patch:
+  Add fix for automake-1.12, #317328; add missing eclass; don't run elibtoolize
+  twice
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> itpp-4.2-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> itpp-4.0.6.ebuild, metadata.xml:
+  Drop unnessecary die, add LICENSE
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> itpp-4.2-r1.ebuild:
+  Marking itpp-4.2-r1 ppc64 for bug 394037
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> itpp-4.2-r1.ebuild:
+  Marking itpp-4.2-r1 ppc for bug 394037
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> itpp-4.0.6.ebuild,
+  itpp-4.2-r1.ebuild:
+  Drop sparc keywords
+
+  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> itpp-4.2-r1.ebuild:
+  x86 stable wrt bug #394037
+
+  16 Dec 2011; Justin Lecher <jlec@gentoo.org> itpp-4.2-r1.ebuild:
+  Drop -pipe request by ago, #394037
+
+  16 Dec 2011; Agostino Sarubbo <ago@gentoo.org> itpp-4.2-r1.ebuild:
+  Stable for AMD64, wrt bug #394037
+
+  16 Dec 2011; Justin Lecher <jlec@gentoo.org> itpp-4.2-r1.ebuild:
+  Moved to autotools-utils.eclass in order to handle .a/.la correctly
+
+  05 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> itpp-4.2-r1.ebuild:
+  added autotools eclass
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #105599
@@ -422,4 +474,3 @@
   +itpp-3.9.1.ebuild:
   Initial import (fixes bug #120163). Many thanks to Adam Piątyszek
   <ediap@et.put.poznan.pl> for his ebuild.
-

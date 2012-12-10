@@ -1,6 +1,70 @@
 # ChangeLog for x11-drivers/xf86-video-r128
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-r128/ChangeLog,v 1.20 2010/09/11 22:24:19 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-r128/ChangeLog,v 1.35 2012/12/08 17:12:11 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-r128-6.9.1.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> xf86-video-r128-6.9.1.ebuild:
+  Marking xf86-video-r128-6.9.1 ppc stable for bug 440872
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-r128-6.9.1.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-r128-6.9.1.ebuild:
+  Stable for amd64, wrt bug #440872
+
+*xf86-video-r128-6.9.1 (28 Sep 2012)
+
+  28 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-r128-6.9.1.ebuild:
+  Version bump.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org>
+  xf86-video-r128-6.8.2-r1.ebuild:
+  alpha/ia64/sparc stable wrt #419473
+
+*xf86-video-r128-6.8.4 (21 Jul 2012)
+
+  21 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-r128-6.8.4.ebuild:
+  Version bump.
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> xf86-video-r128-6.8.2-r1.ebuild:
+  Marking xf86-video-r128-6.8.2-r1 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> xf86-video-r128-6.8.2-r1.ebuild:
+  Marking xf86-video-r128-6.8.2-r1 ppc64 stable for bug 419473
+
+*xf86-video-r128-6.8.3 (05 Jul 2012)
+
+  05 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-r128-6.8.3.ebuild:
+  Version bump.
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  xf86-video-r128-6.8.2-r1.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  xf86-video-r128-6.8.2-r1.ebuild:
+  Stable for amd64, wrt bug #419473
+
+*xf86-video-r128-6.8.2-r1 (11 Jun 2012)
+
+  11 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +xf86-video-r128-6.8.2-r1.ebuild, -xf86-video-r128-6.8.2.ebuild:
+  Revision bump to avoid accidental automagicness.
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org>
+  xf86-video-r128-6.8.2.ebuild:
+  keyword ~amd64-fbsd (compile tested only)
+
+*xf86-video-r128-6.8.2 (24 Mar 2012)
+
+  24 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-r128-6.8.2.ebuild:
+  Version bump.
 
   11 Sep 2010; Tomáš Chvátal <scarabeus@gentoo.org> -files/r128.xinf:
   drop useless file
@@ -82,4 +146,3 @@
   +metadata.xml, +xf86-video-r128-6.8.0.ebuild:
   New package: ATI Rage128 video driver, split off from xf86-video-ati
   between 6.8.0 and 6.9.0.
-

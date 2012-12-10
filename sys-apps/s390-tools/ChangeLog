@@ -1,6 +1,27 @@
 # ChangeLog for sys-apps/s390-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/s390-tools/ChangeLog,v 1.26 2011/07/05 06:01:43 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/s390-tools/ChangeLog,v 1.30 2012/04/30 02:20:01 vapier Exp $
+
+*s390-tools-1.16.0 (30 Apr 2012)
+
+  30 Apr 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/s390-tools-1.16.0-build.patch, +s390-tools-1.16.0.ebuild:
+  Version bump.
+
+  30 Apr 2012; Mike Frysinger <vapier@gentoo.org> s390-tools-1.15.0.ebuild:
+  Stabilize.
+
+  05 Dec 2011; Mike Frysinger <vapier@gentoo.org> s390-tools-1.13.0.ebuild,
+  +files/s390-tools-1.13.0-larl.patch, s390-tools-1.15.0.ebuild:
+  Drop sysfsutils dep as it appears to be unused (builds fine w/out it) #377699
+  by Anthony Basile. Add fix from upstream for building on s390 with newer
+  binutils #391433 by Raúl Porcel.
+
+*s390-tools-1.15.0 (20 Nov 2011)
+
+  20 Nov 2011; Mike Frysinger <vapier@gentoo.org> s390-tools-1.13.0.ebuild,
+  +s390-tools-1.15.0.ebuild:
+  Version bump.
 
 *s390-tools-1.13.0 (05 Jul 2011)
 

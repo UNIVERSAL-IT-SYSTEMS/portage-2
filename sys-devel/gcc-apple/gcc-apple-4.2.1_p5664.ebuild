@@ -1,10 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc-apple/gcc-apple-4.2.1_p5664.ebuild,v 1.1 2010/08/12 17:58:51 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc-apple/gcc-apple-4.2.1_p5664.ebuild,v 1.3 2011/12/06 19:57:09 grobian Exp $
 
 EAPI="3"
-
-ETYPE="gcc-compiler"
 
 inherit eutils toolchain flag-o-matic autotools prefix
 
@@ -37,7 +35,7 @@ fi
 
 KEYWORDS="~ppc-macos ~x64-macos ~x86-macos"
 
-IUSE="fortran nls +openmp objc objc++ nocxx"
+IUSE="fortran nls +openmp objc objc++ +cxx"
 
 RDEPEND=">=sys-libs/zlib-1.1.4
 	>=sys-libs/ncurses-5.2-r2
@@ -143,7 +141,7 @@ src_prepare() {
 
 src_configure() {
 	local langs="c"
-	use nocxx || langs="${langs},c++"
+	use cxx && langs="${langs},c++"
 	use objc && langs="${langs},objc"
 	use objc++ && langs="${langs/,objc/},objc,obj-c++" # need objc with objc++
 	use fortran && langs="${langs},fortran"

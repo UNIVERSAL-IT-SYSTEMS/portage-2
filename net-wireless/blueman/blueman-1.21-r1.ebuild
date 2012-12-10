@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/blueman/blueman-1.21-r1.ebuild,v 1.6 2011/03/27 17:25:33 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/blueman/blueman-1.21-r1.ebuild,v 1.8 2012/05/04 06:41:54 jdhore Exp $
 
 EAPI="3"
 
@@ -20,11 +20,11 @@ IUSE="gnome network nls policykit pulseaudio"
 CDEPEND="dev-libs/glib:2
 	>=x11-libs/gtk+-2.12:2
 	x11-libs/startup-notification
-	dev-python/pygobject
+	dev-python/pygobject:2
 	>=net-wireless/bluez-4.21"
 DEPEND="${CDEPEND}
 	nls? ( dev-util/intltool sys-devel/gettext )
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	>=dev-python/pyrex-0.9.8"
 RDEPEND="${CDEPEND}
 	>=app-mobilephone/obex-data-server-0.4.4

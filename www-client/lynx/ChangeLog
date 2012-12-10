@@ -1,6 +1,114 @@
 # ChangeLog for www-client/lynx
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/lynx/ChangeLog,v 1.108 2011/03/15 05:54:49 wormo Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/lynx/ChangeLog,v 1.136 2012/11/20 10:47:00 radhermit Exp $
+
+*lynx-2.8.8_pre15 (20 Nov 2012)
+
+  20 Nov 2012; Tim Harder <radhermit@gentoo.org> +lynx-2.8.8_pre15.ebuild:
+  Version bump.
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #72682
+
+  28 Sep 2012; Tim Harder <radhermit@gentoo.org> lynx-2.8.8_pre14.ebuild:
+  Remove old parallel compile workaround.
+
+  28 Sep 2012; Tim Harder <radhermit@gentoo.org> lynx-2.8.8_pre14.ebuild:
+  Replace conditional argument setting with usex calls.
+
+*lynx-2.8.8_pre14 (27 Sep 2012)
+
+  27 Sep 2012; Tim Harder <radhermit@gentoo.org> +lynx-2.8.8_pre14.ebuild,
+  +files/lynx-2.8.8_pre14-parallel.patch:
+  Version bump.
+
+  24 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/lynx-2.8.8_pre12-jobserver.patch, lynx-2.8.8_pre12.ebuild:
+  Add patch to solve 'jobserver unavailable' issues (and increase parallel
+  build).
+
+  23 Jun 2012; Tim Harder <radhermit@gentoo.org> lynx-2.8.8_pre12.ebuild:
+  Add dep on dev-libs/libgcrypt when gnutls ssl support is enabled (bug
+  #421201).
+
+  17 Jun 2012; Fabian Groffen <grobian@gentoo.org> lynx-2.8.8_pre12.ebuild:
+  Pass path to --with-{gnutls,ssl} arguments for Prefix
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Wormo will only take care of bug wrangling, keep she only CCed to keep an eye
+  on this.
+
+  28 May 2012; Tim Harder <radhermit@gentoo.org> -lynx-2.8.7_p1.ebuild,
+  -lynx-2.8.7_p2.ebuild, -files/lynx-2.8.7-include-locale.patch,
+  -lynx-2.8.8_pre11.ebuild:
+  Remove old.
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> lynx-2.8.8_pre12.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #414267
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> lynx-2.8.8_pre12.ebuild:
+  Stable for HPPA (bug #414267).
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> lynx-2.8.8_pre12.ebuild:
+  Marking lynx-2.8.8_pre12 ppc64 for bug 414267
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> lynx-2.8.8_pre12.ebuild:
+  Marking lynx-2.8.8_pre12 ppc for bug 414267
+
+  05 May 2012; Markus Meier <maekke@gentoo.org> lynx-2.8.8_pre12.ebuild:
+  arm stable, bug #414267
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> lynx-2.8.7_p1.ebuild,
+  lynx-2.8.7_p2.ebuild, lynx-2.8.8_pre11.ebuild, lynx-2.8.8_pre12.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> lynx-2.8.8_pre12.ebuild:
+  marked x86 per bug 414267
+
+  01 May 2012; Agostino Sarubbo <ago@gentoo.org> lynx-2.8.8_pre12.ebuild:
+  Stable for amd64, wrt bug #414267
+
+  30 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/lynx-2.8.8_pre12-parallel.patch, lynx-2.8.8_pre12.ebuild:
+  Add a patch to fix building lynx in parallel. Closes bug #403905.
+
+  27 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org> lynx-2.8.7_p1.ebuild:
+  Use -j1 for the current stable as well.
+
+  26 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org> lynx-2.8.7_p2.ebuild,
+  lynx-2.8.8_pre12.ebuild:
+  Force serial building due to bug #403905, hoping for a fix.
+
+  23 Feb 2012; Tim Harder <radhermit@gentoo.org>
+  -files/lynx-2.8.6-CVE-2008-4690.patch, -lynx-2.8.8_pre5.ebuild,
+  -lynx-2.8.8_pre9.ebuild, -lynx-2.8.8_pre10.ebuild,
+  -files/lynx-2.8.8_pre9-zlib.patch:
+  Remove old.
+
+*lynx-2.8.8_pre12 (23 Feb 2012)
+
+  23 Feb 2012; Tim Harder <radhermit@gentoo.org> +lynx-2.8.8_pre12.ebuild:
+  Version bump.
+
+*lynx-2.8.8_pre11 (20 Feb 2012)
+
+  20 Feb 2012; Tim Harder <radhermit@gentoo.org> +lynx-2.8.8_pre11.ebuild:
+  Version bump.
+
+*lynx-2.8.8_pre10 (13 Feb 2012)
+
+  13 Feb 2012; Tim Harder <radhermit@gentoo.org> +lynx-2.8.8_pre10.ebuild:
+  Version bump.
+
+  15 Sep 2011; Tim Harder <radhermit@gentoo.org> lynx-2.8.8_pre9.ebuild,
+  +files/lynx-2.8.8_pre9-zlib.patch:
+  Fix build with zlib-1.2.5.1 (bug #383113, patch by Nikos Chantziaras).
+
+*lynx-2.8.8_pre9 (15 Sep 2011)
+
+  15 Sep 2011; Tim Harder <radhermit@gentoo.org> +lynx-2.8.8_pre9.ebuild,
+  metadata.xml:
+  Version bump (bug #375963). Update to EAPI 4 and add myself as a maintainer.
 
   15 Mar 2011; Stephanie Lockwood-Childs <wormo@gentoo.org>
   lynx-2.8.8_pre5.ebuild:

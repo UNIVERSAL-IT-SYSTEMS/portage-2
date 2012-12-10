@@ -1,6 +1,38 @@
 # ChangeLog for dev-vcs/giggle
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/giggle/ChangeLog,v 1.8 2011/03/21 23:16:29 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/giggle/ChangeLog,v 1.16 2012/08/03 22:22:12 hwoarang Exp $
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> giggle-0.6.1.ebuild:
+  Stable on amd64 wrt bug #428054
+
+  27 Jul 2012; Jeff Horelick <jdhore@gentoo.org> giggle-0.6.1.ebuild:
+  marked x86 per bug 428054
+
+  06 May 2012; Mike Auty <ikelos@gentoo.org> giggle-0.6.1.ebuild,
+  +files/giggle-0.6.1-gmodule-explicit.patch:
+  Fix bug 414835, no version bump since it's a compilation bug.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> giggle-0.5.ebuild,
+  giggle-0.6.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  13 Dec 2011; Mike Auty <ikelos@gentoo.org> giggle-0.6.1.ebuild:
+  Add dependency on yelp-tools (and hence itstool) to solve bug 394613.
+  Requires the removal of the ppc flag until itstool/yelp-tools are keyworded
+  for ppc.
+
+  10 Dec 2011; Mike Auty <ikelos@gentoo.org> giggle-0.6.1.ebuild:
+  Removed the eautoreconf since it would have needed yelp-tools, which isn't
+  yet keyworded for ppc. Thanks to Rafał Mużyło for the speedy diagnosis.
+  Fixes bug 393271.
+
+  04 Dec 2011; Mike Auty <ikelos@gentoo.org> giggle-0.6.1.ebuild:
+  Fix up missing dependencies, closes bug 393171.
+
+*giggle-0.6.1 (04 Dec 2011)
+
+  04 Dec 2011; Mike Auty <ikelos@gentoo.org> +giggle-0.6.1.ebuild:
+  Bump giggle to 0.6.1.
 
   21 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org> -giggle-0.4.ebuild,
   -giggle-0.4.95.ebuild, -giggle-0.4.96.ebuild, giggle-0.5.ebuild:
@@ -122,4 +154,3 @@
   11 May 2007; Saleem Abdulrasool <compnerd@gentoo.org> +metadata.xml,
   +giggle-0.2.ebuild:
   Initial import of giggle
-

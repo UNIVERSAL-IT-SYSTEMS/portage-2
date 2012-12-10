@@ -1,6 +1,29 @@
 # ChangeLog for media-video/rtmpdump
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/rtmpdump/ChangeLog,v 1.18 2011/07/07 03:57:22 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/rtmpdump/ChangeLog,v 1.23 2012/11/25 10:53:36 hwoarang Exp $
+
+  25 Nov 2012; Markos Chandras <hwoarang@gentoo.org> rtmpdump-2.3.ebuild,
+  rtmpdump-2.4.ebuild, rtmpdump-9999.ebuild:
+  Add missing quotes for tc-getXX functions to avoid problems with cross-
+  compilation. Bug #444590. Thanks to Alexander E. Patrakov <patrakov@gmail.com>
+
+  17 Oct 2012; Christoph Junghans <ottxor@gentoo.org> rtmpdump-2.4.ebuild,
+  rtmpdump-9999.ebuild:
+  added prefix support (bug #351220)
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> rtmpdump-2.4.ebuild:
+  keyword ~amd64-fbsd
+
+  20 Mar 2012; Diego E. Pettenò <flameeyes@gentoo.org> rtmpdump-2.3.ebuild,
+  rtmpdump-2.4.ebuild, rtmpdump-9999.ebuild:
+  Fix license identification.
+
+*rtmpdump-9999 (10 Aug 2011)
+*rtmpdump-2.4 (10 Aug 2011)
+
+  10 Aug 2011; Markos Chandras <hwoarang@gentoo.org> +rtmpdump-2.4.ebuild,
+  +rtmpdump-9999.ebuild:
+  Version bump per bug #376551 and live ebuild inclusion
 
   07 Jul 2011; Alexis Ballier <aballier@gentoo.org> rtmpdump-2.3.ebuild:
   keyword ~x86-fbsd
@@ -81,4 +104,3 @@
   30 May 2010; Maxime de Roucy (maxime1986) <maxime.deroucy@gmail.com>
   +rtmpdump-2.2d.ebuild, +metadata.xml:
   New Ebuild for bug 299819 (thanks to Alec M.)
-

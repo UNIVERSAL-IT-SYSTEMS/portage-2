@@ -1,6 +1,25 @@
 # ChangeLog for sci-physics/camfr
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/camfr/ChangeLog,v 1.21 2011/06/21 14:41:10 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/camfr/ChangeLog,v 1.25 2012/10/16 19:06:44 jlec Exp $
+
+  16 Oct 2012; Justin Lecher <jlec@gentoo.org> camfr-20070717-r3.ebuild,
+  metadata.xml:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  07 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -camfr-20070717-r2.ebuild,
+  camfr-20070717-r3.ebuild:
+  work around for boost_python-mt
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> camfr-20070717-r2.ebuild,
+  camfr-20070717-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*camfr-20070717-r3 (30 Jan 2012)
+
+  30 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  camfr-20070717-r2.ebuild, +camfr-20070717-r3.ebuild:
+  Adapt new boost python scheme, bug #401391
 
   21 Jun 2011; Justin Lecher <jlec@gentoo.org> camfr-20070717-r2.ebuild:
   Add dependency on virtual/fortran
@@ -98,4 +117,3 @@
 
   05 Apr 2005; Peter Bienstman <pbienst@gentoo.org> :
   Initial import. Closes bug 36560.
-

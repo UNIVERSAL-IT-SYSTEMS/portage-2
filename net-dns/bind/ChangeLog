@@ -1,6 +1,325 @@
 # ChangeLog for net-dns/bind
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/ChangeLog,v 1.348 2011/07/09 16:31:30 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dns/bind/ChangeLog,v 1.431 2012/12/07 15:01:05 jer Exp $
+
+  07 Dec 2012; Jeroen Roovers <jer@gentoo.org> bind-9.9.2_p1.ebuild:
+  Stable for HPPA (bug #446094).
+
+  07 Dec 2012; <ago@gentoo.org> bind-9.9.2_p1.ebuild:
+  Stable for amd64, wrt bug #446094
+
+*bind-9.9.2_p1 (04 Dec 2012)
+
+  04 Dec 2012; Christian Ruppert <idl0r@gentoo.org> -bind-9.9.2.ebuild,
+  +bind-9.9.2_p1.ebuild:
+  Version bump
+
+  04 Nov 2012; Ulrich Müller <ulm@gentoo.org> bind-9.9.1_p4.ebuild,
+  bind-9.9.2.ebuild:
+  Update LICENSE, RSA-PKCS11 is replaced by RSA, bug 440752.
+
+  01 Nov 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.9.2.ebuild:
+  Fix LICENSE, bug 440752.
+
+  31 Oct 2012; Michał Górny <mgorny@gentoo.org> bind-9.9.2.ebuild:
+  Use virtual for argparse.
+
+  30 Oct 2012; Christian Ruppert <idl0r@gentoo.org> -bind-9.9.1_p3.ebuild:
+  Cleanup
+
+  17 Oct 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.9.1_p4.ebuild,
+  bind-9.9.2.ebuild:
+  Go back into the build root, bug 438018.
+
+  13 Oct 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.9.2.ebuild:
+  Fix python dependencies, bug 438252
+
+  13 Oct 2012; Raúl Porcel <armin76@gentoo.org> bind-9.9.1_p4.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #437828
+
+  12 Oct 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.9.2.ebuild:
+  Fix python_convert_shebangs, bug 438018.
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org> bind-9.9.1_p4.ebuild:
+  stable ppc ppc64, bug #437828
+
+  11 Oct 2012; Agostino Sarubbo <ago@gentoo.org> bind-9.9.1_p4.ebuild:
+  Stable for amd64, wrt bug #437828
+
+  11 Oct 2012; Andreas Schuerch <nativemad@gentoo.org> bind-9.9.1_p4.ebuild:
+  x86 stable, see bug 437828
+
+  11 Oct 2012; Jeroen Roovers <jer@gentoo.org> bind-9.9.1_p4.ebuild:
+  Stable for HPPA (bug #437828).
+
+*bind-9.9.2 (10 Oct 2012)
+*bind-9.9.1_p4 (10 Oct 2012)
+
+  10 Oct 2012; Christian Ruppert <idl0r@gentoo.org> -bind-9.9.1_p2.ebuild,
+  +bind-9.9.1_p4.ebuild, +bind-9.9.2.ebuild, -files/named.init-r11:
+  Version bump, bug 437828 - CVE CVE-2012-5166
+
+  16 Sep 2012; Jeroen Roovers <jer@gentoo.org> bind-9.9.1_p3.ebuild:
+  Stable for HPPA (bug #434876).
+
+  15 Sep 2012; Raúl Porcel <armin76@gentoo.org> bind-9.9.1_p3.ebuild:
+  alpha/ia64/s390/sh/sparc/x86 stable wrt #434876
+
+  13 Sep 2012; Anthony G. Basile <blueness@gentoo.org> bind-9.9.1_p3.ebuild:
+  Stable arm, bug #434876
+
+  13 Sep 2012; Anthony G. Basile <blueness@gentoo.org> bind-9.9.1_p3.ebuild:
+  Stable ppc, bug #434876
+
+  13 Sep 2012; Anthony G. Basile <blueness@gentoo.org> bind-9.9.1_p3.ebuild:
+  Stable ppc64, bug #434876
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> bind-9.9.1_p3.ebuild:
+  Stable for amd64, wrt bug #434876
+
+*bind-9.9.1_p3 (12 Sep 2012)
+
+  12 Sep 2012; Christian Ruppert <idl0r@gentoo.org> +bind-9.9.1_p3.ebuild,
+  -bind-9.9.1_p2-r3.ebuild:
+  Version bump.
+
+*bind-9.9.1_p2-r3 (11 Sep 2012)
+
+  11 Sep 2012; Christian Ruppert <idl0r@gentoo.org> +bind-9.9.1_p2-r3.ebuild,
+  -bind-9.8.3_p1.ebuild, -bind-9.8.3_p2.ebuild, -bind-9.9.1_p2-r2.ebuild,
+  -files/bind-9.8.1-sdlz_helper.patch, metadata.xml:
+  Remove old versions. Add DNS Response Rate Limit (RRL) patch, bug 434650.
+
+  10 Sep 2012; Christoph Junghans <ottxor@gentoo.org> bind-9.9.1_p2-r2.ebuild:
+  added prefix keywords
+
+*bind-9.9.1_p2-r2 (24 Aug 2012)
+
+  24 Aug 2012; Christian Ruppert <idl0r@gentoo.org> -bind-9.9.1_p2-r1.ebuild,
+  +bind-9.9.1_p2-r2.ebuild, +files/named.init-r12:
+  Revision bump, fixes bug 429748.
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> bind-9.9.1_p2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #427966
+
+  28 Jul 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.8.3_p1.ebuild,
+  bind-9.8.3_p2.ebuild, bind-9.9.1_p2.ebuild, bind-9.9.1_p2-r1.ebuild:
+  Fix OpenSSL dependency when using GOST.
+
+  28 Jul 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.9.1_p2-r1.ebuild:
+  Add a comment for the libxml2 patch
+
+*bind-9.9.1_p2-r1 (28 Jul 2012)
+
+  28 Jul 2012; Christian Ruppert <idl0r@gentoo.org> +bind-9.9.1_p2-r1.ebuild,
+  +files/bind-libxml2-2.8.x.patch:
+  Fix libxml2 detection, bug 425170, thanks to Bruno <bonbons67@internet.lu>.
+
+  27 Jul 2012; Anthony G. Basile <blueness@gentoo.org> bind-9.9.1_p2.ebuild:
+  Stable arm, bug #427966
+
+  27 Jul 2012; Anthony G. Basile <blueness@gentoo.org> bind-9.9.1_p2.ebuild:
+  Stable ppc/ppc64, bug #427966
+
+  27 Jul 2012; Richard Freeman <rich0@gentoo.org> bind-9.9.1_p2.ebuild:
+  amd64 stable - 427966
+
+  27 Jul 2012; Jeff Horelick <jdhore@gentoo.org> bind-9.9.1_p2.ebuild:
+  marked x86 per bug 427966
+
+  26 Jul 2012; Jeroen Roovers <jer@gentoo.org> bind-9.9.1_p2.ebuild:
+  Stable for HPPA (bug #427966).
+
+*bind-9.9.1_p2 (25 Jul 2012)
+*bind-9.8.3_p2 (25 Jul 2012)
+
+  25 Jul 2012; Christian Ruppert <idl0r@gentoo.org> -bind-9.8.1_p1.ebuild,
+  +bind-9.8.3_p2.ebuild, -bind-9.9.1_p1.ebuild, +bind-9.9.1_p2.ebuild,
+  metadata.xml:
+  Version bump re bug 427966
+
+  16 Jun 2012; Raúl Porcel <armin76@gentoo.org> bind-9.8.3_p1.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #419637
+
+  12 Jun 2012; Andreas Schuerch <nativemad@gentoo.org> bind-9.8.3_p1.ebuild:
+  x86 stable, see bug 419637
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> bind-9.8.3_p1.ebuild:
+  Stable for amd64, wrt bug #419637
+
+  10 Jun 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.9.1_p1.ebuild,
+  metadata.xml:
+  Add filter-aaaa useflag, bug 420485.
+
+  08 Jun 2012; Brent Baude <ranger@gentoo.org> bind-9.8.3_p1.ebuild:
+  Marking bind-9.8.3_p1 ppc for bug 419637
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org> bind-9.8.3_p1.ebuild:
+  Stable for HPPA (bug #419637).
+
+  05 Jun 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.8.1_p1.ebuild,
+  bind-9.8.3_p1.ebuild, bind-9.9.1_p1.ebuild, metadata.xml:
+  Inherit the new user eclass
+
+  05 Jun 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.8.3_p1.ebuild,
+  bind-9.9.1_p1.ebuild:
+  Disable tests for now, bug 406399
+
+*bind-9.9.1_p1 (04 Jun 2012)
+*bind-9.8.3_p1 (04 Jun 2012)
+
+  04 Jun 2012; Christian Ruppert <idl0r@gentoo.org> -bind-9.7.4_p1.ebuild,
+  -bind-9.7.6.ebuild, -bind-9.8.3.ebuild, +bind-9.8.3_p1.ebuild,
+  -bind-9.9.1.ebuild, +bind-9.9.1_p1.ebuild:
+  Version bumps, CVE-2012-1667. Remove old versions
+
+  29 May 2012; Christian Ruppert <idl0r@gentoo.org> files/named.cache:
+  Update named.cache
+
+*bind-9.8.3 (22 May 2012)
+*bind-9.7.6 (22 May 2012)
+
+  22 May 2012; Christian Ruppert <idl0r@gentoo.org> -bind-9.7.5.ebuild,
+  +bind-9.7.6.ebuild, -bind-9.8.2.ebuild, +bind-9.8.3.ebuild:
+  Version bump
+
+  22 May 2012; Christian Ruppert <idl0r@gentoo.org> metadata.xml:
+  Remove bind herd.. It's "empty" for years anyway, bug 417001.
+
+*bind-9.9.1 (21 May 2012)
+
+  21 May 2012; Christian Ruppert <idl0r@gentoo.org> -bind-9.9.0.ebuild,
+  +bind-9.9.1.ebuild:
+  Version bump. Fixes bug 409529.
+
+  17 May 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.7.5.ebuild,
+  bind-9.8.1_p1.ebuild, bind-9.8.2.ebuild, bind-9.9.0.ebuild:
+  Disable PKCS11 temporary as it requires OpenSSL to be patched, also see bug
+  409687.
+
+  14 May 2012; Naohiro Aota <naota@gentoo.org> bind-9.7.5.ebuild,
+  bind-9.8.1_p1.ebuild, bind-9.8.2.ebuild, bind-9.9.0.ebuild:
+  Add alternative dependency >=freebsd-ubin-9.0_rc providing fuser. #415785
+
+*bind-9.8.2 (07 Apr 2012)
+*bind-9.7.5 (07 Apr 2012)
+
+  07 Apr 2012; Christian Ruppert <idl0r@gentoo.org> +bind-9.7.5.ebuild,
+  +bind-9.8.2.ebuild, bind-9.9.0.ebuild:
+  Version bumps.
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> bind-9.8.1_p1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #405149
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> bind-9.8.1_p1.ebuild:
+  x86 stable wrt bug #405149
+
+  12 Mar 2012; Markus Meier <maekke@gentoo.org> bind-9.8.1_p1.ebuild:
+  arm stable, bug #405149
+
+  09 Mar 2012; Brent Baude <ranger@gentoo.org> bind-9.8.1_p1.ebuild:
+  Marking bind-9.8.1_p1 ppc64 for bug 405149
+
+  03 Mar 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.8.1_p1.ebuild:
+  Revert static-libs support for 9.8.1
+
+  02 Mar 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.8.1_p1.ebuild:
+  Improve static-libs.. Actually that was meant for >=9.9.0 only but for some
+  reason I added it to 9.8.1 as well so .. :/
+
+  02 Mar 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.9.0.ebuild:
+  New geoip patch, fixes bug 406397. Remove some old dodoc calls.
+
+  01 Mar 2012; Mike Gilbert <floppym@gentoo.org> bind-9.9.0.ebuild:
+  doc/draft and doc/rfc do not exist.
+
+*bind-9.9.0 (29 Feb 2012)
+
+  29 Feb 2012; Christian Ruppert <idl0r@gentoo.org> bind-9.8.1_p1.ebuild,
+  +bind-9.9.0.ebuild:
+  Version bump to 9.9.0, also fixes bug 405251.
+
+  23 Feb 2012; Brent Baude <ranger@gentoo.org> bind-9.8.1_p1.ebuild:
+  Marking bind-9.8.1_p1 ppc for bug 405149
+
+  22 Feb 2012; Jeroen Roovers <jer@gentoo.org> bind-9.8.1_p1.ebuild:
+  Stable for HPPA (bug #405149).
+
+  22 Feb 2012; Agostino Sarubbo <ago@gentoo.org> bind-9.8.1_p1.ebuild:
+  Stable for amd64, wrt bug #405149
+
+  24 Dec 2011; Christian Ruppert <idl0r@gentoo.org> -bind-9.8.1.ebuild,
+  bind-9.8.1_p1.ebuild:
+  Using threads also requires caps, bug 395783.
+
+  24 Dec 2011; Christian Ruppert <idl0r@gentoo.org> -bind-9.7.3_p3.ebuild,
+  -bind-9.7.4.ebuild, -files/named.init-r10:
+  Cleanup.
+
+  22 Dec 2011; Mark Loeser <halcy0n@gentoo.org> bind-9.7.4_p1.ebuild:
+  Stable for ppc/ppc64; bug #390753
+
+  06 Dec 2011; Naohiro Aota <naota@gentoo.org> bind-9.8.1_p1.ebuild:
+  Add ~x86-fbsd; Add alternativa depend sys-process/fuser-bsd for
+  sys-process/psmisc; Make it include db.h from proper path
+
+  29 Nov 2011; Tony Vroon <chainsaw@gentoo.org> bind-9.7.3_p3.ebuild,
+  bind-9.7.4.ebuild, bind-9.7.4_p1.ebuild:
+  Minor spelling/grammar fixes. Cleared with idl0r on #gentoo-dev.
+
+  28 Nov 2011; Tony Vroon <chainsaw@gentoo.org> bind-9.7.4_p1.ebuild:
+  Marked stable on AMD64 based on arch testing by Tomáš "Mepho" Pružina &
+  Agostino "ago" Sarubbo in security bug #390753.
+
+  26 Nov 2011; Raúl Porcel <armin76@gentoo.org> bind-9.7.4_p1.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #390753
+
+  22 Nov 2011; Jeroen Roovers <jer@gentoo.org> bind-9.7.4_p1.ebuild:
+  Stable for HPPA (bug #390753).
+
+  22 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> bind-9.7.4_p1.ebuild:
+  x86 stable wrt bug #390753
+
+  17 Nov 2011; Christian Ruppert <idl0r@gentoo.org> bind-9.8.1_p1.ebuild:
+  Fix sdlz patching, thanks to Dessa who reported it via IRC.
+
+*bind-9.8.1_p1 (17 Nov 2011)
+*bind-9.7.4_p1 (17 Nov 2011)
+
+  17 Nov 2011; Christian Ruppert <idl0r@gentoo.org> +bind-9.7.4_p1.ebuild,
+  +bind-9.8.1_p1.ebuild:
+  Version bump, fixes a serious security issue, CVE-2011-4313 / bug 390753.
+
+  25 Sep 2011; Christian Ruppert <idl0r@gentoo.org> bind-9.8.1.ebuild:
+  Remove obsolete warning.
+
+  14 Sep 2011; Christian Ruppert <idl0r@gentoo.org> files/named.init-r11:
+  Remove deprecated opts variable as well as --oknodo.
+
+  10 Sep 2011; Christian Ruppert <idl0r@gentoo.org> bind-9.8.1.ebuild,
+  +files/bind-9.8.1-sdlz_helper.patch:
+  Fix dlz linking, bug 382269, thanks to Todd Goodman <tsg@bonedaddy.net>.
+
+*bind-9.7.4 (10 Sep 2011)
+
+  10 Sep 2011; Christian Ruppert <idl0r@gentoo.org> -bind-9.7.3_p1.ebuild,
+  +bind-9.7.4.ebuild:
+  Version bump to 9.7.4.
+
+  02 Sep 2011; Christian Ruppert <idl0r@gentoo.org> bind-9.8.1.ebuild:
+  Disable replace-flags re bug 158664 for now, the bug is really old and a lot
+  changed since then.
+
+  01 Sep 2011; Christian Ruppert <idl0r@gentoo.org> bind-9.8.1.ebuild,
+  metadata.xml:
+  EAPI bump. Add more useflags. Make use of REQUIRED_USE for dlz/db flags.
+  Remove useless blocks. Remove useless resolvconf dependency/flag.
+
+*bind-9.8.1 (01 Sep 2011)
+
+  01 Sep 2011; Christian Ruppert <idl0r@gentoo.org> -bind-9.8.0_p4.ebuild,
+  +bind-9.8.1.ebuild, files/named.conf-r5:
+  Version bump to 9.8.1. Add "dnssec-validation auto" example to named.conf.
 
   09 Jul 2011; Raúl Porcel <armin76@gentoo.org> bind-9.7.3_p3.ebuild:
   alpha/arm/ia64/s390/sh/sparc stable wrt #374201
@@ -1607,4 +1926,3 @@
   comments should well explained and written in clean English. The details about
   writing correct changelogs are explained in the skel.ChangeLog file which you
   can find in the root directory of the portage repository.
-

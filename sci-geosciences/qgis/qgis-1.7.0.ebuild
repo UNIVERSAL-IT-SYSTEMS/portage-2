@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/qgis/qgis-1.7.0.ebuild,v 1.2 2011/06/12 21:11:53 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/qgis/qgis-1.7.0.ebuild,v 1.5 2012/02/05 01:56:14 floppym Exp $
 
 EAPI=3
 
 PYTHON_USE_WITH="sqlite"
 PYTHON_DEPEND="python? 2"
-inherit python base cmake-utils eutils
+inherit python base cmake-utils eutils multilib
 
 DESCRIPTION="User friendly Geographic Information System"
 HOMEPAGE="http://www.qgis.org/"
@@ -15,7 +15,7 @@ SRC_URI="http://qgis.org/downloads/${P}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="examples gps grass gsl postgres python spatialite test"
 
 RDEPEND="

@@ -1,6 +1,116 @@
 # ChangeLog for net-analyzer/net-snmp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/net-snmp/ChangeLog,v 1.222 2011/04/19 23:38:16 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/net-snmp/ChangeLog,v 1.245 2012/10/22 02:57:05 flameeyes Exp $
+
+  22 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org> files/snmpd.init.2,
+  files/snmptrapd.init.2:
+  Remove need net line.
+
+*net-snmp-5.7.2 (20 Oct 2012)
+
+  20 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org> +net-snmp-5.7.2.ebuild,
+  -net-snmp-5.7.2_rc3.ebuild:
+  Version bump to final 5.7.2 release.
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> net-snmp-5.7.2_rc1.ebuild:
+  Marking net-snmp-5.7.2_rc1 ppc for bug 431752
+
+*net-snmp-5.7.2_rc3 (04 Oct 2012)
+
+  04 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +net-snmp-5.7.2_rc3.ebuild, -files/CVE-2008-6123.patch,
+  -files/net-snmp-5.4.1-sensors3-version_detect.patch,
+  -files/net-snmp-5.4.1-sensors3.patch,
+  -files/net-snmp-5.4.2.1-perlcc-hppa.patch, -files/snmpd.init,
+  -files/snmptrapd.init, -net-snmp-5.4.2.1-r5.ebuild,
+  -net-snmp-5.7.2_rc1-r1.ebuild, metadata.xml:
+  Version bump to 5.7.2_rc3; add USE=mysql (bug #433169, thanks to Dag Bakke);
+  update LICENSE (bug #437172, thanks to Ben Sagal); remove old versions
+  (vulnerable and non-stable-candidate) and unused files.
+
+  28 Aug 2012; Brent Baude <ranger@gentoo.org> net-snmp-5.7.2_rc1.ebuild:
+  Marking net-snmp-5.7.2_rc1 ppc64 for bug 431752
+
+  27 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  net-snmp-5.7.2_rc1-r1.ebuild, net-snmp-5.7.2_rc1.ebuild:
+  Hopefully fix race condition reported in bug #432982 by Luis Ferreira; make
+  sure that there is no automagic dependency over libnl on the stable version.
+
+*net-snmp-5.7.2_rc1-r1 (27 Aug 2012)
+
+  27 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +net-snmp-5.7.2_rc1-r1.ebuild, metadata.xml:
+  Add an USE flag to make picutils dependency optional (bug #432926), as well as
+  a netlink one to use libnl instead of parsing /proc/net/tcp.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> net-snmp-5.7.2_rc1.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #431752
+
+  21 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> files/snmpd.init.2:
+  Fix init script. Thanks Seraphin in bug #432208.
+
+  20 Aug 2012; Johannes Huber <johu@gentoo.org> net-snmp-5.7.2_rc1.ebuild:
+  Stable for x86, wrt bug #431752
+
+  20 Aug 2012; Jeroen Roovers <jer@gentoo.org> net-snmp-5.7.2_rc1.ebuild:
+  Fix Manifest.
+
+  20 Aug 2012; Jeroen Roovers <jer@gentoo.org> net-snmp-5.7.2_rc1.ebuild:
+  Stable for HPPA (bug #431752).
+
+  20 Aug 2012; Agostino Sarubbo <ago@gentoo.org> net-snmp-5.7.2_rc1.ebuild:
+  Stable for amd64, wrt bug #431752
+
+  20 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  -files/net-snmp-5.7.2_rc1-hppa.patch, net-snmp-5.7.2_rc1.ebuild:
+  Make sure not to depend on automake (not required).
+
+  20 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml,
+  net-snmp-5.7.2_rc1.ebuild:
+  Replace most seds with full-fledged, targeted patches. Add an ucd-compat USE
+  flag for those packages still using ucd-snmp.
+
+  20 Aug 2012; Jeroen Roovers <jer@gentoo.org> net-snmp-5.7.2_rc1.ebuild,
+  +files/net-snmp-5.7.2_rc1-hppa.patch:
+  Fix toolchain quadruplet detection (bug #432004).
+
+*net-snmp-5.7.2_rc1 (19 Aug 2012)
+
+  19 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +files/snmpd.init.2,
+  +files/snmptrapd.init.2, +net-snmp-5.7.2_rc1.ebuild,
+  -net-snmp-5.4.3-r1.ebuild, -net-snmp-5.5.ebuild, -net-snmp-5.6.1.ebuild,
+  metadata.xml:
+  Version bump; remove old. This version closes bug #209667 (disabled ucd-snmp
+  compatibility); bug #328177 (lm_sensors 3 is supported by default now);
+  #425990 (added GPL-2 to LICENSE); should close bug #351051 as well, for the
+  most part; add new init scripts to use the new runscript features; restrict
+  tests (tests that might or might not fail are useless); build in parallel
+  (upstream fixed it); drop USE flags that added no dependencies.
+
+  03 Aug 2012; Jeroen Roovers <jer@gentoo.org> files/snmpd.init:
+  Fix bashishms by Outer Measure (bug #414703).
+
+  16 Jun 2012; Torsten Veller <tove@gentoo.org> -net-snmp-5.4.2.1-r4.ebuild:
+  Remove old
+
+  16 Jun 2012; Torsten Veller <tove@gentoo.org> net-snmp-5.4.2.1-r5.ebuild:
+  Lift keywords from 5.4.2.1-r4 (#342793)
+
+*net-snmp-5.4.3-r1 (02 Jun 2012)
+*net-snmp-5.4.2.1-r5 (02 Jun 2012)
+
+  02 Jun 2012; Torsten Veller <tove@gentoo.org> +net-snmp-5.4.2.1-r5.ebuild,
+  -net-snmp-5.4.3.ebuild, +net-snmp-5.4.3-r1.ebuild, net-snmp-5.5.ebuild,
+  net-snmp-5.6.1.ebuild:
+  Move perl modules to the vendor branch (#342793)
+
+  13 May 2012; <swift@gentoo.org> net-snmp-5.4.2.1-r4.ebuild,
+  net-snmp-5.4.3.ebuild, net-snmp-5.5.ebuild, net-snmp-5.6.1.ebuild:
+  SELinux policy module for SNMP daemons (and tools) is provided by
+  selinux-snmp
+
+  04 Dec 2011; Sven Wegener <swegener@gentoo.org> files/snmpd.init:
+  move reload to extra_started_commands
 
 *net-snmp-5.6.1 (19 Apr 2011)
 

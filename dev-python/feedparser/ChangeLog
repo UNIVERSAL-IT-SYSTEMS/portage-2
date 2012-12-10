@@ -1,6 +1,47 @@
 # ChangeLog for dev-python/feedparser
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/feedparser/ChangeLog,v 1.30 2011/06/23 15:10:42 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/feedparser/ChangeLog,v 1.41 2012/12/09 21:45:45 rafaelmartins Exp $
+
+*feedparser-5.1.3 (09 Dec 2012)
+
+  09 Dec 2012; Rafael G. Martins <rafaelmartins@gentoo.org>
+  +feedparser-5.1.3.ebuild:
+  Version bump.
+
+  08 Jun 2012; Brent Baude <ranger@gentoo.org> feedparser-5.1.2.ebuild:
+  Marking feedparser-5.1.2 ppc for bug 417351
+
+  06 Jun 2012; Brent Baude <ranger@gentoo.org> feedparser-5.1.2.ebuild:
+  Marking feedparser-5.1.2 ppc64 for bug 417351
+
+  26 May 2012; Raúl Porcel <armin76@gentoo.org> feedparser-5.1.2.ebuild:
+  alpha/ia64/sparc/x86 stable wrt #417351
+
+  25 May 2012; Agostino Sarubbo <ago@gentoo.org> feedparser-5.1.2.ebuild:
+  Stable for amd64, wrt bug #417351
+
+*feedparser-5.1.2 (03 May 2012)
+
+  03 May 2012; Sebastian Pipping <sping@gentoo.org> +feedparser-5.1.2.ebuild:
+  Bump to 5.1.2
+
+*feedparser-5.1.1 (20 Mar 2012)
+
+  20 Mar 2012; Sebastian Pipping <sping@gentoo.org> +feedparser-5.1.1.ebuild:
+  Bump to 5.1.1
+
+*feedparser-5.1 (03 Jan 2012)
+
+  03 Jan 2012; Mike Gilbert <floppym@gentoo.org> +feedparser-5.1.ebuild,
+  +files/feedparser-5.1-sgmllib.patch:
+  Version bump for bug 393639. Thanks to Johan Bergström and Arfrever. Includes
+  patch by sping. Fails tests.
+
+  02 Jan 2012; Mike Gilbert <floppym@gentoo.org> Manifest:
+  Fix manifest
+
+  16 Nov 2011; Markos Chandras <hwoarang@gentoo.org> feedparser-5.0.1.ebuild:
+  Restrict tests with Jython. Update HOMEPAGE and LICENSE. Patch by Arfrever.
 
   23 Jun 2011; Markos Chandras <hwoarang@gentoo.org> -feedparser-4.1.ebuild,
   -feedparser-4.2_pre316.ebuild, -feedparser-5.0.ebuild:

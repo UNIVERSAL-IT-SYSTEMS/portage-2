@@ -1,6 +1,38 @@
 # ChangeLog for sci-astronomy/wcstools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/wcstools/ChangeLog,v 1.20 2011/05/03 22:37:08 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/wcstools/ChangeLog,v 1.26 2012/11/14 18:57:29 bicatali Exp $
+
+*wcstools-3.8.7 (14 Nov 2012)
+
+  14 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> +wcstools-3.8.7.ebuild:
+  Version bump
+
+*wcstools-3.8.6 (21 Aug 2012)
+
+  21 Aug 2012; Kacper Kowalik <xarthisius@gentoo.org> +wcstools-3.8.6.ebuild:
+  Version bump
+
+  05 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> wcstools-3.8.5.ebuild:
+  keyword amd64-linux, x86-linux
+
+*wcstools-3.8.5 (06 May 2012)
+
+  06 May 2012; Kacper Kowalik <xarthisius@gentoo.org> +wcstools-3.8.5.ebuild:
+  Version bump, make building static libs optional
+
+*wcstools-3.8.4 (23 Sep 2011)
+
+  23 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  -files/wcstools-3.8.1-autotools.patch, -files/wcstools-3.8.1-format.patch,
+  -files/wcstools-3.8.1-implicits.patch,
+  -files/wcstools-3.8.1-invalid_free.patch,
+  -files/wcstools-3.8.1-overflows.patch, -wcstools-3.8.3.ebuild,
+  +wcstools-3.8.4.ebuild, +files/wcstools-3.8.4-implicits.patch,
+  +files/wcstools-3.8.4-overflows.patch:
+  Version bump, drop old
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Switched herd to sci-astronomy
 
 *wcstools-3.8.3 (03 May 2011)
 
@@ -145,4 +177,3 @@
   +wcstools-3.6.2.ebuild:
   Initial import. Ebuild submitted by Sebastien Fabbro <seb@ist.utl.pt> (bug
   #65666).
-

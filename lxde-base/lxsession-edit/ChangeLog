@@ -1,6 +1,31 @@
 # ChangeLog for lxde-base/lxsession-edit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxsession-edit/ChangeLog,v 1.13 2011/07/26 21:59:28 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxsession-edit/ChangeLog,v 1.20 2012/08/25 00:04:55 hwoarang Exp $
+
+  25 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  -files/lxsession-edit-0.1.1-intltool.patch, -lxsession-edit-0.1.1.ebuild:
+  Remove old LXDE packages
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> lxsession-edit-0.2.0.ebuild:
+  Stable for amd64, wrt bug #430494
+
+  05 Jun 2012; Michael Weber <xmw@gentoo.org> lxsession-edit-0.2.0.ebuild:
+  ppc stable (bug 385189)
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> lxsession-edit-0.1.1.ebuild,
+  lxsession-edit-0.2.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Oct 2011; Markus Meier <maekke@gentoo.org> lxsession-edit-0.2.0.ebuild:
+  arm stable, bug #385189
+
+  07 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  lxsession-edit-0.2.0.ebuild:
+  Stable on amd64 wrt bug #385189
+
+  05 Oct 2011; Andreas Schuerch <nativemad@gentoo.org>
+  lxsession-edit-0.2.0.ebuild:
+  x86 stable, bug 385189
 
 *lxsession-edit-0.2.0 (26 Jul 2011)
 
@@ -56,4 +81,3 @@
   04 Aug 2009; Ben de Groot <yngwin@gentoo.org>
   +lxsession-edit-0.1.1.ebuild, +metadata.xml:
   Initial import.
-

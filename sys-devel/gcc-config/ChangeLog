@@ -1,6 +1,132 @@
 # ChangeLog for sys-devel/gcc-config
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc-config/ChangeLog,v 1.194 2011/06/18 18:46:23 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc-config/ChangeLog,v 1.227 2012/11/19 06:55:06 vapier Exp $
+
+*gcc-config-1.8 (19 Nov 2012)
+
+  19 Nov 2012; Mike Frysinger <vapier@gentoo.org> +gcc-config-1.8.ebuild:
+  Version bump.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> gcc-config-1.7.3.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #429212
+
+  04 Aug 2012; Jeroen Roovers <jer@gentoo.org> gcc-config-1.7.3.ebuild:
+  Stable for HPPA (bug #429212).
+
+  04 Aug 2012; Markos Chandras <hwoarang@gentoo.org> gcc-config-1.7.3.ebuild:
+  Stable on amd64 wrt bug #429212
+
+  02 Aug 2012; Anthony G. Basile <blueness@gentoo.org> gcc-config-1.7.3.ebuild:
+  Stable arm, bug #429212
+
+  01 Aug 2012; Anthony G. Basile <blueness@gentoo.org> gcc-config-1.7.3.ebuild:
+  Stable ppc ppc64, bug #429212
+
+  01 Aug 2012; Jeff Horelick <jdhore@gentoo.org> gcc-config-1.7.3.ebuild:
+  marked x86 per bug 429212
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> gcc-config-1.6.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #419399
+
+  14 Jun 2012; Jeroen Roovers <jer@gentoo.org> gcc-config-1.6.ebuild:
+  Stable for HPPA (bug #419399).
+
+*gcc-config-1.7.3 (10 Jun 2012)
+
+  10 Jun 2012; Mike Frysinger <vapier@gentoo.org> +gcc-config-1.7.3.ebuild:
+  Version bump.
+
+  09 Jun 2012; Markus Meier <maekke@gentoo.org> gcc-config-1.6.ebuild:
+  arm stable, bug #419399
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> gcc-config-1.6.ebuild:
+  Marking gcc-config-1.6 ppc for bug 419399
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> gcc-config-1.6.ebuild:
+  Marking gcc-config-1.6 ppc64 for bug 419399
+
+  04 Jun 2012; Johannes Huber <johu@gentoo.org> gcc-config-1.6.ebuild:
+  Stable for x86, wrt bug #419399
+
+  04 Jun 2012; Agostino Sarubbo <ago@gentoo.org> gcc-config-1.6.ebuild:
+  Stable for amd64, wrt bug #419399
+
+*gcc-config-1.7.2 (31 May 2012)
+
+  31 May 2012; Mike Frysinger <vapier@gentoo.org> +gcc-config-1.7.2.ebuild:
+  Fix clean up in unlikely error handler.
+
+*gcc-config-1.7.1 (13 May 2012)
+
+  13 May 2012; Mike Frysinger <vapier@gentoo.org> +gcc-config-1.7.1.ebuild:
+  Fix installation of cc/f77 helpers #412319 by Yuta SATOH.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> gcc-config-1.7.ebuild:
+  keyword ~amd64-fbsd
+
+*gcc-config-1.7 (14 Apr 2012)
+
+  14 Apr 2012; Mike Frysinger <vapier@gentoo.org> +gcc-config-1.7.ebuild:
+  Version bump.
+
+  23 Mar 2012; Mike Frysinger <vapier@gentoo.org> gcc-config-1.6.ebuild:
+  Update HOMEPAGE to git repo.
+
+*gcc-config-1.6 (22 Mar 2012)
+
+  22 Mar 2012; Mike Frysinger <vapier@gentoo.org> +gcc-config-1.6.ebuild:
+  Version bump.
+
+  15 Mar 2012; Mike Frysinger <vapier@gentoo.org> gcc-config-1.5-r2.ebuild:
+  Mark alpha/arm/ia64/s309/sh/sparc stable #406351.
+
+*gcc-config-1.5.1-r1 (15 Mar 2012)
+
+  15 Mar 2012; Mike Frysinger <vapier@gentoo.org> files/gcc-config-1.5.1,
+  +gcc-config-1.5.1-r1.ebuild:
+  Use CTARGET from the env.d file by default to better work with custom
+  GCC_VER.
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> gcc-config-1.5-r2.ebuild:
+  Marking gcc-config-1.5-r2 ppc for bug 406351
+
+  05 Mar 2012; Jeff Horelick <jdhore@gentoo.org> gcc-config-1.5-r2.ebuild:
+  marked x86 per bug 406351
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> gcc-config-1.5-r2.ebuild:
+  Marking gcc-config-1.5-r2 ppc64 for bug 406351
+
+  02 Mar 2012; Agostino Sarubbo <ago@gentoo.org> gcc-config-1.5-r2.ebuild:
+  Stable for amd64, wrt bug #406351
+
+  01 Mar 2012; Jeroen Roovers <jer@gentoo.org> gcc-config-1.5-r2.ebuild:
+  Stable for HPPA (bug #406351).
+
+*gcc-config-1.5.1 (29 Feb 2012)
+
+  29 Feb 2012; Mike Frysinger <vapier@gentoo.org> +files/gcc-config-1.5.1,
+  +gcc-config-1.5.1.ebuild:
+  Always sort runtime ld.so.conf paths and the install libgcc_s libraries based
+  on version rather than defaulting to the selected profile #297685 by Scott
+  McMurray. Fix gcc-config -E handling of GCC_SPECS #375091 by Bertrand
+  Jacquin.
+
+  07 Dec 2011; Mike Frysinger <vapier@gentoo.org> files/gcc-config-1.4.1,
+  files/gcc-config-1.5:
+  Fix multilib support with @GENTOO_LIBDIR@.
+
+*gcc-config-1.5-r2 (11 Nov 2011)
+
+  11 Nov 2011; Mike Frysinger <vapier@gentoo.org> files/gcc-config-1.5,
+  +gcc-config-1.5-r2.ebuild:
+  Add a fallback when tac is unavailable as suggested by Alexis Ballier
+  #390179.
+
+  11 Nov 2011; Alexis Ballier <aballier@gentoo.org> gcc-config-1.5-r1.ebuild:
+  unkeyword 1.5 on fbsd due to bug #390179
+
+  11 Nov 2011; Ryan Hill <dirtyepic@gentoo.org> gcc-config-1.5-r1.ebuild:
+  Keyword 1.5 (needed for gccgo support).
 
   18 Jun 2011; Mike Frysinger <vapier@gentoo.org> files/wrapper-1.5.2.c:
   Link g77/g95 to gfortran #278772 by Sébastien Fabbro.
@@ -949,4 +1075,3 @@
   28 Oct 2002; Martin Schlemmer <azarah@gentoo.org> :
 
   Initial version.
-

@@ -1,9 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-games/gnome-games-2.28.2.ebuild,v 1.10 2011/04/25 21:17:50 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-games/gnome-games-2.28.2.ebuild,v 1.17 2012/07/13 08:28:11 ulm Exp $
 
-EAPI="3"
+EAPI="4"
 GCONF_DEBUG="no"
+GNOME_TARBALL_SUFFIX="bz2"
 WANT_AUTOMAKE="1.11"
 PYTHON_DEPEND="2"
 
@@ -51,10 +52,10 @@ RDEPEND="
 	!games-board/glchess"
 
 DEPEND="${RDEPEND}
-	>=sys-devel/autoconf-2.53
-	>=dev-util/pkgconfig-0.15
+	virtual/pkgconfig
 	>=dev-util/intltool-0.40.4
 	>=sys-devel/gettext-0.10.40
+	>=sys-devel/libtool-2
 	>=gnome-base/gnome-common-2.12.0
 	>=app-text/scrollkeeper-0.3.8
 	>=app-text/gnome-doc-utils-0.10
@@ -91,6 +92,7 @@ pkg_setup() {
 	#$(use_enable introspection)
 	G2CONF="${G2CONF}
 		$(use_enable test tests)
+		--disable-silent-rules
 		--disable-introspection
 		--disable-card-themes-installer
 		--with-scores-group=${GAMES_GROUP}
@@ -119,11 +121,8 @@ pkg_setup() {
 }
 
 src_prepare() {
-	gnome2_src_prepare
-
-	# disable pyc compiling
-	mv py-compile py-compile.orig
-	ln -s $(type -P true) py-compile
+	python_clean_py-compile_files
+	python_convert_shebangs -r 2 .
 
 	# Fix implicit declaration of yylex.
 	epatch "${FILESDIR}/${PN}-2.26.3-implicit-declaration.patch"
@@ -135,8 +134,16 @@ src_prepare() {
 	# in libgames-support/games_sound.c.
 	epatch "${FILESDIR}/${PN}-2.28.1-conflicting-types-libgames-support.patch"
 
+	# fix underlinking
+	epatch "${FILESDIR}"/${P}-underlinking.patch
+
+	# Fix build failure with automake 1.11.2. #425208
+	epatch "${FILESDIR}"/${P}-automake.patch
+
 	# If calling eautoreconf, this ebuild uses libtool-2
-	eautomake
+	eautoreconf
+
+	gnome2_src_prepare
 }
 
 src_test() {

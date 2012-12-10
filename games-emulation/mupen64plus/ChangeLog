@@ -1,6 +1,34 @@
 # ChangeLog for games-emulation/mupen64plus
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/mupen64plus/ChangeLog,v 1.14 2011/07/13 06:55:27 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/mupen64plus/ChangeLog,v 1.21 2012/05/22 00:04:03 jdhore Exp $
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> mupen64plus-1.5-r2.ebuild:
+  marked x86 per bug 413833
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> mupen64plus-1.5-r2.ebuild:
+  Stable for amd64, wrt bug #413833
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> mupen64plus-1.5-r1.ebuild,
+  mupen64plus-1.5-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Dec 2011; Christian Birchinger <joker@gentoo.org>
+  mupen64plus-1.5-r2.ebuild:
+  Fix typo from tests
+
+  26 Dec 2011; Christian Birchinger <joker@gentoo.org>
+  mupen64plus-1.5-r2.ebuild:
+  Added a check for CC=gcc. Other compilers are not supported at this point
+
+  13 Dec 2011; Christian Birchinger <joker@gentoo.org>
+  mupen64plus-1.5-r2.ebuild:
+  Make it use the user configured CC (also needed as linker because the args
+  are not LD compatible) and CXX. However, this will not cause it to build
+  cleanly with non-gcc compilers like clang
+
+  24 Sep 2011; Mike Frysinger <vapier@gentoo.org> mupen64plus-1.5-r2.ebuild,
+  +files/mupen64plus-1.5-minizip.patch:
+  Use minizip from system zlib #383845 by Dennis Schridde.
 
   13 Jul 2011; Tupone Alfredo <tupone@gentoo.org>
   files/mupen64plus-1.5-gcc46.patch:

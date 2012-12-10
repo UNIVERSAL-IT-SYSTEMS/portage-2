@@ -1,6 +1,251 @@
 # ChangeLog for kde-base/marble
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/marble/ChangeLog,v 1.103 2011/07/31 18:24:35 dilfridge Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-base/marble/ChangeLog,v 1.167 2012/12/08 11:53:13 dilfridge Exp $
+
+  08 Dec 2012; Andreas K. Huettel <dilfridge@gentoo.org> -marble-4.8.5.ebuild:
+  Drop KDE 4.8
+
+*marble-4.9.4 (05 Dec 2012)
+
+  05 Dec 2012; Alexey Shvetsov <alexxy@gentoo.org> +marble-4.9.4.ebuild:
+  Version bump KDE SC 4.9.4
+
+  30 Nov 2012; <ago@gentoo.org> marble-4.9.3.ebuild:
+  Stable for ppc, wrt bug #442394
+
+  23 Nov 2012; Agostino Sarubbo <ago@gentoo.org> marble-4.9.3.ebuild:
+  Stable for x86, wrt bug #442394
+
+  23 Nov 2012; Agostino Sarubbo <ago@gentoo.org> marble-4.9.3.ebuild:
+  Stable for amd64, wrt bug #442394
+
+  13 Nov 2012; Johannes Huber <johu@gentoo.org> -marble-4.9.2.ebuild:
+  Remove KDE SC 4.9.2
+
+  13 Nov 2012; Johannes Huber <johu@gentoo.org> -marble-4.9.1.ebuild:
+  Remove KDE SC 4.9.1
+
+*marble-4.9.3 (08 Nov 2012)
+
+  08 Nov 2012; <creffett@gentoo.org> +marble-4.9.3.ebuild:
+  Version bump KDE SC 4.9.3
+
+*marble-4.9.2 (02 Oct 2012)
+
+  02 Oct 2012; Johannes Huber <johu@gentoo.org> +marble-4.9.2.ebuild:
+  Version bump KDE SC 4.9.2
+
+  21 Sep 2012; Johannes Huber <johu@gentoo.org> -marble-4.9.0.ebuild:
+  Remove KDE SC 4.9.0
+
+*marble-4.9.1 (04 Sep 2012)
+
+  04 Sep 2012; Johannes Huber <johu@gentoo.org> +marble-4.9.1.ebuild,
+  +files/marble-4.9.1-shapelib.patch:
+  Version bump KDE SC 4.9.1
+
+  03 Sep 2012; Johannes Huber <johu@gentoo.org>
+  -files/marble-4.7-magic-r1.patch, -files/marble-4.8.0-lower-qt48.patch,
+  -files/marble-4.8.0-qt48.patch:
+  Remove old.
+
+  03 Sep 2012; Johannes Huber <johu@gentoo.org> -marble-4.7.4.ebuild:
+  Remove KDE SC 4.7.4
+
+  03 Sep 2012; Johannes Huber <johu@gentoo.org> -marble-4.8.3.ebuild:
+  Remove KDE SC 4.8.3
+
+  03 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> marble-4.8.5.ebuild:
+  Stable on ppc wrt bug#431892.
+
+  02 Sep 2012; Agostino Sarubbo <ago@gentoo.org> marble-4.8.5.ebuild:
+  Stable for x86, wrt bug #431892
+
+  02 Sep 2012; Agostino Sarubbo <ago@gentoo.org> marble-4.8.5.ebuild:
+  Stable for amd64, wrt bug #431892
+
+  17 Aug 2012; Johannes Huber <johu@gentoo.org> -marble-4.8.4.ebuild:
+  Remove KDE SC 4.8.4
+
+*marble-4.8.5 (07 Aug 2012)
+
+  07 Aug 2012; Johannes Huber <johu@gentoo.org> +marble-4.8.5.ebuild:
+  Version bump KDE SC 4.8.5
+
+  02 Aug 2012; Michael Palimaka <kensington@gentoo.org> marble-4.8.4.ebuild,
+  marble-4.9.0.ebuild:
+  Fix comment.
+
+  02 Aug 2012; Michael Palimaka <kensington@gentoo.org> marble-4.8.4.ebuild,
+  marble-4.9.0.ebuild:
+  Fix dependencies, thanks to Bash Vi <bash.vi@gmail.com> in bug #429346.
+
+*marble-4.9.0 (01 Aug 2012)
+
+  01 Aug 2012; Johannes Huber <johu@gentoo.org> +marble-4.9.0.ebuild:
+  Version bump KDE SC 4.9.0
+
+  15 Jul 2012; Michael Palimaka <kensington@gentoo.org> marble-4.8.3.ebuild,
+  marble-4.8.4.ebuild:
+  Add missing slot dependencies on Qt.
+
+  06 Jul 2012; Andreas K. Huettel <dilfridge@gentoo.org> marble-4.8.3.ebuild,
+  marble-4.8.4.ebuild:
+  Add manual qt dependencies for the USE=-kde case, bug 414165
+
+*marble-4.8.4 (21 Jun 2012)
+
+  21 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org> +marble-4.8.4.ebuild:
+  Version bump KDE SC 4.8.4
+
+  24 May 2012; Johannes Huber <johu@gentoo.org> -marble-4.8.1.ebuild:
+  Remove KDE SC 4.8.1
+
+  24 May 2012; Agostino Sarubbo <ago@gentoo.org> marble-4.8.3.ebuild:
+  Stable for x86, wrt bug #414605
+
+  18 May 2012; Agostino Sarubbo <ago@gentoo.org> marble-4.8.3.ebuild:
+  Stable for amd64, wrt bug #414605
+
+  18 May 2012; Joseph Jezak <josejx@gentoo.org> marble-4.8.3.ebuild:
+  Marked ~ppc ~ppc64 for bug #402989.
+
+  08 May 2012; Johannes Huber <johu@gentoo.org> -marble-4.8.2.ebuild:
+  Remove KDE SC 4.8.2
+
+  04 May 2012; Johannes Huber <johu@gentoo.org> marble-4.7.4.ebuild,
+  marble-4.8.1.ebuild, marble-4.8.2.ebuild, marble-4.8.3.ebuild:
+  Remove useless sed which fails and produces an 'no input files' message. The
+  cause of the sed is fixed upstream since 2008/11/16. Fixes bug #414635.
+
+*marble-4.8.3 (03 May 2012)
+
+  03 May 2012; Johannes Huber <johu@gentoo.org> +marble-4.8.3.ebuild:
+  Version bump KDE SC 4.8.3
+
+  18 Apr 2012; Markus Meier <maekke@gentoo.org> marble-4.8.1.ebuild:
+  x86 stable, bug #409403
+
+*marble-4.8.2 (04 Apr 2012)
+
+  04 Apr 2012; Johannes Huber <johu@gentoo.org> +marble-4.8.2.ebuild:
+  Version bump KDE SC 4.8.2
+
+  04 Apr 2012; Agostino Sarubbo <ago@gentoo.org> marble-4.8.1.ebuild:
+  Stable for amd64, wrt bug #409403
+
+  23 Mar 2012; Johannes Huber <johu@gentoo.org> marble-4.8.1.ebuild:
+  Whitespace.
+
+  23 Mar 2012; Johannes Huber <johu@gentoo.org> marble-4.8.1.ebuild:
+  Add required use by Ian Delaney <johneed@hotmail.com> fixes bug #405469.
+
+  23 Mar 2012; Johannes Huber <johu@gentoo.org> -marble-4.8.0.ebuild,
+  -marble-4.8.0-r1.ebuild:
+  Remove KDE SC 4.8.0
+
+*marble-4.8.1 (06 Mar 2012)
+
+  06 Mar 2012; Andreas K. Huettel <dilfridge@gentoo.org> +marble-4.8.1.ebuild:
+  Version bump KDE SC 4.8.1
+
+  21 Feb 2012; Johannes Huber <johu@gentoo.org> -files/marble-4.5.5-gpsd.patch,
+  -files/marble-4.6.2-magic.patch:
+  Remove old.
+
+  20 Feb 2012; Johannes Huber <johu@gentoo.org> -marble-4.6.3.ebuild:
+  Remove KDE SC 4.6.3
+
+  18 Feb 2012; nixnut <nixnut@gentoo.org> marble-4.7.4.ebuild:
+  ppc stable #396359
+
+*marble-4.8.0-r1 (09 Feb 2012)
+
+  09 Feb 2012; Johannes Huber <johu@gentoo.org>
+  +files/marble-4.8.0-lower-qt48.patch, +files/marble-4.8.0-qt48.patch,
+  +marble-4.8.0-r1.ebuild:
+  Revision bump adds upstream patches for Qt, maybe related to bug #402777.
+
+*marble-4.8.0 (25 Jan 2012)
+
+  25 Jan 2012; Johannes Huber <johu@gentoo.org> +marble-4.8.0.ebuild:
+  Version bump KDE SC 4.8.0
+
+  17 Jan 2012; Johannes Huber <johu@gentoo.org> -marble-4.7.3.ebuild:
+  Remove KDE SC 4.7.3
+
+  16 Jan 2012; Agostino Sarubbo <ago@gentoo.org> marble-4.7.4.ebuild:
+  Stable for amd64, wrt bug #396359
+
+  09 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> marble-4.7.4.ebuild:
+  x86 stable wrt bug #396359
+
+  18 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org> -marble-4.6.5.ebuild:
+  Drop KDE 4.6.5
+
+  12 Dec 2011; Jonathan Callen <abcd@gentoo.org> -files/marble-4.7-magic.patch:
+  rm old files
+
+*marble-4.7.4 (11 Dec 2011)
+
+  11 Dec 2011; Alexey Shvetsov <alexxy@gentoo.org> +marble-4.7.4.ebuild:
+  Version bump KDE SC 4.7.4
+
+  07 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -marble-4.7.2-r1.ebuild:
+  Drop KDE 4.7.2
+
+  07 Dec 2011; Markos Chandras <hwoarang@gentoo.org> marble-4.7.3.ebuild:
+  Stable on amd64 wrt bug #388279
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> marble-4.7.3.ebuild:
+  x86 stable wrt bug #388279
+
+  03 Nov 2011; Theo Chatzimichos <tampakrap@gentoo.org> marble-4.7.2-r1.ebuild,
+  marble-4.7.3.ebuild:
+  Remove src_install, remove whitespace
+
+*marble-4.7.3 (02 Nov 2011)
+
+  02 Nov 2011; Alexey Shvetsov <alexxy@gentoo.org> +marble-4.7.3.ebuild:
+  Version bump KDE SC 4.7.3
+
+  29 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  marble-4.7.2-r1.ebuild:
+  FindMarbleWidget.cmake has not been there for a while already, so dont try to
+  install it, bug 388839
+
+*marble-4.7.2-r1 (28 Oct 2011)
+
+  28 Oct 2011; Jonathan Callen <abcd@gentoo.org> +marble-4.7.2-r1.ebuild,
+  -marble-4.7.2.ebuild:
+  Revbump, use EAPI=4
+
+  28 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org> -marble-4.7.1.ebuild:
+  Drop KDEpim 4.6.1 and KDE 4.7.1
+
+  15 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org> -marble-4.7.0.ebuild,
+  -marble-4.7.0-r1.ebuild:
+  Drop KDE 4.7.0
+
+*marble-4.7.2 (06 Oct 2011)
+
+  06 Oct 2011; Alexey Shvetsov <alexxy@gentoo.org> +marble-4.7.2.ebuild:
+  Version bump KDE SC 4.7.2
+
+*marble-4.7.1 (07 Sep 2011)
+
+  07 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> +marble-4.7.1.ebuild:
+  Version bump KDE SC 4.7.1
+
+  15 Aug 2011; Markus Meier <maekke@gentoo.org> marble-4.6.5.ebuild:
+  x86 stable, bug #377465
+
+  12 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org> -marble-4.6.4.ebuild:
+  Drop KDE 4.6.4
+
+  09 Aug 2011; Markos Chandras <hwoarang@gentoo.org> marble-4.6.5.ebuild:
+  Stable on amd64 wrt bug #377465
 
 *marble-4.7.0-r1 (31 Jul 2011)
 
@@ -435,4 +680,3 @@
   18 Jan 2008; Ingmar Vanhassel <ingmar@gentoo.org>
   +files/marble-4.0.0-fix-tests.patch, +metadata.xml, +marble-4.0.0.ebuild:
   Added KDE 4.0.0's marble.
-

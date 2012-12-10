@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/telepathy-inspector/telepathy-inspector-0.5.3.ebuild,v 1.2 2009/03/29 15:41:50 solar Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/telepathy-inspector/telepathy-inspector-0.5.3.ebuild,v 1.5 2012/05/05 02:18:51 jdhore Exp $
 
 EAPI=1
 
@@ -12,7 +12,7 @@ SRC_URI="http://telepathy.freedesktop.org/releases/telepathy-inspector/${P}.tar.
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~arm ~amd64 ~x86"
+KEYWORDS="~arm ~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND="dev-libs/glib:2
@@ -23,7 +23,7 @@ RDEPEND="dev-libs/glib:2
 DEPEND="${RDEPEND}
 	dev-lang/python
 	dev-libs/libxslt
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"

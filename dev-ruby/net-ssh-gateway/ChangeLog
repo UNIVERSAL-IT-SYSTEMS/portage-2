@@ -1,6 +1,45 @@
 # ChangeLog for dev-ruby/net-ssh-gateway
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/net-ssh-gateway/ChangeLog,v 1.21 2011/07/22 20:55:24 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/net-ssh-gateway/ChangeLog,v 1.31 2012/08/19 17:09:31 graaff Exp $
+
+  19 Aug 2012; Hans de Graaff <graaff@gentoo.org>
+  net-ssh-gateway-1.1.0-r1.ebuild:
+  Use EAPI=4. Avoid echoe dependency by calling doc and test directly using the
+  new recipes/methods.
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+*net-ssh-gateway-1.1.0-r1 (11 Aug 2012)
+
+  11 Aug 2012; Benedikt Böhm <hollow@gentoo.org>
+  -net-ssh-gateway-1.0.1-r1.ebuild, +net-ssh-gateway-1.1.0-r1.ebuild:
+  add ruby19 support
+
+  11 Jul 2012; Andreas Schuerch <nativemad@gentoo.org>
+  net-ssh-gateway-1.1.0.ebuild:
+  x86 stable, see bug 395657
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> net-ssh-gateway-1.1.0.ebuild:
+  Stable for ppc; bug #395657
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org>
+  net-ssh-gateway-1.0.1-r1.ebuild, net-ssh-gateway-1.1.0.ebuild:
+  Drop ia64/sparc keywords
+
+  11 Mar 2012; Brent Baude <ranger@gentoo.org> net-ssh-gateway-1.1.0.ebuild:
+  Marking net-ssh-gateway-1.1.0 ppc64 for bug 395657
+
+  26 Dec 2011; Hans de Graaff <graaff@gentoo.org>
+  net-ssh-gateway-1.0.1-r1.ebuild:
+  Fix blocker to actually work as intended. Fixes bug 339654.
+
+  22 Dec 2011; Agostino Sarubbo <ago@gentoo.org> net-ssh-gateway-1.1.0.ebuild:
+  Stable for AMD64, wrt bug #395657
+
+  20 Aug 2011; Hans de Graaff <graaff@gentoo.org>
+  -net-ssh-gateway-1.0.1.ebuild:
+  Remove old version.
 
   22 Jul 2011; Mark Loeser <halcy0n@gentoo.org>
   net-ssh-gateway-1.0.1-r1.ebuild:
@@ -91,4 +130,3 @@
   20 Sep 2008; Hans de Graaff <graaff@gentoo.org> +metadata.xml,
   +net-ssh-gateway-1.0.0.ebuild:
   Initial import for Capistrano 2.5.0.
-

@@ -1,6 +1,25 @@
 # ChangeLog for app-emulation/spim
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/spim/ChangeLog,v 1.58 2010/11/08 19:45:03 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/spim/ChangeLog,v 1.62 2012/11/23 19:03:25 ulm Exp $
+
+  23 Nov 2012; Ulrich Müller <ulm@gentoo.org> spim-8.0-r1.ebuild:
+  Fix LICENSE, 3-clause BSD license according to headers in source files.
+
+  26 Sep 2012; Michael Palimaka <kensington@gentoo.org>
+  -files/spim-7.2.1-c99.patch, -files/spim-7.2.1-envvar-exception.patch,
+  -files/spim-7.2.1-multiple-exception.patch, -files/spim-7.2.1-ptrsize.patch,
+  -files/spim-7.2.1-string-handling-fix.patch,
+  -files/spim-7.2.1-string-stream.patch, -files/spim-7.5-respect_env.patch,
+  -files/spim-8.0-respect_env.patch, -spim-7.2.1-r3.ebuild, -spim-7.3.ebuild,
+  -spim-7.5.ebuild, metadata.xml, spim-8.0-r1.ebuild:
+  Update HOMEPAGE and add upstream metadata. Remove old.
+
+  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -spim-7.2.1-r2.ebuild,
+  -spim-7.4.ebuild, -spim-8.0.ebuild:
+  Remove old
+
+  22 Nov 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #195316; remove old.
 
   08 Nov 2010; Jeroen Roovers <jer@gentoo.org> spim-8.0-r1.ebuild:
   Stable for PPC (bug #328973).

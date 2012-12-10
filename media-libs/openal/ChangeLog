@@ -1,6 +1,41 @@
 # ChangeLog for media-libs/openal
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/openal/ChangeLog,v 1.143 2011/03/19 18:56:45 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/openal/ChangeLog,v 1.154 2012/11/03 09:11:10 ago Exp $
+
+  03 Nov 2012; <ago@gentoo.org> openal-1.14.ebuild:
+  Stable for amd64, wrt bug #440002
+
+*openal-1.14 (30 Jul 2012)
+
+  30 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +openal-1.14.ebuild,
+  metadata.xml:
+  Version bump wrt #412679 by Rafał Mużyło. New USE flag for building 
+  and installing the FFmpeg based `alstream` example application.
+
+  30 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> -openal-1.11.753.ebuild,
+  -openal-1.12.854.ebuild:
+  old
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> openal-1.13.ebuild:
+  keyword ~amd64-fbsd
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> openal-1.13.ebuild:
+  ppc/ppc64 stable wrt #388577
+
+  26 Nov 2011; Raúl Porcel <armin76@gentoo.org> openal-1.13.ebuild:
+  alpha/ia64/sparc stable wrt #388577
+
+  06 Nov 2011; Markus Meier <maekke@gentoo.org> openal-1.13.ebuild:
+  arm stable, bug #388577
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> openal-1.13.ebuild:
+  x86 stable wrt bug #388577
+
+  30 Oct 2011; Jeroen Roovers <jer@gentoo.org> openal-1.13.ebuild:
+  Stable for HPPA (bug #388577).
+
+  29 Oct 2011; Markos Chandras <hwoarang@gentoo.org> openal-1.13.ebuild:
+  Stable on amd64 wrt bug #388577
 
 *openal-1.13 (19 Mar 2011)
 

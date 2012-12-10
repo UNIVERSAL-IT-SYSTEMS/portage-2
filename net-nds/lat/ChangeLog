@@ -1,6 +1,25 @@
 # ChangeLog for net-nds/lat
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/lat/ChangeLog,v 1.8 2010/07/28 13:00:06 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-nds/lat/ChangeLog,v 1.14 2012/10/17 05:01:27 kensington Exp $
+
+  17 Oct 2012; Michael Palimaka <kensington@gentoo.org> -lat-1.2.2.ebuild:
+  Remove old.
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> lat-1.2.3.ebuild:
+  x86 stable wrt bug #436336
+
+  16 Oct 2012; <ago@gentoo.org> lat-1.2.3.ebuild:
+  Stable for amd64, wrt bug #436336
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> lat-1.2.2.ebuild,
+  lat-1.2.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  20 Mar 2012; Pacho Ramos <pacho@gentoo.org> lat-1.2.3.ebuild:
+  Fix dep on avahi[mono] (#348068 by Jens Pranaitis), and tests (#295889).
+
+  18 Mar 2012; Pacho Ramos <pacho@gentoo.org> lat-1.2.3.ebuild, metadata.xml:
+  Drop maintainer due retirement, bug #391429.
 
   28 Jul 2010; Diego E. Pettenò <flameeyes@gentoo.org> lat-1.2.3.ebuild:
   Add -j1 as a workaround (bug #330203).
@@ -71,4 +90,3 @@
   +metadata.xml:
   New ebuild for bug #86854, based on the original ebuild available on the
   project page.
-

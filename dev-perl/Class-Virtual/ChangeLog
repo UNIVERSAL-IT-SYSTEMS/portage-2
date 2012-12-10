@@ -1,6 +1,20 @@
 # ChangeLog for dev-perl/Class-Virtual
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-Virtual/ChangeLog,v 1.20 2011/02/08 09:25:37 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-Virtual/ChangeLog,v 1.24 2012/06/24 12:59:59 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Class-Virtual-0.60.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Class-Virtual-0.60.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Class-Virtual-0.60.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org> +Class-Virtual-0.60.0.ebuild:
+  Change version scheme
 
 *Class-Virtual-0.60 (08 Feb 2011)
 
@@ -83,4 +97,3 @@
   06 Oct 2004; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Class-Virtual-0.04.ebuild:
   Dep for Plucene - perl port of lucene
-

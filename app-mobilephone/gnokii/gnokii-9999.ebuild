@@ -1,31 +1,32 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/gnokii/gnokii-9999.ebuild,v 1.8 2011/03/27 12:11:23 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/gnokii/gnokii-9999.ebuild,v 1.11 2012/09/11 04:17:55 ottxor Exp $
 
-EAPI=2
+EAPI=4
 
 inherit eutils linux-info autotools
 
 HOMEPAGE="http://www.gnokii.org/"
 if [ "$PV" != "9999" ]; then
 	SRC_URI="http://www.gnokii.org/download/${PN}/${P}.tar.bz2"
-	KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
+	KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
 else
 	SRC_URI=""
 	KEYWORDS=""
-	EGIT_REPO_URI="git://git.savannah.nongnu.org/gnokii.git"
-	inherit git
+	EGIT_REPO_URI="git://git.savannah.nongnu.org/${PN}.git
+		http://git.savannah.gnu.org/r/${PN}.git"
+	inherit git-2
 fi
 DESCRIPTION="user space driver and tools for use with mobile phones"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="nls bluetooth ical irda sms postgres mysql usb X debug"
+IUSE="nls bluetooth ical irda sms postgres mysql usb X debug +pcsc-lite"
 
 RDEPEND="!app-mobilephone/smstools
-	sys-apps/pcsc-lite
+	pcsc-lite? ( sys-apps/pcsc-lite )
 	X? ( x11-libs/gtk+:2 )
-	bluetooth? ( net-wireless/bluez )
+	bluetooth? ( kernel_linux? ( net-wireless/bluez ) )
 	sms? (
 		!app-mobilephone/smstools
 		>=dev-libs/glib-2
@@ -77,23 +78,21 @@ src_configure() {
 		$(use_enable debug rlpdebug) \
 		--enable-security \
 		--disable-unix98test \
-		--enable-libpcsclite \
-		|| die "configure failed"
+		$(use_enable pcsc-lite libpcsclite)
 }
 
 src_install() {
-	einstall || die "make install failed"
+	default
 
 	insinto /etc
 	doins Docs/sample/gnokiirc
-	sed -i -e 's:/usr/local:/usr:' "${D}/etc/gnokiirc"
+	sed -i -e 's:/usr/local:'"${EPREFIX}"'/usr:' "${ED}/etc/gnokiirc"
 
 	# only one file needs suid root to make a pseudo device
 	fperms 4755 /usr/sbin/mgnokiidev
 
 	if use X; then
-		insinto /usr/share/pixmaps
-		newins Docs/sample/logo/gnokii.xpm xgnokii.xpm
+		newicon Docs/sample/logo/gnokii.xpm xgnokii.xpm
 	fi
 
 	if use sms; then
@@ -111,9 +110,9 @@ pkg_postinst() {
 	elog "which your phone is connected to."
 	elog "The simple way of doing that is to add your user to the uucp group."
 	if [ "$PV" == "9999" ]; then
-	    elog "This is the GIT version of ${PN}. It is experimental but may have important bug fixes."
-	    elog "You can keep track of the most recent commits at:"
-	    elog "    http://git.savannah.gnu.org/cgit/gnokii.git/"
-	    elog "Whenever there is a change you are interested in, you can re-emerge ${P}."
+		elog "This is the GIT version of ${PN}. It is experimental but may have important bug fixes."
+		elog "You can keep track of the most recent commits at:"
+		elog "    http://git.savannah.gnu.org/cgit/gnokii.git/"
+		elog "Whenever there is a change you are interested in, you can re-emerge ${P}."
 	fi
 }

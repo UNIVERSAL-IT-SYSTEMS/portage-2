@@ -1,6 +1,13 @@
 # ChangeLog for dev-ruby/rubytorrent
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubytorrent/ChangeLog,v 1.11 2010/07/11 09:31:42 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubytorrent/ChangeLog,v 1.13 2012/08/14 18:55:51 flameeyes Exp $
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> rubytorrent-0.3.ebuild,
+  rubytorrent-0.3-r1.ebuild:
+  Drop ia64/sparc keywords
 
 *rubytorrent-0.3-r1 (11 Jul 2010)
 
@@ -41,4 +48,3 @@
   15 Feb 2005; Michael Kohl <citizen428@gentoo.org> +metadata.xml,
   +rubytorrent-0.3.ebuild:
   Initial import.
-

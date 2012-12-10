@@ -1,6 +1,234 @@
 # ChangeLog for sys-devel/binutils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils/ChangeLog,v 1.415 2011/06/28 02:23:10 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils/ChangeLog,v 1.474 2012/11/26 18:01:14 vapier Exp $
+
+*binutils-2.23.51.0.6 (26 Nov 2012)
+
+  26 Nov 2012; Mike Frysinger <vapier@gentoo.org> +binutils-2.23.51.0.6.ebuild:
+  Version bump.
+
+*binutils-2.23.1 (15 Nov 2012)
+
+  15 Nov 2012; Mike Frysinger <vapier@gentoo.org> +binutils-2.23.1.ebuild:
+  Version bump.
+
+*binutils-2.23.51.0.5 (13 Nov 2012)
+
+  13 Nov 2012; Mike Frysinger <vapier@gentoo.org> +binutils-2.23.51.0.5.ebuild:
+  Version bump.
+
+  02 Nov 2012; Mike Frysinger <vapier@gentoo.org> binutils-2.23.51.0.3.ebuild,
+  binutils-2.23.ebuild:
+  Drop ld sysroot patch since upstream has merged a proper fix.
+
+*binutils-2.23 (24 Oct 2012)
+
+  24 Oct 2012; Mike Frysinger <vapier@gentoo.org> +binutils-2.23.ebuild:
+  Version bump.
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org> binutils-2.22-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #414865
+
+*binutils-2.23.51.0.3 (19 Sep 2012)
+
+  19 Sep 2012; Mike Frysinger <vapier@gentoo.org> +binutils-2.23.51.0.3.ebuild:
+  Version bump.
+
+*binutils-2.23.51.0.2 (11 Sep 2012)
+
+  11 Sep 2012; Mike Frysinger <vapier@gentoo.org> +binutils-2.23.51.0.2.ebuild:
+  Version bump.
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> binutils-2.22-r1.ebuild:
+  ppc stable (bug 414865).
+
+  10 Aug 2012; Mike Frysinger <vapier@gentoo.org> binutils-2.22-r1.ebuild:
+  Build with -fPIC on s390x #430554 by Raúl Porcel.
+
+  08 Aug 2012; Mike Frysinger <vapier@gentoo.org> binutils-2.23.51.0.1.ebuild:
+  Fix applying of lib32 patch as reported by Arfrever.
+
+*binutils-2.23.51.0.1 (07 Aug 2012)
+
+  07 Aug 2012; Mike Frysinger <vapier@gentoo.org> +binutils-2.23.51.0.1.ebuild:
+  Version bump.
+
+  07 Aug 2012; Mike Frysinger <vapier@gentoo.org> -binutils-2.16.1-r3.ebuild,
+  -binutils-2.16.91.0.6.ebuild, -binutils-2.18-r3.ebuild,
+  -binutils-2.18-r4.ebuild, -binutils-2.22.52.0.1.ebuild,
+  -binutils-2.22.52.0.2.ebuild, -binutils-2.22.52.0.3.ebuild:
+  Move older versions to toolchain overlay.
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> binutils-2.22-r1.ebuild:
+  Marking binutils-2.22-r1 ppc64 for bug 414865
+
+  07 Aug 2012; Agostino Sarubbo <ago@gentoo.org> binutils-2.22-r1.ebuild:
+  Stable for X86, wrt bug #414865
+
+  07 Aug 2012; Agostino Sarubbo <ago@gentoo.org> binutils-2.22-r1.ebuild:
+  Stable for amd64, wrt bug #424865
+
+  07 Aug 2012; Raúl Porcel <armin76@gentoo.org> binutils-2.22-r1.ebuild:
+  s390 stable wrt #414865
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> binutils-2.22-r1.ebuild:
+  Marking binutils-2.22-r1 ppc64 for bug 414865
+
+  05 Aug 2012; Markus Meier <maekke@gentoo.org> binutils-2.22-r1.ebuild:
+  arm stable, bug #414865
+
+  02 Aug 2012; Richard Yao <ryao@gentoo.org> binutils-2.22.90.ebuild:
+  Set -*-fbsd keywords due to -ldl issue
+
+  01 Aug 2012; Jeroen Roovers <jer@gentoo.org> binutils-2.22-r1.ebuild:
+  Stable for HPPA (bug #414865).
+
+  28 Jul 2012; Mike Frysinger <vapier@gentoo.org> binutils-2.22.90.ebuild:
+  Fix applying of lib32 patch #428366 by Alexandre.
+
+*binutils-2.22.90 (27 Jul 2012)
+
+  27 Jul 2012; Mike Frysinger <vapier@gentoo.org> +binutils-2.22.90.ebuild:
+  Version bump.
+
+*binutils-2.22.52.0.4 (06 Jul 2012)
+
+  06 Jul 2012; Mike Frysinger <vapier@gentoo.org> +binutils-2.22.52.0.4.ebuild:
+  Version bump.
+
+  15 Jun 2012; Naohiro Aota <naota@gentoo.org> binutils-2.22-r1.ebuild:
+  Add ~x86-fbsd.
+
+  15 Jun 2012; Richard Yao <ryao@gentoo.org> binutils-2.22-r1.ebuild:
+  Modify FBSD patch to include update to ./configure script, bug #421069
+
+  13 Jun 2012; Richard Yao <ryao@gentoo.org> binutils-2.22-r1.ebuild:
+  Push out fix for build failure on FreeBSD (bug #347931) by Naohiro Aota and keyword ~amd64-fbsd
+
+  31 May 2012; Mike Frysinger <vapier@gentoo.org> binutils-2.20.1-r1.ebuild:
+  Push out fix for POSIX test behavior #417549 by Richard Yao.
+
+  22 May 2012; Mike Frysinger <vapier@gentoo.org> binutils-2.22-r1.ebuild,
+  binutils-2.22.52.0.1.ebuild, binutils-2.22.52.0.2.ebuild,
+  binutils-2.22.52.0.3.ebuild:
+  Drop patch-2.6 requirement now that the profile pulls it in.
+
+*binutils-2.22.52.0.3 (09 May 2012)
+
+  09 May 2012; Mike Frysinger <vapier@gentoo.org> +binutils-2.22.52.0.3.ebuild:
+  Version bump.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> binutils-2.20.1-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  26 Apr 2012; Mike Frysinger <vapier@gentoo.org> -binutils-2.21.1.ebuild,
+  -binutils-2.21.52.0.1.ebuild, -binutils-2.21.52.0.2.ebuild,
+  -binutils-2.21.53.0.1.ebuild, -binutils-2.21.53.0.2.ebuild,
+  -binutils-2.21.ebuild, -binutils-2.22.ebuild:
+  Move older versions to the toolchain overlay.
+
+*binutils-2.22.52.0.2 (26 Apr 2012)
+
+  26 Apr 2012; Mike Frysinger <vapier@gentoo.org> +binutils-2.22.52.0.2.ebuild:
+  Version bump.
+
+  04 Mar 2012; Mike Frysinger <vapier@gentoo.org> binutils-2.22-r1.ebuild:
+  Add fix from upstream for hppa/plt handling #406349 by Jeroen Roovers.
+
+  06 Feb 2012; Mike Frysinger <vapier@gentoo.org> binutils-2.22.52.0.1.ebuild:
+  Drop KEYWORDS -- didn't mean to add those.
+
+*binutils-2.22.52.0.1 (05 Feb 2012)
+
+  05 Feb 2012; Mike Frysinger <vapier@gentoo.org> +binutils-2.22.52.0.1.ebuild:
+  Version bump.
+
+*binutils-9999 (05 Feb 2012)
+
+  05 Feb 2012; Mike Frysinger <vapier@gentoo.org> +binutils-9999.ebuild:
+  Add live git version.
+
+  28 Dec 2011; Mark Loeser <halcy0n@gentoo.org> binutils-2.21.1-r1.ebuild:
+  Stable for ppc/ppc64; bug #378485
+
+*binutils-2.22-r1 (11 Dec 2011)
+
+  11 Dec 2011; Mike Frysinger <vapier@gentoo.org> +binutils-2.22-r1.ebuild:
+  Add fixes from upstream for ppc/hppa/s390x, and a hardened fix for static
+  linking.
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> binutils-2.21.1-r1.ebuild:
+  sparc stable wrt #378485
+
+  05 Dec 2011; Mike Frysinger <vapier@gentoo.org> Manifest:
+  Update patch tarball digests to match published one #393233 by Jerome Kurtz.
+
+  05 Dec 2011; Mike Frysinger <vapier@gentoo.org> binutils-2.21.1-r1.ebuild:
+  Fix building on s390x systems #391431 by Raúl Porcel.
+
+  23 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org> binutils-2.22.ebuild:
+  QA: make sure to depend on a patch(1) version that actually applies all the
+  patches.
+
+*binutils-2.22 (21 Nov 2011)
+
+  21 Nov 2011; Mike Frysinger <vapier@gentoo.org> +binutils-2.22.ebuild:
+  Version bump.
+
+  19 Nov 2011; Mike Frysinger <vapier@gentoo.org> binutils-2.21.1-r1.ebuild:
+  Mark alpha/arm/ia64/m68k/s390/sh stable #378485.
+
+  17 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  binutils-2.21.1-r1.ebuild:
+  x86 stable wrt bug #378485
+
+  16 Oct 2011; Mike Frysinger <vapier@gentoo.org> binutils-2.21.1-r1.ebuild:
+  Add fix from upstream for mips ld segfaults #387055 by Matt Turner.
+
+  06 Oct 2011; Jeroen Roovers <jer@gentoo.org> binutils-2.21.1-r1.ebuild:
+  Stable for HPPA (bug #378485).
+
+  22 Sep 2011; Mike Frysinger <vapier@gentoo.org> binutils-2.18-r3.ebuild,
+  binutils-2.18-r4.ebuild, binutils-2.19.1-r1.ebuild,
+  binutils-2.20.1-r1.ebuild, binutils-2.21.1.ebuild, binutils-2.21.1-r1.ebuild:
+  Drop mirror restrict now that most should be synced.
+
+  19 Sep 2011; Mike Frysinger <vapier@gentoo.org> binutils-2.21.1-r1.ebuild:
+  Fix up most test failures #379105.
+
+  18 Sep 2011; Mike Frysinger <vapier@gentoo.org> binutils-2.18-r3.ebuild,
+  binutils-2.18-r4.ebuild, binutils-2.19.1-r1.ebuild,
+  binutils-2.20.1-r1.ebuild, binutils-2.21.1.ebuild, binutils-2.21.1-r1.ebuild:
+  Temporarily set some ebuilds to ignore Gentoo mirrors since upstream
+  regenerated their tarballs #381831 by Randy Barlow.
+
+  25 Aug 2011; Markos Chandras <hwoarang@gentoo.org> binutils-2.21.1.ebuild,
+  binutils-2.21.1-r1.ebuild:
+  Restore ~amd64 to 2.21.1 and stabilize 2.21.1-r1 instead. Bug #378485
+
+  22 Aug 2011; Tony Vroon <chainsaw@gentoo.org> binutils-2.21.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney &
+  Agostino "ago" Sarubbo in bug #378485. The test suite has gained a failure,
+  but the package was deemed functional.
+
+*binutils-2.21.1-r1 (22 Aug 2011)
+
+  22 Aug 2011; Mike Frysinger <vapier@gentoo.org> +binutils-2.21.1-r1.ebuild:
+  Fix up pax patch due to local variable renames #379321 by Sven Vermeulen.
+
+  22 Aug 2011; Mike Frysinger <vapier@gentoo.org> -binutils-2.21.51.0.1.ebuild,
+  -binutils-2.21.51.0.2.ebuild, -binutils-2.21.51.0.3.ebuild,
+  -binutils-2.21.51.0.4.ebuild, -binutils-2.21.51.0.5.ebuild,
+  -binutils-2.21.51.0.6.ebuild, -binutils-2.21.51.0.7.ebuild,
+  -binutils-2.21.51.0.8.ebuild, -binutils-2.21.51.0.9.ebuild:
+  Move old ebuilds to toolchain overlay.
+
+*binutils-2.21.53.0.2 (11 Aug 2011)
+*binutils-2.21.53.0.1 (11 Aug 2011)
+
+  11 Aug 2011; Mike Frysinger <vapier@gentoo.org> +binutils-2.21.53.0.1.ebuild,
+  +binutils-2.21.53.0.2.ebuild:
+  Version bumps.
 
 *binutils-2.21.1 (28 Jun 2011)
 

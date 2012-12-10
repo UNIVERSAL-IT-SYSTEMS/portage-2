@@ -1,6 +1,68 @@
 # ChangeLog for media-sound/xmms2
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/xmms2/ChangeLog,v 1.15 2011/07/17 16:12:50 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/xmms2/ChangeLog,v 1.30 2012/11/16 09:30:51 slyfox Exp $
+
+  16 Nov 2012; Sergei Trofimovich <slyfox@gentoo.org> xmms2-0.7-r2.ebuild,
+  xmms2-0.7-r3.ebuild, xmms2-0.8-r1.ebuild:
+  Changes bugs URL to http://bugs.xmms2.org.
+
+  09 Nov 2012; Sergei Trofimovich <slyfox@gentoo.org> xmms2-0.8-r1.ebuild:
+  Added verbose build (bug #442496 by Agostino Sarubbo).
+
+  28 Oct 2012; Sergei Trofimovich <slyfox@gentoo.org> xmms2-0.8-r1.ebuild:
+  Stable on alpha, bug #405717.
+
+  01 Jul 2012; Sergei Trofimovich <slyfox@gentoo.org> xmms2-0.8-r1.ebuild:
+  Workaround build failure when test failure occurs. Rerun tests in src_test().
+  It moves valgrind misconfiguration error to src_test() phase (bug #424377 by
+  Diego Elio Pettenò).
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> xmms2-0.7-r2.ebuild,
+  xmms2-0.7-r3.ebuild, xmms2-0.8-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  20 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> xmms2-0.7-r2.ebuild,
+  xmms2-0.7-r3.ebuild, xmms2-0.8-r1.ebuild:
+  Fix 'media-sound/madplay' RDEPEND to be 'media-libs/libmad'. Found by nzqr in
+  bug #408779.
+
+  16 Mar 2012; Thomas Kahle <tomka@gentoo.org> xmms2-0.8-r1.ebuild:
+  marked x86 per bug 405717
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> xmms2-0.8-r1.ebuild:
+  Marking xmms2-0.8-r1 ppc for bug 405717
+
+  26 Feb 2012; Agostino Sarubbo <ago@gentoo.org> xmms2-0.8-r1.ebuild:
+  Stable for amd64, wrt bug #405717
+
+  05 Feb 2012; Mike Gilbert <floppym@gentoo.org> xmms2-0.7-r2.ebuild:
+  Inherit multilib.
+
+*xmms2-0.8-r1 (22 Oct 2011)
+
+  22 Oct 2011; Sergei Trofimovich <slyfox@gentoo.org> -xmms2-0.8.ebuild,
+  +xmms2-0.8-r1.ebuild:
+  Added USE=mp4 back to support mp4 containers (bug #387961 by frostyplanet at
+  gmail.com). xmms2 uses bundled (and patched) faad source code only to parse
+  mp4 format.
+
+  21 Oct 2011; Sergei Trofimovich <slyfox@gentoo.org> xmms2-0.8.ebuild:
+  Fixed USE=avahi build failure.
+
+  21 Oct 2011; Sergei Trofimovich <slyfox@gentoo.org> xmms2-0.8.ebuild:
+  Fixed repoman QA warnings (test? in RDEPEND)
+
+*xmms2-0.8 (21 Oct 2011)
+
+  21 Oct 2011; Sergei Trofimovich <slyfox@gentoo.org> +xmms2-0.8.ebuild,
+  +files/xmms2-0.8DrO_o-waflib-fix-perl.patch:
+  Version bump. Added FEATURES=test support.
+
+  25 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> xmms2-0.7-r3.ebuild,
+  +files/xmms2-0.7DrNo-XsParse-3.patch:
+  Fix build failure against ExtUtils-ParseXS-3.20. Bug #380469 by Diego Elio
+  Pettenò. Use Module::Build to detect latest xsubpp instead of hardcoded
+  privlib.
 
   17 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   mms USE flag is now global.
@@ -71,4 +133,3 @@
   Initial commit. Thanks everyone, who conributed to resolve bug #93583.
   Special thanks to Mike Frysinger <vapier@gentoo.org> for help to cleanup
   an ebuild.
-

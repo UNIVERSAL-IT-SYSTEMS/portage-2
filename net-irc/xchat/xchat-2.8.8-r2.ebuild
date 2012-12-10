@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/xchat/xchat-2.8.8-r2.ebuild,v 1.7 2011/07/12 07:39:59 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/xchat/xchat-2.8.8-r2.ebuild,v 1.18 2012/05/03 06:27:14 jdhore Exp $
 
 EAPI=3
 
@@ -16,7 +16,7 @@ HOMEPAGE="http://www.xchat.org/"
 
 LICENSE="GPL-2 hires-icons? ( GPL-3 )"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 IUSE="dbus fastscroll +gtk hires-icons ipv6 libnotify mmx nls ntlm perl python spell ssl tcl xchatdccserver"
 
 RDEPEND=">=dev-libs/glib-2.6.0:2
@@ -26,14 +26,14 @@ RDEPEND=">=dev-libs/glib-2.6.0:2
 	python? ( =dev-lang/python-2* )
 	tcl? ( dev-lang/tcl )
 	dbus? ( >=dev-libs/dbus-glib-0.71 )
-	spell? ( app-text/gtkspell )
+	spell? ( app-text/gtkspell:2 )
 	libnotify? ( x11-libs/libnotify )
 	ntlm? ( net-libs/libntlm )
 	x11-libs/pango
 	!<net-irc/xchat-gnome-0.9"
 
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.16
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 pkg_setup() {
@@ -47,7 +47,9 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-input-box4.patch \
 		"${FILESDIR}"/${PN}-2.8.4-interix.patch \
 		"${FILESDIR}"/${P}-libnotify07.patch \
-		"${FILESDIR}"/${P}-dbus.patch
+		"${FILESDIR}"/${P}-dbus.patch \
+		"${FILESDIR}"/${PN}-2.8.8-cflags.patch \
+		"${FILESDIR}"/${P}-glib-2.31.patch
 
 	use xchatdccserver && epatch "${DISTDIR}"/xchat-dccserver-0.6.patch.bz2
 
@@ -116,6 +118,9 @@ src_install() {
 	if ! use gtk ; then
 		rm "${ED}"/usr/share/applications -rf
 	fi
+
+	# Don't install .la files
+	find "${ED}" -name '*.la' -delete
 }
 
 pkg_postinst() {

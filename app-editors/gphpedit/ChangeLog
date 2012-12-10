@@ -1,6 +1,27 @@
 # ChangeLog for app-editors/gphpedit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/gphpedit/ChangeLog,v 1.23 2011/03/22 18:45:48 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/gphpedit/ChangeLog,v 1.28 2012/10/16 04:03:35 blueness Exp $
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  gphpedit-0.9.98_rc1.ebuild:
+  stable ppc, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gphpedit-0.9.98_rc1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gphpedit-0.9.98_rc1.ebuild:
+  x86 stable wrt bug #427544
+
+*gphpedit-0.9.98_rc1 (23 Jun 2012)
+
+  23 Jun 2012; Pacho Ramos <pacho@gentoo.org> +gphpedit-0.9.98_rc1.ebuild,
+  -gphpedit-0.9.91.ebuild:
+  Version bump to stop using deprecated gtkhtml:2, remove old.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gphpedit-0.9.91.ebuild,
+  gphpedit-0.9.91-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   22 Mar 2011; Brent Baude <ranger@gentoo.org> gphpedit-0.9.91-r1.ebuild:
   Marking gphpedit-0.9.91-r1 ppc stable for bug 353436
@@ -86,4 +107,3 @@
   20 Jul 2003; Alastair Tse <liquidx@gentoo.org> gphpedit-0.4.3.ebuild:
   initial commit. contributed by TGL <degrenier@easyconnect.fr> and Mike
   Gardiner <driver@iinet.net.au>
-

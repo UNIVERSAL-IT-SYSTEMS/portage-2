@@ -1,6 +1,28 @@
 # ChangeLog for dev-libs/eb
-# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/eb/ChangeLog,v 1.38 2009/03/31 15:48:06 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/eb/ChangeLog,v 1.45 2012/10/08 14:00:30 kensington Exp $
+
+  08 Oct 2012; Michael Palimaka <kensington@gentoo.org> -eb-4.2.2.ebuild,
+  -files/eb-4.2.2-as-needed.patch:
+  Remove old.
+
+  05 Aug 2012; Raúl Porcel <armin76@gentoo.org> eb-4.4.1.ebuild:
+  alpha/ia64/sparc stable wrt #419721
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> eb-4.4.1.ebuild:
+  Stable for HPPA (bug #419721).
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> eb-4.4.1.ebuild:
+  Marking eb-4.4.1 ppc for bug 419721
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> eb-4.4.1.ebuild:
+  marked x86 per bug 419721
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> eb-4.4.1.ebuild:
+  Marking eb-4.4.1 ppc64 for bug 419721
+
+  05 Jun 2012; Agostino Sarubbo <ago@gentoo.org> eb-4.4.1.ebuild:
+  Stable for amd64, wrt bug #419721
 
 *eb-4.4.1 (31 Mar 2009)
 
@@ -147,4 +169,3 @@
   Initial import.  Ebuild first submitted by Masatomo Nakano
   <nakano@gentoo.org> and updated by (ha)-san and jargon-san
   at GentooJP BugTrack
-

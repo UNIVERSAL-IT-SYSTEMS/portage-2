@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines/gtk-engines-2.20.2.ebuild,v 1.9 2011/03/27 13:03:17 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines/gtk-engines-2.20.2.ebuild,v 1.11 2012/05/05 04:10:04 jdhore Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
 
-inherit gnome2
+inherit eutils gnome2
 
 DESCRIPTION="GTK+2 standard engines and themes"
 HOMEPAGE="http://www.gtk.org/"
@@ -19,13 +19,19 @@ RDEPEND=">=x11-libs/gtk+-2.12:2
 	lua? ( dev-lang/lua )"
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.31
-	>=dev-util/pkgconfig-0.9"
+	virtual/pkgconfig"
 
 DOCS="AUTHORS ChangeLog NEWS README"
 
 pkg_setup() {
 	G2CONF="${G2CONF} --enable-animation $(use_enable lua) $(use_with lua system-lua)"
 	use accessibility || G2CONF="${G2CONF} --disable-hc"
+}
+
+src_prepare() {
+	# Patch from 2.21.x, fixes building with glib-2.32, bug #410455
+	epatch "${FILESDIR}/${P}-glib.h.patch"
+	gnome2_src_prepare
 }
 
 src_install() {

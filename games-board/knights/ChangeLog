@@ -1,6 +1,52 @@
 # ChangeLog for games-board/knights
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/knights/ChangeLog,v 1.24 2011/05/21 19:27:18 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-board/knights/ChangeLog,v 1.36 2012/11/24 15:19:15 johu Exp $
+
+  24 Nov 2012; Johannes Huber <johu@gentoo.org> -knights-2.4.2.ebuild:
+  Remove old.
+
+  23 Nov 2012; Agostino Sarubbo <ago@gentoo.org> knights-2.5.0.ebuild:
+  Stable for x86, wrt bug #442394
+
+  23 Nov 2012; Agostino Sarubbo <ago@gentoo.org> knights-2.5.0.ebuild:
+  Stable for amd64, wrt bug #442394
+
+*knights-2.5.0 (15 Aug 2012)
+
+  15 Aug 2012; Johannes Huber <johu@gentoo.org> +knights-2.5.0.ebuild:
+  Version bump, which is compatible with KDE 4.9, fixes bug #429418.
+
+  02 Jun 2012; Johannes Huber <johu@gentoo.org> -knights-2.3.2.ebuild:
+  Remove old.
+
+  02 Jun 2012; Johannes Huber <johu@gentoo.org> knights-2.4.2.ebuild:
+  Stable for x86, wrt bug #418983
+
+  01 Jun 2012; Agostino Sarubbo <ago@gentoo.org> knights-2.4.2.ebuild:
+  Stable for amd64, wrt bug #418983
+
+  04 May 2012; Michael Sterrett <mr_bones_@gentoo.org> -knights-2.4.1.ebuild:
+  old
+
+*knights-2.4.2 (22 Apr 2012)
+
+  22 Apr 2012; Johannes Huber <johu@gentoo.org> +knights-2.4.2.ebuild,
+  -knights-2.4.0.ebuild:
+  Version bump, remove old.
+
+*knights-2.4.1 (27 Jan 2012)
+
+  27 Jan 2012; Johannes Huber <johu@gentoo.org> +knights-2.4.1.ebuild:
+  Version bump.
+
+*knights-2.4.0 (30 Oct 2011)
+
+  30 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> -knights-2.3.1.ebuild,
+  knights-2.3.2.ebuild, +knights-2.4.0.ebuild:
+  Stable 2.3.2 on x86 and amd64. Add latest version.
+
+  14 Sep 2011; Michael Sterrett <mr_bones_@gentoo.org> knights-2.3.2.ebuild:
+  Add message at the end about possible computer players (bug #382915)
 
 *knights-2.3.2 (21 May 2011)
 
@@ -47,4 +93,3 @@
   04 Apr 2010; Tomáš Chvátal <scarabeus@gentoo.org> +knights-2.0.ebuild,
   +metadata.xml:
   Initial commit of game that was removed with kde3 removal.
-

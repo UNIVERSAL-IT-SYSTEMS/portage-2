@@ -1,6 +1,27 @@
 # ChangeLog for app-text/txt2man
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/txt2man/ChangeLog,v 1.19 2010/10/24 15:41:57 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/txt2man/ChangeLog,v 1.25 2012/08/21 05:37:59 radhermit Exp $
+
+  21 Aug 2012; Tim Harder <radhermit@gentoo.org> -txt2man-1.5.5.ebuild:
+  Remove old.
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> txt2man-1.5.6.ebuild:
+  Marking txt2man-1.5.6 ppc for bug 393357
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> txt2man-1.5.6.ebuild:
+  x86 stable wrt bug #393357
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org> txt2man-1.5.6.ebuild:
+  Stable for AMD64, wrt bug #393357
+
+  14 Oct 2011; Tim Harder <radhermit@gentoo.org> txt2man-1.5.6.ebuild:
+  Move DEPEND to RDEPEND and update DESCRIPTION.
+
+*txt2man-1.5.6 (14 Oct 2011)
+
+  14 Oct 2011; Tim Harder <radhermit@gentoo.org> +txt2man-1.5.6.ebuild,
+  metadata.xml:
+  Version bump. Update to EAPI 4 and add myself as maintainer.
 
   24 Oct 2010; Brent Baude <ranger@gentoo.org> txt2man-1.5.5.ebuild:
   Marking txt2man-1.5.5 ppc for bug 340309

@@ -1,6 +1,81 @@
 # ChangeLog for sys-fs/xfsprogs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/xfsprogs/ChangeLog,v 1.133 2011/04/12 17:25:25 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/xfsprogs/ChangeLog,v 1.153 2012/10/19 04:19:18 vapier Exp $
+
+  19 Oct 2012; Mike Frysinger <vapier@gentoo.org>
+  files/xfsprogs-3.1.1-sharedlibs.patch:
+  Fix parallel install failures with libxlog #438764 by Jorge Manuel B. S.
+  Vicetto.
+
+  25 Aug 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/xfsprogs-3.1.8-readline.patch, xfsprogs-3.1.8.ebuild:
+  Link libxcmd against readline #432644 by David Badia.
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> xfsprogs-3.1.8.ebuild:
+  alpha/ia64/sh/sparc stable wrt #422225
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> xfsprogs-3.1.8.ebuild:
+  arm stable, bug #422225
+
+  28 Jun 2012; Brent Baude <ranger@gentoo.org> xfsprogs-3.1.8.ebuild:
+  Marking xfsprogs-3.1.8 ppc for bug 422225
+
+  27 Jun 2012; Jeroen Roovers <jer@gentoo.org> xfsprogs-3.1.8.ebuild:
+  Stable for HPPA (bug #422225).
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> xfsprogs-3.1.8.ebuild:
+  Marking xfsprogs-3.1.8 ppc64 for bug 422225
+
+  21 Jun 2012; Jeff Horelick <jdhore@gentoo.org> xfsprogs-3.1.8.ebuild:
+  marked x86 per bug 422225
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xfsprogs-3.1.8.ebuild:
+  Stable for amd64, wrt bug #422225
+
+*xfsprogs-3.1.8 (26 Apr 2012)
+
+  26 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> +xfsprogs-3.1.8.ebuild,
+  -xfsprogs-3.1.4.ebuild, -xfsprogs-3.1.5.ebuild, -xfsprogs-3.1.6.ebuild,
+  -xfsprogs-3.1.7-r1.ebuild:
+  Version bump to latest. Prune older a bit.
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> xfsprogs-3.1.7.ebuild:
+  alpha/ia64/sh/sparc stable wrt #408021
+
+*xfsprogs-3.1.7-r1 (30 Mar 2012)
+
+  30 Mar 2012; Mike Frysinger <vapier@gentoo.org> +xfsprogs-3.1.7-r1.ebuild:
+  Migrate to EAPI=4 and fix static-libs handling #410251 by Fernando V.
+
+  30 Mar 2012; Diego E. Pettenò <flameeyes@gentoo.org> xfsprogs-3.1.4.ebuild,
+  xfsprogs-3.1.5.ebuild, xfsprogs-3.1.6.ebuild, xfsprogs-3.1.7.ebuild:
+  Fix dependencies on util-linux with USE=static (bug #410251, thanks to
+  Fernando V.).
+
+  25 Mar 2012; Markus Meier <maekke@gentoo.org> xfsprogs-3.1.7.ebuild:
+  arm stable, bug #408021
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xfsprogs-3.1.7.ebuild:
+  x86 stable wrt bug #408021
+
+  15 Mar 2012; Jeroen Roovers <jer@gentoo.org> xfsprogs-3.1.7.ebuild:
+  Stable for HPPA (bug #408021).
+
+  13 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> xfsprogs-3.1.7.ebuild:
+  ppc/ppc64 stable wrt #408021
+
+  13 Mar 2012; Agostino Sarubbo <ago@gentoo.org> xfsprogs-3.1.7.ebuild:
+  Stable for amd64, wrt bug #408021
+
+*xfsprogs-3.1.7 (09 Feb 2012)
+
+  09 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> +xfsprogs-3.1.7.ebuild:
+  Bug #402801: version bump.
+
+*xfsprogs-3.1.6 (06 Nov 2011)
+
+  06 Nov 2011; Mike Frysinger <vapier@gentoo.org> +xfsprogs-3.1.6.ebuild:
+  Version bump.
 
 *xfsprogs-3.1.5 (12 Apr 2011)
 

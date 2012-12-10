@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/blogtk/blogtk-2.0.ebuild,v 1.5 2011/01/13 20:34:39 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/blogtk/blogtk-2.0.ebuild,v 1.8 2012/05/05 03:20:40 jdhore Exp $
 
 EAPI="2"
 PYTHON_DEPEND="2:2.6"
 
-inherit eutils fdo-mime python
+inherit eutils fdo-mime multilib python
 
 DESCRIPTION="GTK Blog - post entries to your blog"
 HOMEPAGE="http://blogtk.sourceforge.net"
@@ -19,7 +19,7 @@ IUSE=""
 RESTRICT="mirror"
 
 RDEPEND=">=dev-python/pygtk-2
-	>=dev-python/pygobject-2
+	>=dev-python/pygobject-2:2
 	>=gnome-base/gconf-2.2
 	>=gnome-base/libgnome-2
 	dev-python/gdata
@@ -29,7 +29,7 @@ RDEPEND=">=dev-python/pygtk-2
 	dev-python/pywebkitgtk
 	dev-python/pygtksourceview"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
 
 DOCS="AUTHORS ChangeLog COPYING README INSTALL NEWS TODO"

@@ -1,6 +1,31 @@
 # ChangeLog for dev-libs/libmemcached
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libmemcached/ChangeLog,v 1.39 2011/07/31 20:03:00 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libmemcached/ChangeLog,v 1.44 2012/11/16 08:17:49 patrick Exp $
+
+*libmemcached-1.0.14 (16 Nov 2012)
+
+  16 Nov 2012; Patrick Lauer <patrick@gentoo.org> +libmemcached-1.0.14.ebuild:
+  Bump for #443056
+
+*libmemcached-1.0.11 (09 Oct 2012)
+
+  09 Oct 2012; Patrick Lauer <patrick@gentoo.org> +libmemcached-1.0.11.ebuild:
+  Bump, updated homepage
+
+*libmemcached-1.0.4 (21 Feb 2012)
+
+  21 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> +libmemcached-1.0.4.ebuild:
+  Version bump.
+
+  14 Jan 2012; Kacper Kowalik <xarthisius@gentoo.org> metadata.xml:
+  tcmalloc is now global
+
+*libmemcached-0.50 (04 Sep 2011)
+
+  04 Sep 2011; Robin H. Johnson <robbat2@gentoo.org> +libmemcached-0.50.ebuild,
+  metadata.xml:
+  Bug #354261: version bump, despite my objections. Please report any testcase
+  failures, but see bug #354261 first.
 
   31 Jul 2011; Matt Turner <mattst88@gentoo.org> libmemcached-0.22.ebuild,
   libmemcached-0.25.ebuild, libmemcached-0.26.ebuild, libmemcached-0.28.ebuild,
@@ -192,4 +217,3 @@
   28 Nov 2007; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +libmemcached-0.11.ebuild:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

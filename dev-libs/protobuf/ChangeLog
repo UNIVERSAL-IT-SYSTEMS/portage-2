@@ -1,6 +1,18 @@
 # ChangeLog for dev-libs/protobuf
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/protobuf/ChangeLog,v 1.34 2011/07/15 16:05:13 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/protobuf/ChangeLog,v 1.38 2012/11/19 18:29:50 bicatali Exp $
+
+  19 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> protobuf-2.4.1.ebuild:
+  Keyworded amd64-linux and x86-linux
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org> protobuf-2.4.1.ebuild:
+  Keyword ~mips
+
+  14 Apr 2012; Mike Frysinger <vapier@gentoo.org> protobuf-2.4.1.ebuild:
+  Add ia64 love #282954 by Dennis Schridde.
+
+  30 Nov 2011; Krzysztof Pawlik <nelchael@gentoo.org> protobuf-2.4.1.ebuild:
+  Add ~arm keyword, tested by Anton Romanov, reported in bug #392323.
 
   15 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> protobuf-2.4.0a.ebuild:
   ppc64 stable wrt #363403
@@ -152,4 +164,3 @@
   17 Jul 2008; Michał Januszewski <spock@gentoo.org> +metadata.xml,
   +protobuf-2.0.0_beta.ebuild:
   Initial commit (bug #231297).
-

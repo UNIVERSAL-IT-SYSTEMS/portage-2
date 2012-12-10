@@ -1,6 +1,54 @@
 # ChangeLog for dev-libs/libdnet
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libdnet/ChangeLog,v 1.46 2010/07/19 21:35:59 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libdnet/ChangeLog,v 1.59 2012/10/10 18:17:08 jer Exp $
+
+  10 Oct 2012; Jeroen Roovers <jer@gentoo.org> -libdnet-1.11-r1.ebuild,
+  libdnet-1.12.ebuild:
+  With RESTRICT=test it is useful to know about the dependency, but it need not
+  be set. Remove useless trunk/ subdir.
+
+  10 Oct 2012; Jeroen Roovers <jer@gentoo.org> libdnet-1.12.ebuild:
+  Readd keywords (bug #437800).
+
+*libdnet-1.12 (10 Oct 2012)
+
+  10 Oct 2012; Sergey Popov <pinkbyte@gentoo.org> +libdnet-1.12.ebuild,
+  metadata.xml:
+  Version bump with optional ipv6 support, add upstream info to metadata
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> libdnet-1.11-r2.ebuild:
+  alpha/ia64/sparc stable wrt #418751
+
+  21 Jun 2012; Jeroen Roovers <jer@gentoo.org> libdnet-1.11-r2.ebuild:
+  Stable for HPPA (bug #418751).
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> libdnet-1.11-r2.ebuild:
+  Marking libdnet-1.11-r2 ppc for bug 418751
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> libdnet-1.11-r2.ebuild:
+  marked x86 per bug 418751
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> libdnet-1.11-r2.ebuild:
+  Marking libdnet-1.11-r2 ppc64 for bug 418751
+
+  04 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libdnet-1.11-r2.ebuild:
+  Stable for amd64, wrt bug #418751
+
+  02 Apr 2012; Naohiro Aota <naota@gentoo.org> libdnet-1.11-r2.ebuild:
+  Add ~x86-fbsd
+
+  16 Feb 2012; Jeroen Roovers <jer@gentoo.org> libdnet-1.11-r2.ebuild:
+  More python.eclass tweaking by Arfrever (bug #326389).
+
+  15 Feb 2012; Jeroen Roovers <jer@gentoo.org> libdnet-1.11-r2.ebuild:
+  Tweak python stuff by Arfrever.
+
+*libdnet-1.11-r2 (14 Feb 2012)
+
+  14 Feb 2012; Jeroen Roovers <jer@gentoo.org> files/libdnet-1.10-gcc4.diff,
+  +libdnet-1.11-r2.ebuild:
+  Clean up patch. Add IUSE=static-libs. Possibly improve python related code by
+  Ian Delaney (bugs #253267, #326389, #363601).
 
   19 Jul 2010; Markus Meier <maekke@gentoo.org> libdnet-1.11-r1.ebuild:
   add ~arm, bug #301080

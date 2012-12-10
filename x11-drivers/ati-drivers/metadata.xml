@@ -3,12 +3,8 @@
 <pkgmetadata>
 	<herd>x11</herd>
 	<maintainer>
-		<email>lu_zero@gentoo.org</email>
-	</maintainer>
-	<maintainer>
-	    <email>enrico.tagliavini@gmail.com</email>
-		<name>Enrico Tagliavini</name>
-	    <description>Proxied co-maintainer</description>
+		<email>jkarlson@cc.hut.fi</email>
+		<description>Proxy maintainer. Assign to herd and CC him on bugs</description>
 	</maintainer>
 	<use>
 		<flag name='qt4'>
@@ -17,5 +13,13 @@
 	</use>
 	<use>
 		<flag name='modules'>Build the kernel modules</flag>
+	</use>
+	<use>
+		<flag name='pax_kernel'>
+			Enable if the user plans to run the package under a pax enabled hardened kernel
+		</flag>
+	</use>
+	<use>
+		<flag name='disable-watermark'>Do a potentially dangerous binary search and replace to disable watermark</flag>
 	</use>
 </pkgmetadata>

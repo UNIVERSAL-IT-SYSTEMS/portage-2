@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/libint/libint-1.1.4-r1.ebuild,v 1.4 2011/06/26 10:38:19 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/libint/libint-1.1.4-r1.ebuild,v 1.9 2012/10/18 20:26:43 jlec Exp $
 
 EAPI=4
 
@@ -12,11 +12,8 @@ SRC_URI="http://www.chem.vt.edu/chem-dept/valeev/software/libint/src/${P}.tar.gz
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~amd64"
-IUSE=""
-
-DEPEND="virtual/fortran"
-RDEPEND="${DEPEND}"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
+IUSE="static-libs"
 
 src_prepare() {
 	epatch "${FILESDIR}"/1.1.4-as-needed.patch
@@ -30,13 +27,10 @@ src_configure() {
 		--with-cc=$(tc-getCC) \
 		--with-cxx=$(tc-getCXX) \
 		--with-cc-optflags="${CFLAGS}" \
-		--with-cxx-optflags="${CXXFLAGS}"
+		--with-cxx-optflags="${CXXFLAGS}" \
+		$(use_enable static-libs static)
 }
 
 src_compile() {
 	emake LDFLAGS="${LDFLAGS}"
-}
-
-src_install() {
-	einstall
 }

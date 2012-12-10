@@ -1,6 +1,28 @@
 # ChangeLog for games-fps/quakeforge
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quakeforge/ChangeLog,v 1.27 2011/05/03 21:15:11 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-fps/quakeforge/ChangeLog,v 1.33 2012/11/21 21:16:52 tupone Exp $
+
+*quakeforge-0.7.0 (21 Nov 2012)
+
+  21 Nov 2012; Tupone Alfredo <tupone@gentoo.org> +quakeforge-0.7.0.ebuild,
+  +files/quakeforge-0.7.0-gentoo.patch:
+  Version bump to 0.7.0 Bug #405287 by Tim
+
+  23 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -quakeforge-0.5.5.ebuild:
+  old
+
+  23 Jun 2012; Kacper Kowalik <xarthisius.kk@gmail.com>
+  quakeforge-0.5.5-r2.ebuild:
+  ppc stable wrt #418411
+
+  19 Jun 2012; Jeff Horelick <jdhore@gentoo.org> quakeforge-0.5.5-r2.ebuild:
+  marked x86 per bug 418411
+
+  17 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  quakeforge-0.5.5-r2.ebuild, +files/quakeforge-0.5.5-libc.patch,
+  +files/quakeforge-0.5.5-zlib-1.2.6.patch:
+  Fix building with recent sys-libs/glibc and sys-libs/zlib wrt #421547 by
+  Diego Elio Pettenò
 
   03 May 2011; Michael Sterrett <mr_bones_@gentoo.org>
   quakeforge-0.5.5-r2.ebuild:

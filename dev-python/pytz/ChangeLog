@@ -1,6 +1,72 @@
 # ChangeLog for dev-python/pytz
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pytz/ChangeLog,v 1.114 2011/07/17 11:47:43 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pytz/ChangeLog,v 1.130 2012/11/03 00:58:24 radhermit Exp $
+
+*pytz-2012h (03 Nov 2012)
+
+  03 Nov 2012; Tim Harder <radhermit@gentoo.org> +pytz-2012h.ebuild:
+  Version bump.
+
+*pytz-2012g (22 Oct 2012)
+
+  22 Oct 2012; Tim Harder <radhermit@gentoo.org> +pytz-2012g.ebuild:
+  Version bump.
+
+*pytz-2012f (29 Sep 2012)
+
+  29 Sep 2012; Tim Harder <radhermit@gentoo.org> +pytz-2012f.ebuild:
+  Version bump.
+
+*pytz-2012d (03 Aug 2012)
+
+  03 Aug 2012; Tim Harder <radhermit@gentoo.org> +pytz-2012d.ebuild:
+  Version bump.
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> pytz-2012c.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #412307
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org> pytz-2012c.ebuild:
+  Stable for HPPA (bug #412307).
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> pytz-2012c.ebuild:
+  Marking pytz-2012c ppc64 for bug 412307
+
+  03 Jun 2012; Markus Meier <maekke@gentoo.org> pytz-2012c.ebuild:
+  arm stable, bug #412307
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> pytz-2012c.ebuild:
+  Marking pytz-2012c ppc for bug 412307
+
+  29 May 2012; Agostino Sarubbo <ago@gentoo.org> pytz-2012c.ebuild:
+  Stable for amd64, wrt bug #412307
+
+  29 May 2012; Jeff Horelick <jdhore@gentoo.org> pytz-2012c.ebuild:
+  marked x86 per bug 412307
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> pytz-2012c.ebuild:
+  keyword ~amd64-fbsd
+
+*pytz-2012c (18 Apr 2012)
+
+  18 Apr 2012; Patrick Lauer <patrick@gentoo.org> +pytz-2012c.ebuild,
+  -pytz-2011g.ebuild, -pytz-2011h.ebuild, -pytz-2011k.ebuild,
+  -pytz-2011n.ebuild:
+  Bump for #412307
+
+*pytz-2011n (01 Dec 2011)
+
+  01 Dec 2011; Dirkjan Ochtman <djc@gentoo.org> +pytz-2011n.ebuild:
+  Version bump to 2011n.
+
+*pytz-2011k (07 Oct 2011)
+
+  07 Oct 2011; Dirkjan Ochtman <djc@gentoo.org> +pytz-2011k.ebuild:
+  Version bump to 2011k.
+
+*pytz-2011h (05 Sep 2011)
+
+  05 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> +pytz-2011h.ebuild:
+  Version bump to 2011h.
 
   17 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> -pytz-2011d.ebuild,
   pytz-2011e.ebuild:

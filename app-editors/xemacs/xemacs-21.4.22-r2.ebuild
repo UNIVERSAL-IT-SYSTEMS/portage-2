@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/xemacs/xemacs-21.4.22-r2.ebuild,v 1.3 2010/11/08 19:50:39 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/xemacs/xemacs-21.4.22-r2.ebuild,v 1.16 2012/10/24 18:58:39 ulm Exp $
 
 # Note: xemacs currently does not work with a hardened profile. If you
 # want to use xemacs on a hardened profile then compile with the
@@ -9,7 +9,7 @@
 EAPI="1"
 
 export WANT_AUTOCONF="2.1"
-inherit autotools eutils
+inherit autotools eutils toolchain-funcs
 
 DESCRIPTION="highly customizable open source text editor and application development system"
 HOMEPAGE="http://www.xemacs.org/"
@@ -18,8 +18,8 @@ SRC_URI="http://ftp.xemacs.org/xemacs-21.4/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
-IUSE="eolconv esd gif gpm pop postgres ldap xface nas dnd X jpeg tiff png mule motif freewnn canna xim athena neXt Xaw3d gdbm berkdb"
+KEYWORDS="alpha amd64 hppa ppc ppc64 sparc x86"
+IUSE="eolconv gif gpm pop postgres ldap xface nas dnd X jpeg tiff png mule motif freewnn canna xim athena neXt Xaw3d gdbm berkdb"
 
 X_DEPEND="x11-libs/libXt x11-libs/libXmu x11-libs/libXext x11-misc/xbitmaps"
 
@@ -32,13 +32,12 @@ RDEPEND="
 	gpm? ( >=sys-libs/gpm-1.19.6 )
 	postgres? ( dev-db/postgresql-base )
 	ldap? ( net-nds/openldap )
-	esd? ( media-sound/esound )
 	nas? ( media-libs/nas )
 	X? ( $X_DEPEND !Xaw3d? ( !neXt? ( x11-libs/libXaw ) ) )
 	dnd? ( x11-libs/dnd )
-	motif? ( >=x11-libs/openmotif-2.3:0 )
+	motif? ( >=x11-libs/motif-2.3:0 )
 	athena? ( x11-libs/libXaw )
-	Xaw3d? ( x11-libs/Xaw3d )
+	Xaw3d? ( x11-libs/libXaw3d )
 	neXt? ( x11-libs/neXtaw )
 	xface? ( media-libs/compface )
 	tiff? ( media-libs/tiff )
@@ -72,6 +71,9 @@ src_unpack() {
 	# Make sure to include deprecated LDAP symbols to avoid runtime
 	# crashes.
 	epatch "${FILESDIR}"/${P}-deprecated-ldap.patch
+
+	# Fix compilation with libpng 1.5, bug 384461
+	epatch "${FILESDIR}"/${P}-libpng15.patch
 
 	# Run autoconf. XEmacs tries to be smart by providing a stub
 	# configure.ac file for autoconf 2.59 but this throws our
@@ -142,7 +144,6 @@ src_compile() {
 
 	# This determines how these sounds should be played
 	use nas	&& soundconf="${soundconf},nas"
-	use esd && soundconf="${soundconf},esd"
 
 	myconf="${myconf} --with-sound=${soundconf}"
 
@@ -178,6 +179,7 @@ src_compile() {
 		$(use_with ldap ) \
 		$(use_with eolconv file-coding ) \
 		$(use_with pop ) \
+		--compiler=$(tc-getCC) \
 		--prefix=/usr \
 		--with-ncurses \
 		--with-msw=no \
@@ -227,11 +229,9 @@ src_install() {
 	dodoc BUGS CHANGES-* ChangeLog GETTING* INSTALL PROBLEMS README*
 	dodoc "${FILESDIR}"/README.Gentoo
 
-	insinto /usr/share/pixmaps
-	newins "${S}"/etc/${PN}-icon.xpm ${PN}.xpm
+	newicon "${S}"/etc/${PN}-icon.xpm ${PN}.xpm
 
-	insinto /usr/share/applications
-	doins "${FILESDIR}"/${PN}.desktop
+	domenu "${FILESDIR}"/${PN}.desktop
 }
 
 pkg_postinst() {

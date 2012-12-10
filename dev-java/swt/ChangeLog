@@ -1,6 +1,46 @@
 # ChangeLog for dev-java/swt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/swt/ChangeLog,v 1.136 2011/03/29 09:17:56 caster Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/swt/ChangeLog,v 1.144 2012/07/09 18:33:43 sera Exp $
+
+*swt-4.2 (09 Jul 2012)
+
+  09 Jul 2012; Ralph Sennhauser <sera@gentoo.org> +swt-4.2.ebuild,
+  +files/swt-4.2-as-needed-and-flag-fixes.patch, +files/swt-4.2-manifest:
+  Version bump. Thanks to Carlos Silva <r3pek@r3pek.org> for the ebuild.
+  #424455
+
+  01 Jun 2012; Jeff Horelick <jdhore@gentoo.org> swt-3.7.2.ebuild:
+  marked x86 per bug 418043
+
+  29 May 2012; Agostino Sarubbo <ago@gentoo.org> swt-3.7.2.ebuild:
+  Stable for amd64, wrt bug #418043
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> swt-3.4-r4.ebuild,
+  swt-3.5.2.ebuild, swt-3.6.1.ebuild, swt-3.7.1.ebuild, swt-3.7.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  17 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> swt-3.4-r4.ebuild,
+  swt-3.5.2.ebuild, swt-3.6.1.ebuild, metadata.xml:
+  Remove obsolete USE="xulrunner" and net-libs/xulrunner dependency since
+  nothing is using it in tree and 3.7.x series has webkit replacement wrt
+  #409299
+
+*swt-3.7.2 (03 Mar 2012)
+
+  03 Mar 2012; Vlastimil Babka <caster@gentoo.org> +swt-3.7.2.ebuild:
+  Version bump.
+
+*swt-3.7.1 (17 Nov 2011)
+
+  17 Nov 2011; Vlastimil Babka <caster@gentoo.org> +swt-3.7.1.ebuild,
+  +files/swt-3.7-manifest, metadata.xml:
+  Version bump. Replaces xulrunner integration and respective USE flag with
+  webkit. Fixes bug #335165 and #358773. Includes OSGi manifest improvements by
+  Christoph Brill (egore) <egore@gmx.de> from bug #335165.
+
+  06 Sep 2011; Vlastimil Babka <caster@gentoo.org> -swt-3.3.1.1-r1.ebuild,
+  -files/swt-3.3-manifest, -swt-3.6.ebuild:
+  Remove swt-3.3, bug #362213.
 
   29 Mar 2011; Vlastimil Babka <caster@gentoo.org> swt-3.3.1.1-r1.ebuild,
   swt-3.4-r4.ebuild, swt-3.5.2.ebuild, swt-3.6.ebuild, swt-3.6.1.ebuild:

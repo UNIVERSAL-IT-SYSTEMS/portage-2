@@ -1,6 +1,48 @@
 # ChangeLog for dev-python/pycxx
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pycxx/ChangeLog,v 1.34 2011/06/23 14:48:07 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pycxx/ChangeLog,v 1.45 2012/06/08 11:34:54 phajdan.jr Exp $
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pycxx-6.2.4-r1.ebuild:
+  x86 stable wrt bug #418907
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> pycxx-6.2.4-r1.ebuild:
+  Marking pycxx-6.2.4-r1 ppc for bug 418907
+
+  01 Jun 2012; Agostino Sarubbo <ago@gentoo.org> pycxx-6.2.4-r1.ebuild:
+  Stable for amd64, wrt bug #418907
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> pycxx-6.2.3-r3.ebuild:
+  marked x86 per bug 409029
+
+*pycxx-6.2.4-r1 (30 Mar 2012)
+
+  30 Mar 2012; Mike Gilbert <floppym@gentoo.org> +pycxx-6.2.4-r1.ebuild:
+  Restore sed call to fix pysvn breakage. Reported by Arfrever.
+
+*pycxx-6.2.4 (29 Mar 2012)
+
+  29 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> +pycxx-6.2.4.ebuild:
+  Version bump to 6.2.4, bug 408589 (thanks to Ian Delaney for testing).
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> pycxx-6.2.3-r3.ebuild:
+  Marking pycxx-6.2.3-r3 ppc for bug 409029
+
+  24 Mar 2012; Agostino Sarubbo <ago@gentoo.org> pycxx-6.2.3-r3.ebuild:
+  Stable for amd64, wrt bug #409029
+
+  23 Dec 2011; Mike Gilbert <floppym@gentoo.org>
+  files/pycxx-6.2.3-python-3.2-Py_hash_t.patch, pycxx-6.2.3-r3.ebuild:
+  Add upstream bug url for last change.
+
+*pycxx-6.2.3-r3 (23 Dec 2011)
+
+  23 Dec 2011; Mike Gilbert <floppym@gentoo.org>
+  +files/pycxx-6.2.3-python-3.2-Py_hash_t.patch, +pycxx-6.2.3-r3.ebuild:
+  Add patch to fix the hash_handler prototype under python-3.2. Should resolve
+  bug 369329.
+
+  29 Nov 2011; Naohiro Aota <naota@gentoo.org> pycxx-6.2.3-r2.ebuild:
+  Add ~x86-fbsd
 
   23 Jun 2011; Markos Chandras <hwoarang@gentoo.org>
   -files/pycxx-6.1.0-C_compatible_headers.patch, -pycxx-6.2.3-r1.ebuild:

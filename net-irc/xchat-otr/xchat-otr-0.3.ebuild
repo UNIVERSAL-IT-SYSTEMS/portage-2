@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/xchat-otr/xchat-otr-0.3.ebuild,v 1.2 2010/06/28 08:41:36 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/xchat-otr/xchat-otr-0.3.ebuild,v 1.7 2012/05/21 12:19:34 phajdan.jr Exp $
 
 EAPI="2"
 inherit cmake-utils
@@ -16,7 +16,7 @@ SRC_URI="ftp://download.tuxfamily.org/irssiotr/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64 x86"
 IUSE="debug"
 
 RDEPEND="net-libs/libotr
@@ -26,11 +26,10 @@ RDEPEND="net-libs/libotr
 	dev-libs/libgpg-error"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-lang/python"
 
 src_install() {
 	cmake-utils_src_install
 	rm "${D}"/usr/share/doc/${PF}/LICENSE
-	prepalldocs
 }

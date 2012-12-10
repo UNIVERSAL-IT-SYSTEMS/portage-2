@@ -1,6 +1,29 @@
 # ChangeLog for sci-mathematics/dataplot
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/dataplot/ChangeLog,v 1.12 2011/06/21 14:44:22 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/dataplot/ChangeLog,v 1.18 2012/10/16 19:13:05 jlec Exp $
+
+  16 Oct 2012; Justin Lecher <jlec@gentoo.org> dataplot-20090821.ebuild,
+  metadata.xml:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  09 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> dataplot-20090821.ebuild:
+  keyword amd64-linux x86-linux
+
+  16 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Remove unused local description for USE="gs"
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> dataplot-20090821.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Nov 2011; Sébastien Fabbro <bicatali@gentoo.org>
+  -dataplot-20080225.ebuild, -files/dpsrc-dp1patches-20080225.patch,
+  -files/dpsrc-patchset-20080225.patch, -files/Makefile.am.20080225,
+  -files/configure.ac.20080225:
+  Removed old
+
+  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #225633
 
   21 Jun 2011; Justin Lecher <jlec@gentoo.org> dataplot-20080225.ebuild,
   dataplot-20090821.ebuild:
@@ -135,4 +158,3 @@
   +dataplot-20080225.ebuild, +files/dpsrc-patchset-20080225.patch,
   +metadata.xml:
   New Ebuild for bug #217390, thanks to Tommy[D] for reviewing
-

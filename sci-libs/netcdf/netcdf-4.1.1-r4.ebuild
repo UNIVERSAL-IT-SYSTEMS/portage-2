@@ -1,10 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/netcdf/netcdf-4.1.1-r4.ebuild,v 1.12 2011/06/21 15:08:50 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/netcdf/netcdf-4.1.1-r4.ebuild,v 1.19 2012/10/16 20:31:51 jlec Exp $
 
 EAPI=3
 
-inherit autotools autotools-utils fortran-2
+AUTOTOOLS_AUTORECONF=true
+FORTRAN_NEEDED=fortran
+
+inherit autotools-utils fortran-2
 
 DESCRIPTION="Scientific library and interface for array oriented data access"
 HOMEPAGE="http://www.unidata.ucar.edu/software/netcdf/"
@@ -12,11 +15,10 @@ SRC_URI="ftp://ftp.unidata.ucar.edu/pub/netcdf/${P}.tar.gz"
 
 LICENSE="UCAR-Unidata"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ~mips ppc ppc64 sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris"
+KEYWORDS="amd64 ppc ppc64 x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris"
 IUSE="cxx dap doc fortran hdf5 static-libs szip"
 
 RDEPEND="
-	fortran? ( virtual/fortran )
 	dap? ( net-misc/curl )
 	hdf5? ( >=sci-libs/hdf5-1.8[zlib,szip?,fortran?] )"
 
@@ -57,7 +59,6 @@ src_prepare() {
 		sed -i -e "/\$(NC_TEST4)/ s/man4//" Makefile.am || die
 	fi
 	autotools-utils_src_prepare
-	eautoreconf
 }
 
 src_configure() {

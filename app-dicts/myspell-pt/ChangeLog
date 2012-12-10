@@ -1,6 +1,19 @@
 # ChangeLog for app-dicts/myspell-pt
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-pt/ChangeLog,v 1.17 2010/09/27 23:41:00 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-pt/ChangeLog,v 1.20 2012/07/25 09:46:52 scarabeus Exp $
+
+  25 Jul 2012; Tomáš Chvátal <scarabeus@gentoo.org> myspell-pt-20120420.ebuild:
+  Fix the desc, copy&pasto.
+
+*myspell-pt-20120420 (15 Jun 2012)
+
+  15 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -myspell-pt-20060316.ebuild, +myspell-pt-20120420.ebuild, metadata.xml:
+  Version bump to the latest. Thanks to jmbsvicetto for the locations. Using
+  preao as default per his request.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> myspell-pt-20060316.ebuild:
+  keyword ~amd64-fbsd
 
   27 Sep 2010; Mart Raudsepp <leio@gentoo.org> myspell-pt-20060316.ebuild:
   Add ~mips
@@ -61,4 +74,3 @@
   01 May 2006; Kevin F. Quinn <kevquinn@gentoo.org> +metadata.xml,
   +myspell-pt-20060316.ebuild:
   New ebuild for Portuguese myspell dictionary
-

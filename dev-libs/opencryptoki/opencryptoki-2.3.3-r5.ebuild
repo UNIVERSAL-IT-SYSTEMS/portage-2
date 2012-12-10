@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/opencryptoki/opencryptoki-2.3.3-r5.ebuild,v 1.2 2011/04/14 11:06:04 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/opencryptoki/opencryptoki-2.3.3-r5.ebuild,v 1.4 2012/06/06 03:43:03 zmedico Exp $
 
 EAPI="2"
 
@@ -8,7 +8,7 @@ EAPI="2"
 # http://gitorious.org/~flameeyes/opencryptoki/flameeyess-opencryptoki
 BACKPORTS=3
 
-inherit autotools eutils multilib flag-o-matic
+inherit autotools eutils multilib flag-o-matic user
 
 DESCRIPTION="PKCS#11 provider cryptographic hardware"
 HOMEPAGE="http://sourceforge.net/projects/opencryptoki"
@@ -20,7 +20,7 @@ SRC_URI="mirror://sourceforge/opencryptoki/${P}.tar.bz2
 # token sources are under CPL-1.0 already.
 LICENSE="CPL-0.5"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~x86"
 
 RDEPEND="tpm? ( app-crypt/trousers )
 		 dev-libs/openssl"

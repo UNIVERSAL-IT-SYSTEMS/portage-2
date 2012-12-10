@@ -1,6 +1,35 @@
 # ChangeLog for app-crypt/gpa
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/gpa/ChangeLog,v 1.78 2011/03/27 10:03:38 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/gpa/ChangeLog,v 1.86 2012/12/01 19:34:37 armin76 Exp $
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> gpa-0.9.3.ebuild:
+  alpha/sparc stable wrt #441890
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> gpa-0.9.3.ebuild:
+  Stable for x86, wrt bug #441890
+
+  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org> gpa-0.9.3.ebuild:
+  Stable for amd64, wrt bug #441890
+
+  06 Nov 2012; Anthony G. Basile <blueness@gentoo.org> gpa-0.9.3.ebuild:
+  stable ppc ppc64, bug #441890
+
+  18 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  27 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> gpa-0.9.3.ebuild:
+  Remove stray line.
+
+*gpa-0.9.3 (27 Aug 2012)
+
+  27 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +gpa-0.9.3.ebuild,
+  -files/gpa-desktop-file-validate-new.patch, -gpa-0.9.1_pre20100416-r1.ebuild:
+  Version bump (thanks to Arfrever in bug #432636 for reporting). Simplify
+  thanks to EAPI 4 and fix bug #417437.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gpa-0.9.1_pre20100416.ebuild,
+  gpa-0.9.1_pre20100416-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   27 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
   gpa-0.9.1_pre20100416.ebuild, gpa-0.9.1_pre20100416-r1.ebuild:

@@ -1,6 +1,62 @@
 # ChangeLog for net-print/foomatic-db-ppds
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/foomatic-db-ppds/ChangeLog,v 1.20 2011/05/06 16:17:46 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-print/foomatic-db-ppds/ChangeLog,v 1.32 2012/08/31 11:38:23 dilfridge Exp $
+
+*foomatic-db-ppds-4.0.20120831 (31 Aug 2012)
+
+  31 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +foomatic-db-ppds-4.0.20120831.ebuild:
+  Version bump
+
+  25 Mar 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -foomatic-db-ppds-3.0.20060720.ebuild:
+  Remove old
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  foomatic-db-ppds-4.0.20110506.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #4011111
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org>
+  foomatic-db-ppds-4.0.20110506.ebuild:
+  Marking foomatic-db-ppds-4.0.20110506 ppc64 for bug 401111
+
+  19 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -foomatic-db-ppds-4.0.20100218.ebuild, -foomatic-db-ppds-4.0.20101123.ebuild:
+  Remove old
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  foomatic-db-ppds-4.0.20110506.ebuild:
+  x86 stable wrt bug #401111
+
+  13 Feb 2012; Markus Meier <maekke@gentoo.org>
+  foomatic-db-ppds-4.0.20110506.ebuild:
+  arm stable, bug #401111
+
+  07 Feb 2012; Jeroen Roovers <jer@gentoo.org>
+  foomatic-db-ppds-4.0.20110506.ebuild:
+  Stable for HPPA (bug #401111).
+
+*foomatic-db-ppds-4.0.20120117-r1 (07 Feb 2012)
+
+  07 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -foomatic-db-ppds-4.0.20120117.ebuild,
+  +foomatic-db-ppds-4.0.20120117-r1.ebuild:
+  Remove duplicate files, bug 399623
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org>
+  foomatic-db-ppds-4.0.20110506.ebuild:
+  Marking foomatic-db-ppds-4.0.20110506 ppc for bug 401111
+
+  31 Jan 2012; Agostino Sarubbo <ago@gentoo.org>
+  foomatic-db-ppds-4.0.20110506.ebuild:
+  Stable for amd64, wrt bug #401111
+
+*foomatic-db-ppds-4.0.20120117 (17 Jan 2012)
+
+  17 Jan 2012; Justin Lecher <jlec@gentoo.org>
+  +foomatic-db-ppds-4.0.20120117.ebuild, +files/Makefile.in-4.0.20120117.patch,
+  metadata.xml:
+  Version Bump
 
 *foomatic-db-ppds-4.0.20110506 (06 May 2011)
 

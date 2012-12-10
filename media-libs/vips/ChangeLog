@@ -1,6 +1,41 @@
 # ChangeLog for media-libs/vips
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/vips/ChangeLog,v 1.41 2011/07/17 20:07:54 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/vips/ChangeLog,v 1.49 2011/12/12 08:49:48 pva Exp $
+
+*vips-7.26.7 (12 Dec 2011)
+
+  12 Dec 2011; Peter Volkov <pva@gentoo.org> -vips-7.22.4.ebuild,
+  -vips-7.22.5.ebuild, -vips-7.24.7.ebuild, -vips-7.26.2.ebuild,
+  +vips-7.26.7.ebuild:
+  Version bump. Drop old.
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> vips-7.26.3.ebuild:
+  x86 stable, bug #386023
+
+  15 Oct 2011; Markos Chandras <hwoarang@gentoo.org> vips-7.26.3.ebuild:
+  Stable on amd64 wrt bug #386023
+
+  14 Sep 2011; Andreas Schuerch <nativemad@gentoo.org> vips-7.24.7.ebuild:
+  x86 stable, see Bug #381607
+
+  04 Sep 2011; Tony Vroon <chainsaw@gentoo.org> vips-7.24.7.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #381607 filed by Peter "pva" Volkov.
+
+*vips-7.26.3 (25 Aug 2011)
+
+  25 Aug 2011; Peter Volkov <pva@gentoo.org> +vips-7.26.3.ebuild:
+  Version bump.
+
+*vips-7.26.2 (13 Aug 2011)
+
+  13 Aug 2011; Peter Volkov <pva@gentoo.org> -vips-7.24.3.ebuild,
+  -vips-7.24.4.ebuild, +vips-7.26.2.ebuild:
+  Version bump.
+
+  13 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> vips-7.22.4.ebuild,
+  vips-7.22.5.ebuild:
+  Dropped ppc keywords wrt #358075
 
 *vips-7.24.7 (17 Jul 2011)
 

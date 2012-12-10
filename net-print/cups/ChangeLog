@@ -1,6 +1,407 @@
 # ChangeLog for net-print/cups
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/ChangeLog,v 1.425 2011/07/09 11:09:12 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/ChangeLog,v 1.515 2012/12/03 06:31:48 scarabeus Exp $
+
+  03 Dec 2012; Tomáš Chvátal <scarabeus@gentoo.org> cups-1.6.1.ebuild:
+  Add ~ppc64 also to release version.
+
+  06 Nov 2012; Alexis Ballier <aballier@gentoo.org> cups-1.6.1.ebuild,
+  cups-9999.ebuild:
+  keyword ~amd64-fbsd, bug #428356
+
+*cups-1.5.0 (22 Oct 2012)
+
+  22 Oct 2012; Tomáš Chvátal <scarabeus@gentoo.org> +cups-1.5.0.ebuild:
+  Add unkeyworded 1.5.0 required for FIT CVUT setup. Contact
+  petr.hodac@fit.cvut.cz if you want to remove this first.
+
+  04 Oct 2012;  <naota@gentoo.org> cups-1.6.1.ebuild:
+  Add ~x86-fbsd wrt bug #428356
+
+  21 Sep 2012; Anthony G. Basile <blueness@gentoo.org> cups-9999.ebuild:
+  Keyword ~ppc64, bug #428356
+
+  09 Sep 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -files/cups-1.4.0-backend-https.patch, -files/cups-1.4.2-str3200.patch,
+  -files/cups-1.4.6-force-gnutls.patch,
+  -files/cups-1.4.6-serialize-gnutls.patch, -cups-1.4.8-r1.ebuild,
+  -files/cups-1.4.8-CVE-2011-3170.patch, -files/cups-1.4.8-largeimage.patch:
+  Remove old
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> cups-1.5.2-r4.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #411887
+
+  01 Sep 2012; Anthony G. Basile <blueness@gentoo.org> cups-1.6.1.ebuild,
+  cups-9999.ebuild:
+  Keyword ~ppc, bug #428356
+
+  31 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-9999.ebuild:
+  Sync keywords
+
+  30 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.6.1.ebuild,
+  cups-9999.ebuild:
+  Add warning about network browsing on update from 1.5 and earlier
+
+  16 Aug 2012; Jeroen Roovers <jer@gentoo.org> cups-1.6.1.ebuild:
+  Marked ~hppa (bug #428356).
+
+  08 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.4.8-r1.ebuild,
+  cups-1.5.2-r4.ebuild, cups-1.5.3.ebuild:
+  Block cups-filters, bug 429338
+
+  05 Aug 2012; Markus Meier <maekke@gentoo.org> cups-1.6.1.ebuild:
+  add ~arm, bug #428356
+
+*cups-1.4.8-r1 (31 Jul 2012)
+
+  31 Jul 2012; Mike Gilbert <floppym@gentoo.org> +cups-1.4.8-r1.ebuild,
+  +files/cups-1.4.0-backend-https.patch, +files/cups-1.4.2-str3200.patch,
+  +files/cups-1.4.6-force-gnutls.patch,
+  +files/cups-1.4.6-serialize-gnutls.patch,
+  +files/cups-1.4.8-CVE-2011-3170.patch, +files/cups-1.4.8-largeimage.patch:
+  Restore old version to repair dependency graph.
+
+*cups-1.6.1 (31 Jul 2012)
+
+  31 Jul 2012; Andreas K. Huettel <dilfridge@gentoo.org> -cups-1.6.0.ebuild,
+  +cups-1.6.1.ebuild:
+  Version bump
+
+  29 Jul 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -files/cups-1.4.0-backend-https.patch, -files/cups-1.4.2-str3200.patch,
+  -files/cups-1.4.6-force-gnutls.patch,
+  -files/cups-1.4.6-serialize-gnutls.patch, -cups-1.4.8-r1.ebuild,
+  -files/cups-1.4.8-CVE-2011-3170.patch, -files/cups-1.4.8-largeimage.patch:
+  Drop cups-1.4 and support for sparc-fbsd
+
+  28 Jul 2012; Anthony G. Basile <blueness@gentoo.org> cups-1.6.0.ebuild,
+  cups-9999.ebuild:
+  Keyword ~mips, bug #428356
+
+*cups-1.6.0 (27 Jul 2012)
+
+  27 Jul 2012; Andreas K. Huettel <dilfridge@gentoo.org> -cups-1.6_rc1.ebuild,
+  +cups-1.6.0.ebuild, cups-9999.ebuild:
+  Version bump
+
+  23 Jul 2012; <swift@gentoo.org> cups-1.4.8-r1.ebuild, cups-1.5.2-r4.ebuild,
+  cups-1.5.3.ebuild, cups-1.6_rc1.ebuild, cups-9999.ebuild:
+  Adding optional dependency on SELinux policy for CUPS
+
+  19 Jul 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -cups-1.4.8-r23.ebuild:
+  Remove old
+
+  30 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.6_rc1.ebuild,
+  cups-9999.ebuild:
+  Correct language list
+
+*cups-1.6_rc1 (30 Jun 2012)
+
+  30 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -cups-1.6_beta1-r1.ebuild, +cups-1.6_rc1.ebuild:
+  Version bump
+
+  26 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.2-r4.ebuild,
+  cups-1.5.3.ebuild:
+  Fix perl dependency, thanks _AxS_
+
+  14 Jun 2012; Naohiro Aota <naota@gentoo.org> cups-1.5.3.ebuild:
+  Add ~x86-fbsd. #401067
+
+*cups-1.6_beta1-r1 (09 Jun 2012)
+
+  09 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -cups-1.6_beta1.ebuild, +cups-1.6_beta1-r1.ebuild, cups-9999.ebuild:
+  Remove banners and testprint, now provided by cups-filters
+
+  07 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -cups-1.5.2-r21.ebuild, cups-1.5.3.ebuild, cups-1.6_beta1.ebuild,
+  cups-9999.ebuild:
+  Fix bashism in install-sh, bug 419735
+
+  05 Jun 2012; Anthony G. Basile <blueness@gentoo.org> cups-1.5.3.ebuild:
+  Keyword ~mips, bug #401067
+
+  02 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.6_beta1.ebuild,
+  cups-9999.ebuild:
+  Add cups-filters as PDEPEND
+
+*cups-1.5.3 (02 Jun 2012)
+
+  02 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org> +cups-1.5.3.ebuild,
+  +files/cups-1.5.3-fix-install-perms.patch, cups-9999.ebuild:
+  Version bump
+
+*cups-1.6_beta1 (02 Jun 2012)
+
+  02 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +cups-1.6_beta1.ebuild, files/cups-1.6.0-fix-install-perms.patch,
+  cups-9999.ebuild:
+  Add 1.6.0 beta1 release
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> cups-1.4.8-r1.ebuild,
+  cups-1.4.8-r23.ebuild, cups-1.5.2-r21.ebuild, cups-1.5.2-r4.ebuild,
+  cups-9999.ebuild:
+  inherit user for enewgroup and enewuser, and eliminate duplication in inherit
+  lines
+
+  24 May 2012; Johannes Huber <johu@gentoo.org> cups-1.5.2-r4.ebuild:
+  Stable for x86, wrt bug #411887
+
+  22 May 2012; Brent Baude <ranger@gentoo.org> cups-1.5.2-r4.ebuild:
+  marking straight to ppc64 for bug 411887
+
+  22 May 2012; Brent Baude <ranger@gentoo.org> cups-1.5.2-r4.ebuild:
+  Marking cups-1.5.2-r4 ~ppc64 for bug 411887
+
+  21 May 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.2-r21.ebuild,
+  cups-9999.ebuild:
+  Move the default server configuration example into the documentation
+  directory
+
+  21 May 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.2-r4.ebuild,
+  cups-1.5.2-r21.ebuild, cups-9999.ebuild:
+  Fix path in elog message
+
+  17 May 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-9999.ebuild:
+  net-dns/avahi[mdnsresponder-compat] works for zeroconf too
+
+  16 May 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-9999.ebuild:
+  slp and ldap code is gone in trunk, but we have bonjour now
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> cups-1.5.2-r21.ebuild:
+  keyword ~amd64-fbsd
+
+*cups-1.5.2-r21 (11 May 2012)
+
+  11 May 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -cups-1.5.2-r20.ebuild, +cups-1.5.2-r21.ebuild:
+  Re-add translation data that got lost from 1.5.0 to 1.5.2, bug 415455
+
+  08 May 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +files/cups-1.6.0-dont-compress-manpages.patch,
+  +files/cups-1.6.0-fix-install-perms.patch, cups-9999.ebuild:
+  Configures but does not build yet
+
+*cups-9999 (08 May 2012)
+
+  08 May 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.2-r20.ebuild,
+  +cups-9999.ebuild:
+  Cleanup and coding style; add (so-far not working) live ebuild
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> cups-1.5.2-r4.ebuild:
+  Marking cups-1.5.2-r4 ppc for bug 411887
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> cups-1.5.2-r4.ebuild,
+  cups-1.5.2-r20.ebuild:
+  Add ~alpha/~ia64/~m68k/~s390/~sh/~sparc wrt #401067
+
+  03 May 2012; Markus Meier <maekke@gentoo.org> cups-1.5.2-r4.ebuild:
+  arm stable, bug #411887
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> cups-1.4.8-r1.ebuild,
+  cups-1.4.8-r23.ebuild, cups-1.5.2-r4.ebuild, cups-1.5.2-r20.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 May 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.2-r20.ebuild,
+  cups-1.5.2-r4.ebuild:
+  Add missing avahi dependencies, bug 414349.
+
+  01 May 2012; Jeroen Roovers <jer@gentoo.org> cups-1.5.2-r4.ebuild:
+  Stable for HPPA (bug #411887).
+
+  28 Apr 2012; Agostino Sarubbo <ago@gentoo.org> cups-1.5.2-r4.ebuild:
+  Stable for amd64, wrt bug #411887
+
+*cups-1.5.2-r20 (26 Apr 2012)
+*cups-1.5.2-r4 (26 Apr 2012)
+
+  26 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> +cups-1.5.2-r20.ebuild,
+  +cups-1.5.2-r4.ebuild, -cups-1.5.2-r3.ebuild:
+  Copy -r3 unchanged to -r20; cleanse -r3 of all things systemd and make it -r4
+  for stabilization
+
+  26 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> cups-1.5.2-r3.ebuild:
+  Prefixy.
+
+  24 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.2-r3.ebuild:
+  Do not try to install non-existing files, bug 412873
+
+  23 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> -cups-1.5.2-r2.ebuild:
+  Remove old
+
+  23 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.2-r3.ebuild,
+  +files/cups-1.5.2-threads.patch, +files/cups-1.5.2-threads2.patch:
+  Add backport patch for building without thread support, bug 401323
+
+  21 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.2-r3.ebuild:
+  Fix build with USE=-systemd, thanks Arfrever
+
+*cups-1.5.2-r3 (20 Apr 2012)
+
+  20 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> +cups-1.5.2-r3.ebuild,
+  metadata.xml:
+  Add systemd useflag and dependency, install unit files properly. Should
+  finally fix bug 407975. Patch by Michal Gorny.
+
+  19 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> -cups-1.5.0-r4.ebuild,
+  -cups-1.5.2-r1.ebuild:
+  Remove old
+
+  19 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.2-r2.ebuild,
+  +files/cups-1.5.2-linkperl.patch:
+  Link perl module properly if cups is not installed yet, bug 398277
+
+  18 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.2-r2.ebuild:
+  Set systemd unit dir correctly, bug 407975
+
+  18 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.2-r2.ebuild,
+  +files/cups-1.5.2-browsing.patch:
+  Switch browsing off by default, bug 401927
+
+*cups-1.5.2-r2 (18 Apr 2012)
+
+  18 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> +cups-1.5.2-r2.ebuild:
+  Add avahi support (patch from Debian), as this will be included in 1.6
+  anyway; bug 374153
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> cups-1.5.0-r4.ebuild,
+  cups-1.5.2-r1.ebuild:
+  Marked ~hppa (bug #401067).
+
+  07 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.2-r1.ebuild:
+  Drop php scripting support; it is unmaintained by upstream, has already been
+  removed in trunk, and displays build failures with recent php. Bug 388105
+
+*cups-1.5.2-r1 (07 Feb 2012)
+
+  07 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org> -cups-1.5.2.ebuild,
+  +cups-1.5.2-r1.ebuild:
+  Follow Ubuntu/Debian and use their patch to revert the buggy ipp backend to
+  1.4 state, should fix bug 402063 for now.
+
+*cups-1.5.2 (07 Feb 2012)
+
+  07 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org> +cups-1.5.2.ebuild:
+  Version bump
+
+  05 Feb 2012; Markus Meier <maekke@gentoo.org> cups-1.5.0-r4.ebuild:
+  add ~arm, bug #401067
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> cups-1.5.0-r4.ebuild:
+  Marking cups-1.5.0-r4 ~ppc for bug 401067
+
+*cups-1.5.0-r4 (28 Jan 2012)
+
+  28 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org> -cups-1.5.0-r3.ebuild,
+  +cups-1.5.0-r4.ebuild, +files/cups-1.5.0-systemd-socket.patch:
+  Add systemd support, bug 376021
+
+  27 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.0-r3.ebuild:
+  Re-add usb useflag / kernel configuration checks, but only on linux, bug
+  382675
+
+  27 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.4.8-r1.ebuild,
+  cups-1.4.8-r23.ebuild, cups-1.5.0-r3.ebuild:
+  Remove unused useflag samba, bug 373849
+
+  27 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.0-r3.ebuild:
+  Downgrade gnutls version requirement. Lets see what breaks now.
+
+  27 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -cups-1.4.8-r22.ebuild, -cups-1.5.0-r2.ebuild:
+  Remove old
+
+  27 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.5.0-r3.ebuild:
+  Some cleanups in the ebuild
+
+  22 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.4.8-r1.ebuild,
+  cups-1.4.8-r23.ebuild, cups-1.5.0-r3.ebuild:
+  Break circular dependency
+
+  15 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.4.8-r1.ebuild,
+  cups-1.4.8-r23.ebuild, cups-1.5.0-r3.ebuild, metadata.xml:
+  Pull in net-print/foomatic-filters via a default-on useflag, bug 384793
+
+  15 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.4.8-r23.ebuild,
+  cups-1.5.0-r3.ebuild, files/cupsd.init.d:
+  Create dirs in /var/run in initscript, bug 387893
+
+*cups-1.5.0-r3 (15 Jan 2012)
+*cups-1.4.8-r23 (15 Jan 2012)
+
+  15 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +cups-1.4.8-r23.ebuild, +cups-1.5.0-r3.ebuild:
+  Update icon cache etc, bug 370059
+
+  15 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -files/cups-1.3.0-configure.patch, -files/cups-1.3.7-backend-https.patch,
+  -files/cups-1.3.10-str3178.patch, -cups-1.3.11-r4.ebuild,
+  -files/cups-1.3.11-pdf-m4.patch, -files/cups-1.3.11-str3200.patch,
+  -files/cups-1.3.11-str3367-security-1.3v2.patch,
+  -files/cups-1.3.11-str3401-security-1.3v2-regression.patch,
+  -cups-1.4.6-r2.ebuild, -files/cups-1.4.6-web-hang.patch,
+  -cups-1.4.8-r21.ebuild, -cups-1.5.0-r1.ebuild:
+  Remove old
+
+  13 Nov 2011; Justin Lecher <jlec@gentoo.org> cups-1.3.11-r4.ebuild,
+  cups-1.4.6-r2.ebuild, cups-1.4.8-r1.ebuild, cups-1.4.8-r21.ebuild,
+  cups-1.4.8-r22.ebuild, cups-1.5.0-r1.ebuild, cups-1.5.0-r2.ebuild:
+  Corrected Slotting of media-libs/tiff and media-libs/libpng
+
+  18 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> cups-1.5.0-r2.ebuild:
+  cups 1.5 should handle the usb printing properly without any kernel hackery.
+
+  03 Sep 2011; Raúl Porcel <armin76@gentoo.org> cups-1.4.8-r1.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #380771
+
+  29 Aug 2011; Jeroen Roovers <jer@gentoo.org> cups-1.4.8-r1.ebuild:
+  Stable for HPPA (bug #380771).
+
+*cups-1.5.0-r2 (28 Aug 2011)
+*cups-1.4.8-r22 (28 Aug 2011)
+
+  28 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  +cups-1.4.8-r22.ebuild, +files/cups-1.4.8-largeimage.patch,
+  +cups-1.5.0-r2.ebuild:
+  Add upstream fix for bug 378597, mis-printing of large image files
+
+  28 Aug 2011; Tony Vroon <chainsaw@gentoo.org> cups-1.4.8-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in security bug #380771.
+
+  27 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> cups-1.4.8-r1.ebuild:
+  ppc/ppc64 stable wrt #380771
+
+  27 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> cups-1.4.8-r1.ebuild:
+  x86 stable wrt security bug #380771
+
+  27 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org> cups-1.4.8-r1.ebuild,
+  cups-1.4.8-r21.ebuild, -files/cups-1.4.8-CVE-2011-2896.patch,
+  +files/cups-1.4.8-CVE-2011-3170.patch, cups-1.5.0-r1.ebuild:
+  Dont die on kernel misconfiguration; correct CVE number, the patch fixes
+  CVE-2011-3170
+
+*cups-1.5.0-r1 (25 Aug 2011)
+*cups-1.4.8-r21 (25 Aug 2011)
+*cups-1.4.8-r1 (25 Aug 2011)
+
+  25 Aug 2011; Timo Gurr <tgurr@gentoo.org> -cups-1.4.6-r21.ebuild,
+  -cups-1.4.8.ebuild, +cups-1.4.8-r1.ebuild, +cups-1.4.8-r21.ebuild,
+  +files/cups-1.4.8-CVE-2011-2896.patch, -cups-1.5.0.ebuild,
+  +cups-1.5.0-r1.ebuild:
+  Revbumps fixing security issue CVE-2011-2896. Remove old.
+
+*cups-1.5.0 (17 Aug 2011)
+*cups-1.4.8 (17 Aug 2011)
+
+  17 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org> +cups-1.4.8.ebuild,
+  -cups-1.5_rc1.ebuild, +cups-1.5.0.ebuild:
+  Version bump; cups-1.5 remains package-masked
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> cups-1.4.6-r2.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #333781
 
   09 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> cups-1.4.6-r2.ebuild:
   ppc64 stable wrt #333781

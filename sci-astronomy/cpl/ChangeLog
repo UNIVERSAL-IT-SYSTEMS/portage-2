@@ -1,6 +1,34 @@
 # ChangeLog for sci-astronomy/cpl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/cpl/ChangeLog,v 1.6 2011/04/08 04:39:17 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/cpl/ChangeLog,v 1.12 2012/12/05 17:22:29 bicatali Exp $
+
+*cpl-6.2 (05 Dec 2012)
+
+  05 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> +cpl-6.2.ebuild:
+  Version bump
+
+  06 Sep 2012; Sébastien Fabbro <bicatali@gentoo.org> cpl-6.1.1.ebuild:
+  Compile and install html documentation properly, thanks Peter Weilbacher, bug
+  #434134
+
+  05 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -cpl-5.3.1.ebuild,
+  cpl-6.1.1.ebuild:
+  keyword amd64-linux, x86-linux, removed old
+
+  21 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org> -cpl-5.2.0-r1.ebuild,
+  -files/cpl-5.2.0-test.patch, cpl-6.1.1.ebuild:
+  Fix aclocal with >=sys-devel/automake-1.12 wrt #422455 by Diego Elio Pettenò
+  <flameeyes@gentoo.org>, drop old
+
+*cpl-6.1.1 (04 Jun 2012)
+
+  04 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org> +cpl-6.1.1.ebuild,
+  +files/cpl-6.1.1-check-shared-libs.patch,
+  +files/cpl-6.1.1-use-system-ltdl.patch:
+  Version bump
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Switched herd to sci-astronomy
 
 *cpl-5.3.1 (08 Apr 2011)
 

@@ -1,6 +1,34 @@
 # ChangeLog for dev-perl/B-Utils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/B-Utils/ChangeLog,v 1.11 2011/07/30 09:14:39 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/B-Utils/ChangeLog,v 1.18 2012/11/18 11:08:30 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  21 Apr 2012; Torsten Veller <tove@gentoo.org> -B-Utils-0.170.0.ebuild,
+  -B-Utils-0.190.0.ebuild:
+  Cleanup
+
+*B-Utils-0.210.0 (30 Mar 2012)
+
+  30 Mar 2012; Torsten Veller <tove@gentoo.org> +B-Utils-0.210.0.ebuild:
+  Version bump
+
+*B-Utils-0.190.0 (13 Mar 2012)
+
+  13 Mar 2012; Torsten Veller <tove@gentoo.org> +B-Utils-0.190.0.ebuild:
+  Version bump
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org> -B-Utils-0.150.0.ebuild:
+  Cleanup
+
+*B-Utils-0.170.0 (02 Dec 2011)
+
+  02 Dec 2011; Torsten Veller <tove@gentoo.org> +B-Utils-0.170.0.ebuild:
+  Version bump
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> -B-Utils-0.140.0.ebuild:
   Cleanup
@@ -50,4 +78,3 @@
   23 Jun 2009; Robin H. Johnson <robbat2@gentoo.org> +B-Utils-0.07.ebuild,
   +metadata.xml:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

@@ -1,6 +1,41 @@
 # ChangeLog for sys-devel/kgcc64
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/kgcc64/ChangeLog,v 1.36 2011/07/26 01:17:23 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/kgcc64/ChangeLog,v 1.45 2012/11/14 17:03:04 ranger Exp $
+
+  14 Nov 2012; Brent Baude <ranger@gentoo.org> kgcc64-4.2.4.ebuild:
+  marking kgcc64-4.2.4 ppc stable
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> kgcc64-4.5.3.ebuild:
+  sparc stable
+
+*kgcc64-4.6.3 (27 Jun 2012)
+
+  27 Jun 2012; Jeroen Roovers <jer@gentoo.org> +kgcc64-4.6.3.ebuild:
+  Bump.
+
+  15 May 2012; Jeroen Roovers <jer@gentoo.org> kgcc64-4.5.3.ebuild:
+  Stable for HPPA too.
+
+  10 May 2012; Jeroen Roovers <jer@gentoo.org> kgcc64-4.5.3.ebuild:
+  Bump patchset for bug #382075.
+
+*kgcc64-4.5.3 (17 Feb 2012)
+
+  17 Feb 2012; Jeroen Roovers <jer@gentoo.org> +kgcc64-4.5.3.ebuild:
+  Version bump.
+
+  03 Dec 2011; Mike Frysinger <vapier@gentoo.org> kgcc64-3.4.6.ebuild,
+  kgcc64-4.1.2.ebuild, kgcc64-4.2.4.ebuild, kgcc64-4.3.3.ebuild,
+  kgcc64-4.3.5.ebuild, kgcc64-4.4.4.ebuild, kgcc64-4.4.5.ebuild,
+  kgcc64-4.4.6.ebuild, kgcc64-4.5.2.ebuild:
+  Drop dead ETYPE variable.
+
+  21 Nov 2011; Jeroen Roovers <jer@gentoo.org> Manifest:
+  Regenerate Manifest by Duncan (bug #391181).
+
+  20 Nov 2011; Raúl Porcel <armin76@gentoo.org> kgcc64-4.4.5.ebuild,
+  kgcc64-4.5.2.ebuild:
+  sparc stable
 
 *kgcc64-4.4.6 (26 Jul 2011)
 

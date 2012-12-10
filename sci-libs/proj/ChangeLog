@@ -1,6 +1,40 @@
 # ChangeLog for sci-libs/proj
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/proj/ChangeLog,v 1.30 2011/07/21 07:02:26 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/proj/ChangeLog,v 1.38 2012/12/08 12:34:31 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> proj-4.8.0.ebuild:
+  Stable for ppc64, wrt bug #417453
+
+  25 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> proj-4.8.0.ebuild:
+  Stabilise on amd64, x86 and ppc wrt bug#417453.
+
+  25 May 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -files/proj-4.7.0-robinson.patch, -proj-4.7.0-r1.ebuild, proj-4.8.0.ebuild:
+  Fix +java build. Resolves bug#413481. Patch by Martin von Gagern. Remove
+  overshadowed.
+
+  25 Apr 2012; Sébastien Fabbro <bicatali@gentoo.org> proj-4.8.0.ebuild:
+  Fixed java automagic dependency
+
+*proj-4.8.0 (25 Apr 2012)
+
+  25 Apr 2012; Sébastien Fabbro <bicatali@gentoo.org> +proj-4.8.0.ebuild:
+  Version bump
+
+  06 Feb 2012; Justin Lecher <jlec@gentoo.org> proj-4.7.0-r1.ebuild:
+  Inherit eutils for epatch, #402435
+
+*proj-4.7.0-r1 (26 Jan 2012)
+
+  26 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> +proj-4.7.0-r1.ebuild,
+  +files/proj-4.7.0-robinson.patch:
+  Patch for Robinson projections thanks Jean-Claude Repetto bug #394427,
+  switched to EAPI4
+
+  03 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org>
+  -files/proj-4.4.7-gentoo.patch, -proj-4.4.9.ebuild, -proj-4.5.0.ebuild,
+  -proj-4.6.0.ebuild, -proj-4.6.1.ebuild, -files/proj-4.6.1-test.patch:
+  Removed obsolete
 
   21 Jul 2011; Justin Lecher <jlec@gentoo.org> proj-4.4.9.ebuild,
   proj-4.5.0.ebuild, proj-4.6.0.ebuild, proj-4.6.1.ebuild, proj-4.7.0.ebuild,

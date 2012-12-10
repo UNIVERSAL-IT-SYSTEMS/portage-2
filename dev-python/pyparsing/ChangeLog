@@ -1,6 +1,60 @@
 # ChangeLog for dev-python/pyparsing
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyparsing/ChangeLog,v 1.69 2011/06/14 05:17:24 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyparsing/ChangeLog,v 1.85 2012/11/26 08:01:29 idella4 Exp $
+
+*pyparsing-1.5.6-r1 (27 Nov 2012)
+
+  27 Nov 2012; Ian Delaney <idella4@gentoo.org> +pyparsing-1.5.6-r1.ebuild,
+  pyparsing-1.5.6.ebuild:
+  Fix to exception error in python3, ID 3381439, thanks to report from Rafal
+  Muzylo in Bug #443836
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> pyparsing-1.5.6.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419859
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> pyparsing-1.5.6.ebuild:
+  Marking pyparsing-1.5.6 ppc for bug 415859
+
+  27 May 2012; Markus Meier <maekke@gentoo.org> pyparsing-1.5.6.ebuild:
+  arm stable, bug #415859
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> pyparsing-1.5.6.ebuild:
+  Marking pyparsing-1.5.6 ppc64 for bug 415859
+
+  18 May 2012; Jeff Horelick <jdhore@gentoo.org> pyparsing-1.5.6.ebuild:
+  marked x86 per bug 415859
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> pyparsing-1.5.6.ebuild:
+  Stable for HPPA (bug #415859).
+
+  14 May 2012; Agostino Sarubbo <ago@gentoo.org> pyparsing-1.5.6.ebuild:
+  Stable for amd64, wrt bug #415859
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> pyparsing-1.5.6.ebuild:
+  keyword ~amd64-fbsd
+
+  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> pyparsing-1.5.5.ebuild:
+  s390/sh stable
+
+  24 Dec 2011; Fabian Groffen <grobian@gentoo.org> pyparsing-1.5.6.ebuild:
+  Marked ~{sparc{,64},x{64,86}}-solaris
+
+  16 Oct 2011; Fabian Groffen <grobian@gentoo.org> pyparsing-1.5.6.ebuild:
+  Marked ~x86-macos
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> pyparsing-1.5.6.ebuild:
+  keyword ~x86-fbsd
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> pyparsing-1.5.5.ebuild:
+  Stable for HPPA (bug #355085).
+
+*pyparsing-1.5.6 (14 Sep 2011)
+
+  14 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> +pyparsing-1.5.6.ebuild:
+  Version bump to 1.5.6.
+
+  14 Aug 2011; Markus Meier <maekke@gentoo.org> pyparsing-1.5.5.ebuild:
+  arm stable, bug #355085
 
   14 Jun 2011; Matt Turner <mattst88@gentoo.org> pyparsing-1.5.5.ebuild:
   Added ~mips, bug 352300
@@ -271,4 +325,3 @@
   29 Mar 2004; Bryan Østergaard <kloeri@gentoo.org> metadata.xml,
   pyparsing-1.1.2.ebuild:
   Initial import, ebuild submitted by Bardur Arantsson <gentoo@scientician.org>
-

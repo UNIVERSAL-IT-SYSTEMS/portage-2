@@ -1,6 +1,107 @@
 # ChangeLog for sys-fs/ntfs3g
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/ntfs3g/ChangeLog,v 1.115 2011/05/30 14:34:22 chutzpah Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/ntfs3g/ChangeLog,v 1.141 2012/12/03 17:54:28 ssuominen Exp $
+
+  03 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
+  ntfs3g-2012.1.15-r2.ebuild:
+  Remove USE="extras" to always build the `ntfsck` command with USE="ntfsprogs"
+  by Robin H. Johnson
+  Force at least sys-apps/util-linux >= 2.20.1-r2 for working
+  umount wrappers wrt #403073 by Aidan Marks
+
+  03 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  ntfs3g-2012.1.15-r2.ebuild:
+  stable ppc ppc64, bug #439832
+
+  29 Oct 2012; Jeff Horelick <jdhore@gentoo.org> ntfs3g-2012.1.15-r2.ebuild:
+  marked x86 per bug 439832
+
+  30 Sep 2012; Zac Medico <zmedico@gentoo.org> ntfs3g-2012.1.15-r2.ebuild:
+  Fix possible "double prefix" for udevdir.
+
+  25 Aug 2012; Mike Frysinger <vapier@gentoo.org> ntfs3g-2012.1.15-r1.ebuild:
+  Drop useless -vf args to mv #432632 by Joshua B. Kahlenberg.
+
+*ntfs3g-2012.1.15-r2 (10 Aug 2012)
+
+  10 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +ntfs3g-2012.1.15-r2.ebuild:
+  Query correct udevdir from udev.pc pkg-config file. Remove pointless
+  USE="udev" since it has been a policy for a while to install minimalistic
+  files.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> ntfs3g-2012.1.15-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  ntfs3g-2012.1.15-r1.ebuild:
+  Block older util-linux than 2.19 to ensure mount has the capability of
+  finding helpers from /usr wrt #412129 by Jacek Trubłajewicz
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> ntfs3g-2012.1.15-r1.ebuild:
+  Fix for prefix and add ~amd64-linux and ~x86-linux keywords.
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -ntfs3g-2011.4.12.ebuild,
+  -ntfs3g-2012.1.15.ebuild:
+  old
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  ntfs3g-2012.1.15-r1.ebuild:
+  Missing dependency for dev-libs/libgcrypt wrt #410215 by Richard Scott
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> ntfs3g-2012.1.15-r1.ebuild:
+  Marking ntfs3g-2012.1.15-r1 ppc64 for bug 409273
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> ntfs3g-2012.1.15-r1.ebuild:
+  Marking ntfs3g-2012.1.15-r1 ppc for bug 409273
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  ntfs3g-2012.1.15-r1.ebuild:
+  x86 stable wrt bug #409273
+
+  24 Mar 2012; Agostino Sarubbo <ago@gentoo.org> ntfs3g-2012.1.15-r1.ebuild:
+  Stable for amd64, wrt bug #409273
+
+  22 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Maintained now by chutzpah@, me, and base-system@ (in this order)
+
+  18 Mar 2012; Zac Medico <zmedico@gentoo.org> ntfs3g-2012.1.15-r1.ebuild:
+  Bug #408679: Move ntfsprogs blocker from DEPEND to RDEPEND, as required due to
+  file collisions.
+
+  12 Mar 2012; Mike Gilbert <floppym@gentoo.org> ntfs3g-2012.1.15-r1.ebuild:
+  Fix fperms call.
+
+*ntfs3g-2012.1.15-r1 (11 Mar 2012)
+
+  11 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +ntfs3g-2012.1.15-r1.ebuild:
+  Move udev rules from /etc/udev/rules.d to /lib/udev/rules.d. Enable
+  USE="ntfsprogs" by default wrt #384865. Create mount.ntfs symlink wrt #374197
+  by Claudio Roberto França Pereira. Move everything to /usr wrt #398069 by
+  Michał Górny.
+
+*ntfs3g-2012.1.15 (23 Jan 2012)
+
+  23 Jan 2012; Patrick McLean <chutzpah@gentoo.org> -ntfs3g-2010.8.8.ebuild,
+  -ntfs3g-2010.10.2.ebuild, -ntfs3g-2011.1.15.ebuild, +ntfs3g-2012.1.15.ebuild,
+  metadata.xml:
+  Version bump, add new "extras" USE flag. Drop some older versions.
+
+  29 Dec 2011; Mark Loeser <halcy0n@gentoo.org> ntfs3g-2011.4.12.ebuild:
+  Stable for ppc64; bug #378829
+
+  21 Aug 2011; nixnut <nixnut@gentoo.org> ntfs3g-2011.4.12.ebuild:
+  ppc stable #378829
+
+  21 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ntfs3g-2011.4.12.ebuild:
+  x86 stable wrt bug #378829
+
+  14 Aug 2011; Markos Chandras <hwoarang@gentoo.org> ntfs3g-2011.4.12.ebuild:
+  Stable on amd64 wrt bug #378829
+
+  11 Aug 2011; Patrick McLean <chutzpah@gentoo.org> ntfs3g-2011.4.12.ebuild:
+  Remove .la files and add static-libs USE flag.
 
   30 May 2011; Patrick McLean <chutzpah@gentoo.org> ntfs3g-2011.4.12.ebuild:
   RDEPEND on net-libs/gnutls (bug #366701).
@@ -541,4 +642,3 @@
   15 Jul 2006; Patrick McLean <chutzpah@gentoo.org> +metadata.xml,
   +ntfs3g-0.1_beta20070714.ebuild:
   Initial version.
-

@@ -1,6 +1,34 @@
 # ChangeLog for perl-core/Module-Pluggable
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/perl-core/Module-Pluggable/ChangeLog,v 1.12 2011/05/20 14:03:56 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/perl-core/Module-Pluggable/ChangeLog,v 1.18 2012/11/17 19:26:45 tove Exp $
+
+*Module-Pluggable-4.500.0 (17 Nov 2012)
+
+  17 Nov 2012; Torsten Veller <tove@gentoo.org>
+  +Module-Pluggable-4.500.0.ebuild:
+  Version bump
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  Module-Pluggable-4.300.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+*Module-Pluggable-4.300.0 (22 Aug 2012)
+
+  22 Aug 2012; Torsten Veller <tove@gentoo.org>
+  +Module-Pluggable-4.300.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org>
+  Module-Pluggable-3.900.0.ebuild, Module-Pluggable-4.0.0.ebuild:
+  Add ~arm/~s390/~sh
+
+*Module-Pluggable-4.0.0 (02 May 2012)
+
+  02 May 2012; Torsten Veller <tove@gentoo.org> +Module-Pluggable-4.0.0.ebuild:
+  Version bump
 
 *Module-Pluggable-3.900.0 (20 May 2011)
 
@@ -210,4 +238,3 @@
   20 Apr 2006; <mcummings@gentoo.org> +metadata.xml,
   +Module-Pluggable-2.97.ebuild:
   Dep for perl-critic
-

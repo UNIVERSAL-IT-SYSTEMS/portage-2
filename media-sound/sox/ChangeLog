@@ -1,6 +1,70 @@
 # ChangeLog for media-sound/sox
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/sox/ChangeLog,v 1.126 2011/06/14 04:45:07 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/sox/ChangeLog,v 1.143 2012/11/25 21:12:32 lu_zero Exp $
+
+  25 Nov 2012; Luca Barbato <lu_zero@gentoo.org> sox-14.4.0.ebuild,
+  +files/sox-14.4.0-libav-9.patch:
+  Support libav-9
+
+  13 Jul 2012; Alexis Ballier <aballier@gentoo.org> sox-14.4.0.ebuild,
+  +files/sox-14.4.0-avcodec54.patch:
+  Fix build with ffmpeg-0.11 / git master, bug #407621
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> sox-14.3.2-r1.ebuild,
+  sox-14.4.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*sox-14.4.0 (07 Mar 2012)
+
+  07 Mar 2012; Tim Harder <radhermit@gentoo.org> +sox-14.4.0.ebuild,
+  +files/sox-14.4.0-ffmpeg.patch, metadata.xml:
+  Version bump.
+
+  08 Feb 2012; Fabian Groffen <grobian@gentoo.org> sox-14.3.2-r1.ebuild:
+  Marked ~x64-macos
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> sox-14.3.2-r1.ebuild:
+  Add ~ia64
+
+  28 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> sox-14.3.2-r1.ebuild:
+  Force more recent media-sound/lame wrt #391931 by Dave Kemper
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -sox-14.3.0.ebuild,
+  -sox-14.3.1.ebuild, -files/sox-14.3.1-libpng15.patch,
+  -files/sox-14.3.1-nomad.patch, -sox-14.3.2.ebuild:
+  old
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> sox-14.3.2-r1.ebuild:
+  alpha/sparc stable wrt #386005
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> sox-14.3.2-r1.ebuild:
+  ppc stable wrt #386005
+
+  15 Oct 2011; Markus Meier <maekke@gentoo.org> sox-14.3.2-r1.ebuild:
+  arm stable, bug #386005
+
+  11 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> sox-14.3.2-r1.ebuild:
+  ppc64 stable wrt #386005
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> sox-14.3.2-r1.ebuild:
+  Stable for HPPA (bug #386005).
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> sox-14.3.2-r1.ebuild:
+  x86 stable wrt bug #386005
+
+  07 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> sox-14.3.2-r1.ebuild:
+  amd64 stable wrt #386005
+
+*sox-14.3.2-r1 (07 Oct 2011)
+
+  07 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +sox-14.3.2-r1.ebuild:
+  USE="static-libs" and empty dependency_libs in libtool files wrt #386029.
+  Respect environment CFLAGS with USE="debug" wrt #386027. Thanks to Agostino
+  Sarubbo for reporting.
+
+  18 Aug 2011; Matt Turner <mattst88@gentoo.org> sox-14.3.0.ebuild,
+  sox-14.3.1.ebuild, sox-14.3.2.ebuild:
+  Add openmp USE flag, bug 371549.
 
   14 Jun 2011; Matt Turner <mattst88@gentoo.org> sox-14.3.2.ebuild:
   Added ~mips, bug 260095

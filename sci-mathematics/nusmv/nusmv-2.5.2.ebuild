@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/nusmv/nusmv-2.5.2.ebuild,v 1.1 2011/01/01 17:49:54 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/nusmv/nusmv-2.5.2.ebuild,v 1.3 2012/04/25 17:08:40 jlec Exp $
 
 inherit eutils flag-o-matic toolchain-funcs
 
@@ -33,8 +33,7 @@ IUSE="minisat examples"
 RDEPEND="dev-libs/expat"
 DEPEND="${RDEPEND}
 		virtual/latex-base
-		|| ( ( dev-texlive/texlive-latexextra )
-			app-text/ptex )
+		dev-texlive/texlive-latexextra
 		app-text/ghostscript-gpl
 		www-client/lynx
 		dev-lang/perl"
@@ -95,7 +94,7 @@ src_compile() {
 	fi
 
 	cd ${NUSMV_S}
-	econf ${myconf} || die "econf failed"
+	econf ${myconf}
 	emake || die "emake failed"
 
 	VARTEXFONTS="${T}"/fonts emake docs

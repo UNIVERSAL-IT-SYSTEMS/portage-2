@@ -1,6 +1,93 @@
 # ChangeLog for sys-kernel/ck-sources
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/ck-sources/ChangeLog,v 1.198 2011/07/30 17:00:44 nelchael Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/ck-sources/ChangeLog,v 1.211 2012/11/17 19:05:40 hwoarang Exp $
+
+*ck-sources-3.4.18 (17 Nov 2012)
+
+  17 Nov 2012; Markos Chandras <hwoarang@gentoo.org> +ck-sources-3.4.18.ebuild,
+  metadata.xml:
+  Version bump. Bug #443566. Drop maintainer. Thanks to Eric F. GARIOUD
+  <eric-f.garioud@wanadoo.fr>
+
+*ck-sources-3.6.2 (29 Oct 2012)
+
+  29 Oct 2012; Markos Chandras <hwoarang@gentoo.org> +ck-sources-3.6.2.ebuild,
+  +files/ck-sources-3.6-Fix_Boot_Issue_On_Kvm-aCOSwt_P6.patch, metadata.xml:
+  Version bump. Bug #440116. Thanks to Eric F. GARIOUD
+  <eric-f.garioud@wanadoo.fr>
+
+*ck-sources-3.5.7-r1 (29 Oct 2012)
+*ck-sources-3.4.9-r1 (29 Oct 2012)
+
+  29 Oct 2012; Markos Chandras <hwoarang@gentoo.org>
+  +ck-sources-3.4.9-r1.ebuild, +ck-sources-3.5.7-r1.ebuild,
+  -ck-sources-2.6.39-r2.ebuild, -ck-sources-3.0.4.ebuild,
+  -ck-sources-3.1.4.ebuild, -ck-sources-3.2.6.ebuild, -ck-sources-3.4.9.ebuild,
+  -ck-sources-3.5.3.ebuild, -ck-sources-3.5.7.ebuild:
+  Ensure freedist compliance. Drop old ebuilds. Bug #440052
+
+*ck-sources-3.5.7 (26 Oct 2012)
+
+  26 Oct 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/ck-sources-3.4-3.5-PostCK-Sched_Fix_Race_In_Task_Group-aCOSwt_P5.patch
+  ,
+  +files/ck-sources-3.4-3.5-PreCK-Sched_Fix_Race_In_Task_Group-aCOSwt_P4.patch,
+  +ck-sources-3.5.7.ebuild, metadata.xml:
+  Version bump. Thanks to Eric F. GARIOUD <eric-f.garioud@wanadoo.fr>.
+  Fixes bug #438910
+
+*ck-sources-3.4.9 (22 Sep 2012)
+
+  22 Sep 2012; Markos Chandras <hwoarang@gentoo.org> +ck-sources-3.4.9.ebuild,
+  +files/ck-sources-3.4.9-calc_load_idle-aCOSwt_P3.patch,
+  -ck-sources-3.2.1.ebuild, -ck-sources-3.2.5.ebuild, -ck-sources-3.3.1.ebuild,
+  -ck-sources-3.3.4.ebuild:
+  Bump to 3.4.9. Remove old ebuilds. Bug #434106
+
+*ck-sources-3.5.3 (22 Sep 2012)
+
+  22 Sep 2012; Markos Chandras <hwoarang@gentoo.org> +ck-sources-3.5.3.ebuild,
+  metadata.xml:
+  Version bump thanks to Eric F. GARIOUD <eric-f.garioud@wanadoo.fr>. Bug
+  #432320. He will maintain it while Krzysztof is away
+
+*ck-sources-3.3.4 (30 Apr 2012)
+*ck-sources-3.3.1 (30 Apr 2012)
+
+  30 Apr 2012; Krzysztof Pawlik <nelchael@gentoo.org> +ck-sources-3.3.1.ebuild,
+  +ck-sources-3.3.4.ebuild:
+  Version bump.
+
+*ck-sources-3.2.6 (19 Feb 2012)
+
+  19 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org> +ck-sources-3.2.6.ebuild:
+  Version bump.
+
+*ck-sources-3.2.5 (11 Feb 2012)
+
+  11 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org> +ck-sources-3.2.5.ebuild:
+  Version bump.
+
+*ck-sources-3.2.1 (30 Jan 2012)
+
+  30 Jan 2012; Krzysztof Pawlik <nelchael@gentoo.org> +ck-sources-3.2.1.ebuild,
+  -ck-sources-3.2.2.ebuild:
+  Add proper 3.2.1, remove incorrectly versioned 3.2.2.
+
+*ck-sources-3.2.2 (27 Jan 2012)
+
+  27 Jan 2012; Krzysztof Pawlik <nelchael@gentoo.org> +ck-sources-3.2.2.ebuild:
+  Version bump.
+
+*ck-sources-3.1.4 (30 Nov 2011)
+
+  30 Nov 2011; Krzysztof Pawlik <nelchael@gentoo.org> +ck-sources-3.1.4.ebuild:
+  Version bump.
+
+*ck-sources-3.0.4 (01 Sep 2011)
+
+  01 Sep 2011; Krzysztof Pawlik <nelchael@gentoo.org> +ck-sources-3.0.4.ebuild:
+  Version bump.
 
 *ck-sources-2.6.39-r2 (30 Jul 2011)
 
@@ -207,4 +294,3 @@
   17 Apr 2010; Krzysztof Pawlik <nelchael@gentoo.org>
   +ck-sources-2.6.32.ebuild, +ck-sources-2.6.33.ebuild, +metadata.xml:
   Initial commit of new ck-sources, see bug #297169.
-

@@ -1,6 +1,156 @@
 # ChangeLog for x11-libs/cairo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/cairo/ChangeLog,v 1.283 2011/07/13 09:05:48 mduft Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/cairo/ChangeLog,v 1.316 2012/12/08 17:13:07 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> cairo-1.10.2-r3.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> cairo-1.10.2-r3.ebuild:
+  Marking cairo-1.10.2-r3 ppc stable for bug 440872
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> cairo-1.10.2-r2.ebuild,
+  cairo-1.10.2-r3.ebuild, cairo-1.12.2-r2.ebuild, cairo-1.12.2-r3.ebuild,
+  cairo-1.12.2-r4.ebuild, cairo-1.12.6.ebuild, cairo-1.12.8.ebuild,
+  cairo-1.8.10.ebuild, cairo-9999.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> cairo-1.10.2-r3.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> cairo-1.10.2-r3.ebuild:
+  Stable for amd64, wrt bug #440872
+
+*cairo-1.12.8 (15 Nov 2012)
+
+  15 Nov 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +cairo-1.12.8.ebuild:
+  Version bump. Now depends on libXext, bug #443078.
+
+  04 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> cairo-1.12.6.ebuild,
+  cairo-9999.ebuild, metadata.xml:
+  Leave -buggy_gradients.patch behind USE="legacy-drivers" for users of, for
+  example, <x11-drivers/nvidia-drivers-304.30.
+
+*cairo-1.12.6 (31 Oct 2012)
+
+  31 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +cairo-1.12.6.ebuild, cairo-9999.ebuild:
+  Version bump, bug #437424. Reduce differences between release and live ebuild.
+
+  14 Oct 2012; Alexis Ballier <aballier@gentoo.org> cairo-1.12.2-r4.ebuild,
+  +files/cairo-1.12.2-fdr-nodl.patch, +files/cairo-1.12.2-sphinx-nodl.patch:
+  Add patches from upstream to fix building cairo-fdr and cairo-sphinx on
+  systems with dlopen functions in the libc, like FreeBSD.
+
+  12 Sep 2012; Matt Turner <mattst88@gentoo.org> cairo-1.12.2-r2.ebuild,
+  cairo-1.12.2-r3.ebuild, cairo-1.12.2-r4.ebuild, cairo-9999.ebuild:
+  Fix required pixman version.
+
+*cairo-1.12.2-r4 (12 Sep 2012)
+
+  12 Sep 2012; Matt Turner <mattst88@gentoo.org> +cairo-1.12.2-r4.ebuild,
+  +files/cairo-1.12.2-surfaceless-extension.patch:
+  Add patch for bug 431014 to fix EGL surfaceless extension detection.
+
+*cairo-1.12.2-r3 (30 Jul 2012)
+
+  30 Jul 2012; Ben de Groot <yngwin@gentoo.org> +cairo-1.12.2-r3.ebuild:
+  Reapply buggy_gradients.patch that got inadvertently dropped
+
+*cairo-1.10.2-r3 (25 Jul 2012)
+*cairo-1.12.2-r2 (25 Jul 2012)
+
+  25 Jul 2012; Ben de Groot <yngwin@gentoo.org> +cairo-1.10.2-r3.ebuild,
+  +cairo-1.12.2-r2.ebuild, +files/cairo-1.10.2-export-symbols.patch,
+  +files/cairo-1.10.2-ubuntu.patch, cairo-9999.ebuild:
+  Fix bugs #369593, #410213, #416507
+
+  24 Jul 2012; Ben de Groot <yngwin@gentoo.org> cairo-1.10.2-r2.ebuild,
+  cairo-1.12.2-r1.ebuild:
+  epatch_user cairo-1.12.2-r1 too
+
+*cairo-1.10.2-r2 (24 Jul 2012)
+
+  24 Jul 2012; Ben de Groot <yngwin@gentoo.org> +cairo-1.10.2-r2.ebuild,
+  -cairo-1.10.2-r1.ebuild:
+  Oops! Restore 1.10.2-r2 and remove 1.10.2-r1...
+
+  24 Jul 2012; Ben de Groot <yngwin@gentoo.org> -cairo-1.10.2-r2.ebuild,
+  -cairo-1.12.0.ebuild, -cairo-1.12.2.ebuild, cairo-1.10.2-r1.ebuild,
+  cairo-1.12.2-r1.ebuild:
+  Add epatch_user (bug #414987). Fix whitespace. Drop old ebuilds.
+
+*cairo-1.12.2-r1 (24 Jul 2012)
+
+  24 Jul 2012; Ben de Groot <yngwin@gentoo.org> +cairo-1.12.2-r1.ebuild,
+  +files/cairo-respect-fontconfig.patch, metadata.xml:
+  Take over maintainership, since spatz is being retired. Add back qt-
+  surface.patch to 1.12.2 (bug #418133). Add respect-fontconfig patch by Paul
+  Bredbury (https://bugs.freedesktop.org/show_bug.cgi?id=11838#c8).
+
+  14 Jul 2012; Doug Goldstein <cardoe@gentoo.org> cairo-1.12.2.ebuild,
+  cairo-9999.ebuild:
+  Clean up Live ebuild handling. Sync latest release version ebuild with the
+  Live ebuild.
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> cairo-1.10.2-r2.ebuild:
+  Marking cairo-1.10.2-r2 ppc64 for bug 414309
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> cairo-1.10.2-r2.ebuild,
+  cairo-1.12.0.ebuild, cairo-1.12.2.ebuild:
+  we do not need to disable trace entirely for FreeBSD but only symbol-lookup
+  that relies on glibc definitions.
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> cairo-1.10.2-r2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #414309
+
+  27 May 2012; Naohiro Aota <naota@gentoo.org> cairo-1.10.2-r2.ebuild,
+  cairo-1.12.0.ebuild, cairo-1.12.2.ebuild:
+  Disable trace on FreeBSD. #390449
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> cairo-1.10.2-r2.ebuild:
+  Stable for HPPA (bug #414309).
+
+  05 May 2012; Markus Meier <maekke@gentoo.org> cairo-1.10.2-r2.ebuild:
+  arm stable, bug #414309
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> cairo-1.8.10.ebuild,
+  cairo-1.10.2-r1.ebuild, cairo-1.10.2-r2.ebuild, cairo-1.12.0.ebuild,
+  cairo-1.12.2.ebuild, cairo-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  04 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> cairo-1.10.2-r2.ebuild:
+  Stable on amd64 x86 and ppc wrt bug#414309.
+
+  02 May 2012; Davide Pesavento <pesa@gentoo.org> cairo-1.10.2-r1.ebuild,
+  cairo-1.10.2-r2.ebuild, cairo-1.12.0.ebuild, cairo-1.12.2.ebuild,
+  cairo-9999.ebuild:
+  Raise qt-gui dependency to >=4.8 wrt bug 412177.
+
+*cairo-1.12.2 (01 May 2012)
+
+  01 May 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +cairo-1.12.2.ebuild, cairo-9999.ebuild:
+  Version bump.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> cairo-1.10.2-r2.ebuild,
+  cairo-1.12.0.ebuild:
+  keyword ~amd64-fbsd
+
+*cairo-1.12.0 (24 Mar 2012)
+
+  24 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +cairo-1.12.0.ebuild, cairo-9999.ebuild:
+  Version bump, bug #401377. Adjust openvg dependency.
+
+*cairo-1.10.2-r2 (29 Jan 2012)
+
+  29 Jan 2012; Alex Alexander <wired@gentoo.org> +cairo-1.10.2-r2.ebuild,
+  +files/cairo-1.10.2-qt-surface.patch:
+  revbump with patch for Qt-4.8. bug #380013
+
+  14 Aug 2011; Michał Górny <mgorny@gentoo.org> cairo-9999.ebuild:
+  Remove unnecessary --{en,dis}able-xcb-drm wrt bug #379097.
 
   13 Jul 2011; Markus Duft <mduft@gentoo.org> cairo-1.10.2-r1.ebuild,
   +files/cairo-1.10.2-interix.patch:

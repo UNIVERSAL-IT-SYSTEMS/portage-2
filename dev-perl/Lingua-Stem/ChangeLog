@@ -1,6 +1,31 @@
 # ChangeLog for dev-perl/Lingua-Stem
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Lingua-Stem/ChangeLog,v 1.23 2010/04/30 07:13:32 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Lingua-Stem/ChangeLog,v 1.30 2012/06/24 12:58:55 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Lingua-Stem-0.83.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> Lingua-Stem-0.83.ebuild,
+  Lingua-Stem-0.840.0.ebuild:
+  Drop ia64/sparc keywords
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Lingua-Stem-0.840.0.ebuild:
+  x86 stable wrt bug #400159
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Lingua-Stem-0.840.0.ebuild:
+  Stable for amd64, wrt bug #400159
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Lingua-Stem-0.84.ebuild:
+  Cleanup
+
+*Lingua-Stem-0.840.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +Lingua-Stem-0.840.0.ebuild:
+  Change version scheme
 
 *Lingua-Stem-0.84 (30 Apr 2010)
 
@@ -91,4 +116,3 @@
   06 Oct 2004; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Lingua-Stem-0.81.ebuild:
   Dep for Plucene - perl port of lucene
-

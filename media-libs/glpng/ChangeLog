@@ -1,6 +1,13 @@
 # ChangeLog for media-libs/glpng
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/glpng/ChangeLog,v 1.9 2011/05/31 10:33:05 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/glpng/ChangeLog,v 1.11 2012/10/12 15:39:34 mr_bones_ Exp $
+
+  12 Oct 2012; Michael Sterrett <mr_bones_@gentoo.org> glpng-1.45-r1.ebuild:
+  add virtual/glu dep (bug #438128)
+
+  09 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> glpng-1.45-r1.ebuild,
+  +files/glpng-1.45-libpng15.patch:
+  Fix building with libpng15 wrt #378417 by Diego Elio Pettenò
 
   31 May 2011; Tomáš Chvátal <scarabeus@gentoo.org> glpng-1.45-r1.ebuild,
   metadata.xml:
@@ -39,4 +46,3 @@
   Initial import. This ebuild is added as dep for new chromium. Will be removed
   when chromium don't need anymore. Report to me if you want to use this in
   different ebuilds please.
-

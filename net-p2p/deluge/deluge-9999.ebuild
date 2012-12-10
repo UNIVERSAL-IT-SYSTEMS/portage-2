@@ -1,13 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/deluge/deluge-9999.ebuild,v 1.26 2011/04/05 21:16:57 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/deluge/deluge-9999.ebuild,v 1.29 2012/04/22 17:37:23 armin76 Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"
 
-inherit distutils flag-o-matic git
+inherit distutils flag-o-matic git-2
 
-EGIT_REPO_URI="git://deluge-torrent.org/deluge.git"
+EGIT_REPO_URI="git://deluge-torrent.org/${PN}.git
+	http://git.deluge-torrent.org/${PN}/"
 
 DESCRIPTION="BitTorrent client with a client/server model."
 HOMEPAGE="http://deluge-torrent.org/"
@@ -16,7 +17,7 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="gtk libnotify webinterface"
+IUSE="geoip gtk libnotify setproctitle webinterface"
 
 DEPEND=">=net-libs/rb_libtorrent-0.14.9[python]
 	dev-python/setuptools"
@@ -27,13 +28,15 @@ RDEPEND="${DEPEND}
 	|| ( dev-lang/python:2.7 dev-lang/python:2.6 dev-python/simplejson )
 	>=dev-python/twisted-8.1
 	>=dev-python/twisted-web-8.1
+	geoip? ( dev-libs/geoip )
 	gtk? (
 		dev-python/pygame
-		dev-python/pygobject
+		dev-python/pygobject:2
 		>=dev-python/pygtk-2.12
 		gnome-base/librsvg
 		libnotify? ( dev-python/notify-python )
 	)
+	setproctitle? ( dev-python/setproctitle )
 	webinterface? ( dev-python/mako )"
 
 pkg_setup() {

@@ -1,6 +1,138 @@
 # ChangeLog for net-dns/avahi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/avahi/ChangeLog,v 1.203 2011/04/06 20:09:43 swegener Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dns/avahi/ChangeLog,v 1.237 2012/11/26 19:54:48 blueness Exp $
+
+  26 Nov 2012; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
+  Added myself as maintainer
+
+  25 Nov 2012; Sven Wegener <swegener@gentoo.org> metadata.xml:
+  Move to maintainer-needed.
+
+*avahi-0.6.31 (25 Nov 2012)
+
+  25 Nov 2012; Sven Wegener <swegener@gentoo.org> +avahi-0.6.31.ebuild,
+  +files/avahi-0.6.31-install-exec-hook.patch:
+  Version bump, bug #404209.
+
+  07 Oct 2012; Raúl Porcel <armin76@gentoo.org> avahi-0.6.30-r3.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #431830
+
+  06 Oct 2012; Anthony G. Basile <blueness@gentoo.org> avahi-0.6.30-r3.ebuild:
+  stable ppc64, bug #431830
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> avahi-0.6.30-r3.ebuild:
+  Marking avahi-0.6.30-r3 ppc for bug 431830
+
+  02 Oct 2012; Markus Meier <maekke@gentoo.org> avahi-0.6.30-r3.ebuild:
+  arm stable, bug #431830
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> avahi-0.6.30-r3.ebuild:
+  Stable for HPPA (bug #431830).
+
+  01 Oct 2012; Agostino Sarubbo <ago@gentoo.org> avahi-0.6.30-r3.ebuild:
+  Stable for amd64, wrt bug #431830
+
+  01 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> avahi-0.6.30-r3.ebuild:
+  x86 stable wrt bug #431830
+
+  16 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org> avahi-0.6.30-r3.ebuild:
+  Use automake 1.11 to avoid build failures.
+
+  14 Jun 2012; Zac Medico <zmedico@gentoo.org> avahi-0.6.30-r1.ebuild,
+  avahi-0.6.30-r3.ebuild:
+  inherit user for enewgroup and enewuser
+
+  13 May 2012; Alexis Ballier <aballier@gentoo.org> avahi-0.6.30-r3.ebuild:
+  keyword ~amd64-fbsd
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> avahi-0.6.30-r1.ebuild,
+  avahi-0.6.30-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  01 May 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/avahi-0.6.30-parallel.patch, avahi-0.6.30-r3.ebuild:
+  Fix bug #411351 (broken parallel install with USE=utils).
+
+  12 Feb 2012; Mike Gilbert <floppym@gentoo.org> avahi-0.6.30-r3.ebuild:
+  Call python_convert_shebangs() only in correct combination of USE flags. Patch
+  by Arfrever.
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -avahi-0.6.28-r1.ebuild,
+  -files/avahi-0.6.28-CVE-2011-1002.patch, -avahi-0.6.29-r1.ebuild,
+  -avahi-0.6.30-r2.ebuild,
+  -files/netlink-request-all-matches-when-requesting-interface.patch:
+  old
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> avahi-0.6.30-r1.ebuild:
+  ppc/ppc64 stable wrt #393009
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> avahi-0.6.30-r3.ebuild:
+  Remove || die from python_convert_shebangs and run it on a directory instead
+  wrt #396339 by Deepak Shandilya
+
+*avahi-0.6.30-r3 (15 Jan 2012)
+
+  15 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +avahi-0.6.30-r3.ebuild,
+  +files/avahi-0.6.30-automake-1.11.2.patch:
+  Install services-types file(s) to pkgdatadir instead of pkglibdir. Empty
+  py-compile script instead of pointing the 'make install' to "true". Closing
+  #397477.
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> avahi-0.6.30-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #393009
+
+  28 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org> avahi-0.6.30-r2.ebuild:
+  QA: do not try to convert the shebang of avahi-discover if gtk and/or dbus are
+  disabled.
+
+  27 Dec 2011; Jesus Rivero <neurogeek@gentoo.org> avahi-0.6.30-r2.ebuild:
+  Removed die from python_convert_shebangs. Patch by Arfrever
+
+  25 Dec 2011; Maxim Koltsov <maksbotan@gentoo.org> avahi-0.6.29-r1.ebuild,
+  avahi-0.6.30-r2.ebuild:
+  Fix 395957 again
+
+  25 Dec 2011; Maxim Koltsov <maksbotan@gentoo.org> avahi-0.6.29-r1.ebuild,
+  avahi-0.6.30-r2.ebuild:
+  Fix bug 395957, call python_convert_shebangs only when use python is set
+
+  18 Dec 2011; Markus Meier <maekke@gentoo.org> avahi-0.6.30-r1.ebuild:
+  arm stable, bug #393009
+
+  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> avahi-0.6.30-r1.ebuild:
+  x86 stable wrt bug #393009
+
+  16 Dec 2011; Jeroen Roovers <jer@gentoo.org> avahi-0.6.30-r1.ebuild:
+  Stable for HPPA (bug #393009).
+
+*avahi-0.6.30-r2 (24 Dec 2011)
+*avahi-0.6.29-r1 (24 Dec 2011)
+
+  24 Dec 2011; Maxim Koltsov <maksbotan@gentoo.org> -avahi-0.6.29.ebuild,
+  +avahi-0.6.29-r1.ebuild, -avahi-0.6.30.ebuild, +avahi-0.6.30-r2.ebuild:
+  Fix shebangs, bug 383773. Clean old versions
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> avahi-0.6.30-r1.ebuild:
+  Stable for AMD64, wrt bug #393009
+
+  23 Oct 2011; Lars Wendler <polynomial-c@gentoo.org>
+  +files/avahi-0.6.x-openrc-0.9.x-init-scripts-fixes.patch,
+  avahi-0.6.29.ebuild, avahi-0.6.30.ebuild, avahi-0.6.30-r1.ebuild:
+  non-maintainer commit: Replaced deprecated opts variable in init scripts (bug
+  #383641).
+
+  02 Oct 2011; Pacho Ramos <pacho@gentoo.org> avahi-0.6.30-r1.ebuild:
+  Drop DEPRECATED flags, bug #384743
+
+*avahi-0.6.30-r1 (14 Aug 2011)
+
+  14 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> +avahi-0.6.30-r1.ebuild,
+  +files/avahi-0.6.30-optional-gtk-utils.patch:
+  Add gtk3 and introspection support, make utilities optional, reorder deps to
+  use COMMON_DEPEND, remove static libraries and .la files
+
+  06 Aug 2011; Zac Medico <zmedico@gentoo.org> avahi-0.6.30.ebuild:
+  Fix for prefix and add ~x86-linux keyword.
 
 *avahi-0.6.30 (06 Apr 2011)
 
@@ -846,4 +978,3 @@
   22 Aug 2005; Sven Wegener <swegener@gentoo.org> +files/avahi.initd,
   +files/avahi-dnsconfd.initd, +metadata.xml, +avahi-0.1.ebuild:
   Initial commit, ebuild written by me.
-

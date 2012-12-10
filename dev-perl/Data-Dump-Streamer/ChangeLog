@@ -1,6 +1,38 @@
 # ChangeLog for dev-perl/Data-Dump-Streamer
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Data-Dump-Streamer/ChangeLog,v 1.15 2011/04/03 06:42:44 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Data-Dump-Streamer/ChangeLog,v 1.22 2012/11/18 11:12:30 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+*Data-Dump-Streamer-2.340.0 (04 Sep 2012)
+
+  04 Sep 2012; Torsten Veller <tove@gentoo.org>
+  +Data-Dump-Streamer-2.340.0.ebuild:
+  Version bump
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org>
+  -Data-Dump-Streamer-2.320.0.ebuild:
+  Cleanup
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*Data-Dump-Streamer-2.330.0 (06 Apr 2012)
+
+  06 Apr 2012; Torsten Veller <tove@gentoo.org>
+  +Data-Dump-Streamer-2.330.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org>
+  -Data-Dump-Streamer-2.320.ebuild:
+  Cleanup
+
+*Data-Dump-Streamer-2.320.0 (31 Aug 2011)
+
+  31 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +Data-Dump-Streamer-2.320.0.ebuild:
+  Change version scheme
 
   03 Apr 2011; Torsten Veller <tove@gentoo.org>
   -Data-Dump-Streamer-2.22.ebuild, -Data-Dump-Streamer-2.230.ebuild,
@@ -86,4 +118,3 @@
   23 Jun 2009; Robin H. Johnson <robbat2@gentoo.org>
   +Data-Dump-Streamer-2.09.ebuild, +metadata.xml:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

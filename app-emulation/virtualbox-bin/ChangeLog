@@ -1,6 +1,154 @@
 # ChangeLog for app-emulation/virtualbox-bin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-bin/ChangeLog,v 1.114 2011/07/22 16:57:58 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-bin/ChangeLog,v 1.144 2012/12/04 09:40:13 polynomial-c Exp $
+
+  04 Dec 2012; Lars Wendler <polynomial-c@gentoo.org>
+  files/10-virtualbox.rules, virtualbox-bin-4.2.2.ebuild,
+  virtualbox-bin-4.2.4.ebuild:
+  Fixed installation of udev files (bug #430424).
+
+*virtualbox-bin-4.2.4 (10 Nov 2012)
+
+  10 Nov 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-bin-4.2.0.ebuild, +virtualbox-bin-4.2.4.ebuild:
+  Version bump. Removed old.
+
+*virtualbox-bin-4.2.2 (24 Oct 2012)
+
+  24 Oct 2012; Patrick Lauer <patrick@gentoo.org> +virtualbox-bin-4.2.2.ebuild:
+  Bump #439366
+
+  18 Sep 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-bin-4.1.12.ebuild, -virtualbox-bin-4.1.18.ebuild:
+  Removed old versions.
+
+  17 Sep 2012; Andreas Schuerch <nativemad@gentoo.org>
+  virtualbox-bin-4.1.22.ebuild:
+  x86 stable, see bug 434872
+
+  16 Sep 2012; Agostino Sarubbo <ago@gentoo.org> virtualbox-bin-4.1.22.ebuild:
+  Stable for amd64, wrt bug #434872
+
+*virtualbox-bin-4.2.0 (13 Sep 2012)
+
+  13 Sep 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-bin-4.1.20.ebuild, +virtualbox-bin-4.2.0.ebuild:
+  Version bump. Removed old.
+
+*virtualbox-bin-4.1.22 (09 Sep 2012)
+
+  09 Sep 2012; Lars Wendler <polynomial-c@gentoo.org>
+  +virtualbox-bin-4.1.22.ebuild:
+  Version bump.
+
+*virtualbox-bin-4.1.20 (21 Aug 2012)
+
+  21 Aug 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-bin-4.1.16.ebuild, +virtualbox-bin-4.1.20.ebuild:
+  Version bump. Removed old.
+
+  07 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  virtualbox-bin-4.1.18.ebuild:
+  Stable on amd64 wrt bug #427852
+
+*virtualbox-bin-4.1.18 (20 Jun 2012)
+
+  20 Jun 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-bin-4.1.14.ebuild, +virtualbox-bin-4.1.18.ebuild:
+  Version bump. Removed old.
+
+*virtualbox-bin-4.1.16 (23 May 2012)
+
+  23 May 2012; Lars Wendler <polynomial-c@gentoo.org>
+  +virtualbox-bin-4.1.16.ebuild:
+  Version bump.
+
+*virtualbox-bin-4.1.14 (26 Apr 2012)
+
+  26 Apr 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-bin-4.1.4.ebuild, -virtualbox-bin-4.1.8.ebuild,
+  -virtualbox-bin-4.1.10.ebuild, +virtualbox-bin-4.1.14.ebuild:
+  Version bump. Removed old.
+
+  24 Apr 2012; Agostino Sarubbo <ago@gentoo.org> virtualbox-bin-4.1.12.ebuild:
+  Stable for amd64, wrt bug #412565
+
+  22 Apr 2012; Markus Meier <maekke@gentoo.org> virtualbox-bin-4.1.12.ebuild:
+  x86 stable, bug #412565
+
+  09 Apr 2012; Markus Meier <maekke@gentoo.org> virtualbox-bin-4.1.8.ebuild:
+  x86 stable, bug #403441
+
+*virtualbox-bin-4.1.12 (05 Apr 2012)
+
+  05 Apr 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-bin-4.1.6-r1.ebuild, +virtualbox-bin-4.1.12.ebuild:
+  Version bump (bug #410811). Removed old.
+
+  16 Mar 2012; Mike Gilbert <floppym@gentoo.org> virtualbox-bin-4.1.10.ebuild:
+  Set PYTHON_UPDATER_IGNORE and remove some obsolete entries in QA and RDEPEND
+  variables. Patch by Arfrever. Bug 405947.
+
+*virtualbox-bin-4.1.10 (15 Mar 2012)
+
+  15 Mar 2012; Lars Wendler <polynomial-c@gentoo.org>
+  +virtualbox-bin-4.1.10.ebuild:
+  Version bump.
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> virtualbox-bin-4.1.8.ebuild:
+  Stable for amd64, wrt bug #403441
+
+  05 Feb 2012; Mike Frysinger <vapier@gentoo.org> virtualbox-bin-4.1.4.ebuild,
+  virtualbox-bin-4.1.6-r1.ebuild, virtualbox-bin-4.1.8.ebuild:
+  Move to new unpacker eclass for unpack_makeself.
+
+  09 Jan 2012; Lars Wendler <polynomial-c@gentoo.org>
+  virtualbox-bin-4.1.8.ebuild:
+  Install better looking icons. Thanks to cpglsn from IRC for testing.
+
+*virtualbox-bin-4.1.8 (20 Dec 2011)
+
+  20 Dec 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-bin-4.0.12.ebuild, +virtualbox-bin-4.1.8.ebuild:
+  Version bump. Removed old.
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  virtualbox-bin-4.1.4.ebuild:
+  x86 stable wrt bug #386317
+
+*virtualbox-bin-4.1.6-r1 (06 Nov 2011)
+
+  06 Nov 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-bin-4.1.6.ebuild, +virtualbox-bin-4.1.6-r1.ebuild:
+  Revision bump because upstream re-released tarballs (bug #389773).
+
+*virtualbox-bin-4.1.6 (04 Nov 2011)
+
+  04 Nov 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-bin-4.1.2.ebuild, +virtualbox-bin-4.1.6.ebuild:
+  Version bump. Removed old.
+
+  01 Nov 2011; Tony Vroon <chainsaw@gentoo.org> virtualbox-bin-4.1.4.ebuild:
+  Marked stable on AMD64 based on arch testing by Tomáš "Mepho" Pružina,
+  Blain "doc235" Anderson & Elijah "Armageddon" El Lazkani in security bug
+  #386317.
+
+*virtualbox-bin-4.1.4 (04 Oct 2011)
+
+  04 Oct 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-bin-4.1.0.ebuild, +virtualbox-bin-4.1.4.ebuild:
+  Version bump. Thanks to Christian Inci who reported this in bug #385577.
+  Removed old.
+
+*virtualbox-bin-4.1.2 (17 Aug 2011)
+
+  17 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  +virtualbox-bin-4.1.2.ebuild:
+  Version bump.
+
+  09 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-bin-3.2.12-r1.ebuild, -virtualbox-bin-4.0.10-r1.ebuild:
+  Removed old versions.
 
   22 Jul 2011; Markos Chandras <hwoarang@gentoo.org>
   virtualbox-bin-4.0.12.ebuild:
@@ -649,4 +797,3 @@
   15 Feb 2007; Markus Ullmann <jokey@gentoo.org> +metadata.xml,
   +virtualbox-bin-1.3.4.ebuild:
   Initial version, thanks to Alessio Cassibba
-

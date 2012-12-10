@@ -1,6 +1,88 @@
 # ChangeLog for net-misc/socat
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/socat/ChangeLog,v 1.84 2010/08/07 15:57:58 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/socat/ChangeLog,v 1.107 2012/12/02 06:33:14 radhermit Exp $
+
+  02 Dec 2012; Tim Harder <radhermit@gentoo.org> socat-1.7.2.1.ebuild:
+  Inherit autotools eclass (bug #445526).
+
+  26 Oct 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/socat-1.7.2.1-long-long.patch, socat-1.7.2.1.ebuild,
+  socat-2.0.0_beta5.ebuild:
+  Build x32 support work #436164 by redneb.
+
+  26 Jul 2012; Christoph Junghans <ottxor@gentoo.org> socat-1.7.2.1.ebuild:
+  added ~x86-macos
+
+  26 May 2012; Jeroen Roovers <jer@gentoo.org> -socat-1.7.2.0.ebuild:
+  Old.
+
+  26 May 2012; Raúl Porcel <armin76@gentoo.org> socat-1.7.2.1.ebuild:
+  ia64/sparc stable wrt #415977
+
+  26 May 2012; Markus Meier <maekke@gentoo.org> socat-1.7.2.1.ebuild:
+  arm stable, bug #415977
+
+  21 May 2012; Brent Baude <ranger@gentoo.org> socat-1.7.2.1.ebuild:
+  Marking socat-1.7.2.1 ppc for bug 415977
+
+  18 May 2012; Jeff Horelick <jdhore@gentoo.org> socat-1.7.2.1.ebuild:
+  marked x86 per bug 415977
+
+  18 May 2012; Agostino Sarubbo <ago@gentoo.org> socat-1.7.2.1.ebuild:
+  Stable for amd64, wrt bug #415977
+
+  17 May 2012; Tobias Klausmann <klausman@gentoo.org> socat-1.7.2.1.ebuild:
+  Stable on alpha, bug #415977
+
+  14 May 2012; Jeroen Roovers <jer@gentoo.org> socat-1.7.2.1.ebuild:
+  Stable for HPPA (bug #415977).
+
+  14 May 2012; Jeroen Roovers <jer@gentoo.org> socat-2.0.0_beta5.ebuild:
+  Remove dependency on app-text/yodl.
+
+*socat-2.0.0_beta5 (14 May 2012)
+*socat-1.7.2.1 (14 May 2012)
+
+  14 May 2012; Jeroen Roovers <jer@gentoo.org> +socat-1.7.2.1.ebuild,
+  -socat-2.0.0_beta4.ebuild, +socat-2.0.0_beta5.ebuild:
+  Version bump (bug #415977).
+
+  07 Mar 2012; Jeremy Olexa <darkside@gentoo.org> socat-1.7.2.0.ebuild:
+  add ~x64-macos, bug 395011
+
+  15 Feb 2012; Jeroen Roovers <jer@gentoo.org> -socat-1.7.1.3.ebuild,
+  -files/socat-1.7.1.3-cross-compile.patch:
+  Old.
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> socat-1.7.2.0.ebuild:
+  Marking socat-1.7.2.0 ppc for bug 399187
+
+  31 Jan 2012; Jeroen Roovers <jer@gentoo.org> socat-1.7.2.0.ebuild:
+  Stable for HPPA (bug #399187).
+
+  22 Jan 2012; Raúl Porcel <armin76@gentoo.org> socat-1.7.2.0.ebuild:
+  alpha/arm/ia64/sparc/x86 stable wrt #399187
+
+  17 Jan 2012; Agostino Sarubbo <ago@gentoo.org> socat-1.7.2.0.ebuild:
+  Stable for amd64, wrt bug #399187
+
+  15 Dec 2011; Mike Frysinger <vapier@gentoo.org>
+  files/socat-1.7.1.3-cross-compile.patch,
+  files/socat-1.7.2.0-cross-compile.patch:
+  Fix cross-compile issues with ospeed offset too.
+
+  15 Dec 2011; Mike Frysinger <vapier@gentoo.org> socat-1.7.1.3.ebuild,
+  +files/socat-1.7.1.3-cross-compile.patch, socat-1.7.2.0.ebuild,
+  +files/socat-1.7.2.0-cross-compile.patch:
+  Fix cross-compilation with shift defines.
+
+*socat-1.7.2.0 (06 Dec 2011)
+
+  06 Dec 2011; Tim Harder <radhermit@gentoo.org> +socat-1.7.2.0.ebuild:
+  Version bump. Update to EAPI 4.
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  Remove useless maintainer tag.
 
   07 Aug 2010; Raúl Porcel <armin76@gentoo.org> socat-1.7.1.3.ebuild:
   alpha/ia64/sparc stable wrt #330785

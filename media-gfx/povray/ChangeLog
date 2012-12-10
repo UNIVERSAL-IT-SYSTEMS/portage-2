@@ -1,6 +1,113 @@
 # ChangeLog for media-gfx/povray
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/povray/ChangeLog,v 1.112 2011/03/24 15:57:10 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/povray/ChangeLog,v 1.139 2012/12/04 11:37:05 jlec Exp $
+
+  04 Dec 2012; Justin Lecher <jlec@gentoo.org> povray-3.7.0_rc6.ebuild:
+  Add fix for compilation with boost-1.52, #445690, thanks Vincent le Garrec
+
+*povray-3.7.0_rc6 (30 Nov 2012)
+
+  30 Nov 2012; Justin Lecher <jlec@gentoo.org> +povray-3.7.0_rc6.ebuild:
+  Version Bump
+
+  30 Nov 2012; Justin Lecher <jlec@gentoo.org> -povray-3.7.0_rc3-r1.ebuild,
+  -povray-3.7.0_rc5.ebuild:
+  Drop old
+
+  30 Nov 2012; Justin Lecher <jlec@gentoo.org> povray-3.7.0_rc5-r1.ebuild,
+  metadata.xml:
+  sci takes it for now, please join
+
+  30 Nov 2012; Joe Peterson <lavajoe@gentoo.org> metadata.xml:
+  Reassign to maintainer-needed
+
+  21 Nov 2012; Jeroen Roovers <jer@gentoo.org> povray-3.7.0_rc5-r1.ebuild:
+  Marked ~hppa (bug #442472).
+
+  13 Nov 2012; Jeroen Roovers <jer@gentoo.org> povray-3.7.0_rc5-r1.ebuild:
+  Back to ^hppa (bug #443012).
+
+  13 Nov 2012; Jeroen Roovers <jer@gentoo.org> povray-3.7.0_rc5-r1.ebuild:
+  Marked ~hppa (bug #442472).
+
+  10 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  files/povray-3.7.0_rc5-automagic.patch, povray-3.7.0_rc5-r1.ebuild:
+  Fix building with USE flags enabled as well. Closes bug #442554.
+
+*povray-3.7.0_rc5-r1 (09 Nov 2012)
+
+  09 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/povray-3.7.0_rc5+boost-1.50.patch,
+  +files/povray-3.7.0_rc5-automagic.patch, +povray-3.7.0_rc5-r1.ebuild:
+  Fix building with boost 1.50, thanks to Iván in bug #425450; use boost-m4 to
+  find boost as that solves the linking issue as well; fix an automagic
+  dependency on mkl.
+
+  17 Jun 2012; Justin Lecher <jlec@gentoo.org> povray-3.7.0_rc5.ebuild:
+  Use CCPFLAGS instead of CFLAGS
+
+  17 Jun 2012; Justin Lecher <jlec@gentoo.org> povray-3.7.0_rc5.ebuild:
+  Fix to make it build with automake-1.12 (mkdir_p)
+
+*povray-3.7.0_rc5 (13 Mar 2012)
+
+  13 Mar 2012; Justin Lecher <jlec@gentoo.org> +povray-3.7.0_rc5.ebuild:
+  Version Bump
+
+  24 Jan 2012; Joe Peterson <lavajoe@gentoo.org> povray-3.7.0_rc3-r1.ebuild:
+  Add --with-boost-thread=boost_thread-mt to config as suggested at
+  http://www.povray.org/beta/source/ (bug #394639)
+
+  17 Nov 2011; Justin Lecher <jlec@gentoo.org> povray-3.7.0_rc3.ebuild,
+  povray-3.7.0_rc3-r1.ebuild, metadata.xml:
+  Corrected Slotting of media-libs/tiff
+
+  29 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -povray-3.6.1-r4.ebuild,
+  -povray-3.6.1-r6.ebuild, -files/povray-3.6.1-configure.patch,
+  -files/povray-3.6.1-find-egrep.patch, -files/povray-3.6.1-libpng14.patch,
+  -files/povray-3.6.1-use-system-libpng.patch, -povray-3.7.0_beta40.ebuild,
+  -files/povray-3.7.0_beta38-print-extend-expiration-info.patch:
+  old
+
+  29 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> povray-3.7.0_rc3.ebuild:
+  ppc/ppc64 stable wrt #384823
+
+  29 Oct 2011; Raúl Porcel <armin76@gentoo.org> povray-3.7.0_rc3.ebuild:
+  alpha/ia64/sparc stable wrt #384823
+
+  21 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> povray-3.7.0_rc3.ebuild:
+  x86 stable wrt #384823
+
+*povray-3.7.0_rc3-r1 (21 Oct 2011)
+
+  21 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> povray-3.7.0_rc3.ebuild,
+  +povray-3.7.0_rc3-r1.ebuild:
+  Remove USE="mkl" from -r0 for stabilization.
+
+  19 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> povray-3.7.0_rc3.ebuild:
+  amd64 stable wrt #384823
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> povray-3.7.0_rc3.ebuild:
+  Stable for HPPA (bug #384823).
+
+*povray-3.6.1-r6 (01 Oct 2011)
+
+  01 Oct 2011; Joe Peterson <lavajoe@gentoo.org> +povray-3.6.1-r6.ebuild:
+  Disable optimzations on 3.6.1 to match 3.7.0 and to fix misalignment with
+  libjpeg on 32-bit systems (bug #382459)
+
+  28 Sep 2011; Joe Peterson <lavajoe@gentoo.org> +povray-3.6.1-r4.ebuild,
+  -povray-3.6.1-r5.ebuild, -files/povray-3.6.1-only-libjpeg-6b.patch:
+  Reverting static lib change (security issue, and requesting more info from
+  bug submitter of bug #382459)
+
+*povray-3.6.1-r5 (28 Sep 2011)
+
+  28 Sep 2011; Joe Peterson <lavajoe@gentoo.org> -povray-3.6.1-r4.ebuild,
+  +povray-3.6.1-r5.ebuild, +files/povray-3.6.1-only-libjpeg-6b.patch:
+  Require older libjpeg-6b for older povray-3.6.1 and use included static lib
+  if not available (bug #382459); revert use of EROOT, etc., in povray-3.6.1
+  ebuild (not EAPI 3)
 
   24 Mar 2011; Justin Lecher <jlec@gentoo.org>
   +files/3.7.0_rc3-user-conf.patch, povray-3.7.0_rc3.ebuild:
@@ -467,4 +574,3 @@
 *povray-3.1g-r1 (31 Mar 2002)
   31 Mar 2002; Spider <spider@gentoo.org>
   Initial ebuild + patch now adheres to USE flags for svgalib X and tty versions.
-

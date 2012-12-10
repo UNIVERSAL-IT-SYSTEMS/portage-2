@@ -1,6 +1,21 @@
 # ChangeLog for media-plugins/gkrellmpc
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gkrellmpc/ChangeLog,v 1.13 2009/10/07 21:52:30 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gkrellmpc/ChangeLog,v 1.16 2012/07/20 12:32:01 angelos Exp $
+
+  20 Jul 2012; Christoph Mende <angelos@gentoo.org>
+  +files/gkrellmpc-0.1_beta10-mt.patch, gkrellmpc-0.1_beta10.ebuild:
+  Add missing patch
+
+*gkrellmpc-0.1_beta10 (20 Jul 2012)
+
+  20 Jul 2012; Christoph Mende <angelos@gentoo.org>
+  +gkrellmpc-0.1_beta10.ebuild:
+  Version bump
+
+  18 Apr 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  -gkrellmpc-0.1_beta9.ebuild, gkrellmpc-0.1_beta9-r1.ebuild:
+  Depend on gkrellm[X], thanks Piotr Szymaniak in bug #408641. Remove old
+  version
 
   07 Oct 2009; Markus Meier <maekke@gentoo.org>
   gkrellmpc-0.1_beta9-r1.ebuild:
@@ -53,4 +68,3 @@
   +gkrellmpc-0.1_beta9.ebuild:
   Initial import, ebuild submitted by Mina Naguib <webmaster@topfx.com>.
   Closes #74960.
-

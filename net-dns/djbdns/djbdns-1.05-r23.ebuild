@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/djbdns/djbdns-1.05-r23.ebuild,v 1.8 2011/01/29 23:36:52 bangert Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/djbdns/djbdns-1.05-r23.ebuild,v 1.10 2012/06/14 02:04:37 zmedico Exp $
 
 IUSE="doc ipv6 selinux static"
 
-inherit eutils flag-o-matic toolchain-funcs
+inherit eutils flag-o-matic toolchain-funcs user
 
 DESCRIPTION="Excellent high-performance DNS services"
 HOMEPAGE="http://cr.yp.to/djbdns.html"
@@ -114,9 +114,9 @@ src_install() {
 
 	dodoc CHANGES FILES README SYSDEPS TARGETS TODO VERSION
 
-	dobin "${FILESDIR}/dnscache-setup"
-	dobin "${FILESDIR}/tinydns-setup"
-	newbin "${FILESDIR}/djbdns-setup-r17" djbdns-setup
+	dobin "${FILESDIR}/dnscache-setup" || die
+	dobin "${FILESDIR}/tinydns-setup" || die
+	dobin "${FILESDIR}/djbdns-setup" || die
 }
 
 pkg_setup() {

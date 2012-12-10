@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/rtcwmp-demo/rtcwmp-demo-1.1.ebuild,v 1.10 2009/04/14 07:28:29 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/rtcwmp-demo/rtcwmp-demo-1.1.ebuild,v 1.13 2012/07/11 17:25:51 mr_bones_ Exp $
 
-inherit eutils games
+inherit eutils unpacker games
 
 MY_P="wolfmpdemo-linux-${PV}-MP.x86.run"
 
@@ -11,12 +11,11 @@ HOMEPAGE="http://games.activision.com/games/wolfenstein/"
 SRC_URI="mirror://idsoftware/wolf/linux/old/${MY_P}
 	mirror://3dgamers/returnwolfenstein/${MY_P}"
 
-LICENSE="RTCW"
+LICENSE="RTCW GPL-2" # gpl for init script bug #425946
 SLOT="0"
 KEYWORDS="-* amd64 x86"
 IUSE="dedicated opengl"
 RESTRICT="strip mirror"
-PROPERTIES="interactive"
 
 RDEPEND="sys-libs/glibc
 	dedicated? (
@@ -38,13 +37,8 @@ RDEPEND="sys-libs/glibc
 
 S=${WORKDIR}
 
-GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/${PN}
 Ddir=${D}/${dir}
-
-src_unpack() {
-	unpack_makeself ${A} || die "Unpacking files"
-}
 
 src_install() {
 	insinto "${dir}"

@@ -1,10 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/widelands/widelands-0.16.ebuild,v 1.1 2011/07/12 19:34:21 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/widelands/widelands-0.16.ebuild,v 1.9 2012/05/21 19:23:02 mr_bones_ Exp $
 
 EAPI=3
-
-inherit versionator games cmake-utils
+inherit eutils versionator cmake-utils games
 
 MY_PV=build$(get_version_component_range 2)
 MY_P=${PN}-${MY_PV}-src
@@ -14,7 +13,7 @@ SRC_URI="http://launchpad.net/widelands/${MY_PV}/${MY_PV}/+download/${MY_P}.tar.
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE=""
 
 RDEPEND="dev-games/ggz-client-libs
@@ -28,16 +27,19 @@ RDEPEND="dev-games/ggz-client-libs
 DEPEND="${RDEPEND}
 	dev-libs/boost"
 
-S="${WORKDIR}"/${MY_P}
+S=${WORKDIR}/${MY_P}
 
 CMAKE_BUILD_TYPE=Release
-PREFIX="${GAMES_DATADIR}/${PN}"
+PREFIX=${GAMES_DATADIR}/${PN}
 
 src_prepare() {
-	sed -i \
-		-e 's:__ppc__:__PPC__:' src/s2map.cc \
-		|| die "sed s2map.cc failed"
-	epatch "${FILESDIR}"/${P}-goldmine.patch
+	sed -i -e 's:__ppc__:__PPC__:' src/s2map.cc || die
+	sed -i -e '74i#define OF(x) x' src/io/filesystem/{un,}zip.h || die
+	sed -i -e '22i#define OF(x) x' src/io/filesystem/ioapi.h || die
+	epatch \
+		"${FILESDIR}"/${P}-goldmine.patch \
+		"${FILESDIR}"/${P}-libpng15.patch \
+		"${FILESDIR}"/${P}-cxxflags.patch
 }
 
 src_configure() {
@@ -49,6 +51,10 @@ src_configure() {
 		"-DWL_INSTALL_BINDIR=${GAMES_BINDIR}"
 	)
 	cmake-utils_src_configure
+}
+
+src_compile() {
+	cmake-utils_src_compile
 }
 
 src_install() {

@@ -1,6 +1,640 @@
 # ChangeLog for mail-mta/postfix
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/ChangeLog,v 1.273 2011/07/26 13:59:29 hparker Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/ChangeLog,v 1.400 2012/11/27 19:59:36 eras Exp $
+
+*postfix-2.10_pre20121123 (27 Nov 2012)
+
+  27 Nov 2012; Eray Aslan <eras@gentoo.org> +postfix-2.10_pre20121123.ebuild,
+  -postfix-2.10_pre20121031.ebuild:
+  Version bump
+
+  06 Nov 2012; Eray Aslan <eras@gentoo.org> postfix-2.10_pre20121031.ebuild,
+  postfix-2.8.12.ebuild, postfix-2.8.9.ebuild, postfix-2.9.4.ebuild:
+  mail-mta/nbsmtp is no longer in the tree - remove from DEPEND
+
+*postfix-2.10_pre20121031 (06 Nov 2012)
+
+  06 Nov 2012; Eray Aslan <eras@gentoo.org> +postfix-2.10_pre20121031.ebuild,
+  -postfix-2.10_pre20121022.ebuild:
+  Version bump
+
+  02 Nov 2012; Eray Aslan <eras@gentoo.org> postfix-2.10_pre20121022.ebuild:
+  Add smtpd_relay_restrictions compatibility shim
+
+  30 Oct 2012; Eray Aslan <eras@gentoo.org> -files/postfix-2.9.3-freebsd9.patch,
+  -files/postfix.rc6.2.6, -postfix-2.8.10.ebuild, -postfix-2.8.11.ebuild,
+  -postfix-2.8.7.ebuild, -postfix-2.8.8.ebuild, -postfix-2.9.1-r1.ebuild,
+  -postfix-2.9.1-r2.ebuild, -postfix-2.9.1.ebuild, -postfix-2.9.2.ebuild,
+  -postfix-2.9.3.ebuild:
+  Remove old
+
+  30 Oct 2012; Jeroen Roovers <jer@gentoo.org> postfix-2.9.4.ebuild:
+  Stable for HPPA (bug #437602).
+
+*postfix-2.10_pre20121022 (23 Oct 2012)
+
+  23 Oct 2012; Eray Aslan <eras@gentoo.org> +postfix-2.10_pre20121022.ebuild,
+  -postfix-2.10_pre20121007.ebuild:
+  Version bump
+
+  23 Oct 2012; Eray Aslan <eras@gentoo.org> postfix-2.9.4.ebuild:
+  Revert accidental unstable for amd64 ppc ppc64 - bug #437602
+
+  20 Oct 2012; Raúl Porcel <armin76@gentoo.org> postfix-2.9.4.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #437602
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> postfix-2.9.4.ebuild:
+  x86 stable wrt bug #437602
+
+  13 Oct 2012; Markus Meier <maekke@gentoo.org> postfix-2.9.4.ebuild:
+  arm stable, bug #437602
+
+  12 Oct 2012; Eray Aslan <eraya@gentoo.org> postfix-2.10_pre20121007.ebuild,
+  postfix-2.9.4.ebuild:
+  Use system ar and ranlib - bug #438156
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> postfix-2.9.4.ebuild:
+  Stable for amd64, wrt bug #437602
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org> postfix-2.9.4.ebuild:
+  stable ppc64, bug #437602
+
+  10 Oct 2012; Brent Baude <ranger@gentoo.org> postfix-2.9.4.ebuild:
+  Marking postfix-2.9.4 ppc for bug 437602
+
+*postfix-2.10_pre20121007 (08 Oct 2012)
+
+  08 Oct 2012; Eray Aslan <eras@gentoo.org> +postfix-2.10_pre20121007.ebuild,
+  -postfix-2.10_pre20120924.ebuild:
+  Version bump
+
+*postfix-2.10_pre20120924 (01 Oct 2012)
+
+  01 Oct 2012; Eray Aslan <eras@gentoo.org> +postfix-2.10_pre20120924.ebuild,
+  -postfix-2.10_pre20120908.ebuild:
+  Version bump
+
+*postfix-2.10_pre20120908 (11 Sep 2012)
+
+  11 Sep 2012; Eray Aslan <eras@gentoo.org> +postfix-2.10_pre20120908.ebuild,
+  -postfix-2.10_pre20120902.ebuild:
+  Version bump
+
+*postfix-2.10_pre20120902 (03 Sep 2012)
+
+  03 Sep 2012; Eray Aslan <eras@gentoo.org> +postfix-2.10_pre20120902.ebuild,
+  -postfix-2.10_pre20120801.ebuild:
+  Version bump
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> postfix-2.9.1.ebuild,
+  postfix-2.9.1-r1.ebuild, postfix-2.9.1-r2.ebuild, postfix-2.9.2.ebuild,
+  postfix-2.9.3.ebuild, postfix-2.9.4.ebuild:
+  Add ~s390 wrt #399329
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> postfix-2.9.3.ebuild:
+  alpha/ia64/sh/sparc stable wrt #426760
+
+  05 Aug 2012; Jeroen Roovers <jer@gentoo.org> postfix-2.9.3.ebuild:
+  Stable for HPPA (bug #426760).
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> postfix-2.9.3.ebuild:
+  Stable for amd64, wrt bug #426760
+
+*postfix-2.10_pre20120801 (02 Aug 2012)
+*postfix-2.9.4 (02 Aug 2012)
+*postfix-2.8.12 (02 Aug 2012)
+
+  02 Aug 2012; Eray Aslan <eras@gentoo.org> -postfix-2.7.4.ebuild,
+  -postfix-2.7.5.ebuild, -postfix-2.7.6.ebuild, -postfix-2.7.7.ebuild,
+  -postfix-2.7.8.ebuild, -postfix-2.7.9.ebuild, -postfix-2.7.10.ebuild,
+  +postfix-2.8.12.ebuild, +postfix-2.9.4.ebuild,
+  -postfix-2.10_pre20120715.ebuild, +postfix-2.10_pre20120801.ebuild:
+  Version bump and remove old
+
+  27 Jul 2012; Anthony G. Basile <blueness@gentoo.org> postfix-2.9.3.ebuild:
+  Stable arm, bug #426760
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org> postfix-2.9.3.ebuild:
+  Stable ppc/ppc64, bug #426760
+
+  24 Jul 2012; Jeff Horelick <jdhore@gentoo.org> postfix-2.9.3.ebuild:
+  marked x86 per bug 426760
+
+*postfix-2.10_pre20120715 (17 Jul 2012)
+
+  17 Jul 2012; Eray Aslan <eras@gentoo.org> -postfix-2.10_pre20120630.ebuild,
+  +postfix-2.10_pre20120715.ebuild:
+  Version bump
+
+*postfix-2.10_pre20120630 (10 Jul 2012)
+
+  10 Jul 2012; Eray Aslan <eras@gentoo.org> -postfix-2.10_pre20120627.ebuild,
+  +postfix-2.10_pre20120630.ebuild:
+  Version bump
+
+  10 Jul 2012; Eray Aslan <eras@gentoo.org> postfix-2.9.3.ebuild:
+  Enable vda USE flag
+
+  07 Jul 2012; Anthony G. Basile <blueness@gentoo.org> postfix-2.9.3.ebuild,
+  postfix-2.10_pre20120627.ebuild:
+  Keyword ~mips
+
+  05 Jul 2012; Naohiro Aota <naota@gentoo.org>
+  +files/postfix-2.9.3-freebsd9.patch, postfix-2.9.3.ebuild:
+  Add backport patch to support freebsd9. #421763
+
+*postfix-2.10_pre20120627 (30 Jun 2012)
+
+  30 Jun 2012; Eray Aslan <eras@gentoo.org> -postfix-2.10_pre20120625.ebuild,
+  +postfix-2.10_pre20120627.ebuild:
+  version bump
+
+*postfix-2.10_pre20120625 (26 Jun 2012)
+
+  26 Jun 2012; Eray Aslan <eras@gentoo.org> -postfix-2.10_pre20120617.ebuild,
+  +postfix-2.10_pre20120625.ebuild:
+  version bump
+
+*postfix-2.10_pre20120617 (18 Jun 2012)
+
+  18 Jun 2012; Eray Aslan <eras@gentoo.org> -postfix-2.10_pre20120520.ebuild,
+  +postfix-2.10_pre20120617.ebuild:
+  version bump
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> postfix-2.8.9.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #413503
+
+  04 Jun 2012; Zac Medico <zmedico@gentoo.org> postfix-2.10_pre20120520.ebuild,
+  postfix-2.7.10.ebuild, postfix-2.7.4.ebuild, postfix-2.7.5.ebuild,
+  postfix-2.7.6.ebuild, postfix-2.7.7.ebuild, postfix-2.7.8.ebuild,
+  postfix-2.7.9.ebuild, postfix-2.8.10.ebuild, postfix-2.8.11.ebuild,
+  postfix-2.8.7.ebuild, postfix-2.8.8.ebuild, postfix-2.8.9.ebuild,
+  postfix-2.9.1-r1.ebuild, postfix-2.9.1-r2.ebuild, postfix-2.9.1.ebuild,
+  postfix-2.9.2.ebuild, postfix-2.9.3.ebuild:
+  inherit user for enewgroup and enewuser
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> postfix-2.8.9.ebuild:
+  x86 stable wrt bug #413503
+
+*postfix-2.9.3 (21 May 2012)
+*postfix-2.8.11 (21 May 2012)
+*postfix-2.7.10 (21 May 2012)
+
+  21 May 2012; Eray Aslan <eras@gentoo.org> +postfix-2.7.10.ebuild,
+  +postfix-2.8.11.ebuild, +postfix-2.9.3.ebuild:
+  version bump
+
+*postfix-2.10_pre20120520 (21 May 2012)
+
+  21 May 2012; Eray Aslan <eras@gentoo.org> -postfix-2.9.0.ebuild,
+  -postfix-2.9.0-r1.ebuild, -postfix-2.10_pre20120426.ebuild,
+  +postfix-2.10_pre20120520.ebuild:
+  version bump and remove old
+
+  21 May 2012; Eray Aslan <eras@gentoo.org> postfix-2.8.7.ebuild,
+  postfix-2.8.8.ebuild, postfix-2.8.9.ebuild, postfix-2.8.10.ebuild,
+  postfix-2.9.0.ebuild, postfix-2.9.0-r1.ebuild, postfix-2.9.1.ebuild,
+  postfix-2.9.1-r1.ebuild, postfix-2.9.1-r2.ebuild, postfix-2.9.2.ebuild,
+  postfix-2.10_pre20120426.ebuild:
+  Fix broken symlink - bug #416849
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> postfix-2.8.9.ebuild:
+  Marking postfix-2.8.9 ppc64 for bug 413503
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> postfix-2.8.9.ebuild:
+  Marking postfix-2.8.9 ppc for bug 413503
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> postfix-2.8.9.ebuild:
+  arm stable, bug #413503
+
+*postfix-2.10_pre20120426 (27 Apr 2012)
+
+  27 Apr 2012; Eray Aslan <eras@gentoo.org> -postfix-2.10_pre20120423.ebuild,
+  +postfix-2.10_pre20120426.ebuild:
+  version bump
+
+  26 Apr 2012; Agostino Sarubbo <ago@gentoo.org> postfix-2.8.9.ebuild:
+  Stable for amd64, wrt bug #413503
+
+*postfix-2.9.2 (25 Apr 2012)
+*postfix-2.8.10 (25 Apr 2012)
+*postfix-2.7.9 (25 Apr 2012)
+
+  25 Apr 2012; Eray Aslan <eras@gentoo.org> +postfix-2.7.9.ebuild,
+  +postfix-2.8.10.ebuild, +postfix-2.9.2.ebuild:
+  version bump
+
+*postfix-2.10_pre20120423 (24 Apr 2012)
+*postfix-2.9.1-r2 (24 Apr 2012)
+
+  24 Apr 2012; Eray Aslan <eras@gentoo.org> +postfix-2.9.1-r2.ebuild,
+  -postfix-2.10_pre20120422.ebuild, +postfix-2.10_pre20120423.ebuild:
+  version bump and unblock vda USE flag
+
+*postfix-2.10_pre20120422 (23 Apr 2012)
+
+  23 Apr 2012; Eray Aslan <eras@gentoo.org> -postfix-2.10_pre20120407.ebuild,
+  +postfix-2.10_pre20120422.ebuild:
+  version bump
+
+*postfix-2.10_pre20120407 (08 Apr 2012)
+
+  08 Apr 2012; Eray Aslan <eras@gentoo.org> -postfix-2.10_pre20120404.ebuild,
+  +postfix-2.10_pre20120407.ebuild:
+  version bump
+
+*postfix-2.10_pre20120404 (05 Apr 2012)
+
+  05 Apr 2012; Eray Aslan <eras@gentoo.org> -postfix-2.10_pre20120308.ebuild,
+  +postfix-2.10_pre20120404.ebuild:
+  version bump
+
+*postfix-2.9.1-r1 (14 Mar 2012)
+
+  14 Mar 2012; Eray Aslan <eras@gentoo.org> +postfix-2.9.1-r1.ebuild:
+  update init script
+
+  08 Mar 2012; Eray Aslan <eras@gentoo.org> -postfix-2.8.3.ebuild,
+  -postfix-2.8.3-r1.ebuild, -postfix-2.8.3-r2.ebuild, -postfix-2.8.4.ebuild,
+  -postfix-2.8.5.ebuild, -postfix-2.8.6.ebuild:
+  remove old
+
+*postfix-2.7.8 (08 Mar 2012)
+
+  08 Mar 2012; Eray Aslan <eras@gentoo.org> +postfix-2.7.8.ebuild:
+  version bump
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> postfix-2.8.7.ebuild:
+  Marking postfix-2.8.7 ppc64 for bug 395289
+
+*postfix-2.10_pre20120308 (08 Mar 2012)
+
+  08 Mar 2012; Eray Aslan <eras@gentoo.org> -postfix-2.10_pre20120305.ebuild,
+  -postfix-2.10_pre20120305-r1.ebuild, +postfix-2.10_pre20120308.ebuild,
+  -files/postfix_master-monitor.patch:
+  version bump
+
+*postfix-2.10_pre20120305-r1 (07 Mar 2012)
+
+  07 Mar 2012; Eray Aslan <eras@gentoo.org>
+  +postfix-2.10_pre20120305-r1.ebuild, +files/postfix_master-monitor.patch,
+  files/postfix.rc6.2.7:
+  Do not return success in init script with a broken configuration.
+
+  06 Mar 2012; Eray Aslan <eras@gentoo.org> +files/postfix.rc6.2.7:
+  add checking to start() in init script
+
+*postfix-2.10_pre20120305 (06 Mar 2012)
+*postfix-2.8.9 (06 Mar 2012)
+
+  06 Mar 2012; Eray Aslan <eras@gentoo.org> +postfix-2.8.9.ebuild,
+  -postfix-2.10_pre20120303.ebuild, +postfix-2.10_pre20120305.ebuild:
+  version bump
+
+*postfix-2.10_pre20120303 (04 Mar 2012)
+
+  04 Mar 2012; Eray Aslan <eras@gentoo.org> -postfix-2.10_pre20120218.ebuild,
+  +postfix-2.10_pre20120303.ebuild:
+  version bump
+
+  22 Feb 2012; Eray Aslan <eras@gentoo.org> postfix-2.9.1.ebuild:
+  chown /var/lib/postfix recursively - bug #405247
+
+*postfix-2.10_pre20120218 (18 Feb 2012)
+*postfix-2.9.1 (18 Feb 2012)
+
+  18 Feb 2012; Eray Aslan <eras@gentoo.org> +postfix-2.9.1.ebuild,
+  -postfix-2.10_pre20120202.ebuild, +postfix-2.10_pre20120218.ebuild:
+  version bump. fown any and all .keep files - bug #404391
+
+  13 Feb 2012; Eray Aslan <eras@gentoo.org> postfix-2.9.0.ebuild,
+  postfix-2.9.0-r1.ebuild:
+  block against broken vda patch until fixed upstream - bug #402369
+
+  09 Feb 2012; Jeroen Roovers <jer@gentoo.org> postfix-2.8.7.ebuild:
+  Stable for HPPA (bug #395289).
+
+  07 Feb 2012; Eray Aslan <eras@gentoo.org> postfix-2.9.0.ebuild,
+  postfix-2.9.0-r1.ebuild:
+  add warning for new daemon directory
+
+*postfix-2.9.0-r1 (06 Feb 2012)
+
+  06 Feb 2012; Eray Aslan <eras@gentoo.org> +postfix-2.9.0-r1.ebuild:
+  bump to push daemon_directory fix - bug #402367
+
+  05 Feb 2012; Eray Aslan <eras@gentoo.org> postfix-2.10_pre20120202.ebuild:
+  install daemons to /usr/libexec/postfix for version 2.10 as well
+
+  05 Feb 2012; Eray Aslan <eras@gentoo.org> postfix-2.9.0.ebuild:
+  install daemons to /usr/libexec/postfix - bug #401911
+
+*postfix-2.10_pre20120202 (04 Feb 2012)
+
+  04 Feb 2012; Eray Aslan <eras@gentoo.org> -postfix-2.10_pre20120130.ebuild,
+  +postfix-2.10_pre20120202.ebuild:
+  version bump
+
+*postfix-2.10_pre20120130 (01 Feb 2012)
+*postfix-2.9.0 (01 Feb 2012)
+*postfix-2.8.8 (01 Feb 2012)
+
+  01 Feb 2012; Eray Aslan <eras@gentoo.org> +postfix-2.8.8.ebuild,
+  -postfix-2.9.0_rc2.ebuild, +postfix-2.9.0.ebuild,
+  -postfix-2.10_pre20120124.ebuild, +postfix-2.10_pre20120130.ebuild:
+  version bump
+
+*postfix-2.10_pre20120124 (25 Jan 2012)
+*postfix-2.9.0_rc2 (25 Jan 2012)
+
+  25 Jan 2012; Eray Aslan <eras@gentoo.org> -postfix-2.9.0_rc1.ebuild,
+  +postfix-2.9.0_rc2.ebuild, -postfix-2.10_pre20120118.ebuild,
+  +postfix-2.10_pre20120124.ebuild:
+  version bump
+
+*postfix-2.10_pre20120118 (19 Jan 2012)
+
+  19 Jan 2012; Eray Aslan <eras@gentoo.org> postfix-2.9.0_rc1.ebuild,
+  -files/postfix-2.9.0_rc1_no-berkdb.patch, +postfix-2.10_pre20120118.ebuild,
+  +files/postfix_no-berkdb.patch:
+  version bump. rename patch file
+
+*postfix-2.9.0_rc1 (18 Jan 2012)
+
+  18 Jan 2012; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20120115.ebuild,
+  +postfix-2.9.0_rc1.ebuild, +files/postfix-2.9.0_rc1_no-berkdb.patch:
+  Version bump. Drop s390 - bug #399329
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> postfix-2.8.7.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #395289
+
+*postfix-2.9_pre20120115 (16 Jan 2012)
+
+  16 Jan 2012; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20120114.ebuild,
+  +postfix-2.9_pre20120115.ebuild:
+  version bump
+
+*postfix-2.9_pre20120114 (15 Jan 2012)
+
+  15 Jan 2012; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20120110.ebuild,
+  +postfix-2.9_pre20120114.ebuild:
+  version bump
+
+*postfix-2.9_pre20120110 (11 Jan 2012)
+
+  11 Jan 2012; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20120108.ebuild,
+  +postfix-2.9_pre20120110.ebuild:
+  version bump
+
+*postfix-2.9_pre20120108 (09 Jan 2012)
+
+  09 Jan 2012; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20120102.ebuild,
+  +postfix-2.9_pre20120108.ebuild:
+  version bump
+
+*postfix-2.9_pre20120102 (06 Jan 2012)
+
+  06 Jan 2012; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111222.ebuild,
+  +postfix-2.9_pre20120102.ebuild:
+  version bump
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> postfix-2.8.7.ebuild:
+  Marking postfix-2.8.7 ppc for bug 395289
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> postfix-2.8.7.ebuild:
+  x86 stable wrt bug #395289
+
+*postfix-2.9_pre20111222 (23 Dec 2011)
+
+  23 Dec 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111219.ebuild,
+  +postfix-2.9_pre20111222.ebuild:
+  version bump
+
+  22 Dec 2011; Markus Meier <maekke@gentoo.org> postfix-2.8.7.ebuild:
+  arm stable, bug #395289
+
+*postfix-2.9_pre20111219 (20 Dec 2011)
+
+  20 Dec 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111218.ebuild,
+  +postfix-2.9_pre20111219.ebuild:
+  version bump
+
+  19 Dec 2011; Agostino Sarubbo <ago@gentoo.org> postfix-2.8.7.ebuild:
+  Stable for AMD64, wrt bug #395289
+
+*postfix-2.9_pre20111218 (19 Dec 2011)
+
+  19 Dec 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111217.ebuild,
+  +postfix-2.9_pre20111218.ebuild:
+  version bump
+
+*postfix-2.9_pre20111217 (18 Dec 2011)
+
+  18 Dec 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111213.ebuild,
+  +postfix-2.9_pre20111217.ebuild:
+  version bump
+
+*postfix-2.9_pre20111213 (15 Dec 2011)
+
+  15 Dec 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111205.ebuild,
+  +postfix-2.9_pre20111213.ebuild:
+  version bump
+
+*postfix-2.9_pre20111205 (06 Dec 2011)
+
+  06 Dec 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111129.ebuild,
+  +postfix-2.9_pre20111205.ebuild:
+  version bump
+
+*postfix-2.9_pre20111129 (30 Nov 2011)
+
+  30 Nov 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111127.ebuild,
+  +postfix-2.9_pre20111129.ebuild:
+  version bump
+
+  28 Nov 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111126.ebuild,
+  +postfix-2.9_pre20111127.ebuild:
+  and remove old
+
+*postfix-2.9_pre20111127 (28 Nov 2011)
+
+  28 Nov 2011; Eray Aslan <eras@gentoo.org> +postfix-2.9_pre20111127.ebuild:
+  version bump
+
+*postfix-2.9_pre20111126 (26 Nov 2011)
+
+  26 Nov 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111122.ebuild,
+  +postfix-2.9_pre20111126.ebuild:
+  version bump
+
+*postfix-2.9_pre20111122 (23 Nov 2011)
+
+  23 Nov 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111121.ebuild,
+  +postfix-2.9_pre20111122.ebuild:
+  version bump
+
+  22 Nov 2011; Mike Frysinger <vapier@gentoo.org> postfix-2.8.3-r1.ebuild,
+  postfix-2.8.3-r2.ebuild, postfix-2.8.4.ebuild, postfix-2.8.5.ebuild,
+  postfix-2.8.6.ebuild, postfix-2.8.7.ebuild, postfix-2.9_pre20111121.ebuild:
+  Add s390/sh love #371379 by Eray Aslan.
+
+*postfix-2.9_pre20111121 (22 Nov 2011)
+
+  22 Nov 2011; Eray Aslan <eras@gentoo.org> +postfix-2.9_pre20111121.ebuild,
+  -postfix-2.9_pre20111120.ebuild:
+  version bump
+
+  21 Nov 2011; Eray Aslan <eras@gentoo.org> postfix-2.9_pre20111120.ebuild:
+  Do not change default DB type unnecessarily
+
+*postfix-2.9_pre20111120 (21 Nov 2011)
+
+  21 Nov 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111119.ebuild,
+  +postfix-2.9_pre20111120.ebuild:
+  version bump
+
+*postfix-2.9_pre20111119 (20 Nov 2011)
+
+  20 Nov 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111117.ebuild,
+  +postfix-2.9_pre20111119.ebuild:
+  version bump
+
+*postfix-2.9_pre20111117 (18 Nov 2011)
+
+  18 Nov 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111113.ebuild,
+  +postfix-2.9_pre20111117.ebuild:
+  version bump
+
+*postfix-2.9_pre20111113 (14 Nov 2011)
+
+  14 Nov 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111112.ebuild,
+  +postfix-2.9_pre20111113.ebuild:
+  version bump
+
+*postfix-2.9_pre20111112 (13 Nov 2011)
+
+  13 Nov 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111108.ebuild,
+  +postfix-2.9_pre20111112.ebuild:
+  version bump
+
+  09 Nov 2011; Eray Aslan <eras@gentoo.org> Manifest:
+  version bump
+
+*postfix-2.9_pre20111108 (09 Nov 2011)
+
+  09 Nov 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111106.ebuild,
+  +postfix-2.9_pre20111108.ebuild:
+  version bump
+
+*postfix-2.9_pre20111106 (07 Nov 2011)
+
+  07 Nov 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111025.ebuild,
+  +postfix-2.9_pre20111106.ebuild:
+  Version bump. Make Berkeley DB optional - bug #385825
+
+*postfix-2.8.7 (07 Nov 2011)
+
+  07 Nov 2011; Eray Aslan <eras@gentoo.org> +postfix-2.8.7.ebuild:
+  version bump
+
+*postfix-2.9_pre20111025 (26 Oct 2011)
+
+  26 Oct 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20111012.ebuild,
+  +postfix-2.9_pre20111025.ebuild:
+  version bump
+
+*postfix-2.8.6 (24 Oct 2011)
+*postfix-2.7.7 (24 Oct 2011)
+
+  24 Oct 2011; Eray Aslan <eras@gentoo.org> +postfix-2.7.7.ebuild,
+  +postfix-2.8.6.ebuild:
+  version bump
+
+  24 Oct 2011; Eray Aslan <eras@gentoo.org> files/postfix.rc6.2.5,
+  files/postfix.rc6.2.6:
+  use extra_started_commands - bug #385635
+
+*postfix-2.9_pre20111012 (17 Oct 2011)
+
+  17 Oct 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20110930.ebuild,
+  +postfix-2.9_pre20111012.ebuild:
+  version bump
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> postfix-2.8.4.ebuild:
+  Stable for HPPA (bug #378373).
+
+*postfix-2.9_pre20110930 (01 Oct 2011)
+
+  01 Oct 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20110918.ebuild,
+  +postfix-2.9_pre20110930.ebuild:
+  version bump
+
+*postfix-2.9_pre20110918 (19 Sep 2011)
+
+  19 Sep 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20110907.ebuild,
+  +postfix-2.9_pre20110918.ebuild:
+  version bump
+
+  10 Sep 2011; Raúl Porcel <armin76@gentoo.org> postfix-2.8.4.ebuild:
+  alpha/ia64/sparc stable wrt #378373
+
+*postfix-2.9_pre20110907 (08 Sep 2011)
+
+  08 Sep 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20110905.ebuild,
+  +postfix-2.9_pre20110907.ebuild:
+  version bump
+
+*postfix-2.9_pre20110905 (07 Sep 2011)
+
+  07 Sep 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20110820.ebuild,
+  +postfix-2.9_pre20110905.ebuild:
+  version bump
+
+*postfix-2.7.6 (05 Sep 2011)
+
+  05 Sep 2011; Eray Aslan <eras@gentoo.org> +postfix-2.7.6.ebuild:
+  version bump
+
+*postfix-2.8.5 (04 Sep 2011)
+
+  04 Sep 2011; Tim Harder <radhermit@gentoo.org> +postfix-2.8.5.ebuild:
+  Version bump.
+
+  28 Aug 2011; Markus Meier <maekke@gentoo.org> postfix-2.8.4.ebuild:
+  arm stable, bug #378373
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> postfix-2.8.4.ebuild:
+  x86 stable, bug #378373
+
+  22 Aug 2011; Eray Aslan <eras@gentoo.org> postfix-2.7.4.ebuild,
+  postfix-2.7.5.ebuild, postfix-2.8.3.ebuild, postfix-2.8.3-r1.ebuild,
+  postfix-2.8.3-r2.ebuild:
+  Add blocker to net-mail/fastforward for older versions as well - bug #380201
+
+*postfix-2.9_pre20110820 (22 Aug 2011)
+
+  22 Aug 2011; Eray Aslan <eras@gentoo.org> postfix-2.8.4.ebuild,
+  -postfix-2.9_pre20110814.ebuild, +postfix-2.9_pre20110820.ebuild:
+  version bump. add blocker to net-mail/fastforward - bug #380201
+
+*postfix-2.9_pre20110814 (16 Aug 2011)
+
+  16 Aug 2011; Eray Aslan <eras@gentoo.org> -postfix-2.9_pre20110706.ebuild,
+  +postfix-2.9_pre20110814.ebuild:
+  Version bump. Remove old. Add -Wno-comment to build - bug #378099
+
+  14 Aug 2011; Markos Chandras <hwoarang@gentoo.org> postfix-2.8.4.ebuild:
+  Stable on amd64 wrt bug #378373
+
+  14 Aug 2011; Eray Aslan <eras@gentoo.org> postfix-2.8.3-r2.ebuild,
+  postfix-2.8.4.ebuild, postfix-2.9_pre20110706.ebuild:
+  add perl to DEPEND - bug #379021
+
+  07 Aug 2011; Markus Meier <maekke@gentoo.org> postfix-2.8.3-r2.ebuild:
+  arm stable, bug #376373
+
+  07 Aug 2011; Markus Meier <maekke@gentoo.org> postfix-2.8.3-r2.ebuild:
+  x86 stable, bug #376373
 
   26 Jul 2011; Homer Parker <hparker@gentoo.org> postfix-2.8.3-r2.ebuild:
   Stable on amd64 for bug #376373

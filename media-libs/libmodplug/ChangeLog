@@ -1,6 +1,47 @@
 # ChangeLog for media-libs/libmodplug
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libmodplug/ChangeLog,v 1.65 2011/05/10 16:16:18 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libmodplug/ChangeLog,v 1.75 2012/05/15 13:12:50 aballier Exp $
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> libmodplug-0.8.8.4.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libmodplug-0.8.8.2.ebuild,
+  libmodplug-0.8.8.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  27 Aug 2011; Raúl Porcel <armin76@gentoo.org> libmodplug-0.8.8.4.ebuild:
+  alpha/ia64/sh/sparc stable wrt #379557
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> libmodplug-0.8.8.4.ebuild:
+  arm stable, bug #379557
+
+  21 Aug 2011; Jeroen Roovers <jer@gentoo.org> libmodplug-0.8.8.4.ebuild:
+  Stable for HPPA (bug #379557).
+
+  20 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  libmodplug-0.8.8.4.ebuild:
+  x86 stable wrt security bug #379557
+
+  18 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  libmodplug-0.8.8.4.ebuild:
+  ppc/ppc64 stable wrt #379557
+
+  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  libmodplug-0.8.8.4.ebuild:
+  keyword ~sparc-solaris
+
+  17 Aug 2011; Tony Vroon <chainsaw@gentoo.org> libmodplug-0.8.8.4.ebuild:
+  Mark stable on AMD64 and remove stray die statement as per arch testing by
+  Agostino "ago" Sarubbo in bug #379557.
+
+*libmodplug-0.8.8.4 (17 Aug 2011)
+
+  17 Aug 2011; Tony Vroon <chainsaw@gentoo.org> -libmodplug-0.8.8.1.ebuild,
+  -libmodplug-0.8.8.3.ebuild, +libmodplug-0.8.8.4.ebuild,
+  +files/libmodplug-0.8.8.4-no-fast-math.patch:
+  Version bump for security bug #379557 by Agostino "ago" Sarubbo. Port to
+  EAPI=4 and use a patch instead of relying on sed. Remove all ebuilds but this
+  and current stable.
 
 *libmodplug-0.8.8.3 (10 May 2011)
 

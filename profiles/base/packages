@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation.
+# Copyright 1999-2012 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License, v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/packages,v 1.53 2011/07/16 18:10:42 jmbsvicetto Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/packages,v 1.63 2012/05/18 00:20:44 vapier Exp $
 
 # Gentoo Base Profile
 
@@ -24,9 +24,8 @@
 # specific information in here. This file serves as a high level description
 # of the minimum set of packages needed for any Gentoo based system.
 
-*sys-apps/baselayout
+*>=sys-apps/baselayout-2
 *app-arch/bzip2
-*app-arch/cpio
 *app-arch/gzip
 *app-arch/tar
 *app-arch/xz-utils
@@ -44,14 +43,12 @@
 *sys-apps/gawk
 *sys-apps/grep
 *sys-apps/kbd
-*sys-apps/module-init-tools
-*sys-apps/net-tools
+# temporary bugfix for #398295
+*sys-apps/less
 #*>=sys-apps/portage-2.0.51.22
 *sys-process/procps
 *sys-process/psmisc
 *sys-apps/sed
-# eutils.eclass relies on options from newer shadow #367633
-*>=sys-apps/shadow-4.1
 *sys-apps/texinfo
 *sys-apps/which
 #*sys-devel/autoconf
@@ -64,16 +61,15 @@
 #*sys-devel/libtool
 #*sys-devel/m4
 *sys-devel/make
-*sys-devel/patch
+*>=sys-devel/patch-2.6.1
 *sys-fs/e2fsprogs
-*sys-libs/ncurses
-*sys-libs/readline
-*sys-libs/zlib
 *virtual/dev-manager
 *virtual/editor
 *virtual/libc
 *virtual/man
+*virtual/modutils
 *virtual/os-headers
 *virtual/package-manager
 *virtual/pager
+*virtual/shadow
 *virtual/ssh

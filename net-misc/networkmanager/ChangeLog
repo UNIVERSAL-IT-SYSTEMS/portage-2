@@ -1,6 +1,371 @@
 # ChangeLog for net-misc/networkmanager
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/ChangeLog,v 1.107 2011/07/21 08:05:28 dagger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/ChangeLog,v 1.153 2012/12/02 22:31:17 ssuominen Exp $
+
+  02 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
+  networkmanager-0.8.4.0-r2.ebuild, networkmanager-0.9.4.0-r5.ebuild,
+  networkmanager-0.9.4.0-r6.ebuild, networkmanager-0.9.4.0-r7.ebuild,
+  networkmanager-0.9.6.0.ebuild, networkmanager-0.9.6.4.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+  05 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -files/networkmanager-0.9_rc3-fix-tests.patch,
+  networkmanager-0.9.4.0-r5.ebuild, networkmanager-0.9.4.0-r6.ebuild,
+  networkmanager-0.9.4.0-r7.ebuild, networkmanager-0.9.6.0.ebuild,
+  networkmanager-0.9.6.4.ebuild:
+  Do not hard-disable tests since they pass (bug #441748, thanks to Pavel
+  Šimerda).
+
+  01 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  networkmanager-0.9.6.0.ebuild, networkmanager-0.9.6.4.ebuild:
+  Depend on ppp[ipv6] because nm now assumes that pppd allows ipv6cp-related
+  arguments (bug #440696, thanks to Martux).
+
+  28 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  networkmanager-0.8.4.0-r2.ebuild, networkmanager-0.9.4.0-r5.ebuild,
+  networkmanager-0.9.4.0-r6.ebuild, networkmanager-0.9.4.0-r7.ebuild,
+  networkmanager-0.9.6.0.ebuild, networkmanager-0.9.6.4.ebuild:
+  dhclient comes from dhcp[client]; thanks to Maciej Mrozowski.
+
+*networkmanager-0.9.6.4 (26 Oct 2012)
+
+  26 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/10-openrc-status-r3, networkmanager-0.8.4.0-r2.ebuild,
+  networkmanager-0.9.4.0-r5.ebuild, networkmanager-0.9.4.0-r6.ebuild,
+  networkmanager-0.9.4.0-r7.ebuild, networkmanager-0.9.6.0.ebuild,
+  +networkmanager-0.9.6.4.ebuild:
+  Version bump with various bugfixes. Update dispatcher script to correctly
+  detect openrc service status at boot (bug #436044, thanks to cyberbat).
+  Update license.
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  networkmanager-0.9.4.0-r6.ebuild:
+  stable ppc ppc64, bug #430370
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer as talked with him.
+
+  14 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  networkmanager-0.9.6.0.ebuild:
+  Remove vala-common dependency since tarball includes m4/vapigen.m4; bug
+  #431166, thanks to Raffaello D. Di Napoli.
+
+*networkmanager-0.9.6.0 (13 Sep 2012)
+
+  13 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -files/10-openrc-status-r1, -networkmanager-0.8-r1.ebuild,
+  -files/networkmanager-0.8-confchanges.patch,
+  -files/networkmanager-0.8-nscd-clear-cache.patch,
+  -files/networkmanager-0.8-read-hostname.patch, -networkmanager-0.9.0.ebuild,
+  -files/networkmanager-0.9.1.95-force-libnl1.1.patch,
+  -networkmanager-0.9.2.0-r5.ebuild,
+  -files/networkmanager-0.9.2.0-ifnet-ignore-user-connections.patch,
+  -files/networkmanager-0.9.2.0-ifnet-openrc-style.patch,
+  -files/networkmanager-0.9.2.0-ifnet-password-truncated.patch,
+  -files/networkmanager-0.9.2.0-ifnet-remove-system-prefix.patch,
+  -files/networkmanager-0.9.2.0-ifnet-unquote-hostname.patch,
+  -files/networkmanager-0.9.2.0-init-provide-net.patch,
+  +networkmanager-0.9.6.0.ebuild,
+  +files/networkmanager-0.9.6.0-cached-ipv6-routes-1.patch,
+  +files/networkmanager-0.9.6.0-cached-ipv6-routes-2.patch,
+  +files/networkmanager-0.9.6.0-daemon-signals.patch,
+  -files/NetworkManagerDispatcher, -files/nm-system-settings.conf,
+  metadata.xml:
+  Version bump with various fixes. No longer saves thousands of temporary ipv6
+  routes (bug #428274, thanks to Matthias Nagel). No longer installs dispatcher
+  and init scripts when USE=systemd to avoid annoying systemd users (bug
+  #434692, thanks to Arne Stäcker). Drop old.
+
+  23 Aug 2012; Markus Meier <maekke@gentoo.org>
+  networkmanager-0.9.4.0-r6.ebuild:
+  arm stable, bug #430370
+
+  17 Aug 2012; Johannes Huber <johu@gentoo.org>
+  networkmanager-0.9.4.0-r6.ebuild:
+  Stable for x86, wrt bug #430370
+
+  16 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
+  networkmanager-0.9.4.0-r6.ebuild:
+  Stable for amd64, wrt bug #430370
+
+*networkmanager-0.9.4.0-r7 (14 Aug 2012)
+
+  14 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -files/10-openrc-status, -networkmanager-0.9.2.0-r3.ebuild,
+  -networkmanager-0.9.4.0-r2.ebuild, -networkmanager-0.9.4.0-r4.ebuild,
+  +networkmanager-0.9.4.0-r7.ebuild:
+  Add 0.9.4.0-r7 with systemd USE flag; systemd USE flag will be disabled in
+  0.9.4.0-r6 to allow stabilization. Drop some old ebuilds.
+
+*networkmanager-0.9.4.0-r6 (10 Aug 2012)
+
+  10 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +networkmanager-0.9.4.0-r6.ebuild:
+  Query correct udevdir from udev.pc pkg-config file.
+
+*networkmanager-0.9.4.0-r5 (17 Jul 2012)
+
+  17 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +networkmanager-0.9.4.0-r5.ebuild,
+  +files/networkmanager-0.9.4.0-nl80211-encryption-caps.patch,
+  +files/networkmanager-0.9.4.0-wifi-kernel-api.patch:
+  Fix ipw2200 driver problems caused by wext vs. nl80211 API use (bug #426844,
+  thanks to Jonathan Müller).
+
+*networkmanager-0.9.4.0-r4 (05 Jul 2012)
+
+  05 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/10-openrc-status-r2, -networkmanager-0.9.4.0-r3.ebuild,
+  +networkmanager-0.9.4.0-r4.ebuild,
+  +files/networkmanager-0.9.4.0-dhclient-ipv6.patch:
+  Fix the hang in 10-openrc-status that resulted in networkmanager getting
+  marked as 'inactive' on resuming from suspend; many thanks to Travis Hansen
+  for the solution (bugs #410661, #417283). Fix incompatibility with
+  net-misc/dhcp[-ipv6] (bug #335147, thanks to Rick Harris). Move polkit
+  rules.d file to /usr/share (bug #421577 comment #12, thanks to Dennis
+  Lissov).
+
+*networkmanager-0.9.4.0-r3 (04 Jul 2012)
+
+  04 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/01-org.freedesktop.NetworkManager.settings.modify.system.rules,
+  -networkmanager-0.9.4.0-r1.ebuild, +networkmanager-0.9.4.0-r3.ebuild,
+  -files/networkmanager-0.9.4.0-force-libnl1.1.patch,
+  +files/networkmanager-0.9.4.0-ipv6-route.patch:
+  Fix default ipv6 route issue on some networks (bug #417529, thanks to Marien
+  Zwart). Install polkit-1/rules.d file for polkit-0.106 support (bug #421577,
+  thanks to Samuli Suominen). Add epatch_user to make it easier for users to
+  locally patch networkmanager. Drop old.
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  networkmanager-0.8-r1.ebuild, networkmanager-0.9.2.0-r3.ebuild,
+  networkmanager-0.9.2.0-r5.ebuild, networkmanager-0.9.4.0-r1.ebuild,
+  networkmanager-0.9.4.0-r2.ebuild:
+  inherit user.eclass for enewgroup function
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  networkmanager-0.9.4.0-r2.ebuild:
+  .pkla files are only used by <sys-auth/polkit-0.106 wrt #421577
+
+  24 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  networkmanager-0.8.4.0-r2.ebuild, networkmanager-0.9.0.ebuild,
+  networkmanager-0.9.2.0-r5.ebuild, networkmanager-0.9.4.0-r2.ebuild,
+  +files/networkmanager-0.9.4.0-ip_ppp.h.patch:
+  Fix building against linux-headers-3.4 (bug #417055, thanks to Marek
+  Bartosiewicz, Adrian Frith, Xake et al.).
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> networkmanager-0.8-r1.ebuild,
+  networkmanager-0.8.4.0-r2.ebuild, networkmanager-0.9.0.ebuild,
+  networkmanager-0.9.2.0-r3.ebuild, networkmanager-0.9.2.0-r5.ebuild,
+  networkmanager-0.9.4.0-r1.ebuild, networkmanager-0.9.4.0-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  networkmanager-0.9.4.0-r2.ebuild, metadata.xml:
+  Enable USE=wext by default; it's still needed for a few commonly used
+  drivers, e.g. ndiswrapper and ipw2200.
+
+*networkmanager-0.9.4.0-r2 (13 Apr 2012)
+
+  13 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -networkmanager-0.9.2.0.ebuild, -networkmanager-0.9.2.0-r2.ebuild,
+  +networkmanager-0.9.4.0-r2.ebuild,
+  +files/networkmanager-0.9.4.0-force-libnl1.1-r1.patch,
+  +files/networkmanager-0.9.4.0-libnm-glib-ensure_inited.patch,
+  +files/networkmanager-0.9.4.0-libnm-glib-init-gerror.patch, metadata.xml:
+  Fix gnome-shell crashes when networkmanager is not running (thanks to
+  Firartix for reporting). Do not use obsolete wext API by default, and build
+  against libnl:3 when USE=-wimax (bug #410143, thanks to Davide Pesavento).
+  Add a separate USE flag for modemmanager because not very many people need
+  it. Drop old.
+
+*networkmanager-0.9.4.0-r1 (05 Apr 2012)
+
+  05 Apr 2012; Mu Qiao <qiaomuf@gentoo.org> -networkmanager-0.9.4.0.ebuild,
+  +networkmanager-0.9.4.0-r1.ebuild,
+  +files/networkmanager-0.9.4.0-fix-quote-handling.patch:
+  Fix quote handling for global data
+
+*networkmanager-0.9.4.0 (27 Mar 2012)
+
+  27 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +networkmanager-0.9.4.0.ebuild,
+  +files/networkmanager-0.9.4.0-force-libnl1.1.patch, metadata.xml:
+  Version bump. Notable changes: nl80211 support, improved ifnet plugin,
+  optional systemd session tracking support, plus lots of bugfixes. The config
+  file has moved to /etc/NetworkManager/NetworkManager.conf (bug #407253,
+  thanks to Markus Rathgeb).
+
+*networkmanager-0.9.2.0-r5 (21 Feb 2012)
+
+  21 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -networkmanager-0.9.2.0-r4.ebuild, +networkmanager-0.9.2.0-r5.ebuild,
+  files/networkmanager-0.9.2.0-init-provide-net-r1.patch,
+  +files/conf.d.NetworkManager:
+  Make timeout to go inactive at init.d script startup configurable, and reduce
+  it to 1 second by default (bug #405141, thanks to Sylvain Alain).
+
+*networkmanager-0.9.2.0-r4 (20 Feb 2012)
+
+  20 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/10-openrc-status-r1, +networkmanager-0.9.2.0-r4.ebuild,
+  +files/networkmanager-0.9.2.0-ifnet-password-truncated.patch,
+  +files/networkmanager-0.9.2.0-init-provide-net-r1.patch,
+  +files/networkmanager-0.9.2.0-pre-sleep.patch:
+  Fix openrc service going inactive while active connections are present (bug
+  #402613, thanks to Thomas Witt). Try to be more user-friendly by waiting a
+  few seconds before marking the service as inactive. Dispatch a pre-sleep
+  event to unmount network filesystems before suspending (bug #402085, thanks
+  to Marien Zwart). Do not truncate WPA passwords at '#' character (bug
+  #402133, thanks to John Hardin).
+
+*networkmanager-0.9.2.0-r3 (02 Feb 2012)
+
+  02 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/10-openrc-status, +networkmanager-0.9.2.0-r3.ebuild,
+  +files/networkmanager-0.9.2.0-ifnet-unquote-hostname.patch,
+  +files/networkmanager-0.9.2.0-init-provide-net.patch:
+  Change the NetworkManager OpenRC service to provide net; the service's status
+  is set to 'inactive' when NetworkManager is running but has no connections
+  up, and to 'started' when NetworkManager is connected (bug #252137, thanks to
+  Xake). Do not keepdir /var/run/NetworkManager, it's not needed in Gentoo (bug
+  #401019, thanks to Maxim Kammerer). Correctly parse single-quoted hostnames
+  in /etc/conf.d/hostname.
+
+  01 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -networkmanager-0.9.1.95.ebuild,
+  -files/networkmanager-0.9.1.95-dns-routing-unmanaged-devices.patch,
+  -files/networkmanager-0.9.1.95-glib-2.31.patch,
+  -files/networkmanager-0.9.1.95-keyfile-scheme.patch:
+  Drop old and undo accidental broken CVS commit.
+
+*networkmanager-0.9.2.0-r2 (05 Jan 2012)
+
+  05 Jan 2012; Mu Qiao <qiaomuf@gentoo.org> -networkmanager-0.9.2.0-r1.ebuild,
+  +networkmanager-0.9.2.0-r2.ebuild,
+  +files/networkmanager-0.9.2.0-ifnet-ignore-user-connections.patch,
+  +files/networkmanager-0.9.2.0-ifnet-remove-system-prefix.patch:
+  Make ifnet ignore user connections (bug #392409)
+
+  Thanks to David Narvaez for his great help on this problem.
+
+  16 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org> metadata.xml:
+  s/steev/tetromino/ in maintainers. Acked by Nirbheek and Steev.
+
+*networkmanager-0.9.2.0-r1 (07 Dec 2011)
+
+  07 Dec 2011; Mu Qiao <qiaomuf@gentoo.org> +networkmanager-0.9.2.0-r1.ebuild,
+  +files/networkmanager-0.9.2.0-ifnet-openrc-style.patch:
+  Support openrc style configuration
+
+  The old IP style like 192.168.1.{1..4} is not supported anymore.
+
+  20 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  networkmanager-0.8.4.0-r2.ebuild:
+  ppc/ppc64 stable wrt #369901
+
+*networkmanager-0.9.2.0 (13 Nov 2011)
+
+  13 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -networkmanager-0.9.1.90-r3.ebuild,
+  -files/networkmanager-0.9.1.90-force-libnl1.1.patch,
+  -files/networkmanager-0.9.1.90-if.h.patch,
+  -files/networkmanager-0.9.1.90-rfkill.patch, +networkmanager-0.9.2.0.ebuild:
+  Bump, drop old. First stable release in the 0.9.2 series.
+
+*networkmanager-0.9.1.95 (07 Nov 2011)
+
+  07 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  networkmanager-0.9.0.ebuild, networkmanager-0.9.1.90-r3.ebuild,
+  +networkmanager-0.9.1.95.ebuild,
+  +files/networkmanager-0.9.1.95-dns-routing-unmanaged-devices.patch,
+  +files/networkmanager-0.9.1.95-force-libnl1.1.patch,
+  +files/networkmanager-0.9.1.95-glib-2.31.patch,
+  +files/networkmanager-0.9.1.95-keyfile-scheme.patch:
+  Bump to 0.9.1.95; lots of bugfixes. Also, fix src_install so it doesn't try
+  to chmod things in the live filesystem.
+
+  05 Nov 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  networkmanager-0.9.0.ebuild, networkmanager-0.9.1.90-r3.ebuild:
+  Fix bug #383765 that affected me too. Thanks to William L. Thomson Jr. for
+  the patch.
+
+*networkmanager-0.9.1.90-r3 (29 Oct 2011)
+
+  29 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/01-org.freedesktop.NetworkManager.settings.modify.system.pkla,
+  +networkmanager-0.9.1.90-r3.ebuild,
+  +files/networkmanager-0.9.1.90-force-libnl1.1.patch,
+  +files/networkmanager-0.9.1.90-if.h.patch,
+  +files/networkmanager-0.9.1.90-rfkill.patch:
+  Bump to 0.9.1.90 from the gnome overlay. Allow users in plugdev group to
+  modify system connections (so dropped wireless connections no longer bring up
+  a modal root password prompt), thanks to Samuli Suominen for the solution.
+  Numerous code changes.
+
+  27 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  networkmanager-0.8-r1.ebuild, networkmanager-0.8.4.0-r2.ebuild,
+  networkmanager-0.9.0.ebuild:
+  Depend on slot 1.1 of libnl.
+
+  09 Oct 2011; Markus Meier <maekke@gentoo.org>
+  networkmanager-0.8.4.0-r2.ebuild:
+  x86 stable, bug #369901
+
+*networkmanager-0.9.0 (23 Aug 2011)
+
+  23 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  -networkmanager-0.8.1-r6.ebuild,
+  -files/networkmanager-0.8.1-CVE-2010-1172.patch,
+  -files/networkmanager-0.8.1-confchanges.patch,
+  -files/networkmanager-0.8.1-dhclient3-fix.patch,
+  -files/networkmanager-0.8.1-dhclient3.patch,
+  -files/networkmanager-0.8.1-dhcp-configure.patch,
+  -files/networkmanager-0.8.1-glib-2.25.12-workaround.patch,
+  -networkmanager-0.8.2-r1.ebuild, -networkmanager-0.8.2-r2.ebuild,
+  -networkmanager-0.8.2-r6.ebuild, -networkmanager-0.8.2-r10.ebuild,
+  -files/networkmanager-0.8.2-1.patch,
+  -files/networkmanager-0.8.2-accept-gw.patch,
+  -files/networkmanager-0.8.2-confchanges.patch,
+  -files/networkmanager-0.8.2-fix-dnsmasq-config.patch,
+  -files/networkmanager-0.8.2-fix-shutdown.patch,
+  -files/networkmanager-0.8.2-fix-tempfiles.patch,
+  -files/networkmanager-0.8.2-fix-tests.patch,
+  -files/networkmanager-0.8.2-fix-timestamp.patch,
+  -files/networkmanager-0.8.2-ifnet-smarter-write.patch,
+  -files/networkmanager-0.8.2-shared-connection.patch,
+  -networkmanager-0.9_rc3.ebuild, +networkmanager-0.9.0.ebuild:
+  Bump for the 0.9.0 release, go forth and test. Also, remove old ebuilds and
+  unused patches.
+
+  23 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  networkmanager-0.9_rc3.ebuild:
+  Fix bug 379835, accidental dropping of optional modemmanager
+
+  22 Aug 2011; Tony Vroon <chainsaw@gentoo.org>
+  networkmanager-0.8.4.0-r2.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah El Lazkani, Agostino
+  "ago" Sarubbo & Tomáš Pružina in bug #369901.
+
+  16 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  networkmanager-0.9_rc3.ebuild:
+  Fix SRC_URI, silly NM versioning
+
+*networkmanager-0.9_rc3 (15 Aug 2011)
+
+  15 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +networkmanager-0.9_rc3.ebuild,
+  +files/networkmanager-0.9_rc3-fix-tests.patch, metadata.xml:
+  Bump to 0.9_rc3, from gnome overlay for great justice (and GNOME 3)
+
+  14 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  networkmanager-0.8.4.0-r2.ebuild:
+  Various ebuild fixes, bug 378225
+
+  12 Aug 2011; Mu Qiao <qiaomuf@gentoo.org> networkmanager-0.8.4.0-r2.ebuild:
+  Fix building with USE="-ppp" (bug #377183)
+
+  Thanks to Mart Raudsepp for spotting the problem.
 
 *networkmanager-0.8.4.0-r2 (21 Jul 2011)
 
@@ -594,4 +959,3 @@
   +NetworkManager-0.6.4_pre20061028.ebuild:
   Initial import. This ebuild was made by Luis Medinas <metalgod@gentoo.org>
   and Stephen Klimaszewski <steev@gentoo.org>.
-

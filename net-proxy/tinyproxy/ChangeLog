@@ -1,6 +1,40 @@
+
 # ChangeLog for net-proxy/tinyproxy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/tinyproxy/ChangeLog,v 1.30 2011/04/16 17:05:11 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/tinyproxy/ChangeLog,v 1.39 2012/11/21 15:52:31 jer Exp $
+
+  21 Nov 2012; Jeroen Roovers <jer@gentoo.org> tinyproxy-1.8.3.ebuild:
+  Remove subdir requirement in default pid config.
+
+  21 Nov 2012; Jeroen Roovers <jer@gentoo.org> tinyproxy-1.8.3.ebuild,
+  -files/tinyproxy.initd:
+  Remove keepdir /var/run/${PN} by Cedric Godin (bug #444167).
+
+  03 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Remove unused local desc.
+
+  27 Aug 2011; Jeroen Roovers <jer@gentoo.org> -tinyproxy-1.6.3-r1.ebuild,
+  -tinyproxy-1.6.4.ebuild, -tinyproxy-1.6.5.ebuild, -tinyproxy-1.8.2.ebuild,
+  -files/tinyproxy-no-via.patch:
+  ^
+
+  27 Aug 2011; Raúl Porcel <armin76@gentoo.org> tinyproxy-1.8.3.ebuild:
+  alpha/ia64/sparc stable wrt #363425
+
+  18 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> tinyproxy-1.8.3.ebuild:
+  ppc stable wrt #363425
+
+  17 Aug 2011; Tony Vroon <chainsaw@gentoo.org> tinyproxy-1.8.3.ebuild:
+  1.8.3 marked stable on AMD64 based on arch testing by Elijah El Lazkani &
+  Agostino "ago" Sarubbo in security bug #363425 filed by Tim Sammut.
+
+  17 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> tinyproxy-1.8.3.ebuild:
+  x86 stable wrt security bug #363425
+
+*tinyproxy-1.8.3 (16 Aug 2011)
+
+  16 Aug 2011; Jeroen Roovers <jer@gentoo.org> +tinyproxy-1.8.3.ebuild:
+  Version bump (bug #363425).
 
   16 Apr 2011; Raúl Porcel <armin76@gentoo.org> tinyproxy-1.8.2.ebuild:
   ia64/sparc stable wrt #358091

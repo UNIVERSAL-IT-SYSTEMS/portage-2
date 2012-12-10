@@ -1,6 +1,13 @@
 # ChangeLog for sys-devel/bc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/bc/ChangeLog,v 1.39 2011/02/15 12:33:45 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/bc/ChangeLog,v 1.41 2012/04/26 13:55:58 aballier Exp $
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> bc-1.06.95-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  27 Mar 2012; Mike Frysinger <vapier@gentoo.org> bc-1.06.95.ebuild,
+  bc-1.06.95-r1.ebuild:
+  Migrate to gnu-alpha mirror.
 
   15 Feb 2011; Fabian Groffen <grobian@gentoo.org> bc-1.06.95-r1.ebuild:
   Marked ~sparc64-solaris

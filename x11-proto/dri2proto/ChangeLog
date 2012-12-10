@@ -1,6 +1,49 @@
 # ChangeLog for x11-proto/dri2proto
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-proto/dri2proto/ChangeLog,v 1.37 2011/07/01 23:56:30 chithanh Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-proto/dri2proto/ChangeLog,v 1.50 2012/12/08 17:16:57 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> dri2proto-2.8.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> dri2proto-2.8.ebuild:
+  Marking dri2proto-2.8 ppc stable for bug 440872
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> dri2proto-2.8.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> dri2proto-2.8.ebuild:
+  Stable for amd64, wrt bug #440872
+
+*dri2proto-2.8 (12 Jul 2012)
+
+  12 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +dri2proto-2.8.ebuild:
+  Version bump.
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> dri2proto-2.6.ebuild:
+  keyword ~amd64-fbsd
+
+  23 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org> -dri2proto-2.3.ebuild:
+  Remove overshadowed
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> dri2proto-2.6.ebuild:
+  Marked ppc ppc64 stable for bug #380421.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> dri2proto-2.6.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #380421
+
+  21 Sep 2011; Jeroen Roovers <jer@gentoo.org> dri2proto-2.6.ebuild:
+  Stable for HPPA (bug #380421).
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org> dri2proto-2.6.ebuild:
+  arm stable, bug #380421
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> dri2proto-2.6.ebuild:
+  x86 stable, bug #380421
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> dri2proto-2.6.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380421 filed by Chí-Thanh Christopher Nguyễn.
 
 *dri2proto-2.6 (01 Jul 2011)
 
@@ -142,4 +185,3 @@
   10 Jun 2008; Donnie Berkholz <dberkholz@gentoo.org>; +metadata.xml,
   +dri2proto-9999.ebuild:
   New package: X.Org DRI2 protocol headers.
-

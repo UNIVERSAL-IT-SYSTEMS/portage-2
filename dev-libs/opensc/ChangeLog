@@ -1,6 +1,78 @@
 # ChangeLog for dev-libs/opensc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/opensc/ChangeLog,v 1.115 2011/07/07 14:27:49 c1pher Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/opensc/ChangeLog,v 1.132 2012/09/30 17:20:43 armin76 Exp $
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> opensc-0.12.2-r2.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #432766
+
+  27 Sep 2012; Anthony G. Basile <blueness@gentoo.org> opensc-0.12.2-r2.ebuild:
+  stable ppc64, bug #432766
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> opensc-0.12.2-r2.ebuild:
+  x86 stable wrt bug #432766
+
+  12 Sep 2012; Jeroen Roovers <jer@gentoo.org> opensc-0.12.2-r2.ebuild:
+  Stable for HPPA (bug #432766).
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  06 Sep 2012; Agostino Sarubbo <ago@gentoo.org> opensc-0.12.2-r2.ebuild:
+  Stable for amd64, wrt bug #432766
+
+  28 Aug 2012; Anthony G. Basile <blueness@gentoo.org> opensc-0.12.2-r2.ebuild:
+  Stable arm, bug #432766
+
+  28 Aug 2012; Anthony G. Basile <blueness@gentoo.org> opensc-0.12.2-r2.ebuild:
+  Stable ppc, bug #432766
+
+*opensc-0.12.2-r2 (26 Aug 2012)
+
+  26 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +opensc-0.12.2-r2.ebuild,
+  -opensc-0.12.2-r1.ebuild:
+  Fix bug #432770 thanks to Maxim Kammerer.
+
+  24 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  files/opensc-0.12.2-parallelinstall.patch, opensc-0.12.2-r1.ebuild:
+  Fix parallelinstall patch (update sent upstream), remove automake 1.11
+  restriction.
+
+  22 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org> -opensc-0.12.2.ebuild,
+  opensc-0.12.2-r1.ebuild:
+  Remove old; make sure to use automake 1.11 for rebuilding as it fails with
+  1.12.
+
+*opensc-0.12.2-r1 (22 May 2012)
+
+  22 May 2012; Mike Frysinger <vapier@gentoo.org> +files/opensc-0.12.2-dl.patch,
+  +opensc-0.12.2-r1.ebuild:
+  Fix linking to -ldl when USE=-libtool.
+
+  13 May 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/opensc-0.12.2-parallelinstall.patch,
+  -files/opensc-0.12.0-crossbuild.patch, -opensc-0.11.13.ebuild,
+  -opensc-0.12.0-r2.ebuild, -opensc-0.12.1.ebuild, opensc-0.12.2.ebuild:
+  Fix bug #412299, thanks to Michelangelo Scopelliti for reporting. Also remove
+  old versions.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> opensc-0.11.13.ebuild,
+  opensc-0.11.13-r2.ebuild, opensc-0.12.0-r2.ebuild, opensc-0.12.1.ebuild,
+  opensc-0.12.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  05 Dec 2011; Mike Frysinger <vapier@gentoo.org> opensc-0.12.2.ebuild:
+  Drop local usex now that it is in eutils.eclass.
+
+  14 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> opensc-0.12.2.ebuild:
+  Remove stupid static-libs USE flag as the package should _not_ install static
+  libraries at all.
+
+*opensc-0.12.2 (13 Sep 2011)
+
+  13 Sep 2011; Mike Frysinger <vapier@gentoo.org> +opensc-0.12.2.ebuild,
+  metadata.xml:
+  Version bump. Add USE=libtool to control the libltdl dep (and prefer
+  libdl/dlopen), and add USE=static-libs.
 
 *opensc-0.12.1 (07 Jul 2011)
 

@@ -1,6 +1,114 @@
 # ChangeLog for media-libs/allegro
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/allegro/ChangeLog,v 1.107 2011/08/01 19:07:57 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/allegro/ChangeLog,v 1.135 2012/10/11 15:51:56 mr_bones_ Exp $
+
+  11 Oct 2012; Michael Sterrett <mr_bones_@gentoo.org> -allegro-5.0.5.ebuild,
+  allegro-5.0.7.ebuild:
+  add missing virtual/glu dep (bug #437990)
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org> allegro-5.0.7.ebuild:
+  stable ppc, bug #432082
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> allegro-5.0.7.ebuild:
+  Marking allegro-5.0.7 ppc64 for bug 432082
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> allegro-5.0.7.ebuild:
+  x86 stable wrt bug #432082
+
+  21 Aug 2012; Agostino Sarubbo <ago@gentoo.org> allegro-5.0.7.ebuild:
+  Stable for amd64, wrt bug #432082
+
+*allegro-5.0.7 (03 Jul 2012)
+
+  03 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +allegro-5.0.7.ebuild:
+  Version bump.
+
+  03 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> -allegro-4.4.2.ebuild,
+  -allegro-5.0.4.ebuild:
+  old
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> allegro-5.0.5.ebuild:
+  x86 stable wrt bug #414055
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> allegro-4.4.2-r1.ebuild:
+  x86 stable wrt bug #414053
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> allegro-4.4.2-r1.ebuild:
+  Marking allegro-4.4.2-r1 ppc64 for bug 414053
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> allegro-5.0.5.ebuild:
+  Marking allegro-5.0.5 ppc64 for bug 414055
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> allegro-5.0.5.ebuild:
+  Marking allegro-5.0.5 ppc for bug 414055
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> allegro-4.4.2-r1.ebuild:
+  Marking allegro-4.4.2-r1 ppc for bug 414053
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> allegro-4.4.2.ebuild,
+  allegro-4.4.2-r1.ebuild, allegro-5.0.4.ebuild, allegro-5.0.5.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> allegro-5.0.5.ebuild:
+  Stable for amd64, wrt bug #414055
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> allegro-4.4.2-r1.ebuild:
+  Stable for amd64, wrt bug #414053
+
+*allegro-4.4.2-r1 (22 Mar 2012)
+
+  22 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +allegro-4.4.2-r1.ebuild:
+  Prepend allegro- to every manpage (key.3 will become allegro-key.3 for
+  example) wrt #409305 by Chris Reffett
+
+  04 Mar 2012; Tupone Alfredo <tupone@gentoo.org> allegro-4.4.2.ebuild,
+  +files/allegro-4.4.2-gentoo.patch:
+  Fix install of HTML doc. Bug #321571 by zimous
+
+*allegro-5.0.5 (21 Feb 2012)
+
+  21 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +allegro-5.0.5.ebuild:
+  Version bump wrt #399235 by Mr. Anderson
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -allegro-4.4.1.1-r1.ebuild, -files/allegro-4.4.1.1-optional_drivers.patch,
+  -files/allegro-4.4.1.1-rpath.patch, -files/allegro-4.4.1.1-shared.patch,
+  -files/allegro-4.4.1.1-underlink.patch, -allegro-5.0.1.ebuild,
+  -files/allegro-5.0.1-underlink.patch, -allegro-5.0.3.ebuild,
+  -files/allegro-5.0.3-underlink.patch:
+  old
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> allegro-5.0.4.ebuild:
+  x86 stable wrt bug #385823
+
+  11 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> allegro-4.4.2.ebuild,
+  allegro-5.0.4.ebuild:
+  ppc/ppc64 stable wrt #385821 and #385823
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> allegro-4.4.2.ebuild:
+  x86 stable wrt bug #385821
+
+  06 Oct 2011; Markos Chandras <hwoarang@gentoo.org> allegro-4.4.2.ebuild:
+  Stable on amd64 wrt bug #385821
+
+  06 Oct 2011; Markos Chandras <hwoarang@gentoo.org> allegro-5.0.4.ebuild:
+  Stable on amd64 wrt bug #385823
+
+*allegro-5.0.4 (03 Sep 2011)
+*allegro-4.4.2 (03 Sep 2011)
+
+  03 Sep 2011; Michael Sterrett <mr_bones_@gentoo.org> +allegro-4.4.2.ebuild,
+  +files/allegro-4.4.2-rpath.patch, +files/allegro-4.4.2-shared.patch,
+  +files/allegro-4.4.2-underlink.patch, +allegro-5.0.4.ebuild,
+  +files/allegro-5.0.4-underlink.patch:
+  version bump (bug #380657)
+
+  09 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> allegro-5.0.3.ebuild:
+  ppc/ppc64 stable wrt #375491
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> allegro-4.4.1.1-r1.ebuild,
+  allegro-5.0.1.ebuild, allegro-5.0.3.ebuild:
+  Drop alpha/sparc keyword
 
   01 Aug 2011; Markus Meier <maekke@gentoo.org> allegro-5.0.3.ebuild:
   x86 stable, bug #375491

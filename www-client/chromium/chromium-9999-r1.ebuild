@@ -1,125 +1,152 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/chromium-9999-r1.ebuild,v 1.39 2011/07/20 21:39:37 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/chromium-9999-r1.ebuild,v 1.152 2012/12/10 01:00:22 floppym Exp $
 
-EAPI="3"
+EAPI="5"
 PYTHON_DEPEND="2:2.6"
 
-inherit eutils fdo-mime flag-o-matic gnome2-utils linux-info multilib \
+CHROMIUM_LANGS="am ar bg bn ca cs da de el en_GB es es_LA et fa fi fil fr gu he
+	hi hr hu id it ja kn ko lt lv ml mr ms nb nl pl pt_BR pt_PT ro ru sk sl sr
+	sv sw ta te th tr uk vi zh_CN zh_TW"
+
+inherit chromium eutils flag-o-matic multilib \
 	pax-utils portability python subversion toolchain-funcs versionator virtualx
 
 DESCRIPTION="Open-source version of Google Chrome web browser"
 HOMEPAGE="http://chromium.org/"
-# subversion eclass fetches gclient, which will then fetch chromium itself
-ESVN_REPO_URI="http://src.chromium.org/svn/trunk/tools/depot_tools"
+ESVN_REPO_URI="http://src.chromium.org/svn/trunk/src"
 
 LICENSE="BSD"
 SLOT="live"
 KEYWORDS=""
-IUSE="cups gnome gnome-keyring kerberos"
-
-# en_US is ommitted on purpose from the list below. It must always be available.
-LANGS="am ar bg bn ca cs da de el en_GB es es_LA et fa fi fil fr gu he hi hr
-hu id it ja kn ko lt lv ml mr nb nl pl pt_BR pt_PT ro ru sk sl sr sv sw ta te th
-tr uk vi zh_CN zh_TW"
-for lang in ${LANGS}; do
-	IUSE+=" linguas_${lang}"
-done
+IUSE="bindist cups gnome gnome-keyring kerberos pulseaudio selinux system-ffmpeg tcmalloc"
 
 RDEPEND="app-arch/bzip2
-	dev-libs/dbus-glib
-	>=dev-libs/icu-4.4.1
+	cups? (
+		dev-libs/libgcrypt
+		>=net-print/cups-1.3.11
+	)
+	>=dev-lang/v8-3.15.7.2:=
+	>=dev-libs/elfutils-0.149
+	dev-libs/expat
+	>=dev-libs/icu-49.1.1-r1
 	>=dev-libs/libevent-1.4.13
 	dev-libs/libxml2[icu]
 	dev-libs/libxslt
 	>=dev-libs/nss-3.12.3
+	dev-libs/protobuf
 	gnome? ( >=gnome-base/gconf-2.24.0 )
 	gnome-keyring? ( >=gnome-base/gnome-keyring-2.28.2 )
 	>=media-libs/alsa-lib-1.0.19
 	media-libs/flac
-	virtual/jpeg
+	>=media-libs/libjpeg-turbo-1.2.0-r1
 	media-libs/libpng
-	>=media-libs/libvpx-0.9.5
-	>=media-libs/libwebp-0.1.2
+	media-libs/libvpx
+	>=media-libs/libwebp-0.2.0_rc1
 	media-libs/speex
-	cups? ( >=net-print/cups-1.3.11 )
-	sys-libs/zlib
-	>=virtual/ffmpeg-0.6.90[threads]
+	pulseaudio? ( media-sound/pulseaudio )
+	system-ffmpeg? ( >=media-video/ffmpeg-1.0 )
+	>=net-libs/libsrtp-1.4.4_p20121108
+	net-libs/webkit-gtk:2
+	sys-apps/dbus
+	sys-apps/pciutils
+	sys-libs/zlib[minizip]
+	virtual/udev
+	virtual/libusb:1
 	x11-libs/gtk+:2
 	x11-libs/libXinerama
 	x11-libs/libXScrnSaver
-	x11-libs/libXtst"
+	x11-libs/libXtst
+	kerberos? ( virtual/krb5 )
+	selinux? (
+		sec-policy/selinux-chromium
+		sys-libs/libselinux
+	)"
 DEPEND="${RDEPEND}
 	dev-lang/perl
+	dev-lang/yasm
+	dev-python/ply
+	dev-python/simplejson
 	>=dev-util/gperf-3.0.3
-	>=dev-util/pkgconfig-0.23
 	>=sys-devel/bison-2.4.3
 	sys-devel/flex
 	>=sys-devel/make-3.81-r2
-	test? (
-		dev-python/pyftpdlib
-		dev-python/simplejson
-		virtual/krb5
-	)"
+	virtual/pkgconfig
+	test? ( dev-python/pyftpdlib )"
 RDEPEND+="
 	!=www-client/chromium-9999
-	kerberos? ( virtual/krb5 )
 	x11-misc/xdg-utils
 	virtual/ttf-fonts"
 
+gclient_config() {
+	einfo "gclient config -->"
+	# Allow the user to keep their config if they know what they are doing.
+	if ! grep -q KEEP .gclient; then
+		cp -f "${FILESDIR}/dot-gclient" .gclient || die
+	fi
+	cat .gclient || die
+}
+
+gclient_sync() {
+	einfo "gclient sync -->"
+	[[ -n "${ESVN_UMASK}" ]] && eumask_push "${ESVN_UMASK}"
+	# Only use a single job to prevent hangs.
+	"${WORKDIR}/depot_tools/gclient" sync --nohooks --jobs=1 \
+		--delete_unversioned_trees || die
+	[[ -n "${ESVN_UMASK}" ]] && eumask_pop
+}
+
+gclient_runhooks() {
+	# Run all hooks except gyp_chromium.
+	einfo "gclient runhooks -->"
+	cp src/DEPS src/DEPS.orig || die
+	sed -e 's:"python", "src/build/gyp_chromium":"true":' -i src/DEPS || die
+	"${WORKDIR}/depot_tools/gclient" runhooks
+	local ret=$?
+	mv src/DEPS.orig src/DEPS || die
+	[[ ${ret} -eq 0 ]] || die "gclient runhooks failed"
+}
+
 src_unpack() {
-	subversion_src_unpack
+	# First grab depot_tools.
+	ESVN_REVISION= subversion_fetch "http://src.chromium.org/svn/trunk/tools/depot_tools"
 	mv "${S}" "${WORKDIR}"/depot_tools || die
 
-	mkdir -p "${ESVN_STORE_DIR}/${PN}" || die
 	cd "${ESVN_STORE_DIR}/${PN}" || die
 
-	einfo "gclient config -->"
-	cp -f "${FILESDIR}/dot-gclient" .gclient || die
-	cat .gclient || die
+	gclient_config
+	gclient_sync
 
-	einfo "gclient sync start -->"
-	"${WORKDIR}/depot_tools/gclient" sync --force --nohooks || die
-	"$(PYTHON)" src/build/download_nacl_irt.py || die  # bug #366413
-	einfo "   working copy: ${ESVN_STORE_DIR}/${PN}"
+	# Disabled so that we do not download nacl toolchain.
+	#gclient_runhooks
+
+	# Remove any lingering nacl toolchain files.
+	rm -rf src/native_client/toolchain/linux_x86_newlib
+
+	subversion_wc_info
 
 	mkdir -p "${S}" || die
+	einfo "Copying source to ${S}"
 	rsync -rlpgo --exclude=".svn/" src/ "${S}" || die
 
 	# Display correct svn revision in about box, and log new version.
-	CREV=$(subversion__svn_info "src" "Revision")
-	echo ${CREV} > "${S}"/build/LASTCHANGE.in || die
+	echo "LASTCHANGE=${ESVN_WC_REVISION}" > "${S}"/build/util/LASTCHANGE || die
+
 	. src/chrome/VERSION
-	elog "Installing/updating to version ${MAJOR}.${MINOR}.${BUILD}.${PATCH} (Developer Build ${CREV})"
+	elog "Installing/updating to version ${MAJOR}.${MINOR}.${BUILD}.${PATCH} (Developer Build ${ESVN_WC_REVISION})"
 }
 
-gyp_use() {
-	if [[ $# -lt 2 ]]; then
-		echo "!!! usage: gyp_use <USEFLAG> <GYPFLAG>" >&2
-		return 1
-	fi
-	if use "$1"; then echo "-D$2=1"; else echo "-D$2=0"; fi
-}
-
-egyp() {
-	set -- build/gyp_chromium --depth=. "${@}"
-	echo "${@}" >&2
-	"${@}"
-}
-
-# Chromium uses different names for some langs,
-# return Chromium name corresponding to a Gentoo lang.
-chromium_lang() {
-	if [[ "$1" == "es_LA" ]]; then
-		echo "es_419"
-	else
-		echo "$1"
-	fi
-}
+if ! has chromium_pkg_die ${EBUILD_DEATH_HOOKS}; then
+	EBUILD_DEATH_HOOKS+=" chromium_pkg_die";
+fi
 
 pkg_setup() {
-	SUFFIX="-${SLOT}"
-	CHROMIUM_HOME="/usr/$(get_libdir)/chromium-browser${SUFFIX}"
+	if [[ "${SLOT}" == "0" ]]; then
+		CHROMIUM_SUFFIX=""
+	else
+		CHROMIUM_SUFFIX="-${SLOT}"
+	fi
+	CHROMIUM_HOME="/usr/$(get_libdir)/chromium-browser${CHROMIUM_SUFFIX}"
 
 	# Make sure the build system will use the right tools, bug #340795.
 	tc-export AR CC CXX RANLIB
@@ -128,24 +155,37 @@ pkg_setup() {
 	python_set_active_version 2
 	python_pkg_setup
 
-	# Prevent user problems like bug #348235.
-	eshopts_push -s extglob
-	if is-flagq '-g?(gdb)?([1-9])'; then
-		ewarn "You have enabled debug info (probably have -g or -ggdb in your \$C{,XX}FLAGS)."
-		ewarn "You may experience really long compilation times and/or increased memory usage."
-		ewarn "If compilation fails, please try removing -g{,gdb} before reporting a bug."
+	if ! use selinux; then
+		chromium_suid_sandbox_check_kernel_config
 	fi
-	eshopts_pop
 
-	# Warn if the kernel doesn't support features useful for sandboxing,
-	# bug #363907.
-	CONFIG_CHECK="~PID_NS ~NET_NS"
-	check_extra_config
+	if use bindist && ! use system-ffmpeg; then
+		elog "bindist enabled: H.264 video support will be disabled."
+	fi
+	if ! use bindist; then
+		elog "bindist disabled: Resulting binaries may not be legal to re-distribute."
+	fi
 }
 
 src_prepare() {
-	# Make sure we don't use bundled libvpx headers.
-	epatch "${FILESDIR}/${PN}-system-vpx-r4.patch"
+	# if ! use arm; then
+	#	ebegin "Preparing NaCl newlib toolchain"
+	#	pushd "${T}" >/dev/null || die
+	#	mkdir sdk || die
+	#	cp -a /usr/$(get_libdir)/nacl-toolchain-newlib sdk/nacl-sdk || die
+	#	mkdir -p "${S}"/native_client/toolchain/.tars || die
+	#	tar czf "${S}"/native_client/toolchain/.tars/naclsdk_linux_x86.tgz sdk || die
+	#	popd >/dev/null || die
+	#	eend $?
+	# fi
+
+	# zlib-1.2.5.1-r1 renames the OF macro in zconf.h, bug 383371.
+	# sed -i '1i#define OF(x) x' \
+	#	third_party/zlib/contrib/minizip/{ioapi,{,un}zip}.h || die
+
+	epatch "${FILESDIR}/${PN}-system-ffmpeg-r0.patch"
+
+	epatch_user
 
 	# Remove most bundled libraries. Some are still needed.
 	find third_party -type f \! -iname '*.gyp*' \
@@ -153,37 +193,68 @@ src_prepare() {
 		\! -path 'third_party/angle/*' \
 		\! -path 'third_party/cacheinvalidation/*' \
 		\! -path 'third_party/cld/*' \
-		\! -path 'third_party/expat/*' \
+		\! -path 'third_party/cros_system_api/*' \
 		\! -path 'third_party/ffmpeg/*' \
 		\! -path 'third_party/flac/flac.h' \
+		\! -path 'third_party/flot/*' \
 		\! -path 'third_party/gpsd/*' \
 		\! -path 'third_party/harfbuzz/*' \
+		\! -path 'third_party/harfbuzz-ng/*' \
 		\! -path 'third_party/hunspell/*' \
+		\! -path 'third_party/hyphen/*' \
 		\! -path 'third_party/iccjpeg/*' \
-		\! -path 'third_party/launchpad_translations/*' \
-		\! -path 'third_party/leveldb/*' \
+		\! -path 'third_party/jsoncpp/*' \
+		\! -path 'third_party/khronos/*' \
+		\! -path 'third_party/leveldatabase/*' \
 		\! -path 'third_party/libjingle/*' \
 		\! -path 'third_party/libphonenumber/*' \
+		\! -path 'third_party/libusb/libusb.h' \
 		\! -path 'third_party/libvpx/libvpx.h' \
+		\! -path 'third_party/libxml/chromium/*' \
+		\! -path 'third_party/libXNVCtrl/*' \
+		\! -path 'third_party/libyuv/*' \
+		\! -path 'third_party/lss/*' \
 		\! -path 'third_party/mesa/*' \
 		\! -path 'third_party/modp_b64/*' \
+		\! -path 'third_party/mongoose/*' \
+		\! -path 'third_party/mt19937ar/*' \
 		\! -path 'third_party/npapi/*' \
 		\! -path 'third_party/openmax/*' \
+		\! -path 'third_party/opus/*' \
 		\! -path 'third_party/ots/*' \
-		\! -path 'third_party/protobuf/*' \
+		\! -path 'third_party/pywebsocket/*' \
+		\! -path 'third_party/qcms/*' \
+		\! -path 'third_party/re2/*' \
+		\! -path 'third_party/scons-2.0.1/*' \
+		\! -path 'third_party/sfntly/*' \
 		\! -path 'third_party/skia/*' \
+		\! -path 'third_party/smhasher/*' \
 		\! -path 'third_party/speex/speex.h' \
 		\! -path 'third_party/sqlite/*' \
 		\! -path 'third_party/tcmalloc/*' \
 		\! -path 'third_party/tlslite/*' \
+		\! -path 'third_party/trace-viewer/*' \
 		\! -path 'third_party/undoview/*' \
+		\! -path 'third_party/v8-i18n/*' \
+		\! -path 'third_party/webdriver/*' \
+		\! -path 'third_party/webgl_conformance/*' \
 		\! -path 'third_party/webrtc/*' \
-		\! -path 'third_party/zlib/contrib/minizip/*' \
+		\! -path 'third_party/widevine/*' \
 		-delete || die
 
-	# Make sure the build system will use the right python, bug #344367.
-	# Only convert directories that need it, to save time.
-	python_convert_shebangs -q -r 2 build tools
+	local v8_bundled="$(chromium_bundled_v8_version)"
+	local v8_installed="$(chromium_installed_v8_version)"
+	einfo "V8 version: bundled - ${v8_bundled}; installed - ${v8_installed}"
+
+	# Remove bundled v8.
+	find v8 -type f \! -iname '*.gyp*' -delete || die
+
+	# The implementation files include v8 headers with full path,
+	# like #include "v8/include/v8.h". Make sure the system headers
+	# will be used.
+	# TODO: find a solution that can be upstreamed.
+	rmdir v8/include || die
+	ln -s /usr/include v8/include || die
 }
 
 src_configure() {
@@ -193,46 +264,92 @@ src_configure() {
 	# additions, bug #336871.
 	myconf+=" -Ddisable_sse2=1"
 
+	# Optional tcmalloc. Note it causes problems with e.g. NVIDIA
+	# drivers, bug #413637.
+	myconf+=" $(gyp_use tcmalloc linux_use_tcmalloc)"
+
+	# TODO: build with NaCl (pnacl is sort of required).
+	myconf+=" -Ddisable_nacl=1"
+
+	# Disable glibc Native Client toolchain, we don't need it (bug #417019).
+	# myconf+=" -Ddisable_glibc=1"
+
+	# TODO: also build with pnacl
+	# myconf+=" -Ddisable_pnacl=1
+	#	-Dbuild_pnacl_newlib=0"
+
+	# Make it possible to remove third_party/adobe.
+	echo > "${T}/flapper_version.h" || die
+	myconf+=" -Dflapper_version_h_file=${T}/flapper_version.h"
+
 	# Use system-provided libraries.
+	# TODO: use_system_ffmpeg
 	# TODO: use_system_hunspell (upstream changes needed).
+	# TODO: use_system_opus (bug #439884).
 	# TODO: use_system_ssl (http://crbug.com/58087).
 	# TODO: use_system_sqlite (http://crbug.com/22208).
 	myconf+="
 		-Duse_system_bzip2=1
-		-Duse_system_ffmpeg=1
 		-Duse_system_flac=1
 		-Duse_system_icu=1
 		-Duse_system_libevent=1
 		-Duse_system_libjpeg=1
 		-Duse_system_libpng=1
+		-Duse_system_libsrtp=1
+		-Duse_system_libusb=1
+		-Duse_system_libvpx=1
 		-Duse_system_libwebp=1
 		-Duse_system_libxml=1
+		-Duse_system_minizip=1
+		-Duse_system_protobuf=1
 		-Duse_system_speex=1
-		-Duse_system_vpx=1
+		-Duse_system_v8=1
 		-Duse_system_xdg_utils=1
-		-Duse_system_zlib=1"
+		-Duse_system_yasm=1
+		-Duse_system_zlib=1
+		$(gyp_use system-ffmpeg use_system_ffmpeg)"
 
 	# Optional dependencies.
+	# TODO: linux_link_kerberos, bug #381289.
 	myconf+="
-		$(gyp_use cups use_cups)
+		$(gyp_use cups)
 		$(gyp_use gnome use_gconf)
 		$(gyp_use gnome-keyring use_gnome_keyring)
-		$(gyp_use gnome-keyring linux_link_gnome_keyring)"
+		$(gyp_use gnome-keyring linux_link_gnome_keyring)
+		$(gyp_use kerberos)
+		$(gyp_use pulseaudio)
+		$(gyp_use selinux selinux)"
 
-	# Enable sandbox.
+	# Use explicit library dependencies instead of dlopen.
+	# This makes breakages easier to detect by revdep-rebuild.
 	myconf+="
-		-Dlinux_sandbox_path=${CHROMIUM_HOME}/chrome_sandbox
-		-Dlinux_sandbox_chrome_path=${CHROMIUM_HOME}/chrome"
+		-Dlinux_link_gsettings=1
+		-Dlinux_link_libpci=1"
 
-	if host-is-pax; then
-		# Prevent the build from failing (bug #301880). The performance
-		# difference is very small.
-		myconf+=" -Dv8_use_snapshot=0"
+	if ! use selinux; then
+		# Enable SUID sandbox.
+		myconf+="
+			-Dlinux_sandbox_path=${CHROMIUM_HOME}/chrome_sandbox
+			-Dlinux_sandbox_chrome_path=${CHROMIUM_HOME}/chrome"
 	fi
 
-	# Our system ffmpeg should support more codecs than the bundled one
-	# for Chromium.
-	myconf+=" -Dproprietary_codecs=1"
+	# Never use bundled gold binary. Disable gold linker flags for now.
+	myconf+="
+		-Dlinux_use_gold_binary=0
+		-Dlinux_use_gold_flags=0"
+
+	if ! use bindist && ! use system-ffmpeg; then
+		# Enable H.624 support in bundled ffmpeg.
+		myconf+=" -Dproprietary_codecs=1 -Dffmpeg_branding=Chrome"
+	fi
+
+	# Set up Google API keys, see http://www.chromium.org/developers/how-tos/api-keys .
+	# Note: these are for Gentoo use ONLY. For your own distribution,
+	# please get your own set of keys. Feel free to contact chromium@gentoo.org
+	# for more info.
+	myconf+=" -Dgoogle_api_key=AIzaSyDEAOvatFo0eTgsV_ZlEzx0ObmepsMzfAc
+		-Dgoogle_default_client_id=329227923882.apps.googleusercontent.com
+		-Dgoogle_default_client_secret=vgKG0NNv7GoDpbtoFNLxCUXu"
 
 	local myarch="$(tc-arch)"
 	if [[ $myarch = amd64 ]] ; then
@@ -240,11 +357,11 @@ src_configure() {
 	elif [[ $myarch = x86 ]] ; then
 		myconf+=" -Dtarget_arch=ia32"
 	elif [[ $myarch = arm ]] ; then
-		# TODO: check this again after
-		# http://gcc.gnu.org/bugzilla/show_bug.cgi?id=39509 is fixed.
-		append-flags -fno-tree-sink
-
-		myconf+=" -Dtarget_arch=arm -Ddisable_nacl=1 -Dlinux_use_tcmalloc=0"
+		# TODO: re-enable NaCl (NativeClient).
+		myconf+=" -Dtarget_arch=arm
+			-Darmv7=0
+			-Darm_neon=0
+			-Ddisable_nacl=1"
 	else
 		die "Failed to determine target arch, got '$myarch'."
 	fi
@@ -254,18 +371,42 @@ src_configure() {
 	# the build to fail because of that.
 	myconf+=" -Dwerror="
 
-	# Avoid a build error with -Os, bug #352457.
-	replace-flags "-Os" "-O2"
+	# Avoid CFLAGS problems, bug #352457, bug #390147.
+	if ! use custom-cflags; then
+		replace-flags "-Os" "-O2"
+		strip-flags
+	fi
 
-	egyp ${myconf} || die
+	egyp_chromium ${myconf} || die
 }
 
 src_compile() {
-	emake chrome chrome_sandbox BUILDTYPE=Release V=1 || die
+	local test_targets
+	for x in base cacheinvalidation crypto \
+		googleurl gpu media net printing sql; do
+		test_targets+=" ${x}_unittests"
+	done
+
+	local make_targets="chrome chromedriver"
+	if ! use selinux; then
+		make_targets+=" chrome_sandbox"
+	fi
+	if use test; then
+		make_targets+=$test_targets
+	fi
+
+	# See bug #410883 for more info about the .host mess.
+	emake ${make_targets} BUILDTYPE=Release V=1 \
+		CC.host="$(tc-getCC)" CFLAGS.host="${CFLAGS}" \
+		CXX.host="$(tc-getCXX)" CXXFLAGS.host="${CXXFLAGS}" \
+		LINK.host="$(tc-getCXX)" LDFLAGS.host="${LDFLAGS}" \
+		AR.host="$(tc-getAR)" || die
+
 	pax-mark m out/Release/chrome
 	if use test; then
-		emake {base,crypto,googleurl,net}_unittests BUILDTYPE=Release V=1 || die
-		pax-mark m out/Release/{base,crypto,googleurl,net}_unittests
+		for x in $test_targets; do
+			pax-mark m out/Release/${x}
+		done
 	fi
 }
 
@@ -285,123 +426,120 @@ src_test() {
 		die "Tests must be run as non-root. Please use FEATURES=userpriv."
 	fi
 
-	# For more info see bug #350347.
-	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/base_unittests virtualmake \
-		'--gtest_filter=-ICUStringConversionsTest.*'
+	runtest() {
+		local cmd=$1
+		shift
+		local filter="--gtest_filter=$(IFS=:; echo "-${*}")"
+		einfo "${cmd}" "${filter}"
+		LC_ALL="${mylocale}" VIRTUALX_COMMAND="${cmd}" virtualmake "${filter}"
+	}
 
-	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/crypto_unittests virtualmake
-	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/googleurl_unittests virtualmake
+	local excluded_base_unittests=(
+		"ICUStringConversionsTest.*" # bug #350347
+		"MessagePumpLibeventTest.*" # bug #398591
+	)
+	runtest out/Release/base_unittests "${excluded_base_unittests[@]}"
 
-	# NetUtilTest: bug #361885.
-	# UDP: unstable, active development. We should revisit this later.
-	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/net_unittests virtualmake \
-		'--gtest_filter=-NetUtilTest.IDNToUnicode*:NetUtilTest.FormatUrl*:*UDP*'
+	runtest out/Release/cacheinvalidation_unittests
+	runtest out/Release/crypto_unittests
+	runtest out/Release/googleurl_unittests
+	runtest out/Release/gpu_unittests
+
+	# TODO: re-enable when we get the test data in a separate tarball.
+	# runtest out/Release/media_unittests
+
+	# local excluded_net_unittests=(
+	#	"NetUtilTest.IDNToUnicode*" # bug 361885
+	#	"NetUtilTest.FormatUrl*" # see above
+	#	"DnsConfigServiceTest.GetSystemConfig" # bug #394883
+	#	"CertDatabaseNSSTest.ImportServerCert_SelfSigned" # bug #399269
+	#	"URLFetcher*" # bug #425764
+	#	"HTTPSOCSPTest.*" # bug #426630
+	#	"HTTPSEVCRLSetTest.*" # see above
+	#	"HTTPSCRLSetTest.*" # see above
+	#)
+	# runtest out/Release/net_unittests "${excluded_net_unittests[@]}"
+
+	runtest out/Release/printing_unittests
+	runtest out/Release/sql_unittests
 }
 
 src_install() {
 	exeinto "${CHROMIUM_HOME}"
-	doexe out/Release/chrome
-	doexe out/Release/chrome_sandbox || die
-	fperms 4755 "${CHROMIUM_HOME}/chrome_sandbox"
+	doexe out/Release/chrome || die
 
-	# Install Native Client files on platforms that support it.
-	insinto "${CHROMIUM_HOME}"
-	case "$(tc-arch)" in
-		amd64)
-			doins native_client/irt_binaries/nacl_irt_x86_64.nexe || die
-			doins out/Release/libppGoogleNaClPluginChrome.so || die
-		;;
-		x86)
-			doins native_client/irt_binaries/nacl_irt_x86_32.nexe || die
-			doins out/Release/libppGoogleNaClPluginChrome.so || die
-		;;
-	esac
+	if ! use selinux; then
+		doexe out/Release/chrome_sandbox || die
+		fperms 4755 "${CHROMIUM_HOME}/chrome_sandbox"
+	fi
+
+	doexe out/Release/chromedriver || die
+
+	# if ! use arm; then
+	#	doexe out/Release/nacl_helper{,_bootstrap} || die
+	#	insinto "${CHROMIUM_HOME}"
+	#	doins out/Release/nacl_irt_*.nexe || die
+	#	doins out/Release/libppGoogleNaClPluginChrome.so || die
+	# fi
 
 	newexe "${FILESDIR}"/chromium-launcher-r2.sh chromium-launcher.sh || die
-	sed "s:chromium-browser:chromium-browser${SUFFIX}:g" \
-		-i "${ED}"/"${CHROMIUM_HOME}"/chromium-launcher.sh || die
-	sed "s:chromium.desktop:chromium${SUFFIX}.desktop:g" \
-		-i "${ED}"/"${CHROMIUM_HOME}"/chromium-launcher.sh || die
-	sed "s:plugins:plugins --user-data-dir=\${HOME}/.config/chromium${SUFFIX}:" \
-		-i "${ED}"/"${CHROMIUM_HOME}"/chromium-launcher.sh || die
+	if [[ "${CHROMIUM_SUFFIX}" != "" ]]; then
+		sed "s:chromium-browser:chromium-browser${CHROMIUM_SUFFIX}:g" \
+			-i "${ED}"/"${CHROMIUM_HOME}"/chromium-launcher.sh || die
+		sed "s:chromium.desktop:chromium${CHROMIUM_SUFFIX}.desktop:g" \
+			-i "${ED}"/"${CHROMIUM_HOME}"/chromium-launcher.sh || die
+		sed "s:plugins:plugins --user-data-dir=\${HOME}/.config/chromium${CHROMIUM_SUFFIX}:" \
+			-i "${ED}"/"${CHROMIUM_HOME}"/chromium-launcher.sh || die
+	fi
 
 	# It is important that we name the target "chromium-browser",
 	# xdg-utils expect it; bug #355517.
-	dosym "${CHROMIUM_HOME}/chromium-launcher.sh" /usr/bin/chromium-browser${SUFFIX} || die
+	dosym "${CHROMIUM_HOME}/chromium-launcher.sh" /usr/bin/chromium-browser${CHROMIUM_SUFFIX} || die
 	# keep the old symlink around for consistency
-	dosym "${CHROMIUM_HOME}/chromium-launcher.sh" /usr/bin/chromium${SUFFIX} || die
+	dosym "${CHROMIUM_HOME}/chromium-launcher.sh" /usr/bin/chromium${CHROMIUM_SUFFIX} || die
 
 	# Allow users to override command-line options, bug #357629.
 	dodir /etc/chromium || die
 	insinto /etc/chromium
 	newins "${FILESDIR}/chromium.default" "default" || die
 
-	# Support LINGUAS, bug #332751.
-	local pak
-	for pak in out/Release/locales/*.pak; do
-		local pakbasename="$(basename ${pak})"
-		local pakname="${pakbasename%.pak}"
-		local langname="${pakname//-/_}"
-
-		# Do not issue warning for en_US locale. This is the fallback
-		# locale so it should always be installed.
-		if [[ "${langname}" == "en_US" ]]; then
-			continue
-		fi
-
-		local found=false
-		local lang
-		for lang in ${LANGS}; do
-			local crlang="$(chromium_lang ${lang})"
-			if [[ "${langname}" == "${crlang}" ]]; then
-				found=true
-				break
-			fi
-		done
-		if ! $found; then
-			ewarn "LINGUAS warning: no ${langname} in LANGS"
-		fi
-	done
-	local lang
-	for lang in ${LANGS}; do
-		local crlang="$(chromium_lang ${lang})"
-		local pakfile="out/Release/locales/${crlang//_/-}.pak"
-		if [ ! -f "${pakfile}" ]; then
-			ewarn "LINGUAS warning: no .pak file for ${lang} (${pakfile} not found)"
-		fi
-		if ! use linguas_${lang}; then
-			rm "${pakfile}" || die
-		fi
-	done
+	pushd out/Release/locales > /dev/null || die
+	chromium_remove_language_paks
+	popd
 
 	insinto "${CHROMIUM_HOME}"
-	doins out/Release/chrome.pak || die
-	doins out/Release/resources.pak || die
+	doins out/Release/*.pak || die
 
 	doins -r out/Release/locales || die
 	doins -r out/Release/resources || die
 
-	newman out/Release/chrome.1 chromium${SUFFIX}.1 || die
-	newman out/Release/chrome.1 chromium-browser${SUFFIX}.1 || die
+	newman out/Release/chrome.1 chromium${CHROMIUM_SUFFIX}.1 || die
+	newman out/Release/chrome.1 chromium-browser${CHROMIUM_SUFFIX}.1 || die
 
-	# Chromium looks for these in its folder
-	# See media_posix.cc and base_paths_linux.cc
-	dosym /usr/$(get_libdir)/libavcodec.so.52 "${CHROMIUM_HOME}" || die
-	dosym /usr/$(get_libdir)/libavformat.so.52 "${CHROMIUM_HOME}" || die
-	dosym /usr/$(get_libdir)/libavutil.so.50 "${CHROMIUM_HOME}" || die
-	#doexe out/Release/ffmpegsumo_nolink || die
-	#doexe out/Release/libffmpegsumo.so || die
+	if ! use system-ffmpeg; then
+		doexe out/Release/libffmpegsumo.so || die
+	fi
 
 	# Install icons and desktop entry.
-	for SIZE in 16 22 24 32 48 64 128 256 ; do
-		insinto /usr/share/icons/hicolor/${SIZE}x${SIZE}/apps
-		newins chrome/app/theme/chromium/product_logo_${SIZE}.png \
-			chromium-browser${SUFFIX}.png || die
+	local branding size
+	for size in 16 22 24 32 48 64 128 256 ; do
+		case ${size} in
+			16|32) branding="chrome/app/theme/default_100_percent/chromium" ;;
+				*) branding="chrome/app/theme/chromium" ;;
+		esac
+		newicon -s ${size} "${branding}/product_logo_${size}.png" \
+			chromium-browser${CHROMIUM_SUFFIX}.png
 	done
+
 	local mime_types="text/html;text/xml;application/xhtml+xml;"
 	mime_types+="x-scheme-handler/http;x-scheme-handler/https;" # bug #360797
-	make_desktop_entry chromium-browser${SUFFIX} "Chromium ${SLOT}" chromium-browser${SUFFIX} \
-		"Network;WebBrowser"
+	mime_types+="x-scheme-handler/ftp;" # bug #412185
+	mime_types+="x-scheme-handler/mailto;x-scheme-handler/webcal;" # bug #416393
+	make_desktop_entry \
+		chromium-browser${CHROMIUM_SUFFIX} \
+		"Chromium${CHROMIUM_SUFFIX}" \
+		chromium-browser${CHROMIUM_SUFFIX} \
+		"Network;WebBrowser" \
 		"MimeType=${mime_types}\nStartupWMClass=chromium-browser"
 	sed -e "/^Exec/s/$/ %U/" -i "${ED}"/usr/share/applications/*.desktop || die
 
@@ -409,56 +547,10 @@ src_install() {
 	if use gnome; then
 		dodir /usr/share/gnome-control-center/default-apps || die
 		insinto /usr/share/gnome-control-center/default-apps
-		newins "${FILESDIR}"/chromium-browser.xml chromium-browser${SUFFIX}.xml || die
-		sed "s:chromium-browser:chromium-browser${SUFFIX}:g" -i \
-			"${ED}"/usr/share/gnome-control-center/default-apps/chromium-browser${SUFFIX}.xml
+		newins "${FILESDIR}"/chromium-browser.xml chromium-browser${CHROMIUM_SUFFIX}.xml || die
+		if [[ "${CHROMIUM_SUFFIX}" != "" ]]; then
+			sed "s:chromium-browser:chromium-browser${CHROMIUM_SUFFIX}:g" -i \
+				"${ED}"/usr/share/gnome-control-center/default-apps/chromium-browser${CHROMIUM_SUFFIX}.xml
+		fi
 	fi
-}
-
-pkg_preinst() {
-	gnome2_icon_savelist
-}
-
-pkg_postinst() {
-	fdo-mime_desktop_database_update
-	gnome2_icon_cache_update
-
-	# For more info see bug #292201, bug #352263, bug #361859.
-	elog
-	elog "Depending on your desktop environment, you may need"
-	elog "to install additional packages to get icons on the Downloads page."
-	elog
-	elog "For KDE, the required package is kde-base/oxygen-icons."
-	elog
-	elog "For other desktop environments, try one of the following:"
-	elog " - x11-themes/gnome-icon-theme"
-	elog " - x11-themes/tango-icon-theme"
-
-	# For more info see bug #359153.
-	elog
-	elog "Some web pages may require additional fonts to display properly."
-	elog "Try installing some of the following packages if some characters"
-	elog "are not displayed properly:"
-	elog " - media-fonts/arphicfonts"
-	elog " - media-fonts/bitstream-cyberbit"
-	elog " - media-fonts/droid"
-	elog " - media-fonts/ipamonafont"
-	elog " - media-fonts/ja-ipafonts"
-	elog " - media-fonts/takao-fonts"
-	elog " - media-fonts/wqy-microhei"
-	elog " - media-fonts/wqy-zenhei"
-
-	elog
-	elog "The live ebuild of chromium is now in its own slot."
-	elog "This means that you can have it installed alongside a versioned"
-	elog "release and it has its own configuration folder, located at"
-	elog "	\${HOME}/.config/chromium-live"
-	elog "If you want to use any existing, old configuration, you'll have to"
-	elog "rename the old config directory *before* launching chromium-live:"
-	elog "	mv \${HOME}/.config/chromium \${HOME}/.config/chromium-live"
-	elog "To run, execute chromium-live or chromium-browser-live."
-}
-
-pkg_postrm() {
-	gnome2_icon_cache_update
 }

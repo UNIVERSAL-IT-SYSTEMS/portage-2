@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jffi/jffi-0.7_pre20100131.ebuild,v 1.1 2010/01/31 16:32:07 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jffi/jffi-0.7_pre20100131.ebuild,v 1.3 2012/08/25 19:09:47 thev00d00 Exp $
 
 # Probably best to leave the CFLAGS as they are here. See...
 # http://weblogs.java.net/blog/kellyohair/archive/2006/01/compilation_of_1.html
@@ -27,7 +27,7 @@ RDEPEND=">=virtual/jre-1.5
 
 DEPEND=">=virtual/jdk-1.5
 	virtual/libffi
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	test? ( dev-java/ant-junit4 )"
 
 JAVA_PKG_BSFIX_NAME="build-impl.xml"
@@ -61,6 +61,9 @@ java_prepare() {
 	sed -i '/<zipfileset src="archive\//d' custom-build.xml || die
 	sed -i '/libs.CopyLibs.classpath/d' lib/nblibraries.properties || die
 	sed -i '/copylibstask.jar/d' lib/nblibraries.properties || die
+
+	# Fix build with GCC 4.7 #421501
+	sed -i -e "s|-mimpure-text||g" jni/GNUmakefile || die
 }
 
 src_install() {

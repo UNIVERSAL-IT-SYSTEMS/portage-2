@@ -1,6 +1,47 @@
 # ChangeLog for net-firewall/xtables-addons
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/xtables-addons/ChangeLog,v 1.20 2011/07/28 16:43:53 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/xtables-addons/ChangeLog,v 1.29 2012/11/27 12:20:30 pinkbyte Exp $
+
+  27 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
+  Adding co-maintainer and proxy maintainers herd
+
+  19 Jun 2012; Jeroen Roovers <jer@gentoo.org> xtables-addons-1.39.ebuild:
+  Add missing RDEPEND on app-arch/unzip by Marcin Mirosław (bug #411855).
+
+*xtables-addons-1.39 (02 Oct 2011)
+
+  02 Oct 2011; Peter Volkov <pva@gentoo.org> +xtables-addons-1.39.ebuild:
+  Version bump.
+
+  25 Sep 2011; Sven Wegener <swegener@gentoo.org> xtables-addons-1.37.ebuild,
+  xtables-addons-1.38.ebuild:
+  Remove negation from ipset module check.
+
+  23 Sep 2011; Sven Wegener <swegener@gentoo.org> xtables-addons-1.38.ebuild:
+  Drop autotools eclass.
+
+  23 Sep 2011; Sven Wegener <swegener@gentoo.org> xtables-addons-1.37.ebuild,
+  xtables-addons-1.38.ebuild:
+  Fix kernel version number in die message.
+
+*xtables-addons-1.38 (19 Sep 2011)
+
+  19 Sep 2011; Peter Volkov <pva@gentoo.org> -xtables-addons-1.28-r1.ebuild,
+  -xtables-addons-1.30.ebuild, -xtables-addons-1.31.ebuild,
+  -xtables-addons-1.36.ebuild, -files/xtables-addons-1.36-absolute-M.patch,
+  -files/xtables-addons-1.36-kernel-detection.patch,
+  xtables-addons-1.37.ebuild, +xtables-addons-1.38.ebuild:
+  Mark 1.37 stable, bug #381611. Version bump, ignore in-kernel CHECKSUM
+  module. Drop old.
+
+  15 Sep 2011; Andreas Schuerch <nativemad@gentoo.org>
+  xtables-addons-1.37.ebuild:
+  x86 stable, see bug 381611
+
+  05 Sep 2011; Tony Vroon <chainsaw@gentoo.org> xtables-addons-1.37.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #381611. Removed incorrect inherit of
+  autotools, this eclass is not used.
 
   28 Jul 2011; Peter Volkov <pva@gentoo.org> xtables-addons-1.37.ebuild:
   Disable TEE for kernel >= 2.6.35 as it's already in kernel and no need to

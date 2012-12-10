@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audio-entropyd/audio-entropyd-2.0.3.ebuild,v 1.1 2011/04/18 15:08:28 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audio-entropyd/audio-entropyd-2.0.3.ebuild,v 1.7 2012/07/08 11:06:00 angelos Exp $
 
 EAPI=4
 inherit eutils toolchain-funcs
@@ -11,16 +11,18 @@ SRC_URI="http://www.vanheusden.com/aed/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE="selinux"
 
-RDEPEND="selinux? ( sec-policy/selinux-audio-entropyd )
-	media-sound/alsa-utils"
+RDEPEND="selinux? ( sec-policy/selinux-entropyd )
+	media-sound/alsa-utils
+	media-libs/alsa-lib"
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-2.0.1-uclibc.patch" \
 		"${FILESDIR}/${PN}-2.0.1-ldflags.patch"
-	sed -i -e "s:^OPT_FLAGS=.*:OPT_FLAGS=${CFLAGS}:" Makefile
+	sed -i -e "s:^OPT_FLAGS=.*:OPT_FLAGS=${CFLAGS}:" \
+		-e "/^WARNFLAGS/s: -g::" Makefile || die
 }
 
 src_compile() {

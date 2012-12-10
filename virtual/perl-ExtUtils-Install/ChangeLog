@@ -1,6 +1,26 @@
 # ChangeLog for virtual/perl-ExtUtils-Install
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/perl-ExtUtils-Install/ChangeLog,v 1.10 2011/07/26 18:26:20 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/perl-ExtUtils-Install/ChangeLog,v 1.15 2012/08/05 18:10:07 maekke Exp $
+
+  05 Aug 2012; Markus Meier <maekke@gentoo.org>
+  perl-ExtUtils-Install-1.54.ebuild:
+  arm stable, bug #418803
+
+  28 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  perl-ExtUtils-Install-1.54.ebuild:
+  keyword ~amd64-fbsd
+
+  24 Mar 2012; Fabian Groffen <grobian@gentoo.org>
+  perl-ExtUtils-Install-1.54.ebuild:
+  Add Prefix keywords
+
+  14 Feb 2012; Alexis Ballier <aballier@gentoo.org>
+  perl-ExtUtils-Install-1.54.ebuild:
+  keyword ~x86-fbsd
+
+  04 Feb 2012; Raúl Porcel <armin76@gentoo.org>
+  perl-ExtUtils-Install-1.54.ebuild:
+  Add ~arm/~s390/~sh
 
   26 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org>
   perl-ExtUtils-Install-1.54.ebuild:

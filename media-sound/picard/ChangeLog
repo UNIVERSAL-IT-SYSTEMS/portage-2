@@ -1,6 +1,53 @@
 # ChangeLog for media-sound/picard
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/picard/ChangeLog,v 1.31 2011/05/26 04:33:52 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/picard/ChangeLog,v 1.41 2012/10/17 03:51:09 phajdan.jr Exp $
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> picard-1.0.ebuild:
+  x86 stable wrt bug #436194
+
+  03 Oct 2012; Agostino Sarubbo <ago@gentoo.org> picard-1.0.ebuild:
+  Stable for amd64, wrt bug #436194
+
+*picard-1.1 (25 Sep 2012)
+
+  25 Sep 2012; Tim Harder <radhermit@gentoo.org> +picard-1.1.ebuild:
+  Version bump (bug #433938).
+
+*picard-1.0 (12 Jul 2012)
+
+  12 Jul 2012; Ben de Groot <yngwin@gentoo.org> +picard-1.0.ebuild,
+  metadata.xml:
+  Version bump, thanks to Benedikt Waldvogel in bug #419425 and Laurent
+  Bachelier in bug #401193 for suggested ebuild improvements. Also fixes bug
+  #323007.
+
+  04 Nov 2011; Tim Harder <radhermit@gentoo.org> -picard-0.12.1-r1.ebuild,
+  -picard-0.13.ebuild, -files/picard-0.13-ffmpeg.patch, -picard-0.14.ebuild:
+  Remove old.
+
+  04 Nov 2011; Tony Vroon <chainsaw@gentoo.org> picard-0.15.1-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #389057.
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> picard-0.15.1-r1.ebuild:
+  x86 stable wrt bug #389057
+
+*picard-0.16 (24 Oct 2011)
+
+  24 Oct 2011; Tim Harder <radhermit@gentoo.org> +picard-0.16.ebuild:
+  Version bump.
+
+*picard-0.15.1-r1 (29 Sep 2011)
+
+  29 Sep 2011; Tim Harder <radhermit@gentoo.org> -picard-0.15.1.ebuild,
+  +picard-0.15.1-r1.ebuild:
+  Revbump to install the correct coverart plugin version (bug #378161 by Martin
+  Dummer). Remove old.
+
+*picard-0.15.1 (07 Aug 2011)
+
+  07 Aug 2011; Tim Harder <radhermit@gentoo.org> +picard-0.15.1.ebuild:
+  Version bump (bug #370535).
 
 *picard-0.14 (26 May 2011)
 
@@ -143,4 +190,3 @@
   +files/picard-0.9.0_alpha14-disable-locales.patch, +metadata.xml,
   +picard-0.9.0_alpha14.ebuild:
   Initial ebuild wrt bug #80312. Thanks to Marti Raudsepp.
-

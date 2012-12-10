@@ -2,8 +2,11 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
   <herd>kde</herd>
+  <herd>ayatana</herd>
+  <maintainer>
+    <email>ayatana-bugs@gentoo.org</email>
+  </maintainer>
   <use>
-    <flag name="introspection">Use dev-libs/gobject-introspection for introspection</flag>
-    <flag name="vala">Enable bindings for dev-lang/vala</flag>
+    <flag name='introspection'>Use <pkg>dev-libs/gobject-introspection</pkg> for introspection</flag>
   </use>
 </pkgmetadata>

@@ -1,6 +1,44 @@
 # ChangeLog for net-irc/ircii
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/ircii/ChangeLog,v 1.28 2011/06/30 03:00:37 binki Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/ircii/ChangeLog,v 1.38 2012/05/09 13:23:29 grobian Exp $
+
+  09 May 2012; Fabian Groffen <grobian@gentoo.org> ircii-20111115.ebuild:
+  Drop failing (flag-o-matic not inherited) append-libs, it is no longer
+  necessary
+
+  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org> ircii-20111115.ebuild:
+  marked x86 per bug 404821
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> ircii-20111115.ebuild:
+  Stable for amd64, wrt bug #404821
+
+  07 Feb 2012; Nathan Phillip Brink <binki@gentoo.org> -ircii-20060725.ebuild:
+  Drop old ircii-20060725 as bug #392771 is closed.
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> ircii-20060725.ebuild,
+  ircii-20110228.ebuild, ircii-20111115.ebuild:
+  Drop sparc keywords
+
+  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> ircii-20110228.ebuild:
+  Stable for AMD64, wrt bug #392771
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ircii-20110228.ebuild:
+  x86 stable wrt bug #392771
+
+  05 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> ircii-20110228.ebuild,
+  ircii-20111115.ebuild:
+  Ensure that ${CHOST}-gcc is called instead of `gcc', fixing bug #393109 by
+  ago.
+
+  02 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> ircii-20060725.ebuild:
+  Address bug #247987 by adding blocker on net-irc/irc-client to
+  ircii-20060725. Add missing expansion quoting.
+
+*ircii-20111115 (02 Dec 2011)
+
+  02 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> +ircii-20111115.ebuild:
+  Bump to ircii-20111115, which was released to address the glibc
+  incompatibility.
 
   30 Jun 2011; Nathan Phillip Brink <binki@gentoo.org> ircii-20110228.ebuild:
   Import modifications necessary for prefix from prefix-overlay, add some

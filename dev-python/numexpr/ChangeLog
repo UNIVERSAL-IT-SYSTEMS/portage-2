@@ -1,6 +1,27 @@
 # ChangeLog for dev-python/numexpr
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/numexpr/ChangeLog,v 1.4 2011/01/29 09:36:37 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/numexpr/ChangeLog,v 1.9 2012/02/22 09:52:10 patrick Exp $
+
+  22 Feb 2012; Patrick Lauer <patrick@gentoo.org> numexpr-2.0.1.ebuild:
+  Restricting pypy and jython
+
+*numexpr-2.0.1 (08 Jan 2012)
+
+  08 Jan 2012; Kacper Kowalik <xarthisius@gentoo.org> +numexpr-2.0.1.ebuild,
+  -numexpr-1.4.2.ebuild, -numexpr-2.0.ebuild:
+  Version bump, drop old
+
+*numexpr-2.0 (27 Nov 2011)
+
+  27 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> +numexpr-2.0.ebuild:
+  Version bump
+
+  25 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> numexpr-1.4.2.ebuild:
+  Add prefix love
+
+  06 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> numexpr-1.4.2.ebuild,
+  metadata.xml:
+  Fixed mkl flag for x86 temporarily. Verbosed metadata
 
 *numexpr-1.4.2 (29 Jan 2011)
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-media/gnome-media-2.32.0-r1.ebuild,v 1.4 2011/07/17 21:01:34 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-media/gnome-media-2.32.0-r1.ebuild,v 1.9 2012/11/07 21:59:00 tetromino Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -12,11 +12,11 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="LGPL-2 GPL-2 FDL-1.1"
 SLOT="2"
-KEYWORDS="~alpha amd64 arm ~ia64 ~ppc ~ppc64 ~sh ~sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-solaris"
-IUSE="pulseaudio"
+KEYWORDS="alpha amd64 arm ia64 ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-solaris"
+IUSE="aac flac mp3 pulseaudio speex twolame vorbis"
 
 # FIXME: automagic dev-util/glade:3 support
-RDEPEND="dev-libs/libxml2:2
+COMMON_DEPEND="dev-libs/libxml2:2
 	>=dev-libs/glib-2.18.2:2
 	>=x11-libs/gtk+-2.18.0:2
 	>=gnome-base/gconf-2.6.1:2
@@ -28,9 +28,25 @@ RDEPEND="dev-libs/libxml2:2
 	>=media-plugins/gst-plugins-gconf-0.10.1:0.10
 	>=dev-libs/libunique-1:1
 	pulseaudio? ( >=media-sound/pulseaudio-0.9.16[glib] )"
-DEPEND="${RDEPEND}
+# Specific gst plugins are used by the default audio encoding profiles
+RDEPEND="${COMMON_DEPEND}
+	media-plugins/gst-plugins-meta:0.10[flac?,vorbis?]
+	aac? (
+		media-plugins/gst-plugins-faac:0.10
+		media-plugins/gst-plugins-ffmpeg:0.10 )
+	mp3? (
+		media-libs/gst-plugins-ugly:0.10
+		media-plugins/gst-plugins-taglib:0.10
+		media-plugins/gst-plugins-lame:0.10 )
+	speex? (
+		media-plugins/gst-plugins-ogg:0.10
+		media-plugins/gst-plugins-speex:0.10 )
+	twolame? (
+		media-plugins/gst-plugins-taglib:0.10
+		media-plugins/gst-plugins-twolame:0.10 )"
+DEPEND="${COMMON_DEPEND}
 	app-text/docbook-xml-dtd:4.1.2
-	>=dev-util/pkgconfig-0.9
+	virtual/pkgconfig
 	>=app-text/scrollkeeper-0.3.11
 	>=app-text/gnome-doc-utils-0.3.2
 	>=dev-util/intltool-0.35.0"
@@ -59,7 +75,7 @@ pkg_postinst() {
 	gnome2_pkg_postinst
 	ewarn
 	ewarn "If you cannot play some music format, please check your"
-	ewarn "USE flags on media-plugins/gst-plugins-meta"
+	ewarn "USE flags on media-plugins/gst-plugins-meta:0.10"
 	ewarn
 	if use pulseaudio; then
 		ewarn "You have enabled pulseaudio support, gstmixer will not be built"

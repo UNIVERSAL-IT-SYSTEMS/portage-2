@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install postinst postrm prepare setup test
+DEPEND=dev-lang/python
+DESCRIPTION=Diff, match and patch algorithms for plain text
+EAPI=4
+HOMEPAGE=http://code.google.com/p/google-diff-match-patch/
+KEYWORDS=~amd64 ~x86
+LICENSE=Apache-2.0
+RDEPEND=dev-lang/python
+SLOT=0
+SRC_URI=mirror://pypi/d/diff-match-patch/diff-match-patch-20120106.tar.gz
+_eclasses_=distutils	15ae23f6f8219a009bfcfff7724fe727	multilib	9aa8a023e062fca0ba79362d9d0cc488	python	4092929a66c8b47ffa8d314ca9314ea7	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4
+_md5_=dd4c24d7726a8aea7ee4465aa25ec8e3

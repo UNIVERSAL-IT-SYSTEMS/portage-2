@@ -1,6 +1,12 @@
 # ChangeLog for net-voip/yate
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/yate/ChangeLog,v 1.13 2011/03/02 18:42:26 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-voip/yate/ChangeLog,v 1.15 2012/05/03 07:27:48 jdhore Exp $
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> yate-2.0.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Set herd as primary maintainer as talked with volkmar.
 
   02 Mar 2011; Michael Sterrett <mr_bones_@gentoo.org> yate-2.0.0.ebuild,
   metadata.xml:

@@ -1,6 +1,179 @@
 # ChangeLog for dev-java/sun-jdk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-jdk/ChangeLog,v 1.304 2011/06/18 11:49:39 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-jdk/ChangeLog,v 1.341 2012/10/23 05:03:16 nativemad Exp $
+
+  23 Oct 2012; Andreas Schuerch <nativemad@gentoo.org> sun-jdk-1.6.0.37.ebuild:
+  x86 stable, see bug 438706
+
+  21 Oct 2012; Agostino Sarubbo <ago@gentoo.org> sun-jdk-1.6.0.37.ebuild:
+  Stable for amd64, wrt bug #438706
+
+*sun-jdk-1.6.0.37 (17 Oct 2012)
+
+  17 Oct 2012; Ralph Sennhauser <sera@gentoo.org> +sun-jdk-1.6.0.37.ebuild:
+  Security bump. #438706
+
+*sun-jdk-1.6.0.35-r1 (15 Oct 2012)
+
+  15 Oct 2012; Ralph Sennhauser <sera@gentoo.org> +sun-jdk-1.6.0.35-r1.ebuild:
+  Demos now available for 6u35. #431492 #434990
+  Add back ia64 and examples for amd64.
+  Add BSD to licenses for examples.
+  Use QA_PREBUILT instead of individual variables.
+  Fix desktop files for newer standard.
+  Add elog about the name change to oracle-jdk-bin for JDK7.
+
+  15 Oct 2012; Ralph Sennhauser <sera@gentoo.org> -sun-jdk-1.6.0.33.ebuild,
+  -sun-jdk-1.6.0.33-r1.ebuild, -sun-jdk-1.6.0.33-r2.ebuild,
+  -sun-jdk-1.6.0.34.ebuild:
+  Remove vulnarable.
+
+  13 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> sun-jdk-1.6.0.35.ebuild:
+  x86 stable wrt bug #433094
+
+  02 Sep 2012; Agostino Sarubbo <ago@gentoo.org> sun-jdk-1.6.0.35.ebuild:
+  Stable for amd64, wrt bug #433094
+
+  31 Aug 2012; Agostino Sarubbo <ago@gentoo.org> sun-jdk-1.6.0.34.ebuild:
+  Stable for amd64, wrt bug #431492
+
+  31 Aug 2012; Vlastimil Babka <caster@gentoo.org> sun-jdk-1.6.0.35.ebuild:
+  Fix download URL, bug #433553.
+
+*sun-jdk-1.6.0.35 (31 Aug 2012)
+
+  31 Aug 2012; Vlastimil Babka <caster@gentoo.org> +sun-jdk-1.6.0.35.ebuild:
+  Version bump, security bug #433094.
+
+*sun-jdk-1.6.0.34 (23 Aug 2012)
+
+  23 Aug 2012; Vlastimil Babka <caster@gentoo.org> +sun-jdk-1.6.0.34.ebuild:
+  Version bump, bug #431492. USE=examples on amd64 has broken distfile, so no
+  demos will be installed.
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> sun-jdk-1.6.0.33-r1.ebuild:
+  Stable for amd64, wrt bug #421073
+
+*sun-jdk-1.6.0.33-r2 (23 Jul 2012)
+
+  23 Jul 2012; Ralph Sennhauser <sera@gentoo.org> -sun-jdk-1.6.0.31.ebuild,
+  -sun-jdk-1.6.0.32.ebuild, +sun-jdk-1.6.0.33-r2.ebuild, metadata.xml:
+  Use paxctl for pax marking as the fallback won't create the headers. Thanks
+  to blueness. #427642
+  Create sandbox control file.
+  Prune unused font configuration files.
+  Remove old and vulnarable.
+
+  14 Jul 2012; Jeff Horelick <jdhore@gentoo.org> sun-jdk-1.6.0.33-r1.ebuild:
+  marked x86 per bug 421073
+
+*sun-jdk-1.6.0.33-r1 (13 Jul 2012)
+
+  13 Jul 2012; Ralph Sennhauser <sera@gentoo.org> +sun-jdk-1.6.0.33-r1.ebuild:
+  Revbump because upstream changed contents of the distfiles (not saying what
+  exactly). You will have to redownload them, sorry.
+
+  09 Jul 2012; Jeff Horelick <jdhore@gentoo.org> sun-jdk-1.6.0.33.ebuild:
+  marked x86 per bug 421073
+
+  15 Jun 2012; Agostino Sarubbo <ago@gentoo.org> sun-jdk-1.6.0.33.ebuild:
+  Stable for amd64, wrt bug #421073
+
+*sun-jdk-1.6.0.33 (14 Jun 2012)
+
+  14 Jun 2012; Ralph Sennhauser <sera@gentoo.org> +sun-jdk-1.6.0.33.ebuild:
+  Security bump. #421073
+  Add ia64 support.
+
+  08 May 2012; Fabian Groffen <grobian@gentoo.org> sun-jdk-1.6.0.32.ebuild:
+  Fix unpack on Solaris, rekeyword, bug #414795
+
+*sun-jdk-1.6.0.32 (05 May 2012)
+
+  05 May 2012; Ralph Sennhauser <sera@gentoo.org> +sun-jdk-1.6.0.32.ebuild:
+  Version bump. #414775
+  Drop ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris due to
+  upstream repackaging.
+
+  05 May 2012; Ralph Sennhauser <sera@gentoo.org> -sun-jdk-1.6.0.29.ebuild:
+  Remove vulnarable. #404071
+
+  05 May 2012; Ralph Sennhauser <sera@gentoo.org> sun-jdk-1.6.0.31.ebuild:
+  Add workaround for large memory on x86. #405239
+  Add QA_FLAGS_IGNORED. #405639
+
+  18 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> sun-jdk-1.6.0.31.ebuild:
+  x86 stable wrt bug #404071
+
+  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> sun-jdk-1.6.0.31.ebuild:
+  Stable for amd64, wrt bug #404071
+
+*sun-jdk-1.6.0.31 (16 Feb 2012)
+
+  16 Feb 2012; Ralph Sennhauser <sera@gentoo.org> -sun-jdk-1.6.0.29-r1.ebuild,
+  -sun-jdk-1.6.0.30.ebuild, +sun-jdk-1.6.0.31.ebuild, metadata.xml:
+  Security bump. #404071
+  Use relative path for desktop file icon. #403139
+  Make installation of src.zip optional as for other JDKs.
+  dev-java/sun-jce-bin is build only dependency.
+  Add ia64 tarball. Don't file keyword requests just yet. Might disapear again,
+  not (yet?) available for java 7.
+  Remove vulnerable, except current stable.
+
+*sun-jdk-1.6.0.30 (20 Jan 2012)
+
+  20 Jan 2012; Ralph Sennhauser <sera@gentoo.org> +sun-jdk-1.6.0.30.ebuild:
+  Version bump. #399425
+  Replace use flag kernel_Solaris with the correct kernel_SunOS.
+
+  16 Dec 2011; Ralph Sennhauser <sera@gentoo.org> sun-jdk-1.6.0.29-r1.ebuild,
+  metadata.xml:
+  Add missing kernel_Solaris to IUSE.
+
+  15 Dec 2011; Fabian Groffen <grobian@gentoo.org> sun-jdk-1.6.0.29-r1.ebuild:
+  Add support for Solaris, transferred Prefix keywords
+
+  21 Nov 2011; Ralph Sennhauser <sera@gentoo.org> -sun-jdk-1.6.0.26.ebuild,
+  -sun-jdk-1.6.0.27.ebuild:
+  Remove vulnarable
+
+*sun-jdk-1.6.0.29-r1 (21 Nov 2011)
+
+  21 Nov 2011; Ralph Sennhauser <sera@gentoo.org> +sun-jdk-1.6.0.29-r1.ebuild:
+  Use java-vm-2.eclass to set PaX markings
+
+  18 Nov 2011; Ralph Sennhauser <sera@gentoo.org> sun-jdk-1.6.0.29.ebuild:
+  Add missing pax markings for x86. Bug 389751
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org> sun-jdk-1.6.0.29.ebuild:
+  Stable on amd64 wrt bug #387851
+
+  30 Oct 2011; Vlastimil Babka <caster@gentoo.org> sun-jdk-1.6.0.27.ebuild,
+  sun-jdk-1.6.0.29.ebuild:
+  Change icedtea6-bin to icedtea-bin:6.
+
+  30 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> sun-jdk-1.6.0.29.ebuild:
+  x86 stable wrt bug #387851
+
+  22 Oct 2011; Vlastimil Babka <caster@gentoo.org> sun-jdk-1.6.0.29.ebuild:
+  Simplify unpacking.
+
+*sun-jdk-1.6.0.29 (22 Oct 2011)
+
+  22 Oct 2011; Vlastimil Babka <caster@gentoo.org> +sun-jdk-1.6.0.29.ebuild,
+  +files/sun-jdk-1.6.env-r1, +files/fontconfig.Gentoo.properties-r1:
+  Version bug, security bug #387851. Unfortunately had to change license and
+  make the package fetch restricted due to the DJL binaries no longer provided.
+  Free alternatives are dev-java/icedtea6-bin and dev-java/icedtea. Added
+  prefix support. Thanks to Ralph Sennhauser (sera) for the ebuild.
+
+*sun-jdk-1.6.0.27 (01 Sep 2011)
+
+  01 Sep 2011; Vlastimil Babka <caster@gentoo.org> -sun-jdk-1.6.0.24.ebuild,
+  -sun-jdk-1.6.0.25.ebuild, +sun-jdk-1.6.0.27.ebuild:
+  Version bump. Due to DLJ bundles no longer provided by Oracle, the package
+  changes license to Oracle-BCLA-JavaSE and is fetch restricted again.
+  Alternatives are dev-java/icedtea6-bin and dev-java/icedtea
 
   18 Jun 2011; Markos Chandras <hwoarang@gentoo.org> sun-jdk-1.6.0.26.ebuild:
   Stable on amd64 wrt bug #370559

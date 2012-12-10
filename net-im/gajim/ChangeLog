@@ -1,6 +1,177 @@
 # ChangeLog for net-im/gajim
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/gajim/ChangeLog,v 1.118 2011/06/20 12:19:50 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-im/gajim/ChangeLog,v 1.160 2012/12/08 01:25:27 tetromino Exp $
+
+  08 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org> gajim-0.15.1.ebuild,
+  gajim-0.15.2.ebuild:
+  Pin farstream slot.
+
+*gajim-0.15.2 (05 Nov 2012)
+
+  05 Nov 2012; Justin Lecher <jlec@gentoo.org> -gajim-0.15-r2.ebuild,
+  +gajim-0.15.2.ebuild, metadata.xml:
+  Version BUmp
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> gajim-0.15.1.ebuild:
+  ia64/sparc stable wrt #427544
+
+  16 Oct 2012; Justin Lecher <jlec@gentoo.org> gajim-0.15.1.ebuild:
+  Fix for broken test, #434818
+
+  16 Oct 2012; Matt Turner <mattst88@gentoo.org> gajim-0.15.1.ebuild:
+  Stable on alpha, bug 427544.
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gajim-0.15.1.ebuild:
+  stable ppc64, bug #427544
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gajim-0.15.1.ebuild:
+  stable ppc64, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gajim-0.15.1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gajim-0.15.1.ebuild:
+  x86 stable wrt bug #427544
+
+  30 Sep 2012; Agostino Sarubbo <ago@gentoo.org> -gajim-0.15-r1.ebuild:
+  Remove old
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org> gajim-0.15-r2.ebuild:
+  alpha/ia64/sparc stable wrt #434806
+
+  20 Sep 2012; Anthony G. Basile <blueness@gentoo.org> gajim-0.15-r2.ebuild:
+  stable ppc ppc64, bug #434806
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> gajim-0.15-r2.ebuild:
+  Stable for X86, wrt bug #434806
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> gajim-0.15-r2.ebuild:
+  Stable for amd64, wrt bug #434806
+
+  12 Sep 2012; Justin Lecher <jlec@gentoo.org> gajim-0.15.1.ebuild:
+  Correct dependency from farsight to farstream
+
+*gajim-0.15.1 (11 Sep 2012)
+
+  11 Sep 2012; Justin Lecher <jlec@gentoo.org> gajim-0.15-r2.ebuild,
+  +gajim-0.15.1.ebuild:
+  Version Bump and dropeed USE gajim in favour of srv, #434600
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> -gajim-0.14.1-r2.ebuild,
+  -gajim-0.14.4-r1.ebuild, -gajim-0.14.4-r2.ebuild:
+  Remove old
+
+  19 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org> gajim-0.15-r1.ebuild:
+  ppc stable wrt #412215
+
+  18 Jun 2012; Jeroen Roovers <jer@gentoo.org> gajim-0.14.1-r2.ebuild,
+  gajim-0.14.4-r1.ebuild:
+  Marked ~hppa (bug #412215).
+
+*gajim-0.15-r2 (14 May 2012)
+
+  14 May 2012; Justin Lecher <jlec@gentoo.org> +gajim-0.15-r2.ebuild,
+  +files/gajim-0.15-SA48695-2.patch:
+  Update SA48695 patch with changesets f6f78f3802c07736cb63b3e696778dabe8263cbb
+  and f046e4aaf7d49b2934622db66da1667ddddb1703; #415891
+
+  10 May 2012; Brent Baude <ranger@gentoo.org> gajim-0.15-r1.ebuild:
+  Marking gajim-0.15-r1 ppc64 for bug 412215
+
+  05 May 2012; Raúl Porcel <armin76@gentoo.org> gajim-0.15-r1.ebuild:
+  alpha/ia64/sparc stable wrt #412215
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gajim-0.14.1-r2.ebuild,
+  gajim-0.14.4-r1.ebuild, gajim-0.14.4-r2.ebuild, gajim-0.15-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Apr 2012; Justin Lecher <jlec@gentoo.org> gajim-0.15-r1.ebuild:
+  Mark stable for x86 and amd64 on request of Agostino Sarubbo, #411269 &
+  #412215
+
+  23 Apr 2012; Justin Lecher <jlec@gentoo.org> -gajim-0.15.ebuild,
+  gajim-0.15-r1.ebuild, +files/gajim-0.15-SA48695.patch:
+  Add backport fix for https://secunia.com/advisories/48695/, #412215
+
+*gajim-0.15-r1 (23 Apr 2012)
+
+  23 Apr 2012; Justin Lecher <jlec@gentoo.org> +gajim-0.15-r1.ebuild,
+  +files/gajim-0.15-plugin.patch:
+  Backport upstream commit 13748 to fix plugin dir location, #411253
+
+  26 Mar 2012; Naohiro Aota <naota@gentoo.org> gajim-0.15.ebuild:
+  Add ~x86-fbsd. #408687
+
+*gajim-0.15 (18 Mar 2012)
+
+  18 Mar 2012; Justin Lecher <jlec@gentoo.org> -gajim-0.15_beta4.ebuild,
+  +gajim-0.15.ebuild:
+  Version Bump to final
+
+  18 Mar 2012; Justin Lecher <jlec@gentoo.org> gajim-0.15_beta4.ebuild:
+  Correct COPYING -> README.html, #408707
+
+*gajim-0.15_beta4 (18 Mar 2012)
+
+  18 Mar 2012; Justin Lecher <jlec@gentoo.org>
+  -files/0.13.4-python-version.patch,
+  -files/gajim-0.13-autotools-enable-site-packages_option.patch,
+  gajim-0.14.4-r2.ebuild, +gajim-0.15_beta4.ebuild, -files/0.14.1-link.patch:
+  Drop old files, bump to latest beta release
+
+  18 Mar 2012; Justin Lecher <jlec@gentoo.org> -gajim-0.14.4.ebuild,
+  gajim-0.14.4-r1.ebuild, gajim-0.14.4-r2.ebuild:
+  Fix testing, #408683; Moved to EAPI=4 to use REQUIRED_USE; drop old
+
+*gajim-0.14.4-r2 (29 Oct 2011)
+
+  29 Oct 2011; Justin Lecher <jlec@gentoo.org> +gajim-0.14.4-r2.ebuild,
+  +files/gajim-0.14.4-debian_patches_unicode.patch:
+  Try debian solution for the unicode problem, #383463
+
+  27 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gajim-0.14.1-r2.ebuild, gajim-0.14.4.ebuild, gajim-0.14.4-r1.ebuild:
+  Slot gtkspell dependency to 2 in preparation for gtkspell-3.
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> gajim-0.14.4-r1.ebuild:
+  alpha/ia64/sparc stable wrt #384295
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> gajim-0.14.4-r1.ebuild:
+  Stable for HPPA (bug #384295).
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> gajim-0.14.4-r1.ebuild:
+  x86 stable wrt bug #384295
+
+  05 Oct 2011; Tony Vroon <chainsaw@gentoo.org> gajim-0.14.4-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #384295.
+
+  04 Oct 2011; Justin Lecher <jlec@gentoo.org> gajim-0.14.1-r2.ebuild,
+  gajim-0.14.4.ebuild, gajim-0.14.4-r1.ebuild:
+  Use python.eclass functions in correct order to make it build if py3k is
+  active, #385107; remove optional dep on net-misc/networkmanager[gnome]
+
+*gajim-0.14.4-r1 (24 Sep 2011)
+
+  24 Sep 2011; Justin Lecher <jlec@gentoo.org> +files/0.14.4-unicode.patch,
+  +gajim-0.14.4-r1.ebuild:
+  Don't crash on unicode chars, #383463; thanks Suloev Dmitry for the patch;
+  http://trac.gajim.org/ticket/6974
+
+  30 Aug 2011; Justin Lecher <jlec@gentoo.org> -gajim-0.13.3.ebuild,
+  gajim-0.14.1-r2.ebuild, metadata.xml:
+  net-im/gajim : Deprecation Warning about python_mod_cleanup() # 381171;
+  cleaned old
+
+  15 Aug 2011; Justin Lecher <jlec@gentoo.org> -gajim-0.14.1-r3.ebuild,
+  -gajim-0.14.3.ebuild, gajim-0.14.4.ebuild:
+  Corrected usage of python mod compilation and removed old
+
+*gajim-0.14.4 (14 Aug 2011)
+
+  14 Aug 2011; Justin Lecher <jlec@gentoo.org> +gajim-0.14.4.ebuild,
+  metadata.xml:
+  Version Bump, #378635
 
 *gajim-0.14.3 (20 Jun 2011)
 
@@ -474,4 +645,3 @@
 
   05 Jun 2005; Sergey Kuleshov <svyatogor@gentoo.org> +gajim-0.7.1.ebuild:
   Initial commit of gajim jabber client. Closing bug #94181.
-

@@ -1,6 +1,57 @@
 # ChangeLog for media-libs/stk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/stk/ChangeLog,v 1.7 2011/02/27 17:16:22 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/stk/ChangeLog,v 1.15 2012/11/24 16:14:53 aballier Exp $
+
+  24 Nov 2012; Alexis Ballier <aballier@gentoo.org> -stk-4.4.4.ebuild:
+  remove old
+
+*stk-4.4.4-r1 (24 Nov 2012)
+
+  24 Nov 2012; Alexis Ballier <aballier@gentoo.org> +stk-4.4.4-r1.ebuild,
+  +files/stk-4.4.4/050_all_cxxflags.patch:
+  do not ignore cxxflags, bug #428384
+
+  24 Nov 2012; Alexis Ballier <aballier@gentoo.org> -stk-4.4.2.ebuild,
+  -files/stk-4.4.2/010_all_removeForcedFlags.patch,
+  -files/stk-4.4.2/020_all_noExamplesOrDemo.patch,
+  -files/stk-4.4.2/030_all_sharedlib.patch,
+  -files/stk-4.4.2/040_all_soname.patch, -files/stk-4.4.2/050_all_abiver.patch,
+  -stk-4.4.3.ebuild, -stk-4.4.3-r1.ebuild,
+  -files/stk-4.4.3/010_all_removeForcedFlags.patch,
+  -files/stk-4.4.3/020_all_noExamplesOrDemo.patch,
+  -files/stk-4.4.3/030_all_sharedlib.patch,
+  -files/stk-4.4.3/040_all_sharedliblink.patch:
+  remove old
+
+*stk-4.4.4 (21 Sep 2012)
+
+  21 Sep 2012; Alexis Ballier <aballier@gentoo.org> +stk-4.4.4.ebuild,
+  +files/stk-4.4.4/010_all_removeForcedFlags.patch,
+  +files/stk-4.4.4/020_all_noExamplesOrDemo.patch,
+  +files/stk-4.4.4/030_all_sharedlib.patch,
+  +files/stk-4.4.4/040_all_sharedliblink.patch:
+  version bump
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> stk-4.4.2.ebuild,
+  stk-4.4.3.ebuild, stk-4.4.3-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*stk-4.4.3-r1 (16 Jan 2012)
+
+  16 Jan 2012; Alexis Ballier <aballier@gentoo.org> +stk-4.4.3-r1.ebuild:
+  revbump for previous fix
+
+  15 Jan 2012; Alexis Ballier <aballier@gentoo.org>
+  +files/stk-4.4.3/040_all_sharedliblink.patch:
+  install soname link for libstk.so too, bug #398651 by Nikos Chantziaras
+
+*stk-4.4.3 (15 Sep 2011)
+
+  15 Sep 2011; Alexis Ballier <aballier@gentoo.org> +stk-4.4.3.ebuild,
+  +files/stk-4.4.3/010_all_removeForcedFlags.patch,
+  +files/stk-4.4.3/020_all_noExamplesOrDemo.patch,
+  +files/stk-4.4.3/030_all_sharedlib.patch:
+  version bump
 
   27 Feb 2011; Alexis Ballier <aballier@gentoo.org> -stk-4.3.1.ebuild,
   -files/stk-4.3.1-cflags-lib.patch, -files/stk-4.3.1-fpic.patch,

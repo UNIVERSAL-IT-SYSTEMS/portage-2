@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/gprolog/gprolog-1.4.0.ebuild,v 1.4 2011/07/05 07:47:32 keri Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/gprolog/gprolog-1.4.0.ebuild,v 1.11 2012/07/04 18:29:36 keri Exp $
 
 EAPI=2
 
-inherit eutils flag-o-matic
+inherit eutils flag-o-matic multilib
 
 DESCRIPTION="GNU Prolog is a native Prolog compiler with constraint solving over finite domains (FD)"
 HOMEPAGE="http://www.gprolog.org/"
@@ -13,7 +13,7 @@ S="${WORKDIR}"/${P}
 
 LICENSE="GPL-2 LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="debug doc examples"
 
 DEPEND=""
@@ -21,6 +21,7 @@ RDEPEND=""
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ldflags.patch
+	epatch "${FILESDIR}"/${P}-links.patch
 	epatch "${FILESDIR}"/${P}-ma2asm-pllong.patch
 	epatch "${FILESDIR}"/${P}-nodocs.patch
 	epatch "${FILESDIR}"/${P}-txt-file.patch
@@ -31,6 +32,11 @@ src_configure() {
 
 	append-flags -fno-strict-aliasing
 	use debug && append-flags -DDEBUG
+
+	if gcc-specs-pie ; then
+		# gplc generates its own native ASM; disable PIE
+		append-ldflags -nopie
+	fi
 
 	cd "${S}"/src
 	econf \
@@ -55,7 +61,7 @@ src_test() {
 
 src_install() {
 	cd "${S}"/src
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	cd "${S}"
 	dodoc ChangeLog NEWS PROBLEMS README VERSION || die "dodoc failed"

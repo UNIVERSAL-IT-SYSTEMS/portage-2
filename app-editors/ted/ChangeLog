@@ -1,6 +1,38 @@
 # ChangeLog for app-editors/ted
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/ted/ChangeLog,v 1.39 2011/07/20 16:20:46 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/ted/ChangeLog,v 1.48 2012/05/03 18:33:03 jdhore Exp $
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> ted-2.21.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  03 Mar 2012; Pacho Ramos <pacho@gentoo.org> +files/ted-2.21-make.patch,
+  ted-2.21.ebuild:
+  Make rtf2pdf.sh accessible from /usr/bin (bug #347926 by James Broadhead) and
+  fix parallel make (bug 385485 by Ian Delaney).
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -ted-2.20.ebuild,
+  -files/ted-2.20-libpng14.patch:
+  old
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> ted-2.21.ebuild:
+  sparc stable wrt #385205
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> ted-2.21.ebuild:
+  ppc stable wrt #385205
+
+  06 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> ted-2.21.ebuild:
+  amd64 stable wrt #385205
+
+  06 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> ted-2.21.ebuild:
+  Export CC so full compiler name is used. Missing libXpm depend wrt #371213 by
+  Piotr Szymaniak
+
+  04 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ted-2.21.ebuild:
+  x86 stable wrt bug #385205
+
+  13 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> ted-2.21.ebuild,
+  +files/ted-2.21-libpng15.patch:
+  Fix building with libpng15 wrt #378335 by Diego Elio Pettenò
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #81177

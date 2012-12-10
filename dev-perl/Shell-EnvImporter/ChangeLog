@@ -1,6 +1,26 @@
 # ChangeLog for dev-perl/Shell-EnvImporter
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Shell-EnvImporter/ChangeLog,v 1.32 2010/01/21 12:12:49 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Shell-EnvImporter/ChangeLog,v 1.37 2012/09/01 11:52:11 grobian Exp $
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  Shell-EnvImporter-1.70.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Shell-EnvImporter-1.07.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org>
+  Shell-EnvImporter-1.70.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Shell-EnvImporter-1.70.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +Shell-EnvImporter-1.70.0.ebuild:
+  Change version scheme
 
   21 Jan 2010; Torsten Veller <tove@gentoo.org>
   -Shell-EnvImporter-1.04.ebuild:
@@ -130,4 +150,3 @@
   27 Dec 2006; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Shell-EnvImporter-1.04.ebuild:
   Initial import, working on it as a dep for a new version of g-cpan.
-

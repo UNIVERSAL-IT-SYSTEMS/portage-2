@@ -1,6 +1,23 @@
 # ChangeLog for sci-libs/cgcode
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/cgcode/ChangeLog,v 1.5 2011/06/21 15:19:21 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/cgcode/ChangeLog,v 1.8 2012/10/18 21:39:51 jlec Exp $
+
+  18 Oct 2012; Justin Lecher <jlec@gentoo.org> -cgcode-1.0.ebuild,
+  -cgcode-1.0-r1.ebuild, cgcode-1.0-r2.ebuild:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+*cgcode-1.0-r2 (30 May 2012)
+
+  30 May 2012; Justin Lecher <jlec@gentoo.org> files/1.0-gentoo.patch,
+  +cgcode-1.0-r2.ebuild:
+  Fix missing linking to blas libs
+
+*cgcode-1.0-r1 (21 Nov 2011)
+
+  21 Nov 2011; Justin Lecher <jlec@gentoo.org> +cgcode-1.0-r1.ebuild,
+  metadata.xml:
+  Install correct symlink for libs, #386227
 
   21 Jun 2011; Justin Lecher <jlec@gentoo.org> cgcode-1.0.ebuild:
   Add dependency on virtual/fortran

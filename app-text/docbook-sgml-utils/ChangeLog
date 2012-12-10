@@ -1,6 +1,27 @@
 # ChangeLog for app-text/docbook-sgml-utils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/docbook-sgml-utils/ChangeLog,v 1.62 2011/03/25 10:26:30 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/docbook-sgml-utils/ChangeLog,v 1.68 2012/05/09 14:33:39 aballier Exp $
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org>
+  docbook-sgml-utils-0.6.14-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  04 Apr 2012; Mike Gilbert <floppym@gentoo.org>
+  -docbook-sgml-utils-0.6.14.ebuild:
+  Remove old.
+
+  04 Apr 2012; Mike Gilbert <floppym@gentoo.org>
+  docbook-sgml-utils-0.6.14.ebuild, docbook-sgml-utils-0.6.14-r1.ebuild:
+  Assign RDEPEND explicitly.
+
+  04 Apr 2012; Benda XU <heroxbd@gentoo.org>
+  docbook-sgml-utils-0.6.14-r1.ebuild:
+  +docbook-utils-0.6.14-prefix.patch
+  patch for prefix, add keywords for ~x86-{macosx,freebsd}, bug #410737
+ 
+  31 Mar 2012; Benda XU <heroxbd@gentoo.org>
+  docbook-sgml-utils-0.6.14-r1.ebuild:
+  add keywords for ~{amd64,x86}-linux  
 
   25 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org>
   docbook-sgml-utils-0.6.14-r1.ebuild:

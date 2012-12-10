@@ -1,6 +1,26 @@
 # ChangeLog for app-crypt/truecrypt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/truecrypt/ChangeLog,v 1.66 2011/07/15 17:53:07 c1pher Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/truecrypt/ChangeLog,v 1.71 2012/08/02 18:25:00 radhermit Exp $
+
+  02 Aug 2012; Tim Harder <radhermit@gentoo.org> truecrypt-7.1a.ebuild:
+  Remove PORTDIR from license warning (bug #416737).
+
+  06 Mar 2012; Tim Harder <radhermit@gentoo.org> truecrypt-7.1a.ebuild:
+  Make the download instructions clearer (bug #406745).
+
+  19 Feb 2012; Tim Harder <radhermit@gentoo.org> -truecrypt-7.1.ebuild:
+  Remove old due to unfetchable sources.
+
+*truecrypt-7.1a (19 Feb 2012)
+
+  19 Feb 2012; Tim Harder <radhermit@gentoo.org> +truecrypt-7.1a.ebuild:
+  Version bump (bug #403353 by bdouxx).
+
+*truecrypt-7.1 (07 Dec 2011)
+
+  07 Dec 2011; Dane Smith <c1pher@gentoo.org> -truecrypt-7.0a-r2.ebuild,
+  -truecrypt-7.0a-r5.ebuild, -truecrypt-7.0a-r6.ebuild, +truecrypt-7.1.ebuild:
+  Version bump wrt bug 381717. Drop old wrt bug 382663.
 
 *truecrypt-7.0a-r6 (15 Jul 2011)
 

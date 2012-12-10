@@ -1,6 +1,34 @@
 # ChangeLog for app-text/chasen
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/chasen/ChangeLog,v 1.41 2010/04/09 09:32:35 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/chasen/ChangeLog,v 1.48 2012/06/09 19:10:36 armin76 Exp $
+
+  09 Jun 2012; Raúl Porcel <armin76@gentoo.org> chasen-2.4.0.ebuild,
+  chasen-2.4.4.ebuild, chasen-2.4.4-r1.ebuild, chasen-2.4.4-r2.ebuild:
+  Drop sparc keywords
+
+  06 May 2012; Mark Loeser <halcy0n@gentoo.org> chasen-2.4.0.ebuild,
+  chasen-2.4.4.ebuild:
+  Drop to ~ppc64; bug #390769
+
+  16 Apr 2012; Agostino Sarubbo <ago@gentoo.org> chasen-2.4.4-r2.ebuild:
+  Stable for amd64, wrt bug #390769
+
+  15 Apr 2012; Brent Baude <ranger@gentoo.org> chasen-2.4.4-r2.ebuild:
+  Marking chasen-2.4.4-r2 ppc for bug 390769
+
+  10 Apr 2012; Andreas Schuerch <nativemad@gentoo.org> chasen-2.4.4-r2.ebuild:
+  x86 stable, see bug 390769
+
+*chasen-2.4.4-r2 (18 Dec 2011)
+
+  18 Dec 2011; Naohiro Aota <naota@gentoo.org> +chasen-2.4.4-r2.ebuild,
+  +files/chasen-2.4.4-cve-2011-4000.patch:
+  Add security fix. #390769
+
+*chasen-2.4.4-r1 (02 Sep 2011)
+
+  02 Sep 2011; MATSUU Takuto <matsuu@gentoo.org> +chasen-2.4.4-r1.ebuild:
+  Added static-libs USE flag.
 
   09 Apr 2010; Markos Chandras <hwoarang@gentoo.org> chasen-2.4.4.ebuild:
   Stable on amd64 wrt bug #305695

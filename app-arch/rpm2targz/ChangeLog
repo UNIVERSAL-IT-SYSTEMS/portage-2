@@ -1,6 +1,43 @@
 # ChangeLog for app-arch/rpm2targz
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/rpm2targz/ChangeLog,v 1.86 2011/03/01 00:38:20 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/rpm2targz/ChangeLog,v 1.97 2012/10/20 16:25:25 jer Exp $
+
+  20 Oct 2012; Jeroen Roovers <jer@gentoo.org> rpm2targz-9.0.0.5g.ebuild:
+  Stable for HPPA (bug #433183).
+
+  14 Oct 2012; Raúl Porcel <armin76@gentoo.org> rpm2targz-9.0.0.5g.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc/x86 stable wrt #433183
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  rpm2targz-9.0.0.5g.ebuild:
+  stable ppc64, bug #433183
+
+  11 Oct 2012; Markus Meier <maekke@gentoo.org> rpm2targz-9.0.0.5g.ebuild:
+  arm stable, bug #433183
+
+  10 Oct 2012; Brent Baude <ranger@gentoo.org> rpm2targz-9.0.0.5g.ebuild:
+  Marking rpm2targz-9.0.0.5g ppc for bug 433183
+
+  08 Oct 2012; Agostino Sarubbo <ago@gentoo.org> rpm2targz-9.0.0.5g.ebuild:
+  Stable for amd64, wrt bug #433183
+
+  30 Sep 2012; Ulrich Müller <ulm@gentoo.org> rpm2targz-9.0.0.3g.ebuild,
+  rpm2targz-9.0.0.4g.ebuild, rpm2targz-9.0.0.5g.ebuild:
+  Specify LICENSE more precisely.
+
+  03 Sep 2012; Christoph Junghans <ottxor@gentoo.org> rpm2targz-9.0.0.5g.ebuild:
+  added prefix keywords (fix bug #433810)
+
+  20 Aug 2012; Mike Frysinger <vapier@gentoo.org> rpm2targz-9.0.0.5g.ebuild:
+  Need to specify DESTDIR=$ED manually #397835 by Christoph Junghans.
+
+*rpm2targz-9.0.0.5g (17 May 2012)
+
+  17 May 2012; Mike Frysinger <vapier@gentoo.org> +rpm2targz-9.0.0.5g.ebuild:
+  Version bump.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> rpm2targz-9.0.0.4g.ebuild:
+  keyword ~amd64-fbsd
 
   01 Mar 2011; Brent Baude <ranger@gentoo.org> rpm2targz-9.0.0.4g.ebuild:
   stable ppc64, bug 354959

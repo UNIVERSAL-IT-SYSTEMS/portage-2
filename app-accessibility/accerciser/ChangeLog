@@ -1,6 +1,35 @@
 # ChangeLog for app-accessibility/accerciser
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/accerciser/ChangeLog,v 1.21 2011/04/04 09:57:57 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/accerciser/ChangeLog,v 1.27 2012/05/20 08:41:00 tetromino Exp $
+
+*accerciser-3.4.1 (20 May 2012)
+
+  20 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +accerciser-3.4.1.ebuild:
+  Version bump for gnome-3.4, improves ipython-0.12 compatibility.
+
+  10 Feb 2012; Patrick Lauer <patrick@gentoo.org> accerciser-1.12.1.ebuild,
+  accerciser-3.2.1.ebuild:
+  Changing python deps in preparation for 2.4 removal
+
+  31 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  accerciser-1.12.1.ebuild, accerciser-3.2.1.ebuild:
+  Fix py-compile idiom for automake-1.11.2 compatibility (bug #396585).
+
+  20 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  accerciser-3.2.1.ebuild:
+  QA: update dependencies (gconf and librsvg-python are not used in 3.2.1) and
+  sort them in a sensible order; do not install COPYING; drop nonexistent
+  --without-pyreqs flag; optimize python files in /usr/share too; drop ppc from
+  keywords due to the at-spi2-core-2.1.5 dependency (bug #390345).
+
+*accerciser-3.2.1 (20 Nov 2011)
+
+  20 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org> +accerciser-3.2.1.ebuild:
+  Version bump. Port to gobject-introspection.
+
+  19 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> accerciser-1.12.1.ebuild:
+  Fix slot deps on pygtk, pygobject, at-spi
 
   04 Apr 2011; Pacho Ramos <pacho@gentoo.org> -accerciser-1.10.1.ebuild,
   -files/accerciser-1.10.1-fix-es_ES.patch:

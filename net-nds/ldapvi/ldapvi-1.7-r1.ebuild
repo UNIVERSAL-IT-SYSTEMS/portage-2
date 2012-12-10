@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/ldapvi/ldapvi-1.7-r1.ebuild,v 1.2 2011/06/14 00:05:15 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nds/ldapvi/ldapvi-1.7-r1.ebuild,v 1.7 2012/06/29 15:25:35 jer Exp $
 
 EAPI=2
 
@@ -12,7 +12,7 @@ SRC_URI="http://www.lichteblau.com/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
+KEYWORDS="amd64 hppa ppc ~sparc x86"
 IUSE="ssl"
 
 RDEPEND="sys-libs/ncurses
@@ -22,7 +22,7 @@ RDEPEND="sys-libs/ncurses
 	sys-libs/readline
 	ssl? ( dev-libs/openssl )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}+glibc-2.10.patch"

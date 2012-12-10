@@ -1,18 +1,18 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/gzip/gzip-1.4.ebuild,v 1.8 2011/04/03 11:15:56 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/gzip/gzip-1.4.ebuild,v 1.12 2012/07/06 17:58:32 vapier Exp $
 
 inherit eutils flag-o-matic
 
 DESCRIPTION="Standard GNU compressor"
 HOMEPAGE="http://www.gnu.org/software/gzip/"
-SRC_URI="ftp://alpha.gnu.org/gnu/gzip/${P}.tar.gz
+SRC_URI="mirror://gnu-alpha/gzip/${P}.tar.gz
 	mirror://gnu/gzip/${P}.tar.gz
 	mirror://gentoo/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 IUSE="nls pic static"
 
 RDEPEND=""
@@ -25,6 +25,7 @@ src_unpack() {
 	#epatch "${FILESDIR}"/${PN}-1.3.5-rsync.patch
 	epatch "${FILESDIR}"/${PN}-1.3.8-install-symlinks.patch
 	epatch "${FILESDIR}"/${P}-assembler.patch #309079
+	epatch "${FILESDIR}"/${P}-no-gets.patch
 }
 
 src_compile() {

@@ -1,6 +1,39 @@
 # ChangeLog for net-wireless/wimax
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/wimax/ChangeLog,v 1.10 2011/04/20 17:16:27 alexxy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/wimax/ChangeLog,v 1.20 2012/11/18 11:30:10 pacho Exp $
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org> wimax-1.5.2-r1.ebuild:
+  stable ppc ppc64, bug #430370
+
+  22 Sep 2012; Anthony G. Basile <blueness@gentoo.org> wimax-1.5.2-r1.ebuild:
+  keyword ~ppc64, bug #379275
+
+  14 Jun 2012; Michael Weber <xmw@gentoo.org> wimax-1.5.2-r1.ebuild:
+  adding ~ppc keyword (bug 379275)
+
+  25 Feb 2012; Jeroen Roovers <jer@gentoo.org> wimax-1.5.2.ebuild,
+  wimax-1.5.2-r1.ebuild:
+  Remove dev-libs/nl version dependency.
+
+  23 Jan 2012; Thomas Kahle <tomka@gentoo.org> wimax-1.5.2-r1.ebuild:
+  x86 stable per bug 386121
+
+  12 Jan 2012; Alexey Shvetsov <alexxy@gentoo.org> wimax-1.5.2-r1.ebuild:
+  Fix bug #393195
+
+  11 Jan 2012; Agostino Sarubbo <ago@gentoo.org> wimax-1.5.2-r1.ebuild:
+  Stable for AMD64, wrt bug #386121
+
+*wimax-1.5.2-r1 (19 Nov 2011)
+
+  19 Nov 2011; Alexey Shvetsov <alexxy@gentoo.org> +wimax-1.5.2-r1.ebuild:
+  Fix bugs #390845 and #386127
+
+  27 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> wimax-1.5.2.ebuild:
+  Depend on same slot of libnl as wimax-tools.
 
 *wimax-1.5.2 (20 Apr 2011)
 
@@ -98,4 +131,3 @@
   +files/wimax, +metadata.xml:
   Initial import of wimax network service. Currently it isnt working on
   64bit systems.
-

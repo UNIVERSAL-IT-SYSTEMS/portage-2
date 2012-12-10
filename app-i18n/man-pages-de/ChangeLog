@@ -1,6 +1,48 @@
 # ChangeLog for app-i18n/man-pages-de
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/man-pages-de/ChangeLog,v 1.11 2011/02/27 16:41:33 jmbsvicetto Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/man-pages-de/ChangeLog,v 1.23 2012/09/29 13:09:16 ulm Exp $
+
+  29 Sep 2012; Ulrich Müller <ulm@gentoo.org> man-pages-de-0.8.ebuild,
+  man-pages-de-0.12.ebuild:
+  Specify LICENSE more precisely: "as-is" is really "man-pages", GPL is the
+  "or later" variant in most cases.
+
+  21 Jun 2012; Julian Ospald <hasufell@gentoo.org> man-pages-de-0.8.ebuild,
+  man-pages-de-0.12.ebuild:
+  add dev-lang/perl to DEPEND wrt bug #422629
+
+  31 Mar 2012; Ulrich Müller <ulm@gentoo.org> man-pages-de-0.12.ebuild:
+  Fix collision with sys-apps/shadow, bug 410283. Install documentation.
+
+*man-pages-de-0.12 (30 Mar 2012)
+
+  30 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> +man-pages-de-0.12.ebuild,
+  -man-pages-de-0.5-r1.ebuild, -man-pages-de-0.7.ebuild:
+  Version bump to the latest release.
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> man-pages-de-0.8.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #396811
+
+  02 Mar 2012; Tobias Klausmann <klausman@gentoo.org> man-pages-de-0.8.ebuild:
+  Stable on alpha, bug #396811
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> man-pages-de-0.8.ebuild:
+  ppc64 stable wrt #396811; use emake instead of make
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> man-pages-de-0.8.ebuild:
+  x86 stable wrt bug #396811
+
+  08 Feb 2012; Markus Meier <maekke@gentoo.org> man-pages-de-0.8.ebuild:
+  arm stable, bug #396811
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> man-pages-de-0.8.ebuild:
+  Stable for HPPA (bug #396811).
+
+  05 Feb 2012; Brent Baude <ranger@gentoo.org> man-pages-de-0.8.ebuild:
+  Marking man-pages-de-0.8 ppc for bug 396811
+
+  02 Feb 2012; Agostino Sarubbo <ago@gentoo.org> man-pages-de-0.8.ebuild:
+  Stable for amd64, wrt bug #396811
 
 *man-pages-de-0.8 (27 Feb 2011)
 *man-pages-de-0.7 (27 Feb 2011)

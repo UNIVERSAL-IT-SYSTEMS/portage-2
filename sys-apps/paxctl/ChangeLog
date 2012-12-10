@@ -1,6 +1,81 @@
 # ChangeLog for sys-apps/paxctl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paxctl/ChangeLog,v 1.30 2011/04/16 23:24:52 blueness Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paxctl/ChangeLog,v 1.52 2012/08/27 17:43:30 armin76 Exp $
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> paxctl-0.7-r2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #429202
+
+  09 Aug 2012; Jeroen Roovers <jer@gentoo.org> paxctl-0.7-r2.ebuild:
+  Stable for HPPA (bug #429202).
+
+  07 Aug 2012; Agostino Sarubbo <ago@gentoo.org> paxctl-0.7-r2.ebuild:
+  Stable for amd64, wrt bug #429202
+
+  06 Aug 2012; Anthony G. Basile <blueness@gentoo.org> paxctl-0.7-r2.ebuild:
+  Fix documentation, bug #429202
+
+  05 Aug 2012; Johannes Huber <johu@gentoo.org> paxctl-0.7-r2.ebuild:
+  Stable for x86, wrt bug #429202
+
+  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org> paxctl-0.7-r2.ebuild:
+  Stable arm, bug #429202
+
+  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org> paxctl-0.7-r2.ebuild:
+  Stable ppc ppc64, bug #429202
+
+  24 May 2012; Justin Lecher <jlec@gentoo.org> paxctl-0.4.ebuild,
+  paxctl-0.5.ebuild, paxctl-0.7-r1.ebuild, paxctl-0.7-r2.ebuild:
+  Keyword for ~-linux, drop . from DESCRIPTION
+
+*paxctl-0.7-r2 (24 May 2012)
+
+  24 May 2012; Anthony G. Basile <blueness@gentoo.org> +paxctl-0.7-r2.ebuild:
+  Make ebuild prefix friendly
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> paxctl-0.7-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #410685
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> paxctl-0.7-r1.ebuild:
+  Marking paxctl-0.7-r1 ppc64 for bug 404627
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> paxctl-0.7-r1.ebuild:
+  Marking paxctl-0.7-r1 ppc for bug 410685
+
+  14 Apr 2012; Markus Meier <maekke@gentoo.org> paxctl-0.7-r1.ebuild:
+  arm stable, bug #410685
+
+  05 Apr 2012; Jeroen Roovers <jer@gentoo.org> paxctl-0.7-r1.ebuild:
+  Stable for HPPA (bug #410685).
+
+  05 Apr 2012; Anthony G. Basile <blueness@gentoo.org> -paxctl-0.7.ebuild:
+  Removed buggy version, bug #410685
+
+  05 Apr 2012; Agostino Sarubbo <ago@gentoo.org> paxctl-0.7-r1.ebuild:
+  Stable for amd64, wrt bug #410685
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> paxctl-0.7-r1.ebuild:
+  marked x86 per bug 410685
+
+*paxctl-0.7-r1 (03 Apr 2012)
+
+  03 Apr 2012; Anthony G. Basile <blueness@gentoo.org> +paxctl-0.7-r1.ebuild:
+  Upstream corrected version, bug #410685, and switch to EAPI=4, bug #410711
+
+  03 Apr 2012; Agostino Sarubbo <ago@gentoo.org> paxctl-0.7.ebuild:
+  Stable for amd64, wrt bug #410685
+
+  24 Mar 2012; Anthony G. Basile <blueness@gentoo.org> -paxctl-0.6.ebuild:
+  Removed buggy version, bug #408377
+
+*paxctl-0.7 (23 Mar 2012)
+
+  23 Mar 2012; Anthony G. Basile <blueness@gentoo.org> +paxctl-0.7.ebuild:
+  Version bump fixes bug #408377
+
+*paxctl-0.6 (20 Feb 2012)
+
+  20 Feb 2012; Anthony G. Basile <blueness@gentoo.org> +paxctl-0.6.ebuild:
+  Version bump
 
   16 Apr 2011; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
   Updated metadata info.

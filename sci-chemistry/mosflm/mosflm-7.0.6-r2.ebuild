@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/mosflm/mosflm-7.0.6-r2.ebuild,v 1.10 2011/07/19 19:45:36 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/mosflm/mosflm-7.0.6-r2.ebuild,v 1.12 2012/10/19 10:03:53 jlec Exp $
 
 EAPI="3"
 
@@ -13,14 +13,12 @@ DESCRIPTION="A program for integrating single crystal diffraction data from area
 HOMEPAGE="http://www.mrc-lmb.cam.ac.uk/harry/mosflm/"
 SRC_URI="${HOMEPAGE}ver${MY_PV}/build-it-yourself/${MY_P}.tgz"
 
-LICENSE="ccp4"
 SLOT="0"
-KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux"
+LICENSE="ccp4"
+KEYWORDS="amd64 ~ppc x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND="
-	virtual/fortran
-
 	app-shells/tcsh
 	virtual/jpeg
 	sci-libs/ccp4-libs

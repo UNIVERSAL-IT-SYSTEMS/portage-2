@@ -1,6 +1,153 @@
 # ChangeLog for net-im/kadu
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/kadu/ChangeLog,v 1.108 2011/07/17 17:39:15 reavertm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-im/kadu/ChangeLog,v 1.144 2012/09/15 10:53:32 ago Exp $
+
+  15 Sep 2012; Agostino Sarubbo <ago@gentoo.org> -kadu-0.11.3.ebuild,
+  -kadu-0.12.1.ebuild, -kadu-0.12.2.ebuild:
+  Remove old
+
+*kadu-0.12.3 (15 Sep 2012)
+
+  15 Sep 2012; Agostino Sarubbo <ago@gentoo.org> +kadu-0.12.3.ebuild,
+  kadu-0.12.0.ebuild:
+  Version bump to 0.12.3, fix qt-gui version for <0.12.3, wrt to bug #435090
+
+  15 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> kadu-0.12.0.ebuild:
+  Stable on ppc wrt bug#428648.
+
+*kadu-0.12.2 (13 Sep 2012)
+
+  13 Sep 2012; Maciej Mrozowski <reavertm@gentoo.org> +kadu-0.12.2.ebuild:
+  Version bump.
+
+*kadu-0.12.1 (25 Aug 2012)
+
+  25 Aug 2012; Agostino Sarubbo <ago@gentoo.org> +kadu-0.12.1.ebuild:
+  Version bump to 0.12.1
+
+  04 Aug 2012; Markos Chandras <hwoarang@gentoo.org> kadu-0.12.0.ebuild:
+  Stable on amd64 wrt bug #428648
+
+  31 Jul 2012; Jeff Horelick <jdhore@gentoo.org> kadu-0.12.0.ebuild:
+  marked x86 per bug 428648
+
+*kadu-0.12.0 (26 Jun 2012)
+
+  26 Jun 2012; Maciej Mrozowski <reavertm@gentoo.org> +kadu-0.12.0.ebuild:
+  Version bump, bug 422671
+
+  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> -kadu-0.11.1.ebuild:
+  Remove old
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> kadu-0.11.3.ebuild:
+  Marking kadu-0.11.3 ppc for bug 419609
+
+  04 Jun 2012; Agostino Sarubbo <ago@gentoo.org> kadu-0.11.3.ebuild:
+  Stable for x86, wrt bug #419609
+
+  04 Jun 2012; Agostino Sarubbo <ago@gentoo.org> kadu-0.11.3.ebuild:
+  Stable for amd64, wrt bug #419609
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> -kadu-0.11.2.ebuild:
+  Remove old
+
+*kadu-0.11.3 (29 Apr 2012)
+
+  29 Apr 2012; Agostino Sarubbo <ago@gentoo.org> +kadu-0.11.3.ebuild:
+  Version bump to 0.11.3, wrt bug #413913
+
+  15 Apr 2012; Maciej Mrozowski <reavertm@gentoo.org> kadu-0.11.1.ebuild,
+  kadu-0.11.2.ebuild:
+  Restore x11-libs/qt-svg dependency, needed for icons rendering, bug 411801.
+
+*kadu-0.11.2 (11 Apr 2012)
+
+  11 Apr 2012; Maciej Mrozowski <reavertm@gentoo.org> +kadu-0.11.2.ebuild,
+  -files/kadu-0.10.1-buildsystem-improvements.patch:
+  Version bump, bug 410629
+
+  01 Apr 2012; Agostino Sarubbo <ago@gentoo.org> -kadu-0.10.1.ebuild,
+  -kadu-0.11.0.ebuild:
+  Remove old and vulnerable versions
+
+  15 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> kadu-0.11.1.ebuild:
+  x86 stable wrt bug #406015
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org> kadu-0.11.1.ebuild:
+  Marking kadu-0.11.1 ppc for bug 406015
+
+  07 Mar 2012; Agostino Sarubbo <ago@gentoo.org> kadu-0.11.1.ebuild:
+  Stable for amd64, wrt bug #406015
+
+*kadu-0.11.1 (05 Mar 2012)
+
+  05 Mar 2012; Maciej Mrozowski <reavertm@gentoo.org> +kadu-0.11.1.ebuild:
+  Version bump, also fixed security bug 406015.
+
+  14 Feb 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  ayatana is now global per http://archives.gentoo.org/gentoo-
+  dev/msg_f2eb26947d0c86020625a9aeca6f25e4.xml
+
+  08 Feb 2012; Maciej Mrozowski <reavertm@gentoo.org> kadu-0.10.1.ebuild,
+  kadu-0.11.0.ebuild:
+  Add libX11 dependencies, by Agostino Sarubbo.
+
+  08 Feb 2012; Maciej Mrozowski <reavertm@gentoo.org> kadu-0.10.1.ebuild,
+  kadu-0.11.0.ebuild:
+  Only gadu protocol needs libgadu, bug 402711.
+
+*kadu-0.11.0 (06 Feb 2012)
+
+  06 Feb 2012; Maciej Mrozowski <reavertm@gentoo.org> +kadu-0.11.0.ebuild,
+  metadata.xml:
+  Version bump, bug 402319.
+
+  28 Jan 2012; Maciej Mrozowski <reavertm@gentoo.org>
+  -files/kadu-0.10.0-cmake.patch, -files/kadu-0.10.0-sdk-cmake.patch,
+  -kadu-0.10.0-r1.ebuild, -kadu-0.10.0.ebuild, -kadu-0.9.2.ebuild:
+  Remove old
+
+  07 Jan 2012; Mark Loeser <halcy0n@gentoo.org> kadu-0.10.1.ebuild:
+  Stable for ppc; bug #391435
+
+  16 Dec 2011; Agostino Sarubbo <ago@gentoo.org> metadata.xml:
+  Change my info in metadata.xml with new gentoo.org address
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> kadu-0.10.1.ebuild:
+  x86 stable wrt bug #391435
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> kadu-0.10.1.ebuild:
+  Stable on amd64 wrt bug #391435
+
+*kadu-0.10.1 (19 Oct 2011)
+
+  19 Oct 2011; Maciej Mrozowski <reavertm@gentoo.org> +kadu-0.10.1.ebuild,
+  +files/kadu-0.10.1-buildsystem-improvements.patch,
+  -files/libgsm-ugly-code.patch, metadata.xml:
+  Version bump, bug 387617.
+
+  18 Oct 2011; Maciej Mrozowski <reavertm@gentoo.org> -kadu-0.6.5.4.ebuild,
+  -files/kadu-0.6.5.4-glibc211.patch, kadu-0.10.0-r1.ebuild:
+  qca-ossl is mandatory, bug 386469. Remove old
+
+  18 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> kadu-0.9.2.ebuild:
+  ppc stable wrt #372455
+
+  02 Oct 2011; Maciej Mrozowski <reavertm@gentoo.org> kadu-0.10.0-r1.ebuild:
+  Fix phonon deps (should be 'alternative'). Reported by Tomasz Golinski.
+
+*kadu-0.10.0-r1 (30 Sep 2011)
+
+  30 Sep 2011; Maciej Mrozowski <reavertm@gentoo.org> +kadu-0.10.0-r1.ebuild,
+  +files/kadu-0.10.0-sdk-cmake.patch, metadata.xml:
+  Update deps, bug 385009, by Bartosz Brachaczek. Favor media-libs/phonon over
+  outdated x11-libs/qt-phonon. Add sdk USE flag.
+
+*kadu-0.10.0 (29 Sep 2011)
+
+  29 Sep 2011; Maciej Mrozowski <reavertm@gentoo.org> +kadu-0.10.0.ebuild,
+  +files/kadu-0.10.0-cmake.patch:
+  Version bump, bug 382259
 
   17 Jul 2011; Maciej Mrozowski <reavertm@gentoo.org> -kadu-0.9.1-r1.ebuild,
   kadu-0.9.2.ebuild:
@@ -469,4 +616,3 @@
 
   16 Mar 2003; Seth Chandler <sethbc@gentoo.org>; kadu-0.3.3-rc3.ebuild,
   added to portage thanks to Wojciech Milkowski <wmilkowski@gazeta.pl>
-

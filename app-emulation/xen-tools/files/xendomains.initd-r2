@@ -1,13 +1,13 @@
 #!/sbin/runscript
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/files/xendomains.initd-r2,v 1.1 2011/04/05 21:25:03 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/files/xendomains.initd-r2,v 1.4 2012/01/12 13:40:01 alexxy Exp $
 
 opts="start stop status restart"
 
 depend() {
-	need xenstored xenconsoled xend
-	after dhcp
+	need xenstored
+	after dhcp xend xenconsoled
 }
 
 get_domname() {
@@ -81,7 +81,7 @@ stop() {
 			name=$(get_domname ${dom})
 			if is_running ${name} ; then
 				ebegin "  Asking domain ${name} to shutdown in the background..."
-				xl shutdown --wait ${name} >/dev/null &
+				xl shutdown -w ${name} >/dev/null &
 			else
 				einfo "  Not stopping domain ${name} - not running"
 			fi
@@ -94,7 +94,7 @@ stop() {
 			name=$(get_domname ${dom})
 			if is_running ${name} ; then
 				ebegin "  Waiting for domain ${name} to shutdown"
-				xl shutdown --wait ${name} >/dev/null
+				xl shutdown -w ${name} >/dev/null
 				eend $?
 			else
 				einfo "  Not stopping domain ${name} - not running"

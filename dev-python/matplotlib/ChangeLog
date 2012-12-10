@@ -1,6 +1,108 @@
 # ChangeLog for dev-python/matplotlib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/matplotlib/ChangeLog,v 1.106 2011/04/14 20:10:23 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/matplotlib/ChangeLog,v 1.131 2012/12/07 17:57:27 idella4 Exp $
+
+*matplotlib-1.2.0-r1 (08 Dec 2012)
+
+  08 Dec 2012; Ian Delaney <idella4@gentoo.org> +matplotlib-1.2.0-r1.ebuild,
+  files/matplotlib-1.2.0-setup.patch, metadata.xml:
+  rev bump; use flag gtk3 added, conditional of gtk corrected, setup patch
+  upgraded, deps added, use of separate source dirs var added, setting setup.cfg
+  updraded, all of which address build with use gtk/gtk3 by corresponding python
+  version
+
+  30 Nov 2012; Ian Delaney <idella4@gentoo.org> matplotlib-1.2.0.ebuild:
+  Correction to DocCheck to doc check
+
+*matplotlib-1.2.0 (30 Nov 2012)
+
+  30 Nov 2012; Ian Delaney <idella4@gentoo.org>
+  +files/matplotlib-1.2.0-ft-refcount.patch,
+  +files/matplotlib-1.2.0-setup.patch, +matplotlib-1.2.0.ebuild:
+  bump to 1.2.0, test phase upgraded, new ft-refcount.patch from upstream,
+  python3 support but for USE doc requiring  special treatment, ack to users
+  Nicolas Bigaouette <nbigaouette@gmail.com> and Rafał Mużyło <galtgendo@o2.pl>
+  for patches in entered in Bug #443836
+
+  26 Nov 2012; Ian Delaney <idella4@gentoo.org>
+  files/matplotlib-1.1.1-ft-refcount.patch, matplotlib-1.1.1.ebuild:
+  Appended missing hunk to -ft-refcount.patch, reported by, and thanks to, Carl
+  Michal <michal@physics.ubc.ca> in Bug #442298
+
+  06 Nov 2012; Agostino Sarubbo <ago@gentoo.org> matplotlib-1.1.1.ebuild:
+  Stable for amd64, wrt bug #441278
+
+  06 Nov 2012; Anthony G. Basile <blueness@gentoo.org> matplotlib-1.1.1.ebuild:
+  stable ppc, bug #441278
+
+*matplotlib-1.1.1 (01 Aug 2012)
+
+  01 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/matplotlib-1.1.1-ft-refcount.patch, +matplotlib-1.1.1.ebuild:
+  Version bump. Keep bundling of pycxx because it is patched, and some fonts to
+  ease maintenance and portability
+
+  04 May 2012; Patrick Lauer <patrick@gentoo.org> matplotlib-1.0.1-r1.ebuild,
+  matplotlib-1.1.0.ebuild:
+  Migrating dev-util/pkgconfig -> virtual/pkgconfig
+
+  01 Apr 2012; Mike Gilbert <floppym@gentoo.org> matplotlib-1.0.1-r1.ebuild,
+  matplotlib-1.1.0.ebuild:
+  python-dateutil no longer needs a slot dep.
+
+  27 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> matplotlib-1.1.0.ebuild:
+  really fix the examples directory this time
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> matplotlib-1.1.0.ebuild:
+  Marking matplotlib-1.1.0 ppc for bug 403847
+
+  27 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> matplotlib-1.1.0.ebuild:
+  Removed extra quotes, bug #405755
+
+  25 Feb 2012; Patrick Lauer <patrick@gentoo.org> matplotlib-1.1.0.ebuild:
+  Fixing accidental double asterisk
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> matplotlib-1.1.0.ebuild:
+  x86 stable wrt bug #403847
+
+  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> matplotlib-1.0.1-r1.ebuild,
+  matplotlib-1.1.0.ebuild:
+  Fixing pypy restricts to actually work
+
+  16 Feb 2012; Agostino Sarubbo <ago@gentoo.org> matplotlib-1.1.0.ebuild:
+  Stable for amd64, wrt bug #403847
+
+  24 Jan 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  matplotlib-1.0.1-r1.ebuild, matplotlib-1.1.0.ebuild:
+  Depend on proper slot of dev-python/python-dateutil
+
+  17 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> matplotlib-1.1.0.ebuild:
+  Add pyside[X] dep
+
+  17 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> matplotlib-1.1.0.ebuild:
+  Added PySide for optional GUI (bug #393647), removed traits dependency (bug
+  #398919), now download examples from upstream, some cleaning, hopefully
+  fixing doc generation (bug #339775)
+
+  03 Dec 2011; Markos Chandras <hwoarang@gentoo.org> matplotlib-1.0.1-r1.ebuild,
+  matplotlib-1.1.0.ebuild:
+  Fix LICENSE. Patch by Arfrever
+
+*matplotlib-1.1.0 (25 Nov 2011)
+
+  25 Nov 2011; Sébastien Fabbro <bicatali@gentoo.org>
+  +matplotlib-1.1.0.ebuild:
+  Version bump. Thanks Nicolas Bigaouette for his testing
+
+  06 Oct 2011; Alexis Ballier <aballier@gentoo.org> matplotlib-1.0.1-r1.ebuild:
+  remove forgotten ptex dep in previous commit
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> matplotlib-1.0.1-r1.ebuild:
+  remove ptex dep as it is going away
+
+  09 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org>
+  matplotlib-1.0.1-r1.ebuild, +files/matplotlib-1.0.1-linux3.patch:
+  Added linux patches, bug #375255, thanks robbat2 for the look up
 
   14 Apr 2011; Brent Baude <ranger@gentoo.org> matplotlib-1.0.1-r1.ebuild:
   Marking matplotlib-1.0.1-r1 ppc for bug 360635
@@ -550,4 +652,3 @@
   05 Dec 2004; Bryan Østergaard <kloeri@gentoo.org> :
   Initial import, ebuild by Fernando A. Serboncini <fserb@terra.com.br> in bug
   32895.
-

@@ -1,6 +1,129 @@
 # ChangeLog for dev-libs/libgee
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgee/ChangeLog,v 1.25 2011/03/22 18:53:06 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgee/ChangeLog,v 1.55 2012/11/21 23:27:46 eva Exp $
+
+*libgee-0.8.2 (21 Nov 2012)
+
+  21 Nov 2012; Gilles Dartiguelongue <eva@gentoo.org> +libgee-0.8.2.ebuild:
+  Version bump.
+
+*libgee-0.6.6.1 (21 Nov 2012)
+
+  21 Nov 2012; Gilles Dartiguelongue <eva@gentoo.org> +libgee-0.6.6.1.ebuild:
+  Version bump. Upstream regenerated sources with recent vala compiler.
+
+*libgee-0.8.1 (14 Oct 2012)
+*libgee-0.6.6 (14 Oct 2012)
+
+  14 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +libgee-0.6.6.ebuild, -libgee-0.7.4.1.ebuild, +libgee-0.8.1.ebuild:
+  Version bump, drop old.
+
+*libgee-0.8.0 (30 Sep 2012)
+
+  30 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> libgee-0.6.4.ebuild,
+  libgee-0.6.5.ebuild, -libgee-0.7.2.ebuild, libgee-0.7.4.1.ebuild,
+  +libgee-0.8.0.ebuild:
+  Bump, update license, drop old.
+
+*libgee-0.7.4.1 (24 Aug 2012)
+
+  24 Aug 2012; Gilles Dartiguelongue <eva@gentoo.org> +libgee-0.7.4.1.ebuild:
+  Version bump.
+
+*libgee-0.6.5 (24 Aug 2012)
+
+  24 Aug 2012; Gilles Dartiguelongue <eva@gentoo.org> -libgee-0.6.2.1.ebuild,
+  -libgee-0.6.3.ebuild, +libgee-0.6.5.ebuild, -libgee-0.7.1.ebuild:
+  Version bump. Cleanup old revisions.
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> libgee-0.6.4.ebuild:
+  alpha/ia64/sh/sparc stable wrt #410611
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> libgee-0.6.4.ebuild:
+  ppc stable wrt #410611
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> libgee-0.6.2.1.ebuild,
+  libgee-0.6.3.ebuild, libgee-0.6.4.ebuild, libgee-0.7.1.ebuild,
+  libgee-0.7.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> libgee-0.6.4.ebuild:
+  x86 stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> libgee-0.6.4.ebuild:
+  arm stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> libgee-0.6.4.ebuild:
+  Marking libgee-0.6.4 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> libgee-0.6.4.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> libgee-0.6.3.ebuild:
+  alpha/ia64/sh/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> libgee-0.6.3.ebuild:
+  Marking libgee-0.6.3 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> libgee-0.6.3.ebuild:
+  Marking libgee-0.6.3 ppc64 stable for bug 393007
+
+*libgee-0.7.2 (22 Jan 2012)
+*libgee-0.6.4 (22 Jan 2012)
+
+  22 Jan 2012; Pacho Ramos <pacho@gentoo.org> +libgee-0.6.4.ebuild,
+  +libgee-0.7.2.ebuild, -libgee-0.7.0.ebuild:
+  Version bump, drop old.
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> libgee-0.6.3.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> libgee-0.6.3.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> libgee-0.6.3.ebuild:
+  amd64 stable, bug 393007
+
+*libgee-0.6.3 (16 Nov 2011)
+
+  16 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -libgee-0.6.1.ebuild, +libgee-0.6.3.ebuild:
+  Bump, drop old. Notable changes: fixes buffer underflow in PriorityQueue.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> libgee-0.6.2.1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> libgee-0.6.2.1.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libgee-0.6.2.1.ebuild:
+  x86 stable wrt bug #385699
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> libgee-0.6.2.1.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libgee-0.6.2.1.ebuild:
+  amd64 stable wrt #385699
+
+*libgee-0.7.1 (26 Sep 2011)
+
+  26 Sep 2011; Pacho Ramos <pacho@gentoo.org> +libgee-0.7.1.ebuild:
+  Version bump.
+
+*libgee-0.6.2.1 (14 Sep 2011)
+
+  14 Sep 2011; Pacho Ramos <pacho@gentoo.org> +libgee-0.6.2.1.ebuild:
+  Version bump.
+
+*libgee-0.7.0 (08 Sep 2011)
+
+  08 Sep 2011; Gilles Dartiguelongue <eva@gentoo.org> -libgee-0.6.0.ebuild,
+  +libgee-0.7.0.ebuild:
+  Version bump.
+
+  06 Aug 2011; Zac Medico <zmedico@gentoo.org> libgee-0.6.1.ebuild:
+  Add ~x86-linux keyword.
 
   22 Mar 2011; Brent Baude <ranger@gentoo.org> libgee-0.6.1.ebuild:
   Marking libgee-0.6.1 ppc stable for bug 353436

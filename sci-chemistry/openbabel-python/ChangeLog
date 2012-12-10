@@ -1,6 +1,28 @@
 # ChangeLog for sci-chemistry/openbabel-python
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/openbabel-python/ChangeLog,v 1.5 2011/05/09 15:53:32 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/openbabel-python/ChangeLog,v 1.9 2012/12/06 17:09:30 jlec Exp $
+
+*openbabel-python-2.3.2 (06 Dec 2012)
+
+  06 Dec 2012; Justin Lecher <jlec@gentoo.org> +openbabel-python-2.3.2.ebuild,
+  +files/openbabel-python-2.3.2-bindings_only.patch,
+  +files/openbabel-python-2.3.2-testpybel.patch:
+  Version Bump prepared by Reinis Danne, #439434
+
+*openbabel-python-2.3.1 (04 Mar 2012)
+
+  04 Mar 2012; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.0.ebuild,
+  +openbabel-python-2.3.1.ebuild,
+  +files/openbabel-python-2.3.1-system_openbabel.patch:
+  Import Version Bump from sci overlay prepared by Reinis Danne; restrict pypy
+
+  14 Sep 2011; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.0.ebuild:
+  Corrected the right variable (DISTUTILS_SETUP_FILES) to an array, revert the
+  other (PYTHONMOD_NAME), thanks to Arfrever noticing the mistake
+
+  13 Sep 2011; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.0.ebuild,
+  metadata.xml:
+  Python.eclass wants an array
 
   09 May 2011; Justin Lecher <jlec@gentoo.org> openbabel-python-2.3.0.ebuild:
   Fix for Prefixed installation

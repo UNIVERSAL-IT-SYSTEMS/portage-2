@@ -1,6 +1,45 @@
 # ChangeLog for net-irc/smuxi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/smuxi/ChangeLog,v 1.15 2011/04/11 16:01:42 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/smuxi/ChangeLog,v 1.25 2012/12/07 05:03:48 phajdan.jr Exp $
+
+  07 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> smuxi-0.8.10.1.ebuild:
+  x86 stable wrt bug #435202
+
+  27 Oct 2012; Pacho Ramos <pacho@gentoo.org> smuxi-0.8.10.1.ebuild:
+  Drop buggy gconf dependency, bug #437724 by René 'Necoro' Neumann.
+
+  16 Sep 2012; Agostino Sarubbo <ago@gentoo.org> smuxi-0.8.10.1.ebuild:
+  Stable for amd64, wrt bug #435202
+
+*smuxi-0.8.10.1 (14 Sep 2012)
+
+  14 Sep 2012; Pacho Ramos <pacho@gentoo.org> +smuxi-0.8.10.1.ebuild,
+  -smuxi-0.8.9.2.ebuild:
+  Version bump, drop old.
+
+*smuxi-0.8.9.2 (30 Jun 2012)
+
+  30 Jun 2012; Pacho Ramos <pacho@gentoo.org> +smuxi-0.8.9.2.ebuild:
+  Version bump.
+
+  16 Jun 2012; Agostino Sarubbo <ago@gentoo.org> -smuxi-0.8.ebuild:
+  Remove old as requested by Pacho Ramos, <pacho@gentoo.org>
+
+  22 May 2012; Agostino Sarubbo <ago@gentoo.org> smuxi-0.8.9.1.ebuild:
+  Stable for amd64, wrt bug #407701
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> smuxi-0.8.ebuild,
+  smuxi-0.8.9.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Apr 2012; Markus Meier <maekke@gentoo.org> smuxi-0.8.9.1.ebuild:
+  x86 stable, bug #407701
+
+*smuxi-0.8.9.1 (08 Jan 2012)
+
+  08 Jan 2012; Pacho Ramos <pacho@gentoo.org> +smuxi-0.8.9.1.ebuild,
+  -smuxi-0.7.2.1.ebuild:
+  Version bump, remove old.
 
   11 Apr 2011; Christoph Mende <angelos@gentoo.org> smuxi-0.8.ebuild,
   +files/smuxi-0.8-release-build.patch, +files/smuxi-0.8-visibility.patch:
@@ -72,4 +111,3 @@
   31 Jan 2009; Peter Alfredsen <loki_val@gentoo.org>
   +files/smuxi-0.6.3-mono-2.2.patch, +metadata.xml, +smuxi-0.6.3.ebuild:
   Initial commit. Ebuild by me.
-

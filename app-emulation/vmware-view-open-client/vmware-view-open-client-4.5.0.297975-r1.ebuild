@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-view-open-client/vmware-view-open-client-4.5.0.297975-r1.ebuild,v 1.2 2011/07/25 10:35:12 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vmware-view-open-client/vmware-view-open-client-4.5.0.297975-r1.ebuild,v 1.4 2012/10/02 12:17:49 slyfox Exp $
 
 EAPI="4"
 
@@ -29,7 +29,7 @@ COMMON_DEPEND="
 
 DEPEND="${COMMON_DEPEND}
 	>=dev-util/intltool-0.21
-	>=dev-util/pkgconfig-0.9.0
+	virtual/pkgconfig
 "
 
 RDEPEND="${COMMON_DEPEND}
@@ -40,10 +40,12 @@ S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}-linking.patch" \
-		"${FILESDIR}"/${P}-curl-headers.patch
+		"${FILESDIR}"/${P}-curl-headers.patch \
+		"${FILESDIR}"/${P}-unbundle-intltool.patch
 	sed -e "s:e.x.p:$(get_version_component_range 1-3):" \
 		-e "s:00000:$(get_version_component_range 4):" \
 		-i configure.ac
+
 	AT_M4DIR="${AT_M4DIR} -I ${ROOT}/usr/share/aclocal" eautoreconf
 }
 

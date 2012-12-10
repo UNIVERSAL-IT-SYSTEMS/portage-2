@@ -1,6 +1,117 @@
 # ChangeLog for app-emulation/xen
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/ChangeLog,v 1.76 2011/07/29 22:41:29 patrick Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen/ChangeLog,v 1.100 2012/12/05 01:33:38 jer Exp $
+
+  05 Dec 2012; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  Change maintainer tag (bug #390951).
+
+  04 Dec 2012; Tomáš Chvátal <scarabeus@gentoo.org> xen-4.1.1-r2.ebuild:
+  This is supposed to be stable amd64 and x86. We do not remove stable keywords
+  just for fun.
+
+*xen-4.2.0 (05 Dec 2012)
+
+  05 Dec 2012; Ian Delaney <idella4@gentoo.org> +xen-4.2.0.ebuild,
+  -files/xen-3.3.0-unexported-target-fix.patch,
+  -files/xen-3.4.2-CVE-2011-1583.patch,
+  -files/xen-3.4.2-dump_registers-watchdog-fix.patch,
+  -files/xen-3.4.2-fix-__addr_ok-limit.patch, -files/xen-3.4.2-no-DMA.patch,
+  -files/xen-3.4.2-werror-idiocy.patch, xen-4.1.1-r2.ebuild:
+  bump and all that goes with it; note todo ovmf
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> xen-4.1.1-r2.ebuild:
+  tweak inherit so repoman can parse it, and inherit eutils for epatch
+
+  29 May 2012; Kacper Kowalik <xarthisius@gentoo.org> metadata.xml:
+  Use <description> field in order to provide more compact <name>
+
+  13 May 2012; Pacho Ramos <pacho@gentoo.org> -xen-3.4.2-r4.ebuild,
+  metadata.xml:
+  Drop old.
+
+  28 Nov 2011; Alexey Shvetsov <alexxy@gentoo.org> -xen-9999.ebuild:
+  Move xen-9999 to virtualization overlay
+
+  07 Nov 2011; Alexey Shvetsov <alexxy@gentoo.org> -xen-3.4.2-r3.ebuild,
+  xen-4.1.1-r2.ebuild:
+  Drop old one. And fix minor syntax issues
+
+  07 Nov 2011; Alexey Shvetsov <alexxy@gentoo.org> xen-4.1.1-r2.ebuild,
+  xen-4.1.2.ebuild:
+  adding of tc-getLD, prepared by Ian Delaney aka idella4
+
+  01 Nov 2011; Tony Vroon <chainsaw@gentoo.org> xen-4.1.1-r2.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Ian "idella4" Delaney in bug #360621.
+
+*xen-4.1.2 (25 Oct 2011)
+
+  25 Oct 2011; Alexey Shvetsov <alexxy@gentoo.org> +xen-4.1.2.ebuild:
+  Version bump prepared by Ian Delaney aka idella4
+
+  15 Oct 2011; Markos Chandras <hwoarang@gentoo.org> xen-3.4.2-r4.ebuild:
+  Stable on amd64 wrt bug #385319
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> xen-3.4.2-r4.ebuild:
+  x86 stable wrt bug #385319
+
+  13 Oct 2011; Alexey Shvetsov <alexxy@gentoo.org> -xen-3.4.2-r1.ebuild,
+  xen-4.1.1-r2.ebuild:
+  Drop old. Alternate fix to -Werror, fixes bug 362303, patch by Markus
+  Peloquin
+
+*xen-3.4.2-r4 (11 Oct 2011)
+
+  11 Oct 2011; Tony Vroon <chainsaw@gentoo.org> +xen-3.4.2-r4.ebuild,
+  +files/xen-3.4.2-CVE-2011-1583.patch,
+  +files/xen-3.4.2-fix-__addr_ok-limit.patch:
+  Patches by Ian "idella4" Delaney to address security bugs #385319 and
+  #386371.
+
+  29 Sep 2011; Thomas Kahle <tomka@gentoo.org> xen-3.4.2-r3.ebuild:
+  x86 stable per bug 379241
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org> xen-3.4.2-r3.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in security bug #379241.
+
+*xen-3.4.2-r3 (25 Sep 2011)
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org> -xen-3.4.2-r2.ebuild,
+  +xen-3.4.2-r3.ebuild, +files/xen-3.4.2-werror-idiocy.patch:
+  Patch by Ian "idella4" Delaney allows building on GCC 4.5 & 4.6; closes bug
+  #384361 by Agostino "ago" Sarubbo.
+
+  25 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> xen-4.1.1-r2.ebuild:
+  x86 stable wrt bug #360621
+
+  25 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> xen-4.1.1-r2.ebuild:
+  x86 stable wrt bug #360621
+
+*xen-3.4.2-r2 (21 Sep 2011)
+
+  21 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> +xen-3.4.2-r2.ebuild,
+  +files/xen-3.4.2-no-DMA.patch:
+  Security patch from xen-4 backported for xen-3 by Ian Delaney aka idell4
+
+*xen-4.1.1-r2 (18 Sep 2011)
+
+  18 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> -xen-4.1.1-r1.ebuild,
+  +xen-4.1.1-r2.ebuild, +files/xen-4.1.1-iommu_sec_fix.patch:
+  Fix bug #379241
+
+*xen-4.1.1-r1 (11 Sep 2011)
+
+  11 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> -xen-4.1.1.ebuild,
+  +xen-4.1.1-r1.ebuild, xen-9999.ebuild, metadata.xml:
+  Sync live ebuild with 4.1.1, drop acm since its deprecated upstream. Input
+  from Ian Delaney aka idell4
+
+  31 Aug 2011; Alexey Shvetsov <alexxy@gentoo.org> -xen-4.1.0.ebuild:
+  Drop old version
+
+  09 Aug 2011; Alexey Shvetsov <alexxy@gentoo.org> xen-9999.ebuild:
+  Sync 9999 and 4.1.1
 
 *xen-4.1.1 (29 Jul 2011)
 
@@ -368,4 +479,3 @@
   +files/xend-init, +files/xendomains-conf, +files/xendomains-init,
   +metadata.xml, +xen-2.0.7.ebuild, +xen-3.0.0_pre20050906.ebuild:
   New package. Thanks to the many who contributed in bug #70161.
-

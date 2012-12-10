@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/exiv2/exiv2-0.21.1-r1.ebuild,v 1.1 2011/07/09 23:46:14 sbriesen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/exiv2/exiv2-0.21.1-r1.ebuild,v 1.7 2012/07/02 21:51:47 sbriesen Exp $
 
-EAPI="2"
+EAPI=3
 PYTHON_DEPEND="2"
 
 inherit eutils multilib toolchain-funcs python
@@ -13,7 +13,7 @@ SRC_URI="http://www.exiv2.org/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~x86-fbsd"
 IUSE="contrib doc examples nls xmp zlib"
 IUSE_LINGUAS="de es fi fr pl ru sk"
 IUSE="${IUSE} $(printf 'linguas_%s ' ${IUSE_LINGUAS})"
@@ -29,7 +29,7 @@ DEPEND="${RDEPEND}
 	doc? (
 		app-doc/doxygen
 		dev-libs/libxslt
-		dev-util/pkgconfig
+		virtual/pkgconfig
 		media-gfx/graphviz
 	)
 	nls? ( sys-devel/gettext )
@@ -81,7 +81,9 @@ src_configure() {
 		use amd64 && myconf="${myconf} --disable-visibility"
 	fi
 
-	econf ${myconf}
+	econf \
+		--disable-static \
+		${myconf}
 }
 
 src_compile() {
@@ -101,6 +103,8 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+
+	find "${ED}" -name '*.la' -exec rm -f {} +
 
 	if use contrib; then
 		emake DESTDIR="${D}" -C contrib/organize install || die "emake install organize failed"

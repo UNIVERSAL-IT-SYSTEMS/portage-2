@@ -1,6 +1,31 @@
 # ChangeLog for sci-chemistry/molmol
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/molmol/ChangeLog,v 1.26 2011/07/15 20:37:54 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/molmol/ChangeLog,v 1.32 2012/10/24 19:32:20 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> molmol-2k_p2-r2.ebuild,
+  molmol-2k_p2-r3.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+*molmol-2k_p2-r3 (05 Aug 2012)
+
+  05 Aug 2012; Justin Lecher <jlec@gentoo.org> molmol-2k_p2-r2.ebuild,
+  +molmol-2k_p2-r3.ebuild, +files/molmol-2k_p2-fink.patch:
+  Add patch from fink, enhances code style and fixes OGL bug, #429974
+
+  17 Feb 2012; Justin Lecher <jlec@gentoo.org> molmol-2k_p2-r2.ebuild:
+  Add altenative dependency on libGLw
+
+  16 Nov 2011; Justin Lecher <jlec@gentoo.org> molmol-2k_p2-r2.ebuild:
+  Corrected Slotting of media-libs/libpng and media-libs/tiff
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> -molmol-2k_p2.ebuild,
+  molmol-2k_p2-r2.ebuild:
+  ppc stable wrt #373091, drop old
+
+  14 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> +files/libpng15.patch,
+  molmol-2k_p2-r2.ebuild:
+  Fix building with libpng15 wrt #378341 by Diego Elio Pettenò
 
   15 Jul 2011; Markus Meier <maekke@gentoo.org> molmol-2k_p2-r2.ebuild:
   x86 stable, bug #373091

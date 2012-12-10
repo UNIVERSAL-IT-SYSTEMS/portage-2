@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/mscgen/mscgen-0.18.ebuild,v 1.1 2010/11/02 19:13:34 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/mscgen/mscgen-0.18.ebuild,v 1.3 2012/09/29 11:59:54 pinkbyte Exp $
 
 EAPI=2
 inherit autotools eutils
@@ -16,9 +16,12 @@ IUSE="png truetype"
 
 RDEPEND="png? (	media-libs/gd[png,truetype?] )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/bison
 	sys-devel/flex"
+
+# Workaround for bug #379279
+RESTRICT="test"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-pkg.patch

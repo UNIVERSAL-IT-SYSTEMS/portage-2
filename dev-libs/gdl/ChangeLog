@@ -1,6 +1,65 @@
 # ChangeLog for dev-libs/gdl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/gdl/ChangeLog,v 1.64 2011/07/24 14:05:31 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/gdl/ChangeLog,v 1.81 2012/10/28 15:40:03 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> gdl-3.4.2.ebuild:
+  ia64/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gdl-3.4.2.ebuild:
+  stable ppc, bug #427544
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> gdl-3.4.2.ebuild:
+  Stable on alpha, bug 427544.
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gdl-3.4.2.ebuild:
+  stable ppc64, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gdl-3.4.2.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gdl-3.4.2.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> gdl-3.4.2.ebuild:
+  Stable for HPPA (bug #427544).
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> gdl-3.2.0.ebuild:
+  alpha/ia64/sparc stable wrt #410611
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> gdl-3.2.0.ebuild:
+  ppc stable wrt #410611
+
+*gdl-3.4.2 (22 May 2012)
+
+  22 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -gdl-3.0.2.ebuild,
+  +gdl-3.4.2.ebuild:
+  Version bump for gnome-3.4. Drop old.
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> gdl-3.2.0.ebuild:
+  Stable for HPPA (bug #410611).
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gdl-2.30.1.ebuild,
+  gdl-3.0.2.ebuild, gdl-3.2.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gdl-3.2.0.ebuild:
+  x86 stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> gdl-3.2.0.ebuild:
+  Marking gdl-3.2.0 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gdl-3.2.0.ebuild:
+  Stable for amd64, wrt bug #410611
+
+*gdl-3.2.0 (30 Oct 2011)
+
+  30 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> +gdl-3.2.0.ebuild:
+  Bump to 3.2.0 from the gnome overlay. Notable changes: updates for gtk+-3.2.
+
+  26 Sep 2011; Pacho Ramos <pacho@gentoo.org> -gdl-3.0.0.ebuild,
+  -gdl-3.0.1.ebuild, gdl-3.0.2.ebuild:
+  Handle introspection USE flag properly (bug #383635 by optiluca and fix by
+  Alexandre Rostovtsev), remove old.
 
 *gdl-3.0.2 (24 Jul 2011)
 
@@ -246,4 +305,3 @@
   29 Jun 2006; Martin Schlemmer <azarah@gentoo.org> +metadata.xml,
   +gdl-0.6.1.ebuild:
   Import.  Only saw bug #8561 after I added, so imported some changes.
-

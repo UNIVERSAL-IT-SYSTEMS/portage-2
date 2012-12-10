@@ -1,6 +1,75 @@
 # ChangeLog for www-apps/rt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/rt/ChangeLog,v 1.60 2011/07/08 10:23:32 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apps/rt/ChangeLog,v 1.76 2012/11/17 13:12:39 blueness Exp $
+
+*rt-4.0.8 (17 Nov 2012)
+*rt-3.8.15 (17 Nov 2012)
+
+  17 Nov 2012; Anthony G. Basile <blueness@gentoo.org> +rt-3.8.15.ebuild,
+  +rt-4.0.8.ebuild:
+  Version bump for security, bug #417269
+
+  20 Mar 2012; Tim Harder <radhermit@gentoo.org> -rt-3.6.7.ebuild,
+  -rt-3.8.10.ebuild, -rt-3.8.10-r1.ebuild, -files/rt.conf.d, -files/rt.init.d:
+  Remove old.
+
+  02 Mar 2012; Tim Harder <radhermit@gentoo.org> files/config.layout-gentoo:
+  Add missing directory to install layout (bug #406635 by Akos Szalkai).
+
+*rt-3.8.11 (01 Mar 2012)
+
+  01 Mar 2012; Tim Harder <radhermit@gentoo.org> +rt-3.8.11.ebuild:
+  Version bump (fixes bug #397361).
+
+  01 Mar 2012; Tim Harder <radhermit@gentoo.org> rt-4.0.5.ebuild:
+  Use newer init script.
+
+*rt-4.0.5 (01 Mar 2012)
+
+  01 Mar 2012; Tim Harder <radhermit@gentoo.org> +rt-4.0.5.ebuild:
+  Version bump thanks to Eric Martin (fixes bug #235914).
+
+  18 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org> rt-3.8.10-r1.ebuild:
+  Avoid using parallel make for install, as it has race conditions.
+
+*rt-3.8.10-r1 (18 Nov 2011)
+
+  18 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org> +files/rt.conf.d.2,
+  +files/rt.init.d.2, +rt-3.8.10-r1.ebuild:
+  Add a new revision with revised (no pun intended) init script, so that it
+  actually seem to work and won't get stuck in an infinite loop if it fails to
+  start.
+
+  02 Nov 2011; Mike Frysinger <vapier@gentoo.org> rt-3.6.7.ebuild,
+  rt-3.8.10.ebuild:
+  Do not hide output of enew{group,user} from the user.
+
+  05 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> rt-3.8.10.ebuild:
+  Add another missing dependency.
+
+  05 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  files/config.layout-gentoo:
+  QA: fix missing fontdir definition in layout.
+
+  05 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> rt-3.8.10.ebuild:
+  QA: calculate configuration only once to make sure that the dependency check
+  and the actual configuration are in sync; this should address bug #385595.
+
+  04 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> rt-3.6.7.ebuild:
+  ppc keywords dropped wrt #385591
+
+  04 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> rt-3.8.10.ebuild:
+  QA: add the other three missing dependencies, drop ~ppc keyword as the
+  packages are not keyworded.
+
+  04 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> rt-3.8.10.ebuild:
+  QA: fix two dependencies on minimum version requirement (see bug #385591).
+
+*rt-3.8.10 (02 Oct 2011)
+
+  02 Oct 2011; Peter Volkov <pva@gentoo.org> +rt-3.8.10.ebuild, metadata.xml:
+  Version bump, bug 371467235914 thank Eric Martin for this job. Fixes multiple
+  vulnerabilities, bug #371467 wrt GLSAMaker/CVETool Bot.
 
   08 Jul 2011; Samuli Suominen <ssuominen@gentoo.org> rt-3.6.7.ebuild:
   Convert from "useq" to "use".
@@ -260,4 +329,3 @@
   Initial ebuild (bug #54764). Many thanks to Josiah Ritchie
   <jritchie@bible.edu>, steveb, mphilips, and others who did a lot of the
   groundwork and wrote ebuilds.
-

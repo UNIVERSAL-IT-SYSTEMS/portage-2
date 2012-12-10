@@ -1,6 +1,15 @@
 # ChangeLog for app-pda/fusepod
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-pda/fusepod/ChangeLog,v 1.1 2011/03/30 15:42:33 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-pda/fusepod/ChangeLog,v 1.4 2012/08/16 22:00:53 johu Exp $
+
+  16 Aug 2012; Johannes Huber <johu@gentoo.org> fusepod-0.5.2.ebuild:
+  Stable for x86, wrt bug #423155
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> fusepod-0.5.2.ebuild:
+  Stable for amd64, wrt bug #423155
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> fusepod-0.5.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
 *fusepod-0.5.2 (30 Mar 2011)
 

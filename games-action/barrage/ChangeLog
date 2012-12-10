@@ -1,6 +1,21 @@
 # ChangeLog for games-action/barrage
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/barrage/ChangeLog,v 1.19 2011/07/29 03:17:04 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-action/barrage/ChangeLog,v 1.23 2012/01/10 20:36:24 ranger Exp $
+
+  10 Jan 2012; Brent Baude <ranger@gentoo.org> barrage-1.0.4.ebuild:
+  Marking barrage-1.0.4 ppc for bug 381501
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> barrage-1.0.2-r1.ebuild,
+  barrage-1.0.4.ebuild:
+  Drop sparc keywords
+
+  04 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> barrage-1.0.4.ebuild:
+  x86 stable wrt bug #381501
+
+  02 Sep 2011; Tony Vroon <chainsaw@gentoo.org> barrage-1.0.4.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "ago" Sarubbo in bug #381501 filed by Michael "Mr. Bones"
+  Sterrett.
 
 *barrage-1.0.4 (29 Jul 2011)
 

@@ -1,6 +1,90 @@
 # ChangeLog for net-misc/rsync
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/rsync/ChangeLog,v 1.213 2011/04/02 14:30:36 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/rsync/ChangeLog,v 1.236 2012/11/18 13:57:10 ago Exp $
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> -rsync-3.0.7-r2.ebuild,
+  -rsync-3.0.7.ebuild:
+  Remove old
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> rsync-3.0.9-r2.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #431852
+
+  20 Aug 2012; Jeroen Roovers <jer@gentoo.org> rsync-3.0.9-r2.ebuild:
+  Stable for HPPA (bug #431852).
+
+  19 Aug 2012; Anthony G. Basile <blueness@gentoo.org> rsync-3.0.9-r2.ebuild:
+  Stable ppc ppc64, bug #431852
+
+  19 Aug 2012; Johannes Huber <johu@gentoo.org> rsync-3.0.9-r2.ebuild:
+  Stable for x86, wrt bug #431852
+
+  19 Aug 2012; Anthony G. Basile <blueness@gentoo.org> rsync-3.0.9-r2.ebuild:
+  Stable arm, bug #431852
+
+  19 Aug 2012; Agostino Sarubbo <ago@gentoo.org> rsync-3.0.9-r2.ebuild:
+  Stable for amd64, wrt bug #431852
+
+  18 Aug 2012; Mike Frysinger <vapier@gentoo.org> rsync-3.0.9-r2.ebuild,
+  rsync-3.0.9.ebuild:
+  Revert wrong perl change.
+
+  30 Jun 2012; Fabian Groffen <grobian@gentoo.org> rsync-3.0.9-r2.ebuild:
+  Fix elementary Prefix error using ED for DESTDIR in make install.
+
+  29 Jun 2012; Mike Frysinger <vapier@gentoo.org> rsync-3.0.9-r2.ebuild,
+  rsync-3.0.9.ebuild:
+  Avoid regenerating proto.h which requires perl -- the shipped one should work
+  in all places we care about #421625 by László Szalma.
+
+  25 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org> rsync-3.0.9-r2.ebuild,
+  rsync-3.0.9.ebuild:
+  Add dependency over dev-lang/perl at build time.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> rsync-3.0.9-r2.ebuild:
+  keyword ~amd64-fbsd
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> rsync-3.0.9.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #406055
+
+*rsync-3.0.9-r2 (22 Mar 2012)
+
+  22 Mar 2012; Christian Ruppert <idl0r@gentoo.org> -rsync-3.0.9-r1.ebuild,
+  +rsync-3.0.9-r2.ebuild, +files/rsyncd.init.d-r1:
+  Simplify the init script.
+
+  15 Mar 2012; Markus Meier <maekke@gentoo.org> rsync-3.0.9.ebuild:
+  arm stable, bug #406055
+
+  05 Mar 2012; Mike Frysinger <vapier@gentoo.org> rsync-3.0.9-r1.ebuild:
+  Make sure libs we build against have USE=static-libs enabled when we have
+  USE=static #406109 by Jeff Horelick.
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> rsync-3.0.9.ebuild:
+  Marking rsync-3.0.9 ppc64 for bug 406055
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> rsync-3.0.9.ebuild:
+  Marking rsync-3.0.9 ppc for bug 406055
+
+  29 Feb 2012; Agostino Sarubbo <ago@gentoo.org> rsync-3.0.9.ebuild:
+  Stable for amd64, wrt bug #406055
+
+*rsync-3.0.9-r1 (28 Feb 2012)
+
+  28 Feb 2012; Jeremy Olexa <darkside@gentoo.org> +files/rsyncd.conf-3.0.9-r1,
+  +files/rsyncd.xinetd-3.0.9-r1, +rsync-3.0.9-r1.ebuild:
+  revision bump to support Gentoo Prefix. EAPI, KEYWORDS, EPREFIX/ED/EROOT
+  usage, new files in FILESDIR. Bug 406061
+
+  28 Feb 2012; Jeroen Roovers <jer@gentoo.org> rsync-3.0.9.ebuild:
+  Stable for HPPA (bug #406055).
+
+  28 Feb 2012; Jeff Horelick <jdhore@gentoo.org> rsync-3.0.9.ebuild:
+  marked x86 per bug 406055
+
+*rsync-3.0.9 (30 Oct 2011)
+
+  30 Oct 2011; Mike Frysinger <vapier@gentoo.org> +rsync-3.0.9.ebuild:
+  Version bump #387999 by Kilburn Abrahams.
 
   02 Apr 2011; Raúl Porcel <armin76@gentoo.org> rsync-3.0.8.ebuild:
   alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #360891

@@ -1,6 +1,42 @@
 # ChangeLog for app-arch/unshield
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/unshield/ChangeLog,v 1.19 2011/02/27 10:34:25 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/unshield/ChangeLog,v 1.28 2012/05/21 09:41:33 ssuominen Exp $
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> -unshield-0.6.ebuild:
+  old
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  unshield-0.6_p20120308.ebuild:
+  x86 stable wrt bug #415599
+
+  14 May 2012; Agostino Sarubbo <ago@gentoo.org> unshield-0.6_p20120308.ebuild:
+  Stable for amd64, wrt bug #415599
+
+  12 May 2012; Samuli Suominen <ssuominen@gentoo.org> -unshield-0.5-r1.ebuild,
+  -files/unshield-0.5-amd64.patch:
+  old
+
+  21 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> unshield-0.6.ebuild:
+  x86 stable wrt #407375
+
+  21 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  unshield-0.6_p20120308.ebuild:
+  Use gentoo mirrors.
+
+  11 Mar 2012; Agostino Sarubbo <ago@gentoo.org> unshield-0.6.ebuild:
+  Stable for amd64, wrt bug #407375
+
+  08 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  unshield-0.6_p20120308.ebuild:
+  Pass --with-ssl to use dev-libs/openssl because otherwise unshield will
+  fallback to internal copy of MD5.
+
+*unshield-0.6_p20120308 (08 Mar 2012)
+
+  08 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +unshield-0.6_p20120308.ebuild, +files/unshield-bootstrap.patch:
+  Upstream snapshot to include support for some IS installers wrt #361971 by
+  Roberto Castagnola
 
   27 Feb 2011; Samuli Suominen <ssuominen@gentoo.org> unshield-0.6.ebuild:
   USE="static-libs" and remove libunshield.la in favour of libunshield.pc.

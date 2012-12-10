@@ -1,6 +1,65 @@
 # ChangeLog for sci-astronomy/celestia
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/celestia/ChangeLog,v 1.71 2011/07/16 17:47:20 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/celestia/ChangeLog,v 1.86 2012/08/05 14:56:28 bicatali Exp $
+
+  05 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> celestia-1.6.1.ebuild,
+  metadata.xml:
+  Force depend on lua < 5.2 (bug #407093, thanks Nils Larsson)
+
+  03 Jun 2012; Justin Lecher <jlec@gentoo.org> celestia-1.6.1.ebuild,
+  +files/celestia-1.6.1-gcc47.patch:
+  Add patch for gcc47, #414015
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> celestia-1.6.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> celestia-1.6.1.ebuild:
+  Pax mark m main binary wrt bug 365359 by Nikoli <nikoli@lavabit.com>
+
+  04 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  files/celestia-1.6.1-linking.patch:
+  Allow to use theora with glut wrt #399237 by <boxcars@gmx.net>
+
+  01 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> celestia-1.6.1.ebuild,
+  -files/celestia-1.6.1-as-needed.patch, -files/celestia-1.6.1-gold.patch,
+  +files/celestia-1.6.1-linking.patch,
+  -files/celestia-1.6.1-underlinking.patch:
+  Combine all patches fixing linking issues into one
+
+  31 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -files/celestia-1.4.1-as-needed.patch, -files/celestia-1.5.1-gcc44.patch,
+  -celestia-1.6.0.ebuild, -files/celestia-1.6.0-gcc45.patch,
+  -files/celestia-1.6.0-kde-3.5.patch, -files/celestia-1.6.0-libpng14.patch,
+  -files/celestia-1.6.0-parallel_install.patch:
+  old
+
+  31 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org> celestia-1.6.1.ebuild,
+  +files/celestia-1.6.1-underlinking.patch:
+  Another underlinking fix, bug 387609
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> celestia-1.6.0.ebuild,
+  celestia-1.6.1.ebuild:
+  Drop sparc keywords
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> celestia-1.6.1.ebuild:
+  ppc stable wrt #385985
+
+  11 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> celestia-1.6.1.ebuild:
+  ppc64 stable wrt #385985
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> celestia-1.6.1.ebuild:
+  x86 stable wrt bug #385985
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> celestia-1.6.1.ebuild:
+  amd64 stable wrt #385985
+
+  07 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> celestia-1.6.1.ebuild,
+  +files/celestia-1.6.1-libpng15.patch:
+  Include zlib.h for Z_BEST_COMPRESSION (required by libpng15 porting) wrt
+  #355079 by Lars Wendler
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Switched herd to sci-astronomy
 
   16 Jul 2011; Justin Lecher <jlec@gentoo.org> celestia-1.6.0.ebuild,
   celestia-1.6.1.ebuild, +files/celestia-1.6.1-gold.patch, metadata.xml:
@@ -457,5 +516,3 @@
   13 Apr 2002; Bruce A. Locke <blocke@shivan.org> celestia-1.2.2.ebuild:
 
   Celestia added to Gentoo
-
-

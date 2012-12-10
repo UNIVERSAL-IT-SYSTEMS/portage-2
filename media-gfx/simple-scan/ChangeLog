@@ -1,6 +1,49 @@
 # ChangeLog for media-gfx/simple-scan
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/simple-scan/ChangeLog,v 1.9 2011/06/14 11:47:10 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/simple-scan/ChangeLog,v 1.19 2012/10/04 14:56:23 ago Exp $
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> simple-scan-3.4.2.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  simple-scan-3.4.2.ebuild:
+  x86 stable wrt bug #427544
+
+*simple-scan-3.4.2 (17 Jul 2012)
+
+  17 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  simple-scan-3.2.1.ebuild, +simple-scan-3.4.2.ebuild:
+  Version bump with various bugfixes.
+
+  17 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -files/simple-scan-2.31.90.2-support-non-pkgconfig-zlib.patch,
+  simple-scan-2.32.0.2.ebuild, simple-scan-3.2.1.ebuild:
+  Drop useless support for ancient zlib to avoid autoreconf. As a side effect,
+  fixes bug #423705.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> simple-scan-2.32.0.2.ebuild,
+  simple-scan-3.2.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> simple-scan-3.2.1.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> simple-scan-3.2.1.ebuild:
+  amd64 stable, bug 393007
+
+*simple-scan-3.2.1 (16 Nov 2011)
+
+  16 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org>
+  +simple-scan-3.2.1.ebuild:
+  Version bump. Port to gnome3 stack.
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  simple-scan-2.32.0.2.ebuild:
+  x86 stable wrt bug #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  simple-scan-2.32.0.2.ebuild:
+  amd64 stable wrt #385699
 
   14 Jun 2011; Nirbheek Chauhan <nirbheek@gentoo.org> metadata.xml:
   Now maintained by gnome team, not just me.

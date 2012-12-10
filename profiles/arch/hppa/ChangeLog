@@ -1,6 +1,174 @@
 # ChangeLog for Gentoo/hppa profile
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/hppa/ChangeLog,v 1.120 2011/07/31 16:29:32 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/hppa/ChangeLog,v 1.174 2012/11/24 21:38:12 floppym Exp $
+
+  24 Nov 2012; Mike Gilbert <floppym@gentoo.org> use.mask:
+  Mask python_single_target values not supported on this arch.
+
+  20 Nov 2012; Michał Górny <mgorny@gentoo.org> use.mask:
+  Introduce a complete PYTHON_TARGETS mask wrt bug #440616.
+
+  15 Nov 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=fdk (bug #442806).
+
+  13 Nov 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=python_targets_pypy1_{8,9}.
+
+  16 Oct 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=realtime too (bug #438368).
+
+  16 Oct 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=colord too (bug #438368).
+
+  15 Oct 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=policykit too (bug #438368).
+
+  15 Oct 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=consolekit (bug #438368).
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Unmask USE=python3 for sys-apps/portage.
+
+  25 Jul 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Put all the video_cards in one place, sort them.
+
+  25 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> use.mask:
+  Mask video_cards_radeonsi, bug #427956.
+
+  10 Jul 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=clang for app-portage/eix (bug #425494).
+
+  08 Jul 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=devil for graphviz instead.
+
+  08 Jul 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=nvtt for media-libs/devil (bug #419621).
+
+  05 Jul 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Revert that, SLOTs are not allowed.
+
+  04 Jul 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Specify dev-libs/libnl version.
+
+  04 Jul 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=doc for dev-libs/libnl since media-gfx/mscgen does not work on HPPA
+  (bug #419987).
+
+  04 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> make.defaults:
+  Remove reference to USE="xulrunner" wrt #424617
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=connman for net-libs/gupnp (bug #424225).
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Oh, seems we already had this one.
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=gptfdisk for sys-fs/udisks (bug #412801).
+
+  14 Jun 2012; Davide Pesavento <pesa@gentoo.org> package.use.mask:
+  Remove redundant mask of USE=jit for qt-script, now masked in base profile.
+
+  01 Jun 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=jit for dev-libs/libpcre by Dakon.
+
+  29 May 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Move one use.mask entry from default/linux/hppa to here.
+
+  24 May 2012; Arun Raghavan <ford_prefect@gentoo.org> package.use.mask:
+  Mask media-sound/pulseaudio[equalizer] till PyQt4 is available on hppa.
+
+  23 May 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=gptfdisk (bug #412801).
+
+  21 May 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=test for app-text/asciidoc (bug #416961). Fix some earlier entry
+  dates.
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Remove USE=doc mask for net-misc/dibbler.
+
+  15 May 2012; Jeroen Roovers <jer@gentoo.org> make.defaults:
+  Remove dev-lang/python:3* specific targets.
+
+  15 May 2012; Mike Gilbert <floppym@gentoo.org> make.defaults:
+  Default PYTHON_TARGETS should include python-3 for arches where it is stable.
+  See bug 415575.
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=connman for x11-libs/qt-bearer (bug #412915).
+
+  25 Apr 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=systemd.
+
+  21 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Mask USE="gdm" because USE="new-login" is masked too for
+  x11-misc/xscreensaver.
+
+  19 Apr 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=udev for xfce-extra/xfce4-systemload-plugin (bug #412627).
+
+  04 Apr 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=vlc.
+
+  28 Mar 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=ibus (bug #404901).
+
+  08 Mar 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=crashreporter (bug #406233).
+
+  03 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Remove USE="libffi" mask for sys-devel/gcc because the flag is gone wrt
+  #354903
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> package.use.force:
+  Remove deprecated USE=nptlonly by Mr. Anderson (bug #405875).
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Mask wayland USE flag.
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Mask d3d USE flag.
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Add new video_cards_* to use.mask. Also remove dead radeonhd mask.
+
+  31 Jan 2012; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask dev-libs/libowfat diet so we can re-keyword it.
+
+  19 Jan 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=dvb.
+
+  04 Jan 2012; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=bluray (bug #397531).
+
+  06 Dec 2011; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=vdpau for media-video/ffmpeg (bug #392269).
+
+  10 Nov 2011; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=xattr for the same reason (bug #212517).
+
+  10 Nov 2011; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Update mask reason (bug #212517).
+
+  31 Oct 2011; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=nsplugin for app-admin/packagekit-base.
+
+  25 Oct 2011; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=connman for app-admin/packagekit-base (bug #387959).
+
+  25 Oct 2011; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=entropy for app-admin/packagekit-base (bug #387959).
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Remove old USE masks.
+
+  15 Sep 2011; Jeroen Roovers <jer@gentoo.org> use.mask:
+  Mask USE=prelude. Correct a previous entry.
+
+  04 Sep 2011; Robin H. Johnson <robbat2@gentoo.org> package.use.mask:
+  Bug #381737: block dev-libs/libmemcached[tcmalloc] until
+  dev-utils/google-perftools is keyworded (and virtual/gsasl on hppa/arm).
 
   31 Jul 2011; Jeroen Roovers <jer@gentoo.org> package.use.mask:
   Remove obsolete entries thanks to mattst88.

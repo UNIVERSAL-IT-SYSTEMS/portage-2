@@ -1,6 +1,52 @@
 # ChangeLog for sci-chemistry/ccp4-apps
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ccp4-apps/ChangeLog,v 1.28 2011/07/16 12:43:00 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ccp4-apps/ChangeLog,v 1.39 2012/10/19 09:41:15 jlec Exp $
+
+  19 Oct 2012; Justin Lecher <jlec@gentoo.org> ccp4-apps-6.1.3-r11.ebuild:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+*ccp4-apps-6.1.3-r11 (31 Aug 2012)
+
+  31 Aug 2012; Justin Lecher <jlec@gentoo.org> -ccp4-apps-6.1.3-r10.ebuild,
+  +ccp4-apps-6.1.3-r11.ebuild:
+  Rename all manpages in order to avoid conflicts with other packages, #429410
+
+  01 Jun 2012; Justin Lecher <jlec@gentoo.org> files/6.1.3-lapack.patch,
+  ccp4-apps-6.1.3-r10.ebuild:
+  add missing die, don't rely on lapack -> blas dep chain
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> -ccp4-apps-6.1.3-r9.ebuild,
+  ccp4-apps-6.1.3-r10.ebuild:
+  Drop old
+
+  14 Apr 2012; Andreas Schuerch <nativemad@gentoo.org>
+  ccp4-apps-6.1.3-r10.ebuild:
+  x86 stable, see bug 375917, thanks all.
+
+  03 Apr 2012; Justin Lecher <jlec@gentoo.org> ccp4-apps-6.1.3-r10.ebuild:
+  fix for some unknown issue resulting in #406337, thanks Andreas Schürch for
+  the initial idea of the fix
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  ccp4-apps-6.1.3-r10.ebuild:
+  amd64 restable
+
+  08 Oct 2011; Justin Lecher <jlec@gentoo.org> ccp4-apps-6.1.3-r9.ebuild,
+  ccp4-apps-6.1.3-r10.ebuild:
+  Drop dep on dev-tcltk/tkimg
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  ccp4-apps-6.1.3-r10.ebuild:
+  Revert back to ~arch for security and libpng porting.
+
+  06 Oct 2011; Tony Vroon <chainsaw@gentoo.org> ccp4-apps-6.1.3-r10.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #351753.
+
+  15 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  ccp4-apps-6.1.3-r10.ebuild:
+  Marked ~ppc for sci-chemistry/pointless
 
 *ccp4-apps-6.1.3-r10 (16 Jul 2011)
 

@@ -1,6 +1,18 @@
 # ChangeLog for x11-drivers/xf86-input-tslib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-input-tslib/ChangeLog,v 1.40 2011/05/08 12:33:38 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-input-tslib/ChangeLog,v 1.43 2012/06/08 13:58:00 pacho Exp $
+
+  08 Jun 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer from metadata as talked with him.
+
+  18 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/xf86-input-tslib-port-ABI-12-r48.patch,
+  xf86-input-tslib-0.0.6-r2.ebuild:
+  Import Debian patch to fix build failure against recent xorg-server, bug
+  #368689.
+
+  07 Feb 2012; Angelo Arrifano <miknix@gentoo.org> metadata.xml:
+  Remove myself as maintainer.
 
   08 May 2011; Tomáš Chvátal <scarabeus@gentoo.org>
   xf86-input-tslib-0.0.6-r2.ebuild:

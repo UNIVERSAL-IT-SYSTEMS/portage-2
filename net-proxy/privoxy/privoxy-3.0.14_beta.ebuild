@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/privoxy/privoxy-3.0.14_beta.ebuild,v 1.2 2010/01/23 18:32:42 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/privoxy/privoxy-3.0.14_beta.ebuild,v 1.4 2012/05/23 22:56:23 vapier Exp $
 
 EAPI="2"
 
-inherit eutils toolchain-funcs autotools
+inherit eutils toolchain-funcs autotools user
 
 [ "${PV##*_}" = "beta" ] &&
 	PRIVOXY_STATUS="beta" ||
@@ -36,7 +36,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-gentoo.patch
 	# autoreconf needs to be called even if we don't modify any autotools source files
 	# See main makefile
-	eautoreconf || die "eautoreconf failed"
+	eautoreconf
 }
 
 src_configure() {
@@ -48,8 +48,7 @@ src_configure() {
 		--with-user=privoxy \
 		--with-group=privoxy \
 		--sysconfdir=/etc/privoxy \
-		--docdir=/usr/share/doc/${PF} \
-		|| die "econf failed"
+		--docdir=/usr/share/doc/${PF}
 }
 
 src_install () {

@@ -1,6 +1,26 @@
 # ChangeLog for media-gfx/scantailor
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/scantailor/ChangeLog,v 1.4 2011/07/31 18:31:24 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/scantailor/ChangeLog,v 1.9 2012/03/26 03:09:45 radhermit Exp $
+
+*scantailor-0.9.11.1 (26 Mar 2012)
+
+  26 Mar 2012; Tim Harder <radhermit@gentoo.org> +scantailor-0.9.11.1.ebuild:
+  Version bump.
+
+  07 Dec 2011; Tim Harder <radhermit@gentoo.org> scantailor-0.9.10.ebuild:
+  Remove extra whitespace.
+
+  07 Dec 2011; Tim Harder <radhermit@gentoo.org> scantailor-0.9.10.ebuild:
+  Use virtualx eclass for tests requiring X.
+
+  06 Dec 2011; Tim Harder <radhermit@gentoo.org> -scantailor-0.9.9.ebuild,
+  -scantailor-0.9.9.2.ebuild, metadata.xml:
+  Remove old.
+
+  06 Dec 2011; Tim Harder <radhermit@gentoo.org> +files/scantailor-gcc46.patch,
+  scantailor-0.9.10.ebuild:
+  Fix build issue with gcc-4.6 and newer boost versions (bug #391427 by
+  Oschtan) and skip tests requiring X (bug #325813).
 
 *scantailor-0.9.10 (31 Jul 2011)
 

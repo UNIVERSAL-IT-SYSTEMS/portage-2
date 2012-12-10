@@ -1,6 +1,40 @@
 # ChangeLog for app-admin/tenshi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/tenshi/ChangeLog,v 1.63 2011/06/16 17:23:13 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/tenshi/ChangeLog,v 1.73 2012/08/04 09:07:53 maksbotan Exp $
+
+  04 Aug 2012; Maxim Koltsov <maksbotan@gentoo.org> metadata.xml:
+  Use proper herd name in metadata.xml
+
+  08 Jun 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Add Brian De Wolf <bldewolf@csupomona.edu> as maintainer
+
+*tenshi-0.14 (07 Jun 2012)
+
+  07 Jun 2012; Michael Weber <xmw@gentoo.org> +tenshi-0.14.ebuild:
+  Version bump (bug 420003 by Brian De Wolf)
+
+  31 May 2012; Zac Medico <zmedico@gentoo.org> tenshi-0.12.ebuild:
+  inherit user for enewgroup and enewuser
+
+  09 May 2012; Agostino Sarubbo <ago@gentoo.org> -tenshi-0.10-r3.ebuild:
+  Remove old
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> tenshi-0.12.ebuild:
+  x86 stable wrt bug #396759
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> tenshi-0.10-r3.ebuild,
+  tenshi-0.12.ebuild:
+  Drop sparc keywords
+
+  04 Mar 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/tenshi-openrc-init-r1.patch, tenshi-0.12.ebuild:
+  Fix init.d script, bug 398987 by Adam James.
+
+  05 Feb 2012; Brent Baude <ranger@gentoo.org> tenshi-0.12.ebuild:
+  Marking tenshi-0.12 ppc for bug 396759
+
+  02 Feb 2012; Agostino Sarubbo <ago@gentoo.org> tenshi-0.12.ebuild:
+  Stable for amd64, wrt bug #396759
 
 *tenshi-0.12 (16 Jun 2011)
 
@@ -257,4 +291,3 @@
 
   15 Jul 2004; Rob Holland <tigger@gentoo.org> +tenshi-0.3.ebuild:
   Initial commit of tenshi
-

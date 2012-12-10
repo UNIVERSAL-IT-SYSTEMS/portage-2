@@ -1,6 +1,35 @@
 # ChangeLog for x11-misc/gccmakedep
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/gccmakedep/ChangeLog,v 1.23 2010/10/17 03:26:34 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/gccmakedep/ChangeLog,v 1.32 2012/08/26 19:23:14 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> gccmakedep-1.0.2-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> gccmakedep-1.0.2-r1.ebuild:
+  Marking gccmakedep-1.0.2-r1 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> gccmakedep-1.0.2-r1.ebuild:
+  Marking gccmakedep-1.0.2-r1 ppc64 stable for bug 419473
+
+  29 Jun 2012; Markus Meier <maekke@gentoo.org> gccmakedep-1.0.2-r1.ebuild:
+  arm stable, bug #419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> gccmakedep-1.0.2-r1.ebuild:
+  Stable for HPPA (bug #419473).
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> gccmakedep-1.0.2-r1.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> gccmakedep-1.0.2-r1.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> gccmakedep-1.0.2-r1.ebuild:
+  keyword ~amd64-fbsd
+
+*gccmakedep-1.0.2-r1 (14 Apr 2012)
+
+  14 Apr 2012; Michał Górny <mgorny@gentoo.org> +gccmakedep-1.0.2-r1.ebuild:
+  Update to use xorg-2 eclass.
 
   17 Oct 2010; Mart Raudsepp <leio@gentoo.org> gccmakedep-1.0.2.ebuild:
   Drop to ~mips

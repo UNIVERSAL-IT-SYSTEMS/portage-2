@@ -1,6 +1,29 @@
 # ChangeLog for sci-libs/clipper
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/clipper/ChangeLog,v 1.14 2011/06/26 10:13:02 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/clipper/ChangeLog,v 1.21 2012/07/10 18:55:01 jlec Exp $
+
+  10 Jul 2012; Justin Lecher <jlec@gentoo.org> -clipper-20100511.ebuild:
+  Cleaned old
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> clipper-20100511-r1.ebuild:
+  Marking clipper-20100511-r1 ppc for bug 421645
+
+  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> clipper-20100511-r1.ebuild:
+  Stable for amd64, wrt bug #421645
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> clipper-20100511-r1.ebuild:
+  marked x86 per bug 421645
+
+  17 Jun 2012; Justin Lecher <jlec@gentoo.org> clipper-20100511-r1.ebuild,
+  +files/clipper-20100511-outofsourcebuild.patch:
+  Fix out of source build test failure, #421639
+
+  10 Feb 2012; Justin Lecher <jlec@gentoo.org> +files/20100511-makefile.patch,
+  clipper-20100511-r1.ebuild:
+  Drop -g from FLAGS
+
+  03 Feb 2012; Justin Lecher <jlec@gentoo.org> clipper-20100511-r1.ebuild:
+  Moved to autotools-utils.eclass
 
 *clipper-20100511-r1 (26 Jun 2011)
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/gtranslator/gtranslator-1.9.13.ebuild,v 1.8 2011/06/07 20:43:45 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/gtranslator/gtranslator-1.9.13.ebuild,v 1.12 2012/09/15 03:38:18 tetromino Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -12,7 +12,7 @@ HOMEPAGE="http://gtranslator.sourceforge.net/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ~sparc x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="doc http gnome spell"
 
 RDEPEND="
@@ -26,15 +26,15 @@ RDEPEND="
 	>=x11-libs/gtksourceview-2.4:2.0
 
 	gnome? (
-		gnome-extra/gnome-utils
-		>=gnome-extra/gucharmap-2 )
+		=gnome-extra/gnome-utils-2*
+		>=gnome-extra/gucharmap-2:0 )
 	http? ( >=dev-libs/json-glib-0.7.6 )
-	spell? ( >=app-text/gtkspell-2.0.2 )"
+	spell? ( >=app-text/gtkspell-2.0.2:2 )"
 DEPEND="${RDEPEND}
 	>=app-text/scrollkeeper-0.1.4
 	>=dev-util/intltool-0.40
 	>=sys-devel/gettext-0.17
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	app-text/gnome-doc-utils
 	app-text/docbook-xml-dtd:4.1.2
 	gnome-base/gnome-common

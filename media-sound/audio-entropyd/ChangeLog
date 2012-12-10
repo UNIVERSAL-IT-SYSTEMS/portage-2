@@ -1,6 +1,29 @@
 # ChangeLog for media-sound/audio-entropyd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audio-entropyd/ChangeLog,v 1.39 2011/04/18 15:08:28 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audio-entropyd/ChangeLog,v 1.46 2012/07/16 12:05:24 angelos Exp $
+
+  16 Jul 2012; Christoph Mende <angelos@gentoo.org>
+  -audio-entropyd-2.0.1-r1.ebuild:
+  Remove old
+
+  08 Jul 2012; Christoph Mende <angelos@gentoo.org> audio-entropyd-2.0.3.ebuild:
+  Fix compilation with -g* flags
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> audio-entropyd-2.0.3.ebuild:
+  Marking audio-entropyd-2.0.3 ppc for bug 417721
+
+  31 May 2012; Christoph Mende <angelos@gentoo.org> audio-entropyd-2.0.3.ebuild:
+  Remove -g from CFLAGS and add missing dependency on media-libs/alsa-lib
+
+  30 May 2012; Jeff Horelick <jdhore@gentoo.org> audio-entropyd-2.0.3.ebuild:
+  marked x86 per bug 417721
+
+  27 May 2012; Agostino Sarubbo <ago@gentoo.org> audio-entropyd-2.0.3.ebuild:
+  Stable for amd64, wrt bug #417721
+
+  13 May 2012; <swift@gentoo.org> audio-entropyd-2.0.1-r1.ebuild,
+  audio-entropyd-2.0.3.ebuild:
+  SELinux policy for audio-entropyd is in selinux-entropyd now
 
 *audio-entropyd-2.0.3 (18 Apr 2011)
 
@@ -163,4 +186,3 @@
   31 Mar 2004; Joshua Brindle <method@gentoo.org> audio-entropyd-0.0.6.ebuild,
   metadata.xml, files/audio-entropyd.init:
   initial import
-

@@ -1,9 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nepenthes/nepenthes-0.2.2.ebuild,v 1.5 2009/12/25 15:37:30 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nepenthes/nepenthes-0.2.2.ebuild,v 1.9 2012/10/02 13:26:00 pinkbyte Exp $
 
 EAPI="2"
-inherit eutils autotools
+inherit autotools eutils user
 
 DESCRIPTION="Nepenthes is a low interaction honeypot that captures worms by emulating known vulnerabilities"
 HOMEPAGE="http://nepenthes.sourceforge.net"
@@ -32,8 +32,15 @@ pkg_setup() {
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-gcc4.patch
 	epatch "${WORKDIR}"/${P}-gcc44.patch
-	sed 's|var/cache|/var/lib/cache|' -i modules/shellcode-signatures/shellcode-signatures.cpp
+	sed -i modules/shellcode-signatures/shellcode-signatures.cpp \
+		-e 's|var/cache|/var/lib/cache|' || die
+	sed -i configure.ac \
+		-e 's|-R/usr/local/lib||g' || die
 	find . -name Makefile.am -exec sed 's: -Werror::' -i '{}' \;
+
+	# fix for bug #426482
+	has_version ">=net-misc/curl-7.22.0" && find . -type f -exec sed '/#include <curl\/types.h>/d' -i '{}' \;
+
 	eautoreconf
 }
 

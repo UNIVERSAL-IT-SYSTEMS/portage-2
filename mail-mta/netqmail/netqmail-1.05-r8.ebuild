@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/netqmail/netqmail-1.05-r8.ebuild,v 1.12 2011/03/28 09:32:33 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/netqmail/netqmail-1.05-r8.ebuild,v 1.15 2012/11/06 11:17:40 eras Exp $
 
-inherit eutils toolchain-funcs fixheadtails flag-o-matic
+inherit eutils toolchain-funcs fixheadtails flag-o-matic user
 
 TLS_AUTH_PATCH=20070417
 QMAIL_SPP_PATCH=0.42
@@ -40,7 +40,6 @@ RDEPEND="
 	!mail-mta/exim
 	!mail-mta/mini-qmail
 	!mail-mta/msmtp
-	!mail-mta/nbsmtp
 	!mail-mta/nullmailer
 	!mail-mta/postfix
 	!mail-mta/qmail-ldap
@@ -323,9 +322,6 @@ pkg_postinst() {
 
 	rootmailfixup
 	buildtcprules
-
-	# for good measure
-	env-update
 
 	elog "To setup qmail to run out-of-the-box on your system, run:"
 	elog "emerge --config =${CATEGORY}/${PF}"

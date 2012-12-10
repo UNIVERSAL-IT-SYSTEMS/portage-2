@@ -1,6 +1,61 @@
 # ChangeLog for sys-fs/multipath-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/multipath-tools/ChangeLog,v 1.36 2011/06/03 21:35:00 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/multipath-tools/ChangeLog,v 1.47 2012/08/25 22:35:16 vapier Exp $
+
+  25 Aug 2012; Mike Frysinger <vapier@gentoo.org>
+  multipath-tools-0.4.9-r5.ebuild:
+  Drop useless -vf args to mv #432632 by Joshua B. Kahlenberg.
+
+*multipath-tools-0.4.9-r5 (11 Aug 2012)
+
+  11 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +multipath-tools-0.4.9-r5.ebuild:
+  Stop using /etc/udev which is reserved for user defined rules. Stop using
+  /lib/udev and read the value of udevdir from udev.pc pkg-config file instead.
+
+  26 May 2012; Alexey Shvetsov <alexxy@gentoo.org>
+  multipath-tools-0.4.9-r4.ebuild:
+  [sys-fs/multipath-tools] Fix src_prepare
+
+*multipath-tools-0.4.9-r4 (25 May 2012)
+
+  25 May 2012; Alexey Shvetsov <alexxy@gentoo.org>
+  +files/multipath-tools-0.4.9-log_enquery_overflow.patch,
+  +multipath-tools-0.4.9-r4.ebuild:
+  [sys-fs/multipath-tools] Fix bugs #413063 and #399569
+
+  22 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  files/multipath-tools-0.4.9-build.patch:
+  Fix as-needed error introduced in previous commit. Fixes bug #413171 by Harris
+  Landgarten
+
+  21 Apr 2012; Mike Frysinger <vapier@gentoo.org>
+  multipath-tools-0.4.9-r3.ebuild:
+  Bypass grepping of files in /usr/include #411337 by Leho Kraav.
+
+  21 Apr 2012; Mike Frysinger <vapier@gentoo.org>
+  files/multipath-tools-0.4.9-build.patch:
+  Respect LDFLAGS when linking shared libs.
+
+  20 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/multipath-tools-0.4.7-build.patch,
+  -files/multipath-tools-0.4.7-udev-rules.patch, -multipath-tools-0.4.7-r1.ebuild,
+  -multipath-tools-0.4.7-r2.ebuild, -multipath-tools-0.4.8.ebuild,
+  -multipath-tools-0.4.9-r1.ebuild, -multipath-tools-0.4.9-r2.ebuild,
+  -files/init.d-multipath:
+  old
+
+*multipath-tools-0.4.9-r3 (30 Nov 2011)
+
+  30 Nov 2011; Mike Frysinger <vapier@gentoo.org>
+  +multipath-tools-0.4.9-r3.ebuild, files/multipath-tools-0.4.9-build.patch:
+  Add missing readline depepend, and drop ncurses linkage since it's only
+  there for readline.
+
+  06 Aug 2011; Samuli Suominen <ssuominen@gentoo.org>
+  multipath-tools-0.4.8.ebuild, multipath-tools-0.4.8-r1.ebuild,
+  multipath-tools-0.4.9-r1.ebuild, multipath-tools-0.4.9-r2.ebuild:
+  Remove sys-fs/sysfsutils depend from >= 0.4.8 wrt #377709 by Anthony Basile
 
 *multipath-tools-0.4.9-r2 (03 Jun 2011)
 
@@ -188,4 +243,3 @@
   21 Feb 2005; Martin Schlemmer <azarah@gentoo.org> +metadata.xml,
   +files/rc-multipathd, +multipath-tools-0.4.2.ebuild:
   Initial version.  Ebuild and scripts by Seemant.
-

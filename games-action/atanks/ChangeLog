@@ -1,6 +1,71 @@
 # ChangeLog for games-action/atanks
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/atanks/ChangeLog,v 1.65 2011/07/16 04:42:16 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-action/atanks/ChangeLog,v 1.80 2012/11/27 20:03:06 mr_bones_ Exp $
+
+*atanks-5.7 (27 Nov 2012)
+
+  27 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> +atanks-5.7.ebuild:
+  version bump
+
+*atanks-5.6 (22 Oct 2012)
+
+  22 Oct 2012; Michael Sterrett <mr_bones_@gentoo.org> +atanks-5.6.ebuild:
+  version bump
+
+  16 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> -atanks-5.2.ebuild,
+  -files/atanks-5.2-build.patch:
+  old
+
+  30 May 2012; Jeff Horelick <jdhore@gentoo.org> atanks-5.4.ebuild:
+  marked x86 per bug 418003
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> atanks-5.4.ebuild:
+  Marking atanks-5.4 ppc for bug 418003
+
+  29 May 2012; Agostino Sarubbo <ago@gentoo.org> atanks-5.4.ebuild:
+  Stable for amd64, wrt bug #418003
+
+*atanks-5.4 (21 Apr 2012)
+
+  21 Apr 2012; Michael Sterrett <mr_bones_@gentoo.org> -atanks-5.3.ebuild,
+  -files/atanks-5.3-build.patch, +atanks-5.4.ebuild:
+  version bump
+
+*atanks-5.3 (21 Mar 2012)
+
+  21 Mar 2012; Michael Sterrett <mr_bones_@gentoo.org> -atanks-4.7.ebuild,
+  -files/atanks-4.7-build.patch, -atanks-5.1.ebuild,
+  -files/atanks-5.1-build.patch, files/atanks-5.2-build.patch,
+  +atanks-5.3.ebuild, +files/atanks-5.3-build.patch:
+  version bump
+
+  10 Jan 2012; Brent Baude <ranger@gentoo.org> atanks-5.2.ebuild:
+  Marking atanks-5.2 ppc for bug 390559
+
+  17 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> atanks-5.2.ebuild:
+  x86 stable wrt bug #390559
+
+  15 Nov 2011; Tony Vroon <chainsaw@gentoo.org> atanks-5.2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #390559.
+
+  14 Oct 2011; Mike Frysinger <vapier@gentoo.org> atanks-4.7.ebuild,
+  atanks-5.1.ebuild, atanks-5.2.ebuild:
+  Use a SLOT dep instead of "<" for allegro.
+
+*atanks-5.2 (10 Oct 2011)
+
+  10 Oct 2011; Michael Sterrett <mr_bones_@gentoo.org> -atanks-4.9.ebuild,
+  -files/atanks-4.9-build.patch, -atanks-5.0.ebuild,
+  -files/atanks-5.0-build.patch, +atanks-5.2.ebuild,
+  +files/atanks-5.2-build.patch:
+  version bump
+
+  21 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> atanks-5.1.ebuild:
+  x86 stable wrt bug #379407
+
+  17 Aug 2011; Markos Chandras <hwoarang@gentoo.org> atanks-5.1.ebuild:
+  Stable on amd64 wrt bug #379407
 
 *atanks-5.1 (16 Jul 2011)
 
@@ -311,4 +376,3 @@
 
   31 Jul 2003; Michael Sterrett <msterret@gentoo.org> atanks-0.9.8b.ebuild:
   initial commit.  ebuild submitted by Rob Cakebread via bug 25606 (modified)
-

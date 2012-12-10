@@ -1,6 +1,108 @@
 # ChangeLog for app-editors/scite
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/scite/ChangeLog,v 1.118 2011/07/20 13:23:38 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/scite/ChangeLog,v 1.144 2012/09/05 07:10:16 jlec Exp $
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> scite-3.1.0.ebuild:
+  Use domenu instead insinto + doins to install .desktop files
+
+  03 Sep 2012; Agostino Sarubbo <ago@gentoo.org> -scite-3.0.4.ebuild:
+  Remove old
+
+  05 Aug 2012; Christoph Junghans <ottxor@gentoo.org> scite-3.1.0.ebuild:
+  add prefix keywords
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> scite-3.1.0.ebuild:
+  Marking scite-3.1.0 ppc for bug 420489
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> scite-3.1.0.ebuild:
+  Stable for X86, wrt bug #420489
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> scite-3.1.0.ebuild:
+  Stable for amd64, wrt bug #420489
+
+  06 May 2012; Agostino Sarubbo <ago@gentoo.org> -scite-3.0.1.ebuild,
+  -scite-3.0.2.ebuild, -scite-3.0.3.ebuild:
+  Remove old
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> scite-3.0.4.ebuild:
+  Marking scite-3.0.4 ppc for bug 412657
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> scite-3.0.1.ebuild,
+  scite-3.0.2.ebuild, scite-3.0.3.ebuild, scite-3.0.4.ebuild,
+  scite-3.1.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> scite-3.0.4.ebuild:
+  Stable for amd64, wrt bug #412657
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> scite-3.0.4.ebuild:
+  Stable for X86, wrt bug #412657
+
+*scite-3.1.0 (30 Apr 2012)
+
+  30 Apr 2012; Krzysztof Pawlik <nelchael@gentoo.org> +scite-3.1.0.ebuild:
+  Version bump.
+
+*scite-3.0.4 (10 Mar 2012)
+
+  10 Mar 2012; Justin Lecher <jlec@gentoo.org> +scite-3.0.4.ebuild:
+  Version BUmp, #407539
+
+*scite-3.0.3 (16 Feb 2012)
+
+  16 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org>
+  -files/scite-2.12-install.patch, -files/scite-2.12-no-lua.patch,
+  -scite-2.22.ebuild, -scite-2.25.ebuild, -scite-2.26.ebuild,
+  -scite-2.27.ebuild, -scite-2.28.ebuild, -files/scite-2.28-no-lua.patch,
+  +scite-3.0.3.ebuild:
+  Version bump, remove old versions.
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> scite-3.0.1.ebuild:
+  x86 stable wrt bug #401097
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> scite-3.0.1.ebuild:
+  Marking scite-3.0.1 ppc for bug 401097
+
+  28 Jan 2012; Agostino Sarubbo <ago@gentoo.org> scite-3.0.1.ebuild:
+  Stable for amd64, wrt bug #401097
+
+  27 Jan 2012; Krzysztof Pawlik <nelchael@gentoo.org> scite-3.0.1.ebuild,
+  scite-3.0.2.ebuild:
+  Fix 401099: replace gcc with tc-getCC, fix dependencies.
+
+*scite-3.0.2 (27 Jan 2012)
+
+  27 Jan 2012; Krzysztof Pawlik <nelchael@gentoo.org> +scite-3.0.2.ebuild:
+  Version bump.
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> scite-2.28.ebuild:
+  x86 stable wrt bug #392577
+
+  03 Dec 2011; Markos Chandras <hwoarang@gentoo.org> scite-2.28.ebuild:
+  add missing pango,cairo,gdk-pixbuf,glib dependencies. Stable on amd64. Bug
+  #392577
+
+  30 Nov 2011; Krzysztof Pawlik <nelchael@gentoo.org> scite-3.0.1.ebuild:
+  Use ED instead of D as suggested by Agostino Sarubbo in bug #380061.
+
+*scite-3.0.1 (30 Nov 2011)
+
+  30 Nov 2011; Krzysztof Pawlik <nelchael@gentoo.org> +scite-3.0.1.ebuild,
+  +files/scite-3.0.1-no-lua.patch:
+  Version bump to 3.0.1, update to EAPI 4, see bug #380061 and bug #392485.
+
+*scite-2.28 (13 Aug 2011)
+
+  13 Aug 2011; Krzysztof Pawlik <nelchael@gentoo.org>
+  -files/scite-1.79-install.patch, -files/scite-1.79-no-lua.patch,
+  +scite-2.28.ebuild, +files/scite-2.28-no-lua.patch:
+  Version bump, remove old files.
+
+  07 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> scite-2.27.ebuild:
+  x86 stable wrt bug #377087
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> scite-2.27.ebuild:
+  Stable on amd64 wrt bug #377087
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #28480

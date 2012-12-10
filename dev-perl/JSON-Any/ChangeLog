@@ -1,6 +1,15 @@
 # ChangeLog for dev-perl/JSON-Any
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/JSON-Any/ChangeLog,v 1.14 2011/07/29 18:30:40 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/JSON-Any/ChangeLog,v 1.17 2012/11/18 11:23:33 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org> JSON-Any-1.290.0.ebuild:
+  Marked ~x64-macos
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org> -JSON-Any-1.25.ebuild,
   -JSON-Any-1.260.0.ebuild, -JSON-Any-1.270.0.ebuild, -JSON-Any-1.280.0.ebuild:
@@ -64,4 +73,3 @@
   23 Jun 2009; Robin H. Johnson <robbat2@gentoo.org> +JSON-Any-1.19.ebuild,
   +metadata.xml:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

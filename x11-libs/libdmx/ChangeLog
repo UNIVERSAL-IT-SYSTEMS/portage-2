@@ -1,6 +1,36 @@
 # ChangeLog for x11-libs/libdmx
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libdmx/ChangeLog,v 1.44 2011/02/14 23:22:41 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libdmx/ChangeLog,v 1.53 2012/08/26 18:54:13 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> libdmx-1.1.2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> libdmx-1.1.2.ebuild:
+  Marking libdmx-1.1.2 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> libdmx-1.1.2.ebuild:
+  Marking libdmx-1.1.2 ppc64 stable for bug 419473
+
+  29 Jun 2012; Markus Meier <maekke@gentoo.org> libdmx-1.1.2.ebuild:
+  arm stable, bug #419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> libdmx-1.1.2.ebuild:
+  Stable for HPPA (bug #419473).
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libdmx-1.1.2.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libdmx-1.1.2.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  11 May 2012; Alexis Ballier <aballier@gentoo.org> libdmx-1.1.2.ebuild:
+  keyword ~amd64-fbsd
+
+*libdmx-1.1.2 (09 Mar 2012)
+
+  09 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libdmx-1.1.2.ebuild:
+  Version bump.
 
   14 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org> libdmx-1.1.1.ebuild:
   ppc stable wrt #344827, #354237

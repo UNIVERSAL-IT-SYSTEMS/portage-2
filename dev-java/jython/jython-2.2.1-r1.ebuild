@@ -1,11 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jython/jython-2.2.1-r1.ebuild,v 1.9 2009/05/27 10:31:37 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jython/jython-2.2.1-r1.ebuild,v 1.11 2012/04/13 18:47:54 ulm Exp $
+
+EAPI=1
 
 JAVA_PKG_IUSE="readline source doc servletapi mysql postgres examples oracle"
 #jdnc
-
-EAPI=1
 
 inherit base java-pkg-2 java-ant-2
 
@@ -18,7 +18,7 @@ PYVER="2.2.3"
 SRC_URI="http://www.python.org/ftp/python/${PYVER%_*}/Python-${PYVER}.tgz
 mirror://sourceforge/${PN}/${PN}_${MY_PV}.jar"
 
-LICENSE="PSF-2.2"
+LICENSE="PSF-2"
 SLOT="0"
 KEYWORDS="amd64 ppc x86"
 IUSE=""

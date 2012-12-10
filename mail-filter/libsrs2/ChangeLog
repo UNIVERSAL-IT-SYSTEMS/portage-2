@@ -1,6 +1,13 @@
 # ChangeLog for mail-filter/libsrs2
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/libsrs2/ChangeLog,v 1.11 2010/02/01 20:00:59 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/libsrs2/ChangeLog,v 1.13 2012/02/13 20:25:41 eras Exp $
+
+  13 Feb 2012; Eray Aslan <eras@gentoo.org> libsrs2-1.0.18.ebuild:
+  add blocker against dev-perl/Mail-SRS - bug #402991
+
+  12 Sep 2011; Tim Harder <radhermit@gentoo.org> libsrs2-1.0.18.ebuild,
+  metadata.xml:
+  Update to EAPI 4 and add static-libs use flag.
 
   01 Feb 2010; Markus Meier <maekke@gentoo.org> libsrs2-1.0.18.ebuild:
   amd64 stable, bug #299862

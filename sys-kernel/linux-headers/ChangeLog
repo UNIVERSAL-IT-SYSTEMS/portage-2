@@ -1,6 +1,151 @@
 # ChangeLog for sys-kernel/linux-headers
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-headers/ChangeLog,v 1.321 2011/04/04 22:45:40 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-headers/ChangeLog,v 1.361 2012/11/21 20:14:17 blueness Exp $
+
+  21 Nov 2012; Anthony G. Basile <blueness@gentoo.org> linux-headers-3.6.ebuild:
+  stable arm ppc ppc64, bug #443532
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> linux-headers-3.6.ebuild:
+  Stable for amd64, wrt bug #443532
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> linux-headers-3.6.ebuild:
+  Stable for x86, wrt bug #443532
+
+  10 Oct 2012; Andreas Schuerch <nativemad@gentoo.org>
+  linux-headers-3.4.ebuild:
+  x86 stable, see bug 423091
+
+*linux-headers-3.6 (01 Oct 2012)
+
+  01 Oct 2012; Mike Frysinger <vapier@gentoo.org> +linux-headers-3.6.ebuild:
+  Version bump.
+
+*linux-headers-3.5 (23 Jul 2012)
+
+  23 Jul 2012; Mike Frysinger <vapier@gentoo.org> +linux-headers-3.5.ebuild:
+  Version bump.
+
+*linux-headers-3.4-r2 (22 Jul 2012)
+
+  22 Jul 2012; Mike Frysinger <vapier@gentoo.org> +linux-headers-3.4-r2.ebuild:
+  Fix from upstream for missing asm/cmpxchg.h on ia64 #427622 by Tobias Ulmer.
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> linux-headers-3.4-r1.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #423091
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> linux-headers-3.4.ebuild:
+  arm stable, bug #423091
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> linux-headers-3.4.ebuild:
+  Marking linux-headers-3.4 ppc64 for bug 423091
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> linux-headers-3.4.ebuild:
+  Marking linux-headers-3.4 ppc for bug 423091
+
+*linux-headers-3.4-r1 (10 Jul 2012)
+
+  10 Jul 2012; Mike Frysinger <vapier@gentoo.org> +linux-headers-3.4-r1.ebuild:
+  Fix alpha asm/fpu.h #417441 by Matt Turner.
+
+  08 Jul 2012; Jeroen Roovers <jer@gentoo.org> linux-headers-3.4.ebuild:
+  Stable for HPPA (bug #423091).
+
+  26 Jun 2012; Agostino Sarubbo <ago@gentoo.org> linux-headers-3.4.ebuild:
+  Stable for amd64, wrt bug #423091
+
+*linux-headers-3.4 (22 May 2012)
+
+  22 May 2012; Mike Frysinger <vapier@gentoo.org> +linux-headers-3.4.ebuild:
+  Version bump.
+
+  14 May 2012; Mike Frysinger <vapier@gentoo.org>
+  -linux-headers-2.6.27-r2.ebuild, -linux-headers-2.6.30-r1.ebuild,
+  -linux-headers-2.6.33.ebuild, -linux-headers-2.6.36.1.ebuild,
+  -linux-headers-2.6.38.ebuild, -linux-headers-2.6.39.ebuild:
+  Drop old kernel headers that people wrongly think are supported.
+
+  12 May 2012; Raúl Porcel <armin76@gentoo.org> linux-headers-3.1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #397903
+
+  02 Apr 2012; Mike Frysinger <vapier@gentoo.org> linux-headers-3.3.ebuild:
+  Re-add x32 support from v3.4-rc1.
+
+*linux-headers-3.3 (22 Mar 2012)
+
+  22 Mar 2012; Mike Frysinger <vapier@gentoo.org> +linux-headers-3.3.ebuild:
+  Version bump.
+
+  19 Mar 2012; Mike Frysinger <vapier@gentoo.org> linux-headers-3.1.ebuild,
+  -linux-headers-3.2.ebuild, linux-headers-3.2-r1.ebuild:
+  Drop old x32 patches since the syscall numbers have changed.
+
+*linux-headers-3.2-r1 (24 Feb 2012)
+
+  24 Feb 2012; Mike Frysinger <vapier@gentoo.org> +linux-headers-3.2-r1.ebuild:
+  Add fix from upstream #402393#1 by Arun Raghavan.
+
+  13 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> linux-headers-3.1.ebuild:
+  ppc64 stable wrt #397903
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> linux-headers-3.1.ebuild:
+  Marking linux-headers-3.1 ppc for bug 397903
+
+  29 Jan 2012; Markus Meier <maekke@gentoo.org> linux-headers-3.1.ebuild:
+  arm stable, bug #397903
+
+  25 Jan 2012; Jeroen Roovers <jer@gentoo.org> linux-headers-3.1.ebuild:
+  Stable for HPPA (bug #397903).
+
+  21 Jan 2012; Agostino Sarubbo <ago@gentoo.org> linux-headers-3.1.ebuild:
+  Stable for X86, wrt bug #397903
+
+  16 Jan 2012; Agostino Sarubbo <ago@gentoo.org> linux-headers-3.1.ebuild:
+  Stable for AMD64, wrt bug #397903
+
+  16 Jan 2012; Mike Frysinger <vapier@gentoo.org> linux-headers-2.6.39.ebuild:
+  Mark ppc64 stable #384733.
+
+*linux-headers-3.2 (07 Jan 2012)
+
+  07 Jan 2012; Mike Frysinger <vapier@gentoo.org> +linux-headers-3.2.ebuild:
+  Version bump.
+
+  06 Jan 2012; Brent Baude <ranger@gentoo.org> linux-headers-2.6.39.ebuild:
+  Marking linux-headers-2.6.39 ppc for bug 384733
+
+*linux-headers-3.1 (10 Dec 2011)
+
+  10 Dec 2011; Mike Frysinger <vapier@gentoo.org> +linux-headers-3.1.ebuild:
+  Version bump #380739 by Luca Lesinigo.
+
+  04 Dec 2011; Raúl Porcel <armin76@gentoo.org> linux-headers-2.6.39.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #384733
+
+  31 Oct 2011; Mike Frysinger <vapier@gentoo.org> linux-headers-2.6.39.ebuild:
+  Newer kernel builds need perl #388941 by Bruno.
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> linux-headers-2.6.39.ebuild:
+  arm stable, bug #384733
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> linux-headers-2.6.39.ebuild:
+  x86 stable, bug #384733
+
+  20 Oct 2011; Jeroen Roovers <jer@gentoo.org> linux-headers-2.6.39.ebuild:
+  Stable for HPPA (bug #384733).
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  linux-headers-2.6.39.ebuild:
+  amd64 stable wrt #384733
+
+  29 Aug 2011; Mike Frysinger <vapier@gentoo.org>
+  linux-headers-2.6.36.1.ebuild, linux-headers-2.6.38.ebuild,
+  linux-headers-2.6.39.ebuild:
+  Split src_unpack into src_prepare for EAPI=3.
+
+*linux-headers-2.6.39 (15 Aug 2011)
+
+  15 Aug 2011; Mike Frysinger <vapier@gentoo.org> +linux-headers-2.6.39.ebuild:
+  Version bump #375517 by James Shaw.
 
   04 Apr 2011; Jeroen Roovers <jer@gentoo.org> linux-headers-2.6.36.1.ebuild:
   Stable for HPPA (bug #352335).

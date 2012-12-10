@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/crossover-office-pro-bin/crossover-office-pro-bin-4.2.ebuild,v 1.10 2007/12/27 21:30:54 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/crossover-office-pro-bin/crossover-office-pro-bin-4.2.ebuild,v 1.13 2012/05/23 13:21:05 xarthisius Exp $
 
-inherit eutils
+inherit unpacker eutils
 
 DESCRIPTION="simplified/streamlined version of wine with commercial support"
 HOMEPAGE="http://www.codeweavers.com/products/cxoffice/"
@@ -37,7 +37,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack_makeself
+	unpack_makeself # needed due to .sh extension; #415013
 }
 
 src_install() {

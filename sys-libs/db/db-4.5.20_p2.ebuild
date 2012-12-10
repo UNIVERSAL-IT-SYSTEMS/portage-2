@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/db-4.5.20_p2.ebuild,v 1.30 2010/05/03 23:21:52 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/db-4.5.20_p2.ebuild,v 1.34 2012/11/25 19:23:39 ulm Exp $
 
-inherit eutils db flag-o-matic java-pkg-opt-2
+inherit eutils db flag-o-matic java-pkg-opt-2 multilib
 
 #Number of official patches
 #PATCHNO=`echo ${PV}|sed -e "s,\(.*_p\)\([0-9]*\),\2,"`
@@ -24,10 +24,10 @@ for (( i=1 ; i<=${PATCHNO} ; i++ )) ; do
 	export SRC_URI="${SRC_URI} http://www.oracle.com/technology/products/berkeley-db/db/update/${MY_PV}/patch.${MY_PV}.${i}"
 done
 
-LICENSE="OracleDB"
+LICENSE="Sleepycat"
 SLOT="4.5"
 KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
-IUSE="tcl java doc nocxx"
+IUSE="tcl java doc cxx rpc"
 
 DEPEND="tcl? ( >=dev-lang/tcl-8.4 )
 	java? ( >=virtual/jdk-1.4 )
@@ -64,7 +64,7 @@ src_compile() {
 
 	use amd64 && myconf="${myconf} --with-mutex=x86/gcc-assembly"
 
-	myconf="${myconf} $(use_enable !nocxx cxx)"
+	myconf="${myconf} $(use_enable cxx)"
 
 	use tcl \
 		&& myconf="${myconf} --enable-tcl --with-tcl=/usr/$(get_libdir)" \
@@ -103,7 +103,7 @@ src_compile() {
 		--libdir=/usr/"$(get_libdir)" \
 		--enable-compat185 \
 		--without-uniquename \
-		--enable-rpc \
+		$(use_enable rpc) \
 		--host="${CHOST}" \
 		${myconf}  "${javaconf}" || die "configure failed"
 

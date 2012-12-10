@@ -1,8 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/iguanaIR/iguanaIR-0.93.ebuild,v 1.6 2010/11/05 13:41:57 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/iguanaIR/iguanaIR-0.93.ebuild,v 1.8 2012/05/07 14:38:02 ssuominen Exp $
 
-inherit eutils flag-o-matic
+EAPI=4
+inherit eutils flag-o-matic python
 
 DESCRIPTION="library for Irman control of Unix software"
 HOMEPAGE="http://iguanaworks.net/index.php"
@@ -10,26 +11,32 @@ SRC_URI="http://iguanaworks.net/downloads/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~ppc64 x86"
+KEYWORDS="amd64 ppc ~ppc64 x86"
 IUSE=""
+
+RDEPEND="dev-libs/popt
+	virtual/libusb:0"
+DEPEND="${RDEPEND}
+	|| ( dev-lang/python:2.7 dev-lang/python:2.6 )"
 
 pkg_setup() {
 	append-flags -fPIC
+
+	python_set_active_version 2
+	python_pkg_setup
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
+	sed -i -e 's:CFLAGS =:CFLAGS ?=:' Makefile.in || die
 
-	sed -e "s:CFLAGS =:CFLAGS ?=:" -i Makefile.in
-
-	epatch "${FILESDIR}"/${P}-gentoo.diff \
+	epatch \
+		"${FILESDIR}"/${P}-gentoo.diff \
 		"${FILESDIR}"/${P}-asneeded.patch
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install
 
-	insinto /etc/udev/rules.d/
+	insinto /lib/udev/rules.d
 	doins "${FILESDIR}"/40-iguanaIR.rules
 }

@@ -1,6 +1,72 @@
 # ChangeLog for net-analyzer/snort
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/snort/ChangeLog,v 1.184 2011/07/24 12:12:57 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/snort/ChangeLog,v 1.198 2012/11/09 01:03:00 blueness Exp $
+
+  09 Nov 2012; Anthony G. Basile <blueness@gentoo.org> snort-2.9.2.3.ebuild:
+  keyword ~ppc64, bug #407795
+
+  27 Jun 2012; Markus Meier <maekke@gentoo.org> snort-2.9.2.3.ebuild:
+  add ~arm, bug #407795
+
+  15 Jun 2012; Michael Weber <xmw@gentoo.org> snort-2.9.2.1.ebuild,
+  snort-2.9.2.2.ebuild, snort-2.9.2.3.ebuild:
+  rekeyword ~ppc (bug 407795)
+
+  14 Jun 2012; Michael Weber <xmw@gentoo.org> snort-2.9.1.ebuild:
+  rekeyword ~ppc (bug 407795)
+
+  12 Jun 2012; Zac Medico <zmedico@gentoo.org> snort-2.9.0.5.ebuild,
+  snort-2.9.1.ebuild, snort-2.9.2.1.ebuild, snort-2.9.2.2.ebuild,
+  snort-2.9.2.3.ebuild:
+  inherit user for enewgroup and enewuser
+
+*snort-2.9.2.3 (07 Jun 2012)
+
+  07 Jun 2012; Patrick Lauer <patrick@gentoo.org> +snort-2.9.2.3.ebuild:
+  Bump
+
+*snort-2.9.2.2 (04 Apr 2012)
+
+  04 Apr 2012; Patrick Lauer <patrick@gentoo.org> +snort-2.9.2.2.ebuild:
+  Bump
+
+  11 Mar 2012; Joshua Kinard <kumba@gentoo.org> snort-2.9.1.ebuild,
+  snort-2.9.2.1.ebuild:
+  Both 2.9.1 and 2.9.2* should be using daq-0.6 or greater.
+
+*snort-2.9.2.1 (11 Mar 2012)
+
+  11 Mar 2012; Joshua Kinard <kumba@gentoo.org>
+  -files/snort-2.8.4-libnet.patch, -snort-2.8.5.1.ebuild,
+  -snort-2.8.5.3.ebuild, -snort-2.8.6.ebuild, -snort-2.8.6.1.ebuild,
+  -snort-2.9.0.4-r1.ebuild, snort-2.9.0.5.ebuild, snort-2.9.1.ebuild,
+  -snort-2.9.2.ebuild, +snort-2.9.2.1.ebuild, -files/pcap_memory.patch,
+  -files/snort.rc9, -files/snort.reload.rc1, metadata.xml:
+  Drop old versions and associated files, add 2.9.2.1, and tweak SRC_URI to use
+  a download URL specified on the Snort website that doesn't require manual
+  updating for each new release.
+
+  11 Mar 2012; Tim Harder <radhermit@gentoo.org> snort-2.9.2.ebuild:
+  Fix multilib issue (bug #403725, patch by Rick Farina).
+
+*snort-2.9.2 (11 Jan 2012)
+
+  11 Jan 2012; Patrick Lauer <patrick@gentoo.org> +snort-2.9.2.ebuild:
+  Bump
+
+  29 Sep 2011; Peter Volkov <pva@gentoo.org> snort-2.9.1.ebuild:
+  Fix inability to remove .la files, bug 384443 thank Juergen Rose for report
+  and Jason Wallace for fix.
+
+*snort-2.9.1 (22 Sep 2011)
+
+  22 Sep 2011; Patrick Lauer <patrick@gentoo.org> +snort-2.9.1.ebuild,
+  +files/snort.confd.2, +files/snort.rc11, metadata.xml:
+  Bump for #382851, thanks to Jason Wallace
+
+  21 Sep 2011; Tony Vroon <chainsaw@gentoo.org> snort-2.9.0.5.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #382857.
 
   24 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> snort-2.9.0.5.ebuild:
   Marked ~ppc/~ppc64 wrt #351551
@@ -869,4 +935,3 @@
   comments should well explained and written in clean English. The details about
   writing correct changelogs are explained in the skel.ChangeLog file which you
   can find in the root directory of the portage repository.
-

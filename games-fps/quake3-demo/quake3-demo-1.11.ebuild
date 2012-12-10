@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3-demo/quake3-demo-1.11.ebuild,v 1.26 2008/09/26 18:48:56 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3-demo/quake3-demo-1.11.ebuild,v 1.28 2012/02/08 21:29:08 vapier Exp $
 
-inherit eutils games
+inherit eutils unpacker games
 
 DESCRIPTION="the playable demo of Quake III Arena by Id Software"
 HOMEPAGE="http://www.idsoftware.com/games/quake/quake3-arena/"
@@ -12,9 +12,8 @@ SRC_URI="mirror://idsoftware/quake3/linux/linuxq3ademo-${PV}-6.x86.gz.sh
 LICENSE="Q3AEULA"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
-PROPERTIES="interactive"
-RESTRICT="strip"
 IUSE="opengl dedicated 3dfx"
+RESTRICT="strip"
 
 UIDEPEND="virtual/opengl
 	x86? (
@@ -39,8 +38,6 @@ S=${WORKDIR}
 
 dir=${GAMES_PREFIX_OPT}/${PN}
 Ddir=${D}/${dir}
-
-GAMES_CHECK_LICENSE="yes"
 
 src_unpack() {
 	unpack_makeself

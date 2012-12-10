@@ -1,6 +1,165 @@
 # ChangeLog for dev-lang/spidermonkey
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/spidermonkey/ChangeLog,v 1.61 2011/07/03 05:28:44 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/spidermonkey/ChangeLog,v 1.95 2012/12/06 21:39:23 axs Exp $
+
+*spidermonkey-1.8.7-r2 (06 Dec 2012)
+*spidermonkey-1.8.5-r3 (06 Dec 2012)
+
+  06 Dec 2012; Ian Stakenvicius <axs@gentoo.org> +spidermonkey-1.8.5-r3.ebuild,
+  +files/spidermonkey-1.8.5-symbol-versions.patch,
+  -spidermonkey-1.8.7-r1.ebuild, +spidermonkey-1.8.7-r2.ebuild,
+  +files/spidermonkey-1.8.7-symbol-versions.patch:
+  added symbol versioning to libmozjs, bug 439260 (and others)
+
+  25 Nov 2012; Raúl Porcel <armin76@gentoo.org> spidermonkey-1.8.5-r1.ebuild:
+  sparc stable wrt #438146
+
+  25 Nov 2012; <anarchy@gentoo.org> spidermonkey-1.8.5-r1.ebuild,
+  spidermonkey-1.8.5-r2.ebuild,
+  +files/spidermonkey-1.8.5-perf_event-check.patch:
+  Fix bug 441928
+
+  17 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  spidermonkey-1.8.5-r2.ebuild:
+  arm stable wrt #436670
+
+  09 Nov 2012; Ian Stakenvicius <axs@gentoo.org> spidermonkey-1.8.5-r1.ebuild,
+  spidermonkey-1.8.5-r2.ebuild,
+  +files/spidermonkey-1.8.5-arm_respect_cflags-3.patch:
+  matched ARM thumb2 configure check match with 1.8.7; after discussion with
+  mozilla upstream check should be based on toolchains setting instead of
+  system capabilities
+
+  02 Nov 2012; Ian Stakenvicius <axs@gentoo.org> spidermonkey-1.8.5-r1.ebuild,
+  spidermonkey-1.8.5-r2.ebuild,
+  +files/spidermonkey-1.8.5-arm_respect_cflags-2.patch,
+  -files/spidermonkey-1.8.5-arm_resprect_cflags-1.patch:
+  honour arm cflags and properly autodetect thumb2 support in 1.8.5 for gentoo
+  (bug 420471)
+
+  27 Oct 2012; Tobias Klausmann <klausman@gentoo.org>
+  spidermonkey-1.8.5-r1.ebuild:
+  Stable on alpha, bug #438146
+
+*spidermonkey-1.8.7-r1 (23 Oct 2012)
+*spidermonkey-1.8.5-r2 (23 Oct 2012)
+*spidermonkey-1.8.2.15-r2 (23 Oct 2012)
+*spidermonkey-1.7.0-r3 (23 Oct 2012)
+
+  23 Oct 2012; Ian Stakenvicius <axs@gentoo.org> +spidermonkey-1.7.0-r3.ebuild,
+  +spidermonkey-1.8.2.15-r2.ebuild, +spidermonkey-1.8.5-r2.ebuild,
+  +spidermonkey-1.8.7-r1.ebuild:
+  bumped to EAPI5 , fixed bugs 437520 and 437190
+
+  22 Oct 2012; <anarchy@gentoo.org> metadata.xml:
+  Assign directly to mozilla herd
+
+  21 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  spidermonkey-1.8.5-r1.ebuild:
+  dropping back to ~arm, bug #420471
+
+  21 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  spidermonkey-1.8.5-r1.ebuild:
+  stable arm, bug #436670
+
+  21 Oct 2012; <anarchy@gentoo.org> spidermonkey-1.8.5-r1.ebuild,
+  spidermonkey-1.8.7.ebuild, +files/spidermonkey-1.8.7-freebsd-pthreads.patch:
+  Add fix for freebsd, bug #438746
+
+  19 Oct 2012; Andreas Schuerch <nativemad@gentoo.org>
+  spidermonkey-1.8.5-r1.ebuild:
+  x86 stable, see bug 436670
+
+  17 Oct 2012; Jeroen Roovers <jer@gentoo.org> spidermonkey-1.8.5-r1.ebuild:
+  Stable for HPPA (bug #438146).
+
+  06 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  spidermonkey-1.8.5-r1.ebuild:
+  stable ppc ppc64, bug #436670
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> spidermonkey-1.8.5-r1.ebuild:
+  Stable for amd64, wrt bug #436670
+
+  03 Oct 2012; Dirkjan Ochtman <djc@gentoo.org> metadata.xml:
+  Remove myself from the maintainers.
+
+  04 Jul 2012; Jory A. Pratt <anarchy@gentoo.org> spidermonkey-1.8.7.ebuild,
+  +files/spidermonkey-1.8.7-x32.patch:
+  Add x32 support, bug #421655
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> spidermonkey-1.8.5-r1.ebuild,
+  spidermonkey-1.8.7.ebuild:
+  Marked ~hppa (bug #420997).
+
+  19 Jun 2012; Anthony G. Basile <blueness@gentoo.org>
+  spidermonkey-1.8.5-r1.ebuild, spidermonkey-1.8.7.ebuild:
+  Keyword ~mips
+
+*spidermonkey-1.8.7 (19 Jun 2012)
+
+  19 Jun 2012; Ian Stakenvicius <axs@gentoo.org> +spidermonkey-1.8.7.ebuild,
+  +files/spidermonkey-1.8.7-filter_desc.patch:
+  Version bump. Base name of library changed again, so rdeps will need to be
+  patched
+
+  07 May 2012; Jory A. Pratt <anarchy@gentoo.org> spidermonkey-1.8.5-r1.ebuild:
+  Fix cross compilation bug #414473
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> spidermonkey-1.8.2.15.ebuild,
+  spidermonkey-1.8.2.15-r1.ebuild, spidermonkey-1.8.5-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  30 Jan 2012; <anarchy@gentoo.org> spidermonkey-1.8.5-r1.ebuild,
+  -files/spidermonkey-1.8.5-arm_resprect_cflags.patch,
+  +files/spidermonkey-1.8.5-arm_resprect_cflags-1.patch:
+  Provide complete arm support, bug #401381
+
+  25 Jan 2012;  <anarchy@gentoo.org> spidermonkey-1.8.5-r1.ebuild:
+  Ensure we regenerate configure
+
+  25 Jan 2012; <anarchy@gentoo.org> spidermonkey-1.8.5-r1.ebuild,
+  +files/spidermonkey-1.8.5-arm_resprect_cflags.patch:
+  Spidermonkey-1.8.5 respect arm cflags, bug #400727
+
+  25 Jan 2012; <anarchy@gentoo.org> files/spidermonkey-1.8.5-fix-ppc64.patch:
+  Fix ppc64 support bug #388217
+
+*spidermonkey-1.8.2.15-r1 (29 Dec 2011)
+
+  29 Dec 2011; Ian Stakenvicius <axs@gentoo.org>
+  +spidermonkey-1.8.2.15-r1.ebuild:
+  Added js shell to spidermonkey-1.8.2.15, as per user request in bug 377291
+
+  26 Nov 2011; Ryan Hill <dirtyepic@gentoo.org> spidermonkey-1.8.5-r1.ebuild:
+  Fix typo (committed as obvious).
+
+  24 Nov 2011; Ian Stakenvicius <axs@gentoo.org>
+  files/spidermonkey-1.7.0-ldflags.patch:
+  modified ldflags patch to fix ldflags on bin/js, bug 391665
+
+  21 Nov 2011; Ian Stakenvicius <axs@gentoo.org>
+  files/spidermonkey-1.7.0-ldflags.patch:
+  fixed erroneous drop of CFLAGS from last patch update
+
+  21 Nov 2011; Ian Stakenvicius <axs@gentoo.org>
+  files/spidermonkey-1.7.0-ldflags.patch:
+  modified ldflags patch to fix ldflags on jskwgen, bug #391079
+
+*spidermonkey-1.8.5-r1 (14 Nov 2011)
+
+  14 Nov 2011; Jory A. Pratt <anarchy@gentoo.org> -spidermonkey-1.8.5.ebuild,
+  +spidermonkey-1.8.5-r1.ebuild, +files/spidermonkey-1.8.5-fix-ppc64.patch:
+  Multiple bug fixes, bug #377025,377291,388217,375685
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  spidermonkey-1.8.2.15.ebuild:
+  Fix install_name for produced shared library on Darwin, keyworded ~x86-macos
+  and ~x64-macos bug #354523
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  spidermonkey-1.8.2.15.ebuild:
+  Fix install_name for produced shared library on Darwin, keyworded ~x86-macos
+  and ~x64-macos bug #354523
 
 *spidermonkey-1.8.5 (03 Jul 2011)
 

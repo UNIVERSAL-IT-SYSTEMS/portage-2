@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/avfs/avfs-1.0.0.ebuild,v 1.1 2011/07/12 00:31:58 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/avfs/avfs-1.0.0.ebuild,v 1.8 2012/09/30 18:02:06 armin76 Exp $
 
 EAPI=4
 inherit eutils
@@ -11,14 +11,15 @@ SRC_URI="mirror://sourceforge/avf/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ~hppa ppc ppc64 x86"
 IUSE="static-libs +lzma"
 
-DEPEND=">=sys-fs/fuse-2.4
+RDEPEND=">=sys-fs/fuse-2.4
 	sys-libs/zlib
 	app-arch/bzip2
 	lzma? ( app-arch/xz-utils )"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	lzma? ( virtual/pkgconfig )"
 
 src_prepare() {
 	# Fixes bug #258295

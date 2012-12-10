@@ -1,6 +1,49 @@
 # ChangeLog for dev-ruby/highline
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/highline/ChangeLog,v 1.52 2011/07/10 23:06:54 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/highline/ChangeLog,v 1.64 2012/11/07 04:30:40 jer Exp $
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> highline-1.6.8.ebuild:
+  Stable for HPPA (bug #431332).
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> highline-1.6.1.ebuild,
+  highline-1.6.8.ebuild, highline-1.6.13.ebuild:
+  Add ~alpha, alpha/ia64/sparc stable wrt #431332
+
+  16 Aug 2012; Johannes Huber <johu@gentoo.org> highline-1.6.8.ebuild:
+  Stable for x86, wrt bug #431332
+
+  15 Aug 2012; Anthony G. Basile <blueness@gentoo.org> highline-1.6.8.ebuild:
+  Stable ppc ppc64, bug #431332
+
+  14 Aug 2012; Agostino Sarubbo <ago@gentoo.org> highline-1.6.8.ebuild:
+  Stable for amd64, wrt bug #431332
+
+  14 Aug 2012; Hans de Graaff <graaff@gentoo.org> -highline-1.6.2.ebuild,
+  -highline-1.6.11.ebuild:
+  Cleanup.
+
+*highline-1.6.13 (14 Aug 2012)
+
+  14 Aug 2012; Hans de Graaff <graaff@gentoo.org> +highline-1.6.13.ebuild:
+  Version bump. Avoid tests with highline and jruby since these hang. Not a
+  regression since that is already the case for 1.6.11.
+
+*highline-1.6.11 (24 Jan 2012)
+
+  24 Jan 2012; Diego E. Pettenò <flameeyes@gentoo.org> +highline-1.6.11.ebuild:
+  Version bump.
+
+*highline-1.6.8 (18 Dec 2011)
+
+  18 Dec 2011; Hans de Graaff <graaff@gentoo.org> +highline-1.6.8.ebuild:
+  Version bump.
+
+  06 Nov 2011; Hans de Graaff <graaff@gentoo.org> -highline-1.5.2.ebuild,
+  -highline-1.6.1-r1.ebuild:
+  Remove old versions.
+
+  03 Oct 2011; Jeroen Roovers <jer@gentoo.org> highline-1.6.1.ebuild:
+  Stable for HPPA (bug #385149).
 
   10 Jul 2011; Mark Loeser <halcy0n@gentoo.org> highline-1.6.1.ebuild:
   Stable for ppc64; bug #357491

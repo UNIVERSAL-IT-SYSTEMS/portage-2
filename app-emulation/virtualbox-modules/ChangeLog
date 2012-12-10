@@ -1,6 +1,178 @@
 # ChangeLog for app-emulation/virtualbox-modules
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-modules/ChangeLog,v 1.86 2011/07/22 16:58:45 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-modules/ChangeLog,v 1.118 2012/11/10 21:07:51 polynomial-c Exp $
+
+*virtualbox-modules-4.2.4 (10 Nov 2012)
+
+  10 Nov 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-modules-4.2.0-r1.ebuild, +virtualbox-modules-4.2.4.ebuild:
+  Version bump. Removed old.
+
+*virtualbox-modules-4.2.2 (24 Oct 2012)
+
+  24 Oct 2012; Patrick Lauer <patrick@gentoo.org>
+  +virtualbox-modules-4.2.2.ebuild:
+  Bump #439366
+
+  18 Sep 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-modules-4.1.12.ebuild, -virtualbox-modules-4.1.18.ebuild:
+  Removed old versions.
+
+  17 Sep 2012; Andreas Schuerch <nativemad@gentoo.org>
+  virtualbox-modules-4.1.22.ebuild:
+  x86 stable, see bug 434872
+
+  16 Sep 2012; Agostino Sarubbo <ago@gentoo.org>
+  virtualbox-modules-4.1.22.ebuild:
+  Stable for amd64, wrt bug #434872
+
+*virtualbox-modules-4.2.0-r1 (14 Sep 2012)
+
+  14 Sep 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-modules-4.2.0.ebuild, +virtualbox-modules-4.2.0-r1.ebuild:
+  Fixed 4.2.0 tarball (4.1.22 version was mistakenly packaged as 4.2.0 version).
+  This fixes bug #434958.
+
+*virtualbox-modules-4.2.0 (13 Sep 2012)
+
+  13 Sep 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-modules-4.1.20.ebuild, +virtualbox-modules-4.2.0.ebuild:
+  Version bump. Removed old.
+
+*virtualbox-modules-4.1.22 (09 Sep 2012)
+
+  09 Sep 2012; Lars Wendler <polynomial-c@gentoo.org>
+  +virtualbox-modules-4.1.22.ebuild:
+  Version bump.
+
+*virtualbox-modules-4.1.20 (21 Aug 2012)
+
+  21 Aug 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-modules-4.1.16.ebuild, +virtualbox-modules-4.1.20.ebuild:
+  Version bump. Removed old.
+
+  07 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  virtualbox-modules-4.1.18.ebuild:
+  Stable on amd64 wrt bug #427852
+
+*virtualbox-modules-4.1.18 (20 Jun 2012)
+
+  20 Jun 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-modules-4.1.14.ebuild, +virtualbox-modules-4.1.18.ebuild:
+  Version bump. Removed old.
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> virtualbox-modules-4.1.12.ebuild,
+  virtualbox-modules-4.1.14.ebuild, virtualbox-modules-4.1.16.ebuild:
+  inherit user for enewgroup
+
+*virtualbox-modules-4.1.16 (23 May 2012)
+
+  23 May 2012; Lars Wendler <polynomial-c@gentoo.org>
+  +virtualbox-modules-4.1.16.ebuild:
+  Version bump.
+
+*virtualbox-modules-4.1.14 (26 Apr 2012)
+
+  26 Apr 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-modules-4.1.4.ebuild, -virtualbox-modules-4.1.8.ebuild,
+  -virtualbox-modules-4.1.10.ebuild, +virtualbox-modules-4.1.14.ebuild:
+  Version bump. Removed old.
+
+  24 Apr 2012; Agostino Sarubbo <ago@gentoo.org>
+  virtualbox-modules-4.1.12.ebuild:
+  Stable for amd64, wrt bug #412565
+
+  22 Apr 2012; Markus Meier <maekke@gentoo.org>
+  virtualbox-modules-4.1.12.ebuild:
+  x86 stable, bug #412565
+
+  09 Apr 2012; Markus Meier <maekke@gentoo.org>
+  virtualbox-modules-4.1.8.ebuild:
+  x86 stable, bug #403441
+
+*virtualbox-modules-4.1.12 (05 Apr 2012)
+
+  05 Apr 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-modules-4.1.6.ebuild, +virtualbox-modules-4.1.12.ebuild:
+  Version bump (bug #410811). Removed old.
+
+*virtualbox-modules-4.1.10 (15 Mar 2012)
+
+  15 Mar 2012; Lars Wendler <polynomial-c@gentoo.org>
+  +virtualbox-modules-4.1.10.ebuild:
+  Version bump.
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  virtualbox-modules-4.1.8.ebuild:
+  Stable for amd64, wrt bug #403441
+
+*virtualbox-modules-4.1.8 (20 Dec 2011)
+
+  20 Dec 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-modules-4.0.12.ebuild, +virtualbox-modules-4.1.8.ebuild:
+  Version bump. Removed old.
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  virtualbox-modules-4.1.4.ebuild:
+  x86 stable wrt bug #386317
+
+  03 Dec 2011; Lars Wendler <polynomial-c@gentoo.org>
+  virtualbox-modules-4.1.6.ebuild,
+  +files/virtualbox-modules-4.1.6-kernel-3.2-vboxpci.patch:
+  Fixed compilation with kernel-3.2 (bug #389953). Thanks to Fabio Rossi for
+  providing a patch.
+
+  06 Nov 2011; Lars Wendler <polynomial-c@gentoo.org>
+  virtualbox-modules-4.1.4.ebuild, virtualbox-modules-4.1.6.ebuild:
+  Added kernel version check for pax patch. Cleaned up 4.1.4 ebuild a bit.
+
+*virtualbox-modules-4.1.6 (04 Nov 2011)
+
+  04 Nov 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-modules-4.1.2.ebuild, +virtualbox-modules-4.1.6.ebuild:
+  Version bump. Removed old.
+
+  01 Nov 2011; Tony Vroon <chainsaw@gentoo.org>
+  virtualbox-modules-4.1.4.ebuild:
+  Marked stable on AMD64 based on arch testing by Tomáš "Mepho" Pružina,
+  Blain "doc235" Anderson & Elijah "Armageddon" El Lazkani in security bug
+  #386317.
+
+  24 Oct 2011; Lars Wendler <polynomial-c@gentoo.org>
+  virtualbox-modules-4.1.4.ebuild,
+  +files/virtualbox-modules-4.1.4-pax-const.patch:
+  Fixed compilation with >=3.0.4 hardened kernel. Thanks to letrec for
+  providing the patch and blueness for giving the correct hints wrt. USE flag
+  naming (bug #386497).
+
+*virtualbox-modules-4.1.4 (04 Oct 2011)
+
+  04 Oct 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-modules-4.1.0-r1.ebuild,
+  -files/virtualbox-modules-4.1.0-vboxbug9305.patch,
+  virtualbox-modules-4.1.2.ebuild, +virtualbox-modules-4.1.4.ebuild:
+  Version bump. Thanks to Christian Inci who reported this in bug #385577.
+  Removed old.
+
+*virtualbox-modules-4.1.2 (17 Aug 2011)
+
+  17 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  +virtualbox-modules-4.1.2.ebuild:
+  Version bump. Added some PCI checks as suggested by Fabio Rossi in bug
+  #379119.
+
+  09 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-modules-3.2.12.ebuild, -virtualbox-modules-4.0.10.ebuild,
+  -virtualbox-modules-4.1.0.ebuild:
+  Removed old versions.
+
+*virtualbox-modules-4.1.0-r1 (07 Aug 2011)
+
+  07 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  +virtualbox-modules-4.1.0-r1.ebuild,
+  +files/virtualbox-modules-4.1.0-vboxbug9305.patch, metadata.xml:
+  Fixed kernel panic on suspend. Thanks to Martin Atenreit for reporting this
+  in bug #377229.
 
   22 Jul 2011; Markos Chandras <hwoarang@gentoo.org>
   virtualbox-modules-4.0.12.ebuild:
@@ -465,4 +637,3 @@
   23 Jun 2007; Charlie Shepherd <masterdriverz@gentoo.org>
   virtualbox-modules-1.3.8.ebuild, virtualbox-modules-1.4.0.ebuild:
   Fix headers, thanks to x-drum
-

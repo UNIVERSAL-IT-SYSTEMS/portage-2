@@ -1,6 +1,58 @@
 # ChangeLog for games-puzzle/pingus
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/pingus/ChangeLog,v 1.30 2011/02/15 17:57:52 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/pingus/ChangeLog,v 1.44 2012/12/08 07:32:00 mr_bones_ Exp $
+
+  08 Dec 2012; Michael Sterrett <mr_bones_@gentoo.org> metadata.xml,
+  pingus-0.7.6.ebuild:
+  make the user insist on background music (bug #446434)
+
+  09 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> pingus-0.7.6.ebuild,
+  +files/pingus-0.7.6-gcc47.patch:
+  add gcc47 patch from Markus Oehme (bug #425238)
+
+  30 Jun 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  +files/pingus-0.7.6-noopengl.patch, pingus-0.7.6.ebuild:
+  fix USE=-opengl compile (bug #404425)
+
+  29 Jun 2012; Michael Sterrett <mr_bones_@gentoo.org> pingus-0.7.6.ebuild:
+  use the latest boost
+
+  24 May 2012; Michael Sterrett <mr_bones_@gentoo.org> pingus-0.7.6.ebuild:
+  Add strip-flags for bug #396149
+
+  24 May 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  -files/pingus-0.7.3-libpng15.patch, -files/pingus-0.7.3-paths.patch,
+  -pingus-0.7.3.ebuild, -pingus-0.7.5.ebuild:
+  old
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> pingus-0.7.6.ebuild:
+  Marking pingus-0.7.6 ppc for bug 402603
+
+  17 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pingus-0.7.6.ebuild:
+  x86 stable wrt bug #402603
+
+  07 Feb 2012; Agostino Sarubbo <ago@gentoo.org> pingus-0.7.6.ebuild:
+  Stable for amd64, wrt bug #402603
+
+  10 Jan 2012; Brent Baude <ranger@gentoo.org> pingus-0.7.5.ebuild:
+  Marking pingus-0.7.5 ppc for bug 395443
+
+*pingus-0.7.6 (05 Jan 2012)
+
+  05 Jan 2012; Michael Sterrett <mr_bones_@gentoo.org> +pingus-0.7.6.ebuild:
+  version bump (bug #396451)
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pingus-0.7.5.ebuild:
+  x86 stable wrt bug #395443
+
+  21 Dec 2011; Agostino Sarubbo <ago@gentoo.org> pingus-0.7.5.ebuild:
+  Stable for AMD64, wrt bug #395443
+
+*pingus-0.7.5 (27 Oct 2011)
+
+  27 Oct 2011; Michael Sterrett <mr_bones_@gentoo.org>
+  files/pingus-0.7.3-libpng15.patch, +pingus-0.7.5.ebuild:
+  version bump (bug #387757)
 
   15 Feb 2011; Michael Sterrett <mr_bones_@gentoo.org> pingus-0.7.3.ebuild,
   +files/pingus-0.7.3-libpng15.patch:

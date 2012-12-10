@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-misc/fcgiwrap/fcgiwrap-9999.ebuild,v 1.1 2010/06/29 13:17:59 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-misc/fcgiwrap/fcgiwrap-9999.ebuild,v 1.4 2012/07/25 15:10:21 darkside Exp $
 
-EAPI="3"
+EAPI="4"
 
-[[ ${PV} = *9999* ]] && VCS_ECLASS="git" || VCS_ECLASS=""
+[[ ${PV} = *9999* ]] && VCS_ECLASS="git-2" || VCS_ECLASS=""
 inherit autotools ${VCS_ECLASS}
 
 DESCRIPTION="Simple FastCGI wrapper for CGI scripts (CGI support for nginx)"
@@ -19,8 +19,9 @@ if [[ ${PV} == *9999* ]]; then
 
 	KEYWORDS=""
 else
-	MY_REV="2e301c8"
-	SRC_URI="http://download.github.com/gnosek-${PN}-v${PV}-1-g${MY_REV}.tar.gz -> ${P}.tar.gz"
+	#MY_REV="58ec209"
+	#SRC_URI="http://download.github.com/gnosek-${P}-4-g${MY_REV}.tar.gz"
+	SRC_URI="mirror://gentoo/${P}.tar.gz"
 	S="${WORKDIR}/gnosek-${PN}-${MY_REV}"
 
 	KEYWORDS="~amd64 ~x86"
@@ -29,17 +30,13 @@ fi
 DEPEND="dev-libs/fcgi"
 RDEPEND="${DEPEND}"
 
+DOCS=( README.rst )
+
 src_prepare() {
 	sed -e '/man8dir = $(DESTDIR)/s/@prefix@//' \
 		-i Makefile.in || die "sed failed"
 
 	eautoreconf
-}
-
-src_install() {
-	einstall DESTDIR="${D}"
-
-	dodoc README.rst
 }
 
 pkg_postinst() {

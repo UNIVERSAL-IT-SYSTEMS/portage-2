@@ -1,6 +1,26 @@
 # ChangeLog for dev-perl/HTML-Format
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Format/ChangeLog,v 1.20 2011/07/30 08:12:12 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Format/ChangeLog,v 1.26 2012/06/24 12:58:24 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -HTML-Format-2.04.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> HTML-Format-2.04.ebuild,
+  HTML-Format-2.100.0.ebuild:
+  Drop ia64/sparc keywords
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  HTML-Format-2.100.0.ebuild:
+  x86 stable wrt bug #400135
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> HTML-Format-2.100.0.ebuild:
+  Marking HTML-Format-2.100.0 ppc for bug 400135
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> HTML-Format-2.100.0.ebuild:
+  Stable for amd64, wrt bug #400135
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> -HTML-Format-2.50.ebuild,
   -HTML-Format-2.70.0.ebuild, -HTML-Format-2.90.0.ebuild:
@@ -81,4 +101,3 @@
   25 Aug 2004; Renat Lumpau <rl03@gentoo.org> +metadata.xml,
   +HTML-Format-2.04.ebuild:
   Initial ebuild. RT dependency. OK'd by mcummings.
-

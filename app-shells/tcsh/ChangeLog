@@ -1,6 +1,44 @@
 # ChangeLog for app-shells/tcsh
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/tcsh/ChangeLog,v 1.102 2011/08/01 06:52:12 haubi Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-shells/tcsh/ChangeLog,v 1.112 2012/03/08 11:48:40 grobian Exp $
+
+  08 Mar 2012; Fabian Groffen <grobian@gentoo.org> -tcsh-6.16.ebuild,
+  tcsh-6.18.01.ebuild:
+  Fix complaints from append-flags, drop old
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> tcsh-6.17-r1.ebuild:
+  Marking tcsh-6.17-r1 ppc64 for bug 389013
+
+*tcsh-6.18.01 (01 Mar 2012)
+
+  01 Mar 2012; Fabian Groffen <grobian@gentoo.org> +tcsh-6.18.01.ebuild:
+  Version bump
+
+  09 Jan 2012; Brent Baude <ranger@gentoo.org> tcsh-6.17-r1.ebuild:
+  Marking tcsh-6.17-r1 ppc for bug 389013
+
+*tcsh-6.17.06 (31 Dec 2011)
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> +tcsh-6.17.06.ebuild,
+  -files/tcsh-6.14-r2.patch, -files/tcsh-6.14-r4.patch, -tcsh-6.14-r5.ebuild,
+  -tcsh-6.15-r2.ebuild:
+  Cleanup old, version bump to beta version with ebuild cleanup.
+
+  26 Nov 2011; Raúl Porcel <armin76@gentoo.org> tcsh-6.17-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #389013
+
+  06 Nov 2011; Markus Meier <maekke@gentoo.org> tcsh-6.17-r1.ebuild:
+  arm stable, bug #389013
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> tcsh-6.17-r1.ebuild:
+  x86 stable wrt bug #389013
+
+  01 Nov 2011; Jeroen Roovers <jer@gentoo.org> tcsh-6.17-r1.ebuild:
+  Stable for HPPA (bug #389013).
+
+  01 Nov 2011; Tony Vroon <chainsaw@gentoo.org> tcsh-6.17-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #389013.
 
   01 Aug 2011; Michael Haubenwallner <haubi@gentoo.org> tcsh-6.17-r1.ebuild:
   add keyword ~ppc-aix

@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/openbabel-python/openbabel-python-2.3.0.ebuild,v 1.5 2011/05/09 15:53:32 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/openbabel-python/openbabel-python-2.3.0.ebuild,v 1.8 2012/03/04 10:29:38 jlec Exp $
 
 EAPI="3"
 
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="*-jython"
+RESTRICT_PYTHON_ABIS="*-jython *-pypy-*"
 PYTHON_MODNAME="openbabel.py pybel.py"
 
 inherit distutils eutils
@@ -31,7 +31,7 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}"/openbabel-${PV}
 
-DISTUTILS_SETUP_FILES="scripts|python/setup.py"
+DISTUTILS_SETUP_FILES=("scripts|python/setup.py")
 
 src_prepare() {
 	epatch \

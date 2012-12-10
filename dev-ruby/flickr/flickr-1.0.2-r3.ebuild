@@ -1,9 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/flickr/flickr-1.0.2-r3.ebuild,v 1.1 2009/12/15 15:31:07 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/flickr/flickr-1.0.2-r3.ebuild,v 1.3 2011/12/14 17:39:35 ago Exp $
 
 EAPI=2
-USE_RUBY="ruby18 ruby19 jruby"
+USE_RUBY="ruby18 jruby"
 
 inherit ruby-fakegem
 
@@ -15,7 +15,7 @@ S="${WORKDIR}/${P}-gentoo"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 IUSE=""
 
 # Tests fail for now, they don't seem to be designed to work just yet

@@ -1,6 +1,53 @@
 # ChangeLog for app-editors/mg
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/mg/ChangeLog,v 1.30 2011/05/26 20:50:09 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/mg/ChangeLog,v 1.45 2012/09/22 13:32:28 blueness Exp $
+
+  22 Sep 2012; Anthony G. Basile <blueness@gentoo.org> mg-20110905.ebuild:
+  keyword ~ppc64, bug #384639
+
+  24 Jul 2012; Ulrich Müller <ulm@gentoo.org> mg-20110905.ebuild:
+  Add ~amd64-fbsd keyword, bug 384639.
+
+  13 Jan 2012; Christian Faulhammer <fauli@gentoo.org> -mg-20110120.ebuild:
+  clean up
+
+  06 Jan 2012; Brent Baude <ranger@gentoo.org> mg-20110905.ebuild:
+  Marking mg-20110905 ppc for bug 386689
+
+  03 Dec 2011; Raúl Porcel <armin76@gentoo.org> mg-20110905.ebuild:
+  alpha/sparc stable wrt #386689
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> mg-20110905.ebuild:
+  Stable for HPPA (bug #386689).
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> mg-20110905.ebuild:
+  x86 stable wrt bug #386689
+
+  12 Oct 2011; Tony Vroon <chainsaw@gentoo.org> mg-20110905.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #386689.
+
+  05 Oct 2011; Naohiro Aota <naota@gentoo.org> mg-20110905.ebuild:
+  Add ~x86-fbsd
+
+  03 Oct 2011; Jeroen Roovers <jer@gentoo.org> mg-20110905.ebuild:
+  Marked ~hppa (bug #384639).
+
+  25 Sep 2011; Ulrich Mueller <ulm@gentoo.org> mg-20110120.ebuild,
+  mg-20110905.ebuild:
+  Set /usr/bin/emacs symlink with USE=livecd, bug 384451.
+
+  25 Sep 2011; Raúl Porcel <armin76@gentoo.org> mg-20110120.ebuild,
+  mg-20110905.ebuild:
+  alpha/sparc stable
+
+*mg-20110905 (07 Sep 2011)
+
+  07 Sep 2011; Ulrich Mueller <ulm@gentoo.org> +mg-20110905.ebuild:
+  Version bump.
+
+  31 Aug 2011; Ulrich Mueller <ulm@gentoo.org> mg-20110120.ebuild:
+  Depend on ncurses, bug 381023.
 
   26 May 2011; Ulrich Mueller <ulm@gentoo.org> -mg-20090107.ebuild,
   -mg-20110103.ebuild:

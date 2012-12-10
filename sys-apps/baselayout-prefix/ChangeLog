@@ -1,6 +1,38 @@
 # ChangeLog for sys-apps/baselayout-prefix
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout-prefix/ChangeLog,v 1.13 2011/06/14 17:08:29 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/baselayout-prefix/ChangeLog,v 1.20 2012/08/11 10:19:18 heroxbd Exp $
+
+  11 Aug 2012; Benda Xu <heroxbd@gentoo.org>
+  baselayout-prefix-1.12.14-r1.ebuild:
+  remove functions.sh, newer version is provided by sys-apps/openrc
+
+*baselayout-prefix-1.12.14-r1 (07 Aug 2012)
+
+  07 Aug 2012; Benda Xu <heroxbd@gentoo.org>
+  +baselayout-prefix-1.12.14-r1.ebuild:
+  add new revision for testing openrc. bug 415895
+
+  24 May 2012; Jeremy Olexa <darkside@gentoo.org>
+  -baselayout-prefix-1.12.5-r9.ebuild, -baselayout-prefix-1.12.5-r10.ebuild:
+  remove old versions
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org>
+  baselayout-prefix-1.12.14.ebuild, baselayout-prefix-1.12.5-r10.ebuild,
+  baselayout-prefix-1.12.5-r11.ebuild, baselayout-prefix-1.12.5-r9.ebuild:
+  Inherit user for enewuser/etc...
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org>
+  baselayout-prefix-1.12.5-r11.ebuild, baselayout-prefix-1.12.14.ebuild:
+  Drop unused autotools inherit.
+
+  19 Feb 2012; Fabian Groffen <grobian@gentoo.org>
+  baselayout-prefix-1.12.14.ebuild:
+  Use append-cflags instead of too generic append-flags to avoid F77 and FC
+  rejected warnings
+
+  04 Dec 2011; Fabian Groffen <grobian@gentoo.org>
+  baselayout-prefix-1.12.14.ebuild:
+  Avoid automake call that breaks in the early bootstrapping stage
 
   14 Jun 2011; Fabian Groffen <grobian@gentoo.org>
   baselayout-prefix-1.12.14.ebuild:

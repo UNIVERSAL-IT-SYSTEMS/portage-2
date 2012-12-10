@@ -1,6 +1,114 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/sparc/package.use.mask,v 1.76 2011/07/19 13:14:08 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/sparc/package.use.mask,v 1.117 2012/11/01 23:51:35 robbat2 Exp $
+
+# Robin H Johnson <robbat2@gentoo.org> (01 Nov 2012)
+# MySQL 5.5 wants systemtap, tcmalloc & jemalloc
+>=dev-db/mysql-5.5 systemtap tcmalloc jemalloc
+>=dev-db/mariadb-5.5 systemtap tcmalloc jemalloc
+
+# Raúl Porcel <armin76@gentoo.org> (08 Jul 2012)
+# x11-libs/qt-webkit doesn't seem to work
+dev-python/PyQt4 webkit
+x11-libs/qt-assistant webkit
+x11-libs/qt-declarative webkit
+
+# Pacho Ramos <pacho@gentoo.org> (30 Jun 2012)
+# Missing keywords for connman
+net-libs/gupnp connman
+net-im/telepathy-mission-control connman
+
+# Diego Elio Pettenò <flameeyes@gentoo.org> (24 Jun 2012)
+# Requires libpcre with jit
+www-apache/mod_security jit
+
+# Ben de Groot <yngwin@gentoo.org> (14 Jun 2012)
+# Since x11-libs/qt-* will no longer be available for sparc, we need
+# to mask the reverse dependencies
+dev-cpp/eigen examples
+dev-tex/latex-beamer lyx
+media-sound/pulseaudio equalizer
+media-video/vlc skins
+
+# Raúl Porcel <armin76@gentoo.org> (28 May 2012)
+# Needs x11-misc/lightdm(which also requires some other deps)
+x11-misc/xscreensaver new-login
+
+# Alexandre Rostovtsev <tetromino@gentoo.org> (25 May 2012)
+# Remove mask entry when app-misc/geoclue and app-accessibility/at-spi2-core
+# are keyworded here, bug #411761
+net-libs/webkit-gtk webkit2
+
+# Samuli Suominen <ssuominen@gentoo.org> (15 May 2012)
+# UDisks2 untested wrt http://bugs.gentoo.org/412801
+gnome-base/gvfs udisks
+
+# Pacho Ramos <pacho@gentoo.org> (07 May 2012)
+# libhid is not keyworded
+app-misc/lcdproc hid
+
+# Davide Pesavento <pesa@gentoo.org> (2 May 2012)
+# Requires Qt 4.8, which is not keyworded on sparc.
+x11-libs/cairo qt4
+
+# Alexandre Rostovtsev <tetromino@gentoo.org> (12 Apr 2012)
+# Temporary mask-in-base, unmask-in-arch for dev-python/mako keywording for
+# gobject-introspection[doctool], bug #411761
+dev-libs/gobject-introspection -doctool
+
+# Alexandre Rostovtsev <tetromino@gentoo.org> (12 Apr 2012)
+# Requires gnutls[pkcs11], which is use.masked on sparc
+net-libs/glib-networking smartcard
+
+# Alexey Shvetsov <alexxy@gentoo.org> (17 Dec 2011)
+# Mask use numa for openmpi
+sys-cluster/openmpi numa psm knem open-mx openmpi_fabrics_psm openmpi_fabrics_knem openmpi_fabrics_open-mx openmpi_fabrics_ofed openmpi_fabrics_dapl openmpi_rm_slurm openmpi_ofed_features_rdmacm
+
+# Alexandre Rostovtsev <tetromino@gentoo.org> (25 Nov 2011)
+# Mask USE flags on gnome-3.2 packages due to missing keywords on deps;
+# bug #390345
+>=app-cdr/brasero-3 tracker
+app-text/evince xps
+>=dev-libs/folks-0.6 eds socialweb tracker
+>=gnome-base/gnome-menus-3.2 test
+>=gnome-base/gnome-panel-3 eds
+>=gnome-base/nautilus-3 previewer sendto tracker
+
+# Raúl Porcel <armin76@gentoo.org> (05 Nov 2011)
+# jit not supported on sparc
+dev-libs/libpcre jit
+
+# Alexandre Rostovtsev <tetromino@gentoo.org> (03 Nov 2011)
+# Missing keywords in gst-plugins-faac, bug #389433
+gnome-extra/gnome-media aac
+
+# Pacho Ramos <pacho@gentoo.org> (24 Oct 2011)
+# Missing keywords in needed packages, bug #388367
+net-im/empathy map
+
+# Raúl Porcel <armin76@gentoo.org> (08 Oct 2011)
+# Needs media-sound/lilypond
+app-text/asciidoc test
+
+# Patrick McLean <chutzpah@gentoo.org> (07 Sep 2011)
+# missing keywords on dependencies
+media-video/x264-encoder ffmpegsource
+
+# Robin H. Johnson <robbat2@gentoo.org> (03 Sep 2011)
+# Remove this for your arch after you keyword dev-utils/google-perftools (bug #381737
+dev-libs/libmemcached tcmalloc
+
+# Alexey Shvetsov <alexxy@gentoo.org> (31 Aug 2011)
+# Mask numa use flag per bug #381313
+sys-apps/hwloc numa
+
+# Sergei Trofimovich <slyfox@gentoo.org> (03 Aug 2011)
+# sys-devel/llvm has no sparc keywords yet (bug #320221)
+dev-lang/ghc llvm
+
+# Patrick Lauer <patrick@gentoo.org> (03 Aug 2011)
+# Missing jre on sparc
+net-analyzer/metasploit gui
 
 # Pacho Ramos <pacho@gentoo.org> (19 Jul 2011)
 # Missing keywords on dependencies
@@ -12,7 +120,7 @@ media-video/totem youtube
 
 # Pacho Ramos <pacho@gentoo.org> (27 Jan 2011)
 # missing keywords on needed plugins
-media-plugins/gst-plugins-meta dv vcd wavpack
+media-plugins/gst-plugins-meta dts dv libvisual vcd wavpack
 
 # Michael Weber <xmw@gentoo.org> (03 Jan 2011)
 # dev-libs/libev is not keyworded
@@ -26,18 +134,9 @@ mail-client/evolution connman
 # Mask doc-pdf because of Java dependencies (bug #347259)
 net-analyzer/wireshark doc-pdf
 
-# Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org> (07 Nov 2010)
-# x11-libs/qt-declarative is not keyworded.
-dev-python/PyQt4 declarative
-
 # Justin Lecher <jlec@gentoo.org> (13 Aug 2010)
 # MKL not available on this arch
 media-gfx/povray mkl
-
-# Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org> (29 Jul 2010)
-# Mask python3 for stable portage until python-3.x is marked stable.
-=sys-apps/portage-2.1.10* python3
-=sys-apps/portage-2.1.9* python3
 
 # Steve Arnold <nerdboy@gentoo.org> (12 Jun 2010)
 # masking for gdal (see bug 315659)
@@ -45,10 +144,6 @@ sci-libs/gdal ecwj2k
 
 # uses games-board/ggz-gtk-client
 games-strategy/freeciv ggz
-
-# Ben de Groot <yngwin@gentoo.org> (18 Jan 2010)
-# newer qt-webkit is not keyworded (bug #235685)
->=dev-python/PyQt4-4.7.2 webkit
 
 # Raúl Porcel <armin76@gentoo.org> (02 Mar 2010)
 # needs dev-python/mako which depends on
@@ -75,10 +170,6 @@ media-libs/libxspf doc
 # Romain Perier <mrpouet@gentoo.org> (18 Oct. 2009)
 # >=networkmanager-0.7.0 is not keyworded.
 gnome-base/gnome-applets networkmanager
-
-# Raúl Porcel <armin76@gentoo.org> (09 Jun 2009)
-# Needs qt-assistant
-dev-python/PyQt4 assistant
 
 # Raúl Porcel <armin76@gentoo.org>
 # Depends on dev-java/fop which requires java...
@@ -109,9 +200,6 @@ app-text/enchant zemberek
 # Mask srtp for ortp because libsrtp is marked -sparc
 net-libs/ortp srtp
 
-# Alexis Ballier <aballier@gentoo.org> (14 Nov 2010)
-# building the documentation needs ptex
-# app-text/ptex does not build: bug #323559
-# >=dev-texlive/texlive-langcjk-2010 provides ptex too but is masked
-# unmask when TeX Live 2010 keywording is done (bug #342513)
-app-i18n/canna doc
+# Ultrabug <ultrabug@gentoo.org) (05 Sept 2011)
+# missing keyword for net-libs/zeromq
+app-admin/rsyslog zeromq

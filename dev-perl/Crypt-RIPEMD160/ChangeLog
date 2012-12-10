@@ -1,6 +1,25 @@
 # ChangeLog for dev-perl/Crypt-RIPEMD160
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Crypt-RIPEMD160/ChangeLog,v 1.23 2011/04/24 15:54:51 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Crypt-RIPEMD160/ChangeLog,v 1.29 2012/09/02 17:32:13 tove Exp $
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -Crypt-RIPEMD160-0.04.ebuild:
+  Cleanup
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> Crypt-RIPEMD160-0.04.ebuild,
+  Crypt-RIPEMD160-0.50.0.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> Crypt-RIPEMD160-0.50.0.ebuild:
+  Marking Crypt-RIPEMD160-0.50.0 ppc for bug 413091
+
+  24 Apr 2012; Agostino Sarubbo <ago@gentoo.org> Crypt-RIPEMD160-0.50.0.ebuild:
+  Stable for amd64, wrt bug #413091
+
+  24 Apr 2012; Jeff Horelick <jdhore@gentoo.org> Crypt-RIPEMD160-0.50.0.ebuild:
+  marked x86 per bug 413091
 
   24 Apr 2011; Fabian Groffen <grobian@gentoo.org>
   Crypt-RIPEMD160-0.50.0.ebuild:

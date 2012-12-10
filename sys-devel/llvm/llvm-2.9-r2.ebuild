@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-2.9-r2.ebuild,v 1.1 2011/05/23 11:43:47 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-2.9-r2.ebuild,v 1.10 2012/11/30 16:07:29 voyageur Exp $
 
 EAPI="3"
-inherit eutils flag-o-matic multilib toolchain-funcs
+inherit eutils flag-o-matic multilib toolchain-funcs pax-utils
 
 DESCRIPTION="Low Level Virtual Machine"
 HOMEPAGE="http://llvm.org/"
@@ -11,18 +11,16 @@ SRC_URI="http://llvm.org/releases/${PV}/${P}.tgz"
 
 LICENSE="UoI-NCSA"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
-IUSE="alltargets debug +libffi llvm-gcc ocaml test udis86 vim-syntax"
+KEYWORDS="amd64 ~ppc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos"
+IUSE="debug +libffi llvm-gcc multitarget ocaml test udis86 vim-syntax"
 
 DEPEND="dev-lang/perl
 	>=sys-devel/make-3.79
 	>=sys-devel/flex-2.5.4
-	>=sys-devel/bison-1.28
-	!~sys-devel/bison-1.85
-	!~sys-devel/bison-1.875
+	>=sys-devel/bison-1.875d
 	|| ( >=sys-devel/gcc-3.0 >=sys-devel/gcc-apple-4.2.1 )
 	|| ( >=sys-devel/binutils-2.18 >=sys-devel/binutils-apple-3.2.3 )
-	libffi? ( dev-util/pkgconfig
+	libffi? ( virtual/pkgconfig
 		virtual/libffi )
 	ocaml? ( dev-lang/ocaml )
 	udis86? ( amd64? ( dev-libs/udis86[pic] )
@@ -78,8 +76,9 @@ src_prepare() {
 	sed -e 's,$ABS_RUN_DIR/lib,'"${EPREFIX}"/usr/$(get_libdir)/${PN}, \
 		-i tools/llvm-config/llvm-config.in.in || die "llvm-config sed failed"
 
-	einfo "Fixing rpath"
+	einfo "Fixing rpath and CFLAGS"
 	sed -e 's,\$(RPATH) -Wl\,\$(\(ToolDir\|LibDir\)),$(RPATH) -Wl\,'"${EPREFIX}"/usr/$(get_libdir)/${PN}, \
+		-e '/OmitFramePointer/s/-fomit-frame-pointer//' \
 		-i Makefile.rules || die "rpath sed failed"
 
 	epatch "${FILESDIR}"/${PN}-2.6-commandguide-nops.patch
@@ -87,15 +86,19 @@ src_prepare() {
 
 	# Upstream commit r131062
 	epatch "${FILESDIR}"/${P}-Operator.h-c++0x.patch
+
+	# Additional unistd.h include for GCC 4.7
+	epatch "${FILESDIR}"/${P}-gcc4.7.patch
 }
 
 src_configure() {
 	local CONF_FLAGS="--enable-shared
+		--with-optimize-option=
 		$(use_enable !debug optimized)
 		$(use_enable debug assertions)
 		$(use_enable debug expensive-checks)"
 
-	if use alltargets; then
+	if use multitarget; then
 		CONF_FLAGS="${CONF_FLAGS} --enable-targets=all"
 	else
 		CONF_FLAGS="${CONF_FLAGS} --enable-targets=host-only"
@@ -150,6 +153,11 @@ src_configure() {
 
 src_compile() {
 	emake VERBOSE=1 KEEP_SYMBOLS=1 REQUIRES_RTTI=1 || die "emake failed"
+
+	pax-mark m Release/bin/lli
+	if use test; then
+		pax-mark m unittests/ExecutionEngine/JIT/Release/JITTests
+	fi
 }
 
 src_install() {
@@ -162,6 +170,7 @@ src_install() {
 
 	# Fix install_names on Darwin.  The build system is too complicated
 	# to just fix this, so we correct it post-install
+	local lib= f= odylib=
 	if [[ ${CHOST} == *-darwin* ]] ; then
 		for lib in lib{EnhancedDisassembly,LLVM-${PV},LTO}.dylib {BugpointPasses,LLVMHello,profile_rt}.dylib ; do
 			# libEnhancedDisassembly is Darwin10 only, so non-fatal
@@ -173,9 +182,10 @@ src_install() {
 			eend $?
 		done
 		for f in "${ED}"/usr/bin/* "${ED}"/usr/lib/${PN}/libLTO.dylib ; do
-			ebegin "fixing install_name reference to libLLVM-${PV}.dylib of ${f##*/}"
+			odylib=$(scanmacho -BF'%n#f' "${f}" | tr ',' '\n' | grep libLLVM-${PV}.dylib)
+			ebegin "fixing install_name reference to ${odylib} of ${f##*/}"
 			install_name_tool \
-				-change "@executable_path/../lib/libLLVM-${PV}.dylib" \
+				-change "${odylib}" \
 					"${EPREFIX}"/usr/lib/${PN}/libLLVM-${PV}.dylib \
 				"${f}"
 			eend $?

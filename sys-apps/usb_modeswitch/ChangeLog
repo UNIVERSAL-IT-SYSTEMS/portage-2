@@ -1,6 +1,118 @@
 # ChangeLog for sys-apps/usb_modeswitch
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/usb_modeswitch/ChangeLog,v 1.16 2011/07/30 23:01:20 rafaelmartins Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/usb_modeswitch/ChangeLog,v 1.39 2012/11/28 23:00:52 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -usb_modeswitch-1.2.3_p20120531-r1.ebuild,
+  -usb_modeswitch-1.2.3_p20120531-r2.ebuild:
+  old
+
+*usb_modeswitch-1.2.5_p20121109 (28 Nov 2012)
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +usb_modeswitch-1.2.5_p20121109.ebuild:
+  Version bump (of both, the program and the data files)
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  usb_modeswitch-1.2.4_p20120815.ebuild:
+  Use udev.eclass for determining correct udevdir for helpers and rules. Use
+  virtual/udev instead of sys-fs/udev. Mark stable for amd64 and x86.
+
+*usb_modeswitch-1.2.4_p20120815 (25 Aug 2012)
+
+  25 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +usb_modeswitch-1.2.4_p20120815.ebuild:
+  Version bump.
+
+*usb_modeswitch-1.2.3_p20120531-r2 (06 Aug 2012)
+
+  06 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +usb_modeswitch-1.2.3_p20120531-r2.ebuild:
+  Use udev.pc pkg-config file to determine UDEVDIR and RULESDIR for compability
+  with sys-fs/udev >= 187.
+
+  13 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -usb_modeswitch-1.2.3.ebuild, -usb_modeswitch-1.2.3-r1.ebuild,
+  -usb_modeswitch-1.2.3_p20120531.ebuild:
+  old
+
+  13 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  usb_modeswitch-1.2.3_p20120531-r1.ebuild:
+  amd64/x86 stable
+
+*usb_modeswitch-1.2.3_p20120531-r1 (13 Jul 2012)
+
+  13 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +usb_modeswitch-1.2.3_p20120531-r1.ebuild:
+  Search modprobe also in /usr/bin wrt #416223
+
+*usb_modeswitch-1.2.3_p20120531 (20 Jun 2012)
+
+  20 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +usb_modeswitch-1.2.3_p20120531.ebuild:
+  Use _p for defining version of the usb-modeswitch-data.
+
+*usb_modeswitch-1.2.3-r1 (19 Jun 2012)
+
+  19 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +usb_modeswitch-1.2.3-r1.ebuild:
+  Update usb-modeswitch-data to 20120531.
+
+  22 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -usb_modeswitch-1.1.9.ebuild:
+  old
+
+  22 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  usb_modeswitch-1.2.3.ebuild:
+  amd64/x86 stable
+
+  15 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  usb_modeswitch-1.2.3.ebuild:
+  Include direct link to device_reference.txt in HOMEPAGE for easy access.
+
+  15 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Maintained also by the Gentoo Freedesktop Team.
+
+  15 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -usb_modeswitch-1.1.4.ebuild, -usb_modeswitch-1.1.7.ebuild,
+  -usb_modeswitch-1.1.8.ebuild, -usb_modeswitch-1.2.1.ebuild:
+  old
+
+*usb_modeswitch-1.2.3 (15 Mar 2012)
+
+  15 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +usb_modeswitch-1.2.3.ebuild:
+  Version bump wrt #407237 and display a warning if CONFIG_USB_SERIAL is unset
+  #407241 by Pacho Ramos. Use /lib/udev instead of /$(get_libdir)/udev and yes,
+  this is really correct. Install ChangeLog and README. Upgrade data package to
+  latest 2012-01-20.
+
+*usb_modeswitch-1.2.1 (01 Jan 2012)
+
+  01 Jan 2012; Rafael G. Martins <rafaelmartins@gentoo.org>
+  +usb_modeswitch-1.2.1.ebuild:
+  Version bump.
+
+  04 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  usb_modeswitch-1.1.9.ebuild:
+  x86 stable wrt bug #384937
+
+  04 Oct 2011; Tony Vroon <chainsaw@gentoo.org> usb_modeswitch-1.1.9.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #384937.
+
+*usb_modeswitch-1.1.9 (12 Aug 2011)
+
+  12 Aug 2011; Hanno Boeck <hanno@gentoo.org> +usb_modeswitch-1.1.9.ebuild:
+  Version bump.
+
+  07 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  usb_modeswitch-1.1.7.ebuild:
+  x86 stable wrt bug #377123
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  usb_modeswitch-1.1.7.ebuild:
+  Stable on amd64 wrt bug #377123
 
 *usb_modeswitch-1.1.8 (30 Jul 2011)
 

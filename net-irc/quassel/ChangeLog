@@ -1,6 +1,69 @@
 # ChangeLog for net-irc/quassel
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/ChangeLog,v 1.127 2011/04/20 11:12:35 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/ChangeLog,v 1.143 2012/12/01 14:30:21 blueness Exp $
+
+  01 Dec 2012; Anthony G. Basile <blueness@gentoo.org> quassel-0.8.0.ebuild:
+  keyword ~ppc, thanks peratu, bug #445480
+
+  02 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  quassel-0.8.0.ebuild:
+  Keyword ~arm, tested by me.
+
+  29 Jul 2012; Michael Palimaka <kensington@gentoo.org> quassel-0.8.0.ebuild,
+  quassel-9999.ebuild:
+  Add missing slot dependencies on Qt.
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> quassel-0.8.0.ebuild,
+  quassel-9999.ebuild:
+  tweak inherits so repoman can parse them, and inherit user for enewgroup and
+  enewuser
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -quassel-0.7.3.ebuild:
+  Remove older version. Why the heck stabling on amd64 and x86 was not
+  changeloged last time (repoman bug?)...
+
+  31 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> quassel-0.8.0.ebuild,
+  quassel-9999.ebuild:
+  Add support for syslog switching and add oident elog information.
+
+*quassel-0.8.0 (21 Mar 2012)
+
+  21 Mar 2012; Patrick Lauer <patrick@gentoo.org> +quassel-0.8.0.ebuild:
+  Bump for #403721
+
+  14 Feb 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  ayatana is now global per http://archives.gentoo.org/gentoo-
+  dev/msg_f2eb26947d0c86020625a9aeca6f25e4.xml
+
+  11 Nov 2011; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Drop me from maint.
+
+  04 Nov 2011; Robert Piasek <dagger@gentoo.org> quassel-0.7.3.ebuild:
+  Add paxctl -m for quassel binary Fixes bug #346255
+
+  08 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> -quassel-0.7.2.ebuild,
+  quassel-0.7.3.ebuild:
+  Stable on amd64 and x86, tested in chroot, both cli/server runs. Punt
+  security affected. Per bug #382313.
+
+*quassel-0.7.3 (08 Sep 2011)
+
+  08 Sep 2011; Patrick Lauer <patrick@gentoo.org> +quassel-0.7.3.ebuild:
+  Bump
+
+  19 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org> files/quasselcore.init:
+  Fix initscript wrt ipv6. Patch by Diego (flameeyes). Fixes bug #379861.
+
+  18 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org> quassel-9999.ebuild:
+  Use proper function name (sync with 0.7.2).
+
+  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  quassel-0.7.2.ebuild:
+  keyword ~sparc-solaris
+
+  11 Aug 2011; Nathan Phillip Brink <binki@gentoo.org> quassel-0.7.2.ebuild:
+  Use an existing versionator function to determine the minor version, fixes
+  bug #378551 by slepnoga.
 
   20 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org> -quassel-0.7.1.ebuild,
   quassel-0.7.2.ebuild, quassel-9999.ebuild:
@@ -594,4 +657,3 @@
   26 Feb 2008; Diego Pettenò <flameeyes@gentoo.org> +metadata.xml,
   +quassel-0.2.0_alpha1.ebuild:
   Initial import of Quassel, with a flag to enable/disable build of GUI client.
-

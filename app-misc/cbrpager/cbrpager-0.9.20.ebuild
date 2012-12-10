@@ -1,9 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/cbrpager/cbrpager-0.9.20.ebuild,v 1.4 2010/10/14 19:08:38 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/cbrpager/cbrpager-0.9.20.ebuild,v 1.6 2012/05/21 19:57:57 ssuominen Exp $
 
 EAPI=3
-inherit base
+inherit eutils base
 
 DESCRIPTION="a simple comic book pager."
 HOMEPAGE="http://cbrpager.sourceforge.net"
@@ -18,7 +18,7 @@ RDEPEND="|| ( app-arch/unrar app-arch/rar )
 	>=gnome-base/libgnomeui-2"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_install() {
 	base_src_install

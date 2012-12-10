@@ -1,6 +1,57 @@
 # ChangeLog for app-emulation/virtinst
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtinst/ChangeLog,v 1.31 2011/07/28 19:20:30 cardoe Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtinst/ChangeLog,v 1.43 2012/10/17 03:49:36 phajdan.jr Exp $
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> virtinst-0.600.3.ebuild:
+  x86 stable wrt bug #437202
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> virtinst-0.600.3.ebuild:
+  Stable for amd64, wrt bug #437202
+
+*virtinst-0.600.3 (04 Aug 2012)
+
+  04 Aug 2012; Doug Goldstein <cardoe@gentoo.org> -virtinst-0.600.2.ebuild,
+  +virtinst-0.600.3.ebuild:
+  Quick bump to fix --cpuset=auto and cloning a block device.
+
+*virtinst-0.600.2 (10 Jul 2012)
+
+  10 Jul 2012; Doug Goldstein <cardoe@gentoo.org> +virtinst-0.600.2.ebuild:
+  Version bump
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> virtinst-0.600.1.ebuild:
+  x86 stable wrt bug #407557
+
+  13 Mar 2012; Agostino Sarubbo <ago@gentoo.org> virtinst-0.600.1.ebuild:
+  Stable for amd64, wrt bug #407557
+
+  09 Mar 2012; Doug Goldstein <cardoe@gentoo.org> -virtinst-0.600.0-r2.ebuild:
+  Remove older version
+
+*virtinst-0.600.1 (11 Feb 2012)
+
+  11 Feb 2012; Doug Goldstein <cardoe@gentoo.org> -virtinst-0.500.6.ebuild,
+  +virtinst-0.600.1.ebuild:
+  Version bump and remove older version
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> virtinst-0.600.0.ebuild:
+  x86 stable wrt bug #399295
+
+  19 Jan 2012; Agostino Sarubbo <ago@gentoo.org> virtinst-0.600.0.ebuild:
+  Stable for amd64, wrt bug #399295
+
+*virtinst-0.600.0-r2 (18 Jan 2012)
+
+  18 Jan 2012; Doug Goldstein <cardoe@gentoo.org> -virtinst-0.600.0-r1.ebuild,
+  +virtinst-0.600.0-r2.ebuild:
+  Add an XML utility function that is necessary to fix a CPU usage issue in
+  virt-manager.
+
+*virtinst-0.600.0-r1 (17 Jan 2012)
+
+  17 Jan 2012; Doug Goldstein <cardoe@gentoo.org> +virtinst-0.600.0-r1.ebuild:
+  Bump that contains many fixes and patches for various issues reported
+  upstream.
 
   28 Jul 2011; Doug Goldstein <cardoe@gentoo.org> virtinst-0.600.0.ebuild,
   virtinst-9999.ebuild:

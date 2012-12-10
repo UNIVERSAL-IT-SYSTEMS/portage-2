@@ -1,6 +1,93 @@
 # ChangeLog for xfce-extra/xfce4-sensors-plugin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-sensors-plugin/ChangeLog,v 1.23 2011/07/19 19:24:52 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-sensors-plugin/ChangeLog,v 1.42 2012/11/28 12:24:14 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-sensors-plugin-1.2.5.ebuild:
+  EAPI5
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-sensors-plugin-1.2.3.ebuild:
+  old
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  xfce4-sensors-plugin-1.2.5.ebuild:
+  marked x86 per bug 416233
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-sensors-plugin-1.2.3.ebuild:
+  Revert to ~ppc pending on user request wrt #416233
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  xfce4-sensors-plugin-1.2.5.ebuild:
+  Stable for amd64, wrt bug #416233
+
+  16 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-sensors-plugin-1.2.3-r1.ebuild,
+  -files/xfce4-sensors-plugin-1.2.3-linux-3.x.patch,
+  -xfce4-sensors-plugin-1.2.4.ebuild:
+  old
+
+*xfce4-sensors-plugin-1.2.5 (15 May 2012)
+
+  15 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-sensors-plugin-1.2.5.ebuild:
+  Version bump wrt #416125 by Ilya Gordeev
+
+*xfce4-sensors-plugin-1.2.4 (14 May 2012)
+
+  14 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-sensors-plugin-1.2.4.ebuild:
+  Version bump.
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org>
+  xfce4-sensors-plugin-1.2.3.ebuild, xfce4-sensors-plugin-1.2.3-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*xfce4-sensors-plugin-1.2.3-r1 (18 Apr 2012)
+
+  18 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-sensors-plugin-1.2.3-r1.ebuild,
+  +files/xfce4-sensors-plugin-1.2.3-linux-3.x.patch:
+  Fix hddtemp sensors for Linux 3.x wrt #409343 by Balint SZENTE. Install to
+  libdir instead of libexecdir.
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-sensors-plugin-1.2.3.ebuild, metadata.xml:
+  Rename USE="nvidia" to VIDEO_CARDS="nvidia"
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-sensors-plugin-1.0.0-r1.ebuild,
+  -files/xfce4-sensors-plugin-1.0.0-libnotify-0.7.patch,
+  -files/xfce4-sensors-plugin-1.0.0-missing_includedir.patch,
+  -files/xfce4-sensors-plugin-1.0.0-segfault_workaround.patch,
+  -files/xfce4-sensors-plugin-1.0.0-without_libnotify.patch:
+  old
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-sensors-plugin-1.2.3.ebuild:
+  ppc stable wrt #386963
+
+  29 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-sensors-plugin-1.2.2.ebuild:
+  old
+
+  20 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-sensors-plugin-1.2.3.ebuild:
+  Fix missing System in Categories of xfce4-sensors.desktop by Jeremy Olexa.
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-sensors-plugin-1.2.3.ebuild:
+  amd64 stable wrt #386963
+
+  16 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  xfce4-sensors-plugin-1.2.3.ebuild:
+  x86 stable wrt bug #386963
+
+  13 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-sensors-plugin-1.2.3.ebuild:
+  Stop defining extra -Werror in configure.in and use flags from
+  xfce4-dev-tools instead wrt #386979 by Agostino Sarubbo
 
 *xfce4-sensors-plugin-1.2.3 (19 Jul 2011)
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/clang/clang-2.8-r3.ebuild,v 1.4 2011/07/08 10:10:59 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/clang/clang-2.8-r3.ebuild,v 1.7 2011/11/14 15:02:31 voyageur Exp $
 
 EAPI=3
 
@@ -19,11 +19,11 @@ SRC_URI="http://llvm.org/releases/${PV}/llvm-${PV}.tgz -> llvm-${PV}-r1.tgz
 LICENSE="UoI-NCSA"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
-IUSE="alltargets debug +static-analyzer system-cxx-headers test"
+IUSE="debug multitarget +static-analyzer system-cxx-headers test"
 
 # Note: for LTO support, clang will depend on binutils with gold plugins, and LLVM built after that - http://llvm.org/docs/GoldPlugin.html
 DEPEND="static-analyzer? ( dev-lang/perl )"
-RDEPEND="~sys-devel/llvm-${PV}[alltargets=]"
+RDEPEND="~sys-devel/llvm-${PV}[multitarget=]"
 
 S="${WORKDIR}/llvm-${PV}"
 
@@ -67,8 +67,9 @@ src_prepare() {
 		-e 's,^PROJ_libdir.*,PROJ_libdir := $(PROJ_prefix)/'$(get_libdir)/llvm, \
 		-i Makefile.config.in || die "Makefile.config sed failed"
 
-	einfo "Fixing rpath"
+	einfo "Fixing rpath and CFLAGS"
 	sed -e 's,\$(RPATH) -Wl\,\$(\(ToolDir\|LibDir\)),$(RPATH) -Wl\,'"${EPREFIX}"/usr/$(get_libdir)/llvm, \
+		-e '/OmitFramePointer/s/-fomit-frame-pointer//' \
 		-i Makefile.rules || die "rpath sed failed"
 }
 
@@ -82,6 +83,7 @@ src_configure() {
 	else
 		CONF_FLAGS="${CONF_FLAGS} \
 			--enable-optimized \
+			--with-optimize-option= \
 			--disable-assertions \
 			--disable-expensive-checks"
 	fi
@@ -92,7 +94,7 @@ src_configure() {
 			--with-c-include-dirs=${EPREFIX}/usr/include:/usr/include"
 	fi
 
-	if use alltargets; then
+	if use multitarget; then
 		CONF_FLAGS="${CONF_FLAGS} --enable-targets=all"
 	else
 		CONF_FLAGS="${CONF_FLAGS} --enable-targets=host-only"
@@ -107,7 +109,7 @@ src_configure() {
 
 	if use system-cxx-headers; then
 		# Try to get current gcc headers path
-		local CXX_PATH=$(gcc-config -X| cut -d: -f1 | sed 's,/include/g++-v4$,,')
+		local CXX_PATH=$(gcc-config -L| cut -d: -f1)
 		CONF_FLAGS="${CONF_FLAGS} --with-c-include-dirs=/usr/include:${CXX_PATH}/include"
 		CONF_FLAGS="${CONF_FLAGS} --with-cxx-include-root=${CXX_PATH}/include/g++-v4"
 		CONF_FLAGS="${CONF_FLAGS} --with-cxx-include-arch=$CHOST"

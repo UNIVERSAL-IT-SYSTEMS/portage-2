@@ -1,6 +1,62 @@
 # ChangeLog for sys-freebsd/freebsd-pam-modules
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-pam-modules/ChangeLog,v 1.27 2011/07/06 06:03:53 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-pam-modules/ChangeLog,v 1.37 2012/11/24 11:26:01 aballier Exp $
+
+  24 Nov 2012; Alexis Ballier <aballier@gentoo.org>
+  freebsd-pam-modules-9.1_rc3.ebuild:
+  Simplify to call freebsd_src_unpack, bug #444506 by Yuta SATOH
+
+*freebsd-pam-modules-9.1_rc3 (06 Nov 2012)
+
+  06 Nov 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-pam-modules-9.1_rc3.ebuild:
+  bump to rc3
+
+*freebsd-pam-modules-9.1_rc2 (14 Oct 2012)
+
+  14 Oct 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-pam-modules-9.1_rc2.ebuild:
+  bump to 9.1_rc2
+
+*freebsd-pam-modules-9.1_rc1 (11 Sep 2012)
+
+  11 Sep 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-pam-modules-9.1_rc1.ebuild:
+  bump to 9.1_rc1 from bsd overlay by Yuta SATOH, bug #426838
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  freebsd-pam-modules-9.0.ebuild:
+  keyword ~amd64-fbsd
+
+  30 Mar 2012; Alexis Ballier <aballier@gentoo.org>
+  -freebsd-pam-modules-9.0_rc1.ebuild, -freebsd-pam-modules-9.0_rc2.ebuild,
+  -freebsd-pam-modules-9.0_rc3.ebuild:
+  remove old
+
+*freebsd-pam-modules-9.0 (16 Jan 2012)
+
+  16 Jan 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-pam-modules-9.0.ebuild:
+  bump to 9.0
+
+*freebsd-pam-modules-9.0_rc3 (09 Dec 2011)
+
+  09 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-pam-modules-9.0_rc3.ebuild:
+  bump to 9.0_rc3
+
+*freebsd-pam-modules-9.0_rc2 (07 Dec 2011)
+
+  07 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-pam-modules-9.0_rc2.ebuild:
+  bump to rc2
+
+*freebsd-pam-modules-9.0_rc1 (07 Nov 2011)
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-pam-modules-9.0_rc1.ebuild,
+  +files/freebsd-pam-modules-9.0-gentoo.patch:
+  bump to 9.0_rc1
 
 *freebsd-pam-modules-8.2 (06 Jul 2011)
 

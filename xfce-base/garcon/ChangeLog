@@ -1,6 +1,101 @@
 # ChangeLog for xfce-base/garcon
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/garcon/ChangeLog,v 1.28 2011/06/19 16:04:24 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/garcon/ChangeLog,v 1.55 2012/11/28 12:28:41 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> garcon-0.2.0.ebuild:
+  EAPI5
+
+  09 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> -garcon-0.1.9.ebuild,
+  -garcon-0.1.12.ebuild:
+  old
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> garcon-0.2.0.ebuild:
+  alpha/ia64/sh/sparc stable wrt #416233
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> garcon-0.2.0.ebuild:
+  arm stable, bug #416233
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> garcon-0.2.0.ebuild:
+  marked x86 per bug 416233
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> garcon-0.2.0.ebuild:
+  ppc/ppc64 stable wrt #416233
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> garcon-0.2.0.ebuild:
+  Stable for amd64, wrt bug #416233
+
+  19 May 2012; Anthony G. Basile <blueness@gentoo.org> garcon-0.2.0.ebuild:
+  Keyword mips
+
+  17 May 2012; Jeroen Roovers <jer@gentoo.org> garcon-0.2.0.ebuild:
+  Stable for HPPA (bug #416233).
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org> garcon-0.2.0.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> garcon-0.1.9.ebuild,
+  garcon-0.1.12.ebuild, garcon-0.2.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*garcon-0.2.0 (29 Apr 2012)
+
+  29 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +garcon-0.2.0.ebuild:
+  Version bump.
+
+  20 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -garcon-0.1.10.ebuild,
+  -garcon-0.1.11.ebuild:
+  old
+
+*garcon-0.1.12 (14 Apr 2012)
+
+  14 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +garcon-0.1.12.ebuild:
+  Version bump.
+
+*garcon-0.1.11 (30 Mar 2012)
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +garcon-0.1.11.ebuild:
+  Version bump.
+
+  23 Mar 2012; Christoph Mende <angelos@gentoo.org> garcon-0.1.10.ebuild,
+  garcon-0.1.9.ebuild:
+  Add slot dep on glib
+
+*garcon-0.1.10 (12 Feb 2012)
+
+  12 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +garcon-0.1.10.ebuild:
+  Version bump.
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -garcon-0.1.7.ebuild:
+  old
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> garcon-0.1.9.ebuild:
+  ppc/ppc64 stable wrt #386963
+
+  29 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> -garcon-0.1.8.ebuild:
+  old
+
+  26 Nov 2011; Raúl Porcel <armin76@gentoo.org> garcon-0.1.9.ebuild:
+  alpha/ia64/sh/sparc stable wrt #386963
+
+  02 Nov 2011; Jeroen Roovers <jer@gentoo.org> garcon-0.1.9.ebuild:
+  Stable for HPPA (bug #386963).
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> garcon-0.1.9.ebuild:
+  arm stable, bug #386963
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> garcon-0.1.9.ebuild:
+  amd64 stable wrt #386963
+
+  16 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> garcon-0.1.9.ebuild:
+  x86 stable wrt bug #386963
+
+  12 Sep 2011; Christoph Mende <angelos@gentoo.org> garcon-0.1.9.ebuild:
+  Add missing libxfce4util dependency
+
+*garcon-0.1.9 (12 Sep 2011)
+
+  12 Sep 2011; Christoph Mende <angelos@gentoo.org> +garcon-0.1.9.ebuild:
+  Version bump
 
 *garcon-0.1.8 (19 Jun 2011)
 

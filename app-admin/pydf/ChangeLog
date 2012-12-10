@@ -1,6 +1,36 @@
 # ChangeLog for app-admin/pydf
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/pydf/ChangeLog,v 1.33 2010/09/18 16:36:20 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/pydf/ChangeLog,v 1.42 2012/10/16 21:59:28 maekke Exp $
+
+  16 Oct 2012; Markus Meier <maekke@gentoo.org> pydf-10.ebuild:
+  add ~arm, bug #433655
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> pydf-9.ebuild, pydf-10.ebuild:
+  Drop sparc keywords
+
+  02 Aug 2012; Markos Chandras <hwoarang@gentoo.org> pydf-10.ebuild:
+  Stable on amd64 wrt bug #418495
+
+  25 Jul 2012; Anthony G. Basile <blueness@gentoo.org> pydf-10.ebuild:
+  Stable ppc/ppc64, bug #418495
+
+  25 Jul 2012; Jeff Horelick <jdhore@gentoo.org> pydf-10.ebuild:
+  marked x86 per bug 418495
+
+  25 Jul 2012; Ben de Groot <yngwin@gentoo.org> metadata.xml:
+  Take over maintainership since spatz is being retired.
+
+*pydf-10 (05 Mar 2012)
+
+  05 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +pydf-10.ebuild:
+  Version bump.
+
+  05 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -pydf-7.ebuild,
+  -pydf-8.ebuild, -files/pydf-bw.patch:
+  old
+
+  07 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> pydf-9.ebuild:
+  ppc/ppc64 stable wrt #329087
 
   18 Sep 2010; Raúl Porcel <armin76@gentoo.org> pydf-9.ebuild:
   sparc stable wrt #329087

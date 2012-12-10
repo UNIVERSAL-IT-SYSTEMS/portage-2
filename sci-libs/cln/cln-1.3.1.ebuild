@@ -1,9 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/cln/cln-1.3.1.ebuild,v 1.11 2010/10/15 09:44:01 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/cln/cln-1.3.1.ebuild,v 1.12 2012/10/10 13:29:45 jlec Exp $
 
 EAPI=2
-inherit eutils flag-o-matic
+
+inherit eutils flag-o-matic multilib
 
 DESCRIPTION="Class library (C++) for numbers"
 HOMEPAGE="http://www.ginac.de/CLN/"

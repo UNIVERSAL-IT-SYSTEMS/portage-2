@@ -1,6 +1,57 @@
 # ChangeLog for dev-ruby/archive-tar-minitar
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/archive-tar-minitar/ChangeLog,v 1.31 2011/07/10 23:15:58 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/archive-tar-minitar/ChangeLog,v 1.40 2012/11/17 19:00:26 graaff Exp $
+
+*archive-tar-minitar-0.5.4 (17 Nov 2012)
+
+  17 Nov 2012; Hans de Graaff <graaff@gentoo.org>
+  +archive-tar-minitar-0.5.4.ebuild:
+  Version bump.
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org>
+  archive-tar-minitar-0.5.2-r2.ebuild:
+  alpha stable
+
+  26 Jun 2012; Hans de Graaff <graaff@gentoo.org>
+  archive-tar-minitar-0.5.3-r2.ebuild:
+  Remove non-existing all_fakegem_prepare. Document some unexpected things. Add
+  test scenario and link to upstream bug about current failures.
+
+  26 Jun 2012; Hans de Graaff <graaff@gentoo.org>
+  -archive-tar-minitar-0.5.2-r1.ebuild:
+  Remove old version.
+
+*archive-tar-minitar-0.5.3-r2 (15 Jun 2012)
+
+  15 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +archive-tar-minitar-0.5.3-r2.ebuild, -archive-tar-minitar-0.5.3-r1.ebuild,
+  -archive-tar-minitar-0.5.3.ebuild:
+  Fix gemspec (sorry).
+
+*archive-tar-minitar-0.5.3-r1 (15 Jun 2012)
+
+  15 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +archive-tar-minitar-0.5.3-r1.ebuild,
+  +files/archive-tar-minitar-0.5.3-pipes.patch:
+  Add patch to fix minitar's reader on non-seekable streams.
+
+*archive-tar-minitar-0.5.3 (15 Jun 2012)
+
+  15 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +archive-tar-minitar-0.5.3.ebuild:
+  Update from minitar gem.
+
+*archive-tar-minitar-0.5.2-r4 (14 Jun 2012)
+
+  14 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +archive-tar-minitar-0.5.2-r4.ebuild,
+  +files/archive-tar-minitar-0.5.2-gentoo.patch,
+  -archive-tar-minitar-0.5.2-r3.ebuild:
+  Fix minitar command on recent systems.
+
+  14 Sep 2011; Jeroen Roovers <jer@gentoo.org>
+  archive-tar-minitar-0.5.2-r2.ebuild:
+  Stable for HPPA (bug #369573).
 
   10 Jul 2011; Mark Loeser <halcy0n@gentoo.org>
   archive-tar-minitar-0.5.2-r2.ebuild:

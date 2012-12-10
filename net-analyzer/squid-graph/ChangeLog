@@ -1,6 +1,17 @@
 # ChangeLog for net-analyzer/squid-graph
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/squid-graph/ChangeLog,v 1.22 2009/12/23 03:05:29 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/squid-graph/ChangeLog,v 1.25 2012/02/05 17:33:09 armin76 Exp $
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> squid-graph-3.2.ebuild,
+  squid-graph-3.2-r1.ebuild:
+  Drop sparc keywords
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> squid-graph-3.2-r1.ebuild:
+  Stable for AMD64, wrt bug #393877
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  squid-graph-3.2-r1.ebuild:
+  x86 stable wrt bug #393877
 
 *squid-graph-3.2-r1 (23 Dec 2009)
 

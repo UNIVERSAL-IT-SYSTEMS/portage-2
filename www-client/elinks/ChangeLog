@@ -1,10 +1,56 @@
 # ChangeLog for www-client/elinks
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/elinks/ChangeLog,v 1.140 2011/06/22 02:33:17 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/elinks/ChangeLog,v 1.152 2012/11/26 03:24:36 pinkbyte Exp $
+
+  26 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
+  Package will now be maintained by Kevin Faulkner through proxy maintainers
+
+  18 Oct 2012; Andreas Schuerch <nativemad@gentoo.org>
+  elinks-0.12_pre5-r2.ebuild:
+  x86 stable, see bug 437196
+
+  11 Oct 2012; Jeroen Roovers <jer@gentoo.org> elinks-0.12_pre5-r2.ebuild:
+  Stable for HPPA (bug #437196).
+
+  10 Oct 2012; Ian Stakenvicius <axs@gentoo.org> elinks-0.12_pre5-r2.ebuild:
+  added hackery to ensure configure script does not find @preserved-libs
+  version of spidermonkey lib (see comments in bug 437196)
+
+  06 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  elinks-0.12_pre5-r2.ebuild:
+  stable ppc, bug #437196
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> elinks-0.12_pre5-r2.ebuild:
+  Marking elinks-0.12_pre5-r2 ppc64 for bug 437196
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> elinks-0.12_pre5-r2.ebuild:
+  Stable for amd64, wrt bug #437196
+
+  16 Sep 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/elinks-0.12_pre5-ruby-1.9.patch, elinks-0.12_pre5-r2.ebuild:
+  Fix build against ruby, bug #424789 by tman and patch by Ian Abbott.
+
+  04 Jul 2012; Ian Stakenvicius <axs@gentoo.org> elinks-0.12_pre5-r2.ebuild,
+  +files/elinks-0.12_pre5-ruby-config.patch:
+  fixed configure check for ruby-1.9 and above, bug 424789
+
+  28 Jun 2012; Ian Stakenvicius <axs@gentoo.org> elinks-0.12_pre5-r2.ebuild,
+  +files/elinks-0.12_pre5-sm185-jsval-fixes.patch:
+  fixed some spidermonkey-1.8.5 jsval usage errors, added support for
+  spidermonkey-1.8.7
+
+*elinks-0.12_pre5-r2 (16 Apr 2012)
+
+  16 Apr 2012; Pacho Ramos <pacho@gentoo.org> +elinks-0.12_pre5-r2.ebuild,
+  -elinks-0.12_pre5-r1.ebuild, -elinks-0.12_pre5.ebuild:
+  Support spidermonkey-1.8.5, bug #391297 by Ian Stakenvicius. Remove old.
 
   22 Jun 2011; Nirbheek Chauhan <nirbheek@gentoo.org> elinks-0.11.7.ebuild,
   elinks-0.12_pre5.ebuild, elinks-0.12_pre5-r1.ebuild:
   Fix spidermonkey versions for the new versioning scheme
+
+  18 Jun 2011; Michał Januszewski <spock@gentoo.org> metadata.xml:
+  Reassigning to maintainer-needed.
 
   12 Jun 2011; Michał Januszewski <spock@gentoo.org> elinks-0.11.7.ebuild:
   Disable zlib support (bug #365585).

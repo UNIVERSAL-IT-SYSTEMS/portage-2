@@ -1,18 +1,18 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/bbppp/bbppp-0.2.5.ebuild,v 1.2 2011/04/16 17:33:47 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/bbppp/bbppp-0.2.5.ebuild,v 1.6 2012/06/04 19:01:14 xmw Exp $
 
 EAPI=2
 
 inherit autotools eutils
 
 DESCRIPTION="blackbox ppp frontend/monitor"
-HOMEPAGE="http://bbtools.windsofstorm.net/sources/available.phtml#bbppp"
+HOMEPAGE="http://sourceforge.net/projects/bbtools/"
 SRC_URI="mirror://sourceforge/bbtools/${PN}/${P}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ppc x86"
 IUSE=""
 
 DEPEND="x11-libs/libX11"

@@ -1,6 +1,60 @@
 # ChangeLog for dev-tex/glossaries
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/glossaries/ChangeLog,v 1.38 2011/07/27 13:43:28 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/glossaries/ChangeLog,v 1.54 2012/11/24 02:16:09 radhermit Exp $
+
+  24 Nov 2012; Tim Harder <radhermit@gentoo.org> glossaries-3.04.ebuild:
+  Use gentoo mirror.
+
+*glossaries-3.04 (24 Nov 2012)
+
+  24 Nov 2012; Tim Harder <radhermit@gentoo.org> +glossaries-3.04.ebuild:
+  Version bump (bug #444264).
+
+*glossaries-3.03 (25 Oct 2012)
+
+  25 Oct 2012; Tim Harder <radhermit@gentoo.org> +glossaries-3.03.ebuild:
+  Version bump (bug #438398).
+
+*glossaries-3.02 (02 Sep 2012)
+
+  02 Sep 2012; Tim Harder <radhermit@gentoo.org> +glossaries-3.02.ebuild:
+  Version bump.
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> glossaries-3.01.ebuild:
+  keyword ~amd64-fbsd
+
+  09 Mar 2012; Tim Harder <radhermit@gentoo.org> -glossaries-2.07.ebuild:
+  Remove old.
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> glossaries-3.01.ebuild:
+  Marking glossaries-3.01 ppc64 for bug 387579
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> glossaries-3.01.ebuild:
+  Marking glossaries-3.01 ppc for bug 387579
+
+  05 Nov 2011; Raúl Porcel <armin76@gentoo.org> glossaries-3.01.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #387579
+
+  29 Oct 2011; Markus Meier <maekke@gentoo.org> glossaries-3.01.ebuild:
+  arm stable, bug #387579
+
+  25 Oct 2011; Jeroen Roovers <jer@gentoo.org> glossaries-3.01.ebuild:
+  Stable for HPPA (bug #387579).
+
+  24 Oct 2011; Markus Meier <maekke@gentoo.org> glossaries-3.01.ebuild:
+  x86 stable, bug #387579
+
+  19 Oct 2011; Markos Chandras <hwoarang@gentoo.org> glossaries-3.01.ebuild:
+  Stable on amd64 wrt bug #387579
+
+  18 Oct 2011; Tim Harder <radhermit@gentoo.org> glossaries-3.01.ebuild:
+  Update to EAPI 4.
+
+  16 Oct 2011; Fabian Groffen <grobian@gentoo.org> glossaries-3.01.ebuild:
+  Marked ~x86-macos
+
+  28 Aug 2011; Fabian Groffen <grobian@gentoo.org> glossaries-3.01.ebuild:
+  Marked ~x64-macos
 
 *glossaries-3.01 (27 Jul 2011)
 

@@ -1,6 +1,187 @@
 # ChangeLog for dev-vcs/mercurial
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/mercurial/ChangeLog,v 1.47 2011/07/03 17:54:00 djc Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/mercurial/ChangeLog,v 1.90 2012/12/07 13:31:54 polynomial-c Exp $
+
+*mercurial-2.4.1 (07 Dec 2012)
+
+  07 Dec 2012; Lars Wendler <polynomial-c@gentoo.org> +mercurial-2.4.1.ebuild,
+  metadata.xml:
+  Version bump. Added myself to the list of maintainers.
+
+  04 Dec 2012; Fabian Groffen <grobian@gentoo.org> mercurial-2.4-r1.ebuild:
+  Fix shebang of hg-ssh, since it only works with Python 2.x, bug #445842
+
+*mercurial-2.4-r1 (24 Nov 2012)
+
+  24 Nov 2012; Lars Wendler <polynomial-c@gentoo.org> -mercurial-2.4.ebuild,
+  +mercurial-2.4-r1.ebuild, +files/mercurial-2.4-dont_grep_indefinitely.patch:
+  non-maintainer commit: Revbump to fix an endless grep search (needed by
+  tortoisehg).
+
+*mercurial-2.4 (11 Nov 2012)
+
+  11 Nov 2012; Lars Wendler <polynomial-c@gentoo.org> -mercurial-2.2.3.ebuild,
+  -mercurial-2.3.1.ebuild, +mercurial-2.4.ebuild:
+  Version bump. Removed old.
+
+*mercurial-2.3.2 (02 Oct 2012)
+
+  02 Oct 2012; Dirkjan Ochtman <djc@gentoo.org> +mercurial-2.3.2.ebuild:
+  Version bump to 2.3.2.
+
+  20 Sep 2012; Alexis Ballier <aballier@gentoo.org> mercurial-2.3.1.ebuild:
+  keyword ~amd64-fbsd
+
+*mercurial-2.3.1 (11 Sep 2012)
+
+  11 Sep 2012; Lars Wendler <polynomial-c@gentoo.org> -mercurial-2.2.2.ebuild,
+  +mercurial-2.3.1.ebuild:
+  non-maintainer commit: Version bump. Removed old. Permission kindly granted
+  by djc.
+
+*mercurial-2.2.3 (02 Jul 2012)
+
+  02 Jul 2012; Dirkjan Ochtman <djc@gentoo.org> +mercurial-2.2.3.ebuild:
+  Version bump to 2.2.3.
+
+  02 Jul 2012; Dirkjan Ochtman <djc@gentoo.org> -mercurial-2.0.ebuild,
+  -mercurial-2.1.2.ebuild, -mercurial-2.2.1.ebuild:
+  Remove old versions.
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> mercurial-2.1.1.ebuild:
+  alpha/ia64/sparc stable wrt #414077
+
+*mercurial-2.2.2 (02 Jun 2012)
+
+  02 Jun 2012; Dirkjan Ochtman <djc@gentoo.org> +mercurial-2.2.2.ebuild:
+  Version bump to 2.2.2.
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> mercurial-2.1.1.ebuild:
+  Marking mercurial-2.1.1 ppc64 for bug 414077
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> mercurial-2.1.1.ebuild:
+  x86 stable wrt bug #414077
+
+  21 May 2012; Jeroen Roovers <jer@gentoo.org> mercurial-2.1.1.ebuild:
+  Stable for HPPA (bug #414077).
+
+*mercurial-2.2.1 (07 May 2012)
+
+  07 May 2012; Dirkjan Ochtman <djc@gentoo.org> +mercurial-2.2.1.ebuild,
+  -mercurial-2.2.ebuild:
+  Version bump to 2.2.1.
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> mercurial-2.1.1.ebuild:
+  Marking mercurial-2.1.1 ppc for bug 414077
+
+  03 May 2012; Markus Meier <maekke@gentoo.org> mercurial-2.1.1.ebuild:
+  arm stable, bug #414077
+
+  02 May 2012; Dirkjan Ochtman <djc@gentoo.org> -mercurial-1.7.ebuild,
+  -mercurial-2.0.1.ebuild, -mercurial-2.0.2.ebuild, -mercurial-2.1.ebuild:
+  Remove old versions.
+
+*mercurial-2.2 (02 May 2012)
+
+  02 May 2012; Dirkjan Ochtman <djc@gentoo.org> +mercurial-2.2.ebuild:
+  Version bump to 2.2.
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> mercurial-2.1.1.ebuild:
+  Stable for amd64, wrt bug #414077
+
+*mercurial-2.1.2 (30 Apr 2012)
+
+  30 Apr 2012; Krzysztof Pawlik <nelchael@gentoo.org> +mercurial-2.1.2.ebuild:
+  Version bump.
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> mercurial-2.0.ebuild:
+  Marking mercurial-2.0 ppc64 for bug 393265
+
+*mercurial-2.1.1 (03 Mar 2012)
+
+  03 Mar 2012; Krzysztof Pawlik <nelchael@gentoo.org> +mercurial-2.1.1.ebuild:
+  Version bump.
+
+  21 Feb 2012; Patrick Lauer <patrick@gentoo.org> mercurial-1.7.ebuild,
+  mercurial-2.0.1.ebuild, mercurial-2.0.2.ebuild, mercurial-2.0.ebuild,
+  mercurial-2.1.ebuild, mercurial-9999.ebuild:
+  Fix pypy restrict
+
+*mercurial-2.1 (02 Feb 2012)
+
+  02 Feb 2012; Dirkjan Ochtman <djc@gentoo.org> +mercurial-2.1.ebuild:
+  Version bump to 2.1.
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> mercurial-2.0.ebuild:
+  Marking mercurial-2.0 ppc for bug 393265
+
+*mercurial-2.0.2 (27 Jan 2012)
+
+  27 Jan 2012; Krzysztof Pawlik <nelchael@gentoo.org> +mercurial-2.0.2.ebuild:
+  Version bump.
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> mercurial-2.0.ebuild:
+  alpha/ia64/sparc stable wrt #393265
+
+  16 Dec 2011; Agostino Sarubbo <ago@gentoo.org> mercurial-9999.ebuild:
+  Added die also to 9999 ebuild, thanks Arfrever for the hint bug #393287
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> mercurial-2.0.1.ebuild:
+  Added '|| die' where missing, wrt bug #393287
+
+  14 Dec 2011; Markus Meier <maekke@gentoo.org> mercurial-2.0.ebuild:
+  arm stable, bug #393265
+
+  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> mercurial-2.0.ebuild:
+  Stable for AMD64, wrt bug #393265
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> mercurial-2.0.ebuild:
+  x86 stable wrt bug #393265
+
+  06 Dec 2011; Jeroen Roovers <jer@gentoo.org> mercurial-2.0.ebuild:
+  Stable for HPPA (bug #393265).
+
+  05 Dec 2011; Dirkjan Ochtman <djc@gentoo.org> -mercurial-1.9.2.ebuild,
+  -mercurial-1.9.3.ebuild:
+  Remove old versions.
+
+*mercurial-2.0.1 (05 Dec 2011)
+
+  05 Dec 2011; Dirkjan Ochtman <djc@gentoo.org> +mercurial-2.0.1.ebuild:
+  Version bump to 2.0.1.
+
+*mercurial-2.0 (02 Nov 2011)
+
+  02 Nov 2011; Dirkjan Ochtman <djc@gentoo.org> +mercurial-2.0.ebuild:
+  Version bump to 2.0.
+
+  11 Oct 2011; Dirkjan Ochtman <djc@gentoo.org> -mercurial-1.8.2.ebuild,
+  -mercurial-1.8.3.ebuild, -mercurial-1.9.ebuild, -mercurial-1.9.1.ebuild:
+  Remove old versions.
+
+*mercurial-1.9.3 (11 Oct 2011)
+
+  11 Oct 2011; Dirkjan Ochtman <djc@gentoo.org> +mercurial-1.9.3.ebuild:
+  Version bump to 1.9.3.
+
+  09 Sep 2011; Michał Górny <mgorny@gentoo.org> mercurial-1.8.2.ebuild,
+  mercurial-1.8.3.ebuild, mercurial-1.9.ebuild, mercurial-1.9.1.ebuild,
+  mercurial-1.9.2.ebuild, mercurial-9999.ebuild:
+  Migrate to bash-completion-r1.
+
+*mercurial-1.9.2 (01 Sep 2011)
+
+  01 Sep 2011; Krzysztof Pawlik <nelchael@gentoo.org> +mercurial-1.9.2.ebuild:
+  Version bump.
+
+*mercurial-1.9.1 (09 Aug 2011)
+
+  09 Aug 2011; Dirkjan Ochtman <djc@gentoo.org> +mercurial-1.9.1.ebuild:
+  Version bump to 1.9.1.
+
+  02 Aug 2011; Matt Turner <mattst88@gentoo.org> mercurial-1.8.3.ebuild,
+  mercurial-1.9.ebuild:
+  Added ~mips
 
 *mercurial-1.9 (03 Jul 2011)
 
@@ -727,4 +908,3 @@
 
   24 Jun 2005; Aron Griffis <agriffis@gentoo.org> +mercurial-0.5b.ebuild:
   First pass ebuild for mercurial
-

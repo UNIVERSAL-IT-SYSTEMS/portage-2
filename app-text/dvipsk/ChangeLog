@@ -1,6 +1,78 @@
 # ChangeLog for app-text/dvipsk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/dvipsk/ChangeLog,v 1.11 2011/07/27 14:04:01 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/dvipsk/ChangeLog,v 1.29 2012/07/26 11:50:07 aballier Exp $
+
+*dvipsk-5.992_p20120701 (26 Jul 2012)
+
+  26 Jul 2012; Alexis Ballier <aballier@gentoo.org>
+  +dvipsk-5.992_p20120701.ebuild:
+  Bump to TeX Live 2012 version.
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org>
+  dvipsk-5.991_p20110705-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org>
+  -dvipsk-5.99_p20100722.ebuild, -dvipsk-5.991_p20110705.ebuild:
+  remove old
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org>
+  dvipsk-5.991_p20110705-r1.ebuild:
+  ia64/s390/sh/sparc stable wrt #395735
+
+  04 Mar 2012; Tobias Klausmann <klausman@gentoo.org>
+  dvipsk-5.991_p20110705-r1.ebuild:
+  Stable on alpha, bug #395735
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org>
+  dvipsk-5.991_p20110705-r1.ebuild:
+  Marking dvipsk-5.991_p20110705-r1 ppc64 stable for bug 395735
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org>
+  dvipsk-5.991_p20110705-r1.ebuild:
+  Marking dvipsk-5.991_p20110705-r1 ppc stable for bug 395735
+
+  29 Jan 2012; Markus Meier <maekke@gentoo.org>
+  dvipsk-5.991_p20110705-r1.ebuild:
+  arm stable, bug #395735
+
+  17 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  dvipsk-5.991_p20110705-r1.ebuild:
+  x86 stable wrt bug #395735
+
+  16 Jan 2012; Agostino Sarubbo <ago@gentoo.org>
+  dvipsk-5.991_p20110705-r1.ebuild:
+  Stable for amd64, wrt bug #395735
+
+  28 Dec 2011; Jeroen Roovers <jer@gentoo.org>
+  dvipsk-5.991_p20110705-r1.ebuild:
+  Stable for HPPA (bug #395735).
+
+*dvipsk-5.991_p20110705-r1 (02 Nov 2011)
+
+  02 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  +dvipsk-5.991_p20110705-r1.ebuild:
+  add branch2011 patches here too as one patch fixes a problem in dvips
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> dvipsk-5.99_p20100722.ebuild:
+  Stable for HPPA (bug #355085).
+
+  18 Sep 2011; Raúl Porcel <armin76@gentoo.org> dvipsk-5.99_p20100722.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #355085
+
+  14 Aug 2011; Markus Meier <maekke@gentoo.org> dvipsk-5.99_p20100722.ebuild:
+  arm stable, bug #355085
+
+  12 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  dvipsk-5.99_p20100722.ebuild:
+  ppc/ppc64 stable wrt #355085
+
+  12 Aug 2011; Thomas Kahle <tomka@gentoo.org> dvipsk-5.99_p20100722.ebuild:
+  x86 stable per bug 355085
+
+  09 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  dvipsk-5.99_p20100722.ebuild:
+  Stable on amd64 wrt bug #355085
 
 *dvipsk-5.991_p20110705 (27 Jul 2011)
 

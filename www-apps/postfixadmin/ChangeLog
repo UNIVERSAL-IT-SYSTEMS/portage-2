@@ -1,6 +1,26 @@
 # ChangeLog for www-apps/postfixadmin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/postfixadmin/ChangeLog,v 1.22 2011/04/30 19:17:21 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apps/postfixadmin/ChangeLog,v 1.26 2012/07/06 08:41:27 jdhore Exp $
+
+  06 Jul 2012; Jeff Horelick <jdhore@gentoo.org> postfixadmin-2.3.5.ebuild:
+  marked x86 per bug 400971
+
+  26 Jun 2012; Agostino Sarubbo <ago@gentoo.org> postfixadmin-2.3.5.ebuild:
+  Stable for amd64, wrt bug #400971
+
+*postfixadmin-2.3.5 (26 Jun 2012)
+
+  26 Jun 2012; Matti Bickel <mabi@gentoo.org> +postfixadmin-2.3.5.ebuild,
+  -postfixadmin-2.2.1.1.ebuild, -postfixadmin-2.3.3.ebuild,
+  -postfixadmin-2.3.4.ebuild, -postfixadmin-2.3.ebuild, metadata.xml,
+  postfixadmin-2.3.2.ebuild:
+  version bump. this is a security release (bug #400971). also take advantage of
+  EAPI4. remove older ebuilds. commit with approval from sec-team.
+
+*postfixadmin-2.3.4 (19 Oct 2011)
+
+  19 Oct 2011; Peter Volkov <pva@gentoo.org> +postfixadmin-2.3.4.ebuild:
+  Version bump, bug #387037 wrt Per Pomsel
 
 *postfixadmin-2.3.3 (30 Apr 2011)
 

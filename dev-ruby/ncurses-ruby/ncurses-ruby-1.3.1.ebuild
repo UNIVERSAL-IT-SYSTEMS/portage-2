@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ncurses-ruby/ncurses-ruby-1.3.1.ebuild,v 1.1 2011/05/31 17:57:17 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ncurses-ruby/ncurses-ruby-1.3.1.ebuild,v 1.8 2012/07/22 14:26:30 nixnut Exp $
 
 EAPI=2
 USE_RUBY="ruby18 ree18"
@@ -16,11 +16,16 @@ HOMEPAGE="http://ncurses-ruby.berlios.de/"
 SRC_URI="mirror://berlios/${PN}/${P}.tar.bz2"
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ~hppa ~mips ppc ppc64 x86"
 IUSE="examples"
 
 DEPEND=">=sys-libs/ncurses-5.3"
 RDEPEND="${DEPEND}"
+
+all_ruby_prepare() {
+	# Remove hardcoded CFLAGS settings.
+	sed -i -e '/CFLAGS/d' extconf.rb || die
+}
 
 each_ruby_configure() {
 	${RUBY} extconf.rb || die

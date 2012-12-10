@@ -1,6 +1,67 @@
 # ChangeLog for app-misc/lirc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/lirc/ChangeLog,v 1.223 2011/06/13 12:30:21 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/lirc/ChangeLog,v 1.237 2012/11/30 14:00:24 ago Exp $
+
+  30 Nov 2012;  <ago@gentoo.org> -lirc-0.8.7.ebuild, -lirc-0.9.0.ebuild:
+  Remove old
+
+  30 Nov 2012;  <ago@gentoo.org> lirc-0.9.0-r2.ebuild:
+  Stable for x86, wrt bug #434322
+
+  30 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> lirc-0.9.0-r2.ebuild:
+  Stable for ppc wrt bug#434322.
+
+  27 Nov 2012; Ian Stakenvicius <axs@gentoo.org> lirc-0.9.0-r2.ebuild,
+  +files/lirc-0.9.0-kernel-3.5-err-fix.patch:
+  added err() to kcompat.h as has been removed from usb.h in kernels >=3.5,
+  fixing bug 444736
+
+  24 Oct 2012; Ian Stakenvicius <axs@gentoo.org> lirc-0.9.0-r2.ebuild,
+  +files/lirc-0.9.0-kernel-3.3.0-fixes.patch:
+  fixed asm/system.h migration issue caused by 3.3+ kernels, bug 439538
+
+  18 Sep 2012; Pacho Ramos <pacho@gentoo.org> -files/lirc-0.8.6-send-evsyn.diff,
+  -lirc-0.8.5.ebuild, -lirc-0.8.7_pre1.ebuild:
+  Drop masked versions.
+
+  15 Sep 2012; Agostino Sarubbo <ago@gentoo.org> lirc-0.9.0-r2.ebuild:
+  Stable for amd64, wrt bug #434322
+
+  14 Sep 2012; Ian Stakenvicius <axs@gentoo.org> lirc-0.9.0-r2.ebuild:
+  added static-libs use flag to disable default installation of static libs
+
+*lirc-0.9.0-r2 (19 Jul 2012)
+
+  19 Jul 2012; Ian Stakenvicius <axs@gentoo.org> -files/lircd-0.8.6-r1,
+  +files/lircd-0.8.6-r2, -lirc-0.9.0-r1.ebuild, +lirc-0.9.0-r2.ebuild,
+  +files/lircd.conf.4, -files/lircd.conf.3:
+  allowed conf.d/lircd to override socket and symlink for multiplexing, bug
+  287731
+
+  17 Jul 2012; Ian Stakenvicius <axs@gentoo.org> lirc-0.9.0-r1.ebuild,
+  +files/lirc-0.9.0-atiusb_kfifo.patch:
+  Applied upstream patch to fix bug 377033
+
+  17 Jul 2012; Ian Stakenvicius <axs@gentoo.org> lirc-0.9.0-r1.ebuild,
+  +files/lirc-0.9.0-kernel-2.6.39-fixes.patch:
+  fixed compilation issues for some drivers against kernel >=2.6.39 for bug
+  369179 , using patch from amielke overlay as the basis
+
+*lirc-0.9.0-r1 (17 Jul 2012)
+
+  17 Jul 2012; Ian Stakenvicius <axs@gentoo.org> +files/lircd-0.8.6-r1,
+  +lirc-0.9.0-r1.ebuild, +files/lircd.conf.3:
+  converted ebuild to EAPI4, made drivers build separately from tools to fix
+  bug 160134, fixed init script so that socket path exists (bug 414307), added
+  option so that init script can set 'lirc' as the kernel IR decoding protocol
+  on startup (bug 368489)
+
+  09 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> lirc-0.8.5.ebuild,
+  lirc-0.8.7_pre1.ebuild, lirc-0.8.7.ebuild, lirc-0.9.0.ebuild:
+  Fix libusb depend to pull in correct SLOT wrt #378385 by Luis Navarro
+
+  05 Jan 2012; Michael Weber <xmw@gentoo.org> lirc-0.8.7.ebuild:
+  ppc stable (bug 343659)
 
   13 Jun 2011; Christian Faulhammer <fauli@gentoo.org> lirc-0.9.0.ebuild:
   mceusb driver has been merged into the kernel, note that

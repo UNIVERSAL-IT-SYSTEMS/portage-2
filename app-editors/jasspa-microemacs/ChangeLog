@@ -1,6 +1,36 @@
 # ChangeLog for app-editors/jasspa-microemacs
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/jasspa-microemacs/ChangeLog,v 1.47 2010/10/17 15:56:16 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/jasspa-microemacs/ChangeLog,v 1.54 2012/09/05 07:09:11 jlec Exp $
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org>
+  jasspa-microemacs-20091011-r2.ebuild:
+  Use domenu instead insinto + doins to install .desktop files
+
+  29 May 2012; Ulrich Müller <ulm@gentoo.org>
+  -jasspa-microemacs-20091011-r1.ebuild:
+  Remove old.
+
+  29 May 2012; Brent Baude <ranger@gentoo.org>
+  jasspa-microemacs-20091011-r2.ebuild:
+  Marking jasspa-microemacs-20091011-r2 ppc for bug 415063
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  jasspa-microemacs-20091011-r2.ebuild:
+  x86 stable wrt bug #415063
+
+  09 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  jasspa-microemacs-20091011-r2.ebuild:
+  Stable for amd64, wrt bug #415063
+
+*jasspa-microemacs-20091011-r2 (19 Mar 2012)
+
+  19 Mar 2012; Ulrich Müller <ulm@gentoo.org>
+  +jasspa-microemacs-20091011-r2.ebuild:
+  Include latest updates for macros. Change EAPI to 4.
+
+  18 Aug 2011; Ulrich Mueller <ulm@gentoo.org> +files/20091011-linux3.patch,
+  jasspa-microemacs-20091011-r1.ebuild:
+  Work around build failure on Linux 3.0.
 
   17 Oct 2010; Ulrich Mueller <ulm@gentoo.org>
   jasspa-microemacs-20091011-r1.ebuild:
@@ -223,4 +253,3 @@
   jasspa-microemacs-20021205.ebuild, metadata.xml:
   Initial import. Ebuild submitted by Randy Roesler <xhl178@shaw.ca>,
   closing bug #23734
-

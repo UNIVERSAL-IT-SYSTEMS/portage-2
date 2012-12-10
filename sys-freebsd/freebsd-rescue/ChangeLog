@@ -1,6 +1,60 @@
 # ChangeLog for sys-freebsd/freebsd-rescue
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-rescue/ChangeLog,v 1.23 2011/07/06 06:06:54 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-rescue/ChangeLog,v 1.33 2012/11/06 12:56:36 aballier Exp $
+
+*freebsd-rescue-9.1_rc3 (06 Nov 2012)
+
+  06 Nov 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-rescue-9.1_rc3.ebuild:
+  bump to rc3
+
+*freebsd-rescue-9.1_rc2 (14 Oct 2012)
+
+  14 Oct 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-rescue-9.1_rc2.ebuild:
+  bump to 9.1_rc2
+
+*freebsd-rescue-9.1_rc1 (11 Sep 2012)
+
+  11 Sep 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-rescue-9.1_rc1.ebuild, +files/freebsd-rescue-9.1-bsdtar.patch,
+  +files/freebsd-rescue-9.1-libcleverlink.patch:
+  bump to 9.1_rc1 from bsd overlay by Yuta SATOH, bug #426838
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> freebsd-rescue-8.0.ebuild,
+  freebsd-rescue-8.2.ebuild, freebsd-rescue-9.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  23 Apr 2012; Alexis Ballier <aballier@gentoo.org> freebsd-rescue-9.0.ebuild:
+  depend on readline[static-libs]
+
+  30 Mar 2012; Alexis Ballier <aballier@gentoo.org>
+  -freebsd-rescue-9.0_rc1.ebuild, -freebsd-rescue-9.0_rc2.ebuild,
+  -freebsd-rescue-9.0_rc3.ebuild:
+  remove old
+
+*freebsd-rescue-9.0 (16 Jan 2012)
+
+  16 Jan 2012; Alexis Ballier <aballier@gentoo.org> +freebsd-rescue-9.0.ebuild:
+  bump to 9.0
+
+*freebsd-rescue-9.0_rc3 (09 Dec 2011)
+
+  09 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-rescue-9.0_rc3.ebuild:
+  bump to 9.0_rc3
+
+*freebsd-rescue-9.0_rc2 (07 Dec 2011)
+
+  07 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-rescue-9.0_rc2.ebuild:
+  bump to rc2
+
+*freebsd-rescue-9.0_rc1 (07 Nov 2011)
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  +files/freebsd-sbin-bsdxml2expat.patch, +freebsd-rescue-9.0_rc1.ebuild:
+  bump to 9.0_rc1
 
 *freebsd-rescue-8.2 (06 Jul 2011)
 

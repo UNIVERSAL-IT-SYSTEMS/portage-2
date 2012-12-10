@@ -1,6 +1,37 @@
 # ChangeLog for sci-astronomy/cdsclient
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/cdsclient/ChangeLog,v 1.7 2011/07/25 22:57:26 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/cdsclient/ChangeLog,v 1.13 2012/07/04 21:24:49 bicatali Exp $
+
+  04 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> cdsclient-3.7.1.ebuild:
+  respect prefix bindir
+
+*cdsclient-3.7.1 (15 Jun 2012)
+
+  15 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org> -cdsclient-3.6b.ebuild,
+  -cdsclient-3.7-r1.ebuild, +cdsclient-3.7.1.ebuild:
+  Version bump. A Moved execs to /usr/bin/cdsclient. Update ROOTPATH as well.
+
+*cdsclient-3.7-r1 (08 May 2012)
+
+  08 May 2012; Kacper Kowalik <xarthisius@gentoo.org> +cdsclient-3.7-r1.ebuild,
+  -cdsclient-3.7.ebuild:
+  Keep scripts in /usr/share rather than /usr/bin
+
+*cdsclient-3.7 (06 May 2012)
+
+  06 May 2012; Kacper Kowalik <xarthisius@gentoo.org> +cdsclient-3.7.ebuild:
+  Version bump
+
+*cdsclient-3.6b (23 Sep 2011)
+
+  23 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> -cdsclient-3.6.ebuild,
+  -cdsclient-3.6a.ebuild, +cdsclient-3.6b.ebuild, +files/cdsclient-gentoo.diff,
+  -files/cdsclient-makefile.in.patch:
+  Version bump, EAPI4, fix install phase via patch instead of using helpers.
+  Drop old
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Switched herd to sci-astronomy
 
 *cdsclient-3.6a (25 Jul 2011)
 

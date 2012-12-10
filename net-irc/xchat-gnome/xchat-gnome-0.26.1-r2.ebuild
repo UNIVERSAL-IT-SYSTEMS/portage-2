@@ -1,19 +1,21 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/xchat-gnome/xchat-gnome-0.26.1-r2.ebuild,v 1.2 2011/05/17 22:41:30 binki Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/xchat-gnome/xchat-gnome-0.26.1-r2.ebuild,v 1.8 2012/05/03 06:27:13 jdhore Exp $
 
-EAPI=3
+EAPI="4"
 GCONF_DEBUG="yes"
+GNOME2_LA_PUNT="yes"
+GNOME_TARBALL_SUFFIX="bz2"
 PYTHON_DEPEND="python? 2"
 
 inherit autotools eutils multilib gnome2 python
 
 DESCRIPTION="GNOME frontend for the popular X-Chat IRC client"
-HOMEPAGE="http://xchat-gnome.navi.cx/"
+HOMEPAGE="http://live.gnome.org/Xchat-Gnome"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
+KEYWORDS="amd64 ppc ~ppc64 x86 ~x86-fbsd"
 IUSE="dbus libnotify mmx nls perl python spell ssl tcl"
 
 RDEPEND=">=dev-libs/glib-2.18:2
@@ -33,7 +35,7 @@ RDEPEND=">=dev-libs/glib-2.18:2
 	libnotify? ( >=x11-libs/libnotify-0.3.2 )
 "
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.7
+	virtual/pkgconfig
 	>=app-text/gnome-doc-utils-0.3.2
 	nls? ( sys-devel/gettext )"
 
@@ -43,7 +45,6 @@ pkg_setup() {
 	# Per configure.ac, shm is disable because of upstream bug #565958
 	# --enable-shm
 	G2CONF="${G2CONF}
-		--enable-gnomefe
 		--enable-canberra
 		--disable-schemas-install
 		--disable-scrollkeeper
@@ -60,7 +61,10 @@ pkg_setup() {
 
 	DOCS="AUTHORS ChangeLog NEWS"
 
-	use python && python_set_active_version 2
+	if use python; then
+		python_set_active_version 2
+		python_pkg_setup
+	fi
 }
 
 src_prepare() {
@@ -84,8 +88,5 @@ src_install() {
 
 	# install plugin development header
 	insinto /usr/include/xchat-gnome
-	doins src/common/xchat-plugin.h || die
-
-	# Not needed for plugins
-	find "${D}" -type f -name "*.la" -delete || die "la files removal failed"
+	doins src/common/xchat-plugin.h
 }

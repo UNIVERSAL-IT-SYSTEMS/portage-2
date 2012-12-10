@@ -1,6 +1,25 @@
 # ChangeLog for sci-chemistry/jmol
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/jmol/ChangeLog,v 1.10 2011/06/28 10:17:13 je_fro Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/jmol/ChangeLog,v 1.15 2012/06/21 14:41:23 je_fro Exp $
+
+  21 Jun 2012; Jeff Gardner <je_fro@gentoo.org> jmol-12.2.27.ebuild:
+  Add --build-only to saxon, fix bug 422757 thanks to Diego Elio Petteno
+
+  31 May 2012; Jeff Gardner <je_fro@gentoo.org> jmol-12.2.27.ebuild:
+  Make client-only the default
+
+*jmol-12.2.27 (31 May 2012)
+
+  31 May 2012; Jeff Gardner <je_fro@gentoo.org> +jmol-12.2.27.ebuild,
+  +files/jmol-12.2.27-nointl.patch:
+  Latest version
+
+  15 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> jmol-11.0.3-r1.ebuild:
+  Fix SRC_URI
+
+  26 Jan 2012; Justin Lecher <jlec@gentoo.org> jmol-11.0.3-r1.ebuild,
+  jmol-12.0.45.ebuild, -files/selfSignedCertificate.store:
+  Mirror binary file and remove it from FILESDIR, #373263
 
 *jmol-12.0.45 (28 Jun 2011)
 

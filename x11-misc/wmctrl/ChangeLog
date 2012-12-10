@@ -1,6 +1,20 @@
 # ChangeLog for x11-misc/wmctrl
-# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/wmctrl/ChangeLog,v 1.15 2008/03/23 14:51:30 coldwind Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/wmctrl/ChangeLog,v 1.19 2012/12/05 11:20:44 grobian Exp $
+
+  05 Dec 2012; Fabian Groffen <grobian@gentoo.org> wmctrl-1.07-r1.ebuild:
+  Marked ~x86-linux, bug #444950
+
+  23 Jun 2012; Michael Weber <xmw@gentoo.org> wmctrl-1.07-r1.ebuild,
+  wmctrl-1.07.ebuild:
+  Fix HOMEPAGE and SRC_URI (bug 411245, thanks df)
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> wmctrl-1.07.ebuild,
+  wmctrl-1.07-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> wmctrl-1.07-r1.ebuild:
+  x86 stable wrt bug #392811
 
   23 Mar 2008; Santiago M. Mola <coldwind@gentoo.org> wmctrl-1.07-r1.ebuild:
   amd64 stable
@@ -57,4 +71,3 @@
 
   05 Nov 2003; Brandon Hale <tseng@gentoo.org> metadata.xml:
   Initial checkin.
-

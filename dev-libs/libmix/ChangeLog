@@ -1,6 +1,37 @@
 # ChangeLog for dev-libs/libmix
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libmix/ChangeLog,v 1.24 2011/05/21 21:56:39 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libmix/ChangeLog,v 1.33 2012/05/10 15:53:37 ago Exp $
+
+  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -libmix-2.05-r5.ebuild:
+  Remove old
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> libmix-2.05-r6.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #404651
+
+  05 Mar 2012; Markus Meier <maekke@gentoo.org> libmix-2.05-r6.ebuild:
+  arm stable, bug #404651
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> libmix-2.05-r6.ebuild:
+  Marking libmix-2.05-r6 ppc64 for bug 404651
+
+  24 Feb 2012; Brent Baude <ranger@gentoo.org> libmix-2.05-r6.ebuild:
+  Marking libmix-2.05-r6 ppc for bug 404651
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libmix-2.05-r6.ebuild:
+  x86 stable wrt bug #404651
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> libmix-2.05-r6.ebuild:
+  Stable for HPPA (bug #404651).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> libmix-2.05-r6.ebuild:
+  Stable for amd64, wrt bug #404651
+
+*libmix-2.05-r6 (17 Nov 2011)
+
+  17 Nov 2011; Mike Frysinger <vapier@gentoo.org> +libmix-2.05-r6.ebuild,
+  +files/libmix-2.05-gentoo-r1.patch:
+  Clean up gentoo patch to set SONAME, but not diff from the files actually
+  installed #390839 by Lars Wendler.
 
   21 May 2011; Christoph Mende <angelos@gentoo.org> -libmix-2.05.ebuild:
   Remove old

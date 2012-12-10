@@ -1,6 +1,46 @@
 # ChangeLog for dev-libs/libelf
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libelf/ChangeLog,v 1.30 2010/11/18 17:50:14 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libelf/ChangeLog,v 1.43 2012/11/29 13:42:25 blueness Exp $
+
+  29 Nov 2012; Anthony G. Basile <blueness@gentoo.org> libelf-0.8.13-r1.ebuild:
+  Rapid stabilization arm and ppc64
+
+  29 Nov 2012; Anthony G. Basile <blueness@gentoo.org> libelf-0.8.13-r1.ebuild:
+  Keyword ~arm
+
+  14 Jul 2012; Anthony G. Basile <blueness@gentoo.org> libelf-0.8.13-r1.ebuild:
+  Keyword ~ppc64
+
+  03 Jul 2012; Anthony G. Basile <blueness@gentoo.org> libelf-0.8.13-r1.ebuild:
+  Keyword ~mips
+
+  03 Jul 2012; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
+  I will give it love to check elfutils' insanity!
+
+  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -libelf-0.8.4.ebuild:
+  Remove old
+
+  05 May 2012; Fabian Groffen <grobian@gentoo.org>
+  files/libelf-0.8.13-build.patch, libelf-0.8.13-r1.ebuild:
+  Fixed for Prefix, keyworded for *-solaris
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libelf-0.8.13-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> libelf-0.8.13-r1.ebuild:
+  sparc/x86 stable wrt #396893
+
+  02 Mar 2012; Tobias Klausmann <klausman@gentoo.org> libelf-0.8.13-r1.ebuild:
+  Stable on alpha, bug #396893
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> libelf-0.8.13-r1.ebuild:
+  Stable for HPPA (bug #396893).
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> libelf-0.8.13-r1.ebuild:
+  Marking libelf-0.8.13-r1 ppc for bug 396893
+
+  02 Feb 2012; Agostino Sarubbo <ago@gentoo.org> libelf-0.8.13-r1.ebuild:
+  Stable for amd64, wrt bug #369893
 
 *libelf-0.8.13-r1 (18 Nov 2010)
 

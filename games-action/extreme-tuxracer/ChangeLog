@@ -1,6 +1,14 @@
 # ChangeLog for games-action/extreme-tuxracer
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/extreme-tuxracer/ChangeLog,v 1.10 2010/06/29 06:29:26 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-action/extreme-tuxracer/ChangeLog,v 1.12 2012/08/22 18:55:03 mr_bones_ Exp $
+
+  22 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  extreme-tuxracer-0.4.ebuild, extreme-tuxracer-0.5_beta.ebuild:
+  convert to more general 'mod' use flag
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> extreme-tuxracer-0.4.ebuild,
+  extreme-tuxracer-0.5_beta.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   29 Jun 2010; Christian Faulhammer <fauli@gentoo.org>
   extreme-tuxracer-0.5_beta.ebuild:
@@ -49,4 +57,3 @@
   04 Oct 2007; Tupone Alfredo <tupone@gentoo.org>
   +files/extreme-tuxracer.svg, +metadata.xml, +extreme-tuxracer-0.35.ebuild:
   New package. Bug #193576 by Matija Suklje (hook)
-

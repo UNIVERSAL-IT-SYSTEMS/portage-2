@@ -1,6 +1,81 @@
 # ChangeLog for media-video/guvcview
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/guvcview/ChangeLog,v 1.18 2011/04/21 19:18:42 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/guvcview/ChangeLog,v 1.35 2012/11/19 11:59:01 ssuominen Exp $
+
+  19 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> -guvcview-1.5.1.ebuild,
+  -guvcview-1.5.3.ebuild, -files/guvcview-1.5.3-header.patch,
+  -guvcview-1.6.0.ebuild:
+  old
+
+  19 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> guvcview-1.6.1.ebuild:
+  amd64/x86 stable
+
+*guvcview-1.6.1 (24 Aug 2012)
+
+  24 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> +guvcview-1.6.1.ebuild:
+  Version bump.
+
+*guvcview-1.5.1 (02 Aug 2012)
+
+  02 Aug 2012; Patrick Lauer <patrick@gentoo.org> +guvcview-1.5.1.ebuild:
+  Restore last non-gtk3 version
+
+*guvcview-1.6.0 (15 Jul 2012)
+
+  15 Jul 2012; Julian Ospald <hasufell@gentoo.org> +guvcview-1.6.0.ebuild:
+  version bump wrt bug #426648
+
+  16 May 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -files/guvcview-1.5.1-loops.patch, -guvcview-1.4.2.ebuild,
+  -guvcview-1.5.0.ebuild, -guvcview-1.5.1.ebuild, guvcview-1.5.3.ebuild:
+  Stabilise latest on amd64 and x86. Drop older.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> guvcview-1.4.2.ebuild,
+  guvcview-1.5.0.ebuild, guvcview-1.5.1.ebuild, guvcview-1.5.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Tim Harder <radhermit@gentoo.org> -guvcview-1.4.4.ebuild,
+  -guvcview-1.5.2.ebuild, -files/guvcview-1.5.2-pulse.patch:
+  Remove old.
+
+*guvcview-1.5.3 (07 Mar 2012)
+
+  07 Mar 2012; Tim Harder <radhermit@gentoo.org> +guvcview-1.5.3.ebuild,
+  +files/guvcview-1.5.3-header.patch:
+  Version bump.
+
+*guvcview-1.5.2 (13 Feb 2012)
+
+  13 Feb 2012; Tim Harder <radhermit@gentoo.org> +guvcview-1.5.2.ebuild,
+  +files/guvcview-1.5.2-pulse.patch:
+  Version bump.
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> guvcview-1.5.1.ebuild:
+  x86 stable wrt bug #399789
+
+  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> guvcview-1.5.1.ebuild:
+  Stable for amd64, wrt bug #399789
+
+  18 Nov 2011; Luca Barbato <lu_zero@gentoo.org>
+  files/guvcview-1.5.1-loops.patch:
+  Trim away cosmetics
+
+  18 Nov 2011; Luca Barbato <lu_zero@gentoo.org> guvcview-1.5.1.ebuild,
+  +files/guvcview-1.5.1-loops.patch:
+  Fix segfault when enumerating controls
+
+*guvcview-1.5.1 (12 Nov 2011)
+
+  12 Nov 2011; Tim Harder <radhermit@gentoo.org> +guvcview-1.5.1.ebuild:
+  Version bump.
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> guvcview-1.5.0.ebuild:
+  Fix HOMEPAGE from berlios to sourceforge.
+
+*guvcview-1.5.0 (22 Aug 2011)
+
+  22 Aug 2011; Tim Harder <radhermit@gentoo.org> +guvcview-1.5.0.ebuild:
+  Version bump
 
   21 Apr 2011; Tim Harder <radhermit@gentoo.org> guvcview-1.4.2.ebuild,
   guvcview-1.4.4.ebuild:
@@ -88,4 +163,3 @@
   09 Dec 2008; Samuli Suominen <ssuominen@gentoo.org> +guvcview-0.9.6.ebuild:
   Initial commit from Gentoo forums, thanks to RMX for pointing this
   application out for me.
-

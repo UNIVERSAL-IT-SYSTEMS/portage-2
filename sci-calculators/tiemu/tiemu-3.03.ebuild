@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-calculators/tiemu/tiemu-3.03.ebuild,v 1.6 2011/04/13 06:21:23 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-calculators/tiemu/tiemu-3.03.ebuild,v 1.9 2012/10/20 06:17:21 xarthisius Exp $
 
-EAPI=2
+EAPI=4
 inherit eutils
 
 DESCRIPTION="Texas Instruments hand-helds emulator"
@@ -11,7 +11,7 @@ SRC_URI="http://repo.calcforge.org/debian/source/${PN}_${PV}.orig.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="dbus nls sdl threads xinerama"
 
 RDEPEND="sci-libs/libticables2
@@ -26,12 +26,13 @@ RDEPEND="sci-libs/libticables2
 	xinerama? ( x11-libs/libXinerama )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )
 	xinerama? ( x11-proto/xineramaproto )"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-remove_depreciated_gtk_calls.patch \
+	epatch \
+		"${FILESDIR}"/${P}-remove_depreciated_gtk_calls.patch \
 		"${FILESDIR}"/${P}-r2820.patch
 
 	# Don't use GTK_DISABLE_DEPRECATED flags
@@ -53,9 +54,8 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-	rm -f "${D}"usr/share/tiemu/{Manpage.txt,COPYING,RELEASE,AUTHORS,LICENSES}
-	dodoc AUTHORS NEWS README README.linux RELEASE TODO
+	default
+	rm -f "${ED}"usr/share/tiemu/{Manpage.txt,COPYING,RELEASE,AUTHORS,LICENSES}
 	make_desktop_entry tiemu "TiEmu Calculator" \
-		/usr/share/tiemu/pixmaps/icon.xpm
+		"${EPREFIX}"/usr/share/tiemu/pixmaps/icon.xpm
 }

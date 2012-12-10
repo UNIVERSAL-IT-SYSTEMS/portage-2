@@ -1,12 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/huludesktop/huludesktop-0.9.8-r1.ebuild,v 1.1 2010/09/18 09:44:46 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/huludesktop/huludesktop-0.9.8-r1.ebuild,v 1.3 2012/11/05 16:38:14 vapier Exp $
+
+EAPI="2"
 
 # since 64bit flash availability is up in the air, make it easy
 # to switch to/from multilib in the ebuild
 NATIVE64="y"
-
-EAPI="2"
 
 inherit eutils
 
@@ -19,7 +19,7 @@ LICENSE="Hulu-EULA"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="lirc"
-RESTRICT="mirror strip"
+RESTRICT="mirror"
 
 NATIVE_DEPEND="sys-libs/zlib
 	x11-libs/gtk+:2
@@ -44,7 +44,7 @@ else
 fi
 DEPEND=""
 
-QA_EXECSTACK="opt/bin/huludesktop.bin"
+QA_PREBUILT="opt/bin/huludesktop.bin"
 
 src_unpack() {
 	unpack ${A} ./data.tar.gz

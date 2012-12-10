@@ -1,6 +1,16 @@
 # ChangeLog for media-video/videotrans
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/videotrans/ChangeLog,v 1.8 2011/05/15 15:43:09 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/videotrans/ChangeLog,v 1.10 2012/05/16 09:40:38 scarabeus Exp $
+
+  16 May 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -files/videotrans-1.6.0-forced-as-needed.patch, -videotrans-1.6.0.ebuild:
+  Remove old.
+
+*videotrans-1.6.1 (25 Nov 2011)
+
+  25 Nov 2011; Stefan Briesenick <sbriesen@gentoo.org>
+  +videotrans-1.6.1.ebuild:
+  version bump, fixing imagemagick-dependency (solving bug #314349).
 
   15 May 2011; Tomáš Chvátal <scarabeus@gentoo.org> videotrans-1.6.0.ebuild:
   Depend on virtual/ffmpeg. Move to eapi4. Fixes bug #362155.

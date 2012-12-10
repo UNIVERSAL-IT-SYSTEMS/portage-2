@@ -1,11 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/gcc-4.6.0.ebuild,v 1.3 2011/04/13 03:35:39 dirtyepic Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/gcc-4.6.0.ebuild,v 1.12 2012/11/24 21:22:29 vapier Exp $
 
-PATCH_VER="1.2"
+PATCH_VER="1.3"
 UCLIBC_VER="1.0"
-
-ETYPE="gcc-compiler"
 
 # Hardened gcc 4 stuff
 PIE_VER="0.4.5"
@@ -24,59 +22,28 @@ inherit toolchain
 DESCRIPTION="The GNU Compiler Collection"
 
 LICENSE="GPL-3 LGPL-3 || ( GPL-3 libgcc libstdc++ gcc-runtime-library-exception-3.1 ) FDL-1.2"
-KEYWORDS=""
-IUSE=""
-
-RDEPEND=">=sys-libs/zlib-1.1.4
-	virtual/libiconv
-	>=dev-libs/gmp-4.3.2
-	>=dev-libs/mpfr-2.4.2
-	>=dev-libs/mpc-0.8.1
-	graphite? (
-		>=dev-libs/cloog-ppl-0.15.10
-		>=dev-libs/ppl-0.11
-	)
-	!build? (
-		gcj? (
-			gtk? (
-				x11-libs/libXt
-				x11-libs/libX11
-				x11-libs/libXtst
-				x11-proto/xproto
-				x11-proto/xextproto
-				=x11-libs/gtk+-2*
-				x11-libs/pango
-			)
-			>=media-libs/libart_lgpl-2.1
-			app-arch/zip
-			app-arch/unzip
-		)
-		nls? ( sys-devel/gettext )
-	)"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
+RDEPEND=""
 DEPEND="${RDEPEND}
-	test? (
-		>=dev-util/dejagnu-1.4.4
-		>=sys-devel/autogen-5.5.4
-	)
-	>=sys-apps/texinfo-4.8
-	>=sys-devel/bison-1.875
-	>=sys-devel/flex-2.5.4
-	amd64? ( multilib? ( gcj? ( app-emulation/emul-linux-x86-xlibs ) ) )
+	elibc_glibc? ( >=sys-libs/glibc-2.8 )
 	>=${CATEGORY}/binutils-2.18"
-PDEPEND=">=sys-devel/gcc-config-1.4
-	go? ( >=sys-devel/gcc-config-1.5 )"
 
 if [[ ${CATEGORY} != cross-* ]] ; then
 	PDEPEND="${PDEPEND} elibc_glibc? ( >=sys-libs/glibc-2.8 )"
 fi
 
 src_unpack() {
+	if has_version '<sys-libs/glibc-2.12' ; then
+		ewarn "Your host glibc is too old; disabling automatic fortify."
+		ewarn "Please rebuild gcc after upgrading to >=glibc-2.12 #362315"
+		EPATCH_EXCLUDE+=" 10_all_default-fortify-source.patch"
+	fi
+
 	toolchain_src_unpack
 
 	use vanilla && return 0
 
 	[[ ${CHOST} == ${CTARGET} ]] && epatch "${FILESDIR}"/gcc-spec-env.patch
-	[[ ${CTARGET} == *-softfloat-* ]] && epatch "${FILESDIR}"/4.4.0/gcc-4.4.0-softfloat.patch
 }
 
 pkg_setup() {

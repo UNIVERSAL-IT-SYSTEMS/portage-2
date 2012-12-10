@@ -1,6 +1,70 @@
 # ChangeLog for sci-geosciences/googleearth
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/googleearth/ChangeLog,v 1.24 2011/05/24 16:29:44 caster Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/googleearth/ChangeLog,v 1.36 2012/09/24 00:48:04 vapier Exp $
+
+  24 Sep 2012; Mike Frysinger <vapier@gentoo.org>
+  googleearth-5.1.3535.3218-r1.ebuild, googleearth-5.2.1.1588.ebuild,
+  googleearth-6.0.2.2074.ebuild, googleearth-6.0.3.2197.ebuild,
+  googleearth-6.2.2.6613.ebuild:
+  QA_DT_HASH (old/deprecated) -> QA_FLAGS_IGNORED (new hotness).
+
+  26 Jul 2012; Michael Palimaka <kensington@gentoo.org>
+  googleearth-5.1.3535.3218-r1.ebuild, googleearth-5.2.1.1588.ebuild,
+  googleearth-6.0.2.2074.ebuild, googleearth-6.0.3.2197.ebuild,
+  googleearth-6.2.2.6613.ebuild:
+  Add missing slot dependencies on Qt.
+
+  09 May 2012; Zac Medico <zmedico@gentoo.org> googleearth-6.2.2.6613.ebuild:
+  Use QA_PREBUILT="*" instead of RESTRICT=binchecks in order to avoid a QA
+  Notice with latest portage.
+
+  08 May 2012; Zac Medico <zmedico@gentoo.org> googleearth-6.2.2.6613.ebuild:
+  Also set RPATH for libraries in plugins/imageformats/ subdirectory.
+
+  08 May 2012; Zac Medico <zmedico@gentoo.org> googleearth-6.2.2.6613.ebuild:
+  Use patchelf --set-rpath $ORIGIN so that library dependencies can be properly
+  tracked for preserve-libs as discussed in bug #265372. We can backport this to
+  older ebuilds after it gets some testing.
+
+*googleearth-6.2.2.6613 (05 May 2012)
+
+  05 May 2012; Michael Weber <xmw@gentoo.org> -googleearth-6.2.1.6014.ebuild,
+  -googleearth-6.2.1.6014-r1.ebuild, +googleearth-6.2.2.6613.ebuild:
+  Version bump to resolve fetch failure (bug 413857, thanks Tina). Non-maint
+  commit.
+
+  09 Mar 2012; Vlastimil Babka <caster@gentoo.org>
+  googleearth-6.2.1.6014-r1.ebuild:
+  Due to problems with QA variables, use RESTRICT=binchecks per zmedico's
+  advice.
+
+  09 Mar 2012; Vlastimil Babka <caster@gentoo.org>
+  googleearth-6.2.1.6014-r1.ebuild:
+  Restore QA_DT_HASH variable, thanks to Oschtan, bug #401297.
+
+*googleearth-6.2.1.6014-r1 (02 Mar 2012)
+
+  02 Mar 2012; Vlastimil Babka <caster@gentoo.org>
+  +googleearth-6.2.1.6014-r1.ebuild:
+  Correct exec path in desktop file, bug #406629 by 'jospezial'.
+
+*googleearth-6.2.1.6014 (01 Mar 2012)
+
+  01 Mar 2012; Vlastimil Babka <caster@gentoo.org>
+  +googleearth-6.2.1.6014.ebuild, +files/googleearth-mimetypes.xml:
+  Version bump, bug #401297. Icon and elog improvements thanks to Oschtan.
+  Decimal separator bug appears to be solved upstream, removing the locale
+  patch. Reopen bug #262780 if it still occurs.
+
+  05 Feb 2012; Mike Frysinger <vapier@gentoo.org>
+  googleearth-5.1.3535.3218-r1.ebuild, googleearth-5.2.1.1588.ebuild,
+  googleearth-6.0.2.2074.ebuild, googleearth-6.0.3.2197.ebuild:
+  Move to new unpacker eclass for unpack_makeself.
+
+  13 Nov 2011; Mike Frysinger <vapier@gentoo.org>
+  googleearth-5.1.3535.3218-r1.ebuild, googleearth-5.2.1.1588.ebuild,
+  googleearth-6.0.2.2074.ebuild, googleearth-6.0.3.2197.ebuild:
+  Convert gcc[-nocxx] to gcc[cxx].
 
 *googleearth-6.0.3.2197 (24 May 2011)
 
@@ -409,4 +473,3 @@
   New Google Earth ebuild for bug 136584, thanks to Natanael Copa
   <natanael.copa@gmail.com> for opening the bug and Tristan Heaven
   <tristanheaven@gmail.com> for the ebuild.
-

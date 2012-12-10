@@ -1,6 +1,103 @@
 # ChangeLog for app-portage/layman
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/layman/ChangeLog,v 1.142 2011/07/18 14:52:55 idl0r Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-portage/layman/ChangeLog,v 1.165 2012/11/19 02:45:55 dolsen Exp $
+
+  19 Nov 2012; Brian Dolbec <dolsen@gentoo.org> layman-9999.ebuild:
+  fix the pyGPG dep to the correct category.
+
+*layman-2.0.0_rc5 (19 Nov 2012)
+
+  19 Nov 2012; Brian Dolbec <dolsen@gentoo.org> -layman-2.0.0_rc4.ebuild,
+  +layman-2.0.0_rc5.ebuild:
+  Version bump fixes bug 442422, bug 440628, bug 433687, bug 384091, bug
+  390127, bug 372583, bug 408897, bug 384085. Everything short of the
+  gpg support code changes. Some of these bugs fixes were in rc4.
+
+  19 Nov 2012; Brian Dolbec <dolsen@gentoo.org> layman-9999.ebuild,
+  metadata.xml:
+  add gpg use flag and pyGPG dependency for gpg-signed repositories.xml list
+  support
+
+  06 Nov 2012; Brian Dolbec <dolsen@gentoo.org> -layman-1.4.1.ebuild,
+  layman-1.4.2-r3.ebuild, -layman-2.0.0_rc3.ebuild:
+  Change the elog message for the new default /etc/portage/make.conf location.
+  Bug 441902.
+  Remove old versions.
+
+*layman-2.0.0_rc4 (21 Oct 2012)
+
+  21 Oct 2012; Brian Dolbec <dolsen@gentoo.org> +layman-2.0.0_rc4.ebuild,
+  layman-9999.ebuild, metadata.xml:
+  Version bump. Update 9999's ebuild and metadata
+
+  15 Oct 2012; Brian Dolbec <dolsen@gentoo.org> layman-9999.ebuild:
+  Update for the new layman-updater utility.
+
+  20 Sep 2012; Alexis Ballier <aballier@gentoo.org> layman-2.0.0_rc3.ebuild:
+  keyword ~amd64-fbsd
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> layman-1.4.2-r3.ebuild:
+  alpha/ia64/sparc stable wrt #416623
+
+  30 May 2012; Jeroen Roovers <jer@gentoo.org> layman-1.4.2-r3.ebuild:
+  Stable for HPPA (bug #416623).
+
+  28 May 2012; Markus Meier <maekke@gentoo.org> layman-1.4.2-r3.ebuild:
+  arm stable, bug #416623
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> layman-1.4.2-r3.ebuild:
+  Marking layman-1.4.2-r3 ppc64 for bug 416623
+
+  22 May 2012; Brent Baude <ranger@gentoo.org> layman-1.4.2-r3.ebuild:
+  Marking layman-1.4.2-r3 ppc for bug 416623
+
+  21 May 2012; Jeff Horelick <jdhore@gentoo.org> layman-1.4.2-r3.ebuild:
+  marked x86 per bug 416623
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> layman-1.4.2-r3.ebuild:
+  Stable for amd64, wrt bug #416623
+
+*layman-1.4.2-r3 (11 Mar 2012)
+
+  11 Mar 2012; Brian Dolbec <dolsen@gentoo.org> -layman-1.4.2-r2.ebuild,
+  +layman-1.4.2-r3.ebuild, +files/layman-1.4.2-manpage-corrections.patch:
+  Revision bump. Fix bug 356165, manpage errors.
+
+  10 Mar 2012; Brian Dolbec <dolsen@gentoo.org> layman-1.4.1.ebuild,
+  layman-1.4.2-r2.ebuild, -layman-2.0.0_rc1-r1.ebuild,
+  -layman-2.0.0_rc2.ebuild,
+  -files/layman-2.0.0_rc1-fix-mistracking-success.patch:
+  Update the python dependency for the 1.4* versions, fixes bug 399167.
+  Remove old rc candidates.
+
+  04 Jan 2012; Christian Ruppert <idl0r@gentoo.org> metadata.xml:
+  Brian Dolbec is the new primary maintainer of layman
+
+  18 Sep 2011; Christian Ruppert <idl0r@gentoo.org> layman-2.0.0_rc3.ebuild,
+  layman-9999.ebuild:
+  Fix if statement by adding a file test.
+
+*layman-2.0.0_rc3 (17 Sep 2011)
+
+  17 Sep 2011; Christian Ruppert <idl0r@gentoo.org> +layman-2.0.0_rc3.ebuild,
+  layman-9999.ebuild:
+  Version bump. Use PYTHON_USE_WITH. Move/Migrate
+  $EROOT/var/lib/layman/overlays.xml to .../installed.xml.
+
+  12 Aug 2011; Paul Varner <fuzzyray@gentoo.org> layman-9999.ebuild:
+  Update with Gentoo Prefix modifications
+
+*layman-2.0.0_rc2 (11 Aug 2011)
+
+  11 Aug 2011; Paul Varner <fuzzyray@gentoo.org> +layman-2.0.0_rc2.ebuild:
+  Version Bump. Bug 375789 is the tracker bug for the 2.0.0 release.
+
+  08 Aug 2011; Jeremy Olexa <darkside@gentoo.org> layman-2.0.0_rc1-r1.ebuild:
+  add ~amd64-linux kw as well
+
+  05 Aug 2011; Jeremy Olexa <darkside@gentoo.org> layman-2.0.0_rc1-r1.ebuild:
+  Import Gentoo Prefix mods. Add KEYWORDS, small fix to etc file, call
+  eprefixify
 
   18 Jul 2011; Christian Ruppert <idl0r@gentoo.org> layman-2.0.0_rc1-r1.ebuild,
   layman-9999.ebuild:

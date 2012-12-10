@@ -1,6 +1,537 @@
 # ChangeLog for app-emulation/wine
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/ChangeLog,v 1.375 2011/07/11 03:37:08 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/ChangeLog,v 1.440 2012/12/08 05:11:36 tetromino Exp $
+
+*wine-1.5.19 (08 Dec 2012)
+
+  08 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.19.ebuild,
+  wine-9999.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.19 for the announcement.
+
+*wine-1.5.18 (24 Nov 2012)
+
+  24 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.18.ebuild,
+  wine-9999.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.18 for the announcement (bug
+  #444512). Follow Ubuntu's example and install a Wine menu category and some
+  useful .desktop files and icons.
+
+*wine-1.5.17 (09 Nov 2012)
+
+  09 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.17.ebuild,
+  +files/wine-1.5.17-osmesa-check.patch, wine-9999.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.17 for the announcement.
+
+*wine-1.5.16-r1 (29 Oct 2012)
+*wine-1.5.15-r2 (29 Oct 2012)
+*wine-1.5.14-r1 (29 Oct 2012)
+*wine-1.5.13-r1 (29 Oct 2012)
+*wine-1.5.12-r1 (29 Oct 2012)
+*wine-1.5.11-r1 (29 Oct 2012)
+*wine-1.5.10-r1 (29 Oct 2012)
+
+  29 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -wine-1.5.10.ebuild,
+  +wine-1.5.10-r1.ebuild, -wine-1.5.11.ebuild, +wine-1.5.11-r1.ebuild,
+  -wine-1.5.12.ebuild, +wine-1.5.12-r1.ebuild, -wine-1.5.13.ebuild,
+  +wine-1.5.13-r1.ebuild, -wine-1.5.14.ebuild, +wine-1.5.14-r1.ebuild,
+  -wine-1.5.15.ebuild, -wine-1.5.15-r1.ebuild, +wine-1.5.15-r2.ebuild,
+  -wine-1.5.16.ebuild, +wine-1.5.16-r1.ebuild, wine-9999.ebuild, metadata.xml:
+  Enable osmesa for win32 on amd64 since emul-linux-x86-opengl-20121028 now
+  includes libOSMesa.so
+
+*wine-1.5.16 (26 Oct 2012)
+
+  26 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.16.ebuild,
+  wine-9999.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.16 for the announcement.
+
+  26 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org> wine-1.3.28.ebuild,
+  wine-1.4.ebuild, wine-1.4.1.ebuild, wine-1.5.0.ebuild, wine-1.5.1.ebuild,
+  wine-1.5.2.ebuild, wine-1.5.3.ebuild, wine-1.5.4.ebuild, wine-1.5.5.ebuild,
+  wine-1.5.6.ebuild, wine-1.5.7.ebuild, wine-1.5.8.ebuild, wine-1.5.9.ebuild,
+  wine-1.5.10.ebuild, wine-1.5.11.ebuild, wine-1.5.12.ebuild,
+  wine-1.5.13.ebuild, wine-1.5.14.ebuild, wine-1.5.15.ebuild,
+  wine-1.5.15-r1.ebuild, wine-9999.ebuild:
+  Pin gstreamer dependency to 0.10 slot.
+
+*wine-1.5.15-r1 (12 Oct 2012)
+
+  12 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +wine-1.5.15-r1.ebuild, wine-9999.ebuild:
+  Update pulseaudio patches, thanks to Maarten Lankhorst.
+
+*wine-1.5.15 (12 Oct 2012)
+
+  12 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.15.ebuild,
+  wine-9999.ebuild, metadata.xml:
+  Bump, see http://www.winehq.org/announce/1.5.15 for the announcement.
+  Temporarily add a masked osmesa-multilib USE flag to allow overlay users to
+  enable osmesa support for win32 on amd64 until bug #430268 is resolved.
+
+*wine-1.5.14 (29 Sep 2012)
+
+  29 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.14.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.14 for the announcement.
+
+*wine-1.5.13 (14 Sep 2012)
+
+  14 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.13.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.13 for the announcement.
+
+  10 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> wine-1.2.3.ebuild,
+  wine-1.3.28.ebuild, wine-1.4.ebuild, wine-1.4.1.ebuild, wine-1.5.0.ebuild,
+  wine-1.5.1.ebuild, wine-1.5.2.ebuild, wine-1.5.3.ebuild, wine-1.5.4.ebuild,
+  wine-1.5.5.ebuild, wine-1.5.6.ebuild, wine-1.5.7.ebuild, wine-1.5.8.ebuild,
+  wine-1.5.9.ebuild, wine-1.5.10.ebuild, wine-1.5.11.ebuild,
+  wine-1.5.12.ebuild, wine-9999.ebuild:
+  Add virtual/glu dependency for mesa-9, bug #434446, thanks to Andreas
+  Sturmlechner.
+
+*wine-1.5.12 (08 Sep 2012)
+
+  08 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.12.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.12 for the announcement.
+
+  23 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org> wine-1.2.3.ebuild,
+  wine-1.3.28.ebuild, wine-1.4.ebuild, wine-1.4.1.ebuild, wine-1.5.0.ebuild,
+  wine-1.5.1.ebuild, wine-1.5.2.ebuild, wine-1.5.3.ebuild, wine-1.5.4.ebuild,
+  wine-1.5.5.ebuild, wine-1.5.6.ebuild, wine-1.5.7.ebuild, wine-1.5.8.ebuild,
+  wine-1.5.9.ebuild, wine-1.5.10.ebuild, wine-1.5.11.ebuild, wine-9999.ebuild:
+  Run tools/make_requests if a user patch modifies the server protocol
+  definition (bug #432348, thanks to Oliver 'oGGy' Ney).
+
+  19 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org> wine-1.5.10.ebuild,
+  -files/wine-1.5.10-osmesa-check.patch, wine-1.5.11.ebuild,
+  +files/wine-1.5.11-osmesa-check.patch, wine-9999.ebuild:
+  Fix USE=osmesa build failure with mesa-8.1_rc1_pre20120814 (bug #431832).
+
+*wine-1.5.11 (18 Aug 2012)
+
+  18 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -wine-1.2.ebuild,
+  -wine-1.2.1.ebuild, -wine-1.2.2.ebuild, -wine-1.3.0.ebuild,
+  -wine-1.3.1.ebuild, -wine-1.3.2.ebuild, -wine-1.3.3.ebuild,
+  -wine-1.3.4.ebuild, -wine-1.3.5.ebuild, -wine-1.3.6.ebuild,
+  -wine-1.3.7.ebuild, -wine-1.3.8.ebuild, -wine-1.3.9.ebuild,
+  -wine-1.3.10.ebuild, -wine-1.3.11.ebuild, -wine-1.3.12.ebuild,
+  -wine-1.3.13.ebuild, -wine-1.3.14.ebuild, -wine-1.3.15.ebuild,
+  -wine-1.3.16.ebuild, -wine-1.3.17.ebuild, -wine-1.3.18.ebuild,
+  -wine-1.3.19.ebuild, -wine-1.3.20.ebuild, -wine-1.3.21.ebuild,
+  -wine-1.3.22.ebuild, -wine-1.3.23.ebuild, -wine-1.3.24.ebuild,
+  -wine-1.3.25.ebuild, -wine-1.3.26.ebuild, -wine-1.3.27.ebuild,
+  -wine-1.3.29.ebuild, -wine-1.3.30.ebuild, -wine-1.3.31.ebuild,
+  -wine-1.3.32.ebuild, -wine-1.3.33.ebuild, -wine-1.3.34.ebuild,
+  -wine-1.3.35.ebuild, -wine-1.3.36.ebuild, -wine-1.3.37.ebuild,
+  +wine-1.5.11.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.11 for the announcement. Drop
+  old pre-1.4 releases except for 1.2.3 and 1.3.28 which were kept for now due
+  to user requests (bug #427236).
+
+  12 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org> wine-1.2.ebuild,
+  wine-1.2.1.ebuild, wine-1.2.2.ebuild, wine-1.2.3.ebuild, wine-1.3.0.ebuild,
+  wine-1.3.1.ebuild, wine-1.3.2.ebuild, wine-1.3.3.ebuild, wine-1.3.4.ebuild,
+  wine-1.3.5.ebuild, wine-1.3.6.ebuild, wine-1.3.7.ebuild, wine-1.3.8.ebuild,
+  wine-1.3.9.ebuild, wine-1.3.10.ebuild, wine-1.3.11.ebuild,
+  wine-1.3.12.ebuild, wine-1.3.13.ebuild, wine-1.3.14.ebuild,
+  wine-1.3.15.ebuild, wine-1.3.16.ebuild, wine-1.3.17.ebuild,
+  wine-1.3.18.ebuild, wine-1.3.19.ebuild, wine-1.3.20.ebuild,
+  wine-1.3.21.ebuild, wine-1.3.22.ebuild, wine-1.3.23.ebuild,
+  wine-1.3.24.ebuild, wine-1.3.25.ebuild, wine-1.3.26.ebuild,
+  wine-1.3.27.ebuild, wine-1.3.28.ebuild, wine-1.3.29.ebuild,
+  wine-1.3.30.ebuild, wine-1.3.31.ebuild, wine-1.3.32.ebuild,
+  wine-1.3.33.ebuild, wine-1.3.34.ebuild, wine-1.3.35.ebuild,
+  wine-1.3.36.ebuild, wine-1.3.37.ebuild, wine-1.4.ebuild, wine-1.4.1.ebuild,
+  wine-1.5.0.ebuild, wine-1.5.1.ebuild, wine-1.5.2.ebuild, wine-1.5.3.ebuild,
+  wine-1.5.4.ebuild, wine-1.5.5.ebuild, wine-1.5.6.ebuild, wine-1.5.7.ebuild,
+  wine-1.5.8.ebuild, wine-1.5.9.ebuild, wine-1.5.10.ebuild, wine-9999.ebuild:
+  xmessage not needed for >=wine-0.9.60 (bug #431140, thanks to Matt Turner).
+
+*wine-1.5.10 (07 Aug 2012)
+
+  07 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.10.ebuild,
+  +files/wine-1.5.10-osmesa-check.patch, wine-9999.ebuild, metadata.xml:
+  Bump, see http://www.winehq.org/announce/1.5.10 for the announcement, thanks
+  to Rafał Mużyło (bug #429386). Note that on amd64, osmesa support is for
+  now win64-only.
+
+  19 Jul 2012; Tomáš Chvátal <scarabeus@gentoo.org> wine-1.4.1.ebuild:
+  Amd64 stable wrt bug#427060.
+
+  19 Jul 2012; Jeff Horelick <jdhore@gentoo.org> wine-1.4.1.ebuild:
+  marked x86 per bug 427060
+
+*wine-1.5.9 (18 Jul 2012)
+
+  18 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.9.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.9 for the announcement.
+
+*wine-1.5.8 (06 Jul 2012)
+
+  06 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.8.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.8 for the announcement.
+
+  03 Jul 2012; Jeff Horelick <jdhore@gentoo.org> wine-1.4.ebuild:
+  marked x86 per bug 418117
+
+  28 Jun 2012; Agostino Sarubbo <ago@gentoo.org> wine-1.4.ebuild:
+  Stable for AMD64, wrt bug #418117
+
+*wine-1.5.7 (24 Jun 2012)
+*wine-1.4.1 (24 Jun 2012)
+
+  24 Jun 2012; Alexandre Rostovtsev <tetromino@gentoo.org> wine-1.2.ebuild,
+  wine-1.2.1.ebuild, wine-1.2.2.ebuild, wine-1.2.3.ebuild, +wine-1.4.1.ebuild,
+  +wine-1.5.7.ebuild, wine-9999.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.7 and
+  http://www.winehq.org/announce/1.4.1 for the announcements. Enable optional
+  native pulseaudio support for 1.5.7 (bug #421365, thanks to Lee Trager). Fix
+  emul-linux-x86-soundlibs dependency (bug #423093, thanks to Pacho Ramos).
+
+*wine-1.5.6 (10 Jun 2012)
+
+  10 Jun 2012; Alexandre Rostovtsev <tetromino@gentoo.org> wine-1.2.ebuild,
+  wine-1.2.1.ebuild, wine-1.2.2.ebuild, wine-1.2.3.ebuild, wine-1.3.0.ebuild,
+  wine-1.3.1.ebuild, wine-1.3.2.ebuild, wine-1.3.3.ebuild, wine-1.3.4.ebuild,
+  wine-1.3.5.ebuild, wine-1.3.6.ebuild, wine-1.3.7.ebuild, wine-1.3.8.ebuild,
+  wine-1.3.9.ebuild, wine-1.3.10.ebuild, wine-1.3.11.ebuild,
+  wine-1.3.12.ebuild, wine-1.3.13.ebuild, wine-1.3.14.ebuild,
+  wine-1.3.15.ebuild, wine-1.3.16.ebuild, wine-1.3.17.ebuild,
+  wine-1.3.18.ebuild, wine-1.3.19.ebuild, wine-1.3.20.ebuild,
+  wine-1.3.21.ebuild, wine-1.3.22.ebuild, wine-1.3.23.ebuild,
+  wine-1.3.24.ebuild, wine-1.3.25.ebuild, wine-1.3.26.ebuild,
+  wine-1.3.27.ebuild, wine-1.3.28.ebuild, wine-1.3.29.ebuild,
+  wine-1.3.30.ebuild, wine-1.3.31.ebuild, wine-1.3.32.ebuild,
+  wine-1.3.33.ebuild, wine-1.3.34.ebuild, wine-1.3.35.ebuild,
+  wine-1.3.36.ebuild, wine-1.3.37.ebuild, wine-1.4.ebuild, wine-1.5.0.ebuild,
+  wine-1.5.1.ebuild, wine-1.5.2.ebuild, wine-1.5.3.ebuild, wine-1.5.4.ebuild,
+  wine-1.5.5.ebuild, +wine-1.5.6.ebuild, wine-9999.ebuild, metadata.xml:
+  Bump, see http://www.winehq.org/announce/1.5.6 for the announcement.
+  Optionally enable Wine's binary Mono add-on for .NET support. Update Gecko
+  add-on source URIs.
+
+*wine-1.5.5 (28 May 2012)
+
+  28 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.5.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.5 for the announcement.
+
+*wine-1.5.4 (12 May 2012)
+
+  12 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> wine-1.2.ebuild,
+  wine-1.2.1.ebuild, wine-1.2.2.ebuild, wine-1.2.3.ebuild, wine-1.3.0.ebuild,
+  wine-1.3.1.ebuild, wine-1.3.2.ebuild, wine-1.3.3.ebuild, wine-1.3.4.ebuild,
+  wine-1.3.5.ebuild, wine-1.3.6.ebuild, wine-1.3.7.ebuild, wine-1.3.8.ebuild,
+  wine-1.3.9.ebuild, wine-1.3.10.ebuild, wine-1.3.11.ebuild,
+  wine-1.3.12.ebuild, wine-1.3.13.ebuild, wine-1.3.14.ebuild,
+  wine-1.3.15.ebuild, wine-1.3.16.ebuild, wine-1.3.17.ebuild,
+  wine-1.3.18.ebuild, wine-1.3.19.ebuild, wine-1.3.20.ebuild,
+  wine-1.3.21.ebuild, wine-1.3.22.ebuild, wine-1.3.23.ebuild,
+  wine-1.3.24.ebuild, wine-1.3.25.ebuild, wine-1.3.26.ebuild,
+  wine-1.3.27.ebuild, wine-1.3.28.ebuild, wine-1.3.29.ebuild,
+  wine-1.3.30.ebuild, wine-1.3.31.ebuild, wine-1.3.32.ebuild,
+  wine-1.3.33.ebuild, wine-1.3.34.ebuild, wine-1.3.35.ebuild,
+  wine-1.3.36.ebuild, wine-1.3.37.ebuild, wine-1.4.ebuild, wine-1.5.0.ebuild,
+  wine-1.5.1.ebuild, wine-1.5.2.ebuild, wine-1.5.3.ebuild, +wine-1.5.4.ebuild,
+  wine-9999.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.4 for the announcement. Update
+  SRC_URI.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> wine-1.2.ebuild,
+  wine-1.2.1.ebuild, wine-1.2.2.ebuild, wine-1.2.3.ebuild, wine-1.3.0.ebuild,
+  wine-1.3.1.ebuild, wine-1.3.2.ebuild, wine-1.3.3.ebuild, wine-1.3.4.ebuild,
+  wine-1.3.5.ebuild, wine-1.3.6.ebuild, wine-1.3.7.ebuild, wine-1.3.8.ebuild,
+  wine-1.3.9.ebuild, wine-1.3.10.ebuild, wine-1.3.11.ebuild,
+  wine-1.3.12.ebuild, wine-1.3.13.ebuild, wine-1.3.14.ebuild,
+  wine-1.3.15.ebuild, wine-1.3.16.ebuild, wine-1.3.17.ebuild,
+  wine-1.3.18.ebuild, wine-1.3.19.ebuild, wine-1.3.20.ebuild,
+  wine-1.3.21.ebuild, wine-1.3.22.ebuild, wine-1.3.23.ebuild,
+  wine-1.3.24.ebuild, wine-1.3.25.ebuild, wine-1.3.26.ebuild,
+  wine-1.3.27.ebuild, wine-1.3.28.ebuild, wine-1.3.29.ebuild,
+  wine-1.3.30.ebuild, wine-1.3.31.ebuild, wine-1.3.32.ebuild,
+  wine-1.3.33.ebuild, wine-1.3.34.ebuild, wine-1.3.35.ebuild,
+  wine-1.3.36.ebuild, wine-1.3.37.ebuild, wine-1.4.ebuild, wine-1.5.0.ebuild,
+  wine-1.5.1.ebuild, wine-1.5.2.ebuild, wine-1.5.3.ebuild, wine-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*wine-1.5.3 (02 May 2012)
+
+  02 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.3.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.3 for the announcement.
+
+*wine-1.5.2 (14 Apr 2012)
+
+  14 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -wine-1.4_rc1.ebuild, -wine-1.4_rc2.ebuild, -wine-1.4_rc3.ebuild,
+  -wine-1.4_rc4.ebuild, -wine-1.4_rc5.ebuild, -wine-1.4_rc6.ebuild,
+  +wine-1.5.2.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.2 for the announcement. Drop 1.4
+  release candidates since they are unlikely to be of much interest now.
+
+*wine-1.5.1 (03 Apr 2012)
+
+  03 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.1.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.1 for the announcement.
+
+  27 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> wine-1.3.36.ebuild,
+  wine-1.3.37.ebuild, wine-1.4_rc1.ebuild, wine-1.4_rc2.ebuild,
+  wine-1.4_rc3.ebuild, wine-1.4_rc4.ebuild, wine-1.4_rc5.ebuild,
+  wine-1.4_rc6.ebuild, wine-1.4.ebuild, wine-1.5.0.ebuild, wine-9999.ebuild:
+  Pin to SLOT="0" of sys-fs/udisks.
+
+*wine-1.5.0 (17 Mar 2012)
+
+  17 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.0.ebuild,
+  wine-9999.ebuild:
+  Bump, see http://www.winehq.org/announce/1.5.0 for the announcement.
+
+*wine-1.4 (07 Mar 2012)
+
+  07 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.4.ebuild:
+  First official 1.4 stable release. See http://www.winehq.org/announce/1.4 for
+  the announcement.
+
+*wine-1.4_rc6 (02 Mar 2012)
+
+  02 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +wine-1.4_rc6.ebuild:
+  Bump, see http://www.winehq.org/announce/1.4-rc6 for the announcement.
+
+  28 Feb 2012; Mike Frysinger <vapier@gentoo.org> wine-1.2.ebuild,
+  wine-1.2.1.ebuild, wine-1.2.2.ebuild, wine-1.2.3.ebuild, wine-1.3.0.ebuild,
+  wine-1.3.1.ebuild, wine-1.3.2.ebuild, wine-1.3.3.ebuild, wine-1.3.4.ebuild,
+  wine-1.3.5.ebuild, wine-1.3.6.ebuild, wine-1.3.7.ebuild, wine-1.3.8.ebuild,
+  wine-1.3.9.ebuild, wine-1.3.10.ebuild, wine-1.3.11.ebuild,
+  wine-1.3.12.ebuild, wine-1.3.13.ebuild, wine-1.3.14.ebuild,
+  wine-1.3.15.ebuild, wine-1.3.16.ebuild, wine-1.3.17.ebuild,
+  wine-1.3.18.ebuild, wine-1.3.19.ebuild, wine-1.3.20.ebuild,
+  wine-1.3.21.ebuild, wine-1.3.22.ebuild, wine-1.3.23.ebuild,
+  wine-1.3.24.ebuild, wine-1.3.25.ebuild, wine-1.3.26.ebuild,
+  wine-1.3.27.ebuild, wine-1.3.28.ebuild, wine-1.3.29.ebuild,
+  wine-1.3.30.ebuild, wine-1.3.31.ebuild, wine-1.3.32.ebuild,
+  wine-1.3.33.ebuild, wine-1.3.34.ebuild, wine-1.3.35.ebuild,
+  wine-1.3.36.ebuild, wine-1.3.37.ebuild, wine-1.4_rc1.ebuild,
+  wine-1.4_rc2.ebuild, wine-1.4_rc3.ebuild, wine-1.4_rc4.ebuild,
+  wine-1.4_rc5.ebuild, wine-9999.ebuild:
+  Add pkg-config to DEPEND since various libs need it #406051 by cyberbat.
+
+*wine-1.4_rc5 (27 Feb 2012)
+
+  27 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +wine-1.4_rc5.ebuild:
+  Bump, see http://www.winehq.org/announce/1.4-rc5 for the announcement.
+
+*wine-1.4_rc4 (21 Feb 2012)
+
+  21 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +wine-1.4_rc4.ebuild, wine-9999.ebuild:
+  Bump, see http://www.winehq.org/announce/1.4-rc4 for the announcement. Add
+  /usr/bin/wine and wine-preloader symlinks for win64-only installs (bug
+  #404331, thanks to Zhang Hongjiu). Add odbc USE flag to pull in unixODBC
+  runtime dep (bug #404507, thanks to Andreas Sturmlechner). Use pax-mark (bug
+  #375797, thanks to Anthony Basile) and mark win64 binaries (bug #404329,
+  thanks to Zhang Hongjiu). Add a die in src_configure when intel opencl is
+  selected to help with bug #403947 (thanks to candrews and Kacper Kowalik).
+
+*wine-1.4_rc3 (15 Feb 2012)
+
+  15 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +wine-1.4_rc3.ebuild, wine-9999.ebuild:
+  Bump, see http://www.winehq.org/announce/1.4-rc3 for the announcement. Sync
+  live version with USE=selinux change.
+
+  07 Feb 2012; <swift@gentoo.org> wine-1.4_rc2.ebuild:
+  Add USE=selinux dependency on selinux-wine
+
+*wine-1.4_rc2 (05 Feb 2012)
+
+  05 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +wine-1.4_rc2.ebuild, +files/wine-1.4_rc2-multilib-portage.patch,
+  wine-9999.ebuild:
+  Bump, see http://www.winehq.org/announce/1.4-rc2 for the announcement. Add
+  patch by Thomas Sachau to (hopefully) finally fix bug #395615.
+
+  28 Jan 2012; Mike Frysinger <vapier@gentoo.org> wine-1.4_rc1.ebuild:
+  Drop manual flag filtering #395615.
+
+*wine-1.4_rc1 (28 Jan 2012)
+
+  28 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +wine-1.4_rc1.ebuild:
+  Version bump, see http://www.winehq.org/announce/1.4-rc1 for the
+  announcement. Filter -m64 -m32 -mx32 flags for multilib-portage (bug #395615,
+  thanks to Thomas Sachau).
+
+*wine-1.3.37 (14 Jan 2012)
+
+  14 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.3.37.ebuild:
+  Version bump, see http://www.winehq.org/announce/1.3.37 for the announcement.
+
+  14 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org> wine-1.2.ebuild,
+  wine-1.2.1.ebuild, wine-1.2.2.ebuild, wine-1.2.3.ebuild, wine-1.3.0.ebuild,
+  wine-1.3.1.ebuild, wine-1.3.2.ebuild, wine-1.3.3.ebuild, wine-1.3.4.ebuild,
+  wine-1.3.5.ebuild, wine-1.3.6.ebuild, wine-1.3.7.ebuild, wine-1.3.8.ebuild,
+  wine-1.3.9.ebuild, wine-1.3.10.ebuild, wine-1.3.11.ebuild,
+  wine-1.3.12.ebuild, wine-1.3.13.ebuild, wine-1.3.14.ebuild,
+  wine-1.3.15.ebuild, wine-1.3.16.ebuild, wine-1.3.17.ebuild,
+  wine-1.3.18.ebuild, wine-1.3.19.ebuild, wine-1.3.20.ebuild,
+  wine-1.3.21.ebuild, wine-1.3.22.ebuild, wine-1.3.23.ebuild,
+  wine-1.3.24.ebuild, wine-1.3.25.ebuild, wine-1.3.26.ebuild,
+  wine-1.3.27.ebuild, wine-1.3.28.ebuild, wine-1.3.29.ebuild,
+  wine-1.3.30.ebuild, wine-1.3.31.ebuild, wine-1.3.32.ebuild,
+  wine-1.3.33.ebuild, wine-1.3.34.ebuild, wine-1.3.35.ebuild,
+  wine-1.3.36.ebuild, wine-9999.ebuild:
+  Update to EAPI4 and require USE=threads on glibc-based systems (bug #286560,
+  #396395, and other duplicates). Drop esd support since media-sound/esound has
+  been masked for removal.
+
+  13 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org> wine-1.2.3.ebuild,
+  +files/wine-1.2.3-msxml3-libxml2-headers.patch:
+  Add patch from 1.3.15 that reorders #includes in msxml3 to fix building with
+  libxml2[icu] (bug #397993, thanks to Marcin Szamotulski for reporting).
+
+  31 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org> wine-9999.ebuild:
+  Sync with dbus/udisks USE flag update in 1.3.36.
+
+*wine-1.3.36 (31 Dec 2011)
+
+  31 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.3.36.ebuild,
+  metadata.xml:
+  Version bump, see http://www.winehq.org/announce/1.3.36 for the announcement.
+  Rename dbus USE flag to udisks to reflect what it actually does in >=1.3.36.
+
+  20 Dec 2011; Mike Frysinger <vapier@gentoo.org> wine-1.3.9.ebuild,
+  wine-1.3.10.ebuild, wine-1.3.11.ebuild, wine-1.3.12.ebuild,
+  wine-1.3.13.ebuild, wine-1.3.14.ebuild, wine-1.3.15.ebuild,
+  wine-1.3.16.ebuild, wine-1.3.17.ebuild, wine-1.3.18.ebuild,
+  wine-1.3.19.ebuild, wine-1.3.20.ebuild, wine-1.3.21.ebuild,
+  wine-1.3.22.ebuild, wine-1.3.23.ebuild, wine-1.3.24.ebuild,
+  wine-1.3.25.ebuild, wine-1.3.26.ebuild, wine-1.3.27.ebuild,
+  wine-1.3.28.ebuild, wine-1.3.29.ebuild, wine-1.3.30.ebuild,
+  wine-1.3.31.ebuild, wine-1.3.32.ebuild, wine-1.3.33.ebuild,
+  wine-1.3.34.ebuild, wine-1.3.35.ebuild, wine-9999.ebuild:
+  Switch to new virtual/opencl #392179 by Michal Pytasz.
+
+*wine-1.3.35 (18 Dec 2011)
+
+  18 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.3.35.ebuild:
+  Version bump, see http://www.winehq.org/announce/1.3.35 for the announcement.
+
+  02 Dec 2011; Mike Frysinger <vapier@gentoo.org>
+  -files/wine-1.1.15-configure-host.patch, wine-1.2.1.ebuild,
+  wine-1.3.0.ebuild, wine-1.3.1.ebuild, wine-1.3.2.ebuild, wine-1.3.3.ebuild,
+  wine-1.3.4.ebuild, wine-1.3.5.ebuild, wine-1.3.6.ebuild, wine-1.3.7.ebuild,
+  wine-1.3.8.ebuild, wine-1.3.9.ebuild, wine-1.3.10.ebuild, wine-1.3.11.ebuild,
+  wine-1.3.12.ebuild, wine-1.3.13.ebuild, wine-1.3.14.ebuild,
+  -files/wine-1.3.14-mouse-warp.patch, wine-1.3.15.ebuild, wine-1.3.16.ebuild,
+  -files/wine-1.3.16-mouse-warp.patch, wine-1.3.17.ebuild, wine-1.3.18.ebuild,
+  wine-1.3.19.ebuild, wine-1.3.20.ebuild, wine-1.3.21.ebuild,
+  wine-1.3.22.ebuild, wine-1.3.23.ebuild, wine-1.3.24.ebuild,
+  wine-1.3.25.ebuild, wine-1.3.26.ebuild, wine-1.3.27.ebuild,
+  wine-1.3.28.ebuild, wine-1.3.29.ebuild, wine-1.3.30.ebuild,
+  wine-1.3.31.ebuild, wine-1.3.32.ebuild, wine-1.3.33.ebuild,
+  wine-1.3.34.ebuild, wine-9999.ebuild, -files/wine-gentoo-no-ssp.patch,
+  metadata.xml:
+  Delete custom pulseaudio/mousewarp patches that are obsolete in newer
+  versions.
+
+*wine-1.3.34 (02 Dec 2011)
+*wine-1.3.33 (02 Dec 2011)
+
+  02 Dec 2011; Mike Frysinger <vapier@gentoo.org> +wine-1.3.33.ebuild,
+  +wine-1.3.34.ebuild, wine-9999.ebuild:
+  Version bump and update Gecko #390995 by Andreas Sturmlechner.
+
+*wine-1.3.32 (07 Nov 2011)
+*wine-1.3.31 (07 Nov 2011)
+
+  07 Nov 2011; Mike Frysinger <vapier@gentoo.org> +wine-1.3.31.ebuild,
+  +wine-1.3.32.ebuild, wine-9999.ebuild:
+  Version bump #389687 by ScytheMan.
+
+*wine-1.3.30 (13 Oct 2011)
+
+  13 Oct 2011; Mike Frysinger <vapier@gentoo.org> +wine-1.3.30.ebuild:
+  Version bump #386781 by tman.
+
+*wine-1.3.29 (26 Sep 2011)
+
+  26 Sep 2011; Mike Frysinger <vapier@gentoo.org> +wine-1.3.29.ebuild:
+  Version bump #384508 by ScytheMan.
+
+  18 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> wine-1.2.ebuild,
+  wine-1.2.1.ebuild, wine-1.2.2.ebuild, wine-1.2.3.ebuild, wine-1.3.0.ebuild,
+  wine-1.3.1.ebuild, wine-1.3.2.ebuild, wine-1.3.3.ebuild, wine-1.3.4.ebuild,
+  wine-1.3.5.ebuild, wine-1.3.6.ebuild, wine-1.3.7.ebuild, wine-1.3.8.ebuild,
+  wine-1.3.9.ebuild, wine-1.3.10.ebuild, wine-1.3.11.ebuild,
+  wine-1.3.12.ebuild, wine-1.3.13.ebuild, wine-1.3.14.ebuild,
+  wine-1.3.15.ebuild, wine-1.3.16.ebuild, wine-1.3.17.ebuild,
+  wine-1.3.18.ebuild, wine-1.3.19.ebuild, wine-1.3.20.ebuild,
+  wine-1.3.21.ebuild, wine-1.3.22.ebuild, wine-1.3.23.ebuild,
+  wine-1.3.24.ebuild, wine-1.3.25.ebuild, wine-1.3.26.ebuild,
+  wine-1.3.27.ebuild, wine-1.3.28.ebuild, wine-9999.ebuild, metadata.xml:
+  Remove USE="hal" and pass --without-hal wrt #313389
+
+*wine-1.3.28 (15 Sep 2011)
+
+  15 Sep 2011; Mike Frysinger <vapier@gentoo.org> +wine-1.3.28.ebuild:
+  Version bump #382869 by Emulatorman.
+
+  15 Sep 2011; Mike Frysinger <vapier@gentoo.org> wine-1.2.ebuild,
+  wine-1.2.1.ebuild, wine-1.2.2.ebuild, wine-1.2.3.ebuild, wine-1.3.0.ebuild,
+  wine-1.3.1.ebuild, wine-1.3.2.ebuild, wine-1.3.3.ebuild, wine-1.3.4.ebuild,
+  wine-1.3.5.ebuild, wine-1.3.6.ebuild, wine-1.3.7.ebuild, wine-1.3.8.ebuild,
+  wine-1.3.9.ebuild, wine-1.3.10.ebuild, wine-1.3.11.ebuild,
+  wine-1.3.12.ebuild, wine-1.3.13.ebuild, wine-1.3.14.ebuild,
+  wine-1.3.15.ebuild, wine-1.3.16.ebuild, wine-1.3.17.ebuild,
+  wine-1.3.18.ebuild, wine-1.3.19.ebuild, wine-1.3.20.ebuild,
+  wine-1.3.21.ebuild, wine-1.3.22.ebuild, wine-1.3.23.ebuild,
+  wine-1.3.24.ebuild, wine-1.3.25.ebuild, wine-1.3.26.ebuild,
+  wine-1.3.27.ebuild, wine-9999.ebuild:
+  Add multilib deps for USE="mp3 scanner" #382125 by Jonathan-Christofer Demay.
+
+*wine-1.3.27 (28 Aug 2011)
+
+  28 Aug 2011; Mike Frysinger <vapier@gentoo.org> +wine-1.3.27.ebuild,
+  wine-9999.ebuild:
+  Version bump #380873 by Andrew Savchenko and updated gecko ver.
+
+  20 Aug 2011; Mike Frysinger <vapier@gentoo.org> wine-1.2.ebuild,
+  wine-1.2.1.ebuild, wine-1.2.2.ebuild, wine-1.2.3.ebuild, wine-1.3.0.ebuild,
+  wine-1.3.1.ebuild, wine-1.3.2.ebuild, wine-1.3.3.ebuild, wine-1.3.4.ebuild,
+  wine-1.3.5.ebuild, wine-1.3.6.ebuild, wine-1.3.7.ebuild, wine-1.3.8.ebuild,
+  wine-1.3.9.ebuild, wine-1.3.10.ebuild, wine-1.3.11.ebuild,
+  wine-1.3.12.ebuild, wine-1.3.13.ebuild, wine-1.3.14.ebuild,
+  wine-1.3.15.ebuild, wine-1.3.16.ebuild, wine-1.3.17.ebuild,
+  wine-1.3.18.ebuild, wine-1.3.19.ebuild, wine-1.3.20.ebuild,
+  wine-1.3.21.ebuild, wine-1.3.22.ebuild, wine-1.3.23.ebuild,
+  wine-1.3.24.ebuild, wine-1.3.25.ebuild, wine-1.3.26.ebuild, wine-9999.ebuild:
+  Pull in prelink at build time since wingecc invokes it directly to muck with
+  ELF base addresses #379801 by Bartosz Brachaczek.
+
+  20 Aug 2011; Mike Frysinger <vapier@gentoo.org> wine-1.2.ebuild,
+  wine-1.2.1.ebuild, wine-1.2.2.ebuild, wine-1.2.3.ebuild, wine-1.3.0.ebuild,
+  wine-1.3.1.ebuild, wine-1.3.2.ebuild, wine-1.3.3.ebuild, wine-1.3.4.ebuild,
+  wine-1.3.5.ebuild, wine-1.3.6.ebuild, wine-1.3.7.ebuild, wine-1.3.8.ebuild,
+  wine-1.3.9.ebuild, wine-1.3.10.ebuild, wine-1.3.11.ebuild,
+  wine-1.3.12.ebuild, wine-1.3.13.ebuild, wine-1.3.14.ebuild,
+  wine-1.3.15.ebuild, wine-1.3.16.ebuild, wine-1.3.17.ebuild,
+  wine-1.3.18.ebuild, wine-1.3.19.ebuild, wine-1.3.20.ebuild,
+  wine-1.3.21.ebuild, wine-1.3.22.ebuild, wine-1.3.23.ebuild,
+  wine-1.3.24.ebuild, wine-1.3.25.ebuild, wine-1.3.26.ebuild, wine-9999.ebuild:
+  Depend on virtual/yacc instead of bison.
+
+  14 Aug 2011; Mike Frysinger <vapier@gentoo.org> wine-1.3.25.ebuild,
+  wine-1.3.26.ebuild, wine-9999.ebuild:
+  Restore app-emulation/emul-linux-x86-soundlibs dep #378459 by emil karlson.
+
+*wine-1.3.26 (07 Aug 2011)
+*wine-1.3.25 (07 Aug 2011)
+
+  07 Aug 2011; Mike Frysinger <vapier@gentoo.org> +wine-1.3.25.ebuild,
+  +wine-1.3.26.ebuild:
+  Version bump #376107 by Andreas Sturmlechner.
+
+  07 Aug 2011; Mike Frysinger <vapier@gentoo.org> wine-9999.ebuild:
+  Drop USE="esd jack nas" to match upstream, and drop USE=pulseaudio as it
+  should be obsoleted by latest code.
 
 *wine-1.3.24 (11 Jul 2011)
 

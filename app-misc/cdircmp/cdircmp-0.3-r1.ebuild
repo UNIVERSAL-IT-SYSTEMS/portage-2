@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/cdircmp/cdircmp-0.3-r1.ebuild,v 1.1 2010/09/17 05:05:40 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/cdircmp/cdircmp-0.3-r1.ebuild,v 1.4 2012/10/06 16:59:30 armin76 Exp $
 
 EAPI="2"
 
@@ -12,7 +12,7 @@ SRC_URI="http://home.hccnet.nl/paul.schuurmans/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE=""
 
 RDEPEND=">=sys-libs/ncurses-5.4"

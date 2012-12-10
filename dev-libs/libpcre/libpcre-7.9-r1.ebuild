@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libpcre/libpcre-7.9-r1.ebuild,v 1.12 2009/10/21 08:56:24 loki_val Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libpcre/libpcre-7.9-r1.ebuild,v 1.14 2012/05/25 16:39:29 vapier Exp $
 
 EAPI=2
 
-inherit libtool eutils toolchain-funcs autotools
+inherit libtool eutils toolchain-funcs autotools multilib
 
 DESCRIPTION="Perl-compatible regular expression library"
 HOMEPAGE="http://www.pcre.org/"
@@ -24,7 +24,7 @@ IUSE="bzip2 +cxx doc unicode zlib static-libs"
 RDEPEND="bzip2? ( app-arch/bzip2 )
 	zlib? ( sys-libs/zlib )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	userland_GNU? ( >=sys-apps/findutils-4.4.0 )"
 
 S=${WORKDIR}/${MY_P}

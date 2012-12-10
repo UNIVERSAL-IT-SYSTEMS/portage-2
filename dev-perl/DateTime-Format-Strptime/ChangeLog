@@ -1,6 +1,40 @@
 # ChangeLog for dev-perl/DateTime-Format-Strptime
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/DateTime-Format-Strptime/ChangeLog,v 1.17 2011/07/19 19:50:02 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/DateTime-Format-Strptime/ChangeLog,v 1.25 2012/11/18 11:13:51 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  DateTime-Format-Strptime-1.520.0.ebuild:
+  x86 stable wrt bug #433243
+
+  11 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  DateTime-Format-Strptime-1.520.0.ebuild:
+  Stable for amd64, wrt bug #433243
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  DateTime-Format-Strptime-1.520.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+*DateTime-Format-Strptime-1.520.0 (03 Jul 2012)
+
+  03 Jul 2012; Torsten Veller <tove@gentoo.org>
+  +DateTime-Format-Strptime-1.520.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*DateTime-Format-Strptime-1.510.0 (28 May 2012)
+
+  28 May 2012; Torsten Veller <tove@gentoo.org>
+  +DateTime-Format-Strptime-1.510.0.ebuild:
+  Version bump
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  DateTime-Format-Strptime-1.500.0.ebuild:
+  Marked ~x64-macos
 
   19 Jul 2011; Markus Meier <maekke@gentoo.org>
   DateTime-Format-Strptime-1.500.0.ebuild:
@@ -86,4 +120,3 @@
   09 Dec 2008; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +DateTime-Format-Strptime-1.0800.ebuild:
   Initial commit, dep for new dev-libs/OpenSRF-1.0.1
-

@@ -1,6 +1,38 @@
 # ChangeLog for net-dns/c-ares
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/c-ares/ChangeLog,v 1.66 2011/07/24 11:26:10 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dns/c-ares/ChangeLog,v 1.73 2012/06/19 13:13:32 blueness Exp $
+
+*c-ares-1.9.1 (19 Jun 2012)
+
+  19 Jun 2012; Anthony G. Basile <blueness@gentoo.org> -c-ares-1.9.0.ebuild,
+  +c-ares-1.9.1.ebuild:
+  Version bump fixes bug in 1.9.0, removed.
+  http://c-ares.haxx.se/mail/c-ares-archive-2012-06/0012.shtml
+
+*c-ares-1.9.0 (18 Jun 2012)
+
+  18 Jun 2012; Anthony G. Basile <blueness@gentoo.org> +c-ares-1.9.0.ebuild:
+  Version bump
+
+*c-ares-1.8.0 (28 Apr 2012)
+
+  28 Apr 2012; Anthony G. Basile <blueness@gentoo.org> +c-ares-1.8.0.ebuild:
+  Version bump
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> c-ares-1.7.5.ebuild:
+  keyword ~amd64-fbsd
+
+  23 Mar 2012; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
+  Add myself as maintainer
+
+  09 Nov 2011; Mike Frysinger <vapier@gentoo.org> c-ares-1.7.4.ebuild:
+  Update HOMEPAGE/SRC_URI in stable ebuild too.
+
+*c-ares-1.7.5 (21 Aug 2011)
+
+  21 Aug 2011; Christoph Mende <angelos@gentoo.org> -c-ares-1.5.3.ebuild,
+  +c-ares-1.7.5.ebuild:
+  Version bump, remove old
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> c-ares-1.7.4.ebuild:
   alpha/arm/ia64/s390/sh/sparc stable wrt #369501

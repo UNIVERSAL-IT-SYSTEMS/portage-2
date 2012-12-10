@@ -1,0 +1,13 @@
+DEFINED_PHASES=config configure install postinst preinst setup
+DEPEND=sys-libs/ncurses sys-libs/readline munge? ( sys-auth/munge ) tk? ( dev-lang/tk ) syslog? ( virtual/logger ) !games-util/qstat sys-apps/ed !sys-cluster/slurm
+DESCRIPTION=Resource manager and queuing system based on OpenPBS
+EAPI=2
+HOMEPAGE=http://www.adaptivecomputing.com/products/torque.php
+IUSE=cpusets +crypt doc drmaa kernel_linux munge server +syslog threads tk xml
+KEYWORDS=~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86
+LICENSE=torque-2.5
+RDEPEND=sys-libs/ncurses sys-libs/readline munge? ( sys-auth/munge ) tk? ( dev-lang/tk ) syslog? ( virtual/logger ) !games-util/qstat crypt? ( net-misc/openssh ) !crypt? ( net-misc/netkit-rsh )
+SLOT=0
+SRC_URI=http://www.adaptivecomputing.com/resources/downloads/torque/torque-2.5.9.tar.gz
+_eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	flag-o-matic	1a0b9986e891584bbc9f18928d126299	linux-info	f01ffb28843e2de3ea571f80f07e5078	multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28	versionator	6601b4c5b3f019a993db59a50e1854e4
+_md5_=0ddfe593cbcac549ed10c6b7323a067a

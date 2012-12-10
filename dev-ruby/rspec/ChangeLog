@@ -1,6 +1,103 @@
 # ChangeLog for dev-ruby/rspec
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rspec/ChangeLog,v 1.102 2011/07/23 14:38:00 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rspec/ChangeLog,v 1.129 2012/11/15 07:19:11 graaff Exp $
+
+*rspec-2.12.0 (15 Nov 2012)
+
+  15 Nov 2012; Hans de Graaff <graaff@gentoo.org> +rspec-2.12.0.ebuild:
+  Version bump.
+
+  13 Nov 2012; Hans de Graaff <graaff@gentoo.org> -rspec-1.3.1.ebuild,
+  -rspec-2.6.0.ebuild:
+  Cleanup.
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> rspec-2.6.0-r1.ebuild:
+  Stable for HPPA (bug #426668).
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> rspec-1.3.1.ebuild,
+  rspec-1.3.1-r1.ebuild, rspec-1.3.2.ebuild, rspec-2.6.0.ebuild,
+  rspec-2.6.0-r1.ebuild, rspec-2.10.0.ebuild, rspec-2.11.0.ebuild:
+  alpha stable, add ~alpha
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> rspec-2.6.0-r1.ebuild:
+  ia64/sparc stable wrt #426668
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org> rspec-2.6.0-r1.ebuild:
+  Stable ppc64, bug #426668
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org> rspec-2.6.0-r1.ebuild:
+  Stable ppc, bug #426668
+
+  23 Jul 2012; Andreas Schuerch <nativemad@gentoo.org> rspec-2.10.0.ebuild:
+  x86 keyworded, see bug 417587
+
+  22 Jul 2012; Jeff Horelick <jdhore@gentoo.org> rspec-2.6.0-r1.ebuild:
+  marked x86 per bug 426668
+
+  15 Jul 2012; Agostino Sarubbo <ago@gentoo.org> rspec-2.6.0-r1.ebuild:
+  Stable for amd64, wrt bug #426668
+
+*rspec-2.11.0 (15 Jul 2012)
+
+  15 Jul 2012; Hans de Graaff <graaff@gentoo.org> +rspec-2.11.0.ebuild:
+  Version bump.
+
+*rspec-2.10.0 (10 Jun 2012)
+
+  10 Jun 2012; Hans de Graaff <graaff@gentoo.org> +rspec-2.10.0.ebuild:
+  Version bump. Drop x86 keyword, bug 417587.
+
+  06 May 2012; Kacper Kowalik <xarthisius@gentoo.org> rspec-1.3.1-r1.ebuild,
+  rspec-2.6.0.ebuild:
+  ppc64 stable wrt #369573
+
+  08 Mar 2012; Naohiro Aota <naota@gentoo.org> rspec-1.3.2.ebuild:
+  Add ~x86-fbsd.
+
+  02 Mar 2012; Naohiro Aota <naota@gentoo.org> rspec-2.6.0-r1.ebuild:
+  Add ~x86-fbsd
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> rspec-2.6.0-r1.ebuild:
+  Add Prefix keywords, bug #396547
+
+  28 Dec 2011; Hans de Graaff <graaff@gentoo.org> rspec-1.3.1.ebuild,
+  rspec-1.3.1-r1.ebuild:
+  Drop ruby19 from stable versions.
+
+*rspec-2.6.0-r1 (28 Dec 2011)
+
+  28 Dec 2011; Hans de Graaff <graaff@gentoo.org> rspec-2.6.0.ebuild,
+  +rspec-2.6.0-r1.ebuild:
+  Revision bump to drop ruby19 from stable version.
+
+  26 Dec 2011; Hans de Graaff <graaff@gentoo.org> rspec-1.3.2.ebuild:
+  Fix tests for ruby19. Should also fix bug 340781.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> rspec-1.3.1-r1.ebuild:
+  ia64/sparc stable wrt #369573
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> rspec-2.6.0.ebuild:
+  ia64/sparc stable wrt #369573
+
+  19 Sep 2011; Markus Meier <maekke@gentoo.org> rspec-2.6.0.ebuild:
+  x86 stable, bug #369573
+
+  19 Sep 2011; Markus Meier <maekke@gentoo.org> rspec-1.3.1-r1.ebuild:
+  x86 stable, bug #369573
+
+  19 Sep 2011; Hans de Graaff <graaff@gentoo.org> -rspec-2.5.0.ebuild:
+  Remove old version.
+
+  15 Sep 2011; Jeroen Roovers <jer@gentoo.org> rspec-1.3.1-r1.ebuild,
+  rspec-2.6.0.ebuild:
+  Stable for HPPA (bug #369573).
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> rspec-1.3.1-r1.ebuild,
+  rspec-2.6.0.ebuild:
+  Stable on amd64 wrt bug #369573
 
   23 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> rspec-1.3.1-r1.ebuild,
   rspec-2.6.0.ebuild:
@@ -413,4 +510,3 @@
   +rspec-0.7.5.ebuild:
   new ebuild from Aggelos Orfanakos <agorf@void.gr> and Nikolai Weibull
   <now@bitwi.se>, #140155
-

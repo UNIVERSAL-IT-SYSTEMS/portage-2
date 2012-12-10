@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libwmf/libwmf-0.2.8.4-r4.ebuild,v 1.8 2011/07/25 14:43:54 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libwmf/libwmf-0.2.8.4-r4.ebuild,v 1.13 2012/05/12 06:59:58 pacho Exp $
 
 EAPI=4
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/wvware/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ~hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x64-solaris"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris"
 IUSE="X debug doc expat xml"
 
 RDEPEND="app-text/ghostscript-gpl
@@ -37,7 +37,7 @@ RDEPEND="app-text/ghostscript-gpl
 	)
 "
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	X? (
 		x11-libs/libXt
 		x11-libs/libXpm
@@ -69,7 +69,7 @@ src_configure() {
 	# and included in libwmf. Since nothing in-tree seems to use media-libs/libwmf[gd],
 	# we're explicitly disabling gd use w.r.t. bug 268161
 	if use expat; then
-		myconf+=" --disable-libxml2"
+		myconf+=" --without-libxml2"
 	else
 		myconf+=$(use_with xml libxml2)
 	fi
@@ -89,5 +89,5 @@ src_configure() {
 
 src_install() {
 	MAKEOPTS+=" -j1" default
-	find "${ED}" -name '*.la' -exec rm -f '{}' +
+	find "${D}" -name '*.la' -exec rm -f '{}' + || die
 }

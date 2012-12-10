@@ -1,6 +1,31 @@
 # ChangeLog for sci-biology/last
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/last/ChangeLog,v 1.14 2011/04/25 11:00:59 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/last/ChangeLog,v 1.20 2012/06/20 21:20:03 jlec Exp $
+
+*last-230 (20 Jun 2012)
+
+  20 Jun 2012; Justin Lecher <jlec@gentoo.org> +last-230.ebuild:
+  Version BUmp, allows to compile with gcc-4.7, #422573
+
+*last-192 (10 Feb 2012)
+
+  10 Feb 2012; Justin Lecher <jlec@gentoo.org> +last-192.ebuild:
+  Version Bump, #402941
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> last-162-r1.ebuild:
+  Stable for AMD64, wrt bug #391545
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> last-162-r1.ebuild:
+  x86 stable wrt bug #391545
+
+  23 Nov 2011; Justin Lecher <jlec@gentoo.org> -last-162.ebuild,
+  last-184.ebuild:
+  Dropped old, respect LDFLAGS
+
+*last-184 (25 Sep 2011)
+
+  25 Sep 2011; Andrey Kislyuk <weaver@gentoo.org> +last-184.ebuild:
+  Version bump
 
   25 Apr 2011; Justin Lecher <jlec@gentoo.org> +files/162-gcc46.patch,
   last-162.ebuild, last-162-r1.ebuild:

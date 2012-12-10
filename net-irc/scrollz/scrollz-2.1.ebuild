@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/scrollz/scrollz-2.1.ebuild,v 1.6 2011/06/30 17:12:32 binki Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/scrollz/scrollz-2.1.ebuild,v 1.8 2012/05/03 06:27:13 jdhore Exp $
 
 EAPI=4
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://debian/pool/main/s/${PN}/${PN}_${PV}.orig.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 ia64 ~ppc x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE="gmp gnutls ipv6 socks5 ssl"
 
 REQUIRED_USE="gnutls? ( ssl )"
@@ -22,7 +22,7 @@ RDEPEND="sys-libs/ncurses
 		!gnutls? ( dev-libs/openssl )
 		)"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${P}.orig
 

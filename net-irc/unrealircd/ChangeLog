@@ -1,6 +1,48 @@
 # ChangeLog for net-irc/unrealircd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/unrealircd/ChangeLog,v 1.87 2011/07/27 12:41:19 binki Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/unrealircd/ChangeLog,v 1.96 2012/05/03 06:27:13 jdhore Exp $
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> unrealircd-3.2.9.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Feb 2012; Nathan Phillip Brink <binki@gentoo.org>
+  -unrealircd-3.2.8.1-r1.ebuild, -unrealircd-3.2.8.1-r2.ebuild,
+  -unrealircd-3.2.9_rc2.ebuild, -files/unrealircd.confd, -files/unrealircd.rc,
+  -files/unrealircd-system-cares.patch, -files/unrealircd-system-tre.patch,
+  metadata.xml:
+  Drop old versions as bug #395579 (stabilization of 3.2.9) is resolved.
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> unrealircd-3.2.8.1-r1.ebuild,
+  unrealircd-3.2.8.1-r2.ebuild, unrealircd-3.2.9_rc2.ebuild,
+  unrealircd-3.2.9.ebuild:
+  Drop sparc keywords
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> unrealircd-3.2.9.ebuild:
+  Marking unrealircd-3.2.9 ppc for bug 395579
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> unrealircd-3.2.9.ebuild:
+  x86 stable wrt bug #395579
+
+  21 Dec 2011; Agostino Sarubbo <ago@gentoo.org> unrealircd-3.2.9.ebuild:
+  Stable for AMD64, wrt bug #395579
+
+  21 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> files/unrealircd.initd,
+  files/unrealircd.rc:
+  Fix bug #393661 reported by kensington by replacing ${opts} in initscript
+  with ${extra_started_options}, sans revbumps.
+
+  09 Nov 2011; Nathan Phillip Brink <binki@gentoo.org>
+  unrealircd-3.2.9_rc2.ebuild, unrealircd-3.2.9.ebuild,
+  +files/unrealircd-3.2.9-disabled-stacked-extbans.patch:
+  Fix bug 389949 (by scribeofthenile) where compilation failed in
+  unrealircd-3.2.9 and unrealircd-3.2.9_rc2 when USE=-extban-stacking.
+
+*unrealircd-3.2.9 (06 Nov 2011)
+
+  06 Nov 2011; Nathan Phillip Brink <binki@gentoo.org>
+  +unrealircd-3.2.9.ebuild:
+  Bump to unrealircd-3.2.9, with fixes to some automatic unrealircd.conf setup
+  and misc.
 
 *unrealircd-3.2.9_rc2 (27 Jul 2011)
 

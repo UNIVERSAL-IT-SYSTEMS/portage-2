@@ -1,6 +1,34 @@
 # ChangeLog for dev-perl/digest-bubblebabble
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/digest-bubblebabble/ChangeLog,v 1.16 2011/03/24 07:00:35 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/digest-bubblebabble/ChangeLog,v 1.23 2012/06/24 12:59:30 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org>
+  -digest-bubblebabble-0.01.ebuild:
+  Cleanup
+
+  12 Feb 2012; Tony Vroon <chainsaw@gentoo.org>
+  digest-bubblebabble-0.20.0.ebuild:
+  Marked stable on PPC64 as requested by Paweł Hajdan, Jr. in bug #392785.
+  Compile tested on a PowerMac7,3 (64UL) with GCC 4.5.3.
+
+  17 Dec 2011; Raúl Porcel <armin76@gentoo.org>
+  digest-bubblebabble-0.20.0.ebuild:
+  alpha/ia64/sparc stable wrt #392785
+
+  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org>
+  digest-bubblebabble-0.20.0.ebuild:
+  Stable for AMD64, wrt bug #392785
+
+  13 Dec 2011; Jeroen Roovers <jer@gentoo.org>
+  digest-bubblebabble-0.20.0.ebuild:
+  Stable for HPPA (bug #392785).
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  digest-bubblebabble-0.20.0.ebuild:
+  x86 stable wrt bug #392785
 
 *digest-bubblebabble-0.20.0 (24 Mar 2011)
 
@@ -59,4 +87,3 @@
   23 Jun 2003; Michael Cummings <mcummings@gentoo.org>
   digest-bubblebabble-0.01.ebuild:
   dep for net-ssh
-

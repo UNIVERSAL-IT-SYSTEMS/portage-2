@@ -1,6 +1,46 @@
 # ChangeLog for media-sound/ncmpc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ncmpc/ChangeLog,v 1.63 2011/07/27 08:09:56 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ncmpc/ChangeLog,v 1.75 2012/07/29 17:42:26 angelos Exp $
+
+  29 Jul 2012; Christoph Mende <angelos@gentoo.org> -ncmpc-0.18.ebuild,
+  -ncmpc-0.19.ebuild:
+  Remove old
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> ncmpc-0.20.ebuild:
+  sparc stable wrt #417733
+
+  02 Jul 2012; Christoph Mende <angelos@gentoo.org> ncmpc-0.20.ebuild:
+  Depend on ncurses[unicode] with USE=nls (bug #424239)
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> ncmpc-0.20.ebuild:
+  Marking ncmpc-0.20 ppc for bug 417733
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> ncmpc-0.20.ebuild:
+  Marking ncmpc-0.20 ppc64 for bug 417733
+
+  28 May 2012; Johannes Huber <johu@gentoo.org> ncmpc-0.20.ebuild:
+  Stable for x86, wrt bug #417733
+
+  28 May 2012; Jeroen Roovers <jer@gentoo.org> ncmpc-0.20.ebuild:
+  Stable for HPPA (bug #417733).
+
+  27 May 2012; Agostino Sarubbo <ago@gentoo.org> ncmpc-0.20.ebuild:
+  Stable for amd64, wrt bug #417733
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> ncmpc-0.18.ebuild,
+  ncmpc-0.19.ebuild, ncmpc-0.20.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*ncmpc-0.20 (19 Feb 2012)
+
+  19 Feb 2012; Alexis Ballier <aballier@gentoo.org> +ncmpc-0.20.ebuild:
+  version bump
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ncmpc-0.19.ebuild:
+  x86 stable wrt bug #400403
+
+  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org> ncmpc-0.19.ebuild:
+  Stable for amd64, wrt bug #400403
 
 *ncmpc-0.19 (27 Jul 2011)
 

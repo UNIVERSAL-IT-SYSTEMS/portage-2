@@ -1,6 +1,21 @@
 # ChangeLog for sci-calculators/calcoo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-calculators/calcoo/ChangeLog,v 1.17 2011/03/02 13:26:37 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-calculators/calcoo/ChangeLog,v 1.21 2012/08/04 21:08:01 bicatali Exp $
+
+  04 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -calcoo-1.3.16.ebuild,
+  calcoo-1.3.18.ebuild, metadata.xml:
+  keyword amd64-linux, x86-linux, removed old
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> calcoo-1.3.18.ebuild:
+  inherit eutils for make_desktop_entry
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> calcoo-1.3.16.ebuild,
+  calcoo-1.3.18.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> calcoo-1.3.18.ebuild,
+  +files/calcoo-1.3.18-gold.patch, metadata.xml:
+  Move to EAPI=4, added fix gold linker
 
   02 Mar 2011; Justin Lecher <jlec@gentoo.org> calcoo-1.3.16.ebuild,
   calcoo-1.3.18.ebuild:

@@ -1,42 +1,30 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/prng/prng-3.0.2.ebuild,v 1.1 2010/12/17 22:36:07 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/prng/prng-3.0.2.ebuild,v 1.7 2012/07/06 23:46:37 bicatali Exp $
 
-EAPI=2
-inherit eutils autotools
+EAPI=4
+
+AUTOTOOLS_AUTORECONF=yes
+
+inherit autotools-utils
 
 DESCRIPTION="Pseudo-Random Number Generator library"
 HOMEPAGE="http://statmath.wu.ac.at/prng/"
 SRC_URI="${HOMEPAGE}${P}.tar.gz"
+
 LICENSE="GPL-2"
-
 SLOT=0
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="doc examples static-libs"
-DEPEND=""
-RDEPEND="${DEPEND}"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-shared.patch
-	eautoreconf
-}
-
-src_configure() {
-	econf \
-		--enable-shared \
-		$(use_enable static-libs static)
-}
+PATCHES=( "${FILESDIR}"/${P}-shared.patch )
 
 src_install() {
-	emake DESTDIR="${D}" install ||  die "emake install failed"
-	dodoc AUTHORS README NEWS ChangeLog KNOWN-PROBLEMS
-	insinto /usr/share/doc/${PF}
-	if use doc; then
-		doins doc/${PN}.pdf || die
-	fi
+	autotools-utils_src_install
+	use doc && dodoc doc/${PN}.pdf
 	if use examples; then
-		emake distclean -C examples
-		rm -f examples/Makefile*
+		rm examples/Makefile*
+		insinto /usr/share/doc/${PF}
 		doins -r examples
 	fi
 }

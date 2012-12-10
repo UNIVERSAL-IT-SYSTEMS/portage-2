@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/atokx2/atokx2-17.0-r2.ebuild,v 1.8 2011/07/08 11:01:49 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/atokx2/atokx2-17.0-r2.ebuild,v 1.10 2012/07/12 09:19:06 naota Exp $
 
 EAPI="1"
 
-inherit eutils
+inherit cdrom eutils
 
 DESCRIPTION="ATOK for Linux - The most famous Japanese Input Method Engine"
 HOMEPAGE="http://www.justsystem.co.jp/linux/atok.html"
@@ -12,12 +12,11 @@ IIIMF_V="trunk_r2059-js1"
 UPDATE_P="atokforlinux_update_17_0_2_1"
 SRC_URI="http://www3.justsystem.co.jp/download/atok/up/lin/${UPDATE_P}.tar.gz"
 
-LICENSE="ATOK MIT"
+LICENSE="ATOK MIT GPL-2"
 
 SLOT="0"
 KEYWORDS="-* ~x86"
 IUSE=""
-PROPERTIES="interactive"
 RESTRICT="strip mirror"
 
 DEPEND=">=x11-libs/gtk+-2.2:2

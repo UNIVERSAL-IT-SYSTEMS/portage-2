@@ -1,6 +1,84 @@
 # ChangeLog for dev-libs/rasqal
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/rasqal/ChangeLog,v 1.55 2011/07/29 10:26:56 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/rasqal/ChangeLog,v 1.78 2012/05/19 20:36:35 ssuominen Exp $
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org> rasqal-0.9.29.ebuild:
+  Fix bash syntax == to POSIX = wrt #416659 by Richard Yao
+
+*rasqal-0.9.29 (19 May 2012)
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org> +rasqal-0.9.29.ebuild:
+  Version bump.
+
+  18 May 2012; Alexis Ballier <aballier@gentoo.org> rasqal-0.9.28.ebuild:
+  keyword ~amd64-fbsd
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> rasqal-0.9.28.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -rasqal-0.9.27.ebuild:
+  old
+
+  05 Mar 2012; Markus Meier <maekke@gentoo.org> rasqal-0.9.28.ebuild:
+  arm stable, bug #404961
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> rasqal-0.9.28.ebuild:
+  ppc/ppc64/x86 stable wrt #404961
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> rasqal-0.9.28.ebuild:
+  Stable for amd64, wrt bug #404961
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> rasqal-0.9.28.ebuild:
+  Stable for HPPA (bug #404961).
+
+  20 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> rasqal-0.9.27.ebuild,
+  rasqal-0.9.28.ebuild:
+  Raise version requirement of raptor wrt #395229
+
+*rasqal-0.9.28 (18 Nov 2011)
+
+  18 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +rasqal-0.9.28.ebuild:
+  Version bump.
+
+  18 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -rasqal-0.9.17.ebuild,
+  -rasqal-0.9.19.ebuild, -rasqal-0.9.26.ebuild:
+  old
+
+  18 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> rasqal-0.9.27.ebuild:
+  ppc/ppc64 stable wrt #382641
+
+  17 Oct 2011; Markus Meier <maekke@gentoo.org> rasqal-0.9.27.ebuild:
+  arm stable, bug #382641
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> rasqal-0.9.27.ebuild:
+  Stable for HPPA (bug #382641).
+
+  05 Oct 2011; Andreas Schuerch <nativemad@gentoo.org> rasqal-0.9.27.ebuild:
+  x86 stable, thanks David. Bug 382641
+
+  20 Sep 2011; Tony Vroon <chainsaw@gentoo.org> rasqal-0.9.27.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #382641.
+
+*rasqal-0.9.27 (26 Aug 2011)
+
+  26 Aug 2011; Tim Harder <radhermit@gentoo.org> +rasqal-0.9.27.ebuild:
+  Version bump. Add doc USE flag.
+
+  13 Aug 2011; Markus Meier <maekke@gentoo.org> rasqal-0.9.19.ebuild:
+  arm stable, bug #376893
+
+  09 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> rasqal-0.9.19.ebuild:
+  ppc/ppc64 stable wrt #376893
+
+  07 Aug 2011; Markus Meier <maekke@gentoo.org> rasqal-0.9.19.ebuild:
+  x86 stable, bug #376893
+
+  05 Aug 2011; Jeroen Roovers <jer@gentoo.org> rasqal-0.9.19.ebuild:
+  Stable for HPPA (bug #376893).
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> rasqal-0.9.19.ebuild:
+  Stable on amd64 wrt bug #376893
 
   29 Jul 2011; Samuli Suominen <ssuominen@gentoo.org> -rasqal-0.9.24.ebuild:
   [This is a placeholder. Please ignore.]

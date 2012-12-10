@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/portability.eclass,v 1.17 2010/09/24 14:29:49 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/portability.eclass,v 1.24 2012/01/04 05:57:19 vapier Exp $
 #
 # Author: Diego Pettenò <flameeyes@gentoo.org>
 #
@@ -8,15 +8,18 @@
 #
 # NB:  If you add anything, please comment it!
 
+if [[ ${___ECLASS_ONCE_PORTABILITY} != "recur -_+^+_- spank" ]] ; then
+___ECLASS_ONCE_PORTABILITY="recur -_+^+_- spank"
+
 # treecopy orig1 orig2 orig3 .... dest
 #
 # mimic cp --parents copy, but working on BSD userland as well
 treecopy() {
-	dest=${!#}
-	files_count=$#
+	local dest=${!#}
+	local files_count=$#
 
-	while(( $# > 1 )); do
-		dirstruct=$(dirname "$1")
+	while (( $# > 1 )); do
+		local dirstruct=$(dirname "$1")
 		mkdir -p "${dest}/${dirstruct}"
 		cp -pPR "$1" "${dest}/${dirstruct}"
 
@@ -35,6 +38,7 @@ seq() {
 		return $?
 	fi
 
+	local min max step
 	case $# in
 		1) min=1  max=$1 step=1  ;;
 		2) min=$1 max=$2 step=1  ;;
@@ -78,59 +82,6 @@ dlopen_lib() {
 		*-linux-gnu*|*-linux-uclibc|*-interix*)
 			echo "-ldl"
 		;;
-	esac
-}
-
-# Gets the home directory for the specified user
-# it's a wrap around egetent as the position of the home directory in the line
-# varies depending on the os used.
-#
-# To use that, inherit eutils, not portability!
-egethome() {
-	ent=$(egetent passwd $1)
-
-	case ${CHOST} in
-	*-darwin*|*-freebsd*|*-dragonfly*)
-		# Darwin, OSX, FreeBSD and DragonFly use position 9 to store homedir
-		echo ${ent} | cut -d: -f9
-		;;
-	*)
-		# Linux, NetBSD and OpenBSD use position 6 instead
-		echo ${ent} | cut -d: -f6
-		;;
-	esac
-}
-
-# Gets the shell for the specified user
-# it's a wrap around egetent as the position of the home directory in the line
-# varies depending on the os used.
-#
-# To use that, inherit eutils, not portability!
-egetshell() {
-	ent=$(egetent passwd "$1")
-
-	case ${CHOST} in
-	*-darwin*|*-freebsd*|*-dragonfly*)
-		# Darwin, OSX, FreeBSD and DragonFly use position 9 to store homedir
-		echo ${ent} | cut -d: -f10
-		;;
-	*)
-		# Linux, NetBSD and OpenBSD use position 6 instead
-		echo ${ent} cut -d: -f7
-		;;
-	esac
-}
-
-# Returns true if specified user has a shell that precludes logins
-# on whichever operating system.
-is-login-disabled() {
-	shell=$(egetshell "$1")
-
-	case ${shell} in
-		/bin/false|/usr/bin/false|/sbin/nologin|/usr/sbin/nologin)
-			return 0 ;;
-		*)
-			return 1 ;;
 	esac
 }
 
@@ -181,3 +132,7 @@ get_mounts() {
 	done
 }
 
+_dead_portability_user_funcs() { die "if you really need this, please file a bug for base-system@gentoo.org"; }
+is-login-disabled() { _dead_portability_user_funcs; }
+
+fi

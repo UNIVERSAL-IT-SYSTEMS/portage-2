@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/odfdom/odfdom-0.8.6.ebuild,v 1.1 2011/01/17 02:12:47 fordfrog Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/odfdom/odfdom-0.8.6.ebuild,v 1.2 2012/08/26 14:04:54 thev00d00 Exp $
 
 EAPI="3"
 

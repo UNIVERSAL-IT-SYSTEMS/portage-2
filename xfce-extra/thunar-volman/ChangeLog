@@ -1,6 +1,74 @@
 # ChangeLog for xfce-extra/thunar-volman
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/thunar-volman/ChangeLog,v 1.65 2011/06/07 09:10:44 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/thunar-volman/ChangeLog,v 1.81 2012/12/02 22:14:31 ssuominen Exp $
+
+  02 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
+  thunar-volman-0.8.0.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  thunar-volman-0.8.0.ebuild:
+  EAPI5
+
+  09 Sep 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -thunar-volman-0.6.0.ebuild:
+  old
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> thunar-volman-0.8.0.ebuild:
+  alpha/ia64/sparc stable wrt #416233
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> thunar-volman-0.8.0.ebuild:
+  arm stable, bug #416233
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> thunar-volman-0.8.0.ebuild:
+  marked x86 per bug 416233
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -thunar-volman-0.6.1.ebuild, -thunar-volman-0.7.1.ebuild:
+  old
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  thunar-volman-0.8.0.ebuild:
+  ppc/ppc64 stable wrt #416233
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> thunar-volman-0.8.0.ebuild:
+  Stable for amd64, wrt bug #416233
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> thunar-volman-0.6.0.ebuild,
+  thunar-volman-0.6.1.ebuild, thunar-volman-0.7.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  04 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  thunar-volman-0.8.0.ebuild:
+  Use virtual/pkgconfig.
+
+*thunar-volman-0.8.0 (29 Apr 2012)
+
+  29 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +thunar-volman-0.8.0.ebuild:
+  Version bump.
+
+  20 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -thunar-volman-0.7.0.ebuild:
+  old
+
+*thunar-volman-0.7.1 (14 Apr 2012)
+
+  14 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +thunar-volman-0.7.1.ebuild:
+  Version bump to development release.
+
+*thunar-volman-0.7.0 (31 Mar 2012)
+
+  31 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +thunar-volman-0.7.0.ebuild:
+  Version bump to development release.
+
+*thunar-volman-0.6.1 (30 Mar 2012)
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +thunar-volman-0.6.1.ebuild:
+  Version bump.
 
   07 Jun 2011; Christoph Mende <angelos@gentoo.org> thunar-volman-0.6.0.ebuild:
   Fix udev dependency (bug #370397)

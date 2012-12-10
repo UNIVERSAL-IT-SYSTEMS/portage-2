@@ -1,6 +1,20 @@
 # ChangeLog for app-emacs/graphviz-dot-mode
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/graphviz-dot-mode/ChangeLog,v 1.9 2011/04/22 16:18:47 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/graphviz-dot-mode/ChangeLog,v 1.13 2011/12/26 14:12:07 ulm Exp $
+
+  26 Dec 2011; Ulrich Mueller <ulm@gentoo.org> graphviz-dot-mode-0.3.7.ebuild:
+  Add app-arch/xz-utils to DEPEND.
+
+  05 Sep 2011; Naohiro Aota <naota@gentoo.org> graphviz-dot-mode-0.3.7.ebuild:
+  Add ~x86-fbsd
+
+  22 Aug 2011; Tony Vroon <chainsaw@gentoo.org> graphviz-dot-mode-0.3.7.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #379905.
+
+  21 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  graphviz-dot-mode-0.3.7.ebuild:
+  x86 stable wrt bug #379905
 
 *graphviz-dot-mode-0.3.7 (22 Apr 2011)
 

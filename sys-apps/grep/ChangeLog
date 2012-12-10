@@ -1,6 +1,82 @@
 # ChangeLog for sys-apps/grep
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/grep/ChangeLog,v 1.100 2011/07/07 03:04:19 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/grep/ChangeLog,v 1.122 2012/11/21 18:13:43 jer Exp $
+
+  21 Nov 2012; Jeroen Roovers <jer@gentoo.org> grep-2.14.ebuild:
+  Stable for SPARC (bug #436692).
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> grep-2.14.ebuild:
+  Stable for x86, wrt bug #436692
+
+  07 Nov 2012; Anthony G. Basile <blueness@gentoo.org> grep-2.14.ebuild:
+  stable arm ppc ppc64, bug #436692
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> grep-2.14.ebuild:
+  Stable for HPPA (bug #436692).
+
+  04 Nov 2012; <ago@gentoo.org> grep-2.14.ebuild:
+  Stable for amd64, wrt bug #436692
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> grep-2.12.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #429694
+
+*grep-2.14 (20 Aug 2012)
+
+  20 Aug 2012; Mike Frysinger <vapier@gentoo.org> +grep-2.14.ebuild:
+  Version bump.
+
+  05 Aug 2012; Johannes Huber <johu@gentoo.org> grep-2.12.ebuild:
+  Stable for x86, wrt bug #429694
+
+  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org> grep-2.12.ebuild:
+  Stable arm, bug #429694
+
+  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org> grep-2.12.ebuild:
+  Stable ppc ppc64, bug #429694
+
+  04 Aug 2012; Jeroen Roovers <jer@gentoo.org> grep-2.12.ebuild:
+  Stable for HPPA (bug #429694).
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> grep-2.12.ebuild:
+  Stable for amd64, wrt bug #429694
+
+*grep-2.13 (05 Jul 2012)
+
+  05 Jul 2012; Mike Frysinger <vapier@gentoo.org> +grep-2.13.ebuild:
+  Version bump.
+
+*grep-2.12 (24 Apr 2012)
+
+  24 Apr 2012; Mike Frysinger <vapier@gentoo.org> +grep-2.12.ebuild:
+  Version bump.
+
+*grep-2.11 (02 Mar 2012)
+
+  02 Mar 2012; Mike Frysinger <vapier@gentoo.org> +grep-2.11.ebuild:
+  Version bump.
+
+  02 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> grep-2.9.ebuild:
+  ppc64 stable wrt #398453
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> grep-2.9.ebuild:
+  Marking grep-2.9 ppc for bug 398453
+
+  22 Jan 2012; Raúl Porcel <armin76@gentoo.org> grep-2.9.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc/x86 stable wrt #398453
+
+  17 Jan 2012; Jeroen Roovers <jer@gentoo.org> grep-2.9.ebuild:
+  Stable for HPPA (bug #398453).
+
+  13 Jan 2012; Agostino Sarubbo <ago@gentoo.org> grep-2.9.ebuild:
+  Stable for AMD64, wrt bug #398453
+
+*grep-2.10 (16 Nov 2011)
+
+  16 Nov 2011; Mike Frysinger <vapier@gentoo.org> +grep-2.10.ebuild:
+  Version bump.
+
+  13 Aug 2011; Fabian Groffen <grobian@gentoo.org> grep-2.9.ebuild:
+  Add Prefix support, transferred Prefix keywords
 
   07 Jul 2011; Alexis Ballier <aballier@gentoo.org> grep-2.9.ebuild:
   depend on virtual/libiconv, bug #363101

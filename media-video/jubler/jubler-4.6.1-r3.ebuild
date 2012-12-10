@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/jubler/jubler-4.6.1-r3.ebuild,v 1.4 2011/05/15 15:36:12 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/jubler/jubler-4.6.1-r3.ebuild,v 1.9 2012/06/17 05:50:05 yngwin Exp $
 
 EAPI="2"
 WANT_ANT_TASKS="ant-nodeps ant-contrib"
@@ -18,17 +18,17 @@ IUSE="mplayer nls spell"
 
 RDEPEND=">=virtual/jre-1.5
 	virtual/ffmpeg
-	mplayer? ( media-video/mplayer[ass] )
+	mplayer? ( media-video/mplayer[libass] )
 	spell? (
 		app-text/aspell
 		>=dev-java/zemberek-2.0[linguas_tr]
 	)"
 
 DEPEND=">=virtual/jdk-1.5
-	>=media-video/ffmpeg-0.4.9_p20080326
+	virtual/ffmpeg
 	app-text/xmlto
 	>=dev-java/jupidator-0.6.0
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 S=${WORKDIR}/${MY_PN}-${PV}
@@ -51,6 +51,8 @@ java_prepare() {
 	if ! use spell; then
 		rm -R plugins/{zemberek,aspell} || die "spellcheck plugin removal failed"
 	fi
+	sed -i -e "s/CODEC_TYPE/AVMEDIA_TYPE/g" $(find resources/ffmpeg/ffdecode -name "*.c")
+	sed -i -e "s:PKT_FLAG_KEY:AV_PKT_FLAG_KEY:g" $(find resources/ffmpeg/ffdecode -name "*.c")
 }
 
 src_compile() {

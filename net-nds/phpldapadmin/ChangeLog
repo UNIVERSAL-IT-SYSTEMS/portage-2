@@ -1,6 +1,42 @@
 # ChangeLog for net-nds/phpldapadmin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/phpldapadmin/ChangeLog,v 1.52 2011/02/17 08:20:01 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-nds/phpldapadmin/ChangeLog,v 1.57 2012/11/12 12:04:32 jmbsvicetto Exp $
+
+*phpldapadmin-1.2.3 (12 Nov 2012)
+
+  12 Nov 2012; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +phpldapadmin-1.2.3.ebuild:
+  [net-nds/phpldapadmin] Version 1.2.3 bump.
+
+*phpldapadmin-1.2.2-r1 (02 Feb 2012)
+
+  02 Feb 2012; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +phpldapadmin-1.2.2-r1.ebuild, +files/phpldapadmin-1.2.2-base.patch:
+  [net-nds/phpldapadmin-1.2.2-r1] Apply security patch to fix XSS issue - fixes
+  bug 401901.
+
+*phpldapadmin-1.2.2 (05 Jan 2012)
+
+  05 Jan 2012; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +phpldapadmin-1.2.2.ebuild:
+  [net-nds/phpldapadmin] 1.2.2 version bump - fixes bug #395513.
+
+*phpldapadmin-1.2.1.1-r1 (25 Oct 2011)
+
+  25 Oct 2011; <atlantis@gentoo.org> +phpldapadmin-1.2.1.1-r1.ebuild,
+  +files/phpldapadmin-1.2.1.1-fix-cmd-exploit.patch,
+  +files/phpldapadmin-1.2.1.1-fix-functions-exploit.patch:
+  [net-nds/phpldapadmin] Package bump to apply security fixes for bug 388349.
+
+*phpldapadmin-1.2.1.1 (20 Oct 2011)
+
+  20 Oct 2011; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +phpldapadmin-1.2.1.1.ebuild,
+  +files/phpldapadmin-1.2.1.1-fix-magic-quotes.patch, metadata.xml:
+  [net-nds/phpldapadmin] Bumped to release 1.2.1.1 - bug 367625.
+  Added myself as maintainer. Both with ok from Tim Harder <radhermit>.
+  Tried to address the config file permissions issue (bug 280836) but
+  it doesn't seem webapp-config supports that.
 
 *phpldapadmin-1.2.0.5 (17 Feb 2011)
 
@@ -261,4 +297,3 @@
 
   13 Nov 2003; Don Seiler <rizzo@gentoo.org>; phpldapadmin-0.9.1.ebuild:
   Initial add.  Thanks to Evan McNabb for ideas
-

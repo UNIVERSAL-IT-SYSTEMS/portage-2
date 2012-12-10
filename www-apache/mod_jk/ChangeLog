@@ -1,6 +1,29 @@
 # ChangeLog for www-apache/mod_jk
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_jk/ChangeLog,v 1.68 2010/10/24 14:43:15 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_jk/ChangeLog,v 1.74 2012/11/27 19:20:00 pacho Exp $
+
+  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop apache herd as discussed in http://www.gossamer-
+  threads.com/lists/gentoo/dev/262834
+
+*mod_jk-1.2.37 (12 Oct 2012)
+
+  12 Oct 2012; Patrick Lauer <patrick@gentoo.org> +mod_jk-1.2.37.ebuild:
+  Bump
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> mod_jk-1.2.32.ebuild:
+  x86 stable wrt bug #400519
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> mod_jk-1.2.32.ebuild:
+  Marking mod_jk-1.2.32 ppc for bug 400519
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> mod_jk-1.2.32.ebuild:
+  Stable for amd64, wrt bug #400519
+
+*mod_jk-1.2.32 (14 Oct 2011)
+
+  14 Oct 2011; Steve Dibb <beandog@gentoo.org> +mod_jk-1.2.32.ebuild:
+  Version bump, bug 355151
 
   24 Oct 2010; Brent Baude <ranger@gentoo.org> mod_jk-1.2.30.ebuild:
   Marking mod_jk-1.2.30 ppc for bug 315561
@@ -309,4 +332,3 @@
   +files/88_mod_jk.conf, +files/jk-workers.properties, +mod_jk-1.2.10.ebuild:
   Inital import. Ebuild is based on the apache-module.eclass, fixes #19094.
   Special thanks to trapni and beu for offering that much help.
-

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/x264/x264-9999.ebuild,v 1.1 2011/05/28 06:30:08 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/x264/x264-9999.ebuild,v 1.4 2012/05/15 13:12:19 aballier Exp $
 
 EAPI=4
 
@@ -13,7 +13,7 @@ fi
 inherit multilib toolchain-funcs ${V_ECLASS}
 
 if [ "${PV#9999}" = "${PV}" ] ; then
-	MY_P="x264-snapshot-$(get_version_component_range 3)-2245"
+	MY_P="x264-snapshot-$(get_version_component_range 3)-2245-stable"
 fi
 DESCRIPTION="A free library for encoding X264/AVC streams"
 HOMEPAGE="http://www.videolan.org/developers/x264.html"
@@ -21,7 +21,7 @@ if [ "${PV#9999}" != "${PV}" ] ; then
 	EGIT_REPO_URI="git://git.videolan.org/x264.git"
 	SRC_URI=""
 else
-	SRC_URI="http://ftp.videolan.org/pub/videolan/x264/snapshots/${MY_P}.tar.bz2"
+	SRC_URI="http://download.videolan.org/pub/videolan/x264/snapshots/${MY_P}.tar.bz2"
 fi
 
 LICENSE="GPL-2"
@@ -29,12 +29,12 @@ SLOT="0"
 if [ "${PV#9999}" != "${PV}" ] ; then
 	KEYWORDS=""
 else
-	KEYWORDS="~alpha ~amd64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+	KEYWORDS="~alpha ~amd64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
 fi
 IUSE="debug +threads pic static-libs"
 
 RDEPEND=""
-ASM_DEP=">=dev-lang/yasm-0.6.2"
+ASM_DEP=">=dev-lang/yasm-1"
 DEPEND="
 	amd64? ( ${ASM_DEP} )
 	x86? ( ${ASM_DEP} )
@@ -72,6 +72,5 @@ src_configure() {
 		--extra-cflags="${CFLAGS}" \
 		--extra-ldflags="${LDFLAGS}" \
 		--host="${CHOST}" \
-		${myconf} \
-		|| die
+		${myconf} || die
 }

@@ -1,6 +1,401 @@
 # ChangeLog for sys-kernel/genkernel
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/ChangeLog,v 1.259 2011/07/28 06:02:23 sping Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/ChangeLog,v 1.342 2012/11/21 20:03:09 robbat2 Exp $
+
+  21 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> genkernel-9999.ebuild:
+  Ensure that 9999 still builds with the changelog moving to Git.
+
+*genkernel-3.4.45 (06 Nov 2012)
+
+  06 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> +genkernel-3.4.45.ebuild:
+  Bump, this should be a stable candidate.
+
+*genkernel-3.4.44.2 (15 Oct 2012)
+
+  15 Oct 2012; Robin H. Johnson <robbat2@gentoo.org> +genkernel-3.4.44.2.ebuild:
+  Version bump.
+
+*genkernel-3.4.44.1 (15 Oct 2012)
+
+  15 Oct 2012; Robin H. Johnson <robbat2@gentoo.org> +genkernel-3.4.44.1.ebuild,
+  -genkernel-3.4.44.ebuild:
+  Version bump, 3.4.44 had a nasty corner case of not building kernels due to a
+  bug I introduced.
+
+*genkernel-3.4.44 (14 Oct 2012)
+
+  14 Oct 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.44.ebuild:
+  Bump to 3.4.44
+
+*genkernel-3.4.43 (03 Oct 2012)
+
+  03 Oct 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.43.ebuild:
+  Bump to 3.4.43
+
+*genkernel-3.4.42 (10 Sep 2012)
+
+  10 Sep 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.42.ebuild,
+  genkernel-9999.ebuild:
+  Bump to genkernel 3.4.42 with busybox 1.20.2 (bug #433740)
+
+  03 Sep 2012; Sebastian Pipping <sping@gentoo.org> genkernel-3.4.33.1.ebuild,
+  genkernel-3.4.34.ebuild, genkernel-3.4.35.ebuild, genkernel-3.4.36.ebuild,
+  genkernel-3.4.37.ebuild, genkernel-3.4.38.ebuild, genkernel-3.4.40.ebuild:
+  Previous change made genkernel.conf got to / (root) rather than /etc (bug
+  #433111)
+
+  14 Aug 2012; Richard Yao <ryao@gentoo.org> genkernel-3.4.26.ebuild,
+  genkernel-3.4.27.ebuild, genkernel-3.4.28.ebuild, genkernel-3.4.29.ebuild,
+  genkernel-3.4.32.ebuild, genkernel-3.4.33.1.ebuild, genkernel-3.4.34.ebuild,
+  genkernel-3.4.35.ebuild, genkernel-3.4.36.ebuild, genkernel-3.4.37.ebuild,
+  genkernel-3.4.38.ebuild, genkernel-3.4.40.ebuild, genkernel-3.4.41.ebuild,
+  genkernel-9999.ebuild:
+  Move sed invocations to src_prepare
+
+*genkernel-3.4.41 (14 Aug 2012)
+
+  14 Aug 2012; Richard Yao <ryao@gentoo.org> +genkernel-3.4.41.ebuild,
+  genkernel-9999.ebuild:
+  Bump to 3.4.41
+
+  08 Aug 2012; Raúl Porcel <armin76@gentoo.org> genkernel-3.4.24_p2.ebuild:
+  alpha/s390 stable wrt #425360
+
+  07 Aug 2012; <jmorgan@gentoo.org> genkernel-3.4.24_p2.ebuild:
+  ia64 stable wrt BZ-425360
+
+  06 Aug 2012; <jmorgan@gentoo.org> genkernel-3.4.24_p2.ebuild:
+  sparc stable wrt BZ-425360
+
+  27 Jul 2012; Sebastian Pipping <sping@gentoo.org> -genkernel-3.4.39.ebuild:
+  Remove 3.4.39 (bug #427828)
+
+*genkernel-3.4.40 (27 Jul 2012)
+
+  27 Jul 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.40.ebuild:
+  Bump to 3.4.40
+
+  26 Jul 2012; Sebastian Pipping <sping@gentoo.org> genkernel-3.4.32.ebuild,
+  genkernel-3.4.33.1.ebuild, genkernel-3.4.34.ebuild, genkernel-3.4.35.ebuild,
+  genkernel-3.4.36.ebuild, genkernel-3.4.37.ebuild, genkernel-3.4.38.ebuild,
+  genkernel-3.4.39.ebuild, genkernel-9999.ebuild:
+  Fix pax-utils dependency for >=3.4.30 (bug #427686)
+
+  24 Jul 2012; Robin H. Johnson <robbat2@gentoo.org> genkernel-9999.ebuild:
+  Live ebuild using wrong version of busybox.
+
+*genkernel-3.4.39 (21 Jul 2012)
+
+  21 Jul 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.39.ebuild:
+  Bump to 3.4.39 (bug #427270)
+
+  19 Jul 2012; Markus Meier <maekke@gentoo.org> genkernel-3.4.24_p2.ebuild:
+  arm stable, bug #425360
+
+  15 Jul 2012; Sebastian Pipping <sping@gentoo.org> genkernel-3.4.16.ebuild,
+  genkernel-3.4.16.1.ebuild, genkernel-3.4.20.ebuild,
+  genkernel-3.4.21.2.ebuild, genkernel-3.4.22.1.ebuild,
+  genkernel-3.4.23.1.ebuild, genkernel-3.4.24.ebuild,
+  genkernel-3.4.24_p1.ebuild, genkernel-3.4.24_p2.ebuild,
+  genkernel-3.4.25.1.ebuild, genkernel-3.4.26.ebuild, genkernel-3.4.27.ebuild,
+  genkernel-3.4.28.ebuild, genkernel-3.4.29.ebuild, genkernel-3.4.32.ebuild,
+  genkernel-3.4.33.1.ebuild, genkernel-3.4.34.ebuild, genkernel-3.4.35.ebuild,
+  genkernel-3.4.36.ebuild, genkernel-3.4.37.ebuild, genkernel-3.4.38.ebuild,
+  genkernel-9999.ebuild:
+  Fix location of open-iscsi-2.0-872.tar.gz (bug #426732)
+
+  13 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  genkernel-3.4.24_p2.ebuild:
+  Stable ppc ppc64, bug #425360
+
+  11 Jul 2012; Jeff Horelick <jdhore@gentoo.org> genkernel-3.4.24_p2.ebuild:
+  marked x86 per bug 425360
+
+*genkernel-3.4.38 (09 Jul 2012)
+
+  09 Jul 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.38.ebuild:
+  Bump to 3.4.38
+
+  09 Jul 2012; Agostino Sarubbo <ago@gentoo.org> genkernel-3.4.24_p2.ebuild:
+  Stable for amd64, wrt bug #425360
+
+*genkernel-3.4.37 (08 Jul 2012)
+
+  08 Jul 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.37.ebuild:
+  Bump to 3.4.37
+
+*genkernel-3.4.24_p2 (08 Jul 2012)
+
+  08 Jul 2012; Sebastian Pipping <sping@gentoo.org>
+  +genkernel-3.4.24_p2.ebuild:
+  Add 3.4.24_p2 to help with bug #417261
+
+  02 Jul 2012; Sebastian Pipping <sping@gentoo.org> genkernel-3.4.36.ebuild,
+  genkernel-9999.ebuild:
+  Remove wolf31o2.org links and note on keyword maintenance (as suggested by
+  armin76)
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> genkernel-3.4.24_p1.ebuild:
+  alpha/ia64/s390/sparc stable wrt #415483
+
+*genkernel-3.4.36 (11 Jun 2012)
+
+  11 Jun 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.36.ebuild:
+  Bump to 3.4.36
+
+*genkernel-3.4.35 (10 Jun 2012)
+
+  10 Jun 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.35.ebuild:
+  Bump to 3.4.35
+
+*genkernel-3.4.34 (04 Jun 2012)
+
+  04 Jun 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.34.ebuild:
+  Bump to 3.4.34
+
+  04 Jun 2012; Joseph Jezak <josejx@gentoo.org> genkernel-3.4.24_p1.ebuild:
+  Marked ppc stable for bug #415483.
+
+  26 May 2012; Markus Meier <maekke@gentoo.org> genkernel-3.4.24_p1.ebuild:
+  arm stable, bug #415483
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> genkernel-3.4.24_p1.ebuild:
+  Marking genkernel-3.4.24_p1 ppc64 for bug 415483
+
+  21 May 2012; Agostino Sarubbo <ago@gentoo.org> genkernel-3.4.24_p1.ebuild:
+  Stable for amd64, wrt bug #415483
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  genkernel-3.4.24_p1.ebuild:
+  x86 stable wrt bug #415483
+
+*genkernel-3.4.33.1 (17 May 2012)
+
+  17 May 2012; Sebastian Pipping <sping@gentoo.org> -genkernel-3.4.33.ebuild,
+  +genkernel-3.4.33.1.ebuild:
+  Bump to 3.4.33.1
+
+*genkernel-3.4.33 (17 May 2012)
+
+  17 May 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.33.ebuild,
+  genkernel-9999.ebuild:
+  Bump to 3.4.33
+
+  16 May 2012; Sebastian Pipping <sping@gentoo.org> -genkernel-3.4.17.ebuild,
+  -genkernel-3.4.18.ebuild, -genkernel-3.4.19.ebuild:
+  Remove some old unstable ebuilds
+
+  16 May 2012; Sebastian Pipping <sping@gentoo.org> genkernel-3.4.16.ebuild,
+  genkernel-3.4.16.1.ebuild, genkernel-3.4.17.ebuild:
+  Fix warnings about git-2 eclass from old stable ebuilds
+
+  16 May 2012; Sebastian Pipping <sping@gentoo.org> genkernel-3.4.16.ebuild,
+  genkernel-3.4.16.1.ebuild, genkernel-3.4.17.ebuild, genkernel-3.4.18.ebuild,
+  genkernel-3.4.19.ebuild, genkernel-3.4.20.ebuild, genkernel-3.4.21.2.ebuild,
+  genkernel-3.4.22.1.ebuild, genkernel-3.4.23.1.ebuild,
+  genkernel-3.4.24.ebuild, genkernel-3.4.24_p1.ebuild,
+  genkernel-3.4.25.1.ebuild, genkernel-3.4.26.ebuild, genkernel-3.4.27.ebuild,
+  genkernel-3.4.28.ebuild, genkernel-3.4.29.ebuild, genkernel-3.4.32.ebuild,
+  genkernel-9999.ebuild:
+  Migrate from eclass bash-completion to bash-completion-r1, thanks to Rick
+  Farina of Pentoo
+
+*genkernel-3.4.32 (14 May 2012)
+
+  14 May 2012; Sebastian Pipping <sping@gentoo.org> -genkernel-3.4.30.ebuild,
+  -genkernel-3.4.31.ebuild, +genkernel-3.4.32.ebuild:
+  Bump to 3.4.32 (bug #415697), remove broken 3.4.30 and 3.4.31
+
+*genkernel-3.4.24_p1 (12 May 2012)
+
+  12 May 2012; Sebastian Pipping <sping@gentoo.org>
+  +genkernel-3.4.24_p1.ebuild:
+  Add 3.4.24_p1 for stabilization (bug #415483)
+
+*genkernel-3.4.31 (12 May 2012)
+
+  12 May 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.31.ebuild:
+  Bump to 3.4.31
+
+  03 May 2012; Sebastian Pipping <sping@gentoo.org> genkernel-3.4.30.ebuild,
+  genkernel-9999.ebuild, metadata.xml:
+  Migrate from use flag 'crypt' to 'cryptsetup' (bug #414523), sync live ebuild
+
+*genkernel-3.4.30 (16 Apr 2012)
+
+  16 Apr 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.30.ebuild:
+  Bump to 3.4.30 which no longer requires USE=static from sys-fs/cryptsetup
+  (bug #409277)
+
+*genkernel-3.4.29 (08 Apr 2012)
+
+  08 Apr 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.29.ebuild:
+  Bump to 3.4.29
+
+*genkernel-3.4.28 (30 Mar 2012)
+
+  30 Mar 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.28.ebuild:
+  Bump to 3.4.28
+
+*genkernel-3.4.27 (22 Mar 2012)
+
+  22 Mar 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.27.ebuild,
+  genkernel-9999.ebuild:
+  Bump to 3.4.27, add use flag "crypt" (bug #409277)
+
+*genkernel-3.4.26 (22 Mar 2012)
+
+  22 Mar 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.26.ebuild:
+  Bump to 3.4.26
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> genkernel-3.4.20.ebuild:
+  alpha/ia64/s390/sparc stable wrt #400539
+
+  12 Mar 2012; Robin H. Johnson <robbat2@gentoo.org>
+  -files/busybox-1.7.4-make-3.82.patch, -genkernel-3.4.10-r1.ebuild,
+  -genkernel-3.4.10-r2.ebuild, -genkernel-3.4.10.906.ebuild,
+  -genkernel-3.4.10.907-r1.ebuild, -genkernel-3.4.10.907.ebuild,
+  -genkernel-3.4.10.908.ebuild, -genkernel-3.4.12.6-r2.ebuild,
+  -genkernel-3.4.14-r1.ebuild, -genkernel-3.4.15.ebuild,
+  -genkernel-3.4.23.ebuild, -genkernel-3.4.25-r1.ebuild,
+  -genkernel-3.4.25.ebuild:
+  Clean up old versions.
+
+*genkernel-3.4.25.1 (12 Mar 2012)
+
+  12 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> +genkernel-3.4.25.1.ebuild:
+  Bump, was missing the last commit to flip the default of mounting /usr.
+
+*genkernel-3.4.25-r1 (11 Mar 2012)
+
+  11 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> +files/initramfs.mounts,
+  +genkernel-3.4.25-r1.ebuild, genkernel-9999.ebuild:
+  genkernel 3.4.25 does not actually need this file as it has automatic
+  defaults, but it may be useful for users which complex setups that need to
+  mount more than just /usr before pivot_root.
+
+  10 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> genkernel-3.4.25.ebuild:
+  You must not use genkernel-3.4.25 with an OpenRC version that fails to
+  remount /usr as RW.
+
+*genkernel-3.4.25 (10 Mar 2012)
+
+  10 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> +genkernel-3.4.25.ebuild:
+  New release of genkernel. Adds many features including: /usr mounting, ZFS
+  (contributed by ryao), initramfs compression control (based on work by ryao
+  and Pentoo), sdcard devices, virtio devices, improved library copying,
+  device-mapper -> LVM2 update, dmraid update w/ portage patches, cross-compile
+  improvements.
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> genkernel-3.4.20.ebuild:
+  Marking genkernel-3.4.20 ppc64 for bug 400539
+
+  18 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  genkernel-3.4.16.1.ebuild:
+  Stable on alpha, bug #369409
+
+  12 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> genkernel-9999.ebuild:
+  Drop device-mapper as it was merged into LVM2-2.02.67 upstream in 2010. Update
+  dmraid per bug #398467.
+
+  10 Feb 2012; Markus Meier <maekke@gentoo.org> genkernel-3.4.20.ebuild:
+  arm stable, bug #400539
+
+  07 Feb 2012; Jeroen Roovers <jer@gentoo.org> genkernel-3.4.20.ebuild:
+  Stable for HPPA (bug #400539).
+
+  06 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> genkernel-9999.ebuild:
+  New genkernel uses lddtree from pax-utils to ensure needed libraries for
+  binaries are brought in.
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> genkernel-3.4.20.ebuild:
+  Marking genkernel-3.4.20 ppc for bug 400539
+
+  28 Jan 2012; Jeff Horelick <jdhore@gentoo.org> genkernel-3.4.20.ebuild:
+  x86 stable per bug 400539
+
+  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org> genkernel-3.4.20.ebuild:
+  Stable for amd64, wrt bug #400539
+
+*genkernel-3.4.24 (24 Jan 2012)
+
+  24 Jan 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.24.ebuild:
+  Bump to 3.4.24
+
+*genkernel-3.4.16.1 (24 Jan 2012)
+
+  24 Jan 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.16.1.ebuild:
+  Add 3.4.16.1 backport release
+
+  16 Jan 2012; Tobias Klausmann <klausman@gentoo.org> genkernel-3.4.16.ebuild:
+  Stable on alpha, bug #369409
+
+*genkernel-3.4.23.1 (15 Jan 2012)
+
+  15 Jan 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.23.1.ebuild,
+  genkernel-9999.ebuild:
+  Bump to genkernel 3.4.23.1, mdadm 3.1.5
+
+*genkernel-3.4.23 (13 Jan 2012)
+
+  13 Jan 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.23.ebuild:
+  Bump to genkernel 3.4.23, busybox 1.19.3, e2fsprogs 1.42, fuse 2.8.6, lvm
+  2.02.88, unionfs-fuse 0.24
+
+*genkernel-3.4.22.1 (08 Jan 2012)
+
+  08 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> +genkernel-3.4.22.1.ebuild,
+  -genkernel-3.4.22.ebuild:
+  Fixed version of genkernel out, so that users do not trigger the /usr mount
+  code quite yet (OpenRC commits not ready yet, systemd is usable).
+
+  08 Jan 2012; Sebastian Pipping <sping@gentoo.org> genkernel-3.4.22.ebuild:
+  Emergency mask of just added 3.4.22
+
+*genkernel-3.4.22 (08 Jan 2012)
+
+  08 Jan 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.22.ebuild:
+  Bump to 3.4.22
+
+  06 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> Manifest:
+  Force redigest
+
+*genkernel-3.4.21.2 (06 Jan 2012)
+
+  06 Jan 2012; Robin H. Johnson <robbat2@gentoo.org>
+  -genkernel-3.4.21.1.ebuild, +genkernel-3.4.21.2.ebuild:
+  3.4.21.1 accidently changed a default that meant no modules in initramfs,
+  leading to unbootable setups. Change it back.
+
+*genkernel-3.4.21.1 (05 Jan 2012)
+
+  05 Jan 2012; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.21.1.ebuild:
+  Bump to 3.4.21.1
+
+*genkernel-3.4.20 (08 Nov 2011)
+
+  08 Nov 2011; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.20.ebuild:
+  Bump to 3.4.20
+
+*genkernel-3.4.19 (30 Oct 2011)
+
+  30 Oct 2011; Sebastian Pipping <sping@gentoo.org> +genkernel-3.4.19.ebuild:
+  Bump to 3.4.19
+
+  30 Oct 2011; Sebastian Pipping <sping@gentoo.org> genkernel-3.4.18.ebuild:
+  Sync latest release ebuild with live ebuild
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> genkernel-3.4.16.ebuild:
+  Marked ppc/ppc64 stable for bug #369409.
+
+  21 Sep 2011; Michał Górny <mgorny@gentoo.org> genkernel-9999.ebuild:
+  Migrate to git-2.
+
+  17 Sep 2011; Raúl Porcel <armin76@gentoo.org> genkernel-3.4.16.ebuild:
+  ia64/s390/sparc stable wrt #369409
+
+  25 Aug 2011; Jeroen Roovers <jer@gentoo.org> genkernel-3.4.16.ebuild:
+  Stable for HPPA (bug #369409).
 
 *genkernel-3.4.18 (28 Jul 2011)
 

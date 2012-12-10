@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/splashutils/splashutils-1.5.4.3-r3.ebuild,v 1.16 2011/06/08 13:25:52 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/splashutils/splashutils-1.5.4.3-r3.ebuild,v 1.19 2012/05/05 07:00:25 jdhore Exp $
 
 EAPI="2"
 
@@ -35,7 +35,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ppc x86"
 RDEPEND="gpm? ( sys-libs/gpm )
-	truetype? ( >=media-libs/freetype-2 )
+	truetype? ( >=media-libs/freetype-2[static-libs]
+		|| ( <app-arch/bzip2-1.0.6-r3 app-arch/bzip2[static-libs] ) )
 	png? ( >=media-libs/libpng-1.4.3[static-libs] )
 	mng? (
 		media-libs/lcms:0[static-libs]
@@ -48,7 +49,7 @@ RDEPEND="gpm? ( sys-libs/gpm )
 	!sys-apps/lcdsplash"
 DEPEND="${RDEPEND}
 	>=dev-libs/klibc-1.5
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S="${WORKDIR}/${P/_/-}"
 SG="${WORKDIR}/${GENTOOSPLASH}"
@@ -106,6 +107,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/splashutils-1.5.4.3-nondefault-runlevel.patch
 	epatch "${FILESDIR}"/splashutils-1.5.4.3-openrc-effects.patch
 	epatch "${FILESDIR}"/initrd.splash-cmp-str-instead-of-int.patch
+	cd ${SM}
+	epatch "${FILESDIR}"/splashutils-1.5.4.4-freetype-bz2.patch
 	cd "${S}"
 
 	# Latest version of klibc defined its own version of ferror, so there is

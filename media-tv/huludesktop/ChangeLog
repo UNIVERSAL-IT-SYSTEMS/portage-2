@@ -1,6 +1,12 @@
 # ChangeLog for media-tv/huludesktop
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/huludesktop/ChangeLog,v 1.6 2010/09/18 09:44:46 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-tv/huludesktop/ChangeLog,v 1.8 2012/11/05 16:38:14 vapier Exp $
+
+  05 Nov 2012; Mike Frysinger <vapier@gentoo.org> huludesktop-0.9.8-r1.ebuild:
+  Use QA_PREBUILT #431132 by Diego Elio Pettenò.
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> huludesktop-0.9.8-r1.ebuild:
+  Move EAPI assignment to top of ebuild, bug 411875.
 
 *huludesktop-0.9.8-r1 (18 Sep 2010)
 
@@ -37,4 +43,3 @@
   07 Dec 2009; Mike Frysinger <vapier@gentoo.org> +huludesktop-0.9.6.ebuild,
   +files/huludesktop, +metadata.xml:
   New package #288372.
-

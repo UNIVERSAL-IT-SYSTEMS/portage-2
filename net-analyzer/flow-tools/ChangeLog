@@ -1,6 +1,56 @@
 # ChangeLog for net-analyzer/flow-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/flow-tools/ChangeLog,v 1.48 2011/03/27 19:35:41 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/flow-tools/ChangeLog,v 1.60 2012/11/21 04:08:34 jer Exp $
+
+  21 Nov 2012; Jeroen Roovers <jer@gentoo.org> flow-tools-0.68.5.1-r1.ebuild,
+  files/flowcapture.confd:
+  Add copyright info to conf.d script. Add GPL-2 to LICENSE (bug #425982).
+
+  14 Jun 2012; Jeroen Roovers <jer@gentoo.org> -flow-tools-0.68.5.1.ebuild:
+  Old.
+
+  14 Jun 2012; Jeff Horelick <jdhore@gentoo.org> flow-tools-0.68.5.1-r1.ebuild:
+  marked x86 per bug 419211
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> flow-tools-0.68.5.1-r1.ebuild:
+  Marking flow-tools-0.68.5.1-r1 ppc for bug 419211
+
+  04 Jun 2012; Agostino Sarubbo <ago@gentoo.org> flow-tools-0.68.5.1-r1.ebuild:
+  Stable for amd64, wrt bug #419211
+
+  04 Jun 2012; Jeroen Roovers <jer@gentoo.org> flow-tools-0.68.5.1.ebuild,
+  flow-tools-0.68.5.1-r1.ebuild:
+  Inherit user.eclass instead of eutils.eclass.
+
+  25 Feb 2012; Jeroen Roovers <jer@gentoo.org> -flow-tools-0.68.5-r1.ebuild:
+  Old.
+
+  24 Feb 2012; Brent Baude <ranger@gentoo.org> flow-tools-0.68.5.1.ebuild:
+  Marking flow-tools-0.68.5.1 ppc for bug 404809
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  flow-tools-0.68.5.1.ebuild:
+  x86 stable wrt bug #404809
+
+*flow-tools-0.68.5.1-r1 (21 Feb 2012)
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> +flow-tools-0.68.5.1-r1.ebuild:
+  Add IUSE=static-libs by Maurizio Camisaschi (bug #405157).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> flow-tools-0.68.5.1.ebuild:
+  Stable for amd64, wrt bug #404809
+
+*flow-tools-0.68.5.1 (15 Nov 2011)
+
+  15 Nov 2011; Jeroen Roovers <jer@gentoo.org>
+  -files/flow-tools-0.67-memleak.patch, -files/flow-tools-0.67-nodebug.patch,
+  -flow-tools-0.68-r5.ebuild, -flow-tools-0.68-r7.ebuild,
+  -flow-tools-0.68-r8.ebuild, -files/flow-tools-0.68-249449-amd64.patch,
+  -files/flow-tools-0.68-another-amd64-casting-fixes.patch,
+  +flow-tools-0.68.5.1.ebuild, -files/flow-tools-0.68-db_tmp.patch,
+  -files/flow-tools-0.68-fix-a-zillion-warnings-updated.diff,
+  -files/flow-tools-0.68-fix-configure.diff:
+  Version bump.
 
   27 Mar 2011; Brent Baude <ranger@gentoo.org> flow-tools-0.68.5-r1.ebuild:
   stable ppc, bug 347591

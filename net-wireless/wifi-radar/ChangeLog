@@ -1,6 +1,29 @@
 # ChangeLog for net-wireless/wifi-radar
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/wifi-radar/ChangeLog,v 1.23 2011/04/15 21:36:38 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/wifi-radar/ChangeLog,v 1.30 2012/12/08 22:07:09 ago Exp $
+
+  08 Dec 2012; <ago@gentoo.org> wifi-radar-2.0.8-r1.ebuild:
+  Stable for amd64, wrt bug #441504
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+  05 Oct 2012; Agostino Sarubbo <ago@gentoo.org> wifi-radar-2.0.8-r1.ebuild:
+  Use more
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> wifi-radar-2.0.8-r1.ebuild:
+  move sed to src_prepare
+
+*wifi-radar-2.0.8-r1 (03 Oct 2012)
+
+  03 Oct 2012; Rick Farina <zerochaos@gentoo.org> +wifi-radar-2.0.8-r1.ebuild:
+  force python2, drop pointless use flag, create /etc/wifi-radar, makes me happy
+
+  04 Dec 2011; Markos Chandras <hwoarang@gentoo.org> wifi-radar-2.0.8.ebuild:
+  Stable on amd64 wrt bug #391487
+
+  01 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> wifi-radar-2.0.8.ebuild:
+  x86 stable wrt bug #391487
 
   15 Apr 2011; Ulrich Mueller <ulm@gentoo.org> wifi-radar-1.9.8-r1.ebuild,
   wifi-radar-1.9.9.ebuild, wifi-radar-2.0.8.ebuild:
@@ -103,4 +126,3 @@
 
   04 Nov 2005; Michele Noberasco <s4t4n@gentoo.org> wifi-radar-1.9.4.ebuild:
   Initial import. Closes bug #70591.
-

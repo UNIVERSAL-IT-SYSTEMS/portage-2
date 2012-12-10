@@ -1,6 +1,28 @@
 # ChangeLog for x11-misc/netwmpager
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/netwmpager/ChangeLog,v 1.12 2010/06/01 19:26:51 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/netwmpager/ChangeLog,v 1.18 2012/08/04 18:25:04 johu Exp $
+
+  04 Aug 2012; Johannes Huber <johu@gentoo.org> netwmpager-2.04.ebuild:
+  Stable for x86, wrt bug #429238
+
+  04 Aug 2012; Markos Chandras <hwoarang@gentoo.org> netwmpager-2.04.ebuild:
+  Stable on amd64 wrt bug #429238
+
+*netwmpager-2.04 (04 Jun 2012)
+
+  04 Jun 2012; Michael Weber <xmw@gentoo.org> +netwmpager-2.04.ebuild:
+  Version bump, fix SRC_URI/HOMEPAGE (reported by df, bug 416163)
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> netwmpager-1.6.ebuild,
+  netwmpager-1.11-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> netwmpager-1.11-r1.ebuild:
+  Stable for AMD64, wrt bug #392859
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  netwmpager-1.11-r1.ebuild:
+  x86 stable wrt bug #392859
 
   01 Jun 2010; Kacper Kowalik <xarthisius@gentoo.org> netwmpager-1.6.ebuild,
   netwmpager-1.11-r1.ebuild:
@@ -49,4 +71,3 @@
   +netwmpager-1.6.ebuild:
   Initial import. Ebuild submitted by Timo Hirvonen <tihirvon@ee.oulu.fi>;
   bug #91872.
-

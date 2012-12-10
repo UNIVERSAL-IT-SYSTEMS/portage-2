@@ -1,6 +1,63 @@
 # ChangeLog for mail-client/claws-mail-att-remover
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail-att-remover/ChangeLog,v 1.41 2011/03/22 20:42:10 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail-att-remover/ChangeLog,v 1.54 2012/11/20 20:28:24 fauli Exp $
+
+*claws-mail-att-remover-1.0.15 (20 Nov 2012)
+
+  20 Nov 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-att-remover-1.0.15.ebuild:
+  version bump
+
+  20 Nov 2012; Christian Faulhammer <fauli@gentoo.org>
+  -claws-mail-att-remover-1.0.13.ebuild:
+  clean up
+
+  31 Oct 2012; Andreas Schuerch <nativemad@gentoo.org>
+  claws-mail-att-remover-1.0.14.ebuild:
+  x86 stable, see bug 437814
+
+  24 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  claws-mail-att-remover-1.0.14.ebuild:
+  Stable for amd64, wrt bug #437814
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  claws-mail-att-remover-1.0.14.ebuild:
+  stable ppc64, bug #437814
+
+*claws-mail-att-remover-1.0.14 (30 Jun 2012)
+
+  30 Jun 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-att-remover-1.0.14.ebuild:
+  Version bump, mainly bug fixes
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  claws-mail-att-remover-1.0.13.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  11 Apr 2012; Christian Faulhammer <fauli@gentoo.org>
+  -claws-mail-att-remover-1.0.12.ebuild:
+  clean up
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org>
+  claws-mail-att-remover-1.0.13.ebuild:
+  x86 stable, bug #387547
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org>
+  claws-mail-att-remover-1.0.13.ebuild:
+  Marking claws-mail-att-remover-1.0.13 ppc64 stable for bug 387547
+
+  04 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #206112
+
+  25 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  claws-mail-att-remover-1.0.13.ebuild:
+  Stable for amd64, wrt bug #387547
+
+*claws-mail-att-remover-1.0.13 (26 Dec 2011)
+
+  26 Dec 2011; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-att-remover-1.0.13.ebuild:
+  version bump for bug 395381 by Justin
 
   22 Mar 2011; Christian Faulhammer <fauli@gentoo.org>
   -claws-mail-att-remover-1.0.11.ebuild:
@@ -173,4 +230,3 @@
   19 Dec 2006; Andrej Kacian <ticho@gentoo.org> +metadata.xml,
   +claws-mail-att-remover-1.0.4.ebuild:
   This is the new name of mail-client/sylpheed-claws-att-remover.
-

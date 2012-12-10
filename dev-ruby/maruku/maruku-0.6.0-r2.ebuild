@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/maruku/maruku-0.6.0-r2.ebuild,v 1.1 2010/10/03 09:08:09 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/maruku/maruku-0.6.0-r2.ebuild,v 1.6 2012/07/25 06:25:49 graaff Exp $
 
 EAPI=2
 
@@ -8,6 +8,7 @@ USE_RUBY="ruby18 ruby19 ree18 jruby"
 
 RUBY_FAKEGEM_TASK_TEST=""
 
+RUBY_FAKEGEM_TASK_DOC="-I. rdoc"
 RUBY_FAKEGEM_DOCDIR="doc"
 RUBY_FAKEGEM_EXTRADOC="docs/changelog.md docs/div_syntax.md docs/entity_test.md
 	docs/markdown_syntax.md docs/maruku.md docs/math.md docs/other_stuff.md
@@ -20,8 +21,13 @@ HOMEPAGE="http://maruku.rubyforge.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE=""
+
+# Tests fail in various ways, possibly due to missing
+# dependencies. Since we shipped this without any tests for over a year
+# just restrict them for now and revisit for the next version.
+RESTRICT=test
 
 ruby_add_rdepend dev-ruby/syntax
 
@@ -30,6 +36,10 @@ all_ruby_prepare() {
 		-e '/Gem::manage_gems/s:^:#:' \
 		-e '/jamis\.rb/s:^:#:' \
 		Rakefile
+}
+
+each_ruby_test() {
+	${RUBY} -Ilib bin/marutest $(find tests/unittest -name '*.md') || die
 }
 
 pkg_postinst() {

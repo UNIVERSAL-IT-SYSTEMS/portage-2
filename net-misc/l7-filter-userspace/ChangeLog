@@ -1,6 +1,30 @@
 # ChangeLog for net-misc/l7-filter-userspace
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/l7-filter-userspace/ChangeLog,v 1.12 2011/07/20 14:54:17 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/l7-filter-userspace/ChangeLog,v 1.16 2012/10/21 08:54:04 maekke Exp $
+
+  21 Oct 2012; Markus Meier <maekke@gentoo.org>
+  l7-filter-userspace-0.12_beta1.ebuild:
+  add ~arm, bug #406791
+
+  18 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  l7-filter-userspace-0.12_beta1.ebuild:
+  (proxy commit) update dependencies wrt #416477 by <bjozac@gmail.com>
+
+*l7-filter-userspace-0.12_beta1 (11 May 2012)
+
+  11 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/l7-filter-userspace-0.11-datatype.patch,
+  +l7-filter-userspace-0.12_beta1.ebuild, metadata.xml:
+  Version bump, fixes #411109. Add Andrew Savchenko <bircoph@gmail.com> as a
+  maintainer and myself as a proxy
+
+  03 Mar 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/l7-filter-userspace-0.11-arm-ppc-getopt-help-fix.patch,
+  +files/l7-filter-userspace-0.11-map-access-threadsafe.patch,
+  +files/l7-filter-userspace-0.11-pattern-loading-leak.patch,
+  l7-filter-userspace-0.11.ebuild:
+  Include fixes from debian and ppc/arm compatibility, bug #329397 (by Gavin
+  Pryke).
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #34534

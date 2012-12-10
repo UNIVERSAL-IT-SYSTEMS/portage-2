@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/clutter-gtk/clutter-gtk-0.10.8.ebuild,v 1.9 2011/03/22 20:12:53 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/clutter-gtk/clutter-gtk-0.10.8.ebuild,v 1.13 2012/10/17 23:11:58 tetromino Exp $
 
 EAPI="2"
 
@@ -11,7 +11,7 @@ DESCRIPTION="Clutter-GTK - GTK+ Integration library for Clutter"
 
 SLOT="0.10"
 KEYWORDS="amd64 ppc ppc64 x86"
-IUSE="doc debug examples +introspection"
+IUSE="debug examples +introspection"
 
 # XXX: Needs gtk with X support (!directfb)
 RDEPEND="
@@ -19,8 +19,7 @@ RDEPEND="
 	>=media-libs/clutter-1.2:1.0[introspection?]
 	introspection? ( >=dev-libs/gobject-introspection-0.9.3 )"
 DEPEND="${RDEPEND}
-	>=dev-util/gtk-doc-am-1.14
-	doc? ( >=dev-util/gtk-doc-1.14 )"
+	>=dev-util/gtk-doc-am-1.14"
 EXAMPLES="examples/{*.c,redhand.png}"
 
 pkg_setup() {
@@ -31,10 +30,16 @@ pkg_setup() {
 }
 
 src_prepare() {
-	gnome2_src_prepare
-
 	# Fix build with USE=introspection, bug #350061
 	epatch "${FILESDIR}/${PN}-0.10.8-fix-introspection-build.patch"
 
+	# Drop DEPRECATED flags, bug #387173
+	sed -i -e 's:-D[A-Z_]*DISABLE_DEPRECATED:$(NULL):g' \
+		clutter-gtk/Makefile.am || die
+
+	# Fix underlinking problem with gold.ld
+	epatch "${FILESDIR}"/${P}-gold.patch
+
 	eautoreconf
+	gnome2_src_prepare
 }

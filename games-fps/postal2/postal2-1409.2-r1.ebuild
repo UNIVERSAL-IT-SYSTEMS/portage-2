@@ -1,9 +1,9 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/postal2/postal2-1409.2-r1.ebuild,v 1.3 2009/10/30 22:41:42 nyhm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/postal2/postal2-1409.2-r1.ebuild,v 1.6 2012/02/05 06:04:07 vapier Exp $
 
 EAPI=2
-inherit eutils multilib games
+inherit eutils unpacker cdrom multilib games
 
 DESCRIPTION="Postal 2: Share the Pain"
 HOMEPAGE="http://www.linuxgamepublishing.com/info.php?id=postal2"
@@ -15,7 +15,6 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 RESTRICT="strip"
-PROPERTIES="interactive"
 
 DEPEND="games-util/loki_patch"
 RDEPEND="sys-libs/glibc
@@ -28,8 +27,6 @@ RDEPEND="sys-libs/glibc
 	)"
 
 S=${WORKDIR}
-
-GAMES_CHECK_LICENSE="yes"
 
 src_unpack() {
 	cdrom_get_cds .installation_data/linux-specific.tar.bz2

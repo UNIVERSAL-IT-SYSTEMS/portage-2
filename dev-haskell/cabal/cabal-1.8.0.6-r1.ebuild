@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/cabal/cabal-1.8.0.6-r1.ebuild,v 1.7 2011/02/25 12:40:32 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/cabal/cabal-1.8.0.6-r1.ebuild,v 1.9 2012/09/12 15:13:07 qnikst Exp $
 
 CABAL_FEATURES="bootstrap lib profile"
 inherit haskell-cabal eutils
@@ -10,7 +10,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="A framework for packaging Haskell software"
 HOMEPAGE="http://www.haskell.org/cabal/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -22,7 +22,7 @@ IUSE="doc"
 # lowest possible ghc version
 DEPEND=">=dev-lang/ghc-6.6.1"
 RDEPEND="${DEPEND}
-		dev-util/pkgconfig"
+		virtual/pkgconfig"
 # cabal uses dev-util/pkgconfig using runtime to resolve C dependencies, so
 # repoman's RDEPEND.suspect QA does not apply here
 

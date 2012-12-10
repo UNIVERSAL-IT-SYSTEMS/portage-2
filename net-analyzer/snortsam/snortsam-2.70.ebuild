@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/snortsam/snortsam-2.70.ebuild,v 1.1 2011/07/31 12:56:46 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/snortsam/snortsam-2.70.ebuild,v 1.4 2012/12/05 16:35:58 jer Exp $
 
 EAPI="2"
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.snortsam.net/"
 SRC_URI="http://www.snortsam.net/files/snortsam/${MY_P}.tar.gz
 	mirror://gentoo/${PN}-2.50-ciscoacl.diff.bz2"
 
-LICENSE="as-is"
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
@@ -20,10 +20,15 @@ IUSE=""
 S=${WORKDIR}/${PN}
 
 src_prepare() {
-	sed -i -e "s:sbin/functions.sh:etc/init.d/functions.sh:" \
-			-e "s: -O2 : ${CFLAGS} :" \
-			-e "s:gcc :$(tc-getCC) :" \
-			-e "s:\( -o ../snortsam\): ${LDFLAGS}\1:" makesnortsam.sh || die "sed failed"
+	sed -i makesnortsam.sh \
+		-e "s:sbin/functions.sh:etc/init.d/functions.sh:" \
+		-e "s:-O2 : ${CFLAGS} :" \
+		-e "s:gcc :$(tc-getCC) :" \
+		-e "/^LDFLAGS=/d" \
+		-e "s:\( -o ../snortsam\): ${LDFLAGS}\1:" \
+		-e "s:\${SSP_LINUX_SRC} -o \${SNORTSAM}:& \${LINUX_LDFLAGS}:" \
+		|| die "sed failed"
+
 	find "${S}" -depth -type d -name CVS -exec rm -rf \{\} \;
 }
 

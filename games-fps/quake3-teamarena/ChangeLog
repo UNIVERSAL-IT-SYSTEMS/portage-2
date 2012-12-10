@@ -1,6 +1,17 @@
 # ChangeLog for games-fps/quake3-teamarena
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3-teamarena/ChangeLog,v 1.7 2008/09/26 18:42:52 zmedico Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3-teamarena/ChangeLog,v 1.10 2012/02/05 06:14:58 vapier Exp $
+
+  05 Feb 2012; Mike Frysinger <vapier@gentoo.org>
+  quake3-teamarena-1.32b.ebuild:
+  Move to new unpacker eclass for unpack_makeself.
+
+  18 Jan 2012; Mike Frysinger <vapier@gentoo.org>
+  quake3-teamarena-1.32b.ebuild:
+  Move to new CDROM_OPTIONAL variable.
+
+  16 Jan 2012; Ulrich Müller <ulm@gentoo.org> quake3-teamarena-1.32b.ebuild:
+  Migrate to cdrom.eclass, bug 398809.
 
   26 Sep 2008; Zac Medico <zmedico@gentoo.org>
   quake3-teamarena-1.32b.ebuild:

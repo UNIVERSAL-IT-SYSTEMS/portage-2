@@ -1,6 +1,36 @@
 # ChangeLog for dev-util/lcov
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/lcov/ChangeLog,v 1.6 2011/05/15 02:27:11 qiaomuf Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/lcov/ChangeLog,v 1.15 2012/10/18 08:35:32 ottxor Exp $
+
+  18 Oct 2012; Christoph Junghans <ottxor@gentoo.org> lcov-1.9-r1.ebuild:
+  added prefix support (bug #435438)
+
+  25 Sep 2012; Anthony G. Basile <blueness@gentoo.org> lcov-1.9-r1.ebuild:
+  stable ppc, bug #429062
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> lcov-1.9-r1.ebuild:
+  x86 stable wrt bug #429062
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> lcov-1.9-r1.ebuild:
+  Stable for amd64, wrt bug #429062
+
+  10 Sep 2012; Mike Frysinger <vapier@gentoo.org> lcov-1.9-r1.ebuild:
+  Add arm love.
+
+*lcov-1.9-r1 (27 Jun 2012)
+
+  27 Jun 2012; Mike Frysinger <vapier@gentoo.org> +files/lcov-1.9-gcc-4.7.patch,
+  +lcov-1.9-r1.ebuild:
+  Fix from upstream for working with gcc-4.7.
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> lcov-1.9.ebuild:
+  Marking lcov-1.9 ppc for bug 406191
+
+  21 May 2012; Johannes Huber <johu@gentoo.org> lcov-1.9.ebuild:
+  Stable for x86, wrt bug #406191
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> lcov-1.9.ebuild:
+  Stable for amd64, wrt bug #406191
 
 *lcov-1.9 (15 May 2011)
 
@@ -25,4 +55,3 @@
 
   24 Oct 2008; Olivier Crête <tester@gentoo.org> ChangeLog:
   Initial import of lcov, from bug #100803. Ebuild contributed by Ryo Kuya
-

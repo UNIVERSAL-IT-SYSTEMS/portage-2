@@ -1,6 +1,60 @@
 # ChangeLog for dev-ruby/narray
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/narray/ChangeLog,v 1.42 2011/06/16 09:13:40 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/narray/ChangeLog,v 1.56 2012/11/07 05:12:28 jer Exp $
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> narray-0.6.0.1-r2.ebuild:
+  Stable for HPPA (bug #434486).
+
+  18 Sep 2012; Johannes Huber <johu@gentoo.org> narray-0.6.0.1-r2.ebuild:
+  Stable for x86, wrt bug #434486
+
+  15 Sep 2012; Agostino Sarubbo <ago@gentoo.org> narray-0.6.0.1-r2.ebuild:
+  Stable for amd64, wrt bug #434486
+
+  09 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  narray-0.6.0.1-r2.ebuild:
+  Stable ppc, bug #434486
+
+  01 Sep 2012; Hans de Graaff <graaff@gentoo.org> -narray-0.5.9_p6.ebuild,
+  -narray-0.6.0.1-r1.ebuild:
+  Cleanup.
+
+*narray-0.6.0.1-r2 (09 Jun 2012)
+
+  09 Jun 2012; Hans de Graaff <graaff@gentoo.org> +narray-0.6.0.1-r2.ebuild:
+  Revision bump to also install the header files for the compiled extension,
+  bug 420319.
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> narray-0.6.0.1.ebuild:
+  Marking narray-0.6.0.1 ppc for bug 386135
+
+*narray-0.6.0.1-r1 (28 Dec 2011)
+
+  28 Dec 2011; Hans de Graaff <graaff@gentoo.org> narray-0.6.0.1.ebuild,
+  +narray-0.6.0.1-r1.ebuild:
+  Revision bump to drop ruby19 from stable version.
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> narray-0.5.9_p6.ebuild,
+  narray-0.6.0.1.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> narray-0.6.0.1.ebuild:
+  x86 stable wrt bug #386135
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> narray-0.6.0.1.ebuild:
+  Stable for HPPA (bug #386135).
+
+  09 Oct 2011; Markos Chandras <hwoarang@gentoo.org> narray-0.6.0.1.ebuild:
+  Stable on amd64 wrt bug #386135
+
+  08 Oct 2011; Hans de Graaff <graaff@gentoo.org> -narray-0.5.9_p7.ebuild,
+  -narray-0.5.9_p9.ebuild:
+  Remove old versions.
+
+*narray-0.6.0.1 (14 Sep 2011)
+
+  14 Sep 2011; Hans de Graaff <graaff@gentoo.org> +narray-0.6.0.1.ebuild:
+  Version bump.
 
 *narray-0.5.9_p9 (16 Jun 2011)
 

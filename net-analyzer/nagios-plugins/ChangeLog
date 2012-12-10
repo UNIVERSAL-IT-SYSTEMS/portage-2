@@ -1,6 +1,96 @@
 # ChangeLog for net-analyzer/nagios-plugins
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios-plugins/ChangeLog,v 1.141 2011/04/29 21:00:36 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios-plugins/ChangeLog,v 1.162 2012/11/24 06:35:32 tove Exp $
+
+  21 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  nagios-plugins-1.4.16-r2.ebuild, nagios-plugins-1.4.16-r3.ebuild:
+  Make sure not to install a wrong sudoers file if smart USE is disabled.
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
+  nagios-plugins-1.4.16-r2.ebuild:
+  Stable for x86, wrt bug #441654
+
+*nagios-plugins-1.4.16-r3 (19 Nov 2012)
+
+  19 Nov 2012; Matthew Thode <prometheanfire@gentoo.org>
+  +nagios-plugins-1.4.16-r3.ebuild:
+  moved 'use suid && fperms 04710 /check_{icmp,ide_smart,dhcp}' below chmod
+  should also solve bug #443642
+
+  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
+  nagios-plugins-1.4.16-r2.ebuild:
+  Stable for amd64, wrt bug #441654
+
+  12 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  nagios-plugins-1.4.16-r2.ebuild:
+  stable ppc ppc64, bug #441654
+
+  09 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  nagios-plugins-1.4.16-r2.ebuild:
+  Enforce ownership of the nagios plugin directory. Should solve bug #441980.
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> nagios-plugins-1.4.16-r2.ebuild:
+  Stable for HPPA (bug #441654).
+
+  04 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  -nagios-plugins-1.4.16-r1.ebuild:
+  Remove old version.
+
+  06 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  nagios-plugins-1.4.16-r2.ebuild:
+  Keyword ~arm, bug #389115
+
+  25 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  nagios-plugins-1.4.16-r2.ebuild:
+  Fix build with sudo USE flag disabled.
+
+*nagios-plugins-1.4.16-r2 (23 Aug 2012)
+
+  23 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +nagios-plugins-1.4.16-r2.ebuild, metadata.xml:
+  Revision bump: cleanup contrib plugins install; add a sudo and smartctl USE
+  flag so that plugins using sudo have a way to be configured.
+
+  19 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml,
+  nagios-plugins-1.4.16-r1.ebuild:
+  Drop dependency over net-analyzer/net-snmp: all the SNMP plugins use dev-
+  perl/Net::SNMP instead. Since the dependency does not require any rebuild,
+  make this behave like nagios-game and don't remove the plugins.
+
+  19 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Re-assign to sysadmin herd.
+
+*nagios-plugins-1.4.16-r1 (18 Aug 2012)
+
+  18 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +nagios-plugins-1.4.16-r1.ebuild, -files/nagios-plugins-1.4.15-vserver.patch,
+  -files/nagios-plugins-1.4.16-contrib.patch,
+  -files/nagios-plugins-1.4.16-parallelmake.patch,
+  -nagios-plugins-1.4.14.ebuild, -nagios-plugins-1.4.15.ebuild,
+  -nagios-plugins-1.4.16.ebuild, metadata.xml:
+  Cleanup old; revision bump and move patches to git backports instead.
+
+  15 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/nagios-plugins-1.4.16-parallelmake.patch, nagios-plugins-1.4.16.ebuild:
+  Fix building in parallel (tested on 32-way system).
+
+  15 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  nagios-plugins-1.4.16.ebuild:
+  QA: stop parallel build as the build system is unsafe. I'll provide a fix
+  asap.
+
+*nagios-plugins-1.4.16 (31 Jul 2012)
+
+  31 Jul 2012; Christian Ruppert <idl0r@gentoo.org>
+  +nagios-plugins-1.4.16.ebuild, +files/nagios-plugins-1.4.16-contrib.patch:
+  Non-maitainer bump, fixes bug 428560, bug 411497 and bug 366403.
+
+  12 Jun 2012; Zac Medico <zmedico@gentoo.org> nagios-plugins-1.4.14-r2.ebuild,
+  nagios-plugins-1.4.14.ebuild, nagios-plugins-1.4.15.ebuild:
+  inherit user for enewgroup and enewuser, and mulilib for get_libdir
+
+  09 Feb 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #85926
 
   29 Apr 2011; Markos Chandras <hwoarang@gentoo.org>
   files/nagios-plugins-1.4.15-openldap.patch:
@@ -261,4 +351,3 @@
   +files/nagios-plugins-1.4.11-autoconf-2.62.patch,
   +nagios-plugins-1.4.11-r1.ebuild:
   Fix for autoconf-2.62, bug #218704
-

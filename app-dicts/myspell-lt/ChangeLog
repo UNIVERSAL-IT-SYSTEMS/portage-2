@@ -1,6 +1,15 @@
 # ChangeLog for app-dicts/myspell-lt
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-lt/ChangeLog,v 1.19 2010/09/27 23:36:41 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-lt/ChangeLog,v 1.21 2012/07/24 08:01:32 scarabeus Exp $
+
+*myspell-lt-1.2.1 (24 Jul 2012)
+
+  24 Jul 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +myspell-lt-1.2.1.ebuild, -myspell-lt-20060316.ebuild:
+  Version bump to latest. Remove newer/older.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> myspell-lt-20060316.ebuild:
+  keyword ~amd64-fbsd
 
   27 Sep 2010; Mart Raudsepp <leio@gentoo.org> myspell-lt-20060316.ebuild:
   Add ~mips

@@ -1,6 +1,21 @@
 # ChangeLog for x11-libs/xbae
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/xbae/ChangeLog,v 1.15 2010/10/10 20:00:32 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/xbae/ChangeLog,v 1.19 2012/10/24 19:47:25 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> xbae-4.60.4.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  15 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> xbae-4.60.4.ebuild:
+  Running tests in proper directory (bug #431536) and actually restricting them
+  because they are interactive and need X display
+
+  25 May 2012; Justin Lecher <jlec@gentoo.org> xbae-4.60.4.ebuild,
+  metadata.xml:
+  Moved to EAPI=4 and autotools.eclas to handle static-libs
+
+  09 Feb 2012; Justin Lecher <jlec@gentoo.org> xbae-4.60.4.ebuild:
+  Keyworded for ~-linux prefix
 
   10 Oct 2010; Ulrich Mueller <ulm@gentoo.org> xbae-4.60.4.ebuild:
   Fix openmotif dependency.
@@ -51,4 +66,3 @@
   +files/xbae-4.60.4-Makefile.in.patch, +files/xbae-4.60.4-lxmp.patch,
   +files/xbae-4.60.4-tmpl.patch, +metadata.xml, +xbae-4.60.4.ebuild:
   Initial import
-

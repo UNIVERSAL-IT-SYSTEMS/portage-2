@@ -1,6 +1,68 @@
 # ChangeLog for app-arch/tar
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/tar/ChangeLog,v 1.162 2011/03/13 20:46:42 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/tar/ChangeLog,v 1.179 2012/11/06 03:19:17 vapier Exp $
+
+  06 Nov 2012; Mike Frysinger <vapier@gentoo.org> tar-1.26-r1.ebuild:
+  Do not delete gtar for prefix systems pointed out by David James.
+
+  05 Nov 2012; Mike Frysinger <vapier@gentoo.org> metadata.xml,
+  tar-1.26-r1.ebuild:
+  Add USE=minimal to trim all the non-`tar` related crap that no one uses.
+
+  07 Sep 2012; Mike Frysinger <vapier@gentoo.org> tar-1.26.ebuild:
+  Add gets/glibc-2.16 fix to stable too.
+
+  31 May 2012; Zac Medico <zmedico@gentoo.org> tar-1.23-r2.ebuild,
+  tar-1.23-r4.ebuild:
+  inherit multilib for get_libdir
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> tar-1.25-r1.ebuild,
+  tar-1.26-r1.ebuild:
+  Inherit eutils for epatch.
+
+  22 May 2012; Mike Frysinger <vapier@gentoo.org> tar-1.23-r2.ebuild,
+  tar-1.23-r4.ebuild, tar-1.25-r1.ebuild, tar-1.25.ebuild, tar-1.26-r1.ebuild,
+  tar-1.26.ebuild:
+  Use just mirror://gnu to shut up repoman.
+
+  22 May 2012; Mike Frysinger <vapier@gentoo.org> tar-1.26-r1.ebuild,
+  +files/tar-1.26-no-gets.patch:
+  Fix building with glibc-2.16+.
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> tar-1.26.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #358749
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> tar-1.26.ebuild:
+  Marking tar-1.26 ppc for bug 358749
+
+  04 Mar 2012; Tobias Klausmann <klausman@gentoo.org> tar-1.23-r2.ebuild,
+  tar-1.23-r4.ebuild, tar-1.25.ebuild, tar-1.25-r1.ebuild, tar-1.26.ebuild,
+  tar-1.26-r1.ebuild:
+  Stabilize on alpha (bug 358749), fix thirdpartymirror QA error.
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> tar-1.26.ebuild:
+  Marking tar-1.26 ppc64 for bug 358749
+
+  29 Feb 2012; Markus Meier <maekke@gentoo.org> tar-1.26.ebuild:
+  arm stable, bug #358749
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> tar-1.26.ebuild:
+  Stable for HPPA (bug #358749).
+
+  25 Feb 2012; Jeff Horelick <jdhore@gentoo.org> tar-1.26.ebuild:
+  marked x86 per bug 358749
+
+  25 Feb 2012; Agostino Sarubbo <ago@gentoo.org> tar-1.26.ebuild:
+  Stable for amd64, wrt bug #358749
+
+*tar-1.26-r1 (05 Feb 2012)
+
+  05 Feb 2012; Mike Frysinger <vapier@gentoo.org> +tar-1.26-r1.ebuild,
+  +files/tar-1.26-xattr.patch:
+  Add xattr support #382067 by Anthony Basile.
+
+  07 Jan 2012; Mike Frysinger <vapier@gentoo.org> files/tar.1:
+  Fix duplicate --one-file-system listing reported by Mikachu.
 
 *tar-1.26 (13 Mar 2011)
 

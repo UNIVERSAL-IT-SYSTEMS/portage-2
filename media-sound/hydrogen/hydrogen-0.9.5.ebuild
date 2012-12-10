@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/hydrogen/hydrogen-0.9.5.ebuild,v 1.3 2011/08/01 08:22:38 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/hydrogen/hydrogen-0.9.5.ebuild,v 1.7 2012/11/24 15:06:02 aballier Exp $
 
 EAPI=4
 inherit eutils multilib flag-o-matic toolchain-funcs
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2 ZLIB"
 SLOT="0"
-KEYWORDS="~amd64 ppc ppc64 ~x86"
+KEYWORDS="amd64 ppc ppc64 x86"
 IUSE="alsa +archive jack ladspa lash oss portaudio"
 
 RDEPEND="x11-libs/qt-gui:4 x11-libs/qt-core:4
@@ -24,14 +24,15 @@ RDEPEND="x11-libs/qt-gui:4 x11-libs/qt-core:4
 	lash? ( media-sound/lash )
 	portaudio? ( >=media-libs/portaudio-19_pre )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-util/scons"
 
 src_prepare() {
 	sed -i -e '/cppflags +=/d' Sconstruct || die
 	epatch \
 		patches/portaudio.patch \
-		"${FILESDIR}"/${P}-use_lrdf_pkgconfig.patch
+		"${FILESDIR}"/${P}-use_lrdf_pkgconfig.patch \
+		"${FILESDIR}"/${P}-gcc47.patch
 }
 
 src_compile() {

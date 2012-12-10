@@ -1,6 +1,21 @@
 # ChangeLog for media-video/jubler
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/jubler/ChangeLog,v 1.42 2011/05/15 15:38:42 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/jubler/ChangeLog,v 1.47 2012/06/17 05:50:05 yngwin Exp $
+
+  17 Jun 2012; Ben de Groot <yngwin@gentoo.org> jubler-4.6.1-r3.ebuild:
+  Use the new global libass useflag (bug #328245)
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> jubler-4.6.1-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> jubler-4.6.1-r3.ebuild:
+  Fix build with new ffmpeg/libav. FIxes bug#409685.
+
+  25 Feb 2012; Serkan Kaba <serkan@gentoo.org> jubler-4.6.1-r3.ebuild:
+  Fix bug #405749 reported by Agostino Sarubbo <ago@gentoo.org>
+
+  18 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> jubler-4.6.1-r3.ebuild:
+  Really depend on the virtual.
 
   15 May 2011; Tomáš Chvátal <scarabeus@gentoo.org>
   -files/jubler-3.9.6-ffmpegfix.patch, -files/jubler-3.9.6.patch,

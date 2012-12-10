@@ -1,6 +1,34 @@
 # ChangeLog for app-text/gtkspell
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/gtkspell/ChangeLog,v 1.87 2011/03/16 10:09:30 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/gtkspell/ChangeLog,v 1.92 2012/12/06 06:50:07 tetromino Exp $
+
+*gtkspell-3.0.0 (06 Dec 2012)
+
+  06 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gtkspell-2.0.16.ebuild, -gtkspell-3.0.0_pre20110814-r1.ebuild,
+  +gtkspell-3.0.0.ebuild:
+  Version bump to 3.0.0 official release; remove prerelease snapshot (bug
+  #444802, thanks to Jack). Remove useless doc USE flag.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gtkspell-2.0.16.ebuild,
+  gtkspell-3.0.0_pre20110814-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*gtkspell-3.0.0_pre20110814-r1 (27 Oct 2011)
+
+  27 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gtkspell-2.0.16.ebuild, +gtkspell-3.0.0_pre20110814-r1.ebuild:
+  Add prerelease of gtkspell-3 from the gnome overlay; the only real change is
+  that it's now gtk3-based. Sedding po/Makefile.in.in is no longer needed.
+  Update DESCRIPTION to reflect that all gtk versions are supported.
+
+  27 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gtkspell-2.0.16.ebuild:
+  Slot gtk2-based gtkspell to 2 in preparation for gtkspell-3.
+
+  18 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> gtkspell-2.0.16.ebuild:
+  Remove libgtkspell.la which is causing problems for libpng upgrade
+  (unnecessary reference of -lpng14 in dependency_libs)
 
   16 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
   gtkspell-2.0.16.ebuild:

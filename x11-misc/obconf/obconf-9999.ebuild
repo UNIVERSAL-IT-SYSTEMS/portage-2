@@ -1,14 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/obconf/obconf-9999.ebuild,v 1.7 2011/03/29 13:05:12 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/obconf/obconf-9999.ebuild,v 1.14 2012/05/16 18:34:12 hwoarang Exp $
 
 EAPI="2"
 
 WANT_AUTOMAKE="1.9"
-inherit autotools fdo-mime git
+inherit autotools fdo-mime git-2
 
 DESCRIPTION="ObConf is a tool for configuring the Openbox window manager."
-HOMEPAGE="http://icculus.org/openbox/index.php/ObConf:About"
+HOMEPAGE="http://openbox.org/wiki/ObConf:About"
 EGIT_REPO_URI="git://git.openbox.org/dana/obconf.git"
 
 LICENSE="GPL-2"
@@ -19,10 +19,10 @@ IUSE="nls"
 RDEPEND="gnome-base/libglade:2.0
 	x11-libs/gtk+:2
 	x11-libs/startup-notification
-	>=x11-wm/openbox-3.4.2"
+	=x11-wm/openbox-9999"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	eautopoint

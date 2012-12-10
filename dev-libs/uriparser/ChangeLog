@@ -1,6 +1,37 @@
 # ChangeLog for dev-libs/uriparser
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/uriparser/ChangeLog,v 1.30 2011/06/14 18:52:46 sping Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/uriparser/ChangeLog,v 1.38 2012/08/03 17:00:58 kensington Exp $
+
+  03 Aug 2012; Michael Palimaka <kensington@gentoo.org> uriparser-0.7.5.ebuild,
+  uriparser-0.7.6.ebuild, uriparser-0.7.7.ebuild:
+  Add missing slot dependencies on Qt.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> uriparser-0.7.5.ebuild,
+  uriparser-0.7.6.ebuild, uriparser-0.7.7.ebuild:
+  Drop sparc keywords
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> uriparser-0.7.7.ebuild:
+  Marking uriparser-0.7.7 ppc for bug 418769
+
+  04 Jun 2012; Johannes Huber <johu@gentoo.org> uriparser-0.7.7.ebuild:
+  Stable for x86, wrt bug #418769
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> uriparser-0.7.7.ebuild:
+  Stable for amd64, wrt bug #418769
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> uriparser-0.7.5.ebuild,
+  uriparser-0.7.6.ebuild, uriparser-0.7.7.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*uriparser-0.7.7 (04 Apr 2012)
+
+  04 Apr 2012; Sebastian Pipping <sping@gentoo.org> +uriparser-0.7.7.ebuild:
+  Bump to 0.7.7
+
+*uriparser-0.7.6 (20 Jan 2012)
+
+  20 Jan 2012; Sebastian Pipping <sping@gentoo.org> +uriparser-0.7.6.ebuild:
+  Bump to 0.7.6
 
   14 Jun 2011; Sebastian Pipping <sping@gentoo.org> uriparser-0.7.5.ebuild,
   +files/uriparser-0.7.5-no-gifs.patch:
@@ -132,4 +163,3 @@
   09 Apr 2007; Robert Buchholz <rbu@gentoo.org> +metadata.xml,
   +uriparser-0.3.3.ebuild:
   Initial ebuild, needed for >media-libs/libspiff-0.6.1
-

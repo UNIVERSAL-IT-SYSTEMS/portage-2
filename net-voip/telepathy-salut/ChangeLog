@@ -1,6 +1,94 @@
 # ChangeLog for net-voip/telepathy-salut
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/telepathy-salut/ChangeLog,v 1.23 2011/07/25 11:11:43 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-voip/telepathy-salut/ChangeLog,v 1.45 2012/11/17 20:51:44 pacho Exp $
+
+*telepathy-salut-0.8.1 (17 Nov 2012)
+
+  17 Nov 2012; Pacho Ramos <pacho@gentoo.org> +telepathy-salut-0.8.1.ebuild,
+  -telepathy-salut-0.6.0.ebuild:
+  Version bump, workaround parallel install bug (#413581), remove old.
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> telepathy-salut-0.8.0.ebuild:
+  ia64/sparc stable wrt #427544
+
+  16 Oct 2012; Matt Turner <mattst88@gentoo.org> telepathy-salut-0.8.0.ebuild:
+  Stable on alpha, bug 427544.
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  telepathy-salut-0.8.0.ebuild:
+  stable ppc, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> telepathy-salut-0.8.0.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  telepathy-salut-0.8.0.ebuild:
+  x86 stable wrt bug #427544
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> telepathy-salut-0.6.0.ebuild,
+  telepathy-salut-0.8.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*telepathy-salut-0.8.0 (23 Apr 2012)
+
+  23 Apr 2012; Pacho Ramos <pacho@gentoo.org> +telepathy-salut-0.8.0.ebuild,
+  -telepathy-salut-0.5.0.ebuild, -telepathy-salut-0.5.1.ebuild,
+  -telepathy-salut-0.5.2.ebuild:
+  Version bump, remove old.
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> telepathy-salut-0.6.0.ebuild:
+  alpha/ia64/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> telepathy-salut-0.6.0.ebuild:
+  Marking telepathy-salut-0.6.0 ppc stable for bug 393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> telepathy-salut-0.6.0.ebuild:
+  x86 stable, bug #393007
+
+  05 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  telepathy-salut-0.6.0.ebuild,
+  +files/telepathy-salut-0.6.0-glib-gtypes.h.patch:
+  Fix building tests with >=glib-2.31 (bug #397765, thanks to Mathias for
+  reporting).
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> telepathy-salut-0.6.0.ebuild:
+  amd64 stable, bug 393007
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> telepathy-salut-0.5.1.ebuild:
+  alpha/ia64/sparc stable wrt #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  telepathy-salut-0.5.1.ebuild:
+  x86 stable wrt bug #385699
+
+*telepathy-salut-0.6.0 (18 Oct 2011)
+
+  18 Oct 2011; Pacho Ramos <pacho@gentoo.org> +telepathy-salut-0.6.0.ebuild:
+  Version bump.
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  telepathy-salut-0.5.1.ebuild:
+  ppc stable wrt #385699
+
+*telepathy-salut-0.5.2 (15 Oct 2011)
+
+  15 Oct 2011; Pacho Ramos <pacho@gentoo.org> -telepathy-salut-0.4.0.ebuild,
+  +telepathy-salut-0.5.2.ebuild:
+  Version bump, remove old.
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  telepathy-salut-0.5.1.ebuild:
+  amd64 stable wrt #385699
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  telepathy-salut-0.5.0.ebuild:
+  ppc stable wrt #369909
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> telepathy-salut-0.5.0.ebuild:
+  alpha/ia64/sparc stable wrt #369909
+
+  06 Aug 2011; Zac Medico <zmedico@gentoo.org> telepathy-salut-0.5.1.ebuild:
+  Require avahi[dbus] and add ~x86-linux keyword.
 
 *telepathy-salut-0.5.1 (25 Jul 2011)
 
@@ -102,4 +190,3 @@
   18 Apr 2009; Gilles Dartiguelongue <eva@gentoo.org> +metadata.xml,
   +telepathy-salut-0.3.8.ebuild:
   Initial ebuild.
-

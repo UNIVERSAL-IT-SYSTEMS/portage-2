@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/mini-qmail/mini-qmail-1.06.ebuild,v 1.3 2011/03/28 08:46:35 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/mini-qmail/mini-qmail-1.06.ebuild,v 1.10 2012/11/06 11:15:43 eras Exp $
 
 GENQMAIL_PV=20080406
 
@@ -17,7 +17,7 @@ SRC_URI="mirror://qmail/netqmail-${PV}.tar.gz
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~mips ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 arm hppa ~mips ~ppc ~x86"
 IUSE=""
 
 DEPEND=""
@@ -25,8 +25,8 @@ RDEPEND="
 	!mail-mta/courier
 	!mail-mta/esmtp
 	!mail-mta/exim
+	!mail-mta/maildrop
 	!mail-mta/msmtp
-	!mail-mta/nbsmtp
 	!mail-mta/netqmail
 	!mail-mta/nullmailer
 	!mail-mta/postfix
@@ -44,9 +44,7 @@ src_unpack() {
 	unpack netqmail-${PV}.tar.gz
 	cd "${S}"
 
-	epatch "${FILESDIR}"/${PV}-exit.patch
-
-	ht_fix_file Makefile*
+	epatch "${FILESDIR}"/${PV}-headers.patch
 
 	qmail_src_postunpack
 }
@@ -54,6 +52,9 @@ src_unpack() {
 src_compile() {
 	qmail_src_compile
 }
+
+# make check is actually an install-check target, see bug #364955
+src_test() { :; }
 
 qmail_base_install_hook() {
 	dosym qmail-qmqpc "${QMAIL_HOME}"/bin/qmail-queue

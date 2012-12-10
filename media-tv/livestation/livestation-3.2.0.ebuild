@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/livestation/livestation-3.2.0.ebuild,v 1.1 2011/03/13 15:20:11 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/livestation/livestation-3.2.0.ebuild,v 1.4 2012/09/24 00:45:33 vapier Exp $
 
-inherit eutils
+inherit eutils unpacker
 
 DESCRIPTION="Watch live, interactive TV and radio on the Livestation player"
 HOMEPAGE="http://www.livestation.com"
@@ -22,21 +22,12 @@ DEPEND=""
 MY_PN=${PN/l/L}
 
 QA_TEXTRELS="opt/${MY_PN}/lib/*"
-QA_DT_HASH="opt/${MY_PN}/${MY_PN}.bin opt/${MY_PN}/lib/.* opt/${MY_PN}/plugins/imageformats/.*"
+QA_FLAGS_IGNORED="opt/${MY_PN}/${MY_PN}.bin opt/${MY_PN}/lib/.* opt/${MY_PN}/plugins/imageformats/.*"
 QA_PRESTRIPPED="opt/${MY_PN}/${MY_PN}.bin opt/${MY_PN}/lib/.* opt/${MY_PN}/plugins/imageformats/.*"
 
 RESTRICT="mirror"
-PROPERTIES="interactive"
 
 S=${WORKDIR}/i386
-
-pkg_setup() {
-	check_license Livestation-EULA
-}
-
-src_unpack() {
-	unpack_makeself
-}
 
 src_install() {
 	local dest=/opt/${MY_PN}

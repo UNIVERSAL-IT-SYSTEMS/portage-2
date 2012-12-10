@@ -1,6 +1,24 @@
 # ChangeLog for sys-apps/pcsc-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pcsc-tools/ChangeLog,v 1.11 2011/04/15 18:23:53 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pcsc-tools/ChangeLog,v 1.14 2012/06/16 16:07:15 flameeyes Exp $
+
+*pcsc-tools-1.4.20 (16 Jun 2012)
+
+  16 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +pcsc-tools-1.4.20.ebuild:
+  Version bump.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> pcsc-tools-1.4.17-r2.ebuild,
+  pcsc-tools-1.4.18.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*pcsc-tools-1.4.18 (18 Dec 2011)
+
+  18 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  +pcsc-tools-1.4.18.ebuild:
+  Version bump; this version uses the latest smartcard_list already so no new
+  one has to be added, and future versions can get it through the SVN interface
+  instead.
 
 *pcsc-tools-1.4.17-r2 (15 Apr 2011)
 

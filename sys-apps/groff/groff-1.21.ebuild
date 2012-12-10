@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/groff/groff-1.21.ebuild,v 1.8 2011/05/07 18:02:54 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/groff/groff-1.21.ebuild,v 1.11 2012/11/13 19:52:24 vapier Exp $
 
 inherit autotools eutils toolchain-funcs
 
@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
 IUSE="examples X linguas_ja"
 
-DEPEND=">=sys-apps/texinfo-4.7-r1
+RDEPEND=">=sys-apps/texinfo-4.7-r1
 	X? (
 		x11-libs/libX11
 		x11-libs/libXt
@@ -23,12 +23,15 @@ DEPEND=">=sys-apps/texinfo-4.7-r1
 		x11-libs/libSM
 		x11-libs/libICE
 	)"
+DEPEND="${RDEPEND}
+	linguas_ja? ( virtual/yacc )"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
 	epatch "${FILESDIR}"/${PN}-1.19.2-man-unicode-dashes.patch #16108 #17580 #121502
+	epatch "${FILESDIR}"/${PN}-1.20.1-pdfmark-parallel.patch
 
 	# Make sure we can cross-compile this puppy
 	if tc-is-cross-compiler ; then
@@ -53,6 +56,8 @@ src_unpack() {
 		eautoconf
 		eautoheader
 	fi
+
+	epatch "${FILESDIR}"/${PN}-1.21-gnulib-cross.patch #363647
 }
 
 src_compile() {

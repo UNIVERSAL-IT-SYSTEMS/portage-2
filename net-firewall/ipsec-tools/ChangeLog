@@ -1,6 +1,131 @@
 # ChangeLog for net-firewall/ipsec-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/ipsec-tools/ChangeLog,v 1.77 2011/06/06 00:24:56 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/ipsec-tools/ChangeLog,v 1.105 2012/09/28 00:45:26 blueness Exp $
+
+*ipsec-tools-0.8.0-r5 (28 Sep 2012)
+
+  28 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  +ipsec-tools-0.8.0-r5.ebuild, +files/ipsec-tools.conf,
+  +files/racoon.conf.d-r1, +files/racoon.init.d-r2:
+  Fix bug #435398 and #436144
+
+  27 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  -ipsec-tools-0.7.3.ebuild, -ipsec-tools-0.7.3-r1.ebuild,
+  -files/ipsec-tools-duplicate-header.patch:
+  Remove older unstable version
+
+  25 Sep 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/ipsec-tools-0.8.0-sysctl.patch, ipsec-tools-0.8.0-r4.ebuild:
+  Drop useless sysctl.h includes #425770 by devsk.
+
+  16 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  ipsec-tools-0.8.0-r3.ebuild:
+  Stable arm
+
+*ipsec-tools-0.8.0-r4 (16 Sep 2012)
+
+  16 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  +ipsec-tools-0.8.0-r4.ebuild, +files/racoon.init.d-r1:
+  Improve init.d script, bug #435174
+
+  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  ipsec-tools-0.8.0-r3.ebuild:
+  Keyword ~arm
+
+  17 Jul 2012; Jeff Horelick <jdhore@gentoo.org> ipsec-tools-0.8.0-r3.ebuild:
+  marked x86 per bug 326647
+
+  15 Jul 2012; Agostino Sarubbo <ago@gentoo.org> ipsec-tools-0.8.0-r3.ebuild:
+  Stable for amd64, wrt bug #326647
+
+  12 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  ipsec-tools-0.8.0-r3.ebuild:
+  Keyword ~mips
+
+  12 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  ipsec-tools-0.8.0-r3.ebuild:
+  Stable ppc/ppc64
+
+  12 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  ipsec-tools-0.7.3.ebuild, ipsec-tools-0.7.3-r1.ebuild,
+  ipsec-tools-0.8.0-r3.ebuild:
+  Add GPL-2 for init scripts, bug #426026
+
+  13 May 2012; <swift@gentoo.org> ipsec-tools-0.7.3.ebuild,
+  ipsec-tools-0.7.3-r1.ebuild, ipsec-tools-0.8.0-r3.ebuild:
+  SELinux policy module for ipsec related tools is provided by selinux-ipsec
+
+  20 Mar 2012; Jeroen Roovers <jer@gentoo.org> ipsec-tools-0.7.3.ebuild,
+  ipsec-tools-0.7.3-r1.ebuild:
+  Sort IUSE entries. Remove IUSE=selinux duplicate by zvasylvv (bug #408871).
+
+  10 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  ipsec-tools-0.8.0-r3.ebuild:
+  Tested on ppc64
+
+  10 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  -ipsec-tools-0.8.0-r1.ebuild:
+  Remove older unstable version
+
+  09 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  ipsec-tools-0.8.0-r3.ebuild:
+  Tested on ppc
+
+  09 Mar 2012; Anthony G. Basile <blueness@gentoo.org> files/racoon.conf.d:
+  Remove option for IPv4 only
+
+  08 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  -ipsec-tools-0.8.0-r2.ebuild, -files/ipsec-tools-system-kernel-headers.patch:
+  Remove poor approach to kernel headers
+
+*ipsec-tools-0.8.0-r3 (08 Mar 2012)
+
+  08 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  +ipsec-tools-0.8.0-r3.ebuild, +files/ipsec.conf, +files/psk.txt,
+  +files/racoon.conf:
+  Install simple configs so it racoon runs out of the box
+
+  06 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  -ipsec-tools-0.8.0.ebuild:
+  Remove ebuild that doesn't address bugs #210826 and #335510
+
+*ipsec-tools-0.8.0-r2 (06 Mar 2012)
+
+  06 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  +ipsec-tools-0.8.0-r2.ebuild, +files/ipsec-tools-system-kernel-headers.patch:
+  Use system linux header files rather than those in /usr/src/linux.
+
+  04 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  ipsec-tools-0.8.0-r1.ebuild:
+  Make linux-info output easy to interpret, bug #335510
+
+  04 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  ipsec-tools-0.8.0-r1.ebuild:
+  Install pam.d/racoon only if USE=pam is set
+
+*ipsec-tools-0.8.0-r1 (28 Feb 2012)
+
+  28 Feb 2012; Anthony G. Basile <blueness@gentoo.org>
+  +ipsec-tools-0.8.0-r1.ebuild, +files/ipsec-tools-def-psk.patch,
+  +files/ipsec-tools-include-vendoridh.patch, +files/racoon.pam.d:
+  Address bugs #210826 and #403509
+
+*ipsec-tools-0.8.0 (09 Feb 2012)
+
+  09 Feb 2012; Anthony G. Basile <blueness@gentoo.org>
+  +ipsec-tools-0.8.0.ebuild:
+  Version bump, bug #365077
+
+  07 Feb 2012; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
+  Added myself as maintainer, bug #365077
+
+  10 Jan 2012; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  Patents on IDEA have expired, change USE flag description accordingly.
+
+  06 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  ipsec-tools-0.7.3-r1.ebuild:
+  Cleanup: bump to EAPI-4, make kernel-related error message more accurate and
+  informative, fix dodoc QA warnings (bug #377235 by flameeyes).
 
   06 Jun 2011; Robin H. Johnson <robbat2@gentoo.org> ipsec-tools-0.7.3.ebuild,
   ipsec-tools-0.7.3-r1.ebuild:
@@ -347,4 +472,3 @@
   This is the initial commit of ipsec-tools. Thanks for this ebuild go to all
   those involved in testing and developing it, please see Gentoo bug #26796 for
   details.
-

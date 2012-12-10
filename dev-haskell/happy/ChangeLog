@@ -1,6 +1,54 @@
 # ChangeLog for dev-haskell/happy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/happy/ChangeLog,v 1.49 2011/02/28 04:59:33 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/happy/ChangeLog,v 1.61 2012/11/18 14:00:29 gienah Exp $
+
+*happy-1.18.10 (18 Nov 2012)
+
+  18 Nov 2012; Mark Wright <gienah@gentoo.org> +happy-1.18.10.ebuild:
+  Bump happy to 1.8.10
+
+  14 Sep 2012; Mark Wright <gienah@gentoo.org>
+  +files/happy-1.18.9-ghc-7.5.patch, happy-1.18.9.ebuild:
+  Patch happy 1.18.9 build for ghc 7.6.1
+
+  14 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> happy-1.18.2.ebuild,
+  happy-1.18.4.ebuild, happy-1.18.6.ebuild, happy-1.18.9.ebuild:
+  adding mirror://hackage
+
+  09 Aug 2012; Andreas Schuerch <nativemad@gentoo.org> happy-1.18.9.ebuild:
+  x86 stable, see bug 418697
+
+  09 Aug 2012; Sergei Trofimovich <slyfox@gentoo.org> happy-1.18.9.ebuild:
+  Stable on alpha/ia64/sparc (bug #418697)
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> happy-1.18.9.ebuild:
+  Marking happy-1.18.9 ppc for bug 418697
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> happy-1.18.9.ebuild:
+  Marking happy-1.18.9 ppc64 for bug 418697
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> happy-1.18.9.ebuild:
+  Stable on amd64 wrt bug #418697
+
+*happy-1.18.9 (26 Mar 2012)
+
+  26 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/happy-1.18.9-missing-tests.patch, +happy-1.18.9.ebuild, metadata.xml:
+  Version bump. Compatible with ghc-7.4 (noticed by xvilka).
+
+  05 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> happy-1.18.6.ebuild:
+  Fix build failure for USE=-doc case. Discovered and fixed by Yvan Royon, bug
+  #377827.
+
+*happy-1.18.6 (02 Aug 2011)
+
+  02 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> +happy-1.18.6.ebuild,
+  +files/happy-1.18.6-man.patch, +files/happy-1.18.6-missing-tests.patch:
+  Version bump.
+
+  02 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org>
+  -files/happy-1.15-ghc66.patch:
+  Removed stale patch.
 
   28 Feb 2011; Sergei Trofimovich <slyfox@gentoo.org> -happy-1.15.ebuild,
   -happy-1.16.ebuild, -happy-1.17.ebuild:

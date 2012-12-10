@@ -1,6 +1,40 @@
 # ChangeLog for dev-libs/libgweather
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgweather/ChangeLog,v 1.79 2011/06/04 18:38:23 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgweather/ChangeLog,v 1.86 2012/08/21 03:54:21 ottxor Exp $
+
+  21 Aug 2012; Christoph Junghans <ottxor@gentoo.org> libgweather-3.4.1.ebuild:
+  added prefix keywords
+
+  21 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libgweather-2.30.3.ebuild:
+  Need eutils for epatch.
+
+*libgweather-3.4.1 (06 May 2012)
+
+  06 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libgweather-3.2.1.ebuild, +libgweather-3.4.1.ebuild:
+  Version bump, remove unneeded gtk-doc-am dep.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> libgweather-2.30.3.ebuild,
+  libgweather-3.2.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*libgweather-3.2.1 (30 Oct 2011)
+
+  30 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -libgweather-3.0.2.ebuild, +libgweather-3.2.1.ebuild:
+  Bump to 3.2.1 from the gnome overlay, drop old. Fixes fetching weather
+  updates for UK and Australia.
+
+  19 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libgweather-2.30.3.ebuild:
+  Depend on correct slot of pygobject.
+
+*libgweather-3.0.2 (18 Aug 2011)
+
+  18 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +libgweather-3.0.2.ebuild, metadata.xml:
+  Bump to 3.0.2, from gnome overlay for GNOME 3
 
   04 Jun 2011; Pacho Ramos <pacho@gentoo.org> -libgweather-2.30.2.ebuild,
   libgweather-2.30.3.ebuild:
@@ -314,4 +348,3 @@
   +libgweather-2.22.0.ebuild:
   New ebuild for GNOME-2.22. Library to access weather information from
   online services.
-

@@ -1,6 +1,78 @@
 # ChangeLog for app-text/iso-codes
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/iso-codes/ChangeLog,v 1.109 2011/07/17 20:41:23 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/iso-codes/ChangeLog,v 1.131 2012/10/28 15:23:48 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> iso-codes-3.37.ebuild:
+  ia64/sh/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> iso-codes-3.37.ebuild:
+  stable ppc, bug #427544
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> iso-codes-3.37.ebuild:
+  Stable on alpha, bug 427544.
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> iso-codes-3.37.ebuild:
+  stable ppc64, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> iso-codes-3.37.ebuild:
+  arm stable, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> iso-codes-3.37.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> iso-codes-3.37.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> iso-codes-3.37.ebuild:
+  Stable for HPPA (bug #427544).
+
+  01 Oct 2012; Fabian Groffen <grobian@gentoo.org> iso-codes-3.37.ebuild:
+  Marked ~x64-macos
+
+*iso-codes-3.37 (30 Jun 2012)
+
+  30 Jun 2012; Pacho Ramos <pacho@gentoo.org> +iso-codes-3.37.ebuild,
+  -iso-codes-3.24.2.ebuild:
+  Version bump, remove old.
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> iso-codes-3.30.ebuild:
+  keyword ~amd64-fbsd
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> iso-codes-3.30.ebuild:
+  alpha/ia64/sh/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> iso-codes-3.30.ebuild:
+  Marking iso-codes-3.30 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> iso-codes-3.30.ebuild:
+  Marking iso-codes-3.30 ppc64 stable for bug 393007
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> iso-codes-3.30.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> iso-codes-3.30.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> iso-codes-3.30.ebuild:
+  amd64 stable, bug 393007
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> iso-codes-3.30.ebuild:
+  Stable for HPPA (bug #393007).
+
+*iso-codes-3.30 (19 Nov 2011)
+
+  19 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org> -iso-codes-3.24.ebuild,
+  +iso-codes-3.30.ebuild:
+  Version bump. Remove old revision.
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> iso-codes-3.24.2.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> iso-codes-3.24.2.ebuild:
+  Stable for HPPA (bug #369909).
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> iso-codes-3.24.2.ebuild:
+  alpha/ia64/sh/sparc stable wrt #369909
 
   17 Jul 2011; Markus Meier <maekke@gentoo.org> iso-codes-3.24.2.ebuild:
   arm stable, bug #369909
@@ -412,4 +484,3 @@
   First commit to tree. This package contains SO-639 Language code list, the
   ISO-3166 Territory code list, and ISO-3166-2 sub-territory lists, and all
   their translations in gettext .po form
-

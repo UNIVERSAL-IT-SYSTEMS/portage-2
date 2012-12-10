@@ -1,13 +1,41 @@
 # ChangeLog for dev-ada/asis-gcc
-# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ada/asis-gcc/ChangeLog,v 1.13 2008/09/05 06:31:20 opfer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ada/asis-gcc/ChangeLog,v 1.20 2012/06/14 13:08:30 george Exp $
+
+  14 Jun 2012; George Shapovalov <george@gentoo.org> asis-gcc-4.4.ebuild:
+  the 4.4 needs this catch too.
+
+  14 Jun 2012; George Shapovalov <george@gentoo.org> asis-gcc-4.3.1-r1.ebuild:
+  added pkg_setup check to prevent build failure against already installed
+  version
+
+*asis-gcc-4.4 (27 Apr 2012)
+
+  27 Apr 2012; George Shapovalov <george@gentoo.org> +asis-gcc-4.4.ebuild:
+  new version, matching gnat-gcc:4.4
+
+*asis-gcc-4.3.1-r1 (27 Apr 2012)
+
+  27 Apr 2012; George Shapovalov <george@gentoo.org> +asis-gcc-4.3.1-r1.ebuild:
+  fix info collision upon update
+
+*asis-gcc-4.3.1 (19 Apr 2012)
+
+  19 Apr 2012; George Shapovalov <george@gentoo.org> +asis-gcc-4.3.1.ebuild:
+  new version; converging all asis to AdaCore variant, as offcite support has,
+  apparently, ceased
+
+  10 Apr 2012; George Shapovalov <george@gentoo.org> asis-gcc-3.4.6.ebuild,
+  asis-gcc-4.1.2-r1.ebuild, asis-gcc-4.1.2.ebuild, asis-gcc-4.2.2.ebuild,
+  asis-gcc-4.3.0_pre132166.ebuild:
+  cleaned mirror: from SRC_URIs
 
   05 Sep 2008; Christian Faulhammer <opfer@gentoo.org>
   asis-gcc-3.4.6.ebuild, asis-gcc-4.1.1.ebuild, asis-gcc-4.1.2.ebuild,
   asis-gcc-4.1.2-r1.ebuild, asis-gcc-4.2.2.ebuild:
   change dependency from virtual/tetex to virtual/latex-base for all ebuilds
 
-  16 Apr 2008; <portage-cvs@gentoo.org> asis-gcc-4.3.0_pre132166.ebuild:
+  16 Apr 2008; George Shapovalov <george@gentoo.org> asis-gcc-4.3.0_pre132166.ebuild:
   added DEPEND on ghostscript to make sure ps2pdf is provided. Changed
   DEPEND on tetex to latex-base.
 

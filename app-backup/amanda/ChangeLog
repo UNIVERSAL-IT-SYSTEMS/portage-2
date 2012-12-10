@@ -1,6 +1,51 @@
 # ChangeLog for app-backup/amanda
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.83 2011/07/13 13:15:14 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/ChangeLog,v 1.93 2012/10/01 08:30:07 phajdan.jr Exp $
+
+  01 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> amanda-3.3.1.ebuild:
+  x86 stable wrt bug #434756
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> amanda-2.6.0_p2-r4.ebuild,
+  amanda-3.2.1.ebuild:
+  Moved to ~sparc
+
+  30 Sep 2012; Anthony G. Basile <blueness@gentoo.org> amanda-3.3.1.ebuild:
+  stable ppc ppc64, bug #434756
+
+  30 Sep 2012; Agostino Sarubbo <ago@gentoo.org> amanda-3.3.1.ebuild:
+  Stable for amd64, wrt bug #434756
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> amanda-2.6.0_p2-r4.ebuild,
+  amanda-2.6.1_p2.ebuild, amanda-3.2.1.ebuild, amanda-3.2.2.ebuild,
+  amanda-3.3.0.ebuild, amanda-3.3.1.ebuild:
+  Inherit user for enewuser/etc...
+
+*amanda-3.3.1 (17 May 2012)
+
+  17 May 2012; Robin H. Johnson <robbat2@gentoo.org> +amanda-3.3.1.ebuild,
+  +files/amanda-r4593.patch, +files/amanda-r4595.patch,
+  +files/amanda-r4698.patch:
+  Bump with patches for bug #415587 glib breakage.
+
+  17 May 2012; Jeroen Roovers <jer@gentoo.org> amanda-3.2.1.ebuild,
+  amanda-3.2.2.ebuild:
+  Add missing dev-libs/libxslt dependency (bug #381307).
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> amanda-2.6.1_p2.ebuild,
+  amanda-3.2.1.ebuild, amanda-3.2.2.ebuild, amanda-3.3.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> amanda-2.6.1_p2.ebuild,
+  amanda-3.2.1.ebuild, amanda-3.2.2.ebuild, amanda-3.3.0.ebuild:
+  Disallow automagic testing of IPv6 working test when IPv6 build is requested.
+  Otherwise breaks the configure when building USE=ipv6 on a buildhost without
+  an IPv6 kernel.
+
+*amanda-3.3.0 (13 Oct 2011)
+
+  13 Oct 2011; Christian Ruppert <idl0r@gentoo.org> -amanda-3.1.2-r1.ebuild,
+  -amanda-3.1.3.ebuild, +amanda-3.3.0.ebuild:
+  Version bump to 3.3.0, fixes bug 361533 and bug 381307.
 
   13 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> amanda-3.2.1.ebuild:
   amd64/ppc/ppc64 stable wrt #359333

@@ -1,6 +1,41 @@
 # ChangeLog for app-vim/colorschemes
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-vim/colorschemes/ChangeLog,v 1.59 2011/07/25 18:33:44 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-vim/colorschemes/ChangeLog,v 1.69 2012/03/04 21:34:30 radhermit Exp $
+
+  04 Mar 2012; Tim Harder <radhermit@gentoo.org>
+  -colorschemes-20110506-r1.ebuild:
+  Remove old.
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> colorschemes-20111107.ebuild:
+  Marking colorschemes-20111107 ppc64 for bug 393567
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> colorschemes-20111107.ebuild:
+  Marking colorschemes-20111107 ppc for bug 393567
+
+  17 Dec 2011; Raúl Porcel <armin76@gentoo.org> colorschemes-20111107.ebuild:
+  alpha/ia64/sparc stable wrt #393567
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  colorschemes-20111107.ebuild:
+  x86 stable wrt bug #393567
+
+  13 Dec 2011; Jeroen Roovers <jer@gentoo.org> colorschemes-20111107.ebuild:
+  Stable for HPPA (bug #393567).
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org> colorschemes-20111107.ebuild:
+  Stable for AMD64, wrt bug #393567
+
+*colorschemes-20111107 (07 Nov 2011)
+
+  07 Nov 2011; Tim Harder <radhermit@gentoo.org> +colorschemes-20111107.ebuild:
+  Version bump.
+
+  18 Oct 2011; Tim Harder <radhermit@gentoo.org> -colorschemes-20100218.ebuild,
+  -colorschemes-20101121.ebuild:
+  Remove old.
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> colorschemes-20110506-r1.ebuild:
+  Stable for HPPA (bug #374193).
 
 *colorschemes-20110506-r1 (25 Jul 2011)
 

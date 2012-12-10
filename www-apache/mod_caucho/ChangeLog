@@ -1,6 +1,57 @@
 # ChangeLog for www-apache/mod_caucho
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_caucho/ChangeLog,v 1.60 2011/03/15 20:13:40 nelchael Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_caucho/ChangeLog,v 1.72 2012/11/27 19:10:45 pacho Exp $
+
+  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop apache herd as discussed in http://www.gossamer-
+  threads.com/lists/gentoo/dev/262834
+
+  16 Oct 2012; Patrick Lauer <patrick@gentoo.org> mod_caucho-4.0.26.ebuild:
+  Adding jre dep to make mod_caucho build
+
+  12 Oct 2012; Patrick Lauer <patrick@gentoo.org> mod_caucho-4.0.13.ebuild,
+  mod_caucho-4.0.14.ebuild, mod_caucho-4.0.15.ebuild, mod_caucho-4.0.22.ebuild,
+  mod_caucho-4.0.25.ebuild, mod_caucho-4.0.26.ebuild:
+  Restricting to apache 2.2
+
+  21 Aug 2012; Johannes Huber <johu@gentoo.org> mod_caucho-4.0.26.ebuild:
+  Stable for x86, wrt bug #422239
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> mod_caucho-4.0.26.ebuild:
+  Stable for amd64, wrt bug #422239
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  mod_caucho-4.0.22.ebuild:
+  x86 stable wrt bug #400517
+
+*mod_caucho-4.0.26 (04 Mar 2012)
+
+  04 Mar 2012; Krzysztof Pawlik <nelchael@gentoo.org>
+  +mod_caucho-4.0.26.ebuild:
+  Version bump.
+
+  23 Feb 2012; Agostino Sarubbo <ago@gentoo.org> mod_caucho-4.0.22.ebuild:
+  Stable for amd64, wrt bug #400517
+
+  22 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org> mod_caucho-4.0.22.ebuild,
+  mod_caucho-4.0.25.ebuild:
+  Fix bug #404533 and bug #405193: compilation without JDK and using LDFLAGS.
+
+  17 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org> mod_caucho-4.0.22.ebuild,
+  mod_caucho-4.0.25.ebuild:
+  Fix building on amd64.
+
+*mod_caucho-4.0.25 (11 Feb 2012)
+
+  11 Feb 2012; Krzysztof Pawlik <nelchael@gentoo.org>
+  +mod_caucho-4.0.25.ebuild:
+  Version bump.
+
+*mod_caucho-4.0.22 (06 Sep 2011)
+
+  06 Sep 2011; Krzysztof Pawlik <nelchael@gentoo.org>
+  +mod_caucho-4.0.22.ebuild:
+  Version bump.
 
 *mod_caucho-4.0.15 (15 Mar 2011)
 
@@ -319,4 +370,3 @@
   +files/88_mod_caucho.conf, +files/mod_caucho-3.0.19-gentoo.patch,
   +metadata.xml, +mod_caucho-3.0.19.ebuild:
   Initial version.
-

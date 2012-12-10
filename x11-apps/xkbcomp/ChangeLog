@@ -1,6 +1,34 @@
 # ChangeLog for x11-apps/xkbcomp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-apps/xkbcomp/ChangeLog,v 1.92 2011/06/22 12:24:53 chithanh Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-apps/xkbcomp/ChangeLog,v 1.100 2012/05/10 17:09:35 aballier Exp $
+
+  10 May 2012; Alexis Ballier <aballier@gentoo.org> xkbcomp-1.2.4.ebuild:
+  keyword ~amd64-fbsd
+
+*xkbcomp-1.2.4 (26 Mar 2012)
+
+  26 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> +xkbcomp-1.2.4.ebuild,
+  -xkbcomp-1.2.1.ebuild:
+  Version bump to latest and remove overshadowed version.
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> xkbcomp-1.2.3.ebuild:
+  Marked ppc ppc64 stable for bug #380421.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> xkbcomp-1.2.3.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #380421
+
+  21 Sep 2011; Jeroen Roovers <jer@gentoo.org> xkbcomp-1.2.3.ebuild:
+  Stable for HPPA (bug #380421).
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org> xkbcomp-1.2.3.ebuild:
+  arm stable, bug #380421
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> xkbcomp-1.2.3.ebuild:
+  x86 stable, bug #380421
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> xkbcomp-1.2.3.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380421 filed by Chí-Thanh Christopher Nguyễn.
 
 *xkbcomp-1.2.3 (22 Jun 2011)
 

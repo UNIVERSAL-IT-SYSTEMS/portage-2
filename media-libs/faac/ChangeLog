@@ -1,6 +1,65 @@
 # ChangeLog for media-libs/faac
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/faac/ChangeLog,v 1.81 2011/03/06 11:29:18 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/faac/ChangeLog,v 1.97 2012/09/16 17:56:06 ssuominen Exp $
+
+  16 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> -faac-1.28-r1.ebuild:
+  old
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> faac-1.28-r3.ebuild:
+  alpha/ia64/sh/sparc stable wrt #419077
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> faac-1.28-r3.ebuild:
+  Marking faac-1.28-r3 ppc for bug 419077
+
+  06 Jun 2012; Markus Meier <maekke@gentoo.org> faac-1.28-r3.ebuild:
+  arm stable, bug #419077
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org> faac-1.28-r3.ebuild:
+  Stable for HPPA (bug #419077).
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> faac-1.28-r3.ebuild:
+  marked x86 per bug 419077
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> faac-1.28-r3.ebuild:
+  Marking faac-1.28-r3 ppc64 for bug 419077
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> faac-1.28-r3.ebuild:
+  Stable for amd64, wrt bug #419077
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org> faac-1.28-r1.ebuild,
+  faac-1.28-r3.ebuild:
+  Ensure libmp4v2 headers are present by forcing correct SLOT wrt #415935 by
+  Robert Cabrera
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> faac-1.28-r3.ebuild:
+  keyword ~amd64-fbsd
+
+  29 Apr 2012; Fabian Groffen <grobian@gentoo.org>
+  +files/faac-1.28-inttypes.patch, faac-1.28-r3.ebuild:
+  Add inttypes patch for Solaris, added Prefix keywords, bug #413591
+
+  21 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> faac-1.28-r1.ebuild:
+  Change libmp4v2 depend to more strict variant because this is not compatible
+  with 1.9.1_p479.
+
+  23 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> -faac-1.28-r2.ebuild:
+  old
+
+*faac-1.28-r3 (23 Feb 2012)
+
+  23 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +faac-1.28-r3.ebuild,
+  files/faac-1.28-libmp4v2_r479_compat.patch:
+  Replace compability patch with upstream version.
+
+*faac-1.28-r2 (20 Jan 2012)
+
+  20 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +faac-1.28-r2.ebuild,
+  +files/faac-1.28-libmp4v2_r479_compat.patch:
+  Initial attempt at supporting libmp4v2 revision r479 wrt #397575 by Jaakko
+  Perttilä
+
+  07 Jan 2012; Ulrich Mueller <ulm@gentoo.org> faac-1.28-r1.ebuild:
+  Add MPEG-4 to LICENSE and change LGPL-2 to LGPL-2.1, bug 357779.
 
   06 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org> faac-1.28-r1.ebuild,
   +files/faac-1.28-altivec.patch:

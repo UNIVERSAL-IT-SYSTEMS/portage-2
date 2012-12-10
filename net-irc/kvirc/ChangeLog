@@ -1,6 +1,59 @@
 # ChangeLog for net-irc/kvirc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/kvirc/ChangeLog,v 1.136 2011/06/23 15:13:53 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/kvirc/ChangeLog,v 1.150 2012/09/26 23:02:28 floppym Exp $
+
+*kvirc-4.4_pre6250 (26 Sep 2012)
+
+  26 Sep 2012; Mike Gilbert <floppym@gentoo.org> +kvirc-4.4_pre6250.ebuild:
+  Version bump. Ebuild by Arfrever.
+
+  26 Jul 2012; Michael Palimaka <kensington@gentoo.org>
+  kvirc-4.2_pre6066.ebuild, kvirc-9999.ebuild:
+  Add missing slot dependencies on Qt.
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> kvirc-4.2_pre6066.ebuild,
+  kvirc-9999.ebuild:
+  inherit flag-o-matic for append-flags
+
+  26 May 2012; Mike Gilbert <floppym@gentoo.org> kvirc-4.2_pre6066.ebuild,
+  kvirc-9999.ebuild:
+  Sort USE flags. Patch by Arfrever.
+
+  26 May 2012; Mike Gilbert <floppym@gentoo.org> -kvirc-4.2_pre5816.ebuild:
+  Remove old version per Arfrever.
+
+  25 May 2012; Markos Chandras <hwoarang@gentoo.org> kvirc-4.2_pre5816.ebuild,
+  kvirc-4.2_pre6066.ebuild, kvirc-9999.ebuild, metadata.xml:
+  Rename qt-webkit to webkit per bug #415135
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> kvirc-4.2_pre5816.ebuild,
+  kvirc-4.2_pre6066.ebuild, kvirc-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  05 Apr 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  kvirc-4.2_pre6066.ebuild:
+  x86 stable wrt bug #408789
+
+  24 Mar 2012; Agostino Sarubbo <ago@gentoo.org> kvirc-4.2_pre6066.ebuild:
+  Stable for amd64, wrt bug #408789
+
+*kvirc-4.2_pre6066 (11 Feb 2012)
+
+  11 Feb 2012; Mike Gilbert <floppym@gentoo.org> +kvirc-4.2_pre6066.ebuild:
+  Version bump. Ebuild by Arfrever.
+
+  11 Feb 2012; Mike Gilbert <floppym@gentoo.org> kvirc-9999.ebuild:
+  Update ebuild. Patch by Arfrever.
+
+  04 Feb 2012; Markos Chandras <hwoarang@gentoo.org> kvirc-4.2_pre5816.ebuild:
+  Convert to EAPI4 so we can use REQUIRED_USE to force certain useflag
+  combinations. Bug #327231
+
+  18 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Add Arfrever as proxy maintainer with proxy-maintainers as herd.
+
+  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #246793
 
   23 Jun 2011; Markos Chandras <hwoarang@gentoo.org> -kvirc-4.2_pre5727.ebuild:
   Remove old ebuilds. Requested by Arfrever
@@ -624,4 +677,3 @@
  
   13 Jul 2003; Daniel Ahlberg <aliz@gentoo.org> :
   Added missing changelog entry.
-

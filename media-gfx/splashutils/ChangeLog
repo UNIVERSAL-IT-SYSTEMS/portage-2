@@ -1,6 +1,66 @@
 # ChangeLog for media-gfx/splashutils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/splashutils/ChangeLog,v 1.193 2011/07/23 22:36:21 spock Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/splashutils/ChangeLog,v 1.208 2012/12/07 19:44:42 ago Exp $
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> splashutils-1.5.4.4-r1.ebuild:
+  Stable for ppc, wrt bug #422921
+
+  30 Nov 2012; Michael Weber <xmw@gentoo.org> -splashutils-1.5.4.4-r3.ebuild:
+  Remove broken version
+
+*splashutils-1.5.4.4-r3 (30 Nov 2012)
+
+  30 Nov 2012; Michael Weber <xmw@gentoo.org> +splashutils-1.5.4.4-r3.ebuild,
+  +files/splashutils-1.5.4.4-r3-bzip2.patch:
+  Revbump to add -lbz2 to libfbsplashrender.pc (bug 408283)
+
+  28 Oct 2012; Markos Chandras <hwoarang@gentoo.org>
+  splashutils-1.5.4.4-r1.ebuild:
+  Stable on amd64 wrt bug #422921
+
+*splashutils-1.5.4.4-r2 (26 Oct 2012)
+
+  26 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +splashutils-1.5.4.4-r2.ebuild:
+  Revision bump to -r2 with EAPI=4 to use USE deps defaults; add a use dep on
+  static-libs for sys-libs/gpm as well.
+
+  21 Oct 2012; Markus Meier <maekke@gentoo.org> splashutils-1.5.4.4-r1.ebuild:
+  x86 stable, bug #422921
+
+*splashutils-1.5.4.4-r1 (22 May 2012)
+
+  22 May 2012; Michael Weber <xmw@gentoo.org> +splashutils-1.5.4.4-r1.ebuild,
+  +files/splashutils-1.5.4.4-bzip2.patch:
+  Revbump to fix bug 408283 and bug 412383 (non-maint commit)
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> splashutils-1.5.4.3-r3.ebuild,
+  splashutils-1.5.4.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> splashutils-1.5.4.4.ebuild:
+  Marking splashutils-1.5.4.4 ppc for bug 387633
+
+  13 Nov 2011; Markus Meier <maekke@gentoo.org> splashutils-1.5.4.4.ebuild:
+  x86 stable, bug #387633
+
+  12 Nov 2011; Markos Chandras <hwoarang@gentoo.org> splashutils-1.5.4.4.ebuild:
+  Stable on amd64 wrt bug #387633
+
+  19 Oct 2011; Peter Volkov <pva@gentoo.org> splashutils-1.5.4.3-r3.ebuild:
+  Fix build issue in stable, bug #384131.
+
+  18 Oct 2011; Peter Volkov <pva@gentoo.org> splashutils-1.5.4.4.ebuild,
+  files/splashutils-1.5.4.4-freetype-bz2.patch:
+  Fixed build failure reported in bug 384131 wrt Robin Johnson.
+
+  04 Sep 2011; Michał Januszewski <spock@gentoo.org>
+  splashutils-1.5.4.3-r3.ebuild:
+  Fix bug #381189.
+
+  28 Aug 2011; Michał Januszewski <spock@gentoo.org>
+  splashutils-1.5.4.4.ebuild:
+  Fix bug #380281.
 
   23 Jul 2011; Michał Januszewski <spock@gentoo.org>
   splashutils-1.5.4.4.ebuild, +files/splashutils-1.5.4.4-freetype-bz2.patch:
@@ -964,4 +1024,3 @@
   21 Aug 2004; Michal Januszewski <spock@gentoo.org> +metadata.xml,
   +splashutils-0.9_pre07.ebuild:
   Intial commit.
-

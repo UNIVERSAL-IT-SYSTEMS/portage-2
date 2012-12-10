@@ -1,6 +1,95 @@
 # ChangeLog for sci-astronomy/wcslib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/wcslib/ChangeLog,v 1.17 2011/06/21 16:08:54 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/wcslib/ChangeLog,v 1.34 2012/11/14 18:51:43 bicatali Exp $
+
+*wcslib-4.16 (14 Nov 2012)
+
+  14 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> +wcslib-4.16.ebuild,
+  -wcslib-4.14.ebuild:
+  Version bump
+
+  19 Oct 2012; Justin Lecher <jlec@gentoo.org> wcslib-4.14.ebuild,
+  wcslib-4.15.ebuild, metadata.xml:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+*wcslib-4.15 (17 Oct 2012)
+
+  17 Oct 2012; Kacper Kowalik <xarthisius@gentoo.org> +wcslib-4.15.ebuild:
+  Version bump
+
+  14 Oct 2012; Justin Lecher <jlec@gentoo.org> wcslib-4.14.ebuild:
+  Prepare for fortran2.eclass update
+
+  05 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -wcslib-4.13.4.ebuild,
+  wcslib-4.14.ebuild:
+  do not force doc install
+
+*wcslib-4.14 (17 Jul 2012)
+
+  17 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> +wcslib-4.14.ebuild,
+  -wcslib-4.13.2.ebuild:
+  Version bump. Keyword amd64-linux and x86-linux
+
+*wcslib-4.13.4 (05 Apr 2012)
+
+  05 Apr 2012; Kacper Kowalik <xarthisius@gentoo.org> +wcslib-4.13.4.ebuild:
+  Version bump
+
+*wcslib-4.13.2 (25 Mar 2012)
+
+  25 Mar 2012; Kacper Kowalik <xarthisius@gentoo.org> +wcslib-4.13.2.ebuild,
+  -wcslib-4.11.ebuild, -wcslib-4.12.ebuild:
+  Version bump, drop old, add missing dependency on flex
+
+*wcslib-4.12 (02 Mar 2012)
+
+  02 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> -wcslib-4.8.4.ebuild,
+  -wcslib-4.10.ebuild, +wcslib-4.12.ebuild:
+  Version bump
+
+*wcslib-4.11 (26 Feb 2012)
+
+  26 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> +wcslib-4.11.ebuild:
+  Version bump
+
+*wcslib-4.10 (09 Feb 2012)
+
+  09 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> -wcslib-4.8.3.ebuild,
+  +wcslib-4.10.ebuild:
+  Version bump
+
+*wcslib-4.8.4 (20 Dec 2011)
+
+  20 Dec 2011; Sébastien Fabbro <bicatali@gentoo.org> +wcslib-4.8.4.ebuild:
+  Version bump
+
+*wcslib-4.8.3 (22 Nov 2011)
+
+  22 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> +wcslib-4.8.3.ebuild,
+  -wcslib-4.8.1.ebuild, -wcslib-4.8.2.ebuild:
+  Version bump, drop old
+
+*wcslib-4.8.2 (09 Oct 2011)
+
+  09 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> +wcslib-4.8.2.ebuild:
+  Version bump, install docs by default
+
+*wcslib-4.8.1 (23 Sep 2011)
+
+  23 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> -wcslib-4.7.ebuild,
+  -wcslib-4.8.ebuild, +wcslib-4.8.1.ebuild:
+  Version bump, drop old
+
+*wcslib-4.8 (18 Aug 2011)
+
+  18 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> -wcslib-4.6.3.ebuild,
+  -files/wcslib-4.6.3-autoconf.patch, -files/wcslib-4.6.3-destdir.patch,
+  -files/wcslib-4.6.3-ldflags.patch, +wcslib-4.8.ebuild:
+  Version bump. Remove old. Now does not need X display for testing anymore
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Switched herd to sci-astronomy
 
   21 Jun 2011; Justin Lecher <jlec@gentoo.org> wcslib-4.6.3.ebuild,
   wcslib-4.7.ebuild:
@@ -103,4 +192,3 @@
   15 Jul 2008; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
   +wcslib-4.3.ebuild:
   Initial import
-

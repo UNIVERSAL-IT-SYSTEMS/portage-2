@@ -1,6 +1,259 @@
 # ChangeLog for sys-apps/pkgcore
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/ChangeLog,v 1.117 2011/07/11 08:52:00 ferringb Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pkgcore/ChangeLog,v 1.164 2012/10/29 09:08:15 ferringb Exp $
+
+*pkgcore-0.8.6 (29 Oct 2012)
+
+  29 Oct 2012; Brian Harring <ferringb@gentoo.org> +pkgcore-0.8.6.ebuild:
+  Better config error messages, and gentoo bug 439800.
+
+  22 Oct 2012; Brian Harring <ferringb@gentoo.org>
+  -files/pkgcore-0.7.7.8-ebuild-envs-assert.patch,
+  -files/pkgcore-0.7.7.8-fix-resolver-assert.patch:
+  Drop dead patches.
+
+*pkgcore-0.8.5-r1 (19 Oct 2012)
+
+  19 Oct 2012; Brian Harring <ferringb@gentoo.org> -pkgcore-0.8.5.ebuild,
+  +pkgcore-0.8.5-r1.ebuild, pkgcore-9999.ebuild:
+  Drop python-abis awareness, doesn't play nice w/ wrappers; bug #438920.
+  Just going to bypass python eclass going forward at this rate.
+
+*pkgcore-0.8.5 (18 Oct 2012)
+
+  18 Oct 2012; Brian Harring <ferringb@gentoo.org> +pkgcore-0.8.5.ebuild,
+  pkgcore-9999.ebuild:
+  Fix py3k doc building support, update package name rules to recently
+  changed PMS rules; bug #438370. Finally, fix a racey false positive 437216.
+  Finally, add python ABI awareness so pkgcore gets installed in all contexts.
+
+*pkgcore-0.8.4 (04 Oct 2012)
+
+  04 Oct 2012; Brian Harring <ferringb@gentoo.org> -pkgcore-0.8.2.ebuild,
+  +pkgcore-0.8.4.ebuild:
+  Pull in fix for corner case involving default phases for eapi3.
+
+*pkgcore-0.8.2 (01 Oct 2012)
+
+  01 Oct 2012; Brian Harring <ferringb@gentoo.org> -pkgcore-0.8.1.ebuild,
+  +pkgcore-0.8.2.ebuild:
+  Pull in pmaint regen fix.
+
+*pkgcore-0.8.1 (30 Sep 2012)
+
+  30 Sep 2012; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.7.8-r2.ebuild,
+  +pkgcore-0.8.1.ebuild:
+  md5-cache support, heavy env speedups, environment exportation, general bug
+  fixes.
+
+  24 Sep 2012; Patrick Lauer <patrick@gentoo.org> pkgcore-0.8.ebuild:
+  Adding mips keyword
+
+*pkgcore-0.8 (05 Aug 2012)
+
+  05 Aug 2012; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.7.8.ebuild,
+  -pkgcore-0.7.7.8-r1.ebuild, +pkgcore-0.8.ebuild:
+  Restore fetching support, parallelized compression, fix man pages, doc
+  overhaul,
+  prefix branch merged (we support everything sans -rx.y syntax), py3k
+  incompatibility
+  for -N fixed, new `pconfig world` command, and py2.4 support dropped.
+
+  21 May 2012; Brian Harring <ferringb@gentoo.org>
+  files/pkgcore-0.7.7.8-ebuild-envs-assert.patch:
+  Tweak the last commit; drop NEWS from the patch since it won't apply cleanly.
+
+*pkgcore-0.7.7.8-r2 (21 May 2012)
+
+  21 May 2012; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.7.7-r1.ebuild,
+  -files/pkgcore-0.7.7.7-NameError-fix.patch, +pkgcore-0.7.7.8-r2.ebuild,
+  +files/pkgcore-0.7.7.8-ebuild-envs-assert.patch:
+  Fix issue in unpacker eclass where it has assumptions of portage behaviour
+  beyond PMS gurantees.
+
+*pkgcore-0.7.7.8-r1 (11 Apr 2012)
+
+  11 Apr 2012; Brian Harring <ferringb@gentoo.org> +pkgcore-0.7.7.8-r1.ebuild,
+  +files/pkgcore-0.7.7.8-fix-resolver-assert.patch:
+  Fix a resolver bug/assertion triggered by hwids/usbutils changes.
+
+  29 Mar 2012; Brian Harring <ferringb@gentoo.org> pkgcore-9999.ebuild:
+  Update to match vcs head allowing man pages and html to be optional in
+  generation.
+
+*pkgcore-0.7.7.8 (26 Jan 2012)
+
+  26 Jan 2012; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.7.6.ebuild,
+  -pkgcore-0.7.7.7.ebuild, +pkgcore-0.7.7.8.ebuild:
+  Hardlink support, eselect compatibility fixes, and resolver work (weak
+  blockers are now supported, and bugfixes for a few corner cases with
+  immutable flags).
+
+  26 Jan 2012; Brian Harring <ferringb@gentoo.org> pkgcore-9999.ebuild:
+  update deps to reference sphinx
+
+*pkgcore-0.7.7.7-r1 (24 Jan 2012)
+
+  24 Jan 2012; Brian Harring <ferringb@gentoo.org> +pkgcore-0.7.7.7-r1.ebuild,
+  +files/pkgcore-0.7.7.7-NameError-fix.patch:
+  Fix a NameError reported in 0.7.7.7.
+
+*pkgcore-0.7.7.7 (24 Jan 2012)
+
+  24 Jan 2012; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.7.5.ebuild,
+  -pkgcore-0.7.7.5-r1.ebuild, -files/pkgcore-0.7.7.5-NameError.patch,
+  +pkgcore-0.7.7.7.ebuild:
+  Add support for weak blockers, fix eselect compatibility. Cleanse older
+  versions.
+
+*pkgcore-0.7.7.6 (16 Jan 2012)
+
+  16 Jan 2012; Brian Harring <ferringb@gentoo.org> +pkgcore-0.7.7.6.ebuild:
+  bugfix release, along w/ FEATURES=compressdebug
+
+*pkgcore-0.7.7.5-r1 (03 Jan 2012)
+
+  03 Jan 2012; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.5-r2.ebuild,
+  -files/pkgcore-0.7.5-dosym.patch,
+  -files/pkgcore-0.7.5-force-python-binary.patch, -pkgcore-0.7.7.4.ebuild,
+  +pkgcore-0.7.7.5-r1.ebuild, +files/pkgcore-0.7.7.5-NameError.patch:
+  Fix NameError in 0.7.7.5 that occurs when pkgcore commands have an uncaught
+  exception. Additionally, remove old versions in the process.
+
+*pkgcore-0.7.7.5 (26 Dec 2011)
+
+  26 Dec 2011; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.7.3.ebuild,
+  +pkgcore-0.7.7.5.ebuild:
+  Pull in a couple of behavioural fixes, generally enhanced error reporting,
+  and parallelism of trigger execution. Punt old version.
+
+*pkgcore-0.7.7.4 (15 Dec 2011)
+
+  15 Dec 2011; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.7.2.ebuild,
+  +pkgcore-0.7.7.4.ebuild:
+  Minor functionality relase; remove older verison that is no longer used.
+
+*pkgcore-0.7.7.3 (09 Dec 2011)
+
+  09 Dec 2011; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.7.1.ebuild,
+  +pkgcore-0.7.7.3.ebuild:
+  Pull in new release with better error handling, and fixing a merge/unmerge
+  bug.
+
+*pkgcore-0.7.7.2 (08 Dec 2011)
+
+  08 Dec 2011; Brian Harring <ferringb@gentoo.org> +pkgcore-0.7.7.2.ebuild:
+  bgufix release building towards a stable candidate
+
+  06 Dec 2011; Brian Harring <ferringb@gentoo.org> pkgcore-9999.ebuild:
+  make pkgcore -9999 require snakeoil -9999; avoids scenarios where pkgcore
+  is reliant on yet unreleased snakeoil functionality.
+
+*pkgcore-0.7.7.1 (03 Dec 2011)
+
+  03 Dec 2011; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.6.1.ebuild,
+  -pkgcore-0.7.7.ebuild, -pkgcore-0.7.7-r1.ebuild, +pkgcore-0.7.7.1.ebuild,
+  -files/pkgcore-0.7.7-IFS-manipulation.patch:
+  Drop old/buggy versions; pull in metadata fix via 0.7.7.1
+
+*pkgcore-0.7.7-r1 (02 Dec 2011)
+
+  02 Dec 2011; Brian Harring <ferringb@gentoo.org> +pkgcore-0.7.7-r1.ebuild,
+  +files/pkgcore-0.7.7-IFS-manipulation.patch:
+  Fix IFS manipulation bug in helpers reported in irc
+
+*pkgcore-0.7.7 (02 Dec 2011)
+
+  02 Dec 2011; Brian Harring <ferringb@gentoo.org> +pkgcore-0.7.7.ebuild,
+  pkgcore-9999.ebuild:
+  5x faster regen, bugfixes, search by repo_id
+
+  01 Dec 2011; Brian Harring <ferringb@gentoo.org> pkgcore-9999.ebuild:
+  drop old plugincache wiping code that now is causing issues
+
+*pkgcore-0.7.6.1 (01 Dec 2011)
+
+  01 Dec 2011; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.6.ebuild,
+  +pkgcore-0.7.6.1.ebuild:
+  Fix rather user visible bug in portage configuration introduced in 0.7.6.
+
+*pkgcore-0.7.6 (30 Nov 2011)
+
+  30 Nov 2011; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.2.ebuild,
+  -pkgcore-0.7.4.ebuild, -pkgcore-0.7.5-r1.ebuild, +pkgcore-0.7.6.ebuild:
+  new version- better user support. Drop older versions in the process.
+
+*pkgcore-0.7.5-r2 (18 Nov 2011)
+
+  18 Nov 2011; Brian Harring <ferringb@gentoo.org> +pkgcore-0.7.5-r2.ebuild,
+  +files/pkgcore-0.7.5-dosym.patch:
+  bug 379889; honor portage dosym behaviour rather than PMS.
+
+*pkgcore-0.7.5-r1 (10 Nov 2011)
+
+  10 Nov 2011; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.5.ebuild,
+  +pkgcore-0.7.5-r1.ebuild, +files/pkgcore-0.7.5-force-python-binary.patch:
+  Add patch enforcing the python binary used for internal pinspect calls
+
+  09 Nov 2011; Brian Harring <ferringb@gentoo.org> pkgcore-0.7.5.ebuild:
+  bug 389925; if generating docs, require pyparsing
+
+*pkgcore-0.7.5 (08 Nov 2011)
+
+  08 Nov 2011; Brian Harring <ferringb@gentoo.org> +pkgcore-0.7.5.ebuild:
+  support repository defined negations of parent repos. Basically support
+  enhanced overlays correctly.
+
+*pkgcore-0.7.4 (27 Oct 2011)
+
+  27 Oct 2011; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.3.ebuild,
+  +pkgcore-0.7.4.ebuild:
+  Fix exception handling /etc/portage/profile; pull offending release
+
+*pkgcore-0.7.3 (27 Oct 2011)
+
+  27 Oct 2011; Brian Harring <ferringb@gentoo.org>
+  -files/0.6.5-fix-screwup-in-incrementals-removal.patch,
+  -pkgcore-0.6.5-r1.ebuild, -pkgcore-0.6.6.ebuild, -pkgcore-0.7.1-r1.ebuild,
+  +pkgcore-0.7.3.ebuild:
+  remove old versions, add 0.7.3 w/ greater compatibility support
+
+*pkgcore-0.7.2 (28 Sep 2011)
+
+  28 Sep 2011; Brian Harring <ferringb@gentoo.org> +pkgcore-0.7.2.ebuild:
+  manifest/digest support, mirroring support, bugfixes.  Add USE=build,
+  if enabled, intended for just bootstrapping pkgcore.
+
+  20 Sep 2011; Brian Harring <ferringb@gentoo.org> pkgcore-9999.ebuild:
+  Update -9999 for recent build changes.
+
+*pkgcore-0.7.1-r1 (05 Sep 2011)
+
+  05 Sep 2011; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.1.ebuild,
+  +pkgcore-0.7.1-r1.ebuild:
+  bug 381731; fix USE=doc
+
+*pkgcore-0.7.1 (03 Sep 2011)
+
+  03 Sep 2011; Brian Harring <ferringb@gentoo.org> -pkgcore-0.7.ebuild,
+  +pkgcore-0.7.1.ebuild, -files/0.7-racy-slot-shadowing.patch:
+  verbump to 0.7.1, pruning 0.7; bugfixes reported by users. Would've been
+  nice if they spotted it in -9999 rather than hours after a release :/
+
+*pkgcore-0.7 (02 Sep 2011)
+
+  02 Sep 2011; Brian Harring <ferringb@gentoo.org>
+  +files/0.7-racy-slot-shadowing.patch, +pkgcore-0.7.ebuild:
+  new CLI tools, bugfixes galore, and heavy refactoring.
+
+  06 Aug 2011; Brian Harring <ferringb@gentoo.org> pkgcore-9999.ebuild:
+  use the standardized googlecode url for checkout
+
+*pkgcore-9999 (06 Aug 2011)
+
+  06 Aug 2011; Brian Harring <ferringb@gentoo.org> pkgcore-0.6.5-r1.ebuild,
+  pkgcore-0.6.6.ebuild, +pkgcore-9999.ebuild:
+  Update homepage, and add -9999 ebuild for bleeding edge users.
 
 *pkgcore-0.6.6 (11 Jul 2011)
 
@@ -603,4 +856,3 @@
   30 Sep 2006; Marien Zwart <marienz@gentoo.org> +metadata.xml,
   +pkgcore-0.1.ebuild:
   New package.
-

@@ -1,6 +1,158 @@
 # ChangeLog for sys-devel/gdb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gdb/ChangeLog,v 1.184 2011/04/04 22:45:20 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gdb/ChangeLog,v 1.222 2012/12/06 04:33:02 phajdan.jr Exp $
+
+  06 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gdb-7.5.ebuild:
+  x86 stable wrt bug #444902
+
+  01 Dec 2012; Anthony G. Basile <blueness@gentoo.org> gdb-7.5.ebuild:
+  stable arm ppc64, bug #444902
+
+  29 Nov 2012; Brent Baude <ranger@gentoo.org> gdb-7.5.ebuild:
+  Marking gdb-7.5 ppc for bug 444902
+
+*gdb-7.5.1 (29 Nov 2012)
+
+  29 Nov 2012; Mike Frysinger <vapier@gentoo.org> +gdb-7.5.1.ebuild:
+  Version bump.
+
+  29 Nov 2012; Jeroen Roovers <jer@gentoo.org> gdb-7.5.ebuild:
+  Stable for HPPA (bug #444902).
+
+  28 Nov 2012;  <ago@gentoo.org> gdb-7.5.ebuild:
+  Stable for amd64, wrt bug #444902
+
+*gdb-7.5 (17 Aug 2012)
+
+  17 Aug 2012; Mike Frysinger <vapier@gentoo.org> +gdb-7.5.ebuild:
+  Version bump.
+
+  23 Jul 2012; Mike Frysinger <vapier@gentoo.org> gdb-7.4.1.ebuild:
+  Fix building with linux-headers-3.5.
+
+  10 May 2012; Alexis Ballier <aballier@gentoo.org> gdb-7.4.1.ebuild:
+  keyword ~amd64-fbsd
+
+  27 Apr 2012; Mike Frysinger <vapier@gentoo.org> gdb-6.6-r2.ebuild,
+  gdb-6.7.1-r3.ebuild, gdb-6.8-r1.ebuild, gdb-6.8-r2.ebuild, gdb-7.0.1.ebuild,
+  gdb-7.1.ebuild, gdb-7.2.50.20101117.4.15.ebuild, gdb-7.2.ebuild,
+  gdb-7.3.1-r1.ebuild, gdb-7.3.1.ebuild, gdb-7.3.ebuild, gdb-7.4.1.ebuild,
+  gdb-7.4.ebuild, gdb-9999.ebuild:
+  Use mirror://gnu as pointed out by repoman.
+
+*gdb-7.4.1 (27 Apr 2012)
+
+  27 Apr 2012; Mike Frysinger <vapier@gentoo.org> +gdb-7.4.1.ebuild:
+  Version bump.
+
+  13 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> gdb-7.3.1.ebuild:
+  ppc64 stable wrt #395017
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> gdb-7.3.1.ebuild:
+  Marking gdb-7.3.1 ppc for bug 395017
+
+  25 Jan 2012; Mike Frysinger <vapier@gentoo.org> gdb-7.4.ebuild,
+  gdb-9999.ebuild:
+  Set includedir to /usr/$CTARGET for cross-compilers #400729 by Karsten
+  Steingaß.
+
+  25 Jan 2012; Mike Frysinger <vapier@gentoo.org> gdb-7.4.ebuild,
+  gdb-9999.ebuild:
+  Do not mention the PATCH_VER in the version branding when USE=vanilla
+  #400707.
+
+*gdb-7.4 (25 Jan 2012)
+
+  25 Jan 2012; Mike Frysinger <vapier@gentoo.org> +gdb-7.4.ebuild:
+  Version bump.
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> gdb-7.3.1.ebuild:
+  alpha/ia64/s390/sparc stable wrt #395017
+
+  13 Jan 2012; Mike Frysinger <vapier@gentoo.org> gdb-7.3.1-r1.ebuild,
+  gdb-9999.ebuild:
+  Unify live/release ebuilds, and properly control zlib dep.
+
+  10 Jan 2012; Fabian Groffen <grobian@gentoo.org> gdb-7.3.1-r1.ebuild:
+  Fix installation with USE=client on 64-bits Solaris targets
+
+  06 Jan 2012; Fabian Groffen <grobian@gentoo.org> gdb-7.3.1-r1.ebuild:
+  Marked ~x64-freebsd
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gdb-7.3.1.ebuild:
+  x86 stable wrt bug #395017
+
+  02 Jan 2012; Mike Frysinger <vapier@gentoo.org> gdb-7.3.1-r1.ebuild,
+  gdb-9999.ebuild:
+  Merge live/non-live ebuilds, fix up USE="-client -server" behavior, and
+  handle gdbserver better in unsupported configurations #396697 by Thomas
+  Sachau.
+
+  01 Jan 2012; Fabian Groffen <grobian@gentoo.org> gdb-7.3.1-r1.ebuild:
+  Remove/check existing files (wrt Prefix offset)
+
+*gdb-7.3.1-r1 (31 Dec 2011)
+
+  31 Dec 2011; Mike Frysinger <vapier@gentoo.org> +gdb-7.3.1-r1.ebuild,
+  metadata.xml:
+  Add USE=client/server support, and fix up the install of helper libraries.
+
+  29 Dec 2011; Jeroen Roovers <jer@gentoo.org> gdb-7.3.1.ebuild:
+  Stable for HPPA (bug #395017).
+
+  23 Dec 2011; Matt Turner <mattst88@gentoo.org> gdb-7.3.1.ebuild:
+  alpha stable, bug #395017.
+
+  22 Dec 2011; Markus Meier <maekke@gentoo.org> gdb-7.3.1.ebuild:
+  arm stable, bug #395017
+
+  21 Dec 2011; Fabian Groffen <grobian@gentoo.org> gdb-7.3.1.ebuild:
+  Add Prefix keywords
+
+  18 Dec 2011; Agostino Sarubbo <ago@gentoo.org> gdb-7.3.1.ebuild:
+  Stable for AMD64, wrt bug #395017
+
+  08 Dec 2011; Mike Frysinger <vapier@gentoo.org> gdb-7.3.1.ebuild:
+  Add patch from upstream for x32 support.
+
+  02 Dec 2011; Mike Frysinger <vapier@gentoo.org> gdb-7.3.1.ebuild,
+  gdb-9999.ebuild, metadata.xml:
+  Enable python support by default #386141 by Ben Longbons.
+
+*gdb-7.3.1 (07 Sep 2011)
+
+  07 Sep 2011; Mike Frysinger <vapier@gentoo.org> +gdb-7.3.1.ebuild,
+  gdb-9999.ebuild:
+  Version bump and sync live ebuilds with release.
+
+  03 Sep 2011; Fabian Groffen <grobian@gentoo.org> gdb-7.2.ebuild,
+  gdb-7.3.ebuild, gdb-9999.ebuild:
+  Fixed Prefix support, and marked ~x86-macos and ~x64-macos
+
+  23 Aug 2011; Mike Frysinger <vapier@gentoo.org> gdb-7.3.ebuild,
+  gdb-9999.ebuild:
+  Set EGIT vars before we inherit the git eclass.
+
+  22 Aug 2011; Mike Frysinger <vapier@gentoo.org> gdb-7.3.ebuild,
+  gdb-9999.ebuild:
+  Use /usr/lib/debug as the separate debug dir since everything else atm
+  assumes that canonical location #378537 by Michał Górny.
+
+*gdb-9999 (13 Aug 2011)
+
+  13 Aug 2011; Mike Frysinger <vapier@gentoo.org> gdb-7.3.ebuild,
+  +gdb-9999.ebuild:
+  Add support for live git trees, and merge the different versions we have for
+  fedora/weekly snapshots.
+
+  13 Aug 2011; Mike Frysinger <vapier@gentoo.org> gdb-7.2.ebuild,
+  gdb-7.3.ebuild:
+  Depend on yacc for build.
+
+*gdb-7.3 (07 Aug 2011)
+
+  07 Aug 2011; Mike Frysinger <vapier@gentoo.org> +gdb-7.3.ebuild:
+  Version bump.
 
   04 Apr 2011; Jeroen Roovers <jer@gentoo.org> gdb-7.2.ebuild:
   Stable for HPPA (bug #350259).

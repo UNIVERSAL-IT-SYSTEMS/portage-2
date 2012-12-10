@@ -1,6 +1,62 @@
 # ChangeLog for app-text/highlight
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/highlight/ChangeLog,v 1.43 2011/06/25 17:17:58 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/highlight/ChangeLog,v 1.57 2012/11/10 02:58:13 flameeyes Exp $
+
+  10 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> highlight-3.12.ebuild:
+  Drop usage of boost-utils since it's now pointless.
+
+  06 Oct 2012; Mike Gilbert <floppym@gentoo.org> highlight-3.12.ebuild:
+  Depend on pkgconfig, bug 437428 by Nikoli.
+
+  06 Oct 2012; Tim Harder <radhermit@gentoo.org> -highlight-3.7.ebuild,
+  -highlight-3.8.ebuild:
+  Remove old.
+
+*highlight-3.12 (06 Oct 2012)
+
+  06 Oct 2012; Tim Harder <radhermit@gentoo.org> +highlight-3.12.ebuild:
+  Version bump. Fix build with >=boost-1.50.
+
+  17 Sep 2012; Alexis Ballier <aballier@gentoo.org> highlight-3.9.ebuild:
+  keyword ~amd64-fbsd
+
+*highlight-3.9 (02 May 2012)
+
+  02 May 2012; Tim Harder <radhermit@gentoo.org> +highlight-3.9.ebuild:
+  Version bump.
+
+*highlight-3.8 (01 Mar 2012)
+
+  01 Mar 2012; Tim Harder <radhermit@gentoo.org> +highlight-3.8.ebuild:
+  Version bump.
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> highlight-3.7.ebuild:
+  Keyword ~ppc64 wrt #399545
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -highlight-2.9.ebuild,
+  -highlight-3.5.ebuild, -highlight-3.6.ebuild:
+  old
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> highlight-2.9.ebuild:
+  Revert back to ~ppc wrt #369715
+
+  22 Jan 2012; Raúl Porcel <armin76@gentoo.org> highlight-2.9.ebuild,
+  highlight-3.3.ebuild, highlight-3.5.ebuild, highlight-3.6.ebuild,
+  highlight-3.7.ebuild:
+  Add ~alpha/~arm/~ia64/~s390/~sh/~sparc wrt #399545
+
+*highlight-3.7 (06 Jan 2012)
+
+  06 Jan 2012; Tim Harder <radhermit@gentoo.org> +highlight-3.7.ebuild:
+  Version bump.
+
+*highlight-3.6 (12 Oct 2011)
+
+  12 Oct 2011; Tim Harder <radhermit@gentoo.org> +highlight-3.6.ebuild:
+  Version bump.
+
+  30 Aug 2011; Naohiro Aota <naota@gentoo.org> highlight-3.5.ebuild:
+  Add ~x86-fbsd
 
   25 Jun 2011; Raúl Porcel <armin76@gentoo.org> highlight-2.9.ebuild,
   highlight-3.3.ebuild, highlight-3.5.ebuild:
@@ -170,4 +226,3 @@
 
   26 Mar 2005; <pclouds@gentoo.org> +metadata.xml, +highlight-2.2.9.ebuild:
   Initial ebuild, contributed by Jan Nárovec <finn@sendmail.cz> #86448
-

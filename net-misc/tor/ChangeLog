@@ -1,6 +1,491 @@
 # ChangeLog for net-misc/tor
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/tor/ChangeLog,v 1.264 2011/07/30 10:28:35 blueness Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/tor/ChangeLog,v 1.368 2012/11/27 20:23:39 blueness Exp $
+
+  27 Nov 2012; Anthony G. Basile <blueness@gentoo.org> tor-0.2.3.25.ebuild:
+  Fix dependency on libevent[ssl] when USE=bufferevents, bug #444954
+
+  26 Nov 2012; Agostino Sarubbo <ago@gentoo.org> tor-0.2.3.25.ebuild:
+  Stable for x86, wrt bug #444804
+
+  26 Nov 2012; Agostino Sarubbo <ago@gentoo.org> tor-0.2.3.25.ebuild:
+  Stable for amd64, wrt bug #444804
+
+  26 Nov 2012; Anthony G. Basile <blueness@gentoo.org> tor-0.2.3.25.ebuild:
+  stable arm ppc pp64, bug #444804
+
+*tor-0.2.3.25 (20 Nov 2012)
+
+  20 Nov 2012; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.3.25.ebuild,
+  -tor-0.2.3.23_rc.ebuild:
+  Version bump RC to first upstream stable release 2.3 branch
+
+*tor-0.2.4.6_alpha (13 Nov 2012)
+
+  13 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.4.6_alpha.ebuild, -files/tor-0.2.4.5-fix-udef-ref-math.patch,
+  -tor-0.2.4.4_alpha.ebuild, -tor-0.2.4.5_alpha.ebuild:
+  Version bump alpha, remove older, patch for bug #435040 accepted upstream
+
+  27 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  files/tor-0.2.4.5-fix-udef-ref-math.patch:
+  Improve patch for bug #435040
+
+  27 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  +files/tor-0.2.4.5-fix-udef-ref-math.patch, tor-0.2.4.5_alpha.ebuild:
+  Fix udefined ref to ceil/log in libm, bug #435040
+
+*tor-0.2.3.24_rc (27 Oct 2012)
+*tor-0.2.4.5_alpha (27 Oct 2012)
+
+  27 Oct 2012; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.3.24_rc.ebuild,
+  +tor-0.2.4.5_alpha.ebuild, -tor-0.2.3.22_rc.ebuild, -tor-0.2.4.3_alpha.ebuild:
+  Version bump RC and alpha, remove older
+
+*tor-0.2.4.4_alpha (23 Oct 2012)
+
+  23 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.4.4_alpha.ebuild, -tor-0.2.4.2_alpha.ebuild:
+  Version bump alpha branch, remove older alpha
+
+*tor-0.2.3.23_rc (21 Oct 2012)
+
+  21 Oct 2012; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.3.23_rc.ebuild,
+  -tor-0.2.3.20_rc.ebuild:
+  Version bump RC and remove older
+
+*tor-0.2.4.3_alpha (23 Sep 2012)
+
+  23 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.4.3_alpha.ebuild, metadata.xml:
+  Version bump alpha to 0.2.4.3
+
+  15 Sep 2012; Raúl Porcel <armin76@gentoo.org> tor-0.2.2.39.ebuild:
+  sparc stable wrt #434882
+
+  15 Sep 2012; Agostino Sarubbo <ago@gentoo.org> tor-0.2.2.39.ebuild:
+  Stable for amd64, wrt bug #434882
+
+  15 Sep 2012; Agostino Sarubbo <ago@gentoo.org> tor-0.2.2.39.ebuild:
+  Stable for x86, wrt bug #434882
+
+  15 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  -files/tor-0.2.1.30-respect-CFLAGS.patch, -tor-0.2.3.19_rc.ebuild:
+  Remove older RC and older patch
+
+  15 Sep 2012; Anthony G. Basile <blueness@gentoo.org> tor-0.2.2.39.ebuild:
+  Stable arm, bug #434882
+
+  15 Sep 2012; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.2.35.ebuild,
+  -tor-0.2.2.35-r1.ebuild, -tor-0.2.2.36.ebuild, -tor-0.2.2.37.ebuild:
+  Remove older vulnerable versions
+
+  15 Sep 2012; Anthony G. Basile <blueness@gentoo.org> tor-0.2.2.39.ebuild:
+  Stable ppc ppc64, bug #434882
+
+*tor-0.2.4.2_alpha (12 Sep 2012)
+
+  12 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.4.2_alpha.ebuild:
+  Add first new alpha 0.2.4 branch
+
+*tor-0.2.3.22_rc (12 Sep 2012)
+
+  12 Sep 2012; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.3.22_rc.ebuild:
+  Version bump rc 0.2.3 branch
+
+*tor-0.2.2.39 (12 Sep 2012)
+
+  12 Sep 2012; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.2.39.ebuild:
+  Version bump stable 0.2.2 branch
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> tor-0.2.2.38.ebuild:
+  sparc stable wrt #432188
+
+  21 Aug 2012; Anthony G. Basile <blueness@gentoo.org> tor-0.2.2.38.ebuild:
+  Stable ppc ppc64, masked tor-hardening, bug #432188
+
+  21 Aug 2012; Anthony G. Basile <blueness@gentoo.org> tor-0.2.2.38.ebuild:
+  Stable arm, bug #432188
+
+  21 Aug 2012; Agostino Sarubbo <ago@gentoo.org> tor-0.2.2.38.ebuild:
+  Stable for amd64, wrt bug #432188
+
+  21 Aug 2012; Agostino Sarubbo <ago@gentoo.org> tor-0.2.2.38.ebuild:
+  Stable for X86, wrt bug #432188
+
+*tor-0.2.2.38 (13 Aug 2012)
+
+  13 Aug 2012; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.2.38.ebuild:
+  Version bump stable 0.2.2 branch
+
+*tor-0.2.3.20_rc (06 Aug 2012)
+
+  06 Aug 2012; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.3.18_rc.ebuild,
+  +tor-0.2.3.20_rc.ebuild:
+  Version bump RC and remove older
+
+  11 Jul 2012; Anthony G. Basile <blueness@gentoo.org> tor-0.2.2.35.ebuild,
+  tor-0.2.2.35-r1.ebuild, tor-0.2.2.36.ebuild, tor-0.2.2.37.ebuild,
+  tor-0.2.3.18_rc.ebuild, tor-0.2.3.19_rc.ebuild:
+  Add GPL-2 for init scripts, bug #426098
+
+*tor-0.2.3.19_rc (07 Jul 2012)
+
+  07 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  -tor-0.2.3.17_beta.ebuild, +tor-0.2.3.19_rc.ebuild:
+  Version bump RC and remove older
+
+  30 Jun 2012; Anthony G. Basile <blueness@gentoo.org>
+  -tor-0.2.3.15_alpha.ebuild, -tor-0.2.3.16_alpha.ebuild:
+  Remove older 0.2.3.x alphas
+
+*tor-0.2.3.18_rc (30 Jun 2012)
+
+  30 Jun 2012; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.3.18_rc.ebuild:
+  Version bump, first 0.2.3.x release candidate
+
+*tor-0.2.3.17_beta (16 Jun 2012)
+
+  16 Jun 2012; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.17_beta.ebuild:
+  Version bump beta
+
+*tor-0.2.2.37 (13 Jun 2012)
+
+  13 Jun 2012; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.2.37.ebuild:
+  Version bump
+
+*tor-0.2.3.16_alpha (06 Jun 2012)
+
+  06 Jun 2012; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.16_alpha.ebuild:
+  Version bump alpha
+
+*tor-0.2.2.36 (25 May 2012)
+
+  25 May 2012; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.2.36.ebuild:
+  Version bump
+
+  24 May 2012; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.1.32.ebuild:
+  Upstream informs me its unmaintained and has issues, thanks Sebastian
+
+  21 May 2012; Anthony G. Basile <blueness@gentoo.org> tor-0.2.1.32.ebuild,
+  tor-0.2.2.35.ebuild, tor-0.2.2.35-r1.ebuild, tor-0.2.3.15_alpha.ebuild:
+  Keyword mips
+
+  11 May 2012; Anthony G. Basile <blueness@gentoo.org>
+  -files/tor-0.2.3.13_alpha-fix-miniupnpc-1.6.patch,
+  -tor-0.2.3.14_alpha.ebuild:
+  Removed older unstable alpha
+
+  11 May 2012; Anthony G. Basile <blueness@gentoo.org> tor-0.2.1.32.ebuild,
+  tor-0.2.2.35-r1.ebuild, tor-0.2.3.15_alpha.ebuild:
+  Moved SRC_URI as per upstream's instructions, thanks Sebastian.
+
+  01 May 2012; Anthony G. Basile <blueness@gentoo.org>
+  -tor-0.2.3.13_alpha.ebuild:
+  Remove older alpha
+
+*tor-0.2.3.15_alpha (01 May 2012)
+
+  01 May 2012; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.15_alpha.ebuild:
+  Version bump alpha
+
+*tor-0.2.3.14_alpha (24 Apr 2012)
+
+  24 Apr 2012; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.14_alpha.ebuild, +files/tor-0.2.3.14_alpha-torrc.sample.patch,
+  metadata.xml:
+  Version bump alpha, add tor2web support
+
+*tor-0.2.3.13_alpha (27 Mar 2012)
+
+  27 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  -files/tor-0.2.3.11_alpha-fix-tor-fw-helper-natpmp.patch,
+  -tor-0.2.3.12_alpha-r1.ebuild, -tor-0.2.3.12_alpha-r2.ebuild,
+  -files/tor-0.2.3.12_alpha-fix-miniupnpc-1.6.patch,
+  -files/tor-0.2.3.12_alpha-fix-tor-fw-helper-natpmp.patch,
+  +tor-0.2.3.13_alpha.ebuild,
+  +files/tor-0.2.3.13_alpha-fix-miniupnpc-1.6.patch:
+  Version bump alpha and remove older one
+
+*tor-0.2.3.12_alpha-r2 (23 Mar 2012)
+
+  23 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.12_alpha-r2.ebuild,
+  +files/tor-0.2.3.12_alpha-fix-miniupnpc-1.6.patch:
+  Add patch to fix bug #376621
+
+  08 Mar 2012; Anthony G. Basile <blueness@gentoo.org> tor-0.2.2.35-r1.ebuild,
+  tor-0.2.3.12_alpha-r1.ebuild:
+  Install the manpages unconditionally, bug #407057
+
+  08 Mar 2012; Anthony G. Basile <blueness@gentoo.org>
+  -tor-0.2.3.11_alpha.ebuild:
+  Remove old alpha version
+
+*tor-0.2.3.12_alpha-r1 (14 Feb 2012)
+
+  14 Feb 2012; Anthony G. Basile <blueness@gentoo.org>
+  -tor-0.2.3.12_alpha.ebuild, +tor-0.2.3.12_alpha-r1.ebuild,
+  files/tor-0.2.3.12_alpha-fix-tor-fw-helper-natpmp.patch:
+  Incorporate new fix from upstream, see
+  https://trac.torproject.org/projects/tor/ticket/4955
+
+*tor-0.2.3.12_alpha (14 Feb 2012)
+
+  14 Feb 2012; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.12_alpha.ebuild,
+  +files/tor-0.2.3.12_alpha-fix-tor-fw-helper-natpmp.patch:
+  Version bump alpha
+
+  07 Feb 2012; Anthony G. Basile <blueness@gentoo.org>
+  -tor-0.2.3.10_alpha.ebuild:
+  Removed old alpha
+
+*tor-0.2.2.35-r1 (07 Feb 2012)
+
+  07 Feb 2012; Anthony G. Basile <blueness@gentoo.org> tor-0.2.1.32.ebuild,
+  +tor-0.2.2.35-r1.ebuild, tor-0.2.3.11_alpha.ebuild:
+  Added DEPEND on sec-policy/selinux-tor for selinux systems
+
+*tor-0.2.3.11_alpha (24 Jan 2012)
+
+  24 Jan 2012; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.11_alpha.ebuild,
+  +files/tor-0.2.3.11_alpha-fix-tor-fw-helper-natpmp.patch:
+  Version bump alpha
+
+  24 Jan 2012; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.2.34.ebuild:
+  Removed old vulnerable stable version
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> tor-0.2.2.35.ebuild:
+  sparc stable wrt #394969
+
+  31 Dec 2011; Anthony G. Basile <blueness@gentoo.org>
+  -tor-0.2.3.10_alpha-r1.ebuild:
+  Still problems with dependency on =net-libs/miniupnpc-1.6
+
+*tor-0.2.3.10_alpha-r1 (30 Dec 2011)
+
+  30 Dec 2011; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.10_alpha-r1.ebuild:
+  Relax version for dependency on net-libs/miniupnpc
+
+  27 Dec 2011; Mark Loeser <halcy0n@gentoo.org> tor-0.2.2.35.ebuild:
+  Stable for ppc/ppc64; bug #394969
+
+  22 Dec 2011; Markus Meier <maekke@gentoo.org> tor-0.2.2.35.ebuild:
+  arm stable, bug #394969
+
+  17 Dec 2011; Agostino Sarubbo <ago@gentoo.org> tor-0.2.2.35.ebuild:
+  Stable for X86, wrt security bug #394969
+
+  17 Dec 2011; Agostino Sarubbo <ago@gentoo.org> tor-0.2.2.35.ebuild:
+  Stable for AMD64, wrt security bug #394969
+
+  17 Dec 2011; Anthony G. Basile <blueness@gentoo.org> tor-0.2.1.32.ebuild,
+  tor-0.2.2.35.ebuild:
+  Minor cleanup to ebuilds
+
+  16 Dec 2011; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.2.34-r1.ebuild,
+  -files/tor-0.2.2.34_disable-stats-requiring-geoip.patch,
+  -tor-0.2.3.8_alpha.ebuild, -tor-0.2.3.9_alpha.ebuild:
+  Removed deprecated versions
+
+*tor-0.2.3.10_alpha (16 Dec 2011)
+
+  16 Dec 2011; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.10_alpha.ebuild:
+  Version bump 0.2.3 alpha branch
+
+*tor-0.2.2.35 (16 Dec 2011)
+
+  16 Dec 2011; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.2.35.ebuild:
+  Version bump upstream stable 0.2.2
+
+  16 Dec 2011; Anthony G. Basile <blueness@gentoo.org>
+  -files/torrc.sample-0.1.2.6.patch, -files/tor-0.2.1.19-logrotate.patch,
+  -tor-0.2.1.31-r1.ebuild, -files/torrc:
+  Removed older 0.2.1 version
+
+*tor-0.2.1.32 (16 Dec 2011)
+
+  16 Dec 2011; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.1.32.ebuild:
+  Version bump 0.2.1 branch, switch to syslog
+
+  09 Dec 2011; Anthony G. Basile <blueness@gentoo.org>
+  -tor-0.2.3.7_alpha.ebuild:
+  Removed old alpha
+
+*tor-0.2.3.9_alpha (09 Dec 2011)
+
+  09 Dec 2011; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.9_alpha.ebuild:
+  Version bump alpha
+
+  04 Dec 2011; Sven Wegener <swegener@gentoo.org> files/tor.initd-r6:
+  reload is extra_started_commands
+
+  26 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> tor-0.2.2.34.ebuild:
+  ppc64 stable wrt #388769
+
+*tor-0.2.1.31-r1 (26 Nov 2011)
+
+  26 Nov 2011; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.1.31.ebuild,
+  +tor-0.2.1.31-r1.ebuild, -files/tor.initd-r4:
+  Switched to openrc style init script for old 0.2.1 branch
+
+  26 Nov 2011; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.1.30.ebuild,
+  -files/tor.conf:
+  Removed older vulnerable stable, bug #388769
+
+*tor-0.2.3.8_alpha (26 Nov 2011)
+
+  26 Nov 2011; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.8_alpha.ebuild:
+  Version bump alpha
+
+  24 Nov 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #290906
+
+  06 Nov 2011; Brent Baude <ranger@gentoo.org> tor-0.2.2.34.ebuild:
+  Marking tor-0.2.2.34 ppc for bug 388769
+
+  05 Nov 2011; Raúl Porcel <armin76@gentoo.org> tor-0.2.2.34.ebuild:
+  arm/sparc stable wrt #388769
+
+  03 Nov 2011; Anthony G. Basile <blueness@gentoo.org>
+  -tor-0.2.3.6_alpha.ebuild:
+  Removed old alpha
+
+*tor-0.2.2.34-r1 (03 Nov 2011)
+
+  03 Nov 2011; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.2.34-r1.ebuild,
+  +files/tor-0.2.2.34_disable-stats-requiring-geoip.patch:
+  Patch to fix crash of directory servers if geoip data is not present
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> tor-0.2.2.34.ebuild:
+  x86 stable wrt bug #388769
+
+*tor-0.2.3.7_alpha (31 Oct 2011)
+
+  31 Oct 2011; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.7_alpha.ebuild:
+  Version bump alpha
+
+  29 Oct 2011; Markos Chandras <hwoarang@gentoo.org> tor-0.2.2.34.ebuild:
+  Stable on amd64 wrt bug #388769
+
+  28 Oct 2011; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.1.30-r2.ebuild,
+  -tor-0.2.2.33.ebuild, -tor-0.2.3.5_alpha.ebuild:
+  Removed vulnerable versions, bug #388769
+
+*tor-0.2.3.6_alpha (28 Oct 2011)
+*tor-0.2.2.34 (28 Oct 2011)
+*tor-0.2.1.31 (28 Oct 2011)
+
+  28 Oct 2011; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.1.31.ebuild,
+  +tor-0.2.2.34.ebuild, +tor-0.2.3.6_alpha.ebuild:
+  Security bump, bug #388769
+
+  08 Oct 2011; Anthony G. Basile <blueness@gentoo.org>
+  -tor-0.2.3.4_alpha.ebuild:
+  Remove old alpha
+
+  29 Sep 2011; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.2.32-r2.ebuild:
+  Drop old upstream stable
+
+*tor-0.2.3.5_alpha (29 Sep 2011)
+
+  29 Sep 2011; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.5_alpha.ebuild:
+  Version bump alpha
+
+*tor-0.2.2.33 (14 Sep 2011)
+
+  14 Sep 2011; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.2.33.ebuild:
+  Bump to latest upstream stable release
+
+  14 Sep 2011; Anthony G. Basile <blueness@gentoo.org> files/tor.initd-r6:
+  Change opts to extra_commands on ~arch ebuilds, bug #381895
+
+  14 Sep 2011; Anthony G. Basile <blueness@gentoo.org> tor-0.2.1.30-r2.ebuild,
+  tor-0.2.2.32-r2.ebuild:
+  Removed RDEPEND net-proxy/tsocks[tordns] on ~arch ebuilds, bug #381181
+
+*tor-0.2.3.4_alpha (14 Sep 2011)
+
+  14 Sep 2011; Anthony G. Basile <blueness@gentoo.org>
+  -tor-0.2.3.3_alpha-r1.ebuild, +tor-0.2.3.4_alpha.ebuild:
+  Bumped alpha and removed deprecated
+
+  13 Sep 2011; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.2.32.ebuild,
+  -tor-0.2.3.3_alpha.ebuild:
+  Removed deprecated versions
+
+*tor-0.2.3.3_alpha-r1 (10 Sep 2011)
+
+  10 Sep 2011; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.3_alpha-r1.ebuild:
+  bump tor-0.2.3.3_alpha to DEPEND on >=libevent-2.0.14, bug #376515
+
+  05 Sep 2011; Anthony G. Basile <blueness@gentoo.org>
+  tor-0.2.3.3_alpha.ebuild:
+  tor-0.2.3.3_alpha DEPENDs on >=libevent-2.0.13, but #381897
+
+  04 Sep 2011; Anthony G. Basile <blueness@gentoo.org>
+  -tor-0.2.3.2_alpha-r2.ebuild, -tor-0.2.3.2_alpha-r4.ebuild,
+  -files/tor-0.2.3.2_alpha-fix-asneeded.patch:
+  Removed old alpha version
+
+*tor-0.2.3.3_alpha (04 Sep 2011)
+
+  04 Sep 2011; Anthony G. Basile <blueness@gentoo.org>
+  +tor-0.2.3.3_alpha.ebuild:
+  Version bump alpha
+
+  01 Sep 2011; Anthony G. Basile <blueness@gentoo.org> files/tor.initd-r6:
+  Cleaned up tor.initd-r6
+
+*tor-0.2.3.2_alpha-r4 (01 Sep 2011)
+*tor-0.2.2.32-r2 (01 Sep 2011)
+
+  01 Sep 2011; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.2.32-r1.ebuild,
+  +tor-0.2.2.32-r2.ebuild, -tor-0.2.3.2_alpha-r3.ebuild,
+  +tor-0.2.3.2_alpha-r4.ebuild, +files/tor.initd-r6, -files/tor.initd-r5:
+  Switch sanity check for /var/run/tor to checkpath
+
+*tor-0.2.3.2_alpha-r3 (30 Aug 2011)
+*tor-0.2.2.32-r1 (30 Aug 2011)
+
+  30 Aug 2011; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.2.32-r1.ebuild,
+  +tor-0.2.3.2_alpha-r3.ebuild, +files/tor.initd-r5, +files/torrc-r1,
+  +files/torrc.sample.patch:
+  Change logging to syslog, add sanity check for /var/run/tor, bug #380117
+
+  28 Aug 2011; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.2.31_rc.ebuild:
+  Removed old release candidate
+
+*tor-0.2.2.32 (28 Aug 2011)
+
+  28 Aug 2011; Anthony G. Basile <blueness@gentoo.org> +tor-0.2.2.32.ebuild:
+  Version bump to new stable candidate
+
+  23 Aug 2011; Anthony G. Basile <blueness@gentoo.org> files/tor.initd-r4:
+  Removed incorrect --stop from init script, bug #379939
+
+*tor-0.2.2.31_rc (19 Aug 2011)
+
+  19 Aug 2011; Anthony G. Basile <blueness@gentoo.org> -tor-0.2.2.30_rc.ebuild,
+  -tor-0.2.2.30_rc-r1.ebuild, +tor-0.2.2.31_rc.ebuild,
+  -tor-0.2.3.2_alpha.ebuild:
+  Version bump RC and remove deprecated
+
+  05 Aug 2011; Anthony G. Basile <blueness@gentoo.org> files/tor.initd-r4:
+  Removed deprecated -oknodo, bug #377773
 
   30 Jul 2011; Anthony G. Basile <blueness@gentoo.org>
   tor-0.2.3.2_alpha-r2.ebuild:
@@ -1135,4 +1620,3 @@
   22 Feb 2004; Peter Johanson <latexer@gentoo.org> metadata.xml,
   tor-0.0.2_pre21.ebuild:
   Initial Commit. Ebuild by yours truly.
-

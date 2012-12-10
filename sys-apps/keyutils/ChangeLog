@@ -1,6 +1,43 @@
 # ChangeLog for sys-apps/keyutils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/keyutils/ChangeLog,v 1.25 2011/07/08 19:41:49 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/keyutils/ChangeLog,v 1.35 2012/07/01 18:21:34 armin76 Exp $
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> keyutils-1.5.5.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #417445
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> keyutils-1.5.5.ebuild:
+  Marking keyutils-1.5.5 ppc64 for bug 417445
+
+  30 May 2012; Markus Meier <maekke@gentoo.org> keyutils-1.5.5.ebuild:
+  arm stable, bug #417445
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> keyutils-1.5.5.ebuild:
+  Marking keyutils-1.5.5 ppc for bug 417445
+
+  29 May 2012; Jeroen Roovers <jer@gentoo.org> keyutils-1.5.5.ebuild:
+  Stable for HPPA (bug #417445).
+
+  25 May 2012; Agostino Sarubbo <ago@gentoo.org> keyutils-1.5.5.ebuild:
+  Stable for amd64, wrt bug #417445
+
+  25 May 2012; Jeff Horelick <jdhore@gentoo.org> keyutils-1.5.5.ebuild:
+  marked x86 per bug 417445
+
+  25 May 2012; Mike Frysinger <vapier@gentoo.org> keyutils-1.5.5.ebuild:
+  Make the tests work reliably #405293 by Patrick Lauer.
+
+*keyutils-1.5.5 (21 Feb 2012)
+
+  21 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/keyutils-1.5.5-makefile-fixup.patch, +keyutils-1.5.5.ebuild:
+  Version bump.
+
+*keyutils-1.5.3 (02 Sep 2011)
+
+  02 Sep 2011; Mike Frysinger <vapier@gentoo.org> +keyutils-1.5.3.ebuild,
+  +files/keyutils-1.5.3-makefile-fixup.patch:
+  Version bump #381467 by teidakankan. Fixes rpath issues #328467 by William
+  Throwe and multilib issues #339173 by Matt McAdoo.
 
   08 Jul 2011; Matt Turner <mattst88@gentoo.org> keyutils-1.4-r1.ebuild:
   Added ~mips, bug 201744

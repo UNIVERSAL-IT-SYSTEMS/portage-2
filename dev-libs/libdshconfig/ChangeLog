@@ -1,6 +1,27 @@
 # ChangeLog for dev-libs/libdshconfig
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libdshconfig/ChangeLog,v 1.17 2010/05/12 22:06:15 darkside Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libdshconfig/ChangeLog,v 1.22 2012/12/07 18:27:57 ago Exp $
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> libdshconfig-0.20.13.ebuild:
+  Stable for ppc, wrt bug #441188
+
+  07 Dec 2012; <ago@gentoo.org> libdshconfig-0.20.13.ebuild:
+  Stable for x86, wrt bug #441188
+
+  07 Dec 2012; <ago@gentoo.org> libdshconfig-0.20.13.ebuild:
+  Stable for amd64, wrt bug #441188
+
+*libdshconfig-0.20.13 (14 Sep 2012)
+
+  14 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +libdshconfig-0.20.13.ebuild, -libdshconfig-0.20.11.ebuild,
+  libdshconfig-0.20.12.ebuild:
+  Stable .12 on ppc. Prune older. Add latest version to testing and update it to
+  eapi4.
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  libdshconfig-0.20.12.ebuild:
+  x86 stable wrt bug #392823
 
   12 May 2010; Jeremy Olexa <darkside@gentoo.org>
   libdshconfig-0.20.12.ebuild:

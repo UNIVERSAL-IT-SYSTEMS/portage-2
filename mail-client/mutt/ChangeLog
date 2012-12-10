@@ -1,6 +1,81 @@
 # ChangeLog for mail-client/mutt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/mutt/ChangeLog,v 1.218 2011/07/29 17:40:45 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/mutt/ChangeLog,v 1.234 2012/12/07 18:43:39 grobian Exp $
+
+*mutt-1.5.21-r12 (07 Dec 2012)
+
+  07 Dec 2012; Fabian Groffen <grobian@gentoo.org> +mutt-1.5.21-r12.ebuild,
+  -mutt-1.5.21-r9.ebuild:
+  Revbump, adding several fixes from upstream
+
+*mutt-1.5.21-r11 (25 Aug 2012)
+
+  25 Aug 2012; Fabian Groffen <grobian@gentoo.org> +mutt-1.5.21-r11.ebuild,
+  -mutt-1.5.21-r10.ebuild:
+  Drop faulty -r10, add fixes for crash (bug #432344) and hang (bug #432562) in
+  -r11.
+
+  22 Aug 2012; Johannes Huber <johu@gentoo.org> mutt-1.5.21-r10.ebuild:
+  Stable for x86, wrt bug #432050
+
+  21 Aug 2012; Fabian Groffen <grobian@gentoo.org> mutt-1.5.21-r10.ebuild:
+  Use emake in src_install
+
+  21 Aug 2012; Agostino Sarubbo <ago@gentoo.org> mutt-1.5.21-r10.ebuild:
+  Stable for amd64, wrt bug #432050
+
+  22 Jun 2012; Fabian Groffen <grobian@gentoo.org> mutt-1.5.21-r10.ebuild:
+  Drop Solaris ncurses pach, it no longer fixes, but rather seems to introduce
+  arcs being drawn badly
+
+*mutt-1.5.21-r10 (14 Jun 2012)
+
+  14 Jun 2012; Fabian Groffen <grobian@gentoo.org> +mutt-1.5.21-r10.ebuild,
+  -mutt-1.5.21-r8.ebuild:
+  Revbump for automake-1.12 fix, bug #420955.
+
+*mutt-1.5.21-r9 (28 Apr 2012)
+
+  28 Apr 2012; Fabian Groffen <grobian@gentoo.org> +mutt-1.5.21-r9.ebuild,
+  -mutt-1.5.21-r7.ebuild:
+  Revbump for bugs #413151 and #413405, added xterm_titles patch, see
+  $ts_enabled, $ts_icon_format and $tc_status_format vars in muttrc(5)
+
+  15 Mar 2012; Fabian Groffen <grobian@gentoo.org> mutt-1.5.21-r8.ebuild:
+  Updated sidebar-dotpathsep patch for ignoring trailing path separators, bug
+  #373197
+
+  02 Mar 2012; Fabian Groffen <grobian@gentoo.org> mutt-1.5.21-r8.ebuild:
+  Refresh all patches to fix apply errors, bug #406485.  No actual changes.
+
+  25 Feb 2012; Fabian Groffen <grobian@gentoo.org> mutt-1.5.21-r8.ebuild:
+  Bump patchset for small insignificant update to gpg-display-signature also to
+  ignore output for openssl/smime signatures
+
+  09 Feb 2012; Christian Ruppert <idl0r@gentoo.org> mutt-1.5.21-r8.ebuild:
+  Allow user patches through epatch_user
+
+*mutt-1.5.21-r8 (17 Jan 2012)
+
+  17 Jan 2012; Fabian Groffen <grobian@gentoo.org> +mutt-1.5.21-r8.ebuild,
+  -mutt-1.5.20-r18.ebuild, -mutt-1.5.21-r2.ebuild, -mutt-1.5.21-r3.ebuild:
+  Revbump for gnutls-3 compile fix, bug #399073.  Cleanup old versions.
+
+  04 Dec 2011; Fabian Groffen <grobian@gentoo.org> mutt-1.5.21-r7.ebuild:
+  Add USE=selinux and depend on sec-policy/selinux-mutt following -dev ML
+  request
+
+*mutt-1.5.21-r7 (26 Aug 2011)
+
+  26 Aug 2011; Fabian Groffen <grobian@gentoo.org> -mutt-1.5.21-r6.ebuild,
+  +mutt-1.5.21-r7.ebuild:
+  Revbump, add patch to allow hiding the pgp signature output using
+  pgp_display_signature.
+
+  17 Aug 2011; Fabian Groffen <grobian@gentoo.org> mutt-1.5.21-r1.ebuild,
+  mutt-1.5.21-r2.ebuild, mutt-1.5.21-r3.ebuild, mutt-1.5.21-r6.ebuild:
+  Update guide-to-mutt URL to point to official docs again, now that is
+  updated, bug #304623
 
 *mutt-1.5.21-r6 (29 Jul 2011)
 

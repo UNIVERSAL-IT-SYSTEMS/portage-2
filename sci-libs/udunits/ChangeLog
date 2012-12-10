@@ -1,6 +1,34 @@
 # ChangeLog for sci-libs/udunits
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/udunits/ChangeLog,v 1.18 2011/07/29 00:03:39 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/udunits/ChangeLog,v 1.25 2012/10/16 19:34:33 jlec Exp $
+
+  16 Oct 2012; Justin Lecher <jlec@gentoo.org> udunits-2.1.15.ebuild,
+  udunits-2.1.24.ebuild, metadata.xml:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #24135.
+
+  03 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -udunits-2.1.21.ebuild,
+  -udunits-2.1.23.ebuild, metadata.xml, udunits-2.1.24.ebuild:
+  keyword amd64-linux x86-linux
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> udunits-2.1.21.ebuild:
+  x86 stable wrt bug #391605
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> udunits-2.1.21.ebuild:
+  Stable on amd64 wrt bug #391605
+
+  23 Nov 2011; Justin Lecher <jlec@gentoo.org> +udunits-2.1.21.ebuild:
+  Restore udunits-2.1.21.ebuild
+
+*udunits-2.1.24 (23 Nov 2011)
+
+  23 Nov 2011; Justin Lecher <jlec@gentoo.org> udunits-2.1.15.ebuild,
+  -udunits-2.1.21.ebuild, udunits-2.1.23.ebuild, +udunits-2.1.24.ebuild,
+  metadata.xml:
+  Resorted ebuild, version Bump
 
 *udunits-2.1.23 (29 Jul 2011)
 

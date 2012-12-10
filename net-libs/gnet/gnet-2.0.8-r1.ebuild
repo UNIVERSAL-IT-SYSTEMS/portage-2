@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gnet/gnet-2.0.8-r1.ebuild,v 1.10 2011/03/22 19:41:26 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gnet/gnet-2.0.8-r1.ebuild,v 1.12 2012/05/05 02:54:30 jdhore Exp $
 
 EAPI="2"
 GCONF_DEBUG="yes"
 
-inherit eutils gnome2
+inherit autotools eutils gnome2
 
 DESCRIPTION="A simple network library."
 HOMEPAGE="http://live.gnome.org/GNetLibrary"
@@ -18,7 +18,7 @@ IUSE="doc test"
 # FIXME: automagic use of valgrind
 RDEPEND=">=dev-libs/glib-2.6:2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( >=dev-util/gtk-doc-1.2 )
 	>=dev-libs/check-0.9.7"
 # FIXME: check should only be needed with USE 'test', bug #349301
@@ -31,8 +31,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	gnome2_src_prepare
-
 	# Do not leak main context reference, from master
 	epatch "${FILESDIR}/${PN}-2.0.8-context-leak.patch"
 
@@ -44,4 +42,7 @@ src_prepare() {
 
 	# Do not pass silly cflags with USE=debug, bug #320759
 	sed 's/-Werror//' -i configure.ac configure || die "sed failed"
+
+	eautoreconf
+	gnome2_src_prepare
 }

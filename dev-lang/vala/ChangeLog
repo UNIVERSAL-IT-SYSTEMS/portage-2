@@ -1,6 +1,276 @@
 # ChangeLog for dev-lang/vala
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/vala/ChangeLog,v 1.61 2011/07/24 14:41:35 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/vala/ChangeLog,v 1.128 2012/12/04 10:36:53 ago Exp $
+
+  04 Dec 2012;  <ago@gentoo.org> vala-0.10.4-r2.ebuild, vala-0.12.1-r1.ebuild,
+  vala-0.14.2-r2.ebuild, vala-0.16.1-r2.ebuild, vala-0.18.0.ebuild:
+  Stable for x86, wrt bug #438374
+
+*vala-0.18.1 (20 Nov 2012)
+
+  20 Nov 2012; Gilles Dartiguelongue <eva@gentoo.org> +vala-0.18.1.ebuild:
+  Version bump. Bindings updates.
+
+  30 Oct 2012; Jeroen Roovers <jer@gentoo.org> vala-0.18.0.ebuild:
+  Stable for HPPA (bug #438374).
+
+  29 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  vala-0.10.4-r2.ebuild, vala-0.12.1-r1.ebuild, vala-0.14.2-r2.ebuild,
+  vala-0.16.1-r2.ebuild:
+  Stable for amd64, tested by Agostino Sarubbo (bugs #438374, #440176).
+
+  20 Oct 2012; Anthony G. Basile <blueness@gentoo.org> vala-0.10.4-r2.ebuild,
+  vala-0.12.1-r1.ebuild, vala-0.14.2-r2.ebuild, vala-0.16.1-r2.ebuild,
+  vala-0.18.0.ebuild:
+  stable arm, bug #438374
+
+  17 Oct 2012; Anthony G. Basile <blueness@gentoo.org> vala-0.10.4-r2.ebuild,
+  vala-0.12.1-r1.ebuild, vala-0.14.2-r2.ebuild, vala-0.16.1-r2.ebuild,
+  vala-0.18.0.ebuild:
+  stable ppc ppc64, bug #438374
+
+  16 Oct 2012; Agostino Sarubbo <ago@gentoo.org> vala-0.18.0.ebuild:
+  Stable for amd64, wrt bug #438374
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> vala-0.10.4-r2.ebuild,
+  vala-0.12.1-r1.ebuild, vala-0.14.2-r2.ebuild, vala-0.16.1-r2.ebuild,
+  vala-0.18.0.ebuild:
+  Stable on alpha, bug 438374.
+
+  06 Oct 2012; Pacho Ramos <pacho@gentoo.org> vala-0.10.4-r2.ebuild,
+  vala-0.12.1-r1.ebuild, vala-0.14.2-r2.ebuild, vala-0.16.1-r2.ebuild,
+  vala-0.18.0.ebuild:
+  Move to virtual/yacc, #436168 by Matt Turner.
+
+*vala-0.18.0 (25 Sep 2012)
+
+  25 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -vala-0.17.6.ebuild,
+  -vala-0.17.7.ebuild, +vala-0.18.0.ebuild:
+  Bump to vala-0.18 stable; drop pre-releases.
+
+*vala-0.17.7 (22 Sep 2012)
+
+  22 Sep 2012; Pacho Ramos <pacho@gentoo.org> +vala-0.17.7.ebuild,
+  -vala-0.14.1.ebuild, -vala-0.14.2.ebuild, -vala-0.16.0.ebuild,
+  -vala-0.17.5.ebuild:
+  Version bump, drop old.
+
+*vala-0.17.6 (05 Sep 2012)
+
+  05 Sep 2012; Nirbheek Chauhan <nirbheek@gentoo.org> +vala-0.17.6.ebuild:
+  Bump; bug fixes and binding updates
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> vala-0.16.1-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #424944
+
+  23 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  vala-0.10.4-r2.ebuild, vala-0.12.1-r1.ebuild:
+  Fix file collision with vala-common (bug #432456, thanks to Travis Hansen).
+
+*vala-0.17.5 (20 Aug 2012)
+*vala-0.16.1-r2 (20 Aug 2012)
+*vala-0.14.2-r2 (20 Aug 2012)
+*vala-0.12.1-r1 (20 Aug 2012)
+*vala-0.10.4-r2 (20 Aug 2012)
+
+  20 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +vala-0.10.4-r2.ebuild, +vala-0.12.1-r1.ebuild, +vala-0.14.2-r2.ebuild,
+  +vala-0.16.1-r2.ebuild, +vala-0.17.5.ebuild:
+  Add vala-0.18 pre-release, needed for a few packages. Split out vala's
+  aclocal macros and makefile templates into a separate dev-libs/vala-common
+  package to make it possible to autoreconf packages with an optional vala
+  dependency without installing all of dev-lang/vala.
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> vala-0.16.1-r1.ebuild:
+  Marking vala-0.16.1-r1 ppc for bug 424944
+
+  19 Jul 2012; Markus Meier <maekke@gentoo.org> vala-0.16.1-r1.ebuild:
+  arm stable, bug #424944
+
+  15 Jul 2012; Anthony G. Basile <blueness@gentoo.org> vala-0.14.2-r1.ebuild,
+  vala-0.16.0.ebuild, vala-0.16.1-r1.ebuild:
+  Keyword ~mips
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> vala-0.16.0.ebuild,
+  vala-0.14.2-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #410611
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> vala-0.16.1-r1.ebuild:
+  Marking vala-0.16.1-r1 ppc64 for bug 424944
+
+  09 Jul 2012; Jeroen Roovers <jer@gentoo.org> vala-0.16.1-r1.ebuild:
+  Stable for HPPA (bug #424944).
+
+  05 Jul 2012; Jeff Horelick <jdhore@gentoo.org> vala-0.16.1-r1.ebuild:
+  marked x86 per bug 424944
+
+  05 Jul 2012; Agostino Sarubbo <ago@gentoo.org> vala-0.16.1-r1.ebuild:
+  Stable for amd64, wrt bug #424944
+
+*vala-0.16.1-r1 (25 Jun 2012)
+
+  25 Jun 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -vala-0.16.1.ebuild,
+  +vala-0.16.1-r1.ebuild:
+  Install Makefile.vapigen if USE=vapigen; some vala-based projects need it.
+
+*vala-0.16.1 (25 Jun 2012)
+
+  25 Jun 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +vala-0.16.1.ebuild:
+  Version bump with bugfixes and binding updates.
+
+  30 May 2012; Alexis Ballier <aballier@gentoo.org> vala-0.14.2-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> vala-0.16.0.ebuild:
+  keyword ~amd64-fbsd
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> vala-0.14.2-r1.ebuild,
+  vala-0.16.0.ebuild:
+  ppc stable wrt #410611
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> vala-0.14.2-r1.ebuild,
+  vala-0.16.0.ebuild:
+  Stable for HPPA (bug #410611).
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> vala-0.10.4-r1.ebuild,
+  vala-0.12.1.ebuild, vala-0.14.1.ebuild, vala-0.14.2.ebuild,
+  vala-0.14.2-r1.ebuild, vala-0.16.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> vala-0.14.2-r1.ebuild:
+  x86 stable, bug #410611
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> vala-0.16.0.ebuild:
+  x86 stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> vala-0.14.2-r1.ebuild:
+  arm stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> vala-0.16.0.ebuild:
+  arm stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> vala-0.14.2-r1.ebuild,
+  vala-0.16.0.ebuild:
+  Marking vala-0.14.2-r1 ppc64 stable for bug 410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> vala-0.16.0.ebuild:
+  Marking vala-0.16.0 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> vala-0.14.2-r1.ebuild,
+  vala-0.16.0.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> vala-0.14.2-r1.ebuild:
+  Add ~amd64-linux keyword.
+
+*vala-0.16.0 (27 Mar 2012)
+
+  27 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -vala-0.14.0.ebuild,
+  +vala-0.16.0.ebuild:
+  Add first stable release for the 0.16 slot. Includes lots of bugfixes and
+  binding updates. Drop old.
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> vala-0.14.1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> vala-0.14.1.ebuild:
+  Marking vala-0.14.1 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> vala-0.14.1.ebuild:
+  Marking vala-0.14.1 ppc64 stable for bug 393007
+
+*vala-0.14.2-r1 (04 Feb 2012)
+
+  04 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +vala-0.14.2-r1.ebuild, +files/vala-0.14.2-cogl-pango-1.0.patch:
+  Add cogl-pango vala bindings from 0.15.x, required for vala support in
+  libchamplain-0.12.x (bug #402013).
+
+*vala-0.14.2 (01 Feb 2012)
+
+  01 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +vala-0.14.2.ebuild:
+  Bump. Lots of updates for bindings and assorted bugfixes.
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> vala-0.14.1.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> vala-0.14.1.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> vala-0.14.1.ebuild:
+  amd64 stable, bug 393007
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> vala-0.10.4-r1.ebuild,
+  vala-0.12.1.ebuild, vala-0.14.1.ebuild:
+  Block dev-lang/vala:0 to force uninstall of unslotted copy.
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> -vala-0.8.1.ebuild:
+  old
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> vala-0.14.1.ebuild:
+  Stable for HPPA (bug #393007).
+
+*vala-0.14.1 (30 Nov 2011)
+
+  30 Nov 2011; Pacho Ramos <pacho@gentoo.org> +vala-0.14.1.ebuild,
+  -vala-0.10.3.ebuild, -vala-0.13.4.ebuild:
+  Version bump, remove old.
+
+  18 Nov 2011; Naohiro Aota <naota@gentoo.org> vala-0.14.0.ebuild:
+  Add ~x86-fbsd
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> vala-0.14.0.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> vala-0.14.0.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> vala-0.14.0.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> vala-0.14.0.ebuild:
+  Stable for HPPA (bug #385699).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> vala-0.10.4-r1.ebuild,
+  vala-0.14.0.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> vala-0.14.0.ebuild:
+  amd64 stable wrt #385699
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> vala-0.12.1.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+*vala-0.14.0 (19 Sep 2011)
+
+  19 Sep 2011; Pacho Ramos <pacho@gentoo.org> -vala-0.13.1.ebuild,
+  -vala-0.13.3.ebuild, +vala-0.14.0.ebuild:
+  Version bump, remove old.
+
+*vala-0.13.4 (09 Sep 2011)
+
+  09 Sep 2011; Pacho Ramos <pacho@gentoo.org> +vala-0.13.4.ebuild:
+  Version bump.
+
+*vala-0.13.3 (28 Aug 2011)
+
+  28 Aug 2011; Pacho Ramos <pacho@gentoo.org> -vala-0.12.0.ebuild,
+  +vala-0.13.3.ebuild:
+  Version bump, remove old.
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> vala-0.10.4-r1.ebuild,
+  vala-0.12.1.ebuild:
+  Stable for HPPA (bug #369909).
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> vala-0.12.1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #369909
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> vala-0.10.4-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #369909
+
+  05 Aug 2011; Zac Medico <zmedico@gentoo.org> vala-0.12.1.ebuild,
+  vala-0.13.1.ebuild:
+  Add ~x86-linux keyword.
 
 *vala-0.13.1 (24 Jul 2011)
 
@@ -296,4 +566,3 @@
   24 Oct 2008; Rémi Cardona <remi@gentoo.org> +metadata.xml,
   +vala-0.4.0.ebuild:
   initial portage version, original ebuild taken from sunrise
-

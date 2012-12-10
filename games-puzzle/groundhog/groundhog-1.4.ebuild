@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/groundhog/groundhog-1.4.ebuild,v 1.23 2009/09/23 10:20:02 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/groundhog/groundhog-1.4.ebuild,v 1.25 2012/07/29 20:49:21 hasufell Exp $
 
 EAPI=2
 inherit eutils autotools games
@@ -19,7 +19,7 @@ IUSE="nls"
 RDEPEND="x11-libs/gtk+:2
 	nls? ( virtual/libintl )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 src_prepare() {
@@ -30,6 +30,8 @@ src_prepare() {
 		debian/patches/sv.po.patch \
 		|| die "sed failed"
 	epatch $(sed -e 's:^:debian/patches/:' debian/patches/series)
+	epatch "${FILESDIR}"/${P}-flags.patch
+	mv configure.in configure.ac || die
 	AT_M4DIR="m4" eautoreconf
 	sed -i 's:$(localedir):/usr/share/locale:' \
 		$(find . -name 'Makefile.in*') \

@@ -1,6 +1,34 @@
 # ChangeLog for dev-vcs/cvsps
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/cvsps/ChangeLog,v 1.4 2011/04/20 12:44:43 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/cvsps/ChangeLog,v 1.12 2012/10/02 15:58:59 slyfox Exp $
+
+*cvsps-2.2_beta1 (02 Oct 2012)
+
+  02 Oct 2012; Sergei Trofimovich <slyfox@gentoo.org> +cvsps-2.2_beta1.ebuild,
+  +files/cvsps-2.2_beta1-solaris.patch, metadata.xml:
+  Version bump by Jonas Bernoulli (stable versions are known to crash on real-
+  world repositories).
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> cvsps-2.1-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419894
+
+  04 Aug 2012; Anthony G. Basile <blueness@gentoo.org> cvsps-2.1-r1.ebuild:
+  Stable arm, bug #418975
+
+  04 Aug 2012; Anthony G. Basile <blueness@gentoo.org> cvsps-2.1-r1.ebuild:
+  Stable ppc ppc64, bug #418975
+
+  03 Aug 2012; Jeff Horelick <jdhore@gentoo.org> cvsps-2.1-r1.ebuild:
+  marked x86 per bug 418975
+
+  02 Aug 2012; Markos Chandras <hwoarang@gentoo.org> cvsps-2.1-r1.ebuild:
+  Stable on amd64 wrt bug #418975
+
+  01 Aug 2012; Jeroen Roovers <jer@gentoo.org> cvsps-2.1-r1.ebuild:
+  Stable for HPPA (bug #418975).
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> cvsps-2.1-r1.ebuild:
+  keyword ~amd64-fbsd
 
   20 Apr 2011; Justin Lecher <jlec@gentoo.org> cvsps-2.1.ebuild,
   cvsps-2.1-r1.ebuild:
@@ -101,4 +129,3 @@
   30 Jun 2003; Seemant Kulleen <seemant@gentoo.org> cvsps-2.0_rc1.ebuild:
   New package -- provides a way to generate BK style changesets for CVS. Thanks
   to Rach Holmes for showing me this
-

@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/libgeotiff/libgeotiff-1.2.4.ebuild,v 1.10 2010/11/08 17:41:42 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/libgeotiff/libgeotiff-1.2.4.ebuild,v 1.13 2012/07/29 16:58:17 armin76 Exp $
 
 inherit autotools eutils flag-o-matic
 
@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.remotesensing.org/pub/geotiff/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~mips ~ppc ppc64 sparc x86"
+KEYWORDS="amd64 ~mips ppc ppc64 x86"
 IUSE="doc python"
 
 RDEPEND=">=media-libs/tiff-3.7
@@ -29,7 +29,7 @@ src_unpack() {
 }
 
 src_compile() {
-	econf || die "econf failed"
+	econf
 	emake -j1 || die "emake failed"
 
 	if use doc; then

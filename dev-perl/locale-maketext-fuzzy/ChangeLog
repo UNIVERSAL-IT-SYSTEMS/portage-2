@@ -1,6 +1,50 @@
 # ChangeLog for dev-perl/locale-maketext-fuzzy
-# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/locale-maketext-fuzzy/ChangeLog,v 1.14 2008/10/06 11:19:23 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/locale-maketext-fuzzy/ChangeLog,v 1.24 2012/06/24 13:00:00 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  21 Apr 2012; Torsten Veller <tove@gentoo.org>
+  -locale-maketext-fuzzy-0.02.ebuild, -locale-maketext-fuzzy-0.100.0.ebuild:
+  Cleanup
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org>
+  locale-maketext-fuzzy-0.110.0.ebuild:
+  Marking locale-maketext-fuzzy-0.110.0 ppc for bug 404697
+
+  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org>
+  locale-maketext-fuzzy-0.110.0.ebuild:
+  marked x86 per bug 404697
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org>
+  locale-maketext-fuzzy-0.02.ebuild, locale-maketext-fuzzy-0.100.0.ebuild,
+  locale-maketext-fuzzy-0.110.0.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  29 Mar 2012; Jeroen Roovers <jer@gentoo.org>
+  locale-maketext-fuzzy-0.110.0.ebuild:
+  Stable for HPPA (bug #404697).
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org>
+  locale-maketext-fuzzy-0.110.0.ebuild:
+  Stable for amd64, wrt bug #404697
+
+*locale-maketext-fuzzy-0.110.0 (19 Dec 2011)
+
+  19 Dec 2011; Torsten Veller <tove@gentoo.org>
+  +locale-maketext-fuzzy-0.110.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org>
+  -locale-maketext-fuzzy-0.10.ebuild:
+  Cleanup
+
+*locale-maketext-fuzzy-0.100.0 (27 Aug 2011)
+
+  27 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +locale-maketext-fuzzy-0.100.0.ebuild:
+  Change version scheme
 
 *locale-maketext-fuzzy-0.10 (06 Oct 2008)
 
@@ -57,4 +101,3 @@
   locale-maketext-fuzzy-0.02.ebuild:
   Bug 24879 dep for Request tracker - Celestial Wizard
   <gentoo@dev.celestialwizard.org>
-

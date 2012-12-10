@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation.
+# Copyright 1999-2012 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License, v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/alpha/use.mask,v 1.50 2011/05/29 16:12:29 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/alpha/use.mask,v 1.75 2012/12/01 19:14:17 armin76 Exp $
 
 # Unmask the flag which corresponds to ARCH.
 -alpha
@@ -14,6 +14,7 @@
 3dfx
 apcupsd
 bluetooth
+bluray
 chipcard
 dvb
 gnokii
@@ -31,6 +32,7 @@ pcmcia
 pda
 sms
 upnp
+ups
 wifi
 
 # Hardware not available on alpha
@@ -44,6 +46,7 @@ pm-utils
 
 # Stuff that doesn't work on alpha, or not tested
 avi
+clang
 djbfft
 emboss
 freetts
@@ -61,12 +64,17 @@ rtmp
 vpx
 kde
 quvi
+systemd
+metalink
+tremor
+fdk
 
 # Stuff that doesn't compile on alpha
 clisp
 emf
 mono
 ocamlopt
+webm
 
 # Stuff we don't want
 afs
@@ -75,8 +83,17 @@ ots
 frei0r
 libev
 prelude
+libtar
+aacplus
+devil
+gts
 
 # Other
+
+# Alexandre Rostovtsev <tetromino@gmail.com> (28 Oct 2011)
+# x11-misc/colord and app-admin/packagekit-base not tested. Bug #387959.
+colord
+packagekit
 
 # Raúl Porcel <armin76@gentoo.org> (23 Apr 2011)
 # Needs to be tested
@@ -129,12 +146,18 @@ video_cards_intel
 video_cards_neomagic
 video_cards_newport
 video_cards_nsc
-video_cards_radeonhd
+video_cards_siliconmotion
 video_cards_sis
 video_cards_trident
 video_cards_tseng
 video_cards_vesa
 
+# Matt Turner <mattst88@gentoo.org>
+# Mask more VIDEO_CARDs added with mesa-8.0
+video_cards_i915
+video_cards_i965
+# vmware wasn't added with mesa-8.0, but it should still be masked
+video_cards_vmware
 
 # dspam and dspam-web use this one
 # We've never supported cyrus-imapd because nobody asked for
@@ -165,3 +188,36 @@ topal
 # Matt Turner <mattst88@gentoo.org> (13 Dec 2010)
 # We don't have sys-devel/llvm
 llvm
+
+# Matt Turner <mattst88@gentoo.org) (10 Feb 2012)
+# mask d3d since we don't have wine
+d3d
+
+# Matt Turner <mattst88@gentoo.org) (10 Feb 2012)
+# mask wayland since dev-libs/wayland isn't keyworded
+wayland
+
+# Matt Turner <mattst88@gentoo.org (27 May 2012)
+# net-misc/connman is not keyworded
+connman
+
+# Matt Turner <mattst88@gentoo.org (27 May 2012)
+# net-libs/gnome-online-accounts is not keyworded
+gnome-online-accounts
+
+# Matt Turner <mattst88@gentoo.org (27 May 2012)
+# sys-apps/entropy is not keyworded
+entropy
+
+# Matt Turner <mattst88@gentoo.org (29 May 2012)
+# net-libs/libsocialweb is not keyworded
+socialweb
+
+# Michał Górny <mgorny@gentoo.org> (31 Oct 2012)
+# Mask PYTHON_TARGETS for implementations not keyworded on this arch.
+python_targets_pypy1_8
+python_targets_pypy1_9
+python_targets_jython2_5
+python_single_target_pypy1_8
+python_single_target_pypy1_9
+python_single_target_jython2_5

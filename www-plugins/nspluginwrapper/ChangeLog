@@ -1,6 +1,40 @@
 # ChangeLog for www-plugins/nspluginwrapper
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-plugins/nspluginwrapper/ChangeLog,v 1.23 2011/07/14 16:09:41 chutzpah Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-plugins/nspluginwrapper/ChangeLog,v 1.28 2012/08/04 09:44:23 ago Exp $
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
+  nspluginwrapper-1.4.4-r3.ebuild:
+  Stable for amd64, wrt bug #425826
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> nspluginwrapper-1.4.4.ebuild,
+  nspluginwrapper-1.4.4-r1.ebuild, nspluginwrapper-1.4.4-r2.ebuild,
+  nspluginwrapper-1.4.4-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*nspluginwrapper-1.4.4-r3 (19 Apr 2012)
+
+  19 Apr 2012; Patrick McLean <chutzpah@gentoo.org>
+  +nspluginwrapper-1.4.4-r3.ebuild,
+  files/nspluginwrapper-1.4.4-dont-include-gthread.patch,
+  +files/nspluginwrapper-1.4.4-link-to-libdl.patch,
+  +files/nspluginwrapper-1.4.4-link-to-libgthread.patch:
+  Pull patch from upstream to link against gthread (bug #412337). Use upstream
+  patch for removing gthread.h. Link against libdl when building the player
+  (upstream patch).
+
+*nspluginwrapper-1.4.4-r2 (16 Apr 2012)
+
+  16 Apr 2012; Patrick McLean <chutzpah@gentoo.org>
+  +nspluginwrapper-1.4.4-r2.ebuild,
+  +files/nspluginwrapper-1.4.4-dont-include-gthread.patch,
+  +files/nspluginwrapper-1.4.4-dont-unload-libraries.patch:
+  Revision bump, add patches for bugs 412053 and 381873. Also don't use gcc
+  directly (bug #380747), and add die functions.
+
+  31 Aug 2011; Tony Vroon <chainsaw@gentoo.org>
+  nspluginwrapper-1.4.4-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani in bug #380733 filed by Raphael "Falco" Marichez.
 
   14 Jul 2011; Patrick McLean <chutzpah@gentoo.org>
   -files/nspluginwrapper-1.4.2-parallel-make.patch,

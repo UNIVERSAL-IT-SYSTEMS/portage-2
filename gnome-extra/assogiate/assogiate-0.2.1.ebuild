@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/assogiate/assogiate-0.2.1.ebuild,v 1.7 2011/07/12 11:26:09 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/assogiate/assogiate-0.2.1.ebuild,v 1.9 2012/08/11 20:01:06 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="yes"
@@ -23,17 +23,23 @@ RDEPEND=">=dev-libs/glib-2.8:2
 	>=dev-cpp/gnome-vfsmm-2.6"
 DEPEND="${RDEPEND}
 	app-text/gnome-doc-utils
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-util/intltool"
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
 
 src_prepare() {
-	gnome2_src_prepare
-
 	# Fix desktop file
 	epatch "${FILESDIR}/${P}-desktop.patch"
 
 	# Fix compilation, bug #374911
 	epatch "${FILESDIR}/${P}-typedialog.patch"
+
+	# Fix building with glib-2.32, bug #417765
+	epatch "${FILESDIR}/${P}-glib-2.32.patch"
+
+	# Fix building with gcc-4.7
+	epatch "${FILESDIR}/${P}-gcc-4.7.patch"
+
+	gnome2_src_prepare
 }

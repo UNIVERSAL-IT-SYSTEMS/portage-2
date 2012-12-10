@@ -1,6 +1,57 @@
 # ChangeLog for www-client/pybugz
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/pybugz/ChangeLog,v 1.92 2011/07/16 17:56:21 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/pybugz/ChangeLog,v 1.107 2012/10/28 00:10:29 ryao Exp $
+
+  28 Oct 2012; Richard Yao <ryao@gentoo.org> pybugz-0.10.1.ebuild:
+  Keyword ~sparc64-solaris; approved by WilliamH in IRC
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> pybugz-0.10.1.ebuild:
+  alpha/ia64/sparc stable wrt #415277
+
+  04 Jun 2012; Alexey Shvetsov <alexxy@gentoo.org> pybugz-0.10.1.ebuild:
+  [www-client/pybugz] Works on ~amd64-fbsd
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> pybugz-0.10.1.ebuild:
+  Marking pybugz-0.10.1 ppc for bug 415277
+
+  26 May 2012; Markus Meier <maekke@gentoo.org> pybugz-0.10.1.ebuild:
+  arm stable, bug #415277
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> pybugz-0.10.1.ebuild:
+  Marking pybugz-0.10.1 ppc64 for bug 415277
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> pybugz-0.10.1.ebuild:
+  Stable for HPPA (bug #415277).
+
+  09 May 2012; Jeff Horelick <jdhore@gentoo.org> pybugz-0.10.1.ebuild:
+  marked x86 per bug 415277
+
+  09 May 2012; Agostino Sarubbo <ago@gentoo.org> pybugz-0.10.1.ebuild:
+  Stable for amd64, wrt bug #415277
+
+  09 May 2012; Agostino Sarubbo <ago@gentoo.org> -pybugz-0.10.ebuild:
+  Remove old
+
+*pybugz-0.10.1 (06 May 2012)
+
+  06 May 2012; William Hubbs <williamh@gentoo.org> +pybugz-0.10.1.ebuild:
+  version bump
+
+*pybugz-0.10 (25 Apr 2012)
+
+  25 Apr 2012; William Hubbs <williamh@gentoo.org> +pybugz-0.10.ebuild:
+  version bump
+
+  02 Mar 2012; William Hubbs <williamh@gentoo.org> pybugz-0.9.3.ebuild,
+  pybugz-9999.ebuild:
+  migrate to bash-completion-r1 eclass
+
+  02 Mar 2012; William Hubbs <williamh@gentoo.org> -pybugz-0.8.0.ebuild,
+  -pybugz-0.9.0.ebuild, -pybugz-0.9.2.ebuild:
+  remove old versions
+
+  07 Aug 2011; Jeroen Roovers <jer@gentoo.org> pybugz-0.9.3.ebuild:
+  Stable for HPPA (bug #375137).
 
   16 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> pybugz-0.9.3.ebuild:
   ppc/ppc64 stable wrt #375137
@@ -372,4 +423,3 @@
 
   09 Aug 2006; Alastair Tse <liquidx@gentoo.org> +pybugz-0.6.ebuild:
   Initial release for the bugzilla command line client.
-

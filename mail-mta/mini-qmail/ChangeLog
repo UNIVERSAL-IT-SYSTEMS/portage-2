@@ -1,6 +1,33 @@
 # ChangeLog for mail-mta/mini-qmail
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/mini-qmail/ChangeLog,v 1.13 2011/03/28 08:46:35 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/mini-qmail/ChangeLog,v 1.21 2012/11/06 11:15:43 eras Exp $
+
+  06 Nov 2012; Eray Aslan <eras@gentoo.org> mini-qmail-1.05-r1.ebuild,
+  mini-qmail-1.05.ebuild, mini-qmail-1.06.ebuild:
+  mail-mta/nbsmtp is no longer in the tree - remove from DEPEND
+
+  04 Jun 2012; Zac Medico <zmedico@gentoo.org> mini-qmail-1.05.ebuild:
+  inherit user for enewgroup and enewuser
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> mini-qmail-1.05.ebuild,
+  mini-qmail-1.05-r1.ebuild, mini-qmail-1.06.ebuild:
+  Drop sparc keywords
+
+  09 Feb 2012; Jeroen Roovers <jer@gentoo.org> mini-qmail-1.06.ebuild:
+  Stable for HPPA (bug #397057).
+
+  12 Jan 2012; Markus Meier <maekke@gentoo.org> mini-qmail-1.06.ebuild:
+  arm stable, bug #397057
+
+  08 Jan 2012; Mike Frysinger <vapier@gentoo.org> +files/1.06-headers.patch,
+  mini-qmail-1.06.ebuild:
+  Fix build failure with newer glibcs #398109 by Markos Chandras.
+
+  20 Nov 2011; Mike Frysinger <vapier@gentoo.org> mini-qmail-1.06.ebuild:
+  Block maildrop #374909 by Diego Elio Pettenò.
+
+  22 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> mini-qmail-1.06.ebuild:
+  QA: remove default src_test execution, bug #364955.
 
   28 Mar 2011; Eray Aslan <eras@gentoo.org> mini-qmail-1.05.ebuild,
   mini-qmail-1.05-r1.ebuild, mini-qmail-1.06.ebuild:

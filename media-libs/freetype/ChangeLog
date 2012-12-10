@@ -1,6 +1,191 @@
 # ChangeLog for media-libs/freetype
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/freetype/ChangeLog,v 1.295 2011/07/31 09:22:37 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/freetype/ChangeLog,v 1.345 2012/07/30 05:35:32 yngwin Exp $
+
+  30 Jul 2012; Ben de Groot <yngwin@gentoo.org> freetype-2.4.10-r1.ebuild,
+  metadata.xml:
+  Change lcdfilter useflag to more precise infinality useflag (bug #428548)
+
+*freetype-2.4.10-r1 (29 Jul 2012)
+
+  29 Jul 2012; Ben de Groot <yngwin@gentoo.org> +freetype-2.4.10-r1.ebuild,
+  metadata.xml:
+  Add infinality lcdfilter support
+
+  18 Jul 2012; Fabian Groffen <grobian@gentoo.org> freetype-2.4.10.ebuild:
+  Drop eautoreconf for Prefix, it actually breaks the build, thanks Steven
+  Trogdon in bug #424411
+
+*freetype-2.4.10 (24 Jun 2012)
+
+  24 Jun 2012; Ryan Hill <dirtyepic@gentoo.org> -freetype-2.4.9.ebuild,
+  +freetype-2.4.10.ebuild:
+  Version bump, remove old.
+
+  16 Jun 2012; Raúl Porcel <armin76@gentoo.org> freetype-2.4.9-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #410983
+
+  20 May 2012; Mike Frysinger <vapier@gentoo.org>
+  freetype-1.4_pre20080316-r2.ebuild:
+  Use new _elibtoolize behavior for automatically eliding --install.
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org>
+  freetype-1.4_pre20080316-r2.ebuild:
+  keyword ~amd64-fbsd
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> freetype-2.4.9-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> freetype-2.4.9-r1.ebuild:
+  Marking freetype-2.4.9-r1 ppc64 for bug 410983
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> freetype-2.4.9-r1.ebuild:
+  Marking freetype-2.4.9-r1 ppc for bug 410983
+
+  15 Apr 2012; Markus Meier <maekke@gentoo.org> freetype-2.4.9-r1.ebuild:
+  arm stable, bug #410983
+
+  11 Apr 2012; Jeroen Roovers <jer@gentoo.org> freetype-2.4.9-r1.ebuild:
+  Stable for HPPA (bug #410983).
+
+  09 Apr 2012; Agostino Sarubbo <ago@gentoo.org> freetype-2.4.9-r1.ebuild:
+  Stable for amd64, wrt bug #410983
+
+  08 Apr 2012; Jeff Horelick <jdhore@gentoo.org> freetype-2.4.9-r1.ebuild:
+  marked x86 per bug 410983
+
+  07 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> freetype-2.4.9-r1.ebuild:
+  Remove libfreetype.la libtool archive in favour of using Libs.private: from
+  freetype2.pc pkg-config file to gain libraries for static linking.
+
+*freetype-2.4.9-r1 (21 Mar 2012)
+
+  21 Mar 2012; Ryan Hill <dirtyepic@gentoo.org> +freetype-2.4.9-r1.ebuild,
+  +files/freetype-2.4.9-type1-incremental.patch:
+  Fix bug #408513 (error converting PS to PDF with ghostscript).
+
+  17 Mar 2012; Ryan Hill <dirtyepic@gentoo.org> -freetype-2.4.8.ebuild:
+  Remove vulnerable version.
+
+  17 Mar 2012; Raúl Porcel <armin76@gentoo.org> freetype-2.4.9.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #407257
+
+  12 Mar 2012; Jeroen Roovers <jer@gentoo.org> freetype-2.4.9.ebuild:
+  Stable for HPPA (bug #407257).
+
+  12 Mar 2012; Brent Baude <ranger@gentoo.org> freetype-2.4.9.ebuild:
+  Marking freetype-2.4.9 ppc for bug 407257
+
+  11 Mar 2012; Agostino Sarubbo <ago@gentoo.org> freetype-2.4.9.ebuild:
+  Stable for amd64, wrt bug #407257
+
+  11 Mar 2012; Brent Baude <ranger@gentoo.org> freetype-2.4.9.ebuild:
+  Marking freetype-2.4.9 ppc64 for bug 407257
+
+  11 Mar 2012; Jeff Horelick <jdhore@gentoo.org> freetype-2.4.9.ebuild:
+  marked x86 per security bug 407257
+
+  10 Mar 2012; Ryan Hill <dirtyepic@gentoo.org> freetype-2.4.9.ebuild:
+  Add back static-libs USE flag for bug #407663.
+
+*freetype-2.4.9 (10 Mar 2012)
+
+  10 Mar 2012; Ryan Hill <dirtyepic@gentoo.org> -freetype-2.4.7.ebuild,
+  +freetype-2.4.9.ebuild:
+  Version bump for CVE-2012-1126, CVE-2012-1127, CVE-2012-1128, CVE-2012-1129,
+  CVE-2012-1130, CVE-2012-1131, CVE-2012-1132, CVE-2012-1133, CVE-2012-1134,
+  CVE-2012-1135, CVE-2012-1136, CVE-2012-1137, CVE-2012-1138, CVE-2012-1139,
+  CVE-2012-1140, CVE-2012-1141, CVE-2012-1142, CVE-2012-1143, and
+  CVE-2012-1144 (bug #407257).  You should probably upgrade.
+  
+  Stop using autotools-utils.eclass (bug #392099).  Remove old.
+
+  18 Dec 2011; Mark Loeser <halcy0n@gentoo.org> freetype-2.4.8.ebuild:
+  Stable for ppc/ppc64; bug #390623
+
+  26 Nov 2011; Raúl Porcel <armin76@gentoo.org> freetype-2.4.8.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #390623
+
+  23 Nov 2011; Markus Meier <maekke@gentoo.org> freetype-2.4.8.ebuild:
+  arm stable, bug #390623
+
+  22 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> freetype-2.4.8.ebuild:
+  x86 stable wrt bug #390623
+
+  19 Nov 2011; Markos Chandras <hwoarang@gentoo.org> freetype-2.4.8.ebuild:
+  Stable on amd64 wrt bug #390623
+
+  18 Nov 2011; Jeroen Roovers <jer@gentoo.org> freetype-2.4.8.ebuild:
+  Stable for HPPA (bug #390623).
+
+*freetype-2.4.8 (17 Nov 2011)
+
+  17 Nov 2011; Ryan Hill <dirtyepic@gentoo.org> -freetype-2.4.6.ebuild,
+  +freetype-2.4.8.ebuild:
+  Version bump for CVE-2011-3439, bug #390623. Remove old version.
+
+  23 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> freetype-2.4.7.ebuild:
+  ppc/ppc64 stable wrt #387535
+
+  22 Oct 2011; Raúl Porcel <armin76@gentoo.org> freetype-2.4.7.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #387535
+
+  22 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> freetype-2.4.7.ebuild:
+  x86 stable wrt bug #387535
+
+  20 Oct 2011; Tony Vroon <chainsaw@gentoo.org> freetype-2.4.7.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "Ago" Sarubbo & Ian
+  "idella4" Delaney in security bug #387535.
+
+  19 Oct 2011; Jeroen Roovers <jer@gentoo.org> freetype-2.4.7.ebuild:
+  Stable for HPPA (bug #387535).
+
+*freetype-2.4.7 (18 Oct 2011)
+
+  18 Oct 2011; Peter Volkov <pva@gentoo.org> +freetype-2.4.7.ebuild:
+  Version bump, fixes vulnerability vulnerabilities in handling Type 1,
+  security bug #387535.
+
+  01 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  freetype-1.4_pre20080316-r2.ebuild:
+  Fix breakage introduced by Prefix changes. 1.4 ebuild cannot be migrated to
+  EAPI=3 easily, hence added defines for the missing vars when used outside
+  Prefix, bug #381037
+
+  31 Aug 2011; Markus Duft <mduft@gentoo.org> freetype-2.4.6.ebuild:
+  added eautoreconf for prefix platforms.
+
+  28 Aug 2011; Fabian Groffen <grobian@gentoo.org>
+  freetype-1.4_pre20080316-r2.ebuild, freetype-2.4.6.ebuild:
+  Fix for Prefix, transfer Prefix keywords
+
+  21 Aug 2011; Ryan Hill <dirtyepic@gentoo.org> freetype-2.4.6.ebuild,
+  metadata.xml:
+  Add missing app-arch/bzip2 dependency.
+
+  19 Aug 2011; Ryan Hill <dirtyepic@gentoo.org> -freetype-2.4.4.ebuild:
+  Remove old.
+
+  14 Aug 2011; Raúl Porcel <armin76@gentoo.org> freetype-2.4.6.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #377143
+
+  13 Aug 2011; Markus Meier <maekke@gentoo.org> freetype-2.4.6.ebuild:
+  arm stable, bug #377143
+
+  09 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> freetype-2.4.6.ebuild:
+  ppc/ppc64 stable wrt #377143
+
+  08 Aug 2011; Thomas Kahle <tomka@gentoo.org> freetype-2.4.6.ebuild:
+  x86 stable per bug 377143
+
+  07 Aug 2011; Markos Chandras <hwoarang@gentoo.org> freetype-2.4.6.ebuild:
+  Stable on amd64 wrt bug #377143
+
+  05 Aug 2011; Zac Medico <zmedico@gentoo.org> freetype-2.4.6.ebuild:
+  Add ~x86-linux keyword.
+
+  05 Aug 2011; Jeroen Roovers <jer@gentoo.org> freetype-2.4.6.ebuild:
+  Stable for HPPA (bug #377143).
 
   31 Jul 2011; Michael Sterrett <mr_bones_@gentoo.org> +freetype-2.4.4.ebuild:
   Breaking stable deps isn't allowed. Resurrected stable ebuild until the

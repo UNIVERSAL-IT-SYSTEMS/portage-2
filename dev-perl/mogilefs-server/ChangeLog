@@ -1,6 +1,123 @@
 # ChangeLog for dev-perl/mogilefs-server
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/mogilefs-server/ChangeLog,v 1.22 2011/06/27 19:28:19 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/mogilefs-server/ChangeLog,v 1.41 2012/08/16 21:48:54 robbat2 Exp $
+
+*mogilefs-server-2.650.0 (16 Aug 2012)
+
+  16 Aug 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.650.0.ebuild:
+  Bump.
+
+*mogilefs-server-2.640.0 (29 Jun 2012)
+
+  29 Jun 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.640.0.ebuild:
+  Version bump via perl-bump experimental tool.
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*mogilefs-server-2.630.0 (09 Jun 2012)
+
+  09 Jun 2012; Torsten Veller <tove@gentoo.org>
+  +mogilefs-server-2.630.0.ebuild:
+  Version bump
+
+  03 Jun 2012; Torsten Veller <tove@gentoo.org> mogilefs-server-2.37.ebuild,
+  mogilefs-server-2.43.ebuild, mogilefs-server-2.46.ebuild,
+  mogilefs-server-2.50.ebuild, mogilefs-server-2.51.ebuild,
+  mogilefs-server-2.53.ebuild, mogilefs-server-2.530.0.ebuild,
+  mogilefs-server-2.540.0.ebuild, mogilefs-server-2.550.0.ebuild,
+  mogilefs-server-2.560.0.ebuild, mogilefs-server-2.570.0.ebuild,
+  mogilefs-server-2.580.0.ebuild, mogilefs-server-2.590.0.ebuild,
+  mogilefs-server-2.600.0.ebuild, mogilefs-server-2.610.0.ebuild,
+  mogilefs-server-2.620.0.ebuild:
+  Inherit user.eclass for enewuser
+
+*mogilefs-server-2.620.0 (20 May 2012)
+
+  20 May 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.620.0.ebuild:
+  Bump.
+
+*mogilefs-server-2.610.0 (19 May 2012)
+
+  19 May 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.610.0.ebuild:
+  Version bump.
+
+  21 Apr 2012; Robin H. Johnson <robbat2@gentoo.org>
+  mogilefs-server-2.600.0.ebuild:
+  Update Mog deps for the new features.
+
+*mogilefs-server-2.600.0 (20 Apr 2012)
+
+  20 Apr 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.600.0.ebuild:
+  Version bump.
+
+  12 Apr 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Fix cpan distribution in metadata.xml
+
+*mogilefs-server-2.590.0 (01 Mar 2012)
+
+  01 Mar 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.590.0.ebuild:
+  Version bump via perl-bump experimental tool.
+
+*mogilefs-server-2.580.0 (29 Feb 2012)
+
+  29 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.580.0.ebuild:
+  Version bump.
+
+*mogilefs-server-2.570.0 (01 Feb 2012)
+
+  01 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.570.0.ebuild:
+  Version bump.
+
+*mogilefs-server-2.560.0 (28 Jan 2012)
+
+  28 Jan 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.560.0.ebuild:
+  Version bump.
+
+  16 Dec 2011; Sven Wegener <swegener@gentoo.org> files/mogstored-conf.d-2.30,
+  mogilefs-server-2.37.ebuild, mogilefs-server-2.43.ebuild,
+  mogilefs-server-2.46.ebuild, files/mogstored-init.d-2.50,
+  mogilefs-server-2.50.ebuild, mogilefs-server-2.51.ebuild,
+  mogilefs-server-2.53.ebuild, mogilefs-server-2.530.0.ebuild,
+  mogilefs-server-2.540.0.ebuild, mogilefs-server-2.550.0.ebuild:
+  Don't keepdir /mnt/mogilefs, it's a place for temporary user mounts.
+
+  16 Dec 2011; Sven Wegener <swegener@gentoo.org> files/mogstored-conf.d-2.30,
+  files/mogstored-init.d-2.50:
+  Move --daemonize to init script, pass --pidfile to mogstored.
+
+*mogilefs-server-2.550.0 (14 Nov 2011)
+
+  14 Nov 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.550.0.ebuild:
+  Version bump.
+
+*mogilefs-server-2.540.0 (29 Oct 2011)
+
+  29 Oct 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.540.0.ebuild:
+  Version bump.
+
+*mogilefs-server-2.530.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org>
+  +mogilefs-server-2.530.0.ebuild:
+  Change version scheme
+
+*mogilefs-server-2.53 (12 Aug 2011)
+
+  12 Aug 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +mogilefs-server-2.53.ebuild:
+  Version bump. Contains a critical fix for any users of 2.50-2.52.
 
 *mogilefs-server-2.51 (27 Jun 2011)
 
@@ -142,4 +259,3 @@
   30 Apr 2007; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +mogilefs-server-2.10.ebuild:
   Initial commit, ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

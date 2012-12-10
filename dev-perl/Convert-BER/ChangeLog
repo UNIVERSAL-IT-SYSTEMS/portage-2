@@ -1,6 +1,38 @@
 # ChangeLog for dev-perl/Convert-BER
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Convert-BER/ChangeLog,v 1.20 2011/01/14 14:03:22 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Convert-BER/ChangeLog,v 1.29 2012/06/24 13:00:04 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  21 Apr 2012; Torsten Veller <tove@gentoo.org> -Convert-BER-1.310.100.ebuild:
+  Cleanup
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> Convert-BER-1.310.100.ebuild,
+  Convert-BER-1.320.0.ebuild:
+  Drop ia64/sparc keywords
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Convert-BER-1.320.0.ebuild:
+  x86 stable wrt bug #400061
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> Convert-BER-1.320.0.ebuild:
+  Marking Convert-BER-1.320.0 ppc for bug 400061
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  Convert-BER-1.320.0.ebuild:
+  Stable on alpha, bug #400061
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Convert-BER-1.320.0.ebuild:
+  Stable for amd64, wrt bug #400061
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Convert-BER-1.320.ebuild:
+  Cleanup
+
+*Convert-BER-1.320.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org> +Convert-BER-1.320.0.ebuild:
+  Change version scheme
 
 *Convert-BER-1.320 (14 Jan 2011)
 *Convert-BER-1.310.100 (14 Jan 2011)

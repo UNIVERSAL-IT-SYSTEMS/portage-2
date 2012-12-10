@@ -1,6 +1,23 @@
 # ChangeLog for app-editors/ne
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/ne/ChangeLog,v 1.43 2011/03/12 13:37:40 swegener Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/ne/ChangeLog,v 1.48 2012/08/21 06:00:49 xmw Exp $
+
+  21 Aug 2012; Michael Weber <xmw@gentoo.org> ne-2.3.ebuild:
+  ppc stable (bug 418565)
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> ne-2.3.ebuild:
+  Marking ne-2.3 ppc64 for bug 418565
+
+  02 Aug 2012; Markos Chandras <hwoarang@gentoo.org> ne-2.3.ebuild:
+  Stable on amd64 wrt bug #418565
+
+  02 Aug 2012; Jeff Horelick <jdhore@gentoo.org> ne-2.3.ebuild:
+  marked x86 per bug 418565
+
+*ne-2.3 (16 Mar 2012)
+
+  16 Mar 2012; Patrick Lauer <patrick@gentoo.org> +ne-2.3.ebuild:
+  Bump
 
   12 Mar 2011; Sven Wegener <swegener@gentoo.org> -ne-1.42.ebuild,
   -ne-1.43.ebuild:
@@ -162,4 +179,3 @@
 
   21 Mar 2003; Seth Chandler <sethbc@gentoo.org>; ne-1.19.ebuild:
   initial import thx to Marc Heerdink <marc@koelkast.net>
-

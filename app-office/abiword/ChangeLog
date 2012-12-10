@@ -1,6 +1,77 @@
 # ChangeLog for app-office/abiword
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/abiword/ChangeLog,v 1.244 2011/04/24 17:24:12 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-office/abiword/ChangeLog,v 1.262 2012/08/05 21:44:50 blueness Exp $
+
+  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org> abiword-2.8.6-r2.ebuild:
+  Keyword ~arm
+
+  29 May 2012; Anthony G. Basile <blueness@gentoo.org> abiword-2.8.6-r2.ebuild:
+  Keyword ~mips
+
+  10 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  abiword-2.8.6-r2.ebuild:
+  Remove gucharmap dependency, it has not been needed since at least
+  abiword-2.8.3
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> abiword-2.8.6-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  20 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  files/abiword-2.8.6-glib-2.31.patch:
+  Fix another glib-2.32 header issue (bug #412735, thanks to Anton Kochkov for
+  reporting).
+
+  08 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  abiword-2.8.6-r2.ebuild, +files/abiword-2.8.6-glib-2.31.patch:
+  Fix building with >=glib-2.31 (bug #406249).
+
+  17 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -abiword-2.8.6-r1.ebuild:
+  old
+
+  12 Feb 2012; Raúl Porcel <armin76@gentoo.org> abiword-2.8.6-r2.ebuild:
+  alpha/ia64/sparc stable wrt #401461
+
+  31 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> abiword-2.8.6-r2.ebuild:
+  ppc/ppc64/x86 stable wrt #401461
+
+  31 Jan 2012; Agostino Sarubbo <ago@gentoo.org> abiword-2.8.6-r2.ebuild:
+  Stable for amd64, wrt bug #401461
+
+  16 Jan 2012; Pacho Ramos <pacho@gentoo.org> abiword-2.8.6-r2.ebuild:
+  Use REQUIRED_USE (thanks a lot to Ulrich Müller in bug #399069 for explaining
+  me how to handle this REQUIRED_USE statement) to be sure 'plugins' is enabled
+  when people build this with any other extra plugins enabled, otherwise extra
+  plugins won't be built at all. Enable 'plugins' by default as it doesn't add
+  any new dependency and simplifies things for people enabling any other plugin
+  (for example, 'readline' plugin will be enabled automatically in most systems
+  due profiles enabling that flag globally).
+
+  17 Dec 2011; Pacho Ramos <pacho@gentoo.org> files/abiword-2.8.6-libwpd.patch:
+  plugin-configure.m4 patching was skipped by error, thanks a lot to Cody
+  Schafer for reporting bug #394897.
+
+*abiword-2.8.6-r2 (04 Dec 2011)
+
+  04 Dec 2011; Pacho Ramos <pacho@gentoo.org> +abiword-2.8.6-r2.ebuild,
+  +files/abiword-2.8.6-libwpd.patch:
+  Include Fedora patch to make abiword-2.8 compatible with libwpd:0.9 as
+  upstream doesn't want to fix it for 2.8.x (is already solved in 2.9).
+
+  23 Sep 2011; Pacho Ramos <pacho@gentoo.org> abiword-2.8.6-r1.ebuild,
+  +files/abiword-2.8.6-gcc46.patch:
+  Use Arch patch to fix compilation with gcc-4.6 (bug #367865).
+
+  23 Sep 2011; Lars Wendler <polynomial-c@gentoo.org>
+  files/abiword-2.8.6-libpng15.patch:
+  non-maintainer commit: Added fixed patch to build with libpng15 (bug
+  #383567).
+
+  07 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> abiword-2.8.6-r1.ebuild,
+  +files/abiword-2.8.6-libpng15.patch:
+  Fix building with libpng15 wrt #356287 by Hanno Boeck
+
+  04 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org> abiword-2.8.6-r1.ebuild:
+  media-libs/libwpg app-text/libwpg
 
   24 Apr 2011; Gilles Dartiguelongue <eva@gentoo.org> abiword-2.8.6-r1.ebuild:
   Use slotted revisions of libwpd and libwpg.

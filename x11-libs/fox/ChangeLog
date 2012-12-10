@@ -1,6 +1,44 @@
 # ChangeLog for x11-libs/fox
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/fox/ChangeLog,v 1.150 2011/02/26 22:34:33 signals Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/fox/ChangeLog,v 1.159 2012/09/29 14:03:04 grobian Exp $
+
+  29 Sep 2012; Fabian Groffen <grobian@gentoo.org> fox-1.7.33.ebuild:
+  Fix for Prefix, partial fix for bug #433531
+
+  06 Jul 2012; Matti Bickel <mabi@gentoo.org> fox-1.7.33.ebuild:
+  still need to call fox_src_prepare here
+
+  06 Jul 2012; Matti Bickel <mabi@gentoo.org> fox-1.7.33.ebuild:
+  backport compile fix for x86 (bug #425032)
+
+*fox-1.6.45 (04 Jul 2012)
+
+  04 Jul 2012; Matti Bickel <mabi@gentoo.org> +fox-1.6.45.ebuild:
+  version bump
+
+*fox-1.7.33 (04 Jul 2012)
+
+  04 Jul 2012; Matti Bickel <mabi@gentoo.org> +fox-1.7.33.ebuild:
+  version bump
+
+  08 Mar 2012; Naohiro Aota <naota@gentoo.org> fox-1.6.43.ebuild:
+  Add ~x86-fbsd.
+
+*fox-1.7.32 (12 Feb 2012)
+
+  12 Feb 2012; Matti Bickel <mabi@gentoo.org> +fox-1.7.32.ebuild,
+  -fox-1.7.23.ebuild, fox-1.6.43.ebuild:
+  version bump (thanks to James Broadhead in bug #376239 for providing much of
+  the code), add media-libs/mesa dep (bug #379725)
+
+*fox-1.6.43 (25 Aug 2011)
+
+  25 Aug 2011; Matti Bickel <mabi@gentoo.org> +fox-1.6.43.ebuild:
+  version bump, mainly fixes compiling against libpng15
+
+  05 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> fox-1.6.40.ebuild,
+  +files/fox-1.6.40-libpng15.patch:
+  Fix building with libpng15.
 
   26 Feb 2011; Kevin McCarthy <signals@gentoo.org> fox-1.6.40.ebuild,
   fox-1.7.23.ebuild:

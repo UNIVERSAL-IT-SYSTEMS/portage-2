@@ -1,6 +1,120 @@
 # ChangeLog for media-plugins/gst-plugins-meta
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-meta/ChangeLog,v 1.49 2011/07/17 21:18:16 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-meta/ChangeLog,v 1.78 2012/12/09 08:58:08 tetromino Exp $
+
+*gst-plugins-meta-1.0 (09 Dec 2012)
+
+  09 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gst-plugins-meta-0.10-r7.ebuild, +gst-plugins-meta-1.0.ebuild:
+  Add gst-1.0 plugin metapackage. Change license to "metapackage".
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-plugins-meta-0.10-r7.ebuild:
+  EAPI bump due pending 1.0 slot addition.
+
+  01 Oct 2012; Fabian Groffen <grobian@gentoo.org>
+  gst-plugins-meta-0.10-r7.ebuild:
+  Marked ~x64-macos
+
+  16 Sep 2012; Pacho Ramos <pacho@gentoo.org> -gst-plugins-meta-0.10-r6.ebuild,
+  gst-plugins-meta-0.10-r7.ebuild, metadata.xml:
+  Drop myth support as gmyth is going away, bug #315565. Drop old.
+
+  23 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  gst-plugins-meta-0.10-r7.ebuild:
+  Rekeyword ~mips, working fine on lemote yeeloong
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org>
+  gst-plugins-meta-0.10-r7.ebuild:
+  alpha/ia64/sh/sparc stable wrt #410611
+
+  08 Jun 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer from metadata as talked with him, bug #90641.
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gst-plugins-meta-0.10-r7.ebuild:
+  ppc stable wrt #410611
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org>
+  gst-plugins-meta-0.10-r7.ebuild:
+  keyword ~amd64-fbsd
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> gst-plugins-meta-0.10-r7.ebuild:
+  Stable for HPPA (bug #410611).
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org>
+  gst-plugins-meta-0.10-r7.ebuild:
+  x86 stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org>
+  gst-plugins-meta-0.10-r7.ebuild:
+  arm stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> gst-plugins-meta-0.10-r7.ebuild:
+  Marking gst-plugins-meta-0.10-r7 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org>
+  gst-plugins-meta-0.10-r7.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gst-plugins-meta-0.10-r6.ebuild, gst-plugins-meta-0.10-r7.ebuild:
+  Remove USE="esd" because media-plugins/gst-plugins-esd isn't in tree anymore.
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> gst-plugins-meta-0.10-r7.ebuild:
+  Marked ~hppa (bug #401469).
+
+*gst-plugins-meta-0.10-r7 (30 Jan 2012)
+
+  30 Jan 2012; Pacho Ramos <pacho@gentoo.org> +gst-plugins-meta-0.10-r7.ebuild,
+  -gst-plugins-meta-0.10-r2.ebuild, -gst-plugins-meta-0.10-r5.ebuild,
+  metadata.xml:
+  Revision bump to handle soup and libvisual plugins, bug #369083 and #392973.
+
+  30 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  gst-plugins-meta-0.10-r5.ebuild, gst-plugins-meta-0.10-r6.ebuild:
+  Rename obsolete USE="v4l2" to USE="v4l" wrt #385241
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org>
+  gst-plugins-meta-0.10-r6.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org>
+  gst-plugins-meta-0.10-r6.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gst-plugins-meta-0.10-r6.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> gst-plugins-meta-0.10-r6.ebuild:
+  Stable for HPPA (bug #385699).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gst-plugins-meta-0.10-r6.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  15 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  gst-plugins-meta-0.10-r6.ebuild:
+  amd64 stable wrt #385699
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gst-plugins-meta-0.10-r5.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+  03 Oct 2011; Jeroen Roovers <jer@gentoo.org> gst-plugins-meta-0.10-r6.ebuild:
+  Marked ~hppa (bug #373639).
+
+  12 Sep 2011; Pacho Ramos <pacho@gentoo.org> -gst-plugins-meta-0.10-r4.ebuild,
+  gst-plugins-meta-0.10-r6.ebuild:
+  Add a dts USE flag, bug #380695 by Florian Klink. Remove old.
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> gst-plugins-meta-0.10-r5.ebuild:
+  Stable for HPPA (bug #371259).
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org>
+  gst-plugins-meta-0.10-r5.ebuild:
+  alpha/ia64/sh/sparc stable wrt #369909
 
   17 Jul 2011; Markus Meier <maekke@gentoo.org>
   gst-plugins-meta-0.10-r5.ebuild:
@@ -205,4 +319,3 @@
   26 Nov 2007; Daniel Gryniewicz <dang@gentoo.org> +metadata.xml,
   +gst-plugins-meta-0.10.ebuild:
   New meta for pulling in gst plugins
-

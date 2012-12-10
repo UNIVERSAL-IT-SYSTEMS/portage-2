@@ -1,6 +1,44 @@
 # ChangeLog for sci-mathematics/pari
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/pari/ChangeLog,v 1.85 2011/07/28 17:56:00 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/pari/ChangeLog,v 1.92 2012/10/22 22:01:21 fauli Exp $
+
+  22 Oct 2012; Christian Faulhammer <fauli@gentoo.org> pari-2.3.4-r1.ebuild,
+  pari-2.3.5.ebuild, pari-2.5.0-r3.ebuild, pari-2.5.1.ebuild,
+  pari-2.5.1-r1.ebuild, pari-2.5.2.ebuild:
+  drop GNU Emacs support as it is not compatible with Emacs 24 (see bug
+  419457), also remove som disfunctional rests from newer ebuilds
+
+  29 Sep 2012; Fabian Groffen <grobian@gentoo.org> pari-2.5.2.ebuild:
+  Sed some more files for Prefix, bug #433379
+
+*pari-2.5.2 (09 Aug 2012)
+
+  09 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> +pari-2.5.2.ebuild:
+  Version bump
+
+*pari-2.5.1-r1 (01 Aug 2012)
+
+  01 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/pari-2.5.1-1302.patch, +files/pari-2.5.1-1304.patch,
+  +files/pari-2.5.1-no-automagic.patch, +pari-2.5.1-r1.ebuild:
+  Fixed automagic dependencies against fltk and qt as noted by Burcin Erocal,
+  bug #428192, added some upstream patches from sage-on-gentoo
+
+  28 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/pari-2.5.1-gcc47.patch, pari-2.5.1.ebuild:
+  Fixed linear solving with gcc-4.7, bug #423617
+
+*pari-2.5.1 (06 Mar 2012)
+
+  06 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> +pari-2.5.1.ebuild:
+  Version bump
+
+*pari-2.5.0-r3 (04 Aug 2011)
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> -pari-2.5.0-r2.ebuild,
+  +pari-2.5.0-r3.ebuild, files/pari-2.5.0-doc-make.patch,
+  files/pari-2.5.0-macos.patch, files/pari-2.5.0-mp.c.patch:
+  Finally the right patches by Francois Bissey
 
 *pari-2.5.0-r2 (28 Jul 2011)
 

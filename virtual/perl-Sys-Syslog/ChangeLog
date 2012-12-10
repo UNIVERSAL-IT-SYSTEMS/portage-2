@@ -1,6 +1,51 @@
 # ChangeLog for virtual/perl-Sys-Syslog
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Sys-Syslog/ChangeLog,v 1.45 2011/07/30 12:01:46 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Sys-Syslog/ChangeLog,v 1.56 2012/09/14 17:40:08 tove Exp $
+
+*perl-Sys-Syslog-0.320.0 (14 Sep 2012)
+
+  14 Sep 2012; Torsten Veller <tove@gentoo.org>
+  +perl-Sys-Syslog-0.320.0.ebuild:
+  Version bump
+
+*perl-Sys-Syslog-0.310.0 (22 Aug 2012)
+
+  22 Aug 2012; Torsten Veller <tove@gentoo.org>
+  +perl-Sys-Syslog-0.310.0.ebuild:
+  Version bump
+
+*perl-Sys-Syslog-0.290.0-r1 (21 May 2012)
+
+  21 May 2012; Torsten Veller <tove@gentoo.org>
+  -perl-Sys-Syslog-0.290.0.ebuild, +perl-Sys-Syslog-0.290.0-r1.ebuild:
+  Add perl-5.16 as provider
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org>
+  perl-Sys-Syslog-0.290.0.ebuild:
+  keyword ~amd64-fbsd
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> perl-Sys-Syslog-0.290.0.ebuild:
+  Marking perl-Sys-Syslog-0.290.0 ppc64 for bug 393937
+
+  02 Feb 2012; Brent Baude <ranger@gentoo.org> perl-Sys-Syslog-0.290.0.ebuild:
+  Marking perl-Sys-Syslog-0.290.0 ppc for bug 393937
+
+  14 Jan 2012; Raúl Porcel <armin76@gentoo.org>
+  perl-Sys-Syslog-0.290.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #393937
+
+  21 Dec 2011; Markus Meier <maekke@gentoo.org> perl-Sys-Syslog-0.290.0.ebuild:
+  arm stable, bug #393937
+
+  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  perl-Sys-Syslog-0.290.0.ebuild:
+  x86 stable wrt bug #393937
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> perl-Sys-Syslog-0.290.0.ebuild:
+  Stable for HPPA (bug #393937).
+
+  17 Dec 2011; Agostino Sarubbo <ago@gentoo.org> perl-Sys-Syslog-0.290.0.ebuild:
+  Stable for AMD64, wrt bug #393937
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org>
   perl-Sys-Syslog-0.270.0-r1.ebuild, perl-Sys-Syslog-0.280.0.ebuild,

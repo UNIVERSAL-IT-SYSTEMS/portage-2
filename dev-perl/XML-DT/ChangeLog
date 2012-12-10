@@ -1,6 +1,55 @@
 # ChangeLog for dev-perl/XML-DT
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-DT/ChangeLog,v 1.71 2011/07/29 12:35:47 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-DT/ChangeLog,v 1.84 2012/07/28 08:09:15 tove Exp $
+
+  28 Jul 2012; Torsten Veller <tove@gentoo.org> -XML-DT-0.570.0.ebuild,
+  -XML-DT-0.590.0.ebuild:
+  Cleanup
+
+*XML-DT-0.620.0 (28 Jun 2012)
+
+  28 Jun 2012; Torsten Veller <tove@gentoo.org> +XML-DT-0.620.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*XML-DT-0.590.0 (09 Jun 2012)
+
+  09 Jun 2012; Torsten Veller <tove@gentoo.org> +XML-DT-0.590.0.ebuild:
+  Version bump
+
+*XML-DT-0.570.0 (08 Apr 2012)
+
+  08 Apr 2012; Torsten Veller <tove@gentoo.org> +XML-DT-0.570.0.ebuild:
+  Version bump
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -XML-DT-0.47.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> XML-DT-0.47.ebuild,
+  XML-DT-0.560.0.ebuild:
+  alpha stable and drop ia64/sparc keywords wrt #400265
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> XML-DT-0.560.0.ebuild:
+  x86 stable wrt bug #400265
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> XML-DT-0.560.0.ebuild:
+  Marking XML-DT-0.560.0 ppc for bug 400265
+
+  24 Feb 2012; Jeroen Roovers <jer@gentoo.org> XML-DT-0.560.0.ebuild:
+  Stable for HPPA (bug #400265).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> XML-DT-0.560.0.ebuild:
+  Stable for amd64, wrt bug #400265
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -XML-DT-0.560.ebuild:
+  Cleanup
+
+*XML-DT-0.560.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +XML-DT-0.560.0.ebuild:
+  Change version scheme
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org> -XML-DT-0.53.ebuild,
   -XML-DT-0.54.ebuild:

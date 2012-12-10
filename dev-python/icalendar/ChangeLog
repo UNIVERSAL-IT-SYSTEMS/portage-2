@@ -1,6 +1,32 @@
 # ChangeLog for dev-python/icalendar
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/icalendar/ChangeLog,v 1.13 2011/04/12 18:56:04 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/icalendar/ChangeLog,v 1.20 2012/11/09 13:03:46 nixphoeni Exp $
+
+  09 Nov 2012; Joe Sapp <nixphoeni@gentoo.org> -icalendar-2.1_p20100409.ebuild:
+  Remove old version
+
+*icalendar-3.1 (30 Oct 2012)
+
+  30 Oct 2012; Patrick Lauer <patrick@gentoo.org> +icalendar-3.1.ebuild:
+  Bump
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> icalendar-2.2.ebuild:
+  x86 stable wrt bug #400327
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> icalendar-2.2.ebuild:
+  Stable for amd64, wrt bug #400327
+
+  09 Dec 2011; Naohiro Aota <naota@gentoo.org> icalendar-2.2.ebuild:
+  Add ~x86-fbsd
+
+  02 Sep 2011; Joe Sapp <nixphoeni@gentoo.org> icalendar-2.2.ebuild:
+  Removed eutils inherit
+
+*icalendar-2.2 (31 Aug 2011)
+
+  31 Aug 2011; Joe Sapp <nixphoeni@gentoo.org> +icalendar-2.2.ebuild,
+  metadata.xml:
+  Version bump; added 'doc' USE flag
 
   12 Apr 2011; Thomas Kahle <tomka@gentoo.org> icalendar-2.1_p20100409.ebuild:
   x86 stable per bug 358713
@@ -80,4 +106,3 @@
   04 Jul 2009; Joe Sapp <nixphoeni@gentoo.org> +icalendar-2.0.1.ebuild,
   +files/icalendar-2.0.1-UIDGenerator-fix.patch, +metadata.xml:
   Initial commit - bug #111822
-

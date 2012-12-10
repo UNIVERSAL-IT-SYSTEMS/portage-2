@@ -1,9 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-block/partimage/partimage-0.6.9.ebuild,v 1.1 2010/11/19 19:36:33 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-block/partimage/partimage-0.6.9.ebuild,v 1.6 2012/10/09 19:20:56 armin76 Exp $
 
-EAPI=3
-inherit eutils flag-o-matic pam
+EAPI=4
+inherit eutils flag-o-matic pam user
 
 DESCRIPTION="Console-based application to efficiently save raw partition data to an image file"
 HOMEPAGE="http://www.partimage.org/"
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE="nls nologin pam ssl static"
 
 LIBS_DEPEND="app-arch/bzip2
@@ -31,6 +31,10 @@ pkg_setup() {
 	enewuser partimag 91 -1 /var/lib/partimage partimag
 }
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-zlib-1.2.5.2.patch #405323
+}
+
 src_configure() {
 	# XXX: Do we still need these?
 	filter-flags -fno-exceptions
@@ -48,7 +52,6 @@ src_configure() {
 		--docdir="${EPREFIX}"/usr/share/doc/${PF} \
 		--sysconfdir="${EPREFIX}"/etc \
 		$(use_enable nls) \
-		--disable-dependency-tracking \
 		$(use_enable ssl) \
 		--disable-pam \
 		$(use_enable static all-static) \
@@ -57,26 +60,25 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-	dodoc BOOT-ROOT.txt FORMAT FUTURE THANKS
+	default
 
 	keepdir /var/lib/partimage
 	keepdir /var/log/partimage
 
-	newinitd "${FILESDIR}"/partimaged.init.2 partimaged || die
-	newconfd "${FILESDIR}"/partimaged.conf partimaged || die
+	newinitd "${FILESDIR}"/partimaged.init.2 partimaged
+	newconfd "${FILESDIR}"/partimaged.conf partimaged
 
 	if use ssl; then
 		insinto /etc/partimaged
-		doins "${FILESDIR}"/servercert.cnf || die
+		doins "${FILESDIR}"/servercert.cnf
 	fi
 
 	if use pam; then
-		newpamd "${FILESDIR}"/partimaged.pam.2 partimaged || die
+		newpamd "${FILESDIR}"/partimaged.pam.2 partimaged
 	fi
 }
 
-confdir=${ROOT}etc/partimaged
+confdir=${EROOT}/etc/partimaged
 privkey=${confdir}/partimaged.key
 cnf=${confdir}/servercert.cnf
 csr=${confdir}/partimaged.csr
@@ -89,24 +91,24 @@ pkg_config() {
 		read
 		if [ ! -f ${privkey} ]; then
 			einfo "Generating unencrypted private key: ${privkey}"
-			openssl genrsa -out ${privkey} 1024  || die "Failed!"
+			openssl genrsa -out ${privkey} 1024 || die
 		else
 			einfo "Private key already exists: ${privkey}"
 		fi
 		if [ ! -f ${csr} ]; then
 			einfo "Generating certificate request: ${csr}"
-			openssl req -new -x509 -outform PEM -out ${csr} -key ${privkey} -config ${cnf} || die "Failed!"
+			openssl req -new -x509 -outform PEM -out ${csr} -key ${privkey} -config ${cnf} || die
 		else
 			einfo "Certificate request already exists: ${csr}"
 		fi
 		if [ ! -f ${cert} ]; then
 			einfo "Generating self-signed certificate: ${cert}"
-			openssl x509 -in ${csr} -out ${cert} -signkey ${privkey} || die "Failed!"
+			openssl x509 -in ${csr} -out ${cert} -signkey ${privkey} || die
 		else
 			einfo "Self-signed certifcate already exists: ${cert}"
 		fi
 		einfo "Setting permissions"
-		partimagesslperms || die "Failed!"
+		partimagesslperms || die
 		einfo "Done"
 	else
 		einfo "SSL is disabled, not building certificates"
@@ -133,5 +135,5 @@ pkg_postinst() {
 		partimagesslperms
 		return 0
 	fi
-	chown partimag:0 "${ROOT}"etc/partimaged/partimagedusers || die
+	chown partimag:0 "${EROOT}"/etc/partimaged/partimagedusers || die
 }

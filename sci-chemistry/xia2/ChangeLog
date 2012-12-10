@@ -1,6 +1,31 @@
 # ChangeLog for sci-chemistry/xia2
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/xia2/ChangeLog,v 1.7 2011/07/23 13:17:37 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/xia2/ChangeLog,v 1.13 2012/04/14 09:54:22 nativemad Exp $
+
+  14 Apr 2012; Andreas Schuerch <nativemad@gentoo.org> xia2-0.3.3.1.ebuild:
+  x86 stable, see bug 375917, thanks all.
+
+*xia2-0.3.4.0 (28 Feb 2012)
+
+  28 Feb 2012; Justin Lecher <jlec@gentoo.org> +files/0.3.4.0-fix-syntax.patch,
+  +xia2-0.3.4.0.ebuild:
+  Version Bump
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> xia2-0.3.3.1.ebuild:
+  amd64 restable
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> xia2-0.3.3.1.ebuild:
+  Revert back to ~arch for security and libpng porting.
+
+  06 Oct 2011; Tony Vroon <chainsaw@gentoo.org> xia2-0.3.3.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #351753.
+
+*xia2-0.3.3.3 (04 Oct 2011)
+
+  04 Oct 2011; Justin Lecher <jlec@gentoo.org> +files/0.3.3.3-fix-syntax.patch,
+  +xia2-0.3.3.3.ebuild:
+  Version Bump
 
   23 Jul 2011; Justin Lecher <jlec@gentoo.org> xia2-0.3.3.1.ebuild:
   Added pstins msg

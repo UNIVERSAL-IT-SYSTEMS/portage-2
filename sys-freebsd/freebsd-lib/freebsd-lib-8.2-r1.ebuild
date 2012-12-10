@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-lib/freebsd-lib-8.2-r1.ebuild,v 1.5 2011/07/12 14:32:29 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-lib/freebsd-lib-8.2-r1.ebuild,v 1.10 2012/08/02 15:25:21 ryao Exp $
 
 EAPI=2
 
-inherit bsdmk freebsd flag-o-matic multilib toolchain-funcs
+inherit bsdmk freebsd flag-o-matic multilib toolchain-funcs eutils
 
 DESCRIPTION="FreeBSD's base system libraries"
 SLOT="0"
@@ -28,7 +28,8 @@ if [ "${CATEGORY#*cross-}" = "${CATEGORY}" ]; then
 	RDEPEND="ssl? ( dev-libs/openssl )
 		hesiod? ( net-dns/hesiod )
 		kerberos? ( virtual/krb5 )
-		usb? ( !dev-libs/libusb )
+		usb? ( !dev-libs/libusb !dev-libs/libusbx )
+		userland_GNU? ( sys-apps/mtree )
 		>=dev-libs/expat-2.0.1
 		!sys-freebsd/freebsd-headers"
 	DEPEND="${RDEPEND}
@@ -134,6 +135,7 @@ src_prepare() {
 	cd "${WORKDIR}"
 	epatch "${FILESDIR}/${PN}-includes.patch"
 	epatch "${FILESDIR}/${PN}-8.0-gcc45.patch"
+	epatch "${FILESDIR}/${PN}-8.2-nlm_syscall.patch"
 
 	# Don't install the hesiod man page or header
 	rm "${WORKDIR}"/include/hesiod.h || die
@@ -196,6 +198,9 @@ src_compile() {
 
 	# Bug #270098
 	append-flags $(test-flags -fno-strict-aliasing)
+
+	# Bug #324445
+	append-flags $(test-flags -fno-strict-overflow)
 
 	strip-flags
 	if [ "${CTARGET}" != "${CHOST}" ]; then

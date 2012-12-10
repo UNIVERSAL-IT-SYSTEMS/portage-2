@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/scim-bridge/scim-bridge-0.4.16-r2.ebuild,v 1.3 2011/03/27 11:34:40 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/scim-bridge/scim-bridge-0.4.16-r2.ebuild,v 1.5 2012/07/08 19:43:42 naota Exp $
 
 EAPI="2"
 
@@ -28,7 +28,7 @@ RDEPEND=">=app-i18n/scim-1.4.6
 		>=x11-libs/pango-1.1
 	)"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-util/intltool
 	doc? ( app-doc/doxygen )"
 
@@ -45,6 +45,7 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-0.4.15.2-qt4.patch"
 	epatch "${FILESDIR}/${PN}-0.4.15.2-gcc43.patch"
 	epatch "${FILESDIR}/${P}+gcc-4.4.patch"
+	epatch "${FILESDIR}/${P}+gcc-4.7.patch"
 	# bug #280887
 	epatch "${FILESDIR}/${P}-configure.ac.patch"
 

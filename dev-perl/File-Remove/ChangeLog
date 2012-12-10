@@ -1,6 +1,83 @@
 # ChangeLog for dev-perl/File-Remove
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/File-Remove/ChangeLog,v 1.69 2011/04/03 06:30:13 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/File-Remove/ChangeLog,v 1.91 2012/09/02 16:28:43 tove Exp $
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -File-Remove-1.510.0.ebuild:
+  Cleanup
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> File-Remove-1.520.0.ebuild:
+  alpha/ia64/sparc stable wrt #418813
+
+  09 Aug 2012; Brent Baude <ranger@gentoo.org> File-Remove-1.520.0.ebuild:
+  Marking File-Remove-1.520.0 ppc for bug 418813
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> File-Remove-1.520.0.ebuild:
+  Marking File-Remove-1.520.0 ppc64 for bug 418813
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> File-Remove-1.520.0.ebuild:
+  Stable for amd64, wrt bug #418813
+
+  02 Aug 2012; Jeroen Roovers <jer@gentoo.org> File-Remove-1.520.0.ebuild:
+  Stable for HPPA (bug #418813).
+
+  31 Jul 2012; Johannes Huber <johu@gentoo.org> File-Remove-1.520.0.ebuild:
+  Stable for x86, wrt bug #418813
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  03 Jun 2012; Torsten Veller <tove@gentoo.org> -File-Remove-1.42.ebuild,
+  -File-Remove-1.500.0.ebuild:
+  Cleanup
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> File-Remove-1.510.0.ebuild:
+  alpha/ia64/sparc stable wrt #404669
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> File-Remove-1.42.ebuild,
+  File-Remove-1.500.0.ebuild, File-Remove-1.510.0.ebuild,
+  File-Remove-1.520.0.ebuild:
+  Add ~arm/~s390/~sh
+
+*File-Remove-1.520.0 (21 Apr 2012)
+
+  21 Apr 2012; Robin H. Johnson <robbat2@gentoo.org>
+  File-Remove-1.500.0.ebuild, File-Remove-1.510.0.ebuild,
+  +File-Remove-1.520.0.ebuild:
+  Version bump via perl-bump experimental tool.
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> File-Remove-1.510.0.ebuild:
+  Marking File-Remove-1.510.0 ppc64 for bug 404669
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> File-Remove-1.510.0.ebuild:
+  Marking File-Remove-1.510.0 ppc for bug 404669
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> File-Remove-1.510.0.ebuild:
+  marked x86 per bug 404669
+
+  29 Mar 2012; Jeroen Roovers <jer@gentoo.org> File-Remove-1.510.0.ebuild:
+  Stable for HPPA (bug #404669).
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> File-Remove-1.510.0.ebuild:
+  Stable for amd64, wrt bug #404669
+
+  26 Mar 2012; Naohiro Aota <naota@gentoo.org> File-Remove-1.510.0.ebuild:
+  Add ~x86-fbsd. #408399
+
+  24 Mar 2012; Fabian Groffen <grobian@gentoo.org> File-Remove-1.510.0.ebuild:
+  Marked ~x64-macos
+
+*File-Remove-1.510.0 (30 Oct 2011)
+
+  30 Oct 2011; Torsten Veller <tove@gentoo.org> +File-Remove-1.510.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -File-Remove-1.490.0.ebuild:
+  Cleanup
+
+*File-Remove-1.500.0 (05 Aug 2011)
+
+  05 Aug 2011; Torsten Veller <tove@gentoo.org> +File-Remove-1.500.0.ebuild:
+  Version bump
 
   03 Apr 2011; Torsten Veller <tove@gentoo.org> -File-Remove-1.460.ebuild,
   -File-Remove-1.480.0.ebuild:
@@ -264,4 +341,3 @@
   03 Jun 2003; Michael Cummings <mcummings@gentoo.org>
   File-Remove-0.20.ebuild:
   Fills bug 21791
-

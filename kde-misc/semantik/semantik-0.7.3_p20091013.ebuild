@@ -1,8 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/semantik/semantik-0.7.3_p20091013.ebuild,v 1.3 2011/07/13 17:36:21 mschiff Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/semantik/semantik-0.7.3_p20091013.ebuild,v 1.6 2012/07/25 15:35:43 kensington Exp $
 
 EAPI=4
+CMAKE_REQUIRED="never"
 
 inherit kde4-base waf-utils
 
@@ -11,7 +12,7 @@ HOMEPAGE="http://freehackers.org/~tnagy/semantik.html"
 SRC_URI="http://semantik.googlecode.com/files/semantik-snapshot.tar.bz2 -> ${P}.tar.bz2"
 
 LICENSE="GPL-3"
-SLOT="0"
+SLOT="4"
 KEYWORDS="~amd64"
 IUSE=""
 
@@ -20,9 +21,9 @@ DEPEND="
 	dev-lang/python
 "
 RDEPEND="
-	x11-libs/qt-core
-	x11-libs/qt-gui
-	x11-libs/qt-xmlpatterns
+	x11-libs/qt-core:4
+	x11-libs/qt-gui:4
+	x11-libs/qt-xmlpatterns:4
 	dev-lang/python[xml]
 "
 
@@ -35,7 +36,7 @@ PATCHES=(
 )
 
 src_configure() {
-	CCFLAGS="${CFLAGS}" LINKFLAGS="${LDFLAGS}" "${WAF_BINARY}" \
-		"--prefix=${EPREFIX}/usr" --want-rpath=0 \
+	CCFLAGS="${CFLAGS}" CPPFLAGS="${CXXFLAGS}" LINKFLAGS="${LDFLAGS}" \
+		"${WAF_BINARY}" "--prefix=${EPREFIX}/usr" --want-rpath=0 \
 		configure || die "configure failed"
 }

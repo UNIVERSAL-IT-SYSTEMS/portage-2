@@ -1,6 +1,20 @@
 # ChangeLog for gnome-base/libbonobo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/libbonobo/ChangeLog,v 1.197 2011/07/29 18:05:20 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/libbonobo/ChangeLog,v 1.201 2012/05/29 16:23:38 aballier Exp $
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> libbonobo-2.24.3.ebuild:
+  keyword ~amd64-fbsd
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> libbonobo-2.32.1.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libbonobo-2.24.3.ebuild,
+  libbonobo-2.32.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  11 Aug 2011; Mike Frysinger <vapier@gentoo.org> libbonobo-2.24.3.ebuild,
+  libbonobo-2.32.1.ebuild:
+  Use virtual/yacc instead of hardcoding list ourselves.
 
   29 Jul 2011; Pacho Ramos <pacho@gentoo.org> libbonobo-2.24.3.ebuild,
   libbonobo-2.32.1.ebuild:

@@ -1,6 +1,121 @@
 # ChangeLog for media-video/smplayer
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/smplayer/ChangeLog,v 1.93 2010/10/25 03:08:39 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/smplayer/ChangeLog,v 1.123 2012/12/05 12:14:08 kensington Exp $
+
+*smplayer-0.8.2.1 (05 Dec 2012)
+
+  05 Dec 2012; Michael Palimaka <kensington@gentoo.org>
+  +smplayer-0.8.2.1.ebuild:
+  Version bump, wrt bug #445212.
+
+  29 Oct 2012; Jeroen Roovers <jer@gentoo.org> smplayer-0.8.1.ebuild:
+  Stable for HPPA (bug #439258).
+
+  24 Oct 2012; Agostino Sarubbo <ago@gentoo.org> smplayer-0.8.1.ebuild:
+  Stable for amd64, wrt bug #439258
+
+  24 Oct 2012; Agostino Sarubbo <ago@gentoo.org> smplayer-0.8.1.ebuild:
+  Stable for x86, wrt bug #439258
+
+*smplayer-0.8.1 (20 Sep 2012)
+
+  20 Sep 2012; Ben de Groot <yngwin@gentoo.org> +smplayer-0.8.1.ebuild:
+  Version bump
+
+  13 Sep 2012; Anthony G. Basile <blueness@gentoo.org> smplayer-0.8.0.ebuild:
+  Keyword ppc64, bug #383945
+
+  26 Jul 2012; Ben de Groot <yngwin@gentoo.org> smplayer-0.8.0.ebuild:
+  Use l10n.eclass for handling locales.
+
+  17 Jun 2012; Ben de Groot <yngwin@gentoo.org> smplayer-0.8.0.ebuild:
+  Use the new global libass useflag (bug #328245)
+
+  02 Jun 2012; Ben de Groot <yngwin@gentoo.org>
+  -files/smplayer-0.6.8-quit.patch, -files/smplayer-0.6.9-quazip.patch:
+  Remove obsoleted patches
+
+  02 Jun 2012; Ben de Groot <yngwin@gentoo.org> -smplayer-0.6.9-r1.ebuild,
+  -smplayer-0.6.9-r2.ebuild, -smplayer-0.6.9.ebuild, smplayer-0.8.0.ebuild:
+  Propagate ~alpha keyword from 0.6.9-r2. Drop old and known to be broken
+  versions, even if minor arches fail to keyword and/or stable newer versions.
+
+  31 May 2012; Davide Pesavento <pesa@gentoo.org> -smplayer-0.7.1.ebuild:
+  Remove unused version.
+
+  30 May 2012; Jeroen Roovers <jer@gentoo.org> smplayer-0.8.0.ebuild:
+  Stable for HPPA (bug #417979).
+
+  28 May 2012; Johannes Huber <johu@gentoo.org> smplayer-0.8.0.ebuild:
+  Stable for x86, wrt bug #417979
+
+  28 May 2012; Agostino Sarubbo <ago@gentoo.org> smplayer-0.8.0.ebuild:
+  Stable for amd64, wrt bug #417979
+
+*smplayer-0.8.0 (08 Apr 2012)
+
+  08 Apr 2012; Davide Pesavento <pesa@gentoo.org>
+  +files/smplayer-0.8.0-quazip.patch, +smplayer-0.8.0.ebuild:
+  Version bump, bug 411025 by Ben de Groot <yngwin@gmail.com>.
+
+  05 Apr 2012; Agostino Sarubbo <ago@gentoo.org> smplayer-0.7.1.ebuild:
+  Stable for amd64, wrt bug #410731
+
+  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org> smplayer-0.7.1.ebuild:
+  marked x86 per bug 410731
+
+  04 Apr 2012; Davide Pesavento <pesa@gentoo.org> -smplayer-0.6.10.ebuild,
+  -smplayer-0.7.0.ebuild:
+  Remove old.
+
+  04 Apr 2012; Jeroen Roovers <jer@gentoo.org> smplayer-0.7.1.ebuild:
+  Stable for HPPA (bug #410731).
+
+  23 Mar 2012; Naohiro Aota <naota@gentoo.org> smplayer-0.7.1.ebuild:
+  Add ~x86-fbsd. #383945
+
+  03 Mar 2012; Davide Pesavento <pesa@gentoo.org> -smplayer-0.6.8.ebuild:
+  Remove old version using deprecated qt4 eclass.
+
+*smplayer-0.7.1 (03 Mar 2012)
+
+  03 Mar 2012; Davide Pesavento <pesa@gentoo.org> +smplayer-0.7.1.ebuild:
+  Version bump by Ben de Groot <yngwin@gmail.com>.
+
+  18 Feb 2012; Tobias Klausmann <klausman@gentoo.org> smplayer-0.6.9-r2.ebuild:
+  Keyworded on alpha, bug #383945
+
+*smplayer-0.7.0 (04 Feb 2012)
+
+  04 Feb 2012; Johannes Huber <johu@gentoo.org> +smplayer-0.7.0.ebuild:
+  Version bump by Ben de Groot <yngwin@gmail.com>. This version fixes bug
+  #345653. Drop quit.patch, now applied upstream. Add mplayer[X], bug #377343.
+
+*smplayer-0.6.10 (22 Jan 2012)
+
+  22 Jan 2012; Markos Chandras <hwoarang@gentoo.org> +smplayer-0.6.10.ebuild:
+  Version bump. Migrate to EAPI4
+
+  04 Nov 2011; Sebastian Pipping <sping@gentoo.org> smplayer-0.6.9-r1.ebuild,
+  smplayer-0.6.9-r2.ebuild:
+  mplayer2[libass] -> mplayer2[ass] (bug #383945)
+
+  01 Nov 2011; Markus Meier <maekke@gentoo.org> smplayer-0.6.9-r2.ebuild:
+  add ~arm, bug #383945
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> smplayer-0.6.9-r2.ebuild:
+  Marked ~hppa (bug #383945).
+
+*smplayer-0.6.9-r2 (21 Sep 2011)
+
+  21 Sep 2011; Sebastian Pipping <sping@gentoo.org> +smplayer-0.6.9-r2.ebuild,
+  +files/smplayer-0.6.9-quazip.patch:
+  Unbundle quazip (bug #383309), re-keywording requested (bug #383945)
+
+*smplayer-0.6.9-r1 (16 Sep 2011)
+
+  16 Sep 2011; Steve Dibb <beandog@gentoo.org> +smplayer-0.6.9-r1.ebuild:
+  Support mplayer or mplayer2, bug 361115
 
   25 Oct 2010; Jeroen Roovers <jer@gentoo.org> smplayer-0.6.9.ebuild:
   Stable for HPPA (bug #311491).
@@ -373,4 +488,3 @@
   26 Jan 2008; Alexis Ballier <aballier@gentoo.org> +metadata.xml,
   +smplayer-0.5.62.ebuild:
   Initial import, ebuild by  Davide Pesavento, bug #176211
-

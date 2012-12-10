@@ -1,6 +1,43 @@
 # ChangeLog for net-misc/icaclient
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/icaclient/ChangeLog,v 1.79 2011/02/05 20:08:33 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/icaclient/ChangeLog,v 1.88 2012/11/26 23:11:25 fauli Exp $
+
+  26 Nov 2012; Christian Faulhammer <fauli@gentoo.org> icaclient-12.1.0.ebuild:
+  fix sandbox violation as reported in bug 435246 by Fabiano
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> icaclient-12.0.0.ebuild,
+  icaclient-12.1.0.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  22 Oct 2012; Christian Faulhammer <fauli@gentoo.org> icaclient-12.1.0.ebuild:
+  still use system's cacert, bug 435246
+
+*icaclient-12.1.0 (01 Aug 2012)
+
+  01 Aug 2012; Christian Faulhammer <fauli@gentoo.org>
+  +icaclient-12.1.0.ebuild:
+  version bump for bug 424525, ebuild provided by Ortwin Glück
+
+  05 Feb 2012; Christian Faulhammer <fauli@gentoo.org> icaclient-12.0.0.ebuild:
+  Add note about identity of 32-bit and 64-bit packages, as reported in bug
+  389605 by Maciej Grela
+
+  30 Dec 2011; Christian Faulhammer <fauli@gentoo.org> Manifest:
+  Fix manifest; bug 396499
+
+  29 Dec 2011; Christian Faulhammer <fauli@gentoo.org> icaclient-12.0.0.ebuild:
+  Sign Manifest
+
+  29 Dec 2011; Christian Faulhammer <fauli@gentoo.org> icaclient-12.0.0.ebuild:
+  Sign Manifest
+
+*icaclient-12.0.0 (29 Dec 2011)
+
+  29 Dec 2011; Christian Faulhammer <fauli@gentoo.org> files/10ICAClient,
+  -icaclient-11.100-r1.ebuild, +icaclient-12.0.0.ebuild:
+  version bump for bug 389605, lots of thanks to Maciej Grela for providing the
+  ebuild and Alexander Weber for testing
 
   05 Feb 2011; Ulrich Mueller <ulm@gentoo.org> icaclient-11.100-r1.ebuild:
   Fix a typo in RDEPEND.

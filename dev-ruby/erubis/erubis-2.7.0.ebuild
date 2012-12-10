@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/erubis/erubis-2.7.0.ebuild,v 1.2 2011/06/29 19:36:49 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/erubis/erubis-2.7.0.ebuild,v 1.9 2012/05/01 18:24:24 armin76 Exp $
 
 EAPI="2"
 
@@ -19,7 +19,7 @@ HOMEPAGE="http://www.kuwata-lab.com/erubis/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-solaris"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE=""
 
 ruby_add_bdepend "test? ( virtual/ruby-test-unit )"
@@ -41,5 +41,13 @@ each_ruby_prepare() {
 }
 
 each_ruby_test() {
-	PATH="${S}/bin:${PATH}" RUBYLIB="${S}/lib" ${RUBY} test/test.rb || die
+	case ${RUBY} in
+		# http://rubyforge.org/tracker/index.php?func=detail&aid=29484&group_id=1320&atid=5201
+		*ruby19)
+			einfo "Tests are not compatible with ruby 1.9.3 with Psych as YAML module."
+			;;
+		*)
+			PATH="${S}/bin:${PATH}" RUBYLIB="${S}/lib" ${RUBY} -I. test/test.rb || die
+			;;
+	esac
 }

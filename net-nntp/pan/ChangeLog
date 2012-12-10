@@ -1,6 +1,60 @@
 # ChangeLog for net-nntp/pan
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-nntp/pan/ChangeLog,v 1.87 2011/03/27 12:53:37 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-nntp/pan/ChangeLog,v 1.100 2012/11/04 09:17:06 tetromino Exp $
+
+*pan-0.139 (04 Nov 2012)
+
+  04 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -pan-0.133-r1.ebuild, -files/pan-0.133-gcc44.patch, -pan-0.134.ebuild,
+  +pan-0.139.ebuild, +files/pan-0.139-pan.desktop.patch, pan-9999.ebuild:
+  Version bump with various bugfixes (bug #427650, thanks to Emmanuel Andry and
+  Chris Smith). Drop old.
+
+*pan-0.137 (06 May 2012)
+
+  06 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +pan-0.137.ebuild,
+  pan-9999.ebuild:
+  Version bump (bug #413059, thanks to Emmanuel Andry and Jeroen Roovers); adds
+  support for attachment uploading, SSL connections, gnome-keyring for secure
+  password storage. Update to EAPI4. Update live ebuild.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> pan-0.133-r1.ebuild,
+  pan-0.134.ebuild, pan-0.135.ebuild, pan-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  08 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> pan-0.135.ebuild,
+  +files/pan-0.135-glib-2.31.patch:
+  Fix building with >=glib-2.31 (bug #401437, thanks to Mathias for reporting).
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> pan-0.135.ebuild:
+  alpha/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> pan-0.135.ebuild:
+  Marking pan-0.135 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> pan-0.135.ebuild:
+  Marking pan-0.135 ppc64 stable for bug 393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> pan-0.135.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> pan-0.135.ebuild:
+  amd64 stable, bug 393007
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> pan-0.135.ebuild:
+  Stable for HPPA (bug #393007).
+
+  27 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> pan-0.133-r1.ebuild,
+  pan-0.134.ebuild, pan-0.135.ebuild, pan-9999.ebuild:
+  Slot gtkspell dependency to 2 in preparation for gtkspell-3.
+
+  21 Sep 2011; Michał Górny <mgorny@gentoo.org> pan-9999.ebuild:
+  Migrate to git-2.
+
+*pan-0.135 (20 Sep 2011)
+
+  20 Sep 2011; Gilles Dartiguelongue <eva@gentoo.org> +pan-0.135.ebuild:
+  Version bump.
 
   27 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org> -pan-0.133.ebuild:
   Remove old

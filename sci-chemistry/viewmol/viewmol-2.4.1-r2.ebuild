@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/viewmol/viewmol-2.4.1-r2.ebuild,v 1.2 2011/06/25 18:12:02 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/viewmol/viewmol-2.4.1-r2.ebuild,v 1.4 2012/10/24 19:34:04 ulm Exp $
 
 EAPI=3
 
@@ -21,12 +21,13 @@ IUSE=""
 RDEPEND="
 	media-libs/libpng
 	media-libs/tiff
+	virtual/glu
 	virtual/opengl
 	x11-libs/libX11
 	x11-libs/libXi
 	x11-libs/libXmu
 	x11-libs/libXt
-	>=x11-libs/openmotif-2.3:0"
+	>=x11-libs/motif-2.3:0"
 DEPEND="${RDEPEND}
 	x11-proto/inputproto
 	x11-proto/xproto"
@@ -52,20 +53,20 @@ src_prepare() {
 	mkdir $(uname -s) && cd $(uname -s)
 
 	cat >> .config.$(uname -s) <<- EOF
-	LIBTIFF = -L${EPREFIX}/usr/$(get_libdir)
-	TIFFINCLUDE = ${EPREFIX}/usr/include
-	LIBPNG = -L${EPREFIX}/usr/$(get_libdir)
-	PNGINCLUDE = ${EPREFIX}/usr/include
+	LIBTIFF = -L"${EPREFIX}/usr/$(get_libdir)"
+	TIFFINCLUDE = "${EPREFIX}/usr/include"
+	LIBPNG = -L"${EPREFIX}/usr/$(get_libdir)"
+	PNGINCLUDE = "${EPREFIX}/usr/include"
 	PYTHONVERSION = $(PYTHON)
-	PYTHONINCLUDE = ${EPREFIX}/$(python_get_includedir)
-	PYTHONLIB = ${EPREFIX}/usr/$(get_libdir)
+	PYTHONINCLUDE = "${EPREFIX}/$(python_get_includedir)"
+	PYTHONLIB = "${EPREFIX}/usr/$(get_libdir)"
 	COMPILER = $(tc-getCC)
 	CFLAGS = ${CFLAGS} -DLINUX
 	LDFLAGS = ${LDFLAGS} ${LINKFORSHARED}
 	SCANDIR=
 	INCLUDE=\$(TIFFINCLUDE) -I\$(PNGINCLUDE) -I\$(PYTHONINCLUDE)
 	LIBRARY=\$(LIBTIFF) \$(LIBPNG) -L\$(LIBPYTHON)
-	LIBS=-L${EPREFIX}/$(get_libdir) $(python_get_library -l) -ltiff -lpng -lz -lGLU -lGL -L${EPREFIX}/usr/X11R6/lib -lXm -lXmu -lXp -lXi -lXext -lXt -lX11 -lpthread -lutil -ldl -lm
+	LIBS=-L"${EPREFIX}/usr/$(get_libdir)" $(python_get_library -l) -ltiff -lpng -lz -lGLU -lGL -L"${EPREFIX}/usr/X11R6/lib" -lXm -lXmu -lXp -lXi -lXext -lXt -lX11 -lpthread -lutil -ldl -lm
 	EOF
 
 	cp .config.$(uname -s) makefile

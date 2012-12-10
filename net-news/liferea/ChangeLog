@@ -1,6 +1,130 @@
 # ChangeLog for net-news/liferea
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-news/liferea/ChangeLog,v 1.206 2011/03/29 10:41:40 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-news/liferea/ChangeLog,v 1.234 2012/11/20 20:39:49 ago Exp $
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> liferea-1.8.8.ebuild:
+  Stable for x86, wrt bug #441490
+
+  06 Nov 2012; <ago@gentoo.org> liferea-1.8.8.ebuild:
+  Stable for amd64, wrt bug #441490
+
+  05 Nov 2012; Anthony G. Basile <blueness@gentoo.org> liferea-1.8.8.ebuild:
+  stable ppc ppc64, bug #441490
+
+*liferea-1.9.6_p20121021 (21 Oct 2012)
+
+  21 Oct 2012; Victor Ostorga +liferea-1.9.6_p20121021.ebuild:
+  Version bump up to day git 1.9.6. Dropping ~ppc64 because 
+  >=dev-libs/libpeas-1.0.0[gtk] hasn't that keyword
+
+*liferea-1.8.8 (15 Sep 2012)
+
+  15 Sep 2012; Víctor Ostorga <vostorga@gentoo.org> -liferea-1.8.4.ebuild,
+  -liferea-1.8.7.ebuild, +liferea-1.8.8.ebuild:
+  Dropping old versions, version bump to upstream's stable liferea version
+
+  15 Sep 2012; Víctor Ostorga <vostorga@gentoo.org>
+  liferea-1.9.4_p20120821.ebuild:
+  Fixing missing gsettings-desktop-schemas dependency, bug #432510
+
+*liferea-1.9.4_p20120821 (21 Aug 2012)
+*liferea-1.8.7 (21 Aug 2012)
+
+  21 Aug 2012; Víctor Ostorga <vostorga@gentoo.org> -liferea-1.6.5.ebuild,
+  -files/liferea-1.6.5-libnotify-0.7.patch, -liferea-1.6.6b.ebuild,
+  -files/liferea-1.6.6b-libnotify-0.7.patch, +liferea-1.8.7.ebuild,
+  +liferea-1.9.4_p20120821.ebuild:
+  Cleaning up 1.6 series, bumping upstream stable version (1.8.7) #430762 and
+  upstream unstable version (1.9.4) #430764
+
+  07 Jun 2012; Michael Weber <xmw@gentoo.org> liferea-1.8.5.ebuild:
+  ppc stable (bug 416927)
+
+  21 May 2012; Jeff Horelick <jdhore@gentoo.org> liferea-1.8.5.ebuild:
+  marked x86 per bug 416927
+
+  21 May 2012; Agostino Sarubbo <ago@gentoo.org> liferea-1.8.5.ebuild:
+  Stable for amd64, wrt bug #416927
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> liferea-1.8.0.ebuild:
+  x86 stable wrt bug #403901
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> liferea-1.6.5.ebuild,
+  liferea-1.6.6b.ebuild, liferea-1.8.0.ebuild, liferea-1.8.4.ebuild,
+  liferea-1.8.5.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*liferea-1.8.5 (20 Apr 2012)
+
+  20 Apr 2012; Víctor Ostorga <vostorga@gentoo.org> -liferea-1.7.6-r1.ebuild,
+  -liferea-1.8_rc1.ebuild, -liferea-1.8.3.ebuild, +liferea-1.8.5.ebuild:
+  Version bump to 1.8.5 . Cleaning up old ebuilds
+
+*liferea-1.8.4 (28 Mar 2012)
+
+  28 Mar 2012; Víctor Ostorga <vostorga@gentoo.org> +liferea-1.8.4.ebuild:
+  Version bump to 1.8.4
+
+*liferea-1.8.3 (26 Mar 2012)
+
+  26 Mar 2012; Víctor Ostorga <vostorga@gentoo.org> +liferea-1.8.3.ebuild:
+  Upstream stable 1.8.3 release, which fixes sqlite3 performance
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> liferea-1.8.0.ebuild:
+  Marking liferea-1.8.0 ppc64 for bug 403901
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> liferea-1.8.0.ebuild:
+  Marking liferea-1.8.0 ppc for bug 403901
+
+  15 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org> liferea-1.8.0.ebuild:
+  Stable on amd64. Wrt bug#403901.
+
+  14 Feb 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  ayatana is now global per http://archives.gentoo.org/gentoo-
+  dev/msg_f2eb26947d0c86020625a9aeca6f25e4.xml
+
+*liferea-1.8.0 (13 Dec 2011)
+
+  13 Dec 2011; Víctor Ostorga <vostorga@gentoo.org> +liferea-1.8.0.ebuild:
+  Version bump to 1.8.0, bug #394451. This is now upstream's current stable
+  branch
+
+  19 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> liferea-1.7.6-r1.ebuild,
+  liferea-1.8_rc1.ebuild:
+  Remove USE="gtk" from libindicate depend (as there is no such flag yet)
+
+*liferea-1.8_rc1 (26 Sep 2011)
+
+  26 Sep 2011; Víctor Ostorga <vostorga@gentoo.org> -liferea-1.7.4.ebuild,
+  +liferea-1.8_rc1.ebuild:
+  Version bump to 1.8_rc1, fixes #381117 and #384431
+
+*liferea-1.7.6-r1 (11 Sep 2011)
+
+  11 Sep 2011; <vostorga@gentoo.org> -liferea-1.7.6.ebuild,
+  +liferea-1.7.6-r1.ebuild, +files/liferea-1.7.6-unread-feeds.patch:
+  Reverting upstream commit 640eff3e418b786468208643d2f93718f7fa9da0 to avoid
+  always unread feeds, bug #381117
+
+  09 Sep 2011; Víctor Ostorga <vostorga@gentoo.org>
+  files/liferea-1.6.6b-libnotify-0.7.patch:
+  Dropping libnotify <= 0.7.3 check on configure.ac
+
+  28 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org> liferea-1.7.6.ebuild:
+  Trailing whitespace fix.
+
+*liferea-1.7.6 (28 Aug 2011)
+
+  28 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org> +liferea-1.7.6.ebuild,
+  metadata.xml:
+  Version bump to latest. Sort useflags to reflect configure options. Fixes bug
+  #366333.
+
+*liferea-1.6.6b (08 Aug 2011)
+
+  08 Aug 2011; Víctor Ostorga <vostorga@gentoo.org> +liferea-1.6.6b.ebuild,
+  +files/liferea-1.6.6b-libnotify-0.7.patch:
+  Version bump upstream stable liferea
 
   29 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> liferea-1.6.5.ebuild,
   +files/liferea-1.6.5-libnotify-0.7.patch:
@@ -1519,4 +1643,3 @@
 
   10 Dec 2003; Alastair Tse <liquidx@gentoo.org> liferea-0.4.5.ebuild:
   initial commit. ebuild based on suka's submission <suka@t0.or.at> (#27551)
-

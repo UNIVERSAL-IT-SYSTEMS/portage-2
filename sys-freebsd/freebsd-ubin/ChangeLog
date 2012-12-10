@@ -1,6 +1,82 @@
 # ChangeLog for sys-freebsd/freebsd-ubin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-ubin/ChangeLog,v 1.69 2011/07/10 15:07:26 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-ubin/ChangeLog,v 1.83 2012/11/06 12:58:15 aballier Exp $
+
+*freebsd-ubin-9.1_rc3 (06 Nov 2012)
+
+  06 Nov 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-ubin-9.1_rc3.ebuild:
+  bump to rc3
+
+*freebsd-ubin-9.1_rc2 (14 Oct 2012)
+
+  14 Oct 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-ubin-9.1_rc2.ebuild:
+  bump to 9.1_rc2
+
+*freebsd-ubin-9.1_rc1 (11 Sep 2012)
+
+  11 Sep 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-ubin-9.1_rc1.ebuild, +files/freebsd-ubin-9.1-bsdar.patch,
+  +files/freebsd-ubin-9.1-grep.patch,
+  +files/freebsd-ubin-9.1-kdump-ioctl.patch,
+  +files/freebsd-ubin-9.1-minigzip.patch:
+  bump to 9.1_rc1 from bsd overlay by Yuta SATOH, bug #426838
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> freebsd-ubin-9.0-r1.ebuild:
+  keyword ~amd64-fbsd
+
+*freebsd-ubin-9.0-r1 (23 Apr 2012)
+
+  23 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-ubin-9.0-r1.ebuild:
+  remove dc and bc since they are provided by sys-devel/bc
+
+  23 Apr 2012; Alexis Ballier <aballier@gentoo.org> freebsd-ubin-9.0.ebuild:
+  depend on new enough libedit
+
+*freebsd-ubin-8.2-r1 (02 Apr 2012)
+
+  02 Apr 2012; Naohiro Aota <naota@gentoo.org>
+  +files/freebsd-ubin-8.2-compress.patch, +freebsd-ubin-8.2-r1.ebuild,
+  -freebsd-ubin-8.2.ebuild:
+  Add patch to fix CVE-2011-2895. #408887
+
+  30 Mar 2012; Alexis Ballier <aballier@gentoo.org>
+  -freebsd-ubin-9.0_rc1.ebuild, -freebsd-ubin-9.0_rc2.ebuild,
+  -freebsd-ubin-9.0_rc3.ebuild:
+  remove old
+
+*freebsd-ubin-9.0 (16 Jan 2012)
+
+  16 Jan 2012; Alexis Ballier <aballier@gentoo.org> +freebsd-ubin-9.0.ebuild:
+  bump to 9.0
+
+*freebsd-ubin-9.0_rc3 (09 Dec 2011)
+
+  09 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-ubin-9.0_rc3.ebuild:
+  bump to 9.0_rc3
+
+*freebsd-ubin-9.0_rc2 (07 Dec 2011)
+
+  07 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-ubin-9.0_rc2.ebuild:
+  bump to rc2
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  freebsd-ubin-9.0_rc1.ebuild:
+  move fuser to /bin too
+
+*freebsd-ubin-9.0_rc1 (07 Nov 2011)
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-ubin-9.0_rc1.ebuild, +files/freebsd-ubin-9.0-fixmakefiles.patch:
+  bump to 9.0_rc1
+
+  13 Aug 2011; Javier Villavicencio <the_paya@gentoo.org>
+  freebsd-ubin-8.2.ebuild:
+  Move printf binary to /bin. Fixes bug #377277
 
   10 Jul 2011; Alexis Ballier <aballier@gentoo.org> freebsd-ubin-8.2.ebuild:
   create /var/spool/lock/ directory for tip, by Jose Quinteiro, bug #200700

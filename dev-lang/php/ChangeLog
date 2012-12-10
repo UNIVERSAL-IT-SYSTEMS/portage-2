@@ -1,6 +1,619 @@
 # ChangeLog for dev-lang/php
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/ChangeLog,v 1.498 2011/07/26 16:47:11 olemarkus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/ChangeLog,v 1.645 2012/11/27 11:10:38 olemarkus Exp $
+
+  27 Nov 2012; Ole Markus With <olemarkus@gentoo.org>
+  files/eblits/src_test-v1.eblit, php-5.3.18.ebuild, php-5.3.19.ebuild,
+  php-5.4.8.ebuild, php-5.4.9.ebuild, php-5.5.0_alpha1.ebuild:
+  Fixed ancient typo in all ebuilds. Bug #444916
+
+  15 Nov 2012; Ole Markus With <olemarkus@gentoo.org> -php-5.3.16-r1.ebuild,
+  -php-5.3.16-r2.ebuild, -php-5.3.17.ebuild, -php-5.4.6-r2.ebuild,
+  -php-5.4.7.ebuild:
+  Removing older ebuilds
+
+  25 Oct 2012; Ole Markus With <olemarkus@gentoo.org> php-5.3.18.ebuild:
+  Merged eblits into ebuild so we do not break stable anymore
+
+*php-5.4.8 (23 Oct 2012)
+*php-5.3.18 (23 Oct 2012)
+
+  23 Oct 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.18.ebuild,
+  +php-5.4.8.ebuild:
+  Version bump. Also merged eblits into ebuild so we do not break stable anymore
+
+  21 Oct 2012; Markus Meier <maekke@gentoo.org> php-5.4.6.ebuild:
+  x86 stable, bug #427024
+
+  17 Oct 2012;  <naota@gentoo.org> php-5.4.7.ebuild:
+  Add ~x86-fbsd.
+
+  20 Sep 2012; Ole Markus With <olemarkus@gentoo.org>
+  files/eblits/src_configure-v54.eblit:
+  Fixed configure issue with cdb. Bug 435532
+
+*php-5.4.7 (17 Sep 2012)
+*php-5.3.17 (17 Sep 2012)
+
+  17 Sep 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.17.ebuild,
+  +php-5.4.7.ebuild:
+  PHP bumps
+
+  16 Sep 2012; Anthony G. Basile <blueness@gentoo.org> php-5.3.15.ebuild:
+  stable ppc64, bug #427354
+
+  13 Sep 2012; Ole Markus With <olemarkus@gentoo.org>
+  files/eblits/src_configure-v54.eblit, php-5.4.6-r2.ebuild, php-5.4.6.ebuild:
+  Use bundled xmlrpc-whatnot. System did not work all that well
+
+  13 Sep 2012; Ole Markus With <olemarkus@gentoo.org> metadata.xml:
+  Added gd USE flag description to reflect that we are using bundled gd, not
+  system
+
+  11 Sep 2012; Ole Markus With <olemarkus@gentoo.org>
+  files/eblits/src_configure-v54.eblit:
+  Fix for #419519
+
+  11 Sep 2012; Christoph Junghans <ottxor@gentoo.org>
+  files/eblits/common-v2.eblit, files/eblits/src_configure-v54.eblit,
+  files/eblits/src_install-v3.eblit, php-5.4.6-r2.ebuild:
+  added prefix support part 2 (bug #433842)
+
+*php-5.3.16-r2 (09 Sep 2012)
+
+  09 Sep 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.16-r2.ebuild,
+  -files/eblits/src_configure-v2.eblit, -files/eblits/src_configure-v521.eblit,
+  files/eblits/src_configure-v53.eblit, metadata.xml:
+  Revbump renaming sqlite USE flag to sqlite2
+
+  06 Sep 2012; Anthony G. Basile <blueness@gentoo.org> php-5.4.6.ebuild:
+  Stable ppc64
+
+  04 Sep 2012; Christoph Junghans <ottxor@gentoo.org> php-5.4.6-r2.ebuild:
+  added prefix support (bug #433842)
+
+  04 Sep 2012; Ole Markus With <olemarkus@gentoo.org> -php-5.3.13.ebuild,
+  -php-5.3.14.ebuild, -php-5.3.14_rc2.ebuild, -php-5.3.16.ebuild,
+  -php-5.4.3.ebuild, -php-5.4.4.ebuild, -php-5.4.4_rc2.ebuild,
+  -php-5.4.6-r1.ebuild:
+  Removed older php ebuilds
+
+  04 Sep 2012; Ole Markus With <olemarkus@gentoo.org>
+  files/eblits/src_install-v3.eblit:
+  Fixed a bug where the ini files were not dodoced for php:5.4
+
+*php-5.4.6-r2 (29 Aug 2012)
+
+  29 Aug 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.4.6-r2.ebuild:
+  Revbump with some changes to postinst info and added some prerm. Bug #432962
+
+  24 Aug 2012; Jeroen Roovers <jer@gentoo.org> php-5.4.6.ebuild:
+  Stable for HPPA (bug #427024).
+
+  24 Aug 2012; Michael Weber <xmw@gentoo.org> php-5.4.6.ebuild:
+  ppc stable (bug 427024).
+
+  22 Aug 2012; Ole Markus With <olemarkus@gentoo.org>
+  files/eblits/src_compile-v1.eblit, files/eblits/src_compile-v2.eblit,
+  files/eblits/src_configure-v53.eblit, files/eblits/src_configure-v54.eblit:
+  Adding more addpredicts, bug 432248
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> php-5.3.15.ebuild:
+  ppc stable (bug 427354).
+
+  22 Aug 2012; Agostino Sarubbo <ago@gentoo.org> php-5.4.6.ebuild:
+  Stable for amd64, wrt bug #427024
+
+  19 Aug 2012; Ole Markus With <olemarkus@gentoo.org> php-5.3.16-r1.ebuild,
+  php-5.4.6-r1.ebuild:
+  Added the selinux USE flag to IUSE
+
+*php-5.3.16-r1 (19 Aug 2012)
+*php-5.4.6-r1 (19 Aug 2012)
+
+  19 Aug 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.16-r1.ebuild,
+  +php-5.4.6-r1.ebuild:
+  Revbumps that will pull in SELinux policy files for php-fpm when needed
+
+*php-5.3.16 (17 Aug 2012)
+*php-5.4.6 (17 Aug 2012)
+
+  17 Aug 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.16.ebuild,
+  +php-5.4.6.ebuild:
+  Version bump
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> php-5.4.5.ebuild:
+  arm stable, bug #427354
+
+  02 Aug 2012; Markus Meier <maekke@gentoo.org> php-5.4.4.ebuild:
+  arm stable, bug #427024
+
+  28 Jul 2012; Raúl Porcel <armin76@gentoo.org> php-5.3.15.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #427354
+
+  24 Jul 2012; Richard Freeman <rich0@gentoo.org> php-5.3.15.ebuild:
+  amd64 stable - 427354
+
+  23 Jul 2012; Markus Meier <maekke@gentoo.org> php-5.3.15.ebuild:
+  arm stable, bug #427354
+
+  23 Jul 2012; Jeroen Roovers <jer@gentoo.org> php-5.3.15.ebuild:
+  Stable for HPPA (bug #427354).
+
+  22 Jul 2012; Jeff Horelick <jdhore@gentoo.org> php-5.3.15.ebuild:
+  marked x86 per bug 427354
+
+*php-5.4.5 (20 Jul 2012)
+
+  20 Jul 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.4.5.ebuild:
+  PHP 5.4 version bump
+
+*php-5.3.15 (20 Jul 2012)
+
+  20 Jul 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.15.ebuild:
+  PHP 5.3 version bump
+
+  11 Jul 2012; Anthony G. Basile <blueness@gentoo.org> php-5.3.14.ebuild,
+  php-5.4.4.ebuild:
+  Keyword ~mips
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> php-5.3.14.ebuild:
+  Marking php-5.3.14 ppc for bug 421489
+
+  23 Jun 2012; Raúl Porcel <armin76@gentoo.org> php-5.3.14.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #421489
+
+  21 Jun 2012; Markus Meier <maekke@gentoo.org> php-5.3.14.ebuild:
+  arm stable, bug #421489
+
+  19 Jun 2012; Jeroen Roovers <jer@gentoo.org> php-5.3.14.ebuild:
+  Stable for HPPA (bug #421489).
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> php-5.3.14.ebuild:
+  Stable for amd64, wrt bug #421489
+
+  19 Jun 2012; Jeff Horelick <jdhore@gentoo.org> php-5.3.14.ebuild:
+  marked x86 per bug 421489
+
+*php-5.3.14 (14 Jun 2012)
+*php-5.4.4 (14 Jun 2012)
+
+  14 Jun 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.14.ebuild,
+  +php-5.4.4.ebuild:
+  Version bump
+
+  14 Jun 2012; Naohiro Aota <naota@gentoo.org> php-5.3.14_rc2.ebuild,
+  php-5.4.4_rc2.ebuild:
+  Add ~x86-fbsd. #364139
+
+  06 Jun 2012; Ole Markus With <olemarkus@gentoo.org> -php-5.3.10.ebuild:
+  Removing old 5.3 ebuild
+
+  06 Jun 2012; Ole Markus With <olemarkus@gentoo.org> php-5.3.14_rc2.ebuild:
+  Remove dependency on <libpcre-8.30
+
+*php-5.4.4_rc2 (05 Jun 2012)
+
+  05 Jun 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.4.4_rc2.ebuild:
+  Added 5.4 RC 2 for testing
+
+*php-5.3.14_rc2 (05 Jun 2012)
+
+  05 Jun 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.14_rc2.ebuild:
+  Added 5.3.13 RC 2 for testing
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> php-5.3.13.ebuild:
+  keyword ~amd64-fbsd
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> php-5.4.3.ebuild:
+  keyword ~amd64-fbsd
+
+  21 May 2012; Brent Baude <ranger@gentoo.org> php-5.3.13.ebuild:
+  Marking php-5.3.13 ppc for bug 414553
+
+  12 May 2012; Raúl Porcel <armin76@gentoo.org> php-5.3.13.ebuild:
+  ia64/s390/sh/sparc stable wrt #414553
+
+  12 May 2012; Markus Meier <maekke@gentoo.org> php-5.3.13.ebuild:
+  arm stable, bug #414553
+
+  12 May 2012; Tobias Klausmann <klausman@gentoo.org> php-5.3.13.ebuild:
+  Stable on alpha, bug #414553
+
+  10 May 2012; Brent Baude <ranger@gentoo.org> php-5.3.13.ebuild:
+  Marking php-5.3.13 ppc64 for bug 414553
+
+  10 May 2012; Jeroen Roovers <jer@gentoo.org> php-5.3.13.ebuild:
+  Stable for HPPA (bug #414553).
+
+  09 May 2012; Jeff Horelick <jdhore@gentoo.org> php-5.3.13.ebuild:
+  marked x86 per security bug 414553
+
+  08 May 2012; Markos Chandras <hwoarang@gentoo.org> php-5.3.13.ebuild:
+  Stable on amd64 wrt bug #414553
+
+*php-5.4.3 (08 May 2012)
+*php-5.3.13 (08 May 2012)
+
+  08 May 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.13.ebuild,
+  +php-5.4.3.ebuild:
+  Version bump. Hopefully fixing the CGI SAPI vulnerability … Bug #414553
+
+  03 May 2012; Markus Meier <maekke@gentoo.org> php-5.3.11.ebuild:
+  arm stable, bug #410957
+
+*php-5.3.12 (03 May 2012)
+*php-5.4.2 (03 May 2012)
+
+  03 May 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.12.ebuild,
+  +php-5.4.2.ebuild:
+  Version bump. Fixes recently found security issue with the CGI SAPI
+
+  01 May 2012; Jeroen Roovers <jer@gentoo.org> php-5.3.11.ebuild:
+  Stable for HPPA (bug #410957).
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> php-5.3.11.ebuild:
+  Stable for amd64, wrt bug #410957
+
+  29 Apr 2012; Andreas Schuerch <nativemad@gentoo.org> php-5.3.11.ebuild:
+  x86 stable, see bug 410957
+
+  28 Apr 2012; Matti Bickel <mabi@gentoo.org> php-5.3.11.ebuild:
+  custom suhosin patch no longer needed, revert back to upstream one (fixes
+  #413785)
+
+*php-5.4.1 (26 Apr 2012)
+
+  26 Apr 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.4.1.ebuild:
+  Version bump of PHP 5.4
+
+*php-5.3.11 (26 Apr 2012)
+
+  26 Apr 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.11.ebuild:
+  Version bump of PHP 5.3.11
+
+  24 Apr 2012; Matti Bickel <mabi@gentoo.org> php-5.3.11_rc2.ebuild:
+  current suhosin patch misapplies in 5.3.11; use a custom patch with changed
+  offsets to fix this (based on and fixes #411935)
+
+*php-5.4.1_rc2 (13 Apr 2012)
+*php-5.3.11_rc2 (13 Apr 2012)
+
+  13 Apr 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.11_rc2.ebuild,
+  +php-5.4.1_rc2.ebuild:
+  Bumping rc versions
+
+  30 Mar 2012; Ole Markus With <olemarkus@gentoo.org> Manifest:
+  Manifest fix
+
+  06 Mar 2012; Ole Markus With <olemarkus@gentoo.org> php-5.3.10-r2.ebuild,
+  php-5.3.10.ebuild, php-5.4.0.ebuild:
+  Changing patchset location. Bug #405823
+
+  03 Mar 2012; Ole Markus With <olemarkus@gentoo.org> -php-5.3.9.ebuild,
+  -php-5.4.0_rc8.ebuild:
+  Removed older versions
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> php-5.3.10.ebuild:
+  Marking php-5.3.10 ppc64 for bug 401997
+
+  02 Mar 2012; Ole Markus With <olemarkus@gentoo.org>
+  files/eblits/src_configure-v53.eblit, php-5.4.0.ebuild:
+  Adding runtime dependencies
+
+*php-5.4.0 (01 Mar 2012)
+
+  01 Mar 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.4.0.ebuild,
+  files/eblits/src_configure-v53.eblit:
+  PHP 5.4 final released
+
+  28 Feb 2012; Ole Markus With <olemarkus@gentoo.org>
+  files/eblits/src_configure-v53.eblit, files/eblits/src_configure-v54.eblit:
+  Fixed another bad mabi. Issue 406107
+
+  28 Feb 2012; Matti Bickel <mabi@gentoo.org>
+  files/eblits/src_configure-v53.eblit:
+  fix typo in src_configure-v53.eblit (bug #406107), thanks to Matthew for
+  catching this
+
+  27 Feb 2012; Matti Bickel <mabi@gentoo.org>
+  files/eblits/src_configure-v53.eblit, files/eblits/src_configure-v54.eblit:
+  rely on /etc/env.d/50oracle-instantclient-basic to provide oci configuration
+  for php (bug #380581)
+
+  18 Feb 2012; Raúl Porcel <armin76@gentoo.org> php-5.3.10.ebuild:
+  ia64/s390/sh/sparc stable wrt #401997
+
+  18 Feb 2012; Ole Markus With <olemarkus@gentoo.org> -php-5.4.0_rc7-r1.ebuild,
+  -php-5.4.0_rc7.ebuild, metadata.xml:
+  Cleaned up metadata.xml and removed some old versions
+
+  17 Feb 2012; Tobias Klausmann <klausman@gentoo.org> php-5.3.10.ebuild:
+  Stable on alpha, bug #401997
+
+  17 Feb 2012; Ole Markus With <olemarkus@gentoo.org> php-5.4.0_rc8.ebuild:
+  Remove rc8 dep on <libpcre-8.30
+
+*php-5.4.0_rc8 (16 Feb 2012)
+
+  16 Feb 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.4.0_rc8.ebuild,
+  php-5.3.10-r2.ebuild:
+  Bumping RC
+
+  13 Feb 2012; Markus Meier <maekke@gentoo.org> php-5.3.10.ebuild:
+  arm stable, bug #401997
+
+*php-5.4.0_rc7-r1 (09 Feb 2012)
+
+  09 Feb 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.4.0_rc7-r1.ebuild,
+  php-5.3.10.ebuild, php-5.4.0_rc7.ebuild:
+  Revbump making php build against libpcre-8.30
+
+  09 Feb 2012; Thomas Kahle <tomka@gentoo.org> php-5.3.10.ebuild:
+  marked x86 per bug 401997
+
+*php-5.3.10-r2 (06 Feb 2012)
+
+  06 Feb 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.10-r2.ebuild,
+  -php-5.3.10-r1.ebuild:
+  Another fix for bug 402357. Should be somewhat safer than the previous fix
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> php-5.3.10.ebuild:
+  Marking php-5.3.10 ppc for bug 401997
+
+  06 Feb 2012; Ole Markus With <olemarkus@gentoo.org>
+  files/eblits/src_test-v1.eblit:
+  Fixed FEATURES="test", which apparently has not been working for a while.
+
+*php-5.3.10-r1 (06 Feb 2012)
+
+  06 Feb 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.10-r1.ebuild,
+  -php-5.4.0_rc6.ebuild, php-5.3.10.ebuild, php-5.3.9.ebuild,
+  php-5.4.0_rc7.ebuild:
+  Fixed compile fail against libpcre. Bug 402357 Non-fixed versions block
+  libpcre-8.30+
+
+  06 Feb 2012; Jeroen Roovers <jer@gentoo.org> php-5.3.10.ebuild:
+  Stable for HPPA (bug #401997).
+
+  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> php-5.3.10.ebuild:
+  Stable for AMD64, wrt security bug #401997
+
+*php-5.4.0_rc7 (03 Feb 2012)
+
+  03 Feb 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.4.0_rc7.ebuild:
+  RC version bump
+
+  02 Feb 2012; Matti Bickel <mabi@gentoo.org> php-5.3.10.ebuild:
+  use upstream suhosin patch instead of our own with php-5.3.10
+
+*php-5.3.10 (02 Feb 2012)
+
+  02 Feb 2012; Matti Bickel <mabi@gentoo.org> +php-5.3.10.ebuild:
+  security bump, this closes a remote code execution possibility (see #401997);
+  this version can still use unchanged gentoo patchset/suhosin from php-5.3.9
+
+  26 Jan 2012; Ole Markus With <olemarkus@gentoo.org> -php-5.3.8.ebuild,
+  -php-5.3.9_rc1.ebuild, -php-5.3.9_rc2.ebuild, -php-5.3.9_rc3.ebuild,
+  -php-5.3.9_rc4.ebuild, -php-5.4.0_rc3.ebuild, -php-5.4.0_rc4.ebuild,
+  -php-5.4.0_rc5.ebuild:
+  Removed older versions
+
+  21 Jan 2012; Ole Markus With <olemarkus@gentoo.org> -php-5.2.17.ebuild:
+  Removing PHP 5.2. Bye bye
+
+*php-5.4.0_rc6 (20 Jan 2012)
+
+  20 Jan 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.4.0_rc6.ebuild:
+  Bump of 5.4 RC
+
+  17 Jan 2012; Jeroen Roovers <jer@gentoo.org> php-5.3.9.ebuild:
+  Stable for HPPA (bug #384301).
+
+  16 Jan 2012; Mark Loeser <halcy0n@gentoo.org> php-5.3.9.ebuild:
+  Stable for ppc/ppc64; bug #384301
+
+  14 Jan 2012; Raúl Porcel <armin76@gentoo.org> php-5.3.9.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #384301
+
+  12 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> php-5.3.9.ebuild:
+  x86 stable wrt bug #384301
+
+  11 Jan 2012; Agostino Sarubbo <ago@gentoo.org> php-5.3.9.ebuild:
+  Stable for AMD64, wrt security bug #384301
+
+  11 Jan 2012; Ole Markus With <olemarkus@gentoo.org> php-5.3.9.ebuild:
+  Added support for suhosin again. Thanks a bunch to Hanno Boeck (bug 398495)
+
+  11 Jan 2012; Ole Markus With <olemarkus@gentoo.org> php-5.3.9.ebuild:
+  Removed suhosin for 5.3.9 as it has not been released yet (bug #398495)
+
+*php-5.3.9 (11 Jan 2012)
+
+  11 Jan 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.3.9.ebuild:
+  Version bump
+
+*php-5.4.0_rc5 (06 Jan 2012)
+
+  06 Jan 2012; Ole Markus With <olemarkus@gentoo.org> +php-5.4.0_rc5.ebuild:
+  Added 5.4.0 RC5
+
+*php-5.4.0_rc4 (24 Dec 2011)
+*php-5.3.9_rc4 (24 Dec 2011)
+
+  24 Dec 2011; Ole Markus With <olemarkus@gentoo.org> +php-5.3.9_rc4.ebuild,
+  +php-5.4.0_rc4.ebuild:
+  Bumping php release candidates
+
+  23 Dec 2011; Ole Markus With <olemarkus@gentoo.org>
+  files/eblits/src_configure-v53.eblit:
+  Fixed a typo leading to bug 395725
+
+  18 Dec 2011; Ole Markus With <olemarkus@gentoo.org>
+  +files/eblits/src_configure-v54.eblit, -files/eblits/src_configure-v3.eblit,
+  php-5.4.0_rc3.ebuild:
+  Changed src_config eblit versions to make it easier to figure out which eblit
+  is used where
+
+  17 Dec 2011; Ole Markus With <olemarkus@gentoo.org> php-5.3.9_rc3.ebuild:
+  Removed other REQUIRED_USE entries referencing USE flags not in IUSE
+
+  17 Dec 2011; Zac Medico <zmedico@gentoo.org> php-5.3.9_rc3.ebuild:
+  Bug #394995 - Remove invalid birdstep? conditionals from RDEPEND and
+  REQUIRED_USE, since the birdstep flag is no longer listed in IUSE.
+
+*php-5.3.9_rc3 (16 Dec 2011)
+
+  16 Dec 2011; Ole Markus With <olemarkus@gentoo.org>
+  +files/eblits/src_configure-v53.eblit, files/eblits/src_install-v2.eblit,
+  +php-5.3.9_rc3.ebuild, php-5.4.0_rc3.ebuild:
+  Bumping rc of 5.3.9. Contains a bunch of fixes backported from the 5.4
+  ebuilds.
+
+  14 Dec 2011; Matti Bickel <mabi@gentoo.org> php-5.2.17.ebuild,
+  php-5.3.8.ebuild, php-5.3.9_rc1.ebuild, php-5.3.9_rc2.ebuild,
+  php-5.4.0_rc3.ebuild:
+  Merging categories dev-php5 and dev-php (bug #324665)
+
+  09 Dec 2011; Ole Markus With <olemarkus@gentoo.org>
+  -files/eblits/pkg_postinst-v2.eblit, php-5.2.17.ebuild, php-5.3.8.ebuild,
+  -php-5.4.0_rc1.ebuild, -php-5.4.0_rc2.ebuild, php-5.4.0_rc3.ebuild:
+  Removed pkg_postinst and all references due to bug #380845
+
+  09 Dec 2011; Ole Markus With <olemarkus@gentoo.org>
+  -files/eblits/common-v1.eblit, php-5.2.17.ebuild, php-5.3.8.ebuild,
+  php-5.3.9_rc1.ebuild, php-5.3.9_rc2.ebuild:
+  Remove referenes to common v1 eblit
+
+*php-5.4.0_rc3 (09 Dec 2011)
+
+  09 Dec 2011; Ole Markus With <olemarkus@gentoo.org> +php-5.4.0_rc3.ebuild:
+  Version bump of 5.4 RC. 5.3 will follow, but I want to backport some ebuild
+  changes first
+
+  06 Dec 2011; Ole Markus With <olemarkus@gentoo.org> -files/php-fpm.init,
+  files/php-fpm-r4.init:
+  Migrated changes from issue 390307
+
+*php-5.4.0_rc2 (25 Nov 2011)
+*php-5.3.9_rc2 (25 Nov 2011)
+
+  25 Nov 2011; Ole Markus With <olemarkus@gentoo.org> +php-5.3.9_rc2.ebuild,
+  +php-5.4.0_rc2.ebuild:
+  Bump of the release candidates
+
+  18 Nov 2011; Ole Markus With <olemarkus@gentoo.org> files/php-fpm.init:
+  Fixed init script for multislotting. Bug 390307. Thanks to Guillaume
+  Castagnino and Piotr Karbowski for input
+
+  11 Nov 2011; Ole Markus With <olemarkus@gentoo.org> -php-5.4.0_beta2.ebuild:
+  Removed beta of 5.4
+
+*php-5.4.0_rc1 (11 Nov 2011)
+
+  11 Nov 2011; Ole Markus With <olemarkus@gentoo.org> +php-5.4.0_rc1.ebuild:
+  Added php 5.4 RC1
+
+  08 Nov 2011; Ole Markus With <olemarkus@gentoo.org>
+  -files/70_mod_php5.conf-apache2-r1, -files/eblits/src_install-v1.eblit,
+  php-5.4.0_beta2.ebuild, -files/eblits/pkg_postinst-v1.eblit,
+  -files/eblits/pkg_setup-v1.eblit, -files/php-fpm-gentooified-5.3.4.patch,
+  -php-5.4.0_beta1.ebuild, -files/eblits/src_configure-snapshots.eblit,
+  -files/eblits/src_configure-v1.eblit,
+  -files/eblits/src_prepare-snapshots.eblit, -files/php-fpm.conf,
+  -files/php-fpm-gentooified.patch, -files/php-fpm-r0.conf,
+  -files/php-fpm-r3.init, files/eblits/src_install-v3.eblit:
+  Major cleanup of the ./files. Hopefully I did not break anything
+
+*php-5.3.9_rc1 (04 Nov 2011)
+
+  04 Nov 2011; Ole Markus With <olemarkus@gentoo.org> +php-5.3.9_rc1.ebuild:
+  Added 5.3.9 RC1. The PHP release candidates are now released directly to
+  ~arch
+
+  31 Oct 2011; Matti Bickel <mabi@gentoo.org>
+  +files/eblits/src_compile-v2.eblit, files/eblits/src_install-v3.eblit,
+  php-5.4.0_beta2.ebuild:
+  Simplify src_compile and grab binaries/apache modules directly from
+  sapis-build directory, circumventing make install-sapi to fix bug #351266
+
+*php-5.4.0_beta2 (20 Oct 2011)
+
+  20 Oct 2011; Ole Markus With <olemarkus@gentoo.org> +php-5.4.0_beta2.ebuild:
+  Bump beta version of 5.4.0
+
+  22 Sep 2011; Ole Markus With <olemarkus@gentoo.org> php-5.3.8.ebuild:
+  Enabling xml USE flag by default
+
+  16 Sep 2011; Ole Markus With <olemarkus@gentoo.org> -php-5.3.6.ebuild,
+  -php-5.3.6-r1.ebuild, -php-5.3.7_rc5.ebuild, -php-5.4.0_alpha3.ebuild:
+  Removed older versions
+
+*php-5.4.0_beta1 (16 Sep 2011)
+
+  16 Sep 2011; Ole Markus With <olemarkus@gentoo.org> +php-5.4.0_beta1.ebuild:
+  Bump 5.4 to beta1
+
+  16 Sep 2011; Ole Markus With <olemarkus@gentoo.org>
+  files/eblits/src_configure-v3.eblit, files/eblits/src_install-v3.eblit,
+  php-5.4.0_alpha3.ebuild:
+  Remove deps on phpconfutils and php-common-r1
+
+  03 Sep 2011; Raúl Porcel <armin76@gentoo.org> php-5.3.8.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #372745
+
+  28 Aug 2011; Markus Meier <maekke@gentoo.org> php-5.3.8.ebuild:
+  arm stable, bug #372745
+
+  26 Aug 2011; Markos Chandras <hwoarang@gentoo.org> php-5.3.8.ebuild:
+  Stable on amd64 wrt bug #372745
+
+  26 Aug 2011; Ole Markus With <olemarkus@gentoo.org> metadata.xml:
+  Removed older versions
+
+  26 Aug 2011; Thomas Kahle <tomka@gentoo.org> php-5.3.8.ebuild:
+  x86 stable per bug 372745
+
+  25 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> php-5.3.8.ebuild:
+  ppc/ppc64 stable wrt #372745
+
+  25 Aug 2011; Jeroen Roovers <jer@gentoo.org> php-5.3.8.ebuild:
+  Stable for HPPA (bug #372745).
+
+*php-5.3.8 (24 Aug 2011)
+
+  24 Aug 2011; Ole Markus With <olemarkus@gentoo.org> +php-5.3.8.ebuild:
+  Version bump
+
+  22 Aug 2011; Ole Markus With <olemarkus@gentoo.org>
+  files/eblits/pkg_postinst-v1.eblit, php-5.2.17.ebuild:
+  Disable installing suhosin extension on use suhosin for 5.2.17. Should always
+  be installed manually. Same behaviour as all other versions of php
+
+  21 Aug 2011; Ole Markus With <olemarkus@gentoo.org> -php-5.3.7_rc2.ebuild,
+  -php-5.3.7_rc3.ebuild, -php-5.3.7.ebuild, -php-5.4.0_alpha1.ebuild,
+  -php-5.5.0_pre201105211430.ebuild:
+  Removed older alphas and rcs
+
+  21 Aug 2011; Ole Markus With <olemarkus@gentoo.org>
+  -files/eblits/src_configure-v52.eblit, -php-5.2.14.ebuild,
+  -php-5.3.3-r1.ebuild, +php-5.3.7.ebuild, -files/eblits/src_prepare-v1.eblit:
+  Removed all php:5 ebuilds (bug 363809)
+
+*php-5.3.7 (18 Aug 2011)
+
+  18 Aug 2011; Ole Markus With <olemarkus@gentoo.org> +php-5.3.7.ebuild:
+  Version bump
+
+*php-5.3.7_rc5 (12 Aug 2011)
+
+  12 Aug 2011; Ole Markus With <olemarkus@gentoo.org> +php-5.3.7_rc5.ebuild:
+  Bumped RC for 5.3.7
+
+*php-5.4.0_alpha3 (08 Aug 2011)
+
+  08 Aug 2011; Ole Markus With <olemarkus@gentoo.org> +php-5.4.0_alpha3.ebuild:
+  Bumping 5.4 to alpha3
 
   26 Jul 2011; <olemarkus@gentoo.org> files/eblits/pkg_postinst-v2.eblit:
   Removed some unnecessary warnings
@@ -2223,5 +2836,3 @@
 
   05 Sep 2005; <stuart@gentoo.org> ChangeLog:
   Initial version; replaces older dev-php/* packages
-
-

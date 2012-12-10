@@ -1,6 +1,277 @@
 # ChangeLog for sys-freebsd/freebsd-lib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-lib/ChangeLog,v 1.98 2011/07/12 14:32:29 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-lib/ChangeLog,v 1.163 2012/11/09 20:58:00 ryao Exp $
+
+*freebsd-lib-9.1_rc3-r1 (09 Nov 2012)
+
+  09 Nov 2012; Richard Yao <ryao@gentoo.org> +files/libusb-1.0.pc.in,
+  +freebsd-lib-9.1_rc3-r1.ebuild, freebsd-lib-9.0-r3.ebuild,
+  freebsd-lib-9.1_rc1.ebuild:
+  Install libusb-1.0.pc to make sys-apps/usbutils happy
+
+*freebsd-lib-9.1_rc3 (06 Nov 2012)
+
+  06 Nov 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-lib-9.1_rc3.ebuild:
+  bump to rc3
+
+*freebsd-lib-9.1_rc2 (14 Oct 2012)
+
+  14 Oct 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-lib-9.1_rc2.ebuild:
+  bump to 9.1_rc2
+
+  19 Sep 2012; Alexis Ballier <aballier@gentoo.org>
+  files/freebsd-lib-8.0-rpcsec_gss.patch, files/freebsd-lib-9.0-liblink.patch,
+  freebsd-lib-9.1_rc1.ebuild:
+  use OBJDIR instead of CURDIR for adding -L in patches, this should fix bug
+  #419477 in a cleaner way.
+
+  19 Sep 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.1_rc1.ebuild:
+  do not append -isystem /usr/include which is the default and causes problems
+  on updates, bug #435422 by Yuta SATOH
+
+*freebsd-lib-9.1_rc1 (11 Sep 2012)
+
+  11 Sep 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-lib-9.1_rc1.ebuild:
+  bump to 9.1_rc1 from bsd overlay by Yuta SATOH, bug #426838
+
+  02 Aug 2012; Richard Yao <ryao@gentoo.org> freebsd-lib-7.2-r1.ebuild,
+  freebsd-lib-8.0.ebuild, freebsd-lib-8.2-r1.ebuild, freebsd-lib-9.0-r3.ebuild:
+  Add sys-apps/mtree dependency for crossdev on userland_GNU
+
+  11 Jun 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r3.ebuild:
+  force a bootstrap with major updates
+
+  11 Jun 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r3.ebuild:
+  factorize pre-installation of headers in the bootstrap function
+
+  11 Jun 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r3.ebuild:
+  drop another append-flags usage, being too clever it strips and breaks the
+  cflags we added before, by Yuta SATOH, bug #419153
+
+  30 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r3.ebuild:
+  Treat multilib and non multilib builds the same way as multilib.eclass does
+  the right thing. Go back to -isystem for system includes and force to use
+  ours as otherwise we may pick gcc ones and it got that wrong. Bypass
+  append-flags and append cflags directly as flag-o-matic eclass maintainers
+  think it wise to add broken checks that break with flags with spaces.
+
+  28 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r3.ebuild:
+  fix broken logic in is_native_abi, by Naohiro Aota, bug #417863
+
+  26 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r3.ebuild:
+  remove libcompiler_rt and libblocksruntime as they are clang libraries
+
+*freebsd-lib-9.0-r3 (25 May 2012)
+
+  25 May 2012; Alexis Ballier <aballier@gentoo.org> -freebsd-lib-9.0-r1.ebuild,
+  -freebsd-lib-9.0-r2.ebuild, +freebsd-lib-9.0-r3.ebuild:
+  push out all the accumulated fixes in a new revision and remove old
+
+  25 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild,
+  +files/freebsd-sources-9.0-sysctluint.patch:
+  add the sysctlt fix from freebsd-sources here too with USE=build
+
+  25 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  bootstrap libssp_nonshared when needed.
+
+  25 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Do not build libssp, we really only need libssp_nonshared.
+
+  25 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  drop noop sed
+
+  25 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild,
+  +files/freebsd-lib-9.0-opieincludes.patch:
+  Fix some missing includes warnings.
+
+  25 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  fix paths I broke by the addition of MAKEOBJDIRPREFIX
+
+  25 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  replace -isystem path by -Ipath as append-flags seems not to like the former
+  anymore
+
+  25 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild,
+  +files/freebsd-lib-9.0-trylock-adaptive.patch:
+  Add a patch to libthr fixing mutex issues encountered with glib.
+
+  25 May 2012; Naohiro Aota <naota@gentoo.org> freebsd-lib-8.0.ebuild,
+  freebsd-lib-8.2-r1.ebuild, freebsd-lib-9.0-r1.ebuild,
+  freebsd-lib-9.0-r2.ebuild:
+  Build with -fno-strict-overflow. FreeBSD time code depends on overflow.
+  #324452
+
+  24 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  build and install more libraries with multilib
+
+  24 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Fix a typo and set MAKEOBJDIRPREFIX when installing too.
+
+  23 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Add the grounds for multilib and a very very basic multilib support: we only
+  build the csu parts for now.
+
+  23 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Add the grounds for multilib and a very very basic multilib support: we only
+  build the csu parts for now.
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org> freebsd-lib-8.0.ebuild,
+  freebsd-lib-8.2-r1.ebuild, freebsd-lib-9.0-r1.ebuild,
+  freebsd-lib-9.0-r2.ebuild:
+  Block dev-libs/libusbx because dev-libs/libusb is blocked as well.
+
+  21 May 2012; Mike Frysinger <vapier@gentoo.org> freebsd-lib-7.2-r1.ebuild,
+  freebsd-lib-8.0.ebuild, freebsd-lib-8.2-r1.ebuild, freebsd-lib-9.0-r1.ebuild,
+  freebsd-lib-9.0-r2.ebuild:
+  Inherit eutils for epatch.
+
+  18 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  factorize the bootstrapping code between cross and native builds.
+
+  18 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  bootstrap the csu with USE=build too
+
+  18 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Add two variables for non native and native subdirs and define it in only one
+  place.
+
+  18 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Set the ssp_nonshared LDADD in its bootstrapping function. Add it only with
+  USE=build, assume we have the ldscript in place if not.
+
+  18 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Preinstall headers only with USE=build
+
+  18 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Factorize some more code and regroup variable assignments.
+
+  18 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Set the NOSTRIPFLAG variable only once
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Generate the libc ldscript for the cross-compiled library too.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  factorize the src_compile code between the cross and native builds.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  factorize the libssp_nonshared bootstrapping code
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  use freebsd_src_install rather than mkinstall
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  split out the csu bootstrapping code in its own function
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Remove -isystem append-flags that are now useless since we pre-install the
+  headers.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Use mkinstall when cross-compiling too. Factorize the native and cross builds
+  install.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  factorize the way of getting the csudir
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  Factorize some code. Install all the cross-compile libraries in the same
+  place. Build and install libutil for the cross-compiler too.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  stop installing libstand headers manually
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  drop the compat symlink libbsdxml -> libexpat now that
+  freebsd_rename_libraries rename them automagically.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  openssl takes care of predicting /dev/crypto these days, no need to have it
+  twice.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r2.ebuild:
+  oops libm should be in / too
+
+*freebsd-lib-9.0-r2 (16 May 2012)
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org> +freebsd-lib-9.0-r2.ebuild:
+  Change the way we install freebsd-lib: install everything in /usr and use
+  gen_usr_ldscript -a to move the core libraries to /. This simplifies the
+  ebuild, avoids QA warnings for symlinks crossing the /usr boundary and makes
+  / smaller.
+
+  13 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r1.ebuild:
+  preinstall some more headers fixing build of a cross-compiler
+
+  11 May 2012; Alexis Ballier <aballier@gentoo.org> -freebsd-lib-9.0.ebuild,
+  -files/freebsd-lib-9.0-mancol.patch:
+  remove old
+
+  11 May 2012; Alexis Ballier <aballier@gentoo.org> -freebsd-lib-9.0.ebuild,
+  -files/freebsd-lib-9.0-mancol.patch:
+  remove old
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0-r1.ebuild:
+  keyword ~amd64-fbsd
+
+*freebsd-lib-9.0-r1 (23 Apr 2012)
+
+  23 Apr 2012; Alexis Ballier <aballier@gentoo.org> +freebsd-lib-9.0-r1.ebuild:
+  Drop the bundled libedit now that we have the required function provided by
+  dev-libs/libedit
+
+  30 Mar 2012; Alexis Ballier <aballier@gentoo.org>
+  -freebsd-lib-9.0_rc1.ebuild, -freebsd-lib-9.0_rc2.ebuild,
+  -freebsd-lib-9.0_rc3.ebuild:
+  remove old
+
+  22 Jan 2012; <naota@gentoo.org> freebsd-lib-9.0.ebuild:
+  Add missing source code.
+
+*freebsd-lib-9.0 (16 Jan 2012)
+
+  16 Jan 2012; Alexis Ballier <aballier@gentoo.org> +freebsd-lib-9.0.ebuild:
+  bump to 9.0
+
+*freebsd-lib-9.0_rc3 (09 Dec 2011)
+
+  09 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-lib-9.0_rc3.ebuild:
+  bump to 9.0_rc3
+
+*freebsd-lib-9.0_rc2 (07 Dec 2011)
+
+  07 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-lib-9.0_rc2.ebuild:
+  bump to rc2
+
+  10 Nov 2011; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0_rc1.ebuild:
+  drop useless patch
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0_rc1.ebuild,
+  +files/freebsd-lib-9.0-mancol.patch:
+  fix manpage collision with readline
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0_rc1.ebuild:
+  fix sed calls with gnu sed when bsd sed is not available
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org> freebsd-lib-9.0_rc1.ebuild:
+  remove useless patch
+
+*freebsd-lib-9.0_rc1 (07 Nov 2011)
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-lib-9.0_rc1.ebuild, +files/freebsd-lib-9.0-liblink.patch,
+  metadata.xml:
+  bump to 9.0_rc1
+
+  30 Aug 2011; Naohiro Aota <naota@gentoo.org> freebsd-lib-8.2-r1.ebuild,
+  +files/freebsd-lib-8.2-nlm_syscall.patch:
+  Add patch to add nml_sycall prototype from
+  http://svnweb.freebsd.org/base?view=revision&revision=216603
 
   12 Jul 2011; Alexis Ballier <aballier@gentoo.org> freebsd-lib-8.2-r1.ebuild:
   remove amd64 hacks now that tc-arch-kernel returns the right value for
@@ -596,4 +867,3 @@
   19 Oct 2004; Otavio R. Piske <angusyoung@gentoo.org>
   freebsd-lib-5.2.1.ebuild:
   Initial release
-

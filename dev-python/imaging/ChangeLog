@@ -1,6 +1,51 @@
 # ChangeLog for dev-python/imaging
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/imaging/ChangeLog,v 1.64 2011/07/07 23:26:15 neurogeek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/imaging/ChangeLog,v 1.77 2012/12/01 02:03:45 radhermit Exp $
+
+  01 Dec 2012; Tim Harder <radhermit@gentoo.org> -imaging-1.1.7.ebuild:
+  Remove old.
+
+  01 Dec 2012; Tim Harder <radhermit@gentoo.org> imaging-1.1.7.ebuild,
+  imaging-1.1.7-r1.ebuild:
+  Fix LICENSE (bug #445416 by ulm).
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> imaging-1.1.7-r1.ebuild:
+  alpha/ia64/sparc stable wrt #410075
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> imaging-1.1.7-r1.ebuild:
+  Marking imaging-1.1.7-r1 ppc64 for bug 410075
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> imaging-1.1.7-r1.ebuild:
+  Marking imaging-1.1.7-r1 ppc for bug 410075
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> imaging-1.1.7-r1.ebuild:
+  marked x86 per bug 410075
+
+  03 Apr 2012; Jeroen Roovers <jer@gentoo.org> imaging-1.1.7-r1.ebuild:
+  Stable for HPPA (bug #410075).
+
+  31 Mar 2012; Markus Meier <maekke@gentoo.org> imaging-1.1.7-r1.ebuild:
+  arm stable, bug #410075
+
+  29 Mar 2012; Agostino Sarubbo <ago@gentoo.org> imaging-1.1.7-r1.ebuild:
+  Stable for amd64, wrt bug #410075
+
+  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> imaging-1.1.7-r1.ebuild,
+  imaging-1.1.7.ebuild:
+  Restricting pypy #403783
+
+  01 Feb 2012; Mike Gilbert <floppym@gentoo.org> imaging-1.1.7-r1.ebuild,
+  imaging-1.1.7.ebuild:
+  Inherit multilib.
+
+  06 Jan 2012; Markos Chandras <hwoarang@gentoo.org> imaging-1.1.7-r1.ebuild:
+  Fix dependencies (bug #381689). Patch by Arfrever.
+
+*imaging-1.1.7-r1 (21 Dec 2011)
+
+  21 Dec 2011; Maxim Koltsov <maksbotan@gentoo.org> +imaging-1.1.7-r1.ebuild,
+  +files/imaging-1.1.7-nolcms.patch:
+  Revision bump, add lcms depend and use flag, bug 381689. Thanks to Chris Mayo
 
   07 Jul 2011; Jesus Rivero <neurogeek@gentoo.org> imaging-1.1.7.ebuild:
   Fixed shebang in Scripts/pilfont.py wrt bug #371117

@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pycairo/pycairo-1.10.0-r2.ebuild,v 1.1 2011/07/06 19:49:41 djc Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pycairo/pycairo-1.10.0-r2.ebuild,v 1.11 2012/11/06 06:10:40 idella4 Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6 3:3.1"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="2.4 2.5 3.0 *-jython"
+RESTRICT_PYTHON_ABIS="2.5 3.0 *-jython"
 
 inherit eutils python waf-utils
 
@@ -21,12 +21,12 @@ SRC_URI="http://cairographics.org/releases/py2cairo-${PYCAIRO_PYTHON2_VERSION}.t
 # || ( LGPL-2.1 MPL-1.1 ) for pycairo 1.8.10.
 LICENSE="LGPL-3 || ( LGPL-2.1 MPL-1.1 )"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 IUSE="doc examples +svg test"
 
 RDEPEND=">=x11-libs/cairo-1.10.0[svg?]"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	test? ( dev-python/pytest )"
 
 PYTHON_CFLAGS=("2.* + -fno-strict-aliasing")
@@ -71,7 +71,21 @@ src_test() {
 	}
 	python_execute_function -q -s test_installation
 
-	python_execute_py.test -P '${T}/tests/${PYTHON_ABI}${EPREFIX}$(python_get_sitedir)' -s
+	testing() {
+		# Need a variable for the pypy minor version and a variable to set 2 distinct pythonpaths
+		local pypy_v= PyPath= exit_status=0
+		pypy_v=$(python_get_version)
+		if [[ "${PYTHON_ABI:4:4}" == "pypy" ]]; then
+			PyPath=$(find "${T}"/tests/2.7-pypy-$pypy_v/ -name site-packages)
+			PYTHONPATH="${PyPath}" py.test-${PYTHON_ABI} "${WORKDIR}/${P}-${PYTHON_ABI}"/test || exit_status=1
+		else
+			PyPath="${T}/tests/${PYTHON_ABI}${EPREFIX}"$(python_get_sitedir)
+			PYTHONPATH="${PyPath}" py.test "${WORKDIR}/${P}-${PYTHON_ABI}"/test || exit_status=1
+		fi
+
+		return $exit_status
+	}
+	python_execute_function testing
 }
 
 src_install() {

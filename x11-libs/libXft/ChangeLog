@@ -1,6 +1,48 @@
 # ChangeLog for x11-libs/libXft
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libXft/ChangeLog,v 1.75 2011/02/14 23:22:40 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libXft/ChangeLog,v 1.86 2012/08/26 17:48:02 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> libXft-2.3.1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> libXft-2.3.1.ebuild:
+  Marking libXft-2.3.1 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> libXft-2.3.1.ebuild:
+  Marking libXft-2.3.1 ppc64 stable for bug 419473
+
+  29 Jun 2012; Markus Meier <maekke@gentoo.org> libXft-2.3.1.ebuild:
+  arm stable, bug #419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> libXft-2.3.1.ebuild:
+  Stable for HPPA (bug #419473).
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libXft-2.3.1.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libXft-2.3.1.ebuild:
+  Stable for amd64, wrt bug #419473
+
+*libXft-2.3.1 (03 Jun 2012)
+
+  03 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libXft-2.3.1.ebuild:
+  Version bump.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libXft-2.3.0-r1.ebuild:
+  keyword ~amd64-fbsd
+
+*libXft-2.3.0-r1 (11 Mar 2012)
+
+  11 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/libXft-2.3.0-bold-fonts.patch, +libXft-2.3.0-r1.ebuild:
+  Add patch to fix bold fonts, bug #407751.
+
+*libXft-2.3.0 (08 Mar 2012)
+
+  08 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libXft-2.3.0.ebuild:
+  Version bump.
 
   14 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org> libXft-2.2.0.ebuild:
   ppc stable wrt #344827, #354237

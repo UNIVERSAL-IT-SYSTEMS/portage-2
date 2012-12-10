@@ -1,6 +1,35 @@
 # ChangeLog for dev-java/xerces
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/xerces/ChangeLog,v 1.114 2011/05/03 18:32:01 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/xerces/ChangeLog,v 1.123 2012/06/28 21:13:10 sera Exp $
+
+  28 Jun 2012; Ralph Sennhauser <sera@gentoo.org> -xerces-2.9.1.ebuild,
+  xerces-2.11.0.ebuild:
+  Set minimum version for xjavac to build with jdk7, remove vulnarable.
+
+  14 Jun 2012; Michael Weber <xmw@gentoo.org> xerces-2.11.0.ebuild:
+  ppc stable (bug 280611)
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> xerces-2.11.0.ebuild:
+  Marking xerces-2.11.0 ppc64 for bug 280611
+
+  28 May 2012; Johannes Huber <johu@gentoo.org> xerces-2.11.0.ebuild:
+  Stable for x86, wrt bug #280611
+
+  28 May 2012; Agostino Sarubbo <ago@gentoo.org> xerces-2.11.0.ebuild:
+  Stable for amd64, wrt bug #280611
+
+*xerces-2.11.0 (26 May 2012)
+
+  26 May 2012; Ralph Sennhauser <sera@gentoo.org> +xerces-2.11.0.ebuild,
+  +files/xerces-2.11.0-build.xml.patch:
+  Security bump. #280611
+  Don't let taskdef point to non-existent jar. #351394
+
+  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> xerces-2.9.1.ebuild:
+  Add back ia64 love #349020 by Dennis Schridde.
+
+  02 Jan 2012; Ralph Sennhauser <sera@gentoo.org> xerces-2.9.1.ebuild:
+  Drop ia64 support #345433
 
   03 May 2011; Fabian Groffen <grobian@gentoo.org> xerces-2.9.1.ebuild:
   Marked ~x64-freebsd

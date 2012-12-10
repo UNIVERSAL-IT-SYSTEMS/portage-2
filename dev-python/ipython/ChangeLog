@@ -1,6 +1,73 @@
 # ChangeLog for dev-python/ipython
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/ipython/ChangeLog,v 1.87 2011/07/17 11:52:36 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/ipython/ChangeLog,v 1.102 2012/10/29 16:35:02 mgorny Exp $
+
+  29 Oct 2012; Michał Górny <mgorny@gentoo.org> ipython-0.12-r1.ebuild,
+  ipython-0.12.1.ebuild, ipython-0.13.1.ebuild, ipython-0.13.ebuild:
+  Use virtual for argparse.
+
+  29 Oct 2012; Patrick Lauer <patrick@gentoo.org> ipython-0.13.1.ebuild:
+  Reverting fix that doesn't fix
+
+  29 Oct 2012; Patrick Lauer <patrick@gentoo.org> ipython-0.13.1.ebuild:
+  Fixing useflag madness
+
+*ipython-0.13.1 (27 Oct 2012)
+
+  27 Oct 2012; Patrick McLean <chutzpah@gentoo.org> +ipython-0.13.1.ebuild:
+  Version bump.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> ipython-0.10.ebuild,
+  ipython-0.10.1.ebuild, ipython-0.10.2.ebuild:
+  Drop ia64/s390 keywords
+
+  17 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/ipython-0.13-umlaut.patch, ipython-0.13.ebuild:
+  fix decode error for LANG=C, bug #431316, thanks travlr
+
+*ipython-0.13 (30 Jul 2012)
+
+  30 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> +ipython-0.13.ebuild,
+  metadata.xml:
+  Version bump
+
+  28 Jun 2012; Justin Lecher <jlec@gentoo.org> ipython-0.12-r1.ebuild,
+  ipython-0.12.1.ebuild, metadata.xml:
+  Restrict pypy, as it has no USE=readline
+
+  27 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org> ipython-0.12-r1.ebuild,
+  ipython-0.12.1.ebuild:
+  PYTHON_USE_WITH are no longer conditional wrt #423647 by Paweł Rumian
+  <gorkypl@gmail.com>
+
+  27 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org> ipython-0.12-r1.ebuild,
+  ipython-0.12.1.ebuild:
+  Add missing PYTHON_DEPEND, use proper PYTHON_USE_WITH wrt #423647 by Paweł
+  Rumian <gorkypl@gmail.com>
+
+  06 Jun 2012; Benda Xu <heroxbd@gentoo.org> ipython-0.12.1.ebuild:
+  keyword ~amd64-linux and ~x86-linux
+
+*ipython-0.12.1 (24 Apr 2012)
+
+  24 Apr 2012; Sébastien Fabbro <bicatali@gentoo.org> +ipython-0.12.1.ebuild:
+  Version bump
+
+  10 Mar 2012; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  Fix UTF-8 encoding of metadata.xml.
+
+*ipython-0.12-r1 (10 Jan 2012)
+
+  10 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> -ipython-0.12.ebuild,
+  +ipython-0.12-r1.ebuild, +files/ipython-0.12-globalpath.patch, metadata.xml:
+  Removed bundled libraries, added suggested dependencies and optional ones as
+  run depedencies. Propagate global patch prefix friendly. Fix tests, some
+  other modifications from Arfrever
+
+*ipython-0.12 (08 Jan 2012)
+
+  08 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> +ipython-0.12.ebuild:
+  Tentative version bump. Major new version, so dropped keywords
 
   17 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> ipython-0.10.2.ebuild:
   ppc64 stable wrt #366667
@@ -370,4 +437,3 @@
 
   13 Jun 2003; Alastair Tse <liquidx@gentoo.org> ipython-0.4.0.ebuild:
   New Package. Ebuild Submitted by John Landahl <john@landahl.org>.
-

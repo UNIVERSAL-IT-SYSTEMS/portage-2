@@ -1,6 +1,44 @@
 # ChangeLog for net-misc/openswan
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/openswan/ChangeLog,v 1.76 2011/06/06 06:18:52 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/openswan/ChangeLog,v 1.85 2012/09/14 22:29:28 ago Exp $
+
+  14 Sep 2012; Agostino Sarubbo <ago@gentoo.org> openswan-2.6.38.ebuild:
+  Stable for amd64, wrt bug #434606
+
+  14 Sep 2012; Agostino Sarubbo <ago@gentoo.org> openswan-2.6.38.ebuild:
+  Stable for X86, wrt bug #434606
+
+*openswan-2.6.38 (07 Apr 2012)
+
+  07 Apr 2012; Mike Gilbert <floppym@gentoo.org>
+  +files/openswan-2.6.38-gentoo.patch, +openswan-2.6.38.ebuild:
+  Version bump.
+
+  06 Apr 2012; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Change maintainer.
+
+  06 Apr 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #63588
+
+*openswan-2.6.37-r1 (21 Nov 2011)
+
+  21 Nov 2011; Mike Frysinger <vapier@gentoo.org> +openswan-2.6.37-r1.ebuild:
+  Depend on the old output style of ifconfig, and simplify build flags a bit.
+
+  10 Nov 2011; Tony Vroon <chainsaw@gentoo.org> openswan-2.6.37.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in security bug #389097.
+
+  09 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> openswan-2.6.37.ebuild:
+  x86 stable wrt bug #389097
+
+*openswan-2.6.37 (07 Nov 2011)
+
+  07 Nov 2011; Alin Năstac <mrness@gentoo.org> -openswan-2.6.29.ebuild,
+  -files/openswan-2.6.29-gentoo.patch, +openswan-2.6.37.ebuild,
+  +files/openswan-2.6.37-gentoo.patch:
+  Version bump (#368903); install cotrib files (#350083); use LDFLAGS
+  (#351019).
 
   06 Jun 2011; Robin H. Johnson <robbat2@gentoo.org> openswan-2.4.15-r2.ebuild,
   openswan-2.6.29.ebuild, openswan-2.6.31.ebuild:

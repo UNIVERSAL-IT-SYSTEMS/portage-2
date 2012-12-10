@@ -1,49 +1,43 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libfm/libfm-9999.ebuild,v 1.15 2011/06/25 18:11:18 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libfm/libfm-9999.ebuild,v 1.31 2012/12/02 15:26:59 hwoarang Exp $
 
-EAPI=2
+EAPI=5
 
-if [[ ${PV} == 9999 ]]; then
-	EGIT_REPO_URI="git://pcmanfm.git.sourceforge.net/gitroot/pcmanfm/${PN}"
-	inherit autotools git-2
-	SRC_URI=""
-else
-	inherit autotools
-	SRC_URI="http://dev.gentoo.org/~hwoarang/distfiles/${P}.tar.gz"
-	KEYWORDS="~amd64 ~arm ~ppc ~x86"
-	S="${WORKDIR}"
-fi
+EGIT_REPO_URI="git://pcmanfm.git.sourceforge.net/gitroot/pcmanfm/${PN}"
 
-inherit fdo-mime
+inherit autotools git-2 fdo-mime vala
 
 DESCRIPTION="A library for file management"
 HOMEPAGE="http://pcmanfm.sourceforge.net/"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="debug doc examples udev"
+IUSE="debug doc examples vala"
+KEYWORDS=""
 
 COMMON_DEPEND=">=dev-libs/glib-2.18:2
 	>=x11-libs/gtk+-2.16:2
-	udev? ( dev-libs/dbus-glib )
-	>=lxde-base/menu-cache-0.3.2"
+	>=lxde-base/menu-cache-0.3.2:="
 RDEPEND="${COMMON_DEPEND}
 	x11-misc/shared-mime-info
-	udev? ( sys-fs/udisks )"
+	|| ( gnome-base/gvfs[udev,udisks] gnome-base/gvfs[udev,gdu] )"
 DEPEND="${COMMON_DEPEND}
+	>=dev-lang/vala-0.14.0
+	dev-util/gtk-doc-am
 	doc? (
 		dev-util/gtk-doc
-		dev-util/gtk-doc-am
 	)
 	>=dev-util/intltool-0.40
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
+
+DOCS=( AUTHORS TODO )
 
 src_prepare() {
 	if ! use doc; then
-		sed -ie '/SUBDIRS=/s#docs##' "${S}"/Makefile.am || die "sed failed"
-		sed -ie '/^[[:space:]]*docs/d' configure.ac || die "sed failed"
+		sed -ie "/^SUBDIRS_DOCS/d" Makefile.am || die "sed failed"
+		sed -ie "/^[[:space:]]*docs/d" configure.ac || die "sed failed"
 	else
 		gtkdocize --copy || die
 	fi
@@ -53,28 +47,44 @@ src_prepare() {
 		progress;do
 		echo "data/ui/"${trans}.ui >> po/POTFILES.in
 	done
+	sed -i -e "s:-O0::" -e "/-DG_ENABLE_DEBUG/s: -g::" "${S}"/configure.ac || die
+	#Remove -Werror for automake-1.12. Bug #421101
+	sed -i "s:-Werror::" configure.ac || die
 	eautoreconf
+	rm -r autom4te.cache || die
+	use vala && export VALAC="$(type -p valac-$(vala_best_api_version))"
 }
 
 src_configure() {
 	econf \
-		--sysconfdir=/etc \
+		--sysconfdir="${EPREFIX}/etc" \
 		--disable-dependency-tracking \
 		--disable-static \
-		$(use_enable udev udisks) \
+		--disable-udisks \
 		$(use_enable examples demo) \
 		$(use_enable debug) \
-		# Documentation fails to build at the moment
-		# $(use_enable doc gtk-doc) \
-		# $(use_enable doc gtk-doc-html) \
+		$(use_enable vala actions) \
+		$(use_enable doc gtk-doc) \
 		--with-html-dir=/usr/share/doc/${PF}/html
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS TODO
-
+	default
 	find "${D}" -name '*.la' -exec rm -f '{}' +
+	# Remove symlink #439570
+	if [[ -h ${D}/usr/include/${PN} ]]; then
+		rm "${D}"/usr/include/${PN}
+	fi
+}
+
+pkg_preinst() {
+	# Resolve the symlink mess. Bug #439570
+	[[ -d "${ROOT}"/usr/include/${PN} ]] && \
+		rm -rf "${ROOT}"/usr/include/${PN}
+	if [[ -d "${D}"/usr/include/${PN}-1.0 ]]; then
+		cd ${D}/usr/include
+		ln -s --force ${PN}-1.0 ${PN}
+	fi
 }
 
 pkg_postinst() {

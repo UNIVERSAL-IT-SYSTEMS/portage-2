@@ -1,6 +1,30 @@
 # ChangeLog for media-libs/id3lib
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/id3lib/ChangeLog,v 1.72 2010/01/15 09:29:13 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/id3lib/ChangeLog,v 1.80 2012/03/22 12:33:36 ssuominen Exp $
+
+  22 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> id3lib-3.8.3-r8.ebuild:
+  USE="static-libs" and remove libid3.la when it's disabled.
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> -id3lib-3.8.3-r7.ebuild:
+  old
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> id3lib-3.8.3-r8.ebuild:
+  ppc/ppc64 stable wrt #393807
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> id3lib-3.8.3-r8.ebuild:
+  alpha/ia64/sh/sparc stable wrt #393807
+
+  21 Dec 2011; Markus Meier <maekke@gentoo.org> id3lib-3.8.3-r8.ebuild:
+  arm stable, bug #393807
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> id3lib-3.8.3-r8.ebuild:
+  Stable for HPPA (bug #393807).
+
+  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> id3lib-3.8.3-r8.ebuild:
+  x86 stable wrt bug #393807
+
+  17 Dec 2011; Agostino Sarubbo <ago@gentoo.org> id3lib-3.8.3-r8.ebuild:
+  Stable for AMD64, wrt bug #393807
 
   15 Jan 2010; Christian Faulhammer <fauli@gentoo.org>
   id3lib-3.8.3-r8.ebuild:

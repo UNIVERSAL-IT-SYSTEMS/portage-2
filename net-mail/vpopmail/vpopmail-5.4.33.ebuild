@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/vpopmail/vpopmail-5.4.33.ebuild,v 1.1 2011/07/27 09:41:53 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/vpopmail/vpopmail-5.4.33.ebuild,v 1.7 2012/02/09 03:50:00 jer Exp $
 
 EAPI=4
 
-inherit autotools eutils fixheadtails qmail
+inherit autotools eutils fixheadtails qmail user
 
 HOMEPAGE="http://www.inter7.com/index.php?page=vpopmail"
 DESCRIPTION="A collection of programs to manage virtual email domains and accounts on your Qmail mail servers."
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 hppa ~ia64 ppc ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="clearpasswd ipalias maildrop mysql spamassassin"
 
 DEPEND="virtual/qmail
@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}"
 VPOP_DEFAULT_HOME="/var/vpopmail"
 
 vpopmail_set_homedir() {
-	VPOP_HOME=$(getent passwd vpopmail | cut -d: -f6)
+	VPOP_HOME=$(egethome vpopmail)
 	if [[ -z "${VPOP_HOME}" ]]; then
 		ebeep
 		eerror "vpopmail's home directory is null in passwd data!"
@@ -65,14 +65,16 @@ src_prepare() {
 src_configure() {
 	vpopmail_set_homedir
 
+	local authopts
 	if use mysql; then
-		authopts=" \
-			--enable-auth-module=mysql \
-			--enable-libdir=/usr/lib/mysql \
-			--enable-sql-logging \
-			--enable-valias \
-			--disable-mysql-replication \
-			--enable-mysql-limits"
+		authopts="$(mysql_config --include)"
+		authopts="--enable-incdir=${authopts#-I}"
+		authopts+=" --enable-auth-module=mysql"
+		authopts+="	--enable-libdir=/usr/$(get_libdir)/mysql"
+		authopts+="	--enable-sql-logging"
+		authopts+=" --enable-valias"
+		authopts+="	--disable-mysql-replication"
+		authopts+="	--enable-mysql-limits"
 	else
 		authopts="--enable-auth-module=cdb"
 	fi

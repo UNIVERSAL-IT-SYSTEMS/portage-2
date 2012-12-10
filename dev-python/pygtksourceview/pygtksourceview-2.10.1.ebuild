@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pygtksourceview/pygtksourceview-2.10.1.ebuild,v 1.11 2011/01/29 01:23:16 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pygtksourceview/pygtksourceview-2.10.1.ebuild,v 1.14 2012/05/15 23:24:32 aballier Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="2.[45] 3.* *-jython"
+RESTRICT_PYTHON_ABIS="2.[45] 3.* *-jython 2.7-pypy-*"
 PYTHON_EXPORT_PHASE_FUNCTIONS="1"
 
 inherit gnome2 python
@@ -15,7 +15,7 @@ HOMEPAGE="http://www.pygtk.org/"
 
 LICENSE="LGPL-2.1"
 SLOT="2"
-KEYWORDS="alpha amd64 arm ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
+KEYWORDS="alpha amd64 arm ia64 ~mips ppc ppc64 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
 IUSE="doc"
 
 RDEPEND=">=dev-python/pygobject-2.15.2:2
@@ -28,7 +28,7 @@ DEPEND="${RDEPEND}
 		dev-libs/libxslt
 		~app-text/docbook-xml-dtd-4.1.2
 		>=app-text/docbook-xsl-stylesheets-1.70.1 )
-	>=dev-util/pkgconfig-0.9"
+	virtual/pkgconfig"
 
 pkg_setup() {
 	DOCS="AUTHORS ChangeLog NEWS README"

@@ -1,6 +1,58 @@
 # ChangeLog for games-strategy/freeciv
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/freeciv/ChangeLog,v 1.127 2011/05/05 11:02:15 phajdan.jr Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/freeciv/ChangeLog,v 1.138 2012/07/02 21:42:55 mr_bones_ Exp $
+
+  02 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  -files/freeciv-2.3.0-clean-man.patch, -files/freeciv-2.3.1-clean-man.patch,
+  -freeciv-2.3.0.ebuild, -freeciv-2.3.1.ebuild:
+  old
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> freeciv-2.3.2.ebuild:
+  x86 stable wrt bug #414521
+
+  05 May 2012; Markos Chandras <hwoarang@gentoo.org> freeciv-2.3.2.ebuild:
+  Stable on amd64 wrt bug #414521
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> freeciv-2.3.0.ebuild,
+  freeciv-2.3.1.ebuild, freeciv-2.3.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*freeciv-2.3.2 (02 Apr 2012)
+
+  02 Apr 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  files/freeciv-2.3.0-clean-man.patch, files/freeciv-2.3.1-clean-man.patch,
+  +freeciv-2.3.2.ebuild, +files/freeciv-2.3.2-clean-man.patch:
+  version bump (bug #410533)
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> freeciv-2.3.1.ebuild:
+  x86 stable wrt bug #396623
+
+  30 Nov 2011; Michael Sterrett <mr_bones_@gentoo.org>
+  files/freeciv-2.3.1-clean-man.patch:
+  update the man-page cleanup patch (bug #392601)
+
+*freeciv-2.3.1 (30 Nov 2011)
+
+  30 Nov 2011; Michael Sterrett <mr_bones_@gentoo.org> -freeciv-2.2.5.ebuild,
+  -files/freeciv-2.2.5-clean-man.patch, -freeciv-2.2.7.ebuild,
+  -files/freeciv-2.2.7-clean-man.patch, +freeciv-2.3.1.ebuild,
+  +files/freeciv-2.3.1-clean-man.patch:
+  version bump
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> freeciv-2.3.0.ebuild:
+  x86 stable wrt bug #385899
+
+*freeciv-2.3.0 (19 Aug 2011)
+
+  19 Aug 2011; Michael Sterrett <mr_bones_@gentoo.org> +freeciv-2.3.0.ebuild,
+  +files/freeciv-2.3.0-clean-man.patch:
+  version bump
+
+*freeciv-2.2.7 (03 Aug 2011)
+
+  03 Aug 2011; Michael Sterrett <mr_bones_@gentoo.org> +freeciv-2.2.7.ebuild,
+  +files/freeciv-2.2.7-clean-man.patch:
+  version bump (bug #377003)
 
   05 May 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> freeciv-2.2.5.ebuild:
   x86 stable wrt bug #363643

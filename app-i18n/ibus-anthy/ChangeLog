@@ -1,6 +1,48 @@
 # ChangeLog for app-i18n/ibus-anthy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-anthy/ChangeLog,v 1.28 2011/05/18 23:31:03 naota Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-anthy/ChangeLog,v 1.39 2012/08/20 21:49:51 johu Exp $
+
+  20 Aug 2012; Johannes Huber <johu@gentoo.org> ibus-anthy-1.2.7-r1.ebuild:
+  Stable for x86, wrt bug #428870
+
+  15 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  ibus-anthy-1.2.7-r1.ebuild:
+  Stable ppc, bug #428870
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> ibus-anthy-1.2.7-r1.ebuild:
+  Stable for amd64, wrt bug #428870
+
+*ibus-anthy-1.2.7-r1 (18 Jun 2012)
+
+  18 Jun 2012; Maxim Koltsov <maksbotan@gentoo.org> +ibus-anthy-1.2.7-r1.ebuild:
+  Force buildsystem to use python2, bug #420213
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ibus-anthy-1.2.7.ebuild:
+  x86 stable wrt bug #418583
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ibus-anthy-1.2.7.ebuild:
+  Stable for amd64, wrt bug #418583
+
+  02 Jun 2012; Naohiro Aota <naota@gentoo.org> ibus-anthy-1.2.7.ebuild:
+  Add missing dependency intltool
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  ibus-anthy-1.2.0.20100115.ebuild, ibus-anthy-1.2.6.ebuild,
+  ibus-anthy-1.2.7.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*ibus-anthy-1.2.7 (06 Mar 2012)
+
+  06 Mar 2012; MATSUU Takuto <matsuu@gentoo.org> -ibus-anthy-1.2.1.ebuild,
+  -ibus-anthy-1.2.3.ebuild, -ibus-anthy-1.2.4.ebuild, -ibus-anthy-1.2.5.ebuild,
+  +ibus-anthy-1.2.7.ebuild:
+  Version bumped.
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ibus-anthy-1.2.6.ebuild:
+  x86 stable wrt bug #396807
+
+  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> ibus-anthy-1.2.6.ebuild:
+  Stable for amd64, wrt bug #396807
 
 *ibus-anthy-1.2.6 (18 May 2011)
 

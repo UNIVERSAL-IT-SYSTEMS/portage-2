@@ -1,6 +1,53 @@
 # ChangeLog for dev-ml/sexplib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ml/sexplib/ChangeLog,v 1.9 2011/07/23 15:44:59 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ml/sexplib/ChangeLog,v 1.20 2012/10/17 12:15:21 aballier Exp $
+
+  17 Oct 2012; Alexis Ballier <aballier@gentoo.org> sexplib-108.07.01.ebuild:
+  Mirror the distfile, upstream one fails to fetch, bug #438610 by Nick Bowler
+
+*sexplib-108.07.01 (08 Oct 2012)
+
+  08 Oct 2012; Alexis Ballier <aballier@gentoo.org> +sexplib-108.07.01.ebuild:
+  version bump
+
+  07 Aug 2012; Alexis Ballier <aballier@gentoo.org> -sexplib-7.0.4.ebuild,
+  -sexplib-7.0.5.ebuild:
+  remove old
+
+*sexplib-108.00.01 (30 Jun 2012)
+
+  30 Jun 2012; Alexis Ballier <aballier@gentoo.org> +sexplib-108.00.01.ebuild:
+  bump to janestreet version
+
+*sexplib-7.0.5 (30 Jun 2012)
+
+  30 Jun 2012; Alexis Ballier <aballier@gentoo.org> +sexplib-7.0.5.ebuild:
+  version bump
+
+  27 Mar 2012; Alexis Ballier <aballier@gentoo.org> sexplib-7.0.4.ebuild:
+  convert to oasis.eclass
+
+  23 Feb 2012; Alexis Ballier <aballier@gentoo.org> -sexplib-5.2.1.ebuild:
+  remove old
+
+  06 Oct 2011; Alexis Ballier <aballier@gentoo.org> -sexplib-7.0.3.ebuild:
+  remove old
+
+*sexplib-7.0.4 (06 Oct 2011)
+
+  06 Oct 2011; Alexis Ballier <aballier@gentoo.org> +sexplib-7.0.4.ebuild:
+  version bump
+
+*sexplib-7.0.3 (07 Sep 2011)
+
+  07 Sep 2011; Alexis Ballier <aballier@gentoo.org> -sexplib-7.0.1.ebuild,
+  +sexplib-7.0.3.ebuild:
+  version bump
+
+*sexplib-7.0.1 (07 Sep 2011)
+
+  07 Sep 2011; Alexis Ballier <aballier@gentoo.org> +sexplib-7.0.1.ebuild:
+  version bump
 
   23 Jul 2011; Thomas Kahle <tomka@gentoo.org> sexplib-5.2.1.ebuild:
   ~x86 per bug 373149

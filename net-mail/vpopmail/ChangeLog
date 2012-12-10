@@ -1,6 +1,25 @@
 # ChangeLog for net-mail/vpopmail
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/vpopmail/ChangeLog,v 1.102 2011/07/27 09:41:53 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-mail/vpopmail/ChangeLog,v 1.108 2012/02/09 03:50:00 jer Exp $
+
+  09 Feb 2012; Jeroen Roovers <jer@gentoo.org> vpopmail-5.4.33.ebuild:
+  Stable for HPPA (bug #378371).
+
+  28 Nov 2011; Mike Frysinger <vapier@gentoo.org> vpopmail-5.4.33.ebuild:
+  Add s390/sh love #376587 by Eray Aslan.
+
+  03 Nov 2011; Mike Frysinger <vapier@gentoo.org> vpopmail-5.4.16.ebuild,
+  vpopmail-5.4.30-r1.ebuild, vpopmail-5.4.30-r2.ebuild, vpopmail-5.4.33.ebuild:
+  Use new egethome helper rather than calling getent directly.
+
+  10 Sep 2011; Raúl Porcel <armin76@gentoo.org> vpopmail-5.4.30-r1.ebuild:
+  ia64 stable wrt #378373
+
+  20 Aug 2011; Eray Aslan <eras@gentoo.org> vpopmail-5.4.33.ebuild:
+  Add mysql incdir to configure script - bug #379813
+
+  09 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> vpopmail-5.4.33.ebuild:
+  ppc/ppc64 stable wrt #378371
 
 *vpopmail-5.4.33 (27 Jul 2011)
 

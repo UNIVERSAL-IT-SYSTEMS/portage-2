@@ -1,6 +1,20 @@
 # ChangeLog for dev-perl/Mail-SRS
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Mail-SRS/ChangeLog,v 1.11 2011/02/07 17:16:11 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Mail-SRS/ChangeLog,v 1.15 2012/06/24 12:59:17 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Mail-SRS-0.31.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Mail-SRS-0.310.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Mail-SRS-0.310.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +Mail-SRS-0.310.0.ebuild:
+  Change version scheme
 
   16 Jul 2009; Torsten Veller <tove@gentoo.org> Mail-SRS-0.31.ebuild:
   Remove test dependencies from RDEPEND
@@ -29,4 +43,3 @@
 
   19 Nov 2006; William L. Thomson Jr. <wltjr@gentoo.org> ChangeLog:
   Initial ebuild, needed as a dep for another package already in tree.
-

@@ -1,6 +1,44 @@
 # ChangeLog for dev-java/xom
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/xom/ChangeLog,v 1.56 2011/03/13 05:17:21 serkan Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/xom/ChangeLog,v 1.66 2012/05/24 12:33:53 sera Exp $
+
+  24 May 2012; Ralph Sennhauser <sera@gentoo.org> -xom-1.0-r6.ebuild,
+  -xom-1.0-r7.ebuild, -xom-1.2.6.ebuild:
+  Remove old. Depend on dev-java/servletapi and old slot of jcu4j.
+
+  21 May 2012; Johannes Huber <johu@gentoo.org> xom-1.2.6-r1.ebuild:
+  Stable for x86, wrt bug #381981
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> xom-1.2.6-r1.ebuild:
+  Stable for amd64, wrt bug #381981
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> xom-1.2.6-r1.ebuild:
+  Stable for ppc/ppc64; bug #381981
+
+  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> xom-1.2.6-r1.ebuild:
+  Add back ia64 love #349020 by Dennis Schridde.
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> xom-1.0-r6.ebuild,
+  xom-1.0-r7.ebuild:
+  Move EAPI assignment to top of ebuild, bug 411875.
+
+*xom-1.2.6-r1 (29 Jan 2012)
+
+  29 Jan 2012; Ralph Sennhauser <sera@gentoo.org> +xom-1.2.6-r1.ebuild,
+  +files/xom-strip-fallback-parser.patch:
+  Revbump, strip out fallback parser to allow building wiht other JVMs than
+  SUN/Oracles. #399119
+  Use java-virtuals/servlet-api instead of dev-java/servletapi. #398689
+
+  01 Jan 2012; Ralph Sennhauser <sera@gentoo.org> xom-1.0-r6.ebuild,
+  xom-1.0-r7.ebuild, xom-1.2.6.ebuild:
+  Drop ia64 support #345433
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> xom-1.2.6.ebuild:
+  x86 stable, bug #381981
+
+  22 Oct 2011; Markos Chandras <hwoarang@gentoo.org> xom-1.2.6.ebuild:
+  Stable on amd64 wrt bug #381981
 
 *xom-1.2.6 (13 Mar 2011)
 

@@ -1,6 +1,60 @@
 # ChangeLog for dev-ruby/redcloth
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/redcloth/ChangeLog,v 1.61 2011/07/22 13:07:41 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/redcloth/ChangeLog,v 1.77 2012/11/07 03:33:25 jer Exp $
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> redcloth-4.2.9.ebuild:
+  Stable for HPPA (bug #427594).
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> redcloth-4.2.3-r1.ebuild,
+  redcloth-4.2.9.ebuild:
+  Add ~alpha, alpha/ia64/sparc stable
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> redcloth-4.2.9.ebuild:
+  Port to rspec helper for testing.
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org> redcloth-4.2.9.ebuild:
+  Stable ppc, bug #427594
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org> redcloth-4.2.9.ebuild:
+  Stable ppc64, bug #427594
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> redcloth-4.2.9.ebuild:
+  Stable for amd64, wrt bug #427594
+
+  22 Jul 2012; Jeff Horelick <jdhore@gentoo.org> redcloth-4.2.9.ebuild:
+  marked x86 per bug 427594
+
+  22 Jul 2012; Hans de Graaff <graaff@gentoo.org> -redcloth-4.2.3.ebuild,
+  -redcloth-4.2.3-r2.ebuild, -redcloth-4.2.8.ebuild:
+  Remove old versions.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> redcloth-4.2.9.ebuild:
+  Add Prefix keywords, bug #396547
+
+*redcloth-4.2.9 (08 Dec 2011)
+
+  08 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org> +redcloth-4.2.9.ebuild:
+  Version bump.
+
+  08 Oct 2011; Hans de Graaff <graaff@gentoo.org> redcloth-4.2.8.ebuild:
+  Remove broken rspec dependency. Insstead remove the need to have it installed
+  for building. It is no longer possible to build documentation. Fix rspec
+  invocation to actually work and make it simpler. Fixes bug 384641 amongst
+  other things.
+
+  03 Oct 2011; Jeroen Roovers <jer@gentoo.org> redcloth-4.2.3-r1.ebuild:
+  Stable for HPPA (bug #385149).
+
+  01 Oct 2011; Robin H. Johnson <robbat2@gentoo.org> redcloth-4.2.8.ebuild:
+  Fix build failure: "no such file to load -- rspec/core/rake_task".
+
+*redcloth-4.2.8 (25 Sep 2011)
+
+  25 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> +redcloth-4.2.8.ebuild:
+  Version bump; this version does not require patches (yuppie).
 
   22 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> redcloth-4.2.3-r1.ebuild:
   ppc64 stable wrt #352483
@@ -237,4 +291,3 @@
   26 Jan 2005; Michael Kohl <citizen428@gentoo.org> +metadata.xml,
   +redcloth-3.0.1.ebuild:
   Initial import. Ebuild submitted by Leonardo Boshell in bug #71520
-

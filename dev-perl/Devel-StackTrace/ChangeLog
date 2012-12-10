@@ -1,6 +1,59 @@
 # ChangeLog for dev-perl/Devel-StackTrace
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Devel-StackTrace/ChangeLog,v 1.71 2011/04/03 06:37:10 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Devel-StackTrace/ChangeLog,v 1.84 2012/11/24 07:41:44 tove Exp $
+
+*Devel-StackTrace-1.300.0 (24 Nov 2012)
+
+  24 Nov 2012; Torsten Veller <tove@gentoo.org>
+  +Devel-StackTrace-1.300.0.ebuild:
+  Version bump
+
+*Devel-StackTrace-1.290.0 (17 Nov 2012)
+
+  17 Nov 2012; Torsten Veller <tove@gentoo.org>
+  +Devel-StackTrace-1.290.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  03 Jun 2012; Torsten Veller <tove@gentoo.org> -Devel-StackTrace-1.22.ebuild:
+  Cleanup
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org>
+  Devel-StackTrace-1.270.0.ebuild:
+  ia64/sparc stable wrt #400089
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Devel-StackTrace-1.270.0.ebuild:
+  x86 stable wrt bug #400089
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> Devel-StackTrace-1.270.0.ebuild:
+  Marking Devel-StackTrace-1.270.0 ppc for bug 400089
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> Devel-StackTrace-1.270.0.ebuild:
+  Stable for HPPA (bug #400089).
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  Devel-StackTrace-1.270.0.ebuild:
+  Stable on alpha, bug #400089
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  Devel-StackTrace-1.270.0.ebuild:
+  Stable for amd64, wrt bug #400089
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  Devel-StackTrace-1.270.0.ebuild:
+  Marked ~x64-macos
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Devel-StackTrace-1.270.ebuild:
+  Cleanup
+
+*Devel-StackTrace-1.270.0 (31 Aug 2011)
+
+  31 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +Devel-StackTrace-1.270.0.ebuild:
+  Change version scheme
 
   03 Apr 2011; Torsten Veller <tove@gentoo.org> -Devel-StackTrace-1.26.ebuild:
   Cleanup

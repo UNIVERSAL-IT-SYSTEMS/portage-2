@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-screensaver/gnome-screensaver-2.30.2-r1.ebuild,v 1.5 2011/07/14 10:34:27 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-screensaver/gnome-screensaver-2.30.2-r1.ebuild,v 1.11 2012/09/05 11:28:09 jlec Exp $
 
 EAPI="2"
 
@@ -13,14 +13,14 @@ SRC_URI="${SRC_URI}
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 KERNEL_IUSE="kernel_linux"
 IUSE="branding debug doc libnotify opengl pam $KERNEL_IUSE"
 
 RDEPEND=">=gnome-base/gconf-2.6.1:2
 	>=x11-libs/gtk+-2.14.0:2
 	>=gnome-base/gnome-desktop-2.29.0:2
-	>=gnome-base/gnome-menus-2.12
+	>=gnome-base/gnome-menus-2.12:0
 	>=dev-libs/glib-2.15:2
 	>=gnome-base/libgnomekbd-0.1
 	>=dev-libs/dbus-glib-0.71
@@ -35,7 +35,7 @@ RDEPEND=">=gnome-base/gconf-2.6.1:2
 	x11-libs/libXxf86misc
 	x11-libs/libXxf86vm"
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.9
+	virtual/pkgconfig
 	>=dev-util/intltool-0.40
 	doc? (
 		app-text/xmlto
@@ -64,8 +64,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	gnome2_src_prepare
-
 	# libnotify support was removed from trunk, so not needed for next release
 	epatch "${FILESDIR}/${P}-libnotify-0.7.patch"
 
@@ -91,6 +89,7 @@ src_prepare() {
 
 	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
+	gnome2_src_prepare
 }
 
 src_install() {
@@ -115,8 +114,7 @@ src_install() {
 	fi
 
 	if use branding ; then
-		insinto /usr/share/pixmaps/
-		doins "${DISTDIR}/gentoo-logo.svg" || die "doins 1 failed"
+		doicon "${DISTDIR}/gentoo-logo.svg" || die "doins 1 failed"
 		insinto /usr/share/applications/screensavers/
 		doins "${FILESDIR}/gentoologo-floaters.desktop" || die "doins 2 failed"
 	fi

@@ -1,6 +1,168 @@
 # ChangeLog for net-dns/bind-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/bind-tools/ChangeLog,v 1.196 2011/06/02 10:54:16 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dns/bind-tools/ChangeLog,v 1.233 2012/11/21 11:29:17 ago Exp $
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> bind-tools-9.9.2.ebuild:
+  Stable for x86, wrt bug #440318
+
+  04 Nov 2012; Ulrich Müller <ulm@gentoo.org> bind-tools-9.9.1_p2.ebuild,
+  bind-tools-9.9.1_p4.ebuild, bind-tools-9.9.2.ebuild:
+  Update LICENSE, RSA-PKCS11 is replaced by RSA, bug 440752.
+
+  03 Nov 2012; Agostino Sarubbo <ago@gentoo.org> bind-tools-9.9.2.ebuild:
+  Stable for amd64, wrt bug #440318
+
+  01 Nov 2012; Christian Ruppert <idl0r@gentoo.org> bind-tools-9.9.2.ebuild,
+  metadata.xml:
+  Fix AR calls, bug 440338. Fix LICENSE, bug 440752.
+
+  01 Nov 2012; Jeroen Roovers <jer@gentoo.org> bind-tools-9.9.2.ebuild:
+  Stable for HPPA (bug #440318).
+
+  31 Oct 2012; Anthony G. Basile <blueness@gentoo.org> bind-tools-9.9.2.ebuild:
+  stable arm, bug #440318
+
+  31 Oct 2012; Anthony G. Basile <blueness@gentoo.org> bind-tools-9.9.2.ebuild:
+  stable ppc ppc64, bug #440318
+
+*bind-tools-9.9.2 (10 Oct 2012)
+*bind-tools-9.9.1_p4 (10 Oct 2012)
+
+  10 Oct 2012; Christian Ruppert <idl0r@gentoo.org>
+  -bind-tools-9.9.1_p3.ebuild, +bind-tools-9.9.1_p4.ebuild,
+  +bind-tools-9.9.2.ebuild:
+  Version bumps.
+
+*bind-tools-9.9.1_p3 (12 Sep 2012)
+
+  12 Sep 2012; Christian Ruppert <idl0r@gentoo.org> +bind-tools-9.9.1_p3.ebuild,
+  -bind-tools-9.9.1_p2-r1.ebuild:
+  Version bump.
+
+  11 Sep 2012; Christian Ruppert <idl0r@gentoo.org> -bind-tools-9.8.1.ebuild,
+  -bind-tools-9.8.3_p2.ebuild:
+  Remove old versions.
+
+  11 Sep 2012; Christoph Junghans <ottxor@gentoo.org>
+  bind-tools-9.9.1_p2-r1.ebuild:
+  added prefix keywords
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> bind-tools-9.9.1_p2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #428086
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> bind-tools-9.9.1_p2.ebuild:
+  Stable for amd64, wrt bug #428086
+
+*bind-tools-9.9.1_p2-r1 (28 Jul 2012)
+
+  28 Jul 2012; Christian Ruppert <idl0r@gentoo.org>
+  +bind-tools-9.9.1_p2-r1.ebuild, +files/bind-libxml2-2.8.x.patch:
+  Fix libxml2 detection, bug 425170, thanks to Bruno <bonbons67@internet.lu>.
+
+  27 Jul 2012; Jeff Horelick <jdhore@gentoo.org> bind-tools-9.9.1_p2.ebuild:
+  marked x86 per bug 428086
+
+  26 Jul 2012; Jeroen Roovers <jer@gentoo.org> bind-tools-9.9.1_p2.ebuild:
+  Stable for HPPA (bug #427966).
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  bind-tools-9.9.1_p2.ebuild:
+  Stable arm, bug #428086
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  bind-tools-9.9.1_p2.ebuild:
+  Stable ppc/ppc64, bug #428086
+
+*bind-tools-9.9.1_p2 (25 Jul 2012)
+*bind-tools-9.8.3_p2 (25 Jul 2012)
+
+  25 Jul 2012; Christian Ruppert <idl0r@gentoo.org>
+  -bind-tools-9.8.3_p1.ebuild, +bind-tools-9.8.3_p2.ebuild,
+  -bind-tools-9.9.1_p1.ebuild, +bind-tools-9.9.1_p2.ebuild:
+  Version bumps
+
+  05 Jun 2012; Christian Ruppert <idl0r@gentoo.org> bind-tools-9.8.3_p1.ebuild,
+  bind-tools-9.9.1_p1.ebuild:
+  Disable tests for now, bug 406399
+
+  04 Jun 2012; Christian Ruppert <idl0r@gentoo.org>
+  -files/bind-tools-configure.patch:
+  Remove unused patch
+
+*bind-tools-9.9.1_p1 (04 Jun 2012)
+*bind-tools-9.8.3_p1 (04 Jun 2012)
+
+  04 Jun 2012; Christian Ruppert <idl0r@gentoo.org> -bind-tools-9.7.3.ebuild,
+  -bind-tools-9.7.6.ebuild, -bind-tools-9.8.3.ebuild,
+  +bind-tools-9.8.3_p1.ebuild, -bind-tools-9.9.1.ebuild,
+  +bind-tools-9.9.1_p1.ebuild:
+  Version bumps, CVE-2012-1667. Remove old versions
+
+*bind-tools-9.8.3 (22 May 2012)
+*bind-tools-9.7.6 (22 May 2012)
+
+  22 May 2012; Christian Ruppert <idl0r@gentoo.org> -bind-tools-9.7.5.ebuild,
+  +bind-tools-9.7.6.ebuild, -bind-tools-9.8.2.ebuild, +bind-tools-9.8.3.ebuild:
+  Version bump
+
+  22 May 2012; Christian Ruppert <idl0r@gentoo.org> metadata.xml:
+  Remove bind herd.. It's "empty" for years anyway, bug 417001.
+
+*bind-tools-9.9.1 (21 May 2012)
+
+  21 May 2012; Christian Ruppert <idl0r@gentoo.org> -bind-tools-9.9.0.ebuild,
+  +bind-tools-9.9.1.ebuild:
+  Version bump
+
+  17 May 2012; Christian Ruppert <idl0r@gentoo.org> bind-tools-9.7.5.ebuild,
+  bind-tools-9.8.1.ebuild, bind-tools-9.8.2.ebuild, bind-tools-9.9.0.ebuild:
+  Disable PKCS11 temporary as it requires OpenSSL to be patched, also see bug
+  409687.
+
+*bind-tools-9.8.2 (07 Apr 2012)
+*bind-tools-9.7.5 (07 Apr 2012)
+
+  07 Apr 2012; Christian Ruppert <idl0r@gentoo.org> +bind-tools-9.7.5.ebuild,
+  +bind-tools-9.8.2.ebuild, bind-tools-9.9.0.ebuild:
+  Version bumps.
+
+*bind-tools-9.9.0 (29 Feb 2012)
+
+  29 Feb 2012; Christian Ruppert <idl0r@gentoo.org> +bind-tools-9.9.0.ebuild:
+  Version bump to 9.9.0
+
+  05 Jan 2012; Michael Weber <xmw@gentoo.org> bind-tools-9.8.1.ebuild:
+  ppc/ppc64 stable (bug 391411)
+
+  24 Dec 2011; Christian Ruppert <idl0r@gentoo.org> bind-tools-9.8.1.ebuild:
+  Define localstatedir for e.g. default sessions.key used by nsupdate, bug
+  395785.
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> bind-tools-9.8.1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #391411
+
+  03 Dec 2011; Markus Meier <maekke@gentoo.org> bind-tools-9.8.1.ebuild:
+  arm stable, bug #391411
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> bind-tools-9.8.1.ebuild:
+  x86 stable wrt bug #391411
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> bind-tools-9.8.1.ebuild:
+  Stable on amd64 wrt bug #391411
+
+  22 Nov 2011; Jeroen Roovers <jer@gentoo.org> bind-tools-9.8.1.ebuild:
+  Stable for HPPA (bug #391411).
+
+  22 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  bind-tools-9.8.1.ebuild, metadata.xml:
+  QA: make sure not to automagic depend on gssapi (copy code and description
+  from bind itself).
+
+*bind-tools-9.8.1 (02 Sep 2011)
+
+  02 Sep 2011; Christian Ruppert <idl0r@gentoo.org> -bind-tools-9.8.0.ebuild,
+  +bind-tools-9.8.1.ebuild, metadata.xml:
+  Version bump to 9.8.1. Some cleanup.
 
   02 Jun 2011; Diego E. Pettenò <flameeyes@gentoo.org>
   bind-tools-9.8.0.ebuild:

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/mesa-7.11.ebuild,v 1.2 2011/08/01 23:50:29 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/mesa-7.11.ebuild,v 1.19 2012/12/03 02:42:08 ssuominen Exp $
 
 EAPI=3
 
@@ -32,9 +32,9 @@ else
 		${SRC_PATCHES}"
 fi
 
-LICENSE="LGPL-2 kilgard"
+LICENSE="MIT LGPL-3 SGI-B-2.0"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~sparc-solaris ~x64-solaris ~x86-solaris"
 
 INTEL_CARDS="intel"
 RADEON_CARDS="radeon"
@@ -44,7 +44,7 @@ for card in ${VIDEO_CARDS}; do
 done
 
 IUSE="${IUSE_VIDEO_CARDS}
-	bindist +classic debug +egl +gallium gbm gles +llvm motif +nptl openvg pic selinux shared-dricore +shared-glapi kernel_FreeBSD"
+	bindist +classic debug +egl +gallium gbm gles +llvm motif +nptl openvg pic pax_kernel selinux shared-dricore +shared-glapi kernel_FreeBSD"
 
 LIBDRM_DEPSTRING=">=x11-libs/libdrm-2.4.24"
 # not a runtime dependency of this package, but dependency of packages which
@@ -62,7 +62,7 @@ RDEPEND="${EXTERNAL_DEPEND}
 	gallium? ( app-admin/eselect-mesa )
 	app-admin/eselect-opengl
 	dev-libs/expat
-	gbm? ( sys-fs/udev )
+	gbm? ( virtual/udev )
 	x11-libs/libICE
 	>=x11-libs/libX11-1.3.99.901
 	x11-libs/libXdamage
@@ -70,11 +70,14 @@ RDEPEND="${EXTERNAL_DEPEND}
 	x11-libs/libXi
 	x11-libs/libXmu
 	x11-libs/libXxf86vm
-	motif? ( x11-libs/openmotif )
+	motif? (
+		x11-libs/motif
+		!x11-libs/libGLw )
 	gallium? (
-		llvm? ( >=sys-devel/llvm-2.9 )
+		llvm? ( <sys-devel/llvm-3 )
 	)
 	${LIBDRM_DEPSTRING}[video_cards_nouveau?,video_cards_vmware?]
+	video_cards_nouveau? ( <x11-libs/libdrm-2.4.34 )
 "
 for card in ${INTEL_CARDS}; do
 	RDEPEND="${RDEPEND}
@@ -91,7 +94,7 @@ done
 DEPEND="${RDEPEND}
 	=dev-lang/python-2*
 	dev-libs/libxml2[python]
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/bison
 	sys-devel/flex
 	x11-misc/makedepend
@@ -118,6 +121,8 @@ pkg_setup() {
 
 	# recommended by upstream
 	append-flags -ffast-math
+	# workaround toc-issue wrt #386545
+	use ppc64 && append-flags -mminimal-toc
 
 	python_set_active_version 2
 	python_pkg_setup
@@ -187,7 +192,6 @@ src_configure() {
 		$(use_enable gles gles1)
 		$(use_enable gles gles2)
 		$(use_enable egl)
-		$(use_enable openvg)
 	"
 	if use egl; then
 		use shared-glapi || die "egl needs shared-glapi. Please either enable shared-glapi or disable the egl use flag ."
@@ -205,6 +209,7 @@ src_configure() {
 		myconf+="
 			--with-state-trackers=glx,dri$(use egl && echo ",egl")$(use openvg && echo ",vega")
 			$(use_enable llvm gallium-llvm)
+			$(use_enable openvg)
 		"
 		gallium_enable swrast
 		gallium_enable video_cards_vmware svga

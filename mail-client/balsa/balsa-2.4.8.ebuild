@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/balsa/balsa-2.4.8.ebuild,v 1.9 2011/04/16 11:02:37 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/balsa/balsa-2.4.8.ebuild,v 1.11 2012/05/04 08:42:23 jdhore Exp $
 
 EAPI="2"
 GCONF_DEBUG="no"
@@ -40,7 +40,7 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	sqlite? ( >=dev-db/sqlite-2.8 )
 	libnotify? ( x11-libs/libnotify )
 	gtkspell? (
-		=app-text/gtkspell-2*
+		app-text/gtkspell:2
 		app-text/enchant )
 	!gtkspell? ( app-text/aspell )
 	kerberos? ( app-crypt/mit-krb5 )
@@ -52,7 +52,7 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	xface? ( >=media-libs/compface-1.5.1 )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext
 	>=app-text/scrollkeeper-0.1.4
 	app-text/gnome-doc-utils"

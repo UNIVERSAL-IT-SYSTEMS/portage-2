@@ -1,6 +1,43 @@
 # ChangeLog for app-text/djvu
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/djvu/ChangeLog,v 1.123 2011/07/24 17:55:45 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/djvu/ChangeLog,v 1.132 2012/12/05 23:32:19 jer Exp $
+
+*djvu-3.5.25.3 (05 Dec 2012)
+
+  05 Dec 2012; Jeroen Roovers <jer@gentoo.org> files/djvu-3.5.24-gcc46.patch,
+  +djvu-3.5.25.3.ebuild:
+  Version bump.
+
+  13 Sep 2012; Christoph Junghans <ottxor@gentoo.org> djvu-3.5.24-r1.ebuild:
+  added prefix keywords
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> djvu-3.5.24-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  21 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> djvu-3.5.24-r1.ebuild:
+  Cleanup pkg_postinst() message from app-text/djview4 references.
+
+  13 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -djvu-3.5.22-r1.ebuild,
+  -djvu-3.5.23.ebuild, -djvu-3.5.24.ebuild:
+  old
+
+*djvu-3.5.24-r1 (13 Mar 2012)
+
+  13 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +djvu-3.5.24-r1.ebuild:
+  Revision bump for last change wrt #407989. To stable in purpose since it's
+  trivial.
+
+  11 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  files/djvu-3.5.24-gcc46.patch:
+  Include stddef.h in the installed headers to fix building of reverse
+  dependencies.
+
+  13 Nov 2011; Justin Lecher <jlec@gentoo.org> djvu-3.5.22-r1.ebuild,
+  djvu-3.5.23.ebuild, djvu-3.5.24.ebuild:
+  Corrected Slotting of media-libs/tiff
+
+  27 Aug 2011; Jeroen Roovers <jer@gentoo.org> djvu-3.5.24.ebuild:
+  Stable for HPPA (bug #372593).
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> djvu-3.5.24.ebuild:
   alpha/ia64/s390/sh/sparc stable wrt #372593

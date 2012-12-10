@@ -1,6 +1,38 @@
 # ChangeLog for net-misc/jigdo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/jigdo/ChangeLog,v 1.23 2011/03/28 17:05:49 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/jigdo/ChangeLog,v 1.32 2012/10/17 05:12:43 kensington Exp $
+
+  17 Oct 2012; Michael Palimaka <kensington@gentoo.org> -jigdo-0.7.3-r1.ebuild:
+  Remove old.
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> jigdo-0.7.3-r2.ebuild:
+  x86 stable wrt bug #435196
+
+  23 Sep 2012; Agostino Sarubbo <ago@gentoo.org> jigdo-0.7.3-r2.ebuild:
+  Stable for amd64, wrt bug #435196
+
+  23 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> jigdo-0.7.3-r1.ebuild,
+  jigdo-0.7.3-r2.ebuild:
+  ppc keywords dropped wrt #435196
+
+*jigdo-0.7.3-r2 (16 Sep 2012)
+
+  16 Sep 2012; Pacho Ramos <pacho@gentoo.org> +jigdo-0.7.3-r2.ebuild,
+  -jigdo-0.7.3.ebuild:
+  Drop libwww support (#320253), install a menu entry.
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> jigdo-0.7.3.ebuild,
+  jigdo-0.7.3-r1.ebuild:
+  Drop sparc keywords
+
+  24 Feb 2012; Brent Baude <ranger@gentoo.org> jigdo-0.7.3-r1.ebuild:
+  Marking jigdo-0.7.3-r1 ppc for bug 404839
+
+  21 Feb 2012; Jeff Horelick <jdhore@gentoo.org> jigdo-0.7.3-r1.ebuild:
+  marked x86 per bug 404839
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> jigdo-0.7.3-r1.ebuild:
+  Stable for amd64, wrt bug #404839
 
   28 Mar 2011; Christoph Mende <angelos@gentoo.org> jigdo-0.7.3.ebuild,
   jigdo-0.7.3-r1.ebuild:
@@ -91,4 +123,3 @@
   29 Jul 2003; Jason Wever <weeve@gentoo.org> jigdo-0.7.0.ebuild,
   metadata.xml, files/makefile.patch:
   Initial import. Resolves bug #21829.
-

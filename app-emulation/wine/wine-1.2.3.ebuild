@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-1.2.3.ebuild,v 1.5 2011/07/11 03:34:37 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-1.2.3.ebuild,v 1.20 2012/09/10 06:02:11 tetromino Exp $
 
-EAPI="2"
+EAPI="4"
 
 inherit eutils flag-o-matic multilib
 
@@ -15,7 +15,7 @@ else
 	AUTOTOOLS_AUTO_DEPEND="no"
 	inherit autotools
 	MY_P="${PN}-${PV/_/-}"
-	SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
+	SRC_URI="mirror://sourceforge/${PN}/Source/${MY_P}.tar.bz2"
 	KEYWORDS="-* amd64 x86 ~x86-fbsd"
 	S=${WORKDIR}/${MY_P}
 fi
@@ -25,22 +25,25 @@ GV="1.0.0-x86"
 DESCRIPTION="free implementation of Windows(tm) on Unix"
 HOMEPAGE="http://www.winehq.org/"
 SRC_URI="${SRC_URI}
-	gecko? ( mirror://sourceforge/wine/wine_gecko-${GV}.cab )
+	gecko? ( mirror://sourceforge/${PN}/Wine%20Gecko/${GV}/wine_gecko-${GV}.cab )
 	pulseaudio? ( `pulse_patches http://art.ified.ca/downloads/winepulse` )"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-IUSE="alsa capi cups custom-cflags dbus esd fontconfig +gecko gnutls gphoto2 gsm hal jack jpeg lcms ldap mp3 nas ncurses openal +opengl +oss +perl png pulseaudio samba scanner ssl test +threads +truetype v4l +win32 +win64 +X xcomposite xinerama xml"
+IUSE="alsa capi cups custom-cflags dbus elibc_glibc fontconfig +gecko gnutls gphoto2 gsm hardened jack jpeg lcms ldap mp3 nas ncurses openal +opengl +oss +perl png pulseaudio samba scanner ssl test +threads +truetype v4l +win32 +win64 +X xcomposite xinerama xml"
+REQUIRED_USE="elibc_glibc? ( threads )" #286560
 RESTRICT="test" #72375
 
 MLIB_DEPS="amd64? (
 	truetype? ( >=app-emulation/emul-linux-x86-xlibs-2.1 )
 	X? (
 		>=app-emulation/emul-linux-x86-xlibs-2.1
-		>=app-emulation/emul-linux-x86-soundlibs-2.1[pulseaudio?]
+		>=app-emulation/emul-linux-x86-soundlibs-2.1[pulseaudio(+)?]
 	)
+	mp3? ( app-emulation/emul-linux-x86-soundlibs )
 	openal? ( app-emulation/emul-linux-x86-sdl )
 	opengl? ( app-emulation/emul-linux-x86-opengl )
+	scanner? ( app-emulation/emul-linux-x86-medialibs )
 	v4l? ( app-emulation/emul-linux-x86-medialibs )
 	app-emulation/emul-linux-x86-baselibs
 	>=sys-kernel/linux-headers-2.6
@@ -55,21 +58,21 @@ RDEPEND="truetype? ( >=media-libs/freetype-2.0.0 media-fonts/corefonts )
 	openal? ( media-libs/openal )
 	dbus? ( sys-apps/dbus )
 	gnutls? ( net-libs/gnutls )
-	hal? ( sys-apps/hal )
 	X? (
 		x11-libs/libXcursor
 		x11-libs/libXrandr
 		x11-libs/libXi
 		x11-libs/libXmu
 		x11-libs/libXxf86vm
-		x11-apps/xmessage
 	)
 	xinerama? ( x11-libs/libXinerama )
 	alsa? ( media-libs/alsa-lib )
-	esd? ( media-sound/esound )
 	nas? ( media-libs/nas )
 	cups? ( net-print/cups )
-	opengl? ( virtual/opengl )
+	opengl? (
+		virtual/glu
+		virtual/opengl
+	)
 	pulseaudio? ( media-sound/pulseaudio )
 	gsm? ( media-sound/gsm )
 	jpeg? ( virtual/jpeg )
@@ -84,7 +87,7 @@ RDEPEND="truetype? ( >=media-libs/freetype-2.0.0 media-fonts/corefonts )
 	v4l? ( media-libs/libv4l )
 	!win64? ( ${MLIB_DEPS} )
 	win32? ( ${MLIB_DEPS} )
-	xcomposite? ( x11-libs/libXcomposite ) "
+	xcomposite? ( x11-libs/libXcomposite )"
 DEPEND="${RDEPEND}
 	pulseaudio? ( ${AUTOTOOLS_DEPEND} )
 	X? (
@@ -93,7 +96,9 @@ DEPEND="${RDEPEND}
 		x11-proto/xf86vidmodeproto
 	)
 	xinerama? ( x11-proto/xineramaproto )
-	sys-devel/bison
+	!hardened? ( sys-devel/prelink )
+	virtual/pkgconfig
+	virtual/yacc
 	sys-devel/flex"
 
 src_unpack() {
@@ -110,12 +115,18 @@ src_unpack() {
 }
 
 src_prepare() {
+	local md5="$(md5sum server/protocol.def)"
 	if use pulseaudio ; then
 		EPATCH_OPTS=-p1 epatch `pulse_patches "${DISTDIR}"`
 		eautoreconf
 	fi
 	epatch "${FILESDIR}"/${PN}-1.1.15-winegcc.patch #260726
+	epatch "${FILESDIR}"/${PN}-1.2.3-msxml3-libxml2-headers.patch #397993
 	epatch_user #282735
+	if [[ "$(md5sum server/protocol.def)" != "${md5}" ]]; then
+		einfo "server/protocol.def was patched; running tools/make_requests"
+		tools/make_requests || die #432348
+	fi
 	sed -i '/^UPDATE_DESKTOP_DATABASE/s:=.*:=true:' tools/Makefile.in || die
 	sed -i '/^MimeType/d' tools/wine.desktop || die #117785
 }
@@ -133,12 +144,12 @@ do_configure() {
 		$(use_with lcms cms) \
 		$(use_with cups) \
 		$(use_with ncurses curses) \
-		$(use_with esd) \
+		--without-esd \
 		$(use_with fontconfig) \
 		$(use_with gnutls) \
 		$(use_with gphoto2 gphoto) \
 		$(use_with gsm) \
-		$(! use dbus && echo --without-hal || use_with hal) \
+		--without-hal \
 		$(use_with jack) \
 		$(use_with jpeg) \
 		$(use_with ldap) \
@@ -162,7 +173,7 @@ do_configure() {
 		$(use_with xml xslt) \
 		$2
 
-	emake -j1 depend || die "depend"
+	emake -j1 depend
 
 	popd >/dev/null
 }
@@ -183,7 +194,7 @@ src_compile() {
 	for b in 64 32 ; do
 		local builddir="${WORKDIR}/wine${b}"
 		[[ -d ${builddir} ]] || continue
-		emake -C "${builddir}" all || die
+		emake -C "${builddir}" all
 	done
 }
 
@@ -192,12 +203,12 @@ src_install() {
 	for b in 64 32 ; do
 		local builddir="${WORKDIR}/wine${b}"
 		[[ -d ${builddir} ]] || continue
-		emake -C "${builddir}" install DESTDIR="${D}" || die
+		emake -C "${builddir}" install DESTDIR="${D}"
 	done
 	dodoc ANNOUNCE AUTHORS README
 	if use gecko ; then
 		insinto /usr/share/wine/gecko
-		doins "${DISTDIR}"/wine_gecko-${GV}.cab || die
+		doins "${DISTDIR}"/wine_gecko-${GV}.cab
 	fi
 	if ! use perl ; then
 		rm "${D}"/usr/bin/{wine{dump,maker},function_grep.pl} "${D}"/usr/share/man/man1/wine{dump,maker}.1 || die

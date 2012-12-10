@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/gobby/gobby-0.4.94.ebuild,v 1.1 2011/04/30 09:50:35 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/gobby/gobby-0.4.94.ebuild,v 1.3 2012/11/21 08:50:09 xarthisius Exp $
 
 EAPI=2
 
-inherit eutils gnome2-utils
+inherit eutils gnome2-utils toolchain-funcs
 
 DESCRIPTION="GTK-based collaborative editor"
 HOMEPAGE="http://gobby.0x539.de/"
@@ -22,12 +22,17 @@ RDEPEND="dev-cpp/glibmm:2
 	dev-cpp/libxmlpp:2.6
 	x11-libs/gtksourceview:3.0"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? (
 		app-text/gnome-doc-utils
 		app-text/scrollkeeper
 		)
 	nls? ( >=sys-devel/gettext-0.12.1 )"
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-missing-icon.patch \
+	   "${FILESDIR}"/${P}-gtkmm3.patch
+}
 
 src_configure() {
 	econf $(use_enable nls) \

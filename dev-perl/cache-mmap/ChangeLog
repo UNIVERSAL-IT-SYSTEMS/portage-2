@@ -1,6 +1,26 @@
 # ChangeLog for dev-perl/cache-mmap
-# Copyright 2000-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/cache-mmap/ChangeLog,v 1.21 2008/09/05 17:15:10 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/cache-mmap/ChangeLog,v 1.27 2012/08/09 15:00:28 tove Exp $
+
+  09 Aug 2012; Torsten Veller <tove@gentoo.org> -cache-mmap-0.09.ebuild:
+  Cleanup
+
+  09 Aug 2012; Torsten Veller <tove@gentoo.org> cache-mmap-0.110.0.ebuild:
+  Stable on amd64 (#430592)
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -cache-mmap-0.11.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> cache-mmap-0.110.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*cache-mmap-0.110.0 (27 Aug 2011)
+
+  27 Aug 2011; Torsten Veller <tove@gentoo.org> +cache-mmap-0.110.0.ebuild:
+  Change version scheme
 
   05 Sep 2008; Raúl Porcel <armin76@gentoo.org> cache-mmap-0.11.ebuild:
   ia64/sparc/x86 stable
@@ -81,4 +101,3 @@
   27 Mar 2004; Michael Cummings <mcummings@gentoo.org>
   cache-mmap-0.081.ebuild, metadata.xml:
   dep for bricolage, bug 21549
-

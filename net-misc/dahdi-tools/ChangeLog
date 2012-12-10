@@ -1,6 +1,52 @@
 # ChangeLog for net-misc/dahdi-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dahdi-tools/ChangeLog,v 1.13 2011/04/28 21:39:02 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/dahdi-tools/ChangeLog,v 1.23 2012/06/26 07:45:29 jdhore Exp $
+
+  26 Jun 2012; Jeff Horelick <jdhore@gentoo.org> dahdi-tools-2.6.1.ebuild:
+  marked x86 per bug 422143
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> dahdi-tools-2.6.1.ebuild:
+  Stable for AMD64, wrt bug #422143
+
+*dahdi-tools-2.6.1 (08 May 2012)
+
+  08 May 2012; Tony Vroon <chainsaw@gentoo.org> +dahdi-tools-2.6.1.ebuild,
+  +files/dahdi-autoconf.init3, -files/dahdi-autoconf.conf,
+  -files/dahdi-autoconf.init:
+  Updated autoconf by Jaco Kroon closes bug #390091. Version bump to upstream
+  release 2.6.1 as requested by Oliver Jaksch in bug #404521.
+
+  06 May 2012; Agostino Sarubbo <ago@gentoo.org> -dahdi-tools-2.4.1.ebuild:
+  Remove old
+
+  06 May 2012; Agostino Sarubbo <ago@gentoo.org> dahdi-tools-2.5.0.ebuild:
+  Stable for amd64, wrt bug #404221
+
+  04 May 2012; Tony Vroon <chainsaw@gentoo.org> dahdi-tools-2.5.0.ebuild:
+  EAPI=4 port and general build improvements by Agostino "ago" Sarubbo in bug
+  #404221.
+
+  22 Apr 2012; Markus Meier <maekke@gentoo.org> dahdi-tools-2.5.0.ebuild:
+  x86 stable, bug #404221
+
+  07 Jan 2012; Mike Frysinger <vapier@gentoo.org> dahdi-tools-2.5.0.ebuild:
+  Update dahdi depend #397955.
+
+*dahdi-tools-2.5.0 (02 Sep 2011)
+
+  02 Sep 2011; Tony Vroon <chainsaw@gentoo.org> +dahdi-tools-2.5.0.ebuild,
+  +files/dahdi-autoconf.conf2, +files/dahdi-autoconf.init2:
+  Version bump. Newly updated autoconfig functionality by Jaco Kroon closes bug
+  #374177.
+
+  02 Sep 2011; Tony Vroon <chainsaw@gentoo.org> -dahdi-tools-2.1.0.2.ebuild,
+  -files/dahdi-tools-2.1.0.2-asneeded.patch, -dahdi-tools-2.2.0-r1.ebuild,
+  -files/dahdi-tools-2.2.0-ifreq.patch,
+  -files/dahdi-tools-2.2.0-modprobe-suffix.patch,
+  -files/dahdi-tools-2.2.0-no-hardware-fiddling.patch,
+  -files/dahdi-tools-2.2.0-vendorlib.patch, -dahdi-tools-2.3.0.ebuild,
+  -dahdi-tools-2.4.0.ebuild, -files/dahdi.init:
+  Clean up old ebuilds and patches.
 
   28 Apr 2011; Thomas Kahle <tomka@gentoo.org> dahdi-tools-2.4.1.ebuild:
   x86 stable per bug 364887

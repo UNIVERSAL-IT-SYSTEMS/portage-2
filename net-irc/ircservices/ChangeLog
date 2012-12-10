@@ -1,6 +1,20 @@
 # ChangeLog for net-irc/ircservices
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/ircservices/ChangeLog,v 1.48 2011/06/27 23:55:00 binki Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/ircservices/ChangeLog,v 1.52 2012/01/09 19:49:51 ranger Exp $
+
+  09 Jan 2012; Brent Baude <ranger@gentoo.org> ircservices-5.1.24.ebuild:
+  Marking ircservices-5.1.24 ppc for bug 394387
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> ircservices-5.1.24.ebuild:
+  x86 stable, bug #394387
+
+  17 Dec 2011; Nathan Phillip Brink <binki@gentoo.org>
+  files/ircservices.init.d, files/ircservices.initd:
+  Use --user option instead of deprecated --chuid option for start-stop-daemon,
+  reported by ago.
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> ircservices-5.1.24.ebuild:
+  Stable for AMD64, wrt bug #394487
 
 *ircservices-5.1.24 (27 Jun 2011)
 

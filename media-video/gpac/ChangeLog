@@ -1,6 +1,43 @@
 # ChangeLog for media-video/gpac
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/gpac/ChangeLog,v 1.94 2011/07/24 18:18:45 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/gpac/ChangeLog,v 1.103 2012/11/01 18:22:35 flameeyes Exp $
+
+  01 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> gpac-0.5.0.ebuild:
+  Fix CVS header. Closes bug #440814.
+
+  09 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gpac-0.4.5-r5.ebuild:
+  stable ppc ppc64, bug #437206
+
+  07 Oct 2012; Raúl Porcel <armin76@gentoo.org> gpac-0.4.5-r5.ebuild:
+  alpha/sparc stable wrt #437206
+
+*gpac-0.5.0 (05 Oct 2012)
+
+  05 Oct 2012; Ian Stakenvicius <axs@gentoo.org>
+  +files/110_all_implicitdecls.patch, +files/gpac-0.5.0-build-fixes.patch,
+  +files/160_all_externalamr.patch, +gpac-0.5.0.ebuild,
+  +files/210_all_system_libogg.patch:
+  version bump, bug 426666
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gpac-0.4.5-r5.ebuild:
+  Stable for amd64, wrt bug #437206
+
+  21 Feb 2012; Alexis Ballier <aballier@gentoo.org> gpac-0.4.5-r5.ebuild:
+  add a patch to build with ffmpeg git and remove write only variables in the
+  ebuild
+
+  28 Nov 2011; Ian Stakenvicius <axs@gentoo.org> gpac-0.4.5-r5.ebuild:
+  added explicit javascript disable to econf, bug 391887
+
+*gpac-0.4.5-r5 (22 Nov 2011)
+
+  22 Nov 2011; Ian Stakenvicius <axs@gentoo.org> gpac-0.4.5-r4.ebuild,
+  +gpac-0.4.5-r5.ebuild:
+  added ~arch build with javascript flag removed, due to broken support for
+  spidermonkey-1.8.5; bug 363575
+
+  20 Nov 2011; Tim Harder <radhermit@gentoo.org> -gpac-0.4.5-r1.ebuild:
+  Remove old.
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> gpac-0.4.5-r4.ebuild:
   alpha/sparc stable wrt #367039
@@ -370,4 +407,3 @@
   31 Mar 2005; Chris White <chriswhite@gentoo.org> +metadata.xml,
   +gpac-0.2.1.ebuild:
   Initial import into the tree.  Closes bug #65149.
-

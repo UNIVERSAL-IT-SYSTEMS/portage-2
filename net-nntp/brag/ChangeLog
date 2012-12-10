@@ -1,6 +1,21 @@
 # ChangeLog for net-nntp/brag
-# Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-nntp/brag/ChangeLog,v 1.4 2007/02/09 04:56:43 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-nntp/brag/ChangeLog,v 1.8 2012/03/19 19:12:18 armin76 Exp $
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> brag-1.4.1.ebuild,
+  brag-1.4.3.ebuild:
+  Drop sparc keywords
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> brag-1.4.3.ebuild:
+  x86 stable wrt bug #400457
+
+  24 Feb 2012; Brent Baude <ranger@gentoo.org> brag-1.4.3.ebuild:
+  Marking brag-1.4.3 ppc for bug 400457
+
+*brag-1.4.3 (07 Oct 2011)
+
+  07 Oct 2011; Tim Harder <radhermit@gentoo.org> +brag-1.4.3.ebuild:
+  Version bump. Update to EAPI 4.
 
   09 Feb 2007; Diego Pettenò <flameeyes@gentoo.org> ChangeLog:
   Regenerate digest in Manifest2 format.

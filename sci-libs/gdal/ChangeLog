@@ -1,6 +1,63 @@
 # ChangeLog for sci-libs/gdal
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/gdal/ChangeLog,v 1.118 2011/07/26 16:21:29 neurogeek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/gdal/ChangeLog,v 1.132 2012/12/04 09:44:24 jlec Exp $
+
+  04 Dec 2012; Justin Lecher <jlec@gentoo.org> gdal-1.9.1.ebuild:
+  Correct USE-dep for sci-libs/armadillo, #445546
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #24135.
+
+  10 Aug 2012; Justin Lecher <jlec@gentoo.org> gdal-1.9.1.ebuild,
+  +files/gdal-1.9.1-poppler-0.20.1.patch:
+  Add fix for poppler-0.20.1, #426584; thanks Andreas Sturmlechner for the
+  backport; use eautoreconf because it seems to work
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> gdal-1.8.1-r1.ebuild:
+  Marking gdal-1.8.1-r1 ppc64 for bug 413835
+
+  27 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> gdal-1.9.1.ebuild:
+  Fix configure failure when building with -python. thanks to Nikoli for
+  spotting.
+
+  26 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> gdal-1.9.1.ebuild:
+  Do not use ruby eclass as we can build only against one implementation anyway.
+
+  26 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> gdal-1.9.1.ebuild:
+  Just use ruby1.9, build system does not support multiple of those anyway.
+
+*gdal-1.9.1 (25 May 2012)
+
+  25 May 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +files/gdal-1.9.1-opencl.patch, +files/gdal-1.9.1-ruby-makefile.patch,
+  +gdal-1.9.1.ebuild, metadata.xml:
+  Version bump to 1.9.1. Fixes bug#396121 and bug#395273.
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> gdal-1.8.1-r1.ebuild:
+  Stable on amd64, x86 and ppc. Wrt bug#413835.
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -files/gdal-png-1.5.patch,
+  -gdal-1.8.1.ebuild, gdal-1.8.1-r1.ebuild:
+  Apply patch when building with ruby enabled. Fixes bug#402443. Patch by Dennis
+  Schridde. Remove older stuff.
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org> gdal-1.6.3-r1.ebuild:
+  Fix building with sys-libs/zlib >= 1.2.5.1-r1 (OF) wrt #413835, Comment #1
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> gdal-1.6.3-r1.ebuild,
+  gdal-1.8.1.ebuild, gdal-1.8.1-r1.ebuild:
+  Drop unnessecary die
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> gdal-1.6.3-r1.ebuild,
+  +files/gdal-1.6.3-libpng15.patch:
+  Backport libpng15 compability patch from gdal-1.8 to gdal-1.6 wrt #386009
+
+*gdal-1.8.1-r1 (26 Sep 2011)
+
+  26 Sep 2011; Steve Arnold <nerdboy@gentoo.org> +gdal-1.8.1-r1.ebuild,
+  +files/gdal-1.8.1-zlib_header_fix.patch:
+  Updated for zlib header changes (closes bug #383569).  Also updated
+  python handling and EAPI.
 
   26 Jul 2011; Jesus Rivero <neurogeek@gentoo.org> gdal-1.8.1.ebuild:
   Added python_mod_cleanup in pkg_postrm
@@ -557,4 +614,3 @@
   +gdal-1.2.5.ebuild:
   Adding new ebuild for geographic apps (still working on grass support).
   Tested heavily on x86 only so far...
-

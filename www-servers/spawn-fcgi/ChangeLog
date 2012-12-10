@@ -1,6 +1,46 @@
 # ChangeLog for www-servers/spawn-fcgi
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/spawn-fcgi/ChangeLog,v 1.29 2010/10/22 17:51:58 bangert Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-servers/spawn-fcgi/ChangeLog,v 1.40 2012/12/08 14:04:23 kensington Exp $
+
+  08 Dec 2012; Michael Palimaka <kensington@gentoo.org> -files/spawn-fcgi.initd,
+  -spawn-fcgi-1.6.3.ebuild:
+  Remove old.
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> spawn-fcgi-1.6.3-r1.ebuild:
+  Stable for ppc64, wrt bug #414083
+
+  12 Jul 2012; Ian Stakenvicius <axs@gentoo.org> spawn-fcgi-1.6.3.ebuild,
+  spawn-fcgi-1.6.3-r1.ebuild:
+  added GPL-2 to LICENSE per bug 426180
+
+  09 Jul 2012; Jeroen Roovers <jer@gentoo.org> spawn-fcgi-1.6.3-r1.ebuild:
+  Stable for HPPA (bug #414083).
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> spawn-fcgi-1.6.3-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #414083
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> spawn-fcgi-1.6.3-r1.ebuild:
+  Marking spawn-fcgi-1.6.3-r1 ppc for bug 414083
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  spawn-fcgi-1.6.3-r1.ebuild:
+  x86 stable wrt bug #414083
+
+  12 May 2012; Markus Meier <maekke@gentoo.org> spawn-fcgi-1.6.3-r1.ebuild:
+  arm stable, bug #414083
+
+  06 May 2012; Agostino Sarubbo <ago@gentoo.org> spawn-fcgi-1.6.3-r1.ebuild:
+  Stable for amd64, wrt bug #414083
+
+*spawn-fcgi-1.6.3-r1 (02 Apr 2012)
+
+  02 Apr 2012; Pacho Ramos <pacho@gentoo.org> +files/spawn-fcgi.initd-r1,
+  +spawn-fcgi-1.6.3-r1.ebuild:
+  Don't assume /var/run/spawn-fcgi is always present, bug #400899 by Maxim
+  Kammerer.
+
+  21 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop www-server herd as discussed in gentoo-dev ML.
 
   22 Oct 2010; Thilo Bangert <bangert@gentoo.org> files/spawn-fcgi.initd:
   POSIX compatibility (#331487)
@@ -111,4 +151,3 @@
   01 Apr 2009; Thilo Bangert <bangert@gentoo.org> +files/spawn-fcgi.confd,
   +files/spawn-fcgi.initd, +metadata.xml, +spawn-fcgi-1.6.1.ebuild:
   initial commit - init script adapted from bug #149467
-

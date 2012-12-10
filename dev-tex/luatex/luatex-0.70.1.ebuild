@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/luatex/luatex-0.70.1.ebuild,v 1.1 2011/07/04 17:42:41 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/luatex/luatex-0.70.1.ebuild,v 1.16 2012/08/08 16:30:52 dilfridge Exp $
 
-EAPI="2"
+EAPI=4
 
 inherit libtool eutils
 
@@ -13,16 +13,16 @@ SRC_URI="http://foundry.supelec.fr/gf/download/frsrelease/392/1730/${PN}-beta-${
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE="doc"
 
 RDEPEND="dev-libs/zziplib
 	>=media-libs/libpng-1.4
-	>=app-text/poppler-0.12.3-r3[xpdf-headers]
+	>=app-text/poppler-0.12.3-r3[xpdf-headers(+)]
 	sys-libs/zlib
 	>=dev-libs/kpathsea-6.0.1_p20110627"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S="${WORKDIR}/${PN}-beta-${PV}/source"
 PRELIBS="libs/obsdcompat"
@@ -30,6 +30,9 @@ PRELIBS="libs/obsdcompat"
 #kpathsea_extraconf="--disable-shared --disable-largefile"
 
 src_prepare() {
+	has_version '>=app-text/poppler-0.18.0:0' && epatch "${FILESDIR}/poppler018.patch"
+	has_version '>=app-text/poppler-0.20.0:0' && epatch "${FILESDIR}/poppler020.patch"
+	epatch "${FILESDIR}/kpathsea2012.patch"
 	S="${S}/build-aux" elibtoolize --shallow
 }
 
@@ -59,6 +62,7 @@ src_configure() {
 		--without-mf-x-toolkit \
 		--without-x			\
 	    --with-system-kpathsea	\
+	    --with-kpathsea-includes="${EPREFIX}"/usr/include \
 	    --with-system-gd	\
 	    --with-system-libpng	\
 	    --with-system-teckit \
@@ -109,9 +113,9 @@ pkg_postinst() {
 		elog "Please consider installing a recent TeX distribution"
 		elog "like TeX Live 2008 to get the full power of ${PN}"
 	fi
-	if [ "$ROOT" = "/" ] && [ -x /usr/bin/fmtutil-sys ] ; then
+	if [ "$ROOT" = "/" ] && [ -x "${EPREFIX}"/usr/bin/fmtutil-sys ] ; then
 		einfo "Rebuilding formats"
-		/usr/bin/fmtutil-sys --all &> /dev/null
+		"${EPREFIX}"/usr/bin/fmtutil-sys --all &> /dev/null
 	else
 		ewarn "Cannot run fmtutil-sys for some reason."
 		ewarn "Your formats might be inconsistent with your installed ${PN} version"

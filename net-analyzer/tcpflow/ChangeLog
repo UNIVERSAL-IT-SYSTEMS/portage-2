@@ -1,6 +1,126 @@
 # ChangeLog for net-analyzer/tcpflow
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/tcpflow/ChangeLog,v 1.17 2011/07/07 11:18:34 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/tcpflow/ChangeLog,v 1.47 2012/12/01 10:24:11 radhermit Exp $
+
+  01 Dec 2012; Tim Harder <radhermit@gentoo.org> -tcpflow-1.0.6.ebuild,
+  -tcpflow-1.2.6.ebuild, -tcpflow-1.2.7.ebuild, -tcpflow-1.2.8.ebuild,
+  -tcpflow-1.2.9.ebuild:
+  Remove old.
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> tcpflow-1.3.0.ebuild:
+  Stable for x86, wrt bug #441434
+
+  08 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> tcpflow-1.3.0.ebuild:
+  Stable on amd64, bug #441434
+
+*tcpflow-1.3.0 (21 Aug 2012)
+
+  21 Aug 2012; Tim Harder <radhermit@gentoo.org> +tcpflow-1.3.0.ebuild:
+  Version bump.
+
+*tcpflow-1.2.9 (20 Aug 2012)
+
+  20 Aug 2012; Tim Harder <radhermit@gentoo.org> +tcpflow-1.2.9.ebuild:
+  Version bump.
+
+*tcpflow-1.2.8 (01 Aug 2012)
+
+  01 Aug 2012; Jeroen Roovers <jer@gentoo.org> +tcpflow-1.2.8.ebuild:
+  Version bump.
+
+  09 Jun 2012; Jeff Horelick <jdhore@gentoo.org> tcpflow-1.2.6.ebuild:
+  marked x86 per bug 419235
+
+  04 Jun 2012; Agostino Sarubbo <ago@gentoo.org> tcpflow-1.2.6.ebuild:
+  Stable for amd64, wrt bug #419235
+
+*tcpflow-1.2.7 (04 Jun 2012)
+
+  04 Jun 2012; Tim Harder <radhermit@gentoo.org> +tcpflow-1.2.7.ebuild:
+  Version bump.
+
+  14 May 2012; Tim Harder <radhermit@gentoo.org> -tcpflow-1.2.3.ebuild:
+  Remove buggy version (bug #415431).
+
+  02 May 2012; Tim Harder <radhermit@gentoo.org> tcpflow-1.2.3.ebuild,
+  tcpflow-1.2.6.ebuild:
+  Add zlib dep.
+
+  01 May 2012; Agostino Sarubbo <ago@gentoo.org> tcpflow-1.2.3.ebuild:
+  Stable for amd64, wrt bug #414205
+
+  01 May 2012; Tim Harder <radhermit@gentoo.org> tcpflow-1.2.3.ebuild:
+  Update HOMEPAGE.
+
+  01 May 2012; Tim Harder <radhermit@gentoo.org> -tcpflow-1.2.1.ebuild:
+  Remove old.
+
+*tcpflow-1.2.6 (01 May 2012)
+
+  01 May 2012; Tim Harder <radhermit@gentoo.org> +tcpflow-1.2.6.ebuild:
+  Version bump. Update HOMEPAGE.
+
+  28 Mar 2012; Tim Harder <radhermit@gentoo.org> tcpflow-1.2.3.ebuild:
+  Update LICENSE.
+
+  28 Mar 2012; Tim Harder <radhermit@gentoo.org> -tcpflow-1.1.0.ebuild,
+  -tcpflow-1.1.1.ebuild:
+  Remove old.
+
+*tcpflow-1.2.3 (28 Mar 2012)
+
+  28 Mar 2012; Tim Harder <radhermit@gentoo.org> +tcpflow-1.2.3.ebuild:
+  Version bump.
+
+*tcpflow-1.2.1 (06 Mar 2012)
+
+  06 Mar 2012; Tim Harder <radhermit@gentoo.org> +tcpflow-1.2.1.ebuild:
+  Version bump.
+
+*tcpflow-1.1.1 (27 Feb 2012)
+
+  27 Feb 2012; Tim Harder <radhermit@gentoo.org> +tcpflow-1.1.1.ebuild:
+  Version bump.
+
+*tcpflow-1.1.0 (03 Feb 2012)
+
+  03 Feb 2012; Tim Harder <radhermit@gentoo.org> -tcpflow-1.1.0_beta3.ebuild,
+  +tcpflow-1.1.0.ebuild:
+  Version bump and remove old.
+
+  29 Jan 2012; Jeroen Roovers <jer@gentoo.org> -tcpflow-1.0.2.ebuild:
+  Old.
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> tcpflow-1.0.6.ebuild:
+  x86 stable wrt bug #399133
+
+  17 Jan 2012; Agostino Sarubbo <ago@gentoo.org> tcpflow-1.0.6.ebuild:
+  Stable for amd64, wrt bug #399133
+
+*tcpflow-1.1.0_beta3 (17 Jan 2012)
+
+  17 Jan 2012; Jeroen Roovers <jer@gentoo.org> +tcpflow-1.1.0_beta3.ebuild:
+  Version bump.
+
+  13 Dec 2011; Jeroen Roovers <jer@gentoo.org> -tcpflow-0.21.ebuild,
+  -tcpflow-1.0.0.ebuild:
+  Old.
+
+  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> tcpflow-1.0.2.ebuild:
+  Stable for AMD64, wrt bug #393239
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> tcpflow-1.0.2.ebuild:
+  x86 stable wrt bug #393239
+
+*tcpflow-1.0.6 (05 Dec 2011)
+
+  05 Dec 2011; Tim Harder <radhermit@gentoo.org> +tcpflow-1.0.6.ebuild:
+  Version bump.
+
+*tcpflow-1.0.2 (01 Oct 2011)
+
+  01 Oct 2011; Tim Harder <radhermit@gentoo.org> +tcpflow-1.0.2.ebuild:
+  Version bump.
 
 *tcpflow-1.0.0 (07 Jul 2011)
 

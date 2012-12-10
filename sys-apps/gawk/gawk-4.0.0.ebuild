@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/gawk/gawk-4.0.0.ebuild,v 1.1 2011/07/03 19:38:25 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/gawk/gawk-4.0.0.ebuild,v 1.9 2012/07/01 18:07:51 armin76 Exp $
 
 EAPI="2"
 
@@ -12,11 +12,12 @@ SRC_URI="mirror://gnu/gawk/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="nls"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
+IUSE="nls readline"
 
 # older gawk's provided shared lib for baselayout-1
-RDEPEND="!<sys-apps/baselayout-2.0.1"
+RDEPEND="!<sys-apps/baselayout-2.0.1
+	readline? ( sys-libs/readline )"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
@@ -32,7 +33,8 @@ src_configure() {
 	export ac_cv_libsigsegv=no
 	econf \
 		--libexec='$(libdir)/misc' \
-		$(use_enable nls)
+		$(use_enable nls) \
+		$(use_with readline)
 }
 
 src_install() {

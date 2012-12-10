@@ -1,6 +1,19 @@
 # ChangeLog for dev-python/xlwt
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/xlwt/ChangeLog,v 1.11 2010/10/23 09:12:07 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/xlwt/ChangeLog,v 1.14 2012/12/03 21:24:39 bicatali Exp $
+
+  03 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> xlwt-0.7.4.ebuild:
+  Keyword amd64-linux and x86-linux
+
+*xlwt-0.7.4 (19 Apr 2012)
+
+  19 Apr 2012; Patrick Lauer <patrick@gentoo.org> +xlwt-0.7.4.ebuild:
+  Bump
+
+*xlwt-0.7.3 (02 Mar 2012)
+
+  02 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> +xlwt-0.7.3.ebuild:
+  Version bump to 0.7.3.
 
   23 Oct 2010; Samuli Suominen <ssuominen@gentoo.org> xlwt-0.7.2.ebuild:
   Keyword ~ppc64 wrt #341699
@@ -42,4 +55,3 @@
   19 Dec 2008; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
   +xlwt-0.7.0.ebuild:
   Initial import
-

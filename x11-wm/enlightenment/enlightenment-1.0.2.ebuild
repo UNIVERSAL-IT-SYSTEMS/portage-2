@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/enlightenment/enlightenment-1.0.2.ebuild,v 1.9 2010/12/28 01:47:10 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/enlightenment/enlightenment-1.0.2.ebuild,v 1.11 2012/05/04 08:58:56 jdhore Exp $
 
 EAPI="2"
 if [[ ${PV} == *9999 ]] ; then
@@ -21,10 +21,9 @@ HOMEPAGE="http://www.enlightenment.org/"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="doc dbus esd nls pango pulseaudio xcomposite xinerama xrandr"
+IUSE="doc dbus nls pango pulseaudio xcomposite xinerama xrandr"
 
-RDEPEND="esd? ( >=media-sound/esound-0.2.19 )
-	pulseaudio? ( media-sound/pulseaudio )
+RDEPEND="pulseaudio? ( media-sound/pulseaudio )
 	dbus? ( sys-apps/dbus )
 	pango? ( x11-libs/pango )
 	=media-libs/freetype-2*
@@ -45,7 +44,7 @@ RDEPEND="esd? ( >=media-sound/esound-0.2.19 )
 	nls? ( virtual/libintl )
 	virtual/libiconv"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	x11-proto/xextproto
 	x11-proto/xf86vidmodeproto
 	xinerama? ( x11-proto/xineramaproto )
@@ -66,7 +65,7 @@ src_configure() {
 		$(use_enable nls) \
 		$(use_enable dbus) \
 		$(use_enable pulseaudio sound-pulse) \
-		$(use_enable esd sound-esound) \
+		--disable-sound-esound \
 		$(use_enable pango) \
 		$(use_enable xinerama) \
 		$(use_enable xrandr) \

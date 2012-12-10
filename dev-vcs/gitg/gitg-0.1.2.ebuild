@@ -1,17 +1,17 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitg/gitg-0.1.2.ebuild,v 1.2 2011/04/12 00:51:16 sping Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitg/gitg-0.1.2.ebuild,v 1.6 2012/06/11 09:19:31 ago Exp $
 
 EAPI="3"
 
 inherit eutils gnome2
 
 DESCRIPTION="git repository viewer for GNOME"
-HOMEPAGE="http://trac.novowork.com/gitg/"
+HOMEPAGE="http://git.gnome.org/browse/gitg/"
 
 LICENSE="|| ( GPL-2 GPL-3 )"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="debug glade"
 
 RDEPEND=">=dev-libs/glib-2.26:2
@@ -24,7 +24,7 @@ RDEPEND=">=dev-libs/glib-2.26:2
 
 DEPEND="${RDEPEND}
 	>=sys-devel/gettext-0.17
-	>=dev-util/pkgconfig-0.15
+	virtual/pkgconfig
 	>=dev-util/intltool-0.40"
 
 pkg_setup() {

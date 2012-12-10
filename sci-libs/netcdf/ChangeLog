@@ -1,6 +1,72 @@
 # ChangeLog for sci-libs/netcdf
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/netcdf/ChangeLog,v 1.92 2011/06/21 15:08:50 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/netcdf/ChangeLog,v 1.107 2012/10/16 20:31:51 jlec Exp $
+
+  16 Oct 2012; Justin Lecher <jlec@gentoo.org> netcdf-4.1.1-r4.ebuild,
+  netcdf-4.1.3.ebuild, netcdf-4.2.ebuild, netcdf-4.2.1.ebuild,
+  netcdf-4.2.1.1.ebuild, metadata.xml:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  14 Oct 2012; Justin Lecher <jlec@gentoo.org> netcdf-4.1.1-r4.ebuild,
+  netcdf-4.1.3.ebuild:
+  Prepare for fortran2.eclass update
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> netcdf-4.1.1-r4.ebuild,
+  netcdf-4.1.3.ebuild:
+  Drop ia64/sparc keywords
+
+  27 Sep 2012; Matt Turner <mattst88@gentoo.org> netcdf-4.1.1-r4.ebuild,
+  netcdf-4.1.3.ebuild:
+  Drop alpha keywords, bug 435904.
+
+  23 Sep 2012; Matt Turner <mattst88@gentoo.org> netcdf-4.1.1-r4.ebuild,
+  netcdf-4.1.3.ebuild:
+  Drop mips, bug 435904.
+
+*netcdf-4.2.1.1 (08 Aug 2012)
+
+  08 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> +netcdf-4.2.1.1.ebuild:
+  Version bump
+
+  04 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  fixed syntax
+
+*netcdf-4.2.1 (02 Aug 2012)
+
+  02 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> +netcdf-4.2.1.ebuild:
+  Version bump. Tests require ncgen and ncdump. Keyword amd64-linux x86-linux
+
+  06 Jul 2012; Justin Lecher <jlec@gentoo.org> -netcdf-3.6.3.ebuild:
+  Version 3* dropped, due to unfixed bfr overflow, #424976
+
+  27 Jun 2012; Justin Lecher <jlec@gentoo.org> netcdf-3.6.3.ebuild,
+  netcdf-4.1.1-r4.ebuild, metadata.xml:
+  Only call fortran-2_pkg_setup with USE=fortran, #423797
+
+  23 Apr 2012; Sébastien Fabbro <bicatali@gentoo.org> netcdf-4.2.ebuild:
+  Changed configure option for better behaviour on hdf5, bug #413031, thanks
+  pawstar
+
+*netcdf-4.2 (18 Apr 2012)
+
+  18 Apr 2012; Sébastien Fabbro <bicatali@gentoo.org> +netcdf-4.2.ebuild,
+  metadata.xml:
+  Version bump. C++ and FORTRAN libraries are now in packages netcdf-cxx and
+  netcdf-fortran, following upstream. All patches applied upstream
+
+  29 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> netcdf-4.1.3.ebuild:
+  Fixed minimum libtool dependency (bug #409219, thanks dima), fixes a sed for
+  man page, remove redundant lines with autotools-utils eclass
+
+  25 Mar 2012; Justin Lecher <jlec@gentoo.org> netcdf-4.1.1-r4.ebuild,
+  netcdf-4.1.3.ebuild, metadata.xml:
+  Fix eautoreconf handling by autotools_utils.eclass
+
+*netcdf-4.1.3 (04 Aug 2011)
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> +netcdf-4.1.3.ebuild:
+  Version bump. Might need more testing for fortran
 
   21 Jun 2011; Justin Lecher <jlec@gentoo.org> netcdf-3.6.3.ebuild,
   netcdf-4.1.1-r4.ebuild:

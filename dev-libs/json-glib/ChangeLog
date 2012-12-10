@@ -1,6 +1,60 @@
 # ChangeLog for dev-libs/json-glib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/json-glib/ChangeLog,v 1.21 2011/07/24 11:19:34 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/json-glib/ChangeLog,v 1.37 2012/07/14 13:23:39 blueness Exp $
+
+  14 Jul 2012; Anthony G. Basile <blueness@gentoo.org> json-glib-0.14.2.ebuild:
+  Keyword ~mips
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> json-glib-0.12.6.ebuild,
+  json-glib-0.14.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  24 Apr 2012; Alexis Ballier <aballier@gentoo.org> json-glib-0.14.2.ebuild:
+  keyword ~x86-fbsd
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> json-glib-0.14.2.ebuild:
+  alpha/ia64/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> json-glib-0.14.2.ebuild:
+  Marking json-glib-0.14.2 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> json-glib-0.14.2.ebuild:
+  Marking json-glib-0.14.2 ppc64 stable for bug 393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> json-glib-0.14.2.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> json-glib-0.14.2.ebuild:
+  amd64 stable, bug 393007
+
+*json-glib-0.14.2 (15 Nov 2011)
+
+  15 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org> -json-glib-0.10.2.ebuild,
+  -json-glib-0.12.4.ebuild, -json-glib-0.13.4.ebuild, +json-glib-0.14.2.ebuild:
+  Version bump. Fix build with recent glib. Clean up old revisions.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> json-glib-0.12.6.ebuild:
+  alpha/ia64/sparc stable wrt #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> json-glib-0.12.6.ebuild:
+  x86 stable wrt bug #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> json-glib-0.12.6.ebuild:
+  amd64 stable wrt #385699
+
+  10 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Remove unused USE description for "coverage"
+
+  10 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> json-glib-0.12.6.ebuild,
+  json-glib-0.13.4.ebuild:
+  Remove useless libtool archive libjson-glib-1.0.la with GNOME2_LA_PUNT=yes
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> json-glib-0.12.6.ebuild,
+  json-glib-0.13.4.ebuild:
+  Marked ~hppa (bug #384683).
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> json-glib-0.12.4.ebuild:
+  alpha/ia64/sparc stable wrt #369909
 
 *json-glib-0.13.4 (24 Jul 2011)
 

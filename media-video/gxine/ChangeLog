@@ -1,6 +1,66 @@
 # ChangeLog for media-video/gxine
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/gxine/ChangeLog,v 1.110 2011/06/22 02:30:29 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/gxine/ChangeLog,v 1.125 2012/06/28 20:42:24 ssuominen Exp $
+
+  28 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> gxine-0.5.907.ebuild:
+  Modify JavaScript library name from 'mozjs185' to 'mozj187' in m4/_js.m4 for
+  dev-lang/spidemonkey >= 1.8.7 compability wrt #422983 by Ian Stakenvicius
+
+  17 May 2012; Samuli Suominen <ssuominen@gentoo.org> -gxine-0.5.906-r1.ebuild,
+  -files/gxine-0.5.906-playlist_segfault.patch:
+  old
+
+  17 May 2012; Samuli Suominen <ssuominen@gentoo.org> gxine-0.5.907.ebuild:
+  ppc/ppc64 stable wrt #412309
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gxine-0.5.906-r1.ebuild,
+  gxine-0.5.907.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gxine-0.5.907.ebuild:
+  Stable for amd64, wrt bug #412309
+
+  18 Apr 2012; Jeff Horelick <jdhore@gentoo.org> gxine-0.5.907.ebuild:
+  marked x86 per bug 412309
+
+  17 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> gxine-0.5.907.ebuild,
+  +files/gxine-0.5.907-glib-2.31.patch:
+  Fix building with dev-libs/glib >= 2.31 wrt #412323 by Andre Reinke
+
+*gxine-0.5.907 (24 Feb 2012)
+
+  24 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +gxine-0.5.907.ebuild,
+  metadata.xml:
+  Version bump wrt #405651 by "teidakankan"
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -gxine-0.5.905-r1.ebuild,
+  -files/gxine-0.5.905-spidermonkey-update.patch, -gxine-0.5.906.ebuild:
+  old
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> gxine-0.5.906-r1.ebuild:
+  ppc/ppc64 stable wrt #396521
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gxine-0.5.906-r1.ebuild:
+  x86 stable wrt bug #396521
+
+  31 Dec 2011; Agostino Sarubbo <ago@gentoo.org> gxine-0.5.906-r1.ebuild:
+  Stable for AMD64, wrt bug #396521
+
+*gxine-0.5.906-r1 (25 Nov 2011)
+
+  25 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +gxine-0.5.906-r1.ebuild,
+  +files/gxine-0.5.906-playlist_segfault.patch:
+  Fix segmentation fault in playlist wrt #390783 by Rafał Mużyło
+
+  10 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> gxine-0.5.906.ebuild:
+  Release to ~arch for testing. This one works with mozjs185 wrt #360971 by
+  Sebastian Luther and Ian Stakenvicius.
+
+*gxine-0.5.906 (04 Oct 2011)
+
+  04 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +gxine-0.5.906.ebuild,
+  +files/gxine-0.5.906-endif.patch:
+  Version bump.
 
   22 Jun 2011; Nirbheek Chauhan <nirbheek@gentoo.org> gxine-0.5.905-r1.ebuild:
   Fix spidermonkey version for the new versioning scheme

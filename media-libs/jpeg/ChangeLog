@@ -1,6 +1,66 @@
 # ChangeLog for media-libs/jpeg
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/jpeg/ChangeLog,v 1.119 2011/01/19 20:21:41 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/jpeg/ChangeLog,v 1.135 2012/11/14 14:46:32 jlec Exp $
+
+  14 Nov 2012; Justin Lecher <jlec@gentoo.org> jpeg-6b-r9.ebuild:
+  Prefix fix for temporary installation directory
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> jpeg-8d.ebuild:
+  ppc/ppc64/sparc/x86 stable wrt #413555
+
+  29 Apr 2012; Mike Frysinger <vapier@gentoo.org> jpeg-8d.ebuild:
+  Mark alpha arm ia64 m68k s390 sh stable #413555.
+
+  26 Apr 2012; Agostino Sarubbo <ago@gentoo.org> jpeg-8d.ebuild:
+  Stable for amd64, wrt bug #413555
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> jpeg-8d.ebuild:
+  Stable for HPPA (bug #413555).
+
+  22 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -jpeg-8c-r1.ebuild,
+  -files/Makefile.in.extra:
+  old
+
+  15 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> -jpeg-7-r1.ebuild,
+  -jpeg-8b.ebuild:
+  old
+
+*jpeg-8d (15 Feb 2012)
+
+  15 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +jpeg-8d.ebuild:
+  Version bump wrt #402927 by "teidakankan"
+
+  12 Feb 2012; Raúl Porcel <armin76@gentoo.org> jpeg-8c-r1.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #401109
+
+  31 Jan 2012; Jeroen Roovers <jer@gentoo.org> jpeg-8c-r1.ebuild:
+  Stable for HPPA (bug #401109).
+
+  27 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -jpeg-8c.ebuild:
+  old
+
+  27 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> jpeg-6b-r9.ebuild,
+  jpeg-7-r1.ebuild:
+  Remove deprecated blockers.
+
+  27 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> jpeg-8c-r1.ebuild:
+  amd64/ppc/ppc64/x86 stable wrt #401109
+
+  27 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> jpeg-8c-r1.ebuild:
+  Post installation message warning users to rebuild reverse dependencies
+  if switching from libjpeg-turbo.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> jpeg-8c-r1.ebuild:
+  Marked ~m68k-mint, bug #394955
+
+*jpeg-8c-r1 (25 Dec 2011)
+
+  25 Dec 2011; Fabian Groffen <grobian@gentoo.org> +jpeg-8c-r1.ebuild:
+  Revbump to fix linking against jpeg library problem on Solaris when versioning
+  is enabled.  Move source preparations from src_unpack into src_prepare.
 
 *jpeg-8c (19 Jan 2011)
 

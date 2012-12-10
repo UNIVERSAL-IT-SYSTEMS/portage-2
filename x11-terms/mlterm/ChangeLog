@@ -1,6 +1,80 @@
 # ChangeLog for x11-terms/mlterm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/mlterm/ChangeLog,v 1.78 2011/06/09 14:55:41 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/mlterm/ChangeLog,v 1.95 2012/09/23 08:21:11 phajdan.jr Exp $
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> mlterm-3.0.11-r1.ebuild:
+  x86 stable wrt bug #429244
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> mlterm-3.0.11-r1.ebuild:
+  Stable for amd64, wrt bug #429244
+
+  10 Aug 2012; Jeroen Roovers <jer@gentoo.org> mlterm-3.0.11-r1.ebuild:
+  Stable for HPPA (bug #429244).
+
+  10 Aug 2012; Anthony G. Basile <blueness@gentoo.org> mlterm-3.0.11-r1.ebuild:
+  Stable ppc ppc64, bug #429244
+
+*mlterm-3.0.11-r1 (21 Jun 2012)
+*mlterm-3.0.9-r1 (21 Jun 2012)
+
+  21 Jun 2012; Naohiro Aota <naota@gentoo.org> +mlterm-3.0.11-r1.ebuild,
+  +mlterm-3.0.9-r1.ebuild, -mlterm-3.0.1.ebuild, -mlterm-3.0.11.ebuild,
+  -mlterm-3.0.3.ebuild, -mlterm-3.0.5.ebuild, -mlterm-3.0.6.ebuild,
+  -mlterm-3.0.7.ebuild, -mlterm-3.0.8.ebuild, mlterm-2.9.4-r4.ebuild:
+  Fix desktop file's category. #421517; Drop old versions.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> mlterm-2.9.4-r4.ebuild,
+  mlterm-3.0.1.ebuild, mlterm-3.0.3.ebuild, mlterm-3.0.5.ebuild,
+  mlterm-3.0.6.ebuild, mlterm-3.0.7.ebuild, mlterm-3.0.8.ebuild,
+  mlterm-3.0.9.ebuild, mlterm-3.0.11.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> mlterm-3.0.9.ebuild:
+  Marking mlterm-3.0.9 ppc64 for bug 404901
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> mlterm-3.0.9.ebuild:
+  Marking mlterm-3.0.9 ppc for bug 404901
+
+*mlterm-3.0.11 (11 Apr 2012)
+
+  11 Apr 2012; Naohiro Aota <naota@gentoo.org> +mlterm-3.0.11.ebuild:
+  Version bump. #411233
+
+  05 Apr 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> mlterm-3.0.9.ebuild:
+  x86 stable wrt bug #404901
+
+  04 Apr 2012; Jeroen Roovers <jer@gentoo.org> mlterm-3.0.9.ebuild:
+  Stable for HPPA (bug #404901).
+
+  29 Mar 2012; Agostino Sarubbo <ago@gentoo.org> mlterm-3.0.9.ebuild:
+  Stable for amd64, wrt bug #404901
+
+  28 Mar 2012; Jeroen Roovers <jer@gentoo.org> mlterm-3.0.3.ebuild,
+  mlterm-3.0.5.ebuild, mlterm-3.0.6.ebuild, mlterm-3.0.7.ebuild,
+  mlterm-3.0.8.ebuild, mlterm-3.0.9.ebuild:
+  Marked ~hppa (bug #404901).
+
+*mlterm-3.0.9 (28 Nov 2011)
+
+  28 Nov 2011; Naohiro Aota <naota@gentoo.org> +mlterm-3.0.9.ebuild:
+  Version bumped.
+
+*mlterm-3.0.8 (10 Nov 2011)
+
+  10 Nov 2011; Naohiro Aota <naota@gentoo.org> +mlterm-3.0.8.ebuild,
+  +files/mlterm-3.0.8-ldflags.patch:
+  Version bump. Bug #389237
+
+*mlterm-3.0.7 (28 Oct 2011)
+
+  28 Oct 2011; Naohiro Aota <naota@gentoo.org> +mlterm-3.0.7.ebuild,
+  +files/mlterm-3.0.7-ldflags.patch, +files/mlterm-3.0.7-underlinking.patch:
+  Version bump.
+
+*mlterm-3.0.6 (18 Aug 2011)
+
+  18 Aug 2011; Naohiro Aota <naota@gentoo.org> +mlterm-3.0.6.ebuild:
+  Version bumped.
 
 *mlterm-3.0.5 (09 Jun 2011)
 

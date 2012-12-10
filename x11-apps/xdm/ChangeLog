@@ -1,6 +1,106 @@
 # ChangeLog for x11-apps/xdm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-apps/xdm/ChangeLog,v 1.118 2011/06/19 16:07:15 mgorny Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-apps/xdm/ChangeLog,v 1.146 2012/12/07 18:10:39 mgorny Exp $
+
+*xdm-1.1.11-r2 (07 Dec 2012)
+
+  07 Dec 2012; Michał Górny <mgorny@gentoo.org> +xdm-1.1.11-r2.ebuild:
+  Disable XDM-AUTHENTICATION-1 wrt bug #445662.
+
+  20 Aug 2012; Michał Górny <mgorny@gentoo.org> xdm-1.1.11-r1.ebuild:
+  systemd: update the unit to install as display-manager.service.
+
+  19 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/0001-Fix-missing-linking-dependency-on-ldl.patch,
+  -xdm-1.1.10-r1.ebuild, -xdm-1.1.10-r2.ebuild, -xdm-1.1.11.ebuild,
+  -files/xdm.service, -files/xwilling-hang.patch:
+  old
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> xdm-1.1.11-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #403727
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> xdm-1.1.11.ebuild:
+  Marking xdm-1.1.11 ppc64 stable for bug 394393
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> xdm-1.1.11-r1.ebuild:
+  Marking xdm-1.1.11-r1 ppc64 for bug 403727
+
+  03 Mar 2012; Markus Meier <maekke@gentoo.org> xdm-1.1.11-r1.ebuild:
+  arm stable, bug #403727
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> xdm-1.1.11-r1.ebuild:
+  Marking xdm-1.1.11-r1 ppc for bug 403727
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xdm-1.1.11-r1.ebuild:
+  x86 stable wrt bug #403727
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> xdm-1.1.11.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #394393
+
+  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> xdm-1.1.11-r1.ebuild:
+  Stable for amd64, wrt bug #403727
+
+  16 Feb 2012; Jeroen Roovers <jer@gentoo.org> xdm-1.1.11-r1.ebuild:
+  Stable for HPPA (bug #403727).
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> xdm-1.1.11.ebuild:
+  Marking xdm-1.1.11 ppc stable for bug 394393
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> xdm-1.1.11-r1.ebuild:
+  Explicitely block =sys-auth/pambase-20101024-r1 to ensure the "nox11"
+  argument is restored to pam_ck_connector.so which would otherwise conflict
+  with the native ConsoleKit support.
+
+*xdm-1.1.11-r1 (28 Jan 2012)
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +xdm-1.1.11-r1.ebuild,
+  +files/xdm-consolekit.patch:
+  Import native support for ConsoleKit wrt #360987
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> xdm-1.1.11.ebuild:
+  x86 stable, bug #394393
+
+  21 Dec 2011; Markus Meier <maekke@gentoo.org> xdm-1.1.11.ebuild:
+  arm stable, bug #394393
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> xdm-1.1.11.ebuild:
+  Stable for HPPA (bug #394393).
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> xdm-1.1.11.ebuild:
+  Stable for AMD64, wrt bug #394393
+
+  10 Oct 2011; Michał Górny <mgorny@gentoo.org> xdm-1.1.11.ebuild:
+  Drop redundant systemd unit install, it is supported upstream now.
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> xdm-1.1.10-r2.ebuild:
+  Marked ppc ppc64 stable for bug #380421.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> xdm-1.1.10-r2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #380421
+
+*xdm-1.1.11 (02 Oct 2011)
+
+  02 Oct 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xdm-1.1.11.ebuild:
+  Version bump, drop obsolete patches.
+
+  21 Sep 2011; Jeroen Roovers <jer@gentoo.org> xdm-1.1.10-r2.ebuild:
+  Stable for HPPA (bug #380421).
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org> xdm-1.1.10-r2.ebuild:
+  arm stable, bug #380421
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> xdm-1.1.10-r2.ebuild:
+  x86 stable, bug #380421
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> xdm-1.1.10-r2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380421 filed by Chí-Thanh Christopher Nguyễn.
+
+  28 Aug 2011; Michał Górny <mgorny@gentoo.org> xdm-1.1.10-r2.ebuild,
+  +files/0001-Fix-missing-linking-dependency-on-ldl.patch, files/xdm.service:
+  Rename systemd unit file from xdm@ to xdm as it isn't bound to a specific vt.
+  Fix underlinking (bug #369531).
 
   19 Jun 2011; Michał Górny <mgorny@gentoo.org> xdm-1.1.10-r2.ebuild,
   +files/xdm.service, -files/systemd-service.patch:
@@ -495,4 +595,3 @@
 
   08 Aug 2005; Donnie Berkholz <spyderous@gentoo.org>; +xdm-0.99.0.ebuild:
   Initial commit for modular X.
-

@@ -1,6 +1,74 @@
 # ChangeLog for dev-libs/libpqxx
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libpqxx/ChangeLog,v 1.70 2011/05/09 23:13:59 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libpqxx/ChangeLog,v 1.88 2012/12/08 18:24:07 jer Exp $
+
+  08 Dec 2012; Jeroen Roovers <jer@gentoo.org> libpqxx-4.0-r1.ebuild:
+  Stable for HPPA (bug #396483).
+
+  03 May 2012; Aaron W. Swenson <titanofold@gentoo.org> -libpqxx-2.6.9.ebuild,
+  -files/libpqxx-2.6.9-gcc43.patch, -files/libpqxx-2.6.9-gcc44.patch,
+  -libpqxx-3.1-r3.ebuild, -files/libpqxx-3.1-gcc46.patch, -libpqxx-4.0.ebuild:
+  Clean out old versions that do not build with newer versions of GCC. Fixes
+  bug 414131.
+
+  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> libpqxx-4.0-r1.ebuild:
+  ia64/sparc/x86 stable wrt #396483
+
+  11 Mar 2012; Agostino Sarubbo <ago@gentoo.org> libpqxx-4.0-r1.ebuild:
+  Stable for amd64, wrt bug #396483
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> libpqxx-4.0-r1.ebuild:
+  Marking libpqxx-4.0-r1 ppc for bug 396483
+
+  03 Mar 2012; Tobias Klausmann <klausman@gentoo.org> libpqxx-4.0-r1.ebuild:
+  Stable on alpha, bug #396483
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> libpqxx-4.0-r1.ebuild:
+  Marking libpqxx-4.0-r1 ppc64 for bug 396483
+
+  31 Jan 2012; Aaron W. Swenson <titanofold@gentoo.org> +libpqxx-3.1-r3.ebuild,
+  +files/libpqxx-3.1-gcc46.patch:
+  Adding back to fix bug 401607.
+
+  29 Jan 2012; Aaron W. Swenson <titanofold@gentoo.org> libpqxx-4.0-r1.ebuild:
+  Added static-libs support.
+
+*libpqxx-4.0-r1 (29 Jan 2012)
+
+  29 Jan 2012; Aaron W. Swenson <titanofold@gentoo.org>
+  -files/libpqxx-2.5.1-gentoo.patch, -libpqxx-2.6.8.ebuild,
+  -libpqxx-3.0.2.ebuild, -libpqxx-3.1-r2.ebuild, -libpqxx-3.1-r3.ebuild,
+  -files/libpqxx-3.1-gcc46.patch, +libpqxx-4.0-r1.ebuild:
+  Cleanup outdated ebuilds and patches. Fix bug 397407.
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> libpqxx-4.0.ebuild:
+  alpha/ia64/sparc stable wrt #396483
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libpqxx-4.0.ebuild:
+  x86 stable wrt bug #396483
+
+  30 Dec 2011; Jeroen Roovers <jer@gentoo.org> libpqxx-4.0.ebuild:
+  Stable for HPPA (bug #396483).
+
+  30 Dec 2011; Agostino Sarubbo <ago@gentoo.org> libpqxx-4.0.ebuild:
+  Stable for AMD64, wrt bug #396483
+
+*libpqxx-4.0 (28 Nov 2011)
+
+  28 Nov 2011; Aaron W. Swenson <titanofold@gentoo.org> +libpqxx-4.0.ebuild:
+  Version bump.
+
+  27 Nov 2011; Raúl Porcel <armin76@gentoo.org> libpqxx-3.1-r2.ebuild:
+  alpha/ia64/sparc stable wrt #387081
+
+*libpqxx-3.1-r3 (12 Nov 2011)
+
+  12 Nov 2011; Aaron W. Swenson <titanofold@gentoo.org> +libpqxx-3.1-r3.ebuild,
+  +files/libpqxx-3.1-gcc46.patch:
+  Fixes bug 363227
+
+  19 Oct 2011; Jeroen Roovers <jer@gentoo.org> libpqxx-3.1-r2.ebuild:
+  Stable for HPPA (bug #387081).
 
   09 May 2011; Markos Chandras <hwoarang@gentoo.org> libpqxx-3.1-r2.ebuild:
   Stable on amd64 wrt bug #354033

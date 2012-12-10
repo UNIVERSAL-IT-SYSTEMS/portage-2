@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/mercurial.eclass,v 1.15 2010/11/17 18:42:03 nelchael Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/mercurial.eclass,v 1.19 2012/04/03 19:16:29 nelchael Exp $
 
 # @ECLASS: mercurial.eclass
 # @MAINTAINER:
@@ -27,8 +27,8 @@ DEPEND="dev-vcs/mercurial"
 # @DESCRIPTION:
 # Create working directory for specified revision, defaults to tip.
 #
-# EHG_REVISION is passed as a value for --rev parameter, so it can be more than
-# just a revision, please consult `hg help revisions' for more details.
+# EHG_REVISION is passed as a value for --updaterev parameter, so it can be more
+# than just a revision, please consult `hg help revisions' for more details.
 [[ -z "${EHG_REVISION}" ]] && EHG_REVISION="tip"
 
 # @ECLASS-VARIABLE: EHG_STORE_DIR
@@ -65,7 +65,7 @@ DEPEND="dev-vcs/mercurial"
 # Set this variable to a non-empty value to disable the automatic updating of
 # a mercurial source tree. This is intended to be set outside the ebuild by
 # users.
-EHG_OFFLINE="${EHG_OFFLINE:-${ESCM_OFFLINE}}"
+EHG_OFFLINE="${EHG_OFFLINE:-${EVCS_OFFLINE}}"
 
 # @FUNCTION: mercurial_fetch
 # @USAGE: [repository_uri] [module] [sourcedir]
@@ -113,14 +113,16 @@ function mercurial_fetch {
 	elif [[ -z "${EHG_OFFLINE}" ]]; then
 		einfo "Updating ${EHG_STORE_DIR}/${EHG_PROJECT}/${module} from ${EHG_REPO_URI}"
 		cd "${module}" || die "failed to cd to ${module}"
-		${EHG_PULL_CMD} || die "update failed"
+		${EHG_PULL_CMD}
+		# mercurial-2.1: hg pull returns 1 if there are no incoming changesets
+		[[ $? -eq 0 || $? -eq 1 ]] || die "update failed"
 	fi
 
 	# Checkout working copy:
 	einfo "Creating working directory in ${sourcedir} (target revision: ${EHG_REVISION})"
 	hg clone \
 		${EHG_QUIET_CMD_OPT} \
-		--rev="${EHG_REVISION}" \
+		--updaterev="${EHG_REVISION}" \
 		"${EHG_STORE_DIR}/${EHG_PROJECT}/${module}" \
 		"${sourcedir}" || die "hg clone failed"
 	# An exact revision helps a lot for testing purposes, so have some output...

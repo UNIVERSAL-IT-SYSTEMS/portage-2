@@ -1,6 +1,24 @@
 # ChangeLog for dev-perl/Gtk2-Unique
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Gtk2-Unique/ChangeLog,v 1.6 2011/05/31 20:23:03 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Gtk2-Unique/ChangeLog,v 1.12 2012/06/24 12:58:11 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  01 Mar 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Add missing cpan remote-id tags in metadata.xml (#406287)
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Gtk2-Unique-0.05.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Gtk2-Unique-0.50.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> Gtk2-Unique-0.50.0.ebuild:
+  Drop unused eutils eclass
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +Gtk2-Unique-0.50.0.ebuild:
+  Change version scheme
 
   31 May 2011; Markus Meier <maekke@gentoo.org> Gtk2-Unique-0.05.ebuild:
   x86 stable, bug #367831
@@ -29,4 +47,3 @@
   14 Mar 2011; Markos Chandras <hwoarang@gentoo.org> +Gtk2-Unique-0.05.ebuild,
   +metadata.xml:
   Initial commit
-

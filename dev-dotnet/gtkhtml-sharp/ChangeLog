@@ -1,6 +1,14 @@
 # ChangeLog for dev-dotnet/gtkhtml-sharp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/gtkhtml-sharp/ChangeLog,v 1.76 2011/06/30 14:14:34 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/gtkhtml-sharp/ChangeLog,v 1.78 2012/06/16 12:00:28 ago Exp $
+
+  16 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  -gtkhtml-sharp-2.24.0-r10.ebuild:
+  Remove old as requested by Pacho Ramos, <pacho@gentoo.org>
+
+  10 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gtkhtml-sharp-2.26.0.ebuild:
+  ppc stable wrt #389181
 
   30 Jun 2011; Christoph Mende <angelos@gentoo.org>
   gtkhtml-sharp-2.26.0.ebuild:

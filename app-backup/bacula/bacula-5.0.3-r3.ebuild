@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.0.3-r3.ebuild,v 1.3 2011/05/14 09:28:46 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.0.3-r3.ebuild,v 1.11 2012/10/11 15:41:37 mr_bones_ Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? 2"
 PYTHON_USE_WITH="threads"
 PYTHON_USE_WITH_OPT="python"
 
-inherit eutils multilib python
+inherit eutils multilib python user
 
 MY_PV=${PV/_beta/-b}
 MY_P=${PN}-${MY_PV}
@@ -23,7 +23,7 @@ SRC_URI="mirror://sourceforge/bacula/${MY_P}.tar.gz"
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
-IUSE="bacula-clientonly bacula-nodir bacula-nosd ipv6 logwatch mysql postgres python qt4 readline +sqlite3 ssl static tcpd vim-syntax X"
+IUSE="acl bacula-clientonly bacula-nodir bacula-nosd ipv6 logwatch mysql postgres python qt4 readline +sqlite3 ssl static tcpd vim-syntax X"
 
 # maintainer comment:
 # postgresql-base should have USE=threads (see bug 326333) but fails to build
@@ -94,7 +94,7 @@ pkg_setup() {
 
 	# create the daemon group and user
 	if [ -z "$(egetent group bacula 2>/dev/null)" ]; then
-		enewgroup bacula || die
+		enewgroup bacula
 		einfo
 		einfo "The group 'bacula' has been created. Any users you add to this"
 		einfo "group have access to files created by the daemons."
@@ -116,7 +116,7 @@ pkg_setup() {
 			ewarn
 		fi
 		if [ -z "$(egetent passwd bacula 2>/dev/null)" ]; then
-			enewuser bacula -1 -1 /var/lib/bacula bacula,disk,tape,cdrom,cdrw || die
+			enewuser bacula -1 -1 /var/lib/bacula bacula,disk,tape,cdrom,cdrw
 			einfo
 			einfo "The user 'bacula' has been created.  Please see the bacula manual"
 			einfo "for information about running bacula as a non-root user."
@@ -162,6 +162,9 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PV}/${P}-openssl-1.patch
 
 	epatch "${FILESDIR}"/${PV}/${P}-fix-static.patch
+
+	# fix CVE-2012-4430
+	epatch "${FILESDIR}"/${PV}/${P}-cve.patch
 }
 
 src_configure() {
@@ -200,6 +203,7 @@ src_configure() {
 		$(use_with readline readline /usr) \
 		$(use_with ssl openssl) \
 		$(use_enable ipv6) \
+		$(use_enable acl) \
 		$(use_with tcpd tcp-wrappers)"
 
 	econf \
@@ -218,6 +222,7 @@ src_configure() {
 		--with-fd-user=root \
 		--with-fd-group=bacula \
 		--enable-smartalloc \
+		--disable-afs \
 		--host=${CHOST} \
 		${myconf}
 }
@@ -238,16 +243,13 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	insinto /usr/share/pixmaps
-	doins scripts/bacula.png || die
+	doicon scripts/bacula.png || die
 
 	# install bat when enabled (for some reason ./configure doesn't pick this up)
 	if use qt4 && ! use static ; then
 		dosbin "${S}"/src/qt-console/.libs/bat || die
-		insinto /usr/share/pixmaps
-		doins src/qt-console/images/bat_icon.png || die
-		insinto /usr/share/applications
-		doins scripts/bat.desktop || die
+		doicon src/qt-console/images/bat_icon.png || die
+		domenu scripts/bat.desktop || die
 	fi
 
 	# remove some scripts we don't need at all
@@ -320,7 +322,7 @@ src_install() {
 	fi
 
 	# documentation
-	dodoc ChangeLog LICENSE ReleaseNotes SUPPORT technotes
+	dodoc ChangeLog ReleaseNotes SUPPORT technotes
 
 	# vim-files
 	if use vim-syntax; then

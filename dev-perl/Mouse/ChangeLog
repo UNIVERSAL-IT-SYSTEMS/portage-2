@@ -1,6 +1,35 @@
 # ChangeLog for dev-perl/Mouse
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Mouse/ChangeLog,v 1.30 2011/07/29 17:42:32 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Mouse/ChangeLog,v 1.37 2012/08/30 17:51:13 tove Exp $
+
+*Mouse-1.20.0 (30 Aug 2012)
+
+  30 Aug 2012; Torsten Veller <tove@gentoo.org> +Mouse-1.20.0.ebuild:
+  Version bump
+
+*Mouse-0.990.0 (03 Jul 2012)
+
+  03 Jul 2012; Torsten Veller <tove@gentoo.org> +Mouse-0.990.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  03 Jun 2012; Torsten Veller <tove@gentoo.org> -Mouse-0.40.ebuild,
+  -Mouse-0.930.0.ebuild:
+  Cleanup
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> Mouse-0.40.ebuild,
+  Mouse-0.930.0.ebuild, Mouse-0.970.0.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> Mouse-0.970.0.ebuild:
+  Stable for HPPA (bug #412973).
+
+*Mouse-0.970.0 (20 Oct 2011)
+
+  20 Oct 2011; Torsten Veller <tove@gentoo.org> +Mouse-0.970.0.ebuild:
+  Version bump
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org> -Mouse-0.910.0.ebuild,
   -Mouse-0.920.0.ebuild:
@@ -171,4 +200,3 @@
   -Mouse-0.14.ebuild,
   +Mouse-0.21.ebuild:
   Bump
-

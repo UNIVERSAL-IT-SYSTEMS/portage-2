@@ -1,6 +1,155 @@
 # ChangeLog for Gentoo/ia64 profile
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/ia64/ChangeLog,v 1.110 2011/07/03 15:10:48 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/ia64/ChangeLog,v 1.156 2012/12/01 19:12:30 armin76 Exp $
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Use.mask fdk, bug #442806
+
+  24 Nov 2012; Mike Gilbert <floppym@gentoo.org> use.mask:
+  Mask python_single_target values not supported on this arch.
+
+  02 Nov 2012; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Unmask p.use.mask net-libs/webkig-gtk geoloc since its stable
+
+  31 Oct 2012; Michał Górny <mgorny@gentoo.org> use.mask:
+  Add a PYTHON_TARGETS mask based on keywords.
+
+  21 Oct 2012; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Remove sys-apps/portage python3 p.use.mask now that python3 is stable
+
+  16 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Mask libproxy[spidermonkey] since spidermonkey is not keyworded on ia64
+
+  11 Sep 2012; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Fix p.use.mask line, thanks to mr_bones_
+
+  11 Sep 2012; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Use.mask >=dev-lang/ocaml-4 ocamlopt, bug #430352
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Update python3+portage mask
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Use.mask metalink
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Add clang to use.mask, needs testing
+
+  16 Aug 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  use.mask video_cards_siliconmotion.
+
+  05 Aug 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Use.mask gts, devil, bug #419621
+
+  06 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Remove unnecessary x11-plugins/enigmail entry.
+
+  04 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Remove obsolete entries to net-libs/xulrunner and www-client/icecat wrt
+  #424617
+
+  27 Jun 2012; Davide Pesavento <pesa@gentoo.org> package.use.mask:
+  Mask USE=python for x11-libs/qscintilla.
+
+  25 Jun 2012; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Unmask qt-related stuff
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Use.mask bluray
+
+  14 Jun 2012; Ben de Groot <yngwin@gentoo.org> package.use.mask:
+  Since there is no longer a stable qt available for ia64, we need to mask the
+  qt4 useflag for stable versions of avahi
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Use.package.mask x11-misc/xscreensaver new-login, bug #412847
+
+  26 May 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Use.mask webm
+
+  25 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Mask webkit-gtk[geoloc,webkit2], requires app-misc/geoclue and
+  app-accessibility/at-spi2-core to be keyworded (bug #411761).
+
+  15 May 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Mask USE="udisks" for gnome-base/gvfs wrt #412801
+
+  13 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Add nautilus[sendto] to gnome3 mask.
+
+  11 May 2012; Mike Frysinger <vapier@gentoo.org> package.use.mask:
+  Mask out USE=java for non-java packages #412223 by Mr. Bones.
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Add systemd to use.mask, needs testing
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> package.use.force:
+  Remove nptlonly outdated package.use.force
+
+  21 Apr 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Use.mask java, bug #412223
+
+  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> use.mask:
+  Unmask java USE flag #349020 by Dennis Schridde.
+
+  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> package.use.mask:
+  Mask dev-java/icedtea[systemtap].
+
+  12 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Mask glib-networking[smartcard], it requires gnutls[pkcs11], which is
+  use.masked on sparc.
+
+  08 Apr 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Use.mask aacplus
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Mask wayland USE flag.
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Mask d3d USE flag.
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Add new video_cards_* to use.mask. Also remove dead radeonhd mask.
+
+  04 Jan 2012; Ralph Sennhauser <sera@gentoo.org> package.use.mask:
+  Remove package.use.mask for ruby_targets_jruby as it's already masked in base
+  profile.
+
+  04 Jan 2012; Ralph Sennhauser <sera@gentoo.org> package.use.mask:
+  Package.use.mask dev-ruby/hpricot ruby_targets_jruby as it has direct
+  dependency on missing JVM #345433
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> package.use.mask, use.mask:
+  Use.mask ladspa and remove it from p.use.mask
+
+  31 Dec 2011; Ralph Sennhauser <sera@gentoo.org> package.use.mask:
+  Use mask net-analyzer/wireshark doc-pdf due to missing JVM #345433
+
+  26 Dec 2011; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Package.use.mask www-client/firefox crashreporter as it fails to build
+
+  25 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Mask USE flags on gnome-3.2 packages due to missing keywords on deps; bug
+  #390345
+
+  05 Nov 2011; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Package.use.mask dev-libs/libpcre jit since it isn't supported on this arch
+
+  03 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  p.use.masking gnome-extra/gnome-media[aac,mp3,twolame] due to missing
+  keywords in gst-plugins-{faac,lame,twolame}, bug #389433.
+
+  01 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> use.mask:
+  Remove obsolete entry for USE="v4l2"
+
+  28 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> use.mask:
+  use.mask colord and packagekit to allow gtk+-3.2 unmasking. use.mask instead
+  of p.use.mask because other packages with these flags are coming. Bug
+  #387959.
+
+  04 Sep 2011; Robin H. Johnson <robbat2@gentoo.org> package.use.mask:
+  Bug #381737: block dev-libs/libmemcached[tcmalloc] until
+  dev-utils/google-perftools is keyworded (and virtual/gsasl on hppa/arm).
 
   03 Jul 2011; Raúl Porcel <armin76@gentoo.org> package.use.mask:
   P.use.mask =sys-apps/portage-2.1.10* python3

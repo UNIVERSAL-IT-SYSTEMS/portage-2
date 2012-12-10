@@ -1,6 +1,53 @@
 # ChangeLog for Gentoo/s390 profile directory
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/s390/ChangeLog,v 1.40 2011/07/03 15:12:04 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/s390/ChangeLog,v 1.56 2012/11/24 21:38:13 floppym Exp $
+
+  24 Nov 2012; Mike Gilbert <floppym@gentoo.org> use.mask:
+  Mask python_single_target values not supported on this arch.
+
+  31 Oct 2012; Michał Górny <mgorny@gentoo.org> use.mask:
+  Add a PYTHON_TARGETS mask based on keywords.
+
+  21 Oct 2012; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Remove sys-apps/portage python3 p.use.mask now that python3 is stable
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Use.mask lucene, bug #404267
+
+  27 Aug 2012; Mike Frysinger <vapier@gentoo.org> +s390x/make.defaults,
+  make.defaults, parent:
+  Setup multilib settings for all s390 and s390x targets.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Update python3+portage mask
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Use.mask rtmp,metalink
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Add clang to use.mask, needs testing
+
+  05 Aug 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Use.mask gts, devil, bug #419621
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Add systemd to use.mask, needs testing
+
+  08 Apr 2012; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Unmask pyxattr
+
+  21 Feb 2012; Zac Medico <zmedico@gentoo.org> package.use.mask:
+  Bug #402215: Mask USE=xattr for sys-apps/portage, pending ~s390 keyword for
+  dev-python/pyxattr.
+
+  05 Nov 2011; Raúl Porcel <armin76@gentoo.org> package.use.mask:
+  Package.use.mask dev-libs/libpcre jit since it isn't supported on this arch
+
+  18 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> use.mask:
+  Remove obsolete USE="hal" mask.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Use.mask webp, fftw
 
   03 Jul 2011; Raúl Porcel <armin76@gentoo.org> package.use.mask:
   P.use.mask =sys-apps/portage-2.1.10* python3

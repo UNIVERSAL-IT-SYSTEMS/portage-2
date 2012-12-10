@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-apps/whyteboard/whyteboard-0.41.1.ebuild,v 1.1 2011/01/20 18:07:22 lxnay Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-apps/whyteboard/whyteboard-0.41.1.ebuild,v 1.3 2012/09/05 08:13:21 jlec Exp $
 
 EAPI="3"
 
@@ -14,7 +14,7 @@ SLOT="0"
 IUSE=""
 
 HOMEPAGE="http://code.google.com/p/whyteboard"
-SRC_URI="http://whyteboard.googlecode.com/files/${P}.tar.gz"
+SRC_URI="http://whyteboard.googlecode.com/files/${P}.tar.gz http://dev.gentoo.org/~lxnay/${PN}/${PN}.png"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="${DEPEND}
@@ -27,9 +27,8 @@ src_install() {
 	dodir /usr/share/pixmaps
 
 	insinto /usr/share/pixmaps
-	doins "${FILESDIR}/${PN}.png" || die
-	insinto /usr/share/applications
-	doins "${FILESDIR}/${PN}.desktop" || die
+	doins "${DISTDIR}/${PN}.png" || die
+	domenu "${FILESDIR}/${PN}.desktop" || die
 
 	dodoc CHANGELOG.txt DEVELOPING.txt README.txt TODO.txt || die
 

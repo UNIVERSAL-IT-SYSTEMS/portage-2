@@ -1,6 +1,38 @@
 # ChangeLog for app-arch/xarchiver
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/xarchiver/ChangeLog,v 1.31 2011/01/25 18:07:17 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/xarchiver/ChangeLog,v 1.39 2012/11/28 12:32:35 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xarchiver-0.5.2-r3.ebuild:
+  EAPI5
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> xarchiver-0.5.2-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  17 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xarchiver-0.5.2-r2.ebuild:
+  old
+
+  13 Feb 2012; Markus Meier <maekke@gentoo.org> xarchiver-0.5.2-r3.ebuild:
+  arm stable, bug #401229
+
+  10 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xarchiver-0.5.2-r3.ebuild:
+  ppc/ppc64/x86 stable wrt #401229
+
+  09 Feb 2012; Jeroen Roovers <jer@gentoo.org> xarchiver-0.5.2-r3.ebuild:
+  Stable for HPPA (bug #401229).
+
+  30 Jan 2012; Agostino Sarubbo <ago@gentoo.org> xarchiver-0.5.2-r3.ebuild:
+  Stable for amd64, wrt bug #401229
+
+*xarchiver-0.5.2-r3 (24 Jan 2012)
+
+  24 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xarchiver-0.5.2-r3.ebuild,
+  +files/xarchiver-0.5.2-drag-n-drop_escaped_path.patch:
+  Escape path(s) for drag and drop wrt #262519 by Jaromír Cápík and Zsolt
+  Fabok
 
   25 Jan 2011; Samuli Suominen <ssuominen@gentoo.org> xarchiver-0.5.2-r2.ebuild:
   ppc64 stable wrt #349022

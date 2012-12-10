@@ -1,6 +1,26 @@
 # ChangeLog for app-misc/wipe
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/wipe/ChangeLog,v 1.25 2011/05/10 09:06:14 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/wipe/ChangeLog,v 1.31 2012/07/29 17:54:24 armin76 Exp $
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> wipe-2.2.20050509.ebuild,
+  wipe-2.2.20050509-r1.ebuild, wipe-2.3.1.ebuild:
+  Drop sparc keywords
+
+  25 Jun 2012; Justin Bronder <jsbronder@gentoo.org> wipe-2.2.20050509.ebuild,
+  wipe-2.2.20050509-r1.ebuild, wipe-2.3.1.ebuild:
+  sys-cluster/lam-mpi removed from the tree, re #324415
+
+  11 Jun 2012; Michael Weber <xmw@gentoo.org> wipe-2.3.1.ebuild:
+  ppc stable (bug 418623)
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> wipe-2.3.1.ebuild:
+  x86 stable wrt bug #418623
+
+  01 Jun 2012; Agostino Sarubbo <ago@gentoo.org> wipe-2.3.1.ebuild:
+  Stable for amd64, wrt bug #418623
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> wipe-2.2.20050509-r1.ebuild:
+  inherit eutils for epatch
 
 *wipe-2.3.1 (10 May 2011)
 

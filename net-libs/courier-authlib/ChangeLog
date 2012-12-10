@@ -1,6 +1,47 @@
 # ChangeLog for net-libs/courier-authlib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/courier-authlib/ChangeLog,v 1.119 2011/03/23 21:17:45 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/courier-authlib/ChangeLog,v 1.128 2012/11/21 10:12:41 ago Exp $
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> courier-authlib-0.64.0.ebuild:
+  Stable for x86, wrt bug #439736
+
+  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org> courier-authlib-0.64.0.ebuild:
+  Stable for amd64, wrt bug #439736
+
+  12 Nov 2012; Jeroen Roovers <jer@gentoo.org> courier-authlib-0.62.2.ebuild,
+  courier-authlib-0.62.4.ebuild, courier-authlib-0.63.0.ebuild,
+  courier-authlib-0.63.0-r1.ebuild, courier-authlib-0.64.0.ebuild,
+  courier-authlib-0.65.0.ebuild, courier-authlib-0.65.0-r1.ebuild,
+  courier-authlib-0.65.0-r2.ebuild:
+  Inherit user.eclass for enewuser. Inherit multilib.eclass for get_libdir.
+
+  12 Nov 2012; Jeroen Roovers <jer@gentoo.org> courier-authlib-0.64.0.ebuild:
+  Stable for HPPA (bug #439736).
+
+*courier-authlib-0.65.0-r2 (02 Nov 2012)
+
+  02 Nov 2012; Eray Aslan <eras@gentoo.org> +courier-authlib-0.65.0-r2.ebuild:
+  Don't break net-mail/courier-imap - bug #439202
+
+*courier-authlib-0.65.0-r1 (17 Oct 2012)
+
+  17 Oct 2012; Eray Aslan <eras@gentoo.org> +courier-authlib-0.65.0-r1.ebuild,
+  +files/courier-authlib-0.65.0-sqlite.patch:
+  Fix building with mysql - bug #438602. EAPI bump and cleanup
+
+*courier-authlib-0.65.0 (16 Oct 2012)
+
+  16 Oct 2012; Eray Aslan <eras@gentoo.org> +courier-authlib-0.65.0.ebuild:
+  Version bump
+
+*courier-authlib-0.64.0 (18 Aug 2012)
+
+  18 Aug 2012; Hanno Boeck <hanno@gentoo.org> +courier-authlib-0.64.0.ebuild:
+  Version bump.
+
+  30 May 2012; Alexis Ballier <aballier@gentoo.org>
+  courier-authlib-0.63.0-r1.ebuild:
+  keyword ~amd64-fbsd
 
   23 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org>
   courier-authlib-0.63.0-r1.ebuild:
@@ -578,4 +619,3 @@
   19 Nov 2004; Scott W Taylor <swtaylor@gentoo.org> +metadata.xml,
   +courier-authlib-0.50.20041116.ebuild:
   work in progress
-

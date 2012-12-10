@@ -1,6 +1,98 @@
 # ChangeLog for app-i18n/uim
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/ChangeLog,v 1.233 2011/07/29 00:26:53 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/uim/ChangeLog,v 1.257 2012/11/16 09:31:59 patrick Exp $
+
+*uim-1.8.3 (16 Nov 2012)
+
+  16 Nov 2012; Patrick Lauer <patrick@gentoo.org> +uim-1.8.3.ebuild:
+  Bump
+
+*uim-1.8.2 (29 Aug 2012)
+
+  29 Aug 2012; Naohiro Aota <naota@gentoo.org> +uim-1.8.2.ebuild:
+  Version bump. #432664
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> uim-1.8.0.ebuild:
+  Stable on amd64 wrt bug #428042
+
+  01 Aug 2012; Jeroen Roovers <jer@gentoo.org> uim-1.8.0.ebuild:
+  Stable for HPPA (bug #428042).
+
+  30 Jul 2012; Anthony G. Basile <blueness@gentoo.org> uim-1.8.0.ebuild:
+  Stable ppc, bug #428042
+
+  30 Jul 2012; Anthony G. Basile <blueness@gentoo.org> uim-1.8.0.ebuild:
+  Stable ppc64, bug #428042
+
+  27 Jul 2012; Jeff Horelick <jdhore@gentoo.org> uim-1.8.0.ebuild:
+  marked x86 per bug 428042
+
+  18 Jul 2012; Naohiro Aota <naota@gentoo.org> uim-1.8.0.ebuild:
+  Drop misplaced doc dir. #426976
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> uim-1.7.3.ebuild:
+  Marking uim-1.7.3 ppc for bug 413483
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> uim-1.7.3.ebuild:
+  Marking uim-1.7.3 ppc64 for bug 413483
+
+  30 May 2012; Jeroen Roovers <jer@gentoo.org> uim-1.7.3.ebuild:
+  Stable for HPPA (bug #413483).
+
+  29 May 2012; Naohiro Aota <naota@gentoo.org> uim-1.7.3.ebuild:
+  Update Makefile.in.in. #417553
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> uim-1.7.3.ebuild:
+  x86 stable wrt bug #413483
+
+  14 May 2012; Agostino Sarubbo <ago@gentoo.org> uim-1.7.3.ebuild:
+  Stable for amd64, wrt bug #413483
+
+  13 May 2012; Naohiro Aota <naota@gentoo.org> +files/uim-1.7.3-glib-2.32.patch,
+  uim-1.7.3.ebuild:
+  Use atomic gtk-query-immodules #413525; Add patch to fix build error with
+  >=glib-2.32
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> uim-1.5.7.ebuild,
+  uim-1.6.1.ebuild, uim-1.7.1.ebuild, uim-1.7.1-r1.ebuild, uim-1.7.3.ebuild,
+  uim-1.8.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  19 Apr 2012; Pacho Ramos <pacho@gentoo.org> +files/uim-1.8.0-glib2.32.patch,
+  uim-1.8.0.ebuild:
+  Fix glib-2.32 building, bug #412071 by Looze Vladimir.
+
+*uim-1.8.0 (12 Apr 2012)
+
+  12 Apr 2012; Naohiro Aota <naota@gentoo.org> +uim-1.8.0.ebuild:
+  Version bump. #411589
+
+*uim-1.7.3 (08 Mar 2012)
+
+  08 Mar 2012; Naohiro Aota <naota@gentoo.org> +uim-1.7.3.ebuild:
+  Version bump #401143
+
+  07 Mar 2012; Naohiro Aota <naota@gentoo.org> uim-1.7.1-r1.ebuild:
+  Add missing dependency dev-util/intltool. #407247 Patch-By: Piotr Szymaniak
+
+*uim-1.7.1-r1 (21 Dec 2011)
+
+  21 Dec 2011; MATSUU Takuto <matsuu@gentoo.org> -uim-1.7.0.ebuild,
+  +uim-1.7.1-r1.ebuild, +files/uim-1.7.1-qt4.patch:
+  Added $(use_enable qt4 qt4-qt3support), bug #282922. Added REQUIRED_USE, bug
+  #383389. Removed old version.
+
+  28 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> uim-1.6.1.ebuild,
+  uim-1.7.0.ebuild, uim-1.7.1.ebuild, metadata.xml:
+  Rename local USE="ffi" to global USE="libffi".
+
+  19 Sep 2011; Naohiro Aota <naota@gentoo.org> uim-1.7.0.ebuild,
+  uim-1.7.1.ebuild:
+  Change to respect LDFLAGS
+
+  28 Aug 2011; Naohiro Aota <naota@gentoo.org> uim-1.6.1.ebuild,
+  +files/uim-1.6.1-canna.patch, uim-1.7.0.ebuild:
+  Add a patch to deal with canna character API change. bug #353949
 
 *uim-1.7.1 (29 Jul 2011)
 
@@ -1046,4 +1138,3 @@
 
   17 Aug 2003; Mamoru KOMACHI <usata@gentoo.org> uim-2013.ebuild:
   Initial import
-

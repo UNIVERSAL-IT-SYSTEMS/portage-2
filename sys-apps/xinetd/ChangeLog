@@ -1,6 +1,67 @@
 # ChangeLog for sys-apps/xinetd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/xinetd/ChangeLog,v 1.51 2011/04/16 19:16:41 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/xinetd/ChangeLog,v 1.69 2012/09/20 12:05:15 xarthisius Exp $
+
+  20 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> xinetd-2.3.15.ebuild:
+  ppc64 stable wrt #420927
+
+  26 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> xinetd-2.3.14-r1.ebuild,
+  xinetd-2.3.15.ebuild:
+  Add missing pkgconfig dependency.
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> xinetd-2.3.15.ebuild:
+  Marking xinetd-2.3.15 ppc for bug 420927
+
+  23 Jun 2012; Raúl Porcel <armin76@gentoo.org> xinetd-2.3.15.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #420927
+
+  21 Jun 2012; Markus Meier <maekke@gentoo.org> xinetd-2.3.15.ebuild:
+  arm stable, bug #420927
+
+  18 Jun 2012; Jeroen Roovers <jer@gentoo.org> xinetd-2.3.15.ebuild:
+  Stable for HPPA (bug #420927).
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> xinetd-2.3.15.ebuild:
+  marked x86 per bug 420927
+
+  16 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xinetd-2.3.15.ebuild:
+  Stable for amd64, wrt bug #420927
+
+*xinetd-2.3.15 (14 Jun 2012)
+
+  14 Jun 2012; Mike Frysinger <vapier@gentoo.org> +xinetd-2.3.15.ebuild:
+  Version bump #420927 by Hans de Graaff.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> xinetd-2.3.14-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> xinetd-2.3.14-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #400493
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xinetd-2.3.14-r1.ebuild:
+  x86 stable wrt bug #400493
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> xinetd-2.3.14-r1.ebuild:
+  Marking xinetd-2.3.14-r1 ppc64 for bug 400493
+
+  02 Mar 2012; Markus Meier <maekke@gentoo.org> xinetd-2.3.14-r1.ebuild:
+  arm stable, bug #400493
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> xinetd-2.3.14-r1.ebuild:
+  Marking xinetd-2.3.14-r1 ppc for bug 400493
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> xinetd-2.3.14-r1.ebuild:
+  Stable for HPPA (bug #400493).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> xinetd-2.3.14-r1.ebuild:
+  Stable for amd64, wrt bug #400493
+
+*xinetd-2.3.14-r1 (11 Oct 2011)
+
+  11 Oct 2011; Mike Frysinger <vapier@gentoo.org> +xinetd-2.3.14-r1.ebuild,
+  files/xinetd.rc6, metadata.xml:
+  Use libtirpc for USE=rpc support #370995 by Diego Elio Pettenò. Migrate away
+  from --oknodo with newer openrc #377775 by Michael Mair-Keimberger. Convert
+  opts to extra_started_commands #385633 by Martin von Gagern.
 
   16 Apr 2011; Ulrich Mueller <ulm@gentoo.org> xinetd-2.3.14.ebuild:
   Don't PROVIDE virtual/inetd, bug 358831.

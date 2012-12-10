@@ -1,6 +1,31 @@
 # ChangeLog for dev-java/jcifs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jcifs/ChangeLog,v 1.29 2011/07/15 15:57:26 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jcifs/ChangeLog,v 1.35 2012/07/02 12:32:07 sera Exp $
+
+  02 Jul 2012; Ralph Sennhauser <sera@gentoo.org> -jcifs-1.3.13.ebuild,
+  -jcifs-1.3.15.ebuild:
+  Remove old ones using dev-java/servletapi. #398689
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> jcifs-1.3.17-r1.ebuild:
+  x86 stable wrt bug #399997
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> jcifs-1.3.17-r1.ebuild:
+  Stable for ppc/ppc64; bug #399997
+
+  09 May 2012; Agostino Sarubbo <ago@gentoo.org> jcifs-1.3.17-r1.ebuild:
+  Stable for amd64, wrt bug #399997
+
+*jcifs-1.3.17-r1 (27 Jan 2012)
+
+  27 Jan 2012; Ralph Sennhauser <sera@gentoo.org> -jcifs-1.3.17.ebuild,
+  +jcifs-1.3.17-r1.ebuild:
+  Use java-virtuals/servlet-api instead of dev-java/servletapi. #398689
+
+*jcifs-1.3.17 (19 Oct 2011)
+
+  19 Oct 2011; Miroslav Šulc <fordfrog@gentoo.org>
+  +files/1.3.17-build.xml.patch, +jcifs-1.3.17.ebuild:
+  Version bump
 
   15 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> jcifs-1.3.15.ebuild:
   ppc64 stable wrt #363241

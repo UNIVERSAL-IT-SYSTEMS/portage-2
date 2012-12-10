@@ -1,6 +1,64 @@
 # ChangeLog for app-arch/rar
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/rar/ChangeLog,v 1.70 2011/07/02 18:07:01 serkan Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/rar/ChangeLog,v 1.86 2012/11/20 20:42:07 ago Exp $
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> rar-4.2.0.ebuild:
+  Stable for x86, wrt bug #441054
+
+  10 Nov 2012; <ago@gentoo.org> rar-4.2.0.ebuild:
+  Stable for amd64, wrt bug #441054
+
+  24 Sep 2012; Mike Frysinger <vapier@gentoo.org> rar-4.0.1.ebuild,
+  rar-4.1.1.ebuild, rar-4.2.0.ebuild:
+  QA_DT_HASH (old/deprecated) -> QA_FLAGS_IGNORED (new hotness).
+
+*rar-4.2.0 (10 Jul 2012)
+
+  10 Jul 2012; Jeff Horelick <jdhore@gentoo.org> +rar-4.2.0.ebuild,
+  -rar-4.2.0_beta3.ebuild:
+  Version bump.
+
+*rar-4.2.0_beta3 (02 Jun 2012)
+
+  02 Jun 2012; Serkan Kaba <serkan@gentoo.org> +rar-4.2.0_beta3.ebuild,
+  metadata.xml:
+  Bump to beta version.
+
+  23 May 2012; Agostino Sarubbo <ago@gentoo.org> rar-4.1.1.ebuild:
+  Stable for amd64, wrt bug #417149
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> rar-4.1.1.ebuild:
+  marked x86 per bug 417149
+
+*rar-4.1.1 (04 Mar 2012)
+
+  04 Mar 2012; Jeff Horelick <jdhore@gentoo.org> +rar-4.1.1.ebuild,
+  -rar-4.1.0.ebuild, metadata.xml:
+  Version bump, remove old and remove the proxy-maintainers herd.
+
+*rar-4.1.0 (27 Jan 2012)
+
+  27 Jan 2012; Jeff Horelick <jdhore@gentoo.org> +rar-4.1.0.ebuild,
+  -rar-3.8.0.ebuild, -rar-3.9.3-r1.ebuild, -rar-3.9.3.ebuild, -rar-4.0.0.ebuild:
+  Version bump and remove old.
+
+  24 Jan 2012; Jeff Horelick <jdhore@gentoo.org> metadata.xml:
+  Take full maintenance of this package now that I am a developer.
+
+  04 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> rar-4.0.1.ebuild:
+  x86 stable wrt bug #380655
+
+  27 Aug 2011; Markos Chandras <hwoarang@gentoo.org> rar-4.0.1.ebuild:
+  Stable on amd64 wrt bug #380655
+
+  25 Aug 2011; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  Add herd back.
+
+  25 Aug 2011; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  Fix non-existent herd. Fix maintainer order to what appears to be preferred.
+
+  25 Aug 2011; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Add proxy-maintainers as maintainer
 
 *rar-4.0.1 (02 Jul 2011)
 

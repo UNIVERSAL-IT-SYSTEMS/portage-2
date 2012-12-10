@@ -1,6 +1,116 @@
 # ChangeLog for net-analyzer/ettercap
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ettercap/ChangeLog,v 1.84 2011/03/28 21:25:11 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ettercap/ChangeLog,v 1.109 2012/11/03 12:58:57 ago Exp $
+
+*ettercap-0.7.5_p20121103 (03 Nov 2012)
+
+  03 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
+  +ettercap-0.7.5_p20121103.ebuild, -ettercap-0.7.5_p20121020.ebuild:
+  Automated addition of the new snapshot.
+
+*ettercap-0.7.5_p20121020 (20 Oct 2012)
+
+  20 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  +ettercap-0.7.5_p20121020.ebuild, -ettercap-0.7.5_p20121015.ebuild:
+  Automated addition of the new snapshot.
+
+*ettercap-0.7.5_p20121015 (15 Oct 2012)
+
+  15 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  +ettercap-0.7.5_p20121015.ebuild, -ettercap-0.7.5_pre20121006.ebuild:
+  Add new snapshot, remove pre*
+
+  15 Oct 2012; Agostino Sarubbo <ago@gentoo.org> -ettercap-0.7.3-r4.ebuild,
+  -ettercap-0.7.4.1-r1.ebuild, -files/ettercap-0.7.3-64bit-casting.patch,
+  -files/ettercap-0.7.3-as-needed.patch, -files/ettercap-0.7.3-autotools.patch,
+  -files/ettercap-0.7.3-open_missing_mode.patch,
+  -files/ettercap-0.7.4-autotools.patch, -files/ettercap-0.7.4-flags.patch,
+  -files/ettercap-0.7.4-use-g-idle.patch:
+  Remove old
+
+  13 Oct 2012; Agostino Sarubbo <ago@gentoo.org> ettercap-0.7.5.ebuild:
+  +plugins
+
+  13 Oct 2012; Raúl Porcel <armin76@gentoo.org> ettercap-0.7.5.ebuild:
+  alpha/arm/sparc stable wrt #340897
+
+  12 Oct 2012; Jeroen Roovers <jer@gentoo.org> ettercap-0.7.5.ebuild:
+  Stable for HPPA (bug #340897).
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org> ettercap-0.7.5.ebuild:
+  stable ppc ppc64, bug #340897
+
+  11 Oct 2012; Agostino Sarubbo <ago@gentoo.org> ettercap-0.7.5.ebuild:
+  Stable for AMD64, wrt bug #340897
+
+  11 Oct 2012; Andreas Schuerch <nativemad@gentoo.org> ettercap-0.7.5.ebuild:
+  x86 stable, see bug 340897
+
+*ettercap-0.7.5 (10 Oct 2012)
+
+  10 Oct 2012; Agostino Sarubbo <ago@gentoo.org> +ettercap-0.7.5.ebuild:
+  version bump to 0.7.5
+
+*ettercap-0.7.5_pre20121006 (06 Oct 2012)
+
+  06 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  +ettercap-0.7.5_pre20121006.ebuild, -ettercap-0.7.5_pre20120928.ebuild:
+  New snapshot
+
+  05 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  ettercap-0.7.5_pre20120928.ebuild:
+  Add app-text/ghostscript-gpl as a DEPEND
+
+*ettercap-0.7.5_pre20120928 (28 Sep 2012)
+
+  28 Sep 2012; Agostino Sarubbo <ago@gentoo.org>
+  +ettercap-0.7.5_pre20120928.ebuild, -ettercap-0.7.5_pre20120903.ebuild:
+  Add new snapshot
+
+  03 Sep 2012; Agostino Sarubbo <ago@gentoo.org> -ettercap-0.7.4.ebuild:
+  Remove old
+
+*ettercap-0.7.5_pre20120903 (03 Sep 2012)
+
+  03 Sep 2012; Agostino Sarubbo <ago@gentoo.org>
+  +ettercap-0.7.5_pre20120903.ebuild, metadata.xml:
+  Add pre release for the 0.7.5 series; ebuild completely rewritten, now the
+  buildsystem is based on cmake.
+
+  24 Aug 2012; Agostino Sarubbo <ago@gentoo.org> metadata.xml:
+  Add myself as maintainer
+
+*ettercap-0.7.4.1-r1 (20 Aug 2012)
+
+  20 Aug 2012; Agostino Sarubbo <ago@gentoo.org> +ettercap-0.7.4.1-r1.ebuild,
+  -ettercap-0.7.4.1.ebuild:
+  QA: make the last changes visible for all
+
+  19 Aug 2012; Rick Farina <zerochaos@gentoo.org>
+  +files/ettercap-0.7.4-use-g-idle.patch, ettercap-0.7.4.1.ebuild, metadata.xml:
+  bugfix from b.g.o #346423
+
+  21 May 2012; Mike Frysinger <vapier@gentoo.org> ettercap-0.7.3-r4.ebuild:
+  Inherit eutils for epatch.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> ettercap-0.7.4.ebuild,
+  ettercap-0.7.4.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*ettercap-0.7.4.1 (04 Feb 2012)
+
+  04 Feb 2012; Tim Harder <radhermit@gentoo.org> +ettercap-0.7.4.1.ebuild:
+  Version bump.
+
+  09 Dec 2011; Tim Harder <radhermit@gentoo.org>
+  files/ettercap-0.7.4-autotools.patch:
+  Use DESTDIR to remove la files from the correct location.
+
+*ettercap-0.7.4 (06 Dec 2011)
+
+  06 Dec 2011; Tim Harder <radhermit@gentoo.org> +ettercap-0.7.4.ebuild,
+  +files/ettercap-0.7.4-autotools.patch, +files/ettercap-0.7.4-flags.patch:
+  Version bump. Update to EAPI 4 and add pcre use flag.
 
   28 Mar 2011; Tim Harder <radhermit@gentoo.org> -ettercap-0.7.3-r2.ebuild,
   -ettercap-0.7.3-r3.ebuild, ettercap-0.7.3-r4.ebuild:
@@ -301,5 +411,3 @@
 
   Added new version for ettercap and removed all older versions. The new
   version 0.6.4 fix a remote root compromise in version 0.6.3 and earlier.
-
-

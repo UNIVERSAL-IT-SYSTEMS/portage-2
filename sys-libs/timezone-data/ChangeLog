@@ -1,6 +1,125 @@
 # ChangeLog for sys-libs/timezone-data
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/timezone-data/ChangeLog,v 1.251 2011/06/28 16:34:31 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/timezone-data/ChangeLog,v 1.277 2012/11/13 05:52:46 vapier Exp $
+
+*timezone-data-2012j (13 Nov 2012)
+
+  13 Nov 2012; Mike Frysinger <vapier@gentoo.org> +timezone-data-2012j.ebuild:
+  Version bump.
+
+*timezone-data-2012i (10 Nov 2012)
+
+  10 Nov 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/timezone-data-2012i-makefile.patch, +timezone-data-2012i.ebuild:
+  Version bump.
+
+*timezone-data-2012h (27 Oct 2012)
+
+  27 Oct 2012; Mike Frysinger <vapier@gentoo.org> +timezone-data-2012h.ebuild:
+  Version bump.
+
+*timezone-data-2012g (18 Oct 2012)
+
+  18 Oct 2012; Mike Frysinger <vapier@gentoo.org> +timezone-data-2012g.ebuild:
+  Version bump.
+
+  18 Oct 2012; Mike Frysinger <vapier@gentoo.org> timezone-data-2012f.ebuild:
+  Stabilize for everyone.
+
+*timezone-data-2012f (13 Sep 2012)
+
+  13 Sep 2012; Mike Frysinger <vapier@gentoo.org> +timezone-data-2012f.ebuild:
+  Version bump.
+
+*timezone-data-2012e (03 Aug 2012)
+
+  03 Aug 2012; Mike Frysinger <vapier@gentoo.org> +timezone-data-2012e.ebuild:
+  Version bump.
+
+*timezone-data-2012d (20 Jul 2012)
+
+  20 Jul 2012; Mike Frysinger <vapier@gentoo.org> +timezone-data-2012d.ebuild:
+  Version bump.
+
+  16 May 2012; Mike Frysinger <vapier@gentoo.org> timezone-data-2012c.ebuild:
+  Update HOMEPAGE/SRC_URI to include new IANA site #416311 by Larry Gilbert.
+
+  27 Apr 2012; Mike Frysinger <vapier@gentoo.org> timezone-data-2012c.ebuild:
+  Stabilize for everyone.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> timezone-data-2012c.ebuild:
+  keyword ~amd64-fbsd
+
+*timezone-data-2012c (02 Apr 2012)
+
+  02 Apr 2012; Mike Frysinger <vapier@gentoo.org> +timezone-data-2012c.ebuild:
+  Version bump.
+
+*timezone-data-2012b (02 Mar 2012)
+
+  02 Mar 2012; Mike Frysinger <vapier@gentoo.org> +timezone-data-2012b.ebuild:
+  Version bump.
+
+*timezone-data-2012a (01 Mar 2012)
+
+  01 Mar 2012; Mike Frysinger <vapier@gentoo.org> -timezone-data-2011d.ebuild,
+  -timezone-data-2011e.ebuild, -timezone-data-2011g.ebuild,
+  -timezone-data-2011h.ebuild, -timezone-data-2011i.ebuild,
+  -timezone-data-2011j.ebuild, -timezone-data-2011k.ebuild,
+  -timezone-data-2011l.ebuild, -timezone-data-2011m.ebuild,
+  +timezone-data-2012a.ebuild, +files/timezone-data-2012a-makefile.patch:
+  Version bump.
+
+  01 Jan 2012; Mike Frysinger <vapier@gentoo.org> timezone-data-2011n.ebuild:
+  Stabilize for everyone.
+
+*timezone-data-2011n (31 Oct 2011)
+
+  31 Oct 2011; Mike Frysinger <vapier@gentoo.org> +timezone-data-2011n.ebuild:
+  Version bump.
+
+*timezone-data-2011m (31 Oct 2011)
+
+  31 Oct 2011; Mike Frysinger <vapier@gentoo.org> +timezone-data-2011m.ebuild:
+  Version bump #389031 by Andriy Baranskyy.
+
+  30 Oct 2011; Ryan Hill <dirtyepic@gentoo.org> timezone-data-2011l.ebuild:
+  Mark stable for all (bug #387835 by Andy Crook).
+
+  19 Oct 2011; Mike Frysinger <vapier@gentoo.org> timezone-data-2011j.ebuild,
+  timezone-data-2011k.ebuild, timezone-data-2011l.ebuild:
+  If /etc/localtime is a broken symlink, and /etc/timezone does not exist,
+  assume the user is maintaining their own thing and leave /etc/localtime
+  alone.
+
+  19 Oct 2011; Mike Frysinger <vapier@gentoo.org> timezone-data-2011j.ebuild:
+  Stabilize for everyone.
+
+*timezone-data-2011l (10 Oct 2011)
+
+  10 Oct 2011; Mike Frysinger <vapier@gentoo.org> +timezone-data-2011l.ebuild:
+  Version bump.
+
+  07 Oct 2011; Mike Frysinger <vapier@gentoo.org> timezone-data-2011k.ebuild:
+  Add new listinfo/ftp mirrors.
+
+*timezone-data-2011k (30 Sep 2011)
+
+  30 Sep 2011; Mike Frysinger <vapier@gentoo.org> +timezone-data-2011k.ebuild:
+  Version bump #384983 by Rodrigo Severo.
+
+  19 Sep 2011; Mike Frysinger <vapier@gentoo.org> timezone-data-2011h.ebuild:
+  Stabilize for all #383679 by alexsaa.
+
+*timezone-data-2011j (13 Sep 2011)
+
+  13 Sep 2011; Mike Frysinger <vapier@gentoo.org> +timezone-data-2011j.ebuild:
+  Version bump #382701 by Rodrigo Severo.
+
+*timezone-data-2011i (29 Aug 2011)
+
+  29 Aug 2011; Mike Frysinger <vapier@gentoo.org> +timezone-data-2011i.ebuild:
+  Version bump #381047 by Rodrigo Severo.
 
 *timezone-data-2011h (28 Jun 2011)
 

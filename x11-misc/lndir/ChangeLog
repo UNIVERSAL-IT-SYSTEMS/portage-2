@@ -1,6 +1,27 @@
 # ChangeLog for x11-misc/lndir
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/lndir/ChangeLog,v 1.20 2011/02/14 15:50:57 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/lndir/ChangeLog,v 1.26 2012/08/26 19:26:12 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> lndir-1.0.3.ebuild:
+  sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> lndir-1.0.3.ebuild:
+  Marking lndir-1.0.3 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> lndir-1.0.3.ebuild:
+  Marking lndir-1.0.3 ppc64 stable for bug 419473
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> lndir-1.0.3.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> lndir-1.0.3.ebuild:
+  Stable for amd64, wrt bug #419473
+
+*lndir-1.0.3 (09 Mar 2012)
+
+  09 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +lndir-1.0.3.ebuild:
+  Version bump.
 
   14 Feb 2011; Tomáš Chvátal <scarabeus@gentoo.org> -lndir-1.0.1.ebuild:
   old

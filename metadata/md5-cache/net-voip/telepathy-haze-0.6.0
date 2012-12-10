@@ -1,0 +1,13 @@
+DEFINED_PHASES=prepare setup
+DEPEND=>=net-im/pidgin-2.7 >=net-libs/telepathy-glib-0.15.1 >=dev-libs/glib-2.22:2 >=dev-libs/dbus-glib-0.73 virtual/pkgconfig || ( =dev-lang/python-2.7* =dev-lang/python-2.6* =dev-lang/python-2.5* )
+DESCRIPTION=Telepathy connection manager providing libpurple supported protocols.
+EAPI=4
+HOMEPAGE=http://developer.pidgin.im/wiki/TelepathyHaze
+KEYWORDS=alpha amd64 ia64 ppc ~ppc64 sparc x86
+LICENSE=GPL-2
+RDEPEND=>=net-im/pidgin-2.7 >=net-libs/telepathy-glib-0.15.1 >=dev-libs/glib-2.22:2 >=dev-libs/dbus-glib-0.73 || ( =dev-lang/python-2.7* =dev-lang/python-2.6* =dev-lang/python-2.5* )
+RESTRICT=test
+SLOT=0
+SRC_URI=http://telepathy.freedesktop.org/releases/telepathy-haze/telepathy-haze-0.6.0.tar.gz
+_eclasses_=multilib	9aa8a023e062fca0ba79362d9d0cc488	python	4092929a66c8b47ffa8d314ca9314ea7	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4
+_md5_=09ab3adc803b1e9aaf04858a4635cf5d

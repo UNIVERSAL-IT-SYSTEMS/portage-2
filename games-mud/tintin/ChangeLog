@@ -1,6 +1,42 @@
 # ChangeLog for games-mud/tintin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-mud/tintin/ChangeLog,v 1.114 2011/06/24 18:49:46 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-mud/tintin/ChangeLog,v 1.123 2012/07/02 19:10:33 mr_bones_ Exp $
+
+  02 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  -files/tintin-2.00.6-ldpermission.patch,
+  -files/tintin-2.00.7-ldpermission.patch, -tintin-2.00.6.ebuild,
+  -tintin-2.00.7.ebuild:
+  old
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> tintin-2.00.8.ebuild:
+  Marking tintin-2.00.8 ppc for bug 402913
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> tintin-2.00.8.ebuild:
+  x86 stable wrt bug #402913
+
+  10 Feb 2012; Agostino Sarubbo <ago@gentoo.org> tintin-2.00.8.ebuild:
+  Stable for amd64, wrt bug #402913
+
+  10 Jan 2012; Brent Baude <ranger@gentoo.org> tintin-2.00.7.ebuild:
+  Marking tintin-2.00.7 ppc for bug 395453
+
+*tintin-2.00.8 (10 Jan 2012)
+
+  10 Jan 2012; Michael Sterrett <mr_bones_@gentoo.org> +tintin-2.00.8.ebuild,
+  +files/tintin-2.00.8-ldpermission.patch:
+  version bump
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> tintin-2.00.7.ebuild:
+  x86 stable wrt bug #395453
+
+  21 Dec 2011; Agostino Sarubbo <ago@gentoo.org> tintin-2.00.7.ebuild:
+  Stable for AMD64, wrt bug #395453
+
+*tintin-2.00.7 (13 Nov 2011)
+
+  13 Nov 2011; Michael Sterrett <mr_bones_@gentoo.org> -tintin-2.00.5.ebuild,
+  +tintin-2.00.7.ebuild, +files/tintin-2.00.7-ldpermission.patch:
+  version bump
 
   24 Jun 2011; Brent Baude <ranger@gentoo.org> tintin-2.00.6.ebuild:
   Marking tintin-2.00.6 ppc for bug 363639

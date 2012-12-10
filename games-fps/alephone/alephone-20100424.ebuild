@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/alephone/alephone-20100424.ebuild,v 1.4 2011/01/20 23:34:46 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/alephone/alephone-20100424.ebuild,v 1.7 2012/10/15 08:50:20 tupone Exp $
 
-EAPI=2
+EAPI=4
 inherit autotools eutils games
 
 MY_P=AlephOne-${PV}
@@ -20,7 +20,7 @@ RDEPEND="media-libs/sdl-net
 	media-libs/libsdl[video]
 	dev-libs/expat
 	dev-libs/zziplib
-	media-libs/libpng
+	media-libs/libpng:0
 	alsa? ( media-libs/alsa-lib )
 	mad? ( media-libs/libmad )
 	mpeg? ( media-libs/smpeg )
@@ -38,28 +38,33 @@ S=${WORKDIR}/${MY_P}
 src_prepare() {
 	sed "s:GAMES_DATADIR:${GAMES_DATADIR}:g" \
 		"${FILESDIR}"/${PN}.sh > "${T}"/${PN}.sh \
-		|| die "sed failed"
+		|| die
 
 	# try using the system expat - bug #251108
 	sed -i \
 		-e '/SUBDIRS/ s/Expat//' \
 		-e 's/Expat\/libexpat.a/-lexpat/' \
 		Source_Files/Makefile.am \
-		|| die "sed failed"
+		|| die
 	sed -i \
 		-e '/Expat/d' \
 		configure.ac \
-		|| die "sed failed"
+		|| die
 	rm -rf Source_Files/Expat
 
-	epatch "${FILESDIR}"/${P}-boost_145.patch
+	# for automake 1.12 compability - bug #422557
+	sed -i -e 's:AC_PROG_CC:&\nAC_PROG_OBJCXX:' configure.ac || die
+
+	epatch \
+		"${FILESDIR}"/${P}-boost_145.patch \
+		"${FILESDIR}"/${P}-gcc47.patch \
+		"${FILESDIR}"/${P}-png15.patch
 
 	eautoreconf
 }
 
 src_configure() {
 	egamesconf \
-		--disable-dependency-tracking \
 		--enable-lua \
 		$(use_enable alsa) \
 		$(use_enable mad) \
@@ -72,10 +77,9 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dogamesbin "${T}"/${PN}.sh || die "dogamesbin failed"
+	default
+	dogamesbin "${T}"/${PN}.sh
 	doman docs/${PN}.6
-	dodoc AUTHORS ChangeLog README
 	dohtml docs/*.html
 	prepgamesdirs
 }

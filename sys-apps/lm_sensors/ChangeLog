@@ -1,6 +1,53 @@
 # ChangeLog for sys-apps/lm_sensors
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/lm_sensors/ChangeLog,v 1.118 2011/07/29 07:56:46 zmedico Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/lm_sensors/ChangeLog,v 1.131 2012/11/29 14:35:48 ago Exp $
+
+*lm_sensors-3.3.3 (29 Nov 2012)
+
+  29 Nov 2012;  <ago@gentoo.org> +lm_sensors-3.3.3.ebuild:
+  bump to 3.3.3
+
+  29 Nov 2012; Jeff Horelick <jdhore@gentoo.org> metadata.xml:
+  Adopt lm_sensors
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org>
+  -files/lm_sensors-3.1.2-sensors-detect-gentoo.patch, -lm_sensors-3.2.0.ebuild,
+  -lm_sensors-3.3.0.ebuild, metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+  18 Oct 2012; Markus Meier <maekke@gentoo.org> lm_sensors-3.3.1.ebuild:
+  add ~arm, bug #438642
+
+  03 Jun 2012; Michael Weber <xmw@gentoo.org> lm_sensors-3.3.1.ebuild:
+  ppc stable (bug 396553)
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> lm_sensors-3.3.1.ebuild:
+  Add ~amd64-linux keyword.
+
+  17 Mar 2012; Raúl Porcel <armin76@gentoo.org> lm_sensors-3.3.1.ebuild:
+  alpha/sparc stable wrt #396553
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> lm_sensors-3.3.1.ebuild:
+  Move net-analyzer/rrdtool from DEPEND to RDEPEND wrt #400637
+
+  21 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> lm_sensors-3.3.1.ebuild:
+  x86 stable wrt bug #396553
+
+  17 Jan 2012; Agostino Sarubbo <ago@gentoo.org> lm_sensors-3.3.1.ebuild:
+  Stable for amd64, wrt bug #396553
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> lm_sensors-3.3.1.ebuild:
+  USE="static-libs" to control building of libsensors.a wrt #378265 by Agostino
+  Sarubbo
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> lm_sensors-3.3.1.ebuild:
+  Move virtual/logger behind USE="sensord" wrt #386609 by Arne Stäcker
+
+*lm_sensors-3.3.1 (30 Sep 2011)
+
+  30 Sep 2011; Lars Wendler <polynomial-c@gentoo.org> +lm_sensors-3.3.1.ebuild,
+  +files/lm_sensors-3.3.1-sensors-detect-gentoo.patch:
+  non-maintainer commit: Version bump (bug #377223).
 
   29 Jul 2011; Zac Medico <zmedico@gentoo.org> lm_sensors-3.3.0.ebuild:
   Add ~x86-linux keyword.
@@ -360,4 +407,3 @@
   +lm_sensors-2.10.0.ebuild:
   Version bump. Includes fancontrol init script based on the work of Micha
   Pytasz, bug #98753.
-

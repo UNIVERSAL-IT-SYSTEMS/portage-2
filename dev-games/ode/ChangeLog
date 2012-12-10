@@ -1,6 +1,26 @@
 # ChangeLog for dev-games/ode
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/ode/ChangeLog,v 1.58 2010/09/20 03:47:35 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-games/ode/ChangeLog,v 1.64 2012/12/08 12:32:25 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> ode-0.12.ebuild:
+  Stable for ppc64, wrt bug #425858
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> ode-0.12.ebuild:
+  Marking ode-0.12 ppc for bug 425858
+
+  02 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> ode-0.12.ebuild:
+  Keyword amd64-linux x86-linux
+
+  12 Jul 2012; Agostino Sarubbo <ago@gentoo.org> ode-0.12.ebuild:
+  Stable for amd64, wrt bug #425858
+
+  12 Jul 2012; Jeff Horelick <jdhore@gentoo.org> ode-0.12.ebuild:
+  marked x86 per bug 425858
+
+*ode-0.12 (07 Jun 2012)
+
+  07 Jun 2012; Michael Sterrett <mr_bones_@gentoo.org> +ode-0.12.ebuild:
+  version bump
 
   20 Sep 2010; Michael Sterrett <mr_bones_@gentoo.org> ode-0.11.1.ebuild:
   fix build with /bin/sh != bash (bug #335760); add USE=static-libs

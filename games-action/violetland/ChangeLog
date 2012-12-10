@@ -1,6 +1,41 @@
 # ChangeLog for games-action/violetland
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/violetland/ChangeLog,v 1.18 2011/07/10 21:32:07 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-action/violetland/ChangeLog,v 1.28 2012/11/29 07:50:32 mr_bones_ Exp $
+
+  29 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> violetland-0.4.3.ebuild:
+  add threads use dep for boost (bug #444252)
+
+  26 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> violetland-0.4.3.ebuild:
+  fix the data install location (bug #444600)
+
+  22 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> violetland-0.4.3.ebuild:
+  Get rid of boost-utils eclass usage.
+
+  06 Nov 2012; Tupone Alfredo <tupone@gentoo.org> violetland-0.4.3.ebuild,
+  +files/violetland-0.4.3-boost150.patch:
+  Build with boost-1.50 Bug #425454 by Diego
+
+  29 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org> violetland-0.4.3.ebuild:
+  limit boost to the versions that work
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> violetland-0.4.3.ebuild:
+  x86 stable wrt bug #392691
+
+  02 Dec 2011; Markos Chandras <hwoarang@gentoo.org> violetland-0.4.3.ebuild:
+  Stable on amd64 wrt bug #392691
+
+*violetland-0.4.3 (28 Oct 2011)
+
+  28 Oct 2011; Michael Sterrett <mr_bones_@gentoo.org>
+  -violetland-0.3.1.ebuild, -violetland-0.4.0.ebuild, +violetland-0.4.3.ebuild:
+  version bump
+
+  21 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> violetland-0.4.2.ebuild:
+  x86 stable wrt bug #378727
+
+  11 Aug 2011; Tony Vroon <chainsaw@gentoo.org> violetland-0.4.2.ebuild:
+  Marked 0.4.2 stable on AMD64 based on arch testing by Agostino "ago" Sarubbo
+  in bug #378727.
 
 *violetland-0.4.2 (10 Jul 2011)
 
@@ -86,4 +121,3 @@
   30 Nov 2009; Michael Sterrett <mr_bones_@gentoo.org>
   +violetland-0.2.4.ebuild, +metadata.xml:
   initial commit - ebuild submitted by Azamat H. Hackimov via bug #294776
-

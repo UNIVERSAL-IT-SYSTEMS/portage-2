@@ -1,6 +1,55 @@
 # ChangeLog for net-dialup/ppp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/ppp/ChangeLog,v 1.273 2011/07/17 11:54:21 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/ppp/ChangeLog,v 1.286 2012/11/29 16:20:37 jer Exp $
+
+  29 Nov 2012; Jeroen Roovers <jer@gentoo.org> ppp-2.4.5-r3.ebuild:
+  Stable for HPPA (bug #444256).
+
+  26 Nov 2012;  <ago@gentoo.org> ppp-2.4.5-r3.ebuild:
+  Stable for x86, wrt to bug #444256
+
+  25 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> ppp-2.4.5-r3.ebuild:
+  Stable on amd64, wrt bug #444256
+
+  25 Nov 2012; Anthony G. Basile <blueness@gentoo.org> ppp-2.4.5-r3.ebuild:
+  stable arm ppc ppc64, bug #444256
+
+  25 Nov 2012; Mike Gilbert <floppym@gentoo.org> ppp-2.4.5-r3.ebuild:
+  Fix 80_all_eaptls-mppe-0.991-gentoo.patch, a casualty of CVS keyword
+  expansion.
+
+  22 Sep 2012; Mike Frysinger <vapier@gentoo.org> ppp-2.4.5-r3.ebuild:
+  Always unpack the dhcp code (since it is small) and update the patches to work
+  with patch-2.7 #435588.
+
+  18 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> ppp-2.4.5-r3.ebuild:
+  Make patch apply. Fixes bug#430830. Patch by Andrey Volkov.
+
+*ppp-2.4.5-r3 (10 Aug 2012)
+
+  10 Aug 2012; Mike Frysinger <vapier@gentoo.org> +ppp-2.4.5-r3.ebuild:
+  Update to EAPI=4 and move patchset to CVS.
+
+  07 Aug 2012; Mike Frysinger <vapier@gentoo.org> ppp-2.4.5-r2.ebuild:
+  Remove local copies of linux-headers and rely on the system one being up-to-
+  date #427684 by SpanKY.
+
+  14 Jun 2012; Zac Medico <zmedico@gentoo.org> ppp-2.4.4-r25.ebuild,
+  ppp-2.4.5-r1.ebuild, ppp-2.4.5-r2.ebuild:
+  inherit multilib for get_libdir
+
+  06 Apr 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #63588
+
+  11 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org> ppp-2.4.5-r2.ebuild:
+  QA: fetch the patchset from dev.gentoo.org rather than mirrors.
+
+*ppp-2.4.5-r2 (11 Nov 2011)
+
+  11 Nov 2011; Alin Năstac <mrness@gentoo.org> -ppp-2.4.5.ebuild,
+  +ppp-2.4.5-r2.ebuild, metadata.xml:
+  Fix QA issues in pppdump.c. Update EAP-TLS patch. Remove reference to
+  undefined symbol in passwordfd plugin (#389565).
 
   17 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> ppp-2.4.5-r1.ebuild:
   ppc/ppc64 stable wrt #366719

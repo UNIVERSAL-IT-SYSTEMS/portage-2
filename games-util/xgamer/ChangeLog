@@ -1,6 +1,19 @@
 # ChangeLog for games-util/xgamer
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-util/xgamer/ChangeLog,v 1.6 2011/07/19 15:44:05 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-util/xgamer/ChangeLog,v 1.10 2012/11/29 02:09:34 mr_bones_ Exp $
+
+  29 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> -xgamer-0.2.1.ebuild:
+  old
+
+  20 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org> xgamer-0.3.0.ebuild:
+  stable for x86
+
+  10 Jan 2012; Brent Baude <ranger@gentoo.org> xgamer-0.3.0.ebuild:
+  Marking xgamer-0.3.0 ppc for bug 375497
+
+  14 Aug 2011; Michael Sterrett <mr_bones_@gentoo.org> xgamer-0.2.1.ebuild,
+  xgamer-0.3.0.ebuild:
+  drop amd64 (bug #375497)
 
   19 Jul 2011; Michael Sterrett <mr_bones_@gentoo.org> xgamer-0.3.0.ebuild:
   newer version uses dev-perl/XML-Twig - pointed out by Agostino Sarubbo via
@@ -25,4 +38,3 @@
   23 Nov 2009; Michael Sterrett <mr_bones_@gentoo.org> +xgamer-0.2.1.ebuild,
   +metadata.xml:
   initial commit - ebuild submitted by mikeym via bug #292776
-

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyclutter/pyclutter-1.3.2-r2.ebuild,v 1.2 2011/02/18 14:47:23 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyclutter/pyclutter-1.3.2-r2.ebuild,v 1.5 2012/01/14 16:39:30 maekke Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
@@ -10,13 +10,13 @@ inherit eutils python clutter
 
 DESCRIPTION="Python bindings for Clutter"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="doc examples"
 
 SLOT="1.0"
 RDEPEND="
 	>=dev-python/pygtk-2.8.0
-	>=dev-python/pygobject-2.21.3
+	>=dev-python/pygobject-2.21.3:2
 	>=dev-python/pycairo-1.0.2
 	>=media-libs/clutter-1.4.0:${SLOT}"
 DEPEND="${RDEPEND}

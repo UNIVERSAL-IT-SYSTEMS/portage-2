@@ -1,6 +1,47 @@
 # ChangeLog for net-mail/mu
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/mu/ChangeLog,v 1.7 2011/07/07 17:04:47 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-mail/mu/ChangeLog,v 1.18 2012/12/06 04:37:52 phajdan.jr Exp $
+
+  06 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> mu-0.9.9.ebuild:
+  x86 stable wrt bug #445692
+
+  03 Dec 2012; <ago@gentoo.org> mu-0.9.9.ebuild:
+  Stable for amd64, wrt bug #445692
+
+  02 Dec 2012; Thomas Kahle <tomka@gentoo.org> mu-0.9.6.ebuild, mu-0.9.9.ebuild:
+  Make build.log verbose (bug 445696)
+
+  08 Nov 2012; Thomas Kahle <tomka@gentoo.org> mu-0.9.6.ebuild:
+  Fix dep also for 0.9.6
+
+  07 Nov 2012; Thomas Kahle <tomka@gentoo.org> mu-0.9.9.ebuild:
+  block net-mail/mailutils (bug 441818)
+
+  06 Nov 2012; Thomas Kahle <tomka@gentoo.org> mu-0.9.9.ebuild:
+  Depend on gmime:2.6 per bug 439842
+
+  02 Nov 2012; Thomas Kahle <tomka@gentoo.org> mu-0.9.9.ebuild:
+  Fix subshell/die
+
+*mu-0.9.9 (02 Nov 2012)
+
+  02 Nov 2012; Thomas Kahle <tomka@gentoo.org> +mu-0.9.9.ebuild,
+  -mu-0.9.7.ebuild, -mu-0.9.8.5.ebuild:
+  Bump to 0.9.9, install pdf manual, fix gmime dep (439842), remove old
+
+  29 Jul 2012; Thomas Kahle <tomka@gentoo.org> metadata.xml:
+  metadata updated
+
+*mu-0.9.8.5 (29 Jul 2012)
+
+  29 Jul 2012; Thomas Kahle <tomka@gentoo.org> +files/70mu-gentoo.el,
+  +mu-0.9.8.5.ebuild:
+  bump to 0.9.8.5
+
+*mu-0.9.7 (21 Nov 2011)
+
+  21 Nov 2011; Eray Aslan <eras@gentoo.org> +mu-0.9.7.ebuild:
+  version bump
 
   07 Jul 2011; Thomas Kahle <tomka@gentoo.org> mu-0.9.6.ebuild:
   x86 stable per bug 373623
@@ -44,4 +85,3 @@
   +metadata.xml:
   New ebuild for bug 305073, thanks to Tommy[D], hwoarang, Xarthisius and
   sedzimir
-

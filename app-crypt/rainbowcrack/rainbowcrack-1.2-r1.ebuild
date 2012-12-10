@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/rainbowcrack/rainbowcrack-1.2-r1.ebuild,v 1.9 2010/07/11 06:58:44 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/rainbowcrack/rainbowcrack-1.2-r1.ebuild,v 1.11 2012/09/24 00:41:54 vapier Exp $
 
 inherit eutils toolchain-funcs flag-o-matic
 
@@ -8,7 +8,7 @@ DESCRIPTION="Hash cracker that precomputes plaintext - ciphertext pairs in advan
 HOMEPAGE="http://project-rainbowcrack.com/"
 
 SRC_URI="http://project-rainbowcrack.com/${P}-src.zip
-	http://http://project-rainbowcrack.com/${P}-src-algorithmpatch.zip"
+	http://project-rainbowcrack.com/${P}-src-algorithmpatch.zip"
 
 LICENSE="as-is"
 SLOT="0"

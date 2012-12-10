@@ -1,6 +1,252 @@
 # ChangeLog for sys-apps/busybox
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/busybox/ChangeLog,v 1.275 2011/07/29 07:52:36 zmedico Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/busybox/ChangeLog,v 1.332 2012/12/04 12:10:35 blueness Exp $
+
+  04 Dec 2012; Anthony G. Basile <blueness@gentoo.org> +files/klogd.confd,
+  +files/klogd.initd, +files/ntpd.confd, +files/ntpd.initd,
+  +files/syslogd.confd, +files/syslogd.initd, +files/watchdog.confd,
+  +files/watchdog.initd, busybox-9999.ebuild:
+  Integrate support for busybox-{sysklogd,ntpd,watchdog}, bug #444718
+
+  02 Nov 2012; Mike Frysinger <vapier@gentoo.org> busybox-1.20.2.ebuild,
+  busybox-9999.ebuild, metadata.xml:
+  Make USE=static the default to reflect what we have always been doing
+  (building /bin/bb statically), and depend on libselinux[static-libs] as need
+  be #436752 by Alphat-PC.
+
+  20 Oct 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/busybox-1.20.2-selinux-pkg-config.patch, busybox-1.20.2.ebuild:
+  Use pkg-config to link against libselinux #436752 by Alphat-PC.
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> busybox-1.20.2.ebuild:
+  Marking busybox-1.20.2 ppc64 for bug 431948
+
+  03 Oct 2012; Mike Frysinger <vapier@gentoo.org> busybox-1.20.2.ebuild,
+  busybox-9999.ebuild:
+  Add systemd to IUSE #437054 by Arne Stäcker.
+
+  26 Sep 2012; Robin H. Johnson <robbat2@gentoo.org> files/mdev.rc.1:
+  New virtual init.d to split the /dev mount vs. daemon more cleanly.
+
+  18 Sep 2012; Mike Frysinger <vapier@gentoo.org> busybox-1.20.2.ebuild,
+  busybox-9999.ebuild, metadata.xml:
+  Disable some options that pointlessly bloat code, and add USE=systemd
+
+  15 Sep 2012; Raúl Porcel <armin76@gentoo.org> busybox-1.20.2.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #431948
+
+  28 Aug 2012; Anthony G. Basile <blueness@gentoo.org> busybox-1.20.2.ebuild:
+  Stable ppc, bug #431948
+
+  25 Aug 2012; Anthony G. Basile <blueness@gentoo.org> busybox-1.20.2.ebuild:
+  Stable arm, bug #431948
+
+  21 Aug 2012; Johannes Huber <johu@gentoo.org> busybox-1.20.2.ebuild:
+  Stable for x86, wrt bug #431948
+
+  21 Aug 2012; Agostino Sarubbo <ago@gentoo.org> busybox-1.20.2.ebuild:
+  Stable for amd64, wrt bug #431948
+
+  18 Jul 2012; Mike Frysinger <vapier@gentoo.org> busybox-1.20.1.ebuild,
+  busybox-1.20.2.ebuild:
+  Fix building with USE=-ipv6 #424928 by Dustin Polke.
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> busybox-1.20.1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #419689
+
+*busybox-1.20.2 (06 Jul 2012)
+
+  06 Jul 2012; Mike Frysinger <vapier@gentoo.org> +busybox-1.20.2.ebuild,
+  +files/busybox-1.20.2-glibc-sys-resource.patch:
+  Version bump and fix for building with glibc-2.16 #424954 by Stevan Bajić.
+
+  20 Jun 2012; Markus Meier <maekke@gentoo.org> busybox-1.20.1.ebuild:
+  arm stable, bug #419689
+
+  14 Jun 2012; Jeroen Roovers <jer@gentoo.org> busybox-1.20.1.ebuild:
+  Stable for HPPA (bug #419689).
+
+  12 Jun 2012; Jeff Horelick <jdhore@gentoo.org> busybox-1.20.1.ebuild:
+  marked x86 per bug 419689
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> busybox-1.20.1.ebuild:
+  Stable for amd64, wrt bug #419689
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> busybox-1.20.1.ebuild:
+  Marking busybox-1.20.1 ppc for bug 419689
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> busybox-1.20.1.ebuild:
+  Marking busybox-1.20.1 ppc64 for bug 419689
+
+  05 Jun 2012; Mike Frysinger <vapier@gentoo.org> metadata.xml:
+  Update metadata.xml text to match latest behavior.
+
+*busybox-1.20.1 (30 May 2012)
+
+  30 May 2012; Mike Frysinger <vapier@gentoo.org> +busybox-1.20.1.ebuild:
+  Version bump.
+
+  26 May 2012; Mike Frysinger <vapier@gentoo.org> busybox-1.19.3-r1.ebuild,
+  busybox-1.20.0.ebuild, busybox-9999.ebuild:
+  Install /bin/vi -> busybox symlink when USE=livecd #319917 by Antoni Sawicki.
+
+  26 May 2012; Mike Frysinger <vapier@gentoo.org> busybox-1.19.3-r1.ebuild,
+  busybox-1.20.0.ebuild, busybox-9999.ebuild:
+  Inherit multilib for get_libdir.
+
+  23 May 2012; Mike Frysinger <vapier@gentoo.org> metadata.xml:
+  Drop now unused nfs local USE flag.
+
+  14 May 2012; Mike Frysinger <vapier@gentoo.org> busybox-1.20.0.ebuild,
+  files/ginit.c:
+  We need to mount /proc before running mdev.
+
+  04 May 2012; Mike Frysinger <vapier@gentoo.org> busybox-1.20.0.ebuild,
+  busybox-9999.ebuild, metadata.xml:
+  Add USE=math to control libm usage in awk.
+
+  03 May 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/busybox-1.20.0-udhcpc6-ipv6.patch:
+  Fix building with USE=-ipv6.
+
+  01 May 2012; Mike Frysinger <vapier@gentoo.org> files/ginit.c:
+  Use mountpoint rather than reading /proc/mounts to avoid needing to mount
+  /proc at all as pointed out by Maxim Kammerer.
+
+*busybox-1.20.0 (30 Apr 2012)
+*busybox-9999 (30 Apr 2012)
+
+  30 Apr 2012; Mike Frysinger <vapier@gentoo.org> +busybox-1.20.0.ebuild,
+  +busybox-9999.ebuild, +files/busybox-1.20.0-buildsys.patch,
+  +files/busybox-1.20.0-getty.patch, +files/busybox-1.20.0-lineedit.patch,
+  +files/busybox-1.20.0-sed.patch, +files/ginit.c, metadata.xml:
+  Version bump.
+
+  30 Apr 2012; Mike Frysinger <vapier@gentoo.org> -busybox-1.17.4.ebuild,
+  -busybox-1.18.4.ebuild, -busybox-1.18.5.ebuild, -busybox-1.19.0.ebuild,
+  -busybox-1.19.2-r1.ebuild, -busybox-1.19.2.ebuild, -busybox-1.19.3.ebuild,
+  -files/busybox-1.17.0-bb.patch, -files/busybox-1.18.0-bb.patch,
+  -files/busybox-1.18.1-bzip2.patch, -files/busybox-1.18.1-cpio.patch,
+  -files/busybox-1.18.1-hush.patch, -files/busybox-1.18.1-mkswap.patch,
+  -files/busybox-1.18.1-warning.patch, -files/busybox-1.18.3-buildsys.patch,
+  -files/busybox-1.18.3-modutils24.patch, -files/busybox-1.18.3-wget.patch,
+  -files/busybox-1.18.4-fuser.patch, -files/busybox-1.18.4-hush.patch,
+  -files/busybox-1.19.0-cttyhack.patch, -files/busybox-1.19.0-less.patch,
+  -files/busybox-1.19.0-sed.patch, -files/busybox-1.19.0-swap.patch,
+  -files/busybox-1.19.0-uncompress.patch, -files/busybox-1.19.2-android.patch,
+  -files/busybox-1.19.2-buildsys.patch, -files/busybox-1.19.2-chpasswd.patch,
+  -files/busybox-1.19.2-crond.patch, -files/busybox-1.19.2-inetd.patch,
+  -files/busybox-1.19.2-syslogd.patch, -files/busybox-1.19.2-tail.patch,
+  -files/busybox-1.19.2-tftp.patch:
+  Old.
+
+  24 Apr 2012; Mike Frysinger <vapier@gentoo.org> busybox-1.17.4.ebuild,
+  busybox-1.18.4.ebuild, busybox-1.18.5.ebuild, busybox-1.19.0.ebuild,
+  busybox-1.19.2-r1.ebuild, busybox-1.19.2.ebuild, busybox-1.19.3-r1.ebuild,
+  busybox-1.19.3.ebuild:
+  Fix typo from older code -- there is no $new variable to expand.
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> busybox-1.19.3-r1.ebuild:
+  Add ~amd64-linux keyword.
+
+  02 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> busybox-1.19.3-r1.ebuild:
+  ppc64 stable wrt #395427
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> busybox-1.19.3-r1.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #395427
+
+  06 Jan 2012; Brent Baude <ranger@gentoo.org> busybox-1.19.3-r1.ebuild:
+  Marking busybox-1.19.3-r1 ppc for bug 395427
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  busybox-1.19.3-r1.ebuild:
+  x86 stable wrt bug #395427
+
+  31 Dec 2011; Mike Frysinger <vapier@gentoo.org> busybox-1.19.3-r1.ebuild:
+  Force a recent version of linux-headers #396025 by Robin Johnson.
+
+  28 Dec 2011; Jeroen Roovers <jer@gentoo.org> busybox-1.19.3-r1.ebuild:
+  Stable for HPPA (bug #395427).
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> busybox-1.19.3-r1.ebuild:
+  arm stable, bug #395427
+
+  22 Dec 2011; Agostino Sarubbo <ago@gentoo.org> busybox-1.19.3-r1.ebuild:
+  Stable for AMD64, wrt bug #395427
+
+  20 Dec 2011; Mike Frysinger <vapier@gentoo.org> busybox-1.17.4.ebuild,
+  busybox-1.18.4.ebuild, busybox-1.18.5.ebuild, busybox-1.19.0.ebuild,
+  busybox-1.19.2.ebuild, busybox-1.19.2-r1.ebuild, busybox-1.19.3.ebuild:
+  Drop IUSE=+mdev for all ebuilds #395409 by Grzegorz Krzystek.
+
+  20 Dec 2011; Mike Frysinger <vapier@gentoo.org> busybox-1.19.3-r1.ebuild:
+  Drop USE=mdev default so it can work with virtual/dev-manager #395319 by
+  Walter Dnes.
+
+*busybox-1.19.3-r1 (06 Dec 2011)
+
+  06 Dec 2011; Mike Frysinger <vapier@gentoo.org> +busybox-1.19.3-r1.ebuild,
+  +files/busybox-1.19.3-kernel-nfs.patch:
+  Add patch from upstream which allows us to mount nfs shares w/out needing
+  libtirpc or C library RPC symbols #379481 by Andriy Baranskyy.
+
+*busybox-1.19.3 (07 Nov 2011)
+
+  07 Nov 2011; Mike Frysinger <vapier@gentoo.org> +busybox-1.19.3.ebuild,
+  +files/busybox-1.19.3-getty.patch, +files/busybox-1.19.3-modinfo.patch:
+  Version bump. Drop USE=debug support #379965 by Agostino Sarubbo.
+
+*busybox-1.19.2-r1 (18 Oct 2011)
+
+  18 Oct 2011; Mike Frysinger <vapier@gentoo.org> +busybox-1.19.2-r1.ebuild,
+  +files/busybox-1.19.2-tftp.patch:
+  Undo nommu and rebuild config to get all the ash features enabled by default
+  #387555 by Ortwin Glueck.
+
+*busybox-1.19.2 (17 Sep 2011)
+
+  17 Sep 2011; Mike Frysinger <vapier@gentoo.org> +busybox-1.19.2.ebuild,
+  +files/busybox-1.19.2-android.patch, +files/busybox-1.19.2-buildsys.patch,
+  +files/busybox-1.19.2-chpasswd.patch, +files/busybox-1.19.2-crond.patch,
+  +files/busybox-1.19.2-inetd.patch, +files/busybox-1.19.2-syslogd.patch,
+  +files/busybox-1.19.2-tail.patch, +files/mdev.rc.1:
+  Version bump. Also update init.d script for openrc only #383301 by Nathan
+  Phillip Brink.
+
+  27 Aug 2011; Raúl Porcel <armin76@gentoo.org> busybox-1.19.0.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #379857
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> busybox-1.19.0.ebuild:
+  arm stable, bug #379857
+
+  23 Aug 2011; Markos Chandras <hwoarang@gentoo.org> busybox-1.19.0.ebuild:
+  Stable on amd64 wrt bug #379857
+
+  20 Aug 2011; Guy Martin <gmsoft@gentoo.org> busybox-1.19.0.ebuild:
+  hppa stable wrt bug #379857
+
+  19 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> busybox-1.19.0.ebuild:
+  x86 stable wrt security bug #379857
+
+  19 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> busybox-1.19.0.ebuild:
+  Workaround TOC issue wrt #130943, fix typo, ppc/ppc64 stable wrt #379857
+
+*busybox-1.19.0 (19 Aug 2011)
+
+  19 Aug 2011; Mike Frysinger <vapier@gentoo.org> +busybox-1.19.0.ebuild,
+  +files/busybox-1.19.0-bb.patch, +files/busybox-1.19.0-cttyhack.patch,
+  +files/busybox-1.19.0-less.patch, +files/busybox-1.19.0-sed.patch,
+  +files/busybox-1.19.0-swap.patch, +files/busybox-1.19.0-uncompress.patch:
+  Version bump #379857.
+
+  14 Aug 2011; Mike Frysinger <vapier@gentoo.org> busybox-1.18.5.ebuild:
+  Use elog for user facing messages #378585 by William Throwe.
+
+*busybox-1.18.5 (07 Aug 2011)
+
+  07 Aug 2011; Mike Frysinger <vapier@gentoo.org> -busybox-1.18.3.ebuild,
+  +busybox-1.18.5.ebuild:
+  Version bump #376355 by Chris Slycord.
 
   29 Jul 2011; Zac Medico <zmedico@gentoo.org> busybox-1.18.4.ebuild:
   Add ~x86-linux keyword.

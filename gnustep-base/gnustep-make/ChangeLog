@@ -1,6 +1,52 @@
 # ChangeLog for gnustep-base/gnustep-make
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/gnustep-base/gnustep-make/ChangeLog,v 1.102 2011/06/09 09:47:21 voyageur Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/gnustep-base/gnustep-make/ChangeLog,v 1.112 2012/07/03 18:23:12 voyageur Exp $
+
+*gnustep-make-2.6.2-r2 (03 Jul 2012)
+
+  03 Jul 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  -gnustep-make-2.6.0.ebuild, -gnustep-make-2.6.1-r1.ebuild,
+  gnustep-make-2.6.2.ebuild, -gnustep-make-2.6.2-r1.ebuild,
+  +gnustep-make-2.6.2-r2.ebuild:
+  Support GCC 4.7 (checking more libobjc.so versions, blocking libobjc2 when
+  disabled). Bump for ~arch version. Should fix bug #421779
+
+  16 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org> gnustep-make-2.6.2.ebuild:
+  ppc64 stable wrt #410601
+
+  07 Jun 2012; Michael Weber <xmw@gentoo.org> gnustep-make-2.6.2.ebuild:
+  ppc stable (bug 410601)
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> gnustep-make-2.6.2.ebuild:
+  x86 stable, bug #410601
+
+  05 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gnustep-make-2.6.2.ebuild:
+  Stable for amd64, wrt bug #410601
+
+*gnustep-make-2.6.2-r1 (02 Apr 2012)
+
+  02 Apr 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  gnustep-make-2.6.2.ebuild, +gnustep-make-2.6.2-r1.ebuild:
+  Disable libobjc2 USE flag in stable candidate, moved in revision bump
+
+  20 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  gnustep-make-2.6.2.ebuild, +files/testlibobjc.m:
+  Also test libobjc.so.3 (from >=gcc-4.6), rework pkg_setup. Fixes bug #404957,
+  gnustep-updater can handle libobjc.so.3
+
+  09 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  gnustep-make-2.6.2.ebuild:
+  Suggest gnustep-update for libobjc2, fix test on gnustep-make < 2.6.2
+
+  09 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  gnustep-make-2.6.2.ebuild:
+  Always set libobjc.so version to ease switching to libobjc2
+
+*gnustep-make-2.6.2 (08 Feb 2012)
+
+  08 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  -gnustep-make-2.6.1-r10.ebuild, +gnustep-make-2.6.2.ebuild, metadata.xml:
+  Version bump, integrate libobjc2 support (USE-flag still masked for now)
 
 *gnustep-make-2.6.1-r1 (09 Jun 2011)
 

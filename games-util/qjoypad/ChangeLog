@@ -1,6 +1,18 @@
 # ChangeLog for games-util/qjoypad
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-util/qjoypad/ChangeLog,v 1.23 2011/06/22 05:22:15 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-util/qjoypad/ChangeLog,v 1.27 2012/09/29 01:36:16 mr_bones_ Exp $
+
+  29 Sep 2012; Michael Sterrett <mr_bones_@gentoo.org> qjoypad-4.1.0.ebuild:
+  fixup the icon tray support (bug #436426)
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> qjoypad-4.1.0.ebuild:
+  Use doicon instead insinto + doins to install icon files; Bump EAPI to 4
+
+  16 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> qjoypad-4.1.0.ebuild:
+  tidy
+
+  16 Jul 2012; Michael Palimaka <kensington@gentoo.org> qjoypad-4.1.0.ebuild:
+  Add missing slot dependencies on Qt.
 
   22 Jun 2011; Tupone Alfredo <tupone@gentoo.org> qjoypad-4.1.0.ebuild,
   +files/qjoypad-4.1.0-underlink.patch:

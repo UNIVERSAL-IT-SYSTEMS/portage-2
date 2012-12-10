@@ -1,6 +1,33 @@
 # ChangeLog for dev-perl/Gtk2-Ex-PodViewer
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Gtk2-Ex-PodViewer/ChangeLog,v 1.28 2011/03/29 10:17:14 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Gtk2-Ex-PodViewer/ChangeLog,v 1.35 2012/06/24 12:58:28 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Gtk2-Ex-PodViewer-0.17.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> Gtk2-Ex-PodViewer-0.17.ebuild,
+  Gtk2-Ex-PodViewer-0.180.0.ebuild:
+  Drop ia64/sparc keywords
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Gtk2-Ex-PodViewer-0.180.0.ebuild:
+  x86 stable wrt bug #400129
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  Gtk2-Ex-PodViewer-0.180.0.ebuild:
+  Stable for amd64, wrt bug #400129
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Gtk2-Ex-PodViewer-0.18.ebuild:
+  Cleanup
+
+*Gtk2-Ex-PodViewer-0.180.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +Gtk2-Ex-PodViewer-0.180.0.ebuild:
+  Change version scheme
 
   29 Mar 2011; Christoph Mende <angelos@gentoo.org>
   Gtk2-Ex-PodViewer-0.17.ebuild, Gtk2-Ex-PodViewer-0.18.ebuild:
@@ -125,4 +152,3 @@
   22 Nov 2005; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Gtk2-Ex-PodViewer-0.14.ebuild:
   New dep of Gtk2-PodViewer
-

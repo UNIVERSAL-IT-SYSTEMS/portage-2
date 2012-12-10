@@ -1,6 +1,122 @@
 # ChangeLog for app-emulation/lxc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/lxc/ChangeLog,v 1.25 2011/07/26 13:39:28 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/lxc/ChangeLog,v 1.44 2012/11/14 02:15:10 flameeyes Exp $
+
+*lxc-0.8.0-r1 (14 Nov 2012)
+
+  14 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> +lxc-0.8.0-r1.ebuild,
+  -lxc-0.8.0.ebuild, files/lxc.initd.2:
+  Drop one kernel config check for a kernel config that's been dropped; drop the
+  vanilla USE flag; fix a mistake in the setarch call in the init script for
+  32-bit guests.
+
+*lxc-0.8.0 (11 Nov 2012)
+
+  11 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> +lxc-0.8.0.ebuild:
+  Version bump.
+
+*lxc-0.8.0_rc2-r1 (04 Aug 2012)
+
+  04 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +lxc-0.8.0_rc2-r1.ebuild,
+  -lxc-0.8.0_rc2.ebuild:
+  Fix lxc-sshd template; don't remove lxc-ls.
+
+*lxc-0.8.0_rc2 (21 Jul 2012)
+
+  21 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> +lxc-0.8.0_rc2.ebuild,
+  -lxc-0.8.0_rc1-r5.ebuild, files/lxc.initd.2:
+  Version bump; also fixes bug #427078 and #427086, thanks to Alexander Zubkov
+  for the report.
+
+*lxc-0.8.0_rc1-r5 (07 Jun 2012)
+
+  07 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org> +lxc-0.8.0_rc1-r5.ebuild,
+  -lxc-0.8.0_rc1-r4.ebuild, files/lxc.initd.2:
+  Update init script to better handle x32 containers.
+
+  31 May 2012; Zac Medico <zmedico@gentoo.org> lxc-0.8.0_rc1-r4.ebuild:
+  tweak inherit so repoman can parse it
+
+  12 May 2012; Diego E. Pettenò <flameeyes@gentoo.org> lxc-0.8.0_rc1-r4.ebuild:
+  Make sure to check for CGROUP_DEVICE in particular, see bug #409371.
+
+  01 May 2012; Diego E. Pettenò <flameeyes@gentoo.org> files/lxc.initd.2:
+  Make the init.d decide whether it needs or uses the network interface
+  depending on configuration.
+
+*lxc-0.8.0_rc1-r4 (01 May 2012)
+
+  01 May 2012; Diego E. Pettenò <flameeyes@gentoo.org> +lxc-0.8.0_rc1-r4.ebuild,
+  -files/lxc-0.8.0_rc1-blockmount.patch, -files/lxc-0.8.0_rc1-libtoolize.patch,
+  -files/lxc.initd, -lxc-0.7.5-r3.ebuild, -lxc-0.8.0_rc1-r3.ebuild:
+  Remove old; move patches to backports tarball (it's in git); add a patch to
+  fix bug #423737 by Kevin Pyle (kernel sources are no longer required for
+  build).
+
+  29 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org> files/lxc.initd.2:
+  Make sure to need the network interface, not use it.
+
+*lxc-0.8.0_rc1-r3 (29 Apr 2012)
+
+  29 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org> +lxc-0.8.0_rc1-r3.ebuild,
+  -lxc-0.8.0_rc1-r2.ebuild, files/lxc-0.8.0_rc1-blockmount.patch:
+  Fix my own patch for mounting devices and files.
+
+*lxc-0.8.0_rc1-r2 (28 Apr 2012)
+
+  28 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/lxc-0.8.0_rc1-blockmount.patch, +lxc-0.8.0_rc1-r2.ebuild,
+  -lxc-0.8.0_rc1-r1.ebuild:
+  Add a patch to fix handling of mount points for block devices; also add some
+  warnings related to grsecurity and LXC.
+
+  27 Mar 2012; Diego E. Pettenò <flameeyes@gentoo.org> -lxc-0.8.0_rc1.ebuild,
+  lxc-0.7.5-r3.ebuild, lxc-0.8.0_rc1-r1.ebuild:
+  Fix dependencies for lxc 0.7.5; depend on a newer OpenRC to have cgroups
+  mounted for us in the init script.
+
+*lxc-0.8.0_rc1-r1 (24 Mar 2012)
+
+  24 Mar 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/lxc-0.8.0_rc1-libtoolize.patch, +lxc-0.8.0_rc1-r1.ebuild:
+  Add a patch that libtoolizes lxc, and builds a static lxc-init executable.
+
+*lxc-0.8.0_rc1 (24 Mar 2012)
+
+  24 Mar 2012; Diego E. Pettenò <flameeyes@gentoo.org> +files/lxc.initd.2,
+  +lxc-0.8.0_rc1.ebuild:
+  Version bump; change init script as the path is changed. Assume a modern
+  OpenRC is used.
+
+*lxc-0.7.5-r3 (19 Oct 2011)
+
+  19 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> -lxc-0.7.5-r2.ebuild,
+  +lxc-0.7.5-r3.ebuild, files/lxc.initd:
+  Revision bump to fix two issues with the init script reported by Alexander Y.
+  Fomichev (bug #387675 and #387679).
+
+*lxc-0.7.5-r2 (28 Sep 2011)
+
+  28 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> -lxc-0.7.5-r1.ebuild,
+  +lxc-0.7.5-r2.ebuild, files/lxc.initd:
+  Fix init script to find the correct PID for the container's init and use a
+  30-seconds timeout to see if it has stopped correctly. Thanks to Stef Simoens
+  for both (bug #384265).
+
+*lxc-0.7.5-r1 (14 Sep 2011)
+
+  14 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> -lxc-0.7.4.2.ebuild,
+  -lxc-0.7.5.ebuild, +lxc-0.7.5-r1.ebuild, files/lxc.initd:
+  Fix init script not to look for a configuration file when generating
+  dependencies for the base (multiplexed) init script. Revision bump to make
+  sure users reinstall the ebuild, and remove old. Closes bug #382519.
+
+*lxc-0.7.5 (05 Sep 2011)
+
+  05 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> -lxc-0.7.4.1-r1.ebuild,
+  +lxc-0.7.5.ebuild, files/lxc.initd:
+  Version bump; also includes fixes for the init script, closing bugs #379679
+  and #379683 by George Georgiev.
 
 *lxc-0.7.4.2 (26 Jul 2011)
 
@@ -145,4 +261,3 @@
   Initial import of lxc; based upon dev-zero's ebuild, modified by me. It
   diverges a bit from upstream, in the path used, to stay more
   Gentoo-styled. Init scripts will likely be added separately.
-

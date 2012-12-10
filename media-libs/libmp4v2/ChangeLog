@@ -1,6 +1,61 @@
 # ChangeLog for media-libs/libmp4v2
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libmp4v2/ChangeLog,v 1.65 2010/06/25 01:57:27 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libmp4v2/ChangeLog,v 1.80 2012/09/16 17:48:32 ssuominen Exp $
+
+  16 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> -libmp4v2-1.9.1.ebuild,
+  -libmp4v2-1.9.1_p479.ebuild:
+  old
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> libmp4v2-2.0.0.ebuild:
+  alpha/ia64/sh/sparc stable wrt #422517
+
+  24 Aug 2012; Michael Weber <xmw@gentoo.org> libmp4v2-2.0.0.ebuild:
+  ppc stable (bug 422517).
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> libmp4v2-2.0.0.ebuild:
+  Marking libmp4v2-2.0.0 ppc64 for bug 422517
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> libmp4v2-2.0.0.ebuild:
+  arm stable, bug #422517
+
+  02 Jul 2012; Jeff Horelick <jdhore@gentoo.org> libmp4v2-1.9.1-r1.ebuild,
+  libmp4v2-2.0.0.ebuild:
+  marked x86 per bug 422517
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> libmp4v2-2.0.0.ebuild:
+  Stable for HPPA (bug #422517).
+
+  21 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libmp4v2-1.9.1-r1.ebuild:
+  Stable for AMD64, wrt bug #422517
+
+  21 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libmp4v2-2.0.0.ebuild:
+  Stable for amd64, wrt bug #422517
+
+*libmp4v2-2.0.0 (21 May 2012)
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> +libmp4v2-2.0.0.ebuild:
+  Version bump.
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> libmp4v2-1.9.1_p479.ebuild:
+  keyword ~amd64-fbsd
+
+*libmp4v2-1.9.1-r1 (09 May 2012)
+
+  09 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +libmp4v2-1.9.1-r1.ebuild:
+  SLOT="1" for SONAME ABI compability, libmp4v2.so.1, which is used by
+  app-pda/gtkpod through dlopen()
+
+  21 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  libmp4v2-1.9.1_p479.ebuild:
+  Keyword 1.9.1_p479 for ~arch because reverse dependencies are now working.
+
+*libmp4v2-1.9.1_p479 (19 Nov 2011)
+
+  19 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +libmp4v2-1.9.1_p479.ebuild:
+  Version bump to featured upstream snapshot (unkeyworded for now because of
+  API and ABI break)
 
   25 Jun 2010; Michael Sterrett <mr_bones_@gentoo.org>
   libmp4v2-1.9.1.ebuild:
@@ -228,4 +283,3 @@
 
   20 Dec 2005; Olivier Crête <tester@gentoo.org> ChangeLog:
   Separated libmp4v2 from mpeg4ip
-

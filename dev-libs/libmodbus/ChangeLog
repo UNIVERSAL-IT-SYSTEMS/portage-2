@@ -1,6 +1,29 @@
 # ChangeLog for dev-libs/libmodbus
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libmodbus/ChangeLog,v 1.3 2011/04/13 19:52:38 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libmodbus/ChangeLog,v 1.8 2012/07/02 07:12:33 xmw Exp $
+
+*libmodbus-3.1.0 (02 Jul 2012)
+
+  02 Jul 2012; Michael Weber <xmw@gentoo.org> +libmodbus-3.1.0.ebuild,
+  -libmodbus-3.0.1.ebuild:
+  Version bump (thanks euscan), drop old
+
+*libmodbus-3.0.3 (11 Jun 2012)
+
+  11 Jun 2012; Michael Weber <xmw@gentoo.org> +libmodbus-3.0.3.ebuild,
+  -libmodbus-2.0.3.ebuild, -libmodbus-2.9.3.ebuild:
+  Version bump (thanks euscan), EAPI-4, drop old.
+
+  20 Feb 2012; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Drop no-herd.
+
+  11 Nov 2011; Michael Weber <xmw@gentoo.org> metadata.xml:
+  Adding myself as maintainer
+
+*libmodbus-3.0.1 (01 Oct 2011)
+
+  01 Oct 2011; Mike Frysinger <vapier@gentoo.org> +libmodbus-3.0.1.ebuild:
+  Version bump #384891 by Martin Gysel.
 
   13 Apr 2011; Mike Frysinger <vapier@gentoo.org> libmodbus-2.9.3.ebuild:
   Don't build with -Werror #363477 and enable verbose make output.

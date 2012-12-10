@@ -1,6 +1,51 @@
 # ChangeLog for sci-mathematics/agda
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/agda/ChangeLog,v 1.10 2010/11/20 13:45:12 kolmodin Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/agda/ChangeLog,v 1.19 2012/11/18 07:48:34 gienah Exp $
+
+*agda-2.3.2 (18 Nov 2012)
+
+  18 Nov 2012; Mark Wright <gienah@gentoo.org> +agda-2.3.2.ebuild:
+  Bump agda to 2.3.2
+
+*agda-2.3.0.1-r1 (18 Nov 2012)
+
+  18 Nov 2012; Mark Wright <gienah@gentoo.org> +agda-2.3.0.1-r1.ebuild,
+  +files/agda-2.3.0.1-quickcheck-2.5.patch:
+  Thanks to Naohiro Aota for adding patch for agda 2.3.0.1 to build with
+  quickcheck 2.5
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> agda-2.3.0.1.ebuild,
+  agda-2.3.0.ebuild:
+  move sci-mathematics/agda/agda-2.3.0.1.ebuild ebuild to mirror://hackage
+
+  02 Jun 2012; Mark Wright <gienah@gentoo.org> agda-2.3.0.1.ebuild,
+  agda-2.3.0.ebuild:
+  Add virtual/emacs and app-emacs/haskell-mode deps
+
+  13 Apr 2012; Mark Wright <gienah@gentoo.org> agda-2.3.0.1.ebuild,
+  agda-2.3.0.ebuild:
+  agda 2.3.0 and 2.3.0.1 requires syb, add more range checks to deps
+
+  13 Apr 2012; Mark Wright <gienah@gentoo.org>
+  +files/agda-2.3.0.1-mtl-2.1.patch, agda-2.3.0.1.ebuild:
+  Fix agda 2.3.0.1 build with mtl-2.1
+
+  01 Apr 2012; Mark Wright <gienah@gentoo.org>
+  +files/agda-2.3.0.1-haskell-src-exts-1.13.patch, agda-2.3.0.1.ebuild:
+  Fix agda 2.3.0.1 build with haskell-src-exts-1.13.0
+
+*agda-2.3.0.1 (25 Mar 2012)
+
+  25 Mar 2012; Mark Wright <gienah@gentoo.org> +agda-2.3.0.1.ebuild,
+  +files/agda-2.3.0.1-emacs.patch, agda-2.3.0.ebuild, metadata.xml:
+  Thanks to tomprince for adding support for agda-stdlib. Bump to 2.3.0.1,
+  EAPI=4, [profile?] for haskell lib depends.
+
+*agda-2.3.0 (23 Jan 2012)
+
+  23 Jan 2012; Mark Wright <gienah@gentoo.org> +agda-2.3.0.ebuild,
+  +files/agda-2.3.0-emacs.patch, metadata.xml:
+  Bump agda to 2.3.0 bug #349460
 
 *agda-2.2.6-r1 (20 Nov 2010)
 
@@ -61,4 +106,3 @@
   +agda-20050601.ebuild:
   Initial commit. The doc generation is broken for now due to unsupported
   haddock stuff.
-

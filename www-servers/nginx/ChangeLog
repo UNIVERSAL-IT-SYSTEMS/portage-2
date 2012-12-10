@@ -1,6 +1,240 @@
 # ChangeLog for www-servers/nginx
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/nginx/ChangeLog,v 1.287 2011/07/25 09:26:54 hollow Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-servers/nginx/ChangeLog,v 1.335 2012/11/26 13:05:02 ago Exp $
+
+  26 Nov 2012; Agostino Sarubbo <ago@gentoo.org> nginx-1.2.5.ebuild:
+  Stable for x86, wrt bug #434324
+
+  26 Nov 2012; Agostino Sarubbo <ago@gentoo.org> nginx-1.2.5.ebuild:
+  Stable for amd64, wrt bug #434324
+
+  26 Nov 2012; Benedikt Böhm <hollow@gentoo.org> -nginx-1.2.2.ebuild,
+  -nginx-1.2.4.ebuild, -nginx-1.3.3.ebuild, -nginx-1.3.7.ebuild,
+  files/nginx.initd:
+  remove old versions and add some path checks to init script
+
+*nginx-1.2.5 (16 Nov 2012)
+*nginx-1.3.8 (16 Nov 2012)
+
+  16 Nov 2012; Patrick Lauer <patrick@gentoo.org> +nginx-1.2.5.ebuild,
+  +nginx-1.3.8.ebuild:
+  Bump
+
+*nginx-1.3.7 (26 Oct 2012)
+*nginx-1.2.4 (26 Oct 2012)
+
+  26 Oct 2012; Patrick Lauer <patrick@gentoo.org> +nginx-1.2.4.ebuild,
+  +nginx-1.3.7.ebuild:
+  Bump
+
+  30 Jul 2012; Benedikt Böhm <hollow@gentoo.org> nginx-1.2.2.ebuild,
+  nginx-1.3.3.ebuild:
+  add lua module + cleanup
+
+  30 Jul 2012; Benedikt Böhm <hollow@gentoo.org> nginx-1.2.1.ebuild,
+  nginx-1.2.2.ebuild, -nginx-1.3.1.ebuild, nginx-1.3.3.ebuild:
+  fix #427464
+
+  23 Jul 2012; Jeremy Olexa <darkside@gentoo.org> metadata.xml:
+  remove myself from maintainer, stopped using
+
+*nginx-1.3.3 (18 Jul 2012)
+*nginx-1.2.2 (18 Jul 2012)
+
+  18 Jul 2012; Benedikt Böhm <hollow@gentoo.org> +nginx-1.2.2.ebuild,
+  +nginx-1.3.3.ebuild, files/nginx.initd:
+  version bump. fixes #403921, #404239 and #421059
+
+  12 Jun 2012; Agostino Sarubbo <ago@gentoo.org> -nginx-1.1.19.ebuild,
+  -nginx-1.2.0.ebuild:
+  Remove old
+
+  12 Jun 2012; Agostino Sarubbo <ago@gentoo.org> nginx-1.2.1.ebuild:
+  Stable for amd64, per darkside request on irc
+
+  11 Jun 2012; Andreas Schuerch <nativemad@gentoo.org> nginx-1.2.1.ebuild:
+  x86 stable, see bug 419863
+
+*nginx-1.3.1 (06 Jun 2012)
+
+  06 Jun 2012; Patrick Lauer <patrick@gentoo.org> +nginx-1.3.1.ebuild:
+  Bump for #411937, temporarily masked
+
+  06 Jun 2012; Patrick Lauer <patrick@gentoo.org> nginx-1.0.15.ebuild,
+  nginx-1.1.19.ebuild, nginx-1.2.0.ebuild, nginx-1.2.1.ebuild:
+  Adding user.eclass inherit
+
+*nginx-1.2.1 (06 Jun 2012)
+
+  06 Jun 2012; Patrick Lauer <patrick@gentoo.org> +nginx-1.2.1.ebuild:
+  Bump
+
+*nginx-1.2.0 (18 May 2012)
+
+  18 May 2012; Jeremy Olexa <darkside@gentoo.org> +nginx-1.2.0.ebuild:
+  Version bump from upstream, new stable candidate. bug 414167 with selinux
+  mods from bug 416307
+
+  18 Apr 2012; Jeremy Olexa <darkside@gentoo.org> nginx-1.1.19.ebuild:
+  Cosmetic changes to align with upstream better. Use Makefile to install. No
+  revbump needed
+
+  18 Apr 2012; Jeremy Olexa <darkside@gentoo.org> -nginx-1.0.14.ebuild,
+  metadata.xml:
+  Remove vulnerable version. Document local ssl USE flag
+
+  15 Apr 2012; Markus Meier <maekke@gentoo.org> nginx-1.0.15.ebuild:
+  x86 stable, bug #411751
+
+  14 Apr 2012; Agostino Sarubbo <ago@gentoo.org> nginx-1.0.15.ebuild:
+  Stable for amd64, wrt bug #411751
+
+*nginx-1.0.15 (14 Apr 2012)
+
+  14 Apr 2012; Benedikt Böhm <hollow@gentoo.org> +nginx-1.0.15.ebuild,
+  nginx-1.1.19.ebuild:
+  version bump wrt #411751
+
+  13 Apr 2012; Jeremy Olexa <darkside@gentoo.org> -nginx-1.0.10.ebuild,
+  -nginx-1.1.17.ebuild, -nginx-1.1.18.ebuild, +nginx-1.1.19.ebuild,
+  metadata.xml:
+  Version bump from upstream (security bug 411751), addition of fancyindex
+  third party module (bug 411663). Cleanup metadata.xml
+
+*nginx-1.1.19 (13 Apr 2012)
+
+  13 Apr 2012; Jeremy Olexa <darkside@gentoo.org> -nginx-1.1.17.ebuild,
+  -nginx-1.1.18.ebuild, +nginx-1.1.19.ebuild, metadata.xml:
+  Version bump from upstream (security bug 411751), addition of fancyindex
+  third party module (bug 411663). Cleanup metadata.xml
+
+*nginx-1.1.18 (10 Apr 2012)
+
+  10 Apr 2012; Patrick Lauer <patrick@gentoo.org> +nginx-1.1.18.ebuild:
+  Bump
+
+  30 Mar 2012; Patrick Lauer <patrick@gentoo.org> nginx-1.1.17.ebuild:
+  Bump upload_progress module #409099
+
+  15 Mar 2012; Agostino Sarubbo <ago@gentoo.org> nginx-1.0.14.ebuild:
+  Stable for AMD64/X86, wrt security bug #408367
+
+  15 Mar 2012; Patrick Lauer <patrick@gentoo.org> -nginx-1.0.11.ebuild,
+  -nginx-1.0.12.ebuild, -nginx-1.1.14.ebuild, -nginx-1.1.16.ebuild:
+  Removing old versions
+
+*nginx-1.1.17 (15 Mar 2012)
+*nginx-1.0.14 (15 Mar 2012)
+
+  15 Mar 2012; Patrick Lauer <patrick@gentoo.org> +nginx-1.0.14.ebuild,
+  +nginx-1.1.17.ebuild:
+  Bump for #408367
+
+  02 Mar 2012; Patrick Lauer <patrick@gentoo.org> nginx-1.1.16.ebuild:
+  Fixing headers_more URI madness #406555
+
+*nginx-1.1.16 (02 Mar 2012)
+
+  02 Mar 2012; Patrick Lauer <patrick@gentoo.org> +nginx-1.1.16.ebuild,
+  -nginx-1.1.13.ebuild:
+  Bump, closes #403329
+
+*nginx-1.1.14 (11 Feb 2012)
+*nginx-1.0.12 (11 Feb 2012)
+
+  11 Feb 2012; Benedikt Böhm <hollow@gentoo.org> nginx-1.0.10.ebuild,
+  nginx-1.0.11.ebuild, +nginx-1.0.12.ebuild, -nginx-1.1.12-r1.ebuild,
+  nginx-1.1.13.ebuild, +nginx-1.1.14.ebuild, +files/nginx.conf,
+  +files/nginx.initd, -files/nginx.conf-r4, -files/nginx.init-r2:
+  version bump wrt #402957
+
+*nginx-1.1.13 (29 Jan 2012)
+*nginx-1.0.11 (29 Jan 2012)
+
+  29 Jan 2012; Benedikt Böhm <hollow@gentoo.org> +nginx-1.0.11.ebuild,
+  -nginx-1.1.8.ebuild, +nginx-1.1.13.ebuild:
+  version bump wrt #401163
+
+  28 Dec 2011; Patrick Lauer <patrick@gentoo.org> -nginx-1.1.11.ebuild,
+  -nginx-1.1.12.ebuild:
+  Removing old
+
+*nginx-1.1.12-r1 (28 Dec 2011)
+
+  28 Dec 2011; Patrick Lauer <patrick@gentoo.org> +nginx-1.1.12-r1.ebuild,
+  metadata.xml, nginx-1.1.12.ebuild:
+  Add pcre-jit support
+
+*nginx-1.1.12 (27 Dec 2011)
+
+  27 Dec 2011; Patrick Lauer <patrick@gentoo.org> +nginx-1.1.12.ebuild:
+  Bump
+
+*nginx-1.1.11 (25 Dec 2011)
+
+  25 Dec 2011; Patrick Lauer <patrick@gentoo.org> +nginx-1.1.11.ebuild:
+  Bump for #393119, including bump of http_cache_purge to 1.5
+
+  06 Dec 2011; Sven Wegener <swegener@gentoo.org> files/nginx.init-r2:
+  Switch from opts to extra_started_commands.
+
+  24 Nov 2011; Benedikt Böhm <hollow@gentoo.org> -nginx-1.0.6.ebuild,
+  -nginx-1.0.8.ebuild, nginx-1.0.10.ebuild, -nginx-1.1.4.ebuild,
+  -nginx-1.1.6.ebuild:
+  add mp4 module wrt #363573; remove old ebuilds
+
+  22 Nov 2011; Tony Vroon <chainsaw@gentoo.org> nginx-1.0.10.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Michael "n0idx80" Harrison in security bug #389319.
+
+  22 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> nginx-1.0.10.ebuild:
+  x86 stable wrt bug #389319
+
+*nginx-1.1.8 (20 Nov 2011)
+*nginx-1.0.10 (20 Nov 2011)
+
+  20 Nov 2011; Benedikt Böhm <hollow@gentoo.org> +nginx-1.0.10.ebuild,
+  +nginx-1.1.8.ebuild:
+  version bump wrt #389319
+
+  31 Oct 2011; Benedikt Böhm <hollow@gentoo.org> nginx-1.0.8.ebuild,
+  nginx-1.1.6.ebuild:
+  fix location of README for cache purge module
+
+  28 Oct 2011; Benedikt Böhm <hollow@gentoo.org> nginx-1.0.8.ebuild,
+  nginx-1.1.6.ebuild:
+  fix commit SHAs from github
+
+*nginx-1.1.6 (28 Oct 2011)
+*nginx-1.0.8 (28 Oct 2011)
+
+  28 Oct 2011; Benedikt Böhm <hollow@gentoo.org>
+  -files/nginx-0.8.32-ey-balancer.patch, -nginx-1.0.4.ebuild,
+  +nginx-1.0.8.ebuild, -nginx-1.1.2.ebuild, +nginx-1.1.6.ebuild, metadata.xml:
+  version bump wrt #385965
+
+  04 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> nginx-1.0.6.ebuild:
+  x86 stable wrt bug #385035
+
+  30 Sep 2011; Steve Dibb <beandog@gentoo.org> nginx-1.0.6.ebuild:
+  amd64 stable, bug 385035
+
+*nginx-1.1.4 (30 Sep 2011)
+
+  30 Sep 2011; Benedikt Böhm <hollow@gentoo.org> -nginx-1.0.5.ebuild,
+  +nginx-1.1.4.ebuild, metadata.xml:
+  version bump wrt #383079
+
+  09 Sep 2011; Benedikt Böhm <hollow@gentoo.org> nginx-1.0.4.ebuild,
+  nginx-1.0.5.ebuild, nginx-1.0.6.ebuild, nginx-1.1.2.ebuild:
+  remove ipv6 warning wrt #382393
+
+*nginx-1.1.2 (07 Sep 2011)
+*nginx-1.0.6 (07 Sep 2011)
+
+  07 Sep 2011; Benedikt Böhm <hollow@gentoo.org> +nginx-1.0.6.ebuild,
+  +nginx-1.1.2.ebuild, files/nginx.init-r2, metadata.xml:
+  version bump wrt #381153. also fixes bugs #379477, #377713 and #373677.
 
 *nginx-1.0.5 (25 Jul 2011)
 

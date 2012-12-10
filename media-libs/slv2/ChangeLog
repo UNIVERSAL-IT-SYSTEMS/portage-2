@@ -1,6 +1,20 @@
 # ChangeLog for media-libs/slv2
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/slv2/ChangeLog,v 1.18 2009/11/07 18:07:34 volkmar Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/slv2/ChangeLog,v 1.22 2012/06/27 19:46:57 ssuominen Exp $
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> slv2-0.6.6.ebuild:
+  Pass LDFLAGS to LINKFLAGS for ./waf wrt #330197 by Gavin Pryke and Kacper
+  Kowalik.
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> slv2-0.6.6.ebuild:
+  Set active Python version to 2.x for ./waf which doesn't work with Python
+  3.x.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> slv2-0.6.6.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Apr 2012; Alexis Ballier <aballier@gentoo.org> slv2-0.6.6.ebuild:
+  allow media-libs/lv2 in addition to lv2core
 
   07 Nov 2009; Mounir Lamouri <volkmar@gentoo.org> slv2-0.6.6.ebuild:
   Keywording for ppc, bug 282006

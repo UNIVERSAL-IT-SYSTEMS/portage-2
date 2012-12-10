@@ -1,6 +1,106 @@
 # ChangeLog for app-i18n/fcitx
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/fcitx/ChangeLog,v 1.34 2010/12/19 02:48:24 qiaomuf Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/fcitx/ChangeLog,v 1.53 2012/10/29 08:48:14 yngwin Exp $
+
+  29 Oct 2012; Ben de Groot <yngwin@gentoo.org>
+  +files/fcitx-4.2.6.1-offline.patch, fcitx-4.2.6.1.ebuild:
+  Add offline patch to fix bug #440062. Make sure we use newest en_dict. Add
+  epatch_user.
+
+*fcitx-4.2.6.1 (27 Oct 2012)
+
+  27 Oct 2012; Ben de Groot <yngwin@gentoo.org> +fcitx-4.2.6.1.ebuild,
+  -fcitx-3.6.3.ebuild, -fcitx-4.0.0.ebuild, -fcitx-4.2.4.ebuild:
+  Version bump (bug #439706). Remove some old versions.
+
+  19 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> fcitx-4.2.1.ebuild:
+  ppc stable wrt bug#431902. Fix automagic fetching during build (already fixed
+  in testing ebuilds).
+
+*fcitx-4.2.5 (19 Jul 2012)
+
+  19 Jul 2012; Ben de Groot <yngwin@gentoo.org> +fcitx-4.2.5.ebuild:
+  Version bump. Upgrade to EAPI=4.
+
+*fcitx-4.2.4 (07 Jun 2012)
+
+  07 Jun 2012; Mu Qiao <qiaomuf@gentoo.org> +fcitx-4.2.4.ebuild, metadata.xml:
+  Version bump for fcitx-4.2.4
+
+  18 May 2012; Joseph Jezak <josejx@gentoo.org> fcitx-4.0.0.ebuild,
+  fcitx-4.0.1.ebuild, fcitx-4.2.1.ebuild, fcitx-4.2.3.ebuild:
+  Marked ~ppc/~ppc64.
+
+*fcitx-4.2.3 (15 May 2012)
+
+  15 May 2012; Mu Qiao <qiaomuf@gentoo.org> +fcitx-4.2.3.ebuild:
+  Version bump for fcitx-4.2.3
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> fcitx-3.6.3.ebuild,
+  fcitx-3.6.4.ebuild, fcitx-4.0.0.ebuild, fcitx-4.0.1.ebuild,
+  fcitx-4.2.1.ebuild, fcitx-4.2.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*fcitx-4.2.2 (23 Apr 2012)
+
+  23 Apr 2012; Mu Qiao <qiaomuf@gentoo.org> +fcitx-4.2.2.ebuild:
+  Version bump for fcitx-4.2.2
+
+  The ebuild is updated according to the one from gentoo-zh.
+
+  18 Apr 2012; Markus Meier <maekke@gentoo.org> fcitx-4.2.1.ebuild:
+  x86 stable, bug #409403
+
+  04 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> fcitx-4.2.1.ebuild:
+  Fix multilib-strict, bug 410797; add missing intltool depend. Acked by naota.
+
+  04 Apr 2012; Agostino Sarubbo <ago@gentoo.org> fcitx-4.2.1.ebuild:
+  Stable for amd64, wrt bug #409403
+
+  21 Mar 2012; Mu Qiao <qiaomuf@gentoo.org> fcitx-4.2.0-r2.ebuild,
+  fcitx-4.2.1.ebuild, metadata.xml:
+  Add qt and table use flag for >=fcitx-4.2.0 (bug #408955)
+
+*fcitx-4.2.1 (13 Mar 2012)
+
+  13 Mar 2012; Mu Qiao <qiaomuf@gentoo.org> -fcitx-4.1.2-r1.ebuild,
+  +fcitx-4.2.1.ebuild:
+  Version bump and remove old version
+
+*fcitx-4.2.0-r2 (24 Feb 2012)
+
+  24 Feb 2012; Mu Qiao <qiaomuf@gentoo.org> -fcitx-4.2.0-r1.ebuild,
+  +fcitx-4.2.0-r2.ebuild, +files/fcitx-4.2.0-fix-pango.patch:
+  Fix a bug when compiling without pango
+
+*fcitx-4.2.0-r1 (24 Feb 2012)
+*fcitx-4.1.2-r1 (24 Feb 2012)
+
+  24 Feb 2012; Mu Qiao <qiaomuf@gentoo.org> -fcitx-4.1.2.ebuild,
+  +fcitx-4.1.2-r1.ebuild, -fcitx-4.2.0.ebuild, +fcitx-4.2.0-r1.ebuild:
+  Revision bump wrt bug 405459
+
+*fcitx-4.2.0 (20 Feb 2012)
+
+  20 Feb 2012; Mu Qiao <qiaomuf@gentoo.org> +fcitx-4.2.0.ebuild:
+  Version bump
+
+  20 Feb 2012; Mu Qiao <qiaomuf@gentoo.org> fcitx-4.1.2.ebuild:
+  Fix gtk+ dependency (Bug #402017)
+
+  Thanks to wyqing for his help.
+
+*fcitx-4.1.2 (02 Nov 2011)
+
+  02 Nov 2011; Mu Qiao <qiaomuf@gentoo.org> fcitx-4.0.1.ebuild,
+  +fcitx-4.1.2.ebuild, metadata.xml:
+  Version bump for fcitx-4.1.2
+
+*fcitx-4.1.1 (12 Sep 2011)
+
+  12 Sep 2011; Mu Qiao <qiaomuf@gentoo.org> fcitx-4.0.1.ebuild,
+  +fcitx-4.1.1.ebuild, metadata.xml:
+  Version bump, fix old dependency
 
   19 Dec 2010; Mu Qiao <qiaomuf@gentoo.org> fcitx-4.0.1.ebuild,
   +files/fcitx-4.0.1-fix-pango.patch:
@@ -154,4 +254,3 @@
 
   25 May 2003; Alastair Tse <liquidx@gentoo.org> fcitx-1.8.5.ebuild:
   New ebuild for Chinese Input for X
-

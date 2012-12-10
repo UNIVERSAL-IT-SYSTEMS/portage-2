@@ -1,6 +1,36 @@
 # ChangeLog for sci-biology/primer3
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/primer3/ChangeLog,v 1.25 2011/03/09 11:25:06 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/primer3/ChangeLog,v 1.32 2012/07/19 12:21:52 jlec Exp $
+
+*primer3-2.3.1 (19 Jul 2012)
+
+  19 Jul 2012; Justin Lecher <jlec@gentoo.org> primer3-2.3.0.ebuild,
+  +primer3-2.3.1.ebuild:
+  Version BUmp
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> primer3-2.3.0.ebuild:
+  Marking primer3-2.3.0 ppc for bug 402053
+
+*primer3-2.3.0 (28 Feb 2012)
+
+  28 Feb 2012; Andrey Kislyuk <weaver@gentoo.org> -primer3-1.1.4.ebuild,
+  +primer3-2.3.0.ebuild:
+  Version bump, remove old
+
+  03 Dec 2011; Markos Chandras <hwoarang@gentoo.org> primer3-2.2.3.ebuild:
+  convert test statement to if;fi block because || die does not work on a
+  subshell
+
+  02 Dec 2011; Markos Chandras <hwoarang@gentoo.org> primer3-2.2.3.ebuild:
+  add missing sed. stable on amd64. bug #391531
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> primer3-2.2.3.ebuild:
+  x86 stable wrt bug #391531
+
+  23 Nov 2011; Justin Lecher <jlec@gentoo.org> -primer3-1.0.0.ebuild,
+  primer3-1.1.4.ebuild, primer3-1.1.4-r2.ebuild, primer3-2.2.3.ebuild:
+  Dropped old, respect LDFLAGS, don't mix CFLAGS and CXXFLAGS, move KEYWORDS
+  and fixes from ver-1 to 2
 
   09 Mar 2011; Justin Lecher <jlec@gentoo.org> +primer3-1.0.0.ebuild:
   Reanimate last stable version for ppc/ppc64

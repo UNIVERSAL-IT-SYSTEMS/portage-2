@@ -1,6 +1,47 @@
 # ChangeLog for dev-perl/log-dispatch
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/log-dispatch/ChangeLog,v 1.64 2011/07/29 11:00:08 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/log-dispatch/ChangeLog,v 1.75 2012/12/09 10:36:31 tove Exp $
+
+*log-dispatch-2.340.0 (09 Dec 2012)
+
+  09 Dec 2012; Torsten Veller <tove@gentoo.org> +log-dispatch-2.340.0.ebuild:
+  Version bump
+
+  12 Sep 2012; Johannes Huber <johu@gentoo.org> log-dispatch-2.320.0.ebuild:
+  Stable for x86, wrt bug #429022
+
+  12 Sep 2012; Agostino Sarubbo <ago@gentoo.org> log-dispatch-2.320.0.ebuild:
+  Stable for amd64, wrt bug #429022
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> log-dispatch-2.320.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*log-dispatch-2.320.0 (26 May 2012)
+
+  26 May 2012; Torsten Veller <tove@gentoo.org> +log-dispatch-2.320.0.ebuild:
+  Version bump
+
+*log-dispatch-2.310.0 (23 May 2012)
+
+  23 May 2012; Torsten Veller <tove@gentoo.org> +log-dispatch-2.310.0.ebuild:
+  Version bump
+
+  03 Feb 2012; Torsten Veller <tove@gentoo.org> -log-dispatch-2.22.ebuild:
+  Cleanup
+
+  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  log-dispatch-2.290.0.ebuild:
+  x86 stable wrt bug #393725
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> log-dispatch-2.22.ebuild,
+  log-dispatch-2.290.0.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  17 Dec 2011; Agostino Sarubbo <ago@gentoo.org> log-dispatch-2.290.0.ebuild:
+  Stable for AMD64, wrt bug #393725
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org> -log-dispatch-2.280.ebuild:
   Cleanup
@@ -272,4 +313,3 @@
   log-dispatch-2.06.ebuild:
   Bug 24864 for Request Tracker - Celestial Wizard
   <gentoo@dev.celestialwizard.org>
-

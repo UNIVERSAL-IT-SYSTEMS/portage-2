@@ -1,6 +1,83 @@
 # ChangeLog for app-cdr/brasero
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/brasero/ChangeLog,v 1.130 2011/07/19 13:14:46 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/brasero/ChangeLog,v 1.145 2012/11/07 21:44:04 tetromino Exp $
+
+  07 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  brasero-2.32.1-r1.ebuild, brasero-3.2.0-r1.ebuild, brasero-3.4.0.ebuild,
+  brasero-3.4.1.ebuild:
+  Slot gstreamer dependencies in preparation for gstreamer-1.0.
+
+  26 Aug 2012; Julian Ospald <hasufell@gentoo.org> brasero-2.32.1-r1.ebuild,
+  +files/brasero-2.32.1-underlinking.patch:
+  fix underlinking wrt #429280
+
+*brasero-3.4.1 (14 May 2012)
+
+  14 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +brasero-3.4.1.ebuild:
+  Bump, translation updates only.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> brasero-2.32.1-r1.ebuild,
+  brasero-3.2.0-r1.ebuild, brasero-3.4.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*brasero-3.4.0 (14 Apr 2012)
+
+  14 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +brasero-3.4.0.ebuild:
+  Version bump.
+
+  28 Jan 2012; Pacho Ramos <pacho@gentoo.org> -brasero-2.32.1.ebuild,
+  brasero-2.32.1-r1.ebuild:
+  Prevent people from mixing brasero-2 with nautilus-3, bug #397469. Drop old.
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> brasero-2.32.1-r1.ebuild:
+  amd64 stable, bug 393007
+
+  15 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  brasero-2.32.1.ebuild, brasero-2.32.1-r1.ebuild:
+  QA: eautoreconf should be before gnome2_src_prepare.
+
+*brasero-3.2.0-r1 (04 Nov 2011)
+
+  04 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -brasero-3.0.0.ebuild, +brasero-3.2.0-r1.ebuild,
+  +files/brasero-3.2.0-brasero.desktop.patch,
+  +files/brasero-3.2.0-brasero-nautilus.desktop.patch,
+  +files/brasero-3.2.0-drive-not-selected.patch, metadata.xml:
+  Bump to 3.2.0 from the gnome overlay, drop old. Add gstreamer plugins needed
+  for normal usage to rdepend. Notable changes: optional tracker support.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> brasero-2.32.1-r1.ebuild:
+  alpha/ia64/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> brasero-2.32.1-r1.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  brasero-2.32.1-r1.ebuild:
+  x86 stable wrt bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  brasero-2.32.1-r1.ebuild:
+  x86 stable wrt bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  brasero-2.32.1-r1.ebuild:
+  x86 stable wrt bug #385699
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> brasero-2.32.1-r1.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org> brasero-3.0.0.ebuild:
+  add ~arm, bug #379651
+
+*brasero-3.0.0 (19 Aug 2011)
+
+  19 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +files/brasero-2.91.6-build-plugins-against-local-library.patch,
+  +brasero-3.0.0.ebuild, metadata.xml:
+  Bump to 3.0.0, from gnome overlay for GNOME 3, drop keywords, bug 379651
 
 *brasero-2.32.1-r1 (19 Jul 2011)
 

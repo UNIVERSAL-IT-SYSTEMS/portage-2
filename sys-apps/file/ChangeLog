@@ -1,6 +1,107 @@
 # ChangeLog for sys-apps/file
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/file/ChangeLog,v 1.200 2011/07/08 21:08:34 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/file/ChangeLog,v 1.228 2012/11/06 06:58:25 ulm Exp $
+
+  06 Nov 2012; Ulrich Müller <ulm@gentoo.org> file-5.05.ebuild,
+  file-5.06.ebuild, file-5.07.ebuild, file-5.07-r1.ebuild, file-5.07-r2.ebuild,
+  file-5.07-r3.ebuild:
+  Change LICENSE to BSD-2 for remaining ebuilds, bug 263551.
+
+  19 Sep 2012; Mike Frysinger <vapier@gentoo.org> file-5.11.ebuild:
+  Use BUILD_{CC,CXX} when cross-compiling #435324 by Ambroz Bizjak.
+
+  06 Sep 2012; Mike Frysinger <vapier@gentoo.org> metadata.xml:
+  List upstream bugzilla.
+
+  26 Jul 2012; Mike Frysinger <vapier@gentoo.org> file-5.11.ebuild:
+  Drop -D_GNU_SOURCE as it does not appear to be needed anymore -- compiles
+  clean w/out it #428096 by Pacho Ramos.
+
+  22 Jul 2012; Jeroen Roovers <jer@gentoo.org> file-5.11.ebuild:
+  Stable for HPPA (bug #427368).
+
+  22 Jul 2012; Anthony G. Basile <blueness@gentoo.org> file-5.11.ebuild:
+  Stable ppc/ppc64, bug #427368
+
+  22 Jul 2012; Raúl Porcel <armin76@gentoo.org> file-5.11.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #427368
+
+  22 Jul 2012; Richard Freeman <rich0@gentoo.org> file-5.11.ebuild:
+  amd64 stable - 427368
+
+  21 Jul 2012; Jeff Horelick <jdhore@gentoo.org> file-5.11.ebuild:
+  marked x86 per bug 427368
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> file-5.11.ebuild:
+  keyword ~amd64-fbsd
+
+*file-5.11 (21 Feb 2012)
+
+  21 Feb 2012; Mike Frysinger <vapier@gentoo.org> +file-5.11.ebuild:
+  Version bump.
+
+  02 Feb 2012; Mike Gilbert <floppym@gentoo.org> file-5.05.ebuild,
+  file-5.06.ebuild, file-5.07.ebuild, file-5.07-r1.ebuild:
+  Restore copyright dates.
+
+  02 Feb 2012; Mike Gilbert <floppym@gentoo.org> file-5.05.ebuild,
+  file-5.06.ebuild, file-5.07-r1.ebuild, file-5.07-r2.ebuild,
+  file-5.07-r3.ebuild, file-5.07.ebuild, file-5.08.ebuild, file-5.09.ebuild,
+  file-5.10.ebuild:
+  Inherit toolchain-funcs explicitly. Quote WORKDIR.
+
+  31 Dec 2011; Mike Frysinger <vapier@gentoo.org> file-5.09.ebuild:
+  Mark ppc/ppc64 stable #393291.
+
+*file-5.10 (31 Dec 2011)
+
+  31 Dec 2011; Mike Frysinger <vapier@gentoo.org> +file-5.10.ebuild:
+  Version bump.
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org> file-5.09.ebuild:
+  Stable for AMD64, wrt bug #393291
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> file-5.09.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #393291
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> file-5.09.ebuild:
+  x86 stable wrt bug #393291
+
+  05 Dec 2011; Jeroen Roovers <jer@gentoo.org> file-5.09.ebuild:
+  Stable for HPPA (bug #393291).
+
+  17 Sep 2011; Mike Frysinger <vapier@gentoo.org> file-5.09.ebuild,
+  -files/file-5.09-cdf-arraycount.patch:
+  Upstream rebuilt tarball with the arraycount fix.
+
+*file-5.09 (16 Sep 2011)
+
+  16 Sep 2011; Mike Frysinger <vapier@gentoo.org> +file-5.09.ebuild,
+  +files/file-5.09-cdf-arraycount.patch:
+  Version bump.
+
+  09 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> file-5.07-r3.ebuild:
+  ppc/ppc64 stable wrt #377723
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> file-5.07-r3.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #377723
+
+  07 Aug 2011; Markos Chandras <hwoarang@gentoo.org> file-5.07-r3.ebuild:
+  Stable on amd64 wrt bug #377723
+
+  07 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> file-5.07-r3.ebuild:
+  x86 stable wrt bug #377723
+
+  05 Aug 2011; Jeroen Roovers <jer@gentoo.org> file-5.07-r3.ebuild:
+  Stable for HPPA (bug #377723).
+
+  04 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> file-5.08.ebuild:
+  Change license from as-is to BSD-2 per COPYING wrt #263551 by Justin Bronder
+
+*file-5.08 (04 Aug 2011)
+
+  04 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> +file-5.08.ebuild:
+  Version bump.
 
 *file-5.07-r3 (08 Jul 2011)
 

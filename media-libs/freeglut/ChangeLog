@@ -1,6 +1,63 @@
 # ChangeLog for media-libs/freeglut
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/freeglut/ChangeLog,v 1.78 2011/04/04 18:46:24 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/freeglut/ChangeLog,v 1.95 2012/10/02 14:22:29 jer Exp $
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> freeglut-2.8.0-r1.ebuild:
+  Stable for HPPA (bug #433307).
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> freeglut-2.8.0-r1.ebuild:
+  arm/ia64/sh/sparc/x86 stable wrt #433307
+
+  28 Sep 2012; Anthony G. Basile <blueness@gentoo.org> freeglut-2.8.0-r1.ebuild:
+  stable ppc, bug #433307
+
+  28 Sep 2012; Anthony G. Basile <blueness@gentoo.org> freeglut-2.8.0-r1.ebuild:
+  stable ppc64, bug #433307
+
+  28 Sep 2012; Agostino Sarubbo <ago@gentoo.org> freeglut-2.8.0-r1.ebuild:
+  Stable for amd64, wrt bug #433307
+
+  27 Sep 2012; Matt Turner <mattst88@gentoo.org> freeglut-2.8.0-r1.ebuild:
+  Stable on alpha, bug 433307.
+
+*freeglut-2.8.0-r1 (30 Jul 2012)
+
+  30 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +freeglut-2.8.0-r1.ebuild:
+  Don't build demo that fails with newer mesa, bug #428382.
+
+  10 May 2012; Alexis Ballier <aballier@gentoo.org> freeglut-2.8.0.ebuild:
+  keyword ~amd64-fbsd
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> freeglut-2.8.0.ebuild:
+  alpha/ia64/sh/sparc stable wrt #405063
+
+  12 Mar 2012; Markus Meier <maekke@gentoo.org> freeglut-2.8.0.ebuild:
+  arm stable, bug #405063
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> freeglut-2.8.0.ebuild:
+  ppc64 stable wrt #405063
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> freeglut-2.8.0.ebuild:
+  Marking freeglut-2.8.0 ppc for bug 405063
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> freeglut-2.8.0.ebuild:
+  x86 stable wrt bug #405063
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> freeglut-2.8.0.ebuild:
+  Stable for HPPA (bug #405063).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> freeglut-2.8.0.ebuild:
+  Stable for amd64, wrt bug #405063
+
+*freeglut-2.8.0 (16 Jan 2012)
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +freeglut-2.8.0.ebuild:
+  Version bump.
+
+  02 Aug 2011; Matt Turner <mattst88@gentoo.org> metadata.xml:
+  Remove redundant maintainer (x11@gentoo.org) from metadata.xml. Package is
+  already in x11 herd.
 
   04 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org> freeglut-2.6.0.ebuild:
   Make static libs optional. Punt .la file.
@@ -281,4 +338,3 @@
   +freeglut-2.2.0.ebuild:
   Initial import. Thanks to Tamer Fahmy <tamer@tammura.at> for the ebuild
   submission. This closes bug 36783.
-

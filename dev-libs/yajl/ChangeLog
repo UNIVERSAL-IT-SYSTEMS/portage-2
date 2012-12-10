@@ -1,6 +1,64 @@
 # ChangeLog for dev-libs/yajl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/yajl/ChangeLog,v 1.10 2011/07/07 04:50:38 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/yajl/ChangeLog,v 1.28 2012/05/29 15:42:54 ranger Exp $
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> yajl-2.0.3.ebuild:
+  Marking yajl-2.0.3 ppc64 for bug 402287
+
+  29 May 2012; Michael Weber <xmw@gentoo.org> yajl-2.0.3.ebuild:
+  ppc stable (bug 402287)
+
+  18 May 2012; Alexis Ballier <aballier@gentoo.org> yajl-2.0.4.ebuild:
+  keyword ~amd64-fbsd
+
+  12 May 2012; Markus Meier <maekke@gentoo.org> yajl-2.0.3.ebuild:
+  arm stable, bug #402287
+
+  08 May 2012; Jeroen Roovers <jer@gentoo.org> yajl-2.0.3.ebuild:
+  Stable for HPPA (bug #402287).
+
+  06 May 2012; Agostino Sarubbo <ago@gentoo.org> yajl-2.0.3.ebuild:
+  Stable for amd64, wrt bug #402287
+
+*yajl-2.0.4 (06 May 2012)
+
+  06 May 2012; Hans de Graaff <graaff@gentoo.org> +yajl-2.0.4.ebuild:
+  Version bump. Closes bug 414759, thanks to Johan Bergström for reporting.
+
+  05 May 2012; Markus Meier <maekke@gentoo.org> yajl-2.0.3.ebuild:
+  x86 stable, bug #402287
+
+  12 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> yajl-2.0.3.ebuild:
+  If we build static libraries, we should also install them.
+
+  07 Mar 2012; Naohiro Aota <naota@gentoo.org> yajl-2.0.3.ebuild:
+  Add ~x86-fbsd.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> yajl-2.0.3.ebuild:
+  Add Prefix keywords, bug #396547
+
+*yajl-2.0.3 (25 Dec 2011)
+
+  25 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org> +yajl-2.0.3.ebuild:
+  Version bump, thanks to Johan Bergström in bug #394985. Also shorten src_test
+  and avoid setting S which is supposedly read-only in phases in EAPI=4 and
+  later.
+
+  23 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> yajl-2.0.2.ebuild:
+  Make static libs optional
+
+  18 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> yajl-1.0.11.ebuild:
+  ppc/ppc64 stable wrt #382641
+
+  17 Oct 2011; Markus Meier <maekke@gentoo.org> yajl-1.0.11.ebuild,
+  yajl-2.0.2.ebuild:
+  arm stable, bug #382641
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> yajl-1.0.11.ebuild:
+  Stable for HPPA (bug #382641).
+
+  13 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> yajl-2.0.2.ebuild:
+  Bump to eapi4.
 
   07 Jul 2011; Hans de Graaff <graaff@gentoo.org> yajl-2.0.2.ebuild:
   Move back into the normal slot since this package is not designed for

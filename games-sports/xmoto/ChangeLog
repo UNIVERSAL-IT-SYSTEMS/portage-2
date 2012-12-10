@@ -1,6 +1,48 @@
 # ChangeLog for games-sports/xmoto
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-sports/xmoto/ChangeLog,v 1.57 2011/07/21 10:40:50 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-sports/xmoto/ChangeLog,v 1.68 2012/10/11 07:09:09 blueness Exp $
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org> xmoto-0.5.10.ebuild:
+  stable ppc, bug #432078
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xmoto-0.5.10.ebuild:
+  x86 stable wrt bug #432078
+
+  21 Aug 2012; Agostino Sarubbo <ago@gentoo.org> xmoto-0.5.10.ebuild:
+  Stable for amd64, wrt bug #432078
+
+*xmoto-0.5.10 (16 Jul 2012)
+
+  16 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> +xmoto-0.5.10.ebuild,
+  +files/xmoto-0.5.10-gcc47.patch, +files/xmoto-0.5.10-utf8.patch:
+  version bump (bug #426216)
+
+  12 Jun 2012; Michael Sterrett <mr_bones_@gentoo.org> xmoto-0.5.9.ebuild,
+  +files/xmoto-0.5.9-gcc47.patch:
+  Add patch to build with gcc47 submitted by Philipp Middendorf via bug #420799
+
+  17 May 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  -files/0.5.7-libpng.patch, -xmoto-0.5.4.ebuild, -xmoto-0.5.7.ebuild,
+  files/xmoto-0.5.9-libpng.patch, files/xmoto-0.5.9-utf8.patch:
+  old
+
+  22 Apr 2012; Markus Meier <maekke@gentoo.org> xmoto-0.5.9.ebuild:
+  x86 stable, bug #411779
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> xmoto-0.5.9.ebuild:
+  Marking xmoto-0.5.9 ppc for bug 411779
+
+  14 Apr 2012; Agostino Sarubbo <ago@gentoo.org> xmoto-0.5.9.ebuild:
+  Stable for amd64, wrt bug #411779
+
+*xmoto-0.5.9 (13 Mar 2012)
+
+  13 Mar 2012; Michael Sterrett <mr_bones_@gentoo.org> +xmoto-0.5.9.ebuild,
+  +files/xmoto-0.5.9-libpng.patch, +files/xmoto-0.5.9-utf8.patch:
+  version bump with patch from Mike Limansky (bug #398701)
+
+  10 Jan 2012; Brent Baude <ranger@gentoo.org> xmoto-0.5.7.ebuild:
+  Marking xmoto-0.5.7 ppc for bug 375687
 
   21 Jul 2011; Markus Meier <maekke@gentoo.org> xmoto-0.5.7.ebuild:
   amd64/x86 stable, bug #375687
@@ -232,4 +274,3 @@
   13 Aug 2006; Stefan Schweizer <genstef@gentoo.org>
   +files/xmoto-as-needed.patch, +metadata.xml, +xmoto-0.2.0.ebuild:
   New ebuild thanks to many contributors in bug 107968
-

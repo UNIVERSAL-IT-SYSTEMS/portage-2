@@ -1,6 +1,37 @@
 # ChangeLog for media-libs/silgraphite
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/silgraphite/ChangeLog,v 1.17 2010/12/14 04:03:28 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/silgraphite/ChangeLog,v 1.27 2012/05/09 13:17:05 aballier Exp $
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> silgraphite-2.3.1.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> silgraphite-2.3.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  11 Oct 2011; Pacho Ramos <pacho@gentoo.org> silgraphite-2.3.1.ebuild:
+  Drop DEPRECATED flags, bug #385533
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> silgraphite-2.3.1.ebuild:
+  Stable for HPPA (bug #355085).
+
+  18 Sep 2011; Raúl Porcel <armin76@gentoo.org> silgraphite-2.3.1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #355085
+
+  14 Aug 2011; Markus Meier <maekke@gentoo.org> silgraphite-2.3.1.ebuild:
+  arm stable, bug #355085
+
+  12 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> silgraphite-2.3.1.ebuild:
+  ppc/ppc64 stable wrt #355085
+
+  12 Aug 2011; Thomas Kahle <tomka@gentoo.org> silgraphite-2.3.1.ebuild:
+  x86 stable per bug 355085
+
+  11 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  silgraphite-2.3.1.ebuild:
+  Update to eapi4. Add switch for static libs. Punt .la files.
+
+  09 Aug 2011; Markos Chandras <hwoarang@gentoo.org> silgraphite-2.3.1.ebuild:
+  Stable on amd64 wrt bug #355085
 
   14 Dec 2010; Matt Turner <mattst88@gentoo.org> silgraphite-2.3.1.ebuild:
   Add ~mips, bug 300068

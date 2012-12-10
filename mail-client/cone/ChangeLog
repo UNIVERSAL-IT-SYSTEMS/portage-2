@@ -1,6 +1,33 @@
 # ChangeLog for mail-client/cone
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/cone/ChangeLog,v 1.41 2011/07/13 19:43:52 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/cone/ChangeLog,v 1.48 2012/10/16 10:59:22 eras Exp $
+
+*cone-0.90-r1 (16 Oct 2012)
+
+  16 Oct 2012; Eray Aslan <eras@gentoo.org> +cone-0.90-r1.ebuild,
+  +files/cone-0.90-gnutls3.patch:
+  Fix building with gnutls-3 - bug #421445
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> cone-0.90.ebuild:
+  x86 stable wrt bug #434296
+
+  08 Sep 2012; Anthony G. Basile <blueness@gentoo.org> cone-0.90.ebuild:
+  Stable ppc, bug #434296
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> cone-0.90.ebuild:
+  Stable for amd64, wrt bug #434296
+
+*cone-0.90 (04 May 2012)
+
+  04 May 2012; Eray Aslan <eras@gentoo.org> +cone-0.90.ebuild:
+  version bump
+
+  07 Feb 2012; Tim Harder <radhermit@gentoo.org> -cone-0.84.20100819-r1.ebuild,
+  -files/cone-0.84.20100819-skip-rfc2045-test.patch, -cone-0.86.ebuild:
+  Remove old.
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> cone-0.89.ebuild:
+  Marking cone-0.89 ppc for bug 373155
 
   13 Jul 2011; Markus Meier <maekke@gentoo.org> cone-0.89.ebuild:
   x86 stable, bug #373155
@@ -192,4 +219,3 @@
   courier. This has been living in my overlay for awhile, and I've had a few
   other people test it. Let me know if you give this a try and it works or
   doesn't.
-

@@ -1,6 +1,95 @@
 # ChangeLog for dev-ruby/hoe
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/hoe/ChangeLog,v 1.117 2011/07/19 07:46:35 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/hoe/ChangeLog,v 1.140 2012/11/06 16:52:00 jer Exp $
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> hoe-2.12.5.ebuild:
+  Stable for HPPA (bug #411507).
+
+  27 Oct 2012; Raúl Porcel <armin76@gentoo.org> hoe-2.12.5.ebuild:
+  s390/sh stable wrt #411507
+
+  21 Oct 2012; Raúl Porcel <armin76@gentoo.org> hoe-2.12.5.ebuild:
+  alpha/ia64/sparc stable wrt #411507
+
+  25 Jul 2012; Anthony G. Basile <blueness@gentoo.org> hoe-2.12.5.ebuild:
+  Stable ppc64, bug #411507
+
+  22 Jul 2012; <nixnut@gentoo.org> hoe-2.12.5.ebuild:
+  ppc stable #411507
+
+  28 Jun 2012; Hans de Graaff <graaff@gentoo.org> hoe-2.13.0.ebuild:
+  Add rdoc as a runtime dependency for the publish task. It is possible for
+  packages to turn off the rdoc dependency, but the default is to enable it and
+  simple initializing the Hoe object already requires it. Fixes bug 423883.
+
+  25 Jun 2012; Andreas Schuerch <nativemad@gentoo.org> hoe-2.12.5.ebuild:
+  x86 stable, see bug 411507
+
+  27 May 2012; Markus Meier <maekke@gentoo.org> hoe-2.12.5.ebuild:
+  arm stable, bug #411507
+
+  26 May 2012; Hans de Graaff <graaff@gentoo.org> hoe-2.13.0.ebuild:
+  Add rdoc also as a test dependency also for the latest version, not trivial
+  to avoid it. Fixes bug 417581.
+
+  26 May 2012; Hans de Graaff <graaff@gentoo.org> hoe-2.12.5.ebuild:
+  Add rdoc also as a test dependency. Fixes bug 417581.
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> hoe-2.12.5.ebuild:
+  Stable for amd64, wrt bug #411507
+
+  20 May 2012; Hans de Graaff <graaff@gentoo.org> -hoe-2.12.2.ebuild,
+  -hoe-2.12.3.ebuild, -hoe-2.12.4.ebuild:
+  Remove old versions.
+
+*hoe-2.13.0 (24 Jan 2012)
+
+  24 Jan 2012; Hans de Graaff <graaff@gentoo.org> +hoe-2.13.0.ebuild:
+  Version bump.
+
+*hoe-2.12.5 (15 Jan 2012)
+
+  15 Jan 2012; Hans de Graaff <graaff@gentoo.org> +hoe-2.12.5.ebuild:
+  Version bump.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> hoe-2.12.4.ebuild:
+  Add Prefix keywords, bug #396547
+
+*hoe-2.12.4 (18 Dec 2011)
+
+  18 Dec 2011; Hans de Graaff <graaff@gentoo.org> +hoe-2.12.4.ebuild:
+  Version bump.
+
+  10 Nov 2011; Naohiro Aota <naota@gentoo.org> hoe-2.12.3.ebuild:
+  Add ~x86-fbsd
+
+  12 Sep 2011; Hans de Graaff <graaff@gentoo.org> hoe-2.12.3.ebuild:
+  Depend on rdoc gem since the code explicitly requires it now. Fixes 381233.
+
+*hoe-2.12.3 (10 Sep 2011)
+
+  10 Sep 2011; Hans de Graaff <graaff@gentoo.org> +hoe-2.12.3.ebuild:
+  Version bump.
+
+  10 Sep 2011; Hans de Graaff <graaff@gentoo.org> -hoe-2.9.0.ebuild,
+  -hoe-2.9.1.ebuild, -hoe-2.10.0.ebuild, -hoe-2.11.0.ebuild,
+  -hoe-2.12.0.ebuild:
+  Remove old versions.
+
+*hoe-2.12.2 (26 Aug 2011)
+
+  26 Aug 2011; Hans de Graaff <graaff@gentoo.org> +hoe-2.12.2.ebuild:
+  Version bump.
+
+*hoe-2.12.0 (20 Aug 2011)
+
+  20 Aug 2011; Hans de Graaff <graaff@gentoo.org> +hoe-2.12.0.ebuild:
+  Version bump.
+
+*hoe-2.11.0 (10 Aug 2011)
+
+  10 Aug 2011; Hans de Graaff <graaff@gentoo.org> +hoe-2.11.0.ebuild:
+  Version bump.
 
 *hoe-2.10.0 (19 Jul 2011)
 

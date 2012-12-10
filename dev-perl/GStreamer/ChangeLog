@@ -1,6 +1,28 @@
 # ChangeLog for dev-perl/GStreamer
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/GStreamer/ChangeLog,v 1.12 2011/07/30 08:17:00 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/GStreamer/ChangeLog,v 1.18 2012/06/24 13:00:10 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  03 Jun 2012; Torsten Veller <tove@gentoo.org> -GStreamer-0.09.ebuild,
+  -GStreamer-0.160.0.ebuild:
+  Cleanup
+
+  18 May 2012; Jeff Horelick <jdhore@gentoo.org> GStreamer-0.170.0.ebuild:
+  marked x86 per bug 412991
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> GStreamer-0.09.ebuild,
+  GStreamer-0.160.0.ebuild, GStreamer-0.170.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  22 Apr 2012; Agostino Sarubbo <ago@gentoo.org> GStreamer-0.170.0.ebuild:
+  Stable for amd64, wrt bug #412991
+
+*GStreamer-0.170.0 (28 Feb 2012)
+
+  28 Feb 2012; Torsten Veller <tove@gentoo.org> +GStreamer-0.170.0.ebuild:
+  Version bump
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> -GStreamer-0.15.ebuild:
   Cleanup
@@ -53,4 +75,3 @@
   19 Nov 2006; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +GStreamer-0.09.ebuild:
   Bug 110995 for metalgod, ebuild originally from Ed
-

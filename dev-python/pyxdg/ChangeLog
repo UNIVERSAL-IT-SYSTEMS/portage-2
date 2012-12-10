@@ -1,6 +1,106 @@
 # ChangeLog for dev-python/pyxdg
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyxdg/ChangeLog,v 1.77 2011/02/08 22:53:16 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyxdg/ChangeLog,v 1.102 2012/12/09 14:53:30 mgorny Exp $
+
+  09 Dec 2012; Michał Górny <mgorny@gentoo.org> pyxdg-0.25.ebuild:
+  Add PYTHON_USEDEP on nosetests.
+
+*pyxdg-0.25 (09 Dec 2012)
+
+  09 Dec 2012; Michał Górny <mgorny@gentoo.org> +pyxdg-0.25.ebuild:
+  Version bump. Migrate to distutils-r1.
+
+  12 Nov 2012; Tim Harder <radhermit@gentoo.org> -pyxdg-0.19.ebuild:
+  Remove old.
+
+*pyxdg-0.24 (12 Nov 2012)
+
+  12 Nov 2012; Tim Harder <radhermit@gentoo.org> +pyxdg-0.24.ebuild:
+  Version bump (bug #442836). Enable tests and remove examples use flag (don't
+  install tests as examples).
+
+  07 Oct 2012; nixnut <nixnut@gentoo.org> pyxdg-0.23.ebuild:
+  ppc stable #432384
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> pyxdg-0.23.ebuild:
+  Marking pyxdg-0.23 ppc64 for bug 432384
+
+  11 Sep 2012; Raúl Porcel <armin76@gentoo.org> pyxdg-0.23.ebuild:
+  alpha/ia64/sparc stable wrt #432384
+
+  01 Sep 2012; Markus Meier <maekke@gentoo.org> pyxdg-0.23.ebuild:
+  arm stable, bug #432384
+
+  24 Aug 2012; Jeroen Roovers <jer@gentoo.org> pyxdg-0.23.ebuild:
+  Stable for HPPA (bug #432384).
+
+  23 Aug 2012; Johannes Huber <johu@gentoo.org> pyxdg-0.23.ebuild:
+  Stable for x86, wrt bug #432384
+
+  23 Aug 2012; Agostino Sarubbo <ago@gentoo.org> pyxdg-0.23.ebuild:
+  Stable for amd64, wrt bug #432384
+
+  30 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> -pyxdg-0.22.ebuild:
+  old
+
+*pyxdg-0.23 (30 Jul 2012)
+
+  30 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +pyxdg-0.23.ebuild:
+  Version bump.
+
+  30 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> -pyxdg-0.20.ebuild,
+  -pyxdg-0.21.ebuild:
+  old
+
+*pyxdg-0.22 (29 Jul 2012)
+
+  29 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +pyxdg-0.22.ebuild:
+  Version bump.
+
+*pyxdg-0.21 (25 Jul 2012)
+
+  25 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +pyxdg-0.21.ebuild:
+  Version bump.
+
+  27 Jun 2012; Mike Gilbert <floppym@gentoo.org> pyxdg-0.20.ebuild:
+  Simplify PYTHON_DEPEND.
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -pyxdg-0.20_rc1.ebuild,
+  -pyxdg-0.20_rc1_p20120624.ebuild:
+  old
+
+*pyxdg-0.20 (27 Jun 2012)
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +pyxdg-0.20.ebuild:
+  Version bump.
+
+  27 Jun 2012; Mike Gilbert <floppym@gentoo.org> pyxdg-0.19.ebuild,
+  pyxdg-0.20_rc1.ebuild, pyxdg-0.20_rc1_p20120624.ebuild:
+  Relax python restrictions based on advice from Arfrever. May resolve bug
+  422991.
+
+*pyxdg-0.20_rc1_p20120624 (24 Jun 2012)
+
+  24 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +pyxdg-0.20_rc1_p20120624.ebuild:
+  Use snapshot to relicense Menu.py with LGPL-2 and incorporate
+  -subprocess.patch.
+
+  20 Jun 2012; Marien Zwart <marienz@gentoo.org> pyxdg-0.20_rc1.ebuild:
+  Update SRC_URI again to use dev.gentoo.org instead of mirror://gentoo/ (bug
+  #422639).
+
+  20 Jun 2012; Marien Zwart <marienz@gentoo.org> pyxdg-0.20_rc1.ebuild:
+  Use gentoo's mirrors for the snapshot as the cgit-generated one changes (bug
+  #422539).
+
+*pyxdg-0.20_rc1 (20 Jun 2012)
+
+  20 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +pyxdg-0.20_rc1.ebuild:
+  Version bump to release candidate for Python 3.x support.
+
+  09 Mar 2012; Patrick Lauer <patrick@gentoo.org> pyxdg-0.19.ebuild:
+  Python dependency fix for #407221
 
   08 Feb 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   -pyxdg-0.17-r2.ebuild, -files/pyxdg-0.17-respect_XDG_MENU_PREFIX.patch,
@@ -278,4 +378,3 @@
   08 Aug 2003; Heinrich Wendel <lanius@gentoo.org> metadata.xml,
   pyxdg-1.0.ebuild:
   initial ebuild
-

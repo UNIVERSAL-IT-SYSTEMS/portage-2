@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/pcb/pcb-20100929.ebuild,v 1.9 2011/06/28 19:56:04 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/pcb/pcb-20100929.ebuild,v 1.11 2012/10/24 19:36:23 ulm Exp $
 
 EAPI="3"
 
@@ -21,7 +21,7 @@ CDEPEND="gif? ( >=media-libs/gd-2.0.23 )
 		dbus? ( sys-apps/dbus ) )
 	jpeg? ( >=media-libs/gd-2.0.23[jpeg] )
 	motif? ( !gtk? (
-		>=x11-libs/openmotif-2.3:0
+		>=x11-libs/motif-2.3:0
 		dbus? ( sys-apps/dbus )
 		xrender? ( >=x11-libs/libXrender-0.9 ) ) )
 	nelma? ( >=media-libs/gd-2.0.23 )
@@ -38,7 +38,7 @@ DEPEND="${CDEPEND}
 		sci-electronics/gerbv
 	)
 	>=dev-util/intltool-0.35
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 RDEPEND="${CDEPEND}

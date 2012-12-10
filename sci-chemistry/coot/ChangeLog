@@ -1,6 +1,71 @@
 # ChangeLog for sci-chemistry/coot
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/coot/ChangeLog,v 1.41 2011/07/16 13:14:36 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/coot/ChangeLog,v 1.54 2012/10/06 16:19:58 jlec Exp $
+
+*coot-0.7 (06 Oct 2012)
+
+  06 Oct 2012; Justin Lecher <jlec@gentoo.org> -coot-0.7_pre4040.ebuild,
+  -coot-0.7_pre4266.ebuild, +coot-0.7.ebuild,
+  +files/coot-0.7-clipper-config.patch, +files/coot-0.7-goocanvas.patch,
+  +files/coot-0.7-mmdb-config.patch, +files/coot-0.7-ssm.patch,
+  -files/coot-0.7_pre4040-clipper-config.patch,
+  -files/coot-0.7_pre4040-gl.patch, -files/coot-0.7_pre4040-goocanvas.patch,
+  -files/coot-0.7_pre4040-libpng-1.5.patch,
+  -files/coot-0.7_pre4040-mmdb-config.patch, -files/coot-0.7_pre4040-ssm.patch,
+  -files/coot-0.7_pre4040-test.patch,
+  -files/coot-0.7_pre4266-clipper-config.patch,
+  -files/coot-0.7_pre4266-goocanvas.patch,
+  -files/coot-0.7_pre4266-mmdb-config.patch, -files/coot-0.7_pre4266-ssm.patch:
+  Version Bump, #437304; drop prereleases
+
+*coot-0.7_pre4266 (11 Jul 2012)
+
+  11 Jul 2012; Justin Lecher <jlec@gentoo.org> +coot-0.7_pre4266.ebuild,
+  +files/coot-0.7_pre4266-clipper-config.patch,
+  +files/coot-0.7_pre4266-goocanvas.patch,
+  +files/coot-0.7_pre4266-mmdb-config.patch, +files/coot-0.7_pre4266-ssm.patch:
+  Version Bump, fixes compilation with gcc-4.7, #425836
+
+  07 Mar 2012; Justin Lecher <jlec@gentoo.org> coot-0.6.2.ebuild,
+  coot-0.6.2-r1.ebuild, coot-0.7_pre4040.ebuild:
+  Fix sandbox violation, #407311
+
+*coot-0.7_pre4040 (06 Mar 2012)
+
+  06 Mar 2012; Justin Lecher <jlec@gentoo.org> coot-0.6.2-r1.ebuild,
+  +coot-0.7_pre4040.ebuild, +files/coot-0.7_pre4040-clipper-config.patch,
+  +files/coot-0.7_pre4040-gl.patch, +files/coot-0.7_pre4040-goocanvas.patch,
+  +files/coot-0.7_pre4040-libpng-1.5.patch,
+  +files/coot-0.7_pre4040-mmdb-config.patch, +files/coot-0.7_pre4040-ssm.patch,
+  +files/coot-0.7_pre4040-test.patch:
+  Adding pre release version from svn
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -files/0.6.1-libpng14.patch, -coot-0.6.1.ebuild:
+  old
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> coot-0.6.2.ebuild:
+  x86 stable wrt bug #385759
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> coot-0.6.2.ebuild:
+  amd64 stable wrt #385759
+
+  07 Oct 2011; Justin Lecher <jlec@gentoo.org> coot-0.6.2-r1.ebuild:
+  Readded dropped flag-o-matic.eclass, found by ssuominen
+
+*coot-0.6.2-r1 (07 Oct 2011)
+
+  07 Oct 2011; Justin Lecher <jlec@gentoo.org> +coot-0.6.2-r1.ebuild:
+  Moved to autotools-utils.eclass in order to have correct .a/la file handling,
+  #385865
+
+  06 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> coot-0.6.2.ebuild:
+  Pass -Wl,--no-as-needed with USE="openmp" and <sys-devel/libtool-2.4-r2 wrt
+  #385813 by Agostino Sarubbo
+
+  14 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +files/0.6.2-libpng15.patch, coot-0.6.2.ebuild:
+  Fix building with libpng15 wrt #378349 by Diego Elio Pettenò
 
   16 Jul 2011; Justin Lecher <jlec@gentoo.org> +files/0.6.2-ssm.patch,
   coot-0.6.2.ebuild:

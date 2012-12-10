@@ -1,6 +1,55 @@
 # ChangeLog for dev-perl/IO-Socket-INET6
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/IO-Socket-INET6/ChangeLog,v 1.33 2011/04/03 06:22:35 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/IO-Socket-INET6/ChangeLog,v 1.46 2012/06/24 12:59:22 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  03 Jun 2012; Torsten Veller <tove@gentoo.org> -IO-Socket-INET6-2.63.ebuild,
+  -IO-Socket-INET6-2.670.0.ebuild:
+  Cleanup
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org>
+  IO-Socket-INET6-2.690.0.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #404673
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> IO-Socket-INET6-2.690.0.ebuild:
+  Marking IO-Socket-INET6-2.690.0 ppc64 for bug 404673
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> IO-Socket-INET6-2.690.0.ebuild:
+  Marking IO-Socket-INET6-2.690.0 ppc for bug 404673
+
+  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org>
+  IO-Socket-INET6-2.690.0.ebuild:
+  marked x86 per bug 404673
+
+  30 Mar 2012; Markus Meier <maekke@gentoo.org> IO-Socket-INET6-2.690.0.ebuild:
+  arm stable, bug #404673
+
+  29 Mar 2012; Jeroen Roovers <jer@gentoo.org> IO-Socket-INET6-2.690.0.ebuild:
+  Stable for HPPA (bug #404673).
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org>
+  IO-Socket-INET6-2.690.0.ebuild:
+  Stable for amd64, wrt bug #404673
+
+  16 Dec 2011; Naohiro Aota <naota@gentoo.org> IO-Socket-INET6-2.690.0.ebuild:
+  Add ~x86-fbsd
+
+*IO-Socket-INET6-2.690.0 (30 Nov 2011)
+
+  30 Nov 2011; Torsten Veller <tove@gentoo.org>
+  +IO-Socket-INET6-2.690.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -IO-Socket-INET6-2.670.ebuild:
+  Cleanup
+
+*IO-Socket-INET6-2.670.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +IO-Socket-INET6-2.670.0.ebuild:
+  Change version scheme
 
   03 Apr 2011; Torsten Veller <tove@gentoo.org> -IO-Socket-INET6-2.660.ebuild:
   Cleanup
@@ -138,4 +187,3 @@
   21 Nov 2005; <mcumming@gentoo.org> +metadata.xml,
   +IO-Socket-INET6-2.51.ebuild:
   Optional dep for spamassassin
-

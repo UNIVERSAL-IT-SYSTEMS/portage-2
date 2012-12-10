@@ -1,6 +1,38 @@
 # ChangeLog for dev-ruby/main
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/main/ChangeLog,v 1.6 2010/11/26 12:24:19 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/main/ChangeLog,v 1.12 2012/10/05 10:20:38 graaff Exp $
+
+*main-5.1.0 (05 Oct 2012)
+
+  05 Oct 2012; Hans de Graaff <graaff@gentoo.org> +main-5.1.0.ebuild:
+  Version bump.
+
+  26 Aug 2012; Hans de Graaff <graaff@gentoo.org> -main-4.2.0-r1.ebuild,
+  -main-4.4.0.ebuild, -main-5.0.0.ebuild:
+  Cleanup.
+
+*main-5.0.1 (13 May 2012)
+
+  13 May 2012; Hans de Graaff <graaff@gentoo.org> +main-5.0.1.ebuild:
+  Version bump.
+
+  29 Apr 2012; Thomas Kahle <tomka@gentoo.org> main-5.0.0.ebuild:
+  marked ~x86 per bug 395157
+
+  06 Mar 2012; Hans de Graaff <graaff@gentoo.org> -main-4.8.1.ebuild,
+  +main-5.0.0.ebuild:
+  Remove version broken with newer dev-ruby/map.
+
+*main-5.0.0 (06 Mar 2012)
+
+  06 Mar 2012; Hans de Graaff <graaff@gentoo.org> +main-5.0.0.ebuild:
+  Version bump. Also fixes problems reported in bug 395157.
+
+*main-4.8.1 (18 Dec 2011)
+
+  18 Dec 2011; Hans de Graaff <graaff@gentoo.org> +main-4.8.1.ebuild:
+  Version bump. Drop x86 keyword due to new dev-ruby/map dependency, bug
+  395157.
 
 *main-4.4.0 (26 Nov 2010)
 

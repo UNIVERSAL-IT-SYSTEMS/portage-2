@@ -1,6 +1,55 @@
 # ChangeLog for media-libs/wxsvg
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/wxsvg/ChangeLog,v 1.26 2011/05/06 07:11:05 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/wxsvg/ChangeLog,v 1.38 2012/12/08 22:06:41 ago Exp $
+
+  08 Dec 2012; <ago@gentoo.org> wxsvg-1.1.9.ebuild:
+  Stable for amd64, wrt bug #441384
+
+*wxsvg-1.1.9 (24 Sep 2012)
+
+  24 Sep 2012; Ryan Hill <dirtyepic@gentoo.org> -wxsvg-1.1.5.ebuild,
+  +wxsvg-1.1.9.ebuild:
+  Version bump.
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> wxsvg-1.1.6.ebuild:
+  x86 stable, bug #419111
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> wxsvg-1.1.6.ebuild:
+  Stable on amd64 wrt bug #419111
+
+  16 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -wxsvg-1.0.8.ebuild:
+  Actually drop version that fails to build on stable.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> wxsvg-1.0.8.ebuild,
+  wxsvg-1.1.5.ebuild, wxsvg-1.1.6.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> wxsvg-1.1.5.ebuild:
+  x86 stable wrt bug #405719
+
+  26 Feb 2012; Agostino Sarubbo <ago@gentoo.org> wxsvg-1.1.5.ebuild:
+  Stable for amd64, wrt bug #405719
+
+*wxsvg-1.1.6 (20 Feb 2012)
+
+  20 Feb 2012; Ryan Hill <dirtyepic@gentoo.org> -wxsvg-1.1.2.ebuild,
+  +wxsvg-1.1.6.ebuild:
+  Version bump.
+
+*wxsvg-1.1.5 (22 Dec 2011)
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +wxsvg-1.1.5.ebuild:
+  Version bump.
+
+*wxsvg-1.1.2 (29 Sep 2011)
+
+  29 Sep 2011; Ryan Hill <dirtyepic@gentoo.org> -wxsvg-1.0.ebuild,
+  -wxsvg-1.0.5.ebuild, +wxsvg-1.1.2.ebuild, +files/wxsvg-1.1.2-libav.patch:
+  Version bump. Fix build with libav (bug #384281 by DaggyStyle). Remove old.
+
+  13 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> wxsvg-1.0.ebuild,
+  wxsvg-1.0.5.ebuild, wxsvg-1.0.8.ebuild:
+  Dropped ppc keywords wrt #361737
 
   06 May 2011; Thomas Kahle <tomka@gentoo.org> wxsvg-1.0.8.ebuild:
   x86 stable per bug 361737
@@ -105,4 +154,3 @@
   28 Jan 2007; Ryan Hill <dirtyepic@gentoo.org> +metadata.xml,
   +wxsvg-1.0_beta7.ebuild:
   Initial import.  Thanks to everyone on bug #112887.
-

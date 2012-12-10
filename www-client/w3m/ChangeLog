@@ -1,6 +1,49 @@
 # ChangeLog for www-client/w3m
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/w3m/ChangeLog,v 1.67 2011/05/18 03:44:20 naota Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/w3m/ChangeLog,v 1.79 2012/11/25 22:01:55 naota Exp $
+
+  25 Nov 2012;  <naota@gentoo.org> -w3m-0.5.2-r4.ebuild, w3m-0.5.3-r2.ebuild:
+  Set AR properly. #444376; Drop old version.
+
+  21 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org> w3m-0.5.3-r2.ebuild:
+  QA: don't use parallel build until bug #362249 is fixed.
+
+  17 Jun 2012; Michael Weber <xmw@gentoo.org> w3m-0.5.3-r1.ebuild:
+  ppc stable (bug 415281)
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> w3m-0.5.3-r1.ebuild:
+  alpha/ia64/sparc stable wrt #415281
+
+  13 Jun 2012; Naohiro Aota <naota@gentoo.org>
+  +files/w3m-0.5.3-gdk-pixbuf.patch, w3m-0.5.3-r2.ebuild:
+  Apply patch to depend on gdk-pixbuf instead of gtk
+
+  29 May 2012; Naohiro Aota <naota@gentoo.org> w3m-0.5.2-r4.ebuild,
+  w3m-0.5.3-r1.ebuild, w3m-0.5.3-r2.ebuild:
+  Depend on imlib2[X] #417643
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> w3m-0.5.3-r1.ebuild:
+  Marking w3m-0.5.3-r1 ppc64 for bug 415281
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> w3m-0.5.3-r1.ebuild:
+  x86 stable wrt bug #415281
+
+  20 May 2012; Naohiro Aota <naota@gentoo.org>
+  +files/w3m-0.5.3-underlinking.patch, w3m-0.5.3-r1.ebuild, w3m-0.5.3-r2.ebuild:
+  Add patch to link missing libX11. #416539
+
+*w3m-0.5.3-r2 (15 May 2012)
+
+  15 May 2012; Naohiro Aota <naota@gentoo.org> +files/w3m-0.5.3-button.patch,
+  +w3m-0.5.3-r2.ebuild:
+  Add support for the button tags. #413797
+
+  13 May 2012; Agostino Sarubbo <ago@gentoo.org> w3m-0.5.3-r1.ebuild:
+  Stable for amd64, wrt bug #415281
+
+  18 Dec 2011; Naohiro Aota <naota@gentoo.org> w3m-0.5.3-r1.ebuild,
+  +files/w3m-0.5.3-glibc214.patch:
+  Fix build with glibc-2.14
 
   18 May 2011; Naohiro Aota <naota@gentoo.org> w3m-0.5.3-r1.ebuild:
   Remove CVS directories. Fix bug #367499

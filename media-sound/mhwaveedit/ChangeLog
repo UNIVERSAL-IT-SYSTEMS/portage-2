@@ -1,6 +1,43 @@
 # ChangeLog for media-sound/mhwaveedit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mhwaveedit/ChangeLog,v 1.44 2011/05/25 20:11:52 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mhwaveedit/ChangeLog,v 1.54 2012/10/17 03:23:08 phajdan.jr Exp $
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  mhwaveedit-1.4.22.ebuild:
+  x86 stable wrt bug #433313
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> mhwaveedit-1.4.22.ebuild:
+  Stable for amd64, wrt bug #433313
+
+*mhwaveedit-1.4.22 (25 Jul 2012)
+
+  25 Jul 2012; Tim Harder <radhermit@gentoo.org> +mhwaveedit-1.4.22.ebuild:
+  Version bump. Update to EAPI 4.
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> mhwaveedit-1.4.21.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> mhwaveedit-1.4.21.ebuild:
+  Remove USE="esd" because media-sound/esound isn't in tree anymore.
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -mhwaveedit-1.4.15-r1.ebuild, -mhwaveedit-1.4.18.ebuild,
+  -mhwaveedit-1.4.20.ebuild:
+  old
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> mhwaveedit-1.4.15-r1.ebuild,
+  mhwaveedit-1.4.18.ebuild, mhwaveedit-1.4.20.ebuild, mhwaveedit-1.4.21.ebuild:
+  Drop sparc keywords
+
+  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> mhwaveedit-1.4.21.ebuild:
+  Stable for AMD64, wrt bug #392839
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  mhwaveedit-1.4.21.ebuild:
+  x86 stable wrt bug #392839
+
+  02 Dec 2011; Tim Harder <radhermit@gentoo.org> mhwaveedit-1.4.21.ebuild:
+  Simplify gtk+ dep and add pango dep.
 
 *mhwaveedit-1.4.21 (25 May 2011)
 

@@ -1,6 +1,18 @@
 # ChangeLog for dev-ruby/ruby-debug
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-debug/ChangeLog,v 1.26 2011/07/31 16:54:10 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-debug/ChangeLog,v 1.29 2012/08/14 18:50:22 flameeyes Exp $
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> ruby-debug-0.10.3-r2.ebuild,
+  ruby-debug-0.10.3-r6.ebuild, ruby-debug-0.10.4.ebuild:
+  Drop ia64/sparc keywords
+
+  25 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  ruby-debug-0.10.4.ebuild:
+  Simplify (and fix) dependency over ruby-debug-base since jruby support is
+  gone.
 
   31 Jul 2011; Raúl Porcel <armin76@gentoo.org> ruby-debug-0.10.3-r2.ebuild,
   ruby-debug-0.10.3-r6.ebuild, ruby-debug-0.10.4.ebuild:
@@ -121,4 +133,3 @@
   16 Mar 2007; Christian Marie <pingu@gentoo.org> +metadata.xml,
   +ruby-debug-0.8.ebuild:
   New ebuild, bug #156078.
-

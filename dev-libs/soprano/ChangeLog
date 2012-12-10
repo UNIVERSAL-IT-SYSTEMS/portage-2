@@ -1,6 +1,105 @@
 # ChangeLog for dev-libs/soprano
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/soprano/ChangeLog,v 1.74 2011/07/29 06:02:31 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/soprano/ChangeLog,v 1.99 2012/11/30 15:11:59 ago Exp $
+
+  30 Nov 2012; <ago@gentoo.org> soprano-2.8.0.ebuild:
+  Stable for ppc, wrt bug #442394
+
+  23 Nov 2012; Agostino Sarubbo <ago@gentoo.org> soprano-2.8.0.ebuild:
+  Stable for x86, wrt bug #442394
+
+  23 Nov 2012; Agostino Sarubbo <ago@gentoo.org> soprano-2.8.0.ebuild:
+  Stable for amd64, wrt bug #442394
+
+  10 Sep 2012; Andreas K. Huettel <dilfridge@gentoo.org> soprano-2.8.0.ebuild:
+  Disable clucene index, since soprano 2.8.0 fails to build against current
+  clucene and this combination is also not supported anymore. See
+  http://sourceforge.net/p/soprano/bugs/19/
+
+  05 Aug 2012; Johannes Huber <johu@gentoo.org> soprano-2.8.0.ebuild:
+  Bump dep on dev-db/virtuoso-server.
+
+*soprano-2.8.0 (01 Aug 2012)
+
+  01 Aug 2012; Johannes Huber <johu@gentoo.org> +soprano-2.8.0.ebuild:
+  Version bump.
+
+  10 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> -soprano-2.7.4.ebuild,
+  -soprano-2.7.5.ebuild, soprano-2.7.6.ebuild:
+  Stabilise 2.7.6 on amd64, x86, pcc and ppc64. Remove older. Solves crasher for
+  me in stable.
+
+  18 May 2012; Alexis Ballier <aballier@gentoo.org> soprano-2.7.6.ebuild:
+  keyword ~amd64-fbsd
+
+*soprano-2.7.6 (16 May 2012)
+
+  16 May 2012; Michael Palimaka <kensington@gentoo.org> +soprano-2.7.6.ebuild:
+  Version bump. Install documentation correctly, based on patch by Ian Delaney
+  <johneed@hotmail.com>. Fixes bug #406849.
+
+  25 Mar 2012; Johannes Huber <johu@gentoo.org>
+  -files/soprano-2.7.3-largefile-support.patch, -soprano-2.7.0.ebuild,
+  -soprano-2.7.3.ebuild:
+  Remove old.
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> soprano-2.7.4.ebuild:
+  Marking soprano-2.7.4 ppc64 for bug 406013
+
+*soprano-2.7.5 (13 Mar 2012)
+
+  13 Mar 2012; Johannes Huber <johu@gentoo.org> +soprano-2.7.5.ebuild:
+  Version bump.
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> soprano-2.7.4.ebuild:
+  x86 stable wrt bug #406013
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> soprano-2.7.4.ebuild:
+  Marking soprano-2.7.4 ppc for bug 406013
+
+  27 Feb 2012; Agostino Sarubbo <ago@gentoo.org> soprano-2.7.4.ebuild:
+  Stable for amd64, wrt bug #406013
+
+*soprano-2.7.4 (12 Jan 2012)
+
+  12 Jan 2012; Johannes Huber <johu@gentoo.org> +soprano-2.7.4.ebuild:
+  Version bump.
+
+*soprano-2.7.3 (02 Nov 2011)
+
+  02 Nov 2011; Maciej Mrozowski <reavertm@gentoo.org>
+  +files/soprano-2.7.3-largefile-support.patch, +soprano-2.7.3.ebuild:
+  Version bump, also fix bug 389299 (largefile support)
+
+  18 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Remove unused description for USE="java"
+
+  18 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -soprano-2.4.4.ebuild,
+  -soprano-2.5.3.ebuild, -soprano-2.6.0.ebuild, -soprano-2.6.51.ebuild:
+  old
+
+  18 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> soprano-2.7.0.ebuild:
+  ppc/ppc64 stable wrt #382641
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> soprano-2.4.4.ebuild,
+  soprano-2.5.3.ebuild, soprano-2.6.0.ebuild, soprano-2.6.51.ebuild,
+  soprano-2.7.0.ebuild:
+  Drop HPPA keywording (bug #382641).
+
+  05 Oct 2011; Andreas Schuerch <nativemad@gentoo.org> soprano-2.7.0.ebuild:
+  x86 stable, thanks David. Bug 382641
+
+  20 Sep 2011; Tony Vroon <chainsaw@gentoo.org> soprano-2.7.0.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #382641.
+
+  03 Sep 2011; Andreas K. Huettel <dilfridge@gentoo.org> soprano-2.7.0.ebuild:
+  Restrict tests, bug 281712
+
+*soprano-2.7.0 (07 Aug 2011)
+
+  07 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> +soprano-2.7.0.ebuild:
+  Version bump.
 
   29 Jul 2011; Samuli Suominen <ssuominen@gentoo.org> soprano-2.6.0.ebuild,
   soprano-2.6.51.ebuild:
@@ -318,4 +417,3 @@
   13 Jan 2008; Wulf C. Krueger <philantrop@gentoo.org> +metadata.xml,
   +soprano-2.0.0.ebuild:
   Initial import to the tree as per bug 205646.
-

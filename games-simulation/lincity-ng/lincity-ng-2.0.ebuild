@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-simulation/lincity-ng/lincity-ng-2.0.ebuild,v 1.5 2011/01/12 18:01:24 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-simulation/lincity-ng/lincity-ng-2.0.ebuild,v 1.9 2012/07/30 08:23:11 hasufell Exp $
 
 EAPI=2
-inherit eutils games
+inherit eutils multiprocessing games
 
 DESCRIPTION="city/country simulation game for X and opengl"
 HOMEPAGE="http://lincity-ng.berlios.de/"
@@ -24,12 +24,15 @@ RDEPEND="virtual/opengl
 	media-libs/sdl-gfx
 	dev-games/physfs"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-util/ftjam"
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-build.patch
+}
+
 src_compile() {
-	local jamopts=$(echo "${MAKEOPTS}" | sed -ne "/-j/ { s/.*\(-j[[:space:]]*[0-9]\+\).*/\1/; p }")
-	jam ${jamopts} || die "jam failed"
+	jam -q -dx -j $(makeopts_jobs) || die "jam failed"
 }
 
 src_install() {

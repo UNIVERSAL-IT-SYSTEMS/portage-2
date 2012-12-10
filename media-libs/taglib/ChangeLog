@@ -1,6 +1,128 @@
 # ChangeLog for media-libs/taglib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/taglib/ChangeLog,v 1.98 2011/04/20 21:16:29 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/taglib/ChangeLog,v 1.134 2012/12/01 14:33:31 kensington Exp $
+
+  01 Dec 2012; Michael Palimaka <kensington@gentoo.org>
+  +files/taglib-1.8-freebsd.patch, taglib-1.8.ebuild:
+  Fix build on FreeBSD wrt bug #445012. Thanks to Naohiro Aota
+  <naota@gentoo.org> for the patch.
+
+*taglib-1.8 (11 Sep 2012)
+
+  11 Sep 2012; Johannes Huber <johu@gentoo.org> +taglib-1.8.ebuild:
+  Version bump wrt bug #434694.
+
+  26 May 2012; Johannes Huber <johu@gentoo.org> -taglib-1.7.1.ebuild:
+  Remove old wrt bug #416143.
+
+  26 May 2012; Raúl Porcel <armin76@gentoo.org> taglib-1.7.2.ebuild:
+  ia64/sh/sparc stable wrt #416143
+
+  26 May 2012; Markus Meier <maekke@gentoo.org> taglib-1.7.2.ebuild:
+  arm stable, bug #416143
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> taglib-1.7.2.ebuild:
+  Stable for ppc/ppc64; bug #416143
+
+  19 May 2012; Agostino Sarubbo <ago@gentoo.org> taglib-1.7.2.ebuild:
+  Stable for amd64, wrt bug #416143
+
+  17 May 2012; Tobias Klausmann <klausman@gentoo.org> taglib-1.7.2.ebuild:
+  Stable on alpha, bug #416143
+
+  17 May 2012; Jeff Horelick <jdhore@gentoo.org> taglib-1.7.2.ebuild:
+  marked x86 per bug 416143
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> taglib-1.7.2.ebuild:
+  Stable for HPPA (bug #416143).
+
+  15 May 2012; Michael Palimaka <kensington@gentoo.org> taglib-1.7.2.ebuild:
+  Actually run tests when enabled. Fixes bug #415299 by Matt Turner
+  <mattst88@gentoo.org>.
+
+*taglib-1.7.2 (09 May 2012)
+
+  09 May 2012; Johannes Huber <johu@gentoo.org> +taglib-1.7.2.ebuild:
+  Version bump.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> taglib-1.7.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  17 Apr 2012; Johannes Huber <johu@gentoo.org>
+  -files/taglib-1.7-security.patch, -taglib-1.7-r1.ebuild:
+  Remove old wrt bug #410953.
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> taglib-1.7.1.ebuild:
+  Marking taglib-1.7.1 ppc64 for bug 410953
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> taglib-1.7.1.ebuild:
+  Marking taglib-1.7.1 ppc for bug 410953
+
+  08 Apr 2012; Raúl Porcel <armin76@gentoo.org> taglib-1.7.1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #410953
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> taglib-1.7.1.ebuild:
+  arm stable, bug #410953
+
+  07 Apr 2012; Jeff Horelick <jdhore@gentoo.org> taglib-1.7.1.ebuild:
+  marked x86 per bug 410953
+
+  06 Apr 2012; Agostino Sarubbo <ago@gentoo.org> taglib-1.7.1.ebuild:
+  Stable for amd64, wrt bug #410953
+
+  06 Apr 2012; Jeroen Roovers <jer@gentoo.org> taglib-1.7.1.ebuild:
+  Stable for HPPA (bug #410953).
+
+*taglib-1.7.1 (25 Mar 2012)
+
+  25 Mar 2012; Johannes Huber <johu@gentoo.org> +taglib-1.7.1.ebuild:
+  Version bump.
+
+  25 Mar 2012; Andreas K. Huettel <dilfridge@gentoo.org> -taglib-1.7.ebuild:
+  Remove old
+
+  17 Mar 2012; Raúl Porcel <armin76@gentoo.org> taglib-1.7-r1.ebuild:
+  alpha/arm/ia64/sh/sparc stable wrt #407673
+
+  13 Mar 2012; Jeroen Roovers <jer@gentoo.org> taglib-1.7-r1.ebuild:
+  Stable for HPPA (bug #407673).
+
+  11 Mar 2012; Agostino Sarubbo <ago@gentoo.org> taglib-1.7-r1.ebuild:
+  Stable for amd64, wrt bug #407673
+
+  11 Mar 2012; Brent Baude <ranger@gentoo.org> taglib-1.7-r1.ebuild:
+  Marking taglib-1.7-r1 ppc64 for bug 407673
+
+  10 Mar 2012; Jeff Horelick <jdhore@gentoo.org> taglib-1.7-r1.ebuild:
+  marked x86 per bug 407673
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org> taglib-1.7-r1.ebuild:
+  Marking taglib-1.7-r1 ppc for bug 407673
+
+*taglib-1.7-r1 (10 Mar 2012)
+
+  10 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +taglib-1.7-r1.ebuild,
+  +files/taglib-1.7-security.patch:
+  Backport upstream commits for CVE-2012-1107 and CVE-2012-1108 wrt #407673 by
+  Michael Harrison
+
+  03 Feb 2012; Johannes Huber <johu@gentoo.org> -taglib-1.6.3.ebuild:
+  Remove old.
+
+  03 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> taglib-1.7.ebuild:
+  ppc64 stable wrt #391653
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> taglib-1.7.ebuild:
+  Marking taglib-1.7 ppc for bug 391653
+
+  04 Dec 2011; Raúl Porcel <armin76@gentoo.org> taglib-1.7.ebuild:
+  alpha/arm/ia64/sh/sparc/x86 stable wrt #391653
+
+  29 Nov 2011; Jeroen Roovers <jer@gentoo.org> taglib-1.7.ebuild:
+  Stable for HPPA (bug #391653).
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> taglib-1.7.ebuild:
+  Stable on amd64 wrt bug #391653
 
 *taglib-1.7 (20 Apr 2011)
 
@@ -352,4 +474,3 @@
 
   09 Dec 2003; Caleb Tennis <caleb@gentoo.org> metadata.xml, taglib-1.0_beta2.ebuild:
   Initial import
-

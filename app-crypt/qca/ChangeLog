@@ -1,6 +1,27 @@
 # ChangeLog for app-crypt/qca
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/qca/ChangeLog,v 1.89 2011/07/17 09:00:12 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/qca/ChangeLog,v 1.95 2012/06/14 07:08:45 yngwin Exp $
+
+  14 Jun 2012; Ben de Groot <yngwin@gentoo.org> qca-2.0.3.ebuild:
+  Destabling to ~ia64 because last available stable qt will be masked pending
+  removal
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> qca-2.0.3.ebuild:
+  keyword ~amd64-fbsd
+
+  17 Apr 2012; Davide Pesavento <pesa@gentoo.org>
+  +files/qca-2.0.3+gcc-4.7.patch, qca-2.0.3.ebuild:
+  Fix build with gcc 4.7, bug 412353 by <AlphatPC@gmail.com>.
+
+  14 Sep 2011; Fabian Groffen <grobian@gentoo.org> qca-2.0.3.ebuild:
+  Marked ~ppc-macos, bug #382057
+
+  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  qca-2.0.3.ebuild:
+  keyword ~sparc-solaris
+
+  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> -qca-2.0.2-r2.ebuild:
+  Remove old ebuild. Requested by Arfrever
 
   17 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> qca-2.0.3.ebuild:
   ppc/ppc64 stable wrt #364405

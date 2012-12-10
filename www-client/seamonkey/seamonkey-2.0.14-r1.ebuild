@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/seamonkey-2.0.14-r1.ebuild,v 1.2 2011/07/26 12:27:51 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey/seamonkey-2.0.14-r1.ebuild,v 1.7 2012/07/04 19:20:50 anarchy Exp $
 
 EAPI="2"
 WANT_AUTOCONF="2.1"
@@ -25,14 +25,13 @@ if [[ ${PV} == *_pre* ]] ; then
 	# pre-releases. No need for arch teams to change KEYWORDS here.
 
 	REL_URI="ftp://ftp.mozilla.org/pub/mozilla.org/${PN}/nightly/${MY_PV}-candidates/build${PV##*_pre}"
-	#KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 	KEYWORDS=""
 	#HAS_LANGS="false"
 else
 	# This is where arch teams should change the KEYWORDS.
 
 	REL_URI="http://releases.mozilla.org/pub/mozilla.org/${PN}/releases/${MY_PV}"
-	KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sparc x86"
+	KEYWORDS="alpha arm ia64 ppc64 sparc"
 	[[ ${PV} == *alpha* ]] && HAS_LANGS="false"
 fi
 
@@ -40,7 +39,7 @@ DESCRIPTION="Seamonkey Web Browser"
 HOMEPAGE="http://www.seamonkey-project.org"
 
 SLOT="0"
-LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )"
+LICENSE="MPL-1.1 GPL-2 LGPL-2.1"
 IUSE="+alsa +chatzilla +composer +crypt gnome java ldap +mailclient +roaming system-sqlite"
 
 SRC_URI="${REL_URI}/source/${MY_P}.source.tar.bz2
@@ -82,7 +81,7 @@ RDEPEND="java? ( virtual/jre )
 
 DEPEND="${RDEPEND}
 	=dev-lang/python-2*[threads]
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	java? ( >=virtual/jdk-1.4 )"
 
 S="${WORKDIR}/comm-1.9.1"

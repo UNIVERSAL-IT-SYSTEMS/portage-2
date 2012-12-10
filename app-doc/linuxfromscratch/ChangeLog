@@ -1,6 +1,36 @@
 # ChangeLog for app-doc/linuxfromscratch
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/linuxfromscratch/ChangeLog,v 1.14 2011/04/13 08:42:25 dirtyepic Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-doc/linuxfromscratch/ChangeLog,v 1.21 2012/11/03 06:00:54 dirtyepic Exp $
+
+  03 Nov 2012; Ryan Hill <dirtyepic@gentoo.org> linuxfromscratch-7.2.ebuild:
+  Mark stable for all.
+
+*linuxfromscratch-7.2 (16 Sep 2012)
+
+  16 Sep 2012; Ryan Hill <dirtyepic@gentoo.org> -linuxfromscratch-6.8.ebuild,
+  -linuxfromscratch-7.0.ebuild, +linuxfromscratch-7.2.ebuild:
+  Version bump. Remove old.
+
+  01 Aug 2012; Ryan Hill <dirtyepic@gentoo.org> linuxfromscratch-7.1.ebuild:
+  Stable everywhere, bug #428848.
+
+*linuxfromscratch-7.1 (01 Jul 2012)
+
+  01 Jul 2012; Ryan Hill <dirtyepic@gentoo.org> +linuxfromscratch-7.1.ebuild,
+  metadata.xml:
+  Version bump. Change maintainer to app-doc.
+
+  02 Jun 2012; Ryan Hill <dirtyepic@gentoo.org> linuxfromscratch-7.0.ebuild:
+  Stable everywhere.
+
+*linuxfromscratch-7.0 (20 Feb 2012)
+
+  20 Feb 2012; Ryan Hill <dirtyepic@gentoo.org> -linuxfromscratch-6.7.ebuild,
+  +linuxfromscratch-7.0.ebuild:
+  Version bump.
+
+  02 Jan 2012; Ryan Hill <dirtyepic@gentoo.org> linuxfromscratch-6.8.ebuild:
+  Stabilize on all.
 
 *linuxfromscratch-6.8 (13 Apr 2011)
 

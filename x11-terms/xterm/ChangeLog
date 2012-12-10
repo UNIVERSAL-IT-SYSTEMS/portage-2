@@ -1,6 +1,166 @@
 # ChangeLog for x11-terms/xterm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/xterm/ChangeLog,v 1.326 2011/07/15 17:03:55 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/xterm/ChangeLog,v 1.370 2012/12/08 17:18:16 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> xterm-285.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> xterm-285.ebuild:
+  Marking xterm-285 ppc stable for bug 440872
+
+*xterm-287 (28 Nov 2012)
+
+  28 Nov 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xterm-287.ebuild:
+  Version bump.
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xterm-285.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xterm-285.ebuild:
+  Stable for amd64, wrt bug #440872
+
+*xterm-285 (31 Oct 2012)
+
+  31 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xterm-285.ebuild:
+  Version bump.
+
+  27 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> -xterm-276.ebuild:
+  old
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> xterm-279.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> xterm-279.ebuild:
+  Marking xterm-279 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> xterm-279.ebuild:
+  Marking xterm-279 ppc64 stable for bug 419473
+
+  29 Jun 2012; Markus Meier <maekke@gentoo.org> xterm-279.ebuild:
+  arm stable, bug #419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> xterm-279.ebuild:
+  Stable for HPPA (bug #419473).
+
+*xterm-281 (26 Jun 2012)
+
+  26 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +xterm-281.ebuild:
+  Version bump.
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xterm-279.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xterm-279.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  12 May 2012; Samuli Suominen <ssuominen@gentoo.org> -xterm-271.ebuild,
+  -xterm-275.ebuild, -xterm-277.ebuild, -xterm-278.ebuild:
+  old
+
+*xterm-279 (12 May 2012)
+
+  12 May 2012; Samuli Suominen <ssuominen@gentoo.org> +xterm-279.ebuild:
+  Version bump.
+
+  11 May 2012; Alexis Ballier <aballier@gentoo.org> xterm-278.ebuild:
+  utempter is provided by libulog starting from FreeBSD 9.0, which provides a
+  utempter compatible interface. Keyword ~amd64-fbsd.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> xterm-271.ebuild,
+  xterm-275.ebuild, xterm-276.ebuild, xterm-277.ebuild, xterm-278.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  07 Mar 2012; Jeremy Olexa <darkside@gentoo.org> xterm-278.ebuild:
+  add ~x64-macos, bug 395011
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> xterm-276.ebuild:
+  Marking xterm-276 ppc64 stable for bug 394393
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> xterm-276.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #394393
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> xterm-276.ebuild:
+  Marking xterm-276 ppc stable for bug 394393
+
+*xterm-278 (19 Jan 2012)
+
+  19 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +xterm-278.ebuild:
+  Version bump.
+
+*xterm-277 (10 Jan 2012)
+
+  10 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +xterm-277.ebuild:
+  Version bump.
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> xterm-276.ebuild:
+  x86 stable, bug #394393
+
+  21 Dec 2011; Markus Meier <maekke@gentoo.org> xterm-276.ebuild:
+  arm stable, bug #394393
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> xterm-276.ebuild:
+  Stable for HPPA (bug #394393).
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> xterm-276.ebuild:
+  Stable for AMD64, wrt bug #394393
+
+  21 Oct 2011; Jeremy Olexa <darkside@gentoo.org> xterm-276.ebuild:
+  fix bsd dep from last commit
+
+  21 Oct 2011; Jeremy Olexa <darkside@gentoo.org> xterm-276.ebuild:
+  Migrate changes from Gentoo Prefix overlay, KEYWORDS, EPREFIX and ED
+
+*xterm-276 (14 Oct 2011)
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +xterm-276.ebuild:
+  Version bump.
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -xterm-267.ebuild,
+  -xterm-269.ebuild, -xterm-270.ebuild, -xterm-274.ebuild:
+  old
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> xterm-271.ebuild:
+  Marked ppc ppc64 stable for bug #380421.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> xterm-271.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #380421
+
+*xterm-275 (27 Sep 2011)
+
+  27 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> +xterm-275.ebuild:
+  Version bump.
+
+  27 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> xterm-274.ebuild:
+  Missing sys-libs/ncurses depend wrt #383755 by Dave Kemper
+
+  21 Sep 2011; Jeroen Roovers <jer@gentoo.org> xterm-271.ebuild:
+  Stable for HPPA (bug #380421).
+
+*xterm-274 (08 Sep 2011)
+
+  08 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> +xterm-274.ebuild:
+  Version bump.
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org> xterm-271.ebuild:
+  arm stable, bug #380421
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> xterm-271.ebuild:
+  x86 stable, bug #380421
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> xterm-271.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380421 filed by Chí-Thanh Christopher Nguyễn.
+
+*xterm-271 (02 Aug 2011)
+
+  02 Aug 2011; Matt Turner <mattst88@gentoo.org> +xterm-271.ebuild:
+  Version bump.
+
+  02 Aug 2011; Matt Turner <mattst88@gentoo.org> xterm-267.ebuild,
+  xterm-269.ebuild, xterm-270.ebuild:
+  Renamed x11-libs/Xaw3d to x11-libs/libXaw3d.
 
   15 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> xterm-269.ebuild:
   ppc64 stable wrt #363965
@@ -1206,4 +1366,3 @@
   merged into xfree's source tree. This package follows xterm's development with
   the goal of removing xterm's compilation within the xfree ebuild.
   Ideally, this should work with utempter library in the near future.
-

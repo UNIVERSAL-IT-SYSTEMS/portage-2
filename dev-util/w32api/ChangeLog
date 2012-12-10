@@ -1,6 +1,18 @@
 # ChangeLog for dev-util/w32api
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/w32api/ChangeLog,v 1.15 2011/03/26 05:48:38 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/w32api/ChangeLog,v 1.18 2012/05/08 20:06:36 vapier Exp $
+
+  08 May 2012; Mike Frysinger <vapier@gentoo.org> w32api-3.14.ebuild,
+  w32api-3.17.2.ebuild:
+  Use $D, not $ED, since this is EAPI=0 #414909 by M8R-u38wij.
+
+  03 May 2012; Mike Frysinger <vapier@gentoo.org> w32api-3.14.ebuild,
+  w32api-3.17.2.ebuild:
+  Make sure the docdir is unique across cross-compilers #414075 by Soeren
+  Hoeckner.
+
+  10 Dec 2011; Mike Frysinger <vapier@gentoo.org> w32api-3.17.2.ebuild:
+  Stabilize for amd64/x86.
 
 *w32api-3.17.2 (26 Mar 2011)
 

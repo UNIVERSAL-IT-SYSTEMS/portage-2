@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst postrm prepare test
+DEPEND=dev-python/setuptools doc? ( dev-python/sphinx ) dev-lang/python
+DESCRIPTION=Fast HTML/XML template compiler for Python
+EAPI=3
+HOMEPAGE=http://chameleon.repoze.org http://pypi.python.org/pypi/Chameleon
+IUSE=doc test
+KEYWORDS=~amd64 ~x86
+LICENSE=repoze
+RDEPEND=dev-lang/python
+SLOT=0
+SRC_URI=mirror://pypi/C/Chameleon/Chameleon-2.11.tar.gz
+_eclasses_=distutils	15ae23f6f8219a009bfcfff7724fe727	multilib	9aa8a023e062fca0ba79362d9d0cc488	python	4092929a66c8b47ffa8d314ca9314ea7	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4
+_md5_=396cdec184f43afcee2bf7055b998233

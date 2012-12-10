@@ -1,6 +1,188 @@
 # ChangeLog for dev-util/boost-build
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/boost-build/ChangeLog,v 1.71 2011/07/10 15:15:48 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/boost-build/ChangeLog,v 1.111 2012/12/08 12:11:22 grobian Exp $
+
+  08 Dec 2012; Fabian Groffen <grobian@gentoo.org>
+  +files/boost-build-1.49.0-darwin-gentoo-toolchain.patch,
+  +files/boost-build-1.52.0-darwin-no-python-framework.patch,
+  boost-build-1.52.0-r1.ebuild,
+  files/boost-build-1.50.0-respect-c_ld-flags.patch:
+  Finish Prefix support, add Patches for Darwin and Solaris, add Prefix keywords
+
+  06 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  boost-build-1.52.0-r1.ebuild:
+  Prefix fix for python
+
+*boost-build-1.52.0-r1 (08 Nov 2012)
+
+  08 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +boost-build-1.52.0-r1.ebuild, -boost-build-1.52.0.ebuild:
+  Bump to avoid using versioned names.
+
+*boost-build-1.52.0 (05 Nov 2012)
+
+  05 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +boost-build-1.52.0.ebuild:
+  Bump for the new boost version.
+
+  02 Nov 2012; Raúl Porcel <armin76@gentoo.org> boost-build-1.49.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #425354
+
+  31 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  -boost-build-1.34.1.ebuild, -boost-build-1.35.0-r1.ebuild,
+  -boost-build-1.35.0-r2.ebuild, -boost-build-1.37.0.ebuild,
+  -boost-build-1.39.0.ebuild, -boost-build-1.40.0.ebuild,
+  -boost-build-1.41.0.ebuild, -boost-build-1.42.0.ebuild,
+  -boost-build-1.45.0.ebuild, -boost-build-1.47.0.ebuild,
+  -boost-build-1.48.0-r1.ebuild, -boost-build-1.50.0-r3.ebuild,
+  -boost-build-1.50.0.ebuild, -files/1.35.0-fix_broken_icu_build.patch,
+  -files/boost-1.41-fix-mpich2-detection.patch,
+  -files/boost-1.42-fix-mpich2-detection.patch, boost-build-1.46.1.ebuild,
+  boost-build-1.49.0.ebuild, boost-build-1.51.0.ebuild, metadata.xml:
+  Unslotting. This removes a bunch of older packages that will not build on
+  modern systems, keeps only three versions (stable, mostly-stable and masked).
+
+*boost-build-1.51.0 (25 Oct 2012)
+
+  25 Oct 2012; Mike Gilbert <floppym@gentoo.org> +boost-build-1.51.0.ebuild:
+  Version bump. Ebuild by Arfrever.
+
+  21 Oct 2012; Markus Meier <maekke@gentoo.org> boost-build-1.49.0.ebuild:
+  x86 stable, bug #425354
+
+  23 Sep 2012; Agostino Sarubbo <ago@gentoo.org> boost-build-1.49.0.ebuild:
+  Stable for amd64, wrt bug #425354
+
+  06 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  boost-build-1.49.0.ebuild:
+  Stable ppc, bug #425354
+
+  05 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  boost-build-1.49.0.ebuild:
+  Stable ppc64, bug #425354
+
+  27 Aug 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  remove myself from maintainers
+
+*boost-build-1.50.0-r3 (21 Aug 2012)
+
+  21 Aug 2012; Tiziano Müller <dev-zero@gentoo.org>
+  +boost-build-1.50.0-r3.ebuild, -boost-build-1.50.0-r1.ebuild,
+  -boost-build-1.50.0-r2.ebuild:
+  Fix false python-files removal. Fix minorsyn.
+
+*boost-build-1.50.0-r2 (20 Aug 2012)
+
+  20 Aug 2012; Tiziano Müller <dev-zero@gentoo.org>
+  +boost-build-1.50.0-r2.ebuild, +files/site-config.jam:
+  Install site-config.jam with our variants (gentoorelease & -debug) to ease
+  usage. Remove unneeded code. Fix python-code removal. Simplify call to
+  python_mod_{cleanup,optimize}.
+
+*boost-build-1.50.0-r1 (19 Aug 2012)
+
+  19 Aug 2012; Tiziano Müller <dev-zero@gentoo.org>
+  +boost-build-1.50.0-r1.ebuild, +files/boost-build-1.50.0-fix-test.patch,
+  +files/boost-build-1.50.0-respect-c_ld-flags.patch:
+  Fix tests. Fix installation of boost-build python-rewrite and optimize/cleanup
+  installed .py files (bug #324375). Rechecked build regarding LDFLAGS (bug
+  #334467), replaced workaround with a patch and added verbosity flag to the
+  bjam-call.
+
+  21 Jul 2012; Jeroen Roovers <jer@gentoo.org> boost-build-1.49.0.ebuild:
+  Stable for HPPA (bug #425354).
+
+  19 Jul 2012; Markus Meier <maekke@gentoo.org> boost-build-1.49.0.ebuild:
+  arm stable, bug #425354
+
+  08 Jul 2012; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Add Arfrever as a maintainer.
+
+*boost-build-1.50.0 (06 Jul 2012)
+
+  06 Jul 2012; Mike Gilbert <floppym@gentoo.org> +boost-build-1.50.0.ebuild:
+  Version bump by Arfrever.
+
+  14 Jun 2012; Jeff Horelick <jdhore@gentoo.org> boost-build-1.48.0-r1.ebuild:
+  marked x86 per bug 413815
+
+  08 Jun 2012; Michael Weber <xmw@gentoo.org> boost-build-1.48.0-r1.ebuild:
+  ppc stable (bug 413815)
+
+  07 Jun 2012; Zac Medico <zmedico@gentoo.org> boost-build-1.35.0-r1.ebuild:
+  inherit eutils for epatch
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org> boost-build-1.37.0.ebuild,
+  boost-build-1.39.0.ebuild:
+  Drop HPPA keywording for more ancient versions.
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org> boost-build-1.34.1.ebuild,
+  boost-build-1.35.0-r1.ebuild, boost-build-1.35.0-r2.ebuild:
+  Drop HPPA keywording for ancient versions.
+
+  03 Jun 2012; Markus Meier <maekke@gentoo.org> boost-build-1.48.0-r1.ebuild:
+  arm stable, bug #413815
+
+  23 May 2012; Agostino Sarubbo <ago@gentoo.org> boost-build-1.48.0-r1.ebuild:
+  Stable for amd64, wrt bug #413815
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> boost-build-1.48.0-r1.ebuild:
+  Stable for HPPA (bug #413815).
+
+  28 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  boost-build-1.48.0-r1.ebuild, boost-build-1.49.0.ebuild:
+  keyword ~amd64-fbsd
+
+  02 Apr 2012; Mike Gilbert <floppym@gentoo.org> -boost-build-1.48.0.ebuild:
+  Remove.
+
+*boost-build-1.49.0 (02 Apr 2012)
+
+  02 Apr 2012; Mike Gilbert <floppym@gentoo.org> +boost-build-1.49.0.ebuild:
+  Version bump.
+
+*boost-build-1.48.0-r1 (19 Jan 2012)
+
+  19 Jan 2012; Markos Chandras <hwoarang@gentoo.org>
+  +boost-build-1.48.0-r1.ebuild,
+  +files/boost-build-1.48.0-disable_python_rpath.patch,
+  +files/boost-build-1.48.0-support_dots_in_python-buildid.patch:
+  Remove directory used for searching of libpythonX.Y.so from rpath of all
+  libraries, which would occur in some situations. Initial support for dots in
+  argument of --python-buildid option. Patch by Arfrever
+
+*boost-build-1.48.0 (08 Jan 2012)
+
+  08 Jan 2012; Markos Chandras <hwoarang@gentoo.org> +boost-build-1.48.0.ebuild:
+  Version bump. Bug #391663
+
+  28 Dec 2011; Mark Loeser <halcy0n@gentoo.org> boost-build-1.46.1.ebuild:
+  Stable for ppc64; bug #377805
+
+  20 Oct 2011; Brent Baude <ranger@gentoo.org> boost-build-1.46.1.ebuild:
+  Marking boost-build-1.46.1 ppc for bug 377805
+
+*boost-build-1.47.0 (26 Sep 2011)
+
+  26 Sep 2011; Markos Chandras <hwoarang@gentoo.org>
+  +boost-build-1.47.0.ebuild:
+  Version bump. Bug #376937
+
+  16 Sep 2011; Jeroen Roovers <jer@gentoo.org> boost-build-1.46.1.ebuild:
+  Stable for HPPA (bug #377805).
+
+  10 Sep 2011; Raúl Porcel <armin76@gentoo.org> boost-build-1.46.1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #377805
+
+  28 Aug 2011; Markus Meier <maekke@gentoo.org> boost-build-1.46.1.ebuild:
+  arm stable, bug #377805
+
+  22 Aug 2011; Tony Vroon <chainsaw@gentoo.org> boost-build-1.46.1.ebuild:
+  Marked stable on AMD64 as a dependency of dev-libs/boost-1.46.1 based on arch
+  testing by Agostino "ago" Sarubbo in bug #377805.
+
+  12 Aug 2011; Thomas Kahle <tomka@gentoo.org> boost-build-1.46.1.ebuild:
+  x86 stable per bug 377805
 
   10 Jul 2011; Alexis Ballier <aballier@gentoo.org> boost-build-1.46.1.ebuild:
   keyword ~x86-fbsd
@@ -282,4 +464,3 @@
   18 Dec 2006; Tiziano Müller <dev-zero@gentoo.org> +metadata.xml,
   +boost-build-1.34_pre20061214.ebuild:
   Initial commit.
-

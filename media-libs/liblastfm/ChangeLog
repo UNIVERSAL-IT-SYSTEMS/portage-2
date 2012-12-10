@@ -1,6 +1,23 @@
 # ChangeLog for media-libs/liblastfm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/liblastfm/ChangeLog,v 1.15 2011/06/01 19:49:24 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/liblastfm/ChangeLog,v 1.18 2012/10/22 19:17:39 johu Exp $
+
+*liblastfm-1.0.3 (22 Oct 2012)
+
+  22 Oct 2012; Johannes Huber <johu@gentoo.org> +liblastfm-1.0.3.ebuild:
+  Version bump.
+
+*liblastfm-1.0.2 (01 Sep 2012)
+
+  01 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> +liblastfm-1.0.2.ebuild,
+  -liblastfm-1.0.1.ebuild:
+  Version bump to latest, remove older.
+
+*liblastfm-1.0.1 (23 Jun 2012)
+
+  23 Jun 2012; Johannes Huber <johu@gentoo.org> +liblastfm-1.0.1.ebuild,
+  -liblastfm-0.3.0.ebuild, metadata.xml:
+  Version bump, remove old.
 
   01 Jun 2011; Brent Baude <ranger@gentoo.org> liblastfm-0.3.3.ebuild:
   Marking liblastfm-0.3.3 ppc stable for bug 354033
@@ -63,4 +80,3 @@
   +liblastfm-0.3.0.ebuild, +metadata.xml:
   Added liblastfm to the tree from the kde-testing overlay. Thanks to Maciej
   Mrozowski (reavertm).
-

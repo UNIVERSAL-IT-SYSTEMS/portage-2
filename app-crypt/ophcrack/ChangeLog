@@ -1,6 +1,20 @@
 # ChangeLog for app-crypt/ophcrack
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/ophcrack/ChangeLog,v 1.32 2009/09/30 11:30:17 ikelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/ophcrack/ChangeLog,v 1.35 2012/05/06 14:13:43 ikelos Exp $
+
+*ophcrack-3.4.0 (06 May 2012)
+
+  06 May 2012; Mike Auty <ikelos@gentoo.org> +ophcrack-3.4.0.ebuild:
+  Version bump to 3.4.0, fixes bug 413923.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> ophcrack-3.1.0-r2.ebuild,
+  ophcrack-3.3.0.ebuild, ophcrack-3.3.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  23 Oct 2011; Mike Auty <ikelos@gentoo.org> ophcrack-3.3.1.ebuild,
+  metadata.xml:
+  Added a pointless USE flag instead of requiring users to install a pointless
+  package. Fixes bug 387023.
 
 *ophcrack-3.3.1 (30 Sep 2009)
 

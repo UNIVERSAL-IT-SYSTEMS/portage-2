@@ -1,6 +1,22 @@
 # ChangeLog for dev-perl/Lexical-Persistence
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Lexical-Persistence/ChangeLog,v 1.6 2011/01/14 12:17:54 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Lexical-Persistence/ChangeLog,v 1.10 2012/11/18 11:23:52 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org>
+  -Lexical-Persistence-1.20.ebuild:
+  Cleanup
+
+*Lexical-Persistence-1.20.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +Lexical-Persistence-1.20.0.ebuild:
+  Change version scheme
 
 *Lexical-Persistence-1.20 (14 Jan 2011)
 
@@ -33,4 +49,3 @@
   23 Jun 2009; Robin H. Johnson <robbat2@gentoo.org>
   +Lexical-Persistence-0.98.ebuild, +metadata.xml:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

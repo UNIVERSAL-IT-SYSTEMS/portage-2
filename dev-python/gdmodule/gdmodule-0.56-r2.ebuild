@@ -1,12 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/gdmodule/gdmodule-0.56-r2.ebuild,v 1.2 2010/12/06 17:15:04 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/gdmodule/gdmodule-0.56-r2.ebuild,v 1.5 2012/08/02 18:04:39 bicatali Exp $
 
 EAPI="3"
 
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="3.* 2.7-pypy-* *-jython"
 DISTUTILS_SETUP_FILES=("Setup.py")
 
 inherit distutils eutils flag-o-matic
@@ -17,7 +17,7 @@ SRC_URI="http://newcenturycomputers.net/projects/download.cgi/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-linux ~ppc-macos"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~amd64-linux ~ppc-macos ~x86-linux"
 IUSE="jpeg png truetype xpm"
 
 RDEPEND="

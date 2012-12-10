@@ -1,6 +1,44 @@
 # ChangeLog for sys-fs/ddrescue
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/ddrescue/ChangeLog,v 1.31 2011/07/26 21:12:46 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/ddrescue/ChangeLog,v 1.41 2012/08/15 11:07:43 blueness Exp $
+
+  15 Aug 2012; Anthony G. Basile <blueness@gentoo.org> ddrescue-1.16.ebuild:
+  Stable ppc, bug #429214
+
+  10 Aug 2012; Johannes Huber <johu@gentoo.org> ddrescue-1.16.ebuild:
+  Stable for x86, wrt bug #429214
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> ddrescue-1.16.ebuild:
+  Stable for amd64, wrt bug #429214
+
+*ddrescue-1.16 (19 Jun 2012)
+
+  19 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> -ddrescue-1.14.ebuild,
+  +ddrescue-1.16.ebuild:
+  Version bump. Removed old.
+
+*ddrescue-1.15-r1 (03 May 2012)
+
+  03 May 2012; Michael Weber <xmw@gentoo.org> +ddrescue-1.15-r1.ebuild:
+  Revbump to improve Prefix support (bug 414457)
+
+  03 May 2012; Michael Weber <xmw@gentoo.org> ddrescue-1.15.ebuild:
+  ppc stable (bug 413261)
+
+  24 Apr 2012; Agostino Sarubbo <ago@gentoo.org> ddrescue-1.15.ebuild:
+  Stable for amd64, wrt bug #413261
+
+  24 Apr 2012; Jeff Horelick <jdhore@gentoo.org> ddrescue-1.15.ebuild:
+  marked x86 per bug 413261
+
+*ddrescue-1.15 (05 Mar 2012)
+
+  05 Mar 2012; Lars Wendler <polynomial-c@gentoo.org> +ddrescue-1.15.ebuild:
+  Version bump.
+
+  08 Aug 2011; Lars Wendler <polynomial-c@gentoo.org> -ddrescue-1.12.ebuild,
+  -ddrescue-1.13.ebuild:
+  Removed old versions.
 
   26 Jul 2011; Markus Meier <maekke@gentoo.org> ddrescue-1.14.ebuild:
   x86 stable, bug #375501

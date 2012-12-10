@@ -1,6 +1,121 @@
 # ChangeLog for net-p2p/gtk-gnutella
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/gtk-gnutella/ChangeLog,v 1.114 2011/07/18 10:41:11 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/gtk-gnutella/ChangeLog,v 1.143 2012/11/11 18:11:20 graaff Exp $
+
+*gtk-gnutella-0.98.4 (11 Nov 2012)
+
+  11 Nov 2012; Hans de Graaff <graaff@gentoo.org> +gtk-gnutella-0.98.4.ebuild:
+  Version bump.
+
+  11 Nov 2012; Hans de Graaff <graaff@gentoo.org> -gtk-gnutella-0.98.2.ebuild:
+  Cleanup.
+
+  22 Aug 2012; Johannes Huber <johu@gentoo.org> gtk-gnutella-0.98.3.ebuild:
+  Stable for x86, wrt bug #429190
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> gtk-gnutella-0.98.3.ebuild:
+  Marking gtk-gnutella-0.98.3 ppc for bug 429190
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> gtk-gnutella-0.98.3.ebuild:
+  Stable for amd64, wrt bug #429190
+
+  01 Aug 2012; Hans de Graaff <graaff@gentoo.org>
+  -gtk-gnutella-0.98.2-r1.ebuild:
+  Cleanup.
+
+*gtk-gnutella-0.98.3 (05 Jun 2012)
+
+  05 Jun 2012; Hans de Graaff <graaff@gentoo.org> +gtk-gnutella-0.98.3.ebuild:
+  Version bump.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gtk-gnutella-0.98.2.ebuild,
+  gtk-gnutella-0.98.2-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  08 Mar 2012; Hans de Graaff <graaff@gentoo.org> -gtk-gnutella-0.96.8.ebuild,
+  -gtk-gnutella-0.97.1.ebuild:
+  Remove old versions.
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> gtk-gnutella-0.97.1.ebuild:
+  Marking gtk-gnutella-0.97.1 ppc for bug 387007
+
+  23 Feb 2012; Brent Baude <ranger@gentoo.org> gtk-gnutella-0.98.2.ebuild:
+  Marking gtk-gnutella-0.98.2 ppc for bug 401369
+
+  19 Feb 2012; Hans de Graaff <graaff@gentoo.org>
+  gtk-gnutella-0.98.2-r1.ebuild:
+  Empty the LINGUAS file instead of removing it to avoid tripping up the
+  MANIFEST checking. Fixes bug 404455.
+
+*gtk-gnutella-0.98.2-r1 (18 Feb 2012)
+
+  18 Feb 2012; Hans de Graaff <graaff@gentoo.org>
+  +gtk-gnutella-0.98.2-r1.ebuild:
+  Move to EAPI=4. Only install requested LINGUAS per bug 403645.
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gtk-gnutella-0.98.2.ebuild:
+  x86 stable wrt bug #401369
+
+  01 Feb 2012; Hans de Graaff <graaff@gentoo.org> gtk-gnutella-0.98.2.ebuild:
+  Add missing runtime dependencies, reported in bug 401369.
+
+  31 Jan 2012; Agostino Sarubbo <ago@gentoo.org> gtk-gnutella-0.98.2.ebuild:
+  Stable for amd64, wrt bug #401369
+
+  29 Jan 2012; Hans de Graaff <graaff@gentoo.org> -gtk-gnutella-0.98.ebuild,
+  -gtk-gnutella-0.98.1.ebuild:
+  Remove old versions with various problems.
+
+*gtk-gnutella-0.98.2 (30 Dec 2011)
+
+  30 Dec 2011; Hans de Graaff <graaff@gentoo.org> +gtk-gnutella-0.98.2.ebuild:
+  Version bump.
+
+*gtk-gnutella-0.98.1 (16 Dec 2011)
+
+  16 Dec 2011; Hans de Graaff <graaff@gentoo.org> +gtk-gnutella-0.98.1.ebuild:
+  Version bump.
+
+  12 Dec 2011; Hans de Graaff <graaff@gentoo.org> +gtk-gnutella-0.98.ebuild:
+  Version bump.
+
+*gtk-gnutella-0.98 (12 Dec 2011)
+
+  12 Dec 2011; Hans de Graaff <graaff@gentoo.org> +gtk-gnutella-0.98.ebuild:
+  Version bump.
+
+  12 Dec 2011; Hans de Graaff <graaff@gentoo.org> -gtk-gnutella-0.97.ebuild:
+  Remove old version.
+
+  14 Oct 2011; Tony Vroon <chainsaw@gentoo.org> gtk-gnutella-0.97.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #387007.
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gtk-gnutella-0.97.1.ebuild:
+  x86 stable wrt bug #387007
+
+  08 Oct 2011; Hans de Graaff <graaff@gentoo.org> -gtk-gnutella-0.96.9.ebuild:
+  Remove old version.
+
+  18 Sep 2011; Markus Meier <maekke@gentoo.org> gtk-gnutella-0.97.ebuild:
+  x86 stable, bug #382565
+
+  13 Sep 2011; Markos Chandras <hwoarang@gentoo.org> gtk-gnutella-0.97.ebuild:
+  Stable on amd64 wrt bug #382565
+
+  12 Sep 2011; Hans de Graaff <graaff@gentoo.org> gtk-gnutella-0.97.1.ebuild:
+  Patch build.sh instead after discussing with upstream.
+
+  12 Sep 2011; Hans de Graaff <graaff@gentoo.org> gtk-gnutella-0.97.1.ebuild:
+  Respect Gentoo's C compiler choice and don't force specific optimizations,
+  thanks to Agostino Sarubbo in bug 382595.
+
+*gtk-gnutella-0.97.1 (11 Sep 2011)
+
+  11 Sep 2011; Hans de Graaff <graaff@gentoo.org> +gtk-gnutella-0.97.1.ebuild:
+  Version bump.
 
   18 Jul 2011; Hans de Graaff <graaff@gentoo.org> gtk-gnutella-0.97.ebuild:
   Drop libxml2 dependency, it is no longer needed.

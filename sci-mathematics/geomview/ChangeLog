@@ -1,6 +1,18 @@
 # ChangeLog for sci-mathematics/geomview
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/geomview/ChangeLog,v 1.13 2010/10/10 21:49:01 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/geomview/ChangeLog,v 1.17 2012/10/24 19:40:34 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> geomview-1.9.4.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #24135.
+
+  26 Jan 2012; Justin Lecher <jlec@gentoo.org> -geomview-1.9.2.ebuild,
+  geomview-1.9.4.ebuild, -files/geomview.png:
+  Mirror binary file and remove it from FILESDIR, #370879; add missing dies;
+  resorted ebuild, dropped old
 
   10 Oct 2010; Ulrich Mueller <ulm@gentoo.org> geomview-1.9.2.ebuild,
   geomview-1.9.4.ebuild:
@@ -77,4 +89,3 @@
   new user-contributed ebuild (a group effort even) by David Hyunjin Lim,
   with contributions from Cliff Yapp (I added the keywords and cleaned up
   the syntax a bit)
-

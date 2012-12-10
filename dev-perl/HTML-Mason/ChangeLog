@@ -1,6 +1,47 @@
 # ChangeLog for dev-perl/HTML-Mason
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Mason/ChangeLog,v 1.97 2011/06/19 15:50:32 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Mason/ChangeLog,v 1.106 2012/10/08 15:35:57 tove Exp $
+
+  08 Oct 2012; Torsten Veller <tove@gentoo.org> HTML-Mason-1.500.0.ebuild:
+  Remove useflag 'doc' as HTML documentation was eleminated from the
+  distribution (#437578)
+
+*HTML-Mason-1.500.0 (07 Oct 2012)
+
+  07 Oct 2012; Torsten Veller <tove@gentoo.org> +HTML-Mason-1.500.0.ebuild,
+  metadata.xml:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org> -HTML-Mason-1.450.0.ebuild,
+  -HTML-Mason-1.460.0.ebuild, -HTML-Mason-1.470.0.ebuild:
+  Cleanup
+
+*HTML-Mason-1.480.0 (04 Feb 2012)
+
+  04 Feb 2012; Torsten Veller <tove@gentoo.org> +HTML-Mason-1.480.0.ebuild:
+  Version bump
+
+*HTML-Mason-1.470.0 (23 Oct 2011)
+
+  23 Oct 2011; Torsten Veller <tove@gentoo.org> +HTML-Mason-1.470.0.ebuild:
+  Version bump. Remove README files from /usr/bin (#368937)
+
+*HTML-Mason-1.460.0 (21 Sep 2011)
+
+  21 Sep 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +HTML-Mason-1.460.0.ebuild:
+  Version bump via perl-bump experimental tool.
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -HTML-Mason-1.45.ebuild:
+  Cleanup
+
+*HTML-Mason-1.450.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +HTML-Mason-1.450.0.ebuild:
+  Change version scheme
 
   19 Jun 2011; Raúl Porcel <armin76@gentoo.org> HTML-Mason-1.42.ebuild,
   HTML-Mason-1.45.ebuild:

@@ -1,6 +1,31 @@
 # ChangeLog for mail-mta/sendmail
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/sendmail/ChangeLog,v 1.96 2011/05/17 17:59:20 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/sendmail/ChangeLog,v 1.101 2012/11/06 11:21:03 eras Exp $
+
+  06 Nov 2012; Eray Aslan <eras@gentoo.org> sendmail-8.14.4.ebuild,
+  sendmail-8.14.5-r1.ebuild, sendmail-8.14.5-r2.ebuild, sendmail-8.14.5.ebuild:
+  mail-mta/nbsmtp is no longer in the tree - remove from DEPEND
+
+*sendmail-8.14.5-r2 (14 Jun 2012)
+
+  14 Jun 2012; Eray Aslan <eras@gentoo.org> +sendmail-8.14.5-r2.ebuild,
+  +files/sendmail-starttls-multi-crl.patch:
+  Install helper programs - bug #348621. Read multiple crls - bug #354611.
+  Install /etc/sasl2/Sendmail.conf - bug #144060
+
+  04 Jun 2012; Zac Medico <zmedico@gentoo.org> sendmail-8.14.4.ebuild,
+  sendmail-8.14.5-r1.ebuild, sendmail-8.14.5.ebuild:
+  inherit user for enewgroup and enewuser, and multilib for get_libdir
+
+  02 Nov 2011; Mike Frysinger <vapier@gentoo.org> sendmail-8.14.4.ebuild,
+  sendmail-8.14.5.ebuild, sendmail-8.14.5-r1.ebuild:
+  Drop "die" from enew{user,group} since these have always taken care of
+  calling it when necessary.
+
+*sendmail-8.14.5-r1 (08 Sep 2011)
+
+  08 Sep 2011; Eray Aslan <eras@gentoo.org> +sendmail-8.14.5-r1.ebuild:
+  Add CipherList option - bug #381139
 
 *sendmail-8.14.5 (17 May 2011)
 

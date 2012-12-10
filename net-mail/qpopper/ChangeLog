@@ -1,6 +1,32 @@
 # ChangeLog for net-mail/qpopper
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/qpopper/ChangeLog,v 1.32 2010/08/09 07:43:18 pva Exp $
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-mail/qpopper/ChangeLog,v 1.38 2011/12/19 15:32:15 eras Exp $
+
+  19 Dec 2011; Eray Aslan <eras@gentoo.org>
+  -files/qpopper-4.0.14-parallel-build.patch, -qpopper-4.0.16.ebuild,
+  -files/qpopper-4.0.16-glibc-2.10.patch, -files/qpopper-CAN-2005-1151.patch,
+  -files/qpopper-CAN-2005-1152.patch:
+  remove old
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> qpopper-4.0.16.ebuild,
+  qpopper-4.1.0.ebuild:
+  Drop sparc keywords
+
+  14 Oct 2011; Markos Chandras <hwoarang@gentoo.org> qpopper-4.1.0.ebuild:
+  Stable on amd64 wrt bug #36885
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> qpopper-4.1.0.ebuild:
+  x86 stable wrt bug #386885
+
+  13 Oct 2011; Peter Volkov <pva@gentoo.org> qpopper-4.1.0.ebuild:
+  Fixed build issue: specify spool-dir and always depend on mailbase, bug
+  #386991 wrt Agostino Sarubbo.
+
+*qpopper-4.1.0 (11 Sep 2011)
+
+  11 Sep 2011; Peter Volkov <pva@gentoo.org> +qpopper-4.1.0.ebuild,
+  +files/qpopper-4.1-parallel-build.patch:
+  Version bump.
 
   09 Aug 2010; Peter Volkov <pva@gentoo.org> -qpopper-4.0.5-r3.ebuild,
   -qpopper-4.0.14.ebuild, qpopper-4.0.16.ebuild, metadata.xml:

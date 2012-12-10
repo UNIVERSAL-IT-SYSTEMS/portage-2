@@ -1,6 +1,86 @@
 # ChangeLog for net-libs/c-client
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/c-client/ChangeLog,v 1.78 2011/07/25 13:22:21 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/c-client/ChangeLog,v 1.100 2012/12/09 18:26:27 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> c-client-2007f-r4.ebuild:
+  Stable for ppc64, wrt bug #445063
+
+  02 Dec 2012; Markus Meier <maekke@gentoo.org> c-client-2007f-r4.ebuild:
+  arm stable, bug #445063
+
+  29 Nov 2012; Brent Baude <ranger@gentoo.org> c-client-2007f-r4.ebuild:
+  Marking c-client-2007f-r4 ppc for bug 445063
+
+  29 Nov 2012; <ago@gentoo.org> c-client-2007f-r4.ebuild:
+  Stable for amd64, wrt bug #445063
+
+  29 Nov 2012; Jeroen Roovers <jer@gentoo.org> c-client-2007f-r4.ebuild:
+  Stable for HPPA (bug #445063).
+
+  17 Oct 2012;  <naota@gentoo.org> c-client-2007f-r4.ebuild:
+  Add ~x86-fbsd. #267299
+
+*c-client-2007f-r4 (15 Oct 2012)
+
+  15 Oct 2012; Eray Aslan <eras@gentoo.org> +c-client-2007f-r4.ebuild,
+  +files/c-client-2007f-topal.patch, metadata.xml:
+  Add topal and chappa USE flags for use with mail-client/alpine - bug #391387.
+  Fix ssl linkage.
+
+  08 Oct 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/c-client-2007f-ldflags.patch, c-client-2007f-r3.ebuild:
+  Ensure kerberos builds properly with as-needed
+
+  08 Oct 2012; Robin H. Johnson <robbat2@gentoo.org> c-client-2007f-r3.ebuild:
+  Whitespace.
+
+*c-client-2007f-r3 (08 Oct 2012)
+
+  08 Oct 2012; Robin H. Johnson <robbat2@gentoo.org> +c-client-2007f-r3.ebuild:
+  Add in IPv6 and Kerberos support from uw-imap.
+
+  11 Jul 2012; Eray Aslan <eras@gentoo.org> -c-client-2007f.ebuild:
+  Remove old
+
+*c-client-2007f-r2 (11 Jul 2012)
+
+  11 Jul 2012; Eray Aslan <eras@gentoo.org> +c-client-2007f-r2.ebuild:
+  Make build system multilib aware - bug #425766. Thanks to Anthony Basile
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> c-client-2007f-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #413601
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  c-client-2007f-r1.ebuild:
+  x86 stable wrt bug #413601
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> c-client-2007f-r1.ebuild:
+  Marking c-client-2007f-r1 ppc for bug 413601
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> c-client-2007f-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> c-client-2007f-r1.ebuild:
+  Stable for HPPA (bug #413601).
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> c-client-2007f-r1.ebuild:
+  Marking c-client-2007f-r1 ppc64 for bug 413601
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> c-client-2007f-r1.ebuild:
+  arm stable, bug #413601
+
+  26 Apr 2012; Agostino Sarubbo <ago@gentoo.org> c-client-2007f-r1.ebuild:
+  Stable for amd64, wrt bug #413601
+
+*c-client-2007f-r1 (20 Feb 2012)
+
+  20 Feb 2012; Eray Aslan <eras@gentoo.org> +c-client-2007f-r1.ebuild:
+  EAPI bump. Add static-libs USE flag. Fix header install.
+
+*c-client-2007f (20 Nov 2011)
+
+  20 Nov 2011; Eray Aslan <eras@gentoo.org> +c-client-2007f.ebuild:
+  version bump
 
   25 Jul 2011; Eray Aslan <eras@gentoo.org> -c-client-2007e.ebuild,
   -c-client-2007e-r1.ebuild:

@@ -1,6 +1,42 @@
 # ChangeLog for app-emulation/vice
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vice/ChangeLog,v 1.75 2011/07/29 04:57:26 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vice/ChangeLog,v 1.85 2012/11/06 21:55:05 mr_bones_ Exp $
+
+  06 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> vice-2.4.ebuild:
+  add x11-libs/vte:0 dep (bug #442082)
+
+*vice-2.4 (05 Nov 2012)
+
+  05 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> +vice-2.4.ebuild:
+  version bump
+
+  28 Oct 2012; Markos Chandras <hwoarang@gentoo.org> vice-2.3.ebuild:
+  Stable on amd64 wrt bug #439934
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> vice-2.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  13 Jan 2012; Mike Frysinger <vapier@gentoo.org> vice-2.3.ebuild:
+  Use common tc-getPKG_CONFIG helper.
+
+  13 Dec 2011; Michael Sterrett <mr_bones_@gentoo.org> vice-2.3.ebuild,
+  +files/vice-2.3-libav.patch:
+  Add patch to build with newer ffmpeg from Michael (kensington) (bug #394341)
+
+  10 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> -vice-2.2.ebuild,
+  -files/vice-2.2-xshm.patch:
+  old
+
+  24 Oct 2011; Michael Sterrett <mr_bones_@gentoo.org> vice-2.3.ebuild,
+  +files/vice-2.3-notexi.patch:
+  Avoid building pre-built docs (bug #379633) with patch from Jared B.
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> vice-2.3.ebuild:
+  x86 stable wrt bug #385895
+
+  02 Aug 2011; Matt Turner <mattst88@gentoo.org> vice-2.2.ebuild,
+  vice-2.3.ebuild:
+  Renamed x11-libs/Xaw3d to x11-libs/libXaw3d.
 
 *vice-2.3 (29 Jul 2011)
 

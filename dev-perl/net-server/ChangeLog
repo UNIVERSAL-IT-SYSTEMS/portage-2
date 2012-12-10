@@ -1,6 +1,33 @@
 # ChangeLog for dev-perl/net-server
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/net-server/ChangeLog,v 1.66 2010/07/15 13:50:40 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/net-server/ChangeLog,v 1.73 2012/10/05 15:41:08 ranger Exp $
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> net-server-2.6.0.ebuild:
+  Marking net-server-2.6.0 ppc for bug 412881
+
+  17 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> net-server-2.6.0.ebuild:
+  x86 stable wrt security bbug #412881
+
+  07 Sep 2012; Agostino Sarubbo <ago@gentoo.org> net-server-2.6.0.ebuild:
+  Stable for amd64, wrt bug #412881
+
+*net-server-2.6.0 (24 Jul 2012)
+
+  24 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> +net-server-2.6.0.ebuild:
+  Version bump, based on the ebuild by Bernd Lommerzheim in bug #422753. Add an
+  ipv6 USE flag to bring in the (automagic) dependency over IO-Socket-INET6 so
+  that Munin can rely on it.
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -net-server-0.99.ebuild:
+  Cleanup
+
+*net-server-0.990.0 (27 Aug 2011)
+
+  27 Aug 2011; Torsten Veller <tove@gentoo.org> +net-server-0.990.0.ebuild:
+  Change version scheme
 
 *net-server-0.99 (15 Jul 2010)
 
@@ -253,4 +280,3 @@
 
   27 Jun 2003; Michael Cummings <mcummings@gentoo.org> net-server-0.85.ebuild:
   ebuild submitted by Max Kalika <alkern23@yahoo.com> in bug 21432
-

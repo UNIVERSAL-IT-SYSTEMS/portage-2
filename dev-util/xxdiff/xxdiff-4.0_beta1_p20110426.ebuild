@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/xxdiff/xxdiff-4.0_beta1_p20110426.ebuild,v 1.4 2011/04/27 14:19:28 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/xxdiff/xxdiff-4.0_beta1_p20110426.ebuild,v 1.6 2012/11/30 20:39:15 hwoarang Exp $
 
 EAPI=3
 
@@ -16,11 +16,13 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 RDEPEND="x11-libs/qt-gui:4"
 DEPEND="${RDEPEND}"
+
+PATCHES=( "${FILESDIR}"/${P}-gcc47.patch )
 
 src_prepare() {
 	pushd src >/dev/null

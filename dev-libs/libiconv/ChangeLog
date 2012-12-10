@@ -1,6 +1,26 @@
 # ChangeLog for dev-libs/libiconv
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libiconv/ChangeLog,v 1.35 2009/12/16 10:13:12 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libiconv/ChangeLog,v 1.41 2012/09/16 16:18:25 blueness Exp $
+
+  16 Sep 2012; Anthony G. Basile <blueness@gentoo.org> libiconv-1.14.ebuild:
+  Stable on amd64 arm ppc x86
+
+  11 Sep 2012; Anthony G. Basile <blueness@gentoo.org> libiconv-1.14.ebuild:
+  Keyword ~amd64 ~x86, bug #434558
+
+  10 Sep 2012; Anthony G. Basile <blueness@gentoo.org> libiconv-1.14.ebuild:
+  Keyword ~arm ~mips ~ppc, bug #434558
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libiconv-1.14.ebuild:
+  keyword ~amd64-fbsd
+
+  09 Feb 2012; Mike Frysinger <vapier@gentoo.org> libiconv-1.14.ebuild:
+  Update to EAPI=4 and cleanup ebuild.
+
+*libiconv-1.14 (10 Nov 2011)
+
+  10 Nov 2011; Naohiro Aota <naota@gentoo.org> +libiconv-1.14.ebuild:
+  Version bumped.
 
   16 Dec 2009; Alexis Ballier <aballier@gentoo.org> -libiconv-1.11.ebuild,
   -libiconv-1.12.ebuild, -libiconv-1.13.ebuild:

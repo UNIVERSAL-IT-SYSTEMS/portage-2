@@ -1,6 +1,29 @@
 # ChangeLog for dev-java/dsiutils
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/dsiutils/ChangeLog,v 1.13 2010/02/09 20:39:41 josejx Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/dsiutils/ChangeLog,v 1.18 2012/12/08 15:48:14 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> dsiutils-1.0.10-r2.ebuild:
+  Stable for ppc64, wrt bug #424337
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> dsiutils-1.0.10-r2.ebuild:
+  Stable for ppc, wrt bug #424337
+
+  07 Dec 2012; <ago@gentoo.org> dsiutils-1.0.10-r2.ebuild:
+  Stable for amd64, wrt bug #424337
+
+*dsiutils-1.0.10-r2 (30 Jun 2012)
+
+  30 Jun 2012; Ralph Sennhauser <sera@gentoo.org> -dsiutils-1.0.4.ebuild,
+  -dsiutils-1.0.5.ebuild, -dsiutils-1.0.7.ebuild, -dsiutils-1.0.10.ebuild,
+  +dsiutils-1.0.10-r2.ebuild:
+  Restrict build to <jdk7. #423519
+  Fix source zip and make better use of eclasses.
+  Remove old.
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> dsiutils-1.0.4.ebuild,
+  dsiutils-1.0.5.ebuild, dsiutils-1.0.7.ebuild, dsiutils-1.0.10.ebuild,
+  dsiutils-1.0.10-r1.ebuild:
+  Move EAPI assignment to top of ebuild, bug 411875.
 
   09 Feb 2010; Joseph Jezak <josejx@gentoo.org> dsiutils-1.0.10-r1.ebuild:
   Marked ppc/ppc64 stable for bug #281006.

@@ -1,6 +1,56 @@
 # ChangeLog for app-office/openoffice-bin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/openoffice-bin/ChangeLog,v 1.249 2011/03/21 11:45:29 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-office/openoffice-bin/ChangeLog,v 1.261 2012/09/25 01:14:55 chithanh Exp $
+
+  25 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -openoffice-bin-3.4.0-r2.ebuild:
+  Drop vulnerable version.
+
+  19 Sep 2012; Johannes Huber <johu@gentoo.org> openoffice-bin-3.4.1.ebuild:
+  Stable for x86, wrt bug #433483
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> openoffice-bin-3.4.1.ebuild:
+  Stable for amd64, wrt bug #433483
+
+*openoffice-bin-3.4.1 (30 Aug 2012)
+
+  30 Aug 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +openoffice-bin-3.4.1.ebuild:
+  Version bump.
+
+*openoffice-bin-3.4.0-r2 (16 Aug 2012)
+
+  16 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +openoffice-bin-3.4.0-r2.ebuild, -openoffice-bin-3.4.0-r1.ebuild:
+  Revbump once more to use get_libdir, not hardcode lib64. My bad.
+
+*openoffice-bin-3.4.0-r1 (13 Aug 2012)
+
+  13 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +openoffice-bin-3.4.0-r1.ebuild, -openoffice-bin-3.4.0.ebuild:
+  Revision bump, now we cope along with libreoffice. Acked by chithead.
+
+  18 May 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -openoffice-bin-3.3.0.ebuild:
+  Drop vulnerable version.
+
+  13 May 2012; Agostino Sarubbo <ago@gentoo.org> openoffice-bin-3.4.0.ebuild:
+  Stable for amd64, wrt bug #386081
+
+  09 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  openoffice-bin-3.4.0.ebuild:
+  x86 stable wrt security bug #386081
+
+*openoffice-bin-3.4.0 (08 May 2012)
+
+  08 May 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +openoffice-bin-3.4.0.ebuild:
+  Version bump.
+
+  25 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/50-openoffice-bin, +openoffice-bin-3.3.0.ebuild, +files/wrapper.in,
+  +metadata.xml:
+  Re-add openoffice-bin, now maintained by me.
 
   21 Mar 2011; Markos Chandras <hwoarang@gentoo.org>
   openoffice-bin-3.3.0.ebuild:

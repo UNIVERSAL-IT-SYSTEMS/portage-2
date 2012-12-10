@@ -1,6 +1,235 @@
 # ChangeLog for app-admin/sudo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/sudo/ChangeLog,v 1.270 2011/05/18 01:29:24 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/sudo/ChangeLog,v 1.326 2012/09/29 10:17:44 ulm Exp $
+
+  29 Sep 2012; Ulrich Müller <ulm@gentoo.org> sudo-1.8.5_p2.ebuild,
+  sudo-1.8.5_p3.ebuild, sudo-1.8.6_p3.ebuild:
+  Specify LICENSE more precisely.
+
+*sudo-1.8.6_p3 (18 Sep 2012)
+
+  18 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org> +sudo-1.8.6_p3.ebuild,
+  -sudo-1.8.6_p2.ebuild:
+  Version bump.
+
+*sudo-1.8.6_p2 (17 Sep 2012)
+
+  17 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org> +sudo-1.8.6_p2.ebuild,
+  -sudo-1.8.6_p1.ebuild:
+  Version bump.
+
+*sudo-1.8.6_p1 (13 Sep 2012)
+
+  13 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org> +sudo-1.8.6_p1.ebuild:
+  Version bump.
+
+*sudo-1.8.5_p3 (17 Aug 2012)
+
+  17 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +sudo-1.8.5_p3.ebuild,
+  -files/sudo-1.8.3_p1-linguas.patch, -files/sudo-1.8.3_p1-no-utmpx.patch,
+  -sudo-1.8.3_p2.ebuild, -sudo-1.8.4_p4.ebuild:
+  Remove old; version bump.
+
+  05 Aug 2012; Richard Yao <ryao@gentoo.org> sudo-1.8.5_p2.ebuild:
+  Keyword ~amd64-fbsd and ~x64-freebsd
+
+*sudo-1.8.5_p2 (30 May 2012)
+
+  30 May 2012; Mike Frysinger <vapier@gentoo.org> +sudo-1.8.5_p2.ebuild,
+  -sudo-1.8.5_p1.ebuild:
+  Version bump to fix SUDO_ASKPASS regression #417425 by Iftikhar Rathore.
+
+  26 May 2012; Raúl Porcel <armin76@gentoo.org> sudo-1.8.5_p1.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #416281
+
+  26 May 2012; Markus Meier <maekke@gentoo.org> sudo-1.8.5_p1.ebuild:
+  arm stable, bug #416281
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> sudo-1.8.5_p1.ebuild:
+  Stable for ppc/ppc64; bug #416281
+
+  19 May 2012; Agostino Sarubbo <ago@gentoo.org> sudo-1.8.5_p1.ebuild:
+  Stable for amd64, wrt bug #416281
+
+  18 May 2012; Fabian Groffen <grobian@gentoo.org> sudo-1.8.5_p1.ebuild:
+  Add two more paths to chown in the Prefix instructions
+
+*sudo-1.8.5_p1 (18 May 2012)
+
+  18 May 2012; Mike Frysinger <vapier@gentoo.org> -sudo-1.8.5-r1.ebuild,
+  +sudo-1.8.5_p1.ebuild, -files/sudo-1.8.5-securedir.patch:
+  Version bump -- its the same as 1.8.5-r1, but with the patch integrated
+  upstream.
+
+*sudo-1.8.5-r1 (17 May 2012)
+
+  17 May 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/sudo-1.8.5-securedir.patch, +sudo-1.8.5-r1.ebuild, -sudo-1.8.5.ebuild:
+  Fix parsing of #includedir directives #416371 by Marcin Mirosław.
+
+  17 May 2012; Tobias Klausmann <klausman@gentoo.org> sudo-1.8.5.ebuild:
+  Stable on alpha, bug #416281
+
+  17 May 2012; Jeff Horelick <jdhore@gentoo.org> sudo-1.8.5.ebuild:
+  marked x86 per bug 416281
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> sudo-1.8.5.ebuild:
+  Stable for HPPA (bug #416281).
+
+*sudo-1.8.5 (16 May 2012)
+
+  16 May 2012; Diego E. Pettenò <flameeyes@gentoo.org> +sudo-1.8.5.ebuild,
+  -sudo-1.8.4_p2.ebuild:
+  Remove old and version bump.
+
+  27 Apr 2012; Fabian Groffen <grobian@gentoo.org> sudo-1.8.4_p4.ebuild:
+  Fix for Prefix, marked ~sparc-solaris
+
+  23 Apr 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/sudo-1.8.3_p1-no-utmpx.patch, sudo-1.8.3_p2.ebuild,
+  sudo-1.8.4_p2.ebuild, sudo-1.8.4_p4.ebuild:
+  Fix building on systems without utmpx.h.
+
+  28 Mar 2012; Mike Frysinger <vapier@gentoo.org>
+  -files/sudo-1.8.2-fix-pwutil-alignment.patch,
+  -files/sudo-1.8.2-parallel-build.patch, -files/sudo-skeychallengeargs.diff:
+  Drop unused patches.
+
+*sudo-1.8.4_p4 (13 Mar 2012)
+
+  13 Mar 2012; Diego E. Pettenò <flameeyes@gentoo.org> +sudo-1.8.4_p4.ebuild,
+  -sudo-1.7.4_p5.ebuild, -sudo-1.8.1_p2.ebuild, -sudo-1.8.2-r1.ebuild,
+  -sudo-1.8.3_p1-r2.ebuild, -sudo-1.8.3_p1.ebuild, -sudo-1.8.4_p1.ebuild:
+  Version bump and clear old.
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> sudo-1.8.3_p2.ebuild:
+  Marking sudo-1.8.3_p2 ppc64 for bug 401533
+
+*sudo-1.8.4_p2 (29 Feb 2012)
+
+  29 Feb 2012; Diego E. Pettenò <flameeyes@gentoo.org> +sudo-1.8.4_p2.ebuild:
+  Version bump.
+
+*sudo-1.8.4_p1 (21 Feb 2012)
+
+  21 Feb 2012; Diego E. Pettenò <flameeyes@gentoo.org> +sudo-1.8.4_p1.ebuild:
+  Version bump.
+
+  21 Feb 2012; Mike Frysinger <vapier@gentoo.org> sudo-1.8.3_p2.ebuild:
+  Add USE=nls flag by Darin Petkov.
+
+  04 Feb 2012; Raúl Porcel <armin76@gentoo.org> sudo-1.8.3_p2.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #401533
+
+  03 Feb 2012; Mike Frysinger <vapier@gentoo.org> sudo-1.8.3_p2.ebuild:
+  We only need the mta/editor at runtime, not build time, so move to RDEPEND.
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> sudo-1.8.3_p2.ebuild:
+  Marking sudo-1.8.3_p2 ppc for bug 401533
+
+  30 Jan 2012; Jeroen Roovers <jer@gentoo.org> sudo-1.8.3_p2.ebuild:
+  Stable for HPPA (bug #401533).
+
+  30 Jan 2012; Jeff Horelick <jdhore@gentoo.org> sudo-1.8.3_p2.ebuild:
+  x86 stable per bug 401533
+
+  30 Jan 2012; Agostino Sarubbo <ago@gentoo.org> sudo-1.8.3_p2.ebuild:
+  Stable for AMD64, wrt security bug #401533
+
+*sudo-1.8.3_p2 (30 Jan 2012)
+
+  30 Jan 2012; Mike Frysinger <vapier@gentoo.org> +sudo-1.8.3_p2.ebuild:
+  Version bump #401533.
+
+  22 Jan 2012; Raúl Porcel <armin76@gentoo.org> sudo-1.8.2-r1.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #398767
+
+  21 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> sudo-1.8.2-r1.ebuild:
+  x86 stable wrt bug #398767
+
+  17 Jan 2012; Jeroen Roovers <jer@gentoo.org> sudo-1.8.2-r1.ebuild:
+  Stable for HPPA (bug #398767).
+
+  17 Jan 2012; Agostino Sarubbo <ago@gentoo.org> sudo-1.8.2-r1.ebuild:
+  Stable for amd64, wrt bug #398767
+
+  29 Dec 2011; Ulrich Mueller <ulm@gentoo.org> sudo-1.7.4_p5.ebuild:
+  Update dependency on app-misc/editor-wrapper.
+
+  29 Dec 2011; Mark Loeser <halcy0n@gentoo.org> sudo-1.8.1_p2.ebuild:
+  Stable for ppc64; bug #379743
+
+  13 Dec 2011; <swift@gentoo.org> sudo-1.8.3_p1-r2.ebuild:
+  Adding support for native SELinux support within sudo
+
+*sudo-1.8.3_p1-r2 (15 Nov 2011)
+
+  15 Nov 2011; Mike Frysinger <vapier@gentoo.org> -sudo-1.8.3_p1-r1.ebuild,
+  +sudo-1.8.3_p1-r2.ebuild:
+  Restore hardcoded --with-plugindir configure flag #390659 by Priit Laes.
+
+*sudo-1.8.3_p1-r1 (15 Nov 2011)
+
+  15 Nov 2011; Mike Frysinger <vapier@gentoo.org> +sudo-1.8.3_p1-r1.ebuild,
+  +files/sudo-1.8.3_p1-linguas.patch:
+  Simplify ebuild a bit, and fix translation installation wrt LINGUAS.
+
+*sudo-1.8.3_p1 (28 Oct 2011)
+
+  28 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> +sudo-1.8.3_p1.ebuild,
+  -sudo-1.8.3.ebuild:
+  Version bump.
+
+*sudo-1.8.3 (23 Oct 2011)
+
+  23 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> +sudo-1.8.3.ebuild:
+  Version bump.
+
+*sudo-1.8.2-r1 (12 Oct 2011)
+
+  12 Oct 2011; Sergei Trofimovich <slyfox@gentoo.org> -sudo-1.8.2.ebuild,
+  +sudo-1.8.2-r1.ebuild, +files/sudo-1.8.2-fix-pwutil-alignment.patch:
+  Fixed alignment issue on alpha found by armin76 (fix from upstream).
+
+  07 Oct 2011; Mike Frysinger <vapier@gentoo.org> sudo-1.8.2.ebuild,
+  +files/sudo-1.8.2-parallel-build.patch:
+  Fix parallel build failures with sudoreplay.
+
+  03 Sep 2011; Raúl Porcel <armin76@gentoo.org> sudo-1.8.1_p2.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #379743
+
+  28 Aug 2011; Markus Meier <maekke@gentoo.org> sudo-1.8.1_p2.ebuild:
+  arm stable, bug #379743
+
+  26 Aug 2011; Mike Frysinger <vapier@gentoo.org> sudo-1.8.2.ebuild:
+  Force system zlib usage #380491 by Michael.
+
+  25 Aug 2011; Jeroen Roovers <jer@gentoo.org> sudo-1.8.1_p2.ebuild:
+  Stable for HPPA (bug #379743).
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> sudo-1.8.1_p2.ebuild:
+  x86 stable, bug #379743
+
+  22 Aug 2011; Tony Vroon <chainsaw@gentoo.org> sudo-1.8.1_p2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah El Lazkani in bug #379743.
+
+  21 Aug 2011; nixnut <nixnut@gentoo.org> sudo-1.8.1_p2.ebuild:
+  ppc stable 379743
+
+  18 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> sudo-1.8.1_p2.ebuild,
+  sudo-1.8.2.ebuild:
+  Add back skey dependency that was dropped (when?).
+
+*sudo-1.8.2 (18 Aug 2011)
+
+  18 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> -sudo-1.7.4_p4.ebuild,
+  +sudo-1.8.2.ebuild:
+  Version bump, and remove old.
+
+  11 Aug 2011; Ulrich Mueller <ulm@gentoo.org> sudo-1.7.4_p4.ebuild,
+  sudo-1.7.4_p5.ebuild, sudo-1.8.1_p2.ebuild:
+  Update dependency following package move of editor-wrapper.
 
 *sudo-1.8.1_p2 (18 May 2011)
 

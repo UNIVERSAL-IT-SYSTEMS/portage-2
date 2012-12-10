@@ -1,6 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/recursos/recursos-2.0.ebuild,v 1.6 2007/07/13 06:07:38 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/recursos/recursos-2.0.ebuild,v 1.8 2012/10/20 09:41:09 ago Exp $
+
+EAPI=4
 
 DESCRIPTION="Script to create html and text report about your system."
 HOMEPAGE="http://www.josealberto.org"
@@ -8,13 +10,13 @@ SRC_URI="mirror://gentoo/${P}.tbz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND=""
-RDEPEND="media-gfx/imagemagick
-app-shells/bash
-net-analyzer/rrdtool"
+RDEPEND="|| ( media-gfx/imagemagick media-gfx/graphicsmagick[imagemagick] )
+	app-shells/bash
+	net-analyzer/rrdtool"
 
 S=${WORKDIR}/r2
 

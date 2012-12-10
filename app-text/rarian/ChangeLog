@@ -1,6 +1,29 @@
 # ChangeLog for app-text/rarian
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/rarian/ChangeLog,v 1.50 2010/09/11 18:26:29 josejx Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/rarian/ChangeLog,v 1.56 2012/08/08 18:36:54 tetromino Exp $
+
+*rarian-0.8.1-r2 (08 Aug 2012)
+
+  08 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +rarian-0.8.1-r2.ebuild:
+  Use getopt-long on non-linux systems (bug #409811, thanks to Stuart Shelton,
+  Fabian Groffen, Naohiro Aota)
+
+  30 Apr 2012; Fabian Groffen <grobian@gentoo.org> rarian-0.8.1-r1.ebuild:
+  Fix for Prefix, add Prefix keywords
+
+  28 Apr 2012; Alexis Ballier <aballier@gentoo.org> rarian-0.8.1-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  23 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  rarian-0.8.1-r1.ebuild:
+  libtool eclass needed for elibtoolize (bug #388243). Thanks to Toralf
+  Förster <toralf.foerster@gmx.de> for reporting.
+
+  23 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> -rarian-0.8.1.ebuild,
+  rarian-0.8.1-r1.ebuild:
+  Update the ebuild not to ship .la and .a archives, punt the overshadowed
+  version.
 
   11 Sep 2010; Joseph Jezak <josejx@gentoo.org> rarian-0.8.1-r1.ebuild:
   Marked ppc for bug #324077.

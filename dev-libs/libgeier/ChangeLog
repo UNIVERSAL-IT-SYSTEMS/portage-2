@@ -1,6 +1,20 @@
 # ChangeLog for dev-libs/libgeier
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgeier/ChangeLog,v 1.20 2011/02/02 11:21:58 hanno Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgeier/ChangeLog,v 1.24 2012/06/07 17:25:47 johu Exp $
+
+  07 Jun 2012; Johannes Huber <johu@gentoo.org> libgeier-0.13.ebuild:
+  Stable for x86, wrt bug #418757
+
+  01 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libgeier-0.13.ebuild:
+  Stable for amd64, wrt bug #418757
+
+  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -libgeier-0.12.ebuild:
+  Remove old
+
+*libgeier-0.13 (12 Jan 2012)
+
+  12 Jan 2012; Michael Weber <xmw@gentoo.org> +libgeier-0.13.ebuild:
+  version bump (bug 398235, thanks Hannan Sadar)
 
   02 Feb 2011; Hanno Boeck <hanno@gentoo.org> libgeier-0.12.ebuild:
   Raise dep to xmlsec 1.2.16, see #353355.

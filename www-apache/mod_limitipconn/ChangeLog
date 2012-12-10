@@ -1,6 +1,28 @@
 # ChangeLog for www-apache/mod_limitipconn
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_limitipconn/ChangeLog,v 1.4 2009/09/17 08:46:41 hollow Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_limitipconn/ChangeLog,v 1.10 2012/12/09 16:57:18 ulm Exp $
+
+  09 Dec 2012; Ulrich Müller <ulm@gentoo.org> mod_limitipconn-0.22-r1.ebuild,
+  mod_limitipconn-0.23.ebuild, mod_limitipconn-0.24.ebuild:
+  Fix LICENSE, MIT (Expat) and Apache-2.0, respectively. See notice in source.
+
+  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop apache herd as discussed in http://www.gossamer-
+  threads.com/lists/gentoo/dev/262834
+
+*mod_limitipconn-0.24 (12 Oct 2012)
+
+  12 Oct 2012; Patrick Lauer <patrick@gentoo.org> +mod_limitipconn-0.24.ebuild:
+  Bump
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> mod_limitipconn-0.23.ebuild:
+  Marking mod_limitipconn-0.23 ppc for bug 394083
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> mod_limitipconn-0.23.ebuild:
+  x86 stable, bug #394083
+
+  18 Dec 2011; Agostino Sarubbo <ago@gentoo.org> mod_limitipconn-0.23.ebuild:
+  Stable for AMD64, wrt bug #394083
 
 *mod_limitipconn-0.23 (17 Sep 2009)
 
@@ -88,4 +110,3 @@
 
   03 Apr 2004; Chuck Short <zul@gentoo.org> mod_limitipconn-0.22.ebuild:
   Initial verison, ebuild written by me. Closes #31306.
-

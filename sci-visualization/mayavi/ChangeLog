@@ -1,6 +1,53 @@
 # ChangeLog for sci-visualization/mayavi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/mayavi/ChangeLog,v 1.20 2011/02/01 19:05:53 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/mayavi/ChangeLog,v 1.30 2012/12/06 19:37:26 bicatali Exp $
+
+  06 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> mayavi-4.2.0.ebuild,
+  metadata.xml:
+  Keyword amd64-linux and x86-linux
+
+*mayavi-4.2.0 (06 Dec 2012)
+
+  06 Dec 2012; Justin Lecher <jlec@gentoo.org> -mayavi-4.1.0.ebuild,
+  mayavi-4.1.0-r1.ebuild, +mayavi-4.2.0.ebuild, +files/mayavi-4.2.0-doc.patch:
+  Drop old; restrict tests as they are broken, #422951; only build docs with
+  USE=doc and only once, #445782; Version Bump; Add missing Deps
+
+  05 Mar 2012; Justin Lecher <jlec@gentoo.org> mayavi-4.1.0.ebuild,
+  mayavi-4.1.0-r1.ebuild:
+  Add missing RDEP on dev-python/wxpython
+
+  05 Mar 2012; Justin Lecher <jlec@gentoo.org> mayavi-4.1.0.ebuild,
+  mayavi-4.1.0-r1.ebuild:
+  Resort deps
+
+*mayavi-4.1.0-r1 (05 Mar 2012)
+
+  05 Mar 2012; Justin Lecher <jlec@gentoo.org> -mayavi-3.4.1.ebuild,
+  -mayavi-4.0.0.ebuild, mayavi-4.1.0.ebuild, +mayavi-4.1.0-r1.ebuild,
+  +files/mayavi-4.1.0-vtkQt.patch:
+  Drop old, #322191; restrict multiabi installation, #405541; include backport
+  patch from upstream, fixes compilation with newer vtk, #399537
+
+  15 Feb 2012; Justin Lecher <jlec@gentoo.org> mayavi-3.4.1.ebuild,
+  metadata.xml:
+  Cosmetic changes on DESCRIPTION and HOMEPAGE
+
+*mayavi-4.1.0 (17 Jan 2012)
+
+  17 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> +mayavi-4.1.0.ebuild:
+  Version bump
+
+  09 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> mayavi-4.0.0.ebuild:
+  Added more run dependencies
+
+  06 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> mayavi-4.0.0.ebuild:
+  Added dependencies to traitsui
+
+*mayavi-4.0.0 (04 Aug 2011)
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> +mayavi-4.0.0.ebuild:
+  Version bump. Possible API break.
 
   01 Feb 2011; Sébastien Fabbro <bicatali@gentoo.org> mayavi-3.4.1.ebuild,
   metadata.xml:
@@ -99,4 +146,3 @@
   Initial import. Closing bug #50464. Thanks to Colin Macdonald <cbm@sfu.ca>,
   Simon-Nicolas Roth <simon.roth@videotron.ca> and others in the bug mentioned
   for their work.
-

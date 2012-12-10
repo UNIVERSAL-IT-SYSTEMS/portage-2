@@ -1,6 +1,46 @@
 # ChangeLog for dev-haskell/cabal-install
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/cabal-install/ChangeLog,v 1.8 2011/08/01 20:56:47 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/cabal-install/ChangeLog,v 1.15 2012/12/06 22:54:57 slyfox Exp $
+
+  06 Dec 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  cabal-install-0.10.2-r2.ebuild, cabal-install-0.14.0.ebuild,
+  cabal-install-1.16.0.2.ebuild:
+  Get rid of 'dev-haskell/time' depend as it's a ghc's core library.
+
+*cabal-install-1.16.0.2 (18 Nov 2012)
+
+  18 Nov 2012; Mark Wright <gienah@gentoo.org> +cabal-install-1.16.0.2.ebuild:
+  Bump cabal-install to 1.16.0.2
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org>
+  cabal-install-0.10.2-r2.ebuild, cabal-install-0.14.0.ebuild:
+  move dev-haskell/cabal-install/cabal-install-0.14.0.ebuild ebuild to
+  mirror://hackage
+
+*cabal-install-0.14.0 (17 Apr 2012)
+
+  17 Apr 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +cabal-install-0.14.0.ebuild, -cabal-install-0.13.3.ebuild:
+  Version bump. Removed snapshot version.
+
+  03 Apr 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  cabal-install-0.10.2-r2.ebuild, cabal-install-0.13.3.ebuild:
+  Added missing 'dev-haskell/random' (diagnosed by ARJANEN Loïc Jean David).
+
+*cabal-install-0.10.2-r2 (20 Mar 2012)
+
+  20 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +cabal-install-0.10.2-r2.ebuild, +files/cabal-install-0.10-ghc-7.2.patch,
+  -cabal-install-0.10.2-r1.ebuild, -cabal-install-0.8.2.ebuild,
+  cabal-install-0.13.3.ebuild:
+  Migrated to bash-completion-r1 eclass. Fixed build failure against ghc-7.2.
+  Removed old.
+
+*cabal-install-0.13.3 (10 Mar 2012)
+
+  10 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +cabal-install-0.13.3.ebuild, +files/cabal-install-0.13.3-nopref.patch:
+  Version bump.
 
 *cabal-install-0.10.2-r1 (01 Aug 2011)
 
@@ -40,4 +80,3 @@
 
   19 Apr 2009; Lennart Kolmodin <kolmodin@gentoo.org> ChangeLog:
   Initial version.
-

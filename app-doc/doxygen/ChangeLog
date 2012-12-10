@@ -1,6 +1,135 @@
 # ChangeLog for app-doc/doxygen
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/doxygen/ChangeLog,v 1.203 2011/04/09 18:09:46 nerdboy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-doc/doxygen/ChangeLog,v 1.232 2012/10/07 08:54:33 pacho Exp $
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #24135.
+
+  13 Aug 2012; Kacper Kowalik <xarthisius@gentoo.org> Manifest:
+  Fix Manifest for new upstream tarball (bug #431192).
+
+*doxygen-1.8.2 (11 Aug 2012)
+
+  11 Aug 2012; Kacper Kowalik <xarthisius@gentoo.org> +doxygen-1.8.2.ebuild:
+  Version bump
+
+  11 Aug 2012; Kacper Kowalik <xarthisius@gentoo.org> -doxygen-1.6.3.ebuild,
+  -doxygen-1.7.2.ebuild, -doxygen-1.7.3.ebuild, -doxygen-1.7.5.1.ebuild,
+  -doxygen-1.8.0.ebuild, -doxygen-1.8.1.ebuild,
+  -files/doxygen-1.5.7.1-substitute.patch, -files/doxygen-1.6.2-dot-eps.patch,
+  -files/doxygen-1.7.1-dot-eps.patch, -files/doxygen-1.7.5.1-dot-eps.patch,
+  metadata.xml:
+  Drop old
+
+  11 Aug 2012; Kacper Kowalik <xarthisius@gentoo.org> doxygen-1.7.6.1.ebuild,
+  doxygen-1.8.1.2.ebuild:
+  Fix date in man pages wrt #428280 by Samuel BAUER <samuel.bauer@yahoo.fr>
+
+  09 Aug 2012; Kacper Kowalik <xarthisius@gentoo.org> doxygen-1.8.1.2.ebuild:
+  Increase default buffer stack for Fortran parser
+
+*doxygen-1.8.1.2 (28 Jul 2012)
+
+  28 Jul 2012; Kacper Kowalik <xarthisius@gentoo.org> +doxygen-1.8.1.2.ebuild:
+  Version bump wrt #428332 by Michał Górny <mgorny@gentoo.org>
+
+  31 May 2012; Zac Medico <zmedico@gentoo.org> doxygen-1.5.4.ebuild,
+  doxygen-1.5.8-r1.ebuild, doxygen-1.6.3.ebuild, doxygen-1.7.2.ebuild,
+  doxygen-1.7.3.ebuild:
+  inherit multilib for get_libdir
+
+*doxygen-1.8.1 (29 May 2012)
+
+  29 May 2012; Kacper Kowalik <xarthisius@gentoo.org> +doxygen-1.8.1.ebuild,
+  +files/doxygen-1.8.1-prefix-misc-alt.patch:
+  Version bump
+
+  08 May 2012; Kacper Kowalik <xarthisius@gentoo.org> doxygen-1.4.7.ebuild,
+  doxygen-1.5.4.ebuild, doxygen-1.5.8-r1.ebuild, doxygen-1.6.3.ebuild,
+  doxygen-1.7.2.ebuild, doxygen-1.7.3.ebuild, doxygen-1.7.5.1.ebuild,
+  doxygen-1.7.6.1.ebuild, doxygen-1.8.0.ebuild:
+  Use http instead of ftp in SRC_URI to avoid possible firewall issues. Fixes
+  #411189 by Kevin Pyle
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> doxygen-1.8.0.ebuild:
+  keyword ~amd64-fbsd
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> doxygen-1.8.0.ebuild:
+  fix build with BSD userland
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> doxygen-1.7.5.1.ebuild:
+  Move EAPI assignment to top of ebuild, bug 411875.
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> doxygen-1.7.6.1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #323647
+
+  23 Mar 2012; Jeff Horelick <jdhore@gentoo.org> doxygen-1.7.6.1.ebuild:
+  marked x86 per bug 323647
+
+  20 Mar 2012; Jeroen Roovers <jer@gentoo.org> doxygen-1.7.6.1.ebuild:
+  Stable for HPPA (bug #323647).
+
+  20 Mar 2012; Agostino Sarubbo <ago@gentoo.org> doxygen-1.7.6.1.ebuild:
+  Stable for amd64, wrt bug #323647
+
+  19 Mar 2012; Markus Meier <maekke@gentoo.org> doxygen-1.7.6.1.ebuild:
+  arm stable, bug #323647
+
+  17 Mar 2012; Matt Turner <mattst88@gentoo.org> doxygen-1.4.7.ebuild:
+  Drop mips keyword. ~mips was dropped in 2006, and no one ever added it back
+  to newer versions.
+
+  16 Mar 2012; Brent Baude <ranger@gentoo.org> doxygen-1.7.6.1.ebuild:
+  Marking doxygen-1.7.6.1 ppc for bug 323647
+
+  16 Mar 2012; Brent Baude <ranger@gentoo.org> doxygen-1.7.6.1.ebuild:
+  Marking doxygen-1.7.6.1 ppc64 for bug 323647
+
+*doxygen-1.8.0 (29 Feb 2012)
+
+  29 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> +doxygen-1.8.0.ebuild:
+  Version bump wrt bug 406229 by <supercilious.dude@gmail.com>
+
+  15 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> doxygen-1.7.6.1.ebuild:
+  Don't RDEPEND on python, thanks to Arfrever Frehtes Taifersar Arahesis
+  <arfrever.fta@gmail.com>
+
+  14 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> doxygen-1.7.6.1.ebuild:
+  Improve Python-related code wrt #308353 by Arfrever Frehtes Taifersar
+  Arahesis. Thanks to Ian Delaney <johneed@hotmail.com> for the patch
+
+  14 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> -doxygen-1.5.5.ebuild,
+  -doxygen-1.5.6.ebuild, -doxygen-1.5.7.1.ebuild, -doxygen-1.5.9.ebuild,
+  -doxygen-1.6.1.ebuild, -doxygen-1.6.2.ebuild, -doxygen-1.7.1.ebuild,
+  -doxygen-1.7.4.ebuild, -files/doxywizard.png, doxygen-1.4.7.ebuild,
+  doxygen-1.5.4.ebuild, doxygen-1.5.8-r1.ebuild, doxygen-1.6.3.ebuild,
+  doxygen-1.7.2.ebuild, doxygen-1.7.3.ebuild, doxygen-1.7.5.1.ebuild,
+  doxygen-1.7.6.1.ebuild:
+  Drop old, move binary files to external mirrors wrt #370913
+
+*doxygen-1.7.6.1 (14 Feb 2012)
+
+  14 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> +doxygen-1.7.6.1.ebuild,
+  metadata.xml:
+  Version bump: EAPI4, reorder vars, initial support for LINGUAS, use 'dot'
+  instead of 'nodot', add missing dependencies on perl and bison (fixes bug
+  #399349 by bay), respect CC and CXX, call eqmake4 for doxywizard, always use
+  emake, simplify latex+doc logic. Add myself as maintainer.
+
+*doxygen-1.7.5.1 (05 Nov 2011)
+
+  05 Nov 2011; Steve Arnold <nerdboy@gentoo.org> +doxygen-1.7.5.1.ebuild,
+  +files/doxygen-1.7.5.1-dot-eps.patch:
+  Updated to latest upstream release, removed external Tcl patch (see bug
+  #388863).  Thanks to Philipp for the updated no-dot patch.
+
+  03 Sep 2011; Steve Arnold <nerdboy@gentoo.org> doxygen-1.7.4.ebuild:
+  Newer (and cleaner) version using more of the qt4-r2 functionality.
+  Thanks to radhermit for bugging me about this...
+
+  03 Sep 2011; Steve Arnold <nerdboy@gentoo.org> doxygen-1.7.4.ebuild:
+  More updates to force qmake to use the right config settings; should 
+  also fix bug #378963.  Qmake could really use a nice eclass...
 
 *doxygen-1.7.4 (09 Apr 2011)
 

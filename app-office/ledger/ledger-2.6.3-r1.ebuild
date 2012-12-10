@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/ledger/ledger-2.6.3-r1.ebuild,v 1.1 2011/06/07 20:30:56 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/ledger/ledger-2.6.3-r1.ebuild,v 1.6 2012/06/06 17:35:03 darkside Exp $
 
 EAPI=4
 
@@ -8,10 +8,10 @@ inherit eutils elisp-common autotools
 
 DESCRIPTION="A double-entry accounting system with a command-line reporting interface"
 HOMEPAGE="http://ledger-cli.org/"
-SRC_URI="http://cloud.github.com/downloads/jwiegley/${PN}/${P}.tar.gz"
+SRC_URI="mirror://github/jwiegley/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~x64-macos"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux ~x64-macos"
 SLOT="0"
 IUSE="emacs debug gnuplot ofx static-libs xml vim-syntax"
 
@@ -39,7 +39,7 @@ src_configure() {
 	use emacs || export EMACS=no
 	econf \
 		$(use_enable debug) \
-		$(use_with emacs lispdir "${ED}${SITELISP}/${PN}") \
+		$(use_with emacs lispdir "${EPREFIX}/${SITELISP}/${PN}") \
 		$(use_enable ofx) \
 		$(use_enable static-libs static) \
 		$(use_enable xml)

@@ -1,6 +1,57 @@
 # ChangeLog for dev-libs/libf2c
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libf2c/ChangeLog,v 1.43 2011/07/13 14:36:38 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libf2c/ChangeLog,v 1.55 2012/11/06 06:33:37 ulm Exp $
+
+  06 Nov 2012; Ulrich Müller <ulm@gentoo.org> libf2c-20110801-r2.ebuild:
+  LICENSE is "HPND" according to Notice in tarball.
+
+  18 Oct 2012; Justin Lecher <jlec@gentoo.org> -libf2c-20070912.ebuild,
+  -libf2c-20090407-r1.ebuild:
+  Drop old
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  libf2c-20110801-r2.ebuild:
+  stable ppc ppc64, bug #433493
+
+  06 Oct 2012; Raúl Porcel <armin76@gentoo.org> libf2c-20090407-r1.ebuild,
+  libf2c-20110801-r2.ebuild:
+  Drop alpha keywords
+
+  07 Sep 2012; Johannes Huber <johu@gentoo.org> libf2c-20110801-r2.ebuild:
+  Stable for x86, wrt bug #433493
+
+  07 Sep 2012; Agostino Sarubbo <ago@gentoo.org> libf2c-20110801-r2.ebuild:
+  Stable for amd64, wrt bug #433493
+
+  04 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  files/libf2c-20110801-main.patch:
+  Clean patch
+
+*libf2c-20110801-r2 (04 Sep 2012)
+
+  04 Sep 2012; Justin Lecher <jlec@gentoo.org> -libf2c-20110801-r1.ebuild,
+  +libf2c-20110801-r2.ebuild, +files/libf2c-20110801-main.patch:
+  Adding new main() patch, #421975
+
+*libf2c-20110801-r1 (31 Aug 2012)
+
+  31 Aug 2012; Justin Lecher <jlec@gentoo.org> libf2c-20090407-r1.ebuild,
+  -libf2c-20110801.ebuild, +libf2c-20110801-r1.ebuild, metadata.xml:
+  Drop main.patch, #421975
+
+*libf2c-20110801 (19 Jun 2012)
+
+  19 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org> +libf2c-20110801.ebuild,
+  metadata.xml:
+  Version bump. Switch to EAPI4, use tc-getLD and added longdescription
+
+  06 Jun 2012; Zac Medico <zmedico@gentoo.org> libf2c-20070912.ebuild,
+  libf2c-20090407-r1.ebuild:
+  inherit multilib for get_libdir
+
+  31 Mar 2012; Tobias Klausmann <klausman@gentoo.org>
+  libf2c-20090407-r1.ebuild:
+  Stable on alpha, bug #354033
 
   13 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org>
   libf2c-20090407-r1.ebuild:

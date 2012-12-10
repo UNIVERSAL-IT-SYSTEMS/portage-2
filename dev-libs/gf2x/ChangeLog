@@ -1,6 +1,27 @@
 # ChangeLog for dev-libs/gf2x
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/gf2x/ChangeLog,v 1.11 2011/07/08 11:25:31 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/gf2x/ChangeLog,v 1.17 2012/03/01 12:58:02 jlec Exp $
+
+  01 Mar 2012; Justin Lecher <jlec@gentoo.org> -gf2x-0.9.5.ebuild,
+  -gf2x-1.0.ebuild:
+  Dropped old
+
+  29 Feb 2012; Brent Baude <ranger@gentoo.org> gf2x-1.0-r1.ebuild:
+  Marking gf2x-1.0-r1 ppc for bug 400009
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gf2x-1.0-r1.ebuild:
+  x86 stable wrt bug #400009
+
+  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org> gf2x-1.0-r1.ebuild:
+  Stable for amd64, wrt bug #400009
+
+  26 Jan 2012; Justin Lecher <jlec@gentoo.org> gf2x-1.0-r1.ebuild:
+  Add support for static-libs, #400777
+
+  24 Jan 2012; Justin Lecher <jlec@gentoo.org> gf2x-1.0-r1.ebuild,
+  metadata.xml:
+  EAPI BUMP to 4, drop src_install as it is handled by default function, rename
+  $PID to PACKAGEID
 
 *gf2x-1.0-r1 (08 Jul 2011)
 

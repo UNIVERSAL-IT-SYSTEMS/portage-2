@@ -1,6 +1,35 @@
 # ChangeLog for sci-astronomy/xephem
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/xephem/ChangeLog,v 1.36 2011/07/29 15:09:17 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/xephem/ChangeLog,v 1.44 2012/10/24 19:25:50 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> xephem-3.7.3.ebuild,
+  xephem-3.7.5.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  10 Oct 2012; Andreas Schuerch <nativemad@gentoo.org> xephem-3.7.5.ebuild:
+  x86 stable, see bug 423673. Thanks Myckel Habets for testing
+
+  30 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/xephem-3.7.5-respect-flags.patch, xephem-3.7.5.ebuild:
+  Respect AR, RANLIB wrt #436646 by Agostino Sarubbo <ago@gentoo.org>
+
+  30 Sep 2012; Agostino Sarubbo <ago@gentoo.org> xephem-3.7.5.ebuild:
+  Stable for amd64, wrt bug #423673
+
+  30 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> xephem-3.7.5.ebuild:
+  ppc/ppc64 stable wrt #423673
+
+  30 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> xephem-3.7.3.ebuild,
+  xephem-3.7.5.ebuild:
+  Use XEphem license wrt #436630 by Ulrich Müller <ulm@gentoo.org>
+
+  05 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -xephem-3.7.4-r1.ebuild,
+  xephem-3.7.5.ebuild:
+  keyword amd64-linux, x86-linux, removed old
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Switched herd to sci-astronomy
 
 *xephem-3.7.5 (29 Jul 2011)
 
@@ -213,4 +242,3 @@
   comments should well explained and written in clean English. The details about
   writing correct changelogs are explained in the skel.ChangeLog file which you
   can find in the root directory of the portage repository.
-

@@ -1,6 +1,56 @@
 # ChangeLog for sys-apps/sdparm
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/sdparm/ChangeLog,v 1.56 2010/11/26 07:20:29 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/sdparm/ChangeLog,v 1.73 2012/10/28 14:08:18 pacho Exp $
+
+  28 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer as talked with him.
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> sdparm-1.07.ebuild:
+  alpha/ia64/sh/sparc stable wrt #422189
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> sdparm-1.07.ebuild:
+  arm stable, bug #422189
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> sdparm-1.07.ebuild:
+  Stable for HPPA (bug #422189).
+
+  29 Jun 2012; Brent Baude <ranger@gentoo.org> sdparm-1.07.ebuild:
+  Marking sdparm-1.07 ppc for bug 422189
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> sdparm-1.07.ebuild:
+  Marking sdparm-1.07 ppc64 for bug 422189
+
+  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> sdparm-1.07.ebuild:
+  marked x86 per bug 422189
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> sdparm-1.07.ebuild:
+  Stable for amd64, wrt bug #422189
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> sdparm-1.07.ebuild:
+  Add ~amd64-linux keyword.
+
+  02 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> sdparm-1.06.ebuild:
+  ppc/ppc64 stable wrt #397213
+
+*sdparm-1.07 (24 Jan 2012)
+
+  24 Jan 2012; Tim Harder <radhermit@gentoo.org> +sdparm-1.07.ebuild:
+  Version bump.
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> sdparm-1.06.ebuild:
+  alpha/ia64/sh/sparc/x86 stable wrt #397213
+
+  12 Jan 2012; Markus Meier <maekke@gentoo.org> sdparm-1.06.ebuild:
+  arm stable, bug #397213
+
+  04 Jan 2012; Jeroen Roovers <jer@gentoo.org> sdparm-1.06.ebuild:
+  Stable for HPPA (bug #397213).
+
+  02 Jan 2012; Agostino Sarubbo <ago@gentoo.org> sdparm-1.06.ebuild:
+  Stable for AMD64, wrt bug #397213
+
+  29 Jul 2011; Zac Medico <zmedico@gentoo.org> sdparm-1.06.ebuild:
+  Add ~x86-linux keyword.
 
 *sdparm-1.06 (26 Nov 2010)
 
@@ -217,4 +267,3 @@
   +sdparm-0.91.ebuild:
   Initial import of sdparm. Works like hdparm to get and set settings for SCSI
   devices. Needs conf.d and init files.
-

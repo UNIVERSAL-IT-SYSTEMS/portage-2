@@ -1,6 +1,26 @@
 # ChangeLog for app-arch/unace
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/unace/ChangeLog,v 1.38 2011/03/30 08:55:01 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/unace/ChangeLog,v 1.44 2012/10/05 17:55:12 ranger Exp $
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> unace-2.5-r2.ebuild:
+  Marking unace-2.5-r2 ppc64 for bug 431696
+
+  03 Oct 2012; Brent Baude <ranger@gentoo.org> unace-2.5-r2.ebuild:
+  Marking unace-2.5-r2 ppc for bug 431696
+
+  20 Aug 2012; Johannes Huber <johu@gentoo.org> unace-2.5-r2.ebuild:
+  Stable for x86, wrt bug #431696
+
+  20 Aug 2012; Agostino Sarubbo <ago@gentoo.org> unace-2.5-r2.ebuild:
+  Stable for amd64, wrt bug #431696
+
+  20 Aug 2012; Jeroen Roovers <jer@gentoo.org> unace-2.5-r2.ebuild:
+  Stable for HPPA (bug #431696).
+
+*unace-2.5-r3 (17 Aug 2012)
+
+  17 Aug 2012; Mike Frysinger <vapier@gentoo.org> +unace-2.5-r3.ebuild:
+  Update to latest Debian patchset and EAPI=4.
 
   30 Mar 2011; Michael Weber <xmw@gentoo.org> unace-2.5-r2.ebuild:
   added ~arm (bug 302981)

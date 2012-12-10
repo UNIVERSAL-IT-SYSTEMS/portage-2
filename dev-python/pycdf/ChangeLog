@@ -1,6 +1,15 @@
 # ChangeLog for dev-python/pycdf
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pycdf/ChangeLog,v 1.10 2010/07/23 22:22:52 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pycdf/ChangeLog,v 1.13 2012/09/30 17:16:42 armin76 Exp $
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> pycdf-0.6.3.ebuild:
+  Drop ia64 keywords
+
+  23 Feb 2012; Patrick Lauer <patrick@gentoo.org> pycdf-0.6.3.ebuild:
+  Restricting pypy and jython
+
+  03 Dec 2011; Markos Chandras <hwoarang@gentoo.org> pycdf-0.6.3.ebuild:
+  Update LICENSE. Patch by Arfrever.
 
   23 Jul 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   pycdf-0.6.3.ebuild:

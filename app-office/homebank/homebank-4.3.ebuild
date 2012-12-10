@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/homebank/homebank-4.3.ebuild,v 1.6 2011/05/25 19:24:38 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/homebank/homebank-4.3.ebuild,v 1.8 2012/05/03 20:00:41 jdhore Exp $
 
 EAPI="2"
 
-inherit eutils fdo-mime
+inherit autotools eutils fdo-mime
 
 DESCRIPTION="Free, easy, personal accounting for everyone"
 HOMEPAGE="http://homebank.free.fr/index.php"
@@ -19,7 +19,7 @@ RDEPEND=">=x11-libs/gtk+-2.14:2
 	sys-libs/zlib
 	ofx? ( >=dev-libs/libofx-0.7 )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	>=dev-util/intltool-0.40.5"
 RDEPEND="${RDEPEND}
 	gnome-base/librsvg"
@@ -27,9 +27,15 @@ RDEPEND="${RDEPEND}
 S="${WORKDIR}/${P/_/}"
 
 src_prepare() {
+	# Drop DEPRECATED flags, bug #367251
+	sed -i -e 's:-D[A-Z_]*DISABLE_DEPRECATED::g' configure.ac configure || die
+
 	sed -i -e 's/true/TRUE/' src/import.c || die "sed failed"
 	echo -e "src/da_encoding.c\nsrc/hb_transaction.c" >> po/POTFILES.in || die "echo failed"
 	epatch "${FILESDIR}"/${P}-implicit-pointer.patch
+
+	intltoolize --force --copy --automake || die "intltoolize failed"
+	eautoreconf
 }
 
 src_configure() {

@@ -1,6 +1,95 @@
 # ChangeLog for media-libs/vigra
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/vigra/ChangeLog,v 1.31 2011/07/29 11:49:33 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/vigra/ChangeLog,v 1.55 2012/08/24 22:05:44 dilfridge Exp $
+
+  24 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org> vigra-1.8.0.ebuild,
+  +files/vigra-1.8.0-gcc47.patch:
+  Fix build with gcc-4.7, thanks dev-zero
+
+  04 Jul 2012; Jeff Horelick <jdhore@gentoo.org> vigra-1.7.1-r1.ebuild:
+  marked x86 per bug 401509
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> vigra-1.7.1-r1.ebuild:
+  Marking vigra-1.7.1-r1 ppc64 for bug 401509
+
+*vigra-1.8.0 (19 May 2012)
+
+  19 May 2012; Andreas K. Huettel <dilfridge@gentoo.org> +vigra-1.8.0.ebuild,
+  +files/vigra-1.8.0-automagicness.patch, +files/vigra-1.8.0-numpy_doc.patch:
+  Version bump
+
+  12 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Openoffice won't use system vigra for one header. Drop us from maint.
+
+  19 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org> vigra-1.7.1.ebuild,
+  vigra-1.7.1-r1.ebuild:
+  Disable tests, see bug 390447
+
+  28 Jan 2012; Mike Gilbert <floppym@gentoo.org> vigra-1.7.1-r1.ebuild,
+  vigra-1.7.1.ebuild:
+  Change boost dep to resolve bug 400849. Fix by Arfrever.
+
+  18 Dec 2011; Mark Loeser <halcy0n@gentoo.org> vigra-1.7.1-r1.ebuild:
+  Stable for ppc; bug #387187
+
+  23 Nov 2011; Tomáš Chvátal <scarabeus@gentoo.org> vigra-1.7.1-r1.ebuild:
+  Just restrict the tests to solve linking issues.
+
+  13 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> vigra-1.7.1-r1.ebuild:
+  Fix python.eclass depend usage
+
+  13 Nov 2011; Justin Lecher <jlec@gentoo.org> vigra-1.7.1-r1.ebuild:
+  Keyworded for Prefix ~amd64-linux ~x86-linux ~sparc-solaris ~x64-solaris
+  ~x86-solaris
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org> vigra-1.7.1-r1.ebuild:
+  Call python_mod_optimize() and python_mod_cleanup(). Patch by Arfrever.
+
+  26 Oct 2011; Tony Vroon <chainsaw@gentoo.org> vigra-1.7.1-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney &
+  Agostino "ago" Sarubbo in bug #387187.
+
+  23 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> -vigra-1.6.0.ebuild,
+  -files/vigra-1.6.0-gcc44.patch, -files/vigra-1.6.0-ldflags.patch:
+  Remove overshadowed version of vigra.
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> vigra-1.6.0.ebuild:
+  Move to ~sparc
+
+  18 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> vigra-1.7.1-r1.ebuild:
+  Forgot on pkg_setup.
+
+  18 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> vigra-1.7.1-r1.ebuild:
+  Use python eclass now that it supports eapi4.
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> vigra-1.7.1.ebuild:
+  ppc stable wrt #385217
+
+  11 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> vigra-1.7.1.ebuild:
+  ppc64 stable wrt #385217
+
+*vigra-1.7.1-r1 (05 Oct 2011)
+
+  05 Oct 2011; Maciej Mrozowski <reavertm@gentoo.org> +vigra-1.7.1-r1.ebuild:
+  Make API docs truly optional, bug 385645.
+
+  04 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> vigra-1.7.1.ebuild:
+  x86 stable wrt bug #385217
+
+  04 Oct 2011; Tony Vroon <chainsaw@gentoo.org> vigra-1.7.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #385217.
+
+  04 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  +files/1.7.1-fix-nosetest.patch, -vigra-1.6.0-r1.ebuild,
+  +files/1.7.1-fix-tests.patch, vigra-1.7.1.ebuild,
+  +files/1.7.1-numpy_doc.patch:
+  Try to consolidate python test and doc useflags by REQUIRED_USE usage. Add
+  patches where needed...
+
+  06 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  files/1.7.1-gcc4.6.patch:
+  Update the gcc-4.6 patch.
 
   29 Jul 2011; Tomáš Chvátal <scarabeus@gentoo.org> vigra-1.7.1.ebuild:
   Add doc support for the vigra package.

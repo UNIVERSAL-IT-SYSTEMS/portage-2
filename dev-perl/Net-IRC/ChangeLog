@@ -1,6 +1,42 @@
 # ChangeLog for dev-perl/Net-IRC
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-IRC/ChangeLog,v 1.29 2010/03/27 21:47:02 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-IRC/ChangeLog,v 1.39 2012/11/23 13:11:23 blueness Exp $
+
+  23 Nov 2012; Anthony G. Basile <blueness@gentoo.org> Net-IRC-0.790.0.ebuild:
+  keyword ~arm, bug #442816
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*Net-IRC-0.790.0 (16 Jun 2012)
+
+  16 Jun 2012; Torsten Veller <tove@gentoo.org> -Net-IRC-0.79.ebuild,
+  +Net-IRC-0.790.0.ebuild:
+  Change version scheme
+
+  16 Jun 2012; Torsten Veller <tove@gentoo.org> -Net-IRC-0.75.ebuild:
+  Cleanup
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> Net-IRC-0.79.ebuild:
+  Marking Net-IRC-0.79 ppc for bug 392851
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> Net-IRC-0.75.ebuild,
+  Net-IRC-0.79.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> Net-IRC-0.79.ebuild:
+  Move EAPI assignment to top of ebuild, bug 411875.
+
+  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> Net-IRC-0.79.ebuild:
+  Stable for AMD64, wrt bug #392851
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> Net-IRC-0.79.ebuild:
+  x86 stable wrt bug #392851
+
+  03 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> -Net-IRC-0.76.ebuild,
+  Net-IRC-0.79.ebuild:
+  Remove the stupid keywords. The 0.79 again has the files that .76 had
+  missing.
 
 *Net-IRC-0.79 (27 Mar 2010)
 

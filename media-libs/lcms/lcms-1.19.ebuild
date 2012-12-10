@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/lcms/lcms-1.19.ebuild,v 1.10 2011/02/26 18:18:37 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/lcms/lcms-1.19.ebuild,v 1.16 2012/12/02 10:20:19 grobian Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.* *-jython"
+RESTRICT_PYTHON_ABIS="3.* *-jython 2.7-pypy-*"
 
 inherit autotools eutils multilib python
 
@@ -15,10 +15,10 @@ SRC_URI="http://www.littlecms.com/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~x64-solaris ~x86-solaris"
 IUSE="jpeg python static-libs tiff zlib"
 
-RDEPEND="tiff? ( media-libs/tiff )
+RDEPEND="tiff? ( media-libs/tiff:0 )
 	jpeg? ( virtual/jpeg )
 	zlib? ( sys-libs/zlib )"
 DEPEND="${RDEPEND}
@@ -35,6 +35,7 @@ src_prepare() {
 	sed -e "/SUBDIRS =/s/ python//" -i Makefile.am
 
 	epatch "${FILESDIR}/${P}-disable_static_modules.patch"
+	epatch "${FILESDIR}/${P}-implicit.patch"
 
 	eautoreconf
 
@@ -63,9 +64,9 @@ src_compile() {
 
 		building() {
 			emake \
-				LCMS_PYEXECDIR="$(python_get_sitedir)" \
-				LCMS_PYINCLUDE="$(python_get_includedir)" \
-				LCMS_PYLIB="$(python_get_libdir)" \
+				LCMS_PYEXECDIR="${EPREFIX}$(python_get_sitedir)" \
+				LCMS_PYINCLUDE="${EPREFIX}$(python_get_includedir)" \
+				LCMS_PYLIB="${EPREFIX}$(python_get_libdir)" \
 				PYTHON_VERSION="$(python_get_version)"
 		}
 		python_execute_function -s --source-dir python building
@@ -75,16 +76,16 @@ src_compile() {
 src_install() {
 	emake \
 		DESTDIR="${D}" \
-		BINDIR="${D}"/usr/bin \
-		libdir=/usr/$(get_libdir) \
+		BINDIR="${ED}"/usr/bin \
+		libdir="${EPREFIX}"/usr/$(get_libdir) \
 		install || die
 
 	if use python; then
 		installation() {
 			emake \
 				DESTDIR="${D}" \
-				LCMS_PYEXECDIR="$(python_get_sitedir)" \
-				LCMS_PYLIB="$(python_get_libdir)" \
+				LCMS_PYEXECDIR="${EPREFIX}$(python_get_sitedir)" \
+				LCMS_PYLIB="${EPREFIX}$(python_get_libdir)" \
 				PYTHON_VERSION="$(python_get_version)" \
 				install
 		}

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>no-herd</herd>
-	<maintainer>
-		<email>leio@gentoo.org</email>
-	</maintainer>
 	<maintainer>
 		<email>idl0r@gentoo.org</email>
 		<name>Christian Ruppert</name>
@@ -12,6 +8,9 @@
 	<maintainer>
 		<email>peter@stuge.se</email>
 		<description>Please CC on all bugs</description>
+	</maintainer>
+	<maintainer> 
+		<email>leio@gentoo.org</email>
 	</maintainer>
 	<use>
 		<flag name="atahpt">Highpoint (HPT) ATA/RAID controller support</flag>
@@ -29,6 +28,7 @@
 		<flag name="nicnatsemi">Support for National Semiconductor NICs</flag>
 		<flag name="nicrealtek">Support for Realtek NICs</flag>
 		<flag name="ogp_spi">Enable support for OGP (Open Graphics Project) SPI flashing</flag>
+		<flag name="pony_spi">Enable support for SI-Prog like hardware by Lancos</flag>
 		<flag name="rayer_spi">RayeR SPIPGM hardware support</flag>
 		<flag name="satasii">Enable programmer for SiI SATA controllers</flag>
 		<flag name="satamv">Enable programmer for Marvell SATA controllers</flag>

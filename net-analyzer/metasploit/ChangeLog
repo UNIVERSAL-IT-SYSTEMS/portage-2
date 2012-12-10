@@ -1,6 +1,76 @@
 # ChangeLog for net-analyzer/metasploit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/metasploit/ChangeLog,v 1.55 2011/05/07 17:01:11 patrick Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/metasploit/ChangeLog,v 1.67 2012/10/16 20:05:36 zerochaos Exp $
+
+*metasploit-4.4.0-r1 (16 Oct 2012)
+
+  16 Oct 2012; Rick Farina <zerochaos@gentoo.org> +metasploit-4.4.0-r1.ebuild,
+  metasploit-4.2.0.ebuild, metasploit-4.3.0.ebuild, metasploit-4.4.0.ebuild,
+  metasploit-9999.ebuild:
+  add kissfft support
+
+*metasploit-4.4.0 (24 Aug 2012)
+
+  24 Aug 2012; Rick Farina <zerochaos@gentoo.org> +files/msfrpcd-4.4-conf,
+  +files/msfrpcd-4.4-initd, +metasploit-4.4.0.ebuild, metadata.xml:
+  bump and take over maintainership, many things may change soon
+
+  16 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  metasploit-4.0.0-r1.ebuild, metasploit-4.2.0.ebuild, metasploit-4.3.0.ebuild,
+  metasploit-9999.ebuild:
+  Update after Ruby packages move.
+
+  08 Jun 2012; Patrick Lauer <patrick@gentoo.org> metasploit-4.0.0-r1.ebuild,
+  metasploit-4.2.0.ebuild, metasploit-4.3.0.ebuild, metasploit-9999.ebuild:
+  Changing .xpm to .icon so that icon is actually installable
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> files/msfrpcd-4.3-initd:
+  Fix version in init.d script by Aaron Burnett (bug #416013).
+
+*metasploit-4.3.0 (02 May 2012)
+
+  02 May 2012; Patrick Lauer <patrick@gentoo.org> +files/msfrpcd-4.3-conf,
+  +files/msfrpcd-4.3-initd, +metasploit-4.3.0.ebuild:
+  Bump, drop ppc keyword until msgpack is keyworded
+
+  21 Apr 2012; Raúl Porcel <armin76@gentoo.org> metasploit-2.7.ebuild,
+  metasploit-4.0.0-r1.ebuild, metasploit-4.2.0.ebuild:
+  Drop sparc keywords
+
+  28 Feb 2012; Patrick Lauer <patrick@gentoo.org> metasploit-4.2.0.ebuild:
+  Fixing slot for #406149
+
+*metasploit-4.2.0 (28 Feb 2012)
+
+  28 Feb 2012; Patrick Lauer <patrick@gentoo.org> +files/msfrpcd-4.2-conf,
+  +files/msfrpcd-4.2-initd, +metasploit-4.2.0.ebuild, -files/msfrpcd-4.1-conf,
+  -files/msfrpcd-4.1-initd, -files/msfweb3.2.confd, -files/msfweb3.2.initd,
+  -files/msfweb3.3.confd, -files/msfweb3.3.initd, -files/msfweb3.4.confd,
+  -files/msfweb3.4.initd, -files/msfweb3.confd, -files/msfweb3.initd,
+  -metasploit-3.3.3.ebuild, -metasploit-3.4.0.ebuild, -metasploit-3.4.1.ebuild,
+  -metasploit-3.5.0.ebuild, -metasploit-3.6.0.ebuild, -metasploit-3.7.0.ebuild,
+  -metasploit-4.1.4.ebuild:
+  Bump, remove old
+
+*metasploit-4.1.4 (12 Jan 2012)
+
+  12 Jan 2012; Patrick Lauer <patrick@gentoo.org> +files/msfrpcd-4.1-conf,
+  +files/msfrpcd-4.1-initd, +metasploit-4.1.4.ebuild:
+  Bump
+
+*metasploit-4.0.0-r1 (04 Aug 2011)
+
+  04 Aug 2011; Patrick Lauer <patrick@gentoo.org> -metasploit-4.0.0.ebuild,
+  +metasploit-4.0.0-r1.ebuild:
+  Fixing stray svn folders and revdep-rebuild behaviour #377617 #377571
+
+*metasploit-9999 (03 Aug 2011)
+*metasploit-4.0.0 (03 Aug 2011)
+
+  03 Aug 2011; Patrick Lauer <patrick@gentoo.org> +metasploit-4.0.0.ebuild,
+  +files/msfrpcd-4.0-conf, +files/msfrpcd-4.0-initd, +metasploit-9999.ebuild,
+  +files/metasploit.icon, metadata.xml:
+  Bump to 4.0, includes lots of nice ebuild improvements from #342013
 
 *metasploit-3.7.0 (07 May 2011)
 
@@ -260,4 +330,3 @@
 
   13 Feb 2005; Daniel Black <dragonheart@gentoo.org> +metasploit-2.3.ebuild:
   Initial ebuild as per bug #75532 thanks to Stefano <raistlin@s0ftpj.org>
-

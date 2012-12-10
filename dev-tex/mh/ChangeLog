@@ -1,6 +1,48 @@
 # ChangeLog for dev-tex/mh
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/mh/ChangeLog,v 1.23 2011/07/28 07:20:16 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/mh/ChangeLog,v 1.36 2012/05/24 21:41:41 aballier Exp $
+
+  24 May 2012; Alexis Ballier <aballier@gentoo.org> mh-20111011.ebuild:
+  depend on tl-latexrecommended-2011 now that tl 2011 is stable.
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> mh-20111011.ebuild:
+  keyword ~amd64-fbsd
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> -mh-20080903.ebuild,
+  -mh-20101024.ebuild:
+  remove old
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> mh-20111011.ebuild:
+  ia64/s390/sh/sparc stable wrt #395735
+
+  04 Mar 2012; Tobias Klausmann <klausman@gentoo.org> mh-20111011.ebuild:
+  Stable on alpha, bug #395735
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> mh-20111011.ebuild:
+  Marking mh-20111011 ppc64 stable for bug 395735
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> mh-20111011.ebuild:
+  Marking mh-20111011 ppc stable for bug 395735
+
+  29 Jan 2012; Markus Meier <maekke@gentoo.org> mh-20111011.ebuild:
+  arm stable, bug #395735
+
+  17 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> mh-20111011.ebuild:
+  x86 stable wrt bug #395735
+
+  16 Jan 2012; Agostino Sarubbo <ago@gentoo.org> mh-20111011.ebuild:
+  Stable for amd64, wrt bug #395735
+
+  28 Dec 2011; Jeroen Roovers <jer@gentoo.org> mh-20111011.ebuild:
+  Stable for HPPA (bug #395735).
+
+*mh-20111011 (11 Oct 2011)
+
+  11 Oct 2011; Alexis Ballier <aballier@gentoo.org> +mh-20111011.ebuild:
+  version bump, bug #378477
+
+  28 Aug 2011; Fabian Groffen <grobian@gentoo.org> mh-20101024.ebuild:
+  Marked ~x64-macos
 
   28 Jul 2011; Alexis Ballier <aballier@gentoo.org> mh-20080903.ebuild,
   mh-20101024.ebuild:

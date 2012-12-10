@@ -1,6 +1,42 @@
 # ChangeLog for dev-python/pycurl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pycurl/ChangeLog,v 1.68 2011/04/10 12:35:02 klausman Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pycurl/ChangeLog,v 1.78 2012/09/29 18:44:44 armin76 Exp $
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org> pycurl-7.19.0-r1.ebuild:
+  alpha/ia64/sparc stable wrt #434126
+
+  20 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> pycurl-7.19.0-r1.ebuild:
+  Stable on ppc and ppc64. Wrt bug#434126.
+
+  18 Sep 2012; Jeroen Roovers <jer@gentoo.org> pycurl-7.19.0-r1.ebuild:
+  Stable for HPPA (bug #434126).
+
+  18 Sep 2012; Johannes Huber <johu@gentoo.org> pycurl-7.19.0-r1.ebuild:
+  Stable for x86, wrt bug #434126
+
+  16 Sep 2012; Markus Meier <maekke@gentoo.org> pycurl-7.19.0-r1.ebuild:
+  arm stable, bug #434126
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> pycurl-7.19.0-r1.ebuild:
+  Stable for amd64, wrt bug #434126
+
+  01 Aug 2012; Ulrich Müller <ulm@gentoo.org> pycurl-7.19.0-r1.ebuild:
+  Add ~amd64-fbsd keyword, with permission from ryao.
+
+  14 Jun 2012; Marien Zwart <marienz@gentoo.org> pycurl-7.19.0-r1.ebuild:
+  Clean up IUSE and tighten curl USE dependencies further, thanks to comments
+  from Arfrever.
+
+*pycurl-7.19.0-r1 (13 Jun 2012)
+
+  13 Jun 2012; Marien Zwart <marienz@gentoo.org>
+  +files/pycurl-7.19.0-linking-v2.patch, +pycurl-7.19.0-r1.ebuild:
+  Improve handling of curl ssl backends (#408821, #329987), restrict pypy.
+
+  18 Apr 2012; Jesus Rivero <neurogeek@gentoo.org>
+  files/pycurl-7.19.0-linking.patch:
+  Modified patch to account for curl USE flag mixture: ssl nss gnutls. Closes
+  bug #329987
 
   10 Apr 2011; Tobias Klausmann <klausman@gentoo.org> pycurl-7.19.0.ebuild:
   Stable on alpha, bug #343309

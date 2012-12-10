@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
 	<maintainer>
 		<email>vostorga@gentoo.org</email>
 		<name>Victor Ostorga</name>
@@ -15,19 +14,8 @@
 	based on gnome and xulrunner/webkit.
 	</longdescription>
 	<use>
-		<flag name='dbus'>
-			Enables the DBUS connector for liferea, so feeds can be managed from
-			external programs
-		</flag>
 		<flag name='libnotify'>
 			Enable popup notifications
-		</flag>
-		<flag name='lua'>
-			Enable lua scripting
-		</flag>
-		<flag name='networkmanager'>
-			Enable NetworkManager integration to automatically detect
-			online/offline status
 		</flag>
 	</use>
 </pkgmetadata>

@@ -1,6 +1,28 @@
 # ChangeLog for dev-libs/blitz
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/blitz/ChangeLog,v 1.41 2011/07/20 13:56:51 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/blitz/ChangeLog,v 1.46 2012/11/13 06:27:36 bicatali Exp $
+
+  13 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> blitz-0.10.ebuild:
+  Split doc building and compiling, resolving bug #442504
+
+  19 Oct 2012; Justin Lecher <jlec@gentoo.org> blitz-0.9.ebuild,
+  blitz-0.9-r3.ebuild, blitz-0.10.ebuild, metadata.xml:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  20 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/blitz-0.10-set-default-arg-value.patch, blitz-0.10.ebuild:
+  Fix for unset variable when user specifically disable a default enabled
+  feature. This also fixes bug #431594
+
+  13 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Update metadata.xml boost use flag description
+
+*blitz-0.10 (13 Aug 2012)
+
+  13 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> +blitz-0.10.ebuild,
+  +files/blitz-0.10-docs.patch, +files/blitz-0.10-gcc47.patch, metadata.xml:
+  Version bump, take maintainership, fixes doc install
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #34534

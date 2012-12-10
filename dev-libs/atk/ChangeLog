@@ -1,6 +1,93 @@
 # ChangeLog for dev-libs/atk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/atk/ChangeLog,v 1.226 2011/07/11 00:03:33 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/atk/ChangeLog,v 1.251 2012/10/28 15:39:31 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> atk-2.4.0.ebuild:
+  ia64/s390/sh/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> atk-2.4.0.ebuild:
+  stable ppc, bug #427544
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> atk-2.4.0.ebuild:
+  stable ppc64, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> atk-2.4.0.ebuild:
+  arm stable, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> atk-2.4.0.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> atk-2.4.0.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> atk-2.4.0.ebuild:
+  Stable for HPPA (bug #427544).
+
+  27 Sep 2012; Matt Turner <mattst88@gentoo.org> atk-2.4.0.ebuild:
+  Stable on alpha, bug 427544.
+
+*atk-2.6.0 (25 Sep 2012)
+
+  25 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  atk-1.32.0-r1.ebuild, atk-2.2.0.ebuild, atk-2.4.0.ebuild, +atk-2.6.0.ebuild:
+  Version bump. Make license more precise.
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> atk-2.2.0.ebuild:
+  ppc stable wrt #407643
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> atk-1.32.0-r1.ebuild,
+  atk-2.2.0.ebuild, atk-2.4.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  28 Apr 2012; Alexis Ballier <aballier@gentoo.org> atk-2.4.0.ebuild:
+  keyword ~amd64-fbsd
+
+  19 Apr 2012; Pacho Ramos <pacho@gentoo.org> -atk-1.32.0.ebuild,
+  -atk-2.0.1.ebuild, atk-2.4.0.ebuild:
+  Fix glib dependency, drop old (#412583 by Tomas Psika).
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> atk-2.2.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #407643
+
+*atk-2.4.0 (28 Mar 2012)
+
+  28 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +atk-2.4.0.ebuild:
+  Version bump.
+
+  25 Mar 2012; Markus Meier <maekke@gentoo.org> atk-2.2.0.ebuild:
+  arm stable, bug #407643
+
+  23 Mar 2012; Jeroen Roovers <jer@gentoo.org> atk-2.2.0.ebuild:
+  Stable for HPPA (bug #407643).
+
+  16 Mar 2012; Jeff Horelick <jdhore@gentoo.org> atk-2.2.0.ebuild:
+  marked x86 per bug 407643
+
+  13 Mar 2012; Agostino Sarubbo <ago@gentoo.org> atk-2.2.0.ebuild:
+  Stable for amd64, wrt bug #407643
+
+  12 Mar 2012; Brent Baude <ranger@gentoo.org> atk-2.2.0.ebuild:
+  Marking atk-2.2.0 ppc64 stable for bug 407643
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> atk-1.32.0-r1.ebuild:
+  s390 stable
+
+*atk-2.2.0 (19 Oct 2011)
+
+  19 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> +atk-2.2.0.ebuild:
+  Add atk-2.2.0 from the gnome overlay. Static is now disabled by configure
+  default.
+
+  Notable changes: AtkWindow and lots of new ATK roles (see
+  http://git.gnome.org/browse/atk/commit/?id=4f88969d708b83293d656afb79375538bc95973f).
+
+  19 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> atk-2.0.1.ebuild:
+  Drop .la files, and explicitly disable static libs
+
+*atk-2.0.1 (14 Aug 2011)
+
+  14 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> +atk-2.0.1.ebuild:
+  Bump to 2.0.1, for GNOME 3
 
   11 Jul 2011; Matt Turner <mattst88@gentoo.org> atk-1.32.0-r1.ebuild:
   Added ~mips, bug 364693

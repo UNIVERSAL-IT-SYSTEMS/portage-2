@@ -1,6 +1,38 @@
 # ChangeLog for sys-auth/pam_krb5
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_krb5/ChangeLog,v 1.46 2011/05/12 06:29:53 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_krb5/ChangeLog,v 1.55 2012/06/03 12:27:14 eras Exp $
+
+*pam_krb5-4.6 (03 Jun 2012)
+
+  03 Jun 2012; Eray Aslan <eras@gentoo.org> -pam_krb5-4.3.ebuild,
+  -pam_krb5-4.4.ebuild, +pam_krb5-4.6.ebuild:
+  version bump and remove old
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> pam_krb5-4.5.ebuild:
+  alpha/ia64/sh/sparc stable wrt #409053
+
+  30 Mar 2012; Markus Meier <maekke@gentoo.org> pam_krb5-4.5.ebuild:
+  arm stable, bug #409053
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> pam_krb5-4.5.ebuild:
+  Marking pam_krb5-4.5 ppc64 for bug 409053
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> pam_krb5-4.5.ebuild:
+  Marking pam_krb5-4.5 ppc for bug 409053
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pam_krb5-4.5.ebuild:
+  x86 stable wrt bug #409053
+
+  23 Mar 2012; Jeroen Roovers <jer@gentoo.org> pam_krb5-4.5.ebuild:
+  Stable for HPPA (bug #409053).
+
+  21 Mar 2012; Agostino Sarubbo <ago@gentoo.org> pam_krb5-4.5.ebuild:
+  Stable for amd64, wrt bug #409053
+
+*pam_krb5-4.5 (26 Dec 2011)
+
+  26 Dec 2011; Eray Aslan <eras@gentoo.org> +pam_krb5-4.5.ebuild:
+  version bump
 
   12 May 2011; Eray Aslan <eras@gentoo.org> pam_krb5-4.3.ebuild:
   Fix SRC_URI

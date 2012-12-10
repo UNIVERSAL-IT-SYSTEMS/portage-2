@@ -1,6 +1,17 @@
 # ChangeLog for net-nds/portmap
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/portmap/ChangeLog,v 1.48 2011/02/06 10:26:21 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-nds/portmap/ChangeLog,v 1.51 2012/12/09 12:34:07 ulm Exp $
+
+  09 Dec 2012; Ulrich Müller <ulm@gentoo.org> portmap-6.0.ebuild,
+  portmap-9999.ebuild:
+  Fix LICENSE, bugs 446590 and 426102.
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> portmap-6.0.ebuild,
+  portmap-9999.ebuild:
+  inherit user for enewgroup and enewuser
+
+  21 Sep 2011; Michał Górny <mgorny@gentoo.org> portmap-9999.ebuild:
+  Migrate to git-2.
 
   06 Feb 2011; Mart Raudsepp <leio@gentoo.org> portmap-6.0.ebuild:
   Drop to ~mips

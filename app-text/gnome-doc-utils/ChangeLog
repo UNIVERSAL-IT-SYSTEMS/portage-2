@@ -1,6 +1,74 @@
 # ChangeLog for app-text/gnome-doc-utils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/gnome-doc-utils/ChangeLog,v 1.188 2011/07/17 20:40:34 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/gnome-doc-utils/ChangeLog,v 1.206 2012/07/15 16:33:30 armin76 Exp $
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org>
+  gnome-doc-utils-0.20.10.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #410611
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gnome-doc-utils-0.20.10.ebuild:
+  ppc stable wrt #410611
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> gnome-doc-utils-0.20.10.ebuild:
+  Stable for HPPA (bug #410611).
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gnome-doc-utils-0.20.6.ebuild,
+  gnome-doc-utils-0.20.9.ebuild, gnome-doc-utils-0.20.10.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gnome-doc-utils-0.20.10.ebuild:
+  x86 stable, bug #410611
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  gnome-doc-utils-0.20.10.ebuild:
+  keyword ~amd64-fbsd
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> gnome-doc-utils-0.20.10.ebuild:
+  arm stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> gnome-doc-utils-0.20.10.ebuild:
+  Marking gnome-doc-utils-0.20.10 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org>
+  gnome-doc-utils-0.20.10.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  10 Apr 2012; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  sgml does not maintain this.
+
+*gnome-doc-utils-0.20.10 (27 Mar 2012)
+
+  27 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gnome-doc-utils-0.20.10.ebuild:
+  Version bump.
+
+*gnome-doc-utils-0.20.9 (22 Mar 2012)
+
+  22 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gnome-doc-utils-0.20.9.ebuild:
+  Version bump; gnome-doc-utils.make no longer validates documentation against
+  Mallard RNG definitions. Parallel make appears to work fine now.
+
+  21 Feb 2012; Patrick Lauer <patrick@gentoo.org> gnome-doc-utils-0.20.6.ebuild:
+  Restricting pypy
+
+  10 Feb 2012; Patrick Lauer <patrick@gentoo.org> gnome-doc-utils-0.20.6.ebuild:
+  Changing python deps in preparation for 2.4 removal
+
+  15 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org>
+  -gnome-doc-utils-0.20.4.ebuild, -gnome-doc-utils-0.20.5.ebuild:
+  Clean up old revisions.
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gnome-doc-utils-0.20.6.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> gnome-doc-utils-0.20.6.ebuild:
+  Stable for HPPA (bug #369909).
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> gnome-doc-utils-0.20.6.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #369909
 
   17 Jul 2011; Markus Meier <maekke@gentoo.org> gnome-doc-utils-0.20.6.ebuild:
   arm stable, bug #369909

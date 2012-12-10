@@ -1,6 +1,65 @@
 # ChangeLog for net-dialup/minicom
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/minicom/ChangeLog,v 1.81 2011/02/03 21:27:39 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/minicom/ChangeLog,v 1.99 2012/05/06 17:46:29 armin76 Exp $
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> minicom-2.6.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #409607
+
+  05 Apr 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> minicom-2.6.ebuild:
+  x86 stable wrt bug #409607
+
+  04 Apr 2012; Jeroen Roovers <jer@gentoo.org> minicom-2.6.ebuild:
+  Stable for HPPA (bug #409607).
+
+  31 Mar 2012; Markus Meier <maekke@gentoo.org> minicom-2.6.ebuild:
+  arm stable, bug #409607
+
+  29 Mar 2012; Agostino Sarubbo <ago@gentoo.org> minicom-2.6.ebuild:
+  Stable for amd64, wrt bug #409607
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> minicom-2.6.ebuild:
+  Marking minicom-2.6 ppc64 for bug 409607
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> minicom-2.6.ebuild:
+  Marking minicom-2.6 ppc for bug 409607
+
+  09 Mar 2012; Naohiro Aota <naota@gentoo.org>
+  +files/minicom-2.6-etimeout.patch, minicom-2.6.ebuild:
+  Add ~x86-fbsd; Add upstream patch to use ETIMEOUT instead of ETIME. Bug
+  #397747
+
+  03 Mar 2012; Tim Harder <radhermit@gentoo.org> -minicom-2.4.ebuild:
+  Remove old.
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> minicom-2.5.ebuild:
+  Marking minicom-2.5 ppc64 for bug 389063
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> minicom-2.5.ebuild:
+  Marking minicom-2.5 ppc for bug 389063
+
+*minicom-2.6 (28 Dec 2011)
+
+  28 Dec 2011; Tim Harder <radhermit@gentoo.org> +minicom-2.6.ebuild:
+  Version bump.
+
+  26 Nov 2011; Raúl Porcel <armin76@gentoo.org> minicom-2.5.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #389063
+
+  06 Nov 2011; Markus Meier <maekke@gentoo.org> minicom-2.5.ebuild:
+  arm stable, bug #389063
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> minicom-2.5.ebuild:
+  x86 stable wrt bug #389063
+
+  02 Nov 2011; Jeroen Roovers <jer@gentoo.org> minicom-2.5.ebuild:
+  Stable for HPPA (bug #389063).
+
+  01 Nov 2011; Tony Vroon <chainsaw@gentoo.org> minicom-2.5.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #389063.
+
+  31 Oct 2011; Tim Harder <radhermit@gentoo.org> minicom-2.5.ebuild:
+  Use default instead of default_src_install.
 
 *minicom-2.5 (03 Feb 2011)
 

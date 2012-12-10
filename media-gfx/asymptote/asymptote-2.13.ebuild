@@ -1,6 +1,7 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/asymptote/asymptote-2.13.ebuild,v 1.1 2011/06/20 18:11:24 grozin Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/asymptote/asymptote-2.13.ebuild,v 1.6 2011/11/14 11:23:37 flameeyes Exp $
+
 EAPI=3
 SUPPORT_PYTHON_ABIS=1
 PYTHON_DEPEND="python? 2"
@@ -12,14 +13,14 @@ HOMEPAGE="http://asymptote.sourceforge.net/"
 SRC_URI="mirror://sourceforge/asymptote/${P}.src.tgz"
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
+KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 IUSE="+boehm-gc doc emacs examples fftw gsl +imagemagick latex python sigsegv vim-syntax X"
 
 RDEPEND=">=sys-libs/readline-4.3-r5
 	>=sys-libs/ncurses-5.4-r5
 	imagemagick? ( media-gfx/imagemagick[png] )
 	sigsegv? ( dev-libs/libsigsegv )
-	boehm-gc? ( >=dev-libs/boehm-gc-7.0[-nocxx,threads] )
+	boehm-gc? ( >=dev-libs/boehm-gc-7.0[cxx,threads] )
 	fftw? ( >=sci-libs/fftw-3.0.1 )
 	gsl? ( sci-libs/gsl )
 	X? ( x11-misc/xdg-utils dev-lang/python dev-python/imaging[tk] )
@@ -52,6 +53,7 @@ src_configure() {
 	# for the CPPFLAGS see
 	# http://sourceforge.net/forum/forum.php?thread_id=1683277&forum_id=409349
 	econf CPPFLAGS=-DHAVE_SYS_TYPES_H \
+		CFLAGS="${CXXFLAGS}" \
 		--disable-gc-debug \
 		$(use_enable boehm-gc gc system) \
 		$(use_enable fftw) \

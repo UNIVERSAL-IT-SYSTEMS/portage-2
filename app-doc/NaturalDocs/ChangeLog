@@ -1,6 +1,37 @@
 # ChangeLog for app-doc/NaturalDocs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/NaturalDocs/ChangeLog,v 1.31 2011/04/10 12:56:38 klausman Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-doc/NaturalDocs/ChangeLog,v 1.40 2012/12/05 01:32:35 jer Exp $
+
+  05 Dec 2012; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  Change maintainer tag (bug #390951).
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> NaturalDocs-1.52.ebuild:
+  sparc stable wrt #391263
+
+  20 Feb 2012; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Drop no-herd.
+
+  19 Feb 2012; Tobias Klausmann <klausman@gentoo.org> NaturalDocs-1.52.ebuild:
+  Stable on alpha, bug #391263
+
+  04 Feb 2012; Brent Baude <ranger@gentoo.org> NaturalDocs-1.52.ebuild:
+  Marking NaturalDocs-1.52 ppc for bug 391263
+
+  04 Dec 2011; Markos Chandras <hwoarang@gentoo.org> NaturalDocs-1.52.ebuild:
+  Stable on amd64 wrt bug #391263
+
+  29 Nov 2011; Jeroen Roovers <jer@gentoo.org> NaturalDocs-1.52.ebuild:
+  Stable for HPPA (bug #391263).
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> NaturalDocs-1.52.ebuild:
+  x86 stable wrt bug #391263
+
+*NaturalDocs-1.52 (20 Oct 2011)
+
+  20 Oct 2011; Aaron W. Swenson <titanofold@gentoo.org>
+  +NaturalDocs-1.52.ebuild, metadata.xml:
+  Version bump. Now proxy-maintained by Ian "idella4" Delaney, proxy-committed
+  by Aaron W. Swenson.
 
   10 Apr 2011; Tobias Klausmann <klausman@gentoo.org>
   NaturalDocs-1.40-r1.ebuild:

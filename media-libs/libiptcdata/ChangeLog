@@ -1,6 +1,15 @@
 # ChangeLog for media-libs/libiptcdata
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libiptcdata/ChangeLog,v 1.23 2010/11/05 20:10:55 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libiptcdata/ChangeLog,v 1.25 2012/02/25 12:20:45 patrick Exp $
+
+  25 Feb 2012; Patrick Lauer <patrick@gentoo.org> libiptcdata-1.0.4.ebuild:
+  Restricting pypy and jython
+
+  26 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org>
+  -libiptcdata-1.0.2.ebuild, -libiptcdata-1.0.3.ebuild,
+  libiptcdata-1.0.4.ebuild:
+  Clean up old revisions. Depend on python-2 only per last comment in bug
+  #313531.
 
   05 Nov 2010; Samuli Suominen <ssuominen@gentoo.org>
   libiptcdata-1.0.4.ebuild:

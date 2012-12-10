@@ -1,6 +1,33 @@
 # ChangeLog for dev-vcs/gitg
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitg/ChangeLog,v 1.13 2011/07/31 00:47:11 sping Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitg/ChangeLog,v 1.20 2012/06/11 09:19:31 ago Exp $
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> gitg-0.1.2.ebuild:
+  Stable for amd64, wrt bug #419893
+
+  09 Jun 2012; Sebastian Pipping <sping@gentoo.org> gitg-0.0.6.ebuild,
+  gitg-0.1.0.ebuild, gitg-0.1.2.ebuild, gitg-0.2.2.ebuild, gitg-0.2.4.ebuild,
+  gitg-0.2.5.ebuild:
+  Fix homepage link (bug #420019)
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> gitg-0.1.2.ebuild:
+  marked x86 per bug 419893
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gitg-0.0.6.ebuild,
+  gitg-0.1.0.ebuild, gitg-0.1.2.ebuild, gitg-0.2.2.ebuild, gitg-0.2.4.ebuild,
+  gitg-0.2.5.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> gitg-0.2.5.ebuild:
+  Add ~amd64-linux keyword.
+
+*gitg-0.2.5 (28 Sep 2011)
+
+  28 Sep 2011; Sebastian Pipping <sping@gentoo.org> +gitg-0.2.5.ebuild:
+  Bump to 0.2.5 (bug #383527)
+
+  07 Aug 2011; Zac Medico <zmedico@gentoo.org> gitg-0.2.4.ebuild:
+  Add ~x86-linux keyword.
 
 *gitg-0.2.4 (31 Jul 2011)
 

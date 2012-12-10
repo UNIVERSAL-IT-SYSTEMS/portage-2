@@ -1,6 +1,94 @@
 # ChangeLog for dev-perl/Test-Deep
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-Deep/ChangeLog,v 1.43 2011/07/29 16:55:19 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-Deep/ChangeLog,v 1.70 2012/10/02 00:19:14 blueness Exp $
+
+  02 Oct 2012; Anthony G. Basile <blueness@gentoo.org> Test-Deep-0.110.0.ebuild:
+  stable ppc, bug #429010
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org> Test-Deep-0.110.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #429010
+
+  18 Sep 2012; Jeroen Roovers <jer@gentoo.org> Test-Deep-0.110.0.ebuild:
+  Stable for HPPA (bug #429010).
+
+  14 Sep 2012; Markus Meier <maekke@gentoo.org> Test-Deep-0.110.0.ebuild:
+  arm stable, bug #429010
+
+  12 Sep 2012; Johannes Huber <johu@gentoo.org> Test-Deep-0.110.0.ebuild:
+  Stable for x86, wrt bug #429010
+
+  12 Sep 2012; Agostino Sarubbo <ago@gentoo.org> Test-Deep-0.110.0.ebuild:
+  Stable for amd64, wrt bug #429010
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -Test-Deep-0.108.0.ebuild:
+  Cleanup
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> Test-Deep-0.109.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #418855
+
+  09 Aug 2012; Brent Baude <ranger@gentoo.org> Test-Deep-0.109.0.ebuild:
+  Marking Test-Deep-0.109.0 ppc for bug 418855
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> Test-Deep-0.110.0.ebuild:
+  Marking Test-Deep-0.110.0 ppc64 for bug 418823
+
+  05 Aug 2012; Markus Meier <maekke@gentoo.org> Test-Deep-0.109.0.ebuild:
+  arm stable, bug #418855
+
+  05 Aug 2012; Johannes Huber <johu@gentoo.org> Test-Deep-0.109.0.ebuild:
+  Stable for x86, wrt bug #418855
+
+  04 Aug 2012; Jeroen Roovers <jer@gentoo.org> Test-Deep-0.109.0.ebuild:
+  Stable for HPPA (bug #418855).
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> Test-Deep-0.109.0.ebuild:
+  Stable for amd64, wrt bug #418855
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*Test-Deep-0.110.0 (16 Jun 2012)
+
+  16 Jun 2012; Torsten Veller <tove@gentoo.org> +Test-Deep-0.110.0.ebuild:
+  Version bump
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Test-Deep-0.106.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> Test-Deep-0.108.0.ebuild:
+  ia64/s390/sh/sparc stable wrt #400229
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Test-Deep-0.108.0.ebuild:
+  x86 stable wrt bug #400229
+
+  29 Feb 2012; Markus Meier <maekke@gentoo.org> Test-Deep-0.108.0.ebuild:
+  arm stable, bug #400229
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> Test-Deep-0.108.0.ebuild:
+  Marking Test-Deep-0.108.0 ppc for bug 400229
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org> Test-Deep-0.108.0.ebuild:
+  Stable on alpha, bug #400229
+
+  24 Feb 2012; Jeroen Roovers <jer@gentoo.org> Test-Deep-0.108.0.ebuild:
+  Stable for HPPA (bug #400229).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Test-Deep-0.108.0.ebuild:
+  Stable for amd64, wrt bug #400229
+
+*Test-Deep-0.109.0 (17 Feb 2012)
+
+  17 Feb 2012; Torsten Veller <tove@gentoo.org> +Test-Deep-0.109.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Test-Deep-0.108.ebuild:
+  Cleanup
+
+*Test-Deep-0.108.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +Test-Deep-0.108.0.ebuild:
+  Change version scheme
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org> -Test-Deep-0.107.ebuild:
   Cleanup
@@ -164,4 +252,3 @@
   04 Jul 2006; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Test-Deep-0.095.ebuild:
   Missing dep for Apache-Session
-

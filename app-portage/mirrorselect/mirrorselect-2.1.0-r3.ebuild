@@ -1,9 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/mirrorselect/mirrorselect-2.1.0-r3.ebuild,v 1.5 2011/03/17 10:15:07 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/mirrorselect/mirrorselect-2.1.0-r3.ebuild,v 1.7 2012/05/21 04:49:48 darkside Exp $
 
 EAPI="3"
 SUPPORT_PYTHON_ABIS="1"
+PYTHON_DEPEND=2
+PYTHON_USE_WITH="xml"
 
 inherit eutils python
 
@@ -16,7 +18,7 @@ SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
 IUSE=""
 
-RDEPEND="dev-lang/python[xml]
+RDEPEND="
 	dev-util/dialog
 	net-analyzer/netselect"
 
@@ -24,7 +26,7 @@ RESTRICT_PYTHON_ABIS="3*"
 
 src_prepare() {
 	# bug 312753
-	epatch "${FILESDIR}/0001-Fix-rsync-mirror-selectection.patch"
+	epatch "${FILESDIR}/0001-Fix-rsync-mirror-selection.patch"
 	# bug 330611
 	epatch "${FILESDIR}/0002-Check-for-a-valid-mirrorselect-test-file.patch"
 

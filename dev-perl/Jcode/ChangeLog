@@ -1,6 +1,50 @@
 # ChangeLog for dev-perl/Jcode
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Jcode/ChangeLog,v 1.46 2011/02/09 16:51:01 idl0r Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Jcode/ChangeLog,v 1.60 2012/08/08 01:20:58 naota Exp $
+
+  08 Aug 2012; Naohiro Aota <naota@gentoo.org> Jcode-2.70.0.ebuild:
+  Add ~x86-fbsd wrt bug #428248
+
+  06 Aug 2012; Alexis Ballier <aballier@gentoo.org> Jcode-2.70.0.ebuild:
+  keyword ~amd64-fbsd
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Jcode-2.06.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> Jcode-2.70.0.ebuild:
+  ia64/s390/sh/sparc stable wrt #400155
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> Jcode-2.70.0.ebuild:
+  x86 stable wrt bug #400155
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> Jcode-2.70.0.ebuild:
+  Marking Jcode-2.70.0 ppc64 for bug 400155
+
+  29 Feb 2012; Markus Meier <maekke@gentoo.org> Jcode-2.70.0.ebuild:
+  arm stable, bug #400155
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> Jcode-2.70.0.ebuild:
+  Marking Jcode-2.70.0 ppc for bug 400155
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> Jcode-2.70.0.ebuild:
+  Stable for HPPA (bug #400155).
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org> Jcode-2.70.0.ebuild:
+  Stable on alpha, bug #400155
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Jcode-2.70.0.ebuild:
+  Stable for amd64, wrt bug #400155
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Jcode-2.07.ebuild:
+  Cleanup
+
+*Jcode-2.70.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +Jcode-2.70.0.ebuild:
+  Change version scheme
 
   15 Sep 2008; Torsten Veller <tove@gentoo.org> -Jcode-2.03.ebuild:
   Cleanup

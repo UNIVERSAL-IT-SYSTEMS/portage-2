@@ -1,6 +1,90 @@
 # ChangeLog for media-libs/libchamplain
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libchamplain/ChangeLog,v 1.19 2011/07/25 09:09:15 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libchamplain/ChangeLog,v 1.35 2012/11/07 19:08:38 pacho Exp $
+
+  07 Nov 2012; Pacho Ramos <pacho@gentoo.org> libchamplain-0.12.3.ebuild:
+  Drop 'doc' USE flag as it simply rebuilds documentation and causes bugs like
+  #440726 (by Juergen Rose).
+
+  01 Nov 2012; Justin Lecher <jlec@gentoo.org> libchamplain-0.8.3.ebuild,
+  +files/libchamplain-0.8.3-gthread.patch, libchamplain-0.10.1.ebuild,
+  libchamplain-0.12.3.ebuild, +files/libchamplain-gthread.patch:
+  Backport upstream fixes for #440646
+
+  18 Oct 2012; Justin Lecher <jlec@gentoo.org> -libchamplain-0.6.0.ebuild,
+  -libchamplain-0.12.2.ebuild, metadata.xml:
+  Drop old
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  libchamplain-0.12.3.ebuild:
+  x86 stable wrt bug #433311
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> libchamplain-0.12.3.ebuild:
+  Stable for amd64, wrt bug #433311
+
+  14 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libchamplain-0.6.0.ebuild, libchamplain-0.8.3.ebuild,
+  libchamplain-0.10.1.ebuild, libchamplain-0.12.2.ebuild,
+  libchamplain-0.12.3.ebuild:
+  Update homepage (bug #431426, thanks to Hans).
+
+*libchamplain-0.12.3 (15 Jul 2012)
+
+  15 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -libchamplain-0.12.1.ebuild,
+  -files/libchamplain-0.12.1-vala-cogl-pango-1.0.patch,
+  libchamplain-0.12.2.ebuild, +libchamplain-0.12.3.ebuild:
+  Version bump. Add accidentally forgotten ~ppc keyword to >=0.12.2 (bug
+  #388367). Drop old.
+
+  09 Jul 2012; Brent Baude <ranger@gentoo.org> libchamplain-0.12.1.ebuild:
+  Marking libchamplain-0.12.1 ~ppc for bug 388367
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libchamplain-0.6.0.ebuild,
+  libchamplain-0.8.3.ebuild, libchamplain-0.10.1.ebuild,
+  libchamplain-0.12.1.ebuild, libchamplain-0.12.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*libchamplain-0.12.2 (15 Mar 2012)
+
+  15 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -libchamplain-0.12.0-r1.ebuild, +libchamplain-0.12.2.ebuild:
+  Version bump, drop old.
+
+  14 Feb 2012; Justin Lecher <jlec@gentoo.org> libchamplain-0.6.0.ebuild,
+  metadata.xml:
+  Fix missing function pkg_setup definition
+
+  04 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libchamplain-0.12.1.ebuild,
+  +files/libchamplain-0.12.1-vala-cogl-pango-1.0.patch:
+  Fix building vala bindings (bug #402013, thanks to Billy DeVincentis for
+  reporting).
+
+*libchamplain-0.12.1 (22 Dec 2011)
+
+  22 Dec 2011; Gilles Dartiguelongue <eva@gentoo.org>
+  +libchamplain-0.12.1.ebuild:
+  Version bump.
+
+*libchamplain-0.12.0-r1 (02 Nov 2011)
+
+  02 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +libchamplain-0.12.0-r1.ebuild, +files/libchamplain-0.12.0-redrawing.patch:
+  Bump to 0.12 from the gnome overlay, needed for empathy-3.2. Notable changes:
+  better zoom.
+
+  17 Oct 2011; Pacho Ramos <pacho@gentoo.org> libchamplain-0.6.0.ebuild,
+  libchamplain-0.8.3.ebuild, -libchamplain-0.10.0.ebuild,
+  libchamplain-0.10.1.ebuild:
+  Drop DEPRECATED flags, bug #387335 by Sven E; use vala:0.14 for
+  libchamplain-0.10, bug #387347 by Travis Hansen. Remove old.
+
+*libchamplain-0.10.1 (19 Sep 2011)
+
+  19 Sep 2011; Gilles Dartiguelongue <eva@gentoo.org>
+  +libchamplain-0.10.1.ebuild:
+  Version bump. Various fixes backported from trunk.
 
   25 Jul 2011; Gilles Dartiguelongue <eva@gentoo.org>
   -libchamplain-0.8.0.ebuild, -libchamplain-0.8.1.ebuild,
@@ -90,4 +174,3 @@
   18 Jun 2010; Justin Lecher <jlec@gentoo.org> +libchamplain-0.6.0.ebuild,
   +metadata.xml:
   New Addition, #238423
-

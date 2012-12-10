@@ -1,6 +1,21 @@
 # ChangeLog for dev-perl/Unicode-MapUTF8
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Unicode-MapUTF8/ChangeLog,v 1.22 2008/11/22 11:30:59 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Unicode-MapUTF8/ChangeLog,v 1.26 2012/06/24 13:00:27 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Unicode-MapUTF8-1.11.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Unicode-MapUTF8-1.110.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Unicode-MapUTF8-1.110.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +Unicode-MapUTF8-1.110.0.ebuild:
+  Change version scheme
 
   22 Nov 2008; Torsten Veller <tove@gentoo.org> Unicode-MapUTF8-1.11.ebuild:
   Remove Module-Build from RDEPEND
@@ -85,4 +100,3 @@
   05 Mar 2006; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Unicode-MapUTF8-1.11.ebuild:
   Bug 19303, ebuild provided by satya, cleaned up for proper license, src mirror
-

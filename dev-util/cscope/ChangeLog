@@ -1,6 +1,70 @@
 # ChangeLog for dev-util/cscope
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/cscope/ChangeLog,v 1.119 2009/05/11 21:03:59 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/cscope/ChangeLog,v 1.138 2012/09/29 18:45:43 armin76 Exp $
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org> cscope-15.8a.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #434292
+
+  20 Sep 2012; Johannes Huber <johu@gentoo.org> cscope-15.8a.ebuild:
+  Stable for x86, wrt bug #434292
+
+  18 Sep 2012; Jeroen Roovers <jer@gentoo.org> cscope-15.8a.ebuild:
+  Stable for HPPA (bug #434292).
+
+  11 Sep 2012; Anthony G. Basile <blueness@gentoo.org> cscope-15.8a.ebuild:
+  Stable arm, bug #434292
+
+  10 Sep 2012; Anthony G. Basile <blueness@gentoo.org> cscope-15.8a.ebuild:
+  Stable ppc64, bug #434292
+
+  10 Sep 2012; Anthony G. Basile <blueness@gentoo.org> cscope-15.8a.ebuild:
+  Stable ppc, bug #434292
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> cscope-15.8a.ebuild:
+  Stable for amd64, wrt bug #434292
+
+*cscope-15.8a (07 Aug 2012)
+
+  07 Aug 2012; Tim Harder <radhermit@gentoo.org> +cscope-15.8a.ebuild:
+  Version bump (bug #430272).
+
+*cscope-15.8 (05 Jul 2012)
+
+  05 Jul 2012; Ulrich Müller <ulm@gentoo.org> +cscope-15.8.ebuild:
+  Version bump.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> cscope-15.7a-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  02 Mar 2012; Tim Harder <radhermit@gentoo.org> -cscope-15.7a.ebuild:
+  Remove old.
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> cscope-15.7a-r1.ebuild:
+  Marking cscope-15.7a-r1 ppc64 for bug 391291
+
+  06 Jan 2012; Brent Baude <ranger@gentoo.org> cscope-15.7a-r1.ebuild:
+  Marking cscope-15.7a-r1 ppc for bug 391291
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> cscope-15.7a-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #391291
+
+  03 Dec 2011; Markus Meier <maekke@gentoo.org> cscope-15.7a-r1.ebuild:
+  arm stable, bug #391291
+
+  29 Nov 2011; Jeroen Roovers <jer@gentoo.org> cscope-15.7a-r1.ebuild:
+  Stable for HPPA (bug #391291).
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> cscope-15.7a-r1.ebuild:
+  x86 stable wrt bug #391291
+
+  25 Nov 2011; Markos Chandras <hwoarang@gentoo.org> cscope-15.7a-r1.ebuild:
+  Stable on amd64 wrt bug #391291
+
+  21 Nov 2011; Ulrich Mueller <ulm@gentoo.org> cscope-15.7a-r1.ebuild:
+  Bump to EAPI=4.
+
+  21 Nov 2011; Ulrich Mueller <ulm@gentoo.org> cscope-15.7a-r1.ebuild:
+  Bump to EAPI=4.
 
 *cscope-15.7a-r1 (11 May 2009)
 

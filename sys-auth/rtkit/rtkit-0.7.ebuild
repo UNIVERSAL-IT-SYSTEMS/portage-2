@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/rtkit/rtkit-0.7.ebuild,v 1.3 2010/08/11 17:55:16 josejx Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/rtkit/rtkit-0.7.ebuild,v 1.5 2012/10/16 16:00:01 jer Exp $
 
 EAPI="2"
 
-inherit eutils
+inherit eutils user
 
 DESCRIPTION="Realtime Policy and Watchdog Daemon"
 HOMEPAGE="http://0pointer.de/blog/projects/rtkit"
@@ -12,7 +12,7 @@ SRC_URI="http://0pointer.de/public/${P}.tar.gz"
 
 LICENSE="GPL-3 BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE=""
 
 DEPEND="sys-apps/dbus

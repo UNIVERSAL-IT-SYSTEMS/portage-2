@@ -1,6 +1,41 @@
 # ChangeLog for net-proxy/privoxy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/privoxy/ChangeLog,v 1.65 2011/03/01 15:18:05 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/privoxy/ChangeLog,v 1.74 2012/07/29 16:57:51 armin76 Exp $
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> privoxy-3.0.19.ebuild:
+  alpha/sparc stable wrt #415763
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> privoxy-3.0.19.ebuild:
+  Marking privoxy-3.0.19 ppc for bug 415763
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> privoxy-3.0.19.ebuild:
+  Marking privoxy-3.0.19 ppc64 for bug 415763
+
+  28 May 2012; Markus Meier <maekke@gentoo.org> privoxy-3.0.19.ebuild:
+  arm stable, bug #415763
+
+  23 May 2012; Mike Frysinger <vapier@gentoo.org> privoxy-3.0.12.ebuild,
+  privoxy-3.0.13_beta.ebuild, privoxy-3.0.14_beta.ebuild,
+  privoxy-3.0.15_beta.ebuild, privoxy-3.0.16.ebuild, privoxy-3.0.17.ebuild,
+  privoxy-3.0.19.ebuild:
+  Inherit user for enewuser/etc...
+
+  13 May 2012; Jeff Horelick <jdhore@gentoo.org> privoxy-3.0.19.ebuild:
+  marked x86 per bug 415763
+
+  13 May 2012; Markos Chandras <hwoarang@gentoo.org> privoxy-3.0.19.ebuild:
+  Stable on amd64 wrt bug #415763
+
+  25 Apr 2012; Justin Lecher <jlec@gentoo.org> privoxy-3.0.12.ebuild,
+  privoxy-3.0.13_beta.ebuild, privoxy-3.0.14_beta.ebuild,
+  privoxy-3.0.15_beta.ebuild, privoxy-3.0.16.ebuild, privoxy-3.0.17.ebuild:
+  Drop unnessecary die
+
+*privoxy-3.0.19 (18 Mar 2012)
+
+  18 Mar 2012; Torsten Veller <tove@gentoo.org> +privoxy-3.0.19.ebuild,
+  +files/privoxy-3.0.19-gentoo.patch:
+  Version bump (#391853,#405517). Move to EAPI=4 (#382533)
 
   01 Mar 2011; Brent Baude <ranger@gentoo.org> privoxy-3.0.17.ebuild:
   stable ppc64, bug 353284

@@ -1,6 +1,219 @@
 # ChangeLog for media-gfx/blender
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/ChangeLog,v 1.201 2011/07/09 16:56:25 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/ChangeLog,v 1.239 2012/11/18 01:06:23 flameeyes Exp $
+
+*blender-2.64a (18 Nov 2012)
+
+  18 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> +blender-2.64a.ebuild,
+  blender-2.63a-r2.ebuild:
+  Version bump, thanks to Dirk S. for the help with the patches in bug #437596;
+  remove bundled copies of ldl, glog and gflags; also fix building with libav-9
+  (bug #443180); and add a dependency for the old 2.63a (bug #443702).
+
+  21 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org> blender-2.63a-r2.ebuild:
+  Add missing dependency on virtual/glu (now visible as mesa no longer provides
+  it).
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> blender-2.49b-r2.ebuild,
+  blender-2.63a-r2.ebuild:
+  Use domenu instead insinto + doins to install .desktop files
+
+  08 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> blender-2.63a-r2.ebuild:
+  Fix another crash.
+
+  07 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> blender-2.63a-r2.ebuild:
+  Add a patch that could solve some crashes.
+
+  21 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> blender-2.63a-r2.ebuild:
+  Add a warning about the need for logging out and back in.
+
+  17 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> blender-2.63a-r2.ebuild:
+  Avoid sandbox violation by disabling audio correctly (fixes bug #426950,
+  thanks to Weihua Zhou for the report). Also move the remaining doc generation
+  to src_compile instead of install.
+
+  17 Jul 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/blender-2.49b-linux-3.patch, blender-2.49b-r2.ebuild:
+  Restored accidentally dropped patch for linux-3. Thanks to Sergey Isachenko
+  for the report.
+
+*blender-2.63a-r2 (16 Jul 2012)
+
+  16 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> +blender-2.63a-r2.ebuild,
+  -blender-2.63a-r1.ebuild:
+  Bump to install an env.d file to make blender find its own files. Fixes bug
+  #426832.
+
+  16 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> blender-2.63a-r1.ebuild:
+  Simplify handling of iconv USE flag (masked on profiles where it's useless).
+  Simplify blend_with calls (no longer in a loop).
+
+  16 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> blender-2.63a-r1.ebuild,
+  metadata.xml:
+  Further cleanup: remove vestigial svn support; do not build API docs when
+  USE=-doc is disabled (and remove apidoc USE); simplify generation of user-
+  config.py, and in particular handling of C/CXX/LDFLAGS; use more blend_with
+  (and make it local to src_configure); fix building with boost 1.50 (bug
+  #426802).
+
+*blender-2.63a-r1 (16 Jul 2012)
+
+  16 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> +blender-2.63a-r1.ebuild,
+  -blender-2.48a-r3.ebuild, -blender-2.49a.ebuild, -blender-2.57-r1.ebuild,
+  -blender-2.60a.ebuild, -blender-2.63a.ebuild,
+  -files/blender-2.46-cve-2008-1103-1.patch, -files/blender-2.46-ffmpeg.patch,
+  -files/blender-2.48-ffmpeg-20081014.patch, -files/blender-2.49a-bake.patch,
+  -files/blender-2.49b-CVE-2009-3850-v3.patch,
+  -files/blender-2.57-CVE-2009-3850-v1.patch,
+  -files/blender-2.57-CVE-2009-3850-v2.patch, -files/blender-2.57-bmake.patch,
+  -files/blender-2.57-desktop.patch, -files/blender-2.57-doxygen.patch,
+  -files/blender-2.57-eigen.patch, -files/blender-2.57-enable_site_module.patch,
+  -files/blender-2.57-glew.patch, -files/blender-2.57-insecure.desktop,
+  -files/blender-2.57-libav-0.7.patch, -files/blender-2.57-linux-3.patch,
+  -files/blender-2.60-bmake.patch, -files/blender-2.60-doxyfile.patch,
+  -files/blender-2.60-eigen.patch, -files/blender-2.60-glew.patch,
+  -files/blender-2.60-openjpeg.patch,
+  -files/blender-2.60a-CVE-2009-3850-v3.patch,
+  -files/blender-2.60a-collada.patch, -files/blender-2.60a-desktop.patch,
+  -files/blender-2.60a-enable_site_module.patch,
+  -files/blender-2.60a-insecure.desktop, -files/blender-2.60a-libav-0.7.patch,
+  -files/blender-2.60a-linux-3.patch,
+  -files/blender-2.61-opencollada-debug.patch,
+  -files/blender-2.63-CVE-2009-3850-v5.patch,
+  -files/blender-2.63-doxyfile.patch,
+  -files/blender-2.63-enable_site_module.patch, -files/blender-2.63-glew.patch,
+  -files/blender-2.63-opencollada-debug.patch,
+  -files/blender-2.63a-bullet.patch, -files/blender-2.63a-colamd.patch,
+  -files/blender-2.63a-desktop.patch, -files/blender-2.63a-eigen.patch,
+  -files/blender-2.63a-insecure.desktop, -files/blender-2.63a-libav-0.8.patch:
+  Cleanup: merge back into single SLOT; remove old versions; move patch files
+  for new version in tarball; avoid using -g0/-w; respect CC/CXX; use
+  pkg_pretend; make sure that there is enough space if building apidocs; fix bug
+  #426692; fix bug #426594; fix bug #426576; make bug #409673 obsolete; add
+  debug USE flag (instead of checking for -g); avoid messing with jobs.
+
+*blender-2.63a (13 Jul 2012)
+
+  13 Jul 2012; Luca Barbato <lu_zero@gentoo.org>
+  +files/blender-2.63-CVE-2009-3850-v5.patch,
+  +files/blender-2.63-doxyfile.patch,
+  +files/blender-2.63-enable_site_module.patch, +files/blender-2.63-glew.patch,
+  +files/blender-2.63-opencollada-debug.patch, +blender-2.63a.ebuild,
+  +files/blender-2.63a-bullet.patch, +files/blender-2.63a-colamd.patch,
+  +files/blender-2.63a-desktop.patch, +files/blender-2.63a-eigen.patch,
+  +files/blender-2.63a-insecure.desktop, +files/blender-2.63a-libav-0.8.patch:
+  New version, thanks to Simone Scanzoni <nonno.cicala@libero.it> for the
+  updated ebuild
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> blender-2.48a-r3.ebuild,
+  -files/blender.png:
+  Upload blender.png to mirrors as blender-2.48a.png.bz2 wrt #370903
+
+  14 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> blender-2.48a-r3.ebuild,
+  blender-2.49a.ebuild, blender-2.49b-r2.ebuild:
+  Use dev-lang/python 2.x wrt #421089 by "lynx"
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> blender-2.57-r1.ebuild,
+  blender-2.60a.ebuild:
+  Move EAPI assignment to top of ebuild, bug 411875.
+
+  02 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> blender-2.49a.ebuild,
+  blender-2.49b-r2.ebuild, blender-2.57-r1.ebuild, blender-2.60a.ebuild:
+  Fix building with media-libs/openjpeg >= 1.5.0 wrt #409283. Every version has
+  source/blender/imbuf/intern/jp2.c with parameters->tile_size_on set to false.
+
+  23 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> blender-2.57-r1.ebuild,
+  blender-2.60a.ebuild:
+  Fix dependency on app-doc/doxygen wrt converting useflags 'nodot' to 'dot'.
+  Fixes bug 405445 by Marien Zwart <marienz@gentoo.org>
+
+  11 Feb 2012; Sebastian Pipping <sping@gentoo.org> blender-2.60a.ebuild,
+  +files/blender-2.61-opencollada-debug.patch:
+  Fix compilation for USE="debug collada", patch by Anthoine Bourgeois
+
+  06 Feb 2012; Sebastian Pipping <sping@gentoo.org> blender-2.60a.ebuild,
+  metadata.xml:
+  Introduce support for 3D mouse based on dev-libs/libspnav (bug #390427),
+  co-operation with Anthoine Bourgeois
+
+  23 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> blender-2.57-r1.ebuild,
+  blender-2.60a.ebuild:
+  Use SLOT dependencies for lcms, libpng and tiff wrt #390397
+
+  16 Jan 2012; Sebastian Pipping <sping@gentoo.org> blender-2.60a.ebuild,
+  +files/blender-2.60a-collada.patch, metadata.xml:
+  Enable support for collada based on just-packaged media-libs/opencollada (bug
+  #390431)
+
+  14 Nov 2011; Luca Barbato <lu_zero@gentoo.org>
+  files/blender-2.60a-libav-0.7.patch:
+  Rework the libav-0.7 support to copy the filename
+
+  13 Nov 2011; Sebastian Pipping <sping@gentoo.org>
+  files/blender-2.57-insecure.desktop, files/blender-2.60a-insecure.desktop:
+  Propogate "reduced security" to generic icon name. Still needs translation
+
+  13 Nov 2011; Sebastian Pipping <sping@gentoo.org>
+  files/blender-2.60a-desktop.patch, files/blender-2.60a-insecure.desktop:
+  Make desktop file announce "2.60a" rather than "2.6"
+
+  13 Nov 2011; Sebastian Pipping <sping@gentoo.org> blender-2.60a.ebuild,
+  +files/blender-2.60a-desktop.patch, -files/blender-desktop.patch:
+  Move blender-desktop.patch to blender-2.60a-desktop.patch
+
+  13 Nov 2011; Luca Barbato <lu_zero@gentoo.org> blender-2.60a.ebuild:
+  Fix bug 390439 by setting properly get_libdir
+
+  13 Nov 2011; Sebastian Pipping <sping@gentoo.org> blender-2.60a.ebuild:
+  Disable 3D mouse (as libspnav is not packaged yet) to fix compilation (bug
+  #390427)
+
+*blender-2.60a (13 Nov 2011)
+
+  13 Nov 2011; Luca Barbato <lu_zero@gentoo.org> blender-2.57-r1.ebuild,
+  +files/blender-2.60-bmake.patch, +files/blender-2.60-doxyfile.patch,
+  +files/blender-2.60-eigen.patch, +files/blender-2.60-glew.patch,
+  +files/blender-2.60-openjpeg.patch, +blender-2.60a.ebuild,
+  +files/blender-2.60a-CVE-2009-3850-v3.patch,
+  +files/blender-2.60a-enable_site_module.patch,
+  +files/blender-2.60a-insecure.desktop, +files/blender-2.60a-libav-0.7.patch,
+  +files/blender-2.60a-linux-3.patch, +files/blender-desktop.patch:
+  New version, thanks to Anthoine Bourgeois <anthoine.bourgeois@gmail.com> and
+  everybody who helped on bug #369599
+
+  13 Nov 2011; Luca Barbato <lu_zero@gentoo.org> blender-2.49b-r2.ebuild,
+  +files/blender-2.49b-libav-0.7.patch:
+  Update blender-2.49b to support libav-0.7
+
+  07 Nov 2011; Luca Barbato <lu_zero@gentoo.org> blender-2.57-r1.ebuild,
+  +files/blender-2.57-enable_site_module.patch,
+  files/blender-2.57-libav-0.7.patch:
+  Update ebuild to fix #369931 and #374339
+
+  01 Nov 2011; Sebastian Pipping <sping@gentoo.org> blender-2.57-r1.ebuild:
+  Bump scons dependency to 2.0.1-r1 (bug #388861)
+
+  30 Oct 2011; Sebastian Pipping <sping@gentoo.org> blender-2.48a-r3.ebuild,
+  blender-2.49a.ebuild, blender-2.49b-r2.ebuild, blender-2.57-r1.ebuild:
+  Migrate to escons from scons-utils eclass to fix compilation with
+  --load-average (or its variations) in MAKEOPTS (bug #302688)
+
+  29 Oct 2011; Sebastian Pipping <sping@gentoo.org> blender-2.49b-r2.ebuild,
+  blender-2.57-r1.ebuild:
+  Bump scons dependency to 2.x (bug #372151)
+
+  29 Oct 2011; Sebastian Pipping <sping@gentoo.org> blender-2.49b-r2.ebuild,
+  +files/blender-2.49b-subversion-1.7.patch:
+  Allow compilation of Blender 2.49b-r2 against Linux 3.x (bug #381099) and
+  Subversion 1.7
+
+  29 Oct 2011; Sebastian Pipping <sping@gentoo.org> -blender-2.49b.ebuild,
+  -blender-2.49b-r1.ebuild, -blender-2.57.ebuild:
+  Clean out some revisions with improved versions around
+
+  29 Oct 2011; Sebastian Pipping <sping@gentoo.org> blender-2.57-r1.ebuild,
+  +files/blender-2.57-linux-3.patch:
+  Allow compilation of Blender 2.57-r1 against Linux 3.x (bug #381099)
 
   09 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> blender-2.49b-r2.ebuild:
   ppc64 stable wrt #349847
@@ -732,7 +945,7 @@
   adding categorie. see 45110 for details
 
   07 Mar 2004; Jon Portnoy <avenj@gentoo.org> :
-  Removed AMD64 keywords from all versions prior to 2.32. 
+  Removed AMD64 keywords from all versions prior to 2.32.
   Added !amd64() contruct for dev-games/ode.
 
   18 Feb 2004; <augustus@gentoo.org> blender-2.32.ebuild:
@@ -769,10 +982,10 @@
 
 *blender-2.30 (07 Nov 2003)
 
-  07 Nov 2003; Philip Walls <malverian@gentoo.org> blender-2.30.ebuild 
+  07 Nov 2003; Philip Walls <malverian@gentoo.org> blender-2.30.ebuild
   files/configure-fix-2.30.patch metadata.xml:
-  Version bump, changed to "use foo && ..." instead of ifs. Thanks to 
-  Dan Bryant <dan@omega.blackdaemon.net> in bug #32585 for configure 
+  Version bump, changed to "use foo && ..." instead of ifs. Thanks to
+  Dan Bryant <dan@omega.blackdaemon.net> in bug #32585 for configure
   patch. Cleaned up ChangeLog.
 
 *blender-2.28c (11 Oct 2003)
@@ -780,7 +993,7 @@
   30 Oct 2003; Luca Barbato <lu_zero@gentoo.org> blender-2.28c.ebuild:
   Moved to stable
 
-  11 Oct 2003; Luca Barbato <lu_zero@gentoo.org> blender-2.28c.ebuild, 
+  11 Oct 2003; Luca Barbato <lu_zero@gentoo.org> blender-2.28c.ebuild,
   blender-2.27.ebuild :
   Minor fixes, blender-2.27 bumped to stable for ppc and x86
 
@@ -829,9 +1042,9 @@
   for me on PPC and x86.  Testers wanted.
 
   06 Dec 2002; Rodney Rees <manson@gentoo.org> : changed sparc ~sparc keywords
- 
+
 *blender-2.23-r1 (13 Feb 2003)
- 
+
   12 Jul 2003; Daniel Ahlberg <aliz@gentoo.org> :
   Added missing changelog entry.
 

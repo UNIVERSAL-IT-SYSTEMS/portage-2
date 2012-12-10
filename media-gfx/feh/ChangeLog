@@ -1,6 +1,148 @@
 # ChangeLog for media-gfx/feh
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/feh/ChangeLog,v 1.83 2011/07/05 09:05:40 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/feh/ChangeLog,v 1.116 2012/10/16 16:17:49 radhermit Exp $
+
+  16 Oct 2012; Tim Harder <radhermit@gentoo.org> -feh-2.6.ebuild,
+  -feh-2.6.1.ebuild, -feh-2.6.2.ebuild:
+  Remove old.
+
+*feh-2.7 (16 Oct 2012)
+
+  16 Oct 2012; Tim Harder <radhermit@gentoo.org> +feh-2.7.ebuild:
+  Version bump.
+
+*feh-2.6.3 (27 Sep 2012)
+
+  27 Sep 2012; Tim Harder <radhermit@gentoo.org> +feh-2.6.3.ebuild:
+  Version bump.
+
+*feh-2.6.2 (26 Sep 2012)
+
+  26 Sep 2012; Tim Harder <radhermit@gentoo.org> +feh-2.6.2.ebuild,
+  +files/feh-2.6.2-debug-cflags.patch:
+  Version bump.
+
+*feh-2.6.1 (13 Sep 2012)
+
+  13 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> +feh-2.6.1.ebuild:
+  Version bump.
+
+*feh-2.6 (31 Aug 2012)
+
+  31 Aug 2012; Markos Chandras <hwoarang@gentoo.org> +feh-2.6.ebuild:
+  Version bump
+
+  25 May 2012; Tim Harder <radhermit@gentoo.org> -feh-2.3.ebuild,
+  -feh-2.4.ebuild:
+  Remove old.
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> feh-2.5.ebuild:
+  Marking feh-2.5 ppc64 for bug 414163
+
+  02 May 2012; Michael Weber <xmw@gentoo.org> feh-2.5.ebuild:
+  ppc stable (bug 414163)
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> feh-2.5.ebuild:
+  marked x86 per bug 414163
+
+  01 May 2012; Agostino Sarubbo <ago@gentoo.org> feh-2.5.ebuild:
+  Stable for amd64, wrt bug #414163
+
+*feh-2.5 (26 Mar 2012)
+
+  26 Mar 2012; Tim Harder <radhermit@gentoo.org> +feh-2.5.ebuild:
+  Version bump.
+
+  20 Mar 2012; Tim Harder <radhermit@gentoo.org> -feh-1.16.2.ebuild,
+  -feh-2.2.ebuild:
+  Remove old.
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> feh-1.16.2.ebuild,
+  feh-2.2.ebuild, feh-2.3.ebuild, feh-2.4.ebuild:
+  Drop alpha/sparc keywords
+
+  08 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> feh-2.3.ebuild:
+  amd64/ppc64/x86 stable wrt #407143
+
+  08 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> feh-2.4.ebuild:
+  Missing USE="exif" which went unnoticed because of incomplete bump for 2.3.
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> feh-2.3.ebuild:
+  Marking feh-2.3 ppc for bug 407143
+
+*feh-2.4 (06 Mar 2012)
+
+  06 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +feh-2.4.ebuild:
+  Version bump.
+
+*feh-2.3 (03 Feb 2012)
+
+  03 Feb 2012; Tim Harder <radhermit@gentoo.org> +feh-2.3.ebuild:
+  Version bump.
+
+  19 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/feh-1.11.2-libpng15.patch, -feh-1.12.ebuild, -feh-2.0.ebuild,
+  -feh-2.1.ebuild:
+  old
+
+  19 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> feh-1.16.2.ebuild:
+  ppc/ppc64 stable wrt #388471
+
+*feh-2.2 (02 Jan 2012)
+
+  02 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +feh-2.2.ebuild:
+  Version bump.
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> feh-1.16.2.ebuild:
+  alpha/sparc stable wrt #388471
+
+*feh-2.1 (03 Nov 2011)
+
+  03 Nov 2011; Tim Harder <radhermit@gentoo.org> +feh-2.1.ebuild:
+  Version bump.
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> feh-1.16.2.ebuild:
+  x86 stable wrt bug #388471
+
+  28 Oct 2011; Tony Vroon <chainsaw@gentoo.org> feh-1.16.2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #388471.
+
+  13 Oct 2011; Markos Chandras <hwoarang@gentoo.org> -feh-1.13.ebuild,
+  -feh-1.14.1.ebuild, -feh-1.14.2.ebuild, -feh-1.15.1.ebuild, -feh-1.16.ebuild,
+  -feh-1.16.1.ebuild:
+  remove old ebuilds
+
+*feh-2.0 (10 Oct 2011)
+
+  10 Oct 2011; Tim Harder <radhermit@gentoo.org> +feh-2.0.ebuild:
+  Version bump.
+
+*feh-1.16.2 (26 Sep 2011)
+
+  26 Sep 2011; Tim Harder <radhermit@gentoo.org> +feh-1.16.2.ebuild:
+  Version bump.
+
+*feh-1.16.1 (11 Sep 2011)
+
+  11 Sep 2011; Tim Harder <radhermit@gentoo.org> +feh-1.16.1.ebuild:
+  Version bump.
+
+*feh-1.16 (05 Sep 2011)
+
+  05 Sep 2011; Markos Chandras <hwoarang@gentoo.org> +feh-1.16.ebuild:
+  Version bump
+
+*feh-1.15.1 (17 Aug 2011)
+
+  17 Aug 2011; Tim Harder <radhermit@gentoo.org> -feh-1.15.ebuild,
+  +feh-1.15.1.ebuild:
+  Version bump to bugfix release and remove old.
+
+*feh-1.15 (16 Aug 2011)
+
+  16 Aug 2011; Tim Harder <radhermit@gentoo.org> +feh-1.15.ebuild:
+  Version bump
 
 *feh-1.14.2 (05 Jul 2011)
 

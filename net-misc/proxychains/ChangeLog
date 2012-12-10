@@ -1,6 +1,25 @@
 # ChangeLog for net-misc/proxychains
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/proxychains/ChangeLog,v 1.15 2011/03/11 09:18:45 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/proxychains/ChangeLog,v 1.18 2012/10/04 22:28:15 radhermit Exp $
+
+  04 Oct 2012; Tim Harder <radhermit@gentoo.org>
+  -proxychains-3.1_p20110225.ebuild:
+  Remove old.
+
+*proxychains-3.1_p20110225-r1 (04 Oct 2012)
+
+  04 Oct 2012; Tim Harder <radhermit@gentoo.org>
+  +proxychains-3.1_p20110225-r1.ebuild,
+  files/proxychains-3.1_p20110225-glibc214.patch:
+  Revbump to fix build with newer glibc versions (fixes bugs #408427 and
+  #437232, patch by Ilya Gordeev).
+
+  08 Nov 2011; Tim Harder <radhermit@gentoo.org>
+  proxychains-3.1_p20110225.ebuild,
+  +files/proxychains-3.1_p20110225-glibc214.patch,
+  +files/proxychains-3.1_p20110225-sysconf.patch:
+  Apply fix for glibc-2.14 (bug #375065), add bdep on xz-utils, and use
+  autotools-utils eclass.
 
 *proxychains-3.1_p20110225 (11 Mar 2011)
 

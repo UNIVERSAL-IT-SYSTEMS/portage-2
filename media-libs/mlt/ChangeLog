@@ -1,6 +1,115 @@
 # ChangeLog for media-libs/mlt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mlt/ChangeLog,v 1.72 2011/05/20 11:50:40 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mlt/ChangeLog,v 1.99 2012/11/26 14:32:40 scarabeus Exp $
+
+  26 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Update to global useflag.
+
+*mlt-0.8.6 (21 Nov 2012)
+
+  21 Nov 2012; Alexis Ballier <aballier@gentoo.org> +mlt-0.8.6.ebuild,
+  +files/mlt-0.8.6-ruby-link.patch:
+  version bump
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> mlt-0.8.2.ebuild:
+  Stable for x86, wrt bug #441382
+
+  05 Nov 2012; <ago@gentoo.org> mlt-0.8.2.ebuild:
+  Stable for amd64, wrt bug #441382
+
+  25 Oct 2012; Alexis Ballier <aballier@gentoo.org> mlt-0.8.2.ebuild,
+  +files/mlt-0.8.2-av_codec_is_encoder.patch:
+  fix build with recent ffmpeg versions
+
+  22 Sep 2012; Ben de Groot <yngwin@gentoo.org> -mlt-0.8.0.ebuild:
+  Remove mlt-0.8.0 as requested in bug #435748
+
+*mlt-0.8.2 (31 Aug 2012)
+
+  31 Aug 2012; Ben de Groot <yngwin@gentoo.org> +mlt-0.8.2.ebuild:
+  Version bump. Drop libavcodec54 patch which has been applied upstream.
+
+  19 Jul 2012; Ben de Groot <yngwin@gentoo.org> mlt-0.8.0.ebuild:
+  Add use dependency on libsdl[X,opengl], bug #426964
+
+*mlt-0.8.0 (14 Jul 2012)
+
+  14 Jul 2012; Ben de Groot <yngwin@gentoo.org> +mlt-0.8.0.ebuild:
+  Version bump, bug #420647
+
+  16 May 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -files/mlt-0.5.4-asneeded.patch, -files/mlt-0.7.6-ffmpeg.patch,
+  -mlt-0.5.10.ebuild, -mlt-0.7.6-r1.ebuild, mlt-0.7.8.ebuild:
+  Stabilise latest on amd64 and x86. Drop older overshadowed versions.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> mlt-0.5.10.ebuild,
+  mlt-0.7.6-r1.ebuild, mlt-0.7.8.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Mar 2012; Thomas Kahle <tomka@gentoo.org> mlt-0.7.6-r1.ebuild:
+  marked x86 per bug 405753
+
+  11 Mar 2012; Tony Vroon <chainsaw@gentoo.org> mlt-0.7.6-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Maurizio "k01" Camisaschi &
+  Elijah "Armageddon" El Lazkani in bug #405753.
+
+  26 Feb 2012; Alexis Ballier <aballier@gentoo.org> mlt-0.7.6-r1.ebuild,
+  mlt-0.7.8.ebuild:
+  we need png support in convert (imagemagick) for producing compressed-lumas,
+  should fix bug #405909
+
+  26 Feb 2012; Alexis Ballier <aballier@gentoo.org> mlt-0.7.8.ebuild,
+  +files/mlt-0.7.8-libavcodec54.patch:
+  fix build with libavcodec 54, ie, ffmpeg git
+
+*mlt-0.7.8 (26 Feb 2012)
+
+  26 Feb 2012; Alexis Ballier <aballier@gentoo.org> +mlt-0.7.8.ebuild,
+  metadata.xml:
+  version bump
+
+*mlt-0.7.6-r1 (25 Feb 2012)
+
+  25 Feb 2012; Alexis Ballier <aballier@gentoo.org> -mlt-0.7.6.ebuild,
+  +mlt-0.7.6-r1.ebuild:
+  push a revision bump for the accumulated fixes
+
+  25 Feb 2012; Alexis Ballier <aballier@gentoo.org> mlt-0.7.6.ebuild,
+  metadata.xml:
+  fix automagic on swfdec, by SN (Enlik) in bug #384225
+
+  25 Feb 2012; Alexis Ballier <aballier@gentoo.org> mlt-0.7.6.ebuild:
+  fix enabling of vdpau, by gionnico in bug #396113
+
+  25 Feb 2012; Alexis Ballier <aballier@gentoo.org> mlt-0.7.6.ebuild:
+  depend on libexif with qt4 too as, again, there is no way to disable it, this
+  is last part of the patch by SN (Enlik) in bug #385395
+
+  25 Feb 2012; Alexis Ballier <aballier@gentoo.org> mlt-0.7.6.ebuild:
+  add qt-svg dep with qt4 as its needed now, bug #385395
+
+  25 Feb 2012; Alexis Ballier <aballier@gentoo.org> mlt-0.7.6.ebuild:
+  make the gtk2 module depend on exif as its automagic and there is no
+  configure option to disable it, part of bug #385395
+
+  25 Feb 2012; Alexis Ballier <aballier@gentoo.org> mlt-0.7.6.ebuild:
+  add dies to sed calls
+
+  25 Feb 2012; Alexis Ballier <aballier@gentoo.org> -mlt-0.7.2.ebuild:
+  remove old
+
+  28 Nov 2011; Alexis Ballier <aballier@gentoo.org> mlt-0.7.6.ebuild,
+  +files/mlt-0.7.6-ffmpeg.patch:
+  fix build with ffmpeg git: do not use internal symbols
+
+*mlt-0.7.6 (31 Oct 2011)
+
+  31 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org> +mlt-0.7.6.ebuild:
+  Version bump
+
+  30 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org> mlt-0.7.2.ebuild,
+  +files/mlt-0.7.2-ruby-link.patch:
+  Fix build with USE=ruby, bug 351718
 
   20 May 2011; Tomáš Chvátal <scarabeus@gentoo.org> mlt-0.7.2.ebuild:
   Bump dependency over swig. Fixes bug #351718.
@@ -315,4 +424,3 @@
   10 Dec 2005; Luca Barbato <lu_zero@gentoo.org> +metadata.xml,
   +mlt-20051209.ebuild:
   First commit
-

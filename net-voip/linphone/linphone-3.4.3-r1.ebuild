@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/linphone/linphone-3.4.3-r1.ebuild,v 1.1 2011/05/24 08:08:28 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-voip/linphone/linphone-3.4.3-r1.ebuild,v 1.6 2012/05/03 07:27:47 jdhore Exp $
 
 EAPI="4"
 
@@ -8,11 +8,11 @@ inherit eutils autotools multilib versionator pax-utils
 
 DESCRIPTION="Video softphone based on the SIP protocol"
 HOMEPAGE="http://www.linphone.org/"
-SRC_URI="http://download.savannah.nongnu.org/releases-noredirect/${PN}/$(get_version_component_range 1-2).x/sources/${P}.tar.gz"
+SRC_URI="mirror://nongnu/${PN}/$(get_version_component_range 1-2).x/sources/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~ppc-macos ~x86-macos"
+KEYWORDS="amd64 ~ppc x86 ~x86-macos"
 # TODO: run-time test for ipv6: does it need mediastreamer[ipv6]?
 IUSE="doc gtk ipv6 ncurses nls video"
 
@@ -26,7 +26,7 @@ RDEPEND=">=media-libs/mediastreamer-2.7.3[video?,ipv6?]
 	ncurses? ( sys-libs/readline
 		sys-libs/ncurses )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( app-text/sgmltools-lite )
 	nls? ( dev-util/intltool
 		sys-devel/gettext )"

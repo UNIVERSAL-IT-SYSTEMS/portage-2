@@ -1,6 +1,137 @@
 # ChangeLog for dev-python/coverage
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/coverage/ChangeLog,v 1.40 2011/02/12 18:30:41 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/coverage/ChangeLog,v 1.79 2012/12/08 15:08:02 mgorny Exp $
+
+*coverage-3.5.3-r1 (08 Dec 2012)
+
+  08 Dec 2012; Michał Górny <mgorny@gentoo.org> +coverage-3.5.3-r1.ebuild:
+  Migrate to distutils-r1.
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> coverage-3.5.3.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #441274
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> coverage-3.5.3.ebuild:
+  Stable for x86, wrt bug #441274
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> coverage-3.5.3.ebuild:
+  Stable for HPPA (bug #441274).
+
+  06 Nov 2012; Agostino Sarubbo <ago@gentoo.org> coverage-3.5.3.ebuild:
+  Stable for amd64, wrt bug #441274
+
+  05 Nov 2012; Anthony G. Basile <blueness@gentoo.org> coverage-3.5.3.ebuild:
+  stable arm, bug #441274
+
+  05 Nov 2012; Anthony G. Basile <blueness@gentoo.org> coverage-3.5.3.ebuild:
+  stable ppc ppc64, bug #441274
+
+*coverage-3.5.3 (30 Sep 2012)
+
+  30 Sep 2012; Dirkjan Ochtman <djc@gentoo.org> +coverage-3.5.3.ebuild:
+  Version bump to 3.5.3.
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> coverage-3.5.2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #422059
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> coverage-3.5.2.ebuild:
+  Marking coverage-3.5.2 ppc64 for bug 422059
+
+  09 Jul 2012; Jeroen Roovers <jer@gentoo.org> coverage-3.5.2.ebuild:
+  Stable for HPPA (bug #422059).
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> coverage-3.5.2.ebuild:
+  Marking coverage-3.5.2 ppc for bug 422059
+
+  25 Jun 2012; Markus Meier <maekke@gentoo.org> coverage-3.5.2.ebuild:
+  arm stable, bug #422059
+
+  21 Jun 2012; Jeff Horelick <jdhore@gentoo.org> coverage-3.5.2.ebuild:
+  marked x86 per bug 422059
+
+  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> coverage-3.5.2.ebuild:
+  Stable for amd64, wrt bug #422059
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> coverage-3.5.2.ebuild:
+  keyword ~amd64-fbsd
+
+  08 May 2012; Mike Gilbert <floppym@gentoo.org> coverage-3.5.1.ebuild,
+  coverage-3.5.2.ebuild:
+  Drop unnecessary PYTHON_MODNAME.
+
+*coverage-3.5.2 (08 May 2012)
+
+  08 May 2012; Dirkjan Ochtman <djc@gentoo.org> +coverage-3.5.2.ebuild:
+  Version bump to 3.5.2.
+
+  08 May 2012; Dirkjan Ochtman <djc@gentoo.org> -coverage-3.4.ebuild,
+  -coverage-3.5.ebuild:
+  Remove old versions.
+
+  09 Apr 2012; Mike Gilbert <floppym@gentoo.org> coverage-3.5.1.ebuild:
+  Add ~mips and ~ppc-macos; arch teams were taking too long.
+
+  03 Apr 2012; Jeroen Roovers <jer@gentoo.org> coverage-3.5.1.ebuild:
+  Stable for HPPA (bug #408787).
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> coverage-3.5.1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #408787
+
+  28 Mar 2012; Markus Meier <maekke@gentoo.org> coverage-3.5.1.ebuild:
+  arm stable, bug #408787
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> coverage-3.5.1.ebuild:
+  Marking coverage-3.5.1 ppc64 for bug 408787
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> coverage-3.5.1.ebuild:
+  Marking coverage-3.5.1 ppc for bug 408787
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> coverage-3.5.1.ebuild:
+  x86 stable wrt bug #408787
+
+  20 Mar 2012; Agostino Sarubbo <ago@gentoo.org> coverage-3.5.1.ebuild:
+  Stable for amd64, wrt bug #408787
+
+  14 Feb 2012; Alexis Ballier <aballier@gentoo.org> coverage-3.5.1.ebuild:
+  keyword ~x86-fbsd
+
+  13 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> coverage-3.5.ebuild:
+  ppc64 stable wrt #388311
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> coverage-3.5.ebuild:
+  Marking coverage-3.5 ppc for bug 388311
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> coverage-3.4.ebuild,
+  coverage-3.5.ebuild, coverage-3.5.1.ebuild:
+  Add ~alpha/~ia64/~s390/~sh/~sparc wrt #395461
+
+  12 Jan 2012; Markus Meier <maekke@gentoo.org> coverage-3.5.1.ebuild:
+  add ~arm, bug #395461
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> coverage-3.4.ebuild,
+  coverage-3.5.ebuild, coverage-3.5.1.ebuild:
+  Drop sparc keywords
+
+  25 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> coverage-3.5.ebuild:
+  x86 stable wrt bug #388311
+
+  25 Oct 2011; Jeroen Roovers <jer@gentoo.org> coverage-3.5.ebuild:
+  Stable for HPPA (bug #388311).
+
+  24 Oct 2011; Markos Chandras <hwoarang@gentoo.org> coverage-3.5.ebuild:
+  Stable on amd64 wrt bug #388311
+
+*coverage-3.5.1 (24 Oct 2011)
+
+  24 Oct 2011; Dirkjan Ochtman <djc@gentoo.org> +coverage-3.5.1.ebuild:
+  Version bump to 3.5.1 (bug 388307).
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org> coverage-3.5.ebuild:
+  Marked ~x64-macos
+
+*coverage-3.5 (10 Sep 2011)
+
+  10 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> +coverage-3.5.ebuild:
+  Version bump to 3.5 (bug 381989; thanks jbergstroem for testing).
 
   12 Feb 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   -coverage-3.3.1.ebuild:
@@ -154,4 +285,3 @@
   +coverage-2.77.ebuild:
   Initial commit. This is the coverage checker that is supported by
   dev-python/nose.
-

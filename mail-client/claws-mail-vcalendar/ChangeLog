@@ -1,6 +1,115 @@
 # ChangeLog for mail-client/claws-mail-vcalendar
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail-vcalendar/ChangeLog,v 1.101 2011/07/31 09:03:12 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail-vcalendar/ChangeLog,v 1.126 2012/12/03 20:42:58 ago Exp $
+
+  03 Dec 2012;  <ago@gentoo.org> claws-mail-vcalendar-2.0.13-r1.ebuild:
+  Stable for x86, wrt bug #443500
+
+  23 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  claws-mail-vcalendar-2.0.13-r1.ebuild:
+  stable ppc ppc64, bug #443500
+
+  22 Nov 2012; Sergey Popov <pinkbyte@gentoo.org>
+  claws-mail-vcalendar-2.0.13-r1.ebuild:
+  Stable on amd64, wrt bug #443500
+
+*claws-mail-vcalendar-2.0.14 (20 Nov 2012)
+
+  20 Nov 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-vcalendar-2.0.14.ebuild:
+  version bump
+
+  20 Nov 2012; Christian Faulhammer <fauli@gentoo.org>
+  -claws-mail-vcalendar-2.0.12.ebuild:
+  clean up
+
+*claws-mail-vcalendar-2.0.13-r1 (18 Nov 2012)
+
+  18 Nov 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-vcalendar-2.0.13-r1.ebuild,
+  +files/claws-mail-vcalendar-2.0.13_password-disclosure.patch:
+  fix minor password disclosure in system tray, see security bug 443500
+
+  31 Oct 2012; Andreas Schuerch <nativemad@gentoo.org>
+  claws-mail-vcalendar-2.0.13.ebuild:
+  x86 stable, see bug 437814
+
+  24 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  claws-mail-vcalendar-2.0.13.ebuild:
+  Stable for amd64, wrt bug #437814
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  claws-mail-vcalendar-2.0.13.ebuild:
+  stable ppc, bug #437814
+
+*claws-mail-vcalendar-2.0.13 (30 Jun 2012)
+
+  30 Jun 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-vcalendar-2.0.13.ebuild:
+  version bump
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  claws-mail-vcalendar-2.0.12.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  11 Apr 2012; Christian Faulhammer <fauli@gentoo.org>
+  -claws-mail-vcalendar-2.0.10.ebuild, -claws-mail-vcalendar-2.0.11.ebuild:
+  clean up
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org>
+  claws-mail-vcalendar-2.0.12.ebuild:
+  x86 stable, bug #387547
+
+  31 Mar 2012; Tobias Klausmann <klausman@gentoo.org>
+  claws-mail-vcalendar-2.0.10.ebuild:
+  Stable on alpha, bug #387547
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  claws-mail-vcalendar-2.0.12.ebuild:
+  sparc stable wrt #387547
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org>
+  claws-mail-vcalendar-2.0.12.ebuild:
+  Marking claws-mail-vcalendar-2.0.12 ppc64 stable for bug 387547
+
+  04 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #206112
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org>
+  claws-mail-vcalendar-2.0.12.ebuild:
+  Marking claws-mail-vcalendar-2.0.12 ppc stable for bug 387547
+
+  25 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  claws-mail-vcalendar-2.0.12.ebuild:
+  Stable for amd64, wrt bug #387547
+
+*claws-mail-vcalendar-2.0.12 (26 Dec 2011)
+
+  26 Dec 2011; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-vcalendar-2.0.12.ebuild:
+  version bump for bug 395381 by Justin
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org>
+  claws-mail-vcalendar-2.0.11.ebuild:
+  sparc stable wrt #387547
+
+  06 Nov 2011; Brent Baude <ranger@gentoo.org>
+  claws-mail-vcalendar-2.0.11.ebuild:
+  Marking claws-mail-vcalendar-2.0.11 ppc stable for bug 387547
+
+  29 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  claws-mail-vcalendar-2.0.11.ebuild:
+  Stable on amd64 wrt bug #387547
+
+  24 Oct 2011; Markus Meier <maekke@gentoo.org>
+  claws-mail-vcalendar-2.0.11.ebuild:
+  x86 stable, bug #387547
+
+*claws-mail-vcalendar-2.0.11 (30 Aug 2011)
+
+  30 Aug 2011; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-vcalendar-2.0.11.ebuild:
+  version bump
 
   31 Jul 2011; Christian Faulhammer <fauli@gentoo.org>
   -claws-mail-vcalendar-2.0.9.ebuild:
@@ -438,4 +547,3 @@
   19 Dec 2006; Andrej Kacian <ticho@gentoo.org> +metadata.xml,
   +claws-mail-vcalendar-1.91.ebuild:
   This is the new name of mail-client/sylpheed-claws-vcalendar.
-

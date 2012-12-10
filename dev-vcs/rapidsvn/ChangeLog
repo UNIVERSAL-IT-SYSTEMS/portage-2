@@ -1,6 +1,70 @@
 # ChangeLog for dev-vcs/rapidsvn
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/rapidsvn/ChangeLog,v 1.1 2011/02/10 21:35:45 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/rapidsvn/ChangeLog,v 1.17 2012/10/07 11:20:26 jlec Exp $
+
+*rapidsvn-0.12.1 (07 Oct 2012)
+
+  07 Oct 2012; Justin Lecher <jlec@gentoo.org> -rapidsvn-0.12.1_pre8247.ebuild,
+  +rapidsvn-0.12.1.ebuild, +files/rapidsvn-0.12.1-locale.patch,
+  +files/rapidsvn-0.12.1-svncpp_link.patch,
+  -files/rapidsvn-0.12.1_pre8247-svncpp_link.patch:
+  Version Bump, #436412; remove prereleases; honor LINGUAS, #406409
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #24135.
+
+  10 Aug 2012; Justin Lecher <jlec@gentoo.org> rapidsvn-0.12.1_pre8247.ebuild:
+  Install missing icons, #430648
+
+  07 Jun 2012; Justin Lecher <jlec@gentoo.org> rapidsvn-0.12.0.ebuild,
+  rapidsvn-0.12.1_pre8247.ebuild:
+  Use append-ccpflags for CPPFLAGS, correct location of icon file
+
+  05 Jun 2012; Justin Lecher <jlec@gentoo.org> rapidsvn-0.12.0.ebuild,
+  rapidsvn-0.12.1_pre8247.ebuild:
+  Fix for py3 as system ABI, #411621
+
+  04 Jun 2012; Justin Lecher <jlec@gentoo.org> rapidsvn-0.12.0.ebuild,
+  rapidsvn-0.12.1_pre8247.ebuild:
+  Drop libtool.eclass to make repoman happy
+
+*rapidsvn-0.12.1_pre8247 (04 Jun 2012)
+
+  04 Jun 2012; Justin Lecher <jlec@gentoo.org> +rapidsvn-0.12.1_pre8247.ebuild,
+  +files/rapidsvn-0.12.1_pre8247-svncpp_link.patch:
+  Snapshot of svn to add a version compatible with svn-1.7*, #398777
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> rapidsvn-0.12.0.ebuild:
+  inherit eutils for make_desktop_entry
+
+  17 Mar 2012; Justin Lecher <jlec@gentoo.org> -files/rapidsvn-0.9.8-sar.patch,
+  -files/rapidsvn-sar.patch:
+  Cleaned patches
+
+  17 Mar 2012; Justin Lecher <jlec@gentoo.org> -rapidsvn-0.9.6-r1.ebuild,
+  rapidsvn-0.12.0.ebuild:
+  Dropped old, fixes #313713 & 305365
+
+  17 Mar 2012; Raúl Porcel <armin76@gentoo.org> rapidsvn-0.9.6-r1.ebuild,
+  rapidsvn-0.12.0.ebuild:
+  Drop sparc keywords
+
+  06 Feb 2012; Justin Lecher <jlec@gentoo.org> rapidsvn-0.12.0.ebuild:
+  Remove forced webdav dependency in subversion, reported by Denis Scherbakov
+
+  31 Jan 2012; Justin Lecher <jlec@gentoo.org> -rapidsvn-0.9.8.ebuild,
+  -rapidsvn-0.10.0.ebuild, rapidsvn-0.12.0.ebuild, metadata.xml:
+  Added myself as maintainer, upgraded to EAPI=4 to drop built_with_use
+  (#305365), thanks agostino for the patch #390469; dropped old
+
+  04 Dec 2011; Markos Chandras <hwoarang@gentoo.org> rapidsvn-0.12.0.ebuild:
+  Stable on amd64 wrt bug #377737
+
+  20 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> rapidsvn-0.12.0.ebuild:
+  ppc/ppc64 stable wrt #377737
+
+  17 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> rapidsvn-0.12.0.ebuild:
+  x86 stable wrt bug #377737
 
   10 Feb 2011; Ulrich Mueller <ulm@gentoo.org> +rapidsvn-0.9.6-r1.ebuild,
   +rapidsvn-0.9.8.ebuild, +files/rapidsvn-0.9.8-sar.patch,
@@ -322,4 +386,3 @@
 
   19 Aug 2003; <iggy@gentoo.org> metadata.xml, rapidsvn-0.2.0.ebuild:
   new package, fixes bug 25422, thanks to keanu@keanu.be
-

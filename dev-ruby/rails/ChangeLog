@@ -1,6 +1,164 @@
 # ChangeLog for dev-ruby/rails
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rails/ChangeLog,v 1.197 2011/07/24 17:38:13 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rails/ChangeLog,v 1.233 2012/11/12 19:56:22 graaff Exp $
+
+*rails-3.2.9 (12 Nov 2012)
+
+  12 Nov 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.2.9.ebuild:
+  Version bump.
+
+  27 Aug 2012; Hans de Graaff <graaff@gentoo.org> -rails-3.0.16.ebuild,
+  -rails-3.1.7.ebuild, -rails-3.2.7.ebuild:
+  Remove vulnerable versions.
+
+*rails-3.1.8 (11 Aug 2012)
+*rails-3.0.17 (11 Aug 2012)
+
+  11 Aug 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.0.17.ebuild,
+  +rails-3.1.8.ebuild:
+  Version bumps for security bug 430718.
+
+*rails-3.2.8 (10 Aug 2012)
+
+  10 Aug 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.2.8.ebuild:
+  Version bump for security bug 430718.
+
+  29 Jul 2012; Hans de Graaff <graaff@gentoo.org> -rails-3.0.15.ebuild,
+  -rails-3.1.6.ebuild, -rails-3.2.6.ebuild:
+  Remove vulnerable versions.
+
+*rails-3.0.16 (28 Jul 2012)
+
+  28 Jul 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.0.16.ebuild:
+  Version bump for Rails 3.0.16, bug 428254.
+
+*rails-3.1.7 (28 Jul 2012)
+
+  28 Jul 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.1.7.ebuild:
+  Version bump for Rails 3.1.7, bug 428254.
+
+*rails-3.2.7 (27 Jul 2012)
+
+  27 Jul 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.2.7.ebuild:
+  Version bump for Rails 3.2.7, bug 428254.
+
+  23 Jun 2012; Hans de Graaff <graaff@gentoo.org> -rails-3.0.12.ebuild,
+  -rails-3.1.4.ebuild, -rails-3.2.3.ebuild, -rails-3.2.5.ebuild:
+  Remove old vulnerable versions.
+
+*rails-3.1.6 (17 Jun 2012)
+
+  17 Jun 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.1.6.ebuild:
+  Version bump for Rails 3.1.6.
+
+*rails-3.0.15 (13 Jun 2012)
+
+  13 Jun 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.0.15.ebuild:
+  Version bump for Rails 3.0.15.
+
+*rails-3.2.6 (13 Jun 2012)
+
+  13 Jun 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.2.6.ebuild:
+  Version bump for Rails 3.2.6.
+
+*rails-3.2.5 (01 Jun 2012)
+
+  01 Jun 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.2.5.ebuild:
+  Version bump for bug 418481.
+
+  01 Jun 2012; Hans de Graaff <graaff@gentoo.org> -rails-3.0.10.ebuild,
+  -rails-3.0.11.ebuild, -rails-3.1.3-r1.ebuild:
+  Remove old versions.
+
+  17 May 2012; Thomas Kahle <tomka@gentoo.org> rails-3.1.4.ebuild,
+  rails-3.2.3.ebuild:
+  marked ~x86 per bug 396547
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> rails-2.3.14.ebuild,
+  rails-3.0.10.ebuild, rails-3.0.11.ebuild, rails-3.0.12.ebuild:
+  Drop ia64/sparc keywords
+
+*rails-3.2.3 (20 Apr 2012)
+
+  20 Apr 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.2.3.ebuild:
+  Version bump.
+
+  08 Apr 2012; Hans de Graaff <graaff@gentoo.org> rails-3.1.3-r1.ebuild,
+  rails-3.1.4.ebuild:
+  Add slot to jquery-rails dependency for forthcoming Rails 3.2-only versions.
+
+*rails-3.1.4 (04 Apr 2012)
+
+  04 Apr 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.1.4.ebuild:
+  Version bump for Rails 3.1.4, security bug 406547.
+
+*rails-3.0.12 (04 Apr 2012)
+
+  04 Apr 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.0.12.ebuild:
+  Version bump for security bug 406547.
+
+  11 Mar 2012; Brent Baude <ranger@gentoo.org> rails-3.1.3.ebuild:
+  Marking rails-3.1.3 ~ppc64 for bug 396547
+
+*rails-3.1.3-r1 (02 Jan 2012)
+
+  02 Jan 2012; Hans de Graaff <graaff@gentoo.org> +rails-3.1.3-r1.ebuild,
+  metadata.xml:
+  Revision bump which also installs the components of the default Rails asset
+  pipeline by default.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> rails-3.1.3.ebuild:
+  Add Prefix keywords, bug #396547
+
+  31 Dec 2011; Hans de Graaff <graaff@gentoo.org> rails-3.1.3.ebuild:
+  Add ruby19.
+
+*rails-3.1.3 (30 Dec 2011)
+
+  30 Dec 2011; Hans de Graaff <graaff@gentoo.org> +rails-3.1.3.ebuild:
+  Version bump. Add ruby19. Drop arches due to bug 396547.
+
+*rails-3.0.11 (19 Nov 2011)
+
+  19 Nov 2011; Hans de Graaff <graaff@gentoo.org> +rails-3.0.11.ebuild:
+  Version bump for Rails 3.0.11.
+
+  05 Oct 2011; Hans de Graaff <graaff@gentoo.org> -rails-3.0.7.ebuild,
+  -rails-3.0.9.ebuild:
+  Remove old versions.
+
+  28 Sep 2011; Hans de Graaff <graaff@gentoo.org> -rails-2.3.5.ebuild,
+  -rails-2.3.11.ebuild, -rails-2.3.12.ebuild:
+  Remove old versions.
+
+*rails-3.0.10 (28 Sep 2011)
+
+  28 Sep 2011; Hans de Graaff <graaff@gentoo.org> +rails-3.0.10.ebuild:
+  Version bump for Rails 3.0.10
+
+  09 Sep 2011; Fabian Groffen <grobian@gentoo.org> rails-3.0.9.ebuild:
+  Marked ~sparc-solaris
+
+  27 Aug 2011; Raúl Porcel <armin76@gentoo.org> rails-2.3.14.ebuild:
+  ia64/sparc stable wrt #379511
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> rails-2.3.14.ebuild:
+  x86 stable, bug #379511
+
+  18 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> rails-2.3.14.ebuild:
+  ppc64/ppc stable wrt #379511
+
+  18 Aug 2011; Tony Vroon <chainsaw@gentoo.org> rails-2.3.14.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Saurbbo in
+  security bug #379511 filed by Hans de Graaff.
+
+*rails-2.3.14 (17 Aug 2011)
+
+  17 Aug 2011; Hans de Graaff <graaff@gentoo.org> +rails-2.3.14.ebuild:
+  Version bump.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> rails-3.0.9.ebuild:
+  Add ~ia64/~sparc wrt #351835
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> rails-2.3.12.ebuild:
   ia64/sparc stable wrt #372391

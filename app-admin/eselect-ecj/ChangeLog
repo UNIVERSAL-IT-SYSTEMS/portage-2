@@ -1,6 +1,53 @@
 # ChangeLog for app-admin/eselect-ecj
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-ecj/ChangeLog,v 1.11 2011/03/11 19:15:26 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-ecj/ChangeLog,v 1.22 2012/09/16 13:10:40 chithanh Exp $
+
+  16 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  eselect-ecj-0.7.ebuild:
+  Keyword ~arm, bug #305773.
+
+  10 Jun 2012; Ralph Sennhauser <sera@gentoo.org> -eselect-ecj-0.6.ebuild,
+  -eselect-ecj-0.6-r1.ebuild, -files/ecj-0.6.eselect:
+  Remove old.
+
+  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> eselect-ecj-0.7.ebuild:
+  Add back ia64 love #349020 by Dennis Schridde.
+
+  09 Mar 2012; Brent Baude <ranger@gentoo.org> eselect-ecj-0.7.ebuild:
+  Marking eselect-ecj-0.7 ppc64 for bug 396513
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> eselect-ecj-0.7.ebuild:
+  Marking eselect-ecj-0.7 ppc for bug 396513
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> eselect-ecj-0.7.ebuild:
+  x86 stable wrt bug #396513
+
+  31 Dec 2011; Ralph Sennhauser <sera@gentoo.org> eselect-ecj-0.6.ebuild,
+  eselect-ecj-0.6-r1.ebuild:
+  Drop ia64 support #345433
+
+  31 Dec 2011; Agostino Sarubbo <ago@gentoo.org> eselect-ecj-0.7.ebuild:
+  Stable for AMD64, wrt bug #396513
+
+*eselect-ecj-0.7 (18 Dec 2011)
+
+  18 Dec 2011; Ralph Sennhauser <sera@gentoo.org> +eselect-ecj-0.7.ebuild,
+  +files/ecj-0.7.eselect:
+  Version and EAPI bump.
+  Drop PDEPEND as it doesn't guarantee packages DEPENDing on eselect-ecj the
+  availability of a usable ecj. Packages must DEPEND on ecj for themself.
+  Make update action always barf on invalid input.
+  Make update action check for ecj.jar link as well.
+  Make set action always link valid targets. #354097
+
+*eselect-ecj-0.6-r1 (19 Oct 2011)
+
+  19 Oct 2011; Miroslav Šulc <fordfrog@gentoo.org> +eselect-ecj-0.6-r1.ebuild:
+  Added ecj 3.6 and ecj 3.7 to deps
+
+  20 Sep 2011; Vlastimil Babka <caster@gentoo.org> -eselect-ecj-0.3.ebuild,
+  -eselect-ecj-0.5.ebuild, -files/ecj-0.5.eselect, -files/ecj.eselect:
+  Remove old.
 
   11 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org> eselect-ecj-0.6.ebuild:
   ppc/ppc64 stable wrt #344375
@@ -50,4 +97,3 @@
   21 Jul 2008; Petteri Räty <betelgeuse@gentoo.org> +files/ecj.eselect,
   +metadata.xml, +eselect-ecj-0.3.ebuild:
   Initial addition. Thanks to Chewi <chewi@aura-online.co.uk> for the work.
-

@@ -1,6 +1,55 @@
 # ChangeLog for net-misc/nxserver-freeedition
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/nxserver-freeedition/ChangeLog,v 1.52 2011/05/22 14:05:24 voyageur Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/nxserver-freeedition/ChangeLog,v 1.60 2012/07/12 08:51:13 voyageur Exp $
+
+  12 Jul 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  nxserver-freeedition-3.5.0.5.ebuild, nxserver-freeedition-3.5.0.9.ebuild,
+  nxserver-freeedition-3.5.0.11.ebuild:
+  Add GPL-2 to LICENSE for init script, bug #426080
+
+  07 Jun 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  nxserver-freeedition-3.5.0.5.ebuild, -nxserver-freeedition-3.5.0.8.ebuild,
+  nxserver-freeedition-3.5.0.9.ebuild, +nxserver-freeedition-3.5.0.11.ebuild:
+  Maintenance release bump, mostly fixes for newer cairo support. Inherit user
+  eclass
+
+*nxserver-freeedition-3.5.0.11 (07 Jun 2012)
+
+  07 Jun 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  +nxserver-freeedition-3.5.0.11.ebuild:
+  Maintenance release bump, mostly fixes for newer cairo support
+
+*nxserver-freeedition-3.5.0.9 (04 Nov 2011)
+
+  04 Nov 2011; Bernard Cafarelli <voyageur@gentoo.org>
+  +nxserver-freeedition-3.5.0.9.ebuild:
+  Maintenance release bump, mostly fixes for rootless, shadow and vnc sessions
+
+  23 Sep 2011; Bernard Cafarelli <voyageur@gentoo.org>
+  -nxserver-freeedition-3.4.0.8.ebuild, -nxserver-freeedition-3.4.0.17.ebuild,
+  -nxserver-freeedition-3.5.0.4.ebuild:
+  Remove vulnerable versions, security bugs #378345 and #384097
+
+*nxserver-freeedition-3.5.0.8 (24 Aug 2011)
+
+  24 Aug 2011; Bernard Cafarelli <voyageur@gentoo.org>
+  +nxserver-freeedition-3.5.0.8.ebuild:
+  Maintenance release bump, mostly fixes to work with nxplayer
+
+  23 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  nxserver-freeedition-3.5.0.5.ebuild:
+  Stable on amd64 wrt bug #378345
+
+  20 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  nxserver-freeedition-3.5.0.5.ebuild:
+  x86 stable wrt security bug #378345
+
+*nxserver-freeedition-3.5.0.5 (08 Aug 2011)
+
+  08 Aug 2011; Bernard Cafarelli <voyageur@gentoo.org>
+  +nxserver-freeedition-3.5.0.5.ebuild:
+  Maintenance release bump, fix security issue on nxconfigure.sh script and may
+  fix bug #282117
 
 *nxserver-freeedition-3.5.0.4 (22 May 2011)
 

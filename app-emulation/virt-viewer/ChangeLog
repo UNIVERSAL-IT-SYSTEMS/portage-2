@@ -1,6 +1,62 @@
 # ChangeLog for app-emulation/virt-viewer
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virt-viewer/ChangeLog,v 1.9 2011/03/27 10:34:20 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virt-viewer/ChangeLog,v 1.21 2012/12/04 23:10:18 cardoe Exp $
+
+*virt-viewer-0.5.4-r1 (04 Dec 2012)
+
+  04 Dec 2012; Doug Goldstein <cardoe@gentoo.org> +virt-viewer-0.5.4-r1.ebuild:
+  Support USE=nsplugin and USE=gtk3 at the same time by doing two builds.
+
+  21 Sep 2012; Doug Goldstein <cardoe@gentoo.org> virt-viewer-0.5.4.ebuild:
+  Fix spice-gtk depend. bug #435678
+
+  21 Sep 2012; Doug Goldstein <cardoe@gentoo.org> virt-viewer-0.5.4.ebuild:
+  Add missing depend on dev-util/intltool. bug #435386
+
+*virt-viewer-0.5.4 (18 Sep 2012)
+
+  18 Sep 2012; Doug Goldstein <cardoe@gentoo.org> +virt-viewer-0.5.4.ebuild:
+  Version bump
+
+*virt-viewer-0.5.3 (29 May 2012)
+
+  29 May 2012; Tiziano Müller <dev-zero@gentoo.org> +virt-viewer-0.5.3.ebuild:
+  Version bump (improved usb passthrough support, new connection dialog for
+  remote-viewer, spice:// URI handling).
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> virt-viewer-0.4.2.ebuild,
+  virt-viewer-0.5.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  23 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> virt-viewer-0.4.2.ebuild,
+  virt-viewer-0.5.2.ebuild, +files/virt-viewer-0.5.x-npapi-sdk.patch:
+  Support building against net-misc/npapi-sdk instead of obsolete
+  net-libs/xulrunner wrt #383145 by Michał Górny
+
+*virt-viewer-0.5.2 (10 Mar 2012)
+
+  10 Mar 2012; Doug Goldstein <cardoe@gentoo.org> virt-viewer-0.4.2.ebuild,
+  +virt-viewer-0.5.2.ebuild:
+  Version bump. Switch to REQUIRED_USE instead of a pkg_pretend check.
+
+  19 Jan 2012; Doug Goldstein <cardoe@gentoo.org> virt-viewer-0.4.2.ebuild:
+  USE=nsplugin relies on GTK+ 2.0, but when someone has USE=gtk3, we won't pull
+  in the depends. This fixes that.
+
+  18 Jan 2012; Doug Goldstein <cardoe@gentoo.org> -virt-viewer-0.2.0-r2.ebuild,
+  -files/virt-viewer-0.2.0-xulrunner-1.9.1.patch:
+  Remove old version
+
+  18 Jan 2012; Doug Goldstein <cardoe@gentoo.org> virt-viewer-0.4.2.ebuild,
+  metadata.xml:
+  Add a USE flag for VNC support which is on by default. This is for SPICE only
+  users that don't want VNC support.
+
+*virt-viewer-0.4.2 (18 Jan 2012)
+
+  18 Jan 2012; Doug Goldstein <cardoe@gentoo.org> -virt-viewer-0.2.0-r1.ebuild,
+  +virt-viewer-0.4.2.ebuild:
+  Version bump
 
   27 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
   virt-viewer-0.2.0-r1.ebuild, virt-viewer-0.2.0-r2.ebuild:

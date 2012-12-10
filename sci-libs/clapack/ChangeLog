@@ -1,6 +1,23 @@
 # ChangeLog for sci-libs/clapack
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/clapack/ChangeLog,v 1.16 2011/06/20 22:59:14 dilfridge Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/clapack/ChangeLog,v 1.21 2012/08/03 17:19:41 bicatali Exp $
+
+  03 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> clapack-3.2.1-r6.ebuild:
+  keyword x86-linux
+
+  12 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -clapack-3.2.1-r4.ebuild, clapack-3.2.1-r6.ebuild:
+  Remove old; filter -ftree-vectorize as it causes an internal compiler error
+  on gcc-4.6.2
+
+  07 Dec 2011; Markos Chandras <hwoarang@gentoo.org> clapack-3.2.1-r6.ebuild:
+  Stable on amd64 wrt bug #388279
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> clapack-3.2.1-r6.ebuild:
+  x86 stable wrt bug #388279
+
+  02 Aug 2011; Alexey Shvetsov <alexxy@gentoo.org> clapack-3.2.1-r6.ebuild:
+  Add ~amd64-linux keyword
 
   20 Jun 2011; Andreas K. Huettel <dilfridge@gentoo.org>
   files/clapack-3.2.1-hang.patch:
@@ -81,5 +98,3 @@
   04 Mar 2010; Justin Lecher <jlec@gentoo.org>
   +clapack-3.2.1.ebuild, +metadata.xml:
   New ebuild, imported from sci on request 206934
-
-

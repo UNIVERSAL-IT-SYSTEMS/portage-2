@@ -1,6 +1,20 @@
 # ChangeLog for www-servers/mongrel_cluster
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/mongrel_cluster/ChangeLog,v 1.8 2010/08/08 12:39:06 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-servers/mongrel_cluster/ChangeLog,v 1.11 2012/04/30 06:53:01 graaff Exp $
+
+*mongrel_cluster-1.0.5-r2 (30 Apr 2012)
+
+  30 Apr 2012; Hans de Graaff <graaff@gentoo.org>
+  +mongrel_cluster-1.0.5-r2.ebuild:
+  Add this in a revision so that it actually gets installed for people.
+
+  30 Apr 2012; Hans de Graaff <graaff@gentoo.org>
+  mongrel_cluster-1.0.5-r1.ebuild, +files/mongrel_cluster:
+  Add mongrel_cluster init.d script by Robert Sharp in bug 276378.
+
+  09 Aug 2011; Mark Loeser <halcy0n@gentoo.org>
+  mongrel_cluster-1.0.5-r1.ebuild:
+  Drop ~sparc since it has been dropped from mongrel already
 
   08 Aug 2010; Hans de Graaff <graaff@gentoo.org>
   -mongrel_cluster-1.0.5.ebuild:

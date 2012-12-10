@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/openldap/openldap-2.4.19-r1.ebuild,v 1.11 2010/01/12 20:05:41 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nds/openldap/openldap-2.4.19-r1.ebuild,v 1.15 2012/05/13 11:38:39 swift Exp $
 
 EAPI="2"
 inherit db-use eutils flag-o-matic multilib ssl-cert versionator toolchain-funcs
@@ -16,13 +16,14 @@ KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbs
 IUSE_DAEMON="crypt icu samba slp tcpd experimental minimal"
 IUSE_BACKEND="+berkdb"
 IUSE_OVERLAY="overlays perl"
-IUSE_OPTIONAL="gnutls iodbc sasl ssl odbc debug ipv6 syslog selinux"
+IUSE_OPTIONAL="gnutls iodbc sasl ssl odbc debug ipv6 +syslog selinux"
 IUSE_CONTRIB="smbkrb5passwd kerberos"
 IUSE_CONTRIB="${IUSE_CONTRIB} -cxx"
 IUSE="${IUSE_DAEMON} ${IUSE_BACKEND} ${IUSE_OVERLAY} ${IUSE_OPTIONAL} ${IUSE_CONTRIB}"
 
 # openssl is needed to generate lanman-passwords required by samba
 RDEPEND="sys-libs/ncurses
+	sys-devel/libtool
 	icu? ( dev-libs/icu )
 	tcpd? ( sys-apps/tcp-wrappers )
 	ssl? ( !gnutls? ( dev-libs/openssl )
@@ -41,7 +42,7 @@ RDEPEND="sys-libs/ncurses
 		kerberos? ( virtual/krb5 )
 		cxx? ( dev-libs/cyrus-sasl )
 	)
-	selinux? ( sec-policy/selinux-openldap )"
+	selinux? ( sec-policy/selinux-ldap )"
 DEPEND="${RDEPEND}"
 
 # for tracking versions
@@ -183,7 +184,7 @@ openldap_upgrade_howto() {
 	i="${l}.raw"
 	eerror " 1. /etc/init.d/slurpd stop ; /etc/init.d/slapd stop"
 	eerror " 2. slapcat -l ${i}"
-	eerror " 3. egrep -v '^entryCSN:' <${i} >${l}"
+	eerror " 3. egrep -v '^(entry|context)CSN:' <${i} >${l}"
 	eerror " 4. mv /var/lib/openldap-data/ /var/lib/openldap-data-backup/"
 	eerror " 5. emerge --update \=net-nds/${PF}"
 	eerror " 6. etc-update, and ensure that you apply the changes"

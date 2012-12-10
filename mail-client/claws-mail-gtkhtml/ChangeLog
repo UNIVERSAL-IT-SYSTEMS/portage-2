@@ -1,6 +1,45 @@
 # ChangeLog for mail-client/claws-mail-gtkhtml
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail-gtkhtml/ChangeLog,v 1.84 2011/07/31 09:37:34 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail-gtkhtml/ChangeLog,v 1.92 2012/11/20 20:41:19 fauli Exp $
+
+*claws-mail-gtkhtml-0.34 (20 Nov 2012)
+
+  20 Nov 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-gtkhtml-0.34.ebuild:
+  version bump
+
+  20 Nov 2012; Christian Faulhammer <fauli@gentoo.org>
+  -claws-mail-gtkhtml-0.32.ebuild:
+  clean up
+
+*claws-mail-gtkhtml-0.33 (30 Jun 2012)
+
+  30 Jun 2012; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-gtkhtml-0.33.ebuild:
+  version bump
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  claws-mail-gtkhtml-0.32.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  11 Apr 2012; Christian Faulhammer <fauli@gentoo.org>
+  -claws-mail-gtkhtml-0.30.ebuild, -claws-mail-gtkhtml-0.31.ebuild:
+  clean up
+
+  04 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #206112
+
+*claws-mail-gtkhtml-0.32 (26 Dec 2011)
+
+  26 Dec 2011; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-gtkhtml-0.32.ebuild:
+  version bump for bug 395381 by Justin
+
+*claws-mail-gtkhtml-0.31 (30 Aug 2011)
+
+  30 Aug 2011; Christian Faulhammer <fauli@gentoo.org>
+  +claws-mail-gtkhtml-0.31.ebuild:
+  version bump
 
   31 Jul 2011; Christian Faulhammer <fauli@gentoo.org>
   -claws-mail-gtkhtml-0.29.ebuild:

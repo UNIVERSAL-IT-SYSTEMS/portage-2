@@ -1,6 +1,84 @@
 # ChangeLog for dev-python/boto
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/boto/ChangeLog,v 1.32 2011/07/20 05:31:43 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/boto/ChangeLog,v 1.52 2012/09/29 21:55:05 radhermit Exp $
+
+*boto-2.6.0 (29 Sep 2012)
+
+  29 Sep 2012; Tim Harder <radhermit@gentoo.org> +boto-2.6.0.ebuild:
+  Version bump.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> boto-2.3.0.ebuild:
+  sparc stable wrt #416861
+
+*boto-2.5.2 (17 Jul 2012)
+
+  17 Jul 2012; Mike Frysinger <vapier@gentoo.org> +boto-2.5.2.ebuild:
+  Version bump #425176 by Ian Delaney.
+
+  13 Jun 2012; Tim Harder <radhermit@gentoo.org> boto-2.3.0.ebuild,
+  boto-2.4.1.ebuild:
+  Remove unused eutils inherit.
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> boto-2.3.0.ebuild:
+  Marking boto-2.3.0 ppc for bug 416861
+
+  21 May 2012; Agostino Sarubbo <ago@gentoo.org> boto-2.3.0.ebuild:
+  Stable for amd64, wrt bug #416861
+
+*boto-2.4.1 (21 May 2012)
+
+  21 May 2012; Mike Frysinger <vapier@gentoo.org> +boto-2.4.1.ebuild:
+  Version bump #416811 by Johan Bergström.
+
+  21 May 2012; Jeff Horelick <jdhore@gentoo.org> boto-2.3.0.ebuild:
+  marked x86 per bug 416861
+
+*boto-2.3.0 (09 Apr 2012)
+
+  09 Apr 2012; Mike Gilbert <floppym@gentoo.org> +boto-2.3.0.ebuild:
+  Version bump, round 2.
+
+  09 Apr 2012; Mike Gilbert <floppym@gentoo.org> -boto-2.3.0.ebuild:
+  Remove broken ebuild.
+
+*boto-2.3.0 (08 Apr 2012)
+
+  08 Apr 2012; Mike Gilbert <floppym@gentoo.org> +boto-2.3.0.ebuild:
+  Version bump, #411037 by Ian Delaney.
+
+*boto-2.2.2-r1 (29 Feb 2012)
+
+  29 Feb 2012; Mike Frysinger <vapier@gentoo.org> +boto-2.2.2-r1.ebuild,
+  +files/boto-2.2.2-no-install-tests.patch:
+  Add fix from upstream to not install tests #404979 by Patrick Lauer.
+
+  23 Feb 2012; Tim Harder <radhermit@gentoo.org> -boto-1.9b.ebuild:
+  Remove old.
+
+  22 Feb 2012; Mike Frysinger <vapier@gentoo.org> boto-2.0.ebuild:
+  Mark sparc stable #391437.
+
+  22 Feb 2012; Mike Frysinger <vapier@gentoo.org> metadata.xml:
+  Add myself as maintainer.
+
+*boto-2.2.2 (18 Feb 2012)
+
+  18 Feb 2012; Tim Harder <radhermit@gentoo.org> +boto-2.2.2.ebuild:
+  Version bump (fixes bug #404153).
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> boto-2.0.ebuild:
+  Marking boto-2.0 ppc for bug 391437
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> boto-2.0.ebuild:
+  x86 stable wrt bug #391437
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> boto-2.0.ebuild:
+  Stable on amd64 wrt bug #391437
+
+*boto-2.1.1 (09 Nov 2011)
+
+  09 Nov 2011; Tim Harder <radhermit@gentoo.org> +boto-2.1.1.ebuild:
+  Version bump.
 
 *boto-2.0 (20 Jul 2011)
 
@@ -126,4 +204,3 @@
 
   18 Jan 2008; Caleb Tennis <caleb@gentoo.org> +boto-1.0a.ebuild:
   Initial import
-

@@ -1,6 +1,60 @@
 # ChangeLog for media-plugins/vdr-live
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-live/ChangeLog,v 1.28 2011/07/10 03:40:52 hd_brummy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-live/ChangeLog,v 1.38 2012/10/11 18:01:19 idl0r Exp $
+
+  11 Oct 2012; Christian Ruppert <idl0r@gentoo.org>
+  vdr-live-0.2.0_p20120325-r1.ebuild:
+  Fix $S.
+
+*vdr-live-0.2.0_p20120325-r1 (10 Oct 2012)
+
+  10 Oct 2012; Christian Ruppert <idl0r@gentoo.org>
+  -vdr-live-0.2.0_p20120325.ebuild, +vdr-live-0.2.0_p20120325-r1.ebuild,
+  files/confd-0.2:
+  Workaround for recent tntnet versions,
+  http://projects.vdr-developer.org/issues/1066
+
+  10 Jun 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-live-0.2.0_p20120325.ebuild:
+  using KEEP_I18NOBJECT variable from vdr-plugin-2.eclass now
+
+  04 Jun 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-live-0.2.0_p20120325.ebuild, files/rc-addon-0.2.sh:
+  fixed rc-addon script, local fix for vdr-plugin-2.eclass
+
+  04 Jun 2012; Christian Ruppert <idl0r@gentoo.org>
+  vdr-live-0.2.0_p20120325.ebuild:
+  Typo
+
+  04 Jun 2012; Christian Ruppert <idl0r@gentoo.org>
+  vdr-live-0.2.0_p20120325.ebuild:
+  Fix SSL cert generation
+
+*vdr-live-0.2.0_p20120325 (04 Jun 2012)
+
+  04 Jun 2012; Christian Ruppert <idl0r@gentoo.org>
+  +vdr-live-0.2.0_p20120325.ebuild, -vdr-live-0.2.0.20110419-r1.ebuild,
+  -vdr-live-0.2.0.20120114-r1.ebuild, -files/vdr-1.7.27-compatibility.patch,
+  +files/vdr-1.7.28-compatibility.patch, +files/vdr-live_pcre.patch:
+  Version bump, some cleanup and minor ebuild fixes
+
+*vdr-live-0.2.0.20120114-r1 (02 Apr 2012)
+
+  02 Apr 2012; Christian Ruppert <idl0r@gentoo.org>
+  +files/vdr-1.7.27-compatibility.patch, +vdr-live-0.2.0.20120114-r1.ebuild,
+  -vdr-live-0.2.0.20120114.ebuild:
+  Add vdr >=1.7.27 compatibility patch
+
+  09 Mar 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-live-0.2.0.20120114.ebuild:
+  better ssl cert re/creation, will create now by pkg_config call
+
+*vdr-live-0.2.0.20120114 (09 Mar 2012)
+
+  09 Mar 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  -vdr-live-0.2.0.20110118-r1.ebuild, -vdr-live-0.2.0.20110213.ebuild,
+  +vdr-live-0.2.0.20120114.ebuild:
+  new snapshot, cleanup
 
 *vdr-live-0.2.0.20110419-r1 (10 Jul 2011)
 

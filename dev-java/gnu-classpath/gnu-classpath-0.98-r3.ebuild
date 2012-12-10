@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/gnu-classpath/gnu-classpath-0.98-r3.ebuild,v 1.6 2011/03/29 09:13:40 caster Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/gnu-classpath/gnu-classpath-0.98-r3.ebuild,v 1.8 2012/11/07 21:11:32 tetromino Exp $
 
-EAPI=2
+EAPI=4
 
 inherit eutils java-pkg-2 base multilib
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://www.gnu.org/software/classpath"
 
 LICENSE="GPL-2-with-linking-exception"
 SLOT="0.98"
-KEYWORDS="amd64 ppc ppc64 x86"
+KEYWORDS="amd64 ppc ppc64 x86 ~amd64-linux ~x86-linux ~x86-macos"
 
 IUSE="alsa debug doc dssi examples gconf gjdoc gmp gtk gstreamer qt4 xml"
 
@@ -24,8 +24,8 @@ RDEPEND="alsa? ( media-libs/alsa-lib )
 		gjdoc? ( >=dev-java/antlr-2.7.1:0 )
 		gmp? ( >=dev-libs/gmp-4.2.4 )
 		gstreamer? (
-			>=media-libs/gstreamer-0.10.10
-			>=media-libs/gst-plugins-base-0.10.10
+			>=media-libs/gstreamer-0.10.10:0.10
+			>=media-libs/gst-plugins-base-0.10.10:0.10
 			x11-libs/gtk+:2
 		)
 		gtk? (
@@ -65,8 +65,8 @@ S=${WORKDIR}/${MY_P}
 
 src_configure() {
 	# We require ecj anyway, so force it to avoid problems with bad versions of javac
-	export JAVAC="/usr/bin/ecj"
-	export JAVA="/usr/bin/java"
+	export JAVAC="${EPREFIX}/usr/bin/ecj"
+	export JAVA="${EPREFIX}/usr/bin/java"
 	# build takes care of them itself, duplicate -source -target kills ecj
 	export JAVACFLAGS="-nowarn"
 	# build system is passing -J-Xmx768M which ecj however ignores
@@ -98,15 +98,14 @@ src_configure() {
 		--disable-dependency-tracking \
 		--disable-plugin \
 		--host=${CHOST} \
-		--prefix=/usr/${PN}-${SLOT} \
+		--prefix="${EPREFIX}"/usr/${PN}-${SLOT} \
 		--with-ecj-jar=$(java-pkg_getjar --build-only eclipse-ecj-* ecj.jar) \
 		--disable-Werror \
-		${myconf} \
-		|| die "configure failed"
+		${myconf}
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS BUGS ChangeLog* HACKING NEWS README THANKYOU TODO || die
+	emake DESTDIR="${D}" install
+	dodoc AUTHORS BUGS ChangeLog* HACKING NEWS README THANKYOU TODO
 	java-pkg_regjar /usr/${P}/share/classpath/glibj.zip
 }

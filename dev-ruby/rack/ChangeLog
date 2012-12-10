@@ -1,6 +1,157 @@
 # ChangeLog for dev-ruby/rack
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rack/ChangeLog,v 1.54 2011/07/24 17:16:15 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rack/ChangeLog,v 1.92 2012/10/28 17:52:22 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> rack-1.3.6-r1.ebuild,
+  rack-1.4.1.ebuild:
+  Add ~alpha/~ia64/~sparc wrt #417573
+
+  11 Sep 2012; Hans de Graaff <graaff@gentoo.org> -rack-1.1.3.ebuild:
+  Cleanup.
+
+  16 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> rack-1.2.5.ebuild,
+  rack-1.3.6-r1.ebuild, rack-1.4.1.ebuild:
+  Update after Ruby packages move.
+
+  13 Aug 2012; Anthony G. Basile <blueness@gentoo.org> rack-1.2.5.ebuild:
+  Stable ppc ppc64, bug #420711
+
+  13 Aug 2012; Hans de Graaff <graaff@gentoo.org> rack-1.2.5.ebuild:
+  Fix avoidance of hash ordering tests, bug 430746.
+
+  10 Aug 2012; Anthony G. Basile <blueness@gentoo.org> rack-1.1.3-r1.ebuild,
+  rack-1.4.1.ebuild:
+  Stable ppc64, bug #420711
+
+  10 Aug 2012; Anthony G. Basile <blueness@gentoo.org> rack-1.3.6-r1.ebuild:
+  Stable ppc64, bug #420711
+
+  10 Aug 2012; Anthony G. Basile <blueness@gentoo.org> rack-1.1.3-r1.ebuild,
+  rack-1.3.6-r1.ebuild, rack-1.4.1.ebuild:
+  Stable ppc, bug #420711
+
+  07 Aug 2012; Agostino Sarubbo <ago@gentoo.org> rack-1.1.3-r1.ebuild:
+  Stable for AMD64, wrt bug #420711
+
+  07 Aug 2012; Agostino Sarubbo <ago@gentoo.org> rack-1.2.5.ebuild:
+  Stable for AMD64, wrt bug #420711
+
+  07 Aug 2012; Agostino Sarubbo <ago@gentoo.org> rack-1.3.6-r1.ebuild:
+  Stable for AMD64, wrt bug #420711
+
+  07 Aug 2012; Agostino Sarubbo <ago@gentoo.org> rack-1.4.1.ebuild:
+  Stable for amd64, wrt bug #420711
+
+  24 Jul 2012; Jeff Horelick <jdhore@gentoo.org> rack-1.1.3-r1.ebuild,
+  rack-1.2.5.ebuild, rack-1.3.6-r1.ebuild, rack-1.4.1.ebuild:
+  marked x86 per bug 420711
+
+  08 Jul 2012; Jeroen Roovers <jer@gentoo.org> rack-1.4.1.ebuild:
+  Marked ~hppa (bug #417573).
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> rack-1.1.3.ebuild,
+  rack-1.1.3-r1.ebuild, rack-1.2.5.ebuild, rack-1.3.6-r1.ebuild,
+  rack-1.4.1.ebuild:
+  Drop ia64/sparc keywords
+
+  01 Apr 2012; Hans de Graaff <graaff@gentoo.org> -rack-1.2.4-r1.ebuild,
+  -rack-1.2.4-r2.ebuild, -rack-1.3.6.ebuild, -rack-1.4.0.ebuild:
+  Remove old versions in slots.
+
+  18 Mar 2012; Pacho Ramos <pacho@gentoo.org> -rack-1.0.1-r2.ebuild:
+  Drop masked versions.
+
+*rack-1.4.1 (24 Jan 2012)
+
+  24 Jan 2012; Hans de Graaff <graaff@gentoo.org> +rack-1.4.1.ebuild:
+  Version bump.
+
+  22 Jan 2012; Hans de Graaff <graaff@gentoo.org> -rack-1.1.0.ebuild,
+  -rack-1.1.0-r1.ebuild, -rack-1.1.2.ebuild, -rack-1.2.3.ebuild,
+  -rack-1.2.4.ebuild, -rack-1.3.5.ebuild:
+  Remove old versions.
+
+  08 Jan 2012; Raúl Porcel <armin76@gentoo.org> rack-1.1.3.ebuild:
+  ia64/sparc stable wrt #396455
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> rack-1.1.3.ebuild:
+  x86 stable wrt bug #396455
+
+  01 Jan 2012; Fabian Groffen <grobian@gentoo.org> rack-1.3.6-r1.ebuild,
+  rack-1.4.0.ebuild:
+  Add missing Prefix keywords
+
+*rack-1.3.6-r1 (01 Jan 2012)
+
+  01 Jan 2012; Hans de Graaff <graaff@gentoo.org> +rack-1.3.6-r1.ebuild,
+  rack-1.4.0.ebuild:
+  Make sure only the latest version installs rackup, fixes bug 396661.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> rack-1.4.0.ebuild:
+  Add Prefix keywords, bug #396547
+
+  30 Dec 2011; Mark Loeser <halcy0n@gentoo.org> rack-1.1.3.ebuild:
+  Stable for ppc/ppc64; bug #396455
+
+  30 Dec 2011; Agostino Sarubbo <ago@gentoo.org> rack-1.1.3.ebuild:
+  Stable for AMD64, wrt security bug #396455
+
+*rack-1.4.0 (30 Dec 2011)
+*rack-1.3.6 (30 Dec 2011)
+*rack-1.2.5 (30 Dec 2011)
+*rack-1.1.3-r1 (30 Dec 2011)
+*rack-1.1.3 (30 Dec 2011)
+
+  30 Dec 2011; Hans de Graaff <graaff@gentoo.org> +rack-1.1.3.ebuild,
+  +rack-1.1.3-r1.ebuild, +rack-1.2.5.ebuild, +rack-1.3.6.ebuild,
+  +rack-1.4.0.ebuild:
+  Add revision bumps for security bug 396455.
+
+  29 Dec 2011; Hans de Graaff <graaff@gentoo.org> rack-1.1.0-r1.ebuild,
+  rack-1.1.2.ebuild:
+  Drop unneeded test-unit dependency for ruby 1.9 since it is not keyworded on
+  all arches and ruby 1.9.3's implementation is compatible.
+
+*rack-1.3.5 (24 Dec 2011)
+*rack-1.2.4-r2 (24 Dec 2011)
+
+  24 Dec 2011; Hans de Graaff <graaff@gentoo.org> +rack-1.2.4-r2.ebuild,
+  +rack-1.3.5.ebuild:
+  Version bump. Make sure only the latest testing version installs rackup.
+
+  17 Dec 2011; Hans de Graaff <graaff@gentoo.org> rack-1.2.4-r1.ebuild:
+  Avoid broken specs for ruby19. These appear to be related to changes in newer
+  ruby19 versions.
+
+  05 Dec 2011; Naohiro Aota <naota@gentoo.org> rack-1.1.2.ebuild:
+  Add ~x86-fbsd.
+
+  05 Dec 2011; Naohiro Aota <naota@gentoo.org> rack-1.2.4-r1.ebuild:
+  Add ~x86-fbsd.
+
+*rack-1.2.4-r1 (04 Dec 2011)
+
+  04 Dec 2011; Hans de Graaff <graaff@gentoo.org> rack-1.2.4.ebuild,
+  +rack-1.2.4-r1.ebuild:
+  Add missing require sometimes exposed by tests.
+
+*rack-1.2.4 (18 Sep 2011)
+
+  18 Sep 2011; Hans de Graaff <graaff@gentoo.org> +rack-1.2.4.ebuild:
+  Version bump.
+
+  18 Sep 2011; Hans de Graaff <graaff@gentoo.org> -rack-1.2.1.ebuild,
+  -rack-1.2.2.ebuild:
+  Remove old versions.
+
+  09 Sep 2011; Fabian Groffen <grobian@gentoo.org> rack-1.2.3.ebuild:
+  Marked ~sparc-solaris
+
+  07 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> -rack-1.0.1.ebuild:
+  Remove old ruby.eclass based ebuild.
+
+  07 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> rack-1.2.3.ebuild:
+  Add missing dependency over virtual/ruby-ssl.
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> rack-1.1.0.ebuild:
   ia64/sparc stable wrt #372391
@@ -208,4 +359,3 @@
   +rack-0.2.0.ebuild:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
   Dependancy of www-servers/thin.
-

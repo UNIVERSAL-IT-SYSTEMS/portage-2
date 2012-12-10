@@ -1,6 +1,41 @@
 # ChangeLog for app-crypt/trousers
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/trousers/ChangeLog,v 1.29 2011/03/22 10:32:49 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/trousers/ChangeLog,v 1.38 2012/11/16 14:43:39 ssuominen Exp $
+
+  16 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> trousers-0.3.10.ebuild:
+  Use udev.eclass and remove unnecessary file libtspi.la to avoid
+  dependency_libs content leading to overlinking without -Wl,--as-needed (or
+  the new gold linker in binutils)
+
+*trousers-0.3.10 (16 Nov 2012)
+
+  16 Nov 2012; Patrick Lauer <patrick@gentoo.org> +trousers-0.3.10.ebuild:
+  Bump
+
+  10 Sep 2012; Mike Frysinger <vapier@gentoo.org> trousers-0.3.6-r1.ebuild:
+  Drop -m64 hardcode.
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+*trousers-0.3.6-r1 (11 Aug 2012)
+
+  11 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +trousers-0.3.6-r1.ebuild:
+  Query udevdir value from udev.pc pkg-config file instead of using /etc/udev
+  which is reserved for user defined rules.
+
+  31 May 2012; Zac Medico <zmedico@gentoo.org> trousers-0.3.6.ebuild:
+  inherit user for enewgroup and enewuser
+
+  14 May 2012; Mike Frysinger <vapier@gentoo.org> trousers-0.3.6.ebuild:
+  Add arm love for ChromiumOS.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> trousers-0.3.6.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  20 Aug 2011; Sven Wegener <swegener@gentoo.org> files/tcsd.initd:
+  Switch from --chuid to --user.
 
   22 Mar 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   -trousers-0.3.5.ebuild:
@@ -159,4 +194,3 @@
   06 Feb 2005; Daniel Black <dragonheart@gentoo.org> +metadata.xml,
   +files/0.1.7-makefile-statedir.patch, +trousers-0.1.7.ebuild:
   Initial import
-

@@ -1,6 +1,33 @@
 # ChangeLog for dev-haskell/missingh
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/missingh/ChangeLog,v 1.16 2010/08/09 17:46:14 kolmodin Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/missingh/ChangeLog,v 1.23 2012/12/06 22:54:59 slyfox Exp $
+
+  06 Dec 2012; Sergei Trofimovich <slyfox@gentoo.org> missingh-1.2.0.0.ebuild:
+  Get rid of 'dev-haskell/time' depend as it's a ghc's core library.
+
+*missingh-1.2.0.0 (18 Nov 2012)
+
+  18 Nov 2012; Mark Wright <gienah@gentoo.org> +missingh-1.2.0.0.ebuild:
+  Bump missingh to 1.2.0.0
+
+  13 Sep 2012; Mark Wright <gienah@gentoo.org>
+  +files/missingh-1.1.1.0-ghc-7.6.patch, missingh-1.1.1.0.ebuild:
+  patch missingh for ghc 7.6.1
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> missingh-1.1.1.0.ebuild:
+  move dev-haskell/missingh/missingh-1.1.1.0.ebuild ebuild to mirror://hackage
+
+  24 Jan 2012; Thomas Kahle <tomka@gentoo.org> missingh-1.1.1.0.ebuild:
+  x86 stable per bug 342977
+
+  22 Jan 2012; Agostino Sarubbo <ago@gentoo.org> missingh-1.1.1.0.ebuild:
+  Stable for amd64, wrt bug #342977
+
+*missingh-1.1.1.0 (04 Dec 2011)
+
+  04 Dec 2011; Sergei Trofimovich <slyfox@gentoo.org> +missingh-1.1.1.0.ebuild,
+  -missingh-1.1.0.3.ebuild:
+  Verison bump. Fixes FEATURES=test case (bug #294306 by Diego Elio Pettenò)
 
   09 Aug 2010; Lennart Kolmodin <kolmodin@gentoo.org>
   missingh-1.1.0.3.ebuild:
@@ -68,4 +95,3 @@
 
   04 Jul 2006; <kolmodin@gentoo.org> +metadata.xml, +missingh-0.14.4.ebuild:
   Initial import.
-

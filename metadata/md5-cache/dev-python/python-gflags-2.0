@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=dev-python/setuptools !<sys-apps/portage-2.1.10.58 python_targets_python2_5? ( dev-lang/python:2.5 ) python_targets_python2_6? ( dev-lang/python:2.6 ) python_targets_python2_7? ( dev-lang/python:2.7 ) python_targets_pypy1_8? ( dev-python/pypy:1.8 ) python_targets_pypy1_9? ( dev-python/pypy:1.9 )
+DESCRIPTION=Google's Python argument parsing library.
+EAPI=4
+HOMEPAGE=http://code.google.com/p/python-gflags/
+IUSE=python_targets_python2_5 python_targets_python2_6 python_targets_python2_7 python_targets_pypy1_8 python_targets_pypy1_9
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=python_targets_python2_5? ( dev-lang/python:2.5 ) python_targets_python2_6? ( dev-lang/python:2.6 ) python_targets_python2_7? ( dev-lang/python:2.7 ) python_targets_pypy1_8? ( dev-python/pypy:1.8 ) python_targets_pypy1_9? ( dev-python/pypy:1.9 )
+REQUIRED_USE=|| ( python_targets_python2_5 python_targets_python2_6 python_targets_python2_7 python_targets_pypy1_8 python_targets_pypy1_9 )
+SLOT=0
+SRC_URI=http://python-gflags.googlecode.com/files/python-gflags-2.0.tar.gz
+_eclasses_=python-distutils-ng	b6176485a30153729ae856cd37d0174c
+_md5_=aaafe34ab23967361779f165815a29c6

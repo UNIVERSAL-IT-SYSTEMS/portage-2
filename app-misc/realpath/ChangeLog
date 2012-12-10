@@ -1,6 +1,62 @@
 # ChangeLog for app-misc/realpath
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/realpath/ChangeLog,v 1.15 2011/03/27 21:52:55 darkside Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/realpath/ChangeLog,v 1.29 2012/12/10 00:33:59 jer Exp $
+
+  10 Dec 2012; Jeroen Roovers <jer@gentoo.org> realpath-1.17.ebuild:
+  Stable for HPPA (bug #441092).
+
+  09 Dec 2012; Markus Meier <maekke@gentoo.org> realpath-1.17.ebuild:
+  arm stable, bug #441092
+
+*realpath-1.17 (26 Sep 2012)
+
+  26 Sep 2012; Jeroen Roovers <jer@gentoo.org> +realpath-1.17.ebuild,
+  +files/realpath-1.17-build.patch:
+  Version bump.
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> realpath-1.16.ebuild:
+  inherit multilib for get_libdir
+
+  23 Apr 2012; Mike Frysinger <vapier@gentoo.org> realpath-1.16.ebuild:
+  Drop gunzip on man pages (portage automatically takes care of that), simplify
+  use/nls logic, and only append -lintl when USE=nls as this breaks uclibc
+  systems.
+
+  07 Feb 2012; Justin Lecher <jlec@gentoo.org>
+  -files/realpath-1.14-build.patch, -realpath-1.15-r1.ebuild,
+  -realpath-1.15-r3.ebuild, -files/realpath-1.15-nonls.patch:
+  dropped old
+
+  07 Feb 2012; Jeroen Roovers <jer@gentoo.org> realpath-1.16.ebuild:
+  Stable for HPPA (bug #401089).
+
+  03 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> realpath-1.16.ebuild:
+  ppc/ppc64 stable wrt #401089
+
+  28 Jan 2012; Raúl Porcel <armin76@gentoo.org> realpath-1.16.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc/x86 stable wrt #401089
+
+  28 Jan 2012; Agostino Sarubbo <ago@gentoo.org> realpath-1.16.ebuild:
+  Stable for amd64, wrt bug #401089
+
+  19 Dec 2011; Fabian Groffen <grobian@gentoo.org> realpath-1.15-r3.ebuild,
+  realpath-1.16.ebuild:
+  Drop no longer existing elibc_IRIX flag
+
+  19 Oct 2011; Tim Harder <radhermit@gentoo.org> realpath-1.15-r1.ebuild,
+  realpath-1.15-r3.ebuild, realpath-1.16.ebuild:
+  Make gettext dependencies optional based on the nls use flag (bug #387615 by
+  Ed Wildgoose).
+
+  17 Oct 2011; Justin Lecher <jlec@gentoo.org> +files/realpath-1.16-nonls.patch,
+  metadata.xml, realpath-1.16.ebuild:
+  Add missing nls patch
+
+*realpath-1.16 (17 Oct 2011)
+
+  17 Oct 2011; Justin Lecher <jlec@gentoo.org> +realpath-1.16.ebuild,
+  metadata.xml:
+  Version Bump, fixes #379635
 
   27 Mar 2011; Jeremy Olexa <darkside@gentoo.org> -realpath-1.15.ebuild,
   -realpath-1.15-r2.ebuild:

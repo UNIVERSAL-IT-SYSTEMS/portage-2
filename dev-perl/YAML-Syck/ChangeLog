@@ -1,6 +1,65 @@
 # ChangeLog for dev-perl/YAML-Syck
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/YAML-Syck/ChangeLog,v 1.35 2011/07/07 23:30:03 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/YAML-Syck/ChangeLog,v 1.51 2012/12/08 08:45:15 tove Exp $
+
+*YAML-Syck-1.220.0 (08 Dec 2012)
+
+  08 Dec 2012; Torsten Veller <tove@gentoo.org> +YAML-Syck-1.220.0.ebuild:
+  Version bump
+
+*YAML-Syck-1.210.0 (23 Sep 2012)
+
+  23 Sep 2012; Torsten Veller <tove@gentoo.org> +YAML-Syck-1.210.0.ebuild:
+  Version bump
+
+  28 Jul 2012; Torsten Veller <tove@gentoo.org> -YAML-Syck-1.05.ebuild,
+  -YAML-Syck-1.170.0.ebuild, -YAML-Syck-1.180.0.ebuild:
+  Cleanup
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> YAML-Syck-1.200.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #413009
+
+  19 May 2012; Torsten Veller <tove@gentoo.org> YAML-Syck-1.200.0.ebuild:
+  Marking YAML-Syck-1.200.0 ppc64 for bug 413009
+
+  18 May 2012;  <richard@gentoo.org> YAML-Syck-1.200.0.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> YAML-Syck-1.200.0.ebuild:
+  Marking YAML-Syck-1.200.0 ppc for bug 413009
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> YAML-Syck-1.200.0.ebuild:
+  Stable for HPPA (bug #413009).
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> YAML-Syck-1.200.0.ebuild:
+  arm stable, bug #413009
+
+  21 Apr 2012; Jeff Horelick <jdhore@gentoo.org> YAML-Syck-1.200.0.ebuild:
+  marked x86 per bug 412869
+
+  21 Apr 2012; Agostino Sarubbo <ago@gentoo.org> YAML-Syck-1.200.0.ebuild:
+  Stable for amd64, wrt bug #412869
+
+*YAML-Syck-1.200.0 (18 Feb 2012)
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org> +YAML-Syck-1.200.0.ebuild:
+  Version bump. Remove unneeded dependencies (#253277). Thanks to Jon Portnoy
+
+*YAML-Syck-1.180.0 (06 Nov 2011)
+
+  06 Nov 2011; Torsten Veller <tove@gentoo.org> +YAML-Syck-1.180.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -YAML-Syck-1.17.ebuild:
+  Cleanup
+
+*YAML-Syck-1.170.0 (27 Aug 2011)
+
+  27 Aug 2011; Torsten Veller <tove@gentoo.org> +YAML-Syck-1.170.0.ebuild:
+  Change version scheme
 
   07 Jul 2011; Alexis Ballier <aballier@gentoo.org> YAML-Syck-1.17.ebuild:
   keyword ~x86-fbsd, bug #341969
@@ -154,4 +213,3 @@
   06 Nov 2006; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +YAML-Syck-0.71.ebuild:
   Bug 154221, original ebuild by twp
-

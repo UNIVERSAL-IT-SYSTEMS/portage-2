@@ -1,6 +1,42 @@
 # ChangeLog for mail-client/squirrelmail
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/squirrelmail/ChangeLog,v 1.160 2011/07/13 18:50:27 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/squirrelmail/ChangeLog,v 1.170 2012/10/26 07:55:00 eras Exp $
+
+  26 Oct 2012; Eray Aslan <eras@gentoo.org> squirrelmail-1.4.22.ebuild:
+  Specify slot in php dependency
+
+*squirrelmail-1.4.23_pre20121024 (24 Oct 2012)
+
+  24 Oct 2012; Eray Aslan <eras@gentoo.org>
+  +squirrelmail-1.4.23_pre20121024.ebuild:
+  Version bump for php-5.4 trouble - bug #439404
+
+  24 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> squirrelmail-1.4.22.ebuild:
+  Depend only on aspell so ispell can slowly die.
+
+  30 Dec 2011; Mark Loeser <halcy0n@gentoo.org> squirrelmail-1.4.22.ebuild:
+  Revert to ~ppc/~ppc64
+
+  31 Aug 2011; Tim Harder <radhermit@gentoo.org> -squirrelmail-1.4.21.ebuild:
+  Remove old, insecure version.
+
+  27 Aug 2011; Raúl Porcel <armin76@gentoo.org> squirrelmail-1.4.22.ebuild:
+  alpha/sparc stable wrt #378811
+
+  20 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  squirrelmail-1.4.22.ebuild:
+  x86 stable wrt security bug #378811
+
+  18 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  squirrelmail-1.4.22.ebuild:
+  ppc/ppc64 stable wrt #378811
+
+  18 Aug 2011; Tony Vroon <chainsaw@gentoo.org> squirrelmail-1.4.22.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in
+  security bug #378811.
+
+  18 Aug 2011; Eray Aslan <eras@gentoo.org> squirrelmail-1.4.22.ebuild:
+  QA - bug #379629
 
 *squirrelmail-1.4.22 (13 Jul 2011)
 

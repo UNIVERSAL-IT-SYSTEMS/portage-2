@@ -1,6 +1,115 @@
 # ChangeLog for xfce-base/exo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/exo/ChangeLog,v 1.57 2011/06/10 18:38:28 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/exo/ChangeLog,v 1.87 2012/11/28 12:27:20 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> exo-0.8.0.ebuild:
+  EAPI5
+
+  09 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> -exo-0.6.2.ebuild,
+  -exo-0.6.2-r1.ebuild, -files/exo-0.6.x-chromium.patch, -exo-0.7.3.ebuild:
+  old
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> exo-0.8.0.ebuild:
+  alpha/ia64/sparc stable wrt #416233
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> exo-0.8.0.ebuild:
+  arm stable, bug #416233
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> exo-0.8.0.ebuild:
+  marked x86 per bug 416233
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> exo-0.8.0.ebuild:
+  ppc/ppc64 stable wrt #416233
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> exo-0.8.0.ebuild:
+  Stable for amd64, wrt bug #416233
+
+  19 May 2012; Anthony G. Basile <blueness@gentoo.org> exo-0.8.0.ebuild:
+  Keyword mips
+
+  17 May 2012; Jeroen Roovers <jer@gentoo.org> exo-0.8.0.ebuild:
+  Stable for HPPA (bug #416233).
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org> exo-0.8.0.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> exo-0.6.2.ebuild,
+  exo-0.6.2-r1.ebuild, exo-0.7.3.ebuild, exo-0.8.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*exo-0.8.0 (29 Apr 2012)
+
+  29 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +exo-0.8.0.ebuild:
+  Version bump.
+
+  20 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -exo-0.7.2.ebuild:
+  old
+
+*exo-0.7.3 (14 Apr 2012)
+
+  14 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +exo-0.7.3.ebuild:
+  Version bump to development release.
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -exo-0.7.1.ebuild:
+  old
+
+*exo-0.7.2 (30 Mar 2012)
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +exo-0.7.2.ebuild:
+  Version bump to development release.
+
+  23 Mar 2012; Christoph Mende <angelos@gentoo.org> exo-0.6.2-r1.ebuild,
+  exo-0.6.2.ebuild, exo-0.7.1.ebuild:
+  Add slot dep on glib
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> exo-0.7.1.ebuild:
+  Raise libxfce4ui depend to 4.9 for function xfce_dialog_show_help by Diego
+  Elio Pettenò
+
+*exo-0.6.2-r1 (01 Mar 2012)
+
+  01 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +exo-0.6.2-r1.ebuild,
+  +files/exo-0.6.x-chromium.patch:
+  Backport upstream patch to include Chromium (or Google Chrome) in the
+  preferred browsers list wrt #388853 by Michael Mol and Paweł Hajdan, Jr.
+
+*exo-0.7.1 (20 Feb 2012)
+
+  20 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +exo-0.7.1.ebuild:
+  Version bump to development release.
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -exo-0.6.0.ebuild:
+  old
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> exo-0.6.2.ebuild:
+  ppc/ppc64 stable wrt #386963
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> exo-0.6.2.ebuild:
+  Empty py-compile script instead of symlinking it to /path/to/true for
+  automake-1.11.2 compability.
+
+  26 Nov 2011; Raúl Porcel <armin76@gentoo.org> exo-0.6.2.ebuild:
+  alpha/ia64/sparc stable wrt #386963
+
+  02 Nov 2011; Jeroen Roovers <jer@gentoo.org> exo-0.6.2.ebuild:
+  Stable for HPPA (bug #386963).
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> exo-0.6.2.ebuild:
+  arm stable, bug #386963
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> exo-0.6.2.ebuild:
+  amd64 stable wrt #386963
+
+  16 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> exo-0.6.2.ebuild:
+  x86 stable wrt bug #386963
+
+  15 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> exo-0.6.0.ebuild,
+  exo-0.6.2.ebuild:
+  Now that python.eclass has EAPI=4 support, convert to EAPI=4 so xfconf.eclass
+  can stop supporting deprecated EAPI=3.
+
+  15 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -exo-0.6.1.ebuild:
+  old
 
 *exo-0.6.2 (10 Jun 2011)
 

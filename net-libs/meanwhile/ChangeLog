@@ -1,6 +1,36 @@
 # ChangeLog for net-libs/meanwhile
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/meanwhile/ChangeLog,v 1.54 2011/02/06 12:24:36 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/meanwhile/ChangeLog,v 1.62 2012/07/29 18:15:14 armin76 Exp $
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> meanwhile-1.0.2-r1.ebuild:
+  alpha/ia64/sparc stable wrt #415421
+
+  29 Jun 2012; Brent Baude <ranger@gentoo.org> meanwhile-1.0.2-r1.ebuild:
+  Marking meanwhile-1.0.2-r1 ppc for bug 415421
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org> meanwhile-1.0.2-r1.ebuild:
+  Stable for HPPA (bug #415421).
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> meanwhile-1.0.2-r1.ebuild:
+  Marking meanwhile-1.0.2-r1 ppc64 for bug 415421
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  meanwhile-1.0.2-r1.ebuild:
+  x86 stable wrt bug #415421
+
+  11 May 2012; Agostino Sarubbo <ago@gentoo.org> meanwhile-1.0.2-r1.ebuild:
+  Stable for amd64, wrt bug #415421
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> meanwhile-1.0.2.ebuild,
+  meanwhile-1.0.2-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*meanwhile-1.0.2-r1 (24 Mar 2012)
+
+  24 Mar 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/meanwhile-1.0.2-glib2.31.patch, +meanwhile-1.0.2-r1.ebuild:
+  Fix glib-2.31 building, bug #409081 by Bjoern Thorwirth; also drop static
+  stuff.
 
   06 Feb 2011; Mart Raudsepp <leio@gentoo.org> meanwhile-1.0.2.ebuild:
   Drop to ~mips

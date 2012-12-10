@@ -1,6 +1,26 @@
 # ChangeLog for dev-python/gdata
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/gdata/ChangeLog,v 1.100 2011/06/23 15:06:32 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/gdata/ChangeLog,v 1.105 2012/08/02 22:35:14 neurogeek Exp $
+
+  02 Aug 2012; Jesus Rivero <neurogeek@gentoo.org> gdata-2.0.14.ebuild,
+  gdata-2.0.16.ebuild, gdata-2.0.17.ebuild:
+  Bumped to EAPI 4 and added ssl(+) and xml(+) to PYTHON_USE_WITH
+
+*gdata-2.0.17 (26 May 2012)
+
+  26 May 2012; Tim Harder <radhermit@gentoo.org> +gdata-2.0.17.ebuild:
+  Version bump.
+
+  26 Feb 2012; Mike Gilbert <floppym@gentoo.org> gdata-2.0.16.ebuild:
+  Set EAPI=4.
+
+  26 Feb 2012; Mike Gilbert <floppym@gentoo.org> gdata-2.0.16.ebuild:
+  Simplify dev-lang/python[xml] dependencies.
+
+*gdata-2.0.16 (26 Feb 2012)
+
+  26 Feb 2012; Mike Gilbert <floppym@gentoo.org> +gdata-2.0.16.ebuild:
+  Version bump. Resolves bug 398533.
 
   23 Jun 2011; Markos Chandras <hwoarang@gentoo.org> -gdata-2.0.13.ebuild:
   Remove old ebuilds. Requested by Arfrever

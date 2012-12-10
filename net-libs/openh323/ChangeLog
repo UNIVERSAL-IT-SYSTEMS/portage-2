@@ -1,6 +1,17 @@
 # ChangeLog for net-libs/openh323
-# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/openh323/ChangeLog,v 1.85 2009/03/12 19:36:43 klausman Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/openh323/ChangeLog,v 1.89 2012/10/05 19:12:21 ago Exp $
+
+  05 Oct 2012; Agostino Sarubbo <ago@gentoo.org> openh323-1.18.0.ebuild:
+  Respect CC,CXX,AR wrt to bug #378793
+
+  15 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml
+  openh323-1.18.0.ebuild:
+  Depend on virtual/ffmpeg and bump to eapi4. Fixes bug#362163.
+
+
+  09 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop gnome from metadata as we are not really taking care of this package.
 
   12 Mar 2009; Tobias Klausmann <klausman@gentoo.org>
   openh323-1.18.0.ebuild:

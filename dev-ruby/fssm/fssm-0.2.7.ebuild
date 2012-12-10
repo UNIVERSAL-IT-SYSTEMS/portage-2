@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/fssm/fssm-0.2.7.ebuild,v 1.2 2011/07/23 20:43:14 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/fssm/fssm-0.2.7.ebuild,v 1.5 2012/05/01 18:24:04 armin76 Exp $
 
 EAPI=4
 
-USE_RUBY="ruby18 ree18 jruby"
+USE_RUBY="ruby18 ruby19 ree18 jruby"
 
 RUBY_FAKEGEM_TASK_TEST="spec"
 

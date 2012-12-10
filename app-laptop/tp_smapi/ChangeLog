@@ -1,6 +1,23 @@
 # ChangeLog for app-laptop/tp_smapi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-laptop/tp_smapi/ChangeLog,v 1.41 2011/06/18 15:54:18 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-laptop/tp_smapi/ChangeLog,v 1.45 2012/11/18 10:53:08 pacho Exp $
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> -tp_smapi-0.40-r3.ebuild,
+  metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML, remove old.
+
+  12 Apr 2012; Fabio Erculiani <lxnay@gentoo.org> tp_smapi-0.40-r1.ebuild,
+  tp_smapi-0.40-r3.ebuild, tp_smapi-0.41.ebuild:
+  make CONFIG_CHECK non-fatal (binpkg friendly, not strictly required anyway)
+
+*tp_smapi-0.41 (20 Dec 2011)
+
+  20 Dec 2011; Christoph Junghans <ottxor@gentoo.org> +tp_smapi-0.41.ebuild:
+  Version bump: fixes bug #375697 and bug #384735
+
+  19 Dec 2011; Christoph Junghans <ottxor@gentoo.org>
+  files/tp_smapi-0.40-initd:
+  move info,low,high to extra_started_commands
 
   18 Jun 2011; Tomáš Chvátal <scarabeus@gentoo.org>
   files/tp_smapi-0.40-initd:
@@ -173,4 +190,3 @@
   13 Dec 2005; Henrik Brix Andersen <brix@gentoo.org> +metadata.xml,
   +tp_smapi-0.09.ebuild:
   Initial import.
-

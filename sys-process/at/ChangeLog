@@ -1,6 +1,68 @@
 # ChangeLog for sys-process/at
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/at/ChangeLog,v 1.26 2011/04/17 22:46:41 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-process/at/ChangeLog,v 1.42 2012/07/07 12:31:07 blueness Exp $
+
+  07 Jul 2012; Anthony G. Basile <blueness@gentoo.org> at-3.1.13-r1.ebuild:
+  Keyword ~mips
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> at-3.1.13-r1.ebuild:
+  alpha/ia64/sparc stable wrt #407947
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> at-3.1.13-r1.ebuild:
+  x86 stable wrt bug #407947
+
+  16 Mar 2012; Lars Wendler <polynomial-c@gentoo.org> at-3.1.13-r1.ebuild,
+  +files/at-3.1.13-parallel-make-fix.patch:
+  Fixed parallel make issue (bug #408375).
+
+  13 Mar 2012; Jeroen Roovers <jer@gentoo.org> at-3.1.13-r1.ebuild:
+  Stable for HPPA (bug #407947).
+
+  13 Mar 2012; Lars Wendler <polynomial-c@gentoo.org> at-3.1.10.2-r1.ebuild,
+  at-3.1.10.2-r2.ebuild, at-3.1.13.ebuild, at-3.1.13-r1.ebuild:
+  Added sys-devel/bison to DEPEND. This should fix bug #294351 and bug #408035.
+
+  13 Mar 2012; Lars Wendler <polynomial-c@gentoo.org> at-3.1.13-r1.ebuild:
+  Changed src_install() to use emake instead of make.
+
+  13 Mar 2012; Brent Baude <ranger@gentoo.org> at-3.1.13-r1.ebuild:
+  Marking at-3.1.13-r1 ppc for bug 407947
+
+  13 Mar 2012; Agostino Sarubbo <ago@gentoo.org> at-3.1.13-r1.ebuild:
+  Stable for amd64, wrt bug #407947
+
+  12 Mar 2012; Brent Baude <ranger@gentoo.org> at-3.1.13-r1.ebuild:
+  Marking at-3.1.13-r1 ppc64 for bug 407947
+
+*at-3.1.13-r1 (10 Jan 2012)
+
+  10 Jan 2012; Robin H. Johnson <robbat2@gentoo.org> +at-3.1.13-r1.ebuild,
+  +files/at.pamd-3.1.13-r1:
+  Bug #343537: refactor pam.d/atd to use system-services stack.
+
+  31 Oct 2011; Lars Wendler <polynomial-c@gentoo.org> at-3.1.10.2-r1.ebuild,
+  at-3.1.10.2-r2.ebuild, at-3.1.13.ebuild:
+  non-maintainer commit: Better fix for bug #386625.
+
+  10 Oct 2011; Lars Wendler <polynomial-c@gentoo.org> at-3.1.13.ebuild:
+  non-maintainer commit: Added bug ID to comment about .SEQ file.
+
+  10 Oct 2011; Lars Wendler <polynomial-c@gentoo.org> at-3.1.10.2-r1.ebuild,
+  at-3.1.10.2-r2.ebuild, at-3.1.13.ebuild:
+  non-maintainer commit: Don't install .SEQ file when it's already installed.
+  Thanks to Christian Kauhaus who reported this in bug #386625.
+
+  23 Sep 2011; Lars Wendler <polynomial-c@gentoo.org> at-3.1.13.ebuild:
+  non-maintainer commit: Bumped EAPI to version 4. Added autoconf-2.64 to
+  DEPEND.
+
+*at-3.1.13 (23 Sep 2011)
+
+  23 Sep 2011; Lars Wendler <polynomial-c@gentoo.org> +at-3.1.13.ebuild,
+  +files/at-3.1.13-Makefile.patch,
+  +files/at-3.1.13-configure.in-fix-PAM-automagick-dep.patch, files/atd.rc6:
+  non-maintainer commit: Version bump. Fixed warnings in init script (bug
+  #382319).
 
 *at-3.1.10.2-r2 (17 Apr 2011)
 

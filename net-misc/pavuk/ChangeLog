@@ -1,6 +1,40 @@
 # ChangeLog for net-misc/pavuk
-# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/pavuk/ChangeLog,v 1.33 2009/04/03 14:54:56 patrick Exp $
+# Copyright 2002-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/pavuk/ChangeLog,v 1.38 2012/02/25 12:31:13 pacho Exp $
+
+*pavuk-0.9.36_pre20120215-r1 (25 Feb 2012)
+
+  25 Feb 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/pavuk-0.9.36_pre20120215-fix-gtkmulticol-segfault.patch,
+  +files/pavuk-0.9.36_pre20120215-fix-underlinking.patch,
+  +pavuk-0.9.36_pre20120215-r1.ebuild:
+  Fixes underlinking, bug #405337 by Attila Tóth; fixes a segfault in the GTK+2
+  interface on amd64, bug #262504#c40. Thanks to Richard Grenville for the
+  fixes.
+
+  19 Feb 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/pavuk-0.9.36_pre20120215-pcre-fix.patch,
+  pavuk-0.9.36_pre20120215.ebuild:
+  Fix PCRE support (bug #262504#c34 by Richard Grenville), install icon for menu
+  entry.
+
+  17 Feb 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml,
+  pavuk-0.9.36_pre20120215.ebuild:
+  Drop javascript support as it's completely broken, bug #262504#c25 by Richard
+  Grenville. I will start to be his proxy-maintainer for this also.
+
+*pavuk-0.9.36_pre20120215 (16 Feb 2012)
+
+  16 Feb 2012; Pacho Ramos <pacho@gentoo.org> +pavuk-0.9.36_pre20120215.ebuild,
+  -files/pavuk-0.9.34-gcc43.patch, -files/pavuk-0.9.34-nls.patch,
+  -pavuk-0.9.34-r1.ebuild, -pavuk-0.9.34-r2.ebuild, metadata.xml:
+  Version bump with latest upstream snapshot including tons of bugfixes, this
+  also solves bug #262504 (adding a gtk2 gui) and buffer overflow problems (bug
+  #340833). Thanks a lot to Richard Grenville, dE, Andreas Klauer and D_W.
+  Remove old and broken buggy versions.
+
+  22 Nov 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #82110
 
 *pavuk-0.9.34-r2 (03 Apr 2009)
 

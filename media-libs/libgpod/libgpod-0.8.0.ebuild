@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libgpod/libgpod-0.8.0.ebuild,v 1.6 2011/03/27 15:37:41 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libgpod/libgpod-0.8.0.ebuild,v 1.10 2012/05/05 08:02:25 jdhore Exp $
 
 EAPI=3
 
@@ -22,18 +22,22 @@ RDEPEND=">=app-pda/libplist-1.0
 	>=dev-libs/glib-2.16:2
 	dev-libs/libxml2
 	sys-apps/sg3_utils
-	gtk? ( || ( x11-libs/gdk-pixbuf:2 <x11-libs/gtk+-2.22:2 ) )
+	gtk? ( x11-libs/gdk-pixbuf:2 )
 	ios? ( app-pda/libimobiledevice )
-	python? ( >=media-libs/mutagen-1.8
-		>=dev-python/pygobject-2.8 )
+	python? (
+		>=media-libs/mutagen-1.8
+		>=dev-python/pygobject-2.8:2
+		)
 	udev? ( sys-fs/udev )
-	mono? ( >=dev-lang/mono-1.9.1
-		>=dev-dotnet/gtk-sharp-2.12 )"
+	mono? (
+		>=dev-lang/mono-1.9.1
+		>=dev-dotnet/gtk-sharp-2.12
+		)"
 DEPEND="${RDEPEND}
 	python? ( >=dev-lang/swig-1.3.24 )
 	dev-libs/libxslt
 	dev-util/intltool
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 pkg_setup() {
 	if use python; then
@@ -43,8 +47,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	rm -f py-compile
-	ln -s $(type -P true) py-compile
+	>py-compile
 }
 
 src_configure() {

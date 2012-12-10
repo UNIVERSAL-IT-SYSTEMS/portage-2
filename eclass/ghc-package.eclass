@@ -1,13 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ghc-package.eclass,v 1.30 2011/05/08 15:00:43 slyfox Exp $
-#
+# $Header: /var/cvsroot/gentoo-x86/eclass/ghc-package.eclass,v 1.35 2012/11/16 15:47:17 slyfox Exp $
+
 # @ECLASS: ghc-package.eclass
 # @MAINTAINER:
 # "Gentoo's Haskell Language team" <haskell@gentoo.org>
-#
+# @AUTHOR:
 # Original Author: Andres Loeh <kosmikus@gentoo.org>
-#
 # @BLURB: This eclass helps with the Glasgow Haskell Compiler's package configuration utility.
 # @DESCRIPTION:
 # Helper eclass to handle ghc installation/upgrade/deinstallation process.
@@ -37,16 +36,17 @@ ghc-getghcpkg() {
 # because for some reason the global package file
 # must be specified
 ghc-getghcpkgbin() {
-	if version_is_at_least "6.10" "$(ghc-version)"; then
-		# the ghc-pkg executable changed name in ghc 6.10, as it no longer needs
-		# the wrapper script with the static flags
-		echo '[]' > "${T}/empty.conf"
-		echo "$(ghc-libdir)/ghc-pkg" "--global-conf=${T}/empty.conf"
-	elif ghc-cabal; then
-		echo '[]' > "${T}/empty.conf"
-		echo "$(ghc-libdir)/ghc-pkg.bin" "--global-conf=${T}/empty.conf"
+	# the ghc-pkg executable changed name in ghc 6.10, as it no longer needs
+	# the wrapper script with the static flags
+	echo '[]' > "${T}/empty.conf"
+	if version_is_at_least "7.7.20121101" "$(ghc-version)"; then
+		# was moved to bin/ subtree by:
+		# http://www.haskell.org/pipermail/cvs-ghc/2012-September/076546.html
+		echo "$(ghc-libdir)/bin/ghc-pkg" "--global-package-db=${T}/empty.conf"
+	elif version_is_at_least "7.5.20120516" "$(ghc-version)"; then
+		echo "$(ghc-libdir)/ghc-pkg" "--global-package-db=${T}/empty.conf"
 	else
-		echo "$(ghc-libdir)/ghc-pkg.bin"
+		echo "$(ghc-libdir)/ghc-pkg" "--global-conf=${T}/empty.conf"
 	fi
 }
 
@@ -61,30 +61,14 @@ ghc-version() {
 	echo "${_GHC_VERSION_CACHE}"
 }
 
-# @FUNCTION: ghc-cabal
-# @DESCRIPTION:
-# this function can be used to determine if ghc itself
-# uses the Cabal package format; it has nothing to do
-# with the Cabal libraries ... ghc uses the Cabal package
-# format since version 6.4
-ghc-cabal() {
-	version_is_at_least "6.4" "$(ghc-version)"
-}
-
 # @FUNCTION: ghc-bestcabalversion
 # @DESCRIPTION:
 # return the best version of the Cabal library that is available
 ghc-bestcabalversion() {
-	local cabalversion
-	if ghc-cabal; then
-		# We ask portage, not ghc, so that we only pick up
-		# portage-installed cabal versions.
-		cabalversion="$(ghc-extractportageversion dev-haskell/cabal)"
-		echo "Cabal-${cabalversion}"
-	else
-		# older ghc's don't support package versioning
-		echo Cabal
-	fi
+	# We ask portage, not ghc, so that we only pick up
+	# portage-installed cabal versions.
+	local cabalversion="$(ghc-extractportageversion dev-haskell/cabal)"
+	echo "Cabal-${cabalversion}"
 }
 
 # @FUNCTION: ghc-sanecabal
@@ -100,27 +84,6 @@ ghc-sanecabal() {
 		[[ -f "${f}" ]] && version_is_at_least "${version}" "${f#*cabal-}" && return
 	done
 	return 1
-}
-
-# @FUNCTION: ghc-saneghc
-# @DESCRIPTION:
-# checks if ghc and ghc-bin are installed in the same version
-# (if they're both installed); if this is not the case, we
-# unfortunately cannot trust portage's dependency resolution
-ghc-saneghc() {
-	local ghcversion
-	local ghcbinversion
-	if [[ "${PN}" == "ghc" || "${PN}" == "ghc-bin" ]]; then
-		return
-	fi
-	if has_version dev-lang/ghc && has_version dev-lang/ghc-bin; then
-		ghcversion="$(ghc-extractportageversion dev-lang/ghc)"
-		ghcbinversion="$(ghc-extractportageversion dev-lang/ghc-bin)"
-		if [[ "${ghcversion}" != "${ghcbinversion}" ]]; then
-			return 1
-		fi
-	fi
-	return
 }
 
 # @FUNCTION: ghc-supports-shared-libraries
@@ -179,18 +142,11 @@ ghc-makeghcilib() {
 	ld --relocatable --discard-all --output="${outfile}" --whole-archive "$1"
 }
 
-# @FUNCTION: ghc-makeghcilib
+# @FUNCTION: ghc-package-exists
 # @DESCRIPTION:
 # tests if a ghc package exists
 ghc-package-exists() {
-	local describe_flag
-	if version_is_at_least "6.4" "$(ghc-version)"; then
-		describe_flag="describe"
-	else
-		describe_flag="--show-package"
-	fi
-
-	$(ghc-getghcpkg) "${describe_flag}" "$1" > /dev/null 2>&1
+	$(ghc-getghcpkg) describe "$1" > /dev/null 2>&1
 }
 
 # @FUNCTION: ghc-setup-pkg
@@ -202,17 +158,11 @@ ghc-package-exists() {
 # no arguments are given, the resulting file is
 # empty
 ghc-setup-pkg() {
-	local localpkgconf
-	localpkgconf="${S}/$(ghc-localpkgconf)"
+	local localpkgconf="${S}/$(ghc-localpkgconf)"
 	echo '[]' > "${localpkgconf}"
-	local update_flag
-	if version_is_at_least "6.4" "$(ghc-version)"; then
-		update_flag="update -"
-	else
-		update_flag="--update-package"
-	fi
+
 	for pkg in $*; do
-		$(ghc-getghcpkgbin) -f "${localpkgconf}" ${update_flag} --force \
+		$(ghc-getghcpkgbin) -f "${localpkgconf}" update - --force \
 			< "${pkg}" || die "failed to register ${pkg}"
 	done
 }
@@ -243,22 +193,13 @@ ghc-install-pkg() {
 # registers all packages in the local (package-specific)
 # package configuration file
 ghc-register-pkg() {
-	local localpkgconf
-	localpkgconf="$(ghc-confdir)/$1"
-	local update_flag
-	local describe_flag
-	if version_is_at_least "6.4" "$(ghc-version)"; then
-		update_flag="update -"
-		describe_flag="describe"
-	else
-		update_flag="--update-package"
-		describe_flag="--show-package"
-	fi
+	local localpkgconf="$(ghc-confdir)/$1"
+
 	if [[ -f "${localpkgconf}" ]]; then
 		for pkg in $(ghc-listpkg "${localpkgconf}"); do
 			ebegin "Registering ${pkg} "
-			$(ghc-getghcpkgbin) -f "${localpkgconf}" "${describe_flag}" "${pkg}" \
-				| $(ghc-getghcpkg) ${update_flag} --force > /dev/null
+			$(ghc-getghcpkgbin) -f "${localpkgconf}" describe "${pkg}" \
+				| $(ghc-getghcpkg) update - --force > /dev/null
 			eend $?
 		done
 	fi
@@ -287,17 +228,9 @@ ghc-reregister() {
 # protected are all packages that are still contained in
 # another package configuration file
 ghc-unregister-pkg() {
-	local localpkgconf
+	local localpkgconf="$(ghc-confdir)/$1"
 	local i
 	local pkg
-	local unregister_flag
-	localpkgconf="$(ghc-confdir)/$1"
-
-	if version_is_at_least "6.4" "$(ghc-version)"; then
-		unregister_flag="unregister"
-	else
-		unregister_flag="--remove-package"
-	fi
 
 	if [[ -f "${localpkgconf}" ]]; then
 		for pkg in $(ghc-reverse "$(ghc-listpkg ${localpkgconf})"); do
@@ -305,7 +238,7 @@ ghc-unregister-pkg() {
 			einfo "Package ${pkg} is not installed for ghc-$(ghc-version)."
 		  else
 			ebegin "Unregistering ${pkg} "
-			$(ghc-getghcpkg) "${unregister_flag}" "${pkg}" --force > /dev/null
+			$(ghc-getghcpkg) unregister "${pkg}" --force > /dev/null
 			eend $?
 		  fi
 		done
@@ -346,34 +279,12 @@ ghc-listpkg() {
 		extra_flags="${extra_flags} -v0"
 	fi
 	for i in $*; do
-		if ghc-cabal; then
-			echo $($(ghc-getghcpkg) list ${extra_flags} -f "${i}") \
-				| sed \
-					-e "s|^.*${i}:\([^:]*\).*$|\1|" \
-					-e "s|/.*$||" \
-					-e "s|,| |g" -e "s|[(){}]||g"
-		else
-			echo $($(ghc-getghcpkgbin) -l -f "${i}") \
-				| cut -f2 -d':' \
-				| sed 's:,: :g'
-		fi
+		echo $($(ghc-getghcpkg) list ${extra_flags} -f "${i}") \
+			| sed \
+				-e "s|^.*${i}:\([^:]*\).*$|\1|" \
+				-e "s|/.*$||" \
+				-e "s|,| |g" -e "s|[(){}]||g"
 	done
-}
-
-# @FUNCTION: ghc-package_pkg_setup
-# @DESCRIPTION:
-# exported function: check if we have a consistent ghc installation
-ghc-package_pkg_setup() {
-	if ! ghc-saneghc; then
-		eerror "You have inconsistent versions of dev-lang/ghc and dev-lang/ghc-bin"
-		eerror "installed. Portage currently cannot work correctly with this setup."
-		eerror "There are several possibilities to work around this problem:"
-		eerror "(1) Up/downgrade ghc-bin to the same version as ghc."
-		eerror "(2) Unmerge ghc-bin."
-		eerror "(3) Unmerge ghc."
-		eerror "You probably want option 1 or 2."
-		die "Inconsistent versions of ghc and ghc-bin."
-	fi
 }
 
 # @FUNCTION: ghc-package_pkg_postinst
@@ -394,4 +305,4 @@ ghc-package_pkg_prerm() {
 	ghc-unregister-pkg "$(ghc-localpkgconf)"
 }
 
-EXPORT_FUNCTIONS pkg_setup pkg_postinst pkg_prerm
+EXPORT_FUNCTIONS pkg_postinst pkg_prerm

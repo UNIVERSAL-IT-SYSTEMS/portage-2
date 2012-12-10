@@ -1,6 +1,27 @@
 # ChangeLog for dev-perl/Parse-Syslog
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Parse-Syslog/ChangeLog,v 1.14 2008/11/26 21:11:44 gmsoft Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Parse-Syslog/ChangeLog,v 1.20 2012/10/08 17:08:14 blueness Exp $
+
+  08 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  Parse-Syslog-1.100.0.ebuild:
+  stable ppc64, bug #436868
+
+  07 Oct 2012; Agostino Sarubbo <ago@gentoo.org> Parse-Syslog-1.100.0.ebuild:
+  Stable for amd64, wrt bug #436868
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Parse-Syslog-1.10.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Parse-Syslog-1.100.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Parse-Syslog-1.100.0 (29 Aug 2011)
+
+  29 Aug 2011; Torsten Veller <tove@gentoo.org> +Parse-Syslog-1.100.0.ebuild:
+  Change version scheme
 
   26 Nov 2008; Guy Martin <gmsoft@gentoo.org> Parse-Syslog-1.10.ebuild:
   hppa stable
@@ -51,4 +72,3 @@
   26 Jun 2007; Christian Hartmann <ian@gentoo.org> +metadata.xml,
   +Parse-Syslog-1.09.ebuild:
   New package requested by dertobi123
-

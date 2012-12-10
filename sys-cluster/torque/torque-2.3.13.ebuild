@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/torque/torque-2.3.13.ebuild,v 1.8 2011/01/22 23:16:02 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/torque/torque-2.3.13.ebuild,v 1.12 2012/04/25 16:43:11 jlec Exp $
 
 EAPI=2
 inherit flag-o-matic eutils linux-info autotools
 
 DESCRIPTION="Resource manager and queuing system based on OpenPBS"
-HOMEPAGE="http://www.clusterresources.com/products/torque/"
-SRC_URI="http://www.clusterresources.com/downloads/${PN}/${P}.tar.gz"
+HOMEPAGE="http://www.adaptivecomputing.com/products/torque.php"
+SRC_URI="http://www.adaptivecomputing.com/resources/downloads/${PN}/${P}.tar.gz"
 
 LICENSE="openpbs"
 
@@ -23,7 +23,9 @@ DEPEND_COMMON="sys-libs/ncurses
 	!games-util/qstat"
 
 DEPEND="${DEPEND_COMMON}
-	doc? ( drmaa? ( app-doc/doxygen[latex,-nodot] ) )
+	doc? ( drmaa? (
+		|| ( <app-doc/doxygen-1.7.6.1[latex,-nodot]	>=app-doc/doxygen-1.7.6.1[latex,dot] )
+	) )
 	sys-apps/ed"
 
 RDEPEND="${DEPEND_COMMON}
@@ -103,8 +105,7 @@ src_configure() {
 		--with-default-server=${PBS_SERVER_NAME} \
 		--disable-gcc-warnings \
 		${USE_CPUSETS} \
-		${myconf} \
-		|| die "econf failed"
+		${myconf}
 }
 
 # WARNING

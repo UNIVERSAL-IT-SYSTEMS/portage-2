@@ -1,6 +1,26 @@
 # ChangeLog for dev-perl/Test-Memory-Cycle
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-Memory-Cycle/ChangeLog,v 1.24 2010/02/06 12:49:06 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-Memory-Cycle/ChangeLog,v 1.29 2012/06/24 12:59:03 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  24 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  Test-Memory-Cycle-1.40.0.ebuild:
+  Drop ia64/sparc keywords
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Test-Memory-Cycle-1.04.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org>
+  Test-Memory-Cycle-1.40.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Test-Memory-Cycle-1.40.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +Test-Memory-Cycle-1.40.0.ebuild:
+  Change version scheme
 
   06 Feb 2010; Torsten Veller <tove@gentoo.org>
   Test-Memory-Cycle-1.04.ebuild:
@@ -97,4 +117,3 @@
   05 Dec 2004; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Test-Memory-Cycle-0.02.ebuild:
   Part of the test suite - memory tests
-

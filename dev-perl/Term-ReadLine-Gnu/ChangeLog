@@ -1,6 +1,29 @@
 # ChangeLog for dev-perl/Term-ReadLine-Gnu
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Term-ReadLine-Gnu/ChangeLog,v 1.19 2011/06/12 12:13:04 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Term-ReadLine-Gnu/ChangeLog,v 1.25 2012/06/28 16:47:46 ranger Exp $
+
+  28 Jun 2012; Brent Baude <ranger@gentoo.org>
+  Term-ReadLine-Gnu-1.200.0-r1.ebuild:
+  Marking Term-ReadLine-Gnu-1.200.0-r1 ppc for bug 423851
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  21 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  Term-ReadLine-Gnu-1.200.0-r1.ebuild:
+  Stable for amd64, wrt bug #422849
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org>
+  -Term-ReadLine-Gnu-1.200.0.ebuild:
+  Cleanup
+
+  12 Oct 2011; Raúl Porcel <armin76@gentoo.org>
+  Term-ReadLine-Gnu-1.200.0-r1.ebuild:
+  sparc stable wrt #384501
+
+  01 Oct 2011; Torsten Veller <tove@gentoo.org>
+  Term-ReadLine-Gnu-1.200.0-r1.ebuild:
+  Stable on x86 (#384501)
 
   12 Jun 2011; Markus Meier <maekke@gentoo.org>
   Term-ReadLine-Gnu-1.200.0-r1.ebuild:
@@ -91,4 +114,3 @@
   15 Jan 2007; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Term-ReadLine-Gnu-1.16.ebuild:
   Initial import, bug 161231
-

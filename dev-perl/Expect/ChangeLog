@@ -1,6 +1,23 @@
 # ChangeLog for dev-perl/Expect
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Expect/ChangeLog,v 1.18 2009/11/19 14:45:52 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Expect/ChangeLog,v 1.23 2012/10/21 08:56:36 maekke Exp $
+
+  21 Oct 2012; Markus Meier <maekke@gentoo.org> Expect-1.210.0.ebuild:
+  add ~arm, bug #389547
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Expect-1.21.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Expect-1.210.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Expect-1.210.0 (31 Aug 2011)
+
+  31 Aug 2011; Torsten Veller <tove@gentoo.org> +Expect-1.210.0.ebuild:
+  Change version scheme
 
   19 Nov 2009; Christian Faulhammer <fauli@gentoo.org> Expect-1.21.ebuild:
   stable x86, bug 284544
@@ -70,4 +87,3 @@
 
   03 Apr 2006; <mcumming@gentoo.org> +metadata.xml, +Expect-1.15.ebuild:
   Deps for mon
-

@@ -1,10 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/blender-2.49b-r2.ebuild,v 1.8 2011/07/09 16:56:25 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/blender-2.49b-r2.ebuild,v 1.17 2012/09/05 07:51:31 jlec Exp $
 
 EAPI=2
 
-inherit multilib eutils python
+PYTHON_DEPEND="2:2.6"
+
+inherit scons-utils multilib eutils python
 
 IUSE="blender-game ffmpeg nls ogg openmp verse openal"
 
@@ -17,22 +19,21 @@ LICENSE="|| ( GPL-2 BL BSD )"
 KEYWORDS="amd64 ppc ppc64 x86"
 
 RDEPEND="ffmpeg? ( virtual/ffmpeg[encode,theora] )
-	media-libs/openjpeg
-	media-libs/tiff
-	>=dev-lang/python-2.5
+	>=media-libs/openjpeg-1.5.0
+	media-libs/tiff:0
 	nls? ( >=media-libs/freetype-2.0
 		virtual/libintl
 		>=media-libs/ftgl-2.1 )
 	openal? ( >=media-libs/openal-1.6.372
 		>=media-libs/freealut-1.1.0-r1 )
 	media-libs/openexr
-	media-libs/libpng
+	media-libs/libpng:0
 	blender-game? ( >=media-libs/libsdl-1.2[joystick] )
 	>=media-libs/libsdl-1.2
 	ogg? ( media-libs/libogg )
 	virtual/jpeg
 	virtual/opengl"
-DEPEND=">=dev-util/scons-0.98
+DEPEND=">=dev-util/scons-2
 	sys-devel/gcc[openmp?]
 	x11-base/xorg-server
 	${RDEPEND}"
@@ -51,13 +52,26 @@ blend_with() {
 	fi
 }
 
+pkg_setup() {
+	python_set_active_version 2
+	python_pkg_setup
+}
+
 src_prepare() {
 	epatch "${FILESDIR}"/blender-2.48a-CVE-2008-4863.patch
 	epatch "${FILESDIR}"/${PN}-2.37-dirs.patch
 	epatch "${FILESDIR}"/${PN}-2.44-scriptsdir.patch
 	epatch "${FILESDIR}"/${PN}-2.49a-sys-openjpeg.patch
 	epatch "${FILESDIR}"/${PN}-2.49b-CVE-2009-3850-v4.patch
+	epatch "${FILESDIR}"/${PN}-2.49b-linux-3.patch  # Bug #381099
+	epatch "${FILESDIR}"/${PN}-2.49b-subversion-1.7.patch
+	epatch "${FILESDIR}"/${P}-libav-0.7.patch
 	rm -f "${S}/release/scripts/bpymodules/"*.pyc
+
+	# Fix building with >=media-libs/openjpeg-1.5.0 (bug #409283)
+	sed -i \
+		-e '/parameters.*tile_size_on/s:false:FALSE:' \
+		source/blender/imbuf/intern/jp2.c || die
 }
 
 src_configure() {
@@ -108,8 +122,7 @@ src_configure() {
 }
 
 src_compile() {
-	# scons uses -l differently -> remove it
-	scons ${MAKEOPTS/-l[0-9]} || die \
+	escons || die \
 	'!!! Please add "${S}/scons.config" when filing bugs reports \
 	to bugs.gentoo.org'
 
@@ -143,9 +156,8 @@ src_install() {
 
 	insinto /usr/share/pixmaps
 	doins "${WORKDIR}"/install/linux2/icons/scalable/blender.svg
-	insinto /usr/share/applications
-	doins "${FILESDIR}"/${PN}.desktop || die
-	doins "${FILESDIR}"/${P}-insecure.desktop || die
+	domenu "${FILESDIR}"/${PN}.desktop || die
+	domenu "${FILESDIR}"/${P}-insecure.desktop || die
 
 	dodoc INSTALL README
 	dodoc "${WORKDIR}"/install/linux2/BlenderQuickStart.pdf

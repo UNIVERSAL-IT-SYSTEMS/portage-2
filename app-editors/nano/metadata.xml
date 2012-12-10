@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
 <maintainer>
  <email>vapier@gentoo.org</email>
 </maintainer>
@@ -27,6 +26,9 @@ perhaps providing other extra functionality.
  <flag name='debug'>
   Enable debug messages and assert warnings.  Note that these will all be sent
   straight to stderr rather than some logging facility.
+ </flag>
+ <flag name='magic'>
+  Add magic file support (sys-apps/file) to automatically detect appropriate syntax highlighting
  </flag>
  <flag name='minimal'>
   Disable all fancy features, including ones that otherwise have a dedicated

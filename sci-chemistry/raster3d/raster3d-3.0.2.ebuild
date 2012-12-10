@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/raster3d/raster3d-3.0.2.ebuild,v 1.4 2011/06/21 15:57:37 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/raster3d/raster3d-3.0.2.ebuild,v 1.9 2012/10/19 10:24:13 jlec Exp $
 
 EAPI=4
 
-inherit fortran-2 flag-o-matic multilib toolchain-funcs versionator prefix
+inherit eutils fortran-2 flag-o-matic multilib toolchain-funcs versionator prefix
 
 MY_PN="Raster3D"
 MY_PV=$(replace_version_separator 2 -)
@@ -16,13 +16,11 @@ SRC_URI="http://www.bmsc.washington.edu/${PN}/${MY_P}.tar.gz -> ${MY_P}.tar"
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux"
 IUSE="gd tiff"
 
 RDEPEND="
-	virtual/fortran
-
-	tiff? ( media-libs/tiff )
+	tiff? ( media-libs/tiff:0 )
 	gd? ( media-libs/gd[jpeg,png] )"
 DEPEND="${RDEPEND}"
 

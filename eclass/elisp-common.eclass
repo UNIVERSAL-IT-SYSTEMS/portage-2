@@ -1,17 +1,16 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/elisp-common.eclass,v 1.71 2011/02/19 10:12:42 ulm Exp $
-#
-# Copyright 2002-2004 Matthew Kennedy <mkennedy@gentoo.org>
-# Copyright 2003      Jeremy Maitin-Shepard <jbms@attbi.com>
-# Copyright 2004-2005 Mamoru Komachi <usata@gentoo.org>
-# Copyright 2007-2008 Christian Faulhammer <fauli@gentoo.org>
-# Copyright 2007-2011 Ulrich Müller <ulm@gentoo.org>
+# $Header: /var/cvsroot/gentoo-x86/eclass/elisp-common.eclass,v 1.82 2012/09/01 09:39:07 ulm Exp $
 #
 # @ECLASS: elisp-common.eclass
 # @MAINTAINER:
-# Feel free to contact the Emacs team through <emacs@gentoo.org> if you
-# have problems, suggestions or questions.
+# Gentoo Emacs team <emacs@gentoo.org>
+# @AUTHOR:
+# Matthew Kennedy <mkennedy@gentoo.org>
+# Jeremy Maitin-Shepard <jbms@attbi.com>
+# Mamoru Komachi <usata@gentoo.org>
+# Christian Faulhammer <fauli@gentoo.org>
+# Ulrich Müller <ulm@gentoo.org>
 # @BLURB: Emacs-related installation utilities
 # @DESCRIPTION:
 #
@@ -42,7 +41,7 @@
 # known to fail with lower Emacs versions; the standard case is to
 # depend on virtual/emacs without version.
 #
-# .SS
+# @ROFF .SS
 # src_compile() usage:
 #
 # An elisp file is compiled by the elisp-compile() function defined
@@ -61,7 +60,7 @@
 # comments.  See the Emacs Lisp Reference Manual (node "Autoload") for
 # a detailed explanation.
 #
-# .SS
+# @ROFF .SS
 # src_install() usage:
 #
 # The resulting compiled files (.elc) should be put in a subdirectory of
@@ -95,6 +94,8 @@
 # many Emacs support files, users may be annoyed by the start-up time.
 # Also avoid keybindings as they might interfere with the user's
 # settings.  Give a hint in pkg_postinst(), which should be enough.
+# The guiding principle is that emerging your package should not by
+# itself cause a change of standard Emacs behaviour.
 #
 # The naming scheme for this site-init file matches the shell pattern
 # "[1-8][0-9]*-gentoo*.el", where the two digits at the beginning define
@@ -119,7 +120,7 @@
 # "50${PN}-gentoo.el".  If your subdirectory is not named ${PN}, give
 # the differing name as second argument.
 #
-# .SS
+# @ROFF .SS
 # pkg_postinst() / pkg_postrm() usage:
 #
 # After that you need to recreate the start-up file of Emacs after
@@ -158,7 +159,7 @@ EMACS=${EPREFIX}/usr/bin/emacs
 # @ECLASS-VARIABLE: EMACSFLAGS
 # @DESCRIPTION:
 # Flags for executing Emacs in batch mode.
-# These work for Emacs versions 18-23, so don't change them.
+# These work for Emacs versions 18-24, so don't change them.
 EMACSFLAGS="-batch -q --no-site-file"
 
 # @ECLASS-VARIABLE: BYTECOMPFLAGS
@@ -171,10 +172,16 @@ BYTECOMPFLAGS="-L ."
 # Output version of currently active Emacs.
 
 elisp-emacs-version() {
-	# The following will work for at least versions 18-23.
+	local ret
+	# The following will work for at least versions 18-24.
 	echo "(princ emacs-version)" >"${T}"/emacs-version.el
 	${EMACS} ${EMACSFLAGS} -l "${T}"/emacs-version.el
+	ret=$?
 	rm -f "${T}"/emacs-version.el
+	if [[ ${ret} -ne 0 ]]; then
+		eerror "elisp-emacs-version: Failed to run ${EMACS}"
+	fi
+	return ${ret}
 }
 
 # @FUNCTION: elisp-need-emacs
@@ -185,9 +192,13 @@ elisp-emacs-version() {
 # specified as argument.
 
 elisp-need-emacs() {
-	local need_emacs=$1
-	local have_emacs=$(elisp-emacs-version)
+	local need_emacs=$1 have_emacs
+	have_emacs=$(elisp-emacs-version) || return
 	einfo "Emacs version: ${have_emacs}"
+	if [[ ${have_emacs} =~ XEmacs|Lucid ]]; then
+		eerror "This package needs GNU Emacs."
+		return 1
+	fi
 	if ! [[ ${have_emacs%%.*} -ge ${need_emacs%%.*} ]]; then
 		eerror "This package needs at least Emacs ${need_emacs%%.*}."
 		eerror "Use \"eselect emacs\" to select the active version."
@@ -309,20 +320,20 @@ elisp-site-file-install() {
 
 elisp-site-regen() {
 	local sitelisp=${ROOT}${EPREFIX}${SITELISP}
-	local sf i line null="" page=$'\f'
+	local sf i null="" page=$'\f'
 	local -a sflist
 
-	if [ ! -d "${sitelisp}" ]; then
+	if [[ ! -d ${sitelisp} ]]; then
 		eerror "elisp-site-regen: Directory ${sitelisp} does not exist"
 		return 1
 	fi
 
-	if [ ! -d "${T}" ]; then
+	if [[ ! -d ${T} ]]; then
 		eerror "elisp-site-regen: Temporary directory ${T} does not exist"
 		return 1
 	fi
 
-	einfon "Regenerating site-gentoo.el for GNU Emacs (${EBUILD_PHASE}) ..."
+	ebegin "Regenerating site-gentoo.el for GNU Emacs (${EBUILD_PHASE})"
 
 	# Until January 2009, elisp-common.eclass sometimes created an
 	# auxiliary file for backwards compatibility. Remove any such file.
@@ -331,7 +342,7 @@ elisp-site-regen() {
 	for sf in "${sitelisp}"/[0-9][0-9]*-gentoo.el \
 		"${sitelisp}"/site-gentoo.d/[0-9][0-9]*.el
 	do
-		[ -r "${sf}" ] || continue
+		[[ -r ${sf} ]] || continue
 		# sort files by their basename. straight insertion sort.
 		for ((i=${#sflist[@]}; i>0; i--)); do
 			[[ ${sf##*/} < ${sflist[i-1]##*/} ]] || break
@@ -369,12 +380,14 @@ elisp-site-regen() {
 		# was actually no change.
 		# A case is a remerge where we have doubled output.
 		rm -f "${T}"/site-gentoo.el
-		echo " no changes."
+		eend
+		einfo "... no changes."
 	else
 		mv "${T}"/site-gentoo.el "${sitelisp}"/site-gentoo.el
-		echo
+		eend
 		case ${#sflist[@]} in
-			0) ewarn "... Huh? No site initialisation files found." ;;
+			0) [[ ${PN} = emacs-common-gentoo ]] \
+				|| ewarn "... Huh? No site initialisation files found." ;;
 			1) einfo "... ${#sflist[@]} site initialisation file included." ;;
 			*) einfo "... ${#sflist[@]} site initialisation files included." ;;
 		esac

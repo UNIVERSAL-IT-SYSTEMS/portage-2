@@ -1,10 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/goocanvas/goocanvas-1.0.0.ebuild,v 1.1 2011/02/22 22:33:38 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/goocanvas/goocanvas-1.0.0.ebuild,v 1.4 2012/05/05 03:52:27 jdhore Exp $
 
 EAPI="3"
 
-GCONF_DEBUG="no"
+GCONF_DEBUG=no
+GNOME2_LA_PUNT=yes
 
 inherit gnome2 libtool
 
@@ -13,14 +14,14 @@ HOMEPAGE="http://live.gnome.org/GooCanvas"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE="doc examples"
 
 RDEPEND=">=x11-libs/gtk+-2.12:2
 	>=dev-libs/glib-2.10:2
 	>=x11-libs/cairo-1.4"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( >=dev-util/gtk-doc-1.8 )"
 
 pkg_setup() {

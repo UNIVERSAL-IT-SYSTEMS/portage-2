@@ -1,11 +1,13 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/yaffs2-utils/yaffs2-utils-9999.ebuild,v 1.2 2009/09/19 14:55:22 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/yaffs2-utils/yaffs2-utils-9999.ebuild,v 1.5 2012/11/05 07:15:02 vapier Exp $
 
-ECVS_SERVER="cvs.aleph1.co.uk:/home/aleph1/cvs"
-ECVS_MODULE="yaffs2"
+EAPI="4"
 
-inherit eutils cvs
+EGIT_REPO_URI="git://www.aleph1.co.uk/yaffs2"
+EGIT_SOURCEDIR=${WORKDIR}
+
+inherit eutils git-2 toolchain-funcs
 
 DESCRIPTION="tools for generating YAFFS images"
 HOMEPAGE="http://www.aleph1.co.uk/yaffs/"
@@ -15,16 +17,14 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND=""
+S=${WORKDIR}/utils
 
-S=${WORKDIR}/${ECVS_MODULE}/utils
-
-src_unpack() {
-	cvs_src_unpack
-	cd "${S}"
+src_prepare() {
 	epatch "${FILESDIR}"/${P}-build.patch
+	tc-export CC
 }
 
 src_install() {
-	dobin mkyaffsimage mkyaffs2image || die
+	dobin mkyaffsimage mkyaffs2image
+	dodoc ../README-linux
 }

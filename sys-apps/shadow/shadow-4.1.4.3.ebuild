@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/shadow/shadow-4.1.4.3.ebuild,v 1.8 2011/07/14 19:13:29 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/shadow/shadow-4.1.4.3.ebuild,v 1.14 2012/08/18 21:28:14 vapier Exp $
 
 inherit eutils libtool toolchain-funcs pam multilib
 
@@ -16,8 +16,6 @@ IUSE="audit cracklib nls pam selinux skey"
 RDEPEND="audit? ( sys-process/audit )
 	cracklib? ( >=sys-libs/cracklib-2.7-r3 )
 	pam? ( virtual/pam )
-	!sys-apps/pam-login
-	!app-admin/nologin
 	skey? ( sys-auth/skey )
 	selinux? ( >=sys-libs/libselinux-1.28 )
 	nls? ( virtual/libintl )"
@@ -88,7 +86,7 @@ src_install() {
 	case $(tc-arch) in
 		ppc*)  devs="hvc0 hvsi0 ttyPSC0";;
 		hppa)  devs="ttyB0";;
-		arm)   devs="ttyFB0";;
+		arm)   devs="ttyFB0 ttySAC0 ttySAC1 ttySAC2 ttySAC3 ttymxc0 ttymxc1 ttyO0 ttyO1 ttyO2";;
 		sh)    devs="ttySC0 ttySC1";;
 	esac
 	[[ -n ${devs} ]] && printf '%s\n' ${devs} >> "${D}"/etc/securetty

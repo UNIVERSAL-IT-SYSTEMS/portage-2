@@ -1,6 +1,22 @@
 # ChangeLog for kde-misc/plasma-widget-message-indicator
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/plasma-widget-message-indicator/ChangeLog,v 1.11 2011/03/10 13:01:51 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/plasma-widget-message-indicator/ChangeLog,v 1.14 2012/07/31 11:28:21 kensington Exp $
+
+  31 Jul 2012; Michael Palimaka <kensington@gentoo.org>
+  +files/plasma-widget-message-indicator-0.5.8-libindicate.patch,
+  plasma-widget-message-indicator-0.5.8.ebuild:
+  Add patch to fix build with newer versions of libindicate, wrt bug #428624.
+
+*plasma-widget-message-indicator-0.5.8 (12 Jan 2012)
+
+  12 Jan 2012; Johannes Huber <johu@gentoo.org>
+  +plasma-widget-message-indicator-0.5.8.ebuild,
+  -plasma-widget-message-indicator-0.5.6.ebuild:
+  Version bump, remove old.
+
+  29 Oct 2011; Jonathan Callen <abcd@gentoo.org>
+  plasma-widget-message-indicator-0.5.6.ebuild:
+  Bump to EAPI=4
 
   10 Mar 2011; <angelos@gentoo.org>
   plasma-widget-message-indicator-0.5.6.ebuild:
@@ -54,4 +70,3 @@
   +plasma-widget-message-indicator-0.5.2.ebuild, +metadata.xml:
   Initial commit, moved from kde overlay, thanks to Dennis Schridde. This is
   kde-misc/plasma-indicatordisplay's new name
-

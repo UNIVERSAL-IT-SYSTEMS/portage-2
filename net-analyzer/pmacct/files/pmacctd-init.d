@@ -1,9 +1,9 @@
 #!/sbin/runscript
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pmacct/files/pmacctd-init.d,v 1.5 2010/09/30 16:43:05 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pmacct/files/pmacctd-init.d,v 1.7 2012/11/03 11:30:36 pinkbyte Exp $
 
-PMACCTDDIR=${PMACCTDDIR:-/etc/pmacct}
+PMACCTDDIR=${PMACCTDDIR:-/etc/pmacctd}
 if [ ${SVCNAME} != "pmacctd" ]; then
 	PMACCTDPID="/var/run/${SVCNAME}.pid"
 else
@@ -25,13 +25,13 @@ checkconfig() {
 start() {
 	checkconfig || return 1
 	ebegin "Starting ${SVCNAME}"
-	start-stop-daemon --start --pidfile "${PMACCTDPID}" --exec /usr/sbin/pmacctd \
+	start-stop-daemon --start --pidfile "${PMACCTDPID}" --exec /usr/sbin/"${SVCNAME}" \
 		-- -D -f "${PMACCTDCONF}" -F "${PMACCTDPID}" ${OPTS}
 	eend $?
 }
 
 stop() {
 	ebegin "Stopping ${SVCNAME}"
-	start-stop-daemon --stop --pidfile "${PMACCTDPID}" --exec /usr/sbin/pmacctd
+	start-stop-daemon --stop --pidfile "${PMACCTDPID}" --exec /usr/sbin/"${SVCNAME}"
 	eend $?
 }

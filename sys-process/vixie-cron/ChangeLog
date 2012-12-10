@@ -1,6 +1,30 @@
 # ChangeLog for sys-process/vixie-cron
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/vixie-cron/ChangeLog,v 1.59 2010/10/17 04:13:21 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-process/vixie-cron/ChangeLog,v 1.65 2012/05/24 05:46:25 vapier Exp $
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> vixie-cron-4.1-r10.ebuild,
+  vixie-cron-4.1-r12.ebuild:
+  Add missing eclass inherits, and quote path vars.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> vixie-cron-4.1-r12.ebuild:
+  keyword ~amd64-fbsd
+
+*vixie-cron-4.1-r12 (31 Dec 2011)
+
+  31 Dec 2011; Christian Ruppert <idl0r@gentoo.org> -vixie-cron-4.1-r11.ebuild,
+  +vixie-cron-4.1-r12.ebuild, +files/vixie-cron.rc7:
+  Revbump, improves the init script, bug 368189.
+
+  20 Sep 2011; Christian Ruppert <idl0r@gentoo.org> files/crontab-3.0.1-r4,
+  files/crontab:
+  Whitespace
+
+  04 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  vixie-cron-4.1-r11.ebuild:
+  x86 stable wrt bug #369845
+
+  23 Aug 2011; Markos Chandras <hwoarang@gentoo.org> vixie-cron-4.1-r11.ebuild:
+  Stable on amd64 wrt bug #369845
 
   17 Oct 2010; Mart Raudsepp <leio@gentoo.org> vixie-cron-4.1-r10.ebuild:
   Drop to ~mips

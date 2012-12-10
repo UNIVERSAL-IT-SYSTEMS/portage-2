@@ -1,6 +1,29 @@
 # ChangeLog for app-forensics/memdump
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-forensics/memdump/ChangeLog,v 1.9 2011/06/26 07:17:08 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-forensics/memdump/ChangeLog,v 1.15 2012/09/08 02:15:23 radhermit Exp $
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  12 Jan 2012; Tim Harder <radhermit@gentoo.org> -memdump-1.0.ebuild:
+  Remove old.
+
+  11 Jan 2012; Brent Baude <ranger@gentoo.org> memdump-1.01.ebuild:
+  Marking memdump-1.01 ppc for bug 390013
+
+  11 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> memdump-1.01.ebuild:
+  x86 stable wrt bug #390013
+
+  10 Nov 2011; Tony Vroon <chainsaw@gentoo.org> memdump-1.01.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #390013.
+
+*memdump-1.01 (27 Sep 2011)
+
+  27 Sep 2011; Tim Harder <radhermit@gentoo.org> -memdump-1.0.1.ebuild,
+  +memdump-1.01.ebuild, +files/memdump-1.01-linux3.patch:
+  Use upstream versioning and fix build with Linux 3.x (bug #383803 by Diego
+  Elio Pettenò).
 
   26 Jun 2011; Tim Harder <radhermit@gentoo.org> memdump-1.0.1.ebuild:
   Respect LDFLAGS (bug #337739), respect CC (bug #243594), don't test FEATURES

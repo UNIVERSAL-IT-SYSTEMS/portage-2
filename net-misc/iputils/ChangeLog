@@ -1,6 +1,51 @@
 # ChangeLog for net-misc/iputils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/iputils/ChangeLog,v 1.96 2011/02/19 18:09:48 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/iputils/ChangeLog,v 1.106 2012/04/20 19:56:55 ssuominen Exp $
+
+  20 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/iputils-20070202-makefile.patch, -iputils-20100418-r1.ebuild,
+  -files/iputils-20100418-arping-broadcast.patch,
+  -files/iputils-20100418-ping-CVE-2010-2529.patch, -iputils-20101006.ebuild,
+  -iputils-20101006-r1.ebuild,
+  -files/iputils-20101006-tracepath-error-typo.patch:
+  old
+
+  13 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  iputils-20101006-r2.ebuild:
+  ppc64 stable wrt #394191
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> iputils-20101006-r2.ebuild:
+  Marking iputils-20101006-r2 ppc for bug 394191
+
+  17 Dec 2011; Raúl Porcel <armin76@gentoo.org> iputils-20101006-r2.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #394191
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  iputils-20101006-r2.ebuild:
+  x86 stable wrt bug #394191
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org> iputils-20101006-r2.ebuild:
+  Stable for AMD64, wrt bug #394191
+
+  12 Dec 2011; Jeroen Roovers <jer@gentoo.org> iputils-20101006-r2.ebuild:
+  Stable for HPPA (bug #394191).
+
+*iputils-20101006-r2 (09 Nov 2011)
+
+  09 Nov 2011; Mike Frysinger <vapier@gentoo.org> +iputils-20101006-r2.ebuild,
+  +files/iputils-20101006-owl-pingsock.diff, iputils-99999999.ebuild:
+  Add patch from OWL for non-root/set*id/cap ping support.
+
+  21 Sep 2011; Michał Górny <mgorny@gentoo.org> iputils-99999999.ebuild:
+  Migrate to git-2.
+
+*iputils-20101006-r1 (07 Aug 2011)
+
+  07 Aug 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +files/iputils-20071127-infiniband.patch, +iputils-20101006-r1.ebuild,
+  iputils-99999999.ebuild:
+  Import Fedora patch to remove sysfsutils depend from arping.c wrt #377687 by
+  Anthony Basile
 
 *iputils-20101006 (19 Feb 2011)
 

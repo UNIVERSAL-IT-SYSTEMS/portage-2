@@ -1,6 +1,158 @@
 # ChangeLog for x11-libs/fltk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/fltk/ChangeLog,v 1.181 2011/06/17 06:27:20 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/fltk/ChangeLog,v 1.224 2012/11/13 02:01:12 jer Exp $
+
+  13 Nov 2012; Jeroen Roovers <jer@gentoo.org> fltk-1.3.1.ebuild:
+  Remove ewarn messages.
+
+*fltk-1.3.1 (13 Nov 2012)
+
+  13 Nov 2012; Jeroen Roovers <jer@gentoo.org> +fltk-1.3.1.ebuild,
+  +files/fltk-1.3.1-as-needed.patch, +files/fltk-1.3.1-desktop.patch:
+  Version bump.
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> -fltk-1.3.0.ebuild:
+  Old.
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> fltk-1.3.0-r1.ebuild:
+  alpha/ia64/sparc stable wrt #422319
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> fltk-1.3.0-r1.ebuild:
+  arm stable, bug #422319
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> fltk-1.3.0-r1.ebuild:
+  Marking fltk-1.3.0-r1 ppc64 for bug 422319
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> fltk-1.3.0-r1.ebuild:
+  Marking fltk-1.3.0-r1 ppc for bug 422319
+
+  27 Jun 2012; Jeroen Roovers <jer@gentoo.org> fltk-1.3.0-r1.ebuild:
+  Stable for HPPA (bug #422319).
+
+  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> fltk-1.3.0-r1.ebuild:
+  marked x86 per bug 422319
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> fltk-1.3.0-r1.ebuild:
+  Stable for amd64, wrt bug #422319
+
+  02 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/fltk-2.0_pre6970-libpng14.patch, -files/fltk2-asneeded.patch,
+  -files/fltk2-fluid2.patch, -files/fltk2-gcc43.patch,
+  -files/fltk2-ldflags.patch, -files/fltk-2.0_pre6970-libpng15.patch,
+  -files/fltk2-nogl.patch, -fltk-2.0_pre6970-r1.ebuild:
+  old
+
+  30 May 2012; Justin Lecher <jlec@gentoo.org> fltk-1.3.0-r1.ebuild:
+  Add rpath on prefix
+
+  28 May 2012; Anthony G. Basile <blueness@gentoo.org> fltk-1.3.0-r1.ebuild:
+  Keyword ~mips
+
+  08 May 2012; Christoph Junghans <ottxor@gentoo.org> fltk-1.3.0-r1.ebuild:
+  added ~x86-macos keyword
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> fltk-2.0_pre6970-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Naohiro Aota <naota@gentoo.org> fltk-1.3.0-r1.ebuild:
+  Add ~x86-fbsd
+
+  12 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> fltk-1.3.0.ebuild,
+  fltk-1.3.0-r1.ebuild:
+  Missing x11-libs/cairo RDEPEND for USE="cairo" wrt #407595 by Karl-Johan
+  Karlsson
+
+  02 Mar 2012; Justin Lecher <jlec@gentoo.org> fltk-1.3.0-r1.ebuild:
+  Add some more prefix awareness
+
+  09 Feb 2012; Jeroen Roovers <jer@gentoo.org> fltk-1.3.0.ebuild,
+  fltk-1.3.0-r1.ebuild:
+  Spelling.
+
+*fltk-1.3.0-r1 (08 Feb 2012)
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> +fltk-1.3.0-r1.ebuild:
+  Add IUSE=static-libs support (bug #402739).
+
+  04 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  fltk-2.0_pre6970-r1.ebuild:
+  Everything from gentoo-x86 is using FLTK 1.3.0 from SLOT="1". Remove
+  keywording from unused (and deprecated) SLOT="2".
+
+  04 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/fltk-1.1.9-as-needed.patch, -files/fltk-1.1.9-conf-tests.patch,
+  -files/fltk-1.1.9-desktop.patch, -files/fltk-1.1.9-glibc2.10-scandir.patch,
+  -files/fltk-1.1.9-share.patch, -fltk-1.1.10-r2.ebuild,
+  -files/fltk-1.1.10-includedir.patch, -files/fltk2-glibc2.10-scandir.patch,
+  -files/fltk-1.1.10-libpng15.patch:
+  old
+
+  04 Feb 2012; Raúl Porcel <armin76@gentoo.org> fltk-1.3.0.ebuild:
+  alpha/ia64/sparc stable wrt #395739
+
+  26 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> fltk-1.3.0.ebuild:
+  ppc/ppc64 stable wrt #395739
+
+  08 Jan 2012; Markus Meier <maekke@gentoo.org> fltk-1.3.0.ebuild:
+  arm stable, bug #395739
+
+  06 Jan 2012; Jeroen Roovers <jer@gentoo.org> fltk-1.3.0.ebuild:
+  Stable for HPPA (bug #395739).
+
+  05 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> fltk-1.3.0.ebuild:
+  amd64/x86 stable wrt #395739
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -fltk-2.0_pre6970.ebuild,
+  -fltk-1.1.9-r1.ebuild, -files/fltk-1.1.9-consts.patch:
+  old
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> fltk-2.0_pre6970-r1.ebuild:
+  alpha/ia64/sparc stable wrt #387329
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> fltk-1.1.10-r2.ebuild:
+  alpha/ia64/sparc stable wrt #385195
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> fltk-2.0_pre6970-r1.ebuild:
+  arm stable, bug #387329
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> fltk-2.0_pre6970-r1.ebuild:
+  Stable for HPPA (bug #387329).
+
+  18 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  fltk-2.0_pre6970-r1.ebuild:
+  x86 stable wrt bug #387329
+
+  17 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  fltk-2.0_pre6970-r1.ebuild:
+  ppc/ppc64 stable wrt #387329
+
+  17 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  fltk-2.0_pre6970-r1.ebuild:
+  amd64 stable wrt #387329
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> fltk-1.1.10-r2.ebuild:
+  ppc stable wrt #385195
+
+  11 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> fltk-1.1.10-r2.ebuild:
+  ppc64 stable wrt #385195
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> fltk-1.1.10-r2.ebuild:
+  Stable for HPPA (bug #385195).
+
+  05 Oct 2011; Tony Vroon <chainsaw@gentoo.org> fltk-1.1.10-r2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #385195.
+
+  04 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> fltk-1.1.10-r2.ebuild:
+  x86 stable wrt bug #385195
+
+  30 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> fltk-1.1.10-r2.ebuild,
+  +files/fltk-1.1.10-libpng15.patch:
+  Fix building with libpng15 wrt #373521 by Stuart Longland
+
+  11 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  +files/fltk-1.1.9-share.patch:
+  Bring back missing patch. Bug #373453
 
 *fltk-1.3.0 (17 Jun 2011)
 

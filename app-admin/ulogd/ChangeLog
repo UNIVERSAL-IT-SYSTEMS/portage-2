@@ -1,6 +1,21 @@
 # ChangeLog for app-admin/ulogd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/ulogd/ChangeLog,v 1.66 2011/07/02 10:27:29 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/ulogd/ChangeLog,v 1.70 2012/06/16 09:35:06 pacho Exp $
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Wormo will only take care of bug wrangling.
+
+  31 May 2012; Zac Medico <zmedico@gentoo.org> ulogd-1.24-r2.ebuild,
+  ulogd-2.0.0_beta4.ebuild:
+  inherit user for enewgroup and enewuser
+
+  01 Jan 2012; Christian Ruppert <idl0r@gentoo.org> files/ulogd,
+  files/ulogd-0.98:
+  Whitespace
+
+  04 Dec 2011; Sven Wegener <swegener@gentoo.org> files/ulogd-0.98,
+  files/ulogd:
+  move reload to extra_started_commands
 
   02 Jul 2011; Diego E. Pettenò <flameeyes@gentoo.org> ulogd-1.23-r1.ebuild,
   ulogd-1.24-r2.ebuild:

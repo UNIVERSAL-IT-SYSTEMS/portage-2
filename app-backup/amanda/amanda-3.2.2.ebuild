@@ -1,9 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/amanda-3.2.2.ebuild,v 1.1 2011/03/17 20:52:36 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/amanda-3.2.2.ebuild,v 1.5 2012/05/24 04:36:51 vapier Exp $
 
 EAPI=3
-inherit autotools eutils perl-module
+inherit autotools eutils perl-module user
 
 MY_P="${P/_}"
 DESCRIPTION="The Advanced Maryland Automatic Network Disk Archiver"
@@ -37,10 +37,11 @@ RDEPEND="sys-libs/readline
 	)"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )
 	>=app-text/docbook-xsl-stylesheets-1.72.0
 	app-text/docbook-xml-dtd
+	dev-libs/libxslt
 	"
 
 IUSE="curl gnuplot ipv6 kerberos minimal nls readline s3 samba xfs"
@@ -268,6 +269,9 @@ src_configure() {
 
 	# IPv6 fun.
 	myconf="${myconf} `use_with ipv6`"
+	# This is to prevent the IPv6-is-working test
+	# As the test fails on binpkg build hosts with no IPv6.
+	use ipv6 && export amanda_cv_working_ipv6=yes
 
 	# I18N
 	myconf="${myconf} `use_enable nls`"

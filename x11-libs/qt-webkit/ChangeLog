@@ -1,6 +1,195 @@
 # ChangeLog for x11-libs/qt-webkit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-webkit/ChangeLog,v 1.123 2011/07/13 12:51:51 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-webkit/ChangeLog,v 1.171 2012/12/05 03:44:04 yngwin Exp $
+
+*qt-webkit-4.8.4 (05 Dec 2012)
+
+  05 Dec 2012; Ben de Groot <yngwin@gentoo.org> +qt-webkit-4.8.4.ebuild:
+  Qt 4.8.4 version bump
+
+  14 Oct 2012; Raúl Porcel <armin76@gentoo.org> qt-webkit-4.8.2.ebuild:
+  ia64 stable wrt #424625
+
+  16 Sep 2012; Ben de Groot <yngwin@gentoo.org> qt-webkit-4.8.3.ebuild:
+  Add overlay changes (c++0x useflag)
+
+  14 Sep 2012; Ben de Groot <yngwin@gentoo.org>
+  +files/qt-webkit-4.8.3+glib-2.31.patch, qt-webkit-4.8.3.ebuild:
+  Fix patches
+
+*qt-webkit-4.8.3 (14 Sep 2012)
+
+  14 Sep 2012; Ben de Groot <yngwin@gentoo.org> +qt-webkit-4.8.3.ebuild:
+  Version bump. Drop qatomic-x32 patch applied upstream. Drop qpa useflag.
+
+  30 Jul 2012; Davide Pesavento <pesa@gentoo.org>
+  +files/4.8.2-javascriptcore-x32.patch, qt-webkit-4.8.2.ebuild:
+  Add patch for x32 support in JavaScriptCore (bug 424049).
+
+  19 Jul 2012; Markus Meier <maekke@gentoo.org> qt-webkit-4.8.2.ebuild:
+  arm stable, bug #424625
+
+  15 Jul 2012; Agostino Sarubbo <ago@gentoo.org> qt-webkit-4.8.2.ebuild:
+  Stable for x86, wrt bug #424625
+
+  09 Jul 2012; Johannes Huber <johu@gentoo.org>
+  -files/qt-webkit-4.6.0-solaris-strnstr.patch,
+  -files/qt-webkit-4.6.3-flash-plugin-segfault.patch:
+  Remove old.
+
+  09 Jul 2012; Johannes Huber <johu@gentoo.org> -qt-webkit-4.6.3-r1.ebuild,
+  -qt-webkit-4.6.3-r2.ebuild:
+  Drop Qt-4.6.3
+
+  09 Jul 2012; Joseph Jezak <josejx@gentoo.org> qt-webkit-4.8.2.ebuild:
+  Marked ppc/ppc64 for bug #424625.
+
+  06 Jul 2012; Michael Weber <xmw@gentoo.org> qt-webkit-4.8.1.ebuild:
+  ppc stable (bug 414241)
+
+  05 Jul 2012; Agostino Sarubbo <ago@gentoo.org> qt-webkit-4.8.2.ebuild:
+  Stable for amd64, wrt bug #424625
+
+  25 Jun 2012; Raúl Porcel <armin76@gentoo.org> qt-webkit-4.8.1.ebuild:
+  ia64 stable wrt #414241
+
+  19 Jun 2012; Davide Pesavento <pesa@gentoo.org>
+  +files/4.8.2-qatomic-x32.patch, qt-webkit-4.8.2.ebuild:
+  Add patch for x32 support in qatomic asm code (bug 420705).
+
+  18 Jun 2012; Davide Pesavento <pesa@gentoo.org> metadata.xml,
+  qt-webkit-4.8.1.ebuild, qt-webkit-4.8.2.ebuild:
+  Drop "c++0x=" USE deps, sync metadata with overlay.
+
+  09 Jun 2012; Davide Pesavento <pesa@gentoo.org> qt-webkit-4.6.3-r1.ebuild,
+  qt-webkit-4.6.3-r2.ebuild, qt-webkit-4.7.4.ebuild:
+  Drop redundant append-flags (already done in qt4-build.eclass).
+
+  09 Jun 2012; Davide Pesavento <pesa@gentoo.org> qt-webkit-4.8.2.ebuild:
+  Turn the libxml2[icu] blocker into a USE dep because portage displays better
+  error messages for unsatisfied USE deps than for blockers.
+
+  22 May 2012; Michael Palimaka <kensington@gentoo.org> qt-webkit-4.8.2.ebuild:
+  Fix build with GCC 4.7, wrt bug #417147 by Joe Kappus <joecool1029@gmail.com>.
+
+*qt-webkit-4.8.2 (22 May 2012)
+
+  22 May 2012; Davide Pesavento <pesa@gentoo.org> +qt-webkit-4.8.2.ebuild:
+  Version bump.
+
+  20 May 2012; Davide Pesavento <pesa@gentoo.org> metadata.xml:
+  Remove "jit" USE flag description from metadata, bug 416611.
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> qt-webkit-4.8.1.ebuild:
+  Stable for x86, wrt bug #414241
+
+  14 May 2012; Johannes Huber <johu@gentoo.org> -qt-webkit-4.7.2.ebuild:
+  Drop Qt-4.7.2
+
+  13 May 2012; Davide Pesavento <pesa@gentoo.org> metadata.xml:
+  Fix kde USE flag description (media-libs/phonon vs. media-sound/phonon).
+
+  13 May 2012; Markus Meier <maekke@gentoo.org> qt-webkit-4.8.1.ebuild:
+  arm stable, bug #414241
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> qt-webkit-4.8.1.ebuild:
+  keyword ~amd64-fbsd
+
+  08 May 2012; Markos Chandras <hwoarang@gentoo.org> qt-webkit-4.8.1.ebuild:
+  Stable on amd64 wrt bug #414241
+
+  28 Apr 2012; Davide Pesavento <pesa@gentoo.org>
+  +files/qt-webkit-4.8.1-no-use-ld-gold.patch, qt-webkit-4.8.1.ebuild:
+  Fix build with gcc-4.7 (bug 411849 by Andrew John Hughes and Nicolas
+  Schlumberger).
+
+  12 Apr 2012; Davide Pesavento <pesa@gentoo.org> -qt-webkit-4.6.3.ebuild:
+  Remove old version.
+
+  12 Apr 2012; Davide Pesavento <pesa@gentoo.org> qt-webkit-4.8.1.ebuild:
+  Make dev-libs/icu optional as requested in bug 411091.
+
+  05 Apr 2012; Johannes Huber <johu@gentoo.org> -qt-webkit-4.8.0-r1.ebuild:
+  Drop Qt-4.8.0
+
+  04 Apr 2012; Davide Pesavento <pesa@gentoo.org>
+  +files/qt-webkit-4.8.1+glib-2.31.patch, qt-webkit-4.8.1.ebuild:
+  Fix build with >=dev-libs/glib-2.31 (bug 401855).
+
+*qt-webkit-4.8.1 (29 Mar 2012)
+
+  29 Mar 2012; Davide Pesavento <pesa@gentoo.org> +qt-webkit-4.8.1.ebuild:
+  Version bump.
+
+  27 Mar 2012; Johannes Huber <johu@gentoo.org>
+  -files/qt-webkit-4.5.3-cve-2010-0046-css-format-mem-corruption.patch,
+  -files/qt-webkit-4.5.3-cve-2010-0049-freed-line-boxes-ltr-rtl.patch,
+  -files/qt-webkit-4.5.3-cve-2010-0050-crash-misnested-style-tags.patch,
+  -files/qt-webkit-4.5.3-cve-2010-0052-destroyed-input-cached.patch,
+  -files/qt-webkit-4.6.2-cve-2010-0051-lax-css-parsing-cross-domain-theft.patch,
+  -files/qt-webkit-4.6.2-cve-2010-0054-image-element-pointer-name-getter.patch:
+  Remove unused.
+
+  27 Mar 2012; Johannes Huber <johu@gentoo.org> -qt-webkit-4.6.2.ebuild,
+  -qt-webkit-4.6.2-r1.ebuild:
+  Drop Qt-4.6.2
+
+  10 Mar 2012; Davide Pesavento <pesa@gentoo.org> -qt-webkit-4.8.0.ebuild,
+  qt-webkit-4.8.0-r1.ebuild:
+  Fix bug #406443. Remove old.
+
+  08 Mar 2012; Davide Pesavento <pesa@gentoo.org> qt-webkit-4.8.0-r1.ebuild:
+  No need to append -mminimal-toc for ppc64, it's already added by
+  qt4-build.eclass.
+
+  08 Mar 2012; Davide Pesavento <pesa@gentoo.org> qt-webkit-4.8.0-r1.ebuild:
+  Forcefully enable text_breaking_with_icu to fix building with USE=gstreamer
+  when dev-libs/libxml2[icu] is installed. Fixes bug #407315 by Mark Nowiasz;
+  thanks to Jouni Kosonen and Coacher for testing.
+
+  07 Mar 2012; Davide Pesavento <pesa@gentoo.org> qt-webkit-4.8.0-r1.ebuild:
+  Fix build with USE=gstreamer (bug 405701).
+
+*qt-webkit-4.8.0-r1 (24 Feb 2012)
+
+  24 Feb 2012; Davide Pesavento <pesa@gentoo.org> +qt-webkit-4.8.0-r1.ebuild,
+  metadata.xml:
+  Add proper support for HTML5 audio/video via USE=gstreamer (bug #368047).
+  Remove phonon deps, it's nowhere used in QtWebKit. Remove dbus and kde USE
+  flags, no longer needed.
+
+  29 Jan 2012; Joseph Jezak <josejx@gentoo.org> qt-webkit-4.7.4.ebuild:
+  Marked ppc ppc64 stable for bug #390963.
+
+*qt-webkit-4.8.0 (29 Jan 2012)
+
+  29 Jan 2012; Alex Alexander <wired@gentoo.org> +qt-webkit-4.8.0.ebuild,
+  +files/qt-webkit-4.8.0-c++0x-fix.patch, metadata.xml:
+  version bump
+
+  03 Jan 2012; Alex Alexander <wired@gentoo.org> qt-webkit-4.6.3-r1.ebuild,
+  qt-webkit-4.6.3-r2.ebuild, qt-webkit-4.7.2.ebuild, qt-webkit-4.7.4.ebuild:
+  added missing = in qt-phonon dep
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> qt-webkit-4.7.4.ebuild:
+  x86 stable, bug #390963
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> qt-webkit-4.7.4.ebuild:
+  Stable for AMD64, wrt bug #390963
+
+  28 Nov 2011; Davide Pesavento <pesa@gentoo.org>
+  -files/30_webkit_unaligned_access.diff,
+  -files/qt-webkit-4.5.3-no-javascript-crash.patch, -qt-webkit-4.7.3.ebuild:
+  Remove Qt 4.7.3
+
+  26 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> Manifest:
+  Bug 385719: upstream altered qt-everywhere-opensource-src-4.7.4.tar.gz, mass
+  fix for pesa.
+
+*qt-webkit-4.7.4 (08 Sep 2011)
+
+  08 Sep 2011; Alex Alexander <wired@gentoo.org> +qt-webkit-4.7.4.ebuild:
+  version bump, 4.7.4
 
   13 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> qt-webkit-4.7.2.ebuild:
   ppc64 stable wrt #354033
@@ -524,4 +713,3 @@
 
   19 Dec 2007; Caleb Tennis <caleb@gentoo.org> +qt-webkit-4.4.0_rc1.ebuild:
   Add qt-webkit for QtWebKit functionality
-

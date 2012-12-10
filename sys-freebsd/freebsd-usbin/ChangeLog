@@ -1,6 +1,88 @@
 # ChangeLog for sys-freebsd/freebsd-usbin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-usbin/ChangeLog,v 1.66 2011/07/06 06:09:51 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-usbin/ChangeLog,v 1.82 2012/11/06 12:58:41 aballier Exp $
+
+*freebsd-usbin-9.1_rc3 (06 Nov 2012)
+
+  06 Nov 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-usbin-9.1_rc3.ebuild:
+  bump to rc3
+
+*freebsd-usbin-9.1_rc2 (14 Oct 2012)
+
+  14 Oct 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-usbin-9.1_rc2.ebuild:
+  bump to 9.1_rc2
+
+  13 Oct 2012; Alexis Ballier <aballier@gentoo.org>
+  freebsd-usbin-9.1_rc1.ebuild:
+  Remove the pkg command: we do not need it. Bug #437388 by Yuta SATOH.
+
+*freebsd-usbin-9.1_rc1 (11 Sep 2012)
+
+  11 Sep 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-usbin-9.1_rc1.ebuild, +files/freebsd-usbin-9.1-bsdxml2expat.patch:
+  bump to 9.1_rc1 from bsd overlay by Yuta SATOH, bug #426838
+
+  09 Aug 2012; Naohiro Aota <naota@gentoo.org> files/nfs.initd:
+  Fix nfs.initd typo. #428484
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> freebsd-usbin-9.0.ebuild:
+  keyword ~amd64-fbsd
+
+  23 Apr 2012; Alexis Ballier <aballier@gentoo.org> freebsd-usbin-9.0.ebuild:
+  depend on new enough libedit
+
+  30 Mar 2012; Alexis Ballier <aballier@gentoo.org>
+  -freebsd-usbin-9.0_rc1.ebuild, -freebsd-usbin-9.0_rc2.ebuild,
+  -freebsd-usbin-9.0_rc3.ebuild:
+  remove old
+
+*freebsd-usbin-9.0 (16 Jan 2012)
+
+  16 Jan 2012; Alexis Ballier <aballier@gentoo.org> +freebsd-usbin-9.0.ebuild:
+  bump to 9.0
+
+*freebsd-usbin-9.0_rc3 (09 Dec 2011)
+
+  09 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-usbin-9.0_rc3.ebuild:
+  bump to 9.0_rc3
+
+*freebsd-usbin-9.0_rc2 (07 Dec 2011)
+
+  07 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-usbin-9.0_rc2.ebuild:
+  bump to rc2
+
+  08 Nov 2011; Naohiro Aota <naota@gentoo.org> freebsd-usbin-8.2-r2.ebuild:
+  Drop deprecated make options and its USE flags
+
+*freebsd-usbin-9.0_rc1 (07 Nov 2011)
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-usbin-9.0_rc1.ebuild, +files/freebsd-usbin-9.0-libarchive.patch,
+  +files/freebsd-usbin-9.0-newsyslog.patch:
+  bump to 9.0_rc1
+
+*freebsd-usbin-8.2-r2 (05 Sep 2011)
+
+  05 Sep 2011; Naohiro Aota <naota@gentoo.org> +freebsd-usbin-8.2-r2.ebuild,
+  +files/freebsd-usbin-8.2-newsyslog.patch:
+  Add patch to fix bzip2/gzip path. Bug #359223. Patch from Dmitri Bogomolov
+
+  30 Aug 2011; Naohiro Aota <naota@gentoo.org> freebsd-usbin-8.2-r1.ebuild:
+  Add -fno-strict-aliasing
+
+*freebsd-usbin-8.2-r1 (29 Aug 2011)
+*freebsd-usbin-8.0-r1 (29 Aug 2011)
+*freebsd-usbin-7.2-r1 (29 Aug 2011)
+
+  29 Aug 2011; Naohiro Aota <naota@gentoo.org> -freebsd-usbin-7.2.ebuild,
+  +freebsd-usbin-7.2-r1.ebuild, -freebsd-usbin-8.0.ebuild,
+  +freebsd-usbin-8.0-r1.ebuild, -freebsd-usbin-8.2.ebuild,
+  +freebsd-usbin-8.2-r1.ebuild, files/nfs.initd:
+  Remove deprecated start-stop-daemon argument --oknodo, bug #377765
 
 *freebsd-usbin-8.2 (06 Jul 2011)
 

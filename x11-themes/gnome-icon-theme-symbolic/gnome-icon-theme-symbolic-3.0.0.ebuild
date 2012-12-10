@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/gnome-icon-theme-symbolic/gnome-icon-theme-symbolic-3.0.0.ebuild,v 1.2 2011/07/23 10:25:02 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/gnome-icon-theme-symbolic/gnome-icon-theme-symbolic-3.0.0.ebuild,v 1.8 2012/05/05 04:10:05 jdhore Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -12,13 +12,13 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="CCPL-Attribution-ShareAlike-3.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~alpha amd64 arm ~ia64 ppc ppc64 ~sh ~sparc x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND=">=x11-themes/hicolor-icon-theme-0.10"
 DEPEND="${RDEPEND}
 	>=x11-misc/icon-naming-utils-0.8.7
-	>=dev-util/pkgconfig-0.19"
+	virtual/pkgconfig"
 
 # This ebuild does not install any binaries
 RESTRICT="binchecks strip"

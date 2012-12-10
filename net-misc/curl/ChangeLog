@@ -1,6 +1,261 @@
 # ChangeLog for net-misc/curl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/ChangeLog,v 1.190 2011/07/23 11:43:48 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/ChangeLog,v 1.255 2012/11/20 18:22:58 blueness Exp $
+
+*curl-7.28.1 (20 Nov 2012)
+
+  20 Nov 2012; Anthony G. Basile <blueness@gentoo.org> +curl-7.28.1.ebuild,
+  -curl-7.28.0.ebuild:
+  Version bump addresses bug #433822
+
+  11 Nov 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.27.0-r3.ebuild,
+  curl-7.28.0-r1.ebuild, curl-7.28.0.ebuild:
+  Remove DEPEND on sys-apps/ed, bug #442596
+
+*curl-7.28.0-r1 (18 Oct 2012)
+
+  18 Oct 2012; Anthony G. Basile <blueness@gentoo.org> +curl-7.28.0-r1.ebuild,
+  +files/curl-7.28.0-fix-http-auth.patch:
+  Patch to fix git/curl over http/https with auth, bug #438718
+
+  18 Oct 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.27.0-r3.ebuild,
+  curl-7.28.0.ebuild:
+  Make nss and metalink mutually exclusive, bug #433822
+
+  14 Oct 2012; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
+  Fixed typoes in metadata.xml, thanks radhermit
+
+*curl-7.28.0 (13 Oct 2012)
+
+  13 Oct 2012; Anthony G. Basile <blueness@gentoo.org> +curl-7.28.0.ebuild,
+  +files/curl-7.28.0-prefix.patch, curl-7.27.0-r3.ebuild, metadata.xml:
+  Version bump
+
+  06 Sep 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.26.0.ebuild:
+  Stable ppc64, bug #421479
+
+  03 Sep 2012; Anthony G. Basile <blueness@gentoo.org> -curl-7.24.0.ebuild:
+  Remove older stable, bug #433281
+
+  02 Sep 2012; Jeroen Roovers <jer@gentoo.org> curl-7.26.0.ebuild:
+  Stable for HPPA (bug #421479).
+
+*curl-7.27.0-r3 (01 Sep 2012)
+
+  01 Sep 2012; Anthony G. Basile <blueness@gentoo.org> -curl-7.27.0-r2.ebuild,
+  +curl-7.27.0-r3.ebuild:
+  Rename USE=ares to adns, bug #433549
+
+  30 Aug 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.26.0.ebuild:
+  Stable ppc, bug #421479
+
+  28 Aug 2012; Raúl Porcel <armin76@gentoo.org> curl-7.26.0.ebuild:
+  alpha/ia64/s390/sh/sparc/x86 stable wrt #421479
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> curl-7.27.0-r2.ebuild:
+  Re-add ~alpha/~ia64/~sparc wrt #428520
+
+  25 Aug 2012; Agostino Sarubbo <ago@gentoo.org> curl-7.26.0.ebuild:
+  Stable for amd64, wrt bug #421479
+
+  25 Aug 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.26.0.ebuild:
+  Stable arm, bug #421479
+
+  07 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  -files/curl-respect-cflags-2.patch,
+  -files/curl-7.20.0-fix-nettle-include.patch, curl-7.27.0-r2.ebuild,
+  +files/curl-7.27.0-fix-metalink-gnutls.patch,
+  +files/curl-7.27.0-fix-nettle-include.patch, -files/config.h.ed,
+  -files/curlbuild.h.ed:
+  Fix build with metalink + gnutls, bug 428592. Cleaned out unused patch files.
+
+  06 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  +files/curl-7.20.0-fix-nettle-include.patch, curl-7.27.0-r2.ebuild:
+  Fix build with gnutls, bug #428592
+
+  04 Aug 2012; Jeroen Roovers <jer@gentoo.org> curl-7.27.0-r2.ebuild:
+  Marked ~hppa (bug #428520).
+
+  01 Aug 2012; Alexis Ballier <aballier@gentoo.org> curl-7.27.0-r2.ebuild:
+  keyword ~amd64-fbsd
+
+  01 Aug 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.27.0-r2.ebuild:
+  Fix libmetalink DEPEND, bug #429334
+
+*curl-7.27.0-r2 (31 Jul 2012)
+
+  31 Jul 2012; Anthony G. Basile <blueness@gentoo.org> -curl-7.27.0-r1.ebuild,
+  +curl-7.27.0-r2.ebuild, +files/curl-7.27.0-curl-config.patch,
+  files/curl-7.27.0-prefix.patch:
+  Fix bug #429100
+
+*curl-7.27.0-r1 (31 Jul 2012)
+
+  31 Jul 2012; Anthony G. Basile <blueness@gentoo.org> -curl-7.27.0.ebuild,
+  +curl-7.27.0-r1.ebuild, files/curl-7.27.0-prefix.patch:
+  Fix bug #428696
+
+*curl-7.27.0 (29 Jul 2012)
+
+  29 Jul 2012; Anthony G. Basile <blueness@gentoo.org> +curl-7.27.0.ebuild,
+  +files/curl-7.27.0-prefix.patch, metadata.xml:
+  Version bump, add metalink and rtmp support, bugs #423303, #428446
+
+  24 Jul 2012; Jeroen Roovers <jer@gentoo.org> curl-7.26.0.ebuild:
+  Marked ~hppa (bug #427262).
+
+  20 Jul 2012; Jeff Horelick <jdhore@gentoo.org> curl-7.25.0-r1.ebuild:
+  marked x86 per bug 421479
+
+  19 Jul 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.26.0.ebuild:
+  Add proper dependency on cyassl, bug #421759
+
+  19 Jul 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.25.0-r1.ebuild:
+  Drop cyassl from 7.25.0-r1, bug #421759
+
+  28 Jun 2012; Brent Baude <ranger@gentoo.org> curl-7.25.0-r1.ebuild:
+  Marking curl-7.25.0-r1 ppc for bug 421479
+
+  26 Jun 2012; Anthony G. Basile <blueness@gentoo.org> -curl-7.21.6.ebuild,
+  -curl-7.21.7.ebuild, -curl-7.21.7-r2.ebuild, -curl-7.22.0.ebuild,
+  -curl-7.23.1.ebuild, -curl-7.25.0.ebuild,
+  -files/curl-7.21.7-examples-fix-headers.patch:
+  Remove older unstable versions
+
+  25 Jun 2012; Markus Meier <maekke@gentoo.org> curl-7.25.0-r1.ebuild:
+  arm stable, bug #421479
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> curl-7.25.0-r1.ebuild:
+  Marking curl-7.25.0-r1 ppc64 for bug 421479
+
+  21 Jun 2012; Jeroen Roovers <jer@gentoo.org> curl-7.25.0-r1.ebuild:
+  Stable for HPPA (bug #421479).
+
+  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> curl-7.25.0-r1.ebuild:
+  Stable for amd64, wrt bug #421479
+
+  16 Jun 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.25.0-r1.ebuild:
+  Add RESTRICT="test" to 7.25.0-r1 for stabilization, bug #285669
+
+  29 May 2012; Jeroen Roovers <jer@gentoo.org> curl-7.25.0-r1.ebuild,
+  curl-7.26.0.ebuild:
+  Marked ~hppa too.
+
+  29 May 2012; Jeroen Roovers <jer@gentoo.org> curl-7.25.0-r1.ebuild,
+  curl-7.26.0.ebuild:
+  Drop HPPA.
+
+*curl-7.26.0 (26 May 2012)
+
+  26 May 2012; Anthony G. Basile <blueness@gentoo.org> +curl-7.26.0.ebuild:
+  Version bump, restrict tests, bug #285669
+
+  26 May 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.25.0-r1.ebuild:
+  Change dependency name net-libs/axTLS -> net-libs/axtls
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> curl-7.21.4.ebuild,
+  curl-7.21.6.ebuild, curl-7.21.7.ebuild, curl-7.21.7-r2.ebuild,
+  curl-7.22.0.ebuild, curl-7.23.1.ebuild, curl-7.24.0.ebuild,
+  curl-7.25.0.ebuild, curl-7.25.0-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  01 May 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.25.0-r1.ebuild:
+  Update dependencies for >=net-libs/gnutls-3, bug #412427
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> curl-7.25.0-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  15 Apr 2012; Anthony G. Basile <blueness@gentoo.org>
+  +files/curl-fix-gnutls-nettle.patch:
+  Add missing patch
+
+*curl-7.25.0-r1 (15 Apr 2012)
+
+  15 Apr 2012; Anthony G. Basile <blueness@gentoo.org> +curl-7.25.0-r1.ebuild:
+  Expands SSL providers, propagates static-libs to deps, bug #405789
+
+  01 Apr 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.25.0.ebuild:
+  USE="ssl" is no longer openssl specific, bug #410369
+
+  31 Mar 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.24.0.ebuild:
+  Reverting backport REQUIRED_USE as ssl should refer to any ssl provider,
+  not just openssl. Waiting for a better fix.
+
+  31 Mar 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.24.0.ebuild:
+  Backport of REQUIRED_USE zero or one of gnutls/ssl/nss, bug #410305
+
+  31 Mar 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.25.0.ebuild:
+  Use REQUIRED_USE for gnutls/ssl/nss, bug #410305
+
+  26 Mar 2012; Anthony G. Basile <blueness@gentoo.org> curl-7.25.0.ebuild:
+  Forcing a bump to the soname unnecessarily breaks backwards compat
+
+*curl-7.25.0 (24 Mar 2012)
+
+  24 Mar 2012; Anthony G. Basile <blueness@gentoo.org> +curl-7.25.0.ebuild:
+  Version bump, organize configure options
+
+  24 Mar 2012; Greg Kroah-Hartman <gregkh@gentoo.org> metadata.xml:
+  add me as co-maintainer
+
+  23 Mar 2012; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
+  Added myself as maintainer
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> curl-7.24.0.ebuild:
+  Marking curl-7.24.0 ppc64 for bug 400799
+
+  04 Feb 2012; Raúl Porcel <armin76@gentoo.org> curl-7.24.0.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #400799
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> curl-7.24.0.ebuild:
+  Marking curl-7.24.0 ppc for bug 400799
+
+  29 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> curl-7.24.0.ebuild:
+  x86 stable wrt bug #400799
+
+  28 Jan 2012; Jeroen Roovers <jer@gentoo.org> curl-7.24.0.ebuild:
+  Stable for HPPA (bug #400799).
+
+  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org> curl-7.24.0.ebuild:
+  Stable for AMD64, wrt security bug #400799
+
+*curl-7.24.0 (26 Jan 2012)
+
+  26 Jan 2012; Mike Frysinger <vapier@gentoo.org> +curl-7.24.0.ebuild:
+  Version bump #400799.
+
+  26 Jan 2012; Mike Frysinger <vapier@gentoo.org> curl-7.21.4.ebuild,
+  curl-7.21.6.ebuild, curl-7.21.7.ebuild, curl-7.21.7-r2.ebuild,
+  curl-7.22.0.ebuild, curl-7.23.1.ebuild:
+  Add pkgconfig to DEPEND since we use it for many libraries #393067 by Nikoli.
+
+  01 Dec 2011; Mike Frysinger <vapier@gentoo.org> curl-7.21.4.ebuild,
+  curl-7.21.6.ebuild, curl-7.21.7.ebuild, curl-7.21.7-r2.ebuild,
+  curl-7.22.0.ebuild, curl-7.23.1.ebuild, metadata.xml:
+  Convert USE=libssh2 to USE=ssh to match other packages, and to match the
+  functionality provided rather than the library implementation.
+
+  01 Dec 2011; Mike Frysinger <vapier@gentoo.org> curl-7.23.1.ebuild:
+  Move into ~arch w/Christoph blessing.
+
+*curl-7.23.1 (01 Dec 2011)
+
+  01 Dec 2011; Mike Frysinger <vapier@gentoo.org> +curl-7.23.1.ebuild:
+  Version bump. Should include fix for #387641 by Tim Harder and for #382241 by
+  Alessandro Surace.
+
+  14 Nov 2011; Christoph Mende <angelos@gentoo.org> curl-7.22.0.ebuild:
+  Prefer openssl over nss
+
+*curl-7.22.0 (17 Sep 2011)
+
+  17 Sep 2011; Christoph Mende <angelos@gentoo.org> +curl-7.22.0.ebuild:
+  Version bump
+
+  21 Aug 2011; Christoph Mende <angelos@gentoo.org>
+  +files/curl-respect-cflags-3.patch, curl-7.21.7-r2.ebuild:
+  Block USE=gnutls with USE=nss (bug #379541) and fix CFLAGS patch (bug
+  #379533)
 
   23 Jul 2011; Christoph Mende <angelos@gentoo.org> curl-7.21.7.ebuild,
   curl-7.21.7-r2.ebuild, +files/curl-7.21.7-examples-fix-headers.patch:

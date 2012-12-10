@@ -1,6 +1,37 @@
 # ChangeLog for sci-electronics/kicad
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/kicad/ChangeLog,v 1.54 2011/05/24 23:56:20 rafaelmartins Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/kicad/ChangeLog,v 1.62 2012/07/13 19:19:13 calchan Exp $
+
+  13 Jul 2012; Denis Dupeyron <calchan@gentoo.org> kicad-20120119_p3256.ebuild:
+  Add build fix from upstream.
+
+  13 Jul 2012; Denis Dupeyron <calchan@gentoo.org> kicad-99999999.ebuild:
+  Depend on x11-libs/wxGTK[gnome].
+
+  22 Jun 2012; Rafael G. Martins <rafaelmartins@gentoo.org> metadata.xml:
+  Dropped to maintainer-needed
+
+  25 May 2012; Michael Weber <xmw@gentoo.org> -kicad-20090320.1666-r2.ebuild,
+  -kicad-20100314_p2456.ebuild, -kicad-20100505_p2356.ebuild:
+  Remove old versions
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> kicad-20120119_p3256.ebuild:
+  marked x86 per bug 413829
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> kicad-20120119_p3256.ebuild:
+  Stable for amd64, wrt bug #413829
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  kicad-20090320.1666-r2.ebuild:
+  Revert to ~ppc/~ppc64 wrt #413829 pending on user request for stabilization
+
+*kicad-20120119_p3256 (19 Feb 2012)
+
+  19 Feb 2012; Denis Dupeyron <calchan@gentoo.org>
+  +kicad-20120119_p3256.ebuild, kicad-99999999.ebuild:
+  Version bump (bugs #362985, #381329 and #404289). We no longer need to make
+  custom tarballs for stable versions, yay. Updated the live ebuild
+  accordingly.
 
   24 May 2011; Rafael G. Martins <rafaelmartins@gentoo.org>
   kicad-99999999.ebuild:

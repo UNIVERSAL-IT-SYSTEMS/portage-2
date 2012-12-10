@@ -1,6 +1,56 @@
 # ChangeLog for app-editors/vile
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/vile/ChangeLog,v 1.34 2011/04/20 21:02:06 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/vile/ChangeLog,v 1.47 2012/08/28 08:29:46 radhermit Exp $
+
+  28 Aug 2012; Tim Harder <radhermit@gentoo.org> -vile-9.4d.ebuild:
+  Remove old.
+
+*vile-9.8h (28 Aug 2012)
+
+  28 Aug 2012; Tim Harder <radhermit@gentoo.org> +vile-9.8h.ebuild,
+  +files/vile-9.8h-flex.patch:
+  Version bump.
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> vile-9.8g.ebuild:
+  alpha/ia64/sparc stable wrt #418409
+
+  25 Jun 2012; Jeff Horelick <jdhore@gentoo.org> vile-9.8g.ebuild:
+  marked x86 per bug 418409
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> vile-9.8g.ebuild:
+  Stable for amd64, wrt bug #418409
+
+  24 Jun 2012; Kacper Kowalik <xarthisius.kk@gmail.com> vile-9.8g.ebuild:
+  ppc stable wrt #418409
+
+  24 Jun 2012; Tim Harder <radhermit@gentoo.org> -vile-9.8e.ebuild,
+  -vile-9.8f.ebuild:
+  Remove old.
+
+*vile-9.8g (19 Mar 2012)
+
+  19 Mar 2012; Tim Harder <radhermit@gentoo.org> +vile-9.8g.ebuild:
+  Version bump.
+
+  10 Feb 2012; Fabian Groffen <grobian@gentoo.org> vile-9.8f.ebuild:
+  Transferred Prefix keywords
+
+  13 Dec 2011; Tim Harder <radhermit@gentoo.org> vile-9.8e.ebuild,
+  vile-9.8f.ebuild:
+  Remove unnecessary eutils eclass.
+
+*vile-9.8f (13 Dec 2011)
+
+  13 Dec 2011; Tim Harder <radhermit@gentoo.org> +vile-9.8f.ebuild:
+  Version bump.
+
+  17 Oct 2011; Tim Harder <radhermit@gentoo.org> -vile-9.3h.ebuild,
+  -vile-9.5-r1.ebuild, -files/vile-9.5-define-LEAD-before-use.patch,
+  -vile-9.6.ebuild:
+  Remove old.
+
+  17 Oct 2011; Tim Harder <radhermit@gentoo.org> vile-9.8e.ebuild:
+  Only update vi symlink if unset (bug #384861 by Roger).
 
 *vile-9.8e (20 Apr 2011)
 

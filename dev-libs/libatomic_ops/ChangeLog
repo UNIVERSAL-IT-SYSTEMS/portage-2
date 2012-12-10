@@ -1,6 +1,37 @@
 # ChangeLog for dev-libs/libatomic_ops
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libatomic_ops/ChangeLog,v 1.24 2011/07/07 12:35:06 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libatomic_ops/ChangeLog,v 1.31 2012/10/29 16:54:01 grobian Exp $
+
+  29 Oct 2012; Fabian Groffen <grobian@gentoo.org> libatomic_ops-7.2d.ebuild:
+  Marked ~x64-macos
+
+*libatomic_ops-7.2d (01 Oct 2012)
+
+  01 Oct 2012; Tim Harder <radhermit@gentoo.org> +libatomic_ops-7.2d.ebuild:
+  Version bump.
+
+*libatomic_ops-7.2_alpha6 (29 May 2012)
+
+  29 May 2012; Justin Lecher <jlec@gentoo.org>
+  +libatomic_ops-7.2_alpha6.ebuild, +files/libatomic_ops-7.2_alpha6-x32.patch:
+  Version Bump
+
+  09 Feb 2012; Matt Turner <mattst88@gentoo.org>
+  libatomic_ops-7.2_alpha4.ebuild:
+  Added ~mips.
+
+*libatomic_ops-7.2_alpha4 (01 Feb 2012)
+
+  01 Feb 2012; Mike Frysinger <vapier@gentoo.org>
+  +libatomic_ops-7.2_alpha4.ebuild, +files/libatomic_ops-7.2_alpha4-x32.patch:
+  Version bump #353240 by Kevin Bowling.
+
+  09 Dec 2011; Mike Frysinger <vapier@gentoo.org> libatomic_ops-1.2-r1.ebuild,
+  +files/libatomic_ops-1.2-x32.patch:
+  Add fix for x32 ABIs.
+
+  26 Sep 2011; Fabian Groffen <grobian@gentoo.org> libatomic_ops-1.2-r1.ebuild:
+  Marked ~x86-freebsd
 
   07 Jul 2011; Fabian Groffen <grobian@gentoo.org> libatomic_ops-1.2-r1.ebuild:
   Marked ~x86-macos
@@ -100,4 +131,3 @@
   02 Sep 2006; Diego Pettenò <flameeyes@gentoo.org> +metadata.xml,
   +libatomic_ops-1.1.ebuild:
   Initial import, dependency of the current SVN PulseAudio.
-

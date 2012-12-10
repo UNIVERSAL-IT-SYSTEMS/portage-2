@@ -1,6 +1,76 @@
 # ChangeLog for app-doc/elisp-manual
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/elisp-manual/ChangeLog,v 1.30 2011/02/12 18:56:37 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-doc/elisp-manual/ChangeLog,v 1.47 2012/10/08 22:33:31 ulm Exp $
+
+*elisp-manual-24.2 (08 Oct 2012)
+
+  08 Oct 2012; Ulrich Müller <ulm@gentoo.org> -elisp-manual-23.3.ebuild,
+  -files/elisp-manual-23.3-direntry.patch, +elisp-manual-24.2.ebuild,
+  +files/elisp-manual-24.2-direntry.patch:
+  Version bump. Remove old.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> elisp-manual-18.1.03.ebuild,
+  elisp-manual-19.2.4.2.ebuild, elisp-manual-20.2.5.ebuild,
+  elisp-manual-21.2.8-r2.ebuild, elisp-manual-22.2.9.ebuild,
+  elisp-manual-23.3.ebuild, elisp-manual-23.4.ebuild:
+  Drop sparc keywords
+
+  17 Jun 2012; Michael Weber <xmw@gentoo.org> elisp-manual-23.4.ebuild:
+  ppc stable (bug 420289)
+
+  12 Jun 2012; Jeff Horelick <jdhore@gentoo.org> elisp-manual-23.4.ebuild:
+  marked x86 per bug 420289
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> elisp-manual-23.4.ebuild:
+  Stable for amd64, wrt bug #420289
+
+  08 Jun 2012; Ulrich Müller <ulm@gentoo.org> elisp-manual-23.4.ebuild,
+  +files/elisp-manual-23.4-direntry.patch:
+  Change Info dir category to Emacs.
+
+  23 May 2012; Ulrich Müller <ulm@gentoo.org>
+  -files/elisp-manual-23.3.0-direntry.patch:
+  Remove no longer used patch file.
+
+*elisp-manual-23.4 (15 May 2012)
+
+  15 May 2012; Ulrich Müller <ulm@gentoo.org> +elisp-manual-23.4.ebuild:
+  Version bump.
+
+  26 Dec 2011; Ulrich Mueller <ulm@gentoo.org> elisp-manual-23.3.ebuild:
+  Add app-arch/xz-utils to DEPEND.
+
+  14 Dec 2011; Ulrich Mueller <ulm@gentoo.org> elisp-manual-18.1.03.ebuild,
+  elisp-manual-19.2.4.2.ebuild, elisp-manual-20.2.5.ebuild:
+  Specify LICENSE as Texinfo-manual instead of as-is.
+
+  01 Nov 2011; Ulrich Mueller <ulm@gentoo.org> elisp-manual-23.3.ebuild,
+  -elisp-manual-23.3.0-r1.ebuild:
+  Stable on all architectures, bug 379761. Remove old.
+
+  24 Sep 2011; Raúl Porcel <armin76@gentoo.org> elisp-manual-23.3.ebuild:
+  sparc stable wrt #379761
+
+  08 Sep 2011; Naohiro Aota <naota@gentoo.org> elisp-manual-23.3.ebuild:
+  Add ~x86-fbsd
+
+  05 Sep 2011; Naohiro Aota <naota@gentoo.org> elisp-manual-23.3.0-r1.ebuild:
+  Add ~x86-fbsd
+
+  21 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  elisp-manual-23.3.ebuild:
+  x86 stable wrt bug #379761
+
+  19 Aug 2011; Markos Chandras <hwoarang@gentoo.org> elisp-manual-23.3.ebuild:
+  Stable on amd64 wrt bug #379761
+
+*elisp-manual-23.3 (18 Aug 2011)
+
+  18 Aug 2011; Ulrich Mueller <ulm@gentoo.org> +elisp-manual-23.3.ebuild,
+  +files/elisp-manual-23.3-direntry.patch:
+  Version bump. This corresponds to Emacs 23.3, and is actually an upgrade.
+  Drop separate version number of the Lisp manual, because it was not increased
+  through three upstream releases. Use corresponding Emacs version instead.
 
   12 Feb 2011; Christian Faulhammer <fauli@gentoo.org>
   -elisp-manual-23.3.0.ebuild:

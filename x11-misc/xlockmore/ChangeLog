@@ -1,6 +1,123 @@
 # ChangeLog for x11-misc/xlockmore
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xlockmore/ChangeLog,v 1.93 2011/08/01 23:02:59 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xlockmore/ChangeLog,v 1.124 2012/11/11 16:36:56 armin76 Exp $
+
+  11 Nov 2012; Raúl Porcel <armin76@gentoo.org> xlockmore-5.41.ebuild:
+  alpha/sparc/x86 stable wrt #440776
+
+  03 Nov 2012; Jeroen Roovers <jer@gentoo.org> xlockmore-5.41.ebuild:
+  Stable for HPPA (bug #440776).
+
+  03 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xlockmore-5.41.ebuild:
+  Stable for amd64, wrt bug #440776
+
+  02 Nov 2012; Anthony G. Basile <blueness@gentoo.org> xlockmore-5.41.ebuild:
+  stable ppc ppc64, bug #440776
+
+  02 Nov 2012; Jeroen Roovers <jer@gentoo.org> -xlockmore-5.39.ebuild,
+  -xlockmore-5.40.ebuild:
+  Old.
+
+*xlockmore-5.41 (30 Oct 2012)
+
+  30 Oct 2012; Jeroen Roovers <jer@gentoo.org> +xlockmore-5.41.ebuild:
+  Version bump.
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> xlockmore-5.38.ebuild,
+  xlockmore-5.39.ebuild, xlockmore-5.40.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  29 Jul 2012; Jeroen Roovers <jer@gentoo.org> -xlockmore-5.31.ebuild,
+  -xlockmore-5.37.ebuild:
+  Old.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> xlockmore-5.38.ebuild:
+  alpha/sparc stable wrt #414489
+
+*xlockmore-5.40 (18 Jul 2012)
+
+  18 Jul 2012; Jeroen Roovers <jer@gentoo.org> +xlockmore-5.40.ebuild:
+  Version bump.
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xlockmore-5.38.ebuild:
+  x86 stable wrt bug #414489
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> xlockmore-5.38.ebuild:
+  Stable for HPPA (bug #414489).
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> xlockmore-5.38.ebuild:
+  Marking xlockmore-5.38 ppc64 for bug 414489
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> xlockmore-5.38.ebuild:
+  Marking xlockmore-5.38 ppc for bug 414489
+
+  05 May 2012; Markos Chandras <hwoarang@gentoo.org> xlockmore-5.38.ebuild:
+  Stable on amd64 wrt bug #414489
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> xlockmore-5.31.ebuild,
+  xlockmore-5.37.ebuild, xlockmore-5.38.ebuild, xlockmore-5.39.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*xlockmore-5.39 (03 May 2012)
+
+  03 May 2012; Jeroen Roovers <jer@gentoo.org> +xlockmore-5.39.ebuild:
+  Version bump.
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> xlockmore-5.37.ebuild:
+  alpha/sparc stable wrt #401711
+
+  24 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> xlockmore-5.37.ebuild:
+  ppc64 stable wrt #401711
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xlockmore-5.37.ebuild:
+  x86 stable wrt bug #401711
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> xlockmore-5.37.ebuild:
+  Stable for HPPA (bug #401711).
+
+  03 Feb 2012; Brent Baude <ranger@gentoo.org> xlockmore-5.37.ebuild:
+  Marking xlockmore-5.37 ppc for bug 401711
+
+  01 Feb 2012; Agostino Sarubbo <ago@gentoo.org> xlockmore-5.37.ebuild:
+  Stable for amd64, wrt bug #401711
+
+  01 Feb 2012; Jeroen Roovers <jer@gentoo.org> xlockmore-5.37.ebuild,
+  xlockmore-5.38.ebuild:
+  Make USE=pam or USE=crypt required by Maurizio Camisaschi (bug #401721).
+
+*xlockmore-5.38 (31 Jan 2012)
+
+  31 Jan 2012; Jeroen Roovers <jer@gentoo.org> +xlockmore-5.38.ebuild:
+  Version bump.
+
+  08 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> xlockmore-5.31.ebuild,
+  xlockmore-5.37.ebuild:
+  Remove deprecated esound support.
+
+  08 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -xlockmore-5.35.ebuild,
+  -xlockmore-5.36.ebuild:
+  old
+
+*xlockmore-5.37 (23 Dec 2011)
+
+  23 Dec 2011; Tim Harder <radhermit@gentoo.org> +xlockmore-5.37.ebuild:
+  Version bump.
+
+*xlockmore-5.36 (16 Dec 2011)
+
+  16 Dec 2011; Tim Harder <radhermit@gentoo.org> +xlockmore-5.36.ebuild:
+  Version bump.
+
+  16 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> -xlockmore-5.28.ebuild,
+  -xlockmore-5.29.1.ebuild, -files/xlockmore-5.29.1-configure.in.patch,
+  -xlockmore-5.34.ebuild:
+  old
+
+*xlockmore-5.35 (16 Nov 2011)
+
+  16 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +xlockmore-5.35.ebuild:
+  Version bump.
 
 *xlockmore-5.34 (01 Aug 2011)
 
@@ -416,4 +533,3 @@
   script braindamage and I can't figure out how to tell xlock where its
   sounds are stored...  Low priority issues in a package I've spent too
   much time on already :(  If you figure it out, please file a bug report.
-

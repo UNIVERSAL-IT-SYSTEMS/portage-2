@@ -1,6 +1,26 @@
 # ChangeLog for perl-core/ExtUtils-Install
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/perl-core/ExtUtils-Install/ChangeLog,v 1.10 2011/07/26 18:22:38 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/perl-core/ExtUtils-Install/ChangeLog,v 1.16 2012/08/05 18:06:55 maekke Exp $
+
+  05 Aug 2012; Markus Meier <maekke@gentoo.org> ExtUtils-Install-1.54.ebuild:
+  arm stable, bug #418803
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  28 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  ExtUtils-Install-1.54.ebuild:
+  keyword ~amd64-fbsd
+
+  24 Mar 2012; Fabian Groffen <grobian@gentoo.org> ExtUtils-Install-1.54.ebuild:
+  Add Prefix keywords
+
+  14 Feb 2012; Alexis Ballier <aballier@gentoo.org>
+  ExtUtils-Install-1.54.ebuild:
+  keyword ~x86-fbsd
+
+  04 Feb 2012; Raúl Porcel <armin76@gentoo.org> ExtUtils-Install-1.54.ebuild:
+  Add ~arm/~s390/~sh
 
   26 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org>
   ExtUtils-Install-1.54.ebuild:
@@ -52,4 +72,3 @@
 
   19 Aug 2009; Michele Beltrame <m@cattlegrid.info> ChangeLog:
   Added changelog
-

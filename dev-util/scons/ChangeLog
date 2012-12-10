@@ -1,6 +1,101 @@
 # ChangeLog for dev-util/scons
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/scons/ChangeLog,v 1.97 2011/07/20 14:19:44 darkside Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/scons/ChangeLog,v 1.126 2012/10/07 14:40:20 grobian Exp $
+
+  07 Oct 2012; Fabian Groffen <grobian@gentoo.org> scons-2.2.0.ebuild:
+  Setup a valid path, EPREFIX does NOT end in /
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org> scons-2.2.0.ebuild:
+  alpha/ia64/sparc stable wrt #434294
+
+  19 Sep 2012; Jeroen Roovers <jer@gentoo.org> scons-2.2.0.ebuild:
+  Stable for HPPA (bug #434294).
+
+  18 Sep 2012; Johannes Huber <johu@gentoo.org> scons-2.2.0.ebuild:
+  Stable for x86, wrt bug #434294
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> scons-2.2.0.ebuild:
+  Stable for amd64, wrt bug #434294
+
+  13 Sep 2012; Anthony G. Basile <blueness@gentoo.org> scons-2.2.0.ebuild:
+  stable arm, bug #434294
+
+  12 Sep 2012; Anthony G. Basile <blueness@gentoo.org> scons-2.2.0.ebuild:
+  stable ppc ppc64, bug #434294
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  08 Aug 2012; Tim Harder <radhermit@gentoo.org> scons-2.2.0.ebuild:
+  Simplify documentation installation.
+
+*scons-2.2.0 (08 Aug 2012)
+
+  08 Aug 2012; Tim Harder <radhermit@gentoo.org> +scons-2.2.0.ebuild:
+  Version bump.
+
+  06 Aug 2012; Patrick Lauer <patrick@gentoo.org> scons-2.1.0.ebuild:
+  Fixing jython for 2.1.0 too
+
+  02 Aug 2012; Jesus Rivero <neurogeek@gentoo.org> scons-2.0.1.ebuild,
+  scons-2.0.1-r1.ebuild:
+  Bumped to EAPI 4 and added threads(+) to PYTHON_USE_WITH
+
+  02 Aug 2012; Patrick Lauer <patrick@gentoo.org> scons-2.1.0.ebuild:
+  Restricting jython
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> scons-2.1.0.ebuild:
+  alpha/ia64/sparc stable wrt #401831
+
+  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> scons-2.0.1-r1.ebuild,
+  scons-2.0.1.ebuild, scons-2.1.0.ebuild:
+  Restricting pypy #403805
+
+  13 Feb 2012; Markus Meier <maekke@gentoo.org> scons-2.1.0.ebuild:
+  arm stable, bug #401831
+
+  13 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> scons-2.1.0.ebuild:
+  ppc64 stable wrt #401831
+
+  10 Feb 2012; Patrick Lauer <patrick@gentoo.org> scons-2.1.0.ebuild:
+  Changing python deps in preparation for 2.4 removal
+
+  08 Feb 2012; Jeff Horelick <jdhore@gentoo.org> scons-2.1.0.ebuild:
+  x86 stable per bug 401831
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> scons-2.1.0.ebuild:
+  Stable for HPPA (bug #401831).
+
+  05 Feb 2012; Mike Gilbert <floppym@gentoo.org> scons-2.0.1.ebuild:
+  Inherit multilib.
+
+  04 Feb 2012; Agostino Sarubbo <ago@gentoo.org> scons-2.1.0.ebuild:
+  Stable for amd64, wrt bug #401831
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> scons-2.1.0.ebuild:
+  Marking scons-2.1.0 ppc for bug 401831
+
+  21 Nov 2011; Mike Frysinger <vapier@gentoo.org> scons-2.0.1.ebuild:
+  Mark arm stable.
+
+  11 Nov 2011; Markos Chandras <hwoarang@gentoo.org>
+  +files/scons-2.1.0-jython.patch, scons-2.1.0.ebuild:
+  Fix building with Jython. Patch by Arfrever.
+
+*scons-2.1.0 (02 Oct 2011)
+
+  02 Oct 2011; Tim Harder <radhermit@gentoo.org> +scons-2.1.0.ebuild:
+  Version bump (fixes bug #361413).
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org> scons-2.0.1-r1.ebuild:
+  Prevent the buildsystem from forcing installation into /usr/local on Darwin
+
+  29 Aug 2011; Fabian Groffen <grobian@gentoo.org> scons-2.0.1-r1.ebuild:
+  Fix hardcoded paths to refer to those from the Prefix first, by Asfand Yar
+  Qazi, bug #361061
+
+  24 Aug 2011; Markos Chandras <hwoarang@gentoo.org> scons-2.0.1-r1.ebuild:
+  Set PYTHON_MODNAME. Patch by Arfrever.
 
   20 Jul 2011; Jeremy Olexa <darkside@gentoo.org> scons-2.0.1-r1.ebuild:
   Fix paths for Gentoo Prefix, bug 375735
@@ -166,4 +261,3 @@
   29 May 2008; Ali Polatel <hawking@gentoo.org> -scons-0.96.1.ebuild,
   -scons-0.96.94.ebuild, +scons-0.98.4.ebuild:
   Version bump. Drop old.
-

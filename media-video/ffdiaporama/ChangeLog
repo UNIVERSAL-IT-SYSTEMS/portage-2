@@ -1,0 +1,24 @@
+# ChangeLog for media-video/ffdiaporama
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/ffdiaporama/ChangeLog,v 1.4 2012/11/28 17:59:11 hasufell Exp $
+
+*ffdiaporama-1.5 (28 Nov 2012)
+
+  28 Nov 2012; Julian Ospald <hasufell@gentoo.org> +ffdiaporama-1.5.ebuild:
+  version bump by Olivier Laurantin
+
+*ffdiaporama-1.4-r1 (18 Nov 2012)
+
+  18 Nov 2012; Julian Ospald <hasufell@gentoo.org> +ffdiaporama-1.4-r1.ebuild,
+  +files/ffdiaporama-1.4-libav9.patch:
+  fix compilation with libav9 wrt #443262
+
+  26 Oct 2012; Julian Ospald <hasufell@gentoo.org> metadata.xml:
+  add proxy maintainer Olivier Laurantin
+
+*ffdiaporama-1.4 (23 Oct 2012)
+
+  23 Oct 2012; Julian Ospald <hasufell@gentoo.org> +ffdiaporama-1.4.ebuild,
+  +files/ffdiaporama-1.4-desktopfile.patch:
+  initial import wrt #386143
+

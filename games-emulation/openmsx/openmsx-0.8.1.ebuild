@@ -1,9 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/openmsx/openmsx-0.8.1.ebuild,v 1.1 2011/07/20 18:18:19 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/openmsx/openmsx-0.8.1.ebuild,v 1.5 2011/10/15 11:23:39 xarthisius Exp $
 
 EAPI=2
-inherit games
+inherit eutils games
 
 DESCRIPTION="MSX emulator that aims for perfection"
 HOMEPAGE="http://openmsx.sourceforge.net/"
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ppc ~ppc64 x86"
 IUSE=""
 
 DEPEND="dev-lang/tcl
@@ -24,6 +24,8 @@ DEPEND="dev-lang/tcl
 	virtual/opengl"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-libpng15.patch
+
 	sed -i \
 		-e '/^LDFLAGS:=/d' \
 		-e '/LINK_FLAGS_PREFIX/d' \

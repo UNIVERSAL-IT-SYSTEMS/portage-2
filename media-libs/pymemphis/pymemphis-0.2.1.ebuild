@@ -1,12 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/pymemphis/pymemphis-0.2.1.ebuild,v 1.3 2011/03/07 12:59:54 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/pymemphis/pymemphis-0.2.1.ebuild,v 1.5 2012/03/04 05:03:58 mr_bones_ Exp $
 
 EAPI="3"
 
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 PYTHON_EXPORT_PHASE_FUNCTIONS="1"
+RESTRICT_PYTHON_ABIS="3.* *-jython 2.7-pypy-*"
+
 AT_M4DIR="build/autotools/"
 
 inherit autotools python
@@ -25,8 +27,6 @@ RDEPEND="
 	dev-python/pygobject:2
 	media-libs/memphis"
 DEPEND="${RDEPEND}"
-
-RESTRICT_PYTHON_ABIS="3.*"
 
 S="${WORKDIR}"/${PN}-mainline
 

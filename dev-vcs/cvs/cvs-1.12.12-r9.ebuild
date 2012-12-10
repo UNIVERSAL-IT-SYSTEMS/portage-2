@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/cvs/cvs-1.12.12-r9.ebuild,v 1.1 2011/01/05 04:50:41 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/cvs/cvs-1.12.12-r9.ebuild,v 1.3 2012/06/09 07:10:57 vapier Exp $
 
 EAPI=3
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://gnu/non-gnu/cvs/source/feature/${PV}/${P}.tar.bz2
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~sparc-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 
 IUSE="crypt doc kerberos nls pam server"
 
@@ -38,7 +38,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-hash-nameclash.patch # for AIX
 	epatch "${FILESDIR}"/${P}-getdelim.patch # 314791
 	epatch "${FILESDIR}"/${PN}-1.12.12-rcs2log-coreutils.patch # 144114
-	elog "If you want any CVS server functionality, you MUST emerge with USE=server!"
+	epatch "${FILESDIR}"/${P}-mktime-x32.patch # 395641
+	use server || elog "If you want any CVS server functionality, you MUST emerge with USE=server!"
 }
 
 src_configure() {

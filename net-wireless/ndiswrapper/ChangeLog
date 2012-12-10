@@ -1,6 +1,41 @@
 # ChangeLog for net-wireless/ndiswrapper
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/ndiswrapper/ChangeLog,v 1.117 2011/04/30 15:31:54 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/ndiswrapper/ChangeLog,v 1.125 2012/11/18 11:22:42 pacho Exp $
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+  16 Jul 2012; Christoph Mende <angelos@gentoo.org> -ndiswrapper-1.56.ebuild:
+  Remove old
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ndiswrapper-1.57.ebuild:
+  x86 stable wrt bug #414919
+
+  26 May 2012; Agostino Sarubbo <ago@gentoo.org> ndiswrapper-1.57.ebuild:
+  Stable for AMD64, wrt bug #414919
+
+  22 May 2012; Christoph Mende <angelos@gentoo.org>
+  -ndiswrapper-1.57_rc1.ebuild, ndiswrapper-1.57.ebuild,
+  ndiswrapper-1.58_rc1.ebuild:
+  Make WEXT_PRIV check non-fatal, remove old
+
+*ndiswrapper-1.58_rc1 (06 May 2012)
+
+  06 May 2012; Christoph Mende <angelos@gentoo.org>
+  +ndiswrapper-1.58_rc1.ebuild:
+  Version bump
+
+*ndiswrapper-1.57 (19 Feb 2012)
+
+  19 Feb 2012; Christoph Mende <angelos@gentoo.org> +ndiswrapper-1.57.ebuild:
+  Version bump
+
+*ndiswrapper-1.57_rc1 (29 Oct 2011)
+
+  29 Oct 2011; Christoph Mende <angelos@gentoo.org>
+  +ndiswrapper-1.57_rc1.ebuild:
+  Version bump (bug #387439), depend on WEXT_PRIV instead of just WIRELESS_EXT
+  (bug #387131)
 
   30 Apr 2011; Christoph Mende <angelos@gentoo.org>
   -files/ndiswrapper-1.55-2.6.31.patch:
@@ -646,4 +681,3 @@
   Initial commit. Roughly based on ebuild from #38017, with large cleanups by
   me. Includes pkg_config() function for helping generate the needed
   /etc/modules.d/ndiswrapper file.
-

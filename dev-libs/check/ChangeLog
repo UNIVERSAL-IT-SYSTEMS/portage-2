@@ -1,6 +1,62 @@
 # ChangeLog for dev-libs/check
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/check/ChangeLog,v 1.65 2011/02/26 18:28:54 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/check/ChangeLog,v 1.81 2012/10/23 00:09:56 jer Exp $
+
+*check-0.9.9 (23 Oct 2012)
+
+  23 Oct 2012; Jeroen Roovers <jer@gentoo.org> +check-0.9.9.ebuild:
+  Version bump.
+
+  20 Aug 2012; Christoph Junghans <ottxor@gentoo.org> check-0.9.8-r1.ebuild:
+  added prefix keywords
+
+  10 Jun 2012; Nathan Phillip Brink <binki@gentoo.org> check-0.9.8-r1.ebuild:
+  Fix compilation with automake-1.12 broken by automake's -Werror switch (bug
+  #420373 by hwoarang).
+
+  10 Jun 2012; Nathan Phillip Brink <binki@gentoo.org> -check-0.9.8.ebuild:
+  Drop old revision of check-0.9.8 as bug #392773 is fixed.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> check-0.9.8-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> check-0.9.8-r1.ebuild:
+  Marking check-0.9.8-r1 ppc64 for bug 392773
+
+  05 Jan 2012; Brent Baude <ranger@gentoo.org> check-0.9.8-r1.ebuild:
+  Marking check-0.9.8-r1 ppc for bug 392773
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> check-0.9.8-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #392773
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> check-0.9.8-r1.ebuild:
+  x86 stable wrt bug #392773
+
+  08 Dec 2011; Markus Meier <maekke@gentoo.org> check-0.9.8-r1.ebuild:
+  arm stable, bug #392773
+
+  03 Dec 2011; Jeroen Roovers <jer@gentoo.org> check-0.9.8-r1.ebuild:
+  Stable for HPPA (bug #392773).
+
+  02 Dec 2011; Markos Chandras <hwoarang@gentoo.org> check-0.9.8-r1.ebuild:
+  Stable on amd64 wrt bug #392773
+
+  02 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> check-0.9.8-r1.ebuild:
+  Add missing dependency on dev-python/subunit, noticed by jdhore.
+
+*check-0.9.8-r1 (29 Sep 2011)
+
+  29 Sep 2011; Nathan Phillip Brink <binki@gentoo.org> +check-0.9.8-r1.ebuild,
+  metadata.xml:
+  In a revbump, add subunit useflag to fix bug 354091 by flameeyes, bump to
+  EAPI=4, and move to using autotools-utils eclass (adding static-libs
+  useflag).
+
+  13 Sep 2011; Nathan Phillip Brink <binki@gentoo.org> metadata.xml:
+  Set myself (binki) as maintainer.
+
+  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #225633
 
   26 Feb 2011; Raúl Porcel <armin76@gentoo.org> check-0.9.8.ebuild:
   alpha/ia64/m68k/s390/sh/sparc stable wrt #287514
@@ -214,5 +270,3 @@
 
   27 Nov 2002; Zach Welch <zwelch@gentoo.org> :
   User submitted ebuild in bug 11108 by faune@broadpark.no
-
-

@@ -1,6 +1,136 @@
 # ChangeLog for media-libs/raptor
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/raptor/ChangeLog,v 1.99 2011/07/29 11:24:11 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/raptor/ChangeLog,v 1.137 2012/09/27 08:43:56 blueness Exp $
+
+  27 Sep 2012; Anthony G. Basile <blueness@gentoo.org> raptor-2.0.8.ebuild:
+  stable ppc ppc64, bug #429130
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> raptor-2.0.8.ebuild:
+  x86 stable wrt bug #429130
+
+  19 Sep 2012; Jeroen Roovers <jer@gentoo.org> raptor-2.0.8.ebuild:
+  Stable for HPPA (bug #429130).
+
+  14 Sep 2012; Markus Meier <maekke@gentoo.org> raptor-2.0.8.ebuild:
+  arm stable, bug #429130
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> raptor-2.0.8.ebuild:
+  Stable for amd64, wrt bug #429130
+
+*raptor-2.0.8 (27 Jun 2012)
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +raptor-2.0.8.ebuild:
+  Version bump. Use prune_libtool_files from eutils.eclass. Symlink gtk-doc
+  documentation for devhelp.
+
+  18 May 2012; Alexis Ballier <aballier@gentoo.org> raptor-2.0.7.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> raptor-2.0.7.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  06 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> raptor-2.0.7.ebuild:
+  Block SLOT="0" (covering 1.4.21 and earlier) to force uninstall for CVE-2012-0037.
+
+  06 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -raptor-1.4.21-r1.ebuild,
+  -files/raptor-2.0.3-curl-headers.patch, -raptor-2.0.6.ebuild:
+  old
+
+  06 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> raptor-2.0.7.ebuild:
+  ppc/ppc64 stable wrt #409417
+
+  06 Apr 2012; Markus Meier <maekke@gentoo.org> raptor-2.0.7.ebuild:
+  arm stable, bug #409417
+
+  05 Apr 2012; Andreas Schuerch <nativemad@gentoo.org> raptor-2.0.7.ebuild:
+  x86 stable, see bug 409417
+
+  03 Apr 2012; Agostino Sarubbo <ago@gentoo.org> raptor-2.0.7.ebuild:
+  Stable for amd64, wrt bug #409417
+
+  31 Mar 2012; Jeroen Roovers <jer@gentoo.org> raptor-2.0.7.ebuild:
+  Stable for HPPA (bug #409417).
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -raptor-2.0.4.ebuild,
+  -files/raptor-2.0.4-fix_math_test.patch:
+  old
+
+*raptor-2.0.7 (30 Mar 2012)
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +raptor-2.0.7.ebuild:
+  Version bump wrt #409417 by Agostino Sarubbo
+
+  05 Mar 2012; Markus Meier <maekke@gentoo.org> raptor-2.0.6.ebuild:
+  arm stable, bug #404795
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> raptor-2.0.6.ebuild:
+  ppc/ppc64/x86 stable wrt #404795
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> raptor-2.0.6.ebuild:
+  Stable for HPPA (bug #404795).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> raptor-2.0.6.ebuild:
+  Stable for amd64, wrt bug #404795
+
+  28 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> -raptor-2.0.5.ebuild,
+  -files/raptor-2.0.5-expat.patch:
+  old
+
+*raptor-2.0.6 (28 Nov 2011)
+
+  28 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +raptor-2.0.6.ebuild:
+  Version bump.
+
+  26 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> raptor-2.0.5.ebuild,
+  +files/raptor-2.0.5-expat.patch:
+  Fix building with upstream expat patch (USE="-xml" to disable libxml2 usage)
+  wrt #391737 (Thanks to Hans for reporting)
+
+  16 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> raptor-1.4.21-r1.ebuild:
+  Reduce installed files to minimum in the obsolete raptor1 branch.
+
+*raptor-2.0.5 (16 Nov 2011)
+
+  16 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +raptor-2.0.5.ebuild:
+  Version bump.
+
+  18 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -raptor-1.4.20.ebuild:
+  old
+
+  18 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> raptor-2.0.4.ebuild:
+  ppc/ppc64 stable wrt #382641
+
+  17 Oct 2011; Markus Meier <maekke@gentoo.org> raptor-2.0.4.ebuild:
+  arm stable, bug #382641
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> raptor-2.0.4.ebuild:
+  Stable for HPPA (bug #382641).
+
+  05 Oct 2011; Andreas Schuerch <nativemad@gentoo.org> raptor-2.0.4.ebuild:
+  x86 stable, thanks David. Bug 382641
+
+  20 Sep 2011; Tony Vroon <chainsaw@gentoo.org> raptor-2.0.4.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #382641.
+
+  11 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> raptor-2.0.4.ebuild,
+  +files/raptor-2.0.4-fix_math_test.patch:
+  Fix mathlib test wrt #377253 by Brennan Shacklett and Dave Beckett (upstream)
+
+  13 Aug 2011; Markus Meier <maekke@gentoo.org> raptor-1.4.21-r1.ebuild:
+  arm stable, bug #376893
+
+  09 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> raptor-1.4.21-r1.ebuild:
+  ppc/ppc64 stable wrt #376893
+
+  07 Aug 2011; Markus Meier <maekke@gentoo.org> raptor-1.4.21-r1.ebuild:
+  x86 stable, bug #376893
+
+  05 Aug 2011; Jeroen Roovers <jer@gentoo.org> raptor-1.4.21-r1.ebuild:
+  Stable for HPPA (bug #376893).
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> raptor-1.4.21-r1.ebuild:
+  Stable on amd64 wrt bug #376893
 
   29 Jul 2011; Samuli Suominen <ssuominen@gentoo.org> raptor-1.4.21-r1.ebuild:
   Remove -g from CPPFLAGS wrt #376903 by Agostino Sarubbo

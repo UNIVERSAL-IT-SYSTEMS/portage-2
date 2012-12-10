@@ -1,17 +1,17 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/wv/wv-1.2.9-r1.ebuild,v 1.10 2011/05/02 23:33:56 hanno Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/wv/wv-1.2.9-r1.ebuild,v 1.13 2012/06/04 04:08:31 zmedico Exp $
 
 EAPI="3"
 
-inherit eutils autotools
+inherit eutils autotools multilib
 
 DESCRIPTION="Tool for conversion of MSWord doc and rtf files to something readable"
 SRC_URI="http://abiword.org/downloads/${PN}/${PV}/${P}.tar.gz"
 HOMEPAGE="http://wvware.sourceforge.net/"
 
 IUSE="tools wmf"
-KEYWORDS="alpha amd64 ~arm hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-solaris"
+KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-solaris"
 SLOT="0"
 LICENSE="GPL-2"
 
@@ -24,7 +24,7 @@ RDEPEND=">=dev-libs/glib-2
 		 dev-texlive/texlive-latex )
 	wmf? ( >=media-libs/libwmf-0.2.2 )"
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.9"
+	virtual/pkgconfig"
 
 src_prepare() {
 	if ! use tools; then

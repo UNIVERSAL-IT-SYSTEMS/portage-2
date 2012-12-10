@@ -1,6 +1,70 @@
 # ChangeLog for app-forensics/sleuthkit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-forensics/sleuthkit/ChangeLog,v 1.50 2011/07/24 18:22:23 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-forensics/sleuthkit/ChangeLog,v 1.66 2012/11/25 10:02:55 radhermit Exp $
+
+*sleuthkit-4.0.1 (25 Nov 2012)
+
+  25 Nov 2012; Tim Harder <radhermit@gentoo.org> +sleuthkit-4.0.1.ebuild:
+  Version bump.
+
+  23 Oct 2012; Tim Harder <radhermit@gentoo.org> sleuthkit-3.2.3.ebuild:
+  Update libewf dep since the API-related use flag was changed in the most
+  current version.
+
+*sleuthkit-4.0.0 (23 Oct 2012)
+
+  23 Oct 2012; Tim Harder <radhermit@gentoo.org> +sleuthkit-4.0.0.ebuild,
+  +files/sleuthkit-4.0.0-system-sqlite.patch:
+  Version bump.
+
+  03 Jul 2012; Tim Harder <radhermit@gentoo.org> -sleuthkit-3.2.1.ebuild:
+  Remove old.
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> sleuthkit-3.2.3.ebuild:
+  Stable for HPPA (bug #418581).
+
+  29 Jun 2012; Brent Baude <ranger@gentoo.org> sleuthkit-3.2.3.ebuild:
+  Marking sleuthkit-3.2.3 ppc for bug 418581
+
+  29 Jun 2012; Jeff Horelick <jdhore@gentoo.org> sleuthkit-3.2.3.ebuild:
+  marked x86 per bug 418581
+
+  28 Jun 2012; Agostino Sarubbo <ago@gentoo.org> sleuthkit-3.2.3.ebuild:
+  Stable for amd64, wrt bug #418581
+
+  27 Jun 2012; Tim Harder <radhermit@gentoo.org> -sleuthkit-3.2.2.ebuild:
+  Remove old.
+
+  27 Jun 2012; Tim Harder <radhermit@gentoo.org> sleuthkit-3.2.3.ebuild:
+  Use autotools and prune_libtool_files instead of the autotools-utils eclass.
+
+  02 Mar 2012; Tim Harder <radhermit@gentoo.org> -sleuthkit-2.09.ebuild,
+  -sleuthkit-3.0.0-r1.ebuild, -sleuthkit-3.1.0.ebuild,
+  -files/sleuthkit-fscheck.c_fix.patch, -files/sleuthkit-makefiles_fix.patch,
+  metadata.xml:
+  Remove old.
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> sleuthkit-3.2.1.ebuild:
+  Marking sleuthkit-3.2.1 ppc stable for bug 374321
+
+  28 Feb 2012; Tim Harder <radhermit@gentoo.org> sleuthkit-3.2.3.ebuild:
+  Add sqlite dep.
+
+*sleuthkit-3.2.3 (27 Feb 2012)
+
+  27 Feb 2012; Tim Harder <radhermit@gentoo.org> +sleuthkit-3.2.3.ebuild,
+  +files/sleuthkit-3.2.3-system-sqlite.patch,
+  +files/sleuthkit-3.2.3-tools-shared-libs.patch:
+  Version bump. Use system sqlite library (bug #383129) and respect LDFLAGS
+  (bug #336951).
+
+  10 Dec 2011; Tim Harder <radhermit@gentoo.org> sleuthkit-3.2.1.ebuild,
+  sleuthkit-3.2.2.ebuild:
+  Disallow libewf v2 api since sleuthkit fails to build against it (bug
+  #394111).
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> sleuthkit-3.2.1.ebuild:
+  Stable for HPPA (bug #374321).
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> sleuthkit-2.09.ebuild,
   sleuthkit-3.0.0-r1.ebuild, sleuthkit-3.1.0.ebuild, sleuthkit-3.2.1.ebuild,

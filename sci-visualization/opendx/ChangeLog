@@ -1,6 +1,20 @@
 # ChangeLog for sci-visualization/opendx
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/opendx/ChangeLog,v 1.25 2010/11/19 05:45:02 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/opendx/ChangeLog,v 1.28 2012/10/24 19:45:22 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> opendx-4.4.4-r4.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  01 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/opendx-4.4.4-magick.patch, -files/20-opendx-revdep,
+  opendx-4.4.4-r4.ebuild:
+  Build for newer imagemagick and add possibility for graphicsmagick as well,
+  fixing bug #314375. Keyword for x86-linux, switch to EAPI 4
+
+  15 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> opendx-4.4.4-r4.ebuild:
+  Add prefix love. Thanks to Richard Yao <ryao@cs.stonybrook.edu> for the patch.
+  Fixes bug 403771
 
   19 Nov 2010; Sébastien Fabbro <bicatali@gentoo.org> opendx-4.4.4-r4.ebuild:
   Remove the no hdri restriction on imagemagick dependency. Thanks Jaroslaw
@@ -213,4 +227,3 @@
   opendx-4.3.2.ebuild:
   Initial commit to close #22217. Ebuild by myself and Patrick Kursawe
   <phosphan@gentoo.org>.
-

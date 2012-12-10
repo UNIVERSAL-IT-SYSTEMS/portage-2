@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmmsg/wmmsg-1.0.1-r1.ebuild,v 1.2 2011/03/28 15:10:34 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmmsg/wmmsg-1.0.1-r1.ebuild,v 1.5 2012/05/05 05:11:59 jdhore Exp $
 
 EAPI="1"
 
@@ -12,7 +12,7 @@ SRC_URI="http://swapspace.net/~matt/wmmsg/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ~ppc ~sparc x86"
 IUSE=""
 
 RDEPEND="x11-libs/gtk+:2
@@ -21,7 +21,7 @@ RDEPEND="x11-libs/gtk+:2
 	x11-libs/libXext
 	x11-libs/libX11"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	x11-libs/libXt"
 
 src_unpack() {

@@ -1,6 +1,17 @@
 # ChangeLog for dev-lang/gforth
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/gforth/ChangeLog,v 1.33 2010/09/11 12:24:17 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/gforth/ChangeLog,v 1.36 2012/05/10 15:44:31 ago Exp $
+
+  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -gforth-0.6.2-r1.ebuild,
+  -gforth-0.6.2.ebuild:
+  Remove old
+
+  24 Apr 2012; Michał Górny <mgorny@gentoo.org> gforth-0.7.0.ebuild:
+  Update to use mirror://.
+
+  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gforth-0.7.0.ebuild:
+  keyword ~sparc-solaris
 
   11 Sep 2010; Ulrich Mueller <ulm@gentoo.org> gforth-0.7.0.ebuild,
   +files/gforth-0.7.0-make-elc.patch:

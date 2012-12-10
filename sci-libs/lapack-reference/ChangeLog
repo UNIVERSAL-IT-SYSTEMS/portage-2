@@ -1,6 +1,21 @@
 # ChangeLog for sci-libs/lapack-reference
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/lapack-reference/ChangeLog,v 1.58 2011/06/21 15:15:28 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/lapack-reference/ChangeLog,v 1.61 2012/10/19 10:34:40 jlec Exp $
+
+  19 Oct 2012; Justin Lecher <jlec@gentoo.org>
+  lapack-reference-3.1.1-r1.ebuild, lapack-reference-3.2.1.ebuild,
+  lapack-reference-3.2.1-r1.ebuild, metadata.xml:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org>
+  lapack-reference-3.2.1-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  lapack-reference-3.1.1-r1.ebuild, lapack-reference-3.2.1.ebuild,
+  lapack-reference-3.2.1-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   21 Jun 2011; Justin Lecher <jlec@gentoo.org>
   lapack-reference-3.1.1-r1.ebuild, lapack-reference-3.2.1.ebuild,

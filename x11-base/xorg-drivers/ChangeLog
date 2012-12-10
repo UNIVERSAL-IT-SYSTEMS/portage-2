@@ -1,6 +1,118 @@
 # ChangeLog for x11-base/xorg-drivers
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-drivers/ChangeLog,v 1.54 2011/07/30 10:38:07 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-drivers/ChangeLog,v 1.86 2012/12/08 17:02:08 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> xorg-drivers-1.13.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> xorg-drivers-1.13.ebuild:
+  Marking xorg-drivers-1.13 ppc stable for bug 440872
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xorg-drivers-1.13.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xorg-drivers-1.13.ebuild:
+  Stable for amd64, wrt bug #440872
+
+  16 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xorg-drivers-1.13.ebuild:
+  Add omap to VIDEO_CARDS.
+
+  06 Oct 2012; Ulrich Müller <ulm@gentoo.org> xorg-drivers-1.9.ebuild,
+  xorg-drivers-1.10.ebuild, xorg-drivers-1.11.ebuild, xorg-drivers-1.12.ebuild,
+  xorg-drivers-1.13.ebuild:
+  Update LICENSE to "metapackage" non-license, bug 436608.
+
+*xorg-drivers-1.13 (06 Sep 2012)
+
+  06 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xorg-drivers-1.13.ebuild:
+  Version bump.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> xorg-drivers-1.12.ebuild:
+  alpha/ia64/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> xorg-drivers-1.12.ebuild:
+  Marking xorg-drivers-1.12 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> xorg-drivers-1.12.ebuild:
+  Marking xorg-drivers-1.12 ppc64 stable for bug 419473
+
+  28 Jun 2012; Markus Meier <maekke@gentoo.org> xorg-drivers-1.12.ebuild:
+  arm stable, bug #419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> xorg-drivers-1.12.ebuild:
+  Stable for HPPA (bug #419473).
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xorg-drivers-1.12.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xorg-drivers-1.12.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  09 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xorg-drivers-1.12.ebuild:
+  Add modesetting flag.
+
+  13 May 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xorg-drivers-1.12.ebuild:
+  Allow more drivers that were fixed for 1.12 back in.
+
+  10 May 2012; Alexis Ballier <aballier@gentoo.org> xorg-drivers-1.12.ebuild:
+  keyword ~amd64-fbsd
+
+  03 May 2012; Lars Wendler <polynomial-c@gentoo.org> xorg-drivers-1.9.ebuild:
+  non-maintainer commit: Removed virtualbox input driver as it's not longer in
+  the tree.
+
+  24 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xorg-drivers-1.12.ebuild:
+  Allow some drivers back in after build fixes.
+
+  18 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xorg-drivers-1.12.ebuild:
+  Update dependencies for drivers that fail to build against xorg-server-1.12.
+
+*xorg-drivers-1.12 (07 Mar 2012)
+
+  07 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xorg-drivers-1.12.ebuild:
+  Version bump.
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> xorg-drivers-1.11.ebuild:
+  Marking xorg-drivers-1.11 ppc64 stable for bug 394393
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> xorg-drivers-1.11.ebuild:
+  alpha/ia64/sh/sparc stable wrt #394393
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> xorg-drivers-1.11.ebuild:
+  Marking xorg-drivers-1.11 ppc stable for bug 394393
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> xorg-drivers-1.11.ebuild:
+  x86 stable, bug #394393
+
+  21 Dec 2011; Markus Meier <maekke@gentoo.org> xorg-drivers-1.11.ebuild:
+  arm stable, bug #394393
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> xorg-drivers-1.11.ebuild:
+  Stable for HPPA (bug #394393).
+
+  20 Dec 2011; Lars Wendler <polynomial-c@gentoo.org> xorg-drivers-1.10.ebuild:
+  Dropped input_devices_virtualbox from 1.10, too. (acked by chithead)
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> xorg-drivers-1.11.ebuild:
+  Stable for AMD64, wrt bug #394393
+
+  14 Oct 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xorg-drivers-1.10.ebuild, xorg-drivers-1.11.ebuild:
+  Allow stable drivers for 1.10, drop virtualbox from 1.11, bug #387121
+
+  29 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xorg-drivers-1.10.ebuild:
+  Restrict blockers to versions that don't compile with xorg-server-1.10.
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> xorg-drivers-1.10.ebuild:
+  Stable for HPPA (bug #371857).
 
   30 Jul 2011; Raúl Porcel <armin76@gentoo.org> xorg-drivers-1.10.ebuild:
   alpha/ia64/sh/sparc stable wrt #371857
@@ -206,4 +318,3 @@
   04 Sep 2009; Rémi Cardona <remi@gentoo.org> +xorg-drivers-1.6.ebuild,
   +metadata.xml:
   add xorg-drivers meta ebuild from the x11 overlay
-

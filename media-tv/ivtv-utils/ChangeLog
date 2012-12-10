@@ -1,6 +1,23 @@
 # ChangeLog for media-tv/ivtv-utils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/ivtv-utils/ChangeLog,v 1.15 2011/06/26 15:19:24 lxnay Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-tv/ivtv-utils/ChangeLog,v 1.19 2012/11/18 17:44:33 hwoarang Exp $
+
+  18 Nov 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Remove beandog wrt #131511
+
+  17 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -ivtv-utils-1.4.0-r2.ebuild:
+  old
+
+  17 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> ivtv-utils-1.4.1.ebuild:
+  amd64/x86 stable
+
+*ivtv-utils-1.4.1 (05 Mar 2012)
+
+  05 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +ivtv-utils-1.4.1.ebuild,
+  +files/ivtv-utils-1.4.1-overflow.patch:
+  Version bump wrt #332059 by "df". Patch for overflow(s) wrt #339405 by Kevin
+  Pyle. Stop using linux-mod.eclass wrt #283368 by Mike Auty.
 
   26 Jun 2011; Fabio Erculiani <lxnay@gentoo.org> ivtv-utils-1.4.0-r2.ebuild:
   sys-kernel/linux-firmware blocks ivtv-firmware making impossible to have
@@ -71,4 +88,3 @@
   +ivtv-utils-1.3.0.ebuild:
   adding initial ivtv-utils package which is only the utilies portion of the
   ivtv package since the driver is fully in the kernel with 2.6.26
-

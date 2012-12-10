@@ -1,6 +1,23 @@
 # ChangeLog for app-misc/pwsafe
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/pwsafe/ChangeLog,v 1.12 2011/05/20 11:30:13 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/pwsafe/ChangeLog,v 1.17 2012/08/16 13:56:44 johu Exp $
+
+  16 Aug 2012; Johannes Huber <johu@gentoo.org> -pwsafe-0.2.0-r1.ebuild,
+  -pwsafe-0.2.0.ebuild:
+  Remove old.
+
+  16 Aug 2012; Johannes Huber <johu@gentoo.org> pwsafe-0.2.0-r2.ebuild:
+  Stable for x86, wrt bug #431596
+
+  16 Aug 2012; Agostino Sarubbo <ago@gentoo.org> pwsafe-0.2.0-r2.ebuild:
+  Stable for amd64, wrt bug #431596
+
+*pwsafe-0.2.0-r2 (25 Feb 2012)
+
+  25 Feb 2012; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +files/pwsafe-0.2.0-XChangeProperty.patch, +pwsafe-0.2.0-r2.ebuild,
+  metadata.xml:
+  Fix bug #402707 (proxy-commit for headch)
 
   20 May 2011; Thomas Kahle <tomka@gentoo.org> pwsafe-0.2.0-r1.ebuild:
   x86 stable per bug 347549
@@ -48,4 +65,3 @@
   08 Jul 2007; Tavis Ormandy <taviso@gentoo.org> ChangeLog:
   initial import, commandline password manager that can read password safe
   databases.
-

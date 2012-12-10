@@ -1,6 +1,127 @@
 # ChangeLog for app-pda/gtkpod
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-pda/gtkpod/ChangeLog,v 1.89 2011/06/15 19:09:01 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-pda/gtkpod/ChangeLog,v 1.118 2012/12/06 14:07:36 jlec Exp $
+
+  06 Dec 2012; Justin Lecher <jlec@gentoo.org> -gtkpod-2.1.2.ebuild:
+  Drop old
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> gtkpod-2.1.2-r1.ebuild:
+  Stable for x86, wrt bug #440928
+
+  04 Nov 2012; <ago@gentoo.org> gtkpod-2.1.2-r1.ebuild:
+  Stable for amd64, wrt bug #440928
+
+*gtkpod-2.1.2-r1 (02 Nov 2012)
+
+  02 Nov 2012; Justin Lecher <jlec@gentoo.org> +gtkpod-2.1.2-r1.ebuild,
+  +files/gtkpod-2.1.2-bffr-overflow.patch, metadata.xml:
+  Fid for buffer overflow, #434220
+
+  23 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> -gtkpod-2.1.1-r3.ebuild,
+  -files/gtkpod-2.1.1-segfault_with_directory_creation.patch:
+  old
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gtkpod-2.1.2.ebuild:
+  x86 stable wrt bug #433535
+
+  07 Sep 2012; Agostino Sarubbo <ago@gentoo.org> gtkpod-2.1.2.ebuild:
+  Stable for amd64, wrt bug #433535
+
+  02 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> gtkpod-2.1.2.ebuild:
+  Use Python 2.x in scripts/sync-palm-jppy.py for now.
+
+  20 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -gtkpod-2.0.2.ebuild,
+  -gtkpod-2.1.2_beta2.ebuild:
+  old
+
+  20 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> gtkpod-2.1.1-r3.ebuild:
+  x86 stable wrt #420007
+
+*gtkpod-2.1.2 (20 Jun 2012)
+
+  20 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +gtkpod-2.1.2.ebuild:
+  Version bump.
+
+  19 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gtkpod-2.1.2_beta2.ebuild:
+  Export the GST_INSPECT environment variable to "true" in order to avoid
+  running gst-inspect-0.10 which is breaking sandbox when accessing
+  /root/.gstreamer-0.10 wrt #420279. Thanks to Kirk Diviney for testing and
+  "Maeredhel" for reporting.
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> gtkpod-2.1.1-r3.ebuild:
+  Stable for amd64, wrt bug #420007
+
+*gtkpod-2.1.2_beta2 (07 Jun 2012)
+
+  07 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +gtkpod-2.1.2_beta2.ebuild:
+  Version bump to development release in order to get rid of the
+  media-libs/libmp4v2 dependency problem.
+
+  10 May 2012; Samuli Suominen <ssuominen@gentoo.org> -gtkpod-2.1.1-r2.ebuild:
+  old
+
+  10 May 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  The package is maintained by the pda@ herd (team)
+
+*gtkpod-2.1.1-r3 (10 May 2012)
+
+  10 May 2012; Samuli Suominen <ssuominen@gentoo.org> +gtkpod-2.1.1-r3.ebuild,
+  +files/gtkpod-2.1.1-segfault_with_directory_creation.patch:
+  Include upstream patch for double free segmentation fault occuring with, for
+  example, directory creation wrt #414753 by "Flavio"
+
+  09 May 2012; Samuli Suominen <ssuominen@gentoo.org> -gtkpod-2.1.1-r1.ebuild,
+  -files/gtkpod-2.1.1-libmp4v2_so_2.patch:
+  old
+
+*gtkpod-2.1.1-r2 (09 May 2012)
+
+  09 May 2012; Samuli Suominen <ssuominen@gentoo.org> gtkpod-2.0.2.ebuild,
+  +gtkpod-2.1.1-r2.ebuild:
+  Use ABI SLOT="1" of media-libs/libmp4v2 for libmp4v2.so.1 which is used
+  through dlopen(). Upstream has switched to AtomicParsley for >= 2.1.2.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gtkpod-2.0.2.ebuild,
+  gtkpod-2.1.1-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -gtkpod-2.1.0.ebuild,
+  -gtkpod-2.1.1.ebuild:
+  old
+
+*gtkpod-2.1.1-r1 (21 Mar 2012)
+
+  21 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +gtkpod-2.1.1-r1.ebuild,
+  +files/gtkpod-2.1.1-libmp4v2_so_2.patch:
+  Fix dlopen() for libmp4v2.so.2 from media-libs/libmp4v2 >= 1.9.1_p479.
+
+*gtkpod-2.1.1 (23 Feb 2012)
+
+  23 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +gtkpod-2.1.1.ebuild,
+  metadata.xml:
+  Version bump.
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> gtkpod-2.1.0.ebuild:
+  Remove --uninstall argument from gnome2_schemas_update wrt #394733 by
+  Alexandre Rostovtsev
+
+*gtkpod-2.1.0 (17 Sep 2011)
+
+  17 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> +gtkpod-2.1.0.ebuild:
+  Version bump wrt #362461 by Alex Ermakov
+
+  17 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> -gtkpod-1.0.0.ebuild,
+  -gtkpod-2.0.0.ebuild:
+  [This is a placeholder. Please ignore.]
+
+  16 Sep 2011; Tony Vroon <chainsaw@gentoo.org> gtkpod-2.0.2.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "ago" Sarubbo in bug #376405.
+
+  16 Sep 2011; Andreas Schuerch <nativemad@gentoo.org> gtkpod-2.0.2.ebuild:
+  x86 stable, thanks JD. Bug 376405
 
 *gtkpod-2.0.2 (15 Jun 2011)
 

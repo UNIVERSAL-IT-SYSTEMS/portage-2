@@ -1,6 +1,228 @@
 # ChangeLog for www-client/seamonkey-bin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey-bin/ChangeLog,v 1.103 2011/05/01 16:50:16 phajdan.jr Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey-bin/ChangeLog,v 1.158 2012/12/03 08:20:15 nativemad Exp $
+
+  03 Dec 2012; Andreas Schuerch <nativemad@gentoo.org>
+  seamonkey-bin-2.14.ebuild:
+  x86 stable, see bug 444318
+
+  27 Nov 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-bin-2.14.ebuild:
+  Stable for amd64, wrt bug #444318
+
+*seamonkey-bin-2.14 (22 Nov 2012)
+
+  22 Nov 2012; Jeff Horelick <jdhore@gentoo.org> +seamonkey-bin-2.14.ebuild:
+  Version bump
+
+  03 Nov 2012; <ago@gentoo.org> seamonkey-bin-2.13.2.ebuild:
+  Stable for amd64, wrt bug #439960
+
+  31 Oct 2012; Ian Stakenvicius <axs@gentoo.org> seamonkey-bin-2.13.2.ebuild:
+  Interim solution to block net-libs/libproxy[spidermonkey] due to mozjs symbol
+  collisions that cause crashes, bug 439148
+
+*seamonkey-bin-2.13.2 (29 Oct 2012)
+
+  29 Oct 2012; Jeff Horelick <jdhore@gentoo.org> +seamonkey-bin-2.13.2.ebuild:
+  version bump wrt bug #439960
+
+  23 Oct 2012; <ago@gentoo.org> seamonkey-bin-2.13.1.ebuild:
+  Stable for amd64, wrt bug #437780
+
+*seamonkey-bin-2.13.1 (20 Oct 2012)
+
+  20 Oct 2012; Jeff Horelick <jdhore@gentoo.org> +seamonkey-bin-2.13.1.ebuild:
+  Version bump
+
+  15 Sep 2012; Andreas Schuerch <nativemad@gentoo.org>
+  seamonkey-bin-2.12.1.ebuild:
+  x86 stable, see bug 433383
+
+*seamonkey-bin-2.12.1 (11 Sep 2012)
+
+  11 Sep 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -seamonkey-bin-2.12.ebuild, +seamonkey-bin-2.12.1.ebuild:
+  Bumped seamonkey-bin-2.12 to 2.12.1. As it's a privacy relevant bugfix
+  release I bumped it straight to stable for amd64 (which had 2.12 stable
+  already).
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-bin-2.12.ebuild:
+  Stable for amd64, wrt bug #433383
+
+*seamonkey-bin-2.12 (02 Sep 2012)
+
+  02 Sep 2012; Jeff Horelick <jdhore@gentoo.org> +seamonkey-bin-2.12.ebuild,
+  -seamonkey-bin-2.10.1.ebuild:
+  Version bump
+
+  28 Jul 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-bin-2.11.ebuild:
+  Stable for amd64, wrt bug #427224
+
+  24 Jul 2012; Jeff Horelick <jdhore@gentoo.org> seamonkey-bin-2.11.ebuild:
+  marked x86 per bug 427224
+
+*seamonkey-bin-2.11 (17 Jul 2012)
+
+  17 Jul 2012; Jeff Horelick <jdhore@gentoo.org> +seamonkey-bin-2.11.ebuild,
+  -seamonkey-bin-2.9.ebuild:
+  Version bump
+
+  04 Jul 2012; Ian Stakenvicius <axs@gentoo.org> seamonkey-bin-2.9.ebuild,
+  seamonkey-bin-2.10.1.ebuild, metadata.xml:
+  Fixed license, added mozilla herd to metadata
+
+  03 Jul 2012; Jeff Horelick <jdhore@gentoo.org> -seamonkey-bin-2.10.ebuild,
+  seamonkey-bin-2.10.1.ebuild:
+  Remove old and change seamonkey-2.10.1 to MPL-2.0
+
+  19 Jun 2012; Andreas Schuerch <nativemad@gentoo.org>
+  seamonkey-bin-2.10.1.ebuild:
+  x86 stable, thanks
+
+  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-bin-2.10.1.ebuild:
+  Stable for amd64, wrt bug #419917
+
+*seamonkey-bin-2.10.1 (17 Jun 2012)
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> +seamonkey-bin-2.10.1.ebuild:
+  Version bump.
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-bin-2.10.ebuild:
+  Stable for amd64, wrt bug #419917
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-bin-2.10.ebuild:
+  Stable for amd64, wrt bug #420125
+
+*seamonkey-bin-2.10 (06 Jun 2012)
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> +seamonkey-bin-2.10.ebuild,
+  -seamonkey-bin-2.7.2.ebuild, -seamonkey-bin-2.8.ebuild:
+  Version bump and remove old.
+
+  02 May 2012; Andreas Schuerch <nativemad@gentoo.org>
+  seamonkey-bin-2.9.ebuild:
+  x86 stable, see bug 413657. Thanks Mikle Kolyada.
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-bin-2.9.ebuild:
+  Stable for amd64, wrt bug #413657
+
+*seamonkey-bin-2.9 (24 Apr 2012)
+
+  24 Apr 2012; Jeff Horelick <jdhore@gentoo.org> +seamonkey-bin-2.9.ebuild:
+  Version bump to Seamonkey 2.9.
+
+  25 Mar 2012; Thomas Kahle <tomka@gentoo.org> seamonkey-bin-2.8.ebuild:
+  marked x86 per bug 408161
+
+  22 Mar 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-bin-2.8.ebuild:
+  Stable for amd64, wrt bug #408161
+
+*seamonkey-bin-2.8 (14 Mar 2012)
+
+  14 Mar 2012; Jeff Horelick <jdhore@gentoo.org> +seamonkey-bin-2.8.ebuild:
+  Version bump.
+
+  04 Mar 2012; Jeff Horelick <jdhore@gentoo.org> seamonkey-bin-2.7.2.ebuild:
+  Add a -r pax-mark wrt bug 403689
+
+  27 Feb 2012; Jeff Horelick <jdhore@gentoo.org> seamonkey-bin-2.7.2.ebuild:
+  Add a RDEPEND on virtual/freedesktop-icon-theme to resolve bug 341697
+
+  22 Feb 2012; Jeff Horelick <jdhore@gentoo.org> -seamonkey-bin-2.7.1.ebuild:
+  Remove old.
+
+  22 Feb 2012; Lars Wendler <polynomial-c@gentoo.org>
+  seamonkey-bin-2.7.2.ebuild:
+  Stable per bug #404437
+
+  22 Feb 2012; Jeff Horelick <jdhore@gentoo.org> seamonkey-bin-2.7.2.ebuild:
+  Restrict mirror and binchecks. This package is built by Mozilla so the
+  binaries may not fit our QA policies.
+
+  21 Feb 2012; Jeff Horelick <jdhore@gentoo.org> seamonkey-bin-2.7.2.ebuild:
+  x86 stable wrt security bug 404437 .
+
+  21 Feb 2012; Jeff Horelick <jdhore@gentoo.org> -seamonkey-bin-2.6.1.ebuild:
+  Remove old.
+
+*seamonkey-bin-2.7.2 (21 Feb 2012)
+
+  21 Feb 2012; Jeff Horelick <jdhore@gentoo.org> +seamonkey-bin-2.7.2.ebuild:
+  Version bump wrt security bug 404437.
+
+  20 Feb 2012; Thomas Kahle <tomka@gentoo.org> seamonkey-bin-2.7.1.ebuild:
+  marked x86 per bug 403183
+
+  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-bin-2.7.1.ebuild:
+  Stable for amd64, wrt bug #403183
+
+*seamonkey-bin-2.7.1 (12 Feb 2012)
+
+  12 Feb 2012; Jory A. Pratt <anarchy@gentoo.org> -seamonkey-bin-2.0.14.ebuild,
+  -seamonkey-bin-2.7.ebuild, +seamonkey-bin-2.7.1.ebuild:
+  Security Bump
+
+  04 Feb 2012; Nirbheek Chauhan <nirbheek@gentoo.org> seamonkey-bin-2.7.ebuild:
+  Port to the new mozlinguas.eclass
+
+  31 Jan 2012; Jeff Horelick <jdhore@gentoo.org> -seamonkey-bin-2.5.ebuild:
+  Remove old.
+
+*seamonkey-bin-2.7 (31 Jan 2012)
+
+  31 Jan 2012; Jeff Horelick <jdhore@gentoo.org> +seamonkey-bin-2.7.ebuild:
+  Version bump to 2.7
+
+  26 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> seamonkey-bin-2.5.ebuild,
+  seamonkey-bin-2.6.1.ebuild:
+  Remove useless eclass inherit
+
+  24 Jan 2012; Jeff Horelick <jdhore@gentoo.org> metadata.xml:
+  Take full maintenance of this package now that I am a developer.
+
+  12 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  seamonkey-bin-2.6.1.ebuild:
+  x86 stable wrt bug #395431
+
+  11 Jan 2012; Agostino Sarubbo <ago@gentoo.org> seamonkey-bin-2.6.1.ebuild:
+  Stable for AMD64, wrt security bug #395431
+
+*seamonkey-bin-2.6.1 (23 Dec 2011)
+
+  23 Dec 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -seamonkey-bin-2.6.ebuild, +seamonkey-bin-2.6.1.ebuild:
+  Version bump. Removed old.
+
+*seamonkey-bin-2.6 (20 Dec 2011)
+
+  20 Dec 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -seamonkey-bin-2.4.1.ebuild, seamonkey-bin-2.5.ebuild,
+  +seamonkey-bin-2.6.ebuild:
+  Version bump. Removed old.
+
+  05 Dec 2011; Lars Wendler <polynomial-c@gentoo.org> seamonkey-bin-2.5.ebuild:
+  Ebuild improvements.
+
+  23 Nov 2011; Lars Wendler <polynomial-c@gentoo.org> seamonkey-bin-2.5.ebuild:
+  Use nsplugins.eclass to handle the plugins directory.
+
+*seamonkey-bin-2.5 (23 Nov 2011)
+
+  23 Nov 2011; Lars Wendler <polynomial-c@gentoo.org>
+  +seamonkey-bin-2.5.ebuild:
+  Version bump.
+
+*seamonkey-bin-2.4.1 (16 Nov 2011)
+
+  16 Nov 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -seamonkey-bin-2.0.13.ebuild, +seamonkey-bin-2.4.1.ebuild:
+  Version bump. Removed old.
+
+  15 Nov 2011; Lars Wendler <polynomial-c@gentoo.org> metadata.xml:
+  Previous change was incomplete.
+
+  15 Nov 2011; Lars Wendler <polynomial-c@gentoo.org> metadata.xml:
+  Added new maintainer.
 
   01 May 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
   seamonkey-bin-2.0.14.ebuild:
@@ -440,4 +662,3 @@
 
   08 Jan 2007; Raúl Porcel <armin76@gentoo.org> ChangeLog:
   New ebuild, from Anarchy, bug 147826
-

@@ -1,6 +1,111 @@
 # ChangeLog for dev-ruby/facter
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/facter/ChangeLog,v 1.36 2011/06/24 18:52:35 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/facter/ChangeLog,v 1.62 2012/12/02 19:24:11 graaff Exp $
+
+*facter-1.6.16 (02 Dec 2012)
+
+  02 Dec 2012; Hans de Graaff <graaff@gentoo.org> +facter-1.6.16.ebuild,
+  +files/facter-1.6.16-ifconfig-path.patch:
+  Version bump. Depend on latest net-tools and patch location of ifconfig.
+  Fixes bug 432452.
+
+  02 Dec 2012; Hans de Graaff <graaff@gentoo.org> facter-1.6.0.ebuild,
+  facter-1.6.3.ebuild, facter-1.6.14.ebuild:
+  Add missing dependency on net-tools and pick versions that work.
+
+  02 Dec 2012; Hans de Graaff <graaff@gentoo.org> -facter-1.6.12.ebuild:
+  Remove old versions.
+
+  26 Nov 2012; Hans de Graaff <graaff@gentoo.org> +facter-1.6.3.ebuild:
+  Restore latest version before dropping keywords.
+
+  26 Nov 2012; Hans de Graaff <graaff@gentoo.org> -facter-1.6.3.ebuild,
+  -facter-1.6.4.ebuild, -facter-1.6.8.ebuild, -facter-1.6.10.ebuild:
+  Cleanup.
+
+  06 Nov 2012; Theo Chatzimichos <tampakrap@gentoo.org> metadata.xml:
+  add sysadmin and ruby herds in metadata.xml
+
+*facter-1.6.14 (02 Nov 2012)
+
+  02 Nov 2012; Hans de Graaff <graaff@gentoo.org> +facter-1.6.14.ebuild:
+  Version bump. Closes bug 437308.
+
+*facter-1.6.12 (26 Sep 2012)
+
+  26 Sep 2012; Hans de Graaff <graaff@gentoo.org> +facter-1.6.12.ebuild:
+  Version bump.
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> facter-1.6.10.ebuild:
+  Fix up dependencies, especially for tests.
+
+*facter-1.6.10 (05 Aug 2012)
+
+  05 Aug 2012; Hans de Graaff <graaff@gentoo.org> +facter-1.6.10.ebuild:
+  Version bump.
+
+*facter-1.6.8 (12 May 2012)
+
+  12 May 2012; Hans de Graaff <graaff@gentoo.org> +facter-1.6.8.ebuild:
+  Version bump.
+
+  12 May 2012; Hans de Graaff <graaff@gentoo.org> +facter-1.6.3.ebuild:
+  Add back 1.6.3 since that is the latest version keyworded for hppa.
+
+  12 May 2012; Hans de Graaff <graaff@gentoo.org> -facter-1.6.1.ebuild,
+  -facter-1.6.2.ebuild, -facter-1.6.3.ebuild:
+  Remove old versions.
+
+  11 Mar 2012; Brent Baude <ranger@gentoo.org> facter-1.6.4.ebuild:
+  Marking facter-1.6.4 ~ppc64 for bug 394785
+
+  01 Jan 2012; Fabian Groffen <grobian@gentoo.org> facter-1.6.4.ebuild:
+  Drop Prefix keywords, the dependencies are too non-Prefix and non-Linux
+  incompatible
+
+  28 Dec 2011; Hans de Graaff <graaff@gentoo.org> facter-1.6.0.ebuild:
+  Drop ruby19 from stable version.
+
+  15 Dec 2011; MATSUU Takuto <matsuu@gentoo.org> facter-1.6.4.ebuild:
+  Added sys-apps/lsb-release and sys-apps/pciutils to RDEPEND.
+
+*facter-1.6.4 (15 Dec 2011)
+
+  15 Dec 2011; Hans de Graaff <graaff@gentoo.org> +facter-1.6.4.ebuild:
+  Version bump. Drop hppa,ppc64 due to new dmidecode dependency, bug 394785.
+
+*facter-1.6.3 (04 Dec 2011)
+
+  04 Dec 2011; MATSUU Takuto <matsuu@gentoo.org> +facter-1.6.3.ebuild:
+  Version bumped, bug #391747.
+
+*facter-1.6.2 (12 Oct 2011)
+
+  12 Oct 2011; MATSUU Takuto <matsuu@gentoo.org> -facter-1.5.2-r1.ebuild,
+  -facter-1.5.7-r1.ebuild, +facter-1.6.2.ebuild:
+  Version bumped. Removed old versions.
+
+  09 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> facter-1.6.0.ebuild:
+  ppc stable wrt #380525
+
+  08 Oct 2011; Raúl Porcel <armin76@gentoo.org> facter-1.6.0.ebuild:
+  sparc stable wrt #380525
+
+  03 Oct 2011; Jeroen Roovers <jer@gentoo.org> facter-1.6.0.ebuild:
+  Stable for HPPA (bug #385149).
+
+*facter-1.6.1 (29 Sep 2011)
+
+  29 Sep 2011; MATSUU Takuto <matsuu@gentoo.org> -facter-1.5.7-r2.ebuild,
+  -facter-1.5.8.ebuild, -facter-1.5.9.ebuild, +facter-1.6.1.ebuild:
+  Version bumped. Removed old versions.
+
+  19 Sep 2011; Markus Meier <maekke@gentoo.org> facter-1.6.0.ebuild:
+  x86 stable, bug #380525
+
+  31 Aug 2011; Tony Vroon <chainsaw@gentoo.org> facter-1.6.0.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella" Delaney & Elijah
+  "Armageddon" El Lazkani in bug #380525 filed by Takuto Matsuu.
 
 *facter-1.6.0 (24 Jun 2011)
 

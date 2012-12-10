@@ -1,6 +1,207 @@
 # ChangeLog for net-nds/openldap
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/openldap/ChangeLog,v 1.384 2011/05/06 15:45:59 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-nds/openldap/ChangeLog,v 1.425 2012/12/03 06:23:55 robbat2 Exp $
+
+  03 Dec 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Add description for USE=minimal.
+
+*openldap-2.4.33-r1 (01 Dec 2012)
+
+  01 Dec 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +openldap-2.4.33-r1.ebuild:
+  Improve USE=minimal, dropping dependencies on tcpd and libtool in that
+  configuration (they are used by the server), and only installing
+  files/directories for the server if it's going to be built. Drop dependency
+  over ncurses (not used anywhere in the code) and stop using keepdir on
+  /var/run (the init script will do that properly and support tmpfs
+  configurations).
+
+  22 Oct 2012; Robin H. Johnson <robbat2@gentoo.org> openldap-2.4.30.ebuild:
+  Fix missing dep per bug #420887.
+
+*openldap-2.4.33 (16 Oct 2012)
+
+  16 Oct 2012; Robin H. Johnson <robbat2@gentoo.org> +openldap-2.4.33.ebuild:
+  Bump per bug #438556.
+
+*openldap-2.4.32 (08 Oct 2012)
+
+  08 Oct 2012; Robin H. Johnson <robbat2@gentoo.org> +openldap-2.4.32.ebuild:
+  Version bump per bug #429970.
+
+  02 Jul 2012; Naohiro Aota <naota@gentoo.org> openldap-2.4.21.ebuild,
+  openldap-2.4.23.ebuild, openldap-2.4.24.ebuild, openldap-2.4.25-r1.ebuild,
+  openldap-2.4.25.ebuild, openldap-2.4.28-r1.ebuild, openldap-2.4.28.ebuild,
+  openldap-2.4.30.ebuild:
+  Drop x86-fbsd keyword, due to #290571 #408001 #408009
+
+  13 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/openldap-2.4.31-gcc47.patch, openldap-2.4.31-r1.ebuild:
+  Fix building with gcc-4.7 wrt #420959 by Tiziano Müller
+
+*openldap-2.4.31-r1 (27 May 2012)
+
+  27 May 2012; Robin H. Johnson <robbat2@gentoo.org> +openldap-2.4.31-r1.ebuild,
+  files/slapd-initd-2.4.28-r1:
+  Bug #417673: fix typo in checkpath call.
+
+  25 May 2012; Alexis Ballier <aballier@gentoo.org> openldap-2.4.31.ebuild:
+  keyword ~amd64-fbsd
+
+*openldap-2.4.31 (25 May 2012)
+
+  25 May 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/openldap-2.4.30-contrib-samba4.patch, +openldap-2.4.31.ebuild,
+  files/slapd-initd-2.4.28-r1:
+  Version bump, contains fixes for bugs #408009, #408001, #410913, #407541,
+  #412613, #413647, #302310, #414503, #408077.
+
+  13 May 2012; <swift@gentoo.org> openldap-2.3.43-r1.ebuild,
+  openldap-2.4.19-r1.ebuild, openldap-2.4.21.ebuild, openldap-2.4.23.ebuild,
+  openldap-2.4.24.ebuild, openldap-2.4.25.ebuild, openldap-2.4.25-r1.ebuild,
+  openldap-2.4.28.ebuild, openldap-2.4.28-r1.ebuild, openldap-2.4.30.ebuild:
+  SELinux policy module for OpenLDAP is provided by selinux-ldap
+
+  17 Mar 2012; Raúl Porcel <armin76@gentoo.org> openldap-2.4.30.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #407941
+
+  15 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> openldap-2.4.30.ebuild:
+  x86 stable wrt bug #407941
+
+  13 Mar 2012; Jeroen Roovers <jer@gentoo.org> openldap-2.4.30.ebuild:
+  Stable for HPPA (bug #407941).
+
+  13 Mar 2012; Brent Baude <ranger@gentoo.org> openldap-2.4.30.ebuild:
+  Marking openldap-2.4.30 ppc and ppc64 for bug 407941
+
+  13 Mar 2012; Agostino Sarubbo <ago@gentoo.org> openldap-2.4.30.ebuild:
+  Stable for amd64, wrt bug #407941
+
+*openldap-2.4.30 (12 Mar 2012)
+
+  12 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> +openldap-2.4.30.ebuild:
+  Version bump for security bug #407941.
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> openldap-2.4.28-r1.ebuild:
+  Marking openldap-2.4.28-r1 ppc64 for bug 388605
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> openldap-2.4.28-r1.ebuild:
+  Marking openldap-2.4.28-r1 ppc for bug 388605
+
+  25 Feb 2012; Raúl Porcel <armin76@gentoo.org> openldap-2.4.28-r1.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #388605
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  openldap-2.4.28-r1.ebuild:
+  x86 stable wrt bug #388605
+
+  22 Feb 2012; Jeroen Roovers <jer@gentoo.org> openldap-2.4.28-r1.ebuild:
+  Stable for HPPA (bug #388605).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> openldap-2.4.28-r1.ebuild:
+  Stable for AMD64, wrt security bug #388605
+
+  21 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> openldap-2.3.43-r1.ebuild,
+  openldap-2.4.19-r1.ebuild, openldap-2.4.21.ebuild, openldap-2.4.23.ebuild,
+  openldap-2.4.24.ebuild, openldap-2.4.25-r1.ebuild, openldap-2.4.25.ebuild,
+  openldap-2.4.28-r1.ebuild, openldap-2.4.28.ebuild:
+  Upstream host has moved.
+
+  21 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> openldap-2.3.43-r1.ebuild,
+  openldap-2.4.19-r1.ebuild, openldap-2.4.21.ebuild, openldap-2.4.23.ebuild,
+  openldap-2.4.24.ebuild, openldap-2.4.25-r1.ebuild, openldap-2.4.25.ebuild,
+  openldap-2.4.28.ebuild:
+  More bug #404555: WANT_AUTOMAKE=none changes to AT_NOEAUTOMAKE=yes with eclass
+  changes.
+
+  20 Feb 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/openldap-2.4.28-fix-dash.patch, openldap-2.4.28-r1.ebuild:
+  Fix libtool build failure when /bin/sh points to dash. Approved by robbat2.
+
+  20 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> openldap-2.4.28-r1.ebuild:
+  Bug #404555: Use new variable AT_NOEAUTOMAKE instead of WANT_AUTOMAKE=none
+  overload.
+
+  13 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> Manifest:
+  Maybe repoman should detect files not in the VCS in the Manifest?
+
+  12 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> Manifest:
+  Manifest fix.
+
+  12 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> openldap-2.4.28-r1.ebuild:
+  Bug #326175: Help users with very old LDAP deploys (without the tags) to
+  upgrade.
+
+  12 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  files/slapd-confd-2.4.28-r1, files/slapd-initd-2.4.28-r1:
+  Bug #376699: Multi-instance slapd support.
+
+  12 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml,
+  openldap-2.4.19-r1.ebuild, openldap-2.4.21.ebuild, openldap-2.4.23.ebuild,
+  openldap-2.4.24.ebuild, openldap-2.4.25-r1.ebuild, openldap-2.4.25.ebuild,
+  openldap-2.4.28-r1.ebuild, openldap-2.4.28.ebuild:
+  Bug #378847: OpenLDAP has a run-time dependency on libtool for loading
+  overlays/modules.
+
+*openldap-2.4.28-r1 (12 Feb 2012)
+
+  12 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/openldap-2.4.6-evolution-ntlm.patch, +files/slapd-confd-2.4.28-r1,
+  +files/slapd-initd-2.4.28-r1, +openldap-2.4.28-r1.ebuild, metadata.xml:
+  Bug #322787: Fix false positve on USE=minimal build safety. Bug #322535:
+  Samba4 overlay support. Bug #337717: missing groff DEPEND. Bug #340987: back-
+  ldbm was removed in the 2.4.x branch. Bug #342439: Connectionless LDAP
+  support. Bug #350295: Clarify slapd.conf vs slapd.d configuration methods. Bug
+  #294350: NTLM auth support for evolution client. Bug #302310: rfc2307bis
+  schema. Bug #302960: slaptest the configuration on startup.
+
+  12 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> openldap-2.4.21.ebuild,
+  openldap-2.4.23.ebuild, openldap-2.4.24.ebuild, openldap-2.4.25-r1.ebuild,
+  openldap-2.4.25.ebuild, openldap-2.4.28.ebuild:
+  Bug #403261: no direct automake need, but OpenLDAP still needs a specific
+  version of aclocal which comes from automake
+
+  12 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> files/slapd-confd,
+  files/slapd-initd:
+  Bug #401801: Fix slapd/net/dbus circular init dependency loop for nss_ldap
+  usecase
+
+  12 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/openldap-2.4.28-gnutls-gcrypt.patch, openldap-2.4.21.ebuild,
+  openldap-2.4.23.ebuild, openldap-2.4.24.ebuild, openldap-2.4.25-r1.ebuild,
+  openldap-2.4.25.ebuild, openldap-2.4.28.ebuild:
+  Bug #337504: compile-fix for gnutls linked with gcrypt. Relies on
+  WANT_AUTOMAKE=none eautoreconf support added to autotools.eclass as openldap
+  configure.in uses AM_INIT_AUTOMAKE but there are no Makefile.am (all
+  Makefile.in are hand-written).
+
+  10 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> openldap-2.3.43-r1.ebuild,
+  openldap-2.4.19-r1.ebuild, openldap-2.4.21.ebuild, openldap-2.4.23.ebuild,
+  openldap-2.4.24.ebuild, openldap-2.4.25-r1.ebuild, openldap-2.4.25.ebuild,
+  openldap-2.4.28.ebuild:
+  Make USE=syslog default on older ebuilds as well, to solve where the logs are
+  vanishing to with the default configuration.
+
+*openldap-2.4.28 (02 Feb 2012)
+
+  02 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/openldap-2.4.28-contrib-smbk5pwd.patch, +openldap-2.4.28.ebuild:
+  Bug #374115: version bump.
+
+  02 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> openldap-2.3.43-r1.ebuild,
+  openldap-2.4.19-r1.ebuild, openldap-2.4.21.ebuild, openldap-2.4.23.ebuild,
+  openldap-2.4.24.ebuild, openldap-2.4.25-r1.ebuild, openldap-2.4.25.ebuild:
+  When upgrading a replicated setup, you need to remove contextCSN as well as
+  the usual entryCSN that is needed in non-replicated setups.
+
+  22 Aug 2011; Robin H. Johnson <robbat2@gentoo.org> openldap-2.3.43-r1.ebuild:
+  Backport FORCE_UPGRADE to old 2.3 major series.
+
+*openldap-2.4.25-r1 (11 Aug 2011)
+
+  11 Aug 2011; Jonathan Callen <abcd@gentoo.org> +openldap-2.4.25-r1.ebuild:
+  Revbump to add prefix support. Warn about issues with slapd on prefix.
+  Reviewed by robbat2.
 
 *openldap-2.4.25 (06 May 2011)
 

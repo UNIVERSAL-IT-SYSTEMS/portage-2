@@ -1,6 +1,48 @@
 # ChangeLog for x11-misc/screengrab
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/screengrab/ChangeLog,v 1.14 2011/05/20 19:47:43 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/screengrab/ChangeLog,v 1.25 2012/06/30 22:02:15 johu Exp $
+
+  30 Jun 2012; Johannes Huber <johu@gentoo.org> -screengrab-0.9.85.ebuild:
+  Remove old.
+
+  30 Jun 2012; Jeff Horelick <jdhore@gentoo.org> screengrab-0.9.90-r1.ebuild:
+  marked x86 per bug 424223
+
+  30 Jun 2012; Agostino Sarubbo <ago@gentoo.org> screengrab-0.9.90-r1.ebuild:
+  Stable for amd64, wrt bug #424223
+
+*screengrab-0.9.90-r1 (19 Jun 2012)
+
+  19 Jun 2012; Davide Pesavento <pesa@gentoo.org> +screengrab-0.9.90-r1.ebuild,
+  -screengrab-0.9.90.ebuild:
+  EAPI=4, fix sed expression to really install docs into the right dir (bug
+  421915), add missing dep on libX11.
+
+*screengrab-0.9.90 (11 Apr 2012)
+
+  11 Apr 2012; Markos Chandras <hwoarang@gentoo.org> +screengrab-0.9.90.ebuild:
+  version bump
+
+  06 Apr 2012; Davide Pesavento <pesa@gentoo.org> -screengrab-0.9.1.ebuild:
+  Remove old.
+
+  24 Nov 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #290906
+
+  19 Nov 2011; Markos Chandras <hwoarang@gentoo.org> screengrab-0.9.85.ebuild:
+  Stable on amd64 wrt bug #387741
+
+  17 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  screengrab-0.9.85.ebuild:
+  x86 stable wrt bug #387741
+
+  13 Nov 2011; Markos Chandras <hwoarang@gentoo.org> screengrab-0.9.85.ebuild:
+  Respect CXXFLAGS thanks to Agostino Sarubbo (ago). Bug #387741
+
+*screengrab-0.9.85 (19 Aug 2011)
+
+  19 Aug 2011; Markos Chandras <hwoarang@gentoo.org> +screengrab-0.9.85.ebuild:
+  Version bump
 
   20 May 2011; Markos Chandras <hwoarang@gentoo.org>
   -screengrab-0.8.1-r1.ebuild, -screengrab-0.9.ebuild:
@@ -67,4 +109,3 @@
   +screengrab-0.6.1.ebuild, +metadata.xml:
   Initial commit of screengrab application. Fixes bug #307093. Thanks to
   tuupic <me@tuupic.org.ru> for the initial ebuild. 
-

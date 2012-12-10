@@ -1,6 +1,15 @@
 # ChangeLog for dev-python/vobject
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/vobject/ChangeLog,v 1.12 2010/07/11 12:43:51 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/vobject/ChangeLog,v 1.15 2012/04/01 04:42:41 floppym Exp $
+
+  01 Apr 2012; Mike Gilbert <floppym@gentoo.org> vobject-0.8.1c.ebuild:
+  python-dateutil no longer needs a slot dep.
+
+  01 Apr 2012; Mike Gilbert <floppym@gentoo.org> vobject-0.8.1c.ebuild:
+  Add runtime dependency on setuptools.
+
+  24 Jan 2012; Kacper Kowalik <xarthisius@gentoo.org> vobject-0.8.1c.ebuild:
+  Depend on proper slot of dev-python/python-dateutil
 
   11 Jul 2010; Christian Faulhammer <fauli@gentoo.org>
   vobject-0.8.1c.ebuild:

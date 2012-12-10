@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/jack-rack/jack-rack-1.4.8_rc1.ebuild,v 1.1 2011/07/30 10:41:59 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/jack-rack/jack-rack-1.4.8_rc1.ebuild,v 1.3 2012/11/30 11:59:44 aballier Exp $
 
 EAPI=4
 inherit autotools eutils flag-o-matic toolchain-funcs
@@ -15,7 +15,7 @@ SRC_URI="${DEB_URI}/${MY_P}.orig.tar.gz ${DEB_URI}/${MY_P}-1.debian.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="alsa gnome lash xml"
+IUSE="alsa gnome lash +xml"
 
 RDEPEND=">=x11-libs/gtk+-2.12:2
 	>=media-libs/ladspa-sdk-1.12
@@ -27,7 +27,7 @@ RDEPEND=">=x11-libs/gtk+-2.12:2
 	xml? ( dev-libs/libxml2
 		media-libs/liblrdf )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
 
 DOCS=( AUTHORS BUGS ChangeLog NEWS README THANKS TODO WISHLIST )
@@ -42,7 +42,8 @@ src_prepare() {
 
 	epatch \
 		"${FILESDIR}"/${PN}-1.4.6-noalsa.patch \
-		"${FILESDIR}"/${PN}-1.4.7-disable_deprecated.patch
+		"${FILESDIR}"/${PN}-1.4.7-disable_deprecated.patch \
+		"${FILESDIR}"/${P}-noxml.patch
 
 	sed -i \
 		-e '/Categories/s:Application:GTK:' \

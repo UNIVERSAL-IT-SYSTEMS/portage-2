@@ -1,6 +1,27 @@
 # ChangeLog for sci-calculators/tilp2
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-calculators/tilp2/ChangeLog,v 1.6 2011/03/15 21:23:34 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-calculators/tilp2/ChangeLog,v 1.10 2012/11/29 12:01:14 jlec Exp $
+
+*tilp2-1.16-r1 (29 Nov 2012)
+
+  29 Nov 2012; Justin Lecher <jlec@gentoo.org> -tilp2-1.16.ebuild,
+  +tilp2-1.16-r1.ebuild, metadata.xml:
+  Call default phase function for src_install, #445101
+
+  04 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -tilp2-1.14.ebuild,
+  tilp2-1.16.ebuild:
+  keyword amd64-linux, x86-linux
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> tilp2-1.14.ebuild,
+  tilp2-1.16.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*tilp2-1.16 (19 Feb 2012)
+
+  19 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> +tilp2-1.16.ebuild,
+  -tilp2-1.12.ebuild:
+  Version bump, fixes bug #379703 by Michael (kensington)
+  <gentoo@scribeofthenile.com>. Drop old
 
 *tilp2-1.14 (15 Mar 2011)
 
@@ -49,4 +70,3 @@
   15 Jun 2007; Christian Helbling <helch@gmx.ch> +tilp2-1.03.ebuild,
   +metadata.xml:
   New ebuild for bug 109220 thanks to Henning Schild
-

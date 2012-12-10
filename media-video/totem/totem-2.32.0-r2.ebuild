@@ -1,11 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/totem/totem-2.32.0-r2.ebuild,v 1.4 2011/07/17 21:19:14 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/totem/totem-2.32.0-r2.ebuild,v 1.12 2012/05/05 08:58:51 jdhore Exp $
 
 EAPI="3"
 GCONF_DEBUG="yes"
 PYTHON_DEPEND="python? 2"
 PYTHON_USE_WITH="threads"
+PYTHON_USE_WITH_OPT="python"
 
 inherit autotools eutils gnome2 multilib python
 
@@ -16,9 +17,9 @@ SRC_URI="${SRC_URI} http://dev.gentoo.org/~pacho/gnome/${P}-patches.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 
-IUSE="bluetooth debug doc galago iplayer lirc nautilus nsplugin python tracker upnp +youtube" #zeroconf
+IUSE="bluetooth debug doc iplayer lirc nautilus nsplugin python tracker upnp +youtube" #zeroconf
 
 # TODO:
 # Cone (VLC) plugin needs someone with the right setup (remi ?)
@@ -57,7 +58,6 @@ RDEPEND=">=dev-libs/glib-2.25.11:2
 	>=x11-libs/libXxf86vm-1.0.1
 
 	bluetooth? ( net-wireless/bluez )
-	galago? ( >=dev-libs/libgalago-0.5.2 )
 	iplayer? (
 		dev-python/pygobject:2
 		dev-python/pygtk:2
@@ -71,6 +71,7 @@ RDEPEND=">=dev-libs/glib-2.25.11:2
 	tracker? ( >=app-misc/tracker-0.8.1 )
 	upnp? ( media-video/coherence )
 	youtube? (
+		<dev-libs/libgdata-0.9
 		>=dev-libs/libgdata-0.4
 		net-libs/libsoup:2.4
 		media-plugins/gst-plugins-soup:0.10
@@ -86,7 +87,7 @@ DEPEND="${RDEPEND}
 	app-text/scrollkeeper
 	>=app-text/gnome-doc-utils-0.20.3
 	>=dev-util/intltool-0.40
-	>=dev-util/pkgconfig-0.20
+	virtual/pkgconfig
 	app-text/docbook-xml-dtd:4.5
 	gnome-base/gnome-common
 	dev-util/gtk-doc-am
@@ -116,7 +117,6 @@ pkg_setup() {
 
 	local plugins="properties,thumbnail,screensaver,ontop,gromit,media-player-keys,skipto,brasero-disc-recorder,screenshot,chapters"
 	use bluetooth && plugins="${plugins},bemused"
-	use galago && plugins="${plugins},galago"
 	use iplayer && plugins="${plugins},iplayer"
 	use lirc && plugins="${plugins},lirc"
 	use python && plugins="${plugins},opensubtitles,jamendo,pythonconsole,dbus-service"
@@ -141,8 +141,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	gnome2_src_prepare
-
 	# Use fixed gnome-doc-utils.make, bug #348403 (can be dropped in next bump)
 	cp -f /usr/share/gnome-doc-utils/gnome-doc-utils.make . || die
 
@@ -155,9 +153,10 @@ src_prepare() {
 	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
 
+	gnome2_src_prepare
+
 	# disable pyc compiling
-	mv py-compile py-compile.orig
-	ln -s $(type -P true) py-compile
+	echo > py-compile
 }
 
 src_configure() {
@@ -197,5 +196,5 @@ pkg_postinst() {
 
 pkg_postrm() {
 	gnome2_pkg_postrm
-	python_mod_cleanup /usr/$(get_libdir)/totem/plugins
+	use python && python_mod_cleanup /usr/$(get_libdir)/totem/plugins
 }

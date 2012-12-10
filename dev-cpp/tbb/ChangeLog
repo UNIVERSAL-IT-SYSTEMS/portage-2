@@ -1,6 +1,82 @@
 # ChangeLog for dev-cpp/tbb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/tbb/ChangeLog,v 1.12 2011/05/31 21:34:13 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/tbb/ChangeLog,v 1.30 2012/12/05 20:21:36 bicatali Exp $
+
+  05 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Switching maintainership to sci herd
+
+  05 Dec 2012; Justin Lecher <jlec@gentoo.org>
+  +files/tbb-4.1.20121003-ldflags.patch, metadata.xml:
+  Version BUmp
+
+  04 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> -tbb-4.1.20120718.ebuild:
+  Removed old w.r.t. bug #442006
+
+*tbb-4.1.20121003 (30 Nov 2012)
+
+  30 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> +tbb-4.1.20121003.ebuild,
+  metadata.xml:
+  Version bump. Now installs tbbmalloc_proxy library. Simplified the ebuild for
+  better maintainability and better propagation of toolchain
+
+*tbb-4.1.20120718 (13 Sep 2012)
+
+  13 Sep 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/tbb-4.1.20120718-ldflags.patch, +tbb-4.1.20120718.ebuild,
+  tbb-4.0.297.ebuild:
+  Version bump. Updated patch to respect LDFLAGS. Stable and commercially-
+  aligned relaseses now merged to stable
+
+  08 Aug 2012; Julian Ospald <hasufell@gentoo.org> tbb-4.0.297.ebuild:
+  filter out --as-needed wrt #418453#c3
+
+  01 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> tbb-4.0.297.ebuild:
+  Fixed for cross-compiling, bug #428406, thanks to Thomas
+
+  18 Jun 2012; Julian Ospald <hasufell@gentoo.org> tbb-4.0.297.ebuild:
+  stable for x86 wrt bug #412675
+
+  05 Jun 2012; Julian Ospald <hasufell@gentoo.org> tbb-4.0.297.ebuild:
+  restricting test for stabilization wrt #412675
+
+  04 Jun 2012; Julian Ospald <hasufell@gentoo.org> tbb-4.0.297.ebuild:
+  remove flag-o-matic stuff, cause we already patch underlinking
+
+  04 Jun 2012; Zac Medico <zmedico@gentoo.org> tbb-4.0.297.ebuild:
+  inherit multilib for get_libdir
+
+  01 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  -files/tbb-3.0.174-gcc46.patch, -tbb-3.0.221.ebuild, -tbb-4.0.278.ebuild,
+  tbb-4.0.297.ebuild, +files/tbb-4.0.297-ldflags.patch,
+  +files/tbb-4.0.297-underlinking.patch:
+  Respect LDFLAGS (bug #418453) and fixed underlinking at test phase (bug
+  #418447), thanks hasufell for his patches
+
+  20 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> tbb-4.0.297.ebuild:
+  Update fix for compiler calls
+
+  20 Mar 2012; Agostino Sarubbo <ago@gentoo.org> tbb-4.0.297.ebuild:
+  Stable for amd64, wrt bug #408975
+
+*tbb-4.0.297 (27 Feb 2012)
+
+  27 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> -tbb-2.2.013-r1.ebuild,
+  +tbb-4.0.297.ebuild:
+  Version bump. Introduced a pkg-config file, bug #405723
+
+  07 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> tbb-4.0.278.ebuild:
+  Remove html files from include directory, thanks a3li bug #398003
+
+*tbb-4.0.278 (20 Dec 2011)
+
+  20 Dec 2011; Sébastien Fabbro <bicatali@gentoo.org> -tbb-3.0.174.ebuild,
+  -tbb-3.0.196.ebuild, +tbb-4.0.278.ebuild:
+  Version bump
+
+*tbb-3.0.221 (02 Aug 2011)
+
+  02 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> +tbb-3.0.221.ebuild:
+  Version bump, switched to EAPI4
 
 *tbb-3.0.196 (31 May 2011)
 
@@ -75,4 +151,3 @@
   +tbb-2.1.015.ebuild:
   Initial import. The ebuild differs much from the initial ebuild submitted
   by Matthew McCormick (bug #228641)
-

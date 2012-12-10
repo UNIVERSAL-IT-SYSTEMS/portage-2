@@ -1,6 +1,46 @@
 # ChangeLog for sci-libs/cholmod
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/cholmod/ChangeLog,v 1.25 2011/02/23 19:53:33 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/cholmod/ChangeLog,v 1.35 2012/11/14 20:29:00 bicatali Exp $
+
+  14 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> cholmod-2.0.1.ebuild:
+  Roll new version supporting USE=-metis
+
+  12 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> cholmod-2.0.1.ebuild:
+  Added configuration fixes for cuda (bug #442858)
+
+*cholmod-2.0.1 (12 Nov 2012)
+
+  12 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> +cholmod-2.0.1.ebuild,
+  metadata.xml:
+  Version bump
+
+  15 Oct 2012;  <naota@gentoo.org> cholmod-1.7.4.ebuild:
+  Add ~x86-fbsd.
+
+  30 May 2012; Alexis Ballier <aballier@gentoo.org> cholmod-1.7.4.ebuild:
+  keyword ~amd64-fbsd
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> cholmod-1.6.0-r1.ebuild,
+  cholmod-1.7.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Apr 2012; Justin Lecher <jlec@gentoo.org> cholmod-1.6.0-r1.ebuild,
+  cholmod-1.7.4.ebuild:
+  Drop unnessecary die
+
+  13 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> -cholmod-1.7.1.ebuild,
+  -cholmod-1.7.3.ebuild, cholmod-1.7.4.ebuild,
+  +files/cholmod-1.7.4-parmetis32.patch:
+  Fixed for parmetis-3.2, bug #399483
+
+  26 Jan 2012; Justin Lecher <jlec@gentoo.org> cholmod-1.7.4.ebuild,
+  +files/cholmod-1.7.4-debug.patch, metadata.xml:
+  Add support for USE=debug, #378525
+
+*cholmod-1.7.4 (20 Jan 2012)
+
+  20 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> +cholmod-1.7.4.ebuild:
+  Version bump
 
 *cholmod-1.7.3 (23 Feb 2011)
 
@@ -101,4 +141,3 @@
   +files/cholmod-1.6.0-autotools.patch, +metadata.xml,
   +cholmod-1.6.0.ebuild:
   Initial import. Thanks to Justin Bronder for his work, see bug #173900
-

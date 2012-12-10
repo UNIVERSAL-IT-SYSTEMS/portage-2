@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/geant/geant-4.9.2_p02.ebuild,v 1.15 2011/06/28 13:34:44 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/geant/geant-4.9.2_p02.ebuild,v 1.18 2012/10/24 19:42:46 ulm Exp $
 
 EAPI=2
 
-inherit eutils fortran-2 toolchain-funcs versionator
+inherit eutils fortran-2 multilib toolchain-funcs versionator
 
 PV1=$(get_version_component_range 1 ${PV})
 PV2=$(get_version_component_range 2 ${PV})
@@ -32,9 +32,8 @@ IUSE="aida athena +data dawn debug examples gdml geant3 global minimal +motif
 	+opengl openinventor qt4 +raytracerx static +vrml zlib"
 
 RDEPEND="
-	virtual/fortran
 	<sci-physics/clhep-2.1
-	motif? ( x11-libs/openmotif:0 )
+	motif? ( x11-libs/motif:0 )
 	athena? ( x11-libs/libXaw )
 	qt4? ( x11-libs/qt-gui:4 )
 	openinventor? ( >=media-libs/openinventor-2.1.5.10-r3 )
@@ -43,7 +42,7 @@ RDEPEND="
 		x11-libs/libXmu )
 	opengl? (
 		virtual/opengl
-		athena? ( x11-libs/Xaw3d )
+		athena? ( x11-libs/libXaw3d )
 		qt4? ( x11-libs/qt-opengl:4 ) )
 	gdml? ( dev-libs/xerces-c )
 	geant3? ( sci-physics/geant:3 )

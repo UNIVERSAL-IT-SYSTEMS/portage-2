@@ -1,14 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haddock/haddock-2.6.1.ebuild,v 1.13 2011/06/05 12:19:18 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haddock/haddock-2.6.1.ebuild,v 1.15 2012/09/14 07:03:20 qnikst Exp $
 
 CABAL_FEATURES="bin lib"
 # don't enable profiling as the 'ghc' package is not built with profiling
-inherit haskell-cabal autotools pax-utils
+inherit eutils haskell-cabal autotools pax-utils
 
 DESCRIPTION="A documentation-generation tool for Haskell libraries"
 HOMEPAGE="http://www.haskell.org/haddock/"
-SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
+SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -32,6 +32,9 @@ src_unpack() {
 	# remove dependency on ghc-paths, we include it right into haddock instead
 	sed -e "s|build-depends: ghc-paths|build-depends:|" \
 		-i "${S}/${PN}.cabal"
+
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-cabal-1.8.patch
 
 	# copy of slightly modified version of GHC.Paths
 	mkdir "${S}/src/GHC"

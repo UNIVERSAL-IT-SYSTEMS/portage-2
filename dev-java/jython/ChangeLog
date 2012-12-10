@@ -1,6 +1,85 @@
 # ChangeLog for dev-java/jython
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jython/ChangeLog,v 1.70 2010/12/13 14:11:43 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jython/ChangeLog,v 1.82 2012/12/02 10:16:55 mgorny Exp $
+
+*jython-2.5.3-r2 (02 Dec 2012)
+
+  02 Dec 2012; Michał Górny <mgorny@gentoo.org> +jython-2.5.3-r2.ebuild:
+  Minor cleanup. Get rid of python.eclass, install epython.py for python-exec.
+
+*jython-2.2.1-r2 (27 Sep 2012)
+
+  27 Sep 2012; Ralph Sennhauser <sera@gentoo.org> +jython-2.2.1-r2.ebuild,
+  +files/jython-2.2.1-build.xml.patch:
+  Require >=jdk-1.5 for javacc-5.0. #315557
+  Don't build test classes in src_compile, tests are already restricted and now
+  fail to build with -source 1.5.
+
+*jython-2.5.2-r2 (26 Aug 2012)
+
+  26 Aug 2012; Ian Whyman <thev00d00@gentoo.org> -jython-2.5.2-r1.ebuild,
+  +jython-2.5.2-r2.ebuild,
+  +files/jython-2.5.2-sax-parser-class-not-found.patch:
+  Add patch to fix SAXParser ClassNotFoundException #431754
+
+*jython-2.5.3-r1 (26 Aug 2012)
+
+  26 Aug 2012; Ian Whyman <thev00d00@gentoo.org> -jython-2.5.2.ebuild,
+  -jython-2.5.3.ebuild, +jython-2.5.3-r1.ebuild:
+  Incorporate fixes from 2.5.2-r1 into 2.5.3-r1
+
+*jython-2.5.3 (25 Aug 2012)
+
+  25 Aug 2012; Ian Whyman <thev00d00@gentoo.org> +jython-2.5.3.ebuild:
+  Version bump to 2.5.3
+
+  20 Aug 2012; Christoph Junghans <ottxor@gentoo.org> jython-2.5.2-r1.ebuild:
+  added prefix keywords
+
+*jython-2.5.2-r1 (31 Jul 2012)
+
+  31 Jul 2012; Ralph Sennhauser <sera@gentoo.org> +jython-2.5.2-r1.ebuild,
+  +files/jython-2.5.2-sax-parser-fix.patch:
+  Backport upstream sax fix, needed for javatoolkit and possibly others.
+  JYTHON_SYSTEM_CACHEDIR is buggy, every ebuild not inheriting python.eclass
+  and calling python_pkg_setup would have to set it, also it's a per user
+  system cache dir and so with reduced previleges can't even be created -> drop
+  it.
+  Install sandbox control file as the jvm opens the classfiles rw.
+  Compile class files during src phases instead of creating orphans.
+
+*jython-2.5.2 (18 Jul 2012)
+
+  18 Jul 2012; Ralph Sennhauser <sera@gentoo.org> +jython-2.5.2.ebuild,
+  +files/jython-2.5.2-build.xml.patch,
+  +files/jython-2.5.2-distutils_byte_compilation.patch,
+  +files/jython-2.5.2-distutils_scripts_location.patch,
+  +files/jython-2.5.2-respect_PYTHONPATH.patch, metadata.xml:
+  Version bump. #366105
+  Drop base.eclass, add missing eutils.eclass
+  Drop dummy useflags ssl threads xml.
+  Make readline (libreadline-java) optional dependency.
+  Cleanup deps.
+  Don't build tests unconditionally.
+  Switch to generation 2 style build.
+
+  05 Jun 2012; Ralph Sennhauser <sera@gentoo.org> -jython-2.5.0-r1.ebuild,
+  -files/jython-2.5.0-build.patch, -jython-2.5.1.ebuild,
+  -jython-2.5.1-r1.ebuild:
+  Remove old as requested by Arfrever.
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> jython-2.2.1-r1.ebuild,
+  jython-2.5.0-r1.ebuild, jython-2.5.1.ebuild, jython-2.5.1-r1.ebuild,
+  jython-2.5.1-r2.ebuild:
+  Move EAPI assignment to top of ebuild, bug 411875.
+
+  01 Jan 2012; Ralph Sennhauser <sera@gentoo.org> jython-2.1-r11.ebuild:
+  Drop ia64 support #345433
+
+  16 Nov 2011; Markos Chandras <hwoarang@gentoo.org> jython-2.2.1-r1.ebuild,
+  jython-2.5.0-r1.ebuild, jython-2.5.1-r1.ebuild, jython-2.5.1-r2.ebuild,
+  jython-2.5.1.ebuild:
+  Update LICENSE. Patch by Arfrever
 
 *jython-2.5.1-r2 (13 Dec 2010)
 
@@ -284,4 +363,3 @@
 
   29 Apr 2003; Todd Berman <tberman@gentoo.org> jython-2.1.ebuild:
   Initial import.
-

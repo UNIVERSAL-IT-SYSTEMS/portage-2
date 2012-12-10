@@ -1,6 +1,21 @@
 # ChangeLog for games-mud/crystal
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-mud/crystal/ChangeLog,v 1.8 2009/08/13 21:44:25 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-mud/crystal/ChangeLog,v 1.12 2012/03/06 20:37:57 ranger Exp $
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> crystal-0.2.4.ebuild:
+  Marking crystal-0.2.4 ppc for bug 398609
+
+  21 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> crystal-0.2.4.ebuild:
+  x86 stable wrt bug #398609
+
+  17 Jan 2012; Agostino Sarubbo <ago@gentoo.org> crystal-0.2.4.ebuild:
+  Stable for amd64, wrt bug #398609
+
+*crystal-0.2.4 (10 Dec 2011)
+
+  10 Dec 2011; Michael Sterrett <mr_bones_@gentoo.org> +crystal-0.2.4.ebuild,
+  +files/crystal-0.2.4-gcc43.patch:
+  version bump with patching from Michael (kensington) (bug #394129)
 
   13 Aug 2009; Michael Sterrett <mr_bones_@gentoo.org> crystal-0.2.2.ebuild:
   avoid colliding with xscreensaver (bug #281191)

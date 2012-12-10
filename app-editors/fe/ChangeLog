@@ -1,6 +1,21 @@
 # ChangeLog for app-editors/fe
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/fe/ChangeLog,v 1.7 2008/07/28 18:25:56 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/fe/ChangeLog,v 1.11 2012/06/08 11:49:36 phajdan.jr Exp $
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> fe-1.9.ebuild:
+  x86 stable wrt bug #418561
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> fe-1.9.ebuild:
+  Stable for amd64, wrt bug #418561
+
+*fe-1.9 (16 Mar 2012)
+
+  16 Mar 2012; Patrick Lauer <patrick@gentoo.org> +fe-1.9.ebuild:
+  Bump
+
+  27 Aug 2011; Ulrich Mueller <ulm@gentoo.org> -files/fe-1.6-nostrip.patch,
+  fe-1.8.ebuild, +files/fe-1.8-makefile.patch:
+  Fix parallel make issue, bug 380865. EAPI bump.
 
   28 Jul 2008; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
   Add USE flag description to metadata wrt GLEP 56.

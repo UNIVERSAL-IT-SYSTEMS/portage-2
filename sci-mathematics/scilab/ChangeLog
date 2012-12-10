@@ -1,6 +1,37 @@
 # ChangeLog for sci-mathematics/scilab
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/scilab/ChangeLog,v 1.58 2011/06/28 13:56:38 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/scilab/ChangeLog,v 1.65 2012/10/16 19:06:56 jlec Exp $
+
+  16 Oct 2012; Justin Lecher <jlec@gentoo.org> scilab-4.1.2-r1.ebuild,
+  scilab-4.1.2-r2.ebuild, scilab-4.1.2-r3.ebuild:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  13 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> scilab-4.1.2-r1.ebuild:
+  Revert to ~ppc wrt #360601
+
+  05 Dec 2011; Tony Vroon <chainsaw@gentoo.org> scilab-4.1.2-r3.ebuild:
+  Marked stable on AMD64 as I am told there are no regressions over current
+  stable, despite worrying run-time behaviour. Based on arch testing by
+  Agostino "ago" Sarubbo, Elijah "Armageddon" El Lazkani & Ian "idella4"
+  Delaney in bug #360601.
+
+  20 Sep 2011; Thomas Kahle <tomka@gentoo.org> scilab-4.1.2-r3.ebuild:
+  x86 stable per bug 360601
+
+*scilab-4.1.2-r3 (19 Sep 2011)
+
+  19 Sep 2011; Justin Lecher <jlec@gentoo.org> scilab-4.1.2-r2.ebuild,
+  +scilab-4.1.2-r3.ebuild:
+  Corrected missing revbump, as noticed by darkside
+
+  19 Sep 2011; Justin Lecher <jlec@gentoo.org> scilab-4.1.2-r2.ebuild,
+  +files/scilab-4.1.2-gcc45-2.patch:
+  Fix for seqf on zterm, thanks Maciej Szmigiero for the patch , #301625
+
+  02 Aug 2011; Matt Turner <mattst88@gentoo.org> scilab-4.1.2-r1.ebuild,
+  scilab-4.1.2-r2.ebuild:
+  Renamed x11-libs/Xaw3d to x11-libs/libXaw3d.
 
   28 Jun 2011; Justin Lecher <jlec@gentoo.org> scilab-4.1.2-r1.ebuild,
   scilab-4.1.2-r2.ebuild, metadata.xml:

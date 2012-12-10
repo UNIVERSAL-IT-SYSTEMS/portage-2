@@ -1,6 +1,98 @@
 # ChangeLog for dev-php/xdebug-client
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/xdebug-client/ChangeLog,v 1.29 2011/07/29 14:16:40 olemarkus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/xdebug-client/ChangeLog,v 1.51 2012/12/09 17:16:23 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> xdebug-client-2.2.0.ebuild:
+  Stable for ppc64, wrt bug #427024
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xdebug-client-2.2.1.ebuild:
+  Stable for x86, wrt bug #433267
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> xdebug-client-2.2.1.ebuild:
+  Stable for amd64, wrt bug #433267
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> xdebug-client-2.2.1.ebuild:
+  eapi4
+
+  10 Oct 2012; Brent Baude <ranger@gentoo.org> xdebug-client-2.2.1.ebuild:
+  Marking xdebug-client-2.2.1 ppc for bug 433267
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> xdebug-client-2.1.0.ebuild,
+  xdebug-client-2.1.1.ebuild, xdebug-client-2.1.2.ebuild,
+  xdebug-client-2.1.3.ebuild, xdebug-client-2.1.4.ebuild,
+  xdebug-client-2.2.0_rc1.ebuild, xdebug-client-2.2.0_rc2.ebuild,
+  xdebug-client-2.2.0.ebuild, xdebug-client-2.2.1.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  24 Aug 2012; Jeroen Roovers <jer@gentoo.org> xdebug-client-2.1.0.ebuild,
+  xdebug-client-2.1.2.ebuild:
+  Marked ~hppa (bug #422057).
+
+  14 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  xdebug-client-2.2.0.ebuild:
+  Stable ppc, bug #422057
+
+  14 Aug 2012; Johannes Huber <johu@gentoo.org> xdebug-client-2.2.0.ebuild:
+  Stable for x86, wrt bug #422057
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> xdebug-client-2.2.0.ebuild:
+  Stable for amd64, wrt bug #422057
+
+*xdebug-client-2.2.1 (17 Jul 2012)
+
+  17 Jul 2012; Ole Markus With <olemarkus@gentoo.org>
+  +xdebug-client-2.2.1.ebuild:
+  version bump
+
+*xdebug-client-2.2.0 (08 May 2012)
+
+  08 May 2012; Ole Markus With <olemarkus@gentoo.org>
+  +xdebug-client-2.2.0.ebuild:
+  Version bump
+
+*xdebug-client-2.2.0_rc2 (02 May 2012)
+
+  02 May 2012; Ole Markus With <olemarkus@gentoo.org>
+  +xdebug-client-2.2.0_rc2.ebuild:
+  Bump xdebug rc
+
+*xdebug-client-2.2.0_rc1 (07 Apr 2012)
+
+  07 Apr 2012; Ole Markus With <olemarkus@gentoo.org>
+  +xdebug-client-2.2.0_rc1.ebuild:
+  Version bump. RC that works with php 5.4
+
+*xdebug-client-2.1.4 (13 Mar 2012)
+
+  13 Mar 2012; Ole Markus With <olemarkus@gentoo.org>
+  +xdebug-client-2.1.4.ebuild:
+  Version bump
+
+  25 Feb 2012; Raúl Porcel <armin76@gentoo.org> xdebug-client-2.1.2.ebuild:
+  alpha/ia64/sparc stable wrt #400323
+
+  09 Feb 2012; Jeroen Roovers <jer@gentoo.org> xdebug-client-2.1.2.ebuild:
+  Stable for HPPA (bug #400323).
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xdebug-client-2.1.2.ebuild:
+  ppc stable wrt #400323
+
+  29 Jan 2012; Ole Markus With <olemarkus@gentoo.org> Manifest:
+  Regenerated hashes for 2.1.3
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  xdebug-client-2.1.2.ebuild:
+  x86 stable wrt bug #400323
+
+  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org> xdebug-client-2.1.2.ebuild:
+  Stable for amd64, wrt bug #400323
+
+*xdebug-client-2.1.3 (26 Jan 2012)
+
+  26 Jan 2012; Ole Markus With <olemarkus@gentoo.org>
+  +xdebug-client-2.1.3.ebuild:
+  Version bump
 
 *xdebug-client-2.1.2 (29 Jul 2011)
 
@@ -139,4 +231,3 @@
   27 Oct 2006; Sebastian Bergmann <sebastian@gentoo.org> +metadata.xml,
   +xdebug-client-2.0.0_rc1.ebuild:
   Initial ebuild for bug #153019.
-

@@ -1,6 +1,64 @@
 # ChangeLog for dev-haskell/mtl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/mtl/ChangeLog,v 1.40 2011/06/05 13:12:41 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/mtl/ChangeLog,v 1.56 2012/12/08 15:55:49 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> mtl-2.1.2.ebuild:
+  Stable for ppc64, wrt bug #441154
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> mtl-2.1.2.ebuild:
+  Stable for ppc, wrt bug #441154
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> mtl-2.1.1.ebuild:
+  Stable for ppc64, wrt bug #421351
+
+  07 Dec 2012; <ago@gentoo.org> mtl-2.1.2.ebuild:
+  Stable for x86, wrt bug #441154
+
+  07 Dec 2012; <ago@gentoo.org> mtl-2.1.2.ebuild:
+  Stable for amd64, wrt bug #441154
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> mtl-2.1.1.ebuild:
+  Stable for ppc, wrt bug #421351
+
+*mtl-2.1.2-r1 (24 Nov 2012)
+
+  24 Nov 2012; Mark Wright <gienah@gentoo.org> +mtl-2.1.2-r1.ebuild:
+  Add EAPI=5 mtl-2.1.2-r1
+
+  25 Sep 2012; Andreas Schuerch <nativemad@gentoo.org> mtl-2.1.1.ebuild:
+  x86 stable, see bug 421351
+
+*mtl-2.1.2 (14 Sep 2012)
+
+  14 Sep 2012; Mark Wright <gienah@gentoo.org> +mtl-2.1.2.ebuild:
+  Bump mtl to 2.1.2
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> mtl-1.1.0.2.ebuild,
+  mtl-1.1.1.1.ebuild, mtl-2.0.1.0.ebuild, mtl-2.1.1.ebuild:
+  move dev-haskell/mtl/mtl-1.1.0.2.ebuild ebuild to mirror://hackage
+
+  07 Sep 2012; Agostino Sarubbo <ago@gentoo.org> mtl-2.1.1.ebuild:
+  Stable for amd64, wrt bug #421351
+
+*mtl-2.1.1 (03 Jun 2012)
+
+  03 Jun 2012; Mark Wright <gienah@gentoo.org> +mtl-2.1.1.ebuild:
+  Bump mtl to 2.1.1 for haskell-platform-2012.2.0.0
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> mtl-1.1.1.1.ebuild:
+  Marking mtl-1.1.1.1 ppc64 for bug 399983
+
+*mtl-2.0.1.0 (05 Dec 2011)
+
+  05 Dec 2011; Sergei Trofimovich <slyfox@gentoo.org> +mtl-2.0.1.0.ebuild,
+  metadata.xml:
+  Major version bump (dev-vcs/git-annex depend).
+
+  03 Dec 2011; Markos Chandras <hwoarang@gentoo.org> mtl-1.1.1.1.ebuild:
+  Stable on amd64 wrt bug #391591
+
+  01 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> mtl-1.1.1.1.ebuild:
+  x86 stable wrt bug #391591
 
   05 Jun 2011; Sergei Trofimovich <slyfox@gentoo.org> -mtl-1.0.ebuild,
   -mtl-1.0-r1.ebuild, -mtl-1.0.1.ebuild, -mtl-1.1.0.0.ebuild:
@@ -139,4 +197,3 @@
 
   11 Mar 2007; <kolmodin@gentoo.org> +mtl-1.0.ebuild:
   Add dummy package meant for GHC 6.4
-

@@ -1,6 +1,15 @@
 # ChangeLog for app-cdr/xcdroast
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/xcdroast/ChangeLog,v 1.70 2011/04/30 16:39:07 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/xcdroast/ChangeLog,v 1.72 2012/05/03 07:51:50 jdhore Exp $
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> xcdroast-0.98_alpha16.ebuild,
+  xcdroast-0.98_alpha16-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  07 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  xcdroast-0.98_alpha16.ebuild, xcdroast-0.98_alpha16-r1.ebuild:
+  Don't call dodoc on directory wrt bug 368883 by Diego Elio Pettenò
+  <flameeyes@gentoo.org>
 
   30 Apr 2011; Raúl Porcel <armin76@gentoo.org>
   xcdroast-0.98_alpha16-r1.ebuild:

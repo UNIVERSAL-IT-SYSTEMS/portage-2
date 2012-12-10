@@ -1,6 +1,37 @@
 # ChangeLog for app-vim/supertab
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-vim/supertab/ChangeLog,v 1.35 2011/07/21 00:41:25 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-vim/supertab/ChangeLog,v 1.44 2012/12/04 11:23:20 ago Exp $
+
+  04 Dec 2012; <ago@gentoo.org> supertab-2.0.ebuild:
+  Stable for x86, wrt bug #441130
+
+  04 Dec 2012; Anthony G. Basile <blueness@gentoo.org> supertab-2.0.ebuild:
+  stable ppc, bug #441130
+
+  03 Dec 2012; <ago@gentoo.org> supertab-2.0.ebuild:
+  Stable for amd64, wrt bug #441130
+
+  03 Aug 2012; Tim Harder <radhermit@gentoo.org> -supertab-1.1.ebuild,
+  -supertab-1.5.ebuild:
+  Remove old.
+
+*supertab-2.0 (03 Aug 2012)
+
+  03 Aug 2012; Tim Harder <radhermit@gentoo.org> +supertab-2.0.ebuild:
+  Version bump.
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> supertab-1.6.ebuild:
+  Marking supertab-1.6 ppc for bug 393563
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> supertab-1.6.ebuild:
+  x86 stable wrt bug #393563
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> supertab-1.1.ebuild,
+  supertab-1.5.ebuild, supertab-1.6.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  09 Dec 2011; Markos Chandras <hwoarang@gentoo.org> supertab-1.6.ebuild:
+  Stable on amd64 wrt bug #393563
 
   21 Jul 2011; Tim Harder <radhermit@gentoo.org> supertab-1.1.ebuild,
   supertab-1.5.ebuild, supertab-1.6.ebuild:
@@ -116,5 +147,3 @@
   06 Sep 2003; Aron Griffis <agriffis@gentoo.org> supertab-0.31.ebuild:
   Initial import of supertab vim plugin, submitted by Ciaran McCreesh in bug
   27782
-
-

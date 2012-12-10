@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-pda/jpilot/jpilot-1.8.1.ebuild,v 1.1 2011/06/15 20:42:05 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-pda/jpilot/jpilot-1.8.1.ebuild,v 1.3 2012/08/29 03:22:02 blueness Exp $
 
 EAPI=4
 inherit autotools eutils
@@ -11,7 +11,7 @@ SRC_URI="http://www.jpilot.org/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~x86"
 IUSE="nls"
 
 RDEPEND=">=app-pda/pilot-link-0.12.5
@@ -20,7 +20,7 @@ RDEPEND=">=app-pda/pilot-link-0.12.5
 DEPEND="${RDEPEND}
 	nls? ( dev-util/intltool
 		sys-devel/gettext )
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-char.patch

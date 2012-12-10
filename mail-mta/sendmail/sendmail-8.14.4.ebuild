@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/sendmail/sendmail-8.14.4.ebuild,v 1.9 2011/04/22 16:12:51 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/sendmail/sendmail-8.14.4.ebuild,v 1.12 2012/11/06 11:21:03 eras Exp $
 
 EAPI="2"
 
-inherit eutils toolchain-funcs
+inherit eutils multilib toolchain-funcs user
 
 DESCRIPTION="Widely-used Mail Transport Agent (MTA)"
 HOMEPAGE="http://www.sendmail.org/"
@@ -31,7 +31,6 @@ RDEPEND="${DEPEND}
 	!mail-mta/exim
 	!mail-mta/mini-qmail
 	!mail-mta/msmtp
-	!mail-mta/nbsmtp
 	!mail-mta/netqmail
 	!mail-mta/nullmailer
 	!mail-mta/postfix
@@ -48,11 +47,8 @@ PDEPEND="!mbox? ( mail-filter/procmail )"
 LIBMILTER_VER=1.0.1
 
 pkg_setup() {
-	einfo "checking for smmsp group...    create if missing."
-	enewgroup smmsp 209 || die "problem adding group smmsp"
-	einfo "checking for smmsp user...     create if missing."
-	enewuser smmsp 209 -1 /var/spool/mqueue smmsp \
-		|| die "problem adding user smmsp"
+	enewgroup smmsp 209
+	enewuser smmsp 209 -1 /var/spool/mqueue smmsp
 }
 
 src_prepare() {

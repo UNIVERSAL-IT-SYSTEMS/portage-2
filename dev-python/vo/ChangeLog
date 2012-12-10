@@ -1,6 +1,39 @@
 # ChangeLog for dev-python/vo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/vo/ChangeLog,v 1.4 2011/01/07 18:31:44 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/vo/ChangeLog,v 1.12 2012/08/08 19:13:19 bicatali Exp $
+
+  08 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> vo-0.8.ebuild:
+  Blocking astropy (bug #429148)
+
+  02 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -vo-0.7.2.ebuild,
+  vo-0.8.ebuild:
+  Keyword amd64-linux and x86-linux
+
+*vo-0.8 (06 Jun 2012)
+
+  06 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org> +vo-0.8.ebuild:
+  Version bump
+
+*vo-0.7.2 (15 Aug 2011)
+
+  15 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> -vo-0.6.ebuild,
+  -vo-0.7.ebuild, +vo-0.7.2.ebuild:
+  Version bump, drop old
+
+  08 Aug 2011; Markos Chandras <hwoarang@gentoo.org> vo-0.7.ebuild:
+  Fix dependencies. Avoid breaking strict-aliasing rules. Simplify src_test().
+  Patch by Arfrever.
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Switched herd to sci-astronomy
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> vo-0.7.ebuild:
+  added tests
+
+*vo-0.7 (02 Aug 2011)
+
+  02 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> +vo-0.7.ebuild:
+  Version bump. Re-introduced tests
 
   10 Sep 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   vo-0.6.ebuild:
@@ -49,4 +82,3 @@
   21 Jul 2009; Sébastien Fabbro <bicatali@gentoo.org> +vo-0.3.1.ebuild,
   +files/vo-0.3.1-docs.patch, +metadata.xml:
   Initial import
-

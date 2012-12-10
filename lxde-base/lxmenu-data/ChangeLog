@@ -1,6 +1,26 @@
 # ChangeLog for lxde-base/lxmenu-data
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxmenu-data/ChangeLog,v 1.13 2011/07/27 08:49:31 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxmenu-data/ChangeLog,v 1.19 2012/08/25 00:01:43 hwoarang Exp $
+
+  25 Aug 2012; Markos Chandras <hwoarang@gentoo.org> -lxmenu-data-0.1.1.ebuild:
+  Remove old LXDE packages
+
+  05 Jun 2012; Michael Weber <xmw@gentoo.org> lxmenu-data-0.1.2.ebuild:
+  ppc stable (bug 385189)
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> lxmenu-data-0.1.1.ebuild,
+  lxmenu-data-0.1.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Oct 2011; Markus Meier <maekke@gentoo.org> lxmenu-data-0.1.2.ebuild:
+  arm stable, bug #385189
+
+  07 Oct 2011; Markos Chandras <hwoarang@gentoo.org> lxmenu-data-0.1.2.ebuild:
+  Stable on amd64 wrt bug #385189
+
+  05 Oct 2011; Andreas Schuerch <nativemad@gentoo.org>
+  lxmenu-data-0.1.2.ebuild:
+  x86 stable, bug 385189
 
 *lxmenu-data-0.1.2 (27 Jul 2011)
 
@@ -54,4 +74,3 @@
   Initial commit. This package provides files for building the LXDE
   applications menu in compliance with freedesktop.org specs. Needed by
   lxpanel and lxlauncher.
-

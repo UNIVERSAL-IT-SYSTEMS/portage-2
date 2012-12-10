@@ -1,14 +1,13 @@
 # PPC Specific use flags
-# 
+#
+# Masking out llvm
+llvm
+
 # These flags should only be used for ppc
 -ppcsha1
 -pbbuttonsd
 # Unmask the Altivec instruction set
 -altivec
-
-# vpx is not supported by non x86 archs yet
-vpx
-
 
 # Incompatible Use Flags
 #
@@ -148,6 +147,12 @@ video_cards_tga
 video_cards_tseng
 video_cards_vesa
 
+# Matt Turner <mattst88@gentoo.org>
+# Mask more VIDEO_CARDs added with mesa-8.0
+video_cards_i915
+video_cards_i965
+# vmware wasn't added with mesa-8.0, but it should still be masked
+video_cards_vmware
 
 # Doug Goldstein <cardoe@gentoo.org> (3 Apr 2008)
 # nvidia-drivers specific feature which don't exist for ppc
@@ -176,3 +181,36 @@ mumble
 # Kacper Kowalik <xarthisius@gentoo.org> (26 Jul 2011)
 # ppc keywords were dropped for dev-libs/prelude
 prelude
+
+# Alexandre Rostovtsev <tetromino@gmail.com> (28 Oct 2011)
+# x11-misc/colord and app-admin/packagekit-base not tested. Bug #387959.
+colord
+packagekit
+
+# Matt Turner <mattst88@gentoo.org) (10 Feb 2012)
+# mask d3d since we don't have wine
+d3d
+
+# Matt Turner <mattst88@gentoo.org) (10 Feb 2012)
+# mask wayland since dev-libs/wayland isn't keyworded
+wayland
+
+# Kacper Kowalik <xarthisius@gentoo.org> (25 Apr 2012)
+# sys-apps/systemd is not tested on ppc*
+systemd
+
+# Julian Ospald <hasufell@gentoo.org> (25 Apr 2012)
+# Masked because nvidia-texture-tools is not (tested) for PowerPC
+nvtt
+
+# Michał Górny <mgorny@gentoo.org> (31 Oct 2012)
+# Mask PYTHON_TARGETS for implementations not keyworded on this arch.
+python_targets_pypy1_8
+python_targets_pypy1_9
+python_targets_jython2_5
+python_single_target_pypy1_8
+python_single_target_pypy1_9
+python_single_target_jython2_5
+
+# fdk-aac is already keyworded here
+-fdk

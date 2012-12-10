@@ -1,6 +1,46 @@
 # ChangeLog for sys-apps/pmount
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pmount/ChangeLog,v 1.86 2010/07/18 14:20:06 nixnut Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pmount/ChangeLog,v 1.96 2012/05/24 02:36:19 vapier Exp $
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> pmount-0.9.99_alpha-r1.ebuild:
+  Inherit user for enewuser/etc...
+
+  07 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -pmount-0.9.23.ebuild,
+  -pmount-0.9.99_alpha.ebuild:
+  old
+
+  12 Feb 2012; Raúl Porcel <armin76@gentoo.org> pmount-0.9.99_alpha-r1.ebuild:
+  alpha/arm/ia64/sh/sparc stable wrt #399415
+
+  31 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  pmount-0.9.99_alpha-r1.ebuild:
+  ppc/ppc64 stable wrt #399415
+
+  31 Jan 2012; Jeroen Roovers <jer@gentoo.org> pmount-0.9.99_alpha-r1.ebuild:
+  Stable for HPPA (bug #399415).
+
+  29 Jan 2012; Markus Meier <maekke@gentoo.org> pmount-0.9.99_alpha-r1.ebuild:
+  arm stable, bug #399415
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  pmount-0.9.99_alpha-r1.ebuild:
+  x86 stable wrt bug #399415
+
+  20 Jan 2012; Agostino Sarubbo <ago@gentoo.org> pmount-0.9.99_alpha-r1.ebuild:
+  Stable for amd64, wrt bug #399415
+
+*pmount-0.9.99_alpha-r1 (08 Dec 2011)
+
+  08 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +pmount-0.9.99_alpha-r1.ebuild:
+  Restore default value for not_physically_logged_allow (change from "no" to
+  "yes") wrt #393633 by Michał Górny
+
+*pmount-0.9.99_alpha (03 Dec 2011)
+
+  03 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +pmount-0.9.99_alpha.ebuild:
+  Version bump.
 
   18 Jul 2010; <nixnut@gentoo.org> pmount-0.9.23.ebuild:
   ppc stable #325507

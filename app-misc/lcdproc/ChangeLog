@@ -1,6 +1,26 @@
 # ChangeLog for app-misc/lcdproc
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/lcdproc/ChangeLog,v 1.69 2009/11/02 09:33:58 rbu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/lcdproc/ChangeLog,v 1.73 2012/07/29 16:19:03 armin76 Exp $
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> lcdproc-0.5.2-r1.ebuild,
+  lcdproc-0.5.5.ebuild:
+  Drop sparc keywords
+
+  10 May 2012; Pacho Ramos <pacho@gentoo.org> files/0.5.1-LCDd.initd,
+  metadata.xml:
+  Revert init script change as it causes problems (#415101 by Eduard Huguet) and
+  former looks to start fine for me.
+
+*lcdproc-0.5.5 (07 May 2012)
+
+  07 May 2012; Pacho Ramos <pacho@gentoo.org> +lcdproc-0.5.5.ebuild,
+  -lcdproc-0.5.2-r2.ebuild, -lcdproc-0.5.3.ebuild, files/0.5.1-LCDd.initd,
+  metadata.xml:
+  Version bump, remove old, this also fixes bug #359501 by Leho Kraav and jannis
+  and bug #354507 by Markus Lischka.
+
+  24 Nov 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #158470
 
   02 Nov 2009; Robert Buchholz <rbu@gentoo.org> lcdproc-0.5.3.ebuild:
   Fix sed line for DriverPath

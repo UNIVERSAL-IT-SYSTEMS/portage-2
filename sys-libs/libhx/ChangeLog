@@ -1,6 +1,47 @@
 # ChangeLog for sys-libs/libhx
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libhx/ChangeLog,v 1.31 2011/04/17 00:56:22 hanno Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/libhx/ChangeLog,v 1.40 2012/11/30 09:59:18 scarabeus Exp $
+
+*libhx-3.14 (30 Nov 2012)
+
+  30 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> +libhx-3.14.ebuild,
+  -libhx-3.11.ebuild, libhx-3.12.1.ebuild:
+  Version bump to latest release. Remove oldest. STabilise 3.12.1 on amd64 x86
+  and ppc.
+
+  28 May 2012; Matt Turner <mattst88@gentoo.org> -libhx-3.5.ebuild,
+  -files/libhx-3.5-buffer-overflow.patch, -libhx-3.8.ebuild,
+  -libhx-3.10.1.ebuild, -libhx-3.12.ebuild:
+  Drop old versions.
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> libhx-3.11.ebuild:
+  Marking libhx-3.11 ppc for bug 380783
+
+*libhx-3.12.1 (15 Dec 2011)
+
+  15 Dec 2011; Hanno Boeck <hanno@gentoo.org> +libhx-3.12.1.ebuild:
+  Version bump.
+
+*libhx-3.12 (14 Dec 2011)
+
+  14 Dec 2011; Matt Turner <mattst88@gentoo.org> +libhx-3.12.ebuild:
+  Version bump, bug 394115.
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> libhx-3.11.ebuild:
+  x86 stable, bug #380783
+
+  31 Aug 2011; Tony Vroon <chainsaw@gentoo.org> libhx-3.11.ebuild:
+  Marked stable as a dependency of sys-auth/pam_mount-2.11 based on arch
+  testing by Ian "idella" Delaney & Agostino "ago" Sarubbo in bug #380783 filed
+  by Raphael "Falco" Marichez.
+
+  30 Aug 2011; Matt Turner <mattst88@gentoo.org> libhx-3.11.ebuild:
+  Bump to EAPI4. Thanks to Agostino Sarubbo, bug 380965.
+
+*libhx-3.11 (14 Aug 2011)
+
+  14 Aug 2011; Hanno Boeck <hanno@gentoo.org> +libhx-3.11.ebuild:
+  Version bump.
 
 *libhx-3.10.1 (17 Apr 2011)
 
@@ -138,4 +179,3 @@
 
   13 Jul 2007; Hanno Boeck <hanno@gentoo.org> +libhx-1.10.0.ebuild:
   Initial commit, needed by pam_mount-0.19.
-

@@ -1,6 +1,34 @@
 # ChangeLog for dev-db/tora
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/tora/ChangeLog,v 1.89 2010/11/27 14:27:45 dertobi123 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-db/tora/ChangeLog,v 1.96 2012/09/30 17:06:35 armin76 Exp $
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> tora-2.1.1.ebuild,
+  tora-2.1.3-r1.ebuild:
+  Drop alpha/sparc keywords
+
+*tora-2.1.3-r2 (25 Sep 2012)
+
+  25 Sep 2012; Michael Haubenwallner <haubi@gentoo.org> +tora-2.1.3-r2.ebuild,
+  +files/tora-2.1.3-ext-loki.patch:
+  Use dev-libs/ferrisloki instead of bundled one, bug#383109.
+
+  24 Sep 2012; Michael Haubenwallner <haubi@gentoo.org> tora-2.1.3-r1.ebuild,
+  +files/tora-2.1.3-gcc-4.7.patch:
+  Fix compilation with gcc-4.7, bug#430044.
+
+  09 Feb 2012; Michael Haubenwallner <haubi@gentoo.org> metadata.xml:
+  Taking over maintainership.
+
+  09 Feb 2012; Pacho Ramos <pacho@gentoo.org> -tora-2.1.3.ebuild, metadata.xml:
+  Drop maintainer due retirement, bug #85926
+
+*tora-2.1.3-r1 (10 Dec 2011)
+
+  10 Dec 2011; Mike Gilbert <floppym@gentoo.org> +tora-2.1.3-r1.ebuild:
+  Install icon and desktop file. Bug 352671 by Disaster.
+
+  10 Dec 2011; Mike Gilbert <floppym@gentoo.org> tora-2.1.1.ebuild:
+  Apply qt47 patch to stable ebuild to fix bug 375809.
 
 *tora-2.1.3 (27 Nov 2010)
 

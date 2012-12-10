@@ -1,6 +1,61 @@
 # ChangeLog for x11-terms/evilvte
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/evilvte/ChangeLog,v 1.22 2011/07/09 07:14:29 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/evilvte/ChangeLog,v 1.35 2012/07/31 05:58:15 ssuominen Exp $
+
+*evilvte-0.5.2_pre1 (31 Jul 2012)
+
+  31 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +evilvte-0.5.2_pre1.ebuild:
+  Version bump.
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> -evilvte-0.4.9.ebuild,
+  -evilvte-0.5.0.ebuild:
+  old
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> evilvte-0.5.1.ebuild:
+  amd64/x86 stable
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> evilvte-0.4.9.ebuild,
+  evilvte-0.5.0.ebuild, evilvte-0.5.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*evilvte-0.5.1 (25 Apr 2012)
+
+  25 Apr 2012; Jeroen Roovers <jer@gentoo.org> +evilvte-0.5.1.ebuild:
+  Version bump by Georgi Hristozov (bug #413565).
+
+  04 Jan 2012; Mike Frysinger <vapier@gentoo.org> evilvte-0.4.9.ebuild,
+  evilvte-0.5.0.ebuild:
+  Drop `use savedconfig` logic that the savedconfig eclass handles itself.
+
+  23 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> evilvte-0.5.0.ebuild:
+  amd64/x86 stable
+
+*evilvte-0.5.0 (20 Nov 2011)
+
+  20 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +evilvte-0.5.0.ebuild:
+  Version bump.
+
+  20 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> -evilvte-0.4.8.ebuild,
+  -evilvte-0.5.0_pre1.ebuild:
+  old
+
+  11 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> evilvte-0.4.9.ebuild:
+  x86 stable wrt bug #389585
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org> evilvte-0.4.9.ebuild:
+  Stable on amd64 wrt bug #389585
+
+*evilvte-0.5.0_pre1 (14 Oct 2011)
+*evilvte-0.4.9 (14 Oct 2011)
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +evilvte-0.4.9.ebuild,
+  +evilvte-0.5.0_pre1.ebuild:
+  Version bump to 0.4.9 final (stable candidate) and _pre1 without KEYWORDS
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -evilvte-0.4.6.ebuild,
+  -evilvte-0.4.9_pre2.ebuild, -evilvte-0.4.9_pre4.ebuild:
+  old
 
 *evilvte-0.4.9_pre4 (09 Jul 2011)
 

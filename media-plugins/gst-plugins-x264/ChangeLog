@@ -1,6 +1,48 @@
 # ChangeLog for media-plugins/gst-plugins-x264
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-x264/ChangeLog,v 1.15 2011/05/23 14:56:28 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-x264/ChangeLog,v 1.23 2012/12/09 08:32:41 tetromino Exp $
+
+  09 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gst-plugins-x264-0.10.19.ebuild, gst-plugins-x264-1.0.3.ebuild:
+  Restore accidentally dropped keywords.
+
+*gst-plugins-x264-1.0.3 (05 Dec 2012)
+
+  05 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-plugins-x264-0.10.19.ebuild, +gst-plugins-x264-1.0.3.ebuild:
+  Version bump.
+
+*gst-plugins-x264-0.10.19 (02 Dec 2012)
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  +gst-plugins-x264-0.10.19.ebuild:
+  Version bump.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  -gst-plugins-x264-0.10.16.ebuild, -gst-plugins-x264-0.10.17.ebuild,
+  gst-plugins-x264-0.10.18.ebuild:
+  Clean up old revisions. EAPI bump stable due to pending eclass changes and
+  slot pinning.
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gst-plugins-x264-0.10.18.ebuild:
+  ppc/ppc64 stable wrt #382225
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org>
+  gst-plugins-x264-0.10.18.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #382225.
+
+  20 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gst-plugins-x264-0.10.18.ebuild:
+  x86 stable wrt bug #382225
+
+*gst-plugins-x264-0.10.18 (06 Aug 2011)
+
+  06 Aug 2011; Mart Raudsepp <leio@gentoo.org>
+  +gst-plugins-x264-0.10.18.ebuild:
+  Version bump. Supports changing the bitrate and quantizer dynamically.
+  Various other improvements
 
   23 May 2011; Markos Chandras <hwoarang@gentoo.org>
   gst-plugins-x264-0.10.17.ebuild:

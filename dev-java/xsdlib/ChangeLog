@@ -1,6 +1,38 @@
 # ChangeLog for dev-java/xsdlib
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/xsdlib/ChangeLog,v 1.31 2010/04/24 17:17:00 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/xsdlib/ChangeLog,v 1.40 2012/12/08 15:59:54 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> xsdlib-20090415.ebuild:
+  Stable for ppc64, wrt bug #428946
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> xsdlib-20090415.ebuild:
+  Stable for ppc, wrt bug #428946
+
+  27 Nov 2012; <sera@gentoo.org> xsdlib-20050627-r1.ebuild,
+  xsdlib-20050627-r2.ebuild, xsdlib-20090415.ebuild:
+  Fix LICENSE - BSD Apache-1.1 - thanks to ulm in #444868
+
+  29 Sep 2012; Fabian Groffen <grobian@gentoo.org> xsdlib-20090415.ebuild:
+  Marked ~x64-macos
+
+  09 Aug 2012; Johannes Huber <johu@gentoo.org> xsdlib-20090415.ebuild:
+  Stable for x86, wrt bug #428946
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> xsdlib-20090415.ebuild:
+  Stable for amd64, wrt bug #428946
+
+*xsdlib-20090415 (05 Jun 2012)
+
+  05 Jun 2012; Ralph Sennhauser <sera@gentoo.org> +xsdlib-20090415.ebuild:
+  Version bump. Based on work of James Le Cuirot <chewi@aura-online.co.uk> in
+  java-overlay.
+
+  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> xsdlib-20050627-r2.ebuild:
+  Add back ia64 love #349020 by Dennis Schridde.
+
+  01 Jan 2012; Ralph Sennhauser <sera@gentoo.org> xsdlib-20050627-r1.ebuild,
+  xsdlib-20050627-r2.ebuild:
+  Drop ia64 support #345433
 
   24 Apr 2010; Fabian Groffen <grobian@gentoo.org>
   xsdlib-20050627-r2.ebuild:
@@ -119,4 +151,3 @@
   +metadata.xml, +xsdlib-20050627.ebuild:
   new packages, dep of dom4j, ebuild contributed by Josh Nichols
   <nichoj@alum.rpi.edu>
-

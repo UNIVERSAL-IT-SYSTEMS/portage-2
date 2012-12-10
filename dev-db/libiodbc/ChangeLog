@@ -1,6 +1,30 @@
 # ChangeLog for dev-db/libiodbc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/libiodbc/ChangeLog,v 1.52 2011/03/27 12:26:23 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-db/libiodbc/ChangeLog,v 1.57 2012/07/11 23:02:36 blueness Exp $
+
+  11 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  libiodbc-3.52.7-r1.ebuild:
+  Keyword ~mips
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> libiodbc-3.52.7-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  20 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org> libiodbc-3.52.7-r1.ebuild:
+  Respect the system set MAKEOPTS too, as per ssumien's sugesstion.
+
+  20 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org> libiodbc-3.52.7-r1.ebuild:
+  Use single thread build as it is broken in paralel on some machines wrt
+  bug#405029.
+
+*libiodbc-3.52.7-r1 (20 Feb 2012)
+
+  20 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +files/libiodbc-3.52.7-debian_bug501100.patch,
+  +files/libiodbc-3.52.7-debian_bug508480.patch,
+  +files/libiodbc-3.52.7-gtk.patch, +files/libiodbc-3.52.7-multilib.patch,
+  +files/libiodbc-3.52.7-unicode_includes.patch, +libiodbc-3.52.7-r1.ebuild:
+  Revision bump to include few fixes, from debian and others. Fix also static-
+  libs bug#377529.
 
   27 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
   libiodbc-3.52.7.ebuild:

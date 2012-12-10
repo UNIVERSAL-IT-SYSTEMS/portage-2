@@ -1,6 +1,39 @@
 # ChangeLog for dev-perl/regexp-common
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/regexp-common/ChangeLog,v 1.30 2011/07/29 10:57:06 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/regexp-common/ChangeLog,v 1.38 2012/06/24 12:58:42 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  03 Jun 2012; Torsten Veller <tove@gentoo.org>
+  -regexp-common-2010010201.ebuild, -regexp-common-2011041701.0.0.ebuild:
+  Cleanup
+
+  26 May 2012; Raúl Porcel <armin76@gentoo.org>
+  regexp-common-2011121001.0.0.ebuild:
+  alpha/ia64/sparc stable wrt #404701
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org>
+  regexp-common-2011121001.0.0.ebuild:
+  Marking regexp-common-2011121001.0.0 ppc for bug 404701
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org>
+  regexp-common-2011121001.0.0.ebuild:
+  marked x86 per bug 404701
+
+  29 Mar 2012; Jeroen Roovers <jer@gentoo.org>
+  regexp-common-2011121001.0.0.ebuild:
+  Stable for HPPA (bug #404701).
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org>
+  regexp-common-2011121001.0.0.ebuild:
+  Stable for amd64, wrt bug #404701
+
+*regexp-common-2011121001.0.0 (11 Dec 2011)
+
+  11 Dec 2011; Torsten Veller <tove@gentoo.org>
+  +regexp-common-2011121001.0.0.ebuild:
+  Version bump
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org>
   -regexp-common-2011041602.0.0.ebuild:
@@ -132,4 +165,3 @@
   regexp-common-2.113.ebuild:
   bug 24875 dep for request tracker - Celestial Wizard
   <gentoo@dev.celestialwizard.org>
-

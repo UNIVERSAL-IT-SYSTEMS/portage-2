@@ -1,6 +1,27 @@
 # ChangeLog for dev-ruby/canny
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/canny/ChangeLog,v 1.9 2010/06/13 07:21:12 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/canny/ChangeLog,v 1.16 2012/08/14 18:30:32 flameeyes Exp $
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> canny-0.1.0-r1.ebuild:
+  Drop ia64/sparc keywords
+
+  09 Mar 2012; Hans de Graaff <graaff@gentoo.org> -canny-0.1.0.ebuild:
+  Remove old version.
+
+  08 Mar 2012; Naohiro Aota <naota@gentoo.org> canny-0.1.0-r1.ebuild:
+  Add ~x86-fbsd.
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> canny-0.1.0-r1.ebuild:
+  Marking canny-0.1.0-r1 ppc64 for bug 395977
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> canny-0.1.0-r1.ebuild:
+  ia64 stable wrt #395977
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> canny-0.1.0-r1.ebuild:
+  x86 stable wrt bug #395977
 
 *canny-0.1.0-r1 (13 Jun 2010)
 
@@ -33,4 +54,3 @@
 
   04 Jan 2005; Michael Kohl <citizen428@gentoo.org> +metadata.xml:
   Initial import. Ebuild submitted by pyon <gentoo@pyon.net>, closing bug #67053
-

@@ -1,6 +1,36 @@
 # ChangeLog for app-misc/ddccontrol
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/ddccontrol/ChangeLog,v 1.22 2011/03/29 12:14:22 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/ddccontrol/ChangeLog,v 1.29 2012/11/18 11:51:06 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Ensure upstream dev is in metadata.
+
+  08 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  ddccontrol-0.4.2-r1.ebuild:
+  Stable ppc, bug #418599
+
+  08 Aug 2012; Andreas Schuerch <nativemad@gentoo.org>
+  ddccontrol-0.4.2-r1.ebuild:
+  x86 stable, see bug 418599
+
+  02 Aug 2012; Markos Chandras <hwoarang@gentoo.org> ddccontrol-0.4.2-r1.ebuild:
+  Stable on amd64 wrt bug #418599
+
+  25 Apr 2012; Justin Lecher <jlec@gentoo.org> ddccontrol-0.1.3.ebuild,
+  ddccontrol-0.2.ebuild, ddccontrol-0.3.ebuild, ddccontrol-0.3-r1.ebuild,
+  ddccontrol-0.3-r2.ebuild, ddccontrol-0.4.1.ebuild, ddccontrol-0.4.2.ebuild:
+  Drop unnessecary die
+
+  25 Jan 2012; Mike Frysinger <vapier@gentoo.org> metadata.xml:
+  Drop nicolas as he is no longer the upstream maintainer.
+
+*ddccontrol-0.4.2-r1 (25 Jan 2012)
+
+  25 Jan 2012; Mike Frysinger <vapier@gentoo.org> +ddccontrol-0.4.2-r1.ebuild,
+  +files/ddccontrol-0.4.2-automake.patch,
+  +files/ddccontrol-0.4.2-no-ddcpci.patch, metadata.xml:
+  Migrate to EAPI=4, fix build with newer automake with patch from upstream,
+  add USE=static-libs support, and add USE=ddcpci to control the setuid binary.
 
   29 Mar 2011; Christoph Mende <angelos@gentoo.org> ddccontrol-0.1.3.ebuild,
   ddccontrol-0.2.ebuild, ddccontrol-0.3.ebuild, ddccontrol-0.3-r1.ebuild,
@@ -98,4 +128,3 @@
   +ddccontrol-0.1.3.ebuild:
   Initial commit, based on ebuild submitted by upstream author Nicolas Boichat
   <nicolas@boichat.ch>, bug #95324.
-

@@ -1,6 +1,75 @@
 # ChangeLog for app-misc/screen
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/screen/ChangeLog,v 1.162 2011/07/15 14:31:00 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/screen/ChangeLog,v 1.179 2012/12/02 22:48:41 swegener Exp $
+
+*screen-9999 (02 Dec 2012)
+
+  02 Dec 2012; Sven Wegener <swegener@gentoo.org> +screen-9999.ebuild:
+  Initial version of live git ebuild.
+
+  02 Dec 2012; Sven Wegener <swegener@gentoo.org> files/screenrc:
+  Use xterm* for bug #426224.
+
+*screen-4.0.3-r7 (13 Nov 2012)
+
+  13 Nov 2012; Sven Wegener <swegener@gentoo.org> +screen-4.0.3-r7.ebuild,
+  files/screen-4.0.3-cppflags.patch:
+  Include an updated patch for bug #424557.
+
+*screen-4.0.3-r6 (07 Nov 2012)
+
+  07 Nov 2012; Justin Lecher <jlec@gentoo.org> -screen-4.0.3-r5.ebuild,
+  +screen-4.0.3-r6.ebuild:
+  Revbump to force everyone to rebuild. This should save those who emerged the
+  broken ebuild #442070
+
+  06 Nov 2012; Justin Lecher <jlec@gentoo.org> screen-4.0.3-r5.ebuild:
+  Revert last commit
+
+  04 Nov 2012; Sven Wegener <swegener@gentoo.org> screen-4.0.3-r5.ebuild,
+  +files/screen-4.0.3-cppflags.patch:
+  Support CPPFLAGS for bug #424557.
+
+  10 Jul 2012; Justin Lecher <jlec@gentoo.org> -screen-4.0.3-r4.ebuild,
+  metadata.xml:
+  Cleaned old
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> screen-4.0.3-r5.ebuild:
+  Marking screen-4.0.3-r5 ppc64 for bug 423775
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> screen-4.0.3-r5.ebuild:
+  Marking screen-4.0.3-r5 ppc for bug 423775
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> screen-4.0.3-r5.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #423775
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> screen-4.0.3-r5.ebuild:
+  Stable for HPPA (bug #423775).
+
+  28 Jun 2012; Jeff Horelick <jdhore@gentoo.org> screen-4.0.3-r5.ebuild:
+  marked x86 per bug 423775
+
+  27 Jun 2012; Agostino Sarubbo <ago@gentoo.org> screen-4.0.3-r5.ebuild:
+  Stable for amd64, wrt bug #423775
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> screen-4.0.3-r4.ebuild,
+  screen-4.0.3-r5.ebuild:
+  inherit user for enewgroup
+
+  24 May 2012; Jeremy Olexa <darkside@gentoo.org> screen-4.0.3-r5.ebuild:
+  Further fixes, don't create /var/run/screen, bump to EAPI4, cleanup
+
+*screen-4.0.3-r5 (24 May 2012)
+
+  24 May 2012; Jeremy Olexa <darkside@gentoo.org> +screen-4.0.3-r5.ebuild:
+  Revision bump to disable socket dir (and use ~/.screen/ instead) for cases
+  where /var/run is tmpfs, etc. This seems more portable and has been the best
+  solution proposed on bug 333821
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org>
+  -files/4.0.3-extend-d_termname.patch,
+  -files/4.0.3-extend-d_termname-ng.patch, -screen-4.0.3.ebuild:
+  ^
 
   15 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> screen-4.0.3-r4.ebuild:
   ppc64 stable wrt #361823

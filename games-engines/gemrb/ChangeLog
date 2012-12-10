@@ -1,6 +1,58 @@
 # ChangeLog for games-engines/gemrb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-engines/gemrb/ChangeLog,v 1.14 2011/06/01 15:42:19 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-engines/gemrb/ChangeLog,v 1.26 2012/09/23 08:48:59 phajdan.jr Exp $
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gemrb-0.7.1.ebuild:
+  x86 stable wrt bug #432072
+
+  21 Aug 2012; Agostino Sarubbo <ago@gentoo.org> gemrb-0.7.1.ebuild:
+  Stable for amd64, wrt bug #432072
+
+*gemrb-0.7.1 (18 Jul 2012)
+
+  18 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> +gemrb-0.7.1.ebuild:
+  version bump (bug #427080)
+
+  04 May 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  -files/gemrb-0.6.4-gcc46.patch, -files/gemrb-0.6.6-gcc46.patch,
+  -gemrb-0.6.4.ebuild, -gemrb-0.6.6.ebuild, gemrb-0.7.0.ebuild:
+  old
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> gemrb-0.6.4.ebuild,
+  gemrb-0.6.6.ebuild, gemrb-0.7.0.ebuild:
+  Move EAPI assignment to top of ebuild, bug 411875.
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> gemrb-0.7.0.ebuild:
+  x86 stable, bug #402911
+
+  10 Feb 2012; Agostino Sarubbo <ago@gentoo.org> gemrb-0.7.0.ebuild:
+  Stable for amd64, wrt bug #402911
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gemrb-0.6.6.ebuild:
+  x86 stable wrt bug #396621
+
+  10 Jan 2012; Denis Dupeyron <calchan@gentoo.org>
+  -files/gemrb-0.7.0-gcc46.patch, gemrb-0.6.4.ebuild, gemrb-0.6.6.ebuild,
+  gemrb-0.7.0.ebuild:
+  Removed gcc-4.6 patch not necesssary for recent versions. Readded RDEPEND
+  which mysteriously disappeared during the last commit.
+
+*gemrb-0.7.0 (05 Jan 2012)
+
+  05 Jan 2012; Denis Dupeyron <calchan@gentoo.org>
+  +files/gemrb-0.7.0-gcc46.patch, +gemrb-0.7.0.ebuild, -files/GemRB.cfg.sample,
+  -gemrb-0.6.2.ebuild, gemrb-0.6.4.ebuild, gemrb-0.6.6.ebuild:
+  Version bump. Fixed RDEPEND not being explicitely assigned. Removed
+  unnecessary config sample. Removed old ebuild.
+
+  31 Dec 2011; Agostino Sarubbo <ago@gentoo.org> gemrb-0.6.6.ebuild:
+  Stable for AMD64, wrt bug #396621
+
+*gemrb-0.6.6 (29 Nov 2011)
+
+  29 Nov 2011; Michael Sterrett <mr_bones_@gentoo.org> +gemrb-0.6.6.ebuild,
+  +files/gemrb-0.6.6-gcc46.patch:
+  version bump (bug #392373)
 
   01 Jun 2011; Tupone Alfredo <tupone@gentoo.org> gemrb-0.6.4.ebuild,
   +files/gemrb-0.6.4-gcc46.patch:

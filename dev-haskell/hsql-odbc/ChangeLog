@@ -1,6 +1,26 @@
 # ChangeLog for dev-haskell/hsql-odbc
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/hsql-odbc/ChangeLog,v 1.9 2010/07/12 15:48:39 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/hsql-odbc/ChangeLog,v 1.13 2012/09/12 14:43:09 qnikst Exp $
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> hsql-odbc-1.8.1.1.ebuild,
+  hsql-odbc-1.8.2.ebuild:
+  move dev-haskell/hsql-odbc/hsql-odbc-1.8.2.ebuild ebuild to mirror://hackage
+
+*hsql-odbc-1.8.2 (15 Apr 2012)
+
+  15 Apr 2012; Mark Wright <gienah@gentoo.org> +hsql-odbc-1.8.2.ebuild,
+  hsql-odbc-1.8.1.1.ebuild, metadata.xml:
+  Bump hsql to 1.8.2. EAPI=4 and [profile?] on haskell libs (part of fix for bug
+  341795 dev-haskell/* USE=profile missing dependencies) for hsql-odbc 1.8.1.1
+
+  04 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> -hsql-odbc-1.7.ebuild:
+  Removed old.
+
+*hsql-odbc-1.8.1.1 (04 Aug 2011)
+
+  04 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org>
+  +hsql-odbc-1.8.1.1.ebuild:
+  Version bump (ghc-7 compatible)
 
   12 Jul 2010; Sergei Trofimovich <slyfox@gentoo.org> hsql-odbc-1.7.ebuild:
   Fixed bug #278897 (build failure on ghc-6.10+). Thanks to Nikolay Orlyuk
@@ -31,4 +51,3 @@
 
   23 Feb 2006; <dcoutts@gentoo.org> +metadata.xml, +hsql-odbc-1.7.ebuild:
   Initial import.
-

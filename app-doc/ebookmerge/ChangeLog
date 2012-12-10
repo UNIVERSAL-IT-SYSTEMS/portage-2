@@ -1,6 +1,21 @@
 # ChangeLog for app-doc/ebookmerge
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/ebookmerge/ChangeLog,v 1.12 2007/01/23 16:01:51 genone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-doc/ebookmerge/ChangeLog,v 1.16 2012/06/26 05:21:54 dirtyepic Exp $
+
+  26 Jun 2012; Ryan Hill <dirtyepic@gentoo.org> metadata.xml:
+  Maintainer -> app-doc.
+
+  08 Apr 2012; Ryan Hill <dirtyepic@gentoo.org> metadata.xml:
+  Add myself as maintainer.
+
+*ebookmerge-0.9.3-r1 (20 Mar 2012)
+
+  20 Mar 2012; Pacho Ramos <pacho@gentoo.org> +ebookmerge-0.9.3-r1.ebuild,
+  +files/ebookmerge-0.9.3-updates.patch:
+  Update to use new upstream, bug #388927 by Steve Arnold.
+
+  18 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #391429.
 
   23 Jan 2007; Marius Mauch <genone@gentoo.org> ebookmerge-0.9.3.ebuild:
   Replacing einfo with elog

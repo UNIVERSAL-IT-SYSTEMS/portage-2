@@ -1,6 +1,26 @@
 # ChangeLog for dev-perl/Daemon-Generic
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Daemon-Generic/ChangeLog,v 1.12 2011/05/21 07:57:55 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Daemon-Generic/ChangeLog,v 1.17 2012/06/24 12:59:57 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*Daemon-Generic-0.820.0 (17 Mar 2012)
+
+  17 Mar 2012; Torsten Veller <tove@gentoo.org> +Daemon-Generic-0.820.0.ebuild:
+  Version bump
+
+  11 Sep 2011; Raúl Porcel <armin76@gentoo.org> Daemon-Generic-0.810.0.ebuild:
+  Add ~alpha/~ia64 wrt #382095
+
+  07 Sep 2011; Torsten Veller <tove@gentoo.org> Daemon-Generic-0.810.0.ebuild:
+  Add test to IUSE. Whitespace
+
+*Daemon-Generic-0.810.0 (06 Sep 2011)
+
+  06 Sep 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +Daemon-Generic-0.810.0.ebuild:
+  Version bump via perl-bump experimental tool.
 
 *Daemon-Generic-0.720.0 (21 May 2011)
 
@@ -48,4 +68,3 @@
   +Daemon-Generic-0.61.ebuild, +metadata.xml:
   Initial commit. Extra dependancy for Bugzilla-3.4. Ebuild by Robin H.
   Johnson <robbat2@gentoo.org>.
-

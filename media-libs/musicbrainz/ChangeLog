@@ -1,6 +1,67 @@
 # ChangeLog for media-libs/musicbrainz
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/musicbrainz/ChangeLog,v 1.98 2010/11/07 20:32:57 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/musicbrainz/ChangeLog,v 1.114 2012/11/30 15:11:20 ago Exp $
+
+  30 Nov 2012; <ago@gentoo.org> musicbrainz-5.0.1.ebuild:
+  Stable for ppc, wrt bug #442394
+
+  23 Nov 2012; Agostino Sarubbo <ago@gentoo.org> musicbrainz-5.0.1.ebuild:
+  Stable for x86, wrt bug #442394
+
+  23 Nov 2012; Agostino Sarubbo <ago@gentoo.org> musicbrainz-5.0.1.ebuild:
+  Stable for amd64, wrt bug #442394
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> musicbrainz-3.0.3.ebuild:
+  alpha/ia64/sparc stable wrt #413241
+
+*musicbrainz-5.0.1 (19 May 2012)
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +musicbrainz-5.0.1.ebuild:
+  Version bump.
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -musicbrainz-4.0.0.ebuild, -musicbrainz-4.0.1.ebuild:
+  old
+
+*musicbrainz-4.0.3 (19 May 2012)
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +musicbrainz-4.0.3.ebuild:
+  Version bump.
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> musicbrainz-3.0.3.ebuild:
+  Marking musicbrainz-3.0.3 ppc for bug 413241
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> musicbrainz-2.1.5.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> musicbrainz-3.0.3.ebuild:
+  arm stable, bug #413241
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> musicbrainz-3.0.3.ebuild:
+  Stable for HPPA (bug #413241).
+
+  24 Apr 2012; Jeff Horelick <jdhore@gentoo.org> musicbrainz-3.0.3.ebuild:
+  marked x86 per bug 413241
+
+  23 Apr 2012; Brent Baude <ranger@gentoo.org> musicbrainz-3.0.3.ebuild:
+  Marking musicbrainz-3.0.3 ppc64 for bug 413241
+
+  23 Apr 2012; Agostino Sarubbo <ago@gentoo.org> musicbrainz-3.0.3.ebuild:
+  Stable for amd64, wrt bug #413241
+
+*musicbrainz-4.0.1 (23 Apr 2012)
+
+  23 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +musicbrainz-4.0.1.ebuild:
+  Version bump.
+
+*musicbrainz-4.0.0 (21 Feb 2012)
+
+  21 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +musicbrainz-4.0.0.ebuild:
+  Version bump.
 
 *musicbrainz-3.0.3 (07 Nov 2010)
 

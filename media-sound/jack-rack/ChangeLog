@@ -1,6 +1,26 @@
 # ChangeLog for media-sound/jack-rack
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/jack-rack/ChangeLog,v 1.39 2011/07/30 10:41:59 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/jack-rack/ChangeLog,v 1.44 2012/11/30 11:59:44 aballier Exp $
+
+  30 Nov 2012; Alexis Ballier <aballier@gentoo.org> jack-rack-1.4.8_rc1.ebuild,
+  +files/jack-rack-1.4.8_rc1-noxml.patch:
+  Fix build with USE=-xml and enable xml by default since this is what controls
+  saving and loading sessions. Bug #378041
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> jack-rack-1.4.7-r1.ebuild,
+  jack-rack-1.4.8_rc1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  11 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> -jack-rack-1.4.6.ebuild,
+  -files/jack-rack-1.4.6-no-disable-deprecated.patch:
+  [This is a placeholder. Please ignore.]
+
+  07 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  jack-rack-1.4.7-r1.ebuild:
+  x86 stable wrt bug #376887
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> jack-rack-1.4.7-r1.ebuild:
+  Stable on amd64 wrt bug #376887
 
 *jack-rack-1.4.8_rc1 (30 Jul 2011)
 

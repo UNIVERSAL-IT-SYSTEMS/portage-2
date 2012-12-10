@@ -1,6 +1,33 @@
 # ChangeLog for sci-visualization/veusz
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/veusz/ChangeLog,v 1.35 2011/07/26 09:52:41 grozin Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/veusz/ChangeLog,v 1.40 2012/08/01 06:33:09 jlec Exp $
+
+  01 Aug 2012; Justin Lecher <jlec@gentoo.org> veusz-1.16.ebuild, metadata.xml:
+  Restrict py3, jython, pypy due to missing compatibility, #428758, thanks
+  Arfrever for help
+
+*veusz-1.16 (30 Jul 2012)
+
+  30 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> +veusz-1.16.ebuild,
+  -veusz-1.14.ebuild:
+  Version bump
+
+*veusz-1.15 (05 Apr 2012)
+
+  05 Apr 2012; Andrey Grozin <grozin@gentoo.org> -veusz-1.13.ebuild,
+  +veusz-1.15.ebuild:
+  Version bump
+
+*veusz-1.14 (27 Nov 2011)
+
+  27 Nov 2011; Sébastien Fabbro <bicatali@gentoo.org> -veusz-1.12-r1.ebuild,
+  +veusz-1.14.ebuild:
+  Version bump
+
+*veusz-1.13 (08 Sep 2011)
+
+  08 Sep 2011; Andrey Grozin <grozin@gentoo.org> +veusz-1.13.ebuild:
+  Version bump, closing bug #382189
 
 *veusz-1.12-r1 (26 Jul 2011)
 
@@ -162,4 +189,3 @@
   +veusz-0.8.ebuild:
   Initial import, thanks to Nicolas Bigaouette <nbigaouette@gmail.com> for the
   initial ebuild, and Sebastien Fabbro <seb@ist.utl.pt> for his work on it.
-

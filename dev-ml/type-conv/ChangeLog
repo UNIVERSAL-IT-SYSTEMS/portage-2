@@ -1,6 +1,45 @@
 # ChangeLog for dev-ml/type-conv
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ml/type-conv/ChangeLog,v 1.12 2011/07/23 15:43:07 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ml/type-conv/ChangeLog,v 1.21 2012/10/17 12:15:47 aballier Exp $
+
+  17 Oct 2012; Alexis Ballier <aballier@gentoo.org> type-conv-108.07.01.ebuild:
+  Mirror the distfile, upstream one fails to fetch, bug #438610 by Nick Bowler
+
+*type-conv-108.07.01 (08 Oct 2012)
+
+  08 Oct 2012; Alexis Ballier <aballier@gentoo.org>
+  +type-conv-108.07.01.ebuild:
+  version bump
+
+  07 Aug 2012; Alexis Ballier <aballier@gentoo.org> -type-conv-3.0.4.ebuild,
+  -type-conv-3.0.5.ebuild:
+  remove old
+
+  09 Jul 2012; Ulrich Müller <ulm@gentoo.org> type-conv-108.00.01.ebuild,
+  type-conv-3.0.4.ebuild, type-conv-3.0.5.ebuild:
+  Update LICENSE, bug 425140.
+
+*type-conv-108.00.01 (30 Jun 2012)
+
+  30 Jun 2012; Alexis Ballier <aballier@gentoo.org>
+  +type-conv-108.00.01.ebuild:
+  bump to janestreet version
+
+*type-conv-3.0.5 (30 Jun 2012)
+
+  30 Jun 2012; Alexis Ballier <aballier@gentoo.org> +type-conv-3.0.5.ebuild:
+  version bump, masked for now
+
+  27 Mar 2012; Alexis Ballier <aballier@gentoo.org> type-conv-3.0.4.ebuild:
+  convert to oasis.eclass
+
+  23 Feb 2012; Alexis Ballier <aballier@gentoo.org> -type-conv-2.3.0.ebuild:
+  remove old
+
+*type-conv-3.0.4 (06 Oct 2011)
+
+  06 Oct 2011; Alexis Ballier <aballier@gentoo.org> +type-conv-3.0.4.ebuild:
+  version bump
 
   23 Jul 2011; Thomas Kahle <tomka@gentoo.org> type-conv-2.3.0.ebuild:
   ~x86 per bug 373149
@@ -58,4 +97,3 @@
   +metadata.xml:
   Initial import, ebuild by Guillaume Horel <guillaume.horel@gmail.com>, bug
   #281275
-

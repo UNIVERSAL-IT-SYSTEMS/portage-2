@@ -1,6 +1,62 @@
 # ChangeLog for media-gfx/pydot
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/pydot/ChangeLog,v 1.28 2011/06/23 15:37:35 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/pydot/ChangeLog,v 1.45 2012/05/12 04:09:37 aballier Exp $
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> pydot-1.0.28.ebuild:
+  keyword ~amd64-fbsd
+
+  22 Apr 2012; Fabian Groffen <grobian@gentoo.org> pydot-1.0.28.ebuild:
+  Marked ~amd64-linux, bug #411659
+
+  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> pydot-1.0.25.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #400373
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pydot-1.0.25.ebuild:
+  x86 stable wrt bug #400373
+
+*pydot-1.0.28 (09 Mar 2012)
+
+  09 Mar 2012; Patrick Lauer <patrick@gentoo.org> +pydot-1.0.28.ebuild:
+  Bump
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> pydot-1.0.25.ebuild:
+  Marking pydot-1.0.25 ppc64 for bug 400373
+
+  02 Mar 2012; Markus Meier <maekke@gentoo.org> pydot-1.0.25.ebuild:
+  arm stable, bug #400373
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> pydot-1.0.25.ebuild:
+  Marking pydot-1.0.25 ppc for bug 400373
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> pydot-1.0.25.ebuild:
+  Stable for HPPA (bug #400373).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> pydot-1.0.25.ebuild:
+  Stable for amd64, wrt bug #400373
+
+  16 Feb 2012; Fabian Groffen <grobian@gentoo.org> pydot-1.0.25.ebuild:
+  Marked ~sparc-solaris
+
+  09 Dec 2011; Alexis Ballier <aballier@gentoo.org> pydot-1.0.25.ebuild:
+  keyword ~x86-fbsd
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> pydot-1.0.23.ebuild:
+  Stable for HPPA (bug #355085).
+
+  18 Sep 2011; Raúl Porcel <armin76@gentoo.org> pydot-1.0.23.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #355085
+
+  14 Aug 2011; Markus Meier <maekke@gentoo.org> pydot-1.0.23.ebuild:
+  arm stable, bug #355085
+
+  12 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> pydot-1.0.23.ebuild:
+  ppc/ppc64 stable wrt #355085
+
+*pydot-1.0.25 (06 Aug 2011)
+
+  06 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> +pydot-1.0.25.ebuild,
+  metadata.xml:
+  Version bump. Added python herd
 
   23 Jun 2011; Markos Chandras <hwoarang@gentoo.org>
   -files/pydot-1.0.2-setup.patch:

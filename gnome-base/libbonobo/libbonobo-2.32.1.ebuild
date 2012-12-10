@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/libbonobo/libbonobo-2.32.1.ebuild,v 1.2 2011/07/29 18:05:20 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/libbonobo/libbonobo-2.32.1.ebuild,v 1.5 2012/05/15 23:30:15 aballier Exp $
 
 EAPI="3"
 GCONF_DEBUG="yes"
@@ -12,7 +12,7 @@ HOMEPAGE="http://developer.gnome.org/libbonobo/stable/"
 
 LICENSE="LGPL-2.1 GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~sparc-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~sparc-solaris ~x86-solaris"
 IUSE="debug doc examples test"
 
 RDEPEND=">=dev-libs/glib-2.25.7:2
@@ -21,11 +21,11 @@ RDEPEND=">=dev-libs/glib-2.25.7:2
 	>=dev-libs/popt-1.5
 	!gnome-base/bonobo-activation"
 DEPEND="${RDEPEND}
-	|| ( sys-devel/bison dev-util/yacc )
+	virtual/yacc
 	>=dev-lang/perl-5
 	sys-devel/flex
 	x11-apps/xrdb
-	>=dev-util/pkgconfig-0.9
+	virtual/pkgconfig
 	>=dev-util/intltool-0.35
 	doc? ( >=dev-util/gtk-doc-1 )"
 

@@ -1,6 +1,125 @@
 # ChangeLog for dev-libs/libpcre
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libpcre/ChangeLog,v 1.181 2011/04/09 13:46:37 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libpcre/ChangeLog,v 1.208 2012/12/02 02:43:36 flameeyes Exp $
+
+*libpcre-8.32 (02 Dec 2012)
+
+  02 Dec 2012; Diego E. Pettenò <flameeyes@gentoo.org> +libpcre-8.32.ebuild:
+  Version bump.
+
+  12 Jul 2012; Fabian Groffen <grobian@gentoo.org>
+  +files/libpcre-8.31-madvise.patch, libpcre-8.31.ebuild:
+  Fix compilation on platforms lacking posix_madvise, using a partial patch
+  grabbed from upstream.
+
+*libpcre-8.31 (11 Jul 2012)
+
+  11 Jul 2012; Tim Harder <radhermit@gentoo.org> +libpcre-8.31.ebuild:
+  Version bump. Add libedit use flag.
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> libpcre-8.30-r2.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #417571
+
+  31 May 2012; Jeroen Roovers <jer@gentoo.org> libpcre-8.30-r2.ebuild:
+  Stable for HPPA (bug #417571).
+
+  30 May 2012; Markus Meier <maekke@gentoo.org> libpcre-8.30-r2.ebuild:
+  arm stable, bug #417571
+
+  30 May 2012; Jeff Horelick <jdhore@gentoo.org> libpcre-8.30-r2.ebuild:
+  marked x86 per bug 417571
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> libpcre-8.30-r2.ebuild:
+  Marking libpcre-8.30-r2 ppc for bug 417571
+
+  29 May 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/libpcre-8.30-bzip2-typo.patch, libpcre-8.30-r2.ebuild:
+  Add fix by Richard Grenville to fix building when USE="bzip2 -zlib" #418033 by
+  GES.
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> libpcre-8.30-r2.ebuild:
+  Marking libpcre-8.30-r2 ppc64 for bug 417571
+
+  26 May 2012; Agostino Sarubbo <ago@gentoo.org> libpcre-8.30-r2.ebuild:
+  Stable for amd64, wrt bug #417571
+
+  25 May 2012; Mike Frysinger <vapier@gentoo.org> metadata.xml:
+  Drop now redundant USE=jit description #416603 by Alexandre Rostovtsev.
+
+  25 May 2012; Mike Frysinger <vapier@gentoo.org> libpcre-7.9-r1.ebuild,
+  libpcre-8.02.ebuild, libpcre-8.21.ebuild, libpcre-8.30-r2.ebuild:
+  Add missing inherits, and drop other unused ones.
+
+  14 May 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Fix typo in metadata.xml.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> libpcre-7.9-r1.ebuild,
+  libpcre-8.02.ebuild, libpcre-8.12.ebuild, libpcre-8.13.ebuild,
+  libpcre-8.13-r1.ebuild, libpcre-8.20.ebuild, libpcre-8.21.ebuild,
+  libpcre-8.30-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libpcre-8.30-r2.ebuild:
+  keyword ~amd64-fbsd
+
+  16 Feb 2012; Michael Haubenwallner <haubi@gentoo.org> libpcre-8.30-r2.ebuild:
+  add keyword ~ppc-aix, relies on package.use.mask 'jit'
+
+*libpcre-8.30-r2 (05 Feb 2012)
+
+  05 Feb 2012; Tim Harder <radhermit@gentoo.org> -libpcre-8.30.ebuild,
+  -libpcre-8.30-r1.ebuild, +libpcre-8.30-r2.ebuild:
+  Revbump to add preserve old lib support and remove old.
+
+*libpcre-8.30-r1 (05 Feb 2012)
+
+  05 Feb 2012; Tim Harder <radhermit@gentoo.org> +libpcre-8.30-r1.ebuild,
+  metadata.xml:
+  Add pcre16 use flag to control building the library with 16-bit character
+  support.
+
+*libpcre-8.30 (05 Feb 2012)
+
+  05 Feb 2012; Tim Harder <radhermit@gentoo.org> +libpcre-8.30.ebuild:
+  Version bump.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org>
+  +files/libpcre-8.21-static-build.patch, libpcre-8.21.ebuild:
+  Add patch to fix static build, bug #395343
+
+  12 Dec 2011; Tim Harder <radhermit@gentoo.org> libpcre-8.20.ebuild:
+  Use correct readline configure flag.
+
+*libpcre-8.21 (12 Dec 2011)
+
+  12 Dec 2011; Tim Harder <radhermit@gentoo.org> +libpcre-8.21.ebuild:
+  Version bump.
+
+*libpcre-8.20 (23 Oct 2011)
+
+  23 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> libpcre-8.13-r1.ebuild,
+  +libpcre-8.20.ebuild, metadata.xml:
+  Version bump (I need the new version with JIT to test new ModSecurity code);
+  add an enabled-by-default (following upstream) jit USE flag to enable the new
+  Just-in-Time compiler of regular expressions. Also add a readline USE flag
+  for pcretest that now can use command line editing. Add description of USE
+  flags to metadata.xml. Also fix in 8.13 the wrong _rc conditional to fix the
+  SRC_URI setting.
+
+*libpcre-8.13-r1 (17 Sep 2011)
+
+  17 Sep 2011; Mike Frysinger <vapier@gentoo.org> +libpcre-8.13-r1.ebuild,
+  +files/libpcre-8.13-posix-regex.patch:
+  Add fix from upstream for posix regex behavior #382919 by Christian Kaps.
+
+*libpcre-8.13 (01 Sep 2011)
+
+  01 Sep 2011; Tim Harder <radhermit@gentoo.org> +libpcre-8.13.ebuild:
+  Version bump (bug #381395 by Peter Volkov).
+
+  09 Aug 2011; Jeremy Olexa <darkside@gentoo.org> libpcre-8.12.ebuild:
+  Migrate changes from Gentoo Prefix. EAPI3, KEYWORDS, mint CXXFLAGS, add
+  EPREFIX to configure
 
   09 Apr 2011; Raúl Porcel <armin76@gentoo.org> libpcre-8.12.ebuild:
   alpha/ia64/m68k/s390/sh/sparc stable wrt #358791

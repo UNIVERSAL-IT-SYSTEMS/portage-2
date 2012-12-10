@@ -1,6 +1,41 @@
 # ChangeLog for dev-haskell/mmap
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/mmap/ChangeLog,v 1.12 2011/04/10 18:56:58 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/mmap/ChangeLog,v 1.22 2012/11/18 08:29:25 gienah Exp $
+
+*mmap-0.5.8 (18 Nov 2012)
+
+  18 Nov 2012; Mark Wright <gienah@gentoo.org> +mmap-0.5.8.ebuild:
+  Bump mmap to 0.5.8
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> mmap-0.4.1.ebuild,
+  mmap-0.5.7.ebuild:
+  move dev-haskell/mmap/mmap-0.4.1.ebuild ebuild to mirror://hackage
+
+  14 Apr 2012; Mark Wright <gienah@gentoo.org> metadata.xml, mmap-0.5.7.ebuild:
+  EAPI=4, add hoogle to CABAL_FEATURES
+
+  17 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> mmap-0.5.7.ebuild:
+  alpha/ia64/sparc stable (bug #399987).
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> mmap-0.5.7.ebuild:
+  Marking mmap-0.5.7 ppc64 for bug 399987
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> mmap-0.5.7.ebuild:
+  x86 stable wrt bug #399987
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> mmap-0.5.7.ebuild:
+  Marking mmap-0.5.7 ppc for bug 399987
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> mmap-0.5.7.ebuild:
+  Stable for amd64, wrt bug #399987
+
+  05 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> mmap-0.5.7.ebuild:
+  Removed unused 'test?' depend found by Mr_Bones_.
+
+*mmap-0.5.7 (04 Aug 2011)
+
+  04 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> +mmap-0.5.7.ebuild:
+  Version bump.
 
   10 Apr 2011; Fabian Groffen <grobian@gentoo.org> mmap-0.4.1.ebuild:
   Marked ~x86-macos
@@ -41,4 +76,3 @@
   Initial import, needed by hashed-storage.
   It's not the latest version of mmap, but it's the most recent version
   hashed-storage supports.
-

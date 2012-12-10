@@ -1,9 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/cernlib/cernlib-2006-r4.ebuild,v 1.2 2011/07/21 16:47:55 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/cernlib/cernlib-2006-r4.ebuild,v 1.5 2012/10/24 19:42:22 ulm Exp $
 
 EAPI=4
-inherit eutils fortran-2 toolchain-funcs
+
+inherit eutils fortran-2 multilib toolchain-funcs
 
 DEB_PN=cernlib
 DEB_PV=20061220+dfsg3
@@ -12,25 +13,23 @@ DEB_P=${DEB_PN}_${DEB_PV}
 
 DESCRIPTION="CERN program library for High Energy Physics"
 HOMEPAGE="http://wwwasd.web.cern.ch/wwwasd/cernlib"
-SRC_URI="mirror://debian/pool/main/${DEB_PN:0:1}/${DEB_PN}/${DEB_P}.orig.tar.gz
+SRC_URI="
+	mirror://debian/pool/main/${DEB_PN:0:1}/${DEB_PN}/${DEB_P}.orig.tar.gz
 	mirror://debian/pool/main/${DEB_PN:0:1}/${DEB_PN}/${DEB_P}-${DEB_PR}.debian.tar.gz"
 
-KEYWORDS="~amd64 ~hppa ~sparc ~x86"
-LICENSE="GPL-2 LGPL-2 BSD"
-
 SLOT="0"
+LICENSE="GPL-2 LGPL-2 BSD"
+KEYWORDS="~amd64 ~hppa ~sparc ~x86"
+IUSE=""
 
-RDEPEND=">=x11-libs/openmotif-2.3:0
-	virtual/fortran
+RDEPEND="
+	x11-libs/motif:0
 	virtual/lapack
 	dev-lang/cfortran"
-
 DEPEND="${RDEPEND}
 	x11-misc/imake
 	x11-misc/makedepend
-	dev-util/pkgconfig"
-
-IUSE=""
+	virtual/pkgconfig"
 
 S="${WORKDIR}/${DEB_PN}-${DEB_PV}"
 

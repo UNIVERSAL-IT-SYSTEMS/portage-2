@@ -1,6 +1,45 @@
 # ChangeLog for sci-physics/pythia
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/pythia/ChangeLog,v 1.42 2011/06/21 14:32:06 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/pythia/ChangeLog,v 1.49 2012/11/30 22:08:58 bicatali Exp $
+
+  30 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> -pythia-8.1.65.ebuild,
+  pythia-6.4.24.ebuild, pythia-6.4.26.ebuild, pythia-8.1.45.ebuild,
+  pythia-8.1.70.ebuild:
+  Changed home page, thanks Andrew Savchenko bug #438762
+
+*pythia-8.1.70 (15 Nov 2012)
+
+  15 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> +pythia-8.1.70.ebuild:
+  Version bump
+
+  16 Oct 2012; Justin Lecher <jlec@gentoo.org> pythia-6.4.24.ebuild,
+  pythia-6.4.26.ebuild, pythia-8.1.45.ebuild, pythia-8.1.65.ebuild,
+  metadata.xml:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  08 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -pythia-8.1.62.ebuild,
+  pythia-6.4.26.ebuild, pythia-8.1.65.ebuild:
+  Keyword amd64-linux, x86-linux
+
+*pythia-8.1.65 (22 May 2012)
+
+  22 May 2012; Sébastien Fabbro <bicatali@gentoo.org> -pythia-8.1.57.ebuild,
+  +pythia-8.1.65.ebuild:
+  Version bump
+
+*pythia-8.1.62 (13 Mar 2012)
+
+  13 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> -pythia-6.4.25.ebuild,
+  -pythia-8.1.50.ebuild, +pythia-8.1.62.ebuild:
+  Version bump
+
+*pythia-8.1.57 (25 Nov 2011)
+*pythia-6.4.26 (25 Nov 2011)
+
+  25 Nov 2011; Sébastien Fabbro <bicatali@gentoo.org> +pythia-6.4.26.ebuild,
+  +pythia-8.1.57.ebuild:
+  Version bumps
 
   21 Jun 2011; Justin Lecher <jlec@gentoo.org> pythia-8.1.45.ebuild,
   pythia-8.1.50.ebuild:
@@ -177,4 +216,3 @@
   02 Sep 2008; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
   +pythia-6.4.18.ebuild, +pythia-8.1.08.ebuild:
   Initial import. Thanks Benjamin Bannier for his good work on bug #231484
-

@@ -1,6 +1,52 @@
 # ChangeLog for app-text/dvipdfmx
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/dvipdfmx/ChangeLog,v 1.60 2011/04/28 14:58:44 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/dvipdfmx/ChangeLog,v 1.74 2012/06/17 16:28:45 armin76 Exp $
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> dvipdfmx-20110311.ebuild:
+  ia64/s390/sh/sparc stable wrt #414431
+
+  04 Jun 2012; Fabian Groffen <grobian@gentoo.org> dvipdfmx-20110311.ebuild:
+  Fix ebuild for Prefix, add Prefix keywords by MATSUI Tetsushi, bug #419043
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> dvipdfmx-20110311.ebuild:
+  Stable for HPPA (bug #414965).
+
+  13 May 2012; Markus Meier <maekke@gentoo.org> dvipdfmx-20110311.ebuild:
+  arm stable, bug #414965
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> dvipdfmx-20110311.ebuild:
+  keyword ~amd64-fbsd
+
+  30 Mar 2012; Alexis Ballier <aballier@gentoo.org> dvipdfmx-20110311.ebuild:
+  rdepend on tex-base and build depend only on kpathsea to avoid circular deps,
+  bug #409711 by linuxboy
+
+  30 Mar 2012; Alexis Ballier <aballier@gentoo.org> -dvipdfmx-20100328.ebuild,
+  -dvipdfmx-20100328-r1.ebuild:
+  remove old
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> dvipdfmx-20110311.ebuild:
+  sparc stable wrt #396831
+
+  02 Mar 2012; Tobias Klausmann <klausman@gentoo.org> dvipdfmx-20110311.ebuild:
+  Stable on alpha, bug #396831
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> dvipdfmx-20110311.ebuild:
+  ppc/ppc64 stable wrt #396831
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  dvipdfmx-20110311.ebuild:
+  x86 stable wrt bug #396831
+
+  04 Jan 2012; Agostino Sarubbo <ago@gentoo.org> dvipdfmx-20110311.ebuild:
+  Stable for AMD64, wrt bug #396831
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> dvipdfmx-20110311.ebuild:
+  keyword ~x86-fbsd, bug #376611
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> dvipdfmx-20100328.ebuild,
+  dvipdfmx-20100328-r1.ebuild, dvipdfmx-20110311.ebuild:
+  Add ~arm/~ia64/~s390/~sh/~sparc wrt #376611
 
 *dvipdfmx-20110311 (28 Apr 2011)
 

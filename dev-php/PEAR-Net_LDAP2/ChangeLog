@@ -1,6 +1,34 @@
 # ChangeLog for dev-php/PEAR-Net_LDAP2
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Net_LDAP2/ChangeLog,v 1.6 2011/03/04 13:33:29 dev-zero Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Net_LDAP2/ChangeLog,v 1.13 2012/03/18 19:17:46 armin76 Exp $
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> PEAR-Net_LDAP2-2.0.12.ebuild:
+  sparc stable wrt #394067
+
+  03 Mar 2012; Tobias Klausmann <klausman@gentoo.org>
+  PEAR-Net_LDAP2-2.0.12.ebuild:
+  Stable on alpha, bug #394067
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> PEAR-Net_LDAP2-2.0.12.ebuild:
+  Marking PEAR-Net_LDAP2-2.0.12 ppc for bug 394067
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  PEAR-Net_LDAP2-2.0.12.ebuild:
+  x86 stable wrt bug #394067
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> PEAR-Net_LDAP2-2.0.12.ebuild:
+  Stable for HPPA (bug #394067).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> PEAR-Net_LDAP2-2.0.12.ebuild:
+  Stable for amd64, wrt bug #394067
+
+*PEAR-Net_LDAP2-2.0.12 (14 Jan 2012)
+
+  14 Jan 2012; Matti Bickel <mabi@gentoo.org> -PEAR-Net_LDAP2-2.0.0_rc2.ebuild,
+  -PEAR-Net_LDAP2-2.0.0_rc5.ebuild, -PEAR-Net_LDAP2-2.0.6.ebuild,
+  -PEAR-Net_LDAP2-2.0.7.ebuild, -PEAR-Net_LDAP2-2.0.11.ebuild,
+  +PEAR-Net_LDAP2-2.0.12.ebuild:
+  Version bump & remove old versions
 
 *PEAR-Net_LDAP2-2.0.11 (04 Mar 2011)
 

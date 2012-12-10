@@ -1,6 +1,36 @@
 # ChangeLog for dev-perl/GD-SVG
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/GD-SVG/ChangeLog,v 1.30 2009/06/03 16:14:03 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/GD-SVG/ChangeLog,v 1.39 2012/08/27 18:34:44 armin76 Exp $
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> GD-SVG-0.330.0.ebuild:
+  Drop alpha keywords
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -GD-SVG-0.28.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> GD-SVG-0.28.ebuild,
+  GD-SVG-0.330.0.ebuild:
+  Drop ia64/sparc keywords
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> GD-SVG-0.330.0.ebuild:
+  x86 stable wrt bug #400123
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org> GD-SVG-0.330.0.ebuild:
+  Stable on alpha, bug #400123
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> GD-SVG-0.330.0.ebuild:
+  Stable for amd64, wrt bug #400123
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -GD-SVG-0.33.ebuild:
+  Cleanup
+
+*GD-SVG-0.330.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +GD-SVG-0.330.0.ebuild:
+  Change version scheme
 
   03 Jun 2009; Torsten Veller <tove@gentoo.org> -GD-SVG-0.31.ebuild,
   -GD-SVG-0.32.ebuild:

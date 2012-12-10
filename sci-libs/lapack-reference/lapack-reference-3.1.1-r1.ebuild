@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/lapack-reference/lapack-reference-3.1.1-r1.ebuild,v 1.28 2011/06/21 15:15:28 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/lapack-reference/lapack-reference-3.1.1-r1.ebuild,v 1.30 2012/10/19 10:34:40 jlec Exp $
 
 inherit autotools eutils fortran-2 flag-o-matic multilib toolchain-funcs
 
@@ -18,13 +18,11 @@ KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 s390 sparc x86 ~x86-fbsd"
 IUSE="doc"
 
 RDEPEND="
-	virtual/fortran
-
 	app-admin/eselect-lapack
 	virtual/blas"
 DEPEND="
 	${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( app-doc/lapack-docs )"
 
 S="${WORKDIR}/${MyPN}-lite-${PV}"

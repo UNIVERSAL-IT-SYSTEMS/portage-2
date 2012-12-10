@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/picasm/picasm-1.14.ebuild,v 1.1 2011/05/07 10:07:50 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/picasm/picasm-1.14.ebuild,v 1.5 2012/11/27 04:20:06 radhermit Exp $
 
 EAPI=4
 
@@ -12,17 +12,15 @@ DESCRIPTION="An assembler and disassembler for 12 and 14-bit PIC chips"
 HOMEPAGE="http://www.iki.fi/trossi/pic/"
 SRC_URI="http://www.iki.fi/trossi/pic/${MY_P}.tar.bz2"
 
-LICENSE="as-is"
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 x86"
 IUSE=""
-
-DEPEND=""
 
 S=${WORKDIR}/${MY_P}
 
 src_prepare() {
-	sed -i -e 's:$(CC):\0 $(LDFLAGS):' Makefile
+	sed -i -e 's:$(CC):\0 $(LDFLAGS):' Makefile || die
 }
 
 src_compile() {

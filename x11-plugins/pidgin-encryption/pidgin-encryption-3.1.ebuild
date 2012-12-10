@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/pidgin-encryption/pidgin-encryption-3.1.ebuild,v 1.9 2011/06/30 12:57:01 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/pidgin-encryption/pidgin-encryption-3.1.ebuild,v 1.11 2012/05/05 05:11:58 jdhore Exp $
 
-EAPI="2"
+EAPI=4
 
 inherit flag-o-matic eutils
 
@@ -20,7 +20,11 @@ RDEPEND="net-im/pidgin[gtk]
 	>=dev-libs/nss-3.11"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
+
+src_prepare() {
+	epatch "${FILESDIR}/${P}-glib2.32.patch"
+}
 
 src_configure() {
 	strip-flags
@@ -29,6 +33,6 @@ src_configure() {
 }
 
 src_install() {
-	make install DESTDIR="${D}" || die "Install failed"
+	emake install DESTDIR="${D}"
 	dodoc CHANGELOG INSTALL NOTES README TODO VERSION WISHLIST
 }

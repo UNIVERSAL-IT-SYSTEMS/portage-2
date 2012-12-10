@@ -1,6 +1,111 @@
 # ChangeLog for media-video/totem
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/totem/ChangeLog,v 1.322 2011/07/17 21:19:14 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/totem/ChangeLog,v 1.345 2012/09/21 04:33:56 nirbheek Exp $
+
+  21 Sep 2012; Nirbheek Chauhan <nirbheek@gentoo.org> totem-3.4.3.ebuild:
+  We don't really need vala for building from the source tarball
+
+  16 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> totem-3.2.2.ebuild,
+  totem-3.4.2.ebuild, totem-3.4.3.ebuild:
+  Slot media-libs/grilo.
+
+  10 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> totem-3.2.2.ebuild,
+  totem-3.4.2.ebuild, totem-3.4.3.ebuild:
+  Add missing dependency on gsettings-desktop-schemas (bug #434498, thanks to
+  Andre Reinke).
+
+  03 Sep 2012; Nirbheek Chauhan <nirbheek@gentoo.org> totem-3.4.3.ebuild:
+  Vala should be in DEPEND not RDEPEND
+
+*totem-3.4.3 (04 Jul 2012)
+
+  04 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +totem-3.4.3.ebuild:
+  Version bump.
+
+  04 Jun 2012; Alexandre Rostovtsev <tetromino@gentoo.org> totem-3.2.2.ebuild:
+  totem-3.2 also needs the "unset DISPLAY" hack to avoid access violations (bug
+  #419187, thanks to Travis Hansen).
+
+  20 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> totem-3.4.2.ebuild:
+  Fix build with USE=-python (bug #416165, thanks to cyrillic).
+
+*totem-3.4.2 (19 May 2012)
+
+  19 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +totem-3.4.2.ebuild,
+  metadata.xml:
+  Version bump for gnome-3.4. Adds support for rtmp, removes separate youtube
+  plugin (now handled by USE=grilo), adds an optional browser plugin for
+  playing flash videos (warning: can break non-video flash objects).
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> totem-2.32.0-r2.ebuild,
+  totem-3.2.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  10 Mar 2012; Pacho Ramos <pacho@gentoo.org> -totem-3.2.1.ebuild, metadata.xml,
+  totem-2.32.0-r2.ebuild:
+  Drop galago support as it's dead and will go away soon. Remove old.
+
+  20 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org> totem-3.2.2.ebuild:
+  Do not fail on USE=-python (bug #404975, thanks to Rion for reporting).
+
+*totem-3.2.2 (20 Feb 2012)
+
+  20 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +totem-3.2.2.ebuild:
+  Version bump, lots of bugfixes.
+
+  14 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org> totem-3.2.1.ebuild:
+  Add missing dependency on gnome-icon-theme-symbolic (bug #403503, thanks to
+  Denis Dupeyron for reporting).
+
+  10 Feb 2012; Patrick Lauer <patrick@gentoo.org> totem-3.2.1.ebuild:
+  Changing python deps in preparation for 2.4 removal
+
+  04 Feb 2012; Justin Lecher <jlec@gentoo.org> totem-3.2.1.ebuild,
+  metadata.xml:
+  Enable support for zeitgeist plugin
+
+  22 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  totem-2.32.0-r2.ebuild, totem-3.2.1.ebuild:
+  Don't run python_mod_cleanup in pkg_postrm if python was disabled (prevents
+  _python_check_python_pkg_setup_execution errors).
+
+  22 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  totem-2.32.0-r2.ebuild:
+  Add PYTHON_USE_WITH_OPT to not pull in python when USE=-python (bug #398949,
+  thanks to Maxim Kammerer and Arfrever).
+
+  05 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  totem-2.32.0-r2.ebuild, totem-3.2.1.ebuild:
+  Fix py-compile idiom for automake-1.11.2 compatibility (bug #396585); move
+  gnome2_src_prepare after eautoreconf.
+
+  25 Nov 2011; Nirbheek Chauhan <nirbheek@gentoo.org> -totem-2.32.0.ebuild,
+  totem-2.32.0-r2.ebuild:
+  Remove old, add upper limit to libgdata dep, reported by Kobboi
+
+*totem-3.2.1 (03 Nov 2011)
+
+  03 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -files/totem-2.90.0-smclient-target-detection.patch, -totem-3.0.1.ebuild,
+  +totem-3.2.1.ebuild, metadata.xml:
+  Bump to 3.2.1 from the gnome overlay. Drop old. Move to EAPI4. Drop alpha,
+  arm, ia64. ppc, ppc64, sparc keywords due to libpeas, mx, clutter-{gst,gtk}
+  dependencies. Notable changes: video is now rendered using clutter; the grilo
+  plugin (auto-activated if built) replaces several plugins in older versions;
+  pygobject-3 compatibility.
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> totem-2.32.0-r2.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+*totem-3.0.1 (16 Aug 2011)
+
+  16 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> -totem-2.32.0-r1.ebuild,
+  +files/totem-2.90.0-smclient-target-detection.patch, +totem-3.0.1.ebuild,
+  metadata.xml:
+  Bump to 3.0.1, from gnome overlay for GNOME 3
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> totem-2.32.0-r2.ebuild:
+  alpha/ia64/sparc stable wrt #369909
 
   17 Jul 2011; Markus Meier <maekke@gentoo.org> totem-2.32.0-r2.ebuild:
   arm stable, bug #369909

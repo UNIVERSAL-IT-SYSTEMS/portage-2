@@ -1,6 +1,74 @@
 # ChangeLog for kde-misc/synaptiks
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/synaptiks/ChangeLog,v 1.17 2011/07/21 13:09:38 mschiff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/synaptiks/ChangeLog,v 1.35 2012/10/29 16:38:10 mgorny Exp $
+
+  29 Oct 2012; Michał Górny <mgorny@gentoo.org> synaptiks-0.8.1.ebuild:
+  Use virtual for argparse.
+
+  21 May 2012; Johannes Huber <johu@gentoo.org> -synaptiks-0.8.0.ebuild:
+  Remove old.
+
+  21 May 2012; Johannes Huber <johu@gentoo.org> synaptiks-0.8.1.ebuild:
+  Stable for x86, wrt bug #415781
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> synaptiks-0.8.1.ebuild:
+  Stable for amd64, wrt bug #415781
+
+  06 May 2012; Johannes Huber <johu@gentoo.org>
+  -files/synaptiks-0.4.0-kcmdesktop.patch, -synaptiks-0.4.0-r1.ebuild:
+  Remove old.
+
+  05 May 2012; Markus Meier <maekke@gentoo.org> synaptiks-0.8.0.ebuild:
+  x86 stable, bug #401131
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> synaptiks-0.8.0.ebuild:
+  Stable for amd64, wrt bug #401131
+
+  17 Apr 2012; Michał Górny <mgorny@gentoo.org> synaptiks-0.4.0-r1.ebuild:
+  Use mirror://bitbucket.
+
+  27 Mar 2012; Johannes Huber <johu@gentoo.org> synaptiks-0.8.1.ebuild:
+  Set python 2 interpreter, bug #387533.
+
+*synaptiks-0.8.1 (26 Mar 2012)
+
+  26 Mar 2012; Johannes Huber <johu@gentoo.org>
+  +files/synaptiks-0.8.1-templatesfix.patch, +synaptiks-0.8.1.ebuild:
+  Version bump by Chris Reffett <geekboy72@gmail.com> wrt bug #409703.
+
+  26 Mar 2012; Johannes Huber <johu@gentoo.org> synaptiks-0.4.0-r1.ebuild,
+  synaptiks-0.8.0.ebuild:
+  Update homepage.
+
+  15 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  synaptiks-0.8.0.ebuild:
+  setuptools is also DEPEND, thx abcd \& arfrever
+
+  15 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  synaptiks-0.8.0.ebuild:
+  Add missing setuptools dependency
+
+  15 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  synaptiks-0.8.0.ebuild:
+  Removing --single-version-externally-managed, thx arfrever
+
+  15 Dec 2011; Johannes Huber <johu@gentoo.org> synaptiks-0.8.0.ebuild:
+  Use python 2, fixes bug #387533 thanks floppym. Use appropiate eclass for
+  test, fixes bug #394575. Fix SRC_URI, uses now mirror, thanks repoman.
+
+  04 Nov 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  synaptiks-0.8.0.ebuild:
+  Use kde4-base.eclass to automatically handle handbook useflag, bug 387421
+
+  18 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  synaptiks-0.8.0.ebuild:
+  Does not work with python-3, bug 387533
+
+*synaptiks-0.8.0 (16 Oct 2011)
+
+  16 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -synaptiks-0.6.2.ebuild, -synaptiks-0.7.ebuild, +synaptiks-0.8.0.ebuild:
+  Version bump; remove old
 
 *synaptiks-0.7 (21 Jul 2011)
 *synaptiks-0.6.2 (21 Jul 2011)
@@ -93,4 +161,3 @@
   28 Oct 2009; Samuli Suominen <ssuominen@gentoo.org>
   +synaptiks-0.1.0.ebuild:
   Initial commit (alternative ksynaptics replacement).
-

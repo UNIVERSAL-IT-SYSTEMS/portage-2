@@ -1,8 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/galago-daemon/galago-daemon-0.5.1.ebuild,v 1.15 2007/11/29 05:37:15 jer Exp $
-
-inherit eutils autotools
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/galago-daemon/galago-daemon-0.5.1.ebuild,v 1.17 2012/05/24 04:24:11 vapier Exp $
 
 DESCRIPTION="Galago presence daemon"
 HOMEPAGE="http://www.galago-project.org/"
@@ -17,7 +15,7 @@ RDEPEND=">=dev-libs/glib-2.8
 		 >=dev-libs/libgalago-0.5.2
 		 >=dev-libs/dbus-glib-0.71"
 DEPEND="${RDEPEND}
-		>=dev-util/pkgconfig-0.9
+		virtual/pkgconfig
 		test? ( dev-libs/check )"
 
 src_compile() {

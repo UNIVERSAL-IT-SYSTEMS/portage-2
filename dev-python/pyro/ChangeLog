@@ -1,6 +1,112 @@
 # ChangeLog for dev-python/pyro
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyro/ChangeLog,v 1.49 2011/07/07 19:11:07 neurogeek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyro/ChangeLog,v 1.73 2012/06/08 11:46:27 phajdan.jr Exp $
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pyro-4.11.ebuild:
+  x86 stable wrt bug #419025
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> pyro-4.11.ebuild:
+  Marking pyro-4.11 ppc for bug 419025
+
+  02 Jun 2012; Markos Chandras <hwoarang@gentoo.org> pyro-4.11.ebuild:
+  Stable on amd64 wrt bug #419025
+
+  02 Jun 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> pyro-4.14.ebuild:
+  Removed the test restriction; see comment 3 in the bug #416809.
+
+  01 Jun 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> -pyro-4.13.ebuild,
+  pyro-4.11.ebuild:
+  The 4.13 has bug which is workarounded in the 4.14, therefore removing the
+  older version.
+
+*pyro-4.14 (01 Jun 2012)
+
+  01 Jun 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> +pyro-4.14.ebuild,
+  pyro-4.11.ebuild:
+  Version bump wrt bug #416809.  This version comes with several bug fixes and
+  one workaround for threadpool scaling problem.  I have restricted the test for
+  this version because it fails anyway because of the latest problem which is
+  not fully solved:    FAIL: testPoolGrowth
+  (PyroTests.test_threadpool.ThreadpoolTests)
+
+*pyro-4.11 (01 Jun 2012)
+
+  01 Jun 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> +pyro-4.11.ebuild:
+  Restored pyro-4.11, because this is the only candidate for the stabilization
+  in the slot 4.
+
+  01 Jun 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> -pyro-4.4.ebuild:
+  Removed oldest stable version in the slot 4.
+
+  01 Jun 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> -pyro-4.11.ebuild,
+  -pyro-4.12.ebuild:
+  Removed old versions in the slot 4 with exception to the stable one.
+
+  01 Jun 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> -pyro-3.13.ebuild,
+  -pyro-3.15.ebuild:
+  Removed old versions in the slot 3.
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> pyro-3.16.ebuild:
+  Marking pyro-3.16 ppc for bug 416255
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pyro-3.16.ebuild:
+  x86 stable wrt bug #416255
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> pyro-3.16.ebuild:
+  Stable for amd64, wrt bug #416255
+
+*pyro-3.16 (16 May 2012)
+
+  16 May 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> +pyro-3.16.ebuild,
+  metadata.xml:
+  Version bump.  Added myself to the metadata to see the package under my
+  profile in the euscan service.
+
+  NEWS
+
+  - connecting a proxy socket now also honors a timeout set by
+    proxy._setTimeout()
+
+  - fix setNoInherit on 64-bits Python on Windows (see
+    http://tech.oyster.com/cherrypy-ctypes-and-being-explicit/)
+
+*pyro-4.13 (19 Apr 2012)
+
+  19 Apr 2012; Patrick Lauer <patrick@gentoo.org> +pyro-4.13.ebuild:
+  Bump
+
+*pyro-4.12 (09 Mar 2012)
+
+  09 Mar 2012; Patrick Lauer <patrick@gentoo.org> +pyro-4.12.ebuild:
+  Bump
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> pyro-4.8.ebuild:
+  Marking pyro-4.8 ppc for bug 400335
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pyro-4.8.ebuild:
+  x86 stable wrt bug #400335
+
+  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> pyro-4.8.ebuild:
+  Stable for amd64, wrt bug #400335
+
+*pyro-4.11 (08 Feb 2012)
+
+  08 Feb 2012; Patrick Lauer <patrick@gentoo.org> +pyro-4.11.ebuild:
+  Bump for #401975
+
+  28 Nov 2011; Amadeusz Żołnowski <aidecoe@gentoo.org> pyro-4.4.ebuild,
+  pyro-4.8.ebuild:
+  Updated Pyro4 homepage URI-s.
+
+*pyro-3.15 (24 Sep 2011)
+
+  24 Sep 2011; Mike Gilbert <floppym@gentoo.org> +pyro-3.15.ebuild:
+  Version bump requested by aidecoe.
+
+*pyro-4.8 (05 Sep 2011)
+
+  05 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> +pyro-4.8.ebuild:
+  Version bump to 4.8 (thanks to jbergstroem for testing).
 
   07 Jul 2011; Jesus Rivero <neurogeek@gentoo.org> pyro-4.4.ebuild:
   Disabled tests that request connections wrt bug #370577

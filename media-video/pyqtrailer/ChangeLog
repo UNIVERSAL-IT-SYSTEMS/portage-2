@@ -1,6 +1,27 @@
 # ChangeLog for media-video/pyqtrailer
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/pyqtrailer/ChangeLog,v 1.10 2011/01/26 22:00:48 sochotnicky Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/pyqtrailer/ChangeLog,v 1.15 2012/10/07 14:31:34 sochotnicky Exp $
+
+  07 Oct 2012; Stanislav Ochotnicky <sochotnicky@gentoo.org>
+  pyqtrailer-0.6.1.ebuild, pyqtrailer-0.6.2.ebuild:
+  Fix missing inherit eutils after change to using domenu
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> pyqtrailer-0.6.1.ebuild,
+  pyqtrailer-0.6.2.ebuild:
+  Use domenu instead insinto + doins to install .desktop files
+
+  01 Apr 2012; Mike Gilbert <floppym@gentoo.org> pyqtrailer-0.6.1.ebuild,
+  pyqtrailer-0.6.2.ebuild:
+  python-dateutil no longer needs a slot dep.
+
+*pyqtrailer-0.6.2 (06 Mar 2012)
+
+  06 Mar 2012; Sebastian Pipping <sping@gentoo.org> +pyqtrailer-0.6.2.ebuild:
+  Bump to 0.6.2
+
+  24 Jan 2012; Kacper Kowalik <xarthisius@gentoo.org> -pyqtrailer-0.6.0.ebuild,
+  pyqtrailer-0.6.1.ebuild:
+  Depend on proper slot of dev-python/python-dateutil, drop old
 
 *pyqtrailer-0.6.1 (26 Jan 2011)
 
@@ -63,4 +84,3 @@
   +pyqtrailer-0.3.4.ebuild, +metadata.xml:
   New ebuild for pyqtrailer. Qt4 application for downloading trailers from
   apple.com.
-

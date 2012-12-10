@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/docky/docky-2.1.3.ebuild,v 1.1 2011/06/15 19:05:22 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/docky/docky-2.1.3.ebuild,v 1.5 2012/08/13 16:43:14 angelos Exp $
 
 EAPI=3
 inherit eutils gnome2 mono
@@ -11,7 +11,7 @@ SRC_URI="http://launchpad.net/${PN}/2.1/${PV}/+download/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="debug nls"
 
 RDEPEND="dev-dotnet/dbus-sharp
@@ -22,14 +22,14 @@ RDEPEND="dev-dotnet/dbus-sharp
 	dev-dotnet/gnome-desktop-sharp
 	dev-dotnet/gnome-keyring-sharp
 	dev-dotnet/gtk-sharp
-	dev-dotnet/mono-addins
+	dev-dotnet/mono-addins[gtk]
 	dev-dotnet/notify-sharp
 	dev-dotnet/rsvg-sharp
 	dev-dotnet/wnck-sharp"
 
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 pkg_setup() {
 	G2CONF="${G2CONF}

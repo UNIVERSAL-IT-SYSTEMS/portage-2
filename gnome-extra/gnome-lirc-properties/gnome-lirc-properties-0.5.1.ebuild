@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-lirc-properties/gnome-lirc-properties-0.5.1.ebuild,v 1.2 2010/10/10 16:40:12 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-lirc-properties/gnome-lirc-properties-0.5.1.ebuild,v 1.5 2012/05/05 06:25:23 jdhore Exp $
 
 EAPI=3
 
 GCONF_DEBUG=no
-PYTHON_DEPEND="2:2.4"
+PYTHON_DEPEND="2:2.5"
 
 inherit gnome2 python
 
@@ -23,7 +23,7 @@ RDEPEND=">=app-misc/lirc-0.8.4
 DEPEND="${RDEPEND}
 	app-text/gnome-doc-utils
 	>=dev-util/intltool-0.35.0
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
 
 # uses AC_PATH_PROG([lircd]), which is in /usr/sbin which is only in the path
@@ -38,8 +38,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	rm -f py-compile
-	ln -s $(type -P true) py-compile
+	>py-compile
 	gnome2_src_prepare
 }
 

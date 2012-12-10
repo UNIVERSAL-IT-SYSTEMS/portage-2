@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/nautilus/nautilus-2.32.2.1-r1.ebuild,v 1.5 2011/07/18 11:52:57 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/nautilus/nautilus-2.32.2.1-r1.ebuild,v 1.10 2012/05/05 05:38:08 jdhore Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -14,7 +14,7 @@ SRC_URI="${SRC_URI} http://dev.gentoo.org/~pacho/gnome/${P}-patches.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2 FDL-1.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm ~ia64 ~ppc ~ppc64 ~sh ~sparc x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux"
+KEYWORDS="alpha amd64 arm ia64 ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux"
 IUSE="doc gnome +introspection xmp"
 
 RDEPEND=">=dev-libs/glib-2.28.0:2
@@ -25,6 +25,7 @@ RDEPEND=">=dev-libs/glib-2.28.0:2
 	>=media-libs/libexif-0.5.12
 	>=gnome-base/gconf-2:2
 	dev-libs/libunique:1
+	gnome-base/dconf
 	x11-libs/libXext
 	x11-libs/libXrender
 	introspection? ( >=dev-libs/gobject-introspection-0.6.4 )
@@ -33,7 +34,7 @@ RDEPEND=">=dev-libs/glib-2.28.0:2
 DEPEND="${RDEPEND}
 	>=dev-lang/perl-5
 	sys-devel/gettext
-	>=dev-util/pkgconfig-0.9
+	virtual/pkgconfig
 	>=dev-util/intltool-0.40.1
 	doc? ( >=dev-util/gtk-doc-1.4 )"
 # For eautoreconf
@@ -59,8 +60,9 @@ src_prepare() {
 	epatch "${WORKDIR}/${P}-patches"/*.patch
 
 	# Remove crazy CFLAGS
-	sed 's:-DG.*DISABLE_DEPRECATED::g' -i configure.in configure \
-		|| die "sed 1 failed"
+	sed -i \
+		-e 's:-DG.*DISABLE_DEPRECATED::g' \
+		configure{,.in} eel/Makefile.{am,in} || die
 }
 
 src_test() {

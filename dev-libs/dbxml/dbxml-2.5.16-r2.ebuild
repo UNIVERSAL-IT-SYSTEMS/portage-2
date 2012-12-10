@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/dbxml/dbxml-2.5.16-r2.ebuild,v 1.2 2010/09/03 20:05:42 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/dbxml/dbxml-2.5.16-r2.ebuild,v 1.6 2012/11/25 19:30:51 ulm Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="3.* *-jython"
 
 inherit autotools distutils flag-o-matic perl-app eutils versionator libtool multilib java-pkg-opt-2
 
@@ -21,14 +21,15 @@ HOMEPAGE="http://www.oracle.com/technetwork/database/berkeleydb/index-083851.htm
 SRC_URI="http://download-east.oracle.com/berkeley-db/${MY_P}.tar.gz
 	http://download-west.oracle.com/berkeley-db/${MY_P}.tar.gz
 	http://download-uk.oracle.com/berkeley-db/${MY_P}.tar.gz"
-LICENSE="OracleDB Apache-1.1 BSD"
+
+LICENSE="Sleepycat Apache-1.1 BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc examples java perl python tcl"
 
-RDEPEND="sys-libs/db:${DB_VER}[-nocxx,java?]
+RDEPEND="|| ( sys-libs/db:${DB_VER}[cxx,java?] sys-libs/db:${DB_VER}[-nocxx,java?] )
 	>=dev-libs/xerces-c-3
-	>=dev-libs/xqilla-2.1.2
+	=dev-libs/xqilla-2.2*
 	sys-libs/zlib
 	perl? ( dev-lang/perl )
 	python? (

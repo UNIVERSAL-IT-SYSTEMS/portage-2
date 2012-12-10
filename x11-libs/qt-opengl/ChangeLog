@@ -1,6 +1,143 @@
 # ChangeLog for x11-libs/qt-opengl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-opengl/ChangeLog,v 1.91 2011/07/13 12:53:27 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-opengl/ChangeLog,v 1.129 2012/12/05 03:23:05 yngwin Exp $
+
+*qt-opengl-4.8.4 (05 Dec 2012)
+
+  05 Dec 2012; Ben de Groot <yngwin@gentoo.org> +qt-opengl-4.8.4.ebuild:
+  Qt 4.8.4 version bump
+
+  14 Oct 2012; Raúl Porcel <armin76@gentoo.org> qt-opengl-4.8.2.ebuild:
+  alpha/ia64/sparc stable wrt #424625
+
+  21 Sep 2012; Johannes Huber <johu@gentoo.org> qt-opengl-4.7.4.ebuild,
+  qt-opengl-4.8.1.ebuild, qt-opengl-4.8.2.ebuild, qt-opengl-4.8.3.ebuild:
+  Revert last commit.
+
+  20 Sep 2012; Johannes Huber <johu@gentoo.org> qt-opengl-4.7.4.ebuild,
+  qt-opengl-4.8.1.ebuild, qt-opengl-4.8.2.ebuild, qt-opengl-4.8.3.ebuild:
+  Add virtual/glu see bugs #432516, #435108.
+
+  16 Sep 2012; Ben de Groot <yngwin@gentoo.org> qt-opengl-4.8.3.ebuild:
+  Add overlay changes (c++0x useflag)
+
+*qt-opengl-4.8.3 (14 Sep 2012)
+
+  14 Sep 2012; Ben de Groot <yngwin@gentoo.org> +qt-opengl-4.8.3.ebuild:
+  Version bump. Drop qatomic-x32 patch applied upstream. Drop qpa useflag.
+
+  19 Jul 2012; Markus Meier <maekke@gentoo.org> qt-opengl-4.8.2.ebuild:
+  arm stable, bug #424625
+
+  15 Jul 2012; Agostino Sarubbo <ago@gentoo.org> qt-opengl-4.8.2.ebuild:
+  Stable for x86, wrt bug #424625
+
+  09 Jul 2012; Johannes Huber <johu@gentoo.org> -qt-opengl-4.6.3.ebuild:
+  Drop Qt-4.6.3
+
+  09 Jul 2012; Joseph Jezak <josejx@gentoo.org> qt-opengl-4.8.2.ebuild:
+  Marked ppc/ppc64 for bug #424625.
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> qt-opengl-4.8.1.ebuild,
+  qt-opengl-4.8.2.ebuild:
+  sparc stable, add ~sparc
+
+  08 Jul 2012; Jeroen Roovers <jer@gentoo.org> qt-opengl-4.8.2.ebuild:
+  Stable for HPPA (bug #424625).
+
+  06 Jul 2012; Michael Weber <xmw@gentoo.org> qt-opengl-4.8.1.ebuild:
+  ppc stable (bug 414241)
+
+  05 Jul 2012; Agostino Sarubbo <ago@gentoo.org> qt-opengl-4.8.2.ebuild:
+  Stable for amd64, wrt bug #424625
+
+  25 Jun 2012; Raúl Porcel <armin76@gentoo.org> qt-opengl-4.8.1.ebuild,
+  qt-opengl-4.8.2.ebuild:
+  Add ~alpha, alpha/ia64 stable wrt #414241
+
+  19 Jun 2012; Davide Pesavento <pesa@gentoo.org>
+  +files/4.8.2-qatomic-x32.patch, qt-opengl-4.8.2.ebuild:
+  Add patch for x32 support in qatomic asm code (bug 420705).
+
+  18 Jun 2012; Davide Pesavento <pesa@gentoo.org> metadata.xml:
+  Cleanup metadata and add upstream info.
+
+*qt-opengl-4.8.2 (22 May 2012)
+
+  22 May 2012; Davide Pesavento <pesa@gentoo.org> +qt-opengl-4.8.2.ebuild:
+  Version bump.
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> qt-opengl-4.8.1.ebuild:
+  Stable for x86, wrt bug #414241
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> qt-opengl-4.8.1.ebuild:
+  Stable for HPPA (bug #414241).
+
+  14 May 2012; Johannes Huber <johu@gentoo.org> -qt-opengl-4.7.2.ebuild:
+  Drop Qt-4.7.2
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> qt-opengl-4.8.1.ebuild:
+  keyword ~amd64-fbsd
+
+  12 May 2012; Markus Meier <maekke@gentoo.org> qt-opengl-4.8.1.ebuild:
+  arm stable, bug #414241
+
+  08 May 2012; Markos Chandras <hwoarang@gentoo.org> qt-opengl-4.8.1.ebuild:
+  Stable on amd64 wrt bug #414241
+
+  05 Apr 2012; Johannes Huber <johu@gentoo.org> -qt-opengl-4.8.0-r2.ebuild:
+  Drop Qt-4.8.0
+
+  03 Apr 2012; Jeroen Roovers <jer@gentoo.org> qt-opengl-4.7.4.ebuild:
+  Stable for HPPA (bug #390963).
+
+*qt-opengl-4.8.1 (29 Mar 2012)
+
+  29 Mar 2012; Davide Pesavento <pesa@gentoo.org> +qt-opengl-4.8.1.ebuild:
+  Version bump.
+
+  27 Mar 2012; Johannes Huber <johu@gentoo.org> -qt-opengl-4.6.2.ebuild:
+  Drop Qt-4.6.2
+
+  28 Feb 2012; Justin Lecher <jlec@gentoo.org> qt-opengl-4.8.0-r2.ebuild:
+  correct installation inside prefix
+
+*qt-opengl-4.8.0-r2 (05 Feb 2012)
+
+  05 Feb 2012; Alex Alexander <wired@gentoo.org> -qt-opengl-4.8.0-r1.ebuild,
+  +qt-opengl-4.8.0-r2.ebuild:
+  marked opengl as experimental in the eselect qtgraphicssystem list
+
+  29 Jan 2012; Joseph Jezak <josejx@gentoo.org> qt-opengl-4.7.4.ebuild:
+  Marked ppc ppc64 stable for bug #390963.
+
+*qt-opengl-4.8.0-r1 (29 Jan 2012)
+
+  29 Jan 2012; Alex Alexander <wired@gentoo.org> +qt-opengl-4.8.0-r1.ebuild,
+  metadata.xml:
+  version bump
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> qt-opengl-4.7.4.ebuild:
+  x86 stable, bug #390963
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> qt-opengl-4.7.4.ebuild:
+  Stable for AMD64, wrt bug #390963
+
+  28 Nov 2011; Davide Pesavento <pesa@gentoo.org> -qt-opengl-4.7.3.ebuild:
+  Remove Qt 4.7.3
+
+  26 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> Manifest:
+  Bug 385719: upstream altered qt-everywhere-opensource-src-4.7.4.tar.gz, mass
+  fix for pesa.
+
+*qt-opengl-4.7.4 (08 Sep 2011)
+
+  08 Sep 2011; Alex Alexander <wired@gentoo.org> +qt-opengl-4.7.4.ebuild:
+  version bump, 4.7.4
+
+  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  qt-opengl-4.6.3.ebuild:
+  keyword ~sparc-solaris
 
   13 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> qt-opengl-4.7.2.ebuild:
   ppc64 stable wrt #354033
@@ -362,4 +499,3 @@
   20 Dec 2007; Caleb Tennis <caleb@gentoo.org> +files/configure.patch,
   +metadata.xml, +qt-opengl-4.4.0_rc1.ebuild:
   Initial import
-

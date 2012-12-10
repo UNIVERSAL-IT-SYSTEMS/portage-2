@@ -1,6 +1,40 @@
 # ChangeLog for dev-perl/XML-Atom
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-Atom/ChangeLog,v 1.14 2011/07/29 12:36:40 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-Atom/ChangeLog,v 1.23 2012/06/24 12:59:14 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  13 Apr 2012; Agostino Sarubbo <ago@gentoo.org> XML-Atom-0.410.0.ebuild:
+  Stable for amd64, wrt bug #411409
+
+  11 Apr 2012; Jeff Horelick <jdhore@gentoo.org> XML-Atom-0.410.0.ebuild:
+  marked x86 per bug 411409
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org> -XML-Atom-0.390.0.ebuild,
+  -XML-Atom-0.400.0.ebuild:
+  Cleanup
+
+*XML-Atom-0.410.0 (17 Oct 2011)
+
+  17 Oct 2011; Torsten Veller <tove@gentoo.org> +XML-Atom-0.410.0.ebuild:
+  Version bump
+
+  09 Oct 2011; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Remove tove from metadata.xml
+
+*XML-Atom-0.400.0 (19 Sep 2011)
+
+  19 Sep 2011; Torsten Veller <tove@gentoo.org> +XML-Atom-0.400.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -XML-Atom-0.380.0.ebuild:
+  Cleanup
+
+*XML-Atom-0.390.0 (06 Aug 2011)
+
+  06 Aug 2011; Torsten Veller <tove@gentoo.org> +XML-Atom-0.390.0.ebuild:
+  Version bump
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org> -XML-Atom-0.37.ebuild:
   Cleanup
@@ -65,4 +99,3 @@
   01 Aug 2008; Torsten Veller <tove@gentoo.org> +metadata.xml,
   +XML-Atom-0.28.ebuild:
   Initial commit
-

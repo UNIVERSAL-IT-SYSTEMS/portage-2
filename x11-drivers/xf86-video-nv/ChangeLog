@@ -1,6 +1,32 @@
 # ChangeLog for x11-drivers/xf86-video-nv
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-nv/ChangeLog,v 1.110 2011/02/14 23:56:23 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-nv/ChangeLog,v 1.117 2012/12/08 17:11:46 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-nv-2.1.20.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> xf86-video-nv-2.1.20.ebuild:
+  Marking xf86-video-nv-2.1.20 ppc stable for bug 440872
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-nv-2.1.20.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-nv-2.1.20.ebuild:
+  Stable for amd64, wrt bug #440872
+
+  02 Nov 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xf86-video-nv-2.1.20.ebuild:
+  Raise libpciaccess dependency, bug #362229.
+
+*xf86-video-nv-2.1.20 (21 Jul 2012)
+
+  21 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-nv-2.1.20.ebuild:
+  Version bump.
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org>
+  xf86-video-nv-2.1.18.ebuild:
+  keyword ~amd64-fbsd (compile tested only)
 
   14 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org>
   xf86-video-nv-2.1.18.ebuild:
@@ -488,4 +514,3 @@
   08 Aug 2005; Donnie Berkholz <dberkholz@gentoo.org>;
   +xf86-video-nv-1.0.1.ebuild:
   Initial commit for modular X.
-

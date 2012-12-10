@@ -1,6 +1,69 @@
 # ChangeLog for net-libs/libnfnetlink
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libnfnetlink/ChangeLog,v 1.40 2011/08/01 07:51:57 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libnfnetlink/ChangeLog,v 1.57 2012/11/28 20:21:56 ranger Exp $
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> libnfnetlink-1.0.1.ebuild:
+  Marking libnfnetlink-1.0.1 ppc for bug 442872
+
+  24 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  libnfnetlink-1.0.1.ebuild:
+  stable arm ppc, bug #442872
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> libnfnetlink-1.0.1.ebuild:
+  Stable for x86, wrt bug #442872
+
+  14 Nov 2012; <ago@gentoo.org> libnfnetlink-1.0.1.ebuild:
+  Stable for amd64, wrt bug #442872
+
+  13 Nov 2012; Jeroen Roovers <jer@gentoo.org> libnfnetlink-1.0.1.ebuild:
+  Stable for HPPA (bug #442872).
+
+  13 Nov 2012; Brent Baude <ranger@gentoo.org> libnfnetlink-1.0.1.ebuild:
+  Marking libnfnetlink-1.0.1 ppc64 for bug 442872
+
+  08 Oct 2012; Tim Harder <radhermit@gentoo.org> -libnfnetlink-1.0.0.ebuild:
+  Remove old.
+
+*libnfnetlink-1.0.1 (08 Oct 2012)
+
+  08 Oct 2012; Tim Harder <radhermit@gentoo.org> +libnfnetlink-1.0.1.ebuild:
+  Version bump.
+
+  02 Sep 2012; Raúl Porcel <armin76@gentoo.org> libnfnetlink-1.0.0-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #419269
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> libnfnetlink-1.0.0-r1.ebuild:
+  x86 stable, bug #419269
+
+  07 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  libnfnetlink-1.0.0-r1.ebuild:
+  Stable arm, bug #419269
+
+  06 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  libnfnetlink-1.0.0-r1.ebuild:
+  Stable ppc ppc64, bug #419269
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  libnfnetlink-1.0.0-r1.ebuild:
+  Stable on amd64 wrt bug #419269
+
+  01 Aug 2012; Jeroen Roovers <jer@gentoo.org> libnfnetlink-1.0.0-r1.ebuild:
+  Stable for HPPA (bug #419269).
+
+*libnfnetlink-1.0.0-r1 (14 Feb 2012)
+
+  14 Feb 2012; Jeroen Roovers <jer@gentoo.org> -libnfnetlink-0.0.25.ebuild,
+  -libnfnetlink-0.0.30.ebuild, -libnfnetlink-0.0.33.ebuild,
+  -libnfnetlink-0.0.38.ebuild, -libnfnetlink-0.0.39.ebuild,
+  -libnfnetlink-0.0.40.ebuild, -libnfnetlink-0.0.41.ebuild,
+  +libnfnetlink-1.0.0-r1.ebuild:
+  Clean up old. Add IUSE=static-libs.
+
+  28 Aug 2011; Raúl Porcel <armin76@gentoo.org> libnfnetlink-1.0.0.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #376881
+
+  13 Aug 2011; Markus Meier <maekke@gentoo.org> libnfnetlink-1.0.0.ebuild:
+  arm stable, bug #376881
 
   01 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
   libnfnetlink-1.0.0.ebuild:
@@ -159,4 +222,3 @@
   13 Nov 2006; Cedric Krier <ced@ced.homedns.org>
   +libnfnetlink-0.0.16.ebuild:
   New ebuild
-

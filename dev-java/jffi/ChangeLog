@@ -1,6 +1,46 @@
 # ChangeLog for dev-java/jffi
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jffi/ChangeLog,v 1.16 2010/05/24 19:02:03 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jffi/ChangeLog,v 1.25 2012/09/25 10:41:34 sera Exp $
+
+*jffi-1.2.5 (25 Sep 2012)
+
+  25 Sep 2012; Ralph Sennhauser <sera@gentoo.org> +jffi-1.2.5.ebuild,
+  +files/jffi-1.2.5_no-werror.patch:
+  Version bump. #431936
+
+  25 Aug 2012; Ian Whyman <thev00d00@gentoo.org> jffi-0.6.0.2.ebuild,
+  jffi-0.6.0.2-r1.ebuild, jffi-0.7_pre20100131.ebuild, jffi-1.0.0.ebuild,
+  jffi-1.0.11.ebuild:
+  Fix build with GCC 4.7 #421501
+
+  28 May 2012; Ralph Sennhauser <sera@gentoo.org> jffi-1.2.2.ebuild:
+  use https for HOMEPAGE. Reported by Arfrever.
+
+*jffi-1.2.2 (28 May 2012)
+
+  28 May 2012; Ralph Sennhauser <sera@gentoo.org> +jffi-1.2.2.ebuild,
+  +files/jffi-1.2.2_no-werror.patch:
+  Version bump. #417889
+  New soname, new slot.
+
+  09 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> jffi-1.0.11.ebuild:
+  x86 stable wrt bug #396305
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> jffi-0.7_pre20100131.ebuild,
+  jffi-1.0.0.ebuild, jffi-1.0.11.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> jffi-1.0.11.ebuild:
+  Stable for amd64, wrt bug #396305
+
+*jffi-1.0.11 (12 Jan 2012)
+
+  12 Jan 2012; Ralph Sennhauser <sera@gentoo.org> +jffi-1.0.11.ebuild,
+  +files/jffi-1.0.11_no-werror.patch, +files/jffi_maven-build.xml:
+  Version bump.
+  Switch to https://github.com/jnr as project home.
+  No longer use netbeans build system.
+  Use slot coresponding to .so version.
 
   24 May 2010; Pacho Ramos <pacho@gentoo.org> jffi-1.0.0.ebuild:
   stable amd64, bug 318153

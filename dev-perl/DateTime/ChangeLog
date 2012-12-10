@@ -1,6 +1,48 @@
 # ChangeLog for dev-perl/DateTime
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/DateTime/ChangeLog,v 1.122 2011/07/30 08:36:01 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/DateTime/ChangeLog,v 1.131 2012/11/17 19:54:47 tove Exp $
+
+*DateTime-0.780.0 (17 Nov 2012)
+
+  17 Nov 2012; Torsten Veller <tove@gentoo.org> +DateTime-0.780.0.ebuild:
+  Version bump
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -DateTime-0.700.0.ebuild,
+  -DateTime-0.720.0.ebuild, -DateTime-0.730.0.ebuild, -DateTime-0.740.0.ebuild,
+  -DateTime-0.750.0.ebuild:
+  Cleanup
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> DateTime-0.760.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+*DateTime-0.760.0 (03 Jul 2012)
+
+  03 Jul 2012; Torsten Veller <tove@gentoo.org> +DateTime-0.760.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*DateTime-0.750.0 (14 Jun 2012)
+
+  14 Jun 2012; Torsten Veller <tove@gentoo.org> +DateTime-0.750.0.ebuild:
+  Version bump
+
+*DateTime-0.740.0 (21 Apr 2012)
+
+  21 Apr 2012; Robin H. Johnson <robbat2@gentoo.org> DateTime-0.730.0.ebuild,
+  +DateTime-0.740.0.ebuild:
+  Version bump via perl-bump experimental tool.
+
+*DateTime-0.730.0 (18 Mar 2012)
+
+  18 Mar 2012; Torsten Veller <tove@gentoo.org> +DateTime-0.730.0.ebuild:
+  Version bump
+
+*DateTime-0.720.0 (08 Jan 2012)
+
+  08 Jan 2012; Torsten Veller <tove@gentoo.org> +DateTime-0.720.0.ebuild:
+  Version bump
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> -DateTime-0.66.ebuild,
   -DateTime-0.670.0.ebuild, -DateTime-0.680.0.ebuild:
@@ -473,4 +515,3 @@
   04 Mar 2004; Michael Cummings <mcummings@gentoo.org> DateTime-0.20.ebuild,
   metadata.xml:
   Dep for gwine, bug 27301
-

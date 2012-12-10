@@ -1,6 +1,158 @@
 # ChangeLog for dev-util/catalyst
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/catalyst/ChangeLog,v 1.233 2011/07/17 00:29:56 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/catalyst/ChangeLog,v 1.257 2012/12/04 21:23:03 zerochaos Exp $
+
+*catalyst-2.0.12.2 (04 Dec 2012)
+
+  04 Dec 2012; Rick Farina <zerochaos@gentoo.org> +catalyst-2.0.12.2.ebuild:
+  catalyst 2.0.12.2 to fix missing bindist on stage2 and stage3
+
+  11 Nov 2012; Matt Turner <mattst88@gentoo.org> -catalyst-2.0.10.1.ebuild,
+  -catalyst-2.0.7.1-r1.ebuild, -catalyst-2.0.7.1.ebuild,
+  -catalyst-2.0.8.1-r1.ebuild, -catalyst-2.0.8.1-r2.ebuild,
+  -files/0001-Add-new-T-purgetmponly-option.patch,
+  -files/0001-add-etc-make.profile-to-cleanables-too.patch,
+  -files/0001-s-etc-make.profile-etc-portage-make.profile-g-Use-ne.patch,
+  -files/0002-s-etc-make.conf-etc-portage-make.conf-g-Use-new-loca.patch,
+  -files/2.0.8.1-arm-softfp.patch:
+  Remove old.
+
+  11 Nov 2012; Matt Turner <mattst88@gentoo.org> -catalyst-2.9999.ebuild:
+  The master branch is catalyst-2, and the catalyst_2 branch is now history.
+
+  02 Nov 2012; Rick Farina <zerochaos@gentoo.org> catalyst-2.0.12.1.ebuild,
+  catalyst-2.0.12.ebuild, catalyst-2.9999.ebuild, catalyst-3.9999.ebuild:
+  adding rdep on lbzip2 per bug #440874
+
+*catalyst-2.0.12.1 (02 Nov 2012)
+
+  02 Nov 2012; Rick Farina <zerochaos@gentoo.org> +catalyst-2.0.12.1.ebuild:
+  catalyst 2.0.12.1 fixes fsscript not being marked executable and random tmpfs
+  folders appears
+
+*catalyst-2.0.12 (31 Oct 2012)
+
+  31 Oct 2012; Rick Farina <zerochaos@gentoo.org> +catalyst-2.0.12.ebuild:
+  version bump to 2.0.12. this version includes better lbzip2 support as well as
+  a fix for bug #439636 and several new features available in catalyst.conf
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> catalyst-9999.ebuild:
+  Add app-arch/lbzip2 to RDEPEND. See upstream commit 166a239.
+
+  25 Sep 2012; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  catalyst-2.0.11.ebuild, catalyst-2.9999.ebuild, catalyst-3.9999.ebuild,
+  catalyst-9999.ebuild:
+  [dev-util/catalyst] Mark 2.0.11 stable. Add note about catalyst_2 branch and
+  sync live / 2.0.11 ebuilds.
+
+*catalyst-3.9999 (25 Sep 2012)
+
+  25 Sep 2012; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +catalyst-3.9999.ebuild, catalyst-2.9999.ebuild, catalyst-9999.ebuild:
+  [dev-util/catalyst] Update live ebuilds to follow master, catalyst_2 and
+  catalyst_3 branches.
+
+*catalyst-2.0.11 (09 Sep 2012)
+
+  09 Sep 2012; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +catalyst-2.0.11.ebuild:
+  Version bump to catalyst-2.0.11.
+  This version moves make.conf and make.profile to /etc/portage.
+  Set the profile using eselect instead of manually.
+  Add support to update the seed stage3 when building the stage1.
+  Update arch config. Add x32 abi config.
+
+  29 Aug 2012; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  catalyst-9999.ebuild:
+  [dev-util/catalyst-9999] Update ebuild now that 9999 (master) = catalyst_2
+  branch. Prepare work for creating a catalyst-3.9999 to 
+  follow the catalyst_3 branch.
+
+*catalyst-2.0.10.1 (27 Jul 2012)
+
+  27 Jul 2012; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +catalyst-2.0.10.1.ebuild:
+  [dev-util/catalyst] Bump catalyst to the 2.0.10.1 revision.
+  This revision includes all updates committed to the repo since the 2.0.8.1
+  release: move make.conf and make.profile to /etc/portage (patches by Jeremy
+  Olexa <darkside>),
+  add catalyst-spec man page (patches by W. Trevor King <wking@drexel.edu>) and
+  update livecd-stage1 target so it rebuilds packages with new use flags.
+
+*catalyst-2.0.8.1-r2 (08 Jul 2012)
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org>
+  +files/2.0.8.1-arm-softfp.patch, +catalyst-2.0.8.1-r2.ebuild:
+  2.0.9 can't be released yet, so i'm forced to add patches here
+
+*catalyst-2.0.8.1-r1 (15 May 2012)
+
+  15 May 2012; Raúl Porcel <armin76@gentoo.org> -catalyst-2.0.8.1.ebuild,
+  +catalyst-2.0.8.1-r1.ebuild, catalyst-2.9999.ebuild, catalyst-9999.ebuild:
+  Make sure don't convert shebangs that aren't needed
+
+*catalyst-2.0.8.1 (12 May 2012)
+
+  12 May 2012; Raúl Porcel <armin76@gentoo.org> -catalyst-2.0.8.ebuild,
+  +catalyst-2.0.8.1.ebuild:
+  Version bump
+
+  03 May 2012; Matt Turner <mattst88@gentoo.org> -catalyst-2.0.6.ebuild,
+  -catalyst-2.0.6.916.ebuild, -catalyst-2.0.6.918.ebuild:
+  Drop old. Add kernel_linux to IUSE.
+
+  22 Apr 2012; Mike Gilbert <floppym@gentoo.org> catalyst-2.0.8.ebuild,
+  catalyst-2.9999.ebuild, catalyst-9999.ebuild:
+  Don't set SUPPORT_PYTHON_ABIS; call python_set_active_version instead.
+
+  22 Apr 2012; Raúl Porcel <armin76@gentoo.org> catalyst-2.0.8.ebuild,
+  catalyst-2.9999.ebuild, catalyst-9999.ebuild:
+  Whitespaces
+
+  22 Apr 2012; Raúl Porcel <armin76@gentoo.org> catalyst-2.0.8.ebuild,
+  catalyst-2.9999.ebuild, catalyst-9999.ebuild:
+  Make catalyst use python2
+
+*catalyst-2.0.8 (22 Apr 2012)
+
+  22 Apr 2012; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +catalyst-2.0.8.ebuild:
+  [dev-util/catalyst] Bump catalyst to the 2.0.8 revision.
+  Drop metadata_overlay, update portage at the start of stage1, update mips and
+  amd64 specs, move /etc/make.profile to /etc/portage/make.profile and don't
+  die if /etc/portage already 
+  exists.
+
+  19 Mar 2012; Zac Medico <zmedico@gentoo.org>
+  files/0001-Add-new-T-purgetmponly-option.patch:
+  Fix indentation error in 0001-Add-new-T-purgetmponly-option.patch.
+
+*catalyst-2.0.7.1-r1 (06 Mar 2012)
+
+  06 Mar 2012; Jeremy Olexa <darkside@gentoo.org>
+  +files/0001-Add-new-T-purgetmponly-option.patch,
+  +files/0001-add-etc-make.profile-to-cleanables-too.patch,
+  +files/0002-s-etc-make.conf-etc-portage-make.conf-g-Use-new-loca.patch,
+  +catalyst-2.0.7.1-r1.ebuild,
+  +files/0001-s-etc-make.profile-etc-portage-make.profile-g-Use-ne.patch:
+  Revbump catalyst to include 3 patches ACK'd by team, bugs 394461, 395371,
+  406599
+
+*catalyst-2.0.7.1 (19 Nov 2011)
+
+  19 Nov 2011; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  -catalyst-2.0.7.ebuild, +catalyst-2.0.7.1.ebuild:
+  [dev-util/catalyst] Bump catalyst to the 2.0.7.1 revision. This revision
+  fixes a typo.
+
+  18 Nov 2011; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org> ChangeLog:
+  [dev-util/catalyst] Bump catalyst to the 2.0.7 revision.
+  This revision includes all updates committed to the repo since the 2.0.6.918
+  release: more mips fixes by Matt, an update to the supported hashes by Robin,
+  an update to stop dropping /etc/portage on stage3, fixes to support the move
+  from nocxx to cxx and updated cdtar with newer versions of memtest86+, elilo
+  and syslinux.
+  Adding missing ChangeLog entry as repoman commit failed to add it again.
 
 *catalyst-2.9999 (17 Jul 2011)
 

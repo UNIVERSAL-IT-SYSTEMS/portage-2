@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/rhythmbox-equalizer/rhythmbox-equalizer-0.1.ebuild,v 1.1 2011/04/16 17:35:14 nerdboy Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/rhythmbox-equalizer/rhythmbox-equalizer-0.1.ebuild,v 1.3 2012/10/25 20:33:24 eva Exp $
 
 EAPI=3
 
 PYTHON_DEPEND="2:2.6"
 
-inherit eutils python
+inherit eutils multilib python
 
 MY_P="rb-equalizer-${PV}"
 
@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}
 	x11-libs/gtk+:2
 	>=dev-python/pygtk-2.8:2
 	gnome-base/libglade:2.0
-	>=media-libs/gst-plugins-base-0.10.29
+	>=media-libs/gst-plugins-base-0.10.29:0.10
 	>=media-sound/rhythmbox-0.12.8[python]"
 
 S="${WORKDIR}/${MY_P}"

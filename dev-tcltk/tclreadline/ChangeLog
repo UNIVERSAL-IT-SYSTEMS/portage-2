@@ -1,6 +1,25 @@
 # ChangeLog for dev-tcltk/tclreadline
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/tclreadline/ChangeLog,v 1.14 2010/12/07 13:24:20 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/tclreadline/ChangeLog,v 1.18 2012/11/04 19:52:08 jlec Exp $
+
+*tclreadline-2.1.0-r2 (04 Nov 2012)
+
+  04 Nov 2012; Justin Lecher <jlec@gentoo.org> tclreadline-2.1.0.ebuild,
+  tclreadline-2.1.0-r1.ebuild, +tclreadline-2.1.0-r2.ebuild,
+  +files/tclreadline-2.1.0-gold.patch:
+  Add fix for underlinking, #440648; pass all paths to configure for prefix
+  stability
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> tclreadline-2.1.0-r1.ebuild:
+  Stable for AMD64, wrt bug #393825
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  tclreadline-2.1.0-r1.ebuild:
+  x86 stable wrt bug #393825
+
+  12 Dec 2011; Justin Lecher <jlec@gentoo.org> tclreadline-2.1.0.ebuild,
+  tclreadline-2.1.0-r1.ebuild, metadata.xml:
+  Moved to EAPI=4 and autotools-utils.eclass
 
 *tclreadline-2.1.0-r1 (07 Dec 2010)
 

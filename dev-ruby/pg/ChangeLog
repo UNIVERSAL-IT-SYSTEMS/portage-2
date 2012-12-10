@@ -1,6 +1,94 @@
 # ChangeLog for dev-ruby/pg
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/pg/ChangeLog,v 1.35 2011/07/23 11:29:26 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/pg/ChangeLog,v 1.57 2012/10/15 07:38:32 graaff Exp $
+
+  15 Oct 2012; Hans de Graaff <graaff@gentoo.org> +pg-0.14.1.ebuild:
+  Version bump.
+
+*pg-0.14.1 (15 Oct 2012)
+
+  15 Oct 2012; Hans de Graaff <graaff@gentoo.org> +pg-0.14.1.ebuild:
+  Version bump.
+
+  17 Sep 2012; Johannes Huber <johu@gentoo.org> pg-0.14.0.ebuild:
+  Stable for x86, wrt bug #434490
+
+  15 Sep 2012; Agostino Sarubbo <ago@gentoo.org> pg-0.14.0.ebuild:
+  Stable for amd64, wrt bug #434490
+
+  11 Sep 2012; Anthony G. Basile <blueness@gentoo.org> pg-0.14.0.ebuild:
+  Stable ppc, bug #434490
+
+  11 Sep 2012; Anthony G. Basile <blueness@gentoo.org> pg-0.14.0.ebuild:
+  Stable ppc64, bug #434490
+
+*pg-0.14.0 (04 Aug 2012)
+
+  04 Aug 2012; Hans de Graaff <graaff@gentoo.org> pg-0.13.2.ebuild,
+  +pg-0.14.0.ebuild:
+  Version bump. Also fix bug 429424 for 0.13.2 and 0.14.0.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> pg-0.11.0.ebuild,
+  pg-0.12.2.ebuild, pg-0.13.2.ebuild:
+  Drop ia64/sparc keywords
+
+  30 Apr 2012; Hans de Graaff <graaff@gentoo.org> -pg-0.9.0-r1.ebuild,
+  -pg-0.12.0-r1.ebuild:
+  Remove old versions.
+
+*pg-0.13.2 (13 Apr 2012)
+
+  13 Apr 2012; Hans de Graaff <graaff@gentoo.org> +pg-0.13.2.ebuild:
+  Version bump.
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> pg-0.11.0.ebuild:
+  Marking pg-0.11.0 ppc64 for bug 387915
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> pg-0.11.0.ebuild:
+  Marking pg-0.11.0 ppc for bug 387915
+
+*pg-0.12.2 (22 Jan 2012)
+
+  22 Jan 2012; Hans de Graaff <graaff@gentoo.org> +pg-0.12.2.ebuild:
+  Version bump.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> pg-0.12.0-r1.ebuild:
+  Add Prefix keywords, bug #396547
+
+  28 Dec 2011; Hans de Graaff <graaff@gentoo.org> pg-0.11.0.ebuild:
+  Drop ruby19 from stable version.
+
+  19 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org> pg-0.12.0-r1.ebuild:
+  Fix build with USE=doc; drop rake-compiler dependency altogether. Bug #395133
+  by onip.
+
+*pg-0.12.0-r1 (18 Dec 2011)
+
+  18 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org> +pg-0.12.0-r1.ebuild,
+  -pg-0.12.0.ebuild:
+  Fix dependency over rake-compiler that was declared a runtime dependency in
+  the spec file; bump to EAPI=4 to be on the safe side (with REQUIRE_USE).
+
+*pg-0.12.0 (13 Dec 2011)
+
+  13 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org> +pg-0.12.0.ebuild:
+  Version bump.
+
+  27 Nov 2011; Raúl Porcel <armin76@gentoo.org> pg-0.11.0.ebuild:
+  ia64/sparc stable wrt #387915
+
+  24 Oct 2011; Markus Meier <maekke@gentoo.org> pg-0.11.0.ebuild:
+  x86 stable, bug #387915
+
+  22 Oct 2011; Markos Chandras <hwoarang@gentoo.org> pg-0.11.0.ebuild:
+  Stable on amd64 wrt bug #387915
+
+  20 Oct 2011; Hans de Graaff <graaff@gentoo.org> pg-0.9.0-r1.ebuild,
+  pg-0.11.0.ebuild:
+  $1
+
+  20 Oct 2011; Hans de Graaff <graaff@gentoo.org> -pg-0.10.1.ebuild:
+  Remove old version.
 
   23 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> pg-0.9.0-r1.ebuild:
   ppc/ppc64 stable wrt #358723

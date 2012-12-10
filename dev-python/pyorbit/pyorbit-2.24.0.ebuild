@@ -1,12 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyorbit/pyorbit-2.24.0.ebuild,v 1.14 2010/12/21 22:49:06 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyorbit/pyorbit-2.24.0.ebuild,v 1.17 2012/05/04 15:12:14 patrick Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
-PYTHON_DEPEND="2:2.4"
+PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="3.* *-jython 2.7-pypy-*"
 
 inherit gnome2 multilib python
 
@@ -20,7 +20,7 @@ IUSE=""
 
 RDEPEND=">=gnome-base/orbit-2.12"
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.12.0"
+	virtual/pkgconfig"
 
 DOCS="AUTHORS ChangeLog INSTALL NEWS README TODO"
 

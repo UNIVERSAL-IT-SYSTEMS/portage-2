@@ -1,6 +1,35 @@
 # ChangeLog for java-virtuals/stax-api
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/java-virtuals/stax-api/ChangeLog,v 1.13 2010/04/24 17:45:30 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/java-virtuals/stax-api/ChangeLog,v 1.19 2012/10/04 17:40:49 sera Exp $
+
+  04 Oct 2012; Ralph Sennhauser <sera@gentoo.org> stax-api-1-r4.ebuild:
+  Change license to public-domain. #426800
+
+  29 Sep 2012; Fabian Groffen <grobian@gentoo.org> stax-api-1-r4.ebuild:
+  Marked ~x64-macos
+
+*stax-api-1-r4 (22 Oct 2011)
+
+  22 Oct 2011; Vlastimil Babka <caster@gentoo.org> -stax-api-1-r3.ebuild,
+  +stax-api-1-r4.ebuild:
+  Another revbump to really fix the provider string, bug #388113 thanks to
+  Ralph Sennhauser.
+
+  22 Oct 2011; Vlastimil Babka <caster@gentoo.org> -stax-api-1-r1.ebuild,
+  stax-api-1-r3.ebuild:
+  Stabilize the revbump everywhere and drop the old version. Nothing
+  arch-specific here and we don't want bug 383175.
+
+*stax-api-1-r3 (16 Sep 2011)
+
+  16 Sep 2011; Serkan Kaba <serkan@gentoo.org> -stax-api-1-r2.ebuild,
+  +stax-api-1-r3.ebuild:
+  Revbump to fix typo
+
+*stax-api-1-r2 (11 Sep 2011)
+
+  11 Sep 2011; Serkan Kaba <serkan@gentoo.org> +stax-api-1-r2.ebuild:
+  Bump to add jre7
 
   24 Apr 2010; Fabian Groffen <grobian@gentoo.org> stax-api-1-r1.ebuild:
   Marked ~sparc-solaris ~x86-solaris, bug #314093
@@ -45,4 +74,3 @@
   05 Oct 2008; Serkan Kaba <serkan@gentoo.org> +metadata.xml,
   +stax-api-1.ebuild:
   Add java-virtuals/stax-api. Fixes bug #224677.
-

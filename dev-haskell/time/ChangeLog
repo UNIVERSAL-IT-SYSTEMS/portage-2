@@ -1,6 +1,53 @@
 # ChangeLog for dev-haskell/time
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/time/ChangeLog,v 1.23 2010/07/11 15:45:55 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/time/ChangeLog,v 1.35 2012/11/18 14:25:20 slyfox Exp $
+
+  18 Nov 2012; Sergei Trofimovich <slyfox@gentoo.org> time-1.4.ebuild:
+  Added ghc-7.4.2 core libraries.
+
+  13 Sep 2012; Mark Wright <gienah@gentoo.org> time-1.4.0.1.ebuild:
+  time is a ghc 7.6.1 core lib
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> time-1.2.0.3.ebuild,
+  time-1.4.0.1.ebuild, time-1.4.ebuild:
+  move dev-haskell/time/time-1.4.ebuild ebuild to mirror://hackage
+
+  20 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> time-1.4.0.1.ebuild,
+  time-1.4.ebuild:
+  ~ia64 rekeyworded
+
+  20 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  -files/time-1.1.2.0-remove-werror.patch, -time-1.0.ebuild, -time-1.1.1.ebuild,
+  -time-1.1.2.0.ebuild, -time-1.1.2.4.ebuild, -time-1.1.4.ebuild:
+  Removed old.
+
+*time-1.4.0.1 (20 Mar 2012)
+
+  20 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> +time-1.4.0.1.ebuild:
+  Version bump.
+
+  17 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> time-1.2.0.3.ebuild:
+  alpha/ia64/ppc64/sparc stable (bug #399991).
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> time-1.2.0.3.ebuild:
+  x86 stable wrt bug #399991
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> time-1.2.0.3.ebuild:
+  Marking time-1.2.0.3 ppc for bug 399991
+
+*time-1.4 (04 Mar 2012)
+
+  04 Mar 2012; Mark Wright <gienah@gentoo.org> +time-1.4.ebuild:
+  Bump time to 1.4, with same keywords as ghc 7.4.1 as time 1.4 is included in
+  ghc 7.4.1
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> time-1.2.0.3.ebuild:
+  Stable for amd64, wrt bug #399991
+
+*time-1.2.0.3 (03 Aug 2011)
+
+  03 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> +time-1.2.0.3.ebuild:
+  Version bump (bundled with ghc-7).
 
   11 Jul 2010; Sergei Trofimovich <slyfox@gentoo.org> time-1.1.2.0.ebuild,
   +files/time-1.1.2.0-remove-werror.patch, time-1.1.2.4.ebuild,
@@ -90,4 +137,3 @@
   17 Mar 2007; Lennart Kolmodin <kolmodin@gentoo.org> +metadata.xml,
   +time-1.0.ebuild:
   Add modular lib to ghc 6.6. See bug 151012
-

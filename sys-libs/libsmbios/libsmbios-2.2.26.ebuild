@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libsmbios/libsmbios-2.2.26.ebuild,v 1.2 2011/05/29 10:10:23 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/libsmbios/libsmbios-2.2.26.ebuild,v 1.9 2012/05/04 07:33:11 jdhore Exp $
 
 EAPI=2
-PYTHON_DEPEND="python? *:2.4"
+PYTHON_DEPEND="python? *:2.5"
 
 inherit eutils python flag-o-matic autotools
 
@@ -13,21 +13,22 @@ SRC_URI="http://linux.dell.com/libsmbios/download/libsmbios/${P}/${P}.tar.bz2"
 
 LICENSE="GPL-2 OSL-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~x86"
-IUSE="doc graphviz nls python test"
+KEYWORDS="amd64 ia64 x86"
+IUSE="doc graphviz nls python static-libs test"
 
 RDEPEND="dev-libs/libxml2
 	sys-libs/zlib
 	nls? ( virtual/libintl )"
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.9.0
+	virtual/pkgconfig
 	doc? ( app-doc/doxygen )
 	graphviz? ( media-gfx/graphviz )
 	nls? ( sys-devel/gettext )
 	test? ( >=dev-util/cppunit-1.9.6 )"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-2.2.26-gcc46.patch
+	epatch "${FILESDIR}"/${PN}-2.2.26-gcc46.patch \
+		"${FILESDIR}"/${PN}-fix-pie.patch
 	rm pkg/py-compile
 	ln -s "$(type -P true)" pkg/py-compile || die
 	eautoreconf
@@ -40,7 +41,8 @@ src_configure() {
 		$(use_enable doc doxygen) \
 		$(use_enable graphviz) \
 		$(use_enable nls) \
-		$(use_enable python) || die
+		$(use_enable python) \
+		$(use_enable static-libs static) || die
 }
 
 src_install() {
@@ -57,6 +59,10 @@ src_install() {
 	doins -r src/include/smbios/
 
 	dodoc AUTHORS ChangeLog NEWS README TODO
+
+	if ! use static-libs ; then
+		find "${D}" -name '*.la' -delete || die
+	fi
 }
 
 pkg_postinst() {

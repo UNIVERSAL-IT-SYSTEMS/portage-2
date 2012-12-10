@@ -1,6 +1,123 @@
 # ChangeLog for dev-libs/cyrus-sasl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyrus-sasl/ChangeLog,v 1.227 2011/07/24 17:53:44 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/cyrus-sasl/ChangeLog,v 1.254 2012/12/09 18:28:37 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> cyrus-sasl-2.1.25-r3.ebuild:
+  Stable for ppc64, wrt bug #445208
+
+  06 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  cyrus-sasl-2.1.25-r3.ebuild:
+  x86 stable wrt bug #445208
+
+*cyrus-sasl-2.1.25-r4 (05 Dec 2012)
+
+  05 Dec 2012; Eray Aslan <eras@gentoo.org> +cyrus-sasl-2.1.25-r4.ebuild,
+  +files/cyrus-sasl-2.1.25-service_keytabs.patch:
+  Service keytabs should work with mit-krb5 now - bug #445932
+
+  01 Dec 2012; Anthony G. Basile <blueness@gentoo.org>
+  cyrus-sasl-2.1.25-r3.ebuild:
+  stable arm, bug #445208
+
+  30 Nov 2012; <ago@gentoo.org> cyrus-sasl-2.1.25-r3.ebuild:
+  Stable for amd64, wrt bug #445208
+
+  29 Nov 2012; Brent Baude <ranger@gentoo.org> cyrus-sasl-2.1.25-r3.ebuild:
+  Marking cyrus-sasl-2.1.25-r3 ppc for bug 445208
+
+  29 Nov 2012; Jeroen Roovers <jer@gentoo.org> cyrus-sasl-2.1.25-r3.ebuild:
+  Stable for HPPA (bug #445208).
+
+  05 Nov 2012; Eray Aslan <eras@gentoo.org> cyrus-sasl-2.1.23-r6.ebuild,
+  cyrus-sasl-2.1.25-r1.ebuild, cyrus-sasl-2.1.25-r2.ebuild,
+  cyrus-sasl-2.1.25-r3.ebuild, cyrus-sasl-2.1.25.ebuild:
+  License as-is -> BSD-4
+
+*cyrus-sasl-2.1.25-r3 (11 Jul 2012)
+
+  11 Jul 2012; Eray Aslan <eras@gentoo.org> +cyrus-sasl-2.1.25-r3.ebuild:
+  Fix building with sqlite USE flag - bug #424769
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org>
+  cyrus-sasl-2.1.25-r2.ebuild:
+  keyword ~amd64-fbsd
+
+  09 Mar 2012; Eray Aslan <eras@gentoo.org> -cyrus-sasl-2.1.23-r1.ebuild,
+  -cyrus-sasl-2.1.23-r2.ebuild, -cyrus-sasl-2.1.23-r3.ebuild,
+  -cyrus-sasl-2.1.23-r4.ebuild, -cyrus-sasl-2.1.23-r5.ebuild:
+  remove old
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> cyrus-sasl-2.1.23-r6.ebuild:
+  Marking cyrus-sasl-2.1.23-r6 ppc64 for bug 393387
+
+*cyrus-sasl-2.1.25-r2 (21 Feb 2012)
+
+  21 Feb 2012; Eray Aslan <eras@gentoo.org> +cyrus-sasl-2.1.25-r2.ebuild,
+  +files/cyrus-sasl-2.1.25-get_fqhostname.patch:
+  Fix failing get_fqhostname() - bug #405097
+
+*cyrus-sasl-2.1.25-r1 (12 Jan 2012)
+
+  12 Jan 2012; Eray Aslan <eras@gentoo.org> +cyrus-sasl-2.1.25-r1.ebuild,
+  +files/cyrus-sasl-2.1.25-auxprop.patch:
+  fix PLAIN and LOGIN with no auxprop - bug #392761
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> cyrus-sasl-2.1.23-r6.ebuild:
+  Marking cyrus-sasl-2.1.23-r6 ppc for bug 393387
+
+  17 Dec 2011; Raúl Porcel <armin76@gentoo.org> cyrus-sasl-2.1.23-r6.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #393387
+
+  14 Dec 2011; Markus Meier <maekke@gentoo.org> cyrus-sasl-2.1.23-r6.ebuild:
+  arm stable, bug #393387
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  cyrus-sasl-2.1.23-r6.ebuild:
+  x86 stable wrt bug #393387
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org> cyrus-sasl-2.1.23-r6.ebuild:
+  Stable for AMD64, wrt bug #393387
+
+  12 Dec 2011; Jeroen Roovers <jer@gentoo.org> cyrus-sasl-2.1.23-r6.ebuild:
+  Stable for HPPA (bug #393387).
+
+  05 Dec 2011; Eray Aslan <eras@gentoo.org> cyrus-sasl-2.1.25.ebuild:
+  Preserve old lib and add revdep-rebuild warning
+
+*cyrus-sasl-2.1.25 (30 Nov 2011)
+
+  30 Nov 2011; Eray Aslan <eras@gentoo.org> +cyrus-sasl-2.1.25.ebuild,
+  +files/cyrus-sasl-2.1.25-as_needed.patch,
+  +files/cyrus-sasl-2.1.25-autotools_fixes.patch,
+  +files/cyrus-sasl-2.1.25-avoid_pic_overwrite.patch,
+  +files/cyrus-sasl-2.1.25-fix_heimdal.patch,
+  +files/cyrus-sasl-2.1.25-gssapi.patch,
+  +files/cyrus-sasl-2.1.25-lib_before_plugin.patch,
+  +files/cyrus-sasl-2.1.25-missing_header.patch,
+  +files/cyrus-sasl-2.1.25-saslauthd_libtool.patch,
+  +files/cyrus-sasl-2.1.25-sasldb_al.patch:
+  Version bump. Add ldapdb USE flag - bug #320893
+
+*cyrus-sasl-2.1.23-r6 (06 Nov 2011)
+
+  06 Nov 2011; Eray Aslan <eras@gentoo.org> +cyrus-sasl-2.1.23-r6.ebuild,
+  +files/cyrus-sasl-2.1.23-gss_c_nt_hostbased_service.patch:
+  Detect >=heimdal-1.4 correctly - bug #389349. Thanks to Rafał Mużyło.
+
+  03 Nov 2011; Naohiro Aota <naota@gentoo.org> cyrus-sasl-2.1.23-r5.ebuild:
+  Add ~x86-fbsd. Bug #372433
+
+  09 Sep 2011; Jeroen Roovers <jer@gentoo.org> cyrus-sasl-2.1.23-r4.ebuild:
+  Stable for HPPA (bug #372435).
+
+*cyrus-sasl-2.1.23-r5 (02 Sep 2011)
+
+  02 Sep 2011; Eray Aslan <eras@gentoo.org> +cyrus-sasl-2.1.23-r5.ebuild,
+  +files/cyrus-sasl-2.1.23-rimap-loop.patch:
+  Patch for rimap quote loop - bug #381427
+
+  05 Aug 2011; Eray Aslan <eras@gentoo.org> files/pwcheck.rc6:
+  remove deprecated oknodo from init script - bug #377767
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> cyrus-sasl-2.1.23-r4.ebuild:
   alpha/ia64/s390/sh/sparc stable wrt #372435

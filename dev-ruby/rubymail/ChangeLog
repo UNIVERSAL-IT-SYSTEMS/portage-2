@@ -1,6 +1,33 @@
 # ChangeLog for dev-ruby/rubymail
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubymail/ChangeLog,v 1.41 2010/08/15 13:47:22 a3li Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubymail/ChangeLog,v 1.49 2012/11/07 03:31:11 jer Exp $
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> rubymail-1.0.0-r1.ebuild:
+  Stable for HPPA (bug #431464).
+
+  21 Aug 2012; Johannes Huber <johu@gentoo.org> rubymail-1.0.0-r1.ebuild:
+  Stable for x86, wrt bug #431464
+
+  18 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  rubymail-1.0.0-r1.ebuild:
+  Stable ppc ppc64, bug #431464
+
+  16 Aug 2012; Agostino Sarubbo <ago@gentoo.org> rubymail-1.0.0-r1.ebuild:
+  Stable for amd64, wrt bug #431464
+
+  15 Aug 2012; Hans de Graaff <graaff@gentoo.org> rubymail-1.0.0-r1.ebuild:
+  Bump to EAPI=4, add ree18, jruby.
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> rubymail-1.0.0.ebuild,
+  rubymail-1.0.0-r1.ebuild:
+  Drop alpha keywords
+
+  27 Jun 2012; Hans de Graaff <graaff@gentoo.org> rubymail-1.0.0-r1.ebuild:
+  Avoid test that now fails due to hash ordering randomness, fixing bug 423787.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> rubymail-1.0.0.ebuild,
+  rubymail-1.0.0-r1.ebuild:
+  Drop ia64/sparc keywords
 
   15 Aug 2010; Alex Legler <a3li@gentoo.org> rubymail-1.0.0-r1.ebuild:
   Do not call 'rake rdoc' and install docs when USE=-doc. Closes bug 332847

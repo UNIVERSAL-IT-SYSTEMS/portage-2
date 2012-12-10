@@ -1,6 +1,26 @@
 # ChangeLog for app-misc/fdupes
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/fdupes/ChangeLog,v 1.43 2011/03/27 21:51:37 darkside Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/fdupes/ChangeLog,v 1.47 2012/07/06 07:28:37 jlec Exp $
+
+*fdupes-1.50_pre2-r1 (06 Jul 2012)
+
+  06 Jul 2012; Justin Lecher <jlec@gentoo.org>
+  -files/fdupes-1.40-external-md5sum-quotation.patch,
+  -files/fdupes-1.40-external-md5sum-quotation-1.patch,
+  -files/fdupes-1.40-memcpy.patch, +fdupes-1.50_pre2-r1.ebuild,
+  +files/fdupes-1.50_pre2-compare-file.patch,
+  +files/fdupes-1.50_pre2-lfs.patch, +files/fdupes-1.50_pre2-typo.patch:
+  Import some fixes from fedora
+
+  12 Oct 2011; Justin Lecher <jlec@gentoo.org> fdupes-1.50_pre2.ebuild,
+  metadata.xml:
+  Keyworded for ~-linux, tested by me
+
+  03 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> fdupes-1.50_pre2.ebuild:
+  Latest eapi use.
+
+  03 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Drop unused local desc.
 
   27 Mar 2011; Jeremy Olexa <darkside@gentoo.org> -fdupes-1.40-r3.ebuild,
   -fdupes-1.40-r4.ebuild:

@@ -1,6 +1,38 @@
 # ChangeLog for sys-apps/microcode-data
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/microcode-data/ChangeLog,v 1.14 2011/05/10 18:21:36 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/microcode-data/ChangeLog,v 1.20 2012/09/23 08:15:03 phajdan.jr Exp $
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  microcode-data-20120606.ebuild:
+  x86 stable wrt bug #429198
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org>
+  microcode-data-20120606.ebuild:
+  Stable for amd64, wrt bug #429198
+
+*microcode-data-20120606 (06 Jun 2012)
+
+  06 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +microcode-data-20120606.ebuild:
+  Version bump.
+
+*microcode-data-20111110 (12 Dec 2011)
+
+  12 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  +microcode-data-20111110.ebuild:
+  Version bump.
+
+*microcode-data-20110915-r1 (12 Dec 2011)
+
+  12 Dec 2011; Mike Frysinger <vapier@gentoo.org>
+  +files/intel-microcode2ucode.c, +microcode-data-20110915-r1.ebuild:
+  Split up microcode files for the kernel to autoload (using util from Fedora).
+
+*microcode-data-20110915 (22 Sep 2011)
+
+  22 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  +microcode-data-20110915.ebuild:
+  Version bump.
 
   10 May 2011; Diego E. Pettenò <flameeyes@gentoo.org>
   microcode-data-20110428.ebuild:

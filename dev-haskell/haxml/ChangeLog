@@ -1,6 +1,29 @@
 # ChangeLog for dev-haskell/haxml
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haxml/ChangeLog,v 1.29 2011/06/05 13:00:33 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haxml/ChangeLog,v 1.33 2012/11/18 12:35:04 gienah Exp $
+
+*haxml-1.23.3 (18 Nov 2012)
+
+  18 Nov 2012; Mark Wright <gienah@gentoo.org>
+  +files/haxml-1.23.3-haddock.patch, +haxml-1.23.3.ebuild:
+  Bump haxml to 1.23.3
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> haxml-1.13.3.ebuild,
+  haxml-1.23.2.ebuild, haxml-1.23.ebuild:
+  move dev-haskell/haxml/haxml-1.23.2.ebuild ebuild to mirror://hackage
+
+*haxml-1.23.2 (18 Jun 2012)
+
+  18 Jun 2012; Mark Wright <gienah@gentoo.org>
+  +files/haxml-1.23.2-haddock.patch, +haxml-1.23.2.ebuild:
+  Bump haxml to 1.23.2
+
+*haxml-1.23 (16 Jun 2012)
+
+  16 Jun 2012; Mark Wright <gienah@gentoo.org>
+  +files/haxml-1.23-fix-build.patch, +files/haxml-1.23-haddock.patch,
+  +haxml-1.23.ebuild:
+  Bump haxml to 1.23
 
   05 Jun 2011; Sergei Trofimovich <slyfox@gentoo.org> -haxml-1.12.ebuild,
   -files/HaXml-1.12.cabal, -haxml-1.13-r1.ebuild:
@@ -111,4 +134,3 @@
   +files/HaXml-1.12.cabal, +haxml-1.12.ebuild:
   Initial import. Thanks to Lennart Kolmodin <kolmodin@dtek.chalmers.se> for
   submitting a first version (bug #83189).
-

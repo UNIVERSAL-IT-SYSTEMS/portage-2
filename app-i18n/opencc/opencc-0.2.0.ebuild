@@ -1,8 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/opencc/opencc-0.2.0.ebuild,v 1.1 2011/05/12 16:08:38 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/opencc/opencc-0.2.0.ebuild,v 1.5 2012/05/18 14:20:03 josejx Exp $
 
-EAPI=3
+EAPI=4
+
 inherit cmake-utils multilib
 
 DESCRIPTION="Libraries for Simplified-Traditional Chinese Conversion"
@@ -11,7 +12,7 @@ SRC_URI="http://open-chinese-convert.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~ppc ~ppc64 x86"
 IUSE="nls static-libs"
 
 DEPEND="nls? ( sys-devel/gettext )"
@@ -26,7 +27,7 @@ src_prepare() {
 }
 
 src_configure() {
-	mycmakeargs=(
+	local mycmakeargs=(
 		"$(cmake-utils_use_enable nls GETTEXT)"
 	)
 

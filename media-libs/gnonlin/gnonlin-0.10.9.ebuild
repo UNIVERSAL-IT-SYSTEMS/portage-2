@@ -1,6 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gnonlin/gnonlin-0.10.9.ebuild,v 1.2 2007/12/30 12:24:41 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gnonlin/gnonlin-0.10.9.ebuild,v 1.4 2012/11/07 21:16:57 tetromino Exp $
+
+EAPI="4"
 
 DESCRIPTION="Gnonlin is a set of GStreamer elements to ease the creation of non-linear multimedia editors."
 HOMEPAGE="http://gnonlin.sourceforge.net"
@@ -11,10 +13,10 @@ SLOT="0.10"
 KEYWORDS="~amd64 x86"
 IUSE=""
 
-RDEPEND=">=media-libs/gstreamer-0.10.9
-	 >=media-libs/gst-plugins-base-0.10.9"
+RDEPEND=">=media-libs/gstreamer-0.10.9:0.10
+	 >=media-libs/gst-plugins-base-0.10.9:0.10"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed."

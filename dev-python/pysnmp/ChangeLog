@@ -1,6 +1,33 @@
 # ChangeLog for dev-python/pysnmp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pysnmp/ChangeLog,v 1.46 2011/08/01 14:21:34 neurogeek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pysnmp/ChangeLog,v 1.53 2012/05/18 05:05:08 patrick Exp $
+
+  18 May 2012; Patrick Lauer <patrick@gentoo.org> pysnmp-4.2.2.ebuild:
+  Bump for #416383
+
+*pysnmp-4.2.2 (18 May 2012)
+
+  18 May 2012; Patrick Lauer <patrick@gentoo.org> +pysnmp-4.2.2.ebuild:
+  Bump for #416383
+
+  02 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> pysnmp-4.2.1.ebuild:
+  Fix pyasn1 dependency to require later version (bug 397533).
+
+*pysnmp-4.2.1 (25 Dec 2011)
+
+  25 Dec 2011; Patrick Lauer <patrick@gentoo.org> +pysnmp-4.2.1.ebuild:
+  Bump for #393615
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> pysnmp-4.1.16a.ebuild:
+  Fix DEPEND in stable too.
+
+*pysnmp-4.1.16c (20 Aug 2011)
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> +pysnmp-4.1.16c.ebuild:
+  Version bump. Fix DEPEND.
+
+  08 Aug 2011; Markos Chandras <hwoarang@gentoo.org> pysnmp-4.1.16a.ebuild:
+  Fix dependencies. Patch by Arfrever.
 
   01 Aug 2011; Jesus Rivero <neurogeek@gentoo.org> ChangeLog:
   Force Manifest signing

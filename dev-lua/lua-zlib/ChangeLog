@@ -1,6 +1,15 @@
 # ChangeLog for dev-lua/lua-zlib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lua/lua-zlib/ChangeLog,v 1.1 2011/05/02 16:42:39 djc Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lua/lua-zlib/ChangeLog,v 1.4 2012/09/28 17:05:46 johu Exp $
+
+  28 Sep 2012; Johannes Huber <johu@gentoo.org> lua-zlib-0.2.ebuild:
+  Stable for x86, wrt bug #429602
+
+  28 Sep 2012; Agostino Sarubbo <ago@gentoo.org> lua-zlib-0.2.ebuild:
+  Stable for amd64, wrt bug #429602
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> lua-zlib-0.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
 *lua-zlib-0.2 (02 May 2011)
 

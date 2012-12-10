@@ -1,6 +1,42 @@
 # ChangeLog for x11-misc/zim
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/zim/ChangeLog,v 1.13 2011/05/30 21:41:41 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/zim/ChangeLog,v 1.20 2012/06/07 15:23:51 xmw Exp $
+
+*zim-0.56 (07 Jun 2012)
+
+  07 Jun 2012; Michael Weber <xmw@gentoo.org> +zim-0.56.ebuild:
+  Version bump (bug 410783 reported by bdouxx)
+
+*zim-0.55 (04 Jun 2012)
+
+  04 Jun 2012; Michael Weber <xmw@gentoo.org> +zim-0.55.ebuild,
+  -zim-0.53.ebuild:
+  Version bump (bug 406589, thanks Samuel BAUER)
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> zim-0.53.ebuild,
+  zim-0.54.ebuild, metadata.xml:
+  Move EAPI assignment to top of ebuild, bug 411875. Remove unused screenshot
+  local USE flag from metadata.
+
+*zim-0.54 (29 Jan 2012)
+
+  29 Jan 2012; Michael Weber <xmw@gentoo.org> -zim-0.52.ebuild,
+  +zim-0.54.ebuild:
+  Version bump, remove old version
+
+  19 Nov 2011; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Wrap long lines and fix whitespace.
+
+*zim-0.53 (17 Nov 2011)
+
+  17 Nov 2011; Michael Weber <xmw@gentoo.org> -zim-0.28.ebuild,
+  -files/zim-0.28-disable-updates.patch, -zim-0.46.ebuild,
+  -files/zim-0.46-disable-updates.patch, -zim-0.47.ebuild, +zim-0.53.ebuild:
+  Version bump (thanks to Alastair Murray for the report bug 390773), drop use
+  flags, remove old versions.
+
+  24 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> zim-0.46.ebuild:
+  Depend on correct slot of pygobject.
 
 *zim-0.52 (30 May 2011)
 

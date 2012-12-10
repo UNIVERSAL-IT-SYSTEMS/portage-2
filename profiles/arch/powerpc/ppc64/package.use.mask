@@ -1,6 +1,24 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/powerpc/ppc64/package.use.mask,v 1.41 2011/06/02 20:10:54 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/powerpc/ppc64/package.use.mask,v 1.49 2012/10/30 17:51:34 ssuominen Exp $
+
+# Michael Weber <xmw@gentoo.org> (14 Jun 2012)
+# Mask net-misc/networkmanager[wimax] till bug 386121 is resolved
+net-misc/networkmanager wimax
+
+# Kacper Kowalik <xarthisius@gentoo.org> (09 Mar 2012)
+# Mask media-video/ffmpeg[vpx] and media-video/mplayer[vpx] 
+# on ppc64 as there is no stable version yet
+media-video/ffmpeg vpx
+media-video/mplayer vpx
+
+# Kacper Kowalik <xarthisius@gentoo.org> (02 Sep 2011)
+# Mask www-client/seamonkey[ipc] on ppc64 wrt #381191
+www-client/seamonkey ipc
+
+# Sergei Trofimovich <slyfox@gentoo.org> (03 Aug 2011)
+# sys-devel/llvm has no ppc64 keywords yet (bug #320221)
+dev-lang/ghc llvm
 
 # Kacper Kowalik <xarthisius@gentoo.org> (22 Mar 2011)
 # Mask polkit[kde] wrt #354509
@@ -54,10 +72,6 @@ net-libs/libproxy webkit
 # Brent Baude <ranger@gentoo.org> (11 June 2008)
 # Masking out passwdqc from pambase since passwdqc
 sys-auth/pambase passwdqc
-
-# Joseph Jezak <josejx@gentoo.org> (8 March 2009)
-# Masking laptop use flag for hal
-sys-apps/hal laptop
 
 # Joseph Jezak <josejx@gentoo.org> (12 February 2010)
 # Mask unstable pidgin deps until we can mark them stable (farsight2)

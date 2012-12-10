@@ -1,6 +1,46 @@
 # ChangeLog for media-sound/fluidsynth
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/fluidsynth/ChangeLog,v 1.66 2011/01/14 21:28:12 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/fluidsynth/ChangeLog,v 1.76 2012/12/04 15:41:01 ago Exp $
+
+  04 Dec 2012; <ago@gentoo.org> fluidsynth-1.1.6.ebuild:
+  Stable for x86, wrt bug #444388
+
+  29 Nov 2012; Jeroen Roovers <jer@gentoo.org> fluidsynth-1.1.6.ebuild:
+  Stable for HPPA (bug #444388).
+
+  23 Nov 2012; Anthony G. Basile <blueness@gentoo.org> fluidsynth-1.1.6.ebuild:
+  stable ppc ppc64, bug #444388
+
+  23 Nov 2012; <ago@gentoo.org> fluidsynth-1.1.6.ebuild:
+  Stable for amd64, wrt bug #444388
+
+  23 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> fluidsynth-1.1.6.ebuild:
+  Use append-flags -pthread to avoid missing symbol pthread_create wrt #436762
+  by "ungift-ed"
+
+  16 Aug 2012; Tim Harder <radhermit@gentoo.org> -fluidsynth-1.0.9.ebuild,
+  -files/fluidsynth-1.0.9-pkg.patch, -fluidsynth-1.1.3.ebuild,
+  -fluidsynth-1.1.4.ebuild:
+  Remove old.
+
+*fluidsynth-1.1.6 (16 Aug 2012)
+
+  16 Aug 2012; Tim Harder <radhermit@gentoo.org> +fluidsynth-1.1.6.ebuild:
+  Version bump.
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> fluidsynth-1.1.1.ebuild,
+  fluidsynth-1.1.3.ebuild, fluidsynth-1.1.4.ebuild, fluidsynth-1.1.5.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*fluidsynth-1.1.5 (04 Sep 2011)
+
+  04 Sep 2011; Tim Harder <radhermit@gentoo.org> +fluidsynth-1.1.5.ebuild:
+  Version bump.
+
+*fluidsynth-1.1.4 (07 Aug 2011)
+
+  07 Aug 2011; Alexis Ballier <aballier@gentoo.org> +fluidsynth-1.1.4.ebuild:
+  version bump
 
   14 Jan 2011; Brent Baude <ranger@gentoo.org> fluidsynth-1.1.1.ebuild:
   stable ppc, bug 343589
@@ -260,4 +300,3 @@
   Initial revision.
   
   Submitted by: Jonathan Kraut <jkraut1@nyc.rr.com>
-

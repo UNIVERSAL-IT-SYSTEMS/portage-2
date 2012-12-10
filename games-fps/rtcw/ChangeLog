@@ -1,6 +1,19 @@
 # ChangeLog for games-fps/rtcw
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/rtcw/ChangeLog,v 1.36 2010/08/17 07:13:08 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-fps/rtcw/ChangeLog,v 1.40 2012/07/11 17:27:03 mr_bones_ Exp $
+
+  11 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> rtcw-1.41b.ebuild:
+  gpl for init script bug #425944
+
+  23 Apr 2012; Michał Górny <mgorny@gentoo.org> rtcw-1.41b.ebuild:
+  Use mirror:// in SRC_URI.
+
+  08 Feb 2012; Mike Frysinger <vapier@gentoo.org> rtcw-1.41b.ebuild:
+  Move to new unpacker eclass for unpack_makeself.
+
+  14 Dec 2011; Mike Frysinger <vapier@gentoo.org> rtcw-1.41b.ebuild:
+  The games.eclass has dropped GAMES_CHECK_LICENSE support (since portage now
+  has ACCEPT_LICENSE), so drop it here too.
 
   17 Aug 2010; Michael Sterrett <mr_bones_@gentoo.org> rtcw-1.41b.ebuild:
   work around buggy video driver (bug #326837) - sed patch from Jared

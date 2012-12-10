@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/gv/gv-3.7.1-r1.ebuild,v 1.5 2011/07/20 22:06:26 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/gv/gv-3.7.1-r1.ebuild,v 1.8 2012/01/23 16:38:30 ssuominen Exp $
 
 EAPI=2
 inherit autotools eutils
@@ -11,19 +11,20 @@ SRC_URI="mirror://gnu/gv/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="alpha amd64 ~hppa ~mips ppc ppc64 sparc x86"
+KEYWORDS="alpha amd64 hppa ~mips ppc ppc64 sparc x86"
 IUSE="xinerama"
 
-DEPEND="x11-libs/libX11
+RDEPEND="x11-libs/libX11
 	x11-libs/libICE
 	x11-libs/libSM
 	x11-libs/libXext
 	x11-libs/libXt
 	x11-libs/libXmu
 	x11-libs/libXpm
-	x11-libs/Xaw3d
+	x11-libs/libXaw3d
 	app-text/ghostscript-gpl
 	xinerama? ( x11-libs/libXinerama )"
+DEPEND="${RDEPEND}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/gv-3.6.1-a0.patch

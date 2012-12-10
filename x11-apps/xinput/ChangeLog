@@ -1,6 +1,53 @@
 # ChangeLog for x11-apps/xinput
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-apps/xinput/ChangeLog,v 1.38 2011/02/14 23:41:02 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-apps/xinput/ChangeLog,v 1.50 2012/08/26 20:14:10 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> xinput-1.6.0.ebuild:
+  alpha/ia64/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> xinput-1.6.0.ebuild:
+  Marking xinput-1.6.0 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> xinput-1.6.0.ebuild:
+  Marking xinput-1.6.0 ppc64 stable for bug 419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> xinput-1.6.0.ebuild:
+  Stable for HPPA (bug #419473).
+
+  28 Jun 2012; Markus Meier <maekke@gentoo.org> xinput-1.6.0.ebuild:
+  arm stable, bug #419473
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xinput-1.6.0.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xinput-1.6.0.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  04 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xinput-1.6.0.ebuild:
+  Add missing libXinerama dependency, bug #419613.
+
+*xinput-1.6.0 (03 Jun 2012)
+
+  03 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xinput-1.6.0.ebuild:
+  Version bump.
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> xinput-1.5.4.ebuild:
+  keyword ~amd64-fbsd
+
+*xinput-1.5.4 (01 Jan 2012)
+
+  01 Jan 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xinput-1.5.4.ebuild:
+  Version bump.
+
+*xinput-1.5.3-r1 (21 Dec 2011)
+
+  21 Dec 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xinput-1.5.3.ebuild, +xinput-1.5.3-r1.ebuild,
+  +files/xinput-1.5.3-inputproto-2.1.patch:
+  Unbreak package when built against inputproto-2.1, bug #395555.
 
   14 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org> xinput-1.5.3.ebuild:
   ppc stable wrt #344827, #354237

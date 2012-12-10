@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/mesa-7.10.3.ebuild,v 1.8 2011/07/30 10:31:38 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/mesa-7.10.3.ebuild,v 1.15 2012/10/24 19:13:22 ulm Exp $
 
 EAPI=3
 
@@ -33,9 +33,9 @@ else
 		${SRC_PATCHES}"
 fi
 
-LICENSE="LGPL-2 kilgard"
+LICENSE="MIT LGPL-3 SGI-B-2.0"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ~hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~sparc-solaris ~x64-solaris ~x86-solaris"
 
 INTEL_CARDS="intel"
 RADEON_CARDS="radeon"
@@ -72,16 +72,19 @@ RDEPEND="${EXTERNAL_DEPEND}
 	x11-libs/libXi
 	x11-libs/libXmu
 	x11-libs/libXxf86vm
-	motif? ( x11-libs/openmotif )
+	motif? (
+		x11-libs/motif
+		!x11-libs/libGLw )
 	gallium? (
 		llvm? (
 			amd64? ( dev-libs/udis86 )
 			x86? ( dev-libs/udis86 )
 			x86-fbsd? ( dev-libs/udis86 )
-			sys-devel/llvm
+			<sys-devel/llvm-3
 		)
 	)
 	${LIBDRM_DEPSTRING}[video_cards_nouveau?,video_cards_vmware?]
+	video_cards_nouveau? ( <x11-libs/libdrm-2.4.34 )
 "
 for card in ${INTEL_CARDS}; do
 	RDEPEND="${RDEPEND}
@@ -97,7 +100,7 @@ done
 
 DEPEND="${RDEPEND}
 	=dev-lang/python-2*
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/bison
 	sys-devel/flex
 	x11-misc/makedepend

@@ -1,6 +1,48 @@
 # ChangeLog for media-sound/mpg321
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpg321/ChangeLog,v 1.74 2010/10/15 13:34:51 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpg321/ChangeLog,v 1.85 2012/06/06 13:14:50 ssuominen Exp $
+
+  06 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> mpg321-0.3.1.ebuild:
+  ppc stable wrt #419127
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org> mpg321-0.3.1.ebuild:
+  Stable for HPPA (bug #419127).
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> mpg321-0.3.1.ebuild:
+  marked x86 per bug 419127
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> mpg321-0.3.1.ebuild:
+  Marking mpg321-0.3.1 ppc64 for bug 419127
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> mpg321-0.3.1.ebuild:
+  Stable for amd64, wrt bug #419127
+
+  09 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -mpg321-0.2.12-r1.ebuild,
+  -mpg321-0.3.0.ebuild:
+  old
+
+*mpg321-0.3.1 (09 Mar 2012)
+
+  09 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +mpg321-0.3.1.ebuild:
+  Version bump.
+
+  03 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> mpg321-0.3.0.ebuild:
+  Pull in more recent media-libs/libao wrt #397529 by "MageSlayer"
+
+*mpg321-0.3.0 (22 Dec 2011)
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +mpg321-0.3.0.ebuild:
+  Version bump wrt #395625 by Ivan S. Titov
+
+  31 Aug 2011; Matt Turner <mattst88@gentoo.org> mpg321-0.2.12-r1.ebuild:
+  Added ~mips.
+
+*mpg321-0.2.12-r1 (21 Aug 2011)
+
+  21 Aug 2011; Matt Turner <mattst88@gentoo.org> +mpg321-0.2.12-r1.ebuild,
+  +files/mpg321-0.2.12-check-for-lround.patch:
+  Check for -lm, since it wasn't added to LIBS. Run autoreconf to generate
+  aclocal.m4 without hardcoded LIBDIR=lib, bug 380027.
 
   15 Oct 2010; Brent Baude <ranger@gentoo.org> mpg321-0.2.12.ebuild:
   stable ppc, bug 335565

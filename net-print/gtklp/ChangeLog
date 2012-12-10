@@ -1,6 +1,31 @@
 # ChangeLog for net-print/gtklp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/gtklp/ChangeLog,v 1.42 2011/06/20 10:54:00 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-print/gtklp/ChangeLog,v 1.48 2012/08/22 12:40:38 scarabeus Exp $
+
+*gtklp-1.2.9 (22 Aug 2012)
+
+  22 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> +gtklp-1.2.9.ebuild,
+  -gtklp-1.2.8.ebuild:
+  Version bump to latest.
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gtklp-1.2.8a.ebuild:
+  x86 stable wrt bug #413711
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> gtklp-1.2.8a.ebuild:
+  Marking gtklp-1.2.8a ppc for bug 413711
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gtklp-1.2.8.ebuild,
+  gtklp-1.2.8a.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  28 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gtklp-1.2.8a.ebuild:
+  Stable for amd64, wrt bug #413711
+
+*gtklp-1.2.8a (27 Apr 2012)
+
+  27 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> +gtklp-1.2.8a.ebuild:
+  Bugfix version bump, adds a trivial one-line change to fix compilation
+  against cups-1.5, bug 413711
 
   20 Jun 2011; Peter Volkov <pva@gentoo.org> -gtklp-1.2.7.ebuild,
   gtklp-1.2.8.ebuild:

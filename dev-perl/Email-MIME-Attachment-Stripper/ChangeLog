@@ -1,6 +1,54 @@
 # ChangeLog for dev-perl/Email-MIME-Attachment-Stripper
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Email-MIME-Attachment-Stripper/ChangeLog,v 1.21 2010/07/05 09:07:37 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Email-MIME-Attachment-Stripper/ChangeLog,v 1.32 2012/06/24 13:00:24 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org>
+  Email-MIME-Attachment-Stripper-1.316.0.ebuild:
+  Drop alpha keywords
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org>
+  -Email-MIME-Attachment-Stripper-1.313.ebuild,
+  -Email-MIME-Attachment-Stripper-1.314.ebuild:
+  Cleanup
+
+  24 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  Email-MIME-Attachment-Stripper-1.313.ebuild,
+  Email-MIME-Attachment-Stripper-1.314.ebuild,
+  Email-MIME-Attachment-Stripper-1.316.0.ebuild:
+  Drop ia64/sparc keywords
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Email-MIME-Attachment-Stripper-1.316.0.ebuild:
+  x86 stable wrt bug #400101
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org>
+  Email-MIME-Attachment-Stripper-1.316.0.ebuild:
+  Marking Email-MIME-Attachment-Stripper-1.316.0 ppc64 for bug 400101
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org>
+  Email-MIME-Attachment-Stripper-1.316.0.ebuild:
+  Marking Email-MIME-Attachment-Stripper-1.316.0 ppc for bug 400101
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  Email-MIME-Attachment-Stripper-1.316.0.ebuild:
+  Stable on alpha, bug #400101
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  Email-MIME-Attachment-Stripper-1.316.0.ebuild:
+  Stable for amd64, wrt bug #400101
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org>
+  -Email-MIME-Attachment-Stripper-1.316.ebuild:
+  Cleanup
+
+*Email-MIME-Attachment-Stripper-1.316.0 (31 Aug 2011)
+
+  31 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +Email-MIME-Attachment-Stripper-1.316.0.ebuild:
+  Change version scheme
 
   14 Mar 2010; Torsten Veller <tove@gentoo.org>
   Email-MIME-Attachment-Stripper-1.313.ebuild,
@@ -85,4 +133,3 @@
   05 Feb 2007; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Email-MIME-Attachment-Stripper-1.313.ebuild:
   Bug 165190
-

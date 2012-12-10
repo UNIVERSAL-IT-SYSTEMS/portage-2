@@ -1,6 +1,58 @@
 # ChangeLog for sci-geosciences/mapnik
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/mapnik/ChangeLog,v 1.26 2011/07/29 02:33:46 nerdboy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/mapnik/ChangeLog,v 1.37 2012/10/07 09:06:13 pacho Exp $
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #24135.
+
+  27 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Remove unused desc.
+
+  27 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> mapnik-2.0.1.ebuild:
+  Sort deps alphabetically.
+
+*mapnik-2.0.1 (26 May 2012)
+
+  26 May 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +files/mapnik-2.0.1-boost_build.patch,
+  +files/mapnik-2.0.1-configure-only-once.patch,
+  +files/mapnik-2.0.1-destdir.patch, +files/mapnik-2.0.1-scons.patch,
+  +mapnik-2.0.1.ebuild, -files/mapnik-0.7.1-libagg.patch,
+  -files/mapnik-0.7.1-libpng1.5.4.patch, -files/mapnik-2.0.0-gentoo.patch,
+  -mapnik-0.7.1-r1.ebuild, -mapnik-0.7.1-r2.ebuild, -mapnik-2.0.0.ebuild:
+  Version bump to 2.0.1. Remove older. Fixes bug#414579.
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> mapnik-2.0.0.ebuild:
+  Depend on virtual/jpeg wrt bug#413677.
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> mapnik-2.0.0.ebuild:
+  Build gdal/ogr with gdal useflag. Fixes bug#397423.
+
+*mapnik-0.7.1-r2 (30 Jan 2012)
+
+  30 Jan 2012; Markos Chandras <hwoarang@gentoo.org> +mapnik-0.7.1-r2.ebuild,
+  mapnik-0.7.1-r1.ebuild, mapnik-2.0.0.ebuild:
+  New revision for boost-1.48 compatibility. Thanks to Arfrever. Fixes bug
+  #401395
+
+  30 Jan 2012; Steve Arnold <nerdboy@gentoo.org> mapnik-2.0.0.ebuild:
+  Updated python and boost deps.
+
+  27 Nov 2011; Sven Wegener <swegener@gentoo.org> mapnik-0.7.1-r1.ebuild,
+  mapnik-2.0.0.ebuild, metadata.xml:
+  Build geos input plugin with USE="geos", only build postgis input plugin with
+  USE="postgres".
+
+*mapnik-2.0.0 (13 Nov 2011)
+
+  13 Nov 2011; Steve Arnold <nerdboy@gentoo.org> +mapnik-2.0.0.ebuild,
+  +files/mapnik-2.0.0-gentoo.patch:
+  Added mapnik2 ebuild, however, it breaks current gpsdrive, so it will be 
+  package.amsked for the time being.  Unmask if you want to try it.
+
+  26 Sep 2011; Steve Arnold <nerdboy@gentoo.org> mapnik-0.7.1-r1.ebuild,
+  +files/mapnik-0.7.1-libpng1.5.4.patch:
+  Update for libpng 1.5 changes (closes bug #384263).
 
   29 Jul 2011; Steve Arnold <nerdboy@gentoo.org> mapnik-0.7.1-r1.ebuild:
   Updated with API doc workaround (see bug #370575) and a missing dep
@@ -138,4 +190,3 @@
   +mapnik-0.5.1.ebuild:
   New mapping toolkit supporting gpsdrive, as well as general mapping.
   Closes bug #140599.
-

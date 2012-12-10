@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/kino/kino-1.3.4.ebuild,v 1.1 2011/06/14 10:46:48 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/kino/kino-1.3.4.ebuild,v 1.8 2012/12/02 17:06:48 eva Exp $
 
 EAPI="4"
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/kino/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ppc ppc64 ~sparc x86"
 IUSE="alsa dvdr gpac lame gstreamer quicktime sox vorbis"
 
 # This ebuild would benefit a lot of USE dependencies but that has to wait for
@@ -50,7 +50,7 @@ RDEPEND="${CDEPEND}
 		app-cdr/dvd+rw-tools )
 	gpac? ( media-video/gpac )
 	lame? ( media-sound/lame )
-	gstreamer? ( media-libs/gst-plugins-base )
+	gstreamer? ( media-libs/gst-plugins-base:0.10 )
 	sox? ( media-sound/sox )
 	vorbis? ( media-sound/vorbis-tools )"
 
@@ -84,6 +84,8 @@ src/page_bttv.cc' po/POTFILES.in || die "sed failed"
 	sed -i -e 's:^#include <quicktime.h>:#include <lqt/quicktime.h>:' \
 		src/filehandler.h || die "sed failed"
 	epatch "${FILESDIR}/${P}-v4l1.patch"
+	epatch "${FILESDIR}/${P}-libav-0.7.patch"
+	epatch "${FILESDIR}/${P}-libav-0.8.patch"
 }
 
 src_configure() {
@@ -99,4 +101,5 @@ src_install() {
 	emake DESTDIR="${D}" install
 	dodoc AUTHORS BUGS ChangeLog NEWS README* TODO
 	fowners root:root -R /usr/share/kino/help #177378
+	find "${ED}"usr -name '*.la' -exec rm -f {} + #385361
 }

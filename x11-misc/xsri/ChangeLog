@@ -1,6 +1,20 @@
 # ChangeLog for x11-misc/xsri
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xsri/ChangeLog,v 1.13 2011/05/17 10:19:58 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xsri/ChangeLog,v 1.17 2012/08/21 17:30:31 johu Exp $
+
+  21 Aug 2012; Johannes Huber <johu@gentoo.org> xsri-2.1.0-r2.ebuild:
+  Stable for x86, wrt bug #429240
+
+  06 Aug 2012; Agostino Sarubbo <ago@gentoo.org> xsri-2.1.0-r2.ebuild:
+  Stable for amd64, wrt bug #429240
+
+*xsri-2.1.0-r2 (04 Jun 2012)
+
+  04 Jun 2012; Michael Weber <xmw@gentoo.org> +xsri-2.1.0-r2.ebuild:
+  Version bump (reported by df, bug 416419)
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> xsri-2.1.0-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   17 May 2011; Kacper Kowalik <xarthisius@gentoo.org> xsri-2.1.0-r1.ebuild:
   Fix underlinking wrt #367663. Thanks to Diego Elio Pettenò

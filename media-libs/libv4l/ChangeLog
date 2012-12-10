@@ -1,6 +1,96 @@
 # ChangeLog for media-libs/libv4l
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libv4l/ChangeLog,v 1.51 2011/06/16 15:49:15 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libv4l/ChangeLog,v 1.74 2012/12/05 06:08:55 tetromino Exp $
+
+  05 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -libv4l-0.8.5.ebuild, -libv4l-0.8.5-r1.ebuild,
+  -files/libv4l-0.8.5-disable_fancy_upsampling.patch:
+  Drop old.
+
+*libv4l-0.8.9 (20 Oct 2012)
+
+  20 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org> libv4l-0.8.5.ebuild,
+  libv4l-0.8.5-r1.ebuild, -libv4l-0.8.6.ebuild, libv4l-0.8.8.ebuild,
+  +libv4l-0.8.9.ebuild:
+  Version bump, improves pixart jpeg compression support and adds fixes for
+  more laptop models (bug #438244, thanks to Wojciech Myrda). Update license.
+  Drop old.
+
+  26 Sep 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/libv4l-0.8.8-drop-Wp-flags.patch, libv4l-0.8.8.ebuild:
+  Drop useless gcc-specific -Wp flags.
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> libv4l-0.8.8.ebuild:
+  alpha/ia64/sparc stable wrt #419099
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> libv4l-0.8.8.ebuild:
+  Marking libv4l-0.8.8 ppc64 for bug 419099
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> libv4l-0.8.8.ebuild:
+  Marking libv4l-0.8.8 ppc for bug 419099
+
+  24 Jul 2012; Markos Chandras <hwoarang@gentoo.org> libv4l-0.8.8.ebuild:
+  Stable on amd64 wrt bug #419099
+
+  24 Jul 2012; Jeroen Roovers <jer@gentoo.org> libv4l-0.8.8.ebuild:
+  Stable for HPPA (bug #419099).
+
+  23 Jul 2012; Markus Meier <maekke@gentoo.org> libv4l-0.8.8.ebuild:
+  arm stable, bug #419099
+
+  16 Jul 2012; Jeff Horelick <jdhore@gentoo.org> libv4l-0.8.8.ebuild:
+  marked x86 per bug 419099
+
+*libv4l-0.8.8 (14 Apr 2012)
+
+  14 Apr 2012; Alexis Ballier <aballier@gentoo.org> +libv4l-0.8.8.ebuild:
+  version bump
+
+*libv4l-0.8.6 (19 Feb 2012)
+
+  19 Feb 2012; Alexis Ballier <aballier@gentoo.org> +libv4l-0.8.6.ebuild:
+  version bump
+
+*libv4l-0.8.5-r1 (02 Feb 2012)
+
+  02 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +libv4l-0.8.5-r1.ebuild,
+  +files/libv4l-0.8.5-disable_fancy_upsampling.patch:
+  Since JPEG 7.x the fancy upsampling has been enabled by default and should
+  explicitely be disabled in apps not supporting it wrt #401865 by Denilson Sá
+
+  13 Jan 2012; Mike Frysinger <vapier@gentoo.org> libv4l-0.8.5.ebuild:
+  Simplify ebuild a bit.
+
+  30 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> -libv4l-0.8.1.ebuild,
+  -libv4l-0.8.3.ebuild, -libv4l-0.8.4.ebuild:
+  old
+
+  30 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> libv4l-0.8.5.ebuild:
+  ppc/ppc64 stable wrt #382727
+
+  20 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> metadata.xml:
+  Updated my email address.
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> libv4l-0.8.5.ebuild:
+  alpha/ia64/sparc stable wrt #382727
+
+  05 Oct 2011; Jeroen Roovers <jer@gentoo.org> libv4l-0.8.5.ebuild:
+  Stable for HPPA (bug #382727).
+
+  04 Oct 2011; Markus Meier <maekke@gentoo.org> libv4l-0.8.5.ebuild:
+  arm stable, bug #382727
+
+  18 Sep 2011; Markus Meier <maekke@gentoo.org> libv4l-0.8.5.ebuild:
+  x86 stable, bug #382727
+
+  16 Sep 2011; Tony Vroon <chainsaw@gentoo.org> libv4l-0.8.5.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo,
+  Elijah "Armageddon" El Lazkani & Ian "idella4" Delaney in bug #382727.
+
+*libv4l-0.8.5 (04 Aug 2011)
+
+  04 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> +libv4l-0.8.5.ebuild:
+  Version bump.
 
   16 Jun 2011; Samuli Suominen <ssuominen@gentoo.org> libv4l-0.8.4.ebuild:
   Fix missing virtual/jpeg dep wrt #371879 by Markus Knetschke
@@ -184,4 +274,3 @@
   +libv4l-0.5.1.ebuild:
   Initial import, ebuild by Alex Rostovtsev tetromino@gmail.com who will
   proxy maintain it, bug #240090
-

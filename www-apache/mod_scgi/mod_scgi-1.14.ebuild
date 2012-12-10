@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_scgi/mod_scgi-1.14.ebuild,v 1.2 2011/05/28 08:13:27 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_scgi/mod_scgi-1.14.ebuild,v 1.4 2012/10/12 08:55:20 patrick Exp $
 
 EAPI="3"
 
@@ -12,7 +12,7 @@ SRC_URI="http://python.ca/scgi/releases/scgi-${PV}.tar.gz"
 
 LICENSE="CNRI"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc x86"
+KEYWORDS="~amd64 hppa ~ppc x86"
 IUSE=""
 
 DEPEND="~www-apps/scgi-${PV}"
@@ -27,4 +27,4 @@ APACHE2_MOD_DEFINE="SCGI"
 
 DOCFILES="PKG-INFO LICENSE.txt CHANGES.txt apache2/README.txt"
 
-need_apache
+need_apache2_2

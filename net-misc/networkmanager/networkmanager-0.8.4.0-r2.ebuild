@@ -1,31 +1,27 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/networkmanager-0.8.4.0-r2.ebuild,v 1.1 2011/07/21 08:05:28 dagger Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/networkmanager/networkmanager-0.8.4.0-r2.ebuild,v 1.12 2012/12/02 22:31:17 ssuominen Exp $
 
-EAPI="2"
+EAPI="3"
+GNOME_ORG_MODULE="NetworkManager"
 
 inherit autotools eutils gnome.org linux-info systemd
 
-# NetworkManager likes itself with capital letters
-MY_PN=${PN/networkmanager/NetworkManager}
-MY_P=${MY_PN}-${PV}
-
 DESCRIPTION="Network configuration and management in an easy way. Desktop environment independent."
 HOMEPAGE="http://www.gnome.org/projects/NetworkManager/"
-SRC_URI="${SRC_URI//${PN}/${MY_PN}}"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ~arm ppc ppc64 x86"
 IUSE="avahi bluetooth doc nss gnutls dhclient dhcpcd kernel_linux +ppp resolvconf connection-sharing"
 
 RDEPEND=">=sys-apps/dbus-1.2
 	>=dev-libs/dbus-glib-0.75
 	>=net-wireless/wireless-tools-28_pre9
-	|| ( >=sys-fs/udev-171[gudev] >=sys-fs/udev-145[extras] )
+	virtual/udev[gudev]
 	>=dev-libs/glib-2.18
 	>=sys-auth/polkit-0.92
-	>=dev-libs/libnl-1.1
+	>=dev-libs/libnl-1.1:1.1
 	ppp? ( >=net-misc/modemmanager-0.4
 		>=net-dialup/ppp-2.4.5 )
 	>=net-wireless/wpa_supplicant-0.5.10[dbus]
@@ -39,7 +35,7 @@ RDEPEND=">=sys-apps/dbus-1.2
 	!gnutls? ( >=dev-libs/nss-3.11 )
 	dhclient? (
 		dhcpcd? ( >=net-misc/dhcpcd-4.0.0_rc3 )
-		!dhcpcd? ( net-misc/dhcp ) )
+		!dhcpcd? ( net-misc/dhcp[client] ) )
 	!dhclient? ( >=net-misc/dhcpcd-4.0.0_rc3 )
 	resolvconf? ( net-dns/openresolv )
 	connection-sharing? (
@@ -47,11 +43,9 @@ RDEPEND=">=sys-apps/dbus-1.2
 		net-firewall/iptables )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-util/intltool
 	doc? ( >=dev-util/gtk-doc-1.8 )"
-
-S=${WORKDIR}/${MY_P}
 
 sysfs_deprecated_check() {
 	ebegin "Checking for SYSFS_DEPRECATED support"
@@ -84,11 +78,14 @@ src_prepare() {
 	epatch "${FILESDIR}/${P}-shared-connection.patch"
 	epatch "${FILESDIR}/${P}-fix-tests.patch"
 	epatch "${FILESDIR}/${P}-ifnet-smarter-write.patch"
+	# Fix building against linux-headers-3.4, #417055
+	epatch "${FILESDIR}/${PN}-0.9.4.0-ip_ppp.h.patch"
 	eautoreconf
 }
 
 src_configure() {
 	ECONF="--disable-more-warnings
+		--disable-static
 		--localstatedir=/var
 		--with-distro=gentoo
 		--with-dbus-sys-dir=/etc/dbus-1/system.d
@@ -96,6 +93,7 @@ src_configure() {
 		--with-iptables=/sbin/iptables
 		$(use_enable doc gtk-doc)
 		$(use_with doc docs)
+		$(use_enable ppp)
 		$(use_with resolvconf)
 		$(systemd_with_unitdir)"
 
@@ -140,6 +138,9 @@ src_install() {
 	insinto /etc/NetworkManager
 	newins "${FILESDIR}/nm-system-settings.conf-ifnet" nm-system-settings.conf \
 		|| die "newins failed"
+
+	# Remove useless .la files
+	find "${D}" -name '*.la' -exec rm -f {} + || die "la file removal failed"
 }
 
 pkg_postinst() {

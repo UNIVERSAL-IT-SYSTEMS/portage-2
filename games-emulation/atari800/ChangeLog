@@ -1,6 +1,13 @@
 # ChangeLog for games-emulation/atari800
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/atari800/ChangeLog,v 1.33 2011/08/01 19:09:24 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/atari800/ChangeLog,v 1.35 2012/01/10 20:39:19 ranger Exp $
+
+  10 Jan 2012; Brent Baude <ranger@gentoo.org> atari800-2.2.1.ebuild:
+  Marking atari800-2.2.1 ppc for bug 375695
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> atari800-2.1.0.ebuild,
+  atari800-2.2.1.ebuild:
+  Drop alpha/sparc keyword
 
   01 Aug 2011; Markus Meier <maekke@gentoo.org> atari800-2.2.1.ebuild:
   amd64/x86 stable, bug #375695

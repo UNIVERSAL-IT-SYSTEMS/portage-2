@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xaos/xaos-3.5-r1.ebuild,v 1.7 2011/06/28 20:04:39 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xaos/xaos-3.5-r1.ebuild,v 1.9 2012/05/05 04:53:41 jdhore Exp $
 
 EAPI=4
 
@@ -28,7 +28,7 @@ RDEPEND="
 		 x11-libs/libXxf86vm )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? (
 		virtual/latex-base
 		dev-texlive/texlive-texinfo )
@@ -40,7 +40,8 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epatch \
 		"${FILESDIR}"/${PN}-3.4-png.patch \
-		"${FILESDIR}"/${PN}-3.4-include.patch
+		"${FILESDIR}"/${PN}-3.4-include.patch \
+		"${FILESDIR}"/${PN}-3.5-libpng15.patch
 	sed -i -e 's/-s//' Makefile.in
 	eautoreconf
 }

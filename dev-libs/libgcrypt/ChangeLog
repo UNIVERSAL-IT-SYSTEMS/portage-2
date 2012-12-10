@@ -1,6 +1,72 @@
 # ChangeLog for dev-libs/libgcrypt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgcrypt/ChangeLog,v 1.149 2011/07/01 21:49:52 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgcrypt/ChangeLog,v 1.164 2012/12/04 04:16:42 radhermit Exp $
+
+*libgcrypt-1.5.0-r4 (04 Dec 2012)
+
+  04 Dec 2012; Tim Harder <radhermit@gentoo.org> +libgcrypt-1.5.0-r4.ebuild,
+  +files/libgcrypt-1.5.0-aesni.patch:
+  Revbump to fix segfault issue with aes-ni support and add epatch_user support
+  (bugs #442568 and #442630 by Toralf Förster).
+
+*libgcrypt-1.5.0-r3 (04 Nov 2012)
+
+  04 Nov 2012; Dane Smith <c1pher@gentoo.org> +libgcrypt-1.5.0-r3.ebuild:
+  Revbump. Add prefix support from Christoph Junghans <ottxor@gentoo.org>.
+  Closes bug 440080.
+
+  23 Sep 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/libgcrypt-1.5.0-x32.patch, libgcrypt-1.5.0-r2.ebuild:
+  Fix building for x32 ABIs #427726 by Joe.
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> libgcrypt-1.5.0-r2.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #418391
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> libgcrypt-1.5.0-r2.ebuild:
+  arm stable, bug #418391
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> libgcrypt-1.5.0-r2.ebuild:
+  Stable for HPPA (bug #418391).
+
+  25 Jun 2012; Jeff Horelick <jdhore@gentoo.org> libgcrypt-1.5.0-r2.ebuild:
+  marked x86 per bug 418391
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libgcrypt-1.5.0-r2.ebuild:
+  Stable for amd64, wrt bug #418391
+
+  24 Jun 2012; Kacper Kowalik <xarthisius.kk@gmail.com>
+  libgcrypt-1.5.0-r2.ebuild:
+  ppc/ppc64 stable wrt #418391
+
+  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org> libgcrypt-1.5.0-r1.ebuild,
+  libgcrypt-1.5.0-r2.ebuild, libgcrypt-1.5.0.ebuild:
+  Add missing inheritance of eutils.eclass
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libgcrypt-1.5.0-r2.ebuild:
+  keyword ~amd64-fbsd
+
+*libgcrypt-1.5.0-r2 (18 Feb 2012)
+
+  18 Feb 2012; Ulrich Müller <ulm@gentoo.org> +libgcrypt-1.5.0-r2.ebuild:
+  Re-add support for the IDEA cipher, bug 159870.
+
+*libgcrypt-1.5.0-r1 (22 Sep 2011)
+
+  22 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  +libgcrypt-1.5.0-r1.ebuild, +files/libgcrypt-multilib-syspath.patch:
+  Revbump: also drop -L flags from libgcrypt-config as done for libgpg-error;
+  avoid forcing PIC code for static libraries (if they are even enabled); use
+  EAPI=4 features; remove .la files if the static libraries are not installed.
+
+  22 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  -libgcrypt-1.5.0_beta1-r1.ebuild, -libgcrypt-1.5.0_beta1-r2.ebuild,
+  -files/libgcrypt-1.5.0_beta1-ctr.patch:
+  Remove betas, so that we can remove the (too big) file in FILESDIR.
+
+  22 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> libgcrypt-1.5.0.ebuild,
+  +files/libgcrypt-1.5.0-uscore.patch:
+  Use libtool's macro to identify whether to use underscores in names or not.
+  Closes bug #383865.
 
 *libgcrypt-1.5.0 (01 Jul 2011)
 

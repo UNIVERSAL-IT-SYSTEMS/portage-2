@@ -1,6 +1,37 @@
 # ChangeLog for sys-devel/autoconf-wrapper
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/autoconf-wrapper/ChangeLog,v 1.87 2011/06/11 23:37:38 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/autoconf-wrapper/ChangeLog,v 1.96 2012/04/26 11:58:46 aballier Exp $
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> autoconf-wrapper-12.ebuild:
+  keyword ~amd64-fbsd
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> autoconf-wrapper-12.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #400501
+
+  05 Mar 2012; Jeff Horelick <jdhore@gentoo.org> autoconf-wrapper-12.ebuild:
+  marked x86 per bug 400501
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> autoconf-wrapper-12.ebuild:
+  Marking autoconf-wrapper-12 ppc64 for bug 400501
+
+  02 Mar 2012; Markus Meier <maekke@gentoo.org> autoconf-wrapper-12.ebuild:
+  arm stable, bug #400501
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> autoconf-wrapper-12.ebuild:
+  Marking autoconf-wrapper-12 ppc for bug 400501
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> autoconf-wrapper-12.ebuild:
+  Stable for HPPA (bug #400501).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> autoconf-wrapper-12.ebuild:
+  Stable for amd64, wrt bug #400501
+
+*autoconf-wrapper-12 (02 Oct 2011)
+
+  02 Oct 2011; Mike Frysinger <vapier@gentoo.org> +autoconf-wrapper-12.ebuild,
+  +files/ac-wrapper-12.sh:
+  Optimize version lookup a bit, and handle the case where $0 is not a full
+  path #385201 by Florian Philipp.
 
 *autoconf-wrapper-11 (11 Jun 2011)
 

@@ -1,6 +1,40 @@
 # ChangeLog for net-nds/tac_plus
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/tac_plus/ChangeLog,v 1.8 2011/06/16 16:00:43 chainsaw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-nds/tac_plus/ChangeLog,v 1.15 2012/12/09 10:27:58 ulm Exp $
+
+  09 Dec 2012; Ulrich Müller <ulm@gentoo.org> tac_plus-4.0.4.14.ebuild,
+  tac_plus-4.0.4.15.ebuild, tac_plus-4.0.4.19-r2.ebuild,
+  tac_plus-4.0.4.19-r3.ebuild:
+  Fix LICENSE, see COPYING. Bug 446546.
+
+  13 Jul 2012; Ian Stakenvicius <axs@gentoo.org> tac_plus-4.0.4.14.ebuild,
+  tac_plus-4.0.4.15.ebuild, tac_plus-4.0.4.19-r2.ebuild,
+  tac_plus-4.0.4.19-r3.ebuild:
+  added GPL-2 to LICENSE per bug 426106 , for now
+
+  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  tac_plus-4.0.4.19-r2.ebuild:
+  Add missing inheritance of eutils.eclass
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  tac_plus-4.0.4.19-r3.ebuild:
+  x86 stable wrt bug #397187
+
+  14 Feb 2012; Brent Baude <ranger@gentoo.org> tac_plus-4.0.4.19-r3.ebuild:
+  Marking tac_plus-4.0.4.19-r3 ppc for bug 397187
+
+  07 Feb 2012; Tony Vroon <chainsaw@gentoo.org> tac_plus-4.0.4.19-r3.ebuild:
+  Marked stable on AMD64 based on arch testing by Maurizio "k01" Camisaschi &
+  Aaron "B-Man" Bauman in bug #397187.
+
+*tac_plus-4.0.4.19-r3 (07 Feb 2012)
+
+  07 Feb 2012; Tony Vroon <chainsaw@gentoo.org> +tac_plus-4.0.4.19-r3.ebuild,
+  +files/tac_plus.init2:
+  Revision bump. Add sys-libs/pam to RDEPEND and remove spurious libtool
+  archive when static-libs is not enabled. Stop specifying deprecated opts
+  variable in init script. Closes bugs #402503 & #402505 by Agostino "ago"
+  Sarubbo.
 
 *tac_plus-4.0.4.19-r2 (16 Jun 2011)
 

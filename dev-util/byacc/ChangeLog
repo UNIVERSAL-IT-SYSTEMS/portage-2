@@ -1,6 +1,88 @@
 # ChangeLog for dev-util/byacc
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/byacc/ChangeLog,v 1.25 2010/09/06 17:53:13 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/byacc/ChangeLog,v 1.49 2012/12/02 05:39:59 radhermit Exp $
+
+  02 Dec 2012; Tim Harder <radhermit@gentoo.org> -byacc-1.9-r3.ebuild,
+  -files/byacc-1.9-CVE-2008-3196.patch, -files/byacc-1.9-ia64.patch,
+  -byacc-20120115.ebuild, -files/mkstemp.patch:
+  Remove old.
+
+*byacc-20121003 (02 Dec 2012)
+
+  02 Dec 2012; Tim Harder <radhermit@gentoo.org> +byacc-20121003.ebuild:
+  Version bump.
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org> byacc-20120526.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #429052
+
+  16 Aug 2012; Johannes Huber <johu@gentoo.org> byacc-20120526.ebuild:
+  Stable for x86, wrt bug #429052
+
+  07 Aug 2012; Jeroen Roovers <jer@gentoo.org> byacc-20120526.ebuild:
+  Stable for HPPA (bug #429052).
+
+  06 Aug 2012; Anthony G. Basile <blueness@gentoo.org> byacc-20120526.ebuild:
+  Stable ppc ppc64, bug #429052
+
+  06 Aug 2012; Anthony G. Basile <blueness@gentoo.org> byacc-20120526.ebuild:
+  Stable arm, bug #429052
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> byacc-20120526.ebuild:
+  Stable for amd64, wrt bug #429052
+
+*byacc-20120526 (30 May 2012)
+
+  30 May 2012; Tim Harder <radhermit@gentoo.org> +byacc-20120526.ebuild:
+  Version bump.
+
+  26 Mar 2012; Michael Haubenwallner <haubi@gentoo.org> byacc-20120115.ebuild:
+  keyword ~ppc-aix ~ia64-hpux ~x86-interix, bug#397819
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> byacc-1.9-r3.ebuild,
+  byacc-20120115.ebuild:
+  sh stable
+
+  03 Mar 2012; Markus Meier <maekke@gentoo.org> byacc-20120115.ebuild:
+  arm stable, bug #402039
+
+  14 Feb 2012; Tim Harder <radhermit@gentoo.org> byacc-20120115.ebuild:
+  Add ~arm to new version as well.
+
+  14 Feb 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Add myself as maintainer.
+
+  09 Feb 2012; Fabian Groffen <grobian@gentoo.org> byacc-20120115.ebuild:
+  Marked ~{x86,x64}-solaris, bug #397819
+
+  08 Feb 2012; Markus Meier <maekke@gentoo.org> byacc-1.9-r3.ebuild:
+  add ~arm, bug #397819
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> byacc-1.9-r3.ebuild:
+  Stable for HPPA (bug #402039).
+
+*byacc-20120115 (07 Feb 2012)
+
+  07 Feb 2012; Tim Harder <radhermit@gentoo.org> +byacc-20120115.ebuild:
+  Version bump.
+
+  01 Feb 2012; Ulrich Müller <ulm@gentoo.org> -byacc-1.9-r2.ebuild,
+  byacc-1.9-r3.ebuild:
+  Remove old. Cosmetic changes.
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> byacc-1.9-r3.ebuild:
+  ppc/ppc64 stable wrt #392813
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> byacc-1.9-r3.ebuild:
+  alpha/ia64/s390/sparc stable wrt #392813
+
+  03 Jan 2012; Ulrich Müller <ulm@gentoo.org> byacc-1.9-r3.ebuild:
+  QA: Don't install MANIFEST with dodoc.
+
+  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> byacc-1.9-r3.ebuild:
+  Stable for AMD64, wrt bug #392813
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> byacc-1.9-r3.ebuild:
+  x86 stable wrt bug #392813
 
   06 Sep 2010; Michael Weber <xmw@gentoo.org> byacc-1.9-r3.ebuild:
   Fix CC/LINKER to toolchain-funcs.

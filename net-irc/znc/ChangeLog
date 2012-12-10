@@ -1,6 +1,62 @@
 # ChangeLog for net-irc/znc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/znc/ChangeLog,v 1.49 2011/04/01 12:14:41 wired Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/znc/ChangeLog,v 1.60 2012/11/21 18:11:31 wired Exp $
+
+*znc-1.0 (21 Nov 2012)
+
+  21 Nov 2012; Alex Alexander <wired@gentoo.org> +znc-1.0.ebuild,
+  +files/znc-1.0-systemwideconfig.patch, +files/znc.confd, +files/znc.initd,
+  metadata.xml:
+  version bump, bug #438430. added system-wide daemon use flag that installs
+  init.d/conf.d files, bug #415389. systemWideConfig patch. Many thanks to
+  Manuel Rüger and Uli Schlachter.
+
+*znc-0.206 (29 May 2012)
+
+  29 May 2012; Justin Lecher <jlec@gentoo.org> +znc-0.206.ebuild:
+  Non maintainer Version BUmp
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> znc-0.094.ebuild,
+  znc-0.202-r1.ebuild, znc-0.204.ebuild, znc-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Feb 2012; Alex Alexander <wired@gentoo.org> znc-9999.ebuild, metadata.xml:
+  live ebuild: removed extras use flag, added user-networks use flag
+
+*znc-0.204 (27 Jan 2012)
+
+  27 Jan 2012; Alex Alexander <wired@gentoo.org> +znc-0.204.ebuild:
+  version bump
+
+  18 Jan 2012; Alex Alexander <wired@gentoo.org> znc-9999.ebuild, metadata.xml:
+  live ebuild: ares not used anymore, added support for dns threads
+
+*znc-0.202-r1 (08 Jan 2012)
+
+  08 Jan 2012; Alex Alexander <wired@gentoo.org> -znc-0.202.ebuild,
+  +znc-0.202-r1.ebuild, +files/znc-0.202-bouncedcc-dos-fix.patch:
+  security: bouncedcc dos fix - bug #398159
+
+  30 Oct 2011; Alex Alexander <wired@gentoo.org> -znc-0.096.ebuild,
+  -znc-0.096-r1.ebuild, -znc-0.098.ebuild, -znc-0.200.ebuild, znc-0.202.ebuild,
+  znc-9999.ebuild:
+  removed old versions. dependency improvements, thanks to DGandalf
+
+*znc-0.202 (23 Sep 2011)
+
+  23 Sep 2011; Alex Alexander <wired@gentoo.org> +znc-0.202.ebuild:
+  version bump
+
+*znc-9999 (14 Sep 2011)
+
+  14 Sep 2011; Alex Alexander <wired@gentoo.org> +znc-9999.ebuild:
+  live ebuild
+
+*znc-0.200 (08 Sep 2011)
+
+  08 Sep 2011; Alex Alexander <wired@gentoo.org> +znc-0.200.ebuild,
+  +files/znc-0.200-segfault-fix.patch:
+  version bump
 
 *znc-0.098 (01 Apr 2011)
 

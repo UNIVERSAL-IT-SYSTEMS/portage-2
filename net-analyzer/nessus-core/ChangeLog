@@ -1,6 +1,16 @@
 # ChangeLog for net-analyzer/nessus-core
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nessus-core/ChangeLog,v 1.116 2011/04/22 10:39:47 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nessus-core/ChangeLog,v 1.118 2012/05/04 06:08:10 jdhore Exp $
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> nessus-core-2.2.9-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  12 Sep 2011; Tim Harder <radhermit@gentoo.org> -files/2.2.9-asneeded.patch,
+  -nessus-core-2.2.9.ebuild, nessus-core-2.2.9-r1.ebuild,
+  +files/nessus-core-2.2.9-open.patch, -files/nessus-core-2.3.1-gcc4.diff,
+  -files/nessusd-r8:
+  Respect CFLAGS, add pkgconfig build dependency, remove unnecessary patch, and
+  fix call to open. Remove old.
 
   22 Apr 2011; Justin Lecher <jlec@gentoo.org> +files/2.2.9-asneeded.patch,
   nessus-core-2.2.9-r1.ebuild:

@@ -1,6 +1,59 @@
 # ChangeLog for media-libs/evas
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/evas/ChangeLog,v 1.7 2011/05/29 16:06:53 tommy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/evas/ChangeLog,v 1.18 2012/12/08 13:13:11 tommy Exp $
+
+*evas-1.7.3 (08 Dec 2012)
+
+  08 Dec 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> -evas-1.7.1.ebuild,
+  +evas-1.7.3.ebuild:
+  Version bump, drop old
+
+  30 Nov 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> evas-1.7.2.ebuild:
+  Drop svg USE flag, disable experimental svg support, suggest external loader
+  support in pkg_postinst
+
+*evas-1.7.2 (23 Nov 2012)
+
+  23 Nov 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> -evas-1.7.0.ebuild,
+  +evas-1.7.2.ebuild:
+  Version bump, drop old
+
+*evas-1.7.1 (22 Oct 2012)
+
+  22 Oct 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> -evas-1.2.1.ebuild,
+  +evas-1.7.1.ebuild:
+  Version bump, drop old
+
+  21 Sep 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> evas-1.7.0.ebuild:
+  Adjust dependency for gles USE flag, since mesa now has 2 flags for it, fixes
+  bug 426652
+
+  10 Sep 2012; Mike Frysinger <vapier@gentoo.org> evas-1.7.0.ebuild:
+  Add arm love.
+
+*evas-1.7.0 (07 Sep 2012)
+
+  07 Sep 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> -evas-1.0.1.ebuild,
+  -evas-1.1.0.ebuild, +evas-1.7.0.ebuild:
+  Version bump, drop old
+
+  09 Jul 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> evas-1.2.1.ebuild:
+  Disable automagic harfbuzz support, in tree version of harfbuzz is too old
+
+*evas-1.2.1 (17 Jun 2012)
+
+  17 Jun 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> +evas-1.2.1.ebuild:
+  Version bump
+
+  08 Feb 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  -files/evas-1.0.0-libpng-1.5.patch:
+  Drop unused patch
+
+*evas-1.1.0 (08 Feb 2012)
+
+  08 Feb 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> -evas-1.0.0.ebuild,
+  -evas-1.0.0-r1.ebuild, +evas-1.1.0.ebuild:
+  Version bump, drop old versions
 
 *evas-1.0.1 (29 May 2011)
 
@@ -37,4 +90,3 @@
   18 Nov 2010; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
   +evas-1.0.0_beta2.ebuild, +metadata.xml:
   Initial commit, based on ebuild in enlightenment overlay
-

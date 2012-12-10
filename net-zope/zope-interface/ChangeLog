@@ -1,6 +1,82 @@
 # ChangeLog for net-zope/zope-interface
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-interface/ChangeLog,v 1.19 2011/07/24 19:24:45 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-zope/zope-interface/ChangeLog,v 1.41 2012/06/17 18:51:25 armin76 Exp $
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> zope-interface-3.8.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #415871
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> zope-interface-3.8.0.ebuild:
+  Marking zope-interface-3.8.0 ppc for bug 415871
+
+  27 May 2012; Markus Meier <maekke@gentoo.org> zope-interface-3.8.0.ebuild:
+  arm stable, bug #415871
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> zope-interface-3.8.0.ebuild:
+  Marking zope-interface-3.8.0 ppc64 for bug 415871
+
+  18 May 2012; Jeff Horelick <jdhore@gentoo.org> zope-interface-3.8.0.ebuild:
+  marked x86 per bug 415871
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> zope-interface-3.8.0.ebuild:
+  Stable for HPPA (bug #415871).
+
+  14 May 2012; Agostino Sarubbo <ago@gentoo.org> zope-interface-3.8.0.ebuild:
+  Stable for amd64, wrt bug #415871
+
+  08 May 2012; Alexis Ballier <aballier@gentoo.org>
+  zope-interface-3.8.0.ebuild:
+  keyword ~amd64-fbsd
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> zope-interface-3.7.0.ebuild:
+  Marking zope-interface-3.7.0 ppc for bug 386069
+
+  01 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> metadata.xml:
+  The net-zope herd is empty.
+
+  12 Feb 2012; Tony Vroon <chainsaw@gentoo.org> zope-interface-3.7.0.ebuild:
+  Marked stable on PPC64 as requested by Dirkjan "djc" Ochtman in bug
+  #386089. Compile tested on a PowerMac7,3 (64UL) with GCC 4.5.3.
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> zope-interface-3.7.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #386069
+
+  17 Oct 2011; Markus Meier <maekke@gentoo.org> zope-interface-3.7.0.ebuild:
+  arm stable, bug #386069
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> zope-interface-3.7.0.ebuild:
+  Stable for HPPA (bug #386069).
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  zope-interface-3.7.0.ebuild:
+  x86 stable wrt bug #386069
+
+*zope-interface-3.8.0 (11 Oct 2011)
+
+  11 Oct 2011; Dirkjan Ochtman <djc@gentoo.org> +zope-interface-3.8.0.ebuild:
+  Version bump to 3.8.0.
+
+  09 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  zope-interface-3.7.0.ebuild:
+  Stable on amd64 wrt bug #386069
+
+*zope-interface-3.7.0 (30 Aug 2011)
+
+  30 Aug 2011; Dirkjan Ochtman <djc@gentoo.org> +zope-interface-3.7.0.ebuild:
+  Version bump to 3.7.0.
+
+  30 Aug 2011; Dirkjan Ochtman <djc@gentoo.org> -zope-interface-3.5.3.ebuild,
+  -zope-interface-3.6.1.ebuild:
+  Remove old versions.
+
+  25 Aug 2011; Jeroen Roovers <jer@gentoo.org> zope-interface-3.6.2.ebuild:
+  Stable for HPPA (bug #374581).
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> zope-interface-3.6.2.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #374581
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  zope-interface-3.6.2.ebuild:
+  Stable on amd64 wrt bug #374581
 
   24 Jul 2011; Thomas Kahle <tomka@gentoo.org> zope-interface-3.6.2.ebuild:
   x86 stable per bug 374581

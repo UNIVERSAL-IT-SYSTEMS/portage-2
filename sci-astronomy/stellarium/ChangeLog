@@ -1,6 +1,135 @@
 # ChangeLog for sci-astronomy/stellarium
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/stellarium/ChangeLog,v 1.72 2011/07/11 17:09:45 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/stellarium/ChangeLog,v 1.106 2012/10/17 03:08:24 phajdan.jr Exp $
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  stellarium-0.11.4a.ebuild:
+  x86 stable wrt bug #436810
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> stellarium-0.11.4a.ebuild:
+  Stable for amd64, wrt bug #436810
+
+  04 Oct 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  stellarium-0.11.4a.ebuild:
+  only upstream supported locales (bug #437052)
+
+  02 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  stellarium-0.11.4a.ebuild:
+  stable ppc ppc64, bug #436810
+
+*stellarium-0.11.4a (29 Aug 2012)
+
+  29 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  +files/stellarium-0.11.4a-desktop.patch, +stellarium-0.11.4a.ebuild:
+  version bump (bug #433211)
+
+  21 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org> stellarium-0.11.3.ebuild:
+  punt unsupported locales (bug #432064)
+
+  05 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml,
+  stellarium-0.11.3.ebuild:
+  fixed for new linguas, keyword amd64-linux, x86-linux
+
+  03 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  +files/stellarium-0.11.3-desktop.patch, stellarium-0.11.3.ebuild:
+  fix desktop file
+
+  16 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  -stellarium-0.11.2-r1.ebuild:
+  old
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> stellarium-0.11.3.ebuild:
+  Marking stellarium-0.11.3 ppc64 for bug 424245
+
+  04 Jul 2012; Jeff Horelick <jdhore@gentoo.org> stellarium-0.11.3.ebuild:
+  marked x86 per bug 424245
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> stellarium-0.11.3.ebuild:
+  Marking stellarium-0.11.3 ppc for bug 424245
+
+  01 Jul 2012; Agostino Sarubbo <ago@gentoo.org> stellarium-0.11.3.ebuild:
+  Stable for amd64, wrt bug #424245
+
+  30 May 2012; Kacper Kowalik <xarthisius@gentoo.org> -stellarium-0.11.2.ebuild:
+  Drop old
+
+  30 May 2012; Jeff Horelick <jdhore@gentoo.org> stellarium-0.11.2-r1.ebuild:
+  marked x86 per bug 412663
+
+*stellarium-0.11.3 (29 May 2012)
+
+  29 May 2012; Kacper Kowalik <xarthisius@gentoo.org> +stellarium-0.11.3.ebuild,
+  -stellarium-0.11.1.ebuild:
+  Version bump, drop old
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> stellarium-0.11.2-r1.ebuild:
+  Marking stellarium-0.11.2-r1 ppc for bug 412663
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> stellarium-0.11.2-r1.ebuild:
+  Marking stellarium-0.11.2-r1 ppc64 for bug 412663
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  stellarium-0.11.2.ebuild:
+  x86 stable wrt bug #412663
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> stellarium-0.11.2-r1.ebuild:
+  Stable for amd64, wrt bug #412663
+
+*stellarium-0.11.2-r1 (20 May 2012)
+
+  20 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +stellarium-0.11.2-r1.ebuild:
+  Introduce debug USE flag, fixes #415769 by A.C.Heron <acheron@front.ru>
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> stellarium-0.11.2.ebuild:
+  Marking stellarium-0.11.2 ppc64 for bug 412663
+
+  06 May 2012; Agostino Sarubbo <ago@gentoo.org> stellarium-0.11.2.ebuild:
+  Stable for amd64, wrt bug #412663
+
+*stellarium-0.11.2 (19 Mar 2012)
+
+  19 Mar 2012; Kacper Kowalik <xarthisius@gentoo.org> +stellarium-0.11.2.ebuild:
+  Version bump
+
+  20 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> stellarium-0.11.1.ebuild:
+  Fix sed expression wrt bug 405003 by Adrian.Bassett@hotmail.co.uk
+
+  19 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> -stellarium-0.11.0.ebuild,
+  stellarium-0.11.1.ebuild:
+  Respect LINGUAS wrt bug 403647 by Piotr Szymaniak <szarpaj@grubelek.pl>. Drop
+  old
+
+  05 Jan 2012; Michael Weber <xmw@gentoo.org> stellarium-0.11.1.ebuild:
+  ppc/ppc64 stable (bug 395451)
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  stellarium-0.11.1.ebuild:
+  x86 stable wrt bug #395451
+
+  21 Dec 2011; Agostino Sarubbo <ago@gentoo.org> stellarium-0.11.1.ebuild:
+  Stable for AMD64, wrt bug #395451
+
+*stellarium-0.11.1 (20 Nov 2011)
+
+  20 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> +stellarium-0.11.1.ebuild,
+  -stellarium-0.10.6.ebuild, stellarium-0.11.0.ebuild:
+  Fix dosyms, drop old, version bump: move to EAPI4, remove obsolete
+  dependencies, use PN whenever possible
+
+  21 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  stellarium-0.11.0.ebuild:
+  x86 stable wrt bug #378725
+
+  11 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> stellarium-0.11.0.ebuild:
+  ppc/ppc64 stable wrt #378725
+
+  11 Aug 2011; Tony Vroon <chainsaw@gentoo.org> stellarium-0.11.0.ebuild:
+  Marked 0.11.0 stable on AMD64 based on arch testing by Agostino "ago" Sarubbo
+  in bug #378725.
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Switched herd to sci-astronomy
 
 *stellarium-0.11.0 (11 Jul 2011)
 

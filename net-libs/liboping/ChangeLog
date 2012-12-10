@@ -1,6 +1,37 @@
 # ChangeLog for net-libs/liboping
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/liboping/ChangeLog,v 1.3 2011/02/08 23:38:37 dilfridge Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/liboping/ChangeLog,v 1.10 2012/10/02 08:28:09 pinkbyte Exp $
+
+  02 Oct 2012; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
+  Package will be maintained by Johan Bergström <bugs AT bergstroem.nu>
+  through proxy maintainers
+
+  11 Sep 2012; Andreas K. Huettel <dilfridge@gentoo.org> metadata.xml:
+  Drop maintainership
+
+*liboping-1.6.2 (11 Jun 2012)
+
+  11 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +liboping-1.6.2.ebuild, +files/liboping-1.6.2-nouidmagic.patch:
+  Version bump
+
+  30 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -liboping-1.6.0.ebuild, liboping-1.6.1.ebuild:
+  Remove old; restore dependency on ncurses
+
+  25 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org> liboping-1.6.0.ebuild,
+  liboping-1.6.1.ebuild, +files/liboping-1.6.1-nouidmagic.patch:
+  Disable broken suid/caps automagic, bug 380619
+
+  25 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org> liboping-1.6.0.ebuild,
+  liboping-1.6.1.ebuild:
+  QA improvements, bug 380069 (thanks ago!)
+
+*liboping-1.6.1 (19 Aug 2011)
+
+  19 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -liboping-1.5.1-r1.ebuild, +liboping-1.6.1.ebuild:
+  Version bump
 
 *liboping-1.6.0 (08 Feb 2011)
 

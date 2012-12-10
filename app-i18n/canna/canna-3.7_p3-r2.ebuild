@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/canna/canna-3.7_p3-r2.ebuild,v 1.2 2010/11/14 20:16:35 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/canna/canna-3.7_p3-r2.ebuild,v 1.5 2012/07/12 08:46:22 naota Exp $
 
 inherit cannadic eutils multilib
 
@@ -11,7 +11,7 @@ DESCRIPTION="A client-server based Kana-Kanji conversion system"
 HOMEPAGE="http://canna.sourceforge.jp/"
 SRC_URI="mirror://sourceforge.jp/canna/9565/${MY_P}.tar.bz2"
 
-LICENSE="MIT"
+LICENSE="MIT GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
@@ -19,7 +19,13 @@ IUSE="doc"
 DEPEND=">=sys-apps/sed-4
 	x11-misc/gccmakedep
 	x11-misc/imake
-	doc? ( || ( >=dev-texlive/texlive-langcjk-2010 app-text/ptex ) )"
+	doc? (
+		app-text/ghostscript-gpl
+		>=dev-texlive/texlive-langcjk-2010
+		dev-texlive/texlive-fontsextra
+		dev-texlive/texlive-genericrecommended
+		dev-texlive/texlive-latexrecommended
+	)"
 RDEPEND=""
 
 S="${WORKDIR}/${MY_P}"
@@ -53,21 +59,24 @@ src_compile() {
 	#make libCannaDir=../lib/canna canna || die
 	# bug #279706
 	emake -j1 CC="$(tc-getCC)" CDEBUGFLAGS="${CFLAGS}" \
-		LOCAL_LDFLAGS="${LDFLAGS}" canna || die
+		LOCAL_LDFLAGS="${LDFLAGS}" SHLIBGLOBALSFLAGS="${LDFLAGS}" canna || die
 
 	if use doc ; then
 		einfo "Compiling DVI, PS (and PDF) document"
 		cd doc/man/guide/tex
 		xmkmf || die
 		emake -j1 CC="$(tc-getCC)" CDEBUGFLAGS="${CFLAGS}" \
-			LOCAL_LDFLAGS="${LDFLAGS}" JLATEXCMD=platex \
-			DVI2PSCMD="dvips -f" canna.dvi canna.ps || die
+			LOCAL_LDFLAGS="${LDFLAGS}" SHLIBGLOBALSFLAGS="${LDFLAGS}" \
+			JLATEXCMD=platex \
+			DVI2PSCMD="dvips -f" VARTEXFONTS=${T}/fonts \
+			canna.dvi canna.ps || die
 		if has_version 'app-text/dvipdfmx' && \
 			( has_version 'app-text/acroread' \
 			|| has_version 'app-text/xpdf-japanese' ); then
 			emake -j1 CC="$(tc-getCC)" CDEBUGFLAGS="${CFLAGS}" \
-				LOCAL_LDFLAGS="${LDFLAGS}" JLATEXCMD=platex \
-				DVI2PSCMD="dvips -f" \
+				LOCAL_LDFLAGS="${LDFLAGS}" SHLIBGLOBALSFLAGS="${LDFLAGS}" \
+				JLATEXCMD=platex \
+				DVI2PSCMD="dvips -f" VARTEXFONTS=${T}/fonts \
 				canna.pdf || die
 		fi
 	fi

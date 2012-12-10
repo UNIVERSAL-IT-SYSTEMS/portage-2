@@ -1,6 +1,27 @@
 # ChangeLog for media-gfx/kphotoalbum
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/kphotoalbum/ChangeLog,v 1.50 2011/02/27 13:54:03 dilfridge Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/kphotoalbum/ChangeLog,v 1.55 2012/08/25 20:12:47 scarabeus Exp $
+
+  25 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -files/kphotoalbum-4.1.1-docbook_fix.patch,
+  -files/kphotoalbum-4.1.1-exiv2.patch, -kphotoalbum-4.1.1-r1.ebuild,
+  kphotoalbum-4.2.ebuild:
+  Remove older. Stabilise 4.2 on amd64 and x86.
+
+*kphotoalbum-4.2 (26 Apr 2012)
+
+  26 Apr 2012; Johannes Huber <johu@gentoo.org> +kphotoalbum-4.2.ebuild:
+  Version bump by Chris Reffett <geekboy72@gmail.com> and me wrt bug #413407.
+
+  28 Oct 2011; Jonathan Callen <abcd@gentoo.org> -kphotoalbum-4.1.1.ebuild:
+  remove old
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> kphotoalbum-4.1.1-r1.ebuild:
+  x86 stable, bug #378749
+
+  17 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  kphotoalbum-4.1.1-r1.ebuild:
+  Stable on amd64 wrt bug #378749
 
 *kphotoalbum-4.1.1-r1 (27 Feb 2011)
 
@@ -267,4 +288,3 @@
 
   18 Jan 2004; Caleb Tennis <caleb@gentoo.org> kimdaba-1.0.1.ebuild:
   Initial import, closes bug #35132
-

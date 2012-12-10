@@ -1,8 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libprojectm/libprojectm-2.0.1-r1.ebuild,v 1.2 2010/07/29 22:11:16 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libprojectm/libprojectm-2.0.1-r1.ebuild,v 1.11 2012/12/07 23:08:25 ago Exp $
 
-EAPI=2
+EAPI=4
+
 inherit cmake-utils flag-o-matic eutils toolchain-funcs
 
 MY_P=${P/m/M}-Source ; MY_P=${MY_P/lib}
@@ -13,7 +14,7 @@ SRC_URI="mirror://sourceforge/projectm/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ppc ppc64 sparc x86 ~amd64-fbsd ~x86-fbsd"
 IUSE="debug openmp video_cards_nvidia"
 
 RDEPEND=">=media-libs/ftgl-2.1.3_rc5
@@ -23,13 +24,13 @@ RDEPEND=">=media-libs/ftgl-2.1.3_rc5
 	sys-libs/zlib
 	video_cards_nvidia? ( media-gfx/nvidia-cg-toolkit )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${MY_P}
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-pcfix.patch
-}
+PATCHES=(
+	"${FILESDIR}"/${P}-pcfix.patch
+)
 
 src_configure() {
 	append-ldflags $(no-as-needed)
@@ -39,7 +40,7 @@ src_configure() {
 		append-flags -I/opt/nvidia-cg-toolkit/include
 	fi
 
-	mycmakeargs=(
+	local mycmakeargs=(
 		$(cmake-utils_use_use video_cards_nvidia CG)
 		"-DUSE_OPENMP=OFF"
 	)
@@ -47,7 +48,7 @@ src_configure() {
 	if use openmp && tc-has-openmp; then
 		mycmakeargs+=(
 			$(cmake-utils_use_use openmp)
-			)
+		)
 	fi
 
 	cmake-utils_src_configure

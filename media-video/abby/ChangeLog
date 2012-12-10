@@ -1,6 +1,21 @@
 # ChangeLog for media-video/abby
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/abby/ChangeLog,v 1.10 2010/04/12 10:21:33 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/abby/ChangeLog,v 1.14 2012/05/04 18:42:55 scarabeus Exp $
+
+  04 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -abby-0.2.1.ebuild,
+  -abby-0.4.2.ebuild, -abby-0.4.3.ebuild, -abby-0.4.4.ebuild,
+  -abby-0.4.6.ebuild, abby-0.4.8.ebuild:
+  Stable on x86 wrt bug#410031.
+
+  24 Apr 2012; Agostino Sarubbo <ago@gentoo.org> abby-0.4.8.ebuild:
+  Stable for amd64, wrt bug #410031
+
+  22 Apr 2012; Johannes Huber <johu@gentoo.org> abby-0.4.8.ebuild:
+  Move from deprecated qt4 eclass to qt4-r2, bump EAPI, add missing dep by
+  Michael (kensington) <gentoo@scribeofthenile.com> wrt bug #410031.
+
+  31 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> abby-0.4.2.ebuild:
+  Revert back to ~ppc wrt #387611
 
 *abby-0.4.8 (12 Apr 2010)
 

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm setup
+DEPEND=dev-libs/glib:2 dev-libs/gmp dev-libs/libxml2:2 dev-libs/mpfr sci-libs/fftw:3.0 sci-visualization/gnuplot virtual/lapack virtual/latex-base accessibility? ( app-accessibility/flite ) emacs? ( virtual/emacs ) gtk? ( media-libs/gd[png] sci-visualization/gnuplot[gd] x11-libs/gtk+:3 x11-libs/gtksourceview:3.0 ) odbc? ( dev-db/unixODBC ) R? ( dev-lang/R ) readline? ( sys-libs/readline ) virtual/pkgconfig
+DESCRIPTION=Regression, econometrics and time-series library
+EAPI=4
+HOMEPAGE=http://gretl.sourceforge.net/
+IUSE=accessibility emacs gnome gtk nls odbc openmp readline sse2 R static-libs
+KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux
+LICENSE=GPL-3
+RDEPEND=dev-libs/glib:2 dev-libs/gmp dev-libs/libxml2:2 dev-libs/mpfr sci-libs/fftw:3.0 sci-visualization/gnuplot virtual/lapack virtual/latex-base accessibility? ( app-accessibility/flite ) emacs? ( virtual/emacs ) gtk? ( media-libs/gd[png] sci-visualization/gnuplot[gd] x11-libs/gtk+:3 x11-libs/gtksourceview:3.0 ) odbc? ( dev-db/unixODBC ) R? ( dev-lang/R ) readline? ( sys-libs/readline )
+SLOT=0
+SRC_URI=mirror://sourceforge/gretl/gretl-1.9.11.tar.bz2
+_eclasses_=elisp-common	cdb887d0e278ea6e82ea2a5d4792c52a	eutils	d40dc948067bd3db1c8ebf7d51897313	multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28
+_md5_=41eaebd765c543406177c364c185a0f1

@@ -1,6 +1,34 @@
 # ChangeLog for dev-db/firebird
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/firebird/ChangeLog,v 1.106 2011/05/12 18:42:35 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-db/firebird/ChangeLog,v 1.110 2012/06/04 06:30:31 zmedico Exp $
+
+  04 Jun 2012; Zac Medico <zmedico@gentoo.org> firebird-2.0.3.12981.0-r6.ebuild,
+  firebird-2.1.3.18185.0.ebuild, firebird-2.5.1.26351.0.ebuild:
+  inherit user for enewgroup and enewuser
+
+*firebird-2.5.1.26351.0 (30 Dec 2011)
+
+  30 Dec 2011; Patrick Lauer <patrick@gentoo.org>
+  +files/firebird-2.5.1.26351.0-client.patch,
+  +files/firebird-2.5.1.26351.0-deps-flags.patch,
+  +files/firebird-2.5.1.26351.0-superclassic.patch,
+  +firebird-2.5.1.26351.0.ebuild, -firebird-2.5.0.26074.0-r1.ebuild,
+  -firebird-2.5.0.26074.0-r2.ebuild:
+  Bump for #392469
+
+  15 Nov 2011; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  Fix maintainer order to reflect description, adjust description accordingly.
+
+*firebird-2.5.0.26074.0-r2 (06 Oct 2011)
+
+  06 Oct 2011; Patrick Lauer <patrick@gentoo.org>
+  +firebird-2.5.0.26074.0-r2.ebuild,
+  +files/firebird-2.5.0.26074.0-Makefile.in.static.createdb,
+  +files/firebird-2.5.0.26074.0-build.patch,
+  files/firebird-2.5.0.26074.0-client.patch,
+  +files/firebird-2.5.0.26074.0-deps-flags.patch,
+  +files/firebird-2.5.0.26074.0-superclassic.patch, +files/firebird.xinetd:
+  Bump for #385137
 
 *firebird-2.5.0.26074.0-r1 (12 May 2011)
 

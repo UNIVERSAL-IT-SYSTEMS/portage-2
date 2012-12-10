@@ -1,6 +1,17 @@
 # ChangeLog for games-sports/speed-dreams
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-sports/speed-dreams/ChangeLog,v 1.9 2011/06/14 22:00:20 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-sports/speed-dreams/ChangeLog,v 1.12 2012/03/16 20:04:54 tupone Exp $
+
+  16 Mar 2012; Tupone Alfredo <tupone@gentoo.org> speed-dreams-1.4.0.ebuild,
+  files/speed-dreams-1.4.0-automake.patch:
+  Fix configure dependency. Bug #408469 by Piotr Szymaniak
+
+  13 Mar 2012; Tupone Alfredo <tupone@gentoo.org> speed-dreams-1.4.0.ebuild,
+  +files/speed-dreams-1.4.0-automake.patch, metadata.xml:
+  Add xrandr use flag. Bug #334491 by Ben
+
+  12 Mar 2012; Alfredo Tupone <tupone@gentoo.org> speed-dreams-1.4.0.ebuild:
+  Make it build with new automake
 
   14 Jun 2011; Michael Sterrett <mr_bones_@gentoo.org>
   speed-dreams-1.4.0.ebuild, +files/speed-dreams-1.4.0-libpng15.patch:

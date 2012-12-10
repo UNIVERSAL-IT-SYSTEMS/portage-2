@@ -1,6 +1,37 @@
 # ChangeLog for x11-misc/xautomation
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xautomation/ChangeLog,v 1.26 2010/08/14 10:34:53 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xautomation/ChangeLog,v 1.34 2012/05/12 19:39:31 ssuominen Exp $
+
+  12 May 2012; Samuli Suominen <ssuominen@gentoo.org> -xautomation-1.01.ebuild,
+  -xautomation-1.03.ebuild:
+  old
+
+*xautomation-1.06 (12 May 2012)
+
+  12 May 2012; Samuli Suominen <ssuominen@gentoo.org> +xautomation-1.06.ebuild:
+  Version bump wrt #415615 by "df"
+
+  05 May 2012; Raúl Porcel <armin76@gentoo.org> xautomation-1.01.ebuild,
+  xautomation-1.03.ebuild, xautomation-1.05.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xautomation-1.05.ebuild:
+  x86 stable wrt bug #404893
+
+  23 Feb 2012; Brent Baude <ranger@gentoo.org> xautomation-1.05.ebuild:
+  Marking xautomation-1.05 ppc for bug 404893
+
+  23 Feb 2012; Agostino Sarubbo <ago@gentoo.org> xautomation-1.05.ebuild:
+  Stable for amd64, wrt bug #404893
+
+*xautomation-1.05 (04 Dec 2011)
+
+  04 Dec 2011; Jeroen Roovers <jer@gentoo.org> xautomation-1.01.ebuild,
+  xautomation-1.03.ebuild, +xautomation-1.05.ebuild:
+  Version bump. Fix underlinking (bug #369703). Fix DEPEND/RDEPEND.
+
+  06 Nov 2011; Markus Meier <maekke@gentoo.org> xautomation-1.03.ebuild:
+  add ~arm, bug #388901
 
 *xautomation-1.03 (14 Aug 2010)
 

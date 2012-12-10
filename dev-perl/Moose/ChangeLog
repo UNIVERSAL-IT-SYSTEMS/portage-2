@@ -1,6 +1,74 @@
 # ChangeLog for dev-perl/Moose
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Moose/ChangeLog,v 1.86 2011/07/29 17:50:24 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Moose/ChangeLog,v 1.103 2012/09/23 12:34:08 tove Exp $
+
+*Moose-2.60.400 (23 Sep 2012)
+
+  23 Sep 2012; Torsten Veller <tove@gentoo.org> +Moose-2.60.400.ebuild:
+  Version bump
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -Moose-2.60.100.ebuild,
+  -Moose-2.60.200.ebuild:
+  Cleanup
+
+  23 Aug 2012; Michael Weber <xmw@gentoo.org> Moose-2.60.300.ebuild:
+  add ~ppc keyword (bug 379451)
+
+*Moose-2.60.300 (03 Jul 2012)
+
+  03 Jul 2012; Torsten Veller <tove@gentoo.org> +Moose-2.60.300.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*Moose-2.60.200 (08 May 2012)
+
+  08 May 2012; Torsten Veller <tove@gentoo.org> +Moose-2.60.200.ebuild:
+  Version bump
+
+*Moose-2.60.100 (02 May 2012)
+
+  02 May 2012; Torsten Veller <tove@gentoo.org> +Moose-2.60.100.ebuild:
+  Version bump
+
+  10 Apr 2012; Torsten Veller <tove@gentoo.org> Moose-1.240.ebuild:
+  Drop amd64 and x86 keywords from old Moose
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> Moose-2.40.200.ebuild:
+  x86 stable, bug #395297
+
+  06 Apr 2012; Agostino Sarubbo <ago@gentoo.org> Moose-2.40.200.ebuild:
+  Stable for amd64, wrt bug #395297
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org> -Moose-2.20.200.ebuild,
+  -Moose-2.20.500.ebuild, -Moose-2.40.100.ebuild:
+  Cleanup
+
+*Moose-2.40.200 (05 Feb 2012)
+
+  05 Feb 2012; Torsten Veller <tove@gentoo.org> +Moose-2.40.200.ebuild:
+  Version bump
+
+*Moose-2.40.100 (18 Nov 2011)
+
+  18 Nov 2011; Torsten Veller <tove@gentoo.org> +Moose-2.40.100.ebuild:
+  Version bump
+
+*Moose-2.20.500 (25 Sep 2011)
+
+  25 Sep 2011; Torsten Veller <tove@gentoo.org> +Moose-2.20.500.ebuild:
+  Version bump
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org> Moose-2.20.200.ebuild:
+  Marked ~x64-macos
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Moose-0.92.ebuild,
+  -Moose-1.19.ebuild, -Moose-1.250.0.ebuild, -Moose-2.1.0.ebuild:
+  Cleanup
+
+  13 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> Moose-1.240.ebuild:
+  ppc stable wrt #350853
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org> -Moose-2.0.0.ebuild,
   -Moose-2.0.100.ebuild, -Moose-2.0.200.ebuild, -Moose-2.0.600.ebuild,
@@ -408,4 +476,3 @@
   14 Jan 2009; Torsten Veller <tove@gentoo.org> +metadata.xml,
   +Moose-0.64.ebuild:
   Initial commit. From the perl overlay
-

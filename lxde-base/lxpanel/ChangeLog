@@ -1,6 +1,101 @@
 # ChangeLog for lxde-base/lxpanel
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxpanel/ChangeLog,v 1.31 2011/07/27 16:34:07 vostorga Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxpanel/ChangeLog,v 1.51 2012/08/25 00:03:51 hwoarang Exp $
+
+  25 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  -files/lxpanel-0.5.1-sandbox.patch, -files/lxpanel-0.5.6-broken-apps.patch,
+  -files/lxpanel-0.5.6-symbol-alarm.patch,
+  -files/lxpanel-0.5.7-requisition.patch,
+  -files/lxpanel-0.5.7-tooltip-netstatus.patch,
+  -files/lxpanel-0.5.8-battery-meter.patch,
+  -files/lxpanel-0.5.8-dynamic-width.patch,
+  -files/lxpanel-0.5.8-thermal-plugin.patch, -lxpanel-0.5.8-r3.ebuild,
+  -lxpanel-0.5.8.ebuild, -lxpanel-0.5.9.ebuild:
+  Remove old LXDE packages
+
+  14 Aug 2012; Johannes Huber <johu@gentoo.org> lxpanel-0.5.10.ebuild:
+  Stable for x86, wrt bug #430494
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> lxpanel-0.5.10.ebuild:
+  Stable for amd64, wrt bug #430494
+
+  11 Aug 2012; Victor Ostorga lxpanel-0.5.10.ebuild,
+  +files/lxpanel-0.5.10-libgmodule-underlinking.patch:
+  Fixing underlinking, bug #367659
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org> lxpanel-0.5.10.ebuild:
+  Stable arm, bug #430494
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org> lxpanel-0.5.10.ebuild:
+  Stable ppc, bug #430494
+
+*lxpanel-0.5.10 (20 Jun 2012)
+
+  20 Jun 2012; Markos Chandras <hwoarang@gentoo.org> +lxpanel-0.5.10.ebuild,
+  -lxpanel-0.5.6.ebuild, -lxpanel-0.5.7-r1.ebuild, -lxpanel-0.5.8-r1.ebuild,
+  -lxpanel-0.5.8-r2.ebuild:
+  Version bump. Remove old
+
+  11 Jun 2012; Markos Chandras <hwoarang@gentoo.org> lxpanel-0.5.9.ebuild:
+  Drop -Werror introduced by new automake-1.12. Bug #420583
+
+  05 Jun 2012; Michael Weber <xmw@gentoo.org> lxpanel-0.5.8.ebuild:
+  ppc stable (bug 385189)
+
+  12 May 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/lxpanel-0.5.9-libwnck-check.patch, lxpanel-0.5.9.ebuild:
+  Fix libwnck check thanks to Rafał Mużyło <galtgendo@o2.pl>. Bug #415595
+
+  12 May 2012; Markos Chandras <hwoarang@gentoo.org> lxpanel-0.5.9.ebuild:
+  disable wnckpager plugin. bug #415519
+
+*lxpanel-0.5.9 (12 May 2012)
+
+  12 May 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/lxpanel-0.5.9-sandbox.patch, +lxpanel-0.5.9.ebuild:
+  version bump. Bug #415519
+
+*lxpanel-0.5.8-r3 (07 May 2012)
+
+  07 May 2012; Markos Chandras <hwoarang@gentoo.org> +lxpanel-0.5.8-r3.ebuild,
+  +files/lxpanel-0.5.8-dynamic-width.patch,
+  files/lxpanel-0.5.8-thermal-plugin.patch:
+  Add patch for fixing dynamic width and autohide results thanks to Jack Chen
+  <speed.up08311990@gmail.com>. Fixes bug #408541. Backport thermal plugin
+  patch from upstream git repository. Fixes bug #400855. Thanks to Maxim
+  Kammerer <mk@dee.su>
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> lxpanel-0.5.6.ebuild,
+  lxpanel-0.5.7-r1.ebuild, lxpanel-0.5.8.ebuild, lxpanel-0.5.8-r1.ebuild,
+  lxpanel-0.5.8-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*lxpanel-0.5.8-r2 (04 Feb 2012)
+
+  04 Feb 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/lxpanel-0.5.8-thermal-plugin.patch, +lxpanel-0.5.8-r2.ebuild:
+  Support sysfs and proc interfaces in lxpanel. Bug #400855
+
+*lxpanel-0.5.8-r1 (01 Jan 2012)
+
+  01 Jan 2012; Victor Ostorga +lxpanel-0.5.8-r1.ebuild,
+  +files/lxpanel-0.5.8-battery-meter.patch:
+  Fixes battery metter always showing 100 percent charge, patch thanks to
+  Robert Meyer <r.meyer@net-wizard.org> bug #389581
+
+  09 Oct 2011; Markus Meier <maekke@gentoo.org> lxpanel-0.5.8.ebuild:
+  arm stable, bug #385189
+
+  07 Oct 2011; Markos Chandras <hwoarang@gentoo.org> lxpanel-0.5.8.ebuild:
+  Stable on amd64 wrt bug #385189
+
+  05 Oct 2011; Andreas Schuerch <nativemad@gentoo.org> lxpanel-0.5.8.ebuild:
+  x86 stable, bug 385189
+
+*lxpanel-0.5.8 (03 Aug 2011)
+
+  03 Aug 2011; Markos Chandras <hwoarang@gentoo.org> +lxpanel-0.5.8.ebuild:
+  Version bump
 
 *lxpanel-0.5.7-r1 (27 Jul 2011)
 
@@ -130,4 +225,3 @@
   07 Nov 2008; Ben de Groot <yngwin@gentoo.org> +metadata.xml,
   +lxpanel-0.3.8.1.ebuild:
   Initial import of ebuild from lxde overlay
-

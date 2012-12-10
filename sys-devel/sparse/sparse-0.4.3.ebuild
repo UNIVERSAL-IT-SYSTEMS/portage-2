@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/sparse/sparse-0.4.3.ebuild,v 1.5 2011/04/08 01:32:23 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/sparse/sparse-0.4.3.ebuild,v 1.13 2012/07/08 17:34:30 armin76 Exp $
 
 EAPI="2"
 
@@ -18,7 +18,7 @@ if [[ ${PV} == "9999" ]] ; then
 	#KEYWORDS=""
 else
 	SRC_URI="mirror://kernel/software/devel/sparse/dist/${P}.tar.bz2"
-	KEYWORDS="~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+	KEYWORDS="amd64 arm hppa ia64 ppc ppc64 s390 sh sparc x86"
 fi
 
 LICENSE="OSL-1.1"
@@ -28,8 +28,8 @@ IUSE="gtk xml test"
 RDEPEND="gtk? ( x11-libs/gtk+:2 )
 	xml? ( dev-libs/libxml2 )"
 DEPEND="${RDEPEND}
-	gtk? ( dev-util/pkgconfig )
-	xml? ( dev-util/pkgconfig )"
+	gtk? ( virtual/pkgconfig )
+	xml? ( virtual/pkgconfig )"
 
 src_prepare() {
 	# http://git.overlays.gentoo.org/gitweb/?p=proj/sparse.git;a=summary

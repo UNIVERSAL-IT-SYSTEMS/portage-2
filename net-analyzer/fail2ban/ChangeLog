@@ -1,6 +1,68 @@
 # ChangeLog for net-analyzer/fail2ban
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/fail2ban/ChangeLog,v 1.72 2011/05/18 18:05:07 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/fail2ban/ChangeLog,v 1.86 2012/09/07 12:10:52 pinkbyte Exp $
+
+*fail2ban-0.8.7.1 (07 Sep 2012)
+
+  07 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> +fail2ban-0.8.7.1.ebuild:
+  Version bump wrt bug #430304. Thanks to Michael Mair-Keimberger and Leho
+  Kraav
+
+  07 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> fail2ban-0.8.6-r1.ebuild:
+  Use vcs-snapshot eclass
+
+*fail2ban-0.8.6-r1 (05 Sep 2012)
+
+  05 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> +fail2ban-0.8.6-r1.ebuild:
+  Add new revision with virtual/logger dependency wrt bug #433980
+
+  23 Apr 2012; Jeremy Olexa <darkside@gentoo.org> -fail2ban-0.8.4-r3.ebuild,
+  -fail2ban-0.8.4-r4.ebuild, -files/fail2ban-0.8.4-cve2009-5023.patch,
+  -files/fail2ban-0.8.4-gentoo-init.patch, -files/fail2ban-0.8.4-hashlib.patch,
+  -files/fail2ban-0.8.4-sshd-breakin.patch,
+  files/fail2ban-0.8.6-gentoo-init.patch,
+  files/fail2ban-0.8.6-sshd-breakin.patch,
+  -files/gentoo-initd_create_run_dir.patch:
+  Remove old files, add upstream patch references
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> fail2ban-0.8.6.ebuild:
+  Marking fail2ban-0.8.6 ppc64 for bug 411315
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> fail2ban-0.8.6.ebuild:
+  Marking fail2ban-0.8.6 ppc for bug 411315
+
+  11 Apr 2012; Jeroen Roovers <jer@gentoo.org> fail2ban-0.8.6.ebuild:
+  Stable for HPPA (bug #411315).
+
+  09 Apr 2012; Jeff Horelick <jdhore@gentoo.org> fail2ban-0.8.6.ebuild:
+  marked x86 per bug 411315
+
+  09 Apr 2012; Agostino Sarubbo <ago@gentoo.org> fail2ban-0.8.6.ebuild:
+  Stable for amd64, wrt bug #411315
+
+  01 Mar 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  remove myself from metadata
+
+  04 Feb 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/fail2ban-0.8.6-gentoo-init.patch, fail2ban-0.8.6.ebuild:
+  Update homepage. Use extra_started_commands instead of opts. Thanks to
+  Alexander Bezrukov <phmagic@mail.ru>. Bug #401209
+
+*fail2ban-0.8.6 (30 Dec 2011)
+
+  30 Dec 2011; Markos Chandras <hwoarang@gentoo.org> +fail2ban-0.8.6.ebuild,
+  +files/fail2ban-0.8.6-sshd-breakin.patch:
+  Version bump. Bug #392481
+
+*fail2ban-0.8.4-r4 (15 Dec 2011)
+
+  15 Dec 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  +fail2ban-0.8.4-r4.ebuild, files/fail2ban-0.8.4-gentoo-init.patch:
+  Revision bump wrt opts deprecated in initscript (quite annoying to see as
+  user every boot).
+
+  10 Dec 2011; <swift@gentoo.org> fail2ban-0.8.4-r3.ebuild:
+  Add selinux use flag support
 
   18 May 2011; Markos Chandras <hwoarang@gentoo.org> fail2ban-0.8.4-r3.ebuild,
   +files/fail2ban-0.8.4-gentoo-init.patch:

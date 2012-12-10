@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/gudev-sharp/gudev-sharp-0.1.ebuild,v 1.4 2011/06/07 08:09:43 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/gudev-sharp/gudev-sharp-0.1.ebuild,v 1.7 2012/11/28 22:30:27 ssuominen Exp $
 
 EAPI=2
 inherit mono
@@ -16,9 +16,9 @@ IUSE=""
 
 RDEPEND=">=dev-dotnet/gtk-sharp-1.9
 	>=dev-dotnet/gtk-sharp-gapi-1.9
-	|| ( >=sys-fs/udev-146[extras] >=sys-fs/udev-171[gudev] )"
+	virtual/udev[gudev]"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${PN}-1.0-${PV}
 

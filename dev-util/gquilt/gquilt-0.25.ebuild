@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/gquilt/gquilt-0.25.ebuild,v 1.1 2011/04/25 20:11:55 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/gquilt/gquilt-0.25.ebuild,v 1.4 2012/12/02 13:25:45 hasufell Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
 
-inherit distutils
+inherit distutils eutils
 
 DESCRIPTION="A Python/GTK wrapper for quilt"
 HOMEPAGE="http://gquilt.sourceforge.net/ http://sourceforge.net/projects/gquilt/"
@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND="dev-python/pygtk:2
-	dev-util/quilt"
+	|| ( dev-util/quilt dev-util/mercurial )"
 RDEPEND="${DEPEND}"
 
 PYTHON_MODNAME="gquilt_pkg"
@@ -30,13 +30,13 @@ pkg_setup() {
 src_prepare() {
 	distutils_src_prepare
 	python_convert_shebangs -r 2 .
+
+	epatch "${FILESDIR}"/${P}-desktopfile.patch
 }
 
 src_install() {
 	distutils_src_install
 
-	dobin ${PN} || die "dobin failed"
-
-	insinto /usr/share/applications
-	doins gquilt.desktop || die "doins failed"
+	dobin ${PN} || die
+	domenu ${PN}.desktop || die
 }

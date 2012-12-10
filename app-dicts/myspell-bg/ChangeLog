@@ -1,6 +1,31 @@
 # ChangeLog for app-dicts/myspell-bg
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-bg/ChangeLog,v 1.20 2010/09/27 22:25:29 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-bg/ChangeLog,v 1.26 2012/06/13 11:27:16 scarabeus Exp $
+
+*myspell-bg-4.3 (13 Jun 2012)
+
+  13 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> +myspell-bg-4.3.ebuild,
+  -myspell-bg-20060316.ebuild, -myspell-bg-20071211.ebuild,
+  -myspell-bg-20071211-r1.ebuild, -files/myspell-bg-20071211-encoding.patch:
+  Version bump to latest release, punt older which seems to be newer in
+  versioning. As it is copying few files directly to stable.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> myspell-bg-20060316.ebuild,
+  myspell-bg-20071211-r1.ebuild, myspell-bg-20071211.ebuild:
+  keyword ~amd64-fbsd
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> myspell-bg-20071211-r1.ebuild:
+  Marking myspell-bg-20071211-r1 ppc64 for bug 394001
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> myspell-bg-20071211-r1.ebuild:
+  Marking myspell-bg-20071211-r1 ppc for bug 394001
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> myspell-bg-20071211-r1.ebuild:
+  Stable for AMD64, wrt bug #394001
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  myspell-bg-20071211-r1.ebuild:
+  x86 stable wrt bug #394001
 
   27 Sep 2010; Mart Raudsepp <leio@gentoo.org>
   myspell-bg-20071211-r1.ebuild:

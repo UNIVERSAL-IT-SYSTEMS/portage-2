@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
 <maintainer>
-	<email>matthewsmith@iinet.net.au</email>
-	<name>Matthew Smith</name>
-	<description>Once maintained this indirectly through seemant. He retired. CC on bugs till further notice.</description>
+  <email>titanofold@gentoo.org</email>
+  <name>Aaron W. Swenson</name>
 </maintainer>
-<maintainer>
-	<email>tanderson@gentoo.org</email>
-	<name>Thomas Anderson</name>
-</maintainer>
+<use>
+  <flag name="hardened">Use iproute2 instead of ifconfig to grab an IP address</flag>
+  <flag name="ssl">Connect to the server utilizing SSL</flag>
+</use>
 </pkgmetadata>

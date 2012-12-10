@@ -1,6 +1,27 @@
 # ChangeLog for games-rpg/egoboo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-rpg/egoboo/ChangeLog,v 1.25 2011/06/18 18:34:57 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-rpg/egoboo/ChangeLog,v 1.31 2012/10/30 11:11:59 ago Exp $
+
+  30 Oct 2012; <ago@gentoo.org> egoboo-2.8.1.ebuild:
+  Stable for amd64, wrt bug #437314
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> egoboo-2.8.1.ebuild:
+  x86 stable wrt bug #437314
+
+  11 Oct 2012; Michael Sterrett <mr_bones_@gentoo.org> egoboo-2.8.1.ebuild:
+  add libsdl[joystick] dep (bug #438044)
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org> egoboo-2.8.1.ebuild:
+  stable ppc, bug #437314
+
+  02 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> egoboo-2.8.1.ebuild:
+  tidy; use emake
+
+*egoboo-2.8.1 (30 Apr 2012)
+
+  30 Apr 2012; Tupone Alfredo <tupone@gentoo.org> +egoboo-2.8.1.ebuild,
+  +files/egoboo-2.8.1-gentoo.patch:
+  Version bump to 2.8.1 Bug #366731 by Matija "hook" Šuklje
 
   18 Jun 2011; Tupone Alfredo <tupone@gentoo.org> egoboo-2.7.4.ebuild,
   +files/egoboo-2.7.4-underlink.patch:

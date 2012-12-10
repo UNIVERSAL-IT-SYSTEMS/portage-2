@@ -1,6 +1,56 @@
 # ChangeLog for dev-perl/IPC-Run3
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/IPC-Run3/ChangeLog,v 1.47 2011/07/07 05:47:52 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/IPC-Run3/ChangeLog,v 1.62 2012/09/02 16:10:52 tove Exp $
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -IPC-Run3-0.043.ebuild,
+  -IPC-Run3-0.44.0.ebuild:
+  Cleanup
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> IPC-Run3-0.45.0.ebuild:
+  alpha/sparc stable wrt #414745
+
+  14 Jul 2012; Akinori Hattori <hattya@gentoo.org> IPC-Run3-0.45.0.ebuild:
+  ia64 stable wrt bug #414745
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> IPC-Run3-0.45.0.ebuild:
+  Marking IPC-Run3-0.45.0 ppc for bug 414745
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> IPC-Run3-0.45.0.ebuild:
+  Stable for HPPA (bug #414745).
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> IPC-Run3-0.45.0.ebuild:
+  Stable for amd64, wrt bug #414745
+
+  19 Jun 2012; Jeff Horelick <jdhore@gentoo.org> IPC-Run3-0.45.0.ebuild:
+  marked x86 per bug 414745
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> IPC-Run3-0.45.0.ebuild:
+  keyword ~amd64-fbsd
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> IPC-Run3-0.45.0.ebuild:
+  Marking IPC-Run3-0.45.0 ppc for bug 400117
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> IPC-Run3-0.45.0.ebuild:
+  Marking IPC-Run3-0.45.0 ppc64 for bug 400117
+
+  29 Feb 2012; Markus Meier <maekke@gentoo.org> IPC-Run3-0.45.0.ebuild:
+  arm stable, bug #400117
+
+*IPC-Run3-0.45.0 (25 Dec 2011)
+
+  25 Dec 2011; Torsten Veller <tove@gentoo.org> +IPC-Run3-0.45.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -IPC-Run3-0.044.ebuild:
+  Cleanup
+
+*IPC-Run3-0.44.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +IPC-Run3-0.44.0.ebuild:
+  Change version scheme
 
   07 Jul 2011; Alexis Ballier <aballier@gentoo.org> IPC-Run3-0.044.ebuild:
   keyword ~x86-fbsd
@@ -182,4 +232,3 @@
   09 Apr 2005; Christian Parpart <trapni@gentoo.org> +metadata.xml,
   +IPC-Run3-0.01.ebuild:
   initial import
-

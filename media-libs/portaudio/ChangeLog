@@ -1,6 +1,83 @@
 # ChangeLog for media-libs/portaudio
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/portaudio/ChangeLog,v 1.73 2011/05/28 20:58:51 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/portaudio/ChangeLog,v 1.93 2012/11/13 16:49:09 ranger Exp $
+
+  13 Nov 2012; Brent Baude <ranger@gentoo.org> portaudio-19_pre20111121.ebuild:
+  Marking portaudio-19_pre20111121 ppc64 for bug 433982
+
+  04 Oct 2012; Brent Baude <ranger@gentoo.org> portaudio-19_pre20111121.ebuild:
+  Marking portaudio-19_pre20111121 ppc for bug 433982
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org>
+  portaudio-19_pre20111121.ebuild:
+  alpha/ia64/sh/sparc stable wrt #433982
+
+  28 Sep 2012; Tony Vroon <chainsaw@gentoo.org>
+  portaudio-19_pre20110326.ebuild, portaudio-19_pre20111121.ebuild:
+  Clarify that this is MIT-licensed, as-is is not sufficiently precise. As per
+  Ulrich Müller in bug #436476.
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  portaudio-19_pre20111121.ebuild:
+  x86 stable wrt bug #433982
+
+  16 Sep 2012; Markus Meier <maekke@gentoo.org>
+  portaudio-19_pre20111121.ebuild:
+  arm stable, bug #433982
+
+  13 Sep 2012; Jeroen Roovers <jer@gentoo.org> portaudio-19_pre20111121.ebuild:
+  Stable for HPPA (bug #433982).
+
+  07 Sep 2012; Agostino Sarubbo <ago@gentoo.org>
+  portaudio-19_pre20111121.ebuild:
+  Stable for amd64, wrt bug #433982
+
+  05 Sep 2012; Tim Harder <radhermit@gentoo.org>
+  -portaudio-19_pre20071207.ebuild:
+  Remove old.
+
+  05 Sep 2012; Tim Harder <radhermit@gentoo.org>
+  portaudio-19_pre20110326.ebuild:
+  Actually mark stable for ia64.
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org>
+  portaudio-19_pre20110326.ebuild:
+  alpha/ia64/sh/sparc stable wrt #416235
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> portaudio-19_pre20110326.ebuild:
+  Marking portaudio-19_pre20110326 ppc for bug 416235
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org>
+  portaudio-19_pre20111121.ebuild:
+  keyword ~amd64-fbsd
+
+  27 May 2012; Markus Meier <maekke@gentoo.org>
+  portaudio-19_pre20110326.ebuild:
+  arm stable, bug #416235
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> portaudio-19_pre20110326.ebuild:
+  Marking portaudio-19_pre20110326 ppc64 for bug 416235
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  portaudio-19_pre20110326.ebuild:
+  x86 stable wrt bug #416235
+
+  21 May 2012; Jeroen Roovers <jer@gentoo.org> portaudio-19_pre20110326.ebuild:
+  Stable for HPPA (bug #416235).
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  portaudio-19_pre20110326.ebuild:
+  Stable for amd64, wrt bug #416235
+
+*portaudio-19_pre20111121 (14 May 2012)
+
+  14 May 2012; Tim Harder <radhermit@gentoo.org>
+  +portaudio-19_pre20111121.ebuild:
+  Version bump.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  portaudio-19_pre20071207.ebuild, portaudio-19_pre20110326.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
 *portaudio-19_pre20110326 (28 May 2011)
 

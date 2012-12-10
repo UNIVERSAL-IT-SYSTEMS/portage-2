@@ -1,6 +1,69 @@
 # ChangeLog for net-misc/ipv6calc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/ipv6calc/ChangeLog,v 1.40 2011/05/27 07:56:00 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/ipv6calc/ChangeLog,v 1.58 2012/09/09 17:32:56 armin76 Exp $
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> ipv6calc-0.93.1.ebuild:
+  sparc stable wrt #419303
+
+  23 Aug 2012; Michael Weber <xmw@gentoo.org> ipv6calc-0.93.1.ebuild:
+  ppc stable (bug 419303).
+
+  05 Aug 2012; Jeroen Roovers <jer@gentoo.org> ipv6calc-0.93.1.ebuild:
+  Stable for HPPA (bug #419303).
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> ipv6calc-0.93.1.ebuild:
+  Stable on amd64 wrt bug #419303
+
+  03 Aug 2012; Jeff Horelick <jdhore@gentoo.org> ipv6calc-0.93.1.ebuild:
+  marked x86 per bug 419303
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> ipv6calc-0.92.0.ebuild:
+  Marking ipv6calc-0.92.0 ppc for bug 404837
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> ipv6calc-0.92.0.ebuild:
+  sparc/x86 stable wrt #404837
+
+  28 Mar 2012; Jeroen Roovers <jer@gentoo.org> ipv6calc-0.92.0.ebuild:
+  Stable for HPPA (bug #404837).
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> ipv6calc-0.92.0.ebuild:
+  Stable for amd64, wrt bug #404837
+
+*ipv6calc-0.93.1 (16 Mar 2012)
+
+  16 Mar 2012; Patrick Lauer <patrick@gentoo.org> +ipv6calc-0.93.1.ebuild:
+  Bump
+
+  14 Feb 2012; Brent Baude <ranger@gentoo.org> ipv6calc-0.90.0-r1.ebuild:
+  Marking ipv6calc-0.90.0-r1 ppc for bug 379063
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> ipv6calc-0.90.0-r1.ebuild:
+  sparc stable wrt #379063
+
+  11 Oct 2011; Peter Volkov <pva@gentoo.org> ipv6calc-0.92.0.ebuild:
+  Disable tests that fail if started from root user.
+
+*ipv6calc-0.92.0 (10 Oct 2011)
+
+  10 Oct 2011; Peter Volkov <pva@gentoo.org> -ipv6calc-0.82.1.ebuild,
+  +ipv6calc-0.92.0.ebuild:
+  Version bump.
+
+  05 Oct 2011; Jeroen Roovers <jer@gentoo.org> ipv6calc-0.90.0-r1.ebuild:
+  Stable for HPPA (bug #379063).
+
+  21 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  ipv6calc-0.90.0-r1.ebuild:
+  x86 stable wrt bug #379063
+
+  14 Aug 2011; Markos Chandras <hwoarang@gentoo.org> ipv6calc-0.90.0-r1.ebuild:
+  Stable on amd64 wrt bug #379063
+
+*ipv6calc-0.90.0-r1 (14 Aug 2011)
+
+  14 Aug 2011; Peter Volkov <pva@gentoo.org> -ipv6calc-0.90.0.ebuild,
+  +ipv6calc-0.90.0-r1.ebuild:
+  Drop default CFLAGS, bug 379063 thank Agostino Sarubbo for report.
 
 *ipv6calc-0.90.0 (27 May 2011)
 

@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/surfraw/surfraw-2.2.8.ebuild,v 1.2 2011/07/12 15:38:31 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/surfraw/surfraw-2.2.8.ebuild,v 1.9 2012/01/09 16:47:24 ranger Exp $
 
 EAPI="4"
 
-inherit bash-completion eutils
+inherit bash-completion-r1 eutils
 
 DESCRIPTION="A fast unix command line interface to WWW"
 HOMEPAGE="http://surfraw.alioth.debian.org/"
@@ -12,14 +12,15 @@ SRC_URI="http://${PN}.alioth.debian.org/dist/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="public-domain"
-KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86 ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~sparc-solaris"
+KEYWORDS="amd64 hppa ppc sparc x86 ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~sparc-solaris"
 IUSE=""
 RESTRICT="test"
+RDEPEND="dev-lang/perl"
+
+DOCS=(AUTHORS ChangeLog HACKING NEWS README TODO)
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.2.6-gentoo_pkg_tools.patch
-	# Man page symlinks shouldn't link to compressed files
-	sed -i 's,\.gz,,g' links.IN
 }
 
 src_configure() {
@@ -28,9 +29,8 @@ src_configure() {
 
 src_install() {
 	default
-	dodoc AUTHORS ChangeLog HACKING NEWS README TODO
 
-	dobashcompletion surfraw-bash-completion
+	newbashcomp surfraw-bash-completion ${PN}
 
 	docinto examples
 	dodoc examples/README
@@ -46,7 +46,6 @@ pkg_preinst() {
 pkg_postinst() {
 	local moves f
 
-	bash-completion_pkg_postinst
 	einfo
 	einfo "You can get a list of installed elvi by just typing 'surfraw' or"
 	einfo "the abbreviated 'sr'."

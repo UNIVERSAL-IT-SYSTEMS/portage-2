@@ -1,6 +1,69 @@
 # ChangeLog for net-mail/libpst
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/libpst/ChangeLog,v 1.23 2011/05/28 23:43:26 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-mail/libpst/ChangeLog,v 1.38 2012/11/25 09:44:26 radhermit Exp $
+
+  25 Nov 2012; Tim Harder <radhermit@gentoo.org> -libpst-0.6.54-r1.ebuild:
+  Remove old.
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> libpst-0.6.55.ebuild:
+  Stable for x86, wrt bug #441460
+
+  20 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> libpst-0.6.55.ebuild:
+  amd64 stable wrt bug #441460
+
+  28 Aug 2012; Tim Harder <radhermit@gentoo.org> -libpst-0.5.2.ebuild,
+  -files/libpst-0.5.2-gentoo.diff:
+  Remove old.
+
+*libpst-0.6.55 (27 Aug 2012)
+
+  27 Aug 2012; Patrick Lauer <patrick@gentoo.org> +libpst-0.6.55.ebuild:
+  Bump
+
+  28 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libpst-0.6.54-r1.ebuild:
+  Stable for amd64, wrt bug #420885
+
+  28 Jun 2012; Jeff Horelick <jdhore@gentoo.org> libpst-0.6.54-r1.ebuild:
+  marked x86 per bug 420885
+
+  27 Jun 2012; Tim Harder <radhermit@gentoo.org> libpst-0.6.54-r1.ebuild:
+  Die on sed failures.
+
+  27 Jun 2012; Tim Harder <radhermit@gentoo.org> libpst-0.6.54-r1.ebuild:
+  Don't install duplicate docs and forcibly remove all la files with
+  prune_libtool_files.
+
+  27 Jun 2012; Tim Harder <radhermit@gentoo.org> libpst-0.6.54-r1.ebuild:
+  Use eautoreconf instead of eautomake and revert prune_libtool_files usage
+  until it properly removes useless python la files.
+
+  27 Jun 2012; Tim Harder <radhermit@gentoo.org> -libpst-0.6.52.ebuild,
+  -libpst-0.6.53.ebuild, -libpst-0.6.54.ebuild:
+  Remove old.
+
+  27 Jun 2012; Tim Harder <radhermit@gentoo.org> libpst-0.6.54-r1.ebuild:
+  Use prune_libtool_files.
+
+*libpst-0.6.54-r1 (29 Jan 2012)
+
+  29 Jan 2012; Mike Gilbert <floppym@gentoo.org> +libpst-0.6.54-r1.ebuild,
+  libpst-0.6.52.ebuild, libpst-0.6.53.ebuild, libpst-0.6.54.ebuild:
+  Prepare for PYTHON_ABI-versioned Boost Python libraries in Boost 1.48. Patch
+  by Arfrever.
+
+*libpst-0.6.54 (01 Jan 2012)
+
+  01 Jan 2012; Tim Harder <radhermit@gentoo.org> +libpst-0.6.54.ebuild:
+  Version bump.
+
+*libpst-0.6.53 (05 Aug 2011)
+
+  05 Aug 2011; Tim Harder <radhermit@gentoo.org>
+  -files/libpst-0.4.1-gentoo.diff, -files/libpst-0.5.1-gentoo.diff,
+  -libpst-0.6.37.ebuild, -libpst-0.6.38.ebuild, -libpst-0.6.41.ebuild,
+  -files/libpst-0.6.41-asneeded.patch, +libpst-0.6.53.ebuild,
+  +files/libpst-0.6.53-pkgconfig-static.patch:
+  Version bump and remove old.
 
 *libpst-0.6.52 (28 May 2011)
 
@@ -103,4 +166,3 @@
   05 Mar 2004; Patrick Kursawe <phosphan@gentoo.org> libpst-0.3.4.ebuild,
   metadata.xml:
   Initial import
-

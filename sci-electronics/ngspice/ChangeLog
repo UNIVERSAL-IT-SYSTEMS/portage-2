@@ -1,6 +1,23 @@
 # ChangeLog for sci-electronics/ngspice
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/ngspice/ChangeLog,v 1.1 2011/07/15 22:45:58 calchan Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/ngspice/ChangeLog,v 1.5 2012/10/23 17:05:45 flameeyes Exp $
+
+  23 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org> ngspice-24.ebuild:
+  QA: don't pass -s flag in cflags, as that pre-strips the file. Closes bug
+  #439270.
+
+  13 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  -files/ngspice-24-automake-1.12.patch, ngspice-24.ebuild:
+  Fix building with automake 1.11 as well as 1.12. Fixes bug #426354.
+
+  24 Jun 2012; Justin Lecher <jlec@gentoo.org> ngspice-24.ebuild,
+  +files/ngspice-24-automake-1.12.patch, metadata.xml:
+  ADd fix for automake-1.12, #423189
+
+*ngspice-24 (23 May 2012)
+
+  23 May 2012; Denis Dupeyron <calchan@gentoo.org> +ngspice-24.ebuild:
+  Version Bump.
 
 *ngspice-23 (15 Jul 2011)
 
@@ -129,4 +146,3 @@
 
   28 Nov 2003; <plasmaroo@gentoo.org> ng-spice-rework-14.ebuild:
   Initial commit.
-

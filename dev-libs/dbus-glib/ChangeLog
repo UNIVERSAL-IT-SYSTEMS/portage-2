@@ -1,6 +1,89 @@
 # ChangeLog for dev-libs/dbus-glib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/dbus-glib/ChangeLog,v 1.86 2011/06/10 06:56:13 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/dbus-glib/ChangeLog,v 1.110 2012/10/14 14:58:21 armin76 Exp $
+
+  14 Oct 2012; Raúl Porcel <armin76@gentoo.org> dbus-glib-0.100.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #416725
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> dbus-glib-0.100-r1.ebuild:
+  Stable on alpha, bug 416725.
+
+*dbus-glib-0.100-r1 (10 Oct 2012)
+
+  10 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +dbus-glib-0.100-r1.ebuild, +files/dbus-glib-0.100-dbus-glib-sections.txt:
+  Fix broken API docs; prevents build failure with libxslt-1.1.27 (bug #436454,
+  thanks to Andrew Savchenko). Install API docs in /usr/share/gtk-doc to allow
+  links from other packages' documentation files, and for compatibility with
+  standard tools like dev-util/devhelp (bug #404965).
+
+  25 Jul 2012; Markus Meier <maekke@gentoo.org> dbus-glib-0.100.ebuild:
+  arm stable, bug #416725
+
+  21 Jul 2012; Jeff Horelick <jdhore@gentoo.org> dbus-glib-0.100.ebuild:
+  marked x86 per bug 416725
+
+  21 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> dbus-glib-0.100.ebuild:
+  amd64/ppc/ppc64 stable wrt #416725
+
+  20 Jul 2012; Jeroen Roovers <jer@gentoo.org> dbus-glib-0.100.ebuild:
+  Stable for HPPA (bug #416725).
+
+*dbus-glib-0.100 (27 Jun 2012)
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +dbus-glib-0.100.ebuild:
+  Version bump.
+
+  06 May 2012; Alexis Ballier <aballier@gentoo.org> dbus-glib-0.98.ebuild:
+  keyword ~amd64-fbsd
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> dbus-glib-0.98.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  23 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> dbus-glib-0.98.ebuild,
+  +files/dbus-glib-0.98-glib-2.31.patch:
+  Fix building of testsuite with dev-libs/glib >= 2.31 wrt #413195 by Patrick
+  Lauer
+
+  12 Apr 2012; Jeremy Olexa <darkside@gentoo.org> dbus-glib-0.98.ebuild:
+  add Gentoo Prefix support, KEYWORDS and path offsets
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> -dbus-glib-0.92.ebuild,
+  -files/dbus-glib-0.92-userpriv-fix.patch:
+  old
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> dbus-glib-0.98.ebuild:
+  ppc/ppc64 stable wrt #387257
+
+  27 Nov 2011; Raúl Porcel <armin76@gentoo.org> dbus-glib-0.98.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #387257
+
+  29 Oct 2011; Markus Meier <maekke@gentoo.org> dbus-glib-0.98.ebuild:
+  arm stable, bug #387257
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> dbus-glib-0.98.ebuild:
+  x86 stable, bug #387257
+
+  19 Oct 2011; Jeroen Roovers <jer@gentoo.org> dbus-glib-0.98.ebuild:
+  Stable for HPPA (bug #387257).
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> dbus-glib-0.98.ebuild:
+  amd64 stable wrt #387257
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Drop semi-inactive maintainers and use herd.
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -dbus-glib-0.94-r1.ebuild, -files/dbus-glib-0.94-marshall_objs.patch:
+  old
+
+*dbus-glib-0.98 (03 Oct 2011)
+
+  03 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +dbus-glib-0.98.ebuild:
+  Version bump wrt #385435 by Rafał Mużyło
+
+  05 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> -dbus-glib-0.94.ebuild:
+  remove old
 
 *dbus-glib-0.94-r1 (10 Jun 2011)
 
@@ -328,4 +411,3 @@
   +files/dbus-glib-introspection.patch, +metadata.xml,
   +dbus-glib-0.71.ebuild:
   Glib bindings for dbus.  Initial import
-

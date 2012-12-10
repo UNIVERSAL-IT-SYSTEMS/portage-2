@@ -1,6 +1,47 @@
 # ChangeLog for xfce-extra/xfce4-mailwatch-plugin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-mailwatch-plugin/ChangeLog,v 1.4 2011/05/31 11:08:37 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-mailwatch-plugin/ChangeLog,v 1.14 2012/11/28 12:20:19 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-mailwatch-plugin-1.1.0-r1.ebuild:
+  EAPI5
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-mailwatch-plugin-1.1.0.ebuild,
+  -files/xfce4-mailwatch-plugin-1.1.0-link_to_libxfcegui4.patch:
+  old
+
+  19 Nov 2012; Markus Meier <maekke@gentoo.org>
+  xfce4-mailwatch-plugin-1.1.0-r1.ebuild:
+  arm stable, bug #429484
+
+  16 Nov 2012; Andreas Schuerch <nativemad@gentoo.org>
+  xfce4-mailwatch-plugin-1.1.0-r1.ebuild:
+  x86 stable, see bug 429484
+
+  27 Oct 2012; <ago@gentoo.org> xfce4-mailwatch-plugin-1.1.0-r1.ebuild:
+  Stable for amd64, wrt bug #429484
+
+*xfce4-mailwatch-plugin-1.1.0-r1 (16 Jun 2012)
+
+  16 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-mailwatch-plugin-1.1.0-r1.ebuild,
+  +files/xfce4-mailwatch-plugin-1.1.0-libxfce4ui.patch:
+  Port from libxfcegui4 to libxfce4ui with a patch from PLD Linux (and push
+  the patch upstream)
+
+  16 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-mailwatch-plugin-1.1.0.ebuild,
+  +files/xfce4-mailwatch-plugin-1.1.0-gnutls-3.patch:
+  Fix building with net-libs/gnutls >= 3 wrt #421407 by Diego Elio Pettenò
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org>
+  xfce4-mailwatch-plugin-1.1.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-mailwatch-plugin-1.1.0.ebuild:
+  Install to libdir instead of libexecdir.
 
   31 May 2011; Christoph Mende <angelos@gentoo.org>
   xfce4-mailwatch-plugin-1.1.0.ebuild,

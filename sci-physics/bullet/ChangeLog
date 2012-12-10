@@ -1,6 +1,48 @@
 # ChangeLog for sci-physics/bullet
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/bullet/ChangeLog,v 1.23 2011/04/17 11:53:52 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/bullet/ChangeLog,v 1.33 2012/12/04 11:53:08 jlec Exp $
+
+  04 Dec 2012; Justin Lecher <jlec@gentoo.org> -bullet-2.77.ebuild,
+  metadata.xml:
+  Drop old
+
+  04 Dec 2012;  <ago@gentoo.org> bullet-2.80.ebuild:
+  Stable for x86, wrt bug #436568
+
+  25 Nov 2012; <ago@gentoo.org> bullet-2.80.ebuild:
+  Stable for amd64, wrt bug #436568
+
+  29 Sep 2012; Anthony G. Basile <blueness@gentoo.org> bullet-2.80.ebuild:
+  keyword ~ppc64, bug #436566
+
+  07 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> -bullet-2.79-r1.ebuild,
+  bullet-2.80.ebuild, metadata.xml:
+  removed old
+
+  27 Jun 2012; Sebastien Fabbro <fabbros@gentoo.org> bullet-2.80.ebuild:
+  html docs are built with doxygen if doc flag is set, bug #421827, thanks
+  Vitaly
+
+*bullet-2.80 (22 May 2012)
+
+  22 May 2012; Sébastien Fabbro <bicatali@gentoo.org> -bullet-2.78.ebuild,
+  +bullet-2.80.ebuild:
+  Version bump
+
+  27 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> bullet-2.79-r1.ebuild:
+  Add dependence on media-libs/freeglut, thanks Julian Bayardo bug #403433
+
+*bullet-2.79-r1 (19 Dec 2011)
+
+  19 Dec 2011; Sébastien Fabbro <bicatali@gentoo.org> -bullet-2.79.ebuild,
+  +bullet-2.79-r1.ebuild:
+  Now really installs libraries, fixing bug #395097
+
+*bullet-2.79 (28 Nov 2011)
+
+  28 Nov 2011; Sébastien Fabbro <bicatali@gentoo.org> bullet-2.78.ebuild,
+  +bullet-2.79.ebuild:
+  Version bump
 
 *bullet-2.78 (17 Apr 2011)
 
@@ -115,4 +157,3 @@
   +bullet-2.67.ebuild:
   Initial import. Thanks Renato Caldas <seventhguardian@gmail.com> for his
   initial work. Closing bug #166192
-

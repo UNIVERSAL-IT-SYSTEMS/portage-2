@@ -1,6 +1,20 @@
 # ChangeLog for net-analyzer/traffic-vis
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/traffic-vis/ChangeLog,v 1.20 2011/07/08 11:09:11 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/traffic-vis/ChangeLog,v 1.24 2012/11/21 04:38:10 jer Exp $
+
+  21 Nov 2012; Jeroen Roovers <jer@gentoo.org> traffic-vis-0.35-r2.ebuild:
+  Add GPL-2 to LICENSE (bug #426006).
+
+  07 Dec 2011; Tim Harder <radhermit@gentoo.org> -traffic-vis-0.35-r1.ebuild:
+  Remove old.
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  traffic-vis-0.35-r2.ebuild:
+  x86 stable wrt bug #391471
+
+  04 Dec 2011; Markos Chandras <hwoarang@gentoo.org> traffic-vis-0.35-r2.ebuild,
+  files/traffic-vis.init.d:
+  Fix QA problems by Agostino Sarubbo (ago). Stable on amd64. Bug #391471
 
   08 Jul 2011; Samuli Suominen <ssuominen@gentoo.org>
   traffic-vis-0.35-r1.ebuild, traffic-vis-0.35-r2.ebuild:

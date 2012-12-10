@@ -1,6 +1,36 @@
 # ChangeLog for net-p2p/vuze
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/vuze/ChangeLog,v 1.49 2011/03/23 19:18:36 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/vuze/ChangeLog,v 1.55 2012/08/21 00:34:13 dirtyepic Exp $
+
+*vuze-4.7.1.2 (21 Aug 2012)
+
+  21 Aug 2012; Ryan Hill <dirtyepic@gentoo.org> +vuze-4.7.1.2.ebuild:
+  Version bump.
+
+  05 Jun 2012; Ralph Sennhauser <sera@gentoo.org> vuze-4.7.0.2.ebuild:
+  Set xmx value for sparc. Thanks to Alex Buell <alex.buell@munted.eu>. #346743
+
+  17 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> vuze-4.5.1.0.ebuild,
+  vuze-4.6.0.2.ebuild, vuze-4.7.0.0-r1.ebuild, vuze-4.7.0.2.ebuild:
+  Remove has_version check for dev-java/swt[xulrunner] wrt #409301. Correct
+  elog message in 4.7.x.x series to say "webkit" instead of "xulrunner".
+
+*vuze-4.7.0.2 (10 Mar 2012)
+
+  10 Mar 2012; Ryan Hill <dirtyepic@gentoo.org> -vuze-4.7.0.0.ebuild,
+  +vuze-4.7.0.2.ebuild, metadata.xml:
+  Version bump (bug #406725). Add myself to metatdata.xml.
+
+*vuze-4.7.0.0-r1 (27 Dec 2011)
+
+  27 Dec 2011; Vlastimil Babka <caster@gentoo.org> +vuze-4.7.0.0-r1.ebuild:
+  Revbump to actually use swt-3.7 instead of 3.6, bug #390921.
+
+*vuze-4.7.0.0 (17 Nov 2011)
+
+  17 Nov 2011; Vlastimil Babka <caster@gentoo.org> -vuze-4.3.1.4-r2.ebuild,
+  +vuze-4.7.0.0.ebuild:
+  Version bump, bug #388635. Uses swt-3.7
 
   23 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org> vuze-4.5.1.0.ebuild:
   ppc/ppc64 stable wrt #354171

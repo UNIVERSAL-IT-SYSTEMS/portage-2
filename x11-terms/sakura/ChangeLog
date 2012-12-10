@@ -1,6 +1,77 @@
 # ChangeLog for x11-terms/sakura
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/sakura/ChangeLog,v 1.18 2011/07/19 13:26:24 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/sakura/ChangeLog,v 1.35 2012/08/27 17:56:15 radhermit Exp $
+
+  27 Aug 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Add to desktop-misc herd.
+
+  28 Jun 2012; Michael Palimaka <kensington@gentoo.org>
+  -files/sakura-2.4.2-cflags.patch, -sakura-2.4.2.ebuild, -sakura-3.0.3.ebuild:
+  Remove old.
+
+  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> sakura-3.0.4.ebuild:
+  Stable for amd64, wrt bug #422431
+
+  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> sakura-3.0.4.ebuild:
+  marked x86 per bug 422431
+
+  12 May 2012; Tim Harder <radhermit@gentoo.org> -sakura-3.0.0.ebuild,
+  -files/sakura-3.0.0-cflags.patch, -sakura-3.0.2.ebuild:
+  Remove old.
+
+*sakura-3.0.4 (12 May 2012)
+
+  12 May 2012; Tim Harder <radhermit@gentoo.org> +sakura-3.0.4.ebuild:
+  Version bump.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> sakura-2.4.2.ebuild,
+  sakura-3.0.0.ebuild, sakura-3.0.2.ebuild, sakura-3.0.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*sakura-3.0.3 (19 Mar 2012)
+
+  19 Mar 2012; Tim Harder <radhermit@gentoo.org> +sakura-3.0.3.ebuild,
+  +files/sakura-3.0.3-cflags.patch:
+  Version bump.
+
+*sakura-3.0.2 (08 Mar 2012)
+
+  08 Mar 2012; Tim Harder <radhermit@gentoo.org> +sakura-3.0.2.ebuild:
+  Version bump.
+
+*sakura-3.0.0 (28 Feb 2012)
+
+  28 Feb 2012; Tim Harder <radhermit@gentoo.org> +sakura-3.0.0.ebuild,
+  +files/sakura-3.0.0-cflags.patch:
+  Version bump.
+
+  31 Oct 2011; Tim Harder <radhermit@gentoo.org> -sakura-2.3.8.ebuild,
+  -sakura-2.4.0.ebuild, -sakura-2.4.1.ebuild:
+  Remove old.
+
+  30 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> Manifest:
+  Regenerate Manifest wrt #388993 by Samuel BAUER
+
+  28 Oct 2011; Tony Vroon <chainsaw@gentoo.org> sakura-2.4.2.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney,
+  Agostino "ago" Sarubbo, Tomáš "Mepho" Pružina & Elijah "Armageddon" El
+  Lazkani in bug #388313.
+
+  25 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> sakura-2.4.2.ebuild:
+  x86 stable wrt bug #388313
+
+  24 Oct 2011; Tim Harder <radhermit@gentoo.org> sakura-2.4.2.ebuild,
+  +files/sakura-2.4.2-cflags.patch:
+  Respect CFLAGS.
+
+  20 Sep 2011; Tim Harder <radhermit@gentoo.org> sakura-2.3.8.ebuild,
+  sakura-2.4.0.ebuild, sakura-2.4.1.ebuild:
+  Update HOMEPAGE.
+
+*sakura-2.4.2 (20 Sep 2011)
+
+  20 Sep 2011; Tim Harder <radhermit@gentoo.org> +sakura-2.4.2.ebuild:
+  Version bump (bug #382297).
 
 *sakura-2.4.1 (19 Jul 2011)
 
@@ -82,4 +153,3 @@
   +sakura-2.1.1.ebuild:
   This package was submitted by Josh Glover in bug #187785; thanks to Michal
   Kurgan <moloh@gentoo.org> for his 2.x ebuilds
-

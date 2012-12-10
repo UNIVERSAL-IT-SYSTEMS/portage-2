@@ -1,9 +1,9 @@
 #!/sbin/runscript
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-server/pvpgn/files/pvpgn.rc,v 1.2 2011/05/22 21:04:13 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-server/pvpgn/files/pvpgn.rc,v 1.4 2011/12/04 10:27:13 swegener Exp $
 
-opts="reload shutdown"
+extra_started_commands="reload"
 
 depend() {
 	need net

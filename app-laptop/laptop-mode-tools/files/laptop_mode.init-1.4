@@ -1,9 +1,9 @@
 #!/sbin/runscript
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-laptop/laptop-mode-tools/files/laptop_mode.init-1.4,v 1.2 2009/03/17 02:16:16 dirtyepic Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-laptop/laptop-mode-tools/files/laptop_mode.init-1.4,v 1.4 2012/01/01 14:44:49 hwoarang Exp $
 
-opts="${opts} reload"
+extra_started_commands="reload"
 
 depend() {
 	need localmount
@@ -22,6 +22,9 @@ start() {
 	checkconfig || return 1
 
 	ebegin "Starting laptop_mode"
+	# bug #342049 fix
+	# check if dir exists and creates if it doesn't
+	checkpath -q -d -m 755 /var/run/laptop-mode-tools
 	touch /var/run/laptop-mode-tools/enabled
 	/usr/sbin/laptop_mode auto >/dev/null
 	eend $?

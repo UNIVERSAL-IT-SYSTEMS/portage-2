@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/w3m/w3m-0.5.3-r1.ebuild,v 1.4 2011/05/18 03:44:20 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/w3m/w3m-0.5.3-r1.ebuild,v 1.12 2012/06/17 20:28:53 xmw Exp $
 
 EAPI="3"
 inherit eutils
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/w3m/${P}.tar.gz"
 
 LICENSE="w3m"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris"
+KEYWORDS="alpha amd64 ~arm ia64 ppc ppc64 sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris"
 IUSE="X fbcon gpm gtk imlib lynxkeymap migemo nls nntp ssl unicode xface linguas_ja"
 
 # We cannot build w3m with gtk+2 w/o X because gtk+2 ebuild doesn't
@@ -21,7 +21,7 @@ DEPEND=">=sys-libs/ncurses-5.2-r3
 	>=dev-libs/boehm-gc-6.2
 	X? ( x11-libs/libXext x11-libs/libXdmcp )
 	gtk? ( x11-libs/gtk+:2 )
-	!gtk? ( imlib? ( >=media-libs/imlib2-1.1.0 ) )
+	!gtk? ( imlib? ( >=media-libs/imlib2-1.1.0[X] ) )
 	xface? ( media-libs/compface )
 	gpm? ( >=sys-libs/gpm-1.19.3-r5 )
 	migemo? ( >=app-text/migemo-0.40 )
@@ -31,7 +31,9 @@ RDEPEND="${DEPEND}"
 src_prepare() {
 	epatch \
 		"${FILESDIR}/${PN}-0.5.2-gc72.patch" \
-		"${FILESDIR}/${PN}-0.5.3-parallel-make.patch"
+		"${FILESDIR}/${PN}-0.5.3-parallel-make.patch" \
+		"${FILESDIR}/${PN}-0.5.3-glibc214.patch" \
+		"${FILESDIR}/${PN}-0.5.3-underlinking.patch"
 	find . -name CVS -type d | xargs rm -r
 }
 

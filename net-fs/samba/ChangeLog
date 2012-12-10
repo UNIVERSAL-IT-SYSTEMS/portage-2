@@ -1,6 +1,299 @@
 # ChangeLog for net-fs/samba
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/ChangeLog,v 1.475 2011/07/27 11:51:12 dagger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/ChangeLog,v 1.543 2012/12/02 20:38:24 maekke Exp $
+
+  02 Dec 2012; Markus Meier <maekke@gentoo.org> samba-3.6.9.ebuild:
+  add ~arm, bug #444688
+
+  30 Nov 2012; Lars Wendler <polynomial-c@gentoo.org> files/4.0/samba4.confd:
+  Fixed comments in conf.d file. Thanks to Torsten Kurbad for providing a patch
+  in bug #444016.
+
+  29 Nov 2012; Jeroen Roovers <jer@gentoo.org> samba-3.6.9.ebuild:
+  Stable for HPPA (bug #432754).
+
+  26 Nov 2012; Agostino Sarubbo <ago@gentoo.org> samba-3.6.9.ebuild:
+  Stable for amd64, wrt bug #432754
+
+*samba-4.0.0_rc5 (24 Nov 2012)
+
+  24 Nov 2012; Lars Wendler <polynomial-c@gentoo.org> +files/4.0/samba4.confd,
+  +files/4.0/samba4.initd-r1, -samba-4.0.0_rc3.ebuild, +samba-4.0.0_rc5.ebuild:
+  non-maintainer commit: Version bump. Removed old. Fixed samba4 init scripts
+  (bug #444016). Thanks to Aleksandr Yakimov who reported the bug and provided
+  the files.
+
+  21 Nov 2012; Alexis Ballier <aballier@gentoo.org> samba-3.6.9.ebuild:
+  keyword ~amd64-fbsd, bug #430720
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> metadata.xml:
+  use krb5 is unused
+
+  14 Nov 2012;  <naota@gentoo.org> samba-3.6.9.ebuild:
+  Add ~x86-fbsd. #430720
+
+  12 Nov 2012; Víctor Ostorga <vostorga@gentoo.org> samba-4.0.0_rc4.ebuild:
+  Correcting sys-libs/ldb version, bug #442416
+
+*samba-3.5.19 (08 Nov 2012)
+
+  08 Nov 2012; Víctor Ostorga <vostorga@gentoo.org> +samba-3.5.19.ebuild:
+  Version bump 3.5 branch
+
+  08 Nov 2012; Víctor Ostorga <vostorga@gentoo.org> files/4.0/samba4.initd,
+  -samba-3.5.17.ebuild, -samba-3.6.7.ebuild, -samba-3.6.8.ebuild,
+  -samba-4.0.0_alpha17.ebuild, -samba-4.0.0_rc1.ebuild,
+  -samba-4.0.0_rc2.ebuild:
+  Cleaning up old ebuilds. Fixing up non existant samba.pid condition. Patch
+  thanks to Claude <gta3user@ya.ru>
+
+*samba-4.0.0_rc4 (01 Nov 2012)
+
+  01 Nov 2012; Patrick Lauer <patrick@gentoo.org> +samba-4.0.0_rc4.ebuild:
+  Bump of 4.0_rc
+
+*samba-3.6.9 (01 Nov 2012)
+
+  01 Nov 2012; Patrick Lauer <patrick@gentoo.org> +samba-3.6.9.ebuild:
+  Bump
+
+  19 Oct 2012; Sven Vermeulen samba-3.5.15.ebuild, samba-3.5.17.ebuild,
+  samba-3.5.18.ebuild, samba-3.6.6.ebuild, samba-3.6.7.ebuild,
+  samba-3.6.8.ebuild, samba-4.0.0_alpha17.ebuild, samba-4.0.0_rc1.ebuild,
+  samba-4.0.0_rc2.ebuild, samba-4.0.0_rc3.ebuild:
+  Refix bug #62907 - Add in dependency on SELinux samba policy
+
+*samba-3.5.18 (17 Oct 2012)
+
+  17 Oct 2012; Víctor Ostorga <vostorga@gentoo.org> +samba-3.5.18.ebuild:
+  Version bump to 3.5.18
+
+*samba-4.0.0_rc3 (16 Oct 2012)
+
+  16 Oct 2012; Víctor Ostorga <vostorga@gentoo.org> +samba-4.0.0_rc3.ebuild:
+  Version bump 4.0.0_rc3
+
+*samba-4.0.0_rc2 (03 Oct 2012)
+
+  03 Oct 2012; Ian Stakenvicius <axs@gentoo.org> +samba-4.0.0_rc2.ebuild:
+  trivial version bump to 4.0.0rc2 , fixes bug 436944
+
+*samba-3.6.8 (02 Oct 2012)
+
+  02 Oct 2012; Lars Wendler <polynomial-c@gentoo.org> -samba-3.5.14.ebuild,
+  -samba-3.5.16.ebuild, -samba-3.6.5.ebuild, +samba-3.6.8.ebuild:
+  non-maintainer commit: Version bump, removed old versions.
+
+  30 Sep 2012; Mike Gilbert <floppym@gentoo.org> samba-4.0.0_rc1.ebuild:
+  Remove minimum python version.
+
+*samba-4.0.0_rc1 (26 Sep 2012)
+
+  26 Sep 2012; Víctor Ostorga <vostorga@gentoo.org>
+  -samba-4.0.0_alpha11.ebuild, +samba-4.0.0_rc1.ebuild:
+  Version bump of the ongoing samba 4. Ebuild based on the work of Torsten
+  Kurbad, Ewoud Kohl van Wijngaarden et all at bug 195703
+
+  04 Sep 2012; Patrick Lauer <patrick@gentoo.org> samba-3.5.17.ebuild:
+  Restricting cups 1.6
+
+*samba-3.5.17 (04 Sep 2012)
+
+  04 Sep 2012; Patrick Lauer <patrick@gentoo.org> +samba-3.5.17.ebuild:
+  Bump
+
+*samba-3.6.7 (10 Aug 2012)
+
+  10 Aug 2012; Tiziano Müller <dev-zero@gentoo.org> +samba-3.6.7.ebuild,
+  metadata.xml:
+  Version bump: fixes building with cups-1.6.x (bug #428490), added dmapi USE
+  flag (bug #425166), enable idmap_tdb2 with USE=cluster (bug #418331).
+
+*samba-3.6.6 (03 Jul 2012)
+*samba-3.5.16 (03 Jul 2012)
+
+  03 Jul 2012; Patrick Lauer <patrick@gentoo.org> +samba-3.5.16.ebuild,
+  +samba-3.6.6.ebuild:
+  Bump
+
+  21 May 2012; Brent Baude <ranger@gentoo.org> samba-3.5.15.ebuild:
+  Marking samba-3.5.15 ppc for bug 414319
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org> samba-3.6.5.ebuild:
+  keyword ~amd64-fbsd
+
+  10 May 2012; Brent Baude <ranger@gentoo.org> samba-3.5.15.ebuild:
+  Marking samba-3.5.15 ppc64 for bug 414319
+
+  05 May 2012; Raúl Porcel <armin76@gentoo.org> samba-3.5.15.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #414319
+
+  05 May 2012; Markus Meier <maekke@gentoo.org> samba-3.5.15.ebuild:
+  arm stable, bug #414319
+
+  04 May 2012; Jeroen Roovers <jer@gentoo.org> samba-3.5.15.ebuild:
+  Stable for HPPA (bug #414319).
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> samba-4.0.0_alpha17.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 May 2012; Agostino Sarubbo <ago@gentoo.org> samba-3.5.15.ebuild:
+  Stable for amd64, wrt bug #414319
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> samba-3.5.15.ebuild:
+  marked x86 per bug 414319
+
+  02 May 2012; Patrick Lauer <patrick@gentoo.org> -samba-3.5.11.ebuild,
+  -samba-3.5.12.ebuild, -samba-3.6.3.ebuild, -samba-3.6.4.ebuild:
+  Cleanup old
+
+*samba-3.5.15 (02 May 2012)
+*samba-3.6.5 (02 May 2012)
+
+  02 May 2012; Patrick Lauer <patrick@gentoo.org> +samba-3.5.15.ebuild,
+  +samba-3.6.5.ebuild:
+  Bump for #414319
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> samba-3.5.14.ebuild:
+  Marking samba-3.5.14 ppc64 for bug 411487
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> samba-3.5.14.ebuild:
+  Marking samba-3.5.14 ppc for bug 411487
+
+  15 Apr 2012; Raúl Porcel <armin76@gentoo.org> samba-3.5.14.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #411487
+
+  15 Apr 2012; Markus Meier <maekke@gentoo.org> samba-3.5.14.ebuild:
+  arm stable, bug #411487
+
+  11 Apr 2012; Jeroen Roovers <jer@gentoo.org> samba-3.5.14.ebuild,
+  samba-3.6.3.ebuild, samba-3.6.4.ebuild:
+  Stable for HPPA (bug #411487).
+
+  11 Apr 2012; Patrick Lauer <patrick@gentoo.org> samba-3.5.14.ebuild:
+  Stable for amd64 #411487
+
+  11 Apr 2012; Andreas Schuerch <nativemad@gentoo.org> samba-3.5.14.ebuild:
+  x86 stable, see bug 411487
+
+*samba-3.5.14 (11 Apr 2012)
+*samba-3.6.4 (11 Apr 2012)
+
+  11 Apr 2012; Patrick Lauer <patrick@gentoo.org> +samba-3.5.14.ebuild,
+  +samba-3.6.4.ebuild:
+  Bump for #411487
+
+  28 Mar 2012; Víctor Ostorga <vostorga@gentoo.org> samba-3.6.3.ebuild:
+  Fixing DEPEND on ctdb, bug 404409
+
+  27 Mar 2012; Víctor Ostorga <vostorga@gentoo.org> samba-3.6.3.ebuild:
+  Adding findsmb script when smbclient use flag is enabled, bug 406033
+
+  05 Feb 2012; Christoph Junghans <ottxor@gentoo.org> samba-3.5.11.ebuild,
+  samba-3.5.12.ebuild, samba-3.6.3.ebuild:
+  fix bug #399141
+
+  31 Jan 2012; Tomáš Chvátal <scarabeus@gentoo.org> samba-3.6.3.ebuild:
+  Fix the gcc check. Closes bug #392893.
+
+*samba-3.5.12 (30 Jan 2012)
+
+  30 Jan 2012; Patrick Lauer <patrick@gentoo.org> +samba-3.5.12.ebuild,
+  -samba-3.6.0.ebuild, -samba-3.6.1.ebuild:
+  Bump for #390527
+
+*samba-3.6.3 (30 Jan 2012)
+
+  30 Jan 2012; Patrick Lauer <patrick@gentoo.org> +samba-3.6.3.ebuild:
+  Bump for #401479
+
+  03 Nov 2011; Naohiro Aota <naota@gentoo.org> samba-3.6.1.ebuild:
+  Add ~x86-fbsd
+
+  03 Nov 2011; Naohiro Aota <naota@gentoo.org> samba-3.5.11.ebuild:
+  Add ~x86-fbsd KEYWORD. 
+
+*samba-4.0.0_alpha17 (01 Nov 2011)
+
+  01 Nov 2011; Víctor Ostorga <vostorga@gentoo.org> +files/4.0/com_err.patch,
+  +files/4.0/samba4.initd, +samba-4.0.0_alpha17.ebuild:
+  Updating samba 4, based in work of Ewoud Kohl van Wijngaarden
+  <gentoo@kohlvanwijngaarden.nl> bug 195703
+
+*samba-3.6.1 (28 Oct 2011)
+
+  28 Oct 2011; Patrick Lauer <patrick@gentoo.org> +samba-3.6.1.ebuild:
+  Bump for #387987
+
+  30 Sep 2011; Víctor Ostorga <vostorga@gentoo.org> samba-3.6.0.ebuild:
+  Updating elog entry, fixind DEPEND on tevent in samba-4
+
+  14 Sep 2011; Lars Wendler <polynomial-c@gentoo.org> files/3.5/samba.initd,
+  files/3.6/samba.initd, files/samba4.initd:
+  non-maintainer commit: Moved reload option from extra_commands to
+  extra_started_commands as it is only useful when samba has been started.
+
+  11 Sep 2011; Víctor Ostorga <vostorga@gentoo.org> files/3.5/samba.initd,
+  -samba-3.4.12.ebuild, files/3.6/samba.initd, -samba-3.4.14.ebuild,
+  files/samba4.initd:
+  Cleaning up 3.4 series, Replacing opts parameter with extra_commands, thanks
+  to Billy DeVincentis <billydv1@verizon.net> bug 381527
+
+  27 Aug 2011; Raúl Porcel <armin76@gentoo.org> samba-3.5.11.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #377909
+
+  25 Aug 2011; Markus Meier <maekke@gentoo.org> samba-3.5.11.ebuild:
+  arm stable, bug #377909
+
+  18 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> samba-3.5.11.ebuild:
+  ppc/ppc64 stable wrt #377909
+
+  17 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> samba-3.5.11.ebuild:
+  x86 stable wrt security bug #377909
+
+  16 Aug 2011; Tony Vroon <chainsaw@gentoo.org> samba-3.5.11.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #377909.
+
+  15 Aug 2011; Víctor Ostorga <vostorga@gentoo.org> samba-3.5.11.ebuild:
+  Disabling dmalloc support in samba, it crashes due to re-definition of many
+  structures, bug #318285
+
+  15 Aug 2011; Jeroen Roovers <jer@gentoo.org> samba-3.5.11.ebuild:
+  Stable for HPPA (bug #377909).
+
+*samba-3.4.14 (09 Aug 2011)
+
+  09 Aug 2011; Víctor Ostorga <vostorga@gentoo.org> -samba-3.4.12-r1.ebuild,
+  -samba-3.4.13.ebuild, -samba-3.4.13-r1.ebuild, +samba-3.4.14.ebuild,
+  -samba-3.5.8.ebuild, -samba-3.5.8-r1.ebuild, -samba-3.5.8-r2.ebuild,
+  -samba-3.5.9.ebuild, -samba-3.5.9-r1.ebuild, samba-3.5.11.ebuild:
+  Cleaning up vulnerable versions CVE-2011-2522 CVE-2011-2694 bug 377909;
+  rolling back ldb DEPEND until bug 377809 is done; fixing KEYWORDS
+
+  09 Aug 2011; Robert Piasek <dagger@gentoo.org> -samba-3.6.0_rc3.ebuild,
+  -samba-3.6.0_rc3-r1.ebuild, +samba-3.6.0.ebuild:
+  Add samba 3.6.0 final release. Remove older RC versions.
+
+*samba-3.5.11 (07 Aug 2011)
+
+  07 Aug 2011; Lars Wendler <polynomial-c@gentoo.org> files/3.4/samba.confd,
+  +samba-3.5.11.ebuild, files/3.5/samba.confd, samba-3.6.0_rc3-r1.ebuild,
+  files/3.6/samba.confd:
+  Non-maintainer commit: 3.5.11 version bump (bug #377909), removed --oknodo
+  from confd files (see bug #377843 as reference), install pam_winbind.conf
+  when "pam" and "winbind" USE flags are enabled (bug #376853).
+
+*samba-3.6.0_rc3-r1 (04 Aug 2011)
+*samba-3.5.9-r1 (04 Aug 2011)
+*samba-3.5.8-r2 (04 Aug 2011)
+*samba-3.4.13-r1 (04 Aug 2011)
+*samba-3.4.12-r1 (04 Aug 2011)
+
+  04 Aug 2011; Maxim Koltsov (maksbotan) <maksbotan@gentoo.org>
+  +samba-3.4.12-r1.ebuild, +samba-3.4.13-r1.ebuild, +samba-3.5.8-r2.ebuild,
+  +samba-3.5.9-r1.ebuild, +samba-3.6.0_rc3-r1.ebuild:
+  Bumped revisions to add sys-libs/ldb dependency, bug #372747
 
 *samba-3.6.0_rc3 (27 Jul 2011)
 

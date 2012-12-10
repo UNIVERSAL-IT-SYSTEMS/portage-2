@@ -1,6 +1,55 @@
 # ChangeLog for sys-auth/pambase
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/pambase/ChangeLog,v 1.102 2010/11/28 16:04:45 constanze Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/pambase/ChangeLog,v 1.112 2012/06/19 07:55:53 ssuominen Exp $
+
+*pambase-20120417-r1 (19 Jun 2012)
+
+  19 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +pambase-20120417-r1.ebuild, +files/pambase-20120417-systemd.patch,
+  metadata.xml:
+  Use `usex` from eutils.eclass for defining "varvalue". Support for
+  pam_systemd.so wrt #372229 by Michał Górny.
+
+  19 May 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  pambase-20101024-r2.ebuild, pambase-20120417.ebuild:
+  Nix-out src_test as there are no tests.
+
+  06 May 2012; Zac Medico <zmedico@gentoo.org> pambase-20120417.ebuild:
+  Add blocker for !<sys-apps/shadow-4.1.5-r1 due to file collisions with
+  /etc/pam.d/{login,passwd,su}.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> pambase-20101024-r2.ebuild:
+  keyword ~amd64-fbsd
+
+  22 Apr 2012; Alexis Ballier <aballier@gentoo.org> pambase-20120417.ebuild:
+  keyword -*-fbsd for bug #413077
+
+*pambase-20120417 (17 Apr 2012)
+
+  17 Apr 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  +pambase-20120417.ebuild:
+  Version bump.
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -pambase-20101024.ebuild,
+  -pambase-20101024-r1.ebuild:
+  old
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  pambase-20101024-r2.ebuild:
+  Stabilize for everyone since this is now same as current stable.
+
+*pambase-20101024-r2 (28 Jan 2012)
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +pambase-20101024-r2.ebuild:
+  Restore "nox11" as pam_ck_connector.so argument because most of the display
+  managers in tree, including XDM and SLIM, has native ConsoleKit support now.
+
+*pambase-20101024-r1 (22 Oct 2011)
+
+  22 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +pambase-20101024-r1.ebuild:
+  Remove nox11 argument from pam_ck_connector.so wrt #342345
 
   28 Nov 2010; Constanze Hausner <constanze@gentoo.org>
   pambase-20090620.1-r1.ebuild, pambase-20100310.ebuild,

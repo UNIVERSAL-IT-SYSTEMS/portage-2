@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mediastreamer/mediastreamer-2.7.3-r3.ebuild,v 1.6 2011/05/16 18:28:59 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mediastreamer/mediastreamer-2.7.3-r3.ebuild,v 1.14 2012/11/07 11:40:25 aballier Exp $
 
 EAPI="4"
 
@@ -12,17 +12,17 @@ SRC_URI="mirror://nongnu/linphone/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~ppc64 x86"
+KEYWORDS="amd64 ppc ~ppc64 x86 ~x64-macos ~x86-macos"
 # Many cameras will not work or will crash an application if mediastreamer2 is
 # not built with v4l2 support (taken from configure.ac)
 # TODO: run-time test for ipv6: does it really need ortp[ipv6] ?
 IUSE="+alsa amr bindist coreaudio debug examples gsm ilbc ipv6 jack oss portaudio
-pulseaudio sdl +speex theora v4l2 video x264 X"
-REQUIRED_USE="|| ( oss alsa jack portaudio coreaudio )
+pulseaudio sdl +speex static-libs theora v4l video x264 X"
+REQUIRED_USE="|| ( oss alsa jack portaudio coreaudio pulseaudio )
 	video? ( || ( sdl X ) )
 	theora? ( video )
 	X? ( video )
-	v4l2? ( video )"
+	v4l? ( video )"
 
 RDEPEND=">=net-libs/ortp-0.16.2[ipv6?]
 	alsa? ( media-libs/alsa-lib )
@@ -34,19 +34,21 @@ RDEPEND=">=net-libs/ortp-0.16.2[ipv6?]
 	speex? ( >=media-libs/speex-1.2_beta3 )
 	video? (
 		virtual/ffmpeg
-		v4l2? ( media-libs/libv4l
+		v4l? ( media-libs/libv4l
 			sys-kernel/linux-headers )
 		theora? ( media-libs/libtheora )
 		sdl? ( media-libs/libsdl[video,X] )
 		X? ( x11-libs/libX11
 			x11-libs/libXv ) )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	x11-proto/videoproto"
 
 PDEPEND="amr? ( !bindist? ( media-plugins/mediastreamer-amr ) )
 	ilbc? ( media-plugins/mediastreamer-ilbc )
 	video? ( x264? ( media-plugins/mediastreamer-x264 ) )"
+
+DOCS=( AUTHORS ChangeLog NEWS README )
 
 src_prepare() {
 	# respect user's CFLAGS
@@ -65,6 +67,8 @@ src_prepare() {
 
 	epatch "${FILESDIR}/${PN}-2.7.3-v4l-automagic.patch"
 	epatch "${FILESDIR}/${P}-sdl-build.patch"
+	epatch "${FILESDIR}/${P}-videoenc_282.patch"
+	epatch "${FILESDIR}/${P}-ffmpeg-0.11.patch"
 
 	# linux/videodev.h dropped in 2.6.38
 	sed -i -e 's:msv4l.c::' src/Makefile.am || die
@@ -105,19 +109,19 @@ src_configure() {
 		$(use_enable oss) \
 		$(use_enable portaudio) \
 		$(use_enable speex) \
+		$(use_enable static-libs static) \
 		$(use_enable theora) \
 		$(use_enable video) \
-		$(use_enable v4l2 v4l) \
-		$(use_enable v4l2 libv4l) \
+		$(use_enable v4l) \
+		$(use_enable v4l libv4l) \
 		$(use_enable sdl) \
 		$(use_enable X x11) \
 		$(use_enable X xv)
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
-
-	dodoc AUTHORS ChangeLog NEWS README
+	default
+	find "${ED}" -name '*.la' -exec rm -f {} +
 
 	if use examples; then
 		insinto /usr/share/doc/${PF}/examples

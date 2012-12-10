@@ -1,6 +1,110 @@
 # ChangeLog for media-gfx/optipng
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/optipng/ChangeLog,v 1.62 2011/01/30 09:23:07 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/optipng/ChangeLog,v 1.89 2012/10/23 21:10:47 sping Exp $
+
+*optipng-0.7.4 (23 Oct 2012)
+
+  23 Oct 2012; Sebastian Pipping <sping@gentoo.org> +optipng-0.7.4.ebuild:
+  Bump to 0.7.4
+
+*optipng-0.7.3-r1 (22 Sep 2012)
+
+  22 Sep 2012; Sebastian Pipping <sping@gentoo.org> +optipng-0.7.3-r1.ebuild:
+  No longer calls gcc, ar, ranlib directly (bug #435780), patch by Agostino
+
+  22 Sep 2012; Agostino Sarubbo <ago@gentoo.org> -optipng-0.7.1.ebuild,
+  -optipng-0.7.2.ebuild, -optipng-0.7.ebuild:
+  Remove old
+
+  22 Sep 2012; Anthony G. Basile <blueness@gentoo.org> optipng-0.7.3.ebuild:
+  stable ppc ppc64, bug #435340
+
+  21 Sep 2012; Agostino Sarubbo <ago@gentoo.org> optipng-0.7.3.ebuild:
+  Stable for amd64, wrt bug #435340
+
+  18 Sep 2012; Andreas Schuerch <nativemad@gentoo.org> optipng-0.7.3.ebuild:
+  x86 stable, see bug 435340
+
+*optipng-0.7.3 (17 Sep 2012)
+
+  17 Sep 2012; Sebastian Pipping <sping@gentoo.org> +optipng-0.7.3.ebuild:
+  Bump to 0.7.3 (bug #435340)
+
+*optipng-0.7.2 (25 Aug 2012)
+
+  25 Aug 2012; Sebastian Pipping <sping@gentoo.org> +optipng-0.7.2.ebuild:
+  Bump to 0.7.2
+
+  16 Jun 2012; Fabian Groffen <grobian@gentoo.org> optipng-0.7.1.ebuild:
+  Fix compilation on Solaris
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> optipng-0.7.1.ebuild:
+  Marking optipng-0.7.1 ppc64 for bug 409595
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> optipng-0.7.1.ebuild:
+  Marking optipng-0.7.1 ppc for bug 409595
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> optipng-0.7.1.ebuild:
+  marked x86 per bug 409595
+
+  29 Mar 2012; Agostino Sarubbo <ago@gentoo.org> optipng-0.7.1.ebuild:
+  Stable for amd64, wrt bug #409595
+
+*optipng-0.7.1 (25 Mar 2012)
+
+  25 Mar 2012; Sebastian Pipping <sping@gentoo.org> +optipng-0.7.1.ebuild:
+  Bump to 0.7.1 (bug #409595)
+
+  08 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -optipng-0.6.5.ebuild,
+  -files/optipng-0.6.5-libpng-1.4.8.patch:
+  old
+
+  08 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> optipng-0.7.ebuild:
+  ppc/ppc64 stable wrt #355739
+
+  03 Mar 2012; Sebastian Pipping <sping@gentoo.org> optipng-0.7.ebuild:
+  Add zlib dependency, reported by Agostino Sarubbo
+
+  03 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> optipng-0.7.ebuild:
+  x86 stable wrt bug #355739
+
+  03 Mar 2012; Agostino Sarubbo <ago@gentoo.org> optipng-0.7.ebuild:
+  Stable for AMD64, wrt security bug #355739
+
+  02 Mar 2012; Sebastian Pipping <sping@gentoo.org> metadata.xml:
+  Add sping as secondary maintainer
+
+*optipng-0.7 (02 Mar 2012)
+
+  02 Mar 2012; Sebastian Pipping <sping@gentoo.org> +optipng-0.7.ebuild:
+  Bump to 0.7 (which now compiles against libpng 1.5.9)
+
+  17 Nov 2011; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Change developer's email
+
+  10 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -optipng-0.6.3.ebuild,
+  -optipng-0.6.4.ebuild:
+  old
+
+  10 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> optipng-0.6.5.ebuild:
+  ppc stable wrt #386001
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> optipng-0.6.5.ebuild:
+  amd64 stable wrt #386001
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> optipng-0.6.5.ebuild:
+  x86 stable wrt bug #386001
+
+  17 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> optipng-0.6.5.ebuild:
+  Use internal copy of libpng14 with system libpng15 wrt #355739 by Hanno
+  Boeck. This is a temporary solution until upstream has migrated.
+
+*optipng-0.6.5 (02 Aug 2011)
+
+  02 Aug 2011; Sebastian Pipping <sping@gentoo.org> +optipng-0.6.5.ebuild,
+  +files/optipng-0.6.5-libpng-1.4.8.patch:
+  Bump to 0.6.5, fix compilation for libpng 1.4.8, deny compilation against
+  libpng 1.5 from ebuild to match upstream's changes in configure script
 
   30 Jan 2011; Kacper Kowalik <xarthisius@gentoo.org> optipng-0.6.4.ebuild:
   Add ~ppc64 wrt #346383
@@ -237,4 +341,3 @@
   Initial import, closing bug #23157. 
   Thanks to brian@jubue.org, who provided the ebuild this was based 
   on in #23157.
-

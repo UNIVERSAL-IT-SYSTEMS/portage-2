@@ -1,6 +1,22 @@
 # ChangeLog for net-mail/lbdb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/lbdb/ChangeLog,v 1.56 2011/06/25 23:07:11 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-mail/lbdb/ChangeLog,v 1.61 2012/02/07 07:03:04 radhermit Exp $
+
+  07 Feb 2012; Tim Harder <radhermit@gentoo.org> -lbdb-0.37.ebuild:
+  Remove old.
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> lbdb-0.38.ebuild:
+  Marking lbdb-0.38 ppc for bug 388025
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> lbdb-0.37.ebuild,
+  lbdb-0.38.ebuild:
+  Drop alpha/sparc keywords
+
+  25 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> lbdb-0.38.ebuild:
+  x86 stable wrt bug #388025
+
+  22 Oct 2011; Markos Chandras <hwoarang@gentoo.org> lbdb-0.38.ebuild:
+  Stable on amd64 wrt bug #388025
 
 *lbdb-0.38 (25 Jun 2011)
 

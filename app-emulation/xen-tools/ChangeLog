@@ -1,6 +1,240 @@
 # ChangeLog for app-emulation/xen-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/ChangeLog,v 1.76 2011/07/29 22:39:16 patrick Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/ChangeLog,v 1.118 2012/12/04 23:14:11 jer Exp $
+
+  04 Dec 2012; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  Change maintainer tag (bug #390951).
+
+  04 Dec 2012; Tomáš Chvátal <scarabeus@gentoo.org> xen-tools-4.1.1-r6.ebuild:
+  This is supposed to be stable amd64 and x86. We do not remove stable keywords
+  just for fun.
+
+  05 Dec 2012; Ian Delaney <idella4@gentoo.org> xen-tools-4.1.1-r6.ebuild:
+  Correction to amd64 keyword in 4.4.4-r6
+
+*xen-tools-4.2.0-r1 (05 Dec 2012)
+
+  05 Dec 2012; Ian Delaney <idella4@gentoo.org>
+  +files/xen-4.2.0-anti-download.patch, +files/xen-4.2.0-jserver.patch,
+  +files/xen-4.2.0-nostrip.patch, +xen-tools-4.2.0-r1.ebuild,
+  -files/xen-tools-3.3.1-sandbox-fix.patch,
+  -files/xen-tools-3.4.2-fix-definitions.patch,
+  -files/xen-tools-3.4.2-fix-include.patch,
+  -files/xen-tools-3.4.2-ldflags-respect.patch,
+  -files/xen-tools-3.4.2-remove-default-cflags.patch,
+  -files/xen-tools-3.4.2-werror-idiocy-v2.patch,
+  -files/xen-tools-4.1.1-upstream-23104-1976adbf2b80.patch,
+  -xen-tools-3.4.2-r3.ebuild, -xen-tools-3.4.2-r5.ebuild,
+  -xen-tools-4.1.1-r5.ebuild, metadata.xml, xen-tools-4.1.1-r6.ebuild,
+  xen-tools-4.1.2-r3.ebuild:
+  initial 4.2.0 found in virtual overlay, bump to 4.2.0-r1, added patches fixing
+  QA issues, added edits to build of external packages
+
+  02 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xen-tools-3.4.2-r3.ebuild, xen-tools-3.4.2-r5.ebuild,
+  xen-tools-4.1.1-r5.ebuild, xen-tools-4.1.1-r6.ebuild,
+  xen-tools-4.1.2-r2.ebuild, xen-tools-4.1.2-r3.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+*xen-tools-4.1.2-r3 (10 Jul 2012)
+
+  10 Jul 2012; Matthew Thode <prometheanfire@gentoo.org>
+  +xen-tools-4.1.2-r3.ebuild:
+  Updated ebuild for selinux dependancy xen-tools-4.1.2-r3.ebuild
+
+  29 May 2012; Kacper Kowalik <xarthisius@gentoo.org> metadata.xml:
+  Use <description> field in order to provide more compact <name>
+
+  08 May 2012; Kacper Kowalik <xarthisius@gentoo.org> xen-tools-3.4.2-r3.ebuild,
+  xen-tools-3.4.2-r5.ebuild, xen-tools-4.1.1-r5.ebuild,
+  xen-tools-4.1.1-r6.ebuild, xen-tools-4.1.2-r2.ebuild:
+  Fix building with app-text/texi2html-5, commited on behalf of Ian Delaney.
+  Fixes bug 409333. Thanks to Joerg Neikes <xenoist@midlandgate.de> for the
+  report and patch
+
+  12 Jan 2012; Alexey Shvetsov <alexxy@gentoo.org> xen-tools-4.1.2-r2.ebuild,
+  files/xendomains.initd-r2:
+  re-expand newinitd, fixes Bug 392403, patch prepared by Ian Delaney
+
+*xen-tools-4.1.2-r2 (28 Nov 2011)
+
+  28 Nov 2011; Alexey Shvetsov <alexxy@gentoo.org> +xen-tools-4.1.2-r2.ebuild,
+  -xen-tools-4.1.2-r1.ebuild, -xen-tools-9999.ebuild, files/xendomains.initd-r2:
+  Move -9999 to virtualization overlay and revbump xen-tools to EAPI4
+
+*xen-tools-4.1.2-r1 (11 Nov 2011)
+
+  11 Nov 2011; Jesus Rivero <neurogeek@gentoo.org> -xen-tools-4.1.2.ebuild,
+  +xen-tools-4.1.2-r1.ebuild:
+  Revision bump wrt bug #311207
+
+  11 Nov 2011; Jesus Rivero <neurogeek@gentoo.org> xen-tools-4.1.2.ebuild:
+  Fix for improving Python-related code (bug #311207). Proxying for idella4
+
+  10 Nov 2011; Alexey Shvetsov <alexxy@gentoo.org>
+  files/xen-tools-4.1.2-pyxml.patch:
+  Fix pyxml patch
+
+  07 Nov 2011; Alexey Shvetsov <alexxy@gentoo.org>
+  +files/xen-tools-4.1.2-pyxml.patch, files/xen-tools-4.1.1-curl.patch,
+  xen-tools-4.1.2.ebuild:
+  Fix to pyxml, add dep pypam, fixes  Bug 367735, patch by Arfrever, repair to
+  curl patch, Bug #386487, repiared by Ian Delaney aka idella4
+
+  01 Nov 2011; Tony Vroon <chainsaw@gentoo.org> xen-tools-4.1.1-r6.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Ian "idella4" Delaney in bug #360621.
+
+*xen-tools-4.1.2 (25 Oct 2011)
+
+  25 Oct 2011; Alexey Shvetsov <alexxy@gentoo.org> xen-tools-3.4.2-r5.ebuild,
+  +xen-tools-4.1.2.ebuild:
+  Version bump prepared by Ian Delaney aka idella4
+
+  24 Oct 2011; Alexey Shvetsov <alexxy@gentoo.org> xen-tools-4.1.1-r6.ebuild,
+  +files/xen-tools-4.1.1-bridge.patch, +files/xen-tools-4.1.1-curl.patch:
+  Patch to curl config, fixes Bug #386487, tiny change to bridging fixes Bug
+  #362575 by Klas Meder Boqvist, patch prepared by Ian Delaney aka idella4
+
+  23 Oct 2011; Patrick Lauer <patrick@gentoo.org> xen-tools-9999.ebuild:
+  Bump for #386461, thanks to Ian Delaney
+
+*xen-tools-4.1.1-r6 (22 Oct 2011)
+
+  22 Oct 2011; Magnus Granberg <zorry@gentoo.org> +xen-tools-4.1.1-r6.ebuild, 
+  +files/ipxe-nopie.patch:
+  Fix hardened compile failure #360805 don't compile ipxe with pie.
+  Thanks Ian Delaney and Ralf Glauberman
+
+  13 Oct 2011; Alexey Shvetsov <alexxy@gentoo.org> -xen-tools-3.4.2.ebuild,
+  xen-tools-4.1.1-r5.ebuild, files/xendomains.initd-r1:
+  Sabayon Tinderbox build failuire, fixes bug #377557. patch by Tobias Heinlein
+  aka keytoaster, full diff prepared by Ian Delaney. Use toolchain function
+  instead of calling LD directly, copy fix from bug #384359, fix to invoke
+  correct compiler, copy from bug #383973, patches by Ian Delaney aka idella4
+
+  05 Oct 2011; Alexey Shvetsov <alexxy@gentoo.org> xen-tools-3.4.2-r5.ebuild,
+  xen-tools-4.1.1-r5.ebuild, metadata.xml:
+  Change use ioemu to qemu and edit metadata.xml, fixes Bug 383337, add rdep
+  packages for use flag doc, fixes Bug 384357, add elog meassage re /.config,
+  fixes Bug 376819. Pathces by by Ian Delaney aka idella4
+
+  29 Sep 2011; Thomas Kahle <tomka@gentoo.org> xen-tools-3.4.2-r3.ebuild:
+  x86 stable per bug 379241
+
+  27 Sep 2011; Tony Vroon <chainsaw@gentoo.org> xen-tools-3.4.2-r5.ebuild:
+  Patch by Ian "idella4" Delaney closes bug #384349 by Agostino "ago" Sarubbo.
+
+*xen-tools-3.4.2-r5 (27 Sep 2011)
+
+  27 Sep 2011; Tony Vroon <chainsaw@gentoo.org> -xen-tools-3.4.2-r4.ebuild,
+  +xen-tools-3.4.2-r5.ebuild, +files/xen-tools-3.4.2-ldflags-respect.patch:
+  Proxy commit for Ian "idella4" Delaney. LDFLAGS respect closes bug #384351.
+  Removal of static libraries closes bug #384355. Use toolchain function
+  instead of calling LD directly, closes bug #384359.
+
+*xen-tools-3.4.2-r4 (25 Sep 2011)
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org> +xen-tools-3.4.2-r4.ebuild,
+  +files/xen-tools-3.4.2-remove-default-cflags.patch:
+  Proxy commit for Ian "idella4" Delaney. Be more thorough for custom-cflags
+  and use a diff instead of sed magic, closes bug #383975. Use toolchain-funcs
+  to invoke correct compiler, closes bug #383973.
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org> xen-tools-3.4.2-r3.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in security bug #379241.
+
+  25 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  xen-tools-4.1.1-r5.ebuild:
+  x86 stable wrt bug #360621
+
+  25 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  xen-tools-4.1.1-r5.ebuild:
+  x86 stable wrt bug #360621
+
+*xen-tools-3.4.2-r3 (24 Sep 2011)
+
+  24 Sep 2011; Tony Vroon <chainsaw@gentoo.org> -xen-tools-3.4.2-r2.ebuild,
+  +xen-tools-3.4.2-r3.ebuild, -files/xen-tools-3.4.2-werror-idiocy.patch,
+  +files/xen-tools-3.4.2-werror-idiocy-v2.patch:
+  Revised patch by Ian "idella4" Delaney resolves building on GCC 4.5 & 4.6;
+  closes bug #383977.
+
+*xen-tools-3.4.2-r2 (23 Sep 2011)
+
+  23 Sep 2011; Tony Vroon <chainsaw@gentoo.org> -xen-tools-3.4.2-r1.ebuild,
+  +xen-tools-3.4.2-r2.ebuild, +files/xen-tools-3.4.2-werror-idiocy.patch:
+  Patch by Ian "idella4" Delaney to clear -Werror, stopping GCC 4.5 build
+  failures. Closes bug #383977. Moved to using a PATCHES array and the base
+  eclass.
+
+  21 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org>
+  files/xen-tools-3.4.2-fix-definitions.patch,
+  files/xen-tools-3.4.2-fix-include.patch:
+  Fix xen3 patches by Ian Delaney aka idell4
+
+*xen-tools-3.4.2-r1 (21 Sep 2011)
+
+  21 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> +xen-tools-3.4.2-r1.ebuild,
+  +files/xen-tools-3.4.2-fix-definitions.patch,
+  +files/xen-tools-3.4.2-fix-include.patch:
+  Fix borken emerge due to system header changes; bug #379815. Input from Ian
+  Delaney aka idell4
+
+  18 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> xen-tools-4.1.1-r5.ebuild:
+  Fix patch name. Thanks to Sven Köhler
+
+*xen-tools-4.1.1-r5 (18 Sep 2011)
+
+  18 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> -xen-tools-4.1.1-r4.ebuild,
+  +xen-tools-4.1.1-r5.ebuild, +files/xen-tools-4.1.1-libxl-tap.patch,
+  +files/xen-tools-4.1.1-upstream-23104-1976adbf2b80.patch:
+  Fix bugs #380343 and #382329
+
+*xen-tools-4.1.1-r4 (12 Sep 2011)
+
+  12 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> -xen-tools-4.1.1-r3.ebuild,
+  +xen-tools-4.1.1-r4.ebuild:
+  Prevent downloading during compile, fixes bug #366125; Thanks to Ian Delaney
+  aka idella4
+
+  11 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> xen-tools-4.1.1-r3.ebuild,
+  xen-tools-9999.ebuild:
+  Fix build
+
+*xen-tools-4.1.1-r3 (11 Sep 2011)
+
+  11 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> -xen-tools-4.1.1-r2.ebuild,
+  +xen-tools-4.1.1-r3.ebuild, xen-tools-9999.ebuild, metadata.xml:
+  Sync live ebuild with 4.1.1, drop acm since its deprecated upstream. Make
+  xend optional. Input from Ian Delaney aka idell4
+
+*xen-tools-4.1.1-r2 (10 Sep 2011)
+
+  10 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> -xen-tools-4.1.1-r1.ebuild,
+  +xen-tools-4.1.1-r2.ebuild, files/xend.initd-r2, files/xendomains.initd-r2:
+  Uncomment xl settings, fix bug 370817, adjust init.d scripts to work for xl;
+  Thanks to Ian Delaney aka idella4
+
+  05 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> xen-tools-4.1.1-r1.ebuild,
+  metadata.xml:
+  Fix use doc #347942. Thanks to Ian Delaney aka idella4
+
+*xen-tools-4.1.1-r1 (31 Aug 2011)
+
+  31 Aug 2011; Alexey Shvetsov <alexxy@gentoo.org> -xen-tools-4.1.0-r1.ebuild,
+  -xen-tools-4.1.1.ebuild, +xen-tools-4.1.1-r1.ebuild:
+  Drop old version
+
+  23 Aug 2011; Fabio Erculiani <lxnay@gentoo.org> xen-tools-4.1.1.ebuild:
+  fix src_install, remove rm -r
+
+  09 Aug 2011; Alexey Shvetsov <alexxy@gentoo.org> xen-tools-9999.ebuild:
+  Drop patch
+
+  09 Aug 2011; Alexey Shvetsov <alexxy@gentoo.org> xen-tools-9999.ebuild:
+  Sync 9999 and 4.1.1
 
 *xen-tools-4.1.1 (29 Jul 2011)
 
@@ -474,4 +708,3 @@
   easier maintenance. Switch to a snapshot versioning scheme that keeps
   release/snapshot versions in order. Add myself as an additional maintainer
   in metadata.xml
-

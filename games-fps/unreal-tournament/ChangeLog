@@ -1,6 +1,15 @@
 # ChangeLog for games-fps/unreal-tournament
-# Copyright 2002-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/unreal-tournament/ChangeLog,v 1.19 2009/06/29 16:41:17 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-fps/unreal-tournament/ChangeLog,v 1.22 2012/09/05 09:52:19 jlec Exp $
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> unreal-tournament-451.ebuild:
+  Use doicon instead insinto + doins to install icon files
+
+  05 Feb 2012; Mike Frysinger <vapier@gentoo.org> unreal-tournament-451.ebuild:
+  Move to new unpacker eclass for unpack_makeself.
+
+  16 Jan 2012; Ulrich Müller <ulm@gentoo.org> unreal-tournament-451.ebuild:
+  Migrate to cdrom.eclass, bug 398809.
 
   29 Jun 2009; Michael Sterrett <mr_bones_@gentoo.org>
   unreal-tournament-451.ebuild:

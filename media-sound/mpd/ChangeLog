@@ -1,6 +1,167 @@
 # ChangeLog for media-sound/mpd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/ChangeLog,v 1.260 2011/07/17 16:08:37 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpd/ChangeLog,v 1.301 2012/10/06 20:50:20 angelos Exp $
+
+*mpd-0.17.2 (06 Oct 2012)
+
+  06 Oct 2012; Christoph Mende <angelos@gentoo.org> +mpd-0.17.2.ebuild,
+  -files/0.15.1-mpdconf.patch, -files/mpd-0.16.3-ffmpeg.patch,
+  -files/mpd-0.16.4-include-stdio.patch, -files/mpd-0.17-noise.patch,
+  -files/mpd.conf.patch, -files/mpd.rc, -mpd-0.16.2.ebuild, -mpd-0.16.5.ebuild,
+  -mpd-0.16.6.ebuild, -mpd-0.16.7.ebuild, -mpd-0.17-r1.ebuild, -mpd-0.17.ebuild:
+  Version bump, remove old
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> mpd-0.16.8.ebuild:
+  Marking mpd-0.16.8 ppc64 for bug 426834
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> mpd-0.16.8.ebuild:
+  sh/sparc stable wrt #426834
+
+*mpd-0.17.1 (08 Aug 2012)
+
+  08 Aug 2012; Christoph Mende <angelos@gentoo.org> +mpd-0.17.1.ebuild:
+  Version bump
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> mpd-0.16.8.ebuild:
+  Marking mpd-0.16.8 ppc for bug 426834
+
+  04 Aug 2012; Jeroen Roovers <jer@gentoo.org> mpd-0.17-r1.ebuild:
+  Marked ~hppa (bug #429572).
+
+  02 Aug 2012; Christoph Mende <angelos@gentoo.org> metadata.xml,
+  mpd-0.17-r1.ebuild:
+  Add USE=gme (bug #429520), drop HPPA because of unsatisfied dependencies
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> mpd-0.17.ebuild,
+  mpd-0.17-r1.ebuild:
+  Re-add sparc wrt #424509
+
+  23 Jul 2012; Markus Meier <maekke@gentoo.org> mpd-0.16.8.ebuild:
+  arm stable, bug #426834
+
+*mpd-0.17-r1 (23 Jul 2012)
+
+  23 Jul 2012; Christoph Mende <angelos@gentoo.org> +files/mpd-0.17-noise.patch,
+  +mpd-0.17-r1.ebuild:
+  Backport upstream patch to fix noise when using software mixer (bug #424043)
+
+  19 Jul 2012; Markos Chandras <hwoarang@gentoo.org> mpd-0.16.8.ebuild:
+  Stable on amd64 wrt bug #426834
+
+  18 Jul 2012; Jeroen Roovers <jer@gentoo.org> mpd-0.16.8.ebuild:
+  Stable for HPPA (bug #426834).
+
+  16 Jul 2012; Jeff Horelick <jdhore@gentoo.org> mpd-0.16.8.ebuild:
+  marked x86 per bug 426834
+
+  11 Jul 2012; Christoph Mende <angelos@gentoo.org> metadata.xml,
+  mpd-0.17.ebuild:
+  Add systemd USE flag, fix typo (noar -> roar)
+
+  11 Jul 2012; Christoph Mende <angelos@gentoo.org> metadata.xml,
+  mpd-0.17.ebuild:
+  Enable the recorder plugin conditionally (bug #425168)
+
+  02 Jul 2012; Christoph Mende <angelos@gentoo.org> -mpd-9999.ebuild,
+  metadata.xml, mpd-0.17.ebuild:
+  Update 0.17 ebuild and remove outdated live ebuild
+
+*mpd-0.17 (27 Jun 2012)
+
+  27 Jun 2012; Markos Chandras <hwoarang@gentoo.org> +mpd-0.17.ebuild:
+  Version bump
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> mpd-0.16.2.ebuild,
+  mpd-0.16.5.ebuild, mpd-0.16.6.ebuild, mpd-0.16.7.ebuild, mpd-0.16.8.ebuild,
+  mpd-9999.ebuild:
+  inherit user for enewuser
+
+  27 May 2012; Christoph Mende <angelos@gentoo.org> mpd-0.16.8.ebuild:
+  Depend on media-libs/alsa-lib (bug #414827)
+
+  22 May 2012; Christoph Mende <angelos@gentoo.org> mpd-0.16.8.ebuild:
+  Apply prefix patch for bug #416945, thanks to Matthew Alexander LaChance
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> mpd-0.16.2.ebuild,
+  mpd-0.16.5.ebuild, mpd-0.16.6.ebuild, mpd-0.16.7.ebuild, mpd-0.16.8.ebuild,
+  mpd-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*mpd-0.16.8 (01 May 2012)
+
+  01 May 2012; Tim Harder <radhermit@gentoo.org> +mpd-0.16.8.ebuild:
+  Version bump (bug #413575).
+
+  25 Apr 2012; Christoph Mende <angelos@gentoo.org> mpd-0.16.2.ebuild,
+  mpd-0.16.5.ebuild, mpd-0.16.6.ebuild, mpd-0.16.7.ebuild, mpd-9999.ebuild:
+  Depend on cdio[-minimal] (bug #407759)
+
+  13 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> mpd-0.16.7.ebuild,
+  mpd-9999.ebuild:
+  Install systemd mpd.service file wrt #407921 by Milan Berger and Michał
+  Górny
+
+*mpd-0.16.7 (21 Feb 2012)
+
+  21 Feb 2012; Alexis Ballier <aballier@gentoo.org> +mpd-0.16.7.ebuild:
+  version bump
+
+  20 Jan 2012; Agostino Sarubbo <ago@gentoo.org> mpd-0.16.2.ebuild,
+  mpd-0.16.5.ebuild, mpd-0.16.6.ebuild, mpd-9999.ebuild:
+  force libmikmod to slot 0, as ssuominen suggested
+
+  05 Jan 2012; Michael Weber <xmw@gentoo.org> mpd-0.16.5.ebuild:
+  ppc/ppc64 stable (bug 388369)
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> mpd-0.16.5.ebuild:
+  sh/sparc stable wrt #388369
+
+*mpd-0.16.6 (04 Dec 2011)
+
+  04 Dec 2011; Markos Chandras <hwoarang@gentoo.org> +mpd-0.16.6.ebuild,
+  -mpd-0.16.4.ebuild, -mpd-0.16.3-r1.ebuild:
+  version bump. remove old ebuilds
+
+  05 Nov 2011; Markus Meier <maekke@gentoo.org> mpd-0.16.5.ebuild:
+  arm stable, bug #388369
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> mpd-0.16.5.ebuild:
+  x86 stable wrt bug #388369
+
+  31 Oct 2011; Tony Vroon <chainsaw@gentoo.org> mpd-0.16.5.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #388369.
+
+  31 Oct 2011; Jeroen Roovers <jer@gentoo.org> mpd-0.16.5.ebuild:
+  Stable for HPPA (bug #388369).
+
+  14 Oct 2011; Christoph Mende <angelos@gentoo.org> +mpd-0.16.5.ebuild:
+  Version bump
+
+*mpd-0.16.5 (14 Oct 2011)
+
+  14 Oct 2011; Christoph Mende <angelos@gentoo.org> +mpd-0.16.5.ebuild:
+  Version bump
+
+  17 Sep 2011; Tim Harder <radhermit@gentoo.org> mpd-0.16.4.ebuild,
+  +files/mpd-0.16.4-include-stdio.patch:
+  Fix build with audiofile-0.3.0 (bug #383231).
+
+  04 Sep 2011; Michael Weber <xmw@gentoo.org> mpd-0.16.4.ebuild:
+  ffmpeg patch now in upstream, remove unneeded and failing epatch line (bug
+  381725 by Josh)
+
+*mpd-0.16.4 (03 Sep 2011)
+
+  03 Sep 2011; Christoph Mende <angelos@gentoo.org> +mpd-0.16.4.ebuild:
+  Version bump
+
+  07 Aug 2011; Christoph Mende <angelos@gentoo.org> -mpd-0.15.8.ebuild,
+  -mpd-0.15.15.ebuild, -mpd-0.15.16.ebuild, -mpd-0.16.3.ebuild:
+  Remove old
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> mpd-0.16.2.ebuild:
+  sh/sparc stable wrt #364469
 
   17 Jul 2011; Christoph Mende <angelos@gentoo.org> mpd-0.15.8.ebuild,
   mpd-0.15.15.ebuild, mpd-0.15.16.ebuild, mpd-0.16.2.ebuild, mpd-0.16.3.ebuild,

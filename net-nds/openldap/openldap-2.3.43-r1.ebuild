@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/openldap/openldap-2.3.43-r1.ebuild,v 1.8 2010/04/11 15:24:10 jokey Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nds/openldap/openldap-2.3.43-r1.ebuild,v 1.11 2012/05/13 11:38:39 swift Exp $
 
 EAPI="2"
 
@@ -55,7 +55,7 @@ RDEPEND="sys-libs/ncurses
 			app-crypt/heimdal
 		)
 	)
-	selinux? ( sec-policy/selinux-openldap )"
+	selinux? ( sec-policy/selinux-ldap )"
 DEPEND="${RDEPEND}"
 
 # for tracking versions
@@ -75,7 +75,7 @@ openldap_upgrade_howto() {
 	i="${l}.raw"
 	eerror " 1. /etc/init.d/slurpd stop ; /etc/init.d/slapd stop"
 	eerror " 2. slapcat -l ${i}"
-	eerror " 3. egrep -v '^entryCSN:' <${i} >${l}"
+	eerror " 3. egrep -v '^(entry|context)CSN:' <${i} >${l}"
 	eerror " 4. mv /var/lib/openldap-data/ /var/lib/openldap-data-backup/"
 	eerror " 5. emerge --update \=net-nds/${PF}"
 	eerror " 6. etc-update, and ensure that you apply the changes"
@@ -85,7 +85,12 @@ openldap_upgrade_howto() {
 	eerror "10. check that your data is intact."
 	eerror "11. set up the new replication system."
 	eerror
-	die "You need to upgrade your database first"
+	if [ "${FORCE_UPGRADE}" != "1" ]; then
+		die "You need to upgrade your database first"
+	else
+		eerror "You have the magical FORCE_UPGRADE=1 in place."
+		eerror "Don't say you weren't warned about data loss."
+	fi
 }
 
 openldap_find_versiontags() {

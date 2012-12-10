@@ -1,6 +1,72 @@
 # ChangeLog for dev-util/kbuild
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/kbuild/ChangeLog,v 1.17 2011/01/19 15:02:00 polynomial-c Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/kbuild/ChangeLog,v 1.31 2012/10/05 19:24:48 ago Exp $
+
+  05 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  kbuild-0.1.9998_pre20120806.ebuild:
+  Respect CC,AR,RANLIB, wrt to bug #380063
+
+*kbuild-0.1.9998_pre20120806 (06 Aug 2012)
+
+  06 Aug 2012; Lars Wendler <polynomial-c@gentoo.org>
+  +kbuild-0.1.9998_pre20120806.ebuild,
+  +files/kbuild-0.1.9998_pre20120806-qa.patch:
+  New snapshot. Needed for the upcoming virtualbox-4.2 series.
+
+*kbuild-0.1.9998_pre20110817-r1 (20 Jun 2012)
+
+  20 Jun 2012; Justin Lecher <jlec@gentoo.org>
+  +kbuild-0.1.9998_pre20110817-r1.ebuild,
+  +files/kbuild-0.1.9998_pre20110817-gcc-4.7.patch, metadata.xml:
+  Fix for gcc-4.7, #419705; thanks Brennan Shacklett for the patch
+
+  05 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> -kbuild-0.1.5-r1.ebuild,
+  -kbuild-0.1.5_p2.ebuild, -kbuild-0.1.5_p2-r1.ebuild:
+  Removed old versions.
+
+  04 Jun 2012; Justin Lecher <jlec@gentoo.org>
+  kbuild-0.1.9998_pre20110817.ebuild,
+  +files/kbuild-0.1.9998_pre20110817-gold.patch:
+  Fix for underlinking (missing pthread) detected by gold, #367607
+
+  18 Apr 2012; Lars Wendler <polynomial-c@gentoo.org>
+  kbuild-0.1.9998_pre20110817.ebuild:
+  Use better separators in sed statement (bug #398031).
+
+  18 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug 118003.
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  kbuild-0.1.9998_pre20110817.ebuild:
+  x86 stable wrt bug #386317
+
+  01 Nov 2011; Tony Vroon <chainsaw@gentoo.org>
+  kbuild-0.1.9998_pre20110817.ebuild:
+  Marked stable on AMD64 based on arch testing by Tomáš "Mepho" Pružina,
+  Blain "doc235" Anderson & Elijah "Armageddon" El Lazkani in security bug
+  #386317.
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> kbuild-0.1.5_p2-r1.ebuild:
+  x86 stable, bug #380005
+
+  22 Aug 2011; Tony Vroon <chainsaw@gentoo.org> kbuild-0.1.5_p2-r1.ebuild:
+  Mark stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #380005 filed by Lars "Polynomial-C" Wendler.
+
+  20 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  kbuild-0.1.9998_pre20110817.ebuild:
+  Added sys-devel/flex to DEPEND (bug #379889).
+
+*kbuild-0.1.9998_pre20110817 (17 Aug 2011)
+
+  17 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  +kbuild-0.1.9998_pre20110817.ebuild,
+  +files/kbuild-0.1.9998_pre20110817-kash-link-pthread.patch:
+  Added snapshot version as >=0.1.999 is required by >=virtualbox-4.1.2
+
+  11 Aug 2011; Mike Frysinger <vapier@gentoo.org> kbuild-0.1.5-r1.ebuild,
+  kbuild-0.1.5_p2.ebuild, kbuild-0.1.5_p2-r1.ebuild, kbuild-9999.ebuild:
+  Use pull in virtual/yacc #278006 by Eric Smith.
 
 *kbuild-0.1.5_p2-r1 (19 Jan 2011)
 
@@ -98,4 +164,3 @@
   03 Sep 2008; Alessio Cassibba (X-Drum) <swapon@gmail.com>
   +kbuild-0.1.3.ebuild, +metadata.xml:
   Initial ebuild for kBuild
-

@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/geneweb/geneweb-5.02.ebuild,v 1.2 2011/03/24 13:08:04 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/geneweb/geneweb-5.02.ebuild,v 1.6 2012/06/01 01:56:55 zmedico Exp $
 
 EAPI=2
-inherit eutils
+inherit eutils user
 
 DESCRIPTION="Genealogy software program with a Web interface."
 HOMEPAGE="http://cristal.inria.fr/~ddr/GeneWeb/"
@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.inria.fr/INRIA/Projects/cristal/${PN}/Src/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="+ocamlopt"
 
 RDEPEND="dev-lang/ocaml[ocamlopt?]
@@ -21,6 +21,7 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-gentoo.patch \
+		"${FILESDIR}"/${P}-amd64.patch \
 		"${FILESDIR}"/${P}-parallellbuild.patch
 	sed -i -e "s:@GENTOO_DATADIR@:/usr/share/${PN}:" \
 		setup/setup.ml || die "Failed sed for gentoo path"

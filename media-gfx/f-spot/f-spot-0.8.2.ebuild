@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/f-spot/f-spot-0.8.2.ebuild,v 1.7 2011/05/11 19:31:33 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/f-spot/f-spot-0.8.2.ebuild,v 1.9 2012/05/05 07:00:25 jdhore Exp $
 
 EAPI="2"
 
@@ -25,7 +25,7 @@ RDEPEND=">=dev-lang/mono-2.2
 	>=dev-dotnet/gnome-sharp-2.8:2
 	>=dev-dotnet/glib-sharp-2.12:2
 	>=dev-dotnet/gconf-sharp-2.20.2:2
-	>=dev-dotnet/mono-addins-0.3
+	>=dev-dotnet/mono-addins-0.3[gtk]
 	>=dev-libs/dbus-glib-0.71
 	>=dev-dotnet/ndesk-dbus-0.4.2
 	>=dev-dotnet/ndesk-dbus-glib-0.3.0
@@ -39,7 +39,7 @@ RDEPEND=">=dev-lang/mono-2.2
 DEPEND="${RDEPEND}
 	>=dev-dotnet/gtk-sharp-gapi-2.12.2
 	>=app-text/gnome-doc-utils-0.17.3
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	>=dev-util/intltool-0.35"
 
 pkg_setup() {

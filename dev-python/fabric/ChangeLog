@@ -1,6 +1,58 @@
 # ChangeLog for dev-python/fabric
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/fabric/ChangeLog,v 1.18 2011/07/08 21:40:08 neurogeek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/fabric/ChangeLog,v 1.29 2012/11/13 06:56:50 patrick Exp $
+
+*fabric-1.5.0 (13 Nov 2012)
+
+  13 Nov 2012; Patrick Lauer <patrick@gentoo.org> +fabric-1.5.0.ebuild:
+  Bump
+
+  27 Aug 2012; Mike Gilbert <floppym@gentoo.org> fabric-1.4.3.ebuild:
+  Drop eutils.
+
+  27 Aug 2012; Mike Gilbert <floppym@gentoo.org> fabric-1.4.3.ebuild:
+  Use pypi tarball, which now contains all required files. Suggested by
+  Arfrever.
+
+  27 Aug 2012; Patrick Lauer <patrick@gentoo.org> fabric-1.4.3.ebuild:
+  Make USE=doc work #432888
+
+*fabric-1.4.3 (24 Aug 2012)
+
+  24 Aug 2012; Patrick Lauer <patrick@gentoo.org> +fabric-1.4.3.ebuild:
+  Bump
+
+  16 May 2012; Mike Gilbert <floppym@gentoo.org> fabric-1.4.2-r1.ebuild:
+  Unrestrict tests with correct fudge dependency. Restrict pypy due to
+  depdendency on dev-python/ssh.
+
+*fabric-1.4.2-r1 (15 May 2012)
+
+  15 May 2012; Kacper Kowalik <xarthisius@gentoo.org> +fabric-1.4.2-r1.ebuild,
+  -fabric-1.4.2.ebuild:
+  Use vcs-snapshot.eclass to avoid variable shuffling, depend on sphinx for
+  docs, fix double html in docs' install path, drop unnecessary die
+
+*fabric-1.4.2 (10 May 2012)
+
+  10 May 2012; Jesus Rivero <neurogeek@gentoo.org> +fabric-1.4.2.ebuild,
+  +files/fabric-1.4.2-git_tags_docs.patch:
+  Version bump.
+
+*fabric-1.4.1 (08 Apr 2012)
+
+  08 Apr 2012; Mike Gilbert <floppym@gentoo.org> +fabric-1.4.1.ebuild:
+  Version bump, #411141 by Ian Delaney.
+
+*fabric-1.4.0 (01 Mar 2012)
+
+  01 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> +fabric-1.4.0.ebuild:
+  Version bump to 1.4.0 (bug 389107).
+
+*fabric-1.2.2 (04 Sep 2011)
+
+  04 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> +fabric-1.2.2.ebuild:
+  Version bump to 1.2.2.
 
   08 Jul 2011; Jesus Rivero <neurogeek@gentoo.org> -fabric-0.9.6.ebuild,
   -fabric-1.0.1.ebuild:
@@ -101,4 +153,3 @@
   18 Mar 2009; Benedikt Böhm <hollow@gentoo.org> +metadata.xml,
   +fabric-0.1.0.ebuild:
   initial ebuild, thanks to Jürgen Geuter, bug #261419
-

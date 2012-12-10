@@ -1,6 +1,45 @@
 # ChangeLog for dev-python/python-dateutil
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-dateutil/ChangeLog,v 1.31 2011/06/07 11:22:55 naota Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-dateutil/ChangeLog,v 1.41 2012/10/07 09:31:55 nixnut Exp $
+
+  07 Oct 2012; nixnut <nixnut@gentoo.org> python-dateutil-2.1.ebuild:
+  ppc stable #426466
+
+  14 Jul 2012; Johannes Huber <johu@gentoo.org> python-dateutil-2.1.ebuild:
+  Stable for x86, wrt bug #426466
+
+  14 Jul 2012; Agostino Sarubbo <ago@gentoo.org> python-dateutil-2.1.ebuild:
+  Stable for amd64, wrt bug #426466
+
+  04 Apr 2012; Mike Gilbert <floppym@gentoo.org>
+  +files/python-dateutil-2.1-open-utf-8.patch, python-dateutil-2.1.ebuild:
+  Fix UnicodeDecodeError in setup.py. Bug 410725.
+
+  01 Apr 2012; Mike Gilbert <floppym@gentoo.org> python-dateutil-2.1.ebuild:
+  Update HOMEPAGE.
+
+  01 Apr 2012; Mike Gilbert <floppym@gentoo.org> -python-dateutil-2.0.ebuild:
+  Remove.
+
+*python-dateutil-2.1 (01 Apr 2012)
+
+  01 Apr 2012; Mike Gilbert <floppym@gentoo.org> +python-dateutil-2.1.ebuild:
+  Version bump. This version supports both python 2 and 3.
+
+  19 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  python-dateutil-2.0.ebuild:
+  Fixed PYTHON_DEPEND
+
+*python-dateutil-2.0 (19 Jan 2012)
+
+  19 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +python-dateutil-2.0.ebuild:
+  Version bump (python3 only)
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> python-dateutil-1.5.ebuild:
+  Ignore failures of tests with Jython. Update DESCRIPTION and LICENSE. Use
+  SLOT="python-2". Add "examples" USE flag. Use sed instead of a patch. Patch by
+  Arfrever.
 
   07 Jun 2011; Naohiro Aota <naota@gentoo.org> python-dateutil-1.5.ebuild:
   Add ~x86-fbsd keyword

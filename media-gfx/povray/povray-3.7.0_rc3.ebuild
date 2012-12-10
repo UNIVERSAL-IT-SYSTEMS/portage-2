@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/povray/povray-3.7.0_rc3.ebuild,v 1.3 2011/03/24 15:57:10 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/povray/povray-3.7.0_rc3.ebuild,v 1.10 2011/11/17 17:02:27 jlec Exp $
 
 EAPI="3"
 
@@ -21,23 +21,22 @@ SRC_URI="http://www.povray.org/redirect/www.povray.org/beta/source/${PN}-${MY_PV
 
 LICENSE="povlegal-3.6"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
-IUSE="debug mkl openexr tiff X"
+KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
+IUSE="debug openexr tiff X"
 
 DEPEND="
 	>=dev-libs/boost-1.41
 	virtual/jpeg
-	media-libs/libpng
+	media-libs/libpng:0
 	sys-libs/zlib
 	openexr? (
 		media-libs/ilmbase
 		media-libs/openexr )
-	mkl? ( sci-libs/mkl )
-	tiff? ( >=media-libs/tiff-3.6.1 )
+	tiff? ( >=media-libs/tiff-3.6.1:0 )
 	X? ( media-libs/libsdl )"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${PN}-${MY_PV}"
+S=${WORKDIR}/${PN}-${MY_PV}
 
 src_prepare() {
 	# Change some destination directories that cannot be adjusted via configure
@@ -90,7 +89,7 @@ src_configure() {
 		COMPILED_BY="Portage (Gentoo `uname`) on `hostname -f`" \
 		$(use_enable debug) \
 		$(use_with openexr) \
-		$(use_with mkl libmkl) \
+		--without-libmkl \
 		$(use_with tiff libtiff) \
 		$(use_with X libsdl) \
 		$(use_with X x) \

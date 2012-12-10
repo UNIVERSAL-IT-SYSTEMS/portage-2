@@ -1,9 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gconf/gconf-2.32.4.ebuild,v 1.1 2011/06/20 10:37:41 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gconf/gconf-2.32.4.ebuild,v 1.9 2012/10/06 09:50:59 pacho Exp $
 
 EAPI="4"
 GCONF_DEBUG="yes"
+GNOME2_LA_PUNT="yes"
 GNOME_ORG_MODULE="GConf"
 
 inherit eutils gnome2
@@ -13,7 +14,7 @@ HOMEPAGE="http://projects.gnome.org/gconf/"
 
 LICENSE="LGPL-2"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd"
 IUSE="debug doc +introspection ldap policykit"
 
 RDEPEND=">=dev-libs/glib-2.25.9:2
@@ -27,7 +28,7 @@ RDEPEND=">=dev-libs/glib-2.25.9:2
 	policykit? ( sys-auth/polkit )"
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35
-	>=dev-util/pkgconfig-0.9
+	virtual/pkgconfig
 	doc? ( >=dev-util/gtk-doc-1 )"
 
 pkg_setup() {
@@ -41,9 +42,6 @@ pkg_setup() {
 		$(use_with ldap openldap)
 		$(use_enable policykit defaults-service)"
 	kill_gconf
-
-	# Need host's IDL compiler for cross or native build, bug #262747
-	export EXTRA_EMAKE="${EXTRA_EMAKE} ORBIT_IDL=/usr/bin/orbit-idl-2"
 }
 
 src_prepare() {
@@ -56,6 +54,11 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-2.28.0-entry-set-value-sigsegv.patch"
 }
 
+src_compile() {
+	# Need host's IDL compiler for cross or native build, bug #262747
+	emake ORBIT_IDL=/usr/bin/orbit-idl-2
+}
+
 src_install() {
 	gnome2_src_install
 
@@ -66,8 +69,8 @@ src_install() {
 
 	echo 'CONFIG_PROTECT_MASK="/etc/gconf"' > 50gconf
 	echo 'GSETTINGS_BACKEND="gconf"' >> 50gconf
-	doenvd 50gconf || die "doenv failed"
-	dodir /root/.gconfd || die
+	doenvd 50gconf
+	dodir /root/.gconfd
 }
 
 pkg_preinst() {

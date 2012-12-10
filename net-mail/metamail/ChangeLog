@@ -1,6 +1,38 @@
 # ChangeLog for net-mail/metamail
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/metamail/ChangeLog,v 1.45 2010/01/06 19:28:11 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-mail/metamail/ChangeLog,v 1.54 2012/12/04 12:11:58 eras Exp $
+
+  04 Dec 2012; Eray Aslan <eras@gentoo.org> -metamail-2.7.53.3.ebuild:
+  remove old
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> metamail-2.7.53.3-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #441462
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> metamail-2.7.53.3-r1.ebuild:
+  Stable for x86, wrt bug #441462
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> metamail-2.7.53.3-r1.ebuild:
+  Stable for HPPA (bug #441462).
+
+  07 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  metamail-2.7.53.3-r1.ebuild:
+  stable arm, bug #441462
+
+  07 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  metamail-2.7.53.3-r1.ebuild:
+  stable ppc ppc64, bug #441462
+
+  06 Nov 2012; <ago@gentoo.org> metamail-2.7.53.3-r1.ebuild:
+  Stable for amd64, wrt bug #441462
+
+*metamail-2.7.53.3-r1 (07 Aug 2012)
+
+  07 Aug 2012; Eray Aslan <eras@gentoo.org> +metamail-2.7.53.3-r1.ebuild:
+  Add blocker to run-mailcap - bug #251181. Respect CFLAGS - bug #427380. Fix QA
+  warnings
+
+  19 Dec 2011; Eray Aslan <eras@gentoo.org> -metamail-2.7.45.3-r1.ebuild:
+  remove old
 
   06 Jan 2010; Brent Baude <ranger@gentoo.org> metamail-2.7.53.3.ebuild:
   Marking metamail-2.7.53.3 ppc64 for bug 289535
@@ -167,4 +199,3 @@
 
   Initial checkin of this package.  
   Ebuild originally created by Alexander Holler <holler@ahsoftware.de>
-

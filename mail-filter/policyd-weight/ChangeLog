@@ -1,6 +1,28 @@
 # ChangeLog for mail-filter/policyd-weight
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/policyd-weight/ChangeLog,v 1.16 2011/06/09 19:12:17 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/policyd-weight/ChangeLog,v 1.22 2012/06/05 00:02:12 zmedico Exp $
+
+  05 Jun 2012; Zac Medico <zmedico@gentoo.org> policyd-weight-0.1.15.1.ebuild,
+  policyd-weight-0.1.15.2.ebuild:
+  inherit user for enewgroup and enewuser
+
+  23 Dec 2011; Eray Aslan <eras@gentoo.org> -policyd-weight-0.1.14.17.ebuild:
+  remove old
+
+  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  policyd-weight-0.1.15.1.ebuild:
+  x86 stable wrt bug #393855
+
+*policyd-weight-0.1.15.2 (18 Dec 2011)
+
+  18 Dec 2011; Eray Aslan <eras@gentoo.org> +policyd-weight-0.1.15.2.ebuild:
+  version bump
+
+  18 Dec 2011; Eray Aslan <eras@gentoo.org> policyd-weight-0.1.15.1.ebuild:
+  die after sed. Don't call src_compile
+
+  17 Dec 2011; Agostino Sarubbo <ago@gentoo.org> policyd-weight-0.1.15.1.ebuild:
+  Stable for AMD64, wrt bug #393855
 
 *policyd-weight-0.1.15.1 (09 Jun 2011)
 

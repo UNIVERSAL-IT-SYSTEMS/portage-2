@@ -1,6 +1,53 @@
 # ChangeLog for dev-util/monodevelop-java
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/monodevelop-java/ChangeLog,v 1.16 2010/11/27 16:10:11 loki_val Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/monodevelop-java/ChangeLog,v 1.26 2012/06/16 12:06:23 ago Exp $
+
+  16 Jun 2012; Agostino Sarubbo <ago@gentoo.org> -monodevelop-java-2.6.ebuild,
+  -monodevelop-java-2.8.2.ebuild:
+  Remove old as requested by Pacho Ramos, <pacho@gentoo.org>
+
+  22 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  monodevelop-java-2.8.5.1.ebuild:
+  Stable for amd64, wrt bug #407701
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> monodevelop-java-2.6.ebuild,
+  monodevelop-java-2.8.2.ebuild, monodevelop-java-2.8.5.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Apr 2012; Markus Meier <maekke@gentoo.org>
+  monodevelop-java-2.8.5.1.ebuild:
+  x86 stable, bug #407701
+
+*monodevelop-java-2.8.5.1 (22 Jan 2012)
+
+  22 Jan 2012; Pacho Ramos <pacho@gentoo.org> +monodevelop-java-2.8.5.1.ebuild:
+  Version bump.
+
+*monodevelop-java-2.8.2 (23 Nov 2011)
+
+  23 Nov 2011; Pacho Ramos <pacho@gentoo.org> +monodevelop-java-2.8.2.ebuild,
+  -monodevelop-java-2.4.ebuild:
+  Version bump, remove old.
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org>
+  monodevelop-java-2.6.ebuild:
+  Stable on amd64 wrt bug #389181
+
+  04 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  monodevelop-java-2.6.ebuild:
+  x86 stable wrt bug #389181
+
+*monodevelop-java-2.6 (10 Sep 2011)
+
+  10 Sep 2011; Pacho Ramos <pacho@gentoo.org> -monodevelop-java-2.5.93.ebuild,
+  +monodevelop-java-2.6.ebuild:
+  Version bump, remove old, allow to use ikvm (bug #337257 by Dennis Schridde).
+
+*monodevelop-java-2.5.93 (20 Aug 2011)
+
+  20 Aug 2011; Alistair Bush <ali_bush@gentoo.org>
+  +monodevelop-java-2.5.93.ebuild:
+  Version Bump.
 
   27 Nov 2010; Peter Alfredsen <loki_val@gentoo.org>
   monodevelop-java-2.4.ebuild:

@@ -1,6 +1,54 @@
 # ChangeLog for net-im/ejabberd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/ejabberd/ChangeLog,v 1.98 2011/06/22 13:02:32 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-im/ejabberd/ChangeLog,v 1.111 2012/09/23 08:22:11 phajdan.jr Exp $
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ejabberd-2.1.11.ebuild:
+  x86 stable wrt bug #427714
+
+  06 Sep 2012; Agostino Sarubbo <ago@gentoo.org> ejabberd-2.1.11.ebuild:
+  Stable for amd64, wrt bug #427714
+
+  30 Aug 2012; Anthony G. Basile <blueness@gentoo.org> ejabberd-2.1.11.ebuild:
+  Stable ppc, bug #427714
+
+  22 Jun 2012; Tim Harder <radhermit@gentoo.org> -ejabberd-2.1.8.ebuild,
+  -ejabberd-2.1.9.ebuild:
+  Remove old.
+
+  01 Jun 2012; Andreas Schuerch <nativemad@gentoo.org> ejabberd-2.1.10.ebuild:
+  x86 stable, see bug 418313. Thanks cyberbat
+
+  31 May 2012; Agostino Sarubbo <ago@gentoo.org> ejabberd-2.1.10.ebuild:
+  Stable for amd64, wrt bug #418313
+
+*ejabberd-2.1.11 (30 May 2012)
+
+  30 May 2012; Tim Harder <radhermit@gentoo.org> +ejabberd-2.1.11.ebuild:
+  Version bump (bug #415347).
+
+*ejabberd-2.1.10 (06 Mar 2012)
+
+  06 Mar 2012; Tim Harder <radhermit@gentoo.org> +ejabberd-2.1.10.ebuild:
+  Version bump (bug #396037).
+
+  06 Mar 2012; Tim Harder <radhermit@gentoo.org> ejabberd-2.1.8.ebuild,
+  ejabberd-2.1.9.ebuild:
+  Correctly apply the mod_statsdx patch (bug #402565).
+
+  21 Dec 2011; Peter Volkov <pva@gentoo.org> metadata.xml:
+  Drop unused USE flag.
+
+  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ejabberd-2.1.9.ebuild:
+  x86 stable wrt bug #386075
+
+  17 Dec 2011; Agostino Sarubbo <ago@gentoo.org> ejabberd-2.1.9.ebuild:
+  Stable for AMD64, wrt security bug #386075
+
+*ejabberd-2.1.9 (17 Dec 2011)
+
+  17 Dec 2011; Peter Volkov <pva@gentoo.org> +ejabberd-2.1.9.ebuild:
+  Version bump, fixes security issue #386075 wrt Anton Podavalov. Report
+  version correctly, bug #372287 by cyberbat.
 
   22 Jun 2011; Peter Volkov <pva@gentoo.org>
   -files/ejabberd-2.0.5-erlang-13.patch,

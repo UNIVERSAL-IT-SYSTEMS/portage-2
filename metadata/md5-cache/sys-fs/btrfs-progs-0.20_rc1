@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install postinst prepare
+DEPEND=sys-libs/zlib sys-apps/acl sys-fs/e2fsprogs
+DESCRIPTION=Btrfs filesystem utilities
+EAPI=4
+HOMEPAGE=https://btrfs.wiki.kernel.org
+KEYWORDS=~amd64 ~arm ~mips ~ppc ~ppc64 ~x86
+LICENSE=GPL-2
+RDEPEND=sys-libs/zlib sys-apps/acl sys-fs/e2fsprogs
+SLOT=0
+SRC_URI=http://dev.gentoo.org/~slyfox/btrfs-progs-0.20-rc1.tar.gz
+_eclasses_=multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4
+_md5_=075ec41ea6e0060cd96cc309749ba917

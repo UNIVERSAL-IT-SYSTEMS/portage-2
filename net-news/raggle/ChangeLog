@@ -1,6 +1,24 @@
 # ChangeLog for net-news/raggle
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-news/raggle/ChangeLog,v 1.16 2009/10/03 08:28:09 a3li Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-news/raggle/ChangeLog,v 1.21 2012/09/23 09:02:58 graaff Exp $
+
+  23 Sep 2012; Hans de Graaff <graaff@gentoo.org> -raggle-0.4.4-r1.ebuild:
+  Cleanup.
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> raggle-0.4.4-r2.ebuild:
+  x86 stable wrt bug #429186
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> raggle-0.4.4-r1.ebuild,
+  raggle-0.4.4-r2.ebuild:
+  Drop alpha keywords
+
+*raggle-0.4.4-r2 (20 Jun 2012)
+
+  20 Jun 2012; Hans de Graaff <graaff@gentoo.org> +raggle-0.4.4-r2.ebuild:
+  Convert to ruby-ng. Fix documentation warnings, bug 421945.
+
+  18 Apr 2012; Raúl Porcel <armin76@gentoo.org> raggle-0.4.4-r1.ebuild:
+  Drop sparc keywords
 
   03 Oct 2009; Alex Legler <a3li@gentoo.org> -raggle-0.4.0.ebuild:
   Purging old version

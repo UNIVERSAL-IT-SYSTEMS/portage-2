@@ -1,6 +1,35 @@
 # ChangeLog for net-analyzer/p0f
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/p0f/ChangeLog,v 1.44 2010/08/30 04:00:14 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/p0f/ChangeLog,v 1.50 2012/05/14 11:38:17 scarabeus Exp $
+
+*p0f-3.05_beta (14 May 2012)
+
+  14 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> +p0f-3.05_beta.ebuild,
+  -p0f-3.00_rc5.ebuild, -p0f-3.03_beta.ebuild, -p0f-3.04_beta.ebuild:
+  Version bump to latest 3.0 series, cleanup older.
+
+  14 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -p0f-2.0.8-r1.ebuild,
+  p0f-2.0.8-r2.ebuild:
+  Stabilise on all archs tested on ppc/x86/amd64 but it just fixes ldflags so
+  deemed ok for sparc.
+
+*p0f-3.04_beta (30 Mar 2012)
+
+  30 Mar 2012; Tim Harder <radhermit@gentoo.org> +p0f-3.04_beta.ebuild:
+  Version bump.
+
+*p0f-3.03_beta (23 Jan 2012)
+
+  23 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +p0f-3.03_beta.ebuild:
+  Version bump.
+
+*p0f-3.00_rc5 (16 Jan 2012)
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +p0f-3.00_rc5.ebuild:
+  Version bump.
+
+  05 Aug 2011; Zac Medico <zmedico@gentoo.org> p0f-2.0.8-r2.ebuild:
+  Bump to EAPI 3 and fix for prefix.
 
 *p0f-2.0.8-r2 (30 Aug 2010)
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lua/luasocket/luasocket-2.0.2.ebuild,v 1.1 2010/11/05 21:31:09 rafaelmartins Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lua/luasocket/luasocket-2.0.2.ebuild,v 1.4 2012/08/13 10:33:04 johu Exp $
 
 EAPI=2
 
@@ -12,12 +12,12 @@ SRC_URI="http://luaforge.net/frs/download.php/2664/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="debug"
 
 RDEPEND=">=dev-lang/lua-5.1[deprecated]"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	# Unix socket support is needed by app-crypt/ekeyd, but upstream

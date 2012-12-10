@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/libtool.eclass,v 1.93 2011/06/10 16:17:57 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/libtool.eclass,v 1.102 2012/09/15 16:16:53 zmedico Exp $
 
 # @ECLASS: libtool.eclass
 # @MAINTAINER:
@@ -14,11 +14,23 @@
 # generated libtool files.  We do not run the libtoolize program because that
 # requires a regeneration of the main autotool files in order to work properly.
 
-DESCRIPTION="Based on the ${ECLASS} eclass"
+if [[ ${___ECLASS_ONCE_LIBTOOL} != "recur -_+^+_- spank" ]] ; then
+___ECLASS_ONCE_LIBTOOL="recur -_+^+_- spank"
 
-inherit toolchain-funcs
+# If an overlay has eclass overrides, but doesn't actually override the
+# libtool.eclass, we'll have ECLASSDIR pointing to the active overlay's
+# eclass/ dir, but libtool.eclass is still in the main Gentoo tree.  So
+# add a check to locate the ELT-patches/ regardless of what's going on.
+ECLASSDIR_LOCAL=${BASH_SOURCE[0]%/*}
+elt_patch_dir() {
+	local d="${ECLASSDIR}/ELT-patches"
+	if [[ ! -d ${d} ]] ; then
+		d="${ECLASSDIR_LOCAL}/ELT-patches"
+	fi
+	echo "${d}"
+}
 
-ELT_PATCH_DIR="${ECLASSDIR}/ELT-patches"
+inherit multilib toolchain-funcs
 
 #
 # See if we can apply $2 on $1, and if so, do it
@@ -27,17 +39,22 @@ ELT_try_and_apply_patch() {
 	local ret=0
 	local file=$1
 	local patch=$2
+	local src=$3
+	local disp="${src} patch"
+	local log="${T}/elibtool.log"
 
-	echo -e "\nTrying $(basename "$(dirname "${patch}")")-${patch##*/}.patch on ${file}" \
-		>> "${T}/elibtool.log" 2>&1
+	if [[ -z ${__ELT_NOTED_TMP} ]] ; then
+		__ELT_NOTED_TMP=true
+		printf 'temp patch: %s\n' "${patch}" > "${log}"
+	fi
+	printf '\nTrying %s\n' "${disp}" >> "${log}"
 
 	# We only support patchlevel of 0 - why worry if its static patches?
-	if patch -p0 --dry-run "${file}" "${patch}" >> "${T}/elibtool.log" 2>&1 ; then
-		einfo "  Applying $(basename "$(dirname "${patch}")")-${patch##*/}.patch ..."
-		patch -p0 -g0 --no-backup-if-mismatch "${file}" "${patch}" \
-			>> "${T}/elibtool.log" 2>&1
+	if patch -p0 --dry-run "${file}" "${patch}" >> "${log}" 2>&1 ; then
+		einfo "  Applying ${disp} ..."
+		patch -p0 -g0 --no-backup-if-mismatch "${file}" "${patch}" >> "${log}" 2>&1
 		ret=$?
-		export ELT_APPLIED_PATCHES="${ELT_APPLIED_PATCHES} ${patch##*/}"
+		export ELT_APPLIED_PATCHES="${ELT_APPLIED_PATCHES} ${src}"
 	else
 		ret=1
 	fi
@@ -61,30 +78,31 @@ ELT_libtool_version() {
 # apply to $1 ...
 #
 ELT_walk_patches() {
-	local patch
+	local patch tmp
 	local ret=1
 	local file=$1
 	local patch_set=$2
-	local patch_dir="${ELT_PATCH_DIR}/${patch_set}"
+	local patch_dir="$(elt_patch_dir)/${patch_set}"
 	local rem_int_dep=$3
 
 	[[ -z ${patch_set} ]] && return 1
 	[[ ! -d ${patch_dir} ]] && return 1
 
-	pushd "${ELT_PATCH_DIR}" >/dev/null
+	# Allow patches to use @GENTOO_LIBDIR@ replacements
+	local sed_args=( -e "s:@GENTOO_LIBDIR@:$(get_libdir):g" )
+	if [[ -n ${rem_int_dep} ]] ; then
+		# replace @REM_INT_DEP@ with what was passed
+		# to --remove-internal-dep
+		sed_args+=( -e "s|@REM_INT_DEP@|${rem_int_dep}|g" )
+	fi
+
+	pushd "$(elt_patch_dir)" >/dev/null || die
 
 	# Go through the patches in reverse order (newer version to older)
 	for patch in $(find "${patch_set}" -maxdepth 1 -type f | LC_ALL=C sort -r) ; do
-		# For --remove-internal-dep ...
-		if [[ -n ${rem_int_dep} ]] ; then
-			# For replace @REM_INT_DEP@ with what was passed
-			# to --remove-internal-dep
-			local tmp="${T}/$$.rem_int_deps.patch"
-			sed -e "s|@REM_INT_DEP@|${rem_int_dep}|g" "${patch}" > "${tmp}"
-			patch=${tmp}
-		fi
-
-		if ELT_try_and_apply_patch "${file}" "${patch}" ; then
+		tmp="${T}/libtool-elt.patch"
+		sed "${sed_args[@]}" "${patch}" > "${tmp}" || die
+		if ELT_try_and_apply_patch "${file}" "${tmp}" "${patch}" ; then
 			# Break to unwind w/popd rather than return directly
 			ret=0
 			break
@@ -113,6 +131,7 @@ elibtoolize() {
 	local do_uclibc="yes"
 	local deptoremove=
 	local do_shallow="no"
+	local force="false"
 	local elt_patches="install-sh ltmain portage relink max_cmd_len sed test tmp cross as-needed"
 
 	for x in "$@" ; do
@@ -147,6 +166,9 @@ elibtoolize() {
 			--no-uclibc)
 				do_uclibc="no"
 				;;
+			--force)
+				force="true"
+				;;
 			*)
 				eerror "Invalid elibtoolize option: ${x}"
 				die "elibtoolize called with ${x} ??"
@@ -158,6 +180,7 @@ elibtoolize() {
 	case ${CHOST} in
 		*-aix*)     elt_patches+=" hardcode aixrtl aix-noundef" ;; #213277
 		*-darwin*)  elt_patches+=" darwin-ltconf darwin-ltmain darwin-conf" ;;
+		*-solaris*) elt_patches+=" sol2-conf sol2-ltmain" ;;
 		*-freebsd*) elt_patches+=" fbsd-conf fbsd-ltconf" ;;
 		*-hpux*)    elt_patches+=" hpux-conf deplibs hc-flag-ld hardcode hardcode-relink relink-prog no-lc" ;;
 		*-irix*)    elt_patches+=" irix-ltmain" ;;
@@ -180,9 +203,17 @@ elibtoolize() {
 	for d in "$@" ; do
 		export ELT_APPLIED_PATCHES=
 
-		[[ -f ${d}/.elibtoolized ]] && continue
+		if [[ -f ${d}/.elibtoolized ]] ; then
+			${force} || continue
+		fi
 
-		einfo "Running elibtoolize in: ${d#${WORKDIR}/}/"
+		local outfunc="einfo"
+		[[ -f ${d}/.elibtoolized ]] && outfunc="ewarn"
+		${outfunc} "Running elibtoolize in: ${d#${WORKDIR}/}/"
+		if [[ ${outfunc} == "ewarn" ]] ; then
+			ewarn "  We've already been run in this tree; you should"
+			ewarn "  avoid this if possible (perhaps by filing a bug)"
+		fi
 
 		for p in ${elt_patches} ; do
 			local ret=0
@@ -300,7 +331,7 @@ elibtoolize() {
 						fi
 					done
 					;;
-				mint-conf|gold-conf)
+				mint-conf|gold-conf|sol2-conf)
 					ret=1
 					local subret=1
 					if [[ -e ${d}/configure ]]; then
@@ -470,3 +501,5 @@ VER_to_int() {
 	echo 1
 	return 1
 }
+
+fi

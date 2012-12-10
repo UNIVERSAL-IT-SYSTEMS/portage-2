@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gupnp-dlna/gupnp-dlna-0.6.2.ebuild,v 1.1 2011/07/24 13:05:19 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gupnp-dlna/gupnp-dlna-0.6.2.ebuild,v 1.3 2012/05/05 08:02:43 jdhore Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
@@ -16,12 +16,12 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc +introspection"
 
-RDEPEND=">=dev-libs/libxml2-2.5
-	>=media-libs/gstreamer-0.10.32
-	>=media-libs/gst-plugins-base-0.10.32
+RDEPEND=">=dev-libs/libxml2-2.5:2
+	>=media-libs/gstreamer-0.10.32:0.10
+	>=media-libs/gst-plugins-base-0.10.32:0.10[introspection?]
 	introspection? ( >=dev-libs/gobject-introspection-0.6.4 )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( >=dev-util/gtk-doc-1 )"
 
 pkg_setup() {

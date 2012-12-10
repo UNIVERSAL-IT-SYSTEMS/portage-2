@@ -1,6 +1,22 @@
 # ChangeLog for games-fps/openarena
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/openarena/ChangeLog,v 1.21 2011/02/26 15:09:58 signals Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-fps/openarena/ChangeLog,v 1.25 2012/07/04 03:16:53 jdhore Exp $
+
+  04 Jul 2012; Jeff Horelick <jdhore@gentoo.org> openarena-0.8.8.ebuild:
+  marked x86 per bug 422123
+
+  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> openarena-0.8.8.ebuild:
+  Stable for amd64, wrt bug #422123
+
+*openarena-0.8.8 (18 May 2012)
+
+  18 May 2012; Michael Sterrett <mr_bones_@gentoo.org> +openarena-0.8.8.ebuild,
+  +files/openarena-0.8.8-makefile.patch,
+  +files/openarena-0.8.8-unbundling.patch:
+  version bump (bug #306617) with patches from hasufell
+
+  25 Sep 2011; Michael Sterrett <mr_bones_@gentoo.org> openarena-0.8.5.ebuild:
+  sed patch to build against newer zlib (bug #384395)
 
   26 Feb 2011; Kevin McCarthy <signals@gentoo.org> openarena-0.8.5.ebuild:
   Updated depends from media-libs/jpeg to virtual/jpeg

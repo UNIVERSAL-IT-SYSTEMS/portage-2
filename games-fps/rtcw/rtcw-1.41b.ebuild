@@ -1,22 +1,21 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/rtcw/rtcw-1.41b.ebuild,v 1.12 2010/08/17 07:13:08 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/rtcw/rtcw-1.41b.ebuild,v 1.16 2012/07/11 17:27:03 mr_bones_ Exp $
 
 EAPI=2
-inherit eutils games
+inherit eutils unpacker games
 
 DESCRIPTION="Return to Castle Wolfenstein - Long awaited sequel to Wolfenstein 3D"
 HOMEPAGE="http://games.activision.com/games/wolfenstein/"
-SRC_URI="ftp://ftp.idsoftware.com/idstuff/wolf/linux/wolf-linux-GOTY-maps.x86.run
+SRC_URI="mirror://idsoftware/wolf/linux/wolf-linux-GOTY-maps.x86.run
 	mirror://idsoftware/wolf/linux/wolf-linux-${PV}.x86.run"
 #	mirror://3dgamers/returnwolfenstein/wolf-linux-${PV}.x86.run
 
-LICENSE="RTCW"
+LICENSE="RTCW GPL-2" # gpl for init script bug #425944
 SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="opengl dedicated"
 RESTRICT="strip mirror"
-PROPERTIES="interactive"
 QA_TEXTRELS="${GAMES_PREFIX_OPT:1}/rtcw/pb/pbag.so
 	${GAMES_PREFIX_OPT:1}/rtcw/pb/pbsv.so
 	${GAMES_PREFIX_OPT:1}/rtcw/pb/pbcl.so"
@@ -38,14 +37,8 @@ RDEPEND="sys-libs/glibc
 
 S=${WORKDIR}
 
-GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/${PN}
 Ddir=${D}/${dir}
-
-src_unpack() {
-	unpack_makeself wolf-linux-GOTY-maps.x86.run
-	unpack_makeself wolf-linux-${PV}.x86.run
-}
 
 src_install() {
 	insinto "${dir}"

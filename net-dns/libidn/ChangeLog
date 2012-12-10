@@ -1,6 +1,111 @@
 # ChangeLog for net-dns/libidn
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/libidn/ChangeLog,v 1.145 2011/08/01 20:58:28 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dns/libidn/ChangeLog,v 1.176 2012/09/18 15:22:15 jer Exp $
+
+  18 Sep 2012; Jeroen Roovers <jer@gentoo.org> -libidn-1.24.ebuild:
+  Old.
+
+  20 Aug 2012; Christoph Junghans <ottxor@gentoo.org> libidn-1.25.ebuild:
+  added prefix keywords
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> libidn-1.25.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #424125
+
+  20 Jul 2012; Anthony G. Basile <blueness@gentoo.org> libidn-1.25.ebuild:
+  Stable ppc, bug #424125
+
+  20 Jul 2012; Anthony G. Basile <blueness@gentoo.org> libidn-1.25.ebuild:
+  Stable ppc64, bug #424125
+
+  19 Jul 2012; Markus Meier <maekke@gentoo.org> libidn-1.25.ebuild:
+  arm stable, bug #424125
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> libidn-1.25.ebuild:
+  Stable for HPPA (bug #424125).
+
+  30 Jun 2012; Jeff Horelick <jdhore@gentoo.org> libidn-1.25.ebuild:
+  marked x86 per bug 424125
+
+  30 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libidn-1.25.ebuild:
+  Stable for amd64, wrt bug #424125
+
+*libidn-1.25 (23 May 2012)
+
+  23 May 2012; Jeroen Roovers <jer@gentoo.org> +libidn-1.25.ebuild:
+  Version bump.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libidn-1.24.ebuild:
+  keyword ~amd64-fbsd
+
+  05 Apr 2012; Jeroen Roovers <jer@gentoo.org> -libidn-1.23.ebuild:
+  Old.
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> libidn-1.24.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #407303
+
+  25 Mar 2012; Markus Meier <maekke@gentoo.org> libidn-1.24.ebuild:
+  arm stable, bug #407303
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libidn-1.24.ebuild:
+  x86 stable wrt bug #407303
+
+  13 Mar 2012; Agostino Sarubbo <ago@gentoo.org> libidn-1.24.ebuild:
+  Stable for amd64, wrt bug #407303
+
+  13 Mar 2012; Jeroen Roovers <jer@gentoo.org> libidn-1.24.ebuild:
+  Stable for HPPA (bug #407303).
+
+  09 Mar 2012; Brent Baude <ranger@gentoo.org> libidn-1.24.ebuild:
+  Marking libidn-1.24 ppc64 for bug 407303
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> libidn-1.24.ebuild:
+  Marking libidn-1.24 ppc for bug 407303
+
+  03 Mar 2012; Jeroen Roovers <jer@gentoo.org> -libidn-1.22.ebuild,
+  -libidn-1.22-r1.ebuild:
+  Old.
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> libidn-1.23.ebuild:
+  Marking libidn-1.23 ppc64 for bug 398849
+
+  14 Feb 2012; Brent Baude <ranger@gentoo.org> libidn-1.23.ebuild:
+  Marking libidn-1.23 ppc for bug 398849
+
+  22 Jan 2012; Raúl Porcel <armin76@gentoo.org> libidn-1.23.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc/x86 stable wrt #398849
+
+  15 Jan 2012; Jeroen Roovers <jer@gentoo.org> libidn-1.23.ebuild:
+  Stable for HPPA (bug #398849).
+
+  14 Jan 2012; Jeroen Roovers <jer@gentoo.org> libidn-1.23.ebuild,
+  libidn-1.24.ebuild:
+  Replace dodoc with DOCS by Agostino Sarubbo.
+
+  14 Jan 2012; Agostino Sarubbo <ago@gentoo.org> libidn-1.23.ebuild:
+  Stable for AMD64, wrt bug #398849
+
+  13 Jan 2012; Jeroen Roovers <jer@gentoo.org> libidn-1.24.ebuild:
+  Update LICENSE.
+
+*libidn-1.24 (12 Jan 2012)
+
+  12 Jan 2012; Jeroen Roovers <jer@gentoo.org> +libidn-1.24.ebuild:
+  Version bump.
+
+  28 Nov 2011; Jeroen Roovers <jer@gentoo.org> libidn-1.22-r1.ebuild,
+  libidn-1.23.ebuild:
+  Restore virtual/jdk deps.
+
+*libidn-1.23 (27 Nov 2011)
+
+  27 Nov 2011; Jeroen Roovers <jer@gentoo.org> libidn-1.22-r1.ebuild,
+  +libidn-1.23.ebuild:
+  Version bump. Do not use autotools-utils.eclass (bug #392161).
+
+*libidn-1.22-r1 (18 Oct 2011)
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> +libidn-1.22-r1.ebuild:
+  Remove .la file when USE=-static-libs by Hans (bug #386929).
 
   01 Aug 2011; Jeroen Roovers <jer@gentoo.org> -libidn-1.19.ebuild,
   -libidn-1.20.ebuild, -libidn-1.21.ebuild:
@@ -544,4 +649,3 @@
 
   01 Mar 2004; Caleb Tennis <caleb@gentoo.org> libidn-0.3.7.ebuild:
   Initial import - see bug #41001
-

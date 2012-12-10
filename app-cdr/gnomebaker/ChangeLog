@@ -1,6 +1,39 @@
 # ChangeLog for app-cdr/gnomebaker
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/gnomebaker/ChangeLog,v 1.58 2011/03/27 09:59:46 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/gnomebaker/ChangeLog,v 1.65 2012/10/25 18:28:40 eva Exp $
+
+  25 Oct 2012; Gilles Dartiguelongue <eva@gentoo.org> -gnomebaker-0.6.4.ebuild,
+  gnomebaker-0.6.4-r1.ebuild:
+  Re-add mistakenly dropped gstreamer slots. Move G2CONF to src_prepare, it
+  needs not to be defined for binpkg. Drop old revision.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gnomebaker-0.6.4.ebuild,
+  gnomebaker-0.6.4-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> gnomebaker-0.6.4-r1.ebuild:
+  ia64/sparc stable wrt #399921
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gnomebaker-0.6.4-r1.ebuild:
+  ppc64/x86 stable wrt #399921
+
+  24 Feb 2012; Brent Baude <ranger@gentoo.org> gnomebaker-0.6.4-r1.ebuild:
+  Marking gnomebaker-0.6.4-r1 ppc for bug 399921
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> gnomebaker-0.6.4-r1.ebuild:
+  Stable for amd64, wrt bug #399921
+
+*gnomebaker-0.6.4-r1 (07 Aug 2011)
+
+  07 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  +gnomebaker-0.6.4-r1.ebuild, +files/gnomebaker-0.6.4-implicits.patch,
+  +files/gnomebaker-0.6.4-ldadd.patch,
+  files/gnomebaker-0.6.4-libnotify-0.7.patch,
+  +files/gnomebaker-0.6.4-mimetype.patch,
+  +files/gnomebaker-0.6.4-seldata.patch:
+  Apply fedora patches, fix implicits, simplify deps, bump to EAPI4. Fixes bug
+  272006
 
   27 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
   gnomebaker-0.6.4.ebuild:

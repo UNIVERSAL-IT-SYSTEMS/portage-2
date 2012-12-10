@@ -1,13 +1,14 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/mysql.eclass,v 1.161 2011/07/08 11:35:01 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/mysql.eclass,v 1.176 2012/11/01 20:22:57 robbat2 Exp $
 
 # @ECLASS: mysql.eclass
 # @MAINTAINER:
-# Author: Francesco Riosa (Retired) <vivo@gentoo.org>
-# Maintainers: MySQL Team <mysql-bugs@gentoo.org>
-#		- Luca Longinotti <chtekk@gentoo.org>
-#		- Robin H. Johnson <robbat2@gentoo.org>
+# MySQL Team <mysql-bugs@gentoo.org>
+# Luca Longinotti <chtekk@gentoo.org>
+# Robin H. Johnson <robbat2@gentoo.org>
+# @AUTHOR:
+# Francesco Riosa (Retired) <vivo@gentoo.org>
 # @BLURB: This eclass provides most of the functions for mysql ebuilds
 # @DESCRIPTION:
 # The mysql.eclass provides almost all the code to build the mysql ebuilds
@@ -18,7 +19,7 @@
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
 
-inherit eutils flag-o-matic gnuconfig autotools mysql_fx versionator toolchain-funcs
+inherit eutils flag-o-matic gnuconfig autotools multilib mysql_fx versionator toolchain-funcs
 
 # Shorten the path because the socket path length must be shorter than 107 chars
 # and we will run a mysql server during test phase
@@ -28,11 +29,11 @@ S="${WORKDIR}/mysql"
 if [[ "${MY_EXTRAS_VER}" == "live" ]]; then
 	EGIT_PROJECT=mysql-extras
 	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/mysql-extras.git"
-	inherit git
+	inherit git-2
 fi
 
 case "${EAPI:-0}" in
-	2)
+	2|3|4|5)
 		EXPORT_FUNCTIONS pkg_setup \
 					src_unpack src_prepare \
 					src_configure src_compile \
@@ -126,7 +127,7 @@ PERCONA_VER="${PERCONA_VER}"
 # Be warned, *DEPEND are version-dependant
 # These are used for both runtime and compiletime
 DEPEND="ssl? ( >=dev-libs/openssl-0.9.6d )
-		userland_GNU? ( sys-process/procps )
+		kernel_linux? ( sys-process/procps )
 		>=sys-apps/sed-4
 		>=sys-apps/texinfo-4.7-r1
 		>=sys-libs/readline-4.1
@@ -141,12 +142,16 @@ for i in "mysql" "mysql-community" "mysql-cluster" "mariadb" ; do
 	DEPEND="${DEPEND} !dev-db/${i}"
 done
 
+# prefix: first need to implement something for #196294
 RDEPEND="${DEPEND}
-		!minimal? ( dev-db/mysql-init-scripts )
+		!minimal? ( !prefix? ( dev-db/mysql-init-scripts ) )
 		selinux? ( sec-policy/selinux-mysql )"
 
+DEPEND="${DEPEND}
+		virtual/yacc"
+
 if [ "${EAPI:-0}" = "2" ]; then
-	DEPEND="${DEPEND} static? ( || ( sys-libs/ncurses[static-libs] <=sys-libs/ncurses-5.7-r3 ) )"
+	DEPEND="${DEPEND} static? ( sys-libs/ncurses[static-libs] )"
 fi
 
 # compile-time-only
@@ -359,21 +364,21 @@ mysql_disable_test() {
 # Initialize global variables
 # 2005-11-19 <vivo@gentoo.org>
 mysql_init_vars() {
-	MY_SHAREDSTATEDIR=${MY_SHAREDSTATEDIR="/usr/share/mysql"}
-	MY_SYSCONFDIR=${MY_SYSCONFDIR="/etc/mysql"}
-	MY_LIBDIR=${MY_LIBDIR="/usr/$(get_libdir)/mysql"}
-	MY_LOCALSTATEDIR=${MY_LOCALSTATEDIR="/var/lib/mysql"}
-	MY_LOGDIR=${MY_LOGDIR="/var/log/mysql"}
-	MY_INCLUDEDIR=${MY_INCLUDEDIR="/usr/include/mysql"}
+	MY_SHAREDSTATEDIR=${MY_SHAREDSTATEDIR="${EPREFIX}/usr/share/mysql"}
+	MY_SYSCONFDIR=${MY_SYSCONFDIR="${EPREFIX}/etc/mysql"}
+	MY_LIBDIR=${MY_LIBDIR="${EPREFIX}/usr/$(get_libdir)/mysql"}
+	MY_LOCALSTATEDIR=${MY_LOCALSTATEDIR="${EPREFIX}/var/lib/mysql"}
+	MY_LOGDIR=${MY_LOGDIR="${EPREFIX}/var/log/mysql"}
+	MY_INCLUDEDIR=${MY_INCLUDEDIR="${EPREFIX}/usr/include/mysql"}
 
 	if [[ -z "${MY_DATADIR}" ]] ; then
 		MY_DATADIR=""
-		if [[ -f "${MY_SYSCONFDIR}/my.cnf" ]] ; then
+		if [[ -f ${MY_SYSCONFDIR}/my.cnf ]] ; then
 			MY_DATADIR=`"my_print_defaults" mysqld 2>/dev/null \
 				| sed -ne '/datadir/s|^--datadir=||p' \
 				| tail -n1`
 			if [[ -z "${MY_DATADIR}" ]] ; then
-				MY_DATADIR=`grep ^datadir "${MY_SYSCONFDIR}/my.cnf" \
+				MY_DATADIR=`grep ^datadir ${MY_SYSCONFDIR}/my.cnf \
 				| sed -e 's/.*=\s*//' \
 				| tail -n1`
 			fi
@@ -455,7 +460,7 @@ configure_common() {
 	myconf="${myconf} --with-extra-charsets=all"
 	myconf="${myconf} --with-mysqld-user=mysql"
 	myconf="${myconf} --with-server"
-	myconf="${myconf} --with-unix-socket-path=/var/run/mysqld/mysqld.sock"
+	myconf="${myconf} --with-unix-socket-path=${EPREFIX}/var/run/mysqld/mysqld.sock"
 	myconf="${myconf} --without-libwrap"
 
 	if use static ; then
@@ -500,12 +505,13 @@ configure_common() {
 }
 
 configure_40_41_50() {
+	myconf="${myconf} --with-zlib-dir=${EPREFIX}/usr"
 	myconf="${myconf} $(use_with perl bench)"
 	myconf="${myconf} --enable-assembler"
 	myconf="${myconf} --with-extra-tools"
 	myconf="${myconf} --with-innodb"
 	myconf="${myconf} --without-readline"
-	myconf="${myconf} $(use_with ssl openssl)"
+	myconf="${myconf} $(use_with ssl openssl "${EPREFIX}/usr")"
 	mysql_version_is_at_least "5.0" || myconf="${myconf} $(use_with raid)"
 
 	# --with-vio is not needed anymore, it's on by default and
@@ -581,13 +587,13 @@ configure_51() {
 	# TODO: !!!! readd --without-readline
 	# the failure depend upon config/ac-macros/readline.m4 checking into
 	# readline.h instead of history.h
-	myconf="${myconf} $(use_with ssl ssl /usr)"
+	myconf="${myconf} $(use_with ssl ssl "${EPREFIX}"/usr)"
 	myconf="${myconf} --enable-assembler"
 	myconf="${myconf} --with-geometry"
 	myconf="${myconf} --with-readline"
-	myconf="${myconf} --with-zlib-dir=/usr/"
+	myconf="${myconf} --with-zlib-dir=${EPREFIX}/usr/"
 	myconf="${myconf} --without-pstack"
-	myconf="${myconf} --with-plugindir=/usr/$(get_libdir)/mysql/plugin"
+	myconf="${myconf} --with-plugindir=${EPREFIX}/usr/$(get_libdir)/mysql/plugin"
 
 	# This is an explict die here, because if we just forcibly disable it, then the
 	# user's data is not accessible.
@@ -615,7 +621,7 @@ configure_51() {
 	| xargs -0 sed -r -n \
 		-e '/^MYSQL_STORAGE_ENGINE/{
 			s~MYSQL_STORAGE_ENGINE\([[:space:]]*\[?([-_a-z0-9]+)\]?.*,~\1 ~g ;
-			s~^([^ ]+).*~\1~gp; 
+			s~^([^ ]+).*~\1~gp;
 		}' \
 	| tr -s '\n' ' '
 	)"
@@ -708,7 +714,7 @@ configure_51() {
 
 	if pbxt_available && [[ "${PBXT_NEWSTYLE}" == "1" ]]; then
 		use pbxt \
-		&& plugins_dyn="${plugins_dyn} pbxt" \
+		&& plugins_sta="${plugins_sta} pbxt" \
 		|| plugins_dis="${plugins_dis} pbxt"
 	fi
 
@@ -738,7 +744,7 @@ pbxt_src_configure() {
 	eautoreconf
 
 	local myconf=""
-	myconf="${myconf} --with-mysql=${S} --libdir=/usr/$(get_libdir)"
+	myconf="${myconf} --with-mysql=${S} --libdir=${EPREFIX}/usr/$(get_libdir)"
 	use debug && myconf="${myconf} --with-debug=full"
 	econf ${myconf} || die "Problem configuring PBXT storage engine"
 }
@@ -784,7 +790,7 @@ mysql_pkg_setup() {
 	# bug 350844
 	case "${EAPI:-0}" in
 		0 | 1)
-			if use static && !built_with_use sys-libs/ncurses static-libs; then
+			if use static && ! built_with_use sys-libs/ncurses static-libs; then
 				die "To build MySQL statically you need to enable static-libs for sys-libs/ncurses"
 			fi
 			;;
@@ -834,8 +840,9 @@ mysql_pkg_setup() {
 	# But only for 5.0.8[3-6]!
 	if mysql_version_is_at_least "5.0.83"  && ! mysql_version_is_at_least 5.0.87 ; then
 		GCC_VER=$(gcc-version)
-		case ${GCC_VER} in
-			2*|3*|4.0|4.1|4.2)
+		case ${CHOST}:${GCC_VER} in
+			*-darwin*:4.*) : ;; # bug #310615
+			*:2*|*:3*|*:4.0|*:4.1|*:4.2)
 			eerror "Some releases of MySQL required a very new GCC, and then"
 			eerror "later release relaxed that requirement again. Either pick a"
 			eerror "MySQL >=5.0.87, or use a newer GCC."
@@ -973,14 +980,14 @@ mysql_src_prepare() {
 	&& use berkdb ; then
 		einfo "Fixing up berkdb buildsystem"
 		[[ -w "bdb/dist/ltmain.sh" ]] && cp -f "ltmain.sh" "bdb/dist/ltmain.sh"
-		cp -f "/usr/share/aclocal/libtool.m4" "bdb/dist/aclocal/libtool.ac" \
+		cp -f "${EPREFIX}/usr/share/aclocal/libtool.m4" "bdb/dist/aclocal/libtool.ac" \
 		|| die "Could not copy libtool.m4 to bdb/dist/"
 		#These files exist only with libtool-2*, and need to be included.
-		if [ -f '/usr/share/aclocal/ltsugar.m4' ]; then
-			cat "/usr/share/aclocal/ltsugar.m4" >>  "bdb/dist/aclocal/libtool.ac"
-			cat "/usr/share/aclocal/ltversion.m4" >>  "bdb/dist/aclocal/libtool.ac"
-			cat "/usr/share/aclocal/lt~obsolete.m4" >>  "bdb/dist/aclocal/libtool.ac"
-			cat "/usr/share/aclocal/ltoptions.m4" >>  "bdb/dist/aclocal/libtool.ac"
+		if [ -f ${EPREFIX}'/usr/share/aclocal/ltsugar.m4' ]; then
+			cat "${EPREFIX}/usr/share/aclocal/ltsugar.m4" >>  "bdb/dist/aclocal/libtool.ac"
+			cat "${EPREFIX}/usr/share/aclocal/ltversion.m4" >>  "bdb/dist/aclocal/libtool.ac"
+			cat "${EPREFIX}/usr/share/aclocal/lt~obsolete.m4" >>  "bdb/dist/aclocal/libtool.ac"
+			cat "${EPREFIX}/usr/share/aclocal/ltoptions.m4" >>  "bdb/dist/aclocal/libtool.ac"
 		fi
 		pushd "bdb/dist" &>/dev/null
 		sh s_all \
@@ -1041,12 +1048,12 @@ mysql_src_configure() {
 		filter-flags -fomit-frame-pointer
 
 	econf \
-		--libexecdir="/usr/sbin" \
-		--sysconfdir="${MY_SYSCONFDIR}" \
-		--localstatedir="${MY_LOCALSTATEDIR}" \
-		--sharedstatedir="${MY_SHAREDSTATEDIR}" \
-		--libdir="${MY_LIBDIR}" \
-		--includedir="${MY_INCLUDEDIR}" \
+		--libexecdir="${EPREFIX}"/usr/sbin \
+		--sysconfdir=${MY_SYSCONFDIR} \
+		--localstatedir=${MY_LOCALSTATEDIR} \
+		--sharedstatedir=${MY_SHAREDSTATEDIR} \
+		--libdir=${MY_LIBDIR} \
+		--includedir=${MY_INCLUDEDIR} \
 		--with-low-memory \
 		--with-client-ldflags=-lstdc++ \
 		--enable-thread-safe-client \
@@ -1091,7 +1098,7 @@ mysql_src_install() {
 
 	emake install \
 		DESTDIR="${D}" \
-		benchdir_root="${MY_SHAREDSTATEDIR}" \
+		benchdir_root=${MY_SHAREDSTATEDIR} \
 		testroot="${MY_SHAREDSTATEDIR}" \
 		|| die "emake install failed"
 
@@ -1107,7 +1114,7 @@ mysql_src_install() {
 
 	# Various junk (my-*.cnf moved elsewhere)
 	einfo "Removing duplicate /usr/share/mysql files"
-	rm -Rf "${D}/usr/share/info"
+	rm -Rf "${ED}/usr/share/info"
 	for removeme in  "mysql-log-rotate" mysql.server* \
 		binary-configure* my-*.cnf mi_test_all*
 	do
@@ -1118,8 +1125,8 @@ mysql_src_install() {
 	if use minimal ; then
 		einfo "Remove all extra content for minimal build"
 		rm -Rf "${D}${MY_SHAREDSTATEDIR}"/{mysql-test,sql-bench}
-		rm -f "${D}"/usr/bin/{mysql{_install_db,manager*,_secure_installation,_fix_privilege_tables,hotcopy,_convert_table_format,d_multi,_fix_extensions,_zap,_explain_log,_tableinfo,d_safe,_install,_waitpid,binlog,test},myisam*,isam*,pack_isam}
-		rm -f "${D}/usr/sbin/mysqld"
+		rm -f "${ED}"/usr/bin/{mysql{_install_db,manager*,_secure_installation,_fix_privilege_tables,hotcopy,_convert_table_format,d_multi,_fix_extensions,_zap,_explain_log,_tableinfo,d_safe,_install,_waitpid,binlog,test},myisam*,isam*,pack_isam}
+		rm -f "${ED}/usr/sbin/mysqld"
 		rm -f "${D}${MY_LIBDIR}"/lib{heap,merge,nisam,my{sys,strings,sqld,isammrg,isam},vio,dbug}.a
 	fi
 
@@ -1137,12 +1144,16 @@ mysql_src_install() {
 		5.[1-9]|6*|7*) mysql_mycnf_version="5.1" ;;
 	esac
 	einfo "Building default my.cnf (${mysql_mycnf_version})"
-	insinto "${MY_SYSCONFDIR}"
+	insinto "${MY_SYSCONFDIR#${EPREFIX}}"
 	doins scripts/mysqlaccess.conf
 	mycnf_src="my.cnf-${mysql_mycnf_version}"
 	sed -e "s!@DATADIR@!${MY_DATADIR}!g" \
+		-e "s!/tmp!${EPREFIX}/tmp!" \
+		-e "s!/usr!${EPREFIX}/usr!" \
+		-e "s!= /var!= ${EPREFIX}/var!" \
 		"${FILESDIR}/${mycnf_src}" \
 		> "${TMPDIR}/my.cnf.ok"
+	use prefix && sed -i -e '/^user[ 	]*= mysql$/d' "${TMPDIR}/my.cnf.ok"
 	if use latin1 ; then
 		sed -i \
 			-e "/character-set/s|utf8|latin1|g" \
@@ -1156,16 +1167,16 @@ mysql_src_install() {
 		# Empty directories ...
 		diropts "-m0750"
 		if [[ "${PREVIOUS_DATADIR}" != "yes" ]] ; then
-			dodir "${MY_DATADIR}"
-			keepdir "${MY_DATADIR}"
+			dodir "${MY_DATADIR#${EPREFIX}}"
+			keepdir "${MY_DATADIR#${EPREFIX}}"
 			chown -R mysql:mysql "${D}/${MY_DATADIR}"
 		fi
 
 		diropts "-m0755"
-		for folder in "${MY_LOGDIR}" "/var/run/mysqld" ; do
+		for folder in "${MY_LOGDIR#${EPREFIX}}" "/var/run/mysqld" ; do
 			dodir "${folder}"
 			keepdir "${folder}"
-			chown -R mysql:mysql "${D}/${folder}"
+			chown -R mysql:mysql "${ED}/${folder}"
 		done
 	fi
 
@@ -1195,7 +1206,7 @@ mysql_src_install() {
 
 	fi
 
-	mysql_lib_symlinks "${D}"
+	mysql_lib_symlinks "${ED}"
 }
 
 # @FUNCTION: mysql_pkg_preinst
@@ -1219,7 +1230,7 @@ mysql_pkg_postinst() {
 	mysql_init_vars
 
 	# Check FEATURES="collision-protect" before removing this
-	[[ -d "${ROOT}/var/log/mysql" ]] || install -d -m0750 -o mysql -g mysql "${ROOT}${MY_LOGDIR}"
+	[[ -d "${EROOT}/var/log/mysql" ]] || install -d -m0750 -o mysql -g mysql "${ROOT}${MY_LOGDIR}"
 
 	# Secure the logfiles
 	touch "${ROOT}${MY_LOGDIR}"/mysql.{log,err}
@@ -1258,10 +1269,10 @@ mysql_pkg_postinst() {
 	fi
 
 	if pbxt_available && use pbxt ; then
-		# TODO: explain it better
-		elog "    mysql> INSTALL PLUGIN pbxt SONAME 'libpbxt.so';"
-		elog "    mysql> CREATE TABLE t1 (c1 int, c2 text) ENGINE=pbxt;"
-		elog "if, after that, you cannot start the MySQL server,"
+                elog "Note: PBXT is now statically built when enabled."
+                elog ""
+                elog "If, you previously installed as a plugin and "
+                elog "you cannot start the MySQL server,"
 		elog "remove the ${MY_DATADIR}/mysql/plugin.* files, then"
 		elog "use the MySQL upgrade script to restore the table"
 		elog "or execute the following SQL command:"
@@ -1277,11 +1288,34 @@ mysql_pkg_postinst() {
 	&& elog "Berkeley DB support is deprecated and will be removed in future versions!"
 }
 
+# @FUNCTION: mysql_getopt
+# @DESCRIPTION:
+# Use my_print_defaults to extract specific config options
+mysql_getopt() {
+	local mypd="${EROOT}"/usr/bin/my_print_defaults
+	section="$1"
+	flag="--${2}="
+	"${mypd}" $section | sed -n "/^${flag}/p"
+}
+
+# @FUNCTION: mysql_getoptval
+# @DESCRIPTION:
+# Use my_print_defaults to extract specific config options
+mysql_getoptval() {
+	local mypd="${EROOT}"/usr/bin/my_print_defaults
+	section="$1"
+	flag="--${2}="
+	"${mypd}" $section | sed -n "/^${flag}/s,${flag},,gp"
+}
+
 # @FUNCTION: mysql_pkg_config
 # @DESCRIPTION:
 # Configure mysql environment.
 mysql_pkg_config() {
 	local old_MY_DATADIR="${MY_DATADIR}"
+	local old_HOME="${HOME}"
+	# my_print_defaults needs to read stuff in $HOME/.my.cnf
+	export HOME=/root
 
 	# Make sure the vars are correctly initialized
 	mysql_init_vars
@@ -1293,10 +1327,12 @@ mysql_pkg_config() {
 	fi
 
 	if [[ ( -n "${MY_DATADIR}" ) && ( "${MY_DATADIR}" != "${old_MY_DATADIR}" ) ]]; then
-		local MY_DATADIR_s="$(strip_duplicate_slashes ${ROOT}/${MY_DATADIR})"
-		local old_MY_DATADIR_s="$(strip_duplicate_slashes ${ROOT}/${old_MY_DATADIR})"
+		local MY_DATADIR_s="${ROOT}/${MY_DATADIR}"
+		MY_DATADIR_s="${MY_DATADIR_s%%/}"
+		local old_MY_DATADIR_s="${ROOT}/${old_MY_DATADIR}"
+		old_MY_DATADIR_s="${old_MY_DATADIR_s%%/}"
 
-		if [[ -d "${old_MY_DATADIR_s}" ]]; then
+		if [[ -d "${old_MY_DATADIR_s}" ]]  && [[ "${old_MY_DATADIR_s}" != / ]]; then
 			if [[ -d "${MY_DATADIR_s}" ]]; then
 				ewarn "Both ${old_MY_DATADIR_s} and ${MY_DATADIR_s} exist"
 				ewarn "Attempting to use ${MY_DATADIR_s} and preserving ${old_MY_DATADIR_s}"
@@ -1320,8 +1356,27 @@ mysql_pkg_config() {
 	local pwd2="b"
 	local maxtry=15
 
-	if [ -z "${MYSQL_ROOT_PASSWORD}" -a -f "${ROOT}/root/.my.cnf" ]; then
-		MYSQL_ROOT_PASSWORD="$(sed -n -e '/^password=/s,^password=,,gp' "${ROOT}/root/.my.cnf")"
+	if [ -z "${MYSQL_ROOT_PASSWORD}" ]; then
+		MYSQL_ROOT_PASSWORD="$(mysql_getoptval 'client mysql' password)"
+	fi
+	MYSQL_TMPDIR="$(mysql_getoptval mysqld tmpdir)"
+	# These are dir+prefix
+	MYSQL_RELAY_LOG="$(mysql_getoptval mysqld relay-log)"
+	MYSQL_RELAY_LOG=${MYSQL_RELAY_LOG%/*}
+	MYSQL_LOG_BIN="$(mysql_getoptval mysqld log-bin)"
+	MYSQL_LOG_BIN=${MYSQL_LOG_BIN%/*}
+
+	if [[ ! -d "${EROOT}"/$MYSQL_TMPDIR ]]; then
+		einfo "Creating MySQL tmpdir $MYSQL_TMPDIR"
+		install -d -m 770 -o mysql -g mysql "${EROOT}"/$MYSQL_TMPDIR
+	fi
+	if [[ ! -d "${EROOT}"/$MYSQL_LOG_BIN ]]; then
+		einfo "Creating MySQL log-bin directory $MYSQL_LOG_BIN"
+		install -d -m 770 -o mysql -g mysql "${EROOT}"/$MYSQL_LOG_BIN
+	fi
+	if [[ ! -d "${EROOT}"/$MYSQL_RELAY_LOG ]]; then
+		einfo "Creating MySQL relay-log directory $MYSQL_RELAY_LOG"
+		install -d -m 770 -o mysql -g mysql "${EROOT}"/$MYSQL_RELAY_LOG
 	fi
 
 	if [[ -d "${ROOT}/${MY_DATADIR}/mysql" ]] ; then
@@ -1352,7 +1407,7 @@ mysql_pkg_config() {
 		unset pwd1 pwd2
 	fi
 
-	local options=""
+	local options="--log-warnings=0"
 	local sqltmp="$(emktemp)"
 
 	local help_tables="${ROOT}${MY_SHAREDSTATEDIR}/fill_help_tables.sql"
@@ -1361,11 +1416,33 @@ mysql_pkg_config() {
 	|| touch "${TMPDIR}/fill_help_tables.sql"
 	help_tables="${TMPDIR}/fill_help_tables.sql"
 
+	# Figure out which options we need to disable to do the setup
+	helpfile="${TMPDIR}/mysqld-help"
+	${EROOT}/usr/sbin/mysqld --verbose --help >"${helpfile}" 2>/dev/null
+	for opt in grant-tables host-cache name-resolve networking slave-start bdb \
+		federated innodb ssl log-bin relay-log slow-query-log external-locking \
+		ndbcluster log-slave-updates \
+		; do
+		optexp="--(skip-)?${opt}" optfull="--loose-skip-${opt}"
+		egrep -sq -- "${optexp}" "${helpfile}" && options="${options} ${optfull}"
+	done
+	# But some options changed names
+	egrep -sq external-locking "${helpfile}" && \
+	options="${options/skip-locking/skip-external-locking}"
+
+	use prefix || options="${options} --user=mysql"
+
 	pushd "${TMPDIR}" &>/dev/null
-	"${ROOT}/usr/bin/mysql_install_db" >"${TMPDIR}"/mysql_install_db.log 2>&1
+	#cmd="'${EROOT}/usr/share/mysql/scripts/mysql_install_db' '--basedir=${EPREFIX}/usr' ${options}"
+	cmd=${EROOT}usr/share/mysql/scripts/mysql_install_db
+	[ -f ${cmd} ] || cmd=${EROOT}usr/bin/mysql_install_db
+	cmd="'$cmd' '--basedir=${EPREFIX}/usr' ${options}"
+	einfo "Command: $cmd"
+	eval $cmd \
+		>"${TMPDIR}"/mysql_install_db.log 2>&1
 	if [ $? -ne 0 ]; then
 		grep -B5 -A999 -i "ERROR" "${TMPDIR}"/mysql_install_db.log 1>&2
-		die "Failed to run mysql_install_db. Please review /var/log/mysql/mysqld.err AND ${TMPDIR}/mysql_install_db.log"
+		die "Failed to run mysql_install_db. Please review ${EPREFIX}/var/log/mysql/mysqld.err AND ${TMPDIR}/mysql_install_db.log"
 	fi
 	popd &>/dev/null
 	[[ -f "${ROOT}/${MY_DATADIR}/mysql/user.frm" ]] \
@@ -1373,24 +1450,10 @@ mysql_pkg_config() {
 	chown -R mysql:mysql "${ROOT}/${MY_DATADIR}" 2>/dev/null
 	chmod 0750 "${ROOT}/${MY_DATADIR}" 2>/dev/null
 
-	# Figure out which options we need to disable to do the setup
-	helpfile="${TMPDIR}/mysqld-help"
-	${ROOT}/usr/sbin/mysqld --verbose --help >"${helpfile}" 2>/dev/null
-	for opt in grant-tables host-cache name-resolve networking slave-start bdb \
-		federated innodb ssl log-bin relay-log slow-query-log external-locking \
-		ndbcluster \
-		; do
-		optexp="--(skip-)?${opt}" optfull="--skip-${opt}"
-		egrep -sq -- "${optexp}" "${helpfile}" && options="${options} ${optfull}"
-	done
-	# But some options changed names
-	egrep -sq external-locking "${helpfile}" && \
-	options="${options/skip-locking/skip-external-locking}"
-
 	if mysql_version_is_at_least "4.1.3" ; then
 		# Filling timezones, see
 		# http://dev.mysql.com/doc/mysql/en/time-zone-support.html
-		"${ROOT}/usr/bin/mysql_tzinfo_to_sql" "${ROOT}/usr/share/zoneinfo" > "${sqltmp}" 2>/dev/null
+		"${EROOT}/usr/bin/mysql_tzinfo_to_sql" "${EROOT}/usr/share/zoneinfo" > "${sqltmp}" 2>/dev/null
 
 		if [[ -r "${help_tables}" ]] ; then
 			cat "${help_tables}" >> "${sqltmp}"
@@ -1400,12 +1463,13 @@ mysql_pkg_config() {
 	einfo "Creating the mysql database and setting proper"
 	einfo "permissions on it ..."
 
-	local socket="${ROOT}/var/run/mysqld/mysqld${RANDOM}.sock"
-	local pidfile="${ROOT}/var/run/mysqld/mysqld${RANDOM}.pid"
-	local mysqld="${ROOT}/usr/sbin/mysqld \
+	local socket="${EROOT}/var/run/mysqld/mysqld${RANDOM}.sock"
+	local pidfile="${EROOT}/var/run/mysqld/mysqld${RANDOM}.pid"
+	local mysqld="${EROOT}/usr/sbin/mysqld \
 		${options} \
 		--user=mysql \
-		--basedir=${ROOT}/usr \
+		--log-warnings=0 \
+		--basedir=${EROOT}/usr \
 		--datadir=${ROOT}/${MY_DATADIR} \
 		--max_allowed_packet=8M \
 		--net_buffer_length=16K \
@@ -1414,6 +1478,7 @@ mysql_pkg_config() {
 		--pid-file=${pidfile}"
 	#einfo "About to start mysqld: ${mysqld}"
 	ebegin "Starting mysqld"
+	einfo "Command ${mysqld}"
 	${mysqld} &
 	rc=$?
 	while ! [[ -S "${socket}" || "${maxtry}" -lt 1 ]] ; do
@@ -1430,18 +1495,18 @@ mysql_pkg_config() {
 	ebegin "Setting root password"
 	# Do this from memory, as we don't want clear text passwords in temp files
 	local sql="UPDATE mysql.user SET Password = PASSWORD('${MYSQL_ROOT_PASSWORD}') WHERE USER='root'"
-	"${ROOT}/usr/bin/mysql" \
+	"${EROOT}/usr/bin/mysql" \
 		--socket=${socket} \
 		-hlocalhost \
 		-e "${sql}"
 	eend $?
 
 	ebegin "Loading \"zoneinfo\", this step may require a few seconds ..."
-	"${ROOT}/usr/bin/mysql" \
+	"${EROOT}/usr/bin/mysql" \
 		--socket=${socket} \
 		-hlocalhost \
 		-uroot \
-		-p"${MYSQL_ROOT_PASSWORD}" \
+		--password="${MYSQL_ROOT_PASSWORD}" \
 		mysql < "${sqltmp}"
 	rc=$?
 	eend $?
@@ -1459,5 +1524,5 @@ mysql_pkg_config() {
 # @DESCRIPTION:
 # Remove mysql symlinks.
 mysql_pkg_postrm() {
-	: # mysql_lib_symlinks "${D}"
+	: # mysql_lib_symlinks "${ED}"
 }

@@ -1,6 +1,65 @@
 # ChangeLog for net-libs/opal
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/opal/ChangeLog,v 1.73 2011/05/24 13:30:06 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/opal/ChangeLog,v 1.84 2012/12/03 23:25:27 neurogeek Exp $
+
+*opal-3.10.9 (03 Dec 2012)
+
+  03 Dec 2012; Jesus Rivero <neurogeek@gentoo.org> -opal-3.10.8-r1.ebuild,
+  -files/opal-3.10.8-avoid_cflags_mixup.patch,
+  -files/opal-3.10.8-disable-h323-workaround.patch,
+  -files/opal-3.10.8-labs_is_in_stdlib.patch,
+  -files/opal-3.10.8-svn_revision_override.patch, +opal-3.10.9.ebuild,
+  +files/opal-3.10.9-avoid_cflags_mixup.patch,
+  +files/opal-3.10.9-disable-h323-workaround.patch,
+  +files/opal-3.10.9-java-ruby-swig-fix.patch,
+  +files/opal-3.10.9-labs_is_in_stdlib.patch,
+  +files/opal-3.10.9-svn_revision_override.patch:
+  Version bump. Fixes to bugs #439498 and #440184
+
+*opal-3.10.8-r1 (24 Oct 2012)
+
+  24 Oct 2012; Jesus Rivero <neurogeek@gentoo.org> -opal-3.10.8.ebuild,
+  +opal-3.10.8-r1.ebuild, +files/opal-3.10.8-avoid_cflags_mixup.patch:
+  Revbump. New patches to fix bug #439464 and fix C and CXX flags mixup in
+  plugins
+
+*opal-3.10.8 (23 Oct 2012)
+
+  23 Oct 2012; Jesus Rivero <neurogeek@gentoo.org> opal-3.6.8-r2.ebuild,
+  +opal-3.10.8.ebuild, +files/opal-3.10.8-disable-h323-workaround.patch,
+  +files/opal-3.10.8-labs_is_in_stdlib.patch,
+  +files/opal-3.10.8-svn_revision_override.patch, metadata.xml:
+  Version bump, fixing several bugs. Adjusted opal-3.6.8 dep on ptlib  <
+  2.10.8. Added myself as maintainer
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> opal-3.6.8-r2.ebuild:
+  alpha stable wrt #397617
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> opal-3.6.8-r2.ebuild:
+  ia64/sparc stable wrt #397617
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> opal-3.6.8-r2.ebuild:
+  Stable for ppc/ppc64; bug #397617
+
+  16 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -opal-3.6.8-r1.ebuild,
+  -opal-3.6.8.ebuild, opal-3.6.8-r2.ebuild:
+  Reduce versions using media-video/ffmpeg. Stable the version with
+  virutal/ffmpeg on x86.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> opal-3.6.8.ebuild,
+  opal-3.6.8-r1.ebuild, opal-3.6.8-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Set herd as primary maintainer as talked with volkmar.
+
+  09 Jan 2012; Agostino Sarubbo <ago@gentoo.org> opal-3.6.8-r2.ebuild:
+  Stable for AMD64, wrt bug #397617
+
+  04 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> opal-3.6.8-r2.ebuild,
+  +files/opal-3.6.8-lid-plugins-ldflags.patch:
+  Fix static libs, fix ldflags for plugins (bug 397681), and fix ptlib dep for
+  vxml
 
   24 May 2011; Peter Volkov <pva@gentoo.org> opal-3.6.8-r2.ebuild:
   Update another occurence of media-video/ffmpeg to virtual/ffmpeg.

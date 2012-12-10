@@ -1,21 +1,22 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/nfoview/nfoview-9999.ebuild,v 1.8 2011/06/12 01:23:22 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/nfoview/nfoview-9999.ebuild,v 1.11 2011/12/06 06:42:20 ssuominen Exp $
 
 EAPI=3
 
-PYTHON_DEPEND="2"
+PYTHON_DEPEND="3:3.2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="2.*"
 
 inherit distutils fdo-mime gnome2-utils
 if [[ ${PV} == "9999" ]] ; then
-	EGIT_REPO_URI="git://github.com/otsaloma/nfoview.git"
-	inherit git
+	EGIT_REPO_URI="git://github.com/otsaloma/nfoview.git
+		http://github.com/otsaloma/nfoview.git"
+	inherit git-2
 	SRC_URI=""
 	#KEYWORDS=""
 else
-	SRC_URI="http://download.gna.org/nfoview/1.9/${P}.tar.gz"
+	SRC_URI="http://download.gna.org/nfoview/1.10/${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 fi
 
@@ -26,7 +27,7 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 
-DEPEND="dev-python/pygtk"
+DEPEND="dev-python/pygobject:3"
 RDEPEND="${DEPEND}
 	media-fonts/terminus-font"
 
@@ -35,13 +36,13 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	fdo-mime_desktop_database_update
 	gnome2_icon_cache_update
+	fdo-mime_desktop_database_update
 	distutils_pkg_postinst
 }
 
 pkg_postrm() {
-	fdo-mime_desktop_database_update
 	gnome2_icon_cache_update
+	fdo-mime_desktop_database_update
 	distutils_pkg_postrm
 }

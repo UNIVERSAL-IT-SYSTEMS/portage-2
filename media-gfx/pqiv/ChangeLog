@@ -1,6 +1,34 @@
 # ChangeLog for media-gfx/pqiv
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/pqiv/ChangeLog,v 1.27 2010/06/22 08:34:56 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/pqiv/ChangeLog,v 1.35 2012/06/20 08:36:26 jdhore Exp $
+
+  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> pqiv-0.12.ebuild:
+  marked x86 per bug 422101
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> pqiv-0.12.ebuild:
+  Stable for amd64, wrt bug #422101
+
+*pqiv-0.12 (19 May 2012)
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org> +pqiv-0.12.ebuild:
+  Version bump wrt #416487 by Phillip Berndt
+
+  14 May 2012; Samuli Suominen <ssuominen@gentoo.org> -pqiv-0.10.1.ebuild:
+  old
+
+  13 May 2012; Jeff Horelick <jdhore@gentoo.org> pqiv-0.11.ebuild:
+  marked x86 per bug 415335
+
+  11 May 2012; Agostino Sarubbo <ago@gentoo.org> pqiv-0.11.ebuild:
+  Stable for amd64, wrt bug #415335
+
+  10 May 2012; Samuli Suominen <ssuominen@gentoo.org> pqiv-0.11.ebuild,
+  +files/pqiv-0.11-glib-2.31.patch:
+  Fix building with dev-libs/glib >= 2.31 wrt #415325 by Paul Hartman
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> pqiv-0.10.1.ebuild,
+  pqiv-0.11.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
 *pqiv-0.11 (22 Jun 2010)
 

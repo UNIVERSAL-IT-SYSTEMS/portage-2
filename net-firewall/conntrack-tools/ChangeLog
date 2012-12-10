@@ -1,6 +1,52 @@
 # ChangeLog for net-firewall/conntrack-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/conntrack-tools/ChangeLog,v 1.42 2011/05/23 10:53:01 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/conntrack-tools/ChangeLog,v 1.53 2012/10/29 12:36:43 jer Exp $
+
+  29 Oct 2012; Jeroen Roovers <jer@gentoo.org> conntrack-tools-1.4.0.ebuild:
+  Marked ~hppa (bug #440108).
+
+*conntrack-tools-1.4.0 (29 Oct 2012)
+
+  29 Oct 2012; Sergey Popov <pinkbyte@gentoo.org>
+  +conntrack-tools-1.4.0.ebuild:
+  Version bump
+
+  11 Sep 2012; Raúl Porcel <armin76@gentoo.org> conntrack-tools-0.9.14.ebuild,
+  conntrack-tools-1.0.0.ebuild, conntrack-tools-1.0.1.ebuild:
+  Drop sparc keywords
+
+  06 Sep 2012; Jeroen Roovers <jer@gentoo.org> conntrack-tools-1.2.2-r1.ebuild:
+  Fix installing documentation by Chris Mayo (bug #416787).
+
+*conntrack-tools-1.2.2-r1 (06 Sep 2012)
+
+  06 Sep 2012; Jeroen Roovers <jer@gentoo.org>
+  +conntrack-tools-1.2.2-r1.ebuild, +files/conntrackd.initd-r2:
+  Remove TCP window tracking check (bug #405919).
+
+  24 Aug 2012; Jeroen Roovers <jer@gentoo.org> conntrack-tools-1.2.2.ebuild:
+  Marked ~hppa (bug #432380).
+
+*conntrack-tools-1.2.2 (23 Aug 2012)
+
+  23 Aug 2012; Jeroen Roovers <jer@gentoo.org> +conntrack-tools-1.2.2.ebuild:
+  Version bump by Kerin Millar (bug #417939).
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> conntrack-tools-0.9.14.ebuild,
+  conntrack-tools-1.0.0.ebuild, conntrack-tools-1.0.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  14 Feb 2012; Jeroen Roovers <jer@gentoo.org> -conntrack-tools-0.9.9.ebuild:
+  Old.
+
+*conntrack-tools-1.0.1 (05 Jan 2012)
+
+  05 Jan 2012; Tim Harder <radhermit@gentoo.org> +conntrack-tools-1.0.1.ebuild:
+  Version bump. Update to EAPI 4.
+
+  26 Aug 2011; Matt Turner <mattst88@gentoo.org> conntrack-tools-0.9.9.ebuild,
+  conntrack-tools-0.9.14.ebuild, conntrack-tools-1.0.0.ebuild:
+  Add flex and bison to DEPEND, bug 378343.
 
 *conntrack-tools-1.0.0 (23 May 2011)
 

@@ -1,6 +1,45 @@
 # ChangeLog for dev-ruby/sary-ruby
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/sary-ruby/ChangeLog,v 1.41 2010/05/27 15:54:34 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/sary-ruby/ChangeLog,v 1.52 2012/10/07 16:49:11 armin76 Exp $
+
+  07 Oct 2012; Raúl Porcel <armin76@gentoo.org> sary-ruby-1.2.0-r2.ebuild,
+  sary-ruby-1.2.0-r3.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> sary-ruby-1.2.0-r2.ebuild,
+  sary-ruby-1.2.0-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  19 Mar 2012; Hans de Graaff <graaff@gentoo.org> -sary-ruby-1.2.0-r1.ebuild:
+  Remove old version.
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> sary-ruby-1.2.0-r2.ebuild:
+  ia64/sparc stable wrt #391587
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> sary-ruby-1.2.0-r2.ebuild:
+  Marking sary-ruby-1.2.0-r2 ppc64 for bug 391587
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> sary-ruby-1.2.0-r2.ebuild:
+  Marking sary-ruby-1.2.0-r2 ppc for bug 391587
+
+  16 Jan 2012; Jeroen Roovers <jer@gentoo.org> sary-ruby-1.2.0-r2.ebuild:
+  Stable for HPPA (bug #391587).
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> sary-ruby-1.2.0-r2.ebuild:
+  alpha/ia64/sparc stable wrt #391587
+
+*sary-ruby-1.2.0-r3 (28 Dec 2011)
+
+  28 Dec 2011; Hans de Graaff <graaff@gentoo.org> sary-ruby-1.2.0-r2.ebuild,
+  +sary-ruby-1.2.0-r3.ebuild:
+  Revision bump to drop ruby19 from stable version.
+
+  03 Dec 2011; Markos Chandras <hwoarang@gentoo.org> sary-ruby-1.2.0-r2.ebuild:
+  Stable on amd64 wrt bug #391587
+
+  01 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  sary-ruby-1.2.0-r2.ebuild:
+  x86 stable wrt bug #391587
 
 *sary-ruby-1.2.0-r2 (27 May 2010)
 

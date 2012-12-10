@@ -1,6 +1,23 @@
 # ChangeLog for sci-chemistry/eden
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/eden/ChangeLog,v 1.13 2010/09/18 15:53:18 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/eden/ChangeLog,v 1.18 2012/07/26 14:20:18 jlec Exp $
+
+  26 Jul 2012; Justin Lecher <jlec@gentoo.org> files/5.3-makefile-fixes.patch,
+  eden-5.3-r1.ebuild, +files/eden-5.3-impl-dec.patch, metadata.xml:
+  Respect the CFLAGS everywhere, #428190; fix some implicit declarations; bump
+  EAPI to 4
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> eden-5.3-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> eden-5.3-r1.ebuild:
+  x86 stable wrt bug #393823
+
+  18 Dec 2011; Agostino Sarubbo <ago@gentoo.org> eden-5.3-r1.ebuild:
+  Stable for AMD64, wrt bug #393823
+
+  16 Dec 2011; Justin Lecher <jlec@gentoo.org> eden-5.3-r1.ebuild:
+  Add missing die, use pkg-config for gsl detection.
 
 *eden-5.3-r1 (18 Sep 2010)
 

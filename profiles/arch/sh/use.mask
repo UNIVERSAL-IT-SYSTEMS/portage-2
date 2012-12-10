@@ -41,6 +41,7 @@ networkmanager
 lpsol
 openexr
 libev
+clang
 
 # Stuff that doesn't make sense on this arch
 3dfx
@@ -86,9 +87,16 @@ lqr
 musepack
 authdaemond
 v4l
-v4l2
 tokyocabinet
 wildmidi
+webp
+systemd
+soundcloud
+gts
+devil
+rtmp
+metalink
+lucene
 
 # 2006/02/05 - Donnie Berkholz <dberkholz@gentoo.org>
 # Modular X: mask for architectures on which they aren't available
@@ -112,7 +120,6 @@ video_cards_nsc
 video_cards_nv
 video_cards_r128
 video_cards_radeon
-video_cards_radeonhd
 video_cards_rendition
 video_cards_s3
 video_cards_s3virge
@@ -127,6 +134,17 @@ video_cards_vesa
 video_cards_via
 video_cards_voodoo
 
+# Matt Turner <mattst88@gentoo.org>
+# Mask more VIDEO_CARDs added with mesa-8.0
+video_cards_r100
+video_cards_r200
+video_cards_r300
+video_cards_r600
+video_cards_i915
+video_cards_i965
+# vmware wasn't added with mesa-8.0, but it should still be masked
+video_cards_vmware
+
 # 2006/03/07 - Donnie Berkholz <dberkholz@gentoo.org>
 # Modular X: mask for architectures lacking direct rendering      
 dri
@@ -136,9 +154,25 @@ nsplugin
 firefox
 nss
 seamonkey
-xulrunner
 
 # USE=audit masked prior to testing on alpha, arm, hppa, ppc64, s390, sh.
 # Bug #184563, 18 Sep 2007 
 # Robin H. Johnson <robbat2@gentoo.org>
 audit
+
+# Matt Turner <mattst88@gentoo.org) (10 Feb 2012)
+# mask d3d since we don't have wine
+d3d
+
+# Matt Turner <mattst88@gentoo.org) (10 Feb 2012)
+# mask wayland since dev-libs/wayland isn't keyworded
+wayland
+
+# Michał Górny <mgorny@gentoo.org> (31 Oct 2012)
+# Mask PYTHON_TARGETS for implementations not keyworded on this arch.
+python_targets_pypy1_8
+python_targets_pypy1_9
+python_targets_jython2_5
+python_single_target_pypy1_8
+python_single_target_pypy1_9
+python_single_target_jython2_5

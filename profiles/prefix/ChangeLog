@@ -1,6 +1,405 @@
 # ChangeLog for profiles/prefix
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/prefix/ChangeLog,v 1.287 2011/07/11 07:36:02 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/prefix/ChangeLog,v 1.373 2012/12/02 16:13:57 grobian Exp $
+
+  02 Dec 2012; Fabian Groffen <grobian@gentoo.org> darwin/package.mask:
+  Mask cmake-2.8.10.2 on Darwin for compilation failures
+
+  01 Dec 2012; Fabian Groffen <grobian@gentoo.org> make.defaults:
+  Override PYTHON_TARGETS with versions we have in Prefix
+
+  10 Nov 2012; Fabian Groffen <grobian@gentoo.org>
+  +sunos/solaris/profile.bashrc, profile.bashrc:
+  Define PREFIX_DISABLE_GEN_USR_LDSCRIPT for hosts that accidentially got
+  bootstrapped in this mode
+
+  10 Nov 2012; Fabian Groffen <grobian@gentoo.org> profile.bashrc:
+  Drop commented out AT_SYS_M4DIR code
+
+  10 Nov 2012; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Update mask message to point out the cause + bug ref
+
+  09 Nov 2012; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Mask libgpg-error-1.10-r1 due to broken build-system
+
+  01 Nov 2012; Fabian Groffen <grobian@gentoo.org>
+  darwin/macos/10.5/x64/package.unmask, darwin/macos/10.5/x86/package.unmask:
+  Don't unmask soylatte on 10.5/Intel, Apple just provides a genuine Java 1.6
+  there
+
+  30 Oct 2012; Fabian Groffen <grobian@gentoo.org>
+  +darwin/macos/10.5/ppc/package.unmask:
+  Unmask soylatte-jdk-bin on ppc-macos/10.5 now we added 7
+
+  30 Oct 2012; Fabian Groffen <grobian@gentoo.org>
+  darwin/macos/10.5/make.defaults, darwin/macos/10.6/make.defaults,
+  darwin/macos/10.7/make.defaults, darwin/macos/10.8/make.defaults:
+  Enable sandbox (seatbelt) on Mac OS X >=10.5
+
+  27 Oct 2012; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Mask sys-apps/coreutils-8.20 due to parallel make and libiconv issues
+
+  04 Oct 2012; Fabian Groffen <grobian@gentoo.org> mint/make.defaults:
+  Drop ${USE} from first assignment, bug #437086
+
+  30 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  +darwin/macos/10.8/package.mask:
+  Mask opengl-apple on Mountain Lion (10.8), bug #431182
+
+  29 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  darwin/macos/10.5/x64/package.mask:
+  Mask >=dev-java/apple-jdk-bin-1.6.0 on Leopard x64, since it will never find
+  the necessary files
+
+  29 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  +darwin/macos/10.4/x86/package.unmask, +darwin/macos/10.5/x64/package.unmask,
+  +darwin/macos/10.5/x86/package.unmask, darwin/macos/package.mask:
+  Unmask soylatte-jdk-bin on 10.4/x86, 10.5/x86 and 10.5/x64, because it is the
+  only Java6 provider there
+
+  09 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  +sunos/solaris/make.defaults, darwin/macos/make.defaults:
+  Make USE-ipv6 default on Mac OS X and Solaris (and derivatives) since support
+  is always available there.
+
+  26 Aug 2012; Christoph Junghans <ottxor@gentoo.org> darwin/package.use.mask:
+  mask utempter for x11-terms/eterm on Darwin, bug #388791
+
+  07 Aug 2012; Benda Xu <heroxbd@gentoo.org> package.mask:
+  mask baselayout-prefix-1.12.14-r1 for testing openrc. bug 415895.
+
+  05 Aug 2012; Fabian Groffen <grobian@gentoo.org>
+  +bsd/freebsd/9.1/package.mask:
+  Mask GCC >=4.3 on FreeBSD 9.1, bug #429992
+
+  01 Aug 2012; Fabian Groffen <grobian@gentoo.org>
+  darwin/macos/package.use.mask:
+  Update mplayer X-related USE masks for OSX
+
+  01 Aug 2012; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Mask grep-2.13 for misbehaviour, having lots of collateral damage, bug
+  #425668
+
+  31 Jul 2012; Fabian Groffen <grobian@gentoo.org> +darwin/macos/10.8/eapi,
+  +darwin/macos/10.8/make.defaults, +darwin/macos/10.8/package.provided,
+  +darwin/macos/10.8/package.use.mask, +darwin/macos/10.8/parent,
+  +darwin/macos/10.8/profile.bashrc, +darwin/macos/10.8/x64/make.defaults,
+  +darwin/macos/10.8/x64/package.mask,
+  +darwin/macos/10.8/x64/package.use.force,
+  +darwin/macos/10.8/x64/package.use.mask, +darwin/macos/10.8/x64/parent,
+  +darwin/macos/10.8/x64/use.mask, +darwin/macos/10.8/x86/make.defaults,
+  +darwin/macos/10.8/x86/package.mask,
+  +darwin/macos/10.8/x86/package.use.force,
+  +darwin/macos/10.8/x86/package.use.mask, +darwin/macos/10.8/x86/parent,
+  +darwin/macos/10.8/x86/use.mask:
+  Add Mac OS X Mountain Lion (10.8) profiles
+
+  14 Jun 2012; Davide Pesavento <pesa@gentoo.org>
+  darwin/macos/arch/ppc/package.use.mask:
+  Remove redundant mask of USE=jit for qt-script and qt-webkit on ppc, since
+  the flag is already masked in base profile.
+
+  06 Jun 2012; Benda Xu <heroxbd@gentoo.org> darwin/package.mask, package.mask,
+  sunos/solaris/package.mask:
+  move =dev-vcs/cvs-1.12.12* mask to darwin and solaris arch dir
+
+  26 May 2012; Fabian Groffen <grobian@gentoo.org> -package.provided:
+  Don't package.provide a member of a virtual (shadow)
+
+  23 May 2012; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  remove gcc-4.6.0 unmasking atom since it doesn't do anything besides cause
+  'unmatched atom' output
+
+  13 May 2012; Fabian Groffen <grobian@gentoo.org>
+  darwin/macos/arch/ppc/package.mask, sunos/solaris/arch/sparc/package.mask:
+  Mask dev-lang/v8 on Sparc and PowerPC platforms
+
+  11 May 2012; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Unmask python-2.7.3, shutil problem with chflags() has been fixed
+
+  09 May 2012; Fabian Groffen <grobian@gentoo.org> sunos/solaris/package.mask:
+  Mask dev-libs/libelf on Solaris, as it breaks the system
+
+  05 May 2012; Fabian Groffen <grobian@gentoo.org> darwin/package.mask:
+  gimp-2.7 was unmasked
+
+  05 May 2012; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Unmask gcc-4.6 in Prefix
+
+  03 May 2012; Fabian Groffen <grobian@gentoo.org>
+  darwin/macos/10.4/package.mask, darwin/macos/10.5/package.mask:
+  Mask >ghc-7 on Tiger and Leopard
+
+  30 Apr 2012; Fabian Groffen <grobian@gentoo.org>
+  darwin/macos/10.7/x86/package.mask, darwin/macos/arch/x64/package.mask:
+  Mask <tk-8.6 on 64-bits Mac OS X and all of Mac OS X Lion due to usage of the
+  removed Carbon interface, bug #408435
+
+  29 Apr 2012; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Mask newer pax-utils due to at* portability horror
+
+  26 Apr 2012; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Also mask python-2.7.3-r1
+
+  22 Apr 2012; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Mask python-2.7.3 for misbehaviour with repoman
+
+  03 Apr 2012: Benda XU <heroxbd@gentoo.org> linux/arm/make.defaults,
+  let arm prefix use arm instead of arm-linux as its keyword
+
+  28 Mar 2012; Benda XU<heroxbd@gentoo.org> package.provided:
+  use sys-apps/shadow-4.1 to meet virtual/shadow introduced on Mar 11
+
+  24 Mar 2012; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Revert back to masked Perl 5.14
+
+  24 Mar 2012; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Undo Perl 5.14 mask in Prefix
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  darwin/macos/package.use.mask, darwin/package.use.mask:
+  Remove mask for USE="esd" because there is no such flag in tree anymore.
+
+  12 Mar 2012; Michael Haubenwallner <haubi@gentoo.org>
+  +aix/7.1.0.0/package.provided, +aix/7.1.0.0/parent,
+  +aix/7.1.0.0/ppc/make.defaults, +aix/7.1.0.0/ppc/parent:
+  add profile for powerpc-ibm-aix7.1.0.0
+
+  09 Mar 2012; Jeremy Olexa <darkside@gentoo.org> linux/arm/make.defaults,
+  linux/ppc64/make.defaults:
+  Don't set ACCEPT_KEYWORDS to **, use ~*. bug 407499
+
+  06 Mar 2012; Jeremy Olexa <darkside@gentoo.org> +linux/ppc64/make.defaults,
+  +linux/ppc64/packages, +linux/ppc64/parent:
+  Add ppc64-linux profile for bug 407021 by Richard Yao
+
+  05 Mar 2012; Fabian Groffen <grobian@gentoo.org>
+  darwin/macos/arch/ppc/package.mask:
+  Mask binutils-apple-4.3 on PowerPC profiles, since Apple dropped entire
+  PowerPC support and hence the linker is not able to link any code
+
+  20 Feb 2012; Fabian Groffen <grobian@gentoo.org> packages:
+  Update packages to reflect same baselayout atom as in base profile, thanks
+  Askar Bektassov in bug #404247
+
+  19 Feb 2012; Fabian Groffen <grobian@gentoo.org> darwin/package.mask:
+  Mask FSF GCC on Mac OS X profiles, because Gentoo Prefix does not support its
+  usage, bug #402119
+
+  16 Feb 2012; Michael Haubenwallner <haubi@gentoo.org> aix/package.use.mask:
+  p.use.mask 'jit' for libpcre, is not ported to AIX
+
+  14 Feb 2012; Fabian Groffen <grobian@gentoo.org> sunos/solaris/package.mask:
+  Drop binutils mask, latest version is 2.22 which seems to compile again
+
+  13 Feb 2012; Fabian Groffen <grobian@gentoo.org> darwin/package.mask:
+  Unmask gimp-2.7 on Darwin, as it's the only gimp that compiles there
+
+  09 Feb 2012; Fabian Groffen <grobian@gentoo.org>
+  darwin/macos/package.use.mask:
+  Drop USE=slang mask on mc, bug #398415
+
+  06 Feb 2012; Jeremy Olexa <darkside@gentoo.org> packages:
+  Don't require virtual/modutils for Gentoo Prefix. Main tree did
+  's:sys-apps/module-init-tools:virtual/modutils:' - now we match
+
+  20 Jan 2012; Jeremy Olexa <darkside@gentoo.org> profile.bashrc:
+  comment out the AT_SYS_M4DIR stuff because it breaks packages (bug 397563)
+
+  14 Jan 2012; Kacper Kowalik <xarthisius@gentoo.org> package.use.mask:
+  Mask dev-python/numexpr[mkl]
+
+  09 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +linux/amd64/package.use.mask, +linux/x86/package.use.mask,
+  bsd/freebsd/arch/x86/package.use.mask,
+  darwin/macos/arch/x86/package.use.mask:
+  Unmask USE="jit" for webkit-gtk on amd64/arm/x86 prefix arches where
+  webkit-gtk is keyworded (bug #396313).
+
+  01 Jan 2012; Fabian Groffen <grobian@gentoo.org> darwin/package.use.mask:
+  Mask USE=server for sys-devel/gdb, since it's not supported on Darwin
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> mint/make.defaults:
+  Add static-libs to USE, bug #394853
+
+  30 Dec 2011; Fabian Groffen <grobian@gentoo.org> mint/package.use.mask:
+  Update USE-masks for MiNT, bug #394791
+
+  30 Dec 2011; Fabian Groffen <grobian@gentoo.org>
+  +bsd/freebsd/arch/sparc64/package.mask,
+  +bsd/freebsd/arch/sparc64/package.use.mask,
+  +bsd/freebsd/arch/x64/package.mask, +bsd/freebsd/arch/x64/package.use.mask,
+  +bsd/freebsd/arch/x64/parent, +bsd/freebsd/arch/x86/package.mask,
+  +bsd/freebsd/arch/x86/package.use.mask, bsd/freebsd/7.1/x64/parent,
+  bsd/freebsd/7.1/x86/parent, bsd/freebsd/7.2/x64/parent,
+  bsd/freebsd/7.2/x86/parent, bsd/freebsd/8.0/x64/parent,
+  bsd/freebsd/8.0/x86/parent, bsd/freebsd/8.1/sparc64/parent,
+  bsd/freebsd/8.1/x64/parent, bsd/freebsd/8.1/x86/parent,
+  bsd/freebsd/8.2/x64/parent, bsd/freebsd/8.2/x86/parent,
+  bsd/freebsd/9.0/x64/parent, bsd/freebsd/9.0/x86/parent:
+  Inherit FreeBSD arch-specific masks through arch sub-tree
+
+  30 Dec 2011; Fabian Groffen <grobian@gentoo.org>
+  +sunos/solaris/5.9/package.mask, +sunos/solaris/arch/sparc/package.mask,
+  +sunos/solaris/arch/sparc/package.use.mask,
+  +sunos/solaris/arch/sparc64/package.mask,
+  +sunos/solaris/arch/sparc64/package.use.mask,
+  +sunos/solaris/arch/sparc64/parent, +sunos/solaris/arch/x64/package.mask,
+  +sunos/solaris/arch/x64/package.use.mask, +sunos/solaris/arch/x64/parent,
+  +sunos/solaris/arch/x86/package.mask,
+  +sunos/solaris/arch/x86/package.use.mask,
+  sunos/solaris/5.9/sparc/package.mask, sunos/solaris/5.9/sparc/parent,
+  sunos/solaris/5.9/sparc64/package.mask, sunos/solaris/5.9/sparc64/parent,
+  sunos/solaris/5.10/sparc/package.mask,
+  sunos/solaris/5.10/sparc/package.use.mask, sunos/solaris/5.10/sparc/parent,
+  sunos/solaris/5.10/sparc64/package.mask,
+  sunos/solaris/5.10/sparc64/package.use.mask,
+  sunos/solaris/5.10/sparc64/parent, sunos/solaris/5.10/x64/parent,
+  sunos/solaris/5.10/x86/package.use.mask, sunos/solaris/5.10/x86/parent,
+  sunos/solaris/5.11/sparc/package.mask,
+  sunos/solaris/5.11/sparc/package.use.mask, sunos/solaris/5.11/sparc/parent,
+  sunos/solaris/5.11/sparc64/package.mask,
+  sunos/solaris/5.11/sparc64/package.use.mask,
+  sunos/solaris/5.11/sparc64/parent, sunos/solaris/5.11/x64/parent,
+  sunos/solaris/5.11/x86/package.use.mask, sunos/solaris/5.11/x86/parent,
+  sunos/solaris/package.use.mask:
+  Inherit Solaris arch-specific masks through arch sub-tree
+
+  30 Dec 2011; Fabian Groffen <grobian@gentoo.org>
+  +darwin/macos/10.4/package.use.mask, +darwin/macos/arch/ppc/package.mask,
+  +darwin/macos/arch/ppc/package.use.mask,
+  +darwin/macos/arch/ppc64/package.mask,
+  +darwin/macos/arch/ppc64/package.use.mask, +darwin/macos/arch/ppc64/parent,
+  +darwin/macos/arch/x64/package.mask, +darwin/macos/arch/x64/package.use.mask,
+  +darwin/macos/arch/x64/parent, +darwin/macos/arch/x86/package.mask,
+  +darwin/macos/arch/x86/package.use.mask,
+  darwin/macos/10.4/ppc/package.use.mask, darwin/macos/10.4/ppc/parent,
+  darwin/macos/10.4/ppc64/package.use.mask, darwin/macos/10.4/ppc64/parent,
+  darwin/macos/10.4/x86/package.use.mask, darwin/macos/10.4/x86/parent,
+  darwin/macos/10.5/package.use.mask, darwin/macos/10.5/ppc/package.use.mask,
+  darwin/macos/10.5/ppc/parent, darwin/macos/10.5/ppc64/package.use.mask,
+  darwin/macos/10.5/ppc64/parent, darwin/macos/10.5/x64/package.use.mask,
+  darwin/macos/10.5/x64/parent, darwin/macos/10.5/x86/package.use.mask,
+  darwin/macos/10.5/x86/parent, darwin/macos/10.6/package.use.mask,
+  darwin/macos/10.6/x64/package.use.mask, darwin/macos/10.6/x64/parent,
+  darwin/macos/10.6/x86/package.use.mask, darwin/macos/10.6/x86/parent,
+  darwin/macos/10.7/x64/package.use.mask, darwin/macos/10.7/x64/parent,
+  darwin/macos/10.7/x86/package.use.mask, darwin/macos/10.7/x86/parent,
+  darwin/macos/package.use.mask:
+  Inherit Mac OS X arch-specific masks through arch sub-tree
+
+  30 Dec 2011; Fabian Groffen <grobian@gentoo.org>
+  +sunos/solaris/5.11/sparc/package.mask, darwin/package.mask,
+  sunos/solaris/5.9/sparc/package.mask, sunos/solaris/5.9/sparc64/package.mask,
+  sunos/solaris/5.10/sparc/package.mask,
+  sunos/solaris/5.10/sparc64/package.mask,
+  sunos/solaris/5.11/sparc64/package.mask:
+  Mask pciutils on unsupported platforms, bug #395769
+
+  26 Dec 2011; Fabian Groffen <grobian@gentoo.org>
+  +bsd/freebsd/9.0/package.provided, +bsd/freebsd/9.0/parent,
+  +bsd/freebsd/9.0/x64/make.defaults, +bsd/freebsd/9.0/x64/parent,
+  +bsd/freebsd/9.0/x86/make.defaults, +bsd/freebsd/9.0/x86/parent:
+  Add profiles for FreeBSD 9.0, bug #395913
+
+  21 Dec 2011: XU, Benda <heroxbd@gentoo.org> linux/profile.bashrc:
+  Fix bug 289757 (again). fix grep pattern, add category to rule out cross gcc.
+
+  17 Dec 2011; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Drop mask for distcc, the --install option to distcc-config no longer exists
+
+  16 Dec 2011; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  lift net-proxy/dante mask, bug 389423
+
+  15 Dec 2011; Fabian Groffen <grobian@gentoo.org> profile.bashrc:
+  Define AT_SYS_M4DIR for autotools.eclass to always have
+  EPREFIX/usr/share/aclocal for cross-EPREFIX builds (migration from Prefix
+  local eclass modification)
+
+  15 Dec 2011; Jeremy Olexa <darkside@gentoo.org> linux/profile.bashrc:
+  Fix bug 289757 (again). Use ldd, use EPATCH_EXCLUDE, match new patch name as
+  well
+
+  08 Dec 2011; Fabian Groffen <grobian@gentoo.org> package.use.mask:
+  Mask USE=vanilla for gcc, since that results in a broken compiler on Prefix
+
+  08 Dec 2011; Fabian Groffen <grobian@gentoo.org>
+  +sunos/solaris/package.use.force, sunos/solaris/package.use.mask:
+  Unmask and force sys-devel/gcc libssp on Solaris, to get a non-broken
+  -fstack-protector(-all).
+
+  05 Dec 2011; Jeremy Olexa <darkside@gentoo.org> +linux/profile.bashrc:
+  Disable the automatic fortify patch for some older linux hosts, bug 289757
+
+  01 Dec 2011; Jeremy Olexa <darkside@gentoo.org> darwin/package.mask,
+  linux/package.use.mask, sunos/solaris/package.mask:
+  rm obsolete stuff
+
+  16 Nov 2011; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  lift games-misc/fortune-mod mask, bug 389943
+
+  16 Nov 2011; Fabian Groffen <grobian@gentoo.org>
+  +sunos/solaris/5.9/package.use.mask,
+  +sunos/solaris/5.10/sparc/package.use.mask,
+  +sunos/solaris/5.11/sparc/package.use.mask,
+  sunos/solaris/5.10/sparc64/package.use.mask,
+  sunos/solaris/5.11/sparc64/package.use.mask:
+  Mask USE=jit for dev-libs/libpcre on all sparc-based Solaris profiles, there
+  is no ASM for sparc/sparcv9
+
+  14 Nov 2011; Mike Frysinger <vapier@gentoo.org> packages:
+  sys-apps/net-tools is no longer in base profile.
+
+  06 Nov 2011; Fabian Groffen <grobian@gentoo.org>
+  +darwin/macos/10.5/package.mask, darwin/macos/10.4/package.mask:
+  Mask >=media-libs/mediastreamer-2.7.3 on Leopard (10.5) next to Tiger (10.4)
+  since it requires a newer CoreAudio.
+
+  01 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> aix/use.mask,
+  bsd/use.mask, darwin/use.mask, hpux/use.mask, irix/use.mask, mint/use.mask,
+  sunos/use.mask, windows/interix/use.mask, windows/winnt/use.mask:
+  Remove obsolete entries for USE="v4l2"
+
+  31 Oct 2011; Fabian Groffen <grobian@gentoo.org> package.mask:
+  Drop mask for no longer existing python-updater-0.8
+
+  28 Oct 2011; Jeremy Olexa <darkside@gentoo.org> package.mask:
+  mask misc packages
+
+  26 Sep 2011; Fabian Groffen <grobian@gentoo.org> bsd/freebsd/package.mask:
+  >=sys-devel/binutils-2.21.1 exhibits -ldl problem on FreeBSD
+
+  18 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> windows/interix/use.mask,
+  windows/winnt/use.mask:
+  Remove obsolete USE="hal" mask.
+
+  04 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  sunos/solaris/package.use.mask:
+  Mask introspection for poppler, because gir is doing linking wrong
+
+  03 Sep 2011; Fabian Groffen <grobian@gentoo.org> darwin/packages:
+  Add sys-libs/csu (crt1.o) to system set on Darwin, such that compilations can
+  do fully without Xcode
+
+  28 Aug 2011; Fabian Groffen <grobian@gentoo.org> darwin/use.mask:
+  Mask USE=introspection on Darwin, g-ir-tool it has a long way to go before
+  working there
+
+  25 Aug 2011; Fabian Groffen <grobian@gentoo.org> sunos/solaris/package.mask:
+  Mask gcc-4.3.[3456], since it doesn't compile, and isn't worth fixing --
+  4.5.2 is fully functional, bug #379723
+
+  11 Aug 2011; Fabian Groffen <grobian@gentoo.org>
+  sunos/solaris/5.10/sparc/package.mask,
+  sunos/solaris/5.10/sparc64/package.mask:
+  Drop masks for >=gcc-4.4 on Solaris/Sparc, compilation has been fixed
+
+  09 Aug 2011; Markus Duft <mduft@gentoo.org> windows/interix/package.use.mask:
+  add required USE masks for interix (apr and gettext)
+
+  04 Aug 2011; Jonathan Callen <abcd@gentoo.org>
+  +bsd/freebsd/8.2/x86/make.defaults, +bsd/freebsd/8.2/x86/parent:
+  Add a x86 freebsd 8.2 profile
 
   11 Jul 2011; Fabian Groffen <grobian@gentoo.org>
   darwin/macos/10.4/package.mask:

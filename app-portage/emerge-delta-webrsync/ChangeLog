@@ -1,6 +1,40 @@
 # ChangeLog for app-portage/emerge-delta-webrsync
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/emerge-delta-webrsync/ChangeLog,v 1.30 2011/07/20 00:22:27 zmedico Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-portage/emerge-delta-webrsync/ChangeLog,v 1.36 2012/11/30 00:11:33 zmedico Exp $
+
+*emerge-delta-webrsync-3.6.2 (30 Nov 2012)
+
+  30 Nov 2012; Zac Medico <zmedico@gentoo.org>
+  +emerge-delta-webrsync-3.6.2.ebuild, -emerge-delta-webrsync-3.6.1.ebuild:
+  3.6.2 version bump. This fixes bug #442190.
+
+*emerge-delta-webrsync-3.6.1 (14 Sep 2012)
+
+  14 Sep 2012; Zac Medico <zmedico@gentoo.org>
+  +emerge-delta-webrsync-3.6.1.ebuild, -emerge-delta-webrsync-3.6.ebuild:
+  3.6.1 version bump with fix for vecho rename in portage.
+
+*emerge-delta-webrsync-3.6 (19 Aug 2012)
+
+  19 Aug 2012; Zac Medico <zmedico@gentoo.org>
+  +emerge-delta-webrsync-3.6.ebuild:
+  3.6 version bump. This fixes bug #124072 (duplicate slashes in fetch URIs),
+  bug #147763 (honor http_proxy and ftp_proxy), bug #153513 (fix bugs in date
+  calculations involving daylight saving), bug #176008 (handle being called by
+  non-root users), bug #189084 (remove old umd5sum file from DISTDIR), bug
+  #198362 (don't hardcode /tmp for temp files), and bug #286373 (support
+  FEATURES=webrsync-gpg).
+
+  18 Aug 2012; Zac Medico <zmedico@gentoo.org> metadata.xml:
+  Change maintainer to dev-portage alias.
+
+  15 May 2012; Zac Medico <zmedico@gentoo.org>
+  emerge-delta-webrsync-3.5.1-r3.ebuild:
+  Fix print statement for python3 (bug #415623).
+
+  13 Dec 2011; Naohiro Aota <naota@gentoo.org>
+  emerge-delta-webrsync-3.5.1-r3.ebuild:
+  Add ~x86-fbsd wrt 323811
 
   20 Jul 2011; Zac Medico <zmedico@gentoo.org> files/3.5.1-metadata.patch:
   Bug #375635 - Replace 'hasq' with 'has'.

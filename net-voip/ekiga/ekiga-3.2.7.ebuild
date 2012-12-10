@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/ekiga/ekiga-3.2.7.ebuild,v 1.8 2011/02/28 17:15:37 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-voip/ekiga/ekiga-3.2.7.ebuild,v 1.18 2012/10/24 21:49:34 neurogeek Exp $
 
 EAPI=3
 
@@ -16,15 +16,15 @@ HOMEPAGE="http://www.ekiga.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="alpha amd64 ia64 ppc ~ppc64 sparc x86"
 IUSE="avahi dbus debug doc eds gconf gnome gstreamer h323 kde kontact ldap
 libnotify mmx nls +shm static v4l xcap xv"
 
 RDEPEND=">=dev-libs/glib-2.14.0:2
 	dev-libs/libsigc++:2
 	dev-libs/libxml2:2
-	>=net-libs/opal-3.6.8[audio,sip,video,debug=,h323?]
-	>=net-libs/ptlib-2.6.7[stun,video,wav,debug=]
+	<net-libs/opal-3.10.8[audio,sip,video,debug=,h323?]
+	<net-libs/ptlib-2.10.8[ldap?,stun,v4l?,video,wav,debug=]
 	>=x11-libs/gtk+-2.12.0:2
 	avahi? ( >=net-dns/avahi-0.6[dbus] )
 	dbus? ( >=sys-apps/dbus-0.36
@@ -44,7 +44,7 @@ RDEPEND=">=dev-libs/glib-2.14.0:2
 	xv? ( x11-libs/libXv )"
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35
-	>=dev-util/pkgconfig-0.20
+	virtual/pkgconfig
 	sys-devel/gettext
 	doc? ( app-text/scrollkeeper
 		app-text/gnome-doc-utils )
@@ -76,15 +76,7 @@ pkg_setup() {
 		forceconf="${forceconf} --disable-kab"
 	fi
 
-	# update scrollkeeper database if doc has been enabled
-	if use doc; then
-		SCROLLKEEPER_UPDATE=1
-	else
-		SCROLLKEEPER_UPDATE=0
-	fi
-
 	# dbus-service: always enable if dbus is enabled, no reason to disable it
-	# scrollkeeper: updates scrollkeeper database
 	# schemas-install: install gconf schemas
 	G2CONF="${G2CONF}
 		--disable-dependency-tracking
@@ -96,7 +88,6 @@ pkg_setup() {
 		$(use_enable debug gtk-debug)
 		$(use_enable debug opal-debug)
 		$(use_enable doc gdu)
-		$(use_enable doc scrollkeeper)
 		$(use_enable eds)
 		$(use_enable gconf)
 		$(use_enable gconf schemas-install)
@@ -140,6 +131,9 @@ src_prepare() {
 		sed -i -e "s:\(KDE_LIBS=.*\)\(-lkdeui\):\1-L${KDEDIR}/$(get_libdir) \2:" \
 			configure || die "sed failed"
 	fi
+
+	# Remove silly -D*_DISABLE_DEPRECATED CFLAGS
+	sed -e 's/-D[^\s\t]\+_DISABLE_DEPRECATED//g' -i configure || die
 }
 
 src_test() {

@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jsr173/jsr173-1.0-r1.ebuild,v 1.12 2010/04/24 17:13:54 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jsr173/jsr173-1.0-r1.ebuild,v 1.14 2012/04/15 18:36:49 vapier Exp $
 
 JAVA_PKG_IUSE="doc source"
 

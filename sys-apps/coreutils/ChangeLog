@@ -1,6 +1,140 @@
 # ChangeLog for sys-apps/coreutils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/ChangeLog,v 1.323 2011/04/26 20:01:08 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/ChangeLog,v 1.360 2012/12/08 19:40:53 vapier Exp $
+
+  08 Dec 2012; Mike Frysinger <vapier@gentoo.org> coreutils-8.20.ebuild:
+  Disable man generation for native compiles too #446438 by Mario Kicherer.
+
+  07 Dec 2012; Mike Frysinger <vapier@gentoo.org> coreutils-8.20.ebuild:
+  Fix cross-compiling #446104 and x32 building.
+
+  04 Dec 2012; <ago@gentoo.org> coreutils-8.20.ebuild:
+  Stable for x86, wrt bug #443536
+
+  02 Dec 2012; Anthony G. Basile <blueness@gentoo.org> coreutils-8.20.ebuild:
+  stable ppc ppc64, bug #443536
+
+  02 Dec 2012; Markus Meier <maekke@gentoo.org> coreutils-8.20.ebuild:
+  arm stable, bug #443536
+
+  30 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> coreutils-8.20.ebuild:
+  Stable on amd64, wrt bug #443536
+
+  29 Nov 2012; Jeroen Roovers <jer@gentoo.org> coreutils-8.20.ebuild:
+  Stable for HPPA (bug #443536).
+
+*coreutils-8.20 (23 Oct 2012)
+
+  23 Oct 2012; Mike Frysinger <vapier@gentoo.org> +coreutils-8.20.ebuild:
+  Version bump.
+
+  03 Oct 2012; Brent Baude <ranger@gentoo.org> coreutils-8.16.ebuild:
+  Marking coreutils-8.16 ppc for bug 431722
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> coreutils-8.16.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #431722
+
+  27 Sep 2012; Anthony G. Basile <blueness@gentoo.org> coreutils-8.16.ebuild:
+  stable ppc ppc64, bug #431722
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> coreutils-8.16.ebuild:
+  x86 stable wrt bug #431722
+
+  06 Sep 2012; Mike Frysinger <vapier@gentoo.org> coreutils-8.16.ebuild:
+  Hack the glibc-2.16/gets issue to current stable (already fixed in newer
+  versions).
+
+  23 Aug 2012; Markus Meier <maekke@gentoo.org> coreutils-8.16.ebuild:
+  arm stable, bug #431722
+
+*coreutils-8.19 (20 Aug 2012)
+
+  20 Aug 2012; Mike Frysinger <vapier@gentoo.org> +coreutils-8.19.ebuild:
+  Version bump.
+
+  20 Aug 2012; Jeroen Roovers <jer@gentoo.org> coreutils-8.16.ebuild:
+  Stable for HPPA (bug #431722).
+
+  18 Aug 2012; Mike Frysinger <vapier@gentoo.org> coreutils-8.18.ebuild:
+  Depend on USE=static-libs for lib packages when USE=static #425732 by
+  Christian Ruppert.
+
+  18 Aug 2012; Mike Frysinger <vapier@gentoo.org> coreutils-8.18.ebuild:
+  Fix static linking #425730 by Christian Ruppert.
+
+  18 Aug 2012; Agostino Sarubbo <ago@gentoo.org> coreutils-8.16.ebuild:
+  Stable for amd64, wrt bug #431722
+
+*coreutils-8.18 (12 Aug 2012)
+
+  12 Aug 2012; Mike Frysinger <vapier@gentoo.org> +coreutils-8.18.ebuild:
+  Version bump.
+
+  11 Jul 2012; Richard Yao <ryao@gentoo.org> coreutils-8.17.ebuild:
+  Support Gentoo FreeBSD, bug #424856, discussed with ssuominen in IRC
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> coreutils-8.17.ebuild:
+  Set gl_cv_func_realpath_works when cross-compiling #416629 by Robin Bankhead.
+
+*coreutils-8.17 (10 May 2012)
+
+  10 May 2012; Mike Frysinger <vapier@gentoo.org> +coreutils-8.17.ebuild:
+  Version bump.
+
+  28 Mar 2012; Mike Frysinger <vapier@gentoo.org> coreutils-8.16.ebuild:
+  Force mknod test to avoid dying when running as root #409919 by Paweł
+  Rumian.
+
+  27 Mar 2012; Mike Frysinger <vapier@gentoo.org> coreutils-8.5.ebuild,
+  coreutils-8.5-r1.ebuild, coreutils-8.7.ebuild, coreutils-8.8.ebuild,
+  coreutils-8.9.ebuild, coreutils-8.10.ebuild, coreutils-8.11.ebuild,
+  coreutils-8.12.ebuild, coreutils-8.13.ebuild, coreutils-8.14.ebuild,
+  coreutils-8.15.ebuild, coreutils-8.16.ebuild:
+  Migrate to gnu-alpha mirror.
+
+*coreutils-8.16 (27 Mar 2012)
+
+  27 Mar 2012; Mike Frysinger <vapier@gentoo.org> +coreutils-8.16.ebuild:
+  Version bump.
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> coreutils-8.14.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #397929
+
+  02 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> coreutils-8.14.ebuild:
+  ppc64 stable wrt #397929
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> coreutils-8.14.ebuild:
+  Marking coreutils-8.14 ppc for bug 397929
+
+  21 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> coreutils-8.14.ebuild:
+  x86 stable wrt bug #397929
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> coreutils-8.14.ebuild:
+  arm stable, bug #397929
+
+  17 Jan 2012; Jeroen Roovers <jer@gentoo.org> coreutils-8.14.ebuild:
+  Stable for HPPA (bug #397929).
+
+  07 Jan 2012; Agostino Sarubbo <ago@gentoo.org> coreutils-8.14.ebuild:
+  Stable for AMD64, wrt bug #397929
+
+*coreutils-8.15 (06 Jan 2012)
+
+  06 Jan 2012; Mike Frysinger <vapier@gentoo.org> +coreutils-8.15.ebuild:
+  Version bump.
+
+  18 Oct 2011; Mike Frysinger <vapier@gentoo.org> coreutils-8.14.ebuild:
+  Extend man page hack to missing perl #387091 by nzqr.
+
+*coreutils-8.14 (13 Oct 2011)
+
+  13 Oct 2011; Mike Frysinger <vapier@gentoo.org> +coreutils-8.14.ebuild:
+  Version bump.
+
+*coreutils-8.13 (09 Sep 2011)
+
+  09 Sep 2011; Mike Frysinger <vapier@gentoo.org> +coreutils-8.13.ebuild:
+  Version bump.
 
 *coreutils-8.12 (26 Apr 2011)
 

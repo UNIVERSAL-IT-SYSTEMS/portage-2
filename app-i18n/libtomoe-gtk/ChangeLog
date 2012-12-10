@@ -1,6 +1,32 @@
 # ChangeLog for app-i18n/libtomoe-gtk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/libtomoe-gtk/ChangeLog,v 1.13 2011/05/26 23:12:30 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/libtomoe-gtk/ChangeLog,v 1.19 2012/10/17 03:39:29 phajdan.jr Exp $
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  libtomoe-gtk-0.6.0-r2.ebuild:
+  x86 stable wrt bug #393005
+
+  11 Oct 2012; Agostino Sarubbo <ago@gentoo.org> libtomoe-gtk-0.6.0-r2.ebuild:
+  Stable for amd64, wrt bug #393005
+
+  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  libtomoe-gtk-0.6.0-r1.ebuild, libtomoe-gtk-0.6.0-r2.ebuild,
+  libtomoe-gtk-0.6.0.ebuild:
+  Add missing inheritance of eutils.eclass
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> libtomoe-gtk-0.6.0.ebuild,
+  libtomoe-gtk-0.6.0-r1.ebuild, libtomoe-gtk-0.6.0-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  07 Dec 2011; Naohiro Aota <naota@gentoo.org> libtomoe-gtk-0.6.0-r2.ebuild,
+  +files/libtomoe-gtk-0.6.0-underlinking.patch:
+  Depend on gnome-extra/gucharmap:0 instead of >=gnome-extra/gucharmap-1.4.0
+  #393005; Add missing dependencies dev-util/gtk-doc-am (need to eautoreconf);
+  Add underlinking dealing patch.
+
+  23 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libtomoe-gtk-0.6.0.ebuild, libtomoe-gtk-0.6.0-r1.ebuild:
+  Use correct slot of pygobject; raise EAPI to 1 for slot dependencies.
 
 *libtomoe-gtk-0.6.0-r2 (26 May 2011)
 

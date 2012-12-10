@@ -1,6 +1,34 @@
 # ChangeLog for x11-misc/xsnap
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xsnap/ChangeLog,v 1.39 2010/11/08 12:46:04 nelchael Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xsnap/ChangeLog,v 1.46 2012/03/19 19:12:51 armin76 Exp $
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> xsnap-1.5.6.ebuild,
+  xsnap-1.5.9.ebuild, xsnap-1.5.10.ebuild:
+  Drop sparc keywords
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xsnap-1.5.10.ebuild:
+  x86 stable wrt bug #404897
+
+  08 Mar 2012; Nathan Phillip Brink <binki@gentoo.org> xsnap-1.5.10.ebuild,
+  +files/xsnap-1.5.10-prefix.patch:
+  Add support for gentoo-prefix by patching IMakefile (bug #406193). Add
+  ~amd64-linux keyword: tested on ubuntu 10.04.3 LTS.
+
+  23 Feb 2012; Brent Baude <ranger@gentoo.org> xsnap-1.5.10.ebuild:
+  Marking xsnap-1.5.10 ppc for bug 404897
+
+  23 Feb 2012; Agostino Sarubbo <ago@gentoo.org> xsnap-1.5.10.ebuild:
+  Stable for amd64, wrt bug #404897
+
+*xsnap-1.5.10 (19 Nov 2011)
+
+  19 Nov 2011; Tim Harder <radhermit@gentoo.org> +xsnap-1.5.10.ebuild:
+  Version bump.
+
+*xsnap-1.5.9 (15 Nov 2011)
+
+  15 Nov 2011; Jeroen Roovers <jer@gentoo.org> +xsnap-1.5.9.ebuild:
+  Version bump.
 
   08 Nov 2010; Krzysztof Pawlik <nelchael@gentoo.org> xsnap-1.5.6.ebuild:
   Change dependency: media-libs/jpeg -> virtual/jpeg.

@@ -1,6 +1,28 @@
 # ChangeLog for www-apps/horde-ingo
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/horde-ingo/ChangeLog,v 1.29 2010/09/29 18:49:39 a3li Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apps/horde-ingo/ChangeLog,v 1.36 2012/08/22 15:23:55 a3li Exp $
+
+  22 Aug 2012; Alex Legler <a3li@gentoo.org> metadata.xml:
+  removing from metadata
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> horde-ingo-1.1.2.ebuild,
+  horde-ingo-1.2.3.ebuild, horde-ingo-1.2.5.ebuild:
+  Drop sparc keywords
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> horde-ingo-1.2.5.ebuild:
+  Marking horde-ingo-1.2.5 ppc for bug 397243
+
+  02 Mar 2012; Tobias Klausmann <klausman@gentoo.org> horde-ingo-1.2.5.ebuild:
+  Stable on alpha, bug #397243
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> horde-ingo-1.2.5.ebuild:
+  x86 stable wrt bug #397243
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> horde-ingo-1.2.5.ebuild:
+  Stable for HPPA (bug #397243).
+
+  04 Feb 2012; Agostino Sarubbo <ago@gentoo.org> horde-ingo-1.2.5.ebuild:
+  Stable for amd64, wrt bug #397243
 
 *horde-ingo-1.2.5 (29 Sep 2010)
 

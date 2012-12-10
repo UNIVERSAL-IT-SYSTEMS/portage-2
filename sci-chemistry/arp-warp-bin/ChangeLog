@@ -1,6 +1,40 @@
 # ChangeLog for sci-chemistry/arp-warp-bin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/arp-warp-bin/ChangeLog,v 1.12 2011/07/25 19:36:06 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/arp-warp-bin/ChangeLog,v 1.21 2012/07/24 13:35:02 jlec Exp $
+
+  24 Jul 2012; Justin Lecher <jlec@gentoo.org> arp-warp-bin-7.1-r1.ebuild:
+  Use QA_PREBUILT for binary packages
+
+  05 Jun 2012; Justin Lecher <jlec@gentoo.org> arp-warp-bin-7.1-r1.ebuild:
+  Stable Package for x86
+
+  04 Jun 2012; Justin Lecher <jlec@gentoo.org> -arp-warp-bin-7.1.ebuild,
+  arp-warp-bin-7.1-r1.ebuild:
+  Drop old, keyword for x86, add QA_PREBUILT
+
+  14 Apr 2012; Andreas Schuerch <nativemad@gentoo.org> arp-warp-bin-7.1.ebuild:
+  x86 stable, see bug 376417
+
+  24 Dec 2011; Justin Lecher <jlec@gentoo.org> arp-warp-bin-7.1.ebuild,
+  arp-warp-bin-7.1-r1.ebuild:
+  Correct dep from sci-chemistry/ccp4 to sci-chemistry/refmac
+
+*arp-warp-bin-7.1-r1 (26 Nov 2011)
+
+  26 Nov 2011; Justin Lecher <jlec@gentoo.org> arp-warp-bin-7.1.ebuild,
+  +arp-warp-bin-7.1-r1.ebuild:
+  Drop exit from source script; If present in the script, but package files are
+  not present, you cannot log in anymore.
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> arp-warp-bin-7.1.ebuild:
+  amd64 restable
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> arp-warp-bin-7.1.ebuild:
+  Revert back to ~arch for security and libpng porting.
+
+  06 Oct 2011; Tony Vroon <chainsaw@gentoo.org> arp-warp-bin-7.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney in bug
+  #376417.
 
   25 Jul 2011; Justin Lecher <jlec@gentoo.org> arp-warp-bin-7.1.ebuild:
   Reverted keywording

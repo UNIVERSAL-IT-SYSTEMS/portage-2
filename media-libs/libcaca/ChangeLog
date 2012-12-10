@@ -1,6 +1,39 @@
 # ChangeLog for media-libs/libcaca
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libcaca/ChangeLog,v 1.96 2011/02/09 07:53:31 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libcaca/ChangeLog,v 1.105 2012/09/09 22:15:11 radhermit Exp $
+
+  09 Sep 2012; Tim Harder <radhermit@gentoo.org> libcaca-0.99_beta17.ebuild,
+  libcaca-0.99_beta18.ebuild:
+  Add virtual/glu dep.
+
+  01 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  libcaca-0.99_beta18.ebuild:
+  Use $(type -P gmcs) for exporting the CSC variable wrt #329651, Comment #8 by
+  Conway S. Smith
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> libcaca-0.99_beta18.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libcaca-0.99_beta17.ebuild,
+  libcaca-0.99_beta18.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Apr 2012; Mike Gilbert <floppym@gentoo.org> libcaca-0.99_beta18.ebuild:
+  Restrict 2.5 Python ABIs. Patch by Arfrever.
+
+  08 Apr 2012; Mike Gilbert <floppym@gentoo.org> libcaca-0.99_beta18.ebuild:
+  Only call python functions when USE=python.
+
+  08 Apr 2012; Tim Harder <radhermit@gentoo.org> libcaca-0.99_beta18.ebuild:
+  Fix python support.
+
+*libcaca-0.99_beta18 (08 Apr 2012)
+
+  08 Apr 2012; Tim Harder <radhermit@gentoo.org> +libcaca-0.99_beta18.ebuild:
+  Version bump. Add python USE flag.
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> libcaca-0.99_beta17.ebuild:
+  remove ptex dep as it is going away
 
   09 Feb 2011; Tim Harder <radhermit@gentoo.org> libcaca-0.99_beta17.ebuild:
   Fix compile error when the imlib USE flag is selected and the X USE flag

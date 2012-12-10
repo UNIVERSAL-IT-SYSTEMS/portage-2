@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mhwaveedit/mhwaveedit-1.4.21.ebuild,v 1.1 2011/05/25 20:11:52 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mhwaveedit/mhwaveedit-1.4.21.ebuild,v 1.7 2012/05/05 08:38:38 mgorny Exp $
 
 EAPI=2
 
@@ -10,21 +10,21 @@ SRC_URI="http://download.gna.org/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE="alsa esd jack ladspa libsamplerate nls oss pulseaudio sdl sndfile sox"
+KEYWORDS="amd64 ~ppc x86"
+IUSE="alsa jack ladspa libsamplerate nls oss pulseaudio sdl sndfile sox"
 
-RDEPEND=">=x11-libs/gtk+-2:2
+RDEPEND="x11-libs/gtk+:2
+	x11-libs/pango
 	sndfile? ( >=media-libs/libsndfile-1.0.10 )
 	sdl? ( >=media-libs/libsdl-1.2.3 )
 	alsa? ( media-libs/alsa-lib )
 	jack? ( >=media-sound/jack-audio-connection-kit-0.98 )
-	esd? ( >=media-sound/esound-0.2 )
 	libsamplerate? ( media-libs/libsamplerate )
 	ladspa? ( media-libs/ladspa-sdk )
 	pulseaudio? ( >=media-sound/pulseaudio-0.9.10 )
 	sox? ( media-sound/sox )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_configure() {
 	econf \
@@ -38,7 +38,7 @@ src_configure() {
 		$(use_with oss) \
 		$(use_with jack) \
 		$(use_with pulseaudio pulse) \
-		$(use_with esd esound)
+		--without-esound
 }
 
 src_install() {

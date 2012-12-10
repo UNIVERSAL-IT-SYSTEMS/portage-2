@@ -1,24 +1,22 @@
-# Copyright 2011 Gentoo Technologies, Inc.
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/darcs.eclass,v 1.11 2011/01/30 10:27:20 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/darcs.eclass,v 1.16 2012/06/08 03:39:50 vapier Exp $
 
 # @ECLASS: darcs.eclass
 # @MAINTAINER:
 # "Gentoo's Haskell Language team" <haskell@gentoo.org>
-#
 # Sergei Trofimovich <slyfox@gentoo.org>
-#
+# @AUTHOR:
 # Original Author: Jeffrey Yasskin <jyasskin@mail.utexas.edu>
+#               <rphillips@gentoo.org> (tla eclass author)
+# Andres Loeh   <kosmikus@gentoo.org> (darcs.eclass author)
+# Alexander Vershilov <alexander.vershilov@gmail.com> (various contributions)
 # @BLURB: This eclass provides functions for fetch and unpack darcs repositories
 # @DESCRIPTION:
 # This eclass provides the generic darcs fetching functions.
 #
 # Define the EDARCS_REPOSITORY variable at least.
 # The ${S} variable is set to ${WORKDIR}/${P}.
-# @THANKS TO:
-#               <rphillips@gentoo.org> (tla eclass author)
-# Andres Loeh   <kosmikus@gentoo.org> (darcs.eclass author)
-# Alexander Vershilov <alexander.vershilov@gmail.com> (various contributions)
 
 # TODO:
 
@@ -45,7 +43,7 @@ SRC_URI=""
 # @ECLASS-VARIABLE: EDARCS_GET_CMD
 # @DESCRIPTION:
 # First fetch darcs command.
-: ${EDARCS_GET_CMD:=get --partial}
+: ${EDARCS_GET_CMD:=get --lazy}
 
 # @ECLASS-VARIABLE: EDARCS_UPDATE_CMD
 # @DESCRIPTION:
@@ -70,9 +68,9 @@ SRC_URI=""
 # @ECLASS-VARIABLE: EDARCS_OFFLINE
 # @DESCRIPTION:
 # Set this variable to a non-empty value to disable the automatic updating of
-# a darcs repository. this is intended to be set outside the darcs source
-# tree by users.
-: ${EDARCS_OFFLINE:=${ESCM_OFFLINE}}
+# a darcs repository. This is intended to be set outside the darcs source
+# tree by users. Defaults to EVCS_OFFLINE value.
+: ${EDARCS_OFFLINE:=${EVCS_OFFLINE}}
 
 # @ECLASS-VARIABLE: EDARCS_CLEAN
 # @DESCRIPTION:
@@ -83,8 +81,8 @@ SRC_URI=""
 
 # --- end ebuild-configurable settings ---
 
-# add darcs to deps
-DEPEND="dev-vcs/darcs"
+DEPEND="dev-vcs/darcs
+	net-misc/rsync"
 
 # @FUNCTION: darcs_patchcount
 # @DESCRIPTION:
@@ -197,7 +195,7 @@ darcs_src_unpack() {
 	mkdir -p "${WORKDIR}/${P}"
 
 	eshopts_push -s dotglob	# get any dotfiles too.
-	rsync -rlpgo --exclude="_darcs/"  "${EDARCS_TOP_DIR}/${EDARCS_LOCALREPO}"/* "${WORKDIR}/${P}"
+	rsync -rlpgo "${EDARCS_TOP_DIR}/${EDARCS_LOCALREPO}"/* "${WORKDIR}/${P}"
 	eshopts_pop
 
 	einfo "Darcs repository contents are now in ${WORKDIR}/${P}"

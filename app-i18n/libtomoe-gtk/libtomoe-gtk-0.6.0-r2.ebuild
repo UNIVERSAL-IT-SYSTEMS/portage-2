@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/libtomoe-gtk/libtomoe-gtk-0.6.0-r2.ebuild,v 1.1 2011/05/26 23:12:30 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/libtomoe-gtk/libtomoe-gtk-0.6.0-r2.ebuild,v 1.6 2012/10/17 03:39:29 phajdan.jr Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
 
-inherit autotools python
+inherit autotools eutils python
 
 MY_P="tomoe-gtk-${PV}"
 DESCRIPTION="Tomoe GTK+ interface widget library"
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/tomoe/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="doc +gucharmap python static-libs"
 
 RDEPEND=">=app-i18n/tomoe-0.6.0[python?]
@@ -22,9 +22,10 @@ RDEPEND=">=app-i18n/tomoe-0.6.0[python?]
 		dev-python/pygtk:2
 		dev-python/pygobject:2
 	)
-	gucharmap? ( >=gnome-extra/gucharmap-1.4.0 )"
+	gucharmap? ( gnome-extra/gucharmap:0 )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	dev-util/gtk-doc-am
+	virtual/pkgconfig
 	sys-devel/gettext
 	doc? ( >=dev-util/gtk-doc-1.4 )"
 
@@ -39,6 +40,7 @@ pkg_setup() {
 src_prepare() {
 	# Fix compilation with gucharmap-2.24, bug #243160
 	epatch "${FILESDIR}/${P}-gucharmap2.patch"
+	epatch "${FILESDIR}/${P}-underlinking.patch"
 
 	eautoreconf
 }

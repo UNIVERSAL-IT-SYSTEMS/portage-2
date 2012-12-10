@@ -1,6 +1,50 @@
 # ChangeLog for dev-java/ibm-jdk-bin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/ibm-jdk-bin/ChangeLog,v 1.242 2011/03/26 14:08:04 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/ibm-jdk-bin/ChangeLog,v 1.249 2012/10/05 15:17:00 ranger Exp $
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org>
+  ibm-jdk-bin-1.6.0.9_p2-r1.ebuild:
+  Marking ibm-jdk-bin-1.6.0.9_p2-r1 ppc
+
+  21 Dec 2011; Joseph Jezak <josejx@gentoo.org> ibm-jdk-bin-1.5.0.12_p5.ebuild,
+  ibm-jdk-bin-1.6.0.9_p2.ebuild:
+  Marked ppc/ppc64 stable (bug #377623).
+
+  12 Dec 2011; Ralph Sennhauser <sera@gentoo.org>
+  ibm-jdk-bin-1.6.0.9_p2-r1.ebuild:
+  Fix USE=-nsplugin. Bug 394421.
+
+*ibm-jdk-bin-1.6.0.9_p2-r1 (23 Nov 2011)
+*ibm-jdk-bin-1.5.0.12_p5-r1 (23 Nov 2011)
+
+  23 Nov 2011; Ralph Sennhauser <sera@gentoo.org>
+  +ibm-jdk-bin-1.5.0.12_p5-r1.ebuild, files/ibm-jdk-bin-1.5.env,
+  +ibm-jdk-bin-1.6.0.9_p2-r1.ebuild, files/ibm-jdk-bin-1.6.env:
+  Bump to EAPI 4.
+  Prefixify.
+  Add sandbox controle file. Bug #388937
+  Set pax markings. Bug #389751
+  Dont call 'use' in global scope.
+
+  27 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  ibm-jdk-bin-1.5.0.12_p5.ebuild, ibm-jdk-bin-1.6.0.9_p2.ebuild:
+  Stable on amd64 wrt bug #377623
+
+  19 Aug 2011; Thomas Kahle <tomka@gentoo.org> ibm-jdk-bin-1.5.0.12_p5.ebuild,
+  ibm-jdk-bin-1.6.0.9_p2.ebuild:
+  x86 stable per bug 377623
+
+  19 Aug 2011; Thomas Kahle <tomka@gentoo.org> ibm-jdk-bin-1.5.0.12_p5.ebuild,
+  ibm-jdk-bin-1.6.0.9_p2.ebuild:
+  x86 stable per bug 377623
+
+*ibm-jdk-bin-1.6.0.9_p2 (03 Aug 2011)
+*ibm-jdk-bin-1.5.0.12_p5 (03 Aug 2011)
+
+  03 Aug 2011; Vlastimil Babka <caster@gentoo.org>
+  -ibm-jdk-bin-1.5.0.12_p3.ebuild, +ibm-jdk-bin-1.5.0.12_p5.ebuild,
+  -ibm-jdk-bin-1.6.0.9.ebuild, +ibm-jdk-bin-1.6.0.9_p2.ebuild:
+  Version bump, security bug #377623.
 
   26 Mar 2011; Brent Baude <ranger@gentoo.org>
   ibm-jdk-bin-1.5.0.12_p4.ebuild, ibm-jdk-bin-1.6.0.9_p1.ebuild:

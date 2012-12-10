@@ -1,6 +1,97 @@
 # ChangeLog for sys-fs/ecryptfs-utils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/ecryptfs-utils/ChangeLog,v 1.32 2011/03/29 07:57:50 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/ecryptfs-utils/ChangeLog,v 1.50 2012/11/02 11:47:19 radhermit Exp $
+
+*ecryptfs-utils-101 (02 Nov 2012)
+
+  02 Nov 2012; Tim Harder <radhermit@gentoo.org> +ecryptfs-utils-101.ebuild:
+  Version bump.
+
+*ecryptfs-utils-100 (03 Aug 2012)
+
+  03 Aug 2012; Tim Harder <radhermit@gentoo.org> +ecryptfs-utils-100.ebuild:
+  Version bump.
+
+  23 Jul 2012; Tim Harder <radhermit@gentoo.org> ecryptfs-utils-99.ebuild,
+  +files/ecryptfs-utils-99-python-m4.patch:
+  Respect CPPFLAGS when python and gpg support is enabled (bug #424601).
+
+*ecryptfs-utils-99 (16 Jul 2012)
+
+  16 Jul 2012; Tim Harder <radhermit@gentoo.org> +ecryptfs-utils-99.ebuild:
+  Version bump.
+
+  30 Jun 2012; Tim Harder <radhermit@gentoo.org> -ecryptfs-utils-91.ebuild,
+  -ecryptfs-utils-92.ebuild, -ecryptfs-utils-93.ebuild,
+  -files/ecryptfs-utils-93-python.patch, -ecryptfs-utils-95.ebuild:
+  Remove old.
+
+*ecryptfs-utils-97 (30 Jun 2012)
+
+  30 Jun 2012; Tim Harder <radhermit@gentoo.org> +ecryptfs-utils-97.ebuild:
+  Version bump.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> ecryptfs-utils-91.ebuild,
+  ecryptfs-utils-92.ebuild, ecryptfs-utils-93.ebuild, ecryptfs-utils-95.ebuild,
+  ecryptfs-utils-96.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Feb 2012; Patrick Lauer <patrick@gentoo.org> ecryptfs-utils-91.ebuild,
+  ecryptfs-utils-92.ebuild, ecryptfs-utils-93.ebuild, ecryptfs-utils-95.ebuild,
+  ecryptfs-utils-96.ebuild:
+  Restricting jython
+
+*ecryptfs-utils-96 (23 Feb 2012)
+
+  23 Feb 2012; Tim Harder <radhermit@gentoo.org> +ecryptfs-utils-96.ebuild:
+  Version bump.
+
+*ecryptfs-utils-95 (16 Dec 2011)
+
+  16 Dec 2011; Tim Harder <radhermit@gentoo.org> +ecryptfs-utils-95.ebuild:
+  Version bump.
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org> ecryptfs-utils-93.ebuild:
+  Revert to autotools eclass (fixes bug #392127).
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org> ecryptfs-utils-93.ebuild:
+  Build in the source tree.
+
+*ecryptfs-utils-93 (23 Nov 2011)
+
+  23 Nov 2011; Tim Harder <radhermit@gentoo.org> +ecryptfs-utils-93.ebuild,
+  +files/ecryptfs-utils-93-python.patch:
+  Version bump. Update to EAPI 4 and apply patch by Arfrever to fix python
+  issue (bug #391065 by Patrick).
+
+*ecryptfs-utils-92 (03 Sep 2011)
+
+  03 Sep 2011; Tim Harder <radhermit@gentoo.org> +ecryptfs-utils-92.ebuild:
+  Version bump.
+
+*ecryptfs-utils-91 (01 Sep 2011)
+
+  01 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  -ecryptfs-utils-83.ebuild, -ecryptfs-utils-85.ebuild,
+  -ecryptfs-utils-90.ebuild, -files/ecryptfs-utils-90-nss-pkgconfig.patch,
+  +ecryptfs-utils-91.ebuild:
+  Version bump to release 91: includes my changes and a couple of
+  security-sensitive fixes.
+
+  31 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  ecryptfs-utils-90.ebuild:
+  Add minimum version to intltool.
+
+  31 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  ecryptfs-utils-90.ebuild, +files/ecryptfs-utils-90-nss-pkgconfig.patch:
+  Use pkg-config to look up NSS. This allows a clean cross-compilation of the
+  package.
+
+*ecryptfs-utils-90 (24 Aug 2011)
+
+  24 Aug 2011; Tim Harder <radhermit@gentoo.org> +ecryptfs-utils-90.ebuild:
+  Version bump (fixes bugs #373901 and #378807). Add check for kernel ECRYPT_FS
+  support (bug #376663 by Łukasz Stelmach).
 
   29 Mar 2011; Christoph Mende <angelos@gentoo.org> ecryptfs-utils-83.ebuild,
   ecryptfs-utils-85.ebuild:

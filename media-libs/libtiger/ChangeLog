@@ -1,6 +1,28 @@
 # ChangeLog for media-libs/libtiger
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libtiger/ChangeLog,v 1.15 2011/01/09 15:19:39 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libtiger/ChangeLog,v 1.22 2012/05/29 14:49:49 aballier Exp $
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> libtiger-0.3.4.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libtiger-0.3.3.ebuild,
+  libtiger-0.3.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> libtiger-0.3.4.ebuild:
+  ppc64 stable wrt #397071
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> libtiger-0.3.4.ebuild:
+  Marking libtiger-0.3.4 ppc for bug 397071
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> libtiger-0.3.4.ebuild:
+  alpha/sparc stable wrt #397071
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libtiger-0.3.4.ebuild:
+  x86 stable wrt bug #397071
+
+  04 Jan 2012; Agostino Sarubbo <ago@gentoo.org> libtiger-0.3.4.ebuild:
+  Stable for AMD64, wrt bug #397071
 
 *libtiger-0.3.4 (09 Jan 2011)
 

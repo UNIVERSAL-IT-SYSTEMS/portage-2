@@ -1,6 +1,29 @@
 # ChangeLog for media-radio/svxlink
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-radio/svxlink/ChangeLog,v 1.16 2011/03/28 08:55:17 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-radio/svxlink/ChangeLog,v 1.21 2012/07/31 18:00:25 tomjbe Exp $
+
+  31 Jul 2012; Thomas Beierlein <tomjbe@gentoo.org> svxlink-11.11.1.ebuild,
+  +files/svxlink-11.11.1-gcc-47.patch:
+  Fix missing #includes for gcc-47 (bug 425690). Thanks Diego. Also add slot
+  deps to qt-*:4
+
+  09 Jun 2012; Zac Medico <zmedico@gentoo.org> svxlink-11.11.1.ebuild:
+  inherit user for enewgroup and enewuser
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> svxlink-11.11.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*svxlink-11.11.1 (29 Jan 2012)
+
+  29 Jan 2012; Thomas Beierlein <tomjbe@gentoo.org> +svxlink-11.11.1.ebuild,
+  +files/remotetrx.init, +files/remotetrx.rc, +files/svxlink.init,
+  +files/svxlink.rc, +metadata.xml:
+  New version. 
+  * Provides gentoo like init scripts (bug 335307)
+  * Works with qrt4 (bug 336993)
+  * Builds with gcc-4.6 (bug 366199)
+  * fixes underlinking (bug 369881)
+  Add myself to maintainers.
 
   28 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> svxlink-090426.ebuild:
   Install 10-svxlink.rules to /lib/udev instead of /etc/udev.

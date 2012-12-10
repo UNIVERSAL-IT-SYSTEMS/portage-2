@@ -1,6 +1,157 @@
 # ChangeLog for www-client/midori
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/midori/ChangeLog,v 1.63 2011/06/17 09:37:29 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/midori/ChangeLog,v 1.100 2012/10/21 12:00:16 ssuominen Exp $
+
+  21 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> midori-0.4.7.ebuild,
+  midori-9999.ebuild:
+  Update HOMEPAGE wrt #435706
+
+  21 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> -midori-0.4.3.ebuild,
+  -midori-0.4.6.ebuild:
+  old
+
+*midori-0.4.7 (20 Sep 2012)
+
+  20 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> +midori-0.4.7.ebuild,
+  midori-9999.ebuild, metadata.xml:
+  Version bump. New USE flag "zeitgeist" for optional dev-libs/libzeitgeist
+  dependency.
+
+  18 Aug 2012; Johannes Huber <johu@gentoo.org> midori-0.4.6-r1.ebuild:
+  Stable for x86, wrt bug #430270
+
+  07 Aug 2012; Anthony G. Basile <blueness@gentoo.org> midori-0.4.6-r1.ebuild:
+  Stable ppc, bug #430270
+
+  07 Aug 2012; Agostino Sarubbo <ago@gentoo.org> midori-0.4.6-r1.ebuild:
+  Stable for amd64, wrt bug #430270
+
+*midori-0.4.6-r1 (02 Jul 2012)
+
+  02 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +midori-0.4.6-r1.ebuild,
+  +files/midori-0.4.6-dl.patch:
+  Upstream patch for fixing "Save as..." wrt #422933 by "Vladimir". Also switch
+  0.4.6-r1 to dev-lang/vala SLOT of 0.16 like -9999 is.
+
+  02 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> midori-0.4.6.ebuild:
+  ppc stable wrt #416215
+
+  15 Jun 2012; Agostino Sarubbo <ago@gentoo.org> midori-0.4.6.ebuild:
+  Stable for amd64, wrt bug #416215
+
+  15 Jun 2012; Jeff Horelick <jdhore@gentoo.org> midori-0.4.6.ebuild:
+  marked x86 per bug 416215
+
+  15 May 2012; Samuli Suominen <ssuominen@gentoo.org> -midori-0.4.4.ebuild,
+  -midori-0.4.5.ebuild:
+  old
+
+  15 May 2012; Samuli Suominen <ssuominen@gentoo.org> midori-9999.ebuild:
+  Use dev-lang/vala:0.16 for -9999 (and thus, next version)
+
+*midori-0.4.6 (15 May 2012)
+
+  15 May 2012; Samuli Suominen <ssuominen@gentoo.org> +midori-0.4.6.ebuild:
+  Version bump wrt #416077 by "Vladimir"
+
+  15 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> midori-0.4.5.ebuild,
+  midori-9999.ebuild:
+  Pass --disable-granite to avoid automagic dependency and build failure with
+  dev-libs/granite wrt #412101
+
+*midori-0.4.5 (15 Apr 2012)
+
+  15 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +midori-0.4.5.ebuild,
+  midori-9999.ebuild, metadata.xml:
+  Version bump. Introduce USE="deprecated" to enable GTK+-2 instead of GTK+-3
+  for external plugins like adobe-flash wrt #410841 by Klaus Kusche.
+
+*midori-0.4.4 (09 Mar 2012)
+
+  09 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +midori-0.4.4.ebuild:
+  Version bump.
+
+  10 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -midori-0.4.2-r200.ebuild, -midori-0.4.2-r300.ebuild:
+  old
+
+  10 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> midori-0.4.3.ebuild:
+  x86 stable wrt #401229
+
+  30 Jan 2012; Agostino Sarubbo <ago@gentoo.org> midori-0.4.3.ebuild:
+  Stable for amd64, wrt bug #401229
+
+*midori-0.4.3 (22 Dec 2011)
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +midori-0.4.3.ebuild:
+  Version bump wrt #395259 by "Vladimir"
+
+  11 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> -midori-0.4.0.ebuild,
+  -files/midori-0.4.0-webkit151.patch:
+  old
+
+  11 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> midori-0.4.2-r200.ebuild:
+  amd64/x86 stable wrt #393343
+
+*midori-0.4.2-r200 (06 Dec 2011)
+
+  06 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +midori-0.4.2-r200.ebuild:
+  Restore GTK+ 2.x based ebuild for now wrt #392571 by Balint SZENTE
+
+  06 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> midori-0.4.2-r300.ebuild:
+  Search for javascriptcoregtk-3.0 instead of javascriptcoregtk-1.0 wrt #392919
+  by "Cedric"
+
+  28 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> -midori-0.4.1.ebuild,
+  -midori-0.4.2.ebuild:
+  old
+
+*midori-0.4.2-r300 (28 Nov 2011)
+
+  28 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +midori-0.4.2-r300.ebuild, midori-9999.ebuild:
+  Update to GTK+ 3.x based libraries.
+
+*midori-0.4.2 (10 Nov 2011)
+
+  10 Nov 2011; Christoph Mende <angelos@gentoo.org> +midori-0.4.2.ebuild,
+  midori-9999.ebuild:
+  Version bump, remove idn (bug #389483)
+
+  28 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Remove unused USE description for "vala"
+
+  28 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> midori-0.4.0.ebuild,
+  midori-0.4.1.ebuild, midori-9999.ebuild:
+  Fix missing x11-libs/libXScrnSaver depend wrt #388795 by "Faustus"
+
+  28 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -midori-0.3.3.ebuild,
+  -midori-0.3.5.ebuild, -midori-0.3.6.ebuild:
+  old
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> midori-0.4.0.ebuild:
+  amd64 stable wrt #386963
+
+  16 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> midori-0.4.0.ebuild:
+  x86 stable wrt bug #386963
+
+*midori-0.4.1 (14 Oct 2011)
+
+  14 Oct 2011; Christoph Mende <angelos@gentoo.org> +midori-0.4.1.ebuild:
+  Version bump
+
+  02 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> midori-0.4.0.ebuild,
+  +files/midori-0.4.0-webkit151.patch:
+  Fix building with webkit-gtk >= 1.5.1 wrt #385371 by Hanno Meyer-Thurow
+
+  09 Sep 2011; Christoph Mende <angelos@gentoo.org> midori-0.4.0.ebuild:
+  Restore keywords
+
+*midori-0.4.0 (02 Aug 2011)
+
+  02 Aug 2011; Christoph Mende <angelos@gentoo.org> +midori-0.4.0.ebuild:
+  Version bump
 
   17 Jun 2011; Christoph Mende <angelos@gentoo.org> midori-0.3.3.ebuild,
   midori-0.3.5.ebuild, midori-0.3.6.ebuild, midori-9999.ebuild:

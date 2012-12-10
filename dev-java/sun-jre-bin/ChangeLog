@@ -1,6 +1,165 @@
 # ChangeLog for dev-java/sun-jre-bin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-jre-bin/ChangeLog,v 1.195 2011/06/18 11:49:51 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-jre-bin/ChangeLog,v 1.227 2012/10/23 05:04:57 nativemad Exp $
+
+  23 Oct 2012; Andreas Schuerch <nativemad@gentoo.org>
+  sun-jre-bin-1.6.0.37.ebuild:
+  x86 stable, see bug 438706
+
+  21 Oct 2012; Agostino Sarubbo <ago@gentoo.org> sun-jre-bin-1.6.0.37.ebuild:
+  Stable for amd64, wrt bug #438706
+
+*sun-jre-bin-1.6.0.37 (17 Oct 2012)
+
+  17 Oct 2012; Ralph Sennhauser <sera@gentoo.org> +sun-jre-bin-1.6.0.37.ebuild:
+  Security bump. #438706
+  ia64 is back.
+  Use QA_PREBUILT instead of individual variables.
+  Fix desktop files for newer standard.
+  Add elog about the name change to oracle-jre-bin for JRE 7.
+
+  13 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  sun-jre-bin-1.6.0.35.ebuild:
+  x86 stable wrt bug #433094
+
+  02 Sep 2012; Agostino Sarubbo <ago@gentoo.org> sun-jre-bin-1.6.0.35.ebuild:
+  Stable for amd64, wrt bug #433094
+
+  31 Aug 2012; Agostino Sarubbo <ago@gentoo.org> sun-jre-bin-1.6.0.34.ebuild:
+  Stable for amd64, wrt bug #431492
+
+  31 Aug 2012; Vlastimil Babka <caster@gentoo.org> sun-jre-bin-1.6.0.35.ebuild:
+  Fix download URL, bug #433553.
+
+*sun-jre-bin-1.6.0.35 (31 Aug 2012)
+
+  31 Aug 2012; Vlastimil Babka <caster@gentoo.org> +sun-jre-bin-1.6.0.35.ebuild:
+  Version bump, security bug #433094.
+
+*sun-jre-bin-1.6.0.34 (23 Aug 2012)
+
+  23 Aug 2012; Vlastimil Babka <caster@gentoo.org>
+  +sun-jre-bin-1.6.0.34.ebuild:
+  Version bump, bug #431492.
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
+  sun-jre-bin-1.6.0.33-r1.ebuild:
+  Stable for amd64, wrt bug #421073
+
+*sun-jre-bin-1.6.0.33-r2 (23 Jul 2012)
+
+  23 Jul 2012; Ralph Sennhauser <sera@gentoo.org> -sun-jre-bin-1.6.0.31.ebuild,
+  -sun-jre-bin-1.6.0.32.ebuild, +sun-jre-bin-1.6.0.33-r2.ebuild, metadata.xml:
+  Use paxctl for pax marking as the fallback won't create the headers. Thanks
+  to blueness. #427642
+  Prune unused font configuration files.
+  Remove vulnarable.
+
+  14 Jul 2012; Jeff Horelick <jdhore@gentoo.org>
+  sun-jre-bin-1.6.0.33-r1.ebuild:
+  marked x86 per bug 421073
+
+*sun-jre-bin-1.6.0.33-r1 (13 Jul 2012)
+
+  13 Jul 2012; Ralph Sennhauser <sera@gentoo.org>
+  +sun-jre-bin-1.6.0.33-r1.ebuild:
+  Revbump because upstream changed contents of the distfiles (not saying what
+  exactly). You will have to redownload them, sorry.
+
+  09 Jul 2012; Jeff Horelick <jdhore@gentoo.org> sun-jre-bin-1.6.0.33.ebuild:
+  marked x86 per bug 421073
+
+  15 Jun 2012; Agostino Sarubbo <ago@gentoo.org> sun-jre-bin-1.6.0.33.ebuild:
+  Stable for amd64, wrt bug #421073
+
+*sun-jre-bin-1.6.0.33 (14 Jun 2012)
+
+  14 Jun 2012; Ralph Sennhauser <sera@gentoo.org> +sun-jre-bin-1.6.0.33.ebuild:
+  Security bump. #421073
+  Add ia64 support.
+
+  07 May 2012; Ralph Sennhauser <sera@gentoo.org> sun-jre-bin-1.6.0.31.ebuild,
+  sun-jre-bin-1.6.0.32.ebuild:
+  Add workaround for large memory on x86. #405239
+
+*sun-jre-bin-1.6.0.32 (05 May 2012)
+
+  05 May 2012; Ralph Sennhauser <sera@gentoo.org> +sun-jre-bin-1.6.0.32.ebuild:
+  Version bump. #414775
+
+  05 May 2012; Ralph Sennhauser <sera@gentoo.org> -sun-jre-bin-1.6.0.29.ebuild:
+  Remove vulnarable. #404071
+
+  05 May 2012; Ralph Sennhauser <sera@gentoo.org> sun-jre-bin-1.6.0.31.ebuild:
+  Add QA_FLAGS_IGNORED. #405639
+
+  18 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  sun-jre-bin-1.6.0.31.ebuild:
+  x86 stable wrt bug #404071
+
+  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> sun-jre-bin-1.6.0.31.ebuild:
+  Stable for amd64, wrt bug #404071
+
+*sun-jre-bin-1.6.0.31 (16 Feb 2012)
+
+  16 Feb 2012; Ralph Sennhauser <sera@gentoo.org>
+  -sun-jre-bin-1.6.0.29-r1.ebuild, -sun-jre-bin-1.6.0.30.ebuild,
+  +sun-jre-bin-1.6.0.31.ebuild:
+  Security bump. #404071
+  Use relative path for desktop file icon. #403139
+  dev-java/sun-jce-bin is runtime only dependency.
+  Remove vulnerable, except current stable.
+
+*sun-jre-bin-1.6.0.30 (20 Jan 2012)
+
+  20 Jan 2012; Ralph Sennhauser <sera@gentoo.org> +sun-jre-bin-1.6.0.30.ebuild:
+  Version bump. #399425
+
+  21 Nov 2011; Ralph Sennhauser <sera@gentoo.org>
+  sun-jre-bin-1.6.0.29-r1.ebuild:
+  Use java-vm-2.eclass to set PaX markings
+
+*sun-jre-bin-1.6.0.29-r1 (11 Nov 2011)
+
+  11 Nov 2011; Ralph Sennhauser <sera@gentoo.org>
+  +sun-jre-bin-1.6.0.29-r1.ebuild:
+  Fix jce symlinks, bug #377665. Thanks to Philippe Chaintreuil
+  <gentoo_bugs_peep@parallaxshift.com> for investigating the issue
+
+  05 Nov 2011; Vlastimil Babka <caster@gentoo.org>
+  -sun-jre-bin-1.6.0.26.ebuild, -sun-jre-bin-1.6.0.27.ebuild,
+  sun-jre-bin-1.6.0.29.ebuild:
+  Remove old. Change icedtea6-bin to icedtea-bin.
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org>
+  sun-jre-bin-1.6.0.29.ebuild:
+  Stable on amd64 wrt bug #387851
+
+  30 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  sun-jre-bin-1.6.0.29.ebuild:
+  x86 stable wrt bug #387851
+
+  22 Oct 2011; Vlastimil Babka <caster@gentoo.org> sun-jre-bin-1.6.0.29.ebuild:
+  Simplify unpacking.
+
+*sun-jre-bin-1.6.0.29 (22 Oct 2011)
+
+  22 Oct 2011; Vlastimil Babka <caster@gentoo.org>
+  +sun-jre-bin-1.6.0.29.ebuild, +files/sun-jre-bin-1.6.env-r1,
+  +files/fontconfig.Gentoo.properties-r1:
+  Version bug, security bug #387851. Unfortunately had to change license and
+  make the package fetch restricted due to the DJL binaries no longer provided.
+  Free alternatives are dev-java/icedtea6-bin and dev-java/icedtea. Added
+  prefix support. Thanks to Ralph Sennhauser (sera) for the ebuild.
+
+*sun-jre-bin-1.6.0.27 (01 Sep 2011)
+
+  01 Sep 2011; Vlastimil Babka <caster@gentoo.org>
+  -sun-jre-bin-1.6.0.24.ebuild, -sun-jre-bin-1.6.0.25.ebuild,
+  +sun-jre-bin-1.6.0.27.ebuild:
+  Version bump. Due to DLJ bundles no longer provided by Oracle, the package
+  changes license to Oracle-BCLA-JavaSE and is fetch restricted again.
+  Alternatives are dev-java/icedtea6-bin and dev-java/icedtea
 
   18 Jun 2011; Markos Chandras <hwoarang@gentoo.org>
   sun-jre-bin-1.6.0.26.ebuild:
@@ -990,4 +1149,3 @@
   sun-jre-1.4.2.03.ebuild, files/sun-jre-1.4.2.03:
   First version of the Sun JRE, I primarily based this on the sun-jdk-1.4.2.03
   ebuild, I hope I ported it over correctly
-

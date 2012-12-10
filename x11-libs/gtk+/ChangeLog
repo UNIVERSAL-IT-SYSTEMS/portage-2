@@ -1,6 +1,501 @@
 # ChangeLog for x11-libs/gtk+
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/ChangeLog,v 1.525 2011/07/28 18:04:54 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtk+/ChangeLog,v 1.624 2012/12/06 06:13:35 tetromino Exp $
+
+*gtk+-2.24.14 (06 Dec 2012)
+
+  06 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -gtk+-2.24.10-r1.ebuild, gtk+-2.24.12.ebuild, -gtk+-2.24.13.ebuild,
+  gtk+-2.24.13-r1.ebuild, +gtk+-2.24.14.ebuild,
+  -files/gtk+-3.0.8-darwin-quartz.patch,
+  -files/gtk+-3.0.11-darwin-quartz-introspection.patch, -gtk+-3.0.12-r1.ebuild,
+  -files/gtk+-3.0.12-use-const.patch, gtk+-3.2.4-r1.ebuild, gtk+-3.4.4.ebuild,
+  -gtk+-3.6.1.ebuild, gtk+-3.6.2.ebuild:
+  Version bump; 2.24.14 supports setting the default file chooser mode in
+  ~/.config/gtk-2.0/gtkfilechooser.ini. Add epatch_user (bug #443554, thanks to
+  Michael Orlitzky). Drop old.
+
+  26 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Update to global useflag.
+
+*gtk+-3.6.2 (12 Nov 2012)
+
+  12 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -gtk+-3.6.0.ebuild,
+  gtk+-3.6.1.ebuild, +gtk+-3.6.2.ebuild:
+  Version bump, fixes rendering problems and various other bugs. Fix src_test
+  for gnome-themes-standard flag change. Drop old.
+
+  06 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org> gtk+-3.4.4.ebuild:
+  Forgot to add eautoreconf.
+
+*gtk+-2.24.13-r1 (05 Nov 2012)
+
+  05 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org> gtk+-2.24.12.ebuild,
+  gtk+-2.24.13.ebuild, +gtk+-2.24.13-r1.ebuild,
+  +files/gtk+-2.24.13-gtk3-bookmarks.patch, gtk+-3.4.4.ebuild,
+  +files/gtk+-3.4.4-isnan.patch:
+  Fix 3.4.4 build failure with uclibc (bug #441634, thanks to Anthony Basile).
+  For 2.24.13-r1, share bookmarks with gtk3, and do not install obsolete env.d
+  file (bug #431018, thanks to Hans). UI tests in gtk2 fail if immodules are
+  not already installed (bug #413185, thanks to Patrick Lauer).
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> gtk+-2.24.12.ebuild,
+  gtk+-3.4.4.ebuild:
+  ia64/sh/sparc stable wrt #427544
+
+*gtk+-3.6.1 (17 Oct 2012)
+
+  17 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +gtk+-3.6.1.ebuild:
+  Version bump with lots of bugfixes, particularly in themeing.
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gtk+-2.24.12.ebuild:
+  stable ppc, bug #427544
+
+  14 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gtk+-2.24.12.ebuild:
+  stable ppc64, bug #427544
+
+  10 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gtk+-2.24.10-r1.ebuild, gtk+-2.24.12.ebuild, gtk+-2.24.13.ebuild,
+  gtk+-3.0.12-r1.ebuild, gtk+-3.2.4-r1.ebuild, gtk+-3.4.4.ebuild,
+  gtk+-3.6.0.ebuild:
+  Drop useless USE=doc, it only regenerated documentation. Fixes bug #436612.
+
+  06 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gtk+-3.4.4.ebuild:
+  stable ppc ppc64, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> gtk+-2.24.12.ebuild:
+  arm stable, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> gtk+-3.4.4.ebuild:
+  arm stable, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gtk+-3.4.4.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gtk+-2.24.12.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  04 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gtk+-3.4.4.ebuild:
+  x86 stable wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gtk+-2.24.12.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> gtk+-2.24.12.ebuild,
+  gtk+-3.4.4.ebuild:
+  Stable for HPPA (bug #427544).
+
+  28 Sep 2012; Matt Turner <mattst88@gentoo.org> gtk+-2.24.12.ebuild:
+  Stable on alpha, bug 427544.
+
+  26 Sep 2012; Matt Turner <mattst88@gentoo.org> gtk+-3.4.4.ebuild:
+  Stable on alpha, bug 427544.
+
+*gtk+-3.6.0 (25 Sep 2012)
+*gtk+-2.24.13 (25 Sep 2012)
+
+  25 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gtk+-1.2.10-r12.ebuild, -files/gtk+-2.24.4-old-icons.patch,
+  -files/gtk+-2.24.5-background-repaint.patch,
+  -files/gtk+-2.24.5-darwin-quartz-introspection.patch, -gtk+-2.24.8-r1.ebuild,
+  -files/gtk+-2.24.8-iconview-layout.patch,
+  -files/gtk+-2.24.9-printing-crash.patch, gtk+-2.24.10-r1.ebuild,
+  -gtk+-2.24.11.ebuild, -gtk+-2.24.11-r1.ebuild,
+  -files/gtk+-2.24.11-stuck-grab.patch, gtk+-2.24.12.ebuild,
+  +gtk+-2.24.13.ebuild, +files/gtk+-2.24.13-gold.patch, gtk+-3.0.12-r1.ebuild,
+  -files/gtk+-3.2.2-toolbutton-icon-widget-GtkMisc.patch, -gtk+-3.2.3.ebuild,
+  gtk+-3.2.4-r1.ebuild, -gtk+-3.4.3.ebuild, -gtk+-3.4.3-r1.ebuild,
+  -files/gtk+-3.4.3-gtkprintbackendcups-debug.patch, gtk+-3.4.4.ebuild,
+  +gtk+-3.6.0.ebuild, metadata.xml:
+  Version bump to 3.6.0; adds GtkSearchEntry, GtkMenuButton, and GtkLevelBar
+  widgets, and support for CSS cross-fading, animations, and blur shadows. Also
+  bump gtk2 to 2.24.13 with a fix for the F10 issues (bug #399589). Drop old.
+  Make license more precise.
+
+*gtk+-2.24.12 (07 Sep 2012)
+
+  07 Sep 2012; Nirbheek Chauhan <nirbheek@gentoo.org> +gtk+-2.24.12.ebuild:
+  Bump to 2.24.12; themeing updates, cups-1.6 support, etc
+
+*gtk+-2.24.11-r1 (20 Jul 2012)
+
+  20 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gtk+-2.24.11-r1.ebuild, +files/gtk+-2.24.11-stuck-grab.patch:
+  Fix stuck keyboard grab in pidgin and gajim (bug #427148, thanks to Christian
+  Trefzer, Rafał Mużyło, shinydoofy).
+
+*gtk+-3.4.4 (16 Jul 2012)
+*gtk+-2.24.11 (16 Jul 2012)
+
+  16 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gtk+-2.24.11.ebuild, +gtk+-3.4.4.ebuild:
+  Version bumps with various bugfixes; 2.24.11 adds cups-1.6 support to gtk2.
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> gtk+-2.24.10-r1.ebuild,
+  gtk+-3.2.4-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #410611
+
+*gtk+-3.4.3-r1 (04 Jul 2012)
+
+  04 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -gtk+-3.4.2.ebuild,
+  +gtk+-3.4.3-r1.ebuild:
+  Add upstream patches to fix various crashes, hangs, and rendering problems.
+  Fixes bug #424781 (thanks to Pim Vullers). Probably fixes bug #418153 (thanks
+  to Hristo Venev). Drop old.
+
+  03 Jun 2012; Justin Lecher <jlec@gentoo.org> gtk+-2.24.8-r1.ebuild,
+  gtk+-2.24.10-r1.ebuild, +files/gtk+-2.24.10-gold.patch,
+  gtk+-3.0.12-r1.ebuild, gtk+-3.2.3.ebuild, gtk+-3.2.4-r1.ebuild,
+  gtk+-3.4.2.ebuild, gtk+-3.4.3.ebuild:
+  Add fix for underlinking detected by gold; correct eclass inherits following
+  repomans suggestions
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> gtk+-2.24.10-r1.ebuild,
+  gtk+-3.2.4-r1.ebuild:
+  ppc stable wrt #410611
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> gtk+-3.2.3.ebuild:
+  ppc stable wrt #407643
+
+  19 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -files/gtk+-3.4.1-extraneous-events-scrolling.patch,
+  -files/gtk+-3.4.1-toolpalette-adjustment.patch,
+  -files/gtk+-3.4.1-toolpalette-rename.patch, gtk+-3.4.3.ebuild,
+  +files/gtk+-3.4.3-gtkprintbackendcups-debug.patch:
+  Fix buid with USE="cups debug" (bug #416625, thanks to Jakub Daniel). Remove
+  unused patches.
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> gtk+-2.24.10-r1.ebuild,
+  gtk+-3.2.4-r1.ebuild:
+  Stable for HPPA (bug #410611).
+
+*gtk+-3.4.3 (12 May 2012)
+
+  12 May 2012; Pacho Ramos <pacho@gentoo.org> +gtk+-3.4.3.ebuild,
+  -gtk+-2.24.5-r1.ebuild, -gtk+-2.24.9-r1.ebuild, -gtk+-3.2.4.ebuild,
+  -gtk+-3.4.1-r1.ebuild, -gtk+-3.4.1.ebuild:
+  Version bump, remove old.
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> gtk+-3.4.2.ebuild:
+  keyword ~amd64-fbsd
+
+  08 May 2012; Alexis Ballier <aballier@gentoo.org> gtk+-2.24.10-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  06 May 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gtk+-3.4.2.ebuild:
+  Fix compilation on non-solaris
+
+  06 May 2012; Fabian Groffen <grobian@gentoo.org> gtk+-3.4.2.ebuild:
+  Fix compilation on Solaris
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gtk+-2.24.5-r1.ebuild,
+  gtk+-2.24.8-r1.ebuild, gtk+-2.24.9-r1.ebuild, gtk+-2.24.10-r1.ebuild,
+  gtk+-3.0.12-r1.ebuild, gtk+-3.2.3.ebuild, gtk+-3.2.4.ebuild,
+  gtk+-3.2.4-r1.ebuild, gtk+-3.4.1.ebuild, gtk+-3.4.1-r1.ebuild,
+  gtk+-3.4.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*gtk+-3.4.2 (03 May 2012)
+
+  03 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -gtk+-3.4.0.ebuild,
+  +gtk+-3.4.2.ebuild:
+  Version bump, fixes assorted bugs and cups-1.6 compatibility. Drop old.
+
+*gtk+-3.4.1-r1 (02 May 2012)
+
+  02 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gtk+-3.4.1-r1.ebuild, +files/gtk+-3.4.1-extraneous-events-scrolling.patch,
+  +files/gtk+-3.4.1-toolpalette-adjustment.patch,
+  +files/gtk+-3.4.1-toolpalette-rename.patch:
+  Fix annotation button in evince (bug #412751, thanks to Geraint Yang).
+  Fix inefficient scrolling.
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gtk+-2.24.10-r1.ebuild:
+  x86 stable, bug #410611
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gtk+-3.2.4-r1.ebuild:
+  x86 stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> gtk+-2.24.10-r1.ebuild:
+  arm stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> gtk+-3.2.4-r1.ebuild:
+  arm stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> gtk+-2.24.10-r1.ebuild,
+  gtk+-3.2.4-r1.ebuild:
+  Marking gtk+-2.24.10-r1 ppc64 stable for bug 410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> gtk+-3.2.4-r1.ebuild:
+  Marking gtk+-3.2.4-r1 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gtk+-2.24.10-r1.ebuild,
+  gtk+-3.2.4-r1.ebuild:
+  Stable for amd64, wrt bug #410611
+
+*gtk+-3.4.1 (14 Apr 2012)
+
+  14 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +gtk+-3.4.1.ebuild:
+  Version bump with various bugfixes, including better smooth scrolling
+  performance.
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> gtk+-3.2.3.ebuild:
+  alpha/ia64/sh/sparc stable wrt #407643
+
+*gtk+-3.4.0 (27 Mar 2012)
+
+  27 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/gtk+-3.3.18-fallback-theme.patch,
+  +files/gtk+-3.3.20-wayland-xkbcommon-headers.patch, +gtk+-3.4.0.ebuild,
+  metadata.xml:
+  Version bump from the gnome overlay. Notable changes: improved input event
+  handling, better theming, smooth scrolling, lots of new features in
+  GtkApplication, new color chooser, optional wayland support.
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> gtk+-2.24.8-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #393007
+
+  25 Mar 2012; Markus Meier <maekke@gentoo.org> gtk+-3.2.3.ebuild:
+  arm stable, bug #407643
+
+  23 Mar 2012; Jeroen Roovers <jer@gentoo.org> gtk+-3.2.3.ebuild:
+  Stable for HPPA (bug #407643).
+
+  16 Mar 2012; Jeff Horelick <jdhore@gentoo.org> gtk+-3.2.3.ebuild:
+  marked x86 per bug 407643
+
+*gtk+-3.2.4-r1 (15 Mar 2012)
+
+  15 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -gtk+-2.24.10.ebuild, gtk+-2.24.10-r1.ebuild, gtk+-3.2.4.ebuild,
+  +gtk+-3.2.4-r1.ebuild, +files/gtk+-3.2.4-fallback-theme.patch:
+  For 3.2.4-r1, fall back to the theme in /etc/gtk-3.0/settings.ini if the
+  theme specified by gnome-settings-daemon does not support gtk3 (provides a
+  better gtk3 experience for gnome2 users). Regenerate marshalers code that had
+  been generated with glib-2.31 (fixes g_value_get_schar errors).
+
+*gtk+-3.2.4 (14 Mar 2012)
+
+  14 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +gtk+-3.2.4.ebuild:
+  Version bump; fixes various bugs and improves window iconification.
+
+  13 Mar 2012; Agostino Sarubbo <ago@gentoo.org> gtk+-3.2.3.ebuild:
+  Stable for amd64, wrt bug #407643
+
+  12 Mar 2012; Brent Baude <ranger@gentoo.org> gtk+-3.2.3.ebuild:
+  Marking gtk+-3.2.3 ppc64 stable for bug 407643
+
+  10 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org> gtk+-3.2.3.ebuild:
+  Skip tests if gnome-themes-standard-3.2 is not installed (see bug #398789,
+  reported by Pacho Ramos).
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> gtk+-2.24.8-r1.ebuild:
+  Marking gtk+-2.24.8-r1 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> gtk+-2.24.8-r1.ebuild:
+  Marking gtk+-2.24.8-r1 ppc64 stable for bug 393007
+
+  14 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gtk+-2.24.10-r1.ebuild:
+  PYTHON_DEPEND is not needed without python, thanks to Dessa for noticing.
+
+*gtk+-2.24.10-r1 (13 Feb 2012)
+
+  13 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gtk+-2.24.5-r1.ebuild, gtk+-2.24.8-r1.ebuild, gtk+-2.24.9-r1.ebuild,
+  gtk+-2.24.10.ebuild, +gtk+-2.24.10-r1.ebuild:
+  Split dev-util/gtk-builder-convert out of gtk+-2.24.10-r1 to get rid of
+  python dependency (requested by Diego Elio Pettenò, bug #402905).
+
+  10 Feb 2012; Patrick Lauer <patrick@gentoo.org> gtk+-2.24.10.ebuild,
+  gtk+-2.24.5-r1.ebuild, gtk+-2.24.8-r1.ebuild, gtk+-2.24.9-r1.ebuild:
+  Changing python deps in preparation for 2.4 removal
+
+*gtk+-2.24.10 (07 Feb 2012)
+
+  07 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -gtk+-2.24.9.ebuild,
+  +gtk+-2.24.10.ebuild:
+  Version bump; drop crash-prone 2.24.9 version. Avoid building gdk/gtk tests
+  when FEATURES=-test (thanks to Rafał Mużyło).
+
+*gtk+-2.24.9-r1 (02 Feb 2012)
+
+  02 Feb 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/gtk+-2.24.9-printing-crash.patch, +gtk+-2.24.9-r1.ebuild:
+  Don't crash when printing, upstream bug #543520, thanks to gringo for
+  reporting.
+
+*gtk+-2.24.9 (29 Jan 2012)
+
+  29 Jan 2012; Pacho Ramos <pacho@gentoo.org> +gtk+-2.24.9.ebuild,
+  -gtk+-2.24.4.ebuild, -gtk+-2.24.6.ebuild, -gtk+-2.24.7.ebuild,
+  -gtk+-3.0.12.ebuild, -gtk+-3.2.2-r1.ebuild, -gtk+-3.2.2-r2.ebuild:
+  Version bump, remove old.
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> gtk+-2.24.8-r1.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> gtk+-2.24.8-r1.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> gtk+-2.24.8-r1.ebuild:
+  amd64 stable, bug 393007
+
+*gtk+-3.2.3 (28 Dec 2011)
+
+  28 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org> -gtk+-3.2.1.ebuild,
+  -gtk+-3.2.2.ebuild, +gtk+-3.2.3.ebuild:
+  Version bump with assorted bugfixes. Drop old.
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> gtk+-2.24.8-r1.ebuild:
+  Stable for HPPA (bug #393007).
+
+*gtk+-3.2.2-r2 (15 Dec 2011)
+
+  15 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gtk+-3.2.2-r2.ebuild:
+  Add upstream patches to fix various crashes, including the segfault in file
+  open dialog (bug #394681, thanks to ByrneG and Marien Zwart). Should also fix
+  disappearing mouse pointer in fluxbox. Includes the gtktoolbutton fix from
+  3.2.2-r1.
+
+  14 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org> gtk+-3.0.12.ebuild,
+  gtk+-3.0.12-r1.ebuild, gtk+-3.2.1.ebuild, gtk+-3.2.2.ebuild,
+  gtk+-3.2.2-r1.ebuild:
+  Do not use gnome2_schemas_update --uninstall; --uninstall has no effect since
+  glib-2.25.11, and has been removed in 2.31.x (bug #394501, thanks to
+  Marc-Antoine Perennou for reporting).
+
+*gtk+-2.24.8-r1 (17 Nov 2011)
+
+  17 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> -gtk+-2.24.8.ebuild,
+  +gtk+-2.24.8-r1.ebuild, +files/gtk+-2.24.8-iconview-layout.patch:
+  Add upstream patch to prevent segfault in gtk_icon_view_layout_single_row,
+  drop broken version. Thanks to Rafał Mużyło (galtgendo) for reporting.
+
+*gtk+-3.2.2-r1 (16 Nov 2011)
+
+  16 Nov 2011; Nirbheek Chauhan <nirbheek@gentoo.org> +gtk+-3.2.2-r1.ebuild,
+  +files/gtk+-3.2.2-toolbutton-icon-widget-GtkMisc.patch:
+  Fix abort when icon widgets on gtktoolbuttons aren't GtkMisc, needed by
+  gnome-boxes
+
+*gtk+-2.24.8 (16 Nov 2011)
+
+  16 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> +gtk+-2.24.8.ebuild,
+  gtk+-3.2.2.ebuild:
+  Bump to 2.24.8; fixes several bugs and updates search to tracker-0.12 dbus
+  API. Makes the same Alt key handling change as in gtk+-3.2.2 (and so gets a
+  blocker on old vte:0 versions to make sure that 2.24.8 is not stabilized
+  before vte-0.28.2-r201:0).
+  Also, add a comment to 3.2.2 about when the vte blocker can be lifted.
+
+  15 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> gtk+-3.2.2.ebuild:
+  Force vte:2.90 users to upgrade to vte-0.30.1-r1 (having a working Alt key in
+  a terminal is vital).
+
+*gtk+-3.2.2 (14 Nov 2011)
+
+  14 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> +gtk+-3.2.2.ebuild:
+  Bump. Notable changes: improves filechooser appearance in non-gnome DEs, plus
+  assorted bugfixes, mostly treeview-related.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> gtk+-3.0.12-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385699
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> gtk+-2.24.5-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> gtk+-2.24.5-r1.ebuild:
+  arm stable, bug #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> gtk+-3.0.12-r1.ebuild:
+  arm stable, bug #385699
+
+  28 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> gtk+-3.2.1.ebuild:
+  Restore keywords after IRC discussion with other members of gnome team
+  (bug #387959). Minor stylistic issues pointed out by Nirbheek.
+
+  25 Oct 2011; Jeroen Roovers <jer@gentoo.org> gtk+-3.2.1.ebuild:
+  Marked ~hppa (bug #387959).
+
+  21 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> gtk+-3.2.1.ebuild:
+  Do not call gnome2_src_prepare, gtk+ is not using gnome.eclass. Thanks to
+  ssuominen for noticing.
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> gtk+-2.24.5-r1.ebuild,
+  gtk+-3.0.12-r1.ebuild:
+  x86 stable wrt bug #385699
+
+  21 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> gtk+-3.2.1.ebuild:
+  Drop keywords for USE="colord packagekit" (bug #387959).
+
+*gtk+-3.2.1 (19 Oct 2011)
+
+  19 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> +gtk+-3.2.1.ebuild,
+  +files/gtk+-3.2.1-failing-tests.patch, +files/gtk+-3.2.1-selector.errors,
+  metadata.xml:
+  Add gtk+-3.2.1 from the gnome overlay. Disable failing treeview scrolling
+  tests (see bug #384855 and https://bugzilla.gnome.org/show_bug.cgi?id=660931),
+  add missing selectors.errors file (needed for the css parser test),
+  completely skip reftests (many of them fail when building from portage, but
+  strangely enough succeed when building from my home directory; need to
+  investigate why), and disable a11y picker test (GtkFileChooserButton look
+  depends on list of mounted filesystems).
+  Notable changes: *lots* (better theming, including a new CSS parser, and dark
+  theme variants; better XInput2 support; gail is no longer a module; tree
+  model improvements; more widgets support height-for-width;
+  GtkFontChooserDialog, GtkLockButton, GtkOverlay).
+
+*gtk+-2.24.7 (18 Oct 2011)
+
+  18 Oct 2011; Pacho Ramos <pacho@gentoo.org> +gtk+-2.24.7.ebuild,
+  +files/gtk+-2.24.7-darwin-quartz-introspection.patch:
+  Version bump, also skip broken pltcheck tests under gtk/ subdir (bug
+  #333463).
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> gtk+-2.24.5-r1.ebuild,
+  gtk+-3.0.12-r1.ebuild:
+  Stable for HPPA (bug #385699).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> gtk+-2.24.5-r1.ebuild,
+  gtk+-3.0.12-r1.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> gtk+-2.24.5-r1.ebuild,
+  gtk+-3.0.12-r1.ebuild:
+  amd64 stable wrt #385699
+
+*gtk+-3.0.12-r1 (26 Sep 2011)
+
+  26 Sep 2011; Pacho Ramos <pacho@gentoo.org> +gtk+-3.0.12-r1.ebuild,
+  +files/gtk+-3.0.12-use-const.patch:
+  Use const instead G_CONST_RETURN, bug #379897 by Alexandre Rostovtsev.
+
+*gtk+-2.24.6 (09 Sep 2011)
+
+  09 Sep 2011; Pacho Ramos <pacho@gentoo.org> +gtk+-2.24.6.ebuild,
+  -gtk+-3.0.11.ebuild:
+  Version bump, remove old.
+
+  04 Sep 2011; Fabian Groffen <grobian@gentoo.org> gtk+-3.0.12.ebuild:
+  Fix compilation on Solaris
+
+  28 Aug 2011; Fabian Groffen <grobian@gentoo.org> gtk+-2.24.5-r1.ebuild:
+  Marked ~x64-macos
+
+  16 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> gtk+-2.24.4.ebuild,
+  gtk+-2.24.5-r1.ebuild:
+  Remove misleading GNOME2_LA_PUNT variable export; we don't inherit
+  gnome2.eclass, bug 379373
+
+  11 Aug 2011; Markus Duft <mduft@gentoo.org> gtk+-2.24.5-r1.ebuild,
+  gtk+-3.0.12.ebuild:
+  removed obsolete dependency for interix prefix
+
+  10 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> gtk+-2.24.5-r1.ebuild:
+  Remove libtool files (again, see ChangeLog entry from 10 Apr 2011)
 
 *gtk+-3.0.12 (28 Jul 2011)
 
@@ -2259,5 +2754,3 @@ unmasking the glib-2.0.1 packages
   10 Mar 2002; Bruce A. Locke <blocke@shivan.org> gtk+-1.2.10-r5.ebuild :
 
   NLS fixes submitted by seemant@rocketmail.com (Seemant Kulleen)
-
-

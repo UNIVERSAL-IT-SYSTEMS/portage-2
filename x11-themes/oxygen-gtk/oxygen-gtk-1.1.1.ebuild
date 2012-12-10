@@ -1,34 +1,39 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/oxygen-gtk/oxygen-gtk-1.1.1.ebuild,v 1.1 2011/07/17 16:25:52 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/oxygen-gtk/oxygen-gtk-1.1.1.ebuild,v 1.5 2012/11/23 19:41:00 ago Exp $
 
 EAPI=4
 
+MY_PN=${PN}3
+MY_P=${MY_PN}-${PV}
+
 inherit cmake-utils
 
-DESCRIPTION="Official GTK+ port of KDE's Oxygen widget style"
+DESCRIPTION="Official GTK+:3 port of KDE's Oxygen widget style"
 HOMEPAGE="https://projects.kde.org/projects/playground/artwork/oxygen-gtk"
-SRC_URI="mirror://kde/stable/${PN}/${PV}/src/${P}.tar.bz2"
+SRC_URI="mirror://kde/stable/${MY_PN}/${PV}/src/${MY_P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
-KEYWORDS="~amd64 ~x86"
-SLOT="0"
+KEYWORDS="amd64 x86"
+SLOT="3"
 IUSE="debug doc"
 
 RDEPEND="
+	!x11-themes/oxygen-gtk:0
 	dev-libs/dbus-glib
 	dev-libs/glib
 	x11-libs/cairo
-	>=x11-libs/gtk+-2.24.2:2
+	x11-libs/gtk+:3
 	x11-libs/libX11
-	x11-libs/pango
 "
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( app-doc/doxygen )
 "
 
-DOCS=(AUTHORS README)
+DOCS=(AUTHORS README TODO)
+
+S="${WORKDIR}/${MY_P}"
 
 src_install() {
 	if use doc; then
@@ -38,8 +43,8 @@ src_install() {
 
 	cmake-utils_src_install
 
-	cat <<-EOF > 99oxygen-gtk
-CONFIG_PROTECT="${EPREFIX}/usr/share/themes/oxygen-gtk/gtk-2.0"
+	cat <<-EOF > 99oxygen-gtk3
+CONFIG_PROTECT="${EPREFIX}/usr/share/themes/oxygen-gtk/gtk-3.0"
 EOF
-	doenvd 99oxygen-gtk
+	doenvd 99oxygen-gtk3
 }

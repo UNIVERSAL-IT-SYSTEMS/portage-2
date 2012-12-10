@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ipcad/ipcad-3.7.3.ebuild,v 1.1 2011/03/31 17:27:08 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ipcad/ipcad-3.7.3.ebuild,v 1.6 2012/12/05 16:23:23 jer Exp $
 
 EAPI=2
 inherit autotools eutils
@@ -9,9 +9,9 @@ DESCRIPTION="IP Cisco Accounting Daemon"
 HOMEPAGE="http://ipcad.sourceforge.net/"
 SRC_URI="mirror://sourceforge/ipcad/${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="BSD-2 GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE=""
 
 RDEPEND="net-libs/libpcap

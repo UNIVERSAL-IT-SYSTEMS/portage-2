@@ -1,6 +1,30 @@
 # ChangeLog for dev-util/diffball
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/diffball/ChangeLog,v 1.36 2011/07/25 09:47:55 naota Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/diffball/ChangeLog,v 1.43 2012/05/04 17:51:44 jdhore Exp $
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> diffball-1.0.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> diffball-1.0.1.ebuild:
+  Marking diffball-1.0.1 ppc for bug 400349
+
+  29 Jan 2012; Raúl Porcel <armin76@gentoo.org> diffball-1.0.1.ebuild:
+  alpha/ia64 stable wrt #400349
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> diffball-1.0.1.ebuild:
+  x86 stable wrt bug #400349
+
+  25 Jan 2012; Markos Chandras <hwoarang@gentoo.org> diffball-1.0.1.ebuild:
+  Stable on amd64 wrt bug #400349
+
+  02 Aug 2011; Rafael G. Martins <rafaelmartins@gentoo.org>
+  diffball-1.0.1.ebuild:
+  added dev-util/pkgconfig to DEPEND. ${PN}-${PV} == ${P}
+
+*diffball-1.0.1 (02 Aug 2011)
+
+  02 Aug 2011; Brian Harring <ferringb@gentoo.org> +diffball-1.0.1.ebuild:
+  Add diffball 1.0.1 with xz support
 
   25 Jul 2011; Naohiro Aota <naota@gentoo.org> diffball-1.0.ebuild:
   Add keyword ~x86-fbsd

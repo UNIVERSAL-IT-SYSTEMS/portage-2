@@ -1,6 +1,36 @@
 # ChangeLog for dev-php/PEAR-Net_IMAP
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Net_IMAP/ChangeLog,v 1.30 2009/08/22 19:36:26 beandog Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Net_IMAP/ChangeLog,v 1.38 2012/03/18 18:38:39 armin76 Exp $
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> PEAR-Net_IMAP-1.1.1.ebuild:
+  ia64/sparc stable wrt #396985
+
+  02 Mar 2012; Tobias Klausmann <klausman@gentoo.org>
+  PEAR-Net_IMAP-1.1.1.ebuild:
+  Stable on alpha, bug #396985
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> PEAR-Net_IMAP-1.1.1.ebuild:
+  Marking PEAR-Net_IMAP-1.1.1 ppc64 for bug 396985
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> PEAR-Net_IMAP-1.1.1.ebuild:
+  Marking PEAR-Net_IMAP-1.1.1 ppc for bug 396985
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  PEAR-Net_IMAP-1.1.1.ebuild:
+  x86 stable wrt bug #396985
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> PEAR-Net_IMAP-1.1.1.ebuild:
+  Stable for HPPA (bug #396985).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> PEAR-Net_IMAP-1.1.1.ebuild:
+  Stable for amd64, wrt bug #396985
+
+*PEAR-Net_IMAP-1.1.1 (15 Jan 2012)
+
+  15 Jan 2012; Matti Bickel <mabi@gentoo.org>
+  -PEAR-Net_IMAP-1.1.0_beta2.ebuild, -PEAR-Net_IMAP-1.1.0.ebuild,
+  +PEAR-Net_IMAP-1.1.1.ebuild:
+  version bump & remove old
 
 *PEAR-Net_IMAP-1.1.0 (22 Aug 2009)
 

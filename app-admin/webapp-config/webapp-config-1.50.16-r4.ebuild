@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/webapp-config/webapp-config-1.50.16-r4.ebuild,v 1.1 2010/12/19 18:31:55 rafaelmartins Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/webapp-config/webapp-config-1.50.16-r4.ebuild,v 1.10 2012/07/15 17:17:09 armin76 Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -14,7 +14,7 @@ SRC_URI="mirror://gentoo/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND=""
@@ -29,6 +29,7 @@ src_prepare() {
 	epatch "${FILESDIR}/${P}-htdocs-symlink.patch"
 	epatch "${FILESDIR}/${P}-absolute-paths.patch"
 	epatch "${FILESDIR}/${P}-update-servers.patch"
+	epatch "${FILESDIR}/${P}-fix-unicode-tests.patch"
 	# Do not build nor install eclass manual, bug 322759
 	rm -f doc/webapp.eclass.5*
 	sed -e '/MAN_PAGES/s/webapp.eclass.5//' \
@@ -43,8 +44,6 @@ src_install() {
 	# locations. Since we only install one script here the following should
 	# be ok
 	distutils_src_install --install-scripts="/usr/sbin"
-
-	python_convert_shebangs 2 "${ED}usr/sbin/webapp-config"
 
 	insinto /etc/vhosts
 	doins config/webapp-config

@@ -1,6 +1,35 @@
 # ChangeLog for app-admin/localepurge
-# Copyright 2002-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/localepurge/ChangeLog,v 1.35 2008/01/26 10:20:17 grobian Exp $
+# Copyright 2002-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/localepurge/ChangeLog,v 1.40 2012/12/04 22:36:49 hwoarang Exp $
+
+*localepurge-0.5.4-r1 (04 Dec 2012)
+
+  04 Dec 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/localepurge-0.5.4-directorysum.patch,
+  +files/localepurge-0.5.4-parentdir.patch, +localepurge-0.5.4-r1.ebuild,
+  -localepurge-0.5.4.ebuild:
+  Revbump. Fixes bug #164544 and #445910
+
+*localepurge-0.5.4 (03 Dec 2012)
+
+  03 Dec 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/localepurge-0.5.4-prefix.patch, +localepurge-0.5.4.ebuild,
+  metadata.xml:
+  Version bump. Add Wim Muskee <wimmuskee@gmail.com> as maintainer. Bug #445682
+
+*localepurge-0.5.3.3-r1 (05 Aug 2012)
+
+  05 Aug 2012; Christoph Junghans <ottxor@gentoo.org>
+  +files/localepurge-0.5.3.3-prefix.patch, +localepurge-0.5.3.3-r1.ebuild,
+  -localepurge-0.5.3.3.ebuild:
+  add prefix changes
+
+  21 Mar 2012; Pacho Ramos <pacho@gentoo.org> localepurge-0.5.3.3.ebuild:
+  Fix reported version.
+
+  18 Mar 2012; Pacho Ramos <pacho@gentoo.org> -localepurge-0.5.3.1.ebuild,
+  -localepurge-0.5.3.2.ebuild, -localepurge-0.5.3.ebuild, metadata.xml:
+  Drop maintainer due retirement, bug #391429. Drop old.
 
   26 Jan 2008; Fabian Groffen <grobian@gentoo.org> localepurge-0.5.2.ebuild,
   localepurge-0.5.3.ebuild, localepurge-0.5.3.1.ebuild,

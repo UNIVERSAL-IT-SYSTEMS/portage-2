@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/rbot/rbot-9999-r10.ebuild,v 1.5 2010/08/06 17:36:35 a3li Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/rbot/rbot-9999-r10.ebuild,v 1.8 2012/06/01 03:58:21 zmedico Exp $
 
-inherit ruby eutils
+inherit ruby eutils user
 
-[[ ${PV} == *"9999" ]] && inherit git
+[[ ${PV} == *"9999" ]] && inherit git-2
 
 DESCRIPTION="rbot is a ruby IRC bot"
 HOMEPAGE="http://ruby-rbot.org/"
@@ -13,7 +13,7 @@ LICENSE="GPL-2 as-is"
 SLOT="0"
 KEYWORDS=""
 IUSE="spell aspell timezone translator shorturl nls dict figlet
-	fortune cal host toilet hunspell"
+	fortune cal host toilet"
 ILINGUAS="zh_CN zh_TW ru nl de fr it ja"
 
 for lang in $ILINGUAS; do
@@ -25,10 +25,7 @@ RDEPEND=">=dev-lang/ruby-1.8
 	timezone? ( dev-ruby/tzinfo )
 	spell? (
 		aspell? ( app-text/aspell )
-		!aspell? (
-			hunspell? ( app-text/hunspell )
-			!hunspell? ( app-text/ispell )
-		)
+		!aspell? ( app-text/hunspell )
 	)
 	translator? ( dev-ruby/mechanize )
 	shorturl? ( dev-ruby/shorturl )
@@ -60,7 +57,7 @@ pkg_setup() {
 
 src_unpack() {
 	if [[ ${PV} == *"9999" ]]; then
-		git_src_unpack
+		git-2_src_unpack
 
 		cd "${S}"
 		sed -i -e '/\$version=/s:".\+":"'${PV}'":' bin/rbot \
@@ -87,14 +84,12 @@ src_compile() {
 			|| rbot_conf "$2" /bin/false
 	}
 
-	local spell_program="/usr/bin/ispell"
+	local spell_program="/usr/bin/hunspell -i"
 	if use !spell; then
 		disable_rbot_plugin spell
 		spell_program="/bin/false"
 	elif use aspell; then
 		spell_program="/usr/bin/ispell-aspell"
-	elif use hunspell; then
-		spell_program="/usr/bin/hunspell -i"
 	fi
 
 	rbot_conf spell.program "${spell_program}"

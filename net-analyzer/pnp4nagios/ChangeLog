@@ -1,13 +1,85 @@
 # ChangeLog for net-analyzer/pnp4nagios
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pnp4nagios/ChangeLog,v 1.32 2011/04/11 18:41:27 dertobi123 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pnp4nagios/ChangeLog,v 1.50 2012/11/29 17:01:03 ago Exp $
+
+  29 Nov 2012; <ago@gentoo.org> pnp4nagios-0.6.19-r1.ebuild:
+  Stable for ppc, wrt bug #430358
+
+  26 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  pnp4nagios-0.6.19-r1.ebuild:
+  ppc64 stable wrt #430358
+
+  17 Sep 2012; Andreas Schuerch <nativemad@gentoo.org>
+  pnp4nagios-0.6.19-r1.ebuild:
+  x86 stable, see bug 430358
+
+  14 Sep 2012; Agostino Sarubbo <ago@gentoo.org> pnp4nagios-0.6.19-r1.ebuild:
+  Stable for amd64, wrt bug #430358
+
+*pnp4nagios-0.6.19-r1 (13 Sep 2012)
+
+  13 Sep 2012; Christian Ruppert <idl0r@gentoo.org>
+  +pnp4nagios-0.6.19-r1.ebuild, -pnp4nagios-0.6.19.ebuild:
+  Fix bug 430358 - CVE-2012-3457
+
+*pnp4nagios-0.6.19 (11 Sep 2012)
+
+  11 Sep 2012; Christian Ruppert <idl0r@gentoo.org> +pnp4nagios-0.6.19.ebuild:
+  Version bump to 0.6.19.
+
+  19 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Re-assign to sysadmin herd.
+
+*pnp4nagios-0.6.18 (22 Jul 2012)
+
+  22 Jul 2012; Christian Ruppert <idl0r@gentoo.org> +pnp4nagios-0.6.18.ebuild,
+  +files/npcd.initd:
+  Version bump, bug 424793 and some improvements part #1
+
+*pnp4nagios-0.6.14-r1 (25 Jun 2012)
+
+  25 Jun 2012; Matthew Thode <prometheanfire@gentoo.org>
+  +pnp4nagios-0.6.14-r1.ebuild:
+  you can use icinga or nagios with pnp4nagios now, fixes bug #422711
+
+  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> -pnp4nagios-0.6.11.ebuild,
+  -pnp4nagios-0.6.7.ebuild:
+  Remove old
+
+  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> pnp4nagios-0.6.14.ebuild:
+  Stable for amd64, wrt bug #400425
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> pnp4nagios-0.6.14.ebuild:
+  x86 stable, bug #400425
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> pnp4nagios-0.6.14.ebuild:
+  Marking pnp4nagios-0.6.14 ppc for bug 400425
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> pnp4nagios-0.6.14.ebuild:
+  Marking pnp4nagios-0.6.14 ppc64 for bug 400425
+
+  09 Feb 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #85926
+
+  03 Nov 2011; Justin Lecher <jlec@gentoo.org> pnp4nagios-0.6.7.ebuild,
+  pnp4nagios-0.6.11.ebuild, pnp4nagios-0.6.14.ebuild:
+  Econf needs no die
+
+*pnp4nagios-0.6.14 (12 Aug 2011)
+
+  12 Aug 2011; Tobias Scherbaum <dertobi123@gentoo.org>
+  -pnp4nagios-0.4.12.ebuild, +pnp4nagios-0.6.14.ebuild,
+  +files/pnp4nagios-0.6.14-makefile.patch:
+  Version bump
+
+  07 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> pnp4nagios-0.6.7.ebuild:
+  ppc/ppc64 stable wrt #330539
 
 *pnp4nagios-0.6.11 (11 Apr 2011)
 
   11 Apr 2011; Tobias Scherbaum <dertobi123@gentoo.org>
   +pnp4nagios-0.6.11.ebuild:
   Version bump
-
 
   31 Oct 2010; Tobias Scherbaum <dertobi123@gentoo.org>
   pnp4nagios-0.6.7.ebuild:
@@ -160,4 +232,3 @@
   12 Apr 2008; Caleb Tennis <caleb@gentoo.org> +metadata.xml,
   +pnp4nagios-0.4.7.ebuild:
   Initial import
-

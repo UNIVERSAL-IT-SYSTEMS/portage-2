@@ -1,6 +1,78 @@
 # ChangeLog for sys-libs/pam
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/pam/ChangeLog,v 1.295 2011/06/14 18:32:30 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/pam/ChangeLog,v 1.314 2012/10/07 18:52:57 flameeyes Exp $
+
+  07 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/Linux-PAM-1.1.6+glibc-2.16.patch, pam-1.1.6.ebuild:
+  Add a patch to fix building with USE=selinux and glibc 2.16. Thanks to Anarchy
+  for report and patch.
+
+  17 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/Linux-PAM-1.1.6-destdir.patch, pam-1.1.6.ebuild:
+  Restore documentation install and fix installation of pam_namespace.
+
+*pam-1.1.6 (17 Aug 2012)
+
+  17 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +pam-1.1.6.ebuild:
+  Version bump. Documentation is not installed right now.
+
+  16 Jul 2012; Jory A. Pratt <anarchy@gentoo.org>
+  files/Linux-PAM-1.1.5+glibc-2.16.patch:
+  Additional fixup for glibc-2.16
+
+  05 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/Linux-PAM-1.1.5+glibc-2.16.patch, -pam-1.1.3.ebuild, pam-1.1.5.ebuild:
+  Add patch to build with glibc 2.16. Thanks to Stevan Bajić in bug #424920 for
+  the patch. Also remove old version.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> pam-1.1.5.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> pam-1.1.5.ebuild:
+  ppc64 stable wrt #388431
+
+  06 Nov 2011; Brent Baude <ranger@gentoo.org> pam-1.1.5.ebuild:
+  Marking pam-1.1.5 ppc for bug 388431
+
+  31 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> -pam-1.1.4.ebuild,
+  pam-1.1.5.ebuild:
+  Remove 1.1.4 version; change HOMEPAGE for 1.1.5.
+
+  29 Oct 2011; Raúl Porcel <armin76@gentoo.org> pam-1.1.5.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc/x86 stable wrt #388431
+
+  28 Oct 2011; Jeroen Roovers <jer@gentoo.org> pam-1.1.5.ebuild:
+  Stable for HPPA (bug #388431).
+
+  27 Oct 2011; Markos Chandras <hwoarang@gentoo.org> pam-1.1.5.ebuild:
+  Stable on amd64 wrt bug #388431
+
+*pam-1.1.5 (25 Oct 2011)
+
+  25 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> +pam-1.1.5.ebuild:
+  Version bump.
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> pam-1.1.4.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #386325
+
+  17 Oct 2011; Markus Meier <maekke@gentoo.org> pam-1.1.4.ebuild:
+  arm stable, bug #386325
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> pam-1.1.4.ebuild:
+  x86 stable wrt bug #386325
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> pam-1.1.4.ebuild:
+  Stable for HPPA (bug #386325).
+
+  09 Oct 2011; Markos Chandras <hwoarang@gentoo.org> pam-1.1.4.ebuild:
+  Stable on amd64 wrt bug #386325
+
+*pam-1.1.4 (02 Sep 2011)
+
+  02 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> -pam-1.1.3-r1.ebuild,
+  -files/Linux-PAM-1.1.3-nis.patch, +pam-1.1.4.ebuild:
+  Version bump; remove 1.1.3-r1 since the patch is integrated with .4 and that
+  is going to be the stable candidate. Closes bug #381485.
 
   14 Jun 2011; Diego E. Pettenò <flameeyes@gentoo.org> pam-1.1.3-r1.ebuild:
   Drop REQUIRED_USE as selinux support is still built fine without nis.
@@ -1224,5 +1296,3 @@
   17 Feb 2002; Bruce A. Locke <blocke@shivan.org> pam-0.75-r2.ebuild :
 
   Part 1 of PAM revamp.  Ebuild is masked out...  FOR DEVELOPER TESTING ONLY
-
-

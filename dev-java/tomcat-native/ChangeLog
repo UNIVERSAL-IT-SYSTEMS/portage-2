@@ -1,6 +1,49 @@
 # ChangeLog for dev-java/tomcat-native
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/tomcat-native/ChangeLog,v 1.29 2010/05/26 19:09:42 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/tomcat-native/ChangeLog,v 1.39 2012/08/04 10:27:22 ago Exp $
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> tomcat-native-1.1.24.ebuild:
+  Stable for amd64, wrt bug #427332
+
+  21 Jul 2012; Jeff Horelick <jdhore@gentoo.org> tomcat-native-1.1.24.ebuild:
+  marked x86 per bug 427332
+
+*tomcat-native-1.1.24 (14 Jun 2012)
+
+  14 Jun 2012; Miroslav Šulc <fordfrog@gentoo.org>
+  +tomcat-native-1.1.24.ebuild:
+  Version bump
+
+  14 Jun 2012; Miroslav Šulc <fordfrog@gentoo.org>
+  -tomcat-native-1.1.15.ebuild, -tomcat-native-1.1.16.ebuild,
+  -tomcat-native-1.1.18.ebuild, -tomcat-native-1.1.20.ebuild,
+  -tomcat-native-1.1.22.ebuild:
+  Removed old ebuilds
+
+  04 Jun 2012; Johannes Huber <johu@gentoo.org> tomcat-native-1.1.23.ebuild:
+  Stable for x86, wrt bug #418341
+
+  31 May 2012; Agostino Sarubbo <ago@gentoo.org> tomcat-native-1.1.23.ebuild:
+  Stable for amd64, wrt bug #418341
+
+*tomcat-native-1.1.23 (11 Mar 2012)
+
+  11 Mar 2012; Miroslav Šulc <fordfrog@gentoo.org>
+  +tomcat-native-1.1.23.ebuild:
+  Version bump
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  tomcat-native-1.1.22.ebuild:
+  x86 stable wrt bug #404645
+
+  23 Feb 2012; Agostino Sarubbo <ago@gentoo.org> tomcat-native-1.1.22.ebuild:
+  Stable for amd64, wrt bug #404645
+
+*tomcat-native-1.1.22 (15 Dec 2011)
+
+  15 Dec 2011; Miroslav Šulc <fordfrog@gentoo.org>
+  +tomcat-native-1.1.22.ebuild:
+  Version bump
 
   26 May 2010; Pacho Ramos <pacho@gentoo.org> tomcat-native-1.1.20.ebuild:
   stable amd64, bug 316551

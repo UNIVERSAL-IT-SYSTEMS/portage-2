@@ -1,6 +1,24 @@
 # ChangeLog for x11-libs/libgksu
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libgksu/ChangeLog,v 1.80 2011/06/03 14:28:39 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libgksu/ChangeLog,v 1.85 2012/06/08 13:06:20 pacho Exp $
+
+  08 Jun 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer from metadata as talked with him, bug #90641.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libgksu-2.0.12-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  05 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libgksu-2.0.12-r1.ebuild, +files/libgksu-2.0.12-automake-1.11.2.patch:
+  Fix building with automake-1.11.2 (bug #397411, thanks to Alphat-PC for the
+  patch).
+
+  15 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libgksu-2.0.12-r1.ebuild:
+  QA: eautoreconf should be before gnome2_src_prepare.
+
+  10 Sep 2011; Pacho Ramos <pacho@gentoo.org> libgksu-2.0.12-r1.ebuild:
+  Fix keyring dependency, bug #381915 by bay.
 
   03 Jun 2011; Diego E. Pettenò <flameeyes@gentoo.org>
   libgksu-2.0.12-r1.ebuild, +files/libgksu-2.0.12-notests.patch:

@@ -1,6 +1,43 @@
 # ChangeLog for mail-client/mail-notification
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/mail-notification/ChangeLog,v 1.107 2011/03/06 07:37:29 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/mail-notification/ChangeLog,v 1.114 2012/10/06 15:12:51 blueness Exp $
+
+  06 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  mail-notification-5.4-r6.ebuild:
+  keyword ~ppc, bug #437372
+
+*mail-notification-5.4-r6 (06 Oct 2012)
+
+  06 Oct 2012; Pacho Ramos <pacho@gentoo.org> +mail-notification-5.4-r6.ebuild,
+  metadata.xml:
+  Revision bump syncing with fedora, it includes a snapshot incorporating most
+  of the fixes have been around different distributions for years, also port it
+  to gtk3, gmime-2.6 and stop using glade. It's also compatible with Gnome3.
+  Taken maintainership also.
+
+  21 May 2012; Mike Frysinger <vapier@gentoo.org>
+  mail-notification-5.4-r4.ebuild, mail-notification-5.4-r5.ebuild:
+  Inherit eutils for epatch, use $(usex), and display configure commands.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  mail-notification-5.4-r4.ebuild, mail-notification-5.4-r5.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Jan 2012; Hans de Graaff <graaff@gentoo.org> metadata.xml:
+  Drop maintainership.
+
+  17 Dec 2011; Fabian Groffen <grobian@gentoo.org>
+  mail-notification-5.4-r5.ebuild:
+  Fixed for Prefix, marked ~x86-linux, thanks Aaron Kaplan in bug #302330
+
+*mail-notification-5.4-r5 (04 Dec 2011)
+
+  04 Dec 2011; Hans de Graaff <graaff@gentoo.org>
+  +mail-notification-5.4-r5.ebuild,
+  +files/mail-notification-5.4-fix-markup.patch:
+  Make markup in notifications compatible with newer notification-daemon
+  implementations. Thansk to Ian Abbott in bug 392599 for finding and preparing
+  the patch.
 
   06 Mar 2011; Hans de Graaff <graaff@gentoo.org>
   mail-notification-5.4-r4.ebuild:

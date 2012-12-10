@@ -1,6 +1,24 @@
 # ChangeLog for app-mobilephone/gnokii
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/gnokii/ChangeLog,v 1.112 2011/07/22 12:06:53 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-mobilephone/gnokii/ChangeLog,v 1.116 2012/09/13 18:15:39 reavertm Exp $
+
+  13 Sep 2012; Maciej Mrozowski <reavertm@gentoo.org>
+  +files/gnokii-0.6.31-fix_xgnokii_inclusion.patch:
+  Add missing patch.
+
+*gnokii-0.6.31 (11 Sep 2012)
+
+  11 Sep 2012; Christoph Junghans <ottxor@gentoo.org> +gnokii-0.6.31.ebuild,
+  gnokii-9999.ebuild, metadata.xml:
+  version bump (bug #351594) and prefix support (bug #431164)
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> gnokii-0.6.27-r2.ebuild,
+  gnokii-0.6.27-r4.ebuild, gnokii-0.6.28.1.ebuild, gnokii-0.6.29.ebuild,
+  gnokii-9999.ebuild:
+  Use doicon instead insinto + doins to install icon files
+
+  21 Sep 2011; Michał Górny <mgorny@gentoo.org> gnokii-9999.ebuild:
+  Migrate to git-2.
 
   22 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> gnokii-0.6.29.ebuild:
   ppc/ppc64 stable wrt #332043

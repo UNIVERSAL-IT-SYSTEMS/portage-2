@@ -1,10 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/txt2tags/txt2tags-2.6.ebuild,v 1.2 2011/04/05 05:09:22 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/txt2tags/txt2tags-2.6.ebuild,v 1.9 2012/03/22 21:49:41 floppym Exp $
 
 EAPI="2"
 PYTHON_USE_WITH="tk"
 PYTHON_USE_WITH_OPT="tk"
+PYTHON_DEPEND="2"
 
 inherit eutils elisp-common python
 
@@ -14,7 +15,7 @@ SRC_URI="http://${PN}.googlecode.com/files/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~sparc-solaris"
+KEYWORDS="amd64 ppc ~ppc64 x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris"
 IUSE="emacs tk vim-syntax"
 
 DEPEND="dev-lang/python
@@ -77,6 +78,8 @@ src_install() {
 		insinto /usr/share/vim/vimfiles/ftdetect
 		doins "${T}/${PN}.vim" || die
 	fi
+
+	python_convert_shebangs -r 2 "${D}"
 }
 
 pkg_postinst() {

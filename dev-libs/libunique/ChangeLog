@@ -1,6 +1,65 @@
 # ChangeLog for dev-libs/libunique
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libunique/ChangeLog,v 1.43 2011/07/25 15:18:41 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libunique/ChangeLog,v 1.60 2012/10/26 02:14:55 blueness Exp $
+
+  26 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  libunique-1.1.6-r1.ebuild:
+  keyword ~mips
+
+  21 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libunique-1.1.6-r1.ebuild:
+  Need eutils for epatch.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> libunique-1.1.6.ebuild,
+  libunique-1.1.6-r1.ebuild, libunique-3.0.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> libunique-3.0.2.ebuild:
+  alpha/ia64/sh/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> libunique-3.0.2.ebuild:
+  Marking libunique-3.0.2 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> libunique-3.0.2.ebuild:
+  Marking libunique-3.0.2 ppc64 stable for bug 393007
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> libunique-3.0.2.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> libunique-3.0.2.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> libunique-3.0.2.ebuild:
+  amd64 stable, bug 393007
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> libunique-3.0.2.ebuild:
+  Stable for HPPA (bug #393007).
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> libunique-1.1.6-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> libunique-1.1.6-r1.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  libunique-1.1.6-r1.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> libunique-1.1.6-r1.ebuild:
+  Stable for HPPA (bug #385699).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  libunique-1.1.6-r1.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  libunique-1.1.6-r1.ebuild:
+  amd64 stable wrt #385699
+
+  29 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> libunique-3.0.2.ebuild:
+  Change GCONF_DEBUF to GCONF_DEBUG to match gnome2.eclass. Remove
+  -DG_DISABLE_DEPRECATED and -DGTK_DISABLE_DEPRECATED from build system to
+  allow building against glib-2.30 and pango-1.28.
 
 *libunique-1.1.6-r1 (25 Jul 2011)
 
@@ -167,4 +226,3 @@
   +metadata.xml, +libunique-1.0.8.ebuild:
   Original ebuild is courtesy of Christoph Brill <egore@gmx.de>, closes bug
   #236899.
-

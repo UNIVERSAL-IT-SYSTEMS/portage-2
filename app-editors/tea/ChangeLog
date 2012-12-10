@@ -1,6 +1,61 @@
 # ChangeLog for app-editors/tea
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/tea/ChangeLog,v 1.50 2010/10/06 20:02:57 chiiph Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/tea/ChangeLog,v 1.60 2012/09/18 08:31:17 pesa Exp $
+
+*tea-33.3.0 (18 Sep 2012)
+
+  18 Sep 2012; Davide Pesavento <pesa@gentoo.org> +tea-33.3.0.ebuild,
+  -tea-33.1.0.ebuild:
+  Version bump, remove old.
+
+  03 Aug 2012; Michael Palimaka <kensington@gentoo.org> metadata.xml:
+  Add upstream metadata.
+
+*tea-33.2.0 (02 Aug 2012)
+
+  02 Aug 2012; Davide Pesavento <pesa@gentoo.org> +tea-33.2.0.ebuild,
+  -tea-33.0.0.ebuild:
+  Version bump.
+
+*tea-33.1.0 (01 Jun 2012)
+
+  01 Jun 2012; Michael Palimaka <kensington@gentoo.org> +tea-33.1.0.ebuild,
+  -tea-32.0.2.ebuild:
+  Version bump, remove old.
+
+  02 May 2012; Davide Pesavento <pesa@gentoo.org> tea-32.0.2.ebuild:
+  Migrate to virtual/pkgconfig.
+
+*tea-33.0.0 (02 May 2012)
+
+  02 May 2012; Davide Pesavento <pesa@gentoo.org> +tea-33.0.0.ebuild,
+  -tea-32.0.1.ebuild:
+  Version bump.
+
+*tea-32.0.2 (24 Apr 2012)
+
+  24 Apr 2012; Johannes Huber <johu@gentoo.org> +tea-32.0.2.ebuild,
+  -tea-31.2.0.ebuild, -tea-32.0.0.ebuild:
+  Version bump, remove old.
+
+*tea-32.0.1 (16 Mar 2012)
+
+  16 Mar 2012; Davide Pesavento <pesa@gentoo.org> +tea-32.0.1.ebuild,
+  -files/tea-17.5.4-forced-cflags-and-compiler-warnings.patch,
+  -tea-17.6.6.ebuild, metadata.xml:
+  Version bump, #407915 by Michael (kensington). Remove old.
+
+*tea-32.0.0 (16 Mar 2012)
+
+  16 Mar 2012; Patrick Lauer <patrick@gentoo.org> +tea-32.0.0.ebuild:
+  Bump
+
+*tea-31.2.0 (21 Jan 2012)
+
+  21 Jan 2012; Johannes Huber <johu@gentoo.org> +tea-31.2.0.ebuild,
+  -tea-27.0.0.ebuild, -tea-28.1.2.ebuild:
+  Version bump wrt bug #399399. Thanks to kensington
+  <gentoo@scribeofthenile.com>. Fixes also bug #370113.
 
 *tea-28.1.2 (06 Oct 2010)
 
@@ -213,4 +268,3 @@
   10 Dec 2006; Peter Weller <welp@gentoo.org> +metadata.xml,
   +tea-14.3.1.ebuild:
   Added tea-14.3.1 to the tree wrt bug #153602
-

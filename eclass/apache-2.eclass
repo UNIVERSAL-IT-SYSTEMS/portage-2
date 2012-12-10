@@ -1,8 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/apache-2.eclass,v 1.25 2011/07/08 11:35:01 ssuominen Exp $
-
-EAPI="2"
+# $Header: /var/cvsroot/gentoo-x86/eclass/apache-2.eclass,v 1.29 2012/05/23 03:24:44 flameeyes Exp $
 
 # @ECLASS: apache-2.eclass
 # @MAINTAINER:
@@ -469,7 +467,7 @@ apache-2_src_configure() {
 # This function runs `emake install' and generates, installs and adapts the gentoo
 # specific configuration files found in the tarball
 apache-2_src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" MKINSTALLDIRS="mkdir -p" install || die "make install failed"
 
 	# install our configuration files
 	keepdir /etc/apache2/vhosts.d
@@ -541,7 +539,7 @@ apache-2_src_install() {
 	for i in /var/lib/dav /var/log/apache2 /var/cache/apache2 ; do
 		keepdir ${i}
 		fowners apache:apache ${i}
-		fperms 0755 ${i}
+		fperms 0750 ${i}
 	done
 }
 
@@ -552,6 +550,12 @@ apache-2_src_install() {
 # because the default webroot is a copy of the files that exist elsewhere and we
 # don't want them to be managed/removed by portage when apache is upgraded.
 apache-2_pkg_postinst() {
+	# fix previously wrong set permissions Bug#398899
+	einfo "Sanitizing directory permissions ..."
+	for i in /var/lib/dav /var/log/apache2 /var/cache/apache2 ; do
+		chmod 0750 ${i}
+	done
+
 	if use ssl && [[ ! -e "${ROOT}/etc/ssl/apache2/server.pem" ]]; then
 		SSL_ORGANIZATION="${SSL_ORGANIZATION:-Apache HTTP Server}"
 		install_cert /etc/ssl/apache2/server

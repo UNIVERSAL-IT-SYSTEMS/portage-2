@@ -1,6 +1,37 @@
 # ChangeLog for app-text/sgmltools-lite
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/sgmltools-lite/ChangeLog,v 1.53 2011/04/25 18:51:36 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/sgmltools-lite/ChangeLog,v 1.61 2012/07/15 18:18:21 armin76 Exp $
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org>
+  sgmltools-lite-3.0.3-r11.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #410193
+
+  28 Jun 2012; Brent Baude <ranger@gentoo.org> sgmltools-lite-3.0.3-r11.ebuild:
+  Marking sgmltools-lite-3.0.3-r11 ppc for bug 410193
+
+  27 Jun 2012; Jeroen Roovers <jer@gentoo.org> sgmltools-lite-3.0.3-r11.ebuild:
+  Stable for HPPA (bug #410193).
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> sgmltools-lite-3.0.3-r11.ebuild:
+  Marking sgmltools-lite-3.0.3-r11 ppc64 for bug 410193
+
+  20 Jun 2012; Markus Meier <maekke@gentoo.org>
+  sgmltools-lite-3.0.3-r11.ebuild:
+  arm stable, bug #410193
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org>
+  sgmltools-lite-3.0.3-r11.ebuild:
+  marked x86 per bug 410193
+
+  15 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  sgmltools-lite-3.0.3-r11.ebuild:
+  Stable for amd64, wrt bug #410193
+
+*sgmltools-lite-3.0.3-r11 (29 Mar 2012)
+
+  29 Mar 2012; Mike Gilbert <floppym@gentoo.org>
+  +sgmltools-lite-3.0.3-r11.ebuild:
+  Convert python shebangs. Use slot deps.
 
   25 Apr 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   sgmltools-lite-3.0.3-r10.ebuild:

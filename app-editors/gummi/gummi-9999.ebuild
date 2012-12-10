@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/gummi/gummi-9999.ebuild,v 1.1 2010/10/24 11:34:37 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/gummi/gummi-9999.ebuild,v 1.3 2011/10/27 05:42:07 tetromino Exp $
 
 EAPI=2
 inherit base eutils subversion
 
-ESVN_REPO_URI="http://dev.midnightcoding.org/svn/gummi/trunk"
+ESVN_REPO_URI="http://svn.midnightcoding.org/gummi/trunk"
 ESVN_PROJECT="${PN/-svn}"
 
 DESCRIPTION="Simple LaTeX editor for GTK+ users"
@@ -27,7 +27,7 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	dev-texlive/texlive-latexextra
 	>=x11-libs/gtk+-2.16:2"
 DEPEND="${RDEPEND}
-	app-text/gtkspell
+	app-text/gtkspell:2
 	app-text/poppler[cairo]
 	x11-libs/gtksourceview:2.0
 	x11-libs/pango"

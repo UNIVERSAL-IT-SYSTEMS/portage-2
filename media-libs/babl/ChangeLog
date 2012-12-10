@@ -1,6 +1,70 @@
 # ChangeLog for media-libs/babl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/babl/ChangeLog,v 1.28 2011/05/20 20:15:45 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/babl/ChangeLog,v 1.43 2012/11/05 08:48:28 hanno Exp $
+
+  05 Nov 2012; Hanno Boeck <hanno@gentoo.org> metadata.xml:
+  Maintained now by sping.
+
+  30 May 2012; Alexis Ballier <aballier@gentoo.org> babl-0.1.10.ebuild:
+  keyword ~amd64-fbsd
+
+*babl-9999 (17 May 2012)
+
+  17 May 2012; Sebastian Pipping <sping@gentoo.org> +babl-9999.ebuild:
+  Adding live ebuild for and by xmw (bug #416337)
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> babl-0.1.4.ebuild,
+  babl-0.1.4-r2.ebuild, babl-0.1.6.ebuild, babl-0.1.8.ebuild,
+  babl-0.1.10.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  22 Apr 2012; Fabian Groffen <grobian@gentoo.org> babl-0.1.10.ebuild,
+  babl-0.1.8.ebuild:
+  Fix compilation on Darwin
+
+*babl-0.1.8 (13 Apr 2012)
+
+  13 Apr 2012; Sebastian Pipping <sping@gentoo.org> +babl-0.1.8.ebuild:
+  Add 0.1.8
+
+*babl-0.1.10 (11 Apr 2012)
+
+  11 Apr 2012; Sebastian Pipping <sping@gentoo.org> +babl-0.1.10.ebuild:
+  Bump to 0.1.10
+
+  13 Feb 2012; Fabian Groffen <grobian@gentoo.org> babl-0.1.6.ebuild:
+  Marked ~x64-macos
+
+  06 Jan 2012; Sebastian Pipping <sping@gentoo.org> babl-0.1.6.ebuild:
+  Add missing dependency on libtool >=2.2 and vala
+
+  06 Jan 2012; Sebastian Pipping <sping@gentoo.org> babl-0.1.6.ebuild,
+  metadata.xml:
+  Add use flag vala
+
+  01 Jan 2012; Sebastian Pipping <sping@gentoo.org> babl-0.1.4.ebuild,
+  babl-0.1.4-r2.ebuild, babl-0.1.6.ebuild:
+  Add missing depedency on dev-util/pkgconfig reported by nzgr (bug #384183)
+
+*babl-0.1.6 (01 Jan 2012)
+
+  01 Jan 2012; Sebastian Pipping <sping@gentoo.org> +babl-0.1.6.ebuild,
+  +files/babl-0.1.6-introspection.patch:
+  Bump to 0.1.6: bump dependency version, port patch
+
+  22 Dec 2011; Tomáš Chvátal <scarabeus@gentoo.org> -babl-0.0.22.ebuild:
+  remove old
+
+*babl-0.1.4-r2 (28 Aug 2011)
+
+  28 Aug 2011; Justin Lecher <jlec@gentoo.org> -babl-0.1.4-r1.ebuild,
+  +babl-0.1.4-r2.ebuild, +files/babl-0.1.4-introspection.patch, metadata.xml:
+  Fix for build with introspection adapted from upstream patch, #380115
+
+*babl-0.1.4-r1 (23 Aug 2011)
+
+  23 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> +babl-0.1.4-r1.ebuild:
+  Bump babl to ~arch for introspection
 
   20 May 2011; Kacper Kowalik <xarthisius@gentoo.org> babl-0.1.4.ebuild:
   ppc/ppc64 stable wrt #360595

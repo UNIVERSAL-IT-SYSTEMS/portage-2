@@ -1,6 +1,29 @@
 # ChangeLog for app-benchmarks/iozone
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/iozone/ChangeLog,v 1.43 2011/07/22 18:44:27 patrick Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/iozone/ChangeLog,v 1.50 2012/07/03 03:54:31 patrick Exp $
+
+*iozone-3.408 (03 Jul 2012)
+
+  03 Jul 2012; Patrick Lauer <patrick@gentoo.org> +iozone-3.408.ebuild:
+  Bump for #424363
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> iozone-3.397.ebuild:
+  Marking iozone-3.397 ppc for bug 399919
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> iozone-3.397.ebuild:
+  ia64/sparc stable wrt #399919
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> iozone-3.397.ebuild:
+  Marking iozone-3.397 ppc64 for bug 399919
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> iozone-3.397.ebuild:
+  x86 stable wrt bug #399919
+
+  29 Feb 2012; Markus Meier <maekke@gentoo.org> iozone-3.397.ebuild:
+  arm stable, bug #399919
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> iozone-3.397.ebuild:
+  Stable for amd64, wrt bug #399919
 
 *iozone-3.397 (22 Jul 2011)
 
@@ -204,4 +227,3 @@
   13 May 2004; Daniel Black <dragonheart@gentoo.org> +metadata.xml,
   +iozone-3.217.ebuild:
   Inital import by Jesse Becker <jbecker@speakeasy.net> in bug #50804
-

@@ -1,6 +1,28 @@
 # ChangeLog for dev-util/weka
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/weka/ChangeLog,v 1.42 2011/06/23 17:19:00 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/weka/ChangeLog,v 1.47 2012/08/23 05:46:36 xmw Exp $
+
+  23 Aug 2012; Michael Weber <xmw@gentoo.org> weka-3.6.6-r1.ebuild:
+  ppc stable (bug 418965).
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> weka-3.6.6-r1.ebuild:
+  Stable for amd64, wrt bug #418965
+
+  01 Aug 2012; Jeff Horelick <jdhore@gentoo.org> weka-3.6.6-r1.ebuild:
+  marked x86 per bug 418965
+
+*weka-3.6.6-r1 (25 Dec 2011)
+
+  25 Dec 2011; Miroslav Šulc <fordfrog@gentoo.org> -weka-3.6.6.ebuild,
+  +weka-3.6.6-r1.ebuild:
+  Added icon and desktop entry (bug #389877, thanks to Randall Wald
+  <rdwald@gmail.com>)
+
+*weka-3.6.6 (25 Dec 2011)
+
+  25 Dec 2011; Miroslav Šulc <fordfrog@gentoo.org> +weka-3.6.6.ebuild,
+  +files/weka-3.6.6-build.xml.patch:
+  Version bump
 
   23 Jun 2011; Brent Baude <ranger@gentoo.org> weka-3.6.4.ebuild:
   Marking weka-3.6.4 ppc for bug 358515
@@ -162,4 +184,3 @@
   16 May 2004; Chris Aniszczyk <zx@gentoo.org> +metadata.xml,
   +weka-3.4.1.ebuild:
   Initial Import. Closes #50414
-

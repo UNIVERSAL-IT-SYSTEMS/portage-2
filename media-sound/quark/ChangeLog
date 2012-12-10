@@ -1,6 +1,34 @@
 # ChangeLog for media-sound/quark
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/quark/ChangeLog,v 1.15 2011/03/29 12:40:00 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/quark/ChangeLog,v 1.23 2012/10/04 21:40:11 ranger Exp $
+
+  04 Oct 2012; Brent Baude <ranger@gentoo.org> quark-3.24.ebuild:
+  Marking quark-3.24 ppc for bug 429138
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> quark-3.24.ebuild:
+  x86 stable wrt bug #429138
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> quark-3.24.ebuild:
+  Stable for amd64, wrt bug #429138
+
+*quark-3.24 (31 May 2012)
+
+  31 May 2012; Julian Ospald <hasufell@gentoo.org> +quark-3.24.ebuild,
+  +files/quark-3.24-build.patch, metadata.xml:
+  version bump
+
+  31 May 2012; Julian Ospald <hasufell@gentoo.org> quark-3.21.ebuild:
+  fix underlinking wrt #367859, fix homepage
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> quark-3.21.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  17 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> quark-3.21.ebuild:
+  Remove alpha/sparc keywording wrt #397531
+
+  20 Oct 2011; Pacho Ramos <pacho@gentoo.org> quark-3.21.ebuild,
+  -files/quark-3.21-nogtkdisabledeprecated.patch:
+  Drop DEPRECATED flags, bug #387823
 
   29 Mar 2011; Christoph Mende <angelos@gentoo.org> quark-3.21.ebuild:
   Fix gtk+ slot deps

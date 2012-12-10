@@ -1,11 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/mono-debugger/mono-debugger-2.10.ebuild,v 1.3 2011/05/11 19:29:15 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/mono-debugger/mono-debugger-2.10.ebuild,v 1.5 2012/04/18 10:22:31 pacho Exp $
 
-# bah, tests fail. Needs to be fixed ...
-RESTRICT="test"
-
-EAPI="2"
+EAPI=4
 
 inherit go-mono mono autotools flag-o-matic eutils
 
@@ -16,6 +13,8 @@ LICENSE="GPL-2 MIT"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
 IUSE=""
+# bah, tests fail. Needs to be fixed ...
+RESTRICT="test"
 
 #Bundles jay
 # Binutils is needed for libbfd
@@ -27,6 +26,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	go-mono_src_prepare
+
+	epatch "${FILESDIR}/${P}-glib2.32.patch"
 
 	# Allow compilation against system libbfd, bnc#662581
 	epatch "${FILESDIR}/${PN}-2.8-system-bfd.patch"
@@ -44,5 +45,5 @@ src_configure() {
 }
 
 src_compile() {
-	emake -j1 || die "Failed to build"
+	emake -j1
 }

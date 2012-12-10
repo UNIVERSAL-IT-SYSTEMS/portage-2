@@ -1,6 +1,19 @@
 # ChangeLog for sys-power/powernowd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/powernowd/ChangeLog,v 1.12 2011/06/02 13:05:19 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-power/powernowd/ChangeLog,v 1.15 2012/11/18 11:43:56 pacho Exp $
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+*powernowd-1.00-r1 (17 Oct 2012)
+
+  17 Oct 2012; Jeroen Roovers <jer@gentoo.org> -powernowd-0.90.ebuild,
+  -powernowd-0.96.ebuild, -powernowd-0.97.ebuild, +powernowd-1.00-r1.ebuild,
+  -files/powernowd.rc, files/powernowd.initd:
+  Remove opts=reload (bug #427022). Respect CC.
+
+  13 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> powernowd-1.00.ebuild:
+  ppc stable wrt #348617
 
   02 Jun 2011; Markus Meier <maekke@gentoo.org> powernowd-1.00.ebuild:
   amd64/x86 stable, bug #348617

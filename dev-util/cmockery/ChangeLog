@@ -1,6 +1,25 @@
 # ChangeLog for dev-util/cmockery
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/cmockery/ChangeLog,v 1.5 2011/07/15 10:42:53 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/cmockery/ChangeLog,v 1.11 2012/05/20 08:19:21 halcy0n Exp $
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> cmockery-0.1.2.ebuild:
+  Stable for ppc64; bug #382499
+
+  26 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> cmockery-0.1.2.ebuild:
+  Stable ppc wrt bug#382499.
+
+  16 Sep 2011; Tony Vroon <chainsaw@gentoo.org> cmockery-0.1.2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #382499.
+
+  16 Sep 2011; Andreas Schuerch <nativemad@gentoo.org> cmockery-0.1.2.ebuild:
+  x86 stable, thanks JD on bug 382499
+
+  24 Aug 2011; Jeremy Olexa <darkside@gentoo.org> cmockery-0.1.2.ebuild:
+  add prefix keywords, bug 374401
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> cmockery-0.1.2.ebuild:
+  Add ~s390/~sparc wrt #374401
 
   15 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> cmockery-0.1.2.ebuild:
   Marked ~ppc/~ppc64 wrt #374401

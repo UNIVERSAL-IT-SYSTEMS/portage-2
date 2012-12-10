@@ -1,6 +1,33 @@
 # ChangeLog for media-libs/libmng
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libmng/ChangeLog,v 1.71 2011/02/19 18:25:26 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libmng/ChangeLog,v 1.80 2012/06/14 03:07:30 vapier Exp $
+
+  14 Jun 2012; Mike Frysinger <vapier@gentoo.org> libmng-1.0.10-r1.ebuild:
+  Add fix by Vadim for building with newer automake #420223 by Leonid Kopylov.
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> libmng-1.0.10-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -libmng-1.0.10.ebuild:
+  old
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libmng-1.0.10-r1.ebuild:
+  ppc/ppc64 stable wrt #386511
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> libmng-1.0.10-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #386511
+
+  17 Oct 2011; Markus Meier <maekke@gentoo.org> libmng-1.0.10-r1.ebuild:
+  arm stable, bug #386511
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> libmng-1.0.10-r1.ebuild:
+  Stable for HPPA (bug #386511).
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libmng-1.0.10-r1.ebuild:
+  x86 stable wrt bug #386511
+
+  09 Oct 2011; Markos Chandras <hwoarang@gentoo.org> libmng-1.0.10-r1.ebuild:
+  Stable on amd64 wrt bug #386511
 
 *libmng-1.0.10-r1 (19 Feb 2011)
 

@@ -1,6 +1,32 @@
 # ChangeLog for games-strategy/ufo-ai
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/ufo-ai/ChangeLog,v 1.34 2011/04/02 17:45:50 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/ufo-ai/ChangeLog,v 1.41 2012/11/04 06:02:12 mr_bones_ Exp $
+
+  04 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> ufo-ai-2.4.ebuild:
+  don't try to use the system mini-xml (bug #440026)
+
+  16 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  -files/ufo-ai-2.3.1-libpng15.patch, -ufo-ai-2.3.1-r1.ebuild:
+  old
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ufo-ai-2.4.ebuild:
+  x86 stable wrt bug #418429
+
+  31 May 2012; Michael Sterrett <mr_bones_@gentoo.org> ufo-ai-2.4.ebuild:
+  tidy
+
+*ufo-ai-2.4 (01 May 2012)
+
+  01 May 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +files/ufo-ai-2.4-locale.patch, +ufo-ai-2.4.ebuild:
+  Version bump to the latest release. Upstream now use hand-crafted build system
+  :/ Fix locale init.
+
+  22 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> ufo-ai-2.3.1-r1.ebuild:
+  Fix building with sys-libs/zlib >= 1.2.5.1-r1 (OF change) wrt #383179
+
+  20 Aug 2011; Alexis Ballier <aballier@gentoo.org> ufo-ai-2.3.1-r1.ebuild:
+  virtual/latex-base provides pdftex, drop useless pdftex dep
 
   02 Apr 2011; Alfredo Tupone <tupone@gentoo.org> ufo-ai-2.3.1-r1.ebuild,
   +files/ufo-ai-2.3.1-libpng15.patch:
@@ -137,4 +163,3 @@
   ufo-ai-0.10.040218.ebuild, files/0.10.040218-Makefile.patch:
   Initial import. Ebuild submitted by Pol <blenderman@tiscali.be>. Closing bug
   #42418.
-

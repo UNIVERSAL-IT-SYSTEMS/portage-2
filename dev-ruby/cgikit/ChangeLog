@@ -1,6 +1,27 @@
 # ChangeLog for dev-ruby/cgikit
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/cgikit/ChangeLog,v 1.17 2010/06/13 07:28:52 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/cgikit/ChangeLog,v 1.24 2012/07/01 18:31:42 armin76 Exp $
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> cgikit-1.2.1-r1.ebuild:
+  Drop alpha keywords
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> cgikit-1.2.1-r1.ebuild:
+  Drop ia64/sparc keywords
+
+  09 Mar 2012; Hans de Graaff <graaff@gentoo.org> -cgikit-1.2.1.ebuild:
+  Remove old version.
+
+  08 Mar 2012; Naohiro Aota <naota@gentoo.org> cgikit-1.2.1-r1.ebuild:
+  Add ~x86-fbsd.
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> cgikit-1.2.1-r1.ebuild:
+  Marking cgikit-1.2.1-r1 ppc64 for bug 395981
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> cgikit-1.2.1-r1.ebuild:
+  Marking cgikit-1.2.1-r1 ppc for bug 395981
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> cgikit-1.2.1-r1.ebuild:
+  alpha/ia64/x86 stable wrt ##395981
 
 *cgikit-1.2.1-r1 (13 Jun 2010)
 

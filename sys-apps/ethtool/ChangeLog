@@ -1,6 +1,64 @@
 # ChangeLog for sys-apps/ethtool
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/ethtool/ChangeLog,v 1.70 2011/06/09 00:55:48 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/ethtool/ChangeLog,v 1.84 2012/10/08 01:44:28 radhermit Exp $
+
+*ethtool-3.6 (08 Oct 2012)
+
+  08 Oct 2012; Tim Harder <radhermit@gentoo.org> +ethtool-3.6.ebuild:
+  Version bump.
+
+*ethtool-3.5 (05 Aug 2012)
+
+  05 Aug 2012; Tim Harder <radhermit@gentoo.org> +ethtool-3.5.ebuild:
+  Version bump.
+
+*ethtool-3.4.2 (19 Jul 2012)
+
+  19 Jul 2012; Tim Harder <radhermit@gentoo.org> +ethtool-3.4.2.ebuild:
+  Version bump.
+
+*ethtool-3.4.1 (14 Jun 2012)
+
+  14 Jun 2012; Tim Harder <radhermit@gentoo.org> +ethtool-3.4.1.ebuild:
+  Version bump.
+
+*ethtool-3.4 (12 Jun 2012)
+
+  12 Jun 2012; Tim Harder <radhermit@gentoo.org> +ethtool-3.4.ebuild:
+  Version bump (bug #420729).
+
+  02 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> ethtool-3.0.ebuild:
+  ppc64 stable wrt #393553
+
+*ethtool-3.2 (14 Jan 2012)
+
+  14 Jan 2012; Tim Harder <radhermit@gentoo.org> +ethtool-3.2.ebuild:
+  Version bump.
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> ethtool-3.0.ebuild:
+  Marking ethtool-3.0 ppc for bug 393553
+
+  14 Dec 2011; Markus Meier <maekke@gentoo.org> ethtool-3.0.ebuild:
+  arm stable, bug #393553
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ethtool-3.0.ebuild:
+  x86 stable wrt bug #393553
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org> ethtool-3.0.ebuild:
+  Stable for AMD64, wrt bug #393553
+
+  11 Dec 2011; Jeroen Roovers <jer@gentoo.org> ethtool-3.0.ebuild:
+  Stable for HPPA (bug #393553).
+
+*ethtool-3.1 (07 Dec 2011)
+
+  07 Dec 2011; Tim Harder <radhermit@gentoo.org> +ethtool-3.1.ebuild:
+  Version bump.
+
+*ethtool-3.0 (21 Aug 2011)
+
+  21 Aug 2011; Tim Harder <radhermit@gentoo.org> +ethtool-3.0.ebuild:
+  Version bump
 
 *ethtool-2.6.39 (09 Jun 2011)
 

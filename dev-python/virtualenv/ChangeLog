@@ -1,6 +1,80 @@
 # ChangeLog for dev-python/virtualenv
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/virtualenv/ChangeLog,v 1.61 2011/07/20 22:46:22 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/virtualenv/ChangeLog,v 1.80 2012/11/29 06:27:48 patrick Exp $
+
+*virtualenv-1.8.4 (29 Nov 2012)
+
+  29 Nov 2012; Patrick Lauer <patrick@gentoo.org> +virtualenv-1.8.4.ebuild:
+  Bump
+
+  29 Sep 2012; Tim Harder <radhermit@gentoo.org> virtualenv-1.7.1.2-r1.ebuild:
+  Use correct variable name.
+
+  29 Sep 2012; Tim Harder <radhermit@gentoo.org> -virtualenv-1.6.4.ebuild,
+  -virtualenv-1.7.ebuild, -virtualenv-1.7.1.1.ebuild:
+  Remove old.
+
+*virtualenv-1.8.2 (29 Sep 2012)
+
+  29 Sep 2012; Tim Harder <radhermit@gentoo.org> +virtualenv-1.8.2.ebuild,
+  +files/virtualenv-1.8.2-no-versioned-script.patch:
+  Version bump.
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> virtualenv-1.7.1.2-r1.ebuild:
+  Marking virtualenv-1.7.1.2-r1 ppc for bug 415875
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> virtualenv-1.7.1.2-r1.ebuild:
+  Marking virtualenv-1.7.1.2-r1 ppc64 for bug 415875
+
+  18 May 2012; Jeff Horelick <jdhore@gentoo.org> virtualenv-1.7.1.2-r1.ebuild:
+  marked x86 per bug 415875
+
+  14 May 2012; Agostino Sarubbo <ago@gentoo.org> virtualenv-1.7.1.2-r1.ebuild:
+  Stable for amd64, wrt bug #415875
+
+*virtualenv-1.7.1.2-r1 (02 Mar 2012)
+
+  02 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> -virtualenv-1.7.1.2.ebuild,
+  +virtualenv-1.7.1.2-r1.ebuild:
+  Clean up ebuild, add docs, fix tests (incorporating code by Arfrever).
+
+*virtualenv-1.7.1.2 (01 Mar 2012)
+
+  01 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> +virtualenv-1.7.1.2.ebuild:
+  Version bump to 1.7.1.2.
+
+  17 Feb 2012; Dirkjan Ochtman <djc@gentoo.org> -virtualenv-1.6.1.ebuild:
+  Remove old version.
+
+*virtualenv-1.7.1.1 (17 Feb 2012)
+
+  17 Feb 2012; Dirkjan Ochtman <djc@gentoo.org> +virtualenv-1.7.1.1.ebuild:
+  Version bump to 1.7.1.1.
+
+  13 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> virtualenv-1.6.4.ebuild:
+  ppc64 stable wrt #392639
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> virtualenv-1.6.4.ebuild:
+  Marking virtualenv-1.6.4 ppc for bug 392639
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> virtualenv-1.6.4.ebuild:
+  x86 stable wrt bug #392639
+
+  02 Dec 2011; Markos Chandras <hwoarang@gentoo.org> virtualenv-1.6.4.ebuild:
+  Stable on amd64 wrt bug #392639
+
+*virtualenv-1.7 (30 Nov 2011)
+
+  30 Nov 2011; Dirkjan Ochtman <djc@gentoo.org> +virtualenv-1.7.ebuild:
+  Version bump to 1.7 (and enable tests).
+
+*virtualenv-1.6.4 (12 Aug 2011)
+
+  12 Aug 2011; Dirkjan Ochtman <djc@gentoo.org> +virtualenv-1.6.4.ebuild:
+  Version bump to 1.6.4.
+
+  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> -virtualenv-1.6.ebuild:
+  Remove old ebuild. Requested by Arfrever
 
   20 Jul 2011; Mark Loeser <halcy0n@gentoo.org> virtualenv-1.6.1.ebuild:
   Stable for ppc64; bug #370513
@@ -252,4 +326,3 @@
   03 Apr 2008; Rob Cakebread <pythonhead@gentoo.org> +metadata.xml,
   +virtualenv-1.0.ebuild:
   Initial commit. Closes #215959
-

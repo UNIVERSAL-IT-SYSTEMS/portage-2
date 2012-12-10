@@ -1,6 +1,21 @@
 # ChangeLog for net-analyzer/nagios-sap-ccms-plugin
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios-sap-ccms-plugin/ChangeLog,v 1.9 2010/10/20 00:31:55 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios-sap-ccms-plugin/ChangeLog,v 1.13 2012/09/24 00:47:14 vapier Exp $
+
+  24 Sep 2012; Mike Frysinger <vapier@gentoo.org>
+  nagios-sap-ccms-plugin-0.7.3-r1.ebuild, nagios-sap-ccms-plugin-0.8.ebuild:
+  QA_DT_HASH (old/deprecated) -> QA_FLAGS_IGNORED (new hotness).
+
+  19 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  -nagios-sap-ccms-plugin-0.7.3.ebuild:
+  Remove old.
+
+  19 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Re-assign to sysadmin herd.
+
+  12 Jun 2012; Zac Medico <zmedico@gentoo.org>
+  nagios-sap-ccms-plugin-0.7.3-r1.ebuild, nagios-sap-ccms-plugin-0.8.ebuild:
+  inherit multilib for get_libdir
 
   20 Oct 2010; Jeroen Roovers <jer@gentoo.org>
   nagios-sap-ccms-plugin-0.8.ebuild:
@@ -45,4 +60,3 @@
   08 Oct 2006; Markus Ullmann <jokey@gentoo.org> +metadata.xml,
   +nagios-sap-ccms-plugin-0.7.3.ebuild:
   Initial commit, thanks to Elias Probst in bug #126146 for providing the ebuild
-

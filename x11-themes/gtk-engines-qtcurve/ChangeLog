@@ -1,6 +1,89 @@
 # ChangeLog for x11-themes/gtk-engines-qtcurve
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-qtcurve/ChangeLog,v 1.107 2011/07/03 19:30:48 wired Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-qtcurve/ChangeLog,v 1.124 2012/12/07 22:58:53 ago Exp $
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org>
+  gtk-engines-qtcurve-1.8.15.ebuild:
+  Stable for ppc64, wrt bug #411845
+
+*gtk-engines-qtcurve-1.8.15-r1 (14 Nov 2012)
+
+  14 Nov 2012; Ben de Groot <yngwin@gentoo.org>
+  +files/gtk-engines-qtcurve-1.8.15-cairo.patch,
+  +gtk-engines-qtcurve-1.8.15-r1.ebuild:
+  Add patch to fix cairo rendering problem, bug #436742
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> gtk-engines-qtcurve-1.8.15.ebuild:
+  ppc stable (bug 411845).
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org>
+  gtk-engines-qtcurve-1.8.15.ebuild:
+  alpha/sparc stable wrt #411845
+
+  22 Jun 2012; Davide Pesavento <pesa@gentoo.org>
+  -gtk-engines-qtcurve-1.8.12.ebuild, -gtk-engines-qtcurve-1.8.14.ebuild:
+  Remove old.
+
+  21 May 2012; Johannes Huber <johu@gentoo.org>
+  gtk-engines-qtcurve-1.8.15.ebuild:
+  Stable for x86, wrt bug #411845
+
+  07 May 2012; Ben de Groot <yngwin@gentoo.org>
+  gtk-engines-qtcurve-1.8.15.ebuild:
+  Stable for amd64, wrt bug #411845
+
+  07 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  gtk-engines-qtcurve-1.8.14.ebuild:
+  Stable for amd64, wrt bug #411845
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  gtk-engines-qtcurve-1.6.4.ebuild, gtk-engines-qtcurve-1.8.12.ebuild,
+  gtk-engines-qtcurve-1.8.14.ebuild, gtk-engines-qtcurve-1.8.15.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*gtk-engines-qtcurve-1.8.15 (26 Apr 2012)
+
+  26 Apr 2012; Davide Pesavento <pesa@gentoo.org>
+  +gtk-engines-qtcurve-1.8.15.ebuild:
+  Version bump, bug 413595.
+
+  06 Apr 2012; Davide Pesavento <pesa@gentoo.org>
+  -gtk-engines-qtcurve-1.8.9.ebuild:
+  Remove old.
+
+*gtk-engines-qtcurve-1.8.14 (29 Feb 2012)
+
+  29 Feb 2012; Johannes Huber <johu@gentoo.org>
+  +gtk-engines-qtcurve-1.8.14.ebuild, -gtk-engines-qtcurve-1.8.13.ebuild:
+  Version bump, remove old. Fixes bug #404531.
+
+*gtk-engines-qtcurve-1.8.13 (19 Feb 2012)
+
+  19 Feb 2012; Markos Chandras <hwoarang@gentoo.org>
+  +gtk-engines-qtcurve-1.8.13.ebuild:
+  Version bump
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gtk-engines-qtcurve-1.8.12.ebuild:
+  x86 stable wrt bug #402437
+
+  07 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  gtk-engines-qtcurve-1.8.12.ebuild:
+  Stable for amd64, wrt bug #402437
+
+*gtk-engines-qtcurve-1.8.12 (01 Jan 2012)
+
+  01 Jan 2012; Davide Pesavento <pesa@gentoo.org>
+  +gtk-engines-qtcurve-1.8.12.ebuild, -gtk-engines-qtcurve-0.69.2.ebuild,
+  -gtk-engines-qtcurve-1.8.5.ebuild, -gtk-engines-qtcurve-1.8.7.ebuild:
+  Version bump, #395723 by Ivan S. Titov. Allow www-client/icecat to satisfy the
+  mozilla dependency (bug #370165 by Matija "hook" Šuklje). Remove old.
+
+  01 Nov 2011; Jeroen Roovers <jer@gentoo.org>
+  gtk-engines-qtcurve-0.69.2.ebuild, gtk-engines-qtcurve-1.6.4.ebuild,
+  gtk-engines-qtcurve-1.8.5.ebuild, gtk-engines-qtcurve-1.8.7.ebuild,
+  gtk-engines-qtcurve-1.8.9.ebuild:
+  Drop HPPA keywording.
 
 *gtk-engines-qtcurve-1.8.9 (03 Jul 2011)
 
@@ -177,4 +260,3 @@
   30 Nov 2009; Joseph Jezak <josejx@gentoo.org>
   gtk-engines-qtcurve-0.69.2.ebuild:
   Marked ppc64 stable for bug #290212.
-

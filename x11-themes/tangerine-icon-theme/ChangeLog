@@ -1,6 +1,31 @@
 # ChangeLog for x11-themes/tangerine-icon-theme
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/tangerine-icon-theme/ChangeLog,v 1.21 2010/05/30 14:18:47 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/tangerine-icon-theme/ChangeLog,v 1.27 2012/07/02 06:54:35 ssuominen Exp $
+
+  02 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  tangerine-icon-theme-0.27.ebuild:
+  Use "rsvg-convert" instead of "rsvg" for compability with recent librsvg wrt
+  #423179
+
+  02 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -tangerine-icon-theme-0.26.ebuild:
+  old
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  tangerine-icon-theme-0.26.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  17 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  tangerine-icon-theme-0.26.ebuild, tangerine-icon-theme-0.27.ebuild:
+  Drop sparc keywords
+
+  21 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  tangerine-icon-theme-0.27.ebuild:
+  x86 stable wrt bug #397303
+
+  02 Jan 2012; Agostino Sarubbo <ago@gentoo.org>
+  tangerine-icon-theme-0.27.ebuild:
+  Stable for AMD64, wrt bug #397303
 
   30 May 2010; Markos Chandras <hwoarang@gentoo.org>
   tangerine-icon-theme-0.26.ebuild:

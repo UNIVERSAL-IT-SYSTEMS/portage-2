@@ -1,6 +1,85 @@
 # ChangeLog for sys-apps/fakeroot
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/fakeroot/ChangeLog,v 1.66 2011/06/29 21:18:58 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/fakeroot/ChangeLog,v 1.87 2012/07/03 09:52:42 ssuominen Exp $
+
+  03 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> fakeroot-1.18.4.ebuild,
+  +files/fakeroot-1.18.4-no-acl_h.patch:
+  Fix building with USE="-acl" wrt #424419 by Maksim Melnikau
+
+*fakeroot-1.18.4 (07 Jun 2012)
+
+  07 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +fakeroot-1.18.4.ebuild:
+  Version bump. Fix automagic sys-apps/acl dependency.
+
+*fakeroot-1.18.3 (12 May 2012)
+
+  12 May 2012; Tim Harder <radhermit@gentoo.org> +fakeroot-1.18.3.ebuild:
+  Version bump.
+
+  19 Mar 2012; Tim Harder <radhermit@gentoo.org> -fakeroot-1.18.ebuild,
+  -fakeroot-1.18.1.ebuild:
+  Remove old.
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> fakeroot-1.18.2.ebuild:
+  alpha/sparc stable wrt #404851
+
+  22 Feb 2012; Brent Baude <ranger@gentoo.org> fakeroot-1.18.2.ebuild:
+  Marking fakeroot-1.18.2 ppc for bug 404851
+
+  21 Feb 2012; Jeff Horelick <jdhore@gentoo.org> fakeroot-1.18.2.ebuild:
+  marked x86 per bug 404851
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> fakeroot-1.18.2.ebuild:
+  Stable for HPPA (bug #404851).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> fakeroot-1.18.2.ebuild:
+  Stable for amd64, wrt bug #404851
+
+  18 Dec 2011; Tim Harder <radhermit@gentoo.org> -fakeroot-1.14.4.ebuild:
+  Remove old.
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> fakeroot-1.18.ebuild:
+  alpha/sparc stable wrt #386739
+
+*fakeroot-1.18.2 (05 Dec 2011)
+
+  05 Dec 2011; Tim Harder <radhermit@gentoo.org> +fakeroot-1.18.2.ebuild:
+  Version bump.
+
+  05 Dec 2011; Tim Harder <radhermit@gentoo.org> fakeroot-1.18.1.ebuild:
+  Fix header.
+
+  23 Oct 2011; nixnut <nixnut@gentoo.org> fakeroot-1.18.ebuild:
+  ppc stable #386739
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> fakeroot-1.18.ebuild:
+  x86 stable wrt bug #386739
+
+  12 Oct 2011; Tony Vroon <chainsaw@gentoo.org> fakeroot-1.18.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #386739.
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> fakeroot-1.18.ebuild:
+  Stable for HPPA (bug #386739).
+
+  11 Oct 2011; Tim Harder <radhermit@gentoo.org> -fakeroot-1.14.5.ebuild,
+  -fakeroot-1.15.1.ebuild, -fakeroot-1.16.ebuild, -fakeroot-1.17.ebuild:
+  Remove old.
+
+*fakeroot-1.18.1 (11 Oct 2011)
+
+  11 Oct 2011; Tim Harder <radhermit@gentoo.org> +fakeroot-1.18.1.ebuild:
+  Version bump.
+
+*fakeroot-1.18 (03 Sep 2011)
+
+  03 Sep 2011; Tim Harder <radhermit@gentoo.org> +fakeroot-1.18.ebuild:
+  Version bump.
+
+*fakeroot-1.17 (22 Aug 2011)
+
+  22 Aug 2011; Tim Harder <radhermit@gentoo.org> +fakeroot-1.17.ebuild:
+  Version bump.
 
 *fakeroot-1.16 (29 Jun 2011)
 

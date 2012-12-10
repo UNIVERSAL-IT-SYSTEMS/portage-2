@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/lyx/lyx-1.6.10.ebuild,v 1.4 2011/07/18 14:06:47 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/lyx/lyx-1.6.10.ebuild,v 1.13 2012/06/14 07:15:34 yngwin Exp $
 
 EAPI=2
 
 PYTHON_DEPEND="2"
 
-inherit qt4-r2 eutils flag-o-matic font python toolchain-funcs
+inherit gnome2-utils qt4-r2 eutils flag-o-matic font python toolchain-funcs
 
 MY_P="${P/_}"
 
@@ -20,7 +20,7 @@ SRC_URI="ftp://ftp.lyx.org/pub/lyx/stable/1.6.x/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="alpha amd64 hppa ~ia64 ~ppc ~ppc64 sparc x86"
 IUSE="cups debug nls latex monolithic-build html rtf dot docbook dia subversion rcs svg"
 
 LANGS="ar ca cs de el en es eu fi fr gl he hu id it ja nb nn pl pt ro ru sk tr uk zh_CN zh_TW"
@@ -48,7 +48,7 @@ COMMONDEPEND="x11-libs/qt-gui:4
 	>=dev-libs/boost-1.34"
 
 RDEPEND="${COMMONDEPEND}
-	|| ( dev-texlive/texlive-fontsextra app-text/ptex )
+	dev-texlive/texlive-fontsextra
 	|| ( media-gfx/imagemagick media-gfx/graphicsmagick )
 	cups? ( net-print/cups )
 	latex? (
@@ -78,13 +78,13 @@ RDEPEND="${COMMONDEPEND}
 	docbook? ( app-text/sgmltools-lite )
 	dot? ( media-gfx/graphviz )
 	dia? ( app-office/dia )
-	subversion? ( dev-vcs/subversion )
+	subversion? ( <dev-vcs/subversion-1.7.0 )
 	rcs? ( dev-vcs/rcs )
 	svg? ( || ( gnome-base/librsvg media-gfx/inkscape ) )"
 
 DEPEND="${COMMONDEPEND}
 	x11-proto/xproto
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 pkg_setup() {
@@ -124,8 +124,8 @@ src_install() {
 		doins "${T}"/hebrew.bind || die
 	fi
 
-	doicon ${PN} "$S/development/Win32/packaging/icons/lyx_32x32.png"
-	make_desktop_entry ${PN} "LyX" "/usr/share/pixmaps/lyx_32x32.png" "Office" "MimeType=application/x-lyx;"
+	newicon -s 32 "$S/development/Win32/packaging/icons/lyx_32x32.png" ${PN}.png
+	make_desktop_entry ${PN} "LyX" "${PN}" "Office" "MimeType=application/x-lyx;"
 
 	# fix for bug 91108
 	if use latex ; then
@@ -138,8 +138,13 @@ src_install() {
 	python_convert_shebangs -r 2 "${D}"/usr/share/${PN}
 }
 
+pkg_preinst() {
+	gnome2_icon_savelist
+}
+
 pkg_postinst() {
 	font_pkg_postinst
+	gnome2_icon_cache_update
 
 	# fix for bug 91108
 	if use latex ; then
@@ -159,6 +164,8 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
+	gnome2_icon_cache_update
+
 	if use latex ; then
 		texhash
 	fi

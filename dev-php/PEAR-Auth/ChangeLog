@@ -1,6 +1,36 @@
 # ChangeLog for dev-php/PEAR-Auth
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Auth/ChangeLog,v 1.44 2010/09/11 14:19:39 mabi Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Auth/ChangeLog,v 1.53 2012/06/09 14:36:35 mabi Exp $
+
+  09 Jun 2012; Matti Bickel <mabi@gentoo.org> -PEAR-Auth-1.5.4.ebuild:
+  remove old
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> PEAR-Auth-1.6.4.ebuild:
+  alpha/ia64/sparc stable wrt #408723
+
+  29 Mar 2012; Jeroen Roovers <jer@gentoo.org> PEAR-Auth-1.6.4.ebuild:
+  Stable for HPPA (bug #408723).
+
+  25 Mar 2012; Agostino Sarubbo <ago@gentoo.org> PEAR-Auth-1.6.4.ebuild:
+  Stable for amd64, wrt bug #408723
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> PEAR-Auth-1.6.4.ebuild:
+  Marking PEAR-Auth-1.6.4 ppc for bug 408723
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> PEAR-Auth-1.6.4.ebuild:
+  Marking PEAR-Auth-1.6.4 ppc64 for bug 408723
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> PEAR-Auth-1.6.4.ebuild:
+  x86 stable wrt bug #408723
+
+  20 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> PEAR-Auth-1.6.4.ebuild:
+  Fix syntax for has_version wrt #408723, Comment #1 by Elijah El Lazkani
+
+*PEAR-Auth-1.6.4 (18 Jan 2012)
+
+  18 Jan 2012; Matti Bickel <mabi@gentoo.org> -PEAR-Auth-1.6.2-r1.ebuild,
+  +PEAR-Auth-1.6.4.ebuild:
+  version bump & remove old
 
 *PEAR-Auth-1.6.2-r1 (11 Sep 2010)
 

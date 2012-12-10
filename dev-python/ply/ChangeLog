@@ -1,6 +1,24 @@
 # ChangeLog for dev-python/ply
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/ply/ChangeLog,v 1.14 2011/02/18 18:37:01 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/ply/ChangeLog,v 1.20 2012/12/06 17:36:17 bicatali Exp $
+
+  06 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> ply-3.4.ebuild:
+  Keyword amd64-linux and x86-linux
+
+  27 Jun 2012; Markus Meier <maekke@gentoo.org> ply-3.4.ebuild:
+  add ~arm, bug #412329
+
+  14 Jun 2012; Michael Weber <xmw@gentoo.org> ply-3.4.ebuild:
+  ppc stable (bug 403759)
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> ply-3.4.ebuild:
+  marked x86 per bug 403759
+
+  16 Mar 2012; Patrick Lauer <patrick@gentoo.org> ply-3.4.ebuild:
+  Test fix for #408145
+
+  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> ply-3.4.ebuild:
+  Stable for amd64, wrt bug #403759
 
 *ply-3.4 (18 Feb 2011)
 
@@ -66,4 +84,3 @@
 
   27 Jun 2004; Lukasz Strzygowski <lucass@gentoo.org> +ply-1.5.ebuild:
   Initial commit. Thanks to Yann Ramin in bug #49932.
-

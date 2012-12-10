@@ -1,6 +1,48 @@
 # ChangeLog for sys-process/fcron
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/fcron/ChangeLog,v 1.89 2011/04/15 16:22:50 beandog Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-process/fcron/ChangeLog,v 1.98 2012/11/22 13:20:55 jer Exp $
+
+*fcron-3.0.6-r5 (16 Sep 2012)
+
+  16 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org> +fcron-3.0.6-r5.ebuild,
+  -fcron-3.0.6-r4.ebuild:
+  Fix crontab symlink; thanks to Dennis Schridde in bug #435078.
+
+*fcron-3.0.6-r4 (04 Sep 2012)
+
+  04 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org> +fcron-3.0.6-r4.ebuild,
+  -fcron-3.0.6-r3.ebuild:
+  Fix fcrontab/fcrondyn permissions. Closes bug #433714.
+
+  30 Aug 2012; Justin Lecher <jlec@gentoo.org> fcron-3.0.6-r3.ebuild,
+  +files/fcron-3.0.6-buffer-overflow.patch, metadata.xml:
+  User src_prepare instead of src_unpack; indent input redirections; don't use
+  ewarn for blank lines; use default src_compile(); fix potential buffer
+  overflow
+
+  29 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> fcron-3.0.6-r3.ebuild:
+  Fix comment in pam.d file.
+
+*fcron-3.0.6-r3 (29 Aug 2012)
+
+  29 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +fcron-3.0.6-r3.ebuild,
+  +files/fcron.init.3, +files/fcrontab.2, -fcron-3.0.5-r2.ebuild, metadata.xml:
+  Remove old. Add new ebuild that avoid spitting pages-long documentation and
+  instead relies on users knowing what they are doing and use pkg_config to set
+  up the package with its systab. Do not change files' permissions at postinst
+  time as that's bad practice.
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> fcron-3.0.5-r2.ebuild,
+  fcron-3.0.6-r1.ebuild, fcron-3.0.6-r2.ebuild:
+  Inherit flag-o-matic for append-flags, and user for enewuser/etc...
+
+  08 Sep 2011; Ulrich Mueller <ulm@gentoo.org> fcron-3.0.5-r2.ebuild,
+  fcron-3.0.6-r1.ebuild:
+  Update dependency on app-misc/editor-wrapper.
+
+  11 Aug 2011; Ulrich Mueller <ulm@gentoo.org> fcron-3.0.5-r2.ebuild,
+  fcron-3.0.6-r1.ebuild, fcron-3.0.6-r2.ebuild:
+  Update dependency following package move of editor-wrapper.
 
 *fcron-3.0.6-r2 (15 Apr 2011)
 

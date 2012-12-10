@@ -1,6 +1,90 @@
 # ChangeLog for www-plugins/lightspark
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-plugins/lightspark/ChangeLog,v 1.34 2011/07/30 21:08:42 chithanh Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-plugins/lightspark/ChangeLog,v 1.48 2012/12/04 21:57:10 chithanh Exp $
+
+  04 Dec 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/lightspark-0.6.0.1-gcc-4.5_0001.patch:
+  Restore patch that was accidentally dropped, bug #445740.
+
+  18 Nov 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/lightspark-0.7.0-libxmlpp-gles.patch, lightspark-0.7.0.ebuild:
+  Add workaround for gles failure, bug #440148.
+
+*lightspark-0.7.0 (29 Oct 2012)
+
+  29 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +lightspark-0.7.0.ebuild, -files/lightspark-0.5.7-llvm-3.1_0000.patch,
+  -files/lightspark-0.5.7-llvm-3.1_0002.patch,
+  -files/lightspark-0.6.0.1-gcc-4.5_0001.patch, -lightspark-0.5.7.ebuild:
+  Version bump. Drop old.
+
+  14 Aug 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  lightspark-0.6.0.1.ebuild:
+  Drop dependency on >=gcc-4.4, bug #431374.
+
+*lightspark-0.6.0.1 (11 Jun 2012)
+
+  11 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/lightspark-0.6.0.1-gcc-4.5_0000.patch,
+  +files/lightspark-0.6.0.1-gcc-4.5_0001.patch,
+  +files/lightspark-0.6.0.1-gcc-4.5_0002.patch,
+  +files/lightspark-0.6.0.1-gcc-4.5_0003.patch,
+  +files/lightspark-0.6.0.1-gcc-4.5_0004.patch,
+  +files/lightspark-0.6.0.1-gcc-4.5_0005.patch,
+  +files/lightspark-0.6.0.1-gcc-4.5_0006.patch, +lightspark-0.6.0.1.ebuild,
+  metadata.xml:
+  Version bump.
+
+  03 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/lightspark-0.5.7-llvm-3.1_0000.patch,
+  +files/lightspark-0.5.7-llvm-3.1_0001.patch,
+  +files/lightspark-0.5.7-llvm-3.1_0002.patch, lightspark-0.5.7.ebuild:
+  Fix building with llvm-3.1, reported by maksbotan.
+
+*lightspark-0.5.7 (18 May 2012)
+
+  18 May 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +lightspark-0.5.7.ebuild, -lightspark-0.5.6.ebuild:
+  Version bump.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> lightspark-0.5.6.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*lightspark-0.5.6 (12 Apr 2012)
+
+  12 Apr 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +lightspark-0.5.6.ebuild, -lightspark-0.5.4.1-r1.ebuild:
+  Version bump.
+
+  14 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  lightspark-0.5.4.1-r1.ebuild:
+  Remove xulrunner dependency, bug #407565.
+
+*lightspark-0.5.4.1-r1 (29 Feb 2012)
+
+  29 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -lightspark-0.5.4.1.ebuild, +lightspark-0.5.4.1-r1.ebuild:
+  Don't make pulseaudio default plugin when only sdl is built, bug #406197.
+
+*lightspark-0.5.4.1 (23 Feb 2012)
+
+  23 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -lightspark-0.5.4.ebuild, +lightspark-0.5.4.1.ebuild:
+  Version bump.
+
+*lightspark-0.5.4 (30 Jan 2012)
+
+  30 Jan 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -lightspark-0.5.0.ebuild, -lightspark-0.5.2.1.ebuild,
+  +lightspark-0.5.4.ebuild:
+  Version bump, bug #393055.
+
+*lightspark-0.5.2.1 (31 Oct 2011)
+
+  31 Oct 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +lightspark-0.5.2.1.ebuild:
+  Version bump. Succumb to new upstream download URI scheme. Update
+  dependencies regarding llvm and xulrunner.
 
   30 Jul 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
   lightspark-0.5.0.ebuild:
@@ -198,4 +282,3 @@
   +lightspark-0.3.3.ebuild, +files/lightspark-0.3.3-llvm-datatypes.patch,
   +metadata.xml:
   Initial commit, ideas taken from voyageur's live ebuild
-

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/pytextile/pytextile-2.1.5.ebuild,v 1.1 2011/07/29 22:11:41 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/pytextile/pytextile-2.1.5.ebuild,v 1.6 2012/04/09 03:41:03 floppym Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"
@@ -19,10 +19,10 @@ SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="amd64 ppc ppc64 ~sparc x86 ~x86-fbsd"
 IUSE=""
 
-DEPEND=""
+DEPEND="dev-python/setuptools"
 RDEPEND=""
 
 S="${WORKDIR}/${MY_P}"

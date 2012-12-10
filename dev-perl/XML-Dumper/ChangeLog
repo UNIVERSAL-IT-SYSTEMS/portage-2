@@ -1,6 +1,20 @@
 # ChangeLog for dev-perl/XML-Dumper
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-Dumper/ChangeLog,v 1.18 2010/02/06 13:46:24 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/XML-Dumper/ChangeLog,v 1.22 2012/06/24 12:58:38 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -XML-Dumper-0.81.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> XML-Dumper-0.810.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*XML-Dumper-0.810.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +XML-Dumper-0.810.0.ebuild:
+  Change version scheme
 
   06 Feb 2010; Torsten Veller <tove@gentoo.org> XML-Dumper-0.81.ebuild:
   Fix LICENSE (#301969). Maintenance
@@ -73,4 +87,3 @@
   02 Jul 2005; Renat Lumpau <rl03@gentoo.org> +metadata.xml,
   +XML-Dumper-0.75.ebuild:
   Initial ebuild. Metadot dependency.
-

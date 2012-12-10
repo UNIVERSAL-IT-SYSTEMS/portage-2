@@ -1,14 +1,14 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/mercurial/mercurial-9999.ebuild,v 1.9 2010/12/25 15:08:40 nelchael Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/mercurial/mercurial-9999.ebuild,v 1.12 2012/02/21 03:31:01 patrick Exp $
 
 EAPI=3
 PYTHON_DEPEND="2"
 PYTHON_USE_WITH="threads"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.* *-jython"
+RESTRICT_PYTHON_ABIS="3.* *-jython 2.7-pypy-*"
 
-inherit bash-completion elisp-common eutils distutils mercurial
+inherit bash-completion-r1 elisp-common eutils distutils mercurial
 
 DESCRIPTION="Scalable distributed SCM"
 HOMEPAGE="http://mercurial.selenic.com/"
@@ -42,42 +42,42 @@ src_compile() {
 	distutils_src_compile
 
 	if use emacs; then
-		cd "${S}"/contrib
+		cd "${S}"/contrib || die
 		elisp-compile mercurial.el || die "elisp-compile failed!"
 	fi
 
 	rm -rf contrib/{win32,macosx}
-	make doc
+	make doc || die
 }
 
 src_install() {
 	distutils_src_install
 
-	dobashcompletion contrib/bash_completion ${PN}
+	newbashcomp contrib/bash_completion ${PN} || die
 
 	if use zsh-completion ; then
 		insinto /usr/share/zsh/site-functions
-		newins contrib/zsh_completion _hg
+		newins contrib/zsh_completion _hg || die
 	fi
 
 	rm -f doc/*.?.txt
-	dodoc CONTRIBUTORS README doc/*.txt
-	cp hgweb*.cgi "${ED}"/usr/share/doc/${PF}/
+	dodoc CONTRIBUTORS README doc/*.txt || die
+	cp hgweb*.cgi "${ED}"/usr/share/doc/${PF}/ || die
 
-	dobin hgeditor
-	dobin contrib/hgk
-	dobin contrib/hg-ssh
+	dobin hgeditor || die
+	dobin contrib/hgk || die
+	dobin contrib/hg-ssh || die
 
 	rm -f contrib/hgk contrib/hg-ssh
 
 	rm -f contrib/bash_completion
-	cp -r contrib "${ED}"/usr/share/doc/${PF}/
-	doman doc/*.?
+	cp -r contrib "${ED}"/usr/share/doc/${PF}/ || die
+	doman doc/*.? || die
 
 	cat > "${T}/80mercurial" <<-EOF
 HG="${EPREFIX}/usr/bin/hg"
 EOF
-	doenvd "${T}/80mercurial"
+	doenvd "${T}/80mercurial" || die
 
 	if use emacs; then
 		elisp-install ${PN} contrib/mercurial.el* || die "elisp-install failed!"
@@ -86,7 +86,7 @@ EOF
 }
 
 src_test() {
-	cd "${S}/tests/"
+	cd "${S}/tests/" || die
 	rm -rf *svn*				# Subversion tests fail with 1.5
 	rm -f test-archive			# Fails due to verbose tar output changes
 	rm -f test-convert-baz*		# GNU Arch baz
@@ -119,7 +119,6 @@ src_test() {
 pkg_postinst() {
 	distutils_pkg_postinst
 	use emacs && elisp-site-regen
-	bash-completion_pkg_postinst
 
 	elog "If you want to convert repositories from other tools using convert"
 	elog "extension please install correct tool:"

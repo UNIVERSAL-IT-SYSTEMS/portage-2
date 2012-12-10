@@ -1,6 +1,65 @@
 # ChangeLog for dev-libs/elfutils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/elfutils/ChangeLog,v 1.152 2011/02/28 15:38:59 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/elfutils/ChangeLog,v 1.165 2012/10/09 15:49:14 vapier Exp $
+
+  09 Oct 2012; Mike Frysinger <vapier@gentoo.org> elfutils-0.146.ebuild,
+  elfutils-0.148.ebuild, elfutils-0.149.ebuild, elfutils-0.150.ebuild,
+  elfutils-0.151.ebuild, elfutils-0.152-r1.ebuild, elfutils-0.152.ebuild,
+  elfutils-0.153.ebuild, elfutils-0.154-r1.ebuild, elfutils-0.154.ebuild,
+  elfutils-0.155.ebuild:
+  Add m68k love #375737 by Ryan Hill.
+
+*elfutils-0.155 (07 Sep 2012)
+
+  07 Sep 2012; Mike Frysinger <vapier@gentoo.org> +elfutils-0.155.ebuild:
+  Version bump.
+
+  22 Jul 2012; Mike Frysinger <vapier@gentoo.org> elfutils-0.154-r1.ebuild:
+  The thread option uses a - separator #427524 by argonovsky.
+
+*elfutils-0.154-r1 (17 Jul 2012)
+
+  17 Jul 2012; Mike Frysinger <vapier@gentoo.org> +elfutils-0.154-r1.ebuild,
+  metadata.xml:
+  Add knobs for controlling install of utilities (so we can install just
+  libraries), static libs, and thread support.
+
+*elfutils-0.154 (23 Jun 2012)
+
+  23 Jun 2012; Mike Frysinger <vapier@gentoo.org> +elfutils-0.154.ebuild:
+  Version bump.
+
+  16 Apr 2012; Mike Frysinger <vapier@gentoo.org> elfutils-0.153.ebuild:
+  Make sure to apppend -g to CFLAGS when running tests as the local testsuite
+  depends on it to pass #407135 by Chris Reffett.
+
+  28 Feb 2012; Mike Frysinger <vapier@gentoo.org> elfutils-0.153.ebuild:
+  Drop cross-compiling hacks now that upstream has updated things.
+
+*elfutils-0.153 (23 Feb 2012)
+
+  23 Feb 2012; Mike Frysinger <vapier@gentoo.org> +elfutils-0.153.ebuild:
+  Version bump.
+
+  31 Oct 2011; Mike Frysinger <vapier@gentoo.org> elfutils-0.152-r1.ebuild:
+  Tweak dis.h dependency so we don't regenerate the i386_gendis helper binary.
+
+  20 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  elfutils-0.152-r1.ebuild:
+  QA: fix src_test after recent cross-compile changes.
+
+  13 Oct 2011; Mike Frysinger <vapier@gentoo.org> elfutils-0.152-r1.ebuild:
+  Add support for cross-compiling.
+
+*elfutils-0.152-r1 (05 Oct 2011)
+
+  05 Oct 2011; Mike Frysinger <vapier@gentoo.org> +elfutils-0.152-r1.ebuild:
+  Switch to patches published with upstream.
+
+  05 Oct 2011; Mike Frysinger <vapier@gentoo.org> elfutils-0.146.ebuild,
+  elfutils-0.148.ebuild, elfutils-0.149.ebuild, elfutils-0.150.ebuild,
+  elfutils-0.151.ebuild, elfutils-0.152.ebuild:
+  Drop forced gcc/binutils/glibc upgrade since these versions are long stable.
 
   28 Feb 2011; Brent Baude <ranger@gentoo.org> elfutils-0.149.ebuild:
   stable ppc, bug 348407
@@ -592,4 +651,3 @@
   on a public ftp/http server, so we need to check for new releases:
 
     http://rawhide.redhat.com/pub/redhat/linux/rawhide/SRPMS/SRPMS/
-

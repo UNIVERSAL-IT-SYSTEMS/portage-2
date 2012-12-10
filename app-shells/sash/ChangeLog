@@ -1,6 +1,50 @@
 # ChangeLog for app-shells/sash
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/sash/ChangeLog,v 1.39 2011/02/06 22:02:34 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-shells/sash/ChangeLog,v 1.50 2012/07/08 17:03:32 armin76 Exp $
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> sash-3.7-r3.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #418451
+
+  30 Jun 2012; Justin Lecher <jlec@gentoo.org> sash-3.7-r3.ebuild,
+  metadata.xml:
+  Fix for recent linux-headers, #423655
+
+  17 Jun 2012; Markus Meier <maekke@gentoo.org> sash-3.7-r3.ebuild:
+  arm stable, bug #418451
+
+  14 Jun 2012; Jeroen Roovers <jer@gentoo.org> sash-3.7-r3.ebuild:
+  Stable for HPPA (bug #418451).
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> sash-3.7-r3.ebuild:
+  Marking sash-3.7-r3 ppc for bug 418451
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> sash-3.7-r3.ebuild:
+  Marking sash-3.7-r3 ppc64 for bug 418451
+
+  02 Jun 2012; Homer Parker <hparker@gentoo.org> sash-3.7-r3.ebuild:
+  stable on AMD64 to fix bug 418451
+
+  01 Jun 2012; Jeff Horelick <jdhore@gentoo.org> sash-3.7-r3.ebuild:
+  marked x86 per bug 418451
+
+  25 Sep 2011; Mike Frysinger <vapier@gentoo.org>
+  -files/sash-3.6-fix-includes.patch, files/sash-3.6-readline.patch,
+  sash-3.7-r1.ebuild, sash-3.7-r3.ebuild:
+  Drop useless fix-includes patch as this breaks with gcc-4.6+
+  (--disable-shared is not a valid flag). Depend on lib packages being built
+  with USE=static-libs when we are built with USE=static #384333 by Guenther
+  Brunthaler.
+
+*sash-3.7-r3 (01 Sep 2011)
+
+  01 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org> -sash-3.7-r2.ebuild,
+  +sash-3.7-r3.ebuild:
+  Remove readline USE flag and patch given that the patch itself is custom and
+  not vanilla, and this is orphaned.
+
+  29 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> sash-3.7-r2.ebuild:
+  Fix building with GCC 4.6 by not passing broken LDFLAGS (bug #381005). Do not
+  link statically unconditionally. Use latest EAPI.
 
   06 Feb 2011; Mart Raudsepp <leio@gentoo.org> sash-3.7-r1.ebuild:
   Drop to ~mips

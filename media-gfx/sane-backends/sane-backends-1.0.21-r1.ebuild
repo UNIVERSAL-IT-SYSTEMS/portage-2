@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.21-r1.ebuild,v 1.10 2011/02/25 08:52:40 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.21-r1.ebuild,v 1.16 2012/06/08 03:01:10 zmedico Exp $
 
 EAPI="1"
 
-inherit eutils flag-o-matic multilib
+inherit eutils flag-o-matic multilib user
 
 # gphoto and v4l are handled by their usual USE flags.
 # The pint backend was disabled because I could not get it to compile.
@@ -119,7 +119,7 @@ DEPEND="${RDEPEND}
 	v4l? ( sys-kernel/linux-headers )
 	doc? (
 		virtual/latex-base
-		|| ( dev-texlive/texlive-latexextra app-text/ptex )
+		dev-texlive/texlive-latexextra
 	)
 	>=sys-apps/sed-4"
 
@@ -161,6 +161,10 @@ src_unpack() {
 	EOF
 	epatch "${DISTDIR}/${P}-i18n.patch"
 	epatch "${FILESDIR}/xerox-grey.patch"
+	# Bug #356919
+	epatch "${FILESDIR}"/${PN}-1.0.22-libv4l-0.8.3.patch
+	# Bug #329047
+	epatch "${FILESDIR}"/niash_array_index.patch
 }
 
 src_compile() {
@@ -210,10 +214,11 @@ src_install () {
 		cd ../..
 	fi
 	cd tools/udev
-	dodir /$(get_libdir)/udev/rules.d
-	insinto /$(get_libdir)/udev/rules.d
+	dodir /lib/udev/rules.d
+	insinto /lib/udev/rules.d
 	newins libsane.rules 41-libsane.rules
 	cd ../..
 	dodoc NEWS AUTHORS ChangeLog* README README.linux
 	echo "SANE_CONFIG_DIR=/etc/sane.d" >> "${D}"/etc/env.d/30sane
+	find "${D}" -name "*.la" | while read file; do rm "${file}"; done
 }

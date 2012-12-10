@@ -1,6 +1,57 @@
 # ChangeLog for net-irc/telepathy-idle
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/telepathy-idle/ChangeLog,v 1.31 2011/07/17 21:23:08 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-irc/telepathy-idle/ChangeLog,v 1.44 2012/11/17 20:27:43 pacho Exp $
+
+*telepathy-idle-0.1.14 (17 Nov 2012)
+
+  17 Nov 2012; Pacho Ramos <pacho@gentoo.org> +telepathy-idle-0.1.14.ebuild:
+  Version bump
+
+  22 Sep 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/telepathy-idle-0.1.12-parallel-make.patch,
+  telepathy-idle-0.1.12.ebuild:
+  Fix parallel make issue, bug #435524 by Attila Tóth.
+
+*telepathy-idle-0.1.12 (15 Sep 2012)
+
+  15 Sep 2012; Pacho Ramos <pacho@gentoo.org> +telepathy-idle-0.1.12.ebuild,
+  -telepathy-idle-0.1.10.ebuild:
+  Version bump, drop old.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> telepathy-idle-0.1.10.ebuild,
+  telepathy-idle-0.1.11.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> telepathy-idle-0.1.11.ebuild:
+  alpha/ia64/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> telepathy-idle-0.1.11.ebuild:
+  Marking telepathy-idle-0.1.11 ppc stable for bug 393007
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> telepathy-idle-0.1.11.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> telepathy-idle-0.1.11.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> telepathy-idle-0.1.11.ebuild:
+  amd64 stable, bug 393007
+
+*telepathy-idle-0.1.11 (01 Nov 2011)
+
+  01 Nov 2011; Pacho Ramos <pacho@gentoo.org> +telepathy-idle-0.1.11.ebuild,
+  -telepathy-idle-0.1.7.ebuild, -telepathy-idle-0.1.9.ebuild:
+  Version bump, remove old.
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  telepathy-idle-0.1.10.ebuild:
+  ppc stable wrt #369909
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> telepathy-idle-0.1.10.ebuild:
+  alpha/ia64/sparc stable wrt #369909
+
+  06 Aug 2011; Zac Medico <zmedico@gentoo.org> telepathy-idle-0.1.10.ebuild:
+  Add ~x86-linux keyword.
 
   17 Jul 2011; Markus Meier <maekke@gentoo.org> telepathy-idle-0.1.10.ebuild:
   arm stable, bug #369909
@@ -133,4 +184,3 @@
   28 Jun 2007; Santiago M. Mola <coldwind@gentoo.org> +metadata.xml,
   +telepathy-idle-0.1.1.ebuild:
   Import from voip overlay.
-

@@ -1,6 +1,255 @@
 # ChangeLog for media-sound/pulseaudio
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/ChangeLog,v 1.239 2011/07/22 20:35:37 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/ChangeLog,v 1.287 2012/12/07 20:13:21 ford_prefect Exp $
+
+*pulseaudio-2.99.3 (07 Dec 2012)
+
+  07 Dec 2012; Arun Raghavan <ford_prefect@gentoo.org>
+  +pulseaudio-2.99.3.ebuild, pulseaudio-9999.ebuild:
+  Bump to 2.99.3 (3.0 RC3). Bunch of features and fixes, Bluetooth dependency
+  bumped since we now use the D-Bus API. Some ebuild maintenance - keepdir
+  dropped and enewuser/group done only for USE=system-wide (bug #442852),
+  dropped unnecessary eselect esd, drop no-as-needed since it should work these
+  days. Corresponding updates to the live ebuild as well.
+
+  06 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  pulseaudio-2.1-r1.ebuild:
+  x86 stable wrt bug #435074
+
+  02 Dec 2012; Samuli Suominen <ssuominen@gentoo.org>
+  pulseaudio-0.9.22-r2.ebuild, pulseaudio-1.1-r1.ebuild,
+  pulseaudio-2.0-r1.ebuild, pulseaudio-2.0-r2.ebuild, pulseaudio-2.1-r1.ebuild,
+  pulseaudio-9999.ebuild:
+  Migrate away from sys-fs/udev to virtual/udev with USE dependency for hwdb.
+
+  26 Nov 2012; Anthony G. Basile <blueness@gentoo.org> pulseaudio-2.1-r1.ebuild:
+  stable ppc, bug #435074
+
+  22 Nov 2012; Markus Meier <maekke@gentoo.org> pulseaudio-2.1-r1.ebuild:
+  arm stable, bug #435074
+
+  20 Nov 2012; Jeroen Roovers <jer@gentoo.org> pulseaudio-2.1-r1.ebuild:
+  Stable for HPPA (bug #435074).
+
+  14 Nov 2012; <ago@gentoo.org> pulseaudio-2.1-r1.ebuild:
+  Stable for amd64, wrt bug #435074
+
+  13 Nov 2012; Brent Baude <ranger@gentoo.org> pulseaudio-2.1-r1.ebuild:
+  Marking pulseaudio-2.1-r1 ppc64 for bug 435074
+
+*pulseaudio-2.1-r1 (25 Aug 2012)
+
+  25 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +pulseaudio-2.1-r1.ebuild, pulseaudio-9999.ebuild:
+  Read the value of udevdir from udev.pc pkg-config file wrt #432684 by Arne
+  Stäcker
+
+  21 Jul 2012; Arun Raghavan <ford_prefect@gentoo.org> pulseaudio-9999.ebuild:
+  Bring live ebuild in sync with regular ebuilds (add systemd USE flag).
+
+*pulseaudio-2.1 (19 Jul 2012)
+
+  19 Jul 2012; Arun Raghavan <ford_prefect@gentoo.org> +pulseaudio-2.1.ebuild,
+  metadata.xml:
+  Bump to 2.1. Also add a systemd USE flag (bug #423595. thanks to Maksim
+  'max_posedon' Melnikau <maxposedon@gmail.com> for the patch).
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> pulseaudio-1.1-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #403309
+
+*pulseaudio-2.0-r2 (05 Jul 2012)
+
+  05 Jul 2012; Arun Raghavan <ford_prefect@gentoo.org> -pulseaudio-2.0.ebuild,
+  +pulseaudio-2.0-r2.ebuild, +files/pulseaudio-2.0-udev-symbols.patch:
+  Add fix for building against udev >= 183. Also drop 2.0 since it is
+  superceded by 2.0-r1 and above.
+
+  05 Jul 2012; Arun Raghavan <ford_prefect@gentoo.org>
+  -pulseaudio-0.9.22.ebuild, -pulseaudio-0.9.23-r1.ebuild,
+  -files/pulseaudio-1.0-version-fix.patch, -pulseaudio-1.1.ebuild,
+  -files/pulseaudio.init.d-4:
+  Drop old redundant versions.
+
+*pulseaudio-2.0-r1 (13 Jun 2012)
+
+  13 Jun 2012; Arun Raghavan <ford_prefect@gentoo.org>
+  +pulseaudio-2.0-r1.ebuild, pulseaudio-9999.ebuild, metadata.xml:
+  Add Xen support, various ebuild bug fixes (m4 dep - #415497, automagic gtk+
+  dep - #413165, qpaeq needs qt4 and dbus - #398647).
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> pulseaudio-0.9.22-r2.ebuild,
+  pulseaudio-0.9.22.ebuild, pulseaudio-0.9.23-r1.ebuild,
+  pulseaudio-1.1-r1.ebuild, pulseaudio-1.1.ebuild, pulseaudio-2.0.ebuild,
+  pulseaudio-9999.ebuild:
+  inherit user for enewgroup and enewuser, multilib for get_libdir, and remove
+  unused libtool inherits
+
+  13 May 2012; Arun Raghavan <ford_prefect@gentoo.org> pulseaudio-2.0.ebuild:
+  Drop parallel make install. Thought the failures had gone away, but they have
+  only become more rare.
+
+*pulseaudio-2.0 (11 May 2012)
+
+  11 May 2012; Arun Raghavan <ford_prefect@gentoo.org>
+  -pulseaudio-1.99.2.ebuild, +pulseaudio-2.0.ebuild:
+  Add PulseAudio 2.0 (adds dynamic sample rate updates, jack detection, major
+  echo canceller improvements, virtual surround, Xen (TBD). Drop 1.99.2.
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> pulseaudio-0.9.22.ebuild,
+  pulseaudio-0.9.22-r2.ebuild, pulseaudio-0.9.23-r1.ebuild,
+  pulseaudio-1.1.ebuild, pulseaudio-1.1-r1.ebuild, pulseaudio-1.99.2.ebuild,
+  pulseaudio-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  23 Apr 2012; Alexis Ballier <aballier@gentoo.org> pulseaudio-1.99.2.ebuild,
+  pulseaudio-9999.ebuild:
+  bring back the alsa useflag guard for the alsa-plugins dep which was dropped
+  in
+  http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/media-sound/pulseaudi
+  o/pulseaudio-9999.ebuild?r1=1.18&r2=1.19
+
+  29 Mar 2012; Arun Raghavan <ford_prefect@gentoo.org>
+  pulseaudio-1.99.2.ebuild, pulseaudio-9999.ebuild:
+  Fix webrtc-aec usage (was --enable not --with).
+
+*pulseaudio-1.99.2 (28 Mar 2012)
+
+  28 Mar 2012; Arun Raghavan <ford_prefect@gentoo.org>
+  +pulseaudio-1.99.2.ebuild, pulseaudio-9999.ebuild, metadata.xml:
+  Add a 2.0 RC2 ebuild. Lots of features and fixes (sample rate switching, new
+  echo canceller, jack detection, virtual surround module, Xen support and lots
+  more). Packaging-wise: add support a new echo canceller on-by-default, drop
+  esound support, make ALSA plugins work out of the box.
+
+  20 Mar 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml,
+  pulseaudio-1.1-r1.ebuild, pulseaudio-9999.ebuild:
+  Add a gdbm USE flag to switch on or off GDBM as database provider (use simple
+  otherwise); this allows fixing (a bit) the license handling, as GDBM makes the
+  whole package GPL-2. Also remove two wrong restrictions in the USE flag
+  description.
+
+  13 Mar 2012; Arun Raghavan <ford_prefect@gentoo.org> pulseaudio-9999.ebuild:
+  Make alsa-plugins a PDEPEND to avoid circular deps.
+
+  12 Mar 2012; Jeff Horelick <jdhore@gentoo.org> pulseaudio-1.1-r1.ebuild:
+  marked x86 per bug 403309
+
+  12 Mar 2012; Jeff Horelick <jdhore@gentoo.org> pulseaudio-1.1-r1.ebuild:
+  marked x86 per bug 403309
+
+  09 Mar 2012; Brent Baude <ranger@gentoo.org> pulseaudio-1.1-r1.ebuild:
+  Marking pulseaudio-1.1-r1 ppc64 for bug 403309
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> pulseaudio-1.1-r1.ebuild:
+  Marking pulseaudio-1.1-r1 ppc for bug 403309
+
+  05 Mar 2012; Markus Meier <maekke@gentoo.org> pulseaudio-1.1-r1.ebuild:
+  arm stable, bug #403309
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> pulseaudio-1.1-r1.ebuild:
+  Stable for amd64, wrt bug #403309
+
+  15 Feb 2012; Jeroen Roovers <jer@gentoo.org> pulseaudio-1.1-r1.ebuild:
+  Stable for HPPA (bug #403309).
+
+  12 Feb 2012; Arun Raghavan <ford_prefect@gentoo.org> pulseaudio-9999.ebuild:
+  Drop esound support and force pull the alsa pulse plugin (in live ebuild, for
+  now).
+
+  10 Feb 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml,
+  pulseaudio-0.9.23-r1.ebuild, pulseaudio-1.1-r1.ebuild, pulseaudio-9999.ebuild:
+  Add an USE flag 'ssl' to disable raop (and add missing dependency).
+
+  10 Feb 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  pulseaudio-0.9.22-r2.ebuild, pulseaudio-0.9.22.ebuild,
+  pulseaudio-0.9.23-r1.ebuild, pulseaudio-1.1-r1.ebuild, pulseaudio-1.1.ebuild,
+  pulseaudio-9999.ebuild:
+  Remove dependency over audiofile, that was never used by PulseAudio (looks
+  like I imported it this way back in 2006, time to fix my mistake).
+
+  22 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> pulseaudio-1.1-r1.ebuild,
+  pulseaudio-9999.ebuild:
+  USE="bluetooth" needs USE="dbus" as per upstream configure.ac
+
+*pulseaudio-1.1-r1 (13 Dec 2011)
+
+  13 Dec 2011; Arun Raghavan <ford_prefect@gentoo.org>
+  +pulseaudio-1.1-r1.ebuild, +files/pulseaudio-1.1-machine-id-fix.patch:
+  Add a patch to read /etc/machine-id as a fallback to the version in
+  /var/lib/dbus. (fixes bug #390287)
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> pulseaudio-1.1.ebuild:
+  Add ~alpha/~ia64/~sh/~sparc wrt #384635
+
+*pulseaudio-1.1 (20 Oct 2011)
+
+  20 Oct 2011; Arun Raghavan <ford_prefect@gentoo.org>
+  -pulseaudio-1.0-r1.ebuild, -pulseaudio-1.0-r2.ebuild, +pulseaudio-1.1.ebuild,
+  +files/pulseaudio-1.1-python3-fix.patch:
+  New stable releases. Bunch of bug fixes. Remove old versions since some of
+  the problems were license related.
+
+*pulseaudio-1.0-r2 (08 Oct 2011)
+
+  08 Oct 2011; Arun Raghavan <ford_prefect@gentoo.org>
+  +pulseaudio-1.0-r2.ebuild, +files/pulseaudio-1.0-version-fix.patch:
+  Add a patch to revert to a 3-number versioning system. Fixes pre-1.0 32-bit
+  libpulse compatibility and phonon build.
+
+*pulseaudio-1.0-r1 (28 Sep 2011)
+
+  28 Sep 2011; Arun Raghavan <ford_prefect@gentoo.org> -pulseaudio-1.0.ebuild,
+  +pulseaudio-1.0-r1.ebuild, pulseaudio-9999.ebuild:
+  Make sure the esound module doesn't break things and some log fixes.
+
+  27 Sep 2011; Arun Raghavan <ford_prefect@gentoo.org> pulseaudio-1.0.ebuild,
+  pulseaudio-9999.ebuild:
+  USE=equalizer didn't actually do anything -- thanks to marienz for pointing
+  this out on IRC.
+
+*pulseaudio-1.0 (27 Sep 2011)
+
+  27 Sep 2011; Arun Raghavan <ford_prefect@gentoo.org>
+  -pulseaudio-0.99.4.ebuild, +pulseaudio-1.0.ebuild, pulseaudio-9999.ebuild:
+  Bump to 1.0 and drop prerelease ebuild. Just a few bug fixes since the last
+  release candidate. Also remove non-existent deps.
+
+*pulseaudio-0.99.4 (15 Sep 2011)
+
+  15 Sep 2011; Arun Raghavan <ford_prefect@gentoo.org>
+  -pulseaudio-0.99.3.ebuild, +pulseaudio-0.99.4.ebuild:
+  Replace 0.99.3 with 0.99.4 (1.0 RC4). More bug fixes as we creep closer to
+  1.0.
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> pulseaudio-0.99.3.ebuild:
+  add ~arm, bug #377497
+
+*pulseaudio-0.99.3 (29 Aug 2011)
+
+  29 Aug 2011; Arun Raghavan <ford_prefect@gentoo.org>
+  -pulseaudio-0.99.2.ebuild, +pulseaudio-0.99.3.ebuild:
+  Bump testing release to 0.99.3. Various ug fixes and new per-port volumes.
+  Will break your volumes if upgrading from 0.99.1 or 0.99.2.
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> pulseaudio-0.9.22-r2.ebuild:
+  Stable for HPPA (bug #372355).
+
+*pulseaudio-0.99.2 (16 Aug 2011)
+
+  16 Aug 2011; Arun Raghavan <ford_prefect@gentoo.org>
+  -pulseaudio-0.99.1.ebuild, +pulseaudio-0.99.2.ebuild:
+  Bump to 0.99.2 (aka 1.0 RC2). Bunch of bug fixes, support for passthrough
+  formats in alsa-sink, and more.
+
+  16 Aug 2011; Arun Raghavan <ford_prefect@gentoo.org> pulseaudio-9999.ebuild:
+  Fix JACK dep, drop copying ChangeLog.
+
+*pulseaudio-0.99.1 (03 Aug 2011)
+
+  03 Aug 2011; Arun Raghavan <ford_prefect@gentoo.org>
+  +pulseaudio-0.99.1.ebuild:
+  Add new prerelease, p.masked. Lots of new features. Dropping everything but
+  amd64/x86 till we get keywords on dev-libs/json-c.
 
   22 Jul 2011; Mark Loeser <halcy0n@gentoo.org> pulseaudio-0.9.22-r2.ebuild:
   Stable for ppc64; bug #372355
@@ -1186,4 +1435,3 @@
   +pulseaudio-0.9.2.ebuild:
   Add pulseaudio ebuild, thanks to Tom Schneider, Ed Catmur, Florian Steinel,
   Disaster and Gonzalo Aguilar Delgado in bug #74039.
-

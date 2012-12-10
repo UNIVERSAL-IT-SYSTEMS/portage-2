@@ -1,6 +1,239 @@
 # ChangeLog for media-tv/mythtv
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/mythtv/ChangeLog,v 1.334 2011/07/28 21:10:59 neurogeek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-tv/mythtv/ChangeLog,v 1.383 2012/12/05 11:41:06 grobian Exp $
+
+  05 Dec 2012; Fabian Groffen <grobian@gentoo.org>
+  mythtv-0.25.2_p20120825.ebuild:
+  Marked ~x86-linux, bug #444950
+
+  26 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Update to global useflag.
+
+  24 Nov 2012; Richard Freeman <rich0@gentoo.org> +files/libdir.patch:
+  Fix missing patch file.
+
+*mythtv-0.26.0_p20121107 (23 Nov 2012)
+
+  23 Nov 2012; Richard Freeman <rich0@gentoo.org>
+  +mythtv-0.26.0_p20121107.ebuild:
+  Introduce 0.26 - 437140
+
+  26 Aug 2012; Doug Goldstein <cardoe@gentoo.org>
+  -mythtv-0.25.1_p20120708.ebuild, -mythtv-0.25.1_p20120715.ebuild:
+  Remove older versions
+
+*mythtv-0.25.2_p20120825 (26 Aug 2012)
+
+  26 Aug 2012; Doug Goldstein <cardoe@gentoo.org>
+  +mythtv-0.25.2_p20120825.ebuild, +files/mythtv.logrotate.d-r3:
+  Version bump to get latest upstream fixes. Update to logrotate configuration
+  for bug #426242
+
+  27 Jul 2012; Michael Palimaka <kensington@gentoo.org>
+  mythtv-0.25.1_p20120708.ebuild, mythtv-0.25.1_p20120715.ebuild,
+  mythtv-0.25.2_p20120716.ebuild:
+  Add missing slot dependencies on Qt.
+
+  23 Jul 2012; Mike Gilbert <floppym@gentoo.org> mythtv-0.25.1_p20120715.ebuild,
+  mythtv-0.25.2_p20120716.ebuild:
+  Add mythtv user in pkg_setup since we call chown in src_install.
+
+  23 Jul 2012; Mike Gilbert <floppym@gentoo.org> mythtv-0.25.1_p20120708.ebuild,
+  mythtv-0.25.1_p20120715.ebuild, mythtv-0.25.2_p20120716.ebuild:
+  Do not call python_convert_shebangs() on files, which are not Python scripts.
+  Patch by Arfrever.
+
+  21 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.2_p20120716.ebuild:
+  Disable stripping during the build to avoid QA warnings
+
+  21 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.2_p20120716.ebuild:
+  Add missing break statement.
+
+  21 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.2_p20120716.ebuild:
+  USE flag and depend cleanups after digging through Fedora's RPM spec file for
+  MythTV. If only upstream's configure script was correct and accurately showed
+  what MythTV needed or used.
+
+  21 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.2_p20120716.ebuild:
+  Fix 'Unknown' version number.
+
+  21 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.2_p20120716.ebuild:
+  Fix issue with LDFLAGS (bug #426492), CFLAGS, and CXXFLAGS. Fix EPREFIX
+  usage. Initial cross compiler support. Updates to CPU optimizations.
+
+  20 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.2_p20120716.ebuild:
+  Remove quotes which upstream's config script can't handle. bug #426942
+
+  16 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  -files/mythbackend-0.18.2.conf, -files/mythtv-v4l2-fix.2.patch,
+  -files/mythbackend-0.18.2.rc, -files/ffmpeg-sync.patch,
+  -files/fixLdconfSandbox.0.25.1.patch, -files/fixLdconfSandbox.patch,
+  -files/mythtv.logrotate.d-r1, -files/runmythfe, -files/runmythfe-r1,
+  -files/xinitrc, metadata.xml:
+  Remove out unused files
+
+  16 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  -mythtv-0.24.1_p20110524.ebuild:
+  Remove older version
+
+*mythtv-0.25.2_p20120716 (16 Jul 2012)
+
+  16 Jul 2012; Doug Goldstein <cardoe@gentoo.org> -mythtv-0.25.1.ebuild,
+  +mythtv-0.25.2_p20120716.ebuild, files/mythfrontend.wrapper:
+  Version bump. Fix --version output from the various programs. Fix a bug where
+  the mythfrontend wrapper script was not passing arguments to the real
+  process. Found by Wilson Michaels <TheBitPit@earthlink.net>
+
+*mythtv-0.25.1_p20120715 (15 Jul 2012)
+
+  15 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  +mythtv-0.25.1_p20120715.ebuild:
+  Version bump for latest upstream fixes.
+
+  11 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.1_p20120708.ebuild:
+  Fix tarball location.
+
+  11 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.1_p20120708.ebuild, +files/mythtv.logrotate.d-r2:
+  Add new logrotate file but I'm not convinced this will actually work due to
+  how upstream does their log files now.
+
+  11 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.1_p20120708.ebuild:
+  Fix up .py, .sh, and .pl file installation. Based on work by Myk Taylor
+  <myk002@yahoo.com>
+
+  09 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.1_p20120708.ebuild:
+  Move the freetype depend to the right spot
+
+  09 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.1_p20120708.ebuild, metadata.xml:
+  Numerous updates to support all the features and notes in the 0.25 release
+  notes.
+
+  09 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.1_p20120708.ebuild:
+  We now need wmctrl with the new mythfrontend wrapper. Due to bugs in Qt, we
+  need at least 4.7.2 to avoid 4.7.1 which broke SchedulesDirect
+
+  09 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.1_p20120708.ebuild, +files/mythfrontend.conf,
+  +files/mythfrontend.wrapper, +files/xinitrc-r1:
+  Add a Mythbuntu like wrapper for mythfrontend so users can configure the
+  autostart arguments easily as well as using mythwelcome as a wrapper.
+
+  09 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.1_p20120708.ebuild:
+  Yet another working directory fix.
+
+  09 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  mythtv-0.25.1_p20120708.ebuild:
+  Fix the working directory when patching.
+
+*mythtv-0.25.1_p20120708 (08 Jul 2012)
+
+  08 Jul 2012; Doug Goldstein <cardoe@gentoo.org>
+  -mythtv-0.25.1_p20120608.ebuild, +mythtv-0.25.1_p20120708.ebuild:
+  Fix bad ebuild naming on my part
+
+*mythtv-0.25.1_p20120608 (08 Jul 2012)
+
+  08 Jul 2012; Doug Goldstein <cardoe@gentoo.org> mythtv-0.25.1.ebuild,
+  +mythtv-0.25.1_p20120608.ebuild, +files/runmythfe-r1:
+  Add latest upstream patches. Fix issue where the runmythfe script called old
+  arguments.
+
+  30 Jun 2012; Doug Goldstein <cardoe@gentoo.org> files/mythbackend.init:
+  Fix typo in the init script
+
+  28 Jun 2012; Doug Goldstein <cardoe@gentoo.org> mythtv-0.25.1.ebuild:
+  Add missing depend on x11-libs/qt-dbus.
+
+  26 Jun 2012; Doug Goldstein <cardoe@gentoo.org> files/mythbackend.conf,
+  files/mythbackend.init:
+  Updated init script to play nice with the new daemon args. Based on work by
+  Myk Taylor <myk002@yahoo.com>.
+
+  24 Jun 2012; Doug Goldstein <cardoe@gentoo.org> mythtv-0.25.1.ebuild,
+  files/mythbackend.init:
+  Specify the PID file that SSD should look at since MythBackend makes the PID
+  file. Remove the user perm drop since SSD does that for us.
+
+  23 Jun 2012; Doug Goldstein <cardoe@gentoo.org> mythtv-0.25.1.ebuild:
+  Approach the sandbox violation / ${ED}/${ED} install issue from another
+  angle.
+
+  22 Jun 2012; Doug Goldstein <cardoe@gentoo.org> mythtv-0.25.1.ebuild:
+  Fix einstall call to not install into ${ED}/${ED}. Remove installation of
+  html docs since they're missing too. Thanks to Myk Taylor <myk002@yahoo.com>
+  for help debugging this ebuild.
+
+  22 Jun 2012; Doug Goldstein <cardoe@gentoo.org> mythtv-0.25.1.ebuild:
+  Fix issue where docs are no longer present.
+
+  21 Jun 2012; Doug Goldstein <cardoe@gentoo.org> mythtv-0.25.1.ebuild,
+  metadata.xml:
+  Change USE=ass to USE=libass to be consistent with other usages of it in the
+  tree. Fix patch name.
+
+  21 Jun 2012; Doug Goldstein <cardoe@gentoo.org> mythtv-0.25.1.ebuild:
+  qt3support is no longer necessary for Qt, but dbus and mysql is. Remove the
+  requirement on nvidia-drivers being installed for vdpau support since
+  multiple drivers implement vdpau and all we really need is libvdpau to
+  utilize them.
+
+  21 Jun 2012; Doug Goldstein <cardoe@gentoo.org> mythtv-0.25.1.ebuild,
+  +files/fixLdconfSandbox.0.25.1.patch:
+  Add missing patch for dealing with upstream's urge to always run ldconfig,
+  which causes sandbox violations.
+
+  21 Jun 2012; Doug Goldstein <cardoe@gentoo.org> mythtv-0.25.1.ebuild:
+  Python, EROOT/ED cleanups and depend cleanups
+
+*mythtv-0.25.1 (21 Jun 2012)
+
+  21 Jun 2012; Doug Goldstein <cardoe@gentoo.org> +mythtv-0.25.1.ebuild,
+  +files/mythbackend.conf, +files/mythbackend.init:
+  Version bump to 0.25.1. This is still very much a Work In Progress ebuild and
+  as such its masked.
+
+  10 Jun 2012; Richard Freeman <rich0@gentoo.org>
+  -files/mythtv-0.21-ldconfig-sanxbox-fix.patch,
+  -files/mythtv-0.22-x86-no-fpic.patch, -files/mythfilldatabase.cron,
+  -files/mythtv.logrotate.d, -files/mythtv.png:
+  Remove no longer used files. Fix 370883.
+
+  09 Jun 2012; Zac Medico <zmedico@gentoo.org> mythtv-0.24.1_p20110524.ebuild:
+  inherit user for enewuser
+
+  07 Mar 2012; Doug Goldstein <cardoe@gentoo.org> -mythtv-0.23.1_p27077.ebuild:
+  Remove old version
+
+  07 Mar 2012; Davide Pesavento <pesa@gentoo.org>
+  mythtv-0.24.1_p20110524.ebuild:
+  Stop inheriting deprecated qt4.eclass, it was unused anyway.
+
+  07 Mar 2012; Davide Pesavento <pesa@gentoo.org> mythtv-0.23.1_p27077.ebuild:
+  Latest qt-webkit no longer has a dbus USE flag, thus drop the USE dependency.
+
+  15 Feb 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  mythtv-0.23.1_p27077.ebuild, mythtv-0.24.1_p20110524.ebuild:
+  move media-tv to virtual/linuxtv-dvb-headers, bug #403929
+
+*mythtv-0.24.1_p20110524 (17 Dec 2011)
+
+  17 Dec 2011; Richard Freeman <rich0@gentoo.org> +files/ffmpeg-sync.patch,
+  +files/fixLdconfSandbox.patch, +files/mythtv-v4l2-fix.2.patch,
+  +mythtv-0.24.1_p20110524.ebuild:
+  Introduce mythtv 0.24.1
 
   28 Jul 2011; Jesus Rivero <neurogeek@gentoo.org>
   mythtv-0.23.1_p27077.ebuild:

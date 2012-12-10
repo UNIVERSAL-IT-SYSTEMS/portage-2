@@ -1,6 +1,65 @@
 # ChangeLog for media-plugins/gst-plugins-v4l2
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-v4l2/ChangeLog,v 1.83 2011/07/31 04:03:32 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-v4l2/ChangeLog,v 1.96 2012/12/05 23:23:09 eva Exp $
+
+  05 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-plugins-v4l2-0.10.30.ebuild:
+  Fix build of stable ebuild, bug #446130.
+
+*gst-plugins-v4l2-1.0.3 (03 Dec 2012)
+
+  03 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-plugins-v4l2-0.10.31.ebuild, +gst-plugins-v4l2-1.0.3.ebuild:
+  Version bump. Switch to virtual for udev.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-plugins-v4l2-0.10.31.ebuild:
+  Update with ebuild from gnome overlay.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  -gst-plugins-v4l2-0.10.23.ebuild, -gst-plugins-v4l2-0.10.28-r1.ebuild,
+  gst-plugins-v4l2-0.10.30.ebuild:
+  Add missing gstreamer slot.
+
+  23 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gst-plugins-v4l2-0.10.30.ebuild:
+  Also fix build failure with linux-headers in the stable ebuild.
+
+*gst-plugins-v4l2-0.10.31 (23 Oct 2012)
+
+  23 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gst-plugins-v4l2-0.10.31.ebuild,
+  +files/gst-plugins-v4l2-0.10.31-linux-headers-3.6.patch:
+  Bump, improves error handling, fixes various bugs. Fix build failure with
+  recent linux-headers (bug #437012, thanks to Jason Lamb et al.)
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gst-plugins-v4l2-0.10.30.ebuild:
+  ppc/ppc64 stable wrt #382225
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> gst-plugins-v4l2-0.10.30.ebuild:
+  Stable for HPPA (bug #382225).
+
+  09 Oct 2011; Raúl Porcel <armin76@gentoo.org>
+  gst-plugins-v4l2-0.10.30.ebuild:
+  alpha/ia64/sparc stable wrt #382225
+
+  03 Oct 2011; Markus Meier <maekke@gentoo.org>
+  gst-plugins-v4l2-0.10.30.ebuild:
+  arm stable, bug #382225
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org>
+  gst-plugins-v4l2-0.10.30.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #382225.
+
+  20 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gst-plugins-v4l2-0.10.30.ebuild:
+  x86 stable wrt bug #382225
+
+  04 Aug 2011; Samuli Suominen <ssuominen@gentoo.org>
+  gst-plugins-v4l2-0.10.30.ebuild:
+  Move libv4l from DEPEND to RDEPEND wrt #370671
 
 *gst-plugins-v4l2-0.10.30 (31 Jul 2011)
 

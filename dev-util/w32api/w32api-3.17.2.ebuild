@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/w32api/w32api-3.17.2.ebuild,v 1.2 2011/03/27 03:14:55 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/w32api/w32api-3.17.2.ebuild,v 1.5 2012/05/08 20:06:36 vapier Exp $
 
 export CBUILD=${CBUILD:-${CHOST}}
 export CTARGET=${CTARGET:-${CHOST}}
@@ -15,11 +15,12 @@ inherit eutils flag-o-matic
 MY_P="${P:0:${#P}-2}-${PV:0-1}-mingw32"
 DESCRIPTION="Free Win32 runtime and import library definitions"
 HOMEPAGE="http://www.mingw.org/"
+# http://sourceforge.net/projects/mingw/files/MinGW/Base/w32api/
 SRC_URI="mirror://sourceforge/mingw/${MY_P}-src.tar.lzma"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ~ppc ~sparc x86"
 IUSE="crosscompile_opts_headers-only"
 RESTRICT="strip"
 
@@ -56,5 +57,8 @@ src_install() {
 		emake install DESTDIR="${D}" || die
 		env -uRESTRICT CHOST=${CTARGET} prepallstrip
 		dodoc CONTRIBUTIONS ChangeLog README.w32api TODO
+
+		# Make sure diff cross-compilers don't collide #414075
+		mv "${D}"/usr/share/doc/{${PF},${CTARGET}-${PF}} || die
 	fi
 }

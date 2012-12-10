@@ -1,6 +1,120 @@
 # ChangeLog for dev-python/sip
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/sip/ChangeLog,v 1.199 2011/07/25 20:37:17 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/sip/ChangeLog,v 1.232 2012/11/22 21:31:43 maekke Exp $
+
+  22 Nov 2012; Markus Meier <maekke@gentoo.org> sip-4.13.3.ebuild:
+  arm stable, bug #435074
+
+*sip-4.14.1 (28 Oct 2012)
+
+  28 Oct 2012; Markos Chandras <hwoarang@gentoo.org> +sip-4.14.1.ebuild,
+  -sip-4.12.3-r2.ebuild, -sip-4.13.2-r1.ebuild:
+  Version bump. Remove old
+
+  14 Oct 2012; Davide Pesavento <pesa@gentoo.org> sip-4.14.ebuild:
+  Update from qt overlay.
+
+  12 Oct 2012; Mike Gilbert <floppym@gentoo.org> sip-4.14.ebuild:
+  Set subslot. Backported from Progress Overlay. Patch by Arfrever.
+
+*sip-4.14 (05 Oct 2012)
+
+  05 Oct 2012; Markos Chandras <hwoarang@gentoo.org> +sip-4.14.ebuild:
+  Version bump. Bug #437218
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> sip-4.13.3.ebuild:
+  alpha/ia64/sparc stable wrt #429042
+
+  20 Aug 2012; Johannes Huber <johu@gentoo.org> sip-4.13.3.ebuild:
+  Stable for x86, wrt bug #429042
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> sip-4.13.3.ebuild:
+  Stable for amd64, wrt bug #429042
+
+  11 Aug 2012; Anthony G. Basile <blueness@gentoo.org> sip-4.13.3.ebuild:
+  Stable ppc64, bug #429042
+
+  10 Aug 2012; Anthony G. Basile <blueness@gentoo.org> sip-4.13.3.ebuild:
+  Stable ppc, bug #429042
+
+  09 Aug 2012; Jeroen Roovers <jer@gentoo.org> sip-4.13.3.ebuild:
+  Stable for HPPA (bug #429042).
+
+  09 Jul 2012; Davide Pesavento <pesa@gentoo.org> -sip-4.11.2.ebuild:
+  Remove old.
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> sip-4.13.2-r1.ebuild:
+  alpha/ia64/sparc stable wrt #412929
+
+*sip-4.13.3 (21 Jun 2012)
+
+  21 Jun 2012; Markos Chandras <hwoarang@gentoo.org> +sip-4.13.3.ebuild:
+  Version bump
+
+  23 May 2012; Jeff Horelick <jdhore@gentoo.org> sip-4.13.2-r1.ebuild:
+  marked x86 per bug 412929
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> sip-4.13.2-r1.ebuild:
+  Stable for HPPA (bug #412929).
+
+  24 Apr 2012; Agostino Sarubbo <ago@gentoo.org> sip-4.13.2-r1.ebuild:
+  Stable for amd64, wrt bug #412929
+
+  31 Mar 2012; Tobias Klausmann <klausman@gentoo.org> sip-4.12.3-r2.ebuild:
+  Stable on alpha, bug #354033
+
+  07 Mar 2012; Davide Pesavento <pesa@gentoo.org> metadata.xml,
+  sip-4.13.2-r1.ebuild:
+  Slightly improve the ewarn message in pkg_postinst(). Put qt as primary herd
+  in metadata.
+
+*sip-4.13.2-r1 (23 Feb 2012)
+
+  23 Feb 2012; Davide Pesavento <pesa@gentoo.org> +sip-4.13.2-r1.ebuild,
+  -sip-4.13.2.ebuild:
+  Revbump with EAPI 4 support.
+
+  23 Feb 2012; Davide Pesavento <pesa@gentoo.org> sip-4.13.2.ebuild:
+  Minor code cleanup.
+
+  23 Feb 2012; Davide Pesavento <pesa@gentoo.org> -sip-4.12.4.ebuild,
+  -sip-4.13.1.ebuild, -sip-4.13.ebuild, metadata.xml:
+  Add <upstream> tag to metadata. Remove old ebuilds.
+
+  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> sip-4.11.2.ebuild,
+  sip-4.12.3-r2.ebuild, sip-4.12.4.ebuild, sip-4.13.1.ebuild, sip-4.13.2.ebuild,
+  sip-4.13.ebuild:
+  Restrict pypy for #403791
+
+*sip-4.13.2 (18 Feb 2012)
+
+  18 Feb 2012; Markos Chandras <hwoarang@gentoo.org> +sip-4.13.2.ebuild:
+  version bump
+
+*sip-4.13.1 (24 Dec 2011)
+
+  24 Dec 2011; Markos Chandras <hwoarang@gentoo.org> +sip-4.13.1.ebuild:
+  version bump
+
+  14 Dec 2011; Mike Gilbert <floppym@gentoo.org> sip-4.13.ebuild:
+  Remove -O2 from build specs. Resolves bug 360771.
+
+*sip-4.13 (11 Nov 2011)
+
+  11 Nov 2011; Markos Chandras <hwoarang@gentoo.org> +sip-4.13.ebuild:
+  Version bump
+
+  03 Nov 2011; Jeroen Roovers <jer@gentoo.org> sip-4.12.3-r2.ebuild:
+  Stable for HPPA (bug #374591).
+
+*sip-4.12.4 (12 Aug 2011)
+
+  12 Aug 2011; Dirkjan Ochtman <djc@gentoo.org> +sip-4.12.4.ebuild:
+  Version bump to 4.12.4.
+
+  12 Aug 2011; Dirkjan Ochtman <djc@gentoo.org> -sip-4.10.2.ebuild,
+  -sip-4.12.1.ebuild, -sip-4.12.3.ebuild:
+  Remove redundant old versions.
 
   25 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> sip-4.12.3-r2.ebuild:
   ppc/ppc64 stable wrt #374591

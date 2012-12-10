@@ -1,6 +1,64 @@
 # ChangeLog for media-sound/ardour
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ardour/ChangeLog,v 1.95 2011/07/29 07:23:17 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ardour/ChangeLog,v 1.108 2012/12/05 09:57:19 radhermit Exp $
+
+*ardour-2.8.16 (05 Dec 2012)
+
+  05 Dec 2012; Tim Harder <radhermit@gentoo.org> +ardour-2.8.16.ebuild:
+  Version bump.
+
+  24 Nov 2012; Tim Harder <radhermit@gentoo.org> ardour-2.8.14-r1.ebuild:
+  Fix whitespace.
+
+  24 Nov 2012; Andreas Schuerch <nativemad@gentoo.org> ardour-2.8.14-r1.ebuild:
+  rdep cleanup. Thanks Tim Harder.
+
+*ardour-2.8.14-r1 (24 Nov 2012)
+
+  24 Nov 2012; Andreas Schuerch <nativemad@gentoo.org> ardour-2.8.14.ebuild,
+  +ardour-2.8.14-r1.ebuild:
+  added boost to rdeps and made a revbump for dropping ppc and add lilv and
+  suil to the rdeps for lv2. Thanks Tim Harden and Martin Erdtmann for pointing
+  out the issues! See bug 444434. 
+
+  22 Nov 2012; Andreas Schuerch <nativemad@gentoo.org> ardour-2.8.14.ebuild,
+  +files/ardour-2.8.14-boost-150.patch:
+  added a little patch for boost-1.50. See bug 425578, Thanks Diego.
+
+*ardour-2.8.14 (21 Nov 2012)
+
+  21 Nov 2012; Andreas Schuerch <nativemad@gentoo.org> +ardour-2.8.14.ebuild,
+  +files/ardour-2.8.14-syslibs.patch:
+  Ebuild Bumped to 2.8.14 and syslibs.patch slightly adjusted. See bug 437408
+
+  31 May 2012; Tim Harder <radhermit@gentoo.org> ardour-2.8.12.ebuild,
+  +files/ardour-2.8.12-gcc47.patch:
+  Fix build with gcc-4.7 (bug #414145 by David Kredba).
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> ardour-2.8.12.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -ardour-2.8.11-r20.ebuild, -files/ardour-2.8.11-gcc46.patch,
+  -files/ardour-2.8.11-ldpath.patch, -files/ardour-2.8.11-raptor2.patch,
+  -files/ardour-2.8.11-syslibs.patch, -files/ardour-2.8.11-type.patch:
+  old
+
+  28 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> ardour-2.8.12.ebuild:
+  Use gentoo mirrors.
+
+*ardour-2.8.12 (28 Sep 2011)
+
+  28 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> +ardour-2.8.12.ebuild,
+  +files/ardour-2.8.12-syslibs.patch:
+  Version bump.
+
+  11 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> -ardour-2.8.11-r1.ebuild:
+  [This is a placeholder. Please ignore.]
+
+  04 Sep 2011; Alexis Ballier <aballier@gentoo.org> ardour-2.8.11-r20.ebuild,
+  +files/ardour-2.8.11-soundtouch.patch:
+  fix build with latest libsoundtouch
 
 *ardour-2.8.11-r20 (29 Jul 2011)
 

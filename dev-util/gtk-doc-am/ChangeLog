@@ -1,6 +1,52 @@
 # ChangeLog for dev-util/gtk-doc-am
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/gtk-doc-am/ChangeLog,v 1.64 2011/07/17 20:49:54 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/gtk-doc-am/ChangeLog,v 1.78 2012/05/05 09:51:53 jdhore Exp $
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gtk-doc-am-1.17.ebuild,
+  gtk-doc-am-1.18.ebuild:
+  THE FINAL dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> gtk-doc-am-1.18.ebuild:
+  keyword ~amd64-fbsd
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> gtk-doc-am-1.18.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> gtk-doc-am-1.18.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> gtk-doc-am-1.18.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> gtk-doc-am-1.18.ebuild:
+  Stable for HPPA (bug #385699).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> gtk-doc-am-1.18.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> gtk-doc-am-1.18.ebuild:
+  amd64 stable wrt #385699
+
+*gtk-doc-am-1.18 (15 Sep 2011)
+
+  15 Sep 2011; Pacho Ramos <pacho@gentoo.org> +gtk-doc-am-1.18.ebuild:
+  Version bump.
+
+  10 Sep 2011; Pacho Ramos <pacho@gentoo.org> -gtk-doc-am-1.15.ebuild,
+  -gtk-doc-am-1.16.ebuild:
+  Remove old.
+
+  19 Aug 2011; Guy Martin <gmsoft@gentoo.org> gtk-doc-am-1.17.ebuild:
+  hppa stable, bug #369909
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> gtk-doc-am-1.17.ebuild:
+  m68k stable wrt #369909
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> gtk-doc-am-1.17.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #369909
+
+  12 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> gtk-doc-am-1.17.ebuild:
+  ppc/ppc64 stable to break circular dependecy glib->gtk-doc-am->pkgconfig
 
   17 Jul 2011; Markus Meier <maekke@gentoo.org> gtk-doc-am-1.17.ebuild:
   arm stable, bug #369909

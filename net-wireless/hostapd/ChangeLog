@@ -1,6 +1,101 @@
 # ChangeLog for net-wireless/hostapd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostapd/ChangeLog,v 1.112 2011/07/13 12:19:09 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/hostapd/ChangeLog,v 1.135 2012/12/03 09:18:15 gurligebis Exp $
+
+*hostapd-1.1 (03 Dec 2012)
+
+  03 Dec 2012; <gurligebis@gentoo.org> +hostapd-1.1.ebuild,
+  +files/hostapd-1.1-libnl_path_fix.patch,
+  +files/hostapd-1.1-tls_length_fix.patch:
+  Bumping to 1.1
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> -hostapd-0.7.3.ebuild,
+  -hostapd-1.0-r1.ebuild, -hostapd-1.0-r2.ebuild, -hostapd-1.0-r3.ebuild:
+  Remove old
+
+  12 Oct 2012; Anthony G. Basile <blueness@gentoo.org> hostapd-1.0-r4.ebuild:
+  stable ppc, bug #437830
+
+  11 Oct 2012; Agostino Sarubbo <ago@gentoo.org> hostapd-1.0-r4.ebuild:
+  Stable for amd64, wrt bug #437830
+
+  11 Oct 2012; Andreas Schuerch <nativemad@gentoo.org> hostapd-1.0-r4.ebuild:
+  x86 stable, see bug 437830
+
+*hostapd-1.0-r4 (10 Oct 2012)
+
+  10 Oct 2012; <gurligebis@gentoo.org> +hostapd-1.0-r4.ebuild,
+  +files/hostapd-1.0-tls_length_fix.patch:
+  Bumping to 1.0-r4, to include fix for bug #437830
+
+*hostapd-1.0-r3 (03 Oct 2012)
+
+  03 Oct 2012; <gurligebis@gentoo.org> +hostapd-1.0-r3.ebuild,
+  +files/hostapd-1.0-libnl_path_fix.patch:
+  Moving to depend on dev-libs/libnl:3 instead of dev-libs/libnl:1.1
+
+  24 Sep 2012; Agostino Sarubbo <ago@gentoo.org> hostapd-1.0-r2.ebuild:
+  cleanup + EAPI4 bump
+
+*hostapd-1.0-r2 (24 Sep 2012)
+
+  24 Sep 2012; Rick Farina <zerochaos@gentoo.org> +hostapd-1.0-r2.ebuild:
+  let's actually fix bug #426498
+
+  24 Aug 2012; Michael Weber <xmw@gentoo.org> hostapd-1.0-r1.ebuild:
+  ppc stable (bug 426498).
+
+  15 Jul 2012; Agostino Sarubbo <ago@gentoo.org> hostapd-1.0-r1.ebuild:
+  Stable for amd64, wrt bug #426498
+
+  15 Jul 2012; Jeff Horelick <jdhore@gentoo.org> hostapd-1.0-r1.ebuild:
+  marked x86 per bug 426498
+
+  17 Jun 2012; <gurligebis@gentoo.org> hostapd-1.0-r1.ebuild, metadata.xml:
+  Making CRDA dependency optional, fixing bug #421087
+
+  11 Jun 2012; <gurligebis@gentoo.org> hostapd-1.0-r1.ebuild:
+  Making net-wireless/hostapd depend on net-wireless/crda, fixing bug #420645
+
+*hostapd-1.0-r1 (12 May 2012)
+
+  12 May 2012; <gurligebis@gentoo.org> -hostapd-1.0.ebuild,
+  +hostapd-1.0-r1.ebuild:
+  Adding support for interworking (802.11u-2011), fixing bug #415451
+
+*hostapd-1.0 (10 May 2012)
+
+  10 May 2012; <gurligebis@gentoo.org> -hostapd-0.6.9.ebuild,
+  -hostapd-1.0_rc3.ebuild, +hostapd-1.0.ebuild:
+  Bumping to 1.0 and removing old version
+
+*hostapd-1.0_rc3 (17 Apr 2012)
+
+  17 Apr 2012; <gurligebis@gentoo.org> -hostapd-1.0_rc2.ebuild,
+  +hostapd-1.0_rc3.ebuild:
+  Adding hostapd 1.0_rc3
+
+*hostapd-1.0_rc2 (03 Feb 2012)
+
+  03 Feb 2012; <gurligebis@gentoo.org> +hostapd-1.0_rc2.ebuild:
+  Adding 1.0_rc2 to allow people help testing, hardmasked for now.
+
+  07 Nov 2011; <gurligebis@gentoo.org> hostapd-0.7.3.ebuild:
+  Fixing compiling with both libnl-1.1 and libnl-3 installed.
+
+  27 Oct 2011; Jeroen Roovers <jer@gentoo.org> hostapd-0.6.9.ebuild:
+  Fix libnl dependency (bug #342461).
+
+  25 Sep 2011; <gurligebis@gentoo.org> files/hostapd-init.d:
+  Changed extra_commands to extra_started_commands in initscript.
+
+  09 Sep 2011; <gurligebis@gentoo.org> hostapd-0.7.3.ebuild,
+  files/hostapd-init.d:
+  Adding support for >=libnl-2.0 and adding support for newer openrc
+  versions without making noise.
 
   13 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> hostapd-0.7.3.ebuild:
   ppc stable wrt #360997
@@ -582,4 +677,3 @@
   21 Oct 2003; Wolfram Schlich <wschlich@gentoo.org> hostapd-0.1.0.ebuild,
   metadata.xml:
   Initial import
-

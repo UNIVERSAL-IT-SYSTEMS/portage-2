@@ -1,6 +1,35 @@
 # ChangeLog for sci-geosciences/qgis
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/qgis/ChangeLog,v 1.20 2011/06/12 21:11:53 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/qgis/ChangeLog,v 1.26 2012/05/24 12:53:24 scarabeus Exp $
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +files/qgis-no-python-pyc.patch, qgis-1.7.4.ebuild:
+  Add python pyc patch for bug#381481. Patch by Chris Mayo.
+
+*qgis-1.7.4 (24 May 2012)
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +files/qgis-1.7.4-gcc4.7.patch, +qgis-1.7.4.ebuild,
+  -files/qgis-1.4.0-gcc45.patch, -qgis-1.4.0.ebuild, -qgis-1.7.3.ebuild:
+  Version bump to latest version. Try to restrain python sip versions to
+  actually work. Add patch to build with gcc-4.7. Fixes bug#405997. Remove
+  older.
+
+  05 Feb 2012; Mike Gilbert <floppym@gentoo.org> qgis-1.4.0.ebuild,
+  qgis-1.7.0.ebuild, qgis-1.7.3.ebuild:
+  Inherit multilib.
+
+*qgis-1.7.3 (22 Dec 2011)
+
+  22 Dec 2011; Justin Lecher <jlec@gentoo.org> +qgis-1.7.3.ebuild,
+  metadata.xml:
+  Version Bump, #395271
+
+  07 Aug 2011; Markus Meier <maekke@gentoo.org> qgis-1.7.0.ebuild:
+  x86 stable, bug #375989
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> qgis-1.7.0.ebuild:
+  Stable on amd64 wrt bug #375989
 
   12 Jun 2011; Tomáš Chvátal <scarabeus@gentoo.org> qgis-1.7.0.ebuild:
   Redo the docs as it fail on install cause some are missing.

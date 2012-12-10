@@ -1,6 +1,76 @@
 # ChangeLog for sys-freebsd/freebsd-mk-defs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-mk-defs/ChangeLog,v 1.36 2011/07/06 06:02:33 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-mk-defs/ChangeLog,v 1.49 2012/11/06 12:55:19 aballier Exp $
+
+*freebsd-mk-defs-9.1_rc3 (06 Nov 2012)
+
+  06 Nov 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-mk-defs-9.1_rc3.ebuild:
+  bump to rc3
+
+*freebsd-mk-defs-9.1_rc2 (14 Oct 2012)
+
+  14 Oct 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-mk-defs-9.1_rc2.ebuild:
+  bump to 9.1_rc2
+
+*freebsd-mk-defs-9.1_rc1 (11 Sep 2012)
+
+  11 Sep 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-mk-defs-9.1_rc1.ebuild, +files/freebsd-mk-defs-9.1-gentoo.patch,
+  +files/freebsd-mk-defs-9.1-gnu.patch:
+  bump to 9.1_rc1 from bsd overlay by Yuta SATOH, bug #426838
+
+*freebsd-mk-defs-9.0-r1 (22 May 2012)
+
+  22 May 2012; Richard Yao <ryao@gentoo.org> +freebsd-mk-defs-9.0-r1.ebuild,
+  -freebsd-mk-defs-9.0.ebuild, files/freebsd-mk-defs-9.0-gentoo.patch:
+  Make freebsd-mk-defs-9.0-gentoo.patch stop installing directories in
+  /usr/include as 444. Fixes bug \#417031.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> freebsd-mk-defs-9.0.ebuild:
+  keyword ~amd64-fbsd
+
+  30 Mar 2012; Alexis Ballier <aballier@gentoo.org>
+  -freebsd-mk-defs-9.0_rc1.ebuild, -freebsd-mk-defs-9.0_rc2.ebuild,
+  -freebsd-mk-defs-9.0_rc3.ebuild:
+  remove old
+
+*freebsd-mk-defs-9.0 (16 Jan 2012)
+
+  16 Jan 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-mk-defs-9.0.ebuild:
+  bump to 9.0
+
+*freebsd-mk-defs-9.0_rc3 (09 Dec 2011)
+
+  09 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-mk-defs-9.0_rc3.ebuild:
+  bump to 9.0_rc3
+
+*freebsd-mk-defs-9.0_rc2 (07 Dec 2011)
+
+  07 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-mk-defs-9.0_rc2.ebuild:
+  bump to rc2
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  files/freebsd-mk-defs-9.0-gnu.patch:
+  more fixes for the gnu patch
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  freebsd-mk-defs-9.0_rc1.ebuild, +files/freebsd-mk-defs-9.0-gnu.patch:
+  fix gnu patch
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  files/freebsd-mk-defs-9.0-gentoo.patch:
+  install -C works on freebsd, dont remove it uncondtionally
+
+*freebsd-mk-defs-9.0_rc1 (07 Nov 2011)
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-mk-defs-9.0_rc1.ebuild, +files/freebsd-mk-defs-9.0-gentoo.patch:
+  bump to 9.0_rc1
 
 *freebsd-mk-defs-8.2 (06 Jul 2011)
 

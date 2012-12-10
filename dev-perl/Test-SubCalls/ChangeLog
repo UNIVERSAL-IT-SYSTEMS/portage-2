@@ -1,6 +1,23 @@
 # ChangeLog for dev-perl/Test-SubCalls
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-SubCalls/ChangeLog,v 1.20 2010/09/03 07:03:40 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-SubCalls/ChangeLog,v 1.25 2012/06/24 12:59:48 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  28 Mar 2012; Raúl Porcel <armin76@gentoo.org> Test-SubCalls-1.90.0.ebuild:
+  Drop sparc keywords
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Test-SubCalls-1.09.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Test-SubCalls-1.90.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Test-SubCalls-1.90.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +Test-SubCalls-1.90.0.ebuild:
+  Change version scheme
 
   03 Sep 2010; Torsten Veller <tove@gentoo.org> -Test-SubCalls-1.06.ebuild,
   -Test-SubCalls-1.07.ebuild:
@@ -86,4 +103,3 @@
   20 Apr 2006; <mcummings@gentoo.org> +metadata.xml,
   +Test-SubCalls-0.03.ebuild:
   Dep for perl-critic
-

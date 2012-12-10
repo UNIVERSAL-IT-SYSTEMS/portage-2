@@ -1,6 +1,13 @@
 # ChangeLog for net-misc/ipcalc
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/ipcalc/ChangeLog,v 1.16 2010/10/17 05:03:05 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/ipcalc/ChangeLog,v 1.18 2012/12/09 00:13:26 zerochaos Exp $
+
+  09 Dec 2012; Rick Farina <zerochaos@gentoo.org> ipcalc-0.41.ebuild:
+  fixing license per bug #446538
+
+  12 Oct 2012; Sergey Popov <pinkbyte@gentoo.org> -ipcalc-0.37.ebuild,
+  -ipcalc-0.40.ebuild:
+  Drop old versions
 
   17 Oct 2010; Mart Raudsepp <leio@gentoo.org> ipcalc-0.37.ebuild,
   ipcalc-0.40.ebuild, ipcalc-0.41.ebuild:
@@ -147,4 +154,3 @@
 
   01 Apr 2003; Guy Martin <gmsoft@gentoo.org> ipcalc-0.35.ebuild :
   Initial import. Author of this ebuild is Emmanuel Roger <flynux@prout.be>.
-

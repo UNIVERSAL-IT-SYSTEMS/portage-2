@@ -1,6 +1,106 @@
 # ChangeLog for dev-util/desktop-file-utils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/desktop-file-utils/ChangeLog,v 1.108 2011/04/30 17:42:56 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/desktop-file-utils/ChangeLog,v 1.131 2012/12/01 19:19:30 armin76 Exp $
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org>
+  desktop-file-utils-0.21.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #443478
+
+  16 Nov 2012; Jeroen Roovers <jer@gentoo.org> desktop-file-utils-0.21.ebuild:
+  Stable for HPPA (bug #443478).
+
+  16 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  desktop-file-utils-0.21.ebuild:
+  amd64/arm/ppc/ppc64/x86 stable wrt #443478
+
+*desktop-file-utils-0.21 (26 Oct 2012)
+
+  26 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  desktop-file-utils-0.20-r1.ebuild, +desktop-file-utils-0.21.ebuild:
+  Version bump with lots of validator updates (more desktop environments, new
+  categories, better hints, etc.); update license.
+
+  19 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -desktop-file-utils-0.19.ebuild:
+  old
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org>
+  desktop-file-utils-0.20-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #412833
+
+  06 May 2012; Alexis Ballier <aballier@gentoo.org>
+  desktop-file-utils-0.20-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Brent Baude <ranger@gentoo.org>
+  desktop-file-utils-0.20-r1.ebuild:
+  Marking desktop-file-utils-0.20-r1 ppc for bug 412833
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  desktop-file-utils-0.19.ebuild, desktop-file-utils-0.20-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org>
+  desktop-file-utils-0.20-r1.ebuild:
+  Stable for HPPA (bug #412833).
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org>
+  desktop-file-utils-0.20-r1.ebuild:
+  arm stable, bug #412833
+
+  23 Apr 2012; Brent Baude <ranger@gentoo.org>
+  desktop-file-utils-0.20-r1.ebuild:
+  Marking desktop-file-utils-0.20-r1 ppc64 for bug 412833
+
+  21 Apr 2012; Jeff Horelick <jdhore@gentoo.org>
+  desktop-file-utils-0.20-r1.ebuild:
+  marked x86 per bug 412833
+
+  21 Apr 2012; Agostino Sarubbo <ago@gentoo.org>
+  desktop-file-utils-0.20-r1.ebuild:
+  Stable for amd64, wrt bug #412833
+
+  20 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -desktop-file-utils-0.18.ebuild, -files/desktop-file-utils-0.18-unity.patch,
+  -desktop-file-utils-0.20.ebuild:
+  old
+
+*desktop-file-utils-0.20-r1 (05 Apr 2012)
+
+  05 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +desktop-file-utils-0.20-r1.ebuild,
+  +files/desktop-file-utils-0.20-validate_Categories_XFCE.patch:
+  New main category XFCE for Xfce 4.10 compability.
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  desktop-file-utils-0.19.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #402147
+
+*desktop-file-utils-0.20 (06 Mar 2012)
+
+  06 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +desktop-file-utils-0.20.ebuild:
+  Version bump.
+
+  13 Feb 2012; Markus Meier <maekke@gentoo.org> desktop-file-utils-0.19.ebuild:
+  arm stable, bug #402147
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> desktop-file-utils-0.19.ebuild:
+  Stable for HPPA (bug #402147).
+
+  04 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  desktop-file-utils-0.19.ebuild:
+  amd64/ppc/ppc64/x86 stable wrt #402147
+
+*desktop-file-utils-0.19 (20 Dec 2011)
+
+  20 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +desktop-file-utils-0.19.ebuild:
+  Version bump.
+
+  02 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  desktop-file-utils-0.18.ebuild, +files/desktop-file-utils-0.18-unity.patch:
+  Insert Unity to list of registered desktops.
 
   30 Apr 2011; Raúl Porcel <armin76@gentoo.org>
   desktop-file-utils-0.18.ebuild:

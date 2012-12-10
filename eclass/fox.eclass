@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/fox.eclass,v 1.12 2011/07/08 11:35:01 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/fox.eclass,v 1.17 2012/09/27 16:35:41 axs Exp $
 
 # @ECLASS: fox.eclass
 # @MAINTAINER:
@@ -33,7 +33,7 @@ inherit autotools versionator
 
 FOX_EXPF="src_unpack src_compile src_install pkg_postinst"
 case "${EAPI:-0}" in
-	2|3|4) FOX_EXPF+=" src_prepare src_configure" ;;
+	2|3|4|5) FOX_EXPF+=" src_prepare src_configure" ;;
 	*) ;;
 esac
 EXPORT_FUNCTIONS ${FOX_EXPF}
@@ -63,7 +63,7 @@ FOX_APPS="adie calculator pathfinder shutterbug"
 
 DESCRIPTION="C++ based Toolkit for developing Graphical User Interfaces easily and effectively"
 HOMEPAGE="http://www.fox-toolkit.org/"
-SRC_URI="http://www.fox-toolkit.org/ftp/fox-${FOX_PV}.tar.gz"
+SRC_URI="ftp://ftp.fox-toolkit.org/pub/fox-${FOX_PV}.tar.gz"
 
 IUSE="debug doc profile"
 
@@ -122,6 +122,7 @@ fox_src_prepare() {
 		sed -i \
 			-e "s:-I\$(top_srcdir)/include -I\$(top_builddir)/include:-I\$(includedir)/fox-${FOXVER}:" \
 			-e 's:$(top_builddir)/src/libFOX:-lFOX:' \
+			-e 's:$(top_builddir)/lib/libFOX:-lFOX:' \
 			-e 's:\.la::' \
 			${d}/Makefile.am || die "sed ${d}/Makefile.am error"
 	done
@@ -209,12 +210,21 @@ fox_pkg_postinst() {
 		einfo "(adie, calculator, pathfinder, shutterbug) are now available as"
 		einfo "separate ebuilds."
 		echo
-		einfo "The fox-config script has been installed as fox-${FOXVER}-config."
-		einfo "The fox-wrapper package is used to direct calls to fox-config"
-		einfo "to the correct versioned script, based on the WANT_FOX variable."
-		einfo "For example:"
-		einfo
-		einfo "    WANT_FOX=\"${FOXVER}\" fox-config <options>"
+
+		if version_is_at_least "1.7.25"; then
+			einfo "Fox versions after 1.7.25 ships a pkg-config file called fox17.pc"
+			einfo "instead of the previous fox-config tool."
+			einfo "You now get all info via pkg-config:"
+			einfo
+			einfo "pkg-config fox17 --libs (etc.)"
+		else
+			einfo "The fox-config script has been installed as fox-${FOXVER}-config."
+			einfo "The fox-wrapper package is used to direct calls to fox-config"
+			einfo "to the correct versioned script, based on the WANT_FOX variable."
+			einfo "For example:"
+			einfo
+			einfo "    WANT_FOX=\"${FOXVER}\" fox-config <options>"
+		fi
 		einfo
 	fi
 }

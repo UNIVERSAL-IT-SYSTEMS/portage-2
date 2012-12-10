@@ -1,6 +1,70 @@
 # ChangeLog for sys-apps/mlocate
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/mlocate/ChangeLog,v 1.87 2011/05/06 22:36:14 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/mlocate/ChangeLog,v 1.106 2012/11/12 13:07:30 scarabeus Exp $
+
+*mlocate-0.26 (12 Nov 2012)
+
+  12 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> +mlocate-0.26.ebuild,
+  -mlocate-0.24.ebuild:
+  Version bump to latest. Remove older. Fixes bug#437144.
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> mlocate-0.25.ebuild:
+  alpha/ia64/sparc stable wrt #422183
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> mlocate-0.25.ebuild:
+  arm stable, bug #422183
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> mlocate-0.25.ebuild:
+  Marking mlocate-0.25 ppc for bug 422183
+
+  27 Jun 2012; Jeroen Roovers <jer@gentoo.org> mlocate-0.25.ebuild:
+  Stable for HPPA (bug #422183).
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> mlocate-0.25.ebuild:
+  Marking mlocate-0.25 ppc64 for bug 422183
+
+  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> mlocate-0.25.ebuild:
+  marked x86 per bug 422183
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> mlocate-0.25.ebuild:
+  Stable for amd64, wrt bug #422183
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> mlocate-0.24.ebuild,
+  mlocate-0.25.ebuild:
+  Inherit user for enewuser/etc...
+
+*mlocate-0.25 (03 Mar 2012)
+
+  03 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +mlocate-0.25.ebuild:
+  Version bump.
+
+  05 Feb 2012; Christian Faulhammer <fauli@gentoo.org>
+  -mlocate-0.23.1-r1.ebuild:
+  clean up
+
+  02 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> mlocate-0.24.ebuild:
+  ppc64 stable wrt #396325
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> mlocate-0.24.ebuild:
+  alpha/ia64/sparc stable wrt #396325
+
+  08 Jan 2012; Markus Meier <maekke@gentoo.org> mlocate-0.24.ebuild:
+  arm stable, bug #396325
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> mlocate-0.24.ebuild:
+  x86 stable wrt bug #396325
+
+  28 Dec 2011; Michael Weber <xmw@gentoo.org> mlocate-0.24.ebuild:
+  ppc stable (bug 396325)
+
+  28 Dec 2011; Agostino Sarubbo <ago@gentoo.org> mlocate-0.24.ebuild:
+  Stable for AMD64, wrt bug #396325
+
+  28 Dec 2011; Jeroen Roovers <jer@gentoo.org> mlocate-0.24.ebuild:
+  Stable for HPPA (bug #396325).
+
+  23 Dec 2011; <swift@gentoo.org> mlocate-0.24.ebuild:
+  Add use_selinux dependency on selinux-slocate SELinux policy
 
 *mlocate-0.24 (06 May 2011)
 
@@ -326,4 +390,3 @@
   +files/updatedb.conf, +metadata.xml, +mlocate-0.17.ebuild:
   new ebuild for bug 127010, thanks to José Romildo Malaquias
   <j.romildo@gmail.com>
-

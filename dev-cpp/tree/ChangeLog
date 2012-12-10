@@ -1,6 +1,27 @@
 # ChangeLog for dev-cpp/tree
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/tree/ChangeLog,v 1.8 2011/04/08 13:43:01 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/tree/ChangeLog,v 1.14 2012/02/13 07:29:19 jlec Exp $
+
+  13 Feb 2012; Justin Lecher <jlec@gentoo.org> -tree-2.65.ebuild, metadata.xml:
+  Drop old
+
+  12 Feb 2012; Tony Vroon <chainsaw@gentoo.org> tree-2.65-r1.ebuild:
+  Marked stable on PPC64 as requested by Paweł Hajdan, Jr. in bug #394077.
+  Compile tested on a PowerMac7,3 (64UL) with GCC 4.5.3.
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> tree-2.65-r1.ebuild:
+  x86 stable, bug #394077
+
+  18 Dec 2011; Justin Lecher <jlec@gentoo.org> tree-2.81.ebuild:
+  Correct path to html documentation
+
+  14 Dec 2011; Agostino Sarubbo <ago@gentoo.org> tree-2.65-r1.ebuild:
+  Stable for AMD64, wrt bug #394077
+
+*tree-2.81 (14 Dec 2011)
+
+  14 Dec 2011; Justin Lecher <jlec@gentoo.org> +tree-2.81.ebuild:
+  Version Bump
 
 *tree-2.65-r1 (08 Apr 2011)
 

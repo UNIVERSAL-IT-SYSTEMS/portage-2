@@ -1,6 +1,82 @@
 # ChangeLog for mail-filter/imapfilter
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/imapfilter/ChangeLog,v 1.35 2011/06/11 15:15:59 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/imapfilter/ChangeLog,v 1.53 2012/09/18 12:11:23 johu Exp $
+
+  18 Sep 2012; Johannes Huber <johu@gentoo.org> imapfilter-2.5.3.ebuild:
+  Stable for x86, wrt bug #433301
+
+  08 Sep 2012; Anthony G. Basile <blueness@gentoo.org> imapfilter-2.5.3.ebuild:
+  Stable ppc, bug #433301
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> imapfilter-2.5.3.ebuild:
+  Stable for amd64, wrt bug #433301
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> -imapfilter-2.2.2.ebuild,
+  -imapfilter-2.4.2.ebuild:
+  Remove old.
+
+  23 Aug 2012; Michael Weber <xmw@gentoo.org> imapfilter-2.5.2.ebuild:
+  ppc stable (bug 419019).
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> imapfilter-2.5.2.ebuild:
+  x86 stable, bug #419019
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> imapfilter-2.5.2.ebuild:
+  Stable on amd64 wrt bug #419019
+
+*imapfilter-2.5.3 (22 Jul 2012)
+
+  22 Jul 2012; Tim Harder <radhermit@gentoo.org> +imapfilter-2.5.3.ebuild:
+  Version bump.
+
+  23 Apr 2012; Michał Górny <mgorny@gentoo.org> imapfilter-2.4.2.ebuild,
+  imapfilter-2.5.2.ebuild:
+  Use mirror://github.
+
+  01 Mar 2012; Tim Harder <radhermit@gentoo.org> -imapfilter-2.5.ebuild,
+  -imapfilter-2.5.1.ebuild:
+  Remove old.
+
+*imapfilter-2.5.2 (01 Mar 2012)
+
+  01 Mar 2012; Tim Harder <radhermit@gentoo.org> +imapfilter-2.5.2.ebuild:
+  Version bump.
+
+*imapfilter-2.5.1 (28 Feb 2012)
+
+  28 Feb 2012; Tim Harder <radhermit@gentoo.org> +imapfilter-2.5.1.ebuild:
+  Version bump.
+
+  24 Feb 2012; Tim Harder <radhermit@gentoo.org>
+  -files/imapfilter-2.0.10-deprecated.patch, -imapfilter-2.2.3.ebuild,
+  -imapfilter-2.3.ebuild, -imapfilter-2.4.1.ebuild:
+  Remove old.
+
+*imapfilter-2.5 (24 Feb 2012)
+
+  24 Feb 2012; Tim Harder <radhermit@gentoo.org> +imapfilter-2.5.ebuild:
+  Version bump.
+
+*imapfilter-2.4.2 (20 Jan 2012)
+
+  20 Jan 2012; Tim Harder <radhermit@gentoo.org> +imapfilter-2.4.2.ebuild:
+  Version bump.
+
+*imapfilter-2.4.1 (09 Dec 2011)
+
+  09 Dec 2011; Tim Harder <radhermit@gentoo.org> -imapfilter-2.4.ebuild,
+  +imapfilter-2.4.1.ebuild:
+  Version bump and remove old.
+
+*imapfilter-2.4 (06 Dec 2011)
+
+  06 Dec 2011; Tim Harder <radhermit@gentoo.org> +imapfilter-2.4.ebuild:
+  Version bump.
+
+*imapfilter-2.3 (20 Nov 2011)
+
+  20 Nov 2011; Eray Aslan <eras@gentoo.org> +imapfilter-2.3.ebuild:
+  version bump
 
 *imapfilter-2.2.3 (11 Jun 2011)
 

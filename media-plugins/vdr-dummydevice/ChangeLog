@@ -1,6 +1,21 @@
 # ChangeLog for media-plugins/vdr-dummydevice
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-dummydevice/ChangeLog,v 1.6 2011/01/28 19:02:10 hd_brummy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-dummydevice/ChangeLog,v 1.9 2012/06/30 20:32:29 hd_brummy Exp $
+
+  30 Jun 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-dummydevice-1.0.3.ebuild:
+  eapi=4; vdr-plugin-2.eclass
+
+  07 Feb 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-dummydevice-1.0.3.ebuild:
+  stable amd64 x86, bug 400389
+
+
+*vdr-dummydevice-1.0.3 (19 Oct 2011)
+
+  19 Oct 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +vdr-dummydevice-1.0.3.ebuild:
+  version bump
 
   28 Jan 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
   -vdr-dummydevice-0.0.1.ebuild, vdr-dummydevice-1.0.2.ebuild:

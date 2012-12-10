@@ -1,6 +1,45 @@
 # ChangeLog for dev-util/shc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/shc/ChangeLog,v 1.17 2011/04/12 02:55:26 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/shc/ChangeLog,v 1.29 2012/10/31 11:29:20 pinkbyte Exp $
+
+  31 Oct 2012; Sergey Popov <pinkbyte@gentoo.org> -shc-3.8.7.ebuild:
+  Drop old version
+
+  15 Oct 2012; Raúl Porcel <armin76@gentoo.org> shc-3.8.9.ebuild:
+  x86 stable wrt #438080
+
+  14 Oct 2012; Raúl Porcel <armin76@gentoo.org> shc-3.8.7.ebuild:
+  Move to ~alpha
+
+  12 Oct 2012; Anthony G. Basile <blueness@gentoo.org> shc-3.8.9.ebuild:
+  stable ppc, bug #438080
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> shc-3.8.9.ebuild:
+  Stable for amd64, wrt bug #438080
+
+  05 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
+  Pick up maintainance of package and add changelog info to metadata
+
+*shc-3.8.9 (05 Sep 2012)
+
+  05 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> +shc-3.8.9.ebuild:
+  Version bump wrt bug #433970, thanks to Jan Psota
+
+  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -shc-3.6.ebuild,
+  -shc-3.7.ebuild, -shc-3.8.3.ebuild:
+  Remove old
+
+  18 Feb 2012; Tobias Klausmann <klausman@gentoo.org> shc-3.8.7.ebuild:
+  Stable on alpha, bug #363217
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> shc-3.8.7.ebuild:
+  x86 stable wrt bug #363217
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> shc-3.8.7.ebuild:
+  Marking shc-3.8.7 ppc for bug 363217
+
+  19 Aug 2011; Markos Chandras <hwoarang@gentoo.org> shc-3.8.7.ebuild:
+  Add ~amd64. Bug #379721
 
 *shc-3.8.7 (12 Apr 2011)
 

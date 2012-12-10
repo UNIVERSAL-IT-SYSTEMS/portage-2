@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ecasound/ecasound-2.8.1.ebuild,v 1.1 2011/06/28 04:21:12 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ecasound/ecasound-2.8.1.ebuild,v 1.4 2012/06/14 05:55:53 radhermit Exp $
 
 EAPI=3
 PYTHON_DEPEND="python? 2"
@@ -23,14 +23,14 @@ RDEPEND="sys-libs/readline
 	jack? ( media-sound/jack-audio-connection-kit )
 	libsamplerate? ( media-libs/libsamplerate )
 	media-libs/ladspa-sdk
-	mikmod? ( media-libs/libmikmod )
+	mikmod? ( media-libs/libmikmod:0 )
 	ncurses? ( sys-libs/ncurses )
 	oil? ( dev-libs/liboil )
 	osc? ( media-libs/liblo )
 	ruby? ( dev-lang/ruby )
 	sndfile? ( media-libs/libsndfile )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 pkg_setup() {
 	use python && python_set_active_version 2
@@ -38,8 +38,11 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-ldflags.patch
-	use python && sed -i -e "s:\$(ecasoundc_libs):\0 $(python_get_library -l):" \
-		pyecasound/Makefile.am || die "sed failed"
+
+	if use python ; then
+		sed -i -e "s:\$(ecasoundc_libs):\0 $(python_get_library -l):" \
+			pyecasound/Makefile.am || die "sed failed"
+	fi
 
 	eautoreconf
 }
@@ -84,7 +87,7 @@ src_install() {
 		dodoc Documentation/programmers_guide/ecasound_programmers_guide.txt || die
 	fi
 
-	use static-libs || find "${ED}" -name '*.la' -exec rm -f '{}' +
+	prune_libtool_files
 }
 
 pkg_postinst() {

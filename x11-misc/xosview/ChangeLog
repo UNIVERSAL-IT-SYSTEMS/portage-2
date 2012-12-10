@@ -1,6 +1,81 @@
 # ChangeLog for x11-misc/xosview
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xosview/ChangeLog,v 1.42 2009/12/23 16:16:17 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xosview/ChangeLog,v 1.60 2012/12/09 08:16:51 pinkbyte Exp $
+
+  09 Dec 2012; Sergey Popov <pinkbyte@gentoo.org> xosview-1.11.ebuild:
+  Stable on amd64, wrt bug #446494
+
+*xosview-1.12 (08 Dec 2012)
+
+  08 Dec 2012; Jeroen Roovers <jer@gentoo.org> +xosview-1.12.ebuild:
+  Version bump by Lars Wendler (bug #446396).
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xosview-1.9.4.ebuild:
+  x86 stable wrt bug #436988
+
+*xosview-1.11 (15 Oct 2012)
+
+  15 Oct 2012; Michael Weber <xmw@gentoo.org> +xosview-1.11.ebuild:
+  Version bump (by polynomial-c, bug 438152)
+
+  04 Oct 2012; Anthony G. Basile <blueness@gentoo.org> xosview-1.9.4.ebuild:
+  stable ppc ppc64, bug #436988
+
+  03 Oct 2012; Sergey Popov <pinkbyte@gentoo.org> xosview-1.9.4.ebuild:
+  amd64 stable, wrt bug #436988
+
+*xosview-1.10 (02 Oct 2012)
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> -xosview-1.8.3-r1.ebuild,
+  -files/xosview-1.8.3-alpha-build-fix.patch, -files/xosview-1.8.3-gcc44.patch,
+  -files/xosview-1.8.3-remove-serialmeter.patch, -xosview-1.9.2.ebuild,
+  -files/xosview-1.9.2-emptyxpaths.patch, +xosview-1.10.ebuild,
+  -files/xosview-emptyxpaths.patch, -files/xosview-resdir.patch:
+  Version bump by Lars Wendler (bug #436588).
+
+*xosview-1.9.4 (05 Sep 2012)
+
+  05 Sep 2012; Jeroen Roovers <jer@gentoo.org> +xosview-1.9.4.ebuild:
+  Version bump.
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> xosview-1.8.3-r1.ebuild,
+  xosview-1.9.2.ebuild, xosview-1.9.3.ebuild:
+  Drop alpha/sparc keywords
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> xosview-1.9.3.ebuild:
+  Marking xosview-1.9.3 ppc64 for bug 422391
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> xosview-1.9.3.ebuild:
+  Marking xosview-1.9.3 ppc for bug 422391
+
+  25 Jun 2012; Jeff Horelick <jdhore@gentoo.org> xosview-1.9.3.ebuild:
+  marked x86 per bug 422391
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xosview-1.9.3.ebuild:
+  Stable for amd64, wrt bug #422391
+
+  25 Apr 2012; Jeroen Roovers <jer@gentoo.org> xosview-1.9.3.ebuild:
+  Do not install README (which is basically an INSTALL).
+
+*xosview-1.9.3 (25 Apr 2012)
+
+  25 Apr 2012; Jeroen Roovers <jer@gentoo.org> xosview-1.9.2.ebuild,
+  +xosview-1.9.3.ebuild:
+  Version bump. Fix whitespace.
+
+  06 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org> xosview-1.9.2.ebuild:
+  Respect CXXFLAGS, add suid flag and postinst warning wrt bug 402395 by Steffen
+  'j0inty' Stollfuß <steffen@stollfuss.net>
+
+*xosview-1.9.2 (04 Feb 2012)
+
+  04 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/xosview-1.9.2-emptyxpaths.patch, +xosview-1.9.2.ebuild:
+  Version bump, fixes bug 382077 by needle <qui_wan_chong@yahoo.de>
+
+  16 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> xosview-1.8.3-r1.ebuild,
+  +files/xosview-1.8.3-alpha-build-fix.patch:
+  Fixed build on alpha (bug #339462). Report and fix by Kazuyoshi Furutaka.
 
 *xosview-1.8.3-r1 (23 Dec 2009)
 

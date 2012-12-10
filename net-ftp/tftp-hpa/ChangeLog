@@ -1,6 +1,41 @@
 # ChangeLog for net-ftp/tftp-hpa
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/tftp-hpa/ChangeLog,v 1.55 2011/07/10 11:13:04 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/tftp-hpa/ChangeLog,v 1.65 2012/09/15 18:50:46 armin76 Exp $
+
+  15 Sep 2012; Raúl Porcel <armin76@gentoo.org> tftp-hpa-5.2.ebuild:
+  alpha/ia64/s390/sh/sparc/x86 stable wrt #429164
+
+  13 Sep 2012; Jeroen Roovers <jer@gentoo.org> tftp-hpa-5.2.ebuild:
+  Stable for HPPA (bug #429164).
+
+  12 Sep 2012; Anthony G. Basile <blueness@gentoo.org> tftp-hpa-5.2.ebuild:
+  stable arm, bug #429164
+
+  12 Sep 2012; Anthony G. Basile <blueness@gentoo.org> tftp-hpa-5.2.ebuild:
+  stable ppc ppc64, bug #429164
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> tftp-hpa-5.2.ebuild:
+  Stable for amd64, wrt bug #429164
+
+  13 May 2012; <swift@gentoo.org> tftp-hpa-0.49-r1.ebuild, tftp-hpa-5.0.ebuild,
+  tftp-hpa-5.1.ebuild, tftp-hpa-5.2.ebuild:
+  SELinux policy module for TFTP is provided by selinux-tftp
+
+  02 May 2012; Fabian Groffen <grobian@gentoo.org> tftp-hpa-5.2.ebuild:
+  Fixed for Prefix, marked ~ppc-macos
+
+  19 Dec 2011; Tim Harder <radhermit@gentoo.org> tftp-hpa-5.1.ebuild,
+  tftp-hpa-5.2.ebuild:
+  Add explicit dep on xz-utils for unpacking.
+
+*tftp-hpa-5.2 (19 Dec 2011)
+
+  19 Dec 2011; Tim Harder <radhermit@gentoo.org> +tftp-hpa-5.2.ebuild:
+  Version bump.
+
+  30 Nov 2011; Mike Frysinger <vapier@gentoo.org> tftp-hpa-5.1.ebuild:
+  Respect $(AR), update to EAPI=4, and make sure readline/tcp-wrappers are in
+  RDEPEND since they're used at runtime.
 
   10 Jul 2011; Raúl Porcel <armin76@gentoo.org> tftp-hpa-5.1.ebuild:
   alpha/ia64/s390/sh/sparc stable wrt #374001

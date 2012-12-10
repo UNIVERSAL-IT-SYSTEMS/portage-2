@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gpointing-device-settings/gpointing-device-settings-1.5.1-r2.ebuild,v 1.2 2011/03/28 22:39:01 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gpointing-device-settings/gpointing-device-settings-1.5.1-r2.ebuild,v 1.7 2012/05/05 06:25:18 jdhore Exp $
 
 EAPI="2"
 GCONF_DEBUG="no"
-inherit eutils gnome2
+inherit eutils gnome2 autotools
 
 DESCRIPTION="A GTK+ based configuration utility for the synaptics driver"
 HOMEPAGE="http://live.gnome.org/GPointingDeviceSettings"
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge.jp/gsynaptics/45812/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 # recent enough x11-base/xorg-server required
@@ -25,7 +25,7 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	!<=x11-base/xorg-server-1.6.0
 	!gnome-extra/gsynaptics"
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.19
+	virtual/pkgconfig
 	>=dev-util/intltool-0.35.5"
 
 DOCS="MAINTAINERS NEWS TODO"
@@ -36,6 +36,10 @@ src_prepare() {
 		"${FILESDIR}/${P}-plugin.patch" \
 		"${FILESDIR}/${P}-reboot.patch" \
 		"${FILESDIR}/${P}-gtk22.patch" \
-		"${FILESDIR}/${P}-gsd-crash.patch"
+		"${FILESDIR}/${P}-gsd-crash.patch" \
+		"${FILESDIR}/${P}-gsd-3.2-fix.patch"
+	sed 's|\(^GPDS_CFLAGS=.*-D[A-Z_]*_DISABLE_DEPRECATED.*\)|#\1|' \
+		-i configure.ac || die
+	eautoreconf
 	gnome2_src_prepare
 }

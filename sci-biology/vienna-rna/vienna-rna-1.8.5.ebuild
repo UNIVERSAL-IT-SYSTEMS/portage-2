@@ -1,13 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/vienna-rna/vienna-rna-1.8.5.ebuild,v 1.3 2011/05/03 11:10:40 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/vienna-rna/vienna-rna-1.8.5.ebuild,v 1.9 2012/07/10 18:02:37 ranger Exp $
 
 EAPI="3"
 
 PYTHON_DEPEND="python? 2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="*-jython"
 
-inherit distutils toolchain-funcs multilib autotools perl-module
+inherit autotools distutils multilib perl-module toolchain-funcs
 
 DESCRIPTION="RNA secondary structure prediction and comparison"
 HOMEPAGE="http://www.tbi.univie.ac.at/~ivo/RNA/"
@@ -15,12 +16,13 @@ SRC_URI="http://www.tbi.univie.ac.at/~ivo/RNA/ViennaRNA-${PV}.tar.gz"
 
 LICENSE="vienna-rna"
 SLOT="0"
-IUSE="python"
-KEYWORDS="~amd64 ~ppc ~x86"
+IUSE="python static-libs"
+KEYWORDS="amd64 ppc x86"
 
 DEPEND="
 	dev-lang/perl
-	media-libs/gd"
+	media-libs/gd
+	python? ( dev-lang/swig )"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/ViennaRNA-${PV}"
@@ -78,6 +80,11 @@ src_test() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
+
+	if ! use static-libs; then
+		rm -f "${ED}"/usr/$(get_libdir)/*.a || die
+	fi
+
 	dodoc AUTHORS ChangeLog NEWS README THANKS || die
 	newbin Readseq/readseq readseq-vienna || die
 	dodoc Readseq/Readseq.help || die

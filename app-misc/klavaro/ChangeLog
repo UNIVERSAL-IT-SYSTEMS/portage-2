@@ -1,6 +1,19 @@
 # ChangeLog for app-misc/klavaro
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/klavaro/ChangeLog,v 1.12 2011/07/11 17:37:41 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/klavaro/ChangeLog,v 1.15 2012/08/08 11:02:10 jlec Exp $
+
+*klavaro-1.9.5 (08 Aug 2012)
+
+  08 Aug 2012; Justin Lecher <jlec@gentoo.org> +klavaro-1.9.5.ebuild,
+  +files/klavaro-1.9.5-gold.patch:
+  Version Bump, fix for linking with gold
+
+  13 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  klavaro-1.9.3.ebuild:
+  Update deps for split gtk-builder-convert (bug #402905).
+
+  11 Nov 2011; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Drop me from maint.
 
 *klavaro-1.9.3 (11 Jul 2011)
 

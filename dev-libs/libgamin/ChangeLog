@@ -1,6 +1,56 @@
 # ChangeLog for dev-libs/libgamin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgamin/ChangeLog,v 1.26 2011/07/11 04:16:29 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libgamin/ChangeLog,v 1.38 2012/09/30 16:18:22 armin76 Exp $
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> libgamin-0.1.10-r3.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #433227
+
+  22 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  libgamin-0.1.10-r3.ebuild:
+  stable ppc ppc64, bug #433227
+
+  19 Sep 2012; Jeroen Roovers <jer@gentoo.org> libgamin-0.1.10-r3.ebuild:
+  Stable for HPPA (bug #433227).
+
+  17 Sep 2012; Johannes Huber <johu@gentoo.org> libgamin-0.1.10-r3.ebuild:
+  Stable for x86, wrt bug #433227
+
+  16 Sep 2012; Markus Meier <maekke@gentoo.org> libgamin-0.1.10-r3.ebuild:
+  arm stable, bug #433227
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> libgamin-0.1.10-r3.ebuild:
+  Stable for amd64, wrt bug #433227
+
+*libgamin-0.1.10-r3 (08 Jul 2012)
+
+  08 Jul 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/libgamin-0.1.10-deadlock.patch, +libgamin-0.1.10-r3.ebuild:
+  Fix deadlock, bug #420353 by Michael Boone.
+
+  30 Apr 2012; Fabian Groffen <grobian@gentoo.org> libgamin-0.1.10-r2.ebuild:
+  Fix for Prefix, add (Open)Solaris patch, bug #413415
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libgamin-0.1.10-r2.ebuild:
+  keyword ~amd64-fbsd
+
+  22 Feb 2012; Patrick Lauer <patrick@gentoo.org> libgamin-0.1.10-r2.ebuild:
+  Restricting jython
+
+  03 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  libgamin-0.1.10-r2.ebuild:
+  Empty py-compile script instead of symlinking it wrt #397487 by Billy
+  DeVincentis
+
+  25 Sep 2011; Pacho Ramos <pacho@gentoo.org> libgamin-0.1.10-r2.ebuild,
+  +files/libgamin-0.1.10-G_CONST_RETURN-removal.patch,
+  +files/libgamin-0.1.10-armel-features.patch,
+  +files/libgamin-0.1.10-crosscompile-fix.patch:
+  Fix compilation with latest glib, bug #382783 by Maciej Piechotka; fix
+  crosscompilation issues, bug #267604 by Andrei Slavoiu; enable linux specific
+  features on armel, upstream bug #588338; drop DG_DISABLE_DEPRECATED; don't
+  try to even check for python, simplifying ebuild for people running python3
+  as main interpreter; use gnome.org eclass to set SRC_URI and use bz2 tarball
+  instead of gz.
 
   11 Jul 2011; Samuli Suominen <ssuominen@gentoo.org>
   libgamin-0.1.10-r2.ebuild:
@@ -100,4 +150,3 @@
   +libgamin-0.1.10.ebuild, +metadata.xml:
   New ebuild split off gamin. Initial ebuild inspired by Pacho Ramos, closes
   bug #217861.
-

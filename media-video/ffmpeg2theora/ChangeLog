@@ -1,6 +1,53 @@
 # ChangeLog for media-video/ffmpeg2theora
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg2theora/ChangeLog,v 1.45 2011/04/14 12:34:56 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg2theora/ChangeLog,v 1.56 2012/07/02 22:59:50 hanno Exp $
+
+*ffmpeg2theora-0.29 (02 Jul 2012)
+
+  02 Jul 2012; Hanno Boeck <hanno@gentoo.org> +ffmpeg2theora-0.29.ebuild:
+  Version bump, works with ffmpeg 0.11.
+
+  22 May 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  ffmpeg2theora-0.28-r1.ebuild, ffmpeg2theora-0.28.ebuild:
+  Allow using older libav as well, for postproc.
+
+  22 May 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  ffmpeg2theora-0.28-r1.ebuild, ffmpeg2theora-0.28.ebuild:
+  Add an explicit dependency over libpostproc.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> ffmpeg2theora-0.28.ebuild,
+  ffmpeg2theora-0.28-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  ffmpeg2theora-0.28-r1.ebuild:
+  x86 stable wrt bug #405745
+
+  25 Feb 2012; Agostino Sarubbo <ago@gentoo.org> ffmpeg2theora-0.28-r1.ebuild:
+  Stable for amd64, wrt bug #405745
+
+  30 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -ffmpeg2theora-0.25.ebuild, -ffmpeg2theora-0.26.ebuild,
+  -ffmpeg2theora-0.27.ebuild:
+  old
+
+*ffmpeg2theora-0.28-r1 (30 Jan 2012)
+
+  30 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +ffmpeg2theora-0.28-r1.ebuild, +files/ffmpeg2theora-0.28-ffmpeg-0.10.patch:
+  Fix building with media-video/ffmpeg >= 0.10 wrt #401311 by Randy Andy
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  ffmpeg2theora-0.28.ebuild:
+  x86 stable wrt bug #394719
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> ffmpeg2theora-0.28.ebuild:
+  Stable for AMD64, wrt bug #394719
+
+*ffmpeg2theora-0.28 (06 Aug 2011)
+
+  06 Aug 2011; Alexis Ballier <aballier@gentoo.org> +ffmpeg2theora-0.28.ebuild:
+  version bump
 
   14 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org>
   ffmpeg2theora-0.25.ebuild, ffmpeg2theora-0.26.ebuild,

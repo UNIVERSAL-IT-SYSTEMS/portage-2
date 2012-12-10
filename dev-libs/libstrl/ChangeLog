@@ -1,6 +1,21 @@
 # ChangeLog for dev-libs/libstrl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libstrl/ChangeLog,v 1.6 2011/06/03 02:29:20 binki Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libstrl/ChangeLog,v 1.10 2012/01/14 14:55:15 mgorny Exp $
+
+  14 Jan 2012; Michał Górny <mgorny@gentoo.org> libstrl-0.5.1.ebuild:
+  --docdir is now passed within autotools-utils.eclass.
+
+  15 Oct 2011; Markus Meier <maekke@gentoo.org> libstrl-0.5.1.ebuild:
+  x86 stable, bug #385957
+
+  12 Oct 2011; Markos Chandras <hwoarang@gentoo.org> libstrl-0.5.1.ebuild:
+  Stable on amd64 wrt bug #385957
+
+*libstrl-0.5.1 (22 Aug 2011)
+
+  22 Aug 2011; Nathan Phillip Brink <binki@gentoo.org> -libstrl-0.4.ebuild,
+  +libstrl-0.5.1.ebuild:
+  Bump to libstrl-0.5.1.
 
   02 Jun 2011; Nathan Phillip Brink <binki@gentoo.org> -libstrl-0.3.ebuild:
   Remove old and broken libstrl-0.3.

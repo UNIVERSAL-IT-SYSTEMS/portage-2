@@ -1,6 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/serdisplib/serdisplib-1.97.6.ebuild,v 1.4 2007/10/16 18:45:00 rbu Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/serdisplib/serdisplib-1.97.6.ebuild,v 1.6 2012/05/25 08:28:21 ssuominen Exp $
+
+EAPI=1
 
 inherit eutils
 
@@ -14,7 +16,7 @@ KEYWORDS="amd64 ppc ~x86"
 IUSE="usb"
 
 DEPEND="media-libs/gd
-	usb? ( dev-libs/libusb )"
+	usb? ( virtual/libusb:0 )"
 RDEPEND="${DEPEND}"
 
 pkg_setup() {

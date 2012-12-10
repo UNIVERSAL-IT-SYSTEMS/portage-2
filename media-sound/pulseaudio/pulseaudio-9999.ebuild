@@ -1,24 +1,28 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/pulseaudio-9999.ebuild,v 1.10 2011/07/09 20:28:49 ford_prefect Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/pulseaudio-9999.ebuild,v 1.31 2012/12/07 20:13:21 ford_prefect Exp $
 
 EAPI=4
 
-inherit autotools eutils libtool flag-o-matic versionator git-2
+inherit autotools eutils flag-o-matic user versionator git-2 udev
 
 DESCRIPTION="A networked sound server with an advanced plugin system"
 HOMEPAGE="http://www.pulseaudio.org/"
 
 EGIT_REPO_URI="git://anongit.freedesktop.org/pulseaudio/pulseaudio.git"
 
-LICENSE="LGPL-2 GPL-2"
+# libpulse-simple and libpulse link to libpulse-core; this is daemon's
+# library and can link to gdbm and other GPL-only libraries. In this
+# cases, we have a fully GPL-2 package. Leaving the rest of the
+# GPL-forcing USE flags for those who use them.
+LICENSE="!gdbm? ( LGPL-2.1 ) gdbm? ( GPL-2 )"
 SLOT="0"
 KEYWORDS=""
-IUSE="+alsa avahi +caps equalizer jack lirc oss tcpd +X dbus libsamplerate gnome bluetooth +asyncns +glib test doc +udev ipv6 system-wide realtime +orc"
+IUSE="+alsa avahi +caps equalizer jack lirc oss tcpd +X dbus libsamplerate gnome bluetooth +asyncns +glib gtk test doc +udev ipv6 system-wide realtime +orc ssl +gdbm +webrtc-aec xen systemd"
 
-RDEPEND="app-admin/eselect-esd
+RDEPEND=">=media-libs/libsndfile-1.0.20
 	X? (
-		|| ( >=x11-libs/libX11-1.4.0 <x11-libs/libX11-1.4.0[xcb] )
+		>=x11-libs/libX11-1.4.0
 		>=x11-libs/libxcb-1.6
 		>=x11-libs/xcb-util-0.3.1
 		x11-libs/libSM
@@ -30,37 +34,48 @@ RDEPEND="app-admin/eselect-esd
 	alsa? ( >=media-libs/alsa-lib-1.0.19 )
 	glib? ( >=dev-libs/glib-2.4.0 )
 	avahi? ( >=net-dns/avahi-0.6.12[dbus] )
-	jack? ( >=media-sound/jack-audio-connection-kit-0.100 )
+	jack? ( >=media-sound/jack-audio-connection-kit-0.117 )
 	tcpd? ( sys-apps/tcp-wrappers )
 	lirc? ( app-misc/lirc )
 	dbus? ( >=sys-apps/dbus-1.0.0 )
+	gtk? ( x11-libs/gtk+:2 )
 	gnome? ( >=gnome-base/gconf-2.4.0 )
 	bluetooth? (
-		>=net-wireless/bluez-4
+		>=net-wireless/bluez-4.99
 		>=sys-apps/dbus-1.0.0
+		media-libs/sbc
 	)
 	asyncns? ( net-libs/libasyncns )
-	udev? ( || ( >=sys-fs/udev-171[hwdb] >=sys-fs/udev-143[extras] ) )
+	udev? ( >=virtual/udev-143[hwdb] )
 	realtime? ( sys-auth/rtkit )
-	equalizer? ( sci-libs/fftw:3.0 )
+	equalizer? (
+		sci-libs/fftw:3.0
+		dev-python/PyQt4[dbus]
+	)
 	orc? ( >=dev-lang/orc-0.4.9 )
-	>=media-libs/audiofile-0.2.6-r1
+	ssl? ( dev-libs/openssl )
 	>=media-libs/speex-1.2_rc1
-	>=media-libs/libsndfile-1.0.20
-	sys-libs/gdbm
+	gdbm? ( sys-libs/gdbm )
+	webrtc-aec? ( media-libs/webrtc-audio-processing )
+	xen? ( app-emulation/xen )
+	systemd? ( >=sys-apps/systemd-39 )
 	dev-libs/json-c
 	>=sys-devel/libtool-2.2.4" # it's a valid RDEPEND, libltdl.so is used
 
 DEPEND="${RDEPEND}
+	sys-devel/m4
 	doc? ( app-doc/doxygen )
+	test? ( dev-libs/check )
 	X? (
 		x11-proto/xproto
-		|| ( >=x11-libs/libXtst-1.0.99.2 <x11-proto/xextproto-7.0.99 )
+		>=x11-libs/libXtst-1.0.99.2
 	)
 	dev-libs/libatomic_ops
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	system-wide? ( || ( dev-util/unifdef sys-freebsd/freebsd-ubin ) )
 	dev-util/intltool"
+# This is a PDEPEND to avoid a circular dep
+PDEPEND="alsa? ( media-plugins/alsa-plugins[pulseaudio] )"
 
 # alsa-utils dep is for the alsasound init.d script (see bug #155707)
 # bluez dep is for the bluetooth init.d script
@@ -72,19 +87,29 @@ RDEPEND="${RDEPEND}
 		bluetooth? ( >=net-wireless/bluez-4 )
 	)"
 
+# See "*** BLUEZ support not found (requires D-Bus)" in configure.ac
+REQUIRED_USE="bluetooth? ( dbus )"
+
 pkg_setup() {
 	enewgroup audio 18 # Just make sure it exists
-	enewgroup pulse-access
-	enewgroup pulse
-	enewuser pulse -1 -1 /var/run/pulse pulse,audio
+
+	if use system-wide; then
+		enewgroup pulse-access
+		enewgroup pulse
+		enewuser pulse -1 -1 /var/run/pulse pulse,audio
+	fi
 }
 
 EGIT_BOOTSTRAP="./bootstrap.sh"
 
 src_configure() {
-	# It's a binutils bug, once I can find time to fix that I'll add a
-	# proper dependency and fix this up. — flameeyes
-	append-ldflags $(no-as-needed)
+	if use gdbm; then
+		myconf+=" --with-database=gdbm"
+	#elif use tdb; then
+	#	myconf+=" --with-database=tdb"
+	else
+		myconf+=" --with-database=simple"
+	fi
 
 	econf \
 		--enable-largefile \
@@ -98,20 +123,26 @@ src_configure() {
 		$(use_enable jack) \
 		$(use_enable lirc) \
 		$(use_enable avahi) \
-		--disable-hal \
 		$(use_enable dbus) \
 		$(use_enable gnome gconf) \
+		$(use_enable gtk gtk2) \
 		$(use_enable libsamplerate samplerate) \
 		$(use_enable bluetooth bluez) \
 		$(use_enable X x11) \
 		$(use_enable test default-build-tests) \
 		$(use_enable udev) \
+		$(use_enable systemd) \
 		$(use_enable ipv6) \
+		$(use_enable ssl openssl) \
+		$(use_enable webrtc-aec) \
+		$(use_enable xen) \
 		$(use_with caps) \
+		$(use_with equalizer fftw) \
+		--disable-adrian-aec \
+		--disable-esound \
 		--localstatedir="${EPREFIX}"/var \
-		--disable-per-user-esound-socket \
-		--with-database=gdbm \
-		--with-udev-rules-dir="${EPREFIX}/lib/udev/rules.d"
+		--with-udev-rules-dir="${EPREFIX}/$(udev_get_udevdir)"/rules.d \
+		${myconf}
 
 	if use doc; then
 		pushd doxygen
@@ -154,7 +185,7 @@ src_install() {
 
 	use avahi && sed -i -e '/module-zeroconf-publish/s:^#::' "${ED}/etc/pulse/default.pa"
 
-	dodoc README ChangeLog todo
+	dodoc README todo
 
 	if use doc; then
 		pushd doxygen/html
@@ -164,7 +195,6 @@ src_install() {
 
 	# Create the state directory
 	use prefix || diropts -o pulse -g pulse -m0755
-	keepdir /var/run/pulse
 
 	find "${D}" -name '*.la' -delete
 }
@@ -186,32 +216,12 @@ pkg_postinst() {
 			elog "gconf module on /etc/pulse/system.pa to be able to use PulseAudio"
 			elog "with a system-wide instance."
 		fi
-		elog
-		elog "To use the ESounD wrapper while using a system-wide daemon, you also"
-		elog "need to enable auth-anonymous for the esound-unix module, or to copy"
-		elog "/var/run/pulse/.esd_auth into each home directory."
-		elog
 	fi
 	if use bluetooth; then
 		elog
-		elog "The BlueTooth proximity module is not enabled in the default"
+		elog "The Bluetooth proximity module is not enabled in the default"
 		elog "configuration file. If you do enable it, you'll have to have"
-		elog "your BlueTooth controller enabled and inserted at bootup or"
+		elog "your Bluetooth controller enabled and inserted at bootup or"
 		elog "PulseAudio will refuse to start."
-		elog
-		elog "Please note that the BlueTooth proximity module seems itself"
-		elog "still experimental, so please report to upstream if you have"
-		elog "problems with it."
 	fi
-	if use alsa; then
-		local pkg="media-plugins/alsa-plugins"
-		if has_version ${pkg} && ! has_version "${pkg}[pulseaudio]"; then
-			elog
-			elog "You have alsa support enabled so you probably want to install"
-			elog "${pkg} with pulseaudio support to have"
-			elog "alsa using applications route their sound through pulseaudio"
-		fi
-	fi
-
-	eselect esd update --if-unset
 }

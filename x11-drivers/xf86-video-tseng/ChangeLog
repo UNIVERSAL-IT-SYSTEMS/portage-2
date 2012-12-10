@@ -1,6 +1,22 @@
 # ChangeLog for x11-drivers/xf86-video-tseng
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-tseng/ChangeLog,v 1.48 2011/02/13 19:06:44 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-tseng/ChangeLog,v 1.52 2012/11/18 12:22:17 ago Exp $
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-tseng-1.2.5.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-tseng-1.2.5.ebuild:
+  Stable for amd64, wrt bug #440872
+
+  17 Sep 2012; Alexis Ballier <aballier@gentoo.org>
+  xf86-video-tseng-1.2.5.ebuild:
+  keyword ~amd64-fbsd, compile tested only.
+
+*xf86-video-tseng-1.2.5 (21 Jul 2012)
+
+  21 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-tseng-1.2.5.ebuild:
+  Version bump.
 
   13 Feb 2011; Tomáš Chvátal <scarabeus@gentoo.org>
   -xf86-video-tseng-1.2.3.ebuild:
@@ -219,4 +235,3 @@
   08 Aug 2005; Donnie Berkholz <dberkholz@gentoo.org>;
   +xf86-video-tseng-1.0.0.ebuild:
   Initial commit for modular X.
-

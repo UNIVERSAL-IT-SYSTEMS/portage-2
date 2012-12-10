@@ -1,6 +1,63 @@
 # ChangeLog for net-p2p/eiskaltdcpp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/eiskaltdcpp/ChangeLog,v 1.30 2011/06/27 09:20:19 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/eiskaltdcpp/ChangeLog,v 1.44 2012/09/03 13:25:05 kensington Exp $
+
+  03 Sep 2012; Michael Palimaka <kensington@gentoo.org>
+  eiskaltdcpp-2.2.7.ebuild, eiskaltdcpp-9999.ebuild:
+  Add missing slot dependencies on Qt.
+
+  24 Aug 2012; Agostino Sarubbo <ago@gentoo.org> -eiskaltdcpp-2.2.1.ebuild,
+  -eiskaltdcpp-2.2.2.ebuild, -eiskaltdcpp-2.2.3.ebuild,
+  -eiskaltdcpp-2.2.4.ebuild, -eiskaltdcpp-2.2.6.ebuild:
+  Remove old
+
+  24 Aug 2012; Agostino Sarubbo <ago@gentoo.org> eiskaltdcpp-2.2.7.ebuild:
+  Stable for x86, wrt bug #426190
+
+  24 Aug 2012; Agostino Sarubbo <ago@gentoo.org> eiskaltdcpp-2.2.7.ebuild:
+  Stable for amd64, wrt bug #426190
+
+  24 Aug 2012; Agostino Sarubbo <ago@gentoo.org> eiskaltdcpp-2.2.7.ebuild:
+  Non-maintainer commit, disable sr@latin wrt to bug #429786
+
+  02 Jun 2012; Peter Volkov <pva@gentoo.org> eiskaltdcpp-9999.ebuild:
+  Fix uri in vcs ebuild, thank Nikoli for report.
+
+*eiskaltdcpp-2.2.7 (01 Jun 2012)
+
+  01 Jun 2012; Peter Volkov <pva@gentoo.org> +eiskaltdcpp-2.2.7.ebuild,
+  eiskaltdcpp-9999.ebuild:
+  Version bump, bug #419033, thank Nikoli for this job.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> eiskaltdcpp-2.2.1.ebuild,
+  eiskaltdcpp-2.2.2.ebuild, eiskaltdcpp-2.2.3.ebuild, eiskaltdcpp-2.2.4.ebuild,
+  eiskaltdcpp-2.2.6.ebuild, eiskaltdcpp-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*eiskaltdcpp-2.2.6 (29 Mar 2012)
+
+  29 Mar 2012; Peter Volkov <pva@gentoo.org> +eiskaltdcpp-2.2.6.ebuild,
+  eiskaltdcpp-9999.ebuild, metadata.xml:
+  Version bump, bug #410051, thank Nikoli for this job.
+
+  20 Feb 2012; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Drop no-herd.
+
+  19 Oct 2011; Peter Volkov <pva@gentoo.org> eiskaltdcpp-2.2.4.ebuild,
+  eiskaltdcpp-9999.ebuild:
+  Add cli in 2.2.4, fix cli usage in 9999, thank Nikoli for this job.
+
+  19 Oct 2011; Peter Volkov <pva@gentoo.org> eiskaltdcpp-9999.ebuild:
+  dev-perl/Term-ShellUI is in the tree, cli is back. Thank Nikoli for this job.
+
+*eiskaltdcpp-2.2.4 (08 Oct 2011)
+
+  08 Oct 2011; Peter Volkov <pva@gentoo.org> +eiskaltdcpp-2.2.4.ebuild,
+  eiskaltdcpp-9999.ebuild, metadata.xml:
+  Version bump, update VCS ebuild, thank Nikoli for this job.
+
+  21 Sep 2011; Michał Górny <mgorny@gentoo.org> eiskaltdcpp-9999.ebuild:
+  Migrate to git-2.
 
 *eiskaltdcpp-2.2.3 (27 Jun 2011)
 
@@ -140,4 +197,3 @@
   26 Apr 2010; Peter Volkov <pva@gentoo.org> +eiskaltdcpp-2.0.1.ebuild,
   +eiskaltdcpp-9999.ebuild, +metadata.xml:
   Initial import, bug #317127, thank Nikoli for this job.
-

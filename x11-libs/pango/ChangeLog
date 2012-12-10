@@ -1,6 +1,132 @@
 # ChangeLog for x11-libs/pango
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/pango/ChangeLog,v 1.328 2011/07/11 00:05:28 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/pango/ChangeLog,v 1.359 2012/11/17 13:31:12 pacho Exp $
+
+  17 Nov 2012; Pacho Ramos <pacho@gentoo.org> -pango-1.28.4.ebuild,
+  -pango-1.29.4.ebuild, pango-1.30.1.ebuild:
+  Show elog messages only when needed (#440554 by poletti.marco). Drop old.
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> pango-1.30.1.ebuild:
+  ia64/s390/sh/sparc stable wrt #427544
+
+  17 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -pango-1.28.3-r1.ebuild, -files/pango-1.28.3-heap-corruption.patch,
+  -files/pango-1.28.3-malloc-failure.patch, pango-1.28.4.ebuild,
+  pango-1.29.4.ebuild, -pango-1.30.0.ebuild, pango-1.30.1.ebuild:
+  Drop useless USE=doc, it only regenerated documentation; fixes bug #357205,
+  thanks to Theo Chatzimichos et al. Remove test USE flag since it only served
+  to pull in dependencies for testing regenerated docs. Make mktemp call more
+  portable, thanks to Mart Raudsepp. Update license. Drop old.
+
+  06 Oct 2012; Anthony G. Basile <blueness@gentoo.org> pango-1.30.1.ebuild:
+  stable ppc ppc64, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> pango-1.30.1.ebuild:
+  arm stable, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> pango-1.30.1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pango-1.30.1.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> pango-1.30.1.ebuild:
+  Stable for HPPA (bug #427544).
+
+  26 Sep 2012; Matt Turner <mattst88@gentoo.org> pango-1.30.1.ebuild:
+  Stable on alpha, bug 427544.
+
+  17 Jun 2012; Fabian Groffen <grobian@gentoo.org>
+  files/pango-1.30.1-config_get_key_system-declaration.patch,
+  pango-1.30.1.ebuild:
+  Update patch comments (committed upstream), use get_modname for module
+  extension name
+
+  16 Jun 2012; Fabian Groffen <grobian@gentoo.org>
+  +files/pango-1.30.1-config_get_key_system-declaration.patch,
+  pango-1.30.1.ebuild:
+  Add patch to fix QA abort on x64-macos due to missing function declaration
+
+*pango-1.30.1 (07 Jun 2012)
+
+  07 Jun 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +pango-1.30.1.ebuild, +files/pango-1.30.1-coretext-hash.patch:
+  Version bump, user configuration files are now in ~/.config/pango by default.
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> pango-1.29.4.ebuild:
+  ppc stable wrt #407643
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> pango-1.28.3-r1.ebuild,
+  pango-1.28.4.ebuild, pango-1.29.4.ebuild, pango-1.30.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  28 Apr 2012; Alexis Ballier <aballier@gentoo.org> pango-1.30.0.ebuild:
+  keyword ~amd64-fbsd
+
+  25 Apr 2012; Fabio Erculiani <lxnay@gentoo.org> pango-1.28.3-r1.ebuild,
+  pango-1.28.4.ebuild, pango-1.29.4.ebuild, pango-1.30.0.ebuild:
+  sync pango-querymodules usage with emul-linux-x86-gtklibs
+
+  25 Apr 2012; Fabio Erculiani <lxnay@gentoo.org> pango-1.28.3-r1.ebuild,
+  pango-1.28.4.ebuild, pango-1.29.4.ebuild, pango-1.30.0.ebuild:
+  simplify pango-querymodules usage
+
+  25 Apr 2012; Fabio Erculiani <lxnay@gentoo.org> pango-1.28.3-r1.ebuild,
+  pango-1.28.4.ebuild:
+  fix pango-querymodules for 1.28.x
+
+  25 Apr 2012; Fabio Erculiani <lxnay@gentoo.org> pango-1.28.3-r1.ebuild,
+  pango-1.28.4.ebuild, pango-1.29.4.ebuild, pango-1.30.0.ebuild:
+  write pango.modules atomically
+
+  01 Apr 2012; Pacho Ramos <pacho@gentoo.org> pango-1.29.4.ebuild,
+  pango-1.30.0.ebuild:
+  Add a die statement to catch pango.modules generation problems like bug
+  #409741 by Nicolas Perrenoud.
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> pango-1.29.4.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #407643
+
+*pango-1.30.0 (27 Mar 2012)
+
+  27 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +pango-1.30.0.ebuild:
+  Version bump with various bugfixes.
+
+  25 Mar 2012; Markus Meier <maekke@gentoo.org> pango-1.29.4.ebuild:
+  arm stable, bug #407643
+
+  23 Mar 2012; Jeroen Roovers <jer@gentoo.org> pango-1.29.4.ebuild:
+  Stable for HPPA (bug #407643).
+
+  16 Mar 2012; Jeff Horelick <jdhore@gentoo.org> pango-1.29.4.ebuild:
+  marked x86 per bug 407643
+
+  13 Mar 2012; Agostino Sarubbo <ago@gentoo.org> pango-1.29.4.ebuild:
+  Stable for amd64, wrt bug #407643
+
+  12 Mar 2012; Brent Baude <ranger@gentoo.org> pango-1.29.4.ebuild:
+  Marking pango-1.29.4 ppc64 stable for bug 407643
+
+  15 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  pango-1.28.3-r1.ebuild, pango-1.28.4.ebuild, pango-1.29.4.ebuild:
+  Don't call elibtoolize multiple times or before eautoreconf (bug #403695,
+  thanks to Kris Hepler for reporting).
+
+  30 Jan 2012; Pacho Ramos <pacho@gentoo.org> pango-1.29.4.ebuild:
+  REQUIRED_USE='doc? ( X )' due upstream bug #643802, move gnome2_src_prepare to
+  proper place.
+
+*pango-1.29.4 (19 Oct 2011)
+
+  19 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +pango-1.29.4.ebuild:
+  Add pango-1.29.4 (supposedly stable-ish, despite the odd minor version) from
+  the gnome overlay. Includes fix for bug #384671 (pango-querymodules usage
+  when
+  ROOT != /), thanks to vapier.
+
+  Notable changes: introspection improvements.
 
   11 Jul 2011; Matt Turner <mattst88@gentoo.org> pango-1.28.4.ebuild:
   Added ~mips, bug 364693

@@ -1,6 +1,21 @@
 # ChangeLog for x11-misc/fireflies
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/fireflies/ChangeLog,v 1.23 2010/09/11 14:55:15 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/fireflies/ChangeLog,v 1.27 2012/01/04 21:35:00 ranger Exp $
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> fireflies-2.07-r1.ebuild:
+  Marking fireflies-2.07-r1 ppc for bug 394021
+
+  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  fireflies-2.07-r1.ebuild:
+  x86 stable wrt bug #394021
+
+  17 Dec 2011; Agostino Sarubbo <ago@gentoo.org> fireflies-2.07-r1.ebuild:
+  Stable for AMD64, wrt bug #394021
+
+  17 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> fireflies-2.07-r1.ebuild,
+  +files/fireflies-2.07-libgfx-libpng15.patch:
+  Fix building with libpng15 wrt #394971 by Elijah El Lazkani. Fix missing
+  license entry for internal libgfx library.
 
 *fireflies-2.07-r1 (11 Sep 2010)
 

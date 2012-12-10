@@ -1,6 +1,37 @@
 # ChangeLog for dev-ruby/mechanize
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/mechanize/ChangeLog,v 1.28 2011/07/23 14:28:27 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/mechanize/ChangeLog,v 1.36 2012/11/25 19:15:44 tomka Exp $
+
+  25 Nov 2012; Thomas Kahle <tomka@gentoo.org> mechanize-2.5.1.ebuild:
+  marked ~x86 per bug 432830
+
+  29 Sep 2012; Fabian Groffen <grobian@gentoo.org> mechanize-2.5.1.ebuild:
+  Added Prefix keywords, bug #432830
+
+  27 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> mechanize-2.5.1.ebuild:
+  Keyword ~ppc/~ppc64 wrt #432830
+
+*mechanize-2.5.1 (26 Aug 2012)
+
+  26 Aug 2012; Hans de Graaff <graaff@gentoo.org> +mechanize-2.5.1.ebuild:
+  Version bump. Drop jruby due to missing dependencies. Drop arches for same
+  reason, bug 432830.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> mechanize-1.0.0.ebuild,
+  mechanize-1.0.0-r1.ebuild:
+  Drop ia64/sparc keywords
+
+*mechanize-1.0.0-r1 (28 Dec 2011)
+
+  28 Dec 2011; Hans de Graaff <graaff@gentoo.org> mechanize-1.0.0.ebuild,
+  +mechanize-1.0.0-r1.ebuild:
+  Revision bump to drop ruby19 from stable version.
+
+  26 Dec 2011; Hans de Graaff <graaff@gentoo.org> mechanize-1.0.0.ebuild:
+  Update nokogiri dependency to fix bug 365931.
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> mechanize-1.0.0.ebuild:
+  Stable on amd64 wrt bug #348510
 
   23 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> mechanize-1.0.0.ebuild:
   ppc stable wrt #348510
@@ -130,4 +161,3 @@
   14 Apr 2007; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +mechanize-0.6.7.ebuild:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

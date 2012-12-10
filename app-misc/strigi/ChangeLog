@@ -1,6 +1,96 @@
 # ChangeLog for app-misc/strigi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/strigi/ChangeLog,v 1.69 2011/07/17 12:17:12 dilfridge Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/strigi/ChangeLog,v 1.91 2012/07/04 12:07:44 johu Exp $
+
+  04 Jul 2012; Johannes Huber <johu@gentoo.org>
+  +files/strigi-0.7.7-ffmpeg-0.11.patch, strigi-0.7.7-r1.ebuild:
+  Add mandriva patch to build with ffmpeg-0.11 spotted by Hanno Boeck
+  <hanno@gentoo.org> wrt bug #417877.
+
+  14 Jun 2012; Ben de Groot <yngwin@gentoo.org> strigi-0.7.7.ebuild:
+  Destabling to ~ia64 because last available stable qt will be masked pending
+  removal
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> strigi-0.7.7-r1.ebuild:
+  keyword ~amd64-fbsd
+
+*strigi-0.7.7-r1 (17 Apr 2012)
+
+  17 Apr 2012; Johannes Huber <johu@gentoo.org> +files/strigi-0.7.7-gcc47.patch,
+  +strigi-0.7.7-r1.ebuild:
+  Revision bump adds upstream patch to fix build with gcc 4.7 spotted by Alphat-
+  PC <AlphatPC@gmail.com> wrt bug #412361.
+
+  12 Mar 2012; Johannes Huber <johu@gentoo.org> -files/strigi-0.6.4-gcc44.patch,
+  -files/strigi-0.6.5-gcc4.4-missing-headers.patch,
+  -files/strigi-disable_java.patch, -strigi-0.7.1.ebuild:
+  Remove old.
+
+  09 Mar 2012; Brent Baude <ranger@gentoo.org> strigi-0.7.7.ebuild:
+  Marking strigi-0.7.7 ppc64 for bug 399667
+
+  28 Jan 2012; Raúl Porcel <armin76@gentoo.org> strigi-0.7.7.ebuild:
+  alpha/ia64/sparc stable wrt #399667
+
+  22 Jan 2012; Johannes Huber <johu@gentoo.org>
+  -files/strigi-0.7.5-ffmpeg.patch, -files/strigi-0.7.5-no-qt4.patch,
+  -files/strigi-0.7.6-crash.patch, -strigi-0.7.6-r1.ebuild:
+  Remove old.
+
+  16 Jan 2012; Agostino Sarubbo <ago@gentoo.org> strigi-0.7.7.ebuild:
+  Stable for amd64, wrt bug #396359
+
+  10 Jan 2012; Brent Baude <ranger@gentoo.org> strigi-0.7.7.ebuild:
+  Marking strigi-0.7.7 ppc for bug 396359
+
+  09 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> strigi-0.7.7.ebuild:
+  x86 stable wrt bug #396359
+
+  23 Dec 2011; Johannes Huber <johu@gentoo.org> strigi-0.7.6-r1.ebuild,
+  strigi-0.7.7.ebuild:
+  Use dev-libs/boost only at build time, fix bug #394119.
+
+*strigi-0.7.7 (15 Dec 2011)
+
+  15 Dec 2011; Johannes Huber <johu@gentoo.org> +strigi-0.7.7.ebuild:
+  Version bump. Thanks Elias Probst <mail@eliasprobst.eu>. Bug #394527
+
+  07 Dec 2011; Markos Chandras <hwoarang@gentoo.org> strigi-0.7.6-r1.ebuild:
+  Stable on amd64 wrt bug #388279
+
+  07 Dec 2011; Markos Chandras <hwoarang@gentoo.org> strigi-0.7.6-r1.ebuild:
+  Stable on amd64 wrt bug #388279
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> strigi-0.7.6-r1.ebuild:
+  x86 stable wrt bug #388279
+
+  28 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -strigi-0.7.5-r2.ebuild, -strigi-0.7.6.ebuild:
+  Remove old
+
+*strigi-0.7.6-r1 (18 Oct 2011)
+
+  18 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  +strigi-0.7.6-r1.ebuild, +files/strigi-0.7.6-crash.patch:
+  Fix crash when parsing pdf, bug 387049
+
+  27 Sep 2011; Andreas K. Huettel <dilfridge@gentoo.org> strigi-0.7.6.ebuild:
+  Add missing boost dependency, bug 384519
+
+*strigi-0.7.6 (25 Sep 2011)
+
+  25 Sep 2011; Andreas K. Huettel <dilfridge@gentoo.org> +strigi-0.7.6.ebuild:
+  Version bump (from git tag)
+
+  10 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org> -strigi-0.7.2.ebuild,
+  -strigi-0.7.5.ebuild, -strigi-0.7.5-r1.ebuild, strigi-0.7.5-r2.ebuild:
+  Remove old; dont use invalid useflag xine, bug 378155
+
+*strigi-0.7.5-r2 (02 Aug 2011)
+
+  02 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  +strigi-0.7.5-r2.ebuild, +files/strigi-0.7.5-ffmpeg.patch:
+  Add upstream fix for new ffmpeg / libav, bug 376189
 
 *strigi-0.7.5-r1 (17 Jul 2011)
 
@@ -381,4 +471,3 @@
   strigi-0.5.1.ebuild, strigi-9999.ebuild:
   Added metadata.xml and Changelog. Thanks to Franz Fellner for the initial
   ebuild.
-

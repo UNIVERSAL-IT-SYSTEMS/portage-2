@@ -1,6 +1,46 @@
 # ChangeLog for media-sound/lastfmplayer
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/lastfmplayer/ChangeLog,v 1.63 2011/04/11 06:20:50 phajdan.jr Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/lastfmplayer/ChangeLog,v 1.71 2012/08/26 00:36:09 hwoarang Exp $
+
+  26 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  -lastfmplayer-1.5.4.27091-r1.ebuild, lastfmplayer-1.5.4.27091-r3.ebuild:
+  Stabilize everywhere to promote the desktop file fix to the stable tree.
+  Remove old
+
+  01 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  -files/fix_plugin_path.patch:
+  remove old file
+
+*lastfmplayer-1.5.4.27091-r3 (14 Jul 2012)
+
+  14 Jul 2012; Markos Chandras <hwoarang@gentoo.org>
+  +lastfmplayer-1.5.4.27091-r3.ebuild, -lastfmplayer-1.5.4.27091-r2.ebuild:
+  Fix desktop icon TryExec option. Thanks to Michael Palimaka
+  <kensington@gentoo.org>
+
+  26 Jun 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/lastfmplayer-1.5.4.27091-gcc47.patch,
+  lastfmplayer-1.5.4.27091-r2.ebuild:
+  Fix compilation with gcc-4.7. Bug #423221
+
+  25 Apr 2012; Justin Lecher <jlec@gentoo.org>
+  lastfmplayer-1.5.4.27091-r2.ebuild,
+  +files/lastfmplayer-1.5.4.27091-glib.h.patch:
+  Add fix for >glib-2.32
+
+*lastfmplayer-1.5.4.27091-r2 (30 Dec 2011)
+
+  30 Dec 2011; Markos Chandras <hwoarang@gentoo.org>
+  +lastfmplayer-1.5.4.27091-r2.ebuild:
+  Allow arguments when launching lastfm from desktop file. Bug #395277
+
+  07 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  -lastfmplayer-1.5.4.26862-r3.ebuild, -lastfmplayer-1.5.4.27091.ebuild:
+  ^
+
+  07 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  lastfmplayer-1.5.4.27091-r1.ebuild:
+  ppc stable wrt #358551
 
   11 Apr 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
   lastfmplayer-1.5.4.27091-r1.ebuild:
@@ -325,4 +365,3 @@
   02 Apr 2006; Stefan Schweizer <genstef@gentoo.org> +metadata.xml,
   +lastfmplayer-1.1.4_p2099.ebuild:
   New ebuild thanks to David Li <matrixhax0r@yahoo.com> in bug 102059
-

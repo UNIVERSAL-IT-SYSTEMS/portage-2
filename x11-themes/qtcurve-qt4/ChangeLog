@@ -1,6 +1,103 @@
 # ChangeLog for x11-themes/qtcurve-qt4
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/qtcurve-qt4/ChangeLog,v 1.128 2011/07/03 19:29:41 wired Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/qtcurve-qt4/ChangeLog,v 1.151 2012/12/06 04:24:32 phajdan.jr Exp $
+
+  06 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  qtcurve-qt4-1.8.14.ebuild:
+  x86 stable wrt bug #444546
+
+  05 Dec 2012; Jeroen Roovers <jer@gentoo.org> qtcurve-qt4-1.8.14.ebuild:
+  Stable for HPPA (bug #444546).
+
+  02 Dec 2012; Anthony G. Basile <blueness@gentoo.org>
+  qtcurve-qt4-1.8.14.ebuild:
+  stable ppc, bug #444546
+
+  25 Nov 2012; <ago@gentoo.org> qtcurve-qt4-1.8.14.ebuild:
+  Stable for amd64, wrt bug #444546
+
+  31 Aug 2012; Johannes Huber <johu@gentoo.org> -qtcurve-qt4-1.6.4-r1.ebuild,
+  -qtcurve-qt4-1.8.13.ebuild:
+  Remove old.
+
+*qtcurve-qt4-1.8.14 (23 Aug 2012)
+
+  23 Aug 2012; Ben de Groot <yngwin@gentoo.org> +qtcurve-qt4-1.8.14.ebuild:
+  Version bump. Drop patch for kde49 fixed upstream.
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> qtcurve-qt4-1.8.12.ebuild:
+  ppc stable (bug 411845).
+
+*qtcurve-qt4-1.8.13-r2 (04 Aug 2012)
+
+  04 Aug 2012; Johannes Huber <johu@gentoo.org> +qtcurve-qt4-1.8.13-r2.ebuild,
+  -qtcurve-qt4-1.8.13-r1.ebuild,
+  files/qtcurve-qt4_kde49-kwin_decoration-macro.patch:
+  New revision with updated patch by Franz Fellner
+  <alpine.art.de@googlemail.com> which is compatible with KDE 4.8, bug #429796.
+  Remove old revision, ppc/ppc64 restored.
+
+*qtcurve-qt4-1.8.13-r1 (04 Aug 2012)
+
+  04 Aug 2012; Johannes Huber <johu@gentoo.org>
+  +files/qtcurve-qt4_kde49-kwin_decoration-macro.patch,
+  +qtcurve-qt4-1.8.13-r1.ebuild:
+  Revision bump adds chakra patch which fixes loading of windeco wrt bug
+  #429796. Set KDE_MINIMAL version to 4.9. Dropp ppc/ppc64 keywords as KDE 4.9
+  is not keyworded yet. Thanks to Franz Fellner <alpine.art.de@googlemail.com>.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> qtcurve-qt4-1.8.12.ebuild:
+  alpha/sparc stable wrt #411845
+
+*qtcurve-qt4-1.8.13 (25 Jul 2012)
+
+  25 Jul 2012; Ben de Groot <yngwin@gentoo.org> +qtcurve-qt4-1.8.13.ebuild:
+  Version bump
+
+  22 Jun 2012; Davide Pesavento <pesa@gentoo.org> -qtcurve-qt4-1.8.10.ebuild,
+  -qtcurve-qt4-1.8.9.ebuild:
+  Remove old.
+
+  21 May 2012; Johannes Huber <johu@gentoo.org> qtcurve-qt4-1.8.12.ebuild:
+  Stable for x86, wrt bug #411845
+
+  21 May 2012; Jeroen Roovers <jer@gentoo.org> qtcurve-qt4-1.8.12.ebuild:
+  Stable for HPPA (bug #411845).
+
+  07 May 2012; Ben de Groot <yngwin@gentoo.org> qtcurve-qt4-1.8.12.ebuild:
+  Stable for amd64, wrt bug #411845
+
+*qtcurve-qt4-1.8.12 (26 Apr 2012)
+
+  26 Apr 2012; Davide Pesavento <pesa@gentoo.org> +qtcurve-qt4-1.8.12.ebuild:
+  Version bump, bug 413595.
+
+  06 Apr 2012; Davide Pesavento <pesa@gentoo.org> -qtcurve-qt4-1.8.8.ebuild:
+  Remove old.
+
+  04 Apr 2012; Jeroen Roovers <jer@gentoo.org> qtcurve-qt4-1.8.9.ebuild:
+  Stable for HPPA (bug #402437).
+
+*qtcurve-qt4-1.8.10 (19 Feb 2012)
+
+  19 Feb 2012; Markos Chandras <hwoarang@gentoo.org> +qtcurve-qt4-1.8.10.ebuild:
+  Version bump
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  qtcurve-qt4-1.8.9.ebuild:
+  x86 stable wrt bug #402437
+
+  07 Feb 2012; Agostino Sarubbo <ago@gentoo.org> qtcurve-qt4-1.8.9.ebuild:
+  Stable for amd64, wrt bug #402437
+
+*qtcurve-qt4-1.8.9 (01 Jan 2012)
+
+  01 Jan 2012; Davide Pesavento <pesa@gentoo.org> +qtcurve-qt4-1.8.9.ebuild:
+  Version bump, #395723 by Ivan S. Titov.
+
+  28 Oct 2011; Jonathan Callen <abcd@gentoo.org> -qtcurve-qt4-1.8.4.ebuild,
+  -qtcurve-qt4-1.8.6.ebuild, -qtcurve-qt4-0.69.2.ebuild:
+  Remove old
 
 *qtcurve-qt4-1.8.8 (03 Jul 2011)
 
@@ -618,4 +715,3 @@
   +qtcurve-qt4-0.55.1.ebuild:
   Initial version, ebuild by Jouni Rinne <jouni.rinne@pp1.inet.fi>, see bug
   #200015.
-

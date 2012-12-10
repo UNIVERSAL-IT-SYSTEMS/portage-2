@@ -1,6 +1,47 @@
 # ChangeLog for dev-perl/Net-Daemon
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-Daemon/ChangeLog,v 1.66 2011/07/30 10:35:27 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-Daemon/ChangeLog,v 1.79 2012/09/01 11:42:49 grobian Exp $
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> Net-Daemon-0.480.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> Net-Daemon-0.480.0.ebuild:
+  keyword ~amd64-fbsd
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Net-Daemon-0.43.ebuild:
+  Cleanup
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> Net-Daemon-0.480.0.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #396935
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> Net-Daemon-0.480.0.ebuild:
+  Marking Net-Daemon-0.480.0 ppc64 for bug 396935
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  Net-Daemon-0.480.0.ebuild:
+  Stable on alpha, bug #396935
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Net-Daemon-0.480.0.ebuild:
+  x86 stable wrt bug #396935
+
+  08 Feb 2012; Markus Meier <maekke@gentoo.org> Net-Daemon-0.480.0.ebuild:
+  arm stable, bug #396935
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> Net-Daemon-0.480.0.ebuild:
+  Stable for HPPA (bug #396935).
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> Net-Daemon-0.480.0.ebuild:
+  Marking Net-Daemon-0.480.0 ppc for bug 396935
+
+  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Net-Daemon-0.480.0.ebuild:
+  Stable for amd64, wrt bug #396935
+
+  28 Sep 2011; Fabian Groffen <grobian@gentoo.org> Net-Daemon-0.480.0.ebuild:
+  Marked ~sparc-solaris and ~sparc64-solaris
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> Net-Daemon-0.43.ebuild,
   Net-Daemon-0.480.0.ebuild:
@@ -225,4 +266,3 @@
 
   1 Feb 2002; G.Bevin <gbevin@gentoo.org> ChangeLog :
   First added
-

@@ -1,6 +1,95 @@
 # ChangeLog for net-analyzer/argus
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/argus/ChangeLog,v 1.33 2011/07/06 14:58:25 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/argus/ChangeLog,v 1.54 2012/10/15 13:08:03 jer Exp $
+
+*argus-3.0.7.1 (15 Oct 2012)
+
+  15 Oct 2012; Jeroen Roovers <jer@gentoo.org> -argus-3.0.3.8.ebuild,
+  -argus-3.0.4.ebuild, -argus-3.0.6.ebuild, +argus-3.0.7.1.ebuild:
+  Version bump.
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> argus-3.0.6.1.ebuild:
+  x86 stable wrt bug #434030
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> argus-3.0.6.1.ebuild:
+  Stable for amd64, wrt bug #434030
+
+  07 Sep 2012; Anthony G. Basile <blueness@gentoo.org> argus-3.0.6.1.ebuild:
+  Stable ppc, bug #434030
+
+  04 Jul 2012; Jeff Horelick <jdhore@gentoo.org> argus-3.0.6.ebuild:
+  marked x86 per bug 422135
+
+  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> argus-3.0.6.ebuild:
+  Stable for amd64, wrt bug #422135
+
+*argus-3.0.6.1 (19 Jun 2012)
+
+  19 Jun 2012; Jeroen Roovers <jer@gentoo.org> +argus-3.0.6.1.ebuild:
+  Version bump.
+
+  12 Jun 2012; Zac Medico <zmedico@gentoo.org> argus-3.0.3.8.ebuild,
+  argus-3.0.4.ebuild, argus-3.0.6.ebuild:
+  inherit user for enewgroup and enewuser
+
+  11 Jun 2012; Michael Weber <xmw@gentoo.org> argus-3.0.4.ebuild:
+  ppc stable (bug 369587)
+
+  09 May 2012; Jeroen Roovers <jer@gentoo.org> argus-3.0.6.ebuild:
+  Add missing dependency on sys-libs/zlib.
+
+  09 May 2012; Jeroen Roovers <jer@gentoo.org> argus-3.0.6.ebuild:
+  Readd support for dev-libs/cyrus-sasl.
+
+  09 May 2012; Jeroen Roovers <jer@gentoo.org> -argus-3.0.5.11.ebuild:
+  Old.
+
+*argus-3.0.6 (17 Apr 2012)
+
+  17 Apr 2012; Jeroen Roovers <jer@gentoo.org> -argus-3.0.5.10.ebuild,
+  +argus-3.0.6.ebuild:
+  Version bump.
+
+*argus-3.0.5.11 (13 Mar 2012)
+
+  13 Mar 2012; Jeroen Roovers <jer@gentoo.org> -argus-3.0.5.8.ebuild,
+  +argus-3.0.5.11.ebuild:
+  Version bump.
+
+*argus-3.0.5.10 (07 Feb 2012)
+
+  07 Feb 2012; Jeroen Roovers <jer@gentoo.org> -argus-3.0.5.2.ebuild,
+  -argus-3.0.5.3.ebuild, -argus-3.0.5.4.ebuild, -argus-3.0.5.5.ebuild,
+  -argus-3.0.5.6.ebuild, -argus-3.0.5.7.ebuild, +argus-3.0.5.10.ebuild:
+  Version bump.
+
+*argus-3.0.5.8 (11 Jan 2012)
+
+  11 Jan 2012; Jeroen Roovers <jer@gentoo.org> +argus-3.0.5.8.ebuild:
+  Version bump.
+
+*argus-3.0.5.7 (16 Dec 2011)
+
+  16 Dec 2011; Jeroen Roovers <jer@gentoo.org> +argus-3.0.5.7.ebuild:
+  Version bump.
+
+  15 Nov 2011; Jeroen Roovers <jer@gentoo.org> argus-3.0.5.6.ebuild,
+  files/argus-3.0.5-Makefile.patch:
+  Remove redundant sed script. Tweak Makefile patch to actually die properly.
+
+  15 Nov 2011; Jeroen Roovers <jer@gentoo.org> argus-3.0.5.6.ebuild,
+  +files/argus-3.0.5-Makefile.patch:
+  Do not continue when a sub-make errors (bug #380953).
+
+*argus-3.0.5.6 (15 Nov 2011)
+
+  15 Nov 2011; Jeroen Roovers <jer@gentoo.org> +argus-3.0.5.6.ebuild:
+  Version bump.
+
+*argus-3.0.5.5 (30 Aug 2011)
+
+  30 Aug 2011; Jeroen Roovers <jer@gentoo.org> +argus-3.0.5.5.ebuild:
+  Version bump.
 
 *argus-3.0.5.4 (06 Jul 2011)
 

@@ -1,6 +1,31 @@
 # ChangeLog for net-print/mtink
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/mtink/ChangeLog,v 1.33 2011/06/05 19:38:17 dilfridge Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-print/mtink/ChangeLog,v 1.39 2012/10/24 19:25:00 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> mtink-1.0.11.ebuild,
+  mtink-1.0.16-r1.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  25 May 2012; Samuli Suominen <ssuominen@gentoo.org> mtink-1.0.11.ebuild,
+  mtink-1.0.16-r1.ebuild:
+  Pull in SLOT="0" of virtual/libusb because libusb-1 is not supported.
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org> mtink-1.0.11.ebuild,
+  mtink-1.0.16-r1.ebuild:
+  Use virtual/libusb instead of dev-libs/libusb.
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> mtink-1.0.16-r1.ebuild:
+  x86 stable wrt bug #401235
+
+  31 Jan 2012; Agostino Sarubbo <ago@gentoo.org> mtink-1.0.16-r1.ebuild:
+  Stable for amd64, wrt bug #401235
+
+*mtink-1.0.16-r1 (28 Jan 2012)
+
+  28 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org> -mtink-1.0.16.ebuild,
+  +mtink-1.0.16-r1.ebuild, +files/mtink-1.0.16-overflow.patch, metadata.xml:
+  Fix buffer overflow, bug 342799, and make call
 
   05 Jun 2011; Andreas K. Huettel <dilfridge@gentoo.org> mtink-1.0.16.ebuild,
   +files/mtink-1.0.16-options.patch:

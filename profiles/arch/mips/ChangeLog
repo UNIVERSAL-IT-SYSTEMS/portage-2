@@ -1,6 +1,103 @@
 # ChangeLog for Gentoo/MIPS profile directory
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/mips/ChangeLog,v 1.76 2011/07/31 06:09:00 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/mips/ChangeLog,v 1.107 2012/12/09 00:05:22 blueness Exp $
+
+  09 Dec 2012; Anthony G. Basile <blueness@gentoo.org> package.use.mask:
+  Unmask media-sound/audacity[sbsms] since libsbsms now works, bug #436020
+
+  24 Nov 2012; Mike Gilbert <floppym@gentoo.org> use.mask:
+  Mask python_single_target values not supported on this arch.
+
+  31 Oct 2012; Michał Górny <mgorny@gentoo.org> use.mask:
+  Add a PYTHON_TARGETS mask based on keywords.
+
+  17 Oct 2012; Matt Turner <mattst88@gentoo.org> make.defaults:
+  Add LIBDIR_* definitions to make.defaults for single-ABI profiles.
+
+  29 Sep 2012; Matt Turner <mattst88@gentoo.org> mips64/multilib/make.defaults,
+  mips64/n32/make.defaults, mips64/n64/make.defaults,
+  mipsel/mips64el/multilib/make.defaults, mipsel/mips64el/n32/make.defaults,
+  mipsel/mips64el/n64/make.defaults:
+  Drop LIBDIR_* assignments. They're set by features/multilib.
+
+  28 Sep 2012; Matt Turner <mattst88@gentoo.org> mips64/n64/make.defaults,
+  mipsel/mips64el/n64/make.defaults:
+  Set LIBDIR_n64 in n64 profiles, bug 436468.
+
+  23 Sep 2012; Matt Turner <mattst88@gentoo.org> package.mask:
+  Remove python-3.2 mask, bug 354877.
+
+  18 Jul 2012; Anthony G. Basile <blueness@gentoo.org> use.mask:
+  Un-use mask php
+
+  16 Jul 2012; Anthony G. Basile <blueness@gentoo.org> package.use.mask:
+  Mask net-libs/cyassl[aes-ni] on mips
+
+  04 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> use.mask:
+  Remove obsolete entry for USE="xulrunner" wrt #424617
+
+  14 Jun 2012; Anthony G. Basile <blueness@gentoo.org> package.use.mask:
+  Remove xattr use mask on sys-apps/portage, bug #402215
+
+  09 May 2012; Matt Turner <mattst88@gentoo.org> package.use.mask:
+  Remove taglib's test package.use.mask.
+
+  09 May 2012; Matt Turner <mattst88@gentoo.org> package.use.mask:
+  Remove vte and gtksourceview's glade package.use.mask.
+
+  18 Mar 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Remove gstreamer from use.mask
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> use.mask, package.use.mask:
+  Remove mask for USE="esd" because there is no such flag in tree anymore.
+
+  21 Feb 2012; Zac Medico <zmedico@gentoo.org> package.use.mask:
+  Bug #402215: Mask USE=xattr for sys-apps/portage, pending ~mips keyword for
+  dev-python/pyxattr.
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Mask wayland USE flag.
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Mask d3d USE flag.
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Add new video_cards_* to use.mask.
+
+  09 Feb 2012; Matt Turner <mattst88@gentoo.org> arch/mips/package.use.mask:
+  Unmask zbus and paired-single USE flags on mips.
+
+  09 Feb 2012; Matt Turner <mattst88@gentoo.org> package.use.mask:
+  Add 'dev-vcs/git cgi' to package.use.mask.
+
+  01 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Remove obsolete entry for media-video/mplayer and USE="v4l2"
+
+  11 Oct 2011; Matt Turner <mattst88@gentoo.org> package.mask:
+  Remove >=baselayout-2.1 from package.mask. (That was quick)
+
+  11 Oct 2011; Matt Turner <mattst88@gentoo.org> package.mask:
+  package.mask >=baselayout-2.1, bug 386821
+
+  09 Oct 2011; Matt Turner <mattst88@gentoo.org> mips64/multilib/make.defaults,
+  mipsel/mips64el/multilib/make.defaults:
+  Add SYMLINK_LIB=no to multilib profiles.
+
+  23 Sep 2011; Matt Turner <mattst88@gentoo.org> use.mask:
+  Remove laptop, glitz, cpufreq, battery from use.mask
+
+  21 Aug 2011; Matt Turner <mattst88@gentoo.org> use.mask:
+  Remove siliconmotion from use.mask. It's now keyworded on mips.
+
+  21 Aug 2011; Matt Turner <mattst88@gentoo.org> use.mask:
+  Remove radeonhd from use.mask. It's gone from the tree.
+
+  21 Aug 2011; Matt Turner <mattst88@gentoo.org> use.mask:
+  Remove mad from use.mask. There are lots of other flags that pull in libmad,
+  so masking one isn't doing to job.
+
+  20 Aug 2011; Matt Turner <mattst88@gentoo.org> use.mask:
+  Remove hal from use.mask. It's masked by base/use.mask now.
 
   31 Jul 2011; Matt Turner <mattst88@gentoo.org> package.use.mask:
   mplayer has no 'teletext' USE flag anymore.

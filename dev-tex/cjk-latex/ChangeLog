@@ -1,6 +1,17 @@
 # ChangeLog for dev-tex/cjk-latex
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/cjk-latex/ChangeLog,v 1.45 2011/06/28 15:40:04 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/cjk-latex/ChangeLog,v 1.48 2012/10/10 13:14:53 aballier Exp $
+
+*cjk-latex-4.8.3 (10 Oct 2012)
+
+  10 Oct 2012; Alexis Ballier <aballier@gentoo.org> +cjk-latex-4.8.3.ebuild:
+  version bump
+
+  25 Jul 2012; Christoph Junghans <ottxor@gentoo.org> cjk-latex-4.8.2.ebuild:
+  added prefix support (bug #427840)
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> cjk-latex-4.8.2.ebuild:
+  keyword ~amd64-fbsd
 
   28 Jun 2011; Alexis Ballier <aballier@gentoo.org> cjk-latex-4.8.2.ebuild:
   set TEXMFCNF so that texmf.cnf is found by kpathsea, bump to eapi3
@@ -151,4 +162,3 @@
 
   05 Jan 2004; Mamoru KOMACHI <usata@gentoo.org> cjk-latex-4.5.2.ebuild:
   Initial import. Required by latex-unicode, see bug #17282
-

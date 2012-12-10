@@ -1,6 +1,36 @@
 # ChangeLog for app-office/calcurse
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/calcurse/ChangeLog,v 1.15 2010/05/18 17:44:18 ken69267 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-office/calcurse/ChangeLog,v 1.23 2012/08/24 13:50:44 jer Exp $
+
+  24 Aug 2012; Jeroen Roovers <jer@gentoo.org> calcurse-3.0.0.ebuild:
+  Remove duplicate linguas_* entries.
+
+  23 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org> calcurse-3.0.0.ebuild:
+  add missing test to IUSE
+
+*calcurse-3.0.0 (23 Aug 2012)
+
+  23 Aug 2012; Jeroen Roovers <jer@gentoo.org> +calcurse-3.0.0.ebuild:
+  Version bump.
+
+  24 Feb 2012; Jeroen Roovers <jer@gentoo.org> -calcurse-2.7.ebuild:
+  Old.
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> calcurse-2.9.2.ebuild:
+  x86 stable wrt bug #403903
+
+  16 Feb 2012; Agostino Sarubbo <ago@gentoo.org> calcurse-2.9.2.ebuild:
+  Stable for amd64, wrt bug #403903
+
+  15 Feb 2012; Jeroen Roovers <jer@gentoo.org> -calcurse-2.3.ebuild,
+  -files/calcurse-2.3-cflags.patch, -files/calcurse-2.3-locale.patch,
+  -calcurse-2.4.ebuild, -calcurse-2.5.ebuild:
+  Old.
+
+*calcurse-2.9.2 (04 Dec 2011)
+
+  04 Dec 2011; Cédric Krier <cedk@gentoo.org> +calcurse-2.9.2.ebuild:
+  Version bump
 
   18 May 2010; Kenneth Prugh <ken69267@gentoo.org> calcurse-2.7.ebuild:
   amd64 stable, bug #318783
@@ -69,4 +99,3 @@
   01 May 2007; Cedric Krier <cedk@gentoo.org> +metadata.xml,
   +calcurse-1.7.ebuild:
   New ebuild for bug #111327, thanks to Tomoyuki Sakurai
-

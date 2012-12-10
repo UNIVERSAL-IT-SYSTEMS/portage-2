@@ -1,6 +1,37 @@
 # ChangeLog for app-text/pinfo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/pinfo/ChangeLog,v 1.57 2011/07/17 11:05:47 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/pinfo/ChangeLog,v 1.66 2012/06/18 01:53:11 jer Exp $
+
+  18 Jun 2012; Jeroen Roovers <jer@gentoo.org> -pinfo-0.6.10-r2.ebuild:
+  Old.
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> pinfo-0.6.10-r3.ebuild:
+  alpha/ia64/sparc stable wrt #415291
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> pinfo-0.6.10-r3.ebuild:
+  Marking pinfo-0.6.10-r3 ppc for bug 415291
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> pinfo-0.6.10-r3.ebuild:
+  Marking pinfo-0.6.10-r3 ppc64 for bug 415291
+
+  18 May 2012; Jeff Horelick <jdhore@gentoo.org> pinfo-0.6.10-r3.ebuild:
+  marked x86 per bug 415291
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> pinfo-0.6.10-r3.ebuild:
+  Stable for HPPA (bug #415291).
+
+  09 May 2012; Agostino Sarubbo <ago@gentoo.org> pinfo-0.6.10-r3.ebuild:
+  Stable for amd64, wrt bug #415291
+
+*pinfo-0.6.10-r3 (09 Mar 2012)
+
+  09 Mar 2012; Jeroen Roovers <jer@gentoo.org> +pinfo-0.6.10-r3.ebuild:
+  Fix missing define for sbrk(). Add comment about autogen.sh. Clean up.
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> -pinfo-0.6.9-r1.ebuild,
+  -files/pinfo-0.6.9-FTPVIEWER.patch, -files/pinfo-0.6.9-version.patch,
+  -pinfo-0.6.10.ebuild:
+  ^
 
   17 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> pinfo-0.6.10-r2.ebuild:
   ppc64 stable wrt #366239

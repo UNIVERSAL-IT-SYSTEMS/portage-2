@@ -1,6 +1,80 @@
 # ChangeLog for dev-cpp/clucene
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/clucene/ChangeLog,v 1.41 2011/05/31 10:36:14 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/clucene/ChangeLog,v 1.60 2012/12/01 19:09:42 armin76 Exp $
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> clucene-2.3.3.4-r4.ebuild:
+  alpha/arm/ia64/sparc stable wrt #441938
+
+  15 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  clucene-2.3.3.4-r4.ebuild:
+  stable ppc, bug #441938
+
+  14 Nov 2012; Johannes Huber <johu@gentoo.org> clucene-2.3.3.4-r4.ebuild:
+  Stable for x86, wrt bug #441938
+
+  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org> clucene-2.3.3.4-r4.ebuild:
+  Stable for amd64, wrt bug #441938
+
+  13 Nov 2012; Jeroen Roovers <jer@gentoo.org> clucene-2.3.3.4-r4.ebuild:
+  Stable for HPPA (bug #441938).
+
+  13 Nov 2012; Brent Baude <ranger@gentoo.org> clucene-2.3.3.4-r4.ebuild:
+  Marking clucene-2.3.3.4-r4 ppc64 for bug 441938
+
+  01 Oct 2012; Johannes Huber <johu@gentoo.org> -clucene-0.9.21b-r1.ebuild,
+  -files/clucene-0.9.21b-doxygen.patch, -files/clucene-0.9.21b-gcc44.patch:
+  Remove old.
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org> clucene-2.3.3.4-r3.ebuild:
+  alpha/ia64/sparc stable wrt #433812
+
+  18 Sep 2012; Jeroen Roovers <jer@gentoo.org> clucene-2.3.3.4-r3.ebuild:
+  Stable for HPPA (bug #433812).
+
+*clucene-2.3.3.4-r4 (10 Sep 2012)
+
+  10 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> +clucene-2.3.3.4-r4.ebuild:
+  Fix copying of internal headers to installed files. Fixes bug#434476.
+
+  08 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  clucene-2.3.3.4-r3.ebuild:
+  Stable ppc64, bug #433812
+
+  08 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  clucene-2.3.3.4-r3.ebuild:
+  Stable ppc, bug #433812
+
+  08 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  clucene-2.3.3.4-r3.ebuild:
+  Stable arm, bug #433812
+
+  07 Sep 2012; Johannes Huber <johu@gentoo.org> clucene-2.3.3.4-r3.ebuild:
+  Stable for x86, wrt bug #433812
+
+  07 Sep 2012; Agostino Sarubbo <ago@gentoo.org> clucene-2.3.3.4-r3.ebuild:
+  Stable for amd64, wrt bug #433812
+
+  03 Sep 2012; Chris Reffett <creffett@gentoo.org> clucene-2.3.3.4-r3.ebuild:
+  Restricting tests, bug 421765
+
+*clucene-2.3.3.4-r3 (22 Mar 2012)
+
+  22 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> +clucene-2.3.3.4-r3.ebuild,
+  -clucene-2.3.3.4-r2.ebuild, files/clucene-2.3.3.4-pkgconfig.patch:
+  Do not put includes into libdir. Fixes the bug#409205. Altho it is caused
+  because the dovecot does not use the .pc file.
+
+*clucene-2.3.3.4-r1 (08 Dec 2011)
+
+  08 Dec 2011; Johannes Huber <johu@gentoo.org> +clucene-2.3.3.4-r1.ebuild,
+  -clucene-2.3.3.4.ebuild, -files/clucene-9999-cmake.patch, clucene-9999.ebuild:
+  Removed patch wrt bug #361385
+
+*clucene-2.3.3.4 (12 Nov 2011)
+
+  12 Nov 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  +clucene-2.3.3.4.ebuild:
+  Add new branch
 
   31 May 2011; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
   Drop maintainership as only user of this thing is KDE.
@@ -157,4 +231,3 @@
   Initial import. Clucene is the C++ equivalent to Java's lucene package.
   Thanks to Rohan McGovern <rohan@rohanpm.net> in bug #95633 for work on this
   package.
-

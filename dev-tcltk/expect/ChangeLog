@@ -1,6 +1,28 @@
 # ChangeLog for dev-tcltk/expect
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/expect/ChangeLog,v 1.85 2010/12/17 23:23:44 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/expect/ChangeLog,v 1.91 2012/04/26 16:18:17 aballier Exp $
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> expect-5.45.ebuild:
+  keyword ~amd64-fbsd
+
+  22 Apr 2012; Fabian Groffen <grobian@gentoo.org> expect-5.45.ebuild:
+  Marked ~m68k-mint, bug #411483
+
+  01 Mar 2012; Fabian Groffen <grobian@gentoo.org>
+  +files/expect-5.45-darwin-install_name.patch, expect-5.45.ebuild:
+  Fixed compilation on Darwin, bug #406147
+
+  01 Mar 2012; Jeremy Olexa <darkside@gentoo.org>
+  +files/expect-5.43.0-darwin.patch:
+  add missing patch, bug 406363 by Richard Yao
+
+  27 Dec 2011; Justin Lecher <jlec@gentoo.org> expect-5.44.1.15.ebuild,
+  expect-5.45.ebuild:
+  Install header files, #396099; thanks Michael (kensington) for the patch
+
+  04 Nov 2011; Justin Lecher <jlec@gentoo.org> files/expect-5.45-gfbsd.patch,
+  files/expect-5.45-headers.patch, metadata.xml:
+  Updated patches, thanks Naohiro Aotaf or this #382961
 
 *expect-5.45 (17 Dec 2010)
 

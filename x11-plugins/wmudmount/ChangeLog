@@ -1,6 +1,39 @@
 # ChangeLog for x11-plugins/wmudmount
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmudmount/ChangeLog,v 1.5 2011/01/29 14:17:33 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/wmudmount/ChangeLog,v 1.14 2012/07/06 12:48:40 ssuominen Exp $
+
+*wmudmount-1.13 (06 Jul 2012)
+
+  06 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +wmudmount-1.13.ebuild,
+  +files/wmudmount-headers.patch:
+  Version bump.
+
+  06 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> -wmudmount-1.8.ebuild,
+  -files/wmudmount-1.8-libnotify-0.7.patch:
+  old
+
+  06 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> wmudmount-1.11.ebuild:
+  amd64/x86 stable
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> wmudmount-1.8.ebuild,
+  wmudmount-1.11.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  27 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> wmudmount-1.8.ebuild,
+  wmudmount-1.11.ebuild:
+  Pin to SLOT="0" of sys-fs/udisks.
+
+  19 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> wmudmount-1.11.ebuild:
+  Remove unused inherit flag-o-matic and duplicate
+  --disable-dependency-tracking.
+
+*wmudmount-1.11 (19 Mar 2012)
+
+  19 Mar 2012; Bernard Cafarelli <voyageur@gentoo.org> +wmudmount-1.11.ebuild:
+  And version bump, spotted by ssuominen
+
+  19 Mar 2012; Bernard Cafarelli <voyageur@gentoo.org> wmudmount-1.8.ebuild:
+  Requires convert at build time, thanks Piotr Szymaniak in bug #408649
 
   29 Jan 2011; Samuli Suominen <ssuominen@gentoo.org> wmudmount-1.8.ebuild,
   +files/wmudmount-1.8-libnotify-0.7.patch:

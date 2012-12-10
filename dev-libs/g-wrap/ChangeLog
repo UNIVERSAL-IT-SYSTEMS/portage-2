@@ -1,6 +1,39 @@
 # ChangeLog for dev-libs/g-wrap
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/g-wrap/ChangeLog,v 1.76 2009/10/29 14:25:54 hkbst Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/g-wrap/ChangeLog,v 1.85 2012/10/03 18:10:04 ranger Exp $
+
+  03 Oct 2012; Brent Baude <ranger@gentoo.org> g-wrap-1.9.13.ebuild:
+  Marking g-wrap-1.9.13 ppc for bug 427470
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> g-wrap-1.9.11.ebuild,
+  g-wrap-1.9.13.ebuild, g-wrap-1.9.14.ebuild:
+  Drop alpha/sparc keywords
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> g-wrap-1.9.13.ebuild:
+  Marking g-wrap-1.9.13 ppc64 for bug 427470
+
+  26 Jul 2012; Justin Lecher <jlec@gentoo.org> g-wrap-1.9.11.ebuild,
+  g-wrap-1.9.13.ebuild, g-wrap-1.9.14.ebuild:
+  Backport EAPI bump, fowardport parallel build restriction
+
+*g-wrap-1.9.14 (26 Jul 2012)
+
+  26 Jul 2012; Justin Lecher <jlec@gentoo.org> +g-wrap-1.9.14.ebuild,
+  metadata.xml:
+  Version Bump, #427468
+
+  25 Jul 2012; Jeroen Roovers <jer@gentoo.org> g-wrap-1.9.13.ebuild:
+  Stable for HPPA (bug #427470).
+
+  22 Jul 2012; Markos Chandras <hwoarang@gentoo.org> g-wrap-1.9.13.ebuild:
+  Stable on amd64 wrt bug #427470
+
+  21 Jul 2012; Jeff Horelick <jdhore@gentoo.org> g-wrap-1.9.13.ebuild:
+  marked x86 per bug 427470
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> g-wrap-1.9.11.ebuild,
+  g-wrap-1.9.13.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   29 Oct 2009; Marijn Schouten <hkBst@gentoo.org> -g-wrap-1.9.6-r3.ebuild,
   -g-wrap-1.9.8.ebuild, -g-wrap-1.9.9.ebuild:

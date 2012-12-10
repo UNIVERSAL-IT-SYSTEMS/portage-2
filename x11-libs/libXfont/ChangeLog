@@ -1,6 +1,85 @@
 # ChangeLog for x11-libs/libXfont
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libXfont/ChangeLog,v 1.146 2011/02/14 15:57:49 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libXfont/ChangeLog,v 1.170 2012/12/08 17:14:20 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> libXfont-1.4.5-r1.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> libXfont-1.4.5-r1.ebuild:
+  Marking libXfont-1.4.5-r1 ppc stable for bug 440872
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> libXfont-1.4.5-r1.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> libXfont-1.4.5-r1.ebuild:
+  Stable for amd64, wrt bug #440872
+
+*libXfont-1.4.5-r1 (26 Oct 2012)
+
+  26 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libXfont-1.4.5-r1.ebuild, metadata.xml:
+  Make bzip2 and freetype optional, bug #439704.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> libXfont-1.4.5.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> libXfont-1.4.5.ebuild:
+  Marking libXfont-1.4.5 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> libXfont-1.4.5.ebuild:
+  Marking libXfont-1.4.5 ppc64 stable for bug 419473
+
+  29 Jun 2012; Markus Meier <maekke@gentoo.org> libXfont-1.4.5.ebuild:
+  arm stable, bug #419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> libXfont-1.4.5.ebuild:
+  Stable for HPPA (bug #419473).
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libXfont-1.4.5.ebuild:
+  Stable for x86, wrt bug #419473
+
+  23 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> -libXfont-1.4.3.ebuild,
+  libXfont-1.4.4.ebuild, libXfont-1.4.5.ebuild:
+  Fix configure warning about unused var. Fixes bug#378875.
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libXfont-1.4.5.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libXfont-1.4.5.ebuild:
+  keyword ~amd64-fbsd
+
+  07 Mar 2012; Jeremy Olexa <darkside@gentoo.org> libXfont-1.4.5.ebuild:
+  add ~x64-macos, bug 395011
+
+*libXfont-1.4.5 (04 Mar 2012)
+
+  04 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libXfont-1.4.5.ebuild:
+  Version bump.
+
+  15 Aug 2011; Raúl Porcel <armin76@gentoo.org> libXfont-1.4.4.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #378797
+
+  15 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libXfont-1.4.4.ebuild:
+  x86 stable wrt security bug #378797
+
+  14 Aug 2011; Markos Chandras <hwoarang@gentoo.org> libXfont-1.4.4.ebuild:
+  Stable on amd64 wrt bug #378797
+
+  13 Aug 2011; Jeroen Roovers <jer@gentoo.org> libXfont-1.4.4.ebuild:
+  Stable for HPPA (bug #378797).
+
+  13 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> libXfont-1.4.4.ebuild:
+  ppc64 stable wrt #378797
+
+  12 Aug 2011; Brent Baude <ranger@gentoo.org> libXfont-1.4.4.ebuild:
+  Marking libXfont-1.4.4 ppc for bug 378797
+
+*libXfont-1.4.4 (11 Aug 2011)
+
+  11 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libXfont-1.4.4.ebuild:
+  Version bump for CVE-2011-2895.
 
   14 Feb 2011; Tomáš Chvátal <scarabeus@gentoo.org> -libXfont-1.4.2.ebuild:
   old
@@ -594,4 +673,3 @@
   08 Aug 2005; Donnie Berkholz <spyderous@gentoo.org>;
   +libXfont-0.99.0.ebuild:
   Initial commit for modular X.
-

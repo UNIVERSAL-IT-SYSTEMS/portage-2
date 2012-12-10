@@ -1,6 +1,38 @@
 # ChangeLog for dev-haskell/haskell-src-exts
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haskell-src-exts/ChangeLog,v 1.13 2010/07/12 18:53:17 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/haskell-src-exts/ChangeLog,v 1.19 2012/11/18 11:54:50 gienah Exp $
+
+*haskell-src-exts-1.13.5 (18 Nov 2012)
+
+  18 Nov 2012; Mark Wright <gienah@gentoo.org> +haskell-src-exts-1.13.5.ebuild:
+  Bump haskell-src-exts to 1.13.5
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org>
+  haskell-src-exts-1.11.1.ebuild, haskell-src-exts-1.13.0.ebuild,
+  haskell-src-exts-1.13.2.ebuild, haskell-src-exts-1.13.3.ebuild,
+  haskell-src-exts-1.9.0.ebuild:
+  move dev-haskell/haskell-src-exts/haskell-src-exts-1.13.2.ebuild ebuild to
+  mirror://hackage
+
+*haskell-src-exts-1.13.3 (29 May 2012)
+
+  29 May 2012; Mark Wright <gienah@gentoo.org> +haskell-src-exts-1.13.3.ebuild:
+  Bump haskell-src-exts to 1.13.3
+
+*haskell-src-exts-1.13.2 (22 Apr 2012)
+
+  22 Apr 2012; Mark Wright <gienah@gentoo.org> +haskell-src-exts-1.13.2.ebuild:
+  Bump haskell-src-exts to 1.13.2
+
+*haskell-src-exts-1.13.0 (14 Apr 2012)
+
+  14 Apr 2012; Mark Wright <gienah@gentoo.org> +haskell-src-exts-1.13.0.ebuild:
+  Bump haskell-src-exts to 1.13.0
+
+*haskell-src-exts-1.11.1 (23 Jan 2012)
+
+  23 Jan 2012; Mark Wright <gienah@gentoo.org> +haskell-src-exts-1.11.1.ebuild:
+  Bump haskell-src-exts to 1.11.1.
 
   12 Jul 2010; Sergei Trofimovich <slyfox@gentoo.org>
   haskell-src-exts-0.2.ebuild:
@@ -57,4 +89,3 @@
   24 Oct 2005; Luis F. Araujo <araujo@gentoo.org> +metadata.xml,
   +haskell-src-exts-0.2.ebuild:
   Added new package: haskell-src-exts
-

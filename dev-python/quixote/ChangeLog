@@ -1,6 +1,29 @@
 # ChangeLog for dev-python/quixote
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/quixote/ChangeLog,v 1.32 2010/11/01 00:54:54 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/quixote/ChangeLog,v 1.39 2012/10/17 05:20:38 patrick Exp $
+
+  17 Oct 2012; Patrick Lauer <patrick@gentoo.org> quixote-2.7.ebuild:
+  Restricting python 2.5
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> quixote-2.7.ebuild:
+  Marking quixote-2.7 ppc for bug 418917
+
+  01 Jun 2012; Johannes Huber <johu@gentoo.org> quixote-2.7.ebuild:
+  Stable for x86, wrt bug #418917
+
+  01 Jun 2012; Agostino Sarubbo <ago@gentoo.org> quixote-2.7.ebuild:
+  Stable for amd64, wrt bug #418917
+
+*quixote-2.7 (19 Apr 2012)
+
+  19 Apr 2012; Patrick Lauer <patrick@gentoo.org> +quixote-2.7.ebuild:
+  Bump
+
+  21 Feb 2012; Patrick Lauer <patrick@gentoo.org> quixote-2.6.ebuild:
+  Restricting jython
+
+  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> quixote-2.6.ebuild:
+  Restricting pypy #404019
 
   01 Nov 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   quixote-2.6.ebuild:
@@ -131,4 +154,3 @@
  
   12 Jul 2003; Daniel Ahlberg <aliz@gentoo.org> :
   Added missing changelog entry.
-

@@ -1,6 +1,42 @@
 # ChangeLog for media-sound/nted
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/nted/ChangeLog,v 1.21 2011/05/18 17:47:47 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/nted/ChangeLog,v 1.29 2012/11/09 20:05:16 hwoarang Exp $
+
+*nted-1.10.18-r1 (09 Nov 2012)
+
+  09 Nov 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/nted-1.10.18-lilypond.patch, +nted-1.10.18-r1.ebuild, metadata.xml:
+  Add patch for fixing invalid lilypond export markup. Thanks to Christopher
+  Harvey <chris@basementcode.com>. Bug #437540. Adding him as proxy maintainer
+
+  12 Jul 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/nted-1.10.18-gcc47.patch, nted-1.10.18.ebuild:
+  Add gcc-4.7 patch. Bug #424291
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> nted-1.10.18.ebuild:
+  Remove || ( ) from LICENSE field because they are all required. Missing glib,
+  freetype, gdk-pixbuf, libX11, pango and gettext dependencies. Punt
+  unnecessary doman from src_install() and whole function as a result. Missing
+  debug in IUSE. Trick ./configure to believe gnome-extra/yelp is installed so
+  we can avoid pulling in vulnerable copy of net-libs/xulrunner wrt #416843.
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> -nted-1.10.7-r1.ebuild:
+  old
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> nted-1.10.7-r1.ebuild,
+  nted-1.10.18.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> nted-1.10.18.ebuild:
+  x86 stable wrt bug #388815
+
+  31 Oct 2011; Tony Vroon <chainsaw@gentoo.org> nted-1.10.18.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "ago" Sarubbo in bug #388815.
+
+  30 Oct 2011; Markos Chandras <hwoarang@gentoo.org> nted-1.10.18.ebuild:
+  drop debug useflag since its only purpose was to append -g to cflags. Bug
+  #388851
 
 *nted-1.10.18 (18 May 2011)
 
@@ -115,4 +151,3 @@
   Vill
   <gentoo@cconstruct.de> as proxy maintainer. Thanks to Dominik Kozaczko
   <dominik@kozaczko.info> for the initial ebuild.
-

@@ -1,6 +1,20 @@
 # ChangeLog for x11-themes/gtk-engines-aurora
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-aurora/ChangeLog,v 1.9 2011/03/02 19:25:58 signals Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-aurora/ChangeLog,v 1.12 2012/06/03 08:54:54 ssuominen Exp $
+
+  03 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -gtk-engines-aurora-1.4.ebuild:
+  old
+
+  03 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gtk-engines-aurora-1.5.1.ebuild,
+  +files/gtk-engines-aurora-1.5.1-glib-2.31.patch:
+  Fix building with dev-libs/glib >= 2.31 wrt #419393 by Pacho Ramos. Remove
+  useless libtool archive from GTK+ 2.x engine directory.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gtk-engines-aurora-1.4.ebuild,
+  gtk-engines-aurora-1.5.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   02 Mar 2011; Kevin McCarthy <signals@gentoo.org>
   gtk-engines-aurora-1.4.ebuild:

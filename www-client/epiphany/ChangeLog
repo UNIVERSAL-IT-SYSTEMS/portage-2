@@ -1,6 +1,87 @@
 # ChangeLog for www-client/epiphany
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/epiphany/ChangeLog,v 1.273 2011/04/30 17:38:32 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/epiphany/ChangeLog,v 1.287 2012/08/09 08:42:41 tetromino Exp $
+
+*epiphany-3.4.3 (09 Aug 2012)
+
+  09 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -epiphany-3.4.1.ebuild, +epiphany-3.4.3.ebuild:
+  Version bump, drop old.
+
+  19 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  epiphany-3.4.2.ebuild:
+  Fix test failure on hardened (bug #415801, thanks to Markus Oehme).
+
+*epiphany-3.4.2 (19 May 2012)
+
+  19 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -epiphany-3.4.0.1.ebuild, +epiphany-3.4.2.ebuild:
+  Version bump, drop old.
+
+  19 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> metadata.xml:
+  jit is now a global flag.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> epiphany-2.30.6-r1.ebuild,
+  epiphany-3.2.1.ebuild, epiphany-3.2.1-r1.ebuild, epiphany-3.2.2.ebuild,
+  epiphany-3.4.0.1.ebuild, epiphany-3.4.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*epiphany-3.4.1 (21 Apr 2012)
+
+  21 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +epiphany-3.4.1.ebuild:
+  Version bump.
+
+*epiphany-3.4.0.1 (14 Apr 2012)
+
+  14 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/epiphany-3.3.90-paxctl-introspection.patch, +epiphany-3.4.0.1.ebuild,
+  metadata.xml:
+  Version bump with a much improved history storage and a new gtk3.4-style
+  application menu. Add a new jit USE flag to control whether to relax memory
+  protection on PaX systems and allow using jit-enabled webkit-gtk (bug
+  #410617, thanks to Maxim Kammerer for reporting).
+
+*epiphany-3.2.2 (09 Apr 2012)
+
+  09 Apr 2012; Gilles Dartiguelongue <eva@gentoo.org> +epiphany-3.2.2.ebuild:
+  Version bump.
+
+  06 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  epiphany-3.2.1-r1.ebuild:
+  Apparently paxctl is required for pax-marking binaries that will run at build
+  time (bug #407085, thanks to Ulrich Müller).
+
+*epiphany-3.2.1-r1 (05 Mar 2012)
+
+  05 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +epiphany-3.2.1-r1.ebuild, +files/epiphany-3.2.1-paxctl-introspection.patch,
+  +files/gir-paxctl-lt-wrapper, +files/paxctl.sh:
+  Fix build problems on PaX with USE=introspection and mark /usr/bin/epiphany
+  so that it runs on PaX when webkit-gtk was built with USE=jit.
+
+  14 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  epiphany-3.2.1.ebuild:
+  Add missing dependency on gnome-icon-theme-symbolic (bug #403503).
+
+  15 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  epiphany-2.30.6-r1.ebuild:
+  QA: eautoreconf should be before gnome2_src_prepare.
+
+*epiphany-3.2.1 (06 Nov 2011)
+
+  06 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -epiphany-3.0.4.ebuild, +files/epiphany-3.2.0-optional-networkmanager.patch,
+  +epiphany-3.2.1.ebuild:
+  Bump to 3.2.1 from the gnome overlay, drop old. Notable changes: can save
+  pages as web applications, support for webkit-gtk's spell checker, UI
+  improvements, stability improvements, about:plugins.
+
+*epiphany-3.0.4 (19 Aug 2011)
+
+  19 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> -epiphany-2.30.6.ebuild,
+  +epiphany-3.0.4.ebuild:
+  Bump to 3.0.4, from gnome overlay for GNOME 3, remove old
 
   30 Apr 2011; Raúl Porcel <armin76@gentoo.org> epiphany-2.30.6-r1.ebuild:
   alpha/ia64/sparc stable wrt #364973

@@ -1,6 +1,26 @@
 # ChangeLog for dev-cpp/sparsehash
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/sparsehash/ChangeLog,v 1.7 2011/04/28 13:33:14 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/sparsehash/ChangeLog,v 1.13 2012/11/27 17:37:33 bicatali Exp $
+
+  27 Nov 2012; Sébastien Fabbro <bicatali@gentoo.org> sparsehash-2.0.2.ebuild:
+  Keyword amd64-linux and x86-linux
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> sparsehash-2.0.2.ebuild:
+  x86 stable wrt bug #428916
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> sparsehash-2.0.2.ebuild:
+  Stable for amd64, wrt bug #428916
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> sparsehash-1.10.ebuild:
+  marked x86 per bug 418449
+
+  16 Jun 2012; Agostino Sarubbo <ago@gentoo.org> sparsehash-1.10.ebuild:
+  Stable for amd64, wrt bug #418449
+
+*sparsehash-2.0.2 (16 Jun 2012)
+
+  16 Jun 2012; Tiziano Müller <dev-zero@gentoo.org> +sparsehash-2.0.2.ebuild:
+  Version bump (bug #383817).
 
   28 Apr 2011; Justin Lecher <jlec@gentoo.org> +files/1.10-gcc46.patch,
   sparsehash-1.1.ebuild, sparsehash-1.5.2.ebuild, sparsehash-1.10.ebuild:
@@ -34,4 +54,3 @@
   31 Jan 2008; Tiziano Müller <dev-zero@gentoo.org> +metadata.xml,
   +sparsehash-1.0.ebuild:
   Initial commit (bug #88638, ebuild rewritten from scratch by me).
-

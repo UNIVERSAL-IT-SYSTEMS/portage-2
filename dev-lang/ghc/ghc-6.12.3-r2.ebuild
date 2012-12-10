@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.12.3-r2.ebuild,v 1.3 2011/07/05 18:30:32 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-6.12.3-r2.ebuild,v 1.8 2012/04/30 15:38:41 grobian Exp $
 
 # Brief explanation of the bootstrap logic:
 #
@@ -58,7 +58,7 @@ SRC_URI="!binary? ( http://darcs.haskell.org/download/dist/${PV}/${P}-src.tar.bz
 	!ghcbootstrap? ( $arch_binaries )"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
+KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x86-solaris"
 IUSE="binary doc ghcbootstrap"
 
 RDEPEND="
@@ -225,7 +225,7 @@ src_prepare() {
 
 	ghc_setup_cflags
 
-	if ! use ghcbootstrap; then
+	if ! use ghcbootstrap && [[ ${CHOST} != *-darwin* && ${CHOST} != *-solaris* ]]; then
 		# Modify the wrapper script from the binary tarball to use GHC_CFLAGS.
 		# See bug #313635.
 		sed -i -e "s|\"\$topdir\"|\"\$topdir\" ${GHC_CFLAGS}|" \
@@ -459,7 +459,7 @@ src_compile() {
 	if ! use binary; then
 		# LC_ALL needs to workaround ghc's ParseCmm failure on some (es) locales
 		# bug #202212 / http://hackage.haskell.org/trac/ghc/ticket/4207
-		LC_ALL=C emake all || die "make failed"
+		LC_ALL=C emake -j1 all || die "make failed"
 	fi # ! use binary
 }
 

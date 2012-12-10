@@ -1,6 +1,292 @@
 # ChangeLog for app-editors/emacs-vcs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-vcs/ChangeLog,v 1.58 2011/08/01 07:29:29 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-vcs/ChangeLog,v 1.120 2012/11/24 17:56:52 ulm Exp $
+
+*emacs-vcs-24.2.90 (24 Nov 2012)
+
+  24 Nov 2012; Ulrich Müller <ulm@gentoo.org>
+  -files/emacs-24.0.92-ns-appdirs.patch, +emacs-vcs-24.2.90.ebuild,
+  emacs-vcs-24.2.9999-r1.ebuild, emacs-vcs-24.3.9999.ebuild:
+  Pretest for Emacs 24.3. Readd support for aqua USE flag, copied from
+  emacs-24.2.ebuild. Rekeyword for ~x64-macos. Remove stale patch.
+
+*emacs-vcs-24.3.9999 (02 Nov 2012)
+*emacs-vcs-24.2.9999-r1 (02 Nov 2012)
+
+  02 Nov 2012; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-24.2.9999.ebuild,
+  +emacs-vcs-24.2.9999-r1.ebuild, +emacs-vcs-24.3.9999.ebuild:
+  The upstream repository has been branched for the 24.3 release. 24.2.9999-r1
+  is the live ebuild for the emacs-24 branch, 24.3.9999 for the trunk.
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.2.9999.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  02 Oct 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.2.9999.ebuild:
+  Passing CC to emake seems no longer necessary. Use --program-transform-name
+  config option instead of moving the executable.
+
+  25 Sep 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.2.9999.ebuild:
+  Specify LICENSE more precisely, "as-is" is really HPND.
+
+  18 Sep 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.2.9999.ebuild:
+  Bootstrapping in src_compile shouldn't be needed, because we already call
+  eautoreconf in src_prepare. Use lightweight checkout for WORKDIR, bug 434746.
+  Fix LICENSE to GPL-3+ and FDL-1.3+.
+
+  13 Sep 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.2.9999.ebuild:
+  Upstream has changed the configure option for toolkit selection, gtk
+  defaults to GTK+3 now. Enable gtk3 per IUSE default and explicitly pass
+  --with-x-toolkit=gtk2 for USE="gtk -gtk3".
+
+  09 Sep 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.2.9999.ebuild:
+  Remove sed for freebsd crt*.o files. This has been applied upstream.
+
+  07 Sep 2012; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  Add description for source USE flag.
+
+  23 Aug 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.2.9999.ebuild:
+  Set option to prevent installation of emacs symlink.
+
+  21 Aug 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.2.9999.ebuild:
+  Upstream changed hard link for emacs binary to symbolic link. Remove the
+  symlink and rename the binary. Bug 432194.
+
+*emacs-vcs-24.2.9999 (15 Aug 2012)
+
+  15 Aug 2012; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-24.1.9999-r1.ebuild,
+  +emacs-vcs-24.2.9999.ebuild:
+  Bump live ebuild to reflect upstream change of version number.
+
+  01 Aug 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.1.9999-r1.ebuild:
+  Add ~amd64-fbsd keyword, with permission from ryao.
+
+  01 Aug 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.1.9999-r1.ebuild:
+  Don't install src/s, upstream has removed all files relevant for us.
+
+  27 Jul 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.1.9999-r1.ebuild:
+  Fix building on FreeBSD.
+
+  14 Jul 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.1.9999-r1.ebuild:
+  Reflect upstream renaming of configure.in to configure.ac.
+
+  29 Jun 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.1.9999-r1.ebuild,
+  metadata.xml:
+  Add built with use dependency for emacs-common-gentoo[games?], bug 368647.
+
+  24 Jun 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.1.9999-r1.ebuild:
+  Store version information in system-configuration-options variable.
+
+  10 Jun 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.1.9999-r1.ebuild:
+  Game score files moved to app-emacs/emacs-common-gentoo. Configure doesn't
+  support the --disable-maintainer-mode option any more, so remove it.
+  USE=wide-int is independent of X, move option to correct place.
+
+  07 Jun 2012; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-24.0.96.ebuild,
+  -emacs-vcs-24.0.97.ebuild, -emacs-vcs-24.0.9999-r4.ebuild:
+  Remove old.
+
+  04 Jun 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.1.9999-r1.ebuild,
+  metadata.xml:
+  Add pax_kernel USE flag to trunk version, bug 411439.
+
+*emacs-vcs-24.1.9999-r1 (01 Jun 2012)
+
+  01 Jun 2012; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-24.1.9999.ebuild,
+  +emacs-vcs-24.1.9999-r1.ebuild:
+  Install live version as emacs-24-vcs, in order to avoid collisions with the
+  upcoming 24.1 release.
+
+  24 May 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.0.97.ebuild,
+  emacs-vcs-24.0.9999-r4.ebuild, emacs-vcs-24.1.9999.ebuild:
+  Delete unused local variable.
+
+  22 May 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.1.9999.ebuild:
+  Directory src/m is gone.
+
+  22 May 2012; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-24.0.94.ebuild,
+  -emacs-vcs-24.0.95.ebuild, emacs-vcs-24.0.97.ebuild,
+  emacs-vcs-24.0.9999-r4.ebuild, emacs-vcs-24.1.9999.ebuild:
+  Call epatch_user to allow for user patches. Remove old.
+
+  19 May 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.0.97.ebuild,
+  emacs-vcs-24.0.9999-r4.ebuild, emacs-vcs-24.1.9999.ebuild:
+  Don't try to rebuild the Info dir file if /usr/share/info doesn't exist.
+
+*emacs-vcs-24.0.97 (17 May 2012)
+
+  17 May 2012; Ulrich Müller <ulm@gentoo.org> +emacs-vcs-24.0.97.ebuild:
+  New pretest version.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> emacs-vcs-24.0.94.ebuild,
+  emacs-vcs-24.0.95.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  03 May 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.0.96.ebuild,
+  emacs-vcs-24.0.9999-r4.ebuild, emacs-vcs-24.1.9999.ebuild:
+  Change pkgconfig dependency to virtual/pkgconfig.
+
+  30 Apr 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-24.0.96.ebuild,
+  emacs-vcs-24.0.9999-r4.ebuild, emacs-vcs-24.1.9999.ebuild:
+  Assigning ALLOWED_FLAGS is not necessary with recent flag-o-matic.eclass.
+  Quote strings with special pattern characters.
+
+*emacs-vcs-24.0.96 (27 Apr 2012)
+
+  27 Apr 2012; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-24.0.93.ebuild,
+  +emacs-vcs-24.0.96.ebuild:
+  New pretest version. Remove old.
+
+*emacs-vcs-24.1.9999 (09 Apr 2012)
+
+  09 Apr 2012; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-24.0.9999-r50.ebuild,
+  +emacs-vcs-24.1.9999.ebuild:
+  Bump live ebuild for trunk to reflect upstream change of version number.
+
+*emacs-vcs-24.0.9999-r50 (07 Apr 2012)
+*emacs-vcs-24.0.9999-r4 (07 Apr 2012)
+
+  07 Apr 2012; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-23.4.9999.ebuild,
+  -emacs-vcs-24.0.9999-r3.ebuild, +emacs-vcs-24.0.9999-r4.ebuild,
+  +emacs-vcs-24.0.9999-r50.ebuild:
+  The upstream repository has been branched for the 24.1 release. 24.0.9999-r4
+  is the live ebuild for the emacs-24 branch, 24.0.9999-r50 for the trunk.
+  Remove emacs-23 live ebuild.
+
+*emacs-vcs-24.0.95 (02 Apr 2012)
+
+  02 Apr 2012; Ulrich Müller <ulm@gentoo.org> +emacs-vcs-24.0.95.ebuild:
+  New pretest version. Fix SRC_URI to use mirror://gnu-alpha/.
+
+*emacs-vcs-24.0.94 (27 Feb 2012)
+
+  27 Feb 2012; Ulrich Müller <ulm@gentoo.org> +emacs-vcs-24.0.94.ebuild:
+  New pretest version.
+
+  10 Feb 2012; Fabian Groffen <grobian@gentoo.org> emacs-vcs-24.0.93.ebuild:
+  Marked ~x64-macos
+
+  10 Feb 2012; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-24.0.92-r1.ebuild,
+  +files/emacs-24.0.92-ns-appdirs.patch, emacs-vcs-24.0.93.ebuild:
+  Add Cocoa support, bug 399059. Remove old.
+
+*emacs-vcs-24.0.93 (29 Jan 2012)
+
+  29 Jan 2012; Ulrich Müller <ulm@gentoo.org> +emacs-vcs-24.0.93.ebuild:
+  New pretest version.
+
+  28 Jan 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-23.4.9999.ebuild,
+  emacs-vcs-24.0.9999-r3.ebuild:
+  USE="athena Xaw3d" is a valid combination, so don't warn.
+  Add a warning for USE="-gtk gtk3".
+
+*emacs-vcs-23.4.9999 (22 Jan 2012)
+
+  22 Jan 2012; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-23.3.90.ebuild,
+  -emacs-vcs-23.3.9999-r1.ebuild, +emacs-vcs-23.4.9999.ebuild:
+  Bump emacs-23 live ebuild to reflect upstream change of version number.
+  Remove old.
+
+*emacs-vcs-23.3.90 (15 Jan 2012)
+
+  15 Jan 2012; Ulrich Müller <ulm@gentoo.org> +emacs-vcs-23.3.90.ebuild:
+  Pretest for Emacs 23.4.
+
+*emacs-vcs-24.0.9999-r3 (13 Jan 2012)
+
+  13 Jan 2012; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-24.0.9999-r2.ebuild,
+  +emacs-vcs-24.0.9999-r3.ebuild:
+  Unchanged revbump for EDE security fix, bug 398227.
+
+*emacs-vcs-24.0.92-r1 (09 Jan 2012)
+*emacs-vcs-23.3.9999-r1 (09 Jan 2012)
+
+  09 Jan 2012; Ulrich Müller <ulm@gentoo.org> -emacs-vcs-23.3.9999.ebuild,
+  +emacs-vcs-23.3.9999-r1.ebuild, -emacs-vcs-24.0.91.ebuild,
+  -emacs-vcs-24.0.92.ebuild, +emacs-vcs-24.0.92-r1.ebuild:
+  Fix security flaw in EDE (CVE-2012-0035), bug 398227. Unchanged revbump for
+  the emacs-23 live ebuild, so that users will pick up the fix. The bzr trunk
+  doesn't have the bugfix yet, so its ebuild will follow later.
+
+  08 Jan 2012; Ulrich Müller <ulm@gentoo.org> emacs-vcs-23.3.9999.ebuild,
+  emacs-vcs-24.0.91.ebuild, emacs-vcs-24.0.92.ebuild,
+  emacs-vcs-24.0.9999-r2.ebuild:
+  Restore fallback code in pkg_preinst because of failures with paludis.
+
+  05 Jan 2012; Ulrich Mueller <ulm@gentoo.org> emacs-vcs-23.3.9999.ebuild,
+  emacs-vcs-24.0.91.ebuild, emacs-vcs-24.0.92.ebuild,
+  emacs-vcs-24.0.9999-r2.ebuild:
+  Move libxml2 out of the USE=X conditional. A build-time dependency on
+  pkgconfig is needed only in some configurations.
+
+  15 Dec 2011; Ulrich Mueller <ulm@gentoo.org> emacs-vcs-23.3.9999.ebuild,
+  emacs-vcs-24.0.91.ebuild, emacs-vcs-24.0.92.ebuild,
+  emacs-vcs-24.0.9999-r2.ebuild:
+  Add EPREFIX to locallisppath, bug 394707.
+
+*emacs-vcs-24.0.9999-r2 (13 Dec 2011)
+
+  13 Dec 2011; Ulrich Mueller <ulm@gentoo.org> emacs-vcs-23.3.9999.ebuild,
+  emacs-vcs-24.0.91.ebuild, emacs-vcs-24.0.92.ebuild,
+  -emacs-vcs-24.0.9999-r1.ebuild, +emacs-vcs-24.0.9999-r2.ebuild:
+  Add /etc/emacs to the lisp load-path; site-start.el will move to this new
+  location.
+
+  06 Dec 2011; Ulrich Mueller <ulm@gentoo.org> -emacs-vcs-24.0.90.ebuild,
+  emacs-vcs-24.0.91.ebuild, emacs-vcs-24.0.92.ebuild,
+  emacs-vcs-24.0.9999-r1.ebuild:
+  Call econf with --disable-maintainer-mode option. Replace remaining echo
+  commands by einfo/elog. Remove old.
+
+*emacs-vcs-24.0.92 (01 Dec 2011)
+
+  01 Dec 2011; Ulrich Mueller <ulm@gentoo.org> +emacs-vcs-24.0.92.ebuild:
+  New pretest version.
+
+  28 Nov 2011; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
+  Update longdescription.
+
+  06 Nov 2011; Ulrich Mueller <ulm@gentoo.org> emacs-vcs-24.0.91.ebuild,
+  emacs-vcs-24.0.9999-r1.ebuild:
+  Remove obsolete code in pkg_preinst().
+
+  03 Nov 2011; Ulrich Mueller <ulm@gentoo.org> emacs-vcs-23.3.9999.ebuild,
+  emacs-vcs-24.0.91.ebuild, emacs-vcs-24.0.9999-r1.ebuild:
+  Adjust the set of source files installed with USE=source.
+
+*emacs-vcs-24.0.91 (31 Oct 2011)
+
+  31 Oct 2011; Ulrich Mueller <ulm@gentoo.org> +emacs-vcs-24.0.91.ebuild:
+  New pretest version.
+
+  28 Sep 2011; Ulrich Mueller <ulm@gentoo.org> emacs-vcs-23.3.9999.ebuild,
+  emacs-vcs-24.0.90.ebuild, emacs-vcs-24.0.9999-r1.ebuild:
+  Fix dependency on libpng.
+
+*emacs-vcs-24.0.90 (26 Sep 2011)
+
+  26 Sep 2011; Ulrich Mueller <ulm@gentoo.org> emacs-vcs-23.3.9999.ebuild,
+  +emacs-vcs-24.0.90.ebuild, emacs-vcs-24.0.9999-r1.ebuild:
+  First pretest for Emacs 24.1. Merge changes from Emacs overlay: Link against
+  libXaw with USE=athena. Change [ ] to [[ ]] throughout. Remove outdated
+  warning.
+
+  09 Sep 2011; Ulrich Mueller <ulm@gentoo.org> emacs-vcs-23.3.9999.ebuild:
+  Merge changes from Emacs overlay.
+
+  19 Aug 2011; Ulrich Mueller <ulm@gentoo.org> emacs-vcs-23.3.9999.ebuild,
+  emacs-vcs-24.0.9999-r1.ebuild:
+  USE flags gconf and gsettings no longer exclude each other. Record bzr branch
+  and revision in the binary.
+
+  13 Aug 2011; Ulrich Mueller <ulm@gentoo.org> emacs-vcs-23.3.9999.ebuild,
+  emacs-vcs-24.0.9999-r1.ebuild:
+  Don't RESTRICT=strip. Users who need debugging symbols can control this with
+  the FEATURES variable.
+
+  02 Aug 2011; Matt Turner <mattst88@gentoo.org> emacs-vcs-23.3.9999.ebuild,
+  emacs-vcs-24.0.9999-r1.ebuild:
+  Renamed x11-libs/Xaw3d to x11-libs/libXaw3d.
 
   01 Aug 2011; Ulrich Mueller <ulm@gentoo.org> emacs-vcs-23.3.9999.ebuild,
   emacs-vcs-24.0.9999-r1.ebuild:

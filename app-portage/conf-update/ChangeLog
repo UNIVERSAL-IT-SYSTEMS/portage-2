@@ -1,6 +1,44 @@
 # ChangeLog for app-portage/conf-update
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/conf-update/ChangeLog,v 1.27 2011/01/09 14:27:51 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-portage/conf-update/ChangeLog,v 1.37 2012/09/30 18:01:12 armin76 Exp $
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> conf-update-1.0.ebuild,
+  conf-update-1.0-r1.ebuild, conf-update-1.0.1.ebuild,
+  conf-update-1.0.2.ebuild:
+  Drop alpha keywords
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> conf-update-1.0.ebuild,
+  conf-update-1.0-r1.ebuild, conf-update-1.0.1.ebuild,
+  conf-update-1.0.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> conf-update-1.0.2.ebuild:
+  Marking conf-update-1.0.2 ppc for bug 408903
+
+  22 Mar 2012; Jeff Horelick <jdhore@gentoo.org> conf-update-1.0.2.ebuild:
+  marked x86 per bug 408903
+
+  20 Mar 2012; Agostino Sarubbo <ago@gentoo.org> conf-update-1.0.2.ebuild:
+  Stable for amd64, wrt bug #408903
+
+  19 Feb 2012; Tobias Klausmann <klausman@gentoo.org> conf-update-1.0.1.ebuild:
+  Stable on alpha, bug #393703
+
+*conf-update-1.0.2 (17 Feb 2012)
+
+  17 Feb 2012; Sebastian Pipping <sping@gentoo.org> +conf-update-1.0.2.ebuild:
+  Fixes segfault (bug #402139, patch by Vincent Huisman), misc ebuild
+  improvements by Chema Alonso (nimiux)
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> conf-update-1.0.1.ebuild:
+  Marking conf-update-1.0.1 ppc for bug 393703
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  conf-update-1.0.1.ebuild:
+  x86 stable wrt bug #393703
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org> conf-update-1.0.1.ebuild:
+  Stable for AMD64, wrt bug #393703
 
   09 Jan 2011; Brent Baude <ranger@gentoo.org> conf-update-1.0-r1.ebuild:
   Marking conf-update-1.0-r1 ppc for bug 338414

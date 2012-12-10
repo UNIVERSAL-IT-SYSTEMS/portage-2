@@ -1,15 +1,15 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/gdm-2.20.11.ebuild,v 1.11 2011/03/16 10:25:58 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/gdm-2.20.11.ebuild,v 1.15 2012/09/27 08:54:42 tetromino Exp $
 
 EAPI="2"
 
-inherit eutils pam gnome2
+inherit eutils pam gnome2 user
 
 DESCRIPTION="GNOME Display Manager"
-HOMEPAGE="http://www.gnome.org/projects/gdm/"
+HOMEPAGE="https://live.gnome.org/GDM"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="alpha amd64 arm ia64 ppc ppc64 sh sparc x86 ~x86-fbsd"
 
@@ -59,7 +59,7 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	x11-proto/inputproto
 	>=dev-util/intltool-0.35
-	>=dev-util/pkgconfig-0.19
+	virtual/pkgconfig
 	>=app-text/scrollkeeper-0.1.4
 	>=app-text/gnome-doc-utils-0.3.2"
 

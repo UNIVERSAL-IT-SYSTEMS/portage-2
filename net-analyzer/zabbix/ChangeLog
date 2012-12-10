@@ -1,6 +1,366 @@
 # ChangeLog for net-analyzer/zabbix
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/zabbix/ChangeLog,v 1.54 2011/07/29 22:39:39 patrick Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/zabbix/ChangeLog,v 1.110 2012/10/05 14:31:07 mattm Exp $
+
+*zabbix-2.0.3 (05 Oct 2012)
+
+  05 Oct 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-2.0.3.ebuild:
+  Bump for Zabbix 2.0.3
+
+*zabbix-2.0.2-r2 (02 Oct 2012)
+
+  02 Oct 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-2.0.2-r2.ebuild:
+  Fixes for bug 435016, bug 433090, and bug 412247.
+
+  30 Aug 2012; Agostino Sarubbo <ago@gentoo.org> zabbix-1.8.15.ebuild:
+  Stable for amd64, wrt bug #428372
+
+  30 Aug 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> zabbix-1.8.15.ebuild:
+  x86 stable wrt bug #428372
+
+*zabbix-1.8.15 (21 Aug 2012)
+
+  21 Aug 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.15.ebuild,
+  -zabbix-1.8.11-r2.ebuild, -zabbix-1.8.14.ebuild, -zabbix-2.0.2.ebuild:
+  Bump for Zabbix 1.8.15 Removed releases with recent security vulnerabilities.
+  Note -- 1.8.15 will become the new stable after I have time to do more testing
+  with it. 1.8.15 will be the last stable of the 1.8.x train which a 2.0.x
+  stable will not immediately supersede. 2.0.x releases are currently at
+  2.0.2..we'll probably move 2.0.3 or 2.0.4 out of testing arches to stable if
+  the amount of bug fixing churn slows down significantly.
+
+*zabbix-2.0.2-r1 (01 Aug 2012)
+
+  01 Aug 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-2.0.2-r1.ebuild,
+  files/2.0/init.d/zabbix-agentd, files/2.0/init.d/zabbix-server:
+  Fixes for bug 426818 and bug 427740.  Modified init scripts to create
+  /var/run/zabbix if needed and added 'sysvipc' to php dependency use flags.
+
+*zabbix-2.0.2 (01 Aug 2012)
+
+  01 Aug 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-2.0.2.ebuild,
+  -zabbix-2.0.1.ebuild:
+  Initial bump for 2.0.2, Fixes Security Bug - Removed prior 2.0.x releases.
+  Will fix other lingering 2.0.x issues with -r1 release soon.
+
+*zabbix-2.0.1 (02 Jul 2012)
+
+  02 Jul 2012; Matthew Marlowe <mattm@gentoo.org> -zabbix-1.8.13-r1.ebuild,
+  -zabbix-2.0.0-r1.ebuild, -zabbix-2.0.1_rc2.ebuild, +zabbix-2.0.1.ebuild:
+  Bump for Zabbix 2.0.1 - Zabbix 2.0 releases are no longer package masked,
+  moved to ~amd64 and ~x86.
+
+*zabbix-1.8.14 (29 Jun 2012)
+
+  29 Jun 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.14.ebuild:
+  Bump for Zabbix 1.8.14 which seems to be just bug fixes for legacy 1.8.x tree
+
+  20 Jun 2012; Matthew Marlowe <mattm@gentoo.org> -zabbix-1.8.10-r1.ebuild,
+  -zabbix-1.8.10-r2.ebuild, -zabbix-1.8.11.ebuild, -zabbix-1.8.11-r1.ebuild,
+  -zabbix-1.8.12.ebuild:
+  Remove obsolete ebuilds - 1.8.11r2 is current stable, 1.8.13-r1 is future
+  stable, 1.8.14 will enter testing when released, and latest 2.0.1 will be the
+  first 2.0.x ebuild to be unmasked for testing on ~amd and ~x86 in the next
+  week.
+
+*zabbix-2.0.1_rc2 (20 Jun 2012)
+
+  20 Jun 2012; Matthew Marlowe <mattm@gentoo.org>
+  files/1.6.6/zabbix_proxy.conf, files/1.6.6/zabbix_server.conf,
+  files/1.6.6/zabbix_trapper.conf, +zabbix-2.0.1_rc2.ebuild:
+  Bump for Zabbix 2.0.1_rc2 which is currently masked. If no major bugs
+  reported, will release into testing arches soon making the 2.0.x releases
+  ~arch while keeping 1.8.x releases in stable. Also, minor mysql socket file
+  path update in default config files to fix bug #377241 which has been waiting
+  patiently for closure.
+
+  12 Jun 2012; Zac Medico <zmedico@gentoo.org> zabbix-1.8.10-r1.ebuild,
+  zabbix-1.8.10-r2.ebuild, zabbix-1.8.11-r1.ebuild, zabbix-1.8.11-r2.ebuild,
+  zabbix-1.8.11.ebuild, zabbix-1.8.12.ebuild, zabbix-1.8.13-r1.ebuild,
+  zabbix-2.0.0-r1.ebuild, zabbix-2.0.0.ebuild:
+  inherit user for egethome, enewgroup, and enewuser
+
+*zabbix-2.0.0-r1 (05 Jun 2012)
+
+  05 Jun 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-2.0.0-r1.ebuild:
+  Added nls use flag to php frontend dependency and ensured the db upgrade
+  patches from 1.8.x are installed in /usr/share/zabbix/upgrades. Fix bug
+  #417931 and #417933.
+
+*zabbix-2.0.0 (22 May 2012)
+
+  22 May 2012; Matthew Marlowe <mattm@gentoo.org>
+  files/2.0/init.d/zabbix-agentd, -zabbix-2.0.0_rc6.ebuild,
+  -zabbix-2.0.0_rc6-r1.ebuild, +zabbix-2.0.0.ebuild,
+  +files/2.0/init.d/zabbix-server:
+  Bump for zabbix 2.0 plus minor init script and elog msg updates
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> zabbix-1.8.11-r2.ebuild:
+  x86 stable wrt bug #414551
+
+*zabbix-2.0.0_rc6-r1 (21 May 2012)
+
+  21 May 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-2.0.0_rc6-r1.ebuild:
+  Update dependencies for Zabbix 2.0rc6 per Installation Guide Requirements
+  Document at
+  http://www.zabbix.com/documentation/2.0/manual/installation/requirements
+
+*zabbix-2.0.0_rc6 (19 May 2012)
+
+  19 May 2012; Matthew Marlowe <mattm@gentoo.org> -zabbix-2.0.0_rc5.ebuild,
+  +zabbix-2.0.0_rc6.ebuild:
+  2.0.0rc6 Version Bump
+
+  18 May 2012; Matthew Marlowe <mattm@gentoo.org>
+  -files/1.6.6/init.d/zabbix-agentd-r1, -zabbix-1.8.13.ebuild,
+  -zabbix-2.0.0_rc4.ebuild, +zabbix-2.0.0_rc5.ebuild,
+  +files/2.0/init.d/zabbix-agentd:
+  remove testing ebuilds that reference files/1.6.6/init.d/zabbix-agentd-r1.
+  That file has been moved to 2.0/init.d/zabbix-agentd and will be referenced
+  in new ebuilds.
+
+  18 May 2012; Matthew Marlowe <mattm@gentoo.org>
+  +files/2.0/init.d/zabbix-agentd, -files/1.6.6/init.d/zabbix-agentd-r1,
+  -zabbix-2.0.0_rc4.ebuild, +zabbix-2.0.0_rc5.ebuild:
+  removed default on setting for sqlite use flag, added warning about rc5 db
+  upgrade, revised agentd init file
+
+*zabbix-2.0.0_rc5 (18 May 2012)
+
+  18 May 2012; Matthew Marlowe <mattm@gentoo.org> -zabbix-2.0.0_rc4.ebuild,
+  +zabbix-2.0.0_rc5.ebuild:
+  2.0rc5 version bump
+
+*zabbix-1.8.13-r1 (15 May 2012)
+
+  15 May 2012; Matthew Marlowe <mattm@gentoo.org> -zabbix-1.8.12-r1.ebuild,
+  +zabbix-1.8.13-r1.ebuild:
+  Revert non-maintainer commit relating to agentd init script. Bug 415941.
+
+*zabbix-2.0.0_rc4 (12 May 2012)
+*zabbix-1.8.13 (12 May 2012)
+
+  12 May 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.13.ebuild,
+  +zabbix-2.0.0_rc4.ebuild:
+  Bump for 1.8.13 and 2.0.0rc4
+
+*zabbix-1.8.12-r1 (11 May 2012)
+
+  11 May 2012; Peter Volkov <pva@gentoo.org>
+  +files/1.6.6/init.d/zabbix-agentd-r1, +zabbix-1.8.12-r1.ebuild:
+  Fix problem with agentd service startup in openvz/vserver environment:
+  processes inside containers are visible from host, and this precludes start
+  of agentd as start-stop-daemon conciders agentd running.
+
+  05 May 2012; Markos Chandras <hwoarang@gentoo.org> zabbix-1.8.11-r2.ebuild:
+  Stable on amd64 wrt bug #414551
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> zabbix-1.8.10-r1.ebuild,
+  zabbix-1.8.10-r2.ebuild, zabbix-1.8.11.ebuild, zabbix-1.8.11-r1.ebuild,
+  zabbix-1.8.11-r2.ebuild, zabbix-1.8.12.ebuild, zabbix-2.0.0_rc3.ebuild,
+  zabbix-2.0.0_rc3-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*zabbix-2.0.0_rc3-r1 (27 Apr 2012)
+
+  27 Apr 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-2.0.0_rc3-r1.ebuild:
+  Number of small fixes for 2.0.0rc3 ebuild, put zabbix java stuff into
+  /opt/zabbix_java/
+
+*zabbix-2.0.0_rc3 (24 Apr 2012)
+*zabbix-1.8.12 (24 Apr 2012)
+
+  24 Apr 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.12.ebuild,
+  -zabbix-2.0.0_rc2.ebuild, +zabbix-2.0.0_rc3.ebuild:
+  Bumps for Zabbix 2.0rc3 and 1.8.12
+
+*zabbix-1.8.11-r2 (19 Apr 2012)
+
+  19 Apr 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.11-r2.ebuild,
+  zabbix-2.0.0_rc2.ebuild:
+  Update zabbix dependencies, not compatible with fping >= 3.0, Tracking Bug
+  412659
+
+  16 Apr 2012; Matthew Marlowe <mattm@gentoo.org> zabbix-2.0.0_rc2.ebuild:
+  Zabbix 2.0 changed configure option for postgres from pgsql to postgresql.
+  Testing ebuild updated
+
+  16 Apr 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-2.0.0_rc2.ebuild,
+  metadata.xml:
+  Initial work towards resolving bug 412247 and bug 410183
+
+*zabbix-2.0.0_rc2 (16 Apr 2012)
+
+  16 Apr 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-2.0.0_rc2.ebuild,
+  metadata.xml:
+  Testing initial support for Zabbix 2.0 release candidates
+
+  09 Apr 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.11-r1.ebuild,
+  metadata.xml:
+  Added support for static binary build and reviewed all use flags and
+  clarified descriptions in metadata
+
+*zabbix-1.8.11-r1 (09 Apr 2012)
+
+  09 Apr 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.11-r1.ebuild,
+  metadata.xml:
+  add support for odbc and iodbc use flags to enable zabbix database monitoring
+  with either unixodbc or iodbc libraries
+
+  21 Mar 2012; Matthew Marlowe <mattm@gentoo.org>
+  -files/zabbix-1.8.2-as-needed.patch, -files/zabbix-1.8.3-as-needed.patch,
+  zabbix-1.8.11.ebuild, -files/zabbix-as-needed.patch:
+  Removed legacy unused patches
+
+  21 Mar 2012; Matthew Marlowe <mattm@gentoo.org> zabbix-1.8.11.ebuild:
+  zabbix-1.8.11 ebuild working fine on dev boxes, pushing out to testing on
+  amd64 and x86 arches
+
+  21 Mar 2012; Matthew Marlowe <mattm@gentoo.org> zabbix-1.8.11.ebuild:
+  1.8.11 seems to no longer require the as-needed patch as all the automake
+  changes in the patch appear to be implemented in the release
+
+  20 Mar 2012; Matthew Marlowe <mattm@gentoo.org> metadata.xml:
+  Received patricks ok to remove him from maintainer list in metadata
+
+*zabbix-1.8.11 (20 Mar 2012)
+
+  20 Mar 2012; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.11.ebuild:
+  Bump zabbix 1.8.11 release, appears bug fix only, masking temporarily while I
+  confirm no patches broke with new release
+
+*zabbix-1.8.10-r2 (20 Mar 2012)
+
+  20 Mar 2012; Matthew Marlowe <mattm@gentoo.org> zabbix-1.8.10-r1.ebuild,
+  +zabbix-1.8.10-r2.ebuild, -zabbix-1.9.5-r1.ebuild:
+  Reverted non maintainer commit that might have broken only stable release,
+  moved changes to new r2 bump, applied user supplied patch to fix changes,
+  marked new bump testing, removed obsolete alpha release
+
+  19 Mar 2012; Pacho Ramos <pacho@gentoo.org> zabbix-1.8.10-r1.ebuild,
+  zabbix-1.9.5-r1.ebuild:
+  Move from sqlite3 USE flag to sqlite, bug #251394 (fixed with Patrick
+  permission).
+
+  21 Feb 2012; Matthew Marlowe <mattm@gentoo.org> -zabbix-1.8.7-r2.ebuild,
+  -zabbix-1.8.7-r3.ebuild, -zabbix-1.8.8-r2.ebuild, -zabbix-1.8.8-r3.ebuild,
+  -zabbix-1.8.9-r2.ebuild, -zabbix-1.8.9-r3.ebuild, -zabbix-1.9.4-r1.ebuild:
+  Removed older ebuilds impacted by various vulnerabilities
+
+  08 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> zabbix-1.8.10-r1.ebuild:
+  x86 stable wrt bug #396495
+
+  04 Jan 2012; Agostino Sarubbo <ago@gentoo.org> zabbix-1.8.10-r1.ebuild:
+  Stable for AMD64, wrt security bug #396495
+
+*zabbix-1.9.5-r1 (31 Dec 2011)
+*zabbix-1.9.4-r1 (31 Dec 2011)
+*zabbix-1.8.10-r1 (31 Dec 2011)
+*zabbix-1.8.9-r3 (31 Dec 2011)
+*zabbix-1.8.9-r2 (31 Dec 2011)
+*zabbix-1.8.8-r3 (31 Dec 2011)
+*zabbix-1.8.8-r2 (31 Dec 2011)
+*zabbix-1.8.7-r3 (31 Dec 2011)
+*zabbix-1.8.7-r2 (31 Dec 2011)
+
+  31 Dec 2011; Christian Ruppert <idl0r@gentoo.org> -zabbix-1.8.7.ebuild,
+  -zabbix-1.8.7-r1.ebuild, +zabbix-1.8.7-r2.ebuild, +zabbix-1.8.7-r3.ebuild,
+  -zabbix-1.8.8.ebuild, -zabbix-1.8.8-r1.ebuild, +zabbix-1.8.8-r2.ebuild,
+  +zabbix-1.8.8-r3.ebuild, -zabbix-1.8.9.ebuild, -zabbix-1.8.9-r1.ebuild,
+  +zabbix-1.8.9-r2.ebuild, +zabbix-1.8.9-r3.ebuild, -zabbix-1.8.10.ebuild,
+  +zabbix-1.8.10-r1.ebuild, -zabbix-1.9.4.ebuild, +zabbix-1.9.4-r1.ebuild,
+  -zabbix-1.9.5.ebuild, +zabbix-1.9.5-r1.ebuild,
+  files/1.4.6/init.d/zabbix-agentd, files/1.4.6/init.d/zabbix-server,
+  files/1.6.5/init.d/zabbix-agentd, files/1.6.5/init.d/zabbix-server,
+  files/1.6.6/init.d/zabbix-agentd, files/1.6.6/init.d/zabbix-proxy,
+  files/1.6.6/init.d/zabbix-server:
+  Revbump. Don't use deprecated start-stop-daemon options, bug 376865.
+
+  30 Dec 2011; Lars Wendler <polynomial-c@gentoo.org>
+  files/1.6.6/init.d/zabbix-agentd, files/1.6.6/init.d/zabbix-proxy,
+  files/1.6.6/init.d/zabbix-server:
+  non-maintainer commit: Fixed init scripts to not use s-s-d's deprecated
+  -c/--chuid option anymore. Acked by bonsaikitten.
+
+*zabbix-1.8.10 (30 Dec 2011)
+
+  30 Dec 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -zabbix-1.8.10_rc1.ebuild, +zabbix-1.8.10.ebuild:
+  non-maintainer commit: Version bump (with kind permission from bonsaikitten).
+  Removed old. This fixes bug #395975 and should help solving bug #396495.
+
+*zabbix-1.8.10_rc1 (16 Dec 2011)
+
+  16 Dec 2011; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.10_rc1.ebuild:
+  Bump production to 1.8.10rc1 which includes bug and security fixes - remove
+  very old releases from tree, some of which have known vulnerabilities
+
+*zabbix-1.8.9-r1 (29 Nov 2011)
+
+  29 Nov 2011; Matthew Marlowe <mattm@gentoo.org> zabbix-1.8.9.ebuild,
+  +zabbix-1.8.9-r1.ebuild, +files/zabbix-1.8.9-as-needed.patch:
+  Updated as needed patch for zabbix 1.8.9, deprecated r0 ebuild which uses old
+  patch, fix in 1.8.9-r1
+
+*zabbix-1.8.9 (25 Nov 2011)
+
+  25 Nov 2011; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.9.ebuild:
+  Bump for Zabbix 1.8.9 production release
+
+  03 Nov 2011; Mike Frysinger <vapier@gentoo.org> zabbix-1.8.3.ebuild,
+  zabbix-1.8.5.ebuild, zabbix-1.8.6.ebuild, zabbix-1.8.7.ebuild,
+  zabbix-1.8.7-r1.ebuild, zabbix-1.8.8.ebuild, zabbix-1.8.8-r1.ebuild,
+  zabbix-1.9.4.ebuild, zabbix-1.9.5.ebuild:
+  Use new egethome helper rather than calling getent directly.
+
+  15 Oct 2011; Markos Chandras <hwoarang@gentoo.org> zabbix-1.8.7-r1.ebuild:
+  Stable on amd64 wrt bug #386175
+
+  14 Oct 2011; Andreas Schuerch <nativemad@gentoo.org> zabbix-1.8.7-r1.ebuild:
+  x86 stable, bug 386175
+
+*zabbix-1.8.8-r1 (09 Oct 2011)
+*zabbix-1.8.7-r1 (09 Oct 2011)
+
+  09 Oct 2011; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.7-r1.ebuild,
+  +zabbix-1.8.8-r1.ebuild:
+  Fix oracle use flag dependencies for Zabbix 1.8.7 and 1.8.8 per Bug #386457
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> zabbix-1.8.7.ebuild:
+  x86 stable wrt security bug #386175
+
+*zabbix-1.8.8 (01 Oct 2011)
+
+  01 Oct 2011; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.8.ebuild:
+  Bump for minor production update to version 1.8.8
+
+*zabbix-1.8.7 (01 Sep 2011)
+
+  01 Sep 2011; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.7.ebuild:
+  Version bump to 1.8.7 which has minor new functionality plus fixes for
+  production
+
+  29 Aug 2011; Matthew Marlowe <mattm@gentoo.org> zabbix-1.9.4.ebuild, zabbix-1.9.5.ebuild:
+  removed keywords from 1.9 releases as they are alpha quality and only really
+  appropriate for feature previews at the moment
+
+  28 Aug 2011; Tony Vroon <chainsaw@gentoo.org> zabbix-1.8.6.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah El Lazkani in security bug #379693.
+
+  27 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> zabbix-1.8.3.ebuild,
+  zabbix-1.8.5.ebuild, zabbix-1.8.6.ebuild, zabbix-1.9.4.ebuild,
+  zabbix-1.9.5.ebuild:
+  Dropped ppc keywords wrt bug #379693
+
+  27 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> zabbix-1.8.6.ebuild:
+  x86 stable wrt security bug #379693
+
+*zabbix-1.8.6 (27 Aug 2011)
+
+  27 Aug 2011; Matthew Marlowe <mattm@gentoo.org> +zabbix-1.8.6.ebuild:
+  Bump Zabbix 1.8.6, adds formal postgresql 9.0 support for 1.8 releases, fixes
+  security bug #379693
 
   29 Jul 2011; Patrick Lauer <patrick@gentoo.org> zabbix-1.8.3.ebuild,
   zabbix-1.8.5.ebuild, zabbix-1.8.6_rc1.ebuild, zabbix-1.9.4.ebuild,
@@ -299,4 +659,3 @@
   +files/1.4/zabbix_agentd.conf, +files/1.4/zabbix_server.conf,
   +metadata.xml, +zabbix-1.4.ebuild:
   initial import
-

@@ -1,6 +1,23 @@
 # ChangeLog for sci-physics/lhapdf
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/lhapdf/ChangeLog,v 1.17 2011/03/09 20:03:41 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/lhapdf/ChangeLog,v 1.20 2012/08/07 17:34:13 bicatali Exp $
+
+*lhapdf-5.8.8 (07 Aug 2012)
+
+  07 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> +lhapdf-5.8.8.ebuild,
+  -lhapdf-5.8.6.ebuild:
+  Version bump
+
+*lhapdf-5.8.7 (27 Feb 2012)
+
+  27 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> -lhapdf-5.8.4-r1.ebuild,
+  -lhapdf-5.8.5.ebuild, +lhapdf-5.8.7.ebuild:
+  Version bump
+
+*lhapdf-5.8.6 (06 Aug 2011)
+
+  06 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> +lhapdf-5.8.6.ebuild:
+  Version bump
 
 *lhapdf-5.8.5 (09 Mar 2011)
 
@@ -96,4 +113,3 @@
   07 Sep 2008; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
   +lhapdf-5.5.0.ebuild:
   Initial import, inspired from Benjamin Bannier's work (bug #236719)
-

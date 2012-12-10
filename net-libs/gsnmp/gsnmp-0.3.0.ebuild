@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gsnmp/gsnmp-0.3.0.ebuild,v 1.2 2011/06/05 13:11:45 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gsnmp/gsnmp-0.3.0.ebuild,v 1.8 2012/11/10 08:19:44 pinkbyte Exp $
 
-EAPI=3
+EAPI=4
 
 inherit autotools-utils
 
@@ -12,7 +12,7 @@ SRC_URI="ftp://ftp.ibr.cs.tu-bs.de/pub/local/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~amd64-linux ~ppc x86"
 IUSE="static-libs"
 
 DEPEND="
@@ -21,12 +21,8 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-src_configure() {
-	econf $(use_enable static-libs static)
-}
+PATCHES=( "${FILESDIR}"/${P}-g_access.patch )
 
-src_install() {
-	emake DESTDIR="${D}" install || die
-	dodoc README
-	use static-libs || remove_libtool_files
-}
+AUTOTOOLS_IN_SOURCE_BUILD=1
+
+DOCS=( README )

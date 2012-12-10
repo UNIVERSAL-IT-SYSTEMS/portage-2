@@ -1,6 +1,23 @@
 # ChangeLog for x11-libs/libmatchbox
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libmatchbox/ChangeLog,v 1.18 2011/03/20 12:51:52 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libmatchbox/ChangeLog,v 1.23 2012/06/04 00:20:42 xmw Exp $
+
+  04 Jun 2012; Michael Weber <xmw@gentoo.org> libmatchbox-1.9-r1.ebuild:
+  ppc stable (bug 309407)
+
+  05 Mar 2012; Thomas Kahle <tomka@gentoo.org> libmatchbox-1.9-r1.ebuild:
+  marked x86 per bug 309407
+
+  04 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #112268
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> libmatchbox-1.9-r1.ebuild:
+  Stable for amd64, wrt bug #309407
+
+  17 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  libmatchbox-1.9-r1.ebuild, +files/libmatchbox-1.9-libpng15.patch:
+  Fix building with libpng15 wrt #383201 by Diego Elio Pettenò.
+  USE="static-libs" and punt libtool archive in favour of pkg-config file.
 
 *libmatchbox-1.9-r1 (20 Mar 2011)
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-164-r2.ebuild,v 1.15 2011/07/09 17:24:03 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-164-r2.ebuild,v 1.26 2012/11/24 17:35:09 ssuominen Exp $
 
 EAPI="1"
 
@@ -13,12 +13,13 @@ scriptname=${PN}-gentoo-scripts-${scriptversion}
 if [[ ${PV} == "9999" ]]; then
 	EGIT_REPO_URI="git://git.kernel.org/pub/scm/linux/hotplug/udev.git"
 	EGIT_BRANCH="master"
-	inherit git autotools
+	inherit git-2 autotools
 else
 	# please update testsys-tarball whenever udev-xxx/test/sys/ is changed
 	SRC_URI="mirror://kernel/linux/utils/kernel/hotplug/${P}.tar.bz2
 			 test? ( mirror://gentoo/${PN}-151-testsys.tar.bz2 )
-			 mirror://gentoo/${scriptname}.tar.bz2"
+			 mirror://gentoo/${scriptname}.tar.bz2
+			 http://dev.gentoo.org/~ssuominen/${PN}-gentoo-legacy-patchset-1.tar.bz2"
 	[[ -n "${PATCHSET}" ]] && SRC_URI="${SRC_URI} mirror://gentoo/${PATCHSET}.tar.bz2"
 fi
 DESCRIPTION="Linux dynamic and persistent device naming support (aka userspace devfs)"
@@ -26,7 +27,7 @@ HOMEPAGE="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 ~s390 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="build selinux extras test"
 
 COMMON_DEPEND="selinux? ( sys-libs/libselinux )
@@ -38,12 +39,12 @@ COMMON_DEPEND="selinux? ( sys-libs/libselinux )
 		dev-libs/glib:2
 	)
 	>=sys-apps/util-linux-2.16
-	>=sys-libs/glibc-2.9"
+	!<sys-libs/glibc-2.11"
 
 DEPEND="${COMMON_DEPEND}
 	extras? (
 		dev-util/gperf
-		dev-util/pkgconfig
+		virtual/pkgconfig
 	)
 	virtual/os-headers
 	!<sys-kernel/linux-headers-2.6.29
@@ -138,7 +139,7 @@ sed_libexec_dir() {
 
 src_unpack() {
 	if [[ ${PV} == "9999" ]] ; then
-		git_src_unpack
+		git-2_src_unpack
 	else
 		unpack ${A}
 
@@ -151,8 +152,8 @@ src_unpack() {
 
 	cd "${S}"
 
-	# patches go here...
-	epatch "${FILESDIR}"/udev-164-remove-v4l1.patch
+	# Bug 413055
+	epatch "${WORKDIR}"/udev-164-remove-v4l1.patch
 
 	# backport some patches
 	if [[ -n "${PATCHSET}" ]]; then
@@ -255,8 +256,8 @@ src_install() {
 	cd "${S}"
 
 	insinto /etc/modprobe.d
-	newins "${FILESDIR}"/blacklist-146 blacklist.conf
-	newins "${FILESDIR}"/pnp-aliases pnp-aliases.conf
+	newins "${WORKDIR}"/blacklist-146 blacklist.conf
+	newins "${WORKDIR}"/pnp-aliases pnp-aliases.conf
 
 	# documentation
 	dodoc ChangeLog README TODO || die "failed installing docs"
@@ -501,11 +502,6 @@ pkg_postinst() {
 			rm -f "${ROOT}"/etc/udev/rules.d/64-device-mapper.rules
 			einfo "Removed unneeded file 64-device-mapper.rules"
 	fi
-
-	# requested in bug #275974, added 2009/09/05
-	ewarn
-	ewarn "If after the udev update removable devices or CD/DVD drives"
-	ewarn "stop working, try re-emerging HAL before filling a bug report"
 
 	# requested in Bug #225033:
 	elog

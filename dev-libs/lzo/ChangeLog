@@ -1,6 +1,60 @@
 # ChangeLog for dev-libs/lzo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/lzo/ChangeLog,v 1.58 2011/07/20 14:00:09 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/lzo/ChangeLog,v 1.74 2012/04/26 15:55:52 aballier Exp $
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> lzo-2.06.ebuild:
+  keyword ~amd64-fbsd
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -lzo-2.04.ebuild,
+  -lzo-2.05.ebuild:
+  old
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> lzo-2.06.ebuild:
+  ppc64 stable wrt #392765
+
+  05 Jan 2012; Brent Baude <ranger@gentoo.org> lzo-2.06.ebuild:
+  Marking lzo-2.06 ppc for bug 392765
+
+  08 Dec 2011; Markus Meier <maekke@gentoo.org> lzo-2.06.ebuild:
+  arm stable, bug #392765
+
+  04 Dec 2011; Raúl Porcel <armin76@gentoo.org> lzo-2.06.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc/x86 stable wrt #392765
+
+  03 Dec 2011; Jeroen Roovers <jer@gentoo.org> lzo-2.06.ebuild:
+  Stable for HPPA (bug #392765).
+
+  03 Dec 2011; Fabian Groffen <grobian@gentoo.org> lzo-2.06.ebuild:
+  One ~amd64-linux keyword is enough, thanks apostrophe in #gentoo-prefix
+
+  02 Dec 2011; Steve Dibb <beandog@gentoo.org> lzo-2.06.ebuild:
+  amd64 stable, bug 392765
+
+  02 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> lzo-2.06.ebuild:
+  Remove duplicate --disable-dependency-tracking from EAPI=4 ebuild.
+
+  02 Dec 2011; Fabian Groffen <grobian@gentoo.org> lzo-2.06.ebuild:
+  Migrate from Prefix overlay, add Prefix keywords (migration makes ~amd64-linux
+  keyword visible)
+
+  02 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> metadata.xml:
+  Commandeer this package, setting myself (binki) as maintainer.
+
+  02 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> lzo-2.06.ebuild:
+  Add keyword ~amd64-linux (tested on ubuntu 10.04).
+
+  02 Dec 2011; Nathan Phillip Brink <binki@gentoo.org> lzo-2.06.ebuild:
+  Fix files wrongly installed into /usr/share/doc/${PN}, reported by jdhore.
+
+*lzo-2.06 (20 Aug 2011)
+
+  20 Aug 2011; Matt Turner <mattst88@gentoo.org> +lzo-2.06.ebuild:
+  Version bump, found with euscan.
+
+*lzo-2.05 (03 Aug 2011)
+
+  03 Aug 2011; Sebastian Pipping <sping@gentoo.org> +lzo-2.05.ebuild:
+  Bump to 2.05 (bug #365407)
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #34534

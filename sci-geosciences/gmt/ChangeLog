@@ -1,6 +1,24 @@
 # ChangeLog for sci-geosciences/gmt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gmt/ChangeLog,v 1.24 2011/06/10 07:52:05 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gmt/ChangeLog,v 1.28 2012/06/16 16:57:44 ssuominen Exp $
+
+  16 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> gmt-4.5.6.ebuild,
+  gmt-4.5.8.ebuild, metadata.xml:
+  Use global USE flag "postscript" instead of local USE flag "ps" for
+  PostScript support
+
+*gmt-4.5.8 (29 May 2012)
+
+  29 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> +gmt-4.5.8.ebuild,
+  metadata.xml:
+  Version bump to latest release.
+
+  29 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -gmt-4.0.ebuild,
+  gmt-4.5.6.ebuild:
+  Stabilise 4.5.6 on amd64 and x86 and remove older.
+
+  12 May 2012; Kacper Kowalik <xarthisius@gentoo.org> gmt-4.5.6.ebuild:
+  Fix double prefix install
 
   10 Jun 2011; Tomáš Chvátal <scarabeus@gentoo.org> gmt-4.5.6.ebuild:
   Fix dodoc call. Fixes bug #370805.

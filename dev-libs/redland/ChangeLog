@@ -1,6 +1,79 @@
 # ChangeLog for dev-libs/redland
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/redland/ChangeLog,v 1.83 2011/07/29 10:27:52 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/redland/ChangeLog,v 1.105 2012/05/31 19:17:21 ssuominen Exp $
+
+  31 May 2012; Samuli Suominen <ssuominen@gentoo.org> redland-1.0.15.ebuild:
+  Force latest stable available raptor (and rasqal) in order to remove obsolete
+  || ( ) dependency wrt #418423 by Alessandro Capogna
+
+  18 May 2012; Alexis Ballier <aballier@gentoo.org> redland-1.0.15.ebuild:
+  keyword ~amd64-fbsd
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> redland-1.0.15.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -redland-1.0.14.ebuild:
+  old
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> redland-1.0.15.ebuild:
+  Fix dependencies for media-libs/raptor >= 2.0.7 where libxml2 support is now
+  always enabled because upstream removed support for libexpat.
+
+  05 Mar 2012; Markus Meier <maekke@gentoo.org> redland-1.0.15.ebuild:
+  arm stable, bug #404655
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> redland-1.0.15.ebuild:
+  ppc/ppc64/x86 stable wrt #404655
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> redland-1.0.15.ebuild:
+  Stable for HPPA (bug #404655).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> redland-1.0.15.ebuild:
+  Stable for amd64, wrt bug #404655
+
+*redland-1.0.15 (04 Dec 2011)
+
+  04 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +redland-1.0.15.ebuild:
+  Version bump.
+
+  18 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -redland-1.0.10-r1.ebuild, -redland-1.0.10-r2.ebuild,
+  -files/redland-1.0.10-librdf_storage_register_factory.patch:
+  old
+
+  18 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> redland-1.0.14.ebuild:
+  ppc/ppc64 stable wrt #382641
+
+  17 Oct 2011; Markus Meier <maekke@gentoo.org> redland-1.0.14.ebuild:
+  arm stable, bug #382641
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> redland-1.0.14.ebuild:
+  Stable for HPPA (bug #382641).
+
+  05 Oct 2011; Andreas Schuerch <nativemad@gentoo.org> redland-1.0.14.ebuild:
+  x86 stable, thanks David. Bug 382641
+
+  04 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> redland-1.0.14.ebuild:
+  If building with xml support, require same from raptor.
+
+  20 Sep 2011; Tony Vroon <chainsaw@gentoo.org> redland-1.0.14.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #382641.
+
+  13 Aug 2011; Markus Meier <maekke@gentoo.org> redland-1.0.10-r2.ebuild:
+  arm stable, bug #376893
+
+  09 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> redland-1.0.10-r2.ebuild:
+  ppc/ppc64 stable wrt #376893
+
+  07 Aug 2011; Markus Meier <maekke@gentoo.org> redland-1.0.10-r2.ebuild:
+  x86 stable, bug #376893
+
+  05 Aug 2011; Jeroen Roovers <jer@gentoo.org> redland-1.0.10-r2.ebuild:
+  Stable for HPPA (bug #376893).
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> redland-1.0.10-r2.ebuild:
+  Stable on amd64 wrt bug #376893
 
   29 Jul 2011; Samuli Suominen <ssuominen@gentoo.org> -redland-1.0.13.ebuild:
   [This is a placeholder. Please ignore.]

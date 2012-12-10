@@ -1,6 +1,262 @@
 # ChangeLog for sys-apps/dbus
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/dbus/ChangeLog,v 1.298 2011/07/03 11:25:58 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/dbus/ChangeLog,v 1.363 2012/11/17 13:21:01 pacho Exp $
+
+  17 Nov 2012; Pacho Ramos <pacho@gentoo.org> dbus-1.6.8-r1.ebuild:
+  Show elog messages only when needed (#440526 by poletti.marco), disable silent
+  rules.
+
+  14 Oct 2012; Raúl Porcel <armin76@gentoo.org> dbus-1.6.8.ebuild:
+  ia64/s390/sh/sparc stable wrt #416725
+
+  14 Oct 2012; Anthony G. Basile <blueness@gentoo.org> dbus-1.6.8.ebuild:
+  stable ppc ppc64, bug #436028
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> dbus-1.6.8.ebuild:
+  Stable on alpha, bug 436028.
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> dbus-1.6.8.ebuild:
+  arm stable, bug #436028
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> dbus-1.6.8.ebuild:
+  Stable for amd64, wrt bug #436028
+
+*dbus-1.6.8-r1 (04 Oct 2012)
+
+  04 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> dbus-1.6.8.ebuild,
+  +dbus-1.6.8-r1.ebuild:
+  x86 stable wrt security bug #436028 (systemd-specific code rolled to -r1,
+  since systemd is not stable)
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> dbus-1.6.8.ebuild:
+  Stable for HPPA (bug #436028).
+
+  29 Sep 2012; Zac Medico <zmedico@gentoo.org> dbus-1.6.8.ebuild:
+  Fix for prefix and add ~x86-linux keyword.
+
+  29 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> -dbus-1.4.16.ebuild,
+  -dbus-1.6.0.ebuild, -dbus-1.6.4.ebuild, -dbus-1.6.4-r1.ebuild,
+  -files/dbus-1.6.4-CVE-2012-3524-Don-t-access-environment-variables-or-.patch:
+  old
+
+*dbus-1.6.8 (29 Sep 2012)
+
+  29 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> +dbus-1.6.8.ebuild:
+  Version bump.
+
+*dbus-1.6.4-r1 (22 Sep 2012)
+
+  22 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> dbus-1.6.4.ebuild,
+  +dbus-1.6.4-r1.ebuild,
+  +files/dbus-1.6.4-CVE-2012-3524-Don-t-access-environment-variables-or-.patch:
+  Import patch for CVE-2012-3524 from Fedora 18. Again, -r0 is for stable and
+  -r1 for ~arch because of the systemd dependency.
+
+  25 Aug 2012; Mike Frysinger <vapier@gentoo.org> dbus-1.4.16.ebuild:
+  Drop useless -vf args to mv #432632 by Joshua B. Kahlenberg.
+
+  25 Jul 2012; Markus Meier <maekke@gentoo.org> dbus-1.6.2.ebuild:
+  arm stable, bug #416725
+
+  21 Jul 2012; Jeff Horelick <jdhore@gentoo.org> dbus-1.6.2.ebuild:
+  marked x86 per bug 416725
+
+  21 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> dbus-1.6.2.ebuild:
+  amd64/ppc/ppc64 stable wrt #416725
+
+  21 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> dbus-1.6.2.ebuild:
+  Use has_version instead of dependency for sys-apps/systemd regarding
+  stabilization. This is only for 1.6.2 and will be left as-is for 1.6.4.
+
+*dbus-1.6.4 (20 Jul 2012)
+
+  20 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +dbus-1.6.4.ebuild:
+  Version bump wrt #427402 by "teidakankan"
+
+  20 Jul 2012; Jeroen Roovers <jer@gentoo.org> dbus-1.6.2.ebuild:
+  Stable for HPPA (bug #416725).
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> dbus-1.4.20.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #412535
+
+  12 Jul 2012; Akinori Hattori <hattya@gentoo.org> dbus-1.4.20.ebuild:
+  ia64 stable wrt bug #412535
+
+*dbus-1.6.2 (27 Jun 2012)
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +dbus-1.6.2.ebuild:
+  Version bump.
+
+  06 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -dbus-1.4.16-r2.ebuild,
+  -dbus-1.4.18.ebuild, -dbus-1.5.12.ebuild, -dbus-1.5.12-r1.ebuild:
+  old
+
+*dbus-1.6.0 (06 Jun 2012)
+
+  06 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +dbus-1.6.0.ebuild:
+  Version bump.
+
+*dbus-1.5.12-r1 (29 May 2012)
+
+  29 May 2012; Samuli Suominen <ssuominen@gentoo.org> dbus-1.4.20.ebuild,
+  +dbus-1.5.12-r1.ebuild,
+  +files/dbus-1.5.12-selinux-when-dropping-capabilities-only-include-AUDI.patch:
+  When dropping capabilities only include AUDIT caps if we have them wrt
+  #405975. This makes audit/selinux enabled D-Bus work in a Linux container.
+  Thanks to Jory A. Pratt and Hinnerk van Bruinehsen.
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> dbus-1.4.16-r2.ebuild,
+  dbus-1.4.16.ebuild, dbus-1.4.18.ebuild, dbus-1.4.20.ebuild,
+  dbus-1.5.12.ebuild:
+  Inherit user for enewuser/etc...
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> dbus-1.4.20.ebuild:
+  Stable for HPPA (bug #412535).
+
+  15 May 2012; Samuli Suominen <ssuominen@gentoo.org> dbus-1.5.12.ebuild:
+  This is ready to enter ~arch.
+
+*dbus-1.5.12 (11 May 2012)
+
+  11 May 2012; Samuli Suominen <ssuominen@gentoo.org> +dbus-1.5.12.ebuild,
+  metadata.xml:
+  Version bump to development series. File dbus-1.4.0-asneeded.patch fails to
+  apply and should be looked into before keywording.
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> dbus-1.4.20.ebuild:
+  Marking dbus-1.4.20 ppc for bug 412535
+
+  05 May 2012; Raúl Porcel <armin76@gentoo.org> dbus-1.4.18.ebuild:
+  Revert
+
+  05 May 2012; Raúl Porcel <armin76@gentoo.org> dbus-1.4.18.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #403843
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> dbus-1.4.16.ebuild,
+  dbus-1.4.16-r2.ebuild, dbus-1.4.18.ebuild, dbus-1.4.20.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  28 Apr 2012; Alexis Ballier <aballier@gentoo.org> dbus-1.4.20.ebuild:
+  keyword ~amd64-fbsd
+
+  23 Apr 2012; Brent Baude <ranger@gentoo.org> dbus-1.4.20.ebuild:
+  Marking dbus-1.4.20 ppc64 for bug 412535
+
+  22 Apr 2012; Markus Meier <maekke@gentoo.org> dbus-1.4.20.ebuild:
+  arm stable, bug #412535
+
+  18 Apr 2012; Jeff Horelick <jdhore@gentoo.org> dbus-1.4.20.ebuild:
+  marked x86 per bug 412535
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> dbus-1.4.20.ebuild:
+  Stable for amd64, wrt bug #412535
+
+*dbus-1.4.20 (29 Mar 2012)
+
+  29 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +dbus-1.4.20.ebuild:
+  Version bump wrt #410179 by Agostino Sarubbo. Stop keeping deprecated
+  /usr/lib/dbus-1.0/services directory. Create symlink from /etc/machine-id to
+  /var/lib/dbus/machine-id because it's defined through
+  -DDBUS_MACHINE_UUID_FILE for tools/dbus-launch.c and might be used in unknown
+  reverse dependencies.
+
+  12 Mar 2012; Markus Meier <maekke@gentoo.org> dbus-1.4.18.ebuild:
+  arm stable, bug #403843
+
+  12 Mar 2012; Jeff Horelick <jdhore@gentoo.org> dbus-1.4.18.ebuild:
+  marked x86 per bug 403843
+
+  09 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> dbus-1.4.18.ebuild:
+  Punt PYTHON_DEPEND usage for USE="test" because we want it only in DEPEND
+  instead of both DEPEND and RDEPEND.
+
+  09 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> dbus-1.4.18.ebuild:
+  amd64/ppc/ppc64 stable wrt #403843
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> dbus-1.4.18.ebuild:
+  Stable for HPPA (bug #403843).
+
+  17 Feb 2012; Tobias Klausmann <klausman@gentoo.org> dbus-1.4.16-r2.ebuild:
+  Stable on alpha, bug #401513
+
+*dbus-1.4.18 (14 Feb 2012)
+
+  14 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +dbus-1.4.18.ebuild:
+  Version bump.
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> -dbus-1.4.12.ebuild:
+  old
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> dbus-1.4.16.ebuild:
+  ppc/ppc64 stable wrt #387257
+
+  27 Nov 2011; Raúl Porcel <armin76@gentoo.org> dbus-1.4.16.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #387257
+
+  12 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> dbus-1.4.16-r2.ebuild:
+  Fix missing SLOT in glib block by Jeroen Roovers
+
+  11 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> -dbus-1.4.16-r1.ebuild:
+  old
+
+  11 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> dbus-1.4.16-r2.ebuild:
+  Block any glib with obsolete path to machine-id wrt #390143 by Ewgenij
+  Starostin
+
+*dbus-1.4.16-r2 (05 Nov 2011)
+
+  05 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +dbus-1.4.16-r2.ebuild,
+  +files/dbus.initd:
+  Fix dbus-uuidgen call in init.d wrt #387713, Comment #10 by Pacho Ramos
+
+  29 Oct 2011; Markus Meier <maekke@gentoo.org> dbus-1.4.16.ebuild:
+  arm stable, bug #387257
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> dbus-1.4.16.ebuild:
+  x86 stable, bug #387257
+
+*dbus-1.4.16-r1 (20 Oct 2011)
+
+  20 Oct 2011; Ian Stakenvicius <axs@gentoo.org> +dbus-1.4.16-r1.ebuild:
+  Dropped keepdir on /var/run/dbus as the init.d script already ensures this
+  path exists (bug 387897)
+
+  19 Oct 2011; Jeroen Roovers <jer@gentoo.org> dbus-1.4.16.ebuild:
+  Stable for HPPA (bug #387257).
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> dbus-1.4.16.ebuild:
+  amd64 stable wrt #387257
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> dbus-1.4.16.ebuild:
+  Don't pass --enable-asserts with USE="debug" wrt #386699
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Drop semi-inactive maintainers and use herd.
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -dbus-1.4.14.ebuild:
+  old
+
+  04 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> dbus-1.4.16.ebuild:
+  Fix install location of system-activation.txt and remove useless dohtml wrt
+  #385421 by Chris Mayo
+
+*dbus-1.4.16 (26 Sep 2011)
+
+  26 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> +dbus-1.4.16.ebuild:
+  Version bump wrt #384293 by "ScytheMan"
+
+  23 Sep 2011; Lars Wendler <polynomial-c@gentoo.org> files/dbus.init-1.0:
+  non-maintainer commit: Fixed warnings in init script (bug #381883).
+
+  05 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> -dbus-1.4.6.ebuild,
+  -dbus-1.4.8-r1.ebuild, -dbus-1.4.10.ebuild:
+  [This is a placeholder. Please ignore.]
+
+*dbus-1.4.14 (05 Aug 2011)
+
+  05 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> +dbus-1.4.14.ebuild:
+  Version bump wrt #377603 by Sebastian Pipping. Fix API documentation building
+  and installing wrt #372293 by Chris Mayo.
 
   03 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> dbus-1.4.12.ebuild:
   ppc64 stable wrt #371261
@@ -1217,4 +1473,3 @@
   21 Jun 2003; Seemant Kulleen <seemant@gentoo.org> dbus-0.11.ebuild,
   files/dbus-0.11-cvs-update.patch:
   dbus thingy from freedesktop.org -- for upcoming apps like xmms2 etc
-

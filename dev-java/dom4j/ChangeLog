@@ -1,6 +1,41 @@
 # ChangeLog for dev-java/dom4j
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/dom4j/ChangeLog,v 1.53 2010/04/24 16:59:27 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/dom4j/ChangeLog,v 1.62 2012/12/08 15:53:57 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> dom4j-1.6.1-r4.ebuild:
+  Stable for ppc64, wrt bug #419767
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> dom4j-1.6.1-r4.ebuild:
+  Stable for ppc, wrt bug #419767
+
+  29 Sep 2012; Fabian Groffen <grobian@gentoo.org> dom4j-1.6.1-r4.ebuild:
+  Marked ~x64-macos
+
+  14 Jul 2012; Johannes Huber <johu@gentoo.org> dom4j-1.6.1-r4.ebuild:
+  Stable for x86, wrt bug #419767
+
+  14 Jul 2012; Agostino Sarubbo <ago@gentoo.org> dom4j-1.6.1-r4.ebuild:
+  Stable for amd64, wrt bug #419767
+
+*dom4j-1.6.1-r4 (05 Jun 2012)
+
+  05 Jun 2012; Ralph Sennhauser <sera@gentoo.org> +dom4j-1.6.1-r4.ebuild:
+  Rev and EAPI bump. Make better use of eclasses. Cleanup.
+  Drop deps on xalan, xerces, msv and xml-commons-external. Also solves slot 
+  conflict with xml-commons-external. #419603
+  Replace jsr173 with virtual stax-api.
+  Don't let jre rdep leak into DEPEND, confuses vm switching code.
+  Disable one additionl test failing with jdk 7.
+
+  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> dom4j-1.6.1-r3.ebuild:
+  Add back ia64 love #349020 by Dennis Schridde.
+
+  01 Jan 2012; Ralph Sennhauser <sera@gentoo.org> dom4j-1.6.1-r2.ebuild,
+  dom4j-1.6.1-r3.ebuild:
+  Drop ia64 support #345433
+
+  16 Dec 2011; Naohiro Aota <naota@gentoo.org> dom4j-1.6.1-r3.ebuild:
+  Add ~x86-fbsd wrt 212999
 
   24 Apr 2010; Fabian Groffen <grobian@gentoo.org> dom4j-1.6.1-r3.ebuild:
   Marked ~sparc-solaris ~x86-solaris, bug #314093
@@ -184,4 +219,3 @@
   31 Oct 2002; Karl Trygve Kalleberg <karltk@gentoo.org> dom4j-1.3.ebuild files/digest-dom4j :
   Initial import.  Ebuild submitted by Adrian Almenar
   <aalmenar@conectium.com>.
-

@@ -1,6 +1,37 @@
 # ChangeLog for dev-games/wfmath
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/wfmath/ChangeLog,v 1.16 2011/01/16 04:11:53 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-games/wfmath/ChangeLog,v 1.23 2012/12/01 18:08:17 mr_bones_ Exp $
+
+  01 Dec 2012; Michael Sterrett <mr_bones_@gentoo.org> -wfmath-1.0.0.ebuild:
+  old
+
+*wfmath-1.0.1 (12 Nov 2012)
+
+  12 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> +wfmath-1.0.1.ebuild:
+  version bump
+
+  31 Oct 2012; Tupone Alfredo <tupone@gentoo.org> -wfmath-0.3.10.ebuild,
+  wfmath-0.3.11.ebuild, +files/wfmath-0.3.11-gcc47.patch, wfmath-1.0.0.ebuild:
+  Remove old affected by Bug #362731 from Diego
+  Migrating to EAPI 4 the 1.0.0 version
+  Fix build with gcc-4.7 Bug #425706 by Diego
+
+*wfmath-1.0.0 (10 Jul 2012)
+
+  10 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> +wfmath-1.0.0.ebuild:
+  version bump
+
+  11 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> wfmath-0.3.11.ebuild:
+  x86 stable wrt bug #389263
+
+  04 Nov 2011; Tony Vroon <chainsaw@gentoo.org> wfmath-0.3.11.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Ian "idella4" Delaney in bug #389263.
+
+*wfmath-0.3.11 (26 Sep 2011)
+
+  26 Sep 2011; Tupone Alfredo <tupone@gentoo.org> +wfmath-0.3.11.ebuild:
+  Version bump to 0.3.11 Bug #383413 by Mr. Anderson
 
   16 Jan 2011; Michael Sterrett <mr_bones_@gentoo.org> wfmath-0.3.10.ebuild:
   add static-libs support
@@ -63,4 +94,3 @@
 
   01 Feb 2007; <tupone@gentoo.org> +metadata.xml, +wfmath-0.3.5.ebuild:
   Initial ebuild, version 0.3.6 Bug #58213 by Boris Smus
-

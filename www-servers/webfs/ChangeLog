@@ -1,6 +1,35 @@
 # ChangeLog for www-servers/webfs
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/webfs/ChangeLog,v 1.22 2009/07/26 10:44:35 bangert Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-servers/webfs/ChangeLog,v 1.30 2012/12/04 10:04:18 zmedico Exp $
+
+  04 Dec 2012; Zac Medico <zmedico@gentoo.org> webfs-1.21-r2.ebuild:
+  Fix for prefix and add ~x86-linux keyword.
+
+  31 Jul 2012; Michael Palimaka <kensington@gentoo.org> -files/webfs.initd,
+  -webfs-1.21-r1.ebuild:
+  Remove old.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> webfs-1.21-r1.ebuild,
+  webfs-1.21-r2.ebuild:
+  Drop alpha/sparc keywords
+
+  29 Jun 2012; Brent Baude <ranger@gentoo.org> webfs-1.21-r2.ebuild:
+  Marking webfs-1.21-r2 ppc for bug 422249
+
+  21 Jun 2012; Agostino Sarubbo <ago@gentoo.org> webfs-1.21-r2.ebuild:
+  Stable for amd64, wrt bug #422249
+
+  21 Jun 2012; Jeff Horelick <jdhore@gentoo.org> webfs-1.21-r2.ebuild:
+  marked x86 per bug 422249
+
+*webfs-1.21-r2 (24 Mar 2012)
+
+  24 Mar 2012; Pacho Ramos <pacho@gentoo.org> +files/webfs.initd-r1,
+  +webfs-1.21-r2.ebuild:
+  Fix init script, bug #360547 by Joseph L.
+
+  21 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop www-server herd as discussed in gentoo-dev ML.
 
   26 Jul 2009; Thilo Bangert <bangert@gentoo.org> -webfs-1.20.ebuild,
   -webfs-1.21.ebuild:

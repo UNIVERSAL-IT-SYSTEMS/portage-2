@@ -1,6 +1,27 @@
 # ChangeLog for dev-ruby/serialport
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/serialport/ChangeLog,v 1.1 2011/03/13 10:53:46 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/serialport/ChangeLog,v 1.7 2012/11/09 18:35:36 ago Exp $
+
+  09 Nov 2012; Agostino Sarubbo <ago@gentoo.org> serialport-1.1.0.ebuild:
+  Add ~amd64, wrt bug #442128
+
+  28 Sep 2012; Hans de Graaff <graaff@gentoo.org> -serialport-1.0.3.ebuild:
+  Cleanup.
+
+  27 Sep 2012; Johannes Huber <johu@gentoo.org> serialport-1.1.0.ebuild:
+  Stable for x86, wrt bug #435962
+
+  23 Sep 2012; Hans de Graaff <graaff@gentoo.org> -serialport-1.0.4.ebuild:
+  Cleanup.
+
+*serialport-1.1.0 (06 Jun 2012)
+
+  06 Jun 2012; Hans de Graaff <graaff@gentoo.org> +serialport-1.1.0.ebuild:
+  Version bump.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> serialport-1.0.3.ebuild,
+  serialport-1.0.4.ebuild:
+  Drop ia64/sparc keywords
 
 *serialport-1.0.4 (13 Mar 2011)
 *serialport-1.0.3 (13 Mar 2011)
@@ -90,4 +111,3 @@
   ruby-serialport-0.6.ebuild:
   Initial import. Ebuild submitted by Henry Jen <henryjen@ztune.net>,
   closing bug #42316
-

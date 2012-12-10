@@ -1,6 +1,28 @@
 # ChangeLog for x11-drivers/xf86-video-fbdev
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-fbdev/ChangeLog,v 1.73 2010/10/21 15:25:18 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-fbdev/ChangeLog,v 1.79 2012/12/08 17:09:46 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-fbdev-0.4.3.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> xf86-video-fbdev-0.4.3.ebuild:
+  Marking xf86-video-fbdev-0.4.3 ppc stable for bug 440872
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-fbdev-0.4.3.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-fbdev-0.4.3.ebuild:
+  Stable for amd64, wrt bug #440872
+
+*xf86-video-fbdev-0.4.3 (05 Jul 2012)
+
+  05 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-fbdev-0.4.3.ebuild:
+  Version bump.
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org>
+  xf86-video-fbdev-0.4.2.ebuild:
+  keyword ~amd64-fbsd (compile tested only)
 
   21 Oct 2010; Tomáš Chvátal <scarabeus@gentoo.org>
   -xf86-video-fbdev-0.4.1.ebuild:
@@ -313,4 +335,3 @@
   08 Aug 2005; Donnie Berkholz <dberkholz@gentoo.org>;
   +xf86-video-fbdev-0.1.0.ebuild:
   Initial commit for modular X.
-

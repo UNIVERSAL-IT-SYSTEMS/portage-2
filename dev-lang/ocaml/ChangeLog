@@ -1,6 +1,59 @@
 # ChangeLog for dev-lang/ocaml
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ocaml/ChangeLog,v 1.194 2011/07/11 04:35:37 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ocaml/ChangeLog,v 1.208 2012/10/07 21:33:31 aballier Exp $
+
+*ocaml-4.00.1 (07 Oct 2012)
+
+  07 Oct 2012; Alexis Ballier <aballier@gentoo.org> +ocaml-4.00.1.ebuild:
+  version bump
+
+  27 Jul 2012; Alexis Ballier <aballier@gentoo.org> -ocaml-4.00.0_beta2.ebuild,
+  -ocaml-4.00.0_rc1.ebuild:
+  remove old
+
+*ocaml-4.00.0 (27 Jul 2012)
+
+  27 Jul 2012; Alexis Ballier <aballier@gentoo.org> +ocaml-4.00.0.ebuild:
+  bump to 4.00.0 final
+
+*ocaml-4.00.0_rc1 (19 Jul 2012)
+
+  19 Jul 2012; Alexis Ballier <aballier@gentoo.org> +ocaml-4.00.0_rc1.ebuild:
+  version bump
+
+*ocaml-4.00.0_beta2 (10 Jun 2012)
+
+  10 Jun 2012; Alexis Ballier <aballier@gentoo.org> +ocaml-4.00.0_beta2.ebuild:
+  version bump
+
+  24 May 2012; Alexis Ballier <aballier@gentoo.org> ocaml-3.12.1.ebuild:
+  keyword ~amd64-fbsd
+
+  15 May 2012; Benda Xu <heroxbd@gentoo.org> ocaml-3.12.1.ebuild:
+  on arm, use user -O flags instead of hard coding -O0, as per bug 340607.
+  Thanks to Josh Parsons for investigating the issue.
+
+  06 Nov 2011; Brent Baude <ranger@gentoo.org> ocaml-3.12.1.ebuild:
+  Marking ocaml-3.12.1 ppc for bug 361767
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> ocaml-3.12.1.ebuild:
+  Stable for HPPA (bug #361767).
+
+  09 Oct 2011; Raúl Porcel <armin76@gentoo.org> ocaml-3.12.1.ebuild:
+  alpha/ia64/sparc stable wrt #361767
+
+  20 Sep 2011; Tony Vroon <chainsaw@gentoo.org> ocaml-3.12.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney &
+  Agostino "ago" Sarubbo in bug #361767.
+
+  19 Sep 2011; Markus Meier <maekke@gentoo.org> ocaml-3.12.1.ebuild:
+  arm stable, bug #361767
+
+  18 Sep 2011; Andreas Schuerch <nativemad@gentoo.org> ocaml-3.12.1.ebuild:
+  x86 stable, thanks JD, bug 361767
+
+  06 Sep 2011; Alexis Ballier <aballier@gentoo.org> ocaml-3.12.1.ebuild:
+  suggest how to rebuild ocaml packages without the set
 
   11 Jul 2011; Matt Turner <mattst88@gentoo.org> ocaml-3.12.1.ebuild:
   Added ~mips, bug 319649

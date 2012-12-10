@@ -1,6 +1,52 @@
 # ChangeLog for dev-php/PEAR-PEAR
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-PEAR/ChangeLog,v 1.148 2011/07/25 16:16:25 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-PEAR/ChangeLog,v 1.161 2012/11/18 17:41:09 hwoarang Exp $
+
+  18 Nov 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Remove beandog wrt #131511
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> PEAR-PEAR-1.9.4.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #430152
+
+  21 Aug 2012; Johannes Huber <johu@gentoo.org> PEAR-PEAR-1.9.4.ebuild:
+  Stable for x86, wrt bug #430152
+
+  14 Aug 2012; Anthony G. Basile <blueness@gentoo.org> PEAR-PEAR-1.9.4.ebuild:
+  Stable ppc ppc64, bug #430152
+
+  12 Aug 2012; Markus Meier <maekke@gentoo.org> PEAR-PEAR-1.9.4.ebuild:
+  arm stable, bug #430152
+
+  09 Aug 2012; Jeroen Roovers <jer@gentoo.org> PEAR-PEAR-1.9.4.ebuild:
+  Stable for HPPA (bug #430152).
+
+  07 Aug 2012; Agostino Sarubbo <ago@gentoo.org> PEAR-PEAR-1.9.4.ebuild:
+  Stable for amd64, wrt bug #430152
+
+  07 Jun 2012; Zac Medico <zmedico@gentoo.org> PEAR-PEAR-1.9.3.ebuild,
+  PEAR-PEAR-1.9.4.ebuild:
+  inherit eutils for epatch
+
+  10 Feb 2012; Ole Markus With <olemarkus@gentoo.org> PEAR-PEAR-1.9.3.ebuild,
+  PEAR-PEAR-1.9.4.ebuild:
+  Setting dev-php/pear as PEDEPEND to ensure a usable system is installed
+
+  30 Nov 2011; Fabian Groffen <grobian@gentoo.org> PEAR-PEAR-1.9.4.ebuild:
+  Marked ~x64-macos, bug #388257
+
+*PEAR-PEAR-1.9.4 (02 Nov 2011)
+
+  02 Nov 2011; Ole Markus With <olemarkus@gentoo.org> +PEAR-PEAR-1.9.4.ebuild:
+  Version bump
+
+  07 Sep 2011; Ole Markus With <olemarkus@gentoo.org>
+  -files/1.6.2-accept-encoding-bug_12116.patch, -PEAR-PEAR-1.9.2.ebuild,
+  -PEAR-PEAR-1.9.2-r1.ebuild, -PEAR-PEAR-1.9.2-r2.ebuild,
+  -files/symlink-attack-fix.patch:
+  Removed older versions
+
+  25 Aug 2011; Jeroen Roovers <jer@gentoo.org> PEAR-PEAR-1.9.3.ebuild:
+  Stable for HPPA (bug #374447).
 
   25 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> PEAR-PEAR-1.9.3.ebuild:
   ppc/ppc64 stable wrt #374447
@@ -623,4 +669,3 @@
   16 Feb 2005; Sebastian Bergmann <sebastian@gentoo.org> +metadata.xml,
   +PEAR-PEAR-1.3.4.ebuild:
   Initial ebuild for the PEAR base package.
-

@@ -1,6 +1,51 @@
 # ChangeLog for net-p2p/fms
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/fms/ChangeLog,v 1.24 2011/06/30 20:32:11 tommy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/fms/ChangeLog,v 1.31 2012/11/04 16:48:42 tommy Exp $
+
+*fms-0.3.70 (04 Nov 2012)
+
+  04 Nov 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> fms-0.3.66.ebuild,
+  fms-0.3.67.ebuild, +fms-0.3.70.ebuild:
+  Version bump, inherit user eclass
+
+*fms-0.3.69 (02 Aug 2012)
+
+  02 Aug 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> +fms-0.3.69.ebuild:
+  Version bump
+
+*fms-0.3.67 (12 Apr 2012)
+
+  12 Apr 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> +fms-0.3.67.ebuild:
+  Version bump
+
+*fms-0.3.66 (08 Mar 2012)
+
+  08 Mar 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> -fms-0.3.65.ebuild,
+  +files/fms-use-system-libs2.patch, -fms-0.3.63-r1.ebuild, +fms-0.3.66.ebuild,
+  -files/fms-fix-includes.patch, -files/fms-use-system-libs.patch:
+  Version bump, drop old
+
+*fms-0.3.65 (23 Feb 2012)
+
+  23 Feb 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> +fms-0.3.65.ebuild,
+  +files/fms-fix-includes.patch, -files/quoter.h.patch:
+  Version bump
+
+*fms-0.3.63-r1 (13 Feb 2012)
+
+  13 Feb 2012; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> -fms-0.3.63.ebuild,
+  +fms-0.3.63-r1.ebuild:
+  Revision bump to adjust dependency on libtomcrypt
+
+  19 Nov 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> -fms-0.3.58.ebuild,
+  -fms-0.3.61.ebuild, +fms-0.3.63.ebuild:
+  Drop old versions
+
+*fms-0.3.63 (19 Nov 2011)
+
+  19 Nov 2011; Thomas Sachau (Tommy[D]) <tommy@gentoo.org> +fms-0.3.63.ebuild:
+  Version bump, thanks to a Gentoo user, who sent me the sed lines
+  and the need for <=dev-libs/libpcre-8.12
 
 *fms-0.3.61 (30 Jun 2011)
 

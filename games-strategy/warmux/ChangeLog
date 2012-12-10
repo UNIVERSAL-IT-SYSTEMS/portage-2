@@ -1,6 +1,30 @@
 # ChangeLog for games-strategy/warmux
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/warmux/ChangeLog,v 1.8 2011/08/01 19:04:57 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/warmux/ChangeLog,v 1.14 2012/11/05 16:58:48 mr_bones_ Exp $
+
+  05 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> warmux-11.04.1.ebuild:
+  update HOMEPAGE
+
+  22 Oct 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  -files/warmux-11.01-gentoo.patch, -warmux-11.01.ebuild:
+  old
+
+  13 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  +files/warmux-11.04.1-gcc47.patch, warmux-11.04.1.ebuild:
+  add gcc47 patch from Peter Alfredsen (bug #424669)
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> warmux-11.01.ebuild,
+  warmux-11.04.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 May 2012; Michael Sterrett <mr_bones_@gentoo.org> warmux-11.04.1.ebuild,
+  +files/warmux-11.04.1-action.patch:
+  Add compile patch from Martin Jansa (bug #409871); silly sdl-gfx dep update
+  (bug #414211)
+
+  19 Sep 2011; Michael Sterrett <mr_bones_@gentoo.org> warmux-11.04.1.ebuild,
+  +files/warmux-11.04.1-zlib.patch:
+  add patch to work with newer zlib (bug #383595) submitted by Martin Jansa
 
   01 Aug 2011; Markus Meier <maekke@gentoo.org> warmux-11.04.1.ebuild:
   amd64/x86 stable, bug #375379

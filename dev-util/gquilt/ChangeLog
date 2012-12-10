@@ -1,6 +1,17 @@
 # ChangeLog for dev-util/gquilt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/gquilt/ChangeLog,v 1.18 2011/04/25 20:11:55 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/gquilt/ChangeLog,v 1.21 2012/12/02 13:25:45 hasufell Exp $
+
+  02 Dec 2012; Julian Ospald <hasufell@gentoo.org> gquilt-0.25.ebuild,
+  +files/gquilt-0.25-desktopfile.patch:
+  domenu needs eutils, also patch desktop-file for fd.o specs
+
+  06 Nov 2012; Kacper Kowalik <xarthisius@gentoo.org> gquilt-0.25.ebuild:
+  Add mercurial as alternative to quilt. Fixes bug 196523 by James Rowe
+  <jnrowe@gmail.com>
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> gquilt-0.25.ebuild:
+  Use domenu instead insinto + doins to install .desktop files
 
 *gquilt-0.25 (25 Apr 2011)
 
@@ -96,4 +107,3 @@
   20 Jun 2005; Aaron Walker <ka0ttic@gentoo.org>
   +files/gquilt-0.06-fix-makefile.diff, +metadata.xml, +gquilt-0.06.ebuild:
   Initial commit.  Ebuild based on one submitted by Andrew Fink in bug 94340.
-

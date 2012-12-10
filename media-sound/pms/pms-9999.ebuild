@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pms/pms-9999.ebuild,v 1.2 2010/09/16 07:10:28 wired Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pms/pms-9999.ebuild,v 1.5 2012/11/20 19:17:12 wired Exp $
 
 EAPI=2
 
-inherit autotools git
+inherit autotools git-2
 
 DESCRIPTION="Practical Music Search: an open source ncurses client for mpd, written in C++"
 HOMEPAGE="http://pms.sourceforge.net/"
@@ -23,11 +23,14 @@ RDEPEND="
 	regex? ( >=dev-libs/boost-1.36 )
 "
 DEPEND="
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	${RDEPEND}
 "
 
 src_prepare() {
+	# bug #424717
+	sed -i "s:^CXXFLAGS +=:AM_CXXFLAGS =:g" Makefile.am || die "sed failed"
+
 	eautoreconf
 }
 

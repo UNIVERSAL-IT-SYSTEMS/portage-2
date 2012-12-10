@@ -1,6 +1,29 @@
 # ChangeLog for dev-embedded/arduino
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/arduino/ChangeLog,v 1.5 2009/10/17 18:15:07 nixphoeni Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/arduino/ChangeLog,v 1.9 2012/09/03 21:07:08 miknix Exp $
+
+*arduino-1.0.1 (03 Sep 2012)
+
+  03 Sep 2012; Angelo Arrifano <miknix@gentoo.org> -arduino-1.0.ebuild,
+  +arduino-1.0.1.ebuild, +files/arduino-1.0.1-build.xml.patch,
+  +files/arduino-1.0.1-script.patch, -files/arduino-1.0-prog_char-fix.patch,
+  -files/arduino-1.0-script.patch, -files/Makefile-0011.patch,
+  -arduino-0015-r1.ebuild, -files/Makefile-0015.patch, -arduino-0017.ebuild,
+  -files/Makefile-0017.patch, -files/arduino-script-0017.patch, -files/arduino:
+  Version bump, cleaned up old cruft. Thanks mrueg and others, #420861
+
+  10 Feb 2012; Angelo Arrifano <miknix@gentoo.org> arduino-1.0.ebuild,
+  +files/arduino.desktop:
+  Add menu entry since upstream does not do it.
+
+*arduino-1.0 (10 Feb 2012)
+
+  10 Feb 2012; Angelo Arrifano <miknix@gentoo.org> +arduino-1.0.ebuild,
+  +files/arduino-1.0-prog_char-fix.patch, +files/arduino-1.0-script.patch:
+  Version bump, thanks Jess Haas for providing the ebuild, #303043
+
+  09 Feb 2012; Angelo Arrifano <miknix@gentoo.org> metadata.xml:
+  Add myself as maintaner, remove solar (with his permission)
 
 *arduino-0017 (17 Oct 2009)
 

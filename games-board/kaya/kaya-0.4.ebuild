@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/kaya/kaya-0.4.ebuild,v 1.2 2011/01/31 15:54:44 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-board/kaya/kaya-0.4.ebuild,v 1.5 2011/10/29 00:55:27 abcd Exp $
 
-EAPI=3
+EAPI=4
 USE_RUBY="ruby18"
 CMAKE_IN_SOURCE_BUILD=1
 
@@ -13,17 +13,17 @@ inherit kde4-base ruby-ng
 
 DESCRIPTION="Board game suite for KDE"
 HOMEPAGE="http://pcapriotti.github.com/kaya/"
-SRC_URI="http://cloud.github.com/downloads/pcapriotti/${PN}/${P}.tar.gz"
+SRC_URI="mirror://github/pcapriotti/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
+DEPEND=""
 RDEPEND=""
-ruby_add_rdepend "kde-base/kdebindings-ruby"
+ruby_add_rdepend "|| ( kde-base/korundum kde-base/kdebindings-ruby )"
 ruby_add_rdepend "dev-ruby/builder"
-DEPEND="${RDEPEND}"
 
 pkg_setup() {
 	ruby-ng_pkg_setup

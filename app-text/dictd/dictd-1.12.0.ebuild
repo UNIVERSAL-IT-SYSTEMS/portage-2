@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/dictd/dictd-1.12.0.ebuild,v 1.1 2011/06/28 10:22:15 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/dictd/dictd-1.12.0.ebuild,v 1.4 2012/05/24 04:43:00 vapier Exp $
 
 EAPI="4"
 
-inherit eutils
+inherit eutils user
 
 DESCRIPTION="Dictionary Client/Server for the DICT protocol"
-HOMEPAGE="http://www.dict.org/"
+HOMEPAGE="http://www.dict.org/ http://sourceforge.net/projects/dict/"
 SRC_URI="mirror://sourceforge/dict/${P}.tar.gz"
 
 SLOT="0"
@@ -17,14 +17,15 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~
 IUSE="dbi judy minimal"
 
 # <gawk-3.1.6 makes tests fail.
-DEPEND="sys-apps/coreutils
-		sys-libs/zlib
-		dev-libs/libmaa
-		dbi? ( dev-db/libdbi )
-		judy? ( dev-libs/judy )
-		>=sys-apps/coreutils-6.10"
-RDEPEND="${DEPEND}
-		>=sys-apps/gawk-3.1.6"
+RDEPEND="sys-apps/coreutils
+	sys-libs/zlib
+	dev-libs/libmaa
+	dbi? ( dev-db/libdbi )
+	judy? ( dev-libs/judy )
+	>=sys-apps/coreutils-6.10"
+DEPEND="${RDEPEND}
+	>=sys-apps/gawk-3.1.6
+	virtual/yacc"
 
 pkg_setup() {
 	enewgroup dictd # used in src_test()
@@ -32,7 +33,8 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/dictd-1.10.11-colorit-nopp-fix.patch"
+	epatch "${FILESDIR}"/dictd-1.10.11-colorit-nopp-fix.patch
+	epatch "${FILESDIR}"/dictd-1.12.0-build.patch
 
 	[[ ${CHOST} == *-darwin* ]] && \
 		sed -i -e 's:libtool:glibtool:g' Makefile.in

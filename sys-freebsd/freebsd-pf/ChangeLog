@@ -1,6 +1,55 @@
 # ChangeLog for sys-freebsd/freebsd-pf
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-pf/ChangeLog,v 1.29 2011/07/06 06:04:57 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-pf/ChangeLog,v 1.38 2012/11/06 12:56:12 aballier Exp $
+
+*freebsd-pf-9.1_rc3 (06 Nov 2012)
+
+  06 Nov 2012; Alexis Ballier <aballier@gentoo.org> +freebsd-pf-9.1_rc3.ebuild:
+  bump to rc3
+
+*freebsd-pf-9.1_rc2 (14 Oct 2012)
+
+  14 Oct 2012; Alexis Ballier <aballier@gentoo.org> +freebsd-pf-9.1_rc2.ebuild:
+  bump to 9.1_rc2
+
+  11 Sep 2012; Alexis Ballier <aballier@gentoo.org> freebsd-pf-7.2.ebuild,
+  freebsd-pf-8.0.ebuild, freebsd-pf-8.2.ebuild, freebsd-pf-9.0.ebuild,
+  freebsd-pf-9.1_rc1.ebuild:
+  inherit user.eclass for enewgroup
+
+*freebsd-pf-9.1_rc1 (11 Sep 2012)
+
+  11 Sep 2012; Alexis Ballier <aballier@gentoo.org> +freebsd-pf-9.1_rc1.ebuild:
+  bump to 9.1_rc1 from bsd overlay by Yuta SATOH, bug #426838 and keyword
+  ~amd64-fbsd
+
+  30 Mar 2012; Alexis Ballier <aballier@gentoo.org> -freebsd-pf-9.0_rc1.ebuild,
+  -freebsd-pf-9.0_rc2.ebuild, -freebsd-pf-9.0_rc3.ebuild:
+  remove old
+
+*freebsd-pf-9.0 (16 Jan 2012)
+
+  16 Jan 2012; Alexis Ballier <aballier@gentoo.org> +freebsd-pf-9.0.ebuild:
+  bump to 9.0
+
+*freebsd-pf-9.0_rc3 (09 Dec 2011)
+
+  09 Dec 2011; Alexis Ballier <aballier@gentoo.org> +freebsd-pf-9.0_rc3.ebuild:
+  bump to 9.0_rc3
+
+*freebsd-pf-9.0_rc2 (07 Dec 2011)
+
+  07 Dec 2011; Alexis Ballier <aballier@gentoo.org> +freebsd-pf-9.0_rc2.ebuild:
+  bump to rc2
+
+*freebsd-pf-9.0_rc1 (07 Nov 2011)
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org> +freebsd-pf-9.0_rc1.ebuild,
+  +files/freebsd-pf-9.0-bpf.patch, +files/freebsd-pf-9.0-getline.patch,
+  +files/freebsd-pf-9.0-libevent.patch,
+  +files/freebsd-pf-9.0-pcap_pollution.patch,
+  +files/freebsd-pf-9.0-pflogd.patch:
+  bump to 9.0_rc1
 
 *freebsd-pf-8.2 (06 Jul 2011)
 

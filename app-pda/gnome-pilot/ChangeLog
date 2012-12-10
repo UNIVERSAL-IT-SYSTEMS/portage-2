@@ -1,6 +1,14 @@
 # ChangeLog for app-pda/gnome-pilot
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-pda/gnome-pilot/ChangeLog,v 1.73 2011/07/14 09:59:59 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-pda/gnome-pilot/ChangeLog,v 1.75 2012/05/03 20:20:58 jdhore Exp $
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gnome-pilot-2.32.0.ebuild,
+  gnome-pilot-2.32.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gnome-pilot-2.32.1.ebuild:
+  ppc stable wrt #369909
 
   14 Jul 2011; Thomas Kahle <tomka@gentoo.org> gnome-pilot-2.32.1.ebuild:
   x86 stable per bug 369909

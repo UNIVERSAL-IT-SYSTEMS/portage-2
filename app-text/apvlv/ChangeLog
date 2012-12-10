@@ -1,6 +1,37 @@
 # ChangeLog for app-text/apvlv
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/apvlv/ChangeLog,v 1.14 2011/07/14 09:29:11 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/apvlv/ChangeLog,v 1.21 2012/08/08 16:57:17 dilfridge Exp $
+
+  08 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org> apvlv-0.1.2-r1.ebuild,
+  apvlv-0.1.4.ebuild:
+  Needs xpdf headers
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> -apvlv-0.1.1.ebuild,
+  -apvlv-0.1.2.ebuild, apvlv-0.1.2-r1.ebuild:
+  stable on amd64 wrt bug #418639. Remove old ebuilds to make repoman happy
+
+  26 Jul 2012; Jeff Horelick <jdhore@gentoo.org> apvlv-0.1.2-r1.ebuild:
+  x86 stable wrt bug 418639
+
+*apvlv-0.1.4 (16 Jul 2012)
+
+  16 Jul 2012; Maciej Mrozowski <reavertm@gentoo.org> +apvlv-0.1.4.ebuild,
+  +files/apvlv-0.1.4-cmake.patch:
+  Version bump
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> apvlv-0.1.1.ebuild,
+  apvlv-0.1.2.ebuild, apvlv-0.1.2-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  23 Apr 2012; Michał Górny <mgorny@gentoo.org> apvlv-0.1.2.ebuild,
+  apvlv-0.1.2-r1.ebuild:
+  Use mirror://github.
+
+*apvlv-0.1.2-r1 (19 Oct 2011)
+
+  19 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +apvlv-0.1.2-r1.ebuild,
+  +files/apvlv-0.1.2-poppler-0.18.patch:
+  Fix building with app-text/poppler >= 0.18 wrt #385057 by Diego Elio Pettenò
 
 *apvlv-0.1.2 (14 Jul 2011)
 
@@ -64,4 +95,3 @@
   27 Mar 2010; Samuli Suominen <ssuominen@gentoo.org> +apvlv-0.0.9.4.ebuild:
   Initial commit wrt #257378, thanks to Ramana Kumar, Christian Glindkamp,
   Jarkko Kaleva, Eric Smith, and William.
-

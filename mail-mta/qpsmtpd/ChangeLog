@@ -1,6 +1,29 @@
 # ChangeLog for mail-mta/qpsmtpd
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/qpsmtpd/ChangeLog,v 1.11 2010/03/25 06:14:33 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/qpsmtpd/ChangeLog,v 1.16 2012/11/30 23:10:44 radhermit Exp $
+
+  30 Nov 2012; Tim Harder <radhermit@gentoo.org>
+  qpsmtpd-0.43_rc2_pre955.ebuild, qpsmtpd-0.81.ebuild, qpsmtpd-0.82.ebuild,
+  qpsmtpd-0.83.ebuild, qpsmtpd-0.83-r1.ebuild, qpsmtpd-0.84.ebuild,
+  qpsmtpd-9999.ebuild:
+  Fix LICENSE (bug #445386 by ulm).
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> qpsmtpd-0.43_rc2_pre955.ebuild,
+  qpsmtpd-0.81.ebuild, qpsmtpd-0.82.ebuild, qpsmtpd-0.83-r1.ebuild,
+  qpsmtpd-0.83.ebuild, qpsmtpd-0.84.ebuild, qpsmtpd-9999.ebuild:
+  inherit user for enewgroup and enewuser
+
+  18 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #118003.
+
+*qpsmtpd-0.84 (29 Feb 2012)
+
+  29 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/qpsmtpd-0.83-accept-empty-email.patch, +qpsmtpd-0.84.ebuild:
+  Version bump and fix for mails with no body (submitted upstream).
+
+  20 Sep 2011; Michał Górny <mgorny@gentoo.org> qpsmtpd-9999.ebuild:
+  Migrate to git-2.
 
   25 Mar 2010; Robin H. Johnson <robbat2@gentoo.org> qpsmtpd-0.83-r1.ebuild:
   Clean up file and dir ownership.

@@ -1,6 +1,225 @@
 # ChangeLog for x11-libs/qt-core
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-core/ChangeLog,v 1.135 2011/07/13 12:49:55 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-core/ChangeLog,v 1.191 2012/12/05 03:14:14 yngwin Exp $
+
+*qt-core-4.8.4 (05 Dec 2012)
+
+  05 Dec 2012; Ben de Groot <yngwin@gentoo.org> +qt-core-4.8.4.ebuild:
+  Qt 4.8.4 version bump
+
+  14 Oct 2012; Raúl Porcel <armin76@gentoo.org> qt-core-4.8.2.ebuild:
+  alpha/ia64/sparc stable wrt #424625
+
+  18 Sep 2012; Davide Pesavento <pesa@gentoo.org> -qt-core-4.8.3.ebuild,
+  qt-core-4.8.3-r1.ebuild:
+  old
+
+*qt-core-4.8.3-r1 (16 Sep 2012)
+
+  16 Sep 2012; Ben de Groot <yngwin@gentoo.org> +qt-core-4.8.3-r1.ebuild:
+  Import updates from live ebuild in overlay
+
+*qt-core-4.8.3 (14 Sep 2012)
+
+  14 Sep 2012; Ben de Groot <yngwin@gentoo.org> +qt-core-4.8.3.ebuild:
+  Version bump. Drop qatomic-x32 patch applied upstream. Drop qpa useflag.
+
+  19 Jul 2012; Markus Meier <maekke@gentoo.org> qt-core-4.8.2.ebuild:
+  arm stable, bug #424625
+
+  15 Jul 2012; Agostino Sarubbo <ago@gentoo.org> qt-core-4.8.2.ebuild:
+  Stable for x86, wrt bug #424625
+
+  09 Jul 2012; Johannes Huber <johu@gentoo.org> -files/blacklist_ssl.patch,
+  -files/qt-4.6-nolibx11.patch, -files/qt-4.6-nox11r6.patch:
+  Remove old.
+
+  09 Jul 2012; Johannes Huber <johu@gentoo.org> -qt-core-4.6.3-r1.ebuild:
+  Drop Qt-4.6.3
+
+  09 Jul 2012; Joseph Jezak <josejx@gentoo.org> qt-core-4.8.2.ebuild:
+  Marked ppc/ppc64 for bug #424625.
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> qt-core-4.8.1-r3.ebuild,
+  qt-core-4.8.2.ebuild:
+  sparc stable, add ~sparc
+
+  08 Jul 2012; Jeroen Roovers <jer@gentoo.org> qt-core-4.8.2.ebuild:
+  Stable for HPPA (bug #424625).
+
+  06 Jul 2012; Michael Weber <xmw@gentoo.org> qt-core-4.8.1-r3.ebuild:
+  ppc stable (bug 414241)
+
+  05 Jul 2012; Agostino Sarubbo <ago@gentoo.org> qt-core-4.8.2.ebuild:
+  Stable for amd64, wrt bug #424625
+
+  25 Jun 2012; Raúl Porcel <armin76@gentoo.org> qt-core-4.8.1-r3.ebuild,
+  qt-core-4.8.2.ebuild:
+  Add ~alpha, alpha/ia64 stable wrt #414241
+
+  19 Jun 2012; Davide Pesavento <pesa@gentoo.org>
+  +files/4.8.2-qatomic-x32.patch, qt-core-4.8.2.ebuild:
+  Add patch for x32 support in qatomic asm code (bug 420705).
+
+  18 Jun 2012; Davide Pesavento <pesa@gentoo.org> metadata.xml:
+  Cleanup metadata and add upstream info.
+
+  08 Jun 2012; Davide Pesavento <pesa@gentoo.org> -qt-core-4.8.1-r2.ebuild:
+  Remove unused revision.
+
+  08 Jun 2012; Davide Pesavento <pesa@gentoo.org> qt-core-4.8.1-r3.ebuild:
+  Stable on hppa to force rebuild against icu-49, wrt bug 413541.
+
+  31 May 2012; Davide Pesavento <pesa@gentoo.org> qt-core-4.8.1-r3.ebuild:
+  Stable on arm to force rebuild against icu-49, wrt bug 413541.
+
+*qt-core-4.8.2 (22 May 2012)
+
+  22 May 2012; Davide Pesavento <pesa@gentoo.org> +qt-core-4.8.2.ebuild:
+  Version bump.
+
+  21 May 2012; Davide Pesavento <pesa@gentoo.org> qt-core-4.8.1-r3.ebuild:
+  amd64/x86 stable to force rebuild against icu-49.
+
+*qt-core-4.8.1-r3 (20 May 2012)
+
+  20 May 2012; Davide Pesavento <pesa@gentoo.org> +qt-core-4.8.1-r3.ebuild:
+  Revbump introducing icu USE flag and forcing >=icu-49 to workaround bug
+  #413541.
+
+  20 May 2012; Davide Pesavento <pesa@gentoo.org> metadata.xml:
+  Remove "jit" USE flag description from metadata, bug 416611.
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> qt-core-4.8.1-r2.ebuild:
+  Stable for x86, wrt bug #414241
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> qt-core-4.8.1-r2.ebuild:
+  Stable for HPPA (bug #414241).
+
+  14 May 2012; Johannes Huber <johu@gentoo.org> -qt-core-4.7.2-r2.ebuild:
+  Drop Qt-4.7.2
+
+  13 May 2012; Davide Pesavento <pesa@gentoo.org> -qt-core-4.8.1-r1.ebuild:
+  Remove unused revision.
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> qt-core-4.8.1-r2.ebuild:
+  keyword ~amd64-fbsd
+
+  12 May 2012; Markus Meier <maekke@gentoo.org> qt-core-4.8.1-r2.ebuild:
+  arm stable, bug #414241
+
+  08 May 2012; Markos Chandras <hwoarang@gentoo.org> qt-core-4.8.1-r2.ebuild:
+  Stable on amd64 wrt bug #414241
+
+  06 May 2012; Davide Pesavento <pesa@gentoo.org> qt-core-4.8.1-r1.ebuild,
+  qt-core-4.8.1-r2.ebuild:
+  Minor ebuild cleanup.
+
+*qt-core-4.8.1-r2 (04 May 2012)
+
+  04 May 2012; Davide Pesavento <pesa@gentoo.org>
+  +files/moc-workaround-for-boost-1.48.patch, +qt-core-4.8.1-r2.ebuild:
+  Apply Fedora's workaround to fix bug 401551 (moc fails to parse BOOST_JOIN
+  macro of dev-libs/boost-1.48).
+
+*qt-core-4.8.1-r1 (15 Apr 2012)
+
+  15 Apr 2012; Davide Pesavento <pesa@gentoo.org>
+  +files/qt-core-4.8.1-localized-time.patch, +qt-core-4.8.1-r1.ebuild,
+  -qt-core-4.8.1.ebuild:
+  Fix localization of date/time, bug 411929 by Franz Fellner. Patch has been
+  merged upstream for Qt 4.8.2 (https://codereview.qt-project.org/20869).
+
+  12 Apr 2012; Davide Pesavento <pesa@gentoo.org>
+  -files/qt-core-4.8.0-qurl-regression-fix.patch, -qt-core-4.6.3.ebuild,
+  -qt-core-4.7.2-r1.ebuild, -qt-core-4.7.4.ebuild:
+  Remove unused versions.
+
+  05 Apr 2012; Johannes Huber <johu@gentoo.org> -qt-core-4.8.0-r1.ebuild:
+  Drop Qt-4.8.0
+
+  03 Apr 2012; Jeroen Roovers <jer@gentoo.org> qt-core-4.7.4-r1.ebuild:
+  Stable for HPPA (bug #390963).
+
+*qt-core-4.8.1 (29 Mar 2012)
+
+  29 Mar 2012; Davide Pesavento <pesa@gentoo.org> +qt-core-4.8.1.ebuild:
+  Version bump.
+
+  27 Mar 2012; Johannes Huber <johu@gentoo.org> -files/qt-4.6.2-alpha.patch:
+  Remove unused.
+
+  27 Mar 2012; Johannes Huber <johu@gentoo.org> -qt-core-4.6.2-r1.ebuild:
+  Drop Qt-4.6.2
+
+  29 Jan 2012; Joseph Jezak <josejx@gentoo.org> qt-core-4.7.4-r1.ebuild:
+  Marked ppc ppc64 stable for bug #390963.
+
+*qt-core-4.8.0-r1 (29 Jan 2012)
+
+  29 Jan 2012; Alex Alexander <wired@gentoo.org> +qt-core-4.8.0-r1.ebuild,
+  +files/qt-core-4.8.0-qurl-regression-fix.patch, metadata.xml:
+  version bump
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> qt-core-4.7.4-r1.ebuild:
+  x86 stable, bug #390963
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> qt-core-4.7.4-r1.ebuild:
+  Stable for AMD64, wrt bug #390963
+
+  28 Nov 2011; Davide Pesavento <pesa@gentoo.org> -files/qt-4.5-nolibx11.diff,
+  -qt-core-4.7.3-r1.ebuild, -qt-core-4.7.3.ebuild:
+  Remove Qt 4.7.3
+
+*qt-core-4.7.4-r1 (28 Nov 2011)
+
+  28 Nov 2011; Theo Chatzimichos <tampakrap@gentoo.org>
+  +qt-core-4.7.4-r1.ebuild, +files/qt-core-4.7.4-fix-libreoffice-crash.patch:
+  Backport patch from Qt 4.8 to fix crash in LibreOffice, as pointed out by
+  scarabeus. FreeDesktop bug 40298
+
+  26 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> Manifest:
+  Bug 385719: upstream altered qt-everywhere-opensource-src-4.7.4.tar.gz, mass
+  fix for pesa.
+
+  20 Nov 2011; Davide Pesavento <pesa@gentoo.org> qt-core-4.6.3-r1.ebuild,
+  qt-core-4.7.2-r2.ebuild, qt-core-4.7.4.ebuild, -files/moc.pro,
+  -files/rcc.pro, -files/uic.pro:
+  Drop redundant dep on dev-util/pkgconfig; remove unused files.
+
+  27 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> qt-core-4.7.2-r2.ebuild:
+  ppc/ppc64 stable wrt #382171
+
+  13 Sep 2011; Markos Chandras <hwoarang@gentoo.org> qt-core-4.7.2-r2.ebuild:
+  Stable on amd64 wrt bug #382171
+
+  12 Sep 2011; Markus Meier <maekke@gentoo.org> qt-core-4.7.2-r2.ebuild:
+  arm stable, bug #382171
+
+  11 Sep 2011; Markus Meier <maekke@gentoo.org> qt-core-4.7.2-r2.ebuild:
+  x86 stable, bug #382171
+
+  08 Sep 2011; Alex Alexander <wired@gentoo.org>
+  files/blacklist-diginotar-certs.diff:
+  updated blacklist patch to work with stable version of sys-devel/patch
+  (2.5.9)
+
+*qt-core-4.7.4 (08 Sep 2011)
+
+  08 Sep 2011; Alex Alexander <wired@gentoo.org> +qt-core-4.7.4.ebuild:
+  version bump, 4.7.4
+
+*qt-core-4.7.3-r1 (08 Sep 2011)
+*qt-core-4.7.2-r2 (08 Sep 2011)
+
+  08 Sep 2011; Alex Alexander <wired@gentoo.org> +qt-core-4.7.2-r2.ebuild,
+  +qt-core-4.7.3-r1.ebuild, +files/blacklist-diginotar-certs.diff:
+  security fix: upstream patch that blacklists all DigiNotar intermediates and
+  root certificates. bug #382171
+
+  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  qt-core-4.6.3-r1.ebuild:
+  keyword ~sparc-solaris
 
   13 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> qt-core-4.7.2-r1.ebuild:
   ppc64 stable wrt #354033
@@ -536,4 +755,3 @@
   21 Dec 2007; Caleb Tennis <caleb@gentoo.org> +metadata.xml,
   +qt-core-4.4.0_rc1.ebuild:
   Initial ebuild
-

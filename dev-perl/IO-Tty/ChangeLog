@@ -1,6 +1,26 @@
 # ChangeLog for dev-perl/IO-Tty
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/IO-Tty/ChangeLog,v 1.40 2011/07/22 14:06:01 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/IO-Tty/ChangeLog,v 1.46 2012/08/09 13:57:03 blueness Exp $
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org> IO-Tty-1.100.0.ebuild:
+  Keyword ~mips
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  23 Apr 2012; Brent Baude <ranger@gentoo.org> IO-Tty-1.100.0.ebuild:
+  Marking IO-Tty-1.100.0 ppc64 for bug 412983
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -IO-Tty-1.10.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> IO-Tty-1.100.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*IO-Tty-1.100.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +IO-Tty-1.100.0.ebuild:
+  Change version scheme
 
   22 Jul 2011; Jeroen Roovers <jer@gentoo.org> IO-Tty-1.10.ebuild:
   Stable for HPPA (bug #372773).

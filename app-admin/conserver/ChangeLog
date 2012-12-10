@@ -1,6 +1,28 @@
 # ChangeLog for app-admin/conserver
-# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/conserver/ChangeLog,v 1.75 2009/02/23 14:57:29 josejx Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/conserver/ChangeLog,v 1.81 2012/08/17 21:25:42 hwoarang Exp $
+
+  17 Aug 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Remove myself from maintainers
+
+  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> conserver-8.1.18.ebuild:
+  alpha/ia64/sparc/x86 stable wrt #402765
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> conserver-8.1.18.ebuild:
+  Marking conserver-8.1.18 ppc64 for bug 402765
+
+  23 Feb 2012; Agostino Sarubbo <ago@gentoo.org> conserver-8.1.18.ebuild:
+  Stable for amd64, wrt bug #402765
+
+  14 Feb 2012; Brent Baude <ranger@gentoo.org> conserver-8.1.18.ebuild:
+  Marking conserver-8.1.18 ppc for bug 402765
+
+*conserver-8.1.18 (24 Aug 2011)
+
+  24 Aug 2011; Markos Chandras <hwoarang@gentoo.org> +conserver-8.1.18.ebuild,
+  +files/conserver-8.1.18-dmalloc.patch, metadata.xml:
+  Version bump. Bug #379907. Thanks to Dan Weeks <dan@danweeks.net>. Assigned
+  to proxy-maintainers
 
   23 Feb 2009; Joseph Jezak <josejx@gentoo.org> conserver-8.1.16-r1.ebuild:
   Marked ~ppc/~ppc64 for bug #210799.
@@ -314,4 +336,3 @@
   03 Oct 2003; Jason Wever <weeve@gentoo.org> conserver-8.0.1.ebuild,
   metadata.xml, files/conserver.confd, files/conserver.initd:
   Initial import.  Satisfies bug #8652.
-

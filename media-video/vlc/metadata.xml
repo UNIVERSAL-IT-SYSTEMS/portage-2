@@ -2,10 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
   <herd>video</herd>
-  <maintainer>
-    <email>aballier@gentoo.org</email>
-    <name>Alexis Ballier</name>
-  </maintainer>
   <use>
     <flag name="atmo">Enables support for AtmoLight (homebrew Ambient Lighting Technology)</flag>
 	<flag name="audioqueue">Enables AudioQueue audio module for Mac OS X.</flag>
@@ -17,6 +13,7 @@
 	<flag name="direct2d">Enable Win7/VistaPU Direct2D support.</flag>
 	<flag name="directx">Enable Win32 DirectX support.</flag>
 	<flag name="dshow">Enables Win32 DirectShow support.</flag>
+	<flag name="dvbpsi">Enables support for Mpeg-TS files (.ts, .m2ts, .mts) via <pkg>media-libs/libdvbpsi</pkg>.</flag>
 	<flag name="dxva2">Enables Win32 DxVA2 support.</flag>
 	<flag name="egl">Enables EGL video output module.</flag>
 	<flag name="fbosd">Enables the framebuffer overlay plugin.</flag>
@@ -29,7 +26,6 @@
     <flag name="id3tag">Enables id3tag metadata reader plugin.</flag>
 	<flag name="ios-vout">Enables iPhone OS video output.</flag>
     <flag name="kate">Adds support for Ogg Kate subtitles via libkate.</flag>
-    <flag name="libass">Enables subtitles support using libass.</flag>
     <flag name="libproxy">Enables support for proxy settings in the HTTP access module.</flag>
     <flag name="libv4l">Enables Libv4l Video4Linux support.</flag>
     <flag name="libv4l2">Enables Libv4l2 Video4Linux2 support (for conversion
@@ -44,13 +40,13 @@
 	<flag name="macosx-dialog-provider">Enables Mac OS X dialog module.</flag>
 	<flag name="macosx-eyetv">Enables Mac OS X EyeTV (TNT Tuner) module.</flag>
 	<flag name="macosx-quartztext">Enables Mac OS X quartz text module.</flag>
-	<flag name="macosx-qtcapture">Enables Mac OS X qtcapture (iSight) module.</flag>
+	<flag name="macosx-qtkit">Enables Mac OS X qtkit module: qtcapture (video) and qtsound (audio) module.</flag>
 	<flag name="macosx-vout">Enables Mac OS X video output module.</flag>
 	<flag name="matroska">Enables matroska support using reference libraries (fallback on other existing matroska support if disabled, i.e., matroska enabled FFmpeg)</flag>
 	<flag name="media-library">Build the (sqlite based) media library.</flag>
-	<flag name="neon">Enables NEON optimizations for arm processors.</flag>
 	<flag name="omxil">Enables OpenMAX Integration Layer codec module.</flag>
     <flag name="optimisememory">Enable optimisation for memory rather than performance.</flag>
+	<flag name="opus">Support opus decoding via libopus.</flag>
 	<flag name="postproc">Enables image post-processing via libpostproc (part of FFmpeg).</flag>
     <flag name="projectm">Enables the projectM visualization plugin.</flag>
     <flag name="pvr">Enables PVR cards access module.</flag>

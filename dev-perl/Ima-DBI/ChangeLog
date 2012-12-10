@@ -1,6 +1,20 @@
 # ChangeLog for dev-perl/Ima-DBI
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Ima-DBI/ChangeLog,v 1.28 2011/04/24 15:32:30 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Ima-DBI/ChangeLog,v 1.32 2012/06/24 13:00:36 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Ima-DBI-0.35.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Ima-DBI-0.350.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Ima-DBI-0.350.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +Ima-DBI-0.350.0.ebuild:
+  Change version scheme
 
   24 Apr 2011; Fabian Groffen <grobian@gentoo.org> Ima-DBI-0.35.ebuild:
   Marked ~x86-solaris, bug #296509
@@ -93,4 +107,3 @@
   31 Mar 2004; Michael Cummings <mcummings@gentoo.org> Ima-DBI-0.33.ebuild,
   metadata.xml:
   dep for class-dbi
-

@@ -1,6 +1,19 @@
 # ChangeLog for dev-java/msv
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/msv/ChangeLog,v 1.29 2011/01/18 15:21:34 fordfrog Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/msv/ChangeLog,v 1.33 2012/04/15 18:39:26 vapier Exp $
+
+  15 Apr 2012; Mike Frysinger <vapier@gentoo.org> msv-20050627-r3.ebuild:
+  Add back ia64 love #349020 by Dennis Schridde.
+
+  01 Jan 2012; Ralph Sennhauser <sera@gentoo.org> msv-20050627-r1.ebuild,
+  msv-20050627-r2.ebuild, msv-20050627-r3.ebuild:
+  Drop ia64 support #345433
+
+  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> msv-20050627-r3.ebuild:
+  x86 stable wrt bug #394005
+
+  18 Dec 2011; Agostino Sarubbo <ago@gentoo.org> msv-20050627-r3.ebuild:
+  Stable for AMD64, wrt bug #394005
 
 *msv-20050627-r3 (18 Jan 2011)
 

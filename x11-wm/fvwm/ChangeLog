@@ -1,6 +1,59 @@
 # ChangeLog for x11-wm/fvwm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/fvwm/ChangeLog,v 1.177 2011/05/27 11:36:51 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/fvwm/ChangeLog,v 1.190 2012/11/09 10:14:42 darkside Exp $
+
+  09 Nov 2012; Jeremy Olexa <darkside@gentoo.org> metadata.xml:
+  remove myself from metadata
+
+  08 Oct 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/fvwm-2.6.5-mouse-buttons.patch:
+  Commit forgotten patch, bug #437552 by avx.
+
+*fvwm-2.6.5 (07 Oct 2012)
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> +fvwm-2.6.5.ebuild:
+  Version bump, also include a default on vanilla USE and patch to increase
+  maximum mouse buttons number when that USE is off, also include epatch_user as
+  requested, please see bugs #411811 (by avx) and #412079 (also by Jesús
+  Guerrero).
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> fvwm-2.6.2.ebuild:
+  Marking fvwm-2.6.2 ppc for bug 416213
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> fvwm-2.6.2.ebuild,
+  fvwm-2.6.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> fvwm-2.6.3.ebuild:
+  x86 stable wrt bug #392411
+
+  05 Dec 2011; Tony Vroon <chainsaw@gentoo.org> fvwm-2.6.3.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #392411.
+
+  11 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> -fvwm-2.5.28.ebuild,
+  -files/fvwm-2.5.28-libpng14.patch, -fvwm-2.5.31.ebuild:
+  old
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> fvwm-2.6.2.ebuild:
+  x86 stable, bug #385143
+
+  14 Oct 2011; Steve Dibb <beandog@gentoo.org> fvwm-2.6.2.ebuild:
+  amd64 stable, bug 385143
+
+  03 Oct 2011; Jeremy Olexa <darkside@gentoo.org> fvwm-2.6.2.ebuild:
+  increase needed dev-libs/fribidi version, bug 385169
+
+*fvwm-2.6.3 (01 Oct 2011)
+
+  01 Oct 2011; Jeremy Olexa <darkside@gentoo.org> +fvwm-2.6.3.ebuild:
+  version bump by Jesús Guerrero, bug 385145
+
+*fvwm-2.6.2 (08 Aug 2011)
+
+  08 Aug 2011; Jeremy Olexa <darkside@gentoo.org> -fvwm-2.5.30.ebuild,
+  -fvwm-2.6.1.ebuild, +fvwm-2.6.2.ebuild:
+  Version bump, bug 378251 - tested by Jesús Guerrero
 
   27 May 2011; Michael Weber <xmw@gentoo.org> fvwm-2.6.1.ebuild:
   added ~arm keyword (bug 368715)

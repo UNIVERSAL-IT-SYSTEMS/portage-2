@@ -1,6 +1,91 @@
 # ChangeLog for sys-apps/moreutils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/moreutils/ChangeLog,v 1.28 2011/07/22 14:07:22 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/moreutils/ChangeLog,v 1.51 2012/09/12 15:27:55 jer Exp $
+
+  12 Sep 2012; Jeroen Roovers <jer@gentoo.org> moreutils-0.47.ebuild:
+  Stable for HPPA (bug #429200).
+
+  08 Sep 2012; Johannes Huber <johu@gentoo.org> moreutils-0.47.ebuild:
+  Stable for x86, wrt bug #429200
+
+  06 Sep 2012; Agostino Sarubbo <ago@gentoo.org> moreutils-0.47.ebuild:
+  Stable for amd64, wrt bug #429200
+
+  25 Aug 2012; Mike Frysinger <vapier@gentoo.org> moreutils-0.45-r1.ebuild,
+  moreutils-0.46.ebuild, moreutils-0.47.ebuild:
+  Drop useless -vf args to mv #432632 by Joshua B. Kahlenberg.
+
+  08 Jul 2012; Jeroen Roovers <jer@gentoo.org> moreutils-0.45-r1.ebuild,
+  moreutils-0.46.ebuild, moreutils-0.47.ebuild:
+  Update HOMEPAGE.
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> moreutils-0.46.ebuild:
+  Stable for HPPA (bug #422185).
+
+  30 Jun 2012; Jeff Horelick <jdhore@gentoo.org> moreutils-0.46.ebuild:
+  marked x86 per bug 422185
+
+  30 Jun 2012; Agostino Sarubbo <ago@gentoo.org> moreutils-0.46.ebuild:
+  Stable for amd64, wrt bug #422185
+
+*moreutils-0.47 (30 Jun 2012)
+
+  30 Jun 2012; Tim Harder <radhermit@gentoo.org> +moreutils-0.47.ebuild,
+  +files/moreutils-0.47-dtd-path.patch:
+  Version bump.
+
+*moreutils-0.46 (15 Apr 2012)
+
+  15 Apr 2012; Tim Harder <radhermit@gentoo.org> +moreutils-0.46.ebuild:
+  Version bump.
+
+  07 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -moreutils-0.45.ebuild:
+  old
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> moreutils-0.45-r1.ebuild:
+  x86 stable, bug #403737
+
+  06 Mar 2012; Markos Chandras <hwoarang@gentoo.org> moreutils-0.45-r1.ebuild:
+  Fix build failure when using -doc. Bug #400675. Restore stable amd64 keywords
+
+  06 Mar 2012; Markos Chandras <hwoarang@gentoo.org> moreutils-0.45-r1.ebuild:
+  Revert stable amd64 keywords because of bug #400675
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> moreutils-0.45-r1.ebuild:
+  Stable for amd64, wrt bug #403737
+
+  16 Feb 2012; Jeroen Roovers <jer@gentoo.org> moreutils-0.45-r1.ebuild:
+  Stable for HPPA and sed must die() (bug #403737).
+
+  15 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> moreutils-0.45-r1.ebuild:
+  Keyword ~arch for ppc and ppc64
+
+*moreutils-0.45-r1 (23 Jan 2012)
+
+  23 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +moreutils-0.45-r1.ebuild:
+  Rename parallel command to moreutils_parallel because the one from
+  sys-process/parallel is more advanced wrt #349225 by Helmut Jarausch
+
+  05 Sep 2011; Tim Harder <radhermit@gentoo.org>
+  -files/moreutils-0.30-dtd-path.patch, -moreutils-0.39.ebuild,
+  -files/moreutils-0.42-dtd-path.patch, -moreutils-0.43.ebuild,
+  -moreutils-0.44.ebuild:
+  Remove old.
+
+  04 Sep 2011; Tony Vroon <chainsaw@gentoo.org> moreutils-0.45.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #381639 filed by Tim "radhermit" Harder.
+
+  04 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> moreutils-0.45.ebuild:
+  x86 stable wrt bug #381639
+
+  03 Sep 2011; Jeroen Roovers <jer@gentoo.org> moreutils-0.45.ebuild:
+  Stable for HPPA (bug #381639).
+
+  26 Aug 2011; Fabian Groffen <grobian@gentoo.org> moreutils-0.45.ebuild,
+  +files/moreutils-0.45-dtd-path.patch:
+  Fixed for Prefix, marked ~x86-linux, thanks Dan Wallis in bug #376541
 
   22 Jul 2011; Jeroen Roovers <jer@gentoo.org> moreutils-0.43.ebuild:
   Stable for HPPA (bug #372773).
@@ -127,4 +212,3 @@
   10 May 2008; Greg Kroah-Hartman <gregkh@gentoo.org>
   +files/docbook-makefile.patch, +moreutils-0.29.ebuild:
   initial addition of the moreutils package
-

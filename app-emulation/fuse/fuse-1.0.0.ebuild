@@ -1,8 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/fuse/fuse-1.0.0.ebuild,v 1.1 2011/05/02 20:01:15 neurogeek Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/fuse/fuse-1.0.0.ebuild,v 1.6 2012/05/03 18:49:08 jdhore Exp $
 
-EAPI="3"
+EAPI=4
+inherit eutils
 
 DESCRIPTION="Free Unix Spectrum Emulator by Philip Kendall"
 HOMEPAGE="http://fuse-emulator.sourceforge.net"
@@ -10,7 +11,7 @@ SRC_URI="mirror://sourceforge/fuse-emulator/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="alsa ao fbcon gpm gtk joystick memlimit png sdl svga X xml"
 
 # This build is heavily use dependent. Fuse user interface use flags are, in
@@ -45,14 +46,21 @@ RDEPEND="~app-emulation/libspectrum-1.0.0
 						!alsa? ( ao? ( media-libs/libao ) )
 						joystick? ( media-libs/libjsw ) ) ) ) ) )
 	dev-libs/glib:2
-	png? ( media-libs/libpng )
+	png? ( media-libs/libpng sys-libs/zlib )
 	xml? ( dev-libs/libxml2 )"
 DEPEND="${RDEPEND}
 	dev-lang/perl
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
+
+DOCS=( AUTHORS ChangeLog README THANKS )
+
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-libpng15.patch
+}
 
 src_configure() {
 	local guiflag
+
 	if use gtk; then
 		guiflag=""
 	elif use sdl; then
@@ -66,7 +74,9 @@ src_configure() {
 	else  # We default to X user interface
 		guiflag="--without-gtk"
 	fi
-	econf --without-win32 \
+
+	econf \
+		--without-win32 \
 		${guiflag} \
 		$(use_with gpm) \
 		$(use_with alsa) \
@@ -75,16 +85,10 @@ src_configure() {
 		$(use_enable joystick ui-joystick) \
 		$(use_with xml libxml2) \
 		$(use_with png ) \
-		$(use_enable memlimit smallmem) \
-		|| die "econf failed!"
-}
-
-src_compile() {
-	emake || die "emake failed!"
+		$(use_enable memlimit smallmem)
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || die
-	dodoc AUTHORS ChangeLog README THANKS
+	default
 	doman man/fuse.1
 }

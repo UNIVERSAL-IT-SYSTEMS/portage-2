@@ -1,6 +1,54 @@
 # ChangeLog for games-arcade/frozen-bubble
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/frozen-bubble/ChangeLog,v 1.38 2009/09/06 21:25:59 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/frozen-bubble/ChangeLog,v 1.51 2012/10/22 04:09:37 mr_bones_ Exp $
+
+  22 Oct 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  frozen-bubble-2.2.1_beta1.ebuild:
+  use newicon
+
+  21 Sep 2012; Tupone Alfredo <tupone@gentoo.org>
+  frozen-bubble-2.2.1_beta1.ebuild:
+  Fix build after games eclass changes. Bug #428654 by Diego
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  frozen-bubble-2.2.1_beta1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  14 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -frozen-bubble-2.2.0.ebuild:
+  old
+
+  14 Apr 2012; Markus Meier <maekke@gentoo.org>
+  frozen-bubble-2.2.1_beta1.ebuild:
+  x86 stable, bug #408581
+
+  20 Mar 2012; Agostino Sarubbo <ago@gentoo.org>
+  frozen-bubble-2.2.1_beta1.ebuild:
+  Stable for amd64, wrt bug #408581
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> frozen-bubble-2.2.0.ebuild:
+  Drop HPPA keywording.
+
+  21 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  frozen-bubble-2.2.1_beta1.ebuild:
+  Missing dev-perl/File-Slurp and dev-perl/IPC-System-Simple from dependencies.
+
+*frozen-bubble-2.2.1_beta1 (20 Feb 2012)
+
+  20 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +frozen-bubble-2.2.1_beta1.ebuild:
+  Version bump wrt #388911 by Ralf Mayer
+
+  30 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  frozen-bubble-2.2.0.ebuild:
+  Remove ppc keywording wrt #399649
+
+  28 Jan 2012; Raúl Porcel <armin76@gentoo.org> frozen-bubble-2.2.0.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  21 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  frozen-bubble-2.2.0.ebuild:
+  dev-perl/sdl-perl was renamed to dev-perl/SDL.
 
   06 Sep 2009; Michael Sterrett <mr_bones_@gentoo.org>
   frozen-bubble-2.2.0.ebuild:

@@ -1,6 +1,61 @@
 # ChangeLog for net-analyzer/vnstat
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/vnstat/ChangeLog,v 1.47 2011/06/06 07:41:54 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/vnstat/ChangeLog,v 1.62 2012/06/12 03:36:17 zmedico Exp $
+
+  12 Jun 2012; Zac Medico <zmedico@gentoo.org> vnstat-1.10-r1.ebuild,
+  vnstat-1.11-r2.ebuild:
+  inherit user for enewgroup and enewuser
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> vnstat-1.11-r2.ebuild:
+  sparc stable wrt #403019
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> vnstat-1.11-r2.ebuild:
+  x86 stable wrt bug #403019
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org> vnstat-1.11-r2.ebuild:
+  Marking vnstat-1.11-r2 ppc for bug 403019
+
+  09 Mar 2012; Brent Baude <ranger@gentoo.org> vnstat-1.11-r2.ebuild:
+  Marking vnstat-1.11-r2 ppc64 for bug 403019
+
+  02 Mar 2012; Markus Meier <maekke@gentoo.org> vnstat-1.11-r2.ebuild:
+  arm stable, bug #403019
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> vnstat-1.11-r2.ebuild:
+  Stable for HPPA (bug #403019).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> vnstat-1.11-r2.ebuild:
+  Stable for amd64, wrt bug #403019
+
+  01 Jan 2012; Christian Ruppert <idl0r@gentoo.org> files/vnstatd.initd:
+  Forgot to remove a obsolete codeblock.
+
+*vnstat-1.11-r2 (01 Jan 2012)
+*vnstat-1.10-r1 (01 Jan 2012)
+
+  01 Jan 2012; Christian Ruppert <idl0r@gentoo.org> -vnstat-1.10.ebuild,
+  +vnstat-1.10-r1.ebuild, -vnstat-1.11-r1.ebuild, +vnstat-1.11-r2.ebuild,
+  files/vnstatd.initd:
+  Revbump. Don't use the deprecated $opts variable, bug 386115.
+
+  21 Oct 2011; Jeroen Roovers <jer@gentoo.org> vnstat-1.11-r1.ebuild:
+  Remove fowners call for /var/run/vnstatd too.
+
+  20 Oct 2011; Jeroen Roovers <jer@gentoo.org> vnstat-1.11-r1.ebuild:
+  Remove keepdir /var/run/vnstatd by i.Dark_Templar (bug #387887).
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> files/vnstatd.initd:
+  Run checkpath on the directory itself, not its parent.
+
+  04 Sep 2011; Jeroen Roovers <jer@gentoo.org> files/vnstatd.initd:
+  Add support for cleaned /var/run on startup by Xake and i.Dark_Templar (bug
+  #332429).
+
+*vnstat-1.11-r1 (04 Sep 2011)
+
+  04 Sep 2011; Jeroen Roovers <jer@gentoo.org> -vnstat-1.11.ebuild,
+  +vnstat-1.11-r1.ebuild, files/vnstatd.initd:
+  Replace deprecated --chuid option in init.d script (bug #381793).
 
   06 Jun 2011; Tim Harder <radhermit@gentoo.org> vnstat-1.11.ebuild:
   Update to EAPI 4 and remove old warnings.

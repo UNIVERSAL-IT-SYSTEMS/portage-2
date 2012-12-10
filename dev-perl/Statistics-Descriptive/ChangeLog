@@ -1,6 +1,90 @@
 # ChangeLog for dev-perl/Statistics-Descriptive
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Statistics-Descriptive/ChangeLog,v 1.31 2011/07/29 17:03:31 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Statistics-Descriptive/ChangeLog,v 1.47 2012/09/02 08:11:50 tove Exp $
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org>
+  -Statistics-Descriptive-3.40.0.ebuild:
+  Cleanup
+
+  16 Aug 2012; Andreas Schuerch <nativemad@gentoo.org>
+  Statistics-Descriptive-3.60.300.ebuild:
+  x86 stable, see bug 422051
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
+  Statistics-Descriptive-3.60.300.ebuild:
+  Stable for amd64, wrt bug #422051
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  03 Jun 2012; Torsten Veller <tove@gentoo.org>
+  -Statistics-Descriptive-3.30.0.ebuild, -Statistics-Descriptive-3.50.0.ebuild,
+  -Statistics-Descriptive-3.60.100.ebuild,
+  -Statistics-Descriptive-3.60.200.ebuild,
+  -Statistics-Descriptive-3.0100.ebuild:
+  Cleanup
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org>
+  Statistics-Descriptive-3.30.0.ebuild, Statistics-Descriptive-3.40.0.ebuild,
+  Statistics-Descriptive-3.50.0.ebuild, Statistics-Descriptive-3.60.100.ebuild,
+  Statistics-Descriptive-3.60.200.ebuild,
+  Statistics-Descriptive-3.60.300.ebuild, Statistics-Descriptive-3.0100.ebuild:
+  Drop ia64/sparc keywords
+
+*Statistics-Descriptive-3.60.300 (18 May 2012)
+
+  18 May 2012; Torsten Veller <tove@gentoo.org>
+  +Statistics-Descriptive-3.60.300.ebuild:
+  Version bump
+
+*Statistics-Descriptive-3.60.200 (12 May 2012)
+
+  12 May 2012; Torsten Veller <tove@gentoo.org>
+  +Statistics-Descriptive-3.60.200.ebuild:
+  Version bump
+
+*Statistics-Descriptive-3.60.100 (12 May 2012)
+
+  12 May 2012; Torsten Veller <tove@gentoo.org>
+  +Statistics-Descriptive-3.60.100.ebuild:
+  Version bump
+
+*Statistics-Descriptive-3.50.0 (03 May 2012)
+
+  03 May 2012; Torsten Veller <tove@gentoo.org>
+  +Statistics-Descriptive-3.50.0.ebuild:
+  Version bump
+
+  22 Apr 2012; Agostino Sarubbo <ago@gentoo.org>
+  Statistics-Descriptive-3.40.0.ebuild:
+  Stable for amd64, wrt bug #412959
+
+  21 Apr 2012; Jeff Horelick <jdhore@gentoo.org>
+  Statistics-Descriptive-3.40.0.ebuild:
+  marked x86 per bug 412959
+
+*Statistics-Descriptive-3.40.0 (04 Mar 2012)
+
+  04 Mar 2012; Torsten Veller <tove@gentoo.org>
+  +Statistics-Descriptive-3.40.0.ebuild:
+  Version bump
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org>
+  -Statistics-Descriptive-3.20.200.ebuild,
+  -Statistics-Descriptive-3.20.300.ebuild:
+  Cleanup
+
+*Statistics-Descriptive-3.30.0 (12 Feb 2012)
+
+  12 Feb 2012; Torsten Veller <tove@gentoo.org>
+  +Statistics-Descriptive-3.30.0.ebuild:
+  Version bump
+
+*Statistics-Descriptive-3.20.300 (19 Nov 2011)
+
+  19 Nov 2011; Torsten Veller <tove@gentoo.org>
+  +Statistics-Descriptive-3.20.300.ebuild:
+  Version bump
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org>
   -Statistics-Descriptive-3.0201.ebuild:
@@ -145,4 +229,3 @@
   04 May 2005; Christian Andreetta <satya@gentoo.org> +metadata.xml,
   +Statistics-Descriptive-2.6.ebuild:
   initial ebuild
-

@@ -1,6 +1,68 @@
 # ChangeLog for sys-apps/shadow
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/shadow/ChangeLog,v 1.261 2011/07/14 19:13:28 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/shadow/ChangeLog,v 1.274 2012/08/18 21:28:14 vapier Exp $
+
+  18 Aug 2012; Mike Frysinger <vapier@gentoo.org> shadow-4.1.4.3.ebuild,
+  shadow-4.1.5-r1.ebuild, shadow-4.1.5-r2.ebuild, shadow-4.1.5.1.ebuild,
+  shadow-4.1.5.ebuild:
+  Drop has_version from older versions, and upgrade latest to EAPI=2 #426474 by
+  Ilya Gordeev.
+
+  17 Aug 2012; Mike Frysinger <vapier@gentoo.org> shadow-4.1.5.1.ebuild:
+  Call epatch_user for custom auth patches #431750.
+
+*shadow-4.1.5.1 (07 Jul 2012)
+
+  07 Jul 2012; Mike Frysinger <vapier@gentoo.org> +shadow-4.1.5.1.ebuild:
+  Version bump #424844 by Samuli Suominen.
+
+  07 Jul 2012; Mike Frysinger <vapier@gentoo.org> shadow-4.1.4.3.ebuild,
+  shadow-4.1.5.ebuild, shadow-4.1.5-r1.ebuild, shadow-4.1.5-r2.ebuild:
+  Fix building when rpc support is disabled #425052 by Dustin Polke.
+
+  31 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> shadow-4.1.5.ebuild,
+  shadow-4.1.5-r1.ebuild, shadow-4.1.5-r2.ebuild, metadata.xml:
+  Remove support for sys-auth/tcb which is being removed because of bugs:
+  #371167, #408647. Use sys-apps/hardened-shadow instead.
+
+*shadow-4.1.5-r2 (21 Apr 2012)
+
+  21 Apr 2012; Mike Frysinger <vapier@gentoo.org> +shadow-4.1.5-r2.ebuild,
+  +files/shadow-4.1.5-grremove.patch,
+  +files/shadow-4.1.5-selinux-groupadd.patch:
+  Fix crash when calling userdel #405409 by Yuri Mamaev. Add patch for groupadd
+  on selinux #406819 by Amadeusz Sławiński. Depend on libsemanage when
+  USE=selinux #408173 by Markus Knetschke.
+
+*shadow-4.1.5-r1 (17 Apr 2012)
+
+  17 Apr 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> +shadow-4.1.5-r1.ebuild:
+  Version bump for new pambase.
+
+  26 Mar 2012; Mike Frysinger <vapier@gentoo.org> shadow-4.1.4.3.ebuild,
+  shadow-4.1.5.ebuild:
+  Add a few more serial ports for arm devices.
+
+  16 Feb 2012; Mike Frysinger <vapier@gentoo.org> shadow-4.1.5.ebuild:
+  Use "-R <root>" option with grp{ck,conv} as it exists in this version.
+
+*shadow-4.1.5 (13 Feb 2012)
+
+  13 Feb 2012; Mike Frysinger <vapier@gentoo.org> +shadow-4.1.5.ebuild,
+  +files/shadow-4.1.5-nscd-ignore-exit-1.patch,
+  +files/shadow-4.1.5-nscd-newline-msg.patch, +files/shadow-4.1.5-stdarg.patch,
+  metadata.xml:
+  Version bump.
+
+  31 Dec 2011; Mike Frysinger <vapier@gentoo.org> shadow-4.1.4.3.ebuild:
+  Add more arm consoles to securetty #396011 by Raúl Porcel.
+
+  16 Dec 2011; Mike Frysinger <vapier@gentoo.org> shadow-4.1.4.3.ebuild:
+  Enable ttySAC secure logins by default. 
+
+  03 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  shadow-4.1.4.2-r6.ebuild, shadow-4.1.4.3.ebuild, metadata.xml:
+  Drop unused local desc and useless blockers over non-existing packages.
 
   14 Jul 2011; Mike Frysinger <vapier@gentoo.org> shadow-4.1.4.2-r6.ebuild,
   shadow-4.1.4.3.ebuild:

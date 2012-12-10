@@ -1,6 +1,35 @@
 # ChangeLog for sci-electronics/geda
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/geda/ChangeLog,v 1.69 2011/04/25 13:44:57 tomjbe Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/geda/ChangeLog,v 1.77 2012/12/05 14:21:47 tomjbe Exp $
+
+*geda-1.8.1 (05 Dec 2012)
+
+  05 Dec 2012; Thomas Beierlein <tomjbe@gentoo.org> +geda-1.8.1.ebuild:
+  Version bump
+
+  25 May 2012; Michael Weber <xmw@gentoo.org> -geda-1.6.1.ebuild:
+  Remove old version
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> geda-1.6.1.ebuild,
+  geda-1.6.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> geda-1.6.2.ebuild:
+  Marking geda-1.6.2 ppc for bug 395797
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> geda-1.6.1.ebuild,
+  geda-1.6.2.ebuild:
+  Drop sparc keywords
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> geda-1.6.2.ebuild:
+  x86 stable wrt bug #395797
+
+  23 Dec 2011; Agostino Sarubbo <ago@gentoo.org> geda-1.6.2.ebuild:
+  Stable for AMD64, wrt bug #395797
+
+  23 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> geda-1.6.2.ebuild,
+  +files/geda-1.6.2-correct_glib_include.patch:
+  Fix building with dev-libs/glib >= 2.30 wrt #395795 by Priit Laes
 
   25 Apr 2011; Thomas Beierlein <tomjbe@gentoo.org> geda-1.6.1.ebuild,
   geda-1.6.2.ebuild:

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
-
 <pkgmetadata>
-<herd>no-herd</herd>
-<maintainer>
-  <email>bicatali@gentoo.org</email>
-</maintainer>
+<herd>sci</herd>
 <maintainer>
   <email>weaver@gentoo.org</email>
   <name>Andrey Kislyuk</name>
@@ -19,9 +15,6 @@
   well. License, terms of qualifications can be found on the web site.
 </longdescription>
 <use>
-  <flag name='eclipse'>Install the <pkg>dev-util/eclipse-sdk</pkg> plugins</flag>
-  <flag name='idb'>Install the Intel Debugger</flag>
-  <flag name='mkl'>Install the Intel Math Kernel Library</flag>
-  <flag name='ipp'>Install the Intel Integrated Primitive</flag>
+  <flag name="eclipse">Install the <pkg>dev-util/eclipse-sdk</pkg> plugins</flag>
 </use>
 </pkgmetadata>

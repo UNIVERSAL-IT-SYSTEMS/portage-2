@@ -1,6 +1,19 @@
 # ChangeLog for dev-python/atpy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/atpy/ChangeLog,v 1.4 2011/07/29 21:28:31 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/atpy/ChangeLog,v 1.7 2012/08/02 17:31:55 bicatali Exp $
+
+*atpy-0.9.6 (02 Aug 2012)
+
+  02 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> +atpy-0.9.6.ebuild,
+  -atpy-0.9.5.1.ebuild:
+  Version bump
+
+  23 Apr 2012; Michał Górny <mgorny@gentoo.org> atpy-0.9.5.1.ebuild,
+  atpy-0.9.5.3.ebuild:
+  Use mirror://github.
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Switched herd to sci-astronomy
 
 *atpy-0.9.5.3 (29 Jul 2011)
 
@@ -49,4 +62,3 @@
   21 Jul 2009; Sébastien Fabbro <bicatali@gentoo.org> +atpy-0.9.0.ebuild,
   +metadata.xml:
   Initial import
-

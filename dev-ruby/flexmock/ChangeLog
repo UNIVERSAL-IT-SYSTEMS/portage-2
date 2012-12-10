@@ -1,6 +1,31 @@
 # ChangeLog for dev-ruby/flexmock
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/flexmock/ChangeLog,v 1.15 2011/07/24 09:33:11 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/flexmock/ChangeLog,v 1.22 2012/10/18 07:18:21 graaff Exp $
+
+*flexmock-1.0.4 (18 Oct 2012)
+
+  18 Oct 2012; Hans de Graaff <graaff@gentoo.org> +flexmock-1.0.4.ebuild:
+  Version bump.
+
+*flexmock-1.0.3 (11 Oct 2012)
+
+  11 Oct 2012; Hans de Graaff <graaff@gentoo.org> +flexmock-1.0.3.ebuild:
+  Version bump.
+
+  26 Jul 2012; Hans de Graaff <graaff@gentoo.org> -flexmock-0.8.11.ebuild:
+  Cleanup.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> flexmock-0.9.0.ebuild:
+  Drop ia64/sparc keywords
+
+  19 Jan 2012; Jeroen Roovers <jer@gentoo.org> flexmock-0.9.0.ebuild:
+  Marked ~hppa (bug #396043).
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> flexmock-0.9.0.ebuild:
+  Add Prefix keywords, bug #396547
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> flexmock-0.9.0.ebuild:
+  Add ~ia64/~sparc
 
   24 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> flexmock-0.9.0.ebuild:
   Marked ~ppc/~ppc64 wrt #351835

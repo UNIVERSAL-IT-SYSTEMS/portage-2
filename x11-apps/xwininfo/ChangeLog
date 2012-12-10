@@ -1,6 +1,36 @@
 # ChangeLog for x11-apps/xwininfo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-apps/xwininfo/ChangeLog,v 1.62 2011/07/01 23:53:48 chithanh Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-apps/xwininfo/ChangeLog,v 1.71 2012/06/16 11:11:49 grobian Exp $
+
+  16 Jun 2012; Fabian Groffen <grobian@gentoo.org> xwininfo-1.1.2.ebuild:
+  Fix compilation on Solaris
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> xwininfo-1.1.2.ebuild:
+  keyword ~amd64-fbsd
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> xwininfo-1.1.2.ebuild:
+  Marked ppc ppc64 stable for bug #380421.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> xwininfo-1.1.2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #380421
+
+  25 Sep 2011; Matt Turner <mattst88@gentoo.org> xwininfo-1.1.1.ebuild,
+  xwininfo-1.1.2.ebuild:
+  Move libX11 from RDEPEND to DEPEND. It's not linked against, and xwininfo
+  only needs a single header from libX11.
+
+  21 Sep 2011; Jeroen Roovers <jer@gentoo.org> xwininfo-1.1.2.ebuild:
+  Stable for HPPA (bug #380421).
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org> xwininfo-1.1.2.ebuild:
+  arm stable, bug #380421
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> xwininfo-1.1.2.ebuild:
+  x86 stable, bug #380421
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> xwininfo-1.1.2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380421 filed by Chí-Thanh Christopher Nguyễn.
 
 *xwininfo-1.1.2 (01 Jul 2011)
 

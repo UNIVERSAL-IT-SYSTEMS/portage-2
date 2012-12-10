@@ -1,6 +1,18 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/use.mask,v 1.121 2011/07/11 15:10:37 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/use.mask,v 1.150 2012/12/09 08:09:17 tetromino Exp $
+
+# not ready for primetime
+packagekit
+
+# masking here, and unmasking in arch/x86/use.mask
+vidix
+
+# Mask as long its not available everywhere
+zeitgeist
+
+# vdpau is currently only available with binary nvidia-drivers, thus amd64/x86*
+vdpau
 
 # nvidia-cuda-toolkit is amd64/x86 only
 opencl
@@ -9,11 +21,8 @@ opencl
 infiniband
 
 # These ABIs are in constant change and currently only available for SVN snapshots
-php_targets_php5-4
-php_targets_php5-5
-
-# deprecated and replaced by USE="udev"
-hal
+php_targets_php5-2
+#php_targets_php5-4
 
 # Its deps are not mature enough yet
 ayatana
@@ -29,12 +38,6 @@ sane_backends_qcam
 
 # Gluon still don't have release.
 gluon
-
-# KDE4 specific enablefinal flag
-# Uses huge amounts of ram, and those ricers would be spamming bugzilla.
-# By huge i mean around 8Gigs at least.
-# Most applications also fail with this approach now
-kdeenablefinal
 
 # profile specific USE flags
 # Don't put hardened in here.
@@ -80,6 +83,7 @@ vis
 ultra1
 
 # arm arch specific USE flags
+iwmmxt
 neon
 
 # nVidia XvMC requires nvidia-drivers/nvidia-legacy-drivers
@@ -87,6 +91,7 @@ nvidia
 
 # dev-db/oracle-instantclient-basic is only available on x86
 oci8-instant-client
+oracle
 
 # net-libs/osptoolkit is only available on x86 (used by asterisk, bug 115798)
 osp
@@ -122,6 +127,8 @@ video_cards_vmware
 video_cards_virtualbox
 
 # not needed on non-arm systems
+video_cards_exynos
+video_cards_omap
 video_cards_omapfb
 
 # linux-only drivers
@@ -143,7 +150,6 @@ elibc_DragonFly
 elibc_FreeBSD
 elibc_HPUX
 elibc_Interix
-elibc_IRIX
 elibc_mintlib
 elibc_NetBSD
 elibc_OpenBSD
@@ -156,7 +162,6 @@ kernel_FreeBSD
 kernel_freemint
 kernel_HPUX
 kernel_Interix
-kernel_IRIX
 kernel_NetBSD
 kernel_OpenBSD
 kernel_SunOS
@@ -254,28 +259,57 @@ prefix
 # Mask kdeprefix since its broken by now
 kdeprefix
 
-# Samuli Suominen <ssuominen@gentoo.org> (01 Aug 2009)
-# RealMagic Hollywood+/Creative DXR3 support
-dxr3
-
 # Diego E. Pettenò <flameeyes@gentoo.org> (6 Dec 2009)
 #  on behalf of QA Team
 # Removal of pvm is scheduled for Februrary 4.
 pvm
 
 # Alex Legler <a3li@gentoo.org> (7 Dec 2009)
-# Ruby 1.9 is hardmasked
-# JRuby and REE18 are whitelisted on supported arches
-ruby_targets_ruby19
+# JRuby, REE18, and Rubinius are whitelisted on supported arches
 ruby_targets_jruby
 ruby_targets_ree18
+ruby_targets_rbx
 
-# Diego E. Pettenò <flameeyes@gentoo.org> (19 oct 2010)
+# Diego E. Pettenò <flameeyes@gentoo.org> (19 Oct 2010)
 # masking flags that only apply to FreeBSD
 kqueue
 
-# Nirbheek Chauahn <nirbheek@gentoo.org> (17 Mar 2011)
-# Nirbheek Chauhan <nirbheek@gentoo.org> (30 Dec 2009)
-# gobject-introspection USE-flag
-# introspection still has some kinks to iron out
-introspection
+# Samuli Suominen <ssuominen@gentoo.org> (03 Oct 2011)
+# RealMagic Hollywood+/Creative DXR3 support
+# Still using obsolete V4L1 wrt bug 350211
+# If fixed, should be unmasked in amd64/x86/ppc32 use.mask
+dxr3
+
+# Ralph Sennhauser <sera@gentoo.org> (31 Jul 2012)
+# Unmask in arch specific profiles when jython implementaton is available.
+python_targets_jython2_5
+python_targets_jython2_7
+python_targets_jython3_1
+python_single_target_jython2_5
+python_single_target_jython2_7
+python_single_target_jython3_1
+
+# Diego Elio Pettenò <flameeyes@gentoo.org> (18 Aug 2012)
+# Prelude is being masked for removal
+prelude
+
+# Diego Elio Pettenò <flameeyes@gentoo.org> (21 Aug 2012)
+# IPMI is only implemented for x86, amd64 and ia64
+ipmi
+
+# Diego Elio Pettenò <flameeyes@gentoo.org> (27 Aug 2012)
+# netlink is a Linux-specific interface
+netlink
+
+# Mike Gilbert <floppym@gentoo.org> (08 Oct 2012)
+# Python 3.3 is masked for testing.
+python_targets_python3_3
+python_single_target_python3_3
+
+# Luca barbato <lu_zero@gentoo.org> (14 Oct 2012)
+# Pending keywording on arches
+fdk
+
+# Alexandre Rostovtsev <tetromino@gentoo.org> (09 Dec 2012)
+# dev-lang/orc is useful only for some specific arches (amd64/x86/arm/...)
+orc

@@ -1,6 +1,18 @@
 # ChangeLog for dev-java/jcodings
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/jcodings/ChangeLog,v 1.10 2010/05/28 19:50:31 josejx Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/jcodings/ChangeLog,v 1.13 2012/05/09 17:08:50 phajdan.jr Exp $
+
+  09 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> jcodings-1.0.5.ebuild:
+  x86 stable wrt bug #396305
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> jcodings-1.0.5.ebuild:
+  Stable for amd64, wrt bug #396305
+
+*jcodings-1.0.5 (24 Jan 2012)
+
+  24 Jan 2012; Ralph Sennhauser <sera@gentoo.org> +jcodings-1.0.5.ebuild,
+  +files/maven-build.xml:
+  Version bump, add javadocs.
 
   28 May 2010; Joseph Jezak <josejx@gentoo.org> jcodings-1.0.4.ebuild:
   Marked ppc.

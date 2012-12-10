@@ -1,6 +1,66 @@
 # ChangeLog for media-sound/snd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/snd/ChangeLog,v 1.54 2011/06/09 08:52:57 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/snd/ChangeLog,v 1.67 2012/10/24 19:16:45 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> snd-9.11.ebuild,
+  snd-12.7.ebuild, snd-12.8.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  07 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  09 Jun 2012; Zac Medico <zmedico@gentoo.org> snd-12.7.ebuild, snd-12.8.ebuild:
+  inherit eutils for epatch
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> snd-9.11.ebuild:
+  Remove USE="esd" because media-sound/esound isn't in tree anymore.
+
+  20 Feb 2012; Tim Harder <radhermit@gentoo.org> snd-12.7.ebuild,
+  snd-12.8.ebuild:
+  Make portaudio and pulseaudio use flags mutually exclusive (fixes bug
+  #404201).
+
+  15 Feb 2012; Tim Harder <radhermit@gentoo.org> snd-12.7.ebuild,
+  snd-12.8.ebuild:
+  Die on sed failure.
+
+  07 Feb 2012; Tim Harder <radhermit@gentoo.org> -snd-12.5.ebuild,
+  -snd-12.6.ebuild:
+  Remove old.
+
+*snd-12.8 (07 Feb 2012)
+
+  07 Feb 2012; Tim Harder <radhermit@gentoo.org> +snd-12.8.ebuild:
+  Version bump.
+
+*snd-12.7 (04 Jan 2012)
+
+  04 Jan 2012; Tim Harder <radhermit@gentoo.org> +snd-12.7.ebuild:
+  Version bump. Drop esound support.
+
+*snd-12.6 (11 Nov 2011)
+
+  11 Nov 2011; Tim Harder <radhermit@gentoo.org> -snd-12.1.ebuild,
+  -snd-12.2.ebuild, -snd-12.3.ebuild, -snd-12.4.ebuild, +snd-12.6.ebuild:
+  Version bump and remove old.
+
+*snd-12.5 (01 Oct 2011)
+
+  01 Oct 2011; Tim Harder <radhermit@gentoo.org> +snd-12.5.ebuild:
+  Version bump.
+
+*snd-12.4 (30 Aug 2011)
+
+  30 Aug 2011; Tim Harder <radhermit@gentoo.org> +snd-12.4.ebuild,
+  metadata.xml:
+  Version bump. Add doc and s7 USE flags, install ruby scripts, and use
+  REQUIRED_USE to allow support for at most one extension language.
+
+*snd-12.3 (22 Aug 2011)
+
+  22 Aug 2011; Tim Harder <radhermit@gentoo.org> +snd-12.3.ebuild:
+  Version bump.
 
 *snd-12.2 (09 Jun 2011)
 

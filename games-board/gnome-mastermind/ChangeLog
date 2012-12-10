@@ -1,6 +1,13 @@
 # ChangeLog for games-board/gnome-mastermind
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/gnome-mastermind/ChangeLog,v 1.7 2010/01/22 20:08:51 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-board/gnome-mastermind/ChangeLog,v 1.9 2012/05/04 04:30:11 jdhore Exp $
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gnome-mastermind-0.3.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  19 Oct 2011; Michael Sterrett <mr_bones_@gentoo.org>
+  gnome-mastermind-0.3.1.ebuild:
+  patch in src_prepare
 
   22 Jan 2010; Brent Baude <ranger@gentoo.org>
   gnome-mastermind-0.3.1.ebuild:

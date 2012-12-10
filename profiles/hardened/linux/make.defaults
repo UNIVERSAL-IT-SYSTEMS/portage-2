@@ -1,7 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation.
+# Copyright 1999-2012 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/hardened/linux/make.defaults,v 1.11 2011/02/13 18:09:39 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/hardened/linux/make.defaults,v 1.17 2012/06/26 13:36:21 blueness Exp $
 
-STAGE1_USE="hardened nptl nptlonly pic -jit"
+# Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org> (16 Nov 2011)
+# Rename STAGE1_USE to BOOTSTRAP_USE and stack it to the parent value
+BOOTSTRAP_USE="${BOOTSTRAP_USE} hardened pax_kernel pic -jit -orc"
 
-USE="-fortran hardened -ipv6 -jit pic sysfs -unicode urandom"
+USE="-fortran hardened -jit pax_kernel pic urandom -orc"

@@ -1,6 +1,42 @@
 # ChangeLog for dev-php/pear
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/pear/ChangeLog,v 1.28 2011/07/25 16:17:27 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/pear/ChangeLog,v 1.39 2012/11/18 17:41:46 hwoarang Exp $
+
+  18 Nov 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Remove beandog wrt #131511
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> pear-1.9.4.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #430152
+
+  21 Aug 2012; Johannes Huber <johu@gentoo.org> pear-1.9.4.ebuild:
+  Stable for x86, wrt bug #430152
+
+  14 Aug 2012; Anthony G. Basile <blueness@gentoo.org> pear-1.9.4.ebuild:
+  Stable ppc ppc64, bug #430152
+
+  12 Aug 2012; Markus Meier <maekke@gentoo.org> pear-1.9.4.ebuild:
+  arm stable, bug #430152
+
+  09 Aug 2012; Jeroen Roovers <jer@gentoo.org> pear-1.9.4.ebuild:
+  Stable for HPPA (bug #430152).
+
+  07 Aug 2012; Agostino Sarubbo <ago@gentoo.org> pear-1.9.4.ebuild:
+  Stable for amd64, wrt bug #430152
+
+  11 Jun 2012; Matti Bickel <mabi@gentoo.org> pear-1.9.3.ebuild,
+  pear-1.9.4.ebuild:
+  remove superfluous depend.php
+
+*pear-1.9.4 (02 Nov 2011)
+
+  02 Nov 2011; Ole Markus With <olemarkus@gentoo.org> +pear-1.9.4.ebuild:
+  Version bump
+
+  07 Sep 2011; Ole Markus With <olemarkus@gentoo.org> -pear-1.9.2.ebuild:
+  Removed older versions
+
+  25 Aug 2011; Jeroen Roovers <jer@gentoo.org> pear-1.9.3.ebuild:
+  Stable for HPPA (bug #374447).
 
   25 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> pear-1.9.3.ebuild:
   ppc/ppc64 stable wrt #374447
@@ -96,4 +132,3 @@
   23 Sep 2009; Steve Dibb <beandog@gentoo.org> +pear-1.8.1.ebuild,
   +metadata.xml:
   Initial commit; new split ebuilds for PEAR base install
-

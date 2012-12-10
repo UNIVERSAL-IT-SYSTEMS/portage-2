@@ -1,6 +1,98 @@
 # ChangeLog for dev-python/beautifulsoup
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/beautifulsoup/ChangeLog,v 1.54 2011/07/28 20:27:18 neurogeek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/beautifulsoup/ChangeLog,v 1.77 2012/11/23 15:14:31 blueness Exp $
+
+  23 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  beautifulsoup-4.1.3.ebuild:
+  stable ppc ppc64, bug #441272
+
+  21 Nov 2012; Markus Meier <maekke@gentoo.org> beautifulsoup-4.1.3.ebuild:
+  arm stable, bug #441272
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> beautifulsoup-4.1.3.ebuild:
+  Stable for x86, wrt bug #441272
+
+  12 Nov 2012; Jeroen Roovers <jer@gentoo.org> beautifulsoup-4.1.3.ebuild:
+  Stable for HPPA (bug #441272).
+
+  11 Nov 2012; <ago@gentoo.org> beautifulsoup-4.1.3.ebuild:
+  Stable for amd64, wrt bug #441272
+
+  13 Oct 2012; Raúl Porcel <armin76@gentoo.org>
+  beautifulsoup-3.1.0.1-r1.ebuild, beautifulsoup-3.2.0.ebuild,
+  beautifulsoup-3.2.1.ebuild, beautifulsoup-4.0.4.ebuild,
+  beautifulsoup-4.0.5.ebuild, beautifulsoup-4.1.0.ebuild,
+  beautifulsoup-4.1.1.ebuild, beautifulsoup-4.1.2.ebuild,
+  beautifulsoup-4.1.3.ebuild:
+  Add ~s390/~sh
+
+*beautifulsoup-4.1.3 (21 Aug 2012)
+
+  21 Aug 2012; Tim Harder <radhermit@gentoo.org> +beautifulsoup-4.1.3.ebuild:
+  Version bump.
+
+*beautifulsoup-4.1.2 (17 Aug 2012)
+
+  17 Aug 2012; Tim Harder <radhermit@gentoo.org> +beautifulsoup-4.1.2.ebuild:
+  Version bump.
+
+  07 Aug 2012; Alexis Ballier <aballier@gentoo.org> beautifulsoup-4.1.1.ebuild:
+  keyword ~amd64-fbsd
+
+  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  beautifulsoup-3.1.0.1-r1.ebuild, beautifulsoup-3.2.0.ebuild:
+  Stable arm, bug #427546
+
+*beautifulsoup-4.1.1 (09 Jul 2012)
+
+  09 Jul 2012; Tim Harder <radhermit@gentoo.org> +beautifulsoup-4.1.1.ebuild:
+  Version bump.
+
+*beautifulsoup-4.1.0 (08 Jun 2012)
+
+  08 Jun 2012; Tim Harder <radhermit@gentoo.org> +beautifulsoup-4.1.0.ebuild:
+  Version bump.
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> beautifulsoup-3.1.0.1-r1.ebuild:
+  Marked ~hppa too.
+
+*beautifulsoup-4.0.5 (08 May 2012)
+
+  08 May 2012; Dirkjan Ochtman <djc@gentoo.org> +beautifulsoup-4.0.5.ebuild:
+  Version bump to 4.0.5 (bug 415121, thanks to jbergstroem).
+
+  22 Apr 2012; Mike Gilbert <floppym@gentoo.org> beautifulsoup-4.0.4.ebuild:
+  Add dep on dev-python/lxml for tests. Remove reference to ${S}.
+
+  21 Apr 2012; Mike Gilbert <floppym@gentoo.org> beautifulsoup-4.0.4.ebuild:
+  Simplify docs building.
+
+  21 Apr 2012; Mike Gilbert <floppym@gentoo.org> metadata.xml:
+  Add remote-id.
+
+*beautifulsoup-4.0.4 (21 Apr 2012)
+
+  21 Apr 2012; Mike Gilbert <floppym@gentoo.org> +beautifulsoup-4.0.4.ebuild:
+  Version bump. Ebuild rewrite with help from Ian Delaney.
+
+*beautifulsoup-3.2.1 (02 Mar 2012)
+
+  02 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> +beautifulsoup-3.2.1.ebuild:
+  Version bump to 3.2.1.
+
+  21 Feb 2012; Patrick Lauer <patrick@gentoo.org>
+  beautifulsoup-3.1.0.1-r1.ebuild, beautifulsoup-3.2.0.ebuild:
+  Restricting jython
+
+  09 Feb 2012; Matt Turner <mattst88@gentoo.org> beautifulsoup-3.2.0.ebuild:
+  Added ~mips, bug 393181.
+
+  08 Feb 2012; Fabian Groffen <grobian@gentoo.org> beautifulsoup-3.2.0.ebuild:
+  Marked ~x64-macos, bug #399637
+
+  04 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  beautifulsoup-3.2.0.ebuild:
+  Marked ~sparc-solaris
 
   28 Jul 2011; Jesus Rivero <neurogeek@gentoo.org>
   beautifulsoup-3.1.0.1-r1.ebuild, beautifulsoup-3.2.0.ebuild:
@@ -219,4 +311,3 @@
   +beautifulsoup-2.1.1.ebuild:
   New ebuild based on one from Nilton Volpato <nilton@ic.unicamp.br>. Closes
   bug #110076.
-

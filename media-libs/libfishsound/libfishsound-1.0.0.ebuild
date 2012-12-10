@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libfishsound/libfishsound-1.0.0.ebuild,v 1.3 2010/03/11 11:33:22 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libfishsound/libfishsound-1.0.0.ebuild,v 1.7 2012/05/23 16:21:03 johu Exp $
 
 EAPI=2
 inherit eutils
@@ -11,7 +11,7 @@ SRC_URI="http://downloads.xiph.org/releases/libfishsound/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="flac speex"
 
 RDEPEND="media-libs/libvorbis
@@ -19,7 +19,10 @@ RDEPEND="media-libs/libvorbis
 	flac? ( media-libs/flac )
 	speex? ( media-libs/speex )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
+
+# bug #395153
+RESTRICT="test"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-pc.patch

@@ -1,6 +1,49 @@
 # ChangeLog for dev-perl/Mail-SPF
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Mail-SPF/ChangeLog,v 1.19 2011/03/30 09:55:23 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Mail-SPF/ChangeLog,v 1.32 2012/11/18 11:24:40 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> Mail-SPF-2.8.0.ebuild:
+  alpha/ia64/sparc stable wrt #418827
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> Mail-SPF-2.8.0.ebuild:
+  ppc stable (bug 418827).
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> Mail-SPF-2.8.0.ebuild:
+  Marking Mail-SPF-2.8.0 ppc64 for bug 418827
+
+  05 Aug 2012; Jeroen Roovers <jer@gentoo.org> Mail-SPF-2.8.0.ebuild:
+  Stable for HPPA (bug #418827).
+
+  04 Aug 2012; Johannes Huber <johu@gentoo.org> Mail-SPF-2.8.0.ebuild:
+  Stable for x86, wrt bug #418827
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> Mail-SPF-2.8.0.ebuild:
+  Stable for amd64, wrt bug #418827
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*Mail-SPF-2.8.0 (01 Feb 2012)
+
+  01 Feb 2012; Torsten Veller <tove@gentoo.org> +Mail-SPF-2.8.0.ebuild:
+  Version bump
+
+  20 Dec 2011; Naohiro Aota <naota@gentoo.org> Mail-SPF-2.7.0.ebuild:
+  Add ~x86-fbsd
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Mail-SPF-2.007-r1.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Mail-SPF-2.7.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Mail-SPF-2.7.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +Mail-SPF-2.7.0.ebuild:
+  Change version scheme
 
   30 Mar 2011; Michael Weber <xmw@gentoo.org> Mail-SPF-2.007-r1.ebuild:
   added ~arm (bug 302981)
@@ -71,4 +114,3 @@
   10 Jun 2009; Robin H. Johnson <robbat2@gentoo.org> +Mail-SPF-2.006.ebuild,
   +metadata.xml:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

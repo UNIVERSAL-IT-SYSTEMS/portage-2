@@ -1,60 +1,56 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/uget/uget-9999.ebuild,v 1.5 2011/07/25 09:46:22 wired Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/uget/uget-9999.ebuild,v 1.8 2012/12/02 17:09:06 eva Exp $
 
 EAPI="4"
 
-inherit autotools git-2
+IUSE="aria2 +curl gstreamer hide-temp-files libnotify nls"
+if [[ ${PV} == *9999* ]]; then
+	inherit autotools git-2
+	KEYWORDS=""
+	SRC_URI=""
+	EGIT_REPO_URI="git://urlget.git.sourceforge.net/gitroot/urlget/uget"
+else
+	KEYWORDS="~amd64 ~ppc ~x86"
+	SRC_URI="mirror://sourceforge/urlget/${P}.tar.gz"
+fi
 
 DESCRIPTION="Download manager using gtk+ and libcurl"
 HOMEPAGE="http://urlget.sourceforge.net/"
-SRC_URI=""
-
-EGIT_REPO_URI="git://urlget.git.sourceforge.net/gitroot/urlget/uget"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS=""
-IUSE="aria2 +curl gstreamer gtk3 hide-temp-files libnotify nls"
 
 REQUIRED_USE="|| ( aria2 curl )"
 
 RDEPEND="
 	dev-libs/libpcre
-	>=dev-libs/glib-2:2
-	!gtk3? (
-		>=x11-libs/gtk+-2.18:2
-	)
-	gtk3? (
-		x11-libs/gtk+:3
-	)
+	>=dev-libs/glib-2.32:2
+	>=x11-libs/gtk+-3.4:3
 	curl? ( >=net-misc/curl-7.10 )
-	gstreamer? ( media-libs/gstreamer )
+	gstreamer? ( media-libs/gstreamer:0.10 )
 	libnotify? ( x11-libs/libnotify )
 	"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
 
 src_prepare() {
-	# add missing file, fix tests, bug #376203
-	echo "uglib/UgPlugin-aria2.c" >> po/POTFILES.in ||
-		die "echo in po/POTFILES.in failed"
-
-	eautoreconf
-	intltoolize || die "intltoolize failed"
-	eautoreconf
+	if [[ ${PV} == *9999* ]]; then
+		eautoreconf
+		intltoolize || die "intltoolize failed"
+		eautoreconf
+	fi
 }
 
 src_configure() {
 	econf $(use_enable nls) \
-		  $(use_with gtk3) \
 		  $(use_enable curl plugin-curl) \
 		  $(use_enable aria2 plugin-aria2) \
 		  $(use_enable gstreamer) \
 		  $(use_enable hide-temp-files hidden) \
-		  $(use_enable libnotify notify) || die "econf failed"
+		  $(use_enable libnotify notify)
 }
 
 src_compile() {
@@ -62,12 +58,16 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" install
 
 	# the build system forgets this :p
-	dobin uget-cmd/uget-cmd || die "uget-cmd install failed"
+	dobin uget-cmd/uget-cmd
 
-	dodoc AUTHORS ChangeLog README || die "dodoc failed"
+	if [[ ${PV} == *9999* ]]; then
+		dodoc AUTHORS ChangeLog README
+	else
+		dodoc AUTHORS ChangeLog NEWS README
+	fi
 }
 
 pkg_postinst() {

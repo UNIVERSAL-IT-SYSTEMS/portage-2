@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/babl/babl-0.1.4.ebuild,v 1.11 2011/05/20 20:15:45 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/babl/babl-0.1.4.ebuild,v 1.13 2012/05/05 08:02:35 jdhore Exp $
 
 EAPI=3
 
@@ -14,7 +14,8 @@ KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~amd64-linux ~x86-linux ~ppc
 IUSE="altivec +introspection sse mmx"
 
 RDEPEND="introspection? ( >=dev-libs/gobject-introspection-0.6.8 )"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 
 src_configure() {
 	# Automagic rsvg support is just for website generation we do not call,

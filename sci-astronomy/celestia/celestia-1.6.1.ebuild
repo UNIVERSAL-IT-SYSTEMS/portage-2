@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/celestia/celestia-1.6.1.ebuild,v 1.2 2011/07/16 17:47:20 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/celestia/celestia-1.6.1.ebuild,v 1.14 2012/08/05 14:56:28 bicatali Exp $
 
-EAPI=2
+EAPI=4
 
-inherit eutils flag-o-matic gnome2 autotools
+inherit eutils flag-o-matic gnome2 autotools pax-utils
 
 DESCRIPTION="OpenGL 3D space simulator"
 HOMEPAGE="http://www.shatters.net/celestia/"
@@ -12,14 +12,14 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ppc ppc64 x86 ~amd64-linux ~x86-linux"
 IUSE="cairo gnome gtk nls pch theora threads"
 
 RDEPEND="
 	virtual/opengl
 	virtual/jpeg
 	media-libs/libpng
-	>=dev-lang/lua-5.0
+	<dev-lang/lua-5.2
 	gtk? ( !gnome? ( x11-libs/gtk+:2 >=x11-libs/gtkglext-1.0 ) )
 	gnome? (
 		x11-libs/gtk+:2
@@ -31,7 +31,7 @@ RDEPEND="
 	theora? ( media-libs/libtheora )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 pkg_setup() {
 	# Check for one for the following use flags to be set.
@@ -54,14 +54,17 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.5.0-desktop.patch
 	# add a ~/.celestia for extra directories
 	epatch "${FILESDIR}"/${PN}-1.6.0-cfg.patch
-	# --as-needed fix
-	epatch "${FILESDIR}"/${P}-as-needed.patch
 	# fix missing includes for gcc-4.6
 	epatch "${FILESDIR}"/${P}-gcc46.patch
-	# underlinking fix with USE="-gnome -gtk"
-	epatch "${FILESDIR}"/${P}-gold.patch
+	# missing zlib.h include with libpng15
+	epatch "${FILESDIR}"/${P}-libpng15.patch \
+		"${FILESDIR}"/${P}-linking.patch
+
+	# gcc-47, #414015
+	epatch "${FILESDIR}"/${P}-gcc47.patch
 
 	# remove flags to let the user decide
+	local
 	for cf in -O2 -ffast-math \
 		-fexpensive-optimizations \
 		-fomit-frame-pointer; do
@@ -102,12 +105,14 @@ src_install() {
 	if [[ ${CELESTIA_GUI} == gnome ]]; then
 		gnome2_src_install
 	else
-		emake DESTDIR="${D}" install || die "emake install failed"
+		emake DESTDIR="${D}" install
+		local size
 		for size in 16 22 32 48 ; do
 			insinto /usr/share/icons/hicolor/${size}x${size}/apps
 			newins "${S}"/src/celestia/kde/data/hi${size}-app-${PN}.png ${PN}.png
 		done
 	fi
 	[[ ${CELESTIA_GUI} == glut ]] && domenu celestia.desktop
-	dodoc AUTHORS README TRANSLATORS *.txt || die
+	dodoc AUTHORS README TRANSLATORS *.txt
+	pax-mark -m "${ED}"/usr/bin/${PN} #365359
 }

@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/ipx-utils/ipx-utils-1.1-r2.ebuild,v 1.4 2009/09/23 19:39:20 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/ipx-utils/ipx-utils-1.1-r2.ebuild,v 1.6 2012/07/29 17:19:50 armin76 Exp $
 
 inherit eutils
 
@@ -8,9 +8,9 @@ DESCRIPTION="The IPX Utilities"
 HOMEPAGE="ftp://sunsite.unc.edu/pub/Linux/system/filesystems/ncpfs/"
 SRC_URI="ftp://sunsite.unc.edu/pub/Linux/system/filesystems/ncpfs/${P/-utils}.tar.gz"
 
-LICENSE="Caldera"
+LICENSE="Caldera GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc64 s390 sparc x86"
+KEYWORDS="~amd64 ppc64 x86"
 IUSE=""
 
 DEPEND=""

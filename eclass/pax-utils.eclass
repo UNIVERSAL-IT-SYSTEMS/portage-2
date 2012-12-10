@@ -1,15 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/pax-utils.eclass,v 1.14 2011/07/08 11:35:01 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/pax-utils.eclass,v 1.18 2012/04/06 18:03:54 blueness Exp $
 
 # @ECLASS: pax-utils.eclass
 # @MAINTAINER:
-# Maintained by
-# 	The Gentoo Linux Hardened Team <hardened@gentoo.org>
-# Original Author
-# 	Kevin F. Quinn <kevquinn@gentoo.org>
-# Modifications for bug #365825, @ ECLASS markup
-#	Anthony G. Basile <blueness@gentoo.org>
+# The Gentoo Linux Hardened Team <hardened@gentoo.org>
+# @AUTHOR:
+# Original Author: Kevin F. Quinn <kevquinn@gentoo.org>
+# Modifications for bug #365825, @ ECLASS markup: Anthony G. Basile <blueness@gentoo.org>
 # @BLURB: functions to provide pax markings
 # @DESCRIPTION:
 # This eclass provides support for manipulating PaX markings on ELF binaries,
@@ -23,7 +21,8 @@
 # necessary utility is installed, the PT_PAX_FLAGS markings will be made.  If
 # PAX_MARKINGS is set to "none", no markings will be made.
 
-inherit eutils
+if [[ ${___ECLASS_ONCE_PAX_UTILS} != "recur -_+^+_- spank" ]] ; then
+___ECLASS_ONCE_PAX_UTILS="recur -_+^+_- spank"
 
 # Default to PT markings.
 PAX_MARKINGS=${PAX_MARKINGS:="PT"}
@@ -59,8 +58,8 @@ pax-mark() {
 	# Try paxctl, then scanelf.  paxctl is preferred.
 	if type -p paxctl > /dev/null && has PT ${PAX_MARKINGS}; then
 		# Try paxctl, the upstream supported tool.
-		elog "PT PaX marking -${flags}"
-		_pax_list_files elog "$@"
+		einfo "PT PaX marking -${flags}"
+		_pax_list_files einfo "$@"
 		for f in "$@"; do
 			# First, try modifying the existing PAX_FLAGS header
 			paxctl -q${flags} "${f}" && continue
@@ -92,8 +91,8 @@ pax-mark() {
 	elif type -p scanelf > /dev/null && [[ ${PAX_MARKINGS} != "none" ]]; then
 		# Try scanelf, the Gentoo swiss-army knife ELF utility
 		# Currently this sets PT if it can, no option to control what it does.
-		elog "Fallback PaX marking -${flags}"
-		_pax_list_files elog "$@"
+		einfo "Fallback PaX marking -${flags}"
+		_pax_list_files einfo "$@"
 		scanelf -Xxz ${flags} "$@"
 	elif [[ ${PAX_MARKINGS} != "none" ]]; then
 		# Out of options!
@@ -153,3 +152,4 @@ _pax_list_files() {
 	done
 }
 
+fi

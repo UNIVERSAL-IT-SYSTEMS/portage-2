@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/squidguard/squidguard-1.4-r4.ebuild,v 1.6 2011/05/29 16:23:44 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/squidguard/squidguard-1.4-r4.ebuild,v 1.9 2012/09/03 21:26:47 blueness Exp $
 
+EAPI=2
 WANT_AUTOMAKE=none
-EAPI="2"
 
 inherit eutils autotools
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.squidguard.org/Downloads/squidGuard-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 ~sparc x86"
+KEYWORDS="amd64 ~arm ppc ppc64 sparc x86"
 IUSE="ldap"
 
 RDEPEND=">=sys-libs/db-2

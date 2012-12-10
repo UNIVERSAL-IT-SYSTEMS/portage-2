@@ -1,6 +1,59 @@
 # ChangeLog for media-libs/libdc1394
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libdc1394/ChangeLog,v 1.56 2011/06/07 23:21:16 tampakrap Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libdc1394/ChangeLog,v 1.69 2012/05/05 08:02:42 jdhore Exp $
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libdc1394-2.1.3-r1.ebuild,
+  libdc1394-2.1.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*libdc1394-2.1.4 (02 Dec 2011)
+
+  02 Dec 2011; Alexis Ballier <aballier@gentoo.org> +libdc1394-2.1.4.ebuild:
+  version bump
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -libdc1394-2.1.2.ebuild:
+  old
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> libdc1394-2.1.3-r1.ebuild:
+  alpha/ia64/sparc stable wrt #382861
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> libdc1394-2.1.3-r1.ebuild:
+  Stable for HPPA (bug #382861).
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  libdc1394-2.1.3-r1.ebuild:
+  ppc/ppc64 stable wrt #382861
+
+  03 Oct 2011; Markus Meier <maekke@gentoo.org> libdc1394-2.1.3-r1.ebuild:
+  arm stable, bug #382861
+
+  14 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  libdc1394-2.1.3-r1.ebuild:
+  amd64/x86 stable wrt #382861
+
+  13 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  libdc1394-2.1.3-r1.ebuild:
+  USE="static-libs" and remove libtool archive in favour of pkg-config data.
+
+  13 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -files/libdc1394-disable-raw-capture.patch, -libdc1394-1.2.2.ebuild,
+  -libdc1394-2.1.3.ebuild:
+  [This is a placeholder. Please ignore.]
+
+  13 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  libdc1394-2.1.3-r1.ebuild, metadata.xml:
+  Missing virtual/libusb:1 and dev-util/pkgconfig deps wrt #341601 by Christian
+  Schmitt. Move from maintainer-needed to media-video herd.
+
+  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #99651
+
+*libdc1394-2.1.3-r1 (06 Sep 2011)
+
+  06 Sep 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  +files/libdc1394-usbinit.patch, +libdc1394-2.1.3-r1.ebuild:
+  Non-maintainer fix: add upstream patch to avoid usb_init symbol conflict, bug
+  380287
 
   07 Jun 2011; Theo Chatzimichos <tampakrap@gentoo.org> libdc1394-2.1.3.ebuild:
   Non maintainer fix, there were two src_compile() instead of a src_configure

@@ -1,6 +1,18 @@
 # ChangeLog for dev-libs/libxdg-basedir
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxdg-basedir/ChangeLog,v 1.27 2011/06/11 12:57:05 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxdg-basedir/ChangeLog,v 1.31 2012/07/26 19:59:03 grobian Exp $
+
+  26 Jul 2012; Fabian Groffen <grobian@gentoo.org> libxdg-basedir-1.1.1.ebuild:
+  Marked ~x64-macos
+
+  12 Jul 2012; Fabian Groffen <grobian@gentoo.org> libxdg-basedir-1.1.1.ebuild:
+  Marked ~x86-solaris
+
+  28 Feb 2012; Jeroen Roovers <jer@gentoo.org> libxdg-basedir-1.1.1.ebuild:
+  Stable for HPPA (bug #405659).
+
+  04 Jan 2012; Jeroen Roovers <jer@gentoo.org> libxdg-basedir-1.1.1.ebuild:
+  Marked ~hppa (bug #397531).
 
   11 Jun 2011; Markus Meier <maekke@gentoo.org> libxdg-basedir-1.1.1.ebuild:
   add ~arm, bug #359137
@@ -126,4 +138,3 @@
   +libxdg-basedir-0.1.3.ebuild:
   Initial import of libxdg-basedir, that will be needed for xine-lib-1.2
   series and probably new xine-ui too.
-

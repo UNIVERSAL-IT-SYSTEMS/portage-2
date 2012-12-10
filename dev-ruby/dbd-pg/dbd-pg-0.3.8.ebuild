@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/dbd-pg/dbd-pg-0.3.8.ebuild,v 1.8 2011/07/23 12:19:35 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/dbd-pg/dbd-pg-0.3.8.ebuild,v 1.11 2012/09/02 09:05:30 flameeyes Exp $
 
 inherit "ruby"
 
@@ -10,12 +10,12 @@ SRC_URI="mirror://rubyforge/ruby-dbi/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 ia64 ppc ~sparc x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="test"
 
 RDEPEND="
-	>=dev-ruby/ruby-dbi-0.4.2
-	>=dev-ruby/ruby-postgres-0.7.9.20080128"
+	>=dev-ruby/dbi-0.4.2
+	>=dev-ruby/postgres-0.7.9.20080128"
 
 # ruby-postgres is not yet ruby19
 USE_RUBY="ruby18"

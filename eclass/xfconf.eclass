@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/xfconf.eclass,v 1.36 2011/06/13 18:01:11 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/xfconf.eclass,v 1.45 2012/11/28 12:41:23 ssuominen Exp $
 
 # @ECLASS: xfconf.eclass
 # @MAINTAINER:
@@ -13,27 +13,24 @@
 # @DESCRIPTION:
 # Run eautoreconf instead of elibtoolize if the variable is set
 
-# @ECLASS-VARIABLE: EINTLTOOLIZE
-# @DESCRIPTION:
-# Run intltoolize --force --copy --automake if the variable is set
-
 # @ECLASS-VARIABLE: XFCONF
 # @DESCRIPTION:
 # This should be an array defining arguments for econf
+
+AUTOTOOLS_AUTO_DEPEND=no
 
 unset _xfconf_live
 [[ $PV == *9999* ]] && _xfconf_live=git-2
 
 inherit ${_xfconf_live} autotools base eutils fdo-mime gnome2-utils libtool
 
-EGIT_BOOTSTRAP="autogen.sh"
+EGIT_BOOTSTRAP=autogen.sh
 EGIT_REPO_URI="git://git.xfce.org/xfce/${MY_PN:-${PN}}"
 
 _xfconf_deps=""
-_xfconf_m4=">=dev-util/xfce4-dev-tools-4.8.0"
+_xfconf_m4=">=dev-util/xfce4-dev-tools-4.10 ${AUTOTOOLS_DEPEND}"
 
 [[ -n $_xfconf_live ]] && _xfconf_deps+=" dev-util/gtk-doc ${_xfconf_m4}"
-[[ -n $EINTLTOOLIZE ]] && _xfconf_deps+=" dev-util/intltool"
 [[ -n $EAUTORECONF ]] && _xfconf_deps+=" ${_xfconf_m4}"
 
 RDEPEND=""
@@ -43,7 +40,7 @@ unset _xfconf_deps
 unset _xfconf_m4
 
 case ${EAPI:-0} in
-	4|3) ;;
+	5) ;;
 	*) die "Unknown EAPI." ;;
 esac
 
@@ -86,13 +83,6 @@ xfconf_src_prepare() {
 	debug-print-function ${FUNCNAME} "$@"
 	base_src_prepare
 
-	if [[ -n $EINTLTOOLIZE ]]; then
-		local _intltoolize="intltoolize --force --copy --automake"
-		ebegin "Running ${_intltoolize}"
-		${_intltoolize} || die
-		eend $?
-	fi
-
 	if [[ -n $EAUTORECONF ]]; then
 		AT_M4DIR=${EPREFIX}/usr/share/xfce4/dev-tools/m4macros eautoreconf
 	else
@@ -122,9 +112,7 @@ xfconf_src_install() {
 
 	base_src_install "$@" || die
 
-	find "${ED}" -name '*.la' -exec rm -f {} +
-
-	validate_desktop_entries
+	prune_libtool_files --all
 }
 
 # @FUNCTION: xfconf_pkg_preinst

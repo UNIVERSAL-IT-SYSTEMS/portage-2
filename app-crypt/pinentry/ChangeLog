@@ -1,6 +1,92 @@
 # ChangeLog for app-crypt/pinentry
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/pinentry/ChangeLog,v 1.115 2011/03/25 23:22:52 swegener Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/pinentry/ChangeLog,v 1.140 2012/11/28 07:32:13 radhermit Exp $
+
+  28 Nov 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Add to crypto herd.
+
+  25 Nov 2012; Sven Wegener <swegener@gentoo.org> metadata.xml:
+  Move to maintainer-needed.
+
+  22 Nov 2012; Agostino Sarubbo <ago@gentoo.org> pinentry-0.8.2.ebuild:
+  Stable for x86, tested by Vincent Olivert Riera <peratu@carrosses.com>, wrt
+  bug #443522
+
+  20 Nov 2012; Anthony G. Basile <blueness@gentoo.org> pinentry-0.8.2.ebuild:
+  stable arm, bug #443522
+
+  19 Nov 2012; Jeroen Roovers <jer@gentoo.org> pinentry-0.8.2.ebuild:
+  Stable for HPPA (bug #443522).
+
+  17 Nov 2012; Anthony G. Basile <blueness@gentoo.org> pinentry-0.8.2.ebuild:
+  stable ppc64, bug #443522
+
+  17 Nov 2012; Agostino Sarubbo <ago@gentoo.org> pinentry-0.8.2.ebuild:
+  Stable for ppc, tested by Vicente Olivert Riera <peratu@carrosses.com>, wrt
+  bug #443522
+
+  16 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> pinentry-0.8.2.ebuild:
+  Better fix the static issue with ncurses, thanks to Diego.
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> pinentry-0.8.2.ebuild:
+  Stable for amd64, wrt bug #443522
+
+  16 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> pinentry-0.8.2.ebuild:
+  Do not call ar directly, fixes bug#443526.
+
+  16 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> pinentry-0.8.2.ebuild:
+  Try to fix building with static useflag enabled
+
+  16 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> pinentry-0.8.2.ebuild:
+  Bump eapi in the ebuild and solve the log message print. Wrt bug#440540.
+
+  29 Oct 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -files/pinentry-0.7.5-grab.patch, -files/pinentry-0.8.0-qt-fix.patch,
+  -pinentry-0.8.0-r1.ebuild, -pinentry-0.8.0.ebuild:
+  Drop older.
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> pinentry-0.8.1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #421593
+
+  03 Sep 2012; Michael Palimaka <kensington@gentoo.org>
+  pinentry-0.8.0-r1.ebuild, pinentry-0.8.0.ebuild, pinentry-0.8.1.ebuild,
+  pinentry-0.8.2.ebuild:
+  Add missing slot dependencies on Qt.
+
+  17 Aug 2012; Anthony G. Basile <blueness@gentoo.org> pinentry-0.8.1.ebuild:
+  Stable ppc ppc64, bug #421593
+
+*pinentry-0.8.2 (14 Aug 2012)
+
+  14 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> +pinentry-0.8.2.ebuild:
+  Version bump, I was testing if it had fixed the issue from bug#400751 but it
+  did not. Commiting as it works perfect otherwise.
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> pinentry-0.8.1.ebuild:
+  Stable for HPPA (bug #421593).
+
+  25 Jun 2012; Markus Meier <maekke@gentoo.org> pinentry-0.8.1.ebuild:
+  arm stable, bug #421593
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> pinentry-0.8.1.ebuild:
+  Stable for amd64, wrt bug #421593
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> pinentry-0.8.1.ebuild:
+  marked x86 per bug 421593
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> pinentry-0.8.1.ebuild:
+  keyword ~amd64-fbsd
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> pinentry-0.8.0.ebuild,
+  pinentry-0.8.0-r1.ebuild, pinentry-0.8.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  18 Feb 2012; Fabian Groffen <grobian@gentoo.org> pinentry-0.8.1.ebuild:
+  Remove existing file in Prefix
+
+  26 Aug 2011; Fabian Groffen <grobian@gentoo.org> pinentry-0.8.1.ebuild:
+  Explicitly disable X11, such that Darwin users don't have hanging pinentry
+  clients due to pinentry looking into the void for an X11 server.
 
   25 Mar 2011; Sven Wegener <swegener@gentoo.org> pinentry-0.8.0.ebuild,
   pinentry-0.8.0-r1.ebuild, pinentry-0.8.1.ebuild:

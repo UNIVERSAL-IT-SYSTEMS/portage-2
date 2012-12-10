@@ -1,16 +1,16 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/snort/snort-2.9.0.5.ebuild,v 1.3 2011/07/24 12:12:57 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/snort/snort-2.9.0.5.ebuild,v 1.6 2012/06/12 03:23:21 zmedico Exp $
 
 EAPI="2"
-inherit eutils autotools multilib
+inherit autotools multilib user
 
 DESCRIPTION="The de facto standard for intrusion detection/prevention"
 HOMEPAGE="http://www.snort.org/"
-SRC_URI="http://www.snort.org/downloads/867 -> ${P}.tar.gz"
+SRC_URI="http://www.snort.org/dl/snort-current/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~arm ~ppc ~ppc64 ~sparc ~x86 ~mips"
 IUSE="static +dynamicplugin +ipv6 +zlib gre mpls targetbased +decoder-preprocessor-rules
 ppm perfprofiling linux-smp-stats inline-init-failopen prelude +threads debug
 active-response normalizer reload-error-restart react flexresp3

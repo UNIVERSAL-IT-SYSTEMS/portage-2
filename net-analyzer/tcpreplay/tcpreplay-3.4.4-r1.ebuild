@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/tcpreplay/tcpreplay-3.4.4-r1.ebuild,v 1.3 2011/03/21 08:12:16 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/tcpreplay/tcpreplay-3.4.4-r1.ebuild,v 1.5 2012/04/12 04:04:47 jer Exp $
 
 EAPI="2"
 
@@ -26,12 +26,14 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	echo "We don't use bundled libopts" > libopts/options.h
-	epatch ${FILESDIR}/${P}-crash.patch
+	epatch "${FILESDIR}"/${P}-crash.patch
 }
 
 src_configure() {
 	# By default it uses static linking. Avoid that, bug 252940
-	econf --enable-shared \
+	econf \
+		--enable-shared \
+		--enable-dynamic-link \
 		--disable-local-libopts \
 		$(use_with tcpdump tcpdump /usr/sbin/tcpdump) \
 		$(use_with pcapnav pcapnav-config /usr/bin/pcapnav-config) \

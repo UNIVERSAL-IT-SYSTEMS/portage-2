@@ -1,6 +1,33 @@
 # ChangeLog for dev-games/irrlicht
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/irrlicht/ChangeLog,v 1.50 2011/04/12 06:40:10 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-games/irrlicht/ChangeLog,v 1.56 2012/12/07 23:43:22 hasufell Exp $
+
+*irrlicht-1.8 (07 Dec 2012)
+
+  07 Dec 2012; Julian Ospald <hasufell@gentoo.org> +irrlicht-1.8.ebuild,
+  +files/irrlicht-1.8-config.patch, +files/irrlicht-1.8-demoMake.patch,
+  +files/irrlicht-1.8-gentoo.patch:
+  version bump
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> irrlicht-1.7.3.ebuild:
+  Marking irrlicht-1.7.3 ppc for bug 425860
+
+  12 Jul 2012; Agostino Sarubbo <ago@gentoo.org> irrlicht-1.7.3.ebuild:
+  Stable for amd64, wrt bug #425860
+
+  12 Jul 2012; Jeff Horelick <jdhore@gentoo.org> irrlicht-1.7.3.ebuild:
+  marked x86 per bug 425860
+
+*irrlicht-1.7.3 (27 May 2012)
+
+  27 May 2012; Michael Sterrett <mr_bones_@gentoo.org> +irrlicht-1.7.3.ebuild,
+  +files/irrlicht-1.7.3-config.patch, +files/irrlicht-1.7.3-demoMake.patch,
+  +files/irrlicht-1.7.3-gentoo.patch, +files/irrlicht-1.7.3-libpng15.patch:
+  version bump (bug #417737)
+
+  15 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> irrlicht-1.7.2.ebuild,
+  +files/irrlicht-1.7.2-libpng15.patch:
+  Fix building with libpng15 wrt #378287 by Diego Elio Pettenò
 
   12 Apr 2011; Diego E. Pettenò <flameeyes@gentoo.org>
   files/irrlicht-1.7.2-gcc46.patch:

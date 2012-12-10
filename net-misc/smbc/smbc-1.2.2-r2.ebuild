@@ -1,13 +1,13 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/smbc/smbc-1.2.2-r2.ebuild,v 1.1 2009/05/22 15:58:28 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/smbc/smbc-1.2.2-r2.ebuild,v 1.3 2012/05/21 19:15:39 xarthisius Exp $
 
 EAPI="2"
 
-inherit autotools
+inherit autotools eutils
 
 DESCRIPTION="A text mode (ncurses) SMB network commander. Features: resume and UTF-8"
-HOMEPAGE="http://smbc.airm.net/en/index.php"
+HOMEPAGE="http://sourceforge.net/projects/smbc/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
 
 LICENSE="GPL-2"

@@ -1,6 +1,17 @@
 # ChangeLog for app-arch/unp
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/unp/ChangeLog,v 1.28 2010/10/21 19:55:35 hanno Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/unp/ChangeLog,v 1.31 2012/01/28 15:31:25 phajdan.jr Exp $
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> unp-2.0_pre7.ebuild:
+  x86 stable wrt bug #396767
+
+  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> unp-2.0_pre7.ebuild:
+  Stable for amd64, wrt bug #396767
+
+*unp-2.0_pre7 (16 Oct 2011)
+
+  16 Oct 2011; Hanno Boeck <hanno@gentoo.org> +unp-2.0_pre7.ebuild:
+  Version bump, port to bash-completion-r1, add ~arm keyword.
 
 *unp-2.0_pre5 (21 Oct 2010)
 

@@ -1,6 +1,35 @@
 # ChangeLog for dev-haskell/regex-base
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/regex-base/ChangeLog,v 1.30 2011/02/25 13:07:41 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/regex-base/ChangeLog,v 1.37 2012/09/12 15:38:10 qnikst Exp $
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> regex-base-0.71.ebuild,
+  regex-base-0.72.0.1.ebuild, regex-base-0.72.0.2.ebuild,
+  regex-base-0.72.ebuild, regex-base-0.93.1.ebuild, regex-base-0.93.2.ebuild:
+  move dev-haskell/regex-base/regex-base-0.93.2.ebuild ebuild to
+  mirror://hackage
+
+  05 May 2012; Sergei Trofimovich <slyfox@gentoo.org> regex-base-0.93.2.ebuild:
+  alpha/ia64/ppc64/sparc stable (bug #404639)
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> regex-base-0.93.2.ebuild:
+  Marking regex-base-0.93.2 ppc for bug 404639
+
+  14 Apr 2012; Mark Wright <gienah@gentoo.org> regex-base-0.93.2.ebuild:
+  EAPI=4, add haddock hoogle hscolour to CABAL_FEATURES. [profile?] for haskell
+  library dependencies, part of fix for bug 341795 dev-haskell/* USE=profile
+  missing dependencies
+
+  05 Apr 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  regex-base-0.93.2.ebuild:
+  x86 stable wrt bug #404639
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> regex-base-0.93.2.ebuild:
+  Stable for amd64, wrt bug #404639
+
+*regex-base-0.93.2 (04 Dec 2011)
+
+  04 Dec 2011; Sergei Trofimovich <slyfox@gentoo.org> +regex-base-0.93.2.ebuild:
+  Version bump.
 
   25 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org>
   regex-base-0.93.1.ebuild:
@@ -119,4 +148,3 @@
   +files/regex-base-0.71-0.72.patch, +metadata.xml, +regex-base-0.72.ebuild,
   +regex-base-0.91.ebuild:
   Initial import.
-

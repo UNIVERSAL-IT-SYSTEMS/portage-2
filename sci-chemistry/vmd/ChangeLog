@@ -1,6 +1,41 @@
 # ChangeLog for sci-chemistry/vmd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/vmd/ChangeLog,v 1.42 2011/07/20 16:58:14 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/vmd/ChangeLog,v 1.52 2012/11/29 15:13:06 jlec Exp $
+
+  29 Nov 2012; Justin Lecher <jlec@gentoo.org> vmd-1.9.1.ebuild,
+  vmd-1.9.1-r1.ebuild:
+  Drop dep on old tk
+
+  15 Nov 2012; Christoph Junghans <ottxor@gentoo.org> vmd-1.9.1-r1.ebuild:
+  fix build on x86
+
+*vmd-1.9.1-r1 (14 Nov 2012)
+
+  14 Nov 2012; Justin Lecher <jlec@gentoo.org> +vmd-1.9.1-r1.ebuild:
+  Fix detection of netcdf; #406737, thanks Reinis Danne preparing the patch;
+  Loosen dep for cuda support, #406083
+
+  24 Sep 2012; Mike Frysinger <vapier@gentoo.org> vmd-1.9.1.ebuild:
+  QA_DT_HASH (old/deprecated) -> QA_FLAGS_IGNORED (new hotness).
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> -vmd-1.8.7-r2.ebuild,
+  -vmd-1.9.ebuild, vmd-1.9.1.ebuild:
+  Bumped to EAPI=4; use domenu; drop old
+
+  14 Feb 2012; Alexey Shvetsov <alexxy@gentoo.org> vmd-1.9.1.ebuild:
+  Fix plugin install
+
+*vmd-1.9.1 (14 Feb 2012)
+
+  14 Feb 2012; Alexey Shvetsov <alexxy@gentoo.org> +vmd-1.9.1.ebuild:
+  Version bump =D
+
+  10 Jan 2012; Justin Lecher <jlec@gentoo.org> vmd-1.9.ebuild:
+  Remove USE=static-libs because this breaks build, #365051
+
+  10 Jan 2012; Justin Lecher <jlec@gentoo.org> vmd-1.9.ebuild, metadata.xml:
+  Enhance nofetch msg, fix compilation with USE=cuda and gcc != 4.4*, thanks
+  xarthisius for the help
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #105599
@@ -205,4 +240,3 @@
   10 Feb 2006; Markus Dittrich <markusle@gentoo.org>
   +files/vmd-1.8.3-config-gentoo.patch, +metadata.xml, +vmd-1.8.3.ebuild:
   Initial import.
-

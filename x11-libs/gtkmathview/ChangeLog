@@ -1,6 +1,82 @@
 # ChangeLog for x11-libs/gtkmathview
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtkmathview/ChangeLog,v 1.37 2011/03/06 13:13:51 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtkmathview/ChangeLog,v 1.56 2012/10/28 16:34:41 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> gtkmathview-0.8.0-r2.ebuild:
+  ia64/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  gtkmathview-0.8.0-r2.ebuild:
+  stable ppc, bug #427544
+
+  15 Oct 2012; Matt Turner <mattst88@gentoo.org> gtkmathview-0.8.0-r2.ebuild:
+  Stable on alpha, bug 427544.
+
+  14 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  gtkmathview-0.8.0-r2.ebuild:
+  stable ppc64, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gtkmathview-0.8.0-r2.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gtkmathview-0.8.0-r2.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> gtkmathview-0.8.0-r2.ebuild:
+  Stable for HPPA (bug #427544).
+
+  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  gtkmathview-0.8.0-r2.ebuild:
+  Keyword ~arm
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> gtkmathview-0.8.0-r1.ebuild:
+  alpha/ia64/sparc stable wrt #410611
+
+  29 May 2012; Anthony G. Basile <blueness@gentoo.org>
+  gtkmathview-0.8.0-r2.ebuild:
+  Keyword ~mips
+
+  26 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gtkmathview-0.8.0-r2.ebuild, files/gtkmathview-0.8.0-gcc43.patch,
+  +files/gtkmathview-0.8.0-gcc47.patch:
+  Fix building with gcc-4.7 (bug #415559, thanks to David Kredba). Update
+  gcc-4.3 patch to match upstream.
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gtkmathview-0.8.0-r1.ebuild:
+  ppc stable wrt #410611
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> gtkmathview-0.8.0-r1.ebuild:
+  Stable for HPPA (bug #410611).
+
+*gtkmathview-0.8.0-r2 (13 May 2012)
+
+  13 May 2012; Pacho Ramos <pacho@gentoo.org> +gtkmathview-0.8.0-r2.ebuild:
+  Drop gmetadom support because it's dead, other distributions are not providing
+  it fore years and I have confirmed none of gtkmathview consumers need this old
+  stuff.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gtkmathview-0.8.0.ebuild,
+  gtkmathview-0.8.0-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gtkmathview-0.8.0-r1.ebuild:
+  x86 stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> gtkmathview-0.8.0-r1.ebuild:
+  Marking gtkmathview-0.8.0-r1 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gtkmathview-0.8.0-r1.ebuild:
+  Stable for amd64, wrt bug #410611
+
+*gtkmathview-0.8.0-r1 (06 Dec 2011)
+
+  06 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gtkmathview-0.8.0-r1.ebuild, +files/gtkmathview-0.8.0-underlinking.patch,
+  +files/binreloc.m4:
+  Fix underlinking (bug #369117, thanks to flameeyes and Oschtan), and move to
+  EAPI4 and drop .la files.
 
   06 Mar 2011; Pacho Ramos <pacho@gentoo.org> gtkmathview-0.8.0.ebuild,
   +files/gtkmathview-0.8.0-fix-template.patch:

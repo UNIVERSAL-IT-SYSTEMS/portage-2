@@ -1,6 +1,32 @@
 # ChangeLog for sys-devel/binutils-hppa64
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils-hppa64/ChangeLog,v 1.20 2011/07/15 02:01:55 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils-hppa64/ChangeLog,v 1.27 2012/05/15 19:36:03 jer Exp $
+
+  15 May 2012; Jeroen Roovers <jer@gentoo.org> binutils-hppa64-2.22.ebuild:
+  Fix Manifest.
+
+  15 May 2012; Jeroen Roovers <jer@gentoo.org> binutils-hppa64-2.22.ebuild:
+  Stable for HPPA too.
+
+  05 Mar 2012; Jeroen Roovers <jer@gentoo.org> binutils-hppa64-2.22.ebuild:
+  Bump PATCHVER.
+
+*binutils-hppa64-2.22 (08 Feb 2012)
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> +binutils-hppa64-2.22.ebuild:
+  Version bump.
+
+  19 Sep 2011; Mike Frysinger <vapier@gentoo.org> Manifest:
+  Regen 2.19.1/2.20.1 manifests too #381831.
+
+  19 Sep 2011; Jeroen Roovers <jer@gentoo.org> Manifest:
+  Fix Manifest for new 2.21.1 tarball.
+
+*binutils-hppa64-2.21.1-r1 (05 Sep 2011)
+
+  05 Sep 2011; Jeroen Roovers <jer@gentoo.org> -binutils-hppa64-2.21.1.ebuild,
+  +binutils-hppa64-2.21.1-r1.ebuild:
+  Revision bump for new patchset.
 
 *binutils-hppa64-2.21.1 (15 Jul 2011)
 

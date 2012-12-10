@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/ptlib/ptlib-2.6.7-r1.ebuild,v 1.5 2011/04/04 12:23:37 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/ptlib/ptlib-2.6.7-r1.ebuild,v 1.15 2012/09/30 18:15:02 armin76 Exp $
 
 EAPI="2"
 
@@ -14,35 +14,29 @@ SRC_URI="mirror://sourceforge/opalvoip/${P}.tar.bz2
 
 LICENSE="MPL-1.0"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86"
 # default enabled are features from 'minsize', the most used according to ptlib
-IUSE="alsa +asn +audio debug doc dtmf esd examples ffmpeg ftp http ieee1394 ipv6
+IUSE="alsa +asn +audio debug doc dtmf examples ffmpeg ftp http ipv6
 jabber ldap mail odbc oss pch qos remote sasl sdl serial shmvideo snmp soap
-socks ssl +stun telnet tts v4l v4l2 +video vxml wav xml xmlrpc"
+socks ssl static-libs +stun telnet tts v4l +video vxml wav xml xmlrpc"
 
 CDEPEND="
-	audio? ( alsa? ( media-libs/alsa-lib )
-		esd? ( media-sound/esound ) )
+	audio? ( alsa? ( media-libs/alsa-lib ) )
 	ldap? ( net-nds/openldap )
 	odbc? ( dev-db/unixODBC )
 	sasl? ( dev-libs/cyrus-sasl:2 )
 	sdl? ( media-libs/libsdl )
 	ssl? ( dev-libs/openssl )
-	video? ( ieee1394? ( media-libs/libdc1394:1
-				media-libs/libdv
-				sys-libs/libavc1394
-				sys-libs/libraw1394 )
-		v4l2? ( media-libs/libv4l ) )
+	video? ( v4l? ( media-libs/libv4l ) )
 	xml? ( dev-libs/expat )
 	!!dev-libs/pwlib"
 RDEPEND="${CDEPEND}
 	ffmpeg? ( virtual/ffmpeg )"
 DEPEND="${CDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/bison
 	sys-devel/flex
-	video? ( v4l? ( sys-kernel/linux-headers )
-		v4l2? ( sys-kernel/linux-headers ) )"
+	video? ( v4l? ( sys-kernel/linux-headers ) )"
 
 # NOTES:
 # media-libs/libdc1394:2 should be supported but headers location have changed
@@ -174,13 +168,13 @@ src_configure() {
 		$(use_enable debug memcheck) \
 		$(use_enable debug tracing) \
 		$(use_enable dtmf) \
-		$(use_enable esd) \
+		--disable-esd \
 		$(use_enable ffmpeg ffvdev) \
 		$(use_enable ftp) \
 		$(use_enable http) \
 		$(use_enable http httpforms) \
 		$(use_enable http httpsvc) \
-		$(use_enable ieee1394 dc) \
+		--disable-dc \
 		$(use_enable ipv6) \
 		$(use_enable jabber) \
 		$(use_enable ldap openldap) \
@@ -201,8 +195,8 @@ src_configure() {
 		$(use_enable stun) \
 		$(use_enable telnet) \
 		$(use_enable tts) \
-		$(use_enable v4l) \
-		$(use_enable v4l2) \
+		--disable-v4l \
+		$(use_enable v4l v4l2) \
 		$(use_enable video) $(use_enable video vidfile) \
 		$(use_enable vxml) \
 		$(use_enable wav wavfile) \
@@ -224,6 +218,12 @@ src_install() {
 	use debug && makeopts="DEBUG=1"
 
 	emake DESTDIR="${D}" ${makeopts} install || die "emake install failed"
+
+	# Get rid of static libraries if not requested
+	# There seems to be no easy way to disable this in the build system
+	if ! use static-libs; then
+		rm -v "${D}"/usr/lib*/*.a || die
+	fi
 
 	if use doc; then
 		dohtml -r "${WORKDIR}"/html/* || die "dohtml failed"

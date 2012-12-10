@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/gnome-python-common.eclass,v 1.12 2011/07/08 11:35:01 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/gnome-python-common.eclass,v 1.17 2012/05/02 18:31:42 jdhore Exp $
 
 # Original Author: Arun Raghavan <ford_prefect@gentoo.org> (based on the
 #		   gnome-python-desktop eclass by Jim Ramsay <lack@gentoo.org>)
@@ -26,8 +26,7 @@
 # and the packages is named dev-python/libbonobo-python
 
 SUPPORT_PYTHON_ABIS="1"
-PYTHON_DEPEND="2"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="3.* *-jython 2.7-pypy-*"
 
 inherit autotools gnome2 python versionator
 
@@ -65,7 +64,7 @@ fi
 
 RDEPEND="${RDEPEND} ~dev-python/${G_PY_PN}-base-${PV}"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 # Enable the required bindings as specified by the G_PY_BINDINGS variable
 gnome-python-common_pkg_setup() {
@@ -85,12 +84,7 @@ gnome-python-common_src_unpack() {
 
 gnome-python-common_src_prepare() {
 	gnome2_src_prepare
-
-	# disable pyc compiling
-	if [[ -f py-compile ]]; then
-		rm py-compile
-		ln -s $(type -P true) py-compile
-	fi
+	python_clean_py-compile_files
 
 	# The .pc file is installed by respective gnome-python*-base package
 	sed -i '/^pkgconfig_DATA/d' Makefile.in || die "sed failed"

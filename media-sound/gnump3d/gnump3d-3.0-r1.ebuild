@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/gnump3d/gnump3d-3.0-r1.ebuild,v 1.1 2010/02/23 15:49:31 beandog Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/gnump3d/gnump3d-3.0-r1.ebuild,v 1.6 2012/06/09 23:08:40 zmedico Exp $
 
-inherit eutils multilib
+inherit eutils multilib user
 
 DESCRIPTION="A streaming server for MP3, OGG vorbis and other streamable files"
 HOMEPAGE="http://www.gnu.org/software/gnump3d/"
@@ -10,7 +10,7 @@ SRC_URI="http://savannah.gnu.org/download/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="alpha amd64 ~ppc ppc64 sparc x86"
 IUSE="sox"
 
 RDEPEND="dev-lang/perl

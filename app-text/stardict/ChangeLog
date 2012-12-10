@@ -1,6 +1,103 @@
 # ChangeLog for app-text/stardict
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/stardict/ChangeLog,v 1.9 2011/03/27 12:23:55 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/stardict/ChangeLog,v 1.32 2012/10/27 16:18:52 ssuominen Exp $
+
+  30 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -stardict-3.0.3-r1.ebuild:
+  old
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> stardict-3.0.3-r2.ebuild:
+  sparc stable wrt #416747
+
+  24 May 2012; Johannes Huber <johu@gentoo.org> stardict-3.0.3-r2.ebuild:
+  Stable for x86, wrt bug #416747
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> stardict-3.0.3-r2.ebuild:
+  Marking stardict-3.0.3-r2 ppc64 for bug 416747
+
+  22 May 2012; Brent Baude <ranger@gentoo.org> stardict-3.0.3-r2.ebuild:
+  Marking stardict-3.0.3-r2 ppc for bug 416747
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> stardict-3.0.3-r2.ebuild:
+  Stable for amd64, wrt bug #416747
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> stardict-3.0.3-r1.ebuild,
+  stardict-3.0.3-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -stardict-3.0.1-r2.ebuild, -stardict-3.0.1-r3.ebuild,
+  -files/stardict-3.0.1-changelog-minor-typo-fixes.patch,
+  -files/stardict-3.0.1-configure.in-EST.diff,
+  -files/stardict-3.0.1-gcc43.patch, -files/stardict-3.0.1-gcc44.patch,
+  -files/stardict-3.0.1-gcc46.patch, -files/stardict-3.0.1-gconf-m4.diff,
+  -files/stardict-3.0.1-gucharmap2.patch,
+  -files/stardict-3.0.1-sparc_sigbus.patch,
+  -files/stardict-3.0.1-transparent_trayicon.patch, metadata.xml:
+  old
+
+  17 Mar 2012; Raúl Porcel <armin76@gentoo.org> stardict-3.0.3-r1.ebuild:
+  sparc stable wrt #399783
+
+  10 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> stardict-3.0.3-r2.ebuild,
+  +files/stardict-3.0.3-zlib-1.2.5.2.patch:
+  Fix compability with sys-libs/zlib >= 1.2.5.2 wrt #401887 by Sergei
+  Trofimovich. Thanks to Attila Stehr for reporting.
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> stardict-3.0.3-r1.ebuild:
+  ppc/ppc64 stable wrt #399783
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  stardict-3.0.3-r1.ebuild:
+  x86 stable wrt bug #399783
+
+  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> stardict-3.0.3-r1.ebuild:
+  Stable for amd64, wrt bug #399783
+
+*stardict-3.0.3-r2 (22 Jan 2012)
+
+  22 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +stardict-3.0.3-r2.ebuild, metadata.xml:
+  Install noinst_PROGRAMS with stardict_ prefix from tools/src/Makefile.am wrt
+  #292773 by Sergey Kondakov
+
+  14 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/stardict-2.4.8-ClipboardReceivedCallback.patch,
+  -files/stardict-2.4.8-floatwin-disappear.patch, -stardict-3.0.3.ebuild:
+  old
+
+  13 Jan 2012; Mike Frysinger <vapier@gentoo.org> stardict-3.0.1-r2.ebuild,
+  stardict-3.0.1-r3.ebuild:
+  Use common `tc-export PKG_CONFIG` helper.
+
+*stardict-3.0.3-r1 (08 Jan 2012)
+
+  08 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +stardict-3.0.3-r1.ebuild, +files/stardict-3.0.3-compositelookup_cpp.patch,
+  +files/stardict-3.0.3-overflow.patch:
+  Incorporate OpenSUSE patches for buffer overflows and startup crash.
+
+  08 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> stardict-3.0.3.ebuild:
+  Use gnome2.eclass for gconf schema(s).
+
+  08 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> stardict-3.0.3.ebuild:
+  Missing CPL-1.0 and LGPL-2 licenses as noted by top level README.
+
+*stardict-3.0.3 (08 Jan 2012)
+
+  08 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +stardict-3.0.3.ebuild,
+  +files/stardict-3.0.3-correct-glib-include.patch,
+  +files/stardict-3.0.3-entry.patch, +files/stardict-3.0.3-gcc46.patch,
+  metadata.xml:
+  Version bump wrt #351416 by "zvasylvv". Remove unnecessary runtime depend for
+  festival and resort to pkg_postinst() message wrt #330351 by Andrew
+  Savchenko. Fix building with GLIB >= 2.31 wrt #396219 by Oschtan. USE="editor"
+  to build and install the stardict-editor wrt #292773 by "andcycle-gentoo.bugs".
+  Punt any reference to esound wrt #246174 by Yu Yuwei.
+
+  22 Sep 2011; Ryan Hill <dirtyepic@gentoo.org> stardict-3.0.1-r3.ebuild,
+  +files/stardict-3.0.1-gcc46.patch:
+  Add patch from Piotr Szymaniak to fix compilation w/ GCC 4.6 (bug #362299).
 
   27 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
   -stardict-2.4.8-r1.ebuild, -stardict-3.0.1-r1.ebuild,

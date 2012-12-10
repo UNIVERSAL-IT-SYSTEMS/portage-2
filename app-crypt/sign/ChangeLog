@@ -1,6 +1,15 @@
 # ChangeLog for app-crypt/sign
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/sign/ChangeLog,v 1.15 2010/10/25 18:20:02 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/sign/ChangeLog,v 1.18 2012/11/04 16:53:14 ulm Exp $
+
+  04 Nov 2012; Ulrich Müller <ulm@gentoo.org> sign-1.0.7.ebuild:
+  Specify LICENSE more precisely, BZIP2 according to LICENSE file in tarball.
+
+  10 Oct 2012; Agostino Sarubbo <ago@gentoo.org> sign-1.0.7.ebuild:
+  Stable for amd64, wrt bug #437822
+
+  10 Oct 2012; Agostino Sarubbo <ago@gentoo.org> sign-1.0.7.ebuild:
+  eapi4
 
   25 Oct 2010; Fabian Groffen <grobian@gentoo.org> sign-1.0.7.ebuild:
   Fix building on ppc-macos by dropping -g from hardwired CFLAGS
@@ -55,4 +64,3 @@
   13 Jul 2004; Sven Wegener <swegener@gentoo.org> +metadata.xml,
   +sign-1.0.5.ebuild:
   Initial import, ebuild written by me.
-

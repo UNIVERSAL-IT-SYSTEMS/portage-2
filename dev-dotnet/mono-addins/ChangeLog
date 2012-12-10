@@ -1,6 +1,28 @@
 # ChangeLog for dev-dotnet/mono-addins
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/mono-addins/ChangeLog,v 1.27 2011/05/11 19:26:32 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/mono-addins/ChangeLog,v 1.33 2012/05/04 03:56:57 jdhore Exp $
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> mono-addins-0.6.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  22 Jan 2012; Pacho Ramos <pacho@gentoo.org> -mono-addins-0.6.ebuild:
+  Drop old.
+
+  10 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> mono-addins-0.6.2.ebuild:
+  ppc stable wrt #389181
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org> mono-addins-0.6.2.ebuild:
+  Stable on amd64 wrt bug #389181
+
+  04 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  mono-addins-0.6.2.ebuild:
+  x86 stable wrt bug #389181
+
+*mono-addins-0.6.2 (10 Sep 2011)
+
+  10 Sep 2011; Pacho Ramos <pacho@gentoo.org> -mono-addins-0.5.ebuild,
+  +mono-addins-0.6.2.ebuild:
+  Version bump, remove old.
 
   11 May 2011; Christoph Mende <angelos@gentoo.org> mono-addins-0.6.ebuild:
   Stable on amd64 wrt bug #359651

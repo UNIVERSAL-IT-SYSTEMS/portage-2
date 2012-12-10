@@ -1,6 +1,20 @@
 # ChangeLog for app-dicts/myspell-cs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-cs/ChangeLog,v 1.23 2011/07/25 12:59:59 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-cs/ChangeLog,v 1.26 2012/06/13 15:58:03 scarabeus Exp $
+
+  13 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> -myspell-cs-20070926.ebuild,
+  myspell-cs-20110224.ebuild:
+  Stabilise really latest czech myspell dict.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> myspell-cs-20070926.ebuild,
+  myspell-cs-20110224.ebuild:
+  keyword ~amd64-fbsd
+
+*myspell-cs-20110224 (24 Apr 2012)
+
+  24 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> +myspell-cs-20110224.ebuild:
+  Version bump to the latest pack release. Use new eclass. The version is taken
+  from the date on the ftp.
 
   25 Jul 2011; Tomáš Chvátal <scarabeus@gentoo.org>
   -myspell-cs-20060316.ebuild, myspell-cs-20070926.ebuild:

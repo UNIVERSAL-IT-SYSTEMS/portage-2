@@ -1,6 +1,108 @@
 # ChangeLog for media-sound/banshee
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/ChangeLog,v 1.138 2011/07/09 14:47:46 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/banshee/ChangeLog,v 1.160 2012/12/07 05:02:38 phajdan.jr Exp $
+
+  07 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> banshee-2.4.1.ebuild:
+  x86 stable wrt bug #435202
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org> banshee-2.2.1.ebuild,
+  banshee-2.4.1.ebuild, banshee-2.6.0.ebuild:
+  Pin gstreamer dependencies.
+
+  05 Oct 2012; Pacho Ramos <pacho@gentoo.org> banshee-2.6.0.ebuild:
+  Drop gnome-icon-theme dependency, bug #437246 by timtasse. gnome-settings-
+  daemon is still needed for Banshee.MultimediaKeys to work and gconf-sharp is
+  checked by configure.
+
+*banshee-2.6.0 (30 Sep 2012)
+
+  30 Sep 2012; Pacho Ramos <pacho@gentoo.org> +banshee-2.6.0.ebuild:
+  Version bump.
+
+  16 Sep 2012; Agostino Sarubbo <ago@gentoo.org> banshee-2.4.1.ebuild:
+  Stable for amd64, wrt bug #435202
+
+*banshee-2.4.1 (15 Jun 2012)
+
+  15 Jun 2012; Pacho Ramos <pacho@gentoo.org> +banshee-2.4.1.ebuild,
+  -banshee-2.2.0-r1.ebuild, -banshee-2.4.0-r1.ebuild:
+  Version bump, drop old.
+
+  22 May 2012; Agostino Sarubbo <ago@gentoo.org> banshee-2.2.1.ebuild:
+  Stable for amd64, wrt bug #407701
+
+  14 May 2012; Pacho Ramos <pacho@gentoo.org> banshee-2.4.0-r1.ebuild:
+  app-misc/media-player-info is needed as reported in bug #414513 by Bjoern
+  Ottervik and confirmed reading upstream release notes.
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> banshee-2.2.0-r1.ebuild,
+  banshee-2.2.1.ebuild, banshee-2.4.0-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  28 Apr 2012; Pacho Ramos <pacho@gentoo.org> banshee-2.4.0-r1.ebuild:
+  Fix dependency on mono-addins, bug #413533 by Florian Berger.
+
+  22 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> banshee-2.4.0-r1.ebuild:
+  Rename USE="ios" to USE="ipod" which is designed for controlling libgpod
+  dependency wrt #413105 by Daniel Klaffenbach
+
+  09 Apr 2012; Markus Meier <maekke@gentoo.org> banshee-2.2.1.ebuild:
+  x86 stable, bug #407701
+
+  31 Mar 2012; Pacho Ramos <pacho@gentoo.org> banshee-2.4.0-r1.ebuild:
+  Works fine with media-libs/musicbrainz:3 instead of deprecated :1 as just
+  tested.
+
+*banshee-2.4.0-r1 (26 Mar 2012)
+
+  26 Mar 2012; Pacho Ramos <pacho@gentoo.org> +banshee-2.4.0-r1.ebuild,
+  +files/banshee-2.4.0-libgpod-082.patch, +files/banshee-2.4.0-upnp-crash.patch,
+  -banshee-2.4.0.ebuild:
+  Fix UPnP crash and build with libgpod-sharp-0.8.2 (#409597 by Bjoern
+  Ottervik).
+
+*banshee-2.4.0 (24 Mar 2012)
+
+  24 Mar 2012; Pacho Ramos <pacho@gentoo.org> +banshee-2.4.0.ebuild:
+  Version bump.
+
+  28 Nov 2011; Pacho Ramos <pacho@gentoo.org> banshee-2.2.1.ebuild:
+  Fix dependencies: drop old GVER stuff that didn't make any sense with the way
+  we provide gst plugins, gnomevfs was replaced by gio time ago, gvfs[ios] is
+  needed with USE 'ios', rename 'ipod' to 'ios' USE flag. Thanks a lot to leio
+  for his help.
+
+*banshee-2.2.1 (21 Nov 2011)
+
+  21 Nov 2011; Pacho Ramos <pacho@gentoo.org> +banshee-2.2.1.ebuild,
+  -banshee-2.0.0.ebuild, metadata.xml:
+  Version bump, this also handles bpmdetect dependency properly (bug #284036,
+  thanks to Colin Macdonald, Mart Raudsepp, Paweł Hajdan, Jr and others), and
+  fixes notifications (bug #387569 by Travis Hansen).
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org> banshee-2.2.0-r1.ebuild:
+  Stable on amd64 wrt bug #389181
+
+  04 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> banshee-2.2.0-r1.ebuild:
+  x86 stable wrt bug #389181
+
+*banshee-2.2.0-r1 (01 Nov 2011)
+
+  01 Nov 2011; Pacho Ramos <pacho@gentoo.org> +banshee-2.2.0-r1.ebuild,
+  +files/banshee-2.2.0-fix-equalizer-values.patch, -banshee-2.0.1.ebuild,
+  -banshee-2.2.0.ebuild, -files/banshee-2.0.1-audiocd-metadata.patch,
+  -files/banshee-2.0.1-musicbrainz-useragent-fixes.patch,
+  -files/banshee-2.0.1-musicbrainz-useragent.patch:
+  Add a fix for smiley face curve equalizer, drop old.
+
+  20 Oct 2011; Pacho Ramos <pacho@gentoo.org> banshee-2.2.0.ebuild:
+  soundmenu needs a properly maintained and updated indicate-sharp, disabling
+  it then, bug #387827 by Flameeyes.
+
+*banshee-2.2.0 (22 Sep 2011)
+
+  22 Sep 2011; Pacho Ramos <pacho@gentoo.org> +banshee-2.2.0.ebuild:
+  Version bump.
 
   09 Jul 2011; Pacho Ramos <pacho@gentoo.org>
   +files/banshee-2.0.1-audiocd-metadata.patch,
@@ -705,4 +807,3 @@
 
   27 Nov 2005; Luis Medinas <metalgod@gentoo.org> +banshee-0.9.12.ebuild:
   New Package. Thanks to all users involved in bug #91419.
-

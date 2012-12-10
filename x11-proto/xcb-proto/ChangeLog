@@ -1,6 +1,96 @@
 # ChangeLog for x11-proto/xcb-proto
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-proto/xcb-proto/ChangeLog,v 1.62 2011/02/14 14:30:54 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-proto/xcb-proto/ChangeLog,v 1.87 2012/12/08 17:17:47 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> xcb-proto-1.8.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> xcb-proto-1.8.ebuild:
+  Marking xcb-proto-1.8 ppc stable for bug 440872
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xcb-proto-1.8.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xcb-proto-1.8.ebuild:
+  Stable for amd64, wrt bug #440872
+
+*xcb-proto-1.8 (06 Oct 2012)
+
+  06 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xcb-proto-1.8.ebuild:
+  Version bump.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> xcb-proto-1.7.1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> xcb-proto-1.7.1.ebuild:
+  Marking xcb-proto-1.7.1 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> xcb-proto-1.7.1.ebuild:
+  Marking xcb-proto-1.7.1 ppc64 stable for bug 419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> xcb-proto-1.7.1.ebuild:
+  Stable for HPPA (bug #419473).
+
+  28 Jun 2012; Markus Meier <maekke@gentoo.org> xcb-proto-1.7.1.ebuild:
+  arm stable, bug #419473
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xcb-proto-1.7.1.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xcb-proto-1.7.1.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> xcb-proto-1.7.1.ebuild:
+  keyword ~amd64-fbsd
+
+*xcb-proto-1.7.1 (23 Mar 2012)
+
+  23 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xcb-proto-1.7.1.ebuild:
+  Version bump.
+
+  10 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xcb-proto-1.7-r1.ebuild:
+  Update ebuild with suggestions from Arfrever.
+
+*xcb-proto-1.7-r1 (10 Mar 2012)
+
+  10 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xcb-proto-1.7-r1.ebuild:
+  Works with python 3 now.
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> xcb-proto-1.6-r2.ebuild:
+  Marking xcb-proto-1.6-r2 ppc64 stable for bug 394393
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> xcb-proto-1.6-r2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #394393
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> xcb-proto-1.6-r2.ebuild:
+  Marking xcb-proto-1.6-r2 ppc stable for bug 394393
+
+*xcb-proto-1.7 (11 Jan 2012)
+
+  11 Jan 2012; Matt Turner <mattst88@gentoo.org> +xcb-proto-1.7.ebuild:
+  Version bump.
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> xcb-proto-1.6-r2.ebuild:
+  x86 stable, bug #394393
+
+  21 Dec 2011; Markus Meier <maekke@gentoo.org> xcb-proto-1.6-r2.ebuild:
+  arm stable, bug #394393
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> xcb-proto-1.6-r2.ebuild:
+  Stable for HPPA (bug #394393).
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> xcb-proto-1.6-r2.ebuild:
+  Stable for AMD64, wrt bug #394393
+
+*xcb-proto-1.6-r2 (10 Nov 2011)
+
+  10 Nov 2011; Mike Frysinger <vapier@gentoo.org> +files/1.6-libdir-pc.patch,
+  +xcb-proto-1.6-r2.ebuild:
+  Add pkg-config libdir update from upstream for cross-compiling.
 
   14 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org>
   xcb-proto-1.6-r1.ebuild:
@@ -221,4 +311,3 @@
   09 Oct 2006; Donnie Berkholz <dberkholz@gentoo.org>; +metadata.xml,
   +xcb-proto-0.9.92.ebuild:
   Add X C-language Bindings protocol headers.
-

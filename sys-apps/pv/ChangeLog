@@ -1,6 +1,72 @@
 # ChangeLog for sys-apps/pv
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/pv/ChangeLog,v 1.25 2011/04/02 06:42:59 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/pv/ChangeLog,v 1.44 2012/11/12 13:21:19 jer Exp $
+
+*pv-1.3.9 (12 Nov 2012)
+
+  12 Nov 2012; Jeroen Roovers <jer@gentoo.org> +pv-1.3.9.ebuild:
+  Version bump.
+
+  26 Aug 2012; Jeroen Roovers <jer@gentoo.org> -pv-1.2.0.ebuild,
+  -pv-1.2.0-r1.ebuild, -pv-1.3.1.ebuild:
+  Old.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> pv-1.3.4.ebuild:
+  alpha/sparc stable wrt #429480
+
+  04 Aug 2012; Markos Chandras <hwoarang@gentoo.org> pv-1.3.4.ebuild:
+  Stable on amd64 wrt bug #429480
+
+  03 Aug 2012; Jeff Horelick <jdhore@gentoo.org> pv-1.3.4.ebuild:
+  marked x86 per bug 429480
+
+  02 Aug 2012; Jeroen Roovers <jer@gentoo.org> pv-1.3.4.ebuild:
+  Stable for HPPA (bug #429480).
+
+  02 Aug 2012; Anthony G. Basile <blueness@gentoo.org> pv-1.3.4.ebuild:
+  Keyword ~mips
+
+  02 Aug 2012; Anthony G. Basile <blueness@gentoo.org> pv-1.3.4.ebuild:
+  Stable ppc ppc64, bug #429480
+
+  02 Aug 2012; Anthony G. Basile <blueness@gentoo.org> pv-1.3.4.ebuild:
+  Stable arm, bug #429480
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> pv-1.2.0-r1.ebuild:
+  arm stable, bug #422187
+
+*pv-1.3.4 (02 Jul 2012)
+
+  02 Jul 2012; Jeroen Roovers <jer@gentoo.org> +pv-1.3.4.ebuild:
+  Version bump.
+
+  29 Jun 2012; Brent Baude <ranger@gentoo.org> pv-1.2.0-r1.ebuild:
+  Marking pv-1.2.0-r1 ppc for bug 422187
+
+*pv-1.3.1 (28 Jun 2012)
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> +pv-1.3.1.ebuild:
+  Version bump.
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> pv-1.2.0-r1.ebuild:
+  Marking pv-1.2.0-r1 ppc64 for bug 422187
+
+  22 Jun 2012; Jeroen Roovers <jer@gentoo.org> pv-1.2.0-r1.ebuild:
+  Stable for HPPA (bug #422187).
+
+  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> pv-1.2.0-r1.ebuild:
+  Stable for amd64, wrt bug #422187
+
+  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> pv-1.2.0-r1.ebuild:
+  marked x86 per bug 422187
+
+*pv-1.2.0-r1 (06 Feb 2012)
+
+  06 Feb 2012; Jeroen Roovers <jer@gentoo.org> +pv-1.2.0-r1.ebuild:
+  Add LINGUAS support by Piotr Szymaniak (bug #402295).
+
+  22 Dec 2011; Jeroen Roovers <jer@gentoo.org> pv-1.2.0.ebuild:
+  Simpler and shorter by Mike Frysinger.
 
   02 Apr 2011; Christoph Mende <angelos@gentoo.org> -pv-1.1.4.ebuild,
   -pv-1.1.4-r1.ebuild:

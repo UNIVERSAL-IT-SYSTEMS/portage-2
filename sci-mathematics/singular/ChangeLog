@@ -1,6 +1,40 @@
 # ChangeLog for sci-mathematics/singular
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/singular/ChangeLog,v 1.47 2011/05/03 14:51:47 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/singular/ChangeLog,v 1.54 2012/08/15 09:59:46 tomka Exp $
+
+  15 Aug 2012; Thomas Kahle <tomka@gentoo.org>
+  +files/singular-3.1.3.3-install_name.patch:
+  Add missing OS-X patch.  Thanks Francois Bissey
+
+  23 Jun 2012; Kacper Kowalik <xarthisius.kk@gmail.com>
+  singular-3.1.4-r1.ebuild:
+  ppc stable wrt #418407
+
+  04 Jun 2012; Thomas Kahle <tomka@gentoo.org> singular-3.1.4-r1.ebuild:
+  marked x86 per bug 418407
+
+  03 Jun 2012; Agostino Sarubbo <ago@gentoo.org> singular-3.1.4-r1.ebuild:
+  Stable for amd64, wrt bug #418407
+
+*singular-3.1.4-r1 (13 May 2012)
+
+  13 May 2012; Thomas Kahle <tomka@gentoo.org> +singular-3.1.4-r1.ebuild:
+  Fix bug 414709. Thanks Jean-Francis Roy for the solution.
+
+*singular-3.1.4 (24 Mar 2012)
+
+  24 Mar 2012; Thomas Kahle <tomka@gentoo.org>
+  +files/singular-3.1.3.2-python.patch, +singular-3.1.4.ebuild:
+  add 3.1.4 with python support. Kudos to all contributors from lmona.de and
+  sage-on-gentoo
+
+*singular-3.1.3.3 (23 Dec 2011)
+
+  23 Dec 2011; Thomas Kahle <tomka@gentoo.org> +singular-3.1.3.3.ebuild,
+  +files/singular-3.1.3.3-Minor.h.patch,
+  +files/singular-3.1.3.3-os_x_ppc.patch,
+  +files/singular-3.1.3.3.make_parallel.2.patch:
+  Import 3.1.3.3 from sage-on-gentoo. Thanks François Bissey
 
 *singular-3.1.3.1 (03 May 2011)
 
@@ -291,4 +325,3 @@
   files/singular-2.0.4-gentoo.diff:
   Initial import, based on the submission in bug 26115. Thanks to all
   contributors.
-

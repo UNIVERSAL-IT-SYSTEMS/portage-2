@@ -1,6 +1,184 @@
 # ChangeLog for media-plugins/kipi-plugins
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/kipi-plugins/ChangeLog,v 1.98 2011/07/30 12:14:02 dilfridge Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/kipi-plugins/ChangeLog,v 1.135 2012/11/23 06:25:05 dilfridge Exp $
+
+  23 Nov 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  kipi-plugins-2.9.0.ebuild:
+  Does not build against KDE 4.10
+
+  13 Nov 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -kipi-plugins-2.6.0-r1.ebuild, -kipi-plugins-2.8.0.ebuild:
+  Remove old
+
+  27 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  kipi-plugins-2.9.0.ebuild:
+  x86 stable wrt bug #438352
+
+  16 Oct 2012; Agostino Sarubbo <ago@gentoo.org> kipi-plugins-2.9.0.ebuild:
+  Stable for amd64, wrt bug #438352
+
+  14 Oct 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  kipi-plugins-2.6.0-r1.ebuild, kipi-plugins-2.8.0.ebuild,
+  kipi-plugins-2.9.0.ebuild:
+  libmediawiki moved to net-libs
+
+  14 Oct 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -files/kipi-plugins-1.7.0-expoblending.patch,
+  -files/kipi-plugins-2.2.0-panorama.patch:
+  Clean up
+
+*kipi-plugins-2.9.0 (03 Sep 2012)
+
+  03 Sep 2012; Chris Reffett <creffett@gentoo.org> +kipi-plugins-2.9.0.ebuild:
+  Version bump to 2.9.0
+
+  25 Aug 2012; Johannes Huber <johu@gentoo.org> -kipi-plugins-2.5.0.ebuild:
+  Remove old.
+
+  25 Aug 2012; Johannes Huber <johu@gentoo.org> kipi-plugins-2.6.0-r1.ebuild:
+  Stable for x86, wrt bug #429842
+
+  23 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -kipi-plugins-2.6.0.ebuild, -kipi-plugins-2.7.0-r1.ebuild:
+  Remove old
+
+  23 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  kipi-plugins-2.6.0.ebuild, kipi-plugins-2.6.0-r1.ebuild,
+  kipi-plugins-2.7.0-r1.ebuild, kipi-plugins-2.8.0.ebuild:
+  Restrict tests pending further analysis of bug 420203
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> kipi-plugins-2.6.0-r1.ebuild:
+  Stable for amd64, wrt bug #429842
+
+  11 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  kipi-plugins-2.6.0.ebuild, kipi-plugins-2.6.0-r1.ebuild,
+  kipi-plugins-2.7.0-r1.ebuild, kipi-plugins-2.8.0.ebuild:
+  Fix misplaced bracket in libmediawiki dependencies, bug 430798
+
+*kipi-plugins-2.8.0 (11 Aug 2012)
+
+  11 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +kipi-plugins-2.8.0.ebuild:
+  Version bump, bug 430802, thanks creffett
+
+  10 Aug 2012; Johannes Huber <johu@gentoo.org> kipi-plugins-2.6.0-r1.ebuild,
+  kipi-plugins-2.6.0.ebuild:
+  Remove listed but non-existing patch.
+
+*kipi-plugins-2.7.0-r1 (10 Aug 2012)
+*kipi-plugins-2.6.0-r1 (10 Aug 2012)
+
+  10 Aug 2012; Chris Reffett <creffett@gentoo.org>
+  +kipi-plugins-2.6.0-r1.ebuild, +kipi-plugins-2.7.0-r1.ebuild,
+  -kipi-plugins-2.7.0.ebuild, kipi-plugins-2.6.0.ebuild:
+  Bump 2.6.0 and 2.7.0 to -r1 to fix incorrect cmake variable (Sane instead of
+  KSane for scanner) wrt bug 430302. Thanks to Christian Schmitt
+  <chrschmitt@gmail.com> for the catch. Ignoring 2.5.0 because it will be punted
+  as soon as 2.6.0 is stable.
+
+  06 Aug 2012; Agostino Sarubbo <ago@gentoo.org> kipi-plugins-2.6.0.ebuild:
+  Stable for amd64, wrt bug #429842
+
+*kipi-plugins-2.7.0 (09 Jul 2012)
+
+  09 Jul 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +kipi-plugins-2.7.0.ebuild:
+  Version bump
+
+*kipi-plugins-2.6.0 (07 Jun 2012)
+
+  07 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -files/kipi-plugins-2.0.0-tests.patch, -kipi-plugins-2.4.1.ebuild,
+  -kipi-plugins-2.6.0_beta3.ebuild, -kipi-plugins-2.6.0_rc.ebuild,
+  +kipi-plugins-2.6.0.ebuild:
+  Version bump; remove old, beta, and rc
+
+*kipi-plugins-2.6.0_rc (13 May 2012)
+
+  13 May 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +kipi-plugins-2.6.0_rc.ebuild:
+  Version bump
+
+  18 Apr 2012; Markus Meier <maekke@gentoo.org> kipi-plugins-2.5.0.ebuild:
+  x86 stable, bug #409403
+
+*kipi-plugins-2.6.0_beta3 (08 Apr 2012)
+
+  08 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -kipi-plugins-2.3.0.ebuild, +kipi-plugins-2.6.0_beta3.ebuild,
+  +files/kipi-plugins-2.6.0_beta3-options.patch:
+  Version bump; remove old
+
+  04 Apr 2012; Agostino Sarubbo <ago@gentoo.org> kipi-plugins-2.5.0.ebuild:
+  Stable for amd64, wrt bug #409403
+
+  16 Jan 2012; Agostino Sarubbo <ago@gentoo.org> kipi-plugins-2.4.1.ebuild:
+  Stable for amd64, wrt bug #396359
+
+  09 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  kipi-plugins-2.4.1.ebuild:
+  x86 stable wrt bug #396359
+
+*kipi-plugins-2.5.0 (03 Jan 2012)
+
+  03 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +kipi-plugins-2.5.0.ebuild:
+  Version bump
+
+  25 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -kipi-plugins-1.9.0.ebuild, -files/kipi-plugins-1.9.0-tests.patch:
+  Remove old
+
+  07 Dec 2011; Markos Chandras <hwoarang@gentoo.org> kipi-plugins-2.3.0.ebuild:
+  Stable on amd64 wrt bug #388279
+
+*kipi-plugins-2.4.1 (07 Dec 2011)
+
+  07 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -kipi-plugins-2.2.0-r1.ebuild, +kipi-plugins-2.4.1.ebuild:
+  Version bump; remove old
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  kipi-plugins-2.3.0.ebuild:
+  x86 stable wrt bug #388279
+
+*kipi-plugins-2.3.0 (09 Nov 2011)
+
+  09 Nov 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  +kipi-plugins-2.3.0.ebuild:
+  Version bump
+
+*kipi-plugins-2.2.0-r1 (05 Nov 2011)
+
+  05 Nov 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -kipi-plugins-2.2.0.ebuild, +kipi-plugins-2.2.0-r1.ebuild,
+  +files/kipi-plugins-2.2.0-panorama.patch:
+  Only build panorama plugin if useflag is set, bug 386157
+
+  16 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  kipi-plugins-1.9.0.ebuild, -kipi-plugins-2.0.0.ebuild,
+  -kipi-plugins-2.1.0.ebuild, kipi-plugins-2.2.0.ebuild:
+  Fix handbook handling, bug 386711; remove old
+
+*kipi-plugins-2.2.0 (03 Oct 2011)
+
+  03 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  +kipi-plugins-2.2.0.ebuild:
+  Version bump
+
+*kipi-plugins-2.1.0 (09 Sep 2011)
+
+  09 Sep 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  +kipi-plugins-2.1.0.ebuild, metadata.xml:
+  Version bump
+
+  06 Sep 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  kipi-plugins-2.0.0.ebuild:
+  Bump opencv version dependency to fix usb_init symbol conflict, bug 380287
+
+  14 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  kipi-plugins-2.0.0.ebuild, +files/kipi-plugins-2.0.0-tests.patch:
+  Fix tests, bug 379183
 
   30 Jul 2011; Andreas K. Huettel <dilfridge@gentoo.org>
   kipi-plugins-2.0.0.ebuild, metadata.xml:
@@ -497,4 +675,3 @@
   18 Oct 2004; Carsten Lohrke <carlo@gentoo.org> +metadata.xml,
   +kipi-plugins-0.1_beta1.ebuild:
   Initial commit. Thanks to Maarten Wisse, #67644
-

@@ -1,6 +1,63 @@
 # ChangeLog for sys-freebsd/freebsd-contrib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-contrib/ChangeLog,v 1.28 2011/07/06 05:57:27 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-contrib/ChangeLog,v 1.39 2012/11/06 12:54:03 aballier Exp $
+
+*freebsd-contrib-9.1_rc3 (06 Nov 2012)
+
+  06 Nov 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-contrib-9.1_rc3.ebuild:
+  bump to rc3
+
+*freebsd-contrib-9.1_rc2 (14 Oct 2012)
+
+  14 Oct 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-contrib-9.1_rc2.ebuild:
+  bump to 9.1_rc2
+
+*freebsd-contrib-9.1_rc1 (11 Sep 2012)
+
+  11 Sep 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-contrib-9.1_rc1.ebuild:
+  bump to 9.1_rc1 from bsd overlay by Yuta SATOH, bug #426838
+
+  04 May 2012; Alexis Ballier <aballier@gentoo.org> freebsd-contrib-9.0.ebuild:
+  install libodialog in lib64 for amd64
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> freebsd-contrib-9.0.ebuild:
+  keyword ~amd64-fbsd
+
+  30 Mar 2012; Alexis Ballier <aballier@gentoo.org>
+  -freebsd-contrib-9.0_rc1.ebuild, -freebsd-contrib-9.0_rc2.ebuild,
+  -freebsd-contrib-9.0_rc3.ebuild:
+  remove old
+
+*freebsd-contrib-9.0 (16 Jan 2012)
+
+  16 Jan 2012; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-contrib-9.0.ebuild:
+  bump to 9.0
+
+  10 Dec 2011; Naohiro Aota <naota@gentoo.org> freebsd-contrib-8.0.ebuild,
+  freebsd-contrib-8.2.ebuild:
+  Block dev-util/diaglog. Bug #352455
+
+*freebsd-contrib-9.0_rc3 (09 Dec 2011)
+
+  09 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-contrib-9.0_rc3.ebuild:
+  bump to 9.0_rc3
+
+*freebsd-contrib-9.0_rc2 (07 Dec 2011)
+
+  07 Dec 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-contrib-9.0_rc2.ebuild:
+  bump to rc2
+
+*freebsd-contrib-9.0_rc1 (07 Nov 2011)
+
+  07 Nov 2011; Alexis Ballier <aballier@gentoo.org>
+  +freebsd-contrib-9.0_rc1.ebuild:
+  bump to 9.0_rc1
 
 *freebsd-contrib-8.2 (06 Jul 2011)
 

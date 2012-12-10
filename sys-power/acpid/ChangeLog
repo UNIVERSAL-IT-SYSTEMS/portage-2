@@ -1,6 +1,128 @@
 # ChangeLog for sys-power/acpid
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/acpid/ChangeLog,v 1.65 2011/06/12 14:31:34 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-power/acpid/ChangeLog,v 1.98 2012/11/25 18:59:25 armin76 Exp $
+
+  25 Nov 2012; Raúl Porcel <armin76@gentoo.org> acpid-2.0.17.ebuild:
+  ia64 stable wrt #434522
+
+  25 Nov 2012; <swift@gentoo.org> acpid-2.0.16-r1.ebuild, acpid-2.0.17.ebuild:
+  Adding optional SELinux apm module dependency
+
+  19 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> acpid-2.0.16-r1.ebuild,
+  acpid-2.0.17.ebuild:
+  Show message about power management guide only when installing package first
+  time wrt bug #440422
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> acpid-2.0.17.ebuild:
+  Stable for x86, wrt bug #434522
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> acpid-2.0.17.ebuild:
+  Stable for amd64, wrt bug #434522
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+*acpid-2.0.17 (16 Sep 2012)
+
+  16 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> +acpid-2.0.17.ebuild:
+  Version bump.
+
+  01 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/acpid-1.0.6-conf.d, -files/acpid-2.0.3.patch,
+  -files/acpid-2.0.11-init.d, -acpid-2.0.14.ebuild, -files/acpid.service:
+  old
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> acpid-2.0.16-r1.ebuild:
+  ia64 stable wrt #419201
+
+  07 Jun 2012; Johannes Huber <johu@gentoo.org> acpid-2.0.16-r1.ebuild:
+  Stable for x86, wrt bug #419201
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> acpid-2.0.16-r1.ebuild:
+  Stable for amd64, wrt bug #419201
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  files/systemd/acpid.service:
+  Use EnvironmentFile=-/etc/conf.d/acpid with - in case user has done something stupid
+  like INSTALL_MASK="/etc/conf.d"
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org> -acpid-2.0.12.ebuild,
+  -acpid-2.0.13.ebuild, -acpid-2.0.16.ebuild:
+  old
+
+*acpid-2.0.16-r1 (19 May 2012)
+
+  19 May 2012; Samuli Suominen <ssuominen@gentoo.org> +acpid-2.0.16-r1.ebuild,
+  +files/acpid-2.0.16-conf.d, +files/acpid-2.0.16-init.d,
+  +files/systemd/acpid.service, +files/systemd/acpid.socket:
+  New socket activation based systemd files as per user request. Ensure /run is
+  present in pkg_postinst() for acpid.socket file.
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> acpid-2.0.14.ebuild:
+  ia64 stable wrt #406947
+
+*acpid-2.0.16 (16 Apr 2012)
+
+  16 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +acpid-2.0.16.ebuild:
+  Version bump wrt #410405 by "teidakankan"
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> acpid-2.0.14.ebuild:
+  x86 stable wrt bug #406947
+
+  05 Mar 2012; Homer Parker <hparker@gentoo.org> acpid-2.0.14.ebuild:
+  Stable on amd64 fixing bug #406947
+
+*acpid-2.0.14 (21 Dec 2011)
+
+  21 Dec 2011; Christoph Junghans <ottxor@gentoo.org> +acpid-2.0.14.ebuild:
+  version bump (bug #395411)
+
+  04 Dec 2011; Sven Wegener <swegener@gentoo.org> files/acpid-2.0.11-init.d:
+  reload is extra_started_commands
+
+*acpid-2.0.13 (24 Nov 2011)
+
+  24 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +acpid-2.0.13.ebuild:
+  Version bump.
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -files/acpid-2.0.3-init.d, -acpid-2.0.9.ebuild, -acpid-2.0.11.ebuild:
+  old
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> acpid-2.0.12.ebuild:
+  ia64 stable wrt #385235
+
+  04 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> acpid-2.0.12.ebuild:
+  x86 stable wrt bug #385235
+
+  04 Oct 2011; Tony Vroon <chainsaw@gentoo.org> acpid-2.0.12.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #385235.
+
+*acpid-2.0.12 (08 Sep 2011)
+
+  08 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> +acpid-2.0.12.ebuild:
+  Version bump.
+
+  05 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> acpid-2.0.11.ebuild,
+  files/acpid-2.0.11-init.d:
+  Improve init.d script detection of baselayout-1 wrt #270646#c52.
+
+  04 Aug 2011; Samuli Suominen <ssuominen@gentoo.org>
+  files/acpid-2.0.11-init.d:
+  Improve init.d script for baselayout-2.
+
+  04 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> -acpid-2.0.6.ebuild,
+  -acpid-2.0.10.ebuild:
+  remove old
+
+*acpid-2.0.11 (04 Aug 2011)
+
+  04 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> +acpid-2.0.11.ebuild,
+  +files/acpid-2.0.11-init.d, +files/acpid.service:
+  Version bump. Install systemd unit file wrt #375269 by Michał Górny. Remove
+  deprecated --oknodo from initd script wrt #377761 by Michael Mair-Keimberger.
+  Remove support for sys-apps/hal and drop "before hald" from initd script.
 
   12 Jun 2011; Raúl Porcel <armin76@gentoo.org> acpid-2.0.9.ebuild:
   ia64 stable wrt #368233

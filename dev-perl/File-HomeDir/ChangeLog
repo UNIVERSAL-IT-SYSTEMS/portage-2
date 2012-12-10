@@ -1,6 +1,45 @@
 # ChangeLog for dev-perl/File-HomeDir
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/File-HomeDir/ChangeLog,v 1.77 2011/07/30 08:20:09 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/File-HomeDir/ChangeLog,v 1.88 2012/11/04 15:20:22 tove Exp $
+
+*File-HomeDir-1.0.0 (04 Nov 2012)
+
+  04 Nov 2012; Torsten Veller <tove@gentoo.org> +File-HomeDir-1.0.0.ebuild:
+  Version bump
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> File-HomeDir-0.990.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -File-HomeDir-0.93.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> File-HomeDir-0.980.0.ebuild:
+  ia64/sparc stable wrt #400113
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  File-HomeDir-0.980.0.ebuild:
+  x86 stable wrt bug #400113
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> File-HomeDir-0.980.0.ebuild:
+  Marking File-HomeDir-0.980.0 ppc64 for bug 400113
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> File-HomeDir-0.980.0.ebuild:
+  Marking File-HomeDir-0.980.0 ppc for bug 400113
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  File-HomeDir-0.980.0.ebuild:
+  Stable on alpha, bug #400113
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> File-HomeDir-0.980.0.ebuild:
+  Stable for amd64, wrt bug #400113
+
+*File-HomeDir-0.990.0 (28 Jan 2012)
+
+  28 Jan 2012; Torsten Veller <tove@gentoo.org> +File-HomeDir-0.990.0.ebuild:
+  Version bump
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> -File-HomeDir-0.970.ebuild:
   Cleanup
@@ -319,4 +358,3 @@
   22 Nov 2005; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +File-HomeDir-0.07.ebuild:
   New dep for CPAN-Mini
-

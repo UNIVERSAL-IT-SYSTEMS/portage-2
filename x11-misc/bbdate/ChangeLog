@@ -1,6 +1,24 @@
 # ChangeLog for x11-misc/bbdate
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/bbdate/ChangeLog,v 1.19 2011/04/16 17:24:47 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/bbdate/ChangeLog,v 1.24 2012/12/01 14:26:19 blueness Exp $
+
+  01 Dec 2012; Anthony G. Basile <blueness@gentoo.org> bbdate-0.2.4-r1.ebuild:
+  stable ppc, thanks peratu, bug #392841
+
+  28 Nov 2012; Agostino Sarubbo <ago@gentoo.org> bbdate-0.2.4-r1.ebuild:
+  Stable for amd64, wrt bug #392841
+
+  26 Nov 2012; Mike Gilbert <floppym@gentoo.org> bbdate-0.2.4-r1.ebuild:
+  Remove references to helvitica font. Thanks to jer for the idea. Bug 395353.
+
+  25 Nov 2012; Kacper Kowalik <xarthisius@gentoo.org> bbdate-0.2.4-r1.ebuild,
+  bbdate-0.2.4.ebuild:
+  Add missing dependency on helvetica font wrt #395353 by Agostino Sarubbo
+  <ago@gentoo.org>. Thanks to James Cloos <cloos@jhcloos.com> for providing
+  solution
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> bbdate-0.2.4-r1.ebuild:
+  x86 stable wrt bug #392841
 
   16 Apr 2011; Ulrich Mueller <ulm@gentoo.org> bbdate-0.2.4.ebuild,
   bbdate-0.2.4-r1.ebuild:

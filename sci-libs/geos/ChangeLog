@@ -1,6 +1,54 @@
 # ChangeLog for sci-libs/geos
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/geos/ChangeLog,v 1.58 2011/05/03 11:18:28 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/geos/ChangeLog,v 1.69 2012/08/11 15:24:48 maekke Exp $
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> geos-3.3.5.ebuild:
+  x86 stable, bug #420125
+
+*geos-3.3.5 (17 Jul 2012)
+
+  17 Jul 2012; Patrick Lauer <patrick@gentoo.org> +geos-3.3.5.ebuild:
+  Bump
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> geos-3.3.4.ebuild:
+  Marking geos-3.3.4 ppc for bug 420125
+
+*geos-3.3.4 (18 Jun 2012)
+
+  18 Jun 2012; Patrick Lauer <patrick@gentoo.org> +geos-3.3.4.ebuild:
+  Bump
+
+  12 Jun 2012; Agostino Sarubbo <ago@gentoo.org> geos-3.3.3.ebuild:
+  Stable for amd64, wrt bug #420125
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> geos-3.3.3.ebuild:
+  Depends on php[-threads] wrt bug#415023.
+
+*geos-3.3.3 (24 May 2012)
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> +geos-3.3.3.ebuild,
+  -geos-3.3.2.ebuild:
+  Version bump to version 3.3.3.
+
+  06 May 2012; Fabian Groffen <grobian@gentoo.org>
+  +files/3.3.2-solaris-isnan.patch, geos-3.3.2.ebuild:
+  Fix compilation on Solaris using GCC 4.6
+
+  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> geos-3.2.2.ebuild,
+  geos-3.3.2.ebuild:
+  Restricting pypy #403809
+
+*geos-3.3.2 (14 Jan 2012)
+
+  14 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> -geos-3.3.1.ebuild,
+  +geos-3.3.2.ebuild:
+  Version bump. Added php slot dependency, bug #397939, thanks Andreas
+  Sturmlechner
+
+*geos-3.3.1 (05 Jan 2012)
+
+  05 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> +geos-3.3.1.ebuild:
+  Version bump
 
   03 May 2011; Fabian Groffen <grobian@gentoo.org> geos-3.2.2.ebuild:
   Marked ~x64-freebsd

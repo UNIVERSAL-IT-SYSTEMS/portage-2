@@ -1,6 +1,66 @@
 # ChangeLog for dev-ruby/builder
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/builder/ChangeLog,v 1.61 2011/07/24 17:32:21 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/builder/ChangeLog,v 1.77 2012/11/06 16:59:41 jer Exp $
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> builder-2.1.2-r3.ebuild:
+  Stable for HPPA (bug #421615).
+
+  27 Oct 2012; Raúl Porcel <armin76@gentoo.org> builder-2.1.2-r1.ebuild,
+  builder-2.1.2-r2.ebuild, builder-2.1.2-r3.ebuild:
+  s390/sh stable wrt #411507
+
+*builder-3.0.4 (18 Oct 2012)
+
+  18 Oct 2012; Hans de Graaff <graaff@gentoo.org> +builder-3.0.4.ebuild:
+  Version bump.
+
+*builder-3.0.3 (04 Oct 2012)
+
+  04 Oct 2012; Hans de Graaff <graaff@gentoo.org> +builder-3.0.3.ebuild:
+  Version bump.
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org> builder-2.1.2-r3.ebuild:
+  Stable ppc64, bug #421615
+
+  22 Jul 2012; <nixnut@gentoo.org> builder-2.1.2-r3.ebuild:
+  ppc stable #421615
+
+  26 Jun 2012; Jeff Horelick <jdhore@gentoo.org> builder-2.1.2-r3.ebuild:
+  marked x86 per bug 421615
+
+  25 Jun 2012; Markus Meier <maekke@gentoo.org> builder-2.1.2-r3.ebuild:
+  arm stable, bug #421615
+
+  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> builder-2.1.2-r3.ebuild:
+  Stable for amd64, wrt bug #421615
+
+  27 May 2012; Markus Meier <maekke@gentoo.org> builder-2.1.2-r1.ebuild:
+  arm stable, bug #411507
+
+  06 May 2012; Hans de Graaff <graaff@gentoo.org> builder-3.0.0-r1.ebuild:
+  Add explicit dependency on the rdoc gem since the rake task requires it, bug
+  400709.
+
+  25 Jan 2012; Diego E. Pettenò <flameeyes@gentoo.org> builder-3.0.0-r1.ebuild:
+  Add missing dependency over ctags (bug #400709).
+
+*builder-3.0.0-r1 (25 Jan 2012)
+
+  25 Jan 2012; Diego E. Pettenò <flameeyes@gentoo.org> +builder-3.0.0-r1.ebuild,
+  +files/builder-3.0.0-tests.patch:
+  Fix conflict with fast_xs/hpricot and fix failing tests with Ruby 1.9.3.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> builder-3.0.0.ebuild:
+  Add Prefix keywords, bug #396547
+
+*builder-2.1.2-r3 (24 Dec 2011)
+
+  24 Dec 2011; Hans de Graaff <graaff@gentoo.org> +builder-2.1.2-r3.ebuild:
+  Add ruby19 to builder 2.1.2 as well since that version is compatible with
+  Rails. Avoid blankslate tests since these don't work.
+
+  09 Sep 2011; Fabian Groffen <grobian@gentoo.org> builder-3.0.0.ebuild:
+  Marked ~sparc-solaris
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> builder-2.1.2-r2.ebuild:
   alpha/ia64/s390/sparc stable wrt #372391

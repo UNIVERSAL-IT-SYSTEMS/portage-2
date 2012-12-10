@@ -1,6 +1,24 @@
 # ChangeLog for sys-libs/gpm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/gpm/ChangeLog,v 1.88 2011/07/29 08:15:20 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/gpm/ChangeLog,v 1.91 2012/10/28 11:35:56 vapier Exp $
+
+*gpm-1.20.7 (28 Oct 2012)
+
+  28 Oct 2012; Mike Frysinger <vapier@gentoo.org> +gpm-1.20.7.ebuild,
+  files/gpm.rc6-2:
+  Version bump.
+
+*gpm-1.20.6-r1 (26 Oct 2012)
+
+  26 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/gpm-1.20.6-disablestatic.patch, +files/gpm.rc6-2,
+  +gpm-1.20.6-r1.ebuild:
+  Revision bump to introduce static-libs USE flag (patch by Sean McGovern from
+  bug #378283). Fix dependency on ncurses that was missing as RDEPEND. Update
+  init script to use OpenRC's declarative syntax.
+
+  11 Aug 2011; Mike Frysinger <vapier@gentoo.org> gpm-1.20.6.ebuild:
+  Use virtual/yacc instead of hardcoding list ourselves.
 
   29 Jul 2011; Robin H. Johnson <robbat2@gentoo.org> gpm-1.20.6.ebuild:
   Bug #376861: fix missing bison/yacc DEPEND.

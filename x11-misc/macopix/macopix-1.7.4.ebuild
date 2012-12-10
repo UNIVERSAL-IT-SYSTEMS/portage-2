@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/macopix/macopix-1.7.4.ebuild,v 1.4 2011/03/02 17:44:48 signals Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/macopix/macopix-1.7.4.ebuild,v 1.8 2012/10/12 17:40:56 ago Exp $
 
 EAPI=2
 DESCRIPTION="MaCoPiX (Mascot Constructive Pilot for X) is a desktop mascot application on UNIX / X Window system."
@@ -29,7 +29,7 @@ done
 # programme itself is GPL-2, and mascots are free-noncomm
 LICENSE="GPL-2 free-noncomm"
 SLOT="0"
-KEYWORDS="~amd64 ppc x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="gnutls nls"
 
 RDEPEND="x11-libs/gtk+:2
@@ -39,33 +39,35 @@ RDEPEND="x11-libs/gtk+:2
 	gnutls? ( net-libs/gnutls )
 	!gnutls? ( dev-libs/openssl )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_configure() {
+	export LIBS="-lX11"
 	econf \
 		--with-gtk2 \
 		$(use_enable nls) \
-		$(use_with gnutls)
+		$(use_with gnutls) \
+	|| die "econf failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die
 
-	dodoc AUTHORS ChangeLog* NEWS *README*
+	dodoc AUTHORS ChangeLog* NEWS *README* || die
 
 	# install mascots
 	for d in ${MY_MASCOTS} ; do
 		einfo "Installing ${d}..."
-		cd "${WORKDIR}/${d}"
-		insinto /usr/share/${PN}
+		cd "${WORKDIR}/${d}" || die
+		insinto /usr/share/"${PN}"
 		for i in *.mcpx *.menu ; do
-			doins $i || die
+			doins "$i" || die
 		done
-		insinto /usr/share/${PN}/pixmap
+		insinto /usr/share/"${PN}"/pixmap
 		for i in *.png ; do
-			doins $i || die
+			doins "$i" || die
 		done
-		docinto ${d}
-		dodoc README.jp
+		docinto "${d}"
+		dodoc README.jp || die
 	done
 }

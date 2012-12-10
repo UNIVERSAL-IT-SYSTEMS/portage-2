@@ -1,6 +1,30 @@
 # ChangeLog for virtual/perl-parent
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/perl-parent/ChangeLog,v 1.15 2011/06/18 20:20:50 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/perl-parent/ChangeLog,v 1.22 2012/05/21 11:50:34 tove Exp $
+
+*perl-parent-0.225.0-r3 (21 May 2012)
+
+  21 May 2012; Torsten Veller <tove@gentoo.org> -perl-parent-0.225.0-r2.ebuild,
+  +perl-parent-0.225.0-r3.ebuild:
+  Add perl-5.16 as provider
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> perl-parent-0.224.ebuild,
+  perl-parent-0.225.0-r2.ebuild:
+  Add ~alpha/~ia64/~s390/~sh/~sparc wrt #403413
+
+  19 Feb 2012; Tobias Klausmann <klausman@gentoo.org> perl-parent-0.224.ebuild:
+  Keyworded on alpha, bug #389001
+
+  07 Nov 2011; Fabian Groffen <grobian@gentoo.org>
+  perl-parent-0.225.0-r2.ebuild:
+  Added Prefix keywords, bug #389001
+
+  06 Nov 2011; Markus Meier <maekke@gentoo.org> perl-parent-0.225.0-r2.ebuild:
+  add ~arm, bug #389001
+
+  31 Oct 2011; Jeroen Roovers <jer@gentoo.org> perl-parent-0.224.ebuild,
+  perl-parent-0.225.0-r2.ebuild:
+  Marked ~hppa (bug #389001).
 
 *perl-parent-0.225.0-r2 (18 Jun 2011)
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/dbd-sqlite3/dbd-sqlite3-1.2.5.ebuild,v 1.8 2011/07/23 12:23:57 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/dbd-sqlite3/dbd-sqlite3-1.2.5.ebuild,v 1.11 2012/09/02 09:07:20 flameeyes Exp $
 
 inherit "ruby"
 
@@ -10,12 +10,12 @@ SRC_URI="mirror://rubyforge/ruby-dbi/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 ia64 ppc ~sparc x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="test"
 
 RDEPEND="
-	>=dev-ruby/ruby-dbi-0.4.2
-	>=dev-ruby/sqlite3-ruby-1.2.4"
+	>=dev-ruby/dbi-0.4.2
+	>=dev-ruby/sqlite3-1.2.4"
 
 USE_RUBY="ruby18"
 

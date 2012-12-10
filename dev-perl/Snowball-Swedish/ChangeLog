@@ -1,6 +1,22 @@
 # ChangeLog for dev-perl/Snowball-Swedish
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Snowball-Swedish/ChangeLog,v 1.18 2010/02/05 22:22:25 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Snowball-Swedish/ChangeLog,v 1.22 2012/06/24 12:59:19 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Snowball-Swedish-1.2.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org>
+  Snowball-Swedish-1.200.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Snowball-Swedish-1.200.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +Snowball-Swedish-1.200.0.ebuild:
+  Change version scheme
 
   05 Feb 2010; Torsten Veller <tove@gentoo.org> Snowball-Swedish-1.2.ebuild:
   Fix LICENSE (#301969). Maintenance
@@ -77,4 +93,3 @@
   06 Oct 2004; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Snowball-Swedish-1.01.ebuild:
   Dep for Plucene - perl port of lucene
-

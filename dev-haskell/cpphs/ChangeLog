@@ -1,6 +1,51 @@
 # ChangeLog for dev-haskell/cpphs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/cpphs/ChangeLog,v 1.25 2011/08/01 21:13:39 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/cpphs/ChangeLog,v 1.38 2012/09/12 15:15:34 qnikst Exp $
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> cpphs-1.12.ebuild,
+  cpphs-1.13.2.ebuild, cpphs-1.13.3.ebuild:
+  move dev-haskell/cpphs/cpphs-1.13.3.ebuild ebuild to mirror://hackage
+
+  16 Aug 2012; Andreas Schuerch <nativemad@gentoo.org> cpphs-1.13.3.ebuild:
+  x86 stable, see bug 422017
+
+  09 Aug 2012; Sergei Trofimovich <slyfox@gentoo.org> cpphs-1.13.3.ebuild:
+  Stable on alpha/ia64/sparc (bug #422017)
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> cpphs-1.13.3.ebuild:
+  Marking cpphs-1.13.3 ppc for bug 422017
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> cpphs-1.13.3.ebuild:
+  Marking cpphs-1.13.3 ppc64 for bug 422017
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> cpphs-1.13.3.ebuild:
+  Stable for amd64, wrt bug #422017
+
+*cpphs-1.13.3 (13 May 2012)
+
+  13 May 2012; Sergei Trofimovich <slyfox@gentoo.org> +cpphs-1.13.3.ebuild,
+  -cpphs-1.2.ebuild:
+  Version bump. Removed old.
+
+  17 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> cpphs-1.12.ebuild:
+  alpha/ia64/sparc stable (bug #399975).
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> cpphs-1.12.ebuild:
+  Marking cpphs-1.12 ppc64 for bug 399975
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> cpphs-1.12.ebuild:
+  x86 stable wrt bug #399975
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> cpphs-1.12.ebuild:
+  Marking cpphs-1.12 ppc for bug 399975
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> cpphs-1.12.ebuild:
+  Stable for amd64, wrt bug #399975
+
+*cpphs-1.13.2 (23 Jan 2012)
+
+  23 Jan 2012; Mark Wright <gienah@gentoo.org> +cpphs-1.13.2.ebuild:
+  Bump cpphs to 1.13.2.
 
   01 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> -cpphs-1.7.ebuild:
   Removed old.
@@ -91,4 +136,3 @@
 
   18 May 2005; <dcoutts@gentoo.org> +metadata.xml, +cpphs-0.9.ebuild:
   Add a new ebuild for cpphs.
-

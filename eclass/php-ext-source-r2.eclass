@@ -1,31 +1,24 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/php-ext-source-r2.eclass,v 1.12 2011/07/22 12:13:27 olemarkus Exp $
-#
+# $Header: /var/cvsroot/gentoo-x86/eclass/php-ext-source-r2.eclass,v 1.30 2012/09/27 16:35:41 axs Exp $
+
+# @ECLASS: php-ext-source-r2.eclass
+# @MAINTAINER:
+# Gentoo PHP team <php-bugs@gentoo.org>
+# @AUTHOR:
 # Author: Tal Peer <coredumb@gentoo.org>
 # Author: Stuart Herbert <stuart@gentoo.org>
 # Author: Luca Longinotti <chtekk@gentoo.org>
 # Author: Jakub Moc <jakub@gentoo.org> (documentation)
 # Author: Ole Markus With <olemarkus@gentoo.org>
-
-# @ECLASS: php-ext-source-r2.eclass
-# @MAINTAINER:
-# Gentoo PHP team <php-bugs@gentoo.org>
 # @BLURB: A unified interface for compiling and installing standalone PHP extensions.
 # @DESCRIPTION:
 # This eclass provides a unified interface for compiling and installing standalone
 # PHP extensions (modules).
 
-inherit flag-o-matic autotools
+inherit flag-o-matic autotools multilib
 
 EXPORT_FUNCTIONS src_unpack src_prepare src_configure src_compile src_install
-
-# @ECLASS-VARIABLE: PHP_EXT_NAME
-# @DESCRIPTION:
-# The extension name. This must be set, otherwise the eclass dies.
-# Only automagically set by php-ext-pecl-r1.eclass, so unless your ebuild
-# inherits that eclass, you must set this manually before inherit.
-[[ -z "${PHP_EXT_NAME}" ]] && die "No module name specified for the php-ext-source-r2 eclass"
 
 DEPEND=">=sys-devel/m4-1.4.3
 		>=sys-devel/libtool-1.5.18"
@@ -33,7 +26,7 @@ RDEPEND=""
 
 # Because of USE deps, we require at least EAPI 2
 case ${EAPI} in
-	2|3) ;;
+	2|3|4|5) ;;
 	*)
 		die "php-ext-source-r2 is not compatible with EAPI=${EAPI}"
 esac
@@ -60,7 +53,7 @@ esac
 # @ECLASS-VARIABLE: USE_PHP
 # @DESCRIPTION:
 # Lists the PHP slots compatibile the extension is compatibile with
-[[ -z "${USE_PHP}" ]] && USE_PHP="php5-3 php5-2"
+[[ -z "${USE_PHP}" ]] && USE_PHP="php5-3"
 
 # @ECLASS-VARIABLE: PHP_EXT_OPTIONAL_USE
 # @DESCRIPTION:
@@ -92,11 +85,16 @@ RDEPEND="${RDEPEND}
 	${PHPDEPEND}
 	${PHP_EXT_OPTIONAL_USE:+ )}"
 
+DEPEND="${DEPEND}
+	${PHP_EXT_OPTIONAL_USE}${PHP_EXT_OPTIONAL_USE:+? ( }
+	${PHPDEPEND}
+	${PHP_EXT_OPTIONAL_USE:+ )}
+"
 
 # @FUNCTION: php-ext-source-r2_src_unpack
 # @DESCRIPTION:
 # runs standard src_unpack + _phpize
-#
+
 # @VARIABLE: PHP_EXT_SKIP_PHPIZE
 # @DESCRIPTION:
 # phpize will be run by default for all ebuilds that use
@@ -106,7 +104,7 @@ php-ext-source-r2_src_unpack() {
 	unpack ${A}
 	local slot orig_s="${PHP_EXT_S}"
 	for slot in $(php_get_slots); do
-		cp -r "${orig_s}" "${WORKDIR}/${slot}"
+		cp -r "${orig_s}" "${WORKDIR}/${slot}" || die "Failed to copy source ${orig_s} to PHP target directory"
 	done
 }
 
@@ -118,14 +116,14 @@ php-ext-source-r2_src_prepare() {
 	done
 }
 
-# @FUNCTION php-ext-source-r2_phpize
+# @FUNCTION: php-ext-source-r2_phpize
 # @DESCRIPTION:
 # Runs phpize and autotools in addition to the standard src_unpack
 php-ext-source-r2_phpize() {
 	if [[ "${PHP_EXT_SKIP_PHPIZE}" != 'yes' ]] ; then
 		# Create configure out of config.m4
 		# I wish I could run this to solve #329071, but I cannot
-		#autotools_run_tool ${PHPIZE} 
+		#autotools_run_tool ${PHPIZE}
 		${PHPIZE}
 		# force run of libtoolize and regeneration of related autotools
 		# files (bug 220519)
@@ -137,19 +135,20 @@ php-ext-source-r2_phpize() {
 # @FUNCTION: php-ext-source-r2_src_configure
 # @DESCRIPTION:
 # Takes care of standard configure for PHP extensions (modules).
-#
+
 # @VARIABLE: my_conf
 # @DESCRIPTION:
 # Set this in the ebuild to pass configure options to econf.
 php-ext-source-r2_src_configure() {
+	# net-snmp creates this file #385403
+	addpredict /usr/share/snmp/mibs/.index
+	addpredict /var/lib/net-snmp/mib_indexes
+
 	local slot
 	for slot in $(php_get_slots); do
 		php_init_slot_env ${slot}
 		# Set the correct config options
-		# We cannot use econf here, phpize/php-config deals with setting
-		# --prefix etc to whatever the php slot was configured to use
-		echo ./configure --with-php-config=${PHPCONFIG} ${my_conf}
-		./configure --with-php-config=${PHPCONFIG} ${my_conf}  || die "Unable to configure code to compile"
+		econf --with-php-config=${PHPCONFIG} ${my_conf}  || die "Unable to configure code to compile"
 	done
 }
 
@@ -159,6 +158,8 @@ php-ext-source-r2_src_configure() {
 php-ext-source-r2_src_compile() {
 	# net-snmp creates this file #324739
 	addpredict /usr/share/snmp/mibs/.index
+	addpredict /var/lib/net-snmp/mib_indexes
+
 	# shm extension createss a semaphore file #173574
 	addpredict /session_mm_cli0.sem
 	local slot
@@ -169,7 +170,7 @@ php-ext-source-r2_src_compile() {
 	done
 }
 
-# @FUNCTION: php-ext-source-r1_src_install
+# @FUNCTION: php-ext-source-r2_src_install
 # @DESCRIPTION:
 # Takes care of standard install for PHP extensions (modules).
 
@@ -190,6 +191,7 @@ php-ext-source-r2_src_install() {
 			[[ -s ${doc} ]] && dodoc ${doc}
 		done
 
+		INSTALL_ROOT="${D}" emake install-headers
 	done
 	php-ext-source-r2_createinifiles
 }
@@ -222,7 +224,7 @@ php_init_slot_env() {
 php-ext-source-r2_buildinilist() {
 	# Work out the list of <ext>.ini files to edit/add to
 	if [[ -z "${PHPSAPILIST}" ]] ; then
-		PHPSAPILIST="apache2 cli cgi fpm"
+		PHPSAPILIST="apache2 cli cgi fpm embed"
 	fi
 
 	PHPINIFILELIST=""
@@ -247,19 +249,20 @@ php-ext-source-r2_createinifiles() {
 		# Build the list of <ext>.ini files to edit/add to
 		php-ext-source-r2_buildinilist ${slot}
 
-		PHPFULLINIFILELISTbak="${PHPFULLINIFILELIST}"
-		PHPFULLINIFILELIST="${PHPINIFILELIST}"
+
 		# Add the needed lines to the <ext>.ini files
+		local file
 		if [[ "${PHP_EXT_INI}" = "yes" ]] ; then
-			php-ext-source-r2_addextension "${PHP_EXT_NAME}.so"
+			for file in ${PHPINIFILELIST}; do
+				php-ext-source-r2_addextension "${PHP_EXT_NAME}.so" "${file}"
+			done
 		fi
-		
-		PHPFULLINIFILELIST=${PHPFULLINIFILELISTbak}
 
 		# Symlink the <ext>.ini files from ext/ to ext-active/
+		local inifile
 		for inifile in ${PHPINIFILELIST} ; do
 			if [[ -n "${PHP_EXT_INIFILE}" ]]; then
-				cat "${FILESDIR}/${PHP_EXT_INIFILE}" >> "${D}/${inifile}"
+				cat "${FILESDIR}/${PHP_EXT_INIFILE}" > "${inifile}"
 				einfo "Added content of ${FILESDIR}/${PHP_EXT_INIFILE} to ${inifile}"
 			fi
 
@@ -272,11 +275,9 @@ php-ext-source-r2_createinifiles() {
 			dosym "/${inifile}" "/${inifile/ext/ext-active}"
 		done
 
-
 		# Add support for installing PHP files into a version dependant directory
 		PHP_EXT_SHARED_DIR="/usr/share/php/${PHP_EXT_NAME}"
 	done
-	
 }
 
 php-ext-source-r2_addextension() {
@@ -312,7 +313,7 @@ php-ext-source-r2_addextension() {
 		ext_file="${1}"
 	fi
 
-	php-ext-source-r2_addtoinifiles "${ext_type}" "${ext_file}" "Extension added"
+	php-ext-source-r2_addtoinifile "${ext_type}" "${ext_file}" "${2}" "Extension added"
 }
 
 # $1 - Setting name
@@ -320,16 +321,17 @@ php-ext-source-r2_addextension() {
 # $3 - File to add to
 # $4 - Sanitized text to output
 php-ext-source-r2_addtoinifile() {
-	if [[ ! -d $(dirname ${3}) ]] ; then
-		mkdir -p $(dirname ${3})
+	local inifile="${WORKDIR}/${3}"
+	if [[ ! -d $(dirname ${inifile}) ]] ; then
+		mkdir -p $(dirname ${inifile})
 	fi
 
 	# Are we adding the name of a section?
 	if [[ ${1:0:1} == "[" ]] ; then
-		echo "${1}" >> "${3}"
+		echo "${1}" >> "${inifile}"
 		my_added="${1}"
 	else
-		echo "${1}=${2}" >> "${3}"
+		echo "${1}=${2}" >> "${inifile}"
 		my_added="${1}=${2}"
 	fi
 
@@ -340,7 +342,7 @@ php-ext-source-r2_addtoinifile() {
 	fi
 
 	insinto /$(dirname ${3})
-	doins "${3}"
+	doins "${inifile}"
 }
 
 # @FUNCTION: php-ext-source-r2_addtoinifiles

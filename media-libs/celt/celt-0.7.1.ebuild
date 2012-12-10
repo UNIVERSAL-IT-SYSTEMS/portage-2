@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/celt/celt-0.7.1.ebuild,v 1.3 2010/07/30 09:27:19 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/celt/celt-0.7.1.ebuild,v 1.6 2012/12/07 18:57:22 ulm Exp $
 
 EAPI="2"
 
@@ -10,9 +10,9 @@ DESCRIPTION="CELT is a very low delay audio codec designed for high-quality comm
 HOMEPAGE="http://www.celt-codec.org/"
 SRC_URI="http://downloads.us.xiph.org/releases/${PN}/${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~ppc x86"
+KEYWORDS="alpha amd64 ppc x86"
 IUSE="ogg"
 
 DEPEND="ogg? ( media-libs/libogg )"

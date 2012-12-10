@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/tigcc/tigcc-0.95_p3.ebuild,v 1.6 2011/07/31 06:18:03 mattst88 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/tigcc/tigcc-0.95_p3.ebuild,v 1.8 2012/04/30 02:53:44 vapier Exp $
 
 inherit eutils
 
@@ -27,8 +27,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~ppc"
-#KEYWORDS="~x86 ~ppc ~sparc ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND=">=sys-devel/binutils-2.14.90.0.6-r1"
@@ -227,8 +226,4 @@ src_install() {
 	dosym /usr/lib/gcc-lib/ti-linux-gnu/${GCC_VER} /usr/ti-linux-gnu/lib
 	dosym /usr/share/doc/${PF} /usr/ti-linux-gnu/doc
 	dosym /usr/ti-linux-gnu/tigcc-bin/${GCC_VER} /usr/ti-linux-gnu/bin
-}
-
-pkg-postinst() {
-	env-update && source /etc/profile
 }

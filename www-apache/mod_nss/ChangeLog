@@ -1,6 +1,16 @@
 # ChangeLog for www-apache/mod_nss
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_nss/ChangeLog,v 1.4 2010/12/02 14:27:39 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apache/mod_nss/ChangeLog,v 1.7 2012/11/27 19:26:16 pacho Exp $
+
+  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop apache herd as discussed in http://www.gossamer-
+  threads.com/lists/gentoo/dev/262834
+
+  16 Oct 2012; Patrick Lauer <patrick@gentoo.org> mod_nss-1.0.8-r1.ebuild:
+  Restricting to apache 2.2
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> mod_nss-1.0.8-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   02 Dec 2010; Diego E. Pettenò <flameeyes@gentoo.org>
   mod_nss-1.0.8-r1.ebuild:
@@ -18,4 +28,3 @@
   +mod_nss-1.0.8-r1.ebuild, +metadata.xml:
   new ebuild, coming from 389 Directory Server project
   (http://directory.fedoraproject.org)
-

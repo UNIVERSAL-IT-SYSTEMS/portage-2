@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-sports/speed-dreams/speed-dreams-1.4.0.ebuild,v 1.5 2011/06/14 22:00:20 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-sports/speed-dreams/speed-dreams-1.4.0.ebuild,v 1.8 2012/03/16 20:04:54 tupone Exp $
 
 EAPI=2
 inherit autotools eutils versionator games
@@ -12,29 +12,29 @@ SRC_URI="mirror://sourceforge/speed-dreams/${P}-r2307-src.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86"
-IUSE=""
+IUSE="xrandr"
 
 RDEPEND="virtual/opengl
 	virtual/glu
 	media-libs/freeglut
-	>=media-libs/plib-1.8.3
 	media-libs/openal
 	media-libs/freealut
 	x11-libs/libX11
+	x11-libs/libXxf86vm
+	xrandr? ( x11-libs/libXrandr )
+	sys-libs/zlib
+	>=media-libs/libpng-1.2.40"
+DEPEND="${RDEPEND}
+	>=media-libs/plib-1.8.3
+	x11-proto/xproto
 	x11-libs/libXext
 	x11-libs/libICE
 	x11-libs/libSM
 	x11-libs/libXt
 	x11-libs/libXi
 	x11-libs/libXmu
-	x11-libs/libXxf86vm
 	x11-libs/libXrender
-	x11-libs/libXrandr
-	sys-libs/zlib
-	>=media-libs/libpng-1.2.40"
-DEPEND="${RDEPEND}
-	x11-proto/xproto
-	x11-proto/randrproto"
+	xrandr? ( x11-proto/randrproto )"
 
 S=${WORKDIR}/${PN}-$(get_version_component_range 1-3)-src
 
@@ -44,6 +44,7 @@ src_prepare() {
 
 	epatch \
 			"${FILESDIR}"/${P}-asneeded.patch \
+			"${FILESDIR}"/${P}-automake.patch \
 			"${FILESDIR}"/${P}-libpng15.patch
 
 	sed -i \
@@ -65,7 +66,7 @@ src_configure() {
 	egamesconf \
 		--prefix=/usr \
 		--bindir="${GAMES_BINDIR}" \
-		--disable-dependency-tracking
+		$(use_enable xrandr)
 }
 
 src_install() {

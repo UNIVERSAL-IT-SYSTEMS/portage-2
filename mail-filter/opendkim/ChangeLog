@@ -1,6 +1,139 @@
 # ChangeLog for mail-filter/opendkim
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/opendkim/ChangeLog,v 1.25 2011/07/20 14:28:05 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/opendkim/ChangeLog,v 1.54 2012/11/27 20:17:19 eras Exp $
+
+  27 Nov 2012; Eray Aslan <eras@gentoo.org> -files/opendkim-2.4.0-ipv6.patch,
+  -opendkim-2.4.3.ebuild, -opendkim-2.5.2-r1.ebuild, -opendkim-2.6.3.ebuild,
+  -opendkim-2.6.4.ebuild, -opendkim-2.6.7.ebuild:
+  Remove old
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> opendkim-2.6.7-r1.ebuild:
+  Stable for x86, wrt bug #438968
+
+  20 Nov 2012; Eray Aslan <eras@gentoo.org> +files/opendkim-2.7.2-strl.patch,
+  opendkim-2.7.2.ebuild:
+  Fix building on upgrade - bug #443920
+
+*opendkim-2.7.2 (17 Nov 2012)
+
+  17 Nov 2012; Eray Aslan <eras@gentoo.org> +opendkim-2.7.2.ebuild:
+  Version bump
+
+*opendkim-2.7.1 (30 Oct 2012)
+
+  30 Oct 2012; Eray Aslan <eras@gentoo.org> +opendkim-2.7.1.ebuild:
+  Version bump
+
+  30 Oct 2012; <ago@gentoo.org> opendkim-2.6.7-r1.ebuild:
+  Stable for amd64, wrt bug #438968
+
+*opendkim-2.7.0 (27 Oct 2012)
+
+  27 Oct 2012; Eray Aslan <eras@gentoo.org> +opendkim-2.7.0.ebuild:
+  Version bump
+
+*opendkim-2.6.8 (26 Oct 2012)
+
+  26 Oct 2012; Eray Aslan <eras@gentoo.org> +opendkim-2.6.8.ebuild:
+  Version bump
+
+  24 Oct 2012; Eray Aslan <eras@gentoo.org> -opendkim-2.6.7-r2.ebuild,
+  opendkim-2.6.7-r1.ebuild:
+  Fix sys-process/psmisc dependency correctly
+
+*opendkim-2.6.7-r2 (24 Oct 2012)
+
+  24 Oct 2012; Eray Aslan <eras@gentoo.org> +opendkim-2.6.7-r2.ebuild:
+  Add sys-process/psmisc to RDEPEND - bug #439428
+
+*opendkim-2.6.7-r1 (31 Jul 2012)
+
+  31 Jul 2012; Eray Aslan <eras@gentoo.org> -opendkim-2.6.0.ebuild,
+  -opendkim-2.6.1.ebuild, +opendkim-2.6.7-r1.ebuild:
+  Enable stats collection - bug #428562. Remove old
+
+*opendkim-2.6.7 (24 Jul 2012)
+
+  24 Jul 2012; Eray Aslan <eras@gentoo.org> +opendkim-2.6.7.ebuild:
+  Version bump
+
+*opendkim-2.6.4 (13 Jul 2012)
+
+  13 Jul 2012; Eray Aslan <eras@gentoo.org> +opendkim-2.6.4.ebuild:
+  Version bump
+
+*opendkim-2.6.3 (12 Jul 2012)
+
+  12 Jul 2012; Eray Aslan <eras@gentoo.org> -opendkim-2.4.2.ebuild,
+  -opendkim-2.5.1.ebuild, -opendkim-2.5.2.ebuild, +opendkim-2.6.3.ebuild:
+  Version bump and remove old
+
+  04 Jul 2012; Jeff Horelick <jdhore@gentoo.org> opendkim-2.5.2-r1.ebuild:
+  marked x86 per bug 420663
+
+*opendkim-2.6.1 (27 Jun 2012)
+
+  27 Jun 2012; Eray Aslan <eras@gentoo.org> +opendkim-2.6.1.ebuild:
+  version bump
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> opendkim-2.5.2-r1.ebuild:
+  Stable for amd64, wrt bug #420663
+
+*opendkim-2.6.0 (11 Jun 2012)
+
+  11 Jun 2012; Eray Aslan <eras@gentoo.org> +opendkim-2.6.0.ebuild:
+  version bump
+
+  04 Jun 2012; Zac Medico <zmedico@gentoo.org> opendkim-2.4.2.ebuild,
+  opendkim-2.4.3.ebuild, opendkim-2.5.1.ebuild, opendkim-2.5.2-r1.ebuild,
+  opendkim-2.5.2.ebuild:
+  inherit user for enewgroup and enewuser
+
+*opendkim-2.5.2-r1 (04 May 2012)
+
+  04 May 2012; Eray Aslan <eras@gentoo.org> +opendkim-2.5.2-r1.ebuild:
+  do not cache ldap query results
+
+*opendkim-2.5.2 (10 Apr 2012)
+
+  10 Apr 2012; Eray Aslan <eras@gentoo.org> +opendkim-2.5.2.ebuild:
+  version bump
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> opendkim-2.4.3.ebuild:
+  x86 stable wrt bug #409019
+
+  21 Mar 2012; Agostino Sarubbo <ago@gentoo.org> opendkim-2.4.3.ebuild:
+  Stable for amd64, wrt bug #409019
+
+*opendkim-2.5.1 (19 Mar 2012)
+
+  19 Mar 2012; Eray Aslan <eras@gentoo.org> +opendkim-2.5.1.ebuild:
+  version bump
+
+*opendkim-2.4.3 (26 Dec 2011)
+
+  26 Dec 2011; Eray Aslan <eras@gentoo.org> +opendkim-2.4.3.ebuild,
+  metadata.xml:
+  Version bump. Remove unused USE flag description.
+
+  01 Dec 2011; Eray Aslan <eras@gentoo.org> -opendkim-2.0.3.ebuild,
+  -opendkim-2.0.4.ebuild, -opendkim-2.1.0.ebuild, -opendkim-2.1.3.ebuild,
+  -opendkim-2.2.2.ebuild, -opendkim-2.4.0.ebuild,
+  -files/opendkim-2.4.0-oversign.patch, -opendkim-2.4.1.ebuild,
+  -files/opendkim.init:
+  remove old
+
+  28 Nov 2011; Tony Vroon <chainsaw@gentoo.org> opendkim-2.4.2.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "ago" Sarubbo in bug #391129.
+
+  22 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> opendkim-2.4.2.ebuild:
+  x86 stable wrt bug #391129
+
+*opendkim-2.4.2 (06 Aug 2011)
+
+  06 Aug 2011; Eray Aslan <eras@gentoo.org> +opendkim-2.4.2.ebuild:
+  version bump
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #34534
@@ -146,4 +279,3 @@
   +files/opendkim-1.1.0-vbr-booliscpp.patch, +files/opendkim.init,
   +metadata.xml:
   initial ebuild by me. Eray Aslan also requested this in bug #282488
-

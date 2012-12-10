@@ -1,6 +1,23 @@
 # ChangeLog for media-sound/decibel-audio-player
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/decibel-audio-player/ChangeLog,v 1.21 2010/06/07 19:36:01 beandog Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/decibel-audio-player/ChangeLog,v 1.25 2012/12/02 17:00:20 eva Exp $
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  decibel-audio-player-1.04.ebuild:
+  EAPI bump to pin gstreamer dependencies.
+
+  20 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  -decibel-audio-player-1.00.ebuild, decibel-audio-player-1.04.ebuild:
+  ppc/ppc64 stable wrt #372169, drop old
+
+  19 Sep 2011; Andreas Schuerch <nativemad@gentoo.org>
+  decibel-audio-player-1.04.ebuild:
+  x86 stable, thanks JD. Bug 372169
+
+  16 Sep 2011; Tony Vroon <chainsaw@gentoo.org>
+  decibel-audio-player-1.04.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #372169 filed by Pacho Ramos.
 
 *decibel-audio-player-1.04 (07 Jun 2010)
 

@@ -1,6 +1,21 @@
 # ChangeLog for sys-apps/hwsetup
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/hwsetup/ChangeLog,v 1.62 2011/04/15 03:49:39 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/hwsetup/ChangeLog,v 1.67 2012/03/08 15:25:39 jer Exp $
+
+  08 Mar 2012; Jeroen Roovers <jer@gentoo.org> -hwsetup-1.2-r1.ebuild:
+  Old.
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> hwsetup-1.2-r2.ebuild:
+  Marking hwsetup-1.2-r2 ppc64 for bug 397207
+
+  12 Feb 2012; Raúl Porcel <armin76@gentoo.org> hwsetup-1.2-r2.ebuild:
+  alpha/ia64/sparc/x86 stable wrt #397207
+
+  04 Feb 2012; Brent Baude <ranger@gentoo.org> hwsetup-1.2-r2.ebuild:
+  Marking hwsetup-1.2-r2 ppc for bug 397207
+
+  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> hwsetup-1.2-r2.ebuild:
+  Stable for amd64, wrt bug #397207
 
 *hwsetup-1.2-r2 (15 Apr 2011)
 

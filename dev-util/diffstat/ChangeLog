@@ -1,6 +1,63 @@
 # ChangeLog for dev-util/diffstat
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/diffstat/ChangeLog,v 1.110 2011/03/27 21:58:31 darkside Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/diffstat/ChangeLog,v 1.128 2012/12/03 10:16:37 radhermit Exp $
+
+  03 Dec 2012; Tim Harder <radhermit@gentoo.org> diffstat-1.55.ebuild:
+  Fix LICENSE (bug #445650 by ulm).
+
+  07 Oct 2012; Justin Lecher <jlec@gentoo.org> -diffstat-1.54.ebuild:
+  Drop old
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> diffstat-1.55.ebuild:
+  alpha/s390/sh/sparc stable wrt #418951
+
+  10 Jul 2012; Akinori Hattori <hattya@gentoo.org> diffstat-1.55.ebuild:
+  ia64 stable wrt bug #418951
+
+  28 Jun 2012; Brent Baude <ranger@gentoo.org> diffstat-1.55.ebuild:
+  Marking diffstat-1.55 ppc for bug 418951
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> diffstat-1.55.ebuild:
+  Marking diffstat-1.55 ppc64 for bug 418951
+
+  20 Jun 2012; Markus Meier <maekke@gentoo.org> diffstat-1.55.ebuild:
+  arm stable, bug #418951
+
+  18 Jun 2012; Jeroen Roovers <jer@gentoo.org> diffstat-1.55.ebuild:
+  Stable for HPPA (bug #418951).
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> diffstat-1.55.ebuild:
+  Stable for amd64, wrt bug #418951
+
+  09 Jun 2012; Jeff Horelick <jdhore@gentoo.org> diffstat-1.55.ebuild:
+  marked x86 per bug 418951
+
+  06 Mar 2012; Justin Lecher <jlec@gentoo.org> -diffstat-1.53.ebuild,
+  metadata.xml:
+  Drop Old
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> diffstat-1.54.ebuild:
+  Marking diffstat-1.54 ppc for bug 395691
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> diffstat-1.54.ebuild:
+  Marking diffstat-1.54 ppc64 for bug 395691
+
+*diffstat-1.55 (03 Jan 2012)
+
+  03 Jan 2012; Tim Harder <radhermit@gentoo.org> +diffstat-1.55.ebuild:
+  Version bump. Update to EAPI 4.
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> diffstat-1.54.ebuild:
+  alpha/ia64/s390/sh/sparc/x86 stable wrt #395691
+
+  26 Dec 2011; Jeroen Roovers <jer@gentoo.org> diffstat-1.54.ebuild:
+  Stable for HPPA (bug #395691).
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> diffstat-1.54.ebuild:
+  arm stable, bug #395691
+
+  23 Dec 2011; Agostino Sarubbo <ago@gentoo.org> diffstat-1.54.ebuild:
+  Stable for AMD64, wrt bug #395691
 
   27 Mar 2011; Jeremy Olexa <darkside@gentoo.org> -diffstat-1.51.ebuild:
   remove old ebuilds

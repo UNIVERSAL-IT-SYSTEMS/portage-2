@@ -1,6 +1,44 @@
 # ChangeLog for dev-perl/HTML-Tree
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Tree/ChangeLog,v 1.63 2011/07/30 10:32:45 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Tree/ChangeLog,v 1.74 2012/10/07 15:37:05 tove Exp $
+
+*HTML-Tree-5.30.0 (07 Oct 2012)
+
+  07 Oct 2012; Torsten Veller <tove@gentoo.org> +HTML-Tree-5.30.0.ebuild:
+  Version bump
+
+*HTML-Tree-5.20.0 (28 Jun 2012)
+
+  28 Jun 2012; Torsten Veller <tove@gentoo.org> +HTML-Tree-5.20.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -HTML-Tree-3.23.ebuild:
+  Cleanup
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> HTML-Tree-4.200.0.ebuild:
+  Marking HTML-Tree-4.200.0 ppc64 for bug 392789
+
+  02 Feb 2012; Brent Baude <ranger@gentoo.org> HTML-Tree-4.200.0.ebuild:
+  Marking HTML-Tree-4.200.0 ppc for bug 392789
+
+  17 Dec 2011; Raúl Porcel <armin76@gentoo.org> HTML-Tree-4.200.0.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #392789
+
+  13 Dec 2011; Agostino Sarubbo <ago@gentoo.org> HTML-Tree-4.200.0.ebuild:
+  Stable for AMD64, wrt bug #392789
+
+  12 Dec 2011; Jeroen Roovers <jer@gentoo.org> HTML-Tree-4.200.0.ebuild:
+  Stable for HPPA (bug #392789).
+
+  11 Dec 2011; Markus Meier <maekke@gentoo.org> HTML-Tree-4.200.0.ebuild:
+  arm stable, bug #392789
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  HTML-Tree-4.200.0.ebuild:
+  x86 stable wrt bug #392789
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> HTML-Tree-3.23.ebuild,
   HTML-Tree-4.200.0.ebuild:

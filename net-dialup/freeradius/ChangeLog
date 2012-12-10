@@ -1,6 +1,117 @@
 # ChangeLog for net-dialup/freeradius
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/freeradius/ChangeLog,v 1.94 2011/05/26 15:31:47 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/freeradius/ChangeLog,v 1.110 2012/10/22 02:58:59 flameeyes Exp $
+
+  22 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org> files/radius.init-r3:
+  Remove need net line.
+
+  04 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  -files/freeradius-2.1.10-pkglibdir.patch,
+  -files/freeradius-2.1.10-qafixes.patch, -files/freeradius-2.1.10-ssl.patch,
+  -files/freeradius-2.1.10-versionless-la-files.patch,
+  -files/freeradius-2.1.12-pkglibdir.patch,
+  -files/freeradius-2.1.12-qafixes.patch, -files/freeradius-2.1.12-ssl.patch,
+  -files/freeradius-2.1.12-versionless-la-files.patch, -files/radius.conf,
+  -files/radius.init-r1, -files/radius.init-r2, -freeradius-2.1.11-r1.ebuild,
+  -freeradius-2.1.12.ebuild, metadata.xml:
+  Remove old, vulnerable versions.
+
+  03 Oct 2012; Agostino Sarubbo <ago@gentoo.org> freeradius-2.2.0.ebuild:
+  Stable for amd64, wrt bug #434802
+
+  02 Oct 2012; Andreas Schuerch <nativemad@gentoo.org> freeradius-2.2.0.ebuild:
+  x86 stable, see bug 434802
+
+  30 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  -files/freeradius-2.1.10-ipv6.patch:
+  Remove one extra file.
+
+  30 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org> freeradius-2.2.0.ebuild:
+  Fix configuration file sed; fix Python handling (solves bug #315091).
+
+*freeradius-2.2.0 (30 Sep 2012)
+
+  30 Sep 2012; Diego E. Pettenò <flameeyes@gentoo.org> +files/radius.conf-r3,
+  +files/radius.init-r3, +freeradius-2.2.0.ebuild,
+  -files/freeradius-2.0.5-ssl.patch, -files/freeradius-2.0.5-threads.patch,
+  -files/freeradius-2.0.5-versionless-la-files.patch,
+  -files/freeradius-2.1.1-qafixes.patch, -files/freeradius-2.1.1-ssl.patch,
+  -files/freeradius-2.1.1-versionless-la-files.patch,
+  -files/freeradius-2.1.3-pkglibdir.patch,
+  -files/freeradius-2.1.3-qafixes.patch, -files/freeradius-2.1.3-ssl.patch,
+  -files/freeradius-2.1.3-versionless-la-files.patch,
+  -files/freeradius-2.1.6-nothreads.patch,
+  -files/freeradius-2.1.6-pkglibdir.patch,
+  -files/freeradius-2.1.6-qafixes.patch, -files/freeradius-2.1.6-ssl.patch,
+  -files/freeradius-2.1.6-versionless-la-files.patch,
+  -files/freeradius-2.1.7-nothreads.patch,
+  -files/freeradius-2.1.7-pkglibdir.patch,
+  -files/freeradius-2.1.7-qafixes.patch, -files/freeradius-2.1.7-ssl.patch,
+  -files/freeradius-2.1.7-versionless-la-files.patch, metadata.xml:
+  Remove stale patches. Version bump, ebuild and init script rewrite: patches
+  are now hosted on dev.gentoo.org instead than in $FILESDIR; remove threads USE
+  flag (solves bug #296907); enable DHCP support unconditionally, as it's not an
+  extra dependency (solves bug #376721); add "old" directory to SRC_URI (solves
+  bug #398771); adds sqlite support (solves bug #401569) as well as oracle
+  (untested), iodbc and unixodbc; make readline, python and pcap optional; use
+  REQUIRED_USE to disallow firebird support for bindist packages; support
+  USE=-ssl properly; always turn on optional features that add no extra
+  dependencies, including experimental modules (drops frascend, frxp and
+  udpfromto USE flags); enable edirectory support when ldap is enabled (drops
+  edirectory USE flag); add pkg_config function to generate required TLS
+  certificates; new init script uses the latest runscript syntax support, which
+  allows for detecting crashed radiusd instances.
+
+*freeradius-2.1.11-r1 (09 Jul 2012)
+
+  09 Jul 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -freeradius-2.1.11.ebuild, +freeradius-2.1.11-r1.ebuild:
+  non-maintainer commit: Fix user/group bug for stable radius as well (bug
+  #397609). Revision bump committed straight to stable.
+
+  14 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> -freeradius-2.0.5.ebuild,
+  -freeradius-2.1.1.ebuild, -freeradius-2.1.3-r1.ebuild,
+  -freeradius-2.1.6.ebuild, -freeradius-2.1.7.ebuild,
+  -freeradius-2.1.10.ebuild, freeradius-2.1.11.ebuild,
+  freeradius-2.1.12.ebuild:
+  non-maintainer commit: Fixed bug #397609. Removed old versions.
+
+  14 Jun 2012; Zac Medico <zmedico@gentoo.org> freeradius-2.0.5.ebuild,
+  freeradius-2.1.1.ebuild, freeradius-2.1.10.ebuild, freeradius-2.1.11.ebuild,
+  freeradius-2.1.12.ebuild, freeradius-2.1.3-r1.ebuild, freeradius-2.1.6.ebuild,
+  freeradius-2.1.7.ebuild:
+  inherit user for enewgroup and enewuser, and flag-o-matic for append-flags
+
+  06 Apr 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #63588
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> freeradius-2.1.11.ebuild:
+  Stable on amd64 wrt bug #339389
+
+*freeradius-2.1.12 (20 Nov 2011)
+
+  20 Nov 2011; Alin Năstac <mrness@gentoo.org>
+  files/freeradius-2.1.10-qafixes.patch, +freeradius-2.1.12.ebuild,
+  +files/freeradius-2.1.12-pkglibdir.patch,
+  +files/freeradius-2.1.12-qafixes.patch, +files/freeradius-2.1.12-ssl.patch,
+  +files/freeradius-2.1.12-versionless-la-files.patch, +files/radius.init-r2:
+  Allow radius service to start even if /var/log/radius directory is missing
+  (#385443). Adapt init script to openrc requirements (#386111). Version bump
+  with a changed daemon user/group (radius iso radiusd).
+
+  13 Oct 2011; Andreas Schuerch <nativemad@gentoo.org>
+  freeradius-2.1.11.ebuild:
+  x86 stable, security bug 339389.
+
+  06 Oct 2011; Markos Chandras <hwoarang@gentoo.org> freeradius-2.1.11.ebuild:
+  Port ebuild to EAPI4 so we can use REQUIRED_USE for frxp and threads. Bug
+  #385575
+
+*freeradius-2.1.11 (26 Sep 2011)
+
+  26 Sep 2011; Markos Chandras <hwoarang@gentoo.org> +freeradius-2.1.11.ebuild:
+  Non-maintainer version bump. Thanks to Bjarke Istrup Pedersen
+  <gurligebis@gentoo.org>. Bug #384027
 
 *freeradius-2.1.10 (26 May 2011)
 

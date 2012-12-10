@@ -1,6 +1,45 @@
 # ChangeLog for media-libs/qhull
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/qhull/ChangeLog,v 1.43 2011/06/28 19:59:33 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/qhull/ChangeLog,v 1.53 2012/09/30 21:20:37 blueness Exp $
+
+  30 Sep 2012; Anthony G. Basile <blueness@gentoo.org> qhull-2012.1-r1.ebuild:
+  stable ppc ppc64, bug #429128
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> qhull-3.1-r1.ebuild,
+  qhull-2010.1-r2.ebuild, qhull-2012.1-r1.ebuild:
+  Drop alpha/sparc keywords
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> qhull-2012.1-r1.ebuild:
+  x86 stable wrt bug #429128
+
+  18 Sep 2012; Thomas Kahle <tomka@gentoo.org> qhull-2010.1-r2.ebuild,
+  qhull-2012.1-r1.ebuild:
+  Fix /usr/include/qhull symlink (bug 435006)
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> qhull-2012.1-r1.ebuild:
+  Stable for amd64, wrt bug #429128
+
+  22 Aug 2012; Christoph Junghans <ottxor@gentoo.org> qhull-2012.1-r1.ebuild:
+  added prefix keywords
+
+*qhull-2012.1-r1 (17 Jun 2012)
+
+  17 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org> -qhull-2012.1.ebuild,
+  +qhull-2012.1-r1.ebuild:
+  Added compatibility with previous versions on include install
+
+*qhull-2012.1 (23 May 2012)
+
+  23 May 2012; Sébastien Fabbro <bicatali@gentoo.org> +qhull-2012.1.ebuild:
+  Version bump
+
+  14 Jan 2012; Kacper Kowalik <xarthisius@gentoo.org> qhull-2010.1-r2.ebuild:
+  Fix quotes
+
+  14 Jan 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  -files/qhull-2003.1-makefile.patch, -qhull-2003.1-r1.ebuild,
+  qhull-2010.1-r2.ebuild:
+  Drop old, add prefix keywords
 
   28 Jun 2011; Brent Baude <ranger@gentoo.org> qhull-2010.1-r2.ebuild:
   Marking qhull-2010.1-r2 ppc for bug 345279

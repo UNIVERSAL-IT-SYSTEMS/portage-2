@@ -1,6 +1,157 @@
 # ChangeLog for mail-mta/exim
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/exim/ChangeLog,v 1.204 2011/07/04 10:28:12 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/exim/ChangeLog,v 1.241 2012/11/11 18:46:52 grobian Exp $
+
+  11 Nov 2012; Fabian Groffen <grobian@gentoo.org> -exim-4.76-r1.ebuild,
+  -exim-4.76.ebuild, -exim-4.77.ebuild, -exim-4.80.ebuild,
+  -files/exim-4.75-makefile-freebsd.patch, -files/exim-4.76-as-needed.patch,
+  -files/exim.rc6:
+  Drop vulnerable versions, bug #439734
+
+  11 Nov 2012; Raúl Porcel <armin76@gentoo.org> exim-4.80.1.ebuild:
+  ia64/sparc stable wrt #439734
+
+  06 Nov 2012; Eray Aslan <eras@gentoo.org> exim-4.76-r1.ebuild,
+  exim-4.76.ebuild, exim-4.77.ebuild, exim-4.80.1.ebuild, exim-4.80.ebuild:
+  mail-mta/nbsmtp is no longer in the tree - remove from DEPEND
+
+  04 Nov 2012; Fabian Groffen <grobian@gentoo.org>
+  +files/exim-4.80-spool-mail-group.patch, exim-4.80.1.ebuild:
+  Deliver as group mail such that we can create new mail by default in
+  /var/spool/mail, bug #438606 by DominikBuerkle
+
+  30 Oct 2012; <swift@gentoo.org> exim-4.76.ebuild, exim-4.76-r1.ebuild,
+  exim-4.77.ebuild, exim-4.80.ebuild, exim-4.80.1.ebuild:
+  Adding SELinux dependency towards selinux-exim module
+
+  30 Oct 2012; Andreas Schuerch <nativemad@gentoo.org> exim-4.80.1.ebuild:
+  x86 stable, see bug 439734
+
+  29 Oct 2012; Anthony G. Basile <blueness@gentoo.org> exim-4.80.1.ebuild:
+  stable ppc ppc64, bug #439734
+
+  27 Oct 2012; Tobias Klausmann <klausman@gentoo.org> exim-4.80.1.ebuild:
+  Stable on alpha, bug #439734
+
+  26 Oct 2012; Jeroen Roovers <jer@gentoo.org> exim-4.80.1.ebuild:
+  Stable for HPPA (bug #439734).
+
+  26 Oct 2012; Agostino Sarubbo <ago@gentoo.org> exim-4.80.1.ebuild:
+  Stable for amd64, wrt bug #439734
+
+*exim-4.80.1 (26 Oct 2012)
+
+  26 Oct 2012; Fabian Groffen <grobian@gentoo.org> +exim-4.80.1.ebuild:
+  Bump to 4.80.1 for DKIM security CVE-2012-5671.  Fixed use of AR and RANLIB,
+  bug #438326
+
+  20 Oct 2012; Raúl Porcel <armin76@gentoo.org> exim-4.80.ebuild:
+  alpha/ia64/sparc/x86 stable wrt #437746
+
+  15 Oct 2012; Agostino Sarubbo <ago@gentoo.org> exim-4.80.ebuild:
+  Stable for amd64, wrt bug #437746
+
+  11 Oct 2012; Anthony G. Basile <blueness@gentoo.org> exim-4.80.ebuild:
+  stable ppc64, bug #437746
+
+  11 Oct 2012; Jeroen Roovers <jer@gentoo.org> exim-4.80.ebuild:
+  Stable for HPPA (bug #437746).
+
+  11 Oct 2012; Fabian Groffen <grobian@gentoo.org> files/exim.logrotate:
+  Fix logrotate script not to fail when exim isn't running, by Anatoly, bug
+  #437896.
+
+  10 Oct 2012; Brent Baude <ranger@gentoo.org> exim-4.80.ebuild:
+  Marking exim-4.80 ppc for bug 437746
+
+  25 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> exim-4.80.ebuild:
+  Remove virtual/pkgconfig from RDEPEND (by using COMMON_DEPEND temporary
+  variable)
+
+*exim-4.80 (31 May 2012)
+
+  31 May 2012; Fabian Groffen <grobian@gentoo.org> -exim-4.80_rc7.ebuild,
+  +exim-4.80.ebuild:
+  Version bump to 4.80 release. This version uses SSLv3, and disables v2 by
+  default. Supports TLSv1.{1,2} when using OpenSSL >=1.0.1. ChangeLog should
+  become available at ftp://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.80
+
+*exim-4.80_rc7 (29 May 2012)
+
+  29 May 2012; Fabian Groffen <grobian@gentoo.org> +exim-4.80_rc7.ebuild:
+  Bump to 4.80RC7, 4.80 is due very soon.
+
+  04 May 2012; Fabian Groffen <grobian@gentoo.org> exim-4.76-r1.ebuild,
+  exim-4.76.ebuild, exim-4.77.ebuild:
+  Require <openssl-1.0.1 for bug #414501, 4.78 will come with 1.0.1 support
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> exim-4.77.ebuild:
+  Marking exim-4.77 ppc64 for bug 391237
+
+  28 Feb 2012; Christian Ruppert <idl0r@gentoo.org> files/exim.rc7:
+  Don't use --quiet in the init script
+
+  18 Feb 2012; Jeroen Roovers <jer@gentoo.org> exim-4.77.ebuild:
+  Stable for HPPA (bug #391237).
+
+  09 Jan 2012; Brent Baude <ranger@gentoo.org> exim-4.77.ebuild:
+  Marking exim-4.77 ppc for bug 391237
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> exim-4.77.ebuild:
+  alpha/ia64/sparc stable wrt #391237
+
+  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> exim-4.77.ebuild:
+  x86 stable wrt bug #391237
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> exim-4.77.ebuild:
+  Stable for AMD64, wrt bug #391237
+
+  04 Dec 2011; Fabian Groffen <grobian@gentoo.org> exim-4.77.ebuild:
+  Make exim.conf hint based on the existence of such file already, add hint
+  about running exim_tidydb as alternative to bug #120715
+
+  04 Dec 2011; Sven Wegener <swegener@gentoo.org> files/exim.rc6,
+  files/exim.rc7:
+  drop --oknodo from start-stop-daemon
+
+  04 Dec 2011; Sven Wegener <swegener@gentoo.org> files/exim.rc6,
+  files/exim.rc7:
+  move reload to extra_started_commands
+
+  29 Nov 2011; Fabian Groffen <grobian@gentoo.org>
+  +files/exim-4.77-as-needed-ldflags.patch, exim-4.77.ebuild:
+  Fix building of helper apps respecting LDFLAGS (bug #391279) and for --as-
+  needed.
+
+  10 Oct 2011; Fabian Groffen <grobian@gentoo.org> exim-4.77.ebuild:
+  Add USE=doc to install HTML documentation, bug #331737
+
+  10 Oct 2011; Fabian Groffen <grobian@gentoo.org> exim-4.77.ebuild:
+  Fix patch name for USE=dns, bug #386619
+
+*exim-4.77 (10 Oct 2011)
+
+  10 Oct 2011; Fabian Groffen <grobian@gentoo.org> -exim-4.77_rc4.ebuild,
+  +exim-4.77.ebuild:
+  Version bump to 4.77, contains incompatible changes in expansion conditions,
+  see https://lists.exim.org/lurker/message/20111010.055624.f24c5ae2.en.html
+
+*exim-4.77_rc4 (08 Oct 2011)
+
+  08 Oct 2011; Fabian Groffen <grobian@gentoo.org> +exim-4.77_rc4.ebuild,
+  +files/exim-4.77-makefile-freebsd.patch:
+  Add 4.77 RC4, masked
+
+  16 Aug 2011; Christian Ruppert <idl0r@gentoo.org> files/exim.rc7:
+  Get a rid of the deprecated start-stop-daemon commands, bug 372671.
+
+*exim-4.76-r1 (03 Aug 2011)
+
+  03 Aug 2011; Fabian Groffen <grobian@gentoo.org> +exim-4.76-r1.ebuild,
+  +files/exim-4.76-crosscompile.patch, +files/exim.rc7:
+  Add patch to allow cross-compilation (bug #266591), add support for multiple
+  exim instances to the init script (bug #376569).  Remove old and
+  vulnerable versions.
 
   04 Jul 2011; Fabian Groffen <grobian@gentoo.org> exim-4.76.ebuild,
   +files/exim-4.76-as-needed.patch:

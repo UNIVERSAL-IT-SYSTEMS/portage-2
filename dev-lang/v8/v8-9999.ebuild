@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/v8/v8-9999.ebuild,v 1.11 2011/05/24 08:04:01 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/v8/v8-9999.ebuild,v 1.34 2012/11/25 19:05:33 floppym Exp $
 
-EAPI="2"
+EAPI="5"
 
-inherit eutils flag-o-matic multilib pax-utils scons-utils subversion toolchain-funcs
+inherit eutils multilib pax-utils python-utils-r1 subversion toolchain-funcs
 
 DESCRIPTION="Google's open source JavaScript engine"
 HOMEPAGE="http://code.google.com/p/v8"
@@ -13,91 +13,100 @@ LICENSE="BSD"
 
 SLOT="0"
 KEYWORDS=""
-IUSE="readline"
+IUSE=""
 
-RDEPEND="readline? ( >=sys-libs/readline-6.1 )"
-DEPEND="${RDEPEND}"
+DEPEND="|| ( dev-lang/python:2.7 dev-lang/python:2.6 )"
 
-pkg_setup() {
-	tc-export AR CC CXX RANLIB
-
-	# Make the build respect LDFLAGS.
-	export LINKFLAGS="${LDFLAGS}"
-}
-
-src_prepare() {
-	# Stop -Werror from breaking the build.
-	epatch "${FILESDIR}"/${PN}-no-werror-r0.patch
-
-	# Respect the user's CFLAGS, including the optimization level.
-	epatch "${FILESDIR}"/${PN}-no-O3-r0.patch
-
-	# Remove a test that is known to fail:
-	# http://groups.google.com/group/v8-users/browse_thread/thread/b8a3f42b5aa18d06
-	rm test/mjsunit/debug-script.js || die
-
-	# Remove a test that behaves differently depending on FEATURES="userpriv",
-	# see bug #348558.
-	rm test/mjsunit/d8-os.js || die
-}
-
-src_configure() {
-	# GCC issues multiple warnings about strict-aliasing issues in v8 code.
-	append-flags -fno-strict-aliasing
+src_unpack() {
+	subversion_src_unpack
+	cd "${S}"
+	make dependencies || die
 }
 
 src_compile() {
-	# To make tests work, we compile with sample=shell and visibility=default.
-	# For more info see http://groups.google.com/group/v8-users/browse_thread/thread/61ca70420e4476bc
-	# and http://groups.google.com/group/v8-users/browse_thread/thread/165f89728ed6f97d
-	local myconf="library=shared sample=shell visibility=default importenv=LINKFLAGS,PATH"
+	tc-export AR CC CXX RANLIB
+	export LINK=${CXX}
+	python_export python2 EPYTHON
+
+	local hardfp=off
 
 	# Use target arch detection logic from bug #354601.
 	case ${CHOST} in
-		i?86-*) myarch=x86 ;;
+		i?86-*) myarch=ia32 ;;
 		x86_64-*)
-			if [[ $ABI = "" ]] ; then
-				myarch=amd64
+			if [[ $ABI = x86 ]] ; then
+				myarch=ia32
 			else
-				myarch="$ABI"
+				myarch=x64
 			fi ;;
+		arm*-hardfloat-*)
+			hardfp=on
+			myarch=arm ;;
 		arm*-*) myarch=arm ;;
 		*) die "Unrecognized CHOST: ${CHOST}"
 	esac
+	mytarget=${myarch}.release
 
-	if [[ $myarch = amd64 ]] ; then
-		myconf+=" arch=x64"
-	elif [[ $myarch = x86 ]] ; then
-		myconf+=" arch=ia32"
-	elif [[ $myarch = arm ]] ; then
-		myconf+=" arch=arm"
-	else
-		die "Failed to determine target arch, got '$myarch'."
-	fi
+	subversion_wc_info
+	soname_version="${PV}.${ESVN_WC_REVISION}"
 
-	escons $(use_scons readline console readline dumb) ${myconf} . || die
-	pax-mark -m obj/test/release/cctest shell d8
+	local snapshot=on
+	host-is-pax && snapshot=off
+
+	# TODO: Add console=readline option once implemented upstream
+	# http://code.google.com/p/v8/issues/detail?id=1781
+
+	emake V=1 \
+		library=shared \
+		werror=no \
+		soname_version=${soname_version} \
+		snapshot=${snapshot} \
+		hardfp=${hardfp} \
+		${mytarget} || die
+
+	pax-mark m out/${mytarget}/{cctest,d8,shell} || die
+}
+
+src_test() {
+	local arg testjobs
+	for arg in ${MAKEOPTS}; do
+		case ${arg} in
+			-j*) testjobs=${arg#-j} ;;
+			--jobs=*) testjobs=${arg#--jobs=} ;;
+		esac
+	done
+
+	tools/test-wrapper-gypbuild.py \
+		-j${testjobs:-1} \
+		--arch-and-mode=${mytarget} \
+		--no-presubmit \
+		--progress=dots || die
 }
 
 src_install() {
 	insinto /usr
 	doins -r include || die
 
-	dobin d8 || die
-	dolib libv8.so || die
+	if [[ ${CHOST} == *-darwin* ]] ; then
+		# buildsystem is too horrific to get this built correctly
+		mkdir -p out/${mytarget}/lib.target
+		mv out/${mytarget}/libv8.so.${soname_version} \
+			out/${mytarget}/lib.target/libv8$(get_libname ${soname_version}) || die
+		install_name_tool \
+			-id "${EPREFIX}"/usr/$(get_libdir)/libv8$(get_libname) \
+			out/${mytarget}/lib.target/libv8$(get_libname ${soname_version}) \
+			|| die
+		install_name_tool \
+			-change \
+			/usr/local/lib/libv8.so.${soname_version} \
+			"${EPREFIX}"/usr/$(get_libdir)/libv8$(get_libname) \
+			out/${mytarget}/d8 || die
+	fi
+
+	dobin out/${mytarget}/d8 || die
+
+	dolib out/${mytarget}/lib.target/libv8$(get_libname ${soname_version}) || die
+	dosym libv8$(get_libname ${soname_version}) /usr/$(get_libdir)/libv8$(get_libname) || die
 
 	dodoc AUTHORS ChangeLog || die
-}
-
-src_test() {
-	# Make sure we use the libv8.so from our build directory,
-	# and not the /usr/lib one (it may be missing if we are
-	# installing for the first time or upgrading), see bug #352374.
-	LD_LIBRARY_PATH="${S}" tools/test.py --no-build -p dots || die
-}
-
-pkg_postinst() {
-	einfo "The live ebuild does not use SONAME."
-	einfo "You must rebuild all packages depending on ${PN}"
-	einfo "to avoid ABI breakages."
 }

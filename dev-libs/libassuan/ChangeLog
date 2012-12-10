@@ -1,6 +1,46 @@
 # ChangeLog for dev-libs/libassuan
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libassuan/ChangeLog,v 1.81 2011/07/04 20:15:33 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libassuan/ChangeLog,v 1.93 2012/09/08 01:54:31 radhermit Exp $
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  05 Sep 2012; Tim Harder <radhermit@gentoo.org> -libassuan-2.0.1.ebuild,
+  -libassuan-2.0.2.ebuild:
+  Remove old.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> libassuan-2.0.3.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #418747
+
+  21 Aug 2012; Christoph Junghans <ottxor@gentoo.org> libassuan-2.0.3.ebuild:
+  added prefix keywords
+
+  06 Aug 2012; Anthony G. Basile <blueness@gentoo.org> libassuan-2.0.3.ebuild:
+  Stable ppc ppc64, bug #418747
+
+  05 Aug 2012; Markus Meier <maekke@gentoo.org> libassuan-2.0.3.ebuild:
+  arm stable, bug #418747
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> libassuan-2.0.3.ebuild:
+  Stable on amd64 wrt bug #418747
+
+  01 Aug 2012; Jeroen Roovers <jer@gentoo.org> libassuan-2.0.3.ebuild:
+  Stable for HPPA (bug #418747).
+
+  01 Aug 2012; Jeff Horelick <jdhore@gentoo.org> libassuan-2.0.3.ebuild:
+  marked x86 per bug 418747
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> libassuan-2.0.3.ebuild:
+  keyword ~amd64-fbsd
+
+*libassuan-2.0.3 (26 Dec 2011)
+
+  26 Dec 2011; Tim Harder <radhermit@gentoo.org> +libassuan-2.0.3.ebuild:
+  Version bump.
+
+  10 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libassuan-2.0.2.ebuild:
+  Remove libassuan.la in favour of libassuan-config --cflags and --libs wrt
+  #385849 by "albecasa"
 
 *libassuan-2.0.2 (04 Jul 2011)
 
@@ -304,4 +344,3 @@
 
   06 Jan 2004; Tavis Ormandy <taviso@gentoo.org> libassuan-0.6.2.ebuild:
   Initial import
-

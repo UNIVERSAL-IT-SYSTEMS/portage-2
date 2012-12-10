@@ -1,6 +1,63 @@
 # ChangeLog for xfce-extra/xfce4-xkb-plugin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-xkb-plugin/ChangeLog,v 1.29 2011/05/22 20:37:00 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-xkb-plugin/ChangeLog,v 1.42 2012/11/28 12:21:52 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-xkb-plugin-0.5.4.3.ebuild:
+  EAPI5
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org>
+  xfce4-xkb-plugin-0.5.4.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-xkb-plugin-0.5.4.3.ebuild:
+  Install to libdir instead of libexecdir.
+
+  10 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-xkb-plugin-0.5.4.2.ebuild:
+  old
+
+  10 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-xkb-plugin-0.5.4.3.ebuild:
+  ppc/ppc64/x86 stable wrt #401229
+
+  30 Jan 2012; Agostino Sarubbo <ago@gentoo.org>
+  xfce4-xkb-plugin-0.5.4.3.ebuild:
+  Stable for amd64, wrt bug #401229
+
+*xfce4-xkb-plugin-0.5.4.3 (07 Jan 2012)
+
+  07 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-xkb-plugin-0.5.4.3.ebuild:
+  Version bump.
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-xkb-plugin-0.5.4.0.ebuild, -xfce4-xkb-plugin-0.5.4.0_p20110501.ebuild,
+  -xfce4-xkb-plugin-0.5.4.1.ebuild:
+  old
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-xkb-plugin-0.5.4.2.ebuild:
+  amd64/x86 stable wrt #386963
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-xkb-plugin-0.5.4.1.ebuild:
+  amd64 stable wrt #386963
+
+  16 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  xfce4-xkb-plugin-0.5.4.1.ebuild:
+  x86 stable wrt bug #386963
+
+*xfce4-xkb-plugin-0.5.4.2 (15 Oct 2011)
+
+  15 Oct 2011; Christoph Mende <angelos@gentoo.org>
+  +xfce4-xkb-plugin-0.5.4.2.ebuild:
+  Version bump
+
+  13 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-xkb-plugin-0.5.4.1.ebuild:
+  Import missing sk.po from git wrt #386975 by Agostino Sarubbo
 
 *xfce4-xkb-plugin-0.5.4.1 (22 May 2011)
 

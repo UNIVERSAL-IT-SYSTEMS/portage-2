@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ippl/ippl-1.4.14-r2.ebuild,v 1.2 2011/03/21 14:49:51 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ippl/ippl-1.4.14-r2.ebuild,v 1.4 2012/10/12 10:46:15 pinkbyte Exp $
 
 EAPI="2"
 
-inherit eutils toolchain-funcs
+inherit eutils toolchain-funcs user
 
 DESCRIPTION="A daemon which logs TCP/UDP/ICMP packets"
 HOMEPAGE="http://pltplp.net/ippl/"
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-DEPEND="|| ( sys-devel/bison >=dev-util/yacc-1.9.1-r1 )
+DEPEND="virtual/yacc
 	>=sys-devel/flex-2.5.4a-r4"
 RDEPEND=""
 

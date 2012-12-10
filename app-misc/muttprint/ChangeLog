@@ -1,6 +1,65 @@
 # ChangeLog for app-misc/muttprint
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/muttprint/ChangeLog,v 1.43 2011/05/21 19:40:12 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/muttprint/ChangeLog,v 1.58 2012/08/21 06:35:25 xmw Exp $
+
+  21 Aug 2012; Michael Weber <xmw@gentoo.org> muttprint-0.73-r1.ebuild:
+  ppc stable (bug 418607)
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> muttprint-0.73-r1.ebuild:
+  Marking muttprint-0.73-r1 ppc64 for bug 418607
+
+  15 Jun 2012; Jeff Horelick <jdhore@gentoo.org> muttprint-0.73-r1.ebuild:
+  marked x86 per bug 418607
+
+  08 Jun 2012; Chema Alonso <nimiux@gentoo.org> muttprint-0.73-r1.ebuild,
+  metadata.xml:
+  Enable in-source build wrt bug #420063. Added missing doc use flag to
+  metadata.
+
+  03 Jun 2012; Agostino Sarubbo <ago@gentoo.org> muttprint-0.73-r1.ebuild:
+  Stable for amd64, wrt bug #418607
+
+*muttprint-0.73-r1 (28 Apr 2012)
+
+  28 Apr 2012; Chema Alonso <nimiux@gentoo.org> +muttprint-0.73-r1.ebuild,
+  files/muttprint-0.73-warning.patch:
+  Bump to 0.73-r1. Added dependency on dev-texlive/texlive-latexextra. Removed
+  warning on fatal error.
+
+*muttprint-0.73 (18 Apr 2012)
+
+  18 Apr 2012; Chema Alonso <nimiux@gentoo.org> +muttprint-0.73.ebuild,
+  +files/muttprint-0.73-manuals.patch, +files/muttprint-0.73-warning.patch,
+  metadata.xml:
+  app-misc/muttprint revision bump to 0.73
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> muttprint-0.72d-r3.ebuild:
+  Marking muttprint-0.72d-r3 ppc for bug 394727
+
+  23 Mar 2012; Chema Alonso <nimiux@gentoo.org> metadata.xml:
+  Removed Dane Smith (c1pher) as maintainer (Proxy)
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> muttprint-0.72d-r3.ebuild:
+  Marking muttprint-0.72d-r3 ppc64 for bug 394727
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  muttprint-0.72d-r3.ebuild:
+  x86 stable wrt bug #394727
+
+  17 Dec 2011; Raúl Porcel <armin76@gentoo.org> muttprint-0.72d-r1.ebuild,
+  muttprint-0.72d-r2.ebuild, muttprint-0.72d-r3.ebuild:
+  Drop alpha/ia64 keywords
+
+  14 Dec 2011; Agostino Sarubbo <ago@gentoo.org> muttprint-0.72d-r3.ebuild:
+  Stable for AMD64, wrt bug #394727
+
+*muttprint-0.72d-r3 (05 Nov 2011)
+
+  05 Nov 2011; Dane Smith <c1pher@gentoo.org> +muttprint-0.72d-r3.ebuild:
+  Revbump. Fixed bug 184158. Thanks to Chema Alonso.
+
+  13 Oct 2011; Dane Smith <c1pher@gentoo.org> metadata.xml:
+  Updated maintainer info to reflect new proxy maintainer.
 
 *muttprint-0.72d-r2 (21 May 2011)
 

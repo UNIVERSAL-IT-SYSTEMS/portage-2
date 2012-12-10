@@ -1,6 +1,23 @@
 # ChangeLog for app-forensics/foremost
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-forensics/foremost/ChangeLog,v 1.21 2010/04/12 20:20:14 idl0r Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-forensics/foremost/ChangeLog,v 1.26 2012/01/09 19:02:59 ranger Exp $
+
+  09 Jan 2012; Brent Baude <ranger@gentoo.org> foremost-1.5.7-r1.ebuild:
+  Marking foremost-1.5.7-r1 ppc for bug 391467
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  foremost-1.5.7-r1.ebuild:
+  x86 stable wrt bug #391467
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> foremost-1.5.7-r1.ebuild:
+  Stable on amd64 wrt bug #391467
+
+  23 Nov 2011; Tim Harder <radhermit@gentoo.org> -foremost-1.5.5-r1.ebuild,
+  -foremost-1.5.6-r1.ebuild:
+  Remove old.
+
+  23 Nov 2011; Tim Harder <radhermit@gentoo.org> foremost-1.5.7-r1.ebuild:
+  Update to EAPI 4.
 
 *foremost-1.5.7-r1 (12 Apr 2010)
 *foremost-1.5.6-r1 (12 Apr 2010)

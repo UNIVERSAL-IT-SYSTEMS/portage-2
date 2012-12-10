@@ -1,6 +1,35 @@
 # ChangeLog for app-text/kchmviewer
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/kchmviewer/ChangeLog,v 1.42 2011/03/13 09:26:08 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/kchmviewer/ChangeLog,v 1.49 2012/09/05 09:27:37 jlec Exp $
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> kchmviewer-6.0-r1.ebuild,
+  kchmviewer-6.0.ebuild:
+  Use doicon instead insinto + doins to install icon files
+
+*kchmviewer-6.0-r1 (24 Aug 2012)
+
+  24 Aug 2012; Johannes Huber <johu@gentoo.org> +kchmviewer-6.0-r1.ebuild:
+  Bump to EAPI 4. Fix .desktop file to pass validation. Die on sed. Respect
+  LINGUAS.
+
+  30 May 2012; Johannes Huber <johu@gentoo.org>
+  -files/kchmviewer-5.2-kde-build.patch, -kchmviewer-5.2-r1.ebuild,
+  -kchmviewer-5.3.ebuild:
+  Remove old.
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> kchmviewer-6.0.ebuild:
+  Marking kchmviewer-6.0 ppc for bug 412807
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> kchmviewer-6.0.ebuild:
+  marked x86 per bug 412807
+
+  22 May 2012; Agostino Sarubbo <ago@gentoo.org> kchmviewer-6.0.ebuild:
+  Stable for amd64, wrt bug #412807
+
+*kchmviewer-6.0 (25 Dec 2011)
+
+  25 Dec 2011; Patrick Lauer <patrick@gentoo.org> +kchmviewer-6.0.ebuild:
+  Bump for #395589
 
 *kchmviewer-5.3 (13 Mar 2011)
 
@@ -348,4 +377,3 @@
 
   06 Jun 2005; Dominik Stadler <centic@gentoo.org> ChangeLog:
   New package, fixes Bug 91193
-

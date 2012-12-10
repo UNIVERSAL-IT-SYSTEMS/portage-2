@@ -1,11 +1,11 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/texlive-module.eclass,v 1.58 2011/02/17 13:21:43 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/texlive-module.eclass,v 1.63 2012/07/26 16:40:47 aballier Exp $
 
 # @ECLASS: texlive-module.eclass
 # @MAINTAINER:
 # tex@gentoo.org
-#
+# @AUTHOR:
 # Original Author: Alexis Ballier <aballier@gentoo.org>
 # @BLURB: Provide generic install functions so that modular texlive's texmf ebuild will only have to inherit this eclass
 # @DESCRIPTION:
@@ -27,21 +27,17 @@
 # @DESCRIPTION:
 # The list of packages that will be installed. This variable will be expanded to
 # SRC_URI:
-#
-# For TeX Live 2008: foo -> texlive-module-foo-${PV}.tar.lzma
-# For TeX Live 2009: foo -> texlive-module-foo-${PV}.tar.xz
+# foo -> texlive-module-foo-${PV}.tar.xz
 
 # @ECLASS-VARIABLE: TEXLIVE_MODULE_DOC_CONTENTS
 # @DESCRIPTION:
 # The list of packages that will be installed if the doc useflag is enabled.
-# Expansion to SRC_URI is the same as for TEXLIVE_MODULE_CONTENTS. This is only
-# valid for TeX Live 2008 and later.
+# Expansion to SRC_URI is the same as for TEXLIVE_MODULE_CONTENTS.
 
 # @ECLASS-VARIABLE: TEXLIVE_MODULE_SRC_CONTENTS
 # @DESCRIPTION:
 # The list of packages that will be installed if the source useflag is enabled.
-# Expansion to SRC_URI is the same as for TEXLIVE_MODULE_CONTENTS. This is only
-# valid for TeX Live 2008 and later.
+# Expansion to SRC_URI is the same as for TEXLIVE_MODULE_CONTENTS.
 
 # @ECLASS-VARIABLE: TEXLIVE_MODULE_BINSCRIPTS
 # @DESCRIPTION:
@@ -68,17 +64,10 @@ COMMON_DEPEND=">=app-text/texlive-core-${TL_PV:-${PV}}"
 
 IUSE="source"
 
-# TeX Live 2008 was providing .tar.lzma files of CTAN packages.
-# For 2009 and 2010 they are now .tar.xz
-if [ "${PV#2008}" != "${PV}" ]; then
-	PKGEXT=tar.lzma
-	DEPEND="${COMMON_DEPEND}
-		|| ( app-arch/xz-utils app-arch/lzma-utils )"
-else
-	PKGEXT=tar.xz
-	DEPEND="${COMMON_DEPEND}
-		app-arch/xz-utils"
-fi
+# Starting from TeX Live 2009, upstream provides .tar.xz modules.
+PKGEXT=tar.xz
+DEPEND="${COMMON_DEPEND}
+	app-arch/xz-utils"
 
 for i in ${TEXLIVE_MODULE_CONTENTS}; do
 	SRC_URI="${SRC_URI} mirror://gentoo/texlive-module-${i}-${PV}.${PKGEXT}"
@@ -106,8 +95,6 @@ RDEPEND="${COMMON_DEPEND}"
 
 S="${WORKDIR}"
 
-if [ "${PV#2008}" = "${PV}" ]; then
-
 # @FUNCTION: texlive-module_src_unpack
 # @DESCRIPTION:
 # Only for TeX Live 2009 and later.
@@ -120,7 +107,7 @@ RELOC_TARGET=texmf-dist
 texlive-module_src_unpack() {
 	if has "${EAPI:-0}" 0 1 2 ; then
 		local i s
-		# Avoid installing world writable files 
+		# Avoid installing world writable files
 		# Bugs #309997, #310039, #338881
 		umask 022
 		for i in ${A}
@@ -143,8 +130,6 @@ texlive-module_src_unpack() {
 		mv "${i}" "${RELOC_TARGET}"/$(dirname "${i}") || die "failed to relocate ${i} to ${RELOC_TARGET}/$(dirname ${i})"
 	done
 }
-
-fi
 
 # @FUNCTION: texlive-module_add_format
 # @DESCRIPTION:
@@ -247,7 +232,7 @@ texlive-module_make_language_lua_lines() {
 # Generates the config files that are to be installed in /etc/texmf;
 # texmf-update script will take care of merging the different config files for
 # different packages in a single one used by the whole tex installation.
-# 
+#
 # Once the config files are generated, we build the format files using fmtutil
 # (provided by texlive-core). The compiled format files will be sent to
 # texmf-var/web2c, like fmtutil defaults to but with some trick to stay in the
@@ -258,12 +243,12 @@ texlive-module_src_compile() {
 	# later
 	for i in "${S}"/tlpkg/tlpobj/*;
 	do
-		grep '^execute ' "${i}" | sed -e 's/^execute //' | tr ' \t' '@@' |sort|uniq >> "${T}/jobs"
+		grep '^execute ' "${i}" | sed -e 's/^execute //' | tr ' \t' '##' |sort|uniq >> "${T}/jobs"
 	done
 
 	for i in $(<"${T}/jobs");
 	do
-		j="$(echo $i | tr '@' ' ')"
+		j="$(echo $i | tr '#' ' ')"
 		command=${j%% *}
 		parameter=${j#* }
 		case "${command}" in
@@ -271,6 +256,8 @@ texlive-module_src_compile() {
 				echo "Map ${parameter}" >> "${S}/${PN}.cfg";;
 			addMixedMap)
 				echo "MixedMap ${parameter}" >> "${S}/${PN}.cfg";;
+			addKanjiMap)
+				echo "KanjiMap ${parameter}" >> "${S}/${PN}.cfg";;
 			addDvipsMap)
 				echo "p	+${parameter}" >> "${S}/${PN}-config.ps";;
 			addDvipdfmMap)
@@ -278,7 +265,7 @@ texlive-module_src_compile() {
 			AddHyphen)
 				texlive-module_make_language_def_lines "$parameter"
 				texlive-module_make_language_dat_lines "$parameter"
-				[ "${PV#2008}" = "${PV}" -a "${PV#2009}" = "${PV}" ] && texlive-module_make_language_lua_lines "$parameter"
+				texlive-module_make_language_lua_lines "$parameter"
 				;;
 			AddFormat)
 				texlive-module_add_format "$parameter";;
@@ -379,8 +366,4 @@ texlive-module_pkg_postrm() {
 	etexmf-update
 }
 
-if [ "${PV#2008}" != "${PV}" ]; then
-EXPORT_FUNCTIONS src_compile src_install pkg_postinst pkg_postrm
-else
 EXPORT_FUNCTIONS src_unpack src_compile src_install pkg_postinst pkg_postrm
-fi

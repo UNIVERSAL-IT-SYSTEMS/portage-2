@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/ydpdict/ydpdict-1.0.0.ebuild,v 1.2 2009/10/18 09:10:23 spock Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/ydpdict/ydpdict-1.0.0.ebuild,v 1.6 2012/06/17 11:14:00 flameeyes Exp $
+
+EAPI=2
 
 DESCRIPTION="Interface for the Collins Dictionary."
 HOMEPAGE="http://toxygen.net/ydpdict/"
@@ -12,17 +14,16 @@ KEYWORDS="~amd64 ~x86"
 IUSE="ao"
 
 RDEPEND=">=app-dicts/libydpdict-${PV}
+	sys-libs/ncurses[unicode]
 	ao? ( media-libs/libao )"
 
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.9.0"
+	virtual/pkgconfig"
 
-src_compile() {
+src_configure() {
 	econf \
 		$(use_with ao libao) \
 		|| die "econf failed"
-
-	emake || die "emake failed"
 }
 
 src_install() {

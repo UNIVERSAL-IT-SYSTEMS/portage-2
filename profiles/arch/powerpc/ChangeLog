@@ -1,6 +1,256 @@
 # ChangeLog for Gentoo/PPC profile directory
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/powerpc/ChangeLog,v 1.129 2011/07/28 21:20:53 dilfridge Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/powerpc/ChangeLog,v 1.203 2012/11/30 18:00:27 josejx Exp $
+
+  30 Nov 2012; Joseph Jezak <josejx@gentoo.org> +ppc64/32ul/packages:
+  Removed kgcc64 from ppc64-32ul profile, it's no longer needed.
+
+  30 Nov 2012; Agostino Sarubbo <ago@gentoo.org> ppc64/32ul/package.mask:
+  Lirc now works on ppc32 with 64bit kernel, removing mask
+
+  24 Nov 2012; Mike Gilbert <floppym@gentoo.org> use.mask:
+  Mask python_single_target values not supported on this arch.
+
+  24 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> ppc64/use.mask:
+  Mask USE="opencolorio" and USE="opencv" for 64bit because media-gfx/opencolorio
+  and media-libs/opencv have not been tested yet.
+
+  15 Nov 2012; Anthony G. Basile <blueness@gentoo.org> package.use.mask:
+  Mask USE=telepathy, bug #441456
+
+  12 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  ppc32/package.use.mask:
+  Unmask webkit-gtk[webkit2] on ppc since at-spi2-core has been keyworded.
+
+  12 Nov 2012; Mike Gilbert <floppym@gentoo.org> ppc32/make.defaults,
+  ppc64/make.defaults:
+  Move PYTHON_TARGETS=python3_2 from arch profiles to base.
+
+  05 Nov 2012; Sergei Trofimovich <slyfox@gentoo.org> package.use,
+  ppc64/package.use:
+  Fixed typo qemu_softmmu_target{,s}_.
+
+  04 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  ppc32/package.use.mask:
+  Mask webkit-gtk[webkit2] on ppc due to missing ~ppc keyword on at-spi2-core
+  (bug #441692).
+
+  31 Oct 2012; Michał Górny <mgorny@gentoo.org> use.mask:
+  Add a PYTHON_TARGETS mask based on keywords.
+
+  30 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> ppc64/package.use.force,
+  ppc64/package.use.mask:
+  Instead of masking USE="new-login" completely, force USE="gdm" enabled since
+  it's the only DM with new-login functionality with stable ppc64 keywording.
+
+  29 Oct 2012; Doug Goldstein <cardoe@gentoo.org> +ppc64/package.use.force:
+  Add package.use.force for ppc64 as it requires binary only SeaBIOS (x86 BIOS)
+  since it can't natively compile it.
+
+  29 Oct 2012; Doug Goldstein <cardoe@gentoo.org> +package.use,
+  +ppc64/package.use:
+  Add package.use so we can enable the native arch as the default qemu target
+  for bug #437788
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> package.use.mask:
+  remove net-libs/webkit-gtk[geoloc,webkit2] masking since app-misc/geoclue and
+  app-accessibility/at-spi2-core are keyworded
+
+  27 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Mask USE="test" for dev-ruby/rack-test because dev-ruby/sinatra it relies has
+  expensive dependencies.
+
+  26 Aug 2012; Justin Lecher <jlec@gentoo.org> package.use.force:
+  Foce USE=minimal for sci-libs/cctbx because sci-chemistry/cns is missing for
+  ppc
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> package.use.mask:
+  x11-themes/gtk-engines-qtcurve[mozilla]: Masked for missing stable on
+  >=www-client/firefox-3
+
+  21 Aug 2012; Anthony G. Basile <blueness@gentoo.org> package.use.mask:
+  Mask net-misc/tor[tor-hardening] on ppc/ppc64
+
+  21 Aug 2012; Michael Weber <xmw@gentoo.org> package.use.mask:
+  net-analyzer/munin: Masked for missing keywords on sys-libs/freeipmi
+
+  01 Aug 2012; Johannes Huber <johu@gentoo.org> package.use.mask:
+  Update mask kde-base/solid[bluetooth] for kde 4.9.
+
+  16 Jul 2012; Anthony G. Basile <blueness@gentoo.org> package.use.mask:
+  Mask net-libs/cyassl[aes-ni,cyassl-hardening] on ppc/ppc64
+
+  12 Jul 2012; Ben de Groot <yngwin@gentoo.org> package.use.mask:
+  Mask media-sound/picard[acoustid] on ppc until chromaprint is keyworded
+
+  09 Jul 2012; Johannes Huber <johu@gentoo.org> package.use.mask:
+  Mask =x11-libs/qt-demo-4.8*[openvg] to make repoman happy.
+
+  04 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Remove obsolete entry to www-client/icecat.
+
+  14 Jun 2012; Davide Pesavento <pesa@gentoo.org> package.use.mask:
+  Remove redundant mask of USE=jit for qt-script, now masked in base profile.
+
+  14 Jun 2012; Davide Pesavento <pesa@gentoo.org> package.use.mask:
+  Remove redundant mask of USE=jit for qt-webkit, already masked in base
+  profile.
+
+  14 Jun 2012; Michael Weber <xmw@gentoo.org> package.use.mask,
+  ppc64/package.use.mask:
+  Push net-misc/networkmanager[wimax] down to ppc64
+
+  04 Jun 2012; Michael Weber <xmw@gentoo.org> package.use.mask,
+  ppc32/package.use.mask:
+  move mask USE=apbs on sci-chemistry/pymol in the right location, fix typo
+
+  04 Jun 2012; Michael Weber <xmw@gentoo.org> ppc32/package.use.mask:
+  Masking USE=apbs on sci-chemistry/pymol (bug 366229)
+
+  02 Jun 2012; Ben de Groot <yngwin@gentoo.org> package.mask:
+  Add mask for smplayer-themes, since there is no longer a working keyworded
+  version of media-video/smplayer
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> package.mask:
+  remove old mask due to texlive 2009 not being keyworded, texlive 2011 is
+  stable these days...
+
+  31 May 2012; Alexis Ballier <aballier@gentoo.org> package.use.mask:
+  remove old mask due to texlive 2010 not being keyworded, texlive 2011 is
+  stable these days...
+
+  28 May 2012; Andreas K. Huettel <dilfridge@gentoo.org> package.use.mask:
+  Mask new useflag of opencv, as dependency dev-cpp/tbb is not keyworded on ppc
+
+  25 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Mask webkit-gtk[geoloc,webkit2], requires app-misc/geoclue and
+  app-accessibility/at-spi2-core to be keyworded (bug #411761).
+
+  24 May 2012; Johannes Huber <johu@gentoo.org> package.use.mask:
+  Mask kde-base/solid-4.8[bluetooth] for ppc*
+
+  15 May 2012; Mike Gilbert <floppym@gentoo.org> ppc32/make.defaults,
+  ppc64/make.defaults:
+  Default PYTHON_TARGETS should include python-3 for arches where it is stable.
+  See bug 415575.
+
+  13 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Add nautilus[sendto] to gnome3 mask.
+
+  03 May 2012; Julian Ospald <hasufell@gentoo.org> use.mask:
+  mask nvtt
+
+  25 Apr 2012; Kacper Kowalik <xarthisius@gentoo.org> use.mask:
+  Mask systemd
+
+  04 Apr 2012; Joerg Bornkessel <hd_brummy@gentoo.org> ppc32/use.mask:
+  removed dxr3 unmask for ppc32
+
+  22 Mar 2012; Tim Harder <radhermit@gentoo.org> package.use.mask:
+  Remove redundant use flag mask.
+
+  17 Mar 2012; Tim Harder <radhermit@gentoo.org> package.use.mask:
+  Mask USE="skype" for bitlbee.
+
+  05 Mar 2012; Joerg Bornkessel <hd_brummy@gentoo.org> ppc32/use.mask:
+  dxr3 unmask, works with v4l2, #350211
+
+  01 Mar 2012; Kacper Kowalik <xarthisius@gentoo.org> use.mask:
+  Drop mask on vpx useflag
+
+  21 Feb 2012; Johannes Huber <johu@gentoo.org> package.mask, package.use.mask:
+  Mask unresolved deps to make repoman happy.
+
+  19 Feb 2012; <nixnut@gentoo.org> package.mask:
+  removed kde-4.7.4 mask
+
+  14 Feb 2012; Jory A. Pratt <anarchy@gentoo.org> package.use.mask:
+  Finish crashreport mask on mozilla packages
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Mask wayland USE flag.
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Mask d3d USE flag.
+
+  10 Feb 2012; Matt Turner <mattst88@gentoo.org> use.mask:
+  Add new video_cards_* to use.mask.
+
+  25 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Mask USE crashreporter for www-client/firefox wrt #396565
+
+  22 Jan 2012; Sergei Trofimovich <slyfox@gentoo.org> package.use.mask:
+  Mask USE="spice xen rbd" for qemu.
+
+  11 Dec 2011; Alexey Shvetsov <alexxy@gentoo.org> package.mask:
+  Also mask KDE SC 4.7.4 on ppc
+
+  07 Dec 2011; Kacper Kowalik <xarthisius@gentoo.org> package.use.mask:
+  Drop mask on sys-apps/hwloc[numa] wrt #381313
+
+  25 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask,
+  ppc64/64ul/package.use.mask:
+  Mask USE flags on gnome-3.2 packages due to missing keywords on deps; bug
+  #390345
+
+  20 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> package.use.mask:
+  Masked sys-fs/dmraid[dietlibc] wrt #364103
+
+  05 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> package.use.mask:
+  Mask kde-base/solid[bluetooth] until we find someone who is actually using
+  bluetooth and KDE
+
+  02 Nov 2011; Alexey Shvetsov <alexxy@gentoo.org> package.mask:
+  update kde mask
+
+  28 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> use.mask:
+  use.mask colord and packagekit to allow gtk+-3.2 unmasking. use.mask instead
+  of p.use.mask because other packages with these flags are coming. Bug
+  #387959.
+
+  18 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
+  Add kdepim-l10n to kde-4.7 mask
+
+  09 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> package.mask,
+  package.use.mask:
+  Remove obsolete masks
+
+  06 Oct 2011; Alexey Shvetsov <alexxy@gentoo.org> package.mask:
+  Mask kde on ppc/ppc64
+
+  03 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> ppc32/use.mask:
+  Mask USE="dxr3" again wrt #350211.
+
+  27 Sep 2011; Jonathan Callen <abcd@gentoo.org> package.mask:
+  Add kactivites to KDE 4.7 mask
+
+  21 Sep 2011; Markos Chandras <hwoarang@gentoo.org> package.use.force:
+  Force botan-bundled useflag for dev-util/qt-creator
+
+  18 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> ppc64/package.use.mask:
+  Remove obsolete entry for sys-apps/hal.
+
+  14 Sep 2011; Jeroen Roovers <jer@gentoo.org> package.use.mask:
+  Mask USE=oracle once more for net-analyzer/hydra.
+
+  07 Sep 2011; Alexey Shvetsov <alexxy@gentoo.org> package.mask:
+  Update kde mask
+
+  04 Sep 2011; Robin H. Johnson <robbat2@gentoo.org> package.use.mask:
+  Bug #381737: block dev-libs/libmemcached[tcmalloc] until
+  dev-utils/google-perftools is keyworded (and virtual/gsasl on hppa/arm).
+
+  21 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> package.use.mask:
+  Dropping app-emulation/pearpc[jit] mask as the application was tree-cleaned
+
+  10 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> package.use.mask:
+  mask cuda dep for opencv bug 365451
+
+  09 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> package.use.mask:
+  pass on media-sound/amarok[upnp] bug 365003
+
+  03 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> ppc64/package.use.mask:
+  masked dev-lang/ghc[llvm]
 
   28 Jul 2011; Andreas K. Huettel <dilfridge@gentoo.org> package.mask:
   Add kde-base/kdepim-l10n to kde-4.7 package mask

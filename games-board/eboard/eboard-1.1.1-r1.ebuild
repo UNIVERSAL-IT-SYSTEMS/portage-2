@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/eboard/eboard-1.1.1-r1.ebuild,v 1.8 2011/06/10 07:11:28 tupone Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-board/eboard/eboard-1.1.1-r1.ebuild,v 1.10 2012/05/04 04:30:11 jdhore Exp $
 
 EAPI=2
 inherit eutils games
@@ -24,14 +24,15 @@ RDEPEND="x11-libs/gtk+:2
 	media-libs/libpng"
 DEPEND="${RDEPEND}
 	dev-lang/perl
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	epatch \
 		"${WORKDIR}"/${PN}_${DEB_V}.diff \
 		"${FILESDIR}"/${P}-as-needed.patch \
 		"${FILESDIR}"/${P}-gcc44.patch \
-		"${FILESDIR}"/${P}-ovflfix.patch
+		"${FILESDIR}"/${P}-ovflfix.patch \
+		"${FILESDIR}"/${P}-libpng15.patch
 	sed -i \
 		-e "s:(\"-O6\"):split(' ', \"${CXXFLAGS}\"):" \
 		configure \

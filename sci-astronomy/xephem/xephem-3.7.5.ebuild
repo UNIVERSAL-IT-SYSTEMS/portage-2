@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/xephem/xephem-3.7.5.ebuild,v 1.1 2011/07/29 15:09:17 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/xephem/xephem-3.7.5.ebuild,v 1.8 2012/10/24 19:25:50 ulm Exp $
 
 EAPI=4
 inherit eutils toolchain-funcs
@@ -8,12 +8,12 @@ inherit eutils toolchain-funcs
 DESCRIPTION="Interactive tool for astronomical ephemeris and sky simulation"
 HOMEPAGE="http://www.clearskyinstitute.com/xephem"
 SRC_URI="http://97.74.56.125/free/${P}.tar.gz"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
+KEYWORDS="amd64 ppc ppc64 x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE=""
 SLOT=0
-LICENSE="as-is"
+LICENSE="XEphem"
 
-DEPEND=">=x11-libs/openmotif-2.3:0
+DEPEND=">=x11-libs/motif-2.3:0
 	virtual/jpeg
 	media-libs/libpng"
 RDEPEND="${DEPEND}"
@@ -22,11 +22,12 @@ src_prepare() {
 	# make sure we use system libs and respect user flags
 	epatch \
 		"${FILESDIR}"/${PN}-3.7.4-libs-flags.patch \
-		"${FILESDIR}"/${PN}-3.7.4-overflows.patch
+		"${FILESDIR}"/${PN}-3.7.4-overflows.patch \
+		"${FILESDIR}"/${P}-respect-flags.patch
 }
 
 src_compile() {
-	tc-export CC
+	tc-export CC AR RANLIB
 	cd GUI/xephem || die
 	emake
 	local i

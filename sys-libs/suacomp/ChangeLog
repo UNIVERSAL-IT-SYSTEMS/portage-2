@@ -1,6 +1,25 @@
 # ChangeLog for sys-libs/suacomp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/suacomp/ChangeLog,v 1.10 2011/06/15 08:13:11 mduft Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/suacomp/ChangeLog,v 1.15 2012/09/29 13:02:23 grobian Exp $
+
+  29 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  +files/suacomp-0.6.14-strtoll.patch, suacomp-0.6.14.ebuild:
+  Add patch for SUA 6.0, by David Holm, bug #435034
+
+  16 Apr 2012; Michael Haubenwallner <haubi@gentoo.org> metadata.xml:
+  add myself as co-maintainer
+
+*suacomp-0.6.14 (13 Sep 2011)
+
+  13 Sep 2011; Markus Duft <mduft@gentoo.org> -suacomp-0.6.10.ebuild,
+  -suacomp-0.6.11.ebuild, -suacomp-0.6.12.ebuild, +suacomp-0.6.14.ebuild:
+  added new release, removed old versions
+
+  03 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> suacomp-9999.ebuild:
+  Update to git2 eclass too.
+
+  03 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> suacomp-9999.ebuild:
+  Keep just empty keywords not -*. Shuts up repoman.
 
 *suacomp-0.6.13 (15 Jun 2011)
 
@@ -58,4 +77,3 @@
   13 Jul 2010; Markus Duft <mduft@gentoo.org> +suacomp-0.4.ebuild,
   +metadata.xml:
   initial add of suacomp to the tree. for interix-prefix only
-

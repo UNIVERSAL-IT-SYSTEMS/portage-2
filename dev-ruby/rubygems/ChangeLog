@@ -1,6 +1,121 @@
 # ChangeLog for dev-ruby/rubygems
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubygems/ChangeLog,v 1.172 2011/06/25 14:15:20 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubygems/ChangeLog,v 1.202 2012/11/06 16:56:52 jer Exp $
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> rubygems-1.8.24.ebuild:
+  Stable for HPPA (bug #411507).
+
+  27 Oct 2012; Raúl Porcel <armin76@gentoo.org> rubygems-1.8.24.ebuild:
+  sh stable wrt #411507
+
+  21 Oct 2012; Raúl Porcel <armin76@gentoo.org> rubygems-1.8.24.ebuild:
+  alpha/ia64/s390/sparc stable wrt #411507
+
+  25 Jul 2012; Anthony G. Basile <blueness@gentoo.org> rubygems-1.8.24.ebuild:
+  Stable ppc64, bug #411507
+
+  22 Jul 2012; <nixnut@gentoo.org> rubygems-1.8.24.ebuild:
+  ppc stable #411507
+
+  25 Jun 2012; Andreas Schuerch <nativemad@gentoo.org> rubygems-1.8.24.ebuild:
+  x86 stable, see bug 411507
+
+  16 Jun 2012; Akinori Hattori <hattya@gentoo.org> rubygems-1.8.15.ebuild:
+  ia64 stable wrt bug #348901.
+
+  27 May 2012; Markus Meier <maekke@gentoo.org> rubygems-1.8.24.ebuild:
+  arm stable, bug #411507
+
+  26 May 2012; Jeroen Roovers <jer@gentoo.org> rubygems-1.8.15.ebuild:
+  Stable for HPPA (bug #348901).
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> rubygems-1.8.24.ebuild:
+  Stable for amd64, wrt bug #411507
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> rubygems-1.8.15.ebuild:
+  Stable for ppc64; bug #348901
+
+*rubygems-1.8.24 (10 May 2012)
+
+  10 May 2012; Hans de Graaff <graaff@gentoo.org> -rubygems-1.8.23.ebuild,
+  +rubygems-1.8.24.ebuild:
+  Version bump with fixes for the recent security fixes. Remove broken version.
+
+  06 May 2012; Agostino Sarubbo <ago@gentoo.org> rubygems-1.8.15.ebuild:
+  Stable for amd64, wrt bug #348901
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> rubygems-1.8.15.ebuild:
+  Marking rubygems-1.8.15 ppc for bug 348901
+
+  05 May 2012; Hans de Graaff <graaff@gentoo.org> rubygems-1.8.15.ebuild:
+  Backport FEATURES=userpriv guard and drop ruby19 to create stable candidate
+  for bug 348901.
+
+  22 Apr 2012; Hans de Graaff <graaff@gentoo.org> rubygems-1.8.23.ebuild:
+  Check for userpriv feature before running tests, fixing bug 408951.
+
+*rubygems-1.8.23 (22 Apr 2012)
+
+  22 Apr 2012; Hans de Graaff <graaff@gentoo.org> +rubygems-1.8.23.ebuild:
+  Version bump. Fixes security bug 412901.
+
+  22 Apr 2012; Hans de Graaff <graaff@gentoo.org> -rubygems-1.8.10-r1.ebuild,
+  -rubygems-1.8.11.ebuild:
+  Remove old versions.
+
+  09 Jan 2012; Hans de Graaff <graaff@gentoo.org> -rubygems-1.8.13.ebuild:
+  Remove broken version.
+
+*rubygems-1.8.15 (09 Jan 2012)
+
+  09 Jan 2012; Hans de Graaff <graaff@gentoo.org> +rubygems-1.8.15.ebuild:
+  Version bump. Fixes bug 398177.
+
+*rubygems-1.8.13 (08 Jan 2012)
+
+  08 Jan 2012; Hans de Graaff <graaff@gentoo.org> +rubygems-1.8.13.ebuild:
+  Version bump. Don't run tests for jruby since they are broken, should be
+  revisited for jruby 1.6.
+
+  29 Dec 2011; Tobias Klausmann <klausman@gentoo.org> rubygems-1.8.11.ebuild:
+  Keyworded on alpha, bug #332593
+
+*rubygems-1.8.11 (20 Nov 2011)
+
+  20 Nov 2011; Alex Legler <a3li@gentoo.org> +rubygems-1.8.11.ebuild:
+  Version bump, bug 391157
+
+*rubygems-1.8.10-r1 (31 Oct 2011)
+
+  31 Oct 2011; Alex Legler <a3li@gentoo.org> -rubygems-1.8.10.ebuild,
+  +rubygems-1.8.10-r1.ebuild, files/gentoo-defaults.rb:
+  Fix default gem binaries directory that would point to /usr/local for user
+  installations as well, causing permission errors. Revbump to update the
+  changes.
+
+  22 Oct 2011; Hans de Graaff <graaff@gentoo.org> -rubygems-1.8.5.ebuild,
+  -rubygems-1.8.7.ebuild:
+  Remove old versions.
+
+  22 Oct 2011; Hans de Graaff <graaff@gentoo.org> rubygems-1.8.10.ebuild:
+  Fix whitespace.
+
+  22 Oct 2011; Hans de Graaff <graaff@gentoo.org> rubygems-1.8.10.ebuild:
+  Add support for jruby. Depends on a fixed version of jruby.
+
+*rubygems-1.8.10 (22 Oct 2011)
+
+  22 Oct 2011; Hans de Graaff <graaff@gentoo.org> +rubygems-1.8.10.ebuild:
+  Version bump. Fix installation with ruby 1.9.3.
+
+  14 Sep 2011; Jeroen Roovers <jer@gentoo.org> rubygems-1.3.7-r1.ebuild:
+  Stable for HPPA (bug #369573).
+
+*rubygems-1.8.7 (24 Aug 2011)
+
+  24 Aug 2011; Alex Legler <a3li@gentoo.org> +rubygems-1.8.7.ebuild,
+  +files/rubygems-1.8.7-ruby19.patch:
+  Version bump (p.masked). Incuding a try to fix bug 336863.
 
 *rubygems-1.8.5 (25 Jun 2011)
 

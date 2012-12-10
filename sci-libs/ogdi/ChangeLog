@@ -1,6 +1,24 @@
 # ChangeLog for sci-libs/ogdi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/ogdi/ChangeLog,v 1.30 2011/06/17 11:05:12 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/ogdi/ChangeLog,v 1.35 2012/10/07 09:09:41 pacho Exp $
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #24135.
+
+  03 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> ogdi-3.2.0_beta2.ebuild:
+  keyword amd64-linux x86-linux
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> ChangeLog, Manifest:
+  Correct typo in ChangeLog
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> ogdi-3.1.5-r1.ebuild,
+  ogdi-3.1.6.ebuild, ogdi-3.2.0_beta2.ebuild:
+  Restrict proj version to <4.8 as projects.h no longer installed as a public
+  include file, #413635
+
+  26 Apr 2012; Justin Lecher <jlec@gentoo.org> ogdi-3.1.5-r1.ebuild,
+  ogdi-3.1.6.ebuild, ogdi-3.2.0_beta2.ebuild, metadata.xml:
+  Drop unnessecary die
 
   17 Jun 2011; Tomáš Chvátal <scarabeus@gentoo.org>
   files/ogdi-3.2.0_beta2-64b.patch:

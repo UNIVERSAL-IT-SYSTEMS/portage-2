@@ -1,6 +1,44 @@
 # ChangeLog for sci-chemistry/mosflm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/mosflm/ChangeLog,v 1.13 2011/07/19 19:45:36 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/mosflm/ChangeLog,v 1.19 2012/10/19 10:03:53 jlec Exp $
+
+  19 Oct 2012; Justin Lecher <jlec@gentoo.org> mosflm-7.0.6-r2.ebuild,
+  mosflm-7.0.7-r2.ebuild, mosflm-7.0.9.ebuild:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+*mosflm-7.0.9 (06 Jul 2012)
+
+  06 Jul 2012; Justin Lecher <jlec@gentoo.org> -files/7.0.8-parallel.patch,
+  -mosflm-7.0.8.ebuild, +mosflm-7.0.9.ebuild,
+  +files/mosflm-7.0.9-buffer-overflow.patch, +files/7.0.9-parallel.patch:
+  Version Bump
+
+*mosflm-7.0.8 (05 Jul 2012)
+
+  05 Jul 2012; Justin Lecher <jlec@gentoo.org> +files/7.0.8-parallel.patch,
+  -mosflm-7.0.7.ebuild, -mosflm-7.0.7-r1.ebuild, +mosflm-7.0.8.ebuild:
+  Version Bump, drop old
+
+*mosflm-7.0.7-r2 (19 Jun 2012)
+
+  19 Jun 2012; Justin Lecher <jlec@gentoo.org> +mosflm-7.0.7-r2.ebuild,
+  +files/mosflm-7.0.7-buffer-overflow.patch,
+  +files/mosflm-7.0.7-impl-dec.patch:
+  Fix Buffer overflow, #421843
+
+*mosflm-7.0.7-r1 (28 Apr 2012)
+
+  28 Apr 2012; Justin Lecher <jlec@gentoo.org> +files/7.0.7-parallel.patch,
+  mosflm-7.0.6-r2.ebuild, +mosflm-7.0.7-r1.ebuild:
+  Unbundle licbf and libjpeg, fix parallel build, Drop stable ppc keyword due
+  to broken deps
+
+*mosflm-7.0.7 (07 Sep 2011)
+
+  07 Sep 2011; Justin Lecher <jlec@gentoo.org> +mosflm-7.0.7.ebuild,
+  metadata.xml:
+  Version Bump, #349409
 
   19 Jul 2011; Markus Meier <maekke@gentoo.org> mosflm-7.0.6-r2.ebuild:
   x86 stable, bug #352112

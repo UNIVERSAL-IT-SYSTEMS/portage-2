@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/mpi-dotnet/mpi-dotnet-1.0.0.ebuild,v 1.8 2011/05/02 14:51:21 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/mpi-dotnet/mpi-dotnet-1.0.0.ebuild,v 1.10 2012/06/25 18:38:03 jsbronder Exp $
 
 WANT_AUTOTOOLS="2.5"
-inherit autotools mono
+inherit autotools eutils mono
 
 # "." is not allowed as part of a package name
 MY_PN="mpi.net"
@@ -20,7 +20,6 @@ KEYWORDS="~amd64 ppc x86"
 IUSE="doc examples"
 
 RDEPEND="virtual/mpi
-		!sys-cluster/lam-mpi
 		>=dev-lang/mono-2.0"
 DEPEND="${RDEPEND}
 		dev-lang/perl"

@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/ace/ace-5.7.2.ebuild,v 1.2 2010/07/13 00:19:11 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/ace/ace-5.7.2.ebuild,v 1.8 2012/07/29 16:15:56 armin76 Exp $
 
-inherit toolchain-funcs eutils
+inherit eutils multilib toolchain-funcs
 
 DESCRIPTION="The Adaptive Communications Environment"
 HOMEPAGE="http://www.cs.wustl.edu/~schmidt/ACE.html"
@@ -13,7 +13,7 @@ SRC_URI="!tao? ( http://download.dre.vanderbilt.edu/previous_versions/ACE-${PV}.
 	)"
 LICENSE="BSD as-is"
 SLOT="0"
-KEYWORDS="~x86 ~sparc ~ppc ~alpha ~amd64"
+KEYWORDS="amd64 ppc x86"
 IUSE="X ipv6 tao ciao"
 
 COMMON_DEPEND="dev-libs/openssl"
@@ -33,6 +33,8 @@ src_unpack() {
 	if has_version ">=dev-libs/openssl-1.0.0"; then
 		sed -i -e 's:SSL_METHOD:const SSL_METHOD:' configure || die
 	fi
+
+	sed -i -e 's/-O3//' configure || die
 }
 
 src_compile() {

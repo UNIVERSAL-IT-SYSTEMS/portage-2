@@ -1,6 +1,203 @@
 # ChangeLog for app-portage/portpeek
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/portpeek/ChangeLog,v 1.115 2011/07/06 17:00:33 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-portage/portpeek/ChangeLog,v 1.159 2012/12/01 17:31:03 armin76 Exp $
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> portpeek-2.0.25.ebuild:
+  sparc stable wrt #437832
+
+*portpeek-2.1.1 (01 Nov 2012)
+
+  01 Nov 2012; Michael Pagano <mpagano@gentoo.org> -portpeek-2.1.0.ebuild,
+  +portpeek-2.1.1.ebuild:
+  Remove some bad debug lines which caused exceptions. Remove old version
+
+*portpeek-2.1.0 (31 Oct 2012)
+
+  31 Oct 2012; Michael Pagano <mpagano@gentoo.org> +portpeek-2.1.0.ebuild:
+  Updated package.use and package.unmask handling.
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> portpeek-2.0.25.ebuild:
+  x86 stable wrt bug #437832
+
+  13 Oct 2012; Markus Meier <maekke@gentoo.org> portpeek-2.0.25.ebuild:
+  arm stable, bug #437832
+
+  12 Oct 2012; Anthony G. Basile <blueness@gentoo.org> portpeek-2.0.25.ebuild:
+  stable ppc, bug #437832
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> portpeek-2.0.25.ebuild:
+  Stable for amd64, wrt bug #437832
+
+  08 Sep 2012; Michael Pagano <mpagano@gentoo.org> -portpeek-1.9.70.ebuild:
+  Remove old version
+
+*portpeek-2.0.25 (01 Sep 2012)
+
+  01 Sep 2012; Michael Pagano <mpagano@gentoo.org> +portpeek-2.0.25.ebuild:
+  Use get_iuse instead of get_flags for package.use processing
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> portpeek-2.0.24.ebuild:
+  sparc stable wrt #421997
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> portpeek-2.0.24.ebuild:
+  arm stable, bug #421997
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> portpeek-2.0.24.ebuild:
+  Marking portpeek-2.0.24 ppc for bug 421997
+
+  21 Jun 2012; Agostino Sarubbo <ago@gentoo.org> portpeek-2.0.24.ebuild:
+  Stable for amd64, wrt bug #421997
+
+  21 Jun 2012; Michael Pagano <mpagano@gentoo.org> -portpeek-1.9.83.ebuild,
+  -portpeek-2.0.22.ebuild, -portpeek-2.0.23.ebuild:
+  Remove old versions
+
+  21 Jun 2012; Jeff Horelick <jdhore@gentoo.org> portpeek-2.0.24.ebuild:
+  marked x86 per bug 421997
+
+*portpeek-2.0.24 (15 May 2012)
+
+  15 May 2012; Michael Pagano <mpagano@gentoo.org> +portpeek-2.0.24.ebuild:
+  Fix for tilde handling error
+
+*portpeek-2.0.23 (11 May 2012)
+
+  11 May 2012; Michael Pagano <mpagano@gentoo.org> +portpeek-2.0.23.ebuild:
+  Fix reference before assignment in parse_package_use
+
+*portpeek-2.0.22 (23 Apr 2012)
+
+  23 Apr 2012; Michael Pagano <mpagano@gentoo.org> -portpeek-2.0.20.ebuild,
+  +portpeek-2.0.22.ebuild:
+  Fix confirmation of file fixing during check of package.use. bug #412387. Fix
+  confirmation of file fixing during check of package.use. bug #412387. Unify
+  colors for packages that are not installed. Refactor analysis of package.use
+  packages with no atom master v2.0.22. Thanks to Daniel Perzynski for
+  reporting, testing and assistance in making portpeek better and more useful.
+
+*portpeek-2.0.20 (17 Apr 2012)
+
+  17 Apr 2012; Michael Pagano <mpagano@gentoo.org> -portpeek-2.0.17.ebuild,
+  -portpeek-2.0.18.ebuild, -portpeek-2.0.19.ebuild, +portpeek-2.0.20.ebuild:
+  Fix error when multiple spaces separate use flags in package.use file. Bug
+  #411517. Thanks to Daniel Perzynski. Remove old versions.
+
+  15 Feb 2012; Michael Pagano <mpagano@gentoo.org> -portpeek-1.9.74.ebuild:
+  Remove old
+
+*portpeek-2.0.19 (10 Feb 2012)
+
+  10 Feb 2012; Michael Pagano <mpagano@gentoo.org> +portpeek-2.0.19.ebuild:
+  Fix displaying of exceptions to console. Honor -q flag during use flag
+  cleaning.
+
+*portpeek-2.0.18 (01 Feb 2012)
+
+  01 Feb 2012; Michael Pagano <mpagano@gentoo.org> +portpeek-2.0.18.ebuild:
+  Add missing module and remove * from tilde query
+
+  16 Jan 2012; Michael Pagano <mpagano@gentoo.org> -portpeek-2.0.15.ebuild,
+  -portpeek-2.0.16.ebuild:
+  Drop old versions
+
+  04 Jan 2012; Michael Pagano <mpagano@gentoo.org> portpeek-2.0.17.ebuild:
+  Fix to ebuild. Thanks to Arfrever.
+
+*portpeek-2.0.17 (04 Jan 2012)
+
+  04 Jan 2012; Michael Pagano <mpagano@gentoo.org> +portpeek-2.0.17.ebuild:
+  2.0.17 is the start of a version that will (one day) work on both python
+  versions 2.7 and 3.X
+
+  03 Jan 2012; Michael Pagano <mpagano@gentoo.org> -portpeek-2.0.12.ebuild,
+  -portpeek-2.0.13.ebuild:
+  Drop old versions
+
+*portpeek-2.0.16 (20 Dec 2011)
+
+  20 Dec 2011; Michael Pagano <mpagano@gentoo.org> +portpeek-2.0.16.ebuild:
+  Remove line from package.use if no useflags remain after cleaning
+
+  20 Dec 2011; Michael Pagano <mpagano@gentoo.org> -portpeek-1.9.82.ebuild:
+  Drop old
+
+*portpeek-1.9.83 (19 Dec 2011)
+
+  19 Dec 2011; Michael Pagano <mpagano@gentoo.org> +portpeek-1.9.83.ebuild:
+  If no valid flags exist for package in package.use, then remove that line.
+
+*portpeek-2.0.15 (16 Dec 2011)
+*portpeek-1.9.82 (16 Dec 2011)
+
+  16 Dec 2011; Michael Pagano <mpagano@gentoo.org> -portpeek-1.9.81.ebuild,
+  +portpeek-1.9.82.ebuild, +portpeek-2.0.15.ebuild:
+  Add use flag checking to 2.0.X series. Bug fixes in 1.9.82
+
+*portpeek-1.9.81 (15 Dec 2011)
+
+  15 Dec 2011; Michael Pagano <mpagano@gentoo.org> +portpeek-1.9.81.ebuild:
+  fix issue where valid use falg is declared invalid
+
+  15 Dec 2011; Michael Pagano <mpagano@gentoo.org> -portpeek-1.9.80.ebuild:
+  Remove broken version
+
+*portpeek-1.9.80 (15 Dec 2011)
+
+  15 Dec 2011; Michael Pagano <mpagano@gentoo.org> +portpeek-1.9.80.ebuild:
+  Support cleaning the package.use file. Some visual cleanups
+
+  31 Oct 2011; Michael Pagano <mpagano@gentoo.org> -portpeek-2.0.10.ebuild:
+  Remove old version
+
+  26 Oct 2011; Michael Pagano <mpagano@gentoo.org> -portpeek-1.5.8.4.ebuild,
+  -portpeek-1.5.9.3.ebuild:
+  Remove old versions
+
+  25 Oct 2011; Michael Pagano <mpagano@gentoo.org> -portpeek-1.9.71.ebuild,
+  -portpeek-1.9.72.ebuild:
+  Remove old versions
+
+*portpeek-2.0.13 (21 Oct 2011)
+
+  21 Oct 2011; Michael Pagano <mpagano@gentoo.org> +portpeek-2.0.13.ebuild:
+  Fix line handling if package is not installed and contains special character.
+  Add parameter to ask the user for confirmation before modifiying package
+  files. Update man page for fix-confirm functionality.
+
+*portpeek-1.9.74 (21 Oct 2011)
+
+  21 Oct 2011; Michael Pagano <mpagano@gentoo.org> +portpeek-1.9.74.ebuild:
+  Fix line handling if package is not installed and contains special character.
+  Add parameter to ask the user for confirmation before modifiying package
+  files. Update man page for fix-confirm functionality.
+
+*portpeek-2.0.12 (13 Oct 2011)
+
+  13 Oct 2011; Michael Pagano <mpagano@gentoo.org> -portpeek-2.0.11.ebuild,
+  +portpeek-2.0.12.ebuild:
+  Remove broken version. Add missing global variable overlay_list
+
+*portpeek-2.0.11 (11 Oct 2011)
+
+  11 Oct 2011; Michael Pagano <mpagano@gentoo.org> +portpeek-2.0.11.ebuild:
+  Add support for category/* in package.use. Handle ::overlay in package.*
+  files from bug #373019
+
+*portpeek-1.9.72 (11 Oct 2011)
+
+  11 Oct 2011; Michael Pagano <mpagano@gentoo.org> +portpeek-1.9.72.ebuild:
+  Add support for category/* in package.use. Handle ::overlay in package.*
+  files from bug #373019
+
+  04 Oct 2011; Michael Pagano <mpagano@gentoo.org> portpeek-2.0.10.ebuild:
+  Remove dependency on masked portage. All apis needed are in stable portage
+
+  04 Oct 2011; Joseph Jezak <josejx@gentoo.org> portpeek-1.9.70.ebuild:
+  Marked ppc stable for bug #371783.
+
+  28 Sep 2011; Michael Pagano <mpagano@gentoo.org> -portpeek-2.0.8.ebuild,
+  -portpeek-2.0.9.ebuild:
+  Old version cleanup
 
   04 Jul 2011; Michael Pagano <mpagano@gentoo.org> -portpeek-1.5.9.0-r1.ebuild:
   Remove old version
@@ -550,4 +747,3 @@
   10 Oct 2007; Mike Pagano <mpagano@gentoo.org> +metadata.xml,
   +portpeek-1.5.7.ebuild:
   Initial ebuild for new package.
-

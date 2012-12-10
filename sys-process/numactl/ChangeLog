@@ -1,6 +1,43 @@
 # ChangeLog for sys-process/numactl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/numactl/ChangeLog,v 1.15 2011/06/15 05:49:26 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-process/numactl/ChangeLog,v 1.25 2012/06/29 07:15:55 jdhore Exp $
+
+  29 Jun 2012; Jeff Horelick <jdhore@gentoo.org> numactl-2.0.7-r2.ebuild:
+  marked x86 per bug 422237
+
+  28 Jun 2012; Brent Baude <ranger@gentoo.org> numactl-2.0.7-r2.ebuild:
+  Marking numactl-2.0.7-r2 ppc for bug 422237
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> numactl-2.0.7-r2.ebuild:
+  Stable for amd64, wrt bug #422237
+
+*numactl-2.0.7-r2 (22 Mar 2012)
+
+  22 Mar 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/numactl-2.0.7-static_libs.patch, +numactl-2.0.7-r2.ebuild,
+  -numactl-2.0.7-r1.ebuild:
+  Build static library without -fPIC and make it optional wrt #379849 by
+  Agostino Sarubbo <ago@gentoo.org>
+
+  22 Mar 2012; Mike Frysinger <vapier@gentoo.org> numactl-2.0.7-r1.ebuild:
+  Fix libdir handling and update to EAPI=4 #379849 by Agostino Sarubbo.
+
+  07 Dec 2011; Kacper Kowalik <xarthisius@gentoo.org> numactl-2.0.7-r1.ebuild:
+  Marked ~ppc64 wrt #381313
+
+  06 Nov 2011; Brent Baude <ranger@gentoo.org> numactl-2.0.7.ebuild:
+  Marking numactl-2.0.7 ppc for bug 379807
+
+*numactl-2.0.7-r1 (14 Sep 2011)
+
+  14 Sep 2011; Fabian Groffen <grobian@gentoo.org> +numactl-2.0.7-r1.ebuild:
+  Bump for Prefix fixes, marked ~amd64-linux, bug #382347
+
+  26 Aug 2011; Thomas Kahle <tomka@gentoo.org> numactl-2.0.7.ebuild:
+  x86 stable per bug 379807
+
+  19 Aug 2011; Markos Chandras <hwoarang@gentoo.org> numactl-2.0.7.ebuild:
+  Stable on amd64 wrt bug #379807
 
 *numactl-2.0.7 (15 Jun 2011)
 

@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/pulseaudio-0.9.22-r2.ebuild,v 1.8 2011/07/22 20:35:37 halcy0n Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/pulseaudio-0.9.22-r2.ebuild,v 1.13 2012/12/02 02:11:15 ssuominen Exp $
 
 EAPI=3
 
-inherit autotools eutils libtool flag-o-matic versionator
+inherit autotools eutils libtool flag-o-matic multilib user versionator
 
 DESCRIPTION="A networked sound server with an advanced plugin system"
 HOMEPAGE="http://www.pulseaudio.org/"
@@ -13,7 +13,7 @@ SRC_URI="http://0pointer.de/lennart/projects/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ~hppa ia64 ppc ppc64 sh sparc x86 ~amd64-linux ~x86-linux"
+KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sh sparc x86 ~amd64-linux ~x86-linux"
 IUSE="+alsa avahi +caps jack lirc oss tcpd +X dbus libsamplerate gnome bluetooth +asyncns +glib test doc +udev ipv6 system-wide realtime"
 
 RDEPEND="app-admin/eselect-esd
@@ -40,9 +40,8 @@ RDEPEND="app-admin/eselect-esd
 		>=sys-apps/dbus-1.0.0
 	)
 	asyncns? ( net-libs/libasyncns )
-	udev? ( || ( >=sys-fs/udev-171[hwdb] >=sys-fs/udev-143[extras] ) )
+	udev? ( >=virtual/udev-143[hwdb] )
 	realtime? ( sys-auth/rtkit )
-	>=media-libs/audiofile-0.2.6-r1
 	>=media-libs/speex-1.2_beta
 	>=media-libs/libsndfile-1.0.20
 	sys-libs/gdbm
@@ -55,7 +54,7 @@ DEPEND="${RDEPEND}
 		|| ( >=x11-libs/libXtst-1.0.99.2 <x11-proto/xextproto-7.0.99 )
 	)
 	dev-libs/libatomic_ops
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	system-wide? ( || ( dev-util/unifdef sys-freebsd/freebsd-ubin ) )
 	dev-util/intltool"
 
@@ -120,7 +119,7 @@ src_configure() {
 		--localstatedir="${EPREFIX}"/var \
 		--disable-per-user-esound-socket \
 		--with-database=gdbm \
-		--with-udev-rules-dir="${EPREFIX}/$(get_libdir)/udev/rules.d" \
+		--with-udev-rules-dir="${EPREFIX}/lib/udev/rules.d" \
 		|| die "econf failed"
 
 	if use doc; then

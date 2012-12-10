@@ -1,6 +1,12 @@
 # ChangeLog for virtual/mpi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/mpi/ChangeLog,v 1.17 2011/06/30 23:13:18 alexxy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/mpi/ChangeLog,v 1.19 2012/10/15 09:56:48 naota Exp $
+
+  15 Oct 2012;  <naota@gentoo.org> mpi-2.0-r1.ebuild:
+  Add ~x86-fbsd.
+
+  27 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> mpi-2.0-r1.ebuild:
+  Fix typo in RDEPEND wrt #436394 by Andrew Savchenko <bircoph@gmail.com>
 
   30 Jun 2011; Alexey Shvetsov <alexxy@gentoo.org> mpi-2.0-r1.ebuild:
   Add mvapich2 to mpi implentations
@@ -62,4 +68,3 @@
   +mpi-1.0.ebuild:
   New-style virtual for MPI implementation, so the default not being keyworded
   for a certain arch doesn't screw up dependencies.
-

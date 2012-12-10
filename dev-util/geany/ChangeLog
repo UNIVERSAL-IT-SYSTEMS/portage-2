@@ -1,6 +1,67 @@
 # ChangeLog for dev-util/geany
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/geany/ChangeLog,v 1.44 2011/03/27 19:41:40 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/geany/ChangeLog,v 1.59 2012/12/01 12:15:00 polynomial-c Exp $
+
+*geany-1.22-r1 (01 Dec 2012)
+
+  01 Dec 2012; Lars Wendler <polynomial-c@gentoo.org> -geany-0.21-r1.ebuild,
+  -geany-1.22.ebuild, +geany-1.22-r1.ebuild:
+  Switched to EAPI-5 for verbose build (bug #445388) and update desktop mime
+  database (bug #438224). Removed old.
+
+  27 Sep 2012; Anthony G. Basile <blueness@gentoo.org> geany-1.22.ebuild:
+  stable ppc, bug #429056
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> geany-1.22.ebuild:
+  x86 stable wrt bug #429056
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> geany-1.22.ebuild:
+  Stable for amd64, wrt bug #429056
+
+  19 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> geany-1.22.ebuild:
+  Completed list of translations.
+
+*geany-1.22 (19 Jun 2012)
+
+  19 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> -geany-0.19.2.ebuild,
+  +geany-1.22.ebuild:
+  Version bump. Removed old.
+
+  14 Jun 2012; Michael Weber <xmw@gentoo.org> geany-0.21-r1.ebuild:
+  ppc stable (bug 404537)
+
+*geany-0.21-r1 (06 Jun 2012)
+
+  06 Jun 2012; Lars Wendler <polynomial-c@gentoo.org> -geany-0.20.ebuild,
+  -geany-0.21.ebuild, +geany-0.21-r1.ebuild:
+  Simple docdir fix (bug #419745). Bumped straight to stable. Removed old
+  versions.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> geany-0.19.2.ebuild,
+  geany-0.20.ebuild, geany-0.21.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> geany-0.21.ebuild:
+  Add ~amd64-linux keyword.
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> geany-0.21.ebuild:
+  x86 stable wrt bug #404537
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> geany-0.21.ebuild:
+  Stable for amd64, wrt bug #404537
+
+  24 Nov 2011; Zac Medico <zmedico@gentoo.org> geany-0.21.ebuild:
+  Fix for prefix and add ~x86-linux keyword.
+
+  06 Oct 2011; Lars Wendler <polynomial-c@gentoo.org> geany-0.19.2.ebuild,
+  geany-0.20.ebuild, geany-0.21.ebuild:
+  Bumped all ebuilds to EAPI-4.
+
+*geany-0.21 (06 Oct 2011)
+
+  06 Oct 2011; Lars Wendler <polynomial-c@gentoo.org> -geany-0.19.ebuild,
+  geany-0.19.2.ebuild, geany-0.20.ebuild, +geany-0.21.ebuild:
+  Version bump. Removed old.
 
   27 Mar 2011; Brent Baude <ranger@gentoo.org> geany-0.19.2.ebuild:
   stable ppc, bug 352144
@@ -166,4 +227,3 @@
   19 Jun 2007; Samuli Suominen <ssuominen@gentoo.org> +geany-0.11.ebuild:
   Initial commit for bug 114815. Thanks to Mathieu Bonnet, Paul Bredbury, Yura
   Semashko, Lucas Chiesa, Steev Klimaszewski, Pacho Ramos and many others.
-

@@ -1,6 +1,60 @@
 # ChangeLog for sys-auth/pam_mount
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_mount/ChangeLog,v 1.54 2011/05/22 16:16:38 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_mount/ChangeLog,v 1.67 2012/05/28 00:17:34 mattst88 Exp $
+
+  28 May 2012; Matt Turner <mattst88@gentoo.org> -pam_mount-2.1.ebuild,
+  -pam_mount-2.5.ebuild, -pam_mount-2.6.ebuild,
+  -files/pam_mount-2.6-pmvarrun-bin.diff, -pam_mount-2.8.ebuild,
+  -pam_mount-2.10.ebuild, -pam_mount-2.12.ebuild:
+  Drop old versions.
+
+  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org> pam_mount-2.6.ebuild:
+  Add missing inheritance of eutils.eclass
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> pam_mount-2.1.ebuild,
+  pam_mount-2.5.ebuild, pam_mount-2.6.ebuild, pam_mount-2.8.ebuild,
+  pam_mount-2.10.ebuild, pam_mount-2.11.ebuild, pam_mount-2.12.ebuild,
+  pam_mount-2.13.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> pam_mount-2.11.ebuild:
+  Marking pam_mount-2.11 ppc for bug 380783
+
+  24 Dec 2011; Hanno Boeck <hanno@gentoo.org> pam_mount-2.13.ebuild:
+  Needs mount / util-linux 2.20 or later.
+
+*pam_mount-2.13 (15 Dec 2011)
+
+  15 Dec 2011; Hanno Boeck <hanno@gentoo.org> +pam_mount-2.13.ebuild:
+  Version bump.
+
+*pam_mount-2.12 (06 Oct 2011)
+
+  06 Oct 2011; Hanno Boeck <hanno@gentoo.org> +pam_mount-2.12.ebuild:
+  Version bump.
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> pam_mount-2.11.ebuild:
+  x86 stable, bug #380783
+
+  31 Aug 2011; Tony Vroon <chainsaw@gentoo.org> pam_mount-2.11.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella" Delaney &
+  Agostino "ago" Sarubbo in bug #380783 filed by Raphael "Falco" Marichez.
+
+  30 Aug 2011; Matt Turner <mattst88@gentoo.org> pam_mount-2.11.ebuild:
+  Don't install selinux files with USE=-selinux. Thanks to Agostino Sarubbo for
+  noticing in bug 380783.
+
+  25 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> pam_mount-2.11.ebuild:
+  QA: run eautoreconf to avoid maintainer-mode rebuild.
+
+  18 Aug 2011; Matt Turner <mattst88@gentoo.org> pam_mount-2.11.ebuild,
+  +files/pam_mount-2.11-fix-build-without-cryptsetup.patch:
+  Fix build with USE=-crypt, bug 379267
+
+*pam_mount-2.11 (14 Aug 2011)
+
+  14 Aug 2011; Hanno Boeck <hanno@gentoo.org> +pam_mount-2.11.ebuild:
+  Version bump.
 
   22 May 2011; Matt Turner <mattst88@gentoo.org> pam_mount-2.10.ebuild:
   Change libhx dependency to 3.6 from 3.10.1

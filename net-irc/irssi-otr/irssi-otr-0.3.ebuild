@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/irssi-otr/irssi-otr-0.3.ebuild,v 1.3 2010/06/28 09:13:06 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/irssi-otr/irssi-otr-0.3.ebuild,v 1.5 2012/05/03 06:27:14 jdhore Exp $
 
 EAPI=2
 inherit cmake-utils
@@ -16,7 +16,7 @@ SRC_URI="ftp://download.tuxfamily.org/irssiotr/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~sparc ~x86"
+KEYWORDS="~amd64 ~hppa ~sparc ~x86"
 IUSE="debug"
 
 RDEPEND="net-libs/libotr
@@ -29,7 +29,7 @@ RDEPEND="net-libs/libotr
 	)"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-lang/python"
 
 src_install() {

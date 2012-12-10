@@ -1,6 +1,18 @@
 # ChangeLog for dev-embedded/picp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-embedded/picp/ChangeLog,v 1.7 2011/05/07 08:28:51 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-embedded/picp/ChangeLog,v 1.11 2012/09/08 00:39:23 radhermit Exp $
+
+  08 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  17 Feb 2012; Tim Harder <radhermit@gentoo.org> picp-0.6.8.ebuild:
+  Remove unnecessary empty DEPEND.
+
+  17 Feb 2012; Tim Harder <radhermit@gentoo.org> -picp-0.6.4.ebuild:
+  Remove old.
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> picp-0.6.8.ebuild:
+  x86 stable wrt bug #396865
 
 *picp-0.6.8 (07 May 2011)
 

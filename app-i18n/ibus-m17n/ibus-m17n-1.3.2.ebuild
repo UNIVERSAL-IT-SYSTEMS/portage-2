@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-m17n/ibus-m17n-1.3.2.ebuild,v 1.2 2011/04/05 19:52:57 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/ibus-m17n/ibus-m17n-1.3.2.ebuild,v 1.5 2012/05/03 19:24:28 jdhore Exp $
 
 EAPI="3"
 
@@ -10,7 +10,7 @@ SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="gtk nls"
 
 RDEPEND=">=app-i18n/ibus-1.3
@@ -18,7 +18,7 @@ RDEPEND=">=app-i18n/ibus-1.3
 	dev-libs/m17n-lib
 	nls? ( virtual/libintl )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	>=sys-devel/gettext-0.16.1"
 RDEPEND="${RDEPEND}
 	dev-db/m17n-db

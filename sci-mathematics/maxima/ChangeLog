@@ -1,6 +1,77 @@
 # ChangeLog for sci-mathematics/maxima
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/maxima/ChangeLog,v 1.89 2011/06/19 16:36:32 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/maxima/ChangeLog,v 1.101 2012/10/30 16:38:03 grozin Exp $
+
+  30 Oct 2012; Andrey Grozin <grozin@gentoo.org> files/maxima-rmaxima.patch:
+  Fix maxima-rmaxima.patch for cases when maxima is compiled by several lisps,
+  some support readline, some not
+
+  25 Aug 2012; Andrey Grozin <grozin@gentoo.org> maxima-5.28.0.ebuild,
+  files/maxima-5.28.0-sbcl.patch, files/maxima-5.28.0.patch,
+  +files/maxima-ccl.patch:
+  Correcting sbcl workaround (#411453); dont load init file in ccl (#432246,
+  thanks to RCV <reich-cv@yandex.ru>)
+
+*maxima-5.28.0 (15 Aug 2012)
+
+  15 Aug 2012; Andrey Grozin <grozin@gentoo.org> -maxima-5.23.2.ebuild,
+  -files/maxima-5.23.2-emacs-version.patch, -files/maxima-5.23.2-wish.patch,
+  -files/maxima-5.23.2.patch, -maxima-5.24.0-r1.ebuild,
+  -files/maxima-5.24.0-wish.patch, -files/maxima-5.24.0.patch,
+  -maxima-5.25.1.ebuild, -files/maxima-5.25.1-wish.patch,
+  -files/maxima-5.25.1.patch, +maxima-5.28.0.ebuild,
+  +files/maxima-5.28.0-sbcl.patch, +files/maxima-5.28.0-wish.patch,
+  +files/maxima-5.28.0.patch:
+  Version bump, cleaning old
+
+*maxima-5.27.0-r1 (14 Jun 2012)
+
+  14 Jun 2012; Jesus Rivero <neurogeek@gentoo.org> -maxima-5.27.0.ebuild,
+  +maxima-5.27.0-r1.ebuild, +files/maxima-5.27.0-inhibit-sys_usr-inits.patch:
+  Revision bump. Fixes bug #411453
+
+  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org> maxima-5.18.1.ebuild,
+  maxima-5.23.2.ebuild, maxima-5.24.0-r1.ebuild, maxima-5.25.1.ebuild,
+  maxima-5.26.0.ebuild, maxima-5.27.0.ebuild:
+  Add missing inheritance of eutils.eclass
+
+*maxima-5.27.0 (05 Apr 2012)
+
+  05 Apr 2012; Andrey Grozin <grozin@gentoo.org> +maxima-5.27.0.ebuild,
+  +files/maxima-5.27.0-wish.patch, +files/maxima-5.27.0.patch:
+  Version bump
+
+  13 Feb 2012; Andrey Grozin <grozin@gentoo.org> maxima-5.26.0.ebuild,
+  +files/maxima-5.26.0-ecls-12.2.1.patch:
+  Fix building with ecls-12.2.1
+
+*maxima-5.26.0 (21 Dec 2011)
+
+  21 Dec 2011; Andrey Grozin <grozin@gentoo.org> +maxima-5.26.0.ebuild,
+  +files/maxima-5.26.0-wish.patch, +files/maxima-5.26.0.patch:
+  Version bump
+
+  03 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Remove unused local descs.
+
+*maxima-5.25.1 (31 Aug 2011)
+
+  31 Aug 2011; Andrey Grozin <grozin@gentoo.org> -maxima-5.25.0.ebuild,
+  -files/maxima-5.25.0-wish.patch, -files/maxima-5.25.0.patch,
+  +maxima-5.25.1.ebuild, +files/maxima-5.25.1-wish.patch,
+  +files/maxima-5.25.1.patch:
+  Version bump
+
+  27 Aug 2011; Andrey Grozin <grozin@gentoo.org> maxima-5.25.0.ebuild,
+  +files/maxima-ecl-ldflags.patch:
+  Fixed LDFLAGS handling in ecl (bug #378195), thanks to jez austin
+  <jezaustin@gmail.com>
+
+*maxima-5.25.0 (04 Aug 2011)
+
+  04 Aug 2011; Andrey Grozin <grozin@gentoo.org> +maxima-5.25.0.ebuild,
+  +files/maxima-5.25.0-wish.patch, +files/maxima-5.25.0.patch:
+  Version bump
 
   19 Jun 2011; Raúl Porcel <armin76@gentoo.org> maxima-5.18.1.ebuild,
   maxima-5.23.2.ebuild, maxima-5.24.0-r1.ebuild:

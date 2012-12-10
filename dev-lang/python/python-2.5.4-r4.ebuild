@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/python-2.5.4-r4.ebuild,v 1.29 2011/05/17 15:14:43 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/python-2.5.4-r4.ebuild,v 1.34 2012/07/30 18:09:26 vapier Exp $
 
 EAPI="1"
 
@@ -47,7 +47,7 @@ RDEPEND=">=app-admin/eselect-python-20091230
 		)
 		doc? ( dev-python/python-docs:${SLOT} )"
 DEPEND="${RDEPEND}
-		dev-util/pkgconfig"
+		virtual/pkgconfig"
 RDEPEND+=" !build? ( app-misc/mime-types )"
 PDEPEND="app-admin/python-updater"
 
@@ -60,10 +60,6 @@ pkg_setup() {
 		ewarn "\"bsddb\" module is out-of-date and no longer maintained inside dev-lang/python. It has"
 		ewarn "been additionally removed in Python 3. You should use external, still maintained \"bsddb3\""
 		ewarn "module provided by dev-python/bsddb3 which supports both Python 2 and Python 3."
-	fi
-
-	if built_with_use sys-devel/gcc libffi; then
-		die "Reinstall sys-devel/gcc with \"libffi\" USE flag disabled"
 	fi
 }
 
@@ -101,6 +97,9 @@ src_unpack() {
 		# Remove Microsoft Windows executables.
 		rm Lib/distutils/command/wininst-*.exe
 	fi
+
+	# Linux-3 compat. Bug #374579 (upstream issue12571)
+	cp -r "${S}/Lib/plat-linux2" "${S}/Lib/plat-linux3" || die
 
 	eautoreconf
 }
@@ -167,6 +166,9 @@ src_configure() {
 
 	# Export CXX so it ends up in /usr/lib/python2.X/config/Makefile.
 	tc-export CXX
+	# The configure script fails to use pkg-config correctly.
+	# http://bugs.python.org/issue15506
+	export ac_cv_path_PKG_CONFIG=$(tc-getPKG_CONFIG)
 
 	# Set LDFLAGS so we link modules with -lpython2.5 correctly.
 	# Needed on FreeBSD unless Python 2.5 is already installed.
@@ -272,7 +274,10 @@ src_install() {
 
 	newconfd "${FILESDIR}/pydoc.conf" pydoc-${SLOT} || die "newconfd failed"
 	newinitd "${FILESDIR}/pydoc.init" pydoc-${SLOT} || die "newinitd failed"
-	sed -e "s:@PYDOC@:pydoc${SLOT}:" -i "${ED}etc/init.d/pydoc-${SLOT}" || die "sed failed"
+	sed \
+		-e "s:@PYDOC_PORT_VARIABLE@:PYDOC${SLOT/./_}_PORT:" \
+		-e "s:@PYDOC@:pydoc${SLOT}:" \
+		-i "${ED}etc/conf.d/pydoc-${SLOT}" "${ED}etc/init.d/pydoc-${SLOT}" || die "sed failed"
 }
 
 pkg_preinst() {

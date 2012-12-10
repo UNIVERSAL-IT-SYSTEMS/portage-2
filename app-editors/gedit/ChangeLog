@@ -1,6 +1,68 @@
 # ChangeLog for app-editors/gedit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/gedit/ChangeLog,v 1.328 2011/04/08 12:12:35 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/gedit/ChangeLog,v 1.340 2012/05/25 02:08:16 tetromino Exp $
+
+*gedit-3.4.2 (25 May 2012)
+
+  25 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +gedit-3.4.2.ebuild:
+  Version bump.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gedit-2.30.4.ebuild,
+  gedit-3.2.6.ebuild, gedit-3.4.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  30 Apr 2012; Justin Lecher <jlec@gentoo.org> gedit-2.30.4.ebuild,
+  gedit-3.2.6.ebuild, gedit-3.4.1.ebuild:
+  Corrected HOMEPAGE, #414051
+
+*gedit-3.4.1 (22 Apr 2012)
+
+  22 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -gedit-3.2.5.ebuild,
+  +gedit-3.4.1.ebuild:
+  Version bump with assorted bugfixes and UI improvements.
+
+  07 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org> gedit-2.30.4.ebuild,
+  gedit-3.2.5.ebuild, gedit-3.2.6.ebuild:
+  Directly inherit multilib, thanks to Arfrever for reporting.
+
+  04 Feb 2012; Justin Lecher <jlec@gentoo.org> gedit-3.2.6.ebuild,
+  metadata.xml:
+  Enable support for zeitgeist plugin, #401755
+
+*gedit-3.2.6 (15 Jan 2012)
+
+  15 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -gedit-3.2.3.ebuild,
+  +gedit-3.2.6.ebuild:
+  Bump, fixes various bugs, including gtk+-3.3 compatibility. Drop old.
+
+  13 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org> gedit-3.2.3.ebuild,
+  gedit-3.2.5.ebuild:
+  Add missing python cairo deps; modernize py-compile idiom.
+
+*gedit-3.2.5 (21 Dec 2011)
+
+  21 Dec 2011; Gilles Dartiguelongue <eva@gentoo.org> -gedit-3.2.1.ebuild,
+  +gedit-3.2.5.ebuild:
+  Version bump. Clean up old revision.
+
+*gedit-3.2.3 (20 Nov 2011)
+
+  20 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org> +gedit-3.2.3.ebuild:
+  Version bump.
+
+*gedit-3.2.1 (03 Nov 2011)
+
+  03 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> -gedit-3.0.6.ebuild,
+  +gedit-3.2.1.ebuild:
+  Bump to 3.2.1 from the gnome overlay. Drop old. Drop alpha, arm, ia64, ppc,
+  ppc64, sparc keywords due to libpeas dependency. Notable changes: snippet
+  updates, UI fixes, pygobject-3 compatibility.
+
+*gedit-3.0.6 (16 Aug 2011)
+
+  16 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> +gedit-3.0.6.ebuild,
+  metadata.xml:
+  Bump to 3.0.6, from gnome overlay for GNOME 3
 
   08 Apr 2011; Gilles Dartiguelongue <eva@gentoo.org> -gedit-2.30.3.ebuild:
   Clean up old revision.

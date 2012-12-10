@@ -1,6 +1,109 @@
 # ChangeLog for dev-lang/R
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/ChangeLog,v 1.186 2011/07/20 19:56:35 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/ChangeLog,v 1.207 2012/10/26 21:44:05 calchan Exp $
+
+*R-2.15.2 (26 Oct 2012)
+
+  26 Oct 2012; Denis Dupeyron <calchan@gentoo.org> +R-2.15.2.ebuild:
+  Version bump.
+
+  07 Oct 2012; Justin Lecher <jlec@gentoo.org> R-2.10.1.ebuild,
+  R-2.14.2.ebuild, R-2.15.0.ebuild, R-2.15.1.ebuild, metadata.xml:
+  virtual/fortran is now in *DEPEND of fortran-2.eclass
+
+  04 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> R-2.15.1.ebuild:
+  keyword amd64-linux, x86-linux, x64-darwin, added prefix stuff for darwin
+
+*R-2.15.1 (29 Jun 2012)
+
+  29 Jun 2012; Denis Dupeyron <calchan@gentoo.org> +R-2.15.1.ebuild:
+  Version bump.
+
+  22 Jun 2012; Denis Dupeyron <calchan@gentoo.org> R-2.15.0.ebuild:
+  Removed debugging code which stayed behind by mistake. Many thanks to Gabriel
+  Marcano in bug #419761.
+
+  20 Jun 2012; Denis Dupeyron <calchan@gentoo.org> R-2.15.0.ebuild:
+  Fix bug #419761
+
+  19 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org> R-2.15.0.ebuild:
+  commented patches with upstream reports
+
+  19 Jun 2012; Sébastien Fabbro <bicatali@gentoo.org> R-2.15.0.ebuild:
+  Update bash completion file with newer one and fix installation
+
+  06 Jun 2012; Zac Medico <zmedico@gentoo.org> R-2.10.1.ebuild, R-2.14.1.ebuild,
+  R-2.14.2.ebuild, R-2.15.0.ebuild:
+  inherit multilib for get_libdir
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> R-2.10.1.ebuild,
+  R-2.14.1.ebuild, R-2.14.2.ebuild, R-2.15.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*R-2.15.0 (30 Mar 2012)
+
+  30 Mar 2012; Denis Dupeyron <calchan@gentoo.org> +R-2.15.0.ebuild:
+  Version bump.
+
+*R-2.14.2 (05 Mar 2012)
+
+  05 Mar 2012; Denis Dupeyron <calchan@gentoo.org> +R-2.14.2.ebuild,
+  +files/R-2.14.2-library-writability.patch,
+  +files/R-2.14.2-prune-package-update.patch, metadata.xml:
+  Version bump. Add patches to fix handling of library writability and package
+  updates.
+
+  27 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> R-2.14.1.ebuild,
+  +files/R-2.14.1-warnings-buffer-overflow.patch:
+  Fixed crash caused by too many warnings, bug #405463, thanks Sebastian Luther
+
+  09 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> R-2.14.1.ebuild,
+  +files/R-2.14.1-pcre830.patch:
+  Fixed for pcre-8.30, thanks Rainer 'Siju' Sigl for his initial work
+
+  06 Feb 2012; Sébastien Fabbro <bicatali@gentoo.org> R-2.14.1.ebuild,
+  files/R-2.14.1-tiff.patch:
+  Fixed libtiff syntax in patch (bug #402327), remove
+  bash_completion_post_install (bug #402329)
+
+*R-2.14.1 (02 Jan 2012)
+
+  02 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  files/R-2.11.1-parallel.patch, files/R-2.12.1-ldflags.patch,
+  -R-2.13.0.ebuild, -R-2.13.1-r1.ebuild, files/R-2.13.1-zlib_header_fix.patch,
+  -R-2.14.0.ebuild, +R-2.14.1.ebuild, +files/R-2.14.1-rmath-shared.patch,
+  +files/R-2.14.1-tiff.patch:
+  Version bump. Fixed automagic dependencies on icu and tiff. Added required
+  dependency on pango when cairo is set. Fixed as-needed on standalone math
+  library. Added required use flags for graphics capabilities (bug #373649).
+  Removed glibc hacks, applied on glibc package. Commented patches for another
+  attempt to submit them upstream. Removed older unstable versions, fixing bugs
+  #353545, bug #357077, bug #382687, bug #384493, bug #384723.
+
+*R-2.14.0 (21 Nov 2011)
+
+  21 Nov 2011; Justin Lecher <jlec@gentoo.org> R-2.10.1.ebuild,
+  -R-2.12.1.ebuild, -R-2.12.2.ebuild, R-2.13.0.ebuild, R-2.13.1-r1.ebuild,
+  +R-2.14.0.ebuild, metadata.xml:
+  Version Bump, #391045, cleaned old, moved to bashcompletion-r1.eclass, sorted
+  minor things in ebuild (adopt changes in between versions)
+
+  17 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> R-2.10.1.ebuild:
+  Fix building with libpng15 wrt #366223. Fix building with sys-libs/zlib >=
+  1.2.5.1-r1 (OF).
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> R-2.10.1.ebuild,
+  R-2.12.1.ebuild, R-2.12.2.ebuild, R-2.13.0.ebuild, R-2.13.1-r1.ebuild:
+  remove ptex dep as it is going away
+
+*R-2.13.1-r1 (25 Sep 2011)
+
+  25 Sep 2011; Steve Arnold <nerdboy@gentoo.org> -R-2.13.1.ebuild,
+  +R-2.13.1-r1.ebuild, +files/R-2.13.1-zlib_header_fix.patch:
+  Updated for zlib header changes (closes bug #383431).
+
+  04 Aug 2011; Naohiro Aota <naota@gentoo.org> R-2.13.1.ebuild:
+  Fix dependency for FreeBSD. We have rpc related functions in freebsd-lib.
 
 *R-2.13.1 (20 Jul 2011)
 

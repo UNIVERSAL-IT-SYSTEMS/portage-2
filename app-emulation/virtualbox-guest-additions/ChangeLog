@@ -1,6 +1,205 @@
 # ChangeLog for app-emulation/virtualbox-guest-additions
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-guest-additions/ChangeLog,v 1.75 2011/07/22 16:58:25 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-guest-additions/ChangeLog,v 1.109 2012/12/01 11:28:40 polynomial-c Exp $
+
+  01 Dec 2012; Lars Wendler <polynomial-c@gentoo.org>
+  virtualbox-guest-additions-4.2.2.ebuild,
+  virtualbox-guest-additions-4.2.4.ebuild:
+  Removed sys-devel/dev86 as build-dependency. Upstream replaced it with
+  openwatcom which we don't have in portage right now (see bug #233097).
+
+  17 Nov 2012; Lars Wendler <polynomial-c@gentoo.org>
+  virtualbox-guest-additions-4.1.22.ebuild,
+  virtualbox-guest-additions-4.2.2.ebuild,
+  virtualbox-guest-additions-4.2.4.ebuild, files/xorg.conf.vbox:
+  Fixed elog message to no longer mention the deprecated (and removed)
+  virtualbox mouse driver. Adjusted the sample xorg.conf file accordingly (bug
+  #443608).
+
+*virtualbox-guest-additions-4.2.4 (10 Nov 2012)
+
+  10 Nov 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-4.2.0.ebuild,
+  +virtualbox-guest-additions-4.2.4.ebuild:
+  Version bump. Removed old.
+
+*virtualbox-guest-additions-4.2.2 (24 Oct 2012)
+
+  24 Oct 2012; Patrick Lauer <patrick@gentoo.org>
+  +virtualbox-guest-additions-4.2.2.ebuild:
+  Bump #439366
+
+  18 Sep 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-4.1.12.ebuild,
+  -virtualbox-guest-additions-4.1.18.ebuild:
+  Removed old versions.
+
+  17 Sep 2012; Andreas Schuerch <nativemad@gentoo.org>
+  virtualbox-guest-additions-4.1.22.ebuild:
+  x86 stable, see bug 434872
+
+  16 Sep 2012; Agostino Sarubbo <ago@gentoo.org>
+  virtualbox-guest-additions-4.1.22.ebuild:
+  Stable for amd64, wrt bug #434872
+
+*virtualbox-guest-additions-4.2.0 (13 Sep 2012)
+*virtualbox-guest-additions-4.1.22 (13 Sep 2012)
+
+  13 Sep 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-4.1.20.ebuild,
+  +virtualbox-guest-additions-4.1.22.ebuild,
+  +virtualbox-guest-additions-4.2.0.ebuild:
+  Version bump. Removed old. Added forgotten 4.1.22 version as well.
+
+*virtualbox-guest-additions-4.1.20 (21 Aug 2012)
+
+  21 Aug 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-4.1.16.ebuild,
+  +virtualbox-guest-additions-4.1.20.ebuild:
+  Version bump. Removed old.
+
+  07 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  virtualbox-guest-additions-4.1.18.ebuild:
+  Stable on amd64 wrt bug #427852
+
+*virtualbox-guest-additions-4.1.18 (20 Jun 2012)
+
+  20 Jun 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-4.1.14.ebuild,
+  +virtualbox-guest-additions-4.1.18.ebuild:
+  Version bump. Removed old.
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org>
+  virtualbox-guest-additions-4.1.12.ebuild,
+  virtualbox-guest-additions-4.1.14.ebuild,
+  virtualbox-guest-additions-4.1.16.ebuild:
+  inherit user for enewgroup and enewuser
+
+*virtualbox-guest-additions-4.1.16 (23 May 2012)
+
+  23 May 2012; Lars Wendler <polynomial-c@gentoo.org>
+  +virtualbox-guest-additions-4.1.16.ebuild:
+  Version bump.
+
+*virtualbox-guest-additions-4.1.14 (26 Apr 2012)
+
+  26 Apr 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-4.1.4-r1.ebuild,
+  -virtualbox-guest-additions-4.1.8.ebuild,
+  -virtualbox-guest-additions-4.1.10.ebuild,
+  +virtualbox-guest-additions-4.1.14.ebuild:
+  Version bump. Removed old.
+
+  24 Apr 2012; Agostino Sarubbo <ago@gentoo.org>
+  virtualbox-guest-additions-4.1.12.ebuild:
+  Stable for amd64, wrt bug #412565
+
+  22 Apr 2012; Markus Meier <maekke@gentoo.org>
+  virtualbox-guest-additions-4.1.12.ebuild:
+  x86 stable, bug #412565
+
+  09 Apr 2012; Markus Meier <maekke@gentoo.org>
+  virtualbox-guest-additions-4.1.8.ebuild:
+  x86 stable, bug #403441
+
+*virtualbox-guest-additions-4.1.12 (05 Apr 2012)
+
+  05 Apr 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-4.1.6-r1.ebuild,
+  +virtualbox-guest-additions-4.1.12.ebuild:
+  Version bump (bug #410811). Removed old.
+
+  15 Mar 2012; Lars Wendler <polynomial-c@gentoo.org>
+  virtualbox-guest-additions-4.1.10.ebuild:
+  Fixed ${S} (bug #408365).
+
+*virtualbox-guest-additions-4.1.10 (15 Mar 2012)
+
+  15 Mar 2012; Lars Wendler <polynomial-c@gentoo.org>
+  +virtualbox-guest-additions-4.1.10.ebuild:
+  Version bump.
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  virtualbox-guest-additions-4.1.8.ebuild:
+  Stable for amd64, wrt bug #403441
+
+  15 Jan 2012; Torsten Veller <tove@gentoo.org>
+  files/virtualbox-guest-additions-7.initd:
+  Fix the look-alike cvs keyword (#398773)
+
+*virtualbox-guest-additions-4.1.8 (20 Dec 2011)
+
+  20 Dec 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-4.0.12.ebuild,
+  +virtualbox-guest-additions-4.1.8.ebuild:
+  Version bump. Removed old.
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  virtualbox-guest-additions-4.1.4-r1.ebuild:
+  x86 stable wrt bug #386317
+
+*virtualbox-guest-additions-4.1.6-r1 (06 Nov 2011)
+
+  06 Nov 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-4.1.6.ebuild,
+  +virtualbox-guest-additions-4.1.6-r1.ebuild:
+  Revision bump because upstream re-released tarballs (bug #389773).
+
+*virtualbox-guest-additions-4.1.6 (04 Nov 2011)
+
+  04 Nov 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-4.1.2.ebuild,
+  +virtualbox-guest-additions-4.1.6.ebuild:
+  Version bump. Removed old.
+
+  01 Nov 2011; Tony Vroon <chainsaw@gentoo.org>
+  virtualbox-guest-additions-4.1.4-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Tomáš "Mepho" Pružina,
+  Blain "doc235" Anderson & Elijah "Armageddon" El Lazkani in security bug
+  #386317.
+
+*virtualbox-guest-additions-4.1.4-r1 (12 Oct 2011)
+
+  12 Oct 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-4.1.4.ebuild,
+  +virtualbox-guest-additions-4.1.4-r1.ebuild:
+  Block x11-drivers/xf86-input-virtualbox. Seems like upstream doesn't ship
+  this driver anymore (bug #386741).
+
+  04 Oct 2011; Lars Wendler <polynomial-c@gentoo.org>
+  virtualbox-guest-additions-4.0.12.ebuild,
+  virtualbox-guest-additions-4.1.2.ebuild,
+  virtualbox-guest-additions-4.1.4.ebuild:
+  Use src_configure() for ./configure calls as it should be for an EAPI-2
+  ebuild.
+
+*virtualbox-guest-additions-4.1.4 (04 Oct 2011)
+
+  04 Oct 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-4.1.0.ebuild,
+  +virtualbox-guest-additions-4.1.4.ebuild:
+  Version bump. Thanks to Christian Inci who reported this in bug #385577.
+  Removed old.
+
+  01 Sep 2011; Lars Wendler <polynomial-c@gentoo.org>
+  virtualbox-guest-additions-4.1.0.ebuild:
+  Again fixed dependency on kbuild. Thanks to Karel De Vriendt for reporting
+  this in bug #381397.
+
+  20 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  virtualbox-guest-additions-4.0.12.ebuild:
+  Fixed dependency on kbuild
+
+*virtualbox-guest-additions-4.1.2 (17 Aug 2011)
+
+  17 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  +virtualbox-guest-additions-4.1.2.ebuild:
+  Version bump.
+
+  09 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -virtualbox-guest-additions-3.2.12.ebuild,
+  -virtualbox-guest-additions-4.0.10.ebuild:
+  Removed old versions.
 
   22 Jul 2011; Markos Chandras <hwoarang@gentoo.org>
   virtualbox-guest-additions-4.0.12.ebuild:
@@ -585,4 +784,3 @@
   virtualbox-guest-tools-1.5.4.ebuild,
   -virtualbox-guest-tools-1.5.4-remove-alsa.patch:
   fix src_install for amd64
-

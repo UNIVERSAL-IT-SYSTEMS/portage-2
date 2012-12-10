@@ -1,6 +1,26 @@
 # ChangeLog for dev-ruby/rmagick
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rmagick/ChangeLog,v 1.185 2011/01/07 11:01:13 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rmagick/ChangeLog,v 1.191 2012/11/08 10:36:28 blueness Exp $
+
+  08 Nov 2012; Anthony G. Basile <blueness@gentoo.org> rmagick-2.13.1.ebuild:
+  stable ppc ppc64, bug #435116
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> rmagick-2.13.1.ebuild:
+  Stable for HPPA (bug #435116).
+
+  18 Sep 2012; Johannes Huber <johu@gentoo.org> rmagick-2.13.1.ebuild:
+  Stable for x86, wrt bug #435116
+
+  15 Sep 2012; Agostino Sarubbo <ago@gentoo.org> rmagick-2.13.1.ebuild:
+  Stable for amd64, wrt bug #435116
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> rmagick-2.13.0-r1.ebuild,
+  rmagick-2.13.1.ebuild:
+  Drop alpha keywords
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> rmagick-2.13.0-r1.ebuild,
+  rmagick-2.13.1.ebuild:
+  Drop ia64/sparc keywords
 
   07 Jan 2011; Hans de Graaff <graaff@gentoo.org> rmagick-2.13.1.ebuild:
   Keyword ~x86-macos.

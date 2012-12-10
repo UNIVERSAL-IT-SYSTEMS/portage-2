@@ -1,6 +1,34 @@
 # ChangeLog for dev-ruby/erubis
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/erubis/ChangeLog,v 1.11 2011/06/29 19:36:49 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/erubis/ChangeLog,v 1.20 2012/08/14 18:33:20 flameeyes Exp $
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  05 Aug 2012; Hans de Graaff <graaff@gentoo.org> -erubis-2.6.6.ebuild:
+  Cleanup.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> erubis-2.7.0.ebuild:
+  Drop ia64/sparc keywords
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> erubis-2.7.0.ebuild:
+  Add Prefix keywords, bug #396547
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> erubis-2.7.0.ebuild:
+  Marked ~sparc64-solaris
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> erubis-2.7.0.ebuild:
+  Add Prefix keywords, bug #396547
+
+  29 Dec 2011; Hans de Graaff <graaff@gentoo.org> erubis-2.7.0.ebuild:
+  Don't run tests for ruby 1.9.3 since its default Psych module can't handle
+  the YAML used.
+
+  09 Sep 2011; Fabian Groffen <grobian@gentoo.org> erubis-2.7.0.ebuild:
+  Marked ~sparc-solaris
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> erubis-2.7.0.ebuild:
+  Add ~ia64/~sparc wrt #351835
 
   29 Jun 2011; Fabian Groffen <grobian@gentoo.org> erubis-2.7.0.ebuild:
   Marked ~x86-solaris
@@ -44,4 +72,3 @@
   28 Mar 2010; Hans de Graaff <graaff@gentoo.org> +erubis-2.6.5.ebuild,
   +metadata.xml:
   Initial import, new test dependency for dev-ruby/sinatra.
-

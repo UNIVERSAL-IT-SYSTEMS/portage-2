@@ -1,9 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-9999.ebuild,v 1.13 2011/06/06 19:34:32 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-9999.ebuild,v 1.35 2012/07/27 18:20:47 mgorny Exp $
 
-EAPI="3"
-inherit subversion eutils flag-o-matic multilib toolchain-funcs
+EAPI="4"
+PYTHON_DEPEND="2"
+inherit subversion eutils flag-o-matic multilib toolchain-funcs python pax-utils
 
 DESCRIPTION="Low Level Virtual Machine"
 HOMEPAGE="http://llvm.org/"
@@ -13,17 +14,17 @@ ESVN_REPO_URI="http://llvm.org/svn/llvm-project/llvm/trunk"
 LICENSE="UoI-NCSA"
 SLOT="0"
 KEYWORDS=""
-IUSE="alltargets debug +libffi llvm-gcc ocaml test udis86 vim-syntax"
+IUSE="debug gold +libffi multitarget ocaml test udis86 vim-syntax"
 
 DEPEND="dev-lang/perl
+	dev-python/docutils
 	>=sys-devel/make-3.79
 	>=sys-devel/flex-2.5.4
-	>=sys-devel/bison-1.28
-	!~sys-devel/bison-1.85
-	!~sys-devel/bison-1.875
+	>=sys-devel/bison-1.875d
 	|| ( >=sys-devel/gcc-3.0 >=sys-devel/gcc-apple-4.2.1 )
 	|| ( >=sys-devel/binutils-2.18 >=sys-devel/binutils-apple-3.2.3 )
-	libffi? ( dev-util/pkgconfig
+	gold? ( >=sys-devel/binutils-2.22[cxx] )
+	libffi? ( virtual/pkgconfig
 		virtual/libffi )
 	ocaml? ( dev-lang/ocaml )
 	udis86? ( amd64? ( dev-libs/udis86[pic] )
@@ -32,9 +33,11 @@ RDEPEND="dev-lang/perl
 	libffi? ( virtual/libffi )
 	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )"
 
-S=${WORKDIR}/${PN}-${PV/_pre*}
-
 pkg_setup() {
+	# Required for test and build
+	python_set_active_version 2
+	python_pkg_setup
+
 	# need to check if the active compiler is ok
 
 	broken_gcc=" 3.2.2 3.2.3 3.3.2 4.1.1 "
@@ -76,59 +79,48 @@ src_prepare() {
 		-e 's,^PROJ_etcdir.*,PROJ_etcdir := '"${EPREFIX}"'/etc/llvm,' \
 		-e 's,^PROJ_libdir.*,PROJ_libdir := $(PROJ_prefix)/'$(get_libdir)/${PN}, \
 		-i Makefile.config.in || die "Makefile.config sed failed"
-	sed -e 's,$ABS_RUN_DIR/lib,'"${EPREFIX}"/usr/$(get_libdir)/${PN}, \
-		-i tools/llvm-config/llvm-config.in.in || die "llvm-config sed failed"
+	sed -e "/ActiveLibDir = ActivePrefix/s/lib/$(get_libdir)\/${PN}/" \
+		-i tools/llvm-config/llvm-config.cpp || die "llvm-config sed failed"
 
-	einfo "Fixing rpath"
+	einfo "Fixing rpath and CFLAGS"
 	sed -e 's,\$(RPATH) -Wl\,\$(\(ToolDir\|LibDir\)),$(RPATH) -Wl\,'"${EPREFIX}"/usr/$(get_libdir)/${PN}, \
+		-e '/OmitFramePointer/s/-fomit-frame-pointer//' \
 		-i Makefile.rules || die "rpath sed failed"
+	if use gold; then
+		sed -e 's,\$(SharedLibDir),'"${EPREFIX}"/usr/$(get_libdir)/${PN}, \
+			-i tools/gold/Makefile || die "gold rpath sed failed"
+	fi
 
-	epatch "${FILESDIR}"/${PN}-2.6-commandguide-nops.patch
-	epatch "${FILESDIR}"/${PN}-2.9-nodoctargz.patch
+	# Specify python version
+	python_convert_shebangs -r 2 test/Scripts
+
+	epatch "${FILESDIR}"/${PN}-3.2-nodoctargz.patch
+	epatch "${FILESDIR}"/${PN}-3.0-PPC_macro.patch
+
+	# User patches
+	epatch_user
 }
 
 src_configure() {
 	local CONF_FLAGS="--enable-shared
+		--with-optimize-option=
 		$(use_enable !debug optimized)
 		$(use_enable debug assertions)
 		$(use_enable debug expensive-checks)"
 
-	if use alltargets; then
+	if use multitarget; then
 		CONF_FLAGS="${CONF_FLAGS} --enable-targets=all"
 	else
-		CONF_FLAGS="${CONF_FLAGS} --enable-targets=host-only"
+		CONF_FLAGS="${CONF_FLAGS} --enable-targets=host,cpp"
 	fi
 
 	if use amd64; then
 		CONF_FLAGS="${CONF_FLAGS} --enable-pic"
 	fi
 
-	# things would be built differently depending on whether llvm-gcc is
-	# used or not.
-	local LLVM_GCC_DIR=/dev/null
-	local LLVM_GCC_DRIVER=nope ; local LLVM_GPP_DRIVER=nope
-	if use llvm-gcc ; then
-		if has_version sys-devel/llvm-gcc; then
-			LLVM_GCC_DIR=$(ls -d ${EROOT}/usr/$(get_libdir)/llvm-gcc* 2> /dev/null)
-			LLVM_GCC_DRIVER=$(find ${LLVM_GCC_DIR} -name 'llvm*-gcc' 2> /dev/null)
-			if [[ -z ${LLVM_GCC_DRIVER} ]] ; then
-				die "failed to find installed llvm-gcc, LLVM_GCC_DIR=${LLVM_GCC_DIR}"
-			fi
-			einfo "Using $LLVM_GCC_DRIVER"
-			LLVM_GPP_DRIVER=${LLVM_GCC_DRIVER/%-gcc/-g++}
-		else
-			eerror "llvm-gcc USE flag enabled, but sys-devel/llvm-gcc was not found"
-			eerror "Building with standard gcc, re-merge this package after installing"
-			eerror "llvm-gcc to build with it"
-			eerror "This is normal behavior on first LLVM merge"
-		fi
+	if use gold; then
+		CONF_FLAGS="${CONF_FLAGS} --with-binutils-include=${EPREFIX}/usr/include/"
 	fi
-
-	CONF_FLAGS="${CONF_FLAGS} \
-		--with-llvmgccdir=${LLVM_GCC_DIR} \
-		--with-llvmgcc=${LLVM_GCC_DRIVER} \
-		--with-llvmgxx=${LLVM_GPP_DRIVER}"
-
 	if use ocaml; then
 		CONF_FLAGS="${CONF_FLAGS} --enable-bindings=ocaml"
 	else
@@ -143,15 +135,33 @@ src_configure() {
 		append-cppflags "$(pkg-config --cflags libffi)"
 	fi
 	CONF_FLAGS="${CONF_FLAGS} $(use_enable libffi)"
-	econf ${CONF_FLAGS} || die "econf failed"
+
+	# llvm prefers clang over gcc, so we may need to force that
+	tc-export CC CXX
+	econf ${CONF_FLAGS}
 }
 
 src_compile() {
-	emake VERBOSE=1 KEEP_SYMBOLS=1 REQUIRES_RTTI=1 || die "emake failed"
+	# generate the manpages
+#	cd docs/CommandGuide || die
+#	local infiles=( *.rst )
+#
+#	cat > Makefile <<EOF || die
+#%.1: %.rst
+#	rst2man.py \$< > \$@
+#EOF
+#	emake ${infiles[@]/.rst/.1}
+
+	emake VERBOSE=1 KEEP_SYMBOLS=1 REQUIRES_RTTI=1
+
+	pax-mark m Release/bin/lli
+	if use test; then
+		pax-mark m unittests/ExecutionEngine/JIT/Release/JITTests
+	fi
 }
 
 src_install() {
-	emake KEEP_SYMBOLS=1 DESTDIR="${D}" install || die "install failed"
+	emake KEEP_SYMBOLS=1 DESTDIR="${D}" install
 
 	if use vim-syntax; then
 		insinto /usr/share/vim/vimfiles/syntax
@@ -160,8 +170,11 @@ src_install() {
 
 	# Fix install_names on Darwin.  The build system is too complicated
 	# to just fix this, so we correct it post-install
+	local lib= f= odylib= libpv=${PV}
 	if [[ ${CHOST} == *-darwin* ]] ; then
-		for lib in lib{EnhancedDisassembly,LLVM-${PV},LTO}.dylib {BugpointPasses,LLVMHello,profile_rt}.dylib ; do
+		eval $(grep PACKAGE_VERSION= configure)
+		[[ -n ${PACKAGE_VERSION} ]] && libpv=${PACKAGE_VERSION}
+		for lib in lib{EnhancedDisassembly,LLVM-${libpv},LTO,profile_rt}.dylib {BugpointPasses,LLVMHello}.dylib ; do
 			# libEnhancedDisassembly is Darwin10 only, so non-fatal
 			[[ -f ${ED}/usr/lib/${PN}/${lib} ]] || continue
 			ebegin "fixing install_name of $lib"
@@ -171,12 +184,15 @@ src_install() {
 			eend $?
 		done
 		for f in "${ED}"/usr/bin/* "${ED}"/usr/lib/${PN}/libLTO.dylib ; do
-			ebegin "fixing install_name reference to libLLVM-${PV}.dylib of ${f##*/}"
+			odylib=$(scanmacho -BF'%n#f' "${f}" | tr ',' '\n' | grep libLLVM-${libpv}.dylib)
+			ebegin "fixing install_name reference to ${odylib} of ${f##*/}"
 			install_name_tool \
-				-change "@executable_path/../lib/libLLVM-${PV}.dylib" \
-					"${EPREFIX}"/usr/lib/${PN}/libLLVM-${PV}.dylib \
+				-change "${odylib}" \
+					"${EPREFIX}"/usr/lib/${PN}/libLLVM-${libpv}.dylib \
 				"${f}"
 			eend $?
 		done
 	fi
+#
+#	doman docs/CommandGuide/*.1
 }

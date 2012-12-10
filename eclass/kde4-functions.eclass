@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-functions.eclass,v 1.55 2011/07/08 11:35:01 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-functions.eclass,v 1.62 2012/09/27 16:35:41 axs Exp $
 
 inherit versionator
 
@@ -16,7 +16,7 @@ inherit versionator
 # @DESCRIPTION:
 # Currently kde4 eclasses support EAPI 3 and 4.
 case ${EAPI:-0} in
-	4|3) : ;;
+	3|4|5) : ;;
 	*) die "EAPI=${EAPI} is not supported" ;;
 esac
 
@@ -32,13 +32,10 @@ esac
 # @ECLASS-VARIABLE: KDEBASE
 # @DESCRIPTION:
 # This gets set to a non-zero value when a package is considered a kde or
-# koffice ebuild.
+# kdevelop ebuild.
 if [[ ${CATEGORY} = kde-base ]]; then
 	debug-print "${ECLASS}: KDEBASE ebuild recognized"
 	KDEBASE=kde-base
-elif [[ ${KMNAME-${PN}} = koffice ]]; then
-	debug-print "${ECLASS}: KOFFICE ebuild recognized"
-	KDEBASE=koffice
 elif [[ ${KMNAME-${PN}} = kdevelop ]]; then
 	debug-print "${ECLASS}: KDEVELOP ebuild recognized"
 	KDEBASE=kdevelop
@@ -46,15 +43,15 @@ fi
 
 # determine the build type
 if [[ ${PV} = *9999* ]]; then
-	BUILD_TYPE="live"
+	KDE_BUILD_TYPE="live"
 else
-	BUILD_TYPE="release"
+	KDE_BUILD_TYPE="release"
 fi
-export BUILD_TYPE
+export KDE_BUILD_TYPE
 
-# Set reponame and SCM for moduleses that have fully migrated to git
+# Set reponame and SCM for modules that have fully migrated to git
 # (hack - it's here because it needs to be before SCM inherits from kde4-base)
-if [[ ${BUILD_TYPE} == live ]]; then
+if [[ ${KDE_BUILD_TYPE} == live ]]; then
 	case "${KMNAME}" in
 		kdebase-workspace)
 			KDE_SCM="git"
@@ -92,8 +89,8 @@ esac
 # translations, ebuilds must call enable_selected_linguas(). kde4-{base,meta}.eclass does
 # this for you.
 #
-# Example: KDE_LINGUAS="en_GB de nl"
-if [[ ${BUILD_TYPE} != live || -n ${KDE_LINGUAS_LIVE_OVERRIDE} ]]; then
+# Example: KDE_LINGUAS="de en_GB nl"
+if [[ ${KDE_BUILD_TYPE} != live || -n ${KDE_LINGUAS_LIVE_OVERRIDE} ]]; then
 	for _lingua in ${KDE_LINGUAS}; do
 		IUSE="${IUSE} linguas_${_lingua}"
 	done
@@ -183,11 +180,6 @@ enable_selected_linguas() {
 enable_selected_doc_linguas() {
 	debug-print-function ${FUNCNAME} "$@"
 
-	# if there is no linguas defined we enable everything
-	if ! $(env | grep -q "^LINGUAS="); then
-		return 0
-	fi
-
 	# @ECLASS-VARIABLE: KDE_DOC_DIRS
 	# @DESCRIPTION:
 	# Variable specifying whitespace separated patterns for documentation locations.
@@ -208,6 +200,11 @@ enable_selected_doc_linguas() {
 				-e "/ADD_SUBDIRECTORY[[:space:]]*([[:space:]]*${handbookdir}[[:space:]]*)/s/^/#DONOTCOMPILE /" \
 				-i CMakeLists.txt || die 'failed to comment out all handbooks'
 		else
+			# if there is no linguas defined we enable everything (i.e. comment out nothing)
+			if ! $(env | grep -q "^LINGUAS="); then
+				return 0
+			fi
+
 			# Disable subdirectories recursively
 			comment_all_add_subdirectory "${handbookdir}"
 			# Add requested translations
@@ -472,6 +469,7 @@ _enable_selected_linguas_dir() {
 }
 
 # @FUNCTION: get_kde_version
+# @DESCRIPTION:
 # Translates an ebuild version into a major.minor KDE SC
 # release version. If no version is specified, ${PV} is used.
 get_kde_version() {

@@ -1,6 +1,33 @@
 # ChangeLog for dev-libs/crypto++
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/crypto++/ChangeLog,v 1.72 2011/02/27 13:56:36 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/crypto++/ChangeLog,v 1.76 2012/11/04 19:41:44 c1pher Exp $
+
+  04 Nov 2012; Dane Smith <c1pher@gentoo.org> crypto++-5.6.1-r1.ebuild,
+  crypto++-5.6.1-r3.ebuild:
+  Add libtool to DEPEND wrt bug 440690.
+
+  26 Jun 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/crypto++-5.6.1-gcc-4.7.patch, crypto++-5.6.1-r3.ebuild:
+  Add fix from upstream tracker for building with gcc-4.7 #403197 by Kacper
+  Kowalik.
+
+*crypto++-5.6.1-r3 (30 Jan 2012)
+
+  30 Jan 2012; Dane Smith <c1pher@gentoo.org> -crypto++-5.6.1-r2.ebuild,
+  +crypto++-5.6.1-r3.ebuild, +files/crypto++-5.6.1-r3-fix_build_system.patch:
+  Address NEEDED library issues wrt bug 401431. Thanks Arfrever for the patch.
+  Add new patch (updated fix_build_system patch) for r3 since the current one
+  is
+  used by the stable -r1. The new patch includes the changes that are in the
+  patch {P}-sunos. This should be dropped when -r3 goes stable and -r1 is
+  dropped.
+  Drop -r2.
+
+*crypto++-5.6.1-r2 (28 Dec 2011)
+
+  28 Dec 2011; Patrick Lauer <patrick@gentoo.org> +crypto++-5.6.1-r2.ebuild,
+  +files/crypto++-5.6.1-rijndael.patch:
+  Fixing #322713 again, this time with upstream patch
 
   27 Feb 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   -crypto++-5.5.2-r1.ebuild, -crypto++-5.6.0.ebuild, -crypto++-5.6.0-r1.ebuild,
@@ -289,4 +316,3 @@
 
   24 Nov 2003; Ryan Phillips <rphillips@gentoo.org> crypto++-5.1.ebuild:
   Initial Import. Thanks to Marc Bevand. Fixes #33685
-

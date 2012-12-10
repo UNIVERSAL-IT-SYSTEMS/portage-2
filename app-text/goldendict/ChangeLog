@@ -1,6 +1,22 @@
 # ChangeLog for app-text/goldendict
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/goldendict/ChangeLog,v 1.5 2011/05/09 14:46:59 phajdan.jr Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/goldendict/ChangeLog,v 1.9 2012/07/26 07:04:22 yngwin Exp $
+
+  26 Jul 2012; Ben de Groot <yngwin@gentoo.org> goldendict-1.0.1.ebuild:
+  Use l10n.eclass for handling locales. Bump eapi to 4.
+
+  19 Jul 2012; Michael Palimaka <kensington@gentoo.org>
+  +files/goldendict-1.0.1-gcc-4.7.patch, goldendict-1.0.1.ebuild:
+  Fix build with GCC 4.7, wrt bug #426988. Thanks to Sven Eden
+  <yamakuzure@gmx.net>.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> goldendict-1.0.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  14 Feb 2012; Davide Pesavento <pesa@gentoo.org>
+  -files/goldendict-0.9.0-gcc4.4.patch, -goldendict-0.9.0_p20100410.ebuild,
+  goldendict-1.0.1.ebuild, metadata.xml:
+  Depend on qt3support being enabled (bug #390985). Remove obsolete version.
 
   09 May 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> goldendict-1.0.1.ebuild:
   x86 stable wrt bug #365343
@@ -41,4 +57,3 @@
   +goldendict-0.9.0.ebuild, +files/goldendict-0.9.0-gcc4.4.patch,
   +metadata.xml:
   Initial ebuild of goldendict. Bug #264631
-

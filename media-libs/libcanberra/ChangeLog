@@ -1,6 +1,94 @@
 # ChangeLog for media-libs/libcanberra
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libcanberra/ChangeLog,v 1.71 2011/07/21 17:26:29 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libcanberra/ChangeLog,v 1.94 2012/12/02 17:09:36 eva Exp $
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org> libcanberra-0.29.ebuild:
+  Pin gstreamer dependencies.
+
+  17 Nov 2012; Pacho Ramos <pacho@gentoo.org> -libcanberra-0.28-r5.ebuild,
+  libcanberra-0.29.ebuild:
+  Disable silent rules, #443132 by ago.
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> libcanberra-0.29.ebuild:
+  ia64/sh/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> libcanberra-0.29.ebuild:
+  stable ppc, bug #427544
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> libcanberra-0.29.ebuild:
+  Stable on alpha, bug 427544.
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> libcanberra-0.29.ebuild:
+  stable ppc64, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> libcanberra-0.29.ebuild:
+  arm stable, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> libcanberra-0.29.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libcanberra-0.29.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> libcanberra-0.29.ebuild:
+  Stable for HPPA (bug #427544).
+
+  22 Aug 2012; Christoph Junghans <ottxor@gentoo.org> libcanberra-0.29.ebuild:
+  added prefix keywords
+
+*libcanberra-0.29 (25 Jun 2012)
+
+  25 Jun 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +libcanberra-0.29.ebuild:
+  Version bump with a few bugfixes. No longer uses gconf, meaning that
+  gnome-settings-daemon-2.x will no longer automatically load the canberra gtk
+  modules. Install devhelp docs in /usr/share/gtk-doc where devhelp expects to
+  find them.
+
+  02 Jun 2012; Anthony G. Basile <blueness@gentoo.org>
+  libcanberra-0.28-r5.ebuild:
+  Keyword ~mips
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> libcanberra-0.28-r5.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libcanberra-0.28-r5.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  13 Jan 2012; Pacho Ramos <pacho@gentoo.org>
+  -files/libcanberra-0.28-revert-gsettings.patch, -libcanberra-0.26.ebuild,
+  -libcanberra-0.28-r3.ebuild:
+  Drop old.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> libcanberra-0.28-r5.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> libcanberra-0.28-r5.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  libcanberra-0.28-r5.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> libcanberra-0.28-r5.ebuild:
+  Stable for HPPA (bug #385699).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  libcanberra-0.28-r5.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  libcanberra-0.28-r5.ebuild:
+  amd64 stable wrt #385699
+
+*libcanberra-0.28-r5 (12 Sep 2011)
+
+  12 Sep 2011; Pacho Ramos <pacho@gentoo.org> -libcanberra-0.28-r4.ebuild,
+  +libcanberra-0.28-r5.ebuild, +files/libcanberra-0.28-workaround-hang.patch:
+  Apply fedora patch to workaround hangs when pulseaudio has problems, RDEPEND
+  on gnome-base/gsettings-desktop-schemas to work ok with
+  gnome-session-2.32.1-r3, remove all .la files (bug #366071 by Stephan
+  Friedrichs, thanks a lot to Jonathan Callen for his explanation. Remove old.
 
 *libcanberra-0.28-r4 (21 Jul 2011)
 *libcanberra-0.28-r3 (21 Jul 2011)
@@ -307,4 +395,3 @@
   +libcanberra-0.9.ebuild:
   Initial import of libcanberra - a portable sound event library for
   generating event sounds on free desktops.
-

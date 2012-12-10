@@ -1,6 +1,27 @@
 # ChangeLog for dev-python/pydns
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pydns/ChangeLog,v 1.10 2011/07/10 00:51:10 sbriesen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pydns/ChangeLog,v 1.14 2012/06/24 12:22:55 sbriesen Exp $
+
+*pydns-3.0.2 (24 Jun 2012)
+*pydns-2.3.6 (24 Jun 2012)
+
+  24 Jun 2012; Stefan Briesenick <sbriesen@gentoo.org> -pydns-2.3.5.ebuild,
+  +pydns-2.3.6.ebuild, +pydns-3.0.2.ebuild:
+  version bump, removed obsolete ebuild, solving bug #416377.
+
+  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org> pydns-3.0.1.ebuild:
+  marked x86 per bug 404715
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> pydns-3.0.1.ebuild:
+  Stable for amd64, wrt bug #404715
+
+*pydns-3.0.1 (10 Nov 2011)
+*pydns-2.3.5-r1 (10 Nov 2011)
+
+  10 Nov 2011; Stefan Briesenick <sbriesen@gentoo.org> +pydns-2.3.5-r1.ebuild,
+  +pydns-3.0.1.ebuild:
+  rev-bump and slotting python2 version, version-bump and slotting python3
+  version. slot=3 replaces dev-python/py3dns.
 
 *pydns-2.3.5 (10 Jul 2011)
 

@@ -1,6 +1,20 @@
 # ChangeLog for virtual/perl-MIME-Base64
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/perl-MIME-Base64/ChangeLog,v 1.45 2011/07/30 11:51:56 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/perl-MIME-Base64/ChangeLog,v 1.49 2012/05/21 11:50:35 tove Exp $
+
+*perl-MIME-Base64-3.130.0-r2 (21 May 2012)
+
+  21 May 2012; Torsten Veller <tove@gentoo.org>
+  -perl-MIME-Base64-3.130.0-r1.ebuild, +perl-MIME-Base64-3.130.0-r2.ebuild:
+  Add perl-5.16 as provider
+
+  05 May 2012; Alexis Ballier <aballier@gentoo.org>
+  perl-MIME-Base64-3.130.0-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  10 Dec 2011; Fabian Groffen <grobian@gentoo.org>
+  perl-MIME-Base64-3.130.0-r1.ebuild:
+  Marked ~x86-freebsd and ~x64-freebsd
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org>
   perl-MIME-Base64-3.130.0-r1.ebuild:

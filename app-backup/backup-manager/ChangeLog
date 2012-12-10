@@ -1,6 +1,18 @@
 # ChangeLog for app-backup/backup-manager
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/ChangeLog,v 1.18 2011/01/04 15:32:09 voyageur Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-backup/backup-manager/ChangeLog,v 1.21 2012/06/07 23:54:52 voyageur Exp $
+
+  07 Jun 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  backup-manager-0.7.10.1-r1.ebuild:
+  Remove ebeep call
+
+*backup-manager-0.7.10.1-r1 (31 Jan 2012)
+
+  31 Jan 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  -backup-manager-0.7.8.ebuild, -backup-manager-0.7.8-r1.ebuild,
+  -backup-manager-0.7.10.1.ebuild, +backup-manager-0.7.10.1-r1.ebuild:
+  Fix locale path installation, reported by Marcin Mirosław in bug #401105.
+  Also clean ebuild, bump EAPI, and drop 0.7.8 versions
 
 *backup-manager-0.7.10.1 (04 Jan 2011)
 

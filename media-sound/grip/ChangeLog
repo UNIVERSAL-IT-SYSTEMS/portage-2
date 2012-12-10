@@ -1,6 +1,35 @@
 # ChangeLog for media-sound/grip
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/grip/ChangeLog,v 1.91 2011/03/23 07:35:38 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/grip/ChangeLog,v 1.99 2012/11/22 15:31:19 polynomial-c Exp $
+
+  22 Nov 2012; Lars Wendler <polynomial-c@gentoo.org> -grip-3.3.1-r2.ebuild,
+  grip-3.3.1-r3.ebuild:
+  non-maintainer commit: Updated homepage. Removed old version.
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> grip-3.3.1-r3.ebuild:
+  alpha/ia64/sparc stable wrt #414825
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> grip-3.3.1-r3.ebuild:
+  Marking grip-3.3.1-r3 ppc for bug 414825
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> grip-3.3.1-r3.ebuild:
+  Marking grip-3.3.1-r3 ppc64 for bug 414825
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> grip-3.3.1-r3.ebuild:
+  x86 stable wrt bug #414825
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> grip-3.3.1-r2.ebuild,
+  grip-3.3.1-r3.ebuild:
+  Remove gnome-extra/yelp from dependencies to avoid pulling vulnerably copy of
+  net-libs/xulrunner wrt #416843; futhermore, grip will work fine without yelp
+  even if this wasn't the case.
+
+  08 May 2012; Agostino Sarubbo <ago@gentoo.org> grip-3.3.1-r3.ebuild:
+  Stable for amd64, wrt bug #414825
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> grip-3.3.1-r2.ebuild,
+  grip-3.3.1-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   23 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> grip-3.3.1-r2.ebuild,
   grip-3.3.1-r3.ebuild:

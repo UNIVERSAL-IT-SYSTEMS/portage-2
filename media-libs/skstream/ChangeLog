@@ -1,6 +1,29 @@
 # ChangeLog for media-libs/skstream
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/skstream/ChangeLog,v 1.27 2010/04/13 14:38:59 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/skstream/ChangeLog,v 1.32 2012/11/13 02:48:22 mr_bones_ Exp $
+
+*skstream-0.3.9 (13 Nov 2012)
+
+  13 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  +files/skstream-0.3.9-test.patch, +skstream-0.3.9.ebuild,
+  skstream-0.3.8.ebuild:
+  version bump
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> skstream-0.3.6.ebuild,
+  skstream-0.3.8.ebuild:
+  Drop sparc keywords
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> skstream-0.3.8.ebuild:
+  Stable for amd64, wrt bug #427866
+
+  24 Jul 2012; Jeff Horelick <jdhore@gentoo.org> skstream-0.3.8.ebuild:
+  marked x86 per bug 427866
+
+*skstream-0.3.8 (26 Sep 2011)
+
+  26 Sep 2011; Tupone Alfredo <tupone@gentoo.org> +skstream-0.3.8.ebuild,
+  +files/skstream-0.3.8-test.patch:
+  Version bump to 0.3.8 Bug #383419 by Mr. Anderson
 
   13 Apr 2010; Alfredo Tupone <tupone@gentoo.org> skstream-0.3.6.ebuild:
   Depend on dev-util/ccpunit for test. Fix bug #312705 by Nathan Phillip

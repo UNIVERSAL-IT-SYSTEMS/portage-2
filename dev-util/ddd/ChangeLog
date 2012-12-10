@@ -1,6 +1,31 @@
 # ChangeLog for dev-util/ddd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/ddd/ChangeLog,v 1.62 2011/07/14 06:21:16 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/ddd/ChangeLog,v 1.68 2012/11/06 01:04:41 reavertm Exp $
+
+*ddd-3.3.12-r3 (06 Nov 2012)
+
+  06 Nov 2012; Maciej Mrozowski <reavertm@gentoo.org> +ddd-3.3.12-r3.ebuild,
+  +files/ddd-3.3.12-gdb-disassembler-bug.patch, +files/ddd-3.3.12-man.patch:
+  Add readline USE flag, fix manpage installation bug 439888 and machine code
+  view bug 439766 (by Simone Scanzoni)
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> ddd-3.3.12-r1.ebuild,
+  ddd-3.3.12-r2.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> ddd-3.3.12-r1.ebuild,
+  ddd-3.3.12-r2.ebuild:
+  Use doicon instead insinto + doins to install icon files
+
+  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ddd-3.3.12-r2.ebuild:
+  x86 stable wrt bug #393831
+
+  18 Dec 2011; Maciej Mrozowski <reavertm@gentoo.org> ddd-3.3.12-r2.ebuild:
+  Added missing ncurses and X11 dependencies.
+
+  16 Dec 2011; Agostino Sarubbo <ago@gentoo.org> ddd-3.3.12-r2.ebuild:
+  Stable for AMD64, wrt bug #393831
 
   14 Jul 2011; Jonathan Callen <abcd@gentoo.org> ddd-3.3.12-r2.ebuild:
   Add ~x86-linux/~amd64-linux keywords for bug 375093

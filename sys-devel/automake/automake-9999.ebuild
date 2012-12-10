@@ -1,13 +1,15 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/automake/automake-9999.ebuild,v 1.3 2009/02/08 19:42:55 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/automake/automake-9999.ebuild,v 1.6 2012/01/19 20:55:45 slyfox Exp $
 
-EGIT_REPO_URI="git://git.savannah.gnu.org/automake.git"
+EAPI="2"
+EGIT_REPO_URI="git://git.savannah.gnu.org/${PN}.git
+	http://git.savannah.gnu.org/r/${PN}.git"
 
-inherit eutils git
+inherit eutils git-2
 
 DESCRIPTION="Used to generate Makefile.in from Makefile.am"
-HOMEPAGE="http://sources.redhat.com/automake/"
+HOMEPAGE="http://www.gnu.org/software/automake/"
 SRC_URI=""
 
 LICENSE="GPL-3"
@@ -23,18 +25,18 @@ RDEPEND="dev-lang/perl
 DEPEND="${RDEPEND}
 	sys-apps/help2man"
 
-src_unpack() {
-	git_src_unpack
-	cd "${S}"
+src_prepare() {
 	sed -i \
 		-e "s|: (automake)| v${SLOT}: (automake${SLOT})|" \
-		doc/automake.texi || die "sed failed"
+		doc/automake.texi || die
 	export WANT_AUTOCONF=2.5
+	# Don't try wrapping the autotools this thing runs as it tends
+	# to be a bit esoteric, and the script does `set -e` itself.
+	./bootstrap
 }
 
-src_compile() {
-	econf --docdir=/usr/share/doc/${PF} || die
-	emake || die
+src_configure() {
+	econf --docdir=/usr/share/doc/${PF}
 }
 
 src_install() {

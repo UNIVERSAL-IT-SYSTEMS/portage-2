@@ -1,6 +1,39 @@
 # ChangeLog for sys-apps/ipmiutil
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/ipmiutil/ChangeLog,v 1.12 2010/07/18 23:25:50 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/ipmiutil/ChangeLog,v 1.20 2012/08/21 14:45:29 johu Exp $
+
+  21 Aug 2012; Johannes Huber <johu@gentoo.org> ipmiutil-2.8.2.ebuild:
+  Stable for x86, wrt bug #422175
+
+*ipmiutil-2.8.5 (19 Aug 2012)
+
+  19 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +ipmiutil-2.8.5.ebuild,
+  -ipmiutil-2.6.7.ebuild:
+  Version bump; OpenRC init scripts are still missing and there is only a static
+  library, work on this package is required.
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> ipmiutil-2.8.2.ebuild:
+  Stable for amd64, wrt bug #422175
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> ipmiutil-2.8.2.ebuild:
+  Stable on amd64 wrt bug #422175
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> ipmiutil-2.7.7.ebuild:
+  marked x86 per bug 400487
+
+*ipmiutil-2.8.2 (14 Mar 2012)
+
+  14 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +ipmiutil-2.8.2.ebuild:
+  Version bump. Install systemd service files. Enable SHA256 support by
+  default.
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> ipmiutil-2.7.7.ebuild:
+  Stable for amd64, wrt bug #400487
+
+*ipmiutil-2.7.7 (18 Aug 2011)
+
+  18 Aug 2011; Patrick McLean <chutzpah@gentoo.org> +ipmiutil-2.7.7.ebuild:
+  Version bump.
 
   18 Jul 2010; Markos Chandras <hwoarang@gentoo.org> ipmiutil-2.6.7.ebuild:
   Stable on amd64 wrt bug #328637
@@ -61,4 +94,3 @@
   25 Mar 2005; Robin H. Johnson <robbat2@gentoo.org>
   +files/ipmiutil-1.6.0-link-external-freeipmi.diff, +ipmiutil-1.6.0.ebuild:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

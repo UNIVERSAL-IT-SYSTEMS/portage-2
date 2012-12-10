@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/aqualung/aqualung-0.9_beta11-r1.ebuild,v 1.6 2011/08/01 18:21:59 billie Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/aqualung/aqualung-0.9_beta11-r1.ebuild,v 1.11 2012/05/05 08:05:33 mgorny Exp $
 
 EAPI=4
 
@@ -17,13 +17,13 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE="alsa cdda cddb debug flac ffmpeg ifp jack ladspa lame libsamplerate lua
 	mac modplug mp3 musepack oss podcast pulseaudio sndfile speex systray vorbis wavpack"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 
 RDEPEND="alsa? ( media-libs/alsa-lib )
 	cdda? ( dev-libs/libcdio[-minimal] )
 	cddb? ( media-libs/libcddb )
 	flac? ( media-libs/flac )
-	ffmpeg? ( virtual/ffmpeg )
+	ffmpeg? ( >=virtual/ffmpeg-0.6.90 )
 	ifp? ( media-libs/libifp )
 	jack? ( media-sound/jack-audio-connection-kit )
 	ladspa? ( media-libs/liblrdf )
@@ -42,15 +42,20 @@ RDEPEND="alsa? ( media-libs/alsa-lib )
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
 	dev-libs/libxml2
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${PN}-${MY_PV}
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-use_lrdf_cflags.patch
-	sed -i -e 's:$(pkgdatadir)/doc:/usr/share/doc/${PF}:' \
+	epatch "${FILESDIR}"/${P}-use_lrdf_cflags.patch \
+		"${FILESDIR}"/${P}-ffmpeg.patch \
+		"${FILESDIR}"/${P}-libavformat54.patch
+	sed -i \
+		-e 's:$(pkgdatadir)/doc:/usr/share/doc/${PF}:' \
 		doc/Makefile.am || die
-	sed -i -e 's:BUILD_CFLAGS="-O2":BUILD_CFLAGS="":' \
+	sed -i \
+		-e '/BUILD_CFLAGS/s:-O2::' \
+		-e '/BUILD_CFLAGS/s: -ggdb -g -O0::' \
 		configure.ac || die
 	eautoreconf
 }

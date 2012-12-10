@@ -1,6 +1,35 @@
 # ChangeLog for www-apps/cgit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/cgit/ChangeLog,v 1.7 2011/06/27 08:58:08 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apps/cgit/ChangeLog,v 1.12 2012/11/15 01:14:11 zx2c4 Exp $
+
+*cgit-0.9.1 (15 Nov 2012)
+
+  15 Nov 2012; Jason A. Donenfeld <zx2c4@gentoo.org> +cgit-0.9.1.ebuild,
+  -cgit-0.8.3.5.ebuild, -cgit-0.9.0.2-r1.ebuild,
+  -files/cgit-0.9.0.2-fix-xss.patch, cgit-9999.ebuild, files/cgitrc:
+  Version bump, with security fixes. Remove old insecure versions.
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> cgit-0.8.3.5.ebuild,
+  cgit-0.9.0.2-r1.ebuild, cgit-9999.ebuild:
+  inherit user for enewuser
+
+  16 Sep 2011; Peter Volkov <pva@gentoo.org> -cgit-0.9.ebuild,
+  cgit-0.9.0.2-r1.ebuild, +cgit-9999.ebuild:
+  Revert mistakenly deleted 9999 ebuild, fix webconfig postinstall (bug 382979
+  by Alon Bar-Lev), drop old. Thank Nikoli for this job.
+
+*cgit-0.9.0.2-r1 (11 Sep 2011)
+
+  11 Sep 2011; Peter Volkov <pva@gentoo.org> -cgit-0.9.0.1.ebuild,
+  -cgit-0.9.0.2.ebuild, +cgit-0.9.0.2-r1.ebuild,
+  +files/cgit-0.9.0.2-fix-xss.patch, -cgit-9999.ebuild:
+  Fix XSS vulnerability in rename hint, bug #378803, thank Nikoli for this job.
+  Drop old.
+
+*cgit-0.9.0.2 (03 Aug 2011)
+
+  03 Aug 2011; Peter Volkov <pva@gentoo.org> +cgit-0.9.0.2.ebuild:
+  Version bump, bug #376457 thank ScytheMan for report and Nikoli for this job.
 
 *cgit-0.9.0.1 (27 Jun 2011)
 
@@ -44,4 +73,3 @@
   Initial ebuild
 
   Thanks to everyone who helped in #223339 for contributing to the ebuild.
-

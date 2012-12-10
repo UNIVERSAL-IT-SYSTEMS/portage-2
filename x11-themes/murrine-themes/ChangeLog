@@ -1,6 +1,24 @@
 # ChangeLog for x11-themes/murrine-themes
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/murrine-themes/ChangeLog,v 1.10 2010/09/22 15:29:56 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/murrine-themes/ChangeLog,v 1.15 2012/11/17 16:29:53 blueness Exp $
+
+  17 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  murrine-themes-0.98.0.ebuild:
+  stable ppc64, bug #443602
+
+  03 Jun 2012; Michael Weber <xmw@gentoo.org> murrine-themes-0.98.0.ebuild:
+  ppc stable (bug 376401)
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  murrine-themes-0.98.0.ebuild:
+  Keyword ~ppc64
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> murrine-themes-0.98.0.ebuild:
+  x86 stable, bug #376401
+
+  16 Aug 2011; Tony Vroon <chainsaw@gentoo.org> murrine-themes-0.98.0.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #376401.
 
 *murrine-themes-0.98.0 (22 Sep 2010)
 
@@ -47,4 +65,3 @@
   +murrine-themes-0.90.0.ebuild, +metadata.xml:
   Add new ebuild for Murrine themes -- split out from
   x11-themes/gtk-engines-murrine
-

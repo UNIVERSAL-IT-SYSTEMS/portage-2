@@ -1,6 +1,100 @@
 # ChangeLog for dev-python/numpy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/numpy/ChangeLog,v 1.151 2011/07/26 17:23:55 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/numpy/ChangeLog,v 1.176 2012/12/09 22:50:19 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> numpy-1.6.2.ebuild:
+  Stable for ppc64, wrt bug #446340
+
+  08 Dec 2012; Jeroen Roovers <jer@gentoo.org> numpy-1.6.2.ebuild:
+  Stable for HPPA (bug #446340).
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> numpy-1.6.2.ebuild:
+  Stable for ppc, wrt bug #446340
+
+  07 Dec 2012; <ago@gentoo.org> numpy-1.6.2.ebuild:
+  Stable for amd64, wrt bug #446340
+
+  07 Dec 2012; Justin Lecher <jlec@gentoo.org> -numpy-1.5.1.ebuild,
+  -numpy-1.6.0.ebuild, -numpy-1.6.1.ebuild:
+  Drop old, fixes #404435, #386847
+
+  16 Oct 2012; Justin Lecher <jlec@gentoo.org> numpy-1.5.1.ebuild,
+  numpy-1.6.0.ebuild, numpy-1.6.1.ebuild, numpy-1.6.1-r1.ebuild,
+  numpy-1.6.2.ebuild:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  14 Oct 2012; Justin Lecher <jlec@gentoo.org> numpy-1.5.1.ebuild,
+  numpy-1.6.0.ebuild, numpy-1.6.1-r1.ebuild, numpy-1.6.1.ebuild,
+  numpy-1.6.2.ebuild:
+  Prepare for fortran2.eclass update
+
+  02 Oct 2012; Mike Gilbert <floppym@gentoo.org> numpy-1.5.1.ebuild,
+  numpy-1.6.0.ebuild, numpy-1.6.1.ebuild, numpy-1.6.2.ebuild:
+  Restrict python 3.3 based on testing by Arfrever. This can be reversed in
+  numpy 1.7.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> numpy-1.6.1-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #418419
+
+  28 Jun 2012; Mike Gilbert <floppym@gentoo.org> numpy-1.6.2.ebuild:
+  Cleanup die usage for EAPI 4.
+
+  28 Jun 2012; Sebastien Fabbro <fabbros@gentoo.org> numpy-1.6.2.ebuild:
+  Cleaned up a bit the pkg-config mangling for blas/lapack. Hack to strip -lm
+  because it would not link with system blas/lapack on prefix
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> numpy-1.6.1-r1.ebuild:
+  Stable for HPPA (bug #418419).
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> numpy-1.6.1-r1.ebuild:
+  x86 stable wrt bug #418419
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> numpy-1.6.1-r1.ebuild:
+  Marking numpy-1.6.1-r1 ppc for bug 418419
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> numpy-1.6.1-r1.ebuild:
+  Marking numpy-1.6.1-r1 ppc64 for bug 418419
+
+  03 Jun 2012; Markus Meier <maekke@gentoo.org> numpy-1.6.1-r1.ebuild:
+  arm stable, bug #418419
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> numpy-1.6.1-r1.ebuild:
+  Stable for AMD64, wrt bug #418419
+
+*numpy-1.6.2 (22 May 2012)
+
+  22 May 2012; Sébastien Fabbro <bicatali@gentoo.org> +numpy-1.6.2.ebuild:
+  Version bump
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> numpy-1.6.1-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  04 May 2012; Patrick Lauer <patrick@gentoo.org> numpy-1.5.1.ebuild,
+  numpy-1.6.0.ebuild, numpy-1.6.1-r1.ebuild, numpy-1.6.1.ebuild:
+  Migrating dev-util/pkgconfig -> virtual/pkgconfig
+
+  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> numpy-1.5.1.ebuild,
+  numpy-1.6.0.ebuild, numpy-1.6.1-r1.ebuild, numpy-1.6.1.ebuild:
+  Restricting pypy #403757
+
+  17 Dec 2011; Sébastien Fabbro <bicatali@gentoo.org> numpy-1.6.1-r1.ebuild,
+  +files/numpy-1.6.1-import_umath.patch:
+  Added patch for python-3, thanks Johan Bergström, bug #393679
+
+  27 Oct 2011; Justin Lecher <jlec@gentoo.org> numpy-1.6.1-r1.ebuild,
+  files/numpy-1.6.1-atlas.patch:
+  Included fixes for atlas, #386531; thanks My Th for the patch 
+
+*numpy-1.6.1-r1 (07 Oct 2011)
+
+  07 Oct 2011; Justin Lecher <jlec@gentoo.org> +numpy-1.6.1-r1.ebuild,
+  +files/numpy-1.6.1-atlas.patch, metadata.xml:
+  Fix for missing clapack_* symbols in scipy, #371099
+
+  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  numpy-1.6.1.ebuild:
+  keyword ~sparc-solaris
 
 *numpy-1.6.1 (26 Jul 2011)
 
@@ -611,4 +705,3 @@
 
   07 Feb 2006; Alastair Tse <liquidx@gentoo.org> +numpy-0.9.4.ebuild:
   initial ebuild thanks to Alok Singhal (#119305)
-

@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/scim-anthy/scim-anthy-1.2.7.ebuild,v 1.3 2011/03/27 11:34:10 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/scim-anthy/scim-anthy-1.2.7.ebuild,v 1.5 2012/09/26 03:23:09 naota Exp $
 
-EAPI="1"
+EAPI="2"
 
 inherit libtool
 
@@ -23,19 +23,20 @@ RDEPEND="${DEPEND}
 	gtk? ( app-dicts/kasumi )"
 DEPEND="${DEPEND}
 	nls? ( sys-devel/gettext )
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	elibtoolize
 }
 
-src_compile() {
+src_configure() {
 	econf \
 		$(use_enable nls) \
 		--disable-static \
-		--disable-dependency-tracking
+		--disable-dependency-tracking || die
+}
+
+src_compile() {
 	emake || die "emake failed"
 }
 

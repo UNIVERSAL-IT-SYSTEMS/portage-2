@@ -1,6 +1,203 @@
 # ChangeLog for media-sound/audacious
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/audacious/ChangeLog,v 1.236 2011/07/26 09:27:54 chainsaw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/audacious/ChangeLog,v 1.282 2012/10/20 14:47:28 jdhore Exp $
+
+*audacious-3.3.2 (20 Oct 2012)
+
+  20 Oct 2012; Jeff Horelick <jdhore@gentoo.org> +audacious-3.3.2.ebuild:
+  Version bump
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> audacious-3.2.2-r1.ebuild:
+  ppc stable (bug 417143).
+
+  31 Jul 2012; Jeff Horelick <jdhore@gentoo.org> audacious-3.3.ebuild:
+  Bump dev-libs/glib dependency to >=2.30 wrt bug 428632
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> audacious-3.2.2-r1.ebuild:
+  alpha/sparc stable wrt #417143
+
+*audacious-3.3 (27 Jul 2012)
+
+  27 Jul 2012; Jeff Horelick <jdhore@gentoo.org> +audacious-3.3.ebuild,
+  -audacious-3.3_beta2.ebuild:
+  Version bump on 3.3 branch and add keywords as it is finalized upstream.
+
+*audacious-3.3_beta2 (18 Jul 2012)
+
+  18 Jul 2012; Jeff Horelick <jdhore@gentoo.org> +audacious-3.3_beta2.ebuild,
+  -audacious-3.3_beta1.ebuild:
+  Beta version bump
+
+  05 Jul 2012; Jeff Horelick <jdhore@gentoo.org> audacious-3.2.4.ebuild:
+  Drop README from dodoc as README was removed in 3.2.4
+
+  05 Jul 2012; Jeff Horelick <jdhore@gentoo.org> audacious-3.3_beta1.ebuild:
+  Drop the use_enable line for session too. I guess it's going to be one of
+  those days...
+
+  05 Jul 2012; Jeff Horelick <jdhore@gentoo.org> audacious-3.3_beta1.ebuild:
+  Drop the session flag on 3.3 as it was dropped by upstream.
+
+*audacious-3.2.4 (05 Jul 2012)
+*audacious-3.3_beta1 (05 Jul 2012)
+
+  05 Jul 2012; Jeff Horelick <jdhore@gentoo.org> +audacious-3.2.4.ebuild,
+  +audacious-3.3_beta1.ebuild, -audacious-3.3_alpha1.ebuild:
+  Version bump on 3.2 and 3.3 branches.
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> audacious-3.3_alpha1.ebuild:
+  Drop unneeded patch.
+
+*audacious-3.3_alpha1 (17 Jun 2012)
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> +audacious-3.3_alpha1.ebuild:
+  Version bump to 3.3_alpha1 (with no keywords). This version is using gtk+:3.
+
+  10 Jun 2012; Jeff Horelick <jdhore@gentoo.org> audacious-3.2.3.ebuild:
+  Drop gtk3 support for now as it is currently a bit broken.
+
+  10 Jun 2012; Jeff Horelick <jdhore@gentoo.org> audacious-3.2.3.ebuild:
+  Add a comment explaining why IUSE="gtk gtk3" exists. Please see bug #420433
+  for more details.
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org> audacious-3.2.2-r1.ebuild:
+  Stable for HPPA (bug #417143).
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> audacious-3.2.2-r1.ebuild:
+  Marking audacious-3.2.2-r1 ppc64 for bug 417143
+
+  27 May 2012; Jeff Horelick <jdhore@gentoo.org> -audacious-3.2.1.ebuild,
+  -audacious-3.2.ebuild:
+  Remove some old versions.
+
+*audacious-3.2.3 (27 May 2012)
+
+  27 May 2012; Jeff Horelick <jdhore@gentoo.org> +audacious-3.2.3.ebuild,
+  +files/audacious-3.2.3-fix-mutex.patch:
+  Version bump and cleanups.
+
+  24 May 2012; Jeff Horelick <jdhore@gentoo.org> audacious-3.2.2-r1.ebuild:
+  marked x86 per bug 417143
+
+  23 May 2012; Agostino Sarubbo <ago@gentoo.org> audacious-3.2.2-r1.ebuild:
+  Stable for amd64, wrt bug #417143
+
+  16 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -audacious-3.0.3-r1.ebuild:
+  Drop audacious version that has plugins which do not build on current stable.
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> audacious-2.4.4.ebuild,
+  audacious-2.5.4.ebuild, audacious-3.0.3-r1.ebuild, audacious-3.1.ebuild,
+  audacious-3.1.1.ebuild, audacious-3.2.ebuild, audacious-3.2.1.ebuild,
+  audacious-3.2.2-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*audacious-3.2.2-r1 (16 Apr 2012)
+
+  16 Apr 2012; Jeff Horelick <jdhore@gentoo.org> +audacious-3.2.2-r1.ebuild,
+  +files/audacious-3.2.2-fix-build-gmodule.patch, -audacious-3.2.2.ebuild:
+  Revision bump to fix building for some people(?). Also, drop broken 3.2.2
+
+*audacious-3.2.2 (15 Apr 2012)
+
+  15 Apr 2012; Jeff Horelick <jdhore@gentoo.org> +audacious-3.2.2.ebuild:
+  Version bump.
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> audacious-2.5.4.ebuild:
+  alpha/sparc stable wrt #380575
+
+  11 Mar 2012; Brent Baude <ranger@gentoo.org> audacious-3.1.ebuild:
+  Marking audacious-3.1 ppc64 for bug 383991
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org> audacious-3.1.ebuild:
+  Marking audacious-3.1 ppc for bug 383991
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> audacious-3.1.ebuild:
+  sparc stable wrt #383991
+
+*audacious-3.2.1 (18 Feb 2012)
+
+  18 Feb 2012; Jeff Horelick <jdhore@gentoo.org> +audacious-3.2.1.ebuild:
+  Version bump.
+
+  03 Feb 2012; Jeff Horelick <jdhore@gentoo.org> audacious-2.4.4.ebuild,
+  audacious-2.5.4.ebuild, audacious-3.0.3-r1.ebuild, audacious-3.1.1.ebuild,
+  audacious-3.1.ebuild:
+  Fix dependency to use libmowgli-1.
+
+  02 Feb 2012; Jeff Horelick <jdhore@gentoo.org> audacious-3.1.1.ebuild,
+  audacious-3.1.ebuild:
+  Kill off sse2 and altivec USE flags from the 3.1 ebuilds as they've been
+  dropped. Closes bug #393371.
+
+*audacious-3.2 (02 Feb 2012)
+
+  02 Feb 2012; Jeff Horelick <jdhore@gentoo.org> +audacious-3.2.ebuild,
+  metadata.xml:
+  Version bump. New ebuild also includes many improvements such as gtk+:2
+  support re-added, old configure switches dropped and more. Fixes bugs #393371
+  and #401293. Also, set myself as the new maintainer.
+
+  17 Jan 2012; Tobias Klausmann <klausman@gentoo.org> audacious-3.1.ebuild:
+  Stable on alpha, bug #383991
+
+  17 Jan 2012; Tobias Klausmann <klausman@gentoo.org>
+  +files/audacious_ldflags.patch, audacious-3.1.1.ebuild, audacious-3.1.ebuild:
+  Make '-z defs' a linker flag explicitly (bug 395213)
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> audacious-3.1.ebuild:
+  x86 stable wrt security bug #383991
+
+*audacious-3.1.1 (05 Dec 2011)
+
+  05 Dec 2011; Tony Vroon <chainsaw@gentoo.org> +audacious-3.1.1.ebuild:
+  New release on the 3.1 branch.
+
+  15 Nov 2011; Jeroen Roovers <jer@gentoo.org> audacious-3.1.ebuild:
+  Stable for HPPA (bug #383991).
+
+  15 Nov 2011; Tony Vroon <chainsaw@gentoo.org> audacious-3.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in security bug #383991.
+
+*audacious-3.1 (14 Nov 2011)
+
+  14 Nov 2011; Tony Vroon <chainsaw@gentoo.org> +audacious-3.1.ebuild:
+  Version bump, as requested by J.D. Horelick on IRC.
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> audacious-2.5.4.ebuild:
+  Stable for HPPA (bug #380575).
+
+*audacious-3.0.3-r1 (24 Sep 2011)
+
+  24 Sep 2011; Tony Vroon <chainsaw@gentoo.org> -audacious-3.0.3.ebuild,
+  +audacious-3.0.3-r1.ebuild, metadata.xml:
+  Trying to use GTK+2 results in plugin build failures, particularly aosd. Stop
+  offering the choice and handing the user the pieces. Closes bug #384185 by
+  Lance Poore.
+
+  22 Sep 2011; Mike Gilbert <floppym@gentoo.org> audacious-3.0.3.ebuild:
+  Fix faulty gtk dependency.
+
+*audacious-3.0.3 (22 Sep 2011)
+
+  22 Sep 2011; Tony Vroon <chainsaw@gentoo.org> -audacious-3.0.2.ebuild,
+  +audacious-3.0.3.ebuild, metadata.xml:
+  Version bump. Ebuild improvements by Agostino "ago" Sarubbo close bugs
+  #380577, #383357 & #383649. Remove vulnerable version for security bug
+  #383991.
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> audacious-2.5.4.ebuild:
+  x86 stable, bug #380575
+
+  25 Aug 2011; Tony Vroon <chainsaw@gentoo.org> audacious-2.5.4.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo and
+  Elijah El Lazkani in bug #380575.
+
+*audacious-3.0.2 (24 Aug 2011)
+
+  24 Aug 2011; Tony Vroon <chainsaw@gentoo.org> -audacious-3.0.ebuild,
+  +audacious-3.0.2.ebuild:
+  Newest ebuild on the 3.x branch. Removed old ebuild.
 
   26 Jul 2011; Tony Vroon <chainsaw@gentoo.org> -audacious-2.5.3.ebuild:
   Clean up old ebuild; 2.5.4 is the new stable target.
@@ -1106,4 +1303,3 @@
   If you submit a bug about that, include a patch to enable compilation and
   include a test track. A bug report that misses either of these will be
   closed.
-

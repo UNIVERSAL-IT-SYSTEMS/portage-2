@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/db-1.85-r3.ebuild,v 1.15 2011/02/06 21:34:37 leio Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/db-1.85-r3.ebuild,v 1.17 2012/11/25 19:23:39 ulm Exp $
 
-inherit eutils toolchain-funcs multilib
+inherit eutils toolchain-funcs multilib multilib
 
 DESCRIPTION="old berk db kept around for really old packages"
 HOMEPAGE="http://www.oracle.com/technology/software/products/berkeley-db/db/index.html"
@@ -11,7 +11,7 @@ SRC_URI="http://download.oracle.com/berkeley-db/db.${PV}.tar.gz
 # The patch used by Gentoo is from Fedora, and includes all 5 patches found on
 # the Oracle page, plus others.
 
-LICENSE="DB"
+LICENSE="Sleepycat"
 SLOT="1"
 KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86"
 IUSE=""

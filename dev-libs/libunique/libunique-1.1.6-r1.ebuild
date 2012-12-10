@@ -1,19 +1,19 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libunique/libunique-1.1.6-r1.ebuild,v 1.1 2011/07/25 15:18:41 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libunique/libunique-1.1.6-r1.ebuild,v 1.10 2012/10/26 02:14:55 blueness Exp $
 
 EAPI="4"
 GNOME2_LA_PUNT="yes"
 GNOME_TARBALL_SUFFIX="bz2"
 
-inherit gnome2 virtualx
+inherit eutils gnome2 virtualx
 
 DESCRIPTION="a library for writing single instance application"
 HOMEPAGE="http://live.gnome.org/LibUnique"
 
 LICENSE="LGPL-2.1"
 SLOT="1"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~x86-solaris"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~x86-solaris"
 IUSE="dbus doc +introspection"
 
 RDEPEND=">=dev-libs/glib-2.12:2
@@ -22,7 +22,7 @@ RDEPEND=">=dev-libs/glib-2.12:2
 	dbus? ( >=dev-libs/dbus-glib-0.70 )"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
-	>=dev-util/pkgconfig-0.17
+	virtual/pkgconfig
 	doc? ( >=dev-util/gtk-doc-1.11 )
 	introspection? ( >=dev-libs/gobject-introspection-0.6.3 )"
 # For eautoreconf

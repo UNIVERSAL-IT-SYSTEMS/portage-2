@@ -1,14 +1,16 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-image/vdr-image-0.3.0.ebuild,v 1.8 2011/04/06 17:11:03 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-image/vdr-image-0.3.0.ebuild,v 1.11 2012/05/05 08:27:20 jdhore Exp $
 
 EAPI="3"
 
 inherit vdr-plugin eutils flag-o-matic
 
+VERSION="678" #every bump, new version
+
 DESCRIPTION="VDR plugin: display of digital images, like jpeg, tiff, png, bmp"
-HOMEPAGE="http://vdr-image.berlios.de/"
-SRC_URI="mirror://berlios/${PN}/${P}.tar.gz"
+HOMEPAGE="http://projects.vdr-developer.org/projects/plg-image"
+SRC_URI="mirror://vdr-developerorg/${VERSION}/${P}.tar.gz"
 
 KEYWORDS="amd64 x86"
 SLOT="0"
@@ -21,7 +23,7 @@ COMMON_DEPEND=">=media-video/vdr-1.5.8
 	exif? ( media-libs/libexif )"
 
 DEPEND="${COMMON_DEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 RDEPEND="${COMMON_DEPEND}
 	>=media-tv/gentoo-vdr-scripts-0.2.2"

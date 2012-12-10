@@ -1,6 +1,64 @@
 # ChangeLog for dev-tcltk/blt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/blt/ChangeLog,v 1.46 2011/07/08 22:40:30 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/blt/ChangeLog,v 1.64 2012/12/05 07:22:37 jlec Exp $
+
+  05 Dec 2012; Justin Lecher <jlec@gentoo.org> blt-2.4z-r10.ebuild:
+  Respect RANLIB, #444076
+
+  02 Nov 2012; Justin Lecher <jlec@gentoo.org> blt-2.4z-r10.ebuild:
+  Respect AR, #440272
+
+  07 Jun 2012; Zac Medico <zmedico@gentoo.org> blt-2.4z-r10.ebuild:
+  inherit multilib for get_libdir
+
+  10 May 2012; Alexis Ballier <aballier@gentoo.org> blt-2.4z-r10.ebuild:
+  keyword ~amd64-fbsd
+
+  10 May 2012; Alexis Ballier <aballier@gentoo.org> blt-2.4z-r10.ebuild,
+  +files/blt-2.4z-gbsd.patch:
+  Fix build on Gentoo/FreeBSD by detecting it correctly.
+
+  15 Dec 2011; Justin Lecher <jlec@gentoo.org> blt-2.4z-r10.ebuild:
+  Mirror the sources, #394797
+
+  20 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> -blt-2.4z-r5.ebuild,
+  -blt-2.4z-r8.ebuild, -blt-2.4z-r9.ebuild, blt-2.4z-r10.ebuild:
+  ppc/ppc64 stable wrt #368583, drop old
+
+  18 Nov 2011; Fabian Groffen <grobian@gentoo.org> blt-2.4z-r10.ebuild:
+  Pass --with-gnu-ld for Solaris, such that we get RPATH entries in libBLT.so
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> blt-2.4z-r10.ebuild:
+  x86 stable wrt bug #368583
+
+  01 Nov 2011; Tony Vroon <chainsaw@gentoo.org> blt-2.4z-r10.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #368583.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> blt-2.4z-r10.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #387849
+
+  26 Oct 2011; Jeroen Roovers <jer@gentoo.org> blt-2.4z-r10.ebuild:
+  Stable for HPPA (bug #368583).
+
+  25 Oct 2011; Justin Lecher <jlec@gentoo.org> blt-2.4z-r10.ebuild:
+  Added USE=static-libs requested by ago
+
+  24 Oct 2011; Markus Meier <maekke@gentoo.org> blt-2.4z-r5.ebuild:
+  arm stable, bug #387849
+
+  24 Oct 2011; Justin Lecher <jlec@gentoo.org> blt-2.4z-r10.ebuild,
+  metadata.xml:
+  Reverted to EAPI=3
+
+*blt-2.4z-r10 (24 Oct 2011)
+
+  24 Oct 2011; Justin Lecher <jlec@gentoo.org> +blt-2.4z-r10.ebuild,
+  metadata.xml:
+  Dropped rpath definitions, #359781; Bumped to EAPI=4
+
+  05 Aug 2011; Naohiro Aota <naota@gentoo.org> blt-2.4z-r9.ebuild:
+  Add ~x86-fbsd.
 
   08 Jul 2011; Matt Turner <mattst88@gentoo.org> blt-2.4z-r9.ebuild:
   Added ~mips, bug 355373

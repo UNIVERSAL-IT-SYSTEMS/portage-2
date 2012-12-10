@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/R-2.10.1.ebuild,v 1.12 2011/06/23 13:03:38 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/R/R-2.10.1.ebuild,v 1.18 2012/10/07 13:35:21 jlec Exp $
 
 EAPI=2
 
-inherit bash-completion eutils flag-o-matic fortran-2 versionator
+inherit bash-completion-r1 eutils flag-o-matic fortran-2 multilib versionator
 
 DESCRIPTION="Language and environment for statistical computing and graphics"
 HOMEPAGE="http://www.r-project.org/"
@@ -16,7 +16,7 @@ LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 
-IUSE="cairo doc java jpeg lapack minimal nls perl png readline threads tk X"
+IUSE="bash-completion cairo doc java jpeg lapack minimal nls perl png readline threads tk X"
 
 # common depends
 CDEPEND="
@@ -24,10 +24,9 @@ CDEPEND="
 	app-text/ghostscript-gpl
 	dev-libs/libpcre
 	virtual/blas
-	virtual/fortran
 	cairo? (
 		x11-libs/cairo[X]
-		|| ( >=x11-libs/pango-1.20[X] <x11-libs/pango-1.20 ) )
+		>=x11-libs/pango-1.20[X] )
 	jpeg? ( virtual/jpeg )
 	lapack? ( virtual/lapack )
 	perl? ( dev-lang/perl )
@@ -37,12 +36,11 @@ CDEPEND="
 	X? ( x11-libs/libXmu x11-misc/xdg-utils )"
 
 DEPEND="${CDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? (
-		virtual/latex-base
-		|| (
+			virtual/latex-base
 			dev-texlive/texlive-fontsrecommended
-			app-text/ptex ) )"
+		   )"
 
 RDEPEND="${CDEPEND}
 	app-arch/unzip
@@ -69,13 +67,25 @@ src_prepare() {
 		|| die "sed failed"
 
 	# fix Rscript
-	sed -i \
+	sed \
 		-e "s:-DR_HOME='\"\$(rhome)\"':-DR_HOME='\"${R_DIR}\"':" \
-		src/unix/Makefile.in || die "sed unix Makefile failed"
+		-i src/unix/Makefile.in || die "sed unix Makefile failed"
 
 	# fix HTML links to manual (bug #273957)
-	sed -i -e 's:\.\./manual/:manual/:g' $(grep -Flr ../manual/ doc) \
+	sed \
+		-e 's:\.\./manual/:manual/:g' \
+		-i $(grep -Flr ../manual/ doc) \
 		|| die "sed for HTML links to manual failed"
+
+	# Fix compability with zlib-1.2.5.1-r1 OF change
+	has_version ">=sys-libs/zlib-1.2.5.1-r1" && \
+		sed -i -e '1i#define OF(x) x' src/main/unzip.h
+
+	# Missing include that was implicit before
+	sed -i -e '1i#include <zlib.h>' src/main/dounzip.c || die
+
+	# Don't try to access libpng internal structure
+	sed -i -e 's:png_ptr->jmpbuf:png_jmpbuf(png_ptr):' src/modules/X11/rbitmap.c || die
 
 	use lapack && \
 		export LAPACK_LIBS="$(pkg-config --libs lapack)"
@@ -152,7 +162,7 @@ src_install() {
 		R_HOME=${R_DIR}
 	EOF
 	doenvd 99R || die "doenvd failed"
-	dobashcompletion "${WORKDIR}"/R.bash_completion
+	use bash-completion && dobashcomp "${WORKDIR}"/R.bash_completion
 }
 
 pkg_config() {

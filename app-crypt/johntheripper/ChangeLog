@@ -1,6 +1,75 @@
 # ChangeLog for app-crypt/johntheripper
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/johntheripper/ChangeLog,v 1.133 2011/07/05 14:01:52 c1pher Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/johntheripper/ChangeLog,v 1.147 2012/11/24 23:17:46 robbat2 Exp $
+
+*johntheripper-1.7.9-r6 (24 Nov 2012)
+
+  24 Nov 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +johntheripper-1.7.9-r6.ebuild:
+  Include all of the other john symlinks for the hash extraction modes.
+
+  08 Oct 2012; Rick Farina <zerochaos@gentoo.org> johntheripper-1.7.9-r5.ebuild:
+  restore test functionality when possible, stub out for later opencl fixes
+
+  06 Oct 2012; Rick Farina <zerochaos@gentoo.org> johntheripper-1.7.9-r5.ebuild:
+  restricting test per 437426, happy to add it back if it ever works right
+
+*johntheripper-1.7.9-r5 (05 Oct 2012)
+
+  05 Oct 2012; Rick Farina <zerochaos@gentoo.org>
+  +johntheripper-1.7.9-r5.ebuild:
+  bump to jumbo 7, seems to work
+
+*johntheripper-1.7.9-r4 (05 Jul 2012)
+
+  05 Jul 2012; Rick Farina <zerochaos@gentoo.org>
+  +johntheripper-1.7.9-r4.ebuild, metadata.xml:
+  add cuda/opencl support (fingers crossed)
+
+*johntheripper-1.7.9-r3 (04 Jul 2012)
+
+  04 Jul 2012; Rick Farina <zerochaos@gentoo.org>
+  +johntheripper-1.7.9-r3.ebuild, metadata.xml:
+  update to jumbo6, marking self as maintainer
+
+*johntheripper-1.7.9-r2 (08 Apr 2012)
+
+  08 Apr 2012; Tim Harder <radhermit@gentoo.org>
+  +johntheripper-1.7.9-r2.ebuild,
+  +files/johntheripper-1.7.9-jumbo-5-NT-performance-02.patch:
+  Revision bump. Fix typo in jumbo patch and apply performance fix.
+
+  07 Apr 2012; Tim Harder <radhermit@gentoo.org> johntheripper-1.7.9-r1.ebuild:
+  Fix CFLAGS quoting build error.
+
+  07 Apr 2012; Tim Harder <radhermit@gentoo.org> johntheripper-1.7.9.ebuild,
+  johntheripper-1.7.9-r1.ebuild:
+  Keywording latest versions for ~x86-fbsd as well.
+
+  07 Apr 2012; Tim Harder <radhermit@gentoo.org> johntheripper-1.7.6-r1.ebuild,
+  johntheripper-1.7.8.ebuild, johntheripper-1.7.9.ebuild,
+  johntheripper-1.7.9-r1.ebuild:
+  Add slot dep for openssl.
+
+*johntheripper-1.7.9-r1 (07 Apr 2012)
+
+  07 Apr 2012; Tim Harder <radhermit@gentoo.org>
+  +johntheripper-1.7.9-r1.ebuild:
+  Revision bump. Re-add mpi support, install tgtsnarf utility, and properly
+  apply system config.
+
+  19 Mar 2012; Naohiro Aota <naota@gentoo.org> johntheripper-1.7.8.ebuild:
+  Support Gentoo/FreeBSD. #319445
+
+  05 Mar 2012; Tim Harder <radhermit@gentoo.org> johntheripper-1.7.9.ebuild:
+  Use correct targets when xop and avx instructions sets are enabled (bugs
+  #405927 and 405941, patch by Rick Farina).
+
+*johntheripper-1.7.9 (23 Feb 2012)
+
+  23 Feb 2012; Tim Harder <radhermit@gentoo.org> +johntheripper-1.7.9.ebuild:
+  Version bump (bug #405101 by Renato Alves). Check for openmp toolchain
+  support and remove unnecessary conditions for running tests.
 
 *johntheripper-1.7.8 (05 Jul 2011)
 

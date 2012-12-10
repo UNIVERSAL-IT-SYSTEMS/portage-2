@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/silgraphite/silgraphite-2.3.1.ebuild,v 1.17 2010/12/14 04:03:28 mattst88 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/silgraphite/silgraphite-2.3.1.ebuild,v 1.27 2012/05/09 13:17:05 aballier Exp $
 
-EAPI="2"
+EAPI=4
 
 inherit eutils
 
@@ -12,27 +12,34 @@ SRC_URI="mirror://sourceforge/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="|| ( CPL-0.5 LGPL-2.1 )"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
-IUSE="pango truetype xft"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+IUSE="pango static-libs truetype xft"
 
-RDEPEND="xft? ( x11-libs/libXft )
+RDEPEND="
+	pango? ( x11-libs/pango media-libs/fontconfig )
 	truetype? ( media-libs/freetype:2 )
-	pango? ( x11-libs/pango media-libs/fontconfig )"
+	xft? ( x11-libs/libXft )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}-aligned_access.patch"
+
+	# Drop DEPRECATED flags, bug #385533
+	sed -i -e 's:-D[A-Z_]*DISABLE_DEPRECATED:$(NULL):g' \
+		wrappers/pangographite/Makefile.am wrappers/pangographite/Makefile.in \
+		wrappers/pangographite/graphite/Makefile.am || die
 }
 
 src_configure() {
 	econf \
+		$(use_enable static-libs static) \
 		$(use_with xft) \
 		$(use_with truetype freetype) \
 		$(use_with pango pangographite)
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-	dodoc README
+	default
+	find "${ED}" -name '*.la' -exec rm -f {} +
 }

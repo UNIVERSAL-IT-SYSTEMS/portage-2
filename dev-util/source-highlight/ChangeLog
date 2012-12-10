@@ -1,6 +1,39 @@
 # ChangeLog for dev-util/source-highlight
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/source-highlight/ChangeLog,v 1.44 2011/04/10 03:07:43 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/source-highlight/ChangeLog,v 1.49 2012/11/09 17:25:39 flameeyes Exp $
+
+*source-highlight-3.1.7-r2 (09 Nov 2012)
+
+  09 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +source-highlight-3.1.7-r2.ebuild:
+  Add a masked revision bump to leverage the layout changes in boost-1.52.0-r1.
+
+  05 Jul 2012; Naohiro Aota <naota@gentoo.org> source-highlight-3.1.7-r1.ebuild:
+  Add ~x86-fbsd. #421039
+
+*source-highlight-3.1.7-r1 (04 Jul 2012)
+
+  04 Jul 2012; Tiziano Müller <dev-zero@gentoo.org>
+  +source-highlight-3.1.7-r1.ebuild,
+  -files/source-highlight-2.10.bash-completion,
+  -files/source-highlight-2.8.bash-completion, -source-highlight-3.1.7.ebuild:
+  Fix bash-completion installation (bug #424753) and cleanup old bash-completion
+  files.
+
+*source-highlight-3.1.7 (04 Jul 2012)
+
+  04 Jul 2012; Tiziano Müller <dev-zero@gentoo.org>
+  +source-highlight-3.1.7.ebuild, -source-highlight-2.11.1.ebuild,
+  -source-highlight-2.11.ebuild, -source-highlight-2.9.ebuild,
+  -source-highlight-3.1.6.ebuild:
+  Version bump (contains fix for bug #421039). Drop old versions.
+
+*source-highlight-3.1.6 (25 May 2012)
+
+  25 May 2012; Tiziano Müller <dev-zero@gentoo.org>
+  +source-highlight-3.1.6.ebuild:
+  Version bump (bug #300540), solves bug #316083 (failing tests) and bug
+  #352005 (broken test with boost-1.45) as well.
 
   10 Apr 2011; Jonathan Callen <abcd@gentoo.org> source-highlight-3.1.ebuild:
   Add prefix support, bump EAPI to 3, add prefix keywords

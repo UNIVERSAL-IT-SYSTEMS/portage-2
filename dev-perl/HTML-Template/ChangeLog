@@ -1,6 +1,41 @@
 # ChangeLog for dev-perl/HTML-Template
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Template/ChangeLog,v 1.39 2010/12/03 00:47:15 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Template/ChangeLog,v 1.49 2012/09/02 16:24:01 tove Exp $
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -HTML-Template-2.900.0.ebuild:
+  Cleanup
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> HTML-Template-2.900.0.ebuild,
+  HTML-Template-2.910.0.ebuild:
+  Drop ia64/sparc keywords
+
+  09 Aug 2012; Brent Baude <ranger@gentoo.org> HTML-Template-2.910.0.ebuild:
+  Marking HTML-Template-2.910.0 ppc for bug 418815
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> HTML-Template-2.910.0.ebuild:
+  Stable for amd64, wrt bug #418815
+
+  01 Aug 2012; Jeff Horelick <jdhore@gentoo.org> HTML-Template-2.910.0.ebuild:
+  marked x86 per bug 418815
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*HTML-Template-2.910.0 (31 Mar 2012)
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> +HTML-Template-2.910.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -HTML-Template-2.9.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> HTML-Template-2.900.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*HTML-Template-2.900.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +HTML-Template-2.900.0.ebuild:
+  Change version scheme
 
   03 Dec 2010; Michael Weber <xmw@gentoo.org> HTML-Template-2.9.ebuild:
   add ~arm (bug 302981)

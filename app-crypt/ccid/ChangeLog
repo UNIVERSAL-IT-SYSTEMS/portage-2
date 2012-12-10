@@ -1,6 +1,90 @@
 # ChangeLog for app-crypt/ccid
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/ccid/ChangeLog,v 1.64 2011/07/03 17:42:02 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/ccid/ChangeLog,v 1.87 2012/12/06 03:56:50 phajdan.jr Exp $
+
+  06 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ccid-1.4.8.ebuild:
+  x86 stable wrt bug #442432
+
+  16 Nov 2012; Jeroen Roovers <jer@gentoo.org> ccid-1.4.8.ebuild:
+  Stable for HPPA (bug #442432).
+
+  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org> ccid-1.4.8.ebuild:
+  Stable for amd64, wrt bug #442432
+
+  14 Nov 2012; Anthony G. Basile <blueness@gentoo.org> ccid-1.4.8.ebuild:
+  stable arm, bug #442432
+
+  14 Nov 2012; Anthony G. Basile <blueness@gentoo.org> ccid-1.4.8.ebuild:
+  stable ppc, bug #442432
+
+  13 Nov 2012; Brent Baude <ranger@gentoo.org> ccid-1.4.8.ebuild:
+  Marking ccid-1.4.8 ppc64 for bug 442432
+
+  13 Nov 2012; Brent Baude <ranger@gentoo.org> ccid-1.4.5.ebuild:
+  Marking ccid-1.4.5 ppc64 for bug 411059
+
+*ccid-1.4.8 (07 Oct 2012)
+
+  07 Oct 2012; Diego E. Pettenò <flameeyes@gentoo.org> +ccid-1.4.8.ebuild,
+  -ccid-1.4.1-r1.ebuild, -ccid-1.4.6.ebuild, -ccid-1.4.7-r1.ebuild,
+  -ccid-1.4.7.ebuild:
+  Version bump and remove old.
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> ccid-1.4.5.ebuild:
+  ppc stable (bug 411059).
+
+*ccid-1.4.7-r1 (12 Aug 2012)
+
+  12 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> +ccid-1.4.7-r1.ebuild:
+  Query udev.pc pkg-config file for correct udevdir value.
+
+*ccid-1.4.7 (22 Jun 2012)
+
+  22 Jun 2012; Diego E. Pettenò <flameeyes@gentoo.org> +ccid-1.4.7.ebuild:
+  Version bump.
+
+  15 Apr 2012; Markus Meier <maekke@gentoo.org> ccid-1.4.5.ebuild:
+  arm stable, bug #411059
+
+  11 Apr 2012; Jeff Horelick <jdhore@gentoo.org> ccid-1.4.5.ebuild:
+  marked x86 per bug 411059
+
+  11 Apr 2012; Jeroen Roovers <jer@gentoo.org> ccid-1.4.5.ebuild:
+  Stable for HPPA (bug #411059).
+
+  10 Apr 2012; Agostino Sarubbo <ago@gentoo.org> ccid-1.4.5.ebuild:
+  Stable for amd64, wrt bug #411059
+
+  07 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org> ccid-1.4.6.ebuild:
+  Bump dependency on pcsc-lite, thanks idl0r.
+
+*ccid-1.4.6 (06 Apr 2012)
+
+  06 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org> +ccid-1.4.6.ebuild,
+  -ccid-1.4.4.ebuild:
+  Version bump and remove old.
+
+  12 Feb 2012; Tony Vroon <chainsaw@gentoo.org> ccid-1.4.2.ebuild:
+  Marked stable on PPC64 as requested by Diego Elio "Flameeyes" Pettenò in
+  bug #386345. Compile tested on a PowerMac7,3 (64UL) with GCC 4.5.3.
+
+  17 Oct 2011; Markus Meier <maekke@gentoo.org> ccid-1.4.2.ebuild:
+  arm stable, bug #386345
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> ccid-1.4.2.ebuild:
+  Stable for HPPA (bug #386345).
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ccid-1.4.2.ebuild:
+  x86 stable wrt bug #386345
+
+  12 Oct 2011; Tony Vroon <chainsaw@gentoo.org> ccid-1.4.2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #386345.
+
+*ccid-1.4.5 (11 Oct 2011)
+
+  11 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> +ccid-1.4.5.ebuild:
+  Version bump.
 
 *ccid-1.4.4 (03 Jul 2011)
 
@@ -286,4 +370,3 @@
   20 Jul 2005; Daniel Black <dragonheart@gentoo.org> +metadata.xml,
   +ccid-0.9.3.1.ebuild:
   Initial import as per bug #95956. Ebuild contributed by Alon Bar-Lev
-

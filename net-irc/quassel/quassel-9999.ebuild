@@ -1,17 +1,17 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.60 2011/04/20 11:12:35 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.64 2012/07/29 16:05:57 kensington Exp $
 
 EAPI=4
 
+inherit cmake-utils eutils pax-utils user versionator
+
 EGIT_REPO_URI="git://git.quassel-irc.org/quassel.git"
 EGIT_BRANCH="master"
-[[ "${PV}" == "9999" ]] && GIT_ECLASS="git-2"
+[[ "${PV}" == "9999" ]] && inherit git-2
 
 QT_MINIMAL="4.6.0"
 KDE_MINIMAL="4.4"
-
-inherit cmake-utils eutils versionator ${GIT_ECLASS}
 
 DESCRIPTION="Qt4/KDE4 IRC client suppporting a remote daemon for 24/7 connectivity."
 HOMEPAGE="http://quassel-irc.org/"
@@ -20,16 +20,17 @@ HOMEPAGE="http://quassel-irc.org/"
 LICENSE="GPL-3"
 KEYWORDS=""
 SLOT="0"
-IUSE="ayatana crypt dbus debug kde monolithic phonon postgres +server +ssl webkit X"
+IUSE="ayatana crypt dbus debug kde monolithic phonon postgres +server +ssl syslog webkit X"
 
 SERVER_RDEPEND="
+	>=x11-libs/qt-script-${QT_MINIMAL}:4
 	crypt? (
 		app-crypt/qca:2
 		app-crypt/qca-ossl
 	)
 	!postgres? ( >=x11-libs/qt-sql-${QT_MINIMAL}:4[sqlite] dev-db/sqlite[threadsafe,-secure-delete] )
 	postgres? ( >=x11-libs/qt-sql-${QT_MINIMAL}:4[postgres] )
-	>=x11-libs/qt-script-${QT_MINIMAL}:4
+	syslog? ( virtual/logger )
 "
 
 GUI_RDEPEND="
@@ -44,7 +45,7 @@ GUI_RDEPEND="
 		>=kde-base/oxygen-icons-${KDE_MINIMAL}
 		ayatana? ( kde-misc/plasma-widget-message-indicator )
 	)
-	phonon? ( || ( media-libs/phonon >=x11-libs/qt-phonon-${QT_MINIMAL} ) )
+	phonon? ( || ( media-libs/phonon >=x11-libs/qt-phonon-${QT_MINIMAL}:4 ) )
 	webkit? ( >=x11-libs/qt-webkit-${QT_MINIMAL}:4 )
 "
 
@@ -69,6 +70,7 @@ REQUIRED_USE="
 	|| ( X server monolithic )
 	crypt? ( || ( server monolithic ) )
 	postgres? ( || ( server monolithic ) )
+	syslog? ( || ( server monolithic ) )
 	kde? ( || ( X monolithic ) )
 	phonon? ( || ( X monolithic ) )
 	dbus? ( || ( X monolithic ) )
@@ -97,6 +99,7 @@ src_configure() {
 		$(cmake-utils_use_with kde)
 		$(cmake-utils_use_with dbus)
 		$(cmake-utils_use_with ssl OPENSSL)
+		$(cmake-utils_use_with syslog)
 		$(cmake-utils_use_with !kde OXYGEN)
 		$(cmake-utils_use_with crypt)
 		"-DEMBED_DATA=OFF"
@@ -109,6 +112,9 @@ src_install() {
 	cmake-utils_src_install
 
 	if use server ; then
+		# needs PAX marking wrt bug#346255
+		pax-mark m "${ED}/usr/bin/quasselcore" || die
+
 		# prepare folders in /var/
 		keepdir "${QUASSEL_DIR}"
 		fowners "${QUASSEL_USER}":"${QUASSEL_USER}" "${QUASSEL_DIR}"
@@ -134,8 +140,13 @@ pkg_postinst() {
 		einfo "	emerge --config =${CATEGORY}/${PF}"
 	fi
 
+	if use server || use monolithic ; then
+		einfo "Quassel can use net-misc/oidentd package if installed on your system."
+		einfo "Consider installing it if you want to run quassel within identd daemon."
+	fi
+
 	# temporary info mesage
-	if use server && [[ $(get_minor_version ${REPLACING_VERSIONS}) -lt 7 ]]; then
+	if use server && [[ $(get_version_component_range 2 ${REPLACING_VERSIONS}) -lt 7 ]]; then
 		echo
 		ewarn "Please note that all configuration moved from"
 		ewarn "/home/\${QUASSEL_USER}/.config/quassel-irc.org/"

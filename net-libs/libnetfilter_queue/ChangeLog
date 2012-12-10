@@ -1,6 +1,54 @@
 # ChangeLog for net-libs/libnetfilter_queue
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libnetfilter_queue/ChangeLog,v 1.13 2011/05/23 10:28:41 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libnetfilter_queue/ChangeLog,v 1.24 2012/11/09 01:00:43 blueness Exp $
+
+  09 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  libnetfilter_queue-1.0.2.ebuild:
+  keyword ~ppc64, bug #407795
+
+  29 Oct 2012; Jeroen Roovers <jer@gentoo.org> libnetfilter_queue-1.0.2.ebuild:
+  Marked ~hppa (bug #440108).
+
+*libnetfilter_queue-1.0.2 (23 Oct 2012)
+
+  23 Oct 2012; Jeroen Roovers <jer@gentoo.org>
+  -libnetfilter_queue-1.0.0.ebuild, +libnetfilter_queue-1.0.2.ebuild:
+  Version bump.
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org>
+  libnetfilter_queue-1.0.1.ebuild:
+  x86 stable, bug #419267
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
+  libnetfilter_queue-1.0.1.ebuild:
+  Stable for amd64, wrt bug #419267
+
+  27 Jun 2012; Markus Meier <maekke@gentoo.org>
+  libnetfilter_queue-1.0.1.ebuild:
+  add ~arm, bug #407795
+
+  14 Jun 2012; Michael Weber <xmw@gentoo.org> libnetfilter_queue-1.0.1.ebuild:
+  rekeyword ~ppc (bug 407795)
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  libnetfilter_queue-0.0.15.ebuild, libnetfilter_queue-0.0.16.ebuild,
+  libnetfilter_queue-0.0.17.ebuild, libnetfilter_queue-1.0.0.ebuild,
+  libnetfilter_queue-1.0.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*libnetfilter_queue-1.0.1 (05 Jan 2012)
+
+  05 Jan 2012; Tim Harder <radhermit@gentoo.org>
+  +libnetfilter_queue-1.0.1.ebuild:
+  Version bump.
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org>
+  libnetfilter_queue-1.0.0.ebuild:
+  Bump to EAPI 4 and fix autotools-utils usage (bug #392113).
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org>
+  libnetfilter_queue-1.0.0.ebuild:
+  Build in the source tree.
 
 *libnetfilter_queue-1.0.0 (23 May 2011)
 
@@ -67,4 +115,3 @@
   13 Nov 2006; Cedric Krier <ced@ced.homedns.org>
   +libnetfilter_queue-0.0.12.ebuild:
   New ebuild
-

@@ -1,6 +1,52 @@
 # ChangeLog for x11-themes/fvwm-crystal
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/fvwm-crystal/ChangeLog,v 1.60 2009/09/28 22:50:47 vostorga Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/fvwm-crystal/ChangeLog,v 1.72 2012/07/29 17:48:29 armin76 Exp $
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> fvwm-crystal-3.0.6-r2.ebuild:
+  Drop sparc keywords
+
+  21 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -fvwm-crystal-3.0.6-r1.ebuild:
+  old
+
+  21 Jun 2012; Jeff Horelick <jdhore@gentoo.org> fvwm-crystal-3.0.6-r2.ebuild:
+  marked x86 per bug 422435
+
+  20 Jun 2012; Agostino Sarubbo <ago@gentoo.org> fvwm-crystal-3.0.6-r2.ebuild:
+  Stable for amd64, wrt bug #422435
+
+*fvwm-crystal-3.0.6-r2 (23 Jan 2012)
+
+  23 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +fvwm-crystal-3.0.6-r2.ebuild, +files/fvwm-crystal-build.patch:
+  Fix bad initialization of generate-menu wrt #345985. Use "emake install" with
+  DESTDIR instead of "einstall". Thanks to Jan Vereecke, David Abbott and
+  Dominique Michel.
+
+  23 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  fvwm-crystal-3.0.6-r1.ebuild:
+  Use python.eclass and convert shebang(s) wrt #317041 by Ian Delaney
+
+  23 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  fvwm-crystal-3.0.6-r1.ebuild:
+  Fix *magick dependencies (import command is used) wrt #314413 by Wojciech
+  Porczyk
+
+  11 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -fvwm-crystal-3.0.5-r1.ebuild:
+  old
+
+  11 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  fvwm-crystal-3.0.6-r1.ebuild:
+  amd64/x86 stable wrt #385143
+
+  27 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  fvwm-crystal-3.0.6-r1.ebuild:
+  Fix missing USE="png" depend for x11-wm/fvwm wrt #332117 by Jonathan Geisler
+
+  19 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  fvwm-crystal-3.0.5-r1.ebuild, fvwm-crystal-3.0.6-r1.ebuild:
+  Fix HOMEPAGE wrt #379353 by Jesús Guerrero <i92guboj@gentoo.org>
 
   28 Sep 2009; Víctor Ostorga <vostorga@gentoo.org>
   fvwm-crystal-3.0.6-r1.ebuild:

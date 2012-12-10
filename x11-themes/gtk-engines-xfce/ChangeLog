@@ -1,6 +1,190 @@
 # ChangeLog for x11-themes/gtk-engines-xfce
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-xfce/ChangeLog,v 1.124 2011/04/26 13:16:36 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/gtk-engines-xfce/ChangeLog,v 1.164 2012/11/28 12:37:10 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gtk-engines-xfce-3.0.1-r200.ebuild, gtk-engines-xfce-3.0.1-r300.ebuild:
+  EAPI5
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -gtk-engines-xfce-3.0.0-r200.ebuild, -gtk-engines-xfce-3.0.0-r201.ebuild,
+  -gtk-engines-xfce-3.0.0-r300.ebuild,
+  -files/gtk-engines-xfce-3.0.0-destroy_gradient.patch:
+  old
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gtk-engines-xfce-3.0.1-r200.ebuild, gtk-engines-xfce-3.0.1-r300.ebuild:
+  alpha/hppa/ia64/ppc/ppc64/sparc stable wrt #429484
+
+  19 Nov 2012; Markus Meier <maekke@gentoo.org>
+  gtk-engines-xfce-3.0.1-r300.ebuild:
+  arm stable, bug #429484
+
+  19 Nov 2012; Markus Meier <maekke@gentoo.org>
+  gtk-engines-xfce-3.0.1-r200.ebuild:
+  arm stable, bug #429484
+
+  16 Nov 2012; Andreas Schuerch <nativemad@gentoo.org>
+  gtk-engines-xfce-3.0.1-r200.ebuild, gtk-engines-xfce-3.0.1-r300.ebuild:
+  x86 stable, see bug 429484
+
+  27 Oct 2012;  <ago@gentoo.org> gtk-engines-xfce-3.0.1-r300.ebuild:
+  Stable for amd64, wrt bug #429484
+
+  27 Oct 2012; <ago@gentoo.org> gtk-engines-xfce-3.0.1-r200.ebuild:
+  Stable for amd64, wrt bug #429484
+
+*gtk-engines-xfce-3.0.1-r300 (04 Oct 2012)
+*gtk-engines-xfce-3.0.1-r200 (04 Oct 2012)
+
+  04 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +gtk-engines-xfce-3.0.1-r200.ebuild, +gtk-engines-xfce-3.0.1-r300.ebuild:
+  Version bump.
+
+*gtk-engines-xfce-3.0.0-r201 (05 Sep 2012)
+
+  05 Sep 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +gtk-engines-xfce-3.0.0-r201.ebuild,
+  +files/gtk-engines-xfce-3.0.0-destroy_gradient.patch:
+  Import patch for memory leaking from upstream version control wrt #408529
+
+  17 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -gtk-engines-xfce-2.99.0-r200.ebuild, -gtk-engines-xfce-2.99.0-r300.ebuild,
+  -gtk-engines-xfce-2.99.3-r200.ebuild, -gtk-engines-xfce-2.99.3-r300.ebuild:
+  old
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org>
+  gtk-engines-xfce-3.0.0-r300.ebuild:
+  alpha/ia64/sparc stable wrt #413871
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org>
+  gtk-engines-xfce-3.0.0-r200.ebuild:
+  alpha/ia64/sparc stable wrt #413871
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gtk-engines-xfce-3.0.0-r200.ebuild, gtk-engines-xfce-3.0.0-r300.ebuild:
+  ppc stable wrt #413871
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org>
+  gtk-engines-xfce-3.0.0-r200.ebuild, gtk-engines-xfce-3.0.0-r300.ebuild:
+  Stable for HPPA (bug #413871).
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org>
+  gtk-engines-xfce-3.0.0-r200.ebuild, gtk-engines-xfce-3.0.0-r300.ebuild:
+  keyword ~amd64-fbsd
+
+  15 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gtk-engines-xfce-3.0.0-r200.ebuild:
+  amd64 stable wrt #413871
+
+  15 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gtk-engines-xfce-3.0.0-r200.ebuild, gtk-engines-xfce-3.0.0-r300.ebuild:
+  ppc64/x86 stable wrt #413871
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  gtk-engines-xfce-2.99.0-r200.ebuild, gtk-engines-xfce-2.99.0-r300.ebuild,
+  gtk-engines-xfce-2.99.3-r200.ebuild, gtk-engines-xfce-2.99.3-r300.ebuild,
+  gtk-engines-xfce-3.0.0-r200.ebuild, gtk-engines-xfce-3.0.0-r300.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  03 May 2012; Markus Meier <maekke@gentoo.org>
+  gtk-engines-xfce-3.0.0-r200.ebuild, gtk-engines-xfce-3.0.0-r300.ebuild:
+  arm stable, bug #413871
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org>
+  gtk-engines-xfce-3.0.0-r300.ebuild:
+  Stable for amd64, wrt bug #413871
+
+*gtk-engines-xfce-3.0.0-r300 (28 Apr 2012)
+*gtk-engines-xfce-3.0.0-r200 (28 Apr 2012)
+
+  28 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +gtk-engines-xfce-3.0.0-r200.ebuild, +gtk-engines-xfce-3.0.0-r300.ebuild:
+  Version bump. This version is compatible with x11-libs/gtk+ >= 3.2.
+
+  14 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -gtk-engines-xfce-2.99.1-r200.ebuild, -gtk-engines-xfce-2.99.1-r300.ebuild,
+  -gtk-engines-xfce-2.99.2-r200.ebuild, -gtk-engines-xfce-2.99.2-r300.ebuild:
+  old
+
+*gtk-engines-xfce-2.99.3-r300 (14 Apr 2012)
+*gtk-engines-xfce-2.99.3-r200 (14 Apr 2012)
+
+  14 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +gtk-engines-xfce-2.99.3-r200.ebuild, +gtk-engines-xfce-2.99.3-r300.ebuild:
+  Version bump.
+
+*gtk-engines-xfce-2.99.2-r300 (30 Mar 2012)
+*gtk-engines-xfce-2.99.2-r200 (30 Mar 2012)
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +gtk-engines-xfce-2.99.2-r200.ebuild, +gtk-engines-xfce-2.99.2-r300.ebuild:
+  Version bump.
+
+*gtk-engines-xfce-2.99.1-r300 (11 Feb 2012)
+*gtk-engines-xfce-2.99.1-r200 (11 Feb 2012)
+
+  11 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +gtk-engines-xfce-2.99.1-r200.ebuild, +gtk-engines-xfce-2.99.1-r300.ebuild:
+  Version bump.
+
+  10 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -gtk-engines-xfce-2.8.1.ebuild:
+  old
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org>
+  gtk-engines-xfce-2.99.0-r200.ebuild, gtk-engines-xfce-2.99.0-r300.ebuild:
+  Stable for HPPA (bug #397865).
+
+  03 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gtk-engines-xfce-2.99.0-r200.ebuild, gtk-engines-xfce-2.99.0-r300.ebuild:
+  ppc/ppc64 stable wrt #397865
+
+  28 Jan 2012; Raúl Porcel <armin76@gentoo.org>
+  gtk-engines-xfce-2.99.0-r200.ebuild, gtk-engines-xfce-2.99.0-r300.ebuild:
+  alpha/ia64/sparc stable wrt # 397865
+
+  21 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gtk-engines-xfce-2.99.0-r200.ebuild, gtk-engines-xfce-2.99.0-r300.ebuild:
+  x86 stable wrt bug #397865
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org>
+  gtk-engines-xfce-2.99.0-r300.ebuild:
+  arm stable, bug #397865
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org>
+  gtk-engines-xfce-2.99.0-r200.ebuild:
+  arm stable, bug #397865
+
+  09 Jan 2012; Agostino Sarubbo <ago@gentoo.org>
+  gtk-engines-xfce-2.99.0-r200.ebuild:
+  Stable for AMD64, wrt bug #397865
+
+  09 Jan 2012; Agostino Sarubbo <ago@gentoo.org>
+  gtk-engines-xfce-2.99.0-r300.ebuild:
+  Stable for AMD64, wrt bug #397865
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -gtk-engines-xfce-2.9.0.ebuild:
+  old
+
+*gtk-engines-xfce-2.99.0-r300 (22 Dec 2011)
+*gtk-engines-xfce-2.99.0-r200 (22 Dec 2011)
+
+  22 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +gtk-engines-xfce-2.99.0-r200.ebuild, +gtk-engines-xfce-2.99.0-r300.ebuild:
+  Version bump.
+
+  03 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  gtk-engines-xfce-2.8.1.ebuild, gtk-engines-xfce-2.9.0.ebuild:
+  Change license from GPL-3 to GPL-2 (as per COPYING). Mention GTK+-2.x in
+  description (to specify there is no GTK+-3.x support yet).
+
+*gtk-engines-xfce-2.9.0 (03 Dec 2011)
+
+  03 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +gtk-engines-xfce-2.9.0.ebuild:
+  Version bump (to non conflicting development series)
 
   23 Apr 2011; Samuli Suominen <ssuominen@gentoo.org>
   gtk-engines-xfce-2.8.1.ebuild:

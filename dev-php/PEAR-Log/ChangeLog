@@ -1,6 +1,59 @@
 # ChangeLog for dev-php/PEAR-Log
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Log/ChangeLog,v 1.87 2011/05/26 11:52:00 olemarkus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Log/ChangeLog,v 1.102 2012/09/09 16:56:36 armin76 Exp $
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> PEAR-Log-1.12.7-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #418887
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> PEAR-Log-1.12.7-r1.ebuild:
+  ppc stable (bug 418887).
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> PEAR-Log-1.12.7-r1.ebuild:
+  x86 stable, bug #418887
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> PEAR-Log-1.12.7-r1.ebuild:
+  Marking PEAR-Log-1.12.7-r1 ppc64 for bug 418887
+
+  05 Aug 2012; Markus Meier <maekke@gentoo.org> PEAR-Log-1.12.7-r1.ebuild:
+  arm stable, bug #418887
+
+  04 Aug 2012; Jeroen Roovers <jer@gentoo.org> PEAR-Log-1.12.7-r1.ebuild:
+  Stable for HPPA (bug #418887).
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> PEAR-Log-1.12.7-r1.ebuild:
+  Stable for amd64, wrt bug #418887
+
+*PEAR-Log-1.12.7-r1 (09 Feb 2012)
+
+  09 Feb 2012; Matti Bickel <mabi@gentoo.org> +PEAR-Log-1.12.7-r1.ebuild,
+  -PEAR-Log-1.10.0.ebuild, -PEAR-Log-1.11.5.ebuild, -PEAR-Log-1.11.6.ebuild,
+  -PEAR-Log-1.12.0.ebuild, -PEAR-Log-1.12.5.ebuild, -PEAR-Log-1.12.6.ebuild,
+  -PEAR-Log-1.9.11.ebuild, -PEAR-Log-1.9.13.ebuild, -PEAR-Log-1.9.14.ebuild,
+  -PEAR-Log-1.9.3.ebuild:
+  EAPI bump, remove depend.php dependency, remove old versions
+
+  07 Feb 2012; Jeroen Roovers <jer@gentoo.org> PEAR-Log-1.12.7.ebuild:
+  Stable for HPPA (bug #393859).
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> PEAR-Log-1.12.7.ebuild:
+  ppc/ppc64 stable wrt #393859
+
+  29 Jan 2012; Raúl Porcel <armin76@gentoo.org> PEAR-Log-1.12.7.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable
+
+  21 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> PEAR-Log-1.12.7.ebuild:
+  x86 stable wrt bug #393859
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> PEAR-Log-1.12.7.ebuild:
+  arm stable, bug #393859
+
+  16 Jan 2012; Agostino Sarubbo <ago@gentoo.org> PEAR-Log-1.12.7.ebuild:
+  Stable for amd64, wrt bug #393859
+
+*PEAR-Log-1.12.7 (12 Dec 2011)
+
+  12 Dec 2011; Ole Markus With <olemarkus@gentoo.org> +PEAR-Log-1.12.7.ebuild:
+  Version bump
 
 *PEAR-Log-1.12.6 (26 May 2011)
 

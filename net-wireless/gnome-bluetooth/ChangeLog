@@ -1,6 +1,116 @@
 # ChangeLog for net-wireless/gnome-bluetooth
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/gnome-bluetooth/ChangeLog,v 1.98 2011/05/14 16:29:14 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/gnome-bluetooth/ChangeLog,v 1.119 2012/11/18 12:14:38 ssuominen Exp $
+
+  18 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Remove pda@ because this isn't exactly related to PDAs.
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> -gnome-bluetooth-2.32.0.ebuild,
+  -gnome-bluetooth-3.4.2.ebuild, metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML, remove old.
+
+  27 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-bluetooth-2.32.0.ebuild, gnome-bluetooth-2.32.0-r1.ebuild,
+  gnome-bluetooth-3.2.2.ebuild, gnome-bluetooth-3.4.2.ebuild,
+  gnome-bluetooth-3.4.2-r1.ebuild:
+  Fix building with older glib (bug #436236, thanks to Sasha Medvedev). Update
+  license. Inherit user.eclass.
+
+  23 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  gnome-bluetooth-3.4.2-r1.ebuild:
+  keyword ~ppc64, bug #379651
+
+  23 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  gnome-bluetooth-3.4.2-r1.ebuild:
+  keyword ~ppc, bug #379651
+
+  13 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-bluetooth-3.4.2-r1.ebuild:
+  Ensure udev is a build-time dependency for udev.pc use, thanks to Samuli
+  Suominen for noticing.
+
+  13 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-bluetooth-3.4.2-r1.ebuild:
+  Forgot to inherit toolchain-funcs
+
+*gnome-bluetooth-3.4.2-r1 (13 Sep 2012)
+
+  13 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -gnome-bluetooth-3.4.0.ebuild, +gnome-bluetooth-3.4.2-r1.ebuild:
+  Use pkgconfig to read udevdir from udev.pc (bug #433910, thanks to Martin von
+  Gagern). Drop old.
+
+*gnome-bluetooth-3.4.2 (04 Jul 2012)
+
+  04 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gnome-bluetooth-3.4.2.ebuild:
+  Version bump with various bugfixes.
+
+  04 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gnome-bluetooth-3.2.2.ebuild, gnome-bluetooth-3.4.0.ebuild:
+  inherit eutils for preserve_old_lib_notify
+
+*gnome-bluetooth-3.4.0 (13 May 2012)
+
+  13 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -gnome-bluetooth-3.2.1.ebuild, +gnome-bluetooth-3.4.0.ebuild:
+  Version bump, improves PIN handling; .la files no longer needed with
+  gnome-shell-3.4. Drop old.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gnome-bluetooth-2.32.0.ebuild,
+  gnome-bluetooth-2.32.0-r1.ebuild, gnome-bluetooth-3.2.1.ebuild,
+  gnome-bluetooth-3.2.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org>
+  gnome-bluetooth-2.32.0-r1.ebuild:
+  Marking gnome-bluetooth-2.32.0-r1 ppc stable for bug 393007
+
+  14 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-bluetooth-3.2.1.ebuild, gnome-bluetooth-3.2.2.ebuild:
+  Add missing dependency on gnome-icon-theme-symbolic (bug #403503).
+
+*gnome-bluetooth-3.2.2 (13 Feb 2012)
+
+  13 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gnome-bluetooth-3.2.2.ebuild:
+  Bump, lots of bugfixes.
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org>
+  gnome-bluetooth-2.32.0-r1.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> gnome-bluetooth-2.32.0-r1.ebuild:
+  amd64 stable, bug 393007
+
+  25 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -gnome-bluetooth-3.0.1.ebuild, gnome-bluetooth-3.2.1.ebuild:
+  Drop old + minor eapi4-related qa.
+
+*gnome-bluetooth-3.2.1 (02 Nov 2011)
+
+  02 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gnome-bluetooth-3.2.1.ebuild:
+  Bump to 3.2.1 from the gnome overlay. Notable changes: better UI, fixes
+  several crashes.
+
+*gnome-bluetooth-2.32.0-r1 (17 Oct 2011)
+
+  17 Oct 2011; Pacho Ramos <pacho@gentoo.org>
+  +gnome-bluetooth-2.32.0-r1.ebuild,
+  +files/gnome-bluetooth-2.32.0-fix-typo.patch,
+  +files/gnome-bluetooth-2.32.0-pin-quirk.patch,
+  +files/gnome-bluetooth-2.32.0-update-dtd.patch:
+  Include more upstream patches adding PIN quirk for Magic Trackpad, set
+  REQUIRED_USE properly to prevent people from trying to run tests with USE
+  'doc' as upstream doesn't support it (bug #356075 by Ago and upstream bug
+  #573392), drop .la files.
+
+*gnome-bluetooth-3.0.1 (19 Aug 2011)
+
+  19 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +gnome-bluetooth-3.0.1.ebuild, metadata.xml:
+  Bump to 3.0.1, from gnome overlay for GNOME 3, drop ~ppc, bug 379651
 
   14 May 2011; Gilles Dartiguelongue <eva@gentoo.org>
   gnome-bluetooth-2.32.0.ebuild:
@@ -467,4 +577,3 @@
   20 Sep 2003; Alastair Tse <liquidx@gentoo.org> gnome-bluetooth-0.4.1.ebuild,
   metadata.xml:
   initial commit. thanks to johnm@gentoo.org (#24302)
-

@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/googleearth/googleearth-6.0.2.2074.ebuild,v 1.4 2011/05/25 15:20:42 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/googleearth/googleearth-6.0.2.2074.ebuild,v 1.8 2012/09/24 00:48:04 vapier Exp $
 
 EAPI=2
 
-inherit eutils fdo-mime versionator toolchain-funcs
+inherit eutils unpacker fdo-mime versionator toolchain-funcs
 
 DESCRIPTION="A 3D interface to the planet"
 HOMEPAGE="http://earth.google.com/"
@@ -20,7 +20,7 @@ IUSE="mdns-bundled +qt-bundled"
 
 GCC_NEEDED="4.2"
 
-RDEPEND=">=sys-devel/gcc-${GCC_NEEDED}[-nocxx]
+RDEPEND="|| ( >=sys-devel/gcc-${GCC_NEEDED}[cxx] >=sys-devel/gcc-${GCC_NEEDED}[-nocxx] )
 	x86? (
 		media-libs/fontconfig
 		media-libs/freetype
@@ -36,9 +36,9 @@ RDEPEND=">=sys-devel/gcc-${GCC_NEEDED}[-nocxx]
 		sys-libs/zlib
 		dev-libs/glib:2
 		!qt-bundled? (
-			>=x11-libs/qt-core-4.5.3
-			>=x11-libs/qt-gui-4.5.3
-			>=x11-libs/qt-webkit-4.5.3
+			>=x11-libs/qt-core-4.5.3:4
+			>=x11-libs/qt-gui-4.5.3:4
+			>=x11-libs/qt-webkit-4.5.3:4
 		)
 		net-misc/curl
 		sci-libs/gdal
@@ -100,7 +100,7 @@ opt/googleearth/libmeasure.so
 opt/googleearth/libspatial.so
 "
 
-QA_DT_HASH="opt/googleearth/.*"
+QA_FLAGS_IGNORED="opt/googleearth/.*"
 
 pkg_setup() {
 	GCC_VER="$(gcc-version)"

@@ -1,6 +1,60 @@
 # ChangeLog for media-video/cinelerra
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/cinelerra/ChangeLog,v 1.47 2011/04/27 18:08:01 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/cinelerra/ChangeLog,v 1.60 2012/10/17 03:25:31 phajdan.jr Exp $
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  cinelerra-20120707.ebuild:
+  x86 stable wrt bug #433319
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> cinelerra-20120707.ebuild:
+  Stable for amd64, wrt bug #433319
+
+*cinelerra-20120707 (07 Jul 2012)
+
+  07 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +cinelerra-20120707.ebuild:
+  Latest from upstream cinelerra-cv git master.
+
+  06 Jul 2012; Alexis Ballier <aballier@gentoo.org>
+  +files/cinelerra-ffmpeg-0.11.patch, cinelerra-20111223.ebuild:
+  fix build with ffmpeg 0.11 and git master
+
+  16 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -cinelerra-20101104.ebuild,
+  -files/cinelerra-v4l1_removal.patch:
+  Remove old.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> cinelerra-20101104.ebuild,
+  cinelerra-20111223.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  cinelerra-20111223.ebuild:
+  x86 stable wrt bug #399653
+
+  22 Jan 2012; Agostino Sarubbo <ago@gentoo.org> cinelerra-20111223.ebuild:
+  Stable for amd64, wrt bug #399653
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  cinelerra-20101104.ebuild:
+  x86 stable wrt bug #333471
+
+  28 Dec 2011; Agostino Sarubbo <ago@gentoo.org> cinelerra-20101104.ebuild:
+  Stable for AMD64, wrt bug #333471
+
+  23 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  cinelerra-20111223.ebuild:
+  Link with -Wl,-z,noexecstack wrt #212959 by Sandro Bonazzola
+
+  23 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  cinelerra-20111223.ebuild, +files/cinelerra-underlinking.patch:
+  Fix underlinking (missing -ldl as used by pluginserver.C) wrt #367509 by
+  Diego Elio Pettenò
+
+*cinelerra-20111223 (23 Dec 2011)
+
+  23 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +cinelerra-20111223.ebuild, +files/cinelerra-entry.patch:
+  New snapshot wrt #389315 by Rodrigo Severo
 
   27 Apr 2011; Alexis Ballier <aballier@gentoo.org> cinelerra-20101104.ebuild,
   +files/cinelerra-ffmpeg.patch, +files/cinelerra-v4l1_removal.patch:

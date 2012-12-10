@@ -1,6 +1,65 @@
 # ChangeLog for x11-proto/xproto
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-proto/xproto/ChangeLog,v 1.126 2011/07/15 16:30:56 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-proto/xproto/ChangeLog,v 1.143 2012/08/26 18:30:41 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> xproto-7.0.23-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> xproto-7.0.23-r1.ebuild:
+  Marking xproto-7.0.23-r1 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> xproto-7.0.23-r1.ebuild:
+  Marking xproto-7.0.23-r1 ppc64 stable for bug 419473
+
+  29 Jun 2012; Markus Meier <maekke@gentoo.org> xproto-7.0.23-r1.ebuild:
+  arm stable, bug #419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> xproto-7.0.23-r1.ebuild:
+  Stable for HPPA (bug #419473).
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xproto-7.0.23-r1.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xproto-7.0.23-r1.ebuild:
+  Stable for amd64, wrt bug #419473
+
+*xproto-7.0.23-r1 (10 Jun 2012)
+
+  10 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/xproto-7.0.23-Xmd_h_x32.patch, +xproto-7.0.23-r1.ebuild:
+  Apply patch for x32 support, bug #395363.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> xproto-7.0.23.ebuild:
+  keyword ~amd64-fbsd
+
+*xproto-7.0.23 (16 Mar 2012)
+
+  16 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xproto-7.0.23.ebuild:
+  Version bump.
+
+  23 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org> -xproto-7.0.20.ebuild,
+  -xproto-7.0.21.ebuild:
+  Drop old overshadowed
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> xproto-7.0.22.ebuild:
+  Marked ppc ppc64 stable for bug #380421.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> xproto-7.0.22.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #380421
+
+  21 Sep 2011; Jeroen Roovers <jer@gentoo.org> xproto-7.0.22.ebuild:
+  Stable for HPPA (bug #380421).
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org> xproto-7.0.22.ebuild:
+  arm stable, bug #380421
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> xproto-7.0.22.ebuild:
+  x86 stable, bug #380421
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> xproto-7.0.22.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380421 filed by Chí-Thanh Christopher Nguyễn.
 
   15 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> xproto-7.0.21.ebuild:
   ppc64 stable wrt #363965

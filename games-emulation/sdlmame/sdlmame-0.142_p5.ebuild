@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/sdlmame/sdlmame-0.142_p5.ebuild,v 1.1 2011/06/15 16:39:01 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/sdlmame/sdlmame-0.142_p5.ebuild,v 1.4 2011/09/30 16:50:10 vapier Exp $
 
 EAPI=2
 inherit eutils flag-o-matic games
@@ -19,7 +19,7 @@ SRC_URI="mirror://gentoo/${MY_P/sdl}s.zip $UPDATES
 
 LICENSE="XMAME"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE="debug opengl"
 
 RDEPEND=">=media-libs/libsdl-1.2.10[audio,joystick,opengl?,video]
@@ -60,7 +60,7 @@ src_unpack() {
 
 src_prepare() {
 	if [[ $PV == *_p* ]] ; then
-		edos2unix $(grep +++ *diff | awk '{ print $2 }' | sort -u) *diff 2> /dev/null
+		edos2unix $(find $(grep +++ *diff | awk '{ print $2 }' | sort -u) 2>/dev/null) *diff
 		einfo "Patching release with source updates"
 		epatch ${MY_PV%%_p*}*.diff
 	fi

@@ -1,6 +1,85 @@
 # ChangeLog for media-libs/gst-plugins-base
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-base/ChangeLog,v 1.173 2011/07/25 17:50:29 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-base/ChangeLog,v 1.191 2012/12/03 23:29:55 eva Exp $
+
+*gst-plugins-base-1.0.3 (03 Dec 2012)
+
+  03 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  +gst-plugins-base-1.0.3.ebuild, metadata.xml:
+  Version bump.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-plugins-base-0.10.35.ebuild, gst-plugins-base-0.10.36.ebuild:
+  Fix eclass usage. Drop redundant gettext dependency.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  -gst-plugins-base-0.10.32.ebuild, gst-plugins-base-0.10.36.ebuild:
+  Clean up old revisions. Update ebuild to use new eclasses.
+
+  07 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gst-plugins-base-0.10.32.ebuild, gst-plugins-base-0.10.35.ebuild,
+  gst-plugins-base-0.10.36.ebuild:
+  Slot gstreamer dependencies in preparation for gstreamer-1.0.
+
+  23 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gst-plugins-base-0.10.36.ebuild:
+  We can safely drop those .la files that belong to plugins.
+
+*gst-plugins-base-0.10.36 (21 Oct 2012)
+
+  21 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gst-plugins-base-0.10.32.ebuild, gst-plugins-base-0.10.35.ebuild,
+  +gst-plugins-base-0.10.36.ebuild:
+  Version bump (bug #418075); adds new GstAudioFormat API, various
+  fixes/improvements in baseaudiosink, tags, decodebin2, playbin2, videorate,
+  etc. Punt static libraries (we still need .la files, alas). Update license.
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org>
+  gst-plugins-base-0.10.35.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  gst-plugins-base-0.10.32.ebuild, gst-plugins-base-0.10.35.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  20 Nov 2011; Fabian Groffen <grobian@gentoo.org>
+  gst-plugins-base-0.10.35.ebuild:
+  Fix compilation on Darwin/Intel (bug #366931), remove non-effective, post
+  configure, flag replacements.
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gst-plugins-base-0.10.35.ebuild:
+  ppc/ppc64 stable wrt #382225
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> gst-plugins-base-0.10.35.ebuild:
+  Stable for HPPA (bug #382225).
+
+  09 Oct 2011; Raúl Porcel <armin76@gentoo.org>
+  gst-plugins-base-0.10.35.ebuild:
+  alpha/ia64/sh/sparc stable wrt #382225
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> gst-plugins-base-0.10.35.ebuild:
+  Marked ~hppa (bug #382225).
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> gst-plugins-base-0.10.35.ebuild:
+  Stable for HPPA (bug #373639).
+
+  03 Oct 2011; Markus Meier <maekke@gentoo.org>
+  gst-plugins-base-0.10.35.ebuild:
+  arm stable, bug #382225
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org>
+  gst-plugins-base-0.10.35.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #382225.
+
+  20 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gst-plugins-base-0.10.35.ebuild:
+  x86 stable wrt bug #382225
+
+  25 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  -gst-plugins-base-0.10.31.ebuild, gst-plugins-base-0.10.35.ebuild:
+  Fix introspection deps, use slot-deps, bump EAPI to 3. Remove old.
 
   25 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org>
   gst-plugins-base-0.10.32.ebuild:

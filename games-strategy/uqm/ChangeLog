@@ -1,6 +1,50 @@
 # ChangeLog for games-strategy/uqm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/uqm/ChangeLog,v 1.29 2011/07/14 19:25:02 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/uqm/ChangeLog,v 1.42 2012/11/22 10:08:14 ago Exp $
+
+  22 Nov 2012; Agostino Sarubbo <ago@gentoo.org> uqm-0.7.0-r2.ebuild:
+  Stable for x86, tested by Vincent Olivert Riera <peratu@carrosses.com>, wrt
+  bug #443892
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> uqm-0.7.0-r2.ebuild:
+  Stable for amd64, wrt bug #443892
+
+  20 Nov 2012; Anthony G. Basile <blueness@gentoo.org> uqm-0.7.0-r2.ebuild:
+  stable ppc ppc64, bug #443892
+
+*uqm-0.7.0-r2 (19 Oct 2012)
+
+  19 Oct 2012; Julian Ospald <hasufell@gentoo.org> +uqm-0.7.0-r2.ebuild:
+  fix bug #438992 and #438980
+
+  24 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org> -uqm-0.7.0.ebuild:
+  old
+
+  09 Jul 2012; Joseph Jezak <josejx@gentoo.org> uqm-0.7.0-r1.ebuild:
+  Marked ppc/ppc64 stable for bug #424467.
+
+  03 Jul 2012; Agostino Sarubbo <ago@gentoo.org> uqm-0.7.0-r1.ebuild:
+  Stable for amd64, wrt bug #424467
+
+  02 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> -uqm-0.6.2.ebuild:
+  old
+
+  02 Jul 2012; Jeff Horelick <jdhore@gentoo.org> uqm-0.7.0-r1.ebuild:
+  marked x86 per bug 424467
+
+*uqm-0.7.0-r1 (28 May 2012)
+
+  28 May 2012; Michael Sterrett <mr_bones_@gentoo.org> +uqm-0.7.0-r1.ebuild:
+  correct install location for addon files (bug #417705)
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> uqm-0.7.0.ebuild:
+  Marked ppc/ppc64 stable for bug #379419.
+
+  21 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> uqm-0.7.0.ebuild:
+  x86 stable wrt bug #379419
+
+  17 Aug 2011; Markos Chandras <hwoarang@gentoo.org> uqm-0.7.0.ebuild:
+  Stable on amd64 wrt bug #379419
 
 *uqm-0.7.0 (14 Jul 2011)
 
@@ -104,4 +148,3 @@
   09 Jul 2003; Michael Sterrett <msterret@gentoo.org> uqm-0.2.ebuild:
   initial commit.  ebuild based on the one provided by Martti Rannanjarvi
   in bug 12153 and vapier's continued work on it as well.
-

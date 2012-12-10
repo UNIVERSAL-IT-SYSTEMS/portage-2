@@ -1,6 +1,97 @@
 # ChangeLog for dev-db/pgadmin3
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/pgadmin3/ChangeLog,v 1.65 2011/07/11 17:30:22 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-db/pgadmin3/ChangeLog,v 1.87 2012/11/08 11:15:01 titanofold Exp $
+
+*pgadmin3-1.16.0 (08 Nov 2012)
+
+  08 Nov 2012; <titan@gentoo.org> +pgadmin3-1.16.0.ebuild:
+  Version bump fixes bug 434994.
+
+  12 Sep 2012; Johannes Huber <johu@gentoo.org> pgadmin3-1.14.3.ebuild:
+  Stable for x86, wrt bug #428924
+
+  15 Aug 2012; Anthony G. Basile <blueness@gentoo.org> pgadmin3-1.14.3.ebuild:
+  Stable ppc, bug #428924
+
+  04 Aug 2012; Markos Chandras <hwoarang@gentoo.org> pgadmin3-1.14.3.ebuild:
+  Stable on amd64 wrt bug #428924
+
+*pgadmin3-1.14.3 (07 Jun 2012)
+
+  07 Jun 2012; Aaron W. Swenson <titanofold@gentoo.org>
+  +pgadmin3-1.14.3.ebuild:
+  Version bump.
+
+  19 Apr 2012; Aaron W. Swenson <titanofold@gentoo.org>
+  -pgadmin3-1.12.2.ebuild, -pgadmin3-1.12.3.ebuild, -pgadmin3-1.12.3-r1.ebuild,
+  -pgadmin3-1.14.0.ebuild, -pgadmin3-1.14.1.ebuild, -pgadmin3-1.14.1-r1.ebuild:
+  Cleaning out old versions.
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> pgadmin3-1.14.2.ebuild:
+  Marking pgadmin3-1.14.2 ppc for bug 394447
+
+  05 Apr 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pgadmin3-1.14.2.ebuild:
+  x86 stable wrt bug #394447
+
+  05 Apr 2012; Agostino Sarubbo <ago@gentoo.org> pgadmin3-1.14.2.ebuild:
+  Stable for amd64, wrt bug #394447
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> pgadmin3-1.14.1-r1.ebuild:
+  Marking pgadmin3-1.14.1-r1 ppc for bug 394447
+
+  02 Mar 2012; Agostino Sarubbo <ago@gentoo.org> pgadmin3-1.14.1-r1.ebuild:
+  Stable for amd64, wrt bug #394447
+
+*pgadmin3-1.14.2 (01 Mar 2012)
+
+  01 Mar 2012; Aaron W. Swenson <titanofold@gentoo.org>
+  +pgadmin3-1.14.2.ebuild:
+  Version bump.
+
+  21 Feb 2012; Aaron W. Swenson <titanofold@gentoo.org>
+  pgadmin3-1.12.3-r1.ebuild, pgadmin3-1.14.0.ebuild, pgadmin3-1.14.1.ebuild,
+  pgadmin3-1.14.1-r1.ebuild:
+  Changed LICENSE from 'Artistic' to 'POSTGRESQL' fixing bug 373841.
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> pgadmin3-1.12.2.ebuild,
+  pgadmin3-1.12.3.ebuild, pgadmin3-1.12.3-r1.ebuild, pgadmin3-1.14.0.ebuild,
+  pgadmin3-1.14.1.ebuild, pgadmin3-1.14.1-r1.ebuild:
+  Drop alpha/sparc keywords
+
+*pgadmin3-1.14.1-r1 (28 Jan 2012)
+
+  28 Jan 2012; Aaron W. Swenson <titanofold@gentoo.org>
+  +pgadmin3-1.14.1-r1.ebuild:
+  Moved pkg_prepare to pkg_setup. Fixes bug 398887.
+
+  11 Jan 2012; Agostino Sarubbo <ago@gentoo.org> pgadmin3-1.14.1.ebuild:
+  Stable for AMD64, wrt bug #394447
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pgadmin3-1.14.0.ebuild:
+  x86 stable wrt bug #394447
+
+  16 Dec 2011; Agostino Sarubbo <ago@gentoo.org> pgadmin3-1.14.0.ebuild:
+  Stable for AMD64, wrt bug #394447
+
+  16 Dec 2011; Aaron W. Swenson <titanofold@gentoo.org> pgadmin3-1.14.0.ebuild,
+  pgadmin3-1.14.1.ebuild:
+  Fixed USE flag dependency. (Bug 394749)
+
+*pgadmin3-1.14.1 (09 Dec 2011)
+
+  09 Dec 2011; Aaron W. Swenson <titanofold@gentoo.org>
+  +pgadmin3-1.14.1.ebuild:
+  Version Bump
+
+  12 Nov 2011; Aaron W. Swenson <titanofold@gentoo.org>
+  -pgadmin3-1.14.0_beta1.ebuild:
+  Remove beta
+
+*pgadmin3-1.14.0 (12 Nov 2011)
+
+  12 Nov 2011; Aaron W. Swenson <titanofold@gentoo.org>
+  +files/ssl-detect-r1.patch, +pgadmin3-1.14.0.ebuild:
+  Version bump fixes bug 389679. Improved SSL detection patch.
 
   11 Jul 2011; Tomáš Chvátal <scarabeus@gentoo.org>
   pgadmin3-1.14.0_beta1.ebuild:
@@ -276,4 +367,3 @@
   06 Nov 2003; Masatomo Nakano <nakano@gentoo.org> pgadmin3-1.0.1.ebuild:
   Initial import. Thanks to Ray Russell Reese III <russ@zerotech.net>.
   Close #32674
-

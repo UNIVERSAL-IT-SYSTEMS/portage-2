@@ -1,6 +1,52 @@
 # ChangeLog for media-video/2mandvd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/2mandvd/ChangeLog,v 1.17 2011/05/08 01:51:38 chiiph Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/2mandvd/ChangeLog,v 1.28 2012/11/20 20:48:41 ago Exp $
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> 2mandvd-1.8.4.ebuild:
+  Stable for x86, wrt bug #442166
+
+  14 Nov 2012; <ago@gentoo.org> 2mandvd-1.8.4.ebuild:
+  Stable for amd64, wrt bug #442166
+
+*2mandvd-1.8.4 (06 Oct 2012)
+
+  06 Oct 2012; Davide Pesavento <pesa@gentoo.org> +2mandvd-1.8.4.ebuild:
+  Version bump, use upstream "make install".
+
+  02 Aug 2012; Davide Pesavento <pesa@gentoo.org> -2mandvd-1.7.3.ebuild,
+  2mandvd-1.8.1.ebuild:
+  amd64/x86 stable wrt bug 429142. Remove old.
+
+*2mandvd-1.8.1 (03 Jun 2012)
+
+  03 Jun 2012; Markos Chandras <hwoarang@gentoo.org> +2mandvd-1.8.1.ebuild:
+  Version bump
+
+  15 Apr 2012; Johannes Huber <johu@gentoo.org> -2mandvd-1.3.5.ebuild,
+  -2mandvd-1.5.5.ebuild, -files/2mandvd-fix-const-char-concatenation.old.patch:
+  Remove old.
+
+  15 Apr 2012; Markus Meier <maekke@gentoo.org> 2mandvd-1.7.3.ebuild:
+  x86 stable, bug #411731
+
+  13 Apr 2012; Agostino Sarubbo <ago@gentoo.org> 2mandvd-1.7.3.ebuild:
+  Stable for amd64, wrt bug #411731
+
+*2mandvd-1.7.3 (12 Mar 2012)
+
+  12 Mar 2012; Davide Pesavento <pesa@gentoo.org> +2mandvd-1.7.3.ebuild,
+  +files/2mandvd-1.7.3-libav.patch, -2mandvd-1.4.ebuild, 2mandvd-1.5.5.ebuild,
+  metadata.xml:
+  Version bump, bug 405153. Thanks to Michael (kensington) for the patch and the
+  updated ebuild. Remove old.
+
+  15 Feb 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/2mandvd-fix-const-char-concatenation.old.patch, 2mandvd-1.3.5.ebuild,
+  2mandvd-1.4.ebuild:
+  Fix patch for old versions. bug #369839
+
+  24 Nov 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #290906
 
   08 May 2011; Tomas Touceda <chiiph@gentoo.org>
   files/2mandvd-fix-const-char-concatenation.patch, 2mandvd-1.5.5.ebuild:
@@ -83,4 +129,3 @@
 
   09 Nov 2009; <hwoarang@gentoo.org> +2mandvd-1.1.1.ebuild, +metadata.xml:
   Initial commit of 2mandvd application. Fixes bug 266949
-

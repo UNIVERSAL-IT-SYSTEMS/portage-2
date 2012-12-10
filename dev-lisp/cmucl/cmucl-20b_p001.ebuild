@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lisp/cmucl/cmucl-20b_p001.ebuild,v 1.2 2011/07/08 11:07:32 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lisp/cmucl/cmucl-20b_p001.ebuild,v 1.4 2012/10/24 19:07:00 ulm Exp $
 
 EAPI=3
-inherit eutils toolchain-funcs
+inherit eutils multilib toolchain-funcs
 
 MY_PV=${PV:0:3}
 
@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="X source sse2"
 
-RDEPEND="x11-libs/openmotif"
+RDEPEND="x11-libs/motif"
 DEPEND="${RDEPEND}
 		sys-devel/bc"
 PDEPEND="dev-lisp/gentoo-init"

@@ -1,6 +1,96 @@
 # ChangeLog for www-apps/otrs
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/otrs/ChangeLog,v 1.43 2009/09/27 10:56:35 a3li Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apps/otrs/ChangeLog,v 1.60 2012/10/29 06:34:45 patrick Exp $
+
+*otrs-3.1.11 (29 Oct 2012)
+
+  29 Oct 2012; Patrick Lauer <patrick@gentoo.org> +otrs-3.1.11.ebuild:
+  Bump
+
+*otrs-3.1.10 (03 Sep 2012)
+
+  03 Sep 2012; Patrick Lauer <patrick@gentoo.org> +otrs-3.1.10.ebuild,
+  -otrs-3.1.8.ebuild, -otrs-3.1.9.ebuild:
+  Bump for #433770
+
+*otrs-3.1.9 (23 Aug 2012)
+
+  23 Aug 2012; Patrick Lauer <patrick@gentoo.org> +otrs-3.1.9.ebuild,
+  -otrs-3.1.7.ebuild:
+  Bump
+
+*otrs-3.1.8 (17 Aug 2012)
+
+  17 Aug 2012; Patrick Lauer <patrick@gentoo.org> +otrs-3.1.8.ebuild,
+  -otrs-3.1.6.ebuild:
+  Bump
+
+*otrs-3.1.7 (28 Jun 2012)
+
+  28 Jun 2012; Patrick Lauer <patrick@gentoo.org> +otrs-3.1.7.ebuild,
+  -otrs-3.1.5.ebuild:
+  Bump
+
+*otrs-3.1.6 (18 Jun 2012)
+
+  18 Jun 2012; Patrick Lauer <patrick@gentoo.org> +otrs-3.1.6.ebuild,
+  -otrs-3.1.4.ebuild:
+  Bump
+
+*otrs-3.1.5 (07 Jun 2012)
+
+  07 Jun 2012; Patrick Lauer <patrick@gentoo.org> +otrs-3.1.5.ebuild,
+  -otrs-3.1.2.ebuild, -otrs-3.1.3.ebuild:
+  Bump
+
+*otrs-3.1.4 (09 May 2012)
+
+  09 May 2012; Patrick Lauer <patrick@gentoo.org> +otrs-3.1.4.ebuild:
+  Bump
+
+*otrs-3.1.3 (04 Apr 2012)
+
+  04 Apr 2012; Patrick Lauer <patrick@gentoo.org> +otrs-3.1.3.ebuild,
+  -otrs-3.0.10.ebuild, -otrs-3.0.11.ebuild:
+  Bump
+
+*otrs-3.1.2 (16 Mar 2012)
+
+  16 Mar 2012; Patrick Lauer <patrick@gentoo.org> +otrs-3.1.2.ebuild:
+  Bump
+
+*otrs-3.0.11 (27 Dec 2011)
+
+  27 Dec 2011; Patrick Lauer <patrick@gentoo.org> +otrs-3.0.11.ebuild:
+  Bump
+
+  02 Nov 2011; Mike Frysinger <vapier@gentoo.org> otrs-3.0.10.ebuild:
+  Drop superfluous -c usage.
+
+  19 Aug 2011; Patrick Lauer <patrick@gentoo.org> -otrs-2.2.6.ebuild,
+  -otrs-2.3.3.ebuild, -otrs-3.0.7.ebuild, -otrs-3.0.9.ebuild:
+  Remove old
+
+  19 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> otrs-2.2.6.ebuild,
+  otrs-2.3.3.ebuild:
+  Dropped ppc/ppc64 keywords wrt #379863
+
+*otrs-3.0.10 (19 Aug 2011)
+
+  19 Aug 2011; Patrick Lauer <patrick@gentoo.org> +otrs-3.0.10.ebuild:
+  Bump for #379855
+
+*otrs-3.0.9 (16 Aug 2011)
+
+  16 Aug 2011; Patrick Lauer <patrick@gentoo.org> +otrs-3.0.9.ebuild,
+  metadata.xml:
+  Bump
+
+*otrs-3.0.7 (15 Aug 2011)
+
+  15 Aug 2011; Patrick Lauer <patrick@gentoo.org> +otrs-3.0.7.ebuild,
+  metadata.xml:
+  Bump for #260823
 
   27 Sep 2009; Alex Legler <a3li@gentoo.org> files/postinstall-en-2.txt:
   Reword postinstall message to be PORTAGE_COMPRESS independent, bug 274248
@@ -196,4 +286,3 @@
   26 Aug 2004; Renat Lumpau <rl03@gentoo.org> +metadata.xml,
   +files/postinstall-en.txt, +files/reconfig, +otrs-1.2.4.ebuild:
   Initial ebuild. Closes bug #56452.
-

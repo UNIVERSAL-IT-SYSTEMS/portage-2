@@ -1,11 +1,58 @@
 # ChangeLog for dev-lang/gnat-gcc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/gnat-gcc/ChangeLog,v 1.42 2011/06/19 20:33:42 george Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/gnat-gcc/ChangeLog,v 1.55 2012/09/26 13:40:52 george Exp $
 
-  19 Jun 2011; <george@gentoo.org> gnat-gcc-4.4.5.ebuild:
+*gnat-gcc-4.5.4 (26 Sep 2012)
+
+  26 Sep 2012; George Shapovalov <george@gentoo.org> +gnat-gcc-4.5.4.ebuild:
+  major update
+
+*gnat-gcc-4.4.7 (25 Sep 2012)
+
+  25 Sep 2012; George Shapovalov <george@gentoo.org> +gnat-gcc-4.4.7.ebuild:
+  minor update
+
+  02 Mar 2012; George Shapovalov <george@gentoo.org> Manifest:
+  adjusted Manifest to correct reuploaded bootstrap for amd64 (#372179)
+
+  14 Feb 2012; George Shapovalov <george@gentoo.org> gnat-gcc-3.4.6.ebuild,
+  gnat-gcc-4.3.5.ebuild, gnat-gcc-4.3.6.ebuild:
+  changed SRC_URIs to reflect recent discussion on -dev and avoid mirrors
+  losing stuff
+
+  20 Sep 2011; George Shapovalov <george@gentoo.org> gnat-gcc-4.4.3.ebuild,
+  gnat-gcc-4.4.5.ebuild:
+  removed inherit autotools - the eauto-specific code was moved to a relevant
+  ebuild
+
+  20 Sep 2011; George Shapovalov <george@gentoo.org> gnat-gcc-4.3.6.ebuild:
+  updated bootstrap/keyworded for 4.3 on x86
+
+  14 Sep 2011; George Shapovalov <george@gentoo.org> gnat-gcc-4.3.2.ebuild,
+  gnat-gcc-4.3.3.ebuild:
+  cleaned up (cosmetic) last ppc versions. Actually made 4.3.3 ppc only
+
+  14 Sep 2011; George Shapovalov <george@gentoo.org> gnat-gcc-4.3.3.ebuild,
+  -gnat-gcc-4.3.3-r2.ebuild, -gnat-gcc-4.3.4.ebuild:
+  removed old and broken versions, made 4.3.3 ppc only
+
+*gnat-gcc-4.3.6 (14 Sep 2011)
+
+  14 Sep 2011; George Shapovalov <george@gentoo.org> +gnat-gcc-4.3.6.ebuild:
+  overdue update to 4.3 using new bootstrap; ref bug #372179
+  amd64 only atm. x86 is coming up next. Can't simply change 4.3.5, as 
+  some changes to ebuild are needed to match a new bootstrap.
+
+  26 Aug 2011; Markos Chandras <hwoarang@gentoo.org> gnat-gcc-4.3.5.ebuild:
+  Stable on amd64 wrt bug #317971
+
+  20 Aug 2011; Thomas Kahle <tomka@gentoo.org> gnat-gcc-4.3.5.ebuild:
+  x86 stable per bug 379983
+
+  19 Jun 2011; George Shapovalov <george@gentoo.org> gnat-gcc-4.4.5.ebuild:
   new bootstrap for x86
 
-  24 May 2011; <george@gentoo.org> gnat-gcc-4.4.5.ebuild:
+  24 May 2011; George Shapovalov <george@gentoo.org> gnat-gcc-4.4.5.ebuild:
   new bootstrap for sparc
 
 *gnat-gcc-4.4.5 (23 May 2011)

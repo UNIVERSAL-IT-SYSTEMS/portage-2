@@ -1,6 +1,38 @@
 # ChangeLog for dev-libs/dmalloc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/dmalloc/ChangeLog,v 1.56 2011/07/27 13:00:23 naota Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/dmalloc/ChangeLog,v 1.66 2012/07/08 16:07:24 armin76 Exp $
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> dmalloc-5.5.2-r4.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #418741
+
+  14 Jun 2012; Jeroen Roovers <jer@gentoo.org> dmalloc-5.5.2-r4.ebuild:
+  Stable for HPPA (bug #418741).
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> dmalloc-5.5.2-r4.ebuild:
+  Marking dmalloc-5.5.2-r4 ppc for bug 418741
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> dmalloc-5.5.2-r4.ebuild:
+  marked x86 per bug 418741
+
+  06 Jun 2012; Markus Meier <maekke@gentoo.org> dmalloc-5.5.2-r4.ebuild:
+  arm stable, bug #418741
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> dmalloc-5.5.2-r4.ebuild:
+  Marking dmalloc-5.5.2-r4 ppc64 for bug 418741
+
+  04 Jun 2012; Agostino Sarubbo <ago@gentoo.org> dmalloc-5.5.2-r4.ebuild:
+  Stable for amd64, wrt bug #418741
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org> dmalloc-5.5.2-r4.ebuild:
+  keyword ~amd64-fbsd
+
+  22 Feb 2012; Jeroen Roovers <jer@gentoo.org> dmalloc-5.5.2-r4.ebuild:
+  Introduce IUSE=static-libs.
+
+*dmalloc-5.5.2-r4 (22 Feb 2012)
+
+  22 Feb 2012; Jeroen Roovers <jer@gentoo.org> +dmalloc-5.5.2-r4.ebuild:
+  Install more soname symlinks by Daniel M. Weeks (bug #405103).
 
   27 Jul 2011; Naohiro Aota <naota@gentoo.org> dmalloc-5.5.2-r3.ebuild:
   ~x86-fbsd keyworded

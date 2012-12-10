@@ -1,6 +1,21 @@
 # ChangeLog for app-text/hnb
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/hnb/ChangeLog,v 1.23 2010/01/02 11:21:57 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/hnb/ChangeLog,v 1.28 2012/05/29 19:24:53 ranger Exp $
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> hnb-1.9.18-r1.ebuild:
+  Marking hnb-1.9.18-r1 ppc for bug 391479
+
+  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -hnb-1.9.18.ebuild:
+  Remove old
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> hnb-1.9.18-r1.ebuild:
+  x86 stable wrt bug #391479
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> hnb-1.9.18-r1.ebuild:
+  add missing sys-libs/ncurses dependency
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> hnb-1.9.18-r1.ebuild:
+  Stable on amd64 wrt bug #391479
 
   02 Jan 2010; Christian Faulhammer <fauli@gentoo.org> hnb-1.9.18-r1.ebuild:
   Transfer Prefix keywords

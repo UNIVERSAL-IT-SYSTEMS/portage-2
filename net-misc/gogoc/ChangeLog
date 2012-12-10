@@ -1,6 +1,28 @@
 # ChangeLog for net-misc/gogoc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/gogoc/ChangeLog,v 1.14 2011/05/07 18:14:11 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/gogoc/ChangeLog,v 1.20 2012/12/04 15:40:12 ago Exp $
+
+  04 Dec 2012; <ago@gentoo.org> gogoc-1.2-r2.ebuild:
+  Stable for x86, wrt bug #444324
+
+  30 Nov 2012; <ago@gentoo.org> gogoc-1.2-r2.ebuild:
+  Stable for amd64, wrt bug #444324
+
+  12 Jul 2012; Bernard Cafarelli <voyageur@gentoo.org> gogoc-1.2-r1.ebuild,
+  gogoc-1.2-r2.ebuild:
+  Add GPL-2 to LICENSE for init script, bug #426058
+
+  08 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Drop myself out of metadata.
+
+*gogoc-1.2-r2 (11 Jun 2012)
+
+  11 Jun 2012; Bernard Cafarelli <voyageur@gentoo.org> gogoc-1.2-r1.ebuild,
+  +gogoc-1.2-r2.ebuild:
+  Support new net-tools ifconfig and route locations, bug #414243
+
+  03 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org> files/gogoc.rc:
+  Fix warning message in init script, bug #401877
 
   07 May 2011; Thomas Kahle <tomka@gentoo.org> gogoc-1.2-r1.ebuild:
   x86 stable per bug 362549
@@ -52,4 +74,3 @@
   +files/gogoc-1.2-overflow.patch, +files/gogoc.rc, +metadata.xml:
   Initial import of gogoc, the new name and codebase replacing
   net-misc/gogoc.
-

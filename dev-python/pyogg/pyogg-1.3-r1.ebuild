@@ -1,12 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyogg/pyogg-1.3-r1.ebuild,v 1.15 2010/03/16 04:14:45 neurogeek Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyogg/pyogg-1.3-r1.ebuild,v 1.18 2012/02/24 00:57:27 patrick Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.* *-jython 2.7-pypy-*"
 
-inherit distutils
+inherit distutils toolchain-funcs
 
 DESCRIPTION="Python bindings for the ogg library"
 HOMEPAGE="http://www.andrewchatham.com/pyogg/"
@@ -21,7 +22,6 @@ IUSE=""
 
 DEPEND=">=media-libs/libogg-1.0"
 RDEPEND="${DEPEND}"
-RESTRICT_PYTHON_ABIS="3.*"
 
 DOCS="COPYING ChangeLog"
 PYTHON_MODNAME="ogg"

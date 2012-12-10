@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/griffith/griffith-9999.ebuild,v 1.5 2011/06/04 17:36:33 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/griffith/griffith-9999.ebuild,v 1.8 2012/03/22 21:56:14 hwoarang Exp $
 
-EAPI="1"
+EAPI="4"
 ESVN_REPO_URI="http://svn.berlios.de/svnroot/repos/griffith/trunk"
 
 inherit eutils python multilib subversion
@@ -15,7 +15,7 @@ SRC_URI="mirror://berlios/griffith/${PN}-extra-artwork-${ARTWORK_PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="csv doc spell"
+IUSE="doc"
 
 RDEPEND="dev-python/imaging
 	dev-util/glade:3
@@ -25,9 +25,7 @@ RDEPEND="dev-python/imaging
 	dev-python/pysqlite:2
 	>=dev-python/sqlalchemy-0.5.2
 	>=dev-python/reportlab-1.19
-	>=dev-python/sqlalchemy-0.4.6
-	csv? ( dev-python/chardet )
-	spell? ( dev-python/gtkspell-python )"
+	>=dev-python/sqlalchemy-0.4.6"
 DEPEND="${RDEPEND}
 	doc? ( app-text/docbook2X )"
 
@@ -38,10 +36,10 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack ${A}
 	subversion_src_unpack
+}
 
-	cd "${S}"
+src_prepare() {
 	sed -i \
 		-e 's#/pl/#/pl.UTF-8/#' \
 		docs/pl/Makefile || die "sed failed"
@@ -64,20 +62,26 @@ src_compile() {
 }
 
 src_install() {
-	use doc || sed -i -e '/docs/d' Makefile
+	use doc || { sed -i -e '/docs/d' Makefile || die ; }
 
 	python_version
 	emake \
 		LIBDIR="${D}/usr/$(get_libdir)/griffith" \
-		DESTDIR="${D}" DOC2MAN=docbook2man.pl install || die "emake install failed"
+		DESTDIR="${D}" DOC2MAN=docbook2man.pl install
 	dodoc AUTHORS ChangeLog README THANKS TODO NEWS TRANSLATORS
 
 	cd "${WORKDIR}/${PN}-extra-artwork-${ARTWORK_PV}/"
-	emake DESTDIR="${D}" install || die "emake install artwork failed"
+	emake DESTDIR="${D}" install
 }
 
 pkg_postinst() {
 	python_mod_optimize /usr/$(get_libdir)/${PN}
+	einfo
+	einfo "${PN} can make use of the following optional dependencies"
+	einfo "dev-python/chardet: CSV file encoding detections"
+	einfo "dev-python/mysql-python: Python interface for MySQL connectivity"
+	einfo ">=dev-python/psycopg-2.4: Python interface for PostgreSQL connectivity"
+	einfo
 }
 
 pkg_postrm() {

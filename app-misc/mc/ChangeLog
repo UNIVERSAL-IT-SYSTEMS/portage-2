@@ -1,6 +1,242 @@
 # ChangeLog for app-misc/mc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/mc/ChangeLog,v 1.222 2011/08/01 19:03:16 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/mc/ChangeLog,v 1.267 2012/09/15 07:33:26 slyfox Exp $
+
+*mc-4.8.6 (15 Sep 2012)
+
+  15 Sep 2012; Sergei Trofimovich <slyfox@gentoo.org> +mc-4.8.6.ebuild,
+  -files/mc-4.8.5-Ticket-2881-fix-tabs.patch, -mc-4.8.5-r1.ebuild:
+  Fast upstream version bump (fixes two critical bugs in previous version).
+
+*mc-4.8.5-r1 (14 Sep 2012)
+
+  14 Sep 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/mc-4.8.5-Ticket-2881-fix-tabs.patch, +mc-4.8.5-r1.ebuild,
+  -mc-4.8.5.ebuild:
+  Fix tab effect bug in editor (bug #434688 by Lars Wendler).
+
+*mc-4.8.5 (10 Sep 2012)
+
+  10 Sep 2012; Sergei Trofimovich <slyfox@gentoo.org> +mc-4.8.5.ebuild,
+  mc-9999.ebuild:
+  Version bump. Dropped LINGUAS from IUSE as build system respects GNU style
+  LINGUAS environment variables.
+
+*mc-4.8.4-r3 (05 Aug 2012)
+
+  05 Aug 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/mc-4.8.4-Ticket-2856-aspell-sigsegv.patch, +mc-4.8.4-r3.ebuild,
+  -mc-4.8.4-r2.ebuild:
+  Fixed mcedit segfaults when aspell dictionaries are missing (bug #429794 by
+  Lars Wendler)
+
+  04 Aug 2012; Julian Ospald <hasufell@gentoo.org> mc-4.8.1-r1.ebuild,
+  mc-4.8.3-r2.ebuild, mc-4.8.4-r2.ebuild, mc-9999.ebuild:
+  force verbose build log
+
+*mc-4.8.4-r2 (30 Jul 2012)
+
+  30 Jul 2012; Lars Wendler <polynomial-c@gentoo.org> -mc-4.8.4-r1.ebuild,
+  +mc-4.8.4-r2.ebuild,
+  +files/mc-4.8.4-Ticket-2853-fileposition-in-mcedit.patch,
+  +files/mc-4.8.4-Ticket-2858-htmlview-segfault.patch:
+  non-maintainer commit: Fixed fileposition no longer remembered by mcedit (bug
+  #427786). Fixed segfault when viewing html files (bug #428568).
+
+*mc-4.8.4-r1 (21 Jul 2012)
+
+  21 Jul 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/mc-4.8.4-Ticket-2851-fixes-of-ext.d-scripts.patch, +mc-4.8.4-r1.ebuild,
+  -files/mc-4.8.0-fix-ftp-spaces.patch, -files/mc-4.8.0-fix-nls.patch,
+  -files/mc-4.8.2-fix-existing.patch,
+  -files/mc-4.8.2-mcedit-without-file-param-fix.patch,
+  -files/mc-4.8.2-missing-do_panel_cd_stub_env.c, -mc-4.7.0.10.ebuild,
+  -mc-4.7.0.3.ebuild, -mc-4.7.5.2.ebuild, -mc-4.7.5.6-r1.ebuild,
+  -mc-4.8.1-r2.ebuild, -mc-4.8.2-r2.ebuild, -mc-4.8.4.ebuild:
+  Added USE=spell to use aspell checker from live ebuild. Fix to view
+  /var/log/*.1.gz files (https://www.midnight-commander.org/ticket/2852).
+  Cleanup old unstable versions.
+
+  21 Jul 2012; Sergei Trofimovich <slyfox@gentoo.org> mc-9999.ebuild:
+  Add USE=spell (uses app-text/aspell as a spell checker).
+
+*mc-4.8.4 (18 Jul 2012)
+
+  18 Jul 2012; Sergei Trofimovich <slyfox@gentoo.org> +mc-4.8.4.ebuild:
+  Version bump.
+
+  22 Jun 2012; Sergei Trofimovich <slyfox@gentoo.org> mc-9999.ebuild,
+  metadata.xml:
+  Added USE=sftp for sftp support (uses net-libs/libssh2 for it).
+
+  04 Jun 2012; Alexey Shvetsov <alexxy@gentoo.org> mc-4.8.3-r2.ebuild:
+  [app-misc/mc] Works on ~amd64-fbsd
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> mc-4.8.2-r2.ebuild:
+  inherit eutils for epatch
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> mc-4.7.0.3.ebuild,
+  mc-4.7.0.10.ebuild, mc-4.7.5.2.ebuild, mc-4.7.5.6-r1.ebuild,
+  mc-4.8.1-r1.ebuild, mc-4.8.1-r2.ebuild, mc-4.8.2-r2.ebuild,
+  mc-4.8.3-r2.ebuild, mc-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*mc-4.8.3-r2 (28 Apr 2012)
+
+  28 Apr 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/mc-4.8.3-fix-relative-symlink-creation-crash.patch,
+  +mc-4.8.3-r2.ebuild, -mc-4.8.3-r1.ebuild:
+  Fix symlink creation crash. Thanks to Lars Wendler (Polynomial-C) for the fix
+  (bug #413691).
+
+*mc-4.8.3-r1 (23 Apr 2012)
+
+  23 Apr 2012; Lars Wendler <polynomial-c@gentoo.org> -mc-4.8.3.ebuild,
+  +mc-4.8.3-r1.ebuild, +files/mc-4.8.3-fix-chown-crash.patch:
+  non-maintainer commit: Fixed crash when changing ownership wit "CTRL-x o"
+  (bug #413259). Permission granted by slyfox.
+
+*mc-4.8.3 (22 Apr 2012)
+
+  22 Apr 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/mc-4.8.3-missing-do_panel_cd_stub_env.c, +mc-4.8.3.ebuild:
+  Version bump.
+
+*mc-4.8.2-r2 (27 Mar 2012)
+
+  27 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/mc-4.8.2-fix-existing.patch, +mc-4.8.2-r2.ebuild, -mc-4.8.2-r1.ebuild,
+  -mc-4.8.2.ebuild:
+  Fix bug #409365 by Marcin Mirosław (broken permissions when attempt to save
+  file on top of directory). Patch picked from upstream.
+
+  22 Mar 2012; Alex Alexander <wired@gentoo.org> mc-4.8.2-r1.ebuild:
+  removed whitespace
+
+*mc-4.8.2-r1 (22 Mar 2012)
+
+  22 Mar 2012; Alex Alexander <wired@gentoo.org> +mc-4.8.2-r1.ebuild,
+  +files/mc-4.8.2-mcedit-without-file-param-fix.patch:
+  fixed bug #409107
+
+*mc-4.8.2 (20 Mar 2012)
+
+  20 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/mc-4.8.2-missing-do_panel_cd_stub_env.c, +mc-4.8.2.ebuild,
+  mc-9999.ebuild, metadata.xml:
+  Version bump. Don't require user to choose from ncurses/slang (bug #353679 by
+  Ulrich Müller and others); use slang by default as less buggy implementation.
+  New release among others fixes crash when ~/.config is not a dir (bug #406315
+  by Marcin Mirosław).
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> mc-4.8.1-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #401157
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> mc-4.8.1-r1.ebuild:
+  Marking mc-4.8.1-r1 ppc64 for bug 401157
+
+  13 Feb 2012; Markus Meier <maekke@gentoo.org> mc-4.8.1-r1.ebuild:
+  arm stable, bug #401157
+
+  13 Feb 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/mc-4.8.1-fix-vfs-test.patch, +files/mc-4.8.1-muldefs-in.patch,
+  +files/mc-4.8.1-muldefs.patch, mc-4.8.1-r1.ebuild, mc-4.8.1-r2.ebuild:
+  Fix FEATURES=test on arm and alpha (bug #403343 by Markus Meier).
+
+  11 Feb 2012; Sergei Trofimovich <slyfox@gentoo.org> mc-9999.ebuild:
+  Upstream moved main tree to github leaving old one as read-only mirror.
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> mc-4.8.1-r1.ebuild:
+  Marking mc-4.8.1-r1 ppc for bug 401157
+
+  31 Jan 2012; Jeroen Roovers <jer@gentoo.org> mc-4.8.1-r1.ebuild:
+  Stable for HPPA (bug #401157).
+
+  31 Jan 2012; Agostino Sarubbo <ago@gentoo.org> mc-4.8.1-r1.ebuild:
+  Stable for amd64, wrt bug #401157
+
+  29 Jan 2012; Jeff Horelick <jdhore@gentoo.org> mc-4.8.1-r1.ebuild:
+  x86 stable per bug 401157
+
+*mc-4.8.1-r2 (27 Jan 2012)
+
+  27 Jan 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/mc-4.8.1-fix-fallocate-xBSD.patch, +mc-4.8.1-r2.ebuild,
+  -mc-4.7.5.5.ebuild, -mc-4.8.0-r2.ebuild, mc-9999.ebuild:
+  Upstream fix for build failure on MacOSX and various xBSDs (bug #395135 by
+  Denis I. Polukarov). Removed old.
+
+  25 Jan 2012; Sergei Trofimovich <slyfox@gentoo.org> mc-9999.ebuild:
+  Fixed dangling symlinks in doc/ after install by Andrew Savchenko (bug
+  #400561). Added LINGUAS to IUSE.
+
+*mc-9999 (21 Jan 2012)
+
+  21 Jan 2012; Sergei Trofimovich <slyfox@gentoo.org> +mc-9999.ebuild,
+  mc-4.8.1-r1.ebuild:
+  Added live ebuild.
+
+  16 Dec 2011; Alex Alexander <wired@gentoo.org> mc-4.8.1-r1.ebuild,
+  metadata.xml:
+  new use flag: xdg - toggles mc's config dir location between
+  $XDG_CONFIG_HOME/mc and $HOME/.mc
+
+*mc-4.8.1-r1 (16 Dec 2011)
+*mc-4.7.5.6-r1 (16 Dec 2011)
+
+  16 Dec 2011; Alex Alexander <wired@gentoo.org> -mc-4.7.5.6.ebuild,
+  +mc-4.7.5.6-r1.ebuild, -mc-4.8.1.ebuild, +mc-4.8.1-r1.ebuild:
+  re-added NEWS file dodoc and mclib USE flag
+
+  15 Dec 2011; Sergei Trofimovich <slyfox@gentoo.org> -mc-4.7.5.3.ebuild,
+  -mc-4.8.0-r1.ebuild, -mc-4.8.0.ebuild:
+  Removed intermediate versions.
+
+*mc-4.8.1 (15 Dec 2011)
+*mc-4.7.5.6 (15 Dec 2011)
+
+  15 Dec 2011; Sergei Trofimovich <slyfox@gentoo.org> +mc-4.7.5.6.ebuild,
+  +mc-4.8.1.ebuild:
+  Version bump stable and development branches.
+
+*mc-4.8.0-r2 (30 Nov 2011)
+
+  30 Nov 2011; Sergei Trofimovich <slyfox@gentoo.org> +mc-4.8.0-r2.ebuild,
+  +files/mc-4.8.0-fix-ftp-spaces.patch:
+  Fix annoying leading spaces in ftp directories (upstream patch)
+
+  11 Nov 2011; Naohiro Aota <naota@gentoo.org> mc-4.7.5.3.ebuild,
+  mc-4.7.5.5.ebuild, mc-4.8.0.ebuild, mc-4.8.0-r1.ebuild:
+  Apply Bug #376943 fix to all related ebuilds
+
+  08 Nov 2011; Naohiro Aota <naota@gentoo.org> mc-4.7.5.2.ebuild:
+  Install cons.saver only on Linux. Bug #376943
+
+*mc-4.8.0-r1 (01 Nov 2011)
+
+  01 Nov 2011; Alex Alexander <wired@gentoo.org> +mc-4.8.0-r1.ebuild,
+  metadata.xml:
+  new use flag: mclib. install NEWS file, bug 389143
+
+  21 Oct 2011; Sergei Trofimovich <slyfox@gentoo.org> metadata.xml:
+  Added myself to maintainers.
+
+  21 Oct 2011; Sergei Trofimovich <slyfox@gentoo.org> mc-4.8.0.ebuild,
+  +files/mc-4.8.0-fix-nls.patch:
+  Fixed build failure in USE=-nls case by Nikos Chantziaras (bug #387949)
+
+*mc-4.8.0 (20 Oct 2011)
+*mc-4.7.5.5 (20 Oct 2011)
+
+  20 Oct 2011; Sergei Trofimovich <slyfox@gentoo.org> +mc-4.7.5.5.ebuild,
+  +mc-4.8.0.ebuild:
+  Version bump (requested by Anton Kochkov in bug #387883)
+
+  14 Aug 2011; Fabian Groffen <grobian@gentoo.org> mc-4.7.5.3.ebuild:
+  Allow linkage to succeed on Solaris, bug #378699 by Daniel Vergien
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> mc-4.7.5.2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #373225
 
   01 Aug 2011; Markus Meier <maekke@gentoo.org> mc-4.7.5.2.ebuild:
   amd64/x86 stable, bug #373225
@@ -921,5 +1157,3 @@
 
   - NLS fixes submitted by seemant@rocketmail.com (Seemant Kulleen)
   - gpm dependency fix from homas.raschbacher@Netway.at (LordVan(Thomas Raschbacher))
-
-

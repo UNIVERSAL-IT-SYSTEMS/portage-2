@@ -1,6 +1,57 @@
 # ChangeLog for dev-perl/HTML-Parser
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Parser/ChangeLog,v 1.143 2011/07/30 10:30:56 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/HTML-Parser/ChangeLog,v 1.158 2012/06/24 12:59:27 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  05 May 2012; Alexis Ballier <aballier@gentoo.org> HTML-Parser-3.690.0.ebuild:
+  keyword ~amd64-fbsd
+
+  21 Apr 2012; Torsten Veller <tove@gentoo.org> -HTML-Parser-3.670.0.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> HTML-Parser-3.690.0.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #400137
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  HTML-Parser-3.690.0.ebuild:
+  x86 stable wrt bug #400137
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> HTML-Parser-3.690.0.ebuild:
+  Marking HTML-Parser-3.690.0 ppc64 for bug 400137
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> HTML-Parser-3.690.0.ebuild:
+  Marking HTML-Parser-3.690.0 ppc for bug 400137
+
+  29 Feb 2012; Markus Meier <maekke@gentoo.org> HTML-Parser-3.690.0.ebuild:
+  arm stable, bug #400137
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> HTML-Parser-3.690.0.ebuild:
+  Stable for HPPA (bug #400137).
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  HTML-Parser-3.690.0.ebuild:
+  Stable on alpha, bug #400137
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> HTML-Parser-3.690.0.ebuild:
+  Stable for amd64, wrt bug #400137
+
+*HTML-Parser-3.690.0 (20 Oct 2011)
+
+  20 Oct 2011; Torsten Veller <tove@gentoo.org> +HTML-Parser-3.690.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -HTML-Parser-3.67.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> HTML-Parser-3.670.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*HTML-Parser-3.670.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +HTML-Parser-3.670.0.ebuild:
+  Change version scheme
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> HTML-Parser-3.67.ebuild:
   Drop ~sparc-fbsd KEYWORD

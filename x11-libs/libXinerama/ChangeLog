@@ -1,6 +1,39 @@
 # ChangeLog for x11-libs/libXinerama
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libXinerama/ChangeLog,v 1.67 2011/02/14 22:59:15 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libXinerama/ChangeLog,v 1.77 2012/08/26 18:34:27 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> libXinerama-1.1.2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> libXinerama-1.1.2.ebuild:
+  Marking libXinerama-1.1.2 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> libXinerama-1.1.2.ebuild:
+  Marking libXinerama-1.1.2 ppc64 stable for bug 419473
+
+  29 Jun 2012; Markus Meier <maekke@gentoo.org> libXinerama-1.1.2.ebuild:
+  arm stable, bug #419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> libXinerama-1.1.2.ebuild:
+  Stable for HPPA (bug #419473).
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libXinerama-1.1.2.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libXinerama-1.1.2.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  08 May 2012; Alexis Ballier <aballier@gentoo.org> libXinerama-1.1.2.ebuild:
+  keyword ~amd64-fbsd
+
+*libXinerama-1.1.2 (08 Mar 2012)
+
+  08 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libXinerama-1.1.2.ebuild:
+  Version bump.
+
+  10 Oct 2011; Christian Ruppert <idl0r@gentoo.org> libXinerama-1.1.1.ebuild:
+  Add missing xproto dependency.
 
   14 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org>
   libXinerama-1.1.1.ebuild:

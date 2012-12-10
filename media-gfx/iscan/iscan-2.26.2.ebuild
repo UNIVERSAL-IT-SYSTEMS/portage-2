@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/iscan/iscan-2.26.2.ebuild,v 1.2 2011/04/23 18:26:30 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/iscan/iscan-2.26.2.ebuild,v 1.8 2012/09/24 00:45:14 vapier Exp $
 
 EAPI="2"
 
@@ -23,7 +23,7 @@ SRC_REV="1"  # revision used by upstream
 # TODO:
 # (re)add closed-source binary modules which are needed for some scanners.
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 
 DESCRIPTION="EPSON Image Scan! for Linux (including sane-epkowa backend)"
 HOMEPAGE="http://www.avasys.jp/english/linux_e/dl_scan.html"
@@ -39,7 +39,7 @@ for X in ${IUSE_LINGUAS}; do IUSE="${IUSE} linguas_${X}"; done
 
 QA_PRESTRIPPED="usr/$(get_libdir)/libesmod.so.*"
 QA_TEXTRELS="${QA_PRESTRIPPED}"
-QA_DT_HASH="${QA_PRESTRIPPED}"
+QA_FLAGS_IGNORED="${QA_PRESTRIPPED}"
 
 # Upstream ships broken sanity test
 RESTRICT="test"
@@ -47,7 +47,7 @@ RESTRICT="test"
 RDEPEND="media-gfx/iscan-data
 	media-gfx/sane-backends
 	>=sys-fs/udev-103
-	>=dev-libs/libusb-0.1.12
+	virtual/libusb:0
 	X? (
 		x11-libs/gtk+:2
 		gimp? ( media-gfx/gimp )
@@ -57,7 +57,7 @@ RDEPEND="media-gfx/iscan-data
 	)"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	X? ( sys-devel/gettext )"
 
 src_prepare() {
@@ -79,8 +79,9 @@ src_prepare() {
 			-e "s:\(PKG_CHECK_MODULES(GDK_IMLIB,.*)\):#\1:g" configure.ac
 	fi
 
-	epatch "${FILESDIR}/iscan-2.25.0-drop-ltdl.patch"
-	epatch "${FILESDIR}/iscan-2.25.0-fix-g++-test.patch"
+	epatch "${FILESDIR}"/iscan-2.25.0-drop-ltdl.patch
+	epatch "${FILESDIR}"/iscan-2.25.0-fix-g++-test.patch
+	epatch "${FILESDIR}"/iscan-2.26.2-libpng15.patch
 
 	eautoreconf
 }

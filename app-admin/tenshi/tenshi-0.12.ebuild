@@ -1,10 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/tenshi/tenshi-0.12.ebuild,v 1.1 2011/06/16 17:23:13 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/tenshi/tenshi-0.12.ebuild,v 1.7 2012/05/31 02:59:03 zmedico Exp $
 
-EAPI="3"
-
-inherit eutils
+EAPI=4
+inherit eutils user
 
 DESCRIPTION="Log parsing and notification program"
 HOMEPAGE="http://dev.inversepath.com/trac/tenshi"
@@ -12,7 +11,7 @@ SRC_URI="http://dev.inversepath.com/tenshi/${P}.tar.gz"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE=""
 
 RDEPEND="dev-lang/perl
@@ -26,8 +25,8 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-create-mandir.patch"
-	# Fix for bug #218042
-	epatch "${FILESDIR}/${PN}-openrc-init.patch"
+	epatch "${FILESDIR}/${PN}-openrc-init.patch" #218042
+	epatch "${FILESDIR}/${PN}-openrc-init-r1.patch" #398987
 
 	# Fix for bug #241254
 	sed -i 's:^docdir =.*:docdir = /usr/share/doc/${PF}:' \
@@ -35,7 +34,7 @@ src_prepare() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install
 	fowners tenshi:root /etc/tenshi/tenshi.conf
 	dodir /var/lib/tenshi
 	fowners tenshi:root /var/lib/tenshi

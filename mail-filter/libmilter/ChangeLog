@@ -1,6 +1,26 @@
 # ChangeLog for mail-filter/libmilter
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/libmilter/ChangeLog,v 1.22 2011/06/10 10:56:58 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/libmilter/ChangeLog,v 1.28 2012/06/11 10:29:23 eras Exp $
+
+  11 Jun 2012; Eray Aslan <eras@gentoo.org> -libmilter-1.0.1-r1.ebuild:
+  remove old
+
+  04 Jun 2012; Zac Medico <zmedico@gentoo.org> libmilter-1.0.1-r1.ebuild,
+  libmilter-1.0.2.ebuild:
+  inherit multilib for get_libdir
+
+  31 May 2012; Eray Aslan <eras@gentoo.org> libmilter-1.0.1-r1.ebuild,
+  libmilter-1.0.2.ebuild:
+  Add sys-devel/m4 to DEPEND - bug #418327
+
+  06 Apr 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #63588
+
+  22 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libmilter-1.0.2.ebuild:
+  x86 stable wrt bug #390947
+
+  19 Nov 2011; Markos Chandras <hwoarang@gentoo.org> libmilter-1.0.2.ebuild:
+  Stable on amd64 wrt bug #390947
 
 *libmilter-1.0.2 (10 Jun 2011)
 

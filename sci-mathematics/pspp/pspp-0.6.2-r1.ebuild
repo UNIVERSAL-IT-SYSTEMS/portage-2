@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/pspp/pspp-0.6.2-r1.ebuild,v 1.1 2011/03/15 21:27:31 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/pspp/pspp-0.6.2-r1.ebuild,v 1.5 2012/05/21 06:56:21 ssuominen Exp $
 
 EAPI=4
 inherit eutils elisp-common autotools
 
 DESCRIPTION="Program for statistical analysis of sampled data."
 HOMEPAGE="http://www.gnu.org/software/pspp/pspp.html"
-SRC_URI="ftp://ftp.gnu.org/pub/gnu/${PN}/${P}.tar.gz"
+SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
 SLOT="0"
 LICENSE="GPL-3"
 KEYWORDS="~amd64 ~x86"
@@ -25,7 +25,7 @@ RDEPEND="sci-libs/gsl
 	plotutils? ( media-libs/plotutils )
 	postgres? ( dev-db/postgresql-server )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( virtual/latex-base )"
 
 SITEFILE=50${PN}-gentoo.el

@@ -1,6 +1,32 @@
 # ChangeLog for net-analyzer/iptstate
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/iptstate/ChangeLog,v 1.34 2011/04/19 23:18:35 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/iptstate/ChangeLog,v 1.42 2012/09/20 14:00:01 johu Exp $
+
+  20 Sep 2012; Johannes Huber <johu@gentoo.org> iptstate-2.2.5.ebuild:
+  Stable for x86, wrt bug #429152
+
+  24 Aug 2012; Agostino Sarubbo <ago@gentoo.org> iptstate-2.2.5.ebuild:
+  Stable for amd64, wrt bug #429152
+
+  03 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -iptstate-2.2.1.ebuild,
+  -files/iptstate-2.2.1-gcc43.patch, -iptstate-2.2.2.ebuild:
+  old
+
+*iptstate-2.2.5 (03 Jun 2012)
+
+  03 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +iptstate-2.2.5.ebuild:
+  Version bump. Use correct license (ZLIB instead of as-is). Stop forcing -g
+  and -O2 in CXXFLAGS. Remove empty CPPFLAGS= to respect environment flags.
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> iptstate-2.2.1.ebuild,
+  iptstate-2.2.2.ebuild, iptstate-2.2.3.ebuild:
+  Drop sparc keywords
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> iptstate-2.2.3.ebuild:
+  x86 stable wrt bug #397133
+
+  06 Jan 2012; Agostino Sarubbo <ago@gentoo.org> iptstate-2.2.3.ebuild:
+  Stable for AMD64, wrt bug #397133
 
 *iptstate-2.2.3 (19 Apr 2011)
 

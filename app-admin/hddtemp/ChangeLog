@@ -1,6 +1,110 @@
 # ChangeLog for app-admin/hddtemp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/hddtemp/ChangeLog,v 1.99 2011/07/05 14:33:29 aidecoe Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/hddtemp/ChangeLog,v 1.123 2012/10/27 12:14:08 aidecoe Exp $
+
+  27 Oct 2012; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  hddtemp-0.3_beta15-r5.ebuild, hddtemp-0.3_beta15-r22.ebuild:
+  Removed message about network interface requirement.
+
+*hddtemp-0.3_beta15-r22 (24 Oct 2012)
+*hddtemp-0.3_beta15-r5 (24 Oct 2012)
+
+  24 Oct 2012; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  -hddtemp-0.3_beta15-r4.ebuild, +hddtemp-0.3_beta15-r5.ebuild,
+  -hddtemp-0.3_beta15-r20.ebuild, -hddtemp-0.3_beta15-r21.ebuild,
+  +hddtemp-0.3_beta15-r22.ebuild, files/hddtemp-init:
+  init script doesn't depend on net anymore. Old revisions has been removed.
+  All testing ebuilds has been revbumped to enforce update of the init script.
+
+  26 Aug 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  TOSHIBA MK3252GSX and SAMSUNG HM160HC to hddgentoo.db.  Fixes bug #429918.
+
+  20 Aug 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  Added WDC WD800BB-00JHC0 and WD2500AAKS-00VSA0 to hddgentoo.db.
+  Fixes bug #422859.
+
+  03 Aug 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  Added ST9250315AS to hddgentoo.db.
+
+  31 Jul 2012; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  +hddtemp-0.3_beta15-r4.ebuild:
+  Fixed bug #424417 for rev. without network-cron.
+
+*hddtemp-0.3_beta15-r21 (31 Jul 2012)
+*hddtemp-0.3_beta15-r20 (31 Jul 2012)
+
+  31 Jul 2012; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  -hddtemp-0.3_beta15-r4.ebuild, +hddtemp-0.3_beta15-r20.ebuild,
+  +hddtemp-0.3_beta15-r21.ebuild, +files/hddtemp-0.3_beta15-dontwake.patch:
+  Moved rev. with network-cron to r20 and applied fix for bug #424417 in r21.
+  Thanks to Martin Jürgens <martin.accounts@gmx.de> for the report and finding 
+  the patch. The patch has been written by Eduard Bloch <blade@debian.org>, see
+  <http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=479840>.
+
+  31 Jul 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  Added Hitachi Travelstar E7K100 to hddgentoo.db. Fixes bug #419463.
+
+  31 Jul 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  Added all WD Caviar Blue drives from
+  <http://support.wdc.com/product/install.asp?groupid=502&lang=en> to
+  hddgentoo.db.
+
+  31 Jul 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  Added WD Blue drives. Fixes bug #427312.
+
+  23 Mar 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  Added all WD Caviar Black and Blue SATA drives to hddgentoo.db.
+  Fixes bug #409335.
+
+  16 Mar 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddtemp-conf.d:
+  Use long options and set /dev/sd* by default instead of /dev/hd*. Fixes
+  bug #408269 and also bug #390275 btw.
+
+  15 Feb 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  Added Hitachi HTS725050A9A364. Fixes bug #403127.
+
+  Thanks to Ivan Bagaev <gmiramir@gmail.com>.
+
+  08 Jan 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  Added few Seagate Barracuda 7200.14 hard drives.  Fixes bug #392913.
+
+  Thanks to Paolo Pedroni <paolo.pedroni@iol.it>.
+
+  08 Jan 2012; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  Added few more WD desktop hard drives.  Fixes bug #392917.
+
+  Thanks to Paolo Pedroni <paolo.pedroni@iol.it>.
+
+  14 Nov 2011; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  hddtemp-0.3_beta15-r3.ebuild, hddtemp-0.3_beta15-r4.ebuild:
+  Synchronized postinst messages between revisions and added suggestion about
+  --quiet option. Rels bug #390275.
+
+  24 Oct 2011; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  Added "WDC WD3200BEKT-00F3T0" to hddgentoo.db.  Fixes bug #388221.
+
+  22 Sep 2011; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  Corrected ST31500541AS desc, added ST31500341AS. Fixes bug #383379.
+
+  14 Sep 2011; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  Added WDC WD20EARS-00S8B1.
+
+  09 Sep 2011; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  hddtemp-0.3_beta15-r4.ebuild:
+  Minor cosmetic fix.
+
+  09 Sep 2011; Amadeusz Żołnowski <aidecoe@gentoo.org>
+  hddtemp-0.3_beta15-r4.ebuild:
+  Bumped EAPI to 4. Fixed bug #374163.
+
+  Thanks to Agostino Sarubbo <ago@autistici.org> for the patch.
+
+  09 Sep 2011; Amadeusz Żołnowski <aidecoe@gentoo.org> files/hddgentoo.db:
+  New drives for hddgentoo.db. Fixed bug #381517.
+
+  Thanks to <linuxdrom@gmail.com> for data.
+
+  Fixed tabs by the way.
 
   05 Jul 2011; Amadeusz Żołnowski <aidecoe@gentoo.org>
   hddtemp-0.3_beta15-r3.ebuild, hddtemp-0.3_beta15-r4.ebuild:

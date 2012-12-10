@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/enblend/enblend-4.0.ebuild,v 1.8 2010/11/08 22:05:28 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/enblend/enblend-4.0.ebuild,v 1.12 2012/05/05 07:00:26 jdhore Exp $
 
 EAPI=2
 
@@ -26,10 +26,10 @@ RDEPEND="
 	openexr? ( >=media-libs/openexr-1.0 )"
 DEPEND="${RDEPEND}
 	>=dev-libs/boost-1.31.0
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? (
 		media-gfx/transfig
-		sci-visualization/gnuplot
+		sci-visualization/gnuplot[gd]
 		virtual/latex-base
 	)"
 
@@ -44,6 +44,10 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-libpng14.patch
+
+	# 378677, temp workaround
+	has_version ">=media-libs/libpng-1.5" && epatch \
+		"${FILESDIR}"/${P}-libpng15.patch
 }
 
 src_configure() {

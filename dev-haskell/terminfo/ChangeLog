@@ -1,6 +1,55 @@
 # ChangeLog for dev-haskell/terminfo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/terminfo/ChangeLog,v 1.11 2011/04/10 18:54:57 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/terminfo/ChangeLog,v 1.25 2012/11/25 06:08:50 gienah Exp $
+
+*terminfo-0.3.2.5 (25 Nov 2012)
+
+  25 Nov 2012; Mark Wright <gienah@gentoo.org> +terminfo-0.3.2.5.ebuild:
+  Bump terminfo to 0.3.2.5
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> terminfo-0.3.1.1.ebuild,
+  terminfo-0.3.1.3.ebuild, terminfo-0.3.2.3.ebuild:
+  move dev-haskell/terminfo/terminfo-0.3.2.3.ebuild ebuild to mirror://hackage
+
+  21 Aug 2012; Michael Weber <xmw@gentoo.org> terminfo-0.3.2.3.ebuild:
+  ppc stable (bug 418703)
+
+  09 Aug 2012; Andreas Schuerch <nativemad@gentoo.org> terminfo-0.3.2.3.ebuild:
+  x86 stable, see bug 418703
+
+  09 Aug 2012; Sergei Trofimovich <slyfox@gentoo.org> terminfo-0.3.2.3.ebuild:
+  Stable on alpha/ia64/sparc (bug #418703)
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> terminfo-0.3.2.3.ebuild:
+  Marking terminfo-0.3.2.3 ppc64 for bug 418703
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> terminfo-0.3.2.3.ebuild:
+  Stable on amd64 wrt bug #418703
+
+  17 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> terminfo-0.3.1.3.ebuild:
+  alpha/ia64/sparc stable (bug #399989).
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> terminfo-0.3.1.3.ebuild:
+  Marking terminfo-0.3.1.3 ppc64 for bug 399989
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> terminfo-0.3.1.3.ebuild:
+  x86 stable wrt bug #399989
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> terminfo-0.3.1.3.ebuild:
+  Marking terminfo-0.3.1.3 ppc for bug 399989
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> terminfo-0.3.1.3.ebuild:
+  Stable for amd64, wrt bug #399989
+
+*terminfo-0.3.2.3 (23 Jan 2012)
+
+  23 Jan 2012; Mark Wright <gienah@gentoo.org> +terminfo-0.3.2.3.ebuild:
+  Bump terminfo to 0.3.2.3.
+
+*terminfo-0.3.1.3 (02 Aug 2011)
+
+  02 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org> +terminfo-0.3.1.3.ebuild:
+  Version bump.
 
   10 Apr 2011; Fabian Groffen <grobian@gentoo.org> terminfo-0.3.1.1.ebuild:
   Marked ~x86-macos
@@ -43,4 +92,3 @@
   28 Mar 2010; Lennart Kolmodin <kolmodin@gentoo.org>
   +terminfo-0.3.1.1.ebuild, +metadata.xml:
   Initial version, dependency of haskeline.
-

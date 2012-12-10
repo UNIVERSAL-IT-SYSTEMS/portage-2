@@ -1,6 +1,135 @@
 # ChangeLog for app-text/evince
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/evince/ChangeLog,v 1.225 2011/07/17 20:39:44 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/evince/ChangeLog,v 1.252 2012/11/03 06:48:20 tetromino Exp $
+
+  03 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evince-2.32.0-r4.ebuild, files/evince-2.32.0-gold.patch:
+  Update the gold patch to fix glib-2.32 problems; -lm is always needed for
+  libdocument, not just for the thumbnailer executable. Add missing libICE
+  dependency.
+
+  17 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -evince-2.32.0-r3.ebuild, evince-2.32.0-r4.ebuild, -evince-3.2.1-r1.ebuild,
+  -files/evince-3.2.1-glib-gold.patch, -files/evince-3.2.1-libgxps-0.2.patch,
+  evince-3.4.0.ebuild:
+  Drop useless USE=doc, it only regenerated documentation; fixes bug #436778.
+  Update license. Drop old.
+
+  23 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evince-2.32.0-r3.ebuild, evince-2.32.0-r4.ebuild, evince-3.2.1-r1.ebuild,
+  evince-3.4.0.ebuild:
+  gtk-doc-am dependency is not needed, m4/gtk-doc.m4 is in the tarball. Thanks
+  to Gilles Dartiguelongue for noticing.
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> evince-2.32.0-r4.ebuild:
+  alpha/ia64/sparc stable wrt #410611
+
+  16 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> evince-2.32.0-r3.ebuild,
+  evince-2.32.0-r4.ebuild, evince-3.2.1-r1.ebuild, evince-3.4.0.ebuild,
+  metadata.xml:
+  Use global USE flag "postscript" instead of local USE flag "ps" for
+  PostScript support
+
+  08 Jun 2012; Pacho Ramos <pacho@gentoo.org> -evince-3.2.1.ebuild,
+  metadata.xml:
+  Drop maintainer from metadata as talked with him, bug #90641. Drop old.
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> evince-2.32.0-r4.ebuild:
+  ppc stable wrt #410611
+
+  10 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evince-2.32.0-r3.ebuild, evince-2.32.0-r4.ebuild, evince-3.2.1.ebuild,
+  evince-3.2.1-r1.ebuild, evince-3.4.0.ebuild, metadata.xml:
+  Add "ps" USE flag (enabled by default) to allow disabling PostScript support
+  (bug #414973, thanks to nzqr).
+
+*evince-3.4.0 (05 May 2012)
+
+  05 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +evince-3.4.0.ebuild, +files/evince-3.4.0-glib-gold.patch:
+  Version bump with small bugfixes and UI improvements.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> evince-2.32.0-r3.ebuild,
+  evince-2.32.0-r4.ebuild, evince-3.2.1.ebuild, evince-3.2.1-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  30 Apr 2012; Justin Lecher <jlec@gentoo.org> evince-3.2.1-r1.ebuild,
+  +files/evince-3.2.1-glib-gold.patch:
+  Add fix for problems with glib-2.32 and gold linker, #414065
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> evince-2.32.0-r4.ebuild:
+  x86 stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> evince-2.32.0-r4.ebuild:
+  arm stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> evince-2.32.0-r4.ebuild:
+  Marking evince-2.32.0-r4 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> evince-2.32.0-r4.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  30 Jan 2012; Pacho Ramos <pacho@gentoo.org> evince-2.32.0-r4.ebuild:
+  Stop allowing to build gtk-doc files as they are useless for evince as
+  discussed in bug #398435 (by Nick Bowler). Thanks to Alexandre Rostovtsev for
+  looking to the issue.
+
+*evince-2.32.0-r4 (17 Dec 2011)
+
+  17 Dec 2011; Pacho Ramos <pacho@gentoo.org> +evince-2.32.0-r4.ebuild,
+  +files/evince-2.32.0-create_thumbnail_frame-null.patch,
+  +files/evince-2.32.0-desktop-categories.patch, -evince-2.32.0-r2.ebuild:
+  Fix menu categories, bug #393585 by Sergey S. Starikoff; apply another patch
+  from 2.32 branch to fix another crash. Remove old.
+
+  04 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org> evince-3.2.1.ebuild,
+  evince-3.2.1-r1.ebuild:
+  evince-3.x uses docbook-xml-dtd:4.3, not 4.1.2 (bug #392263, thanks to
+  markus.heuberger@gmx.net for reporting).
+
+  26 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> evince-3.2.1.ebuild,
+  evince-3.2.1-r1.ebuild:
+  Fix the gnome-icon-theme configure sed (bug #391859, thanks to Florian Faber
+  <faber@faberman.de> for reporting).
+
+*evince-3.2.1-r1 (23 Nov 2011)
+
+  23 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +evince-3.2.1-r1.ebuild, +files/evince-3.2.1-libgxps-0.2.patch:
+  Add patches to fix libgxps-0.2 and texlive-2011 support.
+
+  16 Nov 2011; Justin Lecher <jlec@gentoo.org> evince-2.32.0-r2.ebuild,
+  evince-2.32.0-r3.ebuild, evince-3.2.1.ebuild:
+  Corrected Slotting of media-libs/tiff
+
+  15 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  evince-2.32.0-r2.ebuild, evince-2.32.0-r3.ebuild:
+  QA: eautoreconf should be before gnome2_src_prepare.
+
+*evince-3.2.1 (03 Nov 2011)
+
+  03 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -files/evince-2.91.5-fix-evinceview-introspection.patch,
+  -evince-3.0.2.ebuild, +evince-3.2.1.ebuild, metadata.xml:
+  Bump to 3.2.1 from the gnome overlay. Drop old. Add several missing
+  dependencies. Notable changes: UI fixes, stability improvements, XPS support.
+
+  17 Oct 2011; Justin Lecher <jlec@gentoo.org> +files/evince-2.32.0-gold.patch,
+  metadata.xml, evince-2.32.0-r3.ebuild:
+  Fix linking with gold.ld
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> evince-2.32.0-r3.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+*evince-3.0.2 (16 Aug 2011)
+
+  16 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +files/evince-2.91.5-fix-evinceview-introspection.patch,
+  +evince-3.0.2.ebuild:
+  Bump to 3.0.2, from gnome overlay for GNOME 3
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> evince-2.32.0-r3.ebuild:
+  alpha/ia64/sparc stable wrt #369909
 
   17 Jul 2011; Markus Meier <maekke@gentoo.org> evince-2.32.0-r3.ebuild:
   arm stable, bug #369909

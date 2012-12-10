@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/ace/ace-5.5-r1.ebuild,v 1.10 2007/10/08 09:06:40 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/ace/ace-5.5-r1.ebuild,v 1.12 2012/07/29 16:15:56 armin76 Exp $
 
-inherit eutils
+inherit eutils multilib toolchain-funcs
 
 S="${WORKDIR}/ACE_wrappers"
 DESCRIPTION="The Adaptive Communications Environment"
@@ -13,7 +13,7 @@ HOMEPAGE="http://www.cs.wustl.edu/~schmidt/ACE.html"
 
 SLOT="0"
 LICENSE="BSD as-is"
-KEYWORDS="alpha amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="X ipv6 tao"
 
 DEPEND="dev-libs/openssl"

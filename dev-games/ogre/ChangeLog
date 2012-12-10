@@ -1,6 +1,76 @@
 # ChangeLog for dev-games/ogre
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/ogre/ChangeLog,v 1.71 2011/04/27 12:13:07 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-games/ogre/ChangeLog,v 1.89 2012/11/12 23:27:35 hasufell Exp $
+
+  12 Nov 2012; Julian Ospald <hasufell@gentoo.org> ogre-1.8.1.ebuild:
+  fix bug 421493
+
+  01 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> metadata.xml:
+  metadata cleanup
+
+  01 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  -files/ogre-1.6.5-as-needed.patch, -files/ogre-1.6.5-automake.patch,
+  -files/ogre-1.6.5-boost.patch, -files/ogre-1.6.5-cegui.patch,
+  -files/ogre-1.6.5-gcc46.patch, -files/ogre-1.7.4-gcc46.patch,
+  -files/ogre-1.7.4-threading.patch, -ogre-1.6.5.ebuild, -ogre-1.7.4-r1.ebuild:
+  old
+
+*ogre-1.8.1 (01 Nov 2012)
+
+  01 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  +files/ogre-1.8.1-flags.patch, +files/ogre-1.8.1-threading.patch,
+  +ogre-1.8.1.ebuild:
+  version bump (bug #440074)
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> ogre-1.8.0.ebuild:
+  Stable for amd64, wrt bug #427056
+
+  18 Jul 2012; Jeff Horelick <jdhore@gentoo.org> ogre-1.8.0.ebuild:
+  marked x86 per bug 427056
+
+  18 Jun 2012; Julian Ospald <hasufell@gentoo.org> ogre-1.7.4-r1.ebuild:
+  stable for x86 wrt bug #412675
+
+  16 Jun 2012; Julian Ospald <hasufell@gentoo.org> ogre-1.7.4-r1.ebuild,
+  ogre-1.8.0.ebuild:
+  remove test useflag completely and disable build of tests wrt bug #412675
+
+  13 Jun 2012; Michael Sterrett <mr_bones_@gentoo.org> -ogre-1.7.4.ebuild:
+  old
+
+  12 Jun 2012; Julian Ospald <hasufell@gentoo.org> ogre-1.8.0.ebuild:
+  fix patch
+
+*ogre-1.8.0 (12 Jun 2012)
+
+  12 Jun 2012; Julian Ospald <hasufell@gentoo.org> +ogre-1.8.0.ebuild,
+  +files/ogre-1.8.0-flags.patch, +files/ogre-1.8.0-threading.patch:
+  version bump wrt bug #418201
+
+  04 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ogre-1.7.4-r1.ebuild:
+  Stable for amd64, wrt bug #412675
+
+*ogre-1.7.4-r1 (30 May 2012)
+
+  30 May 2012; Michael Sterrett <mr_bones_@gentoo.org> +ogre-1.7.4-r1.ebuild:
+  fix threading support with patch from hasufell (bug #418269)
+
+  26 May 2012; Agostino Sarubbo <ago@gentoo.org> ogre-1.7.4.ebuild:
+  Stable for amd64, wrt bug #412675
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> ogre-1.6.5.ebuild,
+  ogre-1.7.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*ogre-1.7.4 (03 Mar 2012)
+
+  03 Mar 2012; Mike Frysinger <vapier@gentoo.org> +ogre-1.7.4.ebuild,
+  +files/ogre-1.7.4-gcc46.patch, +files/ogre-1.7.4-threading.patch,
+  metadata.xml:
+  Version bump #307205 by Christoph Brill, Myckel Habets, and hasufell.
+
+  04 Sep 2011; Michael Sterrett <mr_bones_@gentoo.org> ogre-1.6.5.ebuild:
+  needs <dev-games/cegui-0.7.5 to build (bug #375503)
 
   27 Apr 2011; Tupone Alfredo <tupone@gentoo.org> ogre-1.6.5.ebuild,
   +files/ogre-1.6.5-gcc46.patch:

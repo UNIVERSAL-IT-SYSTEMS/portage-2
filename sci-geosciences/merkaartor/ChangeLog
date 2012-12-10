@@ -1,6 +1,26 @@
 # ChangeLog for sci-geosciences/merkaartor
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/merkaartor/ChangeLog,v 1.20 2011/06/10 15:31:33 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/merkaartor/ChangeLog,v 1.25 2012/11/16 20:13:27 ago Exp $
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> merkaartor-0.17.2.ebuild:
+  workaround for bug 399061
+
+  16 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> merkaartor-9999.ebuild:
+  Depend only on boost. By nikoli.
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> merkaartor-0.17.2.ebuild,
+  merkaartor-9999.ebuild:
+  Depend on boost. Wrt bug#403391.
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> merkaartor-0.17.2.ebuild,
+  merkaartor-9999.ebuild:
+  Pull in cxx useflag on merkartor to not fail on build. (not present on stable
+  gpsd but does not matter as merkaartor is testing itself). Fixes bug#394793.
+
+  16 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> merkaartor-0.17.2.ebuild,
+  merkaartor-9999.ebuild:
+  Fix problems with localization search dirs wrt #385671 by Nikoli and René
+  Kraneis
 
   10 Jun 2011; Tomáš Chvátal <scarabeus@gentoo.org>
   +files/0.17.2-libproxy.patch, merkaartor-0.17.2.ebuild:
@@ -90,4 +110,3 @@
   29 Feb 2008; Hanno Boeck <hanno@gentoo.org> +metadata.xml,
   +merkaartor-0.0.9.ebuild:
   Initial commit, ebuild by Dirk-Lüder Kreide and Steffen Stramm in bug #155488.
-

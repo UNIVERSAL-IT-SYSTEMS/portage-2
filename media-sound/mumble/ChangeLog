@@ -1,6 +1,31 @@
 # ChangeLog for media-sound/mumble
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mumble/ChangeLog,v 1.32 2011/06/14 20:10:41 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mumble/ChangeLog,v 1.37 2012/11/16 00:56:34 tgurr Exp $
+
+*mumble-1.2.4_beta1 (16 Nov 2012)
+
+  16 Nov 2012; Timo Gurr <tgurr@gentoo.org> +mumble-1.2.4_beta1.ebuild,
+  -mumble-1.2.3-r1.ebuild:
+  Version bump, remove old.
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> mumble-1.2.3-r1.ebuild,
+  mumble-1.2.3-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  18 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> mumble-1.2.3-r2.ebuild:
+  x86 stable wrt bug #403939
+
+  16 Feb 2012; Agostino Sarubbo <ago@gentoo.org> mumble-1.2.3-r2.ebuild:
+  Stable for AMD64, wrt security bug #403845
+
+*mumble-1.2.3-r2 (16 Feb 2012)
+
+  16 Feb 2012; Timo Gurr <tgurr@gentoo.org> -mumble-1.1.8.ebuild,
+  -mumble-1.2.2.ebuild, +mumble-1.2.3-r2.ebuild,
+  +files/mumble-1.2.3-fix-cert-validation.patch,
+  +files/mumble-1.2.3-set-file-permissions.patch:
+  Revbump fixing security issue wrt bug #403939. Removing mDNSResponder wrt
+  upcomming last rite. Added patch for Qt 4.8 SSL. EAPI bump. Remove old.
 
   14 Jun 2011; Markus Meier <maekke@gentoo.org> mumble-1.2.3-r1.ebuild:
   amd64/x86 stable, bug #370245
@@ -168,4 +193,3 @@
   25 Nov 2006; Timothy Redaelli <drizzt@gentoo.org>
   +files/mumble-0.9.4-path.patch, +metadata.xml, +mumble-0.9.4.ebuild:
   New ebuild, thanks to Gorch wrt bug #155517
-

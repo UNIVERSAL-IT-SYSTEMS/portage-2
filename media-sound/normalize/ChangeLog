@@ -1,6 +1,31 @@
 # ChangeLog for media-sound/normalize
-# Copyright 2002-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/normalize/ChangeLog,v 1.28 2007/10/15 14:39:12 corsair Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/normalize/ChangeLog,v 1.35 2012/05/05 08:45:44 mgorny Exp $
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> normalize-0.7.7-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  20 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -normalize-0.7.7.ebuild:
+  old
+
+  20 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  normalize-0.7.7-r1.ebuild:
+  ppc/ppc64 stable wrt #388709
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> normalize-0.7.7-r1.ebuild:
+  sparc stable wrt #388709
+
+  02 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  normalize-0.7.7-r1.ebuild:
+  x86 stable wrt bug #388709
+
+  29 Oct 2011; Markos Chandras <hwoarang@gentoo.org> normalize-0.7.7-r1.ebuild:
+  Stable on amd64 wrt bug #388709
+
+*normalize-0.7.7-r1 (27 Oct 2011)
+
+  27 Oct 2011; Tim Harder <radhermit@gentoo.org> +normalize-0.7.7-r1.ebuild:
+  Revbump to fix build issue with audiofile-0.3.1 (bug #385317 by SpanKY).
 
   15 Oct 2007; Markus Rothe <corsair@gentoo.org> normalize-0.7.7.ebuild:
   Stable on ppc64

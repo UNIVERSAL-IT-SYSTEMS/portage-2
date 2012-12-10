@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/livecd-tools/livecd-tools-9999.ebuild,v 1.7 2011/07/14 01:17:19 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/livecd-tools/livecd-tools-9999.ebuild,v 1.10 2012/05/22 22:31:54 williamh Exp $
 
 EAPI=4
 
@@ -21,6 +21,7 @@ LICENSE="GPL-2"
 IUSE=""
 
 RDEPEND="dev-util/dialog
+	net-dialup/mingetty
 	>=sys-apps/baselayout-2
 	>=sys-apps/openrc-0.8.2-r1
 	sys-apps/pciutils
@@ -36,7 +37,8 @@ pkg_setup() {
 src_install() {
 	doconfd conf.d/*
 	doinitd init.d/*
-	dosbin net-setup spind
+	dosbin net-setup
 	into /
-	dosbin bashlogin livecd-functions.sh
+	dobin bashlogin
+	dosbin livecd-functions.sh
 }

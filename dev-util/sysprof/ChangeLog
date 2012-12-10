@@ -1,6 +1,58 @@
 # ChangeLog for dev-util/sysprof
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/sysprof/ChangeLog,v 1.16 2011/03/27 13:09:22 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/sysprof/ChangeLog,v 1.26 2012/11/21 11:16:23 ago Exp $
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> sysprof-1.2.0.ebuild:
+  Stable for x86, wrt bug #439114
+
+  24 Oct 2012; <ago@gentoo.org> sysprof-1.2.0.ebuild:
+  Stable for amd64, wrt bug #439114
+
+  22 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  sysprof-1.2.0.ebuild:
+  Add missing atk, gdk-pixbuf dependencies, thanks to Chema Alonso (bug #439114
+  comment 1).
+
+*sysprof-1.2.0 (18 Sep 2012)
+
+  18 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -sysprof-1.0.12.ebuild, sysprof-1.0.12-r1.ebuild, sysprof-1.1.8-r1.ebuild,
+  sysprof-1.1.8-r2.ebuild, +sysprof-1.2.0.ebuild:
+  Bump to new stable release. Make LICENSE more precise. Drop old.
+
+  13 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  sysprof-1.1.8-r2.ebuild:
+  Fix installation on systems without udev.pc, thanks to Samuli Suominen for
+  noticing.
+
+*sysprof-1.1.8-r2 (13 Sep 2012)
+
+  13 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -sysprof-1.1.8.ebuild, +sysprof-1.1.8-r2.ebuild:
+  Use pkgconfig to read udevdir from udev.pc. Drop old.
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Leio is second maintainer as talked with him.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> sysprof-1.0.12.ebuild,
+  sysprof-1.0.12-r1.ebuild, sysprof-1.1.8.ebuild, sysprof-1.1.8-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*sysprof-1.1.8-r1 (17 Mar 2012)
+
+  17 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +sysprof-1.1.8-r1.ebuild:
+  Fix icon installation (bug #408659, thanks to Matt Turner).
+
+*sysprof-1.1.8 (30 Oct 2011)
+
+  30 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  sysprof-1.0.12.ebuild, sysprof-1.0.12-r1.ebuild, +sysprof-1.1.8.ebuild,
+  metadata.xml:
+  Bump to 1.1.8 from the gnome overlay. Adding myself as co-maintainer (acked
+  by leio). Update project homepage and SRC_URI.
+  Notable changes: uses the perf counter interface introduced in kernel 2.6.31
+  instead of building its own kernel module; adds a command-line interface.
 
   27 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org> sysprof-1.0.12.ebuild,
   sysprof-1.0.12-r1.ebuild:

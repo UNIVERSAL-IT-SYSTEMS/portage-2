@@ -1,6 +1,67 @@
 # ChangeLog for dev-games/cegui
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-games/cegui/ChangeLog,v 1.36 2011/07/13 13:34:58 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-games/cegui/ChangeLog,v 1.53 2012/12/07 23:38:23 hasufell Exp $
+
+  07 Dec 2012; Julian Ospald <hasufell@gentoo.org> cegui-0.7.7.ebuild:
+  prepare deps for irrlicht-1.8 import
+
+  17 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> -cegui-0.7.5-r1.ebuild,
+  -files/cegui-0.7.5-gcc46.patch, -files/cegui-0.7.5-tinyxml.patch:
+  old
+
+  17 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> cegui-0.7.7.ebuild:
+  default to libxml2 for xml support (bug #422811)
+
+*cegui-0.7.7 (09 Jul 2012)
+
+  09 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org> +cegui-0.7.7.ebuild:
+  version bump (bug #424599)
+
+  18 Jun 2012; Julian Ospald <hasufell@gentoo.org> cegui-0.7.6-r1.ebuild:
+  stable for x86 wrt bug #412675
+
+  10 Jun 2012; Julian Ospald <hasufell@gentoo.org> cegui-0.7.6-r1.ebuild:
+  fix compilation of USE="static-libs zip" wrt bug #420293
+
+  07 Jun 2012; Julian Ospald <hasufell@gentoo.org> cegui-0.7.6-r1.ebuild:
+  fix static-libs useflag wrt bug #412675
+
+  26 May 2012; Agostino Sarubbo <ago@gentoo.org> cegui-0.7.6-r1.ebuild:
+  Stable for amd64, wrt bug #412675
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> cegui-0.7.6-r1.ebuild:
+  Reverted to ~amd64 due to problem with poco
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> cegui-0.7.6-r1.ebuild:
+  Stable for amd64, wrt bug #412675
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> cegui-0.6.2b.ebuild,
+  cegui-0.7.5-r1.ebuild, cegui-0.7.6-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  07 Apr 2012; Michael Sterrett <mr_bones_@gentoo.org> -cegui-0.7.5.ebuild,
+  -cegui-0.7.6.ebuild:
+  old
+
+*cegui-0.7.6-r1 (03 Mar 2012)
+
+  03 Mar 2012; Mike Frysinger <vapier@gentoo.org> +cegui-0.7.6-r1.ebuild:
+  Build against system minizip #389863. Re-enable ogre support #406475 by
+  hasufell.
+
+*cegui-0.7.6 (25 Jan 2012)
+
+  25 Jan 2012; Tristan Heaven <tristan@gentoo.org> +cegui-0.7.6.ebuild:
+  Version bump
+
+  09 Nov 2011; Michael Sterrett <mr_bones_@gentoo.org> cegui-0.7.5-r1.ebuild:
+  build with newer zlib (bug #389863); kill ogre use flag (bug #387103)
+
+  09 Oct 2011; Markus Meier <maekke@gentoo.org> cegui-0.7.5-r1.ebuild:
+  x86 stable, bug #375503
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> cegui-0.7.5-r1.ebuild:
+  Stable on amd64 wrt bug #375503
 
   13 Jul 2011; Tupone Alfredo <tupone@gentoo.org> cegui-0.6.2b.ebuild,
   +files/cegui-0.6.2b-gcc46.patch:

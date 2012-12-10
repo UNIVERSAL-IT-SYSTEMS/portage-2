@@ -1,6 +1,76 @@
 # ChangeLog for net-firewall/ipset
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/ipset/ChangeLog,v 1.49 2011/07/24 10:59:11 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/ipset/ChangeLog,v 1.62 2012/11/27 11:36:44 pinkbyte Exp $
+
+*ipset-6.16 (27 Nov 2012)
+*ipset-6.15 (27 Nov 2012)
+
+  27 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> +ipset-6.15.ebuild,
+  +ipset-6.16.ebuild:
+  Another version bump
+
+*ipset-6.14 (27 Nov 2012)
+
+  27 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> +ipset-6.14.ebuild:
+  Version bump, permission was granted by robbat2
+
+*ipset-6.13 (20 Aug 2012)
+
+  20 Aug 2012; Robin H. Johnson <robbat2@gentoo.org> +ipset-6.13.ebuild:
+  Bug #431456, #418019: version bump. Bug #429814: ensure compile with no
+  /usr/src/linux. Bug #396097 is fixed by upstream as well.
+
+  14 Jun 2012; Michael Weber <xmw@gentoo.org> ipset-6.11.ebuild:
+  adding ~ppc keyword (bug 304037)
+
+*ipset-6.11 (21 Feb 2012)
+
+  21 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> +ipset-6.11.ebuild:
+  Version bump.
+
+*ipset-6.10 (17 Dec 2011)
+
+  17 Dec 2011; Peter Volkov <pva@gentoo.org> +ipset-6.10.ebuild,
+  +files/ipset.confd, +files/ipset.initd-r2:
+  Version bump. Add confd file and make init file workable with list:set, bug
+  #390129 and bug #393243 by Andrew Savchenko.
+
+  12 Oct 2011; Peter Volkov <pva@gentoo.org> ipset-6.9.1-r2.ebuild:
+  On second thought drop USE=ipv6: userspace should work is the same
+  independently of USE=ipv6 and kernel side will depend on kernel
+  configuration.
+
+*ipset-6.9.1-r2 (12 Oct 2011)
+
+  12 Oct 2011; Peter Volkov <pva@gentoo.org> +ipset-6.9.1-r2.ebuild,
+  +files/ipset.initd-r1, files/ipset.initd:
+  Fix init script, bug #386151 wrt Alexey Shvetsov. Require
+  CONFIG_IP6_NF_IPTABLES only if USE=ipv6, bug #385445 wrt John Brendler.
+
+*ipset-6.9.1-r1 (02 Oct 2011)
+
+  02 Oct 2011; Peter Volkov <pva@gentoo.org> +ipset-6.9.1-r1.ebuild,
+  +files/ipset.initd:
+  Drop confusing message about netlink.patch, bug #382221 by John Brendler. Add
+  init script by Andrew Savchenko, bug #181045 by Caleb Cushing.
+
+  17 Sep 2011; Peter Volkov <pva@gentoo.org> -files/ipset-2.4.7-LDFLAGS.patch,
+  -ipset-4.4.ebuild, -ipset-6.7-r1.ebuild:
+  Drop old.
+
+  16 Sep 2011; Tony Vroon <chainsaw@gentoo.org> ipset-4.5.ebuild,
+  ipset-6.8.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney &
+  Tomáš "Mepho" Pružina in bug #381613.
+
+  15 Sep 2011; Andreas Schuerch <nativemad@gentoo.org> ipset-4.5.ebuild,
+  ipset-6.8.ebuild:
+  x86 stable, see bug 381613
+
+*ipset-6.9.1 (07 Sep 2011)
+
+  07 Sep 2011; Peter Volkov <pva@gentoo.org> +ipset-6.9.1.ebuild:
+  Version bump.
 
 *ipset-6.8 (24 Jul 2011)
 
@@ -254,4 +324,3 @@
   10 Mar 2005; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +ipset-2.1.0.20050119.ebuild:
   Initial commit, ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

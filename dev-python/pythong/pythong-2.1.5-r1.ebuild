@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pythong/pythong-2.1.5-r1.ebuild,v 1.4 2010/04/21 18:11:35 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pythong/pythong-2.1.5-r1.ebuild,v 1.6 2012/02/22 07:34:34 patrick Exp $
 
 EAPI="3"
-PYTHON_DEPEND="2"
 PYTHON_USE_WITH="tk"
 SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.* *-jython 2.7-pypy-*"
 
 inherit python
 
@@ -28,7 +28,6 @@ S="${WORKDIR}/${MY_PN}-${MY_PV}"
 RDEPEND=">=dev-lang/tk-8.3.4
 	>=dev-python/pmw-1.2"
 DEPEND="${RDEPEND}"
-RESTRICT_PYTHON_ABIS="3.*"
 
 src_prepare() {
 	python_copy_sources

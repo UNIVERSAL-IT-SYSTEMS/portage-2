@@ -1,6 +1,65 @@
 # ChangeLog for net-dialup/moserial
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/moserial/ChangeLog,v 1.9 2010/06/30 15:23:09 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/moserial/ChangeLog,v 1.23 2012/10/16 04:40:49 blueness Exp $
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> moserial-3.0.7.ebuild:
+  stable ppc, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> moserial-3.0.7.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> moserial-3.0.7.ebuild:
+  x86 stable wrt bug #427544
+
+*moserial-3.0.7 (16 Jun 2012)
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> +moserial-3.0.7.ebuild:
+  Version bump.
+
+*moserial-3.0.6 (16 Jun 2012)
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> +moserial-3.0.6.ebuild,
+  -moserial-3.0.5.ebuild:
+  Readd ebuild removed previusly by error and drop proper one.
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> -moserial-2.30.0.ebuild,
+  -moserial-3.0.6.ebuild, metadata.xml:
+  Leio is second maintainer for this. Drop old.
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> moserial-3.0.6.ebuild:
+  ppc stable wrt #410611
+
+  10 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  moserial-3.0.5.ebuild, moserial-3.0.6.ebuild:
+  Add missing gsettings-desktop-schemas dependency (bug #415243, thanks to John
+  Doe).
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> moserial-2.30.0.ebuild,
+  moserial-3.0.5.ebuild, moserial-3.0.6.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> moserial-3.0.6.ebuild:
+  x86 stable, bug #410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> moserial-3.0.6.ebuild:
+  Stable for amd64, wrt bug #410611
+
+*moserial-3.0.6 (03 Mar 2012)
+
+  03 Mar 2012; Pacho Ramos <pacho@gentoo.org> +moserial-3.0.6.ebuild,
+  -moserial-3.0.4.ebuild:
+  Version bump, drop old.
+
+*moserial-3.0.5 (29 Jan 2012)
+
+  29 Jan 2012; Pacho Ramos <pacho@gentoo.org> +moserial-3.0.5.ebuild:
+  Version bump.
+
+*moserial-3.0.4 (22 Jan 2012)
+
+  22 Jan 2012; Pacho Ramos <pacho@gentoo.org> +moserial-3.0.4.ebuild,
+  -moserial-2.26.1.ebuild, metadata.xml:
+  Version bump, remove old, add gnome team as fallback maintainers.
 
   30 Jun 2010; Christian Faulhammer <fauli@gentoo.org>
   moserial-2.30.0.ebuild:
@@ -43,4 +102,3 @@
   02 Apr 2009; Mart Raudsepp <leio@gentoo.org> +metadata.xml,
   +moserial-1.0.8.ebuild:
   Initial addition of moserial - a GTK+ based serial terminal
-

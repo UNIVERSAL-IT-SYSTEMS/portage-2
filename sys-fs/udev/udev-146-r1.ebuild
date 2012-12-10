@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-146-r1.ebuild,v 1.15 2011/07/06 16:44:44 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-146-r1.ebuild,v 1.22 2012/11/24 17:35:09 ssuominen Exp $
 
 EAPI="1"
 
@@ -11,17 +11,18 @@ PATCHSET=${P}-gentoo-patchset-v1
 if [[ ${PV} == "9999" ]]; then
 	EGIT_REPO_URI="git://git.kernel.org/pub/scm/linux/hotplug/udev.git"
 	EGIT_BRANCH="master"
-	inherit git autotools
+	inherit git-2 autotools
 else
 	SRC_URI="mirror://kernel/linux/utils/kernel/hotplug/${P}.tar.bz2
-			mirror://gentoo/${PATCHSET}.tar.bz2"
+			mirror://gentoo/${PATCHSET}.tar.bz2
+			http://dev.gentoo.org/~ssuominen/${PN}-gentoo-legacy-patchset-1.tar.bz2"
 fi
 DESCRIPTION="Linux dynamic and persistent device naming support (aka userspace devfs)"
 HOMEPAGE="http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev.html"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="selinux +devfs-compat -extras"
 
 RESTRICT="test"
@@ -35,7 +36,7 @@ COMMON_DEPEND="selinux? ( sys-libs/libselinux )
 		dev-libs/glib:2
 	)
 	>=sys-apps/util-linux-2.16
-	>=sys-libs/glibc-2.7"
+	!<sys-libs/glibc-2.7"
 
 DEPEND="${COMMON_DEPEND}
 	extras? ( dev-util/gperf )"
@@ -129,7 +130,7 @@ sed_libexec_dir() {
 
 src_unpack() {
 	if [[ ${PV} == "9999" ]] ; then
-		git_src_unpack
+		git-2_src_unpack
 	else
 		unpack ${A}
 	fi
@@ -144,8 +145,11 @@ src_unpack() {
 
 	if ! use devfs-compat; then
 		# see Bug #269359
-		epatch "${FILESDIR}"/udev-141-remove-devfs-names.diff
+		epatch "${WORKDIR}"/udev-141-remove-devfs-names.diff
 	fi
+
+	# Bug 413055
+	epatch "${WORKDIR}"/udev-164-remove-v4l1.patch
 
 	# change rules back to group uucp instead of dialout for now
 	sed -e 's/GROUP="dialout"/GROUP="uucp"/' \
@@ -196,7 +200,7 @@ src_compile() {
 }
 
 src_install() {
-	local scriptdir="${FILESDIR}/136"
+	local scriptdir="${WORKDIR}/136"
 
 	into /
 	emake DESTDIR="${D}" install || die "make install failed"
@@ -216,10 +220,10 @@ src_install() {
 	fi
 
 	exeinto "${udev_libexec_dir}"
-	newexe "${FILESDIR}"/net-130-r1.sh net.sh	|| die "net.sh not installed properly"
-	newexe "${FILESDIR}"/move_tmp_persistent_rules-112-r1.sh move_tmp_persistent_rules.sh \
+	newexe "${WORKDIR}"/net-130-r1.sh net.sh	|| die "net.sh not installed properly"
+	newexe "${WORKDIR}"/move_tmp_persistent_rules-112-r1.sh move_tmp_persistent_rules.sh \
 		|| die "move_tmp_persistent_rules.sh not installed properly"
-	newexe "${FILESDIR}"/write_root_link_rule-125 write_root_link_rule \
+	newexe "${WORKDIR}"/write_root_link_rule-125 write_root_link_rule \
 		|| die "write_root_link_rule not installed properly"
 
 	doexe "${scriptdir}"/shell-compat-KV.sh \
@@ -281,8 +285,8 @@ src_install() {
 		|| die "config file not installed properly"
 
 	insinto /etc/modprobe.d
-	newins "${FILESDIR}"/blacklist-146 blacklist.conf
-	newins "${FILESDIR}"/pnp-aliases pnp-aliases.conf
+	newins "${WORKDIR}"/blacklist-146 blacklist.conf
+	newins "${WORKDIR}"/pnp-aliases pnp-aliases.conf
 
 	# convert /lib/udev to real used dir
 	sed_libexec_dir \
@@ -501,11 +505,6 @@ pkg_postinst() {
 			rm -f "${ROOT}"/etc/udev/rules.d/64-device-mapper.rules
 			einfo "Removed unneeded file 64-device-mapper.rules"
 	fi
-
-	# requested in bug #275974, added 2009/09/05
-	ewarn
-	ewarn "If after the udev update removable devices or CD/DVD drives"
-	ewarn "stop working, try re-emerging HAL before filling a bug report"
 
 	# requested in Bug #225033:
 	elog

@@ -1,6 +1,18 @@
 # ChangeLog for dev-ruby/metaid
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/metaid/ChangeLog,v 1.10 2010/06/26 12:37:18 graaff Exp $
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/metaid/ChangeLog,v 1.13 2011/12/19 18:06:27 graaff Exp $
+
+*metaid-1.0-r2 (19 Dec 2011)
+
+  19 Dec 2011; Hans de Graaff <graaff@gentoo.org> +metaid-1.0-r2.ebuild:
+  Add ruby19,ree18,jruby.
+
+  20 Aug 2011; Hans de Graaff <graaff@gentoo.org> -metaid-1.0.ebuild:
+  Remove old version.
+
+  07 Aug 2011; Hans de Graaff <graaff@gentoo.org> metaid-1.0-r1.ebuild:
+  Move stable keywords forward since only the eclass installing the files
+  changed.
 
 *metaid-1.0-r1 (26 Jun 2010)
 

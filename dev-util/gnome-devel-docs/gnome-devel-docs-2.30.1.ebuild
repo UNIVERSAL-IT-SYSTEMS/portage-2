@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/gnome-devel-docs/gnome-devel-docs-2.30.1.ebuild,v 1.3 2010/09/11 08:26:03 nixnut Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/gnome-devel-docs/gnome-devel-docs-2.30.1.ebuild,v 1.5 2012/05/04 17:51:45 jdhore Exp $
 
 inherit gnome2
 
 DESCRIPTION="Documentation for developing for the GNOME desktop environment"
-HOMEPAGE="http://www.gnome.org"
+HOMEPAGE="http://developer.gnome.org/"
 
 LICENSE="FDL-1.1"
 SLOT="0"
@@ -19,7 +19,7 @@ IUSE=""
 # by the second.
 # Have a look to install-sh script, it's commented out for this bug.
 RDEPEND=""
-DEPEND="dev-util/pkgconfig
+DEPEND="virtual/pkgconfig
 	app-text/gnome-doc-utils
 	~app-text/docbook-xml-dtd-4.2"
 

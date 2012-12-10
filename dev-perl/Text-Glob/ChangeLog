@@ -1,6 +1,44 @@
 # ChangeLog for dev-perl/Text-Glob
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Text-Glob/ChangeLog,v 1.37 2011/02/23 07:29:04 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Text-Glob/ChangeLog,v 1.49 2012/09/01 11:59:00 grobian Exp $
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> Text-Glob-0.90.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  05 Apr 2012; Torsten Veller <tove@gentoo.org> -Text-Glob-0.08.ebuild:
+  Cleanup
+
+  31 Mar 2012; Tobias Klausmann <klausman@gentoo.org> Text-Glob-0.90.0.ebuild:
+  Stable on alpha bug #400239
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> Text-Glob-0.90.0.ebuild:
+  ia64/sparc stable wrt #400241
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> Text-Glob-0.90.0.ebuild:
+  x86 stable wrt bug #400241
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> Text-Glob-0.90.0.ebuild:
+  Marking Text-Glob-0.90.0 ppc64 for bug 400241
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> Text-Glob-0.90.0.ebuild:
+  Marking Text-Glob-0.90.0 ppc for bug 400241
+
+  24 Feb 2012; Jeroen Roovers <jer@gentoo.org> Text-Glob-0.90.0.ebuild:
+  Stable for HPPA (bug #400241).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Text-Glob-0.90.0.ebuild:
+  Stable for amd64, wrt bug #400241
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Text-Glob-0.90.ebuild:
+  Cleanup
+
+*Text-Glob-0.90.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +Text-Glob-0.90.0.ebuild:
+  Change version scheme
 
 *Text-Glob-0.90 (23 Feb 2011)
 
@@ -126,4 +164,3 @@
 
   03 Jun 2003; Michael Cummings <mcummings@gentoo.org> Text-Glob-0.05.ebuild:
   Fills bug 21791
-

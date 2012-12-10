@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-farsight/telepathy-farsight-0.0.17.ebuild,v 1.3 2011/07/14 10:51:27 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/telepathy-farsight/telepathy-farsight-0.0.17.ebuild,v 1.7 2011/10/24 06:18:30 tetromino Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2:2.6"
@@ -13,7 +13,7 @@ SRC_URI="http://telepathy.freedesktop.org/releases/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~ia64 ~ppc ~sparc x86"
+KEYWORDS="alpha amd64 ia64 ppc sparc x86 ~x86-linux"
 IUSE="python"
 
 RDEPEND=">=dev-libs/glib-2.16:2
@@ -22,7 +22,7 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	>=net-libs/telepathy-glib-0.13.4
 	>=net-libs/farsight2-0.0.17
 	python? (
-		>=dev-python/pygobject-2.12.0
+		>=dev-python/pygobject-2.12.0:2
 		>=dev-python/gst-python-0.10.10 )"
 
 DEPEND="${RDEPEND}"

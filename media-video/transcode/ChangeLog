@@ -1,6 +1,77 @@
 # ChangeLog for media-video/transcode
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/transcode/ChangeLog,v 1.286 2011/05/17 19:29:07 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/transcode/ChangeLog,v 1.304 2012/09/06 05:02:42 ssuominen Exp $
+
+  06 Sep 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -files/transcode-1.0.6-imagemagick.patch, -files/transcode-1.1.4-x264.patch,
+  -files/transcode-1.1.5-ffmpeg.patch, -files/transcode-1.1.5-jpeg-7.patch,
+  -files/transcode-1.1.5-mpa.patch:
+  old
+
+  05 Jul 2012; Alexis Ballier <aballier@gentoo.org> +transcode-1.1.7-r1.ebuild,
+  +files/transcode-1.1.7-ffmpeg-0.11.patch,
+  +files/transcode-1.1.7-preset-free.patch:
+  Fix build with ffmpeg 0.11 and encoding x264 with ffmpeg, both patches by
+  Brennan Shacklett, bugs #322945 and #419551
+
+  17 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -transcode-1.1.5-r2.ebuild,
+  transcode-1.1.7.ebuild:
+  Stable on sparc as the 1.1.5 is not buildable at all. So worst case is that
+  state wont change for them. Bug#395729.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> transcode-1.1.5-r2.ebuild,
+  transcode-1.1.7.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  17 Apr 2012; Michał Górny <mgorny@gentoo.org> transcode-1.1.7.ebuild:
+  Use mirror://bitbucket.
+
+  19 Feb 2012; Tobias Klausmann <klausman@gentoo.org> transcode-1.1.7.ebuild:
+  Stable on alpha, bug #395729
+
+  01 Feb 2012; Alexis Ballier <aballier@gentoo.org> transcode-1.1.7.ebuild:
+  postproc should build with libav now
+
+  01 Feb 2012; Alexis Ballier <aballier@gentoo.org> transcode-1.1.7.ebuild,
+  -transcode-1.1.7-r1.ebuild:
+  put the ffmpeg 0.10 build fix in 1.1.7, it didnt need a revbump for a build
+  fix, so that we can stabilise ffmpeg 0.10
+
+  01 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> transcode-1.1.7.ebuild:
+  ppc/ppc64 stable wrt #395729
+
+*transcode-1.1.7-r1 (30 Jan 2012)
+
+  30 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +transcode-1.1.7-r1.ebuild, +files/transcode-1.1.7-ffmpeg-0.10.patch:
+  Fix building with media-video/ffmpeg >= 0.10 and USE="postproc" wrtt #401287
+  by Olaf Freyer
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> transcode-1.1.7.ebuild:
+  x86 stable wrt bug #395729
+
+  23 Dec 2011; Agostino Sarubbo <ago@gentoo.org> transcode-1.1.7.ebuild:
+  Stable for AMD64, wrt bug #395729
+
+  06 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> transcode-1.1.7.ebuild,
+  metadata.xml:
+  USE="pic" to control text relocation(s) wrt #271476 by Rafał Mużyło
+
+*transcode-1.1.7 (06 Dec 2011)
+
+  06 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +transcode-1.1.7.ebuild,
+  +files/transcode-1.1.7-ffmpeg.patch:
+  Version bump.
+
+  03 Dec 2011; Alexis Ballier <aballier@gentoo.org> transcode-1.1.5-r2.ebuild:
+  depend on ffmpeg for postproc, it doesnt build with libav, bug #369513
+
+  03 Dec 2011; Alexis Ballier <aballier@gentoo.org> transcode-1.1.5-r2.ebuild:
+  depend on virtual/libiconv
+
+  01 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  transcode-1.1.5-r2.ebuild:
+  Rename USE="v4l2" to USE="v4l" wrt #385241
 
   17 May 2011; Alexis Ballier <aballier@gentoo.org> transcode-1.1.5-r2.ebuild,
   +files/transcode-1.1.5-ffmpeg.patch:

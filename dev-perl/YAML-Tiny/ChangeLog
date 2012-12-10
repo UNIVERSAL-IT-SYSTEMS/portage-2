@@ -1,6 +1,66 @@
 # ChangeLog for dev-perl/YAML-Tiny
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/YAML-Tiny/ChangeLog,v 1.29 2011/07/30 10:47:48 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/YAML-Tiny/ChangeLog,v 1.48 2012/11/18 11:42:11 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> YAML-Tiny-1.510.0.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #418873
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> YAML-Tiny-1.510.0.ebuild:
+  ppc stable (bug 418873).
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> YAML-Tiny-1.510.0.ebuild:
+  Marking YAML-Tiny-1.510.0 ppc64 for bug 418873
+
+  05 Aug 2012; Markus Meier <maekke@gentoo.org> YAML-Tiny-1.510.0.ebuild:
+  arm stable, bug #418873
+
+  05 Aug 2012; Jeroen Roovers <jer@gentoo.org> YAML-Tiny-1.510.0.ebuild:
+  Stable for HPPA (bug #418873).
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> YAML-Tiny-1.510.0.ebuild:
+  Stable for amd64, wrt bug #418873
+
+  02 Aug 2012; Jeff Horelick <jdhore@gentoo.org> YAML-Tiny-1.510.0.ebuild:
+  marked x86 per bug 418873
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  05 Apr 2012; Torsten Veller <tove@gentoo.org> -YAML-Tiny-1.41.ebuild:
+  Cleanup
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> YAML-Tiny-1.500.0.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #396961
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  YAML-Tiny-1.500.0.ebuild:
+  x86 stable wrt bug #396961
+
+*YAML-Tiny-1.510.0 (11 Mar 2012)
+
+  11 Mar 2012; Torsten Veller <tove@gentoo.org> +YAML-Tiny-1.510.0.ebuild:
+  Version bump
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> YAML-Tiny-1.500.0.ebuild:
+  Marking YAML-Tiny-1.500.0 ppc64 for bug 396961
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> YAML-Tiny-1.500.0.ebuild:
+  Marking YAML-Tiny-1.500.0 ppc for bug 396961
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org> YAML-Tiny-1.500.0.ebuild:
+  Stable on alpha, bug #396961
+
+  10 Feb 2012; Markus Meier <maekke@gentoo.org> YAML-Tiny-1.500.0.ebuild:
+  arm stable, bug #396961
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> YAML-Tiny-1.500.0.ebuild:
+  Stable for HPPA (bug #396961).
+
+  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> YAML-Tiny-1.500.0.ebuild:
+  Stable for amd64, wrt bug #396961
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> YAML-Tiny-1.41.ebuild,
   YAML-Tiny-1.500.0.ebuild:
@@ -107,4 +167,3 @@
   23 Jun 2009; Robin H. Johnson <robbat2@gentoo.org> +YAML-Tiny-1.39.ebuild,
   +metadata.xml:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

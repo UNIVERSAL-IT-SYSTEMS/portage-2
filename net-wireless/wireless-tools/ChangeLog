@@ -1,6 +1,28 @@
 # ChangeLog for net-wireless/wireless-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/wireless-tools/ChangeLog,v 1.142 2011/04/11 04:08:48 josejx Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/wireless-tools/ChangeLog,v 1.149 2012/12/09 18:25:54 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> wireless-tools-30_pre9.ebuild:
+  Stable for ppc64, wrt bug #445292
+
+  08 Dec 2012; Markus Meier <maekke@gentoo.org> wireless-tools-30_pre9.ebuild:
+  arm stable, bug #445292
+
+  06 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  wireless-tools-30_pre9.ebuild:
+  x86 stable wrt bug #445292
+
+  01 Dec 2012; <ago@gentoo.org> wireless-tools-30_pre9.ebuild:
+  Stable for amd64, wrt bug #445292
+
+  25 Nov 2012; Rick Farina <zerochaos@gentoo.org> metadata.xml:
+  remove anarchy as maintainer per his wishes
+
+  23 Nov 2012; Rick Farina <zerochaos@gentoo.org> metadata.xml:
+  adding myself as maintainer to help triage bugs
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
 
   11 Apr 2011; Joseph Jezak <josejx@gentoo.org> wireless-tools-29-r1.ebuild:
   Marked ppc stable to fix bug #289580.
@@ -680,5 +702,3 @@
     * iwspy allow to get per node link quality
     * iwpriv allow to manipulate the Wireless Extensions specific to a driver
       (private)
-
-

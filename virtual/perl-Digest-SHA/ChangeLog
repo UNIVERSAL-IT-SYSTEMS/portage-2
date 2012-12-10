@@ -1,6 +1,73 @@
 # ChangeLog for virtual/perl-Digest-SHA
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Digest-SHA/ChangeLog,v 1.33 2011/07/28 13:40:45 haubi Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Digest-SHA/ChangeLog,v 1.48 2012/12/08 14:58:50 tove Exp $
+
+*perl-Digest-SHA-5.740.0 (08 Dec 2012)
+
+  08 Dec 2012; Torsten Veller <tove@gentoo.org>
+  +perl-Digest-SHA-5.740.0.ebuild:
+  Version bump
+
+  05 Aug 2012; Richard Yao <ryao@gentoo.org> perl-Digest-SHA-5.710.0-r1.ebuild:
+  Keyword ~x64-freebsd
+
+*perl-Digest-SHA-5.710.0-r1 (21 May 2012)
+
+  21 May 2012; Torsten Veller <tove@gentoo.org>
+  -perl-Digest-SHA-5.710.0.ebuild, +perl-Digest-SHA-5.710.0-r1.ebuild:
+  Add perl-5.16 as provider
+
+  09 May 2012; Fabian Groffen <grobian@gentoo.org>
+  perl-Digest-SHA-5.710.0.ebuild:
+  Marked ~x64-solaris
+
+  05 May 2012; Alexis Ballier <aballier@gentoo.org>
+  perl-Digest-SHA-5.710.0.ebuild:
+  keyword ~amd64-fbsd
+
+*perl-Digest-SHA-5.710.0 (01 Mar 2012)
+
+  01 Mar 2012; Torsten Veller <tove@gentoo.org>
+  +perl-Digest-SHA-5.710.0.ebuild:
+  Version bump
+
+*perl-Digest-SHA-5.700.0 (19 Dec 2011)
+
+  19 Dec 2011; Torsten Veller <tove@gentoo.org>
+  +perl-Digest-SHA-5.700.0.ebuild:
+  Version bump
+
+  13 Dec 2011; Naohiro Aota <naota@gentoo.org> perl-Digest-SHA-5.630.0.ebuild:
+  Add ~x86-fbsd
+
+*perl-Digest-SHA-5.630.0 (13 Nov 2011)
+
+  13 Nov 2011; Torsten Veller <tove@gentoo.org>
+  +perl-Digest-SHA-5.630.0.ebuild:
+  Version bump
+
+  28 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  perl-Digest-SHA-5.620.0.ebuild:
+  Marked ~sparc64-solaris
+
+  26 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  perl-Digest-SHA-5.620.0.ebuild:
+  Marked ~x86-freebsd
+
+  25 Aug 2011; Fabian Groffen <grobian@gentoo.org>
+  perl-Digest-SHA-5.620.0.ebuild:
+  Marked ~m68k-mint, bug #380531
+
+  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  perl-Digest-SHA-5.620.0.ebuild:
+  keyword ~sparc-solaris
+
+  09 Aug 2011; Markus Duft <mduft@gentoo.org> perl-Digest-SHA-5.620.0.ebuild:
+  added ~x86-interix prefix keyword
+
+  08 Aug 2011; Fabian Groffen <grobian@gentoo.org>
+  perl-Digest-SHA-5.620.0.ebuild:
+  Marked ~x64-macos
 
   28 Jul 2011; Michael Haubenwallner <haubi@gentoo.org>
   perl-Digest-SHA-5.620.0.ebuild:

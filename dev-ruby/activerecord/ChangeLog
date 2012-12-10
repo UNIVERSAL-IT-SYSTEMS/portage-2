@@ -1,6 +1,164 @@
 # ChangeLog for dev-ruby/activerecord
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/activerecord/ChangeLog,v 1.163 2011/07/24 17:22:45 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/activerecord/ChangeLog,v 1.198 2012/11/12 19:55:40 graaff Exp $
+
+*activerecord-3.2.9 (12 Nov 2012)
+
+  12 Nov 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.2.9.ebuild:
+  Version bump.
+
+  27 Aug 2012; Hans de Graaff <graaff@gentoo.org> -activerecord-3.0.16.ebuild,
+  -activerecord-3.1.7.ebuild, -activerecord-3.2.7.ebuild:
+  Remove vulnerable versions.
+
+  16 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  activerecord-2.3.14.ebuild, activerecord-3.0.16.ebuild,
+  activerecord-3.0.17.ebuild, activerecord-3.1.3.ebuild,
+  activerecord-3.1.7.ebuild, activerecord-3.1.8.ebuild,
+  activerecord-3.2.7.ebuild, activerecord-3.2.8.ebuild:
+  Update after Ruby packages move.
+
+*activerecord-3.1.8 (11 Aug 2012)
+*activerecord-3.0.17 (11 Aug 2012)
+
+  11 Aug 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.0.17.ebuild,
+  +activerecord-3.1.8.ebuild:
+  Version bumps for security bug 430718.
+
+*activerecord-3.2.8 (10 Aug 2012)
+
+  10 Aug 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.2.8.ebuild:
+  Version bump for security bug 430718.
+
+  29 Jul 2012; Hans de Graaff <graaff@gentoo.org> -activerecord-3.0.15.ebuild,
+  -activerecord-3.1.6.ebuild, -activerecord-3.2.6.ebuild:
+  Remove vulnerable versions.
+
+*activerecord-3.0.16 (28 Jul 2012)
+
+  28 Jul 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.0.16.ebuild:
+  Version bump for Rails 3.0.16, bug 428254.
+
+*activerecord-3.1.7 (28 Jul 2012)
+
+  28 Jul 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.1.7.ebuild:
+  Version bump for Rails 3.1.7, bug 428254.
+
+*activerecord-3.2.7 (27 Jul 2012)
+
+  27 Jul 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.2.7.ebuild:
+  Version bump for Rails 3.2.7, bug 428254.
+
+  23 Jun 2012; Hans de Graaff <graaff@gentoo.org> -activerecord-3.0.12.ebuild,
+  -activerecord-3.1.4.ebuild, -activerecord-3.2.3.ebuild,
+  -activerecord-3.2.5.ebuild:
+  Remove old vulnerable versions.
+
+*activerecord-3.1.6 (17 Jun 2012)
+
+  17 Jun 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.1.6.ebuild:
+  Version bump for Rails 3.1.6.
+
+*activerecord-3.0.15 (13 Jun 2012)
+
+  13 Jun 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.0.15.ebuild:
+  Version bump for Rails 3.0.15.
+
+*activerecord-3.2.6 (13 Jun 2012)
+
+  13 Jun 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.2.6.ebuild:
+  Version bump for Rails 3.2.6.
+
+*activerecord-3.2.5 (01 Jun 2012)
+
+  01 Jun 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.2.5.ebuild:
+  Version bump for bug 418481.
+
+  01 Jun 2012; Hans de Graaff <graaff@gentoo.org> -activerecord-3.0.10.ebuild,
+  -activerecord-3.0.11.ebuild:
+  Remove old versions.
+
+  17 May 2012; Thomas Kahle <tomka@gentoo.org> activerecord-3.1.4.ebuild,
+  activerecord-3.2.3.ebuild:
+  marked ~x86 per bug 396547
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> activerecord-2.3.14.ebuild,
+  activerecord-3.0.10.ebuild, activerecord-3.0.11.ebuild,
+  activerecord-3.0.12.ebuild:
+  Drop ia64/sparc keywords
+
+*activerecord-3.2.3 (20 Apr 2012)
+
+  20 Apr 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.2.3.ebuild:
+  Version bump.
+
+*activerecord-3.1.4 (04 Apr 2012)
+
+  04 Apr 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.1.4.ebuild:
+  Version bump for Rails 3.1.4, security bug 406547.
+
+*activerecord-3.0.12 (04 Apr 2012)
+
+  04 Apr 2012; Hans de Graaff <graaff@gentoo.org> +activerecord-3.0.12.ebuild:
+  Version bump for security bug 406547.
+
+  11 Mar 2012; Brent Baude <ranger@gentoo.org> activerecord-3.1.3.ebuild:
+  Marking activerecord-3.1.3 ~ppc64 for bug 396547
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> activerecord-3.1.3.ebuild:
+  Add Prefix keywords, bug #396547
+
+*activerecord-3.1.3 (30 Dec 2011)
+
+  30 Dec 2011; Hans de Graaff <graaff@gentoo.org> +activerecord-3.1.3.ebuild:
+  Version bump. Add ruby19. Drop arches due to bug 396547.
+
+  27 Dec 2011; Hans de Graaff <graaff@gentoo.org> activerecord-2.3.14.ebuild:
+  Also require rdoc for tests. Fixes bug 379551.
+
+*activerecord-3.0.11 (19 Nov 2011)
+
+  19 Nov 2011; Hans de Graaff <graaff@gentoo.org> +activerecord-3.0.11.ebuild:
+  Version bump for Rails 3.0.11.
+
+  05 Oct 2011; Hans de Graaff <graaff@gentoo.org> -activerecord-3.0.7.ebuild,
+  -activerecord-3.0.9.ebuild:
+  Remove old versions.
+
+  28 Sep 2011; Hans de Graaff <graaff@gentoo.org> -activerecord-2.3.5.ebuild,
+  -activerecord-2.3.11.ebuild, -activerecord-2.3.12.ebuild:
+  Remove old versions.
+
+*activerecord-3.0.10 (28 Sep 2011)
+
+  28 Sep 2011; Hans de Graaff <graaff@gentoo.org> +activerecord-3.0.10.ebuild:
+  Version bump for Rails 3.0.10
+
+  09 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  activerecord-3.0.9.ebuild:
+  Marked ~sparc-solaris
+
+  27 Aug 2011; Raúl Porcel <armin76@gentoo.org> activerecord-2.3.14.ebuild:
+  ia64/sparc stable wrt #379511
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> activerecord-2.3.14.ebuild:
+  x86 stable, bug #379511
+
+  18 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  activerecord-2.3.14.ebuild:
+  ppc64/ppc stable wrt #379511
+
+  18 Aug 2011; Tony Vroon <chainsaw@gentoo.org> activerecord-2.3.14.ebuild:
+  Marked stable as a dependency of dev-ruby/rails based on arch testing by
+  Agostino "ago" Sarubbo in security bug #379511 filed by Hans de Graaff.
+
+*activerecord-2.3.14 (17 Aug 2011)
+
+  17 Aug 2011; Hans de Graaff <graaff@gentoo.org> +activerecord-2.3.14.ebuild:
+  Version bump.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> activerecord-3.0.9.ebuild:
+  Add ~ia64/~sparc wrt #351835
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> activerecord-2.3.12.ebuild:
   ia64/sparc stable wrt #372391
@@ -689,4 +847,3 @@
   15 Feb 2005; Rob Cakebread <pythonhead@gentoo.org>
   +activerecord-1.6.0.ebuild:
   Initial commit.
-

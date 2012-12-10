@@ -1,6 +1,58 @@
 # ChangeLog for net-analyzer/ntop
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ntop/ChangeLog,v 1.98 2011/07/26 21:21:22 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/ntop/ChangeLog,v 1.112 2012/06/12 02:58:12 zmedico Exp $
+
+  12 Jun 2012; Zac Medico <zmedico@gentoo.org> ntop-4.0.1.ebuild,
+  ntop-4.0.3.ebuild, ntop-4.1.0.ebuild:
+  inherit user for enewgroup and enewuser
+
+  06 Apr 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #63588
+
+  06 Jan 2012; Mark Loeser <halcy0n@gentoo.org> ntop-4.0.3.ebuild:
+  Stable for ppc/ppc64; bug #382091
+
+*ntop-4.1.0 (08 Nov 2011)
+
+  08 Nov 2011; Alin Năstac <mrness@gentoo.org> +ntop-4.1.0.ebuild,
+  +files/ntop-4.1.0-gentoo.patch:
+  Version bump with added snmp support (#378333). Drop ipv6 USE flag (no longer
+  possible to disable IPv6 support). Remove static libraries (#382093).
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> ntop-4.0.3.ebuild:
+  Stable for HPPA (bug #382091).
+
+  09 Oct 2011; Raúl Porcel <armin76@gentoo.org> ntop-4.0.3.ebuild:
+  ia64/s390/sh/sparc stable wrt #382091
+
+  18 Sep 2011; Markus Meier <maekke@gentoo.org> ntop-4.0.3.ebuild:
+  arm stable, bug #382091
+
+  11 Sep 2011; Christian Ruppert <idl0r@gentoo.org> ntop-4.0.3.ebuild:
+  Fix HOMEPAGE.
+
+  11 Sep 2011; Markus Meier <maekke@gentoo.org> ntop-4.0.3.ebuild:
+  x86 stable, bug #382091
+
+  07 Sep 2011; Tony Vroon <chainsaw@gentoo.org> ntop-4.0.3.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Tomáš "Mepho" Pružina in bug #382091 filed by Markos "hwoarang"
+  Chandras.
+
+  10 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  files/ntop-4.0.3-gentoo.patch:
+  non-maintainer commit: Added missing gunzip line for GeoIPASNum.dat file (bug
+  #376453). Fixed patch committed with kind permission from hwoarang.
+
+  07 Aug 2011; Jeroen Roovers <jer@gentoo.org> -ntop-3.3.10-r2.ebuild,
+  -files/ntop-3.3.10-CVE-2009-2732.patch, -files/ntop-3.3.10-gentoo.patch:
+  ^
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> ntop-4.0.1.ebuild:
+  ia64/s390/sh/sparc stable wrt #376057
+
+  07 Aug 2011; Markus Meier <maekke@gentoo.org> ntop-4.0.1.ebuild:
+  arm stable, bug #376057
 
   26 Jul 2011; Markus Meier <maekke@gentoo.org> ntop-4.0.1.ebuild:
   amd64/x86 stable, bug #376057

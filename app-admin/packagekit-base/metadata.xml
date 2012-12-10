@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>no-herd</herd>
 	<maintainer>
 		<email>lxnay@gentoo.org</email>
 		<name>Fabio Erculiani</name>
@@ -18,8 +17,6 @@
 		<flag name="pm-utils">
 			Add pm-utils (suspend/resume) functionalities
 		</flag>
-		<flag name="static-libs">Compile static archives</flag>
-		<flag name="udev">Add support for <pkg>sys-fs/udev</pkg></flag>
 	</use>
 </pkgmetadata>
 

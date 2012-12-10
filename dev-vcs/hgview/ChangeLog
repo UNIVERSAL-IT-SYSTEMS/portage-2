@@ -1,6 +1,33 @@
 # ChangeLog for dev-vcs/hgview
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/hgview/ChangeLog,v 1.4 2011/03/03 21:39:34 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/hgview/ChangeLog,v 1.9 2012/12/05 09:53:20 kensington Exp $
+
+*hgview-1.7.0 (05 Dec 2012)
+
+  05 Dec 2012; Michael Palimaka <kensington@gentoo.org> +hgview-1.7.0.ebuild,
+  -files/hgview.rc, -hgview-1.5.0.ebuild:
+  Version bump, remove old.
+
+  27 Aug 2012; Davide Pesavento <pesa@gentoo.org> hgview-1.6.2-r1.ebuild:
+  Clarify comment, thanks to Arfrever on IRC.
+
+*hgview-1.6.2-r1 (25 Aug 2012)
+
+  25 Aug 2012; Davide Pesavento <pesa@gentoo.org> +hgview-1.6.2-r1.ebuild,
+  -hgview-1.6.2.ebuild:
+  Fix installation of man page and add missing deps (bug 432396 by Nikoli).
+  Thanks to Arfrever for some clarifications about distutils.eclass.
+
+*hgview-1.6.2 (23 Aug 2012)
+
+  23 Aug 2012; Davide Pesavento <pesa@gentoo.org> +hgview-1.6.2.ebuild,
+  -hgview-1.2.1.ebuild, metadata.xml:
+  Version bump, remove old.
+
+*hgview-1.5.0 (10 Feb 2012)
+
+  10 Feb 2012; Markos Chandras <hwoarang@gentoo.org> +hgview-1.5.0.ebuild:
+  Version bump. Bug #402657
 
 *hgview-1.2.1 (03 Mar 2011)
 
@@ -49,4 +76,3 @@
   23 Jul 2009; Alex Alexander <wired@gentoo.org> +hgview-1.0.0.ebuild,
   +metadata.xml:
   ebuild for hgview, bug 274562, thanks to Martin Gysel, Dror, Davide
-

@@ -1,6 +1,48 @@
 # ChangeLog for app-arch/atool
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/atool/ChangeLog,v 1.33 2009/12/09 19:30:45 nixnut Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/atool/ChangeLog,v 1.45 2012/08/07 10:03:17 radhermit Exp $
+
+  07 Aug 2012; Tim Harder <radhermit@gentoo.org> -atool-0.38.0.ebuild:
+  Remove old.
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> atool-0.39.0.ebuild:
+  Marking atool-0.39.0 ppc for bug 418505
+
+  09 Jul 2012; Agostino Sarubbo <ago@gentoo.org> atool-0.39.0.ebuild:
+  Stable for amd64, wrt bug #418505
+
+  08 Jul 2012; Jeff Horelick <jdhore@gentoo.org> atool-0.39.0.ebuild:
+  marked x86 per bug 418505
+
+  06 Apr 2012; Tim Harder <radhermit@gentoo.org> -atool-0.37.0.ebuild:
+  Remove old.
+
+*atool-0.39.0 (06 Apr 2012)
+
+  06 Apr 2012; Tim Harder <radhermit@gentoo.org> +atool-0.39.0.ebuild:
+  Version bump.
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> atool-0.37.0.ebuild,
+  atool-0.38.0.ebuild:
+  Drop sparc keywords
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> atool-0.38.0.ebuild:
+  x86 stable wrt bug #405347
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> atool-0.38.0.ebuild:
+  Marking atool-0.38.0 ppc for bug 405347
+
+  23 Feb 2012; Agostino Sarubbo <ago@gentoo.org> atool-0.38.0.ebuild:
+  Stable for amd64, wrt bug #405347
+
+  17 Nov 2011; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Change developer's email
+
+*atool-0.38.0 (10 Sep 2011)
+
+  10 Sep 2011; Tim Harder <radhermit@gentoo.org> +atool-0.38.0.ebuild,
+  metadata.xml:
+  Version bump (bug #380305). Update to EAPI 4 and add myself as a maintainer.
 
   09 Dec 2009; nixnut <nixnut@gentoo.org> atool-0.37.0.ebuild:
   ppc stable #293993

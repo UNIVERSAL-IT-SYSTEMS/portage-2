@@ -1,6 +1,173 @@
 # ChangeLog for media-gfx/ristretto
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/ristretto/ChangeLog,v 1.36 2011/04/23 17:26:43 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/ristretto/ChangeLog,v 1.79 2012/11/28 12:32:06 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> ristretto-0.6.3.ebuild:
+  EAPI5
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> -ristretto-0.6.0.ebuild:
+  old
+
+  16 Nov 2012; Andreas Schuerch <nativemad@gentoo.org> ristretto-0.6.3.ebuild:
+  x86 stable, see bug 429484
+
+  27 Oct 2012; <ago@gentoo.org> ristretto-0.6.3.ebuild:
+  Stable for amd64, wrt bug #429484
+
+  21 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> -ristretto-0.6.2.ebuild:
+  old
+
+*ristretto-0.6.3 (05 Aug 2012)
+
+  05 Aug 2012; Christoph Mende <angelos@gentoo.org> +ristretto-0.6.3.ebuild:
+  Version bump
+
+*ristretto-0.6.2 (29 Jul 2012)
+
+  29 Jul 2012; Christoph Mende <angelos@gentoo.org> +ristretto-0.6.2.ebuild:
+  Version bump
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org> -ristretto-0.3.4.ebuild,
+  -ristretto-0.5.2.ebuild:
+  old
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> ristretto-0.6.0.ebuild:
+  marked x86 per bug 416233
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> ristretto-0.6.0.ebuild:
+  ppc/ppc64 stable wrt #416233
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> ristretto-0.6.0.ebuild:
+  Stable for amd64, wrt bug #416233
+
+  17 May 2012; Jeroen Roovers <jer@gentoo.org> ristretto-0.6.0.ebuild:
+  Stable for HPPA (bug #416233).
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> ristretto-0.3.4.ebuild,
+  ristretto-0.5.2.ebuild, ristretto-0.6.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*ristretto-0.6.0 (29 Apr 2012)
+
+  29 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.6.0.ebuild:
+  Version bump.
+
+  16 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -ristretto-0.1.0.ebuild,
+  -ristretto-0.3.5.ebuild, -ristretto-0.3.6.ebuild, -ristretto-0.5.0.ebuild,
+  -ristretto-0.5.1.ebuild:
+  old
+
+*ristretto-0.5.2 (16 Apr 2012)
+
+  16 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.5.2.ebuild:
+  Version bump.
+
+*ristretto-0.5.1 (10 Apr 2012)
+
+  10 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.5.1.ebuild:
+  Version bump.
+
+*ristretto-0.5.0 (10 Apr 2012)
+
+  10 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.5.0.ebuild:
+  Version bump.
+
+*ristretto-0.3.6 (01 Apr 2012)
+
+  01 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.3.6.ebuild:
+  Version bump.
+
+*ristretto-0.3.5 (03 Mar 2012)
+
+  03 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.3.5.ebuild:
+  Version bump.
+
+  10 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> ristretto-0.3.4.ebuild:
+  ppc/ppc64/x86 stable wrt #401229
+
+  09 Feb 2012; Jeroen Roovers <jer@gentoo.org> ristretto-0.3.4.ebuild:
+  Stable for HPPA (bug #401229).
+
+  30 Jan 2012; Agostino Sarubbo <ago@gentoo.org> ristretto-0.3.4.ebuild:
+  Stable for amd64, wrt bug #401229
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -ristretto-0.3.1.ebuild,
+  -ristretto-0.3.2.ebuild:
+  old
+
+*ristretto-0.3.4 (28 Jan 2012)
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.3.4.ebuild:
+  Version bump.
+
+*ristretto-0.3.2 (14 Jan 2012)
+
+  14 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.3.2.ebuild:
+  Version bump.
+
+  10 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -ristretto-0.3.0.ebuild:
+  old
+
+*ristretto-0.3.1 (10 Jan 2012)
+
+  10 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.3.1.ebuild:
+  Version bump.
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -ristretto-0.0.93.ebuild:
+  old
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> ristretto-0.1.0.ebuild:
+  ppc/ppc64 stable wrt #386963
+
+  26 Nov 2011; Raúl Porcel <armin76@gentoo.org> ristretto-0.1.0.ebuild:
+  alpha/ia64/sparc stable wrt #386963
+
+  18 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> -ristretto-0.2.1.ebuild,
+  -ristretto-0.2.2.ebuild:
+  old
+
+*ristretto-0.3.0 (06 Nov 2011)
+
+  06 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.3.0.ebuild:
+  Version bump.
+
+  02 Nov 2011; Jeroen Roovers <jer@gentoo.org> ristretto-0.1.0.ebuild:
+  Stable for HPPA (bug #386963).
+
+*ristretto-0.2.2 (28 Oct 2011)
+
+  28 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.2.2.ebuild:
+  Version bump.
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -ristretto-0.1.1.ebuild,
+  -ristretto-0.2.0.ebuild:
+  old
+
+*ristretto-0.2.1 (23 Oct 2011)
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.2.1.ebuild:
+  Version bump.
+
+*ristretto-0.2.0 (17 Oct 2011)
+
+  17 Oct 2011; Christoph Mende <angelos@gentoo.org> +ristretto-0.2.0.ebuild:
+  Version bump
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> ristretto-0.1.0.ebuild:
+  amd64 stable wrt #386963
+
+  16 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ristretto-0.1.0.ebuild:
+  x86 stable wrt bug #386963
+
+*ristretto-0.1.1 (14 Oct 2011)
+
+  14 Oct 2011; Christoph Mende <angelos@gentoo.org> +ristretto-0.1.1.ebuild:
+  Version bump
+
+*ristretto-0.1.0 (06 Oct 2011)
+
+  06 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +ristretto-0.1.0.ebuild:
+  Version bump.
 
   23 Apr 2011; Samuli Suominen <ssuominen@gentoo.org> ristretto-0.0.93.ebuild:
   alpha/ia64/sparc stable wrt #358407
@@ -279,4 +446,3 @@
 
   12 Sep 2007; Samuli Suominen <drac@gentoo.org> +ristretto-0.0.4.ebuild:
   Initial commit.
-

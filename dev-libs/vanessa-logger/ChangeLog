@@ -1,6 +1,36 @@
 # ChangeLog for dev-libs/vanessa-logger
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/vanessa-logger/ChangeLog,v 1.28 2010/06/02 06:18:54 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/vanessa-logger/ChangeLog,v 1.35 2012/09/30 18:41:02 armin76 Exp $
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> vanessa-logger-0.0.7.ebuild,
+  vanessa-logger-0.0.8.ebuild, vanessa-logger-0.0.9.ebuild,
+  vanessa-logger-0.0.10.ebuild:
+  Drop alpha/ia64 keywords
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> vanessa-logger-0.0.10.ebuild:
+  x86 stable, bug #418771
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  vanessa-logger-0.0.10.ebuild:
+  Stable on amd64 wrt bug #418771
+
+*vanessa-logger-0.0.10 (14 Mar 2012)
+
+  14 Mar 2012; Patrick Lauer <patrick@gentoo.org> +vanessa-logger-0.0.10.ebuild,
+  -vanessa-logger-0.0.4_beta2.ebuild, -vanessa-logger-0.0.6.ebuild:
+  Bump
+
+*vanessa-logger-0.0.9 (09 Mar 2012)
+
+  09 Mar 2012; Patrick Lauer <patrick@gentoo.org> +vanessa-logger-0.0.9.ebuild:
+  Bump
+
+  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  vanessa-logger-0.0.8.ebuild:
+  x86 stable wrt bug #394025
+
+  18 Dec 2011; Agostino Sarubbo <ago@gentoo.org> vanessa-logger-0.0.8.ebuild:
+  Stable for AMD64, wrt bug #394025
 
   02 Jun 2010; Torsten Veller <tove@gentoo.org> metadata.xml:
   Remove xmerlin from metadata.xml (#69210)

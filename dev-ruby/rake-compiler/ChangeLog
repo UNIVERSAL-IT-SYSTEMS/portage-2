@@ -1,6 +1,85 @@
 # ChangeLog for dev-ruby/rake-compiler
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rake-compiler/ChangeLog,v 1.40 2011/07/17 18:21:47 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rake-compiler/ChangeLog,v 1.59 2012/12/02 13:59:57 graaff Exp $
+
+  02 Dec 2012; Hans de Graaff <graaff@gentoo.org> rake-compiler-0.8.1.ebuild,
+  rake-compiler-0.8.1-r1.ebuild:
+  Fix license, bug 445456.
+
+  02 Dec 2012; Hans de Graaff <graaff@gentoo.org> -rake-compiler-0.7.5.ebuild,
+  -rake-compiler-0.7.8.ebuild:
+  Remove old versions.
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> rake-compiler-0.8.1.ebuild:
+  Stable for HPPA (bug #426668).
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> rake-compiler-0.7.5.ebuild,
+  rake-compiler-0.7.8.ebuild, rake-compiler-0.8.1.ebuild,
+  rake-compiler-0.8.1-r1.ebuild:
+  Add ~alpha/~ia64/~sparc, alpha stable
+
+  27 Oct 2012; Raúl Porcel <armin76@gentoo.org> rake-compiler-0.8.1.ebuild:
+  ia64/sparc stable wrt #422931
+
+  19 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  rake-compiler-0.8.1-r1.ebuild:
+  Keyword ~pp ~ppc64, bug #431384
+
+*rake-compiler-0.8.1-r1 (14 Aug 2012)
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +rake-compiler-0.8.1-r1.ebuild, -files/rake-compiler-0.7.0+ruby-1.8.7.patch:
+  Remove unused patch; add a new revision of rake-compiler that calls RSpec and
+  Cucumber properly.
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  rake-compiler-0.8.1.ebuild:
+  Stable ppc64, bug #422931
+
+  22 Jul 2012; <nixnut@gentoo.org> rake-compiler-0.8.1.ebuild:
+  ppc stable #422931
+
+  26 Jun 2012; Jeff Horelick <jdhore@gentoo.org> rake-compiler-0.8.1.ebuild:
+  marked x86 per bug 422931
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> rake-compiler-0.8.1.ebuild:
+  Stable for amd64, wrt bug #422931
+
+  22 Jun 2012; Hans de Graaff <graaff@gentoo.org> rake-compiler-0.8.1.ebuild:
+  Restrict tests to be able to bootstrap ruby19 stable.
+
+  22 Jun 2012; Hans de Graaff <graaff@gentoo.org> -rake-compiler-0.7.9.ebuild,
+  -rake-compiler-0.8.0.ebuild:
+  Remove old versions.
+
+*rake-compiler-0.8.1 (20 May 2012)
+
+  20 May 2012; Hans de Graaff <graaff@gentoo.org> +rake-compiler-0.8.1.ebuild:
+  Version bump.
+
+  23 Apr 2012; Alexis Ballier <aballier@gentoo.org> rake-compiler-0.8.0.ebuild:
+  keyword ~x86-fbsd
+
+*rake-compiler-0.8.0 (28 Jan 2012)
+
+  28 Jan 2012; Hans de Graaff <graaff@gentoo.org> +rake-compiler-0.8.0.ebuild:
+  Version bump.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> rake-compiler-0.7.9.ebuild:
+  Add Prefix keywords, bug #396547
+
+  31 Dec 2011; Hans de Graaff <graaff@gentoo.org> rake-compiler-0.7.8.ebuild,
+  +rake-compiler-0.7.9.ebuild:
+  Drop stable hppa keyword from latest testing version. Drop ruby19 from
+  version marked stable for hppa.
+
+*rake-compiler-0.7.9 (24 Dec 2011)
+
+  24 Dec 2011; Hans de Graaff <graaff@gentoo.org> +rake-compiler-0.7.9.ebuild:
+  Version bump. Run specs for ruby19 as well.
+
+  14 Sep 2011; Jeroen Roovers <jer@gentoo.org> rake-compiler-0.7.8.ebuild:
+  Stable for HPPA (bug #369573).
 
   17 Jul 2011; Mark Loeser <halcy0n@gentoo.org> rake-compiler-0.7.5.ebuild:
   Stable for ppc64; bug #357489
@@ -166,4 +245,3 @@
   21 Dec 2009; Diego E. Pettenò <flameeyes@gentoo.org>
   +rake-compiler-0.7.0.ebuild, +metadata.xml:
   Initial import of rake-compiler, to be used by nokogiri and sqlite3-ruby.
-

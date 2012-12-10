@@ -1,12 +1,12 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/mozart/mozart-1.4.0-r2.ebuild,v 1.2 2010/12/02 06:30:57 keri Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/mozart/mozart-1.4.0-r2.ebuild,v 1.6 2012/08/22 10:42:47 xmw Exp $
 
 EAPI="2"
 
 inherit elisp-common eutils
 
-PATCHSET_VER="4"
+PATCHSET_VER="5"
 MY_P="mozart-${PV}.20080704"
 
 DESCRIPTION="Mozart is an advanced development platform for intelligent, distributed applications"
@@ -17,7 +17,7 @@ SRC_URI="http://www.mozart-oz.org/download/mozart-ftp/store/1.4.0-2008-07-02-tar
 LICENSE="Mozart"
 
 SLOT="0"
-KEYWORDS="-amd64 ~ppc -ppc64 ~sparc ~x86"
+KEYWORDS="-amd64 ppc -ppc64 x86"
 IUSE="doc emacs examples gdbm static tcl threads tk"
 
 RDEPEND="dev-lang/perl

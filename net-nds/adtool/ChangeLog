@@ -1,6 +1,21 @@
 # ChangeLog for net-nds/adtool
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-nds/adtool/ChangeLog,v 1.14 2010/12/03 01:01:39 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-nds/adtool/ChangeLog,v 1.17 2012/09/26 18:08:19 kensington Exp $
+
+  26 Sep 2012; Michael Palimaka <kensington@gentoo.org> -adtool-1.3.2.ebuild,
+  -files/adtool-1.3.2-asneeded.patch:
+  Remove old.
+
+*adtool-1.3.3 (11 Jul 2012)
+
+  11 Jul 2012; Justin Lecher <jlec@gentoo.org>
+  -files/adtool-1.3-10-asneeded.patch, adtool-1.3.2.ebuild,
+  +files/adtool-1.3.2-asneeded.patch, +adtool-1.3.3.ebuild,
+  +files/adtool-1.3.3-bfr-overflow.patch, metadata.xml:
+  Version Bump, buffer overflow fix
+
+  09 Feb 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #85926
 
   03 Dec 2010; Diego E. Pettenò <flameeyes@gentoo.org> adtool-1.3.2.ebuild:
   Do a full-rebuild of autotools rather than sticking to automake, so that it
@@ -59,4 +74,3 @@
   21 Jun 2004; Christian Andreetta <satya@gentoo.org> adtool-1.2.ebuild,
   metadata.xml:
   initial ebuild (Vlastimil Holer). See bug #50939
-

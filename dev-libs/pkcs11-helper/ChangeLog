@@ -1,6 +1,37 @@
 # ChangeLog for dev-libs/pkcs11-helper
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/pkcs11-helper/ChangeLog,v 1.44 2011/05/20 20:45:10 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/pkcs11-helper/ChangeLog,v 1.53 2012/05/04 18:35:49 jdhore Exp $
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> pkcs11-helper-1.07.ebuild,
+  pkcs11-helper-1.08.ebuild, pkcs11-helper-1.09.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> pkcs11-helper-1.09.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #400021
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  pkcs11-helper-1.09.ebuild:
+  x86 stable wrt bug #400021
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> pkcs11-helper-1.09.ebuild:
+  Marking pkcs11-helper-1.09 ppc64 for bug 400021
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> pkcs11-helper-1.09.ebuild:
+  Marking pkcs11-helper-1.09 ppc for bug 400021
+
+  29 Feb 2012; Markus Meier <maekke@gentoo.org> pkcs11-helper-1.09.ebuild:
+  arm stable, bug #400021
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> pkcs11-helper-1.09.ebuild:
+  Stable for HPPA (bug #400021).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> pkcs11-helper-1.09.ebuild:
+  Stable for amd64, wrt bug #400021
+
+*pkcs11-helper-1.09 (02 Oct 2011)
+
+  02 Oct 2011; Tim Harder <radhermit@gentoo.org> +pkcs11-helper-1.09.ebuild:
+  Version bump. Update to EAPI 4.
 
   20 May 2011; Kacper Kowalik <xarthisius@gentoo.org>
   pkcs11-helper-1.08.ebuild:

@@ -1,6 +1,146 @@
 # ChangeLog for gnome-base/gnome-control-center
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-control-center/ChangeLog,v 1.87 2011/04/30 17:40:48 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-control-center/ChangeLog,v 1.110 2012/09/23 14:12:30 blueness Exp $
+
+  23 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  gnome-control-center-3.4.2.ebuild:
+  keyword ~ppc64, bug #379651
+
+  23 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  gnome-control-center-3.4.2.ebuild:
+  keyword ~ppc, bug #379651
+
+  08 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-control-center-3.4.2.ebuild, gnome-control-center-3.4.2-r1.ebuild:
+  Require openrc-settingsd on non-systemd systems.
+
+  07 Aug 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -gnome-control-center-3.2.2.ebuild, gnome-control-center-3.2.3.ebuild,
+  +files/gnome-control-center-3.2.3-cups-1.6.patch,
+  gnome-control-center-3.4.2-r1.ebuild,
+  +files/gnome-control-center-3.4.2-cups-1.6.patch:
+  Fix build failure with cups-1.6.x; drop old.
+
+*gnome-control-center-3.4.2-r1 (19 Jul 2012)
+
+  19 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-control-center-3.4.2.ebuild, +gnome-control-center-3.4.2-r1.ebuild,
+  +files/gnome-control-center-3.4.2-gentoo-paths.patch:
+  Fix absolute paths to be Gentoo-appropriate and add missing runtime
+  dependency on system-config-printer-gnome.
+
+  27 May 2012; Matt Turner <mattst88@gentoo.org>
+  gnome-control-center-3.2.3.ebuild:
+  Added ~alpha, bug 379651.
+
+*gnome-control-center-3.2.3 (25 May 2012)
+
+  25 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gnome-control-center-3.2.3.ebuild,
+  +files/gnome-control-center-3.2.3-optional-colord-goa.patch,
+  -gnome-control-center-3.4.1.ebuild,
+  -files/gnome-control-center-3.4.1-optional-bluetooth-colord-wacom.patch,
+  gnome-control-center-3.4.2.ebuild,
+  +files/gnome-control-center-3.4.2-optional-bt-colord-goa-wacom.patch,
+  metadata.xml:
+  Version bump for gnome-3.2 version. Make gnome-online-accounts optional
+  (requested by Matt Turner). Fix socialweb USE flag description. Drop old.
+
+  21 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-control-center-3.2.2.ebuild:
+  Need eutils for epatch.
+
+*gnome-control-center-3.4.2 (19 May 2012)
+
+  19 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gnome-control-center-3.4.2.ebuild, metadata.xml:
+  Version bump, fixes disk space calculation. Add optional systemd support (bug
+  #416309, thanks to Christoph Brill (egore)).
+
+  14 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-control-center-3.4.1.ebuild:
+  Avoid accidentally running gdbus-codegen (bug #415901, thanks to Albert W.
+  Hopkins).
+
+*gnome-control-center-3.4.1 (13 May 2012)
+
+  13 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/gnome-control-center-3.4.1-optional-bluetooth-colord-wacom.patch,
+  +gnome-control-center-3.4.1.ebuild:
+  Version bump for gnome-3.4 with numerous changes.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  gnome-control-center-2.32.1-r1.ebuild, gnome-control-center-3.2.2.ebuild,
+  gnome-control-center-3.2.2-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-control-center-3.2.2.ebuild, gnome-control-center-3.2.2-r1.ebuild:
+  Depend on gnome-settings-daemon[policykit] (bug #403527 comment #2).
+
+*gnome-control-center-3.2.2-r1 (14 Feb 2012)
+
+  14 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -gnome-control-center-3.2.1.ebuild, +gnome-control-center-3.2.2-r1.ebuild,
+  +files/gnome-control-center-3.2.2-timezone-free.patch,
+  +files/gnome-control-center-3.2.2-timezones-linguas.patch:
+  Fix crash in date and time panel with gnome-settings-daemon[-policykit] (bug
+  #403527, thanks to Johann Schmitz for reporting). Add a patch to respect
+  LINGUAS for timezone translations. Drop old.
+
+  14 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-control-center-3.2.1.ebuild, gnome-control-center-3.2.2.ebuild:
+  Add missing dependency on gnome-icon-theme-symbolic (bug #403503).
+
+  28 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-control-center-3.2.1.ebuild, gnome-control-center-3.2.2.ebuild:
+  Move the 50-accessibility.xml blocker to gnome-settings-daemon-2 ebuild since
+  it is only relevant on a downgrade from gnome-3 to 2.
+
+  28 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-control-center-3.2.1.ebuild, gnome-control-center-3.2.2.ebuild:
+  Add blocker on <gnome-settings-daemon-2.91.90 due to 50-accessibility.xml
+  file collision (bug #392283, thanks to Sebastian Pipping for reporting).
+
+*gnome-control-center-3.2.2 (13 Nov 2011)
+
+  13 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -gnome-control-center-3.0.2-r2.ebuild,
+  -files/gnome-control-center-3.0.2-cups-ppd.h.patch,
+  -files/gnome-control-center-3.0.2-delete-users-32-bit.patch,
+  -files/gnome-control-center-3.0.2-https-handler.patch,
+  +gnome-control-center-3.2.2.ebuild,
+  +files/gnome-control-center-3.2.2-metacity-gconf.patch:
+  Bump, drop old. Lots of bugfixes, particularly for the printers panel.
+
+*gnome-control-center-3.2.1 (29 Oct 2011)
+
+  29 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gnome-control-center-3.2.1.ebuild,
+  +files/gnome-control-center-3.2.1-optional-colord.patch, metadata.xml:
+  Bump to 3.2.1 from the gnome overlay. Drop arm keyword (needs app-admin/apg
+  and net-libs/gnome-online-accounts keyworded). Numerous code changes.
+
+  28 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gnome-control-center-2.32.1-r1.ebuild, gnome-control-center-3.0.2-r2.ebuild:
+  Slot gnome-menus dependency to 0 in preparation for gnome-menus-3.2.
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org>
+  gnome-control-center-3.0.2-r2.ebuild:
+  add ~arm, bug #379651
+
+  18 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +files/gnome-control-center-3.0.2-cups-ppd.h.patch,
+  +files/gnome-control-center-3.0.2-delete-users-32-bit.patch,
+  +files/gnome-control-center-3.0.2-https-handler.patch:
+  Add missing patches, reported by tetromino
+
+*gnome-control-center-3.0.2-r2 (18 Aug 2011)
+
+  18 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  -gnome-control-center-2.32.1.ebuild, +gnome-control-center-3.0.2-r2.ebuild,
+  metadata.xml:
+  Bump to 3.0.2, from gnome overlay for GNOME 3, remove old.
 
   30 Apr 2011; Raúl Porcel <armin76@gentoo.org>
   gnome-control-center-2.32.1-r1.ebuild:

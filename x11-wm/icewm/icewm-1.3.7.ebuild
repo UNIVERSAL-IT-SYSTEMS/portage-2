@@ -1,8 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/icewm/icewm-1.3.7.ebuild,v 1.1 2011/07/19 13:17:01 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/icewm/icewm-1.3.7.ebuild,v 1.5 2012/10/07 10:25:13 xarthisius Exp $
 
 EAPI="4"
+
+inherit eutils
 
 DESCRIPTION="Ice Window Manager with Themes"
 HOMEPAGE="http://www.icewm.org/"
@@ -10,7 +12,7 @@ LICENSE="GPL-2"
 SRC_URI="mirror://sourceforge/${PN}/${P/_}.tar.gz"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="debug esd gnome minimal nls truetype uclibc xinerama"
+IUSE="debug gnome minimal nls truetype uclibc xinerama"
 
 #fix for icewm preversion package names
 S=${WORKDIR}/${P/_}
@@ -24,7 +26,6 @@ RDEPEND="x11-libs/libX11
 	x11-libs/libSM
 	x11-libs/libICE
 	xinerama? ( x11-libs/libXinerama )
-	esd? ( media-sound/esound )
 	gnome? ( gnome-base/gnome-desktop:2 )
 	nls? ( sys-devel/gettext )
 	truetype? ( >=media-libs/freetype-2.0.9 )
@@ -45,11 +46,15 @@ pkg_setup() {
 }
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-gcc44.patch \
+		"${FILESDIR}"/${P}-gcc47.patch
 	cd "${S}/src"
-	use uclibc && epatch "${FILESDIR}/icewm-uclibc.patch"
+	use uclibc && epatch "${FILESDIR}/${PN}-uclibc.patch"
+	# build fix for libX11-1.5.0, bug 420773
+	epatch "${FILESDIR}"/${PN}-1.2.37-libX11-1.5.0-deprecated.patch
 
-	echo "#!/bin/sh" > "$T/icewm"
-	echo "/usr/bin/icewm-session" >> "$T/icewm"
+	echo "#!/bin/sh" > "$T/${PN}"
+	echo "/usr/bin/icewm-session" >> "$T/${PN}"
 }
 
 src_configure() {
@@ -71,7 +76,7 @@ src_configure() {
 		$(use_enable nls)
 		$(use_enable x86 x86-asm)
 		$(use_enable xinerama)
-		$(use_with esd esd-config /usr/bin/esd-config)"
+		--without-esd-config"
 
 	CXXFLAGS="${CXXFLAGS}" econf ${myconf}
 

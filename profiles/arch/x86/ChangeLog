@@ -1,6 +1,144 @@
 # ChangeLog for Gentoo/x86 profile directory
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/x86/ChangeLog,v 1.76 2011/07/22 18:09:02 blueness Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/x86/ChangeLog,v 1.119 2012/12/09 08:02:53 tetromino Exp $
+
+  09 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask,
+  use.mask:
+  dev-lang/orc is used in many packages, so move orc from package.use.mask to
+  use.mask
+
+  30 Nov 2012; Christoph Junghans <ottxor@gentoo.org> package.use.mask:
+  unmasked cuda for sci-chemistry/gromacs
+
+  26 Nov 2012; Anthony G. Basile <blueness@gentoo.org> package.use.mask:
+  No need to unmask net-misc/tor[nat-pmp,upnp] on x86
+
+  24 Nov 2012; Mike Gilbert <floppym@gentoo.org> use.mask:
+  Unmask python_single_target_jython2_5
+
+  12 Nov 2012; Mike Gilbert <floppym@gentoo.org> make.defaults:
+  Move PYTHON_TARGETS=python3_2 from arch profiles to base.
+
+  05 Nov 2012; Sergei Trofimovich <slyfox@gentoo.org> package.use:
+  Fixed typo qemu_softmmu_target{,s}_.
+
+  04 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> package.use.mask:
+  Unmask dane USE flag for net-libs/gnutls.
+
+  29 Oct 2012; Doug Goldstein <cardoe@gentoo.org> +package.use:
+  Add package.use so we can enable the native arch as the default qemu target
+  for bug #437788
+
+  07 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Restore USE="systemd" mask to sys-auth/polkit for stabilization.
+
+  15 Sep 2012; Johannes Huber <johu@gentoo.org> package.use.mask:
+  Masked media-libs/phonon[zeitgeist] for stabilization as the use flag pulls a
+  dep tree of hell.
+
+  31 Jul 2012; Ralph Sennhauser <sera@gentoo.org> use.mask:
+  Unmask python_targets_jython2_5 as it's available on x86.
+
+  16 Jul 2012; Anthony G. Basile <blueness@gentoo.org> package.use.mask:
+  Mask net-libs/cyassl[sha512] on x86
+
+  04 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Remove references to net-libs/xulrunner and www-client/icecat wrt #424617
+
+  14 Jun 2012; Davide Pesavento <pesa@gentoo.org> package.use.mask:
+  Consolidate USE=jit masking/unmasking for qt-script and qt-webkit.
+
+  25 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Remove webkit-gtk's USE mask, the flags are now masked in specific arches.
+
+  24 May 2012; Arun Raghavan <ford_prefect@gentoo.org> package.use.mask:
+  For PulseAudio, mask xen USE flag by default, unmask on x86/amd64 where it is
+  supported.
+
+  15 May 2012; Mike Gilbert <floppym@gentoo.org> make.defaults:
+  Default PYTHON_TARGETS should include python-3 for arches where it is stable.
+  See bug 415575.
+
+  13 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Mask webkit-gtk[geoloc] in base and unmask on arches where app-misc/geoclue
+  and app-accessibility/at-spi2-core are available.
+
+  13 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Consolidate USE=systemd mask, and add gnome-system-monitor.
+
+  13 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Consolidate USE=systemd mask, and add gnome-system-monitor.
+
+  12 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Temporary mask-in-base, unmask-in-arch for dev-python/mako keywording for
+  gobject-introspection[doctool], bug #411761.
+
+  11 Apr 2012; Michał Górny <mgorny@gentoo.org> package.use.mask:
+  Unmask USE=jit on libzpaq for x86/amd64.
+
+  28 Mar 2012; Arun Raghavan <ford_prefect@gentoo.org> package.use.mask:
+  webrtc-audio-processing is only supported on x86/amd64. Possibly arm can be
+  added.
+
+  27 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Allow networkmanager[systemd] on x86.
+
+  05 Mar 2012; Joerg Bornkessel <hd_brummy@gentoo.org> use.mask:
+  dxr3 unmask, works with v4l2, #350211
+
+  28 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> use.mask:
+  Unmask USE="vidix" from base/use.mask.
+
+  27 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org> package.use.mask:
+  Allow gnustep-make[libobjc2] on amd64
+
+  08 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org> package.use.mask:
+  Drop arch-speficic mask on gnustep-base/gnustep-make[libobjc2]
+
+  26 Jan 2012; Thomas Kahle <tomka@gentoo.org> package.use.mask:
+  unmask fprint for gdm-3 per bug 390345
+
+  17 Jan 2012; Doug Goldstein <cardoe@gentoo.org> package.use.mask:
+  Mask the spice USE flag on app-emulation/qemu-kvm since the SPICE server
+  isn't supported on 32 bit platforms.
+
+  09 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Unmask USE="jit" for webkit-gtk (bug #396313).
+
+  06 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Unmask USE="pic" for media-video/transcode.
+
+  06 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Unmask USE="nuv" for media-video/transcode as a x86 only feature.
+
+  29 Nov 2011; Davide Pesavento <pesa@gentoo.org> package.use.mask:
+  Unmask USE="jit" for qt-webkit.
+
+  25 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Mask USE flags on gnome-3.2 packages due to missing keywords on deps; bug
+  #390345
+
+  25 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Unmask USE="suid" for www-client/links which is required by USE="svga"
+
+  21 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> package.use.mask:
+  Drop hearbeat mask wrt #387685 by Marcin Mirosław <bug@mejor.pl>
+
+  21 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Undo poorly thought out masking of USE="colord packagekit" on gtk+; need to
+  get it keyworded properly (bug #387959)
+
+  19 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> package.use.mask:
+  Unmask USE="colord" and "packagekit" for x11-libs/gtk+.
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> package.use.mask:
+  Unmask USE="bluray" for gnome-base/gvfs.
+
+  03 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> use.mask:
+  Mask USE="dxr3" again wrt #350211.
+
+  27 Sep 2011; Nirbheek Chauhan <nirbheek@gentoo.org> package.use.mask:
+  Mask dev-libs/glib[systemtap] and unmask for amd64/x86, bug 384647
 
   22 Jul 2011; Anthony G. Basile <blueness@gentoo.org> package.use.mask:
   Unmask USE="nat-pmp" and "upnp" here.

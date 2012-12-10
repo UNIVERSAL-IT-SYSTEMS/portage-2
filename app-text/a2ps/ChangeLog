@@ -1,6 +1,54 @@
 # ChangeLog for app-text/a2ps
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/a2ps/ChangeLog,v 1.100 2011/07/08 11:05:40 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/a2ps/ChangeLog,v 1.113 2012/09/09 16:05:04 armin76 Exp $
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> a2ps-4.14-r3.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #428900
+
+  21 Aug 2012; Johannes Huber <johu@gentoo.org> a2ps-4.14-r3.ebuild:
+  Stable for x86, wrt bug #428900
+
+  13 Aug 2012; Jeroen Roovers <jer@gentoo.org> a2ps-4.14-r3.ebuild:
+  Stable for HPPA (bug #428900).
+
+  07 Aug 2012; Markos Chandras <hwoarang@gentoo.org> a2ps-4.14-r3.ebuild:
+  Stable on amd64 wrt bug #428900
+
+  07 Aug 2012; Anthony G. Basile <blueness@gentoo.org> a2ps-4.14-r3.ebuild:
+  Stable arm, bug #428900
+
+  07 Aug 2012; Anthony G. Basile <blueness@gentoo.org> a2ps-4.14-r3.ebuild:
+  Stable ppc ppc64, bug #428900
+
+  07 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -files/4.13c-gcc34.patch, -files/a2ps-4.13-fixcachecheck.patch,
+  -files/a2ps-4.13-select-freebsd.patch, -a2ps-4.13c-r6.ebuild,
+  -files/a2ps-4.13c-fixps.patch, -files/a2ps-4.13c-psmandup.diff,
+  -files/a2ps-4.13c-stdarg.patch:
+  Drop old
+
+*a2ps-4.14-r3 (23 Jun 2012)
+
+  23 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +a2ps-4.14-r3.ebuild:
+  Build shared a2ps library with upstream version of 1:0:0. USE="static-libs"
+  and remove useless liba2ps.la. Fix building with sys-devel/automake >= 1.12
+  wrt #420503. Fix 3 stray README files to /usr/share/doc/${PF}.
+
+  02 Jun 2012; Zac Medico <zmedico@gentoo.org> a2ps-4.13c-r6.ebuild:
+  inherit multilib for get_libdir
+
+  25 Apr 2012; Justin Lecher <jlec@gentoo.org> a2ps-4.13c-r6.ebuild,
+  a2ps-4.14-r1.ebuild:
+  Drop unnessecary die
+
+  06 Jan 2012; Christoph Junghans <ottxor@gentoo.org> a2ps-4.14-r2.ebuild:
+  keyword ~x86-macos
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> a2ps-4.14-r2.ebuild:
+  x86 stable wrt bug #391501
+
+  03 Dec 2011; Markos Chandras <hwoarang@gentoo.org> a2ps-4.14-r2.ebuild:
+  drop mktemp dependency. Add libpaper dependency. Stable on amd64. Bug #391501
 
   08 Jul 2011; Samuli Suominen <ssuominen@gentoo.org> a2ps-4.13c-r6.ebuild:
   Convert from "useq" to "use".

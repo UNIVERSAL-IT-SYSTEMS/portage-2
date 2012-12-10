@@ -1,6 +1,29 @@
 # ChangeLog for app-misc/vifm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/vifm/ChangeLog,v 1.20 2011/03/29 20:41:03 wired Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/vifm/ChangeLog,v 1.26 2012/09/16 14:26:42 armin76 Exp $
+
+  16 Sep 2012; Raúl Porcel <armin76@gentoo.org> vifm-0.7.2.ebuild:
+  s390 stable wrt #414615
+
+  12 Sep 2012; Johannes Huber <johu@gentoo.org> vifm-0.7.2.ebuild:
+  Stable for x86, wrt bug #414615
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> vifm-0.7.2.ebuild:
+  ppc stable (bug 414615).
+
+  12 Aug 2012; Agostino Sarubbo <ago@gentoo.org> vifm-0.7.2.ebuild:
+  Stable for amd64, wrt bug #414615
+
+*vifm-0.7.2 (25 Feb 2012)
+
+  25 Feb 2012; Alex Alexander <wired@gentoo.org> +vifm-0.7.2.ebuild:
+  version bump, bug #405305
+
+*vifm-0.7.1 (24 Nov 2011)
+
+  24 Nov 2011; Alex Alexander <wired@gentoo.org> +vifm-0.7.1.ebuild,
+  metadata.xml:
+  version bump, bug #391681
 
 *vifm-0.5-r1 (29 Mar 2011)
 

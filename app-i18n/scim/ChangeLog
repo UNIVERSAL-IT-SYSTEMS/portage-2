@@ -1,6 +1,61 @@
 # ChangeLog for app-i18n/scim
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/scim/ChangeLog,v 1.145 2011/05/25 16:57:29 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/scim/ChangeLog,v 1.160 2012/09/15 12:41:47 naota Exp $
+
+  15 Sep 2012;  <naota@gentoo.org> metadata.xml, scim-1.4.14.ebuild:
+  Add USE=gtk3 and add configure option to specify gtk version. #434740
+
+  19 Aug 2012; Naohiro Aota <naota@gentoo.org> scim-1.4.14.ebuild:
+  Fix build failure with USE=doc
+
+*scim-1.4.14 (15 Aug 2012)
+
+  15 Aug 2012; Naohiro Aota <naota@gentoo.org> +scim-1.4.14.ebuild:
+  version bump. #430410
+
+  05 Aug 2012; Raúl Porcel <armin76@gentoo.org> scim-1.4.11-r1.ebuild:
+  alpha/sparc stable wrt #422875
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> scim-1.4.11-r1.ebuild:
+  Stable for HPPA (bug #422875).
+
+  28 Jun 2012; Brent Baude <ranger@gentoo.org> scim-1.4.11-r1.ebuild:
+  Marking scim-1.4.11-r1 ppc for bug 422875
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> scim-1.4.11-r1.ebuild:
+  Marking scim-1.4.11-r1 ppc64 for bug 422875
+
+  22 Jun 2012; Jeff Horelick <jdhore@gentoo.org> scim-1.4.11-r1.ebuild:
+  marked x86 per bug 422875
+
+  21 Jun 2012; Agostino Sarubbo <ago@gentoo.org> scim-1.4.11-r1.ebuild:
+  Stable for amd64, wrt bug #422875
+
+  21 Jun 2012; Naohiro Aota <naota@gentoo.org> scim-1.4.11-r1.ebuild:
+  Revert mis-stabized KEYWORDs; Use gnome2_query_immodules_gtk2. #413521
+
+  21 Jun 2012; Naohiro Aota <naota@gentoo.org> scim-1.4.11-r1.ebuild,
+  scim-1.4.11.ebuild, scim-1.4.9-r1.ebuild, scim-1.4.9-r2.ebuild:
+  Add notice to modify /etc/scim/global properly. #217375
+
+  29 May 2012; Naohiro Aota <naota@gentoo.org> scim-1.4.9-r1.ebuild,
+  scim-1.4.9-r2.ebuild:
+  Remove intltool.m4 to update it. #417563
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> scim-1.4.9-r1.ebuild,
+  scim-1.4.9-r2.ebuild, scim-1.4.11.ebuild, scim-1.4.11-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*scim-1.4.11-r1 (17 Nov 2011)
+
+  17 Nov 2011; Naohiro Aota <naota@gentoo.org> +scim-1.4.11-r1.ebuild,
+  +files/scim-1.4.11-type-module-use.patch:
+  Add patch to make it work with Firefox and Thunderbird. Bug #390053
+
+*scim-1.4.11 (28 Oct 2011)
+
+  28 Oct 2011; Naohiro Aota <naota@gentoo.org> +scim-1.4.11.ebuild:
+  Version bumped.
 
 *scim-1.4.9-r2 (25 May 2011)
 
@@ -616,4 +671,3 @@
 
   25 May 2003; Alastair Tse <liquidx@gentoo.org> scim-0.4.1.ebuild:
   New ebuild of another Chinese Input System
-

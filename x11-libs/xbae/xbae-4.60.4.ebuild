@@ -1,20 +1,22 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/xbae/xbae-4.60.4.ebuild,v 1.14 2010/10/10 20:00:32 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/xbae/xbae-4.60.4.ebuild,v 1.18 2012/10/24 19:47:25 ulm Exp $
 
-EAPI=3
-inherit eutils
+EAPI=4
+
+inherit autotools-utils
 
 DESCRIPTION="Motif-based widget to display a grid of cells as a spreadsheet"
 HOMEPAGE="http://xbae.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~amd64-linux ~x86-linux"
 SLOT="0"
-IUSE="doc examples"
+IUSE="doc examples static-libs"
 
-RDEPEND=">=x11-libs/openmotif-2.3:0
+RDEPEND="
+	x11-libs/motif:0
 	x11-libs/libXau
 	x11-libs/libXdmcp
 	x11-libs/libXext
@@ -24,35 +26,40 @@ RDEPEND=">=x11-libs/openmotif-2.3:0
 
 DEPEND="${RDEPEND}"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-tmpl.patch
-	epatch "${FILESDIR}"/${P}-lxmp.patch
-	epatch "${FILESDIR}"/${P}-Makefile.in.patch
-}
+# tests need X display
+# and are interactive so virtualx will not help
+RESTRICT=test
+
+PATCHES=(
+	"${FILESDIR}"/${P}-tmpl.patch
+	"${FILESDIR}"/${P}-lxmp.patch
+	"${FILESDIR}"/${P}-Makefile.in.patch
+	)
 
 src_configure() {
-	econf --enable-production
+	local myeconfargs=( --enable-production )
+	autotools-utils_src_configure
 }
 
 src_test() {
-	cd examples
-	emake || die "emake examples failed"
-	./testall
-	make clean
+	cd ${AUTOTOOLS_BUILD_DIR}/examples
+	emake
+	"${S}"/examples/testall
+	emake clean
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	autotools-utils_src_install
+
 	insinto /usr/share/aclocal
-	doins ac_find_xbae.m4 || die
-	dodoc README NEWS ChangeLog AUTHORS
-	if use doc; then
-		dohtml -r doc/* || die
-	fi
+	doins ac_find_xbae.m4
+
+	 use doc && dohtml -r doc/*
+
 	if use examples; then
-		find examples -name '*akefile*' -exec rm -f {} \;
-		rm -f examples/{testall,extest}
+		find examples -name '*akefile*' -delete || die
+		rm examples/{testall,extest} || die
 		insinto /usr/share/doc/${PF}
-		doins -r examples || die
+		doins -r examples
 	fi
 }

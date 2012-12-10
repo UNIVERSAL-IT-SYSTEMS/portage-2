@@ -1,6 +1,28 @@
 # ChangeLog for mail-filter/anubis
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/anubis/ChangeLog,v 1.16 2011/06/17 12:12:02 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/anubis/ChangeLog,v 1.21 2012/10/30 09:46:15 eras Exp $
+
+*anubis-4.1.1-r1 (30 Oct 2012)
+
+  30 Oct 2012; Eray Aslan <eras@gentoo.org> +anubis-4.1.1-r1.ebuild,
+  +files/4.1.1-gnutls3.patch:
+  Don't call ar directly - bug #439460. Fix building with gnutls3
+
+  04 Jun 2012; Zac Medico <zmedico@gentoo.org> anubis-4.1.1.ebuild:
+  inherit user for enewuser
+
+  05 Jan 2012; Eray Aslan <eras@gentoo.org> -files/3.9.95-authmode.c.patch,
+  -files/3.9.95-transmode.c.patch, -anubis-3.9.95.ebuild:
+  remove unused patches
+
+  05 Jan 2012; Eray Aslan <eras@gentoo.org> -anubis-3.9.95.ebuild:
+  remove old
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> anubis-4.1.1.ebuild:
+  Marking anubis-4.1.1 ppc for bug 391111
+
+  22 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> anubis-4.1.1.ebuild:
+  x86 stable wrt bug #391111
 
   17 Jun 2011; Eray Aslan <eras@gentoo.org> files/4.1.1-gpgme.patch:
   Fix underlinking - bug #372017

@@ -1,6 +1,86 @@
 # ChangeLog for media-libs/exiftool
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/exiftool/ChangeLog,v 1.99 2011/07/24 13:03:03 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/exiftool/ChangeLog,v 1.120 2012/12/09 18:30:29 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> exiftool-9.10.0.ebuild:
+  Stable for ppc64, wrt bug #441364
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> exiftool-9.10.0.ebuild:
+  Stable for ppc, wrt bug #441364
+
+  08 Dec 2012; <ago@gentoo.org> exiftool-9.10.0.ebuild:
+  Stable for amd64, wrt bug #441364
+
+*exiftool-9.40.0 (04 Nov 2012)
+
+  04 Nov 2012; Torsten Veller <tove@gentoo.org> +exiftool-9.40.0.ebuild:
+  Version bump
+
+*exiftool-9.10.0 (25 Aug 2012)
+
+  25 Aug 2012; Torsten Veller <tove@gentoo.org> +exiftool-9.10.0.ebuild,
+  metadata.xml:
+  Version bump
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> exiftool-8.900.0.ebuild:
+  x86 stable, bug #419075
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> exiftool-8.900.0.ebuild:
+  Marking exiftool-8.900.0 ppc for bug 419075
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> exiftool-8.900.0.ebuild:
+  Marking exiftool-8.900.0 ppc64 for bug 419075
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> exiftool-8.900.0.ebuild:
+  Stable on amd64 wrt bug #419075
+
+*exiftool-8.900.0 (29 Apr 2012)
+
+  29 Apr 2012; Torsten Veller <tove@gentoo.org> +exiftool-8.900.0.ebuild:
+  Version bump
+
+  12 Apr 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Fix cpan distribution in metadata.xml
+
+*exiftool-8.850.0 (29 Mar 2012)
+
+  29 Mar 2012; Torsten Veller <tove@gentoo.org> +exiftool-8.850.0.ebuild:
+  Version bump
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> exiftool-8.50.ebuild,
+  exiftool-8.60.ebuild, exiftool-8.65.ebuild, exiftool-8.75.ebuild,
+  exiftool-8.770.0.ebuild:
+  Drop sparc keywords
+
+  29 Jan 2012; Hans de Graaff <graaff@gentoo.org> metadata.xml:
+  Drop maintainership.
+
+*exiftool-8.770.0 (29 Jan 2012)
+
+  29 Jan 2012; Torsten Veller <tove@gentoo.org> +exiftool-8.770.0.ebuild:
+  Version bump
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> exiftool-8.65.ebuild:
+  x86 stable wrt bug #384405
+
+  09 Jan 2012; Agostino Sarubbo <ago@gentoo.org> exiftool-8.65.ebuild:
+  Stable for AMD64, wrt bug #384405
+
+*exiftool-8.75 (08 Jan 2012)
+
+  08 Jan 2012; Hans de Graaff <graaff@gentoo.org> +exiftool-8.75.ebuild:
+  Version bump to next upstream production release.
+
+*exiftool-8.65 (25 Sep 2011)
+
+  25 Sep 2011; Hans de Graaff <graaff@gentoo.org> +exiftool-8.65.ebuild:
+  Version bump to next upstream production release.
+
+  25 Sep 2011; Hans de Graaff <graaff@gentoo.org> -exiftool-8.40.ebuild:
+  Remove old version.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> exiftool-8.50.ebuild:
+  sparc stable wrt #373077
 
   24 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> exiftool-8.50.ebuild:
   ppc64 stable wrt #373077
@@ -387,4 +467,3 @@
   +exiftool-6.13.ebuild:
   Initial import. This is a graphics package, but it includes some perl dark
   magic so belongs to both herds.
-

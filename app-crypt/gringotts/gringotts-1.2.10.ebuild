@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/gringotts/gringotts-1.2.10.ebuild,v 1.5 2011/03/22 18:44:21 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/gringotts/gringotts-1.2.10.ebuild,v 1.7 2012/05/03 18:16:38 jdhore Exp $
 
 EAPI="2"
 
@@ -21,12 +21,12 @@ RDEPEND=">=dev-libs/libgringotts-1.2
 
 DEPEND="${RDEPEND}
 	sys-devel/gettext
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
-	# Remove deprecation flag, soit compiles with >=GTK+-2.4
-	sed -e 's:-DGTK_DISABLE_DEPRECATED::g' \
-		-i src/Makefile.am src/Makefile.in || die "sed failed"
+	# Drop DEPRECATION flags, bug #387831
+	sed -i -e 's:-D[A-Z_]*DISABLE_DEPRECATED:$(NULL):g' \
+		src/Makefile.am src/Makefile.in || die
 
 	# Patch up to install desktop entry correctly
 	epatch "${FILESDIR}/${PN}-1.2.10-desktop.patch"

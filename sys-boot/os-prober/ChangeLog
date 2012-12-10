@@ -1,6 +1,26 @@
 # ChangeLog for sys-boot/os-prober
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/os-prober/ChangeLog,v 1.11 2011/05/26 19:01:37 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/os-prober/ChangeLog,v 1.15 2012/10/14 19:10:30 abcd Exp $
+
+*os-prober-1.56 (14 Oct 2012)
+
+  14 Oct 2012; Jonathan Callen <abcd@gentoo.org> +os-prober-1.56.ebuild:
+  Update to latest upstream, use upstream's installation directories
+
+*os-prober-1.53 (29 Jun 2012)
+
+  29 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> -os-prober-1.47.ebuild,
+  -os-prober-1.51.ebuild, +os-prober-1.53.ebuild:
+  Version bump to version from wheezy. Drop older and stable the
+  to-be-stable-debian version.
+
+*os-prober-1.51 (30 Mar 2012)
+
+  30 Mar 2012; Mike Gilbert <floppym@gentoo.org> +os-prober-1.51.ebuild:
+  Version bump.
+
+  14 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org> os-prober-1.47.ebuild:
+  Stable on amd64 and x86, works fine and usefull for grub2.
 
   26 May 2011; Jonathan Callen <abcd@gentoo.org> os-prober-1.47.ebuild:
   Fix unpacking (upstream changed the top-level dir *again*)
@@ -54,4 +74,3 @@
   15 Dec 2009; Jonathan Callen <abcd@gentoo.org> +os-prober-1.35.ebuild,
   +files/os-prober-1.35-multilib.patch, +metadata.xml:
   New ebuild. Thanks to Wizzelby <wizzleby@gmail.com> for initial ebuild.
-

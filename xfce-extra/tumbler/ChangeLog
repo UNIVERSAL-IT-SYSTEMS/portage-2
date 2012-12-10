@@ -1,6 +1,98 @@
 # ChangeLog for xfce-extra/tumbler
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/tumbler/ChangeLog,v 1.18 2011/04/26 17:48:53 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/tumbler/ChangeLog,v 1.45 2012/11/28 12:42:40 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> tumbler-0.1.25.ebuild:
+  EAPI5
+
+  12 Oct 2012;  <naota@gentoo.org> tumbler-0.1.25.ebuild:
+  Add ~x86-fbsd wrt bug #236834
+
+  07 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> -tumbler-0.1.23.ebuild:
+  old
+
+  14 Jul 2012; Markus Meier <maekke@gentoo.org> tumbler-0.1.25.ebuild:
+  arm stable, bug #416233
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> tumbler-0.1.25.ebuild:
+  marked x86 per bug 416233
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> -tumbler-0.1.24.ebuild:
+  old
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> tumbler-0.1.25.ebuild:
+  ppc/ppc64 stable wrt #416233
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> tumbler-0.1.25.ebuild:
+  Stable for amd64, wrt bug #416233
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> tumbler-0.1.23.ebuild,
+  tumbler-0.1.24.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  04 May 2012; Samuli Suominen <ssuominen@gentoo.org> tumbler-0.1.25.ebuild:
+  Use virtual/pkgconfig.
+
+*tumbler-0.1.25 (29 Apr 2012)
+
+  29 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +tumbler-0.1.25.ebuild:
+  Version bump.
+
+  17 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -tumbler-0.1.22.ebuild:
+  old
+
+*tumbler-0.1.24 (30 Mar 2012)
+
+  30 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +tumbler-0.1.24.ebuild:
+  Version bump.
+
+  13 Feb 2012; Markus Meier <maekke@gentoo.org> tumbler-0.1.23.ebuild:
+  arm stable, bug #401229
+
+  10 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> tumbler-0.1.23.ebuild:
+  ppc/ppc64/x86 stable wrt #401229
+
+  30 Jan 2012; Agostino Sarubbo <ago@gentoo.org> tumbler-0.1.23.ebuild:
+  Stable for amd64, wrt bug #401229
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -tumbler-0.1.21.ebuild:
+  old
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> tumbler-0.1.22.ebuild:
+  ppc/ppc64 stable wrt #386963
+
+  06 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -tumbler-0.1.22-r1.ebuild, -files/tumbler-0.1.22-pipeline.patch:
+  old
+
+*tumbler-0.1.23 (06 Dec 2011)
+
+  06 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +tumbler-0.1.23.ebuild,
+  metadata.xml:
+  Version bump.
+
+  26 Nov 2011; Raúl Porcel <armin76@gentoo.org> tumbler-0.1.22.ebuild:
+  alpha/ia64/sparc stable wrt #386963
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> tumbler-0.1.22.ebuild:
+  arm stable, bug #386963
+
+*tumbler-0.1.22-r1 (18 Oct 2011)
+
+  18 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +tumbler-0.1.22-r1.ebuild, +files/tumbler-0.1.22-pipeline.patch:
+  Fix video thumbnailers (upstream patch) wrt #387411 by "Hypnos"
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> tumbler-0.1.22.ebuild:
+  amd64 stable wrt #386963
+
+  16 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> tumbler-0.1.22.ebuild:
+  x86 stable wrt bug #386963
+
+*tumbler-0.1.22 (23 Sep 2011)
+
+  23 Sep 2011; Christoph Mende <angelos@gentoo.org> +tumbler-0.1.22.ebuild:
+  Version bump
 
   26 Apr 2011; Kacper Kowalik <xarthisius@gentoo.org> tumbler-0.1.21.ebuild:
   ppc/ppc64 stable wrt #358407
@@ -101,4 +193,3 @@
 
   04 Jan 2010; Samuli Suominen <ssuominen@gentoo.org> +tumbler-0.1.0.ebuild:
   Initial commit wrt #297355, thanks to Andrew for this work.
-

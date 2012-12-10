@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/x-modular.eclass,v 1.120 2010/09/09 11:19:51 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/x-modular.eclass,v 1.125 2012/05/02 18:31:45 jdhore Exp $
 #
 # @DEPRECATED
 # This eclass has been superseded by xorg-2
@@ -8,7 +8,8 @@
 #
 # @ECLASS: x-modular.eclass
 # @MAINTAINER:
-# Donnie Berkholz <dberkholz@gentoo.org>, x11@gentoo.org
+# Donnie Berkholz <dberkholz@gentoo.org>
+# x11@gentoo.org
 # @BLURB: Reduces code duplication in the modularized X11 ebuilds.
 # @DESCRIPTION:
 # This eclass makes trivial X ebuilds possible for apps, fonts, drivers,
@@ -178,12 +179,11 @@ if [[ -z "${FONT}" ]] \
 fi
 
 DEPEND="${DEPEND}
-	>=dev-util/pkgconfig-0.18"
+	virtual/pkgconfig"
 
 if [[ "${PN/util-macros}" = "${PN}" ]]; then
 	DEPEND="${DEPEND}
-		>=x11-misc/util-macros-1.3.0
-		sys-devel/binutils"
+		>=x11-misc/util-macros-1.3.0"
 fi
 
 RDEPEND="${RDEPEND}
@@ -542,7 +542,7 @@ remove_font_metadata() {
 # @FUNCTION: install_driver_hwdata
 # @USAGE:
 # @DESCRIPTION:
-# Installs device-to-driver mappings for system-config-display and 
+# Installs device-to-driver mappings for system-config-display and
 # anything else that uses hwdata.
 install_driver_hwdata() {
 	insinto /usr/share/hwdata/videoaliases

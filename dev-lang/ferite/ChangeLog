@@ -1,6 +1,13 @@
 # ChangeLog for dev-lang/ferite
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ferite/ChangeLog,v 1.30 2010/04/06 09:04:00 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ferite/ChangeLog,v 1.32 2012/11/26 22:11:54 ulm Exp $
+
+  26 Nov 2012; Ulrich Müller <ulm@gentoo.org> ferite-1.0.2.ebuild:
+  Fix LICENSE, BSD (3-clause) according to LICENSE file in tarball.
+
+  20 Jun 2012; Justin Lecher <jlec@gentoo.org> ferite-1.0.2.ebuild,
+  metadata.xml:
+  Handle libtool files; remove serial build in install phase, #244871
 
   06 Apr 2010; Jonathan Callen <abcd@gentoo.org> ferite-1.0.2.ebuild:
   Bump to EAPI=3, add prefix keywords, many QA fixes

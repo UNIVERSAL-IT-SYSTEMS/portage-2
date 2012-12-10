@@ -1,6 +1,25 @@
 # ChangeLog for dev-libs/qoauth
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/qoauth/ChangeLog,v 1.13 2010/11/08 20:48:24 ayoy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/qoauth/ChangeLog,v 1.19 2012/09/06 13:28:54 scarabeus Exp $
+
+  06 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> qoauth-1.0.1.ebuild:
+  Mark ppc and ~ppc64. Per johu's request.
+
+  21 May 2012; Davide Pesavento <pesa@gentoo.org> qoauth-1.0.1.ebuild:
+  EAPI=4
+
+  21 May 2012; Davide Pesavento <pesa@gentoo.org> qoauth-1.0.1.ebuild:
+  Use more qt4-r2 eclass features.
+
+  18 Feb 2012; nixnut <nixnut@gentoo.org> qoauth-1.0.1.ebuild:
+  ~ppc, preparing for #396359
+
+  17 Feb 2012; Davide Pesavento <pesa@gentoo.org> -qoauth-1.0-r1.ebuild,
+  -qoauth-1.0.ebuild, metadata.xml:
+  Remove obsolete versions.
+
+  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #278944
 
   08 Nov 2010; Dominik Kapusta <ayoy@gentoo.org> qoauth-1.0.1.ebuild:
   Fixing bug #337643 for real. Missed sedding out test subdirectory when
@@ -54,4 +73,3 @@
   14 Jul 2009; Markos Chandras <hwoarang@gentoo.org> +qoauth-0.1.0.ebuild,
   +metadata.xml:
   Initial commit of qoauth library
-

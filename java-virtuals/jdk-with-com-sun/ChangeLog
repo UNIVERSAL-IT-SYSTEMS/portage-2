@@ -1,6 +1,48 @@
 # ChangeLog for java-virtuals/jdk-with-com-sun
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/java-virtuals/jdk-with-com-sun/ChangeLog,v 1.11 2010/06/01 06:49:48 phajdan.jr Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/java-virtuals/jdk-with-com-sun/ChangeLog,v 1.19 2012/10/04 17:36:29 sera Exp $
+
+  04 Oct 2012; Ralph Sennhauser <sera@gentoo.org>
+  jdk-with-com-sun-20111111.ebuild:
+  Change license to public-domain. #426800
+
+  13 Jan 2012; Ralph Sennhauser <sera@gentoo.org>
+  -jdk-with-com-sun-20111030.ebuild, -jdk-with-com-sun-20111107.ebuild:
+  Remove old.
+
+  29 Nov 2011; Fabian Groffen <grobian@gentoo.org>
+  jdk-with-com-sun-20111111.ebuild:
+  Apple-provided JDKs are actually Sun/Oracle's, hence contain com.sun.*
+
+*jdk-with-com-sun-20111111 (11 Nov 2011)
+
+  11 Nov 2011; Vlastimil Babka <caster@gentoo.org>
+  +jdk-with-com-sun-20111111.ebuild:
+  Add icedtea-7 and icedtea-bin-7 variants.
+
+*jdk-with-com-sun-20111107 (07 Nov 2011)
+
+  07 Nov 2011; Vlastimil Babka <caster@gentoo.org>
+  -jdk-with-com-sun-20080505-r1.ebuild, -jdk-with-com-sun-20100419.ebuild,
+  -jdk-with-com-sun-20110911.ebuild, +jdk-with-com-sun-20111107.ebuild:
+  Prepare for icedtea-bin version and VMHANDLE migration.
+
+  30 Oct 2011; Vlastimil Babka <caster@gentoo.org>
+  jdk-with-com-sun-20100419.ebuild, jdk-with-com-sun-20110911.ebuild,
+  jdk-with-com-sun-20111030.ebuild:
+  Package move icedtea6-bin to icedtea-bin.
+
+*jdk-with-com-sun-20111030 (30 Oct 2011)
+
+  30 Oct 2011; Vlastimil Babka <caster@gentoo.org>
+  +jdk-with-com-sun-20111030.ebuild:
+  Prepare for icedtea VMHANDLE change.
+
+*jdk-with-com-sun-20110911 (11 Sep 2011)
+
+  11 Sep 2011; Serkan Kaba <serkan@gentoo.org>
+  +jdk-with-com-sun-20110911.ebuild:
+  Bump to add oracle-jdk-bin-1.7
 
   01 Jun 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org>
   jdk-with-com-sun-20100419.ebuild:

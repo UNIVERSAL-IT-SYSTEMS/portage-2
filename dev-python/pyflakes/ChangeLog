@@ -1,6 +1,31 @@
 # ChangeLog for dev-python/pyflakes
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyflakes/ChangeLog,v 1.16 2010/07/08 15:29:36 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyflakes/ChangeLog,v 1.23 2012/11/09 16:22:17 idella4 Exp $
+
+  10 Nov 2012; Ian Delaney <idella4@gentoo.org> pyflakes-0.5.0.ebuild:
+  tests re-tested, pypy set to tests restricted, fixes Bug #No. #432560
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> pyflakes-0.4.0.ebuild,
+  pyflakes-0.5.0.ebuild:
+  Drop ia64 keywords
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> pyflakes-0.5.0.ebuild:
+  x86 stable wrt bug #386067
+
+  12 Oct 2011; Tony Vroon <chainsaw@gentoo.org> pyflakes-0.5.0.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #386067.
+
+  20 Sep 2011; Mike Gilbert <floppym@gentoo.org> pyflakes-0.5.0.ebuild:
+  Restrict tests with Jython. Simplify dependencies. Patch by Arfrever.
+
+  04 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> pyflakes-0.5.0.ebuild:
+  Take some fixes suggested by Arfrever via the python overlay.
+
+*pyflakes-0.5.0 (03 Sep 2011)
+
+  03 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> +pyflakes-0.5.0.ebuild:
+  Version bump to 0.5.0.
 
   08 Jul 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   pyflakes-0.4.0.ebuild:
@@ -57,4 +82,3 @@
   +pyflakes-0.2.1.ebuild:
   New ebuild contributed by Qiangning Hong <hongqn@gmail.com>, closes bug
   #123479.
-

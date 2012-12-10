@@ -1,6 +1,26 @@
 # ChangeLog for dev-perl/TermReadKey
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/TermReadKey/ChangeLog,v 1.33 2011/07/30 10:43:22 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/TermReadKey/ChangeLog,v 1.39 2012/09/01 11:55:40 grobian Exp $
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> TermReadKey-2.300.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> TermReadKey-2.300.0.ebuild:
+  keyword ~amd64-fbsd
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -TermReadKey-2.30.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> TermReadKey-2.300.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*TermReadKey-2.300.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +TermReadKey-2.300.0.ebuild:
+  Change version scheme
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> TermReadKey-2.30.ebuild:
   Drop ~sparc-fbsd KEYWORD

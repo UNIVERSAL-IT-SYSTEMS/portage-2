@@ -1,6 +1,26 @@
 # ChangeLog for dev-ruby/webrat
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/webrat/ChangeLog,v 1.11 2011/01/10 18:31:05 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/webrat/ChangeLog,v 1.17 2012/08/19 08:14:21 graaff Exp $
+
+  19 Aug 2012; Hans de Graaff <graaff@gentoo.org> webrat-0.7.3.ebuild:
+  Avoid tests depending on launchy which is not in the gentoo tree, bug 430646.
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  13 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> webrat-0.7.3.ebuild:
+  Use new syntax.
+
+  02 Jul 2012; Hans de Graaff <graaff@gentoo.org> webrat-0.7.3.ebuild:
+  Add dependency on mechanize for testing, fixing bug 424387.
+
+  02 Jul 2012; Hans de Graaff <graaff@gentoo.org> -webrat-0.7.1.ebuild:
+  Remove old version.
+
+*webrat-0.7.3 (22 Apr 2011)
+
+  22 Apr 2011; Hans de Graaff <graaff@gentoo.org> +webrat-0.7.3.ebuild:
+  Version bump.
 
   10 Jan 2011; Hans de Graaff <graaff@gentoo.org> webrat-0.7.1.ebuild:
   Keyword ~x86-macos.
@@ -52,4 +72,3 @@
   +metadata.xml:
   Initial import from my overlay. Also reported by CS Shyam Sundar in
   #280286.
-

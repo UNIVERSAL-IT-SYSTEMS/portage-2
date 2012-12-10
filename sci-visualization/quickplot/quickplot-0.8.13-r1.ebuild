@@ -1,25 +1,25 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/quickplot/quickplot-0.8.13-r1.ebuild,v 1.5 2011/03/02 19:35:12 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/quickplot/quickplot-0.8.13-r1.ebuild,v 1.8 2012/05/04 08:07:00 jdhore Exp $
 
-EAPI="1"
+EAPI=1
 
 inherit eutils
 
-DESCRIPTION="A fast interactive 2D plotter."
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+DESCRIPTION="A fast interactive 2D plotter"
 HOMEPAGE="http://quickplot.sourceforge.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
-IUSE="sndfile"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="amd64 ppc x86"
+IUSE="sndfile"
 
 RDEPEND="
 	dev-cpp/gtkmm:2.4
 	sndfile? ( media-libs/libsndfile )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_unpack() {
 	unpack ${A}
@@ -39,7 +39,7 @@ src_unpack() {
 }
 
 src_compile() {
-	econf $(use_with sndfile libsndfile) || die "econf step failed."
+	econf $(use_with sndfile libsndfile)
 	emake htmldir=/usr/share/doc/${PF}/html || die "emake step failed."
 }
 

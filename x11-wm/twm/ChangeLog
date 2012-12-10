@@ -1,6 +1,28 @@
 # ChangeLog for x11-wm/twm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/twm/ChangeLog,v 1.66 2011/07/28 09:32:59 chithanh Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/twm/ChangeLog,v 1.73 2012/05/11 03:04:10 aballier Exp $
+
+  11 May 2012; Alexis Ballier <aballier@gentoo.org> twm-1.0.7.ebuild:
+  keyword ~amd64-fbsd
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> twm-1.0.7.ebuild:
+  Marked ppc ppc64 stable for bug #380421.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> twm-1.0.7.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #380421
+
+  21 Sep 2011; Jeroen Roovers <jer@gentoo.org> twm-1.0.7.ebuild:
+  Stable for HPPA (bug #380421).
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org> twm-1.0.7.ebuild:
+  arm stable, bug #380421
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> twm-1.0.7.ebuild:
+  x86 stable, bug #380421
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> twm-1.0.7.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380421 filed by Chí-Thanh Christopher Nguyễn.
 
 *twm-1.0.7 (28 Jul 2011)
 

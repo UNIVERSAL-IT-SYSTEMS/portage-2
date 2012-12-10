@@ -1,6 +1,20 @@
 # ChangeLog for dev-perl/ParaDNS
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/ParaDNS/ChangeLog,v 1.5 2010/04/09 07:37:03 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/ParaDNS/ChangeLog,v 1.9 2012/06/24 12:59:43 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  18 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug 118003.
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -ParaDNS-2.0.ebuild:
+  Cleanup
+
+*ParaDNS-2.0.0 (29 Aug 2011)
+
+  29 Aug 2011; Torsten Veller <tove@gentoo.org> +ParaDNS-2.0.0.ebuild:
+  Change version scheme
 
   09 Apr 2010; Torsten Veller <tove@gentoo.org> -ParaDNS-1.8.ebuild,
   -ParaDNS-1.9.ebuild:
@@ -25,4 +39,3 @@
   28 Apr 2009; Markus Ullmann <jokey@gentoo.org> +metadata.xml,
   +ParaDNS-1.8.ebuild:
   Add as dependency for qpsmtpd
-

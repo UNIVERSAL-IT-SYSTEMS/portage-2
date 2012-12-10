@@ -1,6 +1,65 @@
 # ChangeLog for mail-filter/spamassassin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/spamassassin/ChangeLog,v 1.200 2011/06/25 13:30:11 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/spamassassin/ChangeLog,v 1.216 2012/09/20 12:23:12 radhermit Exp $
+
+  20 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  29 Aug 2012; Stefan Briesenick <sbriesen@gentoo.org> files/3.3.1-spamd.init:
+  fixed init-script reload function. Now it can also be used with a posix-shell
+  like 'dash'.
+
+  21 Aug 2012; Christoph Junghans <ottxor@gentoo.org>
+  spamassassin-3.3.2-r1.ebuild:
+  added prefix keywords
+
+  17 Jun 2012; Torsten Veller <tove@gentoo.org>
+  -files/spamassassin-3.3.1-PERL-5-12.patch,
+  -files/spamassassin-3.3.1-uninitialized_value.patch:
+  Cleanup
+
+  17 Jun 2012; Agostino Sarubbo <ago@gentoo.org> -spamassassin-3.3.1-r4.ebuild:
+  Remove old
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> spamassassin-3.3.2-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #395539
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> spamassassin-3.3.2-r1.ebuild:
+  Marking spamassassin-3.3.2-r1 ppc64 for bug 395539
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> spamassassin-3.3.2-r1.ebuild:
+  Marking spamassassin-3.3.2-r1 ppc for bug 395539
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> spamassassin-3.3.2-r1.ebuild:
+  Stable for HPPA (bug #395539).
+
+  22 Apr 2012; Agostino Sarubbo <ago@gentoo.org> spamassassin-3.3.2-r1.ebuild:
+  Stable for amd64, wrt bug #395539
+
+  22 Apr 2012; Markus Meier <maekke@gentoo.org> spamassassin-3.3.2-r1.ebuild:
+  x86 stable, bug #395539
+
+  20 Feb 2012; Naohiro Aota <naota@gentoo.org> spamassassin-3.3.2-r1.ebuild:
+  Add ~x86-fbsd
+
+  01 Dec 2011; Mike Frysinger <vapier@gentoo.org> spamassassin-3.3.1-r4.ebuild,
+  spamassassin-3.3.2-r1.ebuild:
+  Add s390/sh love #376587 by Eray Aslan.
+
+*spamassassin-3.3.2-r1 (27 Nov 2011)
+
+  27 Nov 2011; Christian Ruppert <idl0r@gentoo.org> -spamassassin-3.3.2.ebuild,
+  +spamassassin-3.3.2-r1.ebuild, +files/spamassassin-3.3.2-binary_token.patch,
+  +files/spamassassin-3.3.2-innodb.patch,
+  +files/spamassassin-3.3.2-mysql_count_rows.patch:
+  Rev bump. Add some patches for MySQL, see ebuild for further details.
+
+  14 Sep 2011; Lars Wendler <polynomial-c@gentoo.org> files/3.3.1-spamd.init:
+  non-maintainer commit: Moved reload option from extra_commands to
+  extra_started_commands as it is only useful when spamd has been started.
+
+  05 Sep 2011; Torsten Veller <tove@gentoo.org> files/3.3.1-spamd.init:
+  opts => extra_commands for init script (#381841 by Nik Warburton)
 
 *spamassassin-3.3.2 (25 Jun 2011)
 
@@ -1148,4 +1207,3 @@
   24 Feb 2002; Bruce A. Locke <blocke@shivan.org> spamassassin-2.01.ebuild :
 
   Ebuild contributed by Marc Soda <marc@aspre.net>
-

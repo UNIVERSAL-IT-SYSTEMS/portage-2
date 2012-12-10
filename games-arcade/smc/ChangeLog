@@ -1,6 +1,19 @@
 # ChangeLog for games-arcade/smc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/smc/ChangeLog,v 1.25 2011/04/27 16:39:06 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/smc/ChangeLog,v 1.29 2012/11/19 22:19:52 mr_bones_ Exp $
+
+  19 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> smc-1.9.ebuild:
+  looks like cegui-0.6 is still needed
+
+  14 Nov 2012; Michael Sterrett <mr_bones_@gentoo.org> smc-1.9.ebuild:
+  open up the cegui dep
+
+  14 Nov 2012; Tupone Alfredo <tupone@gentoo.org> smc-1.9.ebuild,
+  +files/smc-1.9-boost150.patch:
+  Build with boost-1.51 Bug #442502 by Ben Longbons
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> smc-1.9.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   27 Apr 2011; Michael Sterrett <mr_bones_@gentoo.org> smc-1.9.ebuild:
   Don't try to use the newer cegui (bug #357761)

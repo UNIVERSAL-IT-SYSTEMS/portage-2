@@ -1,6 +1,42 @@
 # ChangeLog for app-crypt/seahorse
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/seahorse/ChangeLog,v 1.149 2011/04/10 11:47:43 eva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/seahorse/ChangeLog,v 1.156 2012/05/28 00:56:02 mattst88 Exp $
+
+  28 May 2012; Matt Turner <mattst88@gentoo.org> seahorse-3.2.2.ebuild:
+  Added ~alpha, bug 390345.
+
+*seahorse-3.4.1 (13 May 2012)
+
+  13 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -seahorse-3.2.1.ebuild, +seahorse-3.4.1.ebuild,
+  +files/seahorse-3.4.1-g_clear_object.patch:
+  Version bump with significant UI changes. Drop old.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> seahorse-3.2.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> seahorse-2.32.0.ebuild,
+  seahorse-3.2.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*seahorse-3.2.2 (17 Nov 2011)
+
+  17 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -seahorse-3.0.2.ebuild, +seahorse-3.2.2.ebuild:
+  Bump, drop old. Notable changes: gpg key loading improvements.
+
+*seahorse-3.2.1 (30 Oct 2011)
+
+  30 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +seahorse-3.2.1.ebuild:
+  Bump to 3.2.1 from the gnome overlay. The widget library has been split off
+  into a separate package (x11-libs/libcryptui). Drop alpha, ia64, ppc, ppc64,
+  sparc keywords due to gnome-keyring-3.2 dependency.
+
+*seahorse-3.0.2 (16 Aug 2011)
+
+  16 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> +seahorse-3.0.2.ebuild:
+  Bump to 3.0.2, from gnome overlay for GNOME 3
 
   10 Apr 2011; Gilles Dartiguelongue <eva@gentoo.org> -seahorse-2.30.1.ebuild:
   Clean up old revision.

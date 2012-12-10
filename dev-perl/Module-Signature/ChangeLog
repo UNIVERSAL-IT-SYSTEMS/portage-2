@@ -1,6 +1,33 @@
 # ChangeLog for dev-perl/Module-Signature
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Module-Signature/ChangeLog,v 1.31 2011/05/13 14:07:51 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Module-Signature/ChangeLog,v 1.37 2012/12/08 11:19:14 tove Exp $
+
+*Module-Signature-0.700.0 (08 Dec 2012)
+
+  08 Dec 2012; Torsten Veller <tove@gentoo.org>
+  +Module-Signature-0.700.0.ebuild:
+  Version bump
+
+*Module-Signature-0.690.0 (04 Nov 2012)
+
+  04 Nov 2012; Torsten Veller <tove@gentoo.org>
+  +Module-Signature-0.690.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org> -Module-Signature-0.66.ebuild:
+  Cleanup
+
+  04 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Module-Signature-0.680.0.ebuild:
+  x86 stable wrt bug #385023
+
+  04 Oct 2011; Tony Vroon <chainsaw@gentoo.org>
+  Module-Signature-0.680.0.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo, Ian
+  "idella4" Delaney & Elijah "Armageddon" El Lazkani in bug #385023.
 
 *Module-Signature-0.680.0 (13 May 2011)
 
@@ -160,4 +187,3 @@
   we can A) provide an ebuild that we can track/fix and B) we have some minor
   influence in the sanity of their environment. This should override any already
   installed versions and be safe for future uses.
-

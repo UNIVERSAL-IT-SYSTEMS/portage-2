@@ -1,6 +1,39 @@
 # ChangeLog for sys-power/cpufrequtils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/cpufrequtils/ChangeLog,v 1.61 2011/07/26 23:32:46 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-power/cpufrequtils/ChangeLog,v 1.70 2012/11/18 11:41:59 pacho Exp $
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+  16 Aug 2011; Matt Turner <mattst88@gentoo.org> cpufrequtils-008-r1.ebuild:
+  Add dependency on libintl, bug 379313. Bump to EAPI=4.
+
+  14 Aug 2011; Matt Turner <mattst88@gentoo.org>
+  files/cpufrequtils-007-nls.patch:
+  Fix authorship of a patch.
+
+  14 Aug 2011; Matt Turner <mattst88@gentoo.org>
+  -files/cpufrequtils-conf.d-005, -files/cpufrequtils-init.d-005,
+  -cpufrequtils-005-r1.ebuild, -files/cpufrequtils-005-build.patch,
+  -files/cpufrequtils-005-nls.patch, -cpufrequtils-007.ebuild,
+  -cpufrequtils-008.ebuild:
+  Remove old ebuilds and patches.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> cpufrequtils-008-r1.ebuild:
+  ia64/sparc stable wrt #375921
+
+  07 Aug 2011; Markus Meier <maekke@gentoo.org> cpufrequtils-008-r1.ebuild:
+  arm stable, bug #375921
+
+  06 Aug 2011; Markus Meier <maekke@gentoo.org> cpufrequtils-008-r1.ebuild:
+  x86 stable, bug #375921
+
+  04 Aug 2011; Matt Turner <mattst88@gentoo.org> cpufrequtils-005-r1.ebuild,
+  cpufrequtils-007.ebuild:
+  Remove unnecessary dependency on sys-fs/sysfsutils, bug 348620 and 377721.
+
+  02 Aug 2011; Matt Turner <mattst88@gentoo.org> metadata.xml:
+  Add myself as maintainer.
 
   26 Jul 2011; Matt Turner <mattst88@gentoo.org> cpufrequtils-008-r1.ebuild:
   Added ~mips. Works on Yeeloong.
@@ -299,4 +332,3 @@
   22 Jan 2005; Henrik Brix Andersen <brix@gentoo.org> +metadata.xml,
   +cpufrequtils-0.1.ebuild, +cpufrequtils-0.2_pre1.ebuild:
   Initial commit. Thank you to all who commented on bug #69320.
-

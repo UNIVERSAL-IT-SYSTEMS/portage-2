@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/scons-utils.eclass,v 1.5 2011/04/15 20:08:13 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/scons-utils.eclass,v 1.11 2012/09/27 16:35:42 axs Exp $
 
 # @ECLASS: scons-utils.eclass
 # @MAINTAINER:
@@ -13,12 +13,23 @@
 #
 # @CODE
 # inherit scons-utils toolchain-funcs
-# 
+#
+# EAPI=4
+#
+# src_configure() {
+# 	myesconsargs=(
+# 		CC="$(tc-getCC)"
+# 		$(use_scons nls ENABLE_NLS)
+# 	)
+# }
+#
 # src_compile() {
-# 	tc-export CC CXX
-# 	escons \
-# 		$(use_scons nls ENABLE_NLS) \
-# 		|| die
+# 	escons
+# }
+#
+# src_install() {
+# 	# note: this can be DESTDIR, INSTALL_ROOT, ... depending on package
+# 	escons DESTDIR="${D}" install
 # }
 # @CODE
 
@@ -28,6 +39,12 @@
 # @DEFAULT_UNSET
 # @DESCRIPTION:
 # The minimal version of SCons required for the build to work.
+
+# @VARIABLE: myesconsargs
+# @DEFAULT_UNSET
+# @DESCRIPTION:
+# List of package-specific options to pass to all SCons calls. Supposed to be
+# set in src_configure().
 
 # @ECLASS-VARIABLE: SCONSOPTS
 # @DEFAULT_UNSET
@@ -56,7 +73,7 @@
 # -- EAPI support check --
 
 case ${EAPI:-0} in
-	0|1|2|3|4) ;;
+	0|1|2|3|4|5) ;;
 	*) die "EAPI ${EAPI} unsupported."
 esac
 
@@ -73,21 +90,22 @@ fi
 # @FUNCTION: escons
 # @USAGE: [scons-arg] ...
 # @DESCRIPTION:
-# Call scons, passing the supplied arguments, ${MAKEOPTS} and
-# ${EXTRA_ESCONS}. Similar to emake. Like emake, this function does die
-# on failure in EAPI 4 (unless called nonfatal).
+# Call scons, passing the supplied arguments, ${myesconsargs[@]},
+# filtered ${MAKEOPTS}, ${EXTRA_ESCONS}. Similar to emake. Like emake,
+# this function does die on failure in EAPI 4 (unless called nonfatal).
 escons() {
 	local ret
 
 	debug-print-function ${FUNCNAME} "${@}"
 
 	# if SCONSOPTS are _unset_, use cleaned MAKEOPTS
-	set -- scons ${SCONSOPTS-$(scons_clean_makeopts)} ${EXTRA_ESCONS} "${@}"
+	set -- scons ${SCONSOPTS-$(scons_clean_makeopts)} ${EXTRA_ESCONS} \
+		"${myesconsargs[@]}" "${@}"
 	echo "${@}" >&2
 	"${@}"
 	ret=${?}
 
-	[[ ${ret} -ne 0 && ${EAPI:-0} -ge 4 ]] && die "escons failed."
+	[[ ${ret} -ne 0 ]] && has "${EAPI:-0}" 4 5 && die "escons failed."
 	return ${ret}
 }
 
@@ -129,7 +147,7 @@ scons_clean_makeopts() {
 				;;
 			# need to take a look at the next arg and guess
 			--jobs)
-				if [[ ${#} -gt 1 && ${2} =~ [0-9]+ ]]; then
+				if [[ ${#} -gt 1 && ${2} =~ ^[0-9]+$ ]]; then
 					new_makeopts="${new_makeopts+${new_makeopts} }${1} ${2}"
 					shift
 				else
@@ -153,7 +171,7 @@ scons_clean_makeopts() {
 							;;
 						# -j needs to come last
 						j)
-							if [[ ${#} -gt 1 && ${2} =~ [0-9]+ ]]; then
+							if [[ ${#} -gt 1 && ${2} =~ ^[0-9]+$ ]]; then
 								new_optstr="${new_optstr}j ${2}"
 								shift
 							else

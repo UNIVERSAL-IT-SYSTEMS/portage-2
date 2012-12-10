@@ -1,6 +1,30 @@
 # ChangeLog for dev-ruby/amstd
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/amstd/ChangeLog,v 1.27 2010/10/19 05:45:12 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/amstd/ChangeLog,v 1.35 2012/03/08 17:47:03 naota Exp $
+
+  08 Mar 2012; Naohiro Aota <naota@gentoo.org> amstd-2.0.0-r2.ebuild:
+  Add ~x86-fbsd.
+
+  08 Mar 2012; Hans de Graaff <graaff@gentoo.org> -amstd-2.0.0-r1.ebuild:
+  Remove old version.
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> amstd-2.0.0-r2.ebuild:
+  Marking amstd-2.0.0-r2 ppc64 for bug 391625
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> amstd-2.0.0-r2.ebuild:
+  Marking amstd-2.0.0-r2 ppc for bug 391625
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> amstd-2.0.0-r2.ebuild:
+  alpha/ia64/sparc stable wrt #391625
+
+  02 Dec 2011; Markos Chandras <hwoarang@gentoo.org> amstd-2.0.0-r2.ebuild:
+  Stable on amd64 wrt bug #391625
+
+  29 Nov 2011; Jeroen Roovers <jer@gentoo.org> amstd-2.0.0-r2.ebuild:
+  Stable for HPPA (bug #391625).
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> amstd-2.0.0-r2.ebuild:
+  x86 stable wrt bug #391625
 
   19 Oct 2010; Mart Raudsepp <leio@gentoo.org> amstd-2.0.0-r1.ebuild:
   Drop to ~mips

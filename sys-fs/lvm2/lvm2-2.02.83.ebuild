@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/lvm2/lvm2-2.02.83.ebuild,v 1.1 2011/02/04 23:17:07 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/lvm2/lvm2-2.02.83.ebuild,v 1.4 2012/11/28 10:55:33 ssuominen Exp $
 
 EAPI=2
 inherit eutils multilib toolchain-funcs autotools linux-info
@@ -17,9 +17,10 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86
 IUSE="readline +static clvm cman +lvm1 selinux"
 
 DEPEND_COMMON="!!sys-fs/device-mapper
+	readline? ( sys-libs/readline )
 	clvm? ( =sys-cluster/dlm-2*
 			cman? ( =sys-cluster/cman-2* ) )
-	>=sys-fs/udev-151-r4"
+	virtual/udev"
 
 RDEPEND="${DEPEND_COMMON}
 	!<sys-apps/openrc-0.4
@@ -32,7 +33,7 @@ RDEPEND="${RDEPEND}
 		!<sys-fs/cryptsetup-1.1.2"
 
 DEPEND="${DEPEND_COMMON}
-		dev-util/pkgconfig
+		virtual/pkgconfig
 		>=sys-devel/binutils-2.20.1-r1"
 
 S="${WORKDIR}/${PN/lvm/LVM}.${PV}"

@@ -1,6 +1,86 @@
 # ChangeLog for x11-libs/rep-gtk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/rep-gtk/ChangeLog,v 1.63 2011/07/20 16:33:34 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/rep-gtk/ChangeLog,v 1.85 2012/10/28 16:36:31 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> rep-gtk-0.90.8.1.ebuild:
+  ia64/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> rep-gtk-0.90.8.1.ebuild:
+  stable ppc, bug #427544
+
+  15 Oct 2012; Matt Turner <mattst88@gentoo.org> rep-gtk-0.90.8.1.ebuild:
+  Stable on alpha, bug 427544.
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> rep-gtk-0.90.8.1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> rep-gtk-0.90.8.1.ebuild:
+  x86 stable wrt bug #427544
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> rep-gtk-0.90.8.ebuild:
+  alpha/ia64/sparc stable wrt #410611
+
+*rep-gtk-0.90.8.1 (08 Jul 2012)
+
+  08 Jul 2012; Pacho Ramos <pacho@gentoo.org> +rep-gtk-0.90.8.1.ebuild:
+  Version bump.
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> rep-gtk-0.90.8.ebuild:
+  ppc stable wrt #410611
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> rep-gtk-0.90.7.ebuild,
+  rep-gtk-0.90.8.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> rep-gtk-0.90.8.ebuild:
+  x86 stable, bug #410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> rep-gtk-0.90.8.ebuild:
+  Stable for amd64, wrt bug #410611
+
+*rep-gtk-0.90.8 (27 Mar 2012)
+
+  27 Mar 2012; Pacho Ramos <pacho@gentoo.org> +rep-gtk-0.90.8.ebuild,
+  -rep-gtk-0.90.3.ebuild:
+  Version bump, remove old.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> rep-gtk-0.90.7.ebuild:
+  alpha/ia64/sparc stable wrt #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> rep-gtk-0.90.7.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Pacho Ramos <pacho@gentoo.org> -rep-gtk-0.18-r3.ebuild,
+  -files/rep-gtk-0.18.4-locale.patch, -files/rep-gtk-0.18.4-libdir.patch,
+  -files/rep-gtk-0.18-gtk24.patch, -files/rep-gtk-0.18-gtk26.patch,
+  -files/libtool.patch, rep-gtk-0.90.7.ebuild:
+  Fix gdk-pixbuf dependency (bug #387041 by Jack Lloyd), update homepage as
+  older one is obsolete, drop old.
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> rep-gtk-0.90.7.ebuild:
+  ppc stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> rep-gtk-0.90.7.ebuild:
+  amd64 stable wrt #385699
+
+  25 Sep 2011; Pacho Ramos <pacho@gentoo.org> rep-gtk-0.90.7.ebuild,
+  +files/rep-gtk-0.90.7-implicit-def-new.patch:
+  Fix undefined symbol problems like bug #367623, thanks to katabami for the
+  patch.
+
+*rep-gtk-0.90.7 (12 Sep 2011)
+
+  12 Sep 2011; Pacho Ramos <pacho@gentoo.org> +rep-gtk-0.90.7.ebuild:
+  Version bump, drop .la files.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> rep-gtk-0.90.3.ebuild:
+  alpha/ia64/sparc stable wrt #376345
+
+  06 Aug 2011; Markus Meier <maekke@gentoo.org> rep-gtk-0.90.3.ebuild:
+  x86 stable, bug #376345
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> rep-gtk-0.90.3.ebuild:
+  Stable on amd64 wrt bug #376345
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #81177

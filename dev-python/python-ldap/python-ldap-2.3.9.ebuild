@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-ldap/python-ldap-2.3.9.ebuild,v 1.13 2010/10/16 20:21:16 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-ldap/python-ldap-2.3.9.ebuild,v 1.20 2012/11/14 08:17:33 xarthisius Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -9,18 +9,20 @@ RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils multilib
 
-DOC_P="${PN}-docs-html-2.3.7"
+DOC_P="${PN}-docs-html-${PV}"
 
 DESCRIPTION="Various LDAP-related Python modules"
-HOMEPAGE="http://python-ldap.sourceforge.net/ http://pypi.python.org/pypi/python-ldap"
+HOMEPAGE="http://www.python-ldap.org http://pypi.python.org/pypi/python-ldap"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz
-	doc? ( http://www.python-ldap.org/doc/${DOC_P}.tar.gz )"
+	doc? ( http://dev.gentoo.org/~xarthisius/distfiles/${DOC_P}.tar.gz )"
 
-LICENSE="PYTHON"
+LICENSE="PSF-2"
 SLOT="0"
 KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
 IUSE="doc examples sasl ssl"
 
+# If you need support for openldap-2.3.x, please use python-ldap-2.3.9.
+# python team: Please do not remove python-ldap-2.3.9 from the tree.
 RDEPEND=">=net-nds/openldap-2.3
 	sasl? ( dev-libs/cyrus-sasl )"
 DEPEND="${DEPEND}

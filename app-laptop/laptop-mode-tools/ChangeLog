@@ -1,6 +1,70 @@
 # ChangeLog for app-laptop/laptop-mode-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-laptop/laptop-mode-tools/ChangeLog,v 1.54 2011/07/12 20:41:51 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-laptop/laptop-mode-tools/ChangeLog,v 1.64 2012/11/18 10:50:44 pacho Exp $
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org>
+  -files/laptop-mode-tools-1.55-pm-utils-1.4.0.patch,
+  -laptop-mode-tools-1.55-r3.ebuild, metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+  14 Jun 2012; Michael Weber <xmw@gentoo.org> laptop-mode-tools-1.60-r1.ebuild:
+  ppc stable (bug 398083)
+
+  21 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  laptop-mode-tools-1.60-r1.ebuild:
+  x86 stable wrt bug #398083
+
+  17 Jan 2012; Agostino Sarubbo <ago@gentoo.org>
+  laptop-mode-tools-1.60-r1.ebuild:
+  Stable for amd64, wrt bug #398083
+
+  17 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  laptop-mode-tools-1.60-r1.ebuild:
+  Pull in net-wireless/wireless-tools to silence
+  "/usr/share/laptop-mode-tools/modules/wireless-power: line 78: eth0: command
+  not found" when launching /etc/init.d/laptop_mode since laptop-mode-tools is
+  defaulting it being available.
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -laptop-mode-tools-1.55-r4.ebuild, -laptop-mode-tools-1.55-r5.ebuild,
+  -files/laptop-mode-tools-1.55-linux3-support.patch,
+  -laptop-mode-tools-1.60.ebuild,
+  -files/laptop-mode-tools-1.60-pm-utils-1.4.0.patch,
+  -files/laptop_mode_tools.pmutils:
+  old
+
+*laptop-mode-tools-1.60-r1 (16 Jan 2012)
+
+  16 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +laptop-mode-tools-1.60-r1.ebuild:
+  Stop using -pm-utils-1.4.0.patch and install file containing
+  HOOK_BLACKLIST="00powersave" to /etc/pm/config.d instead wrt #327443 and
+  #396703 by Ondrej Grover. Install 99-laptop-mode.rules to /lib/udev/rules.d
+  instead of /etc/udev/rules.d.
+
+*laptop-mode-tools-1.60 (01 Jan 2012)
+
+  01 Jan 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/laptop-mode-tools-1.60-pm-utils-1.4.0.patch,
+  +laptop-mode-tools-1.60.ebuild:
+  Non maintainer version bump. Bug #359187. Thanks to Ondrej Grover
+  <ondrej.grover@gmail.com>
+
+*laptop-mode-tools-1.55-r5 (01 Jan 2012)
+
+  01 Jan 2012; Markos Chandras <hwoarang@gentoo.org>
+  +laptop-mode-tools-1.55-r5.ebuild, files/laptop_mode.init-1.4:
+  Check if directory exists in /var/run. Non maintainer commit. Bug #342049.
+  Thanks to i.Dark_Templar <dark_templar@hotbox.ru>
+
+*laptop-mode-tools-1.55-r4 (31 Dec 2011)
+*laptop-mode-tools-1.55-r3 (31 Dec 2011)
+
+  31 Dec 2011; Christian Ruppert <idl0r@gentoo.org>
+  -laptop-mode-tools-1.55-r1.ebuild, -laptop-mode-tools-1.55-r2.ebuild,
+  +laptop-mode-tools-1.55-r3.ebuild, +laptop-mode-tools-1.55-r4.ebuild,
+  files/laptop_mode.init-1.4:
+  Revbump. Don't use the deprecated $opts variable, bug 393523.
 
 *laptop-mode-tools-1.55-r2 (12 Jul 2011)
 
@@ -287,4 +351,3 @@
   +files/laptop-mode-tools-1.04.init, +laptop-mode-tools-1.04.ebuild:
   Initial import, fixes bug #45593. Thank you to all who commented on the bug
   report.
-

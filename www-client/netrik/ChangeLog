@@ -1,6 +1,22 @@
 # ChangeLog for www-client/netrik
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/netrik/ChangeLog,v 1.10 2010/02/22 17:59:00 phajdan.jr Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/netrik/ChangeLog,v 1.14 2012/09/26 17:34:39 kensington Exp $
+
+  26 Sep 2012; Michael Palimaka <kensington@gentoo.org> -netrik-1.15.6.ebuild:
+  Remove old.
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> netrik-1.16.1.ebuild:
+  Stable for amd64, wrt bug #428326
+
+  29 Jul 2012; Jeff Horelick <jdhore@gentoo.org> netrik-1.16.1.ebuild:
+  marked x86 per bug 428326
+
+*netrik-1.16.1 (27 Jun 2012)
+
+  27 Jun 2012; Michael Palimaka <kensington@gentoo.org> +netrik-1.16.1.ebuild,
+  metadata.xml:
+  Version bump. Migrate to EAPI 4, correct dependencies, and avoid installation
+  of LICENSE. Drop nls USE flag since it does nothing. Add upstream metadata.
 
   22 Feb 2010; Pawel Hajdan jr <phajdan.jr@gentoo.org> netrik-1.15.6.ebuild:
   Install docs in the right place, bug #241468 by flameeyes.

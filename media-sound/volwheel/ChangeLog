@@ -1,6 +1,15 @@
 # ChangeLog for media-sound/volwheel
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/volwheel/ChangeLog,v 1.4 2011/04/25 13:58:41 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/volwheel/ChangeLog,v 1.6 2012/12/08 22:09:27 ago Exp $
+
+  08 Dec 2012; <ago@gentoo.org> volwheel-0.2.8-r1.ebuild:
+  Stable for amd64, wrt bug #441404
+
+*volwheel-0.2.8-r1 (08 Sep 2012)
+
+  08 Sep 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +volwheel-0.2.8-r1.ebuild, +files/volwheel-0.2.8-perl516.patch:
+  Fix installation with dev-lang/perl >= 5.16 wrt #423263 by Torsten Veller
 
   25 Apr 2011; Thomas Kahle <tomka@gentoo.org> volwheel-0.2.8.ebuild:
   x86 stable per bug 361111

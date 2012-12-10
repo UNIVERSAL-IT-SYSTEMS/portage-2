@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/rtcwsp-demo/rtcwsp-demo-1.1b.ebuild,v 1.9 2009/04/14 07:28:49 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/rtcwsp-demo/rtcwsp-demo-1.1b.ebuild,v 1.11 2012/02/08 21:24:43 vapier Exp $
 
-inherit eutils games
+inherit eutils unpacker games
 
 MY_P="wolfspdemo-linux-${PV}.x86.run"
 
@@ -16,7 +16,6 @@ SLOT="0"
 KEYWORDS="-* amd64 x86"
 IUSE=""
 RESTRICT="strip mirror"
-PROPERTIES="interactive"
 
 RDEPEND="sys-libs/glibc
 	virtual/opengl
@@ -30,13 +29,8 @@ RDEPEND="sys-libs/glibc
 
 S=${WORKDIR}
 
-GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/${PN}
 Ddir=${D}/${dir}
-
-src_unpack() {
-	unpack_makeself ${A} || die "Unpacking files"
-}
 
 src_install() {
 	insinto "${dir}"

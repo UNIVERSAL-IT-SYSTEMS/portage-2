@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/portaudio/portaudio-19_pre20110326.ebuild,v 1.1 2011/05/28 20:58:51 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/portaudio/portaudio-19_pre20110326.ebuild,v 1.11 2012/09/28 08:08:28 chainsaw Exp $
 
 EAPI=4
 
@@ -12,15 +12,15 @@ DESCRIPTION="A free, cross-platform, open-source, audio I/O library"
 HOMEPAGE="http://www.portaudio.com/"
 SRC_URI="http://www.portaudio.com/archives/${MY_P}.tgz"
 
-LICENSE="as-is"
+LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sh sparc x86 ~amd64-linux ~x86-linux"
 IUSE="alsa +cxx debug jack oss static-libs"
 
 RDEPEND="alsa? ( media-libs/alsa-lib )
 	jack? ( media-sound/jack-audio-connection-kit )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${PN}
 

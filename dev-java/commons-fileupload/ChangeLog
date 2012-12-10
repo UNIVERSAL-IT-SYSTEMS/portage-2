@@ -1,6 +1,68 @@
 # ChangeLog for dev-java/commons-fileupload
-# Copyright 2000-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/commons-fileupload/ChangeLog,v 1.53 2009/07/04 14:24:16 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/commons-fileupload/ChangeLog,v 1.66 2012/12/08 15:54:49 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org>
+  commons-fileupload-1.2.2.ebuild:
+  Stable for ppc64, wrt bug #433213
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org>
+  commons-fileupload-1.2.2.ebuild:
+  Stable for ppc, wrt bug #433213
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  commons-fileupload-1.2.2.ebuild:
+  x86 stable wrt bug #433213
+
+  11 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  commons-fileupload-1.2.2.ebuild:
+  Stable for amd64, wrt bug #433213
+
+*commons-fileupload-1.2.2 (11 Jul 2012)
+
+  11 Jul 2012; Vlastimil Babka <caster@gentoo.org>
+  -files/commons-fileupload-1.1.1-gentoo.patch,
+  -commons-fileupload-1.2-r1.ebuild, -commons-fileupload-1.2.1.ebuild,
+  +commons-fileupload-1.2.2.ebuild, -files/commons-fileupload-1.2-gentoo.patch:
+  Version bump.
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org>
+  commons-fileupload-1.2.1-r1.ebuild:
+  Marking commons-fileupload-1.2.1-r1 ppc for bug 418711
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org>
+  commons-fileupload-1.2.1-r1.ebuild:
+  Marking commons-fileupload-1.2.1-r1 ppc64 for bug 418711
+
+  04 Jun 2012; Johannes Huber <johu@gentoo.org>
+  commons-fileupload-1.2.1-r1.ebuild:
+  Stable for x86, wrt bug #418711
+
+  03 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  commons-fileupload-1.2.1-r1.ebuild:
+  Stable for amd64, wrt bug #418711
+
+  14 Feb 2012; Alexis Ballier <aballier@gentoo.org>
+  commons-fileupload-1.2.1-r1.ebuild:
+  keyword ~x86-fbsd
+
+  28 Jan 2012; Ralph Sennhauser <sera@gentoo.org>
+  -commons-fileupload-1.2.ebuild:
+  Remove old depending on dev-java/servletapi. #398689
+
+*commons-fileupload-1.2.1-r1 (27 Jan 2012)
+
+  28 Jan 2012; Ralph Sennhauser <sera@gentoo.org>
+  +commons-fileupload-1.2.1-r1.ebuild:
+  Revbump, bump EAPI and use SLOT deps.
+  Bump servlet-api dep to :2.5
+  Let the eclasses do the hard work.
+  Fix repoman warnings.
+
+  19 Dec 2011; Ralph Sennhauser <sera@gentoo.org>
+  commons-fileupload-1.2.ebuild, commons-fileupload-1.2-r1.ebuild,
+  commons-fileupload-1.2.1.ebuild:
+  Fix homepage wrt #202445.
 
   04 Jul 2009; Brent Baude <ranger@gentoo.org>
   commons-fileupload-1.2.1.ebuild:

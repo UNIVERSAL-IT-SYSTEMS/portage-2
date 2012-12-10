@@ -1,6 +1,41 @@
 # ChangeLog for sys-auth/rtkit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/rtkit/ChangeLog,v 1.17 2011/04/16 17:45:01 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/rtkit/ChangeLog,v 1.27 2012/10/16 16:00:01 jer Exp $
+
+  16 Oct 2012; Jeroen Roovers <jer@gentoo.org> rtkit-0.6.ebuild,
+  rtkit-0.7.ebuild, rtkit-0.9-r1.ebuild, rtkit-0.10.ebuild:
+  Drop HPPA keywording (bug #438368).
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> rtkit-0.10.ebuild,
+  rtkit-0.6.ebuild, rtkit-0.7.ebuild, rtkit-0.9-r1.ebuild:
+  Inherit user for enewuser/etc...
+
+  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> rtkit-0.10.ebuild:
+  alpha/ia64/sh/sparc stable wrt #400495
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> rtkit-0.10.ebuild:
+  x86 stable wrt bug #400495
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> rtkit-0.10.ebuild:
+  Marking rtkit-0.10 ppc64 for bug 400495
+
+  02 Mar 2012; Markus Meier <maekke@gentoo.org> rtkit-0.10.ebuild:
+  arm stable, bug #400495
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> rtkit-0.10.ebuild:
+  Marking rtkit-0.10 ppc for bug 400495
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> rtkit-0.10.ebuild:
+  Stable for HPPA (bug #400495).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> rtkit-0.10.ebuild:
+  Stable for amd64, wrt bug #400495
+
+*rtkit-0.10 (15 Sep 2011)
+
+  15 Sep 2011; Arun Raghavan <ford_prefect@gentoo.org> +rtkit-0.10.ebuild:
+  Bump to 0.10, add systemd support, and bump EAPI to 4 while we're at it
+  (thanks to Christoph Brill on bug #372915 for the report and patch).
 
   16 Apr 2011; Raúl Porcel <armin76@gentoo.org> rtkit-0.9-r1.ebuild:
   ia64/sh/x86 stable wrt #360131

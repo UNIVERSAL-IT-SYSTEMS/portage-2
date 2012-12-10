@@ -1,6 +1,32 @@
 # ChangeLog for sys-process/cronbase
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/cronbase/ChangeLog,v 1.32 2010/10/17 04:17:05 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-process/cronbase/ChangeLog,v 1.40 2012/05/24 05:52:37 vapier Exp $
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> cronbase-0.3.2-r1.ebuild,
+  cronbase-0.3.2.ebuild, cronbase-0.3.3.ebuild:
+  Inherit user for enewgroup/etc... rather than eutils.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> cronbase-0.3.3.ebuild:
+  keyword ~amd64-fbsd
+
+  20 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> cronbase-0.3.3.ebuild:
+  ppc64 stable wrt #294346
+
+  20 Oct 2011; Brent Baude <ranger@gentoo.org> cronbase-0.3.3.ebuild:
+  Marking cronbase-0.3.3 ppc for bug 294346
+
+  20 Sep 2011; Jeroen Roovers <jer@gentoo.org> cronbase-0.3.3.ebuild:
+  Stable for HPPA (bug #294346).
+
+  03 Sep 2011; Raúl Porcel <armin76@gentoo.org> cronbase-0.3.3.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #294346
+
+  24 Aug 2011; Thomas Kahle <tomka@gentoo.org> cronbase-0.3.3.ebuild:
+  x86 stable per bug 294346
+
+  24 Aug 2011; Tony Vroon <chainsaw@gentoo.org> cronbase-0.3.3.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #294346 filed by Jeremy "darkside" Olexa.
 
   17 Oct 2010; Mart Raudsepp <leio@gentoo.org> cronbase-0.3.2.ebuild,
   cronbase-0.3.2-r1.ebuild:

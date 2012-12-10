@@ -1,6 +1,36 @@
 # ChangeLog for gnustep-apps/cenon
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/gnustep-apps/cenon/ChangeLog,v 1.9 2010/09/01 12:01:50 voyageur Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/gnustep-apps/cenon/ChangeLog,v 1.15 2012/07/03 18:37:08 voyageur Exp $
+
+*cenon-3.9.6 (03 Jul 2012)
+
+  03 Jul 2012; Bernard Cafarelli <voyageur@gentoo.org> -cenon-3.8.2.ebuild,
+  -cenon-3.9.4.ebuild, +cenon-3.9.6.ebuild, +files/cenon-3.9.6-gcc47.patch,
+  -files/cenon-3.82-install.patch:
+  Version bump, fix for GCC 4.7, remove old versions
+
+  07 Jun 2012; Michael Weber <xmw@gentoo.org> cenon-3.9.5.ebuild:
+  ppc stable (bug 410601)
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> cenon-3.9.5.ebuild:
+  x86 stable, bug #410601
+
+  05 Apr 2012; Agostino Sarubbo <ago@gentoo.org> cenon-3.9.5.ebuild:
+  Stable for amd64, wrt bug #410601
+
+*cenon-3.9.5 (15 Feb 2012)
+
+  15 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org> +cenon-3.9.5.ebuild:
+  Version bump, seems to fix bug #356207
+
+*cenon-3.9.4 (19 Aug 2011)
+*cenon-3.8.2 (19 Aug 2011)
+
+  19 Aug 2011; Bernard Cafarelli <voyageur@gentoo.org> +cenon-3.8.2.ebuild,
+  +cenon-3.9.4.ebuild, +files/cenon-3.9.4-install.patch, -cenon-3.82.ebuild,
+  -cenon-3.90.ebuild, -files/cenon-3.90-install.patch, -cenon-3.91.ebuild,
+  -files/cenon-3.91-install.patch:
+  Version bump, move stable to new versioning
 
 *cenon-3.91 (01 Sep 2010)
 

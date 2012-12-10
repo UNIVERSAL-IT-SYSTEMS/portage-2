@@ -1,6 +1,53 @@
 # ChangeLog for media-sound/alsa-headers
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-headers/ChangeLog,v 1.205 2011/02/05 23:55:34 chainsaw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-headers/ChangeLog,v 1.219 2012/04/01 15:10:10 armin76 Exp $
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> alsa-headers-1.0.25.ebuild:
+  alpha/ia64/sh/sparc stable wrt #406101
+
+  15 Mar 2012; Markus Meier <maekke@gentoo.org> alsa-headers-1.0.25.ebuild:
+  arm stable, bug #406101
+
+  15 Mar 2012; Jeff Horelick <jdhore@gentoo.org> alsa-headers-1.0.25.ebuild:
+  marked x86 per bug 406101
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> alsa-headers-1.0.25.ebuild:
+  Marking alsa-headers-1.0.25 ppc64 stable for bug 406101
+
+  29 Feb 2012; Agostino Sarubbo <ago@gentoo.org> alsa-headers-1.0.25.ebuild:
+  Stable for amd64, wrt bug #406101
+
+  29 Feb 2012; Jeroen Roovers <jer@gentoo.org> alsa-headers-1.0.25.ebuild:
+  Stable for HPPA (bug #406101).
+
+*alsa-headers-1.0.25 (26 Jan 2012)
+
+  26 Jan 2012; Tony Vroon <chainsaw@gentoo.org> +alsa-headers-1.0.25.ebuild:
+  Version bump, as requested by Mart "leio" Raudsepp on #gentoo-dev.
+
+  29 Dec 2011; Mark Loeser <halcy0n@gentoo.org> alsa-headers-1.0.24.ebuild:
+  Stable for ppc/ppc64; bug #379423
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> alsa-headers-1.0.24.ebuild:
+  alpha/ia64/sh/sparc stable wrt #379423
+
+  03 Oct 2011; Markus Meier <maekke@gentoo.org> alsa-headers-1.0.24.ebuild:
+  arm stable, bug #379423
+
+  21 Sep 2011; Michał Górny <mgorny@gentoo.org> alsa-headers-9999.ebuild:
+  Migrate to git-2.
+
+  20 Sep 2011; Andreas Schuerch <nativemad@gentoo.org>
+  alsa-headers-1.0.24.ebuild:
+  x86 stable per bug 379423, thanks JD and Myckel
+
+  25 Aug 2011; Jeroen Roovers <jer@gentoo.org> alsa-headers-1.0.24.ebuild:
+  Stable for HPPA (bug #379423).
+
+  17 Aug 2011; Tony Vroon <chainsaw@gentoo.org> alsa-headers-1.0.24.ebuild:
+  Marked stable on AMD64 as a dependency of media-libs/alsa-lib-1.0.24.1, based
+  on arch testing by Tomas Pruzina & Agostino "ago" Sarubbo in bug #379423
+  filed by Arun Raghavan.
 
 *alsa-headers-1.0.24 (05 Feb 2011)
 

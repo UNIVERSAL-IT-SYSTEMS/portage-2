@@ -1,6 +1,24 @@
 # ChangeLog for sci-chemistry/babel
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/babel/ChangeLog,v 1.8 2011/06/25 18:08:12 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/babel/ChangeLog,v 1.14 2012/03/06 17:58:31 jlec Exp $
+
+  06 Mar 2012; Justin Lecher <jlec@gentoo.org> -babel-1.6.ebuild:
+  Drop Old
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> babel-1.6-r1.ebuild:
+  Marking babel-1.6-r1 ppc for bug 393887
+
+  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> babel-1.6-r1.ebuild:
+  x86 stable wrt bug #393887
+
+  18 Dec 2011; Agostino Sarubbo <ago@gentoo.org> babel-1.6-r1.ebuild:
+  Stable for AMD64, wrt bug #393887
+
+  18 Dec 2011; Justin Lecher <jlec@gentoo.org> babel-1.6-r1.ebuild:
+  Don't install binaries in /
+
+  16 Dec 2011; Justin Lecher <jlec@gentoo.org> babel-1.6-r1.ebuild:
+  Restructured to fit commen-sense
 
   25 Jun 2011; Justin Lecher <jlec@gentoo.org> babel-1.6.ebuild,
   babel-1.6-r1.ebuild, metadata.xml:

@@ -1,6 +1,56 @@
 # ChangeLog for x11-libs/libpciaccess
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libpciaccess/ChangeLog,v 1.70 2011/06/24 13:17:08 darkside Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libpciaccess/ChangeLog,v 1.83 2012/08/26 18:59:49 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> libpciaccess-0.13.1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> libpciaccess-0.13.1.ebuild:
+  Marking libpciaccess-0.13.1 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> libpciaccess-0.13.1.ebuild:
+  Marking libpciaccess-0.13.1 ppc64 stable for bug 419473
+
+  28 Jun 2012; Markus Meier <maekke@gentoo.org> libpciaccess-0.13.1.ebuild:
+  arm stable, bug #419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> libpciaccess-0.13.1.ebuild:
+  Stable for HPPA (bug #419473).
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libpciaccess-0.13.1.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libpciaccess-0.13.1.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> libpciaccess-0.13.1.ebuild:
+  keyword ~amd64-fbsd
+
+*libpciaccess-0.13.1 (11 Apr 2012)
+
+  11 Apr 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libpciaccess-0.13.1.ebuild:
+  Version bump.
+
+  14 Mar 2012; Matt Turner <mattst88@gentoo.org> libpciaccess-0.13.ebuild,
+  +files/libpciaccess-0.13-fix-out-bwl-macros.patch:
+  Add patch to fix bug 407299.
+
+*libpciaccess-0.13 (04 Mar 2012)
+
+  04 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -libpciaccess-0.12.902.ebuild, +libpciaccess-0.13.ebuild:
+  Version bump.
+
+*libpciaccess-0.12.902 (19 Dec 2011)
+
+  19 Dec 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libpciaccess-0.12.902.ebuild:
+  Bump to prerelease.
+
+  19 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  libpciaccess-0.12.1.ebuild:
+  Add blocker for old xorg-server due to file collision, bug #379809.
 
   24 Jun 2011; Jeremy Olexa <darkside@gentoo.org> libpciaccess-0.12.1.ebuild:
   Add prefix keywords to align with x11-libs/libdrm

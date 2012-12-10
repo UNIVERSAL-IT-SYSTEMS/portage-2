@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-lib/freebsd-lib-7.2-r1.ebuild,v 1.4 2011/04/20 18:13:46 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-freebsd/freebsd-lib/freebsd-lib-7.2-r1.ebuild,v 1.6 2012/08/02 15:25:21 ryao Exp $
 
 EAPI=2
 
-inherit bsdmk freebsd flag-o-matic multilib toolchain-funcs
+inherit bsdmk freebsd flag-o-matic multilib toolchain-funcs eutils
 
 DESCRIPTION="FreeBSD's base system libraries"
 SLOT="0"
@@ -27,6 +27,7 @@ if [ "${CATEGORY#*cross-}" = "${CATEGORY}" ]; then
 	RDEPEND="ssl? ( dev-libs/openssl )
 		hesiod? ( net-dns/hesiod )
 		kerberos? ( virtual/krb5 )
+		userland_GNU? ( sys-apps/mtree )
 		!sys-freebsd/freebsd-headers
 		dev-libs/libelf"
 	DEPEND="${RDEPEND}

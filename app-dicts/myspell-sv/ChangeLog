@@ -1,6 +1,26 @@
 # ChangeLog for app-dicts/myspell-sv
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-sv/ChangeLog,v 1.18 2010/09/27 23:43:40 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-sv/ChangeLog,v 1.22 2012/11/19 13:08:16 scarabeus Exp $
+
+*myspell-sv-2.11 (19 Nov 2012)
+
+  19 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> +myspell-sv-2.11.ebuild,
+  -myspell-sv-2.6.ebuild, myspell-sv-2.9.ebuild:
+  Version bump to latest, stabilise older everywhere, drop oldest.
+
+*myspell-sv-2.9 (25 Oct 2012)
+
+  25 Oct 2012; Tomáš Chvátal <scarabeus@gentoo.org> +myspell-sv-2.9.ebuild:
+  Version bump to latest.
+
+*myspell-sv-2.6 (23 Jul 2012)
+
+  23 Jul 2012; Tomáš Chvátal <scarabeus@gentoo.org> +myspell-sv-2.6.ebuild,
+  -myspell-sv-20060316.ebuild:
+  Version bump to latest release.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> myspell-sv-20060316.ebuild:
+  keyword ~amd64-fbsd
 
   27 Sep 2010; Mart Raudsepp <leio@gentoo.org> myspell-sv-20060316.ebuild:
   Add ~mips
@@ -65,4 +85,3 @@
   01 May 2006; Kevin F. Quinn <kevquinn@gentoo.org> +metadata.xml,
   +myspell-sv-20060316.ebuild:
   New ebuild for Swedish myspell dictionary
-

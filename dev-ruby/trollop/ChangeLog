@@ -1,6 +1,29 @@
 # ChangeLog for dev-ruby/trollop
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/trollop/ChangeLog,v 1.11 2010/12/04 14:53:07 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/trollop/ChangeLog,v 1.17 2012/10/28 17:23:20 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> trollop-1.16.2-r2.ebuild,
+  trollop-1.16.2-r3.ebuild, trollop-2.0.ebuild:
+  Add ~alpha
+
+*trollop-1.16.2-r3 (30 Sep 2012)
+
+  30 Sep 2012; Hans de Graaff <graaff@gentoo.org> +trollop-1.16.2-r3.ebuild:
+  Revision bump to add ruby19 for bug 436344.
+
+  30 Sep 2012; Hans de Graaff <graaff@gentoo.org> trollop-2.0.ebuild:
+  Move trollop 2.0 to a separate slot since its semantics changed, bug 436344.
+
+  27 Sep 2012; Hans de Graaff <graaff@gentoo.org> trollop-2.0.ebuild:
+  Add ruby19, bug 436344, thanks to Manuel Rüger.
+
+*trollop-2.0 (23 Sep 2012)
+
+  23 Sep 2012; Hans de Graaff <graaff@gentoo.org> +trollop-2.0.ebuild:
+  Version bump.
+
+  14 Sep 2011; Jeroen Roovers <jer@gentoo.org> trollop-1.16.2-r2.ebuild:
+  Stable for HPPA (bug #369573).
 
   04 Dec 2010; Fabian Groffen <grobian@gentoo.org> trollop-1.16.2-r2.ebuild:
   Added Prefix keywords

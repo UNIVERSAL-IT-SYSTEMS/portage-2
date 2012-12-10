@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/xalan/xalan-2.7.1.ebuild,v 1.7 2011/05/03 18:38:49 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/xalan/xalan-2.7.1.ebuild,v 1.9 2012/04/15 18:14:29 vapier Exp $
 
 EAPI=1
 JAVA_PKG_IUSE="doc source"

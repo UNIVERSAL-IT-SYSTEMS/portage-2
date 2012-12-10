@@ -1,6 +1,46 @@
 # ChangeLog for media-gfx/ufraw
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/ufraw/ChangeLog,v 1.87 2011/05/22 03:22:07 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/ufraw/ChangeLog,v 1.100 2012/12/09 16:36:27 maekke Exp $
+
+  09 Dec 2012; Markus Meier <maekke@gentoo.org> ufraw-0.18.ebuild:
+  enable verbose build output by Agostino Sarubbo in bug #443000
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> ufraw-0.18.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> ufraw-0.18.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Unused description for USE="hotpixels" and USE="lensfun"
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -ufraw-0.16.ebuild,
+  -ufraw-0.17.ebuild:
+  old
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> ufraw-0.18.ebuild:
+  alpha/ia64/sh/sparc stable wrt #386499
+
+  17 Oct 2011; Markus Meier <maekke@gentoo.org> ufraw-0.18.ebuild:
+  arm stable, bug #386499
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> ufraw-0.18.ebuild:
+  ppc stable wrt #386499
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ufraw-0.18.ebuild:
+  x86 stable wrt bug #386499
+
+  11 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> ufraw-0.18.ebuild:
+  ppc64 stable wrt #386499
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> ufraw-0.18.ebuild:
+  Stable for HPPA (bug #386499).
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> ufraw-0.18.ebuild:
+  amd64 stable wrt #386499
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> ufraw-0.18.ebuild:
+  Fix gconf schema installation wrt #295083 by "PiotrAF" and Francisco Javier
 
   22 May 2011; Tim Harder <radhermit@gentoo.org> ufraw-0.16.ebuild,
   ufraw-0.17.ebuild, ufraw-0.18.ebuild:

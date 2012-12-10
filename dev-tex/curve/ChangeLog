@@ -1,6 +1,19 @@
 # ChangeLog for dev-tex/curve
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/curve/ChangeLog,v 1.15 2011/06/27 14:46:50 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/curve/ChangeLog,v 1.19 2012/10/07 12:32:34 ago Exp $
+
+  07 Oct 2012; Agostino Sarubbo <ago@gentoo.org> -curve-1.15.ebuild,
+  -curve-1.7.ebuild:
+  Remove old
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> curve-1.16.ebuild:
+  Marking curve-1.16 ppc for bug 397013
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> curve-1.16.ebuild:
+  x86 stable wrt bug #397013
+
+  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> curve-1.16.ebuild:
+  Stable for amd64, wrt bug #397013
 
 *curve-1.16 (27 Jun 2011)
 
@@ -54,4 +67,3 @@
 
   16 Apr 2004; Lars Weiler <pylon@gentoo.org> curve-1.7.ebuild, metadata.xml:
   Initial commit of this package.
-

@@ -1,6 +1,57 @@
 # ChangeLog for media-libs/glew
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/glew/ChangeLog,v 1.67 2011/05/04 07:46:24 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/glew/ChangeLog,v 1.81 2012/09/29 13:56:28 grobian Exp $
+
+  29 Sep 2012; Fabian Groffen <grobian@gentoo.org> glew-1.9.0.ebuild:
+  Fix build of dylibs on Darwin, bug #433934, keyworded ~x{86,64}-macos
+
+*glew-1.9.0 (07 Aug 2012)
+
+  07 Aug 2012; Tim Harder <radhermit@gentoo.org> +glew-1.9.0.ebuild:
+  Version bump.
+
+*glew-1.8.0 (30 Jul 2012)
+
+  30 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +glew-1.8.0.ebuild:
+  Version bump.
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org> glew-1.7.0.ebuild:
+  build it the linux way (PIC and so on) on freebsd and keyword ~amd64-fbsd
+
+  15 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -glew-1.5.6.ebuild:
+  old
+
+  06 Jan 2012; Mark Loeser <halcy0n@gentoo.org> glew-1.6.0-r1.ebuild:
+  Stable for ppc/ppc64; bug #382497
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> glew-1.6.0-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #382497
+
+  05 Oct 2011; Jeroen Roovers <jer@gentoo.org> glew-1.6.0-r1.ebuild:
+  Stable for HPPA (bug #382497).
+
+*glew-1.7.0 (01 Oct 2011)
+
+  01 Oct 2011; Tim Harder <radhermit@gentoo.org> +glew-1.7.0.ebuild:
+  Version bump.
+
+  01 Oct 2011; Tim Harder <radhermit@gentoo.org> -glew-1.5.7-r1.ebuild,
+  -glew-1.5.8.ebuild, -glew-1.6.0.ebuild:
+  Remove old.
+
+  18 Sep 2011; Markus Meier <maekke@gentoo.org> glew-1.6.0-r1.ebuild:
+  x86 stable, bug #382497
+
+  18 Sep 2011; Markus Meier <maekke@gentoo.org> glew-1.6.0-r1.ebuild:
+  arm stable, bug #382497
+
+  13 Sep 2011; Markos Chandras <hwoarang@gentoo.org> glew-1.6.0-r1.ebuild:
+  Stable on amd64 wrt bug #382497
+
+*glew-1.6.0-r1 (09 Aug 2011)
+
+  09 Aug 2011; Tim Harder <radhermit@gentoo.org> +glew-1.6.0-r1.ebuild:
+  Install all utilities and libraries. Add doc and static-libs use flags.
 
 *glew-1.6.0 (04 May 2011)
 
@@ -241,4 +292,3 @@
   Initial import. Thanks to Derek Young, Vinicius Dias dos Santos, Philip
   Allison, Wojciech Milkowski, Robert Schuster, Charles Moad and Lawrence Lee
   for their ebuilds and testing.
-

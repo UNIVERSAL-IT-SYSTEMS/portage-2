@@ -1,6 +1,63 @@
 # ChangeLog for app-cdr/dvdisaster
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/dvdisaster/ChangeLog,v 1.14 2011/03/27 09:58:05 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/dvdisaster/ChangeLog,v 1.29 2012/09/26 11:11:08 ssuominen Exp $
+
+  26 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> dvdisaster-0.72.4.ebuild:
+  ppc stable wrt #428050
+
+  05 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> dvdisaster-0.72.4.ebuild:
+  Use full compiler name wrt #429928 by Julian Ospald
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> dvdisaster-0.72.4.ebuild:
+  Stable for amd64, wrt bug #428050
+
+  27 Jul 2012; Jeff Horelick <jdhore@gentoo.org> dvdisaster-0.72.4.ebuild:
+  marked x86 per bug 428050
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> dvdisaster-0.72.2.ebuild,
+  dvdisaster-0.72.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*dvdisaster-0.72.4 (26 Apr 2012)
+
+  26 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +dvdisaster-0.72.4.ebuild:
+  Version bump. This version is correctly including dev-libs/glib >= 2.31
+  header(s) wrt #413631. Thanks to Juergen Rose for reporting.
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  -dvdisaster-0.70.4.ebuild, -dvdisaster-0.72_rc1.ebuild,
+  -dvdisaster-0.72.1.ebuild, dvdisaster-0.72.2.ebuild:
+  ppc stable wrt #385787, drop old
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  dvdisaster-0.72.2.ebuild:
+  x86 stable wrt bug #385787
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> dvdisaster-0.72.2.ebuild:
+  amd64 stable wrt #385787
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> dvdisaster-0.72.2.ebuild:
+  Remove --debug which was only overriding flags from environment with -ggdb
+  wrt #385819 by Agostino Sarubbo
+
+  23 Sep 2011; Lars Wendler <polynomial-c@gentoo.org> dvdisaster-0.72.2.ebuild:
+  non-maintainer commit: Readded libpng15 patch. Moved ebuild back to EAPI-4.
+  Should fix bug #383491 reported by Jean-Francois Ostiguy.
+
+*dvdisaster-0.72.2 (16 Sep 2011)
+
+  16 Sep 2011; Steve Dibb <beandog@gentoo.org> +dvdisaster-0.72.2.ebuild:
+  Version bump
+
+  15 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> dvdisaster-0.72.1.ebuild,
+  +files/dvdisaster-0.72.1-libpng15.patch:
+  Fix building with libpng15 (missing zlib.h include) wrt #380139 by Diego Elio
+  Pettenò
+
+  21 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  dvdisaster-0.72.1.ebuild:
+  QA: add missing dependencies over libpng and zlib that it uses.
 
   27 Mar 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
   dvdisaster-0.70.4.ebuild:

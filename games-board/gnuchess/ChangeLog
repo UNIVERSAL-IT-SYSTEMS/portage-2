@@ -1,6 +1,28 @@
 # ChangeLog for games-board/gnuchess
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/gnuchess/ChangeLog,v 1.24 2011/03/24 18:12:49 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-board/gnuchess/ChangeLog,v 1.30 2012/09/30 18:03:12 armin76 Exp $
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> gnuchess-5.08.ebuild,
+  gnuchess-6.0.2.ebuild:
+  Drop alpha keywords
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> gnuchess-6.0.2.ebuild:
+  Marking gnuchess-6.0.2 ppc64 for bug 411767
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> gnuchess-6.0.2.ebuild:
+  Marking gnuchess-6.0.2 ppc for bug 411767
+
+  15 Apr 2012; Markus Meier <maekke@gentoo.org> gnuchess-6.0.2.ebuild:
+  x86 stable, bug #411767
+
+  14 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gnuchess-6.0.2.ebuild:
+  Stable for amd64, wrt bug #411767
+
+*gnuchess-6.0.2 (04 Mar 2012)
+
+  04 Mar 2012; Sebastian Pipping <sping@gentoo.org> +gnuchess-6.0.2.ebuild:
+  Bump to 6.0.2, install shipped book.bin as smallbook.bin so that
+  games-board/gnuchess-book can go to book.bin later
 
   24 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org> gnuchess-5.08.ebuild:
   ppc64 stable wrt #356481

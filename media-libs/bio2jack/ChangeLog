@@ -1,6 +1,30 @@
 # ChangeLog for media-libs/bio2jack
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/bio2jack/ChangeLog,v 1.37 2010/12/02 18:24:24 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/bio2jack/ChangeLog,v 1.45 2012/05/05 08:02:45 jdhore Exp $
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> bio2jack-0.9-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  20 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> bio2jack-0.9-r1.ebuild:
+  Missing dev-util/pkgconfig DEPEND.
+
+  20 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> bio2jack-0.9-r1.ebuild:
+  ppc/ppc64 stable wrt #389439
+
+  20 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> bio2jack-0.9-r1.ebuild:
+  Remove unnecessary libtool archive wrt #389439c2 by Agostino Sarubbo
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> bio2jack-0.9-r1.ebuild:
+  alpha/sparc stable wrt #389439
+
+  11 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> bio2jack-0.9-r1.ebuild:
+  x86 stable wrt bug #389439
+
+  10 Nov 2011; Jeroen Roovers <jer@gentoo.org> bio2jack-0.9-r1.ebuild:
+  Stable for HPPA (bug #389439).
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org> bio2jack-0.9-r1.ebuild:
+  Stable on amd64 wrt bug #389439
 
 *bio2jack-0.9-r1 (02 Dec 2010)
 

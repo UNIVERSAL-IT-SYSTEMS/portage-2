@@ -1,6 +1,57 @@
 # ChangeLog for sys-fs/dd-rescue
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/dd-rescue/ChangeLog,v 1.17 2010/11/19 18:53:47 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/dd-rescue/ChangeLog,v 1.30 2012/12/09 15:05:46 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> dd-rescue-1.28.ebuild:
+  Stable for ppc, wrt bug #441530
+
+  09 Dec 2012; Sergey Popov <pinkbyte@gentoo.org> dd-rescue-1.28.ebuild:
+  Stable on amd64, wrt bug #441530
+
+  02 Sep 2012; Raúl Porcel <armin76@gentoo.org> dd-rescue-1.25.ebuild,
+  dd-rescue-1.28.ebuild:
+  Remanifest
+
+  02 Sep 2012; Raúl Porcel <armin76@gentoo.org> dd-rescue-1.10.ebuild,
+  dd-rescue-1.24.ebuild:
+  Move to ~sparc
+
+*dd-rescue-1.28 (28 Aug 2012)
+
+  28 Aug 2012; Tim Harder <radhermit@gentoo.org> +dd-rescue-1.28.ebuild:
+  Version bump.
+
+  10 Aug 2012; Johannes Huber <johu@gentoo.org> dd-rescue-1.25.ebuild:
+  Stable for x86, wrt bug #422209
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> dd-rescue-1.25.ebuild:
+  Marking dd-rescue-1.25 ppc for bug 422209
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> dd-rescue-1.25.ebuild:
+  Stable on amd64 wrt bug #422209
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> dd-rescue-1.10.ebuild,
+  dd-rescue-1.24.ebuild, dd-rescue-1.25.ebuild:
+  Inherit flag-o-matic for append-ldflags, and use that rather than append-
+  flags.
+
+  04 Feb 2012; Tim Harder <radhermit@gentoo.org>
+  -files/dd-rescue-1.14-ldflags.patch:
+  Remove old patch.
+
+  04 Feb 2012; Tim Harder <radhermit@gentoo.org> -dd-rescue-1.14-r1.ebuild,
+  -dd-rescue-1.23.ebuild:
+  Remove old.
+
+*dd-rescue-1.25 (04 Feb 2012)
+
+  04 Feb 2012; Tim Harder <radhermit@gentoo.org> +dd-rescue-1.25.ebuild:
+  Version bump.
+
+*dd-rescue-1.24 (05 Dec 2011)
+
+  05 Dec 2011; Tim Harder <radhermit@gentoo.org> +dd-rescue-1.24.ebuild:
+  Version bump. Update to EAPI 4.
 
   19 Nov 2010; Justin Lecher <jlec@gentoo.org> dd-rescue-1.23.ebuild:
   Import Prefix Changes

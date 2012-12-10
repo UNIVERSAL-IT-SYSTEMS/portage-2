@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/mysql-cmake.eclass,v 1.1 2011/07/13 07:07:15 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/mysql-cmake.eclass,v 1.10 2012/11/01 23:57:50 robbat2 Exp $
 
 # @ECLASS: mysql-cmake.eclass
 # @MAINTAINER:
@@ -15,7 +15,7 @@
 # the src_unpack, src_prepare, src_configure, src_compile, scr_install,
 # pkg_preinst, pkg_postinst, pkg_config and pkg_postrm phase hooks.
 
-inherit cmake-utils
+inherit cmake-utils flag-o-matic multilib
 
 #
 # HELPER FUNCTIONS:
@@ -26,28 +26,43 @@ inherit cmake-utils
 # Helper function to disable specific tests.
 mysql-cmake_disable_test() {
 
-	local rawtestname testname testsuite reason mysql_disable_file
+	local rawtestname testname testsuite reason mysql_disabled_file mysql_disabled_dir
 	rawtestname="${1}" ; shift
 	reason="${@}"
 	ewarn "test '${rawtestname}' disabled: '${reason}'"
 
 	testsuite="${rawtestname/.*}"
 	testname="${rawtestname/*.}"
-	mysql_disable_file="${S}/mysql-test/t/disabled.def"
+	for mysql_disabled_file in \
+		${S}/mysql-test/disabled.def  \
+		${S}/mysql-test/t/disabled.def ; do
+		[ -f "${mysql_disabled_file}" ] && break
+	done
+	#mysql_disabled_file="${S}/mysql-test/t/disabled.def"
 	#einfo "rawtestname=${rawtestname} testname=${testname} testsuite=${testsuite}"
-	echo ${testname} : ${reason} >> "${mysql_disable_file}"
+	echo ${testname} : ${reason} >> "${mysql_disabled_file}"
 
-	if [ -n "${testsuite}" ]; then
-		for mysql_disable_file in \
+	if [ -n "${testsuite}" ] && [ "${testsuite}" != "main" ]; then
+		for mysql_disabled_file in \
 			${S}/mysql-test/suite/${testsuite}/disabled.def  \
 			${S}/mysql-test/suite/${testsuite}/t/disabled.def  \
 			FAILED ; do
-			[ -f "${mysql_disable_file}" ] && break
+			[ -f "${mysql_disabled_file}" ] && break
 		done
 		if [ "${mysql_disabled_file}" != "FAILED" ]; then
-			echo "${testname} : ${reason}" >> "${mysql_disable_file}"
+			echo "${testname} : ${reason}" >> "${mysql_disabled_file}"
 		else
-			ewarn "Could not find testsuite disabled.def location for ${rawtestname}"
+			for mysql_disabled_dir in \
+				${S}/mysql-test/suite/${testsuite} \
+				${S}/mysql-test/suite/${testsuite}/t  \
+				FAILED ; do
+				[ -d "${mysql_disabled_dir}" ] && break
+			done
+			if [ "${mysql_disabled_dir}" != "FAILED" ]; then
+				echo "${testname} : ${reason}" >> "${mysql_disabled_dir}/disabled.def"
+			else
+				ewarn "Could not find testsuite disabled.def location for ${rawtestname}"
+			fi
 		fi
 	fi
 }
@@ -117,28 +132,32 @@ configure_cmake_standard() {
 		-DENABLED_LOCAL_INFILE=1
 		-DEXTRA_CHARSETS=all
 		-DMYSQL_USER=mysql
-		-DMYSQL_UNIX_ADDR=/var/run/mysqld/mysqld.sock
+		-DMYSQL_UNIX_ADDR=${EPREFIX}/var/run/mysqld/mysqld.sock
 		-DWITHOUT_READLINE=1
 		-DWITH_ZLIB=system
 		-DWITHOUT_LIBWRAP=1
 	)
 
-	if use static ; then
-		mycmakeargs+=( -DDISABLE_SHARED=1 )
-	else
-		mycmakeargs+=( -DDISABLED_SHARED=0 )
-	fi
-
 	mycmakeargs+=(
+		$(cmake-utils_use_disable !static SHARED)
 		$(cmake-utils_use_with debug)
 		$(cmake-utils_use_with embedded EMBEDDED_SERVER)
 		$(cmake-utils_use_with profiling)
+		$(cmake-utils_use_enable systemtap DTRACE)
 	)
 
 	if use ssl; then
 		mycmakeargs+=( -DWITH_SSL=system )
 	else
 		mycmakeargs+=( -DWITH_SSL=0 )
+	fi
+
+	if mysql_version_is_at_least "5.5" && use jemalloc; then
+		mycmakeargs+=( -DCMAKE_EXE_LINKER_FLAGS='-ljemalloc' -DWITH_SAFEMALLOC=OFF )
+	fi
+
+	if mysql_version_is_at_least "5.5" && use tcmalloc; then
+		mycmakeargs+=( -DCMAKE_EXE_LINKER_FLAGS='-ltcmalloc' -DWITH_SAFEMALLOC=OFF )
 	fi
 
 	# Storage engines
@@ -153,6 +172,18 @@ configure_cmake_standard() {
 		-DWITH_PARTITION_STORAGE_ENGINE=1
 		$(cmake-utils_use_with extraengine FEDERATED_STORAGE_ENGINE)
 	)
+
+	if pbxt_available ; then
+		mycmakeargs+=( $(cmake-utils_use_with pbxt PBXT_STORAGE_ENGINE) )
+	fi
+
+	if [ "${PN}" == "mariadb" ]; then
+		mycmakeargs+=(
+			$(cmake-utils_use_with oqgraph OQGRAPH_STORAGE_ENGINE)
+			$(cmake-utils_use_with sphinx SPHINX_STORAGE_ENGINE)
+			$(cmake-utils_use_with extraengine FEDERATEDX_STORAGE_ENGINE)
+		)
+	fi
 }
 
 #
@@ -192,10 +223,12 @@ mysql-cmake_src_configure() {
 
 	debug-print-function ${FUNCNAME} "$@"
 
+	CMAKE_BUILD_TYPE="RelWithDebInfo"
+
 	mycmakeargs=(
-		-DCMAKE_INSTALL_PREFIX=/usr
-		-DMYSQL_DATADIR=/var/lib/mysql
-		-DSYSCONFDIR=/etc/mysql
+		-DCMAKE_INSTALL_PREFIX=${EPREFIX}/usr
+		-DMYSQL_DATADIR=${EPREFIX}/var/lib/mysql
+		-DSYSCONFDIR=${EPREFIX}/etc/mysql
 		-DINSTALL_BINDIR=bin
 		-DINSTALL_DOCDIR=share/doc/${P}
 		-DINSTALL_DOCREADMEDIR=share/doc/${P}
@@ -203,17 +236,24 @@ mysql-cmake_src_configure() {
 		-DINSTALL_INFODIR=share/info
 		-DINSTALL_LIBDIR=$(get_libdir)/mysql
 		-DINSTALL_MANDIR=share/man
-		-DINSTALL_MYSQLDATADIR=/var/lib/mysql
+		-DINSTALL_MYSQLDATADIR=${EPREFIX}/var/lib/mysql
 		-DINSTALL_MYSQLSHAREDIR=share/mysql
 		-DINSTALL_MYSQLTESTDIR=share/mysql/mysql-test
 		-DINSTALL_PLUGINDIR=$(get_libdir)/mysql/plugin
 		-DINSTALL_SBINDIR=sbin
 		-DINSTALL_SCRIPTDIR=share/mysql/scripts
 		-DINSTALL_SQLBENCHDIR=share/mysql
-		-DINSTALL_SUPPORTFILESDIR=/usr/share/mysql
+		-DINSTALL_SUPPORTFILESDIR=${EPREFIX}/usr/share/mysql
 		-DWITH_COMMENT="Gentoo Linux ${PF}"
 		-DWITHOUT_UNIT_TESTS=1
 	)
+
+	# Bug 412851
+	# MariaDB requires this flag to compile with GPLv3 readline linked
+	# Adds a warning about redistribution to configure
+	if [[ "${PN}" == "mariadb" ]] ; then
+		mycmakeargs+=( -DNOT_FOR_DISTRIBUTION=1 )
+	fi
 
 	configure_cmake_locale
 
@@ -266,7 +306,7 @@ mysql-cmake_src_install() {
 	dosym "/usr/bin/mysqlcheck" "/usr/bin/mysqloptimize"
 
 	# INSTALL_LAYOUT=STANDALONE causes cmake to create a /usr/data dir
-	rm -Rf "${D}/usr/data"
+	rm -Rf "${ED}/usr/data"
 
 	# Various junk (my-*.cnf moved elsewhere)
 	einfo "Removing duplicate /usr/share/mysql files"
@@ -275,8 +315,8 @@ mysql-cmake_src_install() {
 #	if use minimal ; then
 #		einfo "Remove all extra content for minimal build"
 #		rm -Rf "${D}${MY_SHAREDSTATEDIR}"/{mysql-test,sql-bench}
-#		rm -f "${D}"/usr/bin/{mysql{_install_db,manager*,_secure_installation,_fix_privilege_tables,hotcopy,_convert_table_format,d_multi,_fix_extensions,_zap,_explain_log,_tableinfo,d_safe,_install,_waitpid,binlog,test},myisam*,isam*,pack_isam}
-#		rm -f "${D}/usr/sbin/mysqld"
+#		rm -f "${ED}"/usr/bin/{mysql{_install_db,manager*,_secure_installation,_fix_privilege_tables,hotcopy,_convert_table_format,d_multi,_fix_extensions,_zap,_explain_log,_tableinfo,d_safe,_install,_waitpid,binlog,test},myisam*,isam*,pack_isam}
+#		rm -f "${ED}/usr/sbin/mysqld"
 #		rm -f "${D}${MY_LIBDIR}"/lib{heap,merge,nisam,my{sys,strings,sqld,isammrg,isam},vio,dbug}.a
 #	fi
 
@@ -311,16 +351,16 @@ mysql-cmake_src_install() {
 		# Empty directories ...
 		diropts "-m0750"
 		if [[ "${PREVIOUS_DATADIR}" != "yes" ]] ; then
-			dodir "${MY_DATADIR}"
-			keepdir "${MY_DATADIR}"
+			dodir "${MY_DATADIR#${EPREFIX}}"
+			keepdir "${MY_DATADIR#${EPREFIX}}"
 			chown -R mysql:mysql "${D}/${MY_DATADIR}"
 		fi
 
 		diropts "-m0755"
-		for folder in "${MY_LOGDIR}" "/var/run/mysqld" ; do
+		for folder in "${MY_LOGDIR#${EPREFIX}}" "/var/run/mysqld" ; do
 			dodir "${folder}"
 			keepdir "${folder}"
-			chown -R mysql:mysql "${D}/${folder}"
+			chown -R mysql:mysql "${ED}/${folder}"
 		done
 	fi
 
@@ -343,5 +383,5 @@ mysql-cmake_src_install() {
 
 	fi
 
-	mysql_lib_symlinks "${D}"
+	mysql_lib_symlinks "${ED}"
 }

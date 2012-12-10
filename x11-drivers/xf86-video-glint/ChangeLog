@@ -1,6 +1,61 @@
 # ChangeLog for x11-drivers/xf86-video-glint
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-glint/ChangeLog,v 1.51 2011/02/14 23:56:23 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-glint/ChangeLog,v 1.66 2012/11/28 21:38:07 ranger Exp $
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> xf86-video-glint-1.2.8.ebuild:
+  Marking xf86-video-glint-1.2.8 ppc stable for bug 440872
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-glint-1.2.8.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-glint-1.2.8.ebuild:
+  Stable for amd64, wrt bug #440872
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> xf86-video-glint-1.2.7.ebuild:
+  alpha/ia64/sparc stable wrt #419473
+
+*xf86-video-glint-1.2.8 (21 Jul 2012)
+
+  21 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-glint-1.2.8.ebuild:
+  Version bump.
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> xf86-video-glint-1.2.7.ebuild:
+  Marking xf86-video-glint-1.2.7 ppc stable for bug 419473
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-glint-1.2.7.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> xf86-video-glint-1.2.7.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org>
+  xf86-video-glint-1.2.7.ebuild:
+  keyword ~amd64-fbsd (compile tested only)
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> xf86-video-glint-1.2.6.ebuild:
+  alpha/ia64/sparc stable wrt #394393
+
+*xf86-video-glint-1.2.7 (16 Feb 2012)
+
+  16 Feb 2012; Matt Turner <mattst88@gentoo.org>
+  +xf86-video-glint-1.2.7.ebuild:
+  Version bump.
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> xf86-video-glint-1.2.6.ebuild:
+  Marking xf86-video-glint-1.2.6 ppc stable for bug 394393
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> xf86-video-glint-1.2.6.ebuild:
+  x86 stable, bug #394393
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> xf86-video-glint-1.2.6.ebuild:
+  Stable for AMD64, wrt bug #394393
+
+*xf86-video-glint-1.2.6 (06 Sep 2011)
+
+  06 Sep 2011; Matt Turner <mattst88@gentoo.org>
+  +xf86-video-glint-1.2.6.ebuild:
+  Version bump.
 
   14 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org>
   xf86-video-glint-1.2.5.ebuild:
@@ -229,4 +284,3 @@
   08 Aug 2005; Donnie Berkholz <dberkholz@gentoo.org>;
   +xf86-video-glint-1.0.0.ebuild:
   Initial commit for modular X.
-

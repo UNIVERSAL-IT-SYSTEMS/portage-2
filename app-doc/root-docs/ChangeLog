@@ -1,6 +1,89 @@
 # ChangeLog for app-doc/root-docs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/root-docs/ChangeLog,v 1.17 2011/05/17 17:51:07 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-doc/root-docs/ChangeLog,v 1.26 2012/10/26 15:39:53 bicatali Exp $
+
+*root-docs-5.34.03 (25 Oct 2012)
+
+  25 Oct 2012; Andrew Savchenko <bircoph@gmail.com> -root-docs-5.34.02.ebuild,
+  +root-docs-5.34.03.ebuild:
+  Version bump.
+
+*root-docs-5.34.02 (19 Oct 2012)
+*root-docs-5.32.04 (19 Oct 2012)
+
+  19 Oct 2012; Andrew Savchenko <bircoph@gmail.com> +root-docs-5.32.04.ebuild,
+  +files/root-docs-5.32-makehtml.patch, +root-docs-5.34.02.ebuild:
+  Version bump for patch releases in 5.32 and 5.34 branches.
+
+*root-docs-5.34.01 (22 Jul 2012)
+
+  22 Jul 2012; Andrew Savchenko <bircoph@gmail.com> +root-docs-5.34.01.ebuild,
+  +files/root-docs-5.34.01-makehtml.patch, root-docs-9999.ebuild,
+  -files/root-docs-9999-makehtml.patch:
+  Version bump.
+
+  15 Jul 2012; Justin Lecher <jlec@gentoo.org> -root-docs-5.26.00.ebuild,
+  -root-docs-5.28-r1.ebuild:
+  Cleaned old
+
+  14 Jul 2012; Jeff Horelick <jdhore@gentoo.org> root-docs-5.32.03.ebuild:
+  marked x86 per bug 424745
+
+  09 Jul 2012; Agostino Sarubbo <ago@gentoo.org> root-docs-5.32.03.ebuild:
+  Stable for amd64, wrt bug #424745
+
+  06 Jul 2012; Justin Lecher <jlec@gentoo.org> root-docs-5.32.03.ebuild,
+  metadata.xml:
+  Imported fix from sci overlay
+
+  27 Jun 2012; Sebastien Fabbro <fabbros@gentoo.org> root-docs-5.34.00.ebuild:
+  import to the main tree. keyword ~amd64-linux and ~x86-linux. cleaning
+
+  27 Jun 2012; Sebastien Fabbro <fabbros@gentoo.org> -root-docs-5.32.ebuild,
+  +root-docs-5.32.03.ebuild, +files/root-docs-5.32-makehtml.patch,
+  +root-docs-5.34.00.ebuild, +files/root-docs-5.34-makehtml.patch,
+  metadata.xml:
+  import to the main tree. keyword ~amd64-linux and ~x86-linux. cleaning
+
+*root-docs-5.32.03 (20 Jun 2012)
+
+  20 Jun 2012; Andrew Savchenko <bircoph@gmail.com> -root-docs-5.32.ebuild,
+  +root-docs-5.32.03.ebuild, +files/root-docs-5.32-makehtml.patch:
+  Backport htmldoc generation fixes for 5.32 branch.
+
+*root-docs-5.34.00 (19 Jun 2012)
+
+  19 Jun 2012; Andrew Savchenko <bircoph@gmail.com> +root-docs-5.34.00.ebuild:
+  Version bump based on live ebuild.
+
+*root-docs-9999 (19 Jun 2012)
+
+  19 Jun 2012; Andrew Savchenko <bircoph@gmail.com>
+  +files/root-docs-5.34-makehtml.patch, +root-docs-9999.ebuild:
+  htmldoc generation for root must be separated, because it is
+  supposed to be run only root was installed to the live
+  filesystem. It can't be faked easily in the sandbox environment,
+  because ROOTSYS is not respected when --prefix or --*dir are
+  used for configure script.
+
+*root-docs-5.32 (13 Mar 2012)
+
+  13 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> +root-docs-5.32.ebuild:
+  Import to the main tree.
+
+*root-docs-5.32 (03 Dec 2011)
+
+  03 Dec 2011; Andrew Savchenko <bircoph@gmail.com> -root-docs-5.30.ebuild,
+  +root-docs-5.32.ebuild:
+  Version bump.
+  Remove useless html/html32/ patch chunk, thus html files will be
+  installed directly into /usr/share/doc/${PF}/.
+
+*root-docs-5.30 (02 Aug 2011)
+
+  02 Aug 2011; Andrew Savchenko <bircoph@gmail.com> +root-docs-5.30.ebuild,
+  +metadata.xml:
+  Version bump.
 
 *root-docs-5.28-r1 (17 May 2011)
 

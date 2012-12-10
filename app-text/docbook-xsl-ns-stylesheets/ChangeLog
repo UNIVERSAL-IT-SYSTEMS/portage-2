@@ -1,6 +1,78 @@
 # ChangeLog for app-text/docbook-xsl-ns-stylesheets
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/docbook-xsl-ns-stylesheets/ChangeLog,v 1.22 2011/02/19 20:55:49 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/docbook-xsl-ns-stylesheets/ChangeLog,v 1.38 2012/09/15 18:49:12 armin76 Exp $
+
+  15 Sep 2012; Raúl Porcel <armin76@gentoo.org>
+  docbook-xsl-ns-stylesheets-1.77.1-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #433193
+
+  12 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  docbook-xsl-ns-stylesheets-1.77.1-r1.ebuild:
+  stable arm, bug #433193
+
+  12 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  docbook-xsl-ns-stylesheets-1.77.1-r1.ebuild:
+  stable ppc ppc64, bug #433193
+
+  07 Sep 2012; Johannes Huber <johu@gentoo.org>
+  docbook-xsl-ns-stylesheets-1.77.1-r1.ebuild:
+  Stable for x86, wrt bug #433193
+
+  06 Sep 2012; Jeroen Roovers <jer@gentoo.org>
+  docbook-xsl-ns-stylesheets-1.77.1-r1.ebuild:
+  Stable for HPPA (bug #433193).
+
+  06 Sep 2012; Agostino Sarubbo <ago@gentoo.org>
+  docbook-xsl-ns-stylesheets-1.77.1-r1.ebuild:
+  Stable for amd64, wrt bug #433193
+
+  29 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  -docbook-xsl-ns-stylesheets-1.75.2.ebuild,
+  -docbook-xsl-ns-stylesheets-1.77.0.ebuild:
+  Remove old.
+
+*docbook-xsl-ns-stylesheets-1.77.1-r1 (03 Jul 2012)
+
+  03 Jul 2012; Mike Gilbert <floppym@gentoo.org>
+  +docbook-xsl-ns-stylesheets-1.77.1-r1.ebuild,
+  -docbook-xsl-ns-stylesheets-1.77.1.ebuild:
+  Install VERSION.xsl.
+
+*docbook-xsl-ns-stylesheets-1.77.1 (03 Jul 2012)
+
+  03 Jul 2012; Mike Gilbert <floppym@gentoo.org>
+  +docbook-xsl-ns-stylesheets-1.77.1.ebuild:
+  Version bump for bug 423861.
+
+*docbook-xsl-ns-stylesheets-1.77.0 (23 May 2012)
+
+  23 May 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +docbook-xsl-ns-stylesheets-1.77.0.ebuild, metadata.xml:
+  Version bump; add a ruby USE flag to install dbtoepub script (or remove it).
+
+  02 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  docbook-xsl-ns-stylesheets-1.76.1.ebuild:
+  ppc/ppc64 stable wrt #388277
+
+  04 Dec 2011; Markos Chandras <hwoarang@gentoo.org>
+  docbook-xsl-ns-stylesheets-1.76.1.ebuild:
+  Stable on amd64 wrt bug #388277
+
+  26 Nov 2011; Raúl Porcel <armin76@gentoo.org>
+  docbook-xsl-ns-stylesheets-1.76.1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #388277
+
+  05 Nov 2011; Markus Meier <maekke@gentoo.org>
+  docbook-xsl-ns-stylesheets-1.76.1.ebuild:
+  arm stable, bug #388277
+
+  28 Oct 2011; Jeroen Roovers <jer@gentoo.org>
+  docbook-xsl-ns-stylesheets-1.76.1.ebuild:
+  Stable for HPPA (bug #388277).
+
+  25 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  docbook-xsl-ns-stylesheets-1.76.1.ebuild:
+  x86 stable wrt bug #388277
 
 *docbook-xsl-ns-stylesheets-1.76.1 (19 Feb 2011)
 
@@ -112,4 +184,3 @@
   22 Sep 2008; Diego Pettenò <flameeyes@gentoo.org> +metadata.xml,
   +docbook-xsl-ns-stylesheets-1.74.0.ebuild:
   Initial import of XSL-NS stylesheets for use with DocBook 5.
-

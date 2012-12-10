@@ -1,6 +1,114 @@
 # ChangeLog for dev-libs/xapian
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/xapian/ChangeLog,v 1.60 2011/07/01 21:26:35 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/xapian/ChangeLog,v 1.88 2012/10/02 22:46:46 blueness Exp $
+
+  02 Oct 2012; Anthony G. Basile <blueness@gentoo.org> -xapian-1.2.10.ebuild,
+  -xapian-1.2.5.ebuild, -xapian-1.2.8.ebuild, -xapian-1.2.9.ebuild:
+  Remove older versions
+
+  19 Sep 2012; Johannes Huber <johu@gentoo.org> xapian-1.2.12.ebuild:
+  Stable for x86, wrt bug #434564
+
+  16 Sep 2012; Anthony G. Basile <blueness@gentoo.org> xapian-1.2.12.ebuild:
+  Stable ppc64, bug #434564
+
+  16 Sep 2012; Anthony G. Basile <blueness@gentoo.org> xapian-1.2.12.ebuild:
+  Stable arm, bug #434564
+
+  16 Sep 2012; Anthony G. Basile <blueness@gentoo.org> xapian-1.2.12.ebuild:
+  Stable ppc, bug #434564
+
+  15 Sep 2012; Agostino Sarubbo <ago@gentoo.org> xapian-1.2.12.ebuild:
+  Stable for amd64, wrt bug #434564
+
+  10 Sep 2012; Anthony G. Basile <blueness@gentoo.org> xapian-1.2.12.ebuild:
+  Drop USE='flint remote', bug #433611
+
+  18 Jul 2012; Anthony G. Basile <blueness@gentoo.org> xapian-1.2.12.ebuild:
+  Keyword ~arm
+
+  18 Jul 2012; Anthony G. Basile <blueness@gentoo.org> xapian-1.2.12.ebuild:
+  Keyword ~mips
+
+*xapian-1.2.12 (28 Jun 2012)
+
+  28 Jun 2012; Anthony G. Basile <blueness@gentoo.org> -xapian-1.2.11.ebuild,
+  +xapian-1.2.12.ebuild:
+  Version bump fixes broken SONAME in 1.2.11
+
+*xapian-1.2.11 (28 Jun 2012)
+
+  28 Jun 2012; Anthony G. Basile <blueness@gentoo.org> +xapian-1.2.11.ebuild:
+  Version bump
+
+*xapian-1.2.10 (10 May 2012)
+
+  10 May 2012; Anthony G. Basile <blueness@gentoo.org> +xapian-1.2.10.ebuild:
+  Version bump
+
+  15 Mar 2012; Anthony G. Basile <blueness@gentoo.org> xapian-1.2.5.ebuild:
+  Drop keywords in favor of newer stable ebuild
+
+  15 Mar 2012; Anthony G. Basile <blueness@gentoo.org> -xapian-1.2.7-r1.ebuild,
+  -xapian-1.2.7-r3.ebuild:
+  Remove buggy unstable version
+
+  14 Mar 2012; Anthony G. Basile <blueness@gentoo.org> xapian-1.2.9.ebuild:
+  Tested on ppc/ppc64
+
+*xapian-1.2.9 (13 Mar 2012)
+
+  13 Mar 2012; Anthony G. Basile <blueness@gentoo.org> +xapian-1.2.9.ebuild:
+  Version bump
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xapian-1.2.8.ebuild:
+  x86 stable wrt bug #402185
+
+  05 Feb 2012; Anthony G. Basile <blueness@gentoo.org> xapian-1.2.8.ebuild:
+  Added DEPEND on zlib, bug #402185
+
+  05 Feb 2012; Agostino Sarubbo <ago@gentoo.org> xapian-1.2.8.ebuild:
+  Stable for amd64, wrt bug #402185
+
+  14 Dec 2011; Anthony G. Basile <blueness@gentoo.org> xapian-1.2.8.ebuild:
+  Restored libxapian.la, needed for xapian-bindings' xapian-config, thanks
+  Arfrever
+
+*xapian-1.2.8 (14 Dec 2011)
+
+  14 Dec 2011; Anthony G. Basile <blueness@gentoo.org> +xapian-1.2.8.ebuild:
+  Version bump, bug #394413
+
+  07 Nov 2011; Anthony G. Basile <blueness@gentoo.org> -xapian-1.2.7-r2.ebuild,
+  metadata.xml:
+  Removed version with bloated use flags
+
+*xapian-1.2.7-r3 (06 Nov 2011)
+
+  06 Nov 2011; Anthony G. Basile <blueness@gentoo.org> +xapian-1.2.7-r3.ebuild:
+  Economize on sse/sse2 USE flags, eliminate nosse flag
+
+*xapian-1.2.7-r2 (27 Oct 2011)
+
+  27 Oct 2011; Anthony G. Basile <blueness@gentoo.org> +xapian-1.2.7-r2.ebuild:
+  Add USE flags for configure options, bug #388677
+
+  18 Sep 2011; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
+  Added no-herd to metadata.xml
+
+*xapian-1.2.7-r1 (16 Sep 2011)
+
+  16 Sep 2011; Anthony G. Basile <blueness@gentoo.org> -xapian-1.2.7.ebuild,
+  +xapian-1.2.7-r1.ebuild:
+  Fix USE="doc", bug #383001
+
+  15 Sep 2011; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
+  Added myself and Johan Bergström as maintainers
+
+*xapian-1.2.7 (15 Sep 2011)
+
+  15 Sep 2011; Anthony G. Basile <blueness@gentoo.org> +xapian-1.2.7.ebuild:
+  Version bump, bug #383001
 
   01 Jul 2011; Markos Chandras <hwoarang@gentoo.org> -xapian-1.2.4.ebuild:
   Remove old ebuilds. Requested by Arfrever

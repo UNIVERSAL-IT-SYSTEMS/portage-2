@@ -7,14 +7,15 @@
 		<name>Maciej Mrozowski</name>
 	</maintainer>
 	<maintainer>
-		<email>ago@autistici.org</email>
+		<email>ago@gentoo.org</email>
 		<name>Agostino Sarubbo</name>
 		<description>Please CC on bugs</description>
 	</maintainer>
 	<use>
 		<flag name="gadu">Enables Gadu communication protocol</flag>
+		<flag name="mpd">Enables Music Player Daemon support</flag>
 		<flag name="phonon">Enables phonon audio plugin</flag>
+		<flag name="sdk">Install Kadu SDK (cmake module, API headers)</flag>
 		<flag name="speech">Enables speech module</flag>
-		<!-- <flag name="tlen">Enables Tlen.pl communication protocol</flag> -->
 	</use>
 </pkgmetadata>

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/chrony/chrony-1.26.ebuild,v 1.1 2011/07/15 04:05:23 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/chrony/chrony-1.26.ebuild,v 1.7 2012/04/11 21:38:59 jer Exp $
 
 EAPI=2
 
@@ -12,7 +12,7 @@ SRC_URI="http://download.tuxfamily.org/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~mips ~ppc ~sparc ~x86"
+KEYWORDS="amd64 hppa ~mips ppc sparc x86"
 IUSE="caps readline"
 
 RDEPEND="
@@ -39,6 +39,7 @@ src_configure() {
 		--infodir=/usr/share/info \
 		--mandir=/usr/share/man \
 		--docdir=/usr/share/doc/${PF} \
+		--without-tomcrypt \
 		${myconf} ${EXTRA_ECONF} || die "configure failed"
 }
 

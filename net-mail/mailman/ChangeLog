@@ -1,6 +1,47 @@
 # ChangeLog for net-mail/mailman
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/mailman/ChangeLog,v 1.127 2010/10/15 12:49:32 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-mail/mailman/ChangeLog,v 1.135 2012/08/26 16:01:17 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> mailman-2.1.14.ebuild,
+  mailman-2.1.15.ebuild:
+  Drop sparc keywords
+
+  21 Aug 2012; Johannes Huber <johu@gentoo.org> mailman-2.1.15.ebuild:
+  Stable for x86, wrt bug #372901
+
+  21 Aug 2012; Michael Weber <xmw@gentoo.org> mailman-2.1.15.ebuild:
+  ppc stable (372901)
+
+  18 Aug 2012; Agostino Sarubbo <ago@gentoo.org> mailman-2.1.15.ebuild:
+  Stable for amd64, wrt bug #372901
+
+  15 Aug 2012; Hanno Boeck <hanno@gentoo.org> -files/50_mailman.conf,
+  -files/mailman-2.1.8_rc1-directory-check.patch, -mailman-2.1.9-r3.ebuild,
+  -files/mailman-2.1.9-fix-XSS.patch, -mailman-2.1.11.ebuild,
+  -mailman-2.1.12.ebuild, -files/mailman-2.1.12-add-destdir.patch,
+  -files/mailman-2.1.12-directory-check.patch, -mailman-2.1.13.ebuild,
+  -mailman-2.1.14_rc1.ebuild, mailman-2.1.15.ebuild, -files/README.gentoo-r2,
+  -files/mailman.conf:
+  Remove old.
+
+  15 Aug 2012; Hanno Boeck <hanno@gentoo.org> mailman-2.1.15.ebuild:
+  Remove ebeep (#431516).
+
+*mailman-2.1.15 (08 Aug 2012)
+
+  08 Aug 2012; Hanno Boeck <hanno@gentoo.org> +mailman-2.1.15.ebuild:
+  Version bump (fixes CVE-2011-0707), explicitely set python 2, port to EAPI 4.
+
+  02 Nov 2011; Mike Frysinger <vapier@gentoo.org> mailman-2.1.9-r3.ebuild,
+  mailman-2.1.11.ebuild, mailman-2.1.12.ebuild, mailman-2.1.13.ebuild,
+  mailman-2.1.14_rc1.ebuild, mailman-2.1.14.ebuild:
+  Fold extra -G argument to enewuser into existing <groups> argument to
+  enewuser as enewuser takes care of splitting into -g/-G for us.
+
+  02 Nov 2011; Mike Frysinger <vapier@gentoo.org> mailman-2.1.9-r3.ebuild,
+  mailman-2.1.11.ebuild, mailman-2.1.12.ebuild, mailman-2.1.13.ebuild,
+  mailman-2.1.14_rc1.ebuild, mailman-2.1.14.ebuild:
+  Drop superfluous -c usage.
 
   15 Oct 2010; Brent Baude <ranger@gentoo.org> mailman-2.1.14.ebuild:
   Marking mailman-2.1.14 ppc for bug 337095
@@ -477,4 +518,3 @@
   files/README.gentoo :
 
   Brand new package, based on submission by Joby Walker
-

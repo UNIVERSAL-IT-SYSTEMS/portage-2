@@ -1,6 +1,44 @@
 # ChangeLog for media-libs/vo-amrwbenc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/vo-amrwbenc/ChangeLog,v 1.14 2011/07/23 16:21:46 lu_zero Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/vo-amrwbenc/ChangeLog,v 1.25 2012/11/16 19:58:21 ago Exp $
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> vo-amrwbenc-0.1.0.ebuild,
+  vo-amrwbenc-0.1.1.ebuild, vo-amrwbenc-0.1.2.ebuild:
+  workaround for bug 399061
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> vo-amrwbenc-0.1.2.ebuild:
+  ppc stable (bug 414769).
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> vo-amrwbenc-0.1.2.ebuild:
+  alpha/ia64/sparc stable wrt #414769
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> vo-amrwbenc-0.1.2.ebuild:
+  Marking vo-amrwbenc-0.1.2 ppc64 for bug 414769
+
+  21 Jun 2012; Jeroen Roovers <jer@gentoo.org> vo-amrwbenc-0.1.2.ebuild:
+  Stable for HPPA (bug #414769).
+
+  19 Jun 2012; Jeff Horelick <jdhore@gentoo.org> vo-amrwbenc-0.1.2.ebuild:
+  marked x86 per bug 414769
+
+  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> vo-amrwbenc-0.1.2.ebuild:
+  Stable for amd64, wrt bug #414769
+
+  14 Jun 2012; Agostino Sarubbo <ago@gentoo.org> vo-amrwbenc-0.1.1.ebuild:
+  stable for amd64
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> vo-amrwbenc-0.1.2.ebuild,
+  vo-amrwbenc-9999.ebuild:
+  keyword ~amd64-fbsd
+
+*vo-amrwbenc-0.1.2 (20 Feb 2012)
+
+  20 Feb 2012; Alexis Ballier <aballier@gentoo.org> +vo-amrwbenc-0.1.2.ebuild,
+  vo-amrwbenc-9999.ebuild:
+  version bump and make 9999 ekeyword friendly too
+
+  10 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> vo-amrwbenc-0.1.1.ebuild:
+  ppc64/ppc stable to lift mask from bug 365273
 
   23 Jul 2011; Luca Barbato <lu_zero@gentoo.org> vo-amrwbenc-0.1.1.ebuild:
   mark as ~ppc64 ~ppc
@@ -55,4 +93,3 @@
   29 Mar 2011; Luca Barbato <lu_zero@gentoo.org> +metadata.xml,
   +vo-amrwbenc-9999.ebuild:
   Initial ebuild
-

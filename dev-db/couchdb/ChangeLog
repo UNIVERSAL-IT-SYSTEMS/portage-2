@@ -1,6 +1,51 @@
 # ChangeLog for dev-db/couchdb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/couchdb/ChangeLog,v 1.49 2011/06/06 13:02:13 djc Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-db/couchdb/ChangeLog,v 1.61 2012/10/19 09:15:55 ssuominen Exp $
+
+  19 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> couchdb-1.1.1.ebuild,
+  couchdb-1.2.0.ebuild:
+  Raise spidermonkey dependency to 1.8.5 wrt #431336. Set missing SLOT
+  dependency for openssl to ensure headers are installed.
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> couchdb-1.2.0.ebuild:
+  x86 stable wrt bug #428920
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> couchdb-1.2.0.ebuild:
+  Stable for amd64, wrt bug #428920
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> couchdb-1.2.0.ebuild:
+  Marking couchdb-1.2.0 ppc for bug 428920
+
+  31 Jul 2012; Dirkjan Ochtman <djc@gentoo.org> files/couchdb.init-2:
+  Relicense init script I wrote to Apache-2.0 (bug 425918).
+
+  04 Jun 2012; Zac Medico <zmedico@gentoo.org> couchdb-1.1.1.ebuild,
+  couchdb-1.2.0.ebuild:
+  inherit multilib for get_libdir, and user for enewgroup and enewuser
+
+  09 Apr 2012; Dirkjan Ochtman <djc@gentoo.org> -couchdb-1.0.2.ebuild,
+  -couchdb-1.1.0.ebuild:
+  Remove old versions.
+
+*couchdb-1.2.0 (09 Apr 2012)
+
+  09 Apr 2012; Dirkjan Ochtman <djc@gentoo.org> +couchdb-1.2.0.ebuild:
+  Version bump to 1.2.0.
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> couchdb-1.1.1.ebuild:
+  x86 stable wrt bug #404087
+
+  23 Feb 2012; Brent Baude <ranger@gentoo.org> couchdb-1.1.1.ebuild:
+  Marking couchdb-1.1.1 ppc for bug 404087
+
+  16 Feb 2012; Agostino Sarubbo <ago@gentoo.org> couchdb-1.1.1.ebuild:
+  Stable for amd64, wrt bug #404087
+
+*couchdb-1.1.1 (31 Oct 2011)
+
+  31 Oct 2011; Dirkjan Ochtman <djc@gentoo.org> +couchdb-1.1.1.ebuild,
+  +files/couchdb.init-2:
+  Version bump to 1.1.1.
 
   06 Jun 2011; Dirkjan Ochtman <djc@gentoo.org> -couchdb-1.0.1.ebuild,
   -couchdb-1.0.1-r2.ebuild:

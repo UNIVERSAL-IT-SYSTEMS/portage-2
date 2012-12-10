@@ -1,6 +1,316 @@
 # ChangeLog for www-client/firefox-bin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/firefox-bin/ChangeLog,v 1.60 2011/06/26 03:08:02 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/firefox-bin/ChangeLog,v 1.128 2012/12/03 08:17:18 nativemad Exp $
+
+  03 Dec 2012; Andreas Schuerch <nativemad@gentoo.org>
+  firefox-bin-10.0.11.ebuild:
+  x86 stable, see bug 444318
+
+  27 Nov 2012; Agostino Sarubbo <ago@gentoo.org> firefox-bin-10.0.11.ebuild:
+  Stable for amd64, wrt bug #444318
+
+*firefox-bin-17.0 (22 Nov 2012)
+*firefox-bin-10.0.11 (22 Nov 2012)
+
+  22 Nov 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-10.0.11.ebuild,
+  +firefox-bin-17.0.ebuild:
+  Version bump on ESR and mainline branches.
+
+  03 Nov 2012; <ago@gentoo.org> firefox-bin-10.0.10.ebuild:
+  Stable for amd64, wrt bug #439960
+
+*firefox-bin-10.0.10 (31 Oct 2012)
+
+  31 Oct 2012; Ian Stakenvicius <axs@gentoo.org> +firefox-bin-10.0.10.ebuild:
+  ESR bump for security bug 439960
+
+  31 Oct 2012; Ian Stakenvicius <axs@gentoo.org> firefox-bin-15.0.1.ebuild,
+  firefox-bin-16.0.2.ebuild:
+  Interim solution to block net-libs/libproxy[spidermonkey] due to mozjs symbol
+  collisions that cause crashes, bug 439148
+
+*firefox-bin-16.0.2 (29 Oct 2012)
+
+  29 Oct 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-16.0.2.ebuild,
+  -firefox-bin-16.0.1.ebuild:
+  non-ESR version bump
+
+  23 Oct 2012; <ago@gentoo.org> firefox-bin-10.0.9.ebuild:
+  Stable for amd64, wrt bug #437780
+
+*firefox-bin-10.0.9 (20 Oct 2012)
+*firefox-bin-16.0.1 (20 Oct 2012)
+
+  20 Oct 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-10.0.9.ebuild,
+  +firefox-bin-16.0.1.ebuild:
+  Version bump on ESR and main branch
+
+  15 Sep 2012; Andreas Schuerch <nativemad@gentoo.org>
+  firefox-bin-10.0.7.ebuild:
+  x86 stable, see bug 433383
+
+*firefox-bin-15.0.1 (11 Sep 2012)
+
+  11 Sep 2012; Lars Wendler <polynomial-c@gentoo.org>
+  -firefox-bin-14.0.1.ebuild, -firefox-bin-15.0.ebuild,
+  +firefox-bin-15.0.1.ebuild:
+  Version bump. Removed old.
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> firefox-bin-10.0.7.ebuild:
+  Stable for amd64, wrt bug #433383
+
+*firefox-bin-10.0.7 (02 Sep 2012)
+
+  02 Sep 2012;  <jd@gentoo.org> +firefox-bin-10.0.7.ebuild,
+  -firefox-bin-10.0.5.ebuild:
+  Version bump on ESR branch
+
+*firefox-bin-15.0 (02 Sep 2012)
+
+  02 Sep 2012;  <jd@gentoo.org> +firefox-bin-15.0.ebuild,
+  -firefox-bin-13.0.1.ebuild:
+  Version bump
+
+  28 Jul 2012; Agostino Sarubbo <ago@gentoo.org> firefox-bin-10.0.6.ebuild:
+  Stable for amd64, wrt bug #427224
+
+  24 Jul 2012; Jeff Horelick <jdhore@gentoo.org> firefox-bin-10.0.6.ebuild:
+  marked x86 per bug 427224
+
+  19 Jul 2012; Jeff Horelick <jdhore@gentoo.org> firefox-bin-10.0.5.ebuild,
+  firefox-bin-10.0.6.ebuild, firefox-bin-13.0.1.ebuild,
+  firefox-bin-14.0.1.ebuild:
+  Fix bug 412441. I do not believe that having curl built without nss is
+  required for sending crash reports.
+
+*firefox-bin-10.0.6 (17 Jul 2012)
+
+  17 Jul 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-10.0.6.ebuild,
+  -firefox-bin-10.0.4.ebuild:
+  Version bump on LTS branch.
+
+*firefox-bin-14.0.1 (17 Jul 2012)
+
+  17 Jul 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-14.0.1.ebuild,
+  -firefox-bin-12.0.ebuild:
+  Version bump
+
+  04 Jul 2012; Ian Stakenvicius <axs@gentoo.org> firefox-bin-10.0.4.ebuild,
+  firefox-bin-10.0.5.ebuild, firefox-bin-12.0.ebuild,
+  firefox-bin-13.0.1.ebuild:
+  Fixed license
+
+  03 Jul 2012; Jeff Horelick <jdhore@gentoo.org> -firefox-bin-13.0.ebuild,
+  firefox-bin-13.0.1.ebuild:
+  Remove old and change firefox-bin-13.0.1 to MPL-2.0
+
+  19 Jun 2012; Andreas Schuerch <nativemad@gentoo.org>
+  firefox-bin-10.0.5.ebuild:
+  x86 stable, thanks Mikle Kolyada
+
+*firefox-bin-13.0.1 (17 Jun 2012)
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-13.0.1.ebuild:
+  Version bump.
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> firefox-bin-10.0.5.ebuild:
+  Stable for amd64, wrt bug #420125
+
+*firefox-bin-10.0.5 (06 Jun 2012)
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-10.0.5.ebuild,
+  -firefox-bin-10.0.2.ebuild, -firefox-bin-10.0.3.ebuild:
+  Version bump and remove old on the 10.0 (security fixes only) branch.
+
+*firefox-bin-13.0 (04 Jun 2012)
+
+  04 Jun 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-13.0.ebuild,
+  -firefox-bin-11.0.ebuild:
+  Version bump.
+
+  02 May 2012; Andreas Schuerch <nativemad@gentoo.org>
+  firefox-bin-10.0.4.ebuild:
+  x86 stable, see bug 413657. Thanks Mikle Kolyada.
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> firefox-bin-10.0.4.ebuild:
+  Stable for amd64, wrt bug #413657
+
+*firefox-bin-10.0.4 (27 Apr 2012)
+
+  27 Apr 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-10.0.4.ebuild:
+  Version bump to 10.0.4
+
+*firefox-bin-12.0 (24 Apr 2012)
+
+  24 Apr 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-12.0.ebuild:
+  Version bump to Firefox 12.
+
+  25 Mar 2012; Thomas Kahle <tomka@gentoo.org> firefox-bin-10.0.3.ebuild:
+  marked x86 per bug 408161
+
+  22 Mar 2012; Agostino Sarubbo <ago@gentoo.org> firefox-bin-10.0.3.ebuild:
+  Stable for amd64, wrt bug #408161
+
+*firefox-bin-10.0.3 (21 Mar 2012)
+
+  21 Mar 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-10.0.3.ebuild:
+  Version bump to 10.0.3(esr) for stable.
+
+*firefox-bin-11.0 (14 Mar 2012)
+
+  14 Mar 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-11.0.ebuild:
+  Version bump.
+
+  04 Mar 2012; Jeff Horelick <jdhore@gentoo.org> firefox-bin-10.0.2.ebuild:
+  Add a -r pax-mark wrt bug 403689
+
+  27 Feb 2012; Jeff Horelick <jdhore@gentoo.org> firefox-bin-10.0.2.ebuild:
+  Add a RDEPEND on virtual/freedesktop-icon-theme to resolve bug 341697
+
+  22 Feb 2012; Jeff Horelick <jdhore@gentoo.org> -firefox-bin-10.0.1.ebuild:
+  Remove old.
+
+  22 Feb 2012; Lars Wendler <polynomial-c@gentoo.org>
+  firefox-bin-10.0.2.ebuild:
+  Stable per bug #404437
+
+  22 Feb 2012; Jeff Horelick <jdhore@gentoo.org> firefox-bin-10.0.2.ebuild:
+  Restrict binchecks. This package is built by Mozilla so the binaries may not
+  fit our QA policies.
+
+  21 Feb 2012; Jeff Horelick <jdhore@gentoo.org> firefox-bin-10.0.2.ebuild:
+  x86 stable wrt security bug 404437 .
+
+*firefox-bin-10.0.2 (21 Feb 2012)
+
+  21 Feb 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-10.0.2.ebuild,
+  -firefox-bin-9.0.1.ebuild:
+  Version bump wrt security bug 404437 . Also an EAPI bump and remove old.
+
+  20 Feb 2012; Thomas Kahle <tomka@gentoo.org> firefox-bin-10.0.1.ebuild:
+  marked x86 per bug 403183
+
+  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> firefox-bin-10.0.1.ebuild:
+  Stable for amd64, wrt bug #403183
+
+*firefox-bin-10.0.1 (12 Feb 2012)
+
+  12 Feb 2012; Jory A. Pratt <anarchy@gentoo.org> -firefox-bin-3.6.24.ebuild,
+  -firefox-bin-8.0.ebuild, -firefox-bin-10.0.ebuild,
+  +firefox-bin-10.0.1.ebuild:
+  Security Bump
+
+  06 Feb 2012; <anarchy@gentoo.org> firefox-bin-10.0.ebuild:
+  inherit nsplugins, bug #402317
+
+  04 Feb 2012; Nirbheek Chauhan <nirbheek@gentoo.org> firefox-bin-10.0.ebuild:
+  Port to the new mozlinguas.eclass
+
+*firefox-bin-10.0 (31 Jan 2012)
+
+  31 Jan 2012; Jeff Horelick <jdhore@gentoo.org> +firefox-bin-10.0.ebuild:
+  Version bump to 10.0
+
+  26 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> firefox-bin-8.0.ebuild,
+  firefox-bin-9.0.1.ebuild:
+  Why the heck were we still calling update_mozilla_launcher_symlinks in
+  pkg_postrm? Nuke it from orbit. Bug 390807
+
+  26 Jan 2012; Nirbheek Chauhan <nirbheek@gentoo.org> firefox-bin-9.0.1.ebuild:
+  Use nsplugins.eclass for creating the plugins symlink, bug 390807
+
+  12 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  firefox-bin-9.0.1.ebuild:
+  x86 stable wrt bug #395431
+
+  11 Jan 2012; Agostino Sarubbo <ago@gentoo.org> firefox-bin-9.0.1.ebuild:
+  Stable for AMD64, wrt security bug #395431
+
+*firefox-bin-9.0.1 (23 Dec 2011)
+
+  23 Dec 2011; Lars Wendler <polynomial-c@gentoo.org> -firefox-bin-9.0.ebuild,
+  +firefox-bin-9.0.1.ebuild:
+  Version bump. Removed old.
+
+*firefox-bin-9.0 (20 Dec 2011)
+
+  20 Dec 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -firefox-bin-3.6.20.ebuild, -firefox-bin-3.6.21.ebuild,
+  -firefox-bin-7.0.1.ebuild, +firefox-bin-9.0.ebuild:
+  Version bump. Removed old.
+
+  08 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> firefox-bin-8.0.ebuild:
+  x86 stable wrt bug #389923
+
+  05 Dec 2011; Lars Wendler <polynomial-c@gentoo.org> firefox-bin-8.0.ebuild:
+  Ebuild improvements.
+
+  29 Nov 2011; Tony Vroon <chainsaw@gentoo.org> firefox-bin-8.0.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo,
+  Elijah "Armageddon" El Lazkani, Michael "n0idx80" Harrison & Tomáš "Mepho"
+  Pružina in security bug #389923.
+
+  14 Nov 2011; Jory A. Pratt <anarchy@gentoo.org> firefox-bin-8.0.ebuild:
+  Ensure firefox-bin can be used with hardened system
+
+*firefox-bin-8.0 (14 Nov 2011)
+*firefox-bin-3.6.24 (14 Nov 2011)
+
+  14 Nov 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +firefox-bin-3.6.24.ebuild, +firefox-bin-8.0.ebuild:
+  Security bumps: 3.6.24, 8.0
+
+  13 Nov 2011; Markus Meier <maekke@gentoo.org> firefox-bin-7.0.1.ebuild:
+  x86 stable, bug #381245
+
+  28 Oct 2011; Tony Vroon <chainsaw@gentoo.org> firefox-bin-7.0.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "ago" Sarubbo in security bug #381245.
+
+*firefox-bin-7.0.1 (15 Oct 2011)
+
+  15 Oct 2011; Lars Wendler <polynomial-c@gentoo.org>
+  -firefox-bin-3.6.17.ebuild, -firefox-bin-3.6.18.ebuild,
+  -firefox-bin-6.0.ebuild, +firefox-bin-7.0.1.ebuild:
+  Version bump (bug #387191). Removed old.
+
+  04 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  firefox-bin-3.6.20.ebuild:
+  x86 stable wrt security bug #379549
+
+*firefox-bin-3.6.21 (31 Aug 2011)
+
+  31 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  firefox-bin-3.6.17.ebuild, firefox-bin-3.6.18.ebuild,
+  firefox-bin-3.6.20.ebuild, +firefox-bin-3.6.21.ebuild:
+  Bump to 3.6.21, certificate blacklisting security release. Fix SRC_URI, bug
+  375197.
+
+  29 Aug 2011; Markos Chandras <hwoarang@gentoo.org> firefox-bin-3.6.20.ebuild:
+  Stable on amd64 wrt bug #380913
+
+  21 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> firefox-bin-6.0.ebuild:
+  Use ftp://ftp.mozilla.org instead of releases.mozilla.org so that old
+  tarballs aren't removed from under our feet
+
+*firefox-bin-6.0 (21 Aug 2011)
+
+  21 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  -firefox-bin-4.0.1.ebuild, -firefox-bin-5.0.1.ebuild,
+  +firefox-bin-6.0.ebuild:
+  Bump to 6.0, remove 5.0, 4.0
+
+*firefox-bin-3.6.20 (17 Aug 2011)
+
+  17 Aug 2011; Lars Wendler <polynomial-c@gentoo.org>
+  +firefox-bin-3.6.20.ebuild:
+  Security bump.
+
+*firefox-bin-5.0.1 (16 Aug 2011)
+
+  16 Aug 2011; Patrick Lauer <patrick@gentoo.org> -firefox-bin-5.0.ebuild,
+  +firefox-bin-5.0.1.ebuild:
+  Bump as upstream removed the 5.0 files
 
 *firefox-bin-5.0 (26 Jun 2011)
 
@@ -1486,4 +1796,3 @@
   files/icon/firefox-icon.png, files/icon/mozillafirefox.desktop:
   mozilla-firefox-bin, soon to replace firebird. This ebuild features the GTK+2
   binary with antialiased fonts, and that groovy groovy icon.
-

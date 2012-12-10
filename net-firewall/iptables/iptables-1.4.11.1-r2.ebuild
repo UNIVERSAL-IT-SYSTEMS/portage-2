@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/iptables/iptables-1.4.11.1-r2.ebuild,v 1.2 2011/08/01 07:53:38 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/iptables/iptables-1.4.11.1-r2.ebuild,v 1.7 2012/06/26 04:36:01 zmedico Exp $
 
 EAPI="4"
 
 # Force users doing their own patches to install their own tools
 AUTOTOOLS_AUTO_DEPEND=no
 
-inherit eutils toolchain-funcs autotools
+inherit eutils multilib toolchain-funcs autotools
 
 DESCRIPTION="Linux kernel (2.4+) firewall, NAT and packet mangling tools"
 HOMEPAGE="http://www.iptables.org/"
@@ -15,7 +15,7 @@ SRC_URI="http://iptables.org/projects/iptables/files/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="alpha amd64 arm ~hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86"
 IUSE="ipv6 netlink"
 
 COMMON_DEPEND="

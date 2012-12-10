@@ -1,6 +1,36 @@
 # ChangeLog for media-libs/libgpod
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libgpod/ChangeLog,v 1.85 2011/03/29 12:40:31 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libgpod/ChangeLog,v 1.93 2012/08/16 22:03:03 johu Exp $
+
+  16 Aug 2012; Johannes Huber <johu@gentoo.org> libgpod-0.8.2.ebuild:
+  Stable for x86, wrt bug #423155
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> libgpod-0.8.2.ebuild:
+  Stable for amd64, wrt bug #423155
+
+  08 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> libgpod-0.8.2.ebuild:
+  Query udev.pc pkg-config file for udevdir value to be compatible with
+  sys-fs/udev >= 187.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libgpod-0.8.0.ebuild,
+  libgpod-0.8.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*libgpod-0.8.2 (16 Mar 2012)
+
+  16 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> +libgpod-0.8.2.ebuild:
+  Verbump.
+
+  14 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> libgpod-0.8.0.ebuild:
+  Remove now obsolete alternative <x11-libs/gtk+-2.22:2 depend for USE="gtk"
+
+  14 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> libgpod-0.8.0.ebuild:
+  Empty the py-compile script instead of symlinking it for compability with
+  automake-1.11.2.
+
+  24 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libgpod-0.8.0.ebuild:
+  Depend on correct slot of pygobject.
 
   29 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
   "ios" is now global USE flag.

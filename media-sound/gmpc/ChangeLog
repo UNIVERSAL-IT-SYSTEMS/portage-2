@@ -1,6 +1,37 @@
 # ChangeLog for media-sound/gmpc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/gmpc/ChangeLog,v 1.79 2011/06/17 10:04:02 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/gmpc/ChangeLog,v 1.88 2012/05/27 08:59:47 angelos Exp $
+
+  27 May 2012; Christoph Mende <angelos@gentoo.org> -gmpc-0.20.0.ebuild:
+  Remove old
+
+  27 May 2012; Christoph Mende <angelos@gentoo.org> gmpc-11.8.16.ebuild:
+  Depend on x11-themes/hicolor-icon-theme (bug #380949)
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> gmpc-0.20.0.ebuild,
+  gmpc-11.8.16.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  07 Mar 2012; Brent Baude <ranger@gentoo.org> gmpc-11.8.16.ebuild:
+  Marking gmpc-11.8.16 ppc for bug 381219
+
+  09 Oct 2011; Markus Meier <maekke@gentoo.org> gmpc-11.8.16.ebuild:
+  x86 stable, bug #381219
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org> gmpc-11.8.16.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #381219.
+
+  20 Sep 2011; Christoph Mende <angelos@gentoo.org> gmpc-11.8.16.ebuild:
+  Add missing inherit gnome2-utils
+
+  20 Aug 2011; Christoph Mende <angelos@gentoo.org> gmpc-11.8.16.ebuild:
+  Re-add keywords
+
+*gmpc-11.8.16 (20 Aug 2011)
+
+  20 Aug 2011; Christoph Mende <angelos@gentoo.org> +gmpc-11.8.16.ebuild:
+  Version bump
 
   17 Jun 2011; Christoph Mende <angelos@gentoo.org> gmpc-0.20.0.ebuild:
   Bump gob dependency to 2.0.17 (bug #371953)

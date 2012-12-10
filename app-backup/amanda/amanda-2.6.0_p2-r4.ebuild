@@ -1,15 +1,15 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/amanda-2.6.0_p2-r4.ebuild,v 1.15 2010/10/27 14:03:09 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/amanda/amanda-2.6.0_p2-r4.ebuild,v 1.17 2012/09/30 17:39:09 armin76 Exp $
 
-inherit perl-module autotools eutils
+inherit perl-module autotools eutils user
 
 DESCRIPTION="The Advanced Maryland Automatic Network Disk Archiver"
 HOMEPAGE="http://www.amanda.org/"
 SRC_URI="mirror://sourceforge/amanda/${P/_/}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="amd64 ppc ppc64 ~sparc x86"
 RDEPEND="sys-libs/readline
 		virtual/inetd
 		sys-apps/gawk

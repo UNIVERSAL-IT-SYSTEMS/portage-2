@@ -1,6 +1,34 @@
 # ChangeLog for net-print/cups-pdf
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups-pdf/ChangeLog,v 1.46 2011/05/30 17:05:21 voyageur Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups-pdf/ChangeLog,v 1.53 2012/05/15 16:53:20 ssuominen Exp $
+
+*cups-pdf-3.0_beta1 (15 May 2012)
+
+  15 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +cups-pdf-3.0_beta1.ebuild:
+  Version bump.
+
+  08 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -cups-pdf-2.4.8.ebuild,
+  -cups-pdf-2.5.1-r1.ebuild:
+  Punt overshadowed versions.
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> cups-pdf-2.4.8.ebuild,
+  cups-pdf-2.5.1-r1.ebuild, cups-pdf-2.6.1.ebuild:
+  Drop sparc keywords
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> cups-pdf-2.6.1.ebuild:
+  x86 stable wrt bug #404845
+
+  11 Mar 2012; Agostino Sarubbo <ago@gentoo.org> cups-pdf-2.6.1.ebuild:
+  Stable for amd64, wrt bug #404845
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org> cups-pdf-2.6.1.ebuild:
+  Marking cups-pdf-2.6.1 ppc for bug 404845
+
+*cups-pdf-2.6.1 (11 Nov 2011)
+
+  11 Nov 2011; Tim Harder <radhermit@gentoo.org> +cups-pdf-2.6.1.ebuild:
+  Version bump (bug #386145).
 
 *cups-pdf-2.5.1-r1 (30 May 2011)
 

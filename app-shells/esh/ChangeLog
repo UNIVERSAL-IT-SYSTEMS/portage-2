@@ -1,6 +1,36 @@
 # ChangeLog for app-shells/esh
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/esh/ChangeLog,v 1.20 2010/09/17 04:58:31 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-shells/esh/ChangeLog,v 1.29 2012/09/07 13:28:02 johu Exp $
+
+  07 Sep 2012; Johannes Huber <johu@gentoo.org> -esh-0.8.5-r1.ebuild:
+  Remove old.
+
+  07 Sep 2012; Johannes Huber <johu@gentoo.org> esh-0.8.5-r2.ebuild:
+  Stable for x86, wrt bug #433191
+
+  06 Sep 2012; Agostino Sarubbo <ago@gentoo.org> esh-0.8.5-r2.ebuild:
+  Stable for amd64, wrt bug #433191
+
+  01 Sep 2012; Anthony G. Basile <blueness@gentoo.org> esh-0.8.5-r2.ebuild:
+  Stable ppc, bug #433191
+
+*esh-0.8.5-r2 (11 Jul 2012)
+
+  11 Jul 2012; Ulrich Müller <ulm@gentoo.org> +esh-0.8.5-r2.ebuild:
+  Don't install dysfunctional esh-mode.el for Emacs, bug 425780.
+
+  10 May 2012; Agostino Sarubbo <ago@gentoo.org> -esh-0.8.5.ebuild:
+  Remove old
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> esh-0.8.5.ebuild,
+  esh-0.8.5-r1.ebuild:
+  Drop sparc keywords
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> esh-0.8.5-r1.ebuild:
+  x86 stable wrt bug #396827
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> esh-0.8.5-r1.ebuild:
+  Marking esh-0.8.5-r1 ppc for bug 396827
 
 *esh-0.8.5-r1 (17 Sep 2010)
 

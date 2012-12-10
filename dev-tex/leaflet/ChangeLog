@@ -1,6 +1,18 @@
 # ChangeLog for dev-tex/leaflet
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/leaflet/ChangeLog,v 1.28 2010/10/25 01:02:07 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/leaflet/ChangeLog,v 1.32 2012/05/09 17:15:04 aballier Exp $
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> leaflet-20041222.ebuild:
+  keyword ~amd64-fbsd
+
+  16 Oct 2011; Fabian Groffen <grobian@gentoo.org> leaflet-20041222.ebuild:
+  Marked ~x86-macos
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> leaflet-20041222.ebuild:
+  remove ptex dep as it is going away
+
+  28 Aug 2011; Fabian Groffen <grobian@gentoo.org> leaflet-20041222.ebuild:
+  Marked ~x64-macos
 
   25 Oct 2010; Alexis Ballier <aballier@gentoo.org>
   -leaflet-19990601.ebuild:

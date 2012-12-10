@@ -1,6 +1,129 @@
 # ChangeLog for x11-terms/rxvt-unicode
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/rxvt-unicode/ChangeLog,v 1.190 2011/07/04 22:26:12 wired Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/rxvt-unicode/ChangeLog,v 1.222 2012/07/06 16:20:03 jer Exp $
+
+  06 Jul 2012; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.15-r1.ebuild,
+  +files/rxvt-unicode-9.15-xsubpp.patch:
+  Fix building against >perl-core/ExtUtils-ParseX-3 (reported by Keshav Kini in
+  bug #424697).
+
+*rxvt-unicode-9.15-r1 (18 Jun 2012)
+
+  18 Jun 2012; Jeroen Roovers <jer@gentoo.org> +rxvt-unicode-9.15-r1.ebuild,
+  metadata.xml:
+  Add System category to desktop file by Jekyll Wu (bug #421515). Remove unused
+  USE flag description.
+
+  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org> rxvt-unicode-9.15.ebuild:
+  Add missing inheritance of eutils.eclass
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> rxvt-unicode-9.15.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  31 Mar 2012; Jeroen Roovers <jer@gentoo.org>
+  -files/rxvt-unicode-9.10-force-hints.patch, -rxvt-unicode-9.12-r1.ebuild,
+  -rxvt-unicode-9.14.ebuild:
+  Old.
+
+  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> rxvt-unicode-9.15.ebuild:
+  alpha/ia64/sparc stable wrt #405303
+
+  06 Mar 2012; Jeroen Roovers <jer@gentoo.org> -rxvt-unicode-9.10.ebuild:
+  Old.
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.15.ebuild:
+  Stable for HPPA (bug #405303).
+
+  26 Feb 2012; Jeff Horelick <jdhore@gentoo.org> rxvt-unicode-9.15.ebuild:
+  marked x86 per bug 405303
+
+  25 Feb 2012; Agostino Sarubbo <ago@gentoo.org> rxvt-unicode-9.15.ebuild:
+  Stable for amd64, wrt bug #405303
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> rxvt-unicode-9.15.ebuild:
+  ppc/ppc64 stable wrt #405303
+
+  25 Feb 2012; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.10.ebuild:
+  Drop PPC.
+
+  20 Feb 2012; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.15.ebuild:
+  Replace USE=truetype with USE=xft and make x11-libs/libXft dependency
+  optional upon USE=xft by Dmitry Dzhus (bug #363757).
+
+  11 Feb 2012; nixnut <nixnut@gentoo.org> rxvt-unicode-9.12-r1.ebuild:
+  ppc stable #395703
+
+  06 Feb 2012; Justin Lecher <jlec@gentoo.org> rxvt-unicode-9.15.ebuild:
+  Give the launcher the standard terminal icon
+
+  30 Jan 2012; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.10.ebuild,
+  -rxvt-unicode-9.11.ebuild, -rxvt-unicode-9.12.ebuild:
+  Old.
+
+  30 Jan 2012; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.15.ebuild:
+  Install a .desktop file by Justin Lecher (bug #401591).
+
+  30 Jan 2012; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.14.ebuild,
+  rxvt-unicode-9.15.ebuild:
+  Use the Attic subdirectory (by default).
+
+  23 Jan 2012; Alex Alexander <wired@gentoo.org> rxvt-unicode-9.15.ebuild:
+  fixed buffer-on-clear patch not applying in new version
+
+  23 Jan 2012; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.15.ebuild:
+  Fix patch name by Markus Peloquin (bug #399659).
+
+*rxvt-unicode-9.15 (21 Jan 2012)
+
+  21 Jan 2012; Jeroen Roovers <jer@gentoo.org> +rxvt-unicode-9.15.ebuild:
+  Version bump by Justin Lecher (bug #399611).
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> rxvt-unicode-9.12-r1.ebuild:
+  alpha/ia64/sparc stable wrt #395703
+
+  07 Jan 2012; Alex Alexander <wired@gentoo.org> rxvt-unicode-9.14.ebuild,
+  metadata.xml:
+  made the clear patch optional (buffer-on-clear USE flag) because it seems to
+  break some prompts - bug #397829
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  rxvt-unicode-9.12-r1.ebuild:
+  x86 stable wrt bug #395703
+
+  02 Jan 2012; Alex Alexander <wired@gentoo.org> rxvt-unicode-9.14.ebuild,
+  +files/rxvt-unicode-9.14-clear.patch,
+  +files/rxvt-unicode-9.14-secondary-wheel.patch, metadata.xml:
+  added a -vanilla patch that fixes ctrl-l not storing cleared lines to buffer
+  and a USE flag controlled patch (secondary-wheel) that allows scrolling in
+  secondary screens (like mutt) by using the mouse wheel.
+
+  27 Dec 2011; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.12-r1.ebuild:
+  Stable for HPPA (bug #395703).
+
+  23 Dec 2011; Agostino Sarubbo <ago@gentoo.org> rxvt-unicode-9.12-r1.ebuild:
+  Stable for AMD64, wrt bug #395703
+
+  23 Dec 2011; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.14.ebuild:
+  Remove force-hints patching thanks to kini and Brunera on #gentoo.
+
+  22 Dec 2011; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.10.ebuild:
+  Fix older SRC_URI.
+
+*rxvt-unicode-9.14 (22 Dec 2011)
+
+  22 Dec 2011; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.11.ebuild,
+  rxvt-unicode-9.12.ebuild, rxvt-unicode-9.12-r1.ebuild,
+  +rxvt-unicode-9.14.ebuild, metadata.xml:
+  Version bump thanks to Justin Lecher (bug #395647). Fix older SRC_URI.
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> rxvt-unicode-9.10.ebuild,
+  rxvt-unicode-9.11.ebuild, rxvt-unicode-9.12.ebuild,
+  rxvt-unicode-9.12-r1.ebuild, metadata.xml:
+  Enable USE=perl by default thanks to Talamona Francesco (bug #386827).
+  Describe its function specially in metadata.xml
+
+  09 Sep 2011; Alex Alexander <wired@gentoo.org> rxvt-unicode-9.12-r1.ebuild:
+  removed unnecessary ewarn, bug #365813
 
 *rxvt-unicode-9.12-r1 (04 Jul 2011)
 

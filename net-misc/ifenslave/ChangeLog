@@ -1,6 +1,33 @@
 # ChangeLog for net-misc/ifenslave
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/ifenslave/ChangeLog,v 1.24 2010/03/20 17:04:28 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/ifenslave/ChangeLog,v 1.31 2012/11/02 19:08:17 robbat2 Exp $
+
+  02 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> ifenslave-1.1.0-r6.ebuild:
+  Bug #440894: ~alpha keyword.
+
+  14 Oct 2012; Raúl Porcel <armin76@gentoo.org> ifenslave-1.1.0-r6.ebuild:
+  sparc/x86 stable wrt #433337
+
+  12 Oct 2012; Robin H. Johnson <robbat2@gentoo.org> ifenslave-1.1.0-r3.ebuild,
+  ifenslave-1.1.0-r4.ebuild, ifenslave-1.1.0-r5.ebuild,
+  ifenslave-1.1.0-r6.ebuild:
+  Bug #438048: Check for CONFIG_BONDING and warn otherwise.
+
+  12 Oct 2012; Agostino Sarubbo <ago@gentoo.org> ifenslave-1.1.0-r6.ebuild:
+  Stable for amd64, wrt bug #433337
+
+  10 Oct 2012; Brent Baude <ranger@gentoo.org> ifenslave-1.1.0-r6.ebuild:
+  Marking ifenslave-1.1.0-r6 ppc for bug 433337
+
+  03 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  ifenslave-1.1.0-r6.ebuild:
+  Keyword ~arm, bug #389553
+
+*ifenslave-1.1.0-r6 (17 Jul 2012)
+
+  17 Jul 2012; Christian Ruppert <idl0r@gentoo.org> +ifenslave-1.1.0-r6.ebuild:
+  Version bump. Don't install "deprecated" modprobe.d/modules.conf files. Bump
+  debian additions. Some refactoring.
 
   20 Mar 2010; Raúl Porcel <armin76@gentoo.org> ifenslave-1.1.0-r5.ebuild:
   sparc stable wrt #247885
@@ -106,4 +133,3 @@
   metadata.xml, files/modules.d-bond:
   Initial ebuild by myself, for bonding support. Vaguely related to bug #22303
   ;-).
-

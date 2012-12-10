@@ -1,6 +1,36 @@
 # ChangeLog for app-admin/fam
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/fam/ChangeLog,v 1.66 2011/01/24 04:36:58 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/fam/ChangeLog,v 1.75 2012/02/25 15:54:05 ssuominen Exp $
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> -fam-2.7.0-r5.ebuild,
+  -files/fam-2.7.0-gcc41.patch, -files/fam-2.7.0-gcc43.patch,
+  -files/fam-2.7.0-gcc44.patch, -files/fam-2.7.0-largefiles.patch,
+  -files/fam-2.7.0-limits.patch:
+  old
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> fam-2.7.0-r6.ebuild:
+  ppc64 stable wrt #396749
+
+  22 Jan 2012; Raúl Porcel <armin76@gentoo.org> fam-2.7.0-r6.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #396749
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> fam-2.7.0-r6.ebuild:
+  x86 stable wrt bug #396749
+
+  12 Jan 2012; Markus Meier <maekke@gentoo.org> fam-2.7.0-r6.ebuild:
+  arm stable, bug #396749
+
+  09 Jan 2012; Brent Baude <ranger@gentoo.org> fam-2.7.0-r6.ebuild:
+  Marking fam-2.7.0-r6 ppc for bug 396749
+
+  05 Jan 2012; Jeroen Roovers <jer@gentoo.org> fam-2.7.0-r6.ebuild:
+  Do not install libfam.la when USE=-static-libs.
+
+  05 Jan 2012; Jeroen Roovers <jer@gentoo.org> fam-2.7.0-r6.ebuild:
+  Stable for HPPA (bug #396749).
+
+  02 Jan 2012; Agostino Sarubbo <ago@gentoo.org> fam-2.7.0-r6.ebuild:
+  Stable for AMD64, wrt bug #396749
 
   24 Jan 2011; Jeroen Roovers <jer@gentoo.org> files/fam-2.7.0-gcc41.patch,
   files/fam-2.7.0-gcc43.patch, files/fam-2.7.0-gcc44.patch,

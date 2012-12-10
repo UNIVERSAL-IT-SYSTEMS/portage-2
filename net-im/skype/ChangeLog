@@ -1,6 +1,109 @@
 # ChangeLog for net-im/skype
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/skype/ChangeLog,v 1.117 2011/06/15 22:07:37 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-im/skype/ChangeLog,v 1.142 2012/12/02 12:48:17 ssuominen Exp $
+
+*skype-4.1.0.20 (02 Dec 2012)
+
+  02 Dec 2012; Samuli Suominen <ssuominen@gentoo.org> +skype-4.1.0.20.ebuild:
+  Version bump wrt #443440 by Galym Kerimbekov and Tom Wijsman
+
+  02 Dec 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Drop to maintainer-needed@gentoo.org
+
+  24 Sep 2012; Mike Frysinger <vapier@gentoo.org> skype-2.2.0.35-r99.ebuild,
+  skype-4.0.0.8-r1.ebuild:
+  QA_DT_HASH (old/deprecated) -> QA_FLAGS_IGNORED (new hotness).
+
+  09 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Punt myself from metadata.xml and leave it back to net-im again.
+
+  11 Aug 2012; <swift@gentoo.org> skype-2.2.0.35-r99.ebuild,
+  skype-4.0.0.8-r1.ebuild:
+  Add USE=selinux dependency towards selinux-skype
+
+  06 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> -skype-4.0.0.7-r2.ebuild,
+  -skype-4.0.0.8.ebuild:
+  old
+
+*skype-4.0.0.8-r1 (06 Aug 2012)
+
+  06 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> +skype-4.0.0.8-r1.ebuild:
+  Prevent /opt/bin/skype executable from being prelinked wrt #430142 by Patrick
+  ALLAERT
+
+*skype-4.0.0.8 (18 Jul 2012)
+
+  18 Jul 2012; Justin Lecher <jlec@gentoo.org> +skype-4.0.0.8.ebuild:
+  Version Bump
+
+  15 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> skype-4.0.0.7-r2.ebuild:
+  USE="qt-static" is still using Debian's SONAME of media-libs/tiff wrt #421225
+
+  14 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -skype-4.0.0.7-r1.ebuild:
+  old
+
+*skype-4.0.0.7-r2 (14 Jun 2012)
+
+  14 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +skype-4.0.0.7-r2.ebuild:
+  Switch from .deb to .tar.bz2 found from the upstream servers with direct link
+  (no link from the upstream download page) and restore USE="qt-static" with
+  it.
+
+  14 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -skype-4.0.0.7.ebuild:
+  old
+
+*skype-4.0.0.7-r1 (14 Jun 2012)
+
+  14 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +skype-4.0.0.7-r1.ebuild:
+  Punt /usr/share/skype in pkg_preinst() for upgrade path because Portage is
+  keeping the symlink to /opt/skype wrt #421165. Thanks to "pesa" for noticing.
+
+  14 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> skype-4.0.0.7.ebuild:
+  Remove unused inherit qt4-r2. Thanks to "pesa" for noticing.
+
+*skype-4.0.0.7 (14 Jun 2012)
+
+  14 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +skype-4.0.0.7.ebuild:
+  Version bump wrt #421115 by Justin Lecher. Print pkg_postinst() message for
+  media-libs/libv4l and LD_PRELOAD usage wrt #360815.
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Maintain this package.
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  skype-2.2.0.35-r99.ebuild:
+  Revert last commit because skype binary has NEEDED entry for libtiff.so.4
+  which is provided only by emul-linux-x86-baselibs >= 20120520.
+
+  21 May 2012; Maciej Mrozowski <reavertm@gentoo.org> skype-2.2.0.35-r99.ebuild:
+  Lower emul-libs version requirements.
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> -skype-2.2.0.25.ebuild,
+  -skype-2.2.0.35-r1.ebuild:
+  old
+
+*skype-2.2.0.35-r99 (21 May 2012)
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +skype-2.2.0.35-r99.ebuild:
+  Version bump the static version to 2.2.0.99 for security (vulnerable copy of
+  bundled media-libs/libpng) wrt #415985 by Markos Chandras and Julian Ospald
+
+  12 Apr 2012; Davide Pesavento <pesa@gentoo.org> -skype-2.1.0.81.ebuild:
+  Remove old version which inherits deprecated qt4.eclass.
+
+  29 Feb 2012; Sebastian Pipping <sping@gentoo.org> skype-2.2.0.35-r1.ebuild:
+  Fix "mv: cannot move `skype-2.2.0.35' to a subdirectory of itself" in an
+  update-proof manner
+
+  29 Feb 2012; mthode <mthode@gentoo.org> skype-2.2.0.35-r1.ebuild:
+  fix the paxmarking syntax
+
+  29 Feb 2012; Justin Lecher <jlec@gentoo.org> skype-2.2.0.35-r1.ebuild:
+  Correct installation with USE=qt-static, #405023; remove additional dies
+
+  28 Feb 2012; mthode <mthode@gentoo.org> skype-2.2.0.35-r1.ebuild:
+  paxmarked m skype to work on hardened
 
 *skype-2.2.0.35-r1 (15 Jun 2011)
 
@@ -593,4 +696,3 @@
   skype-0.90.0.3.ebuild:
   Initial import, thanks to Boris Wachtmeister, Henti Smith and Elias Probst in
   bug #54665
-

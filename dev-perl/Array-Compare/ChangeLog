@@ -1,6 +1,37 @@
 # ChangeLog for dev-perl/Array-Compare
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Array-Compare/ChangeLog,v 1.32 2011/01/04 18:16:35 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Array-Compare/ChangeLog,v 1.41 2012/06/24 13:00:15 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  21 Apr 2012; Torsten Veller <tove@gentoo.org> -Array-Compare-2.10.0.ebuild:
+  Cleanup
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> Array-Compare-2.20.0.ebuild:
+  Marking Array-Compare-2.20.0 ppc for bug 404661
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> Array-Compare-2.20.0.ebuild:
+  marked x86 per bug 404661
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> Array-Compare-2.20.0.ebuild:
+  Stable for amd64, wrt bug #404661
+
+*Array-Compare-2.20.0 (19 Dec 2011)
+
+  19 Dec 2011; Torsten Veller <tove@gentoo.org> +Array-Compare-2.20.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Array-Compare-2.01.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Array-Compare-2.10.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Array-Compare-2.10.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org> +Array-Compare-2.10.0.ebuild:
+  Change version scheme
 
   04 Jan 2011; Torsten Veller <tove@gentoo.org> -Array-Compare-1.14.ebuild,
   -Array-Compare-1.17.ebuild:
@@ -126,4 +157,3 @@
   19 Mar 2006; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Array-Compare-1.13.ebuild:
   Dep for Test-Warn
-

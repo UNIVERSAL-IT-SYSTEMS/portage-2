@@ -1,6 +1,100 @@
 # ChangeLog for dev-ruby/coderay
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/coderay/ChangeLog,v 1.37 2011/07/22 13:40:07 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/coderay/ChangeLog,v 1.62 2012/11/07 03:33:57 jer Exp $
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> coderay-1.0.6.ebuild:
+  Stable for HPPA (bug #427594).
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> coderay-0.9.8.ebuild,
+  coderay-1.0.0.ebuild, coderay-1.0.6.ebuild, coderay-1.0.7.ebuild,
+  coderay-1.0.8.ebuild:
+  alpha/ia64/sparc stable wrt #427594, add ~alpha
+
+*coderay-1.0.8 (18 Oct 2012)
+
+  18 Oct 2012; Hans de Graaff <graaff@gentoo.org> +coderay-1.0.8.ebuild:
+  Version bump.
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org> coderay-1.0.6.ebuild:
+  Stable ppc, bug #427594
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org> coderay-1.0.6.ebuild:
+  Stable ppc64, bug #427594
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> coderay-1.0.6.ebuild:
+  Stable for amd64, wrt bug #427594
+
+  22 Jul 2012; Jeff Horelick <jdhore@gentoo.org> coderay-1.0.6.ebuild:
+  marked x86 per bug 427594
+
+  22 Jul 2012; Hans de Graaff <graaff@gentoo.org> -coderay-0.9.6.ebuild,
+  -coderay-1.0.4.ebuild, -coderay-1.0.5.ebuild:
+  Remove old versions.
+
+*coderay-1.0.7 (05 Jul 2012)
+
+  05 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> +coderay-1.0.7.ebuild:
+  Version bump; reinstate jruby support.
+
+  25 Jun 2012; Hans de Graaff <graaff@gentoo.org> coderay-1.0.6.ebuild:
+  Avoid unneeded dependency on git.
+
+*coderay-1.0.6 (07 Apr 2012)
+
+  07 Apr 2012; Hans de Graaff <graaff@gentoo.org> +coderay-1.0.6.ebuild:
+  Version bump.
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> coderay-0.9.8.ebuild:
+  Marking coderay-0.9.8 ppc64 for bug 393665
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> coderay-0.9.8.ebuild:
+  Marking coderay-0.9.8 ppc for bug 393665
+
+*coderay-1.0.5 (14 Jan 2012)
+
+  14 Jan 2012; Hans de Graaff <graaff@gentoo.org> +coderay-1.0.5.ebuild:
+  Version bump.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> coderay-1.0.4.ebuild:
+  Add Prefix keywords, bug #396547
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> coderay-0.9.8.ebuild:
+  ia64/sparc stable wrt #393665
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> coderay-0.9.8.ebuild:
+  Stable for AMD64, wrt bug #393665
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> coderay-0.9.8.ebuild:
+  x86 stable wrt bug #393665
+
+  12 Dec 2011; Jeroen Roovers <jer@gentoo.org> coderay-0.9.8.ebuild:
+  Stable for HPPA (bug #393665).
+
+*coderay-1.0.4 (08 Dec 2011)
+
+  08 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org> +coderay-1.0.4.ebuild,
+  -coderay-0.9.7.ebuild, coderay-0.9.8.ebuild, coderay-1.0.0.ebuild:
+  Version bump, remove JRuby support due to the known-broken tests; drop ruby
+  1.9 support from coderay 0.9.8 so that we can ask stable. Replace the old
+  syntax for ruby_add_bdepend.
+
+  03 Oct 2011; Jeroen Roovers <jer@gentoo.org> coderay-0.9.6.ebuild:
+  Stable for HPPA (bug #385149).
+
+*coderay-1.0.0 (27 Sep 2011)
+
+  27 Sep 2011; Hans de Graaff <graaff@gentoo.org> +coderay-1.0.0.ebuild:
+  Version bump.
+
+  21 Sep 2011; Hans de Graaff <graaff@gentoo.org> +coderay-0.9.7.ebuild:
+  Add back because redmine depends on this specific version. Sigh. Thanks to Mr
+  Bones for reporting.
+
+  21 Sep 2011; Hans de Graaff <graaff@gentoo.org> -coderay-0.9.7.ebuild:
+  Remove old version.
 
   22 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> coderay-0.9.6.ebuild:
   ppc64 stable wrt #371259, comment out line invoking USE=ruby19
@@ -153,4 +247,3 @@
   16 Jan 2008; Aggelos Orfanakos <agorf@gentoo.org> +metadata.xml,
   +coderay-0.7.4.215.ebuild:
   Initial import.
-

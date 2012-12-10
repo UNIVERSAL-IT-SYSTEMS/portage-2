@@ -1,6 +1,13 @@
 # ChangeLog for games-engines/exult
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-engines/exult/ChangeLog,v 1.28 2011/01/20 21:21:08 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-engines/exult/ChangeLog,v 1.30 2011/10/19 16:51:53 mr_bones_ Exp $
+
+  19 Oct 2011; Michael Sterrett <mr_bones_@gentoo.org> exult-1.4.9_rc1.ebuild:
+  autotools eclass isn't used
+
+  15 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> exult-1.2.ebuild,
+  +files/exult-1.2-libpng15.patch:
+  Fix building with libpng15 wrt #380145 by Diego Elio Pettenò
 
 *exult-1.4.9_rc1 (20 Jan 2011)
 

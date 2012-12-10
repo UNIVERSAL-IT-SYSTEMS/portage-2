@@ -1,6 +1,26 @@
 # ChangeLog for dev-lang/fpc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/fpc/ChangeLog,v 1.54 2011/02/12 18:43:24 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/fpc/ChangeLog,v 1.58 2012/07/09 21:29:15 ulm Exp $
+
+  09 Jul 2012; Ulrich Müller <ulm@gentoo.org> fpc-2.2.0-r1.ebuild,
+  fpc-2.2.0.ebuild, fpc-2.2.2-r1.ebuild, fpc-2.2.4-r2.ebuild, fpc-2.4.0.ebuild,
+  fpc-2.4.4.ebuild, fpc-2.6.0.ebuild:
+  Update LICENSE, bug 425140.
+
+*fpc-2.6.0 (03 Jan 2012)
+
+  03 Jan 2012; Tim Harder <radhermit@gentoo.org> +fpc-2.6.0.ebuild:
+  Version bump (bug #396695 by Merlijn Wajer). Add arm keyword.
+
+  12 Dec 2011; Tim Harder <radhermit@gentoo.org> fpc-2.4.4.ebuild:
+  Remove deprecated external fpc-ide related setup (fixes bug #394475).
+
+*fpc-2.4.4 (11 Dec 2011)
+
+  11 Dec 2011; Tim Harder <radhermit@gentoo.org> +fpc-2.4.4.ebuild,
+  metadata.xml:
+  Version bump (bug #363677 by Michal Janke). Add the ide USE flag to replace
+  the fpc-ide package.
 
   12 Feb 2011; Raúl Porcel <armin76@gentoo.org> fpc-2.4.0.ebuild:
   sparc stable wrt #345663

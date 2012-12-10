@@ -1,6 +1,36 @@
 # ChangeLog for dev-php/phpunit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/phpunit/ChangeLog,v 1.5 2011/07/30 10:00:16 olemarkus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/phpunit/ChangeLog,v 1.12 2012/06/22 17:44:32 mabi Exp $
+
+*phpunit-3.6.11 (22 Jun 2012)
+
+  22 Jun 2012; Matti Bickel <mabi@gentoo.org> +phpunit-3.6.11.ebuild:
+  version bump, epear import
+
+*phpunit-3.6.10 (30 May 2012)
+
+  30 May 2012; Ole Markus With <olemarkus@gentoo.org> +phpunit-3.6.10.ebuild:
+  Version bump
+
+  10 Mar 2012; Ole Markus With <olemarkus@gentoo.org> phpunit-3.5.13.ebuild:
+  Fixing deps on DBUnit
+
+  10 Mar 2012; Ole Markus With <olemarkus@gentoo.org> phpunit-3.5.13.ebuild,
+  phpunit-3.6.0.ebuild:
+  Fixed new deps
+
+  10 Mar 2012; Ole Markus With <olemarkus@gentoo.org> phpunit-3.5.13.ebuild,
+  phpunit-3.6.0.ebuild:
+  Moving dev-php/yaml to dev-php/YAML
+
+  26 Feb 2012; Ole Markus With <olemarkus@gentoo.org> -phpunit-3.4.13.ebuild,
+  -phpunit-3.5.0-r1.ebuild, -phpunit-3.5.14.ebuild:
+  Cleanup old versions
+
+*phpunit-3.6.0 (03 Nov 2011)
+
+  03 Nov 2011; Ole Markus With <olemarkus@gentoo.org> +phpunit-3.6.0.ebuild:
+  Version bump
 
 *phpunit-3.5.14 (30 Jul 2011)
 

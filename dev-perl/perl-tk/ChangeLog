@@ -1,6 +1,36 @@
 # ChangeLog for dev-perl/perl-tk
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/perl-tk/ChangeLog,v 1.79 2010/11/27 07:23:49 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/perl-tk/ChangeLog,v 1.87 2012/06/24 13:00:38 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> perl-tk-804.30.0.ebuild:
+  keyword ~amd64-fbsd
+
+*perl-tk-804.30.0 (11 Apr 2012)
+
+  11 Apr 2012; Torsten Veller <tove@gentoo.org> +perl-tk-804.30.0.ebuild:
+  Version bump (#411241)
+
+  30 Nov 2011; Fabian Groffen <grobian@gentoo.org> perl-tk-804.29.0.ebuild:
+  Fix building on Prefix platforms, bug #385621
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -perl-tk-804.029.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> perl-tk-804.29.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+  30 Aug 2011; Fabio Erculiani <lxnay@gentoo.org> perl-tk-804.029.ebuild,
+  perl-tk-804.29.0.ebuild:
+  ouch, no RDEPEND set and EAPI=3 is quite wrong, this triggers several missing
+  runtime dependencies and broken binpkgs support
+
+*perl-tk-804.29.0 (27 Aug 2011)
+
+  27 Aug 2011; Torsten Veller <tove@gentoo.org> +perl-tk-804.29.0.ebuild:
+  Change version scheme
 
   27 Nov 2010; Torsten Veller <tove@gentoo.org> -files/804.028-FBox.patch,
   -files/804.028-MouseWheel.patch, -perl-tk-804.028-r2.ebuild,

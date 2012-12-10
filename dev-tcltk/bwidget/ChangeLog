@@ -1,6 +1,30 @@
 # ChangeLog for dev-tcltk/bwidget
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/bwidget/ChangeLog,v 1.16 2009/09/06 08:31:02 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/bwidget/ChangeLog,v 1.22 2012/12/05 08:06:33 ulm Exp $
+
+  05 Dec 2012; Ulrich Müller <ulm@gentoo.org> bwidget-1.9.0.ebuild:
+  Update LICENSE, BWidget was a duplicate of tcltk, bug 445468.
+
+  05 Dec 2012; Justin Lecher <jlec@gentoo.org> -bwidget-1.7.0.ebuild,
+  -bwidget-1.8.0.ebuild:
+  Drop old
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> bwidget-1.9.0.ebuild:
+  Stable for x86, wrt bug #433279
+
+  15 Oct 2012; Agostino Sarubbo <ago@gentoo.org> bwidget-1.9.0.ebuild:
+  Stable for amd64, wrt bug #433279
+
+*bwidget-1.9.0 (17 Jul 2012)
+
+  17 Jul 2012; Justin Lecher <jlec@gentoo.org> -bwidget-1.4.1.ebuild,
+  bwidget-1.7.0.ebuild, bwidget-1.8.0.ebuild, +bwidget-1.9.0.ebuild,
+  metadata.xml:
+  Version Bump, #426408; move to EAPI=4; drop old
+
+  07 Jun 2012; Zac Medico <zmedico@gentoo.org> bwidget-1.7.0.ebuild,
+  bwidget-1.8.0.ebuild:
+  inherit multilib for get_libdir
 
   06 Sep 2009; Markus Meier <maekke@gentoo.org> bwidget-1.8.0.ebuild:
   amd64 stable, bug #280484

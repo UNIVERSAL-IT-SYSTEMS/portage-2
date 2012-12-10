@@ -1,6 +1,29 @@
 # ChangeLog for sci-physics/hepmc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/hepmc/ChangeLog,v 1.28 2011/06/08 15:15:24 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/hepmc/ChangeLog,v 1.33 2012/08/07 16:56:28 bicatali Exp $
+
+  07 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> hepmc-2.06.08.ebuild:
+  keyword amd64-linux, x86-linux
+
+  12 May 2012; Kacper Kowalik <xarthisius@gentoo.org> -hepmc-2.06.05.ebuild,
+  -hepmc-2.06.06.ebuild, -hepmc-2.06.07.ebuild:
+  Drop old
+
+*hepmc-2.06.08 (02 Mar 2012)
+
+  02 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> +hepmc-2.06.08.ebuild:
+  Version bump
+
+*hepmc-2.06.07 (19 Jan 2012)
+
+  19 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> +hepmc-2.06.07.ebuild:
+  Version bump
+
+*hepmc-2.06.06 (17 Dec 2011)
+
+  17 Dec 2011; Sébastien Fabbro <bicatali@gentoo.org> -hepmc-2.05.01.ebuild,
+  -hepmc-2.06.04.ebuild, +hepmc-2.06.06.ebuild:
+  Version bump
 
   08 Jun 2011; Jeroen Roovers <jer@gentoo.org> hepmc-2.05.01.ebuild,
   hepmc-2.06.03.ebuild, hepmc-2.06.04.ebuild, hepmc-2.06.05.ebuild:
@@ -118,4 +141,3 @@
   07 Sep 2008; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
   +hepmc-2.04.00.ebuild:
   Initial import, inspired from Benjamin Bannier's work (bug #236718)
-

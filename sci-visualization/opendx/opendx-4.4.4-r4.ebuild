@@ -1,27 +1,26 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/opendx/opendx-4.4.4-r4.ebuild,v 1.8 2010/11/19 05:45:02 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/opendx/opendx-4.4.4-r4.ebuild,v 1.11 2012/10/24 19:45:23 ulm Exp $
 
-EAPI=2
+EAPI=4
 
-inherit eutils flag-o-matic autotools
+MYP=dx-${PV}
+inherit eutils flag-o-matic autotools multilib
 
-DESCRIPTION="A 3D data visualization tool"
+DESCRIPTION="3D data visualization tool"
 HOMEPAGE="http://www.opendx.org/"
-SRC_URI="http://opendx.sdsc.edu/source/${P/open}.tar.gz"
+SRC_URI="http://opendx.sdsc.edu/source/${MYP}.tar.gz"
 
 LICENSE="IBM"
 SLOT="0"
-
-KEYWORDS="amd64 ppc x86"
-
+KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux"
 IUSE="hdf cdf netcdf tiff imagemagick szip smp"
 
-DEPEND="x11-libs/libXmu
+RDEPEND="x11-libs/libXmu
 	x11-libs/libXi
 	x11-libs/libXp
 	x11-libs/libXpm
-	>=x11-libs/openmotif-2.3:0
+	>=x11-libs/motif-2.3:0
 	virtual/opengl
 	virtual/glu
 	szip? ( sci-libs/szip )
@@ -29,12 +28,12 @@ DEPEND="x11-libs/libXmu
 	cdf? ( sci-libs/cdf )
 	netcdf? ( sci-libs/netcdf )
 	tiff? ( media-libs/tiff )
-	imagemagick? ( >=media-gfx/imagemagick-5.3.4 )"
+	imagemagick? ( || ( media-gfx/imagemagick media-gfx/graphicsmagick ) )"
 
-RDEPEND="${DEPEND}"
-# waiting on bug #36349 for media-libs/jasper in imagemagick
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 
-S="${WORKDIR}/${P/open}"
+S="${WORKDIR}/${MYP}"
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-4.3.2-sys.h.patch"
@@ -47,6 +46,7 @@ src_prepare() {
 	epatch "${FILESDIR}/${P}-open.patch"
 	epatch "${FILESDIR}/${P}-szip.patch"
 	epatch "${FILESDIR}/${P}-null.patch"
+	epatch "${FILESDIR}/${P}-magick.patch"
 	eautoreconf
 }
 
@@ -64,7 +64,7 @@ src_configure() {
 
 	# javadx is currently broken. we may try to fix it someday.
 	econf \
-		--libdir=/usr/$(get_libdir) \
+		--libdir="${EPREFIX}"/usr/$(get_libdir) \
 		--with-x \
 		--without-javadx \
 		$(use_with szip szlib) \
@@ -77,7 +77,7 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	default
 	newicon src/uipp/ui/icon50.xpm ${PN}.xpm
 	make_desktop_entry dx "Open Data Explorer"
 }

@@ -1,6 +1,81 @@
 # ChangeLog for net-analyzer/arping
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/arping/ChangeLog,v 1.45 2010/09/15 01:33:35 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/arping/ChangeLog,v 1.66 2012/10/07 18:56:03 jer Exp $
+
+  07 Oct 2012; Jeroen Roovers <jer@gentoo.org> -arping-2.11.ebuild:
+  Old.
+
+  20 Sep 2012; Anthony G. Basile <blueness@gentoo.org> arping-2.12.ebuild:
+  Stable ppc64, bug #433321
+
+  18 Sep 2012; Jeroen Roovers <jer@gentoo.org> arping-2.12.ebuild:
+  Stable for HPPA (bug #433321).
+
+  15 Sep 2012; Raúl Porcel <armin76@gentoo.org> arping-2.12.ebuild:
+  alpha/ia64/s390/sh/sparc/x86 stable wrt #433321
+
+  08 Sep 2012; Agostino Sarubbo <ago@gentoo.org> arping-2.12.ebuild:
+  Stable for amd64, wrt bug #433321
+
+  30 Aug 2012; Anthony G. Basile <blueness@gentoo.org> arping-2.12.ebuild:
+  Stable arm, bug #433321
+
+  30 Aug 2012; Anthony G. Basile <blueness@gentoo.org> arping-2.12.ebuild:
+  Stable ppc, bug #433321
+
+  29 Jul 2012; Jeroen Roovers <jer@gentoo.org> -arping-2.06.ebuild,
+  -arping-2.09-r1.ebuild:
+  Old.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> arping-2.11.ebuild,
+  arping-2.12.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419203
+
+  24 Jul 2012; Anthony G. Basile <blueness@gentoo.org> arping-2.12.ebuild:
+  Keyword ~mips
+
+*arping-2.12 (11 Jul 2012)
+
+  11 Jul 2012; Tim Harder <radhermit@gentoo.org> +arping-2.12.ebuild:
+  Version bump.
+
+  13 Jun 2012; Jeff Horelick <jdhore@gentoo.org> arping-2.11.ebuild:
+  marked x86 per bug 419203
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> arping-2.11.ebuild:
+  Marking arping-2.11 ppc for bug 419203
+
+  07 Jun 2012; Jeroen Roovers <jer@gentoo.org> arping-2.11.ebuild:
+  Stable for HPPA (bug #419203).
+
+  07 Jun 2012; Jeroen Roovers <jer@gentoo.org> arping-2.11.ebuild:
+  Remove unnecessary src_test().
+
+  06 Jun 2012; Markus Meier <maekke@gentoo.org> arping-2.11.ebuild:
+  arm stable, bug #419203
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> arping-2.11.ebuild:
+  Marking arping-2.11 ppc64 for bug 419203
+
+  04 Jun 2012; Agostino Sarubbo <ago@gentoo.org> arping-2.11.ebuild:
+  Stable for amd64, wrt bug #419203
+
+  29 Feb 2012; Tim Harder <radhermit@gentoo.org> -arping-2.10.ebuild:
+  Remove old.
+
+*arping-2.11 (29 Feb 2012)
+
+  29 Feb 2012; Tim Harder <radhermit@gentoo.org> +arping-2.11.ebuild:
+  Version bump.
+
+  27 Feb 2012; Tim Harder <radhermit@gentoo.org> -arping-2.05.ebuild,
+  -arping-2.08.ebuild, -arping-2.08-r1.ebuild:
+  Remove old.
+
+*arping-2.10 (27 Feb 2012)
+
+  27 Feb 2012; Tim Harder <radhermit@gentoo.org> +arping-2.10.ebuild:
+  Version bump.
 
 *arping-2.09-r1 (15 Sep 2010)
 

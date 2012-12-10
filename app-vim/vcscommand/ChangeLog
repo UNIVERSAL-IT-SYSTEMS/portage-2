@@ -1,6 +1,43 @@
 # ChangeLog for app-vim/vcscommand
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-vim/vcscommand/ChangeLog,v 1.20 2011/06/25 10:05:41 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-vim/vcscommand/ChangeLog,v 1.29 2012/08/06 05:42:01 radhermit Exp $
+
+  06 Aug 2012; Tim Harder <radhermit@gentoo.org> -vcscommand-1.99.42.ebuild,
+  -vcscommand-1.99.43.ebuild, -vcscommand-1.99.44.ebuild:
+  Remove old.
+
+*vcscommand-1.99.46 (06 Aug 2012)
+
+  06 Aug 2012; Tim Harder <radhermit@gentoo.org> +vcscommand-1.99.46.ebuild:
+  Version bump (bug #405145).
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> vcscommand-1.99.45.ebuild:
+  Marking vcscommand-1.99.45 ppc for bug 393569
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  vcscommand-1.99.45.ebuild:
+  x86 stable wrt bug #393569
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org> vcscommand-1.99.45.ebuild:
+  Stable for AMD64, wrt bug #393569
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> vcscommand-1.99.42.ebuild,
+  vcscommand-1.99.43.ebuild, vcscommand-1.99.44.ebuild,
+  vcscommand-1.99.45.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  24 Oct 2011; Tim Harder <radhermit@gentoo.org> -vcscommand-1.99.37.ebuild:
+  Remove old.
+
+*vcscommand-1.99.45 (24 Oct 2011)
+
+  24 Oct 2011; Tim Harder <radhermit@gentoo.org> +vcscommand-1.99.45.ebuild:
+  Version bump.
+
+*vcscommand-1.99.44 (10 Oct 2011)
+
+  10 Oct 2011; Tim Harder <radhermit@gentoo.org> +vcscommand-1.99.44.ebuild:
+  Version bump. Use github mirror.
 
 *vcscommand-1.99.43 (25 Jun 2011)
 

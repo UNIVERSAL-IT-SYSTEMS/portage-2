@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/elisp-manual/elisp-manual-20.2.5.ebuild,v 1.3 2010/09/19 17:49:42 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-doc/elisp-manual/elisp-manual-20.2.5.ebuild,v 1.5 2012/07/29 17:34:55 armin76 Exp $
 
 inherit eutils
 
@@ -10,9 +10,9 @@ HOMEPAGE="http://www.gnu.org/software/emacs/manual/"
 SRC_URI="ftp://ftp.gnu.org/old-gnu/emacs/${MY_P}.tar.gz
 	mirror://gentoo/${P}-patches.tar.gz"
 
-LICENSE="as-is"
+LICENSE="Texinfo-manual"
 SLOT="20"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 S="${WORKDIR}/${MY_P}"

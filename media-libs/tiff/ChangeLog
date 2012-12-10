@@ -1,6 +1,196 @@
 # ChangeLog for media-libs/tiff
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/tiff/ChangeLog,v 1.169 2011/04/27 18:01:28 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/tiff/ChangeLog,v 1.219 2012/11/14 14:24:42 jlec Exp $
+
+  14 Nov 2012; Justin Lecher <jlec@gentoo.org> tiff-3.9.5-r3.ebuild:
+  Prefix fix for temporary installation directory
+
+*tiff-4.0.3-r1 (03 Nov 2012)
+
+  03 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> +tiff-4.0.3-r1.ebuild,
+  +files/tiff-4.0.3-tiff2pdf-colors.patch:
+  Fix output colors of `tiff2pdf` when JPEG compression is enabled wrt #145055 by
+  Syed Amer Gilani
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #24135.
+
+*tiff-4.0.3 (03 Oct 2012)
+
+  03 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> +tiff-4.0.3.ebuild:
+  Version bump.
+
+  24 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> -tiff-4.0.2.ebuild:
+  old
+
+  23 Sep 2012; Raúl Porcel <armin76@gentoo.org> tiff-4.0.2-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #427166
+
+  20 Sep 2012; Anthony G. Basile <blueness@gentoo.org> tiff-4.0.2-r1.ebuild:
+  stable arm, bug #427166
+
+  18 Sep 2012; Jeroen Roovers <jer@gentoo.org> tiff-4.0.2-r1.ebuild:
+  Stable for HPPA (bug #427166).
+
+  16 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> -tiff-4.0.1-r1.ebuild,
+  -files/tiff-4.0.1-CVE-2012-1173.patch:
+  old
+
+  16 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> tiff-4.0.2-r1.ebuild:
+  amd64/ppc/ppc64/x86 stable wrt #427166
+
+  16 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> tiff-4.0.2-r1.ebuild,
+  +files/tiff-4.0.2-bigendian.patch:
+  Import patch from Fedora for endianess related test issues (test
+  "raw_decode") wrt #422843
+
+*tiff-4.0.2-r1 (16 Sep 2012)
+
+  16 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> +tiff-4.0.2-r1.ebuild,
+  +files/tiff-4.0.2-CVE-2012-3401.patch:
+  Fix security bug #427166 (CVE-2012-3401)
+
+  16 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> tiff-4.0.2.ebuild:
+  ppc64 stable wrt #422673
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> tiff-4.0.2.ebuild:
+  Marking tiff-4.0.2 ppc for bug 422673
+
+  23 Jun 2012; Raúl Porcel <armin76@gentoo.org> tiff-4.0.2.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #422673
+
+  21 Jun 2012; Agostino Sarubbo <ago@gentoo.org> tiff-4.0.2.ebuild:
+  Stable for amd64, wrt bug #422673
+
+  21 Jun 2012; Jeroen Roovers <jer@gentoo.org> tiff-4.0.2.ebuild:
+  Stable for HPPA (bug #422673).
+
+  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> tiff-4.0.2.ebuild:
+  marked x86 per bug 422673
+
+*tiff-4.0.2 (20 Jun 2012)
+
+  20 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +tiff-4.0.2.ebuild:
+  Version bump.
+
+  18 May 2012; Samuli Suominen <ssuominen@gentoo.org> -tiff-3.9.5-r2.ebuild:
+  old
+
+  18 May 2012; Samuli Suominen <ssuominen@gentoo.org> tiff-3.9.5-r2.ebuild:
+  Revert alpha/ia64/m68k/s390/sh/sparc to ~arch wrt #416055
+
+  18 May 2012; Samuli Suominen <ssuominen@gentoo.org> tiff-3.9.5-r3.ebuild:
+  x86 stable wrt #416055
+
+  18 May 2012; Agostino Sarubbo <ago@gentoo.org> tiff-3.9.5-r3.ebuild:
+  Stable for amd64, wrt bug #416055
+
+*tiff-3.9.5-r3 (14 May 2012)
+
+  14 May 2012; Samuli Suominen <ssuominen@gentoo.org> +tiff-3.9.5-r3.ebuild:
+  Symlink libtiff.so.3 to libtiff.so.4 because Debian upgraded SONAME with
+  custom patch which got used by net-im/skype wrt #415985
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> tiff-4.0.1-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  21 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -tiff-3.9.5.ebuild,
+  -tiff-3.9.5-r1.ebuild, -tiff-4.0.0.ebuild, -tiff-4.0.0-r1.ebuild,
+  -files/tiff-4.0.0-missing_lzma_pkgconfig.patch, -tiff-4.0.1.ebuild:
+  old
+
+  21 Apr 2012; Raúl Porcel <armin76@gentoo.org> tiff-3.9.5-r2.ebuild,
+  tiff-4.0.1-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #410931
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> tiff-4.0.1-r1.ebuild:
+  Marking tiff-4.0.1-r1 ppc64 for bug 410931
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> tiff-4.0.1-r1.ebuild:
+  Marking tiff-4.0.1-r1 ppc for bug 410931
+
+  08 Apr 2012; Jeroen Roovers <jer@gentoo.org> tiff-4.0.1-r1.ebuild:
+  Stable for HPPA (bug #410931).
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> tiff-4.0.1-r1.ebuild:
+  arm stable, bug #410931
+
+  07 Apr 2012; Jeff Horelick <jdhore@gentoo.org> tiff-3.9.5-r2.ebuild,
+  tiff-4.0.1-r1.ebuild:
+  marked x86 per bug 410931
+
+  06 Apr 2012; Agostino Sarubbo <ago@gentoo.org> tiff-3.9.5-r2.ebuild,
+  tiff-4.0.1-r1.ebuild:
+  Stable for amd64, wrt bug #410871
+
+*tiff-4.0.1-r1 (06 Apr 2012)
+*tiff-3.9.5-r2 (06 Apr 2012)
+
+  06 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> +tiff-3.9.5-r2.ebuild,
+  +files/tiff-3.9.5-CVE-2012-1173.patch, +tiff-4.0.1-r1.ebuild,
+  +files/tiff-4.0.1-CVE-2012-1173.patch:
+  Upstream patch for CVE-2012-1173 wrt #410931 by Agostino Sarubbo
+
+*tiff-4.0.1 (02 Mar 2012)
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +tiff-4.0.1.ebuild:
+  Version bump.
+
+  15 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> tiff-4.0.0-r1.ebuild:
+  ppc/ppc64 stable wrt #399769
+
+  08 Feb 2012; Jeff Horelick <jdhore@gentoo.org> tiff-4.0.0-r1.ebuild:
+  x86 stable per bug 399769
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> tiff-4.0.0-r1.ebuild:
+  Stable for HPPA (bug #399769).
+
+  05 Feb 2012; Markus Meier <maekke@gentoo.org> tiff-4.0.0-r1.ebuild:
+  arm stable, bug #399769
+
+  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> tiff-4.0.0-r1.ebuild:
+  Stable for amd64, wrt bug #399769
+
+*tiff-4.0.0-r1 (10 Jan 2012)
+
+  10 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +tiff-4.0.0-r1.ebuild,
+  +files/tiff-4.0.0-missing_lzma_pkgconfig.patch:
+  Insert -llzma to the Libs.private: -line in the libtiff-4.pc for static
+  linking wrt #396531 by Alan Hourihane
+
+  30 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -files/tiff-3.9.2-CVE-2009-2347.patch, -tiff-4.0.0_beta7.ebuild:
+  old
+
+*tiff-4.0.0 (30 Dec 2011)
+
+  30 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +tiff-4.0.0.ebuild:
+  Version bump wrt #396465 by Stefan Talpalaru
+
+*tiff-3.9.5-r1 (10 Oct 2011)
+
+  10 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +tiff-3.9.5-r1.ebuild:
+  Commit libtiff.so.3 and libtiffxx.so.3 ABI compat ebuild in SLOT="3" to
+  replace media-libs/tiff-compat.
+
+  10 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -tiff-3.9.4-r1.ebuild,
+  -files/tiff-3.9.4-CVE-2011-0192.patch, -files/tiff-3.9.4-CVE-2011-1167.patch:
+  old
+
+  17 Sep 2011; Raúl Porcel <armin76@gentoo.org> tiff-3.9.5.ebuild:
+  alpha/arm/ia64/m68k/s390/sh/sparc stable wrt #371308
+
+  13 Sep 2011; Jeroen Roovers <jer@gentoo.org> tiff-3.9.5.ebuild:
+  Stable for HPPA (bug #371308).
+
+  13 Sep 2011; Markos Chandras <hwoarang@gentoo.org> tiff-3.9.5.ebuild:
+  Stable on amd64 wrt bug #371308
+
+  13 Sep 2011; <mad@gentoo.org> tiff-3.9.5.ebuild:
+  x86 stable, thanks Myckel and JD! Bug #371308.
+
+  12 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> tiff-3.9.5.ebuild:
+  ppc/ppc64 stable wrt #371308
 
   27 Apr 2011; Fabian Groffen <grobian@gentoo.org> tiff-4.0.0_beta7.ebuild:
   Marked ~m68k-mint, bug #364787

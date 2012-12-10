@@ -1,6 +1,62 @@
 # ChangeLog for net-libs/serf
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/serf/ChangeLog,v 1.58 2011/07/17 09:02:10 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/serf/ChangeLog,v 1.74 2012/10/06 19:56:17 floppym Exp $
+
+*serf-1.1.1 (06 Oct 2012)
+
+  06 Oct 2012; Mike Gilbert <floppym@gentoo.org> +serf-1.1.1.ebuild:
+  Version bump. Ebuild by Arfrever.
+
+  02 Sep 2012; Raúl Porcel <armin76@gentoo.org> serf-1.1.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #428076
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> serf-1.1.0.ebuild:
+  Stable for amd64, wrt bug #428076
+
+  30 Jul 2012; Anthony G. Basile <blueness@gentoo.org> serf-1.1.0.ebuild:
+  Stable arm, bug #428076
+
+  29 Jul 2012; Anthony G. Basile <blueness@gentoo.org> serf-1.1.0.ebuild:
+  Stable ppc ppc64, bug #428076
+
+  27 Jul 2012; Jeroen Roovers <jer@gentoo.org> serf-1.1.0.ebuild:
+  Stable for HPPA (bug #428076).
+
+  25 Jul 2012; Jeff Horelick <jdhore@gentoo.org> serf-1.1.0.ebuild:
+  marked x86 per bug 428076
+
+*serf-1.1.0 (11 Jun 2012)
+
+  11 Jun 2012; Mike Gilbert <floppym@gentoo.org> +serf-1.1.0.ebuild:
+  Version bump. Ebuild by Arfrever.
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> serf-1.0.3.ebuild:
+  keyword ~amd64-fbsd
+
+*serf-1.0.3 (24 Mar 2012)
+
+  24 Mar 2012; Markos Chandras <hwoarang@gentoo.org> +serf-1.0.3.ebuild:
+  Version bump
+
+*serf-1.0.1 (13 Mar 2012)
+
+  13 Mar 2012; Mike Gilbert <floppym@gentoo.org> +serf-1.0.1.ebuild:
+  Version bump. Ebuild by Arfrever.
+
+*serf-1.0.0 (24 Oct 2011)
+
+  24 Oct 2011; Markos Chandras <hwoarang@gentoo.org> +serf-1.0.0.ebuild:
+  Version bump. Ebuild by Arfrever
+
+  18 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Add Arfrever as proxy maintainer with proxy-maintainers as herd.
+
+  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #246793
+
+  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> -serf-0.7.0.ebuild,
+  -serf-0.7.1.ebuild:
+  Remove old ebuild. Requested by Arfrever
 
   17 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> serf-0.7.2.ebuild:
   ppc64 stable wrt #364417
@@ -196,4 +252,3 @@
   +files/0.1.2-disable-unneeded-linking.patch, +metadata.xml,
   +serf-0.1.2.ebuild:
   initial ebuild, bug #219391
-

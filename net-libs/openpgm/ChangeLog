@@ -1,6 +1,26 @@
 # ChangeLog for net-libs/openpgm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/openpgm/ChangeLog,v 1.4 2011/07/13 19:47:17 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/openpgm/ChangeLog,v 1.10 2012/11/13 17:47:27 jer Exp $
+
+  13 Nov 2012; Jeroen Roovers <jer@gentoo.org> openpgm-5.1.118.ebuild:
+  Marked ~hppa (bug #442188).
+
+  12 Nov 2012; Anthony G. Basile <blueness@gentoo.org> openpgm-5.1.118.ebuild:
+  keyword ~ppc, bug #442188
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> openpgm-5.1.118.ebuild:
+  x86 stable wrt bug #404829
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> openpgm-5.1.118.ebuild:
+  Stable for amd64, wrt bug #404829
+
+*openpgm-5.1.118 (19 Dec 2011)
+
+  19 Dec 2011; Dirkjan Ochtman <djc@gentoo.org> +openpgm-5.1.118.ebuild:
+  Version bump to 5.1.118.
+
+  07 Oct 2011; Dirkjan Ochtman <djc@gentoo.org> -openpgm-5.1.114.ebuild:
+  Remove old version.
 
   13 Jul 2011; Markus Meier <maekke@gentoo.org> openpgm-5.1.116.ebuild:
   x86 stable, bug #371377
@@ -18,4 +38,3 @@
   23 Mar 2011; Dirkjan Ochtman <djc@gentoo.org> +openpgm-5.1.114.ebuild,
   +metadata.xml:
   Initial version of openpgm, for zeromq-2.1 (bug 355523).
-

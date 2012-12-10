@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/xsane/xsane-0.998.ebuild,v 1.1 2011/07/08 13:04:13 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/xsane/xsane-0.998.ebuild,v 1.8 2012/05/05 07:00:20 jdhore Exp $
 
 EAPI="4"
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.xsane.org/download/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="alpha amd64 ppc ppc64 sparc x86"
 IUSE="nls jpeg png tiff gimp lcms ocr"
 
 RDEPEND="media-gfx/sane-backends
@@ -28,7 +28,7 @@ RDEPEND="media-gfx/sane-backends
 PDEPEND="ocr? ( app-text/gocr )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 pkg_setup() {
 	export OLDXSANE
@@ -42,6 +42,9 @@ pkg_setup() {
 src_prepare() {
 	# Apply multiple fixes from different distributions
 	epatch "${WORKDIR}/${P}-patches"/*.patch
+
+	# Fix compability with libpng15 wrt #377363
+	sed -i -e 's:png_ptr->jmpbuf:png_jmpbuf(png_ptr):' src/xsane-save.c || die
 }
 
 src_configure() {

@@ -1,6 +1,41 @@
 # ChangeLog for net-p2p/mldonkey
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/mldonkey/ChangeLog,v 1.244 2011/07/26 20:04:39 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/mldonkey/ChangeLog,v 1.253 2012/02/24 20:52:54 ranger Exp $
+
+  24 Feb 2012; Brent Baude <ranger@gentoo.org> mldonkey-3.1.0.ebuild:
+  Marking mldonkey-3.1.0 ppc for bug 391035
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> mldonkey-3.1.0.ebuild:
+  Marking mldonkey-3.1.0 ppc for bug 391035
+
+  28 Nov 2011; Tony Vroon <chainsaw@gentoo.org> mldonkey-3.1.0.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #391035.
+
+  22 Nov 2011; Jeroen Roovers <jer@gentoo.org> mldonkey-3.1.0.ebuild:
+  Stable for HPPA (bug #391035).
+
+  22 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> mldonkey-3.1.0.ebuild:
+  x86 stable wrt bug #391035
+
+  23 Oct 2011; Lars Wendler <polynomial-c@gentoo.org> files/mldonkey.initd:
+  non-maintainer commit: Replaced deprecated opts variable in init script (bug
+  #384453).
+
+*mldonkey-3.1.0 (17 Sep 2011)
+
+  17 Sep 2011; Raúl Porcel <armin76@gentoo.org> -mldonkey-3.0.0.ebuild,
+  -mldonkey-3.0.6.ebuild, +mldonkey-3.1.0.ebuild:
+  Version bump, remove old
+
+  07 Aug 2011; Jeroen Roovers <jer@gentoo.org> mldonkey-3.0.7.ebuild:
+  Stable for HPPA (bug #376509).
+
+  07 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> mldonkey-3.0.7.ebuild:
+  x86 stable wrt bug #376509
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> mldonkey-3.0.7.ebuild:
+  Stable on amd64 wrt bug #376509
 
   26 Jul 2011; Raúl Porcel <armin76@gentoo.org> mldonkey-3.0.7.ebuild:
   html files are missing, dont install them

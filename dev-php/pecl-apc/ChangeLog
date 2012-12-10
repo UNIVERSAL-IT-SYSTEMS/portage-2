@@ -1,6 +1,53 @@
 # ChangeLog for dev-php/pecl-apc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/pecl-apc/ChangeLog,v 1.2 2011/07/22 12:20:48 olemarkus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/pecl-apc/ChangeLog,v 1.13 2012/09/04 12:29:31 olemarkus Exp $
+
+*pecl-apc-3.1.13 (04 Sep 2012)
+
+  04 Sep 2012; Ole Markus With <olemarkus@gentoo.org> +pecl-apc-3.1.13.ebuild,
+  -pecl-apc-3.1.10.ebuild, pecl-apc-3.1.9-r2.ebuild:
+  Bump
+
+*pecl-apc-3.1.12 (17 Aug 2012)
+
+  17 Aug 2012; Ole Markus With <olemarkus@gentoo.org> +pecl-apc-3.1.12.ebuild:
+  Version bump
+
+*pecl-apc-3.1.11 (24 Jul 2012)
+
+  24 Jul 2012; Ole Markus With <olemarkus@gentoo.org> +pecl-apc-3.1.11.ebuild:
+  Version bump
+
+  11 Jul 2012; Anthony G. Basile <blueness@gentoo.org> pecl-apc-3.1.10.ebuild:
+  Keyword ~mips
+
+  17 Jun 2012; Ole Markus With <olemarkus@gentoo.org> -pecl-apc-3.1.7.ebuild,
+  -pecl-apc-3.1.9-r1.ebuild, -pecl-apc-3.1.9.ebuild:
+  Removing older versions
+
+  17 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org> pecl-apc-3.1.9-r2.ebuild:
+  ppc64 stable wrt #402919
+
+*pecl-apc-3.1.10 (11 Apr 2012)
+
+  11 Apr 2012; Ole Markus With <olemarkus@gentoo.org> +pecl-apc-3.1.10.ebuild:
+  Version bump. Works with php 5.4
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> pecl-apc-3.1.9-r2.ebuild:
+  Marking pecl-apc-3.1.9-r2 ppc for bug 402919
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  pecl-apc-3.1.9-r2.ebuild:
+  x86 stable wrt bug #402919
+
+  13 Feb 2012; Agostino Sarubbo <ago@gentoo.org> pecl-apc-3.1.9-r2.ebuild:
+  Stable for amd64, wrt bug #402919
+
+*pecl-apc-3.1.9-r2 (09 Sep 2011)
+
+  09 Sep 2011; Ole Markus With <olemarkus@gentoo.org>
+  +pecl-apc-3.1.9-r2.ebuild:
+  Added revbump with support of various locking mechanism. Bug 369635
 
 *pecl-apc-3.1.9-r1 (22 Jul 2011)
 
@@ -369,4 +416,3 @@
 
   18 Aug 2005; <stuart@gentoo.org> ChangeLog:
   Initial version; replaces older dev-php/* packages
-

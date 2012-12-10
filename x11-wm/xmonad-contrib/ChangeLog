@@ -1,6 +1,27 @@
 # ChangeLog for x11-wm/xmonad-contrib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/xmonad-contrib/ChangeLog,v 1.12 2011/05/11 21:40:13 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/xmonad-contrib/ChangeLog,v 1.17 2012/09/12 16:12:15 qnikst Exp $
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org>
+  xmonad-contrib-0.10.ebuild, xmonad-contrib-0.9.2.ebuild,
+  xmonad-contrib-0.9.ebuild:
+  move x11-wm/xmonad-contrib/xmonad-contrib-0.9.2.ebuild ebuild to
+  mirror://hackage
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> xmonad-contrib-0.9.ebuild:
+  Move EAPI assignment to top of ebuild, bug 411875.
+
+  15 Mar 2012; Mark Wright <gienah@gentoo.org> xmonad-contrib-0.10.ebuild:
+  added dev-haskell/random depend (reported by styx)
+
+  06 Mar 2012; Mark Wright <gienah@gentoo.org> xmonad-contrib-0.10.ebuild:
+  Add ~ppc64 keywords to xmonad-contrib 0.10, thanks to EM3RY for testing.
+
+*xmonad-contrib-0.10 (22 Nov 2011)
+
+  22 Nov 2011; Sergei Trofimovich <slyfox@gentoo.org>
+  +xmonad-contrib-0.10.ebuild:
+  Version bump (bug #391161 by Mike Limansky)
 
 *xmonad-contrib-0.9.2 (11 May 2011)
 
@@ -61,4 +82,3 @@
   16 Dec 2007; Lennart Kolmodin <kolmodin@gentoo.org> +metadata.xml,
   +xmonad-contrib-0.5.ebuild:
   Initial import. xmonad-contrib is a library of extensions to x11-wm/xmonad.
-

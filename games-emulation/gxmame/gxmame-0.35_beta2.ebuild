@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/gxmame/gxmame-0.35_beta2.ebuild,v 1.11 2011/01/24 22:29:44 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/gxmame/gxmame-0.35_beta2.ebuild,v 1.13 2012/07/21 16:53:49 pacho Exp $
 
-EAPI=2
+EAPI=4
 inherit eutils games
 
 MY_P="${PN}-${PV/_beta/beta}"
@@ -21,12 +21,13 @@ RDEPEND="dev-libs/expat
 	x11-themes/gnome-icon-theme
 	nls? ( virtual/libintl )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 S=${WORKDIR}/${MY_P}
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-glib-single-include.patch
 	epatch "${FILESDIR}"/${P}-ovflfix.patch
 	sed -i \
 		-e "s:-O2 -fomit-frame-pointer -ffast-math:${CFLAGS}:" \
@@ -60,7 +61,7 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install
 	dodoc AUTHORS BUGS ChangeLog NEWS README TODO
 	prepgamesdirs
 }

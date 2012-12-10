@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/psi/psi-3.4.0-r2.ebuild,v 1.3 2011/06/21 15:58:04 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/psi/psi-3.4.0-r2.ebuild,v 1.7 2012/10/19 10:21:22 jlec Exp $
 
-EAPI="3"
+EAPI=4
 
-inherit autotools fortran-2 eutils
+inherit autotools-utils fortran-2 multilib
 
 DESCRIPTION="Suite of ab initio quantum chemistry programs to compute various molecular properties"
 HOMEPAGE="http://www.psicode.org/"
@@ -12,13 +12,10 @@ SRC_URI="mirror://sourceforge/psicode/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="test"
+KEYWORDS="amd64 x86"
+IUSE="static-libs test"
 
-# File collision, see bug #249423
 RDEPEND="
-	virtual/fortran
-
 	!sci-visualization/extrema
 	virtual/blas
 	virtual/lapack
@@ -28,17 +25,20 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${PN}${PV:0:1}"
 
-src_prepare() {
-	epatch "${FILESDIR}"/${PV}-dont-build-libint.patch \
-		"${FILESDIR}"/use-external-libint.patch \
-		"${FILESDIR}"/${PV}-gcc-4.3.patch \
-		"${FILESDIR}"/${PV}-destdir.patch \
-		"${FILESDIR}"/${P}-parallel-make.patch \
-		"${FILESDIR}"/${PV}-man_paths.patch \
-		"${FILESDIR}"/${PV}-ldflags.patch \
-		"${FILESDIR}"/${PV}-parallel_fix.patch \
-		"${FILESDIR}"/${PV}-fortify.patch
+PATCHES=(
+	"${FILESDIR}"/${PV}-dont-build-libint.patch
+	"${FILESDIR}"/use-external-libint.patch
+	"${FILESDIR}"/${PV}-gcc-4.3.patch
+	"${FILESDIR}"/${PV}-destdir.patch
+	"${FILESDIR}"/${P}-parallel-make.patch
+	"${FILESDIR}"/${PV}-man_paths.patch
+	"${FILESDIR}"/${PV}-ldflags.patch
+	"${FILESDIR}"/${PV}-parallel_fix.patch
+	"${FILESDIR}"/${PV}-fortify.patch
+	)
 
+src_prepare() {
+	autotools-utils_src_prepare
 	# Broken test
 	sed \
 		-e 's:scf-mvd-opt ::g' \
@@ -55,20 +55,26 @@ src_configure() {
 	# This variable gets set sometimes to /usr/lib/src and breaks stuff
 	unset CLIBS
 
-	econf \
-		--with-opt="${CXXFLAGS}" \
-		--datadir="${EPREFIX}"/usr/share/${PN} \
+	local myeconfargs=(
+		--with-opt="${CXXFLAGS}"
+		--datadir="${EPREFIX}"/usr/share/${PN}
 		--with-blas="$(pkg-config blas --libs)"
+		--with-lapack="$(pkg-config --libs lapack)"
+		)
+	autotools-utils_src_configure
 }
 
 src_compile() {
-	emake SCRATCH="${WORKDIR}/libint" DODEPEND="no" || die
+	autotools-utils_src_compile SCRATCH="${WORKDIR}/libint" DODEPEND="no"
 }
 
 src_test() {
-	emake EXECDIR="${S}"/bin TESTFLAGS="" -j1 tests || die
+	emake EXECDIR="${S}"/bin TESTFLAGS="" -j1 tests
 }
 
 src_install() {
-	emake DESTDIR="${D}" DODEPEND="no" install || die
+	autotools-utils_src_install DODEPEND="no"
+	if ! use static-libs; then
+		rm -f "${ED}"/usr/$(get_libdir)/*.a || die
+	fi
 }

@@ -1,6 +1,18 @@
 # ChangeLog for net-analyzer/jffnms
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/jffnms/ChangeLog,v 1.11 2008/02/02 15:34:25 hollow Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/jffnms/ChangeLog,v 1.14 2012/07/01 22:04:43 mabi Exp $
+
+  01 Jul 2012; Matti Bickel <mabi@gentoo.org> -jffnms-0.8.3-r2.ebuild:
+  remove old version. approved by Zero_Chaos
+
+*jffnms-0.9.3 (12 Jun 2012)
+
+  12 Jun 2012; Matti Bickel <mabi@gentoo.org> +jffnms-0.9.3.ebuild:
+  version bump. drop depend.php eclass, use eapi4. no longer needs security
+  patch from 0.8.3
+
+  12 Jun 2012; Zac Medico <zmedico@gentoo.org> jffnms-0.8.3-r2.ebuild:
+  inherit user for enewgroup and enewuser
 
   02 Feb 2008; Benedikt Böhm <hollow@gentoo.org> jffnms-0.8.3-r2.ebuild:
   use depend.apache eclass wrt #208033

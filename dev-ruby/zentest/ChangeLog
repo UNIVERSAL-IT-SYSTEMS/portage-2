@@ -1,6 +1,70 @@
 # ChangeLog for dev-ruby/zentest
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/zentest/ChangeLog,v 1.96 2011/07/23 06:22:27 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/zentest/ChangeLog,v 1.113 2012/11/06 17:12:17 jer Exp $
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> zentest-4.7.0.ebuild:
+  Stable for HPPA (bug #426668).
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> zentest-4.4.2.ebuild,
+  zentest-4.7.0.ebuild:
+  alpha stable
+
+  27 Oct 2012; Raúl Porcel <armin76@gentoo.org> zentest-4.7.0.ebuild:
+  ia64/sparc stable wrt #421525
+
+  24 Sep 2012; Hans de Graaff <graaff@gentoo.org> -zentest-4.6.2.ebuild,
+  -zentest-4.8.1.ebuild:
+  Cleanup.
+
+*zentest-4.8.2 (13 Aug 2012)
+
+  13 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +zentest-4.8.2.ebuild:
+  Version bump; update to EAPI 4.
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org> zentest-4.7.0.ebuild:
+  Stable ppc64, bug #421525
+
+  22 Jul 2012; <nixnut@gentoo.org> zentest-4.7.0.ebuild:
+  ppc stable #421525
+
+  30 Jun 2012; Andreas Schuerch <nativemad@gentoo.org> zentest-4.7.0.ebuild:
+  x86 stable, see bug 421525
+
+  18 Jun 2012; Agostino Sarubbo <ago@gentoo.org> zentest-4.7.0.ebuild:
+  Stable for amd64, wrt bug #421525
+
+*zentest-4.8.1 (16 Jun 2012)
+
+  16 Jun 2012; Hans de Graaff <graaff@gentoo.org> +zentest-4.8.1.ebuild:
+  Version bump.
+
+*zentest-4.7.0 (27 Apr 2012)
+
+  27 Apr 2012; Hans de Graaff <graaff@gentoo.org> +zentest-4.7.0.ebuild:
+  Version bump.
+
+  27 Apr 2012; Hans de Graaff <graaff@gentoo.org> -zentest-4.3.3.ebuild,
+  -zentest-4.5.0.ebuild, -zentest-4.6.0.ebuild, -zentest-4.6.1.ebuild:
+  Remove old versions.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> zentest-4.6.2.ebuild:
+  Add Prefix keywords, bug #396547
+
+  05 Dec 2011; Naohiro Aota <naota@gentoo.org> zentest-4.6.2.ebuild:
+  Add ~x86-fbsd.
+
+  14 Sep 2011; Jeroen Roovers <jer@gentoo.org> zentest-4.4.2.ebuild:
+  Stable for HPPA (bug #369573).
+
+*zentest-4.6.2 (26 Aug 2011)
+
+  26 Aug 2011; Hans de Graaff <graaff@gentoo.org> +zentest-4.6.2.ebuild:
+  Version bump.
+
+*zentest-4.6.1 (12 Aug 2011)
+
+  12 Aug 2011; Hans de Graaff <graaff@gentoo.org> +zentest-4.6.1.ebuild:
+  Version bump.
 
 *zentest-4.6.0 (23 Jul 2011)
 
@@ -390,4 +454,3 @@
   12 Jan 2006; Caleb Tennis <caleb@gentoo.org> +files/zentest-dirfix.diff,
   +files/zentest-fixrubyloc.diff, +metadata.xml, +zentest-2.4.0.ebuild:
   Inital import
-

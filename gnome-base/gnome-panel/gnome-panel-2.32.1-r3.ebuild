@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-panel/gnome-panel-2.32.1-r3.ebuild,v 1.1 2011/07/14 12:34:22 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-panel/gnome-panel-2.32.1-r3.ebuild,v 1.12 2012/10/16 03:47:52 tetromino Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
 GNOME2_LA_PUNT="yes"
-PYTHON_DEPEND="2:2.4"
+PYTHON_DEPEND="2:2.5"
 
 inherit gnome2 python eutils autotools
 
@@ -14,20 +14,21 @@ HOMEPAGE="http://www.gnome.org/"
 SRC_URI="${SRC_URI} mirror://gentoo/introspection-20110205.m4.tar.bz2
 	http://dev.gentoo.org/~pacho/gnome/${P}-patches.tar.bz2"
 
-LICENSE="GPL-2 FDL-1.1 LGPL-2"
+LICENSE="GPL-2+ FDL-1.1+ LGPL-2+"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
-IUSE="+bonobo doc eds +introspection networkmanager"
+KEYWORDS="alpha amd64 arm ia64 ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
+IUSE="+bonobo eds +introspection networkmanager"
 
 RDEPEND=">=gnome-base/gnome-desktop-2.26:2
 	>=x11-libs/pango-1.15.4[introspection?]
 	>=dev-libs/glib-2.25.12:2
 	>=x11-libs/gtk+-2.22:2[introspection?]
 	>=dev-libs/libgweather-2.27.90:2
+	<dev-libs/libgweather-2.90.1:2
 	dev-libs/libxml2:2
 	>=gnome-base/gconf-2.6.1:2[introspection?]
 	>=media-libs/libcanberra-0.23[gtk]
-	>=gnome-base/gnome-menus-2.27.92
+	>=gnome-base/gnome-menus-2.27.92:0
 	gnome-base/librsvg:2
 	>=dev-libs/dbus-glib-0.80
 	>=sys-apps/dbus-1.1.2
@@ -44,16 +45,14 @@ RDEPEND=">=gnome-base/gnome-desktop-2.26:2
 	networkmanager? ( >=net-misc/networkmanager-0.6.7 )"
 DEPEND="${RDEPEND}
 	>=dev-lang/perl-5
+	dev-util/gtk-doc-am
 	>=app-text/gnome-doc-utils-0.3.2
-	>=dev-util/pkgconfig-0.9
+	virtual/pkgconfig
 	>=dev-util/intltool-0.40
-	~app-text/docbook-xml-dtd-4.1.2
-	doc? ( >=dev-util/gtk-doc-1 )
-	gnome-base/gnome-common
-	dev-util/gtk-doc-am"
+	app-text/docbook-xml-dtd:4.1.2
+	gnome-base/gnome-common"
 # eautoreconf needs
 #	gnome-base/gnome-common
-#	dev-util/gtk-doc-am
 
 pkg_setup() {
 	G2CONF="${G2CONF}
@@ -79,8 +78,6 @@ src_unpack() {
 }
 
 src_prepare() {
-	gnome2_src_prepare
-
 	# List the objects before the libraries to fix build with --as-needed
 	epatch "${FILESDIR}/${P}-as-needed.patch"
 
@@ -95,8 +92,11 @@ src_prepare() {
 	# clock applet: Pass the correct month to Evolution command line
 	epatch "${FILESDIR}/${PN}-2.32.1-evo-month.patch"
 
-	intltoolize --force --copy --automake || die "intltoolize failed"
+	# Fix underlinking, bug #384533
+	epatch "${FILESDIR}/${P}-underlinking.patch"
+
 	AT_M4DIR=${WORKDIR} eautoreconf
+	gnome2_src_prepare
 }
 
 pkg_postinst() {

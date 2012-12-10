@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/slang/slang-2.2.4.ebuild,v 1.1 2011/04/25 15:07:01 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/slang/slang-2.2.4.ebuild,v 1.13 2012/10/08 00:45:28 naota Exp $
 
 EAPI=4
 inherit eutils
@@ -11,13 +11,13 @@ SRC_URI="mirror://slang/v${PV%.*}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="cjk pcre png readline zlib"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x86-solaris"
+IUSE="cjk pcre png readline static-libs zlib"
 
 # ncurses for ncurses5-config to get terminfo directory
 RDEPEND="sys-libs/ncurses
 	pcre? ( dev-libs/libpcre )
-	png? ( >=media-libs/libpng-1.4 )
+	png? ( >=media-libs/libpng-1.2:0 )
 	cjk? ( dev-libs/oniguruma )
 	readline? ( sys-libs/readline )
 	zlib? ( sys-libs/zlib )"
@@ -30,6 +30,9 @@ src_prepare() {
 
 	# avoid linking to -ltermcap race with some systems
 	sed -i -e '/^TERMCAP=/s:=.*:=:' configure || die
+	# we use the GNU linker also on Solaris
+	sed -i -e 's/-G -fPIC/-shared -fPIC/g' \
+		-e 's/-Wl,-h,/-Wl,-soname,/g' configure || die
 }
 
 src_configure() {
@@ -45,7 +48,7 @@ src_configure() {
 }
 
 src_compile() {
-	emake elf static
+	emake elf $(use static-libs && echo static)
 
 	pushd slsh >/dev/null
 	emake slsh
@@ -53,9 +56,9 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install-all
+	emake DESTDIR="${D}" install $(use static-libs && echo install-static)
 
-	rm -rf "${D}"/usr/share/doc/{slang,slsh}
+	rm -rf "${ED}"/usr/share/doc/{slang,slsh}
 
 	dodoc NEWS README *.txt doc/{,internal,text}/*.txt
 	dohtml doc/slangdoc.html slsh/doc/html/*.html

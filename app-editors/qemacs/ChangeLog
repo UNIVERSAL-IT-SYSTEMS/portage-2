@@ -1,6 +1,42 @@
 # ChangeLog for app-editors/qemacs
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/qemacs/ChangeLog,v 1.50 2009/12/09 16:02:19 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/qemacs/ChangeLog,v 1.59 2012/06/15 12:27:06 ulm Exp $
+
+  15 Jun 2012; Ulrich Müller <ulm@gentoo.org>
+  -qemacs-0.4.0_pre20090420.ebuild:
+  Remove old.
+
+  15 Jun 2012; Johannes Huber <johu@gentoo.org>
+  qemacs-0.4.0_pre20090420-r1.ebuild:
+  Stable for x86, wrt bug #414945
+
+  10 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  qemacs-0.4.0_pre20090420-r1.ebuild:
+  Stable for amd64, wrt bug #414945
+
+  06 May 2012; Ulrich Müller <ulm@gentoo.org>
+  qemacs-0.4.0_pre20090420-r1.ebuild:
+  Fix compatibility with >=texi2html-5, bug 414927. Update libpng dependency.
+  Other minor fixups.
+
+  06 May 2012; Ulrich Müller <ulm@gentoo.org>
+  qemacs-0.4.0_pre20090420-r1.ebuild:
+  Revert.
+
+  06 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  qemacs-0.4.0_pre20090420.ebuild:
+  Revert keywording to ~ppc wrt #414945 pending on user request
+
+  04 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  qemacs-0.4.0_pre20090420-r1.ebuild:
+  Fix compability with app-text/texi2html >= 5 by vadmeste (from Freenode)
+
+*qemacs-0.4.0_pre20090420-r1 (14 Aug 2011)
+
+  14 Aug 2011; Ulrich Mueller <ulm@gentoo.org>
+  +qemacs-0.4.0_pre20090420-r1.ebuild,
+  +files/qemacs-0.4.0_pre20090420-nostrip.patch:
+  Don't strip binaries in Makefile. Remove RESTRICT=strip.
 
   09 Dec 2009; Christian Faulhammer <fauli@gentoo.org>
   -files/qemacs-0.3.1-manpage-ref-fix.patch,

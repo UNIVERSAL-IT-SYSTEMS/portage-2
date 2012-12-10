@@ -1,6 +1,166 @@
 # ChangeLog for app-admin/rsyslog
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/rsyslog/ChangeLog,v 1.51 2011/05/23 08:01:54 ultrabug Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/rsyslog/ChangeLog,v 1.87 2012/11/27 11:45:32 ultrabug Exp $
+
+*rsyslog-7.2.2-r1 (27 Nov 2012)
+
+  27 Nov 2012; Ultrabug <ultrabug@gentoo.org> files/7-stable/rsyslog.logrotate,
+  -rsyslog-7.2.2.ebuild, +rsyslog-7.2.2-r1.ebuild:
+  Fix #444774 logrotate script thx to Robin Hill, fix #444754 curl dep thx to
+  Didier Cardoso
+
+  23 Nov 2012; Ultrabug <ultrabug@gentoo.org> rsyslog-6.6.0.ebuild,
+  rsyslog-7.2.2.ebuild:
+  Fix dev-libs/librelp DEP thx to Robin Hill, fix #444139
+
+  20 Nov 2012; Ultrabug <ultrabug@gentoo.org> files/7-stable/rsyslog.logrotate:
+  fix v7 logrotate script
+
+*rsyslog-7.2.2 (20 Nov 2012)
+*rsyslog-6.6.0 (20 Nov 2012)
+*rsyslog-5.10.1 (20 Nov 2012)
+
+  20 Nov 2012; Ultrabug <ultrabug@gentoo.org>
+  +files/6-stable/rsyslog-6.6.0-fix-runtime.patch,
+  +files/7-stable/rsyslog.confd, +files/7-stable/rsyslog.initd,
+  +files/7-stable/rsyslog.logrotate, +files/7-stable/rsyslog-gentoo.conf,
+  +rsyslog-5.10.1.ebuild, +rsyslog-6.6.0.ebuild, +rsyslog-7.2.2.ebuild:
+  Version bump, new 7-stable branch, fix #433595
+
+  29 Oct 2012; Tiziano Müller <dev-zero@gentoo.org> metadata.xml:
+  Removed myself as co-maintainer.
+
+  24 Aug 2012; Ultrabug <ultrabug@gentoo.org> files/5-stable/rsyslog.initd,
+  files/6-stable/rsyslog.initd, -rsyslog-6.2.1.ebuild:
+  Fix init scripts #432548 thx to zunkree. Drop old.
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> rsyslog-5.8.5.ebuild,
+  rsyslog-5.8.11.ebuild, rsyslog-5.8.12.ebuild:
+  Drop sparc keywords
+
+  23 Jul 2012; Markus Meier <maekke@gentoo.org> rsyslog-6.2.2.ebuild:
+  add ~arm, bug #425526
+
+  12 Jul 2012; Jeroen Roovers <jer@gentoo.org> rsyslog-6.2.2.ebuild:
+  Marked ~hppa (bug #425526).
+
+  09 Jul 2012; Jeroen Roovers <jer@gentoo.org> rsyslog-5.8.11.ebuild:
+  Stable for HPPA (bug #424767).
+
+  05 Jul 2012; Agostino Sarubbo <ago@gentoo.org> rsyslog-5.8.11.ebuild:
+  Stable for amd64, wrt bug #424767
+
+  04 Jul 2012; Jeff Horelick <jdhore@gentoo.org> rsyslog-5.8.11.ebuild:
+  marked x86 per bug 424767
+
+*rsyslog-5.8.12 (04 Jul 2012)
+
+  04 Jul 2012; Ultrabug <ultrabug@gentoo.org> +rsyslog-5.8.12.ebuild:
+  v5 branch version bump
+
+*rsyslog-6.2.2 (15 Jun 2012)
+
+  15 Jun 2012; Ultrabug <ultrabug@gentoo.org> -rsyslog-5.8.8.ebuild,
+  +rsyslog-6.2.2.ebuild:
+  Version bump fix #420999. Drop old.
+
+  02 Jun 2012; Justin Lecher <jlec@gentoo.org> rsyslog-5.8.5.ebuild,
+  rsyslog-5.8.8.ebuild, rsyslog-5.8.11.ebuild, rsyslog-6.2.1.ebuild:
+  Don't run eautoreconf twice
+
+*rsyslog-6.2.1 (01 Jun 2012)
+
+  01 Jun 2012; Ultrabug <ultrabug@gentoo.org> +files/6-stable/rsyslog.confd,
+  +files/6-stable/rsyslog.initd, +files/6-stable/rsyslog.logrotate,
+  +files/6-stable/rsyslog-gentoo.conf, +files/6-stable/rsyslog6-zeromq.patch,
+  +rsyslog-6.2.1.ebuild:
+  New stable v6 branch bump, fix #398269.
+
+  31 May 2012; Ultrabug <ultrabug@gentoo.org> rsyslog-5.8.11.ebuild,
+  rsyslog-5.8.5.ebuild, rsyslog-5.8.8.ebuild:
+  Fix autotools-utils usage wrt #407811 thanks to vapier and mgorny.
+
+  30 May 2012; Zac Medico <zmedico@gentoo.org> rsyslog-5.8.11.ebuild,
+  rsyslog-5.8.5.ebuild, rsyslog-5.8.8.ebuild:
+  Inherit eutils for epatch.
+
+*rsyslog-5.8.11 (22 May 2012)
+
+  22 May 2012; Ultrabug <ultrabug@gentoo.org> rsyslog-5.8.5.ebuild,
+  -rsyslog-5.8.6.ebuild, -rsyslog-5.8.7.ebuild, rsyslog-5.8.8.ebuild,
+  +rsyslog-5.8.11.ebuild:
+  Version bump, fix #408745 thx to Opportunist. Fix ssl/gnutls dependencies wrt
+  #410241 thx to Conrad. Drop old versions.
+
+  10 May 2012; Jeff Horelick <jdhore@gentoo.org> rsyslog-5.8.8.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*rsyslog-5.8.8 (07 May 2012)
+
+  07 May 2012; Justin Lecher <jlec@gentoo.org> +rsyslog-5.8.8.ebuild:
+  Non-maintainer Version Bump, Correct indention of _EOF
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> rsyslog-5.8.5.ebuild,
+  rsyslog-5.8.6.ebuild, rsyslog-5.8.7.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*rsyslog-5.8.7 (14 Feb 2012)
+
+  14 Feb 2012; Ultrabug <ultrabug@gentoo.org> +rsyslog-5.8.7.ebuild:
+  Version bump
+
+  24 Jan 2012; Justin Lecher <jlec@gentoo.org> rsyslog-5.8.6.ebuild:
+  exchange last gnutls to ssl
+
+  16 Jan 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  files/5-stable/rsyslog.initd, rsyslog-5.8.6.ebuild:
+  Fix initscript to not use deprecated opts. Use ssl useflag not gnutls for ssl
+  support as ssl should enable the ssl support and gnutls/openssl respective
+  features if multiple backends are available.
+
+*rsyslog-5.8.6 (28 Dec 2011)
+
+  28 Dec 2011; Ultrabug <ultrabug@gentoo.org> +rsyslog-5.8.6.ebuild:
+  Version bump.
+
+  13 Sep 2011; Ultrabug <ultrabug@gentoo.org> -rsyslog-5.6.5.ebuild,
+  -rsyslog-5.8.3.ebuild:
+  Drop old vulnerable versions wrt #381637
+
+  11 Sep 2011; Markus Meier <maekke@gentoo.org> rsyslog-5.8.5.ebuild:
+  x86 stable, bug #381637
+
+  09 Sep 2011; Tim Harder <radhermit@gentoo.org> rsyslog-5.6.5.ebuild,
+  rsyslog-5.8.3.ebuild, rsyslog-5.8.5.ebuild:
+  Add build dependency on pkgconfig (bug #349924 by matsuu).
+
+  09 Sep 2011; Jeroen Roovers <jer@gentoo.org> rsyslog-5.8.5.ebuild:
+  Stable for HPPA (bug #381637).
+
+  05 Sep 2011; Tony Vroon <chainsaw@gentoo.org> rsyslog-5.8.5.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #381637.
+
+  05 Sep 2011; Ultrabug <ultrabug@gentoo.org> rsyslog-5.8.5.ebuild:
+  Multiple ebuild fixes : #381909, #381907, #381905, #381901, #381903. Thanks
+  to Agostino Sarubbo.
+
+  05 Sep 2011; Ultrabug <ultrabug@gentoo.org> rsyslog-5.8.5.ebuild:
+  Multiple ebuild fixes : #381909, #381907, #381905, #381901, #381903. Thanks
+  to Agostino Sarubbo.
+
+*rsyslog-5.8.5 (05 Sep 2011)
+
+  05 Sep 2011; Ultrabug <ultrabug@gentoo.org> files/5-stable/rsyslog.initd,
+  -rsyslog-5.8.1.ebuild, +rsyslog-5.8.5.ebuild, metadata.xml:
+  Init script handles baselayout 1 & 2, fix #373913 thanks to Martin Dummer for
+  reporting. Version bump wrt #381637 and drop old vulnerable version. Add
+  optional zeromq support to rsyslog.
+
+*rsyslog-5.8.3 (03 Aug 2011)
+
+  03 Aug 2011; Ultrabug <ultrabug@gentoo.org> +rsyslog-5.8.3.ebuild:
+  Version bump.
 
 *rsyslog-5.8.1 (23 May 2011)
 
@@ -276,4 +436,3 @@
   +files/3.15/rsyslog.logrotate, +files/3.15/rsyslog-gentoo.conf,
   +metadata.xml, +rsyslog-3.15.0.ebuild:
   Initial commit (ebuild written by me.)
-

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-laptop/pommed/pommed-1.31.ebuild,v 1.3 2011/03/27 11:45:20 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-laptop/pommed/pommed-1.31.ebuild,v 1.8 2012/09/05 07:13:42 jlec Exp $
 
 EAPI="1"
 
@@ -13,7 +13,7 @@ SRC_URI="http://alioth.debian.org/frs/download.php/${ALIOTH_NUMBER}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="gtk X"
 
 COMMON_DEPEND="media-libs/alsa-lib
@@ -29,7 +29,7 @@ COMMON_DEPEND="media-libs/alsa-lib
 	X? ( x11-libs/libX11
 		x11-libs/libXpm )"
 DEPEND="${COMMON_DEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 RDEPEND="${COMMON_DEPEND}
 	media-sound/alsa-utils
 	virtual/eject"
@@ -99,9 +99,7 @@ src_install() {
 			fi
 		done
 
-		insinto /usr/share/applications
-		doins gpomme/gpomme.desktop
-		doins gpomme/gpomme-c.desktop
+		domenu gpomme/gpomme.desktop gpomme/gpomme-c.desktop
 		insinto /usr/share/gpomme/
 		doins -r gpomme/themes
 		doins gpomme/gpomme.glade

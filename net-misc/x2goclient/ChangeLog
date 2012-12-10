@@ -1,6 +1,52 @@
 # ChangeLog for net-misc/x2goclient
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/x2goclient/ChangeLog,v 1.5 2010/04/29 13:40:04 voyageur Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/x2goclient/ChangeLog,v 1.14 2012/12/03 13:43:47 ago Exp $
+
+  03 Dec 2012; <ago@gentoo.org> x2goclient-3.99.2.2.ebuild:
+  Stable for amd64, wrt bug #445766
+
+*x2goclient-3.99.3.0 (15 Nov 2012)
+
+  15 Nov 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  +x2goclient-3.99.3.0.ebuild:
+  Version bump
+
+*x2goclient-3.99.2.2 (21 Aug 2012)
+
+  21 Aug 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  +x2goclient-3.99.2.2.ebuild:
+  Version bump
+
+*x2goclient-3.99.2.1 (10 Jul 2012)
+
+  10 Jul 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  +x2goclient-3.99.2.1.ebuild:
+  Version bump
+
+  08 Jun 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  x2goclient-3.0.1.18.ebuild:
+  This needs qt-core with USE=ssl, reported by fauli in bug #416713
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  x2goclient-3.0.1.18.ebuild:
+  inherit eutils for make_desktop_entry
+
+  15 Mar 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  x2goclient-3.0.1.18.ebuild, +files/x2goclient-3.0.1.18-cups1.5.patch:
+  Support both cups 1.4 and 1.5, reported by luis in bug #408105
+
+*x2goclient-3.0.1.18 (14 Mar 2012)
+
+  14 Mar 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  +x2goclient-3.0.1.18.ebuild, -x2goclient-3.01.5.ebuild,
+  -files/x2goclient-3.01.5-noldap.patch:
+  Version bump, new homepage and source, clean ebuild, new versioning. Bug
+  #408105
+
+  19 Aug 2011; Bernard Cafarelli <voyageur@gentoo.org>
+  x2goclient-3.01.5.ebuild:
+  cups is mandatory, patch welcome to make it optional (and not colliding with
+  no-ldap patch). Bug #372631
 
 *x2goclient-3.01.5 (29 Apr 2010)
 

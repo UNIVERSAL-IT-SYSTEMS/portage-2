@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gmt/gmt-4.5.6.ebuild,v 1.3 2011/06/10 07:52:05 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gmt/gmt-4.5.6.ebuild,v 1.6 2012/06/16 16:57:44 ssuominen Exp $
 
 EAPI=4
 
@@ -21,8 +21,8 @@ SRC_URI="mirror://gmt/GMT${PV}_src.tar.bz2
 
 LICENSE="GPL-2 gmttria? ( Artistic )"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="doc debug gmtfull gmthigh gmttria +metric mex +netcdf octave ps"
+KEYWORDS="amd64 x86"
+IUSE="doc debug gmtfull gmthigh gmttria +metric mex +netcdf octave postscript"
 
 RDEPEND="
 	!sci-biology/probcons
@@ -45,7 +45,7 @@ REQUIRED_USE="
 MAKEOPTS+=" -j1"
 
 src_prepare() {
-	mv -f "${WORKDIR}/share/"*  "${S}/share/" || die "Moving sources failed."
+	mv -f "${WORKDIR}/share/"* "${S}/share/" || die
 
 	epatch \
 		"${FILESDIR}/${PN}-4.5.0-no-strip.patch" \
@@ -71,18 +71,18 @@ src_configure() {
 		$(use_enable octave) \
 		$(use_enable debug devdebug) \
 		$(use_enable !metric US) \
-		$(use_enable ps eps) \
+		$(use_enable postscript eps) \
 		$(use_enable mex) \
 		$(use_enable gmttria triangle)
 }
 
 src_install() {
 	emake \
-		DESTDIR="${ED}" \
+		DESTDIR="${D}" \
 		install-gmt install-data install-suppl install-man
 
 	# remove static libs
-	find "${ED}/usr/$(get_libdir)" -name '*.a' -exec rm -f {} +
+	find "${D}/usr/$(get_libdir)" -name '*.a' -exec rm -f {} +
 
 	dodoc README
 	use doc && dodoc -r "${S}"/share/doc/${PN}/*

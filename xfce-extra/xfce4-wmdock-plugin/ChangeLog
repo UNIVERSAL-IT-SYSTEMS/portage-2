@@ -1,6 +1,31 @@
 # ChangeLog for xfce-extra/xfce4-wmdock-plugin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-wmdock-plugin/ChangeLog,v 1.6 2011/04/29 07:11:12 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-wmdock-plugin/ChangeLog,v 1.12 2012/11/28 12:44:47 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-wmdock-plugin-0.3.4.ebuild:
+  EAPI5
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org>
+  xfce4-wmdock-plugin-0.3.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-wmdock-plugin-0.3.4.ebuild:
+  Install to libdir instead of libexecdir.
+
+  29 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-wmdock-plugin-0.3.2.ebuild,
+  -files/xfce4-wmdock-plugin-0.3.2-libxfce4panel_h.patch:
+  old
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-wmdock-plugin-0.3.4.ebuild:
+  amd64 stable wrt #386963
+
+  16 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  xfce4-wmdock-plugin-0.3.4.ebuild:
+  x86 stable wrt bug #386963
 
 *xfce4-wmdock-plugin-0.3.4 (29 Apr 2011)
 

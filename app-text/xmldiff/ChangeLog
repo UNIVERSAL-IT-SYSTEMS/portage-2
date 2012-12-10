@@ -1,6 +1,29 @@
 # ChangeLog for app-text/xmldiff
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/xmldiff/ChangeLog,v 1.16 2011/01/08 18:45:06 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/xmldiff/ChangeLog,v 1.23 2012/08/27 15:18:13 floppym Exp $
+
+  27 Aug 2012; Mike Gilbert <floppym@gentoo.org> xmldiff-0.6.10.ebuild,
+  xmldiff-0.6.9-r1.ebuild, xmldiff-0.6.9.ebuild:
+  Update HOMEPAGE to prevent redirect. Suggested by Arfrever.
+
+  26 Feb 2012; Patrick Lauer <patrick@gentoo.org> xmldiff-0.6.10.ebuild,
+  xmldiff-0.6.9-r1.ebuild:
+  Restricting jython
+
+  18 Dec 2011; Michael Weber <xmw@gentoo.org> xmldiff-0.6.10.ebuild:
+  ppc stable (bug 378063)
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> xmldiff-0.6.10.ebuild:
+  alpha/ia64/sparc stable wrt #378063
+
+  18 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> xmldiff-0.6.10.ebuild:
+  x86 stable wrt bug #378063
+
+  15 Oct 2011; Markos Chandras <hwoarang@gentoo.org> xmldiff-0.6.10.ebuild:
+  Stable on amd64 wrt bug #378063
+
+  06 Aug 2011; Zac Medico <zmedico@gentoo.org> xmldiff-0.6.10.ebuild:
+  Add ~x86-linux keyword.
 
 *xmldiff-0.6.10 (08 Jan 2011)
 *xmldiff-0.6.9-r1 (08 Jan 2011)
@@ -67,4 +90,3 @@
   +files/xmldiff-0.6.8-python2.5.patch, +metadata.xml,
   +xmldiff-0.6.8.ebuild:
   Initial commit, fixes bug #181256
-

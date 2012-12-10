@@ -1,6 +1,45 @@
 # ChangeLog for dev-db/unixODBC
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/unixODBC/ChangeLog,v 1.101 2011/04/29 13:17:41 cbrannon Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-db/unixODBC/ChangeLog,v 1.113 2012/05/12 01:10:55 aballier Exp $
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> unixODBC-2.3.1.ebuild:
+  keyword ~amd64-fbsd
+
+  06 May 2012; Fabian Groffen <grobian@gentoo.org> unixODBC-2.3.1.ebuild:
+  Marked ~x{86,64}-solaris
+
+  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> unixODBC-2.3.1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #405059
+
+  12 Mar 2012; Markus Meier <maekke@gentoo.org> unixODBC-2.3.1.ebuild:
+  arm stable, bug #405059
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> unixODBC-2.3.1.ebuild:
+  ppc/ppc64 stable wrt #405059
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> unixODBC-2.3.1.ebuild:
+  x86 stable wrt bug #405059
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> unixODBC-2.3.1.ebuild:
+  Stable for HPPA (bug #405059).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> unixODBC-2.3.1.ebuild:
+  Stable for amd64, wrt bug #405059
+
+  23 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> unixODBC-2.3.1.ebuild:
+  Despite ./configure --help giving --enable-driver-conf it's really
+  AC_ARG_ENABLE for --enable-driverc.
+
+*unixODBC-2.3.1 (23 Jan 2012)
+
+  23 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +unixODBC-2.3.1.ebuild:
+  Version bump.
+
+  13 Sep 2011; Jesus Rivero <neurogeek@gentoo.org> metadata.xml:
+  Added myself to metadata.xml as maintainer
+
+  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #353756
 
   29 Apr 2011; Christopher Brannon <cbrannon@gentoo.org>
   -unixODBC-2.3.0.ebuild:

@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/wcd/wcd-5.1.4.ebuild,v 1.1 2011/03/03 14:22:17 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/wcd/wcd-5.1.4.ebuild,v 1.3 2012/03/13 13:04:06 jlec Exp $
 
-EAPI="4"
+EAPI=4
 
 inherit eutils toolchain-funcs
 
@@ -15,6 +15,8 @@ KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 LICENSE="GPL-2"
 IUSE="ncurses nls unicode"
 
+DEPEND="app-text/ghostscript-gpl"
+
 src_prepare() {
 	epatch "${FILESDIR}"/${PV}-gentoo.patch
 	tc-export CC
@@ -26,6 +28,5 @@ src_compile() {
 	use ncurses || mycompile="${mycompile} CURSES="
 	use unicode && mycompile="${mycompile} UCS=1"
 	emake \
-		${mycompile} \
-		|| die
+		${mycompile}
 }

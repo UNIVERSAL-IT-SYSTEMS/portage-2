@@ -1,6 +1,155 @@
 # ChangeLog for x11-libs/pixman
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/pixman/ChangeLog,v 1.105 2011/07/30 10:56:13 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/pixman/ChangeLog,v 1.145 2012/12/08 17:16:07 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> pixman-0.28.0.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> pixman-0.28.0.ebuild:
+  Marking pixman-0.28.0 ppc stable for bug 440872
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> pixman-0.28.0.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> pixman-0.28.0.ebuild:
+  Stable for amd64, wrt bug #440872
+
+*pixman-0.28.0 (10 Nov 2012)
+
+  10 Nov 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +pixman-0.28.0.ebuild, -pixman-0.27.2.ebuild, -pixman-0.27.4.ebuild:
+  Version bump.
+
+*pixman-0.27.4 (26 Oct 2012)
+
+  26 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +pixman-0.27.4.ebuild:
+  Version bump.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> pixman-0.26.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+*pixman-0.27.2 (02 Aug 2012)
+
+  02 Aug 2012; Matt Turner <mattst88@gentoo.org> +pixman-0.27.2.ebuild:
+  Version bump, bug 429460.
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> pixman-0.26.0.ebuild:
+  Marking pixman-0.26.0 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> pixman-0.26.0.ebuild:
+  Marking pixman-0.26.0 ppc64 stable for bug 419473
+
+*pixman-0.26.2 (30 Jun 2012)
+
+  30 Jun 2012; Matt Turner <mattst88@gentoo.org> +pixman-0.26.2.ebuild:
+  Version bump.
+
+  29 Jun 2012; Markus Meier <maekke@gentoo.org> pixman-0.26.0.ebuild:
+  arm stable, bug #419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> pixman-0.26.0.ebuild:
+  Stable for HPPA (bug #419473).
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> pixman-0.26.0.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> pixman-0.26.0.ebuild:
+  Stable for amd64, wrt bug #419473
+
+*pixman-0.26.0 (27 May 2012)
+
+  27 May 2012; Matt Turner <mattst88@gentoo.org> +pixman-0.26.0.ebuild,
+  +files/pixman-0.26.0-add-missing-_mm_empty-calls.patch:
+  Version bump.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> pixman-0.24.4.ebuild:
+  keyword ~amd64-fbsd
+
+  14 Mar 2012; Matt Turner <mattst88@gentoo.org> pixman-0.24.4.ebuild:
+  Drop code to disable sse2 if <gcc-4.2 or if MMX is disabled.
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> pixman-0.24.0.ebuild:
+  Marking pixman-0.24.0 ppc64 stable for bug 394393
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> pixman-0.24.0.ebuild:
+  Move XORG_EAUTORECONF above inherit line to pick up dependencies wrt #400629
+
+*pixman-0.24.4 (24 Feb 2012)
+
+  24 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +pixman-0.24.4.ebuild:
+  Version bump.
+
+  19 Feb 2012; Raúl Porcel <armin76@gentoo.org> pixman-0.24.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #394393
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> pixman-0.24.0.ebuild:
+  Marking pixman-0.24.0 ppc stable for bug 394393
+
+*pixman-0.24.2 (31 Jan 2012)
+
+  31 Jan 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +pixman-0.24.2.ebuild:
+  Version bump.
+
+  02 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  USE description for flag "neon" is in use.desc now.
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> pixman-0.24.0.ebuild:
+  x86 stable, bug #394393
+
+  21 Dec 2011; Markus Meier <maekke@gentoo.org> pixman-0.24.0.ebuild:
+  arm stable, bug #394393
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> pixman-0.24.0.ebuild:
+  Stable for HPPA (bug #394393).
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> pixman-0.24.0.ebuild:
+  Stable for AMD64, wrt bug #394393
+
+  25 Nov 2011; Naohiro Aota <naota@gentoo.org> pixman-0.24.0.ebuild,
+  +files/pixman-0.24.0-posix-test.patch:
+  Add patch to replace non-POSIX test. Bug #387087
+
+*pixman-0.24.0 (07 Nov 2011)
+
+  07 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -pixman-0.23.8.ebuild, +pixman-0.24.0.ebuild:
+  Version bump.
+
+*pixman-0.23.8 (31 Oct 2011)
+
+  31 Oct 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -pixman-0.23.6.ebuild, +pixman-0.23.8.ebuild:
+  Bump to latest development release.
+
+*pixman-0.23.6 (22 Oct 2011)
+
+  22 Oct 2011; Matt Turner <mattst88@gentoo.org> +pixman-0.23.6.ebuild:
+  Version bump. Add ARM's iwmmxt USE flag.
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> pixman-0.22.2.ebuild:
+  Marked ppc ppc64 stable for bug #380421.
+
+  02 Oct 2011; Raúl Porcel <armin76@gentoo.org> pixman-0.22.2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #380421
+
+  21 Sep 2011; Jeroen Roovers <jer@gentoo.org> pixman-0.22.2.ebuild:
+  Stable for HPPA (bug #380421).
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org> pixman-0.22.2.ebuild:
+  arm stable, bug #380421
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> pixman-0.22.2.ebuild:
+  x86 stable, bug #380421
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> pixman-0.22.2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380421 filed by Chí-Thanh Christopher Nguyễn.
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> pixman-0.22.0.ebuild:
+  Stable for HPPA (bug #371857).
 
   30 Jul 2011; Raúl Porcel <armin76@gentoo.org> pixman-0.22.0.ebuild:
   alpha/ia64/s390/sh/sparc stable wrt #371857
@@ -415,4 +564,3 @@
   Add a low-level pixel manipulation routine library used by Xorg and cairo.
   Since the code basically originated in xorg-server, I'm retaining the
   keywords.
-

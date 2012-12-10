@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtkhotkey/gtkhotkey-0.2.1.ebuild,v 1.4 2011/02/27 16:04:55 serkan Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gtkhotkey/gtkhotkey-0.2.1.ebuild,v 1.6 2012/05/05 03:52:26 jdhore Exp $
 
 EAPI="2"
 
@@ -28,12 +28,13 @@ RDEPEND="${COMMON_DEPEND}
 	virtual/libintl"
 
 DEPEND="${COMMON_DEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	>=dev-util/intltool-0.35.0
 	sys-devel/gettext"
 
 src_prepare() {
 	sed -i -e "s: install-gtkhotkeydocDATA ::" Makefile.in || die "Patching Makefile.in failed"
+	epatch "${FILESDIR}"/${P}-glibheaders.patch
 }
 
 src_install() {

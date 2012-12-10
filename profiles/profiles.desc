@@ -16,12 +16,14 @@ alpha           default/linux/alpha/10.0/server                 stable
 
 # AMD64 Profiles
 amd64           default/linux/amd64/10.0                        stable
+amd64           default/linux/amd64/10.0/selinux                dev
 amd64           default/linux/amd64/10.0/desktop                stable
 amd64           default/linux/amd64/10.0/desktop/gnome          stable
 amd64           default/linux/amd64/10.0/desktop/kde            stable
 amd64           default/linux/amd64/10.0/developer              stable
 amd64           default/linux/amd64/10.0/no-multilib            dev
 amd64           default/linux/amd64/10.0/server                 stable
+amd64           default/linux/amd64/10.0/x32                    dev
 
 # ARM Profiles
 arm             default/linux/arm/10.0                          stable
@@ -30,12 +32,40 @@ arm             default/linux/arm/10.0/desktop/gnome            dev
 arm             default/linux/arm/10.0/desktop/kde              dev
 arm             default/linux/arm/10.0/developer                dev
 arm             default/linux/arm/10.0/server                   dev
+arm             default/linux/arm/10.0/armv4                    dev
+arm             default/linux/arm/10.0/armv4/desktop            dev
+arm             default/linux/arm/10.0/armv4/desktop/gnome      dev
+arm             default/linux/arm/10.0/armv4/desktop/kde        dev
+arm             default/linux/arm/10.0/armv4/developer          dev
+arm             default/linux/arm/10.0/armv4/server             dev
+arm             default/linux/arm/10.0/armv4t                   dev
+arm             default/linux/arm/10.0/armv4t/desktop           dev
+arm             default/linux/arm/10.0/armv4t/desktop/gnome     dev
+arm             default/linux/arm/10.0/armv4t/desktop/kde       dev
+arm             default/linux/arm/10.0/armv4t/developer         dev
+arm             default/linux/arm/10.0/armv4t/server            dev
+arm             default/linux/arm/10.0/armv5te                  dev
+arm             default/linux/arm/10.0/armv5te/desktop          dev
+arm             default/linux/arm/10.0/armv5te/desktop/gnome    dev
+arm             default/linux/arm/10.0/armv5te/desktop/kde      dev
+arm             default/linux/arm/10.0/armv5te/developer        dev
+arm             default/linux/arm/10.0/armv5te/server           dev
+arm             default/linux/arm/10.0/armv6j                   dev
+arm             default/linux/arm/10.0/armv6j/desktop           dev
+arm             default/linux/arm/10.0/armv6j/desktop/gnome     dev
+arm             default/linux/arm/10.0/armv6j/desktop/kde       dev
+arm             default/linux/arm/10.0/armv6j/developer         dev
+arm             default/linux/arm/10.0/armv6j/server            dev
+arm             default/linux/arm/10.0/armv7a                   dev
+arm             default/linux/arm/10.0/armv7a/desktop           dev
+arm             default/linux/arm/10.0/armv7a/desktop/gnome     dev
+arm             default/linux/arm/10.0/armv7a/desktop/kde       dev
+arm             default/linux/arm/10.0/armv7a/developer         dev
+arm             default/linux/arm/10.0/armv7a/server            dev
 
 # HPPA Profiles
 hppa            default/linux/hppa/10.0                         stable
 hppa            default/linux/hppa/10.0/desktop                 dev
-hppa            default/linux/hppa/10.0/desktop/gnome           dev
-hppa            default/linux/hppa/10.0/desktop/kde             dev
 hppa            default/linux/hppa/10.0/developer               dev
 hppa            default/linux/hppa/10.0/server                  dev
 
@@ -94,6 +124,7 @@ ppc64           default/linux/powerpc/ppc64/10.0/64bit-userland/server          
 # S390 Profiles
 s390            default/linux/s390/10.0                         dev
 s390            default/linux/s390/10.0/server                  dev
+s390            default/linux/s390/10.0/server/s390x            dev
 
 # SH Profiles
 sh              default/linux/sh/10.0                           dev
@@ -113,6 +144,7 @@ sparc           default/linux/sparc/10.0/server                 stable
 
 # x86 Profiles
 x86             default/linux/x86/10.0                          stable
+x86             default/linux/x86/10.0/selinux                  dev
 x86             default/linux/x86/10.0/desktop                  stable
 x86             default/linux/x86/10.0/desktop/gnome            stable
 x86             default/linux/x86/10.0/desktop/kde              stable
@@ -120,43 +152,29 @@ x86             default/linux/x86/10.0/developer                stable
 x86             default/linux/x86/10.0/server                   stable
 
 # Gentoo/FreeBSD Profiles
-amd64-fbsd	default/bsd/fbsd/amd64/7.2			exp
-amd64-fbsd	default/bsd/fbsd/amd64/8.0			exp
-amd64-fbsd	default/bsd/fbsd/amd64/8.2			exp
-sparc-fbsd	default/bsd/fbsd/sparc/7.2			exp
-sparc-fbsd	default/bsd/fbsd/sparc/8.0			exp
-sparc-fbsd	default/bsd/fbsd/sparc/8.2			exp
-x86-fbsd	default/bsd/fbsd/x86/7.2			dev
-x86-fbsd	default/bsd/fbsd/x86/8.0			dev
-x86-fbsd	default/bsd/fbsd/x86/8.2			dev
+amd64-fbsd	default/bsd/fbsd/amd64/9.0			stable
+amd64-fbsd	default/bsd/fbsd/amd64/9.1			stable
+amd64-fbsd	default/bsd/fbsd/amd64/9.1/clang		exp
+sparc-fbsd      default/bsd/fbsd/sparc/8.2                      exp
+x86-fbsd	default/bsd/fbsd/x86/9.0			dev
+x86-fbsd	default/bsd/fbsd/x86/9.1			dev
 
 # Hardened Profiles
 amd64		hardened/linux/amd64					stable
-amd64		hardened/linux/amd64/selinux				dev
-amd64		hardened/linux/amd64/no-multilib			dev
-amd64		hardened/linux/amd64/no-multilib/selinux		dev
+amd64		hardened/linux/amd64/selinux				stable
+amd64		hardened/linux/amd64/no-multilib			stable
+amd64		hardened/linux/amd64/no-multilib/selinux		stable
+amd64		hardened/linux/uclibc/amd64				dev
+arm		hardened/linux/uclibc/arm/armv7a			dev
 ia64		hardened/linux/ia64					dev
+mips		hardened/linux/uclibc/mips				exp
+mips		hardened/linux/uclibc/mips/mipsel			exp
 ppc		hardened/linux/powerpc/ppc32				dev
 ppc		hardened/linux/powerpc/ppc64/32bit-userland		dev
 ppc64		hardened/linux/powerpc/ppc64/64bit-userland		dev
 x86		hardened/linux/x86					stable
-x86		hardened/linux/x86/selinux				dev
-
-# selinux profiles
-amd64		selinux/2007.0/amd64				dev
-amd64		selinux/2007.0/amd64/hardened			dev
-amd64		selinux/v2refpolicy/amd64			dev
-amd64		selinux/v2refpolicy/amd64/desktop		dev
-amd64		selinux/v2refpolicy/amd64/developer		dev
-amd64		selinux/v2refpolicy/amd64/hardened		dev
-amd64		selinux/v2refpolicy/amd64/server		dev
-x86		selinux/2007.0/x86				dev
-x86		selinux/2007.0/x86/hardened			dev
-x86		selinux/v2refpolicy/x86				dev
-x86		selinux/v2refpolicy/x86/desktop			dev
-x86		selinux/v2refpolicy/x86/developer		dev
-x86		selinux/v2refpolicy/x86/hardened		dev
-x86		selinux/v2refpolicy/x86/server			dev
+x86		hardened/linux/x86/selinux				stable
+x86		hardened/linux/uclibc/x86				dev
 
 # uclibc/embedded multiarch profiles
 #amd64		uclibc/amd64					dev
@@ -183,8 +201,9 @@ x86		selinux/v2refpolicy/x86/server			dev
 # Linux Profiles
 amd64-linux		prefix/linux/amd64				exp
 arm-linux		prefix/linux/arm				exp
-x86-linux		prefix/linux/x86				exp
 ia64-linux		prefix/linux/ia64				exp
+ppc64-linux		prefix/linux/ppc64				exp
+x86-linux		prefix/linux/x86				exp
 
 # Mac OS X Profiles
 ppc-macos		prefix/darwin/macos/10.4/ppc			exp
@@ -194,6 +213,10 @@ x86-macos		prefix/darwin/macos/10.5/x86			exp
 x64-macos		prefix/darwin/macos/10.5/x64			exp
 x86-macos		prefix/darwin/macos/10.6/x86			exp
 x64-macos		prefix/darwin/macos/10.6/x64			exp
+x86-macos		prefix/darwin/macos/10.7/x86			exp
+x64-macos		prefix/darwin/macos/10.7/x64			exp
+x86-macos		prefix/darwin/macos/10.8/x86			exp
+x64-macos		prefix/darwin/macos/10.8/x64			exp
 
 # Solaris Profiles
 sparc-solaris		prefix/sunos/solaris/5.9/sparc			exp
@@ -210,9 +233,6 @@ x64-solaris		prefix/sunos/solaris/5.11/x64			exp
 ppc-aix			prefix/aix/5.2.0.0/ppc				exp
 ppc-aix			prefix/aix/5.3.0.0/ppc				exp
 ppc-aix			prefix/aix/6.1.0.0/ppc				exp
-
-# IRIX Profiles
-mips-irix		prefix/irix/6.5/mips				exp
 
 # Interix Profiles
 x86-interix		prefix/windows/interix/3.5/x86			exp
@@ -244,7 +264,13 @@ x64-freebsd		prefix/bsd/freebsd/8.0/x64			exp
 x86-freebsd		prefix/bsd/freebsd/8.1/x86			exp
 x64-freebsd		prefix/bsd/freebsd/8.1/x64			exp
 sparc64-freebsd		prefix/bsd/freebsd/8.1/sparc64			exp
+x86-freebsd		prefix/bsd/freebsd/8.2/x86			exp
 x64-freebsd		prefix/bsd/freebsd/8.2/x64			exp
+x86-freebsd		prefix/bsd/freebsd/9.0/x86			exp
+x64-freebsd		prefix/bsd/freebsd/9.0/x64			exp
+x86-freebsd		prefix/bsd/freebsd/9.1/x86			exp
+x64-freebsd		prefix/bsd/freebsd/9.1/x64			exp
+
 
 # OpenBSD Profiles
 ppc-openbsd		prefix/bsd/openbsd/4.2/ppc			exp

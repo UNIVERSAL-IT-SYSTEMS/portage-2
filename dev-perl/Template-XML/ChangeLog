@@ -1,6 +1,26 @@
 # ChangeLog for dev-perl/Template-XML
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Template-XML/ChangeLog,v 1.27 2011/05/01 17:33:24 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Template-XML/ChangeLog,v 1.33 2012/09/02 18:07:46 armin76 Exp $
+
+  02 Sep 2012; Raúl Porcel <armin76@gentoo.org> Template-XML-2.170.0.ebuild:
+  Drop alpha keywords
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> Template-XML-2.170.0.ebuild:
+  Drop ia64/sparc keywords
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Template-XML-2.17-r1.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Template-XML-2.170.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Template-XML-2.170.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +Template-XML-2.170.0.ebuild:
+  Change version scheme
 
   01 May 2011; Raúl Porcel <armin76@gentoo.org> Template-XML-2.17-r1.ebuild:
   Add ~arm
@@ -112,4 +132,3 @@
   +Template-XML-2.16.ebuild:
   Adding Template::XML to the tree as dev-perl/Template-Toolkit-2.15 no longer
   provides it (bug #142297)
-

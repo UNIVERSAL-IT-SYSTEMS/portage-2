@@ -1,6 +1,23 @@
 # ChangeLog for media-sound/id3v2
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/id3v2/ChangeLog,v 1.27 2010/04/12 09:54:58 aballier Exp $
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/id3v2/ChangeLog,v 1.32 2011/12/19 00:50:10 xmw Exp $
+
+  18 Dec 2011; Michael Weber <xmw@gentoo.org> id3v2-0.1.12.ebuild:
+  ppc/ppc64 stable (bug 380721)
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> id3v2-0.1.11.ebuild,
+  id3v2-0.1.12.ebuild:
+  Drop alpha/sparc keywords
+
+  13 Nov 2011; Markus Meier <maekke@gentoo.org> id3v2-0.1.12.ebuild:
+  x86 stable, bug #380721
+
+  11 Nov 2011; Tony Vroon <chainsaw@gentoo.org> id3v2-0.1.12.ebuild:
+  Marked stable on AMD64 based on arch testing by Tomáš "Mepho" Pružina &
+  Agostino "ago" Sarubbo in bug #380721.
+
+  11 Nov 2011; Michael Weber <xmw@gentoo.org> id3v2-0.1.12.ebuild:
+  Added || die, thanks ago
 
 *id3v2-0.1.12 (12 Apr 2010)
 

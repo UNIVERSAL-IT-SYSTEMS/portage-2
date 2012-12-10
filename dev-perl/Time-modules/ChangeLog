@@ -1,6 +1,26 @@
 # ChangeLog for dev-perl/Time-modules
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Time-modules/ChangeLog,v 1.29 2011/07/29 12:39:24 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Time-modules/ChangeLog,v 1.35 2012/06/24 13:00:29 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Time-modules-2006.0814.ebuild:
+  Cleanup
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> Time-modules-2011.51.700.ebuild:
+  Marking Time-modules-2011.51.700 ppc64 for bug 396957
+
+  12 Feb 2012; Raúl Porcel <armin76@gentoo.org> Time-modules-2006.0814.ebuild,
+  Time-modules-2011.51.700.ebuild:
+  Drop alpha/ia64/sparc, x86 stable wrt #396957
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> Time-modules-2011.51.700.ebuild:
+  Marking Time-modules-2011.51.700 ppc for bug 396957
+
+  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  Time-modules-2011.51.700.ebuild:
+  Stable for amd64, wrt bug #396957
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org>
   -Time-modules-2011.50.500.ebuild:

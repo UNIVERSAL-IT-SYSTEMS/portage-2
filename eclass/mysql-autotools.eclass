@@ -1,15 +1,15 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/mysql-autotools.eclass,v 1.1 2011/07/13 07:07:15 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/mysql-autotools.eclass,v 1.10 2012/11/01 23:57:50 robbat2 Exp $
 
 # @ECLASS: mysql-autotools.eclass
 # @MAINTAINER:
-# Author: Francesco Riosa (Retired) <vivo@gentoo.org>
-# Maintainers:
-#	- MySQL Team <mysql-bugs@gentoo.org>
-#	- Robin H. Johnson <robbat2@gentoo.org>
-#	- Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
-#	- Luca Longinotti <chtekk@gentoo.org>
+# MySQL Team <mysql-bugs@gentoo.org>
+# Robin H. Johnson <robbat2@gentoo.org>
+# Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+# Luca Longinotti <chtekk@gentoo.org>
+# @AUTHOR:
+# Francesco Riosa <vivo@gentoo.org> (retired)
 # @BLURB: This eclass provides support for autotools based mysql releases
 # @DESCRIPTION:
 # The mysql-autotools.eclass provides the support to build the mysql
@@ -17,7 +17,7 @@
 # the src_unpack, src_prepare, src_configure, src_compile, scr_install,
 # pkg_preinst, pkg_postinst, pkg_config and pkg_postrm phase hooks.
 
-inherit autotools
+inherit autotools flag-o-matic multilib
 
 #
 # HELPER FUNCTIONS:
@@ -96,6 +96,12 @@ mysql-autotools_configure_minimal() {
 		myconf="${myconf} --with-charset=latin1"
 		myconf="${myconf} --with-collation=latin1_swedish_ci"
 	fi
+
+	# MariaDB requires this flag in order to link to GPLv3 readline v6 or greater
+	# A note is added to the configure output
+	if [[ "${PN}" == "mariadb" ]]  && mysql_version_is_at_least "5.1.61" ; then
+		myconf="${myconf} --disable-distribution"
+	fi
 }
 
 # @FUNCTION: mysql-autotools_configure_common
@@ -108,7 +114,7 @@ mysql-autotools_configure_common() {
 	myconf="${myconf} --with-extra-charsets=all"
 	myconf="${myconf} --with-mysqld-user=mysql"
 	myconf="${myconf} --with-server"
-	myconf="${myconf} --with-unix-socket-path=/var/run/mysqld/mysqld.sock"
+	myconf="${myconf} --with-unix-socket-path=${EPREFIX}/var/run/mysqld/mysqld.sock"
 	myconf="${myconf} --without-libwrap"
 
 	if use static ; then
@@ -123,7 +129,7 @@ mysql-autotools_configure_common() {
 		myconf="${myconf} --with-debug=full"
 	else
 		myconf="${myconf} --without-debug"
-		if ( use cluster || [[ "${PN}" == "mysql-cluster" ]] ); then
+		if ( use cluster ); then
 			myconf="${myconf} --without-ndb-debug"
 		fi
 	fi
@@ -160,25 +166,23 @@ mysql-autotools_configure_51() {
 	# TODO: !!!! readd --without-readline
 	# the failure depend upon config/ac-macros/readline.m4 checking into
 	# readline.h instead of history.h
-	myconf="${myconf} $(use_with ssl ssl /usr)"
+	myconf="${myconf} $(use_with ssl ssl "${EPREFIX}"/usr)"
 	myconf="${myconf} --enable-assembler"
 	myconf="${myconf} --with-geometry"
 	myconf="${myconf} --with-readline"
-	myconf="${myconf} --with-zlib-dir=/usr/"
+	myconf="${myconf} --with-zlib-dir=${EPREFIX}/usr/"
 	myconf="${myconf} --without-pstack"
-	myconf="${myconf} --with-plugindir=/usr/$(get_libdir)/mysql/plugin"
+	myconf="${myconf} --with-plugindir=${EPREFIX}/usr/$(get_libdir)/mysql/plugin"
 
 	# This is an explict die here, because if we just forcibly disable it, then the
 	# user's data is not accessible.
 	use max-idx-128 && die "Bug #336027: upstream has a corruption issue with max-idx-128 presently"
 	#use max-idx-128 && myconf="${myconf} --with-max-indexes=128"
-	if [ "${MYSQL_COMMUNITY_FEATURES}" == "1" ]; then
-		myconf="${myconf} $(use_enable community community-features)"
-		if use community; then
-			myconf="${myconf} $(use_enable profiling)"
-		else
-			myconf="${myconf} --disable-profiling"
-		fi
+	myconf="${myconf} $(use_enable community community-features)"
+	if use community; then
+		myconf="${myconf} $(use_enable profiling)"
+	else
+		myconf="${myconf} --disable-profiling"
 	fi
 
 	# Scan for all available plugins
@@ -219,11 +223,11 @@ mysql-autotools_configure_51() {
 		if [[ "${PN}" != "mariadb" ]] ; then
 			elog "Before using the Federated storage engine, please be sure to read"
 			elog "http://dev.mysql.com/doc/refman/5.1/en/federated-limitations.html"
-			plugins_dyn="${plugins_sta} federatedx"
+			plugins_dyn="${plugins_dyn} federated"
 		else
 			elog "MariaDB includes the FederatedX engine. Be sure to read"
 			elog "http://askmonty.org/wiki/index.php/Manual:FederatedX_storage_engine"
-			plugins_dyn="${plugins_sta} federated"
+			plugins_dyn="${plugins_dyn} federatedx"
 		fi
 	else
 		plugins_dis="${plugins_dis} partition federated"
@@ -240,7 +244,7 @@ mysql-autotools_configure_51() {
 	done
 
 	# like configuration=max-no-ndb
-	if ( use cluster || [[ "${PN}" == "mysql-cluster" ]] ) ; then
+	if ( use cluster ) ; then
 		plugins_sta="${plugins_sta} ndbcluster partition"
 		plugins_dis="${plugins_dis//partition}"
 		myconf="${myconf} --with-ndb-binlog"
@@ -289,7 +293,7 @@ mysql-autotools_configure_51() {
 
 	if pbxt_available && [[ "${PBXT_NEWSTYLE}" == "1" ]]; then
 		use pbxt \
-		&& plugins_dyn="${plugins_dyn} pbxt" \
+		&& plugins_sta="${plugins_sta} pbxt" \
 		|| plugins_dis="${plugins_dis} pbxt"
 	fi
 
@@ -320,7 +324,7 @@ pbxt_src_configure() {
 	eautoreconf
 
 	local myconf=""
-	myconf="${myconf} --with-mysql=${S} --libdir=/usr/$(get_libdir)"
+	myconf="${myconf} --with-mysql=${S} --libdir=${EPREFIX}/usr/$(get_libdir)"
 	use debug && myconf="${myconf} --with-debug=full"
 	econf ${myconf} || die "Problem configuring PBXT storage engine"
 }
@@ -366,12 +370,9 @@ mysql-autotools_src_prepare() {
 	i="${S}"/storage/innodb_plugin/plug.in
 	[ -f "${i}" ] && sed -i -e '/CFLAGS/s,-prefer-non-pic,,g' "${i}"
 
-	# Additional checks, remove bundled zlib (Cluster needs this, for static
-	# memory management in zlib, leave available for Cluster)
-	if [[ "${PN}" != "mysql-cluster" ]] ; then
-		rm -f "${S}/zlib/"*.[ch]
-		sed -i -e "s/zlib\/Makefile dnl/dnl zlib\/Makefile/" "${S}/configure.in"
-	fi
+	# Additional checks, remove bundled zlib
+	rm -f "${S}/zlib/"*.[ch]
+	sed -i -e "s/zlib\/Makefile dnl/dnl zlib\/Makefile/" "${S}/configure.in"
 	rm -f "scripts/mysqlbug"
 
 	# Make charsets install in the right place
@@ -402,7 +403,7 @@ mysql-autotools_src_prepare() {
 		popd >/dev/null
 	fi
 
-	if pbxt_available && [[ "${PBXT_NEWSTYLE}" == "1" ]] && use pbxt ; then
+	if pbxt_patch_available && [[ "${PBXT_NEWSTYLE}" == "1" ]] && use pbxt ; then
 		einfo "Adding storage engine: PBXT"
 		pushd "${S}"/storage >/dev/null
 		i='pbxt'
@@ -477,7 +478,7 @@ mysql-autotools_src_configure() {
 		filter-flags -fomit-frame-pointer
 
 	econf \
-		--libexecdir="/usr/sbin" \
+		--libexecdir="${EPREFIX}/usr/sbin" \
 		--sysconfdir="${MY_SYSCONFDIR}" \
 		--localstatedir="${MY_LOCALSTATEDIR}" \
 		--sharedstatedir="${MY_SHAREDSTATEDIR}" \
@@ -539,7 +540,7 @@ mysql-autotools_src_install() {
 
 	# Various junk (my-*.cnf moved elsewhere)
 	einfo "Removing duplicate /usr/share/mysql files"
-	rm -Rf "${D}/usr/share/info"
+	rm -Rf "${ED}/usr/share/info"
 	for removeme in  "mysql-log-rotate" mysql.server* \
 		binary-configure* my-*.cnf mi_test_all*
 	do
@@ -550,8 +551,8 @@ mysql-autotools_src_install() {
 	if use minimal ; then
 		einfo "Remove all extra content for minimal build"
 		rm -Rf "${D}${MY_SHAREDSTATEDIR}"/{mysql-test,sql-bench}
-		rm -f "${D}"/usr/bin/{mysql{_install_db,manager*,_secure_installation,_fix_privilege_tables,hotcopy,_convert_table_format,d_multi,_fix_extensions,_zap,_explain_log,_tableinfo,d_safe,_install,_waitpid,binlog,test},myisam*,isam*,pack_isam}
-		rm -f "${D}/usr/sbin/mysqld"
+		rm -f "${ED}"/usr/bin/{mysql{_install_db,manager*,_secure_installation,_fix_privilege_tables,hotcopy,_convert_table_format,d_multi,_fix_extensions,_zap,_explain_log,_tableinfo,d_safe,_install,_waitpid,binlog,test},myisam*,isam*,pack_isam}
+		rm -f "${ED}/usr/sbin/mysqld"
 		rm -f "${D}${MY_LIBDIR}"/lib{heap,merge,nisam,my{sys,strings,sqld,isammrg,isam},vio,dbug}.a
 	fi
 
@@ -567,10 +568,13 @@ mysql-autotools_src_install() {
 		5.[1-9]|6*|7*) mysql_mycnf_version="5.1" ;;
 	esac
 	einfo "Building default my.cnf (${mysql_mycnf_version})"
-	insinto "${MY_SYSCONFDIR}"
+	insinto "${MY_SYSCONFDIR#${EPREFIX}}"
 	doins scripts/mysqlaccess.conf
 	mycnf_src="my.cnf-${mysql_mycnf_version}"
 	sed -e "s!@DATADIR@!${MY_DATADIR}!g" \
+		-e "s!/tmp!${EPREFIX}/tmp!" \
+		-e "s!/usr!${EPREFIX}/usr!" \
+		-e "s!= /var!= ${EPREFIX}/var!" \
 		"${FILESDIR}/${mycnf_src}" \
 		> "${TMPDIR}/my.cnf.ok"
 	if use latin1 ; then
@@ -586,16 +590,16 @@ mysql-autotools_src_install() {
 		# Empty directories ...
 		diropts "-m0750"
 		if [[ "${PREVIOUS_DATADIR}" != "yes" ]] ; then
-			dodir "${MY_DATADIR}"
-			keepdir "${MY_DATADIR}"
+			dodir "${MY_DATADIR#${EPREFIX}}"
+			keepdir "${MY_DATADIR#${EPREFIX}}"
 			chown -R mysql:mysql "${D}/${MY_DATADIR}"
 		fi
 
 		diropts "-m0755"
-		for folder in "${MY_LOGDIR}" "/var/run/mysqld" ; do
+		for folder in "${MY_LOGDIR#${EPREFIX}}" "/var/run/mysqld" ; do
 			dodir "${folder}"
 			keepdir "${folder}"
-			chown -R mysql:mysql "${D}/${folder}"
+			chown -R mysql:mysql "${ED}/${folder}"
 		done
 	fi
 
@@ -625,5 +629,5 @@ mysql-autotools_src_install() {
 
 	fi
 
-	mysql_lib_symlinks "${D}"
+	mysql_lib_symlinks "${ED}"
 }

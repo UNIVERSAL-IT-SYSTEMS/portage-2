@@ -1,6 +1,150 @@
 # ChangeLog for dev-util/debootstrap
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/debootstrap/ChangeLog,v 1.155 2011/07/30 15:22:43 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/debootstrap/ChangeLog,v 1.193 2012/12/02 16:38:09 jer Exp $
+
+  02 Dec 2012; Jeroen Roovers <jer@gentoo.org> debootstrap-1.0.42.ebuild,
+  debootstrap-1.0.43.ebuild, debootstrap-1.0.44.ebuild:
+  Change LICENSE by Ulrich Müller (bug #445648).
+
+*debootstrap-1.0.44 (21 Nov 2012)
+
+  21 Nov 2012; Jeroen Roovers <jer@gentoo.org> +debootstrap-1.0.44.ebuild:
+  Version bump.
+
+*debootstrap-1.0.43 (27 Oct 2012)
+
+  27 Oct 2012; Jeroen Roovers <jer@gentoo.org> +debootstrap-1.0.43.ebuild:
+  Version bump.
+
+  10 Oct 2012; Jeroen Roovers <jer@gentoo.org> -debootstrap-1.0.40.ebuild,
+  -debootstrap-1.0.41.ebuild:
+  Old.
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> debootstrap-1.0.42.ebuild:
+  Marking debootstrap-1.0.42 ppc64 for bug 432424
+
+  03 Oct 2012; Brent Baude <ranger@gentoo.org> debootstrap-1.0.42.ebuild:
+  Marking debootstrap-1.0.42 ppc for bug 432424
+
+  11 Sep 2012; Raúl Porcel <armin76@gentoo.org> debootstrap-1.0.42.ebuild:
+  alpha/ia64/sh/sparc stable wrt #432424
+
+  01 Sep 2012; Markus Meier <maekke@gentoo.org> debootstrap-1.0.42.ebuild:
+  arm stable, bug #432424
+
+  24 Aug 2012; Johannes Huber <johu@gentoo.org> debootstrap-1.0.42.ebuild:
+  Stable for x86, wrt bug #432424
+
+  24 Aug 2012; Agostino Sarubbo <ago@gentoo.org> debootstrap-1.0.42.ebuild:
+  Stable for amd64, wrt bug #432424
+
+  09 Jul 2012; Jeroen Roovers <jer@gentoo.org> -debootstrap-1.0.38.ebuild,
+  -debootstrap-1.0.39.ebuild:
+  Old.
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> debootstrap-1.0.40.ebuild:
+  alpha/ia64/sh/sparc stable wrt #419777
+
+*debootstrap-1.0.42 (04 Jul 2012)
+
+  04 Jul 2012; Jeroen Roovers <jer@gentoo.org> +debootstrap-1.0.42.ebuild:
+  Version bump.
+
+*debootstrap-1.0.41 (22 Jun 2012)
+
+  22 Jun 2012; Jeroen Roovers <jer@gentoo.org> +debootstrap-1.0.41.ebuild:
+  Version bump.
+
+  17 Jun 2012; Markus Meier <maekke@gentoo.org> debootstrap-1.0.40.ebuild:
+  arm stable, bug #419777
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> debootstrap-1.0.40.ebuild:
+  Marking debootstrap-1.0.40 ppc for bug 419777
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> debootstrap-1.0.40.ebuild:
+  marked x86 per bug 419777
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> debootstrap-1.0.40.ebuild:
+  Marking debootstrap-1.0.40 ppc64 for bug 419777
+
+  05 Jun 2012; Agostino Sarubbo <ago@gentoo.org> debootstrap-1.0.40.ebuild:
+  Stable for amd64, wrt bug #419777
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  debootstrap-1.0.39.ebuild:
+  x86 stable wrt bug #413889
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> debootstrap-1.0.39.ebuild:
+  Marking debootstrap-1.0.39 ppc64 for bug 413889
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> debootstrap-1.0.39.ebuild:
+  Marking debootstrap-1.0.39 ppc for bug 413889
+
+  03 May 2012; Markus Meier <maekke@gentoo.org> debootstrap-1.0.39.ebuild:
+  arm stable, bug #413889
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> debootstrap-1.0.39.ebuild:
+  Stable for amd64, wrt bug #413889
+
+*debootstrap-1.0.40 (28 Apr 2012)
+
+  28 Apr 2012; Jeroen Roovers <jer@gentoo.org> +debootstrap-1.0.40.ebuild:
+  Version bump.
+
+  01 Apr 2012; Jeroen Roovers <jer@gentoo.org> -debootstrap-1.0.32.ebuild,
+  -debootstrap-1.0.33.ebuild, -debootstrap-1.0.34.ebuild,
+  -debootstrap-1.0.35.ebuild, -debootstrap-1.0.36.ebuild,
+  -debootstrap-1.0.37.ebuild:
+  Old.
+
+  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> debootstrap-1.0.38.ebuild:
+  alpha/ia64/sparc stable wrt #405365
+
+*debootstrap-1.0.39 (13 Mar 2012)
+
+  13 Mar 2012; Jeroen Roovers <jer@gentoo.org> +debootstrap-1.0.39.ebuild:
+  Version bump.
+
+  12 Mar 2012; Markus Meier <maekke@gentoo.org> debootstrap-1.0.38.ebuild:
+  arm stable, bug #405365
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> debootstrap-1.0.38.ebuild:
+  Marking debootstrap-1.0.38 ppc64 for bug 405365
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> debootstrap-1.0.38.ebuild:
+  Marking debootstrap-1.0.38 ppc for bug 405365
+
+  26 Feb 2012; Jeff Horelick <jdhore@gentoo.org> debootstrap-1.0.38.ebuild:
+  marked x86 per bug 405365
+
+  23 Feb 2012; Jeroen Roovers <jer@gentoo.org> debootstrap-1.0.32.ebuild,
+  debootstrap-1.0.33.ebuild, debootstrap-1.0.34.ebuild,
+  debootstrap-1.0.35.ebuild, debootstrap-1.0.36.ebuild,
+  debootstrap-1.0.37.ebuild, debootstrap-1.0.38.ebuild:
+  Drop HPPA keywording since Debian has stopped supporting this platform.
+
+  23 Feb 2012; Agostino Sarubbo <ago@gentoo.org> debootstrap-1.0.38.ebuild:
+  Stable for amd64, wrt bug #405365
+
+*debootstrap-1.0.38 (21 Nov 2011)
+
+  21 Nov 2011; Jeroen Roovers <jer@gentoo.org> +debootstrap-1.0.38.ebuild:
+  Version bump.
+
+*debootstrap-1.0.37 (06 Oct 2011)
+
+  06 Oct 2011; Jeroen Roovers <jer@gentoo.org> +debootstrap-1.0.37.ebuild:
+  Version bump.
+
+*debootstrap-1.0.36 (22 Aug 2011)
+
+  22 Aug 2011; Jeroen Roovers <jer@gentoo.org> +debootstrap-1.0.36.ebuild:
+  Version bump.
+
+*debootstrap-1.0.35 (10 Aug 2011)
+
+  10 Aug 2011; Jeroen Roovers <jer@gentoo.org> +debootstrap-1.0.35.ebuild:
+  Version bump.
 
 *debootstrap-1.0.34 (30 Jul 2011)
 

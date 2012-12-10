@@ -1,6 +1,46 @@
 # ChangeLog for dev-ruby/parsetree
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/parsetree/ChangeLog,v 1.43 2011/07/10 23:03:03 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/parsetree/ChangeLog,v 1.53 2012/10/28 17:19:33 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> parsetree-3.0.6.ebuild,
+  parsetree-3.0.7.ebuild, parsetree-3.0.9-r1.ebuild:
+  alpha stable, add ~alpha
+
+  09 Sep 2012; Hans de Graaff <graaff@gentoo.org> -parsetree-3.0.8.ebuild,
+  -parsetree-3.0.9.ebuild:
+  Cleanup.
+
+*parsetree-3.0.9-r1 (19 Aug 2012)
+
+  19 Aug 2012; Hans de Graaff <graaff@gentoo.org> +parsetree-3.0.9-r1.ebuild:
+  Fix RubyInline version to actually match versions in our tree.
+
+  16 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> parsetree-3.0.6.ebuild,
+  parsetree-3.0.7.ebuild, parsetree-3.0.8.ebuild, parsetree-3.0.9.ebuild:
+  Update after Ruby packages move.
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+*parsetree-3.0.9 (12 Aug 2012)
+
+  12 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> +parsetree-3.0.9.ebuild:
+  Version bump.
+
+  09 Apr 2012; Hans de Graaff <graaff@gentoo.org> parsetree-3.0.8.ebuild:
+  Account for new ruby-inline paths and adjust dependency accordingly. Fixes
+  bug 410589.
+
+  05 Dec 2011; Naohiro Aota <naota@gentoo.org> parsetree-3.0.8.ebuild:
+  Add ~x86-fbsd.
+
+*parsetree-3.0.8 (16 Oct 2011)
+
+  16 Oct 2011; Hans de Graaff <graaff@gentoo.org> +parsetree-3.0.8.ebuild:
+  Version bump.
+
+  15 Sep 2011; Jeroen Roovers <jer@gentoo.org> parsetree-3.0.7.ebuild:
+  Stable for HPPA (bug #369573).
 
   10 Jul 2011; Mark Loeser <halcy0n@gentoo.org> parsetree-3.0.6.ebuild:
   Stable for ppc64; bug #355299
@@ -182,4 +222,3 @@
   13 Apr 2007; Robin H. Johnson <robbat2@gentoo.org>
   +parsetree-1.7.0.ebuild:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

@@ -1,6 +1,39 @@
 # ChangeLog for media-libs/libsndfile
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libsndfile/ChangeLog,v 1.123 2011/07/13 20:08:44 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libsndfile/ChangeLog,v 1.133 2012/08/22 03:05:37 ottxor Exp $
+
+  22 Aug 2012; Christoph Junghans <ottxor@gentoo.org> libsndfile-1.0.25.ebuild:
+  added prefix keywords
+
+  15 May 2012; Alexis Ballier <aballier@gentoo.org> libsndfile-1.0.25.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libsndfile-1.0.25.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  27 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> libsndfile-1.0.25.ebuild:
+  Use largefile flags when building emul-linux- pkgs wrt #313259 by Marc Joliet
+  and Pacho Ramos
+
+  12 Sep 2011; Alexis Ballier <aballier@gentoo.org> -libsndfile-1.0.23.ebuild,
+  -libsndfile-1.0.24.ebuild:
+  remove old
+
+  12 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> libsndfile-1.0.25.ebuild:
+  ppc/ppc64 stable wrt #375125
+
+  11 Sep 2011; Raúl Porcel <armin76@gentoo.org> libsndfile-1.0.25.ebuild:
+  alpha/ia64/sh/sparc stable wrt #375125
+
+  11 Sep 2011; Markus Meier <maekke@gentoo.org> libsndfile-1.0.25.ebuild:
+  arm/x86 stable, bug #375125
+
+  09 Sep 2011; Jeroen Roovers <jer@gentoo.org> libsndfile-1.0.25.ebuild:
+  Stable for HPPA (bug #375125).
+
+  07 Sep 2011; Tony Vroon <chainsaw@gentoo.org> libsndfile-1.0.25.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in
+  security bug #375125 filed by Alexis Ballier.
 
 *libsndfile-1.0.25 (13 Jul 2011)
 

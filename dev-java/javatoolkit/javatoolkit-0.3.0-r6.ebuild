@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/javatoolkit/javatoolkit-0.3.0-r6.ebuild,v 1.6 2011/05/03 18:51:24 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/javatoolkit/javatoolkit-0.3.0-r6.ebuild,v 1.8 2012/05/12 03:11:09 aballier Exp $
 
 EAPI="2"
 PYTHON_DEPEND="2:2.5"
@@ -8,7 +8,7 @@ PYTHON_USE_WITH="xml"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="2.4 3.*"
 
-inherit distutils eutils
+inherit distutils eutils multilib
 
 DESCRIPTION="Collection of Gentoo-specific tools for Java"
 HOMEPAGE="http://www.gentoo.org/proj/en/java/"
@@ -16,7 +16,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ia64 ppc ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="amd64 ~ia64 ppc ppc64 ~sparc x86 ~amd64-fbsd ~x86-fbsd"
 IUSE=""
 
 DEPEND=""

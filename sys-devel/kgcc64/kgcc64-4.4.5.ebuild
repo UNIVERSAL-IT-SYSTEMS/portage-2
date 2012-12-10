@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/kgcc64/kgcc64-4.4.5.ebuild,v 1.3 2011/03/08 22:23:39 dirtyepic Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/kgcc64/kgcc64-4.4.5.ebuild,v 1.5 2011/12/03 20:46:58 vapier Exp $
 
 case ${CHOST} in
 	hppa*)    CTARGET=hppa64-${CHOST#*-};;
@@ -15,7 +15,6 @@ TOOLCHAIN_ALLOWED_LANGS="c"
 GCC_TARGET_NO_MULTILIB=true
 
 PATCH_VER="1.2"
-ETYPE="gcc-compiler"
 GCC_FILESDIR=${FILESDIR/${PN}/gcc}
 
 inherit toolchain eutils
@@ -23,7 +22,7 @@ inherit toolchain eutils
 DESCRIPTION="64bit kernel compiler"
 
 # Works on mips and sparc; all other archs, refer to bug #228115
-KEYWORDS="hppa ~sparc"
+KEYWORDS="hppa sparc"
 
 RDEPEND=">=dev-libs/gmp-4.2.1
 	>=dev-libs/mpfr-2.3.2

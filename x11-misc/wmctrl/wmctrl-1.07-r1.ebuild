@@ -1,16 +1,16 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/wmctrl/wmctrl-1.07-r1.ebuild,v 1.2 2008/03/23 14:51:30 coldwind Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/wmctrl/wmctrl-1.07-r1.ebuild,v 1.6 2012/12/05 11:20:44 grobian Exp $
 
 inherit eutils
 
 DESCRIPTION="command line tool to interact with an EWMH/NetWM compatible X Window Manager"
-HOMEPAGE="http://sweb.cz/tripie/utils/wmctrl/"
-SRC_URI="http://sweb.cz/tripie/utils/wmctrl/dist/${P}.tar.gz"
+HOMEPAGE="http://tomas.styblo.name/wmctrl/"
+SRC_URI="http://tomas.styblo.name/${PN}/dist/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ~ppc ~sparc x86 ~x86-linux"
 IUSE=""
 
 RDEPEND=">=dev-libs/glib-2
@@ -18,7 +18,7 @@ RDEPEND=">=dev-libs/glib-2
 	x11-libs/libXt
 	x11-libs/libXmu"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	x11-proto/xproto"
 
 src_unpack() {

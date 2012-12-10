@@ -1,6 +1,40 @@
 # ChangeLog for net-misc/rdesktop
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/rdesktop/ChangeLog,v 1.130 2011/05/30 17:17:16 voyageur Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/rdesktop/ChangeLog,v 1.140 2012/08/19 23:47:24 ottxor Exp $
+
+  19 Aug 2012; Christoph Junghans <ottxor@gentoo.org> rdesktop-1.7.1.ebuild:
+  added prefix keywords
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> rdesktop-1.7.1.ebuild:
+  alpha/ia64/sparc stable wrt #419553
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> rdesktop-1.7.1.ebuild:
+  Stable for HPPA (bug #419553).
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> rdesktop-1.7.1.ebuild:
+  x86 stable wrt bug #419553
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> rdesktop-1.7.1.ebuild:
+  Marking rdesktop-1.7.1 ppc for bug 419553
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> rdesktop-1.7.1.ebuild:
+  Marking rdesktop-1.7.1 ppc64 for bug 419553
+
+  04 Jun 2012; Agostino Sarubbo <ago@gentoo.org> rdesktop-1.7.1.ebuild:
+  Stable for amd64, wrt bug #419553
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> rdesktop-1.7.0.ebuild,
+  rdesktop-1.7.0-r1.ebuild, rdesktop-1.7.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*rdesktop-1.7.1 (10 Jan 2012)
+
+  10 Jan 2012; Bernard Cafarelli <voyageur@gentoo.org> +rdesktop-1.7.1.ebuild:
+  Version bump, mostly bugfixes
+
+  22 Aug 2011; Bernard Cafarelli <voyageur@gentoo.org> rdesktop-1.7.0.ebuild,
+  rdesktop-1.7.0-r1.ebuild:
+  Add pkgconfig to DEPEND, thanks to alex3255@mail.ru in bug #379459
 
 *rdesktop-1.7.0-r1 (30 May 2011)
 
@@ -518,4 +552,3 @@
   files/digest-rdesktop-1.1.0 :
 
   Checkin new package, first version.
-

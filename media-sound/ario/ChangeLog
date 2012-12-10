@@ -1,6 +1,29 @@
 # ChangeLog for media-sound/ario
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/ario/ChangeLog,v 1.24 2011/06/19 15:55:08 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/ario/ChangeLog,v 1.31 2012/05/27 17:38:58 angelos Exp $
+
+  27 May 2012; Christoph Mende <angelos@gentoo.org> ario-1.5.1.ebuild:
+  Allow any python-2 version instead of just 2.7
+
+  27 May 2012; Christoph Mende <angelos@gentoo.org> ario-1.5.1.ebuild:
+  Build with python-2 (bug #415631)
+
+  27 May 2012; Christoph Mende <angelos@gentoo.org> -ario-1.5.ebuild:
+  Remove old
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ario-1.5.1.ebuild:
+  x86 stable wrt bug #413413
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> ario-1.5.ebuild,
+  ario-1.5.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Agostino Sarubbo <ago@gentoo.org> ario-1.5.1.ebuild:
+  Stable for amd64, wrt bug #413413
+
+  25 Apr 2012; Christoph Mende <angelos@gentoo.org>
+  +files/ario-1.5.1-single-includes.patch, ario-1.5.1.ebuild:
+  Fix single includes (bug #413413)
 
 *ario-1.5.1 (19 Jun 2011)
 

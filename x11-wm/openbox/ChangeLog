@@ -1,6 +1,177 @@
 # ChangeLog for x11-wm/openbox
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/openbox/ChangeLog,v 1.222 2011/07/15 11:12:09 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/openbox/ChangeLog,v 1.263 2012/12/06 04:25:42 phajdan.jr Exp $
+
+  06 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  openbox-3.5.0_p20121006.ebuild:
+  x86 stable wrt bug #444882
+
+  03 Dec 2012; Anthony G. Basile <blueness@gentoo.org>
+  openbox-3.5.0_p20121006.ebuild:
+  stable ppc ppc64, bug #444882
+
+  02 Dec 2012; Markos Chandras <hwoarang@gentoo.org> openbox-9999.ebuild:
+  whitespace
+
+  02 Dec 2012; Markos Chandras <hwoarang@gentoo.org>
+  openbox-3.5.0_p20121006.ebuild:
+  Stable on amd64 wrt bug #444882
+
+  02 Dec 2012; Markus Meier <maekke@gentoo.org> openbox-3.5.0_p20121006.ebuild:
+  arm stable, bug #444882
+
+  30 Nov 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml,
+  openbox-3.5.0_p20121006.ebuild, openbox-9999.ebuild:
+  Convert python shebangs to python2. Describe the python useflag. Bug #442802
+
+  30 Nov 2012; Markos Chandras <hwoarang@gentoo.org> ChangeLog:
+  Add --disable-silent-rules for bug #445108
+
+  29 Nov 2012; Jeroen Roovers <jer@gentoo.org> openbox-3.5.0_p20121006.ebuild:
+  Stable for HPPA (bug #444882).
+
+*openbox-3.5.0_p20121006 (06 Oct 2012)
+
+  06 Oct 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/openbox-3.5.0_p20121006-javaswing.patch,
+  +openbox-3.5.0_p20121006.ebuild, files/openbox-3.5.0-fix-desktop-files.patch:
+  New snapshot with latest upstream fixes plus a patch for bug #413997
+
+  29 Aug 2012; Julian Ospald <hasufell@gentoo.org> openbox-3.5.0-r1.ebuild,
+  openbox-3.5.0_p20111019.ebuild, openbox-3.5.0_p20111019-r2.ebuild,
+  openbox-9999.ebuild:
+  respect flags, don't run autopoint twice, add verbosity for live ebuild
+
+*openbox-3.5.0_p20111019-r2 (27 Aug 2012)
+
+  27 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/openbox-3.5.0-fix-desktop-files.patch,
+  +openbox-3.5.0_p20111019-r2.ebuild, -openbox-3.5.0_p20111019-r1.ebuild,
+  openbox-9999.ebuild:
+  fix desktop files according to fd.o desktop entry specifications. Thanks to
+  Julian Ospald <hasufell@gentoo.org>. Bug #431784
+
+  25 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
+  openbox-3.5.0_p20111019-r1.ebuild:
+  typo in src_uri, wrt to bug #432768
+
+  25 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  openbox-3.5.0_p20111019-r1.ebuild, openbox-9999.ebuild:
+  Add a new Gentoo Openbox theme that gets installed and configured to be
+  the default one when the 'branding' useflag is enabled. Thanks to
+  David Abbott <dabbott@gentoo.org> for providing the theme. It is based on
+  the original Surreal one found on
+  http://box-look.org/content/show.php?content=66397
+
+*openbox-3.5.0_p20111019-r1 (17 Aug 2012)
+
+  17 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/openbox-3.5.0-gtk34.patch, +openbox-3.5.0_p20111019-r1.ebuild:
+  Apply fix against gtk-3.4. Bug #424747. Thanks to Francisco Vazquez
+  <fjvazquezaraujo@gmail.com>
+
+  14 Aug 2012; Johannes Huber <johu@gentoo.org> openbox-3.5.0_p20111019.ebuild:
+  Stable for x86, wrt bug #430494
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
+  openbox-3.5.0_p20111019.ebuild:
+  Stable for amd64, wrt bug #430494
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  openbox-3.5.0_p20111019.ebuild:
+  Stable arm, bug #430494
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  openbox-3.5.0_p20111019.ebuild:
+  Stable ppc, bug #430494
+
+  04 Jun 2012; Jeff Horelick <jdhore@gentoo.org> openbox-3.5.0-r1.ebuild,
+  openbox-3.5.0_p20111019.ebuild, openbox-9999.ebuild:
+  Call epatch_user. There are many openbox patches around the internet that
+  users may want to apply.
+
+  06 May 2012; Markos Chandras <hwoarang@gentoo.org>
+  openbox-3.5.0_p20111019.ebuild, openbox-9999.ebuild:
+  Make pyxdg dependency optional. Bug #375897
+
+  05 May 2012; Markos Chandras <hwoarang@gentoo.org> openbox-9999.ebuild:
+  Remove WANT_AUTOMAKE per bug #413999
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> openbox-3.5.0-r1.ebuild,
+  openbox-3.5.0_p20111019.ebuild, openbox-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  11 Mar 2012; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  fix typo
+
+  11 Mar 2012; Markos Chandras <hwoarang@gentoo.org> -openbox-3.4.11.2.ebuild:
+  old
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org> openbox-3.5.0-r1.ebuild:
+  Marking openbox-3.5.0-r1 ppc for bug 383475
+
+  09 Mar 2012; Brent Baude <ranger@gentoo.org> openbox-3.5.0-r1.ebuild:
+  Marking openbox-3.5.0-r1 ppc64 for bug 383475
+
+  20 Jan 2012; Markos Chandras <hwoarang@gentoo.org> openbox-3.5.0-r1.ebuild,
+  openbox-3.5.0_p20111019.ebuild:
+  Drop WANT_AUTOMAKE. USe latest by default. Bug #399435
+
+  18 Dec 2011; Raúl Porcel <armin76@gentoo.org> openbox-3.5.0-r1.ebuild:
+  alpha/sparc stable wrt #383475
+
+*openbox-3.5.0_p20111019 (18 Oct 2011)
+
+  18 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  +openbox-3.5.0_p20111019.ebuild, openbox-9999.ebuild:
+  new snapshot
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> openbox-3.5.0-r1.ebuild:
+  Stable for HPPA (bug #383475).
+
+  05 Oct 2011; Markus Meier <maekke@gentoo.org> openbox-3.5.0-r1.ebuild:
+  arm stable, bug #383475
+
+  21 Sep 2011; Tony Vroon <chainsaw@gentoo.org> openbox-3.5.0-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #383475.
+
+  21 Sep 2011; Andreas Schuerch <nativemad@gentoo.org> openbox-3.5.0-r1.ebuild:
+  x86 stable, thanks JD, bug 383475
+
+  20 Sep 2011; Michał Górny <mgorny@gentoo.org> openbox-9999.ebuild:
+  Migrate to git-2.
+
+  18 Sep 2011; Markos Chandras <hwoarang@gentoo.org> openbox-3.5.0-r1.ebuild:
+  Drop predefined cflags for debug useflag. Bug #383481
+
+  10 Sep 2011; Markos Chandras <hwoarang@gentoo.org> openbox-9999.ebuild:
+  Replace docbook-to-man command with docbook2man.pl (not tested) and use
+  imlib2 patch from 3.5.0 package
+
+*openbox-3.5.0-r1 (03 Sep 2011)
+
+  03 Sep 2011; Markos Chandras <hwoarang@gentoo.org>
+  -openbox-3.5.0_pre20110313.ebuild, -openbox-3.5.0_pre20110801.ebuild,
+  -openbox-3.5.0.ebuild, +openbox-3.5.0-r1.ebuild,
+  +files/openbox-3.5.0-configure-imlib2.patch:
+  Respect imlib2 configuration option. Bug #381067. Patch is already in git
+  repo
+
+  17 Aug 2011; Markos Chandras <hwoarang@gentoo.org> openbox-3.5.0.ebuild:
+  Remove app-text/docbook2X per bug #378939
+
+*openbox-3.5.0 (05 Aug 2011)
+
+  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> +openbox-3.5.0.ebuild:
+  Version bump
+
+*openbox-3.5.0_pre20110801 (02 Aug 2011)
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  openbox-3.5.0_pre20110313.ebuild, +openbox-3.5.0_pre20110801.ebuild,
+  openbox-9999.ebuild:
+  New snapshot. Add missing dependency to dev-python/pyxdg. Bug #375897
 
   15 Jul 2011; Markos Chandras <hwoarang@gentoo.org>
   openbox-3.5.0_pre20110313.ebuild, openbox-9999.ebuild:

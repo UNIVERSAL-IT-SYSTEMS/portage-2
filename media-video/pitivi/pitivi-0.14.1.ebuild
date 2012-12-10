@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/pitivi/pitivi-0.14.1.ebuild,v 1.1 2011/07/24 17:02:38 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/pitivi/pitivi-0.14.1.ebuild,v 1.3 2012/10/25 20:53:48 eva Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
 PYTHON_DEPEND="2:2.5"
 
-inherit gnome2 python eutils virtualx
+inherit gnome2 python eutils virtualx multilib
 
 DESCRIPTION="A non-linear video editor using the GStreamer multimedia framework"
 HOMEPAGE="http://www.pitivi.org"
@@ -26,8 +26,8 @@ COMMON_DEPEND="
 	dev-python/pycairo
 
 	>=media-libs/gstreamer-0.10.28:0.10
-	>=dev-python/gst-python-0.10.19
-	>=media-libs/gnonlin-0.10.16"
+	>=dev-python/gst-python-0.10.19:0.10
+	>=media-libs/gnonlin-0.10.16:0.10"
 RDEPEND="${COMMON_DEPEND}
 	dev-python/dbus-python
 	>=dev-python/gconf-python-2.12
@@ -55,10 +55,7 @@ pkg_setup() {
 
 src_prepare() {
 	gnome2_src_prepare
-
-	# disable pyc compiling
-	mv py-compile py-compile.orig
-	ln -s $(type -P true) py-compile
+	python_clean_py-compile_files
 }
 
 src_configure() {

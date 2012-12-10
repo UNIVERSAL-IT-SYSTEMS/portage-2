@@ -1,6 +1,27 @@
 # ChangeLog for app-portage/perl-info
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/perl-info/ChangeLog,v 1.23 2011/03/20 07:51:26 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-portage/perl-info/ChangeLog,v 1.30 2012/03/18 16:00:53 armin76 Exp $
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> perl-info-0.16.ebuild:
+  sparc stable wrt #393919
+
+  19 Feb 2012; Tobias Klausmann <klausman@gentoo.org> perl-info-0.16.ebuild:
+  Stable on alpha, bug #393919
+
+  03 Feb 2012; Brent Baude <ranger@gentoo.org> perl-info-0.16.ebuild:
+  Marking perl-info-0.16 ppc for bug 393919
+
+  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> perl-info-0.16.ebuild:
+  x86 stable wrt bug #393919
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> perl-info-0.16.ebuild:
+  Stable for HPPA (bug #393919).
+
+  18 Dec 2011; Agostino Sarubbo <ago@gentoo.org> perl-info-0.16.ebuild:
+  Stable for AMD64, wrt bug #393919
+
+  14 Dec 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due move to staffer, bug #99016
 
   20 Mar 2011; Torsten Veller <tove@gentoo.org> -perl-info-0.14.ebuild:
   Cleanup

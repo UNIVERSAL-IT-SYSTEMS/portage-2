@@ -1,6 +1,23 @@
 # ChangeLog for dev-perl/Data-Page
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Data-Page/ChangeLog,v 1.5 2011/04/24 15:59:43 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Data-Page/ChangeLog,v 1.10 2012/11/18 11:12:49 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> Data-Page-2.20.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Data-Page-2.02.ebuild:
+  Cleanup
+
+*Data-Page-2.20.0 (31 Aug 2011)
+
+  31 Aug 2011; Torsten Veller <tove@gentoo.org> +Data-Page-2.20.0.ebuild:
+  Change version scheme
 
   24 Apr 2011; Fabian Groffen <grobian@gentoo.org> Data-Page-2.02.ebuild:
   Marked ~x86-solaris, bug #296509
@@ -21,4 +38,3 @@
   23 Jun 2009; Robin H. Johnson <robbat2@gentoo.org> +Data-Page-2.01.ebuild,
   +metadata.xml:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

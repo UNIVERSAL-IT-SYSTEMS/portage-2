@@ -1,6 +1,36 @@
 # ChangeLog for net-dns/pdnsd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/pdnsd/ChangeLog,v 1.101 2011/03/28 14:00:21 polynomial-c Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dns/pdnsd/ChangeLog,v 1.109 2012/06/14 02:21:00 zmedico Exp $
+
+  14 Jun 2012; Zac Medico <zmedico@gentoo.org> pdnsd-1.2.8-r3.ebuild,
+  pdnsd-1.2.8-r4.ebuild:
+  inherit user for enewgroup and enewuser
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> pdnsd-1.2.8-r4.ebuild:
+  Marking pdnsd-1.2.8-r4 ppc for bug 393737
+
+*pdnsd-1.2.8-r4 (31 Dec 2011)
+*pdnsd-1.2.8-r3 (31 Dec 2011)
+
+  31 Dec 2011; Christian Ruppert <idl0r@gentoo.org> -pdnsd-1.2.8.ebuild,
+  -pdnsd-1.2.8-r2.ebuild, +pdnsd-1.2.8-r3.ebuild, +pdnsd-1.2.8-r4.ebuild,
+  files/pdnsd.rc6.1:
+  Revbump. Don't use the deprecated $opts variable, bug 395631.
+
+  17 Dec 2011; Raúl Porcel <armin76@gentoo.org> pdnsd-1.2.8-r2.ebuild:
+  alpha/ia64/s390/sparc stable wrt #393737
+
+  14 Dec 2011; Markus Meier <maekke@gentoo.org> pdnsd-1.2.8-r2.ebuild:
+  arm stable, bug #393737
+
+  14 Dec 2011; Agostino Sarubbo <ago@gentoo.org> pdnsd-1.2.8-r2.ebuild:
+  Stable for AMD64, wrt bug #393737
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> pdnsd-1.2.8-r2.ebuild:
+  x86 stable wrt bug #393737
+
+  22 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Remove myself from metadata.
 
 *pdnsd-1.2.8-r2 (28 Mar 2011)
 

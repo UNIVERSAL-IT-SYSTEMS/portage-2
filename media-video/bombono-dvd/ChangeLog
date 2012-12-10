@@ -1,6 +1,89 @@
 # ChangeLog for media-video/bombono-dvd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/bombono-dvd/ChangeLog,v 1.16 2011/05/09 19:48:37 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/bombono-dvd/ChangeLog,v 1.34 2012/12/09 19:13:23 pinkbyte Exp $
+
+*bombono-dvd-1.2.1-r1 (09 Dec 2012)
+
+  09 Dec 2012; Sergey Popov <pinkbyte@gentoo.org> +bombono-dvd-1.2.1-r1.ebuild,
+  +files/bombono-dvd-boost-1.51.0-fix.patch:
+  Revision bump, fix build with newer boost, wrt bug #425600
+
+  11 Sep 2012; Andreas K. Huettel <dilfridge@gentoo.org> metadata.xml:
+  Drop maintainership
+
+  11 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -bombono-dvd-1.0.0.ebuild, -files/bombono-dvd-1.0.0-ffmpeg.patch,
+  -files/bombono-dvd-1.2.0-libav.patch:
+  Remove old
+
+  11 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  bombono-dvd-1.2.1.ebuild:
+  Restrict tests, bug 419655
+
+  04 Jul 2012; Johannes Huber <johu@gentoo.org> bombono-dvd-1.2.1.ebuild:
+  Stable for x86, wrt bug #417427
+
+  25 May 2012; Agostino Sarubbo <ago@gentoo.org> bombono-dvd-1.2.1.ebuild:
+  Stable for amd64, wrt bug #417427
+
+  06 May 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  bombono-dvd-1.0.0.ebuild, bombono-dvd-1.2.1.ebuild,
+  +files/bombono-dvd-1.2.1-glib.patch:
+  Fix build with glib-2.32, bug 412747
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> bombono-dvd-1.2.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  bombono-dvd-1.0.0.ebuild, -bombono-dvd-1.2.0-r2.ebuild:
+  Improve error messages; remove old
+
+  09 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  bombono-dvd-1.2.1.ebuild:
+  Improve error messages
+
+  25 Feb 2012; Alexis Ballier <aballier@gentoo.org> bombono-dvd-1.0.0.ebuild,
+  +files/bombono-dvd-1.0.0-ffmpeg.patch:
+  backport fixes for ffmpeg-0.10 from 1.2.1 as it 1.2.1 has a ~arch boost dep,
+  so its simpler just to fix stable, bug #405751
+
+  12 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -bombono-dvd-1.0.2.ebuild, -bombono-dvd-1.2.0-r1.ebuild:
+  Remove old
+
+*bombono-dvd-1.2.1 (12 Feb 2012)
+
+  12 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +bombono-dvd-1.2.1.ebuild:
+  Version bump
+
+*bombono-dvd-1.2.0-r2 (06 Dec 2011)
+
+  06 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  +bombono-dvd-1.2.0-r2.ebuild, +files/bombono-dvd-1.2.0-libav.patch:
+  Add test and new libav support requested by Nikoli, bug 393331; add pkgconfig
+  dependency, bug 393205
+
+*bombono-dvd-1.2.0-r1 (06 Dec 2011)
+
+  06 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -bombono-dvd-1.2.0.ebuild, +bombono-dvd-1.2.0-r1.ebuild,
+  +files/bombono-dvd-1.2.0-cdrtools.patch:
+  With patch from Ilya, allow using both cdrtools and cdrkit
+
+  02 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  bombono-dvd-1.2.0.ebuild, metadata.xml:
+  Add useflag gnome to control gvfs integration
+
+*bombono-dvd-1.2.0 (01 Dec 2011)
+
+  01 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  +bombono-dvd-1.2.0.ebuild:
+  Version bump
+
+  01 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -bombono-dvd-0.6.0.ebuild, -bombono-dvd-1.0.1.ebuild:
+  Cleanup
 
   09 May 2011; Thomas Kahle <tomka@gentoo.org> bombono-dvd-1.0.0.ebuild:
   x86 stable per bug 363003

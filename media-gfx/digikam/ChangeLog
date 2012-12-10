@@ -1,6 +1,198 @@
 # ChangeLog for media-gfx/digikam
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/digikam/ChangeLog,v 1.191 2011/07/31 20:21:12 dilfridge Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/digikam/ChangeLog,v 1.235 2012/11/23 06:23:47 dilfridge Exp $
+
+  23 Nov 2012; Andreas K. Huettel <dilfridge@gentoo.org> digikam-2.9.0.ebuild:
+  Does not build against KDE 4.10
+
+  10 Nov 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -files/digikam-2.5.0-boost148.patch, -files/digikam-2.5.0-libkipi.patch,
+  -digikam-2.6.0.ebuild, -digikam-2.7.0.ebuild, -digikam-2.8.0.ebuild,
+  digikam-2.9.0.ebuild, +files/digikam-2.9.0-mariadb55.patch:
+  Remove old; add trivial patch for mariadb-5.5, bug 441566
+
+  27 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> digikam-2.9.0.ebuild:
+  x86 stable wrt bug #438352
+
+  16 Oct 2012; Agostino Sarubbo <ago@gentoo.org> digikam-2.9.0.ebuild:
+  Stable for amd64, wrt bug #438352
+
+  04 Sep 2012; Chris Reffett <creffett@gentoo.org> digikam-2.9.0.ebuild:
+  Remove libf2c blocker since a fix is now in portage
+
+*digikam-2.9.0 (03 Sep 2012)
+
+  03 Sep 2012; Chris Reffett <creffett@gentoo.org> +digikam-2.9.0.ebuild:
+  Bump to version 2.9.0. Blocking latest libf2c because it currently causes a
+  build failure
+
+  25 Aug 2012; Johannes Huber <johu@gentoo.org> -digikam-2.5.0.ebuild:
+  Remove old.
+
+  25 Aug 2012; Johannes Huber <johu@gentoo.org> digikam-2.6.0.ebuild:
+  Stable for x86, wrt bug #429842
+
+*digikam-2.8.0 (11 Aug 2012)
+
+  11 Aug 2012; Andreas K. Huettel <dilfridge@gentoo.org> +digikam-2.8.0.ebuild:
+  Version bump, bug 430802, thanks creffett
+
+  06 Aug 2012; Agostino Sarubbo <ago@gentoo.org> digikam-2.6.0.ebuild:
+  Stable for amd64, wrt bug #429842
+
+  29 Jul 2012; Andreas K. Huettel <dilfridge@gentoo.org> digikam-2.5.0.ebuild,
+  digikam-2.6.0.ebuild, digikam-2.7.0.ebuild:
+  Add dependency on kdebase-kioslaves, bug 428528
+
+  19 Jul 2012; Michael Palimaka <kensington@gentoo.org> digikam-2.5.0.ebuild,
+  digikam-2.6.0.ebuild, digikam-2.7.0.ebuild:
+  Add missing slot dependencies on Qt.
+
+  10 Jul 2012; Michael Palimaka <kensington@gentoo.org> digikam-2.7.0.ebuild:
+  Fix dependency version, on behalf of dilfridge.
+
+*digikam-2.7.0 (09 Jul 2012)
+
+  09 Jul 2012; Andreas K. Huettel <dilfridge@gentoo.org> +digikam-2.7.0.ebuild:
+  Version bump
+
+  09 Jul 2012; Andreas K. Huettel <dilfridge@gentoo.org> digikam-2.5.0.ebuild,
+  digikam-2.6.0.ebuild:
+  Seems it was not needed after all.
+
+  09 Jul 2012; Andreas K. Huettel <dilfridge@gentoo.org> digikam-2.5.0.ebuild,
+  digikam-2.6.0.ebuild:
+  Specify exact libpgf version, newer does not work, see bug 424563
+
+*digikam-2.6.0 (07 Jun 2012)
+
+  07 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org> -digikam-2.4.1.ebuild,
+  -digikam-2.6.0_beta3.ebuild, -digikam-2.6.0_rc.ebuild, +digikam-2.6.0.ebuild:
+  Version bump; remove old, beta, and rc
+
+*digikam-2.6.0_rc (13 May 2012)
+
+  13 May 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +digikam-2.6.0_rc.ebuild:
+  Version bump
+
+  19 Apr 2012; Markus Meier <maekke@gentoo.org> digikam-2.5.0.ebuild:
+  x86 stable, bug #409403
+
+*digikam-2.6.0_beta3 (08 Apr 2012)
+
+  08 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org> -digikam-2.3.0.ebuild,
+  +digikam-2.6.0_beta3.ebuild:
+  Version bump; remove old
+
+  04 Apr 2012; Agostino Sarubbo <ago@gentoo.org> digikam-2.5.0.ebuild:
+  Stable for amd64, wrt bug #409403
+
+  18 Mar 2012; Andreas K. Huettel <dilfridge@gentoo.org> metadata.xml:
+  tt (tatar) is now in global linguas list
+
+  12 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org> digikam-2.3.0.ebuild,
+  digikam-2.4.1.ebuild, digikam-2.5.0.ebuild:
+  Add Boost to DEPEND, bug 400545
+
+  12 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org> digikam-2.5.0.ebuild,
+  +files/digikam-2.5.0-boost148.patch:
+  Add compatibility patch for Boost 1.48, bug 399727
+
+  12 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org> digikam-2.5.0.ebuild:
+  Install handbooks, bug 338757
+
+  16 Jan 2012; Agostino Sarubbo <ago@gentoo.org> digikam-2.4.1.ebuild:
+  Stable for amd64, wrt bug #396359
+
+  09 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> digikam-2.4.1.ebuild:
+  x86 stable wrt bug #396359
+
+*digikam-2.5.0 (03 Jan 2012)
+
+  03 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org> +digikam-2.5.0.ebuild,
+  +files/digikam-2.5.0-libkipi.patch, metadata.xml:
+  Version bump
+
+  25 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -files/digikam-1.8.0-tests.patch, -digikam-1.9.0.ebuild,
+  -digikam-1.9.0-r1.ebuild, -files/digikam-1.9.0-docs.patch,
+  -files/digikam-1.9.0-newpgf.patch, -files/digikam-1.9.0-nomysql.patch,
+  -files/digikam-1.9.0-turbo.patch:
+  Remove old
+
+  07 Dec 2011; Markos Chandras <hwoarang@gentoo.org> digikam-2.3.0.ebuild:
+  Stable on amd64 wrt bug #388279
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> digikam-2.3.0.ebuild:
+  x86 stable wrt bug #388279
+
+*digikam-2.4.1 (06 Dec 2011)
+
+  06 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org> -digikam-2.2.0.ebuild,
+  +digikam-2.4.1.ebuild:
+  Version bump; remove old
+
+  22 Nov 2011; Andreas K. Huettel <dilfridge@gentoo.org> digikam-1.9.0.ebuild,
+  digikam-1.9.0-r1.ebuild:
+  Restrict tests, not going to fiddle with stable version
+
+  13 Nov 2011; Andreas K. Huettel <dilfridge@gentoo.org> digikam-2.3.0.ebuild:
+  Remove duplicate icons
+
+*digikam-2.3.0 (12 Nov 2011)
+
+  12 Nov 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -files/digikam-2.0.0-tests-1.patch, -files/digikam-2.0.0-underlinking.patch,
+  -digikam-2.1.0-r2.ebuild, +digikam-2.3.0.ebuild:
+  Version bump; remove old
+
+  19 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  digikam-2.1.0-r2.ebuild, digikam-2.2.0.ebuild:
+  Does not work with atlas, bug 386783
+
+*digikam-2.2.0 (03 Oct 2011)
+
+  03 Oct 2011; Andreas K. Huettel <dilfridge@gentoo.org> +digikam-2.2.0.ebuild:
+  Version bump
+
+  24 Sep 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -digikam-2.0.0-r1.ebuild, -digikam-2.1.0-r1.ebuild:
+  Remove old. For upgrade instructions from 2.1.0-r1 to later see bug 382617.
+
+*digikam-2.1.0-r2 (11 Sep 2011)
+
+  11 Sep 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  digikam-2.1.0-r1.ebuild, +digikam-2.1.0-r2.ebuild:
+  Add version that corresponds to the tag v2.1.0, not the broken release
+  tarball. WARNING: you cannot upgrade from -r1 to -r2!!! Removing keywords
+  from -r1, lets hope not too many people installed it.
+
+  11 Sep 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  digikam-2.1.0-r1.ebuild:
+  Add an ugly blocker to temporarily prevent people from upgrading (but keep
+  those who already have), see kdebug 281767
+
+*digikam-2.1.0-r1 (09 Sep 2011)
+
+  09 Sep 2011; Andreas K. Huettel <dilfridge@gentoo.org> -digikam-2.1.0.ebuild,
+  +digikam-2.1.0-r1.ebuild:
+  Remove all non-digikam translation files to avoid file collisions
+
+*digikam-2.1.0 (09 Sep 2011)
+
+  09 Sep 2011; Andreas K. Huettel <dilfridge@gentoo.org> +digikam-2.1.0.ebuild:
+  Version bump
+
+*digikam-2.0.0-r1 (26 Aug 2011)
+
+  26 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org> -digikam-2.0.0.ebuild,
+  +digikam-2.0.0-r1.ebuild, +files/digikam-2.0.0-underlinking.patch:
+  Fix underlinking and library linking order. Fixes bug 380687, revbump because
+  it might also be related to bug 380287
+
+  02 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org> digikam-2.0.0.ebuild:
+  Fix semantic-desktop dependency, bug 377167
 
   31 Jul 2011; Andreas K. Huettel <dilfridge@gentoo.org> digikam-2.0.0.ebuild,
   +files/digikam-2.0.0-tests-1.patch:

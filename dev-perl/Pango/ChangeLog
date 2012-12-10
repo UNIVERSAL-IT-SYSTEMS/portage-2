@@ -1,6 +1,64 @@
 # ChangeLog for dev-perl/Pango
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Pango/ChangeLog,v 1.16 2011/05/11 08:41:19 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Pango/ChangeLog,v 1.34 2012/09/02 15:16:37 tove Exp $
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -Pango-1.222.0.ebuild:
+  Cleanup
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> Pango-1.223.0.ebuild:
+  alpha/ia64/sparc stable wrt #418839
+
+  09 Aug 2012; Brent Baude <ranger@gentoo.org> Pango-1.223.0.ebuild:
+  Marking Pango-1.223.0 ppc for bug 418839
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> Pango-1.223.0.ebuild:
+  Marking Pango-1.223.0 ppc64 for bug 418839
+
+  05 Aug 2012; Johannes Huber <johu@gentoo.org> Pango-1.223.0.ebuild:
+  Stable for x86, wrt bug #418839
+
+  04 Aug 2012; Jeroen Roovers <jer@gentoo.org> Pango-1.223.0.ebuild:
+  Stable for HPPA (bug #418839).
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> Pango-1.223.0.ebuild:
+  Stable for amd64, wrt bug #418839
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Pango-1.221.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> Pango-1.222.0.ebuild:
+  ia64/sparc stable wrt #400201
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> Pango-1.222.0.ebuild:
+  x86 stable wrt bug #400201
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> Pango-1.222.0.ebuild:
+  Marking Pango-1.222.0 ppc64 for bug 400201
+
+*Pango-1.223.0 (02 Mar 2012)
+
+  02 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> +Pango-1.223.0.ebuild:
+  Version bump via perl-bump experimental tool.
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> Pango-1.222.0.ebuild:
+  Marking Pango-1.222.0 ppc for bug 400201
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> Pango-1.222.0.ebuild:
+  Stable for HPPA (bug #400201).
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org> Pango-1.222.0.ebuild:
+  Stable on alpha, bug #400201
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Pango-1.222.0.ebuild:
+  Stable for amd64, wrt bug #400201
+
+*Pango-1.222.0 (06 Aug 2011)
+
+  06 Aug 2011; Torsten Veller <tove@gentoo.org> +Pango-1.222.0.ebuild:
+  Version bump
 
   11 May 2011; Michael Weber <xmw@gentoo.org> Pango-1.221.ebuild:
   added ~arm keyword (bug 264983)
@@ -55,4 +113,3 @@
   07 Jun 2009; Torsten Veller <tove@gentoo.org> +Pango-1.220.ebuild,
   +metadata.xml:
   Initial commit
-

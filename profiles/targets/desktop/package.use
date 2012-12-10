@@ -1,17 +1,29 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/targets/desktop/package.use,v 1.12 2011/06/08 07:51:06 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/targets/desktop/package.use,v 1.26 2012/11/24 19:17:38 ssuominen Exp $
+
+# Samuli Suominen <ssuominen@gentoo.org> (15 May 2012)
+# Replaced by USE="udisks" in make.defaults. Remove this line after
+# >=gnome-base/gvfs-1.12.3-r1 has stabilized.
+<gnome-base/gvfs-1.12.3-r1 gdu -udisks
+
+# Jeremy Olexa <darkside@gentoo.org> (07 Oct 2011)
+# Required by mesa, ultimately by xorg-server (every desktop) bug 385843
+dev-libs/libxml2 python
+
+# Samuli Suominen <ssuominen@gentoo.org> (27 Sep 2011)
+# Required by mozilla browsers wrt #372419
+media-libs/libpng apng
 
 # Samuli Suominen <ssuominen@gentoo.org> (19 Dec 2010)
-# Required by sys-fs/udisks for xfce4-power-manager, gnome-disk-utility (gvfs),
-# e_dbus (e17), and libfm (pcmanfm)
-# http://tinderbox.dev.gentoo.org/misc/rindex/sys-fs/udisks
-sys-fs/udev extras gudev hwdb keymap
-sys-block/parted device-mapper
+# Required by udev helpers like udisks and upower
+sys-fs/udev gudev hwdb keymap introspection
+virtual/udev gudev hwdb keymap introspection
+<sys-fs/udev-171 extras
+sys-apps/pciutils -compress-db
 
 # Samuli Suominen <ssuominen@gentoo.org> (19 Dec 2010)
-# Required for desktop icons integration. Only desktop users should get this
-# dependency hell.
+# Support for desktop icons
 xfce-base/xfdesktop thunar
 
 # Chris Gianelloni <wolf31o2@gentoo.org> (26 Mar 2008)

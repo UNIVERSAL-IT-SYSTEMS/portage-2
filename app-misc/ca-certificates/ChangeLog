@@ -1,6 +1,141 @@
 # ChangeLog for app-misc/ca-certificates
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/ca-certificates/ChangeLog,v 1.42 2011/05/16 03:11:56 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/ca-certificates/ChangeLog,v 1.69 2012/06/28 18:14:34 vapier Exp $
+
+*ca-certificates-20120623 (28 Jun 2012)
+
+  28 Jun 2012; Mike Frysinger <vapier@gentoo.org>
+  +ca-certificates-20120623.ebuild:
+  Version bump #423897 by Manuel Rüger.
+
+*ca-certificates-20120212 (11 May 2012)
+
+  11 May 2012; Mike Frysinger <vapier@gentoo.org>
+  +ca-certificates-20120212.ebuild:
+  Version bump #415395 by Manuel Rüger.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  ca-certificates-20111025.ebuild:
+  keyword ~amd64-fbsd
+
+  25 Jan 2012; Mike Frysinger <vapier@gentoo.org>
+  ca-certificates-20111025.ebuild:
+  Mark ppc64 stable #394223.
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> ca-certificates-20111025.ebuild:
+  Marking ca-certificates-20111025 ppc for bug 394223
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org>
+  ca-certificates-20111025.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #394223
+
+  31 Dec 2011; Mike Frysinger <vapier@gentoo.org>
+  ca-certificates-20111025.ebuild:
+  Block older portages which do not handle unicode filenames in non-unicode
+  locales #394223.
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org>
+  ca-certificates-20111025.ebuild:
+  arm stable, bug #394223
+
+  22 Dec 2011; Agostino Sarubbo <ago@gentoo.org>
+  ca-certificates-20111025.ebuild:
+  Stable for X86, wrt bug #394223
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org>
+  ca-certificates-20111025.ebuild:
+  Stable for AMD64, wrt bug #394223
+
+  12 Dec 2011; Jeroen Roovers <jer@gentoo.org> ca-certificates-20111025.ebuild:
+  Stable for HPPA (bug #394223).
+
+*ca-certificates-20111025 (29 Oct 2011)
+
+  29 Oct 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +ca-certificates-20111025.ebuild:
+  Bug #388845: version bump, includes new CACert intermediate SHA256 certs.
+
+  07 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  ca-certificates-20110502-r4.ebuild:
+  Fix compilation on platforms where /bin/sh is bourne, but not POSIX shell
+  (e.g. Solaris, AIX, etc.)
+
+  07 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  ca-certificates-20110502-r4.ebuild:
+  Update RELPATH to compensate for the added offset.
+
+*ca-certificates-20110502-r4 (07 Sep 2011)
+
+  07 Sep 2011; Mike Frysinger <vapier@gentoo.org>
+  +ca-certificates-20110502-r4.ebuild,
+  +files/ca-certificates-20110502-root.patch:
+  Generate relative symlinks to certs when using --root so c_rehash works
+  properly.
+
+  07 Sep 2011; Mike Frysinger <vapier@gentoo.org>
+  ca-certificates-20110502-r3.ebuild:
+  Remove old mktemp depends, and move deb2targz to DEPEND since it is only
+  needed to unpack the pkg.
+
+*ca-certificates-20110502-r3 (05 Sep 2011)
+
+  05 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  +ca-certificates-20110502-r3.ebuild:
+  Fix for Prefix migration gone bad. Make sure update-ca-certificates knows
+  about the offset, such that it doesn't generate symlinks pointing outside the
+  offset. Bug #381937
+
+  03 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  ca-certificates-20110502-r2.ebuild:
+  Create ED, so we can actually copy files into it, when D != ED (on Prefix)
+
+  03 Sep 2011; Raúl Porcel <armin76@gentoo.org>
+  ca-certificates-20110502-r1.ebuild:
+  arm/ia64/m68k/s390/sh/sparc/x86 stable wrt #381169
+
+  03 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  ca-certificates-20110502-r1.ebuild:
+  ppc/ppc64 stable wrt #381169
+
+  03 Sep 2011; Jeroen Roovers <jer@gentoo.org>
+  ca-certificates-20110502-r1.ebuild:
+  Stable for HPPA (bug #381169).
+
+  02 Sep 2011; Jeremy Olexa <darkside@gentoo.org>
+  ca-certificates-20110502-r2.ebuild:
+  Add Gentoo Prefix support, convert to EAPI3, use prefix variables, modify
+  ROOT variable in update-ca-certificates script. Signed off by maintainer with
+  discussion
+
+*ca-certificates-20110502-r2 (02 Sep 2011)
+
+  02 Sep 2011; Mike Frysinger <vapier@gentoo.org>
+  +files/ca-certificates-20090709-root.patch,
+  +ca-certificates-20110502-r2.ebuild:
+  Move the config file generation to src_compile for most people to make
+  binpkgs easier to deploy.
+
+  01 Sep 2011; Tony Vroon <chainsaw@gentoo.org>
+  ca-certificates-20110502-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in
+  security bug #381169 filed by Alex "a3li" Legler.
+
+  01 Sep 2011; Tobias Klausmann <klausman@gentoo.org>
+  ca-certificates-20110502-r1.ebuild:
+  Stable on alpha, bug #381169
+
+*ca-certificates-20110502-r1 (01 Sep 2011)
+
+  01 Sep 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +ca-certificates-20110502-r1.ebuild:
+  One more version bump to 20110502+nmu1 that actually has the DigiNotar CA
+  removed.
+
+*ca-certificates-20110502 (31 Aug 2011)
+
+  31 Aug 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +ca-certificates-20110502.ebuild:
+  Version bump for bug #381169
 
 *ca-certificates-20110421 (16 May 2011)
 

@@ -1,6 +1,53 @@
 # ChangeLog for media-libs/quvi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/quvi/ChangeLog,v 1.30 2011/07/29 02:37:01 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/quvi/ChangeLog,v 1.42 2012/09/25 02:46:07 blueness Exp $
+
+  25 Sep 2012; Anthony G. Basile <blueness@gentoo.org> quvi-0.4.2.ebuild:
+  Keyword ~ppc ~ppc64, bug #386611
+
+  01 Aug 2012; Tim Harder <radhermit@gentoo.org> -quvi-0.4.1.ebuild:
+  Remove old.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> quvi-0.2.19.ebuild,
+  quvi-0.4.1.ebuild, quvi-0.4.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  06 Mar 2012; Tim Harder <radhermit@gentoo.org> -quvi-0.4.0.ebuild:
+  Remove old.
+
+*quvi-0.4.2 (06 Mar 2012)
+
+  06 Mar 2012; Tim Harder <radhermit@gentoo.org> +quvi-0.4.2.ebuild:
+  Version bump.
+
+*quvi-0.4.1 (05 Dec 2011)
+
+  05 Dec 2011; Tim Harder <radhermit@gentoo.org> +quvi-0.4.1.ebuild:
+  Version bump.
+
+  15 Oct 2011; Tim Harder <radhermit@gentoo.org> -quvi-0.2.13.ebuild,
+  -quvi-0.2.15.ebuild, -quvi-0.2.16.ebuild, -quvi-0.2.17.ebuild,
+  -quvi-0.2.17-r1.ebuild, -quvi-0.2.18.ebuild:
+  Remove old.
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> quvi-0.2.19.ebuild:
+  ppc/ppc64 stable wrt #386629
+
+  14 Oct 2011; Markos Chandras <hwoarang@gentoo.org> quvi-0.2.19.ebuild:
+  Stable on amd64 wrt bug #386629
+
+  13 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> quvi-0.2.19.ebuild:
+  x86 stable wrt bug #386629
+
+*quvi-0.4.0 (10 Oct 2011)
+
+  10 Oct 2011; Tim Harder <radhermit@gentoo.org> +quvi-0.4.0.ebuild:
+  Version bump.
+
+*quvi-0.2.19 (05 Aug 2011)
+
+  05 Aug 2011; Hanno Boeck <hanno@gentoo.org> +quvi-0.2.19.ebuild:
+  Version bump.
 
 *quvi-0.2.18 (29 Jul 2011)
 
@@ -143,4 +190,3 @@
   14 Feb 2010; Hanno Boeck <hanno@gentoo.org> +quvi-0.1.1.ebuild,
   +metadata.xml:
   Initial commit, required for new cclive versions.
-

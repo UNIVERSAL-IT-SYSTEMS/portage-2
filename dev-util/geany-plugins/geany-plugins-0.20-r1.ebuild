@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/geany-plugins/geany-plugins-0.20-r1.ebuild,v 1.2 2011/02/25 21:13:50 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/geany-plugins/geany-plugins-0.20-r1.ebuild,v 1.6 2012/05/04 17:51:45 jdhore Exp $
 
 EAPI="2"
 
@@ -17,11 +17,11 @@ IUSE="enchant gtkspell lua nls soup webkit"
 
 LINGUAS="be ca da de es fr gl ja pt pt_BR ru tr zh_CN"
 
-RDEPEND="=dev-util/geany-$(get_version_component_range 1-2)*
+RDEPEND=">=dev-util/geany-$(get_version_component_range 1-2)
 	dev-libs/libxml2:2
 	dev-libs/glib:2
 	enchant? ( app-text/enchant )
-	gtkspell? ( app-text/gtkspell )
+	gtkspell? ( app-text/gtkspell:2 )
 	lua? ( dev-lang/lua )
 	soup? ( net-libs/libsoup )
 	webkit? (
@@ -31,11 +31,15 @@ RDEPEND="=dev-util/geany-$(get_version_component_range 1-2)*
 		)"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	# https://sourceforge.net/tracker/?func=detail&aid=3163117&group_id=222729&atid=1056532
 	epatch "${FILESDIR}"/${P}-geanyprj-outsrc-tests.patch
+
+	# geany-0.21 doesn't have #include <config.h> in its geanyplugin.h,
+	# breaking <=geany-plugins-0.20.
+	epatch "${FILESDIR}"/${P}-config.h.patch
 
 	eautomake
 }

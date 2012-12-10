@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.20-r3.ebuild,v 1.6 2011/01/21 20:52:27 phosphan Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.20-r3.ebuild,v 1.11 2012/06/08 03:01:10 zmedico Exp $
 
 EAPI="1"
 
-inherit eutils flag-o-matic multilib
+inherit eutils flag-o-matic multilib user
 
 # gphoto and v4l are handled by their usual USE flags.
 # The pint backend was disabled because I could not get it to compile.
@@ -114,7 +114,7 @@ DEPEND="${RDEPEND}
 	v4l? ( sys-kernel/linux-headers )
 	doc? (
 		virtual/latex-base
-		|| ( dev-texlive/texlive-latexextra app-text/tetex app-text/ptex )
+		dev-texlive/texlive-latexextra
 	)
 	>=sys-apps/sed-4"
 
@@ -205,10 +205,11 @@ src_install () {
 		cd ../..
 	fi
 	cd tools/udev
-	dodir /$(get_libdir)/udev/rules.d
-	insinto /$(get_libdir)/udev/rules.d
+	dodir /lib/udev/rules.d
+	insinto /lib/udev/rules.d
 	newins libsane.rules 70-libsane.rules
 	cd ../..
 	dodoc NEWS AUTHORS ChangeLog* README README.linux
 	echo "SANE_CONFIG_DIR=/etc/sane.d" >> "${D}"/etc/env.d/30sane
+	find "${D}" -name "*.la" | while read file; do rm "${file}"; done
 }

@@ -1,6 +1,83 @@
 # ChangeLog for dev-texlive/texlive-context
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-texlive/texlive-context/ChangeLog,v 1.41 2011/07/28 12:48:05 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-texlive/texlive-context/ChangeLog,v 1.61 2012/10/03 18:09:34 ulm Exp $
+
+  03 Oct 2012; Ulrich Müller <ulm@gentoo.org> texlive-context-2011.ebuild,
+  texlive-context-2012.ebuild, texlive-context-2012-r1.ebuild:
+  "as-is" license cleanup, bug 436698.
+
+*texlive-context-2012-r1 (31 Jul 2012)
+
+  31 Jul 2012; Alexis Ballier <aballier@gentoo.org>
+  +texlive-context-2012-r1.ebuild, +files/luacnfspec.patch:
+  Fix default search path for texmfcnf.lua so that it is found out of the box,
+  bug #428556 by Martin Scholz
+
+*texlive-context-2012 (27 Jul 2012)
+
+  27 Jul 2012; Alexis Ballier <aballier@gentoo.org>
+  +texlive-context-2012.ebuild:
+  Bump to TeX Live 2012.
+
+  29 May 2012; Alexis Ballier <aballier@gentoo.org>
+  -texlive-context-2010-r1.ebuild, -files/luatools.patch:
+  remove old
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org>
+  texlive-context-2011.ebuild:
+  keyword ~amd64-fbsd
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> texlive-context-2011.ebuild:
+  ia64/s390/sh/sparc stable wrt #395735
+
+  04 Mar 2012; Tobias Klausmann <klausman@gentoo.org>
+  texlive-context-2011.ebuild:
+  Stable on alpha, bug #395735
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> texlive-context-2011.ebuild:
+  Marking texlive-context-2011 ppc64 stable for bug 395735
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> texlive-context-2011.ebuild:
+  Marking texlive-context-2011 ppc stable for bug 395735
+
+  29 Jan 2012; Markus Meier <maekke@gentoo.org> texlive-context-2011.ebuild:
+  arm stable, bug #395735
+
+  17 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  texlive-context-2011.ebuild:
+  x86 stable wrt bug #395735
+
+  16 Jan 2012; Agostino Sarubbo <ago@gentoo.org> texlive-context-2011.ebuild:
+  Stable for amd64, wrt bug #395735
+
+  28 Dec 2011; Jeroen Roovers <jer@gentoo.org> texlive-context-2011.ebuild:
+  Stable for HPPA (bug #395735).
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org>
+  -texlive-context-2008-r1.ebuild, -texlive-context-2009.ebuild,
+  -texlive-context-2010.ebuild:
+  remove old
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> texlive-context-2010-r1.ebuild:
+  Stable for HPPA (bug #355085).
+
+  18 Sep 2011; Raúl Porcel <armin76@gentoo.org>
+  texlive-context-2010-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #355085
+
+  14 Aug 2011; Markus Meier <maekke@gentoo.org> texlive-context-2010-r1.ebuild:
+  arm stable, bug #355085
+
+  12 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  texlive-context-2010-r1.ebuild:
+  ppc/ppc64 stable wrt #355085
+
+  12 Aug 2011; Thomas Kahle <tomka@gentoo.org> texlive-context-2010-r1.ebuild:
+  x86 stable per bug 355085
+
+  09 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  texlive-context-2010-r1.ebuild:
+  Stable on amd64 wrt bug #355085
 
 *texlive-context-2011 (28 Jul 2011)
 

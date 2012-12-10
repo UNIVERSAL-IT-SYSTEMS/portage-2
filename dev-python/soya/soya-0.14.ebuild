@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/soya/soya-0.14.ebuild,v 1.7 2011/03/23 17:59:31 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/soya/soya-0.14.ebuild,v 1.9 2012/11/03 12:01:01 idella4 Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.* *-jython"
+RESTRICT_PYTHON_ABIS="3.* *-jython 2.7-pypy-*"
 
 inherit distutils eutils
 
@@ -24,7 +24,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc x86"
 IUSE="doc examples"
 
-DEPEND=">=dev-games/ode-0.5
+DEPEND="=dev-games/ode-0.11.1
 	dev-python/editobj
 	>=dev-python/imaging-1.1.5
 	>=dev-python/pyopenal-0.1.6

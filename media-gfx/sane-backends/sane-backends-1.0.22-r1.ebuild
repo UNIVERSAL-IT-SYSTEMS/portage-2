@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.22-r1.ebuild,v 1.1 2011/05/19 22:53:48 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.22-r1.ebuild,v 1.16 2012/06/08 03:01:10 zmedico Exp $
 
 EAPI="4"
 
-inherit eutils flag-o-matic multilib
+inherit eutils flag-o-matic multilib user
 
 # gphoto and v4l are handled by their usual USE flags.
 # The pint backend was disabled because I could not get it to compile.
@@ -121,9 +121,10 @@ DEPEND="${RDEPEND}
 	v4l? ( sys-kernel/linux-headers )
 	doc? (
 		virtual/latex-base
-		|| ( dev-texlive/texlive-latexextra app-text/ptex )
+		dev-texlive/texlive-latexextra
 	)
-	>=sys-apps/sed-4"
+	>=sys-apps/sed-4
+	virtual/pkgconfig"
 
 # We now use new syntax construct (SUBSYSTEMS!="usb|usb_device)
 RDEPEND="${RDEPEND}
@@ -133,7 +134,7 @@ SRC_URI="ftp://ftp.sane-project.org/pub/sane/${P}/${P}.tar.gz
 	ftp://ftp.sane-project.org/pub/sane/old-versions/${P}/${P}.tar.gz"
 SLOT="0"
 LICENSE="GPL-2 public-domain"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sparc x86"
 
 pkg_setup() {
 	enewgroup scanner
@@ -150,6 +151,10 @@ src_prepare() {
 
 	# Bug #368083
 	epatch "${FILESDIR}"/${P}-xerox_mfp-usb.patch
+	# Bug #356919
+	epatch "${FILESDIR}"/${P}-libv4l-0.8.3.patch
+	# Bug #329047
+	epatch "${FILESDIR}"/niash_array_index.patch
 }
 
 src_configure() {
@@ -206,12 +211,13 @@ src_install () {
 		exeinto /etc/hotplug/usb
 		doins tools/hotplug/libsane.usermap
 		doexe tools/hotplug/libusbscanner
-		newdoc tools/hotplug/README tools/hotplug/README.hotplug
+		newdoc tools/hotplug/README README.hotplug
 		echo >> "${D}"/etc/env.d/30sane "USB_DEVFS_PATH=/dev/bus/usb"
 	fi
-	insinto /$(get_libdir)/udev/rules.d
+	insinto /lib/udev/rules.d
 	newins tools/udev/libsane.rules 41-libsane.rules
 
 	dodoc NEWS AUTHORS ChangeLog* README README.linux
 	echo "SANE_CONFIG_DIR=/etc/sane.d" >> "${D}"/etc/env.d/30sane
+	find "${D}" -name "*.la" | while read file; do rm "${file}"; done
 }

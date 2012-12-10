@@ -1,6 +1,26 @@
 # ChangeLog for sys-power/pm-utils
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/pm-utils/ChangeLog,v 1.58 2011/04/21 15:03:19 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-power/pm-utils/ChangeLog,v 1.64 2012/05/19 12:04:50 blueness Exp $
+
+  19 May 2012; Anthony G. Basile <blueness@gentoo.org>
+  pm-utils-1.4.1-r2.ebuild:
+  Keyword mips
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> pm-utils-1.4.1-r2.ebuild:
+  alpha/ia64/sparc stable wrt #375349
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  pm-utils-1.4.1-r2.ebuild:
+  x86 stable wrt bug #375349
+
+  28 Dec 2011; Mark Loeser <halcy0n@gentoo.org> pm-utils-1.4.1-r2.ebuild:
+  Stable for ppc/ppc64; bug #375349
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> pm-utils-1.4.1-r2.ebuild:
+  arm stable, bug #375349
+
+  23 Dec 2011; Agostino Sarubbo <ago@gentoo.org> pm-utils-1.4.1-r2.ebuild:
+  Stable for AMD64, wrt bug #375349
 
 *pm-utils-1.4.1-r2 (21 Apr 2011)
 

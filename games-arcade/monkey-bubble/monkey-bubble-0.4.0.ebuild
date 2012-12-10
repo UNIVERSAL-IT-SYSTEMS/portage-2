@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/monkey-bubble/monkey-bubble-0.4.0.ebuild,v 1.9 2010/11/16 21:02:39 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/monkey-bubble/monkey-bubble-0.4.0.ebuild,v 1.12 2012/07/21 16:23:26 pacho Exp $
 
-EAPI=2
+EAPI=4
 inherit autotools eutils gnome2
 
 DESCRIPTION="A Puzzle Bobble clone"
@@ -21,22 +21,23 @@ RDEPEND="x11-libs/gtk+:2
 	>=gnome-base/librsvg-2.0
 	>=gnome-base/gconf-2.0
 	media-libs/gstreamer:0.10
-	>=dev-libs/libxml2-2.6.7
-	media-sound/esound"
+	>=dev-libs/libxml2-2.6.7"
 DEPEND="${RDEPEND}
 	app-text/scrollkeeper
+	app-text/gnome-doc-utils
 	dev-util/intltool"
 
 src_prepare() {
-	gnome2_src_prepare
 	epatch \
 		"${FILESDIR}"/${P}-asneeded.patch \
-		"${FILESDIR}"/${P}-gnome-doc.patch
+		"${FILESDIR}"/${P}-gnome-doc.patch \
+		"${FILESDIR}"/${P}-noesound.patch \
+		"${FILESDIR}"/${P}-glib-single-include.patch
 	# bug 260895
 	sed -i \
 		-e 's/ -Werror//' \
 		$(find . -name Makefile.am) \
 		|| die "sed failed"
-	eautoreconf
-	intltoolize --force || die "intltoolize failed" #bug 180458
+	AT_NOELIBTOOLIZE=yes eautoreconf
+	gnome2_src_prepare
 }

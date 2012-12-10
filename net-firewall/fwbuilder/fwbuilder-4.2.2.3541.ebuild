@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/fwbuilder/fwbuilder-4.2.2.3541.ebuild,v 1.5 2011/07/23 18:26:29 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/fwbuilder/fwbuilder-4.2.2.3541.ebuild,v 1.8 2012/07/19 16:22:52 kensington Exp $
 
 EAPI=4
 
@@ -14,15 +14,14 @@ SLOT="0"
 KEYWORDS="amd64 ppc ppc64 x86"
 IUSE=""
 
-DEPEND=">=x11-libs/qt-gui-4.3
+DEPEND=">=x11-libs/qt-gui-4.3:4
 	dev-libs/openssl
 	dev-libs/elfutils
-	sys-devel/gnuconfig
-	!net-libs/libfwbuilder"
+	sys-devel/gnuconfig"
 RDEPEND="${DEPEND}"
 
 PATCHES=(
-	"${FILESDIR}/${P}-ldflags.patch"
+	"${FILESDIR}/${P}-flags.patch"
 	"${FILESDIR}/${P}-ccache.patch"
 )
 

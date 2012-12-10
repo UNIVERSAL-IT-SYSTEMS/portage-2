@@ -1,10 +1,89 @@
 # ChangeLog for dev-libs/libzip
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libzip/ChangeLog,v 1.28 2011/04/29 11:00:54 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libzip/ChangeLog,v 1.55 2012/07/26 01:23:53 creffett Exp $
+
+  26 Jul 2012; Chris Reffett <creffett@gentoo.org> metadata.xml:
+  Add myself to maintainers, rest of KDE team didn't have any objections
+
+  25 Jul 2012; Chris Reffett <creffett@gentoo.org> -libzip-0.10.1.ebuild:
+  Remove old
+
+  25 Jul 2012; Anthony G. Basile <blueness@gentoo.org> libzip-0.10.1-r1.ebuild:
+  Stable ppc/ppc64, bug #426508
+
+  24 Jul 2012; Jeroen Roovers <jer@gentoo.org> libzip-0.10.1-r1.ebuild:
+  Stable for HPPA (bug #426508).
+
+  14 Jul 2012; Johannes Huber <johu@gentoo.org> libzip-0.10.1-r1.ebuild:
+  Stable for x86, wrt bug #426508
+
+  14 Jul 2012; Agostino Sarubbo <ago@gentoo.org> libzip-0.10.1-r1.ebuild:
+  Stable for amd64, wrt bug #426508
+
+  14 Jul 2012; Chris Reffett <creffett@gentoo.org> libzip-0.10.1-r1.ebuild:
+  Fix bug 421651 by adding unset VERBOSE to src_test in 0.10.1-r1
+
+*libzip-0.10.1-r1 (09 May 2012)
+
+  09 May 2012; Chris Reffett <creffett@gentoo.org> +libzip-0.10.1-r1.ebuild,
+  +files/libzip-0.10.1-fix_decrypt.patch:
+  Revision bump, added patch to fix CRC calls
+
+  28 Mar 2012; Johannes Huber <johu@gentoo.org> -libzip-0.10-r1.ebuild:
+  Remove old wrt bug #409117.
+
+  28 Mar 2012; Brent Baude <ranger@gentoo.org> libzip-0.10.1.ebuild:
+  Marking libzip-0.10.1 ppc64 for bug 409117
+
+  27 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libzip-0.10.1.ebuild:
+  x86 stable wrt bug #409117
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> libzip-0.10.1.ebuild:
+  Marking libzip-0.10.1 ppc for bug 409117
+
+  25 Mar 2012; Andreas K. Huettel <dilfridge@gentoo.org> libzip-0.10.1.ebuild:
+  Fix autoconf/automake dependencies, bug 409451
+
+  23 Mar 2012; Jeroen Roovers <jer@gentoo.org> libzip-0.10.1.ebuild:
+  Stable for HPPA (bug #409117).
+
+  23 Mar 2012; Agostino Sarubbo <ago@gentoo.org> libzip-0.10.1.ebuild:
+  Stable for amd64, wrt bug #409117
+
+*libzip-0.10.1 (21 Mar 2012)
+
+  21 Mar 2012; Johannes Huber <johu@gentoo.org> +libzip-0.10.1.ebuild:
+  Version bump. Upstream security bug fix release. Fixes CVE-2012-1162,
+  CVE-2012-1163. Bug #409117.
+
+  03 Mar 2012; Johannes Huber <johu@gentoo.org> -libzip-0.10.ebuild:
+  Remove old.
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> libzip-0.10-r1.ebuild:
+  Marking libzip-0.10-r1 ppc64 for bug 396903
+
+  17 Jan 2012; Jeroen Roovers <jer@gentoo.org> libzip-0.10-r1.ebuild:
+  Stable for HPPA (bug #396903).
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libzip-0.10-r1.ebuild:
+  x86 stable wrt bug #396903
+
+  07 Jan 2012; Johannes Huber <johu@gentoo.org> libzip-0.10-r1.ebuild:
+  Fix QA issues. Remove unused eclass. Add zlib to DEPEND too. Prevent
+  elibtoolize run twice bug #397751.
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> libzip-0.10-r1.ebuild:
+  Marking libzip-0.10-r1 ppc for bug 396903
+
+  04 Jan 2012; Johannes Huber <johu@gentoo.org> libzip-0.10-r1.ebuild:
+  Add missing RDEP. Thanks ago.
+
+  04 Jan 2012; Agostino Sarubbo <ago@gentoo.org> libzip-0.10-r1.ebuild:
+  Stable for AMD64, wrt bug #396903
 
 *libzip-0.10-r1 (29 Apr 2011)
 
-  29 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org> -libzip-0.9.ebuild,
+  29 Apr 2011; Tomás Chvátal <scarabeus@gentoo.org> -libzip-0.9.ebuild,
   +libzip-0.10-r1.ebuild, +files/libzip-0.10-fix_pkgconfig.patch:
   Drop older. Revision bump to fix pkgconfig file that had wrong include
   defined.
@@ -24,35 +103,35 @@
   20 Apr 2011; Thomas Kahle <tomka@gentoo.org> libzip-0.10.ebuild:
   x86 stable per bug 359899
 
-  19 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org> libzip-0.10.ebuild:
+  19 Apr 2011; Tomás Chvátal <scarabeus@gentoo.org> libzip-0.10.ebuild:
   Fix test that was using wrong return state.
 
 *libzip-0.10 (22 Mar 2011)
 
-  22 Mar 2011; Tomáš Chvátal <scarabeus@gentoo.org> -libzip-0.9.3.ebuild,
+  22 Mar 2011; Tomás Chvátal <scarabeus@gentoo.org> -libzip-0.9.3.ebuild,
   -libzip-0.10_rc1-r2.ebuild, +libzip-0.10.ebuild:
   Version bump to latest. Drop older.
 
 *libzip-0.10_rc1-r2 (05 Mar 2011)
 
-  05 Mar 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  05 Mar 2011; Tomás Chvátal <scarabeus@gentoo.org>
   -libzip-0.10_rc1-r1.ebuild, +libzip-0.10_rc1-r2.ebuild,
   files/libzip-0.10_rc1-fix_headers.patch:
   Fix typo in the patch... Revbump again...
 
 *libzip-0.10_rc1-r1 (05 Mar 2011)
 
-  05 Mar 2011; Tomáš Chvátal <scarabeus@gentoo.org> -libzip-0.10_rc1.ebuild,
+  05 Mar 2011; Tomás Chvátal <scarabeus@gentoo.org> -libzip-0.10_rc1.ebuild,
   +libzip-0.10_rc1-r1.ebuild, +files/libzip-0.10_rc1-fix_headers.patch:
   Fix headers placement. Per bug #357359.
 
 *libzip-0.10_rc1 (04 Mar 2011)
 
-  04 Mar 2011; Tomáš Chvátal <scarabeus@gentoo.org> libzip-0.9.3.ebuild,
+  04 Mar 2011; Tomás Chvátal <scarabeus@gentoo.org> libzip-0.9.3.ebuild,
   +libzip-0.10_rc1.ebuild:
   Add new RC. Fix tests.
 
-  04 Mar 2011; Tomáš Chvátal <scarabeus@gentoo.org> libzip-0.9.3.ebuild:
+  04 Mar 2011; Tomás Chvátal <scarabeus@gentoo.org> libzip-0.9.3.ebuild:
   Cleanup ebuild a bit.
 
   21 Dec 2010; Hans de Graaff <graaff@gentoo.org> libzip-0.9.3.ebuild:
@@ -118,4 +197,3 @@
   +libzip-0.8.ebuild:
   Added ebuild for libzip-0.8. Many thanks to Ryan Kelly and Benjamin K.
   Stuhl. - See bug #120244
-

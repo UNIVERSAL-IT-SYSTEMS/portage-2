@@ -1,6 +1,140 @@
 # ChangeLog for app-antivirus/clamav
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-antivirus/clamav/ChangeLog,v 1.393 2011/07/31 19:56:31 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-antivirus/clamav/ChangeLog,v 1.431 2012/12/06 10:20:12 eras Exp $
+
+*clamav-0.97.6-r1 (06 Dec 2012)
+
+  06 Dec 2012; Eray Aslan <eras@gentoo.org> +clamav-0.97.6-r1.ebuild,
+  +files/clamd.initd-r1:
+  Fix run directory permissions - bug #444766. Fix building on uclibc - bug
+  #317635
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> clamav-0.97.5-r1.ebuild:
+  Marking clamav-0.97.5-r1 ppc for bug 428584
+
+*clamav-0.97.6 (18 Sep 2012)
+
+  18 Sep 2012; Tim Harder <radhermit@gentoo.org> +clamav-0.97.6.ebuild:
+  Version bump.
+
+  18 Sep 2012; Tim Harder <radhermit@gentoo.org> clamav-0.97.5-r1.ebuild:
+  Add missing backslash for configure list.
+
+  11 Sep 2012; Christoph Junghans <ottxor@gentoo.org> clamav-0.97.5-r1.ebuild:
+  added prefix support (bug #430604)
+
+  28 Aug 2012; Brent Baude <ranger@gentoo.org> clamav-0.97.5-r1.ebuild:
+  Marking clamav-0.97.5-r1 ppc64 for bug 428584
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> clamav-0.97.5-r1.ebuild:
+  alpha/ia64/sparc stable wrt #428584
+
+  17 Aug 2012; Andreas Schuerch <nativemad@gentoo.org> clamav-0.97.5-r1.ebuild:
+  x86 stable, see bug 428584
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> clamav-0.97.5-r1.ebuild:
+  Stable for amd64, wrt bug #428584
+
+  11 Aug 2012; Jeroen Roovers <jer@gentoo.org> clamav-0.97.5-r1.ebuild:
+  Stable for HPPA (bug #428584).
+
+  11 Aug 2012; Eray Aslan <eras@gentoo.org> files/clamd.initd:
+  Use checkpath in init script
+
+*clamav-0.97.5-r1 (07 Aug 2012)
+
+  07 Aug 2012; Eray Aslan <eras@gentoo.org> +clamav-0.97.5-r1.ebuild,
+  +files/clamd.initd:
+  Create run dir during startup if necessary - bug #333783. Thanks to Valery
+  Kartel
+
+  24 Jun 2012; Tim Harder <radhermit@gentoo.org> clamav-0.97.5.ebuild:
+  Use prune_libtool_files instead of autotools-utils.
+
+*clamav-0.97.5 (24 Jun 2012)
+
+  24 Jun 2012; Hanno Boeck <hanno@gentoo.org> +clamav-0.97.5.ebuild:
+  Version bump.
+
+  31 May 2012; Tim Harder <radhermit@gentoo.org> clamav-0.97.4.ebuild,
+  +files/clamav-0.97.4-gcc47.patch:
+  Fix build with gcc-4.7 (bug #412349 by Alphat-PC).
+
+  31 May 2012; Zac Medico <zmedico@gentoo.org> clamav-0.97.3.ebuild,
+  clamav-0.97.4.ebuild:
+  inherit user for enewgroup and enewuser
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> clamav-0.97.3.ebuild,
+  clamav-0.97.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*clamav-0.97.4 (16 Mar 2012)
+
+  16 Mar 2012; Tim Harder <radhermit@gentoo.org> +clamav-0.97.4.ebuild:
+  Version bump.
+
+  11 Dec 2011; Markus Meier <maekke@gentoo.org> clamav-0.97.3.ebuild:
+  add ~arm, bug #389123
+
+  04 Dec 2011; Sven Wegener <swegener@gentoo.org> files/clamd.rc:
+  Replace opts with extra_commands
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org> clamav-0.97.3.ebuild:
+  Fix autotools-utils usage (bug #392135).
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org> clamav-0.97.3.ebuild:
+  Build in the source tree.
+
+  23 Oct 2011; Tim Harder <radhermit@gentoo.org> -clamav-0.97.2.ebuild:
+  Remove old.
+
+  23 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> clamav-0.97.3.ebuild:
+  Apply TOC workaround for ppc64, ppc/ppc64 stable wrt #387521
+
+  22 Oct 2011; Raúl Porcel <armin76@gentoo.org> clamav-0.97.3.ebuild:
+  alpha/ia64/sparc stable wrt #387521
+
+  22 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> clamav-0.97.3.ebuild:
+  x86 stable wrt bug #387521
+
+  19 Oct 2011; Tony Vroon <chainsaw@gentoo.org> clamav-0.97.3.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in security bug #387521.
+
+  19 Oct 2011; Jeroen Roovers <jer@gentoo.org> clamav-0.97.3.ebuild:
+  Stable for HPPA (bug #387521).
+
+*clamav-0.97.3 (18 Oct 2011)
+
+  18 Oct 2011; Tim Harder <radhermit@gentoo.org> +clamav-0.97.3.ebuild:
+  Version bump.
+
+  31 Aug 2011; Tim Harder <radhermit@gentoo.org> -clamav-0.97.ebuild,
+  -clamav-0.97.1.ebuild:
+  Remove old.
+
+  27 Aug 2011; Raúl Porcel <armin76@gentoo.org> clamav-0.97.2.ebuild:
+  alpha/ia64/sparc stable wrt #378815
+
+  25 Aug 2011; Eray Aslan <eras@gentoo.org> clamav-0.97.ebuild,
+  clamav-0.97.1.ebuild, clamav-0.97.2.ebuild:
+  add libtool dependency - bug #380265
+
+  21 Aug 2011; Jeroen Roovers <jer@gentoo.org> clamav-0.97.2.ebuild:
+  Stable for HPPA (bug #378815).
+
+  19 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> clamav-0.97.2.ebuild:
+  x86 stable wrt security bug #378815
+
+  18 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> clamav-0.97.2.ebuild:
+  ppc/ppc64 stable wrt #378815
+
+  17 Aug 2011; Tony Vroon <chainsaw@gentoo.org> clamav-0.97.2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in
+  security bug #378815.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> clamav-0.97.1.ebuild:
+  alpha/ia64/sparc stable wrt #376163
 
   31 Jul 2011; Jeroen Roovers <jer@gentoo.org> clamav-0.97.1.ebuild:
   Stable for HPPA (bug #376163).

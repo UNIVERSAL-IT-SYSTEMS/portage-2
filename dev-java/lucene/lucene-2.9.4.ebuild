@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/lucene/lucene-2.9.4.ebuild,v 1.4 2011/03/20 17:44:56 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/lucene/lucene-2.9.4.ebuild,v 1.7 2012/01/09 13:18:04 xmw Exp $
 
 EAPI="3"
 JAVA_PKG_IUSE="doc source test"
@@ -10,21 +10,21 @@ JAVA_PKG_BSFIX_NAME="build.xml common-build.xml"
 inherit java-pkg-2 java-ant-2
 
 DESCRIPTION="High-performance, full-featured text search engine written entirely in Java"
-HOMEPAGE="http://jakarta.apache.org/lucene"
+HOMEPAGE="http://lucene.apache.org"
 # when doing version bump, SRC_URI of the previous version should most probably
 # be changed to java/archive/ !
 SRC_URI="mirror://apache/lucene/java/${P}-src.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="2.9"
-KEYWORDS="amd64 ~ppc x86 ~x86-fbsd"
+KEYWORDS="amd64 ppc x86 ~x86-fbsd"
 IUSE=""
-DEPEND=">=virtual/jdk-1.4
+DEPEND=">=virtual/jdk-1.5
 	dev-java/ant-nodeps:0
 	dev-java/javacc:0
 	dev-java/junit:0
 	test? ( dev-java/ant-junit )"
 # junit is needed for compilation because tests are compiled for javacc target even when not requested
-RDEPEND=">=virtual/jdk-1.4"
+RDEPEND=">=virtual/jdk-1.5"
 
 java_prepare() {
 	sed -i -e '/-Xmax/ d' common-build.xml

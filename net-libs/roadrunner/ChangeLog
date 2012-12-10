@@ -1,6 +1,13 @@
 # ChangeLog for net-libs/roadrunner
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/roadrunner/ChangeLog,v 1.8 2011/07/20 14:50:34 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/roadrunner/ChangeLog,v 1.10 2012/11/25 21:57:07 ulm Exp $
+
+  25 Nov 2012; Ulrich Müller <ulm@gentoo.org> roadrunner-0.9.1.ebuild:
+  Update LICENSE, duplicate of Sleepycat, bug 300426; thanks to angelos for
+  pointing this out.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> roadrunner-0.9.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #34534

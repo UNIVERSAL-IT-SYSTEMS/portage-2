@@ -1,6 +1,47 @@
 # ChangeLog for dev-perl/Test-Class
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-Class/ChangeLog,v 1.55 2011/07/29 16:56:08 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-Class/ChangeLog,v 1.66 2012/11/24 07:36:21 tove Exp $
+
+*Test-Class-0.380.0 (24 Nov 2012)
+
+  24 Nov 2012; Torsten Veller <tove@gentoo.org> +Test-Class-0.380.0.ebuild:
+  Version bump
+
+  12 Sep 2012; Johannes Huber <johu@gentoo.org> Test-Class-0.370.0.ebuild:
+  Stable for x86, wrt bug #429008
+
+  12 Sep 2012; Agostino Sarubbo <ago@gentoo.org> Test-Class-0.370.0.ebuild:
+  Stable for amd64, wrt bug #429008
+
+*Test-Class-0.370.0 (26 Jun 2012)
+
+  26 Jun 2012; Torsten Veller <tove@gentoo.org> +Test-Class-0.370.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  05 Apr 2012; Torsten Veller <tove@gentoo.org> -Test-Class-0.34.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> Test-Class-0.34.ebuild,
+  Test-Class-0.360.0.ebuild:
+  Drop ia64/sparc keywords
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Test-Class-0.360.0.ebuild:
+  x86 stable wrt bug #400227
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Test-Class-0.360.0.ebuild:
+  Stable for amd64, wrt bug #400227
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Test-Class-0.36.ebuild:
+  Cleanup
+
+*Test-Class-0.360.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +Test-Class-0.360.0.ebuild:
+  Change version scheme
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org> -Test-Class-0.35.ebuild:
   Cleanup
@@ -223,4 +264,3 @@
   29 Mar 2004; Michael Cummings <mcummings@gentoo.org> Test-Class-0.03.ebuild,
   metadata.xml:
   dep for bricolage, bug 21549
-

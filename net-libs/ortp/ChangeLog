@@ -1,6 +1,26 @@
 # ChangeLog for net-libs/ortp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/ortp/ChangeLog,v 1.69 2011/05/21 17:46:33 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/ortp/ChangeLog,v 1.74 2012/11/19 21:10:11 mgorny Exp $
+
+*ortp-0.20.0 (19 Nov 2012)
+
+  19 Nov 2012; Michał Górny <mgorny@gentoo.org> +ortp-0.20.0.ebuild,
+  metadata.xml:
+  Version bump wrt bug #399735. Thanks to Andrew Savchenko for his effort on
+  linphone ebuilds.
+
+  30 May 2012; Zac Medico <zmedico@gentoo.org> ortp-0.16.1.ebuild,
+  ortp-0.16.3.ebuild, ortp-0.16.5.ebuild:
+  Use mirror://nongnu in SRC_URI.
+
+  25 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Set herd as primary maintainer as talked with volkmar.
+
+  06 Jan 2012; Brent Baude <ranger@gentoo.org> ortp-0.16.5.ebuild:
+  Marking ortp-0.16.5 ppc stable for bug 363311
+
+  29 Aug 2011; Fabian Groffen <grobian@gentoo.org> ortp-0.16.5.ebuild:
+  Marked ~x64-macos
 
   21 May 2011; Raúl Porcel <armin76@gentoo.org> ortp-0.16.5.ebuild:
   alpha/ia64/sparc stable wrt #363311
@@ -253,4 +273,3 @@
   21 Mar 2005; Stefan Knoblich <stkn@gentoo.org> +metadata.xml,
   +ortp-0.7.0.ebuild:
   Initial import.
-

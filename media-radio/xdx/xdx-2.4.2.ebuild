@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-radio/xdx/xdx-2.4.2.ebuild,v 1.5 2011/03/29 12:31:59 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-radio/xdx/xdx-2.4.2.ebuild,v 1.8 2012/05/03 03:48:57 jdhore Exp $
 
 EAPI="2"
 
@@ -12,12 +12,12 @@ SRC_URI="http://www.ibiblio.org/pub/linux/apps/ham/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="amd64 x86"
 IUSE="nls"
 
 RDEPEND=">=x11-libs/gtk+-2.12:2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 src_prepare() {
@@ -25,6 +25,10 @@ src_prepare() {
 	if has_version ">=x11-libs/gtk+-2.20" ; then
 		epatch "${FILESDIR}"/${PN}-gtk-2.20.patch
 	fi
+
+	# Drop DEPRECATED flags, bug #391091
+	sed -i -e 's:-D[A-Z_]*DISABLE_DEPRECATED:$(NULL):g' \
+		src/Makefile.am src/Makefile.in || die
 }
 
 src_configure() {

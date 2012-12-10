@@ -1,6 +1,69 @@
 # ChangeLog for media-libs/gst-plugins-bad
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-bad/ChangeLog,v 1.84 2011/07/29 05:56:34 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gst-plugins-bad/ChangeLog,v 1.98 2012/12/08 11:31:30 tetromino Exp $
+
+  08 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gst-plugins-bad-0.10.23-r1.ebuild:
+  Forgot to add a comment explaining the patches.
+
+*gst-plugins-bad-0.10.23-r1 (08 Dec 2012)
+
+  08 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gst-plugins-bad-0.10.23-r1.ebuild:
+  Add upstream patches fixing h264 baseline video decoding failure (bug
+  #446384, thanks to barrie backhurst).
+
+*gst-plugins-bad-1.0.3 (03 Dec 2012)
+
+  03 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  +gst-plugins-bad-1.0.3.ebuild:
+  Version bump.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-plugins-bad-0.10.22.ebuild:
+  Fix install due to usage of default in EAPI=2, bug #445698.
+
+*gst-plugins-bad-0.10.23 (02 Dec 2012)
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  -gst-plugins-bad-0.10.19.ebuild, -gst-plugins-bad-0.10.21.ebuild,
+  gst-plugins-bad-0.10.22.ebuild, +gst-plugins-bad-0.10.23.ebuild:
+  Version bump. Update ebuild to make proper use of new eclass.
+
+  07 Sep 2012; Mart Raudsepp <leio@gentoo.org> gst-plugins-bad-0.10.19.ebuild,
+  gst-plugins-bad-0.10.21.ebuild, gst-plugins-bad-0.10.22.ebuild:
+  Slotmove to 0.10 as its splits are
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org>
+  gst-plugins-bad-0.10.22.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  gst-plugins-bad-0.10.19.ebuild, gst-plugins-bad-0.10.21.ebuild,
+  gst-plugins-bad-0.10.22.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gst-plugins-bad-0.10.22.ebuild:
+  ppc/ppc64 stable wrt #382225
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> gst-plugins-bad-0.10.22.ebuild:
+  Stable for HPPA (bug #382225).
+
+  09 Oct 2011; Raúl Porcel <armin76@gentoo.org>
+  gst-plugins-bad-0.10.22.ebuild:
+  alpha/ia64/sparc stable wrt #382225
+
+  03 Oct 2011; Markus Meier <maekke@gentoo.org> gst-plugins-bad-0.10.22.ebuild:
+  arm stable, bug #382225
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org> gst-plugins-bad-0.10.22.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #382225.
+
+  20 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gst-plugins-bad-0.10.22.ebuild:
+  x86 stable wrt bug #382225
 
 *gst-plugins-bad-0.10.22 (29 Jul 2011)
 

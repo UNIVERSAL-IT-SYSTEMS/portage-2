@@ -1,21 +1,21 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/cgit/cgit-9999.ebuild,v 1.2 2011/06/27 08:58:08 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apps/cgit/cgit-9999.ebuild,v 1.6 2012/11/15 01:14:11 zx2c4 Exp $
 
 EAPI="4"
 
 WEBAPP_MANUAL_SLOT="yes"
 
-inherit webapp eutils multilib git-2
+inherit webapp multilib user git-2
 
 [[ -z "${CGIT_CACHEDIR}" ]] && CGIT_CACHEDIR="/var/cache/${PN}/"
 
 GIT_V="1.7.4"
 
 DESCRIPTION="a fast web-interface for git repositories"
-HOMEPAGE="http://hjemli.net/git/cgit/about/"
+HOMEPAGE="http://git.zx2c4.com/cgit/about/"
 SRC_URI="mirror://kernel/software/scm/git/git-${GIT_V}.tar.bz2"
-EGIT_REPO_URI="git://hjemli.net/pub/git/${PN}"
+EGIT_REPO_URI="http://git.zx2c4.com/cgit"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -80,6 +80,7 @@ src_install() {
 }
 
 pkg_postinst() {
+	webapp_pkg_postinst
 	ewarn "If you intend to run cgit using web server's user"
 	ewarn "you should change ${CGIT_CACHEDIR} permissions."
 }

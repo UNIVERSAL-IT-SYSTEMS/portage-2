@@ -1,6 +1,143 @@
 # ChangeLog for dev-perl/Text-CSV_XS
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Text-CSV_XS/ChangeLog,v 1.83 2011/07/29 12:42:50 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Text-CSV_XS/ChangeLog,v 1.120 2012/12/06 19:13:00 ago Exp $
+
+  06 Dec 2012; Agostino Sarubbo <ago@gentoo.org> Text-CSV_XS-0.910.0.ebuild:
+  Stable for ppc64, wrt bug #441260
+
+  06 Dec 2012; Agostino Sarubbo <ago@gentoo.org> Text-CSV_XS-0.910.0.ebuild:
+  Stable for ppc, wrt bug #441260
+
+  06 Dec 2012; <ago@gentoo.org> Text-CSV_XS-0.910.0.ebuild:
+  Stable for x86, wrt bug #441260
+
+  06 Dec 2012; <ago@gentoo.org> Text-CSV_XS-0.910.0.ebuild:
+  Stable for amd64, wrt bug #441260
+
+*Text-CSV_XS-0.940.0 (03 Dec 2012)
+
+  03 Dec 2012; Torsten Veller <tove@gentoo.org> +Text-CSV_XS-0.940.0.ebuild:
+  Version bump
+
+*Text-CSV_XS-0.930.0 (24 Nov 2012)
+
+  24 Nov 2012; Torsten Veller <tove@gentoo.org> +Text-CSV_XS-0.930.0.ebuild:
+  Version bump
+
+*Text-CSV_XS-0.920.0 (13 Nov 2012)
+
+  13 Nov 2012; Torsten Veller <tove@gentoo.org> +Text-CSV_XS-0.920.0.ebuild:
+  Version bump
+
+  02 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  Text-CSV_XS-0.900.0.ebuild:
+  stable ppc ppc64, bug #429012
+
+  15 Sep 2012; Raúl Porcel <armin76@gentoo.org> Text-CSV_XS-0.900.0.ebuild:
+  alpha/ia64/sparc stable wrt #429012
+
+  12 Sep 2012; Johannes Huber <johu@gentoo.org> Text-CSV_XS-0.900.0.ebuild:
+  Stable for x86, wrt bug #429012
+
+  12 Sep 2012; Agostino Sarubbo <ago@gentoo.org> Text-CSV_XS-0.900.0.ebuild:
+  Stable for amd64, wrt bug #429012
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> Text-CSV_XS-0.910.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  28 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  Text-CSV_XS-0.910.0.ebuild:
+  Keyword ~mips for bug #428248
+
+*Text-CSV_XS-0.910.0 (22 Aug 2012)
+
+  22 Aug 2012; Torsten Veller <tove@gentoo.org> +Text-CSV_XS-0.910.0.ebuild:
+  Version bump
+
+  08 Aug 2012; Naohiro Aota <naota@gentoo.org> Text-CSV_XS-0.900.0.ebuild:
+  Add ~x86-fbsd wrt bug #428248
+
+  06 Aug 2012; Alexis Ballier <aballier@gentoo.org> Text-CSV_XS-0.900.0.ebuild:
+  keyword ~amd64-fbsd
+
+  02 Aug 2012; Markus Meier <maekke@gentoo.org> Text-CSV_XS-0.900.0.ebuild:
+  add ~arm, bug #428248
+
+  29 Jul 2012; Jeroen Roovers <jer@gentoo.org> Text-CSV_XS-0.860.0.ebuild,
+  Text-CSV_XS-0.900.0.ebuild:
+  Marked ~hppa (bug #428248).
+
+  29 Jul 2012; Torsten Veller <tove@gentoo.org> -Text-CSV_XS-0.880.0.ebuild:
+  Cleanup
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*Text-CSV_XS-0.900.0 (16 Jun 2012)
+
+  16 Jun 2012; Torsten Veller <tove@gentoo.org> +Text-CSV_XS-0.900.0.ebuild:
+  Version bump
+
+  31 Mar 2012; Tobias Klausmann <klausman@gentoo.org>
+  Text-CSV_XS-0.860.0.ebuild:
+  Fix accidentally clobbered stabilizations
+
+  31 Mar 2012; Tobias Klausmann <klausman@gentoo.org>
+  Text-CSV_XS-0.860.0.ebuild:
+  Stable on alpha, bug #400239
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Text-CSV_XS-0.72.ebuild,
+  -Text-CSV_XS-0.830.0.ebuild, -Text-CSV_XS-0.850.0.ebuild,
+  -Text-CSV_XS-0.870.0.ebuild:
+  Cleanup
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> Text-CSV_XS-0.860.0.ebuild:
+  alpha/ia64/sparc stable wrt #400239
+
+*Text-CSV_XS-0.880.0 (17 Mar 2012)
+
+  17 Mar 2012; Torsten Veller <tove@gentoo.org> +Text-CSV_XS-0.880.0.ebuild:
+  Version bump
+
+*Text-CSV_XS-0.870.0 (10 Mar 2012)
+
+  10 Mar 2012; Torsten Veller <tove@gentoo.org> +Text-CSV_XS-0.870.0.ebuild:
+  Version bump
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> Text-CSV_XS-0.860.0.ebuild:
+  Marking Text-CSV_XS-0.860.0 ppc64 for bug 400239
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> Text-CSV_XS-0.860.0.ebuild:
+  Marking Text-CSV_XS-0.860.0 ppc for bug 400239
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Text-CSV_XS-0.860.0.ebuild:
+  x86 stable wrt bug #400239
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Text-CSV_XS-0.860.0.ebuild:
+  Stable for amd64, wrt bug #400239
+
+*Text-CSV_XS-0.860.0 (23 Jan 2012)
+
+  23 Jan 2012; Torsten Veller <tove@gentoo.org> +Text-CSV_XS-0.860.0.ebuild:
+  Version bump
+
+*Text-CSV_XS-0.850.0 (19 Sep 2011)
+
+  19 Sep 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +Text-CSV_XS-0.850.0.ebuild:
+  Version bump via perl-bump experimental tool.
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Text-CSV_XS-0.820.0.ebuild:
+  Cleanup
+
+*Text-CSV_XS-0.830.0 (09 Aug 2011)
+
+  09 Aug 2011; Torsten Veller <tove@gentoo.org> +Text-CSV_XS-0.830.0.ebuild:
+  Version bump
+
+  08 Aug 2011; Fabian Groffen <grobian@gentoo.org> Text-CSV_XS-0.820.0.ebuild:
+  Marked ~x64-macos
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org> -Text-CSV_XS-0.800.ebuild,
   -Text-CSV_XS-0.810.0.ebuild:

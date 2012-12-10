@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/conf-update/conf-update-1.0.1.ebuild,v 1.1 2010/10/22 22:56:12 sping Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/conf-update/conf-update-1.0.1.ebuild,v 1.7 2012/09/30 18:01:12 armin76 Exp $
 
 inherit eutils toolchain-funcs
 
@@ -10,13 +10,13 @@ SRC_URI="mirror://berlios/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="colordiff"
 
 RDEPEND=">=dev-libs/glib-2.6
 		dev-libs/openssl
 		colordiff? ( app-misc/colordiff )"
-DEPEND="dev-util/pkgconfig
+DEPEND="virtual/pkgconfig
 		${RDEPEND}"
 
 src_unpack() {

@@ -1,6 +1,20 @@
 # ChangeLog for app-admin/eselect-unison
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-unison/ChangeLog,v 1.10 2010/02/28 20:39:53 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-unison/ChangeLog,v 1.14 2012/02/06 17:14:22 ranger Exp $
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> eselect-unison-0.3.ebuild:
+  Marking eselect-unison-0.3 ppc for bug 391507
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> eselect-unison-0.1.ebuild,
+  eselect-unison-0.2.ebuild, eselect-unison-0.3.ebuild:
+  Drop sparc keywords
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  eselect-unison-0.3.ebuild:
+  x86 stable wrt bug #391507
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> eselect-unison-0.3.ebuild:
+  Stable on amd64 wrt bug #391507
 
 *eselect-unison-0.3 (28 Feb 2010)
 

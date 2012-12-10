@@ -1,6 +1,57 @@
 # ChangeLog for virtual/ruby-test-unit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/ruby-test-unit/ChangeLog,v 1.20 2011/07/15 17:26:24 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/ruby-test-unit/ChangeLog,v 1.35 2012/11/06 16:50:37 jer Exp $
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> ruby-test-unit-0-r4.ebuild:
+  Stable for HPPA (bug #411507).
+
+  27 Oct 2012; Raúl Porcel <armin76@gentoo.org> ruby-test-unit-0-r4.ebuild:
+  sh stable wrt #411507
+
+  21 Oct 2012; Raúl Porcel <armin76@gentoo.org> ruby-test-unit-0-r4.ebuild:
+  alpha/ia64/s390/sparc stable wrt #411507
+
+  25 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  ruby-test-unit-0-r4.ebuild:
+  Stable ppc64, bug #411507
+
+  22 Jul 2012; <nixnut@gentoo.org> ruby-test-unit-0-r4.ebuild:
+  ppc stable #411507
+
+  25 Jun 2012; Andreas Schuerch <nativemad@gentoo.org>
+  ruby-test-unit-0-r4.ebuild:
+  x86 stable, see bug 411507
+
+  27 May 2012; Markus Meier <maekke@gentoo.org> ruby-test-unit-0-r4.ebuild:
+  arm stable, bug #411507
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> ruby-test-unit-0-r4.ebuild:
+  Stable for amd64, wrt bug #411507
+
+  06 May 2012; Hans de Graaff <graaff@gentoo.org> ruby-test-unit-0-r4.ebuild:
+  Add arm keyword given that underlying implementation is also keyworded.
+
+  01 Mar 2012; Naohiro Aota <naota@gentoo.org> ruby-test-unit-0-r4.ebuild:
+  Add ~x86-fbsd
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> ruby-test-unit-0-r4.ebuild:
+  Add Prefix keywords, bug #396547
+
+  29 Dec 2011; Jeroen Roovers <jer@gentoo.org> ruby-test-unit-0-r4.ebuild:
+  Marked ~hppa (bug #332593).
+
+  29 Dec 2011; Hans de Graaff <graaff@gentoo.org> ruby-test-unit-0-r4.ebuild:
+  Add alpha keyword now that the underlying ruby:1.9 is keyworded again.
+
+  28 Dec 2011; Hans de Graaff <graaff@gentoo.org> ruby-test-unit-0-r4.ebuild:
+  Add keywords similar to the underlying implementation, most notable ruby 1.9.
+
+*ruby-test-unit-0-r4 (12 Oct 2011)
+
+  12 Oct 2011; Hans de Graaff <graaff@gentoo.org> +ruby-test-unit-0-r4.ebuild:
+  Depend directly on dev-lang/ruby:1.9 for ruby19 instead of on an old version
+  of test-unit that won't be loaded. Thanks to Shunsuke Shimizu in bug 380711
+  for the suggestion and associated testing.
 
   15 Jul 2011; Matt Turner <mattst88@gentoo.org> ruby-test-unit-0-r3.ebuild:
   Added ~mips, bug 332593

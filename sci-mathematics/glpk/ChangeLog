@@ -1,6 +1,39 @@
 # ChangeLog for sci-mathematics/glpk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/glpk/ChangeLog,v 1.48 2011/06/09 12:18:17 alexxy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/glpk/ChangeLog,v 1.58 2012/05/09 16:31:43 aballier Exp $
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> glpk-4.47.ebuild:
+  keyword ~amd64-fbsd
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> glpk-4.35.ebuild,
+  glpk-4.44.ebuild, glpk-4.45.ebuild, glpk-4.47.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  24 Mar 2012; Fabian Groffen <grobian@gentoo.org> glpk-4.47.ebuild:
+  Marked ~x{86,64}-macos, bug #408497
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> glpk-4.45.ebuild:
+  Marking glpk-4.45 ppc64 for bug 391517
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> glpk-4.45.ebuild:
+  Marking glpk-4.45 ppc for bug 391517
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> glpk-4.45.ebuild:
+  alpha/sparc stable wrt #391517
+
+  02 Dec 2011; Markos Chandras <hwoarang@gentoo.org> glpk-4.45.ebuild:
+  Add missing zlib dependency. Stable on amd64. Bug #391517
+
+  01 Dec 2011; Jeroen Roovers <jer@gentoo.org> glpk-4.45.ebuild:
+  Stable for HPPA (bug #391517).
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> glpk-4.45.ebuild:
+  x86 stable wrt bug #391517
+
+*glpk-4.47 (25 Nov 2011)
+
+  25 Nov 2011; Sébastien Fabbro <bicatali@gentoo.org> +glpk-4.47.ebuild:
+  Version bump
 
   09 Jun 2011; Alexey Shvetsov <alexxy@gentoo.org> glpk-4.45.ebuild:
   Add ~amd64-linux keyword

@@ -1,6 +1,30 @@
 # ChangeLog for dev-util/re2c
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/re2c/ChangeLog,v 1.59 2011/03/30 09:05:55 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/re2c/ChangeLog,v 1.66 2012/09/02 18:53:32 armin76 Exp $
+
+  02 Sep 2012; Raúl Porcel <armin76@gentoo.org> re2c-0.13.5-r1.ebuild:
+  alpha/ia64/sparc stable wrt #418963
+
+  12 Aug 2012; Anthony G. Basile <blueness@gentoo.org> re2c-0.13.5-r1.ebuild:
+  Stable ppc, bug #418963
+
+  10 Aug 2012; Johannes Huber <johu@gentoo.org> re2c-0.13.5-r1.ebuild:
+  Stable for x86, wrt bug #418963
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> re2c-0.13.5-r1.ebuild:
+  Marking re2c-0.13.5-r1 ppc64 for bug 418963
+
+  05 Aug 2012; Jeroen Roovers <jer@gentoo.org> re2c-0.13.5-r1.ebuild:
+  Stable for HPPA (bug #418963).
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> re2c-0.13.5-r1.ebuild:
+  Stable for amd64, wrt bug #418963
+
+*re2c-0.13.5-r1 (02 Feb 2012)
+
+  02 Feb 2012; Sergei Trofimovich <slyfox@gentoo.org> +re2c-0.13.5-r1.ebuild:
+  Cleanup ebuild: drop already applied patch, don't fix tarball permissions,
+  switch to EAPI=4. Approved by robbat2.
 
   30 Mar 2011; Michael Weber <xmw@gentoo.org> re2c-0.13.5.ebuild:
   added ~arm (bug 302981)

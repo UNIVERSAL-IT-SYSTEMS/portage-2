@@ -1,6 +1,21 @@
 # ChangeLog for media-gfx/viewnior
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/viewnior/ChangeLog,v 1.9 2011/07/19 19:56:36 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/viewnior/ChangeLog,v 1.13 2012/06/14 07:47:36 radhermit Exp $
+
+*viewnior-1.3 (14 Jun 2012)
+
+  14 Jun 2012; Tim Harder <radhermit@gentoo.org> +viewnior-1.3.ebuild:
+  Version bump (bug #405901). Update to EAPI 4.
+
+  23 Apr 2012; Michał Górny <mgorny@gentoo.org> viewnior-1.1.ebuild:
+  Use mirror:// in SRC_URI.
+
+  22 Nov 2011; Alex Alexander <wired@gentoo.org> metadata.xml:
+  added self as maintainer
+
+  22 Nov 2011; Pacho Ramos <pacho@gentoo.org> -viewnior-1.0.ebuild,
+  metadata.xml:
+  Drop maintainer due retirement, bug #195316; remove old.
 
   19 Jul 2011; Markus Meier <maekke@gentoo.org> viewnior-1.1.ebuild:
   x86 stable, bug #374759

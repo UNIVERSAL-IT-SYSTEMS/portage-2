@@ -1,6 +1,44 @@
 # ChangeLog for dev-perl/Net-XMPP
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-XMPP/ChangeLog,v 1.28 2010/10/17 07:40:38 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-XMPP/ChangeLog,v 1.40 2012/09/06 01:37:46 blueness Exp $
+
+  06 Sep 2012; Anthony G. Basile <blueness@gentoo.org> Net-XMPP-1.20.0.ebuild:
+  Keyword ~arm
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Net-XMPP-1.02.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> Net-XMPP-1.20.0.ebuild:
+  ia64/sparc stable wrt #400187
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> Net-XMPP-1.20.0.ebuild:
+  x86 stable wrt bug #400187
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> Net-XMPP-1.20.0.ebuild:
+  Marking Net-XMPP-1.20.0 ppc64 for bug 400187
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> Net-XMPP-1.20.0.ebuild:
+  Marking Net-XMPP-1.20.0 ppc for bug 400187
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> Net-XMPP-1.20.0.ebuild:
+  Stable for HPPA (bug #400187).
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org> Net-XMPP-1.20.0.ebuild:
+  Stable on alpha, bug #400187
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Net-XMPP-1.20.0.ebuild:
+  Stable for amd64, wrt bug #400187
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Net-XMPP-1.02-r1.ebuild:
+  Cleanup
+
+*Net-XMPP-1.20.0 (29 Aug 2011)
+
+  29 Aug 2011; Torsten Veller <tove@gentoo.org> +Net-XMPP-1.20.0.ebuild:
+  Change version scheme
 
   17 Oct 2010; Torsten Veller <tove@gentoo.org> Net-XMPP-1.02-r1.ebuild:
   Disable online tests
@@ -96,4 +134,3 @@
   18 Nov 2004; Don Seiler <rizzo@gentoo.org> +metadata.xml,
   +Net-XMPP-1.0.ebuild:
   Initial install.  Dep for sendxmpp, bug #71568
-

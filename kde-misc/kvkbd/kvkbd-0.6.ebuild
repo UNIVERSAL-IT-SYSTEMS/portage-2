@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/kvkbd/kvkbd-0.6.ebuild,v 1.2 2011/01/31 06:10:47 tampakrap Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/kvkbd/kvkbd-0.6.ebuild,v 1.4 2011/10/29 00:25:05 abcd Exp $
 
-EAPI=3
+EAPI=4
 
 inherit kde4-base
 
@@ -16,3 +16,7 @@ LICENSE="GPL-2"
 SLOT="4"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+PATCHES=(
+	"${FILESDIR}/${P}-underlinking.patch"
+)

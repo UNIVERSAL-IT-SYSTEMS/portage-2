@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/growl-for-linux/growl-for-linux-0.1.ebuild,v 1.1 2011/04/27 22:33:39 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/growl-for-linux/growl-for-linux-0.1.ebuild,v 1.3 2012/05/05 04:53:48 jdhore Exp $
 
 EAPI=3
 inherit multilib
 
 DESCRIPTION="Growl Implementation For Linux"
 HOMEPAGE="http://mattn.github.com/growl-for-linux/"
-SRC_URI="https://github.com/downloads/mattn/growl-for-linux/${P}.tar.gz"
+SRC_URI="mirror://github/mattn/growl-for-linux/${P}.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
@@ -22,7 +22,7 @@ RDEPEND="dev-db/sqlite:3
 	net-misc/curl
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_configure() {
 	econf --disable-static

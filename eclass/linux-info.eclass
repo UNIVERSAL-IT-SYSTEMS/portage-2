@@ -1,15 +1,12 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/linux-info.eclass,v 1.88 2011/03/29 19:57:51 flameeyes Exp $
-#
-# Original author: John Mylchreest <johnm@gentoo.org>
-# Maintainer: kernel-misc@gentoo.org
-#
-# Please direct your bugs to the current eclass maintainer :)
+# $Header: /var/cvsroot/gentoo-x86/eclass/linux-info.eclass,v 1.93 2012/10/22 19:00:52 mpagano Exp $
 
 # @ECLASS: linux-info.eclass
 # @MAINTAINER:
 # kernel-misc@gentoo.org
+# @AUTHOR:
+# Original author: John Mylchreest <johnm@gentoo.org>
 # @BLURB: eclass used for accessing kernel related information
 # @DESCRIPTION:
 # This eclass is used as a central eclass for accessing kernel
@@ -21,6 +18,14 @@
 # "kernel config" in this file means:
 # The .config of the currently installed sources is used as the first
 # preference, with a fall-back to bundled config (/proc/config.gz) if available.
+#
+# Before using any of the config-handling functions in this eclass, you must
+# ensure that one of the following functions has been called (in order of
+# preference), otherwise you will get bugs like #364041):
+# linux-info_pkg_setup
+# linux-info_get_any_version
+# get_version
+# get_running_version
 
 # A Couple of env vars are available to effect usage of this eclass
 # These are as follows:
@@ -42,7 +47,7 @@
 #
 #   e.g.: CONFIG_CHECK="!MTRR"
 #
-# To simply warn about a missing option, prepend a '~'. 
+# To simply warn about a missing option, prepend a '~'.
 # It may be combined with '!'.
 #
 # In general, most checks should be non-fatal. The only time fatal checks should
@@ -209,7 +214,7 @@ getfilevar_noexec() {
 	else
 		${mycat} "${2}" | \
 		sed -n \
-		-e "/^[[:space:]]*${1}[[:space:]]*:\\?=[[:space:]]*\(.*\)\$/{ 
+		-e "/^[[:space:]]*${1}[[:space:]]*:\\?=[[:space:]]*\(.*\)\$/{
 			s,^[^=]*[[:space:]]*=[[:space:]]*,,g ;
 			s,[[:space:]]*\$,,g ;
 			p
@@ -217,7 +222,8 @@ getfilevar_noexec() {
 	fi
 }
 
-# @PRIVATE-VARIABLE: _LINUX_CONFIG_EXISTS_DONE
+# @ECLASS-VARIABLE: _LINUX_CONFIG_EXISTS_DONE
+# @INTERNAL
 # @DESCRIPTION:
 # This is only set if one of the linux_config_*exists functions has been called.
 # We use it for a QA warning that the check for a config has not been performed,
@@ -361,40 +367,27 @@ linux_chkconfig_string() {
 # kernel_is 2 6 9 returns true
 # @CODE
 
-# got the jist yet?
-
+# Note: duplicated in kernel-2.eclass
 kernel_is() {
 	# if we haven't determined the version yet, we need to.
 	linux-info_get_any_version
 
-	local operator testagainst value x=0 y=0 z=0
+	# Now we can continue
+	local operator test value
 
-	case ${1} in
-	  -lt|lt) operator="-lt"; shift;;
-	  -gt|gt) operator="-gt"; shift;;
-	  -le|le) operator="-le"; shift;;
-	  -ge|ge) operator="-ge"; shift;;
-	  -eq|eq) operator="-eq"; shift;;
-	       *) operator="-eq";;
+	case ${1#-} in
+	  lt) operator="-lt"; shift;;
+	  gt) operator="-gt"; shift;;
+	  le) operator="-le"; shift;;
+	  ge) operator="-ge"; shift;;
+	  eq) operator="-eq"; shift;;
+	   *) operator="-eq";;
 	esac
+	[[ $# -gt 3 ]] && die "Error in kernel-2_kernel_is(): too many parameters"
 
-	for x in ${@}; do
-		for((y=0; y<$((3 - ${#x})); y++)); do value="${value}0"; done
-		value="${value}${x}"
-		z=$((${z} + 1))
-
-		case ${z} in
-		  1) for((y=0; y<$((3 - ${#KV_MAJOR})); y++)); do testagainst="${testagainst}0"; done;
-		     testagainst="${testagainst}${KV_MAJOR}";;
-		  2) for((y=0; y<$((3 - ${#KV_MINOR})); y++)); do testagainst="${testagainst}0"; done;
-		     testagainst="${testagainst}${KV_MINOR}";;
-		  3) for((y=0; y<$((3 - ${#KV_PATCH})); y++)); do testagainst="${testagainst}0"; done;
-		     testagainst="${testagainst}${KV_PATCH}";;
-		  *) die "Error in kernel-2_kernel_is(): Too many parameters.";;
-		esac
-	done
-
-	[ "${testagainst}" ${operator} "${value}" ] && return 0 || return 1
+	: $(( test = (KV_MAJOR << 16) + (KV_MINOR << 8) + KV_PATCH ))
+	: $(( value = (${1:-${KV_MAJOR}} << 16) + (${2:-${KV_MINOR}} << 8) + ${3:-${KV_PATCH}} ))
+	[ ${test} ${operator} ${value} ]
 }
 
 get_localversion() {
@@ -497,7 +490,7 @@ get_version() {
 
 	# keep track of it
 	KERNEL_MAKEFILE="${KV_DIR}/Makefile"
-	
+
 	# Decide the function used to extract makefile variables.
 	mkfunc="$(get_makefile_extract_function "${KERNEL_MAKEFILE}")"
 
@@ -632,7 +625,14 @@ check_kernel_built() {
 	require_configured_kernel
 	get_version
 
-	if [ ! -f "${KV_OUT_DIR}/include/linux/version.h" ]
+	local versionh_path
+	if kernel_is -ge 3 7; then
+		versionh_path="include/generated/uapi/linux/version.h"
+	else
+		versionh_path="include/linux/version.h"
+	fi
+
+	if [ ! -f "${KV_OUT_DIR}/${versionh_path}" ]
 	then
 		eerror "These sources have not yet been prepared."
 		eerror "We cannot build against an unprepared tree."

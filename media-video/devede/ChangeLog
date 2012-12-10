@@ -1,6 +1,54 @@
 # ChangeLog for media-video/devede
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/devede/ChangeLog,v 1.31 2011/03/23 08:15:14 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/devede/ChangeLog,v 1.42 2012/07/19 06:32:21 patrick Exp $
+
+*devede-3.22.0 (19 Jul 2012)
+
+  19 Jul 2012; Patrick Lauer <patrick@gentoo.org> +devede-3.22.0.ebuild:
+  Bump
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> devede-3.21.0.ebuild:
+  x86 stable wrt bug #419139
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> devede-3.21.0.ebuild:
+  Stable for amd64, wrt bug #419139
+
+  31 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> devede-3.16.9.ebuild,
+  metadata.xml:
+  Remove no-op USE="psyco" to get rid of dev-python/psyco dependency wrt
+  #410357
+
+  20 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -devede-3.17.0.ebuild,
+  -devede-3.19.0.ebuild, -devede-3.20.0.ebuild:
+  old
+
+*devede-3.21.0 (20 Jan 2012)
+
+  20 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +devede-3.21.0.ebuild:
+  Version bump. Missing dev-python/dbus-python dependency wrt #398417 by
+  "andrewthomas"
+
+*devede-3.20.0 (09 Dec 2011)
+
+  09 Dec 2011; Tim Harder <radhermit@gentoo.org> +devede-3.20.0.ebuild:
+  Version bump.
+
+*devede-3.19.0 (27 Nov 2011)
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org> -devede-3.18.0.ebuild,
+  +devede-3.19.0.ebuild:
+  Version bump and remove old.
+
+*devede-3.18.0 (24 Nov 2011)
+
+  24 Nov 2011; Tim Harder <radhermit@gentoo.org> +devede-3.18.0.ebuild:
+  Version bump. Update to EAPI 4, remove psyco use flag, and add ffmpeg use
+  flag.
+
+*devede-3.17.0 (22 Aug 2011)
+
+  22 Aug 2011; Tim Harder <radhermit@gentoo.org> +devede-3.17.0.ebuild:
+  Version bump
 
   23 Mar 2011; Tim Harder <radhermit@gentoo.org> -devede-3.12c.ebuild,
   -devede-3.13.1.ebuild, -devede-3.14.0.ebuild, -devede-3.15.2.ebuild,
@@ -139,4 +187,3 @@
 
   17 Jun 2007; Samuli Suominen <drac@gentoo.org> +devede-2.13.ebuild:
   Initial commit for bug 139986.
-

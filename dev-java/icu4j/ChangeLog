@@ -1,6 +1,33 @@
 # ChangeLog for dev-java/icu4j
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/icu4j/ChangeLog,v 1.54 2011/02/10 23:38:53 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/icu4j/ChangeLog,v 1.60 2012/12/08 12:34:03 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> icu4j-49.1.ebuild:
+  Stable for ppc64, wrt bug #428078
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> icu4j-49.1.ebuild:
+  Stable for ppc, wrt bug #428078
+
+  01 Oct 2012; Johannes Huber <johu@gentoo.org> icu4j-49.1.ebuild:
+  Stable for x86, wrt bug #428078
+
+  30 Sep 2012; Agostino Sarubbo <ago@gentoo.org> icu4j-49.1.ebuild:
+  Stable for amd64, wrt bug #428078
+
+*icu4j-49.1 (10 Jun 2012)
+
+  10 Jun 2012; Ralph Sennhauser <sera@gentoo.org> +icu4j-49.1.ebuild:
+  Version bump. #339526
+  Require at least jdk6. #361593
+  Build javadocs instead of downloading them.
+  Add use examples to install samples and demos.
+  No longer force javac as compiler.
+  No longer disable any tests.
+
+  31 Dec 2011; Ralph Sennhauser <sera@gentoo.org> icu4j-3.8.1-r1.ebuild,
+  icu4j-4.0.1.1.ebuild, icu4j-4.2.1.1.ebuild, icu4j-4.4.1.1.ebuild,
+  icu4j-4.4.2.ebuild:
+  Drop ia64 support #345433
 
   10 Feb 2011; Markos Chandras <hwoarang@gentoo.org> icu4j-4.4.2.ebuild:
   Stable on amd64 wrt bug #352630

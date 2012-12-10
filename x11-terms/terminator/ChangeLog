@@ -1,6 +1,47 @@
 # ChangeLog for x11-terms/terminator
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/terminator/ChangeLog,v 1.16 2011/03/23 06:17:17 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/terminator/ChangeLog,v 1.26 2012/10/19 07:13:01 jlec Exp $
+
+  19 Oct 2012; Justin Lecher <jlec@gentoo.org> terminator-0.96-r1.ebuild:
+  Enable the notification support by default
+
+  18 Oct 2012; Justin Lecher <jlec@gentoo.org> terminator-0.96-r1.ebuild,
+  metadata.xml:
+  Add new USE=libnotify to make notification support optional, #435610
+
+  28 Jun 2012; Justin Lecher <jlec@gentoo.org> -terminator-0.95.ebuild,
+  terminator-0.96-r1.ebuild:
+  drop old, fix Slot for keybinder
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  terminator-0.96-r1.ebuild:
+  x86 stable wrt bug #405467
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> terminator-0.96-r1.ebuild:
+  Stable for amd64, wrt bug #405467
+
+  24 Feb 2012; Justin Lecher <jlec@gentoo.org> terminator-0.96-r1.ebuild:
+  Moved to EAPI=4
+
+  20 Feb 2012; Justin Lecher <jlec@gentoo.org> terminator-0.95.ebuild,
+  terminator-0.96-r1.ebuild:
+  Add missing deps, #405049
+
+*terminator-0.96-r1 (07 Dec 2011)
+
+  07 Dec 2011; Justin Lecher <jlec@gentoo.org> terminator-0.95.ebuild,
+  -terminator-0.96.ebuild, +terminator-0.96-r1.ebuild:
+  Rebuild icon cache correctly, #393463
+
+  07 Dec 2011; Jeroen Roovers <jer@gentoo.org> terminator-0.95.ebuild,
+  terminator-0.96.ebuild:
+  Update HOMEPAGE.
+
+*terminator-0.96 (24 Sep 2011)
+
+  24 Sep 2011; Justin Lecher <jlec@gentoo.org> +terminator-0.96.ebuild,
+  metadata.xml:
+  Version Bump
 
   23 Mar 2011; Samuli Suominen <ssuominen@gentoo.org> terminator-0.95.ebuild:
   Use SLOT dependencies for x11-libs/vte.

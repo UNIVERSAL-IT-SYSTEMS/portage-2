@@ -1,6 +1,57 @@
 # ChangeLog for sys-power/apcupsd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/apcupsd/ChangeLog,v 1.70 2011/06/15 16:05:51 cardoe Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-power/apcupsd/ChangeLog,v 1.81 2012/10/16 21:49:04 maekke Exp $
+
+  16 Oct 2012; Markus Meier <maekke@gentoo.org> apcupsd-3.14.10-r1.ebuild:
+  add ~arm, bug #433657
+
+  11 Jul 2012; Matthew Marlowe <mattm@gentoo.org> metadata.xml:
+  Updated metadata to reflect taking over maintenance of package.
+
+  08 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Drop myself out of metadata.
+
+  16 May 2012; Diego E. Pettenò <flameeyes@gentoo.org> -apcupsd-3.14.10.ebuild,
+  -files/apcupsd.init.2:
+  Remove old version.
+
+*apcupsd-3.14.10-r1 (21 Oct 2011)
+
+  21 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> -apcupsd-3.14.7.ebuild,
+  -apcupsd-3.14.9-r1.ebuild, +apcupsd-3.14.10-r1.ebuild, +files/apcupsd.init.3:
+  Simplify init script with the new declarative runscript.
+
+  20 Oct 2011; Brent Baude <ranger@gentoo.org> apcupsd-3.14.8-r1.ebuild:
+  Marking apcupsd-3.14.8-r1 ppc for bug 363087
+
+*apcupsd-3.14.10 (29 Sep 2011)
+
+  29 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  +apcupsd-3.14.10.ebuild:
+  Version bump.
+
+  29 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> apcupsd-3.14.7.ebuild,
+  apcupsd-3.14.8-r1.ebuild, +files/apcupsd.init.2a:
+  Avoid depending on OpenRC for the old versions, .9 will be the one
+  openrc-only, the older ones will have to work with baselayout 1 as well, for
+  people not updating right now.
+
+*apcupsd-3.14.9-r1 (26 Aug 2011)
+
+  26 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> -apcupsd-3.14.9.ebuild,
+  +apcupsd-3.14.9-r1.ebuild, +files/apcupsd-udev.rules:
+  Add a udev rules file that allows persistent naming of APC UPS devices.
+
+  26 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> apcupsd-3.14.7.ebuild,
+  apcupsd-3.14.8-r1.ebuild:
+  Depend on openrc for s-s-d's --wait option.
+
+*apcupsd-3.14.9 (22 Aug 2011)
+
+  22 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org> +apcupsd-3.14.9.ebuild,
+  +files/apcupsd-3.14.9-aliasing.patch, files/apcupsd.init.2:
+  Version bump, require openrc, fix aliasing issues; increase wait timeout to 3
+  seconds, rather than 1.5, as it can still fail to start.
 
   15 Jun 2011; Doug Goldstein <cardoe@gentoo.org> apcupsd-3.14.8-r1.ebuild:
   Set USB to be the default mode since all APC products in recent times use the

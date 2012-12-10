@@ -1,6 +1,24 @@
 # ChangeLog for games-puzzle/gtetrinet
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/gtetrinet/ChangeLog,v 1.22 2011/06/24 18:48:40 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/gtetrinet/ChangeLog,v 1.27 2012/11/30 20:05:06 hasufell Exp $
+
+  30 Nov 2012; Julian Ospald <hasufell@gentoo.org> gtetrinet-0.7.11-r1.ebuild,
+  +files/gtetrinet-0.7.11-desktopfile.patch:
+  fix desktop file
+
+  21 May 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  gtetrinet-0.7.11-r1.ebuild:
+  add eutils
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gtetrinet-0.7.11-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 May 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gtetrinet-0.7.11-r1.ebuild:
+  Drop SCROLLKEEPER_UPDATE variable which had no effect at all.
+
+  20 Nov 2011; Gilles Dartiguelongue <eva@gentoo.org> -gtetrinet-0.7.11.ebuild:
+  Clean up old revision.
 
   24 Jun 2011; Brent Baude <ranger@gentoo.org> gtetrinet-0.7.11-r1.ebuild:
   Marking gtetrinet-0.7.11-r1 ppc for bug 362659

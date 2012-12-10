@@ -1,65 +1,62 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/libvisual-plugins/libvisual-plugins-0.4.0-r2.ebuild,v 1.10 2011/03/29 12:30:27 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/libvisual-plugins/libvisual-plugins-0.4.0-r2.ebuild,v 1.17 2012/05/31 19:45:35 ssuominen Exp $
 
-EAPI=1
-inherit eutils autotools
+EAPI=4
+inherit autotools eutils
 
-PATCHLEVEL="4"
+PATCHLEVEL=4
 
-DESCRIPTION="Visualization plugins for use with the libvisual framework."
+DESCRIPTION="collection of visualization plugins for use with the libvisual framework"
 HOMEPAGE="http://libvisual.sourceforge.net/"
 SRC_URI="mirror://sourceforge/libvisual/${P}.tar.gz
 	mirror://gentoo/${P}-patches-${PATCHLEVEL}.tar.bz2
 	mirror://gentoo/${P}-m4-1.tar.bz2"
+
 LICENSE="GPL-2"
-
 SLOT="0.4"
-KEYWORDS="amd64 ~mips ppc ppc64 x86 ~x86-fbsd"
-IUSE="alsa debug esd gtk jack mplayer opengl"
+KEYWORDS="amd64 hppa ~mips ppc ppc64 x86 ~amd64-fbsd ~x86-fbsd"
+IUSE="alsa debug gtk jack mplayer opengl"
 
-RDEPEND="~media-libs/libvisual-${PV}
-	opengl? ( virtual/opengl )
-	esd? ( media-sound/esound )
-	jack? ( >=media-sound/jack-audio-connection-kit-0.98 )
-	gtk? ( x11-libs/gtk+:2 )
-	alsa? ( media-libs/alsa-lib )
-	media-libs/fontconfig
+RDEPEND="media-libs/fontconfig
+	~media-libs/libvisual-${PV}
 	x11-libs/libX11
 	x11-libs/libXext
-	x11-libs/libXrender"
+	x11-libs/libXrender
+	alsa? ( media-libs/alsa-lib )
+	gtk? ( x11-libs/gtk+:2 )
+	jack? ( >=media-sound/jack-audio-connection-kit-0.109 )
+	opengl? ( virtual/opengl )"
 DEPEND="${RDEPEND}
-	x11-libs/libXt
-	>=dev-util/pkgconfig-0.14"
+	virtual/pkgconfig
+	x11-libs/libXt"
 
-src_unpack() {
-	unpack ${A}
-	sed -i -e "s:@MKINSTALLDIRS@:${S}/mkinstalldirs:" "${S}"/po/Makefile.*
+DOCS="AUTHORS ChangeLog NEWS README TODO"
 
-	cd "${S}"
+src_prepare() {
+	EPATCH_SUFFIX=patch epatch "${WORKDIR}"/patches
+	AT_M4DIR=${WORKDIR}/m4 eautoreconf
 
-	EPATCH_SUFFIX="patch" epatch "${WORKDIR}/patches"
-	AT_M4DIR="${WORKDIR}/m4" eautoreconf
+	sed -i -e "s:@MKINSTALLDIRS@:${S}/mkinstalldirs:" po/Makefile.* || die
 }
 
-src_compile() {
-	econf $(use_enable debug) \
-		$(use_enable debug inputdebug) \
+src_configure() {
+	econf \
+		--disable-esd \
+		$(use_enable jack) \
 		$(use_enable gtk gdkpixbuf-plugin) \
+		--disable-gstreamer-plugin \
 		$(use_enable alsa) \
+		$(use_enable mplayer) \
+		$(use_enable debug inputdebug) \
 		$(use_enable opengl gltest) \
+		$(use_enable opengl nastyfft) \
 		$(use_enable opengl madspin) \
 		$(use_enable opengl flower) \
-		$(use_enable opengl nastyfft) \
-		$(use_enable mplayer) \
-		$(use_enable esd) \
-		$(use_enable jack) \
-		--enable-static --disable-gstreamer-plugin \
-		|| die "econf failed"
-	emake || die "emake failed"
+		$(use_enable debug)
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog NEWS README TODO
+	default
+	find "${ED}"/usr -type f -name '*.la' -exec rm -f {} +
 }

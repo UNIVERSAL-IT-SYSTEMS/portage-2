@@ -1,6 +1,76 @@
 # ChangeLog for dev-perl/BerkeleyDB
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/BerkeleyDB/ChangeLog,v 1.75 2011/01/14 18:39:41 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/BerkeleyDB/ChangeLog,v 1.95 2012/09/02 17:44:32 tove Exp $
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -BerkeleyDB-0.430.0.ebuild,
+  -BerkeleyDB-0.490.0.ebuild, -BerkeleyDB-0.500.0.ebuild:
+  Cleanup
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> BerkeleyDB-0.510.0.ebuild:
+  alpha/ia64/sparc stable wrt #418789
+
+  09 Aug 2012; Brent Baude <ranger@gentoo.org> BerkeleyDB-0.510.0.ebuild:
+  Marking BerkeleyDB-0.510.0 ppc for bug 418789
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> BerkeleyDB-0.510.0.ebuild:
+  Marking BerkeleyDB-0.510.0 ppc64 for bug 418789
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> BerkeleyDB-0.510.0.ebuild:
+  Stable for amd64, wrt bug #418789
+
+  02 Aug 2012; Jeff Horelick <jdhore@gentoo.org> BerkeleyDB-0.510.0.ebuild:
+  marked x86 per bug 418789
+
+  02 Aug 2012; Jeroen Roovers <jer@gentoo.org> BerkeleyDB-0.510.0.ebuild:
+  Stable for HPPA (bug #418789).
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> BerkeleyDB-0.500.0.ebuild:
+  alpha/ia64/sparc stable wrt #404663
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> BerkeleyDB-0.500.0.ebuild:
+  Marking BerkeleyDB-0.500.0 ppc64 for bug 404663
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> BerkeleyDB-0.500.0.ebuild:
+  Marking BerkeleyDB-0.500.0 ppc for bug 404663
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> BerkeleyDB-0.500.0.ebuild:
+  marked x86 per bug 404663
+
+  29 Mar 2012; Jeroen Roovers <jer@gentoo.org> BerkeleyDB-0.500.0.ebuild:
+  Stable for HPPA (bug #404663).
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> BerkeleyDB-0.500.0.ebuild:
+  Stable for amd64, wrt bug #404663
+
+*BerkeleyDB-0.510.0 (20 Mar 2012)
+
+  20 Mar 2012; Torsten Veller <tove@gentoo.org> +BerkeleyDB-0.510.0.ebuild:
+  Version bump
+
+*BerkeleyDB-0.500.0 (19 Dec 2011)
+
+  19 Dec 2011; Torsten Veller <tove@gentoo.org> +BerkeleyDB-0.500.0.ebuild:
+  Version bump
+
+*BerkeleyDB-0.490.0 (04 Sep 2011)
+
+  04 Sep 2011; Robin H. Johnson <robbat2@gentoo.org>
+  +BerkeleyDB-0.490.0.ebuild:
+  Version bump via perl-bump experimental tool.
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -BerkeleyDB-0.43.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> BerkeleyDB-0.430.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*BerkeleyDB-0.430.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org> +BerkeleyDB-0.430.0.ebuild:
+  Change version scheme
 
   14 Jan 2011; Torsten Veller <tove@gentoo.org> -BerkeleyDB-0.39.ebuild,
   -BerkeleyDB-0.41.ebuild, -BerkeleyDB-0.42.ebuild:

@@ -1,6 +1,13 @@
 # ChangeLog for net-misc/corkscrew
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/corkscrew/ChangeLog,v 1.10 2010/07/07 12:33:40 fauli Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/corkscrew/ChangeLog,v 1.12 2012/06/24 14:23:33 ssuominen Exp $
+
+  24 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> corkscrew-2.0.ebuild:
+  Punt AM_C_PROTOTYPES from configure.in for sys-devel/automake >= 1.12
+  compability wrt #423193
+
+  31 Mar 2012; Mike Frysinger <vapier@gentoo.org> corkscrew-2.0.ebuild:
+  Add arm love.
 
   07 Jul 2010; Christian Faulhammer <fauli@gentoo.org> corkscrew-2.0.ebuild:
   stable x86, bug 284604

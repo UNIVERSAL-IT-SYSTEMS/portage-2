@@ -1,6 +1,87 @@
 # ChangeLog for net-libs/neon
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/neon/ChangeLog,v 1.23 2011/07/20 22:14:39 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/neon/ChangeLog,v 1.46 2012/11/28 11:17:14 qnikst Exp $
+
+*neon-0.29.6-r2 (28 Nov 2012)
+
+  28 Nov 2012; Alexander Vershilov <qnikst@gentoo.org>
+  +files/neon-0.29.6-gnutls-3-backport.patch, +neon-0.29.6-r2.ebuild:
+  backporting patches for gnutls (#440936)
+
+  01 Nov 2012; Alexander Vershilov <qnikst@gentoo.org>
+  +files/neon-0.29.6-gnutls-3-functions.patch,
+  +files/neon-0.29.6-gnutls-3-types.patch, neon-0.29.6-r1.ebuild:
+  fix gnutls-3 breakage #421441, thanks to Bartosz Brachaczek
+
+  05 Sep 2012; Mike Gilbert <floppym@gentoo.org> neon-0.29.6-r1.ebuild:
+  Fix handling of EPREFIX with whitespace. Patch by Arfrever.
+
+  05 Sep 2012; Mike Gilbert <floppym@gentoo.org> neon-0.29.6-r1.ebuild:
+  Do not inherit versionator.eclass. Patch by Arfrever.
+
+  05 Sep 2012; Pacho Ramos <pacho@gentoo.org> -neon-0.29.6.ebuild,
+  neon-0.29.6-r1.ebuild:
+  Drop suggestion to manually downgrade package as explained in bug #421643,
+  drop old.
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> neon-0.29.6-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #417325
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> neon-0.29.6-r1.ebuild:
+  Marking neon-0.29.6-r1 ppc for bug 417325
+
+  30 May 2012; Jeroen Roovers <jer@gentoo.org> neon-0.29.6-r1.ebuild:
+  Stable for HPPA (bug #417325).
+
+  30 May 2012; Markus Meier <maekke@gentoo.org> neon-0.29.6-r1.ebuild:
+  arm stable, bug #417325
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> neon-0.29.6-r1.ebuild:
+  Marking neon-0.29.6-r1 ppc for bug 415479
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> neon-0.29.6-r1.ebuild:
+  Marking neon-0.29.6-r1 ppc64 for bug 417325
+
+  25 May 2012; Agostino Sarubbo <ago@gentoo.org> neon-0.29.6-r1.ebuild:
+  Stable for amd64, wrt bug #417325
+
+  24 May 2012; Jeff Horelick <jdhore@gentoo.org> neon-0.29.6-r1.ebuild:
+  marked x86 per bug 417325
+
+  21 May 2012; Mike Frysinger <vapier@gentoo.org> neon-0.29.6-r1.ebuild:
+  Inherit eutils for epatch.
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> neon-0.29.6-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> neon-0.29.6.ebuild,
+  neon-0.29.6-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*neon-0.29.6-r1 (19 Apr 2012)
+
+  19 Apr 2012; Mike Frysinger <vapier@gentoo.org> +neon-0.29.6-r1.ebuild,
+  +files/neon-0.29.6-no-ssl-check.patch:
+  Drop openssl version checking.
+
+  02 Mar 2012; Fabian Groffen <grobian@gentoo.org> neon-0.29.6.ebuild:
+  Make sure neon links against -lintl on Solaris with USE=nls, because it needs
+  it.
+
+  02 Mar 2012; Fabian Groffen <grobian@gentoo.org> neon-0.29.6.ebuild:
+  Fix ca-bundle path for Prefix
+
+  24 Sep 2011; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Fix invalid herd.
+
+  18 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Add Arfrever as proxy maintainer with proxy-maintainers as herd.
+
+  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #246793
+
+  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> -neon-0.29.5.ebuild:
+  Remove old ebuild. Requested by Arfrever
 
   20 Jul 2011; Mark Loeser <halcy0n@gentoo.org> neon-0.29.6.ebuild:
   Stable for ppc64; bug #370523

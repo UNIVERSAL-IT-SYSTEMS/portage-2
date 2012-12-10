@@ -1,6 +1,117 @@
 # ChangeLog for dev-libs/libcroco
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libcroco/ChangeLog,v 1.50 2011/01/27 11:28:49 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libcroco/ChangeLog,v 1.81 2012/10/29 00:08:38 tetromino Exp $
+
+  29 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  libcroco-0.6.8.ebuild:
+  Add prefix support by Christoph Junghans (bug #440078).
+
+*libcroco-0.6.8 (27 Oct 2012)
+
+  27 Oct 2012; Pacho Ramos <pacho@gentoo.org> +libcroco-0.6.8.ebuild,
+  -libcroco-0.6.6.ebuild:
+  Version bump, drop old.
+
+*libcroco-0.6.7 (20 Oct 2012)
+
+  20 Oct 2012; Pacho Ramos <pacho@gentoo.org> +libcroco-0.6.7.ebuild,
+  -libcroco-0.6.3.ebuild, -libcroco-0.6.4.ebuild:
+  Version bump, drop old.
+
+*libcroco-0.6.6 (21 Sep 2012)
+
+  21 Sep 2012; Nirbheek Chauhan <nirbheek@gentoo.org> +libcroco-0.6.6.ebuild:
+  Bump to 0.6.6
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> libcroco-0.6.5.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #410611
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> libcroco-0.6.5.ebuild:
+  ppc stable wrt #410611
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> libcroco-0.6.5.ebuild:
+  Stable for HPPA (bug #410611).
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> libcroco-0.6.5.ebuild:
+  keyword ~amd64-fbsd
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> libcroco-0.6.3.ebuild,
+  libcroco-0.6.4.ebuild, libcroco-0.6.5.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> libcroco-0.6.5.ebuild:
+  x86 stable, bug #410611
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> libcroco-0.6.5.ebuild:
+  arm stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> libcroco-0.6.5.ebuild:
+  Marking libcroco-0.6.5 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> libcroco-0.6.5.ebuild:
+  Stable for amd64, wrt bug #410611
+
+*libcroco-0.6.5 (27 Mar 2012)
+
+  27 Mar 2012; Pacho Ramos <pacho@gentoo.org> +libcroco-0.6.5.ebuild,
+  -libcroco-0.6.2-r1.ebuild:
+  Version bump, remove old.
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> libcroco-0.6.3.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> libcroco-0.6.3.ebuild:
+  Marking libcroco-0.6.3 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> libcroco-0.6.3.ebuild:
+  Marking libcroco-0.6.3 ppc64 stable for bug 393007
+
+*libcroco-0.6.4 (13 Feb 2012)
+
+  13 Feb 2012; Pacho Ramos <pacho@gentoo.org> +libcroco-0.6.4.ebuild:
+  Version bump.
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> libcroco-0.6.3.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> libcroco-0.6.3.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> libcroco-0.6.3.ebuild:
+  amd64 stable, bug 393007
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> libcroco-0.6.3.ebuild:
+  Stable for HPPA (bug #393007).
+
+*libcroco-0.6.3 (20 Nov 2011)
+
+  20 Nov 2011; Pacho Ramos <pacho@gentoo.org> +libcroco-0.6.3.ebuild,
+  -libcroco-0.6.2.ebuild:
+  Version bump, remove old.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> libcroco-0.6.2-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> libcroco-0.6.2-r1.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  libcroco-0.6.2-r1.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> libcroco-0.6.2-r1.ebuild:
+  Stable for HPPA (bug #385699).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> libcroco-0.6.2-r1.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libcroco-0.6.2-r1.ebuild:
+  amd64 stable wrt #385699
+
+*libcroco-0.6.2-r1 (10 Sep 2011)
+
+  10 Sep 2011; Pacho Ramos <pacho@gentoo.org> +libcroco-0.6.2-r1.ebuild:
+  Remove .la files, bug #379403 by Agostino Sarubbo.
 
   27 Jan 2011; Pacho Ramos <pacho@gentoo.org> libcroco-0.6.2.ebuild:
   Don't build tests when not needed (bug #226215), bump to eapi3 and set

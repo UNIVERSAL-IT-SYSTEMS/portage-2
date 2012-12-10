@@ -1,6 +1,31 @@
 # ChangeLog for net-libs/librsync
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/librsync/ChangeLog,v 1.30 2011/04/09 16:24:03 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/librsync/ChangeLog,v 1.37 2012/09/09 16:19:39 kensington Exp $
+
+  09 Sep 2012; Michael Palimaka <kensington@gentoo.org>
+  -librsync-0.9.7-r1.ebuild, -librsync-0.9.7.ebuild:
+  Remove old.
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> librsync-0.9.7-r2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #391509
+
+  19 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  librsync-0.9.7-r2.ebuild:
+  Stable ppc ppc64, bug #391509
+
+  18 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  librsync-0.9.7-r2.ebuild:
+  Stable arm, bug #391509
+
+  06 Aug 2012; Christoph Junghans <ottxor@gentoo.org> librsync-0.9.7-r2.ebuild:
+  added prefix build fixes
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  librsync-0.9.7-r2.ebuild:
+  x86 stable wrt bug #391509
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> librsync-0.9.7-r2.ebuild:
+  Add missing dev-libs/popt on RDEPEND. Stable on amd64 wrt bug #391509
 
 *librsync-0.9.7-r2 (09 Apr 2011)
 

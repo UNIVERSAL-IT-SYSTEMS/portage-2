@@ -1,6 +1,52 @@
 # ChangeLog for dev-python/werkzeug
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/werkzeug/ChangeLog,v 1.25 2011/07/28 19:05:51 rafaelmartins Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/werkzeug/ChangeLog,v 1.36 2012/09/25 11:16:45 blueness Exp $
+
+  25 Sep 2012; Anthony G. Basile <blueness@gentoo.org> werkzeug-0.8.3.ebuild:
+  stable ppc, bug #433898
+
+  22 Sep 2012; Anthony G. Basile <blueness@gentoo.org> werkzeug-0.8.3.ebuild:
+  keyword ~arm, bug #433978
+
+  21 Sep 2012; Anthony G. Basile <blueness@gentoo.org> werkzeug-0.8.3.ebuild:
+  Keyword ~ppc, bug #433978
+
+  13 Mar 2012; Mike Gilbert <floppym@gentoo.org> werkzeug-0.8.3.ebuild:
+  Don't inherit unused eclass. Patch by Arfrever.
+
+*werkzeug-0.8.3 (02 Mar 2012)
+
+  02 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> -werkzeug-0.6.2.ebuild,
+  +werkzeug-0.8.3.ebuild:
+  Version bump to 0.8.3, remove old version.
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> werkzeug-0.8.2.ebuild:
+  x86 stable wrt bug #404721
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> werkzeug-0.8.2.ebuild:
+  Stable for amd64, wrt bug #404721
+
+  20 Feb 2012; Dirkjan Ochtman <djc@gentoo.org> -werkzeug-0.7.1-r1.ebuild,
+  -files/werkzeug-0.7.1-py24.patch:
+  Remove old versions.
+
+*werkzeug-0.8.2 (16 Dec 2011)
+
+  16 Dec 2011; Rafael G. Martins <rafaelmartins@gentoo.org>
+  -werkzeug-0.8.1.ebuild, +werkzeug-0.8.2.ebuild:
+  Version bump.
+
+*werkzeug-0.8.1 (03 Dec 2011)
+
+  03 Dec 2011; Rafael G. Martins <rafaelmartins@gentoo.org>
+  +werkzeug-0.8.1.ebuild:
+  Version bump. Thanks to Johan Bergström (bug #392903) and Arfrever.
+
+*werkzeug-0.7.1-r1 (13 Sep 2011)
+
+  13 Sep 2011; Mike Gilbert <floppym@gentoo.org> -werkzeug-0.7.1.ebuild,
+  +werkzeug-0.7.1-r1.ebuild, +files/werkzeug-0.7.1-py24.patch:
+  Fix syntax error with python2.4, bug 382761
 
 *werkzeug-0.7.1 (28 Jul 2011)
 

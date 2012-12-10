@@ -1,6 +1,45 @@
 # ChangeLog for dev-perl/DBIx-DBSchema
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/DBIx-DBSchema/ChangeLog,v 1.41 2010/10/20 08:49:54 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/DBIx-DBSchema/ChangeLog,v 1.52 2012/09/30 18:19:50 armin76 Exp $
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> DBIx-DBSchema-0.390.0.ebuild,
+  DBIx-DBSchema-0.400.0.ebuild:
+  Drop alpha keywords
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> DBIx-DBSchema-0.400.0.ebuild:
+  Marking DBIx-DBSchema-0.400.0 ppc for bug 404667
+
+  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org> DBIx-DBSchema-0.400.0.ebuild:
+  marked x86 per bug 404667
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> DBIx-DBSchema-0.390.0.ebuild,
+  DBIx-DBSchema-0.400.0.ebuild:
+  Drop ia64/sparc keywords
+
+  29 Mar 2012; Jeroen Roovers <jer@gentoo.org> DBIx-DBSchema-0.400.0.ebuild:
+  Stable for HPPA (bug #404667).
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> DBIx-DBSchema-0.400.0.ebuild:
+  Stable for amd64, wrt bug #404667
+
+*DBIx-DBSchema-0.400.0 (19 Dec 2011)
+
+  19 Dec 2011; Torsten Veller <tove@gentoo.org> +DBIx-DBSchema-0.400.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -DBIx-DBSchema-0.39.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> DBIx-DBSchema-0.390.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*DBIx-DBSchema-0.390.0 (31 Aug 2011)
+
+  31 Aug 2011; Torsten Veller <tove@gentoo.org> +DBIx-DBSchema-0.390.0.ebuild:
+  Change version scheme
 
   20 Oct 2010; Torsten Veller <tove@gentoo.org> -DBIx-DBSchema-0.33.ebuild,
   -DBIx-DBSchema-0.36.ebuild, -DBIx-DBSchema-0.38.ebuild:
@@ -168,4 +207,3 @@
   13 Nov 2005; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +DBIx-DBSchema-0.27.ebuild:
   New dep for DBIx-SearchBuilder
-

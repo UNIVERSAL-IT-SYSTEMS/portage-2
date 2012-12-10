@@ -1,6 +1,36 @@
 # ChangeLog for dev-php/PEAR-DB
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-DB/ChangeLog,v 1.65 2010/04/27 16:17:56 beandog Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-DB/ChangeLog,v 1.74 2012/03/18 18:44:09 mabi Exp $
+
+  18 Mar 2012; Matti Bickel <mabi@gentoo.org> -PEAR-DB-1.7.12.ebuild,
+  -PEAR-DB-1.7.14_rc1.ebuild:
+  remove old
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> PEAR-DB-1.7.14.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #402253
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> PEAR-DB-1.7.14.ebuild:
+  Marking PEAR-DB-1.7.14 ppc64 for bug 402253
+
+  16 Feb 2012; Markus Meier <maekke@gentoo.org> PEAR-DB-1.7.14.ebuild:
+  arm stable, bug #402253
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> PEAR-DB-1.7.14.ebuild:
+  x86 stable wrt bug #402253
+
+  15 Feb 2012; Brent Baude <ranger@gentoo.org> PEAR-DB-1.7.14.ebuild:
+  Marking PEAR-DB-1.7.14 ppc for bug 402253
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> PEAR-DB-1.7.14.ebuild:
+  Stable for HPPA (bug #402253).
+
+  07 Feb 2012; Agostino Sarubbo <ago@gentoo.org> PEAR-DB-1.7.14.ebuild:
+  Stable for amd64, wrt bug #402253
+
+*PEAR-DB-1.7.14 (27 Dec 2011)
+
+  27 Dec 2011; Ole Markus With <olemarkus@gentoo.org> +PEAR-DB-1.7.14.ebuild:
+  Version bump (bug 396229)
 
   27 Apr 2010; Steve Dibb <beandog@gentoo.org> PEAR-DB-1.7.12.ebuild,
   PEAR-DB-1.7.14_rc1.ebuild:

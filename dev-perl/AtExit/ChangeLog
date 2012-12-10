@@ -1,6 +1,23 @@
 # ChangeLog for dev-perl/AtExit
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/AtExit/ChangeLog,v 1.14 2010/02/03 00:42:19 hanno Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/AtExit/ChangeLog,v 1.19 2012/11/18 11:07:29 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -AtExit-2.01.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> AtExit-2.10.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*AtExit-2.10.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org> +AtExit-2.10.0.ebuild:
+  Change version scheme
 
   03 Feb 2010; Hanno Boeck <hanno@gentoo.org> AtExit-2.01.ebuild:
   Remove LICENSE so it takes the correct from perl-module.eclass.
@@ -42,4 +59,3 @@
 
   18 Aug 2003; Robin H. Johnson <robbat2@gentoo.org> AtExit-2.01.ebuild:
   initial commit
-

@@ -1,6 +1,23 @@
 # ChangeLog for games-board/pioneers
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/pioneers/ChangeLog,v 1.24 2010/08/13 12:07:57 josejx Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-board/pioneers/ChangeLog,v 1.29 2012/08/08 19:48:48 ranger Exp $
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> pioneers-14.1.ebuild:
+  Marking pioneers-14.1 ppc for bug 424247
+
+  01 Jul 2012; Agostino Sarubbo <ago@gentoo.org> pioneers-14.1.ebuild:
+  Stable for amd64, wrt bug #424247
+
+  30 Jun 2012; Jeff Horelick <jdhore@gentoo.org> pioneers-14.1.ebuild:
+  marked x86 per bug 424247
+
+*pioneers-14.1 (30 May 2012)
+
+  30 May 2012; Michael Sterrett <mr_bones_@gentoo.org> +pioneers-14.1.ebuild:
+  version bump
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> pioneers-0.12.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   13 Aug 2010; Joseph Jezak <josejx@gentoo.org> pioneers-0.12.3.ebuild:
   Marked ppc stable for bug #315907.

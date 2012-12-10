@@ -1,6 +1,45 @@
 # ChangeLog for dev-perl/PerlIO-via-dynamic
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/PerlIO-via-dynamic/ChangeLog,v 1.24 2010/01/10 19:38:17 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/PerlIO-via-dynamic/ChangeLog,v 1.33 2012/11/04 12:04:19 tove Exp $
+
+*PerlIO-via-dynamic-0.140.0 (04 Nov 2012)
+
+  04 Nov 2012; Torsten Veller <tove@gentoo.org>
+  +PerlIO-via-dynamic-0.140.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org>
+  -PerlIO-via-dynamic-0.12.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  PerlIO-via-dynamic-0.12.ebuild, PerlIO-via-dynamic-0.130.0.ebuild:
+  Drop ia64/sparc
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  PerlIO-via-dynamic-0.130.0.ebuild:
+  x86 stable wrt bug #400203
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  PerlIO-via-dynamic-0.130.0.ebuild:
+  Stable on alpha, bug #400203
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  PerlIO-via-dynamic-0.130.0.ebuild:
+  Stable for amd64, wrt bug #400203
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org>
+  -PerlIO-via-dynamic-0.13.ebuild:
+  Cleanup
+
+*PerlIO-via-dynamic-0.130.0 (29 Aug 2011)
+
+  29 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +PerlIO-via-dynamic-0.130.0.ebuild:
+  Change version scheme
 
   10 Jan 2010; Fabian Groffen <grobian@gentoo.org>
   PerlIO-via-dynamic-0.13.ebuild:
@@ -101,4 +140,3 @@
   14 Mar 2004; Michael Cummings <mcummings@gentoo.org>
   PerlIO-via-dynamic-0.02.ebuild, metadata.xml:
   bug 44615
-

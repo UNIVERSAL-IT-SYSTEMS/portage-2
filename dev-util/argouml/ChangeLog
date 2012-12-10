@@ -1,6 +1,27 @@
 # ChangeLog for dev-util/argouml
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/argouml/ChangeLog,v 1.31 2011/06/22 09:42:52 ali_bush Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/argouml/ChangeLog,v 1.36 2012/05/06 14:05:52 ago Exp $
+
+  06 May 2012; Agostino Sarubbo <ago@gentoo.org> argouml-0.34.ebuild:
+  Stable for amd64, wrt bug #379387
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> argouml-0.34.ebuild:
+  Marking argouml-0.34 ppc for bug 379387
+
+  05 May 2012; Markus Meier <maekke@gentoo.org> argouml-0.34.ebuild:
+  x86 stable, bug #379387
+
+  06 Feb 2012; Ralph Sennhauser <sera@gentoo.org> -argouml-0.24.ebuild,
+  -argouml-0.26.ebuild, -argouml-0.29.2-r1.ebuild, -argouml-0.30.2.ebuild,
+  argouml-0.32.2.ebuild, argouml-0.34.ebuild, -files/argouml.png:
+  Use shipped png. #370921
+  Move to freedesktop category Development. #373017
+  Remove old/unused.
+
+*argouml-0.34 (03 Feb 2012)
+
+  03 Feb 2012; <fordfrog@gentoo.org> +argouml-0.34.ebuild:
+  Version bump
 
 *argouml-0.32.2 (22 Jun 2011)
 

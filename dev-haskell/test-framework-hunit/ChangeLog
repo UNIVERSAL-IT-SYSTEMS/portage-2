@@ -1,6 +1,44 @@
 # ChangeLog for dev-haskell/test-framework-hunit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/test-framework-hunit/ChangeLog,v 1.9 2011/02/25 13:18:57 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/test-framework-hunit/ChangeLog,v 1.17 2012/09/12 15:33:38 qnikst Exp $
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org>
+  test-framework-hunit-0.2.4.ebuild, test-framework-hunit-0.2.6.ebuild,
+  test-framework-hunit-0.2.7.ebuild:
+  move dev-haskell/test-framework-hunit/test-framework-hunit-0.2.6.ebuild ebuild
+  to mirror://hackage
+
+  09 Aug 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  test-framework-hunit-0.2.7.ebuild:
+  Stable on alpha/ia64/sparc (bug #414713)
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org>
+  test-framework-hunit-0.2.7.ebuild:
+  Marking test-framework-hunit-0.2.7 ppc for bug 414713
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org>
+  test-framework-hunit-0.2.7.ebuild:
+  Marking test-framework-hunit-0.2.7 ppc64 for bug 414713
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  test-framework-hunit-0.2.7.ebuild:
+  Stable for amd64, wrt bug #414713
+
+  19 Jun 2012; Jeff Horelick <jdhore@gentoo.org>
+  test-framework-hunit-0.2.7.ebuild:
+  marked x86 per bug 414713
+
+*test-framework-hunit-0.2.7 (04 Mar 2012)
+
+  04 Mar 2012; Mark Wright <gienah@gentoo.org>
+  +test-framework-hunit-0.2.7.ebuild:
+  Bump test-framework-hunit to 0.2.7
+
+*test-framework-hunit-0.2.6 (22 Jan 2012)
+
+  22 Jan 2012; Mark Wright <gienah@gentoo.org>
+  +test-framework-hunit-0.2.6.ebuild:
+  Version bump
 
   25 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org>
   test-framework-hunit-0.2.4.ebuild:
@@ -39,4 +77,3 @@
   28 Mar 2010; Lennart Kolmodin <kolmodin@gentoo.org>
   +test-framework-hunit-0.2.4.ebuild, +hunit-1.2.2.1.ebuild, +metadata.xml:
   Initial version.
-

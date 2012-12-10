@@ -1,6 +1,19 @@
 # ChangeLog for app-dicts/myspell-he
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-he/ChangeLog,v 1.18 2010/09/27 23:33:28 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-he/ChangeLog,v 1.21 2012/07/23 11:29:08 scarabeus Exp $
+
+  23 Jul 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  myspell-he-2010.11.05.ebuild:
+  Whitespace.
+
+*myspell-he-2010.11.05 (23 Jul 2012)
+
+  23 Jul 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  +myspell-he-2010.11.05.ebuild, -myspell-he-20060316.ebuild:
+  Bump to latest release and use upstream versioning.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> myspell-he-20060316.ebuild:
+  keyword ~amd64-fbsd
 
   27 Sep 2010; Mart Raudsepp <leio@gentoo.org> myspell-he-20060316.ebuild:
   Add ~mips
@@ -64,4 +77,3 @@
   01 May 2006; Kevin F. Quinn <kevquinn@gentoo.org> +metadata.xml,
   +myspell-he-20060316.ebuild:
   New ebuild for Hebrew myspell dictionary
-

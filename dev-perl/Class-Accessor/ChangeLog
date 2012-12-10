@@ -1,6 +1,46 @@
 # ChangeLog for dev-perl/Class-Accessor
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-Accessor/ChangeLog,v 1.59 2011/04/24 16:04:20 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-Accessor/ChangeLog,v 1.71 2012/09/01 11:15:57 grobian Exp $
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  Class-Accessor-0.340.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  03 Jun 2012; Torsten Veller <tove@gentoo.org> -Class-Accessor-0.31.ebuild:
+  Cleanup
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> Class-Accessor-0.340.0.ebuild:
+  alpha/ia64/sparc stable wrt #404665
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> Class-Accessor-0.340.0.ebuild:
+  Marking Class-Accessor-0.340.0 ppc64 for bug 404665
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> Class-Accessor-0.340.0.ebuild:
+  Marking Class-Accessor-0.340.0 ppc for bug 404665
+
+  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org> Class-Accessor-0.340.0.ebuild:
+  marked x86 per bug 404665
+
+  29 Mar 2012; Jeroen Roovers <jer@gentoo.org> Class-Accessor-0.340.0.ebuild:
+  Stable for HPPA (bug #404665).
+
+  28 Mar 2012; Agostino Sarubbo <ago@gentoo.org> Class-Accessor-0.340.0.ebuild:
+  Stable for amd64, wrt bug #404665
+
+  24 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  Class-Accessor-0.340.0.ebuild:
+  Marked ~x64-macos
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Class-Accessor-0.34.ebuild:
+  Cleanup
+
+*Class-Accessor-0.340.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org> +Class-Accessor-0.340.0.ebuild:
+  Change version scheme
 
   24 Apr 2011; Fabian Groffen <grobian@gentoo.org> Class-Accessor-0.34.ebuild:
   Marked ~x86-solaris, bug #296509
@@ -227,4 +267,3 @@
   31 Mar 2004; Michael Cummings <mcummings@gentoo.org>
   Class-Accessor-0.19.ebuild, metadata.xml:
   Dep for Class-DBI
-

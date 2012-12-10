@@ -1,6 +1,158 @@
 # ChangeLog for x11-misc/xscreensaver
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xscreensaver/ChangeLog,v 1.288 2011/05/26 21:58:55 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xscreensaver/ChangeLog,v 1.324 2012/11/18 14:53:11 xarthisius Exp $
+
+  18 Nov 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/xscreensaver-5.20-parallel-build.patch, xscreensaver-5.20.ebuild:
+  Fix parallel build wrt #259115 by Mr. Anderson <walch.martin@web.de>
+
+  14 Nov 2012; Andreas Schuerch <nativemad@gentoo.org>
+  xscreensaver-5.20.ebuild:
+  x86 stable, see bug 439146
+
+  11 Nov 2012; Anthony G. Basile <blueness@gentoo.org> xscreensaver-5.20.ebuild:
+  stable arm, bug #439146
+
+  30 Oct 2012; Anthony G. Basile <blueness@gentoo.org> xscreensaver-5.20.ebuild:
+  stable ppc64, bug #439146
+
+  30 Oct 2012; Jeroen Roovers <jer@gentoo.org> xscreensaver-5.20.ebuild:
+  Stable for HPPA (bug #439146).
+
+  29 Oct 2012; Anthony G. Basile <blueness@gentoo.org> xscreensaver-5.20.ebuild:
+  stable ppc, bug #439146
+
+  24 Oct 2012; <ago@gentoo.org> xscreensaver-5.20.ebuild:
+  Stable for amd64, wrt bug #439146
+
+  21 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xscreensaver-5.18.ebuild, -files/xscreensaver-5.18-sonar-compile.patch,
+  -xscreensaver-5.19.ebuild:
+  old
+
+*xscreensaver-5.20 (21 Oct 2012)
+
+  21 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xscreensaver-5.20.ebuild,
+  +files/xscreensaver-5.20-blurb-hndl-test-passwd.patch,
+  +files/xscreensaver-5.20-check-largefile-support.patch,
+  +files/xscreensaver-5.20-conf264.patch,
+  +files/xscreensaver-5.20-test-passwd-segv-tty.patch,
+  +files/xscreensaver-5.20-tests-miscfix.patch:
+  Version bump.
+
+*xscreensaver-5.19 (27 Jul 2012)
+
+  27 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xscreensaver-5.19.ebuild:
+  Version bump.
+
+  23 Jul 2012; <swift@gentoo.org> xscreensaver-5.15.ebuild,
+  xscreensaver-5.18.ebuild:
+  Adding optional dependency on SELinux policy module for xscreensaver
+
+  16 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xscreensaver-5.15-r1.ebuild, -xscreensaver-5.17.ebuild,
+  -files/xscreensaver-5.17-lament-newxpm.patch:
+  old
+
+*xscreensaver-5.18 (16 Jul 2012)
+
+  16 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +files/xscreensaver-5.18-sonar-compile.patch, +xscreensaver-5.18.ebuild:
+  Version bump.
+
+*xscreensaver-5.17 (28 Jun 2012)
+
+  28 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xscreensaver-5.17.ebuild, +files/xscreensaver-5.17-lament-newxpm.patch:
+  Version bump.
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> xscreensaver-5.15-r1.ebuild:
+  Readd ~alpha/~ia64/~sparc wrt #412847
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> xscreensaver-5.15.ebuild,
+  xscreensaver-5.15-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*xscreensaver-5.15-r1 (21 Apr 2012)
+
+  21 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xscreensaver-5.15-r1.ebuild, metadata.xml:
+  Introduce USE="gdm" which will select gdmflexiserver from gnome-base/gdm
+  instead of x11-misc/lightdm. This behavior should be matching
+  xfce-extra/xfswitch-plugin.
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xscreensaver-5.14.ebuild, -files/xscreensaver-5.14-gentoo.patch:
+  old
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> xscreensaver-5.15.ebuild:
+  ppc64 stable wrt #395765
+
+  22 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> xscreensaver-5.15.ebuild:
+  Missing perl dependencies for Text::Wrap, Digest::MD5 and LWP::Simple wrt
+  #398033 by Michael Casey
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> xscreensaver-5.15.ebuild:
+  alpha/ia64/sh stable wrt #395765
+
+  08 Jan 2012; Markus Meier <maekke@gentoo.org> xscreensaver-5.15.ebuild:
+  arm stable, bug #395765
+
+  05 Jan 2012; Michael Weber <xmw@gentoo.org> xscreensaver-5.15.ebuild:
+  sparc stable (bug 395765)
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> xscreensaver-5.15.ebuild:
+  Marking xscreensaver-5.15 ppc for bug 395765
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  xscreensaver-5.15.ebuild:
+  x86 stable wrt bug #395765
+
+  30 Dec 2011; Jeroen Roovers <jer@gentoo.org> xscreensaver-5.15.ebuild:
+  Stable for HPPA (bug #395765).
+
+  23 Dec 2011; Agostino Sarubbo <ago@gentoo.org> xscreensaver-5.15.ebuild:
+  Stable for AMD64, wrt bug #395765
+
+  23 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> xscreensaver-5.15.ebuild:
+  Use x11-misc/lightdm for USE="new-login" by default if it's installed since
+  it's the most generic one out of lightdm, gdm and kdm wrt #392967 by
+  "Small_Penguin"
+
+*xscreensaver-5.15 (21 Oct 2011)
+
+  21 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +xscreensaver-5.15.ebuild, +files/xscreensaver-5.15-gentoo.patch:
+  Version bump.
+
+  21 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -files/xscreensaver-5.10-gentoo.patch, -xscreensaver-5.12.ebuild,
+  -xscreensaver-5.12-r1.ebuild,
+  -files/xscreensaver-5.12-for-now-set-lang-on-daemon-to-C.patch,
+  -files/xscreensaver-5.12-gltext-memleak.patch, -xscreensaver-5.13.ebuild:
+  old
+
+  04 Oct 2011; Joseph Jezak <josejx@gentoo.org> xscreensaver-5.14.ebuild:
+  Marked ppc/ppc64 stable for bug #381043.
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> xscreensaver-5.14.ebuild:
+  Stable for HPPA (bug #381043).
+
+  25 Sep 2011; Raúl Porcel <armin76@gentoo.org> xscreensaver-5.14.ebuild:
+  alpha/ia64/sh stable wrt #381043
+
+  05 Sep 2011; Markus Meier <maekke@gentoo.org> xscreensaver-5.14.ebuild:
+  arm stable, bug #381043
+
+  04 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  xscreensaver-5.14.ebuild:
+  x86 stable wrt bug #381043
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> xscreensaver-5.14.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #369601 filed by Michael "xmw" Weber.
 
   26 May 2011; Kacper Kowalik <xarthisius@gentoo.org> xscreensaver-5.14.ebuild:
   Workaround failure with latest rpm wrt #368025. Thanks to Ole Craig

@@ -1,6 +1,41 @@
 # ChangeLog for sci-libs/libgeotiff
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/libgeotiff/ChangeLog,v 1.34 2011/06/11 13:30:32 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/libgeotiff/ChangeLog,v 1.44 2012/10/07 09:09:07 pacho Exp $
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #24135.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> libgeotiff-1.2.4.ebuild,
+  libgeotiff-1.3.0.ebuild, libgeotiff-1.4.0.ebuild:
+  Drop alpha/sparc keywords
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> libgeotiff-1.4.0.ebuild:
+  Marking libgeotiff-1.4.0 ppc for bug 417415
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> libgeotiff-1.4.0.ebuild:
+  Marking libgeotiff-1.4.0 ppc64 for bug 417415
+
+  26 May 2012; Jeff Horelick <jdhore@gentoo.org> libgeotiff-1.4.0.ebuild:
+  marked x86 per bug 417415
+
+  25 May 2012; Agostino Sarubbo <ago@gentoo.org> libgeotiff-1.4.0.ebuild:
+  Stable for amd64, wrt bug #417415
+
+  25 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> libgeotiff-1.4.0.ebuild:
+  Fix passing of O3 to cflags. Thanks to ago.
+
+*libgeotiff-1.4.0 (24 May 2012)
+
+  24 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> +libgeotiff-1.4.0.ebuild,
+  -libgeotiff-1.2.1-r1.ebuild, libgeotiff-1.2.4.ebuild:
+  Version bump to 1.4.0. Stable 1.2.4 on ppc. Punt older.
+
+  25 Apr 2012; Justin Lecher <jlec@gentoo.org> libgeotiff-1.2.1-r1.ebuild,
+  libgeotiff-1.2.4.ebuild, metadata.xml:
+  Drop unnessecary die
+
+  02 Mar 2012; Fabian Groffen <grobian@gentoo.org> libgeotiff-1.3.0.ebuild:
+  Fix for Prefix, marked ~x64-macos
 
   11 Jun 2011; Tomáš Chvátal <scarabeus@gentoo.org> libgeotiff-1.3.0.ebuild:
   Update to eapi4. Punt .la file.

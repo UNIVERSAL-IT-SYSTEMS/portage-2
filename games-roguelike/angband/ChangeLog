@@ -1,6 +1,32 @@
 # ChangeLog for games-roguelike/angband
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-roguelike/angband/ChangeLog,v 1.39 2011/03/11 07:44:03 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-roguelike/angband/ChangeLog,v 1.46 2012/12/02 20:23:16 tupone Exp $
+
+*angband-3.4.1 (02 Dec 2012)
+
+  02 Dec 2012; Tupone Alfredo <tupone@gentoo.org> +angband-3.4.1.ebuild:
+  Version bump to 3.4.1 Bug #442430 by Ivan S. Titov
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> angband-3.2.0.ebuild,
+  angband-3.3.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> angband-3.3.2.ebuild:
+  Marking angband-3.3.2 ppc for bug 401819
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> angband-3.3.2.ebuild:
+  x86 stable wrt bug #401819
+
+  04 Feb 2012; Agostino Sarubbo <ago@gentoo.org> angband-3.3.2.ebuild:
+  Stable for amd64, wrt bug #401819
+
+  02 Feb 2012; Michael Sterrett <mr_bones_@gentoo.org> angband-3.3.2.ebuild:
+  autotools eclass isn't used
+
+*angband-3.3.2 (20 Dec 2011)
+
+  20 Dec 2011; Michael Sterrett <mr_bones_@gentoo.org> +angband-3.3.2.ebuild:
+  version bump (bug #390065)
 
   11 Mar 2011; Thomas Kahle <tomka@gentoo.org> angband-3.2.0.ebuild:
   x86 stable per bug 355107

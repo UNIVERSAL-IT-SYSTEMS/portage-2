@@ -2,11 +2,11 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
   <herd>perl</herd>
-  <maintainer>
-    <email>tove@gentoo.org</email>
-    <name>Torsten Veller</name>
-  </maintainer>
   <upstream>
     <remote-id type="cpan">Net-OpenID-Consumer</remote-id>
+    <remote-id type="cpan-module">Net::OpenID::Association</remote-id>
+    <remote-id type="cpan-module">Net::OpenID::ClaimedIdentity</remote-id>
+    <remote-id type="cpan-module">Net::OpenID::Consumer</remote-id>
+    <remote-id type="cpan-module">Net::OpenID::VerifiedIdentity</remote-id>
   </upstream>
 </pkgmetadata>

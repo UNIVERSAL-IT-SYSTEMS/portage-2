@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/rasmol/rasmol-2.7.5.1.ebuild,v 1.4 2011/07/01 06:30:48 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/rasmol/rasmol-2.7.5.1.ebuild,v 1.9 2012/10/19 10:23:14 jlec Exp $
 
 EAPI=4
 
-inherit eutils fortran-2 prefix toolchain-funcs
+inherit eutils fortran-2 multilib prefix toolchain-funcs
 
 MY_P="RasMol_${PV}"
 VERS="9Aug09"
@@ -14,9 +14,9 @@ HOMEPAGE="http://www.openrasmol.org/"
 #SRC_URI="http://www.rasmol.org/software/${MY_P}.tar.gz"
 SRC_URI="mirror://sourceforge/open${PN}/RasMol/RasMol_2.7.5/${PN}-2.7.5-${VERS}.tar.gz"
 
-LICENSE="|| ( GPL-2 RASLIC )"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
+LICENSE="|| ( GPL-2 RASLIC )"
+KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND="
@@ -24,7 +24,6 @@ RDEPEND="
 	sci-libs/cbflib
 	sci-libs/cqrlib
 	sci-libs/neartree
-	virtual/fortran
 	x11-libs/cairo
 	x11-libs/gtk+:2
 	x11-libs/libXext
@@ -46,12 +45,12 @@ src_prepare() {
 		echo "#define _LONGLONG"|cat - rasmol_amd64_save.h > rasmol.h
 	fi
 
-	mv Imakefile_base Imakefile
+	mv Imakefile_base Imakefile || die
 	epatch "${FILESDIR}"/2.7.5-bundled-lib.patch
 
 	eprefixify Imakefile
 
-	xmkmf -DGTKWIN ${myconf}|| die "xmkmf failed with ${myconf}"
+	xmkmf -DGTKWIN ${myconf} || die "xmkmf failed with ${myconf}"
 }
 
 src_compile() {

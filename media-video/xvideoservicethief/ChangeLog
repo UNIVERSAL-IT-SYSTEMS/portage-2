@@ -1,6 +1,54 @@
 # ChangeLog for media-video/xvideoservicethief
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/xvideoservicethief/ChangeLog,v 1.23 2011/05/01 21:30:39 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/xvideoservicethief/ChangeLog,v 1.33 2012/08/05 19:00:38 hwoarang Exp $
+
+  05 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  files/xvideoservicethief-2.4.1-gcc47.patch,
+  xvideoservicethief-2.4.1-r2.ebuild:
+  Update gcc47 patch. Bug #430006
+
+  18 Jul 2012; Markos Chandras <hwoarang@gentoo.org>
+  +files/xvideoservicethief-2.4.1-gcc47.patch,
+  xvideoservicethief-2.4.1-r2.ebuild:
+  Fix building with gcc-4.7. Bug #427066 thanks to Duncan <1i5t5.duncan@cox.net>
+
+  12 Jul 2012; Johannes Huber <johu@gentoo.org>
+  -xvideoservicethief-2.4.1-r1.ebuild:
+  Remove old.
+
+  12 Jul 2012; Johannes Huber <johu@gentoo.org>
+  xvideoservicethief-2.4.1-r2.ebuild:
+  Stable for x86, wrt bug #426196
+
+  12 Jul 2012; Agostino Sarubbo <ago@gentoo.org>
+  xvideoservicethief-2.4.1-r2.ebuild:
+  Stable for amd64, wrt bug #426196
+
+*xvideoservicethief-2.4.1-r2 (11 Jul 2012)
+
+  11 Jul 2012; Markos Chandras <hwoarang@gentoo.org>
+  +xvideoservicethief-2.4.1-r2.ebuild,
+  files/xvideoservicethief-2.4.1-youtube-api.patch:
+  Revbump to fix problems with recent youtube changes
+
+  26 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  -xvideoservicethief-2.4.1.ebuild:
+  ^
+
+  21 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  xvideoservicethief-2.4.1-r1.ebuild:
+  x86 stable wrt bug #379157
+
+  14 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  xvideoservicethief-2.4.1-r1.ebuild:
+  Stable on amd64 wrt bug #379157
+
+*xvideoservicethief-2.4.1-r1 (14 Aug 2011)
+
+  14 Aug 2011; Markos Chandras <hwoarang@gentoo.org>
+  +xvideoservicethief-2.4.1-r1.ebuild,
+  +files/xvideoservicethief-2.4.1-youtube-api.patch:
+  add patch from upstream svn repository to fix youtube plugin
 
   01 May 2011; Markos Chandras <hwoarang@gentoo.org>
   -xvideoservicethief-2.4.ebuild, xvideoservicethief-2.4.1.ebuild:
@@ -112,4 +160,3 @@
   14 Mar 2009; Ben de Groot <yngwin@gentoo.org> +files/gcc-4.3.patch,
   +metadata.xml, +xvideoservicethief-1.8.2.ebuild:
   Initial import from qting-edge overlay. See also bug 210894.
-

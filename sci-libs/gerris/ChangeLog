@@ -1,6 +1,30 @@
 # ChangeLog for sci-libs/gerris
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/gerris/ChangeLog,v 1.13 2011/07/20 16:59:00 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/gerris/ChangeLog,v 1.17 2012/08/08 17:11:25 bicatali Exp $
+
+  08 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/gerris-hypre-no-mpi.patch, gerris-20120731.ebuild:
+  Restricting test because it requires pre-installation of gerris. Added more
+  mpi flag requirements, and a patch to compile with hypre when mpi is not set
+
+*gerris-20120731 (02 Aug 2012)
+
+  02 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> +gerris-20120731.ebuild:
+  Version bump. Keyword amd64-linux x86-linux
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gerris-20100519.ebuild,
+  gerris-20111123.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*gerris-20111123 (23 Jan 2012)
+
+  23 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> -gerris-0.8.0.ebuild,
+  -gerris-0.9.2.ebuild, -gerris-20080929.ebuild,
+  -files/gerris-20080929-as-needed.patch, -gerris-20100114.ebuild,
+  -files/gerris-20100114-autotools.patch, +gerris-20111123.ebuild,
+  +files/gerris-20111123-autotools.patch, metadata.xml:
+  Version bump. Rewritten for automagic and include more modules. Initial work
+  from Eckard Brauer, bug #387217
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #105599
@@ -63,4 +87,3 @@
   +gerris-0.8.0.ebuild:
   Initial import (fixes bug #102323). Many thanks to Tim Cera
   <timcera@earthlink.net> for his ebuild.
-

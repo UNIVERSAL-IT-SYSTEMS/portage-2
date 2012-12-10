@@ -1,6 +1,36 @@
 # ChangeLog for sys-auth/pam_mysql
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_mysql/ChangeLog,v 1.15 2010/03/24 19:45:15 robbat2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/pam_mysql/ChangeLog,v 1.22 2012/05/21 23:25:46 vapier Exp $
+
+  21 May 2012; Mike Frysinger <vapier@gentoo.org> pam_mysql-0.7_rc1-r3.ebuild,
+  pam_mysql-0.7_rc1-r4.ebuild:
+  Inherit eutils for epatch.
+
+  03 Mar 2012; Tobias Klausmann <klausman@gentoo.org>
+  pam_mysql-0.7_rc1-r4.ebuild:
+  Stable on alpha, bug #396515
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  pam_mysql-0.7_rc1-r4.ebuild:
+  x86 stable wrt bug #396515
+
+  09 Jan 2012; Brent Baude <ranger@gentoo.org> pam_mysql-0.7_rc1-r4.ebuild:
+  Marking pam_mysql-0.7_rc1-r4 ppc for bug 396515
+
+  31 Dec 2011; Agostino Sarubbo <ago@gentoo.org> pam_mysql-0.7_rc1-r4.ebuild:
+  Stable for AMD64, wrt bug #396515
+
+*pam_mysql-0.7_rc1-r4 (24 Nov 2011)
+
+  24 Nov 2011; Hanno Boeck <hanno@gentoo.org> +pam_mysql-0.7_rc1-r4.ebuild,
+  +files/pam_mysql-0.7_rc1-memleak.diff:
+  Fix memleak, closes #364639.
+
+*pam_mysql-0.7_rc1-r3 (13 Sep 2011)
+
+  13 Sep 2011; Hanno Boeck <hanno@gentoo.org> +pam_mysql-0.7_rc1-r3.ebuild,
+  +files/pam_mysql-0.7_rc1-link-to-pam.diff:
+  Patch to link against pam, see http://bugs.debian.org/418500.
 
 *pam_mysql-0.7_rc1-r2 (24 Mar 2010)
 

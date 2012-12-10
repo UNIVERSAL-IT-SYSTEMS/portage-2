@@ -1,27 +1,28 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/luakit/luakit-9999.ebuild,v 1.17 2011/06/30 17:07:49 wired Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/luakit/luakit-9999.ebuild,v 1.22 2012/12/04 11:33:43 wired Exp $
 
-EAPI=3
+EAPI=4
 
+inherit toolchain-funcs
 IUSE="luajit vim-syntax"
 
 if [[ ${PV} == *9999* ]]; then
-	inherit git
-	EGIT_REPO_URI=${EGIT_REPO_URI:-"git://github.com/mason-larobina/luakit.git"}
-	[[ ${EGIT_BRANCH} == "master" ]] && EGIT_BRANCH="develop"
-	[[ ${EGIT_COMMIT} == "master" ]] && EGIT_COMMIT=${EGIT_BRANCH}
+	inherit git-2
+	EGIT_REPO_URI="git://github.com/mason-larobina/${PN}.git
+		https://github.com/mason-larobina/${PN}.git"
+	EGIT_BRANCH="develop"
 	KEYWORDS=""
 	SRC_URI=""
 else
-	inherit base
+	inherit vcs-snapshot
 	MY_PV="${PV/_p/-r}"
 	KEYWORDS="~amd64 ~x86"
-	SRC_URI="http://github.com/mason-larobina/${PN}/tarball/${MY_PV} -> ${P}.tar.gz"
+	SRC_URI="https://github.com/mason-larobina/${PN}/tarball/${MY_PV} -> ${P}.tar.gz"
 fi
 
 DESCRIPTION="fast, small, webkit-gtk based micro-browser extensible by lua"
-HOMEPAGE="http://www.luakit.org"
+HOMEPAGE="http://mason-larobina.github.com/luakit/"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -38,7 +39,7 @@ COMMON_DEPEND="
 "
 
 DEPEND="
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-apps/help2man
 	${COMMON_DEPEND}
 "
@@ -50,13 +51,10 @@ RDEPEND="
 "
 
 src_prepare() {
-	if [[ ${PV} == *9999* ]]; then
-		git_src_prepare
-	else
-		cd "${WORKDIR}"/mason-larobina-luakit-*
-		S=$(pwd)
-		base_src_prepare
-	fi
+	sed -i -e "/^CFLAGS/s/-ggdb//" config.mk || die
+	# bug 385471
+	sed "s,@\$(CC) -o \$@ \$(OBJS) \$(LDFLAGS),@\$(CC) -o \$@ \$(OBJS)
+		\$(LDFLAGS)\n\t\paxctl -Cm luakit,g" -i Makefile
 }
 
 src_compile() {
@@ -67,19 +65,18 @@ src_compile() {
 		myconf+=" VERSION=${PV}"
 	fi
 
-	emake ${myconf} || die "emake failed"
+	tc-export CC
+	emake ${myconf}
 }
 
 src_install() {
-	emake PREFIX="/usr" DESTDIR="${D}" DOCDIR="${D}/usr/share/doc/${PF}" install ||
-		die "Installation failed"
+	emake PREFIX="/usr" DESTDIR="${D}" DOCDIR="${D}/usr/share/doc/${PF}" install
 
 	if use vim-syntax; then
 		local t
 		for t in $(ls "${S}"/extras/vim/); do
 			insinto /usr/share/vim/vimfiles/"${t}"
-			doins "${S}"/extras/vim/"${t}"/luakit.vim ||
-				die "vim-${t} doins failed"
+			doins "${S}"/extras/vim/"${t}"/luakit.vim
 		done
 	fi
 }

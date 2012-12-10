@@ -1,6 +1,116 @@
 # ChangeLog for www-plugins/gecko-mediaplayer
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-plugins/gecko-mediaplayer/ChangeLog,v 1.51 2011/07/12 15:02:00 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-plugins/gecko-mediaplayer/ChangeLog,v 1.74 2012/11/24 16:41:30 ssuominen Exp $
+
+  24 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -gecko-mediaplayer-1.0.5.ebuild:
+  old
+
+*gecko-mediaplayer-1.0.7 (24 Nov 2012)
+
+  24 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +gecko-mediaplayer-1.0.7.ebuild:
+  Version bump wrt #440978 by Alessandro Capogna
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gecko-mediaplayer-1.0.6.ebuild:
+  x86 stable wrt bug #417819
+
+  28 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  gecko-mediaplayer-1.0.6.ebuild:
+  Stable for amd64, wrt bug #417819
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  gecko-mediaplayer-1.0.5.ebuild, gecko-mediaplayer-1.0.6.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*gecko-mediaplayer-1.0.6 (14 Apr 2012)
+
+  14 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +gecko-mediaplayer-1.0.6.ebuild:
+  Version bump.
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -gecko-mediaplayer-1.0.4.ebuild:
+  old
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gecko-mediaplayer-1.0.5.ebuild:
+  x86 stable wrt #399847
+
+  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org>
+  gecko-mediaplayer-1.0.5.ebuild:
+  Stable for amd64, wrt bug #399847
+
+  23 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gecko-mediaplayer-1.0.5.ebuild:
+  Restore ~ppc64 now that net-misc/npapi-sdk is keyworded wrt #392961
+
+  03 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -gecko-mediaplayer-1.0.5_beta1_p20111207.ebuild:
+  old
+
+*gecko-mediaplayer-1.0.5 (03 Jan 2012)
+
+  03 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +gecko-mediaplayer-1.0.5.ebuild:
+  Version bump wrt #397447 by "ScytheMan"
+
+  07 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -gecko-mediaplayer-1.0.5_beta1.ebuild,
+  -gecko-mediaplayer-1.0.5_beta1_p20111203.ebuild,
+  -files/gecko-mediaplayer-1.0.5_beta1-firefox-8.x.patch:
+  old
+
+*gecko-mediaplayer-1.0.5_beta1_p20111207 (07 Dec 2011)
+
+  07 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +gecko-mediaplayer-1.0.5_beta1_p20111207.ebuild:
+  New snapshot wrt #393049 to avoid conflict between const and non-const code.
+  Thanks to Juergen Rose for reporting.
+
+*gecko-mediaplayer-1.0.5_beta1_p20111203 (02 Dec 2011)
+
+  02 Dec 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +gecko-mediaplayer-1.0.5_beta1_p20111203.ebuild:
+  New snapshot to support building against npapi-sdk wrt #383149 by Ian
+  Stakenvicius (and Michał Górny for reporting)
+
+  24 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  gecko-mediaplayer-1.0.5_beta1.ebuild,
+  +files/gecko-mediaplayer-1.0.5_beta1-firefox-8.x.patch:
+  Use Firefox 8.x headers to build.
+
+  18 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  gecko-mediaplayer-1.0.4.ebuild, -files/libxul.pc:
+  Remove support for building against xulrunner from www-client/firefox wrt
+  #390729 by Billy DeVincentis
+
+  18 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -gecko-mediaplayer-1.0.0.ebuild, -gecko-mediaplayer-1.0.3-r1.ebuild:
+  old
+
+*gecko-mediaplayer-1.0.5_beta1 (18 Nov 2011)
+
+  18 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +gecko-mediaplayer-1.0.5_beta1.ebuild:
+  Version bump.
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> gecko-mediaplayer-1.0.4.ebuild:
+  x86 stable, bug #386957
+
+  15 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  gecko-mediaplayer-1.0.4.ebuild:
+  amd64 stable wrt #386957
+
+  25 Sep 2011; Raúl Porcel <armin76@gentoo.org>
+  gecko-mediaplayer-1.0.0.ebuild, gecko-mediaplayer-1.0.3-r1.ebuild,
+  gecko-mediaplayer-1.0.4.ebuild:
+  Drop alpha keywords
+
+  13 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  gecko-mediaplayer-1.0.4.ebuild, +files/libxul.pc:
+  Ship a copy of custom libxul.pc in order to use Firefox 6.0 headers.
 
   12 Jul 2011; Thomas Kahle <tomka@gentoo.org>
   gecko-mediaplayer-1.0.3-r1.ebuild:

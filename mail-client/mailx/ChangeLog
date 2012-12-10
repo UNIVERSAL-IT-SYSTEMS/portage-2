@@ -1,6 +1,79 @@
 # ChangeLog for mail-client/mailx
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/mailx/ChangeLog,v 1.64 2011/01/22 20:58:36 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-client/mailx/ChangeLog,v 1.84 2012/10/09 10:03:54 eras Exp $
+
+  01 Oct 2012; Eray Aslan <eras@gentoo.org> -mailx-8.1.2.20050715-r5.ebuild,
+  mailx-8.1.2.20050715-r6.ebuild:
+  Remove old
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org>
+  mailx-8.1.2.20050715-r6.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #433295
+
+  18 Sep 2012; Jeroen Roovers <jer@gentoo.org> mailx-8.1.2.20050715-r6.ebuild:
+  Stable for HPPA (bug #433295).
+
+  12 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  mailx-8.1.2.20050715-r6.ebuild:
+  stable ppc ppc64, bug #433295
+
+  08 Sep 2012; Johannes Huber <johu@gentoo.org> mailx-8.1.2.20050715-r6.ebuild:
+  Stable for x86, wrt bug #433295
+
+  08 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  mailx-8.1.2.20050715-r6.ebuild:
+  Stable arm, bug #433295
+
+  07 Sep 2012; Agostino Sarubbo <ago@gentoo.org>
+  mailx-8.1.2.20050715-r6.ebuild:
+  Stable for amd64, wrt bug #433295
+
+  31 Jul 2012; Eray Aslan <eras@gentoo.org> -mailx-8.1.2.20050715-r1.ebuild,
+  -mailx-8.1.2.20050715-r3.ebuild:
+  Remove old
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org>
+  mailx-8.1.2.20050715-r5.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419011
+
+*mailx-8.1.2.20050715-r6 (11 Jul 2012)
+
+  11 Jul 2012; Eray Aslan <eras@gentoo.org> +mailx-8.1.2.20050715-r6.ebuild:
+  Fix help file location - bug #424437
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> mailx-8.1.2.20050715-r5.ebuild:
+  Stable for HPPA (bug #419011).
+
+  14 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  -mailx-8.1.2.20050715-r2.ebuild, -mailx-8.1.2.20050715-r4.ebuild:
+  Remove old
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  mailx-8.1.2.20050715-r5.ebuild:
+  x86 stable wrt bug #419011
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> mailx-8.1.2.20050715-r5.ebuild:
+  Marking mailx-8.1.2.20050715-r5 ppc for bug 419011
+
+  06 Jun 2012; Markus Meier <maekke@gentoo.org> mailx-8.1.2.20050715-r5.ebuild:
+  arm stable, bug #419011
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> mailx-8.1.2.20050715-r5.ebuild:
+  Marking mailx-8.1.2.20050715-r5 ppc64 for bug 419011
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  mailx-8.1.2.20050715-r5.ebuild:
+  Stable for amd64, wrt bug #419011
+
+*mailx-8.1.2.20050715-r5 (19 Jan 2012)
+
+  19 Jan 2012; Eray Aslan <eras@gentoo.org> +mailx-8.1.2.20050715-r5.ebuild:
+  add compatibility sym link - bug #399253
+
+*mailx-8.1.2.20050715-r4 (10 Jan 2012)
+
+  10 Jan 2012; Eray Aslan <eras@gentoo.org> +mailx-8.1.2.20050715-r4.ebuild:
+  migrate mail command to /usr/bin - bug #398061
 
   22 Jan 2011; Kacper Kowalik <xarthisius@gentoo.org>
   mailx-8.1.2.20050715-r3.ebuild:

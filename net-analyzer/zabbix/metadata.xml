@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>no-herd</herd>
-<maintainer>
-<email>patrick@gentoo.org</email>
-<name>Patrick Lauer</name>
-</maintainer>
 <maintainer>
 <email>mattm@gentoo.org</email>
 <name>Matthew Marlowe</name>
@@ -22,7 +17,10 @@ configure different types of notifications for pre-defined events.
 	<flag name='proxy'>Enable proxy support</flag>
 	<flag name='openipmi'>Enable openipmi things</flag>
 	<flag name='server'>Enable zabbix server</flag>
-	<flag name='ssh'>Enable ssh.run items</flag>
-
+	<flag name='ssh'>SSH v2 based checks</flag>
+	<flag name='odbc'>Enable Database Monitor and use UnixODBC Library by default</flag>
+	<flag name='iodbc'>Use iodbc rather than unixodbc for ODBC functions</flag>
+	<flag name='static'>Build statically linked binaries</flag>
+	<flag name='java'>Enable Zabbix Java JMX Management Gateway</flag>
 </use>
 </pkgmetadata>

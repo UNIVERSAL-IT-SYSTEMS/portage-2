@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/pygresql/pygresql-4.0.ebuild,v 1.4 2011/01/08 16:18:30 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/pygresql/pygresql-4.0.ebuild,v 1.6 2012/11/28 21:07:38 titanofold Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.* *-jython"
+RESTRICT_PYTHON_ABIS="3.* *-jython 2.7-pypy-*"
 
 inherit distutils
 
@@ -15,7 +15,7 @@ DESCRIPTION="A Python interface for the PostgreSQL database."
 HOMEPAGE="http://www.pygresql.org/"
 SRC_URI="ftp://ftp.pygresql.org/pub/distrib/${MY_P}.tgz"
 
-LICENSE="as-is"
+LICENSE="POSTGRESQL"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86"
 IUSE="doc"

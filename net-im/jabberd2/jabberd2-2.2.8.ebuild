@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/jabberd2/jabberd2-2.2.8.ebuild,v 1.2 2010/06/17 20:48:20 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/jabberd2/jabberd2-2.2.8.ebuild,v 1.4 2012/02/20 12:16:52 naota Exp $
 
 inherit db-use eutils flag-o-matic pam
 
@@ -10,13 +10,13 @@ SRC_URI="http://ftp.xiaoka.com/${PN}/releases/jabberd-${PV}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE="berkdb debug memdebug mysql ldap pam postgres sqlite ssl zlib"
 
 DEPEND="dev-libs/expat
 	net-libs/udns
 	>=net-dns/libidn-0.3
-	>=virtual/gsasl-0.2.27
+	virtual/gsasl
 	berkdb? ( >=sys-libs/db-4.1.25 )
 	mysql? ( virtual/mysql )
 	ldap? ( >=net-nds/openldap-2.1.0 )

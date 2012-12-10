@@ -1,6 +1,72 @@
 # ChangeLog for media-video/dvdauthor
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/dvdauthor/ChangeLog,v 1.31 2011/02/21 17:43:40 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/dvdauthor/ChangeLog,v 1.50 2012/11/21 00:41:22 aballier Exp $
+
+*dvdauthor-0.7.1 (21 Nov 2012)
+
+  21 Nov 2012; Alexis Ballier <aballier@gentoo.org> +dvdauthor-0.7.1.ebuild:
+  version bump
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> dvdauthor-0.7.0.ebuild:
+  sparc stable wrt #418323
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> dvdauthor-0.7.0.ebuild:
+  Marking dvdauthor-0.7.0 ppc for bug 418323
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> dvdauthor-0.7.0.ebuild:
+  Marking dvdauthor-0.7.0 ppc64 for bug 418323
+
+  31 May 2012; Agostino Sarubbo <ago@gentoo.org> dvdauthor-0.7.0.ebuild:
+  Stable for amd64, wrt bug #418323
+
+  31 May 2012; Jeff Horelick <jdhore@gentoo.org> dvdauthor-0.7.0.ebuild:
+  marked x86 per bug 418323
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org> dvdauthor-0.7.0.ebuild:
+  Use CFLAGS from fribidi.pc to ensure check in configure.ac for FriBidiParType
+  (FRIBIDI2) is working wrt #417041 by "Nikoli"
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> dvdauthor-0.6.18.ebuild,
+  dvdauthor-0.7.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -dvdauthor-0.6.11.ebuild:
+  old
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> dvdauthor-0.6.18.ebuild:
+  sparc stable wrt #385973
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> -dvdauthor-0.6.14.ebuild,
+  -files/dvdauthor-0.6.14-libpng-1.5.patch:
+  old
+
+  11 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> dvdauthor-0.6.18.ebuild:
+  ppc/ppc64 stable wrt #385973
+
+  10 Oct 2011; Tim Harder <radhermit@gentoo.org> dvdauthor-0.6.18.ebuild:
+  Add pkgconfig dependency (bug #386603 by Nikoli).
+
+*dvdauthor-0.7.0 (09 Oct 2011)
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +dvdauthor-0.7.0.ebuild,
+  +files/dvdauthor-0.7.0-libpng15.patch, metadata.xml:
+  Version bump wrt #308899 by Daniel Pielmeier
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> dvdauthor-0.6.18.ebuild:
+  x86 stable wrt bug #385973
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> dvdauthor-0.6.18.ebuild:
+  amd64 stable wrt #385973
+
+  14 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> dvdauthor-0.6.18.ebuild,
+  +files/dvdauthor-0.6.18-libpng15.patch:
+  Fix building with libpng15 (again, restore dropped patch) wrt #355039 by
+  Hanno Boeck
+
+*dvdauthor-0.6.18 (13 Sep 2011)
+
+  13 Sep 2011; Steve Dibb <beandog@gentoo.org> +dvdauthor-0.6.18.ebuild:
+  Version bump, bug 242473
 
   21 Feb 2011; Mike Frysinger <vapier@gentoo.org> dvdauthor-0.6.14.ebuild,
   +files/dvdauthor-0.6.14-libpng-1.5.patch:

@@ -1,6 +1,16 @@
 # ChangeLog for games-action/powermanga
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/powermanga/ChangeLog,v 1.21 2011/06/06 21:06:24 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-action/powermanga/ChangeLog,v 1.24 2012/08/24 06:59:11 mr_bones_ Exp $
+
+  24 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org> powermanga-0.90.ebuild:
+  any mod support will do
+
+  08 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org> powermanga-0.90.ebuild:
+  respect CFLAGS (bug #430440)
+
+  03 Aug 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  +files/powermanga-0.90-segfault.patch, powermanga-0.90.ebuild:
+  patch from Daniel Santos to fix segfault (bug #422915)
 
   06 Jun 2011; Michael Sterrett <mr_bones_@gentoo.org> powermanga-0.90.ebuild:
   update libsdl dep to match the README
@@ -87,4 +97,3 @@
 
   03 Jul 2003; Michael Sterrett <msterret@gentoo.org> powermanga-0.77.ebuild:
   Initial commit
-

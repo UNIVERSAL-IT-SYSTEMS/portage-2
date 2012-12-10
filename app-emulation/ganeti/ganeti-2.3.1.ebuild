@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/ganeti-2.3.1.ebuild,v 1.2 2011/02/16 21:39:22 ramereth Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/ganeti/ganeti-2.3.1.ebuild,v 1.4 2012/10/09 20:45:44 cardoe Exp $
 
 EAPI=2
 
-inherit eutils confutils bash-completion
+inherit eutils confutils bash-completion-r1
 
 MY_PV="${PV/_rc/~rc}"
 #MY_PV="${PV/_beta/~beta}"
@@ -21,7 +21,7 @@ IUSE="kvm xen drbd +filestorage syslog ipv6"
 S="${WORKDIR}/${MY_P}"
 
 DEPEND="xen? ( >=app-emulation/xen-3.0 )
-	kvm? ( app-emulation/qemu-kvm )
+	kvm? ( app-emulation/qemu )
 	drbd? ( >=sys-cluster/drbd-8.3 )
 	ipv6? ( net-misc/ndisc6 )
 	dev-libs/openssl
@@ -64,7 +64,7 @@ src_install () {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	newinitd "${FILESDIR}"/ganeti-2.1.initd ganeti
 	newconfd "${FILESDIR}"/ganeti.confd ganeti
-	dobashcompletion doc/examples/bash_completion ganeti
+	newbashcomp doc/examples/bash_completion ganeti
 	dodoc INSTALL NEWS README doc/*.rst
 	rm -rf "${D}"/usr/share/doc/ganeti
 	docinto examples

@@ -1,6 +1,36 @@
 # ChangeLog for net-firewall/firehol
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/firehol/ChangeLog,v 1.45 2011/04/24 21:01:05 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/firehol/ChangeLog,v 1.52 2012/08/22 17:02:48 johu Exp $
+
+  22 Aug 2012; Johannes Huber <johu@gentoo.org> -firehol-1.273-r1.ebuild,
+  -firehol-1.273-r2.ebuild:
+  Remove old.
+
+  22 Aug 2012; Johannes Huber <johu@gentoo.org> firehol-1.273-r3.ebuild:
+  Stable for x86, wrt bug #429162
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> firehol-1.273-r3.ebuild:
+  Stable for amd64, wrt bug #429162
+
+*firehol-1.273-r3 (12 Jun 2012)
+
+  12 Jun 2012; Michael Weber <xmw@gentoo.org> +files/firehol.initrd.1,
+  +firehol-1.273-r3.ebuild:
+  Version bump (bug 420147 by Khayyam)
+
+  03 Apr 2012; Pacho Ramos <pacho@gentoo.org> +files/RESERVED_IPS:
+  Commit missing files, #410689 by Alon Bar-Lev
+
+*firehol-1.273-r2 (02 Apr 2012)
+
+  02 Apr 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/firehol-1.273-log-output.patch, +firehol-1.273-r2.ebuild:
+  Add missing kernel checks (#310797 by Phil Koenig, Tom Knight, Tyler
+  Montbriand), use static and fixed RESERVED_IPS file (#332135 by Richard Gray),
+  handle errors better (#332507 by Tyler Montbriand).
+
+  25 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> firehol-1.273-r1.ebuild:
+  Bug #405687: Depend on virtual/modutils instead of sys-apps/module-init-tools.
 
   24 Apr 2011; Ulrich Mueller <ulm@gentoo.org> firehol-1.273-r1.ebuild:
   Replace dependency on virtual/modutils, bug 358891.
@@ -224,4 +254,3 @@
   05 Apr 2003; Sascha Schwabbauer <cybersystem@gentoo.org> ChangeLog, firehol-1.91.ebuild, files/digest-firehol-1.91 :
 
   Initial commit, made by Maik Schreiber <blizzy@blizzy.de> in bug #18808
-

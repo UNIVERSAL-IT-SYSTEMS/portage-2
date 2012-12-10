@@ -1,6 +1,95 @@
 # ChangeLog for net-firewall/shorewall-lite
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall-lite/ChangeLog,v 1.85 2011/07/24 15:28:33 constanze Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/shorewall-lite/ChangeLog,v 1.102 2012/10/12 18:16:15 constanze Exp $
+
+*shorewall-lite-4.5.8.2 (12 Oct 2012)
+
+  12 Oct 2012; Constanze Hausner <constanze@gentoo.org>
+  +shorewall-lite-4.5.8.2.ebuild, +files/shorewallrc_new:
+  Version Bump with altered rc-file
+
+*shorewall-lite-4.5.6.2 (15 Aug 2012)
+
+  15 Aug 2012; Constanze Hausner <constanze@gentoo.org>
+  +shorewall-lite-4.5.6.2.ebuild:
+  Version Bump
+
+  26 Jun 2012; Zac Medico <zmedico@gentoo.org> shorewall-lite-4.4.23.2.ebuild,
+  shorewall-lite-4.4.27-r1.ebuild, shorewall-lite-4.4.27.ebuild:
+  inherit eutils for epatch
+
+*shorewall-lite-4.5.4.2 (08 Jun 2012)
+
+  08 Jun 2012; Constanze Hausner <constanze@gentoo.org>
+  +shorewall-lite-4.5.4.2.ebuild, +files/shorewallrc:
+  Version bump with new config file
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> shorewall-lite-4.4.23.2.ebuild:
+  Stable for ppc/ppc64; bug #388195
+
+  17 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  shorewall-lite-4.4.23.2.ebuild:
+  sparc stable wrt #388195
+
+*shorewall-lite-4.4.27-r1 (27 Feb 2012)
+
+  27 Feb 2012; Constanze Hausner <constanze@gentoo.org>
+  -shorewall-lite-4.4.22.1.ebuild, -shorewall-lite-4.4.22.3.ebuild,
+  -shorewall-lite-4.4.24.1.ebuild, +shorewall-lite-4.4.27-r1.ebuild:
+  Cleaned up old versions and added anti-dep for shorewall-core to unstable
+  versions < 4.5
+
+*shorewall-lite-4.5.0.1 (24 Feb 2012)
+
+  24 Feb 2012; Constanze Hausner <constanze@gentoo.org>
+  +shorewall-lite-4.5.0.1.ebuild, files/shorewall-lite:
+  Version Bump
+
+  23 Jan 2012; Tobias Klausmann <klausman@gentoo.org>
+  shorewall-lite-4.4.23.2.ebuild:
+  Stable on alpha, bug #388195
+
+*shorewall-lite-4.4.27 (03 Jan 2012)
+
+  03 Jan 2012; Constanze Hausner <constanze@gentoo.org>
+  +shorewall-lite-4.4.27.ebuild:
+  Version bump
+
+  13 Nov 2011; Markus Meier <maekke@gentoo.org> shorewall-lite-4.4.23.2.ebuild:
+  x86 stable, bug #388195
+
+  01 Nov 2011; Jeroen Roovers <jer@gentoo.org> shorewall-lite-4.4.23.2.ebuild:
+  Stable for HPPA (bug #388195).
+
+  27 Oct 2011; Tony Vroon <chainsaw@gentoo.org> shorewall-lite-4.4.23.2.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney &
+  Agostino "ago" Sarubbo in bug #388195.
+
+*shorewall-lite-4.4.24.1 (23 Oct 2011)
+
+  23 Oct 2011; Constanze Hausner <constanze@gentoo.org>
+  +shorewall-lite-4.4.24.1.ebuild:
+  Version bump.
+
+*shorewall-lite-4.4.23.2 (14 Sep 2011)
+
+  14 Sep 2011; Constanze Hausner <constanze@gentoo.org>
+  +shorewall-lite-4.4.23.2.ebuild:
+  Version bump.
+
+*shorewall-lite-4.4.22.3 (20 Aug 2011)
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> +shorewall-lite-4.4.22.3.ebuild:
+  Version bump. Document funky src_compile(). Exchange R/DEPEND as DEPEND is
+  not needed.
+
+*shorewall-lite-4.4.22.1 (06 Aug 2011)
+
+  06 Aug 2011; Constanze Hausner <constanze@gentoo.org>
+  -shorewall-lite-4.4.19.3.ebuild, -shorewall-lite-4.4.19.4.ebuild,
+  -shorewall-lite-4.4.20.3.ebuild, -shorewall-lite-4.4.21.ebuild,
+  -shorewall-lite-4.4.21-r1.ebuild, +shorewall-lite-4.4.22.1.ebuild:
+  Version bump and cleanup, see bug #377473
 
 *shorewall-lite-4.4.21-r1 (24 Jul 2011)
 
@@ -413,4 +502,3 @@
   +shorewall-lite-3.2.4.ebuild:
   Was forgotten to add during addition of Shorewall 3.2 Series, fixing bug
   #140001
-

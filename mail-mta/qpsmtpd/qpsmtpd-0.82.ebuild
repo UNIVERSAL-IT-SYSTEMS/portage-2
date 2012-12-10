@@ -1,16 +1,16 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/qpsmtpd/qpsmtpd-0.82.ebuild,v 1.1 2009/07/31 08:06:40 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/qpsmtpd/qpsmtpd-0.82.ebuild,v 1.3 2012/11/30 23:10:44 radhermit Exp $
 
 EAPI=2
 
-inherit eutils perl-app
+inherit eutils perl-app user
 
 DESCRIPTION="qpsmtpd is a flexible smtpd daemon written in Perl"
 HOMEPAGE="http://smtpd.develooper.com"
 SRC_URI="http://smtpd.develooper.com/files/${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="postfix ipv6 syslog"

@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/expect/expect-5.45.ebuild,v 1.1 2010/12/17 23:23:44 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/expect/expect-5.45.ebuild,v 1.5 2012/04/26 16:18:17 aballier Exp $
 
 EAPI="3"
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-macos ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x64-macos ~x86-macos ~m68k-mint ~x86-solaris"
 IUSE="debug doc threads"
 
 # We need dejagnu for src_test, but dejagnu needs expect
@@ -27,7 +27,8 @@ src_prepare() {
 	sed -i "s:/usr/local/bin:${EPREFIX}/usr/bin:" expect.man || die
 	# stops any example scripts being installed by default
 	sed -i \
-		-e '/^install:/s/install-libraries //' \
+		-e 's/^SCRIPT_LIST/_&/' \
+		-e 's/^SCRIPTS/_&/' \
 		-e 's/^SCRIPTS_MANPAGES = /_&/' \
 		Makefile.in
 
@@ -36,6 +37,10 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-5.45-headers.patch #337943
 	sed -i 's:ifdef HAVE_SYS_WAIT_H:ifndef NO_SYS_WAIT_H:' *.c
 
+	# fix install_name on darwin
+	[[ ${CHOST} == *-darwin* ]] && \
+		epatch "${FILESDIR}"/${P}-darwin-install_name.patch
+
 	eautoconf
 }
 
@@ -43,7 +48,7 @@ src_configure() {
 	# the 64bit flag is useless ... it only adds 64bit compiler flags
 	# (like -m64) which the target toolchain should already handle
 	econf \
-		--with-tcl=${EPREFIX}/usr/$(get_libdir) \
+		--with-tcl="${EPREFIX}/usr/$(get_libdir)" \
 		--disable-64bit \
 		--enable-shared \
 		$(use_enable threads) \

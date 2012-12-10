@@ -1,6 +1,103 @@
 # ChangeLog for www-servers/thttpd
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/thttpd/ChangeLog,v 1.31 2010/10/28 22:25:24 bangert Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-servers/thttpd/ChangeLog,v 1.53 2012/11/22 14:34:07 blueness Exp $
+
+  22 Nov 2012; Anthony G. Basile <blueness@gentoo.org> thttpd-2.26.4-r1.ebuild:
+  Move chown/chmod to src_install, where they belong, bug #444183
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> thttpd-2.26.4-r1.ebuild:
+  Stable for x86, wrt bug #441548
+
+  06 Nov 2012; <ago@gentoo.org> thttpd-2.26.4-r1.ebuild:
+  Stable for amd64, wrt bug #441548
+
+  03 Nov 2012; Anthony G. Basile <blueness@gentoo.org> thttpd-2.26.4-r1.ebuild:
+  stable arm, bug #441548
+
+  03 Nov 2012; Anthony G. Basile <blueness@gentoo.org> thttpd-2.26.4-r1.ebuild:
+  stable ppc ppc64, bug #441548
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> thttpd-2.26.2.ebuild,
+  thttpd-2.26.4-r1.ebuild:
+  Re-add ~sparc wrt #422445
+
+  08 Aug 2012; Anthony G. Basile <blueness@gentoo.org> thttpd-2.26.4-r1.ebuild,
+  files/thttpd.conf.sample, files/thttpd.confd, files/thttpd.confd.1:
+  Fix THTTPD_DOCROOT
+
+*thttpd-2.26.4-r1 (05 Aug 2012)
+
+  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org> -thttpd-2.26.4.ebuild,
+  +thttpd-2.26.4-r1.ebuild:
+  Move htdocs to docdir, bug #429632
+
+*thttpd-2.26.4 (13 Jul 2012)
+
+  13 Jul 2012; Anthony G. Basile <blueness@gentoo.org> +thttpd-2.26.4.ebuild,
+  +files/thttpd.confd.1, +files/thttpd.init.1:
+  Version bump, multi-instance enhancement, bug #424826
+
+  13 Jul 2012; Anthony G. Basile <blueness@gentoo.org> thttpd-2.26.2.ebuild:
+  Keyword ~arm ~ppc ~ppc64
+
+  11 Jul 2012; Anthony G. Basile <blueness@gentoo.org> thttpd-2.25b-r7.ebuild,
+  thttpd-2.26.2.ebuild:
+  Add GPL-2 for init scripts, bug #426182
+
+  27 Jun 2012; Jeroen Roovers <jer@gentoo.org> thttpd-2.26.2.ebuild:
+  Marked ~hppa (bug #422445).
+
+  20 Jun 2012; Jeff Horelick <jdhore@gentoo.org> thttpd-2.26.2.ebuild:
+  marked x86 per bug 422247
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> thttpd-2.26.2.ebuild:
+  Stable for amd64, wrt bug #422247
+
+  19 Jun 2012; Anthony G. Basile <blueness@gentoo.org> thttpd-2.26.2.ebuild:
+  Keyword ~mips
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> thttpd-2.26.2.ebuild:
+  Fix for prefix and add ~amd64-linux and ~x86-linux keywords.
+
+  04 Apr 2012; Anthony G. Basile <blueness@gentoo.org> -thttpd-2.25b-r8.ebuild,
+  -thttpd-2.25b-r9.ebuild,
+  -files/thttpd-2.25b-additional-input-validation.patch,
+  -files/thttpd-2.25b-default-to-octet-stream.patch,
+  -files/thttpd-2.25b-fix-buffer-overflow.patch,
+  -files/thttpd-2.25b-fix-illegal-path-info.patch,
+  -files/thttpd-2.25b-fix-insecure-tmp-creation.patch,
+  -files/thttpd-2.25b-monolithic-timer.patch,
+  -files/thttpd-2.25b-ogg-mime-type.patch,
+  -files/thttpd-2.25b-respect-CFLAGS--dont-link-static.patch,
+  -files/thttpd-2.25b-use-Status-header.patch,
+  -files/thttpd-2.25b-use-X-Forwarded-For-header.patch,
+  files/thttpd.conf.sample, files/thttpd.confd:
+  Remove older ebuilds and patches migrated into forked code
+
+*thttpd-2.26.2 (04 Apr 2012)
+
+  04 Apr 2012; Anthony G. Basile <blueness@gentoo.org> +thttpd-2.26.2.ebuild:
+  Version bump after I forked the code
+
+*thttpd-2.25b-r9 (24 Mar 2012)
+
+  24 Mar 2012; Anthony G. Basile <blueness@gentoo.org> +thttpd-2.25b-r9.ebuild,
+  +files/thttpd-2.25b-additional-input-validation.patch,
+  +files/thttpd-2.25b-default-to-octet-stream.patch,
+  +files/thttpd-2.25b-fix-buffer-overflow.patch,
+  +files/thttpd-2.25b-fix-insecure-tmp-creation.patch,
+  +files/thttpd-2.25b-ogg-mime-type.patch, +files/thttpd.conf.sample,
+  +files/thttpd.confd, +files/thttpd.init:
+  Address bugs #370373, #373629, #373631, #406243. Clean up init scripts.
+
+  21 Mar 2012; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
+  Will give it love, added myself as maintainer
+
+  21 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop www-server herd as discussed in gentoo-dev ML.
+
+  03 Aug 2011; Zac Medico <zmedico@gentoo.org> thttpd-2.25b-r8.ebuild:
+  Fix for prefix.
 
 *thttpd-2.25b-r8 (28 Oct 2010)
 
@@ -171,4 +268,3 @@
   files/thttpd-2.25/thttpd.conf.sample, files/thttpd-2.25/thttpd.confd,
   files/thttpd-2.25/thttpd.init:
   Initial import; thanks to Thomas Eckert <eckert.thomas@gmx.net> in bug #36173
-

@@ -1,6 +1,30 @@
 # ChangeLog for net-libs/libgadu
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libgadu/ChangeLog,v 1.64 2011/07/09 16:49:16 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libgadu/ChangeLog,v 1.70 2012/08/05 21:56:01 reavertm Exp $
+
+*libgadu-1.11.2 (05 Aug 2012)
+
+  05 Aug 2012; Maciej Mrozowski <reavertm@gentoo.org> +libgadu-1.11.2.ebuild:
+  Version bump, bug 429394.
+
+  15 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libgadu-1.11.1.ebuild:
+  x86 stable wrt bug #406015
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org> libgadu-1.11.1.ebuild:
+  Marking libgadu-1.11.1 ppc for bug 406015
+
+  07 Mar 2012; Agostino Sarubbo <ago@gentoo.org> libgadu-1.11.1.ebuild:
+  Stable for amd64, wrt bug #406015
+
+  28 Jan 2012; Maciej Mrozowski <reavertm@gentoo.org> libgadu-1.11.0.ebuild,
+  libgadu-1.11.1.ebuild:
+  Update failing test information, related bug 373215.
+
+*libgadu-1.11.1 (28 Jan 2012)
+
+  28 Jan 2012; Maciej Mrozowski <reavertm@gentoo.org> +libgadu-1.11.1.ebuild,
+  -libgadu-1.9.1.ebuild:
+  Version bump, remove old, bug 399223.
 
   09 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> libgadu-1.11.0.ebuild:
   ppc stable wrt #372785
@@ -250,4 +274,3 @@
   22 Aug 2004; Karol Wojtaszek <sekretarz@gentoo.org>
   +libgadu-20040820.ebuild:
   Added ChangeLog
-

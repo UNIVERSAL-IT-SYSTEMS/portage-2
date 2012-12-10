@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/gnudoku/gnudoku-0.93.ebuild,v 1.7 2011/03/29 07:55:42 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/gnudoku/gnudoku-0.93.ebuild,v 1.9 2012/05/04 04:45:29 jdhore Exp $
 
-EAPI=1
+EAPI=2
 inherit eutils games
 
 MY_PN="GNUDoku"
@@ -19,13 +19,11 @@ RESTRICT="test"
 
 RDEPEND=">=dev-cpp/gtkmm-2.6:2.4"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${MY_P}
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	epatch "${FILESDIR}"/${P}-gcc43.patch
 	sed -i \
 		-e "s:\$(CXX):\$(CXX) ${CXXFLAGS} ${LDFLAGS}:" \

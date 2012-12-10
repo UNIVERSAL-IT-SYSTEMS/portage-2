@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/chroot_safe/chroot_safe-1.4.ebuild,v 1.6 2011/05/09 18:02:11 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/chroot_safe/chroot_safe-1.4.ebuild,v 1.8 2012/05/31 02:25:31 zmedico Exp $
 
 EAPI=4
-inherit eutils
+inherit eutils multilib
 
 DESCRIPTION="a tool to chroot any dynamically linked application in a safe and sane manner"
 HOMEPAGE="http://chrootsafe.sourceforge.net/"
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN//_}/${P}.tgz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="amd64 ppc x86"
 IUSE=""
 
 src_prepare() {

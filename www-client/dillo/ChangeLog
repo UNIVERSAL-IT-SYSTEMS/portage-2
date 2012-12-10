@@ -1,6 +1,84 @@
 # ChangeLog for www-client/dillo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/dillo/ChangeLog,v 1.94 2011/08/01 15:38:08 patrick Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/dillo/ChangeLog,v 1.117 2012/07/29 17:50:32 jer Exp $
+
+  29 Jul 2012; Jeroen Roovers <jer@gentoo.org> -dillo-3.0.1.ebuild:
+  Old.
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> dillo-3.0.2.ebuild:
+  alpha/sparc stable wrt #410023
+
+  28 May 2012; Anthony G. Basile <blueness@gentoo.org> dillo-3.0.2.ebuild:
+  Keyword ~mips
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> dillo-3.0.2.ebuild:
+  Marking dillo-3.0.2 ppc64 for bug 410023
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> dillo-3.0.2.ebuild:
+  Marking dillo-3.0.2 ppc for bug 410023
+
+  31 Mar 2012; Agostino Sarubbo <ago@gentoo.org> dillo-3.0.2.ebuild:
+  Stable for X86, wrt bug #410023
+
+  31 Mar 2012; Jeroen Roovers <jer@gentoo.org> dillo-3.0.2.ebuild:
+  Stable for HPPA (bug #410023).
+
+  31 Mar 2012; Markus Meier <maekke@gentoo.org> dillo-3.0.2.ebuild:
+  arm stable, bug #410023
+
+  29 Mar 2012; Agostino Sarubbo <ago@gentoo.org> dillo-3.0.2.ebuild:
+  Stable for amd64, wrt bug #410023
+
+  06 Feb 2012; Jeroen Roovers <jer@gentoo.org> dillo-3.0.2.ebuild:
+  Install all docs in docdir.
+
+  04 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> -dillo-2.2.ebuild,
+  -files/dillo-2.2-libpng14.patch:
+  old
+
+  04 Feb 2012; Raúl Porcel <armin76@gentoo.org> dillo-3.0.1.ebuild:
+  alpha/sparc stable wrt #395917
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> dillo-3.0.1.ebuild:
+  ppc/ppc64 stable wrt #395917
+
+  08 Jan 2012; Markus Meier <maekke@gentoo.org> dillo-3.0.1.ebuild:
+  arm stable, bug #395917
+
+  06 Jan 2012; Jeroen Roovers <jer@gentoo.org> dillo-3.0.1.ebuild:
+  Stable for HPPA (bug #395917).
+
+  05 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> dillo-2.2.ebuild:
+  Backport dillo.png move to mirrors (#370899)
+
+  05 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>  -dillo-2.2.1.ebuild,
+  -dillo-9999.ebuild, -files/dillo.png:
+  old
+
+  05 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> dillo-3.0.1.ebuild:
+  amd64/x86 stable wrt #395917
+
+*dillo-3.0.2 (12 Dec 2011)
+
+  12 Dec 2011; Jeroen Roovers <jer@gentoo.org> +dillo-3.0.2.ebuild:
+  Version bump by teidakankan (bug #394189).
+
+  12 Oct 2011; Jeroen Roovers <jer@gentoo.org> dillo-3.0.1.ebuild:
+  Fix fltk dependency thanks to ulm (bug #386867).
+
+  12 Oct 2011; Jeroen Roovers <jer@gentoo.org> dillo-3.0.1.ebuild:
+  Change DESCRIPTION according to proper dependency.
+
+  12 Oct 2011; Jeroen Roovers <jer@gentoo.org> dillo-3.0.1.ebuild:
+  Bump to EAPI=4. Use mirrored dillo.png (bug #370899).
+
+  12 Oct 2011; Jeroen Roovers <jer@gentoo.org> dillo-3.0.1.ebuild:
+  Commit properly patched ebuild.
+
+*dillo-3.0.1 (12 Oct 2011)
+
+  12 Oct 2011; Jeroen Roovers <jer@gentoo.org> +dillo-3.0.1.ebuild:
+  Version bump by pva with patch by Roger (bug #382359).
 
 *dillo-2.2.1 (01 Aug 2011)
 

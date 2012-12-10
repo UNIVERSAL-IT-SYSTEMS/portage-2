@@ -1,6 +1,56 @@
 # ChangeLog for dev-util/cppcheck
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/cppcheck/ChangeLog,v 1.25 2011/07/27 23:38:38 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/cppcheck/ChangeLog,v 1.35 2012/11/05 17:53:47 xmw Exp $
+
+*cppcheck-1.57 (05 Nov 2012)
+
+  05 Nov 2012; Michael Weber <xmw@gentoo.org> cppcheck-1.56.ebuild,
+  +cppcheck-1.57.ebuild:
+  Version bump, remove qt-assistant dep (bug 441822, thanks Nikoli)
+
+  03 Nov 2012; Michael Weber <xmw@gentoo.org> -cppcheck-1.53.ebuild,
+  -cppcheck-1.54.ebuild, -cppcheck-1.55.ebuild:
+  Drop old.
+
+*cppcheck-1.56 (06 Sep 2012)
+
+  06 Sep 2012; Michael Weber <xmw@gentoo.org> +cppcheck-1.56.ebuild:
+  Version bump, democlient does not compile
+
+*cppcheck-1.55 (05 Jul 2012)
+
+  05 Jul 2012; Michael Weber <xmw@gentoo.org> +cppcheck-1.55.ebuild:
+  Version bump (thanks David J Cozatt, bug 424814)
+
+*cppcheck-1.54 (20 Apr 2012)
+
+  20 Apr 2012; Michael Weber <xmw@gentoo.org> -cppcheck-1.51.ebuild,
+  -cppcheck-1.52.ebuild, +cppcheck-1.54.ebuild:
+  Version bump (bug 412737, thanks David J Cozatt)
+
+*cppcheck-1.53 (13 Mar 2012)
+
+  13 Mar 2012; Michael Weber <xmw@gentoo.org> +cppcheck-1.53.ebuild:
+  Version bump (thanks Jaak Ristioja, bug 407973)
+
+*cppcheck-1.52 (07 Feb 2012)
+
+  07 Feb 2012; Michael Weber <xmw@gentoo.org> +cppcheck-1.52.ebuild:
+  Version bump (thanks Jaak Ristioja, bug 402289)
+
+  10 Nov 2011; Michael Weber <xmw@gentoo.org> -cppcheck-1.48.ebuild,
+  -cppcheck-1.49.ebuild, -cppcheck-1.50.ebuild:
+  Remove old versions
+
+*cppcheck-1.51 (15 Oct 2011)
+
+  15 Oct 2011; Michael Weber <xmw@gentoo.org> +cppcheck-1.51.ebuild:
+  Version bump (thanks to Jaak Ristioja for the report, bug 387101)
+
+*cppcheck-1.50 (25 Sep 2011)
+
+  25 Sep 2011; Michael Weber <xmw@gentoo.org> +cppcheck-1.50.ebuild:
+  Version bump (thanks to Jaak Ristioja for the report, bug 383229)
 
 *cppcheck-1.49 (27 Jul 2011)
 

@@ -1,6 +1,132 @@
 # ChangeLog for net-libs/libssh2
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libssh2/ChangeLog,v 1.37 2011/05/10 20:00:28 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libssh2/ChangeLog,v 1.73 2012/12/09 21:25:15 radhermit Exp $
+
+*libssh2-1.4.3 (09 Dec 2012)
+
+  09 Dec 2012; Tim Harder <radhermit@gentoo.org> +libssh2-1.4.3.ebuild:
+  Version bump.
+
+  19 Nov 2012; Justin Lecher <jlec@gentoo.org> libssh2-1.4.2.ebuild,
+  metadata.xml:
+  Keyworded for ~*-linux, tested by me
+
+  27 Aug 2012; Tim Harder <radhermit@gentoo.org> -libssh2-1.4.0.ebuild,
+  -files/libssh2-1.4.0-pkgconfig.patch, -libssh2-1.4.1.ebuild:
+  Remove old.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> libssh2-1.4.2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #422139
+
+  04 Aug 2012; Anthony G. Basile <blueness@gentoo.org> libssh2-1.4.2.ebuild:
+  Stable arm, bug #422139
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> libssh2-1.4.2.ebuild:
+  Stable on amd64 wrt bug #422139
+
+  03 Aug 2012; Anthony G. Basile <blueness@gentoo.org> libssh2-1.4.2.ebuild:
+  Stable ppc ppc64, bug #422139
+
+  01 Aug 2012; Jeroen Roovers <jer@gentoo.org> libssh2-1.4.2.ebuild:
+  Stable for HPPA (bug #422139).
+
+  01 Aug 2012; Jeff Horelick <jdhore@gentoo.org> libssh2-1.4.2.ebuild:
+  marked x86 per bug 422139
+
+  23 Jul 2012; Jeremy Olexa <darkside@gentoo.org> libssh2-1.4.2.ebuild:
+  add ~ppc-macos, bug 427508
+
+*libssh2-1.4.2 (20 May 2012)
+
+  20 May 2012; Tim Harder <radhermit@gentoo.org> +libssh2-1.4.2.ebuild,
+  +files/libssh2-1.4.2-pkgconfig.patch:
+  Version bump.
+
+  10 May 2012; Tim Harder <radhermit@gentoo.org> -libssh2-1.3.0.ebuild:
+  Remove old.
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> libssh2-1.4.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #409601
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libssh2-1.4.1.ebuild:
+  keyword ~amd64-fbsd
+
+*libssh2-1.4.1 (04 Apr 2012)
+
+  04 Apr 2012; Tim Harder <radhermit@gentoo.org> +libssh2-1.4.1.ebuild:
+  Version bump.
+
+  31 Mar 2012; Markus Meier <maekke@gentoo.org> libssh2-1.4.0.ebuild:
+  arm stable, bug #409601
+
+  28 Mar 2012; Jeff Horelick <jdhore@gentoo.org> libssh2-1.4.0.ebuild:
+  marked x86 per bug 409601
+
+  26 Mar 2012; Tim Harder <radhermit@gentoo.org> libssh2-1.4.0.ebuild,
+  +files/libssh2-1.4.0-pkgconfig.patch:
+  Remove LDFLAGS from pkg-config Libs (bug #409661).
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> libssh2-1.4.0.ebuild:
+  Marking libssh2-1.4.0 ppc64 for bug 409601
+
+  25 Mar 2012; Jeroen Roovers <jer@gentoo.org> libssh2-1.4.0.ebuild:
+  Stable for HPPA (bug #409601).
+
+  25 Mar 2012; Agostino Sarubbo <ago@gentoo.org> libssh2-1.4.0.ebuild:
+  Stable for amd64, wrt bug #409601
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> libssh2-1.4.0.ebuild:
+  Marking libssh2-1.4.0 ppc for bug 409601
+
+  08 Mar 2012; Jeroen Roovers <jer@gentoo.org> -libssh2-1.2.2.ebuild:
+  Old.
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> libssh2-1.3.0.ebuild:
+  Marking libssh2-1.3.0 ppc64 for bug 390555
+
+*libssh2-1.4.0 (07 Feb 2012)
+
+  07 Feb 2012; Tim Harder <radhermit@gentoo.org> +libssh2-1.4.0.ebuild:
+  Version bump.
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> libssh2-1.3.0.ebuild:
+  Marking libssh2-1.3.0 ppc for bug 390555
+
+  04 Dec 2011; Raúl Porcel <armin76@gentoo.org> libssh2-1.3.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #390555
+
+  28 Nov 2011; Tim Harder <radhermit@gentoo.org> libssh2-1.3.0.ebuild:
+  Fix autotools-utils usage (bug #392167).
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org> libssh2-1.3.0.ebuild:
+  Build in the source tree.
+
+  27 Nov 2011; Tim Harder <radhermit@gentoo.org> -libssh2-1.2.5.ebuild,
+  -libssh2-1.2.6.ebuild, -libssh2-1.2.7.ebuild, -libssh2-1.2.8-r1.ebuild,
+  -files/libssh2-1.2.8-version.patch, -libssh2-1.2.9.ebuild:
+  Remove old.
+
+  23 Nov 2011; Markus Meier <maekke@gentoo.org> libssh2-1.3.0.ebuild:
+  arm stable, bug #390555
+
+  17 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libssh2-1.3.0.ebuild:
+  x86 stable wrt bug #390555
+
+  15 Nov 2011; Markos Chandras <hwoarang@gentoo.org> libssh2-1.3.0.ebuild:
+  Stable on amd64 wrt bug #390555
+
+  15 Nov 2011; Jeroen Roovers <jer@gentoo.org> libssh2-1.3.0.ebuild:
+  Stable for HPPA (bug #390555).
+
+*libssh2-1.3.0 (21 Sep 2011)
+
+  21 Sep 2011; Tim Harder <radhermit@gentoo.org> +libssh2-1.3.0.ebuild:
+  Version bump. Add workaround for failing tests (bug #333319).
+
+*libssh2-1.2.9 (20 Aug 2011)
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> +libssh2-1.2.9.ebuild:
+  Version bump.
 
 *libssh2-1.2.8-r1 (10 May 2011)
 
@@ -150,4 +276,3 @@
   +files/libssh2-0.14-peer-shutdown.patch, +metadata.xml,
   +libssh2-0.14.ebuild:
   Import from sunrise for bug 113844 thanks to Joe and cedk
-

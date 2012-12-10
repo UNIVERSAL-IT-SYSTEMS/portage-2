@@ -1,6 +1,48 @@
 # ChangeLog for media-libs/libao
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libao/ChangeLog,v 1.103 2011/03/15 19:26:11 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libao/ChangeLog,v 1.115 2012/09/18 11:24:38 radhermit Exp $
+
+  18 Sep 2012; Tim Harder <radhermit@gentoo.org> -libao-1.0.0-r1.ebuild,
+  -files/libao-1.0.0-pulseaudio.patch:
+  Remove old.
+
+  08 Sep 2012; Anthony G. Basile <blueness@gentoo.org> libao-1.1.0-r1.ebuild:
+  Stable ppc, bug #423243
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> libao-1.1.0-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #423243
+
+  19 Jul 2012; Markus Meier <maekke@gentoo.org> libao-1.1.0-r1.ebuild:
+  arm stable, bug #423243
+
+  10 Jul 2012; Brent Baude <ranger@gentoo.org> libao-1.1.0-r1.ebuild:
+  Marking libao-1.1.0-r1 ppc64 for bug 423243
+
+  29 Jun 2012; Jeroen Roovers <jer@gentoo.org> libao-1.1.0-r1.ebuild:
+  Stable for HPPA (bug #423243).
+
+  25 Jun 2012; Jeff Horelick <jdhore@gentoo.org> libao-1.1.0-r1.ebuild:
+  marked x86 per bug 423243
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libao-1.1.0-r1.ebuild:
+  Stable for amd64, wrt bug #423243
+
+  24 Jun 2012; Tim Harder <radhermit@gentoo.org> -libao-1.1.0.ebuild:
+  Remove old.
+
+  24 Jun 2012; Tim Harder <radhermit@gentoo.org> libao-1.1.0-r1.ebuild:
+  Remove explicit --disable-dependency-tracking econf option since it is
+  implicitly added for EAPI=4 and use prune_libtool_files.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libao-1.0.0-r1.ebuild,
+  libao-1.1.0.ebuild, libao-1.1.0-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*libao-1.1.0-r1 (20 Aug 2011)
+
+  20 Aug 2011; Matt Turner <mattst88@gentoo.org> libao-1.0.0-r1.ebuild,
+  libao-1.1.0.ebuild, +libao-1.1.0-r1.ebuild:
+  Fix hardcoded 'lib' in ao.m4. Drop ~mips keywords from older versions.
 
   15 Mar 2011; Alexis Ballier <aballier@gentoo.org> libao-1.1.0.ebuild:
   prepend eprefix to docdir, by Nathan Phillip Brink (binki), bug #359009

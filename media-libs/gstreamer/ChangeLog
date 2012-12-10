@@ -1,6 +1,87 @@
 # ChangeLog for media-libs/gstreamer
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gstreamer/ChangeLog,v 1.295 2011/07/25 17:48:35 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gstreamer/ChangeLog,v 1.315 2012/12/03 23:26:10 eva Exp $
+
+*gstreamer-1.0.3 (03 Dec 2012)
+
+  03 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org> +gstreamer-1.0.3.ebuild:
+  Version bump.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org> gstreamer-0.10.36.ebuild:
+  Import cleaned up ebuild from gnome overlay.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  -gstreamer-0.10.32-r1.ebuild, -files/gstreamer-0.10.32-fix-valve-drops.patch:
+  Clean up old revision.
+
+  24 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gstreamer-0.10.36.ebuild, metadata.xml:
+  Disable PaX memory protection only when USE=orc (bug #421579, requested by
+  Magnus Granberg); pax-mark gst-launch-0.10 as well as gst-plugin-scanner to
+  allow constructing orc-using pipelines on the command line.
+
+*gstreamer-0.10.36 (21 Oct 2012)
+
+  21 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gstreamer-0.10.32-r1.ebuild, gstreamer-0.10.35.ebuild,
+  +gstreamer-0.10.36.ebuild,
+  +files/gstreamer-0.10.36-disable-test_fail_abstract_new.patch:
+  Version bump (bug #418075); adds GstCollectPads2 API, miscellaneous
+  improvements and bugfixes. pax-mark gst-plugin-scanner, needed on hardened
+  systems with some plugins (bug #421579, thanks to Nikoli). Punt .la files
+  (it's 2012, packages depending on gstreamer should not need them by now).
+  Update license and homepage.
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> gstreamer-0.10.35.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gstreamer-0.10.32-r1.ebuild,
+  gstreamer-0.10.35.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> gstreamer-0.10.35.ebuild:
+  ppc/ppc64 stable wrt #382225
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> gstreamer-0.10.35.ebuild:
+  Stable for HPPA (bug #382225).
+
+  09 Oct 2011; Raúl Porcel <armin76@gentoo.org> gstreamer-0.10.35.ebuild:
+  alpha/ia64/sh/sparc stable wrt #382225
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> gstreamer-0.10.35.ebuild:
+  Marked ~hppa (bug #382225).
+
+  04 Oct 2011; Jeroen Roovers <jer@gentoo.org> gstreamer-0.10.35.ebuild:
+  Stable for HPPA (bug #382225).
+
+  03 Oct 2011; Markus Meier <maekke@gentoo.org> gstreamer-0.10.35.ebuild:
+  arm stable, bug #382225
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org> gstreamer-0.10.35.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #382225.
+
+  20 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gstreamer-0.10.35.ebuild:
+  x86 stable wrt bug #382225
+
+  14 Sep 2011; Fabian Groffen <grobian@gentoo.org> gstreamer-0.10.35.ebuild:
+  Transfer Prefix keywords, add Interix and PPC/Darwin fixes
+
+  06 Sep 2011; Matt Turner <mattst88@gentoo.org> gstreamer-0.10.32-r1.ebuild,
+  gstreamer-0.10.35.ebuild:
+  Add missing dependency on flex, bug 380029
+
+  23 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  gstreamer-0.10.32-r1.ebuild, gstreamer-0.10.35.ebuild:
+  DEPEND on bison, bug 380247
+
+  11 Aug 2011; Mart Raudsepp <leio@gentoo.org> -gstreamer-0.10.29.ebuild,
+  -gstreamer-0.10.31.ebuild, -gstreamer-0.10.32.ebuild:
+  Remove old
+
+  06 Aug 2011; Zac Medico <zmedico@gentoo.org> gstreamer-0.10.35.ebuild:
+  Bump to EAPI 3, fix for prefix, and add ~x86-linux keyword.
 
   25 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org>
   gstreamer-0.10.32-r1.ebuild:

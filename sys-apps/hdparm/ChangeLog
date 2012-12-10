@@ -1,6 +1,54 @@
 # ChangeLog for sys-apps/hdparm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/hdparm/ChangeLog,v 1.226 2011/07/29 04:49:19 zmedico Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/hdparm/ChangeLog,v 1.239 2012/11/22 16:58:04 vapier Exp $
+
+*hdparm-9.43 (22 Nov 2012)
+
+  22 Nov 2012; Mike Frysinger <vapier@gentoo.org> +hdparm-9.43.ebuild:
+  Version bump #444298 by Agostino Sarubbo.
+
+  29 Sep 2012; Ulrich Müller <ulm@gentoo.org> hdparm-9.28.ebuild,
+  hdparm-9.36.ebuild, hdparm-9.37.ebuild, hdparm-9.38.ebuild,
+  hdparm-9.39.ebuild:
+  Specify LICENSE more precisely. The package is BSD licensed, the "wiper"
+  subdirectory under GPL-2 only.
+
+  04 Sep 2012; Mike Frysinger <vapier@gentoo.org> hdparm-9.39.ebuild:
+  Install wiper contrib files #433147 by Gerhard Hintermayer.
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> hdparm-9.39.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #369569
+
+  20 May 2012; Mark Loeser <halcy0n@gentoo.org> hdparm-9.39.ebuild:
+  Stable for ppc/ppc64; bug #369569
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> hdparm-9.39.ebuild:
+  Stable for HPPA (bug #369569).
+
+  12 May 2012; Markus Meier <maekke@gentoo.org> hdparm-9.39.ebuild:
+  arm stable, bug #369569
+
+  09 May 2012; Jeff Horelick <jdhore@gentoo.org> hdparm-9.39.ebuild:
+  marked x86 per bug 369569
+
+  09 May 2012; Agostino Sarubbo <ago@gentoo.org> hdparm-9.39.ebuild:
+  Stable for amd64, wrt bug #369569
+
+  29 Apr 2012; Mike Frysinger <vapier@gentoo.org> files/hdparm-init-8:
+  Also run on cdrom devices, and drop devfsd support #413705 by tokiclover.
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> hdparm-9.39.ebuild:
+  Add ~amd64-linux keyword.
+
+*hdparm-9.39 (04 Feb 2012)
+
+  04 Feb 2012; Tim Harder <radhermit@gentoo.org> +hdparm-9.39.ebuild:
+  Version bump.
+
+*hdparm-9.38 (17 Jan 2012)
+
+  17 Jan 2012; Mike Frysinger <vapier@gentoo.org> +hdparm-9.38.ebuild:
+  Version bump #399031 by teidakankan.
 
   29 Jul 2011; Zac Medico <zmedico@gentoo.org> hdparm-9.37.ebuild:
   Add ~x86-linux keyword.

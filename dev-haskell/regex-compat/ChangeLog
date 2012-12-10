@@ -1,6 +1,36 @@
 # ChangeLog for dev-haskell/regex-compat
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/regex-compat/ChangeLog,v 1.28 2011/02/25 13:09:10 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/regex-compat/ChangeLog,v 1.35 2012/09/12 15:17:57 qnikst Exp $
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org>
+  regex-compat-0.71.0.1.ebuild, regex-compat-0.71.ebuild,
+  regex-compat-0.91.ebuild, regex-compat-0.92.ebuild,
+  regex-compat-0.95.1.ebuild:
+  move dev-haskell/regex-compat/regex-compat-0.92.ebuild ebuild to
+  mirror://hackage
+
+  09 Aug 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  regex-compat-0.95.1.ebuild:
+  Stable on alpha/ia64/sparc (bug #414711)
+
+  03 Aug 2012; Andreas Schuerch <nativemad@gentoo.org>
+  regex-compat-0.95.1.ebuild:
+  x86 stable, see bug 414711
+
+  03 Jul 2012; Brent Baude <ranger@gentoo.org> regex-compat-0.95.1.ebuild:
+  Marking regex-compat-0.95.1 ppc for bug 414711
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> regex-compat-0.95.1.ebuild:
+  Marking regex-compat-0.95.1 ppc64 for bug 414711
+
+  19 Jun 2012; Agostino Sarubbo <ago@gentoo.org> regex-compat-0.95.1.ebuild:
+  Stable for amd64, wrt bug #414711
+
+*regex-compat-0.95.1 (04 Dec 2011)
+
+  04 Dec 2011; Sergei Trofimovich <slyfox@gentoo.org>
+  +regex-compat-0.95.1.ebuild:
+  Version bump.
 
   25 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org>
   regex-compat-0.92.ebuild:
@@ -112,4 +142,3 @@
   05 Aug 2007; Lennart Kolmodin <kolmodin@gentoo.org> +metadata.xml,
   +regex-compat-0.71.ebuild, +regex-compat-0.90.ebuild:
   Initial import.
-

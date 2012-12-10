@@ -1,6 +1,23 @@
 # ChangeLog for dev-perl/Class-DBI-mysql
-# Copyright 2000-2006 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-DBI-mysql/ChangeLog,v 1.16 2006/10/08 03:37:36 mcummings Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-DBI-mysql/ChangeLog,v 1.21 2012/06/24 12:59:20 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> Class-DBI-mysql-1.0.0.ebuild:
+  Drop ia64/sparc keywords
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Class-DBI-mysql-1.00.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> Class-DBI-mysql-1.0.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*Class-DBI-mysql-1.0.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org> +Class-DBI-mysql-1.0.0.ebuild:
+  Change version scheme
 
   08 Oct 2006; Michael Cummings <mcummings@gentoo.org>
   -Class-DBI-mysql-0.23.ebuild, Class-DBI-mysql-1.00.ebuild:
@@ -65,4 +82,3 @@
   31 Mar 2004; Michael Cummings <mcummings@gentoo.org>
   Class-DBI-mysql-0.23.ebuild, metadata.xml:
   initial check in
-

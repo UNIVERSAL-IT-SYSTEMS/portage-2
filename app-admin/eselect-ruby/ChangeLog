@@ -1,6 +1,19 @@
 # ChangeLog for app-admin/eselect-ruby
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-ruby/ChangeLog,v 1.43 2010/09/07 17:03:05 a3li Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-ruby/ChangeLog,v 1.46 2012/09/09 17:35:54 ottxor Exp $
+
+  09 Sep 2012; Christoph Junghans <ottxor@gentoo.org>
+  eselect-ruby-20120106.ebuild:
+  added prefix keywords (bug #434228)
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  eselect-ruby-20120106.ebuild:
+  keyword ~amd64-fbsd
+
+*eselect-ruby-20120106 (06 Jan 2012)
+
+  06 Jan 2012; Alex Legler <a3li@gentoo.org> +eselect-ruby-20120106.ebuild:
+  Additional prefix support, bug 396701
 
   07 Sep 2010; Alex Legler <a3li@gentoo.org> -eselect-ruby-20091225.ebuild,
   -eselect-ruby-20100402.ebuild:
@@ -170,4 +183,3 @@
   +eselect-ruby-20081211.ebuild:
   Initial import from the ruby overlay. All credits go to Alex Legler for
   writing and testing the eselect module.
-

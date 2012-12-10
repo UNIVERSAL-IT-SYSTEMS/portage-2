@@ -1,6 +1,242 @@
 # ChangeLog for net-wireless/bluez
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez/ChangeLog,v 1.100 2011/08/01 09:49:02 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez/ChangeLog,v 1.149 2012/12/07 23:09:06 ago Exp $
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> bluez-4.99.ebuild:
+  Stable for ppc64, wrt bug #411015
+
+*bluez-4.101-r4 (02 Dec 2012)
+
+  02 Dec 2012; Samuli Suominen <ssuominen@gentoo.org> +bluez-4.101-r4.ebuild:
+  Use oui.txt from sys-apps/hwids instead of local copy. Relax USE="consolekit"
+  dependencies for logind in sys-apps/systemd.
+
+  18 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Remove pda@ because this isn't exactly related to PDAs.
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+  28 Oct 2012; Tiziano Müller <dev-zero@gentoo.org> metadata.xml:
+  Removing myself as maintainer since I do not have time nor am I using
+  bluetooth anymore.
+
+  29 Sep 2012; Pacho Ramos <pacho@gentoo.org> -bluez-4.101-r1.ebuild,
+  -bluez-4.101-r2.ebuild, bluez-4.101-r3.ebuild:
+  systemd doesn't really fully replace consolekit for bluez, see bug #436180 by
+  Canek Peláez Valdés and Michał Górny. Drop old.
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> bluez-4.99.ebuild:
+  ppc stable (bug 411015).
+
+*bluez-4.101-r3 (21 Aug 2012)
+
+  21 Aug 2012; Pacho Ramos <pacho@gentoo.org> +bluez-4.101-r3.ebuild,
+  +files/bluez-4.101-network1.patch, +files/bluez-4.101-network2.patch,
+  +files/bluez-4.101-network3.patch, +files/bluez-4.101-network4.patch:
+  Include some upstream fixes for networking, this also solves PAN connection
+  allowing it to work with NetworkManager again (and allowing me to commit this
+  ;)) without getting 'Error connecting with bluez: Method Connect with
+  signature s on interface org.bluez.Network doesn't exist'.
+
+*bluez-4.101-r2 (10 Aug 2012)
+
+  10 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> +bluez-4.101-r2.ebuild:
+  Dummy revision bump to let upstream ./configure logic read udevdir from
+  udev.pc pkg-config file wrt #430414 by Egor Y. Egorov
+
+  23 Jul 2012; <swift@gentoo.org> bluez-4.98-r2.ebuild, bluez-4.99.ebuild,
+  bluez-4.101-r1.ebuild:
+  Adding optional dependency on SELinux module
+
+*bluez-4.101-r1 (06 Jul 2012)
+
+  06 Jul 2012; Pacho Ramos <pacho@gentoo.org> +bluez-4.101-r1.ebuild,
+  +files/bluetooth-init.d-r2, -bluez-4.101.ebuild:
+  Recover bluetoothd init.d script to start it now that upstream has decided to
+  drop udev rule (bug #423513 by Nikolay S. Rybaloff, Marcin Deranek and
+  others).
+
+  06 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> bluez-4.98-r2.ebuild,
+  bluez-4.99.ebuild, bluez-4.101.ebuild:
+  Pull in user.eclass for enewgroup.
+
+  06 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> bluez-4.98-r2.ebuild,
+  bluez-4.99.ebuild:
+  Pin old net-wireless/bluez to old sys-fs/udev wrt #425002
+
+  30 Jun 2012; Pacho Ramos <pacho@gentoo.org> bluez-4.101.ebuild:
+  Apitest is no longer provided, bug #423331 by Mike Callahan and others.
+
+*bluez-4.101 (23 Jun 2012)
+
+  23 Jun 2012; Pacho Ramos <pacho@gentoo.org> +bluez-4.101.ebuild,
+  -bluez-4.96.ebuild, metadata.xml:
+  Version bump, remove old.
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org> bluez-4.96.ebuild,
+  bluez-4.98-r2.ebuild:
+  Use virtual/libusb instead of dev-libs/libusb.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> bluez-4.96.ebuild,
+  bluez-4.98-r2.ebuild, bluez-4.99.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  15 Apr 2012; Markus Meier <maekke@gentoo.org> bluez-4.99.ebuild:
+  arm stable, bug #411015
+
+  11 Apr 2012; Jeff Horelick <jdhore@gentoo.org> bluez-4.99.ebuild:
+  marked x86 per bug 411015
+
+  11 Apr 2012; Jeroen Roovers <jer@gentoo.org> bluez-4.99.ebuild:
+  Stable for HPPA (bug #411015).
+
+  10 Apr 2012; Agostino Sarubbo <ago@gentoo.org> bluez-4.99.ebuild:
+  Stable for amd64, wrt bug #411015
+
+  06 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> bluez-4.99.ebuild:
+  Both hid2hci and dfutool are still using libusb-0.1 (virtual/libusb:0) wrt
+  #411045
+
+*bluez-4.99 (08 Mar 2012)
+
+  08 Mar 2012; Pacho Ramos <pacho@gentoo.org> +bluez-4.99.ebuild,
+  -bluez-4.98-r1.ebuild:
+  Version bump, remove old.
+
+  29 Feb 2012; Markus Meier <maekke@gentoo.org> bluez-4.98-r2.ebuild:
+  arm stable, bug #399745
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> bluez-4.98-r2.ebuild:
+  ppc/ppc64 stable wrt #399745
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> bluez-4.98-r2.ebuild:
+  x86 stable wrt bug #399745
+
+  22 Feb 2012; Jeroen Roovers <jer@gentoo.org> bluez-4.98-r2.ebuild:
+  Stable for HPPA (bug #399745).
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> bluez-4.98-r2.ebuild:
+  Stable for amd64, wrt bug #399745
+
+*bluez-4.98-r2 (14 Feb 2012)
+
+  14 Feb 2012; Pacho Ramos <pacho@gentoo.org> +bluez-4.98-r2.ebuild,
+  +files/bluez-4.98-fix-header.patch, +files/bluez-4.98-fix-socket.patch,
+  -bluez-4.98.ebuild:
+  Fix compilation problems against bluez, bug #403341 (by Steev Klimaszewski and
+  Marcel Unbehaun); fix needing to enable socket, bug #401065 (by Andreas
+  Eckstein and Ivan ivanov). Drop old.
+
+  12 Feb 2012; Jeff Horelick <jdhore@gentoo.org> bluez-4.98-r1.ebuild:
+  x86 stable per bug 399745
+
+  10 Feb 2012; Diego E. Pettenò <flameeyes@gentoo.org> bluez-4.98-r1.ebuild:
+  Add a readline USE flag and fix dependencies.
+
+  07 Feb 2012; Jeroen Roovers <jer@gentoo.org> bluez-4.98-r1.ebuild:
+  Stable for HPPA (bug #399745).
+
+  05 Feb 2012; Markus Meier <maekke@gentoo.org> bluez-4.98-r1.ebuild:
+  arm stable, bug #399745
+
+  26 Jan 2012; Tony Vroon <chainsaw@gentoo.org> bluez-4.96.ebuild,
+  bluez-4.98.ebuild, bluez-4.98-r1.ebuild:
+  Cope with reduced complexity in alsa-lib 1.0.25 packaging. Signed off by
+  Nirbheek Chauhan & Pacho Ramos.
+
+  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> bluez-4.98-r1.ebuild:
+  Stable for amd64, wrt bug #399745
+
+  19 Jan 2012; Pacho Ramos <pacho@gentoo.org> bluez-4.98-r1.ebuild,
+  bluez-4.98.ebuild:
+  Add missing DEPEND on check for test-programs, bug #398929 by Andrew Frink.
+
+*bluez-4.98 (13 Jan 2012)
+*bluez-4.98-r1 (13 Jan 2012)
+
+  13 Jan 2012; Pacho Ramos <pacho@gentoo.org> +bluez-4.98-r1.ebuild,
+  +bluez-4.98.ebuild, -bluez-4.97-r2.ebuild, -bluez-4.97-r3.ebuild:
+  Version bump, remove old.
+
+*bluez-4.97-r3 (09 Jan 2012)
+*bluez-4.97-r2 (09 Jan 2012)
+
+  09 Jan 2012; Pacho Ramos <pacho@gentoo.org> +bluez-4.97-r2.ebuild,
+  +bluez-4.97-r3.ebuild, +files/bluetooth-init.d-r1, -bluez-4.97-r1.ebuild,
+  -bluez-4.97.ebuild:
+  Reintroduce a bluetooth init.d script to trigger bluetooth devices after dbus
+  is started because, as talked with WilliamH, udev-postmount will be removed in
+  the near future due upstream no longer detecting failed triggers at early
+  boot. This should also solve bug 397673 by a.m. Drop old.
+
+  06 Jan 2012; Mike Frysinger <vapier@gentoo.org> bluez-4.97.ebuild,
+  bluez-4.97-r1.ebuild:
+  We need newer version of check to support ck_assert (patch sent upstream
+  already to reflect this).
+
+*bluez-4.97-r1 (31 Dec 2011)
+*bluez-4.97 (31 Dec 2011)
+
+  31 Dec 2011; Pacho Ramos <pacho@gentoo.org> +files/bluez-4.67-udev.script,
+  -bluez-4.96-r2.ebuild, +bluez-4.97.ebuild, +bluez-4.97-r1.ebuild,
+  +files/rfcomm-conf.d, +files/rfcomm-init.d:
+  Version bump that also includes IMPORTANT changes:
+  - old-daemons were dropped because they are poorly maintained and I am unable
+    to test them. Also have some problems and look to not work at all in default
+    setups (bug #381355 by Agostino Sarubbo and Rafał Mużyło). If you think you
+    still need some of them, please open a new bug report explaining your needs
+    to let us find a replacement or, if none is available, readd only needed old
+    daemons.
+  - 'bluetooth' init.d script has been completely removed as it was only
+    calling "udevadm trigger --subsystem-match=bluetooth --action=add" at startup. 
+    This instruction is now called directly by /lib/udev/bluetooth.sh (the one that
+    was previously calling init.d script and causing problems on systemd setups as 
+    reported by mgorny and others (bug #396403), this should also solve bug #389531.
+    Due this change, it's possible that you will start to see how your bluetooth
+    device is not properly detected just after booting if not manually running
+    "udevadm trigger --subsystem-match=bluetooth --action=add", if this is your case,
+    please report a bug to readd a bluetooth init.d script for that (even without
+    getting it automatically started by udev to not hurt systemd users).
+  - Because of previous change, 'rfcomm' part of old bluetooth init.d script has been
+    moved to its own script under /etc/init.d and conf.d.
+  - Due bug 392879 (by Otamay) I have rethink the way some plugins were being 
+    installed or not to simply always build and install them. This adds no additional
+    dependencies, also simplifies ebuild preventing it from growing forever with a
+    lot of USE flags and, probably the most important one, makes bluez to simply 
+    support and work with more devices.
+  Also remove old.
+
+  24 Dec 2011; Maxim Koltsov <maksbotan@gentoo.org> bluez-4.96-r2.ebuild:
+  Make bluez depend on python only when USE=test-programs
+
+*bluez-4.96-r2 (24 Dec 2011)
+
+  24 Dec 2011; Maxim Koltsov <maksbotan@gentoo.org> -bluez-4.96-r1.ebuild,
+  +bluez-4.96-r2.ebuild:
+  Fix python shebangs to python2, bug 383775. Thanks to Ian Delaney for patch
+
+  17 Dec 2011; Michał Górny <mgorny@gentoo.org> bluez-4.96-r1.ebuild:
+  The consolekit flag can be satisfied by new enough systemd as well.
+
+  25 Oct 2011; Pacho Ramos <pacho@gentoo.org> -bluez-4.93.ebuild:
+  Drop old.
+
+  25 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> bluez-4.96.ebuild:
+  ppc/ppc64 stable wrt #381269
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> bluez-4.96.ebuild:
+  Stable for HPPA (bug #381269).
+
+  18 Sep 2011; Markus Meier <maekke@gentoo.org> bluez-4.96.ebuild:
+  arm stable, bug #381269
+
+  04 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> bluez-4.96.ebuild:
+  x86 stable wrt bug #381269
+
+  31 Aug 2011; Tony Vroon <chainsaw@gentoo.org> bluez-4.96.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #381269 filed by Pacho Ramos.
 
 *bluez-4.96-r1 (01 Aug 2011)
 *bluez-4.96 (01 Aug 2011)
@@ -506,4 +742,3 @@
   Initial commit, keeping the keywords the same as for bluez-libs/-utils
   since it's mostly the same. Most patches are taken from bluez-libs/-utils.
   (bug #236357)
-

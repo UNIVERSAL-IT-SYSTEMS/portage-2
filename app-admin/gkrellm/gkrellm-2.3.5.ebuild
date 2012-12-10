@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/gkrellm/gkrellm-2.3.5.ebuild,v 1.9 2011/07/15 14:21:17 xarthisius Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/gkrellm/gkrellm-2.3.5.ebuild,v 1.11 2012/05/31 02:30:55 zmedico Exp $
 
 EAPI=2
 
-inherit eutils multilib toolchain-funcs
+inherit eutils multilib toolchain-funcs user
 
 DESCRIPTION="Single process stack of various system monitors"
 HOMEPAGE="http://www.gkrellm.net/"
@@ -24,7 +24,7 @@ RDEPEND="dev-libs/glib:2
 	ntlm? ( net-libs/libntlm )
 	X? ( x11-libs/gtk+:2 )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 pkg_setup() {

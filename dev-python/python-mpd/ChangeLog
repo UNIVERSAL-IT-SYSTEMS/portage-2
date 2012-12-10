@@ -1,6 +1,25 @@
 # ChangeLog for dev-python/python-mpd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-mpd/ChangeLog,v 1.21 2011/04/30 15:38:21 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-mpd/ChangeLog,v 1.26 2012/09/07 21:20:29 johu Exp $
+
+  07 Sep 2012; Johannes Huber <johu@gentoo.org> python-mpd-0.4.3.ebuild:
+  Stable for x86, wrt bug #433271
+
+  07 Sep 2012; Agostino Sarubbo <ago@gentoo.org> python-mpd-0.4.3.ebuild:
+  Stable for amd64, wrt bug #433271
+
+*python-mpd-0.4.3 (21 Jul 2012)
+
+  21 Jul 2012; Christoph Mende <angelos@gentoo.org> +python-mpd-0.4.3.ebuild:
+  Version bump
+
+*python-mpd-0.4.2 (12 Jul 2012)
+
+  12 Jul 2012; Christoph Mende <angelos@gentoo.org> +python-mpd-0.4.2.ebuild:
+  Version bump, switch to python-mpd2 fork
+
+  10 Feb 2012; Patrick Lauer <patrick@gentoo.org> python-mpd-0.3.0.ebuild:
+  Changing python deps in preparation for 2.4 removal
 
   30 Apr 2011; Christoph Mende <angelos@gentoo.org> -python-mpd-0.2.1.ebuild:
   Remove old
@@ -78,4 +97,3 @@
   13 May 2008; Christoph Mende <angelos@gentoo.org>
   +python-mpd-0.2.0.ebuild:
   Initial import, bug 222007
-

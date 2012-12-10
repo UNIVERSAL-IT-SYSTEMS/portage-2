@@ -1,6 +1,53 @@
 # ChangeLog for sys-apps/module-init-tools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/module-init-tools/ChangeLog,v 1.177 2011/07/31 13:09:25 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/module-init-tools/ChangeLog,v 1.187 2012/11/24 21:14:02 ssuominen Exp $
+
+  24 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -module-init-tools-3.5.ebuild, -module-init-tools-3.8.ebuild,
+  -module-init-tools-3.9.ebuild, -module-init-tools-3.11.ebuild,
+  -module-init-tools-3.12.ebuild, -module-init-tools-3.16.ebuild,
+  -module-init-tools-3.16-r1.ebuild:
+  old
+
+  24 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  module-init-tools-3.16-r2.ebuild:
+  Stabilize for everyone
+
+  11 Nov 2012; Mike Frysinger <vapier@gentoo.org>
+  module-init-tools-3.16-r2.ebuild:
+  Use correct `ar` #440274 by Agostino Sarubbo.
+
+*module-init-tools-3.16-r2 (20 Oct 2012)
+
+  20 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +module-init-tools-3.16-r2.ebuild:
+  Convert from modprobe install to softdep wrt #396147 by Gustavo Sverzut
+  Barbieri
+
+  04 Feb 2012; William Hubbs <williamh@gentoo.org>
+  module-init-tools-3.16-r1.ebuild:
+  add a blocker for sys-apps/kmod for bug #401899
+
+  12 Oct 2011; Raúl Porcel <armin76@gentoo.org>
+  module-init-tools-3.16-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #375807
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org>
+  module-init-tools-3.16-r1.ebuild:
+  Marked ppc/ppc64 stable for bug #375807.
+
+  27 Aug 2011; Jeroen Roovers <jer@gentoo.org>
+  module-init-tools-3.16-r1.ebuild:
+  Stable for HPPA (bug #375807).
+
+  16 Aug 2011; Tony Vroon <chainsaw@gentoo.org>
+  module-init-tools-3.16-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by both Tomas Pruzina and
+  Agostino "ago" Sarubbo in bug #375807.
+
+  07 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  module-init-tools-3.16-r1.ebuild:
+  x86 stable wrt bug #375807
 
   31 Jul 2011; Markus Meier <maekke@gentoo.org>
   module-init-tools-3.16-r1.ebuild:

@@ -1,6 +1,49 @@
 # ChangeLog for app-shells/mksh
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/mksh/ChangeLog,v 1.26 2011/08/01 15:49:06 patrick Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-shells/mksh/ChangeLog,v 1.35 2012/12/01 03:12:33 patrick Exp $
+
+*mksh-41 (01 Dec 2012)
+
+  01 Dec 2012; Patrick Lauer <patrick@gentoo.org> +mksh-41.ebuild,
+  mksh-9999.ebuild:
+  Bump
+
+  22 Sep 2012; Christoph Junghans <ottxor@gentoo.org>
+  +files/mksh-40f-etc-configurable.patch, -files/mksh-39c-urandom-write.patch,
+  mksh-40f.ebuild, mksh-9999.ebuild:
+  added prefix support (bug #432262)
+
+*mksh-40f (07 Apr 2012)
+
+  07 Apr 2012; Patrick Lauer <patrick@gentoo.org> +mksh-40f.ebuild,
+  -mksh-40e.ebuild:
+  Bump
+
+  26 Mar 2012; Patrick Lauer <patrick@gentoo.org> -mksh-40d.ebuild,
+  mksh-40e.ebuild:
+  Bump
+
+*mksh-40e (25 Mar 2012)
+
+  25 Mar 2012; Patrick Lauer <patrick@gentoo.org> +mksh-40e.ebuild,
+  -mksh-39c.ebuild, -mksh-40b.ebuild:
+  Bump
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> mksh-40d.ebuild:
+  x86 stable wrt bug #404617
+
+  02 Mar 2012; Agostino Sarubbo <ago@gentoo.org> mksh-40d.ebuild:
+  Stable for amd64, wrt bug #404617
+
+  13 Dec 2011; Patrick Lauer <patrick@gentoo.org> mksh-40d.ebuild:
+  Removing obsolete patch
+
+*mksh-40d (12 Dec 2011)
+
+  12 Dec 2011; Patrick Lauer <patrick@gentoo.org> +mksh-40d.ebuild,
+  -mksh-36b.ebuild, -mksh-38c.ebuild, -mksh-39.ebuild, -mksh-39b.ebuild,
+  -mksh-40.ebuild:
+  Bump, remove old
 
   01 Aug 2011; Patrick Lauer <patrick@gentoo.org> mksh-40b.ebuild:
   Adding lto and build system fix as suggested by upstream
@@ -119,4 +162,3 @@
 
   22 Jun 2005; Hanno Boeck <hanno@gentoo.org> +mksh-23.ebuild:
   Initial commit by the request of Mirabile.
-

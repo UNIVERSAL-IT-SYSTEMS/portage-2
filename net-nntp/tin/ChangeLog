@@ -1,6 +1,45 @@
 # ChangeLog for net-nntp/tin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-nntp/tin/ChangeLog,v 1.29 2011/04/10 03:20:29 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-nntp/tin/ChangeLog,v 1.39 2012/10/30 23:02:13 jer Exp $
+
+*tin-2.1.0 (30 Oct 2012)
+
+  30 Oct 2012; Jeroen Roovers <jer@gentoo.org> tin-2.0.1.ebuild,
+  +tin-2.1.0.ebuild:
+  Version bump. Build verbosely.
+
+  18 Jun 2012; Jeroen Roovers <jer@gentoo.org> -files/1.8.2-various.patch,
+  -tin-1.8.3.ebuild, -tin-1.9.4-r1.ebuild, -tin-1.9.6.ebuild:
+  Ancient.
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> tin-1.8.3.ebuild,
+  tin-1.9.4-r1.ebuild, tin-1.9.6.ebuild, tin-2.0.0.ebuild, tin-2.0.1.ebuild:
+  Drop ia64/sparc keywords
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> tin-2.0.0.ebuild:
+  Marking tin-2.0.0 ppc for bug 416105
+
+  27 May 2012; Markus Meier <maekke@gentoo.org> tin-2.0.0.ebuild:
+  arm stable, bug #416105
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> tin-2.0.0.ebuild:
+  x86 stable wrt bug #416105
+
+*tin-2.0.1 (15 May 2012)
+
+  15 May 2012; Jeroen Roovers <jer@gentoo.org> +tin-2.0.1.ebuild:
+  Version bump.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> tin-2.0.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  12 Sep 2011; Markus Meier <maekke@gentoo.org> tin-2.0.0.ebuild:
+  add ~arm, bug #381929
+
+*tin-2.0.0 (05 Sep 2011)
+
+  05 Sep 2011; Jeroen Roovers <jer@gentoo.org> +tin-2.0.0.ebuild, metadata.xml:
+  Version bump thanks to Marco Paolone (bug #381929).
 
   10 Apr 2011; Jonathan Callen <abcd@gentoo.org> tin-1.9.6.ebuild:
   Add prefix support, bump EAPI to 3, add prefix keywords

@@ -1,9 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/tdb/tdb-1.2.9.ebuild,v 1.3 2011/07/07 04:30:21 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/tdb/tdb-1.2.9.ebuild,v 1.7 2012/07/06 01:58:58 jdhore Exp $
 
 EAPI=3
 PYTHON_DEPEND="python? 2"
+RESTRICT_PYTHON_ABIS="3.* *-jython 2.7-pypy-*"
 
 inherit waf-utils python
 
@@ -13,20 +14,18 @@ SRC_URI="http://samba.org/ftp/tdb/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~x86-fbsd"
 IUSE="python"
 
 RDEPEND=""
-DEPEND="dev-lang/python
+DEPEND="|| ( dev-lang/python:2.7 dev-lang/python:2.6 )
 	app-text/docbook-xml-dtd:4.2"
 
 WAF_BINARY="${S}/buildtools/bin/waf"
 
 pkg_setup() {
-	if use python; then
-		python_set_active_version 2
-		python_pkg_setup
-	fi
+	python_set_active_version 2
+	python_pkg_setup
 }
 
 src_configure() {

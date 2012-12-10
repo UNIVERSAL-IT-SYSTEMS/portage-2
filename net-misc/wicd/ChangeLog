@@ -1,6 +1,182 @@
 # ChangeLog for net-misc/wicd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/wicd/ChangeLog,v 1.92 2011/07/17 19:55:00 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/wicd/ChangeLog,v 1.129 2012/11/16 18:03:11 tomka Exp $
+
+*wicd-1.7.2.4-r2 (16 Nov 2012)
+
+  16 Nov 2012; Thomas Kahle <tomka@gentoo.org>
+  +files/wicd-1.7.2.4-second-urwid.patch, +files/wicd-1.7.2.4-urwid.patch,
+  +wicd-1.7.2.4-r2.ebuild:
+  Fix urwid-1.1 compatibility (bug 441966)
+
+  16 Oct 2012; Thomas Kahle <tomka@gentoo.org> wicd-1.7.2.4-r1.ebuild:
+  marked x86 per bug 433976
+
+  15 Oct 2012; Agostino Sarubbo <ago@gentoo.org> wicd-1.7.2.4-r1.ebuild:
+  Stable for amd64, wrt bug #433976
+
+  15 Oct 2012; Agostino Sarubbo <ago@gentoo.org> -wicd-1.7.0-r1.ebuild,
+  -wicd-1.7.0.ebuild, -wicd-1.7.1-r1.ebuild, -wicd-1.7.1-r2.ebuild,
+  -wicd-1.7.1-r3.ebuild, -wicd-1.7.1.ebuild, -wicd-1.7.1_pre20111210-r1.ebuild,
+  -wicd-1.7.1_pre20120127-r1.ebuild:
+  Remove old
+
+  05 Aug 2012; Anthony G. Basile <blueness@gentoo.org> wicd-1.7.2.4-r1.ebuild:
+  Keyword ~arm
+
+  17 Jul 2012; Thomas Kahle <tomka@gentoo.org> wicd-1.7.0-r1.ebuild,
+  wicd-1.7.0.ebuild, wicd-1.7.1-r1.ebuild, wicd-1.7.1-r2.ebuild,
+  wicd-1.7.1-r3.ebuild, wicd-1.7.1.ebuild, wicd-1.7.1_beta2-r4.ebuild,
+  wicd-1.7.1_pre20111210-r1.ebuild, wicd-1.7.1_pre20120127-r1.ebuild,
+  wicd-1.7.1_pre20120127.ebuild, wicd-1.7.2.1.ebuild, wicd-1.7.2.3.ebuild,
+  wicd-1.7.2.4-r1.ebuild, wicd-1.7.2.4.ebuild:
+  update homepage
+
+  31 May 2012; Anthony G. Basile <blueness@gentoo.org> wicd-1.7.2.4-r1.ebuild:
+  Keyword ~mips
+
+*wicd-1.7.2.4-r1 (21 May 2012)
+
+  21 May 2012; Thomas Kahle <tomka@gentoo.org>
+  +files/wicd-1.7.2.4-fix-dbus-error.patch, +wicd-1.7.2.4-r1.ebuild:
+  -r1 bump to fix bug 416579
+
+*wicd-1.7.2.4 (17 May 2012)
+
+  17 May 2012; Thomas Kahle <tomka@gentoo.org> +wicd-1.7.2.4.ebuild:
+  bump to 1.7.2.4
+
+*wicd-1.7.2.3 (24 Apr 2012)
+
+  24 Apr 2012; Thomas Kahle <tomka@gentoo.org> +wicd-1.7.2.3.ebuild:
+  Bump to 1.7.2.3 to fix bug 413149
+
+  14 Apr 2012; Jeff Horelick <jdhore@gentoo.org> wicd-1.7.2.1.ebuild:
+  marked x86 per bug 411729
+
+  14 Apr 2012; Agostino Sarubbo <ago@gentoo.org> wicd-1.7.2.1.ebuild:
+  Stable for amd64, wrt bug #411729
+
+*wicd-1.7.2.1 (13 Apr 2012)
+
+  13 Apr 2012; Thomas Kahle <tomka@gentoo.org> +wicd-1.7.2.1.ebuild:
+  Security bump (bug 411729)
+
+  07 Mar 2012; Thomas Kahle <tomka@gentoo.org> wicd-1.7.1-r3.ebuild:
+  Don't compile translations without USE='nls'
+
+*wicd-1.7.1-r3 (07 Mar 2012)
+
+  07 Mar 2012; Thomas Kahle <tomka@gentoo.org> +wicd-1.7.1-r3.ebuild:
+  Fix language support (bug 407035), thanks Michael
+
+*wicd-1.7.1-r2 (27 Feb 2012)
+
+  27 Feb 2012; Thomas Kahle <tomka@gentoo.org> +wicd-1.7.1-r2.ebuild,
+  +files/wicd-1.7.1-provide-net.patch:
+  init script provides net per bug 405775
+
+*wicd-1.7.1-r1 (09 Feb 2012)
+
+  09 Feb 2012; Thomas Kahle <tomka@gentoo.org> +wicd-1.7.1-r1.ebuild,
+  metadata.xml:
+  Adding ambience icon theme (bug 401125)
+
+*wicd-1.7.1 (05 Feb 2012)
+
+  05 Feb 2012; Thomas Kahle <tomka@gentoo.org> +wicd-1.7.1.ebuild:
+  bump to 1.7.1
+
+*wicd-1.7.1_pre20120127-r1 (01 Feb 2012)
+
+  01 Feb 2012; Thomas Kahle <tomka@gentoo.org>
+  +wicd-1.7.1_pre20120127-r1.ebuild:
+  readd x11-misc/ktsuss as a dependency
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> wicd-1.7.1_pre20120127.ebuild:
+  Marking wicd-1.7.1_pre20120127 ppc for bug 401005
+
+  30 Jan 2012; Thomas Kahle <tomka@gentoo.org> -wicd-1.7.1_beta2-r3.ebuild,
+  -wicd-1.7.1_beta2-r6.ebuild, -wicd-1.7.1_beta2-r7.ebuild,
+  -wicd-1.7.1_pre20111210.ebuild, -files/wicd-1.7.1_beta2-urwid-1.0.patch,
+  -files/fix-ad-hoc-networking.patch:
+  Remove some old versions
+
+  29 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  wicd-1.7.1_pre20120127.ebuild:
+  x86 stable wrt bug #401005
+
+  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org> wicd-1.7.1_pre20120127.ebuild:
+  Stable for AMD64, wrt security bug #401005
+
+  27 Jan 2012; <anarchy@gentoo.org> wicd-1.7.1_pre20120127.ebuild:
+  Give the option for a mac4lin icon theme
+
+*wicd-1.7.1_pre20120127 (27 Jan 2012)
+
+  27 Jan 2012; Thomas Kahle <tomka@gentoo.org> +wicd-1.7.1_pre20120127.ebuild:
+  bump to fix bug 401005
+
+  30 Dec 2011; Thomas Kahle <tomka@gentoo.org> wicd-1.7.1_pre20111210-r1.ebuild:
+  Fix einfo
+
+*wicd-1.7.1_pre20111210-r1 (30 Dec 2011)
+
+  30 Dec 2011; Thomas Kahle <tomka@gentoo.org> wicd-1.7.1_pre20111210.ebuild,
+  +wicd-1.7.1_pre20111210-r1.ebuild,
+  +files/wicd-1.7.1_pre20111210-fix-config-reading.patch:
+  Fix bug 394309 and download URI
+
+  11 Dec 2011; Thomas Kahle <tomka@gentoo.org> wicd-1.7.1_pre20111210.ebuild:
+  ewarn updated again. Thanks to Jeff Kowalczyk and Nikolaj Sjujskij for
+  research
+
+  11 Dec 2011; Thomas Kahle <tomka@gentoo.org> wicd-1.7.1_pre20111210.ebuild:
+  Add warning about potential loss of saved passwords
+
+*wicd-1.7.1_pre20111210 (10 Dec 2011)
+
+  10 Dec 2011; Thomas Kahle <tomka@gentoo.org> +wicd-1.7.1_pre20111210.ebuild,
+  +files/wicd-1.7.1_pre20111210-wpa-psk-hex-template.patch:
+  Bump to snapshot of 1.7.1 beta 3 to fix accumulated bugs like bug 391397.
+
+  Added Systemd file (bug 393505)
+
+  07 Dec 2011; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  Whitespace.
+
+  22 Nov 2011; Thomas Kahle <tomka@gentoo.org> wicd-1.7.1_beta2-r7.ebuild:
+  Fix dep on net-tools[old-output] to work around bug 391397
+
+  27 Oct 2011; Thomas Kahle <tomka@gentoo.org> wicd-1.7.0.ebuild,
+  wicd-1.7.0-r1.ebuild, wicd-1.7.1_beta2-r3.ebuild, wicd-1.7.1_beta2-r4.ebuild,
+  wicd-1.7.1_beta2-r6.ebuild, wicd-1.7.1_beta2-r7.ebuild:
+  dropping x11-misc/ktsuss from deps per bug 381115
+
+  24 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> wicd-1.7.0.ebuild,
+  wicd-1.7.0-r1.ebuild, wicd-1.7.1_beta2-r3.ebuild, wicd-1.7.1_beta2-r4.ebuild,
+  wicd-1.7.1_beta2-r6.ebuild, wicd-1.7.1_beta2-r7.ebuild:
+  Depend on correct slot of pygobject.
+
+*wicd-1.7.1_beta2-r7 (01 Oct 2011)
+
+  01 Oct 2011; Thomas Kahle <tomka@gentoo.org> wicd-1.7.0.ebuild,
+  wicd-1.7.0-r1.ebuild, wicd-1.7.1_beta2-r3.ebuild, wicd-1.7.1_beta2-r4.ebuild,
+  wicd-1.7.1_beta2-r6.ebuild, +wicd-1.7.1_beta2-r7.ebuild,
+  +files/wicd-1.7.1_beta2-urwid-1.0.patch:
+  Bump urwid dep in -r7, restrict urwid in all other versions (Bug 384761)
+
+*wicd-1.7.1_beta2-r6 (13 Sep 2011)
+
+  13 Sep 2011; Thomas Kahle <tomka@gentoo.org> -wicd-1.7.1_beta2-r5.ebuild,
+  +wicd-1.7.1_beta2-r6.ebuild, +files/add-wpa-psk-hex-template.patch,
+  +files/fix-ad-hoc-networking.patch:
+  Fix bugs 351337 (ad-hoc-net), 306423 (wpa-hex-template)
+
+*wicd-1.7.1_beta2-r5 (09 Sep 2011)
+
+  09 Sep 2011; Thomas Kahle <tomka@gentoo.org> +wicd-1.7.1_beta2-r5.ebuild:
+  remove opts variable from init script (bug 381885)
 
   17 Jul 2011; Mark Loeser <halcy0n@gentoo.org> wicd-1.7.1_beta2-r4.ebuild:
   Stable on ppc/ppc64; bug #370525
@@ -445,4 +621,3 @@
   wicd-1.4.2 is the upstream "stable" version and a stable candidate for Gentoo.
   I still need to work on the init scripts, they aren't quite complete yet, in
   my opinion. I also am pondering the addition of USE flags for dhcp clients.
-

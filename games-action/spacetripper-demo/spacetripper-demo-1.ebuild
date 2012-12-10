@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/spacetripper-demo/spacetripper-demo-1.ebuild,v 1.12 2009/04/14 07:25:29 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/spacetripper-demo/spacetripper-demo-1.ebuild,v 1.15 2012/08/29 13:40:30 tupone Exp $
 
-inherit eutils games
+inherit eutils unpacker games
 
 MY_P="spacetripperdemo"
 DESCRIPTION="hardcore arcade shoot-em-up"
@@ -12,9 +12,8 @@ SRC_URI="http://www.btinternet.com/~bongpig/${MY_P}.sh"
 LICENSE="POMPOM"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
-RESTRICT="strip"
-PROPERTIES="interactive"
 IUSE=""
+RESTRICT="strip"
 
 RDEPEND="virtual/opengl
 	amd64? (
@@ -28,9 +27,10 @@ RDEPEND="virtual/opengl
 
 S=${WORKDIR}
 
-GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/${PN}
 Ddir=${D}/${dir}
+
+QA_PREBUILT="${dir}/*"
 
 src_unpack() {
 	unpack_makeself

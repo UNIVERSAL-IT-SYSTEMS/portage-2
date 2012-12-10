@@ -1,9 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/worldofpadman/worldofpadman-1.2-r1.ebuild,v 1.3 2010/05/23 18:34:54 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/worldofpadman/worldofpadman-1.2-r1.ebuild,v 1.5 2012/02/05 06:08:25 vapier Exp $
 
 EAPI=2
-inherit eutils games
+inherit eutils unpacker games
 
 MY_P=wop-engine-${PV}
 DESCRIPTION="A cartoon style multiplayer first-person shooter"
@@ -19,7 +19,7 @@ KEYWORDS="amd64 x86"
 IUSE="dedicated maps openal opengl"
 
 UIDEPEND="virtual/opengl
-	media-libs/libsdl
+	media-libs/libsdl[X,joystick,opengl,video]
 	media-libs/libogg
 	media-libs/libvorbis
 	net-misc/curl

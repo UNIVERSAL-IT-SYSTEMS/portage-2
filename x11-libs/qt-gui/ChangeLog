@@ -1,6 +1,246 @@
 # ChangeLog for x11-libs/qt-gui
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-gui/ChangeLog,v 1.148 2011/07/13 12:49:21 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-gui/ChangeLog,v 1.205 2012/12/05 03:20:44 yngwin Exp $
+
+*qt-gui-4.8.4 (05 Dec 2012)
+
+  05 Dec 2012; Ben de Groot <yngwin@gentoo.org> +qt-gui-4.8.4.ebuild:
+  Qt 4.8.4 version bump
+
+  14 Nov 2012; Davide Pesavento <pesa@gentoo.org> qt-gui-4.8.3-r1.ebuild:
+  Install desktop file for qtconfig (bug 441712); fix subcategory for linguist
+  desktop file.
+
+  14 Oct 2012; Raúl Porcel <armin76@gentoo.org> qt-gui-4.8.2.ebuild:
+  alpha/ia64/sparc stable wrt #424625
+
+  18 Sep 2012; Davide Pesavento <pesa@gentoo.org> -qt-gui-4.8.3.ebuild:
+  Remove broken version.
+
+*qt-gui-4.8.3-r1 (16 Sep 2012)
+
+  16 Sep 2012; Ben de Groot <yngwin@gentoo.org> +qt-gui-4.8.3-r1.ebuild:
+  Import updates from live ebuild in overlay. Revert gtkstyle changes (bugs
+  #435054 and #435122).
+
+*qt-gui-4.8.3 (14 Sep 2012)
+
+  14 Sep 2012; Ben de Groot <yngwin@gentoo.org> +files/44qt4-gtkstyle,
+  +qt-gui-4.8.3.ebuild:
+  Version bump. Drop qatomic-x32 patch applied upstream. Drop qpa useflag. Add
+  gtkstyle env.d file (bug #388551).
+
+  03 Sep 2012; Davide Pesavento <pesa@gentoo.org> qt-gui-4.8.1-r1.ebuild,
+  qt-gui-4.8.2.ebuild:
+  Install qdbusviewer icon wrt bug 430726 by Samuel Bauer.
+
+  19 Jul 2012; Markus Meier <maekke@gentoo.org> qt-gui-4.8.2.ebuild:
+  arm stable, bug #424625
+
+  15 Jul 2012; Agostino Sarubbo <ago@gentoo.org> qt-gui-4.8.2.ebuild:
+  Stable for x86, wrt bug #424625
+
+  13 Jul 2012; Ben de Groot <yngwin@gentoo.org> qt-gui-4.7.4-r1.ebuild:
+  Fix typo
+
+  13 Jul 2012; Ben de Groot <yngwin@gentoo.org> qt-gui-4.7.4-r1.ebuild,
+  qt-gui-4.8.1-r1.ebuild, qt-gui-4.8.2.ebuild:
+  Add elog message to inform users about how to use gtkstyle, bug #388551
+
+  09 Jul 2012; Johannes Huber <johu@gentoo.org>
+  -files/qt-gui-4.6-libpng-1.5.patch:
+  Remove old.
+
+  09 Jul 2012; Johannes Huber <johu@gentoo.org> -qt-gui-4.6.3.ebuild,
+  -qt-gui-4.6.3-r2.ebuild:
+  Drop Qt-4.6.3
+
+  09 Jul 2012; Joseph Jezak <josejx@gentoo.org> qt-gui-4.8.2.ebuild:
+  Marked ppc/ppc64 for bug #424625.
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> qt-gui-4.8.1-r1.ebuild,
+  qt-gui-4.8.2.ebuild:
+  sparc stable, add ~sparc
+
+  08 Jul 2012; Jeroen Roovers <jer@gentoo.org> qt-gui-4.8.2.ebuild:
+  Stable for HPPA (bug #424625).
+
+  06 Jul 2012; Michael Weber <xmw@gentoo.org> qt-gui-4.8.1-r1.ebuild:
+  ppc stable (bug 414241)
+
+  05 Jul 2012; Agostino Sarubbo <ago@gentoo.org> qt-gui-4.8.2.ebuild:
+  Stable for amd64, wrt bug #424625
+
+  25 Jun 2012; Raúl Porcel <armin76@gentoo.org> qt-gui-4.8.1-r1.ebuild,
+  qt-gui-4.8.2.ebuild:
+  Add ~alpha, alpha/ia64 stable wrt #414241
+
+  19 Jun 2012; Davide Pesavento <pesa@gentoo.org>
+  +files/4.8.2-qatomic-x32.patch, qt-gui-4.8.2.ebuild:
+  Add patch for x32 support in qatomic asm code (bug 420705).
+
+  18 Jun 2012; Davide Pesavento <pesa@gentoo.org> metadata.xml:
+  Cleanup metadata and add upstream info.
+
+*qt-gui-4.8.2 (22 May 2012)
+
+  22 May 2012; Davide Pesavento <pesa@gentoo.org> +qt-gui-4.8.2.ebuild:
+  Version bump.
+
+  21 May 2012; Samuli Suominen <ssuominen@gentoo.org> qt-gui-4.7.4-r1.ebuild,
+  qt-gui-4.8.1-r1.ebuild:
+  inherit eutils for make_desktop_entry
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> qt-gui-4.8.1-r1.ebuild:
+  Stable for x86, wrt bug #414241
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> qt-gui-4.8.1-r1.ebuild:
+  Stable for HPPA (bug #414241).
+
+  14 May 2012; Johannes Huber <johu@gentoo.org> -qt-gui-4.7.2.ebuild:
+  Drop Qt-4.7.2
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> qt-gui-4.8.1-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  12 May 2012; Markus Meier <maekke@gentoo.org> qt-gui-4.8.1-r1.ebuild:
+  arm stable, bug #414241
+
+  08 May 2012; Markos Chandras <hwoarang@gentoo.org> qt-gui-4.8.1-r1.ebuild:
+  Stable on amd64 wrt bug #414241
+
+  05 Apr 2012; Johannes Huber <johu@gentoo.org> -qt-gui-4.8.0-r4.ebuild:
+  Drop Qt-4.8.0
+
+*qt-gui-4.8.1-r1 (04 Apr 2012)
+
+  04 Apr 2012; Johannes Huber <johu@gentoo.org>
+  +files/qt-gui-4.8.1-fix-calligra-crash.patch, +qt-gui-4.8.1-r1.ebuild,
+  -qt-gui-4.8.1.ebuild:
+  Revision bump adds upstream patch to fix crash in calligra. Reported in kde
+  packagers ml and requested by dilfridge.
+
+  03 Apr 2012; Jeroen Roovers <jer@gentoo.org> qt-gui-4.7.4-r1.ebuild:
+  Stable for HPPA (bug #390963).
+
+  30 Mar 2012; Markos Chandras <hwoarang@gentoo.org> qt-gui-4.6.3-r2.ebuild,
+  qt-gui-4.6.3.ebuild, qt-gui-4.7.2.ebuild, qt-gui-4.7.4-r1.ebuild,
+  qt-gui-4.8.0-r4.ebuild, qt-gui-4.8.1.ebuild:
+  x11-themes/qgtkstyle is masked for removal. Use x11-libs/qt-gui[gtkstyle]
+  instead
+
+*qt-gui-4.8.1 (29 Mar 2012)
+
+  29 Mar 2012; Davide Pesavento <pesa@gentoo.org> +qt-gui-4.8.1.ebuild:
+  Version bump.
+
+*qt-gui-4.8.0-r4 (27 Mar 2012)
+
+  27 Mar 2012; Davide Pesavento <pesa@gentoo.org> +qt-gui-4.8.0-r4.ebuild,
+  -qt-gui-4.8.0-r3.ebuild:
+  Add xv USE flag; update QCONFIG_* handling; add libICE and libXrender deps;
+  remove libXfont dep.
+
+  27 Mar 2012; Johannes Huber <johu@gentoo.org> -qt-gui-4.6.2.ebuild,
+  -qt-gui-4.6.2-r1.ebuild:
+  Drop Qt-4.6.2
+
+  25 Mar 2012; Fabian Groffen <grobian@gentoo.org> qt-gui-4.7.4-r1.ebuild,
+  qt-gui-4.8.0-r3.ebuild:
+  Extend SSSE Darwin fix to all Intel-based targets
+
+  23 Mar 2012; Davide Pesavento <pesa@gentoo.org> -qt-gui-4.7.4.ebuild,
+  qt-gui-4.7.4-r1.ebuild, qt-gui-4.8.0-r3.ebuild:
+  Fix typo, bug #408895 by BRULE Herman <alpha_one_x86@first-world.info>. Remove
+  old.
+
+*qt-gui-4.8.0-r3 (19 Mar 2012)
+
+  19 Mar 2012; Davide Pesavento <pesa@gentoo.org> +qt-gui-4.8.0-r3.ebuild,
+  -qt-gui-4.8.0-r2.ebuild:
+  Revbump fixing bugs 403129 and 407165.
+
+  28 Feb 2012; Justin Lecher <jlec@gentoo.org> qt-gui-4.8.0-r2.ebuild:
+  correct installation inside prefix
+
+  12 Feb 2012; Markos Chandras <hwoarang@gentoo.org> qt-gui-4.8.0-r2.ebuild:
+  Add missing mesa[egl] dependency. Bug #402183
+
+*qt-gui-4.8.0-r2 (05 Feb 2012)
+
+  05 Feb 2012; Alex Alexander <wired@gentoo.org> -qt-gui-4.8.0-r1.ebuild,
+  +qt-gui-4.8.0-r2.ebuild:
+  raster is marked as the default in the eselect qtgraphicssystem list now
+
+  29 Jan 2012; Joseph Jezak <josejx@gentoo.org> qt-gui-4.7.4-r1.ebuild:
+  Marked ppc ppc64 stable for bug #390963.
+
+*qt-gui-4.8.0-r1 (29 Jan 2012)
+
+  29 Jan 2012; Alex Alexander <wired@gentoo.org> +qt-gui-4.8.0-r1.ebuild,
+  metadata.xml:
+  version bump
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> qt-gui-4.7.4-r1.ebuild:
+  x86 stable, bug #390963
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> qt-gui-4.7.4-r1.ebuild:
+  Stable for AMD64, wrt bug #390963
+
+  17 Dec 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/qt-gui-4.6-libpng-1.5.patch, qt-gui-4.6.3.ebuild,
+  qt-gui-4.6.3-r2.ebuild:
+  Add patch to fix building against libpng-1.5, bug #393141. Non-maintainer
+  commit, ok'ed by tampakrap on IRC.
+
+  03 Dec 2011; Fabian Groffen <grobian@gentoo.org> qt-gui-4.7.4-r1.ebuild:
+  Disable ssse3 on Darwin to fix compilation, thanks Paul, bug #367045
+
+  28 Nov 2011; Davide Pesavento <pesa@gentoo.org> -qt-gui-4.7.3-r1.ebuild,
+  -qt-gui-4.7.3.ebuild:
+  Remove Qt 4.7.3
+
+  28 Nov 2011; Davide Pesavento <pesa@gentoo.org> qt-gui-4.7.4.ebuild,
+  qt-gui-4.7.4-r1.ebuild:
+  Fix bug #368515.
+
+*qt-gui-4.7.4-r1 (28 Nov 2011)
+
+  28 Nov 2011; Theo Chatzimichos <tampakrap@gentoo.org>
+  +qt-gui-4.7.4-r1.ebuild, +files/qt-gui-4.7.4-fix-libreoffice-crash.patch:
+  Backport patch from Qt 4.8 to fix crash in LibreOffice, as pointed out by
+  scarabeus. FreeDesktop bug 40298
+
+  26 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> Manifest:
+  Bug 385719: upstream altered qt-everywhere-opensource-src-4.7.4.tar.gz, mass
+  fix for pesa.
+
+  20 Nov 2011; Davide Pesavento <pesa@gentoo.org> qt-gui-4.6.3.ebuild,
+  qt-gui-4.6.3-r2.ebuild, -files/qt-gui-4.7.0-qtreeview-regression-fix.patch,
+  qt-gui-4.7.2.ebuild, qt-gui-4.7.4.ebuild, -files/hardcoded_fonts.patch:
+  Drop redundant dep on dev-util/pkgconfig; remove unused files.
+
+  12 Nov 2011; Justin Lecher <jlec@gentoo.org> qt-gui-4.6.2.ebuild,
+  qt-gui-4.6.2-r1.ebuild, qt-gui-4.6.3.ebuild, qt-gui-4.6.3-r2.ebuild,
+  qt-gui-4.7.2.ebuild, qt-gui-4.7.3.ebuild, qt-gui-4.7.3-r1.ebuild,
+  qt-gui-4.7.4.ebuild:
+  Corrected Slotting of media-libs/libpng and media-libs/tiff
+
+*qt-gui-4.7.4 (08 Sep 2011)
+
+  08 Sep 2011; Alex Alexander <wired@gentoo.org> +qt-gui-4.7.4.ebuild:
+  version bump, 4.7.4
+
+  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  qt-gui-4.6.3-r2.ebuild:
+  keyword ~sparc-solaris
+
+*qt-gui-4.7.3-r1 (14 Aug 2011)
+
+  14 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  +qt-gui-4.7.3-r1.ebuild, +files/qt-gui-4.7.3-cups.patch:
+  Add patch by Kevin Kofler to obtain default printer settings from cups, bug
+  323257. OK'ed by tampakrap.
 
   13 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> qt-gui-4.7.2.ebuild:
   ppc64 stable wrt #354033
@@ -637,4 +877,3 @@
   21 Dec 2007; Caleb Tennis <caleb@gentoo.org> +metadata.xml,
   +qt-gui-4.4.0_rc1.ebuild:
   Initial ebuild
-

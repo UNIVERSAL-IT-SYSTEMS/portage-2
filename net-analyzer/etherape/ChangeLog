@@ -1,6 +1,29 @@
 # ChangeLog for net-analyzer/etherape
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/etherape/ChangeLog,v 1.60 2011/07/30 08:17:41 patrick Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/etherape/ChangeLog,v 1.67 2012/10/02 19:29:38 zerochaos Exp $
+
+  02 Oct 2012; Rick Farina <zerochaos@gentoo.org> etherape-0.9.12.ebuild:
+  cleanup a bunch of libGlade warnings by adjusting deps
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> etherape-0.9.12.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  27 Sep 2011; Tim Harder <radhermit@gentoo.org> -etherape-0.9.7-r1.ebuild,
+  -etherape-0.9.9.ebuild:
+  Remove old.
+
+  27 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> etherape-0.9.12.ebuild:
+  ppc/ppc64 stable wrt #383689
+
+  24 Sep 2011; Raúl Porcel <armin76@gentoo.org> etherape-0.9.12.ebuild:
+  sparc stable wrt #383689
+
+  20 Sep 2011; Tony Vroon <chainsaw@gentoo.org> etherape-0.9.12.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in security bug #383689 filed by Sean Amoss.
+
+  20 Sep 2011; Andreas Schuerch <nativemad@gentoo.org> etherape-0.9.12.ebuild:
+  x86 stable, see security bug 383689
 
 *etherape-0.9.12 (30 Jul 2011)
 

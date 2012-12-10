@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/iasl/iasl-20100528.ebuild,v 1.1 2010/06/18 06:31:38 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/iasl/iasl-20100528.ebuild,v 1.3 2011/12/25 22:45:59 robbat2 Exp $
 
 inherit toolchain-funcs flag-o-matic eutils
 
@@ -15,18 +15,16 @@ SRC_URI="http://www.acpica.org/download/${MY_P}.tar.gz
 LICENSE="iASL"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
-
 IUSE="test"
-DEPEND="sys-devel/bison
-		sys-devel/flex"
 
+DEPEND="sys-devel/bison
+	sys-devel/flex"
 RDEPEND=""
 
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
-	if use test
-	then
+	if use test && has test ${FEATURES}; then
 		ewarn 'You have selected USE="test". This will install the test results'
 		ewarn "into /usr/share/${PF}/, compressed as a tarball."
 		ewarn 'The tests themselves will only rarely die, but the test results'
@@ -84,7 +82,7 @@ src_install() {
 		dobin "${T}"/${bin}
 	done
 	dodoc README changes.txt
-	if use test ; then
+	if use test && has test ${FEATURES}; then
 		tb="${T}"/testresults.tar.bz2
 		export ASLTSDIR="$(<"${T}"/asltdir)"
 		ebegin "Creating Test Tarball"
@@ -104,7 +102,7 @@ aslts_test() {
 	export	PATH="${PATH}:${ASLTSDIR}/bin"
 	echo "$ASLTSDIR" >"${T}"/asltdir
 	cd "${ASLTSDIR}"
-	edos2unix $(find . -type 'f') || die "edos2unix failed in aslts"
+	edos2unix $(find . -type 'f')
 	make install || die "make install aslts test failed"
 	chmod +x $(find bin/ ! -regex 'ERROR_OPCODES|HOW_TO_USE|README' ) || die "chmod bin +x failed"
 
@@ -117,7 +115,7 @@ aslts_test() {
 aapits_test() {
 	mv "${WORKDIR}/${MY_TESTS_P}/tests/aapits" "${S}/tools/" || die "mv failed"
 	cd "${S}/tools/aapits" || die "cannot find ${S}/tools/aapits"
-	edos2unix $(find . -type 'f') || die "edos2unix failed in aapits"
+	edos2unix $(find . -type 'f')
 	chmod +x $(find bin/ | sed  -r -e '/\/[A-Z_]+$/d') || die "chmod bin +x failed"
 	make || die "make in aapits failed"
 	cd asl || die "cd asl failed"

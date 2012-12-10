@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-misc/xcowsay/xcowsay-1.3.ebuild,v 1.3 2011/03/27 11:04:26 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-misc/xcowsay/xcowsay-1.3.ebuild,v 1.5 2012/05/03 03:29:41 jdhore Exp $
 
 EAPI="2"
 
@@ -18,9 +18,11 @@ RDEPEND="dbus? ( sys-apps/dbus )
 	fortune? ( games-misc/fortune-mod )
 	media-libs/freetype:2
 	media-libs/libpng
-	x11-libs/pango"
+	x11-libs/pango
+	x11-libs/gtk+:2
+	x11-libs/gdk-pixbuf:2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_configure() {
 	econf $(use_enable dbus)

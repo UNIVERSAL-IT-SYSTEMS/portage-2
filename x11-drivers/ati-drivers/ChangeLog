@@ -1,6 +1,278 @@
 # ChangeLog for x11-drivers/ati-drivers
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/ChangeLog,v 1.255 2011/07/13 20:06:39 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/ati-drivers/ChangeLog,v 1.308 2012/11/28 00:39:21 chithanh Exp $
+
+*ati-drivers-12.11_beta8 (28 Nov 2012)
+
+  28 Nov 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-12.11_beta8.ebuild, ati-drivers-12.6.ebuild:
+  New prerelease, import of Emil Karlson's ebuild from the x11 overlay. Address
+  repoman warning that was introduced by the fix for bug #443466.
+
+  27 Nov 2012; Rick Farina <zerochaos@gentoo.org> ati-drivers-12.10.ebuild,
+  ati-drivers-12.11_beta.ebuild, ati-drivers-12.4.ebuild,
+  ati-drivers-12.6.ebuild, ati-drivers-12.6_beta_pre897.ebuild,
+  ati-drivers-12.8.ebuild:
+  masking clinfo for revdep-rebuild, see bug #443466
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> ati-drivers-12.11_beta.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  ati-drivers-12.11_beta.ebuild:
+  Add warning message for xf86-video-intel-2.20.3 crashing bug #430000.
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> ati-drivers-12.11_beta.ebuild:
+  Stable for amd64, wrt bug #440872
+
+  11 Nov 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/ati-drivers-12.9-KCL_AGP_FindCapsRegisters-stub.patch,
+  ati-drivers-12.11_beta.ebuild:
+  add patch to fix building against AGP-less kernel, bug #435322.
+
+  26 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  ati-drivers-12.6_beta_pre897.ebuild:
+  Apply kernel-3.7 patch to legacy drivers too, bug #438516.
+
+  26 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  ati-drivers-12.6_beta_pre897.ebuild:
+  Mark stable on amd64 and warn about bug #436252.
+
+*ati-drivers-12.10 (26 Oct 2012)
+*ati-drivers-12.11_beta (26 Oct 2012)
+
+  26 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-12.10.ebuild, +ati-drivers-12.11_beta.ebuild,
+  +files/ati-drivers-vm-reserverd.patch, -ati-drivers-12.2.ebuild,
+  -ati-drivers-12.9_beta.ebuild, -ati-drivers-12.9_beta9000.ebuild,
+  ati-drivers-12.4.ebuild:
+  New release and prerelease, import of Emil Karlson's ebuild from the x11
+  overlay. Drop some old ebuilds.
+
+*ati-drivers-12.9_beta9000 (15 Oct 2012)
+
+  15 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-12.9_beta9000.ebuild, metadata.xml:
+  New prerelease, import of Emil Karlson's ebuild from the x11 overlay.
+
+  10 Oct 2012; Rick Farina <zerochaos@gentoo.org> ati-drivers-12.2.ebuild,
+  ati-drivers-12.4.ebuild, ati-drivers-12.6.ebuild,
+  ati-drivers-12.6_beta_pre897.ebuild, ati-drivers-12.8.ebuild,
+  ati-drivers-12.9_beta.ebuild:
+  remove require_configured_kernel from ebuild to allow build in catalyst during
+  livecd-stage1
+
+*ati-drivers-12.9_beta (30 Sep 2012)
+
+  30 Sep 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-12.9_beta.ebuild, metadata.xml:
+  Bump to latest beta.
+
+  24 Sep 2012; Mike Frysinger <vapier@gentoo.org> ati-drivers-12.2.ebuild,
+  ati-drivers-12.4.ebuild, ati-drivers-12.6.ebuild,
+  ati-drivers-12.6_beta_pre897.ebuild, ati-drivers-12.8.ebuild:
+  QA_DT_HASH (old/deprecated) -> QA_FLAGS_IGNORED (new hotness).
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  ati-drivers-12.6_beta_pre897.ebuild:
+  x86 stable wrt bug #433665
+
+*ati-drivers-12.8 (09 Sep 2012)
+
+  09 Sep 2012; Rick Farina <zerochaos@gentoo.org> +ati-drivers-12.8.ebuild,
+  +files/ati-drivers-x32_something_something.patch,
+  +files/ati-powermode-opt-path-3.patch:
+  bump to 12.8, see bug #431694 for additional details
+
+  14 Aug 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> metadata.xml:
+  Remove Enrico Tagliavini from maintainers.
+
+  26 Jul 2012; Johannes Huber <johu@gentoo.org> ati-drivers-12.2.ebuild,
+  ati-drivers-12.4.ebuild, ati-drivers-12.6.ebuild,
+  ati-drivers-12.6_beta_pre897.ebuild:
+  Add missing slot dependencies on Qt.
+
+*ati-drivers-12.6_beta_pre897 (21 Jul 2012)
+
+  21 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-12.6_beta_pre897.ebuild, +files/ati-drivers-do_mmap.patch,
+  ati-drivers-12.6.ebuild:
+  Import driver for legacy hardware from x11 overlay, ebuild by Enrico
+  Tagliavini. Update 12.6 ebuild patches per bug #420689 and bug #420751.
+
+*ati-drivers-12.6 (30 Jun 2012)
+
+  30 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -ati-drivers-12.6_beta.ebuild, +ati-drivers-12.6.ebuild:
+  Version bump to proper release from the beta.
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ati-drivers-12.6_beta.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ati-drivers-12.6_beta.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  13 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  ati-drivers-12.6_beta.ebuild:
+  Update description per bug #419493 comment 8.
+
+  13 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  ati-drivers-12.6_beta.ebuild:
+  Guard against CONFIG_X86_X32, bug #419911.
+
+*ati-drivers-12.6_beta (05 Jun 2012)
+
+  05 Jun 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-12.6_beta.ebuild:
+  Bump to prerelease.
+
+  28 May 2012; Michał Górny <mgorny@gentoo.org> ati-drivers-12.4.ebuild,
+  +files/ati-drivers-old_rsp.patch:
+  Add a patch for 3.4 kernel build, proxying for Enrico.
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ati-drivers-12.4.ebuild:
+  x86 stable wrt bug #414609
+
+  06 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Drop unused use-local desc.
+
+  06 May 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -files/ati-drivers-2.6.39.patch,
+  -files/ati-drivers-fix_compilation-bug-297322.patch,
+  -files/ati-drivers-redefine-WARN.patch:
+  Also remove unused patches.
+
+  06 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -ati-drivers-11.10.ebuild,
+  -ati-drivers-11.11.ebuild, -ati-drivers-11.12-r1.ebuild,
+  -ati-drivers-11.12.ebuild, -ati-drivers-11.4.ebuild, -ati-drivers-11.5.ebuild,
+  -ati-drivers-11.6.ebuild, -ati-drivers-11.7.ebuild, -ati-drivers-11.8.ebuild,
+  -ati-drivers-11.9.ebuild, -ati-drivers-12.1-r1.ebuild,
+  -ati-drivers-12.1.ebuild, -ati-drivers-12.3.ebuild:
+  Cleanup the list of available versions as 11.x does not even build with 3.x
+  series of kernel.
+
+  05 May 2012; Markos Chandras <hwoarang@gentoo.org> ati-drivers-12.4.ebuild:
+  Stable on amd64 wrt bug #414609
+
+*ati-drivers-12.4 (30 Apr 2012)
+
+  30 Apr 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-12.4.ebuild, +files/amd-drivers-3.2.7.1.patch:
+  Version bump. Import of Enrico Tagliavini's ebuild from the x11 overlay.
+
+  14 Apr 2012; Markus Meier <maekke@gentoo.org> ati-drivers-12.2.ebuild:
+  x86 stable, bug #409073
+
+*ati-drivers-12.3 (28 Mar 2012)
+
+  28 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-12.3.ebuild:
+  Version bump, import of Enrico Tagliavini's ebuild from the x11 overlay.
+
+  21 Mar 2012; Agostino Sarubbo <ago@gentoo.org> ati-drivers-12.2.ebuild:
+  Stable for amd64, wrt bug #409073
+
+*ati-drivers-12.2 (09 Mar 2012)
+
+  09 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-12.2.ebuild, +files/ati-drivers-12.2-redefine-WARN.patch:
+  Version bump, import of Enrico Tagliavini's ebuild from the x11 overlay.
+
+  07 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  ati-drivers-12.1-r1.ebuild:
+  Invoke eselect opencl during postinst to avoid ati flavour of bug 402407
+
+  04 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  ati-drivers-12.1-r1.ebuild:
+  Drop opencl use flag and install OpenCL unconditionally
+
+*ati-drivers-12.1-r1 (04 Feb 2012)
+
+  04 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +ati-drivers-12.1-r1.ebuild:
+  Add revbump that installs OpenCL related libraries in place that doesn't
+  create conflicts and is expected by app-admin/eselect-opencl. Env file and
+  blocker against nvidia are no longer needed
+
+*ati-drivers-12.1 (30 Jan 2012)
+
+  30 Jan 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-12.1.ebuild:
+  Version bump. Import of Enrico Tagliavini's ebuild from the x11 overlay.
+
+*ati-drivers-11.12-r1 (12 Jan 2012)
+
+  12 Jan 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-11.12-r1.ebuild, +files/ati-drivers-redefine-WARN.patch,
+  metadata.xml:
+  Updated ebuild to build on hardened kernels, bug #392753. Change libOpenCL
+  installation path, bug #391131. Import of Enrico Tagliavini's ebuild from the
+  x11 overlay.
+
+  27 Dec 2011; Markus Meier <maekke@gentoo.org> ati-drivers-11.11.ebuild:
+  x86 stable, bug #394393
+
+  20 Dec 2011; Agostino Sarubbo <ago@gentoo.org> ati-drivers-11.11.ebuild:
+  Stable for AMD64, wrt bug #394393
+
+*ati-drivers-11.12 (15 Dec 2011)
+
+  15 Dec 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-11.12.ebuild:
+  Version bump, import of Enrico Tagliavini's ebuild from the x11 overlay.
+
+  12 Dec 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  ati-drivers-11.11.ebuild:
+  Add a warning for bug #391193.
+
+  24 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  ati-drivers-11.11.ebuild:
+  Block recent nvidia-drivers when opencl is enabled, bug #391131.
+
+  21 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  ati-drivers-11.11.ebuild:
+  Fix installation of OpenCL on x86, bug #391249.
+
+*ati-drivers-11.11 (20 Nov 2011)
+
+  20 Nov 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-11.11.ebuild, metadata.xml:
+  Version bump, import of Enrico Tagliavini's ebuild from the x11 overlay.
+
+*ati-drivers-11.10 (31 Oct 2011)
+
+  31 Oct 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  -files/ati-drivers-2.6.36.patch, -files/ati-drivers-2.6.37.patch,
+  -files/ati-drivers-2.6.38.patch, -ati-drivers-10.10.ebuild,
+  -ati-drivers-10.11.ebuild, -ati-drivers-10.12.ebuild,
+  -ati-drivers-11.2.ebuild, -ati-drivers-11.3.ebuild,
+  +ati-drivers-11.10.ebuild, files/switchlibGL:
+  Version bump, remove drivers older than 6 months.
+
+*ati-drivers-11.9 (02 Oct 2011)
+
+  02 Oct 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-11.9.ebuild, +files/switchlibGL:
+  Version bump, import of Enrico Tagliavini's ebuild from the x11 overlay.
+
+  04 Sep 2011; Markus Meier <maekke@gentoo.org> ati-drivers-11.8.ebuild:
+  x86 stable, bug #380421
+
+  30 Aug 2011; Tony Vroon <chainsaw@gentoo.org> ati-drivers-11.8.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo in bug
+  #380421 filed by Chí-Thanh Christopher Nguyễn.
+
+*ati-drivers-11.8 (20 Aug 2011)
+
+  20 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-11.8.ebuild:
+  Import Enrico Tagliavini's 11.8 ebuild from the x11 overlay.
+
+*ati-drivers-11.7 (11 Aug 2011)
+
+  11 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +ati-drivers-11.7.ebuild:
+  Import Enrico Tagliavini's 11.7 ebuild from the x11 overlay.
 
   13 Jul 2011; Markus Meier <maekke@gentoo.org> ati-drivers-11.6.ebuild:
   x86 stable, bug #371857
@@ -1904,4 +2176,3 @@
   Initial ebuild for the ati precompiled drivers.
   The idea of using cpio is from the icc ebuilds, the rest is from the nvidia-*
   ebuilds.
-

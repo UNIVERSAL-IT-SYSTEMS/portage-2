@@ -1,6 +1,117 @@
 # ChangeLog for dev-perl/DBD-Pg
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/DBD-Pg/ChangeLog,v 1.96 2011/07/30 08:45:52 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/DBD-Pg/ChangeLog,v 1.130 2012/12/09 16:54:14 maekke Exp $
+
+  09 Dec 2012; Markus Meier <maekke@gentoo.org> DBD-Pg-2.19.3.ebuild:
+  arm stable, bug #441218
+
+  08 Dec 2012; Jeroen Roovers <jer@gentoo.org> DBD-Pg-2.19.3.ebuild:
+  Stable for HPPA (bug #441218).
+
+  06 Dec 2012; Agostino Sarubbo <ago@gentoo.org> DBD-Pg-2.19.3.ebuild:
+  Stable for ppc64, wrt bug #441218
+
+  06 Dec 2012; Agostino Sarubbo <ago@gentoo.org> DBD-Pg-2.19.3.ebuild:
+  Stable for ppc, wrt bug #441218
+
+  06 Dec 2012; <ago@gentoo.org> DBD-Pg-2.19.3.ebuild:
+  Stable for x86, wrt bug #441218
+
+  06 Dec 2012; <ago@gentoo.org> DBD-Pg-2.19.3.ebuild:
+  Stable for amd64, wrt bug #441218
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -DBD-Pg-2.19.0.ebuild:
+  Cleanup
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> DBD-Pg-2.19.3.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> DBD-Pg-2.19.2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #418799
+
+*DBD-Pg-2.19.3 (22 Aug 2012)
+
+  22 Aug 2012; Torsten Veller <tove@gentoo.org> +DBD-Pg-2.19.3.ebuild:
+  Version bump
+
+  09 Aug 2012; Brent Baude <ranger@gentoo.org> DBD-Pg-2.19.2.ebuild:
+  Marking DBD-Pg-2.19.2 ppc for bug 418799
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> DBD-Pg-2.19.2.ebuild:
+  Marking DBD-Pg-2.19.2 ppc64 for bug 418799
+
+  05 Aug 2012; Markus Meier <maekke@gentoo.org> DBD-Pg-2.19.2.ebuild:
+  arm stable, bug #418799
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> DBD-Pg-2.19.2.ebuild:
+  Stable for amd64, wrt bug #418799
+
+  02 Aug 2012; Jeff Horelick <jdhore@gentoo.org> DBD-Pg-2.19.2.ebuild:
+  marked x86 per bug 418799
+
+  02 Aug 2012; Jeroen Roovers <jer@gentoo.org> DBD-Pg-2.19.2.ebuild:
+  Stable for HPPA (bug #418799).
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  05 Apr 2012; Torsten Veller <tove@gentoo.org> -DBD-Pg-2.17.2.ebuild,
+  -DBD-Pg-2.18.1.ebuild, -DBD-Pg-2.19.1.ebuild:
+  Cleanup
+
+  17 Mar 2012; Raúl Porcel <armin76@gentoo.org> DBD-Pg-2.19.0.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #407549
+
+*DBD-Pg-2.19.2 (13 Mar 2012)
+
+  13 Mar 2012; Torsten Veller <tove@gentoo.org> +DBD-Pg-2.19.2.ebuild:
+  Version bump
+
+  13 Mar 2012; Jeroen Roovers <jer@gentoo.org> DBD-Pg-2.19.0.ebuild:
+  Stable for HPPA (bug #407549).
+
+  12 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> DBD-Pg-2.19.0.ebuild:
+  x86 stable wrt bug #407549
+
+  11 Mar 2012; Agostino Sarubbo <ago@gentoo.org> DBD-Pg-2.19.0.ebuild:
+  Stable for amd64, wrt bug #407549
+
+  11 Mar 2012; Brent Baude <ranger@gentoo.org> DBD-Pg-2.19.0.ebuild:
+  Marking DBD-Pg-2.19.0 ppc64 for bug 407549
+
+*DBD-Pg-2.19.1 (11 Mar 2012)
+
+  11 Mar 2012; Torsten Veller <tove@gentoo.org> +DBD-Pg-2.19.1.ebuild:
+  Version bump
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org> DBD-Pg-2.19.0.ebuild:
+  Marking DBD-Pg-2.19.0 ppc for bug 407549
+
+*DBD-Pg-2.19.0 (10 Mar 2012)
+
+  10 Mar 2012; Torsten Veller <tove@gentoo.org> +DBD-Pg-2.19.0.ebuild:
+  Version bump
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> DBD-Pg-2.18.1.ebuild:
+  Marking DBD-Pg-2.18.1 ppc64 for bug 396921
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org> DBD-Pg-2.18.1.ebuild:
+  Stable on alpha, bug #396921
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> DBD-Pg-2.18.1.ebuild:
+  x86 stable wrt bug #396921
+
+  08 Feb 2012; Markus Meier <maekke@gentoo.org> DBD-Pg-2.18.1.ebuild:
+  arm stable, bug #396921
+
+  08 Feb 2012; Jeroen Roovers <jer@gentoo.org> DBD-Pg-2.18.1.ebuild:
+  Stable for HPPA (bug #396921).
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> DBD-Pg-2.18.1.ebuild:
+  Marking DBD-Pg-2.18.1 ppc for bug 396921
+
+  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> DBD-Pg-2.18.1.ebuild:
+  Stable for amd64, wrt bug #396921
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> -DBD-Pg-2.17.1-r1.ebuild,
   -DBD-Pg-2.18.0.ebuild:

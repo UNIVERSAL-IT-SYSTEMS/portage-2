@@ -1,6 +1,66 @@
 # ChangeLog for x11-drivers/xf86-video-mach64
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-mach64/ChangeLog,v 1.25 2011/07/30 10:49:15 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/xf86-video-mach64/ChangeLog,v 1.39 2012/12/08 17:10:13 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org>
+  xf86-video-mach64-6.9.3.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> xf86-video-mach64-6.9.3.ebuild:
+  Marking xf86-video-mach64-6.9.3 ppc stable for bug 440872
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
+  xf86-video-mach64-6.9.3.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
+  xf86-video-mach64-6.9.3.ebuild:
+  Stable for amd64, wrt bug #440872
+
+  10 Nov 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  xf86-video-mach64-6.9.1.ebuild, xf86-video-mach64-6.9.2.ebuild,
+  xf86-video-mach64-6.9.3.ebuild:
+  Add dependency on libpciaccess, bug #442204
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org>
+  xf86-video-mach64-6.9.1.ebuild:
+  alpha/ia64/sparc stable wrt #419473
+
+*xf86-video-mach64-6.9.3 (21 Jul 2012)
+
+  21 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-mach64-6.9.3.ebuild:
+  Version bump.
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> xf86-video-mach64-6.9.1.ebuild:
+  Marking xf86-video-mach64-6.9.1 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> xf86-video-mach64-6.9.1.ebuild:
+  Marking xf86-video-mach64-6.9.1 ppc64 stable for bug 419473
+
+*xf86-video-mach64-6.9.2 (05 Jul 2012)
+
+  05 Jul 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-mach64-6.9.2.ebuild:
+  Version bump.
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  xf86-video-mach64-6.9.1.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  xf86-video-mach64-6.9.1.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  16 May 2012; Alexis Ballier <aballier@gentoo.org>
+  xf86-video-mach64-6.9.1.ebuild:
+  keyword ~amd64-fbsd (compile tested only)
+
+*xf86-video-mach64-6.9.1 (24 Mar 2012)
+
+  24 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +xf86-video-mach64-6.9.1.ebuild:
+  Version bump.
 
   30 Jul 2011; Raúl Porcel <armin76@gentoo.org>
   xf86-video-mach64-6.9.0.ebuild:
@@ -101,4 +161,3 @@
 
   28 Jun 2008; Sven Wegener <swegener@gentoo.org> ChangeLog:
   Add missing ChangeLog.
-

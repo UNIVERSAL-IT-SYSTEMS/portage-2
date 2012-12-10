@@ -1,6 +1,63 @@
 # ChangeLog for www-client/conkeror
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/conkeror/ChangeLog,v 1.20 2011/04/26 09:40:59 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-client/conkeror/ChangeLog,v 1.32 2012/06/09 09:06:18 ulm Exp $
+
+*conkeror-1.0_pre20120527 (09 Jun 2012)
+
+  09 Jun 2012; Ulrich Müller <ulm@gentoo.org>
+  +conkeror-1.0_pre20120527.ebuild:
+  New snapshot.
+
+  19 Apr 2012; Ulrich Müller <ulm@gentoo.org> -conkeror-0.9.4-r1.ebuild,
+  files/conkeror.sh:
+  Remove old. Don't look for xulrunner in wrapper script.
+
+  19 Apr 2012; Jeff Horelick <jdhore@gentoo.org>
+  conkeror-1.0_pre20120223.ebuild:
+  marked x86 per bug 412335
+
+  19 Apr 2012; Ulrich Müller <ulm@gentoo.org> conkeror-1.0_pre20120223.ebuild:
+  Call tc-getCC, bug 412335.
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org>
+  conkeror-1.0_pre20120223.ebuild:
+  Stable for amd64, wrt bug #412335
+
+  17 Apr 2012; Ulrich Müller <ulm@gentoo.org> conkeror-0.9.4-r1.ebuild,
+  conkeror-1.0_pre20120223.ebuild:
+  Re-add xulrunner dependency to the stable version, as it doesn't work with
+  firefox. Re-add minimum version requirement for the unstable version.
+
+  17 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> conkeror-0.9.4-r1.ebuild,
+  conkeror-1.0_pre20120223.ebuild:
+  Remove obsolete net-libs/xulrunner from no-op RDEPEND wrt #409483 by Jauhien
+  Piatlicki
+
+*conkeror-1.0_pre20120223 (24 Mar 2012)
+
+  24 Mar 2012; Ulrich Müller <ulm@gentoo.org> -conkeror-0.9.3-r1.ebuild,
+  -conkeror-0.9.3_p20110401.ebuild, +conkeror-1.0_pre20120223.ebuild:
+  Add new snapshot, support firefox as alternative dependency. Remove old.
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  conkeror-0.9.4-r1.ebuild:
+  x86 stable wrt bug #404871
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> conkeror-0.9.4-r1.ebuild:
+  Stable for amd64, wrt bug #404871
+
+*conkeror-0.9.4-r1 (10 Dec 2011)
+
+  10 Dec 2011; Ulrich Mueller <ulm@gentoo.org> -conkeror-0.9.4.ebuild,
+  +conkeror-0.9.4-r1.ebuild, +files/conkeror.sh:
+  Change install location from /usr/lib to /usr/share. Use our own wrapper
+  script instead of the contributed one.
+
+*conkeror-0.9.4 (10 Dec 2011)
+
+  10 Dec 2011; Ulrich Mueller <ulm@gentoo.org> -conkeror-0.9.2.ebuild,
+  +conkeror-0.9.4.ebuild:
+  Version bump, bug 394221. Remove old.
 
   26 Apr 2011; Thomas Kahle <tomka@gentoo.org> conkeror-0.9.3-r1.ebuild:
   x86 stable per bug 361225

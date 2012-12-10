@@ -1,6 +1,37 @@
 # ChangeLog for sys-devel/sparse
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/sparse/ChangeLog,v 1.43 2011/04/08 01:32:23 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/sparse/ChangeLog,v 1.53 2012/07/08 17:34:30 armin76 Exp $
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> sparse-0.4.3.ebuild:
+  ia64/s390/sh/sparc stable wrt #418405
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> sparse-0.4.3.ebuild:
+  Marking sparse-0.4.3 ppc64 for bug 418405
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> sparse-0.4.3.ebuild:
+  Marking sparse-0.4.3 ppc for bug 418405
+
+  03 Jun 2012; Agostino Sarubbo <ago@gentoo.org> sparse-0.4.3.ebuild:
+  Stable for amd64, wrt bug #418405
+
+  03 Jun 2012; Markus Meier <maekke@gentoo.org> sparse-0.4.3.ebuild:
+  arm stable, bug #418405
+
+  02 Jun 2012; Jeroen Roovers <jer@gentoo.org> sparse-0.4.3.ebuild:
+  Stable for HPPA (bug #418405).
+
+  31 May 2012; Jeff Horelick <jdhore@gentoo.org> sparse-0.4.3.ebuild:
+  marked x86 per bug 418405
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> sparse-9999.ebuild:
+  Move to usex from eutils.eclass.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> sparse-0.4.3.ebuild,
+  sparse-9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  21 Sep 2011; Michał Górny <mgorny@gentoo.org> sparse-9999.ebuild:
+  Migrate to git-2.
 
   08 Apr 2011; Diego E. Pettenò <flameeyes@gentoo.org> sparse-0.4.3.ebuild:
   Add a comment on where to find the patches.

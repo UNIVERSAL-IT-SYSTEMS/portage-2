@@ -1,16 +1,15 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/elisp.eclass,v 1.48 2011/02/07 21:48:53 ulm Exp $
-#
-# Copyright 2002-2003 Matthew Kennedy <mkennedy@gentoo.org>
-# Copyright 2003      Jeremy Maitin-Shepard <jbms@attbi.com>
-# Copyright 2007-2010 Christian Faulhammer <fauli@gentoo.org>
-# Copyright 2007-2010 Ulrich Müller <ulm@gentoo.org>
+# $Header: /var/cvsroot/gentoo-x86/eclass/elisp.eclass,v 1.55 2012/08/17 20:29:24 ulm Exp $
 #
 # @ECLASS: elisp.eclass
 # @MAINTAINER:
-# Feel free to contact the Emacs team through <emacs@gentoo.org> if you
-# have problems, suggestions or questions.
+# Gentoo Emacs team <emacs@gentoo.org>
+# @AUTHOR:
+# Matthew Kennedy <mkennedy@gentoo.org>
+# Jeremy Maitin-Shepard <jbms@attbi.com>
+# Christian Faulhammer <fauli@gentoo.org>
+# Ulrich Müller <ulm@gentoo.org>
 # @BLURB: Eclass for Emacs Lisp packages
 # @DESCRIPTION:
 #
@@ -37,8 +36,14 @@
 # @ECLASS-VARIABLE: ELISP_PATCHES
 # @DEFAULT_UNSET
 # @DESCRIPTION:
-# Any patches to apply after unpacking the sources.  Patch files are
-# searched for in the current working dir, WORKDIR, and FILESDIR.
+# Space separated list of patches to apply after unpacking the sources.
+# Patch files are searched for in the current working dir, WORKDIR, and
+# FILESDIR.
+
+# @ECLASS-VARIABLE: ELISP_REMOVE
+# @DEFAULT_UNSET
+# @DESCRIPTION:
+# Space separated list of files to remove after unpacking the sources.
 
 # @ECLASS-VARIABLE: SITEFILE
 # @DEFAULT_UNSET
@@ -71,7 +76,6 @@ esac
 
 DEPEND=">=virtual/emacs-${NEED_EMACS:-21}"
 RDEPEND="${DEPEND}"
-IUSE=""
 
 # @FUNCTION: elisp_pkg_setup
 # @DESCRIPTION:
@@ -89,15 +93,15 @@ elisp_pkg_setup() {
 # src_prepare, call elisp_src_prepare.
 
 elisp_src_unpack() {
-	[ -n "${A}" ] && unpack ${A}
-	if [ -f ${P}.el ]; then
+	[[ -n ${A} ]] && unpack ${A}
+	if [[ -f ${P}.el ]]; then
 		# the "simple elisp" case with a single *.el file in WORKDIR
 		mv ${P}.el ${PN}.el || die
-		[ -d "${S}" ] || S=${WORKDIR}
+		[[ -d ${S} ]] || S=${WORKDIR}
 	fi
 
 	case "${EAPI:-0}" in
-		0|1) [ -d "${S}" ] && cd "${S}"
+		0|1) [[ -d ${S} ]] && cd "${S}"
 			elisp_src_prepare ;;
 	esac
 }
@@ -110,16 +114,23 @@ elisp_src_unpack() {
 elisp_src_prepare() {
 	local patch
 	for patch in ${ELISP_PATCHES}; do
-		if [ -f "${patch}" ]; then
+		if [[ -f ${patch} ]]; then
 			epatch "${patch}"
-		elif [ -f "${WORKDIR}/${patch}" ]; then
+		elif [[ -f ${WORKDIR}/${patch} ]]; then
 			epatch "${WORKDIR}/${patch}"
-		elif [ -f "${FILESDIR}/${patch}" ]; then
+		elif [[ -f ${FILESDIR}/${patch} ]]; then
 			epatch "${FILESDIR}/${patch}"
 		else
 			die "Cannot find ${patch}"
 		fi
 	done
+
+	# apply any user patches
+	epatch_user
+
+	if [[ -n ${ELISP_REMOVE} ]]; then
+		rm ${ELISP_REMOVE} || die
+	fi
 }
 
 # @FUNCTION: elisp_src_configure
@@ -136,7 +147,7 @@ elisp_src_configure() { :; }
 
 elisp_src_compile() {
 	elisp-compile *.el || die
-	if [ -n "${ELISP_TEXINFO}" ]; then
+	if [[ -n ${ELISP_TEXINFO} ]]; then
 		makeinfo ${ELISP_TEXINFO} || die
 	fi
 }
@@ -150,14 +161,15 @@ elisp_src_compile() {
 
 elisp_src_install() {
 	elisp-install ${PN} *.el *.elc || die
-	if [ -n "${SITEFILE}" ]; then
+	if [[ -n ${SITEFILE} ]]; then
 		elisp-site-file-install "${FILESDIR}/${SITEFILE}" || die
 	fi
-	if [ -n "${ELISP_TEXINFO}" ]; then
+	if [[ -n ${ELISP_TEXINFO} ]]; then
 		set -- ${ELISP_TEXINFO}
+		set -- ${@##*/}
 		doinfo ${@/%.*/.info*} || die
 	fi
-	if [ -n "${DOCS}" ]; then
+	if [[ -n ${DOCS} ]]; then
 		dodoc ${DOCS} || die
 	fi
 }

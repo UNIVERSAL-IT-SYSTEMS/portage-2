@@ -1,6 +1,21 @@
 # ChangeLog for sys-kernel/kccmp
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/kccmp/ChangeLog,v 1.18 2010/01/04 22:14:51 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/kccmp/ChangeLog,v 1.22 2012/05/21 10:20:40 johu Exp $
+
+  21 May 2012; Johannes Huber <johu@gentoo.org>
+  -files/kccmp-0.2-r1-no-qt4-missing-include.patch, -kccmp-0.2-r2.ebuild:
+  Remove old wrt bug #311481.
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> kccmp-0.3.ebuild:
+  x86 stable wrt bug #413881
+
+  06 May 2012; Agostino Sarubbo <ago@gentoo.org> kccmp-0.3.ebuild:
+  Stable for amd64, wrt bug #413881
+
+*kccmp-0.3 (27 Mar 2012)
+
+  27 Mar 2012; Michael Pagano <mpagano@gentoo.org> +kccmp-0.3.ebuild:
+  Version bump. bug #409885. Thanks too Michael (kensington).
 
   04 Jan 2010; Markus Meier <maekke@gentoo.org> kccmp-0.2-r2.ebuild:
   x86 stable, bug #299087

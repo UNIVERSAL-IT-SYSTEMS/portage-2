@@ -1,6 +1,31 @@
 # ChangeLog for sci-visualization/gle
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/gle/ChangeLog,v 1.15 2011/06/10 12:07:38 grozin Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/gle/ChangeLog,v 1.20 2012/07/17 14:37:31 jlec Exp $
+
+  17 Jul 2012; Justin Lecher <jlec@gentoo.org> gle-4.2.4b.ebuild,
+  +files/gle-4.2.4b-gcc-4.7.patch:
+  Fix for gcc-4.7, #426978
+
+  10 Mar 2012; Andrey Grozin <grozin@gentoo.org> -gle-4.2.4.ebuild,
+  -files/gle-4.2.4-parallel.patch, -files/gle-4.2.4-qt-4.8.patch,
+  +files/gle-4.2.4b-parallel.patch:
+  Added the forgotten patch
+
+*gle-4.2.4b (09 Mar 2012)
+
+  09 Mar 2012; Andrey Grozin <grozin@gentoo.org> +gle-4.2.4b.ebuild:
+  Version bump, closing #407389
+
+  08 Mar 2012; Andrey Grozin <grozin@gentoo.org> -gle-4.2.3b.ebuild,
+  -files/gle-4.2.3b-overflows.patch, -files/gle-4.2.3b-parallel.patch,
+  gle-4.2.4.ebuild, +files/gle-4.2.4-qt-4.8.patch:
+  Fixed compilation with qt-4.8, removed old
+
+*gle-4.2.4 (09 Jan 2012)
+
+  09 Jan 2012; Andrey Grozin <grozin@gentoo.org> +gle-4.2.4.ebuild,
+  +files/gle-4.2.4-parallel.patch:
+  Version bump
 
   10 Jun 2011; Andrey Grozin <grozin@gentoo.org> gle-4.2.3b.ebuild:
   Fixed dependence with USE=qt4, thanks to fulvio ciriaco <oivulf@gmail.com>

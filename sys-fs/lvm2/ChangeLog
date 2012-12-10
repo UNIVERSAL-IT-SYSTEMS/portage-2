@@ -1,6 +1,215 @@
 # ChangeLog for sys-fs/lvm2
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/lvm2/ChangeLog,v 1.246 2011/07/29 08:14:15 zmedico Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/lvm2/ChangeLog,v 1.282 2012/12/09 22:51:02 ago Exp $
+
+  09 Dec 2012; Agostino Sarubbo <ago@gentoo.org> lvm2-2.02.97-r1.ebuild:
+  Stable for ppc64, wrt bug #435076
+
+  08 Dec 2012; Markus Meier <maekke@gentoo.org> lvm2-2.02.97-r1.ebuild:
+  arm stable, bug #435076
+
+  29 Nov 2012; Brent Baude <ranger@gentoo.org> lvm2-2.02.97-r1.ebuild:
+  Marking lvm2-2.02.97-r1 ppc for bug 435076
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  lvm2-2.02.97-r1.ebuild:
+  Use udev.eclass to read correct udevdir value from udev.pc file.
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> lvm2-2.02.67.ebuild,
+  lvm2-2.02.67-r1.ebuild, lvm2-2.02.67-r2.ebuild, lvm2-2.02.70.ebuild,
+  lvm2-2.02.70-r1.ebuild, lvm2-2.02.72.ebuild, lvm2-2.02.73.ebuild,
+  lvm2-2.02.73-r1.ebuild, lvm2-2.02.74.ebuild, lvm2-2.02.83.ebuild,
+  lvm2-2.02.84.ebuild, lvm2-2.02.85.ebuild, lvm2-2.02.88.ebuild,
+  lvm2-2.02.92.ebuild, lvm2-2.02.93.ebuild, lvm2-2.02.93-r1.ebuild,
+  lvm2-2.02.95.ebuild, lvm2-2.02.95-r1.ebuild, lvm2-2.02.95-r2.ebuild,
+  lvm2-2.02.95-r3.ebuild, lvm2-2.02.95-r4.ebuild, lvm2-2.02.97.ebuild,
+  lvm2-2.02.97-r1.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+  24 Nov 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/lvm2-2.02.97-strict-aliasing.patch:
+  Commit forgotten patch (by Alexander Tsoy)
+
+*lvm2-2.02.97-r1 (24 Nov 2012)
+
+  24 Nov 2012; Pacho Ramos <pacho@gentoo.org> +lvm2-2.02.97-r1.ebuild:
+  Fix strict aliasing bug (#444328 by MJJoker, Alexander Tsoy and Vicente
+  Olivert Riera), fix AR being called directly (#444082 by Vicente Olivert
+  Riera).
+
+*lvm2-2.02.97 (12 Aug 2012)
+
+  12 Aug 2012; Robin H. Johnson <robbat2@gentoo.org> +lvm2-2.02.97.ebuild,
+  files/lvm2-2.02.95-udev185.patch:
+  Version bump, helps with new udev/systemd.
+
+*lvm2-2.02.95-r4 (08 Aug 2012)
+
+  08 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> +lvm2-2.02.95-r4.ebuild:
+  Use udev.pc pkg-config file to determine correct udevdir for compability with
+  sys-fs/udev >= 187.
+
+*lvm2-2.02.95-r3 (05 Jul 2012)
+
+  05 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +lvm2-2.02.95-r3.ebuild,
+  +files/lvm2-2.02.95-udev185.patch:
+  Fix compability with sys-fs/udev >= 185 wrt #424810 by Marien Zwart
+
+  07 Jun 2012; Robin H. Johnson <robbat2@gentoo.org> lvm2-2.02.95-r2.ebuild:
+  Bug #419871: Drop comments that say /usr is not used.
+
+  27 May 2012; Robin H. Johnson <robbat2@gentoo.org> lvm2-2.02.95-r2.ebuild,
+  metadata.xml:
+  Bug #417735: Make thin-provisioning-tools optional because some users are
+  complaining about boost headers as a dependency.
+
+  27 May 2012; Robin H. Johnson <robbat2@gentoo.org> lvm2-2.02.95-r2.ebuild:
+  Whitespace.
+
+*lvm2-2.02.95-r2 (27 May 2012)
+
+  27 May 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/device-mapper.rc-2.02.95-r2, +files/lvm.rc-2.02.95-r2,
+  +lvm2-2.02.95-r2.ebuild:
+  Revbump to use /run for locking and sockets, also bring in new thin
+  provisioning tools. Please ensure you are running the new baselayout and
+  openrc before you switch to this version! The old addon scripts have been
+  converted to plain init.d scripts now. Bugs #409921, #417491.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> lvm2-2.02.67.ebuild,
+  lvm2-2.02.67-r1.ebuild, lvm2-2.02.67-r2.ebuild, lvm2-2.02.70.ebuild,
+  lvm2-2.02.70-r1.ebuild, lvm2-2.02.72.ebuild, lvm2-2.02.73.ebuild,
+  lvm2-2.02.73-r1.ebuild, lvm2-2.02.74.ebuild, lvm2-2.02.83.ebuild,
+  lvm2-2.02.84.ebuild, lvm2-2.02.85.ebuild, lvm2-2.02.88.ebuild,
+  lvm2-2.02.92.ebuild, lvm2-2.02.93.ebuild, lvm2-2.02.93-r1.ebuild,
+  lvm2-2.02.95.ebuild, lvm2-2.02.95-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> lvm2-2.02.95-r1.ebuild:
+  Add ~amd64-linux keyword.
+
+*lvm2-2.02.95-r1 (31 Mar 2012)
+
+  31 Mar 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/lvm2-2.02.95-lvmpath.patch, +lvm2-2.02.95-r1.ebuild:
+  Bug #409921: udev upstream rules were buggy, patch from upstream pending next
+  release.
+
+  27 Mar 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/lvm2-start.sh-2.02.95, files/lvm2-start.sh-2.02.67-r1,
+  lvm2-2.02.95.ebuild:
+  Bug #354021: update start.sh for LVM2 speedups.
+
+*lvm2-2.02.95 (27 Mar 2012)
+
+  27 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> +lvm2-2.02.95.ebuild:
+  Version bump. Include bug #409769: ability to disable udev support. Bug
+  #403263, #382939: updated clvm dependencies.
+
+  26 Mar 2012; Mike Frysinger <vapier@gentoo.org> lvm2-2.02.88.ebuild,
+  +files/lvm2-2.02.88-respect-cc.patch, lvm2-2.02.92.ebuild,
+  lvm2-2.02.93.ebuild, lvm2-2.02.93-r1.ebuild:
+  Respect the $CC value that autoconf setup.
+
+*lvm2-2.02.93-r1 (20 Mar 2012)
+
+  20 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> +lvm2-2.02.93-r1.ebuild:
+  Don't enable USE="static" or USE="static-libs" by default anymore because
+  initramfs is required with latest udev for separate /usr in anycase. This was
+  a workaround for cross / and /usr linking.
+
+  14 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> lvm2-2.02.93.ebuild:
+  Bug #408109, change sed seperator for weird values of libdir. Also die on
+  fail.
+
+  03 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> lvm2-2.02.92.ebuild,
+  lvm2-2.02.93.ebuild:
+  USE="static" was missing a DEPEND for sys-fs/udev with USE="static-libs"
+  enabled wrt #405135 by Alexey Shvetsov
+
+*lvm2-2.02.93 (01 Mar 2012)
+
+  01 Mar 2012; Robin H. Johnson <robbat2@gentoo.org> +lvm2-2.02.93.ebuild:
+  version bump.
+
+  25 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> lvm2-2.02.88.ebuild:
+  ppc64 stable wrt #400557
+
+*lvm2-2.02.92 (21 Feb 2012)
+
+  21 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/lvm2-2.02.92-dynamic-static-ldflags.patch,
+  +files/lvm2-2.02.92-locale-muck.patch, +lvm2-2.02.92.ebuild:
+  Bug #402193: version bump. lvmetad does not compile, will be added in 2.02.93.
+
+  11 Feb 2012; Raúl Porcel <armin76@gentoo.org> lvm2-2.02.88.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #400557
+
+  10 Feb 2012; Jeff Horelick <jdhore@gentoo.org> lvm2-2.02.88.ebuild:
+  x86 stable per bug 400557
+
+  10 Feb 2012; Markus Meier <maekke@gentoo.org> lvm2-2.02.88.ebuild:
+  arm stable, bug #400557
+
+  07 Feb 2012; Jeroen Roovers <jer@gentoo.org> lvm2-2.02.88.ebuild:
+  Stable for HPPA (bug #400557).
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> lvm2-2.02.88.ebuild:
+  Marking lvm2-2.02.88 ppc for bug 400557
+
+  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org> lvm2-2.02.88.ebuild:
+  Stable for amd64, wrt bug #400557
+
+  30 Nov 2011; Mike Frysinger <vapier@gentoo.org> lvm2-2.02.73-r1.ebuild,
+  lvm2-2.02.74.ebuild, lvm2-2.02.83.ebuild, lvm2-2.02.84.ebuild,
+  lvm2-2.02.85.ebuild, lvm2-2.02.88.ebuild:
+  Add missing readline dep with USE=readline.
+
+  22 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> lvm2-2.02.73-r1.ebuild:
+  ppc stable wrt #334087
+
+  13 Sep 2011; Robin H. Johnson <robbat2@gentoo.org>
+  -files/device-mapper.rc-1.02.22-r3, -files/64-device-mapper.rules-1.02.22-r5,
+  -files/64-device-mapper.rules-1.02.49-r2, -files/lvm.rc-2.02.28-r2,
+  -files/lvm2-start.sh-2.02.28-r2, -files/clvmd.rc-2.02.28-r3,
+  -files/lvm2-stop.sh-2.02.28-r5, -lvm2-2.02.33.ebuild,
+  -lvm2-2.02.33-r1.ebuild, -files/lvm.conf-2.02.33.patch, -lvm2-2.02.36.ebuild,
+  -files/lvm.conf-2.02.36.patch, -files/lvm2-stop.sh-2.02.37,
+  -lvm2-2.02.37.ebuild, -lvm2-2.02.39.ebuild, -lvm2-2.02.42.ebuild,
+  -lvm2-2.02.45.ebuild, -lvm2-2.02.45-r1.ebuild, -lvm2-2.02.45-r2.ebuild,
+  -files/lvm2-2.02.45-device-mapper-export-format.patch,
+  -files/lvm2-2.02.45-dmeventd.patch, -files/lvm.conf-2.02.45.patch,
+  -lvm2-2.02.48.ebuild, -lvm2-2.02.48-r1.ebuild, -lvm2-2.02.48-r2.ebuild,
+  -files/lvm2-2.02.48-as-needed.patch,
+  -files/lvm2-2.02.48-device-mapper-export-format.patch,
+  -files/lvm2-2.02.48-fix-pkgconfig.patch, -lvm2-2.02.49.ebuild,
+  -files/lvm2-start.sh-2.02.49-r1, -files/lvm2-stop.sh-2.02.49-r1,
+  -lvm2-2.02.49-r1.ebuild, -lvm2-2.02.49-r2.ebuild, -lvm2-2.02.49-r3.ebuild,
+  -files/lvm2-2.02.49-lockdir-override.patch, -lvm2-2.02.51.ebuild,
+  -lvm2-2.02.51-r1.ebuild, -lvm2-2.02.51-r2.ebuild, -lvm2-2.02.51-r3.ebuild,
+  -files/lvm2-2.02.51-as-needed.patch,
+  -files/lvm2-2.02.51-device-mapper-export-format.patch,
+  -files/lvm2-2.02.51-dmsetup-selinux-linking-fix.patch,
+  -files/lvm2-2.02.51-dmsetup-selinux-linking-fix-r3.patch,
+  -files/lvm2-2.02.51-fix-pvcreate.patch, -files/lvm.conf-2.02.51.patch,
+  -lvm2-2.02.56.ebuild, -lvm2-2.02.56-r1.ebuild, -lvm2-2.02.56-r2.ebuild,
+  -files/64-device-mapper.rules-2.02.56-r3, -lvm2-2.02.56-r3.ebuild,
+  -files/lvm2-2.02.56-always-make-static-libdm.patch,
+  -files/lvm2-2.02.56-device-mapper-export-format.patch,
+  -files/lvm2-2.02.56-dmeventd.patch, -files/lvm.conf-2.02.56.patch,
+  -lvm2-2.02.63-r1.ebuild, -lvm2-2.02.63-r2.ebuild, -lvm2-2.02.64.ebuild,
+  lvm2-2.02.88.ebuild:
+  Clean up old versions and FILESDIR for them. Fix install of VERSION_DM in
+  2.02.88.
+
+  08 Sep 2011; Robin H. Johnson <robbat2@gentoo.org> lvm2-2.02.88.ebuild:
+  Fix spelling and grammar (bug #382157).
+
+*lvm2-2.02.88 (05 Sep 2011)
+
+  05 Sep 2011; Robin H. Johnson <robbat2@gentoo.org> +lvm2-2.02.88.ebuild:
+  Version bump (bug #376749), more docs (bug #378855), USE=static-libs (bug
+  #379039).
 
   29 Jul 2011; Zac Medico <zmedico@gentoo.org> lvm2-2.02.85.ebuild:
   Add ~x86-linux keyword.
@@ -1167,4 +1376,3 @@
 
   12 May 2003; Max Kalika <max@gentoo.org> lvm2-1.95.10.ebuild:
   Initial version.
-

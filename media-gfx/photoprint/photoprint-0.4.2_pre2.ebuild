@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/photoprint/photoprint-0.4.2_pre2.ebuild,v 1.1 2011/02/28 07:07:31 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/photoprint/photoprint-0.4.2_pre2.ebuild,v 1.4 2012/06/11 17:23:09 radhermit Exp $
 
 EAPI=4
 
@@ -28,16 +28,19 @@ RDEPEND="cups? ( net-print/cups )
 	x11-proto/xproto"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-cups-automagic.patch
+	epatch "${FILESDIR}"/${P}-cups-automagic.patch \
+		"${FILESDIR}"/${P}-tests.patch \
+		"${FILESDIR}"/${P}-underlinking.patch \
+		"${FILESDIR}"/${P}-glib-2.32.patch
 
 	# Ships with po/Makefile.in.in from gettext-0.17
 	# which fails with >=gettext-0.18
-	cp "${EROOT}"/usr/share/gettext/po/Makefile.in.in po/
+	sed -i -e "/AM_GNU_GETTEXT_VERSION/s/17/18/" configure.ac || die
 
 	eautoreconf
 }

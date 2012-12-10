@@ -1,6 +1,68 @@
 # ChangeLog for x11-wm/sawfish
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-wm/sawfish/ChangeLog,v 1.98 2011/07/20 16:44:05 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-wm/sawfish/ChangeLog,v 1.116 2012/10/28 16:39:36 armin76 Exp $
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> sawfish-1.9.0.ebuild:
+  alpha/ia64/sh/sparc stable wrt #427544
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> sawfish-1.9.0.ebuild:
+  stable ppc, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> sawfish-1.9.0.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  04 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> sawfish-1.9.0.ebuild:
+  x86 stable wrt bug #427544
+
+*sawfish-1.9.1 (15 Sep 2012)
+
+  15 Sep 2012; Pacho Ramos <pacho@gentoo.org> +sawfish-1.9.1.ebuild:
+  Version bump.
+
+*sawfish-1.9.0 (08 Jul 2012)
+
+  08 Jul 2012; Pacho Ramos <pacho@gentoo.org> +sawfish-1.9.0.ebuild:
+  Version bump.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> sawfish-1.8.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  27 Mar 2012; Pacho Ramos <pacho@gentoo.org> -sawfish-1.3.3.ebuild,
+  -sawfish-1.6.3.ebuild, metadata.xml:
+  Drop old.
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> sawfish-1.3.3.ebuild:
+  Remove USE="esd" because media-sound/esound isn't in tree anymore.
+
+  24 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  sawfish-1.8.2.ebuild:
+  Depend on pango[X] (bug #405657, thanks to Piotr Szymaniak for reporting).
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> sawfish-1.8.2.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> sawfish-1.8.2.ebuild:
+  x86 stable wrt bug #385699
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> sawfish-1.8.2.ebuild:
+  ppc stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> sawfish-1.8.2.ebuild:
+  amd64 stable wrt #385699
+
+*sawfish-1.8.2 (12 Sep 2011)
+
+  12 Sep 2011; Pacho Ramos <pacho@gentoo.org> +sawfish-1.8.2.ebuild:
+  Version bump, drop .la files.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> sawfish-1.6.3.ebuild:
+  alpha/ia64/sparc stable wrt #376345
+
+  06 Aug 2011; Markus Meier <maekke@gentoo.org> sawfish-1.6.3.ebuild:
+  x86 stable, bug #376345
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> sawfish-1.6.3.ebuild:
+  Stable on amd64 wrt bug #376345
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> sawfish-1.3.3.ebuild:
   Force librep-0.17, bug #368031 by taaroa.

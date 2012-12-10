@@ -1,6 +1,46 @@
 # ChangeLog for app-accessibility/orca
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/orca/ChangeLog,v 1.101 2011/03/22 20:03:52 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/orca/ChangeLog,v 1.109 2012/05/20 09:32:52 tetromino Exp $
+
+*orca-3.4.2 (20 May 2012)
+
+  20 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -orca-3.2.1.ebuild,
+  orca-3.2.2.ebuild, +orca-3.4.2.ebuild:
+  Version bump for gnome-3.4 with lots of bug fixes. Depend on
+  speech-dispatcher with python support. Drop old.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> orca-2.32.1.ebuild,
+  orca-3.2.1.ebuild, orca-3.2.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  13 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org> orca-2.32.1.ebuild,
+  orca-3.2.1.ebuild, orca-3.2.2.ebuild:
+  Add missing pycairo dep; modernize py-compile fix.
+
+  01 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org> orca-2.32.1.ebuild,
+  orca-3.2.1.ebuild, orca-3.2.2.ebuild:
+  Fix py-compile idiom for automake-1.11.2 compatibility (bug #396585).
+
+*orca-3.2.2 (21 Dec 2011)
+
+  21 Dec 2011; Gilles Dartiguelongue <eva@gentoo.org> +orca-3.2.2.ebuild:
+  Version bump.
+
+*orca-3.2.1 (05 Nov 2011)
+
+  05 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> -orca-3.0.3.ebuild,
+  +orca-3.2.1.ebuild:
+  Bump to 3.2.1 from the gnome overlay, drop old. Notable changes: now uses
+  at-spi2-core and pygobject-3. Dropped alpha, ia64, ppc, ppc64, sparc keywords
+  due to at-spi2-core dependency.
+
+  19 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> orca-2.32.1.ebuild:
+  Fix slot dep on at-spi, etc.
+
+*orca-3.0.3 (16 Aug 2011)
+
+  16 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> +orca-3.0.3.ebuild:
+  Bump to 3.0.3, from gnome overlay for GNOME 3
 
   22 Mar 2011; Brent Baude <ranger@gentoo.org> orca-2.32.1.ebuild:
   Marking orca-2.32.1 ppc stable for bug 353436

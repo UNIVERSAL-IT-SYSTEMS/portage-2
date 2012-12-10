@@ -1,6 +1,28 @@
 # ChangeLog for x11-libs/libsexy
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libsexy/ChangeLog,v 1.53 2011/05/21 04:43:08 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libsexy/ChangeLog,v 1.58 2012/06/19 10:14:45 ssuominen Exp $
+
+  19 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> libsexy-0.1.11-r3.ebuild:
+  Use prune_libtool_files from eutils.eclass. Punt acinclude.m4 to ensure
+  system gtk-doc-m4 from dev-util/gtk-doc-am get used wrt #420913. Thanks to
+  "Kevin" for reporting and Rafał Mużyło for solution.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libsexy-0.1.11-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -libsexy-0.1.11-r2.ebuild:
+  old
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libsexy-0.1.11-r3.ebuild:
+  Stabilize for everyone (only trivial change).
+
+*libsexy-0.1.11-r3 (14 Sep 2011)
+
+  14 Sep 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +libsexy-0.1.11-r3.ebuild, +files/libsexy-0.1.11-pkgconfig-pollution.patch:
+  Use Libs.private instead of Libs to pass libraries for static linking wrt
+  #380193 by Diego Elio Pettenò
 
   21 May 2011; Samuli Suominen <ssuominen@gentoo.org> libsexy-0.1.11-r2.ebuild:
   ppc/ppc64 stable wrt #361917

@@ -1,6 +1,233 @@
 # ChangeLog for sci-chemistry/ccpn
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ccpn/ChangeLog,v 1.65 2011/06/29 05:51:28 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ccpn/ChangeLog,v 1.99 2012/11/25 09:16:31 jlec Exp $
+
+*ccpn-2.2.2_p121125 (25 Nov 2012)
+
+  25 Nov 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p121125.ebuild:
+  Todays python patches, drop USE=extendnmr
+
+*ccpn-2.2.2_p121119 (19 Nov 2012)
+
+  19 Nov 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p121119.ebuild:
+  Todays python patch
+
+*ccpn-2.2.2_p121112 (12 Nov 2012)
+
+  12 Nov 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p121112.ebuild:
+  Todays Python Patches
+
+*ccpn-2.2.2_p121012 (12 Oct 2012)
+
+  12 Oct 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p121012.ebuild:
+  Todays python patches
+
+  20 Sep 2012; Justin Lecher <jlec@gentoo.org> -ccpn-2.2.1_p120109.ebuild,
+  -ccpn-2.2.1_p120304.ebuild, -ccpn-2.2.2.ebuild, -ccpn-2.2.2_p120403.ebuild,
+  -ccpn-2.2.2_p120423.ebuild, -ccpn-2.2.2_p120511.ebuild,
+  -ccpn-2.2.2_p120709.ebuild, -ccpn-2.2.2_p120731.ebuild,
+  -ccpn-2.2.2_p120809-r1.ebuild, -ccpn-2.2.2_p120812.ebuild,
+  -ccpn-2.2.2_p120826.ebuild:
+  Drop old
+
+*ccpn-2.2.2_p120912 (12 Sep 2012)
+
+  12 Sep 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p120912.ebuild:
+  Todays python patches
+
+*ccpn-2.2.2_p120829 (29 Aug 2012)
+
+  29 Aug 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p120829.ebuild:
+  Todays python fixes
+
+*ccpn-2.2.2_p120826 (26 Aug 2012)
+
+  26 Aug 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p120826.ebuild:
+  Todays python Patches
+
+*ccpn-2.2.2_p120812 (12 Aug 2012)
+
+  12 Aug 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p120812.ebuild:
+  Todays python patches
+
+*ccpn-2.2.2_p120809-r1 (09 Aug 2012)
+
+  09 Aug 2012; Justin Lecher <jlec@gentoo.org> -ccpn-2.2.2_p120809.ebuild,
+  +ccpn-2.2.2_p120809-r1.ebuild:
+  Update the patches
+
+*ccpn-2.2.2_p120809 (09 Aug 2012)
+
+  09 Aug 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p120809.ebuild:
+  Todays python fixes
+
+*ccpn-2.2.2_p120731 (31 Jul 2012)
+
+  31 Jul 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p120731.ebuild:
+  Latest python patches
+
+*ccpn-2.2.2_p120709 (09 Jul 2012)
+
+  09 Jul 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p120709.ebuild:
+  Add Todays python patches
+
+  06 Jun 2012; Justin Lecher <jlec@gentoo.org> ccpn-2.1.3.1_p100806.ebuild:
+  Fix tarball download location, #419849
+
+*ccpn-2.2.2_p120511 (11 May 2012)
+
+  11 May 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p120511.ebuild:
+  Bump to latest python fixes
+
+  23 Apr 2012; Justin Lecher <jlec@gentoo.org> Manifest:
+  Digest fix
+
+*ccpn-2.2.2_p120423 (23 Apr 2012)
+
+  23 Apr 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.2_p120423.ebuild:
+  Todays Python Patches
+
+*ccpn-2.2.2_p120403 (03 Apr 2012)
+
+  03 Apr 2012; Justin Lecher <jlec@gentoo.org> -files/2.1.5-parallel.patch,
+  -ccpn-2.1.5_p111213.ebuild, -ccpn-2.1.5_p111220.ebuild,
+  -ccpn-2.1.5_p111221.ebuild, -ccpn-2.1.5_p120109.ebuild,
+  -ccpn-2.1.5_p120304.ebuild, -ccpn-2.2.1_p111213.ebuild,
+  -ccpn-2.2.1_p111220.ebuild, -ccpn-2.2.1_p111221.ebuild,
+  +ccpn-2.2.2_p120403.ebuild:
+  Cleaned old, add latest python patches
+
+*ccpn-2.2.2 (03 Apr 2012)
+
+  03 Apr 2012; Justin Lecher <jlec@gentoo.org> +files/2.2.2-parallel.patch,
+  +ccpn-2.2.2.ebuild:
+  Version Bump
+
+*ccpn-2.2.1_p120304 (04 Mar 2012)
+*ccpn-2.1.5_p120304 (04 Mar 2012)
+
+  04 Mar 2012; Justin Lecher <jlec@gentoo.org> ccpn-2.1.3.1_p100806.ebuild,
+  ccpn-2.1.5_p120109.ebuild, +ccpn-2.1.5_p120304.ebuild,
+  ccpn-2.2.1_p120109.ebuild, +ccpn-2.2.1_p120304.ebuild:
+  Today's python patches
+
+*ccpn-2.2.1_p120109 (09 Jan 2012)
+*ccpn-2.1.5_p120109 (09 Jan 2012)
+
+  09 Jan 2012; Justin Lecher <jlec@gentoo.org> +ccpn-2.1.5_p120109.ebuild,
+  +ccpn-2.2.1_p120109.ebuild:
+  Todays Python Patches
+
+*ccpn-2.2.1_p111221 (21 Dec 2011)
+*ccpn-2.1.5_p111221 (21 Dec 2011)
+
+  21 Dec 2011; Justin Lecher <jlec@gentoo.org> +ccpn-2.1.5_p111221.ebuild,
+  +ccpn-2.2.1_p111221.ebuild:
+  Todays Python Patches
+
+*ccpn-2.2.1_p111220 (20 Dec 2011)
+*ccpn-2.1.5_p111220 (20 Dec 2011)
+
+  20 Dec 2011; Justin Lecher <jlec@gentoo.org> -ccpn-2.1.5_p110602.ebuild,
+  -ccpn-2.1.5_p110629.ebuild, -ccpn-2.1.5_p110817.ebuild,
+  -ccpn-2.1.5_p110905.ebuild, -ccpn-2.1.5_p110926.ebuild,
+  -ccpn-2.1.5_p111011.ebuild, -ccpn-2.1.5_p111017.ebuild,
+  -ccpn-2.1.5_p111028.ebuild, -ccpn-2.1.5_p111124.ebuild,
+  +ccpn-2.1.5_p111220.ebuild, -ccpn-2.2.1_p110602.ebuild,
+  -ccpn-2.2.1_p110629.ebuild, -ccpn-2.2.1_p110817.ebuild,
+  -ccpn-2.2.1_p110905.ebuild, -ccpn-2.2.1_p110926.ebuild,
+  -ccpn-2.2.1_p111011.ebuild, -ccpn-2.2.1_p111017.ebuild,
+  -ccpn-2.2.1_p111019.ebuild, -ccpn-2.2.1_p111028.ebuild,
+  -ccpn-2.2.1_p111124.ebuild, +ccpn-2.2.1_p111220.ebuild:
+  Todays Python Patches, cleaned old
+
+*ccpn-2.2.1_p111213 (13 Dec 2011)
+*ccpn-2.1.5_p111213 (13 Dec 2011)
+
+  13 Dec 2011; Justin Lecher <jlec@gentoo.org> +ccpn-2.1.5_p111213.ebuild,
+  +ccpn-2.2.1_p111213.ebuild:
+  Todays Python patches
+
+*ccpn-2.2.1_p111124 (24 Nov 2011)
+*ccpn-2.1.5_p111124 (24 Nov 2011)
+
+  24 Nov 2011; Justin Lecher <jlec@gentoo.org> +ccpn-2.1.5_p111124.ebuild,
+  +ccpn-2.2.1_p111124.ebuild:
+  Todays Python patches
+
+*ccpn-2.2.1_p111028 (28 Oct 2011)
+*ccpn-2.1.5_p111028 (28 Oct 2011)
+
+  28 Oct 2011; Justin Lecher <jlec@gentoo.org> +ccpn-2.1.5_p111028.ebuild,
+  +ccpn-2.2.1_p111028.ebuild:
+  Todays Python patches
+
+*ccpn-2.2.1_p111019 (19 Oct 2011)
+
+  19 Oct 2011; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.1_p111019.ebuild,
+  ccpn-2.1.5_p110926.ebuild, ccpn-2.2.1_p111017.ebuild,
+  ccpn-2.2.1_p110926.ebuild, ccpn-2.1.5_p111017.ebuild, metadata.xml,
+  ccpn-2.2.1_p111011.ebuild, ccpn-2.1.5_p111011.ebuild:
+  Todays Python patches, fix for psipred32
+
+*ccpn-2.2.1_p111017 (17 Oct 2011)
+*ccpn-2.1.5_p111017 (17 Oct 2011)
+
+  17 Oct 2011; Justin Lecher <jlec@gentoo.org> +ccpn-2.2.1_p111017.ebuild,
+  +ccpn-2.1.5_p111017.ebuild, metadata.xml:
+  Todays Python patches
+
+*ccpn-2.2.1_p111011 (11 Oct 2011)
+*ccpn-2.1.5_p111011 (11 Oct 2011)
+
+  11 Oct 2011; Justin Lecher <jlec@gentoo.org> -ccpn-2.1.5_p110928.ebuild,
+  +ccpn-2.1.5_p111011.ebuild, -ccpn-2.2.1_p110928.ebuild,
+  +ccpn-2.2.1_p111011.ebuild:
+  Added fix for python import
+
+  07 Oct 2011; Justin Lecher <jlec@gentoo.org> ccpn-2.1.5_p110602.ebuild,
+  ccpn-2.1.5_p110629.ebuild, ccpn-2.1.5_p110817.ebuild,
+  ccpn-2.1.5_p110905.ebuild, ccpn-2.1.5_p110926.ebuild,
+  ccpn-2.1.5_p110928.ebuild, ccpn-2.2.1_p110602.ebuild,
+  ccpn-2.2.1_p110629.ebuild, ccpn-2.2.1_p110817.ebuild,
+  ccpn-2.2.1_p110905.ebuild, ccpn-2.2.1_p110926.ebuild,
+  ccpn-2.2.1_p110928.ebuild:
+  Corrected version to aria patches for newer ccpn data model, kindly provided
+  by Tim Stevens
+
+  28 Sep 2011; Justin Lecher <jlec@gentoo.org> +ccpn-2.1.5_p110928.ebuild,
+  +ccpn-2.2.1_p110928.ebuild:
+  Move symlink createtion to the data package
+
+*ccpn-2.2.1_p110928 (28 Sep 2011)
+*ccpn-2.1.5_p110928 (28 Sep 2011)
+
+  28 Sep 2011; Justin Lecher <jlec@gentoo.org> +ccpn-2.1.5_p110928.ebuild,
+  +ccpn-2.2.1_p110928.ebuild:
+  Move symlink create to the data package
+
+*ccpn-2.2.1_p110926 (27 Sep 2011)
+*ccpn-2.1.5_p110926 (27 Sep 2011)
+
+  27 Sep 2011; Justin Lecher <jlec@gentoo.org> +ccpn-2.1.5_p110926.ebuild,
+  +ccpn-2.2.1_p110926.ebuild, files/analysis, files/dangle, files/dataShifter,
+  files/depositionFileImporter, files/eci, files/extendNmr,
+  files/formatConverter, files/pipe2azara, files/xeasy2azara:
+  Fixes psipred detection, python file patches
+
+*ccpn-2.2.1_p110905 (05 Sep 2011)
+*ccpn-2.1.5_p110905 (05 Sep 2011)
+
+  05 Sep 2011; Justin Lecher <jlec@gentoo.org> +ccpn-2.1.5_p110905.ebuild,
+  +ccpn-2.2.1_p110905.ebuild:
+  Todays Python Patches
+
+*ccpn-2.2.1_p110817 (17 Aug 2011)
+*ccpn-2.1.5_p110817 (17 Aug 2011)
+
+  17 Aug 2011; Justin Lecher <jlec@gentoo.org> +ccpn-2.1.5_p110817.ebuild,
+  +ccpn-2.2.1_p110817.ebuild:
+  Latest upstream fixes
 
 *ccpn-2.2.1_p110629 (29 Jun 2011)
 *ccpn-2.1.5_p110629 (29 Jun 2011)

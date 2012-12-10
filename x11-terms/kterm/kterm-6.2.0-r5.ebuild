@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/kterm/kterm-6.2.0-r5.ebuild,v 1.3 2010/02/11 16:06:38 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/kterm/kterm-6.2.0-r5.ebuild,v 1.8 2012/08/09 13:50:56 ottxor Exp $
+
+EAPI=4
 
 inherit eutils flag-o-matic toolchain-funcs
 
@@ -13,7 +15,7 @@ HOMEPAGE="http://www.asahi-net.or.jp/~hc3j-tkg/kterm/"
 
 LICENSE="MIT as-is"
 SLOT="0"
-KEYWORDS="-alpha ~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="-alpha amd64 ppc ~sparc x86 ~amd64-linux ~x86-linux ~ppc-macos"
 IUSE="Xaw3d"
 
 RDEPEND="app-text/rman
@@ -23,15 +25,12 @@ RDEPEND="app-text/rman
 	x11-libs/libxkbfile
 	x11-libs/libXaw
 	x11-libs/libXp
-	Xaw3d? ( x11-libs/Xaw3d )"
+	Xaw3d? ( x11-libs/libXaw3d )"
 DEPEND="${RDEPEND}
 	x11-misc/gccmakedep
 	x11-misc/imake"
 
-src_unpack(){
-	unpack ${A}
-
-	cd "${S}"
+src_prepare(){
 	epatch "${WORKDIR}"/${P}-wpi.patch		# wallpaper patch
 	epatch "${WORKDIR}"/${P}.ext02.patch		# JIS 0213 support
 	epatch "${FILESDIR}"/${P}-openpty.patch
@@ -47,12 +46,11 @@ src_unpack(){
 src_compile(){
 	xmkmf -a || die
 	emake CC="$(tc-getCC)" CDEBUGFLAGS="${CFLAGS}" LOCAL_LDFLAGS="${LDFLAGS}" \
-		XAPPLOADDIR=/usr/share/X11/app-defaults || die "emake failed"
+		XAPPLOADDIR="${EPREFIX}"/usr/share/X11/app-defaults
 }
 
 src_install(){
-	emake DESTDIR="${D}" BINDIR=/usr/bin \
-		XAPPLOADDIR=/usr/share/X11/app-defaults install || die
+	emake DESTDIR="${D}" BINDIR="${EPREFIX}"/usr/bin XAPPLOADDIR="${EPREFIX}"/usr/share/X11/app-defaults install
 
 	# install man pages
 	newman kterm.man kterm.1
@@ -61,7 +59,7 @@ src_install(){
 	newins kterm.ja.1 kterm.1
 
 	# Remove link to avoid collision
-	rm -f "${D}"/usr/lib/X11/app-defaults
+	rm -f "${ED}"/usr/lib/X11/app-defaults
 
 	dodoc README.kt
 }

@@ -1,6 +1,16 @@
 # ChangeLog for virtual/perl-Math-BigInt
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Math-BigInt/ChangeLog,v 1.51 2011/06/24 14:40:06 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Math-BigInt/ChangeLog,v 1.53 2012/09/01 12:13:13 grobian Exp $
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  perl-Math-BigInt-1.997.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+*perl-Math-BigInt-1.997.0 (05 Sep 2011)
+
+  05 Sep 2011; Torsten Veller <tove@gentoo.org>
+  +perl-Math-BigInt-1.997.0.ebuild:
+  Version bump
 
   24 Jun 2011; Fabian Groffen <grobian@gentoo.org>
   perl-Math-BigInt-1.993.0.ebuild:
@@ -233,4 +243,3 @@
   +perl-Math-BigInt-1.69.ebuild, +perl-Math-BigInt-1.70.ebuild,
   +perl-Math-BigInt-1.73.ebuild, +perl-Math-BigInt-1.77.ebuild:
   New virtual for perl-core/Math-BigInt
-

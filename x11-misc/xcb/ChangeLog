@@ -1,6 +1,24 @@
 # ChangeLog for x11-misc/xcb
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xcb/ChangeLog,v 1.15 2010/10/10 21:06:10 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xcb/ChangeLog,v 1.20 2012/10/24 21:10:33 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> xcb-2.4.ebuild,
+  xcb-2.4-r1.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  15 May 2012; Julian Ospald <hasufell@gentoo.org> xcb-2.4.ebuild,
+  xcb-2.4-r1.ebuild:
+  fix HOMEPAGE and SRC_URI wrt #415629
+
+  19 Feb 2012; Tobias Klausmann <klausman@gentoo.org> xcb-2.4-r1.ebuild:
+  Stable on alpha, bug #393921
+
+  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> xcb-2.4-r1.ebuild:
+  x86 stable wrt bug #393921
+
+  16 Dec 2011; Agostino Sarubbo <ago@gentoo.org> xcb-2.4-r1.ebuild:
+  Stable for AMD64, wrt bug #393921
 
   10 Oct 2010; Ulrich Mueller <ulm@gentoo.org> xcb-2.4.ebuild,
   xcb-2.4-r1.ebuild:

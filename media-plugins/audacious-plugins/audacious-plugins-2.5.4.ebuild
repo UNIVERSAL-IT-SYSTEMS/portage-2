@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/audacious-plugins/audacious-plugins-2.5.4.ebuild,v 1.1 2011/07/15 13:29:01 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/audacious-plugins/audacious-plugins-2.5.4.ebuild,v 1.7 2012/05/25 06:55:17 jdhore Exp $
 
 EAPI=4
 
@@ -14,7 +14,7 @@ SRC_URI="http://distfiles.atheme.org/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux"
+KEYWORDS="alpha amd64 hppa ~ppc ~ppc64 sparc x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux"
 IUSE="aac adplug alsa aqua bs2b cdda cue ffmpeg flac fluidsynth gnome ipv6 jack
 lame libnotify libsamplerate lirc midi mms mp3 mtp nls oss pulseaudio scrobbler sdl sid sndfile sse2 vorbis wavpack"
 
@@ -55,12 +55,16 @@ RDEPEND="app-arch/unzip
 
 DEPEND="${RDEPEND}
 	nls? ( dev-util/intltool )
-	>=dev-util/pkgconfig-0.9.0"
+	virtual/pkgconfig"
 
 mp3_warning() {
 	if ! use mp3 ; then
 		ewarn "MP3 support is optional, you may want to enable the mp3 USE-flag"
 	fi
+}
+
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-2.x-fix-skins-build-glib-2.32.patch
 }
 
 src_configure() {

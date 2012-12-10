@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/heartbeat/heartbeat-3.0.5.ebuild,v 1.1 2011/06/24 09:40:13 ultrabug Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/heartbeat/heartbeat-3.0.5.ebuild,v 1.7 2012/05/04 07:20:30 jdhore Exp $
 
 EAPI="2"
 
@@ -13,17 +13,19 @@ SRC_URI="http://hg.linux-ha.org/${PN}-STABLE_3_0/archive/STABLE-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~x86"
+KEYWORDS="amd64 hppa x86"
 IUSE="doc snmp static-libs"
 
 RDEPEND="sys-cluster/cluster-glue
 	dev-libs/glib:2
 	virtual/ssh
 	net-libs/gnutls
-	snmp? ( net-analyzer/net-snmp )	"
+	snmp? ( net-analyzer/net-snmp )
+"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
-	dev-lang/swig"
+	virtual/pkgconfig
+	dev-lang/swig
+	doc? ( dev-libs/libxslt app-text/docbook-xsl-stylesheets )"
 
 PDEPEND="sys-cluster/resource-agents"
 
@@ -75,6 +77,8 @@ src_install() {
 
 	# fix collisions
 	rm -rf "${D}"/usr/include/heartbeat/{compress,ha_msg}.h
+
+	use static-libs || find "${D}"/usr/$(get_libdir) -name "*.la" -delete
 
 	if use doc ; then
 		dodoc README doc/*.txt doc/AUTHORS  || die

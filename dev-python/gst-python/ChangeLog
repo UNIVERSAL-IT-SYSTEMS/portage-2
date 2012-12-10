@@ -1,6 +1,72 @@
 # ChangeLog for dev-python/gst-python
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/gst-python/ChangeLog,v 1.101 2011/07/25 17:51:31 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/gst-python/ChangeLog,v 1.117 2012/11/07 20:10:53 tetromino Exp $
+
+  07 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gst-python-0.10.22.ebuild:
+  Slot gstreamer dependencies in preparation for gstreamer-1.0.
+
+  25 Oct 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-python-0.10.22.ebuild:
+  Fix typo on media-libs/gstreamer slot.
+
+  25 Oct 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-python-0.10.22.ebuild:
+  Add missing gstreamer slots.
+
+  03 Oct 2012; Brent Baude <ranger@gentoo.org> gst-python-0.10.22.ebuild:
+  Marking gst-python-0.10.22 ppc for bug 432946
+
+  24 Sep 2012; Mart Raudsepp <leio@gentoo.org> -gst-python-0.10.20.ebuild,
+  -gst-python-0.10.21.ebuild:
+  Remove old
+
+  20 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  gst-python-0.10.22.ebuild:
+  stable ppc ppc64, bug #432946
+
+  19 Sep 2012; Jeroen Roovers <jer@gentoo.org> gst-python-0.10.22.ebuild:
+  Stable for HPPA (bug #432946).
+
+  15 Sep 2012; Raúl Porcel <armin76@gentoo.org> gst-python-0.10.22.ebuild:
+  alpha/ia64/sparc stable wrt #432946
+
+  14 Sep 2012; Markus Meier <maekke@gentoo.org> gst-python-0.10.22.ebuild:
+  arm stable, bug #432946
+
+  08 Sep 2012; Johannes Huber <johu@gentoo.org> gst-python-0.10.22.ebuild:
+  Stable for x86, wrt bug #432946
+
+  30 Aug 2012; Agostino Sarubbo <ago@gentoo.org> gst-python-0.10.22.ebuild:
+  Stable for amd64, wrt bug #432946
+
+  27 Aug 2012; Mart Raudsepp <leio@gentoo.org> gst-python-0.10.22.ebuild:
+  Use python.eclass standard function for automake compatibility instead of
+  custom code for #396689
+
+  04 May 2012; Patrick Lauer <patrick@gentoo.org> gst-python-0.10.20.ebuild,
+  gst-python-0.10.21.ebuild, gst-python-0.10.22.ebuild:
+  Migrating dev-util/pkgconfig -> virtual/pkgconfig
+
+  23 Feb 2012; Patrick Lauer <patrick@gentoo.org> gst-python-0.10.20.ebuild,
+  gst-python-0.10.21.ebuild, gst-python-0.10.22.ebuild:
+  Restricting python
+
+  06 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gst-python-0.10.22.ebuild:
+  Empty py-compile script instead of symlinking it to /path/to/true for
+  automake-1.11.2 compability wrt #396689 by Juergen Rose
+
+*gst-python-0.10.22 (29 Oct 2011)
+
+  29 Oct 2011; Mart Raudsepp <leio@gentoo.org> +gst-python-0.10.22.ebuild:
+  Version bump. Fixes pad probes, fixes for encoding profiles and encodebin.
+  Installs header for use by other gstreamer python bindings, such as bindings
+  for gst-editing-services.
+
+  23 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gst-python-0.10.20.ebuild, gst-python-0.10.21.ebuild:
+  Depend on correct slot of pygobject.
 
   25 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org>
   gst-python-0.10.21.ebuild:

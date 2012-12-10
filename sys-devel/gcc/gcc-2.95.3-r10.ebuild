@@ -1,26 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/gcc-2.95.3-r10.ebuild,v 1.5 2011/07/20 08:58:35 dirtyepic Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/gcc-2.95.3-r10.ebuild,v 1.9 2012/09/28 03:13:09 zmedico Exp $
 
 PATCH_VER="1.3"
-SPLIT_SPECS="no"
-ETYPE="gcc-compiler"
 
 inherit toolchain eutils flag-o-matic
 
 DESCRIPTION="The GNU Compiler Collection"
 
 KEYWORDS="~alpha ~ppc ~sparc ~x86"
-IUSE=""
-
-RDEPEND=">=sys-libs/zlib-1.1.4
-	>=sys-apps/texinfo-4.2-r4
-	!build? ( >=sys-libs/ncurses-5.2-r2 )"
-DEPEND="${RDEPEND}
-	!build? ( nls? ( sys-devel/gettext ) )"
-PDEPEND=">=sys-devel/gcc-config-1.4"
-
-[[ $(tc-arch ${TARGET}) == "alpha" ]] && GENTOO_PATCH_EXCLUDE="10_all_new-atexit.patch"
 
 gcc2-flags() {
 	# Are we trying to compile with gcc3 ?  CFLAGS and CXXFLAGS needs to be

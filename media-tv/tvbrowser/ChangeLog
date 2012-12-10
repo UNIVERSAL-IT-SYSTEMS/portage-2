@@ -1,6 +1,31 @@
 # ChangeLog for media-tv/tvbrowser
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/tvbrowser/ChangeLog,v 1.31 2009/11/16 10:24:48 zzam Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-tv/tvbrowser/ChangeLog,v 1.36 2012/11/12 21:38:13 johu Exp $
+
+*tvbrowser-3.2.1 (12 Nov 2012)
+
+  12 Nov 2012; Johannes Huber <johu@gentoo.org> +tvbrowser-3.2.1.ebuild,
+  -tvbrowser-3.1.ebuild:
+  Version bump, remove old.
+
+*tvbrowser-3.2 (28 Oct 2012)
+
+  28 Oct 2012; Johannes Huber <johu@gentoo.org> +tvbrowser-3.2.ebuild:
+  Version bump.
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> tvbrowser-3.1.ebuild:
+  Move EAPI assignment to top of ebuild, bug 411875.
+
+*tvbrowser-3.1 (07 Feb 2012)
+
+  07 Feb 2012; Johannes Huber <johu@gentoo.org> +tvbrowser-3.1.ebuild,
+  -tvbrowser-2.7.1.ebuild, -tvbrowser-2.7.4.ebuild:
+  Version bump wrt bug #313053. Initial ebuild by Robert Schedel
+  <r.schedel@yahoo.de>, changed by me. Fixes bug #298664 too. Punt jurassic
+  versions.
+
+  27 Jan 2012; Johannes Huber <johu@gentoo.org> metadata.xml:
+  Take package over. Remove proxy maintainer and add myself.
 
   16 Nov 2009; Matthias Schwarzott <zzam@gentoo.org>
   -files/tvbrowser-2.1-makefiles.patch, -tvbrowser-2.2.1.ebuild,
@@ -160,4 +185,3 @@
   +files/tvbrowser-2.1-makefiles.patch, +metadata.xml,
   +tvbrowser-2.1.ebuild:
   Inital import of ebuild (ebuild slightly based on the one from Bug #104792)
-

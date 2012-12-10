@@ -1,6 +1,45 @@
 # ChangeLog for dev-perl/Class-Accessor-Grouped
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-Accessor-Grouped/ChangeLog,v 1.20 2011/07/30 08:54:02 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-Accessor-Grouped/ChangeLog,v 1.28 2012/11/18 11:09:21 robbat2 Exp $
+
+  18 Nov 2012; Robin H. Johnson <robbat2@gentoo.org> metadata.xml:
+  Drop duplication of myself as a maintainer where there is a herd.
+
+*Class-Accessor-Grouped-0.100.90 (17 Nov 2012)
+
+  17 Nov 2012; Torsten Veller <tove@gentoo.org>
+  +Class-Accessor-Grouped-0.100.90.ebuild:
+  Version bump
+
+*Class-Accessor-Grouped-0.100.70 (14 Nov 2012)
+
+  14 Nov 2012; Torsten Veller <tove@gentoo.org>
+  +Class-Accessor-Grouped-0.100.70.ebuild:
+  Version bump
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  Class-Accessor-Grouped-0.100.60.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org>
+  -Class-Accessor-Grouped-0.100.30.ebuild,
+  -Class-Accessor-Grouped-0.100.40.ebuild:
+  Cleanup
+
+*Class-Accessor-Grouped-0.100.60 (08 Jan 2012)
+
+  08 Jan 2012; Torsten Veller <tove@gentoo.org>
+  +Class-Accessor-Grouped-0.100.60.ebuild:
+  Version bump
+
+*Class-Accessor-Grouped-0.100.40 (02 Dec 2011)
+
+  02 Dec 2011; Torsten Veller <tove@gentoo.org>
+  +Class-Accessor-Grouped-0.100.40.ebuild:
+  Version bump
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org>
   -Class-Accessor-Grouped-0.100.20.ebuild:
@@ -110,4 +149,3 @@
   23 Jun 2009; Robin H. Johnson <robbat2@gentoo.org>
   +Class-Accessor-Grouped-0.08003.ebuild, +metadata.xml:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

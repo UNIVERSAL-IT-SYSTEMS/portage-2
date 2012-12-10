@@ -1,6 +1,93 @@
 # ChangeLog for dev-util/gtk-doc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/gtk-doc/ChangeLog,v 1.156 2011/07/17 20:50:46 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/gtk-doc/ChangeLog,v 1.180 2012/07/15 17:15:34 armin76 Exp $
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> gtk-doc-1.18-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #410611
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> gtk-doc-1.18-r1.ebuild:
+  ppc stable wrt #410611
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> gtk-doc-1.18-r1.ebuild:
+  Stable for HPPA (bug #410611).
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gtk-doc-1.17.ebuild,
+  gtk-doc-1.17-r1.ebuild, gtk-doc-1.18.ebuild, gtk-doc-1.18-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gtk-doc-1.18-r1.ebuild:
+  x86 stable, bug #410611
+
+  28 Apr 2012; Alexis Ballier <aballier@gentoo.org> gtk-doc-1.18-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> gtk-doc-1.18-r1.ebuild:
+  arm stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> gtk-doc-1.18-r1.ebuild:
+  Marking gtk-doc-1.18-r1 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gtk-doc-1.18-r1.ebuild:
+  Stable for amd64, wrt bug #410611
+
+*gtk-doc-1.18-r1 (08 Mar 2012)
+
+  08 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gtk-doc-1.18-r1.ebuild:
+  Hard-disable fop for bugs #403165 and #404495; thanks to Martin von Gagern
+  for reporting.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> gtk-doc-1.18.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> gtk-doc-1.18.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> gtk-doc-1.18.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> gtk-doc-1.18.ebuild:
+  Stable for HPPA (bug #385699).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> gtk-doc-1.18.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> gtk-doc-1.18.ebuild:
+  amd64 stable wrt #385699
+
+*gtk-doc-1.18 (15 Sep 2011)
+
+  15 Sep 2011; Pacho Ramos <pacho@gentoo.org> +gtk-doc-1.18.ebuild:
+  Version bump.
+
+  12 Sep 2011; Pacho Ramos <pacho@gentoo.org> -gtk-doc-1.16.ebuild:
+  Remove old.
+
+  12 Sep 2011; Kacper Kowalik <xarthisius@gentoo.org> gtk-doc-1.17.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+*gtk-doc-1.17-r1 (10 Sep 2011)
+
+  10 Sep 2011; Pacho Ramos <pacho@gentoo.org>
+  -files/gtk-doc-1.13-fixxref-vim-u-NONE.patch, -gtk-doc-1.15.ebuild,
+  -gtk-doc-1.15-r2.ebuild,
+  -files/gtk-doc-1.15-allow-selection-highlighter.patch,
+  -files/gtk-doc-1.15-fixxref-vim-fixes.patch, +gtk-doc-1.17-r1.ebuild,
+  +files/gtk-doc-1.17-buildir-docs.patch:
+  When doing 'make install', look for generated docs in builddir, bug #379415
+  by Michał Górny. Remove old.
+
+  29 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> gtk-doc-1.17.ebuild:
+  Can use either vim or gvim for the /usr/bin/vim binary, bug 379647
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> gtk-doc-1.17.ebuild:
+  Stable for HPPA (bug #369909).
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> gtk-doc-1.17.ebuild:
+  m68k stable wrt #369909
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> gtk-doc-1.17.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #369909
 
   17 Jul 2011; Markus Meier <maekke@gentoo.org> gtk-doc-1.17.ebuild:
   arm stable, bug #369909

@@ -1,6 +1,31 @@
 # ChangeLog for sys-process/dcron
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/dcron/ChangeLog,v 1.18 2011/05/16 20:28:54 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-process/dcron/ChangeLog,v 1.26 2012/07/01 18:20:07 armin76 Exp $
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> dcron-4.5.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #413969
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> dcron-3.2-r1.ebuild,
+  dcron-4.4.ebuild, dcron-4.5.ebuild:
+  Inherit eutils for epatch.
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> dcron-4.5.ebuild:
+  Marking dcron-4.5 ppc64 for bug 413969
+
+  12 May 2012; Markus Meier <maekke@gentoo.org> dcron-4.5.ebuild:
+  arm stable, bug #413969
+
+  09 May 2012; Jeff Horelick <jdhore@gentoo.org> dcron-4.5.ebuild:
+  marked x86 per bug 413969
+
+  08 May 2012; Jeroen Roovers <jer@gentoo.org> dcron-4.5.ebuild:
+  Stable for HPPA (bug #413969).
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> dcron-4.5.ebuild:
+  Marking dcron-4.5 ppc for bug 413969
+
+  05 May 2012; Markos Chandras <hwoarang@gentoo.org> dcron-4.5.ebuild:
+  Stable on amd64 wrt bug #413969
 
 *dcron-4.5 (16 May 2011)
 

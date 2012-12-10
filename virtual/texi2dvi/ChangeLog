@@ -1,6 +1,15 @@
 # ChangeLog for virtual/texi2dvi
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/texi2dvi/ChangeLog,v 1.3 2009/12/15 19:48:09 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/texi2dvi/ChangeLog,v 1.6 2012/05/09 13:53:54 aballier Exp $
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> texi2dvi-0.ebuild:
+  keyword ~amd64-fbsd
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> texi2dvi-0.ebuild:
+  remove ptex dep, its going away
+
+  28 Aug 2011; Fabian Groffen <grobian@gentoo.org> texi2dvi-0.ebuild:
+  Marked ~x64-macos
 
   15 Dec 2009; Jonathan Callen <abcd@gentoo.org> texi2dvi-0.ebuild:
   QA: Add prefix keywords

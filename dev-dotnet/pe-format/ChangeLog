@@ -1,6 +1,50 @@
 # ChangeLog for dev-dotnet/pe-format
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/pe-format/ChangeLog,v 1.29 2011/06/21 13:34:05 phajdan.jr Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/pe-format/ChangeLog,v 1.40 2012/08/31 09:02:13 mgorny Exp $
+
+  31 Aug 2012; Michał Górny <mgorny@gentoo.org> metadata.xml,
+  pe-format-2.1.1.ebuild:
+  Sync to the live ebuild (URIs).
+
+  14 Apr 2012; Michał Górny <mgorny@gentoo.org> -pe-format-1.ebuild,
+  -pe-format-2.0.5.ebuild, -pe-format-2.1.ebuild:
+  Remove obsolete versions. The package was never suitable for Prefix, so
+  remove that as well.
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> pe-format-2.1.1.ebuild:
+  x86 stable wrt bug #399817
+
+  27 Jan 2012; Brent Baude <ranger@gentoo.org> pe-format-2.1.1.ebuild:
+  Marking pe-format-2.1.1 ppc for bug 399817
+
+  23 Jan 2012; Agostino Sarubbo <ago@gentoo.org> pe-format-2.1.1.ebuild:
+  Stable for amd64, wrt bug #399817
+
+  14 Dec 2011; Agostino Sarubbo <ago@gentoo.org> pe-format-2.1.ebuild:
+  Stable for AMD64, wrt bug #389183
+
+*pe-format-2.1.1 (12 Dec 2011)
+
+  12 Dec 2011; Michał Górny <mgorny@gentoo.org> +pe-format-2.1.1.ebuild,
+  metadata.xml:
+  Version bump. The new version installs .desktop file for file manager
+  association.
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> pe-format-2.1.ebuild:
+  x86 stable wrt bug #389183
+
+*pe-format-2.1 (17 Oct 2011)
+
+  17 Oct 2011; Michał Górny <mgorny@gentoo.org> +pe-format-2.1.ebuild:
+  Version bump. The new version reuses binfmt.d directory, and thus is
+  compatible both with new OpenRC and systemd.
+
+  09 Sep 2011; Tony Vroon <chainsaw@gentoo.org> pe-format-2.0.5.ebuild:
+  Marked stable based on arch testing by Ian "idella4" Delaney & Agostino "ago"
+  Sarubbo in bug #371163.
+
+  05 Sep 2011; Naohiro Aota <naota@gentoo.org> pe-format-1.ebuild:
+  Drop ~x86-fbsd. Bug #336937
 
   21 Jun 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> pe-format-2.0.5.ebuild:
   x86 stable wrt bug #371163
@@ -117,4 +161,3 @@
   +files/pe-format.conf, +files/pe-format.init, +metadata.xml,
   +pe-format-0.ebuild:
   Initial import of ebuild
-

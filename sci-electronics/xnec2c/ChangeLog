@@ -1,6 +1,19 @@
 # ChangeLog for sci-electronics/xnec2c
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/xnec2c/ChangeLog,v 1.6 2011/07/11 13:50:28 tomjbe Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/xnec2c/ChangeLog,v 1.8 2012/07/05 06:48:02 xmw Exp $
+
+*xnec2c-2.1_beta (05 Jul 2012)
+
+  05 Jul 2012; Michael Weber <xmw@gentoo.org> +xnec2c-2.1_beta.ebuild,
+  metadata.xml:
+  Version bump (thanks euscan), EAPI-4, ebuild cleanup
+
+*xnec2c-2.0_beta (21 Jun 2012)
+*xnec2c-1.6 (21 Jun 2012)
+
+  21 Jun 2012; Michael Weber <xmw@gentoo.org> +xnec2c-1.6.ebuild,
+  +xnec2c-2.0_beta.ebuild:
+  Version bumps (bug 420985)
 
 *xnec2c-1.5 (11 Jul 2011)
 
@@ -40,4 +53,3 @@
   +metadata.xml:
   New ebuild for Xnec2c. Based on the work of Dominique Michel
   <dominique.michel@vtxnet.ch> in bug #138770
-

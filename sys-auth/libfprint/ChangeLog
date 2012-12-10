@@ -1,6 +1,29 @@
 # ChangeLog for sys-auth/libfprint
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/libfprint/ChangeLog,v 1.5 2011/06/16 23:28:59 xmw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/libfprint/ChangeLog,v 1.11 2012/10/31 18:27:06 ssuominen Exp $
+
+  31 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> libfprint-0.4.0.ebuild:
+  Use prune_libtool_files from eutils.eclass. Use udev_get_udevdir from
+  udev.eclass to move 60-fprint-autosuspend.rules from /etc/udev/rules.d to
+  correct directory based on udev.pc pkg-config file and the udevdir variable
+  value.
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org> libfprint-0.4.0.ebuild:
+  Use virtual/libusb instead of dev-libs/libusb.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> libfprint-0.4.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  13 Feb 2012; Michael Weber <xmw@gentoo.org> libfprint-0.4.0.ebuild:
+  Drop x11-libs/gtk+:2 and dev-libs/glib dependency. Thanks Andrei Slavoiu 
+  (bug 403189) for clarification.
+
+  14 Nov 2011; Michael Weber <xmw@gentoo.org> libfprint-0.4.0.ebuild:
+  adding ~x86 keyword
+
+  13 Nov 2011; Michael Weber <xmw@gentoo.org> -libfprint-0.3.0-r1.ebuild,
+  libfprint-0.4.0.ebuild:
+  fix .la file removal (thanks Alexander Adam, bug 374575), remove old version
 
 *libfprint-0.4.0 (16 Jun 2011)
 *libfprint-0.3.0-r1 (16 Jun 2011)

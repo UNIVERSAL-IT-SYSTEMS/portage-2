@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/gnome-subtitles/gnome-subtitles-1.1.ebuild,v 1.4 2011/06/30 14:17:37 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/gnome-subtitles/gnome-subtitles-1.1.ebuild,v 1.7 2012/05/05 08:58:58 jdhore Exp $
 
 EAPI=2
 inherit mono gnome2
@@ -12,19 +12,19 @@ SRC_URI="mirror://sourceforge/gnome-subtitles/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="amd64 ppc x86"
 
 RDEPEND=">=dev-lang/mono-1.1
 	>=dev-dotnet/glade-sharp-2.12
 	>=dev-dotnet/gtk-sharp-2.12
 	>=dev-dotnet/gconf-sharp-2.12
 	media-libs/gstreamer:0.10
-	>=app-text/gtkspell-2.0
+	>=app-text/gtkspell-2.0:2
 	>=app-text/enchant-1.3
 	media-libs/gst-plugins-base:0.10"
 DEPEND="${RDEPEND}
 	app-text/scrollkeeper
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	app-text/gnome-doc-utils"
 
 src_install() {

@@ -1,6 +1,251 @@
 # ChangeLog for app-crypt/mit-krb5
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/mit-krb5/ChangeLog,v 1.286 2011/07/25 16:11:27 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/mit-krb5/ChangeLog,v 1.341 2012/09/25 09:25:29 eras Exp $
+
+  25 Sep 2012; Eray Aslan <eras@gentoo.org> -mit-krb5-1.10.1-r2.ebuild,
+  -mit-krb5-1.8.3-r6.ebuild, -mit-krb5-1.9.2-r2.ebuild, -mit-krb5-1.9.4.ebuild:
+  Remove vulnerable versions
+
+  22 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> mit-krb5-1.9.4-r1.ebuild:
+  ppc/ppc64 stable wrt #429324
+
+  27 Aug 2012; Eray Aslan <eras@gentoo.org>
+  files/mit-krb5-1.10.1_uninitialized_extra-2.patch:
+  Fix more -Werror=uninitialized - bug #420465
+
+  19 Aug 2012; Raúl Porcel <armin76@gentoo.org> mit-krb5-1.9.4-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #429324
+
+  18 Aug 2012; Eray Aslan <eras@gentoo.org> mit-krb5-1.10.1-r2.ebuild,
+  mit-krb5-1.10.2-r1.ebuild, mit-krb5-1.10.3.ebuild, mit-krb5-1.9.2-r2.ebuild,
+  mit-krb5-1.9.4-r1.ebuild, mit-krb5-1.9.4.ebuild:
+  Add optional openssl dependency - bug #431814
+
+  12 Aug 2012; Markus Meier <maekke@gentoo.org> mit-krb5-1.9.4-r1.ebuild:
+  arm stable, bug #429324
+
+*mit-krb5-1.10.3 (09 Aug 2012)
+
+  09 Aug 2012; Eray Aslan <eras@gentoo.org> +mit-krb5-1.10.3.ebuild:
+  Version bump
+
+  03 Aug 2012; Jeroen Roovers <jer@gentoo.org> mit-krb5-1.9.4-r1.ebuild:
+  Stable for HPPA (bug #429324).
+
+  02 Aug 2012; Agostino Sarubbo <ago@gentoo.org> mit-krb5-1.9.4-r1.ebuild:
+  Stable for AMD64, wrt bug #429324
+
+  02 Aug 2012; Jeff Horelick <jdhore@gentoo.org> mit-krb5-1.9.4-r1.ebuild:
+  marked x86 per bug 429324
+
+  01 Aug 2012; Eray Aslan <eras@gentoo.org> -mit-krb5-1.8.4-r2.ebuild,
+  -mit-krb5-1.8.5-r1.ebuild, -mit-krb5-1.8.6.ebuild, -mit-krb5-1.9.3.ebuild,
+  -mit-krb5-1.10.ebuild, -mit-krb5-1.10-r1.ebuild, -mit-krb5-1.10.1.ebuild,
+  -mit-krb5-1.10.1-r1.ebuild, -mit-krb5-1.10.1-r3.ebuild,
+  -mit-krb5-1.10.2.ebuild:
+  Remove old
+
+*mit-krb5-1.10.2-r1 (01 Aug 2012)
+*mit-krb5-1.9.4-r1 (01 Aug 2012)
+
+  01 Aug 2012; Eray Aslan <eras@gentoo.org> +mit-krb5-1.9.4-r1.ebuild,
+  +mit-krb5-1.10.2-r1.ebuild, +files/CVE-2012-1014.patch,
+  +files/CVE-2012-1015.patch:
+  Security bump - bug #429324
+
+  09 Jul 2012; Michael Weber <xmw@gentoo.org> mit-krb5-1.9.4.ebuild:
+  ppc stable (bug 419765)
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> mit-krb5-1.9.4.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #419765
+
+  26 Jun 2012; Jeroen Roovers <jer@gentoo.org> mit-krb5-1.9.4.ebuild:
+  Stable for HPPA (bug #419765).
+
+  25 Jun 2012; Jeff Horelick <jdhore@gentoo.org> mit-krb5-1.9.4.ebuild:
+  marked x86 per bug 419765
+
+  23 Jun 2012; Agostino Sarubbo <ago@gentoo.org> mit-krb5-1.9.4.ebuild:
+  Stable for amd64, wrt bug #419765
+
+*mit-krb5-1.9.4 (23 Jun 2012)
+
+  23 Jun 2012; Eray Aslan <eras@gentoo.org> +mit-krb5-1.9.4.ebuild:
+  security bump - bug #419765
+
+  05 Jun 2012; Michael Weber <xmw@gentoo.org> mit-krb5-1.10.2.ebuild:
+  adding ~ppc (bug 412489)
+
+  05 Jun 2012; Michael Weber <xmw@gentoo.org> mit-krb5-1.10.1-r3.ebuild:
+  adding ~ppc (bug 412489)
+
+*mit-krb5-1.10.2 (05 Jun 2012)
+
+  05 Jun 2012; Eray Aslan <eras@gentoo.org> +mit-krb5-1.10.2.ebuild:
+  security bump - bug #419765
+
+  21 Apr 2012; Markus Meier <maekke@gentoo.org> mit-krb5-1.10.1-r3.ebuild:
+  add ~arm, bug #412489
+
+  19 Apr 2012; Jeroen Roovers <jer@gentoo.org> mit-krb5-1.10.1-r3.ebuild:
+  Marked ~hppa (bug #412489).
+
+*mit-krb5-1.10.1-r3 (18 Apr 2012)
+
+  18 Apr 2012; Eray Aslan <eras@gentoo.org> +mit-krb5-1.10.1-r3.ebuild:
+  add dev-libs/libverto dependency - bug #411711
+
+  17 Apr 2012; Eray Aslan <eras@gentoo.org> mit-krb5-1.10.1-r2.ebuild,
+  +files/mit-krb5-1.10.1_gcc470.patch:
+  Fix compiling by gcc-4.7.0 - bug #412359
+
+*mit-krb5-1.10.1-r2 (11 Apr 2012)
+
+  11 Apr 2012; Eray Aslan <eras@gentoo.org> +mit-krb5-1.10.1-r2.ebuild,
+  +files/mit-krb5-1.10.1_uninitialized_extra-2.patch:
+  Fix some more -Werror=uninitialized errors - bug #410431. Thanks to Alexander
+  Adam
+
+*mit-krb5-1.10.1-r1 (23 Mar 2012)
+
+  23 Mar 2012; Eray Aslan <eras@gentoo.org> +mit-krb5-1.10.1-r1.ebuild,
+  +files/mit-krb5-1.10.1_uninitialized_extra.patch:
+  Fix -Werror=uninitialized errors - bug #408411
+
+*mit-krb5-1.10.1 (09 Mar 2012)
+
+  09 Mar 2012; Eray Aslan <eras@gentoo.org> +mit-krb5-1.10.1.ebuild:
+  version bump
+
+  09 Feb 2012; Eray Aslan <eras@gentoo.org>
+  +files/mit-krb5-1.10_uninitialized.patch:
+  add missing patch
+
+*mit-krb5-1.10-r1 (09 Feb 2012)
+
+  09 Feb 2012; Eray Aslan <eras@gentoo.org> +mit-krb5-1.10-r1.ebuild:
+  Fix compling with -O3 - bug #401359. Thanks to Ed Catmur
+
+*mit-krb5-1.9.3 (07 Feb 2012)
+*mit-krb5-1.8.6 (07 Feb 2012)
+
+  07 Feb 2012; Eray Aslan <eras@gentoo.org> +mit-krb5-1.8.6.ebuild,
+  +mit-krb5-1.9.3.ebuild:
+  version bump
+
+*mit-krb5-1.10 (28 Jan 2012)
+
+  28 Jan 2012; Eray Aslan <eras@gentoo.org> +mit-krb5-1.10.ebuild:
+  version bump
+
+*mit-krb5-1.9.2-r2 (31 Dec 2011)
+*mit-krb5-1.8.5-r1 (31 Dec 2011)
+*mit-krb5-1.8.4-r2 (31 Dec 2011)
+*mit-krb5-1.8.3-r6 (31 Dec 2011)
+
+  31 Dec 2011; Christian Ruppert <idl0r@gentoo.org> -mit-krb5-1.8.3-r5.ebuild,
+  +mit-krb5-1.8.3-r6.ebuild, -mit-krb5-1.8.4-r1.ebuild,
+  +mit-krb5-1.8.4-r2.ebuild, -mit-krb5-1.8.5.ebuild, +mit-krb5-1.8.5-r1.ebuild,
+  -mit-krb5-1.9.2-r1.ebuild, +mit-krb5-1.9.2-r2.ebuild,
+  files/mit-krb5kadmind.initd, files/mit-krb5kdc.initd,
+  files/mit-krb5kpropd.initd:
+  Revbump. Don't use deprecated start-stop-daemon options, bug 377843.
+
+  23 Dec 2011; Eray Aslan <eras@gentoo.org>
+  -mit-krb5-1.9.1-r2.ebuild, -files/mit-krb5-1.9.1-fd-leak.patch,
+  -mit-krb5-1.9.2.ebuild, -files/CVE-2011-1527.1528.1529.patch:
+  remove vulnerable versions
+
+  22 Dec 2011; Mark Loeser <halcy0n@gentoo.org> mit-krb5-1.9.2-r1.ebuild:
+  Stable for ppc/ppc64; bug #393429
+
+  11 Dec 2011; Agostino Sarubbo <ago@gentoo.org> mit-krb5-1.9.2-r1.ebuild:
+  Stable for AMD64, wrt security bug #393429
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> mit-krb5-1.9.2-r1.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #393429
+
+  08 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  mit-krb5-1.9.2-r1.ebuild:
+  x86 stable wrt bug #393429
+
+  07 Dec 2011; Jeroen Roovers <jer@gentoo.org> mit-krb5-1.9.2-r1.ebuild:
+  Stable for HPPA (bug #393429).
+
+*mit-krb5-1.9.2-r1 (07 Dec 2011)
+
+  07 Dec 2011; Eray Aslan <eras@gentoo.org> +mit-krb5-1.9.2-r1.ebuild,
+  +files/CVE-2011-1530.patch:
+  security bump - bug #393429
+
+  04 Dec 2011; Sven Wegener <swegener@gentoo.org> files/mit-krb5kadmind.initd,
+  files/mit-krb5kdc.initd, files/mit-krb5kpropd.initd:
+  drop opts from init script
+
+*mit-krb5-1.9.2 (05 Nov 2011)
+*mit-krb5-1.8.5 (05 Nov 2011)
+
+  05 Nov 2011; Eray Aslan <eras@gentoo.org>
+  +files/mit-krb5-kprop_exit_on_error.patch, +mit-krb5-1.8.5.ebuild,
+  +mit-krb5-1.9.2.ebuild:
+  version bump - bug #389573
+
+  24 Oct 2011; Eray Aslan <eras@gentoo.org> mit-krb5-1.8.3-r5.ebuild,
+  -mit-krb5-1.8.4.ebuild, -mit-krb5-1.9.1.ebuild, -mit-krb5-1.9.1-r1.ebuild:
+  remove vulnerable versions
+
+  24 Oct 2011; Eray Aslan <eras@gentoo.org> mit-krb5-1.8.3-r5.ebuild:
+  Last version with m68k. Drop other keywords instead of punting the entire
+  ebuild.
+
+  23 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> mit-krb5-1.9.1-r2.ebuild,
+  mit-krb5-1.8.4-r1.ebuild:
+  ppc/ppc64 stable wrt #387585
+
+  22 Oct 2011; Raúl Porcel <armin76@gentoo.org> mit-krb5-1.8.4-r1.ebuild,
+  mit-krb5-1.9.1-r2.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #387585
+
+  22 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  mit-krb5-1.8.4-r1.ebuild, mit-krb5-1.9.1-r2.ebuild:
+  x86 stable wrt bug #387585
+
+  20 Oct 2011; Tony Vroon <chainsaw@gentoo.org> mit-krb5-1.8.4-r1.ebuild,
+  mit-krb5-1.9.1-r2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in security bug #387585.
+
+  19 Oct 2011; Jeroen Roovers <jer@gentoo.org> mit-krb5-1.9.1-r2.ebuild:
+  Stable for HPPA (bug #387585).
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> mit-krb5-1.8.4-r1.ebuild:
+  Stable for HPPA (bug #387585).
+
+*mit-krb5-1.9.1-r2 (18 Oct 2011)
+*mit-krb5-1.8.4-r1 (18 Oct 2011)
+
+  18 Oct 2011; Eray Aslan <eras@gentoo.org> +mit-krb5-1.8.4-r1.ebuild,
+  +mit-krb5-1.9.1-r2.ebuild, +files/2011-006-patch-r18.patch,
+  +files/CVE-2011-1527.1528.1529.patch:
+  security bump - bug #387585
+
+*mit-krb5-1.9.1-r1 (18 Oct 2011)
+
+  18 Oct 2011; Eray Aslan <eras@gentoo.org> +mit-krb5-1.9.1-r1.ebuild,
+  +files/mit-krb5-1.9.1-fd-leak.patch:
+  patch for fd leak in kadmin - bug #387485
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> mit-krb5-1.9.1.ebuild:
+  Stable for HPPA (bug #374119).
+
+  11 Aug 2011; Mike Frysinger <vapier@gentoo.org> mit-krb5-1.9.1.ebuild:
+  Use virtual/yacc instead of hardcoding list ourselves.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> mit-krb5-1.9.1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #374119
+
+  06 Aug 2011; Eray Aslan <eras@gentoo.org> mit-krb5-1.9.1.ebuild:
+  Add bison/yacc to DEPEND - bug #377923
 
   25 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> mit-krb5-1.9.1.ebuild:
   ppc/ppc64 stable wrt #374241

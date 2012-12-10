@@ -1,6 +1,38 @@
 # ChangeLog for dev-tex/latex2rtf
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/latex2rtf/ChangeLog,v 1.33 2010/05/25 13:51:34 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/latex2rtf/ChangeLog,v 1.42 2012/10/10 12:56:27 aballier Exp $
+
+*latex2rtf-2.3.1 (10 Oct 2012)
+
+  10 Oct 2012; Alexis Ballier <aballier@gentoo.org> +latex2rtf-2.3.1.ebuild:
+  version bump, by Mario Kicherer, bug #437810
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> latex2rtf-2.2.1b.ebuild:
+  alpha/ia64/sparc stable wrt #429050
+
+  20 Aug 2012; Johannes Huber <johu@gentoo.org> latex2rtf-2.2.1b.ebuild:
+  Stable for x86, wrt bug #429050
+
+  19 Aug 2012; Anthony G. Basile <blueness@gentoo.org> latex2rtf-2.2.1b.ebuild:
+  Stable ppc ppc64, bug #429050
+
+  19 Aug 2012; Alexis Ballier <aballier@gentoo.org> latex2rtf-2.2.1b.ebuild:
+  add missing dev-texlive/texlive-latexextra dep for tests, bug #431812
+
+  15 Aug 2012; Jeroen Roovers <jer@gentoo.org> latex2rtf-2.2.1b.ebuild:
+  Stable for HPPA (bug #429050).
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> latex2rtf-2.2.1b.ebuild:
+  Stable for amd64, wrt bug #429050
+
+*latex2rtf-2.2.1b (22 Jun 2012)
+
+  22 Jun 2012; Alexis Ballier <aballier@gentoo.org> +latex2rtf-2.2.1b.ebuild:
+  version bump
+
+  05 Oct 2011; Alexis Ballier <aballier@gentoo.org> latex2rtf-1.9.19.ebuild,
+  latex2rtf-2.1.0.ebuild:
+  remove ptex dep as it is going away
 
 *latex2rtf-2.1.0 (25 May 2010)
 

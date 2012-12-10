@@ -1,6 +1,61 @@
 # ChangeLog for app-emacs/ess
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/ess/ChangeLog,v 1.77 2011/02/03 20:27:47 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/ess/ChangeLog,v 1.92 2012/11/28 20:23:26 ranger Exp $
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> ess-12.09.ebuild:
+  Marking ess-12.09 ppc for bug 441066
+
+  22 Nov 2012; Christian Faulhammer <fauli@gentoo.org> -ess-12.04.4.ebuild:
+  clean up
+
+  21 Nov 2012; Anthony G. Basile <blueness@gentoo.org> ess-12.09.ebuild:
+  stable ppc, bug #441066, thanks peratu
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> ess-12.09.ebuild:
+  Stable for x86, wrt bug #441066
+
+  04 Nov 2012; Agostino Sarubbo <ago@gentoo.org> ess-12.09.ebuild:
+  Stable for amd64, wrt bug #441066
+
+*ess-12.09 (29 Sep 2012)
+
+  29 Sep 2012; Ulrich Müller <ulm@gentoo.org> -ess-5.12.ebuild,
+  ess-5.14.ebuild, ess-12.04.4.ebuild, +ess-12.09.ebuild:
+  Version bump. Specify LICENSE more precisely. Remove old.
+
+  29 Sep 2012; Anthony G. Basile <blueness@gentoo.org> ess-12.04.4.ebuild:
+  stable ppc, bug #428864
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ess-12.04.4.ebuild:
+  x86 stable wrt bug #428864
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> ess-12.04.4.ebuild:
+  Stable for amd64, wrt bug #428864
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> ess-5.12.ebuild,
+  ess-5.14.ebuild, ess-12.04.4.ebuild:
+  Drop alpha/sparc keywords
+
+  29 Jun 2012; Brent Baude <ranger@gentoo.org> ess-5.14.ebuild:
+  Marking ess-5.14 ppc for bug 421259
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> ess-5.14.ebuild:
+  marked x86 per bug 421259
+
+  15 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ess-5.14.ebuild:
+  Stable for amd64, wrt bug #421259
+
+*ess-12.04.4 (15 Jun 2012)
+
+  15 Jun 2012; Ulrich Müller <ulm@gentoo.org> -ess-5.13.ebuild,
+  +ess-12.04.4.ebuild:
+  Version bump, bug 419481. Remove intermediate version.
+
+*ess-5.14 (03 Mar 2012)
+
+  03 Mar 2012; Ulrich Müller <ulm@gentoo.org> -ess-5.11.ebuild,
+  +ess-5.14.ebuild:
+  Version bump. Remove old.
 
 *ess-5.13 (03 Feb 2011)
 
@@ -298,4 +353,3 @@
   files/50ess-gentoo.el:
   Initial import. Ebuild submitted by Steve Juranich
   <sjuranic@ee.washington.edu>. Closing bug #18694
-

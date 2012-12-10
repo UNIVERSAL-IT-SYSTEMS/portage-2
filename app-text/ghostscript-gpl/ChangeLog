@@ -1,6 +1,181 @@
 # ChangeLog for app-text/ghostscript-gpl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/ghostscript-gpl/ChangeLog,v 1.113 2011/06/05 21:16:28 dilfridge Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/ghostscript-gpl/ChangeLog,v 1.152 2012/08/13 17:45:27 tgurr Exp $
+
+  13 Aug 2012; Timo Gurr <tgurr@gentoo.org> ghostscript-gpl-9.06.ebuild:
+  Reintroduce -j1 workaround for parallel make. Bug #234378 and #430946.
+
+*ghostscript-gpl-9.06 (10 Aug 2012)
+
+  10 Aug 2012; Timo Gurr <tgurr@gentoo.org> +ghostscript-gpl-9.06.ebuild:
+  Version bump. EAPI4. Switch to using openjpeg. Test upstream parallel make
+  fixes.
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org>
+  ghostscript-gpl-9.05-r1.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #384483
+
+  14 Jun 2012; Andreas Schuerch <nativemad@gentoo.org>
+  ghostscript-gpl-9.05-r1.ebuild:
+  x86 stable, see bug 414463
+
+  02 Jun 2012; Zac Medico <zmedico@gentoo.org> ghostscript-gpl-9.04-r4.ebuild,
+  ghostscript-gpl-9.05-r1.ebuild, ghostscript-gpl-9.05-r2.ebuild:
+  inherit multilib for get_libdir
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> ghostscript-gpl-9.05-r1.ebuild:
+  Marking ghostscript-gpl-9.05-r1 ppc for bug 414463
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> ghostscript-gpl-9.05-r1.ebuild:
+  Marking ghostscript-gpl-9.05-r1 ppc64 for bug 414463
+
+  18 May 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -ghostscript-gpl-9.04-r6.ebuild:
+  Remove old
+
+  18 May 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  ghostscript-gpl-9.05-r2.ebuild:
+  Remove german manpages if not needed by user, bug 407197
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> ghostscript-gpl-9.05-r1.ebuild:
+  Stable for HPPA (bug #414463).
+
+  13 May 2012; Markus Meier <maekke@gentoo.org> ghostscript-gpl-9.05-r1.ebuild:
+  arm stable, bug #414463
+
+*ghostscript-gpl-9.05-r2 (09 May 2012)
+
+  09 May 2012; Timo Gurr <tgurr@gentoo.org> -ghostscript-gpl-9.04-r5.ebuild,
+  -ghostscript-gpl-9.05.ebuild, +ghostscript-gpl-9.05-r2.ebuild:
+  Fix segfaults, bug #410575 thanks to Marcus Spading. Add Fedora icc patch.
+  Remove old.
+
+  06 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  ghostscript-gpl-9.05-r1.ebuild:
+  Stable for amd64, wrt bug #414463
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  ghostscript-gpl-9.04-r4.ebuild, ghostscript-gpl-9.04-r5.ebuild,
+  ghostscript-gpl-9.04-r6.ebuild, ghostscript-gpl-9.05.ebuild,
+  ghostscript-gpl-9.05-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*ghostscript-gpl-9.05-r1 (01 May 2012)
+
+  01 May 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +ghostscript-gpl-9.05-r1.ebuild:
+  Add symlink for poppler-data integration, bug 409361
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  ghostscript-gpl-9.05.ebuild:
+  keyword ~amd64-fbsd
+
+  05 Apr 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  ghostscript-gpl-9.05.ebuild:
+  Restore keywords since jbig2dec has now all that it needs, bug 401853
+
+  17 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  ghostscript-gpl-9.04-r4.ebuild, ghostscript-gpl-9.04-r5.ebuild,
+  ghostscript-gpl-9.04-r6.ebuild:
+  Raise media-libs/freetype requirement to 2.4.2 wrt #408583 by Martin Mokrejš
+
+  19 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  ghostscript-gpl-9.05.ebuild:
+  Restore keywords after unbundling, see bug 206893 comment 15.
+
+*ghostscript-gpl-9.05 (09 Feb 2012)
+
+  09 Feb 2012; Timo Gurr <tgurr@gentoo.org> +ghostscript-gpl-9.05.ebuild:
+  Version bump. Still favor jasper instead of openjpeg for now.
+
+*ghostscript-gpl-9.04-r6 (01 Feb 2012)
+
+  01 Feb 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  +ghostscript-gpl-9.04-r6.ebuild:
+  Unbundle media-libs/jbig2dec, bug 206893. Dropped some keywords until
+  jbig2dec is keyworded in bug 401853.
+
+  14 Jan 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  ghostscript-gpl-9.04-r4.ebuild, ghostscript-gpl-9.04-r5.ebuild:
+  Block media-fonts/gnu-gs-fonts-(std|other), bug 315629
+
+*ghostscript-gpl-9.04-r5 (21 Dec 2011)
+
+  21 Dec 2011; Timo Gurr <tgurr@gentoo.org> +ghostscript-gpl-9.04-r5.ebuild:
+  Revbump adding upstream fixes, resolves bug #389309 thanks to László
+  Szalma. Also fixing bug #391749.
+
+  12 Nov 2011; Justin Lecher <jlec@gentoo.org> ghostscript-gpl-9.04-r4.ebuild:
+  Fixed slotting for media-libs/libpng
+
+  12 Nov 2011; Justin Lecher <jlec@gentoo.org> ghostscript-gpl-9.04-r4.ebuild,
+  metadata.xml:
+  Fixed slotting for media-libs/tiff
+
+  31 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -ghostscript-gpl-8.71-r6.ebuild, -ghostscript-gpl-9.04-r3.ebuild:
+  old
+
+  31 Oct 2011; Raúl Porcel <armin76@gentoo.org>
+  ghostscript-gpl-9.04-r3.ebuild, ghostscript-gpl-9.04-r4.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #382951
+
+*ghostscript-gpl-9.04-r4 (19 Oct 2011)
+
+  19 Oct 2011; Timo Gurr <tgurr@gentoo.org> +ghostscript-gpl-9.04-r4.ebuild:
+  Revbump fixing bug #383831 which affects stable users.
+
+  12 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  ghostscript-gpl-9.04-r3.ebuild:
+  ppc/ppc64 stable wrt #382951
+
+  06 Oct 2011; Jeroen Roovers <jer@gentoo.org> ghostscript-gpl-9.04-r3.ebuild:
+  Respect LDFLAGS (bug #367239). Stable for HPPA (bug #382951).
+
+  05 Oct 2011; Markus Meier <maekke@gentoo.org> ghostscript-gpl-9.04-r3.ebuild:
+  arm stable, bug #382951
+
+  18 Sep 2011; Markus Meier <maekke@gentoo.org> ghostscript-gpl-9.04-r3.ebuild:
+  x86 stable, bug #382951
+
+  16 Sep 2011; Tony Vroon <chainsaw@gentoo.org> ghostscript-gpl-9.04-r3.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #382951.
+
+*ghostscript-gpl-9.04-r3 (25 Aug 2011)
+
+  25 Aug 2011; Timo Gurr <tgurr@gentoo.org> -ghostscript-gpl-9.04-r2.ebuild,
+  +ghostscript-gpl-9.04-r3.ebuild:
+  Revbump updating the upstream fix for gdevcups RGBW handling (Ghostscript bug
+  #691922). Remove old.
+
+*ghostscript-gpl-9.04-r2 (17 Aug 2011)
+
+  17 Aug 2011; Timo Gurr <tgurr@gentoo.org> -ghostscript-gpl-9.04-r1.ebuild,
+  +ghostscript-gpl-9.04-r2.ebuild:
+  Revbump for new gsdjvu release. Remove old.
+
+*ghostscript-gpl-9.04-r1 (16 Aug 2011)
+
+  16 Aug 2011; Timo Gurr <tgurr@gentoo.org> -ghostscript-gpl-9.00-r1.ebuild,
+  -ghostscript-gpl-9.01.ebuild, -ghostscript-gpl-9.02.ebuild,
+  -files/ghostscript-gpl-9.02-byteswap.patch,
+  -files/ghostscript-gpl-9.02-libpng15.patch, -ghostscript-gpl-9.04.ebuild,
+  +ghostscript-gpl-9.04-r1.ebuild:
+  Revbump fixing bug #353454, #379043 and #379203. Remove old.
+
+*ghostscript-gpl-9.04 (10 Aug 2011)
+
+  10 Aug 2011; Timo Gurr <tgurr@gentoo.org> +ghostscript-gpl-9.04.ebuild:
+  Version bump.
+
+  07 Aug 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  ghostscript-gpl-9.02.ebuild:
+  Use -j1 for install as well, see bug #356303.
+
+  05 Aug 2011; Naohiro Aota <naota@gentoo.org> ghostscript-gpl-9.02.ebuild,
+  +files/ghostscript-gpl-9.02-byteswap.patch:
+  Handle FreeBSD byteswap function. Fix bug #367119
 
   05 Jun 2011; Andreas K. Huettel <dilfridge@gentoo.org>
   ghostscript-gpl-9.02.ebuild, +files/ghostscript-gpl-9.02-libpng15.patch:

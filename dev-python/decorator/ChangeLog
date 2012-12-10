@@ -1,6 +1,49 @@
 # ChangeLog for dev-python/decorator
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/decorator/ChangeLog,v 1.45 2011/07/07 07:27:46 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/decorator/ChangeLog,v 1.57 2012/10/29 08:54:24 patrick Exp $
+
+*decorator-3.4.0 (29 Oct 2012)
+
+  29 Oct 2012; Patrick Lauer <patrick@gentoo.org> +decorator-3.4.0.ebuild:
+  Bump
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> decorator-3.3.1.ebuild,
+  decorator-3.3.2.ebuild, decorator-3.3.3.ebuild:
+  Add ~s390/~sh wrt #381709
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> decorator-3.3.2.ebuild:
+  alpha/ia64/sparc stable wrt #415851
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> decorator-3.3.2.ebuild:
+  Marking decorator-3.3.2 ppc for bug 415851
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> decorator-3.3.2.ebuild:
+  Marking decorator-3.3.2 ppc64 for bug 415851
+
+  18 May 2012; Jeff Horelick <jdhore@gentoo.org> decorator-3.3.2.ebuild:
+  marked x86 per bug 415851
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> decorator-3.3.2.ebuild:
+  Stable for HPPA (bug #415851).
+
+  14 May 2012; Agostino Sarubbo <ago@gentoo.org> decorator-3.3.2.ebuild:
+  Stable for amd64, wrt bug #415851
+
+*decorator-3.3.3 (08 May 2012)
+
+  08 May 2012; Dirkjan Ochtman <djc@gentoo.org> +decorator-3.3.3.ebuild:
+  Version bump to 3.3.3.
+
+  26 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> decorator-3.3.1.ebuild:
+  ppc64 stable wrt #385227
+
+  11 Sep 2011; Markus Meier <maekke@gentoo.org> decorator-3.3.2.ebuild:
+  add ~arm, bug #381709
+
+*decorator-3.3.2 (04 Sep 2011)
+
+  04 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> +decorator-3.3.2.ebuild:
+  Version bump to 3.3.2.
 
   07 Jul 2011; Markos Chandras <hwoarang@gentoo.org>
   -files/decorator-3.3.0-python-3.2.patch:
@@ -171,4 +214,3 @@
   02 May 2008; Rob Cakebread <pythonhead@gentoo.org> +metadata.xml,
   +decorator-2.2.0.ebuild:
   Initial commit. Thanks Qiangning Hong <hongqn@gmail.com> bug #176640
-

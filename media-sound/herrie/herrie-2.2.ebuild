@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/herrie/herrie-2.2.ebuild,v 1.6 2009/06/01 16:13:50 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/herrie/herrie-2.2.ebuild,v 1.8 2012/07/29 18:39:29 armin76 Exp $
 
 EAPI=2
 inherit eutils toolchain-funcs
@@ -11,7 +11,7 @@ SRC_URI="http://herrie.info/distfiles/${P}.tar.bz2"
 
 LICENSE="BSD-2 GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="ao alsa pulseaudio oss http modplug mp3 sndfile vorbis xspf unicode nls"
 
 APP_LINGUAS="ca da de es fi ga nl pl pt_BR ru sv tr vi zh_CN"
@@ -34,7 +34,7 @@ RDEPEND="sys-libs/ncurses[unicode?]
 	!ao? ( !alsa? ( !pulseaudio? ( !oss? ( media-libs/alsa-lib ) ) ) )"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-chost_issue.patch \

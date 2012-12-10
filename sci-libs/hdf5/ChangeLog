@@ -1,6 +1,122 @@
 # ChangeLog for sci-libs/hdf5
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/hdf5/ChangeLog,v 1.74 2011/07/13 15:49:01 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/hdf5/ChangeLog,v 1.100 2012/12/04 06:59:14 xarthisius Exp $
+
+  04 Dec 2012; Kacper Kowalik <xarthisius@gentoo.org> hdf5-1.8.10.ebuild:
+  Add warning message about possible mismatch between headers and library in
+  reverse dependencies. Fixes bug 445268 by William Throwe <wtt6@cornell.edu>
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> hdf5-1.8.9-r2.ebuild:
+  Stable for x86, wrt bug #440682
+
+*hdf5-1.8.10 (06 Nov 2012)
+
+  06 Nov 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/hdf5-1.8.10-buildsystem.patch, +files/hdf5-1.8.10-implicits.patch,
+  +hdf5-1.8.10.ebuild:
+  Version bump
+
+  04 Nov 2012; Agostino Sarubbo <ago@gentoo.org> hdf5-1.8.9-r2.ebuild:
+  Stable for amd64, wrt bug #440682
+
+  01 Nov 2012; Anthony G. Basile <blueness@gentoo.org> hdf5-1.8.9-r2.ebuild:
+  stable ppc ppc64, bug #440682
+
+  18 Oct 2012; Justin Lecher <jlec@gentoo.org> hdf5-1.8.8-r1.ebuild,
+  hdf5-1.8.9-r2.ebuild, metadata.xml:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  15 Oct 2012;  <naota@gentoo.org> hdf5-1.8.9-r2.ebuild:
+  Add ~x86-fbsd
+
+  14 Oct 2012; Justin Lecher <jlec@gentoo.org> hdf5-1.8.8-r1.ebuild,
+  hdf5-1.8.9-r2.ebuild:
+  Prepare for fortran2.eclass update
+
+  05 Jul 2012; Sébastien Fabbro <bicatali@gentoo.org> hdf5-1.8.9-r2.ebuild:
+  Added more prefix rpath to link with szip
+
+  17 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  -files/hdf5-1.8.3-as-needed.patch, -files/hdf5-1.8.3-includes.patch,
+  -files/hdf5-1.8.3-noreturn.patch, -files/hdf5-1.8.4-gnutools.patch,
+  -files/hdf5-1.8.4-scaleoffset.patch, -files/hdf5-1.8.4-sigbus.patch,
+  -files/hdf5-1.8.5-implicits.patch, -files/hdf5-1.8.5-noreturn.patch,
+  -hdf5-1.8.4-r1.ebuild:
+  drop old
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> hdf5-1.8.8-r1.ebuild:
+  alpha/ia64/sparc stable wrt #417607
+
+*hdf5-1.8.9-r2 (13 Jun 2012)
+
+  13 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/hdf5-1.8.9-mpicxx.patch, +hdf5-1.8.9-r2.ebuild, -hdf5-1.8.9-r1.ebuild:
+  Prevent accidental inclusion of mpi c++ headers when hdf5.h is included by
+  third party C++ program/library. Fixes #420777 Juergen Rose <rose@rz.uni-
+  potsdam.de>
+
+  07 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org> hdf5-1.8.9-r1.ebuild:
+  Add explicit rpath for prefix wrt #419677 by William Throwe <wtt6@cornell.edu>
+
+  06 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/hdf5-1.8.9-static_libgfortran.patch, hdf5-1.8.9-r1.ebuild:
+  Link libgfortran statically to H5test_kind in order to circumvent kind
+  misdetection. Fixes #419895 by My Th <rei4dan@gmail.com>
+
+*hdf5-1.8.9-r1 (06 Jun 2012)
+
+  06 Jun 2012; Kacper Kowalik <xarthisius@gentoo.org> +hdf5-1.8.9-r1.ebuild,
+  -hdf5-1.8.9.ebuild:
+  Don't disable rpath for shared libraries wrt #419677 by William Throwe
+  <wtt6@cornell.edu>
+
+*hdf5-1.8.9 (30 May 2012)
+
+  30 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/hdf5-1.8.9-implicits.patch, +hdf5-1.8.9.ebuild:
+  Version bump
+
+  30 May 2012; Jeff Horelick <jdhore@gentoo.org> hdf5-1.8.8-r1.ebuild:
+  marked x86 per bug 417607
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> hdf5-1.8.8-r1.ebuild:
+  Marking hdf5-1.8.8-r1 ppc for bug 417607
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> hdf5-1.8.8-r1.ebuild:
+  Marking hdf5-1.8.8-r1 ppc64 for bug 417607
+
+  26 May 2012; Agostino Sarubbo <ago@gentoo.org> hdf5-1.8.8-r1.ebuild:
+  Stable for amd64, wrt bug #417607
+
+*hdf5-1.8.8-r1 (14 May 2012)
+
+  14 May 2012; Kacper Kowalik <xarthisius@gentoo.org> +hdf5-1.8.8-r1.ebuild,
+  -hdf5-1.8.7.ebuild, -hdf5-1.8.8.ebuild:
+  Install examples only if proper use flag is set. Fixes #409091 by Nikoli
+  <nikoli@lavabit.com>. Drop old
+
+  05 Dec 2011; Kacper Kowalik <xarthisius@gentoo.org> hdf5-1.8.8.ebuild:
+  Fix REQUIRED_USE being defined twice. Thanks to Arfrever
+
+  05 Dec 2011; Kacper Kowalik <xarthisius@gentoo.org> hdf5-1.8.8.ebuild:
+  Use REQUIRED_USE instead of providing sane defaults wrt #392683 by Murph
+  <MattFinn@gmail.com>
+
+  21 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/hdf5-1.8.8-array_bounds.patch, +files/hdf5-1.8.8-implicits.patch,
+  hdf5-1.8.8.ebuild:
+  Fix implicits and array out of bounds
+
+*hdf5-1.8.8 (17 Nov 2011)
+
+  17 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/hdf5-1.8.8-buildsystem.patch, +hdf5-1.8.8.ebuild, metadata.xml:
+  Version bump wrt #390811 by Tolga Dalman, fixes bug #383843 by Cedric
+
+  23 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> -hdf5-1.8.6.ebuild,
+  hdf5-1.8.7.ebuild:
+  Add static-libs switch, punt overshadowed version.
 
   13 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> hdf5-1.8.7.ebuild:
   Add ~amd64-linux ~x86-linux

@@ -1,6 +1,46 @@
 # ChangeLog for media-gfx/pstoedit
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/pstoedit/ChangeLog,v 1.68 2010/07/10 19:17:25 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/pstoedit/ChangeLog,v 1.80 2012/12/01 19:32:42 armin76 Exp $
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> pstoedit-3.61.ebuild:
+  alpha/ia64/sparc stable wrt #441360
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> pstoedit-3.61.ebuild:
+  Stable for x86, wrt bug #441360
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> pstoedit-3.61.ebuild:
+  Stable for HPPA (bug #441360).
+
+  06 Nov 2012; Agostino Sarubbo <ago@gentoo.org> pstoedit-3.61.ebuild:
+  Stable for amd64, wrt bug #441360
+
+  06 Nov 2012; Anthony G. Basile <blueness@gentoo.org> pstoedit-3.61.ebuild:
+  stable ppc ppc64, bug #441360
+
+*pstoedit-3.61 (12 Sep 2012)
+
+  12 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> +pstoedit-3.61.ebuild:
+  Version bump to latest.
+
+  28 Jun 2012; Naohiro Aota <naota@gentoo.org> pstoedit-3.60.ebuild:
+  Add ~x86-fbsd. #395347
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> pstoedit-3.60.ebuild:
+  keyword ~amd64-fbsd
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> pstoedit-3.50.ebuild,
+  pstoedit-3.50-r1.ebuild, pstoedit-3.60.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  19 Mar 2012; Naohiro Aota <naota@gentoo.org> +files/pstoedit-3.60-libdl.patch,
+  pstoedit-3.60.ebuild:
+  Add patch to link against proper dlopen library. #395347
+
+*pstoedit-3.60 (21 Sep 2011)
+
+  21 Sep 2011; Tim Harder <radhermit@gentoo.org> +pstoedit-3.60.ebuild,
+  +files/pstoedit-3.60-parallel.patch:
+  Version bump (bug #383841).
 
 *pstoedit-3.50-r1 (10 Jul 2010)
 

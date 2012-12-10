@@ -1,16 +1,16 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/spim/spim-8.0-r1.ebuild,v 1.4 2010/11/08 19:45:03 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/spim/spim-8.0-r1.ebuild,v 1.6 2012/11/23 19:03:25 ulm Exp $
 
 EAPI=3
 
 inherit eutils toolchain-funcs
 
 DESCRIPTION="MIPS Simulator"
-HOMEPAGE="http://www.cs.wisc.edu/~larus/spim.html"
+HOMEPAGE="http://spimsimulator.sourceforge.net/"
 SRC_URI="http://www.cs.wisc.edu/~larus/SPIM/${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 ppc ~sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 IUSE="doc X"

@@ -1,6 +1,97 @@
 # ChangeLog for app-text/libwpd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/libwpd/ChangeLog,v 1.76 2011/07/14 10:04:02 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/libwpd/ChangeLog,v 1.103 2012/10/24 14:50:54 scarabeus Exp $
+
+  24 Oct 2012; Tomáš Chvátal <scarabeus@gentoo.org> -libwpd-0.9.4.ebuild,
+  libwpd-0.9.6.ebuild:
+  Stable 0.9.6 on all archs for the annoying crashes (only cosm patches that are
+  not needed for all at to test). Remove older.
+
+  25 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> libwpd-0.9.6.ebuild:
+  Drop autotools eclass.
+
+*libwpd-0.9.6 (25 Sep 2012)
+
+  25 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> +libwpd-0.9.6.ebuild:
+  Version bump to latest libwpd.
+
+  29 May 2012; Anthony G. Basile <blueness@gentoo.org> libwpd-0.9.4.ebuild:
+  Keyword ~mips
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> libwpd-0.9.4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  06 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> -libwpd-0.9.3.ebuild:
+  Remove old
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> libwpd-0.9.4.ebuild:
+  alpha/ia64/sparc stable wrt #393007
+
+  17 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -libwpd-0.8.14-r1.ebuild:
+  old
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> libwpd-0.9.4.ebuild:
+  Marking libwpd-0.9.4 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> libwpd-0.9.4.ebuild:
+  Marking libwpd-0.9.4 ppc64 stable for bug 393007
+
+  18 Jan 2012; Fabio Erculiani <lxnay@gentoo.org> libwpd-0.9.4.ebuild:
+  add ~arm keyword
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> libwpd-0.9.4.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> libwpd-0.9.4.ebuild:
+  amd64 stable, bug 393007
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> libwpd-0.9.4.ebuild:
+  Stable for HPPA (bug #393007).
+
+*libwpd-0.9.4 (29 Nov 2011)
+
+  29 Nov 2011; Tomáš Chvátal <scarabeus@gentoo.org> +libwpd-0.9.4.ebuild:
+  Version bump to latest.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> libwpd-0.9.3.ebuild:
+  alpha/ia64/sparc stable wrt #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libwpd-0.9.3.ebuild:
+  x86 stable wrt bug #385699
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> libwpd-0.9.3.ebuild:
+  Stable for HPPA (bug #387199).
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> libwpd-0.9.3.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> libwpd-0.9.3.ebuild:
+  amd64 stable wrt #385699
+
+  07 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org> -libwpd-0.8.14.ebuild,
+  -files/libwpd-0.9.1-gcc46.patch, -files/libwpd-0.9.1-test-build.patch:
+  remove old
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> libwpd-0.8.14-r1.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+  02 Sep 2011; Jeremy Olexa <darkside@gentoo.org> libwpd-0.9.3.ebuild:
+  fix docdir for Gentoo Prefix, bug 381529
+
+*libwpd-0.9.3 (01 Sep 2011)
+
+  01 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> -libwpd-0.9.1.ebuild,
+  -libwpd-0.9.2.ebuild, +libwpd-0.9.3.ebuild:
+  Version bump to latest 0.9 release. Punt older ones from that slot.
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> libwpd-0.8.14-r1.ebuild:
+  Stable for HPPA (bug #369909).
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> libwpd-0.8.14-r1.ebuild:
+  alpha/ia64/sparc stable wrt #369909
+
+  10 Aug 2011; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Add openoffice herd here too.
 
   14 Jul 2011; Thomas Kahle <tomka@gentoo.org> libwpd-0.8.14-r1.ebuild:
   x86 stable per bug 369909

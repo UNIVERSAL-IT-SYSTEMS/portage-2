@@ -1,6 +1,27 @@
 # ChangeLog for app-benchmarks/httperf
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/httperf/ChangeLog,v 1.13 2010/01/15 23:24:06 patrick Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/httperf/ChangeLog,v 1.18 2012/10/30 16:10:17 pinkbyte Exp $
+
+*httperf-0.9.0-r2 (30 Oct 2012)
+
+  30 Oct 2012; Sergey Popov <pinkbyte@gentoo.org> +httperf-0.9.0-r2.ebuild:
+  Bump to EAPI 4, add Prefix support wrt bug #440140
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> httperf-0.8.ebuild,
+  httperf-0.9.0-r1.ebuild:
+  Drop sparc keywords
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> httperf-0.9.0-r1.ebuild:
+  x86 stable wrt bug #399917
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> httperf-0.9.0-r1.ebuild:
+  Stable for amd64, wrt bug #399917
+
+*httperf-0.9.0-r1 (27 Aug 2011)
+
+  27 Aug 2011; Patrick Lauer <patrick@gentoo.org> -httperf-0.9.0.ebuild,
+  +httperf-0.9.0-r1.ebuild:
+  Fixing ssl support for #380347
 
 *httperf-0.9.0 (15 Jan 2010)
 

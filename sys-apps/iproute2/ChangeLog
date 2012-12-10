@@ -1,6 +1,126 @@
 # ChangeLog for sys-apps/iproute2
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/iproute2/ChangeLog,v 1.173 2011/07/31 18:33:22 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/iproute2/ChangeLog,v 1.203 2012/11/08 16:40:45 vapier Exp $
+
+  08 Nov 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/iproute2-3.6.0-pkg-config.patch, iproute2-3.6.0.ebuild:
+  Use the correct pkg-config when cross-compiling #442354 by Bertrand Jacquin.
+
+*iproute2-3.6.0 (09 Oct 2012)
+
+  09 Oct 2012; Mike Frysinger <vapier@gentoo.org> +iproute2-3.6.0.ebuild:
+  Version bump.
+
+*iproute2-3.5.1 (13 Aug 2012)
+
+  13 Aug 2012; Mike Frysinger <vapier@gentoo.org> +iproute2-3.5.1.ebuild,
+  -files/iproute2-3.5.0-ip-a-s.patch, -iproute2-3.5.0-r1.ebuild,
+  -iproute2-3.5.0.ebuild:
+  Add official 3.5.1 release which fixes regressions in 3.5.0.
+
+*iproute2-3.5.0-r1 (13 Aug 2012)
+
+  13 Aug 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/iproute2-3.5.0-ip-a-s.patch, +iproute2-3.5.0-r1.ebuild:
+  Fix `ip a s` so it shows addresses #430320 by Graham Murray.  Move ip into
+  /bin #330115 by Thilo Bangert.
+
+*iproute2-3.5.0 (02 Aug 2012)
+
+  02 Aug 2012; Tim Harder <radhermit@gentoo.org> +iproute2-3.5.0.ebuild:
+  Version bump.
+
+*iproute2-3.4.0 (16 Jul 2012)
+
+  16 Jul 2012; Tim Harder <radhermit@gentoo.org> +iproute2-3.4.0.ebuild:
+  Version bump.
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> iproute2-2.6.29.1-r1.ebuild,
+  iproute2-2.6.35-r2.ebuild, iproute2-2.6.35-r3.ebuild, iproute2-2.6.38.ebuild,
+  iproute2-3.1.0.ebuild, iproute2-9999.ebuild:
+  inherit multilib for get_libdir
+
+  22 May 2012; Michael Weber <xmw@gentoo.org> iproute2-3.3.0.ebuild:
+  Finally fix prefix support (bug 414465)
+
+  15 May 2012; Jeroen Roovers <jer@gentoo.org> iproute2-3.3.0.ebuild:
+  Stable for HPPA (bug #414669).
+
+  12 May 2012; Markus Meier <maekke@gentoo.org> iproute2-3.3.0.ebuild:
+  arm stable, bug #414669
+
+  09 May 2012; Agostino Sarubbo <ago@gentoo.org> iproute2-3.3.0.ebuild:
+  Stable for amd64, wrt bug #414669
+
+  09 May 2012; Agostino Sarubbo <ago@gentoo.org> iproute2-3.3.0.ebuild:
+  Stable for amd64, wrt bug #414669
+
+  09 May 2012; Jeff Horelick <jdhore@gentoo.org> iproute2-3.3.0.ebuild:
+  marked x86 per bug 414669
+
+  08 May 2012; Brent Baude <ranger@gentoo.org> iproute2-3.3.0.ebuild:
+  Marking iproute2-3.3.0 ppc64 for bug 414669
+
+  05 May 2012; Brent Baude <ranger@gentoo.org> iproute2-3.3.0.ebuild:
+  Marking iproute2-3.3.0 ppc for bug 414669
+
+  05 May 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/iproute2-3.1.0-no-ipv6.patch, iproute2-3.1.0.ebuild,
+  iproute2-3.3.0.ebuild, iproute2-9999.ebuild:
+  Forward port USE=iptables and USE=ipv6 support to newer verisons #414661 by
+  Mike Gilbert.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> iproute2-2.6.35-r3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*iproute2-3.3.0 (30 Mar 2012)
+
+  30 Mar 2012; Mike Frysinger <vapier@gentoo.org> +iproute2-3.3.0.ebuild,
+  iproute2-9999.ebuild:
+  Version bump #409995 by jrut.
+
+  16 Feb 2012; Mike Frysinger <vapier@gentoo.org> iproute2-3.1.0.ebuild:
+  Respect CC from build env #401907 by Andrey Hippo.
+
+  02 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> iproute2-2.6.38.ebuild:
+  ppc64 stable wrt #393319
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> iproute2-2.6.38.ebuild:
+  Marking iproute2-2.6.38 ppc for bug 393319
+
+  17 Dec 2011; Raúl Porcel <armin76@gentoo.org> iproute2-2.6.38.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #393319
+
+  11 Dec 2011; Jeroen Roovers <jer@gentoo.org> iproute2-2.6.38.ebuild:
+  Stable for HPPA (bug #393319).
+
+  11 Dec 2011; Markus Meier <maekke@gentoo.org> iproute2-2.6.38.ebuild:
+  arm stable, bug #393319
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> iproute2-2.6.38.ebuild:
+  x86 stable wrt bug #393319
+
+  09 Dec 2011; Markos Chandras <hwoarang@gentoo.org> iproute2-2.6.38.ebuild:
+  Stable on amd64 wrt bug #393319
+
+  05 Dec 2011; Mike Frysinger <vapier@gentoo.org> iproute2-2.6.38.ebuild,
+  iproute2-3.1.0.ebuild, iproute2-9999.ebuild:
+  Clean up code a bit and drop MY_P handling which hopefully should no longer
+  be needed.
+
+  03 Dec 2011; Mike Frysinger <vapier@gentoo.org> iproute2-3.1.0.ebuild,
+  iproute2-9999.ebuild:
+  Update SRC_URI #392987 by Azamat H. Hackimov.
+
+*iproute2-3.1.0 (02 Dec 2011)
+
+  02 Dec 2011; Mike Frysinger <vapier@gentoo.org> +iproute2-3.1.0.ebuild,
+  +files/iproute2-3.1.0-mtu.patch, iproute2-9999.ebuild:
+  Version bump.
+
+  18 Oct 2011; Mike Frysinger <vapier@gentoo.org> iproute2-2.6.38.ebuild,
+  +files/iproute2-2.6.38-parallel-build.patch:
+  Fix parallel builds in the tc subdir.
 
   31 Jul 2011; Matt Turner <mattst88@gentoo.org> iproute2-2.6.29.1-r1.ebuild,
   iproute2-2.6.35-r2.ebuild, iproute2-2.6.35-r3.ebuild, iproute2-2.6.38.ebuild,

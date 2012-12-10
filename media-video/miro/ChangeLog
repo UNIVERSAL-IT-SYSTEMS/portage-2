@@ -1,6 +1,49 @@
 # ChangeLog for media-video/miro
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/miro/ChangeLog,v 1.10 2011/05/25 14:23:34 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/miro/ChangeLog,v 1.19 2012/06/17 01:52:39 jdhore Exp $
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> miro-5.0.1.ebuild:
+  Depend on the avahi mdnsresponder-compat USE flag being set, not JUST avahi.
+
+*miro-5.0.1 (17 Jun 2012)
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> +miro-5.0.1.ebuild:
+  Version bump with a few fixes.
+
+  16 Jun 2012; Jeff Horelick <jdhore@gentoo.org> metadata.xml:
+  Take over maintainership.
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer as he is not able to maintain this anymore.
+
+  16 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> -files/4.0.1-ffmpeg.patch,
+  -files/miro-2.5.3-disable-xine-hack.patch,
+  -files/miro-2.5.3-dont-install-test-files.patch,
+  -files/miro-2.5.3-fix-debug.patch,
+  -files/miro-2.5.3-remove-pkg-config-list-all.patch,
+  -files/miro-2.5.3-remove-unittest-option.patch, -miro-4.0.1-r1.ebuild,
+  -miro-4.0.1.ebuild:
+  Remove versions I was unable to build.
+
+*miro-4.0.6 (16 Feb 2012)
+
+  16 Feb 2012; Jeff Horelick <jdhore@gentoo.org> +miro-4.0.6.ebuild:
+  Version bump. OK'd by volkmar.
+
+  29 Jan 2012; Mike Gilbert <floppym@gentoo.org> miro-4.0.1-r1.ebuild,
+  miro-4.0.1.ebuild:
+  Per Arfrever, remove dependency on dev-libs/boost[python].
+
+*miro-4.0.1-r1 (17 Dec 2011)
+
+  17 Dec 2011; Maxim Koltsov <maksbotan@gentoo.org> +miro-4.0.1-r1.ebuild:
+  Fixed issue with python versions, bug 383637
+
+  26 Sep 2011; Pacho Ramos <pacho@gentoo.org> -miro-2.5.4.ebuild,
+  miro-4.0.1.ebuild:
+  Rekeyword on ppc now that xvid USE is masked on powerpc profile and there is
+  no reason to get it dropped anymore, allowing us to be able to drop
+  gtkmozembed stuff sooner, bug #372243. Remove old.
 
 *miro-4.0.1 (25 May 2011)
 

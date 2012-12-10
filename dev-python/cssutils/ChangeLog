@@ -1,6 +1,36 @@
 # ChangeLog for dev-python/cssutils
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/cssutils/ChangeLog,v 1.18 2010/12/08 15:45:03 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/cssutils/ChangeLog,v 1.26 2012/09/12 23:10:41 floppym Exp $
+
+  12 Sep 2012; Mike Gilbert <floppym@gentoo.org> cssutils-0.9.10_beta1.ebuild:
+  Remove obsolete sed. Thanks Arfrever.
+
+ 05 May 2012; Tomáš Chvátal <scarabeus@gentoo.org> cssutils-0.9.9.ebuild,
+ -cssutils-0.9.7.ebuild:
+ Stable on amd64 x86 and ppc wrt bug#414633.
+
+*cssutils-0.9.10_beta1 (07 Sep 2012)
+
+  07 Sep 2012; <lordvan@gentoo.org> +cssutils-0.9.10_beta1.ebuild:
+  new version. fixes bug #416513
+
+*cssutils-0.9.9 (02 Mar 2012)
+
+  02 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> +cssutils-0.9.9.ebuild:
+  Version bump to 0.9.9 for bug 381983 (thanks to Johan Bergstroem).
+
+  05 Feb 2012; Brent Baude <ranger@gentoo.org> cssutils-0.9.7.ebuild:
+  Marking cssutils-0.9.7 ppc for bug 386729
+
+  22 Dec 2011; Mike Gilbert <floppym@gentoo.org>
+  +files/cssutils-0.9.7-test.patch, cssutils-0.9.7.ebuild:
+  Fix test failures. Patch by Ian Delaney. Bug 386807.
+
+  11 Dec 2011; Markus Meier <maekke@gentoo.org> cssutils-0.9.7.ebuild:
+  x86 stable, bug #386729
+
+  19 Nov 2011; Markos Chandras <hwoarang@gentoo.org> cssutils-0.9.7.ebuild:
+  Restrict test. Bug #386807. Stable on amd64 wrt bug 386729
 
   08 Dec 2010; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   cssutils-0.9.7.ebuild:
@@ -107,4 +137,3 @@
   10 Feb 2009; Thomas Raschbacher <lordvan@gentoo.org>
   +cssutils-0.9.5.1.ebuild, +cssutils-0.9.6_alpha1.ebuild:
   initial version
-

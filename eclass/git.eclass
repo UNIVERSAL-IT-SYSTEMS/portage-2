@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/git.eclass,v 1.55 2011/05/31 10:17:01 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/git.eclass,v 1.59 2012/09/27 16:35:41 axs Exp $
 
 # @DEPRECATED
 # This eclass has been superseded by git-2 eclass.
@@ -26,7 +26,7 @@ DEPEND=">=dev-vcs/git-1.6"
 
 EXPORTED_FUNCTIONS="src_unpack"
 case "${EAPI:-0}" in
-	4|3|2) EXPORTED_FUNCTIONS="${EXPORTED_FUNCTIONS} src_prepare" ;;
+	2|3|4|5) EXPORTED_FUNCTIONS="${EXPORTED_FUNCTIONS} src_prepare" ;;
 	1|0) ;;
 	*) die "EAPI=${EAPI} is not supported" ;;
 esac
@@ -195,6 +195,10 @@ git_branch() {
 git_fetch() {
 	debug-print-function ${FUNCNAME} "$@"
 
+	eqawarn "git.eclass is deprecated."
+	eqawarn "Please update your ebuilds to use git-2 instead. For details, see"
+	eqawarn "http://archives.gentoo.org/gentoo-dev/msg_b7ba363cae580845819ae3501fb157e9.xml"
+
 	local GIT_DIR EGIT_CLONE_DIR oldsha1 cursha1 extra_clone_opts upstream_branch
 	[[ -z ${EGIT_HAS_SUBMODULES} ]] && export GIT_DIR
 
@@ -233,7 +237,7 @@ git_fetch() {
 	if [[ ! -d ${EGIT_STORE_DIR} ]] ; then
 		debug-print "${FUNCNAME}: initial clone. creating git directory"
 		addwrite /
-		mkdir -p "${EGIT_STORE_DIR}" \
+		mkdir -m 775 -p "${EGIT_STORE_DIR}" \
 			|| die "${EGIT}: can't mkdir ${EGIT_STORE_DIR}."
 		export SANDBOX_WRITE="${SANDBOX_WRITE%%:/}"
 	fi
@@ -330,7 +334,7 @@ git_fetch() {
 			${elogcmd} "   to commit:		${cursha1}"
 		else
 			${elogcmd} "   at the commit: 		${cursha1}"
-			# @ECLASS_VARIABLE: LIVE_FAIL_FETCH_IF_REPO_NOT_UPDATED
+			# @ECLASS-VARIABLE: LIVE_FAIL_FETCH_IF_REPO_NOT_UPDATED
 			# @DESCRIPTION:
 			# If this variable is set to TRUE in make.conf or somewhere in
 			# enviroment the package will fail if there is no update, thus in

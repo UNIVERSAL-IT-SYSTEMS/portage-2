@@ -1,6 +1,330 @@
 # ChangeLog for dev-libs/glib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/ChangeLog,v 1.477 2011/07/17 20:43:06 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/ChangeLog,v 1.550 2012/11/27 07:33:08 tetromino Exp $
+
+*glib-2.34.3 (27 Nov 2012)
+
+  27 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -glib-2.34.1.ebuild,
+  +glib-2.34.3.ebuild:
+  Version bump with some minor fixes. Drop old.
+
+*glib-2.34.2 (10 Nov 2012)
+
+  10 Nov 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -glib-2.34.0.ebuild,
+  +glib-2.34.2.ebuild:
+  Version bump with various bugfixes. Drop old.
+
+  23 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  glib-2.32.4-r1.ebuild:
+  Disable problematic thread4 test, like was already done in glib-2.34.x
+  ebuilds (bug #434248, thanks to Toralf Förster and Priit Laes).
+
+*glib-2.34.1 (17 Oct 2012)
+
+  17 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org> glib-2.34.0.ebuild,
+  +glib-2.34.1.ebuild:
+  Version bump; fix --enable-modular-tests logic.
+
+  14 Oct 2012; Raúl Porcel <armin76@gentoo.org> glib-2.32.4-r1.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #436028
+
+  14 Oct 2012; Matt Turner <mattst88@gentoo.org> glib-2.32.4-r1.ebuild:
+  Stable on alpha, bug 436028.
+
+  10 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  glib-2.30.3.ebuild, glib-2.32.4.ebuild, glib-2.32.4-r1.ebuild,
+  glib-2.34.0.ebuild:
+  Drop useless USE=doc, it only regenerated documentation.
+
+  06 Oct 2012; Anthony G. Basile <blueness@gentoo.org> glib-2.32.4-r1.ebuild:
+  stable ppc ppc64, bug #427544
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> glib-2.32.4-r1.ebuild:
+  arm stable, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> glib-2.32.4-r1.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> glib-2.32.4-r1.ebuild:
+  x86 stable wrt bug #427544
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> glib-2.32.4-r1.ebuild:
+  Stable for HPPA (bug #427544).
+
+*glib-2.32.4-r1 (29 Sep 2012)
+
+  29 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> +glib-2.32.4-r1.ebuild,
+  +files/glib-2.32.4-CVE-2012-3524.patch:
+  Revision bump to import upstream patch for CVE-2012-3524 wrt #436028
+
+  28 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> glib-2.34.0.ebuild:
+  Really disable building tests when USE=-test (bug #436508, thanks to Jeff
+  Kowalczyk).
+
+  26 Sep 2012; Matt Turner <mattst88@gentoo.org> glib-2.32.4.ebuild:
+  Stable on alpha, bug 427544.
+
+*glib-2.34.0 (25 Sep 2012)
+
+  25 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -files/glib-2.24-assert-test-failure.patch,
+  -files/glib-2.25-punt-python-check.patch,
+  -files/glib-2.26.0-disable-locale-sensitive-test.patch,
+  -files/glib-2.26.0-disable-volumemonitor-broken-test.patch,
+  -files/glib-2.26.1-gatomic-header.patch,
+  -files/glib-2.29.18-external-gdbus-codegen.patch, -glib-2.30.2.ebuild,
+  -glib-2.32.3.ebuild, glib-1.2.10-r5.ebuild, glib-2.30.3.ebuild,
+  glib-2.32.4.ebuild, +glib-2.34.0.ebuild,
+  +files/glib-2.34.0-testsuite-skip-gdbus-auth-tests.patch,
+  +files/glib-2.34.0-testsuite-skip-thread4.patch:
+  Version bump. Notable changes: thumbnails now cached in XDG_CACHE_HOME; more
+  stream classes implement GSeekable/GPollable. Drop old. Remove unused
+  patches. Make license more precise.
+
+  12 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> glib-2.32.4.ebuild:
+  Add AS_IF patches from 2.33.x to fix cross-compiling; bug #434770, thanks to
+  Mike Frysinger.
+
+  11 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> glib-2.30.2.ebuild,
+  glib-2.30.3.ebuild, glib-2.32.3.ebuild, glib-2.32.4.ebuild:
+  Avoid 'mv -v' for embedded/feature-limited users with busybox (bug #432628).
+
+  06 Sep 2012; Mike Frysinger <vapier@gentoo.org> glib-2.32.4.ebuild:
+  Drop ia64 hack since we no longer care about <gcc-4.1 versions.
+
+*glib-2.32.4 (16 Jul 2012)
+
+  16 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -files/glib-2.32.1-fix-libelf-check.patch, -glib-2.32.2.ebuild,
+  +glib-2.32.4.ebuild, +files/glib-2.32.4-bashcomp.patch:
+  Version bump with lots of bugfixes. Drop old.
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> glib-2.30.3.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #410611
+
+  07 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> glib-2.32.3.ebuild:
+  Check if pkg-config binary is working instead of checking if
+  virtual/pkgconfig is installed.
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> glib-2.30.3.ebuild:
+  ppc stable wrt #410611
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> glib-2.30.3.ebuild:
+  Stable for HPPA (bug #410611).
+
+*glib-2.32.3 (15 May 2012)
+
+  15 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> -glib-2.32.1.ebuild,
+  -files/glib-2.32.1-gnustep-not-cocoa.patch, +glib-2.32.3.ebuild:
+  Version bump with a few bugfixes. Drop old.
+
+  05 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org> glib-2.32.1.ebuild,
+  glib-2.32.2.ebuild:
+  Restore forgotten cross-compile fix from 2.30.x (bug #414761, thanks to
+  Samuli Suominen).
+
+  05 May 2012; Samuli Suominen <ssuominen@gentoo.org> glib-2.30.2.ebuild,
+  glib-2.30.3.ebuild, glib-2.32.1.ebuild, glib-2.32.2.ebuild:
+  Move from dev-util/pkgconfig to virtual/pkgconfig for exporting the required
+  variables for ./configure to pass.
+
+*glib-2.32.2 (01 May 2012)
+
+  01 May 2012; Pacho Ramos <pacho@gentoo.org> +glib-2.32.2.ebuild,
+  -glib-2.28.8.ebuild, -glib-2.30.2-r1.ebuild, -glib-2.32.0.ebuild,
+  metadata.xml:
+  Version bump, remove old.
+
+  30 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> glib-2.32.1.ebuild:
+  Check for CONFIG_INOTIFY_USER wrt #413403
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> glib-2.30.3.ebuild:
+  x86 stable, bug #410611
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> glib-2.32.1.ebuild:
+  keyword ~amd64-fbsd
+
+  25 Apr 2012; Markus Meier <maekke@gentoo.org> glib-2.30.3.ebuild:
+  arm stable, bug #410611
+
+  19 Apr 2012; Brent Baude <ranger@gentoo.org> glib-2.30.3.ebuild:
+  Marking glib-2.30.3 ppc64 stable for bug 410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> glib-2.30.3.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  16 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> glib-2.32.1.ebuild,
+  +files/glib-2.32.1-gnustep-not-cocoa.patch:
+  Fix building on systems with gnustep-base installed (bug #411981, thanks to
+  Carlos Konstanski et al. for reporting).
+
+  14 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> glib-2.32.0.ebuild,
+  glib-2.32.1.ebuild, +files/glib-2.32.1-fix-libelf-check.patch:
+  Add elfutils/libelf as a runtime dependency, and fix libelf detection. Fix
+  datetime tests in non-English locales (bug #411967, thanks to Marien Zwart).
+
+  14 Apr 2012; Alexis Ballier <aballier@gentoo.org> glib-2.32.1.ebuild:
+  allow to replace lelfutils by libelf. the former isnt keyworded and doesnt
+  build on fbsd while the latter is fine
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> glib-2.32.1.ebuild:
+  Add ~amd64-linux keyword.
+
+*glib-2.32.1 (14 Apr 2012)
+
+  14 Apr 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +glib-2.32.1.ebuild:
+  Version bump with minor bugfixes.
+
+  27 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org> glib-2.28.8.ebuild,
+  glib-2.30.2.ebuild, glib-2.30.2-r1.ebuild, glib-2.30.3.ebuild,
+  glib-2.32.0.ebuild:
+  Add shared-mime-info to PDEPEND, it's needed for gio/xdgmime to function
+  properly (thanks to Gilles Dartiguelongue for pointing out the issue in bug
+  #409481).
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> glib-2.30.2.ebuild,
+  glib-2.30.2-r1.ebuild:
+  ia64/m68k/s390/sh/sparc stable wrt #393007
+
+*glib-2.32.0 (25 Mar 2012)
+
+  25 Mar 2012; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +files/glib-2.31.x-external-gdbus-codegen.patch, +glib-2.32.0.ebuild:
+  Bump to 2.32, used by clutter and GNOME 3.4; package.masked because it breaks
+  a lot of stuff
+
+  23 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org> glib-2.30.2.ebuild,
+  glib-2.30.2-r1.ebuild, glib-2.30.3.ebuild:
+  Add gnome2_environment_reset to fix test failures (partially resolves bug
+  #409313 reported by Patrick Lauer).
+
+  14 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -glib-2.30.1-r2.ebuild:
+  Drop old.
+
+*glib-2.30.3 (14 Mar 2012)
+
+  14 Mar 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +glib-2.30.3.ebuild,
+  +files/glib-2.30.3-closure-64bit-be.patch:
+  Version bump, fixes several memory leaks and other bugs.
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> glib-2.30.2.ebuild:
+  Marking glib-2.30.2 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> glib-2.30.2.ebuild:
+  Marking glib-2.30.2 ppc64 stable for bug 393007
+
+  17 Feb 2012; Tobias Klausmann <klausman@gentoo.org> glib-2.30.2-r1.ebuild:
+  Stable on alpha, bug #401513
+
+  18 Jan 2012; Markus Meier <maekke@gentoo.org> glib-2.30.2.ebuild:
+  arm stable, bug #393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> glib-2.30.2.ebuild:
+  x86 stable, bug #393007
+
+  11 Jan 2012; Mike Frysinger <vapier@gentoo.org> glib-2.30.2.ebuild,
+  glib-2.30.2-r1.ebuild:
+  Assume pkgconfig exists in cross-compile setups since we need to execute
+  `pkg-config` from ROOT=/ and not the cross-one from .
+
+*glib-2.30.2-r1 (10 Jan 2012)
+
+  10 Jan 2012; Mike Frysinger <vapier@gentoo.org> +glib-2.30.2-r1.ebuild,
+  +files/glib-2.30.2-missing-decls.patch:
+  Add fix from upstream for building with C++ compilers.
+
+  31 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  glib-2.30.1-r2.ebuild, glib-2.30.2.ebuild:
+  Fix py-compile idiom for automake-1.11.2 compatibility (bug #396585).
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> glib-2.30.2.ebuild:
+  amd64 stable, bug 393007
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> glib-2.30.2.ebuild:
+  Stable for HPPA (bug #393007).
+
+  14 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> glib-2.30.2.ebuild:
+  !<dbus-1.4.16-r2 blocker is not needed with glib-2.30.2-machine-id.patch.
+  Thanks to gflohr in #gentoo-desktop for noticing.
+
+*glib-2.30.2 (14 Nov 2011)
+
+  14 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org> +glib-2.30.2.ebuild,
+  +files/glib-2.30.2-machine-id.patch:
+  Bump. Notable changes: gdbus-related bugfixes. Add patch to detect machine-id
+  in both /etc and /var, and lower dbus dep. Compile tests when USE=doc to
+  prevent build failure (bug #387385, solution proposed by Pacho Ramos).
+
+  12 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> -glib-2.28.6.ebuild,
+  -glib-2.30.0.ebuild, -glib-2.30.1.ebuild, -glib-2.30.1-r1.ebuild:
+  old
+
+*glib-2.30.1-r2 (11 Nov 2011)
+
+  11 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +glib-2.30.1-r2.ebuild:
+  Change hardcoded machine-id path to /etc wrt #390143 by Ewgenij Starostin
+
+  18 Oct 2011; Jeroen Roovers <jer@gentoo.org> glib-2.28.8.ebuild:
+  Stable for HPPA (bug #385699).
+
+*glib-2.30.1-r1 (16 Oct 2011)
+
+  16 Oct 2011; Pacho Ramos <pacho@gentoo.org> +glib-2.30.1-r1.ebuild,
+  +files/glib-2.30.1-homedir-env.patch, metadata.xml:
+  Fix python ddependency issues as it's needed in some cases, bug #384853 (by
+  Alexandre Rostovtsev and Arfrever Frehtes Taifersar Arahesis); depend more
+  scrictly on dev-util/gdbus-codegen to prevent unwanted mixes (and also help
+  maintainers to remember both need to be bumped at the same time); utils die
+  themselves with eapi4 (drop unneeded dies then); handle the G_HOME
+  environment variable to override the passwd entry, upstream bug #142568;
+  handle the G_HOME environment variable to override the passwd entry, upstream
+  bug #142568 (by Debian folks);
+  workaround-gio-test-failure-without-userpriv.patch looks to be no longer
+  needed as upstream bug should be fixed; assert-msg-test prefers to have gdb
+  installed when running test.
+
+*glib-2.30.1 (16 Oct 2011)
+
+  16 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> +glib-2.30.1.ebuild,
+  +files/glib-2.30.1-external-gdbus-codegen.patch:
+  Version bump.
+
+  06 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> glib-2.30.0.ebuild:
+  export LIBFFI_CFLAGS and LIBFFI_LIBS if dev-util/pkgconfig is not installed
+  wrt #385561 by Bartosz Szreder
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> glib-2.28.8.ebuild:
+  ppc/ppc64 stable wrt #369909
+
+  28 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> glib-2.30.0.ebuild:
+  Use virtual/libffi instead of dev-libs/libffi in case we have to switch to
+  using copy from GCC in future.
+
+*glib-2.30.0 (27 Sep 2011)
+
+  27 Sep 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +files/glib-2.29.18-external-gdbus-codegen.patch, +glib-2.30.0.ebuild:
+  Bump to 2.30, from the GNOME overlay. Ebuild updates and patches by
+  tetromino.
+
+  14 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> glib-2.28.8.ebuild:
+  Revert last libtool file preservation since we have usable pkg-config files
+  wrt #379115.
+
+  14 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> glib-2.28.8.ebuild:
+  Remove .la files only when USE=-static-libs. Previous commit by ssuominen
+  punted .la files unconditionally, bug 379115
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> glib-2.28.8.ebuild:
+  m68k stable wrt #369909
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> glib-2.28.8.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #369909
+
+  10 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> glib-2.28.8.ebuild:
+  Fix circular depend with USE="test" and dev-util/pkgconfig. Remove libtool
+  files.
 
   17 Jul 2011; Markus Meier <maekke@gentoo.org> glib-2.28.8.ebuild:
   arm stable, bug #369909

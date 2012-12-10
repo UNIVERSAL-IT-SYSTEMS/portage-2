@@ -1,6 +1,86 @@
 # ChangeLog for dev-perl/Class-Inspector
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-Inspector/ChangeLog,v 1.64 2011/01/27 18:59:27 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Class-Inspector/ChangeLog,v 1.85 2012/11/04 16:18:43 tove Exp $
+
+*Class-Inspector-1.280.0 (04 Nov 2012)
+
+  04 Nov 2012; Torsten Veller <tove@gentoo.org>
+  +Class-Inspector-1.280.0.ebuild:
+  Version bump
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org>
+  -Class-Inspector-1.250.0.ebuild:
+  Cleanup
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org>
+  Class-Inspector-1.270.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org>
+  Class-Inspector-1.270.0.ebuild:
+  alpha/ia64/sparc stable wrt #418797
+
+  09 Aug 2012; Brent Baude <ranger@gentoo.org> Class-Inspector-1.270.0.ebuild:
+  Marking Class-Inspector-1.270.0 ppc for bug 418797
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> Class-Inspector-1.270.0.ebuild:
+  Marking Class-Inspector-1.270.0 ppc64 for bug 418797
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
+  Class-Inspector-1.270.0.ebuild:
+  Stable for amd64, wrt bug #418797
+
+  02 Aug 2012; Jeroen Roovers <jer@gentoo.org> Class-Inspector-1.270.0.ebuild:
+  Stable for HPPA (bug #418797).
+
+  31 Jul 2012; Johannes Huber <johu@gentoo.org> Class-Inspector-1.270.0.ebuild:
+  Stable for x86, wrt bug #418797
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org> -Class-Inspector-1.24.ebuild:
+  Cleanup
+
+  24 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  Class-Inspector-1.250.0.ebuild:
+  ia64/sparc stable wrt #400053
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Class-Inspector-1.250.0.ebuild:
+  x86 stable wrt bug #400053
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> Class-Inspector-1.250.0.ebuild:
+  Marking Class-Inspector-1.250.0 ppc64 for bug 400053
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> Class-Inspector-1.250.0.ebuild:
+  Marking Class-Inspector-1.250.0 ppc for bug 400053
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> Class-Inspector-1.250.0.ebuild:
+  Stable for HPPA (bug #400053).
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  Class-Inspector-1.250.0.ebuild:
+  Stable on alpha, bug #400053
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  Class-Inspector-1.250.0.ebuild:
+  Stable for amd64, wrt bug #400053
+
+*Class-Inspector-1.270.0 (28 Jan 2012)
+
+  28 Jan 2012; Torsten Veller <tove@gentoo.org>
+  +Class-Inspector-1.270.0.ebuild:
+  Version bump
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Class-Inspector-1.250.ebuild:
+  Cleanup
+
+*Class-Inspector-1.250.0 (01 Sep 2011)
+
+  01 Sep 2011; Torsten Veller <tove@gentoo.org>
+  +Class-Inspector-1.250.0.ebuild:
+  Change version scheme
 
 *Class-Inspector-1.250 (27 Jan 2011)
 
@@ -271,4 +351,3 @@
   31 May 2003; Michael Cummings <mcummings@gentoo.org>
   Class-Inspector-1.ebuild:
   New ebuild for bug 21791
-

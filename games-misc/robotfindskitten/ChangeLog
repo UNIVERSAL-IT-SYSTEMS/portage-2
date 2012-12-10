@@ -1,6 +1,29 @@
 # ChangeLog for games-misc/robotfindskitten
-# Copyright 2000-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-misc/robotfindskitten/ChangeLog,v 1.6 2007/02/08 21:07:44 wolf31o2 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-misc/robotfindskitten/ChangeLog,v 1.11 2012/03/18 19:40:25 armin76 Exp $
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  robotfindskitten-1.4142135.349.ebuild, robotfindskitten-1.7320508.406.ebuild:
+  Drop sparc keywords
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org>
+  robotfindskitten-1.7320508.406.ebuild:
+  Marking robotfindskitten-1.7320508.406 ppc for bug 399459
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  robotfindskitten-1.7320508.406.ebuild:
+  x86 stable wrt bug #399459
+
+  20 Jan 2012; Agostino Sarubbo <ago@gentoo.org>
+  robotfindskitten-1.7320508.406.ebuild:
+  Stable for amd64, wrt bug #399459
+
+*robotfindskitten-1.7320508.406 (20 Dec 2011)
+
+  20 Dec 2011; Michael Sterrett <mr_bones_@gentoo.org>
+  +robotfindskitten-1.7320508.406.ebuild:
+  Version bump with patch from Michael (kensington) (bug #395361)
+
 
   08 Feb 2007; Chris Gianelloni <wolf31o2@gentoo.org> ChangeLog:
   Regenerate digest in Manifest2 format.

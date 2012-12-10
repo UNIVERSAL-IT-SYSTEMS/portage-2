@@ -1,6 +1,28 @@
 # ChangeLog for app-dicts/myspell-lv
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-lv/ChangeLog,v 1.17 2010/09/27 23:37:13 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-lv/ChangeLog,v 1.22 2012/08/24 17:23:44 scarabeus Exp $
+
+  24 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> -myspell-lv-0.9.4.ebuild,
+  myspell-lv-0.9.4-r1.ebuild:
+  Stabilise latest. Remove older.
+
+*myspell-lv-0.9.4-r1 (23 Jul 2012)
+
+  23 Jul 2012; Tomáš Chvátal <scarabeus@gentoo.org> +myspell-lv-0.9.4-r1.ebuild:
+  Revision bump to use new eclass.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> myspell-lv-0.9.4.ebuild:
+  keyword ~amd64-fbsd
+
+  19 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> -myspell-lv-20060316.ebuild,
+  myspell-lv-0.9.4.ebuild:
+  Update latvian dictionaries to stable as requested by latvian guys. Remove
+  pseudonewer version that is actualy totaly fubared.
+
+*myspell-lv-0.9.4 (19 Apr 2012)
+
+  19 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> +myspell-lv-0.9.4.ebuild:
+  Add newest version of lv dictionary (even if the version string is lower).
 
   27 Sep 2010; Mart Raudsepp <leio@gentoo.org> myspell-lv-20060316.ebuild:
   Add ~mips
@@ -61,4 +83,3 @@
   01 May 2006; Kevin F. Quinn <kevquinn@gentoo.org> +metadata.xml,
   +myspell-lv-20060316.ebuild:
   New ebuild for Latvian myspell dictionary
-

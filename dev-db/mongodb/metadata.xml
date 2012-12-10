@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<herd>no-herd</herd>
-	<maintainer>
-		<email>ramereth@gentoo.org</email>
-		<name>Lance Albertson</name>
-	</maintainer>
 	<maintainer>
 		<email>ultrabug@gentoo.org</email>
 		<name>Alexys Jacob</name>
+	</maintainer>
+	<maintainer>
+		<email>bugs@bergstroem.nu</email>
+		<name>Johan Bergström</name>
+		<description>Proxy Maintainer. CC on bugs</description>
 	</maintainer>
 	<longdescription lang="en">
 	MongoDB (from "humongous") is a scalable, high-performance, open source,
@@ -22,6 +22,7 @@
 		<flag name="v8">Use V8 JavaScript engine
 			(<pkg>dev-lang/v8</pkg>) instead of SpiderMonkey
 			(<pkg>dev-lang/spidermonkey</pkg>)</flag>
+		<flag name="mms-agent">Install the MongoDB Monitoring Service agent</flag>
 	</use>
 </pkgmetadata>
 

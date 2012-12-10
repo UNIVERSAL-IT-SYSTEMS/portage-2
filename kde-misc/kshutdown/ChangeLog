@@ -1,6 +1,22 @@
 # ChangeLog for kde-misc/kshutdown
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/kshutdown/ChangeLog,v 1.36 2011/06/17 22:32:14 dilfridge Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/kshutdown/ChangeLog,v 1.39 2012/08/03 08:45:14 johu Exp $
+
+*kshutdown-3.0_beta4 (03 Aug 2012)
+
+  03 Aug 2012; Johannes Huber <johu@gentoo.org> +kshutdown-3.0_beta4.ebuild,
+  -kshutdown-3.0_beta3.ebuild, kshutdown-2.0.ebuild:
+  Version bump by Nikos Chantziaras <realnc@gmail.com> wrt bug #429610. Remove
+  old.
+
+*kshutdown-3.0_beta3 (16 Mar 2012)
+
+  16 Mar 2012; Johannes Huber <johu@gentoo.org> +kshutdown-3.0_beta3.ebuild:
+  Version bump by Chris Reffet <geekboy72@gmail.com>. Fixes compilation with KDE
+  4.8.
+
+  29 Oct 2011; Jonathan Callen <abcd@gentoo.org> -kshutdown-2.0_beta12.ebuild:
+  remove old
 
 *kshutdown-2.0 (17 Jun 2011)
 

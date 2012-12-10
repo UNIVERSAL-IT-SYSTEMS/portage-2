@@ -1,6 +1,24 @@
 # ChangeLog for dev-python/asciitable
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/asciitable/ChangeLog,v 1.10 2011/04/18 22:37:00 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/asciitable/ChangeLog,v 1.15 2012/08/02 18:09:06 bicatali Exp $
+
+  02 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> asciitable-0.8.0.ebuild:
+  Keyword amd64-linux and x86-linux
+
+  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> asciitable-0.8.0.ebuild:
+  Fixing SRC_URI for pypi
+
+  07 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> asciitable-0.8.0.ebuild:
+  Remove obsolete PYTHON_MODNAME
+
+*asciitable-0.8.0 (05 Oct 2011)
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> -asciitable-0.5.1.ebuild,
+  -asciitable-0.5.2.ebuild, +asciitable-0.8.0.ebuild:
+  Version bump, install docs, drop old
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Switched herd to sci-astronomy
 
 *asciitable-0.5.2 (18 Apr 2011)
 
@@ -59,4 +77,3 @@
   15 Jul 2010; Sébastien Fabbro <bicatali@gentoo.org>
   +asciitable-0.2.5.ebuild, +metadata.xml:
   Initial import
-

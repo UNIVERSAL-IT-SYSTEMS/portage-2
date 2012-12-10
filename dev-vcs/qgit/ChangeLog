@@ -1,6 +1,46 @@
 # ChangeLog for dev-vcs/qgit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/qgit/ChangeLog,v 1.1 2011/02/10 21:35:11 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/qgit/ChangeLog,v 1.12 2012/11/21 10:58:34 ago Exp $
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> qgit-2.5.ebuild:
+  Stable for x86, wrt bug #440850
+
+  04 Nov 2012; <ago@gentoo.org> qgit-2.5.ebuild:
+  Stable for amd64, wrt bug #440850
+
+  03 Nov 2012; Anthony G. Basile <blueness@gentoo.org> qgit-2.5.ebuild:
+  stable ppc ppc64, bug #440850
+
+*qgit-2.5 (01 Oct 2012)
+
+  01 Oct 2012; Davide Pesavento <pesa@gentoo.org> +qgit-2.5.ebuild:
+  Version bump.
+
+  25 Mar 2012; Davide Pesavento <pesa@gentoo.org> -qgit-2.3-r1.ebuild,
+  -qgit-2.3.ebuild:
+  Remove old.
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> qgit-2.4.ebuild:
+  Marking qgit-2.4 ppc64 for bug 408709
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> qgit-2.4.ebuild:
+  Marking qgit-2.4 ppc for bug 408709
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> qgit-2.4.ebuild:
+  x86 stable wrt bug #408709
+
+  20 Mar 2012; Agostino Sarubbo <ago@gentoo.org> qgit-2.4.ebuild:
+  Stable for amd64, wrt bug #408709
+
+  18 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #118003.
+
+*qgit-2.4 (17 Feb 2012)
+
+  17 Feb 2012; Davide Pesavento <pesa@gentoo.org> +qgit-2.4.ebuild,
+  -qgit-2.2.ebuild, metadata.xml:
+  Version bump (bug #396705), also fixes bug #373689. Install icon and desktop
+  file (bug #271953). Remove old.
 
   10 Feb 2011; Ulrich Mueller <ulm@gentoo.org> +qgit-2.2.ebuild,
   +qgit-2.3.ebuild, +qgit-2.3-r1.ebuild, +metadata.xml:
@@ -221,4 +261,3 @@
   30 Oct 2005; Fernando J. Pereda <ferdy@gentoo.org> +metadata.xml,
   +qgit-0.96.1.ebuild:
   initial commit. fixes #110072
-

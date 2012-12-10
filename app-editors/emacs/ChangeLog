@@ -1,6 +1,440 @@
 # ChangeLog for app-editors/emacs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs/ChangeLog,v 1.423 2011/08/01 06:33:39 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs/ChangeLog,v 1.540 2012/10/24 18:52:44 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> emacs-21.4-r24.ebuild,
+  emacs-22.3-r10.ebuild, emacs-23.4-r4.ebuild, emacs-24.1-r1.ebuild,
+  emacs-24.2.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  08 Oct 2012; Ulrich Müller <ulm@gentoo.org> -emacs-23.4-r3.ebuild:
+  Remove vulnerable revision wrt security bug 431178.
+
+  08 Oct 2012; Anthony G. Basile <blueness@gentoo.org> emacs-23.4-r4.ebuild,
+  emacs-24.1-r1.ebuild:
+  stable ppc, bug #431178
+
+  07 Oct 2012; Raúl Porcel <armin76@gentoo.org> emacs-24.2.ebuild:
+  alpha/ia64/s390/sh/sparc/x86 stable wrt #436520
+
+  06 Oct 2012; Markus Meier <maekke@gentoo.org> emacs-24.2.ebuild:
+  arm stable, bug #436520
+
+  05 Oct 2012; Brent Baude <ranger@gentoo.org> emacs-24.2.ebuild:
+  Marking emacs-24.2 ppc64 for bug 436520
+
+  04 Oct 2012; Brent Baude <ranger@gentoo.org> emacs-24.2.ebuild:
+  Marking emacs-24.2 ppc for bug 436520
+
+  02 Oct 2012; Jeroen Roovers <jer@gentoo.org> emacs-24.2.ebuild:
+  Stable for HPPA (bug #436520).
+
+  01 Oct 2012; Ulrich Müller <ulm@gentoo.org> emacs-23.4-r4.ebuild,
+  emacs-24.1-r1.ebuild, emacs-24.2.ebuild:
+  Don't hardcore ar, but get AR and ARFLAGS from configure, bug 436758.
+
+  01 Oct 2012; Agostino Sarubbo <ago@gentoo.org> emacs-24.2.ebuild:
+  Stable for amd64, wrt bug #436520
+
+  26 Sep 2012; Ulrich Müller <ulm@gentoo.org> -emacs-24.1.ebuild:
+  Remove old.
+
+  26 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> emacs-23.4-r4.ebuild,
+  emacs-24.1-r1.ebuild:
+  ppc64 stable wrt #431178
+
+  25 Sep 2012; Ulrich Müller <ulm@gentoo.org> emacs-18.59-r8.ebuild,
+  emacs-21.4-r24.ebuild, emacs-22.3-r10.ebuild, emacs-23.4-r3.ebuild,
+  emacs-23.4-r4.ebuild, emacs-24.1.ebuild, emacs-24.1-r1.ebuild,
+  emacs-24.2.ebuild:
+  Specify LICENSE more precisely, "as-is" is really HPND.
+
+  18 Sep 2012; Ulrich Müller <ulm@gentoo.org> emacs-18.59-r8.ebuild,
+  emacs-21.4-r24.ebuild, emacs-22.3-r10.ebuild, emacs-23.4-r3.ebuild,
+  emacs-23.4-r4.ebuild, emacs-24.1.ebuild, emacs-24.1-r1.ebuild,
+  emacs-24.2.ebuild:
+  Fix LICENSE.
+
+  07 Sep 2012; Ulrich Müller <ulm@gentoo.org> metadata.xml:
+  Add description for source USE flag.
+
+  02 Sep 2012; Ulrich Müller <ulm@gentoo.org> -emacs-23.4-r1.ebuild:
+  Remove old.
+
+  02 Sep 2012; Raúl Porcel <armin76@gentoo.org> emacs-23.4-r4.ebuild,
+  emacs-24.1-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #431178
+
+*emacs-24.2 (27 Aug 2012)
+
+  27 Aug 2012; Ulrich Müller <ulm@gentoo.org> -emacs-24.2_rc1.ebuild,
+  -emacs-24.2_rc2.ebuild, +emacs-24.2.ebuild:
+  Version bump. Remove release candidates.
+
+*emacs-24.2_rc2 (24 Aug 2012)
+
+  24 Aug 2012; Ulrich Müller <ulm@gentoo.org> +emacs-24.2_rc2.ebuild:
+  Version bump.
+
+  24 Aug 2012; Ulrich Müller <ulm@gentoo.org> emacs-18.59-r8.ebuild:
+  Support x32 ABI on amd64.
+
+  23 Aug 2012; Markus Meier <maekke@gentoo.org> emacs-23.4-r4.ebuild,
+  emacs-24.1-r1.ebuild:
+  arm stable, bug #431178
+
+  21 Aug 2012; Johannes Huber <johu@gentoo.org> emacs-23.4-r4.ebuild,
+  emacs-24.1-r1.ebuild:
+  Stable for x86, wrt bug #431178
+
+*emacs-24.2_rc1 (15 Aug 2012)
+
+  15 Aug 2012; Ulrich Müller <ulm@gentoo.org> +emacs-24.2_rc1.ebuild:
+  Version bump, release candidate for Emacs 24.2.
+
+  15 Aug 2012; Jeroen Roovers <jer@gentoo.org> emacs-23.4-r4.ebuild,
+  emacs-24.1-r1.ebuild:
+  Stable for HPPA (bug #431178).
+
+  14 Aug 2012; Agostino Sarubbo <ago@gentoo.org> emacs-23.4-r4.ebuild,
+  emacs-24.1-r1.ebuild:
+  Stable for amd64, wrt bug #431178
+
+*emacs-24.1-r1 (13 Aug 2012)
+*emacs-23.4-r4 (13 Aug 2012)
+
+  13 Aug 2012; Ulrich Müller <ulm@gentoo.org> +emacs-23.4-r4.ebuild,
+  +emacs-24.1-r1.ebuild:
+  Fix security flaw in enable-local-eval, CVE-2012-3479, bug 431178.
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> emacs-24.1.ebuild:
+  arm stable, bug #428212
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> emacs-24.1.ebuild:
+  Marking emacs-24.1 ppc64 for bug 428212
+
+  07 Aug 2012; Brent Baude <ranger@gentoo.org> emacs-23.4-r3.ebuild:
+  Marking emacs-23.4-r3 ppc64 for bug 423507
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> emacs-24.1.ebuild:
+  Stable for amd64, wrt bug #428212
+
+  01 Aug 2012; Ulrich Müller <ulm@gentoo.org> emacs-23.4-r3.ebuild:
+  Backported FreeBSD patch from Emacs 24.
+
+  30 Jul 2012; Jeff Horelick <jdhore@gentoo.org> emacs-24.1.ebuild:
+  marked x86 per bug 428212
+
+  29 Jul 2012; Jeroen Roovers <jer@gentoo.org> emacs-24.1.ebuild:
+  Stable for HPPA (bug #428212).
+
+  26 Jul 2012; Ulrich Müller <ulm@gentoo.org> emacs-23.4-r3.ebuild,
+  emacs-24.1.ebuild:
+  Run paxctl only if the toolchain supports the PT_PAX_FLAGS program header,
+  bug 426394. Fix building on FreeBSD.
+
+  19 Jul 2012; Markus Meier <maekke@gentoo.org> emacs-23.4-r3.ebuild:
+  arm stable, bug #423507
+
+  05 Jul 2012; Ulrich Müller <ulm@gentoo.org> emacs-24.1.ebuild:
+  Fix compile failure with glibc-2.16 (updated gets in gnulib). Bug 424755.
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> emacs-23.4-r3.ebuild:
+  Stable for HPPA (bug #423507).
+
+  03 Jul 2012; Jeff Horelick <jdhore@gentoo.org> emacs-23.4-r3.ebuild:
+  marked x86 per bug 423507
+
+  29 Jun 2012; Ulrich Müller <ulm@gentoo.org> emacs-22.3-r10.ebuild,
+  emacs-23.4-r3.ebuild, emacs-24.1.ebuild, metadata.xml:
+  Add built with use dependency for emacs-common-gentoo[games?], bug 368647.
+
+  28 Jun 2012; Brent Baude <ranger@gentoo.org> emacs-23.4-r3.ebuild:
+  Marking emacs-23.4-r3 ppc for bug 423507
+
+  27 Jun 2012; Agostino Sarubbo <ago@gentoo.org> emacs-23.4-r3.ebuild:
+  Stable for amd64, wrt bug #423507
+
+  24 Jun 2012; Ulrich Müller <ulm@gentoo.org> emacs-23.4-r3.ebuild,
+  emacs-24.1.ebuild:
+  Store version information in system-configuration-options variable.
+
+  13 Jun 2012; Ulrich Müller <ulm@gentoo.org> -emacs-22.3-r9.ebuild,
+  -emacs-23.4-r2.ebuild, emacs-23.4-r3.ebuild, -emacs-24.1_rc.ebuild,
+  emacs-24.1.ebuild:
+  Fix compilation with ABI=x32, bug 420257. Remove old.
+
+  11 Jun 2012; Ulrich Müller <ulm@gentoo.org> emacs-21.4-r24.ebuild:
+  Fix compilation with libXaw3d-1.6.
+
+*emacs-24.1 (10 Jun 2012)
+*emacs-23.4-r3 (10 Jun 2012)
+*emacs-22.3-r10 (10 Jun 2012)
+
+  10 Jun 2012; Ulrich Müller <ulm@gentoo.org> +emacs-22.3-r10.ebuild,
+  +emacs-23.4-r3.ebuild, +emacs-24.1.ebuild:
+  Emacs 24.1 released, ebuild and patchset based on emacs-24.1_rc.
+  Game score files moved to app-emacs/emacs-common-gentoo.
+  USE=wide-int is independent of X, move option to correct place.
+
+*emacs-24.1_rc (01 Jun 2012)
+
+  01 Jun 2012; Ulrich Müller <ulm@gentoo.org> emacs-22.3-r9.ebuild,
+  emacs-23.4-r1.ebuild, emacs-23.4-r2.ebuild, +emacs-24.1_rc.ebuild,
+  metadata.xml:
+  Version bump, release candidate for Emacs 24.1. Drop ~sparc-fbsd keyword.
+
+  31 May 2012; Zac Medico <zmedico@gentoo.org> emacs-21.4-r24.ebuild:
+  inherit multilib for get_libdir
+
+*emacs-23.4-r2 (26 May 2012)
+
+  26 May 2012; Ulrich Müller <ulm@gentoo.org> +emacs-23.4-r2.ebuild,
+  metadata.xml:
+  Enable building under a PaX enabled kernel, bug 411439.
+
+  24 May 2012; Ulrich Müller <ulm@gentoo.org> emacs-22.3-r9.ebuild,
+  emacs-23.4-r1.ebuild:
+  Delete unused local variable.
+
+  19 May 2012; Ulrich Müller <ulm@gentoo.org> emacs-18.59-r8.ebuild,
+  emacs-21.4-r24.ebuild, emacs-22.3-r9.ebuild, emacs-23.4-r1.ebuild:
+  Don't try to rebuild the Info dir file if /usr/share/info doesn't exist.
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org> emacs-23.4-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  06 May 2012; Ulrich Müller <ulm@gentoo.org> -emacs-23.3-r4.ebuild:
+  Remove old.
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> emacs-23.4-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #406223
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> emacs-23.3-r4.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  03 May 2012; Ulrich Müller <ulm@gentoo.org> emacs-22.3-r9.ebuild,
+  emacs-23.4-r1.ebuild:
+  Change pkgconfig dependency to virtual/pkgconfig.
+
+  30 Apr 2012; Ulrich Müller <ulm@gentoo.org> emacs-21.4-r24.ebuild,
+  emacs-22.3-r9.ebuild, emacs-23.4-r1.ebuild:
+  Assigning ALLOWED_FLAGS is not necessary with recent flag-o-matic.eclass.
+  Quote strings with special pattern characters.
+
+  15 Mar 2012; Markus Meier <maekke@gentoo.org> emacs-23.4-r1.ebuild:
+  arm stable, bug #406223
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> emacs-23.4-r1.ebuild:
+  Marking emacs-23.4-r1 ppc64 for bug 406223
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> emacs-23.4-r1.ebuild:
+  Marking emacs-23.4-r1 ppc for bug 406223
+
+  01 Mar 2012; Jeroen Roovers <jer@gentoo.org> emacs-23.4-r1.ebuild:
+  Stable for HPPA (bug #406223).
+
+  29 Feb 2012; Jeff Horelick <jdhore@gentoo.org> emacs-23.4-r1.ebuild:
+  marked x86 per bug 406223
+
+  29 Feb 2012; Agostino Sarubbo <ago@gentoo.org> emacs-23.4-r1.ebuild:
+  Stable for amd64, wrt bug #406223
+
+  10 Feb 2012; Ulrich Müller <ulm@gentoo.org> -emacs-23.4.ebuild:
+  Remove old.
+
+*emacs-23.4-r1 (30 Jan 2012)
+
+  30 Jan 2012; Ulrich Müller <ulm@gentoo.org> -emacs-23.4_rc1.ebuild,
+  +emacs-23.4-r1.ebuild:
+  Fix infinite loop in xg_select() with glib >= 2.31, bug 401199; thanks to
+  Maciej Piechotka <uzytkownik2@gmail.com>. Remove release candidate.
+
+*emacs-23.4 (28 Jan 2012)
+
+  28 Jan 2012; Ulrich Müller <ulm@gentoo.org> +emacs-23.4.ebuild:
+  Version bump.
+
+  28 Jan 2012; Ulrich Müller <ulm@gentoo.org> emacs-23.3-r4.ebuild,
+  emacs-23.4_rc1.ebuild:
+  USE="athena Xaw3d" is a valid combination, so don't warn.
+
+*emacs-23.4_rc1 (19 Jan 2012)
+
+  19 Jan 2012; Ulrich Müller <ulm@gentoo.org> +emacs-23.4_rc1.ebuild:
+  Version bump, release candidate for Emacs 23.4.
+
+  16 Jan 2012; Ulrich Müller <ulm@gentoo.org> -emacs-23.3-r2.ebuild:
+  Remove vulnerable revision wrt bug 398239.
+
+  16 Jan 2012; Jeroen Roovers <jer@gentoo.org> emacs-23.3-r4.ebuild:
+  Stable for HPPA (bug #398239).
+
+  15 Jan 2012; Ulrich Müller <ulm@gentoo.org> -emacs-21.4-r23.ebuild,
+  -emacs-22.3-r8.ebuild:
+  Remove old.
+
+  15 Jan 2012; Raúl Porcel <armin76@gentoo.org> emacs-23.3-r4.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #398239 and #398311
+
+  15 Jan 2012; Thomas Kahle <tomka@gentoo.org> emacs-23.3-r4.ebuild:
+  x86 stable per bug 398239
+
+  11 Jan 2012; Mark Loeser <halcy0n@gentoo.org> emacs-23.3-r4.ebuild:
+  Stable for ppc/ppc64; bug #398239
+
+  09 Jan 2012; Agostino Sarubbo <ago@gentoo.org> emacs-23.3-r4.ebuild:
+  Stable for AMD64, wrt security bug #398239
+
+*emacs-23.3-r4 (09 Jan 2012)
+
+  09 Jan 2012; Ulrich Müller <ulm@gentoo.org> -emacs-23.3-r3.ebuild,
+  +emacs-23.3-r4.ebuild:
+  Fix security flaw in EDE (CVE-2012-0035), bug 398239.
+
+  08 Jan 2012; Ulrich Müller <ulm@gentoo.org> emacs-23.3-r3.ebuild:
+  Restore fallback code in pkg_preinst because of failures with paludis.
+
+  06 Jan 2012; Ulrich Mueller <ulm@gentoo.org> -emacs-23.3-r1.ebuild:
+  Remove old.
+
+  06 Jan 2012; Mark Loeser <halcy0n@gentoo.org> emacs-23.3-r2.ebuild:
+  Stable for ppc64; bug #384297
+
+  06 Jan 2012; Brent Baude <ranger@gentoo.org> emacs-23.3-r2.ebuild:
+  Marking emacs-23.3-r2 ppc for bug 384297
+
+*emacs-22.3-r9 (06 Jan 2012)
+*emacs-21.4-r24 (06 Jan 2012)
+
+  06 Jan 2012; Ulrich Mueller <ulm@gentoo.org> +emacs-21.4-r24.ebuild,
+  +emacs-22.3-r9.ebuild:
+  Add /etc/emacs to the lisp load-path; change from 13 Dec 2011 backported
+  to SLOTs 21 and 22.
+
+  05 Jan 2012; Ulrich Mueller <ulm@gentoo.org> emacs-23.3-r3.ebuild:
+  A build-time dependency on pkgconfig is needed only in some configurations.
+
+  04 Jan 2012; Ulrich Mueller <ulm@gentoo.org> -emacs-18.59-r6.ebuild:
+  Remove old.
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> emacs-18.59-r8.ebuild:
+  x86 stable wrt bug #396139
+
+  28 Dec 2011; Agostino Sarubbo <ago@gentoo.org> emacs-18.59-r8.ebuild:
+  Stable for AMD64, wrt bug #396139
+
+  24 Dec 2011; Ulrich Mueller <ulm@gentoo.org> emacs-18.59-r8.ebuild:
+  Updated patchset, properly includes the sys/wait.h header file.
+
+*emacs-18.59-r8 (23 Dec 2011)
+
+  23 Dec 2011; Ulrich Mueller <ulm@gentoo.org> -emacs-18.59-r7.ebuild,
+  +emacs-18.59-r8.ebuild:
+  Don't embed CHOST into symlinks in /usr/share.
+
+  19 Dec 2011; Ulrich Mueller <ulm@gentoo.org> emacs-18.59-r7.ebuild:
+  Updated patchset, including a fix for the LDFLAGS issue.
+  Keep etc/COPYING because C-h C-c needs it.
+
+*emacs-18.59-r7 (19 Dec 2011)
+
+  19 Dec 2011; Ulrich Mueller <ulm@gentoo.org> +emacs-18.59-r7.ebuild:
+  Fix linking failure on amd64, bug 395223. Respect LDFLAGS. Move binaries
+  from /usr/share to /usr/libexec. Move GNU Info files to /usr/share/info.
+  Don't install C source files in etc.
+
+  14 Dec 2011; Fabian Groffen <grobian@gentoo.org> emacs-23.3-r3.ebuild:
+  Fix out-of-prefix issue due to locallisppath, thanks MATSUI Tetsushi in bug
+  #394707
+
+  14 Dec 2011; Ulrich Mueller <ulm@gentoo.org> emacs-23.3-r3.ebuild:
+  Remove Emacs-23-CEDET-grammars from LICENSE because we distribute the grammar
+  files in our patchball.
+
+*emacs-23.3-r3 (13 Dec 2011)
+
+  13 Dec 2011; Ulrich Mueller <ulm@gentoo.org> +emacs-23.3-r3.ebuild:
+  Add /etc/emacs to the lisp load-path; site-start.el will move to this new
+  location. New patchset with sources for CEDET grammars, corresponding to the
+  emacs-23.3b tarball. Remove obsolete code in pkg_preinst().
+
+  06 Dec 2011; Ulrich Mueller <ulm@gentoo.org> emacs-22.3-r8.ebuild,
+  emacs-23.3-r1.ebuild, emacs-23.3-r2.ebuild:
+  Add Emacs-23-CEDET-grammars to LICENSE. Replace remaining echo commands by
+  einfo/elog. Remove obsolete blocker.
+
+  03 Dec 2011; Ulrich Mueller <ulm@gentoo.org> emacs-23.3-r2.ebuild:
+  New patchset, fixes dumping on macos, bug 388817. Call epatch_user to allow
+  for user patches.
+
+  28 Nov 2011; Ulrich Mueller <ulm@gentoo.org> metadata.xml:
+  Update longdescription.
+
+  11 Nov 2011; Ulrich Mueller <ulm@gentoo.org> emacs-23.3-r2.ebuild:
+  Upgrade some messages from einfo to elog.
+
+  03 Nov 2011; Ulrich Mueller <ulm@gentoo.org> emacs-23.3-r2.ebuild:
+  Adjust the set of source files installed with USE=source.
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> emacs-23.3-r2.ebuild:
+  Stable for HPPA (bug #384297).
+
+  08 Oct 2011; Raúl Porcel <armin76@gentoo.org> emacs-23.3-r2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #384297
+
+  08 Oct 2011; Markus Meier <maekke@gentoo.org> emacs-23.3-r2.ebuild:
+  arm stable, bug #384297
+
+  01 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> emacs-23.3-r2.ebuild:
+  x86 stable wrt bug #384297
+
+  28 Sep 2011; Ulrich Mueller <ulm@gentoo.org> emacs-21.4-r23.ebuild,
+  emacs-22.3-r8.ebuild, emacs-23.3-r1.ebuild, emacs-23.3-r2.ebuild:
+  Fix dependency on libpng.
+
+  27 Sep 2011; Ulrich Mueller <ulm@gentoo.org> emacs-21.4-r23.ebuild,
+  emacs-22.3-r8.ebuild, -emacs-23.2-r2.ebuild:
+  Fix compilation with libpng-1.5, bug 384553. Remove old.
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org> emacs-23.3-r2.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "ago" Sarubbo in bug #384297.
+
+  24 Sep 2011; Ulrich Mueller <ulm@gentoo.org> emacs-23.3-r2.ebuild,
+  metadata.xml:
+  Link against libXaw with USE=athena. Change [ ] to [[ ]] throughout.
+
+  02 Sep 2011; Ulrich Mueller <ulm@gentoo.org> emacs-23.3-r2.ebuild:
+  Backport some changes from the emacs-vcs live ebuild.
+
+  29 Aug 2011; Ulrich Mueller <ulm@gentoo.org> emacs-23.3-r1.ebuild,
+  emacs-23.3-r2.ebuild:
+  Force an update of the emacs symlink for the livecd/dvd.
+
+*emacs-23.3-r2 (22 Aug 2011)
+*emacs-22.3-r8 (22 Aug 2011)
+
+  22 Aug 2011; Ulrich Mueller <ulm@gentoo.org> -emacs-22.3-r7.ebuild,
+  +emacs-22.3-r8.ebuild, +emacs-23.3-r2.ebuild:
+  Don't RESTRICT=strip.
+
+*emacs-23.3-r1 (04 Aug 2011)
+
+  04 Aug 2011; Ulrich Mueller <ulm@gentoo.org> -emacs-23.3.ebuild,
+  +emacs-23.3-r1.ebuild:
+  Revision bump to ensure that users update to the new tarballs, which
+  install (but not use) the CEDET grammars in the etc/grammars subdirectory.
+
+  02 Aug 2011; Ulrich Mueller <ulm@gentoo.org> emacs-23.2-r2.ebuild,
+  emacs-23.3.ebuild:
+  Update SRC_URI for new upstream tarballs; installed files should be
+  unchanged, however. Remove unused code from 23.2 ebuild.
+
+  02 Aug 2011; Matt Turner <mattst88@gentoo.org> emacs-21.4-r23.ebuild,
+  emacs-22.3-r7.ebuild, emacs-23.2-r2.ebuild, emacs-23.3.ebuild:
+  Renamed x11-libs/Xaw3d to x11-libs/libXaw3d.
 
   01 Aug 2011; Ulrich Mueller <ulm@gentoo.org> emacs-23.2-r2.ebuild,
   emacs-23.3.ebuild:

@@ -1,6 +1,16 @@
 # ChangeLog for media-libs/libiec61883
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libiec61883/ChangeLog,v 1.24 2008/02/21 10:49:34 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libiec61883/ChangeLog,v 1.26 2012/10/07 11:23:09 pacho Exp $
+
+*libiec61883-1.2.0 (07 Oct 2012)
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> +libiec61883-1.2.0.ebuild,
+  metadata.xml:
+  Version bump, also change metadata a bit to get bugs assigned to most active
+  maintainer and prevent problems to be ignored for a long time.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libiec61883-1.1.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   21 Feb 2008; Raúl Porcel <armin76@gentoo.org> libiec61883-1.1.0.ebuild:
   sparc stable
@@ -96,4 +106,3 @@
   +libiec61883-1.0.0.ebuild:
   Intial import into the tree. This addresses bug #89799. Thanks to Simon Koch
   for the ebuild.
-

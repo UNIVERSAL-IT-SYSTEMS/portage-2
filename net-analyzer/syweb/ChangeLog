@@ -1,6 +1,15 @@
 # ChangeLog for net-analyzer/syweb
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/syweb/ChangeLog,v 1.4 2009/12/01 18:31:23 tcunha Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/syweb/ChangeLog,v 1.6 2012/07/02 08:30:05 mabi Exp $
+
+  02 Jul 2012; Matti Bickel <mabi@gentoo.org> -syweb-0.59.ebuild,
+  syweb-0.64.ebuild:
+  remove unneeded depend.php, also remove old version with permission from jer
+
+*syweb-0.64 (17 Apr 2012)
+
+  17 Apr 2012; Jeroen Roovers <jer@gentoo.org> +syweb-0.64.ebuild:
+  Version bump.
 
 *syweb-0.59 (01 Dec 2009)
 

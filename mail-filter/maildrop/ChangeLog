@@ -1,6 +1,110 @@
 # ChangeLog for mail-filter/maildrop
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/maildrop/ChangeLog,v 1.112 2011/07/30 11:56:42 eras Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/maildrop/ChangeLog,v 1.142 2012/12/04 12:09:40 eras Exp $
+
+  04 Dec 2012; Eray Aslan <eras@gentoo.org>
+  -files/maildrop-2.5.4-reformime.patch, -maildrop-2.5.5-r1.ebuild:
+  remove old
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> maildrop-2.6.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #441350
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> maildrop-2.6.0.ebuild:
+  Stable for x86, wrt bug #441350
+
+  17 Nov 2012; Anthony G. Basile <blueness@gentoo.org> maildrop-2.6.0.ebuild:
+  stable arm, bug #441350
+
+  15 Nov 2012; Anthony G. Basile <blueness@gentoo.org> maildrop-2.6.0.ebuild:
+  stable ppc ppc64, bug #441350
+
+  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org> maildrop-2.6.0.ebuild:
+  Stable for amd64, wrt bug #441350
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> maildrop-2.6.0.ebuild:
+  Stable for HPPA (bug #441350).
+
+  25 Sep 2012; Eray Aslan <eras@gentoo.org> -maildrop-2.5.4.ebuild,
+  -maildrop-2.5.5.ebuild:
+  Drop old
+
+*maildrop-2.6.0 (25 Sep 2012)
+
+  25 Sep 2012; Eray Aslan <eras@gentoo.org> +maildrop-2.6.0.ebuild:
+  Version bump
+
+  05 Jul 2012; Jeroen Roovers <jer@gentoo.org> maildrop-2.5.5-r1.ebuild:
+  Stable for HPPA (bug #413597).
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> maildrop-2.5.5-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #413597
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> maildrop-2.5.5-r1.ebuild:
+  Marking maildrop-2.5.5-r1 ppc for bug 413597
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> maildrop-2.5.5-r1.ebuild:
+  Marking maildrop-2.5.5-r1 ppc64 for bug 413597
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  maildrop-2.5.5-r1.ebuild:
+  x86 stable wrt bug #413597
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> maildrop-2.5.4.ebuild,
+  maildrop-2.5.5.ebuild, maildrop-2.5.5-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> maildrop-2.5.5-r1.ebuild:
+  arm stable, bug #413597
+
+  26 Apr 2012; Agostino Sarubbo <ago@gentoo.org> maildrop-2.5.5-r1.ebuild:
+  Stable for amd64, wrt bug #413597
+
+*maildrop-2.5.5-r1 (22 Mar 2012)
+
+  22 Mar 2012; Eray Aslan <eras@gentoo.org> +maildrop-2.5.5-r1.ebuild,
+  metadata.xml:
+  Add trashquota USE flag - bug #409201
+
+*maildrop-2.5.5 (05 Dec 2011)
+
+  05 Dec 2011; Eray Aslan <eras@gentoo.org> files/maildrop-2.5.1-db.patch,
+  +maildrop-2.5.5.ebuild:
+  version bump
+
+  23 Oct 2011; Tim Harder <radhermit@gentoo.org>
+  -files/maildrop-2.2.0-db4.patch, -maildrop-2.4.2.ebuild,
+  -maildrop-2.4.2-r1.ebuild, -maildrop-2.5.1.ebuild, -maildrop-2.5.3.ebuild:
+  Remove old.
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> maildrop-2.5.4.ebuild:
+  Stable for HPPA (bug #376563).
+
+  17 Sep 2011; Raúl Porcel <armin76@gentoo.org> maildrop-2.5.4.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #376563
+
+  11 Sep 2011; Markus Meier <maekke@gentoo.org> maildrop-2.5.4.ebuild:
+  arm stable, bug #376563
+
+  05 Sep 2011; Eray Aslan <eras@gentoo.org>
+  files/maildrop-2.5.4-reformime.patch:
+  Revized patch for bug #379101
+
+  31 Aug 2011; Eray Aslan <eras@gentoo.org>
+  files/maildrop-2.5.4-reformime.patch:
+  Fix segfault in reformime - bug #379101. Take two
+
+  15 Aug 2011; Eray Aslan <eras@gentoo.org> maildrop-2.5.4.ebuild,
+  +files/maildrop-2.5.4-reformime.patch:
+  Fix segfault in reformime on some arches - bug #379101
+
+  09 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org> maildrop-2.5.4.ebuild:
+  ppc/ppc64 stable wrt #376563
+
+  07 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> maildrop-2.5.4.ebuild:
+  x86 stable wrt bug #376563
+
+  02 Aug 2011; Markos Chandras <hwoarang@gentoo.org> maildrop-2.5.4.ebuild:
+  Stable on amd64 wrt bug #376563
 
   30 Jul 2011; Eray Aslan <eras@gentoo.org> maildrop-2.5.4.ebuild,
   +files/maildrop-testsuite.patch:

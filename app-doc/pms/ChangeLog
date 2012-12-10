@@ -1,6 +1,25 @@
 # ChangeLog for app-doc/pms
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/pms/ChangeLog,v 1.30 2011/07/16 14:04:46 mgorny Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-doc/pms/ChangeLog,v 1.35 2012/11/16 21:27:52 ulm Exp $
+
+  16 Nov 2012; Ulrich Müller <ulm@gentoo.org> pms-5.ebuild:
+  Mark as stable on all arches, following stabilisation of EAPI 5 Portage.
+
+  23 Sep 2012; Ulrich Müller <ulm@gentoo.org> -pms-2.ebuild, -pms-3.ebuild,
+  pms-4_p20110118.ebuild, pms-5.ebuild:
+  Remove slotting; newer versions include all previous EAPIs. Remove old.
+
+*pms-5 (20 Sep 2012)
+
+  20 Sep 2012; Ulrich Müller <ulm@gentoo.org> +pms-5.ebuild:
+  Version bump. EAPI 5 has been approved by the council.
+
+  03 Jan 2012; Mark Loeser <halcy0n@gentoo.org> pms-2.ebuild, pms-3.ebuild,
+  pms-4_p20110118.ebuild:
+  Drop mips-irix as its no longer supported
+
+  13 Sep 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #225633
 
   16 Jul 2011; Michał Górny <mgorny@gentoo.org> pms-9999.ebuild:
   Migrate the live ebuild to git-2.eclass, add a fallback EGIT_REPO_URI, bump

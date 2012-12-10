@@ -1,6 +1,71 @@
 # ChangeLog for dev-util/monodevelop
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/monodevelop/ChangeLog,v 1.88 2011/01/29 17:06:59 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/monodevelop/ChangeLog,v 1.103 2012/12/07 04:57:30 phajdan.jr Exp $
+
+  07 Dec 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  monodevelop-3.0.2-r1.ebuild:
+  x86 stable wrt bug #435202
+
+  16 Sep 2012; Agostino Sarubbo <ago@gentoo.org> monodevelop-3.0.2-r1.ebuild:
+  Stable for amd64, wrt bug #435202
+
+*monodevelop-3.0.2-r1 (16 Jun 2012)
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/monodevelop-3.0.2-pc-fix.patch, +monodevelop-3.0.2-r1.ebuild,
+  -monodevelop-3.0.2.ebuild:
+  Fix .pc file.
+
+*monodevelop-3.0.2 (16 Jun 2012)
+
+  16 Jun 2012; Pacho Ramos <pacho@gentoo.org> +monodevelop-3.0.2.ebuild,
+  -monodevelop-2.6.ebuild, -monodevelop-2.8.2.ebuild:
+  Version bump, drop old.
+
+  22 May 2012; Agostino Sarubbo <ago@gentoo.org> monodevelop-2.8.5.1.ebuild:
+  Stable for amd64, wrt bug #407701
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> monodevelop-2.6.ebuild,
+  monodevelop-2.8.2.ebuild, monodevelop-2.8.5.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Apr 2012; Markus Meier <maekke@gentoo.org> monodevelop-2.8.5.1.ebuild:
+  x86 stable, bug #407701
+
+  22 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> monodevelop-2.6.ebuild,
+  monodevelop-2.8.2.ebuild, monodevelop-2.8.5.1.ebuild:
+  Remove net-libs/xulrunner from || () wrt #403415
+
+*monodevelop-2.8.5.1 (22 Jan 2012)
+
+  22 Jan 2012; Pacho Ramos <pacho@gentoo.org> +monodevelop-2.8.5.1.ebuild:
+  Version bump.
+
+*monodevelop-2.8.2 (23 Nov 2011)
+
+  23 Nov 2011; Pacho Ramos <pacho@gentoo.org> +monodevelop-2.8.2.ebuild,
+  -monodevelop-2.4.2.ebuild:
+  Version bump, remove old.
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org> monodevelop-2.6.ebuild:
+  Stable on amd64 wrt bug #389181
+
+  04 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> monodevelop-2.6.ebuild:
+  x86 stable wrt bug #389181
+
+  05 Oct 2011; Pacho Ramos <pacho@gentoo.org> monodevelop-2.6.ebuild:
+  Raise mono-addins dep, bug #385383 by Anton Romanov.
+
+*monodevelop-2.6 (10 Sep 2011)
+
+  10 Sep 2011; Pacho Ramos <pacho@gentoo.org> -monodevelop-2.4.ebuild,
+  -monodevelop-2.5.93.ebuild, +monodevelop-2.6.ebuild:
+  Version bump, remove old.
+
+*monodevelop-2.5.93 (20 Aug 2011)
+
+  20 Aug 2011; Alistair Bush <ali_bush@gentoo.org> +monodevelop-2.5.93.ebuild:
+  Version Bump.
 
   29 Jan 2011; Markos Chandras <hwoarang@gentoo.org> monodevelop-2.4.2.ebuild:
   Stable on amd64 wrt bug #352808

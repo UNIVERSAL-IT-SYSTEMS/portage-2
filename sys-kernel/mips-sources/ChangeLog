@@ -1,6 +1,58 @@
 # ChangeLog for sys-kernel/mips-sources
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/ChangeLog,v 1.140 2011/04/25 06:45:37 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/mips-sources/ChangeLog,v 1.146 2012/11/23 23:39:02 kumba Exp $
+
+*mips-sources-3.6.7 (23 Nov 2012)
+*mips-sources-3.4.19 (23 Nov 2012)
+
+  23 Nov 2012; Joshua Kinard <kumba@gentoo.org> -mips-sources-3.4.14.ebuild,
+  +mips-sources-3.4.19.ebuild, -mips-sources-3.5.7.ebuild,
+  -mips-sources-3.6.2.ebuild, +mips-sources-3.6.7.ebuild:
+  Updates; drop 3.5.7 and update to 3.4.19/3.6.7. Use git pull from linux-mips
+  20121123 as well.
+
+*mips-sources-3.6.2 (21 Oct 2012)
+*mips-sources-3.5.7 (21 Oct 2012)
+*mips-sources-3.4.14 (21 Oct 2012)
+
+  21 Oct 2012; Joshua Kinard <kumba@gentoo.org> -mips-sources-3.0.9-r1.ebuild,
+  -mips-sources-3.1.6.ebuild, +mips-sources-3.4.14.ebuild,
+  +mips-sources-3.5.7.ebuild, +mips-sources-3.6.2.ebuild:
+  Updates; drop 3.2.21, 3.3.8, and 3.4.4. Replace with 3.4.14, 3.5.7, and
+  3.6.2.
+
+  13 Apr 2012; Ulrich Müller <ulm@gentoo.org> mips-sources-3.0.9-r1.ebuild,
+  mips-sources-3.1.6.ebuild:
+  Move EAPI assignment to top of ebuild, bug 411875.
+
+*mips-sources-3.1.6 (02 Jan 2012)
+*mips-sources-3.0.9-r1 (02 Jan 2012)
+
+  02 Jan 2012; Joshua Kinard <kumba@gentoo.org> -mips-sources-3.0.9.ebuild,
+  +mips-sources-3.0.9-r1.ebuild, -mips-sources-3.1.5.ebuild,
+  +mips-sources-3.1.6.ebuild:
+  Update the multicast patch in 3.0.9 to the one that was accepted by net-dev
+  and removed the cleanups patch. Ditto for 3.1.x, and update to 3.1.6.
+
+*mips-sources-3.1.5 (17 Dec 2011)
+*mips-sources-3.0.9 (17 Dec 2011)
+
+  17 Dec 2011; Joshua Kinard <kumba@gentoo.org> -mips-sources-3.0.4.ebuild,
+  +mips-sources-3.0.9.ebuild, +mips-sources-3.1.5.ebuild:
+  Bump to 3.0.9 and add 3.1.5. Include new patchsets for both that fix an issue
+  in SGI IP32 where ICMPv6 neighbor discovery didn't work.
+
+*mips-sources-3.0.4 (04 Sep 2011)
+
+  04 Sep 2011; Joshua Kinard <kumba@gentoo.org>
+  +files/eblits/show_ip22_info-v3.eblit, +files/eblits/show_ip30_info-v2.eblit,
+  +files/eblits/show_ip32_info-v3.eblit, +files/eblits/src_unpack-v3.eblit,
+  -files/eblits/show_ip22_info-v2.eblit, -files/eblits/show_ip32_info-v2.eblit,
+  -files/eblits/src_unpack-v1.eblit, -mips-sources-2.6.31.12.ebuild,
+  -mips-sources-2.6.34.7.ebuild, -mips-sources-2.6.35.9.ebuild,
+  -mips-sources-2.6.36.3.ebuild, -mips-sources-2.6.37.ebuild,
+  +mips-sources-3.0.4.ebuild, metadata.xml:
+  Add mips-sources-3.0.4, and remove old ebuilds and associated eblits.
 
   25 Apr 2011; Ulrich Mueller <ulm@gentoo.org> mips-sources-2.6.29.1.ebuild,
   mips-sources-2.6.31.12.ebuild, mips-sources-2.6.34.7.ebuild,

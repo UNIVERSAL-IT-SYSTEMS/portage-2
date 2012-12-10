@@ -1,6 +1,23 @@
 # ChangeLog for sci-libs/io_lib
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/io_lib/ChangeLog,v 1.19 2010/05/28 22:50:17 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/io_lib/ChangeLog,v 1.23 2012/10/15 18:59:14 jlec Exp $
+
+  15 Oct 2012; Justin Lecher <jlec@gentoo.org> -io_lib-1.8.12b-r1.ebuild,
+  -io_lib-1.12.2.ebuild, metadata.xml:
+  Drop old
+
+  15 Oct 2012; Agostino Sarubbo <ago@gentoo.org> io_lib-1.10.1.ebuild:
+  Stable for amd64, wrt bug #436888
+
+  03 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> io_lib-1.12.5.ebuild,
+  metadata.xml:
+  Keyword amd64-linux x86-linux
+
+*io_lib-1.12.5 (07 Aug 2011)
+
+  07 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> -io_lib-1.12.1.ebuild,
+  +io_lib-1.12.5.ebuild:
+  Version bump
 
 *io_lib-1.12.2 (28 May 2010)
 
@@ -94,4 +111,3 @@
   18 Sep 2004; Olivier Fisette <ribosome@gentoo.org> +metadata.xml,
   +io_lib-1.8.12b.ebuild:
   Initial import
-

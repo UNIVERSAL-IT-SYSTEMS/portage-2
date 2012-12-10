@@ -1,6 +1,40 @@
 # ChangeLog for dev-ruby/ruby-openid
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-openid/ChangeLog,v 1.20 2011/01/15 13:08:47 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-openid/ChangeLog,v 1.28 2012/11/05 07:28:19 graaff Exp $
+
+*ruby-openid-2.2.2 (05 Nov 2012)
+
+  05 Nov 2012; Hans de Graaff <graaff@gentoo.org> +ruby-openid-2.2.2.ebuild:
+  Version bump.
+
+  05 Nov 2012; Hans de Graaff <graaff@gentoo.org> -ruby-openid-2.1.8.ebuild:
+  Cleanup.
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  ruby-openid-2.2.0.ebuild:
+  x86 stable wrt bug #435186
+
+  16 Oct 2012; Hans de Graaff <graaff@gentoo.org> +ruby-openid-2.2.1.ebuild:
+  Version bump.
+
+*ruby-openid-2.2.1 (16 Oct 2012)
+
+  16 Oct 2012; Hans de Graaff <graaff@gentoo.org> +ruby-openid-2.2.1.ebuild:
+  Version bump.
+
+  16 Sep 2012; Agostino Sarubbo <ago@gentoo.org> ruby-openid-2.2.0.ebuild:
+  Stable for amd64, wrt bug #435186
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+*ruby-openid-2.2.0 (04 Aug 2012)
+
+  04 Aug 2012; Hans de Graaff <graaff@gentoo.org> +ruby-openid-2.2.0.ebuild:
+  Version bump. Add ruby19, jruby.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> ruby-openid-2.1.8.ebuild:
+  Drop ia64/sparc keywords
 
   15 Jan 2011; Hans de Graaff <graaff@gentoo.org> -ruby-openid-2.1.7.ebuild:
   Remove old version.
@@ -88,4 +122,3 @@
   31 Mar 2007; Robin H. Johnson <robbat2@gentoo.org> +metadata.xml,
   +ruby-openid-1.1.4.ebuild:
   Initial commit. Ebuild by Robin H. Johnson <robbat2@gentoo.org>.
-

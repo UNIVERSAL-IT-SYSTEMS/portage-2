@@ -1,6 +1,34 @@
 # ChangeLog for media-plugins/vdr-osdteletext
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-osdteletext/ChangeLog,v 1.18 2010/12/01 15:13:30 hd_brummy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-osdteletext/ChangeLog,v 1.24 2012/04/26 20:44:07 hd_brummy Exp $
+
+  26 Apr 2012; Joerg Bornkessel <hd_brummy@gentoo.org> -files/confd-v2,
+  -files/rc-addon-v2.sh, -vdr-osdteletext-0.9.3.ebuild:
+  moved to vdr-devel overlay; need vdr-1.7.27
+
+  23 Apr 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-osdteletext-0.9.3.ebuild:
+  src_uri fixed; thanks to E.Seifert on bug #412893
+
+  23 Apr 2012; Jeroen Roovers <jer@gentoo.org> metadata.xml:
+  English.
+
+*vdr-osdteletext-0.9.3 (18 Apr 2012)
+
+  18 Apr 2012; Joerg Bornkessel <hd_brummy@gentoo.org> +files/confd-v2,
+  +files/rc-addon-v2.sh, +vdr-osdteletext-0.9.3.ebuild:
+  version bump; thx to M.Dummer
+
+  07 Feb 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  -vdr-osdteletext-0.8.3.ebuild, -vdr-osdteletext-0.9.0.ebuild,
+  vdr-osdteletext-0.9.1.ebuild:
+  cleanup, thirdpartymirror, stable amd64 x86; bug 400393
+
+*vdr-osdteletext-0.9.1 (16 Sep 2011)
+
+  16 Sep 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +vdr-osdteletext-0.9.1.ebuild:
+  version bump
 
 *vdr-osdteletext-0.9.0 (01 Dec 2010)
 

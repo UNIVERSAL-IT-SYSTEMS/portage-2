@@ -1,6 +1,45 @@
 # ChangeLog for dev-lang/yasm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/yasm/ChangeLog,v 1.46 2011/01/26 18:55:10 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/yasm/ChangeLog,v 1.56 2012/09/25 04:35:12 vapier Exp $
+
+*yasm-9999 (25 Sep 2012)
+
+  25 Sep 2012; Mike Frysinger <vapier@gentoo.org> +yasm-9999.ebuild:
+  Add live git ebuild #435838 by Alphat-PC.
+
+  16 Jun 2012; Fabian Groffen <grobian@gentoo.org> yasm-1.2.0.ebuild:
+  Fix autoreconf for platforms where /bin/sh doesn't understand $(xxx)
+
+  13 May 2012; Alexis Ballier <aballier@gentoo.org> yasm-1.2.0.ebuild:
+  keyword ~amd64-fbsd
+
+  03 Apr 2012; Mike Gilbert <floppym@gentoo.org>
+  +files/yasm-1.2.0-fix_cython_check.patch, yasm-1.2.0.ebuild:
+  Add patch to improve cython detection. Requested by Arfrever.
+
+  26 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -yasm-1.1.0-r1.ebuild,
+  -files/yasm-1.1.0-cython-0.14.patch,
+  -files/yasm-1.1.0-skip_cython_check.patch:
+  old
+
+  23 Dec 2011; Agostino Sarubbo <ago@gentoo.org> yasm-1.2.0.ebuild:
+  Stable for X86, wrt bug #395775
+
+  23 Dec 2011; Agostino Sarubbo <ago@gentoo.org> yasm-1.2.0.ebuild:
+  Stable for AMD64, wrt bug #395775
+
+  15 Dec 2011; Ulrich Mueller <ulm@gentoo.org> yasm-1.1.0-r1.ebuild,
+  yasm-1.2.0.ebuild:
+  Fix LICENSE, bug 360501 comment #12.
+
+  20 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> yasm-1.1.0-r1.ebuild,
+  yasm-1.2.0.ebuild:
+  Missing BSD-2 license (frontends use it per COPYING) wrt #360501 by "Luke-Jr"
+
+*yasm-1.2.0 (19 Nov 2011)
+
+  19 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +yasm-1.2.0.ebuild:
+  Version bump.
 
   26 Jan 2011; Markos Chandras <hwoarang@gentoo.org> yasm-1.1.0-r1.ebuild:
   Stable on amd64 wrt bug #352742
@@ -177,4 +216,3 @@
   09 Feb 2004; <augustus@gentoo.org> yasm-0.3.0.ebuild:
   New ebuild for yasm. Keyworded ~amd64 and ~x86. Ran tests that came with
   package. All seems well. Needs testing with some real code.
-

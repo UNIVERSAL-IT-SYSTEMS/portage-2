@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/gnupg/gnupg-2.0.17-r2.ebuild,v 1.1 2011/06/09 14:13:22 c1pher Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/gnupg/gnupg-2.0.17-r2.ebuild,v 1.5 2012/05/31 03:13:18 zmedico Exp $
 
 EAPI="4"
 
-inherit flag-o-matic toolchain-funcs
+inherit eutils flag-o-matic toolchain-funcs
 
 DESCRIPTION="The GNU Privacy Guard, a GPL pgp replacement"
 HOMEPAGE="http://www.gnupg.org/"
@@ -23,6 +23,7 @@ COMMON_DEPEND_LIBS="
 	>=dev-libs/libksba-1.0.7
 	>=dev-libs/pth-1.3.7
 	>=net-misc/curl-7.10
+	sys-libs/zlib
 	adns? ( >=net-libs/adns-1.4 )
 	bzip2? ( app-arch/bzip2 )
 	smartcard? ( usb? ( =virtual/libusb-0* ) )
@@ -46,7 +47,7 @@ RDEPEND="!static? ( ${COMMON_DEPEND_LIBS} )
 	virtual/mta
 	!app-crypt/gpg-agent
 	!<=app-crypt/gnupg-2.0.1
-	selinux? ( sec-policy/selinux-gnupg )
+	selinux? ( sec-policy/selinux-gpg )
 	nls? ( virtual/libintl )"
 
 REQUIRED_USE="smartcard? ( !static )"
@@ -127,7 +128,7 @@ pkg_postinst() {
 	elog
 	if use smartcard; then
 		elog "To use your OpenPGP smartcard (or token) with GnuPG you need one of"
-		use usb && elog " - a CCID-compatible reader, used directly through dev-libs/libusb;"
+		use usb && elog " - a CCID-compatible reader, used directly through libusb;"
 		elog " - sys-apps/pcsc-lite and a compatible reader device;"
 		elog " - dev-libs/openct and a compatible reader device;"
 		elog " - a reader device and drivers exporting either PC/SC or CT-API interfaces."

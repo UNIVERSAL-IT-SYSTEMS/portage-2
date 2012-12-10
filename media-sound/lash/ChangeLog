@@ -1,6 +1,21 @@
 # ChangeLog for media-sound/lash
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/lash/ChangeLog,v 1.33 2011/03/29 06:56:34 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/lash/ChangeLog,v 1.38 2012/09/03 17:11:05 ssuominen Exp $
+
+  03 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> lash-0.5.4-r1.ebuild:
+  Fix building with latest texi2html wrt #422045 but use the pregenerated
+  lash-manual.html instead. Thanks to Diego Elio Pettenò for reporting.
+  Use prune_libtool_files with --all argument because we always want _lash.la
+  from python directory removed.
+  Fix python.eclass usage wrt #313955 by Arfrever Frehtes Taifersar Arahesis
+  and Ian Delaney.
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> lash-0.5.4-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Mar 2012; Mike Gilbert <floppym@gentoo.org>
+  +files/lash-0.5.4-swig_version_comparison.patch, lash-0.5.4-r1.ebuild:
+  Fix detection of SWIG. Patch by Arfrever. Bug 391903.
 
   29 Mar 2011; Tim Harder <radhermit@gentoo.org> lash-0.5.4-r1.ebuild:
   Use slot dep for gtk+ and remove unnecessary die statement for econf.

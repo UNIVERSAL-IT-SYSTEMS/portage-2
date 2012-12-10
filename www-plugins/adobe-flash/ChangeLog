@@ -1,6 +1,272 @@
 # ChangeLog for www-plugins/adobe-flash
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-plugins/adobe-flash/ChangeLog,v 1.96 2011/07/23 11:29:07 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-plugins/adobe-flash/ChangeLog,v 1.152 2012/11/26 13:34:04 scarabeus Exp $
+
+  26 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Update to global useflag.
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org>
+  -adobe-flash-11.2.202.243.ebuild:
+  Old.
+
+  07 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
+  adobe-flash-11.2.202.251.ebuild:
+  Stable for x86, wrt bug #442084
+
+  07 Nov 2012; Agostino Sarubbo <ago@gentoo.org>
+  adobe-flash-11.2.202.251.ebuild:
+  Stable for amd64, wrt bug #442084
+
+*adobe-flash-11.2.202.251 (06 Nov 2012)
+*adobe-flash-10.3.183.43 (06 Nov 2012)
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> -adobe-flash-10.3.183.18.ebuild,
+  +adobe-flash-10.3.183.43.ebuild, +adobe-flash-11.2.202.251.ebuild:
+  Version bump (bug #442084).
+
+  22 Oct 2012; Jeroen Roovers <jer@gentoo.org>
+  -adobe-flash-11.2.202.238.ebuild:
+  Old.
+
+  22 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  adobe-flash-11.2.202.243.ebuild:
+  Stable for amd64, wrt bug #437808
+
+  22 Oct 2012; Agostino Sarubbo <ago@gentoo.org>
+  adobe-flash-11.2.202.243.ebuild:
+  Stable for x86, wrt bug #437808
+
+  22 Oct 2012; Jeroen Roovers <jer@gentoo.org> adobe-flash-11.2.202.243.ebuild:
+  Shorten two long lines.
+
+*adobe-flash-11.2.202.243 (22 Oct 2012)
+
+  22 Oct 2012; Jeroen Roovers <jer@gentoo.org>
+  +adobe-flash-11.2.202.243.ebuild:
+  Version bump (bug #437808).
+
+  17 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org>
+  -adobe-flash-11.2.202.236.ebuild:
+  Drop security affected.
+
+  17 Aug 2012; Agostino Sarubbo <ago@gentoo.org>
+  adobe-flash-11.2.202.238.ebuild:
+  Stable for amd64, wrt bug #431432
+
+  17 Aug 2012; Johannes Huber <johu@gentoo.org>
+  adobe-flash-11.2.202.238.ebuild:
+  Stable for x86, wrt bug #431432
+
+*adobe-flash-11.2.202.238 (17 Aug 2012)
+
+  17 Aug 2012; Tim Harder <radhermit@gentoo.org>
+  +adobe-flash-11.2.202.238.ebuild:
+  Security bump (bug #431432).
+
+  19 Jun 2012; Jim Ramsay <jim_ramsay@gentoo.org>
+  adobe-flash-10.3.183.18.ebuild, -adobe-flash-11.2.202.228.ebuild,
+  -adobe-flash-11.2.202.233.ebuild, -adobe-flash-11.2.202.235.ebuild,
+  adobe-flash-11.2.202.236.ebuild:
+  Version cleanup; removed extra elog output (Bug #416769)
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  adobe-flash-11.2.202.236.ebuild:
+  Stable for amd64, wrt bug #420311
+
+  11 Jun 2012; Johannes Huber <johu@gentoo.org>
+  adobe-flash-11.2.202.236.ebuild:
+  Stable for x86, wrt bug #420311
+
+*adobe-flash-11.2.202.236 (10 Jun 2012)
+
+  10 Jun 2012; Tim Harder <radhermit@gentoo.org>
+  +adobe-flash-11.2.202.236.ebuild:
+  Security bump bug #420311.
+
+  06 May 2012; Andreas Schuerch <nativemad@gentoo.org>
+  adobe-flash-11.2.202.235.ebuild:
+  x86 stable, see bug 414603. Thanks Mikle
+
+  05 May 2012; Markos Chandras <hwoarang@gentoo.org>
+  adobe-flash-11.2.202.235.ebuild:
+  Stable on amd64 wrt bug #414603
+
+*adobe-flash-11.2.202.235 (05 May 2012)
+
+  05 May 2012; Jim Ramsay <lack@gentoo.org> +adobe-flash-11.2.202.235.ebuild:
+  Security bump bug #414603
+
+*adobe-flash-11.2.202.233 (02 May 2012)
+
+  02 May 2012; Jim Ramsay <jim_ramsay@gentoo.org>
+  +adobe-flash-11.2.202.233.ebuild:
+  Version bump (Bug #414039)
+
+  24 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  adobe-flash-11.2.202.228.ebuild:
+  Unbreak the check for SSE2. Beside, should this actually be performed for
+  AMD64?
+
+  24 Apr 2012; Jim Ramsay <jim_ramsay@gentoo.org>
+  adobe-flash-11.2.202.228.ebuild, metadata.xml:
+  On darkside's suggestion, providing a USE flag (IUSE=+sse2check) that can be
+  turned off to allow binpkg users to override this check (or at least reduce
+  its fatality)
+
+  24 Apr 2012; Jim Ramsay <jim_ramsay@gentoo.org>
+  adobe-flash-11.2.202.228.ebuild:
+  Bug #410547: Fail pkg_pretend if any CPU on the local machine does not
+  support SSE2, and recommend falling back to 10.3 instead
+
+  24 Apr 2012; Jim Ramsay <jim_ramsay@gentoo.org>
+  -adobe-flash-11.0.1.152.ebuild, -adobe-flash-11.1.102.55.ebuild,
+  -adobe-flash-11.1.102.62.ebuild, -adobe-flash-11.1.102.63.ebuild,
+  -adobe-flash-11.2.202.223.ebuild:
+  Removing security-vulnerable versions of adobe-flash
+
+*adobe-flash-10.3.183.18 (24 Apr 2012)
+
+  24 Apr 2012; Jim Ramsay <jim_ramsay@gentoo.org>
+  -adobe-flash-10.3.183.10.ebuild, +adobe-flash-10.3.183.18.ebuild:
+  Bug #410547: Security bump of 10.3 to allow workaround for some AMD Athalon
+  XP users
+
+  05 Apr 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  adobe-flash-11.2.202.228.ebuild:
+  x86 stable wrt bug #410005
+
+  29 Mar 2012; Agostino Sarubbo <ago@gentoo.org>
+  adobe-flash-11.2.202.228.ebuild:
+  Stable for amd64, wrt bug #410005
+
+*adobe-flash-11.2.202.228 (28 Mar 2012)
+
+  28 Mar 2012; Jim Ramsay <jim_ramsay@gentoo.org>
+  +adobe-flash-11.2.202.228.ebuild:
+  Latest version bump
+
+*adobe-flash-11.2.202.223 (28 Mar 2012)
+
+  28 Mar 2012; Jim Ramsay <jim_ramsay@gentoo.org>
+  +adobe-flash-11.2.202.223.ebuild:
+  Version bump for security bug #410005
+
+  07 Mar 2012; Thomas Kahle <tomka@gentoo.org> adobe-flash-11.1.102.63.ebuild:
+  marked x86 per bug 407023
+
+  07 Mar 2012; Agostino Sarubbo <ago@gentoo.org>
+  adobe-flash-11.1.102.63.ebuild:
+  Stable for amd64, wrt bug #407023
+
+*adobe-flash-11.1.102.63 (06 Mar 2012)
+
+  06 Mar 2012; Tim Harder <radhermit@gentoo.org>
+  +adobe-flash-11.1.102.63.ebuild:
+  Version bump for security (bug #407023).
+
+  20 Feb 2012; Jeff Horelick <jdhore@gentoo.org> adobe-flash-11.1.102.62.ebuild:
+  x86 stable wrt security bug 404101
+
+  20 Feb 2012; Agostino Sarubbo <ago@gentoo.org> adobe-flash-11.1.102.62.ebuild:
+  Stable for AMD64, wrt security bug #404101
+
+*adobe-flash-11.1.102.62 (20 Feb 2012)
+
+  20 Feb 2012; Tim Harder <radhermit@gentoo.org>
+  +adobe-flash-11.1.102.62.ebuild:
+  Version bump (bug #404101).
+
+  02 Dec 2011; Steve Dibb <beandog@gentoo.org> adobe-flash-11.1.102.55.ebuild:
+  amd64 stable, bug 390149
+
+  01 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  adobe-flash-11.1.102.55.ebuild:
+  x86 stable wrt bug #390149
+
+  28 Nov 2011; Jim Ramsay <jim_ramsay@gentoo.org>
+  -adobe-flash-10.3.183.7.ebuild, adobe-flash-10.3.183.10.ebuild,
+  adobe-flash-11.1.102.55.ebuild:
+  Bug #390405: Adjusting new SRC_URI. Also changing 11.1 to drop the rpm in
+  favour of .tar.gz distribution, and cleaning up an old version.
+
+*adobe-flash-11.1.102.55 (28 Nov 2011)
+
+  28 Nov 2011; Jim Ramsay <jim_ramsay@gentoo.org>
+  +adobe-flash-11.1.102.55.ebuild:
+  Bug #390149: Flash player 11.1.102.55 is released
+
+  05 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  adobe-flash-11.0.1.152.ebuild:
+  Unpack the uri properly, This was supposed to be in previous commit, dunno
+  why it didn't get there.
+
+*adobe-flash-11.0.1.152 (05 Oct 2011)
+
+  05 Oct 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  -adobe-flash-11.0.1.129_rc201109061.ebuild, +adobe-flash-11.0.1.152.ebuild:
+  Add flash-11 final release because RCs are again unfetchable. Non-maintainer
+  commit.
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org> adobe-flash-10.3.183.10.ebuild:
+  Marked stable on AMD64 based on arch testing by Elijah "Armageddon" El
+  Lazkani & Agostino "Ago" Sarubbo in bug #384017.
+
+  25 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  adobe-flash-10.3.183.10.ebuild:
+  x86 stable wrt security bug #384017
+
+*adobe-flash-10.3.183.10 (23 Sep 2011)
+
+  23 Sep 2011; Jim Ramsay <lack@gentoo.org> +adobe-flash-10.3.183.10.ebuild:
+  Bug #384017: Version bump for security
+
+*adobe-flash-11.0.1.129_rc201109061 (08 Sep 2011)
+
+  08 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  -adobe-flash-11.0.1.60_beta201107131-r1.ebuild,
+  -adobe-flash-11.0.1.60_beta201108082.ebuild,
+  +adobe-flash-11.0.1.129_rc201109061.ebuild:
+  Add latest 11 release (RC). Drop older unfetchable versions of 11beta.
+
+*adobe-flash-10.3.183.7 (02 Sep 2011)
+
+  02 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  -adobe-flash-10.3.181.26.ebuild, -adobe-flash-10.3.181.34.ebuild,
+  -adobe-flash-10.3.183.5.ebuild, +adobe-flash-10.3.183.7.ebuild:
+  Non-maintainer commit: add new 10.3 version that has fetchable sources.
+  Remove unfetchable versions. Also this release fixes security issues in older
+  10.3.
+
+  31 Aug 2011; Jim Ramsay <lack@gentoo.org>
+  adobe-flash-11.0.1.60_beta201108082.ebuild:
+  Bug #380269: Fix invocation of dosym
+
+  12 Aug 2011; Thomas Kahle <tomka@gentoo.org> adobe-flash-10.3.183.5.ebuild:
+  x86 stable per bug 378637
+
+  11 Aug 2011; Tony Vroon <chainsaw@gentoo.org> adobe-flash-10.3.183.5.ebuild:
+  Marked 10.3.183.5 stable on AMD64 based on arch testing by Agostino "ago"
+  Sarubbo in security bug #378637.
+
+  11 Aug 2011; Jim Ramsay <lack@gentoo.org>
+  adobe-flash-11.0.1.60_beta201107131-r1.ebuild,
+  adobe-flash-11.0.1.60_beta201108082.ebuild:
+  Fixed unpack for 32-bit-only on amd64 (Bug #376091)
+
+  11 Aug 2011; Jim Ramsay <lack@gentoo.org> adobe-flash-10.3.181.26.ebuild,
+  adobe-flash-10.3.181.34.ebuild, adobe-flash-10.3.183.5.ebuild,
+  adobe-flash-11.0.1.60_beta201107131-r1.ebuild,
+  adobe-flash-11.0.1.60_beta201108082.ebuild:
+  Fixing all QA warnings in all versions by adding all prebuild binaries to
+  QA_PREBUILT
+
+*adobe-flash-11.0.1.60_beta201108082 (11 Aug 2011)
+*adobe-flash-10.3.183.5 (11 Aug 2011)
+
+  11 Aug 2011; Jim Ramsay <lack@gentoo.org> +adobe-flash-10.3.183.5.ebuild,
+  +adobe-flash-11.0.1.60_beta201108082.ebuild:
+  Version 10.3.183.5 released for security bug #378637, and a new beta of 11
+  just for fun
 
   23 Jul 2011; Markus Meier <maekke@gentoo.org> adobe-flash-10.3.181.34.ebuild:
   x86 stable, bug #375239

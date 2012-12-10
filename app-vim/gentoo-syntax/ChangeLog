@@ -1,6 +1,47 @@
 # ChangeLog for app-vim/gentoo-syntax
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-vim/gentoo-syntax/ChangeLog,v 1.127 2011/05/03 09:34:13 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-vim/gentoo-syntax/ChangeLog,v 1.139 2012/07/25 04:57:31 yngwin Exp $
+
+  25 Jul 2012; Ben de Groot <yngwin@gentoo.org> metadata.xml:
+  Take over maintainership from spatz.
+
+  28 May 2012; Tim Harder <radhermit@gentoo.org>
+  -gentoo-syntax-20101212.ebuild:
+  Remove old.
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> gentoo-syntax-20120109.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #410085
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org>
+  gentoo-syntax-20120109.ebuild:
+  keyword ~amd64-fbsd
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> gentoo-syntax-20120109.ebuild:
+  Marking gentoo-syntax-20120109 ppc64 for bug 410085
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> gentoo-syntax-20120109.ebuild:
+  Marking gentoo-syntax-20120109 ppc for bug 410085
+
+  04 Apr 2012; Jeff Horelick <jdhore@gentoo.org> gentoo-syntax-20120109.ebuild:
+  marked x86 per bug 410085
+
+  03 Apr 2012; Jeroen Roovers <jer@gentoo.org> gentoo-syntax-20120109.ebuild:
+  Stable for HPPA (bug #410085).
+
+  31 Mar 2012; Markus Meier <maekke@gentoo.org> gentoo-syntax-20120109.ebuild:
+  arm stable, bug #410085
+
+  29 Mar 2012; Agostino Sarubbo <ago@gentoo.org> gentoo-syntax-20120109.ebuild:
+  Stable for amd64, wrt bug #410085
+
+  29 Mar 2012; Jeremy Olexa <darkside@gentoo.org> metadata.xml:
+  remove myself from maintainer
+
+*gentoo-syntax-20120109 (10 Jan 2012)
+
+  10 Jan 2012; Tim Harder <radhermit@gentoo.org>
+  +gentoo-syntax-20120109.ebuild:
+  Version bump.
 
   03 May 2011; Fabian Groffen <grobian@gentoo.org>
   gentoo-syntax-20101212.ebuild:
@@ -595,5 +636,3 @@
   +gentoo-syntax-20040826.ebuild:
   New package. Provides extended syntax highlighting and filetype settings for
   ebuilds, eclasses and GLEPs.
-
-

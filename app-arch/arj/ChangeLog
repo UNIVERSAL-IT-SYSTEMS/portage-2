@@ -1,6 +1,28 @@
 # ChangeLog for app-arch/arj
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/arj/ChangeLog,v 1.44 2011/07/24 21:33:32 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/arj/ChangeLog,v 1.50 2012/09/11 10:42:52 dilfridge Exp $
+
+  11 Sep 2012; Andreas K. Huettel <dilfridge@gentoo.org> metadata.xml:
+  Drop maintainership
+
+  31 May 2012; Zac Medico <zmedico@gentoo.org> arj-3.10.22-r3.ebuild,
+  arj-3.10.22-r4.ebuild:
+  inherit multilib for get_libdir
+
+*arj-3.10.22-r4 (20 Mar 2012)
+
+  20 Mar 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -arj-3.10.22-r2.ebuild, +arj-3.10.22-r4.ebuild:
+  New debian patchlevel...
+
+  04 Oct 2011; Joseph Jezak <josejx@gentoo.org> arj-3.10.22-r3.ebuild:
+  Marked ppc stable for bug #375923.
+
+  07 Aug 2011; Raúl Porcel <armin76@gentoo.org> arj-3.10.22-r3.ebuild:
+  sparc stable wrt #375923
+
+  06 Aug 2011; Markus Meier <maekke@gentoo.org> arj-3.10.22-r3.ebuild:
+  x86 stable, bug #375923
 
   24 Jul 2011; Markos Chandras <hwoarang@gentoo.org> arj-3.10.22-r3.ebuild:
   Stable on amd64 wrt bug #375923

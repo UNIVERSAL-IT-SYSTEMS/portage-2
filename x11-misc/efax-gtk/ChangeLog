@@ -1,6 +1,31 @@
 # ChangeLog for x11-misc/efax-gtk
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/efax-gtk/ChangeLog,v 1.32 2011/03/02 16:27:46 signals Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/efax-gtk/ChangeLog,v 1.40 2012/05/05 04:53:50 jdhore Exp $
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> efax-gtk-3.2.9.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -efax-gtk-3.0.18.ebuild,
+  -efax-gtk-3.2.2.ebuild:
+  old
+
+  09 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> efax-gtk-3.2.9.ebuild:
+  Keyword ~ppc/~ppc64 wrt #398859
+
+  09 Apr 2012; Markus Meier <maekke@gentoo.org> efax-gtk-3.2.9.ebuild:
+  x86 stable, bug #405007
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> efax-gtk-3.2.9.ebuild:
+  Stable for amd64, wrt bug #405007
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> efax-gtk-3.2.9.ebuild:
+  Rename efax.1 to efax-0.9a.1 and efix.1 to efix-0.9a.1 in order to prevent
+  file collision with net-misc/efax wrt #401221 by Fabio Rossi
+
+*efax-gtk-3.2.9 (14 Jan 2012)
+
+  14 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +efax-gtk-3.2.9.ebuild:
+  Version bump.
 
   02 Mar 2011; Kevin McCarthy <signals@gentoo.org> efax-gtk-3.0.18.ebuild,
   efax-gtk-3.2.2.ebuild:

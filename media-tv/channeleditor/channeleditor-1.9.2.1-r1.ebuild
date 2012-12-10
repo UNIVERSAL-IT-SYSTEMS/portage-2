@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/channeleditor/channeleditor-1.9.2.1-r1.ebuild,v 1.5 2011/06/07 19:40:39 billie Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/channeleditor/channeleditor-1.9.2.1-r1.ebuild,v 1.7 2012/11/17 20:37:08 ago Exp $
 
-EAPI="2"
+EAPI=4
 
-JAVA_PKG_IUSE="source"
+JAVA_PKG_IUSE=source
 inherit eutils java-pkg-2 java-ant-2
 
 DESCRIPTION="Editor for VDR channels.conf"
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P/-/_}_src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~amd64 x86"
 IUSE=""
 
 RDEPEND=">=virtual/jre-1.5"

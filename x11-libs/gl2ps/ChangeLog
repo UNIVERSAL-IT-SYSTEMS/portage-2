@@ -1,6 +1,49 @@
 # ChangeLog for x11-libs/gl2ps
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/gl2ps/ChangeLog,v 1.14 2011/05/17 09:53:51 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/gl2ps/ChangeLog,v 1.24 2012/12/06 14:08:46 jlec Exp $
+
+*gl2ps-1.3.8 (06 Dec 2012)
+
+  06 Dec 2012; Justin Lecher <jlec@gentoo.org> +gl2ps-1.3.8.ebuild,
+  +files/gl2ps-1.3.8-cmake.patch:
+  Version Bump
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> gl2ps-1.3.6.ebuild,
+  gl2ps-1.3.7.ebuild:
+  Drop alpha keywords
+
+*gl2ps-1.3.7 (17 Sep 2012)
+
+  17 Sep 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  +files/gl2ps-1.3.7-cmake.patch, +gl2ps-1.3.7.ebuild,
+  -files/gl2ps-1.3.5-CMakeLists.patch, -files/gl2ps-1.3.5-soversion.patch:
+  Version bump. Build dependencies fixed, patch updated.
+
+  20 May 2012; Michał Górny <mgorny@gentoo.org> -gl2ps-1.3.5.ebuild,
+  -gl2ps-1.3.5-r2.ebuild, gl2ps-1.3.6.ebuild:
+  Add a libXmu dep, drop old. Proxying for jlec.
+
+  03 Mar 2012; Brent Baude <ranger@gentoo.org> gl2ps-1.3.6.ebuild:
+  Marking gl2ps-1.3.6 ppc64 for bug 398421
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> gl2ps-1.3.6.ebuild:
+  Marking gl2ps-1.3.6 ppc for bug 404789
+
+  02 Feb 2012; Thomas Kahle <tomka@gentoo.org> gl2ps-1.3.6.ebuild:
+  x86 stable per bug 398421
+
+  02 Feb 2012; Justin Lecher <jlec@gentoo.org> gl2ps-1.3.6.ebuild,
+  metadata.xml:
+  Added missing DEP on dev-texlive/texlive-latexrecommended, thanks tomka
+
+  11 Jan 2012; Agostino Sarubbo <ago@gentoo.org> gl2ps-1.3.6.ebuild:
+  Stable for AMD64, wrt bug #398421
+
+*gl2ps-1.3.6 (27 Nov 2011)
+
+  27 Nov 2011; Sébastien Fabbro <bicatali@gentoo.org> +gl2ps-1.3.6.ebuild,
+  +files/gl2ps-1.3.6-CMakeLists.patch:
+  Version bump
 
   17 May 2011; Justin Lecher <jlec@gentoo.org> gl2ps-1.3.5.ebuild,
   gl2ps-1.3.5-r2.ebuild, files/gl2ps-1.3.5-CMakeLists.patch:
@@ -60,4 +103,3 @@
   07 Apr 2009; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
   +gl2ps-1.3.3.ebuild:
   Initial import
-

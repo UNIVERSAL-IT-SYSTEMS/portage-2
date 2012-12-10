@@ -1,6 +1,126 @@
 # ChangeLog for gnome-base/gdm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/ChangeLog,v 1.340 2011/06/26 06:28:15 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/ChangeLog,v 1.357 2012/09/29 06:05:16 tetromino Exp $
+
+*gdm-3.4.1-r3 (29 Sep 2012)
+
+  29 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -gdm-3.4.1-r2.ebuild, +gdm-3.4.1-r3.ebuild:
+  Do not install old /etc/pam.d/gdm file, it blocks sys-libs/pam from emerging
+  (bug #435042, thanks to Martin Wegner).
+
+*gdm-3.4.1-r2 (27 Sep 2012)
+
+  27 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> gdm-2.20.11.ebuild,
+  gdm-2.20.11-r1.ebuild, gdm-2.32.1.ebuild, gdm-2.32.1-r1.ebuild,
+  gdm-3.2.1.1-r1.ebuild, gdm-3.2.1.1-r2.ebuild, gdm-3.4.1.ebuild,
+  gdm-3.4.1-r1.ebuild, +gdm-3.4.1-r2.ebuild:
+  Rewrite pam.d files to hopefully address some of the problems systemd users
+  have been having (e.g. bug #435042); pam.d files are now shipped in a tarball
+  to keep FILESDIR a bit cleaner. Make license more precise.
+  Note that gdm now relies on sys-auth/pambase with USE=gnome-keyring for
+  automatic keyring unlocking.
+
+  12 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> gdm-2.20.11.ebuild,
+  gdm-2.20.11-r1.ebuild, gdm-2.32.1.ebuild, gdm-2.32.1-r1.ebuild,
+  gdm-3.2.1.1-r1.ebuild, gdm-3.2.1.1-r2.ebuild, gdm-3.4.1.ebuild,
+  gdm-3.4.1-r1.ebuild:
+  Update homepage.
+
+*gdm-3.4.1-r1 (12 Sep 2012)
+
+  12 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org> +files/3.4.1/gdm,
+  +files/3.4.1/gdm.service, +files/3.4.1/gdm-autologin,
+  +files/3.4.1/gdm-fingerprint, +files/3.4.1/gdm-password,
+  +files/3.4.1/gdm-welcome, +files/49-keychain-r1, +files/50-ssh-agent-r1,
+  +gdm-3.4.1-r1.ebuild, +files/gdm-3.4.1-dconf-0.13.patch,
+  +files/3.4.1/gdm-smartcard, metadata.xml:
+  Add support for dconf-0.13.x. Use pam_systemd.so if USE=systemd (bug #434798,
+  thanks to Yang Zhao). Make libaudit non-automagic (bug #408063, thanks to
+  Justin Lecher). Use pam_ldap in the greeter if USE=ldap to allow ldap users
+  to be listed (bug #430740, thanks to Plopmaster). Silence errors in
+  49-keychain and 50-ssh-agent (bug #353068, thanks to Ian Abbott).
+
+  07 Jun 2012; Zac Medico <zmedico@gentoo.org> gdm-2.20.11-r1.ebuild,
+  gdm-2.20.11.ebuild, gdm-2.32.1-r1.ebuild, gdm-2.32.1.ebuild,
+  gdm-3.2.1.1-r1.ebuild, gdm-3.2.1.1-r2.ebuild, gdm-3.4.1.ebuild:
+  inherit user for enewgroup and enewuser
+
+*gdm-3.4.1 (14 May 2012)
+
+  14 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/gdm-3.3.92.1-disable-accessibility.patch, +gdm-3.4.1.ebuild,
+  +files/gdm-3.4.1-plymouth.patch, +files/gdm-3.4.1-save-root-window.patch,
+  metadata.xml:
+  Version bump for gnome-3.4. Adds optional (and untested!) support for systemd
+  session tracking and smooth transition from plymouth.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gdm-2.20.11.ebuild,
+  gdm-2.20.11-r1.ebuild, gdm-2.32.1.ebuild, gdm-2.32.1-r1.ebuild,
+  gdm-3.2.1.1-r1.ebuild, gdm-3.2.1.1-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  14 Feb 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  gdm-3.2.1.1-r1.ebuild, gdm-3.2.1.1-r2.ebuild:
+  Add missing dependency on gnome-icon-theme-symbolic (bug #403503).
+
+*gdm-3.2.1.1-r2 (31 Dec 2011)
+
+  31 Dec 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +files/gdm-3.2.1.1-pam-fix-1.patch, +files/3.2.1.1/gdm-fingerprint,
+  +files/gdm-3.2.1.1-pam-fix-2.patch, +files/3.2.1.1/gdm,
+  +files/3.2.1.1/gdm.service, +files/3.2.1.1/gdm-autologin,
+  +files/3.2.1.1/gdm-welcome, gdm-3.2.1.1-r1.ebuild, +gdm-3.2.1.1-r2.ebuild,
+  +files/3.2.1.1/gdm-password, +files/3.2.1.1/gdm-smartcard, metadata.xml:
+  Add upstream patches to fix login problems with slow pam modules. Add
+  default-enabled fallback USE flag to pull in metacity (bug #395295, thanks to
+  Octavio Ruiz (Ta^3) for reporting). Use a better systemd service file (bug
+  #396317, thanks to Michał Górny). Ship systemd service file and pam.d files
+  in FILESDIR instead of a separate tarball; these are small files and unlikely
+  to change (bug #396317, comment 8). Punt unused elibc_glibc from IUSE. Move
+  gnome2_src_prepare after eautoreconf.
+  Forced to drop arm keyword due to gnome-session dependency (bug #390345).
+
+*gdm-3.2.1.1-r1 (05 Nov 2011)
+
+  05 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gdm-3.2.1.1-r1.ebuild, +files/gdm-3.2.1.1-custom-session.patch,
+  +files/gdm-3.2.1.1-disable-accessibility.patch:
+  Bump to 3.2.1.1 from the gnome overlay. Notable changes: new gnome-shell
+  based greeter that uses opengl (emerge with USE=-gnome-shell if you want to
+  use the boring, old-fashioned greeter); user information is now obtained
+  from accountsservices; the way that gdm launches its greeter sessions was
+  completely overhauled. There is also optional support for fingerprint and
+  smartcard authentication which is basically UNTESTED due to lack of hardware.
+  Enable fprint or smartcard USE flags if you want to experiment!
+  Dropped alpha, ia64, sparc keywords due to new accountsservice and
+  gnome-settings-daemon-3.2 dependencies.
+
+  30 Oct 2011; Raúl Porcel <armin76@gentoo.org> gdm-2.20.11-r1.ebuild:
+  alpha/ia64/sh/sparc stable wrt #385699
+
+  28 Oct 2011; Markus Meier <maekke@gentoo.org> gdm-2.20.11-r1.ebuild:
+  arm stable, bug #385699
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> gdm-2.20.11-r1.ebuild:
+  x86 stable wrt bug #385699
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> gdm-2.20.11-r1.ebuild:
+  ppc/ppc64 stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> gdm-2.20.11-r1.ebuild:
+  amd64 stable wrt #385699
+
+  10 Oct 2011; Pacho Ramos <pacho@gentoo.org> gdm-2.20.11-r1.ebuild:
+  Drop .a files, bug #386665 by Ago.
+
+*gdm-2.20.11-r1 (11 Sep 2011)
+
+  11 Sep 2011; Pacho Ramos <pacho@gentoo.org> +gdm-2.20.11-r1.ebuild:
+  Wait more before assuming Xserver is defunct (bug #378765 by Enrique
+  Domínguez), this change also solves a problem I was suffering for ages where
+  gdm had problems to restart on systems under heavy load. Also drop .la files
+  (bug #362961 by Stéphane Pagnon).
 
   26 Jun 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
   files/gdm-2.32.0-fix-vt-problems.patch:

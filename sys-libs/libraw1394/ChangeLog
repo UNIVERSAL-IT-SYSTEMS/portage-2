@@ -1,6 +1,36 @@
 # ChangeLog for sys-libs/libraw1394
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libraw1394/ChangeLog,v 1.59 2011/03/25 02:04:26 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/libraw1394/ChangeLog,v 1.68 2012/09/02 18:22:55 armin76 Exp $
+
+  02 Sep 2012; Raúl Porcel <armin76@gentoo.org> libraw1394-2.0.8.ebuild:
+  alpha/ia64/sh/sparc stable wrt #422231
+
+  11 Aug 2012; Markus Meier <maekke@gentoo.org> libraw1394-2.0.8.ebuild:
+  arm stable, bug #422231
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> libraw1394-2.0.8.ebuild:
+  Marking libraw1394-2.0.8 ppc for bug 422231
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> libraw1394-2.0.8.ebuild:
+  Marking libraw1394-2.0.8 ppc64 for bug 422231
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> libraw1394-2.0.8.ebuild:
+  Stable for amd64, wrt bug #422231
+
+  02 Aug 2012; Jeff Horelick <jdhore@gentoo.org> libraw1394-2.0.8.ebuild:
+  marked x86 per bug 422231
+
+  01 Aug 2012; Jeroen Roovers <jer@gentoo.org> libraw1394-2.0.8.ebuild:
+  Stable for HPPA (bug #422231).
+
+*libraw1394-2.0.8 (07 Mar 2012)
+
+  07 Mar 2012; Tim Harder <radhermit@gentoo.org> +libraw1394-2.0.8.ebuild:
+  Version bump. Add static-libs use flag.
+
+  03 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> libraw1394-2.0.7.ebuild,
+  metadata.xml:
+  Drop unused local dep. Latest version to eapi4
 
 *libraw1394-2.0.7 (25 Mar 2011)
 

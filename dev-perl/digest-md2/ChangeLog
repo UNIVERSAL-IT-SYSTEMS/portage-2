@@ -1,6 +1,20 @@
 # ChangeLog for dev-perl/digest-md2
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/digest-md2/ChangeLog,v 1.16 2011/04/24 15:54:24 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/digest-md2/ChangeLog,v 1.20 2012/06/24 12:59:32 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -digest-md2-2.03.ebuild:
+  Cleanup
+
+  03 Sep 2011; Torsten Veller <tove@gentoo.org> digest-md2-2.30.0.ebuild:
+  Merge stable keywords from former version scheme ebuild
+
+*digest-md2-2.30.0 (27 Aug 2011)
+
+  27 Aug 2011; Torsten Veller <tove@gentoo.org> +digest-md2-2.30.0.ebuild:
+  Change version scheme
 
   24 Apr 2011; Fabian Groffen <grobian@gentoo.org> digest-md2-2.03.ebuild:
   Marked ~x86-solaris, bug #296509
@@ -57,4 +71,3 @@
 
   23 Jun 2003; Michael Cummings <mcummings@gentoo.org> digest-md2-2.01.ebuild:
   Dep for crypt-rsa, dep for net-ssh
-

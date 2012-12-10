@@ -1,6 +1,79 @@
 # ChangeLog for xfce-extra/xfce4-battery-plugin
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-battery-plugin/ChangeLog,v 1.10 2011/05/05 11:06:01 phajdan.jr Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-battery-plugin/ChangeLog,v 1.27 2012/11/28 12:21:18 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-battery-plugin-1.0.5.ebuild:
+  EAPI5
+
+  16 Nov 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-battery-plugin-1.0.4.ebuild:
+  old
+
+  16 Nov 2012; Andreas Schuerch <nativemad@gentoo.org>
+  xfce4-battery-plugin-1.0.5.ebuild:
+  x86 stable, see bug 429484
+
+  27 Oct 2012; <ago@gentoo.org> xfce4-battery-plugin-1.0.5.ebuild:
+  Stable for amd64, wrt bug #429484
+
+*xfce4-battery-plugin-1.0.5 (30 Jun 2012)
+
+  30 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-battery-plugin-1.0.5.ebuild:
+  Version bump.
+
+  03 Jun 2012; Anthony G. Basile <blueness@gentoo.org>
+  xfce4-battery-plugin-1.0.4.ebuild:
+  Keyword ~mips
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-battery-plugin-1.0.0-r1.ebuild,
+  -files/xfce4-battery-plugin-1.0.0-sysfs.patch:
+  old
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  xfce4-battery-plugin-1.0.4.ebuild:
+  marked x86 per bug 416233
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-battery-plugin-1.0.0-r1.ebuild:
+  Revert to ~ppc pending on user request wrt #416233
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org>
+  xfce4-battery-plugin-1.0.4.ebuild:
+  Stable for amd64, wrt bug #416233
+
+  14 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -xfce4-battery-plugin-1.0.1.ebuild, -xfce4-battery-plugin-1.0.2.ebuild:
+  old
+
+*xfce4-battery-plugin-1.0.4 (14 May 2012)
+
+  14 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-battery-plugin-1.0.4.ebuild:
+  Version bump.
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org>
+  xfce4-battery-plugin-1.0.0-r1.ebuild, xfce4-battery-plugin-1.0.1.ebuild,
+  xfce4-battery-plugin-1.0.2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*xfce4-battery-plugin-1.0.2 (30 Apr 2012)
+
+  30 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-battery-plugin-1.0.2.ebuild:
+  Version bump.
+
+*xfce4-battery-plugin-1.0.1 (17 Apr 2012)
+
+  17 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xfce4-battery-plugin-1.0.1.ebuild:
+  Version bump.
+
+  09 Apr 2012; Samuli Suominen <ssuominen@gentoo.org>
+  xfce4-battery-plugin-1.0.0-r1.ebuild:
+  Install to libdir instead of libexecdir.
 
   05 May 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
   xfce4-battery-plugin-1.0.0-r1.ebuild:

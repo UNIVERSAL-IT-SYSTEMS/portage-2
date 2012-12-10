@@ -1,6 +1,18 @@
 # ChangeLog for net-misc/aget
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/aget/ChangeLog,v 1.19 2010/11/02 14:27:11 darkside Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/aget/ChangeLog,v 1.23 2012/06/23 07:20:12 xmw Exp $
+
+  23 Jun 2012; Michael Weber <xmw@gentoo.org> -aget-0.4.ebuild:
+  drop old
+
+  22 Jun 2012; Brent Baude <ranger@gentoo.org> aget-0.4.1-r1.ebuild:
+  Marking aget-0.4.1-r1 ppc64 for bug 420969
+
+  13 Jun 2012; Jeff Horelick <jdhore@gentoo.org> aget-0.4.1-r1.ebuild:
+  marked x86 per bug 420969
+
+  13 Jun 2012; Agostino Sarubbo <ago@gentoo.org> aget-0.4.1-r1.ebuild:
+  Stable for amd64, wrt bug #420969
 
   02 Nov 2010; Jeremy Olexa <darkside@gentoo.org> aget-0.4.1-r1.ebuild:
   Fix for Gentoo Prefix, bug 343847

@@ -1,6 +1,50 @@
 # ChangeLog for app-admin/metalog
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/metalog/ChangeLog,v 1.93 2011/04/07 07:50:42 ultrabug Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/metalog/ChangeLog,v 1.105 2012/08/20 02:52:02 vapier Exp $
+
+  20 Aug 2012; Mike Frysinger <vapier@gentoo.org> metalog-3.ebuild:
+  Pull in pkg-config #431908 by Hans.
+
+*metalog-3 (18 Aug 2012)
+
+  18 Aug 2012; Mike Frysinger <vapier@gentoo.org> +metalog-3.ebuild:
+  Version bump.
+
+  15 Jul 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/metalog-2-no-gets.patch, metalog-2.ebuild:
+  Fix building with glibc-2.16+ #426632 by Christian Hagau.
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> metalog-2.ebuild:
+  ia64/s390/sh/sparc stable wrt #390033
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> metalog-2.ebuild:
+  Marking metalog-2 ppc for bug 390033
+
+  19 Feb 2012; Tobias Klausmann <klausman@gentoo.org> metalog-2.ebuild:
+  Stable on alpha, bug #390033
+
+  12 Feb 2012; Tony Vroon <chainsaw@gentoo.org> metalog-2.ebuild:
+  Marked stable on PPC64 as requested by Agostino "ago" Sarubbo in bug
+  #390033. Compile tested on a PowerMac7,3 (64UL) with GCC 4.5.3.
+
+  13 Nov 2011; Markus Meier <maekke@gentoo.org> metalog-2.ebuild:
+  arm stable, bug #390033
+
+  11 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> metalog-2.ebuild:
+  x86 stable wrt bug #390033
+
+  10 Nov 2011; Jeroen Roovers <jer@gentoo.org> metalog-2.ebuild:
+  Stable for HPPA (bug #390033).
+
+  10 Nov 2011; Tony Vroon <chainsaw@gentoo.org> metalog-2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in bug #390033.
+
+*metalog-2 (23 Sep 2011)
+
+  23 Sep 2011; Mike Frysinger <vapier@gentoo.org> +metalog-2.ebuild,
+  files/metalog.initd:
+  Version bump.
 
   07 Apr 2011; Ultrabug <ultrabug@gentoo.org> metalog-1.ebuild:
   migrate ebuilds to new-style virtual, wrt #358881

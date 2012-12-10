@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/tint2/tint2-0.11-r1.ebuild,v 1.3 2011/04/25 13:52:51 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/tint2/tint2-0.11-r1.ebuild,v 1.5 2012/09/11 17:38:41 idl0r Exp $
 
 EAPI="3"
 
@@ -19,7 +19,7 @@ IUSE="battery examples tint2conf"
 
 COMMON_DEPEND="dev-libs/glib:2
 	x11-libs/cairo
-	x11-libs/pango
+	x11-libs/pango[X]
 	x11-libs/libX11
 	x11-libs/libXinerama
 	x11-libs/libXdamage
@@ -28,7 +28,7 @@ COMMON_DEPEND="dev-libs/glib:2
 	x11-libs/libXrandr
 	media-libs/imlib2[X]"
 DEPEND="${COMMON_DEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	x11-proto/xineramaproto"
 RDEPEND="${COMMON_DEPEND}
 	tint2conf? ( x11-misc/tintwizard )"

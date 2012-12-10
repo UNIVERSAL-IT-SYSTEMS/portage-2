@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/hsqldb/hsqldb-1.8.1.2-r1.ebuild,v 1.5 2010/10/14 16:52:44 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/hsqldb/hsqldb-1.8.1.2-r1.ebuild,v 1.9 2012/07/13 14:19:56 sera Exp $
 
 EAPI=1
 JAVA_PKG_IUSE="doc source test"
-inherit eutils versionator java-pkg-2 java-ant-2
+inherit eutils user versionator java-pkg-2 java-ant-2
 
 MY_PV=$(replace_all_version_separators _ )
 MY_P="${PN}_${MY_PV}"
@@ -13,7 +13,7 @@ DESCRIPTION="The leading SQL relational database engine written in Java."
 HOMEPAGE="http://hsqldb.org"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.zip"
 
-LICENSE="BSD"
+LICENSE="BSD GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ppc ppc64 x86 ~x86-fbsd ~x64-solaris"
 IUSE=""
@@ -21,7 +21,7 @@ IUSE=""
 CDEPEND="java-virtuals/servlet-api:2.3"
 RDEPEND=">=virtual/jre-1.6
 	${CDEPEND}"
-DEPEND=">=virtual/jdk-1.6
+DEPEND="virtual/jdk:1.6
 	test? ( dev-java/junit:0 )
 	app-arch/unzip
 	${CDEPEND}"
@@ -96,8 +96,8 @@ src_install() {
 	fi
 	use source && java-pkg_dosrc src/*
 
-	# Install env file for CONFIG_PROTECT support
-	doenvd "${FILESDIR}/35hsqldb" || die
+	echo "CONFIG_PROTECT=\"${HSQLDB_HOME}\"" > "${T}"/35hsqldb || die
+	doenvd "${T}"/35hsqldb || die
 
 	# Put init, configuration and authorization files in /etc
 	doinitd "${FILESDIR}/hsqldb" || die
@@ -167,14 +167,5 @@ pkg_postinst() {
 	elog "If you intend to run it in the Server mode, it is suggested to add the"
 	elog "init script to your start-up scripts, this should be done like this:"
 	elog "  \`rc-update add hsqldb default\`"
-	echo
-
-	# Enable CONFIG_PROTECT for hsqldb
-	env-update
-	elog "Hsqldb stores its database files in ${HSQLDB_HOME} and this directory"
-	elog "is added to the CONFIG_PROTECT list. In order to immediately activate"
-	elog "these settings please do:"
-	elog "  \`env-update && source /etc/profile\`"
-	elog "Otherwise the settings will become active next time you login"
 	echo
 }

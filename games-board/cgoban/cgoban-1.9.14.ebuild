@@ -1,9 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-board/cgoban/cgoban-1.9.14.ebuild,v 1.9 2010/02/28 01:30:41 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-board/cgoban/cgoban-1.9.14.ebuild,v 1.11 2012/09/05 16:49:24 mr_bones_ Exp $
 
 EAPI=2
-inherit eutils games
+inherit eutils autotools games
 
 DESCRIPTION="A Go-frontend"
 HOMEPAGE="http://cgoban1.sourceforge.net/"
@@ -25,11 +25,14 @@ DEPEND="${RDEPEND}
 	x11-proto/xproto"
 
 src_prepare() {
-	cp cgoban_icon.png ${PN}.png || die "cp failed"
+	cp cgoban_icon.png ${PN}.png || die
+	mv configure.{in,ac} || die
+	epatch "${FILESDIR}"/${P}-cflags.patch
+	eautoreconf
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS README TODO
 	doicon ${PN}.png
 	make_desktop_entry cgoban Cgoban

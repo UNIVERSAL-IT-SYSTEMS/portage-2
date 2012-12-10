@@ -1,6 +1,59 @@
 # ChangeLog for net-misc/aria2
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/aria2/ChangeLog,v 1.74 2011/06/30 19:27:42 sping Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/aria2/ChangeLog,v 1.85 2012/12/03 13:43:02 ago Exp $
+
+  03 Dec 2012; <ago@gentoo.org> aria2-1.15.2.ebuild:
+  Stable for amd64, wrt bug #445762
+
+*aria2-1.16.0 (03 Dec 2012)
+
+  03 Dec 2012; Michał Górny <mgorny@gentoo.org> +aria2-1.16.0.ebuild:
+  Version bump.
+
+*aria2-1.15.2 (12 Nov 2012)
+
+  12 Nov 2012; Michał Górny <mgorny@gentoo.org> +aria2-1.15.2.ebuild,
+  metadata.xml:
+  Version bump. Rework the USE flags, clean up the ebuild a bit.
+
+  11 Nov 2012; Justin Lecher <jlec@gentoo.org> aria2-1.12.1.ebuild,
+  aria2-1.14.1.ebuild, aria2-1.15.0.ebuild, metadata.xml:
+  Add missing USE=bash-completion
+
+  16 Sep 2012; Christoph Junghans <ottxor@gentoo.org> aria2-1.15.0.ebuild:
+  added prefix support (bug #428252)
+
+*aria2-1.15.0 (18 May 2012)
+
+  18 May 2012; Tiziano Müller <dev-zero@gentoo.org> +aria2-1.15.0.ebuild,
+  metadata.xml:
+  Version bump.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> aria2-1.12.1.ebuild,
+  aria2-1.14.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Jan 2012; Tiziano Müller <dev-zero@gentoo.org> aria2-1.14.1.ebuild:
+  Make libgcrypt usage explicit.
+
+  15 Jan 2012; Tiziano Müller <dev-zero@gentoo.org> aria2-1.14.1.ebuild:
+  Migrate to bash-completion-r1 eclass.
+
+*aria2-1.14.1 (15 Jan 2012)
+
+  15 Jan 2012; Tiziano Müller <dev-zero@gentoo.org> -aria2-1.9.4.ebuild,
+  -aria2-1.10.0.ebuild, -aria2-1.10.1.ebuild, -aria2-1.10.2.ebuild,
+  -aria2-1.10.5.ebuild, -aria2-1.10.6.ebuild, -aria2-1.10.7.ebuild,
+  -aria2-1.10.8.ebuild, -aria2-1.10.9.ebuild, -aria2-1.11.0.ebuild,
+  -aria2-1.11.2.ebuild, -aria2-1.12.0.ebuild, +aria2-1.14.1.ebuild,
+  metadata.xml:
+  Version bump (bug #388971) and conditionally rebuild doc (bug #366485). Drop
+  old versions.
+
+*aria2-1.12.1 (03 Aug 2011)
+
+  03 Aug 2011; Sebastian Pipping <sping@gentoo.org> +aria2-1.12.1.ebuild:
+  Bump to 1.12.1, looks trivial
 
 *aria2-1.12.0 (30 Jun 2011)
 
@@ -436,4 +489,3 @@
   02 Jul 2006; Tiziano Müller <gentoo@dev-zero.ch> ChangeLog:
   New ebuild for bug 134540, based on the ebuild provided in bugzilla with
   some modifications in DEPEND and the USE-flags
-

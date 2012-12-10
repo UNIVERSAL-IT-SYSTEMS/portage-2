@@ -1,6 +1,69 @@
 # ChangeLog for sys-libs/libsemanage
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libsemanage/ChangeLog,v 1.37 2011/07/15 21:00:46 blueness Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/libsemanage/ChangeLog,v 1.53 2012/11/17 16:56:15 swift Exp $
+
+  17 Nov 2012; <swift@gentoo.org> libsemanage-2.1.9.ebuild:
+  Stabilization
+
+  13 Oct 2012; <swift@gentoo.org> libsemanage-2.1.9.ebuild:
+  Supporting user-provided patches using epatch_user
+
+*libsemanage-2.1.9 (09 Oct 2012)
+
+  09 Oct 2012; <swift@gentoo.org> +libsemanage-2.1.9.ebuild:
+  Introduce new upstream version
+
+  26 Jun 2012; Mike Gilbert <floppym@gentoo.org> libsemanage-2.1.6-r2.ebuild,
+  libsemanage-2.1.6.ebuild:
+  Restrict pypy per Arfrever.
+
+*libsemanage-2.1.6-r2 (25 Jun 2012)
+
+  25 Jun 2012; <swift@gentoo.org> +libsemanage-2.1.6-r2.ebuild:
+  Fix python3 support
+
+  13 May 2012; <swift@gentoo.org> -libsemanage-2.1.0.ebuild:
+  Removing obsoleted ebuild
+
+  29 Apr 2012; <swift@gentoo.org> libsemanage-2.1.6.ebuild:
+  Stabilization
+
+  05 Apr 2012; <swift@gentoo.org> libsemanage-2.1.0.ebuild,
+  libsemanage-2.1.6.ebuild:
+  Depending on swig-2.0.4-r1 to fix build failures as per bug #409959
+
+*libsemanage-2.1.6 (31 Mar 2012)
+
+  31 Mar 2012; <swift@gentoo.org> +libsemanage-2.1.6.ebuild:
+  Bump to version 2.1.6
+
+  12 Nov 2011; <swift@gentoo.org> -libsemanage-2.0.45.ebuild,
+  -libsemanage-2.0.46.ebuild:
+  Remove deprecated ebuilds
+
+  23 Oct 2011; <swift@gentoo.org> libsemanage-2.1.0.ebuild:
+  Stabilization (tracker #384231)
+
+  17 Sep 2011; <swift@gentoo.org> libsemanage-2.0.45.ebuild,
+  libsemanage-2.0.46.ebuild:
+  Adding dependencies on bison and flex as per bug #382583
+
+  17 Sep 2011; <swift@gentoo.org> libsemanage-2.1.0.ebuild:
+  Add dependency for flex and bison
+
+  12 Aug 2011; Anthony G. Basile <blueness@gentoo.org> ChangeLog:
+  Fix failed gpg signing of Manifest
+
+  12 Aug 2011; Anthony G. Basile <blueness@gentoo.org>
+  -libsemanage-2.0.27.ebuild, -libsemanage-2.0.33.ebuild,
+  -libsemanage-2.0.33-r1.ebuild, -files/libsemanage-2.0.33-bzip.diff:
+  Removed deprecated versions
+
+*libsemanage-2.1.0 (03 Aug 2011)
+
+  03 Aug 2011; Anthony G. Basile <blueness@gentoo.org>
+  +libsemanage-2.1.0.ebuild:
+  Bump to 20110727 SELinux userspace release
 
 *libsemanage-2.0.46 (15 Jul 2011)
 
@@ -162,4 +225,3 @@
   09 Dec 2005; Chris PeBenito <pebenito@gentoo.org> +metadata.xml,
   +libsemanage-1.4.ebuild:
   Initial commit.
-

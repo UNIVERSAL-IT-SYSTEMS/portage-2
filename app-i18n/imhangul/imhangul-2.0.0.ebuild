@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/imhangul/imhangul-2.0.0.ebuild,v 1.1 2011/05/28 02:40:50 matsuu Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/imhangul/imhangul-2.0.0.ebuild,v 1.7 2012/05/03 19:24:27 jdhore Exp $
 
 EAPI="3"
 inherit multilib
@@ -11,14 +11,14 @@ SRC_URI="http://kldp.net/frs/download.php/5924/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE=""
 
 RDEPEND=">=app-i18n/libhangul-0.0.12
 	>=x11-libs/gtk+-2.2:2
 	virtual/libintl"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
 
 get_gtk_confdir() {
@@ -39,6 +39,11 @@ update_gtk_immodules() {
 	if [ -x "${EPREFIX}/usr/bin/gtk-query-immodules-2.0" ] ; then
 		"${EPREFIX}/usr/bin/gtk-query-immodules-2.0" > "${GTK2_CONFDIR}/gtk.immodules"
 	fi
+}
+
+src_prepare() {
+	# Drop DEPRECATED flags, bug #387825
+	sed -i -e 's:-D[A-Z_]*DISABLE_DEPRECATED:$(NULL):g' Makefile.am Makefile.in || die
 }
 
 src_configure() {

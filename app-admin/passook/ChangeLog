@@ -1,6 +1,25 @@
 # ChangeLog for app-admin/passook
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/passook/ChangeLog,v 1.15 2010/04/06 05:54:22 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/passook/ChangeLog,v 1.20 2012/12/01 19:41:55 armin76 Exp $
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> passook-1.0.0.ebuild,
+  passook-20121001.ebuild:
+  Drop sparc keywords
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> passook-20121001.ebuild:
+  Stable for x86, wrt bug #441046
+
+  04 Nov 2012; Agostino Sarubbo <ago@gentoo.org> passook-20121001.ebuild:
+  Stable for amd64, wrt bug #441046
+
+  03 Nov 2012; Anthony G. Basile <blueness@gentoo.org> passook-20121001.ebuild:
+  stable ppc ppc64, bug #441046
+
+*passook-20121001 (01 Oct 2012)
+
+  01 Oct 2012; Ulrich Müller <ulm@gentoo.org> passook-1.0.0.ebuild,
+  +passook-20121001.ebuild:
+  New snapshot from upstream git repo. License is GPL-3+ now, bug 436178.
 
   06 Apr 2010; Jonathan Callen <abcd@gentoo.org> passook-1.0.0.ebuild,
   -files/passook.diff, +files/passook.patch:

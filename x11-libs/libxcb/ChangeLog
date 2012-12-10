@@ -1,6 +1,83 @@
 # ChangeLog for x11-libs/libxcb
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libxcb/ChangeLog,v 1.82 2011/06/08 15:48:51 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libxcb/ChangeLog,v 1.102 2012/12/08 17:15:40 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> libxcb-1.9.ebuild:
+  Stable for ppc64, wrt bug #440872
+
+  28 Nov 2012; Brent Baude <ranger@gentoo.org> libxcb-1.9.ebuild:
+  Marking libxcb-1.9 ppc stable for bug 440872
+
+  18 Nov 2012; Agostino Sarubbo <ago@gentoo.org> libxcb-1.9.ebuild:
+  Stable for x86, wrt bug #440872
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> libxcb-1.9.ebuild:
+  Stable for amd64, wrt bug #440872
+
+*libxcb-1.9 (31 Oct 2012)
+
+  31 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/libxcb-1.9-python-3-exception.patch,
+  +files/libxcb-1.9-python-3-iteritems.patch, +libxcb-1.9.ebuild:
+  Version bump.
+
+*libxcb-1.8.1-r1 (06 Oct 2012)
+
+  06 Oct 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +files/libxcb-1.8.1-multithread-deadlock.patch, +libxcb-1.8.1-r1.ebuild:
+  Add patch to fix wine deadlock, bug #436780.
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> libxcb-1.8.1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #419473
+
+  12 Jul 2012; Brent Baude <ranger@gentoo.org> libxcb-1.8.1.ebuild:
+  Marking libxcb-1.8.1 ppc stable for bug 419473
+
+  11 Jul 2012; Brent Baude <ranger@gentoo.org> libxcb-1.8.1.ebuild:
+  Marking libxcb-1.8.1 ppc64 stable for bug 419473
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> libxcb-1.8.1.ebuild:
+  Stable for HPPA (bug #419473).
+
+  28 Jun 2012; Markus Meier <maekke@gentoo.org> libxcb-1.8.1.ebuild:
+  arm stable, bug #419473
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libxcb-1.8.1.ebuild:
+  Stable for x86, wrt bug #419473
+
+  22 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libxcb-1.8.1.ebuild:
+  Stable for amd64, wrt bug #419473
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> libxcb-1.8.1.ebuild:
+  keyword ~amd64-fbsd
+
+  10 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  libxcb-1.8.1.ebuild:
+  Update ebuild with suggestions from Arfrever.
+
+*libxcb-1.8.1 (10 Mar 2012)
+
+  10 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libxcb-1.8.1.ebuild:
+  Version bump.
+
+*libxcb-1.8-r1 (03 Mar 2012)
+
+  03 Mar 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  +libxcb-1.8-r1.ebuild, +files/libxcb-1.8-waitall-hang.patch:
+  Add patch to fix hang on BSD and OS X, bug #405951.
+
+  08 Feb 2012; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  libxcb-1.7.ebuild, libxcb-1.8.ebuild:
+  Drop runtime dependency on xcb-proto, bug #398953.
+
+  11 Jan 2012; Matt Turner <mattst88@gentoo.org> libxcb-1.8.ebuild:
+  Bump dependency to xcb-proto-1.7.
+
+*libxcb-1.8 (11 Jan 2012)
+
+  11 Jan 2012; Matt Turner <mattst88@gentoo.org> +libxcb-1.8.ebuild:
+  Version bump.
 
   08 Jun 2011; Tomáš Chvátal <scarabeus@gentoo.org> libxcb-1.7.ebuild:
   Run eautoreconf as configure.ac is patched.
@@ -286,4 +363,3 @@
   09 Oct 2006; Donnie Berkholz <dberkholz@gentoo.org>; +metadata.xml,
   +libxcb-0.9.92.ebuild:
   Add X C-language Bindings library.
-

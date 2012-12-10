@@ -1,6 +1,51 @@
 # ChangeLog for dev-libs/libindicator
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libindicator/ChangeLog,v 1.6 2011/05/07 20:55:30 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libindicator/ChangeLog,v 1.15 2012/07/30 20:51:21 ssuominen Exp $
+
+  30 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  libindicator-12.10.0-r200.ebuild, libindicator-12.10.0-r300.ebuild:
+  Pull in dev-util/dbus-test-runner and use virtualx.eclass for src_test() wrt
+  #391179 by Jonathan Lovelace
+
+  26 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -libindicator-0.4.1-r201.ebuild, -libindicator-0.4.1-r300.ebuild:
+  old
+
+*libindicator-12.10.0-r300 (26 Jul 2012)
+*libindicator-12.10.0-r200 (26 Jul 2012)
+
+  26 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +libindicator-12.10.0-r200.ebuild, +libindicator-12.10.0-r300.ebuild:
+  Version bump.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  libindicator-0.4.1-r201.ebuild, libindicator-0.4.1-r300.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -libindicator-0.4.1-r200.ebuild:
+  old
+
+*libindicator-0.4.1-r300 (26 Nov 2011)
+*libindicator-0.4.1-r201 (26 Nov 2011)
+
+  26 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +libindicator-0.4.1-r201.ebuild, +libindicator-0.4.1-r300.ebuild:
+  Provide GTK+-3.0 version in SLOT="3"
+
+  20 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  Move to ayatana herd.
+
+  19 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -libindicator-0.3.6.ebuild, -files/libindicator-0.3.6-missing_template.patch,
+  -libindicator-0.3.13.ebuild, -libindicator-0.3.22.ebuild:
+  old
+
+*libindicator-0.4.1-r200 (19 Nov 2011)
+
+  19 Nov 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +libindicator-0.4.1-r200.ebuild:
+  Version bump.
 
 *libindicator-0.3.22 (07 May 2011)
 

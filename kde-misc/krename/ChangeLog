@@ -1,6 +1,47 @@
 # ChangeLog for kde-misc/krename
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/krename/ChangeLog,v 1.65 2011/04/18 15:16:29 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/krename/ChangeLog,v 1.76 2012/05/21 09:39:13 johu Exp $
+
+  21 May 2012; Johannes Huber <johu@gentoo.org>
+  -files/krename-4.0.7-fix-segfault.patch, -krename-4.0.7-r1.ebuild,
+  -krename-4.0.7.ebuild:
+  Remove old.
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> krename-4.0.9.ebuild:
+  x86 stable wrt bug #412809
+
+  23 Apr 2012; Johannes Huber <johu@gentoo.org> krename-4.0.9.ebuild:
+  Fix configure option for exif by Michael (kensington)
+  <gentoo@scribeofthenile.com>.
+
+  23 Apr 2012; Agostino Sarubbo <ago@gentoo.org> krename-4.0.9.ebuild:
+  Stable for amd64, wrt bug #412809
+
+  22 Apr 2012; Johannes Huber <johu@gentoo.org> krename-4.0.9.ebuild:
+  Remove not needed '+' in cmake argument statement and make it local.
+
+  22 Apr 2012; Johannes Huber <johu@gentoo.org> krename-4.0.9.ebuild:
+  Use array for docs.
+
+*krename-4.0.9 (04 Jan 2012)
+
+  04 Jan 2012; Johannes Huber <johu@gentoo.org> +krename-4.0.9.ebuild:
+  Version bump.
+
+*krename-4.0.7-r1 (30 Dec 2011)
+
+  30 Dec 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  +krename-4.0.7-r1.ebuild, +files/krename-4.0.7-fix-segfault.patch:
+  Fix crash bug 396377
+
+  14 Dec 2011; Johannes Huber <johu@gentoo.org> -krename-4.0.5.ebuild:
+  Cleanup. All arches stable on newer version.
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> krename-4.0.7.ebuild:
+  x86 stable wrt bug #393749
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org> krename-4.0.7.ebuild:
+  Stable for AMD64, wrt bug #393749
 
 *krename-4.0.7 (18 Apr 2011)
 

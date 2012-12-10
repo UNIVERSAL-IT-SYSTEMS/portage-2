@@ -1,11 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pysvn/pysvn-1.7.5.ebuild,v 1.3 2011/04/18 18:27:39 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pysvn/pysvn-1.7.5.ebuild,v 1.5 2012/03/10 13:08:55 jlec Exp $
 
 EAPI="3"
 PYTHON_DEPEND="*"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="*-jython"
+RESTRICT_PYTHON_ABIS="*-jython 2.7-pypy-*"
 
 inherit python toolchain-funcs
 
@@ -19,7 +19,7 @@ KEYWORDS="amd64 ~arm ~ppc x86 ~x86-freebsd ~x86-linux ~ppc-macos ~x86-solaris"
 IUSE="doc examples"
 
 RDEPEND=">=dev-python/pycxx-6.2.0
-	dev-vcs/subversion"
+	<dev-vcs/subversion-1.7"  # (bug #395533)
 DEPEND="${RDEPEND}
 	dev-python/setuptools"
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/tokyocabinet/tokyocabinet-1.4.47.ebuild,v 1.6 2011/04/25 14:33:05 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/tokyocabinet/tokyocabinet-1.4.47.ebuild,v 1.10 2012/04/25 16:22:24 jlec Exp $
 
 EAPI="2"
 
@@ -12,7 +12,7 @@ SRC_URI="${HOMEPAGE}${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ~ppc ~ppc64 x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris"
+KEYWORDS="alpha amd64 hppa ppc ppc64 x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris"
 IUSE="debug doc examples"
 
 DEPEND="sys-libs/zlib
@@ -27,7 +27,9 @@ src_prepare() {
 	# cflags fix - remove -O2 at end of line and -fomit-frame-pointer
 	sed -i -e 's/-O3"$/"/' configure.in || die
 	sed -i -e 's/-fomit-frame-pointer//' configure.in || die
-	eautoreconf || die
+	# flag only works on x86 derivatives, remove everywhere else
+	if ! use x86 && ! use amd64; then sed -i -e 's/ -minline-all-stringops//' configure.in; fi
+	eautoreconf
 }
 
 src_configure() {

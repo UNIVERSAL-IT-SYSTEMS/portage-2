@@ -1,6 +1,69 @@
 # ChangeLog for app-editors/xemacs
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/xemacs/ChangeLog,v 1.147 2011/05/16 17:12:40 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-editors/xemacs/ChangeLog,v 1.164 2012/10/24 18:58:39 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> xemacs-21.4.22-r2.ebuild,
+  xemacs-21.5.29-r2.ebuild, xemacs-21.5.30.ebuild, xemacs-21.5.31.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  07 Sep 2012; Hans de Graaff <graaff@gentoo.org> xemacs-21.5.31.ebuild,
+  files/xemacs.desktop:
+  Fix QA warning in desktop file. Depend on the actual slot of freetype that
+  XEmacs expects.
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> xemacs-21.4.22-r2.ebuild,
+  xemacs-21.5.29-r2.ebuild, xemacs-21.5.30.ebuild, xemacs-21.5.31.ebuild:
+  Use doicon instead insinto + doins to install icon files
+
+  05 Sep 2012; Justin Lecher <jlec@gentoo.org> xemacs-21.4.22-r2.ebuild,
+  xemacs-21.5.29-r2.ebuild, xemacs-21.5.30.ebuild, xemacs-21.5.31.ebuild:
+  Use domenu instead insinto + doins to install .desktop files
+
+  02 Jun 2012; Alexis Ballier <aballier@gentoo.org> xemacs-21.5.31.ebuild:
+  keyword ~amd64-fbsd
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> xemacs-21.4.22-r2.ebuild,
+  xemacs-21.5.29-r2.ebuild, xemacs-21.5.30.ebuild, xemacs-21.5.31.ebuild:
+  Remove USE="esd" because media-sound/esound isn't in tree anymore.
+
+  31 Oct 2011; Hans de Graaff <graaff@gentoo.org> -xemacs-21.4.22-r1.ebuild:
+  Remove old version.
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> xemacs-21.4.22-r2.ebuild:
+  alpha/sparc stable wrt #385207
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> xemacs-21.4.22-r2.ebuild:
+  ppc stable wrt #385207
+
+  11 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> xemacs-21.4.22-r2.ebuild:
+  ppc64 stable wrt #385207
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> xemacs-21.4.22-r2.ebuild:
+  Stable for HPPA (bug #385207).
+
+  10 Oct 2011; Hans de Graaff <graaff@gentoo.org> xemacs-21.5.31.ebuild:
+  Make sure berkdb support is turned on for newer versions of gdbm. Fixes bug
+  383587, thanks to Martin von Gagern for diagnosing the issue.
+
+  09 Oct 2011; Markos Chandras <hwoarang@gentoo.org> xemacs-21.4.22-r2.ebuild:
+  Stable on amd64 wrt bug #385207
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  xemacs-21.4.22-r2.ebuild:
+  x86 stable wrt bug #385207
+
+  04 Oct 2011; Hans de Graaff <graaff@gentoo.org> xemacs-21.4.22-r2.ebuild:
+  Respect C compiler choice, reported by Ian Delany in bug 385609.
+
+  26 Sep 2011; Hans de Graaff <graaff@gentoo.org> xemacs-21.4.22-r2.ebuild,
+  +files/xemacs-21.4.22-libpng15.patch:
+  Fix compilation with libpng 1.5, thanks to Samuli Suominen in bug 384461.
+
+  02 Aug 2011; Matt Turner <mattst88@gentoo.org> xemacs-21.4.22-r1.ebuild,
+  xemacs-21.4.22-r2.ebuild, xemacs-21.5.29-r2.ebuild, xemacs-21.5.30.ebuild,
+  xemacs-21.5.31.ebuild:
+  Renamed x11-libs/Xaw3d to x11-libs/libXaw3d.
 
   16 May 2011; Hans de Graaff <graaff@gentoo.org> xemacs-21.5.31.ebuild:
   Make the blocker on old sys-libs/db version strong to make sure it is gone

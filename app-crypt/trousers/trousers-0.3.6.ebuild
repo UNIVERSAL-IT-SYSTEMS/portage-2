@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/trousers/trousers-0.3.6.ebuild,v 1.3 2011/03/21 09:51:51 tomka Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/trousers/trousers-0.3.6.ebuild,v 1.6 2012/05/31 03:33:16 zmedico Exp $
 
 EAPI="3"
 
-inherit autotools eutils linux-info
+inherit autotools eutils linux-info user
 
 #MY_P="${PN}-${PV%.*}-${PV##*.}"
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://trousers.sf.net"
 SRC_URI="mirror://sourceforge/trousers/${P}.tar.gz"
 LICENSE="CPL-1.0"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="amd64 arm x86"
 IUSE="doc" # gtk
 
 # gtk support presently does NOT compile.
@@ -23,7 +23,7 @@ RDEPEND=">=dev-libs/glib-2
 	>=dev-libs/openssl-0.9.7"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 # S="${WORKDIR}/${P}git"
 

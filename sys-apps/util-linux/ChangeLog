@@ -1,6 +1,270 @@
 # ChangeLog for sys-apps/util-linux
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/util-linux/ChangeLog,v 1.347 2011/07/29 07:42:14 zmedico Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/util-linux/ChangeLog,v 1.408 2012/11/28 23:03:40 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> util-linux-2.21.2.ebuild,
+  util-linux-2.22.ebuild, util-linux-2.22.1.ebuild, util-linux-9999.ebuild:
+  Use virtual/udev instead of sys-fs/udev wrt #444398
+
+  19 Oct 2012; Mike Frysinger <vapier@gentoo.org> util-linux-2.22.1.ebuild,
+  util-linux-9999.ebuild:
+  Also search /bin and /usr/bin for mount/fsck helpers #437230 by Pun.
+
+*util-linux-2.22.1 (11 Oct 2012)
+
+  11 Oct 2012; Mike Frysinger <vapier@gentoo.org> +util-linux-2.22.1.ebuild,
+  -files/util-linux-2.22-md5-aliasing.patch,
+  -files/util-linux-2.22-sfdisk-aliasing.patch,
+  -files/util-linux-2.22-umount-user.patch, -util-linux-2.22-r1.ebuild:
+  Switch to official upstream release.
+
+*util-linux-2.22-r1 (10 Oct 2012)
+
+  10 Oct 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/util-linux-2.22-md5-aliasing.patch,
+  +files/util-linux-2.22-sfdisk-aliasing.patch,
+  +files/util-linux-2.22-umount-user.patch, +util-linux-2.22-r1.ebuild:
+  Add fix from upstream for umount with user= options #435540 by Stefan Reimer.
+
+  03 Oct 2012; Brent Baude <ranger@gentoo.org> util-linux-2.21.2.ebuild:
+  Marking util-linux-2.21.2 ppc for bug 434334
+
+  30 Sep 2012; Anthony G. Basile <blueness@gentoo.org> util-linux-2.21.2.ebuild:
+  stable ppc ppc64, bug #434334
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> util-linux-2.21.2.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #434334
+
+  19 Sep 2012; Johannes Huber <johu@gentoo.org> util-linux-2.21.2.ebuild:
+  Stable for x86, wrt bug #434334
+
+  16 Sep 2012; Markus Meier <maekke@gentoo.org> util-linux-2.21.2.ebuild:
+  arm stable, bug #434334
+
+  14 Sep 2012; Agostino Sarubbo <ago@gentoo.org> util-linux-2.21.2.ebuild:
+  Stable for amd64, wrt bug #434334
+
+  13 Sep 2012; Jeroen Roovers <jer@gentoo.org> util-linux-2.21.2.ebuild:
+  Stable for HPPA (bug #434334).
+
+  07 Sep 2012; Mike Frysinger <vapier@gentoo.org> util-linux-2.22.ebuild,
+  util-linux-9999.ebuild:
+  Fix USE=perl handling with chkdupexe #434146 by Alexandre.
+
+*util-linux-2.22 (06 Sep 2012)
+
+  06 Sep 2012; Mike Frysinger <vapier@gentoo.org> +util-linux-2.22.ebuild,
+  util-linux-9999.ebuild:
+  Version bump.  We now provide eject and sulogin/utmpdump (from sysvinit).  We
+  still get su/login from shadow though.
+
+  22 Aug 2012; Mike Frysinger <vapier@gentoo.org> util-linux-2.21.1.ebuild,
+  util-linux-2.21.2.ebuild, util-linux-2.21.ebuild, util-linux-9999.ebuild:
+  Punt USE=loop-aes again due to lack of interest #405805 by Phil Stracchino.
+
+  24 Jul 2012; Mike Frysinger <vapier@gentoo.org> util-linux-2.21.2.ebuild:
+  Use older alloc patch for uclibc #427716 by James Le Cuirot.
+
+  08 Jul 2012; Raúl Porcel <armin76@gentoo.org> util-linux-2.20.1-r2.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #420167
+
+  21 Jun 2012; Jeroen Roovers <jer@gentoo.org> util-linux-2.20.1-r2.ebuild:
+  Stable for HPPA (bug #420167).
+
+  11 Jun 2012; Agostino Sarubbo <ago@gentoo.org> util-linux-2.20.1-r2.ebuild:
+  Stable for amd64, wrt bug #420167
+
+  09 Jun 2012; Markus Meier <maekke@gentoo.org> util-linux-2.20.1-r2.ebuild:
+  arm stable, bug #420167
+
+  08 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  util-linux-2.20.1-r2.ebuild:
+  ppc/ppc64/x86 stable wrt #420167
+
+  02 Jun 2012; Mike Frysinger <vapier@gentoo.org> util-linux-2.21.2.ebuild,
+  util-linux-9999.ebuild:
+  Control udev dep with USE=udev #417767 by Alexey Shvetsov.
+
+*util-linux-2.21.2 (25 May 2012)
+
+  25 May 2012; Mike Frysinger <vapier@gentoo.org> +util-linux-2.21.2.ebuild:
+  Version bump.
+
+  25 May 2012; Mike Frysinger <vapier@gentoo.org> util-linux-2.19.1-r1.ebuild,
+  util-linux-2.20-r1.ebuild, util-linux-2.20.1.ebuild,
+  util-linux-2.20.1-r1.ebuild, util-linux-2.20.1-r2.ebuild:
+  Inherit multilib for get_libdir.
+
+  24 May 2012; Mike Frysinger <vapier@gentoo.org> util-linux-2.19.1-r1.ebuild,
+  util-linux-2.20-r1.ebuild, util-linux-2.20.1-r1.ebuild,
+  util-linux-2.20.1-r2.ebuild, util-linux-2.20.1.ebuild,
+  util-linux-2.21.1.ebuild, util-linux-2.21.ebuild, util-linux-9999.ebuild:
+  Sync git-2 updates between all versions, and merge KEYWORDS code paths.
+
+  12 May 2012; Raúl Porcel <armin76@gentoo.org> util-linux-2.20.1-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #404179
+
+  06 May 2012; Mike Frysinger <vapier@gentoo.org> util-linux-2.20.1-r1.ebuild,
+  util-linux-2.20.1-r2.ebuild, util-linux-2.21.1.ebuild:
+  DEPEND on autotools, don't RDEPEND on them #414847 by James Le Cuirot.
+
+  06 May 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/util-linux-2.21.1-cal-nl.patch, util-linux-2.21.1.ebuild:
+  Fix from upstream for building on non-glibc hosts #414849 by James Le Cuirot.
+
+  21 Apr 2012; Mike Frysinger <vapier@gentoo.org>
+  files/util-linux-2.20.1-no-printf-alloc.patch,
+  files/util-linux-2.21.1-no-printf-alloc.patch:
+  Also malloc fs_optstr #406303#17 by Anthony Basile.
+
+  21 Apr 2012; Mike Frysinger <vapier@gentoo.org> util-linux-2.20.1-r1.ebuild,
+  util-linux-2.20.1-r2.ebuild, +files/util-linux-2.20.1-no-printf-alloc.patch,
+  util-linux-2.21.1.ebuild, +files/util-linux-2.21.1-no-printf-alloc.patch,
+  util-linux-9999.ebuild:
+  Add support for older C libraries that do not support latest POSIX standard
+  (%as flags) #406303 by Ed Wildgoose.
+
+  14 Apr 2012; Zac Medico <zmedico@gentoo.org> util-linux-2.21.1.ebuild,
+  util-linux-9999.ebuild:
+  Add ~amd64-linux keyword.
+
+  05 Apr 2012; Mike Frysinger <vapier@gentoo.org> util-linux-9999.ebuild:
+  Block the eject package now that util-linux includes it.
+
+  30 Mar 2012; Mike Frysinger <vapier@gentoo.org> util-linux-2.21.ebuild,
+  util-linux-2.21.1.ebuild:
+  Drop scanf hack as it is already in 2.21.1 (I read the wrong source tree).
+
+  30 Mar 2012; Mike Frysinger <vapier@gentoo.org> util-linux-2.21.ebuild,
+  util-linux-2.21.1.ebuild:
+  Add cross-compiling fixes to match upstream.
+
+*util-linux-2.21.1 (30 Mar 2012)
+
+  30 Mar 2012; Mike Frysinger <vapier@gentoo.org> +util-linux-2.21.1.ebuild:
+  Version bump.
+
+  03 Mar 2012; Markus Meier <maekke@gentoo.org> util-linux-2.20.1-r1.ebuild:
+  arm stable, bug #404179
+
+*util-linux-2.21 (24 Feb 2012)
+
+  24 Feb 2012; Mike Frysinger <vapier@gentoo.org> +util-linux-2.21.ebuild,
+  util-linux-9999.ebuild:
+  Version bump.
+
+  23 Feb 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  util-linux-2.20.1-r1.ebuild:
+  ppc/ppc64 stable wrt #404179
+
+  21 Feb 2012; Jeff Horelick <jdhore@gentoo.org> util-linux-2.20.1-r1.ebuild:
+  marked x86 per bug 404179
+
+  21 Feb 2012; Agostino Sarubbo <ago@gentoo.org> util-linux-2.20.1-r1.ebuild:
+  Stable for amd64, wrt bug #404179
+
+  18 Feb 2012; Jeroen Roovers <jer@gentoo.org> util-linux-2.20.1-r1.ebuild:
+  Stable for HPPA (bug #404179).
+
+*util-linux-2.20.1-r2 (16 Feb 2012)
+
+  16 Feb 2012; Mike Frysinger <vapier@gentoo.org> +util-linux-2.20.1-r2.ebuild,
+  +files/util-linux-2.20.1-libmount-c++.patch,
+  +files/util-linux-2.20.1-umount-fs-search.patch:
+  Add patch from upstream for libmount.h in C++ code #401057 by Michał Górny.
+  Have umount search /usr/sbin like mount/fsck #403073 by Aidan Marks.
+
+*util-linux-2.20.1-r1 (07 Jan 2012)
+
+  07 Jan 2012; Mike Frysinger <vapier@gentoo.org> +util-linux-2.20.1-r1.ebuild,
+  util-linux-9999.ebuild:
+  Install libmount into / #398055 by Michał Górny.
+
+  07 Jan 2012; Mike Frysinger <vapier@gentoo.org> -util-linux-2.17.2.ebuild,
+  -util-linux-2.18-r1.ebuild, -files/util-linux-2.18-cfdisk-string-len.patch,
+  -files/util-linux-2.18-falloc.patch, -files/util-linux-2.18-ncursesw.patch,
+  -files/util-linux-2.18-slang.patch, -util-linux-2.19.ebuild,
+  -util-linux-2.19.1.ebuild, -files/util-linux-2.19-old-libc.patch,
+  -util-linux-2.20.ebuild:
+  Old.
+
+  07 Jan 2012; Mike Frysinger <vapier@gentoo.org> util-linux-2.19.1-r1.ebuild:
+  Mark ppc64 stable #384305.
+
+  30 Dec 2011; Ulrich Mueller <ulm@gentoo.org> util-linux-2.17.2.ebuild,
+  util-linux-2.18-r1.ebuild, util-linux-2.19.ebuild, util-linux-2.19.1.ebuild,
+  util-linux-2.19.1-r1.ebuild, util-linux-2.20.ebuild,
+  util-linux-2.20-r1.ebuild, util-linux-2.20.1.ebuild, util-linux-9999.ebuild:
+  Update LICENSE, see README.licensing in the tarball. Bug 175260.
+
+  17 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  util-linux-2.19.1-r1.ebuild:
+  x86 stable wrt bug #384305
+
+  12 Nov 2011; Lars Wendler <polynomial-c@gentoo.org>
+  util-linux-2.19.1-r1.ebuild,
+  -files/util-linux-2.19.1-remove-useless-if-stuff-from-loopaes-patchset.diff:
+  non-maintainer commit: Really fixed bug #375165 with solution suggested by
+  Jiří Moravec.
+
+  12 Nov 2011; Lars Wendler <polynomial-c@gentoo.org>
+  util-linux-2.19.1-r1.ebuild,
+  +files/util-linux-2.19.1-remove-useless-if-stuff-from-loopaes-patchset.diff:
+  non-maintainer commit: Fixed application of umount-l patch in combination
+  with loop-aes patch. This fixes bug #375165.
+
+  11 Nov 2011; Tony Vroon <chainsaw@gentoo.org> util-linux-2.19.1-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Ian "idella4" Delaney &
+  Agostino "ago" Sarubbo in bug #384305.
+
+  06 Nov 2011; Brent Baude <ranger@gentoo.org> util-linux-2.19.1-r1.ebuild:
+  Marking util-linux-2.19.1-r1 ppc for bug 384305
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> util-linux-2.19.1-r1.ebuild:
+  sparc stable wrt #384305
+
+*util-linux-2.20.1 (20 Oct 2011)
+
+  20 Oct 2011; Mike Frysinger <vapier@gentoo.org> +util-linux-2.20.1.ebuild:
+  Version bump.
+
+  20 Oct 2011; Mike Frysinger <vapier@gentoo.org> util-linux-2.20-r1.ebuild,
+  util-linux-9999.ebuild:
+  Inform users of new default clear behavior #381401#5 by Neil Bothwick.
+
+*util-linux-2.20-r1 (17 Oct 2011)
+
+  17 Oct 2011; Mike Frysinger <vapier@gentoo.org> +util-linux-2.20-r1.ebuild,
+  +files/util-linux-2.20-dmesg-newline.patch,
+  +files/util-linux-2.20-sysfs-init.patch:
+  Add fixes from upstream for dmesg stopping with blank newlines #385305 by
+  Maxime Gervais. Add fix from upstream for nfs/btrfs unmounting #385323 by
+  Thomas Arnett.
+
+  17 Oct 2011; Mike Frysinger <vapier@gentoo.org> util-linux-2.19.1-r1.ebuild:
+  Mark alpha/arm/hppa/ia64/m68k/s390/sh stable #384305.
+
+  23 Sep 2011; Lars Wendler <polynomial-c@gentoo.org> util-linux-2.20.ebuild:
+  non-maintainer commit: Updated loop-aes patch (bug #381521).
+
+  21 Sep 2011; Michał Górny <mgorny@gentoo.org> util-linux-9999.ebuild:
+  Migrate to git-2.
+
+  14 Sep 2011; Mike Frysinger <vapier@gentoo.org> util-linux-2.20.ebuild:
+  Drop ddate man page when USE=-ddate #381291#5 by Ulrich Müller.
+
+  07 Sep 2011; Mike Frysinger <vapier@gentoo.org> util-linux-2.20.ebuild,
+  util-linux-9999.ebuild, metadata.xml:
+  Add USE=ddate to control ddate util #381291 by Ole Henrik Jahren.
+
+*util-linux-2.20 (29 Aug 2011)
+
+  29 Aug 2011; Mike Frysinger <vapier@gentoo.org> +util-linux-2.20.ebuild,
+  util-linux-9999.ebuild:
+  Version bump which fixes #373381 by Chris Richards. Add USE=static-libs
+  support #378269 by Agostino Sarubbo. Sync changes between live git and stable
+  release ebuilds. Block older sysvinits since we now install the mountpoint
+  util ourselves.
 
   29 Jul 2011; Zac Medico <zmedico@gentoo.org> util-linux-2.19.1-r1.ebuild,
   util-linux-9999.ebuild:

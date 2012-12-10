@@ -1,6 +1,16 @@
 # ChangeLog for app-portage/porthole
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/porthole/ChangeLog,v 1.52 2011/02/23 07:20:23 fuzzyray Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-portage/porthole/ChangeLog,v 1.54 2012/03/04 04:12:36 dolsen Exp $
+
+*porthole-0.6.1-r3 (04 Mar 2012)
+
+  04 Mar 2012; Brian Dolbec <brian.dolbec@gmail.com> +porthole-0.6.1-r3.ebuild,
+  +files/porthole-0.6.1-missing-attribute.patch, metadata.xml:
+  Bump to fix bug 323179. Update metadata.xml
+
+  26 Feb 2012; Patrick Lauer <patrick@gentoo.org> porthole-0.6.1-r1.ebuild,
+  porthole-0.6.1-r2.ebuild:
+  Restricting pypy and jython
 
   23 Feb 2011; Paul Varner <fuzzyray@gentoo.org> porthole-0.6.1-r1.ebuild,
   porthole-0.6.1-r2.ebuild:

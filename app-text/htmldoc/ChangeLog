@@ -1,6 +1,59 @@
 # ChangeLog for app-text/htmldoc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/htmldoc/ChangeLog,v 1.59 2011/07/20 15:44:40 pacho Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/htmldoc/ChangeLog,v 1.74 2012/05/06 11:40:05 xarthisius Exp $
+
+  06 May 2012; Kacper Kowalik <xarthisius@gentoo.org> -htmldoc-1.8.27-r2.ebuild,
+  htmldoc-1.8.27-r3.ebuild:
+  ppc64 stable wrt #219373, drop old
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> htmldoc-1.8.27-r3.ebuild:
+  Marking htmldoc-1.8.27-r3 ppc for bug 219373
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> htmldoc-1.8.27-r3.ebuild:
+  ia64/sparc stable wrt #219373
+
+  17 Feb 2012; Tobias Klausmann <klausman@gentoo.org> htmldoc-1.8.27-r3.ebuild:
+  Stable on alpha, bug #219373
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  htmldoc-1.8.27-r3.ebuild:
+  x86 stable wrt bug #219373
+
+  15 Feb 2012; Jeroen Roovers <jer@gentoo.org> htmldoc-1.8.27-r3.ebuild:
+  Stable for HPPA (bug #219373).
+
+  12 Feb 2012; Agostino Sarubbo <ago@gentoo.org> htmldoc-1.8.27-r3.ebuild:
+  Stable for amd64, wrt bug #219373
+
+*htmldoc-1.8.27-r3 (11 Feb 2012)
+
+  11 Feb 2012; Pacho Ramos <pacho@gentoo.org> +files/htmldoc-1.8.27-crash.patch,
+  +htmldoc-1.8.27-r3.ebuild:
+  Fix crash, bug #219373 by Marek Cruz.
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> -htmldoc-1.8.27-r1.ebuild,
+  htmldoc-1.8.27-r2.ebuild:
+  alpha/ia64/sparc stable wrt #385767
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> htmldoc-1.8.27-r2.ebuild:
+  ppc stable wrt #385767
+
+  11 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> htmldoc-1.8.27-r2.ebuild:
+  ppc64 stable wrt #385767
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> htmldoc-1.8.27-r2.ebuild:
+  Stable for HPPA (bug #385767).
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  htmldoc-1.8.27-r2.ebuild:
+  x86 stable wrt bug #385767
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> htmldoc-1.8.27-r2.ebuild:
+  amd64 stable wrt #385767
+
+  05 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +files/htmldoc-libpng15.patch, htmldoc-1.8.27-r2.ebuild:
+  Fix building with libpng15 wrt #385521
 
   20 Jul 2011; Pacho Ramos <pacho@gentoo.org> metadata.xml:
   Drop maintainer due retirement, bug #47265

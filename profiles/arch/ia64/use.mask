@@ -6,6 +6,7 @@
 # No hardware to test by the team
 3dfx
 bluetooth
+bluray
 dvb
 dvd
 gnokii
@@ -23,7 +24,6 @@ pkcs11
 scanner
 sms
 v4l
-v4l2
 wifi
 
 # Hardware not available on ia64
@@ -47,8 +47,12 @@ celt
 capi
 lensfun
 kde
+metalink
 quvi
 upnp
+systemd
+webm
+fdk
 
 # Stuff we don't want
 antlr
@@ -56,7 +60,6 @@ lasi
 mpi
 networkmanager
 octave
-oracle
 timidity
 semantic-desktop
 tunepimp
@@ -84,6 +87,11 @@ frei0r
 lpsol
 libev
 prelude
+ladspa
+aacplus
+devil
+gts
+clang
 
 # Stuff that doesn't compile on ia64
 chicken
@@ -97,6 +105,11 @@ pike
 xemacs
 
 # Other
+
+# Alexandre Rostovtsev <tetromino@gmail.com> (28 Oct 2011)
+# x11-misc/colord and app-admin/packagekit-base not tested. Bug #387959.
+colord
+packagekit
 
 # Raúl Porcel <armin76@gentoo.org> (23 Apr 2011)
 # Needs to be tested
@@ -153,8 +166,15 @@ beagle
 video_cards_ast
 video_cards_nsc
 video_cards_newport
-video_cards_radeonhd
+video_cards_siliconmotion
 video_cards_sis
+
+# Matt Turner <mattst88@gentoo.org>
+# Mask more VIDEO_CARDs added with mesa-8.0
+video_cards_i915
+video_cards_i965
+# vmware wasn't added with mesa-8.0, but it should still be masked
+video_cards_vmware
 
 # Diego Pettenò <flameeyes@gentoo.org> (6 Dec 2006)
 # Mask ALSA drivers for ISA cards
@@ -190,3 +210,28 @@ alsa_cards_sb16_csp
 alsa_cards_sgalaxy
 alsa_cards_sscape
 alsa_cards_wavefront
+
+# Matt Turner <mattst88@gentoo.org) (10 Feb 2012)
+# mask d3d since we don't have wine
+d3d
+
+# Matt Turner <mattst88@gentoo.org) (10 Feb 2012)
+# mask wayland since dev-libs/wayland isn't keyworded
+wayland
+
+# Diego Elio Pettenò <flameeyes@gentoo.org> (21 Aug 2012)
+# IPMI is only implemented for x86, amd64 and ia64
+-ipmi
+
+# Michael Sterrett <mr_bones_@gentoo.org) (24 Aug 2012)
+# media-sound/fluidsynth isn't keyworded
+fluidsynth
+
+# Michał Górny <mgorny@gentoo.org> (31 Oct 2012)
+# Mask PYTHON_TARGETS for implementations not keyworded on this arch.
+python_targets_pypy1_8
+python_targets_pypy1_9
+python_targets_jython2_5
+python_single_target_pypy1_8
+python_single_target_pypy1_9
+python_single_target_jython2_5

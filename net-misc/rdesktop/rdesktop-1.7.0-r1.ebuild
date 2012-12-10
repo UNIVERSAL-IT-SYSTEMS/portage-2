@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/rdesktop/rdesktop-1.7.0-r1.ebuild,v 1.1 2011/05/30 17:17:16 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/rdesktop/rdesktop-1.7.0-r1.ebuild,v 1.3 2012/05/05 03:20:43 jdhore Exp $
 
 EAPI=4
 
@@ -29,6 +29,7 @@ RDEPEND=">=dev-libs/openssl-0.9.6b
 	libsamplerate? ( media-libs/libsamplerate )
 	pcsc-lite? ( >=sys-apps/pcsc-lite-1.6.6 )"
 DEPEND="${RDEPEND}
+	virtual/pkgconfig
 	x11-libs/libXt"
 
 src_prepare() {

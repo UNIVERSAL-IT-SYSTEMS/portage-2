@@ -1,6 +1,30 @@
 # ChangeLog for dev-haskell/glut
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/glut/ChangeLog,v 1.13 2010/09/16 18:08:13 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/glut/ChangeLog,v 1.19 2012/11/18 12:52:17 gienah Exp $
+
+*glut-2.3.1.0 (18 Nov 2012)
+
+  18 Nov 2012; Mark Wright <gienah@gentoo.org> +glut-2.3.1.0.ebuild:
+  Bump glut to 2.3.1.0
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> glut-2.1.1.1.ebuild,
+  glut-2.1.1.2.ebuild, glut-2.3.0.0.ebuild:
+  move dev-haskell/glut/glut-2.1.1.2.ebuild ebuild to mirror://hackage
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org> glut-2.1.1.1.ebuild,
+  glut-2.1.1.2.ebuild, glut-2.3.0.0.ebuild:
+  Drop sparc keywords
+
+  09 Aug 2012; Andreas Schuerch <nativemad@gentoo.org> glut-2.1.1.2.ebuild:
+  x86 stable, see bug 418695
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> glut-2.1.1.2.ebuild:
+  Stable on amd64 wrt bug #418695
+
+*glut-2.3.0.0 (02 Jun 2012)
+
+  02 Jun 2012; Mark Wright <gienah@gentoo.org> +glut-2.3.0.0.ebuild:
+  Bump glut to 2.3.0.0, fixes bug #363979
 
   16 Sep 2010; Tomáš Chvátal <scarabeus@gentoo.org> glut-2.1.1.1.ebuild,
   glut-2.1.1.2.ebuild:
@@ -56,4 +80,3 @@
   09 Jul 2007; Duncan Coutts <dcoutts@gentoo.org> +metadata.xml,
   +glut-2.0.ebuild, +glut-2.0-r1.ebuild, +glut-2.1.1.ebuild:
   Initial versions.
-

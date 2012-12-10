@@ -1,6 +1,28 @@
 # ChangeLog for app-dicts/ipadic
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/ipadic/ChangeLog,v 1.20 2010/03/21 00:31:52 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/ipadic/ChangeLog,v 1.26 2012/06/09 19:09:20 armin76 Exp $
+
+  09 Jun 2012; Raúl Porcel <armin76@gentoo.org> ipadic-2.7.0.ebuild,
+  ipadic-2.7.0-r1.ebuild, ipadic-2.7.0-r2.ebuild:
+  Drop sparc keywords
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> ipadic-2.7.0-r2.ebuild:
+  x86 stable wrt bug #418533
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> ipadic-2.7.0-r2.ebuild:
+  Stable for amd64, wrt bug #418533
+
+  06 May 2012; Mark Loeser <halcy0n@gentoo.org> ipadic-2.7.0.ebuild:
+  Drop to ~ppc64; bug #390769
+
+  09 Apr 2012; Naohiro Aota <naota@gentoo.org> ipadic-2.7.0-r2.ebuild:
+  Update SRC_URI and HOMEPAGE. Bug #411297
+
+*ipadic-2.7.0-r2 (02 Sep 2011)
+
+  02 Sep 2011; MATSUU Takuto <matsuu@gentoo.org> +ipadic-2.7.0-r2.ebuild,
+  +files/ipadic-2.7.0-r2-gentoo.patch:
+  Fixed parallel make issue, bug #372469.
 
 *ipadic-2.7.0-r1 (21 Mar 2010)
 

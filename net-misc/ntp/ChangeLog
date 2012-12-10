@@ -1,6 +1,63 @@
 # ChangeLog for net-misc/ntp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/ntp/ChangeLog,v 1.172 2011/07/20 03:52:34 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/ntp/ChangeLog,v 1.187 2012/11/27 05:07:12 ottxor Exp $
+
+*ntp-4.2.6_p5-r2 (27 Nov 2012)
+
+  27 Nov 2012; Christoph Junghans <ottxor@gentoo.org> +ntp-4.2.6_p5-r2.ebuild:
+  added prefix support (bug #444732)
+
+  11 Nov 2012; Mike Frysinger <vapier@gentoo.org> files/ntp-client.rc:
+  Change "need net" to "after net" #439564#5 by Diego Elio Pettenò.
+
+  28 Sep 2012; Ulrich Müller <ulm@gentoo.org> ntp-4.2.4_p7-r1.ebuild,
+  ntp-4.2.6_p2-r1.ebuild, ntp-4.2.6_p3.ebuild, ntp-4.2.6_p3-r1.ebuild,
+  ntp-4.2.6_p4.ebuild, ntp-4.2.6_p5.ebuild, ntp-4.2.6_p5-r1.ebuild:
+  Specify LICENSE more precisely.
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> ntp-4.2.6_p5-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #407767
+
+  13 May 2012; Alexis Ballier <aballier@gentoo.org> ntp-4.2.6_p5-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  12 May 2012; Markus Meier <maekke@gentoo.org> ntp-4.2.6_p5-r1.ebuild:
+  arm stable, bug #407767
+
+  08 May 2012; Jeroen Roovers <jer@gentoo.org> ntp-4.2.6_p5-r1.ebuild:
+  Stable for HPPA (bug #407767).
+
+  05 May 2012; Markos Chandras <hwoarang@gentoo.org> ntp-4.2.6_p5-r1.ebuild:
+  Stable on amd64 wrt bug #407767
+
+  05 May 2012; Markus Meier <maekke@gentoo.org> ntp-4.2.6_p5-r1.ebuild:
+  x86 stable, bug #407767
+
+  28 Apr 2012; <nixnut@gentoo.org> ntp-4.2.6_p5-r1.ebuild:
+  ppc stable #407767
+
+  23 Apr 2012; Brent Baude <ranger@gentoo.org> ntp-4.2.6_p5-r1.ebuild:
+  Marking ntp-4.2.6_p5-r1 ppc64 for bug 407767
+
+*ntp-4.2.6_p5-r1 (11 Mar 2012)
+
+  11 Mar 2012; Pacho Ramos <pacho@gentoo.org> +ntp-4.2.6_p5-r1.ebuild:
+  Drop mDNSResponder dep as it will go away, bug 405397.
+
+*ntp-4.2.6_p5 (31 Dec 2011)
+
+  31 Dec 2011; Mike Frysinger <vapier@gentoo.org> +ntp-4.2.6_p5.ebuild,
+  -files/man-pages/ntpdc.html.patch, files/man-pages/genmans.sh:
+  Version bump #396047 by teidakankan.
+
+  27 Oct 2011; Mike Frysinger <vapier@gentoo.org> ntp-4.2.6_p3-r1.ebuild,
+  ntp-4.2.6_p4.ebuild:
+  Fix typo in ntp-signd flag #375159#3 by Mark LaCroix.
+
+*ntp-4.2.6_p4 (25 Sep 2011)
+
+  25 Sep 2011; Mike Frysinger <vapier@gentoo.org> +ntp-4.2.6_p4.ebuild:
+  Version bump #384341 by teidakankan.
 
   20 Jul 2011; Mike Frysinger <vapier@gentoo.org> ntp-4.2.6_p3-r1.ebuild,
   metadata.xml:

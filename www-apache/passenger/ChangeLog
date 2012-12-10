@@ -1,6 +1,98 @@
 # ChangeLog for www-apache/passenger
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/passenger/ChangeLog,v 1.36 2011/06/24 18:28:00 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apache/passenger/ChangeLog,v 1.59 2012/11/27 19:38:58 pacho Exp $
+
+  27 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop apache herd as discussed in http://www.gossamer-
+  threads.com/lists/gentoo/dev/262834
+
+  24 Nov 2012; Hans de Graaff <graaff@gentoo.org>
+  files/30_mod_passenger-2.0.1.conf:
+  Specify /usr/bin/ruby as the interpreter since this will work in most cases
+  where people have a single RUBY_TARGET.
+
+*passenger-3.0.18 (16 Nov 2012)
+
+  16 Nov 2012; Patrick Lauer <patrick@gentoo.org> +passenger-3.0.18.ebuild:
+  Bump
+
+  04 Nov 2012; <ago@gentoo.org> passenger-3.0.17.ebuild:
+  Stable for amd64, wrt bug #440098
+
+  04 Nov 2012; Hans de Graaff <graaff@gentoo.org> passenger-3.0.17.ebuild:
+  Add missing built-time dependency on rake, bug 441556.
+
+  29 Oct 2012; Hans de Graaff <graaff@gentoo.org> -passenger-3.0.11.ebuild,
+  -passenger-3.0.11-r1.ebuild, -passenger-3.0.12.ebuild:
+  Cleanup.
+
+*passenger-3.0.17 (29 Aug 2012)
+
+  29 Aug 2012; Hans de Graaff <graaff@gentoo.org> +passenger-3.0.17.ebuild:
+  Version bump.
+
+  07 Aug 2012; Hans de Graaff <graaff@gentoo.org> passenger-3.0.14.ebuild:
+  Loosen apache depend to include apache 2.4 based on report in IRC from
+  negril.
+
+*passenger-3.0.14 (22 Jul 2012)
+
+  22 Jul 2012; Hans de Graaff <graaff@gentoo.org> +passenger-3.0.14.ebuild:
+  Version bump.
+
+*passenger-3.0.13 (15 Jun 2012)
+
+  15 Jun 2012; Hans de Graaff <graaff@gentoo.org> +passenger-3.0.13.ebuild:
+  Version bump.
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> passenger-3.0.7.ebuild:
+  x86 stable wrt bug #410409
+
+  07 May 2012; Agostino Sarubbo <ago@gentoo.org> passenger-3.0.7.ebuild:
+  Stable for amd64, wrt bug #410409
+
+  05 May 2012; Hans de Graaff <graaff@gentoo.org> passenger-3.0.11-r1.ebuild,
+  passenger-3.0.12.ebuild:
+  Fix broken REQUIRED_USE. Thanks to sera for providing a patch in bug 414459.
+
+  27 Apr 2012; Hans de Graaff <graaff@gentoo.org> passenger-3.0.12.ebuild:
+  Fix automagic use of asciidoc with USE=-doc, bug 413469.
+
+  19 Apr 2012; Agostino Sarubbo <ago@gentoo.org> passenger-3.0.7.ebuild:
+  Stable for amd64, wrt bug #410409
+
+*passenger-3.0.12 (14 Apr 2012)
+
+  14 Apr 2012; Hans de Graaff <graaff@gentoo.org> +passenger-3.0.12.ebuild,
+  +files/passenger-3.0.12-ldflags.patch:
+  Version bump.
+
+  03 Apr 2012; Hans de Graaff <graaff@gentoo.org> -passenger-3.0.8.ebuild,
+  -passenger-3.0.9.ebuild:
+  Remove versions that are not stable candidates.
+
+*passenger-3.0.11-r1 (27 Feb 2012)
+
+  27 Feb 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +passenger-3.0.11-r1.ebuild:
+  Revision bump to try supporting Ruby 1.9 _or_ Ruby 1.8.
+
+*passenger-3.0.11 (26 Dec 2011)
+
+  26 Dec 2011; Hans de Graaff <graaff@gentoo.org> +passenger-3.0.11.ebuild:
+  Version bump. Respect CC and CXX settings, bug 331287 with patch from Olivier
+  Huber.
+
+*passenger-3.0.9 (14 Oct 2011)
+
+  14 Oct 2011; Hans de Graaff <graaff@gentoo.org> +passenger-3.0.9.ebuild:
+  Version bump.
+
+*passenger-3.0.8 (21 Aug 2011)
+
+  21 Aug 2011; Hans de Graaff <graaff@gentoo.org> +passenger-3.0.8.ebuild,
+  +files/passenger-3.0.8-gentoo.patch:
+  Version bump.
 
   24 Jun 2011; Hans de Graaff <graaff@gentoo.org> -passenger-3.0.2.ebuild:
   Remove old version.
@@ -191,4 +283,3 @@
   25 Apr 2008; Benedikt Böhm <hollow@gentoo.org> +files/1.0.1-gentoo.patch,
   +files/30_mod_passenger.conf, +metadata.xml, +passenger-1.0.1.ebuild:
   initial version wrt #218170
-

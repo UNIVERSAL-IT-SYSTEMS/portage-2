@@ -1,6 +1,92 @@
 # ChangeLog for media-sound/timidity++
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/timidity++/ChangeLog,v 1.134 2011/02/16 16:24:52 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/timidity++/ChangeLog,v 1.155 2012/10/24 19:17:46 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> timidity++-2.13.2-r13.ebuild,
+  timidity++-2.13.2-r14.ebuild, timidity++-2.14.0.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  06 Oct 2012; Anthony G. Basile <blueness@gentoo.org> timidity++-2.14.0.ebuild:
+  stable ppc64, bug #432608
+
+  04 Oct 2012; Brent Baude <ranger@gentoo.org> timidity++-2.14.0.ebuild:
+  Marking timidity++-2.14.0 ppc for bug 432608
+
+  19 Sep 2012; Jeroen Roovers <jer@gentoo.org> timidity++-2.14.0.ebuild:
+  Stable for HPPA (bug #432608).
+
+  11 Sep 2012; Raúl Porcel <armin76@gentoo.org> timidity++-2.14.0.ebuild:
+  sparc/x86 stable wrt #432608
+
+  01 Sep 2012; Markus Meier <maekke@gentoo.org> timidity++-2.14.0.ebuild:
+  arm stable, bug #432608
+
+  26 Aug 2012; Richard Freeman <rich0@gentoo.org> timidity++-2.14.0.ebuild:
+  amd64 stable - 432608
+
+  23 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> timidity++-2.14.0.ebuild,
+  +files/timidity.service:
+  Initial support for systemd.
+
+*timidity++-2.14.0 (07 Jul 2012)
+
+  07 Jul 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +timidity++-2.14.0.ebuild, +files/timidity++-2.14.0-params.patch,
+  +files/timidity++-2.14.0-revert-for-required-ctl_speana_data-function.patch:
+  Version bump.
+
+  09 Jun 2012; Zac Medico <zmedico@gentoo.org> timidity++-2.13.2-r13.ebuild,
+  timidity++-2.13.2-r14.ebuild:
+  inherit user for enewgroup and enewuser
+
+  23 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -timidity++-2.13.2-r11.ebuild, -files/timidity++-2.13.2-flac.patch,
+  -files/timidity++-2.13.2-flac113.patch, -files/timidity++-2.13.2-gcc4.patch,
+  -files/timidity++-2.13.2-gtk26.patch, -files/timidity++-2.13.2-params.patch,
+  -files/timidity++-2.13.2-polling.patch,
+  -files/timidity++-2.13.2-protos.patch, -files/conf.d.timidity,
+  -files/timidity.desktop:
+  old
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> timidity++-2.13.2-r13.ebuild:
+  sparc stable wrt #385757
+
+  15 Oct 2011; Markus Meier <maekke@gentoo.org> timidity++-2.13.2-r13.ebuild:
+  arm stable, bug #385757
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  timidity++-2.13.2-r13.ebuild:
+  ppc stable wrt #385757
+
+  11 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  timidity++-2.13.2-r13.ebuild, timidity++-2.13.2-r14.ebuild:
+  Remove obsolete blockers.
+
+  11 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  timidity++-2.13.2-r13.ebuild:
+  ppc64 stable wrt #385757
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> timidity++-2.13.2-r13.ebuild:
+  Stable for HPPA (bug #385757).
+
+  08 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  timidity++-2.13.2-r13.ebuild:
+  x86 stable wrt bug #385757
+
+  08 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  timidity++-2.13.2-r13.ebuild:
+  amd64 stable wrt #385757
+
+  06 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  timidity++-2.13.2-r14.ebuild, +files/init.d.timidity.4:
+  Update s-s-d syntax wrt #373883 by Azamat H. Hackimov
+
+*timidity++-2.13.2-r14 (06 Oct 2011)
+
+  06 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +timidity++-2.13.2-r14.ebuild:
+  export CFLAGS to EXTRACFLAGS wrt #385817 by Agostino Sarubbo
 
   16 Feb 2011; Alexis Ballier <aballier@gentoo.org>
   timidity++-2.13.2-r13.ebuild:

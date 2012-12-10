@@ -1,6 +1,22 @@
 # ChangeLog for games-fps/quake3
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3/ChangeLog,v 1.58 2011/05/14 22:38:11 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-fps/quake3/ChangeLog,v 1.62 2012/09/25 11:12:54 pinkbyte Exp $
+
+  25 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> quake3-1.36-r1.ebuild:
+  Disable patch for jpeg unbundling, cause it is uncompleted and may cause
+  graphics glitches
+
+*quake3-1.36-r1 (07 Sep 2012)
+
+  07 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> +quake3-1.36-r1.ebuild,
+  +files/quake3-1.36-remove-bundled-jpeg.patch:
+  Use system jpeg library wrt bug #430518
+
+  13 Jul 2012; Jeff Horelick <jdhore@gentoo.org> quake3-1.36.ebuild:
+  marked x86 per bug 406039
+
+  12 Jul 2012; Agostino Sarubbo <ago@gentoo.org> quake3-1.36.ebuild:
+  Stable for amd64, wrt bug #406039
 
   14 May 2011; Matt Turner <mattst88@gentoo.org> quake3-9999.ebuild:
   Make sure to call subversion_wc_info. Thanks to Andrey Vihrov, bug 222005.

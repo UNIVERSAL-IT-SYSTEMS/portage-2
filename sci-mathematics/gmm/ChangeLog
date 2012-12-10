@@ -1,6 +1,51 @@
 # ChangeLog for sci-mathematics/gmm
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/gmm/ChangeLog,v 1.16 2011/04/26 16:28:25 scarabeus Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/gmm/ChangeLog,v 1.29 2012/10/17 03:13:34 phajdan.jr Exp $
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> gmm-4.2.ebuild:
+  x86 stable wrt bug #436318
+
+  09 Oct 2012; Anthony G. Basile <blueness@gentoo.org> gmm-4.2.ebuild:
+  stable ppc ppc64, bug #436318
+
+  03 Oct 2012; Agostino Sarubbo <ago@gentoo.org> gmm-4.2.ebuild:
+  Stable for amd64, wrt bug #436318
+
+  26 Sep 2012; Jeroen Roovers <jer@gentoo.org> gmm-4.1.ebuild:
+  Marked ~hppa (bug #436318).
+
+*gmm-4.2 (07 Aug 2012)
+
+  07 Aug 2012; Michael Palimaka <kensington@gentoo.org> +gmm-4.2.ebuild:
+  Version bump.
+
+*gmm-4.1-r1 (22 Jun 2012)
+
+  22 Jun 2012; Michael Palimaka <kensington@gentoo.org>
+  +files/gmm-4.1-gcc-4.7.patch, +gmm-4.1-r1.ebuild:
+  Add patch from Debian to fix build with GCC 4.7, wrt bug #422895.
+
+  03 Mar 2012; Johannes Huber <johu@gentoo.org> -gmm-3.1.ebuild:
+  Remove old.
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> gmm-4.1.ebuild:
+  Marking gmm-4.1 ppc64 for bug 391651
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> gmm-4.1.ebuild:
+  Marking gmm-4.1 ppc for bug 391651
+
+  07 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> gmm-4.1.ebuild:
+  x86 stable wrt bug #391651
+
+  04 Dec 2011; Raúl Porcel <armin76@gentoo.org> gmm-3.1.ebuild,
+  gmm-4.1.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  30 Nov 2011; Jeroen Roovers <jer@gentoo.org> gmm-4.1.ebuild:
+  Stable for HPPA (bug #391651).
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> gmm-4.1.ebuild:
+  Stable on amd64 wrt bug #391651
 
   26 Apr 2011; Tomáš Chvátal <scarabeus@gentoo.org> -gmm-4.0.0.ebuild,
   gmm-4.1.ebuild:
@@ -72,4 +117,3 @@
   +gmm-3.0.ebuild:
   Added gmm-3.0 ebuild. Many thanks to Erlend Davidson and Wojciech Myrda -
   See bug #164560.
-

@@ -1,6 +1,40 @@
 # ChangeLog for net-voip/linphone
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/linphone/ChangeLog,v 1.60 2011/05/24 08:08:28 pva Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-voip/linphone/ChangeLog,v 1.68 2012/11/19 21:33:29 mgorny Exp $
+
+*linphone-3.5.2 (19 Nov 2012)
+
+  19 Nov 2012; Michał Górny <mgorny@gentoo.org> +files/linphone-3.5.2-nls.patch,
+  +linphone-3.5.2.ebuild, metadata.xml:
+  Version bump wrt bug #397645. Thanks to Andrew Savchenko for his effort on
+  linphone ebuilds.
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> linphone-3.1.1.ebuild,
+  linphone-3.2.1-r2.ebuild, linphone-3.3.2.ebuild, linphone-3.4.3.ebuild,
+  linphone-3.4.3-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  24 Apr 2012; Michał Górny <mgorny@gentoo.org> linphone-3.3.2.ebuild,
+  linphone-3.4.3.ebuild, linphone-3.4.3-r1.ebuild:
+  Update to use mirror://.
+
+  25 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Set herd as primary maintainer as talked with volkmar.
+
+  06 Jan 2012; Brent Baude <ranger@gentoo.org> linphone-3.4.3.ebuild:
+  Marking linphone-3.4.3 ppc stable for bug 363311
+
+  06 Nov 2011; Fabian Groffen <grobian@gentoo.org> linphone-3.4.3-r1.ebuild,
+  linphone-3.4.3.ebuild, linphone-3.3.2.ebuild:
+  Drop ~ppc-macos keyword for versions that (indirectly) depend on
+  mediastreamer-2.7.3
+
+  23 Oct 2011; Markus Meier <maekke@gentoo.org> linphone-3.4.3-r1.ebuild:
+  x86 stable, bug #363311
+
+  12 Oct 2011; Tony Vroon <chainsaw@gentoo.org> linphone-3.4.3-r1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo, Ian
+  "idella4" Delaney & Tomáš "Mepho" Pružina in bug #363311.
 
 *linphone-3.4.3-r1 (24 May 2011)
 

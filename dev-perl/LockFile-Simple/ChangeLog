@@ -1,6 +1,71 @@
 # ChangeLog for dev-perl/LockFile-Simple
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/LockFile-Simple/ChangeLog,v 1.21 2010/02/04 19:56:01 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/LockFile-Simple/ChangeLog,v 1.38 2012/10/06 17:09:32 armin76 Exp $
+
+  06 Oct 2012; Raúl Porcel <armin76@gentoo.org>
+  LockFile-Simple-0.207.0.ebuild, LockFile-Simple-0.208.0.ebuild:
+  Drop alpha keywords
+
+  02 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  LockFile-Simple-0.208.0.ebuild:
+  stable ppc ppc64, bug #428990
+
+  18 Sep 2012; Jeroen Roovers <jer@gentoo.org> LockFile-Simple-0.208.0.ebuild:
+  Stable for HPPA (bug #428990).
+
+  12 Sep 2012; Johannes Huber <johu@gentoo.org> LockFile-Simple-0.208.0.ebuild:
+  Stable for x86, wrt bug #428990
+
+  12 Sep 2012; Agostino Sarubbo <ago@gentoo.org>
+  LockFile-Simple-0.208.0.ebuild:
+  Stable for amd64, wrt bug #428990
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*LockFile-Simple-0.208.0 (02 Jun 2012)
+
+  02 Jun 2012; Torsten Veller <tove@gentoo.org>
+  +LockFile-Simple-0.208.0.ebuild:
+  Version bump
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org>
+  -LockFile-Simple-0.2.5-r1.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  LockFile-Simple-0.2.5-r1.ebuild, LockFile-Simple-0.207.0.ebuild:
+  Drop ia64/s390/sparc
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  LockFile-Simple-0.207.0.ebuild:
+  x86 stable wrt bug #400163
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> LockFile-Simple-0.207.0.ebuild:
+  Marking LockFile-Simple-0.207.0 ppc64 for bug 400163
+
+  27 Feb 2012; Brent Baude <ranger@gentoo.org> LockFile-Simple-0.207.0.ebuild:
+  Marking LockFile-Simple-0.207.0 ppc for bug 400163
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> LockFile-Simple-0.207.0.ebuild:
+  Stable for HPPA (bug #400163).
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org>
+  LockFile-Simple-0.207.0.ebuild:
+  Stable on alpha, bug #400163
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  LockFile-Simple-0.207.0.ebuild:
+  Stable for amd64, wrt bug #400163
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -LockFile-Simple-0.207.ebuild:
+  Cleanup
+
+*LockFile-Simple-0.207.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +LockFile-Simple-0.207.0.ebuild:
+  Change version scheme
 
 *LockFile-Simple-0.207 (04 Feb 2010)
 

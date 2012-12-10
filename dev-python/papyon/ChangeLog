@@ -1,6 +1,39 @@
 # ChangeLog for dev-python/papyon
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/papyon/ChangeLog,v 1.25 2011/07/14 10:14:06 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/papyon/ChangeLog,v 1.35 2012/01/20 17:55:02 ssuominen Exp $
+
+  20 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -papyon-0.5.4.ebuild,
+  -papyon-0.5.5.ebuild:
+  old
+
+  20 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> papyon-0.5.6.ebuild:
+  ppc/ppc64 stable wrt #390349
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> papyon-0.5.6.ebuild:
+  alpha/ia64/sparc stable wrt #390349
+
+  17 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> papyon-0.5.6.ebuild:
+  x86 stable wrt bug #390349
+
+  17 Nov 2011; Tony Vroon <chainsaw@gentoo.org> papyon-0.5.6.ebuild:
+  Fast-tracked to AMD64 stable based on arch testing by Agostino "ago" Sarubbo
+  & Michael "n0idx80" Harrison in bug #390349.
+
+*papyon-0.5.6 (13 Nov 2011)
+
+  13 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +papyon-0.5.6.ebuild:
+  Bump. Should fix inability to connect (bug #389941, thanks to
+  gw.kenta@gmail.com for reporting) and a number of other bugs.
+
+  23 Oct 2011; Alexandre Rostovtsev <tetromino@gentoo.org> papyon-0.5.4.ebuild:
+  Depend on correct slot of pygobject.
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> papyon-0.5.5.ebuild:
+  ppc stable wrt #369909
+
+  13 Aug 2011; Raúl Porcel <armin76@gentoo.org> papyon-0.5.5.ebuild:
+  alpha/ia64/sparc stable wrt #369909
 
   14 Jul 2011; Thomas Kahle <tomka@gentoo.org> papyon-0.5.5.ebuild:
   x86 stable per bug 369909

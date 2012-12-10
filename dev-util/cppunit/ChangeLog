@@ -1,6 +1,103 @@
 # ChangeLog for dev-util/cppunit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/cppunit/ChangeLog,v 1.51 2011/04/10 03:03:50 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/cppunit/ChangeLog,v 1.78 2012/12/01 11:40:28 scarabeus Exp $
+
+  01 Dec 2012; Tomáš Chvátal <scarabeus@gentoo.org> cppunit-9999.ebuild:
+  Bump eapi on live.
+
+  16 Nov 2012; Agostino Sarubbo <ago@gentoo.org> cppunit-1.13.1.ebuild:
+  workaround for bug 399061
+
+*cppunit-1.13.1 (27 Sep 2012)
+
+  27 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> +cppunit-1.13.1.ebuild,
+  cppunit-9999.ebuild:
+  Bump to latest version.
+
+  13 Sep 2012; Tomáš Chvátal <scarabeus@gentoo.org> -cppunit-1.12.1-r1.ebuild,
+  -files/cppunit-1.10.2-asneeded.patch,
+  -files/cppunit-1.12.1-add_missing_include.patch,
+  -files/cppunit-1.12.1-warnings.patch:
+  Punt older keep only latest stable.
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> cppunit-1.13.0.ebuild:
+  alpha/ia64/sparc stable wrt #431274
+
+  15 Aug 2012; Jeroen Roovers <jer@gentoo.org> cppunit-1.13.0.ebuild:
+  Stable for HPPA (bug #431274).
+
+  14 Aug 2012; Johannes Huber <johu@gentoo.org> cppunit-1.13.0.ebuild:
+  Stable for x86, wrt bug #431274
+
+  14 Aug 2012; Agostino Sarubbo <ago@gentoo.org> cppunit-1.13.0.ebuild:
+  Stable for amd64, wrt bug #431274
+
+  14 Aug 2012; Anthony G. Basile <blueness@gentoo.org> ChangeLog:
+  Fix failed gpg signature on Manifest
+
+  14 Aug 2012; Anthony G. Basile <blueness@gentoo.org> cppunit-1.13.0.ebuild:
+  Stable ppc ppc64, bug #431274
+
+  14 Aug 2012; Anthony G. Basile <blueness@gentoo.org> cppunit-1.13.0.ebuild:
+  Stable arm, bug #431274
+
+*cppunit-9999 (11 Aug 2012)
+
+  11 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> +cppunit-9999.ebuild:
+  Add live ebuild for the fun of it.
+
+  06 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> cppunit-1.13.0.ebuild:
+  Set new homepage.
+
+*cppunit-1.13.0 (06 Aug 2012)
+
+  06 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> +cppunit-1.13.0.ebuild:
+  Version bump to latest.
+
+  09 May 2012; Matt Turner <mattst88@gentoo.org> cppunit-1.12.1-r1.ebuild:
+  Added ~mips.
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> cppunit-1.12.1-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  31 Mar 2012; Tomáš Chvátal <scarabeus@gentoo.org> -cppunit-1.12.1.ebuild:
+  Punt overshadowed.
+
+  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> cppunit-1.12.1-r1.ebuild:
+  alpha/ia64/sparc stable wrt #405001
+
+  12 Mar 2012; Markus Meier <maekke@gentoo.org> cppunit-1.12.1-r1.ebuild:
+  arm stable, bug #405001
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> cppunit-1.12.1-r1.ebuild:
+  Marking cppunit-1.12.1-r1 ppc64 for bug 405001
+
+  23 Feb 2012; Brent Baude <ranger@gentoo.org> cppunit-1.12.1-r1.ebuild:
+  Marking cppunit-1.12.1-r1 ppc for bug 405001
+
+  21 Feb 2012; Jeroen Roovers <jer@gentoo.org> cppunit-1.12.1-r1.ebuild:
+  Stable for HPPA (bug #405001).
+
+  20 Feb 2012; Tomáš Chvátal <scarabeus@gentoo.org> cppunit-1.12.1-r1.ebuild:
+  Stable 1.12.1-r1 on amd64 and x86. Wrt bug#405001.
+
+  14 Dec 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  cppunit-1.12.1-r1.ebuild:
+  Say goodbye to .la archive and make static lib optional.
+
+  14 Dec 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  cppunit-1.12.1-r1.ebuild:
+  Whoopsie didn't cp new ebuild in last commit.
+
+*cppunit-1.12.1-r1 (14 Dec 2011)
+
+  14 Dec 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  +cppunit-1.12.1-r1.ebuild, +files/cppunit-1.12.1-warnings.patch:
+  Revision bump to shutup annoying warnings when using cppunit in your code
+  (pretty simple patch :)).
+
+  21 Nov 2011; Justin Lecher <jlec@gentoo.org> cppunit-1.12.1.ebuild:
+  keyworded for ~x86-macos ~x64-macos, tested by Johan Hattne #390123
 
   10 Apr 2011; Jonathan Callen <abcd@gentoo.org> cppunit-1.12.1.ebuild:
   Add prefix support, bump EAPI to 3, add prefix keywords

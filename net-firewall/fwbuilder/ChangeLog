@@ -1,6 +1,89 @@
 # ChangeLog for net-firewall/fwbuilder
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/fwbuilder/ChangeLog,v 1.106 2011/07/23 18:26:29 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/fwbuilder/ChangeLog,v 1.123 2012/09/11 10:56:21 dilfridge Exp $
+
+  11 Sep 2012; Andreas K. Huettel <dilfridge@gentoo.org> metadata.xml:
+  Drop maintainership
+
+  19 Jul 2012; Michael Palimaka <kensington@gentoo.org>
+  fwbuilder-4.2.2.3541.ebuild, fwbuilder-5.0.1.3592-r1.ebuild,
+  fwbuilder-5.1.0.3599.ebuild:
+  Add missing slot dependencies on Qt.
+
+  27 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  fwbuilder-5.1.0.3599.ebuild, +files/fwbuilder-5.1.0.3599-gcc47.patch:
+  Fix compilation with gcc-4.7, bug 423695
+
+  24 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  fwbuilder-5.0.1.3592-r1.ebuild, +files/fwbuilder-5.0.1.3592-gcc47.patch:
+  Fix build with gcc-4.7, bug 419667
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  fwbuilder-5.0.1.3592-r1.ebuild:
+  x86 stable wrt bug #419241
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> fwbuilder-5.0.1.3592-r1.ebuild:
+  Marking fwbuilder-5.0.1.3592-r1 ppc for bug 419241
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> fwbuilder-5.0.1.3592-r1.ebuild:
+  Marking fwbuilder-5.0.1.3592-r1 ppc64 for bug 419241
+
+  03 Jun 2012; Agostino Sarubbo <ago@gentoo.org>
+  fwbuilder-5.0.1.3592-r1.ebuild:
+  Stable for amd64, wrt bug #419241
+
+*fwbuilder-5.1.0.3599 (01 Jun 2012)
+
+  01 Jun 2012; Andreas K. Huettel <dilfridge@gentoo.org>
+  -fwbuilder-5.0.0.3568.ebuild, +fwbuilder-5.1.0.3599.ebuild:
+  Version bump; remove old
+
+*fwbuilder-5.0.1.3592-r1 (12 Mar 2012)
+
+  12 Mar 2012; Joshua Kinard <kumba@gentoo.org> -fwbuilder-5.0.1.3592.ebuild,
+  +fwbuilder-5.0.1.3592-r1.ebuild,
+  +files/fwbuilder-5.0.1.3592-stdc-format-macros.patch:
+  Bump 5.0.1's rev to include a patch that addresses a compile-time failure
+  only affecting a limited number of x86_64 users. This has already been fixed
+  upstream for the next release.
+
+  30 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  fwbuilder-5.0.1.3592.ebuild:
+  Fix building with broken AM_INIT_AUTOMAKE detection of autotools.eclass (rev.
+  1.117) wrt #398743
+
+  31 Dec 2011; Mike Frysinger <vapier@gentoo.org> fwbuilder-5.0.0.3568.ebuild,
+  fwbuilder-5.0.1.3592.ebuild:
+  Disable forced ccache/distcc handling (since portage has FEATURES for this),
+  and drop the gnuconfig manual update since eautoreconf takes care of this for
+  us.
+
+*fwbuilder-5.0.1.3592 (24 Dec 2011)
+
+  24 Dec 2011; Joshua Kinard <kumba@gentoo.org> +fwbuilder-5.0.1.3592.ebuild:
+  Update to 5.0.1.3592
+
+*fwbuilder-5.0.0.3568 (16 Dec 2011)
+
+  16 Dec 2011; Joshua Kinard <kumba@gentoo.org>
+  -files/3.0.7-secure-mktemp.patch, fwbuilder-4.2.2.3541.ebuild,
+  +fwbuilder-5.0.0.3568.ebuild, +files/fwbuilder-5.0.0.3568-ldflags.patch,
+  -files/4.x-qmake-use-LDFLAGS.patch:
+  Add 5.0.0.3568, remove old files no longer used, and remove uneeded dep on
+  libfwbuilder, which no longer exists. Closes #387759.
+
+  20 Nov 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -fwbuilder-3.0.7.ebuild:
+  Remove old
+
+  21 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  -fwbuilder-4.1.2.ebuild, -fwbuilder-4.1.3.ebuild:
+  Remove old
+
+  21 Aug 2011; Andreas K. Huettel <dilfridge@gentoo.org>
+  fwbuilder-4.2.2.3541.ebuild, +files/fwbuilder-4.2.2.3541-flags.patch,
+  -files/fwbuilder-4.2.2.3541-ldflags.patch:
+  Respect CFLAGS and CXXFLAGS, bug 372203
 
   23 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org>
   fwbuilder-4.2.2.3541.ebuild:

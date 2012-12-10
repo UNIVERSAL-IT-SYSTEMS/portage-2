@@ -1,6 +1,63 @@
 # ChangeLog for media-tv/gentoo-vdr-scripts
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/gentoo-vdr-scripts/ChangeLog,v 1.112 2011/02/20 15:41:54 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-tv/gentoo-vdr-scripts/ChangeLog,v 1.122 2012/10/07 19:13:58 hd_brummy Exp $
+
+*gentoo-vdr-scripts-0.5.3 (07 Oct 2012)
+
+  07 Oct 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +gentoo-vdr-scripts-0.5.3.ebuild:
+  bump
+
+  07 Oct 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  -gentoo-vdr-scripts-0.4.7.ebuild, -gentoo-vdr-scripts-0.5.0_rc2.ebuild,
+  -gentoo-vdr-scripts-0.5.1.ebuild, gentoo-vdr-scripts-0.5.2.ebuild:
+  stable x86 amd64; cleanup
+
+  09 Jun 2012; Zac Medico <zmedico@gentoo.org> gentoo-vdr-scripts-0.4.7.ebuild,
+  gentoo-vdr-scripts-0.4.9.ebuild, gentoo-vdr-scripts-0.5.0_rc2.ebuild,
+  gentoo-vdr-scripts-0.5.1.ebuild, gentoo-vdr-scripts-0.5.2.ebuild:
+  inherit user for enewgroup and enewuser
+
+*gentoo-vdr-scripts-0.5.2 (14 Mar 2012)
+
+  14 Mar 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +gentoo-vdr-scripts-0.5.2.ebuild:
+  bump, minor fixes, new --rcu handling for >=media-video/vdr-1.7.25 in plugin
+  media-plugins/vdr-rcu
+
+*gentoo-vdr-scripts-0.5.1 (24 Feb 2012)
+
+  24 Feb 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  -gentoo-vdr-scripts-0.5.0.ebuild, +gentoo-vdr-scripts-0.5.1.ebuild:
+  bump; last missing svdrpsend/svdrpsend.pl changes
+
+*gentoo-vdr-scripts-0.5.0 (23 Feb 2012)
+
+  23 Feb 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +gentoo-vdr-scripts-0.5.0.ebuild:
+  bump; fix bug #331453; new sudo handling, thanks to L.Muresan W.Schricker on
+  bug #356133 for some inspiration
+
+*gentoo-vdr-scripts-0.5.0_rc2 (20 Feb 2012)
+
+  20 Feb 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  -gentoo-vdr-scripts-0.4.8.ebuild, gentoo-vdr-scripts-0.4.9.ebuild,
+  +gentoo-vdr-scripts-0.5.0_rc2.ebuild:
+  cleanup; bump, handle svdrpsend/svdrsend.pl in all vdr versions
+
+  13 Nov 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
+  gentoo-vdr-scripts-0.4.9.ebuild:
+  stable amd64 x86
+
+  20 Oct 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
+  gentoo-vdr-scripts-0.4.9.ebuild:
+  keyworded ~arm
+
+*gentoo-vdr-scripts-0.4.9 (09 Oct 2011)
+
+  09 Oct 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +gentoo-vdr-scripts-0.4.9.ebuild:
+  fix for depricated opts warning in newer openrc
 
   20 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org>
   gentoo-vdr-scripts-0.4.8.ebuild:

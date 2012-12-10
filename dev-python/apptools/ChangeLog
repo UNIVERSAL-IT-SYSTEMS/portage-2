@@ -1,6 +1,42 @@
 # ChangeLog for dev-python/apptools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/apptools/ChangeLog,v 1.11 2011/01/30 17:38:22 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/apptools/ChangeLog,v 1.19 2012/12/06 17:28:53 bicatali Exp $
+
+  06 Dec 2012; Sébastien Fabbro <bicatali@gentoo.org> apptools-4.1.0.ebuild:
+  Keyword amd64-linux and x86-linux
+
+*apptools-4.1.0 (09 Oct 2012)
+
+  09 Oct 2012; Patrick Lauer <patrick@gentoo.org> +apptools-4.1.0.ebuild:
+  Bump
+
+  15 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> apptools-4.0.1.ebuild:
+  Fix virtualmake invocation in src_test(), thanks to Arfrever for all the help.
+
+  13 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  +files/apptools_test.patch, apptools-4.0.1.ebuild:
+  Disable test that use package installed in  wrt #429668 by Diego Elio Pettenò
+  <flameeyes@gentoo.org>. Thanks to Ian Delaney <johneed@hotmail.com> for the
+  patch
+
+  05 Mar 2012; Justin Lecher <jlec@gentoo.org> apptools-3.4.1.ebuild,
+  apptools-4.0.0.ebuild, apptools-4.0.1.ebuild:
+  revert restriction of pypy
+
+  05 Mar 2012; Justin Lecher <jlec@gentoo.org> apptools-3.4.1.ebuild,
+  apptools-4.0.0.ebuild, apptools-4.0.1.ebuild:
+  Restrict pypy ABI
+
+*apptools-4.0.1 (17 Jan 2012)
+
+  17 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org> apptools-4.0.0.ebuild,
+  +apptools-4.0.1.ebuild:
+  Version bump
+
+*apptools-4.0.0 (03 Aug 2011)
+
+  03 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> +apptools-4.0.0.ebuild:
+  Version bump. Possible API break.
 
 *apptools-3.4.1 (30 Jan 2011)
 
@@ -57,4 +93,3 @@
   15 Jan 2009; Sébastien Fabbro <bicatali@gentoo.org> +metadata.xml,
   +apptools-3.1.0.ebuild:
   Initial import
-

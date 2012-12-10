@@ -1,6 +1,59 @@
 # ChangeLog for app-emacs/cedet
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/cedet/ChangeLog,v 1.63 2011/01/25 18:02:00 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/cedet/ChangeLog,v 1.78 2012/08/15 20:20:44 johu Exp $
+
+  15 Aug 2012; Johannes Huber <johu@gentoo.org> cedet-1.1.ebuild:
+  Stable for x86, wrt bug #431378
+
+  14 Aug 2012; Agostino Sarubbo <ago@gentoo.org> cedet-1.1.ebuild:
+  Stable for amd64, wrt bug #431378
+
+  14 Aug 2012; Anthony G. Basile <blueness@gentoo.org> cedet-1.1.ebuild:
+  Stable ppc, bug #431378
+
+  20 Jun 2012; Ulrich Müller <ulm@gentoo.org> cedet-1.1.ebuild:
+  When installing, ignore *.pt files produced by tests. Bug 422697.
+
+*cedet-1.1 (29 Apr 2012)
+
+  29 Apr 2012; Ulrich Müller <ulm@gentoo.org> files/50cedet-gentoo.el,
+  +cedet-1.1.ebuild:
+  Version bump.
+
+  01 Feb 2012; Ulrich Müller <ulm@gentoo.org> -cedet-1.0.ebuild:
+  Remove vulnerable version wrt bug 398227.
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> cedet-1.0.1.ebuild:
+  Marking cedet-1.0.1 ppc for bug 398227
+
+  15 Jan 2012; Ulrich Müller <ulm@gentoo.org> -cedet-1.0-r1.ebuild,
+  -files/cedet-1.0-ede_security_fix.patch:
+  Remove old.
+
+  14 Jan 2012; Raúl Porcel <armin76@gentoo.org> cedet-1.0.ebuild,
+  cedet-1.0-r1.ebuild, cedet-1.0.1.ebuild:
+  Drop sparc keywords
+
+  12 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> cedet-1.0.1.ebuild:
+  x86 stable wrt bug #398227
+
+  11 Jan 2012; Agostino Sarubbo <ago@gentoo.org> cedet-1.0.1.ebuild:
+  Stable for AMD64, wrt security bug #398227
+
+*cedet-1.0.1 (11 Jan 2012)
+
+  11 Jan 2012; Ulrich Müller <ulm@gentoo.org> +cedet-1.0.1.ebuild:
+  Version bump, security fix release from upstream.
+
+  09 Jan 2012; Agostino Sarubbo <ago@gentoo.org> cedet-1.0-r1.ebuild:
+  Stable for AMD64, wrt security bug #398227
+
+*cedet-1.0-r1 (09 Jan 2012)
+
+  09 Jan 2012; Ulrich Müller <ulm@gentoo.org> +cedet-1.0-r1.ebuild,
+  +files/cedet-1.0-ede_security_fix.patch:
+  Fix security flaw in EDE (CVE-2012-0035), bug 398227.
+  Update ebuild to EAPI 4.
 
   25 Jan 2011; Ulrich Mueller <ulm@gentoo.org> cedet-1.0.ebuild:
   Supply subdirectories of S in load-path, bug 349790.

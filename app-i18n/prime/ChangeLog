@@ -1,6 +1,23 @@
 # ChangeLog for app-i18n/prime
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/prime/ChangeLog,v 1.64 2010/01/23 10:18:30 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/prime/ChangeLog,v 1.67 2012/10/07 16:12:31 armin76 Exp $
+
+  07 Oct 2012; Raúl Porcel <armin76@gentoo.org> prime-1.0.0.1.ebuild,
+  prime-1.0.0.1-r2.ebuild:
+  Drop alpha/sparc keywords
+
+*prime-1.0.0.1-r2 (21 Jun 2012)
+
+  21 Jun 2012; Naohiro Aota <naota@gentoo.org>
+  +files/prime-1.0.0.1-require.patch, +prime-1.0.0.1-r2.ebuild,
+  -prime-1.0.0.1-r1.ebuild:
+  Patch Kernel::require to require to include rubygem path. #420499
+
+*prime-1.0.0.1-r1 (22 Jan 2012)
+
+  22 Jan 2012; MATSUU Takuto <matsuu@gentoo.org> +prime-1.0.0.1-r1.ebuild,
+  +files/prime-1.0.0.1-libdir.patch, +files/prime-1.0.0.1-parallel.patch:
+  Convert to ruby-ng. Fixed parallel make issue.
 
   23 Jan 2010; MATSUU Takuto <matsuu@gentoo.org> prime-1.0.0.1.ebuild:
   Fixed erubydoc issue, bug #299427.

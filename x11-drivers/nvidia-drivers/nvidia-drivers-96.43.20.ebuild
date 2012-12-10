@@ -1,10 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/nvidia-drivers-96.43.20.ebuild,v 1.2 2011/07/28 06:05:29 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/nvidia-drivers-96.43.20.ebuild,v 1.11 2012/09/24 00:48:53 vapier Exp $
 
 EAPI="2"
 
-inherit eutils multilib versionator linux-mod flag-o-matic nvidia-driver
+inherit eutils flag-o-matic linux-mod multilib nvidia-driver portability \
+	unpacker user versionator
 
 X86_NV_PACKAGE="NVIDIA-Linux-x86-${PV}"
 AMD64_NV_PACKAGE="NVIDIA-Linux-x86_64-${PV}"
@@ -18,7 +19,7 @@ SRC_URI="x86? ( ftp://download.nvidia.com/XFree86/Linux-x86/${PV}/${X86_NV_PACKA
 
 LICENSE="NVIDIA"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86 ~x86-fbsd"
+KEYWORDS="-* amd64 x86 ~x86-fbsd"
 IUSE="acpi custom-cflags gtk multilib kernel_linux"
 RESTRICT="strip"
 EMULTILIB_PKG="true"
@@ -32,7 +33,7 @@ COMMON="<x11-base/xorg-server-1.11
 		x11-libs/gtk+:2
 		x11-libs/libX11
 		x11-libs/libXext
-		x11-libs/pango
+		x11-libs/pango[X]
 	)
 	kernel_linux? ( >=sys-libs/glibc-2.6.1 )
 	multilib? ( app-emulation/emul-linux-x86-opengl )
@@ -99,7 +100,7 @@ QA_WX_LOAD_amd64="usr/lib32/opengl/nvidia/lib/libGL.so.${PV}
 
 QA_SONAME_amd64="usr/lib64/libnvcompiler.so.${PV}"
 
-QA_DT_HASH_amd64="usr/lib32/libcuda.so.${PV}
+QA_FLAGS_IGNORED_amd64="usr/lib32/libcuda.so.${PV}
 	usr/lib32/opengl/nvidia/lib/libGL.so.${PV}
 	usr/lib32/opengl/nvidia/lib/libGLcore.so.${PV}
 	usr/lib32/opengl/nvidia/lib/libnvidia-tls.so.${PV}
@@ -117,7 +118,7 @@ QA_DT_HASH_amd64="usr/lib32/libcuda.so.${PV}
 	usr/bin/nvidia-smi
 	usr/bin/nvidia-xconfig"
 
-QA_DT_HASH_x86="usr/lib/libcuda.so.${PV}
+QA_FLAGS_IGNORED_x86="usr/lib/libcuda.so.${PV}
 	usr/lib/libnvidia-cfg.so.${PV}
 	usr/lib/opengl/nvidia/lib/libGLcore.so.${PV}
 	usr/lib/opengl/nvidia/lib/libGL.so.${PV}
@@ -130,18 +131,7 @@ QA_DT_HASH_x86="usr/lib/libcuda.so.${PV}
 	usr/bin/nvidia-smi
 	usr/bin/nvidia-xconfig"
 
-if use x86; then
-	PKG_V="-pkg0"
-	NV_PACKAGE="${X86_NV_PACKAGE}"
-elif use amd64; then
-	PKG_V="-pkg2"
-	NV_PACKAGE="${AMD64_NV_PACKAGE}"
-elif use x86-fbsd; then
-	PKG_V=""
-	NV_PACKAGE="${X86_FBSD_NV_PACKAGE}"
-fi
-
-S="${WORKDIR}/${NV_PACKAGE}${PKG_V}"
+S="${WORKDIR}/"
 
 mtrr_check() {
 	ebegin "Checking for MTRR support"
@@ -206,6 +196,7 @@ pkg_setup() {
 
 	# set variables to where files are in the package structure
 	if use kernel_FreeBSD; then
+		use x86-fbsd && S="${WORKDIR}/${X86_FBSD_NV_PACKAGE}"
 		NV_DOC="${S}/doc"
 		NV_EXEC="${S}/obj"
 		NV_LIB="${S}/obj"
@@ -482,26 +473,19 @@ pkg_postinst() {
 	# Switch to the nvidia implementation
 	eselect opengl set --use-old nvidia
 
-	echo
 	elog "You must be in the video group to use the NVIDIA device"
 	elog "For more info, read the docs at"
 	elog "http://www.gentoo.org/doc/en/nvidia-guide.xml#doc_chap3_sect6"
 	elog
-
 	elog "This ebuild installs a kernel module and X driver. Both must"
 	elog "match explicitly in their version. This means, if you restart"
 	elog "X, you must modprobe -r nvidia before starting it back up"
 	elog
-
 	elog "To use the NVIDIA GLX, run \"eselect opengl set nvidia\""
 	elog
 	elog "NVIDIA has requested that any bug reports submitted have the"
 	elog "output of /usr/bin/nvidia-bug-report.sh included."
 	elog
-	elog "To work with compiz, you must enable the AddARGBGLXVisuals option."
-	elog
-	elog "If you are having resolution problems, try disabling DynamicTwinView."
-	echo
 }
 
 pkg_postrm() {

@@ -1,6 +1,63 @@
 # ChangeLog for sci-mathematics/gimps
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/gimps/ChangeLog,v 1.44 2011/07/15 20:09:39 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/gimps/ChangeLog,v 1.55 2012/07/06 07:28:54 jdhore Exp $
+
+  06 Jul 2012; Jeff Horelick <jdhore@gentoo.org> gimps-27.7-r1.ebuild:
+  marked x86 per bug 423987
+
+  30 Jun 2012; Agostino Sarubbo <ago@gentoo.org> gimps-27.7-r1.ebuild:
+  Stable for amd64, wrt bug #423987
+
+*gimps-27.7-r1 (16 May 2012)
+
+  16 May 2012; Thomas Kahle <tomka@gentoo.org> +gimps-27.7-r1.ebuild,
+  -gimps-27.7.ebuild:
+  bump to 27.7-r1 to reflect changed source location (Bug 416225)
+
+*gimps-27.7 (04 May 2012)
+
+  04 May 2012; Thomas Kahle <tomka@gentoo.org> +gimps-27.7.ebuild,
+  -files/gimps-24.14-conf.d, -files/gimps-24.14-init.d,
+  -files/gimps-25.6-init.d, -files/gimps-25.7-init.d:
+  bump to 27.7 and clean-up. Thanks Paolo Pedroni (bug 414583)
+
+  02 May 2012; Justin Lecher <jlec@gentoo.org> Manifest:
+  Fix checksums again, #414073
+
+*gimps-27.6-r1 (30 Apr 2012)
+
+  30 Apr 2012; Justin Lecher <jlec@gentoo.org> gimps-26.6-r1.ebuild,
+  gimps-27.4.ebuild, -gimps-27.6.ebuild, +gimps-27.6-r1.ebuild:
+  Fix Upstream stupidity in changing the tarball without version change,
+  #414073
+
+*gimps-27.6 (27 Apr 2012)
+
+  27 Apr 2012; Justin Lecher <jlec@gentoo.org> +gimps-27.6.ebuild,
+  metadata.xml:
+  Version Bump, #413699
+
+*gimps-27.4 (16 Apr 2012)
+
+  16 Apr 2012; Thomas Kahle <tomka@gentoo.org> -gimps-24.14-r1.ebuild,
+  -gimps-25.11.ebuild, -gimps-26.5.ebuild, -gimps-26.6.ebuild,
+  gimps-26.6-r1.ebuild, +gimps-27.4.ebuild:
+  Ebuild Maintenance and x86 stable per bug 412179. Bump to 27.4 (Bug
+
+  412205), remove old.
+
+  16 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gimps-26.6-r1.ebuild:
+  Stable for amd64, wrt bug #412179
+
+  06 Dec 2011; Thomas Kahle <tomka@gentoo.org> gimps-26.6.ebuild:
+  Undo changes to stable ebuild in previous commit
+
+*gimps-26.6-r1 (06 Dec 2011)
+
+  06 Dec 2011; Thomas Kahle <tomka@gentoo.org> gimps-26.6.ebuild,
+  +gimps-26.6-r1.ebuild, +files/gimps-26.6-r1-init.d:
+  Don't use deprecated options of start-stop-daemon (Bug 393353). Thanks
+  Paolo Pedroni.
 
   15 Jul 2011; Markus Meier <maekke@gentoo.org> gimps-26.6.ebuild:
   x86 stable, bug #372669

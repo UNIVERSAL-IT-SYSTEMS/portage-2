@@ -1,6 +1,24 @@
 # ChangeLog for media-libs/guilib
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/guilib/ChangeLog,v 1.15 2009/09/12 10:39:55 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/guilib/ChangeLog,v 1.20 2012/03/31 17:23:27 armin76 Exp $
+
+  31 Mar 2012; Raúl Porcel <armin76@gentoo.org> guilib-1.1.0-r1.ebuild,
+  guilib-1.2.1.ebuild:
+  Drop alpha/sparc keywords
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> guilib-1.2.1.ebuild:
+  x86 stable wrt bug #400375
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> guilib-1.2.1.ebuild:
+  Marking guilib-1.2.1 ppc for bug 400375
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> guilib-1.2.1.ebuild:
+  Stable for amd64, wrt bug #400375
+
+*guilib-1.2.1 (22 Aug 2011)
+
+  22 Aug 2011; Tim Harder <radhermit@gentoo.org> +guilib-1.2.1.ebuild:
+  Version bump. Update LICENSE, add static-libs USE flag, and bump to EAPI 4.
 
   12 Sep 2009; Samuli Suominen <ssuominen@gentoo.org> guilib-1.1.0-r1.ebuild:
   amd64 stable wrt #283959

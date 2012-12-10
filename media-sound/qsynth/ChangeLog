@@ -1,6 +1,31 @@
 # ChangeLog for media-sound/qsynth
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/qsynth/ChangeLog,v 1.50 2011/04/15 21:05:22 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/qsynth/ChangeLog,v 1.57 2012/09/07 22:10:19 radhermit Exp $
+
+  07 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  09 May 2012; Ben de Groot <yngwin@gentoo.org> qsynth-0.3.6.ebuild:
+  Apply patch by kensington which fixes bug #415049 (install failure when none
+  of the provided linguas are selected)
+
+  07 May 2012; Ben de Groot <yngwin@gentoo.org> -qsynth-0.3.2.ebuild,
+  -qsynth-0.3.4.ebuild, -qsynth-0.3.5.ebuild, qsynth-0.3.6.ebuild:
+  Bump to EAPI=4. Migrate to qt4-r2.eclass. Respect LINGUAS. Patch by kensington
+  in bug 409997. Remove old.
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> qsynth-0.3.6.ebuild:
+  Marking qsynth-0.3.6 ppc for bug 393715
+
+  05 Feb 2012; Raúl Porcel <armin76@gentoo.org> qsynth-0.3.2.ebuild,
+  qsynth-0.3.4.ebuild, qsynth-0.3.5.ebuild, qsynth-0.3.6.ebuild:
+  Drop sparc keywords
+
+  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> qsynth-0.3.6.ebuild:
+  x86 stable wrt bug #393715
+
+  16 Dec 2011; Agostino Sarubbo <ago@gentoo.org> qsynth-0.3.6.ebuild:
+  Stable for AMD64, wrt bug #393715
 
 *qsynth-0.3.6 (15 Apr 2011)
 

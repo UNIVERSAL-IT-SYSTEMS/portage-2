@@ -1,6 +1,26 @@
 # ChangeLog for dev-ruby/transaction-simple
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/transaction-simple/ChangeLog,v 1.21 2011/02/02 16:34:45 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/transaction-simple/ChangeLog,v 1.25 2012/09/27 09:14:19 ssuominen Exp $
+
+  27 Sep 2012; Samuli Suominen <ssuominen@gentoo.org>
+  transaction-simple-1.4.0.2.ebuild:
+  Keyword ~ppc64 wrt #417513
+
+*transaction-simple-1.4.0.2 (13 Aug 2012)
+
+  13 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +transaction-simple-1.4.0.2.ebuild, -transaction-simple-1.4.0-r2.ebuild:
+  Version bump; use test-unit-2 for testing to avoid hoe.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org>
+  transaction-simple-1.4.0-r1.ebuild, transaction-simple-1.4.0-r2.ebuild:
+  Drop ia64/sparc keywords
+
+*transaction-simple-1.4.0-r2 (18 Sep 2011)
+
+  18 Sep 2011; Diego E. Pettenò <flameeyes@gentoo.org>
+  +transaction-simple-1.4.0-r2.ebuild:
+  Add support for ree18.
 
   02 Feb 2011; Hans de Graaff <graaff@gentoo.org>
   -transaction-simple-1.4.0.ebuild:
@@ -93,4 +113,3 @@
   +transaction-simple-1.1.1.ebuild:
   Initial import. Ebuild submitted by awk <glawk01@awks.org>,
   closing bug #59048.
-

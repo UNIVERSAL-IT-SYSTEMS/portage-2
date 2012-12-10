@@ -1,6 +1,51 @@
 # ChangeLog for sys-block/open-iscsi
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-block/open-iscsi/ChangeLog,v 1.35 2011/06/19 13:56:16 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-block/open-iscsi/ChangeLog,v 1.45 2012/09/18 04:52:44 radhermit Exp $
+
+  18 Sep 2012; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Remove redundant maintainer from metadata.
+
+  03 Apr 2012; Sebastian Pipping <sping@gentoo.org> open-iscsi-2.0.872.ebuild,
+  open-iscsi-2.0.872-r1.ebuild:
+  Fix broken SRC_URI x2, reported by David Goulet
+
+  25 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  open-iscsi-2.0.870.3-r1.ebuild, open-iscsi-2.0.871-r1.ebuild,
+  open-iscsi-2.0.871.3.ebuild, open-iscsi-2.0.871.ebuild,
+  open-iscsi-2.0.872-r1.ebuild, open-iscsi-2.0.872.ebuild:
+  Bug #405687: Depend on virtual/modutils instead of sys-apps/module-init-tools.
+
+*open-iscsi-2.0.872-r1 (09 Feb 2012)
+
+  09 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +open-iscsi-2.0.872-r1.ebuild:
+  Revbump so that all users get new init scripts per bug #307619.
+
+  09 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  +files/open-iscsi-2.0.872-makefile-cleanup-pass2.patch,
+  open-iscsi-2.0.872.ebuild:
+  Bug #400619: respect user CC/AR values during build.
+
+  09 Feb 2012; Robin H. Johnson <robbat2@gentoo.org>
+  files/iscsid-2.0.871-r1.init.d, files/iscsid-conf.d:
+  Bug #307619: improve init script for BL2.
+
+  09 Feb 2012; Robin H. Johnson <robbat2@gentoo.org> open-iscsi-2.0.872.ebuild,
+  +files/open-iscsi-2.0.872-isns-slp.patch:
+  Bug #383437: Fix iSNS SLP linking in the main binaries.
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> open-iscsi-2.0.871.3.ebuild:
+  Marking open-iscsi-2.0.871.3 ppc for bug 370679
+
+  05 Nov 2011; Robin H. Johnson <robbat2@gentoo.org> open-iscsi-2.0.871.ebuild,
+  open-iscsi-2.0.871-r1.ebuild, open-iscsi-2.0.871.3.ebuild,
+  open-iscsi-2.0.872.ebuild:
+  Fix linux_chkconfig_module usage to be non-fatal, this package does not build
+  kernel modules. Verified good build with no kernel sources or kernel config
+  available.
+
+  02 Nov 2011; Mike Doty <kingtaco@gentoo.org> metadata.xml:
+  Setting maintainer to base-system
 
   19 Jun 2011; Markus Meier <maekke@gentoo.org> open-iscsi-2.0.871.3.ebuild:
   x86 stable, bug #370679

@@ -1,6 +1,38 @@
 # ChangeLog for dev-php/PEAR-Benchmark
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Benchmark/ChangeLog,v 1.48 2007/12/31 15:48:37 josejx Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/PEAR-Benchmark/ChangeLog,v 1.57 2012/06/09 14:39:01 mabi Exp $
+
+  09 Jun 2012; Matti Bickel <mabi@gentoo.org> -PEAR-Benchmark-1.2.7-r1.ebuild:
+  remove old
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> PEAR-Benchmark-1.2.9.ebuild:
+  alpha/ia64/sparc stable wrt #408727
+
+  29 Mar 2012; Jeroen Roovers <jer@gentoo.org> PEAR-Benchmark-1.2.9.ebuild:
+  Stable for HPPA (bug #408727).
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> PEAR-Benchmark-1.2.9.ebuild:
+  Marking PEAR-Benchmark-1.2.9 ppc64 for bug 408727
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> PEAR-Benchmark-1.2.9.ebuild:
+  Marking PEAR-Benchmark-1.2.9 ppc for bug 408727
+
+  24 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  PEAR-Benchmark-1.2.9.ebuild:
+  x86 stable wrt bug #408727
+
+  24 Mar 2012; Agostino Sarubbo <ago@gentoo.org> PEAR-Benchmark-1.2.9.ebuild:
+  Stable for amd64, wrt bug #408727
+
+  21 Mar 2012; Matti Bickel <mabi@gentoo.org> PEAR-Benchmark-1.2.9.ebuild:
+  package2.xml doesnt need to be copied anymore (bug #408815), also fix a
+  has_version syntax error
+
+*PEAR-Benchmark-1.2.9 (18 Jan 2012)
+
+  18 Jan 2012; Matti Bickel <mabi@gentoo.org> -PEAR-Benchmark-1.2.7.ebuild,
+  +PEAR-Benchmark-1.2.9.ebuild:
+  version bump & remove old
 
   31 Dec 2007; Joseph Jezak <josejx@gentoo.org>
   PEAR-Benchmark-1.2.7-r1.ebuild:

@@ -1,6 +1,34 @@
 # ChangeLog for www-apps/phpBB
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-apps/phpBB/ChangeLog,v 1.37 2011/07/13 04:41:55 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-apps/phpBB/ChangeLog,v 1.45 2012/08/28 08:45:57 radhermit Exp $
+
+  28 Aug 2012; Tim Harder <radhermit@gentoo.org> -phpBB-3.0.9.ebuild:
+  Remove old.
+
+*phpBB-3.0.11 (28 Aug 2012)
+
+  28 Aug 2012; Tim Harder <radhermit@gentoo.org> +phpBB-3.0.11.ebuild:
+  Version bump.
+
+  22 Apr 2012; Markus Meier <maekke@gentoo.org> phpBB-3.0.10.ebuild:
+  x86 stable, bug #412037
+
+  15 Apr 2012; Agostino Sarubbo <ago@gentoo.org> phpBB-3.0.10.ebuild:
+  Stable for amd64, wrt bug #412037
+
+  28 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> phpBB-3.0.9.ebuild:
+  x86 stable wrt bug #398045
+
+  27 Jan 2012; Agostino Sarubbo <ago@gentoo.org> phpBB-3.0.9.ebuild:
+  Stable for amd64, wrt bug #398045
+
+  25 Jan 2012; Tim Harder <radhermit@gentoo.org> -phpBB-3.0.8.ebuild:
+  Remove old.
+
+*phpBB-3.0.10 (25 Jan 2012)
+
+  25 Jan 2012; Tim Harder <radhermit@gentoo.org> +phpBB-3.0.10.ebuild:
+  Version bump and remove depend.php eclass usage.
 
 *phpBB-3.0.9 (13 Jul 2011)
 

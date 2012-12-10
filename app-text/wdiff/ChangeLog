@@ -1,6 +1,76 @@
 # ChangeLog for app-text/wdiff
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/wdiff/ChangeLog,v 1.61 2011/03/27 21:57:37 darkside Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/wdiff/ChangeLog,v 1.80 2012/10/06 15:18:41 jlec Exp $
+
+  06 Oct 2012; Justin Lecher <jlec@gentoo.org> -wdiff-1.1.0.ebuild,
+  -wdiff-1.1.1.ebuild:
+  Drop old
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> wdiff-1.1.2.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #428906
+
+  25 Sep 2012; Jeroen Roovers <jer@gentoo.org> wdiff-1.1.2.ebuild:
+  Fix hang in test suite when an incompatible screenrc is found.
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> wdiff-1.1.2.ebuild:
+  x86 stable wrt bug #428906
+
+  20 Sep 2012; Anthony G. Basile <blueness@gentoo.org> wdiff-1.1.2.ebuild:
+  stable ppc ppc64, bug #428906
+
+  18 Sep 2012; Jeroen Roovers <jer@gentoo.org> wdiff-1.1.2.ebuild:
+  Stable for HPPA (bug #428906).
+
+  14 Sep 2012; Markus Meier <maekke@gentoo.org> wdiff-1.1.2.ebuild:
+  arm stable, bug #428906
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> wdiff-1.1.2.ebuild:
+  Stable for amd64, wrt bug #428906
+
+*wdiff-1.1.2 (31 May 2012)
+
+  31 May 2012; Jeroen Roovers <jer@gentoo.org> +wdiff-1.1.2.ebuild:
+  Version bump.
+
+*wdiff-1.1.1 (23 May 2012)
+
+  23 May 2012; Jeroen Roovers <jer@gentoo.org> +wdiff-1.1.1.ebuild:
+  Version bump.
+
+  12 Feb 2012; Justin Lecher <jlec@gentoo.org> -wdiff-0.6.5.ebuild,
+  -wdiff-1.0.1.ebuild:
+  Dropped old
+
+  12 Feb 2012; Raúl Porcel <armin76@gentoo.org> wdiff-1.1.0.ebuild:
+  alpha/arm/ia64/s390/sh/sparc/x86 stable wrt #401095
+
+  07 Feb 2012; Jeroen Roovers <jer@gentoo.org> wdiff-1.1.0.ebuild:
+  Stable for HPPA (bug #401095).
+
+  03 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> wdiff-1.1.0.ebuild:
+  ppc/ppc64 stable wrt #401095
+
+  30 Jan 2012; Agostino Sarubbo <ago@gentoo.org> wdiff-1.1.0.ebuild:
+  Stable for amd64, wrt bug #401095
+
+  06 Jan 2012; Christoph Junghans <ottxor@gentoo.org> wdiff-1.1.0.ebuild:
+  keyword ~x86-macos
+
+  21 Nov 2011; Tim Harder <radhermit@gentoo.org> wdiff-1.0.1.ebuild:
+  Add dependency on screen for testsuite (bug #390737).
+
+*wdiff-1.1.0 (21 Nov 2011)
+
+  21 Nov 2011; Tim Harder <radhermit@gentoo.org> +wdiff-1.1.0.ebuild:
+  Version bump.
+
+*wdiff-1.0.1 (19 Sep 2011)
+
+  19 Sep 2011; Tim Harder <radhermit@gentoo.org>
+  -files/wdiff-0.5-avoid-wraps.diff, -files/wdiff-0.5-headers.patch,
+  -files/wdiff-0.5-ignore-case.patch, -files/wdiff-0.5-segfault-fix.diff,
+  -files/wdiff-0.6.0-info.patch, +wdiff-1.0.1.ebuild, metadata.xml:
+  Version bump and remove old patches (bug #383533 by Petr Pisar).
 
   27 Mar 2011; Jeremy Olexa <darkside@gentoo.org> -wdiff-0.6.4.ebuild:
   remove old ebuilds

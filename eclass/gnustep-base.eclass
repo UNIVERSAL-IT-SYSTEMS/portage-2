@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/gnustep-base.eclass,v 1.19 2011/06/28 15:27:23 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/gnustep-base.eclass,v 1.27 2012/06/22 12:41:51 voyageur Exp $
 
 # @ECLASS: gnustep-base.eclass
 # @MAINTAINER:
@@ -121,12 +121,11 @@ egnustep_env() {
 		source "${GS_MAKEFILES}"/GNUstep.sh
 
 		# Create compilation GNUstep.conf if it does not exist yet
-		if [[ ! -f ${T}/GNUstep.conf ]]; then
-			cp "${EPREFIX}"/etc/GNUstep/GNUstep.conf "${T}" \
+		if [[ ! -f ${WORKDIR}/GNUstep.conf ]]; then
+			cp "${EPREFIX}"/etc/GNUstep/GNUstep.conf "${WORKDIR}" \
 				|| die "GNUstep.conf copy failed"
-			sed -e "s#\(GNUSTEP_USER_DIR=\).*#\1${T}#" \
-				-e "s#\(GNUSTEP_USER_DEFAULTS_DIR=\).*#\1${T}/Defaults#" \
-				-i "${T}"/GNUstep.conf || die "GNUstep.conf sed failed"
+			sed -e "s#\(GNUSTEP_USER_.*DIR.*=\)#\1${WORKDIR}/#" \
+				-i "${WORKDIR}"/GNUstep.conf || die "GNUstep.conf sed failed"
 		fi
 
 
@@ -146,16 +145,25 @@ egnustep_env() {
 			ADDITIONAL_NATIVE_LIB_DIRS="${GNUSTEP_SYSTEM_LIBRARIES}" \
 			DESTDIR="${D}" \
 			HOME="${T}" \
-			GNUSTEP_CONFIG_FILE="${T}"/GNUstep.conf \
-			GNUSTEP_USER_DIR="${T}" \
-			GNUSTEP_USER_DEFAULTS_DIR="${T}"/Defaults \
+			GNUSTEP_CONFIG_FILE="${WORKDIR}"/GNUstep.conf \
 			GNUSTEP_INSTALLATION_DOMAIN=SYSTEM \
 			TAR_OPTIONS="${TAR_OPTIONS} --no-same-owner" \
 			messages=yes )
 
+		use doc \
+			&& GS_ENV=( "${GS_ENV[@]}" VARTEXFONTS="${T}"/fonts )
+
 		use debug \
 			&& GS_ENV=( "${GS_ENV[@]}" "debug=yes" ) \
 			|| GS_ENV=( "${GS_ENV[@]}" "debug=no" )
+
+		# About 20 gnustep packages still use EAPI 0
+		if built_with_use --missing false gnustep-base/gnustep-make libobjc2;
+		then
+			# Set clang for packages that do not respect gnustep-make
+			# settings (gnustep-base's configure for example)
+			export CC=clang CXX=clang CPP="clang -E" LD="clang"
+		fi
 
 		return 0
 	fi
@@ -186,14 +194,14 @@ egnustep_install() {
 
 # Make and install docs using GNUstep Makefiles
 egnustep_doc() {
-	if [[ -d ./Documentation ]] ; then
+	if [[ -d "${S}"/Documentation ]] ; then
 		# Check documentation presence
-		cd "${S}"/Documentation
+		pushd "${S}"/Documentation || die
 		if [[ -f ./[mM]akefile || -f ./GNUmakefile ]] ; then
 			emake "${GS_ENV[@]}" all || die "doc make failed"
 			emake "${GS_ENV[@]}" install || die "doc install failed"
 		fi
-		cd ..
+		popd || die
 	fi
 }
 

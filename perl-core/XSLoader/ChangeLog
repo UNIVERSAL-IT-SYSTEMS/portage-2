@@ -1,6 +1,26 @@
 # ChangeLog for perl-core/XSLoader
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/perl-core/XSLoader/ChangeLog,v 1.10 2011/04/25 16:29:47 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/perl-core/XSLoader/ChangeLog,v 1.16 2012/09/08 06:54:18 tove Exp $
+
+*XSLoader-0.160.0 (08 Sep 2012)
+
+  08 Sep 2012; Torsten Veller <tove@gentoo.org> +XSLoader-0.160.0.ebuild:
+  Version bump
+
+  01 Sep 2012; Fabian Groffen <grobian@gentoo.org> XSLoader-0.150.0.ebuild:
+  Marked ~ppc-aix, bug #432288
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  13 Jun 2012; Torsten Veller <tove@gentoo.org> XSLoader-0.150.0.ebuild:
+  Fix test failure with perl-5.16 (#420259)
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> XSLoader-0.150.0.ebuild:
+  Stable for HPPA (bug #412973).
+
+  07 Nov 2011; Fabian Groffen <grobian@gentoo.org> XSLoader-0.150.0.ebuild:
+  Added Prefix keywords, bug #389001
 
   25 Apr 2011; Fabian Groffen <grobian@gentoo.org> XSLoader-0.150.0.ebuild:
   Marked *-macos
@@ -44,4 +64,3 @@
   18 Dec 2009; Torsten Veller <tove@gentoo.org> +XSLoader-0.10.ebuild,
   +metadata.xml:
   Inital commit
-

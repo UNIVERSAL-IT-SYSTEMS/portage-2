@@ -1,13 +1,13 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/gnome-disk-utility/gnome-disk-utility-2.32.1.ebuild,v 1.11 2011/04/29 17:42:09 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/gnome-disk-utility/gnome-disk-utility-2.32.1.ebuild,v 1.15 2012/05/04 09:17:26 jdhore Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
 
 inherit autotools eutils gnome2
 
-DESCRIPTION="Disk Utility for GNOME using devicekit-disks"
+DESCRIPTION="Disk Utility for GNOME using udisks"
 HOMEPAGE="http://git.gnome.org/browse/gnome-disk-utility"
 
 LICENSE="LGPL-2.1"
@@ -20,27 +20,24 @@ CDEPEND="
 	>=dev-libs/dbus-glib-0.74
 	>=dev-libs/libunique-1:1
 	>=x11-libs/gtk+-2.20:2
-	=sys-fs/udisks-1.0*[remote-access?]
+	=sys-fs/udisks-1.0*:0[remote-access?]
 	>=dev-libs/libatasmart-0.14
 	>=x11-libs/libnotify-0.6.1
 	avahi? ( >=net-dns/avahi-0.6.25[gtk] )
-	gnome-keyring? ( || (
-		gnome-base/libgnome-keyring
-		<gnome-base/gnome-keyring-2.29.4 ) )
+	gnome-keyring? ( gnome-base/libgnome-keyring )
 	nautilus? ( >=gnome-base/nautilus-2.24 )
 "
 RDEPEND="${CDEPEND}
 	x11-misc/xdg-utils
-	fat? ( sys-fs/dosfstools )
-	!!sys-apps/udisks"
+	fat? ( sys-fs/dosfstools )"
 DEPEND="${CDEPEND}
 	sys-devel/gettext
 	gnome-base/gnome-common
 	app-text/docbook-xml-dtd:4.1.2
-	app-text/scrollkeeper
+	app-text/rarian
 	app-text/gnome-doc-utils
 
-	>=dev-util/pkgconfig-0.9
+	virtual/pkgconfig
 	>=dev-util/intltool-0.35
 	>=dev-util/gtk-doc-am-1.13
 

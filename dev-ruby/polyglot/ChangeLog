@@ -1,6 +1,28 @@
 # ChangeLog for dev-ruby/polyglot
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/polyglot/ChangeLog,v 1.19 2011/07/31 16:36:21 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/polyglot/ChangeLog,v 1.25 2012/09/10 18:48:16 graaff Exp $
+
+  10 Sep 2012; Hans de Graaff <graaff@gentoo.org> -polyglot-0.3.1.ebuild,
+  -polyglot-0.3.2.ebuild:
+  Cleanup.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> polyglot-0.3.1.ebuild,
+  polyglot-0.3.2.ebuild, polyglot-0.3.3.ebuild:
+  Drop ia64/sparc keywords
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> polyglot-0.3.3.ebuild:
+  Add Prefix keywords, bug #396547
+
+  05 Dec 2011; Naohiro Aota <naota@gentoo.org> polyglot-0.3.3.ebuild:
+  Add ~x86-fbsd.
+
+*polyglot-0.3.3 (02 Nov 2011)
+
+  02 Nov 2011; Hans de Graaff <graaff@gentoo.org> +polyglot-0.3.3.ebuild:
+  Version bump.
+
+  09 Sep 2011; Fabian Groffen <grobian@gentoo.org> polyglot-0.3.2.ebuild:
+  Marked ~sparc-solaris
 
   31 Jul 2011; Raúl Porcel <armin76@gentoo.org> polyglot-0.3.1.ebuild,
   polyglot-0.3.2.ebuild:

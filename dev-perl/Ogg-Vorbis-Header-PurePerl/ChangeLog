@@ -1,6 +1,40 @@
 # ChangeLog for dev-perl/Ogg-Vorbis-Header-PurePerl
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Ogg-Vorbis-Header-PurePerl/ChangeLog,v 1.13 2010/01/10 19:21:41 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Ogg-Vorbis-Header-PurePerl/ChangeLog,v 1.21 2012/09/11 01:04:43 blueness Exp $
+
+  11 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  Ogg-Vorbis-Header-PurePerl-1.0.0.ebuild:
+  Stable ppc ppc64, bug #430158
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  31 Mar 2012; Torsten Veller <tove@gentoo.org>
+  -Ogg-Vorbis-Header-PurePerl-0.07.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org>
+  Ogg-Vorbis-Header-PurePerl-0.07.ebuild,
+  Ogg-Vorbis-Header-PurePerl-1.0.0.ebuild:
+  Drop ia64/sparc
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Ogg-Vorbis-Header-PurePerl-1.0.0.ebuild:
+  x86 stable wrt bug #400195
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org>
+  Ogg-Vorbis-Header-PurePerl-1.0.0.ebuild:
+  Stable for amd64, wrt bug #400195
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org>
+  -Ogg-Vorbis-Header-PurePerl-1.0.ebuild:
+  Cleanup
+
+*Ogg-Vorbis-Header-PurePerl-1.0.0 (29 Aug 2011)
+
+  29 Aug 2011; Torsten Veller <tove@gentoo.org>
+  +Ogg-Vorbis-Header-PurePerl-1.0.0.ebuild:
+  Change version scheme
 
   10 Jan 2010; Fabian Groffen <grobian@gentoo.org>
   Ogg-Vorbis-Header-PurePerl-1.0.ebuild:
@@ -57,4 +91,3 @@
   19 Apr 2005; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Ogg-Vorbis-Header-PurePerl-0.07.ebuild:
   new dep for mplay, bug 74394
-

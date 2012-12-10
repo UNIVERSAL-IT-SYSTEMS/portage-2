@@ -1,6 +1,25 @@
 # ChangeLog for app-text/lv
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/lv/ChangeLog,v 1.36 2011/01/13 14:47:24 matsuu Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/lv/ChangeLog,v 1.42 2012/09/18 03:12:31 ottxor Exp $
+
+  18 Sep 2012; Christoph Junghans <ottxor@gentoo.org> lv-4.51-r3.ebuild:
+  added prefix keywords
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> lv-4.51-r3.ebuild:
+  Marking lv-4.51-r3 ppc64 for bug 396839
+
+  12 Feb 2012; Raúl Porcel <armin76@gentoo.org> lv-4.51-r3.ebuild:
+  alpha/ia64/sh/sparc/x86 stable wrt #396839
+
+  03 Feb 2012; Brent Baude <ranger@gentoo.org> lv-4.51-r3.ebuild:
+  Marking lv-4.51-r3 ppc for bug 396839
+
+  02 Feb 2012; Agostino Sarubbo <ago@gentoo.org> lv-4.51-r3.ebuild:
+  Stable for amd64, wrt bug #396839
+
+  13 Aug 2011; Akinori Hattori <hattya@gentoo.org> -lv-4.51-r2.ebuild,
+  lv-4.51-r3.ebuild, files/lv-4.51-xz.diff:
+  update to EAPI 4.
 
 *lv-4.51-r3 (13 Jan 2011)
 
@@ -121,4 +140,3 @@
   10 Dec 2002; Masatomo Nakano <nakano@gentoo.org> : lv-4.49.4.ebuild, files/digest-lv-4.49.4, ChangeLog
 
   Initial import.  
-

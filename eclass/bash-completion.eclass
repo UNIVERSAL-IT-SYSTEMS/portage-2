@@ -1,17 +1,24 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/bash-completion.eclass,v 1.26 2011/04/19 04:19:47 darkside Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/bash-completion.eclass,v 1.28 2011/09/08 19:06:46 mgorny Exp $
+
+# @DEPRECATED
+# This eclass has been superseded by bash-completion-r1 eclass.
+# Please modify your ebuilds to use that one instead.
 
 # @ECLASS: bash-completion.eclass
 # @MAINTAINER:
 # shell-tools@gentoo.org.
-#
+# @AUTHOR:
 # Original author: Aaron Walker <ka0ttic@gentoo.org>
 # @BLURB: An Interface for installing contributed bash-completion scripts
 # @DESCRIPTION:
 # Simple eclass that provides an interface for installing
 # contributed (ie not included in bash-completion proper)
 # bash-completion scripts.
+#
+# Note: this eclass has been deprecated in favor of bash-completion-r1. Please
+# use that one instead.
 
 # @ECLASS-VARIABLE: BASHCOMPLETION_NAME
 # @DESCRIPTION:
@@ -21,6 +28,8 @@
 # @DESCRIPTION:
 # Space delimited list of files to install if dobashcompletion is called without
 # arguments.
+
+inherit eutils
 
 EXPORT_FUNCTIONS pkg_postinst
 
@@ -42,6 +51,9 @@ PDEPEND="bash-completion? ( app-shells/bash-completion )"
 # is not set, it will default to ${PN}.
 dobashcompletion() {
 	local f
+
+	eqawarn "bash-completion.eclass has been deprecated."
+	eqawarn "Please update your ebuilds to use bash-completion-r1 instead."
 
 	if [[ -z ${1} && -z ${BASHCOMPFILES} ]]; then
 		die "Usage: dobashcompletion [file] [new file]"

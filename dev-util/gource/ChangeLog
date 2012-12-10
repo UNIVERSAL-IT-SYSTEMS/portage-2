@@ -1,6 +1,40 @@
 # ChangeLog for dev-util/gource
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/gource/ChangeLog,v 1.16 2011/07/17 14:49:21 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/gource/ChangeLog,v 1.23 2012/11/22 04:13:39 flameeyes Exp $
+
+  22 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org> gource-0.38.ebuild:
+  Bump to latest EAPI; use the default src_install; depend on threads-safe boost
+  (if available).
+
+  10 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +files/gource-0.38+boost-1.50.patch, gource-0.38.ebuild:
+  Add patch to fix building with boost 1.50, mixing one fix from upstream and
+  one upstreamed. Thanks Enrico for finding the fix. Closes bug #425460.
+
+  09 Jul 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Reorder metadata to help auto-filing.
+
+  12 May 2012; Diego E. Pettenò <flameeyes@gentoo.org> -gource-0.31.ebuild,
+  -gource-0.32.ebuild, -gource-0.35.ebuild, -gource-0.37.ebuild,
+  gource-0.38.ebuild:
+  Fix dependency on libsdl to include video (opengl and X don't imply it).
+  Thanks Joshua Downer and Enrico Tagliavini in bug #382983.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> gource-0.31.ebuild,
+  gource-0.32.ebuild, gource-0.35.ebuild, gource-0.37.ebuild,
+  gource-0.38.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*gource-0.38 (28 Apr 2012)
+
+  28 Apr 2012; Diego E. Pettenò <flameeyes@gentoo.org> +gource-0.38.ebuild:
+  Version bump, thanks to Enrico.
+
+*gource-0.37 (21 Oct 2011)
+
+  21 Oct 2011; Diego E. Pettenò <flameeyes@gentoo.org> +gource-0.37.ebuild:
+  Version bump, and fix build with tinyxml[stl], thanks to the proxy maintainer
+  Enrico Tagliavini.
 
 *gource-0.35 (17 Jul 2011)
 
@@ -87,4 +121,3 @@
   build system (written by me, merged upstream), to keep in line with QA
   policies. Also thanks to the indipendent writer Stanislav Cymbalov in bug
   #297074.
-

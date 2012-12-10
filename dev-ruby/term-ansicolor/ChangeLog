@@ -1,6 +1,50 @@
 # ChangeLog for dev-ruby/term-ansicolor
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/term-ansicolor/ChangeLog,v 1.20 2011/07/22 06:53:05 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/term-ansicolor/ChangeLog,v 1.32 2012/11/07 05:07:53 jer Exp $
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> term-ansicolor-1.0.7.ebuild:
+  Stable for HPPA (bug #437040).
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> term-ansicolor-1.0.7.ebuild:
+  alpha/ia64/sparc stable wrt #437040
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org>
+  term-ansicolor-1.0.5-r1.ebuild, term-ansicolor-1.0.7.ebuild:
+  alpha stable, add ~alpha
+
+  17 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  term-ansicolor-1.0.7.ebuild:
+  x86 stable wrt bug #437040
+
+  03 Oct 2012; Agostino Sarubbo <ago@gentoo.org> term-ansicolor-1.0.7.ebuild:
+  Stable for amd64, wrt bug #437040
+
+  03 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  term-ansicolor-1.0.7.ebuild:
+  stable ppc ppc64, bug #437040
+
+  16 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  -term-ansicolor-1.0.6.ebuild, term-ansicolor-1.0.7.ebuild:
+  Remove old; bump to EAPI 4; add dependency over virtual/ruby-test-unit for
+  testing; use rdoc recipe for building API doc; remove examples USE flag
+  (always install them). Drop rbx support due to dependencies.
+
+  08 Mar 2012; Naohiro Aota <naota@gentoo.org> term-ansicolor-1.0.7.ebuild:
+  Add ~x86-fbsd.
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> term-ansicolor-1.0.7.ebuild:
+  Add Prefix keywords, bug #396547
+
+  22 Oct 2011; Hans de Graaff <graaff@gentoo.org> term-ansicolor-1.0.7.ebuild:
+  Add ruby19 and rbx support. Fixes bug 293353.
+
+*term-ansicolor-1.0.7 (13 Oct 2011)
+
+  13 Oct 2011; Hans de Graaff <graaff@gentoo.org> +term-ansicolor-1.0.7.ebuild:
+  Version bump.
+
+  14 Sep 2011; Jeroen Roovers <jer@gentoo.org> term-ansicolor-1.0.5-r1.ebuild:
+  Stable for HPPA (bug #369573).
 
 *term-ansicolor-1.0.6 (22 Jul 2011)
 
@@ -91,4 +135,3 @@
   01 Aug 2009; Hans de Graaff <graaff@gentoo.org>
   +term-ansicolor-1.0.4.ebuild, +metadata.xml:
   Initial import. Dependency of cucumber.
-

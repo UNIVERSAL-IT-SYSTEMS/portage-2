@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.17.ebuild,v 1.19 2010/11/16 21:00:45 phosphan Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.17.ebuild,v 1.22 2012/06/08 03:01:10 zmedico Exp $
 
 EAPI="1"
 
-inherit eutils flag-o-matic
+inherit eutils flag-o-matic user
 
 IUSE="usb gphoto2 ipv6 v4l"
 
@@ -14,7 +14,7 @@ HOMEPAGE="http://www.sane-project.org/"
 RDEPEND="virtual/jpeg
 	amd64? ( sys-libs/libieee1284 )
 	x86? ( sys-libs/libieee1284 )
-	usb? ( dev-libs/libusb:0 )
+	usb? ( virtual/libusb:0 )
 	gphoto2? ( media-libs/libgphoto2 )
 	v4l? ( sys-kernel/linux-headers )"
 
@@ -131,5 +131,5 @@ src_install () {
 
 	echo "SANE_CONFIG_DIR=/etc/sane.d" > 30sane
 	doenvd 30sane
-
+	find "${D}" -name "*.la" | while read file; do rm "${file}"; done
 }

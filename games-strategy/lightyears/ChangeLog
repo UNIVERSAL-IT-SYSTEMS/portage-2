@@ -1,6 +1,18 @@
 # ChangeLog for games-strategy/lightyears
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/lightyears/ChangeLog,v 1.13 2011/04/25 20:36:38 arfrever Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/lightyears/ChangeLog,v 1.16 2012/01/21 16:11:10 phajdan.jr Exp $
+
+  21 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> lightyears-1.4.ebuild:
+  x86 stable wrt bug #398607
+
+  17 Jan 2012; Agostino Sarubbo <ago@gentoo.org> lightyears-1.4.ebuild:
+  Stable for amd64, wrt bug #398607
+
+*lightyears-1.4 (13 Dec 2011)
+
+  13 Dec 2011; Michael Sterrett <mr_bones_@gentoo.org> +lightyears-1.4.ebuild,
+  +files/lightyears-1.4-gentoo.patch:
+  version bump with patch update by Michael (kensington) (bug #394277)
 
   25 Apr 2011; Arfrever Frehtes Taifersar Arahesis <arfrever@gentoo.org>
   lightyears-1.3a.ebuild:

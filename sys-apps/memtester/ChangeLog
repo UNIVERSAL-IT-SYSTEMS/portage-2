@@ -1,6 +1,53 @@
 # ChangeLog for sys-apps/memtester
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/memtester/ChangeLog,v 1.37 2011/02/05 08:51:41 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/memtester/ChangeLog,v 1.51 2012/10/23 04:58:53 armin76 Exp $
+
+  23 Oct 2012; Raúl Porcel <armin76@gentoo.org> memtester-4.3.0.ebuild:
+  sparc stable because its used in the installcd
+
+  29 Sep 2012; Raúl Porcel <armin76@gentoo.org> memtester-4.2.2.ebuild:
+  Move to ~sparc
+
+  20 Sep 2012; Anthony G. Basile <blueness@gentoo.org> memtester-4.3.0.ebuild:
+  stable ppc ppc64, bug #429196
+
+  20 Sep 2012; Johannes Huber <johu@gentoo.org> memtester-4.3.0.ebuild:
+  Stable for x86, wrt bug #429196
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> memtester-4.3.0.ebuild:
+  Stable for amd64, wrt bug #429196
+
+  11 Jun 2012; Tim Harder <radhermit@gentoo.org> -memtester-4.0.8.ebuild,
+  -memtester-4.1.2.ebuild, -memtester-4.2.1.ebuild:
+  Remove old.
+
+*memtester-4.3.0 (11 Jun 2012)
+
+  11 Jun 2012; Tim Harder <radhermit@gentoo.org> +memtester-4.3.0.ebuild:
+  Version bump.
+
+  17 Apr 2012; Mike Frysinger <vapier@gentoo.org> memtester-4.2.2.ebuild:
+  Add arm love.
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> memtester-4.2.2.ebuild:
+  sparc stable wrt #400489
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> memtester-4.2.2.ebuild:
+  x86 stable wrt bug #400489
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> memtester-4.2.2.ebuild:
+  Marking memtester-4.2.2 ppc64 for bug 400489
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> memtester-4.2.2.ebuild:
+  Marking memtester-4.2.2 ppc for bug 400489
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> memtester-4.2.2.ebuild:
+  Stable for amd64, wrt bug #400489
+
+*memtester-4.2.2 (26 Aug 2011)
+
+  26 Aug 2011; Tim Harder <radhermit@gentoo.org> +memtester-4.2.2.ebuild:
+  Version bump.
 
 *memtester-4.2.1 (05 Feb 2011)
 

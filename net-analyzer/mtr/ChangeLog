@@ -1,6 +1,78 @@
 # ChangeLog for net-analyzer/mtr
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/mtr/ChangeLog,v 1.106 2011/07/15 15:20:25 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/mtr/ChangeLog,v 1.127 2012/05/10 21:48:15 radhermit Exp $
+
+  10 May 2012; Tim Harder <radhermit@gentoo.org> -mtr-0.81.ebuild:
+  Remove old.
+
+  06 May 2012; Raúl Porcel <armin76@gentoo.org> mtr-0.82.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #409605
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> mtr-0.81.ebuild,
+  mtr-0.82.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  05 Apr 2012; Jeff Horelick <jdhore@gentoo.org> mtr-0.82.ebuild:
+  marked x86 per bug 409605
+
+  31 Mar 2012; Markus Meier <maekke@gentoo.org> mtr-0.82.ebuild:
+  arm stable, bug #409605
+
+  29 Mar 2012; Agostino Sarubbo <ago@gentoo.org> mtr-0.82.ebuild:
+  Stable for amd64, wrt bug #409605
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> mtr-0.82.ebuild:
+  Marking mtr-0.82 ppc64 for bug 409605
+
+  25 Mar 2012; Jeroen Roovers <jer@gentoo.org> mtr-0.82.ebuild:
+  Stable for HPPA (bug #409605).
+
+  25 Mar 2012; Brent Baude <ranger@gentoo.org> mtr-0.82.ebuild:
+  Marking mtr-0.82 ppc for bug 409605
+
+  05 Mar 2012; Tim Harder <radhermit@gentoo.org> -mtr-0.79.ebuild,
+  -mtr-0.80.ebuild:
+  Remove old.
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> mtr-0.81.ebuild:
+  ppc64 stable wrt #393241
+
+  06 Feb 2012; Brent Baude <ranger@gentoo.org> mtr-0.81.ebuild:
+  Marking mtr-0.81 ppc for bug 393241
+
+  11 Dec 2011; Raúl Porcel <armin76@gentoo.org> mtr-0.81.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #393241
+
+  11 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> mtr-0.81.ebuild:
+  x86 stable wrt bug #393241
+
+  10 Dec 2011; Tim Harder <radhermit@gentoo.org> mtr-0.81.ebuild,
+  mtr-0.82.ebuild:
+  Remove glib and gdk-pixbuf deps as they aren't explicitly required and gtk
+  pulls them in.
+
+  10 Dec 2011; Tim Harder <radhermit@gentoo.org> mtr-0.81.ebuild,
+  mtr-0.82.ebuild:
+  Fix gtk related deps.
+
+  09 Dec 2011; Markos Chandras <hwoarang@gentoo.org> mtr-0.81.ebuild:
+  Add missing gdk-pixbuf and glib dependencies. Stable on amd64. Bug #393241
+
+  05 Dec 2011; Jeroen Roovers <jer@gentoo.org> mtr-0.81.ebuild:
+  Stable for HPPA (bug #393241).
+
+*mtr-0.82 (05 Dec 2011)
+
+  05 Dec 2011; Tim Harder <radhermit@gentoo.org> +mtr-0.82.ebuild:
+  Version bump.
+
+*mtr-0.81 (10 Oct 2011)
+
+  10 Oct 2011; Tim Harder <radhermit@gentoo.org> +mtr-0.81.ebuild:
+  Version bump.
+
+  29 Aug 2011; Fabian Groffen <grobian@gentoo.org> mtr-0.80.ebuild:
+  Generalise Darwin fix, bug #361807
 
   15 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> mtr-0.80.ebuild:
   ppc/ppc64 stable wrt #362609

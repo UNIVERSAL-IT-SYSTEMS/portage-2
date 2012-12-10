@@ -1,6 +1,180 @@
 # ChangeLog for media-libs/xine-lib
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/xine-lib/ChangeLog,v 1.643 2011/05/11 19:11:38 aballier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/xine-lib/ChangeLog,v 1.688 2012/11/26 14:31:26 scarabeus Exp $
+
+  26 Nov 2012; Tomáš Chvátal <scarabeus@gentoo.org> metadata.xml:
+  Update to global useflag.
+
+  02 Aug 2012; Samuli Suominen <ssuominen@gentoo.org> xine-lib-1.2.2.ebuild,
+  xine-lib-1.2.9999.ebuild:
+  Pass -fomit-frame-pointer based on CHOST to gain one free register wrt
+  #422519 by Bob Raitz
+
+  06 Jul 2012; Luca Barbato <lu_zero@gentoo.org>
+  files/xine-lib-1.2.1-ffmpeg-git.patch, xine-lib-1.2.2.ebuild,
+  +files/xine-lib-1.2.2-libav.patch:
+  Fix mistake in the version check for AVFrame.age
+
+*xine-lib-1.2.2 (16 Jun 2012)
+
+  16 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +xine-lib-1.2.2.ebuild,
+  xine-lib-1.2.9999.ebuild:
+  Version bump -- with 1.2.9999 update so it can be copied over as 1.2.x again.
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> xine-lib-1.2.1-r1.ebuild,
+  xine-lib-1.2.9999.ebuild:
+  tweak inherits so repoman can parse them
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org> xine-lib-1.2.1-r1.ebuild,
+  xine-lib-1.2.9999.ebuild:
+  Change order to || ( media-video/ffmpeg $others ) for postproc.
+
+  22 May 2012; Diego E. Pettenò <flameeyes@gentoo.org> xine-lib-1.2.1-r1.ebuild,
+  xine-lib-1.2.9999.ebuild:
+  Allow using older libav as well, for postproc.
+
+  22 May 2012; Diego E. Pettenò <flameeyes@gentoo.org> xine-lib-1.2.1-r1.ebuild,
+  xine-lib-1.2.9999.ebuild:
+  Add an explicit dependency over libpostproc.
+
+  17 May 2012; Samuli Suominen <ssuominen@gentoo.org> -xine-lib-1.2.1.ebuild:
+  old
+
+  17 May 2012; Samuli Suominen <ssuominen@gentoo.org> xine-lib-1.2.1-r1.ebuild:
+  ppc/ppc64 stable wrt #412309
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> xine-lib-1.2.1.ebuild,
+  xine-lib-1.2.1-r1.ebuild, xine-lib-1.2.9999.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> xine-lib-1.2.1-r1.ebuild:
+  Stable for HPPA (bug #412309).
+
+  21 Apr 2012; Alexis Ballier <aballier@gentoo.org> xine-lib-1.2.1-r1.ebuild,
+  +files/xine-lib-1.2.1-freebsd.patch:
+  add patch to fix build on FreeBSD.
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> xine-lib-1.2.1-r1.ebuild:
+  Stable for amd64, wrt bug #412309
+
+  18 Apr 2012; Jeff Horelick <jdhore@gentoo.org> xine-lib-1.2.1-r1.ebuild:
+  marked x86 per bug 412309
+
+  17 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -xine-lib-1.1.19.ebuild,
+  -files/xine-lib-1.1.19-ffmpeg.patch, -files/xine-lib-1.1.19-xvmc.patch,
+  -xine-lib-1.1.20.ebuild, -files/xine-lib-1.1.20-stat.patch,
+  -xine-lib-1.2.0-r1.ebuild, -xine-lib-1.2.0-r2.ebuild,
+  -files/xine-lib-1.2.0-zlib-1.2.5.2.patch:
+  old
+
+  18 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> xine-lib-1.1.19.ebuild:
+  Remove USE="esd" because media-sound/esound isn't in tree anymore.
+
+*xine-lib-1.2.1-r1 (07 Mar 2012)
+
+  07 Mar 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xine-lib-1.2.1-r1.ebuild, +files/xine-lib-1.2.1-fix_dvb_crc_checking.patch:
+  Upstream patch for "Fix DVB CRC checking (was wrong endianness)"
+
+  29 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> xine-lib-1.2.1.ebuild:
+  ppc64/x86 stable wrt #405659
+
+  28 Feb 2012; Alexis Ballier <aballier@gentoo.org> xine-lib-1.2.1.ebuild,
+  +files/xine-lib-1.2.1-ffmpeg-git.patch:
+  add upstream patch to fix build with ffmpeg git
+
+  28 Feb 2012; Brent Baude <ranger@gentoo.org> xine-lib-1.2.1.ebuild:
+  Marking xine-lib-1.2.1 ppc for bug 405659
+
+  28 Feb 2012; Jeroen Roovers <jer@gentoo.org> xine-lib-1.2.1.ebuild:
+  Stable for HPPA (bug #405659).
+
+  25 Feb 2012; Agostino Sarubbo <ago@gentoo.org> xine-lib-1.2.1.ebuild:
+  Stable for amd64, wrt bug #405659
+
+*xine-lib-1.2.1 (05 Feb 2012)
+
+  05 Feb 2012; Samuli Suominen <ssuominen@gentoo.org> +xine-lib-1.2.1.ebuild:
+  Version bump.
+
+*xine-lib-1.2.0-r2 (30 Jan 2012)
+
+  30 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xine-lib-1.2.0-r2.ebuild, +files/xine-lib-1.2.0-zlib-1.2.5.2.patch:
+  Fix compability with sys-libs/zlib >= 1.2.5.2 wrt #401449 by Ulrich Müller
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> xine-lib-1.2.0-r1.ebuild:
+  Rekeyword ~ppc/~ppc64 wrt #397531
+
+  28 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> xine-lib-1.1.20.ebuild:
+  ppc/ppc64 stable wrt #396521
+
+  25 Jan 2012; Jeroen Roovers <jer@gentoo.org> xine-lib-1.1.20.ebuild:
+  Stable for HPPA (bug #396521).
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> xine-lib-1.1.20.ebuild:
+  x86 stable wrt bug #396521
+
+  14 Jan 2012; Christian Ruppert <idl0r@gentoo.org> xine-lib-1.2.9999.ebuild:
+  Add support for custom user patches.
+
+  11 Jan 2012; Jeroen Roovers <jer@gentoo.org> xine-lib-1.2.0-r1.ebuild:
+  Marked ~hppa (bug #397531).
+
+  08 Jan 2012; Markus Meier <maekke@gentoo.org> xine-lib-1.1.20.ebuild:
+  arm stable, bug #396521
+
+  05 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -xine-lib-1.2.0.ebuild:
+  old
+
+*xine-lib-1.2.0-r1 (05 Jan 2012)
+
+  05 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +xine-lib-1.2.0-r1.ebuild, xine-lib-1.2.9999.ebuild:
+  Use external libdvdnav (instead of bundled copy)
+
+  03 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> xine-lib-1.2.0.ebuild,
+  xine-lib-1.2.9999.ebuild:
+  Block media-libs/libbluray-xine because both provide plug-in
+  xineplug_inp_bluray.so
+
+  03 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> xine-lib-1.2.9999.ebuild:
+  Remove USE="nls" from 1.2.9999 because sys-devel/gettext is always required
+  for autopoint.
+
+*xine-lib-1.2.0 (03 Jan 2012)
+
+  03 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +xine-lib-1.2.0.ebuild,
+  xine-lib-1.2.9999.ebuild:
+  Version bump and syncronize ebuild(s) wrt #397515
+
+  31 Dec 2011; Agostino Sarubbo <ago@gentoo.org> xine-lib-1.1.20.ebuild:
+  Stable for AMD64, wrt bug #396521
+
+  09 Dec 2011; Alexis Ballier <aballier@gentoo.org> xine-lib-1.1.20.ebuild,
+  +files/xine-lib-1.1.20-stat.patch:
+  add patch from upstream to fix build on *BSD
+
+*xine-lib-1.1.20 (16 Nov 2011)
+
+  16 Nov 2011; Samuli Suominen <ssuominen@gentoo.org> +xine-lib-1.1.20.ebuild:
+  Version bump.
+
+  30 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> xine-lib-1.2.9999.ebuild:
+  Rename obsolete USE="v4l2" to USE="v4l" wrt #385241
+
+*xine-lib-1.2.9999 (15 Oct 2011)
+
+  15 Oct 2011; Christian Ruppert <idl0r@gentoo.org> +xine-lib-1.2.9999.ebuild,
+  metadata.xml:
+  Add live ebuild for xine-lib-1.2
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> xine-lib-1.1.19.ebuild:
+  Remove useless libtool file libxine.la
+
+  12 Sep 2011; Tim Harder <radhermit@gentoo.org>
+  files/xine-lib-1.1.19-ffmpeg.patch:
+  Fix build with newer versions of libav (bug #376419).
 
   11 May 2011; Alexis Ballier <aballier@gentoo.org> xine-lib-1.1.19.ebuild,
   +files/xine-lib-1.1.19-ffmpeg.patch:
@@ -2045,4 +2219,3 @@
   later versions. Not stable as I haven't been able to test it yet. Removed
   IUSE=pic for conditionally applying the pic fix as it should always be
   applied.
-

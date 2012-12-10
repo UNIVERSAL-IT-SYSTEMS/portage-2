@@ -1,10 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-xineliboutput/vdr-xineliboutput-9999.ebuild,v 1.10 2011/05/03 21:29:57 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-xineliboutput/vdr-xineliboutput-9999.ebuild,v 1.13 2012/05/05 08:27:15 jdhore Exp $
 
+EAPI=3
 GENTOO_VDR_CONDITIONAL=yes
-
-EAPI="3"
 
 inherit vdr-plugin cvs toolchain-funcs eutils
 
@@ -44,7 +43,7 @@ COMMON_DEPEND="
 	)"
 
 DEPEND="${COMMON_DEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-kernel/linux-headers
 	nls? ( sys-devel/gettext )
 	xine? (
@@ -74,6 +73,9 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}/${P}-build-system.patch"
+
+	# Allow user patches to be applied without modifyfing the ebuild
+	epatch_user
 
 	vdr-plugin_src_prepare
 

@@ -1,6 +1,37 @@
 # ChangeLog for dev-scheme/guile-gnome-platform
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-scheme/guile-gnome-platform/ChangeLog,v 1.14 2011/03/29 12:02:20 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-scheme/guile-gnome-platform/ChangeLog,v 1.20 2012/08/27 17:56:22 armin76 Exp $
+
+  27 Aug 2012; Raúl Porcel <armin76@gentoo.org>
+  guile-gnome-platform-2.16.1.ebuild, guile-gnome-platform-2.16.1-r1.ebuild,
+  guile-gnome-platform-2.16.2.ebuild:
+  Drop sparc keywords
+
+*guile-gnome-platform-2.16.2 (26 Jul 2012)
+
+  26 Jul 2012; Justin Lecher <jlec@gentoo.org>
+  +guile-gnome-platform-2.16.2.ebuild:
+  Version Bump, #427468
+
+  21 Jul 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/2.16.1-glib-single-include.patch,
+  guile-gnome-platform-2.16.1-r1.ebuild, guile-gnome-platform-2.16.1.ebuild:
+  Let it compile against glib-2.32
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  guile-gnome-platform-2.16.1.ebuild, guile-gnome-platform-2.16.1-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*guile-gnome-platform-2.16.1-r1 (14 Feb 2012)
+
+  14 Feb 2012; Justin Lecher <jlec@gentoo.org> +files/2.16.1-gdk-color.patch,
+  +guile-gnome-platform-2.16.1-r1.ebuild:
+  Add patch for gdk-color handling, thanks gregory benison; move to EAPI=4 and
+  autotools-utils.eclass, handle static-libs
+
+  12 Feb 2012; Justin Lecher <jlec@gentoo.org>
+  -guile-gnome-platform-2.15.92.ebuild:
+  Drop old
 
   29 Mar 2011; Christoph Mende <angelos@gentoo.org>
   guile-gnome-platform-2.15.92.ebuild, guile-gnome-platform-2.16.1.ebuild:
@@ -67,4 +98,3 @@
   +guile-gnome-platform-2.15.92.ebuild:
   Add Guile Scheme code that wraps the GNOME developer platform. The cairo fix
   is from upstream bzr, but the atk fix hasn't yet made its way upstream.
-

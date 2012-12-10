@@ -1,6 +1,60 @@
 # ChangeLog for dev-perl/MailTools
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/MailTools/ChangeLog,v 1.78 2011/07/29 18:18:27 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/MailTools/ChangeLog,v 1.94 2012/12/08 17:01:22 jer Exp $
+
+  08 Dec 2012; Jeroen Roovers <jer@gentoo.org> MailTools-2.110.0.ebuild:
+  Stable for HPPA (bug #441240).
+
+  06 Dec 2012; Agostino Sarubbo <ago@gentoo.org> MailTools-2.110.0.ebuild:
+  Stable for ppc64, wrt bug #441240
+
+  06 Dec 2012; Agostino Sarubbo <ago@gentoo.org> MailTools-2.110.0.ebuild:
+  Stable for ppc, wrt bug #441240
+
+  06 Dec 2012; <ago@gentoo.org> MailTools-2.110.0.ebuild:
+  Stable for x86, wrt bug #441240
+
+  06 Dec 2012; <ago@gentoo.org> MailTools-2.110.0.ebuild:
+  Stable for amd64, wrt bug #441240
+
+*MailTools-2.110.0 (30 Sep 2012)
+
+  30 Sep 2012; Torsten Veller <tove@gentoo.org> +MailTools-2.110.0.ebuild:
+  Version bump
+
+  02 Sep 2012; Torsten Veller <tove@gentoo.org> -MailTools-2.06.ebuild,
+  -MailTools-2.80.0.ebuild:
+  Cleanup
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  16 Jun 2012; Raúl Porcel <armin76@gentoo.org> MailTools-2.90.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #412979
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> MailTools-2.90.0.ebuild:
+  Marking MailTools-2.90.0 ppc for bug 412979
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> MailTools-2.90.0.ebuild:
+  Stable for HPPA (bug #412979).
+
+  25 Apr 2012; Jeff Horelick <jdhore@gentoo.org> MailTools-2.90.0.ebuild:
+  marked x86 per bug 412979
+
+  23 Apr 2012; Brent Baude <ranger@gentoo.org> MailTools-2.90.0.ebuild:
+  Marking MailTools-2.90.0 ppc64 for bug 412979
+
+  22 Apr 2012; Agostino Sarubbo <ago@gentoo.org> MailTools-2.90.0.ebuild:
+  Stable for amd64, wrt bug #412979
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> MailTools-2.06.ebuild,
+  MailTools-2.80.0.ebuild, MailTools-2.90.0.ebuild:
+  s390/sh stable
+
+*MailTools-2.90.0 (26 Feb 2012)
+
+  26 Feb 2012; Torsten Veller <tove@gentoo.org> +MailTools-2.90.0.ebuild:
+  Version bump
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org> -MailTools-2.07.ebuild:
   Cleanup

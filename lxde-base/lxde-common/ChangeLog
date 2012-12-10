@@ -1,6 +1,71 @@
 # ChangeLog for lxde-base/lxde-common
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxde-common/ChangeLog,v 1.24 2011/06/19 13:53:20 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxde-common/ChangeLog,v 1.38 2012/10/15 18:30:03 hwoarang Exp $
+
+*lxde-common-0.5.5-r3 (15 Oct 2012)
+
+  15 Oct 2012; Markos Chandras <hwoarang@gentoo.org>
+  +lxde-common-0.5.5-r3.ebuild:
+  Add the executable bit to the lxde session file. Bug #437010. Move it directly
+  to stable so everyone can benefit from it
+
+  25 Aug 2012; Markos Chandras <hwoarang@gentoo.org> -lxde-common-0.4.2.ebuild,
+  -lxde-common-0.5.0-r1.ebuild, -lxde-common-0.5.0-r2.ebuild,
+  -lxde-common-0.5.0.ebuild, -lxde-common-0.5.5-r1.ebuild:
+  Remove old LXDE packages
+
+  14 Aug 2012; Johannes Huber <johu@gentoo.org> lxde-common-0.5.5-r2.ebuild:
+  Stable for x86, wrt bug #430494
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> lxde-common-0.5.5-r2.ebuild:
+  Stable for amd64, wrt bug #430494
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  lxde-common-0.5.5-r2.ebuild:
+  Stable arm, bug #430494
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org>
+  lxde-common-0.5.5-r2.ebuild:
+  Stable ppc, bug #430494
+
+  05 Jun 2012; Michael Weber <xmw@gentoo.org> lxde-common-0.5.5-r1.ebuild:
+  ppc stable (bug 385189)
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> lxde-common-0.4.2.ebuild,
+  lxde-common-0.5.0.ebuild, lxde-common-0.5.0-r1.ebuild,
+  lxde-common-0.5.0-r2.ebuild, lxde-common-0.5.5-r1.ebuild,
+  lxde-common-0.5.5-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*lxde-common-0.5.5-r2 (04 Feb 2012)
+
+  04 Feb 2012; Markos Chandras <hwoarang@gentoo.org> +files/lxde,
+  +lxde-common-0.5.5-r2.ebuild:
+  Add X11 session file. This should fix 325689. Thanks to Nikolaj Sjujskij
+  <sterkrig@myopera.com?>
+
+  09 Oct 2011; Markus Meier <maekke@gentoo.org> lxde-common-0.5.5-r1.ebuild:
+  arm stable, bug #385189
+
+  07 Oct 2011; Markos Chandras <hwoarang@gentoo.org>
+  lxde-common-0.5.5-r1.ebuild:
+  Stable on amd64 wrt bug #385189
+
+  05 Oct 2011; Andreas Schuerch <nativemad@gentoo.org>
+  lxde-common-0.5.5-r1.ebuild:
+  x86 stable, bug 385189
+
+*lxde-common-0.5.5-r1 (28 Aug 2011)
+
+  28 Aug 2011; <vostorga@gentoo.org> -lxde-common-0.5.5.ebuild,
+  +lxde-common-0.5.5-r1.ebuild, +files/lxde-common-0.5.5-logout.patch:
+  Fixing missing lxde-logout icon, patch thanks to Markos Chandras
+  <hwoarang@gentoo.org> bug 380043
+
+*lxde-common-0.5.5 (03 Aug 2011)
+
+  03 Aug 2011; Markos Chandras <hwoarang@gentoo.org> +lxde-common-0.5.5.ebuild:
+  Version bump
 
   19 Jun 2011; Markus Meier <maekke@gentoo.org> lxde-common-0.5.0-r2.ebuild:
   x86 stable, bug #370555
@@ -100,4 +165,3 @@
   07 Nov 2008; Ben de Groot <yngwin@gentoo.org> +metadata.xml,
   +lxde-common-0.3.2.1.ebuild:
   Initial import of ebuild from lxde overlay
-

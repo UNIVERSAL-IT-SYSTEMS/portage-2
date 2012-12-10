@@ -1,6 +1,34 @@
 # ChangeLog for mail-filter/spamdyke
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-filter/spamdyke/ChangeLog,v 1.19 2011/04/07 11:41:00 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/mail-filter/spamdyke/ChangeLog,v 1.25 2012/03/06 09:39:22 tupone Exp $
+
+  06 Mar 2012; Tupone Alfredo <tupone@gentoo.org> -spamdyke-4.0.10.ebuild,
+  -spamdyke-4.0.10-r1.ebuild, -spamdyke-4.2.0.ebuild,
+  -files/spamdyke-4.2.0-gcc46.patch, -spamdyke-4.2.1.ebuild,
+  -files/spamdyke-4.2.1-gcc46.patch, metadata.xml:
+  Removing old versions and me as maintainer
+
+  17 Jan 2012; Agostino Sarubbo <ago@gentoo.org> spamdyke-4.3.0.ebuild:
+  Stable for X86 and AMD64, wrt security bug #399157
+
+*spamdyke-4.3.0 (17 Jan 2012)
+
+  17 Jan 2012; Tupone Alfredo <tupone@gentoo.org> +spamdyke-4.3.0.ebuild,
+  +files/spamdyke-4.3.0-gcc46.patch:
+  Version bump to 4.3.0. Bug #399157 by Agostino Sarubbo
+
+  17 Jan 2012; Agostino Sarubbo <ago@gentoo.org> spamdyke-4.2.1.ebuild:
+  Stable for X86, wrt security bug #397941
+
+  15 Jan 2012; Agostino Sarubbo <ago@gentoo.org> spamdyke-4.2.1.ebuild:
+  Stable for AMD64, wrt security bug #397941
+
+*spamdyke-4.2.1 (14 Jan 2012)
+
+  14 Jan 2012; Tupone Alfredo <tupone@gentoo.org> +spamdyke-4.2.1.ebuild,
+  +files/spamdyke-4.2.1-gcc46.patch:
+  Version bump to 4.2.1 Fixes vulnerability described on bug #397941 by Michael
+  Harrison
 
   07 Apr 2011; Alfredo Tupone <tupone@gentoo.org> spamdyke-4.2.0.ebuild,
   +files/spamdyke-4.2.0-gcc46.patch:

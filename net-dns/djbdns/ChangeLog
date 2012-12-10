@@ -1,6 +1,50 @@
 # ChangeLog for net-dns/djbdns
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/djbdns/ChangeLog,v 1.124 2011/04/11 13:08:57 c1pher Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dns/djbdns/ChangeLog,v 1.135 2012/08/26 18:20:23 armin76 Exp $
+
+  26 Aug 2012; Raúl Porcel <armin76@gentoo.org> djbdns-1.05-r26.ebuild:
+  alpha/sparc stable wrt #419193
+
+  04 Aug 2012; Michael Weber <xmw@gentoo.org> metadata.xml:
+  Fix metadata.xml
+
+  03 Aug 2012; Agostino Sarubbo <ago@gentoo.org> djbdns-1.05-r26.ebuild:
+  Stable for amd64, wrt bug #419193
+
+  25 Jul 2012; Jeroen Roovers <jer@gentoo.org> djbdns-1.05-r26.ebuild:
+  Stable for HPPA (bug #419193).
+
+  16 Jul 2012; Anthony G. Basile <blueness@gentoo.org> djbdns-1.05-r26.ebuild:
+  Stable ppc ppc64, bug #419193
+
+  16 Jul 2012; Jeff Horelick <jdhore@gentoo.org> djbdns-1.05-r26.ebuild:
+  marked x86 per bug 419193
+
+  14 Jun 2012; Zac Medico <zmedico@gentoo.org> djbdns-1.05-r23.ebuild,
+  djbdns-1.05-r24.ebuild, djbdns-1.05-r25.ebuild, djbdns-1.05-r26.ebuild:
+  inherit user for enewgroup and enewuser
+
+*djbdns-1.05-r26 (02 Jun 2012)
+
+  02 Jun 2012; Michael Weber <xmw@gentoo.org> +djbdns-1.05-r26.ebuild,
+  files/dnsroots.patch:
+  Revbump to install new root servers list (bug 248247)
+
+  01 Apr 2012; Markos Chandras <hwoarang@gentoo.org> files/dnscache-setup,
+  files/tinydns-setup:
+  functions.sh moved elsewhere. Bug #389667. Thanks to Michael Orlitzky
+  <michael@orlitzky.com>
+
+  24 Mar 2012; Markos Chandras <hwoarang@gentoo.org> djbdns-1.05-r23.ebuild,
+  djbdns-1.05-r24.ebuild, djbdns-1.05-r25.ebuild, files/djbdns-setup:
+  Remove unused djbdns-setup. Thanks to Michael Orlitzky <michael@orlitzky.com>.
+  Bug #408351
+
+*djbdns-1.05-r25 (02 Mar 2012)
+
+  02 Mar 2012; Markos Chandras <hwoarang@gentoo.org> +djbdns-1.05-r25.ebuild,
+  metadata.xml:
+  Add missing nofiles group. Bug #388537. Add proxy-maintainers herd
 
   11 Apr 2011; Dane Smith <c1pher@gentoo.org> djbdns-1.05-r24.ebuild,
   +files/makefile-parallel.patch:

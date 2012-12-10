@@ -1,6 +1,36 @@
 # ChangeLog for dev-haskell/parsec
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/parsec/ChangeLog,v 1.20 2011/06/05 13:37:30 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/parsec/ChangeLog,v 1.28 2012/12/08 15:56:19 ago Exp $
+
+  08 Dec 2012; Agostino Sarubbo <ago@gentoo.org> parsec-3.1.3.ebuild:
+  Stable for ppc64, wrt bug #441158
+
+  07 Dec 2012; Agostino Sarubbo <ago@gentoo.org> parsec-3.1.3.ebuild:
+  Stable for ppc, wrt bug #441158
+
+  07 Dec 2012; <ago@gentoo.org> parsec-3.1.3.ebuild:
+  Stable for x86, wrt bug #441158
+
+  07 Dec 2012; <ago@gentoo.org> parsec-3.1.3.ebuild:
+  Stable for amd64, wrt bug #441158
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> parsec-2.1.0.1.ebuild,
+  parsec-3.1.2-r1.ebuild, parsec-3.1.3.ebuild:
+  move dev-haskell/parsec/parsec-2.1.0.1.ebuild ebuild to mirror://hackage
+
+*parsec-3.1.3 (16 Jun 2012)
+
+  16 Jun 2012; Mark Wright <gienah@gentoo.org> +parsec-3.1.3.ebuild:
+  Bump parsec to 3.1.3
+
+  20 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> parsec-3.1.2-r1.ebuild:
+  ~ia64 rekeyworded. restored ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos
+  ~x86-macos ~x86-solaris keywords.
+
+*parsec-3.1.2-r1 (10 Mar 2012)
+
+  10 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> +parsec-3.1.2-r1.ebuild:
+  Version bump.
 
   05 Jun 2011; Sergei Trofimovich <slyfox@gentoo.org> parsec-2.1.0.1.ebuild:
   stable on alpha/ia64
@@ -76,4 +106,3 @@
   20 Dec 2007; Duncan Coutts <dcoutts@gentoo.org> +metadata.xml,
   +parsec-2.1.0.0.ebuild:
   Initial version. Was previously a core library, now independent of ghc.
-

@@ -1,6 +1,20 @@
 # ChangeLog for media-fonts/droid
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-fonts/droid/ChangeLog,v 1.20 2011/01/27 16:49:51 spatz Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-fonts/droid/ChangeLog,v 1.23 2012/10/07 10:28:30 pacho Exp $
+
+  07 Oct 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, #274113
+
+  20 Aug 2012; Tomáš Chvátal <scarabeus@gentoo.org> -droid-113-r1.ebuild,
+  droid-113-r2.ebuild:
+  Stabilise on all archs, remove older. Wrt bug#429112.
+
+*droid-113-r2 (27 May 2012)
+
+  27 May 2012; Ben de Groot <yngwin@gentoo.org> +droid-113-r2.ebuild,
+  +files/59-google-droid-sans-mono.conf, +files/59-google-droid-sans.conf,
+  +files/59-google-droid-serif.conf, -droid-112_p1.ebuild:
+  Add fontconfig files as suggested in bug #416417. Remove old.
 
   27 Jan 2011; Dror Levin <spatz@gentoo.org> -droid-112_p1-r1.ebuild,
   -droid-113.ebuild, droid-113-r1.ebuild:
@@ -79,4 +93,3 @@
   24 Jul 2008; Ben de Groot <yngwin@gentoo.org> +metadata.xml,
   +droid-1.ebuild:
   Initial import. Ebuild by me.
-

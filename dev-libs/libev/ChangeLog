@@ -1,6 +1,19 @@
 # ChangeLog for dev-libs/libev
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libev/ChangeLog,v 1.37 2011/07/25 15:42:30 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libev/ChangeLog,v 1.40 2012/05/12 19:17:33 aballier Exp $
+
+  12 May 2012; Alexis Ballier <aballier@gentoo.org> libev-4.11.ebuild:
+  keyword ~amd64-fbsd
+
+*libev-4.11 (16 Apr 2012)
+
+  16 Apr 2012; MATSUU Takuto <matsuu@gentoo.org> -libev-3.80-r1.ebuild,
+  -libev-3.90-r2.ebuild, -libev-4.03.ebuild, +libev-4.11.ebuild,
+  +files/libev-pc.patch:
+  Version bumped. Added libev.pc, bug #411847. Removed old versions.
+
+  29 Aug 2011; Jeroen Roovers <jer@gentoo.org> libev-4.04.ebuild:
+  Stable for HPPA (bug #373957).
 
   25 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> libev-4.04.ebuild:
   ppc/ppc64 stable wrt #373957

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/camorama/camorama-0.19-r1.ebuild,v 1.3 2011/03/23 08:24:23 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/camorama/camorama-0.19-r1.ebuild,v 1.5 2012/05/05 08:58:53 jdhore Exp $
 
 EAPI=1
 
@@ -21,10 +21,8 @@ RDEPEND=">=x11-libs/gtk+-2.10:2
 	>=gnome-base/libglade-2"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-util/intltool"
-
-SCROLLKEEPER_UPDATE="0"
 
 pkg_setup() {
 	G2CONF="${G2CONF} --disable-schemas-install"

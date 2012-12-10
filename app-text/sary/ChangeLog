@@ -1,6 +1,37 @@
 # ChangeLog for app-text/sary
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/sary/ChangeLog,v 1.30 2011/04/12 22:44:13 abcd Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-text/sary/ChangeLog,v 1.39 2012/05/04 03:33:16 jdhore Exp $
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> sary-1.2.0.ebuild,
+  sary-1.2.0-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  19 Mar 2012; Raúl Porcel <armin76@gentoo.org> sary-1.2.0-r1.ebuild:
+  alpha/ia64/sparc stable wrt #399959
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> sary-1.2.0-r1.ebuild:
+  x86 stable wrt bug #399959
+
+  07 Mar 2012; Naohiro Aota <naota@gentoo.org> sary-1.2.0-r1.ebuild:
+  Add ~x86-fbsd
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> sary-1.2.0-r1.ebuild:
+  Marking sary-1.2.0-r1 ppc64 for bug 399959
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> sary-1.2.0-r1.ebuild:
+  Marking sary-1.2.0-r1 ppc for bug 399959
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> sary-1.2.0-r1.ebuild:
+  Stable for HPPA (bug #399959).
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> sary-1.2.0-r1.ebuild:
+  Stable for amd64, wrt bug #399959
+
+*sary-1.2.0-r1 (02 Sep 2011)
+
+  02 Sep 2011; MATSUU Takuto <matsuu@gentoo.org> -sary-1.1.0.ebuild,
+  +sary-1.2.0-r1.ebuild:
+  Fixed dodoc, bug #375619. Added static-libs USE flag. Removed old version.
 
   12 Apr 2011; Jonathan Callen <abcd@gentoo.org> sary-1.2.0.ebuild:
   Add prefix support, bump EAPI to 3, add prefix keywords

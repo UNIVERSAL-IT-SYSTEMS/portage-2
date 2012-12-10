@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libid3tag/libid3tag-0.15.1b-r2.ebuild,v 1.8 2011/01/26 16:14:05 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libid3tag/libid3tag-0.15.1b-r2.ebuild,v 1.10 2012/05/17 14:50:26 aballier Exp $
 
 EAPI=2
-inherit eutils multilib
+inherit eutils multilib libtool
 
 DESCRIPTION="The MAD id3tag library"
 HOMEPAGE="http://www.underbit.com/products/mad/"
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/mad/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~amd64-fbsd ~x86-fbsd"
 IUSE="debug static-libs"
 
 RDEPEND=">=sys-libs/zlib-1.1.3"
@@ -21,6 +21,7 @@ DEPEND="${RDEPEND}
 src_prepare() {
 	epunt_cxx #74489
 	epatch "${FILESDIR}/${PV}"/*.patch
+	elibtoolize #sane .so versionning on fbsd and .so -> .so.version symlink
 }
 
 src_configure() {

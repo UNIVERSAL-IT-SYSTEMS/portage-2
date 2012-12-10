@@ -1,6 +1,21 @@
 # ChangeLog for app-dicts/myspell-es
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-es/ChangeLog,v 1.18 2010/09/27 23:31:19 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-dicts/myspell-es/ChangeLog,v 1.21 2012/06/13 12:22:47 scarabeus Exp $
+
+*myspell-es-0.6 (13 Jun 2012)
+
+  13 Jun 2012; Tomáš Chvátal <scarabeus@gentoo.org> +myspell-es-0.6.ebuild,
+  -myspell-es-20060316.ebuild, -myspell-es-20120418.ebuild:
+  Use upstream packages and versioning for the 20120418 version. Prune older.
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> myspell-es-20060316.ebuild,
+  myspell-es-20120418.ebuild:
+  keyword ~amd64-fbsd
+
+*myspell-es-20120418 (19 Apr 2012)
+
+  19 Apr 2012; Tomáš Chvátal <scarabeus@gentoo.org> +myspell-es-20120418.ebuild:
+  Version bump to latest version. All kudos to Diego Amores for writting it.
 
   27 Sep 2010; Mart Raudsepp <leio@gentoo.org> myspell-es-20060316.ebuild:
   Add ~mips

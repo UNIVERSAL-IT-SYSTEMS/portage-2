@@ -1,6 +1,59 @@
 # ChangeLog for media-gfx/exif
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/exif/ChangeLog,v 1.43 2011/04/20 01:20:18 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/exif/ChangeLog,v 1.59 2012/09/20 15:03:23 ssuominen Exp $
+
+  20 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> -exif-0.6.20.ebuild:
+  old
+
+  20 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> exif-0.6.21.ebuild:
+  ppc64 stable wrt #426366
+
+  23 Aug 2012; Michael Weber <xmw@gentoo.org> exif-0.6.21.ebuild:
+  ppc stable (bug 426366).
+
+  17 Jul 2012; Jeroen Roovers <jer@gentoo.org> exif-0.6.21.ebuild:
+  Stable for HPPA (bug #426366).
+
+  17 Jul 2012; Jeroen Roovers <jer@gentoo.org> exif-0.6.21.ebuild:
+  Stable for HPPA (bug #426366).
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> exif-0.6.21.ebuild:
+  alpha/ia64/sparc stable wrt #423175
+
+  14 Jul 2012; Jeff Horelick <jdhore@gentoo.org> exif-0.6.21.ebuild:
+  marked x86 per bug 426366
+
+  14 Jul 2012; Agostino Sarubbo <ago@gentoo.org> exif-0.6.21.ebuild:
+  Stable for amd64, wrt bug #426366
+
+*exif-0.6.21 (13 Jul 2012)
+
+  13 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +exif-0.6.21.ebuild:
+  Version bump wrt #426366 by Dan Fandrich
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> exif-0.6.20.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> -exif-0.6.19.ebuild:
+  old
+
+  02 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> exif-0.6.20.ebuild:
+  ppc64 stable wrt #390249
+
+  06 Jan 2012; Brent Baude <ranger@gentoo.org> exif-0.6.20.ebuild:
+  Marking exif-0.6.20 ppc for bug 390249
+
+  17 Dec 2011; Raúl Porcel <armin76@gentoo.org> exif-0.6.20.ebuild:
+  alpha/ia64/sparc stable wrt #390249
+
+  11 Dec 2011; Markus Meier <maekke@gentoo.org> exif-0.6.20.ebuild:
+  x86 stable, bug #390249
+
+  16 Nov 2011; Markos Chandras <hwoarang@gentoo.org> exif-0.6.20.ebuild:
+  Stable on amd64 wrt bug #390249
+
+  16 Nov 2011; Jeroen Roovers <jer@gentoo.org> exif-0.6.20.ebuild:
+  Stable for HPPA (bug #390249).
 
 *exif-0.6.20 (20 Apr 2011)
 
@@ -141,4 +194,3 @@
 
   01 Apr 2005; <dams@gentoo.org> +metadata.xml, +exif-0.6.9.ebuild:
   first ebuild, from bug 13463
-

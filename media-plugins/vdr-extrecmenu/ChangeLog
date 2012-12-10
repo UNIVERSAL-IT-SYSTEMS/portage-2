@@ -1,6 +1,57 @@
 # ChangeLog for media-plugins/vdr-extrecmenu
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-extrecmenu/ChangeLog,v 1.29 2011/04/23 21:38:52 hd_brummy Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/vdr-extrecmenu/ChangeLog,v 1.40 2012/12/08 09:04:52 hd_brummy Exp $
+
+  08 Dec 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-extrecmenu-1.2.2-r1.ebuild:
+  removed block on >=vdr-1.7.32
+
+  03 Dec 2012; Christian Ruppert <idl0r@gentoo.org>
+  vdr-extrecmenu-1.2.1.ebuild, vdr-extrecmenu-1.2.2.ebuild,
+  vdr-extrecmenu-1.2.2-r1.ebuild:
+  Depend on vdr < 1.7.32 as a function used by vdr-extrecmenu has been dropped.
+
+*vdr-extrecmenu-1.2.2-r1 (20 Nov 2012)
+
+  20 Nov 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +vdr-extrecmenu-1.2.2-r1.ebuild:
+  changes in cutter part for >=vdr-1.7.32
+
+  05 Jun 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-extrecmenu-1.2.1.ebuild, vdr-extrecmenu-1.2.2.ebuild:
+  compilefix for >=vdr-1.7.28
+
+  01 Jun 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-extrecmenu-1.2.2.ebuild:
+  stable amd64, x86; bug 419113
+
+*vdr-extrecmenu-1.2.2 (29 Apr 2012)
+
+  29 Apr 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +vdr-extrecmenu-1.2.2.ebuild:
+  bump; migrated to vdr-plugin-2.eclass
+
+  07 Apr 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  vdr-extrecmenu-1.2.1.ebuild, +files/vdr-1.7.27.diff:
+  eapi=4; compilefix >=vdr-1.7.27
+
+  11 Feb 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  +files/dvdarchive-2.3-beta-configfile.patch:
+  readded, missing, patch
+
+  07 Feb 2012; Joerg Bornkessel <hd_brummy@gentoo.org>
+  -vdr-extrecmenu-1.2.ebuild, -files/vdr-extrecmenu-1.2-gcc44.patch,
+  -files/vdr-extrecmenu-1.2_pre1-gcc43.patch,
+  -files/vdr-extrecmenu-1.2_pre1-gcc44.patch, vdr-extrecmenu-1.2.1.ebuild,
+  -files/dvdarchive-2.3-beta-configfile.patch:
+  cleanup, minor fixes
+
+  21 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  vdr-extrecmenu-1.2.1.ebuild:
+  x86 stable wrt bug #393983
+
+  16 Dec 2011; Agostino Sarubbo <ago@gentoo.org> vdr-extrecmenu-1.2.1.ebuild:
+  Stable for AMD64, wrt bug #393983
 
   23 Apr 2011; Joerg Bornkessel <hd_brummy@gentoo.org>
   vdr-extrecmenu-1.2.1.ebuild:

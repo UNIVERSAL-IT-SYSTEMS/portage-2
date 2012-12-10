@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/pure-ftpd/pure-ftpd-1.0.29-r1.ebuild,v 1.4 2011/04/22 12:04:38 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/pure-ftpd/pure-ftpd-1.0.29-r1.ebuild,v 1.7 2012/05/13 10:52:22 swift Exp $
 
 EAPI=2
 inherit eutils confutils flag-o-matic
@@ -17,17 +17,17 @@ SLOT="0"
 IUSE="anondel anonperm anonren anonres caps charconv ldap mysql noiplog pam paranoidmsg postgres selinux ssl vchroot xinetd"
 
 DEPEND="caps? ( sys-libs/libcap )
-		charconv? ( virtual/libiconv )
-		ldap? ( >=net-nds/openldap-2.0.25 )
-		mysql? ( virtual/mysql )
-		pam? ( virtual/pam )
-		postgres? ( dev-db/postgresql-base )
-		ssl? ( >=dev-libs/openssl-0.9.6g )
-		xinetd? ( virtual/inetd )"
+	charconv? ( virtual/libiconv )
+	ldap? ( >=net-nds/openldap-2.0.25 )
+	mysql? ( virtual/mysql )
+	pam? ( virtual/pam )
+	postgres? ( dev-db/postgresql-base )
+	ssl? ( >=dev-libs/openssl-0.9.6g )
+	xinetd? ( virtual/inetd )"
 
 RDEPEND="${DEPEND}
-		net-ftp/ftpbase
-		selinux? ( sec-policy/selinux-ftpd )"
+	net-ftp/ftpbase
+	selinux? ( sec-policy/selinux-ftp )"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-1.0.28-pam.patch
@@ -61,6 +61,9 @@ src_configure() {
 	use anonperm && append-cppflags -DANON_CAN_CHANGE_PERMS
 	use anonren && append-cppflags -DANON_CAN_RENAME
 	use anonres && append-cppflags -DANON_CAN_RESUME
+
+	# Do not auto-use SSP -- let the user select this.
+	export ax_cv_check_cflags___fstack_protector_all=no
 
 	econf \
 		--with-altlog \

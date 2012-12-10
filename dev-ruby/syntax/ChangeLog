@@ -1,6 +1,43 @@
 # ChangeLog for dev-ruby/syntax
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/syntax/ChangeLog,v 1.31 2011/07/22 13:03:09 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/syntax/ChangeLog,v 1.43 2012/11/06 17:08:10 jer Exp $
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> syntax-1.0.0-r3.ebuild:
+  Stable for HPPA (bug #426668).
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> syntax-1.0.0-r2.ebuild,
+  syntax-1.0.0-r3.ebuild:
+  alpha stable
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> syntax-1.0.0-r3.ebuild:
+  ia64/sparc stable wrt #426668
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org> syntax-1.0.0-r3.ebuild:
+  Stable ppc64, bug #426668
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org> syntax-1.0.0-r3.ebuild:
+  Stable ppc, bug #426668
+
+  22 Jul 2012; Jeff Horelick <jdhore@gentoo.org> syntax-1.0.0-r3.ebuild:
+  marked x86 per bug 426668
+
+  15 Jul 2012; Agostino Sarubbo <ago@gentoo.org> syntax-1.0.0-r3.ebuild:
+  Stable for amd64, wrt bug #426668
+
+  31 Dec 2011; Fabian Groffen <grobian@gentoo.org> syntax-1.0.0-r3.ebuild:
+  Add Prefix keywords, bug #396547
+
+  06 Dec 2011; Hans de Graaff <graaff@gentoo.org> -syntax-1.0.0.ebuild:
+  Remove old version.
+
+  05 Dec 2011; Naohiro Aota <naota@gentoo.org> syntax-1.0.0-r3.ebuild:
+  Add ~x86-fbsd.
+
+  14 Sep 2011; Jeroen Roovers <jer@gentoo.org> syntax-1.0.0-r2.ebuild:
+  Stable for HPPA (bug #369573).
 
   22 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> syntax-1.0.0-r2.ebuild:
   ppc64 stable wrt #356269
@@ -111,4 +148,3 @@
   30 Mar 2005; Caleb Tennis <caleb@gentoo.org> +metadata.xml,
   +syntax-0.7.0.ebuild:
   Initial import
-

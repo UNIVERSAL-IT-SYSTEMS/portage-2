@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/epiphany/epiphany-2.30.6-r1.ebuild,v 1.6 2011/04/30 17:38:32 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/epiphany/epiphany-2.30.6-r1.ebuild,v 1.8 2012/05/03 06:01:03 jdhore Exp $
 
 EAPI="3"
 GCONF_DEBUG="yes"
@@ -41,7 +41,7 @@ RDEPEND=">=dev-libs/glib-2.19.7:2
 	nss? ( dev-libs/nss )"
 DEPEND="${RDEPEND}
 	app-text/scrollkeeper
-	>=dev-util/pkgconfig-0.9
+	virtual/pkgconfig
 	>=dev-util/intltool-0.40
 	>=app-text/gnome-doc-utils-0.3.2
 	doc? ( >=dev-util/gtk-doc-1 )
@@ -63,7 +63,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	gnome2_src_prepare
 	epatch "${FILESDIR}"/${P}-libnotify-0.7.patch
 
 	# introspection: Fix build by telling g-ir-scanner what the prefix is
@@ -80,6 +79,7 @@ src_prepare() {
 
 	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
+	gnome2_src_prepare
 }
 
 src_compile() {

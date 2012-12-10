@@ -1,6 +1,122 @@
 # ChangeLog for app-misc/task
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/task/ChangeLog,v 1.16 2011/06/14 19:29:57 maekke Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-misc/task/ChangeLog,v 1.43 2012/10/04 22:34:09 radhermit Exp $
+
+  04 Oct 2012; Tim Harder <radhermit@gentoo.org> -task-2.0.0-r1.ebuild,
+  -task-2.1.1.ebuild:
+  Remove old.
+
+  04 Oct 2012; Tim Harder <radhermit@gentoo.org> task-2.1.2.ebuild:
+  x86 stable, bug #435556
+
+  24 Sep 2012; Agostino Sarubbo <ago@gentoo.org> task-2.1.2.ebuild:
+  Stable for AMD64, wrt bug #435556
+
+*task-2.1.2 (19 Sep 2012)
+
+  19 Sep 2012; Tim Harder <radhermit@gentoo.org> +task-2.1.2.ebuild:
+  Version bump (bug #435510).
+
+  07 Sep 2012; Johannes Huber <johu@gentoo.org> task-2.1.1.ebuild:
+  Stable for x86, wrt bug #433886
+
+  04 Sep 2012; Agostino Sarubbo <ago@gentoo.org> task-2.1.1.ebuild:
+  Stable for AMD64, wrt bug #433886
+
+  23 Aug 2012; Tim Harder <radhermit@gentoo.org> task-2.0.0-r1.ebuild,
+  task-2.1.1.ebuild:
+  Alter description for bug #432428.
+
+  23 Aug 2012; Tim Harder <radhermit@gentoo.org>
+  -files/0001-Merge-Uri-support.patch, -task-1.9.4-r1.ebuild,
+  -files/task-1.9.4-rcdir.patch, -files/task-1.9.4-remove-ncurses.patch:
+  Remove old.
+
+  08 Aug 2012; Andreas Schuerch <nativemad@gentoo.org> task-2.0.0-r1.ebuild:
+  x86 stable, see bug 418615
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> task-2.0.0-r1.ebuild:
+  Stable on amd64 wrt bug #418615
+
+*task-2.1.1 (01 Aug 2012)
+
+  01 Aug 2012; Tim Harder <radhermit@gentoo.org> +task-2.1.1.ebuild:
+  Version bump.
+
+*task-2.0.0-r1 (18 Mar 2012)
+
+  18 Mar 2012; Tim Harder <radhermit@gentoo.org> -task-2.0.0.ebuild,
+  +task-2.0.0-r1.ebuild:
+  Revbump and remove old. Conditionally install lua extensions.
+
+  18 Mar 2012; Tim Harder <radhermit@gentoo.org> -task-2.0.0_beta5.ebuild,
+  -task-2.0.0_rc1.ebuild:
+  Remove old.
+
+*task-2.0.0 (18 Mar 2012)
+
+  18 Mar 2012; Tim Harder <radhermit@gentoo.org> +task-2.0.0.ebuild:
+  Version bump.
+
+  06 Mar 2012; Tim Harder <radhermit@gentoo.org> -task-2.0.0_beta4.ebuild:
+  Remove old.
+
+*task-2.0.0_rc1 (06 Mar 2012)
+
+  06 Mar 2012; Tim Harder <radhermit@gentoo.org> +task-2.0.0_rc1.ebuild:
+  Version bump.
+
+*task-2.0.0_beta5 (23 Feb 2012)
+
+  23 Feb 2012; Tim Harder <radhermit@gentoo.org> +task-2.0.0_beta5.ebuild:
+  Version bump.
+
+  17 Oct 2011; Tim Harder <radhermit@gentoo.org> -task-1.9.4.ebuild,
+  -task-2.0.0_beta3.ebuild, -files/task-2.0.0_beta1-rcdir.patch:
+  Remove old.
+
+*task-2.0.0_beta4 (17 Oct 2011)
+
+  17 Oct 2011; Tim Harder <radhermit@gentoo.org> +task-2.0.0_beta4.ebuild,
+  +files/task-2.0.0_beta4-rcdir.patch:
+  Version bump.
+
+  04 Oct 2011; Tim Harder <radhermit@gentoo.org> -task-2.0.0_beta1.ebuild,
+  -task-2.0.0_beta2.ebuild:
+  Remove old.
+
+*task-2.0.0_beta3 (04 Oct 2011)
+
+  04 Oct 2011; Tim Harder <radhermit@gentoo.org> +task-2.0.0_beta3.ebuild:
+  Version bump.
+
+*task-2.0.0_beta2 (22 Sep 2011)
+
+  22 Sep 2011; Tim Harder <radhermit@gentoo.org> +task-2.0.0_beta2.ebuild:
+  Version bump.
+
+*task-2.0.0_beta1 (19 Sep 2011)
+
+  19 Sep 2011; Tim Harder <radhermit@gentoo.org> +task-2.0.0_beta1.ebuild,
+  +files/task-2.0.0_beta1-rcdir.patch:
+  Version bump.
+
+  15 Sep 2011; Andreas Schuerch <nativemad@gentoo.org> task-1.9.4-r1.ebuild:
+  x86 stable, thanks JD. Bug 382513
+
+  13 Sep 2011; Markos Chandras <hwoarang@gentoo.org> task-1.9.4-r1.ebuild:
+  Stable on amd64 wrt bug #382513
+
+  10 Sep 2011; Tim Harder <radhermit@gentoo.org> task-1.9.4-r1.ebuild:
+  Migrate to the bash-completion-r1 eclass.
+
+*task-1.9.4-r1 (03 Aug 2011)
+
+  03 Aug 2011; Tim Harder <radhermit@gentoo.org>
+  +files/0001-Merge-Uri-support.patch, -files/task-1.9.2-configure.patch,
+  -task-1.9.3-r1.ebuild, +task-1.9.4-r1.ebuild:
+  Revision bump and remove old. Apply upstream patch to fix ssh syncing issue
+  (bug #377451).
 
   14 Jun 2011; Markus Meier <maekke@gentoo.org> task-1.9.4.ebuild:
   x86 stable, bug #370431
@@ -76,4 +192,3 @@
   03 Oct 2010; Tim Harder <radhermit@gentoo.org> +task-1.9.2.ebuild,
   +metadata.xml:
   New package for bug #317867.
-

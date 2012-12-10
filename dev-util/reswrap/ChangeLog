@@ -1,6 +1,33 @@
 # ChangeLog for dev-util/reswrap
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/reswrap/ChangeLog,v 1.12 2009/09/23 17:48:09 patrick Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/reswrap/ChangeLog,v 1.20 2012/05/05 17:42:54 armin76 Exp $
+
+  05 May 2012; Raúl Porcel <armin76@gentoo.org> reswrap-4.0.0.ebuild:
+  alpha/ia64/sparc stable wrt #400351
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> reswrap-4.0.0.ebuild:
+  x86 stable wrt bug #400351
+
+  08 Mar 2012; Naohiro Aota <naota@gentoo.org> reswrap-4.0.0.ebuild:
+  Add ~x86-fbsd.
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> reswrap-4.0.0.ebuild:
+  Marking reswrap-4.0.0 ppc64 for bug 400351
+
+  27 Feb 2012; Jeroen Roovers <jer@gentoo.org> reswrap-4.0.0.ebuild:
+  Stable for HPPA (bug #400351).
+
+  24 Feb 2012; Brent Baude <ranger@gentoo.org> reswrap-4.0.0.ebuild:
+  Marking reswrap-4.0.0 ppc for bug 400351
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> reswrap-4.0.0.ebuild:
+  Stable for amd64, wrt bug #400351
+
+*reswrap-4.0.0 (25 Aug 2011)
+
+  25 Aug 2011; Matti Bickel <mabi@gentoo.org> -reswrap-3.1.0.ebuild,
+  +reswrap-4.0.0.ebuild:
+  version bump for fox-1.6, remove dead version (re bug #334525)
 
   23 Sep 2009; Patrick Lauer <patrick@gentoo.org> reswrap-3.1.0.ebuild,
   reswrap-3.2.0.ebuild:

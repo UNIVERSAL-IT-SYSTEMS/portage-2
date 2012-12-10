@@ -1,6 +1,15 @@
 # ChangeLog for games-arcade/methane
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-arcade/methane/ChangeLog,v 1.18 2011/04/21 07:30:41 tupone Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-arcade/methane/ChangeLog,v 1.20 2012/11/29 08:24:20 tupone Exp $
+
+*methane-1.5.1 (29 Nov 2012)
+
+  29 Nov 2012; Tupone Alfredo <tupone@gentoo.org> +methane-1.5.1.ebuild,
+  +files/methane-1.5.1-gentoo.patch:
+  Version bump to 1.5.1 Bug #349548 by Hans Meier
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> methane-1.4.8.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   21 Apr 2011; Tupone Alfredo <tupone@gentoo.org> methane-1.4.8.ebuild,
   +files/methane-1.4.8-gcc46.patch:

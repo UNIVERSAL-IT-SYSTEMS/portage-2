@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/luakit/luakit-2010.12.25_p2.ebuild,v 1.2 2011/03/21 23:26:04 nirbheek Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/luakit/luakit-2010.12.25_p2.ebuild,v 1.4 2012/12/04 11:33:43 wired Exp $
 
 EAPI=3
 
@@ -21,7 +21,7 @@ else
 fi
 
 DESCRIPTION="fast, small, webkit-gtk based micro-browser extensible by lua"
-HOMEPAGE="http://www.luakit.org"
+HOMEPAGE="http://mason-larobina.github.com/luakit/"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -35,7 +35,7 @@ COMMON_DEPEND="
 "
 
 DEPEND="
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-apps/help2man
 	${COMMON_DEPEND}
 "

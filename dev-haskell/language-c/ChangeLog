@@ -1,6 +1,51 @@
 # ChangeLog for dev-haskell/language-c
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/language-c/ChangeLog,v 1.9 2011/02/25 12:47:56 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/language-c/ChangeLog,v 1.19 2012/09/12 14:48:38 qnikst Exp $
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org>
+  language-c-0.3.2.1-r1.ebuild, language-c-0.3.2.1.ebuild,
+  language-c-0.4.2.ebuild:
+  move dev-haskell/language-c/language-c-0.3.2.1-r1.ebuild ebuild to
+  mirror://hackage
+
+*language-c-0.4.2 (09 Apr 2012)
+
+  09 Apr 2012; Sergei Trofimovich <slyfox@gentoo.org> +language-c-0.4.2.ebuild,
+  -language-c-0.3.1.1.ebuild:
+  Version bump. Remove old.
+
+  17 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> language-c-0.3.2.1.ebuild:
+  alpha/ia64/sparc stable (bug #399985).
+
+*language-c-0.3.2.1-r1 (16 Mar 2012)
+
+  16 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org>
+  +language-c-0.3.2.1-r1.ebuild:
+  Added missing dev-haskell/syb depend (really needed only for ghc-7.0+). Found
+  by Ian Delaney at bug #405155.
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> language-c-0.3.2.1.ebuild:
+  Marking language-c-0.3.2.1 ppc64 for bug 399985
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  language-c-0.3.2.1.ebuild:
+  x86 stable wrt bug #399985
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> language-c-0.3.2.1.ebuild:
+  Marking language-c-0.3.2.1 ppc for bug 399985
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> language-c-0.3.2.1.ebuild:
+  Stable for amd64, wrt bug #399985
+
+  20 Jan 2012; Sergei Trofimovich <slyfox@gentoo.org> language-c-0.3.1.1.ebuild:
+  Set upper ghc's bound. Reported by cnervi at https://github.com/gentoo-haskell
+  /gentoo-haskell/issues/76
+
+*language-c-0.3.2.1 (02 Aug 2011)
+
+  02 Aug 2011; Sergei Trofimovich <slyfox@gentoo.org>
+  +language-c-0.3.2.1.ebuild:
+  Version bump.
 
   25 Feb 2011; Kacper Kowalik <xarthisius@gentoo.org>
   language-c-0.3.1.1.ebuild:
@@ -38,4 +83,3 @@
   27 Jul 2009; Lennart Kolmodin <kolmodin@gentoo.org> +metadata.xml,
   +language-c-0.3.1.1.ebuild:
   Initial import.
-

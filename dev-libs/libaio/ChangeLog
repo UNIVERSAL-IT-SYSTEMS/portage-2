@@ -1,6 +1,68 @@
 # ChangeLog for dev-libs/libaio
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libaio/ChangeLog,v 1.53 2010/11/09 08:19:20 vapier Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libaio/ChangeLog,v 1.70 2012/11/14 17:19:51 ago Exp $
+
+  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org> libaio-0.3.109-r3.ebuild:
+  Stable for x86, wrt bug #397571
+
+  14 Nov 2012; Agostino Sarubbo <ago@gentoo.org> libaio-0.3.109-r3.ebuild:
+  Stable for amd64, wrt bug #397571
+
+  19 Sep 2012; Jeroen Roovers <jer@gentoo.org> libaio-0.3.109-r2.ebuild:
+  Stable for HPPA (bug #379991).
+
+  02 Apr 2012; Pacho Ramos <pacho@gentoo.org> libaio-0.3.109-r3.ebuild:
+  -Werror must not be used in final releases, bug #410041 by Markus Oehme.
+
+  30 Mar 2012; Michael Haubenwallner <haubi@gentoo.org>
+  libaio-0.3.109-r3.ebuild:
+  Install non-binary files even for the non-default ABI, bug#407687
+
+  30 Mar 2012; Michael Haubenwallner <haubi@gentoo.org>
+  libaio-0.3.109-r3.ebuild:
+  Drop unused manpages in src_prepare already, to not break multilib in
+  src_install, bug#407687.
+
+  17 Mar 2012; Pacho Ramos <pacho@gentoo.org> -libaio-0.3.109-r1.ebuild,
+  libaio-0.3.109-r3.ebuild:
+  Don't build static libs, bug #408265 by Kevin Pyle; drop old.
+
+  12 Mar 2012; Michael Haubenwallner <haubi@gentoo.org>
+  libaio-0.3.109-r3.ebuild:
+  Fix for cross-compile support of multilib-portage, bug#407687
+
+*libaio-0.3.109-r3 (09 Mar 2012)
+
+  09 Mar 2012; Michael Haubenwallner <haubi@gentoo.org>
+  +libaio-0.3.109-r3.ebuild, +files/libaio-0.3.109-testcase-8.patch:
+  Add multilib support (for oracle-instantclient-11 multilib).
+  Fix tests, run those that do not break with sandbox, drop test restriction.
+
+  07 Dec 2011; Mike Frysinger <vapier@gentoo.org> libaio-0.3.109-r2.ebuild,
+  +files/libaio-0.3.109-x32.patch:
+  Add fix for x32 ABIs.
+
+  03 Oct 2011; Joseph Jezak <josejx@gentoo.org> libaio-0.3.109-r2.ebuild:
+  Marked ppc/ppc64 stable for bug #379991.
+
+  03 Sep 2011; Raúl Porcel <armin76@gentoo.org> libaio-0.3.109-r2.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #379991
+
+  28 Aug 2011; Markus Meier <maekke@gentoo.org> libaio-0.3.109-r2.ebuild:
+  arm stable, bug #379991
+
+  26 Aug 2011; Jeremy Olexa <darkside@gentoo.org> libaio-0.3.109-r2.ebuild:
+  Fix for Gentoo Prefix, add ~amd64-linux. bug 380725
+
+  24 Aug 2011; Markus Meier <maekke@gentoo.org> libaio-0.3.109-r2.ebuild:
+  x86 stable, bug #379991
+
+  22 Aug 2011; Tony Vroon <chainsaw@gentoo.org> libaio-0.3.109-r2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo & Ian
+  "idella4" Delaney in bug #379991.
+
+  20 Aug 2011; Mike Frysinger <vapier@gentoo.org> libaio-0.3.109-r2.ebuild:
+  Avoid executing git #379999 by Agostino Sarubbo.
 
 *libaio-0.3.109-r2 (09 Nov 2010)
 

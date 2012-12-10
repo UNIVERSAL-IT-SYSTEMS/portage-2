@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/fcitx/fcitx-4.0.1.ebuild,v 1.2 2010/12/19 02:48:24 qiaomuf Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/fcitx/fcitx-4.0.1.ebuild,v 1.5 2012/05/18 14:21:32 josejx Exp $
 
 EAPI="3"
 
@@ -12,11 +12,10 @@ SRC_URI="http://fcitx.googlecode.com/files/${P}_all.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="dbus pango"
 
-RDEPEND="!<=app-i18n/fcitx-configtool-0.1.4
-	x11-libs/libX11
+RDEPEND="x11-libs/libX11
 	x11-libs/libXrender
 	x11-libs/cairo[X]
 	media-libs/fontconfig
@@ -24,7 +23,7 @@ RDEPEND="!<=app-i18n/fcitx-configtool-0.1.4
 	dbus? ( >=sys-apps/dbus-0.2 )"
 DEPEND="${RDEPEND}
 	x11-proto/xproto
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	# fix a bug when compiling without pango

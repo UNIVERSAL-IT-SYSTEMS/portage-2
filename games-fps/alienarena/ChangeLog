@@ -1,6 +1,45 @@
 # ChangeLog for games-fps/alienarena
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/alienarena/ChangeLog,v 1.34 2011/05/14 14:16:59 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-fps/alienarena/ChangeLog,v 1.43 2012/09/23 08:50:16 phajdan.jr Exp $
+
+  23 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  alienarena-20120629.ebuild:
+  x86 stable wrt bug #432076
+
+  21 Sep 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  -alienarena-20110311.ebuild, -files/alienarena-20110311-nodocs.patch:
+  old
+
+  21 Aug 2012; Agostino Sarubbo <ago@gentoo.org> alienarena-20120629.ebuild:
+  Stable for amd64, wrt bug #432076
+
+*alienarena-20120629 (18 Jul 2012)
+
+  18 Jul 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  +alienarena-20120629.ebuild, +files/alienarena-20120629-nodocs.patch:
+  version bump
+
+  09 Jun 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  alienarena-20111227.ebuild:
+  use internal ode since alienarena doesn't work with dev-games/ode-0.12 (bug
+  #420327)
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> alienarena-20110311.ebuild,
+  alienarena-20111227.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  alienarena-20111227.ebuild:
+  x86 stable wrt bug #401439
+
+  31 Jan 2012; Agostino Sarubbo <ago@gentoo.org> alienarena-20111227.ebuild:
+  Stable for amd64, wrt bug #401439
+
+*alienarena-20111227 (30 Dec 2011)
+
+  30 Dec 2011; Michael Sterrett <mr_bones_@gentoo.org>
+  +alienarena-20111227.ebuild, +files/alienarena-20111227-nodocs.patch:
+  version bump
 
   14 May 2011; Thomas Kahle <tomka@gentoo.org> alienarena-20110311.ebuild:
   x86 stable per bug 363645
@@ -161,4 +200,3 @@
   +files/alienarena-20070224-paths.patch, +metadata.xml,
   +alienarena-20070224.ebuild:
   Initial commit, based on Paul Bredbury's ebuild from bug #110972
-

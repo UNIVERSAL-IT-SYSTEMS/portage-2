@@ -1,6 +1,56 @@
 # ChangeLog for media-plugins/gst-plugins-cdparanoia
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-cdparanoia/ChangeLog,v 1.175 2011/07/25 18:07:09 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-cdparanoia/ChangeLog,v 1.186 2012/12/03 23:39:30 eva Exp $
+
+*gst-plugins-cdparanoia-1.0.3 (03 Dec 2012)
+
+  03 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  +gst-plugins-cdparanoia-1.0.3.ebuild:
+  Version bump.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-plugins-cdparanoia-0.10.35.ebuild:
+  Add src_prepare due to eclass changes.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-plugins-cdparanoia-0.10.36.ebuild:
+  Update with ebuild from gnome overlay.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  -gst-plugins-cdparanoia-0.10.32.ebuild,
+  gst-plugins-cdparanoia-0.10.35.ebuild:
+  Clean up old revision. EAPI bump stable due to pending eclass changes.
+
+*gst-plugins-cdparanoia-0.10.36 (21 Oct 2012)
+
+  21 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gst-plugins-cdparanoia-0.10.36.ebuild:
+  Bump, no code changes.
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gst-plugins-cdparanoia-0.10.35.ebuild:
+  ppc/ppc64 stable wrt #382225
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org>
+  gst-plugins-cdparanoia-0.10.35.ebuild:
+  Stable for HPPA (bug #382225).
+
+  09 Oct 2011; Raúl Porcel <armin76@gentoo.org>
+  gst-plugins-cdparanoia-0.10.35.ebuild:
+  alpha/ia64/sparc stable wrt #382225
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org>
+  gst-plugins-cdparanoia-0.10.35.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #382225.
+
+  20 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gst-plugins-cdparanoia-0.10.35.ebuild:
+  x86 stable wrt bug #382225
+
+  25 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  -gst-plugins-cdparanoia-0.10.31.ebuild:
+  Remove old
 
   25 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org>
   gst-plugins-cdparanoia-0.10.32.ebuild:

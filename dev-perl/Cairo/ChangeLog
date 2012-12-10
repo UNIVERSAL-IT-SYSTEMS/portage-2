@@ -1,6 +1,61 @@
 # ChangeLog for dev-perl/Cairo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Cairo/ChangeLog,v 1.55 2011/07/30 08:57:11 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Cairo/ChangeLog,v 1.69 2012/12/09 10:40:13 tove Exp $
+
+*Cairo-1.102.0 (09 Dec 2012)
+
+  09 Dec 2012; Torsten Veller <tove@gentoo.org> +Cairo-1.102.0.ebuild:
+  Version bump
+
+*Cairo-1.101.0 (06 Aug 2012)
+
+  06 Aug 2012; Torsten Veller <tove@gentoo.org> +Cairo-1.101.0.ebuild:
+  Version bump
+
+*Cairo-1.100.0 (07 Jul 2012)
+
+  07 Jul 2012; Torsten Veller <tove@gentoo.org> +Cairo-1.100.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  03 Jun 2012; Torsten Veller <tove@gentoo.org> -Cairo-1.06.0.ebuild,
+  -Cairo-1.62.0.ebuild, -Cairo-1.81.0.ebuild, -Cairo-1.82.0.ebuild:
+  Cleanup
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> Cairo-1.90.0.ebuild:
+  alpha/ia64/sparc stable wrt #411055
+
+  17 Apr 2012; Brent Baude <ranger@gentoo.org> Cairo-1.90.0.ebuild:
+  Marking Cairo-1.90.0 ppc64 for bug 411055
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> Cairo-1.90.0.ebuild:
+  Marking Cairo-1.90.0 ppc for bug 411055
+
+  11 Apr 2012; Jeroen Roovers <jer@gentoo.org> Cairo-1.90.0.ebuild:
+  Stable for HPPA (bug #411055).
+
+  07 Apr 2012; Jeff Horelick <jdhore@gentoo.org> Cairo-1.90.0.ebuild:
+  marked x86 per bug 411055
+
+  06 Apr 2012; Agostino Sarubbo <ago@gentoo.org> Cairo-1.90.0.ebuild:
+  Stable for amd64, wrt bug #411055
+
+*Cairo-1.90.0 (24 Jan 2012)
+
+  24 Jan 2012; Torsten Veller <tove@gentoo.org> +Cairo-1.90.0.ebuild:
+  Version bump
+
+*Cairo-1.82.0 (08 Jan 2012)
+
+  08 Jan 2012; Torsten Veller <tove@gentoo.org> +Cairo-1.82.0.ebuild:
+  Version bump
+
+*Cairo-1.81.0 (20 Oct 2011)
+
+  20 Oct 2011; Torsten Veller <tove@gentoo.org> +Cairo-1.81.0.ebuild:
+  Version bump. Enable CairoSurface.t again (#294204)
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org> -Cairo-1.61.ebuild:
   Cleanup
@@ -192,4 +247,3 @@
 
   07 Sep 2006; Markus Rothe <corsair@gentoo.org> Cairo-1.00.ebuild:
   Added ~ppc64; bug #146676
-

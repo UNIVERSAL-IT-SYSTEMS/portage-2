@@ -1,6 +1,6 @@
-# Copyright 2004-2009 Gentoo Foundation.
+# Copyright 1999-2012 Gentoo Foundation.
 # Distributed under the terms of the GNU General Public License, v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/amd64-fbsd/make.defaults,v 1.4 2011/03/18 22:09:09 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/amd64-fbsd/make.defaults,v 1.11 2012/10/15 15:58:18 chithanh Exp $
 # System-wide defaults for the G/FBSD Portage system
 
 ARCH="amd64-fbsd"
@@ -8,6 +8,8 @@ ACCEPT_KEYWORDS="amd64-fbsd ~amd64-fbsd"
 
 CFLAGS="-O2 -pipe"
 CXXFLAGS="${CFLAGS}"
+FFLAGS="${CFLAGS}"
+FCFLAGS="${CFLAGS}"
 
 MULTILIB_ABIS="amd64_fbsd x86_fbsd"
 DEFAULT_ABI="amd64_fbsd"
@@ -15,10 +17,19 @@ DEFAULT_ABI="amd64_fbsd"
 ABI="amd64_fbsd"
 
 # 32bit specific settings.
-CFLAGS_x86_fbsd="-m32"
+CFLAGS_x86_fbsd="-m32 -DCOMPAT_32BIT"
 LDFLAGS_x86_fbsd="-m elf_i386_fbsd"
-ASFLAGS_x86_fbsd="--32"
+
+USE="mmx sse sse2"
 
 VIDEO_CARDS="apm ark chips cirrus cyrix dummy i128 intel mach64 mga \
-	neomagic nv r128 radeon rendition s3 s3virge savage siliconmotion sis \
+	nv r128 radeon rendition s3 s3virge savage siliconmotion sis \
 	sisusb tga trident tseng via vmware"
+
+# Vanilla FreeBSD has: lib for native 64 bits libs, lib32 for 32-bits emulation.
+# Let's do this too as this also happens to be more standard among other linux
+# distros.
+# Adjust multilib dirs for multilib-strict.
+LIBDIR_amd64_fbsd="lib"
+MULTILIB_STRICT_DIRS="/lib32 /usr/lib32 /usr/kde/*/lib32 /usr/qt/*/lib32 /usr/X11R6/lib32"
+SYMLINK_LIB="no"

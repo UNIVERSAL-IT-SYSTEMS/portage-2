@@ -1,6 +1,51 @@
 # ChangeLog for lxde-base/lxinput
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxinput/ChangeLog,v 1.13 2011/03/07 20:31:24 klausman Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxinput/ChangeLog,v 1.26 2012/08/25 00:02:13 hwoarang Exp $
+
+  25 Aug 2012; Markos Chandras <hwoarang@gentoo.org> -lxinput-0.1.1.ebuild,
+  -lxinput-0.3.0.ebuild, -lxinput-0.3.1.ebuild:
+  Remove old LXDE packages
+
+  14 Aug 2012; Johannes Huber <johu@gentoo.org> lxinput-0.3.2.ebuild:
+  Stable for x86, wrt bug #430494
+
+  11 Aug 2012; Agostino Sarubbo <ago@gentoo.org> lxinput-0.3.2.ebuild:
+  Stable for amd64, wrt bug #430494
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org> lxinput-0.3.2.ebuild:
+  Stable arm, bug #430494
+
+  09 Aug 2012; Anthony G. Basile <blueness@gentoo.org> lxinput-0.3.2.ebuild:
+  Stable ppc, bug #430494
+
+  05 Jun 2012; Michael Weber <xmw@gentoo.org> lxinput-0.3.1.ebuild:
+  ppc stable (bug 385189)
+
+*lxinput-0.3.2 (23 May 2012)
+
+  23 May 2012; Markos Chandras <hwoarang@gentoo.org> +lxinput-0.3.2.ebuild:
+  Version bump
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> lxinput-0.1.1.ebuild,
+  lxinput-0.3.0.ebuild, lxinput-0.3.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  09 Oct 2011; Markus Meier <maekke@gentoo.org> lxinput-0.3.1.ebuild:
+  arm stable, bug #385189
+
+  07 Oct 2011; Markos Chandras <hwoarang@gentoo.org> lxinput-0.3.1.ebuild:
+  Stable on amd64 wrt bug #385189
+
+  05 Oct 2011; Andreas Schuerch <nativemad@gentoo.org> lxinput-0.3.1.ebuild:
+  x86 stable, bug 385189
+
+  03 Aug 2011; Markos Chandras <hwoarang@gentoo.org> lxinput-0.3.1.ebuild:
+  Make it EAPI4
+
+*lxinput-0.3.1 (03 Aug 2011)
+
+  03 Aug 2011; Markos Chandras <hwoarang@gentoo.org> +lxinput-0.3.1.ebuild:
+  Version bump
 
   07 Mar 2011; Tobias Klausmann <klausman@gentoo.org> lxinput-0.3.0.ebuild:
   Keyworded on alpha, bug #330911
@@ -46,4 +91,3 @@
   04 Aug 2009; Ben de Groot <yngwin@gentoo.org> +lxinput-0.1.1.ebuild,
   +metadata.xml:
   Initial import.
-

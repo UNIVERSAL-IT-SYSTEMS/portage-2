@@ -1,6 +1,121 @@
 # ChangeLog for net-analyzer/rrdtool
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/rrdtool/ChangeLog,v 1.209 2011/06/01 02:28:58 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/rrdtool/ChangeLog,v 1.240 2012/09/26 15:07:00 xarthisius Exp $
+
+  26 Sep 2012; Kacper Kowalik <xarthisius@gentoo.org> rrdtool-1.4.7-r1.ebuild:
+  ppc/ppc64 stable wrt #404433
+
+  15 Sep 2012; Raúl Porcel <armin76@gentoo.org> rrdtool-1.4.7-r1.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #404433
+
+  14 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> -rrdtool-1.4.7.ebuild:
+  Drop old revision
+
+  14 Sep 2012; Markus Meier <maekke@gentoo.org> rrdtool-1.4.7-r1.ebuild:
+  arm stable, bug #404433
+
+  14 Sep 2012; Markus Meier <maekke@gentoo.org> rrdtool-1.4.7.ebuild:
+  arm stable, bug #404433
+
+  13 Sep 2012; Jeroen Roovers <jer@gentoo.org> rrdtool-1.4.7-r1.ebuild:
+  Stable for HPPA (bug #404433).
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> rrdtool-1.4.7-r1.ebuild:
+  Stable for amd64, wrt bug #404433
+
+  13 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> rrdtool-1.4.7-r1.ebuild:
+  x86 stable wrt bug #404433
+
+  12 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> rrdtool-1.4.7.ebuild:
+  Same fix for -r0 ebuild
+
+  12 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> rrdtool-1.4.7-r1.ebuild:
+  Fix typos in ebuild, which cause issue with automagic dependencies on
+  sys-apps/tcp-wrappers and dev-db/libdbi
+
+*rrdtool-1.4.7-r1 (06 Sep 2012)
+
+  06 Sep 2012; Maxim Koltsov <maksbotan@gentoo.org> +files/rrdcached.confd,
+  +files/rrdcached.init, +rrdtool-1.4.7-r1.ebuild:
+  Add initscript for rrdcached, thanks to slepnoga
+
+  06 Sep 2012; Jeroen Roovers <jer@gentoo.org> rrdtool-1.4.7.ebuild:
+  Stable for HPPA (bug #404433).
+
+  06 Sep 2012; Agostino Sarubbo <ago@gentoo.org> rrdtool-1.4.7.ebuild:
+  Stable for amd64, wrt bug #404433
+
+  09 Jun 2012; Maxim Koltsov <maksbotan@gentoo.org> rrdtool-1.4.7.ebuild:
+  Return SUPPORT_PYTHON_ABIS to 1.4.7, patch by Arfrever
+
+*rrdtool-1.4.7 (02 Jun 2012)
+
+  02 Jun 2012; Maxim Koltsov <maksbotan@gentoo.org>
+  +files/0001_rrdtool-1.4.7-configure.ac.patch, +rrdtool-1.4.7.ebuild:
+  Bump to 1.4.7, fix bugs 405431, 324093 and 416259. Thanks to Andreis
+  Vinogradovs
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> rrdtool-1.4.5-r1.ebuild,
+  rrdtool-1.4.5-r2.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  19 Apr 2012; Naohiro Aota <naota@gentoo.org> rrdtool-1.4.5-r2.ebuild:
+  Add ~x86-fbsd. #235785
+
+  22 Mar 2012; Jeroen Roovers <jer@gentoo.org> rrdtool-1.4.5-r1.ebuild,
+  rrdtool-1.4.5-r2.ebuild:
+  Change version specific notes by David (bug #409215).
+
+  31 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> -rrdtool-1.0.50.ebuild,
+  -rrdtool-1.3.8.ebuild, metadata.xml:
+  old
+
+  31 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> rrdtool-1.4.5-r1.ebuild:
+  ppc/ppc64 stable wrt #387171
+
+*rrdtool-1.4.5-r2 (14 Jan 2012)
+
+  14 Jan 2012; Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org>
+  +rrdtool-1.4.5-r2.ebuild, +files/rrdtool-1.4.5-automake-1.11.2.patch:
+  [net-analyzer/rrdtool-1.4.5-r2] Fix the build with automake-1.11.2 - bug
+  #396727.
+  Thanks to <AlphatPC@gmail.com> for the patch.
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> rrdtool-1.4.5-r1.ebuild:
+  alpha/arm/ia64/s390/sh/sparc stable wrt #387171
+
+  19 Oct 2011; Jeroen Roovers <jer@gentoo.org> rrdtool-1.4.5-r1.ebuild:
+  Stable for HPPA (bug #387171).
+
+  18 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> rrdtool-1.4.5-r1.ebuild:
+  x86 stable wrt bug #387171
+
+  15 Oct 2011; Markos Chandras <hwoarang@gentoo.org> rrdtool-1.4.5-r1.ebuild:
+  Stable on amd64 wrt bug #387171
+
+  02 Oct 2011; Tim Harder <radhermit@gentoo.org> rrdtool-1.4.5-r1.ebuild:
+  Improve python support (bug #315085 by Arfrever).
+
+  02 Oct 2011; Tim Harder <radhermit@gentoo.org> +rrdtool-1.0.50.ebuild:
+  Re-add old version for FlowScan.
+
+  01 Oct 2011; Tim Harder <radhermit@gentoo.org> rrdtool-1.3.8.ebuild,
+  rrdtool-1.4.5-r1.ebuild:
+  Remove old blocker on ruby-rrd. Add dependency on pkgconfig (bug #385017 by
+  Nikoli).
+
+  01 Oct 2011; Tim Harder <radhermit@gentoo.org> -rrdtool-1.0.50.ebuild,
+  -files/rrdtool-1.2.15-newstyle-resize.patch, -rrdtool-1.2.29.ebuild,
+  -rrdtool-1.2.30.ebuild, -rrdtool-1.3.7.ebuild, -rrdtool-1.3.8-r1.ebuild,
+  -rrdtool-1.3.9.ebuild, -rrdtool-1.4.2.ebuild, -rrdtool-1.4.3.ebuild,
+  -rrdtool-1.4.4.ebuild, -rrdtool-1.4.5.ebuild:
+  Remove old.
+
+*rrdtool-1.4.5-r1 (07 Aug 2011)
+
+  07 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> +rrdtool-1.4.5-r1.ebuild:
+  Disable building librrd.a and librrd_th.a and delete matching libtool files
+  wrt #362895 by Cesko Voeten. Open a bug if you need USE="static-libs".
 
 *rrdtool-1.4.5 (01 Jun 2011)
 

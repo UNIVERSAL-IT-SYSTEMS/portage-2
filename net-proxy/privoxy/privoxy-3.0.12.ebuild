@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/privoxy/privoxy-3.0.12.ebuild,v 1.8 2010/06/06 14:37:45 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/privoxy/privoxy-3.0.12.ebuild,v 1.10 2012/05/23 22:56:23 vapier Exp $
 
 EAPI="2"
 
-inherit eutils toolchain-funcs autotools
+inherit eutils toolchain-funcs autotools user
 
 MY_IPV6_PATCH="${P}-ipv6-1.diff"
 HOMEPAGE="http://www.privoxy.org
@@ -35,7 +35,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-gentoo.patch
 	# autoreconf needs to be called even if we don't modify any autotools source files
 	# See main makefile
-	eautoreconf || die "eautoreconf failed"
+	eautoreconf
 }
 
 src_configure() {
@@ -47,8 +47,7 @@ src_configure() {
 		--with-user=privoxy \
 		--with-group=privoxy \
 		--sysconfdir=/etc/privoxy \
-		--docdir=/usr/share/doc/${PF} \
-		|| die "econf failed"
+		--docdir=/usr/share/doc/${PF}
 }
 
 src_install () {

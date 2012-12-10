@@ -1,14 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/tar/tar-1.23-r2.ebuild,v 1.7 2010/07/18 20:26:19 josejx Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/tar/tar-1.23-r2.ebuild,v 1.10 2012/05/31 03:08:11 zmedico Exp $
 
-inherit flag-o-matic eutils
+inherit flag-o-matic eutils multilib
 
 DESCRIPTION="Use this to make tarballs :)"
 HOMEPAGE="http://www.gnu.org/software/tar/"
-SRC_URI="http://ftp.gnu.org/gnu/tar/${P}.tar.bz2
-	ftp://alpha.gnu.org/gnu/tar/${P}.tar.bz2
-	mirror://gnu/tar/${P}.tar.bz2"
+SRC_URI="mirror://gnu/tar/${P}.tar.bz2
+	mirror://gnu-alpha/tar/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"

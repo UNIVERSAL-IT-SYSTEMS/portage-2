@@ -1,6 +1,19 @@
 # ChangeLog for net-dns/dnstop
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/dnstop/ChangeLog,v 1.33 2011/05/22 20:13:44 rajiv Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-dns/dnstop/ChangeLog,v 1.37 2012/03/18 17:40:01 armin76 Exp $
+
+  18 Mar 2012; Raúl Porcel <armin76@gentoo.org> dnstop-20090128.ebuild,
+  dnstop-20110502.ebuild:
+  Drop sparc keywords
+
+  22 Feb 2012; Rajiv Aaron Manglani <rajiv@gentoo.org> -dnstop-20101227.ebuild:
+  cleanup.
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> dnstop-20110502.ebuild:
+  x86 stable wrt bug #397143
+
+  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> dnstop-20110502.ebuild:
+  Stable for amd64, wrt bug #397143
 
 *dnstop-20110502 (22 May 2011)
 

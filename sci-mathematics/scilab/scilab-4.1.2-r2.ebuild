@@ -1,22 +1,21 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/scilab/scilab-4.1.2-r2.ebuild,v 1.11 2011/06/28 13:56:38 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-mathematics/scilab/scilab-4.1.2-r2.ebuild,v 1.15 2012/10/16 19:06:56 jlec Exp $
 
 EAPI=4
 
 inherit autotools eutils fortran-2 java-pkg-opt-2 multilib toolchain-funcs
 
 DESCRIPTION="Scientific software package for numerical computations (Matlab lookalike)"
-LICENSE="scilab"
-SRC_URI="http://www.scilab.org/download/${PV}/${P}-src.tar.gz"
 HOMEPAGE="http://www.scilab.org/"
+SRC_URI="http://www.scilab.org/download/${PV}/${P}-src.tar.gz"
 
 SLOT="0"
-IUSE="examples gtk java ocaml Xaw3d"
+LICENSE="scilab"
 KEYWORDS="~amd64 ~ppc ~x86"
+IUSE="examples gtk java ocaml Xaw3d"
 
 RDEPEND="
-	virtual/fortran
 	virtual/blas
 	virtual/lapack
 	virtual/cblas
@@ -31,7 +30,7 @@ RDEPEND="
 	)
 	>=dev-lang/tk-8.4
 	>=dev-lang/tcl-8.4
-	Xaw3d? ( x11-libs/Xaw3d )
+	Xaw3d? ( x11-libs/libXaw3d )
 	ocaml? ( dev-lang/ocaml )
 	java? ( >=virtual/jdk-1.4 )"
 

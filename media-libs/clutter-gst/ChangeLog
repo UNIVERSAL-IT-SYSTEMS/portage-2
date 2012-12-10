@@ -1,6 +1,102 @@
 # ChangeLog for media-libs/clutter-gst
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/clutter-gst/ChangeLog,v 1.14 2011/06/11 02:51:24 nirbheek Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/clutter-gst/ChangeLog,v 1.33 2012/12/06 00:08:01 tetromino Exp $
+
+*clutter-gst-1.9.92 (06 Dec 2012)
+*clutter-gst-1.6.0-r1 (06 Dec 2012)
+
+  06 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  clutter-gst-1.4.6.ebuild, clutter-gst-1.6.0.ebuild,
+  +clutter-gst-1.6.0-r1.ebuild, +files/clutter-gst-1.6.0-GL_TEXTURE_2D.patch,
+  +files/clutter-gst-1.6.0-gluint.patch, +clutter-gst-1.9.92.ebuild:
+  Add version 1.9.92 for gstreamer-1.0 support. Fix build failure with
+  cogl-1.12 (bug #445982, thanks to Rick Harris). Drop useless doc USE flag.
+  Update to EAPI5.
+
+  25 Oct 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  -clutter-gst-1.0.0.ebuild, -clutter-gst-1.4.4.ebuild,
+  -clutter-gst-1.5.6.ebuild, clutter-gst-1.6.0.ebuild:
+  Pin gstreamer dependencies to slot 0.10. Drop old revision.
+
+  23 Sep 2012; Anthony G. Basile <blueness@gentoo.org> clutter-gst-1.6.0.ebuild:
+  keyword ~ppc64, bug #379649
+
+  15 Sep 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  clutter-gst-1.6.0.ebuild, +files/clutter-gst-1.6.0-doc-fixes.patch,
+  +files/clutter-gst-1.6.0-glint.patch:
+  Fix build problems with clutter-1.11 and gobject-introspection-1.33. Improve
+  DISPLAY hack.
+
+  09 Jul 2012; Brent Baude <ranger@gentoo.org> clutter-gst-1.4.6.ebuild:
+  Marking clutter-gst-1.4.6 ~ppc for bug 379649
+
+*clutter-gst-1.6.0 (03 Jul 2012)
+
+  03 Jul 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -clutter-gst-1.5.4.ebuild, +clutter-gst-1.6.0.ebuild:
+  Version bump, drop old.
+
+*clutter-gst-1.5.6 (26 May 2012)
+
+  26 May 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +clutter-gst-1.5.6.ebuild:
+  Version bump.
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> clutter-gst-1.4.6.ebuild:
+  x86 stable, bug #410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> clutter-gst-1.4.6.ebuild:
+  Stable for amd64, wrt bug #410611
+
+*clutter-gst-1.5.4 (26 Mar 2012)
+
+  26 Mar 2012; Nirbheek Chauhan <nirbheek@gentoo.org>
+  +clutter-gst-1.5.4.ebuild:
+  Bump, p.masked because API changed
+
+  19 Feb 2012; Tobias Klausmann <klausman@gentoo.org> clutter-gst-1.4.6.ebuild:
+  Keyworded on alpha, bug #379649
+
+  30 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  clutter-gst-1.4.6.ebuild:
+  Call eautoreconf to fix building on arm (bug #401383, thanks to Fabio
+  Erculiani for reporting).
+
+*clutter-gst-1.4.6 (20 Jan 2012)
+
+  20 Jan 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  -clutter-gst-1.4.2.ebuild, +clutter-gst-1.4.6.ebuild:
+  Bump, fixes memory leaks. Drop old.
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> clutter-gst-1.4.4.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> clutter-gst-1.4.4.ebuild:
+  amd64 stable, bug 393007
+
+*clutter-gst-1.4.4 (01 Nov 2011)
+
+  01 Nov 2011; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +clutter-gst-1.4.4.ebuild:
+  Bump. Build system changes only. DISABLE_DEPRECATED flags were removed by
+  upstream. Do not set PYTHON_DEPEND, it makes python into a runtime
+  dependency.
+
+*clutter-gst-1.4.2 (15 Oct 2011)
+
+  15 Oct 2011; Pacho Ramos <pacho@gentoo.org> -clutter-gst-1.3.12.ebuild,
+  -clutter-gst-1.3.14.ebuild, +clutter-gst-1.4.2.ebuild:
+  Version bump, remove development versions.
+
+*clutter-gst-1.3.14 (09 Sep 2011)
+
+  09 Sep 2011; Pacho Ramos <pacho@gentoo.org> -clutter-gst-1.3.10.ebuild,
+  +clutter-gst-1.3.14.ebuild:
+  Version bump, remove old.
+
+  24 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org>
+  clutter-gst-1.3.12.ebuild:
+  Remove GST_REGISTRY hack, it's been moved to the eclass
 
 *clutter-gst-1.3.12 (11 Jun 2011)
 
@@ -73,4 +169,3 @@
   +clutter-gst-1.0.0.ebuild, +metadata.xml:
   Add an initial ebuild for clutter-gst, gstreamer integration library for
   clutter
-

@@ -1,6 +1,50 @@
 # ChangeLog for app-shells/rssh
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/rssh/ChangeLog,v 1.23 2011/04/30 17:29:18 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-shells/rssh/ChangeLog,v 1.34 2012/12/03 11:17:55 nativemad Exp $
+
+  03 Dec 2012; Andreas Schuerch <nativemad@gentoo.org> rssh-2.3.4.ebuild:
+  x86 stable, see bug 445166. Thanks Dan Dexter for testing.
+
+  02 Dec 2012; Agostino Sarubbo <ago@gentoo.org> rssh-2.3.4.ebuild:
+  Stable for ppc, wrt bug #445166
+
+  30 Nov 2012; Sergey Popov <pinkbyte@gentoo.org> rssh-2.3.4.ebuild:
+  Stable on amd64, wrt bug #445166
+
+*rssh-2.3.4 (29 Nov 2012)
+
+  29 Nov 2012; Markos Chandras <hwoarang@gentoo.org> +rssh-2.3.4.ebuild:
+  Version bump. Bug #445166. Thanks to Marios Andreopoulos
+  <opensource@andmarios.com>
+
+  22 Aug 2012; Michael Weber <xmw@gentoo.org> rssh-2.3.3-r2.ebuild:
+  ppc stable (bug 415255).
+
+  15 Jul 2012; Raúl Porcel <armin76@gentoo.org> rssh-2.3.3-r2.ebuild:
+  Drop sparc keywords
+
+  21 Jun 2012; Markos Chandras <hwoarang@gentoo.org> rssh-2.3.3-r2.ebuild:
+  Mark stable for amd64/x86 per bug #415255
+
+*rssh-2.3.3-r2 (21 Jun 2012)
+
+  21 Jun 2012; Markos Chandras <hwoarang@gentoo.org> +rssh-2.3.3-r2.ebuild,
+  -rssh-2.3.3-r1.ebuild:
+  New revbump which fixes quotation problems
+
+  17 Jun 2012; Agostino Sarubbo <ago@gentoo.org> rssh-2.3.3-r1.ebuild:
+  Stable for amd64, wrt bug #415255
+
+  17 Jun 2012; Jeff Horelick <jdhore@gentoo.org> rssh-2.3.3-r1.ebuild:
+  marked x86 per bug 415255
+
+*rssh-2.3.3-r1 (16 Jun 2012)
+
+  16 Jun 2012; Markos Chandras <hwoarang@gentoo.org> -rssh-2.3.2.ebuild,
+  -rssh-2.3.3.ebuild, +rssh-2.3.3-r1.ebuild, +files/rssh-2.3.3-envvars.patch,
+  metadata.xml:
+  Revbump to fix security problem. bug #415255. Thanks to Marios Andreopoulos
+  <opensource@andmarios.com>. Take over by proxy-maintainers
 
   30 Apr 2011; Raúl Porcel <armin76@gentoo.org> rssh-2.3.3.ebuild:
   sparc stable wrt #344339

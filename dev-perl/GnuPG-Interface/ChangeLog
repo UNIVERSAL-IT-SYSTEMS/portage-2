@@ -1,6 +1,43 @@
 # ChangeLog for dev-perl/GnuPG-Interface
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/GnuPG-Interface/ChangeLog,v 1.42 2011/07/30 08:14:58 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/GnuPG-Interface/ChangeLog,v 1.51 2012/11/04 15:07:22 tove Exp $
+
+*GnuPG-Interface-0.460.0 (04 Nov 2012)
+
+  04 Nov 2012; Torsten Veller <tove@gentoo.org>
+  +GnuPG-Interface-0.460.0.ebuild, metadata.xml:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  03 Jun 2012; Torsten Veller <tove@gentoo.org> -GnuPG-Interface-0.42.ebuild,
+  -GnuPG-Interface-0.440.0.ebuild:
+  Cleanup
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> GnuPG-Interface-0.42.ebuild,
+  GnuPG-Interface-0.440.0.ebuild, GnuPG-Interface-0.450.0.ebuild:
+  Drop alpha/ia64/sparc keywords
+
+  06 May 2012; Brent Baude <ranger@gentoo.org> GnuPG-Interface-0.450.0.ebuild:
+  Marking GnuPG-Interface-0.450.0 ppc for bug 412993
+
+  26 Apr 2012; Jeff Horelick <jdhore@gentoo.org>
+  GnuPG-Interface-0.450.0.ebuild:
+  marked x86 per bug 412993
+
+  26 Apr 2012; Jeroen Roovers <jer@gentoo.org> GnuPG-Interface-0.450.0.ebuild:
+  Stable for HPPA (bug #412993).
+
+  22 Apr 2012; Agostino Sarubbo <ago@gentoo.org>
+  GnuPG-Interface-0.450.0.ebuild:
+  Stable for amd64, wrt bug #412993
+
+*GnuPG-Interface-0.450.0 (31 Oct 2011)
+
+  31 Oct 2011; Torsten Veller <tove@gentoo.org>
+  +GnuPG-Interface-0.450.0.ebuild:
+  Version bump
 
   30 Jul 2011; Torsten Veller <tove@gentoo.org>
   -GnuPG-Interface-0.430.0.ebuild:
@@ -168,4 +205,3 @@
 
   16 Dec 2003; <rac@gentoo.org> metadata.xml:
   Initial import based on bug 16995
-

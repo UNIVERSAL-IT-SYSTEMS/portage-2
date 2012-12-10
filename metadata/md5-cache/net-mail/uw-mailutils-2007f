@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare
+DEPEND=pam? ( virtual/pam ) ssl? ( dev-libs/openssl )
+DESCRIPTION=Mail utilities from the UW
+EAPI=4
+HOMEPAGE=http://www.washington.edu/imap/
+IUSE=pam ssl
+KEYWORDS=alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd
+LICENSE=Apache-2.0
+RDEPEND=pam? ( virtual/pam ) ssl? ( dev-libs/openssl ) !<net-mail/uw-imap-2007f
+SLOT=0
+SRC_URI=ftp://ftp.cac.washington.edu/imap/imap-2007f.tar.Z
+_eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	flag-o-matic	1a0b9986e891584bbc9f18928d126299	multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28
+_md5_=ff22b9426dec1b719109f0fef728b493

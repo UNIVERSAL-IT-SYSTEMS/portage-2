@@ -1,6 +1,114 @@
 # ChangeLog for media-libs/libextractor
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libextractor/ChangeLog,v 1.58 2009/12/29 17:43:47 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libextractor/ChangeLog,v 1.83 2012/10/24 07:49:45 ssuominen Exp $
+
+  24 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  libextractor-1.0.1.ebuild:
+  Restore ~ppc64 after keywording media-libs/libsmf wrt #436954
+
+  24 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -libextractor-1.0.0.ebuild:
+  old
+
+  24 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  libextractor-1.0.1.ebuild:
+  Fix LICENSE from GPL-2 to GPL-3 as per COPYING and NEWS.
+
+*libextractor-1.0.1 (24 Oct 2012)
+
+  24 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +libextractor-1.0.1.ebuild:
+  Version bump.
+
+  16 Oct 2012; Markus Meier <maekke@gentoo.org> libextractor-1.0.0.ebuild:
+  add ~arm, bug #436954
+
+  14 Oct 2012; Raúl Porcel <armin76@gentoo.org> libextractor-0.6.3-r1.ebuild:
+  Drop sparc keywords
+
+  12 Oct 2012; Anthony G. Basile <blueness@gentoo.org>
+  libextractor-1.0.0.ebuild:
+  keyword ~ppc, bug #436954
+
+*libextractor-1.0.0 (02 Oct 2012)
+
+  02 Oct 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +libextractor-1.0.0.ebuild, metadata.xml:
+  Version bump wrt #436932. Thanks to Mike Frysinger for reporting.
+
+  15 Sep 2012; Tim Harder <radhermit@gentoo.org> libextractor-0.6.3-r1.ebuild:
+  Remove blocker on csound (bug #247394).
+
+  14 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  libextractor-0.6.3-r1.ebuild:
+  Fix building with recent app-text/poppler wrt #431268 by Mattia Rossi and
+  Rick Harris
+
+  05 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -libextractor-0.6.3.ebuild:
+  old
+
+  04 Aug 2012; Agostino Sarubbo <ago@gentoo.org> libextractor-0.6.3-r1.ebuild:
+  Stable for amd64, wrt bug #429530
+
+  03 Aug 2012; Jeff Horelick <jdhore@gentoo.org> libextractor-0.6.3-r1.ebuild:
+  marked x86 per bug 429530
+
+  02 Aug 2012; Samuli Suominen <ssuominen@gentoo.org>
+  libextractor-0.6.3-r1.ebuild:
+  Block all of app-crypt/pkcrack, media-sound/csound, sci-biology/glimmer and
+  sci-chemistry/pdb-extract for installing binary called 'extract' wrt #247394
+
+*libextractor-0.6.3-r1 (01 Jun 2012)
+
+  01 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +libextractor-0.6.3-r1.ebuild:
+  USE flags "gtk" and "pdf" for optionalizing app-text/poppler and
+  x11-libs/gtk+:2 wrt #415447 by Thomas Beutin
+
+  11 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -libextractor-0.5.19a.ebuild:
+  old
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> libextractor-0.6.3.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  30 Apr 2012; Agostino Sarubbo <ago@gentoo.org> libextractor-0.6.3.ebuild:
+  Stable for amd64, wrt bug #413827
+
+  29 Apr 2012; Jeff Horelick <jdhore@gentoo.org> libextractor-0.6.3.ebuild:
+  marked x86 per bug 413827
+
+  29 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  -libextractor-0.5.20c.ebuild, -libextractor-0.6.2.ebuild:
+  old
+
+*libextractor-0.6.3 (29 Feb 2012)
+
+  29 Feb 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +libextractor-0.6.3.ebuild, metadata.xml:
+  Version bump.
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  -libextractor-0.5.20a.ebuild, -libextractor-0.5.20b.ebuild:
+  old
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  libextractor-0.5.20c.ebuild:
+  Fix building with zlib >= 1.2.5.1-r1 wrt #383585 by Alexandre Rostovtsev and
+  Mike Frysinger
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  libextractor-0.6.2.ebuild:
+  Drop keywording until we have working net-p2p/gnunet.
+
+*libextractor-0.6.2 (09 Oct 2011)
+
+  09 Oct 2011; Samuli Suominen <ssuominen@gentoo.org>
+  +libextractor-0.6.2.ebuild:
+  Version bump wrt #269050 by Arfrever Frehtes Taifersar Arahesis. This one is
+  using external exiv2 wrt #383039 and doesn't fail to build against zlib >=
+  1.2.5.1-r1 wrt #383585.
 
   29 Dec 2009; Raúl Porcel <armin76@gentoo.org>
   libextractor-0.5.19a.ebuild, libextractor-0.5.20a.ebuild,

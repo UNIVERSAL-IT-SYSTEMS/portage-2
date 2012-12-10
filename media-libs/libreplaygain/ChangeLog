@@ -1,6 +1,37 @@
 # ChangeLog for media-libs/libreplaygain
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libreplaygain/ChangeLog,v 1.26 2011/03/16 17:32:07 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libreplaygain/ChangeLog,v 1.35 2012/09/30 18:10:26 armin76 Exp $
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> libreplaygain-477.ebuild:
+  alpha stable wrt #419095
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> libreplaygain-477.ebuild:
+  Marking libreplaygain-477 ppc for bug 419095
+
+  06 Jun 2012; Jeroen Roovers <jer@gentoo.org> libreplaygain-477.ebuild:
+  Stable for HPPA (bug #419095).
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> libreplaygain-477.ebuild:
+  marked x86 per bug 419095
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> libreplaygain-477.ebuild:
+  Marking libreplaygain-477 ppc64 for bug 419095
+
+  02 Jun 2012; Agostino Sarubbo <ago@gentoo.org> libreplaygain-477.ebuild:
+  Stable for amd64, wrt bug #419095
+
+  17 May 2012; Alexis Ballier <aballier@gentoo.org> libreplaygain-477.ebuild:
+  keyword ~amd64-fbsd
+
+*libreplaygain-477 (30 Jan 2012)
+
+  30 Jan 2012; Samuli Suominen <ssuominen@gentoo.org>
+  +libreplaygain-477.ebuild:
+  New upstream revision.
+
+  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  libreplaygain-465.ebuild:
+  keyword ~sparc-solaris
 
   16 Mar 2011; Kacper Kowalik <xarthisius@gentoo.org> libreplaygain-465.ebuild:
   ppc/ppc64 stable wrt #348512

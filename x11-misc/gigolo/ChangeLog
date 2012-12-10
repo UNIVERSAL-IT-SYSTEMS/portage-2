@@ -1,6 +1,19 @@
 # ChangeLog for x11-misc/gigolo
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/gigolo/ChangeLog,v 1.11 2011/03/22 10:55:23 tomka Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/gigolo/ChangeLog,v 1.15 2012/11/28 12:36:07 ssuominen Exp $
+
+  28 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> gigolo-0.4.1.ebuild:
+  EAPI5
+
+  22 May 2012; Samuli Suominen <ssuominen@gentoo.org> gigolo-0.4.1.ebuild:
+  Remove call to intltoolize within xfconf.eclass because autotools.eclass has
+  the support now.
+
+  17 May 2012; Samuli Suominen <ssuominen@gentoo.org> gigolo-0.4.1.ebuild:
+  Remove unnecessary index.html reference from HOMEPAGE wrt #416413
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> gigolo-0.4.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
 
   22 Mar 2011; Thomas Kahle <tomka@gentoo.org> gigolo-0.4.1.ebuild:
   x86 stable per bug 358407

@@ -1,6 +1,20 @@
 # ChangeLog for dev-python/pymetar
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pymetar/ChangeLog,v 1.15 2010/04/11 13:08:31 nixnut Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pymetar/ChangeLog,v 1.19 2012/06/07 22:08:23 ranger Exp $
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> pymetar-0.19.ebuild:
+  Marking pymetar-0.19 ppc for bug 418911
+
+  01 Jun 2012; Johannes Huber <johu@gentoo.org> pymetar-0.19.ebuild:
+  Stable for x86, wrt bug #418911
+
+  01 Jun 2012; Agostino Sarubbo <ago@gentoo.org> pymetar-0.19.ebuild:
+  Stable for amd64, wrt bug #418911
+
+*pymetar-0.19 (30 Mar 2012)
+
+  30 Mar 2012; Tobias Klausmann <klausman@gentoo.org> +pymetar-0.19.ebuild:
+  Version bump
 
   11 Apr 2010; <nixnut@gentoo.org> pymetar-0.16.ebuild:
   ppc stable #309397

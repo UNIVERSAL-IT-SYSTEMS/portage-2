@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qwt/qwt-6.0.0.ebuild,v 1.1 2011/05/23 09:01:20 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qwt/qwt-6.0.0.ebuild,v 1.9 2012/08/31 06:51:31 jlec Exp $
 
-EAPI="3"
+EAPI=4
 
 inherit eutils qt4-r2
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://qwt.sourceforge.net/"
 SRC_URI="mirror://sourceforge/project/${PN}/${PN}/${PV/_/-}/${MY_P}.tar.bz2"
 
 LICENSE="qwt"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-macos"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 ~x86-macos"
 SLOT="6"
 IUSE="doc examples svg"
 
@@ -67,23 +67,23 @@ src_prepare() {
 		-e 's:libqwt:libqwt6:g' \
 		-i qwtbuild.pri || die
 
-	use svg && echo >> qwtconfig.pri "CONFIG += QwtSvg"
+	use svg && echo "QWT_CONFIG += QwtSvg" >> qwtconfig.pri
 	cp *.pri examples/ || die
 }
 
 src_compile() {
 	# split compilation to allow parallel building
-	emake sub-src || die "emake library failed"
-	emake || die "emake failed"
+	emake sub-src
+	emake
 }
 
 src_install () {
 	qt4-r2_src_install
 	if use doc; then
-		dohtml -r doc/html/* || die
+		dohtml -r doc/html/*
 	fi
 	if use examples; then
 		insinto /usr/share/doc/${PF}
-		doins -r examples || die
+		doins -r examples
 	fi
 }

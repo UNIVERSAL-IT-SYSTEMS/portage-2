@@ -1,6 +1,93 @@
 # ChangeLog for app-office/gnucash
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/gnucash/ChangeLog,v 1.242 2011/07/24 10:59:27 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-office/gnucash/ChangeLog,v 1.263 2012/10/27 10:17:19 pacho Exp $
+
+*gnucash-2.4.11-r1 (27 Oct 2012)
+
+  27 Oct 2012; Pacho Ramos <pacho@gentoo.org> +gnucash-2.4.11-r1.ebuild,
+  -gnucash-2.4.11.ebuild:
+  Drop 'cxx' as that feature is experimental and not recommended by upstream,
+  bug #438356 by Jordan Evens.
+
+  19 Sep 2012; Pacho Ramos <pacho@gentoo.org> gnucash-2.4.10.ebuild,
+  gnucash-2.4.11.ebuild:
+  Fix RDEPEND on dev-db/libdbi-drivers, bug #435480 by Bernd Feige.
+
+*gnucash-2.4.11 (15 Sep 2012)
+
+  15 Sep 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/gnucash-2.4.11-potfiles-skip.patch, +gnucash-2.4.11.ebuild,
+  -files/gnucash-2.4.7-python-detection.patch,
+  -files/gnucash-2.4.8-python-detection.patch, -gnucash-2.4.8.ebuild:
+  Version bump, drop old.
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org> gnucash-2.4.10.ebuild:
+  ppc stable wrt #410611
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gnucash-2.4.8.ebuild,
+  gnucash-2.4.10.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  29 Apr 2012; Markus Meier <maekke@gentoo.org> gnucash-2.4.10.ebuild:
+  x86 stable, bug #410611
+
+  18 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gnucash-2.4.10.ebuild:
+  Stable for amd64, wrt bug #410611
+
+  25 Mar 2012; Pacho Ramos <pacho@gentoo.org> -gnucash-2.4.7.ebuild,
+  gnucash-2.4.10.ebuild:
+  Fix ofx aqbanking dep, #406909 by Tim Sammut.
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> gnucash-2.4.8.ebuild:
+  Marking gnucash-2.4.8 ppc stable for bug 393007
+
+*gnucash-2.4.10 (13 Feb 2012)
+
+  13 Feb 2012; Pacho Ramos <pacho@gentoo.org> +gnucash-2.4.10.ebuild:
+  Version bump.
+
+  10 Feb 2012; Patrick Lauer <patrick@gentoo.org> gnucash-2.4.7.ebuild,
+  gnucash-2.4.8.ebuild:
+  Changing python deps in preparation for 2.4 removal
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> gnucash-2.4.8.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> gnucash-2.4.8.ebuild:
+  amd64 stable, bug 393007
+
+  04 Dec 2011; Pacho Ramos <pacho@gentoo.org> gnucash-2.4.8.ebuild:
+  Call python_pkg_setup, bug #392667 by Chris Mayo, Ian Delaney and others.
+
+*gnucash-2.4.8 (30 Nov 2011)
+
+  30 Nov 2011; Pacho Ramos <pacho@gentoo.org>
+  +files/gnucash-2.4.8-python-detection.patch, +gnucash-2.4.8.ebuild:
+  Version bump, bug #392317 by José Romildo Malaquias.
+
+  22 Nov 2011; Pacho Ramos <pacho@gentoo.org>
+  -files/gnucash-2.4.5-link-system-libs.patch, -gnucash-2.4.5.ebuild,
+  -gnucash-2.4.6.ebuild:
+  Drop old.
+
+  21 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> gnucash-2.4.7.ebuild:
+  x86 stable wrt bug #385699
+
+  16 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> gnucash-2.4.7.ebuild:
+  ppc stable wrt #385699
+
+  14 Oct 2011; Samuli Suominen <ssuominen@gentoo.org> gnucash-2.4.7.ebuild:
+  amd64 stable wrt #385699
+
+  10 Sep 2011; Pacho Ramos <pacho@gentoo.org> gnucash-2.4.7.ebuild:
+  Fix python modules installation, bug #381477 by Chris Mayo.
+
+*gnucash-2.4.7 (29 Aug 2011)
+
+  29 Aug 2011; Pacho Ramos <pacho@gentoo.org> +gnucash-2.4.7.ebuild,
+  +files/gnucash-2.4.7-python-detection.patch:
+  Version bump, find python in a faster way, bug #344231, thanks a lot to
+  Arfrever Frehtes Taifersar Arahesis and Ed Catmur for their help.
 
   24 Jul 2011; Raúl Porcel <armin76@gentoo.org> gnucash-2.4.5.ebuild,
   gnucash-2.4.6.ebuild:

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-process/at/at-3.1.10.2-r2.ebuild,v 1.1 2011/04/17 22:46:41 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-process/at/at-3.1.10.2-r2.ebuild,v 1.4 2012/03/13 15:07:05 polynomial-c Exp $
 
 inherit eutils flag-o-matic autotools pam
 
@@ -14,6 +14,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="pam"
 
 DEPEND="virtual/mta
+	sys-devel/bison
 	>=sys-devel/flex-2.5.4a
 	pam? ( virtual/pam )"
 RDEPEND="virtual/mta
@@ -62,6 +63,13 @@ src_install() {
 	newconfd "${FILESDIR}"/atd.confd atd
 	newpamd "${FILESDIR}"/at.pamd atd
 	prepalldocs
+
+	# Preserve existing .SEQ files (bug #386625)
+	local seq_file="${ROOT}/var/spool/at/atjobs/.SEQ"
+	if [ -f "${seq_file}" ] ; then
+		einfo"Preserving existing .SEQ file (bug #386625)."
+		cp -p "${seq_file}" "${D}"/var/spool/at/atjobs/ || die
+	fi
 }
 
 pkg_postinst() {

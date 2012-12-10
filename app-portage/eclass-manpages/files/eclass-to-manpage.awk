@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/eclass-manpages/files/eclass-to-manpage.awk,v 1.22 2011/07/20 03:11:05 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/eclass-manpages/files/eclass-to-manpage.awk,v 1.27 2012/07/18 14:27:54 vapier Exp $
 
 # This awk converts the comment documentation found in eclasses
 # into man pages for easier/nicer reading.
@@ -13,6 +13,8 @@
 # @ECLASS: foo.eclass
 # @MAINTAINER:
 # <required; list of contacts, one per line>
+# @AUTHOR:
+# <optional; list of authors, one per line>
 # @BLURB: <required; short description>
 # @DESCRIPTION:
 # <optional; long description>
@@ -52,6 +54,10 @@
 # In multiline paragraphs, you can create chunks of unformatted
 # code by using this marker at the start and end.
 # @CODE
+#
+# @ROFF <some roff macros>
+# If you want a little more manual control over the formatting, you can
+# insert roff macros directly into the output by using the @ROFF escape.
 
 function _stderr_msg(text, type,   file, cnt) {
 	if (_stderr_header_done != 1) {
@@ -80,25 +86,44 @@ function eat_paragraph() {
 	code = 0
 	ret = ""
 	getline
-	while ($0 ~ /^#([[:space:]]*$|[[:space:]][^@])/) {
+	while ($0 ~ /^#/) {
+		# Only allow certain tokens in the middle of paragraphs
+		if ($2 ~ /^@/ && $2 !~ /^@(CODE|ROFF)$/)
+			break
+
 		sub(/^#[[:space:]]?/, "", $0)
+
+		# Escape . at start of line #420153
+		if ($0 ~ /^[.]/)
+			$0 = "\\&" $0
+
+		# Translate @CODE into @ROFF
+		if ($1 == "@CODE" && NF == 1) {
+			if (code)
+				$0 = "@ROFF .fi"
+			else
+				$0 = "@ROFF .nf"
+			code = !code
+		}
+
+		# Allow people to specify *roff commands directly
+		if ($1 == "@ROFF")
+			sub(/^@ROFF[[:space:]]*/, "", $0)
+
 		ret = ret "\n" $0
+
 		# Handle the common case of trailing backslashes in
 		# code blocks to cross multiple lines #335702
 		if (code && $NF == "\\")
 			ret = ret "\\"
 		getline
-		if ($0 ~ /^# @CODE$/) {
-			if (code)
-				ret = ret "\n.fi"
-			else
-				ret = ret "\n.nf"
-			code = !code
-			getline
-		}
 	}
 	sub(/^\n/,"",ret)
 	return ret
+}
+
+function pre_text(p) {
+	return ".nf\n" p "\n.fi"
 }
 
 function man_text(p) {
@@ -111,6 +136,7 @@ function man_text(p) {
 function handle_eclass() {
 	eclass = $3
 	eclass_maintainer = ""
+	eclass_author = ""
 	blurb = ""
 	desc = ""
 	example = ""
@@ -130,12 +156,17 @@ function handle_eclass() {
 	getline
 	if ($2 == "@MAINTAINER:")
 		eclass_maintainer = eat_paragraph()
+	if ($2 == "@AUTHOR:")
+		eclass_author = eat_paragraph()
 	if ($2 == "@BLURB:")
 		blurb = eat_line()
 	if ($2 == "@DESCRIPTION:")
 		desc = eat_paragraph()
 	if ($2 == "@EXAMPLE:")
 		example = eat_paragraph()
+	# in case they typo-ed the keyword, bail now
+	if ($2 ~ /^@/)
+		fail(eclass ": unknown keyword " $2)
 
 	# finally display it
 	print ".SH \"NAME\""
@@ -172,6 +203,11 @@ function handle_function() {
 	maintainer = ""
 	internal = 0
 	desc = ""
+
+	# make sure people haven't specified this before (copy & paste error)
+	if (all_funcs[func_name])
+		fail(eclass ": duplicate definition found for function: " func_name)
+	all_funcs[func_name] = func_name
 
 	# grab the docs
 	getline
@@ -220,6 +256,11 @@ function _handle_variable() {
 	default_unset = 0
 	internal = 0
 	required = 0
+
+	# make sure people haven't specified this before (copy & paste error)
+	if (all_vars[var_name])
+		fail(eclass ": duplicate definition found for variable: " var_name)
+	all_vars[var_name] = var_name
 
 	# grab the optional attributes
 	opts = 1
@@ -300,11 +341,13 @@ function handle_footer() {
 		print ".SH \"ECLASS VARIABLES\""
 		print man_text(eclass_variables)
 	}
-	#print ".SH \"AUTHORS\""
-	# hmm, how to handle ?  someone will probably whine if we dont ...
+	if (eclass_author != "") {
+		print ".SH \"AUTHORS\""
+		print pre_text(man_text(eclass_author))
+	}
 	if (eclass_maintainer != "") {
 		print ".SH \"MAINTAINERS\""
-		print man_text(eclass_maintainer)
+		print pre_text(man_text(eclass_maintainer))
 	}
 	print ".SH \"REPORTING BUGS\""
 	print "Please report bugs via http://bugs.gentoo.org/"
@@ -312,6 +355,7 @@ function handle_footer() {
 	print ".BR " eclassdir "/" eclass
 	print ".SH \"SEE ALSO\""
 	print ".BR ebuild (5)"
+	print pre_text("http://sources.gentoo.org/eclass/" eclass "?view=log")
 }
 
 #

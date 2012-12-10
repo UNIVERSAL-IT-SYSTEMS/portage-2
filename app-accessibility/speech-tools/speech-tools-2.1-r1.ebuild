@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/speech-tools/speech-tools-2.1-r1.ebuild,v 1.1 2011/03/22 03:48:43 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/speech-tools/speech-tools-2.1-r1.ebuild,v 1.9 2012/05/31 02:18:35 zmedico Exp $
 
 EAPI="2"
 
-inherit eutils flag-o-matic toolchain-funcs
+inherit eutils flag-o-matic multilib toolchain-funcs
 
 MY_P=${P/speech-/speech_}
 
@@ -15,16 +15,16 @@ SRC_URI="http://www.festvox.org/packed/festival/${PV}/${MY_P}-release.tar.gz
 
 LICENSE="FESTIVAL BSD as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="esd nas X"
+KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
+IUSE="nas X"
 
-DEPEND="esd? ( media-sound/esound )
-	nas? ( media-libs/nas )
+DEPEND="nas? ( media-libs/nas )
 	X? ( x11-libs/libX11
 		x11-libs/libXt )
 	>=media-libs/alsa-lib-1.0.20-r1
 	!<app-accessibility/festival-1.96_beta
-	!sys-power/powerman"
+	!sys-power/powerman
+	>=sys-libs/ncurses-5.6-r2"
 
 RDEPEND=${DEPEND}
 
@@ -34,14 +34,14 @@ src_prepare() {
 	EPATCH_SUFFIX="patch"
 	epatch
 	sed -i -e 's,{{HORRIBLELIBARCHKLUDGE}},"/usr/$(get_libdir)",' main/siod_main.cc
+
+	#WRT bug #309983
+	sed -i -e "s:\(GCC_SYSTEM_OPTIONS =\).*:\1:" "${S}"/config/systems/sparc_SunOS5.mak
 }
 
 src_configure() {
 	local CONFIG=config/config.in
 	sed -i -e 's/@COMPILERTYPE@/gcc42/' ${CONFIG}
-	if use esd; then
-		sed -i -e "s/#.*\(INCLUDE_MODULES += ESD_AUDIO\)/\1/" ${CONFIG}
-	fi
 	if use nas; then
 		sed -i -e "s/#.*\(INCLUDE_MODULES += NAS_AUDIO\)/\1/" ${CONFIG}
 	fi

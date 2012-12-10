@@ -1,6 +1,15 @@
 # ChangeLog for dev-libs/libdaemon
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libdaemon/ChangeLog,v 1.71 2011/03/05 12:29:31 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libdaemon/ChangeLog,v 1.73 2012/05/13 19:47:31 aballier Exp $
+
+  13 May 2012; Alexis Ballier <aballier@gentoo.org> libdaemon-0.14-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  28 Dec 2011; Tomáš Chvátal <scarabeus@gentoo.org> -libdaemon-0.12.ebuild,
+  -libdaemon-0.13-r1.ebuild, -files/libdaemon-0.13-bsd.patch,
+  libdaemon-0.14-r1.ebuild:
+  Remove overshadowed versions. Bump latest to eapi4. Remove libtool archive.
+  Provide static-libs useflag.
 
   05 Mar 2011; Raúl Porcel <armin76@gentoo.org> libdaemon-0.14-r1.ebuild:
   alpha/arm/ia64/s390/sh/sparc stable wrt #355583

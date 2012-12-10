@@ -1,6 +1,26 @@
 # ChangeLog for dev-dotnet/notify-sharp
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/notify-sharp/ChangeLog,v 1.14 2011/06/30 14:15:25 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-dotnet/notify-sharp/ChangeLog,v 1.19 2012/11/28 20:53:07 ulm Exp $
+
+  28 Nov 2012; Ulrich Müller <ulm@gentoo.org>
+  notify-sharp-0.4.0_pre20090305.ebuild:
+  Fix LICENSE, MIT (Expat) license according to COPYING file, bug 444852.
+
+  21 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  notify-sharp-0.4.0_pre20090305.ebuild:
+  Add missing inheritance of eutils.eclass
+
+  22 Jan 2012; Pacho Ramos <pacho@gentoo.org>
+  -notify-sharp-0.4.0_pre20080912-r1.ebuild:
+  Drop old.
+
+  10 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  notify-sharp-0.4.0_pre20090305.ebuild:
+  ppc stable wrt #389181
+
+  09 Aug 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  notify-sharp-0.4.0_pre20090305.ebuild:
+  Marked ~ppc wrt #360269
 
   30 Jun 2011; Christoph Mende <angelos@gentoo.org>
   notify-sharp-0.4.0_pre20090305.ebuild:

@@ -1,6 +1,123 @@
 # ChangeLog for net-wireless/wpa_supplicant
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/wpa_supplicant/ChangeLog,v 1.163 2011/07/24 11:10:19 gurligebis Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/wpa_supplicant/ChangeLog,v 1.190 2012/12/03 09:24:51 gurligebis Exp $
+
+*wpa_supplicant-1.1 (03 Dec 2012)
+
+  03 Dec 2012; <gurligebis@gentoo.org> -wpa_supplicant-1.0.ebuild,
+  -wpa_supplicant-1.0-r1.ebuild, -wpa_supplicant-1.0-r2.ebuild,
+  -files/wpa_supplicant-1.0-dbus-path-fix.patch,
+  -files/wpa_supplicant-1.0-do-not-call-dbus-functions-with-NULL-path.patch,
+  -files/wpa_supplicant-1.0-generate-libeap-peer.patch,
+  -files/wpa_supplicant-1.0-libnl_path_fix.patch, +wpa_supplicant-1.1.ebuild,
+  +files/wpa_supplicant-1.1-dbus-path-fix.patch,
+  +files/wpa_supplicant-1.1-do-not-call-dbus-functions-with-NULL-path.patch,
+  +files/wpa_supplicant-1.1-generate-libeap-peer.patch,
+  +files/wpa_supplicant-1.1-libnl_path_fix.patch:
+  Bumping to 1.1, cleaning up, fixing bug #445730
+
+  20 Nov 2012; Rick Farina <zerochaos@gentoo.org> metadata.xml:
+  adding myself as co-maintainer to assist
+
+  18 Nov 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop mobile herd as talked in gentoo-dev ML
+
+*wpa_supplicant-1.0-r2 (11 Nov 2012)
+
+  11 Nov 2012; Jason A. Donenfeld <zx2c4@gentoo.org>
+  +wpa_supplicant-1.0-r2.ebuild, metadata.xml:
+  Add enhanced WPS options to build. Add use flags for p2p and ap support.
+
+  28 Oct 2012; <gurligebis@gentoo.org> wpa_supplicant-1.0-r1.ebuild:
+  Removing debug USE flag (bug #439870) and making building verbose (bug
+  #438256)
+
+  05 Oct 2012; <gurligebis@gentoo.org> wpa_supplicant-1.0-r1.ebuild:
+  Fixing bug caused by enabling wimax, making patch fail, fixing #437240
+
+*wpa_supplicant-1.0-r1 (04 Oct 2012)
+
+  04 Oct 2012; <gurligebis@gentoo.org> +wpa_supplicant-1.0-r1.ebuild,
+  +files/wpa_supplicant-1.0-libnl_path_fix.patch:
+  Moving to depend on dev-libs/libnl:3 instead of dev-libs/libnl:1.1
+
+  03 Oct 2012; <gurligebis@gentoo.org> wpa_supplicant-1.0.ebuild:
+  Migrated to REQUIRED_USE, fixing bug #436824
+
+  03 Jun 2012; <gurligebis@gentoo.org> wpa_supplicant-1.0.ebuild:
+  Making wpa_supplicant depend on net-wireless/crda on linux, fixing bug
+  #401277
+
+  22 May 2012; <gurligebis@gentoo.org> +files/wpa_supplicant-gcc470.patch,
+  wpa_supplicant-0.7.3-r5.ebuild, wpa_supplicant-1.0.ebuild:
+  Fixing building with GCC 4.7, fixing bug #409285
+
+*wpa_supplicant-1.0 (15 May 2012)
+
+  15 May 2012; <gurligebis@gentoo.org> -wpa_supplicant-0.7.3-r2.ebuild,
+  +wpa_supplicant-1.0.ebuild, +files/wpa_supplicant-1.0-dbus-path-fix.patch,
+  +files/wpa_supplicant-1.0-do-not-call-dbus-functions-with-NULL-path.patch,
+  +files/wpa_supplicant-1.0-generate-libeap-peer.patch:
+  Bumping to 1.0, fixing bug #415503
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org>
+  wpa_supplicant-0.7.3-r2.ebuild, wpa_supplicant-0.7.3-r5.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  10 Mar 2012; Brent Baude <ranger@gentoo.org> wpa_supplicant-0.7.3-r5.ebuild:
+  Marking wpa_supplicant-0.7.3-r5 ppc for bug 386129
+
+  09 Mar 2012; Brent Baude <ranger@gentoo.org> wpa_supplicant-0.7.3-r5.ebuild:
+  Marking wpa_supplicant-0.7.3-r5 ppc64 for bug 386129
+
+  08 Jan 2012; Markus Meier <maekke@gentoo.org> wpa_supplicant-0.7.3-r5.ebuild:
+  arm stable, bug #386129
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  wpa_supplicant-0.7.3-r5.ebuild:
+  x86 stable wrt bug #386129
+
+  03 Jan 2012; <swift@gentoo.org> wpa_supplicant-0.7.3-r5.ebuild:
+  Add USE=selinux dependency on selinux-networkmanager
+
+  03 Jan 2012; <gurligebis@gentoo.org>
+  files/wpa_supplicant-0.7.3-generate-libeap-peer.patch:
+  Fixed error in patch, fixing bug #397379
+
+  28 Dec 2011; Agostino Sarubbo <ago@gentoo.org> wpa_supplicant-0.7.3-r5.ebuild:
+  Stable for AMD64, wrt bug #386129
+
+  28 Dec 2011; Alexey Shvetsov <alexxy@gentoo.org>
+  wpa_supplicant-0.7.3-r5.ebuild,
+  files/wpa_supplicant-0.7.3-generate-libeap-peer.patch:
+  Fix QA soname and drop unresolved deps
+
+  28 Oct 2011; Michał Górny <mgorny@gentoo.org>
+  wpa_supplicant-0.7.3-r5.ebuild:
+  Fix systemd patching to work w/ USE=wimax.
+
+  27 Oct 2011; <gurligebis@gentoo.org> wpa_supplicant-0.7.3-r5.ebuild:
+  Changing libnl dependency to 1.1 to fix bug #388589
+
+  27 Oct 2011; Michał Górny <mgorny@gentoo.org>
+  wpa_supplicant-0.7.3-r5.ebuild:
+  Add systemd service name to D-Bus service files per bug #372877.
+
+  17 Sep 2011; Raúl Porcel <armin76@gentoo.org>
+  wpa_supplicant-0.7.3-r2.ebuild:
+  arm stable
+
+  10 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org>
+  wpa_supplicant-0.7.3-r5.ebuild:
+  Update to eapi4. Fix bug #382159.
+
+  09 Sep 2011; <gurligebis@gentoo.org> wpa_supplicant-0.7.3-r5.ebuild:
+  Adding support for libnl 2.0 and above, fixing bug #382159
+
+  02 Aug 2011; Michał Górny <mgorny@gentoo.org>
+  wpa_supplicant-0.7.3-r5.ebuild, files/wpa_supplicant.service,
+  files/wpa_supplicant_at.service:
+  Fix systemd service target. Thanks to Tom Gundersen for explaining this.
 
   24 Jul 2011; <gurligebis@gentoo.org> wpa_supplicant-0.7.3-r2.ebuild,
   wpa_supplicant-0.7.3-r5.ebuild:
@@ -932,4 +1049,3 @@
   16 Sep 2004; Henrik Brix Andersen <brix@gentoo.org>
   +files/wpa-supplicant-0.2.4-config, +wpa-supplicant-0.2.4.ebuild:
   Initial import. Fixes bug #57708. Ebuild by latexer and me.
-

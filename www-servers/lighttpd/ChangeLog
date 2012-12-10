@@ -1,6 +1,185 @@
 # ChangeLog for www-servers/lighttpd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/lighttpd/ChangeLog,v 1.254 2011/07/26 16:34:44 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-servers/lighttpd/ChangeLog,v 1.294 2012/11/25 19:04:53 armin76 Exp $
+
+  25 Nov 2012; Raúl Porcel <armin76@gentoo.org> lighttpd-1.4.32.ebuild:
+  alpha/ia64/sh/sparc/x86 stable wrt #444179
+
+  23 Nov 2012; Anthony G. Basile <blueness@gentoo.org> lighttpd-1.4.32.ebuild:
+  stable arm, bug #444179
+
+  22 Nov 2012; Anthony G. Basile <blueness@gentoo.org> lighttpd-1.4.32.ebuild:
+  stable ppc ppc64, bug #444179
+
+  22 Nov 2012; Jeroen Roovers <jer@gentoo.org> lighttpd-1.4.32.ebuild:
+  Stable for HPPA (bug #444179).
+
+  22 Nov 2012; Agostino Sarubbo <ago@gentoo.org> lighttpd-1.4.32.ebuild:
+  Stable for amd64, wrt bug #444179
+
+*lighttpd-1.4.32 (21 Nov 2012)
+
+  21 Nov 2012; Markos Chandras <hwoarang@gentoo.org> +lighttpd-1.4.32.ebuild:
+  Version bump
+
+  20 Nov 2012; Alex Alexander <wired@gentoo.org> lighttpd-1.4.30-r1.ebuild,
+  lighttpd-1.4.31.ebuild:
+  added initscript's GPL-2 to LICENSE, bug #426178
+
+  09 Sep 2012; Raúl Porcel <armin76@gentoo.org> lighttpd-1.4.31.ebuild:
+  alpha/ia64/sh/sparc stable wrt #430902
+
+  22 Aug 2012; Markos Chandras <hwoarang@gentoo.org> lighttpd-1.4.31.ebuild:
+  Replace (use_with mmap) with (use_enable mmap) as pointed out by Jeremy Olexa
+  <darkside@gentoo.org> on bug #432250
+
+  20 Aug 2012; Johannes Huber <johu@gentoo.org> lighttpd-1.4.31.ebuild:
+  Stable for x86, wrt bug #430902
+
+  13 Aug 2012; Jeroen Roovers <jer@gentoo.org> lighttpd-1.4.31.ebuild:
+  Stable for HPPA (bug #430902).
+
+  13 Aug 2012; Anthony G. Basile <blueness@gentoo.org> lighttpd-1.4.31.ebuild:
+  Stable arm, bug #430902
+
+  12 Aug 2012; Agostino Sarubbo <ago@gentoo.org> lighttpd-1.4.31.ebuild:
+  Stable for AMD64, wrt bug #430902
+
+  11 Aug 2012; Markos Chandras <hwoarang@gentoo.org>
+  -files/1.4.25-fix-CVE-2010-0295.patch,
+  -files/1.4.25-fix-unknown-AM_SILENT_RULES.patch,
+  -files/1.4.26-fix-ssl-return-check-r2716.patch,
+  -files/lighttpd-1.4.28-detect-libev.patch,
+  -files/lighttpd-1.4.29-ssl-no-ecdh.patch, -files/lighttpd.initd-1.4.13-r3,
+  -files/spawn-fcgi.confd, -files/spawn-fcgi.initd:
+  Remove obsolete files from FILESDIR
+
+  11 Aug 2012; Anthony G. Basile <blueness@gentoo.org> lighttpd-1.4.31.ebuild:
+  Stable ppc ppc64, bug #430902
+
+  23 Jun 2012; Samuli Suominen <ssuominen@gentoo.org>
+  lighttpd-1.4.28-r5.ebuild, lighttpd-1.4.29-r4.ebuild,
+  lighttpd-1.4.30-r1.ebuild, lighttpd-1.4.31.ebuild:
+  inherit user.eclass for enewgroup and enewuser
+
+  23 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> lighttpd-1.4.31.ebuild,
+  +files/lighttpd-1.4.31-automake-1.12.patch:
+  Fix building with sys-devel/automake >= 1.12 wrt #420599 by Dennis Yxun
+
+*lighttpd-1.4.31 (01 Jun 2012)
+
+  01 Jun 2012; Markos Chandras <hwoarang@gentoo.org> +lighttpd-1.4.31.ebuild,
+  -lighttpd-1.4.23-r1.ebuild, -lighttpd-1.4.25-r2.ebuild,
+  -lighttpd-1.4.25-r3.ebuild, -lighttpd-1.4.26-r2.ebuild,
+  -lighttpd-1.4.28-r3.ebuild, -lighttpd-1.4.28-r4.ebuild, metadata.xml:
+  Version bump
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> lighttpd-1.4.23-r1.ebuild,
+  lighttpd-1.4.25-r2.ebuild, lighttpd-1.4.25-r3.ebuild,
+  lighttpd-1.4.26-r2.ebuild, lighttpd-1.4.28-r3.ebuild,
+  lighttpd-1.4.28-r4.ebuild, lighttpd-1.4.28-r5.ebuild,
+  lighttpd-1.4.29-r4.ebuild, lighttpd-1.4.30-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Apr 2012; Justin Lecher <jlec@gentoo.org> lighttpd-1.4.23-r1.ebuild:
+  Drop unnessecary die
+
+  21 Mar 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop www-server herd as discussed in gentoo-dev ML.
+
+  08 Feb 2012; <swift@gentoo.org> lighttpd-1.4.30-r1.ebuild:
+  Add USE=selinux dependency on selinux-apache, bug #402605
+
+  17 Jan 2012; Agostino Sarubbo <ago@gentoo.org> lighttpd-1.4.30-r1.ebuild:
+  Convert src_install to 'emake' and add die where is needed; wrt bug #395941
+
+  08 Jan 2012; Markos Chandras <hwoarang@gentoo.org> files/lighttpd.initd:
+  Check if /var/run/lighttpd exists. Bug #397897
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> lighttpd-1.4.30-r1.ebuild:
+  alpha/arm/ia64/sh/sparc stable wrt #392581
+
+*lighttpd-1.4.30-r1 (01 Jan 2012)
+*lighttpd-1.4.29-r4 (01 Jan 2012)
+*lighttpd-1.4.28-r5 (01 Jan 2012)
+*lighttpd-1.4.28-r4 (01 Jan 2012)
+*lighttpd-1.4.28-r3 (01 Jan 2012)
+*lighttpd-1.4.26-r2 (01 Jan 2012)
+*lighttpd-1.4.25-r3 (01 Jan 2012)
+*lighttpd-1.4.25-r2 (01 Jan 2012)
+*lighttpd-1.4.23-r1 (01 Jan 2012)
+
+  01 Jan 2012; Christian Ruppert <idl0r@gentoo.org> -lighttpd-1.4.23.ebuild,
+  +lighttpd-1.4.23-r1.ebuild, -lighttpd-1.4.25.ebuild,
+  -lighttpd-1.4.25-r1.ebuild, +lighttpd-1.4.25-r2.ebuild,
+  +lighttpd-1.4.25-r3.ebuild, -lighttpd-1.4.26.ebuild,
+  -lighttpd-1.4.26-r1.ebuild, +lighttpd-1.4.26-r2.ebuild,
+  -lighttpd-1.4.28.ebuild, -lighttpd-1.4.28-r1.ebuild,
+  -lighttpd-1.4.28-r2.ebuild, +lighttpd-1.4.28-r3.ebuild,
+  +lighttpd-1.4.28-r4.ebuild, +lighttpd-1.4.28-r5.ebuild,
+  -lighttpd-1.4.29-r3.ebuild, +lighttpd-1.4.29-r4.ebuild,
+  -lighttpd-1.4.30.ebuild, +lighttpd-1.4.30-r1.ebuild,
+  files/lighttpd.initd-1.4.13-r3, files/lighttpd.initd:
+  Revbump. Don't use deprecated start-stop-daemon options and deprecated $opts
+  variable, bug 395945.
+
+  27 Dec 2011; Jeroen Roovers <jer@gentoo.org> lighttpd-1.4.30.ebuild:
+  Stable for HPPA (bug #392581).
+
+  27 Dec 2011; Mark Loeser <halcy0n@gentoo.org> lighttpd-1.4.30.ebuild:
+  Stable for ppc/ppc64; bug #392581
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> lighttpd-1.4.30.ebuild:
+  x86 stable, bug #392581
+
+  25 Dec 2011; Agostino Sarubbo <ago@gentoo.org> lighttpd-1.4.30.ebuild:
+  Stable for AMD64, wrt security bug #392581
+
+*lighttpd-1.4.30 (19 Dec 2011)
+
+  19 Dec 2011; Markos Chandras <hwoarang@gentoo.org> +lighttpd-1.4.30.ebuild:
+  Version bump to 1.4.30 bug fix release
+
+  23 Oct 2011; Raúl Porcel <armin76@gentoo.org> lighttpd-1.4.29-r3.ebuild:
+  alpha/ia64/sh/sparc stable wrt #383791
+
+  17 Oct 2011; Jeroen Roovers <jer@gentoo.org> lighttpd-1.4.29-r3.ebuild:
+  Stable for HPPA (bug #383791).
+
+  08 Oct 2011; Markus Meier <maekke@gentoo.org> lighttpd-1.4.29-r3.ebuild:
+  arm stable, bug #383791
+
+*lighttpd-1.4.29-r3 (27 Sep 2011)
+
+  27 Sep 2011; Markos Chandras <hwoarang@gentoo.org>
+  -lighttpd-1.4.29-r1.ebuild, -lighttpd-1.4.29-r2.ebuild,
+  +lighttpd-1.4.29-r3.ebuild, files/lighttpd.initd:
+  Force revbump in stable tree to fix broken init script per bug #375301
+
+  26 Sep 2011; Markos Chandras <hwoarang@gentoo.org> lighttpd-1.4.29-r2.ebuild,
+  +files/lighttpd-1.4.29-ssl-no-ecdh.patch:
+  Add patch to compile when Eliptic Curve support is compiled in openssl.
+  Upstream bug http://redmine.lighttpd.net/issues/2335
+
+  25 Sep 2011; Andreas Schuerch <nativemad@gentoo.org>
+  lighttpd-1.4.29-r2.ebuild:
+  x86 stable, see bug 383791
+
+  20 Sep 2011; Tony Vroon <chainsaw@gentoo.org> lighttpd-1.4.29-r2.ebuild:
+  Marked stable on AMD64 based on arch testing by Tomáš "Mepho" Pružina &
+  Agostino "ago" Sarubbo in bug #383791.
+
+*lighttpd-1.4.29-r2 (19 Sep 2011)
+
+  19 Sep 2011; Markos Chandras <hwoarang@gentoo.org>
+  +lighttpd-1.4.29-r2.ebuild, +files/lighttpd-1.4.29-mod_uploadprogress.patch,
+  files/lighttpd.initd:
+  Add patch for experimental progress bar module. Bug #380093 thanks to Richard
+  Homonnai <chain@rpgfiction.net>. Remove deprecated --oknodo from init script.
+  Bug #375301 thanks to Laurent Bachelier <laurent@bachelier.name>
+
+  29 Aug 2011; Jeroen Roovers <jer@gentoo.org> lighttpd-1.4.28-r2.ebuild:
+  Stable for HPPA (bug #373917).
 
   26 Jul 2011; Raúl Porcel <armin76@gentoo.org> lighttpd-1.4.28-r2.ebuild:
   alpha/ia64/sh/sparc stable wrt #373917
@@ -1380,4 +1559,3 @@
   23 Apr 2004; Stuart Herbert <stuart@gentoo.org> lighttpd-1.1.8.ebuild,
   files/lighttpd-1.1.8-gentoo.diff, files/lighttpd.initd:
   Initial import; thanks to Boris <sirro@nurfuerspam.de>; see bug #46833
-

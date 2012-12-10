@@ -1,6 +1,39 @@
 # ChangeLog for app-admin/gtkdiskfree
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/gtkdiskfree/ChangeLog,v 1.29 2010/08/20 17:39:46 ssuominen Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-admin/gtkdiskfree/ChangeLog,v 1.38 2012/07/26 20:48:25 xmw Exp $
+
+  26 Jul 2012; Michael Weber <xmw@gentoo.org> gtkdiskfree-2.0.1.ebuild,
+  metadata.xml:
+  Fix CFLAGS, add USE gtk3 (bug 428186)
+
+  06 Jun 2012; Jeff Horelick <jdhore@gentoo.org> gtkdiskfree-2.0.1.ebuild:
+  marked x86 per bug 418491
+
+  01 Jun 2012; Agostino Sarubbo <ago@gentoo.org> gtkdiskfree-2.0.1.ebuild:
+  Stable for amd64, wrt bug #418491
+
+  03 May 2012; Jeff Horelick <jdhore@gentoo.org> gtkdiskfree-1.9.3-r1.ebuild,
+  gtkdiskfree-2.0.1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  20 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> gtkdiskfree-2.0.1.ebuild,
+  metadata.xml:
+  Remove unnecessary USE="gtk2" wrt #374057
+
+  19 Apr 2012; Michael Weber <xmw@gentoo.org> metadata.xml:
+  Proxy-maint with Samuel Bauer.
+
+*gtkdiskfree-2.0.1 (19 Apr 2012)
+
+  19 Apr 2012; Michael Weber <xmw@gentoo.org> +gtkdiskfree-2.0.1.ebuild:
+  Version bump as suggested by Samuel BAUER (bug 410757).
+
+  17 Feb 2012; Pacho Ramos <pacho@gentoo.org> gtkdiskfree-1.9.3-r1.ebuild:
+  Fallback to gentoo.org homepage as upstream is dead, install desktop file. Bug
+  #370605 by David and Samuel BAUER.
+
+  09 Feb 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer due retirement, bug #85926
 
   20 Aug 2010; Samuli Suominen <ssuominen@gentoo.org>
   gtkdiskfree-1.9.3-r1.ebuild, +files/gtkdiskfree-1.9.3-make-382.patch:

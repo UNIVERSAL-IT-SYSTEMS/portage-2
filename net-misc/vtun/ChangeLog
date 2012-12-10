@@ -1,6 +1,64 @@
 # ChangeLog for net-misc/vtun
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/vtun/ChangeLog,v 1.41 2010/09/18 03:12:18 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/vtun/ChangeLog,v 1.57 2012/11/20 20:39:21 ago Exp $
+
+  20 Nov 2012; Agostino Sarubbo <ago@gentoo.org> vtun-3.0.3.ebuild:
+  Stable for x86, wrt bug #441488
+
+  06 Nov 2012; <ago@gentoo.org> vtun-3.0.3.ebuild:
+  Stable for amd64, wrt bug #441488
+
+  03 Nov 2012; Anthony G. Basile <blueness@gentoo.org> vtun-3.0.3.ebuild:
+  stable ppc, bug #441488
+
+  16 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> -vtun-3.0.2-r1.ebuild:
+  Drop old revision
+
+  16 Sep 2012; Anthony G. Basile <blueness@gentoo.org> vtun-3.0.2-r2.ebuild:
+  Stable ppc, bug #425814
+
+*vtun-3.0.3 (16 Sep 2012)
+
+  16 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> +vtun-3.0.3.ebuild,
+  +files/vtun-3.0.3-includes.patch:
+  Version bump
+
+  16 Sep 2012; Sergey Popov <pinkbyte@gentoo.org> -files/vtun-2.6-lzo2.patch,
+  -files/vtun-2.6-makefile.patch:
+  Drop obsolete patches
+
+  30 Aug 2012; Sergey Popov <pinkbyte@gentoo.org> metadata.xml:
+  Set correct email address, drop proxy maintainer
+
+  12 Jul 2012; Jeff Horelick <jdhore@gentoo.org> vtun-3.0.2-r2.ebuild:
+  marked x86 per bug 425814
+
+  11 Jul 2012; Agostino Sarubbo <ago@gentoo.org> vtun-3.0.2-r2.ebuild:
+  Stable for amd64, wrt bug #425814
+
+*vtun-3.0.2-r2 (12 Jun 2012)
+
+  12 Jun 2012; Maxim Koltsov <maksbotan@gentoo.org>
+  +files/vtun-3.0.2-build-racing-condition-fix.patch,
+  +files/vtun-3.0.2-remove-config-presence-check.patch, +vtun-3.0.2-r2.ebuild,
+  -vtun-2.6-r1.ebuild, -vtun-3.0.2.ebuild:
+  Fix bug #364923 with rev bump, thanks to Pinkbyte. Drop old.
+
+  11 Jun 2012; Maxim Koltsov <maksbotan@gentoo.org> metadata.xml:
+  Add Sergey Popov <admin@pinkbyte.ru> as maintainer
+
+  08 Jun 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> vtun-3.0.2-r1.ebuild:
+  x86 stable wrt bug #419323
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> vtun-3.0.2-r1.ebuild:
+  Marking vtun-3.0.2-r1 ppc for bug 419323
+
+  03 Jun 2012; Agostino Sarubbo <ago@gentoo.org> vtun-3.0.2-r1.ebuild:
+  Stable for amd64, wrt bug #419323
+
+  03 Mar 2012; Pacho Ramos <pacho@gentoo.org> -vtun-3.0.1.ebuild,
+  vtun-3.0.2-r1.ebuild:
+  Parallel make fails, bug 364923; drop old.
 
 *vtun-3.0.2-r1 (18 Sep 2010)
 
@@ -152,4 +210,3 @@
   Initial revision.
   Includes a few patches for the excellent PLD folks, specifically
   to fix a bison issue, and to add DESTDIR to the 'make install' command.
-

@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-plugins/purple-plugin_pack/purple-plugin_pack-2.6.3.ebuild,v 1.2 2010/05/18 14:03:03 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-plugins/purple-plugin_pack/purple-plugin_pack-2.6.3.ebuild,v 1.8 2012/06/14 02:02:57 xmw Exp $
 
 EAPI="2"
 
@@ -12,17 +12,22 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~x86"
+KEYWORDS="amd64 hppa ppc x86"
 IUSE="debug gtk ncurses spell talkfilters"
 
 RDEPEND="net-im/pidgin[gtk?,ncurses?]
 	talkfilters? ( app-text/talkfilters )
-	spell? ( app-text/gtkspell )"
+	spell? ( app-text/gtkspell:2 )"
 DEPEND="${RDEPEND}
 	=dev-lang/python-2*"
 
 pkg_setup() {
 	python_set_active_version 2
+	python_pkg_setup
+}
+
+src_prepare() {
+	sed -e '/CFLAGS=/{s| -g3||}' -i configure || die
 }
 
 list_plugins_dep() {

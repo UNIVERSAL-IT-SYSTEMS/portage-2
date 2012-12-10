@@ -1,6 +1,25 @@
 # ChangeLog for sci-libs/libint
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/libint/ChangeLog,v 1.10 2011/06/26 10:38:19 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/libint/ChangeLog,v 1.15 2012/10/18 20:26:43 jlec Exp $
+
+  18 Oct 2012; Justin Lecher <jlec@gentoo.org> libint-1.1.2.ebuild,
+  libint-1.1.4-r1.ebuild, metadata.xml:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  03 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> libint-1.1.4-r1.ebuild,
+  metadata.xml:
+  Added static-libs, keyword amd64-linux x86-linux
+
+  28 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> libint-1.1.4-r1.ebuild:
+  x86 stable wrt bug #391593
+
+  26 Nov 2011; Markos Chandras <hwoarang@gentoo.org> libint-1.1.4-r1.ebuild:
+  Stable on amd64 wrt bug #391593
+
+  23 Nov 2011; Justin Lecher <jlec@gentoo.org> -libint-1.1.4.ebuild,
+  libint-1.1.4-r1.ebuild:
+  Dropped old, removed einstall call
 
   26 Jun 2011; Justin Lecher <jlec@gentoo.org> libint-1.1.2.ebuild,
   libint-1.1.4.ebuild, libint-1.1.4-r1.ebuild, metadata.xml:
@@ -47,4 +66,3 @@
   Useful in quantum chemistry. Is autodetected by sci-chemistry/mpqc now and
   used for very advanced methods, but hopefully will be able to fix that
   behavior soon.
-

@@ -1,6 +1,31 @@
 # ChangeLog for dev-perl/Test-Base
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-Base/ChangeLog,v 1.58 2011/07/29 16:57:07 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Test-Base/ChangeLog,v 1.66 2012/06/24 12:58:56 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  18 Feb 2012; Torsten Veller <tove@gentoo.org> -Test-Base-0.58.ebuild:
+  Cleanup
+
+  03 Feb 2012; Brent Baude <ranger@gentoo.org> Test-Base-0.600.0.ebuild:
+  Marking Test-Base-0.600.0 ppc for bug 393833
+
+  01 Jan 2012; Raúl Porcel <armin76@gentoo.org> Test-Base-0.600.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #393833
+
+  21 Dec 2011; Markus Meier <maekke@gentoo.org> Test-Base-0.600.0.ebuild:
+  arm stable, bug #393833
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> Test-Base-0.600.0.ebuild:
+  Stable for HPPA (bug #393833).
+
+  18 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Test-Base-0.600.0.ebuild:
+  x86 stable wrt bug #393833
+
+  17 Dec 2011; Agostino Sarubbo <ago@gentoo.org> Test-Base-0.600.0.ebuild:
+  Stable for AMD64, wrt bug #393833
 
   29 Jul 2011; Torsten Veller <tove@gentoo.org> -Test-Base-0.59.ebuild:
   Cleanup
@@ -220,4 +245,3 @@
   16 Jan 2006; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Test-Base-0.46.ebuild:
   New dep for yaml
-

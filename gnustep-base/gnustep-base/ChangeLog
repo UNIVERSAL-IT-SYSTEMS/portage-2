@@ -1,6 +1,46 @@
 # ChangeLog for gnustep-base/gnustep-base
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/gnustep-base/gnustep-base/ChangeLog,v 1.104 2011/04/26 08:06:35 voyageur Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/gnustep-base/gnustep-base/ChangeLog,v 1.113 2012/06/07 14:36:41 xmw Exp $
+
+  07 Jun 2012; Michael Weber <xmw@gentoo.org> gnustep-base-1.24.0-r1.ebuild:
+  ppc stable (bug 410601)
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> gnustep-base-1.20.1.ebuild,
+  gnustep-base-1.24.0-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  07 Apr 2012; Markus Meier <maekke@gentoo.org> gnustep-base-1.24.0-r1.ebuild:
+  x86 stable, bug #410601
+
+  05 Apr 2012; Agostino Sarubbo <ago@gentoo.org> gnustep-base-1.24.0-r1.ebuild:
+  Stable for amd64, wrt bug #410601
+
+*gnustep-base-1.24.0-r1 (23 Feb 2012)
+
+  23 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  gnustep-base-1.20.1.ebuild, -gnustep-base-1.22.1.ebuild,
+  -gnustep-base-1.24.0.ebuild, +gnustep-base-1.24.0-r1.ebuild:
+  Update zeroconf dependencies (bug #405383), remove old unstable version
+
+*gnustep-base-1.24.0 (08 Feb 2012)
+
+  08 Feb 2012; Bernard Cafarelli <voyageur@gentoo.org>
+  +gnustep-base-1.24.0.ebuild:
+  Version bump, with locale and ipv6 improvements
+
+  27 Nov 2011; Bernard Cafarelli <voyageur@gentoo.org>
+  gnustep-base-1.20.1.ebuild, -gnustep-base-1.22.0.ebuild,
+  gnustep-base-1.22.1.ebuild:
+  Use ssl USE-flag instead of gnutls
+
+*gnustep-base-1.22.1 (29 Sep 2011)
+
+  29 Sep 2011; Bernard Cafarelli <voyageur@gentoo.org>
+  +gnustep-base-1.22.1.ebuild:
+  Version bump
+
+  28 Sep 2011; Samuli Suominen <ssuominen@gentoo.org> metadata.xml:
+  USE="libffi" is now global USE flag.
 
   26 Apr 2011; Bernard Cafarelli <voyageur@gentoo.org>
   gnustep-base-1.22.0.ebuild:

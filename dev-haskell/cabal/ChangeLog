@@ -1,6 +1,58 @@
 # ChangeLog for dev-haskell/cabal
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-haskell/cabal/ChangeLog,v 1.66 2011/08/01 20:50:20 slyfox Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-haskell/cabal/ChangeLog,v 1.81 2012/11/14 22:35:43 slyfox Exp $
+
+*cabal-1.16.0.3 (14 Nov 2012)
+
+  14 Nov 2012; Sergei Trofimovich <slyfox@gentoo.org> +cabal-1.16.0.3.ebuild,
+  cabal-1.14.0.ebuild:
+  Version bump.
+
+  14 Nov 2012; Sergei Trofimovich <slyfox@gentoo.org> cabal-1.14.0.ebuild:
+  Mark cabal-1.16 as bundled with ghc-7.4.2 (reported by DemonWitch).
+
+  12 Sep 2012; Alexander Vershilov <qnikst@gentoo.org> cabal-1.10.2.0.ebuild,
+  cabal-1.14.0.ebuild, cabal-1.8.0.6-r1.ebuild:
+  move dev-haskell/cabal/cabal-1.10.2.0.ebuild ebuild to mirror://hackage
+
+  09 Aug 2012; Sergei Trofimovich <slyfox@gentoo.org> cabal-1.14.0.ebuild:
+  Stable on alpha/ia64/sparc (bug #418685)
+
+  08 Aug 2012; Brent Baude <ranger@gentoo.org> cabal-1.14.0.ebuild:
+  Marking cabal-1.14.0 ppc for bug 418685
+
+  08 Aug 2012; Andreas Schuerch <nativemad@gentoo.org> cabal-1.14.0.ebuild:
+  x86 stable, see bug 418685
+
+  06 Aug 2012; Brent Baude <ranger@gentoo.org> cabal-1.14.0.ebuild:
+  Marking cabal-1.14.0 ppc64 for bug 418685
+
+  03 Aug 2012; Markos Chandras <hwoarang@gentoo.org> cabal-1.14.0.ebuild:
+  Stable on amd64 wrt bug #418685
+
+  02 May 2012; Jeff Horelick <jdhore@gentoo.org> cabal-1.10.2.0.ebuild,
+  cabal-1.14.0.ebuild, cabal-1.8.0.6-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  17 Mar 2012; Sergei Trofimovich <slyfox@gentoo.org> cabal-1.10.2.0.ebuild:
+  alpha/ia64/sparc stable (bug #399973).
+
+  08 Mar 2012; Brent Baude <ranger@gentoo.org> cabal-1.10.2.0.ebuild:
+  Marking cabal-1.10.2.0 ppc64 for bug 399973
+
+  08 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> cabal-1.10.2.0.ebuild:
+  x86 stable wrt bug #399973
+
+  06 Mar 2012; Brent Baude <ranger@gentoo.org> cabal-1.10.2.0.ebuild:
+  Marking cabal-1.10.2.0 ppc for bug 399973
+
+*cabal-1.14.0 (04 Mar 2012)
+
+  04 Mar 2012; Mark Wright <gienah@gentoo.org> +cabal-1.14.0.ebuild:
+  Bump cabal to 1.14.0 for ghc 7.4.1
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> cabal-1.10.2.0.ebuild:
+  Stable for amd64, wrt bug #399973
 
 *cabal-1.10.2.0 (01 Aug 2011)
 
@@ -262,4 +314,3 @@
   26 Feb 2005; Andres Loeh <kosmikus@gentoo.org> +metadata.xml,
   +cabal-0.5.ebuild:
   Initial import.
-

@@ -1,6 +1,21 @@
 # ChangeLog for app-crypt/cfs
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/cfs/ChangeLog,v 1.12 2010/08/10 22:30:13 hwoarang Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/cfs/ChangeLog,v 1.15 2012/10/20 16:47:43 ago Exp $
+
+  20 Oct 2012; Agostino Sarubbo <ago@gentoo.org> cfs-1.4.1.17-r3.ebuild:
+  Add ~amd64, wrt bug #439080
+
+  12 Jul 2012; Ian Stakenvicius <axs@gentoo.org> cfs-1.4.1.17-r2.ebuild,
+  cfs-1.4.1.17-r3.ebuild:
+  added GPL-2 to LICENSE per bug 425888
+
+*cfs-1.4.1.17-r3 (31 Dec 2011)
+*cfs-1.4.1.17-r2 (31 Dec 2011)
+
+  31 Dec 2011; Christian Ruppert <idl0r@gentoo.org> -cfs-1.4.1.14.ebuild,
+  -cfs-1.4.1.17.ebuild, -cfs-1.4.1.17-r1.ebuild, +cfs-1.4.1.17-r2.ebuild,
+  +cfs-1.4.1.17-r3.ebuild, files/cfsd.init:
+  Revbump. Don't use deprecated start-stop-daemon options, bug 377843.
 
 *cfs-1.4.1.17-r1 (10 Aug 2010)
 
@@ -47,4 +62,3 @@
   17 Sep 2004; <mkennedy@gentoo.org> +files/README.Gentoo, +files/cfsd.conf,
   +files/cfsd.init, +cfs-1.4.1.14.ebuild:
   Initial port.  Ebuild contributed by Matthew Kennedy <mkennedy@gentoo.org>
-

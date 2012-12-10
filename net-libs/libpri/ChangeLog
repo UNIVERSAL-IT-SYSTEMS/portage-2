@@ -1,6 +1,41 @@
 # ChangeLog for net-libs/libpri
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libpri/ChangeLog,v 1.93 2011/07/27 11:33:24 chainsaw Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libpri/ChangeLog,v 1.98 2012/10/27 12:25:52 chainsaw Exp $
+
+*libpri-1.4.13 (27 Oct 2012)
+
+  27 Oct 2012; Tony Vroon <chainsaw@gentoo.org> +libpri-1.4.13.ebuild,
+  +files/libpri-1.4.13-multilib.patch,
+  +files/libpri-1.4.13-no-static-lib.patch,
+  +files/libpri-1.4.13-respect-user-flags.patch:
+  Version bump. All patches rediffed by Oliver Jaksch. Fixes, among other
+  things, outbound BRI call failure on HA8, HB8 & B410P adapters and
+  multi-channel RESTART requests. Removal of unused static library & test
+  utilities (and thus DAHDI dependency) by me. Closes bug #437798.
+
+  16 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> libpri-1.4.12-r2.ebuild:
+  x86 stable wrt bug #400443
+
+  03 Feb 2012; Agostino Sarubbo <ago@gentoo.org> libpri-1.4.12-r2.ebuild:
+  Stable for amd64, wrt bug #400443
+
+*libpri-1.4.12-r2 (17 Aug 2011)
+
+  17 Aug 2011; Tony Vroon <chainsaw@gentoo.org>
+  -files/libpri-1.4.11.1-multilib.patch,
+  -files/libpri-1.4.11.1-respect-cflags.patch,
+  -files/libpri-1.4.11.1-respect-ldflags.patch,
+  -files/libpri-1.4.11.1-werror-is-ill-advised.patch, -libpri-1.4.11.4.ebuild,
+  -libpri-1.4.11.5.ebuild, -libpri-1.4.12_beta2.ebuild,
+  -libpri-1.4.12_beta3.ebuild, -libpri-1.4.12.ebuild, +libpri-1.4.12-r2.ebuild,
+  -files/libpri-1.4.12-released-respect-cflags.patch,
+  -files/libpri-1.4.12-respect-cflags.patch,
+  -files/libpri-1.4.12-respect-ldflags.patch:
+  Incorporate USE="static-libs" functionality and bump to EAPI 4 as suggested
+  by Agostino "ago" Sarubbo in bug #377603. Remove old ebuilds & patches.
+
+  07 Aug 2011; Markus Meier <maekke@gentoo.org> libpri-1.4.12-r1.ebuild:
+  x86 stable, bug #376573
 
   27 Jul 2011; Tony Vroon <chainsaw@gentoo.org> libpri-1.4.12-r1.ebuild:
   Mark stable on AMD64 based on arch testing by Agostino "ago" Sarubbo; for bug

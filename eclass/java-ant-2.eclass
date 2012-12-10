@@ -1,7 +1,7 @@
 # eclass for ant based Java packages
 #
 # Copyright (c) 2004-2005, Thomas Matthijs <axxo@gentoo.org>
-# Copyright (c) 2004-2005, Gentoo Foundation
+# Copyright (c) 2004-2011, Gentoo Foundation
 # Changes:
 #   May 2007:
 #     Made bsfix make one pass for all things and add some glocal targets for
@@ -14,9 +14,9 @@
 #
 # Licensed under the GNU General Public License, v2
 #
-# $Header: /var/cvsroot/gentoo-x86/eclass/java-ant-2.eclass,v 1.51 2011/07/08 11:35:01 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/java-ant-2.eclass,v 1.55 2012/09/14 05:04:50 ferringb Exp $
 
-inherit java-utils-2
+inherit java-utils-2 multilib
 
 # This eclass provides functionality for Java packages which use
 # ant to build. In particular, it will attempt to fix build.xml files, so that
@@ -55,10 +55,10 @@ fi
 # and ant dependencies constructed above. Python is there for
 # java-ant_remove-taskdefs
 JAVA_ANT_E_DEPEND="${JAVA_ANT_E_DEPEND}
-       ${ANT_TASKS_DEPEND}
-       ${JAVA_PKG_PORTAGE_DEP}
-       >=dev-java/javatoolkit-0.3.0-r2
-       >=dev-lang/python-2.4"
+	   ${ANT_TASKS_DEPEND}
+	   ${JAVA_PKG_PORTAGE_DEP}
+	   >=dev-java/javatoolkit-0.3.0-r2
+	   >=dev-lang/python-2.4"
 
 # this eclass must be inherited after java-pkg-2 or java-pkg-opt-2
 # if it's java-pkg-opt-2, ant dependencies are pulled based on USE flag
@@ -264,11 +264,6 @@ java-ant_bsfix_files() {
 			files="${files} -f '${file}'"
 		done
 
-		# Play nice with paludis
-		if [[ $(type -t quiet_mode) = function ]] && quiet_mode; then
-			local output=">/dev/null"
-		fi
-
 		# for javadoc target and all in one pass, we need the new rewriter.
 		local rewriter3="/usr/share/javatoolkit/xml-rewrite-3.py"
 		if [[ ! -f ${rewriter3} ]]; then
@@ -280,7 +275,7 @@ java-ant_bsfix_files() {
 		if [[ -x ${rewriter4} && ${JAVA_ANT_ENCODING} ]]; then
 			[[ ${JAVA_ANT_REWRITE_CLASSPATH} ]] && local gcp="-g"
 			[[ ${JAVA_ANT_ENCODING} ]] && local enc="-e ${JAVA_ANT_ENCODING}"
-			eval echo "cElementTree rewriter" ${output}
+			eval echo "cElementTree rewriter"
 			debug-print "${rewriter4} extra args: ${gcp} ${enc}"
 			${rewriter4} ${gcp} ${enc} \
 				-c "${JAVA_PKG_BSFIX_SOURCE_TAGS}" source ${want_source} \
@@ -288,23 +283,23 @@ java-ant_bsfix_files() {
 				"${@}" || die "build-xml-rewrite failed"
 		elif [[ ! -f ${rewriter3} ]]; then
 			debug-print "Using second generation rewriter"
-			eval echo "Rewriting source attributes" ${output}
+			eval echo "Rewriting source attributes"
 			eval xml-rewrite-2.py ${files} \
 				-c -e ${JAVA_PKG_BSFIX_SOURCE_TAGS// / -e } \
-				-a source -v ${want_source} ${output} || _bsfix_die "xml-rewrite2 failed: ${file}"
+				-a source -v ${want_source} || _bsfix_die "xml-rewrite2 failed: ${file}"
 
-			eval echo "Rewriting target attributes" ${output}
+			eval echo "Rewriting target attributes"
 			eval xml-rewrite-2.py ${files} \
 				-c -e ${JAVA_PKG_BSFIX_TARGET_TAGS// / -e } \
-				-a target -v ${want_target} ${output} || _bsfix_die "xml-rewrite2 failed: ${file}"
+				-a target -v ${want_target} || _bsfix_die "xml-rewrite2 failed: ${file}"
 
-			eval echo "Rewriting nowarn attributes" ${output}
+			eval echo "Rewriting nowarn attributes"
 			eval xml-rewrite-2.py ${files} \
 				-c -e ${JAVA_PKG_BSFIX_TARGET_TAGS// / -e } \
-				-a nowarn -v yes ${output} || _bsfix_die "xml-rewrite2 failed: ${file}"
+				-a nowarn -v yes || _bsfix_die "xml-rewrite2 failed: ${file}"
 
 			if [[ ${JAVA_ANT_REWRITE_CLASSPATH} ]]; then
-				eval echo "Adding gentoo.classpath to javac tasks" ${output}
+				eval echo "Adding gentoo.classpath to javac tasks"
 				eval xml-rewrite-2.py ${files} \
 					 -c -e javac -e xjavac -a classpath -v \
 					 '\${gentoo.classpath}' \
@@ -312,7 +307,7 @@ java-ant_bsfix_files() {
 			fi
 		else
 			debug-print "Using third generation rewriter"
-			eval echo "Rewriting attributes" ${output}
+			eval echo "Rewriting attributes"
 			local bsfix_extra_args=""
 			# WARNING KEEP THE ORDER, ESPECIALLY FOR CHANGED ATTRIBUTES!
 			if [[ -n ${JAVA_ANT_REWRITE_CLASSPATH} ]]; then
@@ -366,7 +361,7 @@ java-ant_bsfix_files() {
 				--target-attribute target --target-value ${want_target} \
 				--target-attribute nowarn --target-value yes \
 				${bsfix_extra_args} \
-				${output} || _bsfix_die "xml-rewrite2 failed: ${file}"
+				|| _bsfix_die "xml-rewrite2 failed: ${file}"
 		fi
 
 		if [[ -n "${JAVA_PKG_DEBUG}" ]]; then
@@ -431,20 +426,28 @@ java-ant_rewrite-classpath() {
 # ------------------------------------------------------------------------------
 # @public java-ant_remove-taskdefs
 #
-# Removes taskdef elements from the file
+# Removes (named) taskdef elements from the file.
+# Options:
+#   --name NAME : only remove taskdef with name NAME.
 # @param $1 - the file to rewrite (defaults to build.xml)
 # ------------------------------------------------------------------------------
 java-ant_remove-taskdefs() {
 	debug-print-function ${FUNCNAME} $*
-	local file=${1:-build.xml}
+	local task_name
+	if [[ "${1}" == --name ]]; then
+		task_name="${2}"
+		shift 2
+	fi
+	local file="${1:-build.xml}"
 	echo "Removing taskdefs from ${file}"
 	python <<EOF
 import sys
 from xml.dom.minidom import parse
 dom = parse("${file}")
 for elem in dom.getElementsByTagName('taskdef'):
-       elem.parentNode.removeChild(elem)
-       elem.unlink()
+	if (len("${task_name}") == 0 or elem.getAttribute("name") == "${task_name}"):
+		elem.parentNode.removeChild(elem)
+		elem.unlink()
 f = open("${file}", "w")
 dom.writexml(f)
 f.close()

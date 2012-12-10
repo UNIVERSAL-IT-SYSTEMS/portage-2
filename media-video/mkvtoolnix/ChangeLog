@@ -1,6 +1,141 @@
 # ChangeLog for media-video/mkvtoolnix
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mkvtoolnix/ChangeLog,v 1.147 2011/07/15 22:53:05 radhermit Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-video/mkvtoolnix/ChangeLog,v 1.179 2012/11/05 08:33:10 blueness Exp $
+
+  05 Nov 2012; Anthony G. Basile <blueness@gentoo.org> mkvtoolnix-5.8.0.ebuild:
+  keyword ~ppc ~ppc64, bug #418355
+
+  04 Oct 2012;  <naota@gentoo.org>
+  +files/mkvtoolnix-5.8.0-boost-configure.patch, mkvtoolnix-5.8.0.ebuild:
+  Add ~x86-fbsd with adding patch for configure script. #418355
+
+  20 Sep 2012; Christoph Junghans <ottxor@gentoo.org> mkvtoolnix-5.8.0.ebuild:
+  added prefix support (bug #431308)
+
+  09 Sep 2012; Tim Harder <radhermit@gentoo.org> mkvtoolnix-5.8.0.ebuild:
+  Fix build with boost-1.50 (bug #434504) and use bundled drake for building
+  (bug #347355).
+
+  02 Sep 2012; Tim Harder <radhermit@gentoo.org> -mkvtoolnix-4.9.1.ebuild,
+  -files/mkvtoolnix-5.5.0-system-pugixml.patch, -mkvtoolnix-5.6.0.ebuild:
+  Remove old.
+
+*mkvtoolnix-5.8.0 (02 Sep 2012)
+
+  02 Sep 2012; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.8.0.ebuild,
+  +files/mkvtoolnix-5.8.0-system-pugixml.patch:
+  Version bump.
+
+*mkvtoolnix-5.7.0 (11 Jul 2012)
+
+  11 Jul 2012; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.7.0.ebuild:
+  Version bump.
+
+  03 Jul 2012; Jeff Horelick <jdhore@gentoo.org> mkvtoolnix-5.0.1-r1.ebuild:
+  marked x86 per bug 423133
+
+  29 Jun 2012; Brent Baude <ranger@gentoo.org> mkvtoolnix-5.0.1-r1.ebuild:
+  Marking mkvtoolnix-5.0.1-r1 ppc for bug 423133
+
+  24 Jun 2012; Agostino Sarubbo <ago@gentoo.org> mkvtoolnix-5.0.1-r1.ebuild:
+  Stable for amd64, wrt bug #423133
+
+  04 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> mkvtoolnix-5.6.0.ebuild:
+  Ensure GCC is at least 4.6.0 for C++11 range-based 'for' and nullptr support
+  wrt #419257 by "RazrFalcon"
+
+  31 May 2012; Tim Harder <radhermit@gentoo.org> mkvtoolnix-5.6.0.ebuild:
+  Drop arches that need to keyword dev-libs/pugixml.
+
+  31 May 2012; Tim Harder <radhermit@gentoo.org> -mkvtoolnix-5.0.1.ebuild,
+  -mkvtoolnix-5.5.0.ebuild:
+  Remove old.
+
+*mkvtoolnix-5.0.1-r1 (29 May 2012)
+
+  29 May 2012; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.0.1-r1.ebuild:
+  Revision bump to properly install GUI help files (bug #398041 by Chris Mayo).
+
+*mkvtoolnix-5.6.0 (29 May 2012)
+
+  29 May 2012; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.6.0.ebuild,
+  +files/mkvtoolnix-5.6.0-system-pugixml.patch:
+  Version bump.
+
+  10 May 2012; Tim Harder <radhermit@gentoo.org> -mkvtoolnix-4.4.0.ebuild,
+  -mkvtoolnix-5.4.0.ebuild:
+  Remove old.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> mkvtoolnix-5.4.0.ebuild,
+  mkvtoolnix-5.5.0.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  16 Apr 2012; Brent Baude <ranger@gentoo.org> mkvtoolnix-4.9.1.ebuild:
+  Marking mkvtoolnix-4.9.1 ppc for bug 381643
+
+*mkvtoolnix-5.5.0 (08 Apr 2012)
+
+  08 Apr 2012; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.5.0.ebuild,
+  +files/mkvtoolnix-5.5.0-system-pugixml.patch:
+  Version bump.
+
+  25 Mar 2012; Tim Harder <radhermit@gentoo.org> -mkvtoolnix-5.2.1.ebuild,
+  -mkvtoolnix-5.3.0.ebuild:
+  Remove old.
+
+*mkvtoolnix-5.4.0 (11 Mar 2012)
+
+  11 Mar 2012; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.4.0.ebuild:
+  Version bump.
+
+  10 Feb 2012; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.0.1.ebuild:
+  Re-add latest unmasked version.
+
+  10 Feb 2012; Tim Harder <radhermit@gentoo.org> -mkvtoolnix-4.7.0-r1.ebuild,
+  -mkvtoolnix-4.8.0.ebuild, -mkvtoolnix-4.9.0.ebuild, -mkvtoolnix-5.0.0.ebuild,
+  -mkvtoolnix-5.0.1.ebuild, -mkvtoolnix-5.1.0.ebuild, -mkvtoolnix-5.2.0.ebuild:
+  Remove old.
+
+*mkvtoolnix-5.3.0 (10 Feb 2012)
+
+  10 Feb 2012; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.3.0.ebuild:
+  Version bump.
+
+*mkvtoolnix-5.2.1 (06 Jan 2012)
+
+  06 Jan 2012; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.2.1.ebuild:
+  Version bump. Add qt4 use flag.
+
+*mkvtoolnix-5.2.0 (20 Dec 2011)
+
+  20 Dec 2011; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.2.0.ebuild:
+  Version bump.
+
+*mkvtoolnix-5.1.0 (29 Nov 2011)
+
+  29 Nov 2011; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.1.0.ebuild:
+  Version bump.
+
+*mkvtoolnix-5.0.1 (10 Oct 2011)
+
+  10 Oct 2011; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.0.1.ebuild:
+  Version bump.
+
+*mkvtoolnix-5.0.0 (28 Sep 2011)
+
+  28 Sep 2011; Tim Harder <radhermit@gentoo.org> +mkvtoolnix-5.0.0.ebuild:
+  Version bump.
+
+  18 Sep 2011; Markus Meier <maekke@gentoo.org> mkvtoolnix-4.9.1.ebuild:
+  x86 stable, bug #381643
+
+  04 Sep 2011; Tony Vroon <chainsaw@gentoo.org> mkvtoolnix-4.9.1.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #381643 filed by Tim "radhermit" Harder.
+
+  05 Aug 2011; Markos Chandras <hwoarang@gentoo.org> mkvtoolnix-4.4.0.ebuild:
+  Append -DBOOST_FILESYSTEM_VERSION=2 to C{XX}FLAGS to compile with new boost
+  releases. Bug #362853
 
 *mkvtoolnix-4.9.1 (15 Jul 2011)
 

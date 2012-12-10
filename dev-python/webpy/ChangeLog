@@ -1,6 +1,41 @@
 # ChangeLog for dev-python/webpy
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/webpy/ChangeLog,v 1.19 2010/08/02 14:59:29 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/webpy/ChangeLog,v 1.29 2012/10/17 05:24:07 patrick Exp $
+
+  17 Oct 2012; Patrick Lauer <patrick@gentoo.org> webpy-0.37.ebuild:
+  Restricting jython
+
+  19 Sep 2012; Jeroen Roovers <jer@gentoo.org> webpy-0.37.ebuild:
+  Stable for HPPA (bug #429044).
+
+  12 Sep 2012; Johannes Huber <johu@gentoo.org> webpy-0.37.ebuild:
+  Stable for x86, wrt bug #429044
+
+  12 Sep 2012; Agostino Sarubbo <ago@gentoo.org> webpy-0.37.ebuild:
+  Stable for amd64, wrt bug #429044
+
+*webpy-0.37 (28 Jun 2012)
+
+  28 Jun 2012; Patrick Lauer <patrick@gentoo.org> +webpy-0.37.ebuild:
+  Bump
+
+  24 Feb 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> webpy-0.36.ebuild:
+  x86 stable wrt bug #400341
+
+  20 Feb 2012; Patrick Lauer <patrick@gentoo.org> webpy-0.34.ebuild,
+  webpy-0.36.ebuild:
+  Restricting pypy #403839
+
+  17 Feb 2012; Jeroen Roovers <jer@gentoo.org> webpy-0.36.ebuild:
+  Stable for HPPA (bug #400341).
+
+  17 Feb 2012; Agostino Sarubbo <ago@gentoo.org> webpy-0.36.ebuild:
+  Stable for amd64, wrt bug #400341
+
+*webpy-0.36 (13 Sep 2011)
+
+  13 Sep 2011; Dirkjan Ochtman <djc@gentoo.org> +webpy-0.36.ebuild:
+  Version bump to 0.36.
 
   02 Aug 2010; Jeroen Roovers <jer@gentoo.org> webpy-0.34.ebuild:
   Stable for HPPA too.
@@ -73,4 +108,3 @@
 
   19 Jan 2007; <wrobel@gentoo.org> +metadata.xml, +webpy-0.2.ebuild:
   Added web.py-0.2 to the tree.
-

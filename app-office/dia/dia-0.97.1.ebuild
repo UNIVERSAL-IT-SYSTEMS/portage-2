@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/dia/dia-0.97.1.ebuild,v 1.12 2011/04/14 18:28:15 abcd Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/dia/dia-0.97.1.ebuild,v 1.15 2012/05/03 20:00:39 jdhore Exp $
 
 EAPI="3"
 GCONF_DEBUG="yes"
@@ -20,7 +20,7 @@ SRC_URI="mirror://gnome/sources/${PN}/${MY_PV_MM}/${MY_P}.tar.bz2"
 SLOT="0"
 KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos"
 # the doc USE flag doesn't seem to do anything without docbook2html
-IUSE="cairo doc gnome png python zlib"
+IUSE="cairo doc gnome python"
 
 RDEPEND=">=x11-libs/gtk+-2.6.0:2
 	>=dev-libs/glib-2.6.0
@@ -29,10 +29,9 @@ RDEPEND=">=x11-libs/gtk+-2.6.0:2
 	>=dev-libs/libxslt-1
 	>=media-libs/freetype-2.0.95
 	dev-libs/popt
-	zlib? ( sys-libs/zlib )
-	png? (
-		  media-libs/libpng
-		>=media-libs/libart_lgpl-2 )
+	sys-libs/zlib
+	media-libs/libpng
+	>=media-libs/libart_lgpl-2
 	gnome? (
 		>=gnome-base/libgnome-2.0
 		>=gnome-base/libgnomeui-2.0 )
@@ -44,7 +43,7 @@ RDEPEND=">=x11-libs/gtk+-2.6.0:2
 
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35.0
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	doc? ( dev-libs/libxslt )"
 
 pkg_setup() {
@@ -65,7 +64,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	gnome2_src_prepare
+	epatch "${FILESDIR}"/${P}-libpng15.patch
 
 	# Fix compilation in a gnome environment, bug #159831
 	epatch "${FILESDIR}/${PN}-0.97.0-gnome-doc.patch"
@@ -94,6 +93,7 @@ src_prepare() {
 
 	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
+	gnome2_src_prepare
 }
 
 src_install() {

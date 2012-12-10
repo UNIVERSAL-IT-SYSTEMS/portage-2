@@ -1,6 +1,38 @@
 # ChangeLog for dev-ruby/ruby-xslt
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-xslt/ChangeLog,v 1.24 2010/11/29 07:01:53 graaff Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-xslt/ChangeLog,v 1.33 2012/10/03 17:23:17 graaff Exp $
+
+*ruby-xslt-0.9.9-r1 (03 Oct 2012)
+
+  03 Oct 2012; Hans de Graaff <graaff@gentoo.org> +ruby-xslt-0.9.9-r1.ebuild:
+  Remove forced -g CFLAG, bug 435820.
+
+  27 Sep 2012; Johannes Huber <johu@gentoo.org> ruby-xslt-0.9.9.ebuild:
+  Stable for x86, wrt bug #435820
+
+  24 Sep 2012; Agostino Sarubbo <ago@gentoo.org> ruby-xslt-0.9.9.ebuild:
+  Stable for amd64, wrt bug #435820
+
+  14 Aug 2012; Diego E. Pettenò <flameeyes@gentoo.org> metadata.xml:
+  Update metadata.xml so that it's the same as most other packages.
+
+  01 May 2012; Raúl Porcel <armin76@gentoo.org> ruby-xslt-0.9.8.ebuild,
+  ruby-xslt-0.9.9.ebuild:
+  Drop ia64/sparc keywords
+
+*ruby-xslt-0.9.9 (20 Feb 2012)
+
+  20 Feb 2012; Hans de Graaff <graaff@gentoo.org> +ruby-xslt-0.9.9.ebuild:
+  Version bump. Skip failing test instead of all tests. Add ruby19.
+
+  20 Feb 2012; Hans de Graaff <graaff@gentoo.org> -ruby-xslt-0.9.7.ebuild:
+  Remove old version.
+
+  14 Dec 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> ruby-xslt-0.9.8.ebuild:
+  x86 stable wrt bug #394235
+
+  12 Dec 2011; Agostino Sarubbo <ago@gentoo.org> ruby-xslt-0.9.8.ebuild:
+  Stable for AMD64, wrt bug #394235
 
 *ruby-xslt-0.9.8 (29 Nov 2010)
 
@@ -94,4 +126,3 @@
 
   16 Aug 2005; Michael Kohl <citizen428@gentoo.org> +ruby-xslt-0.8.1.ebuild:
   Initial import. Added as an optional dependency for dev-ruby/nitro.
-

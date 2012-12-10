@@ -1,6 +1,163 @@
 # ChangeLog for dev-util/valgrind
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/valgrind/ChangeLog,v 1.124 2011/06/09 20:38:30 blueness Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-util/valgrind/ChangeLog,v 1.160 2012/10/18 20:01:37 blueness Exp $
+
+  18 Oct 2012; Anthony G. Basile <blueness@gentoo.org> valgrind-3.7.0-r4.ebuild:
+  drop ~arm, bug #434884
+
+*valgrind-3.8.1 (20 Sep 2012)
+
+  20 Sep 2012; Anthony G. Basile <blueness@gentoo.org> +valgrind-3.8.1.ebuild:
+  Version bump
+
+  18 Sep 2012; Johannes Huber <johu@gentoo.org> valgrind-3.7.0-r4.ebuild:
+  Stable for x86, wrt bug #434884
+
+  14 Sep 2012; Agostino Sarubbo <ago@gentoo.org> valgrind-3.7.0-r4.ebuild:
+  Stable for amd64, wrt bug #434884
+
+  13 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  -valgrind-3.7.0-r3.ebuild:
+  Remove older unstable version
+
+  13 Sep 2012; Agostino Sarubbo <ago@gentoo.org> valgrind-3.6.1-r4.ebuild:
+  Stable for amd64, wrt bug #430822
+
+  13 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  valgrind-3.7.0-r4.ebuild:
+  Stable ppc ppc64, bug #434884
+
+  13 Sep 2012; Anthony G. Basile <blueness@gentoo.org>
+  valgrind-3.6.1-r3.ebuild, valgrind-3.6.1-r4.ebuild:
+  Dropping ~ppc ~ppc64, we have a newer working version, bug#430822
+
+  12 Sep 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  valgrind-3.6.1-r4.ebuild:
+  x86 stable wrt bug #430822
+
+*valgrind-3.8.0 (18 Aug 2012)
+
+  18 Aug 2012; Anthony G. Basile <blueness@gentoo.org> +valgrind-3.8.0.ebuild,
+  +files/valgrind-3.8.0-non-exec-stack.patch:
+  Version bump
+
+  25 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  -valgrind-3.7.0-r1.ebuild, -valgrind-3.7.0-r2.ebuild:
+  Remove older unstable versions
+
+*valgrind-3.6.1-r4 (25 Jul 2012)
+
+  25 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  +valgrind-3.6.1-r4.ebuild, +files/valgrind-3.6.1-glibc-2.15.patch:
+  Allow valgrind 3.6.1-to build against glibc-2.15 so Andrew doesn't yell at
+  me, bug #390323 comment #31
+
+  25 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  -valgrind-3.4.1-r1.ebuild, -valgrind-3.5.0-r1.ebuild, -valgrind-3.6.0.ebuild,
+  -valgrind-3.6.1-r2.ebuild:
+  Clean out older unstable versions
+
+  10 May 2012; Anthony G. Basile <blueness@gentoo.org> metadata.xml:
+  Update metadata.xml
+
+  10 May 2012; Fabian Groffen <grobian@gentoo.org> valgrind-3.6.1.ebuild:
+  Undo unintended changes to 3.6.1
+
+  10 May 2012; Fabian Groffen <grobian@gentoo.org>
+  +files/valgrind-3.7.0-non-exec-stack-v2.patch,
+  -files/valgrind-3.7.0-non-exec-darwin.patch, valgrind-3.6.1.ebuild,
+  valgrind-3.7.0-r4.ebuild:
+  Fix OSX support change by actually applying non-exec-darwin.patch, unbreak for
+  Prefix, bug #359993
+
+*valgrind-3.7.0-r4 (01 May 2012)
+
+  01 May 2012; Anthony G. Basile <blueness@gentoo.org>
+  +valgrind-3.7.0-r4.ebuild, +files/valgrind-3.7.0-non-exec-darwin.patch:
+  Add OSX support, bug #359993
+
+  28 Apr 2012; Anthony G. Basile <blueness@gentoo.org> valgrind-3.4.0.ebuild,
+  valgrind-3.4.1.ebuild, valgrind-3.4.1-r1.ebuild, valgrind-3.5.0.ebuild,
+  valgrind-3.5.0-r1.ebuild:
+  Remove blocking dep for dev-util/callgrind which is long gone
+
+  28 Apr 2012; Anthony G. Basile <blueness@gentoo.org> -valgrind-3.3.1.ebuild,
+  -valgrind-3.3.1-r1.ebuild, -files/valgrind-3.3.1-glibc-2.9.patch:
+  Remove older versions which don't build against current tree
+
+  25 Apr 2012; Jeff Horelick <jdhore@gentoo.org> valgrind-3.6.1-r3.ebuild:
+  marked x86 per bug 393461
+
+  24 Apr 2012; Agostino Sarubbo <ago@gentoo.org> valgrind-3.6.1-r3.ebuild:
+  Stable for amd64, wrt bug #393461
+
+*valgrind-3.6.1-r3 (17 Feb 2012)
+
+  17 Feb 2012; Anthony G. Basile <blueness@gentoo.org>
+  +valgrind-3.6.1-r3.ebuild, +files/valgrind-3.6.1-fix-unhandled-opcode.patch:
+  Backport upstream commits r11856 and r11904 to address bug #403179
+
+  17 Feb 2012; Anthony G. Basile <blueness@gentoo.org>
+  valgrind-3.7.0-r3.ebuild:
+  Improve comment wrt bug #398825
+
+  17 Feb 2012; Anthony G. Basile <blueness@gentoo.org>
+  valgrind-3.6.1-r2.ebuild, +files/valgrind-3.6.1-automake-1.11.3.patch:
+  Fix 3.6.1-r2 to autoreconf with automake-1.11.x, bug #403779
+
+*valgrind-3.7.0-r3 (14 Feb 2012)
+
+  14 Feb 2012; Anthony G. Basile <blueness@gentoo.org>
+  +valgrind-3.7.0-r3.ebuild:
+  Filter -m64 and -mx32 for the new multilib-portage, bug #398825
+
+  14 Jan 2012; Anthony G. Basile <blueness@gentoo.org>
+  valgrind-3.7.0-r2.ebuild, +files/valgrind-3.7.0-glibc-2.15.patch:
+  Added patch to allow valgrind to build against glibc-2.15, bug #398921
+
+*valgrind-3.7.0-r2 (08 Jan 2012)
+
+  08 Jan 2012; Anthony G. Basile <blueness@gentoo.org>
+  +valgrind-3.7.0-r2.ebuild, +files/valgrind-3.7.0-automake-1.11.2.patch:
+  Retain old build behavior with automake-1.11.2 and below, bug #397429
+
+  21 Dec 2011; Joseph Jezak <josejx@gentoo.org> valgrind-3.6.1-r1.ebuild:
+  Marked ppc/ppc64 stable for bug #387429.
+
+*valgrind-3.7.0-r1 (23 Nov 2011)
+
+  23 Nov 2011; Anthony G. Basile <blueness@gentoo.org> -valgrind-3.7.0.ebuild,
+  +valgrind-3.7.0-r1.ebuild, files/valgrind-3.7.0-fix-gcc-regex.patch:
+  Replace original patch with the version accepted upstream
+  https://bugs.kde.org/show_bug.cgi?id=286384
+
+*valgrind-3.7.0 (11 Nov 2011)
+
+  11 Nov 2011; Anthony G. Basile <blueness@gentoo.org> +valgrind-3.7.0.ebuild,
+  +files/valgrind-3.7.0-fix-gcc-regex.patch,
+  +files/valgrind-3.7.0-fno-stack-protector.patch,
+  +files/valgrind-3.7.0-non-exec-stack.patch,
+  +files/valgrind-3.7.0-respect-flags.patch:
+  Version bump
+
+  28 Oct 2011; Anthony G. Basile <blueness@gentoo.org>
+  valgrind-3.6.1-r2.ebuild:
+  Add splitdebug message for x86 as well, bug #388703
+
+  24 Oct 2011; Markus Meier <maekke@gentoo.org> valgrind-3.6.1-r1.ebuild:
+  x86 stable, bug #387429
+
+  19 Oct 2011; Markos Chandras <hwoarang@gentoo.org> valgrind-3.6.1-r1.ebuild:
+  Stable on amd64 wrt bug #387429
+
+  19 Oct 2011; Mike Frysinger <vapier@gentoo.org> valgrind-3.6.1-r2.ebuild:
+  Add arm love #376533 by Nick Bowler.
+
+*valgrind-3.6.1-r2 (09 Aug 2011)
+
+  09 Aug 2011; Anthony G. Basile <blueness@gentoo.org>
+  +valgrind-3.6.1-r2.ebuild, +files/valgrind-3.6.1-glibc-2.14.patch:
+  Added patch to allow valgrind to build against glibc-2.14, bug #378157
 
 *valgrind-3.6.1-r1 (09 Jun 2011)
 
@@ -508,4 +665,3 @@
   17 Jun 2004; <solar@gentoo.org> valgrind-2.1.1-r1.ebuild,
   files/valgrind-2.1.1-pic.patch:
   added patch from bug 54068 to make valgrind pic aware
-

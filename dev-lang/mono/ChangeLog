@@ -1,6 +1,109 @@
 # ChangeLog for dev-lang/mono
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/mono/ChangeLog,v 1.226 2011/07/14 08:29:29 xarthisius Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/mono/ChangeLog,v 1.251 2012/11/30 16:56:33 ago Exp $
+
+  30 Nov 2012; Agostino Sarubbo <ago@gentoo.org> mono-2.10.9-r2.ebuild:
+  Stable for ppc, wrt bug #433768
+
+*mono-2.11.4 (09 Oct 2012)
+
+  09 Oct 2012; Patrick Lauer <patrick@gentoo.org> +mono-2.11.4.ebuild:
+  Bump
+
+  17 Sep 2012; Andreas Schuerch <nativemad@gentoo.org> mono-2.10.9-r2.ebuild:
+  x86 stable, see bug 433768
+
+  16 Sep 2012; Agostino Sarubbo <ago@gentoo.org> mono-2.10.9-r2.ebuild:
+  Stable for amd64, wrt bug #433768
+
+*mono-2.10.9-r2 (15 Sep 2012)
+
+  15 Sep 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/mono-2.10.9-CVE-2012-3543.patch,
+  +files/mono-2.10.9-CVE-2012-3543_2.patch, +mono-2.10.9-r2.ebuild,
+  -mono-2.10.5.ebuild, -mono-2.10.8.ebuild:
+  Fix CVE-2012-3543, drop old.
+
+  24 Aug 2012; Michael Weber <xmw@gentoo.org> mono-2.10.9-r1.ebuild:
+  ppc stable (bug 426688).
+
+  20 Aug 2012; Christoph Junghans <ottxor@gentoo.org> mono-2.11.1.ebuild:
+  added prefix keywords
+
+  18 Aug 2012; Michael Weber <xmw@gentoo.org> mono-2.10.8.ebuild:
+  ppc stable (bug 407701)
+
+  28 Jul 2012; Agostino Sarubbo <ago@gentoo.org> mono-2.10.9-r1.ebuild:
+  Stable for amd64, wrt bug #426688
+
+  22 Jul 2012; Jeff Horelick <jdhore@gentoo.org> mono-2.10.9-r1.ebuild:
+  marked x86 per bug 426688
+
+*mono-2.10.9-r1 (21 Jul 2012)
+
+  21 Jul 2012; Pacho Ramos <pacho@gentoo.org>
+  +files/mono-2.10.9-CVE-2012-3382.patch, +mono-2.10.9-r1.ebuild,
+  -mono-2.10.9.ebuild:
+  Fix CVE-2012-3382 (#426688), drop old.
+
+  22 May 2012; Agostino Sarubbo <ago@gentoo.org> mono-2.10.8.ebuild:
+  Stable for amd64, wrt bug #407701
+
+*mono-2.11.1 (10 May 2012)
+
+  10 May 2012; Alistair Bush <ali_bush@gentoo.org> +mono-2.11.1.ebuild:
+  Add alpha version of mono to tree
+
+*mono-2.10.9 (04 May 2012)
+
+  04 May 2012; Alistair Bush <ali_bush@gentoo.org> +mono-2.10.9.ebuild:
+  Version bump to mac-only release due to bug #414393.
+
+  09 Apr 2012; Markus Meier <maekke@gentoo.org> mono-2.10.8.ebuild:
+  x86 stable, bug #407701
+
+  18 Mar 2012; Pacho Ramos <pacho@gentoo.org> -mono-2.10.6.ebuild,
+  mono-2.10.8.ebuild:
+  Drop gluezilla references.
+
+*mono-2.10.8 (22 Jan 2012)
+
+  22 Jan 2012; Pacho Ramos <pacho@gentoo.org> +mono-2.10.8.ebuild,
+  -mono-2.10.2-r1.ebuild:
+  Version bump, drop old.
+
+  10 Nov 2011; Kacper Kowalik <xarthisius@gentoo.org> mono-2.10.5.ebuild:
+  ppc stable wrt #389181
+
+  05 Nov 2011; Markos Chandras <hwoarang@gentoo.org> mono-2.10.5.ebuild:
+  Stable on amd64 wrt bug #389181
+
+  04 Nov 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> mono-2.10.5.ebuild:
+  x86 stable wrt bug #389181
+
+*mono-2.10.6 (01 Nov 2011)
+
+  01 Nov 2011; Pacho Ramos <pacho@gentoo.org> +mono-2.10.6.ebuild:
+  Version bump.
+
+  16 Sep 2011; Pacho Ramos <pacho@gentoo.org> mono-2.10.5.ebuild:
+  Add virtual/yacc to DEPEND per bug #382911 by bay.
+
+  10 Sep 2011; Pacho Ramos <pacho@gentoo.org> mono-2.10.5.ebuild, metadata.xml:
+  Use and DEPEND on pax tools only when people wants to use mono on hardened
+  kernels (bug #375799 by Anthony Basile).
+
+*mono-2.10.5 (10 Sep 2011)
+
+  10 Sep 2011; Pacho Ramos <pacho@gentoo.org> -mono-2.10.1-r2.ebuild,
+  -mono-2.10.2.ebuild, -mono-2.10.4.ebuild, +mono-2.10.5.ebuild:
+  Version bump (also fixes bug 382291 by mori rámar), drop old and broken
+  versions.
+
+*mono-2.10.4 (18 Aug 2011)
+
+  18 Aug 2011; Alistair Bush <ali_bush@gentoo.org> +mono-2.10.4.ebuild:
+  Version Bump.
 
   14 Jul 2011; Kacper Kowalik <xarthisius@gentoo.org> mono-2.10.2-r1.ebuild:
   ppc stable wrt #372983

@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/istanbul/istanbul-0.2.2.ebuild,v 1.8 2011/04/25 21:30:47 arfrever Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/istanbul/istanbul-0.2.2.ebuild,v 1.11 2012/11/29 09:38:47 tetromino Exp $
 
-EAPI="3"
+EAPI="5"
 GCONF_DEBUG="no"
 PYTHON_DEPEND="2"
 
@@ -12,19 +12,19 @@ HOMEPAGE="http://live.gnome.org/Istanbul"
 DESCRIPTION="Istanbul is a screencast application for the Unix desktop"
 SRC_URI="http://zaheer.merali.org/${P}.tar.bz2"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2" # Note: not GPL-2+
 SLOT=0
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=media-libs/gst-plugins-base-0.10.8
+RDEPEND=">=media-libs/gst-plugins-base-0.10.8:0.10
 	>=dev-python/pygtk-2.6
-	>=gnome-base/gconf-2.0
-	>=dev-python/gst-python-0.10.0
-	=media-plugins/gst-plugins-ogg-0.10*
-	=media-plugins/gst-plugins-theora-0.10*
+	>=gnome-base/gconf-2
+	dev-python/gst-python:0.10
+	media-plugins/gst-plugins-ogg:0.10
+	media-plugins/gst-plugins-theora:0.10
 	>=media-libs/libtheora-1.0_alpha6[encode]
-	=media-plugins/gst-plugins-gconf-0.10*
+	media-plugins/gst-plugins-gconf:0.10
 	dev-python/python-xlib
 
 	>=dev-python/egg-python-2.11.3
@@ -32,7 +32,7 @@ RDEPEND=">=media-libs/gst-plugins-base-0.10.8
 	>=dev-python/gconf-python-2"
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35.0
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 pkg_setup() {
 	python_set_active_version 2
@@ -40,18 +40,15 @@ pkg_setup() {
 }
 
 src_prepare() {
-	gnome2_src_prepare
-
-	# disable pyc compiling
-	mv py-compile py-compile.orig
-	ln -s $(type -P true) py-compile
-	echo "py_compile = $(type -P true)" > common/python.mk
+	python_clean_py-compile_files
+	cp py-compile common/py-compile-destdir || die
 
 	# fix autoreconf failure, bug #230325
 	epatch "${FILESDIR}/${P}-macro-typo.patch"
 
-	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
+
+	gnome2_src_prepare
 }
 
 src_configure() {

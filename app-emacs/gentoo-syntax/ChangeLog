@@ -1,6 +1,39 @@
 # ChangeLog for app-emacs/gentoo-syntax
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/gentoo-syntax/ChangeLog,v 1.75 2011/01/18 18:42:52 grobian Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/gentoo-syntax/ChangeLog,v 1.83 2012/09/22 22:41:09 ulm Exp $
+
+*gentoo-syntax-1.20 (22 Sep 2012)
+
+  22 Sep 2012; Ulrich Müller <ulm@gentoo.org> +gentoo-syntax-1.20.ebuild:
+  Version bump.
+
+  22 Sep 2012; Ulrich Müller <ulm@gentoo.org> files/50gentoo-syntax-gentoo.el,
+  -gentoo-syntax-1.17.ebuild, -gentoo-syntax-1.18.ebuild,
+  gentoo-syntax-1.19.ebuild:
+  Don't initialise ebuild-mode-portdir from PORTDIR any more, which allows
+  using the default of elisp.eclass for most functions. Specify LICENSE more
+  precisely. Remove old.
+
+  01 Jul 2012; Raúl Porcel <armin76@gentoo.org> gentoo-syntax-1.19.ebuild:
+  alpha/ia64/sparc stable wrt #417305
+
+  31 May 2012; Jeroen Roovers <jer@gentoo.org> gentoo-syntax-1.19.ebuild:
+  Stable for HPPA (bug #417305).
+
+  25 May 2012; Agostino Sarubbo <ago@gentoo.org> gentoo-syntax-1.19.ebuild:
+  Stable for amd64, wrt bug #417305
+
+  24 May 2012; Samuli Suominen <ssuominen@gentoo.org>
+  gentoo-syntax-1.19.ebuild:
+  ppc/ppc64 stable wrt #417305
+
+  24 May 2012; Jeff Horelick <jdhore@gentoo.org> gentoo-syntax-1.19.ebuild:
+  marked x86 per bug 417305
+
+*gentoo-syntax-1.19 (23 Dec 2011)
+
+  23 Dec 2011; Ulrich Mueller <ulm@gentoo.org> +gentoo-syntax-1.19.ebuild:
+  Version bump.
 
   18 Jan 2011; Fabian Groffen <grobian@gentoo.org> gentoo-syntax-1.18.ebuild:
   Marked ~ppc-macos, bug #351946

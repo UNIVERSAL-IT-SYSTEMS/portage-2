@@ -1,6 +1,23 @@
 # ChangeLog for sci-astronomy/scamp
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/scamp/ChangeLog,v 1.6 2010/05/03 21:44:04 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-astronomy/scamp/ChangeLog,v 1.10 2012/08/05 19:21:51 bicatali Exp $
+
+  05 Aug 2012; Sébastien Fabbro <bicatali@gentoo.org> scamp-1.7.0-r1.ebuild:
+  fixed syntax
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> scamp-1.7.0-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*scamp-1.7.0-r1 (03 Jan 2012)
+
+  03 Jan 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  -files/scamp-1.4.6-autotools.patch, -files/scamp-1.5.5-autotools.patch,
+  -scamp-1.6.2.ebuild, -scamp-1.7.0.ebuild, +scamp-1.7.0-r1.ebuild,
+  +files/scamp-1.7.0-plplot599.patch:
+  Added a patch for plplot-5.9.9, thanks Jan Kohnert, bug #396723
+
+  04 Aug 2011; Sébastien Fabbro <bicatali@gentoo.org> metadata.xml:
+  Switched herd to sci-astronomy
 
 *scamp-1.7.0 (03 May 2010)
 
@@ -63,4 +80,3 @@
 
   19 Sep 2006; Sebastien Fabbro <seb@ist.utl.pt> +scamp-1.2.11.ebuild:
   Initial import.
-

@@ -1,17 +1,17 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/bbmail/bbmail-0.9.3.ebuild,v 1.3 2011/04/16 17:45:28 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/bbmail/bbmail-0.9.3.ebuild,v 1.6 2012/06/04 18:54:14 xmw Exp $
 
 EAPI=2
 inherit autotools eutils
 
 DESCRIPTION="blackbox mail notification"
-HOMEPAGE="http://www.sourceforge.net/projects/bbtools"
+HOMEPAGE="http://sourceforge.net/projects/bbtools"
 SRC_URI="mirror://sourceforge/bbtools/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="amd64 ~ppc ~sparc x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="x11-wm/blackbox

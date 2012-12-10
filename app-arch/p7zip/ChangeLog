@@ -1,6 +1,46 @@
 # ChangeLog for app-arch/p7zip
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/p7zip/ChangeLog,v 1.139 2011/03/27 11:00:45 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-arch/p7zip/ChangeLog,v 1.147 2012/06/09 14:43:20 jlec Exp $
+
+*p7zip-9.20.1-r3 (09 Jun 2012)
+
+  09 Jun 2012; Justin Lecher <jlec@gentoo.org> -p7zip-9.20.1-r2.ebuild,
+  +p7zip-9.20.1-r3.ebuild:
+  Drop -O -pipe from buildsystem, add -- to emake so that -l doesn't get
+  confused by 7z* make targets, #420393
+
+  07 Jun 2012; Julian Ospald <hasufell@gentoo.org> p7zip-9.13.ebuild,
+  p7zip-9.13-r3.ebuild, +files/p7zip-9.13-QA.patch, -p7zip-9.20.1.ebuild,
+  -p7zip-9.20.1-r1.ebuild, p7zip-9.20.1-r2.ebuild,
+  +files/p7zip-9.20.1-QA.patch:
+  fix QA issues wrt bug #420011 and drop old
+
+*p7zip-9.20.1-r2 (30 May 2012)
+
+  30 May 2012; Justin Lecher <jlec@gentoo.org> p7zip-9.20.1-r1.ebuild,
+  +p7zip-9.20.1-r2.ebuild, +files/p7zip-9.20.1-execstack.patch:
+  Give desktop files better names, #418179; drop in no execstack pacth from
+  fedora
+
+*p7zip-9.20.1-r1 (23 Apr 2012)
+
+  23 Apr 2012; Justin Lecher <jlec@gentoo.org> +p7zip-9.20.1-r1.ebuild:
+  Bump to EAPI=4, create and install 7zFM binary and create .desktop launcher,
+  thanks Giorgos Anastasiou for the report
+
+  07 Oct 2011; Justin Lecher <jlec@gentoo.org> p7zip-9.20.1.ebuild,
+  metadata.xml:
+  Do only install one .desktop file for compression, #366465
+
+  19 Aug 2011; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  Fix metadata.xml
+
+  19 Aug 2011; Markos Chandras <hwoarang@gentoo.org> metadata.xml:
+  remove radek from metadata.xml
+
+  17 Aug 2011; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  p7zip-9.20.1.ebuild:
+  keyword ~sparc-solaris
 
   27 Mar 2011; Justin Lecher <jlec@gentoo.org> p7zip-9.20.1.ebuild:
   Added missing dep on dev-lang/*asm, #360743

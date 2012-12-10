@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-fps/ut2003-demo/ut2003-demo-2206-r3.ebuild,v 1.23 2009/04/14 07:29:49 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-fps/ut2003-demo/ut2003-demo-2206-r3.ebuild,v 1.25 2012/02/05 06:11:34 vapier Exp $
 
-inherit eutils games
+inherit eutils unpacker games
 
 DESCRIPTION="Demo for the sequel to the 1999 Game of the Year multi-player first-person shooter"
 HOMEPAGE="http://www.ut2003.com/"
@@ -15,7 +15,6 @@ SLOT="0"
 KEYWORDS="-* amd64 x86"
 IUSE=""
 RESTRICT="strip"
-PROPERTIES="interactive"
 
 DEPEND="app-arch/unzip"
 RDEPEND="virtual/opengl
@@ -29,7 +28,6 @@ RDEPEND="virtual/opengl
 
 S="${WORKDIR}"
 
-GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/${PN}
 Ddir=${D}/${dir}
 

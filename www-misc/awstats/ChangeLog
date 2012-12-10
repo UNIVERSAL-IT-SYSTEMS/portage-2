@@ -1,6 +1,58 @@
 # ChangeLog for www-misc/awstats
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-misc/awstats/ChangeLog,v 1.21 2011/06/06 12:15:53 flameeyes Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/www-misc/awstats/ChangeLog,v 1.33 2012/11/15 12:23:20 blueness Exp $
+
+  15 Nov 2012; Anthony G. Basile <blueness@gentoo.org>
+  awstats-7.1_p20121017.ebuild:
+  stable ppc, bug #440764
+
+  13 Nov 2012; Andreas Schuerch <nativemad@gentoo.org>
+  awstats-7.1_p20121017.ebuild:
+  x86 stable, see bug 440764
+
+  12 Nov 2012; Jeroen Roovers <jer@gentoo.org> awstats-7.1_p20121017.ebuild:
+  Stable for HPPA (bug #440764).
+
+  11 Nov 2012; <ago@gentoo.org> awstats-7.1_p20121017.ebuild:
+  Stable for amd64, wrt bug #440764
+
+*awstats-7.1_p20121017 (01 Nov 2012)
+
+  01 Nov 2012; Diego E. Pettenò <flameeyes@gentoo.org>
+  +awstats-7.1_p20121017.ebuild, -awstats-7.0_p20101205-r3.ebuild,
+  -files/awstats-6.3-gentoo.diff, -files/awstats-7.0_p20101205-nofollow.patch:
+  Remove old; bump to a new snapshot as per bug #440764.
+
+  01 Feb 2012; Brent Baude <ranger@gentoo.org> awstats-7.1-r2.ebuild:
+  Marking awstats-7.1-r2 ppc for bug 384237
+
+  15 Nov 2011; Jeroen Roovers <jer@gentoo.org> awstats-7.1-r2.ebuild:
+  Stable for HPPA (bug #384237).
+
+  15 Nov 2011; Tony Vroon <chainsaw@gentoo.org> awstats-7.1-r2.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Elijah "Armageddon" El Lazkani in security bug #384237.
+
+  13 Nov 2011; Markus Meier <maekke@gentoo.org> awstats-7.1-r2.ebuild:
+  x86 stable, bug #384237
+
+*awstats-7.1-r2 (11 Nov 2011)
+
+  11 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org> +awstats-7.1-r2.ebuild,
+  -awstats-7.1-r1.ebuild:
+  Properly fix the mistake.
+
+*awstats-7.1-r1 (11 Nov 2011)
+
+  11 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org> +awstats-7.1-r1.ebuild,
+  -awstats-7.1.ebuild:
+  Fix bug #353716.
+
+*awstats-7.1 (11 Nov 2011)
+
+  11 Nov 2011; Diego E. Pettenò <flameeyes@gentoo.org> +awstats-7.1.ebuild,
+  +files/awstats-7.1-gentoo.diff:
+  Version bump; new version is beta but solves some security issues.
 
   06 Jun 2011; Diego E. Pettenò <flameeyes@gentoo.org>
   -files/postinst-en-r1.txt, -awstats-6.95.ebuild,
@@ -388,4 +440,3 @@
   Perolo Silantico < per.sil @ gmx.it >
   and me < zul @ gentoo.org >
   Finally closes # 19382.
-

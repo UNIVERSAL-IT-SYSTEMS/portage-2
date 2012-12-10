@@ -1,6 +1,63 @@
 # ChangeLog for dev-perl/ImageSize
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/ImageSize/ChangeLog,v 1.66 2011/01/14 17:15:15 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/ImageSize/ChangeLog,v 1.82 2012/10/02 00:02:58 blueness Exp $
+
+  02 Oct 2012; Anthony G. Basile <blueness@gentoo.org> ImageSize-3.232.0.ebuild:
+  stable ppc ppc64, bug #433814
+
+  30 Sep 2012; Raúl Porcel <armin76@gentoo.org> ImageSize-3.230.0.ebuild,
+  ImageSize-3.231.0.ebuild, ImageSize-3.232.0.ebuild:
+  Drop alpha keywords
+
+  12 Sep 2012; Johannes Huber <johu@gentoo.org> ImageSize-3.232.0.ebuild:
+  Stable for x86, wrt bug #428986
+
+  12 Sep 2012; Agostino Sarubbo <ago@gentoo.org> ImageSize-3.232.0.ebuild:
+  Stable for amd64, wrt bug #428986
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+*ImageSize-3.232.0 (31 May 2012)
+
+  31 May 2012; Torsten Veller <tove@gentoo.org> +ImageSize-3.232.0.ebuild:
+  Version bump
+
+*ImageSize-3.231.0 (26 May 2012)
+
+  26 May 2012; Torsten Veller <tove@gentoo.org> +ImageSize-3.231.0.ebuild:
+  Version bump
+
+  21 Apr 2012; Torsten Veller <tove@gentoo.org> -ImageSize-3.2.2.0.ebuild:
+  Cleanup
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> ImageSize-3.2.2.0.ebuild,
+  ImageSize-3.230.0.ebuild:
+  Drop ia64/sparc
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  ImageSize-3.230.0.ebuild:
+  x86 stable wrt bug #400153
+
+  02 Mar 2012; Brent Baude <ranger@gentoo.org> ImageSize-3.230.0.ebuild:
+  Marking ImageSize-3.230.0 ppc64 for bug 400153
+
+  01 Mar 2012; Brent Baude <ranger@gentoo.org> ImageSize-3.230.0.ebuild:
+  Marking ImageSize-3.230.0 ppc for bug 400153
+
+  25 Feb 2012; Tobias Klausmann <klausman@gentoo.org> ImageSize-3.230.0.ebuild:
+  Stable on alpha, bug #400153
+
+  24 Feb 2012; Agostino Sarubbo <ago@gentoo.org> ImageSize-3.230.0.ebuild:
+  Stable for amd64, wrt bug #400153
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -ImageSize-3.230.ebuild:
+  Cleanup
+
+*ImageSize-3.230.0 (30 Aug 2011)
+
+  30 Aug 2011; Torsten Veller <tove@gentoo.org> +ImageSize-3.230.0.ebuild:
+  Change version scheme
 
   14 Jan 2011; Torsten Veller <tove@gentoo.org> -ImageSize-3.1.1.ebuild,
   -ImageSize-3.2.2.1.ebuild:

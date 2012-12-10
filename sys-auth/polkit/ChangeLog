@@ -1,6 +1,263 @@
 # ChangeLog for sys-auth/polkit
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/polkit/ChangeLog,v 1.50 2011/07/10 23:42:27 mattst88 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/polkit/ChangeLog,v 1.116 2012/11/22 20:48:48 blueness Exp $
+
+  22 Nov 2012; Anthony G. Basile <blueness@gentoo.org> polkit-0.107-r1.ebuild:
+  stable arm, bug #436666
+
+  22 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> -polkit-0.107.ebuild:
+  old
+
+  22 Nov 2012; Anthony G. Basile <blueness@gentoo.org> polkit-0.107-r1.ebuild:
+  stable ppc64, bug #436666
+
+  22 Nov 2012; Agostino Sarubbo <ago@gentoo.org> polkit-0.107-r1.ebuild:
+  Stable for x86, tested by Vincent Olivert Riera <peratu@carrosses.com>, wrt
+  bug #436666
+
+  21 Nov 2012; Anthony G. Basile <blueness@gentoo.org> polkit-0.107-r1.ebuild:
+  stable ppc, bug #436666, thanks peratu
+
+  19 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> polkit-0.108.ebuild:
+  Link against -lgmodule-2.0 to prevent underlinking (backported from upstream,
+  but using sed to avoid eautoreconf) wrt #443798
+
+*polkit-0.108 (18 Nov 2012)
+
+  18 Nov 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.108.ebuild:
+  Version bump.
+
+  28 Oct 2012; Naohiro Aota <naota@gentoo.org> polkit-0.104-r1.ebuild,
+  polkit-0.107-r1.ebuild, polkit-0.107.ebuild:
+  Drop ~x86-fbsd due to bug #439968.
+
+  15 Oct 2012; Jeroen Roovers <jer@gentoo.org> polkit-0.104-r1.ebuild,
+  polkit-0.107-r1.ebuild:
+  Drop HPPA keywording (bug #438368).
+
+  15 Oct 2012; Zac Medico <zmedico@gentoo.org> polkit-0.107-r1.ebuild:
+  Set QA_MULTILIB_PATHS for bug #424423.
+
+  09 Oct 2012; Jeroen Roovers <jer@gentoo.org> polkit-0.107-r1.ebuild:
+  Marked ~hppa (bug #436668).
+
+  08 Oct 2012; Samuli Suominen <ssuominen@gentoo.org> polkit-0.107-r1.ebuild:
+  Use pax-mark in src_compile() instead of src_install() for src_test() wrt
+  #423927 by "kensington" and "Nikoli". Punt bogus RESTRICT for multilib-strict
+  and emphatize it's an Portage issue instead of polkit issue in src_install()
+  message.
+
+  07 Oct 2012; Agostino Sarubbo <ago@gentoo.org> polkit-0.107-r1.ebuild:
+  Stable for amd64, wrt bug #436666
+
+*polkit-0.107-r1 (20 Sep 2012)
+
+  20 Sep 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.107-r1.ebuild,
+  +files/polkit-0.107-fallback.patch:
+  Introduce upstream patch for falling back to uid 0 for authentication if list
+  of admin identities is empty.
+
+  13 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> -polkit-0.105.ebuild,
+  -polkit-0.106-r7.ebuild:
+  old
+
+*polkit-0.107 (13 Jul 2012)
+
+  13 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.107.ebuild:
+  Version bump.
+
+  07 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> -polkit-0.106-r5.ebuild,
+  -polkit-0.106-r6.ebuild:
+  old
+
+  07 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> polkit-0.106-r7.ebuild:
+  Remove USE="debug" because --enable/--disable-verbose-mode is no-op wrt
+  #391865 by Maksim Melnikau
+
+*polkit-0.106-r7 (02 Jul 2012)
+
+  02 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.106-r7.ebuild:
+  RESTRICT="multilib-strict" since it's not compatible with the whole
+  /usr/libexec -> /usr/lib/$package migration wrt #424423. This will move
+  polkit-agent-helper-1 and polkitd back to /usr/lib/polkit-1.
+
+*polkit-0.106-r6 (01 Jul 2012)
+
+  01 Jul 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.106-r6.ebuild:
+  Fix hardcoded path to "lib" in polkitagentsession.c for systems without the
+  /usr/lib to /usr/lib64 symlink.
+
+  30 Jun 2012; <swift@gentoo.org> polkit-0.104-r1.ebuild, polkit-0.105.ebuild,
+  polkit-0.106-r5.ebuild:
+  Adding dependency on SELinux policykit module if USE=selinux is set
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> polkit-0.106-r5.ebuild:
+  pax-mark polkitd only when spidermonkey is built with JIT enabled and only
+  'm' instead of 'mr' when version is >= 1.8.7 (by using has_version check)
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -polkit-0.106-r2.ebuild,
+  -polkit-0.106-r3.ebuild, -polkit-0.106-r4.ebuild:
+  old
+
+*polkit-0.106-r5 (27 Jun 2012)
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.106-r5.ebuild:
+  Revert entire unix-group:wheel experiment back to unix-user:0 because
+  PolicyKit agent(s) don't behave correctly with it wrt #423733 by Travis
+  Hansen. Revert system-local-login to system-auth for PAM errors wrt #423487
+  by Doug Goldstein.
+
+*polkit-0.106-r4 (27 Jun 2012)
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.106-r4.ebuild:
+  Stop installing polkit-backend-1.pc because upstream changed
+  libpolkit-backend-1.la to be noinst_LTLIBRARIES in
+  src/polkitbackend/Makefile.am wrt #423431 by Pim Vullers
+
+  27 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> polkit-0.106-r3.ebuild:
+  Redefine libprivdir in install for multilib-strict wrt #423381 by Michael
+  Palimaka
+
+*polkit-0.106-r3 (25 Jun 2012)
+
+  25 Jun 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +polkit-0.106-r3.ebuild:
+  pax-mark polkitd to fix crashes on hardened/PaX systems.
+
+  23 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> polkit-0.106-r2.ebuild:
+  Convert pkg_postinst() message about polkitd home directory to new
+  user.eclass function esethome().
+
+  19 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> polkit-0.106-r2.ebuild:
+  Check for mozjs187.pc for >=dev-lang/spidermonkey-1.8.7 compability.
+
+  19 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> polkit-0.106-r2.ebuild:
+  Adapt to sys-auth/pambase with USE="systemd" wrt #372229 by Michał Górny
+
+  17 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -polkit-0.106-r1.ebuild:
+  old
+
+*polkit-0.106-r2 (17 Jun 2012)
+
+  17 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.106-r2.ebuild:
+  Revision bump to chown /var/lib/polkit-1 because diropts has no effect on
+  existing directories.
+
+  17 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> -polkit-0.106.ebuild:
+  old
+
+*polkit-0.106-r1 (17 Jun 2012)
+
+  17 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.106-r1.ebuild:
+  Update /etc/pam.d/polkit-1 from system-login to system-local-login. Use
+  unix-group "adm" for administrators. Use /var/lib/polkit-1 as home directory
+  for unix-user polkitd. Update owners of /etc/polkit-1/rules.d and
+  /usr/share/polkit-1/rules.d to polkitd:root wrt #420269.
+
+  13 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> polkit-0.106.ebuild:
+  Pull in dev-lang/spidermonkey >= 1.8.5 and dev-libs/glib >= 2.32 wrt
+  #420173 and #420307.
+
+*polkit-0.106 (07 Jun 2012)
+
+  07 Jun 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.106.ebuild:
+  Version bump.
+
+  20 May 2012; Samuli Suominen <ssuominen@gentoo.org> polkit-0.105.ebuild:
+  Improve systemd handling wrt #416317 by Christoph Brill
+
+*polkit-0.105 (14 May 2012)
+
+  14 May 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.105.ebuild:
+  Version bump.
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> polkit-0.104-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  18 Apr 2012; Samuli Suominen <ssuominen@gentoo.org> -polkit-0.102.ebuild,
+  -polkit-0.103.ebuild, -polkit-0.104.ebuild:
+  old
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> polkit-0.104-r1.ebuild:
+  ia64/sh/sparc stable wrt #401513
+
+  09 Mar 2012; Samuli Suominen <ssuominen@gentoo.org> polkit-0.104-r1.ebuild:
+  ppc/ppc64 stable wrt #401513
+
+  17 Feb 2012; Tobias Klausmann <klausman@gentoo.org> polkit-0.104-r1.ebuild:
+  Stable on alpha, bug #401513
+
+  17 Feb 2012; Thomas Kahle <tomka@gentoo.org> polkit-0.104-r1.ebuild:
+  marked x86 per bug 401513
+
+  13 Feb 2012; Markus Meier <maekke@gentoo.org> polkit-0.104-r1.ebuild:
+  arm stable, bug #401513
+
+  02 Feb 2012; Jeroen Roovers <jer@gentoo.org> polkit-0.104-r1.ebuild:
+  Stable for HPPA (bug #401513).
+
+  30 Jan 2012; Agostino Sarubbo <ago@gentoo.org> polkit-0.104-r1.ebuild:
+  Stable for AMD64, wrt security bug #401513
+
+*polkit-0.104-r1 (30 Jan 2012)
+
+  30 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.104-r1.ebuild:
+  Restore the default value of AdminIdentities from "wheel" to "0" like it was
+  in polkit-0.102 and ones before that. You should see files
+  50-localauthority.conf and 60-gentoo.conf in
+  /etc/polkit-1/localauthority.conf.d. You should also familiarize yourself
+  with "man 8 pklocalauthority" as soon as possible.
+
+  29 Jan 2012; Markus Meier <maekke@gentoo.org> polkit-0.103.ebuild:
+  arm stable, bug #397755
+
+  07 Jan 2012; Agostino Sarubbo <ago@gentoo.org> polkit-0.103.ebuild:
+  Stable for AMD64, wrt bug #397755
+
+*polkit-0.104 (05 Jan 2012)
+
+  05 Jan 2012; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.104.ebuild,
+  metadata.xml:
+  Version bump.
+
+  08 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> -polkit-0.101-r1.ebuild:
+  old
+
+  08 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> polkit-0.102.ebuild:
+  ppc/ppc64 stable wrt #387163
+
+  08 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> polkit-0.103.ebuild:
+  Raise dev-libs/glib depend to at least 2.30 wrt #393579 by Matt Palermo
+
+*polkit-0.103 (07 Dec 2011)
+
+  07 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.103.ebuild:
+  Version bump. Remove unrequired keepdir of /var/run/polkit-1 wrt #387903 by
+  "i.Dark_Templar"
+
+  05 Nov 2011; Raúl Porcel <armin76@gentoo.org> polkit-0.102.ebuild:
+  alpha/arm/ia64/sh/sparc stable wrt #387163
+
+  29 Oct 2011; Markus Meier <maekke@gentoo.org> polkit-0.102.ebuild:
+  arm stable, bug #387163
+
+  19 Oct 2011; Jeroen Roovers <jer@gentoo.org> polkit-0.102.ebuild:
+  Stable for HPPA (bug #387163).
+
+  18 Oct 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org> polkit-0.102.ebuild:
+  x86 stable wrt bug #387163
+
+  15 Oct 2011; Markos Chandras <hwoarang@gentoo.org> polkit-0.102.ebuild:
+  Stable on amd64 wrt bug #387163
+
+  28 Aug 2011; Nirbheek Chauhan <nirbheek@gentoo.org> polkit-0.101-r1.ebuild,
+  polkit-0.102.ebuild:
+  pambase[consolekit] support is needed to use polkit with pam, add to PDEPEND
+
+*polkit-0.102 (06 Aug 2011)
+
+  06 Aug 2011; Samuli Suominen <ssuominen@gentoo.org> +polkit-0.102.ebuild:
+  Version bump.
 
   10 Jul 2011; Matt Turner <mattst88@gentoo.org> polkit-0.101-r1.ebuild:
   Added ~mips, bug 296548
@@ -183,4 +440,3 @@
   +files/polkit-0.93-fix-daemon-name.patch, +polkit-0.94.ebuild,
   +metadata.xml:
   Initial ebuild for GNOME 2.28.
-

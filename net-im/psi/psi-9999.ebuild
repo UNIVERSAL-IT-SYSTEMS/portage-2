@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/psi/psi-9999.ebuild,v 1.12 2011/06/30 09:23:16 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/psi/psi-9999.ebuild,v 1.15 2012/05/04 06:22:12 jdhore Exp $
 
 EAPI="4"
 
 LANGS="ar be bg br ca cs da de ee el eo es et fi fr hr hu it ja mk nl pl pt pt_BR ru se sk sl sr sr@latin sv sw uk ur_PK vi zh_CN zh_TW"
 
-EGIT_REPO_URI="git://git.psi-im.org/psi.git"
+EGIT_REPO_URI="git://github.com/psi-im/psi.git"
 EGIT_HAS_SUBMODULES=1
 LANGS_URI="git://pv.et-inf.fho-emden.de/git/psi-l10n"
 
@@ -41,6 +41,7 @@ RDEPEND="
 	xscreensaver? ( x11-libs/libXScrnSaver )
 	extras? ( webkit? ( x11-libs/qt-webkit:4 ) )
 	app-arch/unzip
+	|| ( >=sys-libs/zlib-1.2.5.1-r2[minizip] <sys-libs/zlib-1.2.5.1-r1 )
 "
 DEPEND="${RDEPEND}
 	extras? (
@@ -48,7 +49,7 @@ DEPEND="${RDEPEND}
 		sys-devel/qconf
 	)
 	doc? ( app-doc/doxygen )
-	dev-util/pkgconfig
+	virtual/pkgconfig
 "
 PDEPEND="
 	crypt? ( app-crypt/qca-gnupg:2 )

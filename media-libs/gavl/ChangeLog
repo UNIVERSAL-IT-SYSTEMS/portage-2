@@ -1,6 +1,30 @@
 # ChangeLog for media-libs/gavl
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/gavl/ChangeLog,v 1.15 2011/06/26 14:55:47 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/gavl/ChangeLog,v 1.22 2012/09/25 10:42:28 radhermit Exp $
+
+  25 Sep 2012; Tim Harder <radhermit@gentoo.org> -gavl-1.1.0.ebuild,
+  -gavl-1.1.0-r1.ebuild:
+  Remove old.
+
+*gavl-1.4.0 (25 Sep 2012)
+
+  25 Sep 2012; Tim Harder <radhermit@gentoo.org> +gavl-1.4.0.ebuild:
+  Version bump.
+
+  14 Jun 2012; Michael Weber <xmw@gentoo.org> gavl-1.2.0.ebuild:
+  ppc stable (bug 394291)
+
+  26 Dec 2011; Markus Meier <maekke@gentoo.org> gavl-1.2.0.ebuild:
+  x86 stable, bug #394291
+
+  15 Dec 2011; Agostino Sarubbo <ago@gentoo.org> gavl-1.2.0.ebuild:
+  Stable for AMD64, wrt bug #394291
+
+  12 Dec 2011; Jeroen Roovers <jer@gentoo.org> gavl-1.2.0.ebuild:
+  Stable for HPPA (bug #394291).
+
+  10 Dec 2011; Samuli Suominen <ssuominen@gentoo.org> gavl-1.2.0.ebuild:
+  Use autotools-utils.eclass in order to drop libtool archive(s).
 
   26 Jun 2011; Brent Baude <ranger@gentoo.org> gavl-1.1.0.ebuild:
   Marking gavl-1.1.0 ppc for bug 365273

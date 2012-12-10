@@ -1,6 +1,43 @@
 # ChangeLog for dev-python/argparse
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/argparse/ChangeLog,v 1.27 2011/06/26 08:39:38 naota Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/argparse/ChangeLog,v 1.37 2012/12/10 00:02:55 jer Exp $
+
+  10 Dec 2012; Jeroen Roovers <jer@gentoo.org> argparse-1.2.1-r1.ebuild:
+  Stable for HPPA (bug #446496).
+
+*argparse-1.2.1-r2 (08 Dec 2012)
+
+  08 Dec 2012; Michał Górny <mgorny@gentoo.org> +argparse-1.2.1-r2.ebuild:
+  Revbump again to end the transitional period and stop installing argparse for
+  new Python versions.
+
+  08 Dec 2012; Michał Górny <mgorny@gentoo.org> argparse-1.2.1-r1.ebuild:
+  Add PYTHON_USEDEP on migrated packages.
+
+  02 Nov 2012; Michał Górny <mgorny@gentoo.org> argparse-1.2.1-r1.ebuild:
+  Re-enable all Python implementations but warn if the package is not useful,
+  requesting people to depclean it.
+
+*argparse-1.2.1-r1 (29 Oct 2012)
+
+  29 Oct 2012; Michał Górny <mgorny@gentoo.org> +argparse-1.2.1-r1.ebuild:
+  Convert to distutils-r1, build only for implementations lacking built-in
+  argparse.
+
+  05 Aug 2012; Richard Yao <ryao@gentoo.org> argparse-1.2.1.ebuild:
+  Keyword ~x64-freebsd
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> argparse-1.2.1.ebuild:
+  keyword ~amd64-fbsd
+
+  01 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> argparse-1.2.1.ebuild:
+  Set COLUMNS to make tests pass (bug 397345, thanks Dustin Polke).
+
+  01 Mar 2012; Dirkjan Ochtman <djc@gentoo.org> metadata.xml:
+  Remove myself as a maintainer.
+
+  27 Aug 2011; Jesus Rivero <neurogeek@gentoo.org> argparse-1.2.1.ebuild:
+  Change to generic license
 
   26 Jun 2011; Naohiro Aota <naota@gentoo.org> argparse-1.2.1.ebuild:
   Add ~x86-fbsd, bug #346005
@@ -65,6 +102,9 @@
   02 Aug 2010; Christian Faulhammer <fauli@gentoo.org> argparse-1.1.ebuild:
   add Prefix keywords for bug 330569
 
+  22 Apr 2010; Dirkjan Ochtman <djc@gentoo.org> -argparse-1.0.1.ebuild:
+  Remove old version.
+
   22 Apr 2010; Dirkjan Ochtman <djc@gentoo.org> argparse-1.1.ebuild:
   amd64 stable, bug 313141
 
@@ -92,4 +132,3 @@
 
   20 Oct 2009; <djc@gentoo.org> +argparse-1.0.1.ebuild, +metadata.xml:
   Initial version of argparse (1.0.1).
-

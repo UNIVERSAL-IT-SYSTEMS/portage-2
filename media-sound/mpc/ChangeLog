@@ -1,6 +1,64 @@
 # ChangeLog for media-sound/mpc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/mpc/ChangeLog,v 1.83 2011/06/08 18:25:46 angelos Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-sound/mpc/ChangeLog,v 1.101 2012/07/29 17:45:43 angelos Exp $
+
+  29 Jul 2012; Christoph Mende <angelos@gentoo.org> -mpc-0.20.ebuild,
+  -mpc-0.21.ebuild:
+  Remove old
+
+  29 Jul 2012; Raúl Porcel <armin76@gentoo.org> mpc-0.22.ebuild:
+  sparc stable wrt #417731
+
+  30 May 2012; Markus Meier <maekke@gentoo.org> mpc-0.22.ebuild:
+  arm stable, bug #417731
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> mpc-0.22.ebuild:
+  Marking mpc-0.22 ppc for bug 417731
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> mpc-0.22.ebuild:
+  Marking mpc-0.22 ppc64 for bug 417731
+
+  28 May 2012; Johannes Huber <johu@gentoo.org> mpc-0.22.ebuild:
+  Stable for x86, wrt bug #417731
+
+  28 May 2012; Jeroen Roovers <jer@gentoo.org> mpc-0.22.ebuild:
+  Stable for HPPA (bug #417731).
+
+  27 May 2012; Agostino Sarubbo <ago@gentoo.org> mpc-0.22.ebuild:
+  Stable for amd64, wrt bug #417731
+
+  05 May 2012; Michał Górny <mgorny@gentoo.org> mpc-0.21.ebuild,
+  mpc-0.22.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+*mpc-0.22 (19 Feb 2012)
+
+  19 Feb 2012; Alexis Ballier <aballier@gentoo.org> +mpc-0.22.ebuild:
+  version bump
+
+  16 Jan 2012; Jeroen Roovers <jer@gentoo.org> mpc-0.21.ebuild:
+  Stable for HPPA (bug #397101).
+
+  15 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> mpc-0.21.ebuild:
+  x86 stable wrt bug #397101
+
+  12 Jan 2012; Markus Meier <maekke@gentoo.org> mpc-0.21.ebuild:
+  arm stable, bug #397101
+
+  05 Jan 2012; Michael Weber <xmw@gentoo.org> mpc-0.21.ebuild:
+  ppc64/sparc stable (bug 397101)
+
+  04 Jan 2012; Brent Baude <ranger@gentoo.org> mpc-0.21.ebuild:
+  Marking mpc-0.21 ppc for bug 397101
+
+  02 Jan 2012; Agostino Sarubbo <ago@gentoo.org> mpc-0.21.ebuild:
+  Stable for AMD64, wrt bug #397101
+
+  20 Oct 2011; Christoph Mende <angelos@gentoo.org> mpc-0.21.ebuild:
+  Add missing pkgconfig dep (bug #386913)
+
+  09 Sep 2011; Michał Górny <mgorny@gentoo.org> mpc-0.21.ebuild:
+  Migrate to bash-completion-r1.
 
 *mpc-0.21 (08 Jun 2011)
 
@@ -306,4 +364,3 @@
   Initial revision.
   
   Submitted by: sbh <sbh@xmbox.com>
-

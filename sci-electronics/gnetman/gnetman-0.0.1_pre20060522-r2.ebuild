@@ -1,23 +1,25 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-electronics/gnetman/gnetman-0.0.1_pre20060522-r2.ebuild,v 1.1 2010/06/22 19:46:34 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-electronics/gnetman/gnetman-0.0.1_pre20060522-r2.ebuild,v 1.3 2012/05/25 07:49:02 xmw Exp $
 
-EAPI=2
+EAPI=4
 
 MY_P="${PN}-22May06"
 
 DESCRIPTION="A GNU Netlist Manipulation Library"
+HOMEPAGE="http://sourceforge.net/projects/gnetman/
+	http://www.viasic.com/opensource/"
 SRC_URI="http://www.viasic.com/opensource/${MY_P}.tar.gz"
-HOMEPAGE="http://www.viasic.com/opensource/"
 
-IUSE="doc examples"
 SLOT="0"
 LICENSE="GPL-2"
+IUSE="doc examples"
 KEYWORDS="~amd64 ~ppc ~x86"
 
 S="${WORKDIR}/${MY_P}"
 
-DEPEND=">=dev-lang/tk-8.3
+DEPEND="
+	dev-lang/tk
 	sci-electronics/geda"
 RDEPEND="${DEPEND}"
 
@@ -34,7 +36,6 @@ src_prepare() {
 }
 
 src_install () {
-	make DESTDIR="${D}" install || die "Installation failed"
-	dodoc AUTHORS ChangeLog NEWS README
+	default
 	use doc && dodoc doc/*.{html,jpg}
 }

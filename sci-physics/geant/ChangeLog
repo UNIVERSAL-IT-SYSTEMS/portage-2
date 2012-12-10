@@ -1,6 +1,79 @@
 # ChangeLog for sci-physics/geant
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/geant/ChangeLog,v 1.53 2011/07/21 16:50:54 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/geant/ChangeLog,v 1.67 2012/10/24 19:42:46 ulm Exp $
+
+  24 Oct 2012; Ulrich Müller <ulm@gentoo.org> geant-3.21.14-r2.ebuild,
+  geant-3.21.14-r3.ebuild, geant-4.9.2_p02.ebuild, geant-4.9.5-r1.ebuild,
+  geant-4.9.5_p01.ebuild:
+  Update dependency after package move from x11-libs/openmotif to
+  x11-libs/motif.
+
+  16 Oct 2012; Justin Lecher <jlec@gentoo.org> geant-3.21.14-r2.ebuild,
+  geant-3.21.14-r3.ebuild, geant-4.9.2_p02.ebuild, geant-4.9.4_p03.ebuild,
+  geant-4.9.5-r1.ebuild, geant-4.9.5_p01.ebuild:
+  Remove virtual/fortran and always call fortran-2_pkg_setup as intend by the
+  updated fortran-2.eclass
+
+  04 Jul 2012; Jeff Horelick <jdhore@gentoo.org> geant-4.9.4_p03.ebuild:
+  marked x86 per bug 420295
+
+  16 Jun 2012; Agostino Sarubbo <ago@gentoo.org> geant-4.9.4_p03.ebuild:
+  Stable for amd64, wrt bug #420295
+
+  20 May 2012; Benda Xu <heroxbd@gentoo.org> geant-4.9.5-r1.ebuild,
+  geant-4.9.5_p01.ebuild:
+  I have massed up the keywords and Changelog with blind rsync with my overlay.
+  This is just a fix.
+
+  20 May 2012; Benda Xu <heroxbd@gentoo.org> +geant-4.9.5-r1.ebuild,
+  +files/geant-4.9.5_p01-scripts-only-dataenv.patch,
+  files/geant-4.9.5-scripts-only-dataenv.patch:
+  add back geant-4.9.5-r1.ebuild because geant-python cannot function correctly
+  with 4.9.5_p01, upstream http://bugzilla-geant4.kek.jp/show_bug.cgi?id=1317
+
+*geant-4.9.5_p01 (19 May 2012)
+ 
+  19 May 2012; Benda Xu <heroxbd@gentoo.org> +geant-4.9.5_p01.ebuild,
+  -geant-4.9.5-r1.ebuild, files/geant-4.9.4-zlib.patch,
+  files/geant-4.9.5-scripts-only-dataenv.patch:
+  version bump to 4.9.5_p01
+
+  19 May 2012; Benda Xu <heroxbd@gentoo.org> geant-4.9.5-r1.ebuild:
+  delete the wrong sed phrase.
+
+  18 May 2012; Benda Xu <heroxbd@gentoo.org>
+  +files/geant-4.9.5-scripts-only-dataenv.patch, geant-4.9.5-r1.ebuild:
+  keyword amd64-linux and x86-linux; handle data dir via envd; fix clhep linking
+
+  16 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org> -geant-4.9.5.ebuild,
+  geant-4.9.5-r1.ebuild:
+  Fix for openinventor to use SGI OpenInventor in portage instead of SoXt, bug
+  #408187
+
+*geant-4.9.5-r1 (13 Mar 2012)
+
+  13 Mar 2012; Sébastien Fabbro <bicatali@gentoo.org>
+  files/geant-4.9.4-zlib.patch, +geant-4.9.5-r1.ebuild:
+  Fixed more zlib issues. The geant3 flag is now only for unit conversion (if
+  geant3 is needed, geant:3 has to be installed from user). The data is now
+  fetched (building needs network) to ease maintenance and set up the proper
+  env variables in the geant4*sh scripts. Removed a use dawn duplicate. Thanks
+  Marek Szuba for his suggestions (bug #407517 and bug #359673). Added a
+  message for backward compatibility (bug #360285)
+
+*geant-4.9.5 (18 Dec 2011)
+*geant-4.9.4_p03 (18 Dec 2011)
+
+  18 Dec 2011; Sébastien Fabbro <bicatali@gentoo.org>
+  -geant-4.9.3_p02-r1.ebuild, -geant-4.9.4_p01.ebuild, +geant-4.9.4_p03.ebuild,
+  +files/geant-4.9.4-trajectory.patch, files/geant-4.9.4-zlib.patch,
+  +geant-4.9.5.ebuild:
+  Version bumps. Re-introduced some older flags and fixed linking of
+  zlib. Added patch for source trajectory example (bug #365171), thanks	Matthias Nagl.
+
+  02 Aug 2011; Matt Turner <mattst88@gentoo.org> geant-4.9.2_p02.ebuild,
+  geant-4.9.3_p02-r1.ebuild:
+  Renamed x11-libs/Xaw3d to x11-libs/libXaw3d.
 
 *geant-3.21.14-r3 (21 Jul 2011)
 

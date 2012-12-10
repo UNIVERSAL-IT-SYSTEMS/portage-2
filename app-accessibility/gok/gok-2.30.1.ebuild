@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/gok/gok-2.30.1.ebuild,v 1.7 2011/03/22 20:02:56 ranger Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/gok/gok-2.30.1.ebuild,v 1.9 2012/05/03 01:48:59 jdhore Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -17,7 +17,7 @@ IUSE="accessibility doc usb"
 
 # accessibility will disappear with new xorg-server (1.6)
 RDEPEND=">=dev-libs/glib-2.17.4:2
-	>=gnome-extra/at-spi-1.5.2
+	>=gnome-extra/at-spi-1.5.2:1
 	>=gnome-base/libbonobo-2.5.1
 	>=dev-libs/atk-1.3
 	>=x11-libs/gtk+-2.18:2
@@ -34,7 +34,7 @@ RDEPEND=">=dev-libs/glib-2.17.4:2
 	accessibility? ( x11-libs/libXevie )"
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.40.1
-	>=dev-util/pkgconfig-0.9
+	virtual/pkgconfig
 	app-text/scrollkeeper
 	doc? ( >=dev-util/gtk-doc-1 )
 	x11-proto/inputproto

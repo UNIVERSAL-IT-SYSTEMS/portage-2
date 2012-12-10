@@ -1,6 +1,128 @@
 # ChangeLog for net-misc/wget
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/wget/ChangeLog,v 1.139 2011/02/28 23:40:41 ranger Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/wget/ChangeLog,v 1.171 2012/11/21 21:45:48 maekke Exp $
+
+  21 Nov 2012; Markus Meier <maekke@gentoo.org> wget-1.14.ebuild:
+  arm stable, bug #438858
+
+  21 Nov 2012; Agostino Sarubbo <ago@gentoo.org> wget-1.14.ebuild:
+  Stable for x86, wrt bug #438858
+
+  13 Nov 2012; Brent Baude <ranger@gentoo.org> wget-1.14.ebuild:
+  Marking wget-1.14 ppc64 for bug 438858
+
+  22 Oct 2012; Michael Weber <xmw@gentoo.org> wget-1.14.ebuild:
+  ppc stable (bug 438858)
+
+  22 Oct 2012; Agostino Sarubbo <ago@gentoo.org> wget-1.14.ebuild:
+  Stable for AMD64, wrt bug #438858
+
+  20 Oct 2012; Jeroen Roovers <jer@gentoo.org> wget-1.14.ebuild:
+  Stable for HPPA (bug #438858).
+
+  23 Aug 2012; Mike Frysinger <vapier@gentoo.org> metadata.xml,
+  wget-1.14.ebuild:
+  Add USE="pcre uuid zlib" flags to control new deps #432468 by Yuta SATOH.
+
+*wget-1.14 (06 Aug 2012)
+
+  06 Aug 2012; Mike Frysinger <vapier@gentoo.org> +wget-1.14.ebuild:
+  Version bump.
+
+  06 Aug 2012; Mike Frysinger <vapier@gentoo.org> wget-1.13.3-r2.ebuild,
+  wget-1.13.4.ebuild, wget-1.13.4-r1.ebuild:
+  Drop ipv6 wgetrc tweaking since the default already has it.
+
+  17 Jun 2012; Raúl Porcel <armin76@gentoo.org> wget-1.13.4-r1.ebuild:
+  alpha/ia64/m68k/s390/sh/sparc stable wrt #406657
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> wget-1.13.4-r1.ebuild:
+  Marking wget-1.13.4-r1 ppc for bug 406657
+
+  26 May 2012; Markus Meier <maekke@gentoo.org> wget-1.13.4-r1.ebuild:
+  arm stable, bug #406657
+
+  24 May 2012; Jeroen Roovers <jer@gentoo.org> wget-1.13.4-r1.ebuild:
+  Stable for HPPA (bug #406657).
+
+  23 May 2012; Brent Baude <ranger@gentoo.org> wget-1.13.4-r1.ebuild:
+  Marking wget-1.13.4-r1 ppc64 for bug 406657
+
+  22 May 2012; Mike Frysinger <vapier@gentoo.org>
+  +files/wget-1.13.4-no-gets.patch, wget-1.13.4-r1.ebuild:
+  Fix building with glibc-2.16+.
+
+  22 May 2012; Agostino Sarubbo <ago@gentoo.org> wget-1.13.4-r1.ebuild:
+  Stable for amd64, wrt bug #406657
+
+  22 May 2012; Jeff Horelick <jdhore@gentoo.org> wget-1.13.4-r1.ebuild:
+  marked x86 per bug 406657
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> wget-1.13.4-r1.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  26 Apr 2012; Alexis Ballier <aballier@gentoo.org> wget-1.13.4-r1.ebuild:
+  keyword ~amd64-fbsd
+
+  13 Jan 2012; Mike Frysinger <vapier@gentoo.org> wget-1.13.4-r1.ebuild:
+  Depend on pkgconfig since we use it now for openssl #398527 by Viktor
+  Görzen.
+
+  20 Dec 2011; Mike Frysinger <vapier@gentoo.org>
+  files/wget-1.13.4-openssl-pkg-config.patch:
+  Set LIBSSL when using pkg-config as the NTLM check uses it #395349 by
+  Vladimir Berezhnoy.
+
+  01 Dec 2011; Mike Frysinger <vapier@gentoo.org> wget-1.13.4-r1.ebuild:
+  Fix the static-libs logic the right way #392713 by Piotr Karbowski.
+
+  01 Dec 2011; Diego E. Pettenò <flameeyes@gentoo.org> wget-1.13.4-r1.ebuild:
+  QA: do not try to be smart about setting dependencies, when the tricks don't
+  work, instead duplicate the info and get it right for now.
+
+*wget-1.13.4-r1 (01 Dec 2011)
+
+  01 Dec 2011; Mike Frysinger <vapier@gentoo.org> +wget-1.13.4-r1.ebuild,
+  +files/wget-1.13.4-openssl-pkg-config.patch:
+  Switch to pkg-config for looking up openssl #246556 by Rick Farina.
+
+*wget-1.13.4 (18 Sep 2011)
+
+  18 Sep 2011; Tim Harder <radhermit@gentoo.org> +wget-1.13.4.ebuild:
+  Version bump. Add explicit build dependency on xz-utils.
+
+  06 Sep 2011; Fabian Groffen <grobian@gentoo.org>
+  files/wget-1.13-static-link-libz.patch:
+  Add upstream reference for path, fix commented .ac code
+
+  02 Sep 2011; Tim Harder <radhermit@gentoo.org> wget-1.13.3-r2.ebuild:
+  Remove unused myconf variable.
+
+  02 Sep 2011; Tomáš Chvátal <scarabeus@gentoo.org> -wget-1.13.3.ebuild,
+  -wget-1.13.3-r1.ebuild, wget-1.13.3-r2.ebuild:
+  Fix the gnutls uselfag to be wrapped around ssl one. Use use_with calls
+  instead of bash conditions.
+
+*wget-1.13.3-r2 (02 Sep 2011)
+
+  02 Sep 2011; Tim Harder <radhermit@gentoo.org> +wget-1.13.3-r2.ebuild:
+  Revision bump. Add gnutls USE flag and fix ssl issues (bugs #381441 and
+  #381513).
+
+  01 Sep 2011; Fabian Groffen <grobian@gentoo.org> wget-1.13.3-r1.ebuild:
+  Fix compilation on Solaris
+
+*wget-1.13.3-r1 (01 Sep 2011)
+
+  01 Sep 2011; Jeremy Olexa <darkside@gentoo.org> -wget-1.12-r2.ebuild,
+  +wget-1.13.3-r1.ebuild, +files/wget-1.13-static-link-libz.patch:
+  Revision bump with full Gentoo Prefix support, signed off by maintainer with
+  discussion on IRC. Remove old version.
+
+*wget-1.13.3 (01 Sep 2011)
+
+  01 Sep 2011; Tony Vroon <chainsaw@gentoo.org> +wget-1.13.3.ebuild:
+  Version bump. EAPI 4 port by Tomáš "scarabeus" Chvátal in bug #381405.
 
   28 Feb 2011; Brent Baude <ranger@gentoo.org> wget-1.12-r3.ebuild:
   stable ppc64, bug 349114

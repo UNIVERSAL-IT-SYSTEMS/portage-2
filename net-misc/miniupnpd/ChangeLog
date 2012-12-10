@@ -1,6 +1,50 @@
 # ChangeLog for net-misc/miniupnpd
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/miniupnpd/ChangeLog,v 1.20 2011/07/30 20:13:52 gurligebis Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-misc/miniupnpd/ChangeLog,v 1.29 2012/09/15 20:59:30 gurligebis Exp $
+
+  15 Sep 2012; <gurligebis@gentoo.org> miniupnpd-1.8_pre20120824.ebuild:
+  Moved net-libs/libnfnetlink from DEPEND to RDEPEND
+
+*miniupnpd-1.8_pre20120824 (15 Sep 2012)
+
+  15 Sep 2012; <gurligebis@gentoo.org> +miniupnpd-1.8_pre20120824.ebuild:
+  Bumping to 1.8_pre20120824
+
+*miniupnpd-1.7 (03 Jun 2012)
+
+  03 Jun 2012; <gurligebis@gentoo.org> -miniupnpd-1.6.ebuild,
+  -miniupnpd-1.7_pre20120509.ebuild, +miniupnpd-1.7.ebuild:
+  Bumping to 1.7
+
+*miniupnpd-1.7_pre20120509 (13 May 2012)
+
+  13 May 2012; <gurligebis@gentoo.org> -miniupnpd-1.7_pre20120207-r1.ebuild,
+  +miniupnpd-1.7_pre20120509.ebuild:
+  Bumping to 1.7_pre20120509
+
+*miniupnpd-1.7_pre20120207-r1 (03 Apr 2012)
+
+  03 Apr 2012; <gurligebis@gentoo.org> -miniupnpd-1.7_pre20120207.ebuild,
+  +miniupnpd-1.7_pre20120207-r1.ebuild:
+  Adding support for lease file, fixing bug #410415
+
+  05 Mar 2012; <gurligebis@gentoo.org> miniupnpd-1.7_pre20120207.ebuild:
+  Fixing runtime dependencies, fixing bug #406699
+
+*miniupnpd-1.7_pre20120207 (12 Feb 2012)
+
+  12 Feb 2012; <gurligebis@gentoo.org> -miniupnpd-1.7_pre20111118.ebuild,
+  +miniupnpd-1.7_pre20120207.ebuild, -files/miniupnpd-nettools_newoutput.patch:
+  Bumping to 1.7_pre20120207
+
+*miniupnpd-1.7_pre20111118 (28 Dec 2011)
+
+  28 Dec 2011; <gurligebis@gentoo.org> +miniupnpd-1.7_pre20111118.ebuild,
+  +files/miniupnpd-nettools_newoutput.patch:
+  Bumping to 1.7_pre20111118 and adding support for new ifconfig output format.
+
+  17 Oct 2011; <gurligebis@gentoo.org> files/miniupnpd-init.d:
+  Adding use minissdpd to depend section in init.d script, fixing bug #387337.
 
   30 Jul 2011; <gurligebis@gentoo.org> -files/miniupnpd-1.3-iptables_path.diff,
   -miniupnpd-1.5.ebuild, -files/miniupnpd-1.5-iptables_buildfix.diff,

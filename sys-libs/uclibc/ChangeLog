@@ -1,6 +1,54 @@
 # ChangeLog for sys-libs/uclibc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/uclibc/ChangeLog,v 1.59 2011/04/20 18:10:38 ulm Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/uclibc/ChangeLog,v 1.69 2012/08/18 05:52:58 vapier Exp $
+
+*uclibc-0.9.33.2-r2 (18 Aug 2012)
+
+  18 Aug 2012; Mike Frysinger <vapier@gentoo.org> +uclibc-0.9.33.2-r2.ebuild:
+  Add posix_madvise support from upstream #427798 by James Le Cuirot.
+
+*uclibc-0.9.33.2-r1 (05 Jul 2012)
+
+  05 Jul 2012; Mike Frysinger <vapier@gentoo.org> +uclibc-0.9.33.2-r1.ebuild:
+  Pull in rpmatch from upstream to move it from header to C library for gnulib
+  #423491.
+
+  09 Jun 2012; Mike Frysinger <vapier@gentoo.org> -uclibc-0.9.27-r1.ebuild,
+  -uclibc-0.9.28.3-r3.ebuild, -uclibc-0.9.28.3-r7.ebuild,
+  -uclibc-0.9.28.3.ebuild, uclibc-0.9.28.3-r8.ebuild, uclibc-0.9.30.1-r1.ebuild,
+  uclibc-0.9.30.1.ebuild, uclibc-0.9.30.ebuild, uclibc-0.9.33.1-r1.ebuild,
+  uclibc-0.9.33.1.ebuild, uclibc-0.9.33.2.ebuild, uclibc-9999.ebuild:
+  Drop tc-is-softfloat usage as the FPU knob merely controls enabling of libm.
+
+  09 Jun 2012; Mike Frysinger <vapier@gentoo.org> uclibc-0.9.33.2.ebuild:
+  Mark stable for all.
+
+  08 Jun 2012; Pacho Ramos <pacho@gentoo.org> metadata.xml:
+  Drop maintainer from metadata as talked with him.
+
+  01 Jun 2012; Zac Medico <zmedico@gentoo.org> uclibc-0.9.33.1-r1.ebuild,
+  uclibc-0.9.33.1.ebuild, uclibc-0.9.33.2.ebuild, uclibc-9999.ebuild:
+  inherit multilib for get_libdir
+
+*uclibc-0.9.33.2 (16 May 2012)
+
+  16 May 2012; Mike Frysinger <vapier@gentoo.org> +uclibc-0.9.33.2.ebuild:
+  Version bump.
+
+*uclibc-0.9.33.1-r1 (24 Apr 2012)
+
+  24 Apr 2012; Mike Frysinger <vapier@gentoo.org> +uclibc-0.9.33.1-r1.ebuild:
+  Enable some more POSIX options, and fixes from mainline.
+
+*uclibc-9999 (22 Apr 2012)
+
+  22 Apr 2012; Mike Frysinger <vapier@gentoo.org> +uclibc-9999.ebuild:
+  Add a live git ebuild for dev #232881 by Lucio Asnaghi.
+
+*uclibc-0.9.33.1 (22 Apr 2012)
+
+  22 Apr 2012; Mike Frysinger <vapier@gentoo.org> +uclibc-0.9.33.1.ebuild:
+  Version bump by Ed Wildgoose #308477.
 
   20 Apr 2011; Ulrich Mueller <ulm@gentoo.org> uclibc-0.9.27-r1.ebuild,
   uclibc-0.9.28.3.ebuild, uclibc-0.9.28.3-r3.ebuild, uclibc-0.9.28.3-r7.ebuild,

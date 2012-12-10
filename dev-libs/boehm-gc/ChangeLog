@@ -1,6 +1,29 @@
 # ChangeLog for dev-libs/boehm-gc
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/boehm-gc/ChangeLog,v 1.77 2011/03/04 14:59:14 jlec Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/boehm-gc/ChangeLog,v 1.83 2012/10/13 13:42:13 naota Exp $
+
+  13 Oct 2012;  <naota@gentoo.org> +files/boehm-gc-7.2d-configure.patch,
+  boehm-gc-7.2d.ebuild:
+  Add patch to fix bash-ism configure; Add ~x86-fbsd.
+
+*boehm-gc-7.2d (01 Oct 2012)
+
+  01 Oct 2012; Tim Harder <radhermit@gentoo.org> +boehm-gc-7.2d.ebuild:
+  Version bump.
+
+  11 Jun 2012; Jeremy Olexa <darkside@gentoo.org> boehm-gc-7.2_alpha6.ebuild:
+  add prefix keywords, as tested in overlay
+
+*boehm-gc-7.2_alpha6 (29 May 2012)
+
+  29 May 2012; Justin Lecher <jlec@gentoo.org> boehm-gc-7.2_alpha4-r1.ebuild,
+  +boehm-gc-7.2_alpha6.ebuild, metadata.xml:
+  Version Bump, handling of static libs
+
+  13 Nov 2011; Mike Frysinger <vapier@gentoo.org> boehm-gc-6.8.ebuild,
+  boehm-gc-7.0-r1.ebuild, boehm-gc-7.1-r1.ebuild,
+  boehm-gc-7.2_alpha4-r1.ebuild:
+  Convert USE=nocxx to USE=cxx.
 
 *boehm-gc-7.2_alpha4-r1 (04 Mar 2011)
 *boehm-gc-7.1-r1 (04 Mar 2011)

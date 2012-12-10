@@ -1,6 +1,78 @@
 # ChangeLog for net-libs/farsight2
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/farsight2/ChangeLog,v 1.52 2011/07/31 16:28:29 armin76 Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-libs/farsight2/ChangeLog,v 1.72 2012/12/08 00:58:20 tetromino Exp $
+
+  08 Dec 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  farsight2-0.0.29.ebuild, farsight2-0.0.31.ebuild:
+  Update dependencies for gst-plugins-libnice split. Update license,
+  description, homepage.
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> farsight2-0.0.31.ebuild:
+  ia64/sparc stable wrt #427544
+
+  25 Oct 2012; Gilles Dartiguelongue <eva@gentoo.org> farsight2-0.0.29.ebuild,
+  farsight2-0.0.31.ebuild:
+  Pin gstreamer dependencies to slot 0.10.
+
+  16 Oct 2012; Matt Turner <mattst88@gentoo.org> farsight2-0.0.31.ebuild:
+  Stable on alpha, bug 427544.
+
+  16 Oct 2012; Anthony G. Basile <blueness@gentoo.org> farsight2-0.0.31.ebuild:
+  stable ppc, bug #427544
+
+  07 Oct 2012; Anthony G. Basile <blueness@gentoo.org> farsight2-0.0.31.ebuild:
+  stable ppc64, bug #427544
+
+  04 Oct 2012; Agostino Sarubbo <ago@gentoo.org> farsight2-0.0.31.ebuild:
+  Stable for amd64, wrt bug #427544
+
+  03 Oct 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org> farsight2-0.0.31.ebuild:
+  x86 stable wrt bug #427544
+
+*farsight2-0.0.31 (30 Jun 2012)
+
+  30 Jun 2012; Pacho Ramos <pacho@gentoo.org> +farsight2-0.0.31.ebuild,
+  -farsight2-0.0.26.ebuild:
+  Version bump, remove old.
+
+  05 May 2012; Jeff Horelick <jdhore@gentoo.org> farsight2-0.0.26.ebuild,
+  farsight2-0.0.29.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  25 Mar 2012; Raúl Porcel <armin76@gentoo.org> farsight2-0.0.29.ebuild:
+  alpha/ia64/sparc stable wrt #393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> farsight2-0.0.29.ebuild:
+  Marking farsight2-0.0.29 ppc stable for bug 393007
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> farsight2-0.0.29.ebuild:
+  Marking farsight2-0.0.29 ppc64 stable for bug 393007
+
+  14 Jan 2012; Markus Meier <maekke@gentoo.org> farsight2-0.0.29.ebuild:
+  x86 stable, bug #393007
+
+  29 Dec 2011; Pacho Ramos <pacho@gentoo.org> farsight2-0.0.29.ebuild:
+  amd64 stable, bug 393007
+
+  20 Dec 2011; Jeroen Roovers <jer@gentoo.org> farsight2-0.0.29.ebuild:
+  Stable for HPPA (bug #393007).
+
+  03 Dec 2011; Pacho Ramos <pacho@gentoo.org> -farsight2-0.0.20.ebuild,
+  metadata.xml:
+  Add as co-maintainers as we are 'de facto' needing to bump it and fix from
+  time to time due telepathy-farsight requirements.
+
+  05 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org> farsight2-0.0.26.ebuild:
+  ppc/ppc64 stable wrt #373393
+
+*farsight2-0.0.29 (29 Aug 2011)
+
+  29 Aug 2011; Pacho Ramos <pacho@gentoo.org> -farsight2-0.0.14.ebuild,
+  -farsight2-0.0.17.ebuild, -farsight2-0.0.25.ebuild, +farsight2-0.0.29.ebuild:
+  Version bump, remove old.
+
+  20 Aug 2011; Jeroen Roovers <jer@gentoo.org> farsight2-0.0.26.ebuild:
+  Stable for HPPA (bug #373393).
 
   31 Jul 2011; Raúl Porcel <armin76@gentoo.org> farsight2-0.0.26.ebuild:
   alpha/ia64/sparc stable wrt #373393
@@ -198,4 +270,3 @@
   10 May 2009; Arun Raghavan <ford_prefect@gentoo.org>
   +farsight2-0.0.9.ebuild, +metadata.xml:
   Initial commit
-

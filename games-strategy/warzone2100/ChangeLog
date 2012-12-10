@@ -1,6 +1,42 @@
 # ChangeLog for games-strategy/warzone2100
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/warzone2100/ChangeLog,v 1.65 2011/05/24 15:25:40 mr_bones_ Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/warzone2100/ChangeLog,v 1.74 2012/07/29 21:18:01 hasufell Exp $
+
+  29 Jul 2012; Julian Ospald <hasufell@gentoo.org> warzone2100-2.3.9.ebuild,
+  +files/warzone2100-2.3.9-pkgconf.patch:
+  fix build with pkgconf wrt #428494
+
+  20 Jun 2012; Michael Sterrett <mr_bones_@gentoo.org>
+  warzone2100-2.3.9.ebuild:
+  work around autopoint build issue with patch from Julian Ospald (bug #421511)
+
+  04 May 2012; Jeff Horelick <jdhore@gentoo.org> warzone2100-2.3.8.ebuild,
+  warzone2100-2.3.9.ebuild:
+  dev-util/pkgconfig -> virtual/pkgconfig
+
+  04 Jan 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  warzone2100-2.3.9.ebuild:
+  x86 stable wrt bug #395447
+
+  22 Dec 2011; Agostino Sarubbo <ago@gentoo.org> warzone2100-2.3.9.ebuild:
+  Stable for AMD64, wrt bug #395447
+
+  16 Nov 2011; Michael Sterrett <mr_bones_@gentoo.org>
+  warzone2100-2.3.9.ebuild:
+  needs bison to build (bug #390689)
+
+*warzone2100-2.3.9 (27 Oct 2011)
+
+  27 Oct 2011; Michael Sterrett <mr_bones_@gentoo.org>
+  -warzone2100-2.3.7.ebuild, +warzone2100-2.3.9.ebuild:
+  version bump; drop ppc to ~
+
+  08 Aug 2011; Markos Chandras <hwoarang@gentoo.org> warzone2100-2.3.8.ebuild:
+  Stable on amd64 wrt bug #375377
+
+  08 Aug 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  warzone2100-2.3.8.ebuild:
+  x86 stable wrt bug #375377
 
   24 May 2011; Michael Sterrett <mr_bones_@gentoo.org>
   warzone2100-2.3.8.ebuild:

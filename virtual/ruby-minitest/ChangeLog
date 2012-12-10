@@ -1,6 +1,42 @@
 # ChangeLog for virtual/ruby-minitest
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/ruby-minitest/ChangeLog,v 1.24 2011/07/10 22:48:06 halcy0n Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/virtual/ruby-minitest/ChangeLog,v 1.34 2012/11/06 17:11:26 jer Exp $
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> ruby-minitest-0-r2.ebuild:
+  Stable for HPPA (bug #426668).
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> ruby-minitest-0.ebuild,
+  ruby-minitest-0-r1.ebuild, ruby-minitest-0-r2.ebuild:
+  alpha stable
+
+  21 Oct 2012; Raúl Porcel <armin76@gentoo.org> ruby-minitest-0-r2.ebuild:
+  ia64/sparc stable wrt #411507
+
+  25 Jul 2012; Anthony G. Basile <blueness@gentoo.org>
+  ruby-minitest-0-r2.ebuild:
+  Stable ppc64, bug #411507
+
+  22 Jul 2012; <nixnut@gentoo.org> ruby-minitest-0-r2.ebuild:
+  ppc stable #411507
+
+  25 Jun 2012; Andreas Schuerch <nativemad@gentoo.org>
+  ruby-minitest-0-r2.ebuild:
+  x86 stable, see bug 411507
+
+  27 May 2012; Markus Meier <maekke@gentoo.org> ruby-minitest-0-r2.ebuild:
+  arm stable, bug #411507
+
+  20 May 2012; Agostino Sarubbo <ago@gentoo.org> ruby-minitest-0-r2.ebuild:
+  Stable for amd64, wrt bug #411507
+
+*ruby-minitest-0-r2 (30 Dec 2011)
+
+  30 Dec 2011; Hans de Graaff <graaff@gentoo.org> ruby-minitest-0-r1.ebuild,
+  +ruby-minitest-0-r2.ebuild:
+  Add revision and drop ruby19 from stable ebuild.
+
+  05 Dec 2011; Naohiro Aota <naota@gentoo.org> ruby-minitest-0-r1.ebuild:
+  Add ~x86-fbsd.
 
   10 Jul 2011; Mark Loeser <halcy0n@gentoo.org> ruby-minitest-0-r1.ebuild:
   Stable for ppc/ppc64; bug #354609

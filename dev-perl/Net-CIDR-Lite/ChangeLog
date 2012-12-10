@@ -1,6 +1,24 @@
 # ChangeLog for dev-perl/Net-CIDR-Lite
-# Copyright 1999-2010 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-CIDR-Lite/ChangeLog,v 1.33 2010/03/26 12:31:13 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-CIDR-Lite/ChangeLog,v 1.38 2012/06/24 12:59:46 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  09 Mar 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  Net-CIDR-Lite-0.210.0.ebuild:
+  x86 stable wrt bug #400177
+
+  25 Feb 2012; Agostino Sarubbo <ago@gentoo.org> Net-CIDR-Lite-0.210.0.ebuild:
+  Stable for amd64, wrt bug #400177
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Net-CIDR-Lite-0.21.ebuild:
+  Cleanup
+
+*Net-CIDR-Lite-0.210.0 (29 Aug 2011)
+
+  29 Aug 2011; Torsten Veller <tove@gentoo.org> +Net-CIDR-Lite-0.210.0.ebuild:
+  Change version scheme
 
 *Net-CIDR-Lite-0.21 (26 Mar 2010)
 
@@ -128,4 +146,3 @@
   22 Sep 2004; Michael Cummings <mcummings@gentoo.org> +metadata.xml,
   +Net-CIDR-Lite-0.15.ebuild:
   Dep for SPF support for spamassassin 3
-

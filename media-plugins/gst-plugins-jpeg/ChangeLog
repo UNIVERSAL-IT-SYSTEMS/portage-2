@@ -1,6 +1,53 @@
 # ChangeLog for media-plugins/gst-plugins-jpeg
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-jpeg/ChangeLog,v 1.104 2011/07/31 03:31:32 leio Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-jpeg/ChangeLog,v 1.114 2012/12/04 16:20:40 eva Exp $
+
+  04 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-plugins-jpeg-0.10.31.ebuild, gst-plugins-jpeg-1.0.3.ebuild:
+  Fix dependency on gst-plugins-base for 0.10 and 1.0 slot.
+
+*gst-plugins-jpeg-1.0.3 (03 Dec 2012)
+
+  03 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  +gst-plugins-jpeg-1.0.3.ebuild:
+  Version bump.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  gst-plugins-jpeg-0.10.31.ebuild:
+  Update with ebuild from gnome overlay.
+
+  02 Dec 2012; Gilles Dartiguelongue <eva@gentoo.org>
+  -gst-plugins-jpeg-0.10.23.ebuild, -gst-plugins-jpeg-0.10.28.ebuild,
+  gst-plugins-jpeg-0.10.30.ebuild:
+  Clean up old revision. EAPI bump stable due to pending eclass changes and
+  slot pinning.
+
+*gst-plugins-jpeg-0.10.31 (23 Oct 2012)
+
+  23 Oct 2012; Alexandre Rostovtsev <tetromino@gentoo.org>
+  +gst-plugins-jpeg-0.10.31.ebuild:
+  Bump; no longer attempts to decode lossless jpeg; adds a setcaps function and
+  various bugfixes.
+
+  15 Oct 2011; Kacper Kowalik <xarthisius@gentoo.org>
+  gst-plugins-jpeg-0.10.30.ebuild:
+  ppc/ppc64 stable wrt #382225
+
+  11 Oct 2011; Jeroen Roovers <jer@gentoo.org> gst-plugins-jpeg-0.10.30.ebuild:
+  Stable for HPPA (bug #382225).
+
+  09 Oct 2011; Raúl Porcel <armin76@gentoo.org>
+  gst-plugins-jpeg-0.10.30.ebuild:
+  alpha/sparc stable wrt #382225
+
+  25 Sep 2011; Tony Vroon <chainsaw@gentoo.org>
+  gst-plugins-jpeg-0.10.30.ebuild:
+  Marked stable on AMD64 based on arch testing by Agostino "ago" Sarubbo &
+  Tomáš "Mepho" Pružina in bug #382225.
+
+  20 Sep 2011; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  gst-plugins-jpeg-0.10.30.ebuild:
+  x86 stable wrt bug #382225
 
 *gst-plugins-jpeg-0.10.30 (31 Jul 2011)
 

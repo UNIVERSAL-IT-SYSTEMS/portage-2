@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/openjade/openjade-1.3.2-r3.ebuild,v 1.9 2011/05/14 14:51:25 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/openjade/openjade-1.3.2-r3.ebuild,v 1.11 2012/11/04 17:32:06 floppym Exp $
 
 EAPI=2
 
@@ -10,7 +10,7 @@ DESCRIPTION="Jade is an implementation of DSSSL - an ISO standard for formatting
 HOMEPAGE="http://openjade.sourceforge.net"
 SRC_URI="mirror://sourceforge/openjade/${P}.tar.gz"
 
-LICENSE="as-is"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
 IUSE="static-libs"
@@ -56,7 +56,7 @@ src_configure() {
 }
 
 src_compile() {
-	emake -j1 || die "make failed"
+	emake -j1 SHELL=/bin/bash || die "make failed"
 }
 
 src_install() {
@@ -64,6 +64,7 @@ src_install() {
 
 	make DESTDIR="${D}" \
 		libdir=/usr/$(get_libdir) \
+		SHELL=/bin/bash \
 		install install-man || die "make install failed"
 
 	dosym openjade  /usr/bin/jade

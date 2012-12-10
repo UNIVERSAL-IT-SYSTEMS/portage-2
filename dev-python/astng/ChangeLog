@@ -1,6 +1,42 @@
 # ChangeLog for dev-python/astng
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/astng/ChangeLog,v 1.52 2011/07/29 22:27:34 bicatali Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-python/astng/ChangeLog,v 1.59 2012/10/16 17:25:11 radhermit Exp $
+
+*astng-0.24.1 (16 Oct 2012)
+
+  16 Oct 2012; Tim Harder <radhermit@gentoo.org> +astng-0.24.1.ebuild:
+  Version bump.
+
+  27 Aug 2012; Mike Gilbert <floppym@gentoo.org> astng-0.20.3.ebuild,
+  astng-0.21.0.ebuild, astng-0.21.1.ebuild, astng-0.22.0.ebuild,
+  astng-0.23.1-r1.ebuild, astng-0.23.1.ebuild, astng-0.24.0.ebuild:
+  Update HOMEPAGE to prevent redirect. Suggested by Arfrever.
+
+*astng-0.24.0 (24 Aug 2012)
+
+  24 Aug 2012; Patrick Lauer <patrick@gentoo.org> +astng-0.24.0.ebuild:
+  Bump
+
+*astng-0.23.1-r1 (05 May 2012)
+
+  05 May 2012; Mike Gilbert <floppym@gentoo.org> +astng-0.23.1-r1.ebuild,
+  +files/astng-0.23.1-file-open.patch:
+  Change file() to open() for bug 413625 by Alexander Brüning. Patch from
+  upstream.
+
+  20 Apr 2012; Mike Gilbert <floppym@gentoo.org> astng-0.23.1.ebuild:
+  Rebase ebuild from 0.22.0, restoring python 3 support. Use separate source
+  directories as this makes the test suite pass in python 2. TODO: Figure out
+  why.
+
+*astng-0.23.1 (19 Apr 2012)
+
+  19 Apr 2012; Patrick Lauer <patrick@gentoo.org> +astng-0.23.1.ebuild:
+  Bump for #402171
+
+  06 Aug 2011; Markos Chandras <hwoarang@gentoo.org> astng-0.22.0.ebuild:
+  Use PYTHON_TESTS_FAILURES_TOLERANT_ABIS. Don't directly call 2to3, since
+  build system now internally uses lib2to3. Patch by Arfrever
 
 *astng-0.22.0 (29 Jul 2011)
 
@@ -221,4 +257,3 @@
   08 Nov 2005; Rob Cakebread <pythonhead@gentoo.org> +metadata.xml,
   +astng-0.13.1.ebuild:
   Initial ebuild. New dependency for pylint
-

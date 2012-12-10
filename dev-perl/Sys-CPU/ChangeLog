@@ -1,6 +1,46 @@
 # ChangeLog for dev-perl/Sys-CPU
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Sys-CPU/ChangeLog,v 1.10 2011/01/14 15:56:44 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Sys-CPU/ChangeLog,v 1.22 2012/11/13 19:30:44 tove Exp $
+
+*Sys-CPU-0.540.0 (13 Nov 2012)
+
+  13 Nov 2012; Torsten Veller <tove@gentoo.org> +Sys-CPU-0.540.0.ebuild:
+  Version bump
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  17 Mar 2012; Raúl Porcel <armin76@gentoo.org> Sys-CPU-0.520.0.ebuild:
+  sparc stable wrt #356387
+
+  16 Mar 2012; Brent Baude <ranger@gentoo.org> Sys-CPU-0.520.0.ebuild:
+  Marking Sys-CPU-0.520.0 ppc64 for bug 356387
+
+  12 Mar 2012; Markus Meier <maekke@gentoo.org> Sys-CPU-0.520.0.ebuild:
+  arm stable, bug #356387
+
+  07 Mar 2012; Thomas Kahle <tomka@gentoo.org> Sys-CPU-0.520.0.ebuild:
+  marked x86 per bug 356387
+
+  05 Mar 2012; Brent Baude <ranger@gentoo.org> Sys-CPU-0.520.0.ebuild:
+  Marking Sys-CPU-0.520.0 ppc for bug 356387
+
+  02 Mar 2012; Jeroen Roovers <jer@gentoo.org> Sys-CPU-0.520.0.ebuild:
+  Stable for HPPA (bug #356387).
+
+  02 Mar 2012; Agostino Sarubbo <ago@gentoo.org> Sys-CPU-0.520.0.ebuild:
+  Stable for amd64, wrt bug #356387
+
+  02 Mar 2012; Tobias Klausmann <klausman@gentoo.org> Sys-CPU-0.520.0.ebuild:
+  Stable on alpha, bug #356387
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -Sys-CPU-0.52.ebuild:
+  Cleanup
+
+*Sys-CPU-0.520.0 (28 Aug 2011)
+
+  28 Aug 2011; Torsten Veller <tove@gentoo.org> +Sys-CPU-0.520.0.ebuild:
+  Change version scheme
 
   14 Jan 2011; Torsten Veller <tove@gentoo.org> -Sys-CPU-0.51.ebuild:
   Cleanup
@@ -33,4 +73,3 @@
   04 Dec 2009; Benedikt Böhm <hollow@gentoo.org> +Sys-CPU-0.51.ebuild,
   +metadata.xml:
   initial ebuild. required by sys-apps/logwatch
-

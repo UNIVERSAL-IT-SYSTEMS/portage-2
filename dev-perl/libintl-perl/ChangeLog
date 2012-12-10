@@ -1,6 +1,69 @@
 # ChangeLog for dev-perl/libintl-perl
-# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/libintl-perl/ChangeLog,v 1.29 2009/09/07 07:40:11 tove Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/libintl-perl/ChangeLog,v 1.50 2012/06/24 19:00:28 tove Exp $
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> libintl-perl-1.200.0.ebuild:
+  Don't run tests with a de_* and without the de_AT locale. Thanks to Kent
+  Fredric (#418479)
+
+  24 Jun 2012; Torsten Veller <tove@gentoo.org> metadata.xml:
+  Update CPAN upstream info
+
+  03 Jun 2012; Torsten Veller <tove@gentoo.org> -libintl-perl-1.16.ebuild:
+  Cleanup
+
+  29 May 2012; Brent Baude <ranger@gentoo.org> libintl-perl-1.200.0.ebuild:
+  Marking libintl-perl-1.200.0 ppc for bug 415285
+
+  28 May 2012; Raúl Porcel <armin76@gentoo.org> libintl-perl-1.200.0.ebuild:
+  alpha/ia64/s390/sh/sparc stable wrt #415285
+
+  21 May 2012; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  libintl-perl-1.200.0.ebuild:
+  x86 stable wrt bug #415285
+
+  16 May 2012; Jeroen Roovers <jer@gentoo.org> libintl-perl-1.200.0.ebuild:
+  Stable for HPPA (bug #415285).
+
+  13 May 2012; Markus Meier <maekke@gentoo.org> libintl-perl-1.200.0.ebuild:
+  arm stable, bug #415285
+
+  09 May 2012; Agostino Sarubbo <ago@gentoo.org> libintl-perl-1.200.0.ebuild:
+  Stable for amd64, wrt bug #415285
+
+  09 May 2012; Alexis Ballier <aballier@gentoo.org>
+  libintl-perl-1.200.0.ebuild:
+  keyword ~amd64-fbsd
+
+  08 May 2012; Kacper Kowalik <xarthisius@gentoo.org>
+  libintl-perl-1.200.0.ebuild:
+  ppc/ppc64 stable wrt #414947
+
+  01 Apr 2012; Raúl Porcel <armin76@gentoo.org> libintl-perl-1.200.0.ebuild:
+  Add ~alpha/~arm/~s390/~sh wrt #408399
+
+  26 Mar 2012; Naohiro Aota <naota@gentoo.org> libintl-perl-1.200.0.ebuild:
+  Add ~x86-fbsd. #408399
+
+  24 Mar 2012; Fabian Groffen <grobian@gentoo.org> libintl-perl-1.200.0.ebuild:
+  Add Prefix keywords, bug #408399
+
+  24 Mar 2012; Fabian Groffen <grobian@gentoo.org> libintl-perl-1.200.0.ebuild:
+  Marked ~x64-macos
+
+  19 Mar 2012; Mart Raudsepp <leio@gentoo.org> libintl-perl-1.200.0.ebuild:
+  Add ~mips keyword, needed by newer app-text/texi2html wrt #408399
+
+  14 Mar 2012; Jeroen Roovers <jer@gentoo.org> libintl-perl-1.200.0.ebuild:
+  Marked ~hppa (bug #408119).
+
+  04 Sep 2011; Torsten Veller <tove@gentoo.org> -libintl-perl-1.20.ebuild:
+  Cleanup
+
+*libintl-perl-1.200.0 (27 Aug 2011)
+
+  27 Aug 2011; Torsten Veller <tove@gentoo.org> +libintl-perl-1.200.0.ebuild:
+  Change version scheme
 
   07 Sep 2009; Torsten Veller <tove@gentoo.org> -libintl-perl-1.18.ebuild,
   -libintl-perl-1.19.ebuild:
@@ -111,4 +174,3 @@
 
   01 May 2004; Eric Sammer <esammer@gentoo.org> :
   Initial import. Closes bug #49429.
-

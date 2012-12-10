@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/qdox/qdox-1.6.3.ebuild,v 1.12 2010/01/23 12:47:51 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/qdox/qdox-1.6.3.ebuild,v 1.14 2012/04/15 18:12:37 vapier Exp $
 
 JAVA_PKG_IUSE="doc source"
 inherit java-pkg-2 java-ant-2

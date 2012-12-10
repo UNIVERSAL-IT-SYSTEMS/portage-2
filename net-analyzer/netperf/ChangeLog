@@ -1,6 +1,59 @@
 # ChangeLog for net-analyzer/netperf
-# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/netperf/ChangeLog,v 1.47 2011/07/30 15:40:08 jer Exp $
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/netperf/ChangeLog,v 1.59 2012/09/27 15:52:23 jer Exp $
+
+  27 Sep 2012; Jeroen Roovers <jer@gentoo.org> netperf-2.6.0-r1.ebuild,
+  metadata.xml:
+  Add USE=demo to enable reporting interim results by Michał Górny (bug
+  #304651).
+
+*netperf-2.6.0-r1 (27 Sep 2012)
+
+  27 Sep 2012; Jeroen Roovers <jer@gentoo.org> +netperf-2.6.0-r1.ebuild,
+  metadata.xml:
+  Add support for SCTP performance tests by K. Sanborn (bug #436398).
+
+  05 Aug 2012; Jeroen Roovers <jer@gentoo.org>
+  -files/netperf-2.4.0-gcc41.patch, -netperf-2.4.4-r1.ebuild,
+  -netperf-2.4.5-r2.ebuild, -files/netperf-2.4.5-netserver.patch,
+  -files/netperf-CVE-2007-1444.patch:
+  Old.
+
+  05 Aug 2012; Raúl Porcel <armin76@gentoo.org> netperf-2.5.0-r1.ebuild:
+  alpha/ia64/sparc stable wrt #419221
+
+  03 Jul 2012; Jeroen Roovers <jer@gentoo.org> netperf-2.5.0-r1.ebuild:
+  Stable for HPPA (bug #419221).
+
+*netperf-2.6.0 (28 Jun 2012)
+
+  28 Jun 2012; Jeroen Roovers <jer@gentoo.org> +netperf-2.6.0.ebuild:
+  Version bump.
+
+  13 Jun 2012; Jeff Horelick <jdhore@gentoo.org> netperf-2.5.0-r1.ebuild:
+  marked x86 per bug 419221
+
+  07 Jun 2012; Brent Baude <ranger@gentoo.org> netperf-2.5.0-r1.ebuild:
+  Marking netperf-2.5.0-r1 ppc for bug 419221
+
+  05 Jun 2012; Brent Baude <ranger@gentoo.org> netperf-2.5.0-r1.ebuild:
+  Marking netperf-2.5.0-r1 ppc64 for bug 419221
+
+  04 Jun 2012; Agostino Sarubbo <ago@gentoo.org> netperf-2.5.0-r1.ebuild:
+  Stable for amd64, wrt bug #419221
+
+*netperf-2.5.0-r1 (31 Dec 2011)
+*netperf-2.4.5-r2 (31 Dec 2011)
+*netperf-2.4.4-r1 (31 Dec 2011)
+
+  31 Dec 2011; Christian Ruppert <idl0r@gentoo.org> -netperf-2.4.4.ebuild,
+  +netperf-2.4.4-r1.ebuild, -netperf-2.4.5-r1.ebuild, +netperf-2.4.5-r2.ebuild,
+  -netperf-2.5.0.ebuild, +netperf-2.5.0-r1.ebuild, files/netperf-2.2-init:
+  Revbump. Don't use deprecated start-stop-daemon options, bug 389975.
+
+  14 Aug 2011; Fabio Erculiani <lxnay@gentoo.org> netperf-2.4.4.ebuild,
+  netperf-2.4.5-r1.ebuild, netperf-2.5.0.ebuild:
+  sci-mathematics/snns blocker is no longer required as per bug 248322
 
 *netperf-2.5.0 (30 Jul 2011)
 
