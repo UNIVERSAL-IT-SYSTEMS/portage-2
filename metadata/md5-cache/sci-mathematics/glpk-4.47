@@ -1,13 +1,13 @@
 DEFINED_PHASES=configure install
-DEPEND=odbc? ( || ( dev-db/libiodbc dev-db/unixODBC ) ) gmp? ( dev-libs/gmp ) mysql? ( virtual/mysql ) virtual/pkgconfig
+DEPEND=gmp? ( dev-libs/gmp ) mysql? ( virtual/mysql ) odbc? ( || ( dev-db/libiodbc dev-db/unixODBC ) ) virtual/pkgconfig
 DESCRIPTION=GNU Linear Programming Kit
 EAPI=4
 HOMEPAGE=http://www.gnu.org/software/glpk/
 IUSE=doc examples gmp odbc mysql static-libs
 KEYWORDS=~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~ppc-aix ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux ~x64-macos ~x86-macos
 LICENSE=GPL-3
-RDEPEND=odbc? ( || ( dev-db/libiodbc dev-db/unixODBC ) ) gmp? ( dev-libs/gmp ) mysql? ( virtual/mysql )
+RDEPEND=gmp? ( dev-libs/gmp ) mysql? ( virtual/mysql ) odbc? ( || ( dev-db/libiodbc dev-db/unixODBC ) )
 SLOT=0
 SRC_URI=mirror://gnu/glpk/glpk-4.47.tar.gz
 _eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	flag-o-matic	1a0b9986e891584bbc9f18928d126299	multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28
-_md5_=869ffb293836b6e7bc6485118070d33d
+_md5_=57fc05fbc8bedc417ee4683ad35fa4a7

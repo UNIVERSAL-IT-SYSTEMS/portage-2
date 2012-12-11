@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile configure install postinst postrm preinst prepare setup
-DEPEND=X? ( dev-python/pygtk:2 ) ncurses? ( sys-libs/ncurses ) bluetooth? ( net-wireless/bluez ) usb? ( virtual/libusb:1 ) dbus? ( sys-apps/dbus dev-libs/dbus-glib ) ntp? ( || ( net-misc/ntp net-misc/chrony ) ) qt4? ( x11-libs/qt-gui:4 ) virtual/pkgconfig test? ( sys-devel/bc ) python? ( || ( =dev-lang/python-2.7* =dev-lang/python-2.6* ) ) >=dev-util/scons-1.2.1
+DEPEND=X? ( dev-python/pygtk:2 ) ncurses? ( sys-libs/ncurses ) bluetooth? ( net-wireless/bluez ) usb? ( virtual/libusb:1 ) dbus? ( sys-apps/dbus dev-libs/dbus-glib ) ntp? ( || ( net-misc/ntp net-misc/chrony ) ) qt4? ( x11-libs/qt-gui:4 ) virtual/pkgconfig test? ( sys-devel/bc ) virtual/pkgconfig python? ( || ( =dev-lang/python-2.7* =dev-lang/python-2.6* ) ) >=dev-util/scons-1.2.1
 DESCRIPTION=GPS daemon and library to support USB/serial GPS devices and various GPS/mapping clients
 EAPI=4
 HOMEPAGE=http://catb.org/gpsd/
@@ -10,5 +10,5 @@ RDEPEND=X? ( dev-python/pygtk:2 ) ncurses? ( sys-libs/ncurses ) bluetooth? ( net
 REQUIRED_USE=X? ( python )
 SLOT=0
 SRC_URI=mirror://nongnu/gpsd/gpsd-3.7.tar.gz
-_eclasses_=distutils	15ae23f6f8219a009bfcfff7724fe727	eutils	d40dc948067bd3db1c8ebf7d51897313	multilib	9aa8a023e062fca0ba79362d9d0cc488	python	4092929a66c8b47ffa8d314ca9314ea7	scons-utils	988e24b9e2e4642189b4e97c03e5ae71	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28
-_md5_=e39a99195f371b32c2214a28b63f3a9a
+_eclasses_=distutils	15ae23f6f8219a009bfcfff7724fe727	eutils	d40dc948067bd3db1c8ebf7d51897313	multilib	9aa8a023e062fca0ba79362d9d0cc488	python	4092929a66c8b47ffa8d314ca9314ea7	scons-utils	988e24b9e2e4642189b4e97c03e5ae71	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	udev	4f764d2b1e34e4ef12b9b0d6e680c0ee	user	d0a4d0735a6c0183d707ca919bd72f28
+_md5_=8af98266a9c2c7ce006a3b951a081a8c

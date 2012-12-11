@@ -4,10 +4,10 @@ DESCRIPTION=Passive checker for Python programs
 EAPI=3
 HOMEPAGE=https://launchpad.net/pyflakes http://pypi.python.org/pypi/pyflakes
 IUSE=test
-KEYWORDS=amd64 x86 ~amd64-linux ~x86-linux ~x86-macos
+KEYWORDS=amd64 ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux ~x86-macos
 LICENSE=MIT
 RDEPEND==dev-lang/python-2*
 SLOT=0
 SRC_URI=mirror://pypi/p/pyflakes/pyflakes-0.5.0.tar.gz
 _eclasses_=distutils	15ae23f6f8219a009bfcfff7724fe727	multilib	9aa8a023e062fca0ba79362d9d0cc488	python	4092929a66c8b47ffa8d314ca9314ea7	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4
-_md5_=1c42dc51f3083225815b44262f4f4035
+_md5_=87666dbf6b3730f140f2ac11a3ba6143

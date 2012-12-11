@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile install postinst prepare test
-DEPEND=virtual/pkgconfig
+DEPEND=virtual/pkgconfig virtual/pkgconfig
 DESCRIPTION=A useful tool for running RAID systems - it can be used as a replacement for the raidtools
 EAPI=2
 HOMEPAGE=http://neil.brown.name/blog/mdadm
@@ -10,5 +10,5 @@ RDEPEND=!<sys-apps/baselayout-2 >=sys-apps/util-linux-2.16
 RESTRICT=test
 SLOT=0
 SRC_URI=mirror://kernel/linux/utils/raid/mdadm/mdadm-3.2.3.tar.bz2
-_eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	flag-o-matic	1a0b9986e891584bbc9f18928d126299	multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28
-_md5_=85b62642d5811943368d57f192fa1924
+_eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	flag-o-matic	1a0b9986e891584bbc9f18928d126299	multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	udev	4f764d2b1e34e4ef12b9b0d6e680c0ee	user	d0a4d0735a6c0183d707ca919bd72f28
+_md5_=f50ed2ef4ef834360f8e9282e1cf4363

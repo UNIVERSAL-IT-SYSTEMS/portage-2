@@ -6,9 +6,9 @@ HOMEPAGE=http://code.google.com/p/badvpn/
 IUSE=+client +ncd +server +tun2socks +udpgw debug
 KEYWORDS=amd64 x86
 LICENSE=BSD
-RDEPEND=client? ( dev-libs/nspr dev-libs/nss dev-libs/openssl ) server? ( dev-libs/nspr dev-libs/nss dev-libs/openssl ) ncd? ( dev-libs/openssl ) ncd? ( net-firewall/iptables net-wireless/wpa_supplicant sys-apps/iproute2 >=sys-fs/udev-171 )
+RDEPEND=client? ( dev-libs/nspr dev-libs/nss dev-libs/openssl ) server? ( dev-libs/nspr dev-libs/nss dev-libs/openssl ) ncd? ( dev-libs/openssl ) ncd? ( net-firewall/iptables net-wireless/wpa_supplicant sys-apps/iproute2 >=virtual/udev-171 )
 REQUIRED_USE=|| ( client ncd server tun2socks udpgw )
 SLOT=0
 SRC_URI=http://badvpn.googlecode.com/files/badvpn-1.999.123.tar.bz2
 _eclasses_=base	ec46b36a6f6fd1d0b505a33e0b74e413	cmake-utils	341ea44ed97a940b6ff74283ed5b94d7	eutils	d40dc948067bd3db1c8ebf7d51897313	flag-o-matic	1a0b9986e891584bbc9f18928d126299	multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28
-_md5_=bbe7d370495d4a6b706f74a8494518a3
+_md5_=289288c69779c4cf8d52cc9a9d1896a3

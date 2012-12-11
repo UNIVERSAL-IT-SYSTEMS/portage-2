@@ -4,10 +4,10 @@ DESCRIPTION=Kiwi is a pure Python framework and set of enhanced PyGTK widgets
 EAPI=4
 HOMEPAGE=http://www.async.com.br/projects/kiwi/ https://launchpad.net/kiwi http://pypi.python.org/pypi/kiwi-gtk
 IUSE=examples test test
-KEYWORDS=~amd64 ~x86 ~x86-interix ~amd64-linux ~x86-linux
+KEYWORDS=~amd64 ~ppc ~ppc64 ~x86 ~x86-interix ~amd64-linux ~x86-linux
 LICENSE=LGPL-2.1
 RDEPEND=dev-python/pygtk || ( =dev-lang/python-2.7* =dev-lang/python-2.6* )
 SLOT=0
 SRC_URI=mirror://pypi/k/kiwi-gtk/kiwi-gtk-1.9.36.tar.gz
 _eclasses_=distutils	15ae23f6f8219a009bfcfff7724fe727	eutils	d40dc948067bd3db1c8ebf7d51897313	multilib	9aa8a023e062fca0ba79362d9d0cc488	python	4092929a66c8b47ffa8d314ca9314ea7	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28	versionator	6601b4c5b3f019a993db59a50e1854e4	virtualx	73cfc129b4b9ba23aed1abb10c825d86
-_md5_=791b48bd23c3c61b7505bdc860ff40cc
+_md5_=27c37c4c986b0f7558da876648cc8168

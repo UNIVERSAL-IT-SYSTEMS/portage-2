@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/quodlibet/quodlibet-2.4.ebuild,v 1.7 2012/12/08 12:33:20 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/quodlibet/quodlibet-2.4.ebuild,v 1.8 2012/12/11 17:15:05 ssuominen Exp $
 
 EAPI=4
 
@@ -39,7 +39,8 @@ DEPEND="${COMMON_DEPEND}
 REQUIRED_USE="ipod? ( dbus )"
 
 src_prepare() {
-	if has_version '>=sys-fs/udev-183'; then
+	# This is properly fixed in 2.4.91, so we don't really bother here
+	if has_version '>=virtual/udev-183'; then
 		sed -i -e '/LoadLibrary/s:libudev.so.0:libudev.so.1:' ${PN}/devices/__init__.py || die
 	fi
 
