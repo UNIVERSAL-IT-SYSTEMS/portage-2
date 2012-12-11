@@ -1,5 +1,5 @@
 DEFINED_PHASES=configure install prepare
-DEPEND=>=dev-libs/glib-2 >=dev-libs/libxslt-1.0.0 dev-libs/libxml2 net-libs/libsoup:2.4 net-libs/libsoup-gnome:2.4 introspection? ( >=dev-libs/gobject-introspection-0.9.0 ) virtual/pkgconfig doc? ( >=dev-util/gtk-doc-1.10 ) test? ( dev-libs/check ) vala? ( || ( dev-lang/vala:0.18[vapigen] dev-lang/vala:0.16[vapigen] ) )
+DEPEND=>=dev-libs/glib-2 >=dev-libs/libxslt-1.0.0 dev-libs/libxml2 net-libs/libsoup:2.4 net-libs/libsoup-gnome:2.4 introspection? ( >=dev-libs/gobject-introspection-0.9.0 ) virtual/pkgconfig doc? ( >=dev-util/gtk-doc-1.10 ) test? ( dev-libs/check ) vala? ( || ( dev-lang/vala:0.18[vapigen] dev-lang/vala:0.16[vapigen] ) ) virtual/pkgconfig
 DESCRIPTION=GObject library for managing information about real and virtual OSes
 EAPI=4
 HOMEPAGE=http://fedorahosted.org/libosinfo/
@@ -10,5 +10,5 @@ RDEPEND=>=dev-libs/glib-2 >=dev-libs/libxslt-1.0.0 dev-libs/libxml2 net-libs/lib
 REQUIRED_USE=vala? ( introspection )
 SLOT=0
 SRC_URI=http://fedorahosted.org/releases/l/i/libosinfo/libosinfo-0.2.0.tar.gz
-_eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28	vala	ad1e7234faa2244a7e10f1c864371475
-_md5_=8d8f7b0195d0107338ff45f340067c2b
+_eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	udev	4f764d2b1e34e4ef12b9b0d6e680c0ee	user	d0a4d0735a6c0183d707ca919bd72f28	vala	ad1e7234faa2244a7e10f1c864371475
+_md5_=31748f41bc9a91fb50c89fa9b53992c6

@@ -1,12 +1,12 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/ccid/ccid-1.4.8.ebuild,v 1.7 2012/12/06 03:56:50 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/ccid/ccid-1.4.8.ebuild,v 1.9 2012/12/11 14:53:14 ssuominen Exp $
 
 EAPI="4"
 
 STUPID_NUM="3768"
 
-inherit eutils toolchain-funcs
+inherit eutils toolchain-funcs udev
 
 DESCRIPTION="CCID free software driver"
 HOMEPAGE="http://pcsclite.alioth.debian.org/ccid.html"
@@ -41,9 +41,7 @@ src_install() {
 	default
 
 	if use kernel_linux; then
-		local udevdir=/lib/udev
-		has_version sys-fs/udev && udevdir="$($(tc-getPKG_CONFIG) --variable=udevdir udev)"
-		insinto "${udevdir}"/rules.d
-		newins src/92_pcscd_ccid.rules 92-pcsc-ccid.rules
+		# note: for eudev support, rules probably will always need to be installed to /usr
+		udev_newrules src/92_pcscd_ccid.rules 92-pcsc-ccid.rules
 	fi
 }

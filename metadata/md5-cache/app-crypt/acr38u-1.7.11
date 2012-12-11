@@ -1,5 +1,5 @@
 DEFINED_PHASES=configure install prepare
-DEPEND=>=sys-apps/pcsc-lite-1.6.4 dev-libs/libusb-compat virtual/pkgconfig || ( >=sys-devel/automake-1.11.1:1.11 >=sys-devel/automake-1.12:1.12 ) >=sys-devel/autoconf-2.68 sys-devel/libtool
+DEPEND=>=sys-apps/pcsc-lite-1.6.4 dev-libs/libusb-compat virtual/pkgconfig || ( >=sys-devel/automake-1.11.1:1.11 >=sys-devel/automake-1.12:1.12 ) >=sys-devel/autoconf-2.68 sys-devel/libtool virtual/pkgconfig
 DESCRIPTION=Non CCID driver for ACR38 AC1038-based Smart Card Reader.
 EAPI=3
 HOMEPAGE=http://www.acs.com.hk
@@ -8,5 +8,5 @@ LICENSE=LGPL-2.1
 RDEPEND=>=sys-apps/pcsc-lite-1.6.4 dev-libs/libusb-compat
 SLOT=0
 SRC_URI=http://www.linuxunderground.be/ACR38_LINUX_100711_P.tar.bz2
-_eclasses_=autotools	f4bee52a728da1f76470f4b8d246c50f	eutils	d40dc948067bd3db1c8ebf7d51897313	libtool	2b273eea1976cfaed3449345d94331ac	multilib	9aa8a023e062fca0ba79362d9d0cc488	multiprocessing	a2130e6fc4aa4c6a24b265ca0cbcc2b6	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28	versionator	6601b4c5b3f019a993db59a50e1854e4
-_md5_=56f57eda26deba75b05dbd4a7e7af002
+_eclasses_=autotools	f4bee52a728da1f76470f4b8d246c50f	eutils	d40dc948067bd3db1c8ebf7d51897313	libtool	2b273eea1976cfaed3449345d94331ac	multilib	9aa8a023e062fca0ba79362d9d0cc488	multiprocessing	a2130e6fc4aa4c6a24b265ca0cbcc2b6	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	udev	4f764d2b1e34e4ef12b9b0d6e680c0ee	user	d0a4d0735a6c0183d707ca919bd72f28	versionator	6601b4c5b3f019a993db59a50e1854e4
+_md5_=e7f81e39cb23b1bc55064ff159f712b0
