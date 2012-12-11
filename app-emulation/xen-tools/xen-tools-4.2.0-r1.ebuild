@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/xen-tools-4.2.0-r1.ebuild,v 1.1 2012/12/04 12:00:12 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/xen-tools-4.2.0-r1.ebuild,v 1.3 2012/12/11 09:06:27 ssuominen Exp $
 
 EAPI="4"
 PYTHON_DEPEND="2"
@@ -22,7 +22,7 @@ else
 	$XEN_SEABIOS_URL"
 	S="${WORKDIR}/xen-${PV}"
 fi
-inherit flag-o-matic eutils multilib python toolchain-funcs ${live_eclass}
+inherit flag-o-matic eutils multilib python toolchain-funcs udev ${live_eclass}
 
 DESCRIPTION="Xend daemon and tools"
 HOMEPAGE="http://xen.org/"
@@ -41,9 +41,9 @@ CDEPEND="<dev-libs/yajl-2
 	sys-libs/zlib
 	sys-devel/bin86
 	sys-devel/dev86
+	sys-power/iasl
 	dev-ml/findlib
-	hvm? ( media-libs/libsdl
-		sys-power/iasl )
+	hvm? ( media-libs/libsdl )
 	api? ( dev-libs/libxml2 net-misc/curl )"
 
 DEPEND="${CDEPEND}
@@ -78,7 +78,7 @@ RDEPEND="${CDEPEND}
 		app-misc/screen
 		app-admin/logrotate
 	)
-	|| ( sys-fs/udev sys-apps/hotplug )"
+	|| ( virtual/udev sys-apps/hotplug )"
 
 # hvmloader is used to bootstrap a fully virtualized kernel
 # Approved by QA team in bug #144032
@@ -180,7 +180,7 @@ src_prepare() {
 
 	# Prevent the downloading of ipxe, seabios
 	epatch "${FILESDIR}"/${P/-tools/}-anti-download.patch
-	cp $DISTDIR/ipxe.tar.gz tools/firmware/etherboot/ || die
+	cp "${DISTDIR}"/ipxe.tar.gz tools/firmware/etherboot/ || die
 	mv ../seabios-dir-remote tools/firmware/ || die
 	pushd tools/firmware/ > /dev/null
 	ln -s seabios-dir-remote seabios-dir || die
@@ -213,7 +213,7 @@ src_compile() {
 
 	unset LDFLAGS
 	unset CFLAGS
-	emake CC=$(tc-getCC) LD=$(tc-getLD) -C tools ${myopt}
+	emake CC="$(tc-getCC)" LD="$(tc-getLD)" -C tools ${myopt}
 
 	if use doc; then
 		sh ./docs/check_pkgs || die "package check failed"
@@ -270,7 +270,7 @@ src_install() {
 
 	# For -static-libs wrt Bug 384355
 	if ! use static-libs; then
-		rm -f ${ED}usr/$(get_libdir)/*.a ${ED}usr/$(get_libdir)/ocaml/*/*.a
+		rm -f "${ED}"usr/$(get_libdir)/*.a "${ED}"usr/$(get_libdir)/ocaml/*/*.a
 	fi
 
 	#python_convert_shebangs -r 2 "${ED}"
@@ -281,8 +281,9 @@ src_install() {
 	keepdir /etc/xen/auto
 
 	# Temp QA workaround
-	mkdir -p "${ED}"$(get_libdir)
-	mv "${ED}"etc/udev "${ED}"$(get_libdir)
+	dodir "$(udev_get_udevdir)"
+	mv "${ED}"/etc/udev/* "${ED}/$(udev_get_udevdir)"
+	rm -rf "${ED}"/etc/udev
 
 	# Remove files failing QA AFTER emake installs them, avoiding seeking absent files
 	rm -f $(find "${ED}" -name openbios-sparc32) \

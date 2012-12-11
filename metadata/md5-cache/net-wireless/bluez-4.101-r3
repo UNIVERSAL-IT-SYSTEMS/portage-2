@@ -1,13 +1,13 @@
 DEFINED_PHASES=configure install postinst prepare setup
-DEPEND=>=dev-libs/glib-2.28:2 >=sys-apps/dbus-1.4 >=sys-fs/udev-169 alsa? ( media-libs/alsa-lib[alsa_pcm_plugins_extplug(+),alsa_pcm_plugins_ioplug(+)] media-libs/libsndfile ) cups? ( net-print/cups ) gstreamer? ( >=media-libs/gstreamer-0.10:0.10 >=media-libs/gst-plugins-base-0.10:0.10 ) selinux? ( sec-policy/selinux-bluetooth ) usb? ( virtual/libusb:0 ) readline? ( sys-libs/readline ) virtual/pkgconfig sys-devel/flex test-programs? ( >=dev-libs/check-0.9.6 ) test-programs? ( =dev-lang/python-2* )
+DEPEND=>=dev-libs/glib-2.28:2 >=sys-apps/dbus-1.4 >=virtual/udev-171 alsa? ( media-libs/alsa-lib[alsa_pcm_plugins_extplug(+),alsa_pcm_plugins_ioplug(+)] media-libs/libsndfile ) cups? ( net-print/cups ) gstreamer? ( >=media-libs/gstreamer-0.10:0.10 >=media-libs/gst-plugins-base-0.10:0.10 ) selinux? ( sec-policy/selinux-bluetooth ) usb? ( virtual/libusb:0 ) readline? ( sys-libs/readline ) virtual/pkgconfig sys-devel/flex test-programs? ( >=dev-libs/check-0.9.6 ) test-programs? ( =dev-lang/python-2* )
 DESCRIPTION=Bluetooth Tools and System Daemons for Linux
 EAPI=4
 HOMEPAGE=http://www.bluez.org/
 IUSE=alsa +consolekit cups debug gstreamer selinux pcmcia test-programs usb readline
 KEYWORDS=~amd64 ~arm ~hppa ~ppc ~ppc64 ~x86
 LICENSE=GPL-2 LGPL-2.1
-RDEPEND=>=dev-libs/glib-2.28:2 >=sys-apps/dbus-1.4 >=sys-fs/udev-169 alsa? ( media-libs/alsa-lib[alsa_pcm_plugins_extplug(+),alsa_pcm_plugins_ioplug(+)] media-libs/libsndfile ) cups? ( net-print/cups ) gstreamer? ( >=media-libs/gstreamer-0.10:0.10 >=media-libs/gst-plugins-base-0.10:0.10 ) selinux? ( sec-policy/selinux-bluetooth ) usb? ( virtual/libusb:0 ) readline? ( sys-libs/readline ) !net-wireless/bluez-libs !net-wireless/bluez-utils consolekit? ( sys-auth/consolekit ) test-programs? ( dev-python/dbus-python dev-python/pygobject:2 ) test-programs? ( =dev-lang/python-2* )
+RDEPEND=>=dev-libs/glib-2.28:2 >=sys-apps/dbus-1.4 >=virtual/udev-171 alsa? ( media-libs/alsa-lib[alsa_pcm_plugins_extplug(+),alsa_pcm_plugins_ioplug(+)] media-libs/libsndfile ) cups? ( net-print/cups ) gstreamer? ( >=media-libs/gstreamer-0.10:0.10 >=media-libs/gst-plugins-base-0.10:0.10 ) selinux? ( sec-policy/selinux-bluetooth ) usb? ( virtual/libusb:0 ) readline? ( sys-libs/readline ) !net-wireless/bluez-libs !net-wireless/bluez-utils consolekit? ( sys-auth/consolekit ) test-programs? ( dev-python/dbus-python dev-python/pygobject:2 ) test-programs? ( =dev-lang/python-2* )
 SLOT=0
 SRC_URI=mirror://kernel/linux/bluetooth/bluez-4.101.tar.xz http://dev.gentoo.org/~pacho/bluez/oui-20120623.txt.xz
 _eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	multilib	9aa8a023e062fca0ba79362d9d0cc488	python	4092929a66c8b47ffa8d314ca9314ea7	systemd	94264c6516a1a0c2059c7fc6eed21fe4	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28
-_md5_=143ab0842f0032c8c88c2cf15149ce8b
+_md5_=7620afe0cb97d10074533e252eddea7d

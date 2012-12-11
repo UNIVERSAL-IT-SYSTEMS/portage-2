@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/xen-tools-4.1.1-r6.ebuild,v 1.8 2012/12/04 19:24:12 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/xen-tools-4.1.1-r6.ebuild,v 1.10 2012/12/11 09:06:27 ssuominen Exp $
 
 EAPI="3"
 
@@ -69,7 +69,7 @@ RDEPEND="${CDEPEND}
 		app-misc/screen
 		app-admin/logrotate
 	)
-	|| ( sys-fs/udev sys-apps/hotplug )"
+	|| ( virtual/udev sys-apps/hotplug )"
 
 # hvmloader is used to bootstrap a fully virtualized kernel
 # Approved by QA team in bug #144032
@@ -222,7 +222,7 @@ src_compile() {
 	fi
 
 	unset LDFLAGS
-	emake CC=$(tc-getCC) LD=$(tc-getLD) -C tools ${myopt} || die "compile failed"
+	emake CC="$(tc-getCC)" LD="$(tc-getLD)" -C tools ${myopt} || die "compile failed"
 
 	if use doc; then
 		sh ./docs/check_pkgs || die "package check failed"
