@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/primer3/primer3-2.3.1.ebuild,v 1.2 2012/12/12 13:10:00 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/primer3/primer3-2.3.4.ebuild,v 1.2 2012/12/12 13:10:00 jlec Exp $
 
 EAPI=4
 
@@ -19,7 +19,7 @@ DEPEND="dev-lang/perl"
 RDEPEND=""
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-2.3.4-buildsystem.patch
+	epatch "${FILESDIR}"/${P}-buildsystem.patch
 
 	if [[ ${CHOST} == *-darwin* ]]; then
 		sed -e "s:LIBOPTS ='-static':LIBOPTS =:" -i Makefile || die
