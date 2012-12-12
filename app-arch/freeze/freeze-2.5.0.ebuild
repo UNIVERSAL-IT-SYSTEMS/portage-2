@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/freeze/freeze-2.5.0.ebuild,v 1.21 2012/12/09 18:57:25 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/freeze/freeze-2.5.0.ebuild,v 1.22 2012/12/12 16:14:01 jer Exp $
 
 EAPI="2"
 inherit toolchain-funcs
@@ -16,7 +16,7 @@ IUSE=""
 
 RDEPEND="
 	!<=media-libs/mlt-0.4.2
-	!app-forensics/sleuthkit
+	!>=app-forensics/sleuthkit-4.0.1
 	!media-libs/mlt[melt]
 "
 DEPEND="${RDEPEND}

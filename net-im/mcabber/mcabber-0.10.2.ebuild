@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/mcabber/mcabber-0.10.1.ebuild,v 1.2 2012/05/04 06:22:11 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/mcabber/mcabber-0.10.2.ebuild,v 1.1 2012/12/12 15:38:24 wschlich Exp $
 
-EAPI=3
+EAPI=4
 
-inherit flag-o-matic
+inherit flag-o-matic autotools
 
 DESCRIPTION="A small Jabber console client with various features, like MUC, SSL, PGP"
 HOMEPAGE="http://mcabber.com/"
@@ -12,7 +12,7 @@ SRC_URI="http://mcabber.com/files/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~mips ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~mips ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
 
 IUSE="aspell crypt idn modules otr spell ssl vim-syntax"
 
@@ -36,14 +36,15 @@ DEPEND="${RDEPEND}
 
 pkg_setup() {
 	if use aspell && use spell; then
-		ewarn "NOTE: You have both flags 'aspell' and 'spell' enabled, enchant will be preferred."
+		ewarn "NOTE: You have both USE flags 'aspell' and 'spell' enabled, enchant (USE flag 'spell') will be preferred."
 	fi
 }
 
-src_configure() {
-	# bug #277888
-	use crypt && append-flags -D_FILE_OFFSET_BITS=64
+src_prepare() {
+	eautoreconf
+}
 
+src_configure() {
 	econf \
 		$(use_enable crypt gpgme) \
 		$(use_enable otr) \
@@ -54,11 +55,11 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install
 
 	# clean unneeded language documentation
 	for i in ${LANGS}; do
-		! use linguas_${i} && rm -rf "${D}"/usr/share/${PN}/help/${i}
+		! use linguas_${i} && rm -rf "${ED}"/usr/share/${PN}/help/${i}
 	done
 
 	dodoc AUTHORS ChangeLog NEWS README TODO mcabberrc.example
@@ -66,24 +67,24 @@ src_install() {
 
 	# contrib themes
 	insinto /usr/share/${PN}/themes
-	doins "${S}"/contrib/themes/* || die
+	doins "${S}"/contrib/themes/*
 
 	# contrib generic scripts
 	exeinto /usr/share/${PN}/scripts
-	doexe "${S}"/contrib/*.{pl,py} || die
+	doexe "${S}"/contrib/*.{pl,py}
 
 	# contrib event scripts
 	exeinto /usr/share/${PN}/scripts/events
-	doexe "${S}"/contrib/events/* || die
+	doexe "${S}"/contrib/events/*
 
 	if use vim-syntax; then
 		cd contrib/vim/
 
 		insinto /usr/share/vim/vimfiles/syntax
-		doins mcabber_log-syntax.vim || die
+		doins mcabber_log-syntax.vim
 
 		insinto /usr/share/vim/vimfiles/ftdetect
-		doins mcabber_log-ftdetect.vim || die
+		doins mcabber_log-ftdetect.vim
 	fi
 }
 
@@ -96,7 +97,7 @@ pkg_postinst() {
 	elog "following commands:"
 	elog
 	elog "  mkdir -p ~/.mcabber"
-	elog "  bzcat ${ROOT}usr/share/doc/${PF}/mcabberrc.example.bz2 >~/.mcabber/mcabberrc"
+	elog "  bzcat ${EROOT}usr/share/doc/${PF}/mcabberrc.example.bz2 >~/.mcabber/mcabberrc"
 	elog
 	elog "Then edit ~/.mcabber/mcabberrc with your favorite editor."
 	elog
@@ -106,6 +107,6 @@ pkg_postinst() {
 	elog "From version 0.9.0 on, MCabber supports PGP encryption of messages."
 	elog "See README_PGP.txt for details."
 	echo
-	einfo "Check out ${ROOT}usr/share/${PN} for contributed themes and event scripts."
+	einfo "Check out ${EROOT}usr/share/${PN} for contributed themes and event scripts."
 	echo
 }
