@@ -1,14 +1,17 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/exodusii/exodusii-5.22b.ebuild,v 1.4 2012/12/13 14:52:24 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/nemesis/nemesis-5.22b.ebuild,v 1.1 2012/12/13 14:51:07 jlec Exp $
 
 EAPI=4
 
 inherit cmake-utils multilib
 
-DESCRIPTION="Model developed to store and retrieve transient data for finite element analyses"
+MY_PN="exodus"
+MY_P="${MY_PN}-${PV}"
+
+DESCRIPTION="Enhancement to the EXODUSII finite element database model"
 HOMEPAGE="http://sourceforge.net/projects/exodusii/"
-SRC_URI="mirror://sourceforge/${PN}/${P/ii/}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -18,21 +21,25 @@ IUSE="static-libs test"
 DEPEND="sci-libs/netcdf"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}"/${P/ii/}/${PN/ii/}
+S="${WORKDIR}"/${MY_P}/${PN}
 
 PATCHES=( "${FILESDIR}"/${P}-multilib.patch )
+
+src_prepare() {
+	find ../exodus -delete || die
+	base_src_prepare
+}
 
 src_configure() {
 	mycmakeargs="${mycmakeargs}
 		-DLIB_INSTALL_DIR=$(get_libdir)
 		-DNETCDF_DIR="${EPREFIX}/usr/"
+		-DEXODUS_DIR="${EPREFIX}/usr/"
 		$(cmake-utils_use !static-libs BUILD_SHARED_LIBS)
 		$(cmake-utils_use test BUILD_TESTING)"
 	cmake-utils_src_configure
 }
 
 src_test() {
-	cd "${BUILD_DIR}"/forbind/test
-	csh testall
-	./f_test_nem || die
+	"${BUILD_DIR}"/ne_test || die
 }
