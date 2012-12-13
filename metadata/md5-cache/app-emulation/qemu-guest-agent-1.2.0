@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile configure install postinst
-DEPEND=>=dev-libs/glib-2.22
+DEPEND=>=dev-libs/glib-2.22 virtual/pkgconfig
 DESCRIPTION=QEMU Guest Agent (qemu-ga) for use when running inside a VM
 EAPI=4
 HOMEPAGE=http://wiki.qemu.org/Features/QAPI/GuestAgent
@@ -8,5 +8,5 @@ LICENSE=GPL-2 BSD-2
 RDEPEND=>=dev-libs/glib-2.22 !<app-emulation/qemu-1.1.1-r1
 SLOT=0
 SRC_URI=http://wiki.qemu.org/download/qemu-1.2.0.tar.bz2
-_eclasses_=systemd	94264c6516a1a0c2059c7fc6eed21fe4
-_md5_=076305f5c6c8556af13bb311656e9a14
+_eclasses_=multilib	9aa8a023e062fca0ba79362d9d0cc488	systemd	94264c6516a1a0c2059c7fc6eed21fe4	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	udev	4f764d2b1e34e4ef12b9b0d6e680c0ee
+_md5_=058ef44ad558ca05a11970305a14a801
