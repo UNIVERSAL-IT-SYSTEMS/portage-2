@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/coccinelle/coccinelle-1.0.0_rc15.ebuild,v 1.1 2012/08/20 17:33:27 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/coccinelle/coccinelle-1.0.0_rc16.ebuild,v 1.1 2012/12/13 22:11:49 radhermit Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2"
@@ -56,12 +56,11 @@ src_prepare() {
 		# Fix python install location
 		sed -i -e "s:\$(SHAREDIR)/python:$(python_get_sitedir):" \
 			-e "s:PYTHON_TARGET:PYTHON_INSTALL_TARGET:" Makefile || die
-		sed -i -e "/export PYTHONPATH/s:\$COCCINELLE_HOME/python:$(python_get_sitedir):" \
-			scripts/spatch.sh.in || die
 	fi
 
-	epatch "${FILESDIR}"/${PN}-1.0.0_rc14-findtool.patch
-	cp Makefile Makefile.orig || die
+	sed -i "s:^SHAREDIR=.*:SHAREDIR=/usr/$(get_libdir)/ocaml/${PN}/:" scripts/spatch.sh.in || die
+
+	epatch "${FILESDIR}"/${P}-findtool.patch
 	eautoreconf
 }
 
@@ -75,8 +74,6 @@ src_configure() {
 	sed -i -e "s:^LIBDIR=.*:LIBDIR=/usr/$(get_libdir)/ocaml/stublibs/:" \
 		-e "s:^SHAREDIR=.*:SHAREDIR=/usr/$(get_libdir)/ocaml/${PN}/:" \
 		Makefile.config || die
-
-	cp Makefile.orig Makefile || die
 }
 
 src_compile() {
