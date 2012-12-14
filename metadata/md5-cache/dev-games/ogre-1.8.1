@@ -4,7 +4,7 @@ DESCRIPTION=Object-oriented Graphics Rendering Engine
 EAPI=4
 HOMEPAGE=http://www.ogre3d.org/
 IUSE=+boost cg doc double-precision examples +freeimage gles2 ois +opengl poco profile tbb threads tools +zip
-KEYWORDS=~amd64 ~x86
+KEYWORDS=amd64 x86
 LICENSE=MIT
 RDEPEND=media-libs/freetype:2 virtual/opengl virtual/glu x11-libs/libX11 x11-libs/libXaw x11-libs/libXrandr x11-libs/libXt boost? ( dev-libs/boost ) cg? ( media-gfx/nvidia-cg-toolkit ) freeimage? ( media-libs/freeimage ) gles2? ( || ( <media-libs/mesa-8.0.0[gles] >=media-libs/mesa-8.0.0[gles2] ) ) ois? ( dev-games/ois ) threads? ( poco? ( dev-libs/poco ) tbb? ( dev-cpp/tbb ) ) zip? ( sys-libs/zlib dev-libs/zziplib )
 REQUIRED_USE=threads? ( || ( boost poco tbb ) )
@@ -12,4 +12,4 @@ RESTRICT=test
 SLOT=0
 SRC_URI=mirror://sourceforge/ogre/ogre_src_v1-8-1.tar.bz2
 _eclasses_=base	ec46b36a6f6fd1d0b505a33e0b74e413	cmake-utils	341ea44ed97a940b6ff74283ed5b94d7	eutils	d40dc948067bd3db1c8ebf7d51897313	flag-o-matic	1a0b9986e891584bbc9f18928d126299	multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28
-_md5_=4a9be4987380aab47a65b2305fc60e9b
+_md5_=faa73bcd38b5a326fdb6dfbdb9c96110
