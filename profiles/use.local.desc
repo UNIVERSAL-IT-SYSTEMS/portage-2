@@ -4181,7 +4181,6 @@ net-libs/daq:ipq - Build the IPQ data acquisition module. IPQ is the old way to 
 net-libs/daq:nfq - Build the NFQ data acquisition module. NFQ is the new way to process iptables packets for inline deployments. Snort can not run unprivileged when using this module.
 net-libs/daq:pcap - Build the PCAP data acquisition module.
 net-libs/farstream:introspection - Use dev-libs/gobject-introspection for introspection
-net-libs/farstream:upnp - Enable UPnP IGD support
 net-libs/glib-networking:gnome - Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings
 net-libs/glib-networking:libproxy - Use net-libs/libproxy for getting the HTTP/HTTPS/SOCKS proxy configuration
 net-libs/gnome-online-accounts:introspection - Use dev-libs/gobject-introspection for introspection
@@ -4510,8 +4509,6 @@ net-misc/mediatomb:mysql - Use dev-db/mysql as backend rather than SQLite3
 net-misc/mediatomb:taglib - Use media-libs/taglib for reading files' metadata rather than id3lib
 net-misc/mediatomb:thumbnail - Enables video thumbnails generation throughmedia-video/ffmpegthumbnailer
 net-misc/memcached:slabs-reassign - Allow manual reassignment of memory slabs at the cost of slab optimizations.
-net-misc/mirall:sftp - Enable sftp transfer support via net-libs/libssh
-net-misc/mirall:webdav - Adds support for HTTP/dav content via net-libs/neon
 net-misc/mosh:client - Build network client
 net-misc/mosh:examples - Include example scripts
 net-misc/mosh:mosh-hardening - Enable compiler and linker options to frustrate memory corruption exploits
@@ -4625,7 +4622,6 @@ net-misc/tor:nat-pmp - Enable NAT Port Mapping Protocol
 net-misc/tor:stats - Enable to keep track of how much of each kind of resource we download
 net-misc/tor:tor-hardening - Compile tor with hardening on vanilla compilers/linkers
 net-misc/tor:transparent-proxy - Enable transparent proxying
-net-misc/tor:upnp - Enable Universal Plug and Play
 net-misc/tor:web - Enable tor2web support
 net-misc/uftp:server - Install uftp server daemon
 net-misc/vde:pcap - Enable the pcap-based plugin that allows creating a switch against a real interface.
@@ -5656,7 +5652,6 @@ sys-kernel/rt-sources:deblob - Remove binary blobs from kernel sources to provid
 sys-kernel/spl:debug-log - Enable additional diagnostics
 sys-kernel/vanilla-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/vserver-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
-sys-kernel/zen-sources:minimal - Clone git tree with --depth 1 to reduce amount of data to download. Use with caution
 sys-libs/db:rpc - Enable rpc client/server
 sys-libs/freeipmi:nagios - Install a nagios plugin to check sensors' status.
 sys-libs/gdbm:berkdb - enable compatibility layer for UNIX-like dbm and ndbm interfaces
