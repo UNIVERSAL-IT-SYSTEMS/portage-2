@@ -4180,7 +4180,6 @@ net-libs/daq:dump - Build the Dump data acquisition module. The dump DAQ allows 
 net-libs/daq:ipq - Build the IPQ data acquisition module. IPQ is the old way to process iptables packets for inline deployments. Snort can not run unprivileged when using this module.
 net-libs/daq:nfq - Build the NFQ data acquisition module. NFQ is the new way to process iptables packets for inline deployments. Snort can not run unprivileged when using this module.
 net-libs/daq:pcap - Build the PCAP data acquisition module.
-net-libs/farsight2:upnp - Enable UPnP IGD support
 net-libs/farstream:introspection - Use dev-libs/gobject-introspection for introspection
 net-libs/farstream:upnp - Enable UPnP IGD support
 net-libs/glib-networking:gnome - Extract HTTP/HTTPS/SOCKS proxy configuration stored using GSettings
@@ -4210,7 +4209,6 @@ net-libs/libinfinity:server - Build and install the server binary including init
 net-libs/libkgapi:oldpim - Allow the use of non-akonadi kdepim-4.4
 net-libs/libkolabxml:csharp - Enable C# language bindings
 net-libs/libmicrohttpd:messages - enable error messages
-net-libs/libnice:upnp - Enable UPnP IGD support
 net-libs/libnids:glib - Use dev-libs/glib for multiprocessing support
 net-libs/libnids:libnet - Include code requiring net-libs/libnet
 net-libs/liboauth:bindist - Alias for the nss USE flag, since there are license compliancy trouble when using OpenSSL.
@@ -4683,16 +4681,13 @@ net-nntp/tin:gpg - Enable app-crypt/gpg support
 net-p2p/amule:daemon - Enable amule daemon
 net-p2p/amule:remote - Enable remote controlling of the client
 net-p2p/amule:stats - Enable statistic reporting
-net-p2p/amule:upnp - Enables support for Intel UPnP stack.
 net-p2p/bitcoin-qt:1stclassmsg - Enable first-class Bitcoin message tools
 net-p2p/bitcoin-qt:bip16 - Enable backported support for relaying and mining new BIP16 pay-to-script-hash transactions
 net-p2p/bitcoin-qt:eligius - Enable using lower fees accepted by Eligius
 net-p2p/bitcoin-qt:qrcode - Enable generation of QR Codes for receiving payments
-net-p2p/bitcoin-qt:upnp - Enable Universal Plug and Play
 net-p2p/bitcoind:bip16 - Enable backported support for relaying and mining new BIP16 pay-to-script-hash transactions
 net-p2p/bitcoind:eligius - Enable using lower fees accepted by Eligius
 net-p2p/bitcoind:logrotate - Use app-admin/logrotate for rotating logs
-net-p2p/bitcoind:upnp - Enable Universal Plug and Play
 net-p2p/dbhub:switch_user - Enable support for switching user
 net-p2p/deluge:setproctitle - Install dependencies needed for beautifying the process name
 net-p2p/deluge:webinterface - Install dependencies needed for the web interface
@@ -4705,7 +4700,6 @@ net-p2p/eiskaltdcpp:gtk3 - Use x11-libs/gtk+:3 instead of x11-libs/gtk+:2
 net-p2p/eiskaltdcpp:json - Enable JSON for cli and daemon
 net-p2p/eiskaltdcpp:libcanberra - Enable sound notifications support over libcanberra in EiskaltDC++ Gtk
 net-p2p/eiskaltdcpp:minimal - Don't install headers
-net-p2p/eiskaltdcpp:upnp - Forward ports using UPnP
 net-p2p/fms:frost - Add support for frost boards
 net-p2p/freenet:freemail - Add Freemail support
 net-p2p/gift:ares - pull in Ares plugin
@@ -4725,11 +4719,9 @@ net-p2p/ktorrent:scanfolder - Scan folders for torrent files and load them
 net-p2p/ktorrent:search - Search for torrents
 net-p2p/ktorrent:shutdown - Shutdown when done
 net-p2p/ktorrent:stats - Shows statistics about torrents in several graphs
-net-p2p/ktorrent:upnp - Forward ports using UPnP
 net-p2p/ktorrent:webinterface - Allows control of KTorrent via a web interface
 net-p2p/ktorrent:zeroconf - Discover peers on the local network using the Zeroconf protocol
 net-p2p/leechcraft-eiskaltdcpp:emoticons - Install emoticon packs
-net-p2p/leechcraft-eiskaltdcpp:upnp - Forward ports using UPnP
 net-p2p/mldonkey:bittorrent - enable bittorrent support
 net-p2p/mldonkey:fasttrack - enable fasttrack support
 net-p2p/mldonkey:gnutella - enable gnutella and gnutella2 support
@@ -5893,7 +5885,6 @@ www-servers/ocsigen:ocamlduce - Enables ocamlduce XML typechecking for generated
 www-servers/pound:dynscaler - Enable dynamic rescaling of back-end priorities
 www-servers/pshs:magic - Enable automatic detection of Content-Type using libmagic (sys-apps/file)
 www-servers/pshs:netlink - Use libnetlink (sys-apps/iproute2) to get network interface addresses
-www-servers/pshs:upnp - Enable port forwarding using UPnP via net-libs/miniupnpc
 www-servers/resin:admin - Enable Resin admin webapp
 www-servers/tomcat:extra-webapps - Build also the docs and examples webapp
 www-servers/uwsgi:carbon - Enable support for sending statistics to a carbon server (see http://projects.unbit.it/uwsgi/wiki/Carbon).
