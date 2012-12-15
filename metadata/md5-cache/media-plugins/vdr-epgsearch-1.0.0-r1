@@ -1,7 +1,7 @@
 DEFINED_PHASES=compile config configure install postinst postrm preinst prepare setup unpack
 DEPEND=>=media-video/vdr-1.3.45 pcre? ( dev-libs/libpcre ) tre? ( dev-libs/tre ) >=media-tv/gentoo-vdr-scripts-0.4.2 virtual/linuxtv-dvb-headers
 DESCRIPTION=Video Disk Recorder epgsearch plugin
-EAPI=4
+EAPI=5
 HOMEPAGE=http://winni.vdr-developer.org/epgsearch
 IUSE=pcre tre linguas_de
 KEYWORDS=~amd64 ~x86
@@ -11,4 +11,4 @@ REQUIRED_USE=pcre? ( !tre ) tre? ( !pcre )
 SLOT=0
 SRC_URI=http://winni.vdr-developer.org/epgsearch/downloads/vdr-epgsearch-1.0.0.tgz
 _eclasses_=base	ec46b36a6f6fd1d0b505a33e0b74e413	eutils	d40dc948067bd3db1c8ebf7d51897313	flag-o-matic	1a0b9986e891584bbc9f18928d126299	multilib	9aa8a023e062fca0ba79362d9d0cc488	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28	vdr-plugin-2	b2eb2ff2d0cba816c8968a8d51ba322d
-_md5_=7ff0fada44e633380545a007560644f7
+_md5_=06f26b20ae6ec2b1dbbe6da50213c2fe
