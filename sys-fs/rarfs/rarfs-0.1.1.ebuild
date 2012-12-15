@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/rarfs/rarfs-0.1.1.ebuild,v 1.2 2012/12/14 08:49:32 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/rarfs/rarfs-0.1.1.ebuild,v 1.4 2012/12/15 08:17:25 pinkbyte Exp $
 
 EAPI=5
 
@@ -20,9 +20,10 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="sys-fs/fuse"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 
-DOCS=( AUTHORS ChangeLog NEWS README )
+DOCS=( README )
 
 src_install() {
 	install_prarfs() {
