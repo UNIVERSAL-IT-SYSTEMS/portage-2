@@ -2160,7 +2160,6 @@ gnome-extra/nautilus-actions:deprecated - Enable deprecated functions
 gnome-extra/nautilus-sendto:gajim - Enables support for net-im/gajim
 gnome-extra/nautilus-sendto:mail - Enables support for mailto using gnome-extra/evolution-data-server
 gnome-extra/nautilus-sendto:pidgin - Enables support for net-im/pidgin
-gnome-extra/nautilus-sendto:upnp - Enables support for sending files over upnp using net-libs/gupnp-av
 gnome-extra/nemo:introspection - Use dev-libs/gobject-introspection for introspection
 gnome-extra/nemo:packagekit - Use packagekit to search for programs to open unknown file types
 gnome-extra/nemo:sendto - Enable the nemo-sendto extension to send files to various locations/devices
@@ -2841,7 +2840,6 @@ media-plugins/frei0r-plugins:scale0tilt - Enables building of scale0tilt and vec
 media-plugins/gkrellmpc:threads - Use separate thread to init connection (unsafe)
 media-plugins/grilo-plugins:daap - Enable dmap support through net-libs/libdmapsharing
 media-plugins/grilo-plugins:tracker - Build support for content discovery using the app-misc/tracker indexer
-media-plugins/grilo-plugins:upnp - Build support for UPnP Audio/Video streaming using net-libs/gupnp-av
 media-plugins/grilo-plugins:vimeo - Build support for Vimeo content discovery using net-libs/libsoup and dev-libs/libgcrypt
 media-plugins/grilo-plugins:youtube - Build support for YouTube content discovery using dev-libs/libgdata
 media-plugins/gst-plugins-a52dec:orc - Use dev-lang/orc for runtime detection of CPU MMX/MMXEXT/3dNow! capabilities to pass down to a52dec library.
@@ -3125,7 +3123,6 @@ media-sound/rhythmbox:dbus - Allow the im-status plugin to set the status of you
 media-sound/rhythmbox:html - Use net-libs/webkit-gtk for detecting and displaying HTML podcast episode descriptions.
 media-sound/rhythmbox:lastfm - Build a plugin for Last.fm and Librefm scrobbling
 media-sound/rhythmbox:udev - Enable hardware detection via sys-fs/udev replacing the deprecated sys-apps/hal code
-media-sound/rhythmbox:upnp - Build a plugin for local network music sharing which uses UPnP protocols using media-video/coherence, dev-python/louie, and dev-python/twisted
 media-sound/rhythmbox:webkit - Enable context panel plugin
 media-sound/rhythmbox:zeitgeist - Build the plugin to inject events to gnome-extra/zeitgeist
 media-sound/rubyripper:cdrdao - Add support for advanced toc scanning using app-cdr/cdrdao
@@ -3443,7 +3440,6 @@ media-video/totem:lirc - Enable support for controlling Totem with a remote cont
 media-video/totem:nautilus - Enable the nautilus extension
 media-video/totem:python - Build support for dev-lang/python plugins
 media-video/totem:tracker - Enable support for searching media files using the indexer app-misc/tracker
-media-video/totem:upnp - Enable DLNA support through media-video/coherence
 media-video/totem:vala - Enable bindings for dev-lang/vala
 media-video/totem:youtube - Enable youtube plugin
 media-video/totem:zeitgeist - Build the plugin to inject events to gnome-extra/zeitgeist
