@@ -1,0 +1,13 @@
+DEFINED_PHASES=install
+DESCRIPTION=Bugzilla subcommand for git
+EAPI=4
+HOMEPAGE=http://www.fishsoup.net/software/git-bz/
+IUSE=python_targets_python2_5 python_targets_python2_6 python_targets_python2_7 python_targets_pypy1_8 python_targets_pypy1_9
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=dev-vcs/git
+REQUIRED_USE=|| ( python_targets_python2_5 python_targets_python2_6 python_targets_python2_7 python_targets_pypy1_8 python_targets_pypy1_9 )
+SLOT=0
+SRC_URI=mirror://bitbucket/mgorny/git-bz/downloads/git-bz-0.12.12.15.tar.bz2
+_eclasses_=multilib	9aa8a023e062fca0ba79362d9d0cc488	python-r1	9bea15e1e3fa9c2110acb76b3c8875e6	python-utils-r1	f86c2539c2ab356ab7b4b87ccb140041	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4
+_md5_=4bc6c25015ecf061c57d6bb421f8b116
