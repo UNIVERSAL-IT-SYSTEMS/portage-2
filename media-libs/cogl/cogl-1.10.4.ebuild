@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/cogl/cogl-1.10.4.ebuild,v 1.4 2012/12/05 23:58:06 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/cogl/cogl-1.10.4.ebuild,v 1.5 2012/12/16 22:03:51 tetromino Exp $
 
 EAPI="5"
 CLUTTER_LA_PUNT="yes"
@@ -46,7 +46,7 @@ DEPEND="${COMMON_DEPEND}
 src_prepare() {
 	DOCS="NEWS README"
 	EXAMPLES="examples/{*.c,*.jpg}"
-	# XXX: think about kms-egl, gles, quartz, sdl, wayland
+	# XXX: think about kms-egl, quartz, sdl, wayland
 	G2CONF="${G2CONF}
 		--disable-examples-install
 		--disable-profile
@@ -62,6 +62,7 @@ src_prepare() {
 		$(use_enable introspection)
 		$(use_enable pango cogl-pango)
 		$(use_enable doc gtk-doc)"
+	# Really need --enable-gtk-doc for docs
 
 	# USE=doc build failure; in 1.12.x; bug #436308
 	epatch "${FILESDIR}/${PN}-1.10.4-cogl-clipping.xml.patch"

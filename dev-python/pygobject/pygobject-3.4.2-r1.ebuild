@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pygobject/pygobject-3.4.2-r1.ebuild,v 1.3 2012/12/10 09:30:41 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pygobject/pygobject-3.4.2-r1.ebuild,v 1.4 2012/12/16 20:57:36 tetromino Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -21,7 +21,7 @@ REQUIRED_USE="test? ( cairo )"
 
 COMMON_DEPEND=">=dev-libs/glib-2.31.0:2
 	>=dev-libs/gobject-introspection-1.34.1.1
-	virtual/libffi
+	virtual/libffi:=
 	cairo? ( >=dev-python/pycairo-1.10.0 )
 	${PYTHON_DEPS}"
 # TODO: should be >=dev-python/pycairo-1.10.0[${PYTHON_USEDEP}]
@@ -78,7 +78,7 @@ src_test() {
 	export GIO_USE_VFS="local" # prevents odd issues with deleting ${T}/.gvfs
 
 	testing() {
-		export XDG_CACHE_HOME="${T}/${BUILD_DIR#${S}}"
+		export XDG_CACHE_HOME="${T}/${EPYTHON}"
 		run_in_build_dir Xemake check
 		unset XDG_CACHE_HOME
 	}
