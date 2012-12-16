@@ -1861,6 +1861,8 @@ dev-vcs/git:mozsha1 - Makes git use an optimized SHA1 routine from Mozilla that 
 dev-vcs/git:ppcsha1 - Make use of a bundled routine that is optimized for the PPC arch
 dev-vcs/git:subversion - Include git-svn for dev-vcs/subversion support
 dev-vcs/git:webdav - Adds support for push'ing to HTTP/HTTPS repositories via DAV
+dev-vcs/git-annex:inotify - Enable inotify support (dev-haskell/hinotify)
+dev-vcs/git-annex:s3 - Enable S3 support (dev-haskell/hs3)
 dev-vcs/gitg:glade - Install a glade catalog file
 dev-vcs/gitolite:contrib - Install user-contributed files
 dev-vcs/gitolite:tools - Install tools to e.g. convert a Gitosis config to gitolite or one to check if your setup is gitolite >= 3.x compatible
