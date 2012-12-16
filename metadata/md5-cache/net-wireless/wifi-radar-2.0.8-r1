@@ -3,10 +3,10 @@ DEPEND=|| ( =dev-lang/python-2.7* =dev-lang/python-2.6* )
 DESCRIPTION=WiFi Radar is a Python/PyGTK2 utility for managing WiFi profiles.
 EAPI=4
 HOMEPAGE=http://wifi-radar.berlios.de/
-KEYWORDS=amd64 ~ppc ~x86
+KEYWORDS=amd64 ~ppc x86
 LICENSE=GPL-2
 RDEPEND=>=dev-python/pygtk-2.16.0-r1 >=net-wireless/wireless-tools-29 || ( net-misc/dhcpcd net-misc/dhcp net-misc/pump ) || ( =dev-lang/python-2.7* =dev-lang/python-2.6* )
 SLOT=0
 SRC_URI=mirror://berlios/wifi-radar/wifi-radar-2.0.s08.tar.bz2
 _eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	multilib	9aa8a023e062fca0ba79362d9d0cc488	python	4092929a66c8b47ffa8d314ca9314ea7	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28	versionator	6601b4c5b3f019a993db59a50e1854e4
-_md5_=77ea9f315b8d5df8c4db89582a6617b2
+_md5_=9c546b5ecf09d0331bfe2d9c100b99c2
