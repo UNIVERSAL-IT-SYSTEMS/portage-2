@@ -1,6 +1,23 @@
 # ChangeLog for net-wireless/aircrack-ng
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/aircrack-ng/ChangeLog,v 1.65 2012/12/15 21:46:37 alonbl Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/aircrack-ng/ChangeLog,v 1.70 2012/12/16 19:23:02 alonbl Exp $
+
+*aircrack-ng-1.1-r3 (16 Dec 2012)
+
+  16 Dec 2012; Alon Bar-Lev <alonbl@gentoo.org> +aircrack-ng-1.1-r3.ebuild:
+  respect ar, runlib, bug#447492, thanks to Agostino Sarubbo
+
+  16 Dec 2012; Agostino Sarubbo <ago@gentoo.org> aircrack-ng-1.1-r2.ebuild:
+  Stable for ppc, wrt bug #311797
+
+  16 Dec 2012; Agostino Sarubbo <ago@gentoo.org> aircrack-ng-1.1-r2.ebuild:
+  Stable for x86, wrt bug #311797
+
+  16 Dec 2012; Agostino Sarubbo <ago@gentoo.org> aircrack-ng-1.1-r2.ebuild:
+  Stable for amd64, wrt bug #311797
+
+  16 Dec 2012; Agostino Sarubbo <ago@gentoo.org> metadata.xml:
+  updated rick mail
 
 *aircrack-ng-1.1-r2 (15 Dec 2012)
 

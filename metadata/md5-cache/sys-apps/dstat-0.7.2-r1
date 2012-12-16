@@ -4,10 +4,10 @@ DESCRIPTION=Versatile replacement for vmstat, iostat and ifstat
 EAPI=4
 HOMEPAGE=http://dag.wieers.com/home-made/dstat/
 IUSE=wifi
-KEYWORDS=~alpha amd64 hppa ~ia64 ~mips ppc ppc64 ~sparc x86 ~amd64-linux ~x86-linux
+KEYWORDS=~alpha amd64 hppa ~ia64 ~mips ppc ppc64 sparc x86 ~amd64-linux ~x86-linux
 LICENSE=GPL-2
 RDEPEND=wifi? ( net-wireless/python-wifi ) =dev-lang/python-2*
 SLOT=0
 SRC_URI=http://dag.wieers.com/home-made/dstat/dstat-0.7.2.tar.bz2
 _eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	multilib	9aa8a023e062fca0ba79362d9d0cc488	python	4092929a66c8b47ffa8d314ca9314ea7	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28
-_md5_=ffd82555fb59e9769a21c715bf522c00
+_md5_=b54791b4a074ecdcca9a2a77b473073f
