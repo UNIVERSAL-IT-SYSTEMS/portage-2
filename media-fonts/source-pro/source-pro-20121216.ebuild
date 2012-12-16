@@ -1,12 +1,12 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-fonts/source-pro/source-pro-20121014.ebuild,v 1.1 2012/10/14 18:59:21 zx2c4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-fonts/source-pro/source-pro-20121216.ebuild,v 1.1 2012/12/16 05:46:16 zx2c4 Exp $
 
 EAPI=4
 inherit font
 
-CODE_P=SourceCodePro_FontsOnly-1.010
-SANS_P=SourceSansPro_FontsOnly-1.036
+CODE_P=SourceCodePro_FontsOnly-1.013
+SANS_P=SourceSansPro_FontsOnly-1.038
 
 DESCRIPTION="Adobe Source Pro, an open source multi-lingual font family"
 HOMEPAGE="http://blogs.adobe.com/typblography/2012/08/source-sans-pro.html
