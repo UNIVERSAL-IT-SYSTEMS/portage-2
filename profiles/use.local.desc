@@ -819,6 +819,7 @@ app-office/texmacs:netpbm - Add support for media-libs/netpbm
 app-office/texstudio:video - Use phonon for video embedding
 app-office/tpp:figlet - Install app-misc/figlet to support the --huge command
 app-pda/barry:boost - Enable boost support
+app-pda/barry:desktop - Install the GUI desktop control panel
 app-pda/barry:gui - Install the GUI backup tool
 app-pda/barry:opensync - Install the barry-sync plugin for OpenSync 0.22
 app-pda/gtkpod:clutter - Enable clutter support for displaying coverart
@@ -2139,9 +2140,9 @@ gnome-extra/gnome-utils:bonobo - Enable applets (gdict one) still not ported to 
 gnome-extra/gucharmap:introspection - Use dev-libs/gobject-introspection for introspection
 gnome-extra/libgda:canvas - Enable support for x11-libs/goocanvas
 gnome-extra/libgda:http - Enable embedded net-libs/libsoup based server
-gnome-extra/libgda:introspection - Use dev-libs/gobject-introspection for introspection
 gnome-extra/libgda:json - Enable support for JSON format
 gnome-extra/libgda:mdb - Enable support for Microsoft Access database using app-office/mdbtools
+gnome-extra/libgda:reports - Install tools for generating graphical reports
 gnome-extra/libgda:sourceview - Enable support for x11-libs/gtksourceview
 gnome-extra/libgsf:gtk - Enable use of gdk in thumbnailer
 gnome-extra/libgsf:introspection - Use dev-libs/gobject-introspection for introspection
