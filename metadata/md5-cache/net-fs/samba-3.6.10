@@ -4,7 +4,7 @@ DESCRIPTION=Library bits of the samba network filesystem
 EAPI=4
 HOMEPAGE=http://www.samba.org/
 IUSE=acl addns ads +aio avahi caps +client cluster cups debug dmapi doc examples fam ldap ldb +netapi pam quota +readline selinux +server +smbclient smbsharemodes swat syslog winbind
-KEYWORDS=~amd64 ~arm ~hppa ~x86 ~amd64-fbsd ~x86-fbsd
+KEYWORDS=~amd64 ~arm ~hppa ~ppc ~ppc64 ~x86 ~amd64-fbsd ~x86-fbsd
 LICENSE=GPL-3
 RDEPEND=dev-libs/popt >=sys-libs/talloc-2.0.5 >=sys-libs/tdb-1.2.9 virtual/libiconv ads? ( virtual/krb5 sys-fs/e2fsprogs client? ( sys-apps/keyutils kernel_linux? ( net-fs/cifs-utils[ads] ) ) ) avahi? ( net-dns/avahi[dbus] ) caps? ( sys-libs/libcap ) client? ( !net-fs/mount-cifs dev-libs/iniparser kernel_linux? ( net-fs/cifs-utils ) ) cluster? ( >=dev-db/ctdb-1.13 ) cups? ( net-print/cups ) debug? ( dev-libs/dmalloc ) dmapi? ( sys-apps/dmapi ) fam? ( virtual/fam ) ldap? ( net-nds/openldap ) ldb? ( sys-libs/ldb ) pam? ( virtual/pam winbind? ( dev-libs/iniparser ) ) readline? ( >=sys-libs/readline-5.2 ) selinux? ( sec-policy/selinux-samba ) syslog? ( virtual/logger )
 REQUIRED_USE=ads? ( ldap ) swat? ( server )
@@ -12,4 +12,4 @@ RESTRICT=test
 SLOT=0
 SRC_URI=mirror://samba/samba-3.6.10.tar.gz
 _eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	flag-o-matic	1a0b9986e891584bbc9f18928d126299	multilib	9aa8a023e062fca0ba79362d9d0cc488	pam	5c1a9ef4892062f9ec25c8ef7c1f1e52	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28	versionator	6601b4c5b3f019a993db59a50e1854e4
-_md5_=d6d804fb091bf833b2be0a2969c44d59
+_md5_=8a5be6ca858ac1850d12f8cac9a9bf61
