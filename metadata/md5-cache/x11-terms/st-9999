@@ -1,5 +1,5 @@
 DEFINED_PHASES=install postinst prepare setup unpack
-DEPEND=x11-libs/libX11 sys-libs/ncurses dev-vcs/mercurial
+DEPEND=x11-libs/libX11 sys-libs/ncurses dev-vcs/git
 DESCRIPTION=simple terminal implementation for X
 EAPI=3
 HOMEPAGE=http://st.suckless.org/
@@ -7,5 +7,5 @@ IUSE=savedconfig
 LICENSE=BSD
 RDEPEND=x11-libs/libX11
 SLOT=0
-_eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	mercurial	add64e64d758a9618d46a08a95f77483	multilib	9aa8a023e062fca0ba79362d9d0cc488	portability	536c5e70c5fb252ed3b769e04aa3f05b	savedconfig	973a6df1a0949eba28a185eac79de815	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28
-_md5_=d696083426c4457720500f597e2745b7
+_eclasses_=git-2	15733ab6a6feb34af9837b41623c2bad	multilib	9aa8a023e062fca0ba79362d9d0cc488	portability	536c5e70c5fb252ed3b769e04aa3f05b	savedconfig	973a6df1a0949eba28a185eac79de815	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4
+_md5_=cf3fac0952f5101489c7ae87248594e8

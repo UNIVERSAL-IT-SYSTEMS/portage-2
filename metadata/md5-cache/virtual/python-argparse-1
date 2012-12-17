@@ -1,10 +1,10 @@
 DEFINED_PHASES=-
 DESCRIPTION=A virtual for the Python argparse module
-EAPI=4
+EAPI=5
 IUSE=python_targets_python2_5 python_targets_python2_6 python_targets_python2_7 python_targets_python3_1 python_targets_python3_2 python_targets_python3_3 python_targets_pypy1_8 python_targets_pypy1_9
 KEYWORDS=~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x86-solaris
 RDEPEND=python_targets_python2_5? ( dev-python/argparse[python_targets_python2_5] ) python_targets_python2_6? ( dev-python/argparse[python_targets_python2_6] )
 REQUIRED_USE=|| ( python_targets_python2_5 python_targets_python2_6 python_targets_python2_7 python_targets_python3_1 python_targets_python3_2 python_targets_python3_3 python_targets_pypy1_8 python_targets_pypy1_9 )
 SLOT=0
-_eclasses_=multilib	9aa8a023e062fca0ba79362d9d0cc488	python-r1	e63c3e3739fd02cb39fb138927008965	python-utils-r1	f86c2539c2ab356ab7b4b87ccb140041	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4
-_md5_=c00c21806aa7ae4d1b8f5cf256b7a7e1
+_eclasses_=multilib	9aa8a023e062fca0ba79362d9d0cc488	python-r1	86b066a4e28890393407da1b21150c25	python-utils-r1	f86c2539c2ab356ab7b4b87ccb140041	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4
+_md5_=514d0ef847efa5b165312d154e795f1f
