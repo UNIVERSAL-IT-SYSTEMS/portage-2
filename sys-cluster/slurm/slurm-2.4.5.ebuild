@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/slurm/slurm-2.4.5.ebuild,v 1.1 2012/12/17 13:29:13 alexxy Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/slurm/slurm-2.4.5.ebuild,v 1.3 2012/12/18 04:32:28 alexxy Exp $
 
 EAPI=4
 
@@ -56,15 +56,11 @@ LIBSLURMDB_PERL_S="${WORKDIR}/${P}/contribs/perlapi/libslurmdb/perl"
 
 RESTRICT="primaryuri"
 
-PATCHES=(
-	"${FILESDIR}/${PN}-2.3.4-glibc2.16.patch"
-	)
-
 src_unpack() {
 	if [[ ${PV} == *9999* ]]; then
 		git-2_src_unpack
 	else
-		base-src_unpack
+		default
 	fi
 }
 
