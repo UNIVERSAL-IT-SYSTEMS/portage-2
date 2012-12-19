@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-rpg/penumbra-collection/penumbra-collection-1.1.ebuild,v 1.2 2012/12/17 22:36:10 hasufell Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-rpg/penumbra-collection/penumbra-collection-1.1.ebuild,v 1.5 2012/12/18 23:05:52 hasufell Exp $
 
 EAPI=5
 
@@ -51,13 +51,16 @@ INSTALL_KEY_FILE=${gamedir}/collectionkey
 QA_PREBUILT="${gamedir}/Overture/penumbra.bin
 	${gamedir}/BlackPlague/requiem.bin
 	${gamedir}/BlackPlague/blackplague.bin"
-QA_PREBUILT_amd64="${QA_PREBUILT}
-	${gamedir}/BlackPlague/lib/libfltk.so.1.1
-	${gamedir}/BlackPlague/lib/libCgGL.so
-	${gamedir}/BlackPlague/lib/libCg.so
-	${gamedir}/Overture/lib/libfltk.so.1.1
-	${gamedir}/Overture/lib/libCgGL.so
-	${gamedir}/Overture/lib/libCg.so"
+
+if [[ $ARCH == amd64 ]] ; then
+	QA_PREBUILT="${QA_PREBUILT}
+		${gamedir}/BlackPlague/lib/libfltk.so.1.1
+		${gamedir}/BlackPlague/lib/libCgGL.so
+		${gamedir}/BlackPlague/lib/libCg.so
+		${gamedir}/Overture/lib/libfltk.so.1.1
+		${gamedir}/Overture/lib/libCgGL.so
+		${gamedir}/Overture/lib/libCg.so"
+fi
 
 S=${WORKDIR}/${MY_PN}
 
@@ -79,7 +82,7 @@ src_unpack() {
 }
 
 src_install() {
-	local destDir i episodeDir library directory
+	local destDir episodeDir library directory
 	# perform instalation for each episode; note that Requiem is extension of
 	# Black Plague so it has no dedicated directory at this level
 	for episodeDir in Overture BlackPlague; do
@@ -126,10 +129,12 @@ src_install() {
 	games_make_wrapper penumbra-requiem ./requiem.bin \
 		"${gamedir}/BlackPlague" "${gamedir}/BlackPlague/lib"
 
-	for i in overture blackplague requiem; do
-		make_desktop_entry penumbra-${i} "Penumbra: Overture" \
-			penumbra-${i}
-	done
+	make_desktop_entry penumbra-overture "Penumbra: Overture" \
+		penumbra-overture
+	make_desktop_entry penumbra-blackplague "Penumbra: Black Plague" \
+		penumbra-blackplague
+	make_desktop_entry penumbra-requiem "Penumbra: Requiem" \
+		penumbra-requiem
 
 	docinto Overture
 	dodoc Overture/CHANGELOG.txt Overture/Manual.pdf Overture/README.linux
