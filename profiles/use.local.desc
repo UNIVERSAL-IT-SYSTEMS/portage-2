@@ -1377,7 +1377,6 @@ dev-libs/libcdio:minimal - Only build the libcdio library and little more, just 
 dev-libs/libcgroup:daemon - Install the configuration tools and init/config files.
 dev-libs/libcgroup:tools - Install the cgroup rules processing daemon and init/config files.
 dev-libs/libdbusmenu:introspection - Use dev-libs/gobject-introspection for introspection
-dev-libs/libgdata:introspection - Use dev-libs/gobject-introspection for introspection
 dev-libs/libgee:introspection - Use dev-libs/gobject-introspection for introspection
 dev-libs/libgpg-error:common-lisp - Install common-lisp files
 dev-libs/libgusb:introspection - Use dev-libs/gobject-introspection for introspection
@@ -2114,8 +2113,8 @@ gnome-base/nautilus:tracker - Add support for app-misc/tracker search
 gnome-extra/avant-window-navigator:gconf - Enable GConf as configuration backend
 gnome-extra/avant-window-navigator:vala - Enable installation of dev-lang/vala binding
 gnome-extra/avant-window-navigator-extras:gconf - Enable GConf as configuration backend
+gnome-extra/evolution-data-server:api-doc-extras - Build documentation for private APIs
 gnome-extra/evolution-data-server:gnome-online-accounts - Enable using net-libs/gnome-online-accounts for authorization
-gnome-extra/evolution-data-server:introspection - Use dev-libs/gobject-introspection for introspection
 gnome-extra/evolution-data-server:vala - Build dev-lang/vala bindings
 gnome-extra/evolution-data-server:weather - Enable optional weather calendar support
 gnome-extra/file-browser-applet:gtkhotkey - Enable hotkey support via x11-libs/gtkhotkey
@@ -4330,6 +4329,7 @@ net-mail/notmuch:emacs - Install Emacs UI (the main one)
 net-mail/notmuch:mutt - Install helper script for Mutt
 net-mail/notmuch:nmbug - Install experimental tag sharing / pseudo-bug-tracking script for Notmuch (see http://notmuchmail.org/nmbug/)
 net-mail/notmuch:vim - Install Vim UI (experimental)
+net-mail/offlineimap:sqlite - Enable runtime support for sqlite mail status backend.
 net-mail/qmailadmin:maildrop - Filter spam using maildrop
 net-mail/qpopper:apop - Enables the pop.auth file in /etc/pop.auth
 net-mail/qpopper:drac - Enables DRAC support
