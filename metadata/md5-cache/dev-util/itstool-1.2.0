@@ -3,10 +3,10 @@ DEPEND=dev-libs/libxml2[python] || ( =dev-lang/python-2.7* =dev-lang/python-2.6*
 DESCRIPTION=Translation tool for XML documents that uses gettext files and ITS rules
 EAPI=4
 HOMEPAGE=http://itstool.org/
-KEYWORDS=amd64 ~mips ~ppc ~ppc64 x86
+KEYWORDS=amd64 ~hppa ~mips ~ppc ~ppc64 x86
 LICENSE=GPL-3+ || ( HPND GPL-3+ )
 RDEPEND=dev-libs/libxml2[python] || ( =dev-lang/python-2.7* =dev-lang/python-2.6* =dev-lang/python-2.5* ) || ( =dev-lang/python-2.7*[xml] =dev-lang/python-2.6*[xml] =dev-lang/python-2.5*[xml] )
 SLOT=0
 SRC_URI=http://files.itstool.org/itstool/itstool-1.2.0.tar.bz2
 _eclasses_=multilib	9aa8a023e062fca0ba79362d9d0cc488	python	4092929a66c8b47ffa8d314ca9314ea7	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4
-_md5_=c46d5f6a8f1b9d95696605df023ce6ca
+_md5_=834c26e5f92cc4ec1107fbed8a19f57e
