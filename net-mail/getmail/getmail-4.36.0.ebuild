@@ -1,14 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/getmail/getmail-4.34.0.ebuild,v 1.2 2012/09/30 17:55:08 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/getmail/getmail-4.36.0.ebuild,v 1.1 2012/12/19 02:39:20 radhermit Exp $
 
-EAPI="4"
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.* 2.7-pypy-*"
-PYTHON_MODNAME="getmailcore"
+EAPI="5"
+PYTHON_COMPAT=( python{2_5,2_6,2_7} )
 
-inherit distutils
+inherit distutils-r1
 
 DESCRIPTION="A POP3 mail retriever with reliable Maildir and mbox delivery"
 HOMEPAGE="http://pyropus.ca/software/getmail/"
@@ -19,8 +16,9 @@ SLOT="4"
 KEYWORDS="~amd64 ~ppc ~x86 ~ppc-macos ~x86-macos ~x64-solaris"
 IUSE=""
 
-src_prepare() {
+python_prepare_all() {
 	sed -i -e "s,'getmail-%s' % __version__,'${PF}'," \
 		-e "/docs\/COPYING/d" "${S}"/setup.py || die
-	distutils_src_prepare
+
+	distutils-r1_python_prepare_all
 }
