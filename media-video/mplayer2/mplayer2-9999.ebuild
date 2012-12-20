@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer2/mplayer2-9999.ebuild,v 1.49 2012/11/21 13:46:53 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer2/mplayer2-9999.ebuild,v 1.50 2012/12/20 14:06:56 maksbotan Exp $
 
 EAPI=4
 
@@ -192,8 +192,6 @@ src_prepare() {
 	local bash_scripts="configure version.sh"
 	sed -i -e "1c\#!${EPREFIX}/bin/bash" \
 		${bash_scripts} || die
-
-	sed -e 's/rst2man /rst2man.py /g' -i Makefile || die
 
 	if [[ -n ${NAMESUF} ]]; then
 		sed -e "/^EXESUF/s,= \$_exesuf$,= ${NAMESUF}\$_exesuf," \
