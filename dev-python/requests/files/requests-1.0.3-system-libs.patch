@@ -1,11 +1,11 @@
---- requests-1.0.0/requests/adapters.py
-+++ requests-1.0.0/requests/adapters.py
-@@ -13,15 +13,15 @@
+--- requests-1.0.3/requests/adapters.py
++++ requests-1.0.3/requests/adapters.py
+@@ -11,15 +11,15 @@
+ import socket
  
  from .models import Response
- from .auth import HTTPProxyAuth
--from .packages.urllib3.poolmanager import PoolManager
-+from urllib3.poolmanager import PoolManager
+-from .packages.urllib3.poolmanager import PoolManager, proxy_from_url
++from urllib3.poolmanager import PoolManager, proxy_from_url
  from .hooks import dispatch_hook
  from .compat import urlparse
  from .utils import DEFAULT_CA_BUNDLE_PATH, get_encoding_from_headers
@@ -21,8 +21,8 @@
  from .cookies import extract_cookies_to_jar
  from .exceptions import ConnectionError, Timeout, SSLError
  
---- requests-1.0.0/requests/compat.py
-+++ requests-1.0.0/requests/compat.py
+--- requests-1.0.3/requests/compat.py
++++ requests-1.0.3/requests/compat.py
 @@ -4,7 +4,7 @@
  pythoncompat
  """
@@ -41,19 +41,19 @@
  
      builtin_str = str
      bytes = str
---- requests-1.0.0/requests/models.py
-+++ requests-1.0.0/requests/models.py
+--- requests-1.0.3/requests/models.py
++++ requests-1.0.3/requests/models.py
 @@ -17,7 +17,7 @@
  
- from .auth import HTTPBasicAuth, HTTPProxyAuth
- from .cookies import cookiejar_from_dict, extract_cookies_to_jar, get_cookie_header
+ from .auth import HTTPBasicAuth
+ from .cookies import cookiejar_from_dict, get_cookie_header
 -from .packages.urllib3.filepost import encode_multipart_formdata
 +from urllib3.filepost import encode_multipart_formdata
- from .exceptions import (
-     ConnectionError, HTTPError, RequestException, Timeout, TooManyRedirects,
-     URLRequired, SSLError, MissingSchema, InvalidSchema, InvalidURL)
---- requests-1.0.0/setup.py
-+++ requests-1.0.0/setup.py
+ from .exceptions import HTTPError, RequestException, MissingSchema, InvalidURL
+ from .utils import (
+     stream_untransfer, guess_filename, requote_uri,
+--- requests-1.0.3/setup.py
++++ requests-1.0.3/setup.py
 @@ -16,11 +16,6 @@
  
  packages = [
