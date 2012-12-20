@@ -1,16 +1,23 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/acpi_call/acpi_call-9999.ebuild,v 1.3 2012/12/09 20:29:19 ottxor Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/acpi_call/acpi_call-9999.ebuild,v 1.4 2012/12/20 04:44:07 ottxor Exp $
 
-EAPI=3
+EAPI=5
 
-EGIT_REPO_URI="git://github.com/mkottman/acpi_call.git"
+inherit linux-info linux-mod
 
-inherit git-2 linux-info linux-mod
+if [ "${PV}" = "9999" ]; then
+	inherit git-2
+	EGIT_REPO_URI="git://github.com/mkottman/acpi_call.git"
+	KEYWORDS=""
+else
+	inherit vcs-snapshot
+	SRC_URI="https://github.com/mkottman/acpi_call/tarball/v${PV} -> ${P}.tar.gz"
+	KEYWORDS="~amd64"
+fi
 
 DESCRIPTION="A kernel module that enables you to call ACPI methods"
 HOMEPAGE="http://github.com/mkottman/acpi_call"
-SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"
