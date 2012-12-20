@@ -1983,6 +1983,7 @@ games-puzzle/xlogical:alt_gfx - Use alternate graphics which are closer to the o
 games-roguelike/angband:sound - Enable and install sounds
 games-roguelike/stone-soup:ncurses - Enable for console based build (uses ncurses).
 games-roguelike/stone-soup:tiles - Enable for graphical (tiled) build.
+games-roguelike/tomenet:server - Compile server support
 games-rpg/arx-libertatis:crash-reporter - Build a x11-libs/qt-gui-based tool that allows to submit crash information to the upstream backtracker.
 games-rpg/arx-libertatis:debug - Enable asserts and debug logging.
 games-rpg/arx-libertatis:demo - Install the Arx Fatalis demo data.
@@ -2102,7 +2103,6 @@ gnome-base/librsvg:gtk3 - Build with gtk+-3 support
 gnome-base/librsvg:introspection - Use dev-libs/gobject-introspection for introspection
 gnome-base/librsvg:tools - Build miscellaneous tools
 gnome-base/librsvg:vala - Enable bindings for dev-lang/vala
-gnome-base/nautilus:introspection - Use dev-libs/gobject-introspection for introspection
 gnome-base/nautilus:packagekit - Use packagekit to search for programs to open unknown file types
 gnome-base/nautilus:previewer - Use gnome-extra/sushi to preview files from the file mananger
 gnome-base/nautilus:sendto - Enable the nautilus-sendto extension to send files to various locations/devices
