@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/python-single-r1.eclass,v 1.8 2012/12/17 20:09:28 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/python-single-r1.eclass,v 1.10 2012/12/20 23:36:15 mgorny Exp $
 
 # @ECLASS: python-single-r1
 # @MAINTAINER:
@@ -144,35 +144,20 @@ _python_single_set_globals() {
 	REQUIRED_USE="|| ( ${flags_mt[*]} ) ^^ ( ${flags[*]} )"
 	PYTHON_USEDEP=${optflags// /,}
 
-	local usestr
-	[[ ${PYTHON_REQ_USE} ]] && usestr="[${PYTHON_REQ_USE}]"
-
 	# 1) well, python-exec would suffice as an RDEP
 	# but no point in making this overcomplex, BDEP doesn't hurt anyone
 	# 2) python-exec should be built with all targets forced anyway
 	# but if new targets were added, we may need to force a rebuild
 	PYTHON_DEPS="dev-python/python-exec[${PYTHON_USEDEP}]"
-	local i
+	local i PYTHON_PKG_DEP
 	for i in "${PYTHON_COMPAT[@]}"; do
 		# The chosen targets need to be in PYTHON_TARGETS as well.
 		# This is in order to enforce correct dependencies on packages
 		# supporting multiple implementations.
 		REQUIRED_USE+=" python_single_target_${i}? ( python_targets_${i} )"
 
-		local d
-		case ${i} in
-			python*)
-				d='dev-lang/python';;
-			jython*)
-				d='dev-java/jython';;
-			pypy*)
-				d='dev-python/pypy';;
-			*)
-				die "Invalid implementation: ${i}"
-		esac
-
-		local v=${i##*[a-z]}
-		PYTHON_DEPS+=" python_single_target_${i}? ( ${d}:${v/_/.}${usestr} )"
+		python_export "${i}" PYTHON_PKG_DEP
+		PYTHON_DEPS+=" python_single_target_${i}? ( ${PYTHON_PKG_DEP} )"
 	done
 }
 _python_single_set_globals
@@ -192,6 +177,50 @@ python-single-r1_pkg_setup() {
 			python_export "${impl}" EPYTHON PYTHON
 			break
 		fi
+	done
+}
+
+# @FUNCTION: python_fix_shebang
+# @USAGE: <path>...
+# @DESCRIPTION:
+# Replace the shebang in Python scripts with the current Python
+# implementation (EPYTHON). If a directory is passed, works recursively
+# on all Python scripts.
+#
+# Only files having a 'python' shebang will be modified; other files
+# will be skipped. If a script has a complete shebang matching
+# the chosen interpreter version, it is left unmodified. If a script has
+# a complete shebang matching other version, the command dies.
+python_fix_shebang() {
+	debug-print-function ${FUNCNAME} "${@}"
+
+	[[ ${1} ]] || die "${FUNCNAME}: no paths given"
+	[[ ${EPYTHON} ]] || die "${FUNCNAME}: EPYTHON unset (pkg_setup not called?)"
+
+	local path f
+	for path; do
+		while IFS= read -r -d '' f; do
+			local shebang=$(head -n 1 "${f}")
+
+			case "${shebang}" in
+				'#!'*${EPYTHON}*)
+					debug-print "${FUNCNAME}: in file ${f#${D}}"
+					debug-print "${FUNCNAME}: shebang matches EPYTHON: ${shebang}"
+					;;
+				'#!'*python[23].[0123456789]*|'#!'*pypy-c*|'#!'*jython*)
+					debug-print "${FUNCNAME}: in file ${f#${D}}"
+					debug-print "${FUNCNAME}: incorrect specific shebang: ${shebang}"
+
+					die "${f#${D}} has a specific Python shebang not matching EPYTHON"
+					;;
+				'#!'*python*)
+					debug-print "${FUNCNAME}: in file ${f#${D}}"
+					debug-print "${FUNCNAME}: rewriting shebang: ${shebang}"
+
+					einfo "Fixing shebang in ${f#${D}}"
+					_python_rewrite_shebang "${f}"
+			esac
+		done < <(find "${path}" -type f -print0)
 	done
 }
 
