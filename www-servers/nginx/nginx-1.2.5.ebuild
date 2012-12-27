@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/nginx/nginx-1.2.5.ebuild,v 1.5 2012/12/20 08:11:47 hollow Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/nginx/nginx-1.2.5.ebuild,v 1.6 2012/12/24 21:07:25 hollow Exp $
 
 EAPI="4"
 
@@ -337,10 +337,15 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install
+
 	cp "${FILESDIR}"/nginx.conf "${ED}"/etc/nginx/nginx.conf || die
+
 	newinitd "${FILESDIR}"/nginx.initd nginx
+
 	doman man/nginx.8
 	dodoc CHANGES* README
+
+	dodir /var/www/localhost
 	mv "${ED}"/usr/html "${ED}"/var/www/localhost/htdocs || die
 
 	# logrotate

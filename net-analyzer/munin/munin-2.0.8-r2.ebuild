@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/munin/munin-2.0.8-r2.ebuild,v 1.5 2012/12/12 09:45:08 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/munin/munin-2.0.8-r2.ebuild,v 1.7 2012/12/23 11:40:58 flameeyes Exp $
 
 EAPI=4
 
@@ -17,7 +17,7 @@ SRC_URI="mirror://sourceforge/munin/${MY_P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~mips ~ppc x86"
+KEYWORDS="amd64 ~arm ~mips ppc x86"
 IUSE="asterisk irc java memcached minimal mysql postgres ssl test cgi ipv6 syslog ipmi http dhcpd doc apache"
 REQUIRED_USE="cgi? ( !minimal ) apache? ( cgi )"
 
@@ -51,6 +51,7 @@ DEPEND_COM="dev-lang/perl[berkdb]
 			dev-perl/DBI
 			dev-perl/DateManip
 			dev-perl/File-Copy-Recursive
+			dev-perl/List-MoreUtils
 			dev-perl/Log-Log4perl
 			dev-perl/Net-CIDR
 			dev-perl/Net-Netmask

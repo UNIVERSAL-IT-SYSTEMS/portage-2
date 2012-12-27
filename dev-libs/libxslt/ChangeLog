@@ -1,6 +1,21 @@
 # ChangeLog for dev-libs/libxslt
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxslt/ChangeLog,v 1.249 2012/12/19 22:48:46 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/libxslt/ChangeLog,v 1.254 2012/12/26 17:52:06 jdhore Exp $
+
+  26 Dec 2012; Jeff Horelick <jdhore@gentoo.org> libxslt-1.1.28.ebuild:
+  marked x86 per bug 447674
+
+  26 Dec 2012; Agostino Sarubbo <ago@gentoo.org> libxslt-1.1.28.ebuild:
+  Stable for ia64, wrt bug #447674
+
+  25 Dec 2012; Markus Meier <maekke@gentoo.org> libxslt-1.1.28.ebuild:
+  arm stable, bug #447674
+
+  23 Dec 2012; Agostino Sarubbo <ago@gentoo.org> libxslt-1.1.28.ebuild:
+  Stable for ppc64, wrt bug #447674
+
+  22 Dec 2012; Agostino Sarubbo <ago@gentoo.org> libxslt-1.1.28.ebuild:
+  Stable for ppc, wrt bug #447674
 
   19 Dec 2012; Agostino Sarubbo <ago@gentoo.org> libxslt-1.1.28.ebuild:
   Stable for amd64, wrt bug #447674

@@ -1,6 +1,22 @@
 # ChangeLog for media-video/mplayer2
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer2/ChangeLog,v 1.78 2012/12/20 18:31:45 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer2/ChangeLog,v 1.82 2012/12/26 09:06:58 ago Exp $
+
+  26 Dec 2012; Agostino Sarubbo <ago@gentoo.org> mplayer2-2.0_p20120828.ebuild:
+  Stable for ia64, wrt bug #447932
+
+  26 Dec 2012; Sergey Popov <pinkbyte@gentoo.org>
+  mplayer2-2.0_p20120309.ebuild, mplayer2-2.0_p20120828.ebuild,
+  mplayer2-2.0_p20121108.ebuild, mplayer2-2.0_p20121128.ebuild,
+  mplayer2-9999.ebuild:
+  Enable verbose build, wrt bug #448196. Thanks to Agostino Sarubbo for
+  discovering this issue and Nikoli for providing patch
+
+  23 Dec 2012; Agostino Sarubbo <ago@gentoo.org> mplayer2-2.0_p20120828.ebuild:
+  Stable for ppc64, wrt bug #447932
+
+  22 Dec 2012; Agostino Sarubbo <ago@gentoo.org> mplayer2-2.0_p20120828.ebuild:
+  Stable for ppc, wrt bug #447932
 
   20 Dec 2012; Sergey Popov <pinkbyte@gentoo.org>
   mplayer2-2.0_p20120828.ebuild:

@@ -1,18 +1,31 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.418 2012/12/19 10:59:01 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.425 2012/12/27 11:13:39 pinkbyte Exp $
 
 # This file requires >=portage-2.1.1
 # New entries go on top.
 #
 
+# Alexandre Rostovtsev <tetromino@gentoo.org> (27 Dec 2012)
+# Incompatible with evolution-data-server-3.6, blocks upgrade to gnome-3.6
+# See bug #436460 and http://git.gnome.org/browse/tracker/log/?h=evo-new-api
+app-misc/tracker eds
+
+# Christoph Jungans <ottxor@gentoo.org> (26 Dec 2012)
+# cuda/openmm/mkl only works on x86/amd64
+sci-chemistry/gromacs cuda mkl openmm
+
+# Julian Ospald <hasufell@gentoo.org> (25 Dec 2012)
+# mask systemd to allow stabilization wrt #448034
+=sys-apps/udevil-0.3.6 systemd
+
+# Zac Medico <zmedico@gentoo.org> (13 Jun 2012)
+# Mask USE=pypy2_0 for sys-apps/portage, since pypy has limited KEYWORDS.
+sys-apps/portage pypy2_0
+
 # Jory A. Pratt <anarchy@gentoo.org> (15 Dec 2012)
 # PGO is known to be busted with most configurations
 www-client/firefox pgo
-
-# Christoph Jungans <ottxor@gentoo.org> (30 Nov 2012)
-# cuda only works on x86/amd64, openmm still under testing
-sci-chemistry/gromacs cuda openmm
 
 # Sergey Popov <pinkbyte@gentoo.org> (26 Nov 2012)
 # PDF docs building failed with sandbox violation
@@ -113,10 +126,7 @@ sys-boot/grub libzfs
 =media-libs/mesa-8.0.3 wayland
 =media-libs/mesa-8.0.4-r1 wayland
 =media-libs/mesa-9.0 wayland
-
-# Zac Medico <zmedico@gentoo.org> (13 Jun 2012)
-# Mask USE=pypy1_9 for sys-apps/portage, since pypy has limited KEYWORDS.
-sys-apps/portage pypy1_9
+=media-libs/mesa-9.0.1 wayland
 
 # Andreas K. Huettel <dilfridge@gentoo.org> (03 Jun 2012)
 # needs libpqxx-3* which is not in the tree anymore
@@ -239,6 +249,7 @@ app-arch/libarchive e2fsprogs
 # jsc JIT compilation is supported only on amd64/arm/x86 and their prefixes, so
 # it's masked here and unmasked in individual profiles (bug #396313).
 net-libs/webkit-gtk jit
+www-client/epiphany jit
 
 # Samuli Suominen <ssuominen@gentoo.org> (05 Jan 2012)
 # Masked for keywording AND testing. This mask entry can be
@@ -301,11 +312,9 @@ dev-libs/glib systemtap
 # Mask introspection on ebuilds that went stable before it was unmasked.
 # As these ebuilds are cleaned from the tree, the masks can be removed.
 <dev-libs/glib-2.30.0 introspection
-<app-cdr/brasero-2.32.1-r1 introspection
 <app-crypt/seahorse-2.32.0-r1 introspection
 <dev-libs/libunique-1.1.6-r1 introspection
 <gnome-base/gnome-menus-2.30.5-r1 introspection
-<gnome-base/nautilus-2.32.2.1-r2 introspection
 <media-libs/babl-0.1.4-r1 introspection
 <media-libs/clutter-gtk-1 introspection
 <media-libs/libchamplain-0.9 introspection

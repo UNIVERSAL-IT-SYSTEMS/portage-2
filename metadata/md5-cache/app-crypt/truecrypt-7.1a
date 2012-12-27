@@ -3,7 +3,7 @@ DEPEND=|| ( >=sys-fs/lvm2-2.02.45 sys-fs/device-mapper ) sys-fs/fuse x11-libs/wx
 DESCRIPTION=Free open-source disk encryption software
 EAPI=4
 HOMEPAGE=http://www.truecrypt.org/
-IUSE=X
+IUSE=X +asm
 KEYWORDS=-* ~amd64 ~ppc ~x86
 LICENSE=truecrypt-3.0
 RDEPEND=|| ( >=sys-fs/lvm2-2.02.45 sys-fs/device-mapper ) sys-fs/fuse x11-libs/wxGTK:2.8[X?] app-admin/sudo
@@ -11,4 +11,4 @@ RESTRICT=mirror fetch bindist
 SLOT=0
 SRC_URI=truecrypt-7.1a.tar.gz truecrypt-7.1a-pkcs11.h
 _eclasses_=eutils	d40dc948067bd3db1c8ebf7d51897313	flag-o-matic	61ad55e732e494378165e7dcd4744b91	linux-info	f01ffb28843e2de3ea571f80f07e5078	multilib	9aa8a023e062fca0ba79362d9d0cc488	pax-utils	0ace932c4045349c7fc1af0fe7091acf	toolchain-funcs	134429b842a6c67254bfd76a8753e4d4	user	d0a4d0735a6c0183d707ca919bd72f28	versionator	6601b4c5b3f019a993db59a50e1854e4	wxwidgets	fb1a306837717dfa2af841ecdf929565
-_md5_=f812b06f1f06ba2ef4f42ab0a6693a11
+_md5_=a5245dc79d3c15f9f569954044d6f87c

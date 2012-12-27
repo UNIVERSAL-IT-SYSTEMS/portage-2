@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.0.3-r3.ebuild,v 1.14 2012/12/20 19:01:27 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/bacula/bacula-5.0.3-r3.ebuild,v 1.16 2012/12/22 14:07:05 ago Exp $
 
 EAPI="5"
 PYTHON_DEPEND="python? 2"
@@ -22,7 +22,7 @@ SRC_URI="mirror://sourceforge/bacula/${MY_P}.tar.gz"
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="amd64 hppa ~ppc ~sparc ~x86"
+KEYWORDS="amd64 hppa ppc ~sparc ~x86"
 IUSE="acl bacula-clientonly bacula-nodir bacula-nosd ipv6 logwatch mysql postgres python qt4 readline +sqlite3 ssl static tcpd vim-syntax X"
 
 # maintainer comment:
@@ -142,9 +142,6 @@ src_prepare() {
 
 	# fix CVE-2012-4430
 	epatch "${FILESDIR}"/${PV}/${P}-cve.patch
-
-	# Make build log verbose (bug #447806)
-	find . -type f -name 'Makefile.in' | xargs sed -e 's:$(NO_ECHO)::g' -i || die
 }
 
 src_configure() {
@@ -211,6 +208,11 @@ src_configure() {
 		eqmake4
 		popd
 	fi
+}
+
+src_compile() {
+	# Make build log verbose (bug #447806)
+	emake NO_ECHO=""
 }
 
 src_install() {

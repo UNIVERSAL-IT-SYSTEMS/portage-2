@@ -1,6 +1,21 @@
 # ChangeLog for sys-devel/autoconf
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/autoconf/ChangeLog,v 1.172 2012/12/19 22:49:10 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/autoconf/ChangeLog,v 1.177 2012/12/26 10:51:30 maekke Exp $
+
+  26 Dec 2012; Markus Meier <maekke@gentoo.org> autoconf-2.69.ebuild:
+  arm stable, bug #447756
+
+  25 Dec 2012; Agostino Sarubbo <ago@gentoo.org> autoconf-2.69.ebuild:
+  Stable for ia64, wrt bug #447756
+
+  23 Dec 2012; Jeff Horelick <jdhore@gentoo.org> autoconf-2.69.ebuild:
+  marked x86 per bug 447756
+
+  23 Dec 2012; Agostino Sarubbo <ago@gentoo.org> autoconf-2.69.ebuild:
+  Stable for ppc64, wrt bug #447756
+
+  22 Dec 2012; Agostino Sarubbo <ago@gentoo.org> autoconf-2.69.ebuild:
+  Stable for ppc, wrt bug #447756
 
   19 Dec 2012; Agostino Sarubbo <ago@gentoo.org> autoconf-2.69.ebuild:
   Stable for amd64, wrt bug #447756

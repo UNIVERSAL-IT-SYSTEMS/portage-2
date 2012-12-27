@@ -1,6 +1,30 @@
 # ChangeLog for x11-libs/qt-gui
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-gui/ChangeLog,v 1.205 2012/12/05 03:20:44 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt-gui/ChangeLog,v 1.213 2012/12/26 17:19:24 ago Exp $
+
+  26 Dec 2012; Agostino Sarubbo <ago@gentoo.org> qt-gui-4.8.4.ebuild:
+  Stable for sparc, wrt bug #445956
+
+  25 Dec 2012; Agostino Sarubbo <ago@gentoo.org> qt-gui-4.8.4.ebuild:
+  Stable for arm, wrt bug #445956
+
+  25 Dec 2012; Agostino Sarubbo <ago@gentoo.org> qt-gui-4.8.4.ebuild:
+  Stable for x86, wrt bug #445956
+
+  25 Dec 2012; Agostino Sarubbo <ago@gentoo.org> qt-gui-4.8.4.ebuild:
+  Stable for ppc64, wrt bug #445956
+
+  25 Dec 2012; Agostino Sarubbo <ago@gentoo.org> qt-gui-4.8.4.ebuild:
+  Stable for ppc, wrt bug #445956
+
+  25 Dec 2012; Agostino Sarubbo <ago@gentoo.org> qt-gui-4.8.4.ebuild:
+  Stable for ia64, wrt bug #445956
+
+  25 Dec 2012; Agostino Sarubbo <ago@gentoo.org> qt-gui-4.8.4.ebuild:
+  Stable for amd64, wrt bug #445956
+
+  24 Dec 2012; Jeroen Roovers <jer@gentoo.org> qt-gui-4.8.4.ebuild:
+  Stable for HPPA (bug #445956).
 
 *qt-gui-4.8.4 (05 Dec 2012)
 
