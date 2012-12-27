@@ -2045,7 +2045,6 @@ games-strategy/x2:modkit - Install the modkit
 games-util/gslist:web - Enable the web interface
 games-util/pyfa:graph - Enable support for graphs
 gnome-base/dconf:vala - Add support for dev-lang/vala
-gnome-base/gconf:introspection - Use dev-libs/gobject-introspection for introspection
 gnome-base/gconf:ldap - Build backend which enables default mail accounts, addressbooks and calendars for Evolution to be configured using each user's LDAP entry."
 gnome-base/gconf:orbit - Use gnome-base/orbit for IPC, same as in gconf-2.x
 gnome-base/gdm:audit - Enable support for sys-process/audit
@@ -4998,7 +4997,6 @@ sci-libs/gsl:cblas-external - Link gsl with external cblas provided by (virtual/
 sci-libs/hdf5:fortran2003 - enable new features that require Fortran 2003 (http://www.hdfgroup.org/HDF5/doc/fortran/NewFeatures_F2003.pdf)
 sci-libs/indilib:fits - Enable support for the FITS image format through cfitsio
 sci-libs/indilib:nova - Enable support for nova celestial mechanics calculations
-sci-libs/libcmatrix:atlas - Use of atlas blas implementation
 sci-libs/libghemical:mopac7 - Use sci-chemistry/mopac7 for semi-empirical calculations
 sci-libs/libghemical:mpqc - Use sci-chemistry/mpqc for quantum-mechanical calculations
 sci-libs/libsvm:tools - Install python based tool scripts
