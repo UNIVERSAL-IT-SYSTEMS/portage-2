@@ -1,14 +1,14 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/terminal/terminal-0.4.8.ebuild,v 1.10 2012/11/28 12:38:44 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/xfce4-terminal/xfce4-terminal-0.4.8.ebuild,v 1.1 2012/12/28 03:24:28 ssuominen Exp $
 
 EAPI=5
-MY_P=${P/t/T}
+MY_P=Terminal-${PV}
 inherit xfconf
 
 DESCRIPTION="A terminal emulator for the Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/terminal/"
-SRC_URI="mirror://xfce/src/apps/${PN}/0.4/${MY_P}.tar.bz2"
+SRC_URI="mirror://gentoo/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -24,8 +24,8 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	!gnustep-apps/terminal" #376257
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	virtual/pkgconfig
-	sys-devel/gettext"
+	sys-devel/gettext
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${MY_P}
 
