@@ -1,9 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-netspeed-plugin/xfce4-netspeed-plugin-0.2.ebuild,v 1.1 2012/12/18 00:00:19 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-netspeed-plugin/xfce4-netspeed-plugin-0.3.ebuild,v 1.1 2012/12/30 08:31:48 ssuominen Exp $
 
 EAPI=5
-EAUTORECONF=1
 inherit multilib xfconf
 
 DESCRIPTION="A network transfer rate monitoring panel plug-in, inspired by Gnome's Netspeed applet"
@@ -29,8 +28,6 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${PN}
 
 pkg_setup() {
-	PATCHES=( "${FILESDIR}"/${P}-port-to-libxfce4ui.patch )
-
 	XFCONF=(
 		--libexecdir="${EPREFIX}"/usr/$(get_libdir)
 		)
