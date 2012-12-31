@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/mercurial/mercurial-2.4-r1.ebuild,v 1.2 2012/12/04 07:54:28 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/mercurial/mercurial-2.4.1-r2.ebuild,v 1.3 2012/12/31 08:16:12 djc Exp $
 
 EAPI=3
 PYTHON_DEPEND="2"
@@ -17,15 +17,18 @@ SRC_URI="http://mercurial.selenic.com/release/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
-IUSE="bugzilla emacs gpg test tk zsh-completion"
+IUSE="bugzilla doc emacs gpg test tk zsh-completion"
 
 RDEPEND="bugzilla? ( dev-python/mysql-python )
 	gpg? ( app-crypt/gnupg )
 	tk? ( dev-lang/tk )
-	zsh-completion? ( app-shells/zsh )"
+	zsh-completion? ( app-shells/zsh )
+	app-misc/ca-certificates"
 DEPEND="emacs? ( virtual/emacs )
 	test? ( app-arch/unzip
-		dev-python/pygments )"
+		dev-python/pygments )
+	doc? ( app-text/asciidoc
+		dev-python/docutils )"
 
 PYTHON_CFLAGS=(
 	"2.* + -fno-strict-aliasing"
@@ -37,17 +40,17 @@ SITEFILE="70${PN}-gentoo.el"
 
 src_prepare() {
 	distutils_src_prepare
-
 	# fix up logic that won't work in Gentoo Prefix (also won't outside in
 	# certain cases), bug #362891
 	sed -i -e 's:xcodebuild:nocodebuild:' setup.py || die
-
-	# Fix an endless grep search (needed by tortoisehg)
-	epatch "${FILESDIR}"/${P}-dont_grep_indefinitely.patch
 }
 
 src_compile() {
 	distutils_src_compile
+
+	if use doc; then
+		make doc || die
+	fi
 
 	if use emacs; then
 		cd "${S}"/contrib || die
@@ -91,29 +94,33 @@ EOF
 		elisp-install ${PN} contrib/mercurial.el* || die "elisp-install failed!"
 		elisp-site-file-install "${FILESDIR}"/${SITEFILE}
 	fi
+
+	insinto /etc/mercurial/hgrc.d
+	doins "${FILESDIR}/cacerts.rc"
 }
 
 src_test() {
 	cd "${S}/tests/" || die
-	rm -rf *svn* || die			# Subversion tests fail with 1.5
-	rm -f test-archive || die		# Fails due to verbose tar output changes
+	rm -rf *svn* || die					# Subversion tests fail with 1.5
+	rm -f test-archive* || die			# Fails due to verbose tar output changes
 	rm -f test-convert-baz* || die		# GNU Arch baz
-	rm -f test-convert-cvs*	|| die		# CVS
+	rm -f test-convert-cvs* || die		# CVS
 	rm -f test-convert-darcs* || die	# Darcs
 	rm -f test-convert-git* || die		# git
-	rm -f test-convert-mtn*	|| die		# monotone
-	rm -f test-convert-tla*	|| die		# GNU Arch tla
-	rm -f test-doctest* || die		# doctest always fails with python 2.5.x
+	rm -f test-convert-mtn* || die		# monotone
+	rm -f test-convert-tla* || die		# GNU Arch tla
+	rm -f test-doctest* || die			# doctest always fails with python 2.5.x
+	rm -f test-largefiles* || die		# tends to time out
 	if [[ ${EUID} -eq 0 ]]; then
 		einfo "Removing tests which require user privileges to succeed"
-		rm -f test-command-template || die	# Test is broken when run as root
-		rm -f test-convert || die		# Test is broken when run as root
-		rm -f test-lock-badness	|| die		# Test is broken when run as root
-		rm -f test-permissions	|| die		# Test is broken when run as root
-		rm -f test-pull-permission || die	# Test is broken when run as root
-		rm -f test-clone-failure || die
-		rm -f test-journal-exists || die
-		rm -f test-repair-strip || die
+		rm -f test-command-template* || die	# Test is broken when run as root
+		rm -f test-convert* || die			# Test is broken when run as root
+		rm -f test-lock-badness* || die		# Test is broken when run as root
+		rm -f test-permissions* || die		# Test is broken when run as root
+		rm -f test-pull-permission* || die	# Test is broken when run as root
+		rm -f test-clone-failure* || die
+		rm -f test-journal-exists* || die
+		rm -f test-repair-strip* || die
 	fi
 
 	testing() {
