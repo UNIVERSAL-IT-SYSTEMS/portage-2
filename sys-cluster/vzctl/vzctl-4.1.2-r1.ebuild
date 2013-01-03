@@ -1,10 +1,10 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/vzctl/vzctl-3.3.ebuild,v 1.2 2012/12/10 13:06:59 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/vzctl/vzctl-4.1.2-r1.ebuild,v 1.1 2013/01/03 21:02:59 pinkbyte Exp $
 
-EAPI="4"
+EAPI="5"
 
-inherit bash-completion-r1 eutils
+inherit base bash-completion-r1 eutils udev toolchain-funcs
 
 DESCRIPTION="OpenVZ ConTainers control utility"
 HOMEPAGE="http://openvz.org/"
@@ -13,21 +13,28 @@ SRC_URI="http://download.openvz.org/utils/${PN}/${PV}/src/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+ploop +cgroup"
 
 RDEPEND="
 	net-firewall/iptables
 	sys-apps/ed
-	sys-apps/iproute2
+	>=sys-apps/iproute2-3.0
 	sys-fs/vzquota
-	<sys-cluster/ploop-1.5"
+	ploop? ( >=sys-cluster/ploop-1.5 )
+	cgroup? ( >=dev-libs/libcgroup-0.37 )
+	"
 
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 
 src_prepare() {
 	# Set default OSTEMPLATE on gentoo added
-	sed -e 's:=redhat-:=gentoo-:' -i etc/dists/default || die
-	sed -e '/udevdir/{s|$(sysconfdir)|/lib|}' -i etc/udev/Makefile.in || die
+	sed -i -e 's:=redhat-:=gentoo-:' etc/dists/default || die 'sed on etc/dists/default failed'
+
+	sed -i -e "s:/lib/udev:$(udev_get_udevdir):" src/lib/dev.c || die 'sed on src/lib/dev.c failed'
+
+	# Fix paths in initscript, wrt bug #444201
+	epatch "${FILESDIR}/${PN}-initscript-paths.patch"
 }
 
 src_configure() {
@@ -35,11 +42,13 @@ src_configure() {
 		--localstatedir=/var \
 		--enable-udev \
 		--enable-bashcomp \
-		--enable-logrotate
+		--enable-logrotate \
+		$(use_with ploop) \
+		$(use_with cgroup)
 }
 
 src_install() {
-	emake DESTDIR="${D}" install install-gentoo
+	emake DESTDIR="${D}" udevdir="$(udev_get_udevdir)"/rules.d install install-gentoo
 
 	# install the bash-completion script into the right location
 	rm -rf "${ED}"/etc/bash_completion.d

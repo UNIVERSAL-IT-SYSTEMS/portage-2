@@ -1,10 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/vzctl/vzctl-4.1.2.ebuild,v 1.1 2013/01/02 16:52:51 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/vzctl/vzctl-3.3-r2.ebuild,v 1.2 2013/01/03 21:02:59 pinkbyte Exp $
 
-EAPI="5"
+EAPI="4"
 
-inherit base bash-completion-r1 eutils udev toolchain-funcs
+inherit bash-completion-r1 eutils udev toolchain-funcs
 
 DESCRIPTION="OpenVZ ConTainers control utility"
 HOMEPAGE="http://openvz.org/"
@@ -13,25 +13,26 @@ SRC_URI="http://download.openvz.org/utils/${PN}/${PV}/src/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+ploop +cgroup"
+IUSE=""
 
 RDEPEND="
 	net-firewall/iptables
 	sys-apps/ed
-	>=sys-apps/iproute2-3.0
+	sys-apps/iproute2
 	sys-fs/vzquota
-	ploop? ( >=sys-cluster/ploop-1.5 )
-	cgroup? ( >=dev-libs/libcgroup-0.37 )
-	"
+	<sys-cluster/ploop-1.5"
 
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 src_prepare() {
 	# Set default OSTEMPLATE on gentoo added
-	sed -i -e 's:=redhat-:=gentoo-:' etc/dists/default || die 'sed on etc/dists/default failed'
+	sed -e 's:=redhat-:=gentoo-:' -i etc/dists/default || die
 
-	sed -i -e "s:/lib/udev:$(udev_get_udevdir):" src/lib/dev.c || die 'sed on src/lib/dev.c failed'
+	sed -i -e "s:/lib/udev:$(udev_get_udevdir):" src/lib/dev.c || die
+
+	# Fix paths in initscript, wrt bug #444201
+	epatch "${FILESDIR}/${PN}-initscript-paths.patch"
 }
 
 src_configure() {
@@ -39,9 +40,7 @@ src_configure() {
 		--localstatedir=/var \
 		--enable-udev \
 		--enable-bashcomp \
-		--enable-logrotate \
-		$(use_with ploop) \
-		$(use_with cgroup)
+		--enable-logrotate
 }
 
 src_install() {
