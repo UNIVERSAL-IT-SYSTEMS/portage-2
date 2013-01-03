@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/nose/nose-1.1.2-r1.ebuild,v 1.3 2012/12/22 01:51:49 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/nose/nose-1.1.2-r1.ebuild,v 1.4 2013/01/02 12:28:50 mgorny Exp $
 
 EAPI=5
 
@@ -46,6 +46,14 @@ python_prepare_all() {
 
 python_compile_all() {
 	use doc && emake -C doc html
+}
+
+src_test() {
+	# nosetests use heavy multiprocessing during the tests.
+	# this shall make them less likely to kill your system or timeout.
+	local DISTUTILS_NO_PARALLEL_BUILD=1
+
+	distutils-r1_src_test
 }
 
 python_test() {

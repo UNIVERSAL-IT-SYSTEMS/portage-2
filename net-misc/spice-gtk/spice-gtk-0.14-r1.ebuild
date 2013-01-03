@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/spice-gtk/spice-gtk-0.14-r1.ebuild,v 1.3 2012/12/05 04:20:08 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/spice-gtk/spice-gtk-0.14-r1.ebuild,v 1.8 2013/01/01 14:49:14 ago Exp $
 
 EAPI=5
 GCONF_DEBUG="no"
@@ -16,7 +16,7 @@ HOMEPAGE="http://spice-space.org http://gitorious.org/spice-gtk"
 LICENSE="LGPL-2.1"
 SLOT="0"
 SRC_URI="http://spice-space.org/download/gtk/${P}.tar.bz2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~x86"
 IUSE="doc gstreamer gtk3 +introspection policykit pulseaudio
 python sasl smartcard static-libs usbredir vala"
 
@@ -54,7 +54,7 @@ RDEPEND="pulseaudio? ( media-sound/pulseaudio )
 DEPEND="${RDEPEND}
 	>=app-emulation/spice-protocol-0.10.1
 	dev-lang/python
-	dev-python/pyparsing
+	virtual/pyparsing
 	>=dev-util/intltool-0.40.0
 	>=sys-devel/gettext-0.17
 	virtual/pkgconfig

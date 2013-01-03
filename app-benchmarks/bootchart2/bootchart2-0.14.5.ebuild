@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/bootchart2/bootchart2-0.14.5.ebuild,v 1.1 2012/06/30 12:11:47 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/bootchart2/bootchart2-0.14.5.ebuild,v 1.5 2013/01/01 14:01:27 ago Exp $
 
 EAPI=4
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://github/mmeeks/bootchart/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="svg"
 
 RDEPEND="

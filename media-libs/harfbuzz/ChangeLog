@@ -1,6 +1,16 @@
 # ChangeLog for media-libs/harfbuzz
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/harfbuzz/ChangeLog,v 1.17 2012/12/28 12:28:27 grobian Exp $
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/harfbuzz/ChangeLog,v 1.20 2013/01/01 14:39:21 ago Exp $
+
+  01 Jan 2013; Agostino Sarubbo <ago@gentoo.org> harfbuzz-0.9.9.ebuild:
+  Add ~alpha, wrt bug #449220
+
+  01 Jan 2013; Agostino Sarubbo <ago@gentoo.org> harfbuzz-0.9.9.ebuild:
+  Add ~ia64, wrt bug #449220
+
+  31 Dec 2012; Fabian Groffen <grobian@gentoo.org> harfbuzz-0.9.9.ebuild,
+  harfbuzz-9999.ebuild:
+  Fixed and keyworded for ~x64-macos, bug #449126
 
   28 Dec 2012; Fabian Groffen <grobian@gentoo.org> harfbuzz-0.9.9.ebuild,
   harfbuzz-9999.ebuild:

@@ -1,6 +1,18 @@
 # ChangeLog for app-benchmarks/bootchart2
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/bootchart2/ChangeLog,v 1.10 2012/06/30 12:11:47 jlec Exp $
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-benchmarks/bootchart2/ChangeLog,v 1.14 2013/01/01 14:01:27 ago Exp $
+
+  01 Jan 2013; Agostino Sarubbo <ago@gentoo.org> bootchart2-0.14.5.ebuild:
+  Add ~alpha, wrt bug #449220
+
+  01 Jan 2013; Agostino Sarubbo <ago@gentoo.org> bootchart2-0.14.5.ebuild:
+  Add ~ia64, wrt bug #449220
+
+  31 Dec 2012; Agostino Sarubbo <ago@gentoo.org> bootchart2-0.14.5.ebuild:
+  Add ~ppc64, wrt bug #449220
+
+  31 Dec 2012; Agostino Sarubbo <ago@gentoo.org> bootchart2-0.14.5.ebuild:
+  Add ~ppc, wrt bug #449220
 
 *bootchart2-0.14.5 (30 Jun 2012)
 
@@ -52,4 +64,3 @@
   +metadata.xml:
   New addition, ebuild after submission by Gustavo Sverzut Barbieri, Lucian
   Muresan & Henry Gebhardt; #345695
-

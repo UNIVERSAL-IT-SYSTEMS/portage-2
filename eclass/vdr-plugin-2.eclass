@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/vdr-plugin-2.eclass,v 1.15 2012/12/31 09:27:00 hd_brummy Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/vdr-plugin-2.eclass,v 1.17 2012/12/31 19:49:41 hd_brummy Exp $
 
 # @ECLASS: vdr-plugin-2.eclass
 # @MAINTAINER:
@@ -212,6 +212,12 @@ vdr_patchmakefile() {
 		-e '/^CXXFLAGS[[:space:]]*=/s/=/?=/' \
 		-e '/LDFLAGS/!s:-shared:$(LDFLAGS) -shared:'
 
+	# Do not use {C,CXX}FLAGS from pkg-config vdr.pc, >=media-video/vdr-1.7.34
+	# we do not have the chance to overwrite it with *.eclass
+	sed -e "/^export[[:space:]]*CFLAGS[[:space:]]*=/s/=/?=/" \
+		-e "/^export[[:space:]]*CXXFLAGS[[:space:]]*=/s/=/?=/" \
+		-i Makefile
+
 	# Disabling file stripping, the package manager takes care of it
 	sed -i Makefile \
 		-e '/@.*strip/d' \
@@ -394,7 +400,7 @@ vdr-plugin-2_pkg_setup() {
 	# Plugins need to be compiled with position independent code, otherwise linking
 	# VDR against it will fail
 	if has_version ">=media-video/vdr-1.7.13"; then
-		append-cxxlags -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+		append-cxxflags -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
 	fi
 
 	# Where should the plugins live in the filesystem
@@ -445,7 +451,7 @@ vdr-plugin-2_pkg_setup() {
 	fi
 
 	einfo "Compiling against"
-	einfo "\tvdr-${VDRVERSION}} [API version ${APIVERSION}]"
+	einfo "\tvdr-${VDRVERSION} [API version ${APIVERSION}]"
 
 	if [[ -n "${VDR_LOCAL_PATCHES_DIR}" ]]; then
 		eerror "Using VDR_LOCAL_PATCHES_DIR is deprecated!"

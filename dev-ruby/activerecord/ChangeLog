@@ -1,6 +1,28 @@
 # ChangeLog for dev-ruby/activerecord
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/activerecord/ChangeLog,v 1.198 2012/11/12 19:55:40 graaff Exp $
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/activerecord/ChangeLog,v 1.202 2013/01/03 08:06:27 graaff Exp $
+
+*activerecord-3.0.18 (03 Jan 2013)
+
+  03 Jan 2013; Hans de Graaff <graaff@gentoo.org> +activerecord-3.0.18.ebuild:
+  Version bump for security bug 449826.
+
+*activerecord-3.1.9 (03 Jan 2013)
+
+  03 Jan 2013; Hans de Graaff <graaff@gentoo.org> +activerecord-3.1.9.ebuild:
+  Version bump for security bug 449826.
+
+*activerecord-3.2.10 (03 Jan 2013)
+
+  03 Jan 2013; Hans de Graaff <graaff@gentoo.org> +activerecord-3.2.10.ebuild:
+  Version bump for security bug 449826.
+
+*activerecord-2.3.14-r1 (03 Jan 2013)
+
+  03 Jan 2013; Hans de Graaff <graaff@gentoo.org>
+  +activerecord-2.3.14-r1.ebuild,
+  +files/activerecord-2.3.14-dynamic-finder-injection.patch:
+  Fix SQL injection, bug 449826.
 
 *activerecord-3.2.9 (12 Nov 2012)
 

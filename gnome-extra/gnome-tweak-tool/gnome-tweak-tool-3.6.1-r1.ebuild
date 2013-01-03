@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-tweak-tool/gnome-tweak-tool-3.6.1-r1.ebuild,v 1.2 2012/12/25 19:49:47 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-tweak-tool/gnome-tweak-tool-3.6.1-r1.ebuild,v 1.6 2013/01/01 14:32:39 ago Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -15,7 +15,7 @@ HOMEPAGE="http://live.gnome.org/GnomeTweakTool"
 LICENSE="GPL-2+"
 SLOT="0"
 IUSE=""
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~x86"
 
 COMMON_DEPEND="
 	>=gnome-base/gsettings-desktop-schemas-3.4
