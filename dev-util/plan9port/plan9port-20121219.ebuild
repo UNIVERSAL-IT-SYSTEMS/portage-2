@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/plan9port/plan9port-20121219.ebuild,v 1.2 2013/01/04 04:06:41 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/plan9port/plan9port-20121219.ebuild,v 1.3 2013/01/05 13:00:12 blueness Exp $
 
 EAPI="4"
 
@@ -10,7 +10,7 @@ DESCRIPTION="Port of many Plan 9 programs and libraries"
 HOMEPAGE="http://swtch.com/plan9port/"
 SRC_URI="http://${PN}.googlecode.com/files/${P}.tgz"
 
-LICENSE="9base"
+LICENSE="9base BSD-4 MIT LGPL-2.1 BigelowHolmes"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
