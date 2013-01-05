@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-2.8-r2.ebuild,v 1.9 2013/01/03 23:29:51 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-2.8-r2.ebuild,v 1.8 2011/11/24 08:56:51 grobian Exp $
 
-EAPI="4"
+EAPI="3"
 inherit eutils multilib toolchain-funcs
 
 DESCRIPTION="Low Level Virtual Machine"
@@ -24,7 +24,8 @@ DEPEND="dev-lang/perl
 	|| ( >=sys-devel/binutils-2.18 >=sys-devel/binutils-apple-3.2.3 )
 	libffi? ( virtual/libffi )
 	ocaml? ( dev-lang/ocaml )
-	udis86? ( dev-libs/udis86[pic(+)] )"
+	udis86? ( amd64? ( dev-libs/udis86[pic] )
+		!amd64? ( dev-libs/udis86 ) )"
 RDEPEND="dev-lang/perl"
 
 S=${WORKDIR}/${PN}-${PV/_pre*}

@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/asterisk-1.8.19.1.ebuild,v 1.4 2013/01/04 14:34:49 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/asterisk-1.8.19.1.ebuild,v 1.1 2013/01/02 22:36:18 chainsaw Exp $
 
 EAPI=4
 inherit autotools base eutils linux-info multilib
@@ -13,7 +13,7 @@ SRC_URI="http://downloads.asterisk.org/pub/telephony/asterisk/releases/${MY_P}.t
 	 mirror://gentoo/gentoo-asterisk-patchset-1.16.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 
 IUSE_VOICEMAIL_STORAGE="
 	+voicemail_storage_file
@@ -229,6 +229,7 @@ src_install() {
 	diropts -m 0770 -o asterisk -g asterisk
 	keepdir	/etc/asterisk
 	keepdir /var/lib/asterisk
+	keepdir /var/run/asterisk
 	keepdir /var/spool/asterisk
 	keepdir /var/spool/asterisk/{system,tmp,meetme,monitor,dictate,voicemail}
 	diropts -m 0750 -o asterisk -g asterisk
