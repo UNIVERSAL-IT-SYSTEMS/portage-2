@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/colord/colord-0.1.26.ebuild,v 1.7 2013/01/06 11:22:49 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/colord/colord-0.1.26.ebuild,v 1.9 2013/01/06 18:07:25 maekke Exp $
 
 EAPI="5"
 VALA_MIN_API_VERSION="0.18"
@@ -14,8 +14,8 @@ SRC_URI="http://www.freedesktop.org/software/colord/releases/${P}.tar.xz"
 
 LICENSE="GPL-2+"
 SLOT="0/1" # subslot = libcolord soname version
-KEYWORDS="~alpha amd64 ~arm ia64 ~mips ppc ppc64 ~sparc x86 ~x86-fbsd"
-IUSE="doc examples +gusb +introspection systemd +udev vala"
+KEYWORDS="~alpha amd64 arm ia64 ~mips ppc ppc64 ~sparc x86 ~x86-fbsd"
+IUSE="doc examples +gusb +introspection +udev vala" #systemd
 REQUIRED_USE="vala? ( introspection )"
 
 COMMON_DEPEND="
@@ -25,8 +25,8 @@ COMMON_DEPEND="
 	>=sys-auth/polkit-0.103
 	gusb? ( >=dev-libs/libgusb-0.1.1 )
 	introspection? ( >=dev-libs/gobject-introspection-0.9.8 )
-	systemd? ( >=sys-apps/systemd-44 )
 	udev? ( virtual/udev:=[gudev] )"
+#	systemd? ( >=sys-apps/systemd-44 )
 RDEPEND="${COMMON_DEPEND}
 	media-gfx/shared-color-profiles"
 DEPEND="${COMMON_DEPEND}
@@ -67,11 +67,12 @@ src_configure() {
 		$(use_enable gusb) \
 		$(use_enable gusb reverse) \
 		$(use_enable introspection) \
-		$(use_enable systemd libsystemd-login) \
+		--disable-libsystemd-login \
 		$(use_enable udev gudev) \
 		--with-udevrulesdir="$(udev_get_udevdir)"/rules.d \
 		$(use_enable vala) \
 		"$(systemd_with_unitdir)"
+	#	$(use_enable systemd libsystemd-login) \
 
 	# parallel make fails in doc/api
 	use doc && MAKEOPTS="${MAKEOPTS} -j1"

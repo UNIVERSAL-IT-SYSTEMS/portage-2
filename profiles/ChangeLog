@@ -1,10 +1,28 @@
 # ChangeLog for profile directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.7329 2013/01/05 20:21:43 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.7335 2013/01/07 00:02:32 vapier Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  07 Jan 2013; Mike Frysinger <vapier@gentoo.org> profiles.desc:
+  Mark s390 profiles stable.
+
+  06 Jan 2013; Justin Bronder <jsbronder@gentoo.org> package.mask:
+  Remove net-nntp/sabnzbd mask, fix already released and updated in tree.
+
+  06 Jan 2013; Justin Bronder <jsbronder@gentoo.org> package.mask:
+  Masking net-nntp/sabnzbd-0.7.8 pending next release
+
+  06 Jan 2013; Maxim Koltsov <maksbotan@gentoo.org> package.mask:
+  Move sssd mask to top of the file, change mask text
+
+  06 Jan 2013; Ulrich Müller <ulm@gentoo.org> license_groups:
+  Add mpich2 license to MISC-FREE, bug 449344.
+
+  06 Jan 2013; Jeroen Roovers <jer@gentoo.org> package.mask:
+  Mask =dev-libs/libnl-3.2.17 (bug #450504).
 
   05 Jan 2013; Sergei Trofimovich <slyfox@gentoo.org> package.mask:
   masked cvsps-3 for testing
