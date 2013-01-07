@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/dracut/dracut-024-r3.ebuild,v 1.7 2013/01/06 11:13:00 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/dracut/dracut-024-r3.ebuild,v 1.5 2013/01/01 14:57:19 ago Exp $
 
 EAPI=4
 
@@ -21,7 +21,7 @@ HOMEPAGE="http://dracut.wiki.kernel.org"
 SRC_URI="mirror://kernel/linux/utils/boot/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~x86"
 
 REQUIRED_USE="dracut_modules_crypt-gpg? ( dracut_modules_crypt )
 	dracut_modules_crypt-loop? ( dracut_modules_crypt )
@@ -63,7 +63,7 @@ IUSE="debug device-mapper optimization net selinux ${IUSE_DRACUT_MODULES}"
 
 RESTRICT="test"
 
-CDEPEND=">sys-fs/udev-166
+CDEPEND=">virtual/udev-166
 	dracut_modules_systemd? ( sys-apps/systemd )
 	"
 RDEPEND="${CDEPEND}

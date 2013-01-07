@@ -57,6 +57,10 @@ umount_fs() {
 	done
 }
 
+depend() {
+	need local
+}
+
 start() {
 	ebegin "Starting cgconfig service"
 

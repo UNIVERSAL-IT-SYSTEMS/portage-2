@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-plugins/adobe-flash/adobe-flash-10.3.183.48.ebuild,v 1.2 2013/01/03 18:29:24 swift Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-plugins/adobe-flash/adobe-flash-10.3.183.48.ebuild,v 1.1 2012/12/12 15:45:22 jer Exp $
 
 EAPI=4
 inherit nsplugins multilib toolchain-funcs versionator
@@ -10,7 +10,7 @@ MY_32B_URI="http://fpdownload.macromedia.com/get/flashplayer/pdc/${PV}/install_f
 DESCRIPTION="Adobe Flash Player"
 SRC_URI="${MY_32B_URI}"
 HOMEPAGE="http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html"
-IUSE="selinux kde vdpau"
+IUSE="vdpau kde"
 SLOT="0"
 
 KEYWORDS="-* ~amd64 ~x86"
@@ -31,8 +31,7 @@ EMUL_DEPS="vdpau? ( >=app-emulation/emul-linux-x86-xlibs-20110129 )
 	>=app-emulation/emul-linux-x86-gtklibs-20100409-r1
 	app-emulation/emul-linux-x86-soundlibs"
 
-DEPEND="amd64? ( www-plugins/nspluginwrapper )
-	selinux? ( sec-policy/selinux-flash )"
+DEPEND="amd64? ( www-plugins/nspluginwrapper )"
 RDEPEND="x86? ( $NATIVE_DEPS )
 	amd64? ( $EMUL_DEPS )
 	|| ( media-fonts/liberation-fonts media-fonts/corefonts )

@@ -1,21 +1,20 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/livecd-tools/livecd-tools-9999.ebuild,v 1.11 2013/01/03 17:40:47 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/livecd-tools/livecd-tools-9999.ebuild,v 1.10 2012/05/22 22:31:54 williamh Exp $
 
 EAPI=4
 
-if [[ ${PV} == "9999" ]]; then
-	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/livecd-tools.git"
-	inherit git-2
-else
-	SRC_URI="mirror://gentoo/${P}.tar.bz2"
-	KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
-fi
-
-inherit eutils
+EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/livecd-tools.git"
+[[ ${PV} == "9999" ]] && SCM_ECLASS="git-2"
+inherit eutils $SCM_ECLASS
+unset SCM_ECLASS
 
 DESCRIPTION="Gentoo LiveCD tools for autoconfiguration of hardware"
 HOMEPAGE="http://wolf31o2.org/projects/livecd-tools"
+if [[ ${PV} != "9999" ]] ; then
+	SRC_URI="mirror://gentoo/${P}.tar.bz2"
+	KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
+fi
 
 SLOT="0"
 LICENSE="GPL-2"
@@ -40,5 +39,6 @@ src_install() {
 	doinitd init.d/*
 	dosbin net-setup
 	into /
+	dobin bashlogin
 	dosbin livecd-functions.sh
 }
