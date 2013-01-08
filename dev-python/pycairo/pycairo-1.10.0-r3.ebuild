@@ -1,11 +1,11 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pycairo/pycairo-1.10.0-r3.ebuild,v 1.11 2013/01/01 14:15:18 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pycairo/pycairo-1.10.0-r3.ebuild,v 1.14 2013/01/06 09:29:29 ago Exp $
 
 EAPI="4"
 PYTHON_DEPEND="2:2.6 3:3.1"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="2.5 3.0 *-jython"
+RESTRICT_PYTHON_ABIS="2.5 3.0 *-jython *-pypy-*"
 
 inherit eutils python waf-utils
 
@@ -21,7 +21,7 @@ SRC_URI="http://cairographics.org/releases/py2cairo-${PYCAIRO_PYTHON2_VERSION}.t
 # || ( LGPL-2.1 MPL-1.1 ) for pycairo 1.8.10.
 LICENSE="LGPL-3 || ( LGPL-2.1 MPL-1.1 )"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~x86 ~amd64-fbsd ~x86-fbsd ~ppc-macos ~x64-macos ~x86-macos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="doc examples +svg test xcb"
 
 RDEPEND=">=x11-libs/cairo-1.10.0[svg?,xcb?]
@@ -67,9 +67,13 @@ src_configure() {
 		export PYCAIRO_DISABLE_XPYB=1
 	fi
 
+	# Added by grobian:
 	# If WAF_BINARY is an absolute path, the configure is different and fails to
 	# find Python.h due to a compiler misconfiguration.  If WAF_BINARY is just
 	# ./waf or python waf, it works fine.  Hooray for reinvented buildsystems
+
+	# floppym:
+	# pycairo and py2cairo bundle different versions of waf (bug 447856)
 	WAF_BINARY="./waf"
 	python_execute_function -s waf-utils_src_configure --nopyc --nopyo
 }
@@ -84,21 +88,7 @@ src_test() {
 	}
 	python_execute_function -q -s test_installation
 
-	testing() {
-		# Need a variable for the pypy minor version and a variable to set 2 distinct pythonpaths
-		local pypy_v= PyPath= exit_status=0
-		pypy_v=$(python_get_version)
-		if [[ "${PYTHON_ABI:4:4}" == "pypy" ]]; then
-			PyPath=$(find "${T}"/tests/2.7-pypy-$pypy_v/ -name site-packages)
-			PYTHONPATH="${PyPath}" py.test-${PYTHON_ABI} "${WORKDIR}/${P}-${PYTHON_ABI}"/test || exit_status=1
-		else
-			PyPath="${T}/tests/${PYTHON_ABI}${EPREFIX}"$(python_get_sitedir)
-			PYTHONPATH="${PyPath}" py.test "${WORKDIR}/${P}-${PYTHON_ABI}"/test || exit_status=1
-		fi
-
-		return $exit_status
-	}
-	python_execute_function testing
+	python_execute_py.test -P '${T}/tests/${PYTHON_ABI}${EPREFIX}$(python_get_sitedir)' -s
 }
 
 src_install() {
