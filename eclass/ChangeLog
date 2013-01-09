@@ -1,60 +1,6 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.605 2013/01/09 17:26:55 axs Exp $
-
-  09 Jan 2013; Ian Stakenvicius <axs@gentoo.org> git-2.eclass:
-  added documentation for an undocumented override variable
-
-  08 Jan 2013; Michał Górny <mgorny@gentoo.org> python-single-r1.eclass:
-  Fix the PYTHON_SINGLE_TARGET validity check.
-
-  08 Jan 2013; Michał Górny <mgorny@gentoo.org> python-r1.eclass,
-  python-single-r1.eclass:
-  Manually check PYTHON_TARGETS and PYTHON_SINGLE_TARGET for validity rather
-  than using REQUIRED_USE. Fixes bug #447808.
-
-  06 Jan 2013; Sergei Trofimovich <slyfox@gentoo.org> ghc-package.eclass,
-  haskell-cabal.eclass:
-  Added 'ghc-supports-threaded-runtime' function. Removed implicit RDEPEND on
-  'ghc'.
-
-  05 Jan 2013; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass:
-  Support overriding job-count for parallel build.
-
-  05 Jan 2013; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
-  Support converting files with python2 and python3 shebangs.
-
-  05 Jan 2013; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass:
-  Always write split logs, even in non-parallel builds.
-
-  05 Jan 2013; Zac Medico <zmedico@gentoo.org> autotools.eclass:
-  Avoid unsafe nested multijob_finish_one in eautoreconf for bug #426512.
-
-  04 Jan 2013; Ulrich Müller <ulm@gentoo.org> elisp.eclass,
-  elisp-common.eclass:
-  Sync eclasses from Emacs overlay.
-  elisp-common.eclass: Remove last remnants of backwards compatibility code
-  from elisp-site-regen which was introduced at 2007-12-01. Distinguish between
-  "version too low" and "could not determine version" in elisp_pkg_setup.
-  elisp.eclass: Return 2 as exit status of elisp-need-emacs if the comparison
-  could not be done, e.g., if emacs could not be executed.
-
-  04 Jan 2013; Joerg Bornkessel <hd_brummy@gentoo.org> vdr-plugin-2.eclass:
-  fixed typo, thx to Martin Dummer on irc #vdr-gentoo
-
-  04 Jan 2013; Mike Gilbert <floppym@gentoo.org> distutils-r1.eclass:
-  addpredict /usr/lib/portage/pym in distutils-r1_src_install.
-
-  04 Jan 2013; Mike Gilbert <floppym@gentoo.org> python-r1.eclass:
-  Don't tell the user to set USE_PYTHON when a package does not support
-  python2.7 or python3.2.
-
-  03 Jan 2013; Joerg Bornkessel <hd_brummy@gentoo.org> vdr-plugin-2.eclass:
-  fixed mistake for emake:-all emake:-install between old and new plugin
-  makefile structur, vdr-plugin-2.eclass
-
-  03 Jan 2013; Alon Bar-Lev <alonbl@gentoo.org> ssl-cert.eclass:
-  Support mandatory enrollment and custom USE flag, bug#319529.
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.590 2013/01/03 08:39:49 pesa Exp $
 
   03 Jan 2013; Davide Pesavento <pesa@gentoo.org> qt4-build.eclass:
   Remove more dead code, spotted by Arfrever.

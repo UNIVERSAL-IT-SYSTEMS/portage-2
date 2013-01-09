@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/mtd-utils/mtd-utils-1.5.0.ebuild,v 1.6 2013/01/03 22:09:46 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/mtd-utils/mtd-utils-1.5.0.ebuild,v 1.5 2012/08/24 13:38:51 xmw Exp $
 
 EAPI="3"
 
@@ -9,7 +9,7 @@ inherit eutils vcs-snapshot
 if [[ ${PV} == "99999999" ]] ; then
 	EGIT_REPO_URI="git://git.infradead.org/mtd-utils.git"
 
-	inherit git-2
+	inherit git
 	SRC_URI=""
 	#KEYWORDS=""
 else
@@ -41,21 +41,16 @@ DEPEND="${RDEPEND}
 	xattr? ( sys-apps/acl )"
 
 makeopts() {
-	# These affect build output, so keep it common between compile & install.
-	echo CROSS=${CHOST}- V=1
+	echo CROSS=${CHOST}-
 	use xattr || echo WITHOUT_XATTR=1
 }
 
 src_compile() {
-	tc-export AR CC RANLIB
-	local compileopts=(
-		AR="${AR}" CC="${CC}" RANLIB="${RANLIB}"
-	)
-	emake $(makeopts) "${compileopts[@]}"
+	emake $(makeopts) || die
 }
 
 src_install() {
-	emake $(makeopts) install DESTDIR="${ED}"
+	emake $(makeopts) install DESTDIR="${ED}" || die
 	dodoc *.txt
 	newdoc mkfs.ubifs/README README.mkfs.ubifs
 	# TODO: check ubi-utils for docs+scripts

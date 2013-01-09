@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/elisp-common.eclass,v 1.83 2013/01/04 21:22:43 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/elisp-common.eclass,v 1.82 2012/09/01 09:39:07 ulm Exp $
 #
 # @ECLASS: elisp-common.eclass
 # @MAINTAINER:
@@ -186,14 +186,14 @@ elisp-emacs-version() {
 
 # @FUNCTION: elisp-need-emacs
 # @USAGE: <version>
-# @RETURN: 0 if true, 1 if false, 2 if trouble
+# @RETURN: 0 if true, 1 otherwise
 # @DESCRIPTION:
 # Test if the eselected Emacs version is at least the major version
-# of GNU Emacs specified as argument.
+# specified as argument.
 
 elisp-need-emacs() {
 	local need_emacs=$1 have_emacs
-	have_emacs=$(elisp-emacs-version) || return 2
+	have_emacs=$(elisp-emacs-version) || return
 	einfo "Emacs version: ${have_emacs}"
 	if [[ ${have_emacs} =~ XEmacs|Lucid ]]; then
 		eerror "This package needs GNU Emacs."
@@ -334,6 +334,10 @@ elisp-site-regen() {
 	fi
 
 	ebegin "Regenerating site-gentoo.el for GNU Emacs (${EBUILD_PHASE})"
+
+	# Until January 2009, elisp-common.eclass sometimes created an
+	# auxiliary file for backwards compatibility. Remove any such file.
+	rm -f "${sitelisp}"/00site-gentoo.el
 
 	for sf in "${sitelisp}"/[0-9][0-9]*-gentoo.el \
 		"${sitelisp}"/site-gentoo.d/[0-9][0-9]*.el

@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/rhythmbox/rhythmbox-2.97.ebuild,v 1.15 2013/01/08 03:27:22 calchan Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/rhythmbox/rhythmbox-2.97.ebuild,v 1.12 2013/01/01 14:44:03 ago Exp $
 
 EAPI="4"
 GNOME2_LA_PUNT="yes"
@@ -17,7 +17,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE="cdr clutter daap dbus gnome-keyring html ipod libnotify lirc musicbrainz mtp nsplugin +python test +udev upnp-av webkit zeitgeist"
 # vala
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~x86"
 
 REQUIRED_USE="
 	ipod? ( udev )
@@ -47,12 +47,12 @@ COMMON_DEPEND=">=dev-libs/glib-2.28.0:2
 		>=media-libs/clutter-gst-1.0:1.0
 		>=media-libs/clutter-gtk-1.0:1.0
 		>=x11-libs/mx-1.0.1:1.0 )
-	cdr? ( =app-cdr/brasero-3.4* )
+	cdr? ( >=app-cdr/brasero-2.91.90 )
 	daap? (
 		>=net-libs/libdmapsharing-2.9.11:3.0
 		>=net-dns/avahi-0.6 )
 	gnome-keyring? ( >=gnome-base/gnome-keyring-0.4.9 )
-	html? ( <net-libs/webkit-gtk-1.10:3 )
+	html? ( >=net-libs/webkit-gtk-1.3.9:3 )
 	libnotify? ( >=x11-libs/libnotify-0.7.0 )
 	lirc? ( app-misc/lirc )
 	musicbrainz? (
@@ -90,7 +90,7 @@ RDEPEND="${COMMON_DEPEND}
 		gnome-keyring? ( dev-python/gnome-keyring-python )
 		webkit? (
 			dev-python/mako
-			<net-libs/webkit-gtk-1.10:3[introspection] ) )
+			>=net-libs/webkit-gtk-1.3.9:3[introspection] ) )
 "
 DEPEND="${COMMON_DEPEND}
 	virtual/pkgconfig

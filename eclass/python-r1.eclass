@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/python-r1.eclass,v 1.36 2013/01/08 16:36:16 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/python-r1.eclass,v 1.34 2013/01/02 21:12:44 mgorny Exp $
 
 # @ECLASS: python-r1
 # @MAINTAINER:
@@ -145,7 +145,7 @@ _python_set_globals() {
 	optflags+=,${flags_st[@]/%/(-)}
 
 	IUSE=${flags[*]}
-	#REQUIRED_USE="|| ( ${flags[*]} )"
+	REQUIRED_USE="|| ( ${flags[*]} )"
 	PYTHON_USEDEP=${optflags// /,}
 
 	# 1) well, python-exec would suffice as an RDEP
@@ -160,27 +160,6 @@ _python_set_globals() {
 	done
 }
 _python_set_globals
-
-# @FUNCTION: _python_validate_useflags
-# @INTERNAL
-# @DESCRIPTION:
-# Enforce the proper setting of PYTHON_TARGETS.
-_python_validate_useflags() {
-	debug-print-function ${FUNCNAME} "${@}"
-
-	local i
-
-	for i in "${PYTHON_COMPAT[@]}"; do
-		use "python_targets_${i}" && return 0
-	done
-
-	eerror "No Python implementation selected for the build. Please add one"
-	eerror "of the following values to your PYTHON_TARGETS (in make.conf):"
-	eerror
-	eerror "${PYTHON_COMPAT[@]}"
-	echo
-	die "No supported Python implementation in PYTHON_TARGETS."
-}
 
 # @FUNCTION: python_gen_usedep
 # @USAGE: <pattern> [...]
@@ -328,8 +307,6 @@ python_gen_cond_dep() {
 python_copy_sources() {
 	debug-print-function ${FUNCNAME} "${@}"
 
-	_python_validate_useflags
-
 	local impl
 	local bdir=${BUILD_DIR:-${S}}
 
@@ -405,10 +382,6 @@ _python_check_USE_PYTHON() {
 			# is installed.
 			if [[ ! ${py2+1} && ${dis_py2} ]]; then
 				debug-print "${FUNCNAME}: -> all py2 versions disabled"
-				if ! has python2_7 "${PYTHON_COMPAT[@]}"; then
-					debug-print "${FUNCNAME}: ---> package does not support 2.7"
-					return 0
-				fi
 				if has_version '=dev-lang/python-2*'; then
 					debug-print "${FUNCNAME}: ---> but =python-2* installed!"
 					return 1
@@ -416,10 +389,6 @@ _python_check_USE_PYTHON() {
 			fi
 			if [[ ! ${py3+1} && ${dis_py3} ]]; then
 				debug-print "${FUNCNAME}: -> all py3 versions disabled"
-				if ! has python3_2 "${PYTHON_COMPAT[@]}"; then
-					debug-print "${FUNCNAME}: ---> package does not support 3.2"
-					return 0
-				fi
 				if has_version '=dev-lang/python-3*'; then
 					debug-print "${FUNCNAME}: ---> but =python-3* installed!"
 					return 1
@@ -565,7 +534,6 @@ _python_check_USE_PYTHON() {
 python_foreach_impl() {
 	debug-print-function ${FUNCNAME} "${@}"
 
-	_python_validate_useflags
 	_python_check_USE_PYTHON
 
 	local impl
@@ -595,8 +563,6 @@ python_foreach_impl() {
 python_export_best() {
 	debug-print-function ${FUNCNAME} "${@}"
 
-	_python_validate_useflags
-
 	[[ ${#} -gt 0 ]] || set -- EPYTHON PYTHON
 
 	local impl best
@@ -623,8 +589,6 @@ python_export_best() {
 # having a matching shebang will be refused.
 python_replicate_script() {
 	debug-print-function ${FUNCNAME} "${@}"
-
-	_python_validate_useflags
 
 	local suffixes=()
 

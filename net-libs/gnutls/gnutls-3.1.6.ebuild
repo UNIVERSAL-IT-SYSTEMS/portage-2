@@ -1,10 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/gnutls-3.1.6.ebuild,v 1.6 2013/01/07 12:06:21 alonbl Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/gnutls/gnutls-3.1.6.ebuild,v 1.2 2013/01/03 03:13:30 radhermit Exp $
 
 EAPI=4
-
-WANT_AUTOMAKE="1.11.6"
 
 inherit autotools libtool eutils
 
@@ -19,8 +17,6 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~spar
 IUSE_LINGUAS=" en cs de fi fr it ms nl pl sv uk vi zh_CN"
 IUSE="+cxx dane doc examples guile nls pkcs11 static-libs test zlib ${IUSE_LINGUAS// / linguas_}"
 
-# NOTICE: sys-devel/autogen is required at runtime as we
-# use system libopts
 RDEPEND=">=dev-libs/libtasn1-2.14
 	>=dev-libs/nettle-2.5[gmp]
 	sys-devel/autogen
@@ -31,6 +27,7 @@ RDEPEND=">=dev-libs/libtasn1-2.14
 	zlib? ( >=sys-libs/zlib-1.2.3.1 )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
+	sys-devel/libtool
 	doc? ( dev-util/gtk-doc )
 	nls? ( sys-devel/gettext )
 	test? ( app-misc/datefudge )"

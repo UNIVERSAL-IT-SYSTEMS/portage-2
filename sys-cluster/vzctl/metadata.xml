@@ -11,16 +11,10 @@
 	<maintainer>
 		<email>pva@gentoo.org</email>
 		<name>Peter Volkov</name>
-		<description>Committer</description>
+		<description>Comitter</description>
 	</maintainer>
 	<use>
 		<flag name='ploop'>Add support for ploop devices via <pkg>sys-cluster/ploop</pkg></flag>
 		<flag name='cgroup'>Add support to Linux kernel cgroup subsytem</flag>
 	</use>
-	<upstream>
-		<maintainer status="active">
-			<email>kir@openvz.org</email>
-			<name>Kir Kolyshkin</name>
-		</maintainer>
-	</upstream>
 </pkgmetadata>

@@ -1,9 +1,9 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/vice/vice-2.4.ebuild,v 1.3 2013/01/06 07:27:57 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/vice/vice-2.4.ebuild,v 1.2 2012/11/06 21:55:05 mr_bones_ Exp $
 
-EAPI=5
-inherit autotools eutils toolchain-funcs games
+EAPI=2
+inherit autotools eutils games toolchain-funcs
 
 DESCRIPTION="The Versatile Commodore 8-bit Emulator"
 HOMEPAGE="http://vice-emu.sourceforge.net/"
@@ -59,7 +59,6 @@ DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-arm.patch
 	sed -i \
 		-e "s:/usr/local/lib/VICE:${GAMES_DATADIR}/${PN}:" \
 		man/vice.1 \
@@ -107,7 +106,7 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog FEEDBACK README
 	prepgamesdirs
 }

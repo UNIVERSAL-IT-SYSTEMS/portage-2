@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-9999.ebuild,v 1.38 2013/01/07 20:22:12 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-9999.ebuild,v 1.36 2012/12/14 10:33:32 voyageur Exp $
 
-EAPI=5
+EAPI="4"
 PYTHON_DEPEND="2"
 inherit subversion eutils flag-o-matic multilib toolchain-funcs python pax-utils
 
@@ -27,7 +27,8 @@ DEPEND="dev-lang/perl
 	libffi? ( virtual/pkgconfig
 		virtual/libffi )
 	ocaml? ( dev-lang/ocaml )
-	udis86? ( dev-libs/udis86[pic(+)] )"
+	udis86? ( amd64? ( dev-libs/udis86[pic] )
+		!amd64? ( dev-libs/udis86 ) )"
 RDEPEND="dev-lang/perl
 	libffi? ( virtual/libffi )
 	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )"
@@ -90,10 +91,6 @@ src_prepare() {
 			-i tools/gold/Makefile || die "gold rpath sed failed"
 	fi
 
-	# FileCheck is needed at least for dragonegg tests
-	sed -e "/NO_INSTALL = 1/s/^/#/" -i utils/FileCheck/Makefile \
-		|| die "FileCheck Makefile sed failed"
-
 	# Specify python version
 	python_convert_shebangs -r 2 test/Scripts
 
@@ -153,8 +150,6 @@ src_compile() {
 	pax-mark m Release/bin/lli
 	if use test; then
 		pax-mark m unittests/ExecutionEngine/JIT/Release/JITTests
-		pax-mark m unittests/ExecutionEngine/MCJIT/Release/MCJITTests
-		pax-mark m unittests/Support/Release/SupportTests
 	fi
 }
 
@@ -194,4 +189,6 @@ src_install() {
 			eend $?
 		done
 	fi
+#
+#	doman docs/CommandGuide/*.1
 }
