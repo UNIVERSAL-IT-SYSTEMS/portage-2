@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.123 2012/12/05 20:34:52 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.125 2013/01/09 19:39:55 williamh Exp $
 
 EAPI=4
 
@@ -52,17 +52,17 @@ DEPEND="${COMMON_DEPEND}
 if [[ ${PV} = 9999* ]]
 then
 	DEPEND="${DEPEND}
-		app-text/docbook-xsl-stylesheets
+	app-text/docbook-xsl-stylesheets
 		dev-libs/libxslt"
 fi
 
 RDEPEND="${COMMON_DEPEND}
-	openrc? ( >=sys-fs/udev-init-scripts-16
+	openrc? ( >=sys-fs/udev-init-scripts-19
 		!<sys-apps/openrc-0.9.9 )
 	!sys-apps/coldplug
 	!<sys-fs/lvm2-2.02.45
 	!sys-fs/device-mapper
-	!<sys-fs/udev-init-scripts-16
+	!<sys-fs/udev-init-scripts-19
 	!<sys-kernel/dracut-017-r1
 	!<sys-kernel/genkernel-3.4.25"
 
@@ -70,7 +70,7 @@ PDEPEND=">=virtual/udev-180"
 
 S=${WORKDIR}/systemd-${PV}
 
-QA_MULTILIB_PATHS="usr/lib/systemd/systemd-udevd"
+QA_MULTILIB_PATHS="lib/systemd/systemd-udevd"
 
 udev_check_KV()
 {
@@ -160,11 +160,9 @@ src_configure()
 		DBUS_LIBS=' '
 		--docdir=/usr/share/doc/${PF}
 		--libdir=/usr/$(get_libdir)
-		--with-distro=gentoo
-		--with-firmware-path=/usr/lib/firmware/updates:/usr/lib/firmware:/lib/firmware/updates:/lib/firmware
 		--with-html-dir=/usr/share/doc/${PF}/html
-		--with-rootlibdir=/usr/$(get_libdir)
-		--with-rootprefix=/usr
+		--with-rootprefix=
+		--with-rootlibdir=/lib
 		--disable-audit
 		--disable-coredump
 		--disable-hostnamed
@@ -172,6 +170,7 @@ src_configure()
 		--disable-libcryptsetup
 		--disable-localed
 		--disable-logind
+		--disable-myhostname
 		--disable-nls
 		--disable-pam
 		--disable-quotacheck
@@ -183,12 +182,16 @@ src_configure()
 		$(use_enable acl)
 		$(use_enable doc gtk-doc)
 		$(use_enable gudev)
-		$(use_enable introspection)
 		$(use_enable keymap)
 		$(use_enable kmod)
 		$(use_enable selinux)
 		$(use_enable static-libs static)
 	)
+	if use introspection; then
+		econf_args+=(
+			--enable-introspection=$(usex introspection)
+		)
+	fi
 	econf "${econf_args[@]}"
 }
 
@@ -200,6 +203,7 @@ src_compile()
 		systemd-udevd
 		udevadm
 		libudev.la
+		libsystemd-daemon.la
 		ata_id
 		cdrom_id
 		collect
@@ -225,8 +229,8 @@ src_compile()
 
 src_install()
 {
-	local lib_LTLIBRARIES=libudev.la \
-		pkgconfiglib_DATA=src/libudev/libudev.pc
+	local lib_LTLIBRARIES="libsystemd-daemon.la libudev.la" \
+		pkgconfiglib_DATA="src/libsystemd-daemon/libsystemd-daemon.pc src/libudev/libudev.pc"
 
 	local targets=(
 		install-libLTLIBRARIES
@@ -282,11 +286,11 @@ src_install()
 	dodoc TODO
 
 	prune_libtool_files --all
-	rm -f "${D}"/usr/lib/udev/rules.d/99-systemd.rules
+	rm -f "${D}"/lib/udev/rules.d/99-systemd.rules
 	rm -rf "${D}"/usr/share/doc/${PF}/LICENSE.*
 
 	# install gentoo-specific rules
-	insinto /usr/lib/udev/rules.d
+	insinto /lib/udev/rules.d
 	doins "${FILESDIR}"/40-gentoo.rules
 
 	# install udevadm symlink
@@ -308,6 +312,10 @@ pkg_preinst()
 		fi
 	done
 	preserve_old_lib /$(get_libdir)/libudev.so.0
+	if has_version '<sys-fs/udev-197'; then
+		net_rules="${ROOT}"etc/udev/rules.d/80-net-name-slot.rules
+		cp "${FILESDIR}"/80-net-name-slot.rules "${net_rules}"
+	fi
 }
 
 # This function determines if a directory is a mount point.
@@ -347,13 +355,9 @@ pkg_postinst()
 
 	if [[ ${REPLACING_VERSIONS} ]] && [[ ${REPLACING_VERSIONS} < 189 ]]; then
 		ewarn
-		ewarn "Upstream has removed the persistent-net and persistent-cd rules"
+		ewarn "Upstream has removed the persistent-cd rules"
 		ewarn "generator. If you need persistent names for these devices,"
 		ewarn "place udev rules for them in ${ROOT}etc/udev/rules.d."
-		ewarn "Be aware that you cannot directly swap device names, so persistent"
-		ewarn "rules for network devices should be like the ones at the following"
-		ewarn "URL:"
-		ewarn "http://bugs.gentoo.org/show_bug.cgi?id=433746#c1"
 	fi
 
 	if ismounted /usr
@@ -372,14 +376,21 @@ pkg_postinst()
 		ewarn "http://www.gentoo.org/doc/en/initramfs-guide.xml"
 	fi
 
-	if [[ -d ${ROOT}lib/udev ]]
+	if [ -n "${net_rules}" ]; then
+			ewarn
+			ewarn "udev-197 and newer introduces a new method of naming network"
+			ewarn "interfaces. The new names are a very significant change, so"
+			ewarn "they are disabled by default on live systems."
+			ewarn "Please see the contents of ${net_rules} for more"
+			ewarn "information on this feature."
+			ewarn
+	fi
+	if [[ -d ${ROOT}usr/lib/udev ]]
 	then
+		ewarn "Please re-emerge all packages on your system which install"
+		ewarn "rules and helpers in /usr/lib/udev. They should now be in"
+		ewarn "/lib/udev."
 		ewarn
-		ewarn "This version of udev moves the files which were installed in"
-		ewarn "/lib/udev to /usr/lib/udev. We include a backward compatibility"
-		ewarn "patch for gentoo to allow the rules in /lib/udev/rules.d to be"
-		ewarn "read; however, bugs should be filed against packages which are"
-		ewarn "installing things in /lib/udev so they can be fixed."
 	fi
 
 	ewarn

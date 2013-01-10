@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-nntp/nzbget/nzbget-9.0.ebuild,v 1.1 2012/12/16 21:25:42 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-nntp/nzbget/nzbget-9.0.ebuild,v 1.2 2013/01/08 18:33:58 radhermit Exp $
 
 EAPI="5"
 
@@ -80,7 +80,7 @@ src_install() {
 	rm "${D}"/usr/bin/nzbget-postprocess.sh
 
 	keepdir /var/lib/nzbget/{dst,nzb,queue,tmp}
-	keepdir /var/log/nzbget /run/nzbget
+	keepdir /var/log/nzbget
 
 	newinitd "${FILESDIR}"/nzbget.initd nzbget
 	newconfd "${FILESDIR}"/nzbget.confd nzbget
@@ -94,8 +94,8 @@ pkg_preinst() {
 	fperms 750 /var/lib/nzbget/{queue,tmp}
 	fperms 770 /var/lib/nzbget/{dst,nzb}
 
-	fowners nzbget:nzbget /var/log/nzbget /run/nzbget
-	fperms 750 /var/log/nzbget /run/nzbget
+	fowners nzbget:nzbget /var/log/nzbget
+	fperms 750 /var/log/nzbget
 
 	fowners root:nzbget /etc/nzbgetd.conf
 	fperms 640 /etc/nzbgetd.conf

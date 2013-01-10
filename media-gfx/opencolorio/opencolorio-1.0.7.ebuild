@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/opencolorio/opencolorio-1.0.7.ebuild,v 1.4 2012/11/26 11:21:33 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/opencolorio/opencolorio-1.0.7.ebuild,v 1.6 2013/01/07 23:30:12 pinkbyte Exp $
 
 EAPI=4
 
@@ -38,6 +38,9 @@ DEPEND="${RDEPEND}
 # Documentation building requires Python bindings building
 REQUIRED_USE="doc? ( python )"
 
+# Restricting tests, bugs #439790 and #447908
+RESTRICT="test"
+
 pkg_setup() {
 	if use python; then
 		python_set_active_version 2
@@ -48,7 +51,7 @@ pkg_setup() {
 src_prepare() {
 	epatch \
 		"${FILESDIR}"/${PN}-use-system-libs.patch \
-		"${FILESDIR}"/${PN}-documentation-gen.patch \
+		"${FILESDIR}"/${P}-documentation-gen.patch \
 		"${FILESDIR}"/${PN}-openimageio.patch
 }
 

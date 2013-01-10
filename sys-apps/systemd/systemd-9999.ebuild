@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.2 2012/12/17 00:36:00 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.4 2013/01/08 21:20:30 mgorny Exp $
 
 EAPI=5
 
@@ -14,7 +14,7 @@ inherit git-2
 
 PYTHON_COMPAT=( python2_7 )
 inherit autotools-utils bash-completion-r1 linux-info pam \
-	python-single-r1 systemd user
+	python-single-r1 systemd
 
 DESCRIPTION="System and service manager for Linux"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
@@ -76,9 +76,6 @@ DEPEND="dev-libs/gobject-introspection
 AUTOTOOLS_IN_SOURCE_BUILD=1
 
 pkg_setup() {
-	enewgroup lock # used by var-lock.mount
-	enewgroup tty 5 # used by mount-setup for /dev/pts
-
 	use python && python-single-r1_pkg_setup
 }
 
@@ -205,6 +202,8 @@ optfeature() {
 }
 
 pkg_postinst() {
+	systemd_update_catalog
+
 	mkdir -p "${ROOT}"/run || ewarn "Unable to mkdir /run, this could mean trouble."
 	if [[ ! -L "${ROOT}"/etc/mtab ]]; then
 		ewarn "Upstream suggests that the /etc/mtab file should be a symlink to /proc/mounts."
@@ -229,4 +228,11 @@ pkg_postinst() {
 	ewarn "responsibility. Please remember than you can pass:"
 	ewarn "	init=/sbin/init"
 	ewarn "to your kernel to boot using sysvinit / OpenRC."
+}
+
+pkg_prerm() {
+	# If removing systemd completely, remove the catalog database.
+	if [[ ! ${REPLACED_BY_VERSION} ]]; then
+		rm -f -v "${EROOT}"/var/lib/systemd/catalog/database
+	fi
 }

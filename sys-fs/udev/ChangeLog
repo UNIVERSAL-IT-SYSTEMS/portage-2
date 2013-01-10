@@ -1,6 +1,17 @@
 # ChangeLog for sys-fs/udev
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/ChangeLog,v 1.751 2012/12/18 20:00:20 ryao Exp $
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/ChangeLog,v 1.753 2013/01/09 19:39:55 williamh Exp $
+
+  09 Jan 2013; William Hubbs <williamh@gentoo.org> udev-197.ebuild,
+  udev-9999.ebuild:
+  I was told that the fix I mentioned in the previous commit is incorrect
+  because systemd already generates the man pages in their tarball.
+
+*udev-197 (09 Jan 2013)
+
+  09 Jan 2013; William Hubbs <williamh@gentoo.org>
+  +files/80-net-name-slot.rules, +udev-197.ebuild, udev-9999.ebuild:
+  version bump and fix #446702
 
 *udev-171-r10 (18 Dec 2012)
 

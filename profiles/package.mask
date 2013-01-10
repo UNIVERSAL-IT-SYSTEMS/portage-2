@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.14341 2013/01/02 20:06:13 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.14360 2013/01/09 18:19:20 slyfox Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,81 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Jeroen Roovers <jer@gentoo.org> (09 Jan 2013)
+# Testing branch, unstable upstream
+>net-nntp/tin-2.1
+
+# Torsten Veller <tove@gentoo.org> (08 Jan 2013)
+# Mask dev-perl/Class-MOP. It was merge with dev-perl/Moose-2.
+# Now as the last arch stabilized Moose-2, dev-perl/Class-MOP will be removed.
+# bug #350612
+dev-perl/Class-MOP
+
+# Alexander Vershilov <qnikst@gentoo.org> (06 Jan 2013)
+# Requires >=net-fs/samba-4 (bug #450226)
+>=sys-auth/sssd-1.9.3
+
+# Sergei Trofimovich <slyfox@gentoo.org> (05 Jan 2013)
+# Masked for testing. Is not compatible with cvsps-2 (bug #450424).
+# But can be used on it's own! Try 'cvsps --fast-export'.
+>=dev-vcs/cvsps-3
+
+# Ole Markus With <olemarkus@gentoo.org> (04 Jan 2013)
+# No release in four years. Replaced by Zeta Components, which also has yet to
+# have had any releases.
+# Masked for removal.
+dev-php/ezc-Archive
+dev-php/ezc-Authentication
+dev-php/ezc-AuthenticationDatabaseTiein
+dev-php/ezc-Cache
+dev-php/ezc-Configuration
+dev-php/ezc-ConsoleTools
+dev-php/ezc-Database
+dev-php/ezc-DatabaseSchema
+dev-php/ezc-Debug
+dev-php/ezc-Document
+dev-php/ezc-EventLog
+dev-php/ezc-EventLogDatabaseTiein
+dev-php/ezc-Execution
+dev-php/ezc-eZcomponents
+dev-php/ezc-Feed
+dev-php/ezc-File
+dev-php/ezc-GraphDatabaseTiein
+dev-php/ezc-ImageAnalysis
+dev-php/ezc-ImageConversion
+dev-php/ezc-Mail
+dev-php/ezc-MvcAuthenticationTiein
+dev-php/ezc-MvcFeedTiein
+dev-php/ezc-MvcMailTiein
+dev-php/ezc-MvcTemplateTiein
+dev-php/ezc-MvcTools
+dev-php/ezc-PersistentObject
+dev-php/ezc-PersistentObjectDatabaseSchemaTiein
+dev-php/ezc-PhpGenerator
+dev-php/ezc-Search
+dev-php/ezc-SignalSlot
+dev-php/ezc-SystemInformation
+dev-php/ezc-Template
+dev-php/ezc-TemplateTranslationTiein
+dev-php/ezc-Translation
+dev-php/ezc-TranslationCacheTiein
+dev-php/ezc-Tree
+dev-php/ezc-TreeDatabaseTiein
+dev-php/ezc-TreePersistentObjectTiein
+dev-php/ezc-Url
+dev-php/ezc-UserInput
+dev-php/ezc-Webdav
+dev-php/ezc-Workflow
+dev-php/ezc-WorkflowDatabaseTiein
+dev-php/ezc-WorkflowEventLogTiein
+dev-php/ezc-WorkflowSignalSlotTiein
+
+# Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (04 Jan 2013)
+# Mask some prerelease x11 packages
+=x11-base/xorg-server-1.13.99*
+=x11-libs/libXi-1.6.99*
+=x11-proto/inputproto-2.2.99*
 
 # Mike Gilbert <floppym@gentoo.org> (03 Jan 2013)
 # No longer maintained upstream.
@@ -93,11 +168,6 @@ net-dialup/ltmodem
 www-apache/mod_spin
 
 # Pacho Ramos <pacho@gentoo.org> (25 Dec 2012)
-# Tests freeze (#343663), upstream dead, could be broken with
-# some python versions. Removal in a month.
-www-apache/mod_python
-
-# Pacho Ramos <pacho@gentoo.org> (25 Dec 2012)
 # Dead stuff that shouldn't be used and that is required by
 # nothing (#407697). Removal in a month.
 dev-dotnet/galago-sharp
@@ -143,9 +213,9 @@ games-roguelike/noegnud-slashem
 
 # Panagiotis Christopoulos <pchrist@gentoo.org> (25 Dec 2012)
 # mask again these, temporarily, because more testing must be done.
-=dev-lisp/gentoo-init-1.0
-=dev-lisp/asdf-2.26
-=dev-lisp/sbcl-1.1.2
+>=dev-lisp/gentoo-init-1.0
+>=dev-lisp/asdf-2.26
+>=dev-lisp/sbcl-1.1.2
 
 # Christian Ruppert <idl0r@gentoo.org> (22 Dec 2012)
 # Experimental
@@ -259,8 +329,7 @@ dev-vcs/gitosis-gentoo
 # Diego Elio Pettenò <flameeyes@gentoo.org> (14 Nov 2012)
 # Masked for testing as too many packages fail.
 # See bug #443230 for tracking the progress
-=media-video/libav-9_beta*
-=media-video/libav-9*
+=media-video/libav-9.1*
 
 # Pawel Hajdan jr <phajdan.jr@gentoo.org> (09 Nov 2012)
 # Masked for testing, bug #438756.
@@ -349,11 +418,6 @@ net-misc/libteam
 =sys-libs/db-5.2*
 =sys-libs/db-5.1*
 =sys-libs/db-5.0*
-
-# Eray Aslan <eras@gentoo.org> (07 Oct 2012)
-# Dead upstream.  Use mail-client/alpine instead.  Bug #371593
-# Removal when bugs it depends on are fixed
-mail-client/pine
 
 # Richard Yao <ryao@gentoo.org> (06 Oct 2012)
 # sys-apps/grep-2.13 falsely reports some files as binary, causing build
@@ -606,6 +670,7 @@ sci-chemistry/webmo
 # Ryan Hill <dirtyepic@gentoo.org> (02 Apr 2011)
 # Masked for testing
 >=sys-devel/gcc-4.7.0
+>=sys-devel/kgcc64-4.7.0
 
 # Christian Faulhammer <fauli@gentoo.org> (12 Mar 2011)
 # Mask for testing
@@ -812,7 +877,6 @@ dev-embedded/avr-libc
 
 # Steve Dibb <beandog@gentoo.org> (05 Nov 2008)
 # Mask realplayer codecs for security bug 245662
-# http://forums.gentoo.org/viewtopic-t-713051.html
 media-libs/amd64codecs
 media-libs/realcodecs
 
@@ -892,3 +956,4 @@ games-fps/unreal-tournament-goty
 games-fps/unreal-tournament-strikeforce
 games-fps/unreal-tournament-bonuspacks
 games-fps/aaut
+
