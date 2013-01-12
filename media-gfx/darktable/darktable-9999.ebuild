@@ -1,10 +1,10 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/darktable/darktable-9999.ebuild,v 1.4 2012/12/19 19:15:46 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/darktable/darktable-9999.ebuild,v 1.5 2013/01/12 18:36:25 radhermit Exp $
 
 EAPI="5"
 
-inherit cmake-utils toolchain-funcs gnome2-utils git-2 eutils
+inherit cmake-utils toolchain-funcs gnome2-utils fdo-mime git-2 pax-utils eutils
 
 EGIT_REPO_URI="git://github.com/darktable-org/darktable.git"
 
@@ -15,7 +15,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
 IUSE="colord facebook flickr geo gnome-keyring gphoto2 graphicsmagick jpeg2k kde
-nls opencl openmp +rawspeed +slideshow"
+nls opencl openmp pax_kernel +rawspeed +slideshow"
 
 RDEPEND="
 	dev-db/sqlite:3
@@ -91,14 +91,29 @@ src_configure() {
 	cmake-utils_src_configure
 }
 
+src_install() {
+	cmake-utils_src_install
+
+	if use pax_kernel && use opencl ; then
+		pax-mark Cm "${ED}"/usr/bin/${PN} || die
+		eqawarn "USE=pax_kernel is set meaning that ${PN} will be run"
+		eqawarn "under a PaX enabled kernel. To do so, the ${PN} binary"
+		eqawarn "must be modified and this *may* lead to breakage! If"
+		eqawarn "you suspect that ${PN} is broken by this modification,"
+		eqawarn "please open a bug."
+	fi
+}
+
 pkg_preinst() {
 	gnome2_icon_savelist
 }
 
 pkg_postinst() {
 	gnome2_icon_cache_update
+	fdo-mime_desktop_database_update
 }
 
 pkg_postrm() {
 	gnome2_icon_cache_update
+	fdo-mime_desktop_database_update
 }

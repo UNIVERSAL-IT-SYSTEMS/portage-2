@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql-server/postgresql-server-9999.ebuild,v 1.3 2012/07/28 12:34:49 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/postgresql-server/postgresql-server-9999.ebuild,v 1.4 2013/01/12 19:10:13 titanofold Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? 2"
@@ -147,8 +147,6 @@ src_install() {
 		PATH="${EROOT%/}/usr/$(get_libdir)/postgresql-${SLOT}/bin:${PATH}" \
 			emake install -C $bd DESTDIR="${D}" || die "emake install in $bd failed"
 	done
-
-	dodoc README doc/{TODO,bug.template}
 
 	dodir /etc/eselect/postgresql/slots/${SLOT}
 	echo "postgres_ebuilds=\"\${postgres_ebuilds} ${PF}\"" > \
