@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-1.0.1.ebuild,v 1.1 2013/01/06 18:54:23 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-1.0.1.ebuild,v 1.2 2013/01/11 23:37:55 cardoe Exp $
 
 EAPI=4
 
@@ -365,6 +365,10 @@ pkg_preinst() {
 
 pkg_postinst() {
 	use python && python_mod_optimize libvirt.py
+
+	if [[ -e "${ROOT}"/etc/libvirt/qemu/networks/default.xml ]]; then
+		touch "${ROOT}"/etc/libvirt/qemu/networks/default.xml
+	fi
 
 	# support for dropped privileges
 	if use qemu; then
