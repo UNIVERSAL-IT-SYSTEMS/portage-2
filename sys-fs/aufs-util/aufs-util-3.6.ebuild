@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/aufs-util/aufs-util-3.6.ebuild,v 1.4 2012/12/21 09:19:28 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/aufs-util/aufs-util-3.6.ebuild,v 1.5 2013/01/14 09:17:22 jlec Exp $
 
 EAPI=5
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://aufs.sourceforge.net/"
 SRC_URI="http://dev.gentoo.org/~jlec/distfiles/${P}.tar.xz"
 # git archive -v --prefix=aufs-util-3.6/ \
 # --remote=git://aufs.git.sourceforge.net/gitroot/aufs/aufs-util.git aufs3.0 \
-# -o aufs-util-3.6.tar.xz
+# -o aufs-util-3.6.tar && xz -ve9 aufs-util-3.6.tar
 
 SLOT="0"
 LICENSE="GPL-2"
