@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu/qemu-1.2.2.ebuild,v 1.8 2013/01/14 22:24:07 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu/qemu-1.2.2.ebuild,v 1.10 2013/01/14 23:06:16 cardoe Exp $
 
 EAPI="4"
 
@@ -203,6 +203,7 @@ src_prepare() {
 		Makefile Makefile.target || die
 
 	python_convert_shebangs -r 2 "${S}/scripts/kvm/kvm_stat"
+	python_convert_shebangs -r 2 "${S}/scripts/kvm/vmxcap"
 
 	epatch "${FILESDIR}"/qemu-1.2.0-cflags.patch
 	[[ -n ${BACKPORTS} ]] && \
@@ -332,7 +333,7 @@ src_install() {
 			ewarn "The deprecated '/usr/bin/kvm' symlink is no longer installed"
 			ewarn "You should use '/usr/bin/qemu-kvm', you may need to edit"
 			ewarn "your libvirt configs or other wrappers for ${PN}"
-		else
+		elif use x86 || use amd64; then
 			elog "You disabled QEMU_SOFTMMU_TARGETS=x86_64, this disables install"
 			elog "of the /usr/bin/qemu-kvm symlink."
 		fi
@@ -342,6 +343,7 @@ src_install() {
 	newdoc pc-bios/README README.pc-bios
 
 	use python && dobin scripts/kvm/kvm_stat
+	use python && dobin scripts/kvm/vmxcap
 
 	# Avoid collision with app-emulation/libcacard
 	use smartcard && mv "${ED}/usr/bin/vscclient" "${ED}/usr/bin/qemu-vscclient"
