@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ccpn/ccpn-2.2.2_p130110.ebuild,v 1.1 2013/01/10 17:41:33 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ccpn/ccpn-2.2.2_p130110.ebuild,v 1.2 2013/01/16 11:43:05 jlec Exp $
 
 EAPI=4
 
@@ -97,7 +97,7 @@ src_prepare() {
 		-e "s|^\(GLUT_NOT_IN_GL =\).*|\1|g" \
 		-e "s|^\(X11_LIB_FLAGS =\).*|\1 -L${EPREFIX}/usr/$(get_libdir)|g" \
 		-e "s|^\(TCL_LIB_FLAGS =\).*|\1 -L${EPREFIX}/usr/$(get_libdir)|g" \
-		-e "s|^\(TK_LIB =\).*|\1 -ltk${tk_ver}|g" \
+		-e "s|^\(TK_LIB =\).*|\1 -ltk|g" \
 		-e "s|^\(TK_LIB_FLAGS =\).*|\1 -L${EPREFIX}/usr/$(get_libdir)|g" \
 		-e "s|^\(PYTHON_INCLUDE_FLAGS =\).*|\1 -I${EPREFIX}/$(python_get_includedir)|g" \
 		-e "s|^\(PYTHON_LIB =\).*|\1 $(python_get_library -l)|g" \
