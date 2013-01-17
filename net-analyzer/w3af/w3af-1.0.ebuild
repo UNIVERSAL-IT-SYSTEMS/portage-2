@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/w3af/w3af-1.0.ebuild,v 1.5 2013/01/17 16:44:48 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/w3af/w3af-1.0.ebuild,v 1.4 2011/07/15 20:18:14 maekke Exp $
 
 EAPI=2
 
@@ -25,6 +25,7 @@ RDEPEND=">=dev-python/fpconst-0.7.2
 	dev-python/nltk
 	dev-python/pyopenssl
 	dev-python/pyPdf
+	dev-python/pysqlite
 	dev-python/python-cluster
 	dev-python/pyyaml
 	dev-python/simplejson

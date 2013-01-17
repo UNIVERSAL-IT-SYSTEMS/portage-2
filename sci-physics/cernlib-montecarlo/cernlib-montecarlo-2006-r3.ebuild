@@ -1,9 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-physics/cernlib-montecarlo/cernlib-montecarlo-2006-r3.ebuild,v 1.4 2013/01/17 18:53:15 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-physics/cernlib-montecarlo/cernlib-montecarlo-2006-r3.ebuild,v 1.3 2012/10/24 21:13:48 ulm Exp $
 
 EAPI=4
-
 inherit eutils toolchain-funcs
 
 DEB_PN=mclibs
@@ -20,7 +19,7 @@ SRC_URI="
 SLOT="0"
 LICENSE="GPL-2 LGPL-2 BSD"
 IUSE="+herwig"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	x11-libs/motif:0
@@ -36,18 +35,18 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${DEB_PN}-${DEB_PV}.orig"
 
 src_prepare() {
-	mv ../debian . || die
-	cp debian/add-ons/Makefile . || die
+	mv ../debian .
+	cp debian/add-ons/Makefile .
 	export DEB_BUILD_OPTIONS="$(tc-getFC) nostrip nocheck"
 	sed -i \
-		-e "s:/usr/local:${EROOT}/usr:g" \
-		Makefile || die
+		-e 's:/usr/local:/usr:g' \
+		Makefile || die "sed'ing the Makefile failed"
 
 	einfo "Applying Debian patches"
 	emake -j1 patch
 	use herwig || epatch "${FILESDIR}"/${P}-noherwig.patch
 	# since we depend on cfortran, do not use the one from cernlib
-	rm src/include/cfortran/cfortran.h || die
+	rm -f src/include/cfortran/cfortran.h
 }
 
 src_compile() {
@@ -61,8 +60,8 @@ src_test() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" MCDOC="${ED}usr/share/doc/${PF}" install
-	cd debian
+	emake DESTDIR="${D}" MCDOC="${D}usr/share/doc/${PF}" install
+	cd "${S}"/debian
 	dodoc changelog README.* deadpool.txt copyright
 	newdoc add-ons/README README.add-ons
 }
