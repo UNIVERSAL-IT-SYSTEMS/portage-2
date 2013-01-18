@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-197-r3.ebuild,v 1.2 2013/01/17 00:42:19 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-197-r3.ebuild,v 1.8 2013/01/17 21:04:58 ssuominen Exp $
 
 EAPI=4
 
@@ -42,18 +42,18 @@ COMMON_DEPEND=">=sys-apps/util-linux-2.20
 
 DEPEND="${COMMON_DEPEND}
 	dev-util/gperf
-	>=dev-util/intltool-0.50
 	virtual/os-headers
 	virtual/pkgconfig
 	!<sys-kernel/linux-headers-${KV_min}
-	doc? ( dev-util/gtk-doc )
+	doc? ( >=dev-util/gtk-doc-1.18 )
 	hwdb? ( >=sys-apps/hwids-20121202.2[udev] )"
 
 if [[ ${PV} = 9999* ]]
 then
 	DEPEND="${DEPEND}
 		app-text/docbook-xsl-stylesheets
-		dev-libs/libxslt"
+		dev-libs/libxslt
+		>=dev-util/intltool-0.50"
 fi
 
 RDEPEND="${COMMON_DEPEND}
@@ -129,6 +129,27 @@ src_prepare()
 		EPATCH_SUFFIX=patch EPATCH_FORCE=yes epatch
 	fi
 
+	# Remove requirements for gettext and intltool wrt bug #443028
+	if ! has_version dev-util/intltool && ! [[ ${PV} = 9999* ]]; then
+		sed -i \
+			-e '/INTLTOOL_APPLIED_VERSION=/s:=.*:=0.40.0:' \
+			-e '/XML::Parser perl module is required for intltool/s|^|:|' \
+			configure || die
+		eval export INTLTOOL_{EXTRACT,MERGE,UPDATE}=/bin/true
+		eval export {MSG{FMT,MERGE},XGETTEXT}=/bin/true
+	fi
+
+	# This check is for maintainers only
+	if [[ ${PV} = 9999* ]]; then
+		# Support uClibc wrt bug #443030 with a safe kludge so we know when
+		# to check for other uses than logs. See the echo for secure_getenv
+		# at the end of src_prepare().
+		if ! [[ $(grep -r secure_getenv * | wc -l) -eq 16 ]]; then
+			eerror "The line count of secure_getenv failed, see bug #443030"
+			die
+		fi
+	fi
+
 	# apply user patches
 	epatch_user
 
@@ -153,6 +174,12 @@ src_prepare()
 	else
 		check_default_rules
 		elibtoolize
+	fi
+
+	# This is the actual fix for bug #443030 if the check earlier doesn't fail.
+	if ! use elibc_glibc; then
+		echo '#define secure_getenv(x) NULL' >> config.h.in
+		sed -i -e '/error.*secure_getenv/s:.*:#define secure_getenv(x) NULL:' src/shared/missing.h || die
 	fi
 }
 

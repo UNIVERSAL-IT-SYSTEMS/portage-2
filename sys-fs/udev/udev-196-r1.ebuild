@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-196-r1.ebuild,v 1.2 2012/12/05 20:34:52 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-196-r1.ebuild,v 1.4 2013/01/17 21:41:59 ssuominen Exp $
 
 EAPI=4
 

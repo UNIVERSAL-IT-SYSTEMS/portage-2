@@ -1,10 +1,10 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/udev/udev-196.ebuild,v 1.5 2012/12/12 15:32:42 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/virtual/udev/udev-196.ebuild,v 1.7 2013/01/17 21:54:20 ssuominen Exp $
 
 EAPI=2
 
-DESCRIPTION="Virtual for udev implementation and number of its features"
+DESCRIPTION="Virtual to select between sys-fs/udev and sys-fs/eudev"
 HOMEPAGE=""
 SRC_URI=""
 
