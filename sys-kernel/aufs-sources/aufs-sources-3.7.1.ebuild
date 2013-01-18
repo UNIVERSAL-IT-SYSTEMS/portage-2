@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/aufs-sources/aufs-sources-3.7.1.ebuild,v 1.3 2013/01/16 20:07:32 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/aufs-sources/aufs-sources-3.7.1.ebuild,v 1.4 2013/01/18 12:06:09 jlec Exp $
 
 EAPI=5
 
@@ -27,7 +27,6 @@ SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI} ${AUFS_URI}"
 UNIPATCH_LIST="
 	"${WORKDIR}"/aufs3-kbuild.patch
 	"${WORKDIR}"/aufs3-base.patch"
-#	${WORKDIR}/aufs3-proc_map.patch"
 
 PDEPEND="sys-fs/aufs-util"
 
