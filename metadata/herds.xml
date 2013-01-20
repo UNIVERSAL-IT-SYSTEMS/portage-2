@@ -20,7 +20,7 @@
    always a description without a lang attribute. Also there are no overlapping
    descriptions allowed (multiple description tags with the same language)
 
-   $Header: /var/cvsroot/gentoo/xml/htdocs/proj/en/metastructure/herds/herds.xml,v 1.984 2013/01/06 17:32:07 antarus Exp $
+   $Header: /var/cvsroot/gentoo/xml/htdocs/proj/en/metastructure/herds/herds.xml,v 1.987 2013/01/20 12:57:32 kensington Exp $
 
 -->
 <herds>
@@ -761,10 +761,6 @@
     <name>Justin Bronder</name>
   </maintainer>
   <maintainer>
-    <email>spock@gentoo.org</email>
-    <name>Michał Januszewski</name>
-  </maintainer>
-  <maintainer>
     <email>grozin@gentoo.org</email>
     <name>Andrey Grozin</name>
   </maintainer>
@@ -897,10 +893,6 @@
   <maintainer>
     <email>bicatali@gentoo.org</email>
     <name>Sébastien Fabbro</name>
-  </maintainer>
-  <maintainer>
-    <email>spock@gentoo.org</email>
-    <name>Michał Januszewski</name>
   </maintainer>
   <maintainer>
     <email>xarthisius@gentoo.org</email>
@@ -1364,10 +1356,6 @@
   <maintainer>
     <email>gregkh@gentoo.org</email>
     <name>Greg Kroah-Hartman</name>
-  </maintainer>
-  <maintainer>
-    <email>spock@gentoo.org</email>
-    <name>Michal Januszewski</name>
   </maintainer>
   <maintainer>
     <email>chainsaw@gentoo.org</email>
@@ -1858,10 +1846,6 @@
   <email>net-irc@gentoo.org</email>
   <description>IRC and related ebuilds</description>
   <maintainer>
-    <email>swegener@gentoo.org</email>
-    <name>Sven Wegener</name>
-  </maintainer>
-  <maintainer>
     <email>gurligebis@gentoo.org</email>
     <name>Bjarke Istrup Pedersen</name>
   </maintainer>
@@ -1901,10 +1885,6 @@
   <name>shell-tools</name>
   <email>shell-tools@gentoo.org</email>
   <description>Tools used from within a shell environment</description>
-  <maintainer>
-    <email>swegener@gentoo.org</email>
-    <name>Sven Wegener</name>
-  </maintainer>
   <maintainer>
     <email>darkside@gentoo.org</email>
   </maintainer>
@@ -2029,8 +2009,8 @@
   <email>net-news@gentoo.org</email>
   <description>Herd for NNTP related packages in net-news</description>
   <maintainer>
-    <email>swegener@gentoo.org</email>
-    <name>Sven Wegener</name>
+    <email>kensington@gentoo.org</email>
+    <name>Michael Palimaka</name>
   </maintainer>
 </herd>
 <herd>
