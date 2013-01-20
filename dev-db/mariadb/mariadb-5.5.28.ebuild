@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mariadb/mariadb-5.5.28.ebuild,v 1.2 2012/12/18 17:51:01 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mariadb/mariadb-5.5.28.ebuild,v 1.4 2013/01/20 02:09:35 robbat2 Exp $
 
 EAPI="4"
 MY_EXTRAS_VER="20120906-1344Z"
@@ -65,7 +65,7 @@ src_test() {
 		export MTR_BUILD_THREAD="$((${RANDOM} % 100))"
 
 		# create directories because mysqladmin might right out of order
-		mkdir -p "${S}"/mysql-test/var-{tests}{,/log}
+		mkdir -p "${S}"/mysql-test/var-tests{,/log}
 
 		# These are failing in MySQL 5.5 for now and are believed to be
 		# false positives:
