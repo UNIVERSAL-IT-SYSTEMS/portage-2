@@ -1,8 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev-init-scripts/udev-init-scripts-9999.ebuild,v 1.13 2013/01/09 07:18:50 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev-init-scripts/udev-init-scripts-9999.ebuild,v 1.14 2013/01/21 17:53:11 williamh Exp $
 
 EAPI=4
+
+inherit eutils
 
 if [ "${PV}" = "9999" ]; then
 	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/udev-gentoo-scripts.git"
@@ -27,6 +29,11 @@ DEPEND="virtual/pkgconfig"
 RDEPEND=">=virtual/udev-180
 	sys-apps/openrc
 	!<sys-fs/udev-186"
+
+src_prepare()
+{
+	epatch_user
+}
 
 pkg_postinst()
 {
