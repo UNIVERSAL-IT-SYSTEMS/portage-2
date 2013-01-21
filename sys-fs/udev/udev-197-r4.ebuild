@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-197-r4.ebuild,v 1.7 2013/01/21 18:56:20 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-197-r4.ebuild,v 1.13 2013/01/21 20:41:00 floppym Exp $
 
 EAPI=4
 
@@ -68,7 +68,7 @@ RDEPEND="${COMMON_DEPEND}
 	!<sys-kernel/genkernel-3.4.25"
 
 PDEPEND=">=virtual/udev-197
-	openrc? ( >=sys-fs/udev-init-scripts-19 )"
+	openrc? ( >=sys-fs/udev-init-scripts-19-r1 )"
 
 S=${WORKDIR}/systemd-${PV}
 
@@ -456,13 +456,14 @@ pkg_postinst()
 			ewarn "information on this feature."
 	fi
 
-	local fstab="${ROOT}"etc/fstab
-	if [[ $(grep -q ^udev ${fstab}) ]]; then
-		ewarn "You should review and/or remove your udev starting line from ${fstab}"
-		ewarn "Not doing so might result in unbootable system."
-		ewarn "You have been warned. For details, see:"
-		ewarn "http://bugs.gentoo.org/453186"
-	fi
+	local fstab="${ROOT}"etc/fstab dev path fstype rest
+	while read -r dev path fstype rest; do
+		if [[ ${path} == /dev && ${fstype} != devtmpfs ]]; then
+			ewarn "You need to edit your /dev line in ${fstab} to have devtmpfs"
+			ewarn "filesystem. Otherwise udev won't be able to boot."
+			ewarn "See, http://bugs.gentoo.org/453186"
+		fi
+	done < "${fstab}"
 
 	if [[ -d ${ROOT}usr/lib/udev ]]
 	then
