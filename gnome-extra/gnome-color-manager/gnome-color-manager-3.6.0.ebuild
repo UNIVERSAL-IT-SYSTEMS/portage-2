@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-color-manager/gnome-color-manager-3.6.0.ebuild,v 1.6 2013/01/06 09:38:40 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-extra/gnome-color-manager/gnome-color-manager-3.6.0.ebuild,v 1.7 2013/01/22 07:25:06 tetromino Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -39,7 +39,7 @@ COMMON_DEPEND="
 	raw? ( media-gfx/exiv2 )
 "
 RDEPEND="${COMMON_DEPEND}
-	media-gfx/shared-color-profiles"
+	|| ( >=x11-misc/colord-0.1.27 media-gfx/shared-color-profiles )"
 # docbook-sgml-{utils,dtd:4.1} needed to generate man pages
 DEPEND="${COMMON_DEPEND}
 	app-text/docbook-sgml-dtd:4.1

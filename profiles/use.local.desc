@@ -801,6 +801,7 @@ app-office/lyx:rtf - Add support for RTF import/export packages
 app-office/lyx:xetex - Add support for XeTeX typesetting
 app-office/rabbit:markdown - Markdown support (dev-ruby/kramdown)
 app-office/rabbit:tgif - tgif support (media-gfx/tgif)
+app-office/scribus:aspell - Enable support for spell checking with app-text/aspell
 app-office/scribus:hunspell - Enable support for spell checking with app-text/hunspell
 app-office/scribus:linguas_cs_CZ - Language support for cs_CZ
 app-office/scribus:linguas_da_DK - Language support for da_DK
@@ -2082,8 +2083,6 @@ gnome-base/gnome-control-center:colord - Support color management using x11-misc
 gnome-base/gnome-control-center:gnome-online-accounts - Enable configuration panel for net-libs/gnome-online-accounts accounts
 gnome-base/gnome-control-center:i18n - Enable support for enhanced input methods through app-i18n/ibus
 gnome-base/gnome-control-center:socialweb - Add support for desktop background images from Flickr using net-libs/libsocialweb
-gnome-base/gnome-control-center:systemd - Use sys-apps/systemd instead of sys-auth/consolekit for session tracking
-gnome-base/gnome-control-center:wacom - Enable support for Wacom tablets and drawing devices
 gnome-base/gnome-desktop:license-docs - Install help files documenting GNOME's licenses
 gnome-base/gnome-extra-apps:shotwell - Install the media-gfx/shotwell photo manager
 gnome-base/gnome-extra-apps:tracker - Install the app-misc/tracker indexer and the GNOME packages that require it
@@ -2097,8 +2096,6 @@ gnome-base/gnome-settings-daemon:colord - Support color management using x11-mis
 gnome-base/gnome-settings-daemon:i18n - Enable support for enhanced input methods through app-i18n/ibus
 gnome-base/gnome-settings-daemon:packagekit - Enable support for the distro-neutral package manager GUI app-admin/packagekit
 gnome-base/gnome-settings-daemon:short-touchpad-timeout - Change the touchpad timeout so that it's effective for fast typists
-gnome-base/gnome-settings-daemon:systemd - Use sys-apps/systemd instead of sys-auth/consolekit for session tracking
-gnome-base/gnome-settings-daemon:wacom - Enable support for Wacom tablets and drawing devices
 gnome-base/gnome-shell:i18n - Enable support for enhanced input methods through app-i18n/ibus
 gnome-base/gnome-shell:systemd - Use sys-apps/systemd instead of sys-auth/consolekit for session tracking
 gnome-base/gvfs:afp - Enables support for accessing AFP (Apple Filing Protocol) network shares
@@ -2107,7 +2104,6 @@ gnome-base/gvfs:bluray - Enable playback of Blu-ray filesystems using media-libs
 gnome-base/gvfs:fuse - Enables fuse mount points in $HOME/.gvfs for legacy application access
 gnome-base/gvfs:gdu - Enable sys-apps/gnome-disk-utility integration
 gnome-base/gvfs:http - Enable the HTTP/DAV backend using net-libs/libsoup-gnome
-gnome-base/gvfs:systemd - Use sys-apps/systemd seat information for tracking owners of removable volumes
 gnome-base/gvfs:udev - Enable udev base replacement code for cdda feature
 gnome-base/gvfs:udisks - Enable volume monitoring using sys-fs/udisks
 gnome-base/libgnome-keyring:vala - Enable bindings for dev-lang/vala
@@ -6073,6 +6069,7 @@ x11-misc/bmpanel:libev - Use the libev event loop interface
 x11-misc/bmpanel:libevent - Use the libevent event loop interface
 x11-misc/bumblebee:bbswitch - Add dependency on sys-kernel/bbswitch for PM feature
 x11-misc/cdm:consolekit - Enable native consolekit support
+x11-misc/colord:extra-print-profiles - Generate extra print profiles. Warning: significant build time and memory requirements.
 x11-misc/colord:gusb - Enable dev-libs/libgusb support, needed for colorimeter drivers
 x11-misc/colord:vala - Generate bindings for dev-lang/vala
 x11-misc/dmenu:xft - Enable unofficial x11-libs/libXft support
