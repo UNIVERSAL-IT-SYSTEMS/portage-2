@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/xwax/xwax-1.0.ebuild,v 1.5 2012/02/25 15:10:13 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/xwax/xwax-1.3.ebuild,v 1.1 2013/01/22 01:30:05 nixphoeni Exp $
 
-EAPI=4
+EAPI=5
 inherit toolchain-funcs
 
 DESCRIPTION="Digital vinyl emulation software"
@@ -11,7 +11,7 @@ SRC_URI="http://www.xwax.co.uk/releases/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="alsa jack oss cdda mp3 +fallback"
 REQUIRED_USE="|| ( cdda mp3 fallback )
 	|| ( alsa jack oss )"
@@ -38,7 +38,8 @@ src_prepare() {
 		-e 's/^xwax\.o:.*\.version//' \
 		Makefile || die "sed failed"
 
-	# Replace any decoder commands in the import script, if necessary
+	# Replace any decoder commands in the import script, if necessary.
+	# This may not be necessary with eselect-mpg123 in the future.
 	if [[ `use mp3` ]]; then
 		# mpg123 is upstream's default
 		if has_version media-sound/mpg123; then
@@ -67,7 +68,7 @@ src_configure() {
 src_compile() {
 	# EXECDIR is the default directory in which xwax will look for
 	# the 'xwax-import' and 'xwax-scan' scripts
-	emake EXECDIR="\$(BINDIR)" VERSION="${PV}"
+	emake EXECDIR="\$(BINDIR)" VERSION="${PV}" xwax
 }
 
 src_install() {
@@ -75,8 +76,8 @@ src_install() {
 	# needed, running the sed script required to get the man directory
 	# correct, and removing the GPL-2 after a 'make install' run
 	dobin xwax || die "failed to install xwax"
-	newbin import xwax-import || die "failed to install xwax-import"
 	newbin scan xwax-scan || die "failed to install xwax-scan"
+	newbin import xwax-import || die "failed to install xwax-import"
 	doman xwax.1 || die "failed to install man page"
 
 	dodoc ${DOCS} || die "failed to install docs"
