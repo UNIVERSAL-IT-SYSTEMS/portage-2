@@ -1,13 +1,13 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/sigil/sigil-0.4.905_beta1.ebuild,v 1.2 2012/08/10 13:40:45 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/sigil/sigil-0.6.2.ebuild,v 1.1 2013/01/24 20:56:27 sbriesen Exp $
 
 EAPI=4
 CMAKE_BUILD_TYPE="Release"
 
 inherit eutils cmake-utils
 
-MY_P="Sigil-${PV/_beta1}-Code"
+MY_P="Sigil-${PV}-Code"
 
 DESCRIPTION="Sigil is a multi-platform WYSIWYG ebook editor for ePub format."
 HOMEPAGE="http://code.google.com/p/sigil/"
@@ -19,10 +19,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="
-	>=x11-libs/qt-xmlpatterns-4.7.2:4
-	>=x11-libs/qt-webkit-4.7.2:4
-	>=x11-libs/qt-svg-4.7.2:4
-	>=x11-libs/qt-gui-4.7.2:4"
+	>=sys-libs/zlib-1.2.7[minizip]
+	>=dev-libs/libpcre-8.31
+	>=dev-libs/boost-1.49
+	>=app-text/hunspell-1.3.2
+	>=dev-libs/xerces-c-3.1.1
+	>=x11-libs/qt-webkit-4.8:4
+	>=x11-libs/qt-svg-4.8:4
+	>=x11-libs/qt-gui-4.8:4"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}"
