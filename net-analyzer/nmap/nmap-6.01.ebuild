@@ -1,9 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nmap/nmap-6.01.ebuild,v 1.22 2013/01/18 14:58:04 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nmap/nmap-6.01.ebuild,v 1.24 2013/01/26 18:18:04 jer Exp $
 
 EAPI="4"
-PYTHON_DEPEND="2"
 
 inherit eutils flag-o-matic python toolchain-funcs
 
@@ -48,7 +47,9 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${MY_P}"
 
 pkg_setup() {
-	python_set_active_version 2
+	if use gtk || use ndiff; then
+		python_set_active_version 2
+	fi
 }
 
 src_unpack() {
@@ -56,7 +57,6 @@ src_unpack() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-4.75-include.patch
 	epatch "${FILESDIR}"/${PN}-4.75-nolua.patch
 	epatch "${FILESDIR}"/${PN}-5.10_beta1-string.patch
 	epatch "${FILESDIR}"/${PN}-5.21-python.patch
