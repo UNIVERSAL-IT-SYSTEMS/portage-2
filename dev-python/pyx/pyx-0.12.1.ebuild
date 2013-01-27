@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyx/pyx-0.12.1.ebuild,v 1.1 2012/11/14 07:24:36 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyx/pyx-0.12.1.ebuild,v 1.2 2013/01/27 14:25:26 idella4 Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
