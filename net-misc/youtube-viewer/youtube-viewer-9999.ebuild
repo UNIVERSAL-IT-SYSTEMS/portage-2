@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-viewer/youtube-viewer-9999.ebuild,v 1.9 2013/01/07 19:33:20 hasufell Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-viewer/youtube-viewer-9999.ebuild,v 1.10 2013/01/27 20:14:52 hasufell Exp $
 
 EAPI=4
 
@@ -20,12 +20,10 @@ RDEPEND="
 	>=dev-lang/perl-5.16.0
 	dev-perl/Data-Dump
 	dev-perl/libwww-perl
-	dev-perl/XML-Fast
 	|| ( media-video/mplayer[X,network]
 		media-video/mplayer2[X,network] )
 	virtual/perl-File-Spec
 	virtual/perl-Getopt-Long
-	virtual/perl-Scalar-List-Utils
 	virtual/perl-Term-ANSIColor
 	gtk? (
 		>=dev-perl/gtk2-perl-1.244.0
@@ -55,8 +53,13 @@ pkg_postinst() {
 	perl-module_pkg_postinst
 	einfo
 	elog "optional dependencies:"
+	elog "  dev-perl/LWP-Protocol-https or dev-perl/libwww-perl[ssl]"
+	elog "    (for HTTPS protocol and login support)"
 	elog "  dev-perl/TermReadKey (to get the terminal width size)"
 	elog "  dev-perl/Term-ReadLine-Gnu (for a better STDIN support)"
+	elog "  dev-perl/XML-Fast (faster XML to HASH conversion)"
 	elog "  net-misc/gcap (for retrieving Youtube closed captions)"
+	elog "  virtual/perl-File-Temp (for posting comments)"
+	elog "  virtual/perl-Scalar-List-Utils (to shuffle the playlists (--shuffle)"
 	einfo
 }
