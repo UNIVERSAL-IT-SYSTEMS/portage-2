@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/iputils/iputils-99999999.ebuild,v 1.7 2013/01/25 05:28:28 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/iputils/iputils-99999999.ebuild,v 1.8 2013/01/27 18:04:28 vapier Exp $
 
 # For released versions, we precompile the man/html pages and store
 # them in a tarball on our mirrors.  This avoids ugly issues while
@@ -9,7 +9,7 @@
 
 EAPI="4"
 
-inherit flag-o-matic eutils toolchain-funcs
+inherit flag-o-matic eutils toolchain-funcs fcaps
 if [[ ${PV} == "99999999" ]] ; then
 	EGIT_REPO_URI="git://www.linux-ipv6.org/gitroot/iputils"
 	inherit git-2
@@ -69,25 +69,28 @@ src_compile() {
 	fi
 }
 
+ipv6() { usex ipv6 "$*" '' ; }
+
 src_install() {
 	into /
-	dobin ping
-	use ipv6 && dobin ping6
-	dosbin arping
+	dobin arping ping $(ipv6 ping6)
 	into /usr
-	dosbin tracepath
-	use ipv6 && dosbin trace{path,route}6
-	dosbin clockdiff rarpd rdisc ipg tftpd
-
-	fperms 4711 /bin/ping
-	use ipv6 && fperms 4711 /bin/ping6 /usr/sbin/traceroute6
+	dobin clockdiff
+	dosbin rarpd rdisc ipg tftpd tracepath $(ipv6 tracepath6)
 
 	dodoc INSTALL RELNOTES
 	use ipv6 \
 		&& dosym ping.8 /usr/share/man/man8/ping6.8 \
 		|| rm -f doc/*6.8
-	rm -f doc/setkey.8
+	rm -f doc/{setkey,traceroute6}.8
 	doman doc/*.8
 
 	use doc && dohtml doc/*.html
+}
+
+pkg_postinst() {
+	fcaps cap_net_raw \
+		bin/{ar,}ping \
+		$(ipv6 bin/ping6) \
+		usr/bin/clockdiff
 }
