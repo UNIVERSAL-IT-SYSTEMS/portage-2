@@ -1,6 +1,18 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.641 2013/01/26 15:01:52 swift Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.645 2013/01/27 11:48:48 radhermit Exp $
+
+  27 Jan 2013; Tim Harder <radhermit@gentoo.org> vim-plugin.eclass:
+  Remove files before installing docs.
+
+  27 Jan 2013; Tim Harder <radhermit@gentoo.org> vim-plugin.eclass:
+  Also remove stray makefiles.
+
+  27 Jan 2013; Tim Harder <radhermit@gentoo.org> vim-plugin.eclass:
+  Remove unwanted files that may exist.
+
+  27 Jan 2013; Joerg Bornkessel <hd_brummy@gentoo.org> vdr-plugin-2.eclass:
+  some fixes, install new makefilehandling; thx to zoolock@irc gentoo.vdr
 
   26 Jan 2013; Sven Vermeulen <swift@gentoo.org> selinux-policy-2.eclass:
   Supporting removal of SELinux modules
