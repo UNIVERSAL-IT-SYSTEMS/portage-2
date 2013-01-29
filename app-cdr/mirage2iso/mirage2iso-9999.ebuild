@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/mirage2iso/mirage2iso-9999.ebuild,v 1.1 2012/12/15 12:33:50 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/mirage2iso/mirage2iso-9999.ebuild,v 1.2 2013/01/28 23:03:47 mgorny Exp $
 
 EAPI=4
 
@@ -13,7 +13,7 @@ inherit git-2
 
 inherit autotools-utils versionator
 
-TESTS_PV=$(get_version_component_range 1-2)
+TESTS_PV=0.3
 
 DESCRIPTION="CD/DVD image converter using libmirage"
 HOMEPAGE="https://bitbucket.org/mgorny/mirage2iso/"
@@ -25,7 +25,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="pinentry test"
 
-COMMON_DEPEND="dev-libs/libmirage
+COMMON_DEPEND=">=dev-libs/libmirage-2.0.0
 	dev-libs/glib:2
 	pinentry? ( dev-libs/libassuan )"
 DEPEND="${COMMON_DEPEND}
