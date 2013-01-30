@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/wireshark-1.6.13.ebuild,v 1.4 2013/01/30 04:28:06 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/wireshark-1.6.13.ebuild,v 1.8 2013/01/30 15:48:53 ago Exp $
 
 EAPI=5
 PYTHON_DEPEND="python? 2"
@@ -13,9 +13,9 @@ SRC_URI="http://www.wireshark.org/download/src/all-versions/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd"
 IUSE="
-	adns doc doc-pdf gtk ipv6 libadns lua gcrypt geoip kerberos profile
+	adns doc doc-pdf gtk ipv6 libadns lua crypt geoip kerberos profile
 	+pcap portaudio python +caps selinux smi ssl threads zlib
 "
 RDEPEND=">=dev-libs/glib-2.14:2
@@ -27,7 +27,7 @@ RDEPEND=">=dev-libs/glib-2.14:2
 		dev-libs/atk
 		x11-misc/xdg-utils )
 	ssl? ( <net-libs/gnutls-3 )
-	gcrypt? ( dev-libs/libgcrypt )
+	crypt? ( dev-libs/libgcrypt )
 	pcap? ( net-libs/libpcap )
 	caps? ( sys-libs/libcap )
 	kerberos? ( virtual/krb5 )
@@ -165,7 +165,7 @@ src_configure() {
 		$(use_enable profile profile-build) \
 		$(use_enable threads) \
 		$(use_with caps libcap) \
-		$(use_with gcrypt) \
+		$(use_with crypt) \
 		$(use_with geoip) \
 		$(use_with kerberos krb5) \
 		$(use_with lua) \
