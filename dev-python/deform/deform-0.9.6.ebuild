@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/deform/deform-0.9.6.ebuild,v 1.1 2013/01/22 07:02:44 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/deform/deform-0.9.6.ebuild,v 1.2 2013/01/31 09:45:18 idella4 Exp $
 
 EAPI="3"
 
@@ -19,6 +19,8 @@ LICENSE="repoze"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="test"
+# tests require zope.deprecation
+RESTRICT="test"
 
 # Depend on peppercorn, translationstring and colander with Python 3 support
 RDEPEND=">=dev-python/translationstring-1.1
