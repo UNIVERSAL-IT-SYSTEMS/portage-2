@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.168 2013/01/31 10:38:57 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.170 2013/02/01 17:36:30 ssuominen Exp $
 
 EAPI=4
 
@@ -133,6 +133,12 @@ src_prepare()
 	then
 		EPATCH_SUFFIX=patch EPATCH_FORCE=yes epatch
 	fi
+
+	# These are missing from upstream 50-udev-default.rules
+	cat <<-EOF > "${T}"/40-gentoo.rules
+	SUBSYSTEM=="snd", GROUP="audio"
+	SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", GROUP="usb"
+	EOF
 
 	# Remove requirements for gettext and intltool wrt bug #443028
 	if ! has_version dev-util/intltool && ! [[ ${PV} = 9999* ]]; then
@@ -352,7 +358,7 @@ src_install()
 
 	# install gentoo-specific rules
 	insinto /lib/udev/rules.d
-	doins "${FILESDIR}"/40-gentoo.rules
+	doins "${T}"/40-gentoo.rules
 
 	# install udevadm symlink
 	dosym ../bin/udevadm /sbin/udevadm
