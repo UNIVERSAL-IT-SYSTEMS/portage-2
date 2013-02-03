@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-session/gnome-session-3.6.2.ebuild,v 1.1 2012/12/25 23:21:21 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/gnome-base/gnome-session/gnome-session-3.6.2-r2.ebuild,v 1.1 2013/02/03 00:39:14 tetromino Exp $
 
 EAPI="5"
 GCONF_DEBUG="yes"
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2 LGPL-2 FDL-1.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-solaris"
 IUSE="doc elibc_FreeBSD gconf ipv6 systemd"
 
 # x11-misc/xdg-user-dirs{,-gtk} are needed to create the various XDG_*_DIRs, and
@@ -70,20 +70,22 @@ DEPEND="${COMMON_DEPEND}
 # gnome-base/gdm does not provide gnome.desktop anymore
 
 src_prepare() {
+	# upower-client problems, bug #450150; fixed in 3.6.3
+	epatch "${FILESDIR}/${P}-upower.patch"
+
 	# Silence errors due to weird checks for libX11
 	sed -e 's/\(PANGO_PACKAGES="\)pangox/\1/' -i configure.ac configure || die
 	gnome2_src_prepare
 }
 
 src_configure() {
-	G2CONF="${G2CONF}
-		--disable-deprecation-flags
-		--docdir="${EPREFIX}/usr/share/doc/${PF}"
-		$(use_enable doc docbook-docs)
-		$(use_enable gconf)
-		$(use_enable ipv6)
-		$(use_enable systemd)"
-	gnome2_src_configure
+	gnome2_src_configure \
+		--disable-deprecation-flags \
+		--docdir="${EPREFIX}/usr/share/doc/${PF}" \
+		$(use_enable doc docbook-docs) \
+		$(use_enable gconf) \
+		$(use_enable ipv6) \
+		$(use_enable systemd)
 }
 
 src_install() {
@@ -95,7 +97,7 @@ src_install() {
 
 	dodir /usr/share/gnome/applications/
 	insinto /usr/share/gnome/applications/
-	doins "${FILESDIR}/defaults.list"
+	newins "${FILESDIR}/defaults.list-r1" defaults.list
 
 	dodir /etc/X11/xinit/xinitrc.d/
 	exeinto /etc/X11/xinit/xinitrc.d/

@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.129 2013/01/20 02:27:14 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.130 2013/02/03 00:52:52 tetromino Exp $
 
 EAPI="5"
 
@@ -20,7 +20,7 @@ fi
 
 GV="1.9"
 MV="0.0.8"
-PULSE_PATCHES="winepulse-patches-1.5.22"
+PULSE_PATCHES="winepulse-patches-1.5.23"
 WINE_GENTOO="wine-gentoo-2012.11.24"
 DESCRIPTION="Free implementation of Windows(tm) on Unix"
 HOMEPAGE="http://www.winehq.org/"
