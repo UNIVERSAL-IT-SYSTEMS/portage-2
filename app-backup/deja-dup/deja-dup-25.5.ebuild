@@ -1,16 +1,18 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/deja-dup-23.2.ebuild,v 1.3 2012/10/07 16:37:38 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-backup/deja-dup/deja-dup-25.5.ebuild,v 1.2 2013/02/05 07:40:57 jlec Exp $
 
-EAPI=4
+EAPI=5
 
 GNOME2_LA_PUNT="yes"
 
-inherit autotools eutils gnome2
+VALA_MIN_API_VERSION="0.16"
+
+inherit eutils gnome2 vala
 
 DESCRIPTION="Simple backup tool using duplicity back-end"
 HOMEPAGE="https://launchpad.net/deja-dup/"
-SRC_URI="http://launchpad.net/${PN}/24/${PV}/+download/${P}.tar.xz"
+SRC_URI="http://launchpad.net/${PN}/26/${PV}/+download/${P}.tar.xz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -20,21 +22,21 @@ IUSE="nautilus"
 RESTRICT="test"
 
 COMMON_DEPEND="
+	app-crypt/libsecret[vala]
 	dev-libs/glib:2
 	dev-libs/libpeas
 	x11-libs/gtk+:3
 	x11-libs/libnotify
 
-	app-backup/duplicity
+	>=app-backup/duplicity-0.6.21
 	dev-libs/dbus-glib
-	gnome-base/gnome-keyring
 
 	nautilus? ( gnome-base/nautilus )"
 RDEPEND="${COMMON_DEPEND}
 	gnome-base/gvfs[fuse]"
 DEPEND="${COMMON_DEPEND}
 	app-text/yelp-tools
-	dev-lang/vala:0.16
+	$(vala_depend)
 	dev-perl/Locale-gettext
 	virtual/pkgconfig
 	dev-util/intltool
@@ -48,14 +50,7 @@ src_prepare() {
 		--without-unity
 		--disable-schemas-compile
 		--disable-static"
-	export VALAC=$(type -p valac-0.16)
 
-	epatch "${FILESDIR}"/${P}-add-missing-include.patch
+	vala_src_prepare
 	gnome2_src_prepare
-	AT_NOELIBTOOLIZE=yes eautoreconf
-}
-
-src_install() {
-	gnome2_src_install
-	domenu data/deja-dup.desktop
 }
