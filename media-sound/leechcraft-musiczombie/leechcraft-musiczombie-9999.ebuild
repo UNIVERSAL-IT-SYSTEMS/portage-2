@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/leechcraft-musiczombie/leechcraft-musiczombie-9999.ebuild,v 1.2 2013/01/31 15:06:05 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/leechcraft-musiczombie/leechcraft-musiczombie-9999.ebuild,v 1.1 2012/12/18 18:52:18 maksbotan Exp $
 
 EAPI="4"
 
@@ -10,15 +10,7 @@ DESCRIPTION="MusicBrainz client plugin for LeechCraft"
 
 SLOT="0"
 KEYWORDS=""
-IUSE="debug acoustid"
+IUSE="debug"
 
-DEPEND="~net-misc/leechcraft-core-${PV}
-	acoustid? ( media-libs/chromaprint )"
+DEPEND="~net-misc/leechcraft-core-${PV}"
 RDEPEND="${DEPEND}"
-
-src_configure() {
-	local mycmakeargs="
-		$(cmake-utils_use_with acoustid MUSICZOMBIE_CHROMAPRINT)
-	"
-	cmake-utils_src_configure
-}

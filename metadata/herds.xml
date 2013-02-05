@@ -20,7 +20,7 @@
    always a description without a lang attribute. Also there are no overlapping
    descriptions allowed (multiple description tags with the same language)
 
-   $Header: /var/cvsroot/gentoo/xml/htdocs/proj/en/metastructure/herds/herds.xml,v 1.996 2013/02/03 14:21:49 jlec Exp $
+   $Header: /var/cvsroot/gentoo/xml/htdocs/proj/en/metastructure/herds/herds.xml,v 1.989 2013/01/20 18:38:56 jer Exp $
 
 -->
 <herds>
@@ -95,9 +95,19 @@
   <email>cjk@gentoo.org</email>
   <description>Chinese/Japanese/Korean support packages</description>
   <maintainer>
+    <email>matsuu@gentoo.org</email>
+    <name>MATSUU Takuto</name>
+    <role>Japanese Support</role>
+  </maintainer>
+  <maintainer>
     <email>hattya@gentoo.org</email>
     <name>Akinori Hattori</name>
     <role>Japanese Support</role>
+  </maintainer>
+  <maintainer>
+    <email>qiaomuf@gentoo.org</email>
+    <name>Mu Qiao</name>
+    <role>Chinese Support</role>
   </maintainer>
   <maintainer>
     <email>naota@gentoo.org</email>
@@ -1149,6 +1159,10 @@
     <role>ejabberd and jabber-base</role>
   </maintainer>
   <maintainer>
+    <email>tester@gentoo.org</email>
+    <name>Olivier Crête</name>
+  </maintainer>
+  <maintainer>
     <email>wschlich@gentoo.org</email>
     <name>Wolfram Schlich</name>
     <role>MCabber</role>
@@ -1209,6 +1223,11 @@
     <name>Tim Harder</name>
   </maintainer>
   <maintainer>
+    <email>trapni@gentoo.org</email>
+    <name>Christian Parpart</name>
+    <role>Some minor/certain packages.</role>
+  </maintainer>
+  <maintainer>
     <email>blueness@gentoo.org</email>
     <name>Anthony G. Basile</name>
   </maintainer>
@@ -1239,6 +1258,10 @@
     <email>lordvan@gentoo.org</email>
     <name>Thomas Raschbacher</name>
     <role>Mainly DVB related stuff.</role>
+  </maintainer>
+  <maintainer>
+    <email>trapni@gentoo.org</email>
+    <name>Christian Parpart</name>
   </maintainer>
   <maintainer>
     <email>zzam@gentoo.org</email>
@@ -1371,6 +1394,30 @@
   </maintainer>
 </herd>
 <herd>
+  <name>sparc-kernel</name>
+  <email>sparc-kernel@gentoo.org</email>
+  <description>Kernel packages for Gentoo/SPARC</description>
+  <maintainer>
+    <email>joker@gentoo.org</email>
+  </maintainer>
+</herd>
+<herd>
+  <name>ppc-kernel</name>
+  <email>ppc-kernel@gentoo.org</email>
+  <description>Kernel packages for Gentoo/PPC</description>
+  <maintainer>
+    <email>lu_zero@gentoo.org</email>
+  </maintainer>
+</herd>
+<herd>
+  <name>mips-kernel</name>
+  <email>mips-kernel</email>
+  <description>Kernel Packages for Gentoo/MIPS</description>
+  <maintainer>
+    <email>kumba@gentoo.org</email>
+  </maintainer>
+</herd>
+<herd>
   <name>openoffice</name>
   <email>openoffice@gentoo.org</email>
   <description>Openoffice related packages</description>
@@ -1400,10 +1447,15 @@
 		<role>Asterisk related stuff</role>
   </maintainer>
   <maintainer>
-	<email>nirbheek@gentoo.org</email>
-	<name>Nirbheek Chauhan</name>
-	<role>Telepathy related stuff</role>
-  </maintainer>
+    <email>tester@gentoo.org</email>
+		<name>Olivier Crête</name>
+		<role>Telepathy related stuff</role>
+	</maintainer>
+	<maintainer>
+		<email>nirbheek@gentoo.org</email>
+		<name>Nirbheek Chauhan</name>
+		<role>Telepathy related stuff</role>
+	</maintainer>
   <maintainer>
     <email>chithanh@gentoo.org</email>
     <name>Chí-Thanh Christopher Nguyễn</name>
@@ -1651,6 +1703,10 @@
   <name>desktop-dock</name>
   <email>desktop-dock@gentoo.org</email>
   <description>WindowMaker/Blackbox Dockapps</description>
+  <maintainer>
+    <email>s4t4n@gentoo.org</email>
+    <name>Michele Noberasco</name>
+  </maintainer>
   <maintainer>
     <email>lack@gentoo.org</email>
     <name>Jim Ramsay</name>
@@ -1969,8 +2025,7 @@
   <email>tcltk@gentoo.org</email>
   <description>TCL / TK Packages</description>
   <maintainer>
-    <email>jlec@gentoo.org</email>
-    <name>Justin Lecher</name>
+    <email>matsuu@gentoo.org</email>
   </maintainer>
 </herd>
 <herd>
@@ -1989,6 +2044,9 @@
   <description>Handles all gstreamer related packages</description>
   <maintainer>
      <email>leio@gentoo.org</email>
+  </maintainer>
+  <maintainer>
+     <email>tester@gentoo.org</email>
   </maintainer>
   <maintainer>
     <email>eva@gentoo.org</email>
@@ -2068,6 +2126,10 @@
   <name>mobile-phone</name>
   <email>mobile-phone@gentoo.org</email>
   <description>Mobile phone related applications</description>
+  <maintainer>
+    <email>s4t4n@gentoo.org</email>
+    <name>Michele Noberasco</name>
+  </maintainer>
   <maintainer>
     <email>alonbl@gentoo.org</email>
     <name>Alon Bar-Lev</name>
@@ -2150,6 +2212,11 @@
   <maintainer>
     <email>vapier@gentoo.org</email>
   </maintainer>
+</herd>
+<herd>
+  <name>lcd</name>
+  <email>lcd@gentoo.org</email>
+  <description>Software related to LCD control</description>
 </herd>
 <herd>
   <name>rox</name>

@@ -1,39 +1,6 @@
 # ChangeLog for net-fs/samba
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/ChangeLog,v 1.559 2013/02/04 22:37:50 vostorga Exp $
-
-*samba-3.6.12 (04 Feb 2013)
-
-  04 Feb 2013; Víctor Ostorga <vostorga@gentoo.org> -samba-3.5.19.ebuild,
-  -samba-3.5.20.ebuild, samba-3.5.21.ebuild, -samba-3.6.10.ebuild,
-  -samba-3.6.11.ebuild, +samba-3.6.12.ebuild, -samba-4.0.1.ebuild,
-  -samba-4.0.1-r1.ebuild:
-  Version bump 3.5 and 3.6 branches to fix CVE-2013-0213 and CVE-2013-0214 bug
-  454798
-
-*samba-4.0.2 (04 Feb 2013)
-
-  04 Feb 2013; Sergey Popov <pinkbyte@gentoo.org> +samba-4.0.2.ebuild:
-  Version bump
-
-  03 Feb 2013; Lars Wendler <polynomial-c@gentoo.org> samba-4.0.1-r1.ebuild:
-  Non-maintainer commit: Added test USE flag to IUSE.
-
-*samba-4.0.1-r1 (03 Feb 2013)
-
-  03 Feb 2013; Sergey Popov <pinkbyte@gentoo.org> +samba-4.0.1-r1.ebuild:
-  Revision bump: port to python-r1 eclass, add missing dependency, wrt bug
-  #195703. Thanks to Georgy Kovtunov
-
-*samba-3.5.21 (31 Jan 2013)
-
-  31 Jan 2013; Patrick Lauer <patrick@gentoo.org> +samba-3.5.21.ebuild:
-  Bump of 3.5
-
-*samba-3.6.11 (29 Jan 2013)
-
-  29 Jan 2013; Lars Wendler <polynomial-c@gentoo.org> +samba-3.6.11.ebuild:
-  Non-maintainer commit: Version bump.
+# $Header: /var/cvsroot/gentoo-x86/net-fs/samba/ChangeLog,v 1.553 2013/01/21 21:43:47 vostorga Exp $
 
   21 Jan 2013; Víctor Ostorga <vostorga@gentoo.org> samba-4.0.1.ebuild:
   Fixing up modules dir

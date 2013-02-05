@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-strategy/smac/smac-6.0a.ebuild,v 1.23 2013/01/31 20:04:47 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-strategy/smac/smac-6.0a.ebuild,v 1.22 2012/02/05 06:25:05 vapier Exp $
 
 EAPI=2
 inherit eutils unpacker cdrom games
@@ -24,7 +24,7 @@ RDEPEND="sys-libs/glibc
 	x11-libs/libXau
 	x11-libs/libXdmcp
 	!ppc? ( sys-libs/lib-compat-loki )
-	media-libs/libsdl[audio,video]
+	media-libs/libsdl
 	media-libs/sdl-ttf
 	media-libs/sdl-mixer
 	media-libs/smpeg
@@ -45,19 +45,20 @@ src_unpack() {
 src_install() {
 	einfo "Copying files... this may take a while..."
 	exeinto "${dir}"
-	doexe "${CDROM_ROOT}"/bin/x86/{smac,smacx,smacpack} || die
+	doexe "${CDROM_ROOT}"/bin/x86/{smac,smacx,smacpack} || die "doexe failed"
 
 	insinto "${dir}"
 	doins ${CDROM_ROOT}/{{Alien_Crossfire,Alpha_Centauri}_Manual.pdf,QuickStart.txt,README,icon.{bmp,xpm}}
 
 	cd "${Ddir}"
-	tar xzf "${CDROM_ROOT}"/data.tar.gz || die
+	tar xzf "${CDROM_ROOT}"/data.tar.gz || die "unpack"
 	insinto "${dir}"/data
-	doins "${CDROM_ROOT}"/data/*.{pcx,cvr,flc,gif} || die
-	doins -r "${CDROM_ROOT}"/data/{facs,fx,projs,techs,voices} || die
+	doins "${CDROM_ROOT}"/data/*.{pcx,cvr,flc,gif} || die "copying data"
+	doins -r "${CDROM_ROOT}"/data/{facs,fx,projs,techs,voices} \
+		|| die "doins failed"
 
 	if use videos ; then
-		doins -r "${CDROM_ROOT}"/data/movies || die
+		doins -r "${CDROM_ROOT}"/data/movies || die "copying movies"
 	fi
 
 	cd "${S}"/a
@@ -65,7 +66,7 @@ src_install() {
 		cd ${P}-ppc
 	fi
 	loki_patch --verify patch.dat
-	loki_patch patch.dat "${Ddir}" >& /dev/null || die
+	loki_patch patch.dat "${Ddir}" >& /dev/null || die "patching"
 
 	# now, since these files are coming off a cd, the times/sizes/md5sums wont
 	# be different ... that means portage will try to unmerge some files (!)
@@ -86,7 +87,7 @@ src_install() {
 	    einfo "Linking libs provided by 'sys-libs/lib-compat-loki' to '${dir}'."
 	    dosym /lib/loki_ld-linux.so.2 "${dir}"/ld-linux.so.2 && \
 	    dosym /usr/lib/loki_libc.so.6 "${dir}"/libc.so.6 && \
-	    dosym /usr/lib/loki_libnss_files.so.2 "${dir}"/libnss_files.so.2 || die
+	    dosym /usr/lib/loki_libnss_files.so.2 "${dir}"/libnss_files.so.2 || die "dosym failed"
 	fi
 }
 
@@ -98,6 +99,4 @@ pkg_postinst() {
 	elog " smac"
 	elog "To play Alien Crossfire run:"
 	elog " smacx"
-	elog "Be sure to enable CONFIG_UID16 in your kernel config or"
-	elog "the game will error." # bug 340303
 }

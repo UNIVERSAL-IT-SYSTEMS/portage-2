@@ -1,21 +1,6 @@
 # ChangeLog for app-emulation/wine
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/ChangeLog,v 1.450 2013/02/04 02:38:40 tetromino Exp $
-
-*wine-1.5.23-r1 (04 Feb 2013)
-
-  04 Feb 2013; Alexandre Rostovtsev <tetromino@gentoo.org>
-  +wine-1.5.23-r1.ebuild, +files/wine-1.5.23-winebuild-CCAS.patch,
-  wine-9999.ebuild:
-  Use the correct system 'as' command as the assembler; fixes text relocation in
-  wine binaries on systems with sys-devel/clang installed (bug #455308, thanks
-  to Dennis Schridde and Rafał Mużyło).
-
-*wine-1.5.23 (03 Feb 2013)
-
-  03 Feb 2013; Alexandre Rostovtsev <tetromino@gentoo.org> +wine-1.5.23.ebuild,
-  wine-9999.ebuild:
-  Version bump, see http://www.winehq.org/announce/1.5.23 for the announcement.
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/ChangeLog,v 1.448 2013/01/20 02:27:14 tetromino Exp $
 
 *wine-1.5.22 (20 Jan 2013)
 

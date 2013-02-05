@@ -1,44 +1,6 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.661 2013/02/04 18:39:47 pacho Exp $
-
-  04 Feb 2013; Pacho Ramos <pacho@gentoo.org> readme.gentoo.eclass:
-  Add a variable to stop autoformatting when not desired, use '-e' option for
-  echo in the autoformatting way to let people control it with sequences
-  recognized by it (see man echo), fix it to work ok with prebuilt packages
-  (#455030 by Brian Harring, Zac Medico and Fabio Erculiani)
-
-  04 Feb 2013; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
-  Introduce python_get_library_path() to obtain the path to the Python library.
-  Required by dev-python/shiboken.
-
-  04 Feb 2013; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
-  Introduce python_newscript(), to install scripts with renaming. Requested in
-  bug #454640.
-
-  01 Feb 2013; Michał Górny <mgorny@gentoo.org> autotools-multilib.eclass,
-  +multilib-build.eclass:
-  Introduce a common multilib-build eclass to help building packages for
-  multilib, and use the new ABI_X86 flags in it.
-
-  31 Jan 2013; Gilles Dartiguelongue <eva@gentoo.org> gst-plugins10.eclass:
-  Allow build of multiple plugins in different directories. Make variables more
-  easily override-able.
-
-  31 Jan 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
-  xorg-2.eclass:
-  Add EAPI 5 sub-slot dependency on x11-base/xorg-server for packages which
-  require rebuilding when the server is upgraded.
-
-  31 Jan 2013; Tomáš Chvátal <scarabeus@gentoo.org> obs-service.eclass:
-  Additional files also must be versioned as they change between versions.
-
-  30 Jan 2013; Michał Górny <mgorny@gentoo.org> python-r1.eclass,
-  python-single-r1.eclass:
-  Use (-) USE-defaults to reduce issues from removing flags.
-
-  29 Jan 2013; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
-  Disable pypy1.8 globally.
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.652 2013/01/27 23:59:35 radhermit Exp $
 
   27 Jan 2013; Tim Harder <radhermit@gentoo.org> vim-plugin.eclass:
   Remove all hidden files in the main tarball dir.

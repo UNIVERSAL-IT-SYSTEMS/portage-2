@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.14431 2013/02/04 19:56:41 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.14415 2013/01/28 19:54:19 mr_bones_ Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,23 +30,6 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
-
-# Michael Sterrett <mr_bones_@gentoo.org> (31 Jan 2013)
-# Old, dead upstream and require guile[deprecated]
-# Masked for removal on 20130302
-games-action/trackballs
-games-misc/gnurobots
-
-# Michael Sterrett <mr_bones_@gentoo.org> (31 Jan 2013)
-# Upstream is dead and gone.
-# Masked for removal on 20130302
-games-arcade/bitefusion
-
-# Rafael G. Martins <rafaelmartins@gentoo.org> (31 Jan 2013)
-# Renamed to xombrero. Please install www-client/xombrero (bug #417555)
-# The package was not pkg-moved to fix the upstream versioning mess.
-# Removal in 30 days
-www-client/xxxterm
 
 # Michael Sterrett <mr_bones_@gentoo.org> (28 Jan 2013)
 # Doesn't work with newer KDE and upstream seems dead (bug #453756)
@@ -138,6 +121,11 @@ app-misc/ccal
 # Upstream dead for a long time, broken php support (#356841).
 # Removal in a month.
 www-apache/mod_vhs
+
+# Pacho Ramos <pacho@gentoo.org>
+# Multiple bugs (#449458). No maintained at all and upstream
+# dead. Removal in a month.
+app-portage/epm
 
 # Pacho Ramos <pacho@gentoo.org>
 # Still uses depend.php (#449820), upstream dead for ages and
@@ -307,6 +295,12 @@ net-misc/asterisk-chan_misdn
 www-apache/mod_authn_pam
 
 # Pacho Ramos <pacho@gentoo.org> (25 Dec 2012)
+# Patrick Lauer <patrick@gentoo.org> (16 Oct 2012)
+# upstream dead since 2008, doesn't build
+# See bug #282479. Removal in a month.
+www-apache/mod_cplusplus
+
+# Pacho Ramos <pacho@gentoo.org> (25 Dec 2012)
 # Incompatible with recent kernels (#300047) , upstream dead,
 # net-dialup/martian-modem can be used instead in most cases.
 net-dialup/ltmodem
@@ -357,6 +351,13 @@ app-emulation/systemsim-cell
 # Fails to build, always links statically (#448288). Removal in a month.
 sys-block/gcloop
 
+# Pacho Ramos <pacho@gentoo.org> (25 Dec 2012)
+# Fails to launch (#294013), abandoned, ancient NotEye
+# replaced it long time ago (#447848). Removal in a month.
+games-roguelike/noegnud-data
+games-roguelike/noegnud-nethack
+games-roguelike/noegnud-slashem
+
 # Panagiotis Christopoulos <pchrist@gentoo.org> (25 Dec 2012)
 # mask again these, temporarily, because more testing must be done.
 >=dev-lisp/gentoo-init-1.0
@@ -387,6 +388,22 @@ net-wireless/madwifi-ng
 # Masked for removal in 30 days. (17 Jan 2012)
 # This is provided by USE=xtended webalizer, bug #445226
 app-admin/webalizer-xtended
+
+# Sebastien Fabbro <bicatali@gentoo.org> (13 Dec 2012)
+# Necessary removal to get rid of very unstable sci-libs/lapack-atlas
+# Packages are in the science overlay
+# until sci-libs/atlas replacement make it to the main tree
+<sci-astronomy/sextractor-2.8.6-r1
+sci-astronomy/scamp
+
+# Justin Lecher <jlec@gentoo.org> (13 Dec 2012)
+# sci-libs/(lapack/blas)-altas will be removed due to
+# fragile build and runtime behaviour #372323.
+# Alternatives are sci-libs/lapack-reference & sci-libs/blas-reference.
+# Follow up package named sci-libs/atlas can be found in
+# sci overlay and will be moved once ready for prime time
+sci-libs/blas-atlas
+sci-libs/lapack-atlas
 
 # Michał Górny <mgorny@gentoo.org> (07 Dec 2012)
 # Experimental version disabling XDM-AUTHENTICATION-1 (in favor
@@ -440,7 +457,6 @@ dev-vcs/gitosis-gentoo
 # See bug #443230 for tracking the progress
 =media-video/libav-9.1*
 ~virtual/ffmpeg-9
-=media-plugins/gst-plugins-libav-1.1*
 
 # Joerg Bornkessel <hd_brummy@gentoo.org> (04 Nov 2012)
 # masked for testing, bug #422605
@@ -597,7 +613,7 @@ net-misc/libteam
 # Alistair Bush <ali_bush@gentoo.org> (10 May 2012)
 # Mask alpha version of mono for testing
 >=dev-lang/mono-2.11.1
->=dev-util/mono-tools-2.11
+>=dev-lang/mono-tools-2.11
 >=virtual/monodoc-2.11
 
 # Johannes Huber <johu@gentoo.org> (03 May 2012)
@@ -644,8 +660,8 @@ sys-apps/systemd-sysv-utils
 # Jeroen Roovers <jer@gentoo.org> (27 Mar 2012)
 # Opera Next and Opera snapshots are unsupported and eternally unstable.
 # <http://my.opera.com/desktopteam/blog>
-=www-client/opera-12.14*
 www-client/opera-next
+=www-client/opera-12.13*
 
 # Ulrich Mueller <ulm@gentoo.org> (13 Dec 2011)
 # SLOTs 21 and 22 of app-editors/emacs, corresponding to

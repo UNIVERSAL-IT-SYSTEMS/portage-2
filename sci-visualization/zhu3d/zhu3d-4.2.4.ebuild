@@ -1,9 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/zhu3d/zhu3d-4.2.4.ebuild,v 1.5 2013/02/02 17:15:46 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/zhu3d/zhu3d-4.2.4.ebuild,v 1.4 2012/08/07 04:55:22 bicatali Exp $
 
 EAPI=4
-
 LANGS="cs de es fr zh"
 
 inherit eutils qt4-r2
@@ -17,13 +16,11 @@ SLOT="0"
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
-DEPEND="
-	virtual/glu
-	virtual/opengl
+DEPEND="virtual/opengl
 	x11-libs/qt-core:4
 	x11-libs/qt-gui:4
 	x11-libs/qt-opengl:4"
-RDEPEND="${DEPEND}"
+REPEND="${DEPEND}"
 
 PATCHES=( "${FILESDIR}/${P}-gold.patch" )
 
@@ -31,16 +28,15 @@ src_prepare() {
 	qt4-r2_src_prepare
 
 	local datadir=/usr/share/${PN}
-	sed \
+	sed -i \
 		-e "s:^SYSDIR=:SYSDIR=${datadir}/system:" \
 		-e "s:^TEXDIR=:TEXDIR=${datadir}/textures:" \
 		-e "s:^WORKDIR=:WORKDIR=${datadir}/work:" \
 		-e "s:^DOCDIR=:DOCDIR=/usr/share/doc/${PF}/html:" \
-		-i ${PN}.pri || die "sed zhu3d.pri failed"
+		${PN}.pri || die "sed zhu3d.pri failed"
 
-	sed \
-		-e "/# Optimisation/,/# Include/d" \
-		-i zhu3d.pro || die "optimisation sed failed"
+	sed -i -e "/# Optimisation/,/# Include/d" zhu3d.pro \
+		|| die "optimisation sed failed"
 }
 
 src_install() {

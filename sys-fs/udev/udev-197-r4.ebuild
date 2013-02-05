@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-197-r4.ebuild,v 1.30 2013/01/31 23:08:05 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-197-r4.ebuild,v 1.25 2013/01/28 13:18:55 ssuominen Exp $
 
 EAPI=4
 
@@ -20,7 +20,7 @@ else
 				SRC_URI="${SRC_URI}
 					http://dev.gentoo.org/~williamh/dist/${P}-patches-${patchset}.tar.bz2"
 			fi
-	KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~m68k ~mips ppc ~ppc64 ~s390 ~sh ~sparc x86"
+	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 fi
 
 DESCRIPTION="Linux dynamic and persistent device naming support (aka userspace devfs)"
@@ -104,7 +104,7 @@ check_default_rules()
 pkg_setup()
 {
 	# required kernel options
-	CONFIG_CHECK="~BLK_DEV_BSG ~DEVTMPFS ~!IDE ~INOTIFY_USER ~!SYSFS_DEPRECATED ~!SYSFS_DEPRECATED_V2 ~SIGNALFD"
+	CONFIG_CHECK="~DEVTMPFS"
 	ERROR_DEVTMPFS="DEVTMPFS is not set in this kernel. Udev will not run."
 
 	linux-info_pkg_setup
@@ -407,7 +407,17 @@ pkg_postinst()
 		[[ -f ${net_rules} ]] || cp "${ROOT}"usr/share/doc/${PF}/gentoo/80-net-name-slot.rules "${net_rules}"
 	}
 
-	copy_net_rules
+	if [[ ${REPLACING_VERSIONS} ]] && [[ ${REPLACING_VERSIONS} < 197 ]]; then
+		ewarn "Because this is a upgrade we disable the new predictable network interface"
+		ewarn "name scheme by default."
+		copy_net_rules
+	fi
+
+	if has_version sys-apps/biosdevname; then
+		ewarn "Because sys-apps/biosdevname is installed we disable the new predictable"
+		ewarn "network interface name scheme by default."
+		copy_net_rules
+	fi
 
 	# "losetup -f" is confused if there is an empty /dev/loop/, Bug #338766
 	# So try to remove it here (will only work if empty).

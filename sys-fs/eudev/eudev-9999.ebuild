@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/eudev/eudev-9999.ebuild,v 1.20 2013/02/04 19:39:43 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/eudev/eudev-9999.ebuild,v 1.18 2013/01/28 21:25:21 axs Exp $
 
 EAPI=5
 
@@ -66,18 +66,6 @@ udev_check_KV()
 
 pkg_pretend()
 {
-	ewarn "As of 2013-01-29, eudev-9999 provides the new interface renaming"
-	ewarn "functionality, as described in the URL below:"
-	ewarn "http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames"
-	ewarn " "
-	ewarn "This functionality is enabled BY DEFAULT because eudev has no means of synchronizing"
-	ewarn "between the default or user-modified choice of sys-fs/udev.  If you wish to disable"
-	ewarn "this new iface naming, please be sure that /etc/udev/rules.d/80-net-name-slot.rules"
-	ewarn "exists:"
-	ewarn "\ttouch /etc/udev/rules.d/80-net-name-slot.rules"
-	ewarn " "
-	ewarn "We are working on a better solution for the next beta release."
-	ewarn " "
 	if has_version "<sys-fs/udev-180" && ! use legacy-libudev; then
 	ewarn "This version of eudev does not contain the libudev.so.0 library by "
 	ewarn "default.  This is an issue when migrating from sys-fs/udev-180 or older."
@@ -151,14 +139,14 @@ src_configure()
 		ac_cv_header_sys_capability_h=yes
 		DBUS_CFLAGS=' '
 		DBUS_LIBS=' '
-		--with-rootprefix=
-		--docdir=/usr/share/doc/${PF}
-		--libdir=/usr/$(get_libdir)
-		--with-firmware-path="${EPREFIX}usr/lib/firmware/updates:${EPREFIX}usr/lib/firmware:${EPREFIX}lib/firmware/updates:${EPREFIX}lib/firmware"
+		--with-rootprefix="/"
+		--docdir="/usr/share/doc/${PF}"
+		--libdir="/usr/$(get_libdir)"
+		--with-firmware-path="${EROOT}usr/lib/firmware/updates:${EROOT}usr/lib/firmware:${EROOT}lib/firmware/updates:${EROOT}lib/firmware"
 		--with-html-dir="/usr/share/doc/${PF}/html"
-		--with-rootlibdir=/$(get_libdir)
+		--with-rootlibdir="/$(get_libdir)"
+		--exec-prefix="/"
 		--enable-split-usr
-		--exec-prefix=/
 		$(use_enable doc gtk-doc)
 		$(use_enable gudev)
 		$(use_enable introspection)

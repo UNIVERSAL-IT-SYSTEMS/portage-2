@@ -1,14 +1,12 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/rfkill/rfkill-0.4.ebuild,v 1.8 2013/02/02 04:36:16 zerochaos Exp $
-
-EAPI=3
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/rfkill/rfkill-0.4.ebuild,v 1.7 2012/11/25 18:58:13 zerochaos Exp $
 
 inherit toolchain-funcs
 
 DESCRIPTION="Tool to read and control rfkill status through /dev/rfkill"
 HOMEPAGE="http://wireless.kernel.org/en/users/Documentation/rfkill"
-SRC_URI="https://www.kernel.org/pub/software/network/${PN}/${P}.tar.xz"
+SRC_URI="http://wireless.kernel.org/download/${PN}/${P}.tar.bz2"
 
 LICENSE="ISC"
 SLOT="0"

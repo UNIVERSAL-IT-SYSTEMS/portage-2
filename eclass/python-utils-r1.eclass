@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/python-utils-r1.eclass,v 1.18 2013/02/04 13:53:54 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/python-utils-r1.eclass,v 1.15 2013/01/27 16:35:33 mgorny Exp $
 
 # @ECLASS: python-utils-r1
 # @MAINTAINER:
@@ -42,7 +42,7 @@ inherit multilib
 # All supported Python implementations, most preferred last.
 _PYTHON_ALL_IMPLS=(
 	jython2_5
-	pypy1_9 pypy2_0
+	pypy1_8 pypy1_9 pypy2_0
 	python3_1 python3_2 python3_3
 	python2_5 python2_6 python2_7
 )
@@ -67,12 +67,12 @@ _python_impl_supported() {
 	# keep in sync with _PYTHON_ALL_IMPLS!
 	# (not using that list because inline patterns shall be faster)
 	case "${impl}" in
-		python2_[567]|python3_[123]|pypy1_9|pypy2_0|jython2_5)
+		python2_[567]|python3_[123]|pypy1_[89]|pypy2_0|jython2_5)
 			return 0
 			;;
-		pypy1_8)
-			return 1
-			;;
+#		pypy1_8)
+#			return 1
+#			;;
 		*)
 			die "Invalid implementation in PYTHON_COMPAT: ${impl}"
 	esac
@@ -122,18 +122,6 @@ _python_impl_supported() {
 # Example value:
 # @CODE
 # /usr/include/python2.6
-# @CODE
-
-# @ECLASS-VARIABLE: PYTHON_LIBPATH
-# @DESCRIPTION:
-# The path to Python library.
-#
-# Set and exported on request using python_export().
-# Valid only for CPython.
-#
-# Example value:
-# @CODE
-# /usr/lib64/libpython2.6.so
 # @CODE
 
 # @ECLASS-VARIABLE: PYTHON_PKG_DEP
@@ -231,22 +219,6 @@ python_export() {
 				export PYTHON_INCLUDEDIR=${EPREFIX}${dir}
 				debug-print "${FUNCNAME}: PYTHON_INCLUDEDIR = ${PYTHON_INCLUDEDIR}"
 				;;
-			PYTHON_LIBPATH)
-				local libname
-				case "${impl}" in
-					python*)
-						libname=lib${impl}
-						;;
-					*)
-						die "${EPYTHON} lacks a dynamic library"
-						;;
-				esac
-
-				local path=${EPREFIX}/usr/$(get_libdir)
-
-				export PYTHON_LIBPATH=${path}/${libname}$(get_libname)
-				debug-print "${FUNCNAME}: PYTHON_LIBPATH = ${PYTHON_LIBPATH}"
-				;;
 			PYTHON_PKG_DEP)
 				local d
 				case ${impl} in
@@ -336,21 +308,6 @@ python_get_includedir() {
 
 	python_export "${@}" PYTHON_INCLUDEDIR
 	echo "${PYTHON_INCLUDEDIR}"
-}
-
-# @FUNCTION: python_get_library_path
-# @USAGE: [<impl>]
-# @DESCRIPTION:
-# Obtain and print the Python library path for the given implementation.
-# If no implementation is provided, ${EPYTHON} will be used.
-#
-# Please note that this function can be used with CPython only. Use
-# in another implementation will result in a fatal failure.
-python_get_library_path() {
-	debug-print-function ${FUNCNAME} "${@}"
-
-	python_export "${@}" PYTHON_LIBPATH
-	echo "${PYTHON_LIBPATH}"
 }
 
 # @FUNCTION: _python_rewrite_shebang
@@ -564,34 +521,7 @@ python_scriptinto() {
 python_doscript() {
 	debug-print-function ${FUNCNAME} "${@}"
 
-	local f
-	for f; do
-		python_newscript "${f}" "${f##*/}"
-	done
-}
-
-# @FUNCTION: python_newscript
-# @USAGE: <path> <new-name>
-# @DESCRIPTION:
-# Install the given script into current python_scriptroot
-# for the current Python implementation (${EPYTHON}), and name it
-# <new-name>.
-#
-# The file must start with a 'python' shebang. The shebang will be
-# converted, the file will be renamed to be EPYTHON-suffixed
-# and a wrapper will be installed in place of the <new-name>.
-#
-# Example:
-# @CODE
-# src_install() {
-#   python_foreach_impl python_newscript foo.py foo
-# }
-# @CODE
-python_newscript() {
-	debug-print-function ${FUNCNAME} "${@}"
-
 	[[ ${EPYTHON} ]] || die 'No Python implementation set (EPYTHON is null).'
-	[[ ${#} -eq 2 ]] || die "Usage: ${FUNCNAME} <path> <new-name>"
 
 	local d=${python_scriptroot:-${DESTTREE}/bin}
 	local INSDESTTREE INSOPTIONS
@@ -599,17 +529,18 @@ python_newscript() {
 	insinto "${d}"
 	insopts -m755
 
-	local f=${1}
-	local barefn=${2}
+	local f
+	for f; do
+		local oldfn=${f##*/}
+		local newfn=${oldfn}-${EPYTHON}
 
-	local newfn=${barefn}-${EPYTHON}
+		debug-print "${FUNCNAME}: ${oldfn} -> ${newfn}"
+		newins "${f}" "${newfn}" || die
+		_python_rewrite_shebang "${ED}/${d}/${newfn}"
 
-	debug-print "${FUNCNAME}: ${f} -> ${d}/${newfn}"
-	newins "${f}" "${newfn}" || die
-	_python_rewrite_shebang "${ED}/${d}/${newfn}"
-
-	# install the wrapper
-	_python_ln_rel "${ED}"/usr/bin/python-exec "${ED}/${d}/${barefn}" || die
+		# install the wrapper
+		_python_ln_rel "${ED}"/usr/bin/python-exec "${ED}/${d}/${oldfn}" || die
+	done
 }
 
 # @ECLASS-VARIABLE: python_moduleroot

@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/whoosh/whoosh-2.4.1-r1.ebuild,v 1.4 2013/02/04 17:03:35 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/whoosh/whoosh-2.4.1-r1.ebuild,v 1.1 2013/01/14 11:06:32 blueness Exp $
 
 EAPI="5"
 
@@ -21,7 +21,6 @@ LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc test"
-DISTUTILS_IN_SOURCE_BUILD=1
 
 S="${WORKDIR}/${MY_PN}-${PV}"
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/sphinx/sphinx-1.1.3-r5.ebuild,v 1.7 2013/02/03 10:57:05 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/sphinx/sphinx-1.1.3-r5.ebuild,v 1.4 2013/01/19 23:58:19 mgorny Exp $
 
 EAPI=5
 
@@ -17,7 +17,7 @@ SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~ia64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="doc latex test"
 
 RDEPEND=">=dev-python/docutils-0.7[${PYTHON_USEDEP}]
@@ -40,6 +40,14 @@ PATCHES=(
 python_compile() {
 	distutils-r1_python_compile
 
+	if use test; then
+		cp -r -l tests "${BUILD_DIR}"/lib || die
+
+		if [[ ${EPYTHON} == python3* ]]; then
+			2to3 -w --no-diffs "${BUILD_DIR}"/lib/tests || die
+		fi
+	fi
+
 	# Generate the grammar. It will be caught by install somehow.
 	# Note that the tests usually do it for us. However, I don't want
 	# to trust USE=test really running all the tests, especially
@@ -54,13 +62,7 @@ python_compile_all() {
 }
 
 python_test() {
-	cp -r -l tests "${BUILD_DIR}"/ || die
-
-	if [[ ${EPYTHON} == python3* ]]; then
-		2to3 -w --no-diffs "${BUILD_DIR}"/tests || die
-	fi
-
-	nosetests -w "${BUILD_DIR}"/tests \
+	nosetests -w "${BUILD_DIR}"/lib/tests \
 		|| die "Tests fail with ${EPYTHON}"
 }
 

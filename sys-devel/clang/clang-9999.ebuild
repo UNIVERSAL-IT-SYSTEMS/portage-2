@@ -1,12 +1,13 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/clang/clang-9999.ebuild,v 1.35 2013/02/04 08:50:49 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/clang/clang-9999.ebuild,v 1.33 2013/01/03 23:36:58 voyageur Exp $
 
-EAPI=5
+EAPI=4
 
-PYTHON_COMPAT=( python{2_6,2_7} pypy{1_9,2_0} )
+RESTRICT_PYTHON_ABIS="3.*"
+SUPPORT_PYTHON_ABIS="1"
 
-inherit subversion eutils multilib python-r1
+inherit subversion eutils multilib python
 
 DESCRIPTION="C language family frontend for LLVM"
 HOMEPAGE="http://clang.llvm.org/"
@@ -16,12 +17,10 @@ ESVN_REPO_URI="http://llvm.org/svn/llvm-project/cfe/trunk"
 LICENSE="UoI-NCSA"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug multitarget python +static-analyzer test"
+IUSE="debug multitarget +static-analyzer test"
 
-DEPEND="static-analyzer? ( dev-lang/perl )
-	${PYTHON_DEPS}"
-RDEPEND="~sys-devel/llvm-${PV}[debug=,multitarget=]
-	${PYTHON_DEPS}"
+DEPEND="static-analyzer? ( dev-lang/perl )"
+RDEPEND="~sys-devel/llvm-${PV}[debug=,multitarget=]"
 
 S="${WORKDIR}/llvm"
 
@@ -54,6 +53,10 @@ src_prepare() {
 	sed -e "/LLVMgold.so/s#lib/#$(get_libdir)/llvm/#" \
 		-i  tools/clang/lib/Driver/Tools.cpp \
 		|| die "gold plugin path sed failed"
+	# Specify python version
+	python_convert_shebangs 2 tools/clang/tools/scan-view/scan-view
+	python_convert_shebangs -r 2 test/Scripts
+	python_convert_shebangs 2 projects/compiler-rt/lib/asan/scripts/asan_symbolize.py
 
 	# From llvm src_prepare
 	einfo "Fixing install dirs"
@@ -98,9 +101,6 @@ src_configure() {
 		CONF_FLAGS="${CONF_FLAGS} --enable-pic"
 	fi
 
-	# build with a suitable Python version
-	python_export_best
-
 	# clang prefers clang over gcc, so we may need to force that
 	tc-export CC CXX
 	econf ${CONF_FLAGS}
@@ -115,10 +115,13 @@ src_test() {
 
 	echo ">>> Test phase [test]: ${CATEGORY}/${PF}"
 
-	if ! emake -j1 VERBOSE=1 test; then
-		has test $FEATURES && die "Make test failed. See above for details."
-		has test $FEATURES || eerror "Make test failed. See above for details."
-	fi
+	testing() {
+		if ! emake -j1 VERBOSE=1 test; then
+			has test $FEATURES && die "Make test failed. See above for details."
+			has test $FEATURES || eerror "Make test failed. See above for details."
+		fi
+	}
+	python_execute_function testing
 }
 
 src_install() {
@@ -133,34 +136,19 @@ src_install() {
 		insinto /usr/share/${PN}
 		doins tools/scan-build/scanview.css
 		doins tools/scan-build/sorttable.js
+
+		cd tools/scan-view || die "cd scan-view failed"
+		dobin scan-view
+		install-scan-view() {
+			insinto "$(python_get_sitedir)"/clang
+			doins Reporter.py Resources ScanView.py startfile.py
+			touch "${ED}"/"$(python_get_sitedir)"/clang/__init__.py
+		}
+		python_execute_function install-scan-view
 	fi
 
-	python_inst() {
-		if use static-analyzer ; then
-			pushd tools/scan-view >/dev/null || die
-
-			python_doscript scan-view
-
-			touch __init__.py || die
-			python_moduleinto clang
-			python_domodule __init__.py Reporter.py Resources ScanView.py startfile.py
-
-			popd >/dev/null || die
-		fi
-
-		if use python ; then
-			pushd bindings/python/clang >/dev/null || die
-
-			python_moduleinto clang
-			python_domodule __init__.py cindex.py enumerations.py
-
-			popd >/dev/null || die
-		fi
-
-		# AddressSanitizer symbolizer (currently separate)
-		python_doscript "${S}"/projects/compiler-rt/lib/asan/scripts/asan_symbolize.py
-	}
-	python_foreach_impl python_inst
+	# AddressSanitizer symbolizer (currently separate)
+	dobin "${S}"/projects/compiler-rt/lib/asan/scripts/asan_symbolize.py
 
 	# Fix install_names on Darwin.  The build system is too complicated
 	# to just fix this, so we correct it post-install
@@ -184,4 +172,12 @@ src_install() {
 			eend $?
 		done
 	fi
+}
+
+pkg_postinst() {
+	python_mod_optimize clang
+}
+
+pkg_postrm() {
+	python_mod_cleanup clang
 }

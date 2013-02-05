@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/splash-themes-livedvd/splash-themes-livedvd-12.0.ebuild,v 1.3 2013/02/03 23:57:24 alonbl Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/splash-themes-livedvd/splash-themes-livedvd-12.0.ebuild,v 1.2 2012/12/16 23:02:55 ulm Exp $
 
 EAPI=4
 
@@ -28,6 +28,4 @@ src_install() {
 	dodir /etc/splash/livedvd-${PV}
 	insinto /etc/splash/livedvd-${PV}
 	doins -r *
-	insopts -m 0755
-	doins -r scripts
 }

@@ -1,6 +1,6 @@
 ## Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/meme/meme-4.8.1.ebuild,v 1.6 2013/02/01 14:51:24 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/meme/meme-4.8.1.ebuild,v 1.1 2012/08/26 16:03:01 jlec Exp $
 
 EAPI=4
 
@@ -14,15 +14,13 @@ SRC_URI="http://meme.nbcr.net/downloads/${PN}_${PV}.tar.gz"
 
 LICENSE="meme"
 SLOT="0"
-KEYWORDS="amd64 x86"
-IUSE="debug examples mpi"
+KEYWORDS="~amd64 ~x86"
+IUSE="debug mpi"
 
 DEPEND="
-	!app-text/tree
-	app-shells/tcsh
 	dev-libs/libxml2:2
 	dev-libs/libxslt
-	!sci-biology/readseq
+	app-shells/tcsh
 	mpi? ( virtual/mpi )"
 RDEPEND="${DEPEND}"
 
@@ -36,7 +34,6 @@ S="${WORKDIR}/${PN}_${PV}"
 #}
 
 src_prepare() {
-	use examples || sed -e '/SUBDIRS/s:examples::g' -i doc/Makefile.am
 	sed \
 		-e '/flags/s:-O3::g' \
 		-e '/opt/s:-O::g' \
@@ -61,11 +58,11 @@ src_configure() {
 
 src_test() {
 	# bug #297070
-	emake -j1 test
+	emake -j1 test || die "Regression tests failed."
 }
 
 src_install() {
-	default
+	emake install DESTDIR="${D}"
 
 	echo "PATH=/opt/${PN}/bin" > 99${PN}
 	doenvd 99${PN}

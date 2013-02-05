@@ -1,10 +1,10 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/cyassl/cyassl-2.4.6.ebuild,v 1.8 2013/02/03 19:40:39 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/cyassl/cyassl-2.4.6.ebuild,v 1.1 2012/12/28 01:55:02 blueness Exp $
 
 EAPI="4"
 
-inherit autotools eutils
+inherit eutils
 
 DESCRIPTION="Lightweight SSL/TLS library targeted at embedded and RTOS environments"
 HOMEPAGE="http://www.yassl.com/yaSSL/Home.html"
@@ -12,7 +12,7 @@ SRC_URI="http://dev.gentoo.org/~blueness/${PN}/${P}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 arm hppa ~mips ppc ppc64 x86"
+KEYWORDS="~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~x86"
 
 #Add CRYPTO_OPTS=ecc when fixed
 CACHE_SIZE="small big +huge"
@@ -36,11 +36,6 @@ src_prepare() {
 
 	#Apply unconditionally, but only triggered if USE="aes-ni"
 	epatch "${FILESDIR}"/${PN}-2.0.8-fix-gnustack.patch
-
-	#Bug #454300
-	epatch "${FILESDIR}"/${P}-fix-disable-debug.patch
-	epatch "${FILESDIR}"/${P}-respect-CFLAGS.patch
-	eautoreconf
 }
 
 src_configure() {
