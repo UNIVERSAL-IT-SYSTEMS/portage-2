@@ -1,6 +1,22 @@
 # ChangeLog for dev-libs/geoip
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/geoip/ChangeLog,v 1.149 2013/01/26 13:39:48 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/geoip/ChangeLog,v 1.153 2013/02/04 19:44:59 jer Exp $
+
+  04 Feb 2013; Jeroen Roovers <jer@gentoo.org> files/geoipupdate-r2.sh,
+  geoip-1.4.8-r3.ebuild, metadata.xml:
+  Add USE=city, fix the update script so it only updates what is installed (bug
+  #455340).
+
+*geoip-1.4.8-r3 (04 Feb 2013)
+
+  04 Feb 2013; Jeroen Roovers <jer@gentoo.org> +geoip-1.4.8-r3.ebuild:
+  Install GeoLiteCity.dat (bug #455340 by nandhp).
+
+  04 Feb 2013; Agostino Sarubbo <ago@gentoo.org> geoip-1.4.8-r2.ebuild:
+  Stable for alpha, wrt bug #453404
+
+  29 Jan 2013; Agostino Sarubbo <ago@gentoo.org> geoip-1.4.8-r2.ebuild:
+  Stable for ia64, wrt bug #453404
 
   26 Jan 2013; Agostino Sarubbo <ago@gentoo.org> geoip-1.4.8-r2.ebuild:
   Stable for arm, wrt bug #453404

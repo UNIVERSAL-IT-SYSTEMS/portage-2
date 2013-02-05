@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-cpp/libcmis/libcmis-9999.ebuild,v 1.9 2013/01/12 13:35:55 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-cpp/libcmis/libcmis-9999.ebuild,v 1.10 2013/01/31 15:34:17 scarabeus Exp $
 
-EAPI=4
+EAPI=5
 
 EGIT_REPO_URI="git://gitorious.org/libcmis/libcmis.git"
 [[ ${PV} == 9999 ]] && SCM_ECLASS="git-2"
@@ -18,7 +18,7 @@ SLOT="0.3"
 
 # Don't move KEYWORDS on the previous line or ekeyword won't work # 399061
 [[ ${PV} == 9999 ]] || \
-KEYWORDS="amd64 ~arm ppc x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~arm ~ppc ~x86 ~amd64-linux ~x86-linux"
 
 IUSE="static-libs man test"
 

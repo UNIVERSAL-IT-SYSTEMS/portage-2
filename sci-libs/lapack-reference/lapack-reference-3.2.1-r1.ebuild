@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/lapack-reference/lapack-reference-3.2.1-r1.ebuild,v 1.14 2013/01/26 00:05:54 ottxor Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/lapack-reference/lapack-reference-3.2.1-r1.ebuild,v 1.16 2013/02/01 07:08:09 jlec Exp $
 
 EAPI=3
 

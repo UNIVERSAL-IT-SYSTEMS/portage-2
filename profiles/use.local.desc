@@ -580,11 +580,15 @@ app-forensics/rdd:rawio - Enables raw IO handling
 app-forensics/sleuthkit:aff - Enable extra aff formats
 app-forensics/sleuthkit:ewf - Enable libewf support
 app-i18n/anthy:canna-2ch - Enable support for app-dicts/canna-2ch
-app-i18n/fcitx:gtk3 - Use GTK+3 instead of 2
+app-i18n/fcitx:autostart - Enable xdg-compatible autostart of fcitx
+app-i18n/fcitx:enchant - Use app-text/enchant for text prediction
+app-i18n/fcitx:gtk - Install GTK2 IM module
+app-i18n/fcitx:gtk3 - Install GTK3 IM module
 app-i18n/fcitx:introspection - Enable GObject Introspection
 app-i18n/fcitx:opencc - Enable OpenCC for Chinese Transform
 app-i18n/fcitx:pango - Enable support for x11-libs/pango
-app-i18n/fcitx:snooper - Enable Key Snooper for gtk app
+app-i18n/fcitx:qt4 - Install Qt4 IM module
+app-i18n/fcitx:snooper - Enable Key Snooper for GTK app
 app-i18n/fcitx:table - Enable Table IM
 app-i18n/fcitx-configtool:gtk3 - Use GTK+3 instead of 2
 app-i18n/ibus:dconf - Enable support for gnome-base/dconf
@@ -842,6 +846,7 @@ app-portage/eix:optimization - Accept upstream's choices for CXXFLAGS/LDFLAGS fo
 app-portage/eix:security - This adds some checks which can prevent certain exploits if e.g. the eix code has a bug. If you use the hardened toolchain, using this flag does not increase security and can even lead to problems.
 app-portage/eix:sqlite - Compile in support for portage's sqlite backend; to actually use it you need additional configuration of portage and eix
 app-portage/eix:strong-optimization - Adds several more agressive CXXFLAGS/LDFLAGS for optimization like graphite (if available). May cause trouble with some buggy compiler versions. Absense of this USE flag does not strip user's *FLAGS
+app-portage/eix:strong-security - Add many checks to prevent exploits if eix code has a bug. This will slow down eix considerably. Use only if you are paranoid or have reasons to suspect a bug.
 app-portage/eix:tools - Create separate binary for script helper tools; useful if they are called extremely often
 app-portage/layman:bazaar - Support dev-vcs/bzr based overlays
 app-portage/layman:cvs - Support dev-vcs/cvs based overlays
@@ -1355,6 +1360,7 @@ dev-libs/eina:mempool-pass-through - Compile "pass-through" (system's malloc) me
 dev-libs/elfutils:lzma - Support automatic decompression of LZMA-compressed files and kernel images
 dev-libs/elfutils:threads - Build the libraries with thread safe support
 dev-libs/elfutils:utils - Install command-line utilities (all the eu-* programs)
+dev-libs/fampp2:stlport - Include support for dev-libs/STLport
 dev-libs/fcgi:html - Install HTML documentation
 dev-libs/ferrisloki:stlport - Include support for dev-libs/STLport
 dev-libs/folks:socialweb - Load web service contacts using net-libs/libsocialweb
@@ -1363,6 +1369,7 @@ dev-libs/folks:tracker - Load contacts from app-misc/tracker index
 dev-libs/folks:utils - Build the folks-inspect utility
 dev-libs/folks:vala - Regenerate pre-generated C code from Vala source
 dev-libs/gecode:gist - Enable Gist, the Gecode Interactive Search Tool
+dev-libs/geoip:city - Install the city based IP address database
 dev-libs/geoip:perl-geoipupdate - Install pure perl version of geoipupdate, with Proxy Server support via the "http_proxy" environment variable and easy to customize.
 dev-libs/gf2x:bindist - Disable automatic fine-tuning to local processor features like pclmul or sse2.
 dev-libs/glib:systemtap - Build support for profiling and tracing using dev-util/systemtap
@@ -1627,7 +1634,7 @@ dev-python/netaddr:cli - Enable netaddr shell with dev-python/ipython
 dev-python/nose:coverage - Utilize dev-python/coverage
 dev-python/numexpr:mkl - Enable support for Intel Vector Math Library, part of sci-libs/mkl.
 dev-python/pandas:R - Enable support for R via dev-python/rpy
-dev-python/pandas:excel - Pull a few Python packages Microsoft Excel i/o
+dev-python/pandas:excel - Pull a few Python packages for Microsoft Excel i/o
 dev-python/paste:flup - enable support for flup (and therefore for various wgsi servers and middleware)
 dev-python/paste:openid - enable OpenID support
 dev-python/psycopg:mxdatetime - Enable support for MX DateTime and use it instead of Python's built-in datetime module
@@ -1727,7 +1734,6 @@ dev-scheme/guile:debug-freelist - Include garbage collector freelist debugging c
 dev-scheme/guile:debug-malloc - Include malloc debugging code
 dev-scheme/guile:deprecated - Enable deprecated features
 dev-scheme/guile:discouraged - (implied by deprecated) enable merely discouraged features
-dev-scheme/guile:elisp - Enable Emacs Lisp support
 dev-scheme/guile:networking - Include networking interfaces
 dev-scheme/guile:regex - Include regular expression interfaces
 dev-scheme/hop:debug - Enables building with debug symbols
@@ -1892,9 +1898,6 @@ dev-vcs/subversion:dso - Enable runtime module search
 dev-vcs/subversion:extras - Install extra scripts (examples, tools, hooks)
 dev-vcs/subversion:webdav-neon - Enable WebDAV support using net-libs/neon
 dev-vcs/subversion:webdav-serf - Enable WebDAV support using net-libs/serf
-games-action/abuse:demo - Use the demo data instead of the full game
-games-action/abuse:levels - Install user-created levels (fRaBs)
-games-action/abuse:sound - Install optional sound data
 games-action/chromium-bsu:mixer - Enables media-libs/sdl-mixer sound backend instead of media-libs/openal one.
 games-action/d1x-rebirth:awe32 - Enable AWE32 support
 games-action/d1x-rebirth:demo - Use the demo data instead of the full game
@@ -1963,6 +1966,10 @@ games-fps/doomsday:resources - Enable support for games-fps/doomsday-resources i
 games-fps/doomsday:snowberry - Install Snowberry doomsday front-end
 games-fps/duke3d:demo - Install the demo files
 games-fps/duke3d:pic - disable optimized assembly code that is not PIC friendly
+games-fps/eduke32:demo - Install games-fps/duke3d-demodata as well
+games-fps/eduke32:server - Compile with server support
+games-fps/eduke32:tools - Build several tools for modding and development
+games-fps/eduke32:vpx - Enable support for WebM VP8 Codecs
 games-fps/ezquake-bin:security - install the security module needed for some servers
 games-fps/lsdldoom:freedoom - Install games-fps/freedoom wad file
 games-fps/lsdldoom:net - Enables network game support
@@ -1976,6 +1983,8 @@ games-fps/quake3:mumble - Adds player-location (positional audio) support to VoI
 games-fps/quake3:teamarena - Adds support for Team Arena expansion pack
 games-fps/quake3:voice - Adds VoIP support
 games-fps/quake3-bin:teamarena - Adds support for Team Arena expansion pack
+games-fps/quakeforge:wildmidi - enable libWildMidi support
+games-fps/quakeforge:xdg - enable XDG support
 games-fps/qudos:demo - Install the demo files (quake2-demodata) and configure for use
 games-fps/qudos:mods - Build support for the quake2 mission packs
 games-fps/qudos:qmax - Build the pretty version (quake max)
@@ -1988,14 +1997,12 @@ games-fps/warsow:angelscript - Enable AngelScript support
 games-fps/warsow:irc - Enable IRC support
 games-fps/warsow:server - Build server binaries additionally
 games-fps/worldofpadman:maps - Install extra maps (PadPack)
-games-kids/gcompris:gnet - will let GCompris fetch content from a web server
 games-misc/xcowsay:fortune - Installs the fortune-mod xcow binary
 games-mud/tf:atcp - enable ATCP support.
 games-mud/tf:gmcp - enable GMCP support.
 games-mud/tf:option102 - enable telnet option 102 support.
 games-puzzle/cuyo:music - Enable playing of background music
 games-puzzle/jag:editor - Install level editor
-games-puzzle/jag:extras - Install additional graphics
 games-puzzle/pingus:music - Enable playing of background music
 games-puzzle/xlogical:alt_gfx - Use alternate graphics which are closer to the original Amiga version
 games-roguelike/FTL:system-libs - Use system provided libraries.
@@ -2095,7 +2102,6 @@ gnome-base/gnome-light:fallback - Install gnome-base/gnome-panel and x11-wm/meta
 gnome-base/gnome-light:gnome-shell - Install gnome-base/gnome-shell and x11-wm/mutter for the standard GNOME 3 desktop mode
 gnome-base/gnome-panel:bonobo - Enable Bonobo compatibility modules for applets still not ported to DBUS.
 gnome-base/gnome-session:gconf - Optional support for gnome-base/gconf configuration storage system
-gnome-base/gnome-session:systemd - Use sys-apps/systemd instead of sys-auth/consolekit for session tracking
 gnome-base/gnome-settings-daemon:colord - Support color management using x11-misc/colord
 gnome-base/gnome-settings-daemon:i18n - Enable support for enhanced input methods through app-i18n/ibus
 gnome-base/gnome-settings-daemon:packagekit - Enable support for the distro-neutral package manager GUI app-admin/packagekit
@@ -2764,6 +2770,7 @@ media-libs/opencv:testprograms - Build and install programs for testing OpenCV (
 media-libs/openimageio:opencolorio - Use media-gfx/opencolorio
 media-libs/openimageio:opencv - Use media-libs/opencv
 media-libs/openimageio:tbb - Use dev-cpp/tbb
+media-libs/opus:custom-modes - Build with custom-modes.
 media-libs/phonon:vlc - Install VLC Phonon backend
 media-libs/phonon:zeitgeist - Add support for Zeitgeist event tracking system
 media-libs/phonon-gstreamer:network - Enable network streaming support via libsoup
@@ -3010,6 +3017,7 @@ media-sound/lame:mp3rtp - Build the mp3-to-RTP streaming utility. **UNSUPPORTED*
 media-sound/leechcraft-lmp:graffiti - Build media tags editor plugin
 media-sound/leechcraft-lmp:mp3tunes - Build plugin for supporting the mp3tunes.com music locker service.
 media-sound/leechcraft-lmp:mpris - Enable MPRIS support
+media-sound/leechcraft-musiczombie:acoustid - Use media-libs/chromaprint for acoustic fingerprinting
 media-sound/lmms:fluidsynth - Enables Fluidsynth MIDI software synthesis plugin.
 media-sound/lmms:stk - Enables STK Mallet plugin.
 media-sound/lmms:vst - Enables the VeSTige plugin to run VST plugins through Wine.
@@ -3760,6 +3768,14 @@ net-dns/ldns-utils:gost - Enable GOST support
 net-dns/maradns:authonly - Allows one to build only authoritative DNS server
 net-dns/mydns:alias - Enable David Phillips aliasing
 net-dns/mydns:status - Enable the STATUS opcode to check server status
+net-dns/nsd:bind8-stats - Enables BIND8 like NSTATS and XSTATS
+net-dns/nsd:libevent - Use libevent or libev, useful when zone count is high
+net-dns/nsd:minimal-responses - If minimal responses are disabled, responses are more likely to get truncated, resulting in TCP fallback
+net-dns/nsd:munin - Install a plugin for net-analyzer/munin to graph statistical data from nsd.
+net-dns/nsd:nsec3 - Enable NSEC3 support
+net-dns/nsd:ratelimit - Enables ratelimiting, based on query name, type and source
+net-dns/nsd:root-server - Configure NSD as a root server
+net-dns/nsd:runtime-checks - Enable runtime checks, this could lead to a reduced service level
 net-dns/opendnssec:auditor - Enables auditing capabilities for OpenDNSSEC
 net-dns/opendnssec:eppclient - Enables support for automatic submission of DNSSEC keys to an upstream epp server
 net-dns/opendnssec:external-hsm - Enables support for storing DNSSEC keys through an arbitrary non-portage PKCS#11 interface, specified through an environment variable
@@ -4128,9 +4144,7 @@ net-irc/xchat:xchatdccserver - Enables support for the /dccserver command via a 
 net-irc/xchat:xchatnogtk - Disables building the GTK front end to XChat
 net-irc/znc:ares - Enables support for asynchronous DNS using the c-ares library
 net-irc/znc:daemon - Allow znc to run as a system-wide service. Installs an init script and creates a znc user:group.
-net-irc/znc:dns-threads - Use threads for DNS resolving
 net-irc/znc:extras - Enable some additional modules
-net-irc/znc:user-networks - Allow non-admin users to add networks
 net-libs/aqbanking:chipcard - Enable support for DDV/RSA-chipcards
 net-libs/axtls:cgi-lua - Enables lua backed cgi for axhttpd server
 net-libs/axtls:cgi-php - Enables php backed cgi for axhttpd server
@@ -4432,6 +4446,7 @@ net-misc/cgminer:scrypt - Enable support for scrypt mining algorithm
 net-misc/cgminer:sse2_4way - Enable support for CPU SSE2 4way mining algorithm
 net-misc/cgminer:sse4 - Enable support for CPU SSE4 mining algorithm
 net-misc/cgminer:ztex - Enable support for mining with Ztex FPGAs
+net-misc/chrony:rtc - Include support for the Linux Real Time Clock interface
 net-misc/connman:ethernet - Enable ethernet support.
 net-misc/connman:ofono - Use net-misc/ofono for telephony support.
 net-misc/connman:openvpn - Use net-misc/openvpn for openvpn support.
@@ -4872,7 +4887,6 @@ sci-astronomy/casacore:data - Installs measures and data (pulls sci-astronomy/ca
 sci-astronomy/cpl:gasgano - Enable support for sci-astronomy/gasgano file organizer
 sci-astronomy/predict:xforms - Add a "map" client which uses the x11-libs/xforms library for its GUI
 sci-astronomy/predict:xplanet - Project predict data onto world maps generated by x11-misc/xplanet / x11-misc/xearth
-sci-astronomy/scamp:plplot - Build with sci-libs/plplot to allow diagnostic plots during processing
 sci-astronomy/stellarium:stars - Install extra star catalogs
 sci-astronomy/wcslib:fits - Enable support for the FITS format through sci-libs/cfitsio
 sci-astronomy/wcslib:pgplot - Builds routines for the sci-libs/pgplot library
@@ -5058,6 +5072,7 @@ sci-libs/nlopt:octave - Add plugin for sci-mathematics/octave
 sci-libs/opencascade:gl2ps - Use gl2ps PostScript printing library
 sci-libs/openmm:cuda - enable cuda back-end
 sci-libs/openmm:opencl - enable opencl back-end
+sci-libs/openmm:wrappers - build wrappers for C and Fortran
 sci-libs/plplot:ada - Add bindings for the ADA programming language
 sci-libs/plplot:dynamic - Build with dynamic drivers
 sci-libs/plplot:octave - Add bindings for sci-mathematics/octave
@@ -5709,7 +5724,6 @@ sys-process/cronie:inotify - Enable inotify filesystem monitoring support.
 sys-process/fcron:debug - Enable debug code and output. Since version 3.0.5 this will no longer force foreground execution, and fcron will be able to run as a service properly.
 sys-process/fcron:pam - Enable PAM support for fcron. This means that fcron will pass through the "fcron" stack before executing the jobs, and fcrontab will use the "fcrontab" stack to authenticate the user before editing its crontab file.
 sys-process/fcron:system-crontab - Set up fcron to respect /etc/crontab and /etc/cron.d. If this flag is disabled, /etc/cron.d and /etc/crontab will be ignored, but /etc/cron.{hourly,daily,weekly,monthly} will still be respected.
-sys-process/glances:html - optional for HTML export
 sys-process/htop:openvz - Enable openvz support
 sys-process/htop:vserver - Enable vserver support
 sys-process/lsof:rpc - support looking up RPC service info
@@ -5750,6 +5764,8 @@ www-apps/gallery:zip - Add app-arch/zip for the zip download module
 www-apps/horde-passwd:clearpasswd - Enables cleartext password storage in the vpopmail files
 www-apps/ikiwiki:extras - Installs additional modules used by ikiwiki plugins
 www-apps/lxr:freetext - Adds support for freetext search using swish-e
+www-apps/nikola:jinja - Add support for dev-python/jinja as alternative templating engine to Mako
+www-apps/nikola:markdown - Add support for Markdown as alternative markup language to reStructuredText
 www-apps/otrs:mod_perl - Provide all dependencies for use of mod_perl instead of cgi
 www-apps/postfixadmin:vacation - Install vacation.pl script and dependencies
 www-apps/redmine:openid - Enable support for OpenID
@@ -5936,11 +5952,9 @@ x11-drivers/xf86-video-intel:xvmc - Enables X-Video Motion Compensation support
 x11-drivers/xf86-video-openchrome:viaregtool - Install registers dumper tool
 x11-drivers/xf86-video-qxl:xspice - Build the xspice driver
 x11-libs/agg:gpc - Enable gpc polygon clipper library
-x11-libs/cairo:cleartype - Add ClearType-style behavior for sub-pixel hinting. Patch taken from Arch Linux
 x11-libs/cairo:drm - Use Linux DRM for backend acceleration
 x11-libs/cairo:gallium - Use Mesa's Gallium backend for acceleration
 x11-libs/cairo:glib - Compile with GLib Object System support
-x11-libs/cairo:lcdfilter - Add FreeType LCD filtering, ClearType-style behavior for sub-pixel-hinting. Overrides cleartype USE flag. Patch taken from Ubuntu
 x11-libs/cairo:legacy-drivers - Include the buggy gradients patch (for legacy drivers, such as nvidia-drivers older than 304.30)
 x11-libs/cairo:opengl - Use Mesa backend for acceleration
 x11-libs/cairo:openvg - Use OpenVG for backend acceleration
@@ -6066,6 +6080,7 @@ x11-libs/qt-test:exceptions - Add support for exceptions - like catching them in
 x11-libs/qt-webkit:exceptions - Add support for exceptions - like catching them inside the event loop (recommended by Nokia)
 x11-libs/qt-webkit:gstreamer - Enable HTML5 audio/video support via media-libs/gstreamer
 x11-libs/qt-xmlpatterns:c++0x - Build Qt using the C++11 standard
+x11-libs/qwt:mathml - Use the MathML renderer of the Qt solutions package.
 x11-libs/vte:glade - Provide integration with dev-util/glade.
 x11-libs/vte:introspection - Use dev-libs/gobject-introspection for introspection
 x11-libs/wxGTK:gnome - Use gnome-base/libgnomeprintui for printing tasks.
