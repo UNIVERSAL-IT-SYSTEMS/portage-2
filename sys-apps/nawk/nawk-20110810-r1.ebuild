@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/nawk/nawk-20110810-r1.ebuild,v 1.3 2012/10/12 22:04:36 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/nawk/nawk-20110810-r1.ebuild,v 1.4 2013/02/06 03:19:35 ottxor Exp $
 
 EAPI="4"
 
@@ -8,7 +8,7 @@ inherit toolchain-funcs
 
 DESCRIPTION="Brian Kernighan's pattern scanning and processing language"
 HOMEPAGE="http://cm.bell-labs.com/cm/cs/awkbook/index.html"
-SRC_URI="http://www.cs.princeton.edu/~bwk/btl.mirror/awk.tar.gz -> ${P}.tar.gz"
+SRC_URI="mirror://gentoo.org/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
