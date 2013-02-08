@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/kismet/kismet-9999.ebuild,v 1.7 2013/02/08 06:20:07 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/kismet/kismet-9999.ebuild,v 1.5 2012/07/06 21:14:03 zerochaos Exp $
 
-EAPI=5
+EAPI=4
 
 inherit eutils multilib user
 
@@ -29,8 +29,8 @@ IUSE="+client +pcre speech +plugin-autowep +plugin-btscan plugin-dot15d4 +plugin
 
 RDEPEND="net-wireless/wireless-tools
 	kernel_linux? ( sys-libs/libcap
-			dev-libs/libnl:3
-			net-libs/libpcap[-netlink] )
+		>=dev-libs/libnl-1.1 )
+	net-libs/libpcap
 	pcre? ( dev-libs/libpcre )
 	suid? ( sys-libs/libcap )
 	client? ( sys-libs/ncurses )
