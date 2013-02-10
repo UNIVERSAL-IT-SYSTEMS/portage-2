@@ -1,10 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/googleearth/googleearth-7.0.2.8415-r1.ebuild,v 1.1 2013/02/04 23:32:34 hasufell Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/googleearth/googleearth-7.0.2.8415-r1.ebuild,v 1.3 2013/02/10 15:45:05 hasufell Exp $
 
 EAPI=5
 
-inherit eutils unpacker fdo-mime versionator gnome2-utils toolchain-funcs
+inherit pax-utils eutils unpacker fdo-mime versionator gnome2-utils toolchain-funcs
 
 DESCRIPTION="A 3D interface to the planet"
 HOMEPAGE="http://earth.google.com/"
@@ -148,10 +148,12 @@ src_install() {
 	rm -r product_logo_* xdg-mime xdg-settings google-earth google-earth.desktop || die
 
 	# just copy everything that's left
-	cp -pPR * "${D}"/opt/${PN} || die
+	cp -pPR * "${ED}"/opt/${PN} || die
 
 	# some files are executable and shouldn't
 	fperms -R a-x,a+X /opt/googleearth/resources
+
+	pax-mark -m "${ED}/opt/googleearth/googleearth-bin"
 }
 
 pkg_preinst() {
