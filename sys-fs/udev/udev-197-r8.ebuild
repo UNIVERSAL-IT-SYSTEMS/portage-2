@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-197-r8.ebuild,v 1.2 2013/02/09 20:47:16 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-197-r8.ebuild,v 1.8 2013/02/18 20:56:49 ago Exp $
 
 EAPI=4
 
@@ -21,7 +21,7 @@ else
 					http://dev.gentoo.org/~williamh/dist/${P}-patches-${patchset}.tar.bz2
 					http://dev.gentoo.org/~ssuominen/${P}-patches-${patchset}.tar.bz2"
 			fi
-	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+	KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh ~sparc x86"
 fi
 
 DESCRIPTION="Linux dynamic and persistent device naming support (aka userspace devfs)"
@@ -102,7 +102,7 @@ check_default_rules()
 
 pkg_setup()
 {
-	CONFIG_CHECK="~BLK_DEV_BSG ~DEVTMPFS ~!IDE ~INOTIFY_USER ~KALLSYMS ~!SYSFS_DEPRECATED ~!SYSFS_DEPRECATED_V2 ~SIGNALFD"
+	CONFIG_CHECK="~BLK_DEV_BSG ~DEVTMPFS ~!IDE ~INOTIFY_USER ~!SYSFS_DEPRECATED ~!SYSFS_DEPRECATED_V2 ~SIGNALFD"
 
 	linux-info_pkg_setup
 
@@ -410,11 +410,11 @@ pkg_postinst()
 		[[ -f ${net_rules} ]] || cp "${ROOT}"usr/share/doc/${PF}/gentoo/80-net-name-slot.rules "${net_rules}"
 	}
 
-	if [[ ${REPLACING_VERSIONS} ]] && [[ ${REPLACING_VERSIONS} < 197 ]]; then
-		ewarn "Because this is a upgrade we disable the new predictable network interface"
-		ewarn "name scheme by default."
+#	if [[ ${REPLACING_VERSIONS} ]] && [[ ${REPLACING_VERSIONS} < 197 ]]; then
+#		ewarn "Because this is a upgrade we disable the new predictable network interface"
+#		ewarn "name scheme by default."
 		copy_net_rules
-	fi
+#	fi
 
 	if has_version sys-apps/biosdevname; then
 		ewarn "Because sys-apps/biosdevname is installed we disable the new predictable"

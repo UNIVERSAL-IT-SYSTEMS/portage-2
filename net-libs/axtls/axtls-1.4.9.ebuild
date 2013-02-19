@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/axtls/axtls-1.4.9.ebuild,v 1.1 2013/01/07 00:01:07 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/axtls/axtls-1.4.9.ebuild,v 1.7 2013/02/18 21:01:30 blueness Exp $
 
 EAPI="4"
 
@@ -41,7 +41,7 @@ S="${WORKDIR}/${MY_PN}"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 arm ~hppa ~mips ppc ppc64 x86"
 
 IUSE="httpd cgi-lua cgi-php static static-libs doc"
 
@@ -130,6 +130,7 @@ use_flag_config() {
 
 src_configure() {
 	tc-export CC
+	tc-export AR
 
 	if use savedconfig; then
 		restore_config config/.config
@@ -147,10 +148,7 @@ src_configure() {
 
 src_compile() {
 	default
-	if use doc; then
-		emake docs
-		mv www README
-	fi
+	use doc && emake docs
 }
 
 src_install() {

@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.112 2013/02/07 13:45:38 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.114 2013/02/18 18:55:08 aballier Exp $
 
 EAPI="4"
 
@@ -127,6 +127,7 @@ src_prepare() {
 	if [ "${PV%_p*}" != "${PV}" ] ; then # Snapshot
 		export revision=git-N-${FFMPEG_REVISION}
 	fi
+	epatch_user
 }
 
 src_configure() {
@@ -297,6 +298,6 @@ src_install() {
 }
 
 src_test() {
-	LD_LIBRARY_PATH="${S}/libpostproc:${S}/libswscale:${S}/libswresample:${S}/libavcodec:${S}/libavdevice:${S}/libavfilter:${S}/libavformat:${S}/libavutil" \
+	LD_LIBRARY_PATH="${S}/libpostproc:${S}/libswscale:${S}/libswresample:${S}/libavcodec:${S}/libavdevice:${S}/libavfilter:${S}/libavformat:${S}/libavutil:${S}/libavresample" \
 		emake V=1 fate
 }

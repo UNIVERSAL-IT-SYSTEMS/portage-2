@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.175 2013/02/09 20:47:16 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.178 2013/02/17 19:12:21 ssuominen Exp $
 
 EAPI=4
 
@@ -102,7 +102,7 @@ check_default_rules()
 
 pkg_setup()
 {
-	CONFIG_CHECK="~BLK_DEV_BSG ~DEVTMPFS ~!IDE ~INOTIFY_USER ~KALLSYMS ~!SYSFS_DEPRECATED ~!SYSFS_DEPRECATED_V2 ~SIGNALFD"
+	CONFIG_CHECK="~BLK_DEV_BSG ~DEVTMPFS ~!IDE ~INOTIFY_USER ~!SYSFS_DEPRECATED ~!SYSFS_DEPRECATED_V2 ~SIGNALFD"
 
 	linux-info_pkg_setup
 
@@ -133,8 +133,12 @@ src_prepare()
 
 	# These are missing from upstream 50-udev-default.rules
 	cat <<-EOF > "${T}"/40-gentoo.rules
+	# Propably unrequired, check how it is with OSS/OSS4, then remove
 	SUBSYSTEM=="snd", GROUP="audio"
+	# Gentoo specific usb group
 	SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", GROUP="usb"
+	# Keep this for Linux 2.6.32 support wrt #457868
+	SUBSYSTEM=="mem", KERNEL=="null|zero|full|random|urandom", MODE="0666"
 	EOF
 
 	# Remove requirements for gettext and intltool wrt bug #443028
@@ -227,6 +231,7 @@ src_configure()
 		--disable-timedated
 		--disable-xz
 		--disable-silent-rules
+		--disable-polkit
 		$(use_enable acl)
 		$(use_enable doc gtk-doc)
 		$(use_enable gudev)

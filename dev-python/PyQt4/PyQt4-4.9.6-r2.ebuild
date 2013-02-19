@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/PyQt4/PyQt4-4.9.6-r2.ebuild,v 1.2 2013/02/04 16:22:32 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/PyQt4/PyQt4-4.9.6-r2.ebuild,v 1.10 2013/02/18 21:02:22 ago Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python{2_5,2_6,2_7,3_1,3_2,3_3} )
@@ -20,7 +20,7 @@ fi
 
 LICENSE="|| ( GPL-2 GPL-3 )"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="alpha amd64 arm ~ia64 ppc ppc64 ~sparc x86 ~amd64-linux ~x86-linux"
 
 IUSE="X dbus debug declarative doc examples help kde multimedia opengl phonon script scripttools sql svg webkit xmlpatterns"
 REQUIRED_USE="
@@ -106,7 +106,7 @@ src_configure() {
 			"${PYTHON}" configure.py
 			--confirm-license
 			--bindir="${EPREFIX}/usr/bin"
-			--destdir="${EPREFIX}$(python_get_sitedir)"
+			--destdir="$(python_get_sitedir)"
 			--sipdir="${EPREFIX}/usr/share/sip"
 			--assume-shared
 			--no-timestamp
@@ -160,8 +160,8 @@ src_configure() {
 			popd > /dev/null || return
 
 			# Fix insecure runpaths.
-			sed -i -e "/^LFLAGS\s*=/ s:-Wl,-rpath,${BUILDDIR}/qpy/${mod}::" \
-				${mod}/Makefile || die "Failed to fix rpath for ${mod}"
+			sed -i -e "/^LFLAGS\s*=/ s:-Wl,-rpath,${BUILD_DIR}/qpy/${mod}::" \
+				${mod}/Makefile || die "failed to fix rpath for ${mod}"
 		done
 
 		# Avoid stripping of libpythonplugin.so.

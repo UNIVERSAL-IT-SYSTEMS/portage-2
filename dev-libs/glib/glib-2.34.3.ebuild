@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/glib-2.34.3.ebuild,v 1.1 2012/11/27 07:33:08 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/glib/glib-2.34.3.ebuild,v 1.3 2013/02/19 00:08:33 tetromino Exp $
 
 EAPI="5"
 PYTHON_DEPEND="utils? 2"
@@ -16,7 +16,7 @@ SRC_URI="${SRC_URI}
 LICENSE="LGPL-2+"
 SLOT="2"
 IUSE="debug fam kernel_linux selinux static-libs systemtap test utils xattr"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux"
 
 RDEPEND="virtual/libiconv
 	virtual/libffi
@@ -105,6 +105,8 @@ src_prepare() {
 	# https://bugzilla.gnome.org/show_bug.cgi?id=679308
 	epatch "${FILESDIR}/${PN}-2.34.0-testsuite-skip-gdbus-auth-tests.patch"
 
+	epatch_user
+
 	# disable pyc compiling
 	use test && python_clean_py-compile_files
 
@@ -160,7 +162,8 @@ src_configure() {
 		$(use_enable systemtap systemtap) \
 		--enable-man \
 		--with-pcre=internal \
-		--with-threads=posix
+		--with-threads=posix \
+		--with-xml-catalog="${EPREFIX}/etc/xml/catalog"
 }
 
 src_install() {

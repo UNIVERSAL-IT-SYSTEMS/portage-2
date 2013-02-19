@@ -506,8 +506,6 @@ app-emulation/spice:gui - Build some GUI components (inside the guest window).
 app-emulation/spice:smartcard - Enable smartcard remoting using app-emulation/libcacard
 app-emulation/spice-vdagent:consolekit - Use sys-auth/consolekit to determine the master vdagentd in case of multiple running vdagentds (highly recommended)
 app-emulation/uae:scsi - Enable the uaescsi.device
-app-emulation/uae:sdl-sound - Use media-sound/sdl-sound for audio output
-app-emulation/uae:ui - Build the user interface (could be gtk or ncurses based, depending on sdl, dga, svga and aalib USE flags)
 app-emulation/vice:ethernet - Enable ethernet emulation
 app-emulation/vice:memmap - Enable extra monitor features
 app-emulation/vice:xrandr - Enable support for the X xrandr extension
@@ -1933,6 +1931,8 @@ games-action/d2x-rebirth:music - Support for ingame music
 games-action/d2x-rebirth:opl3-musicpack - Include alternate version of the game's music, recorded with the Yamaha YMF262 OPL3 soundchip
 games-action/d2x-rebirth:sc55-musicpack - Include alternate version of the game's music, recorded with the Roland Sound Canvas SC-55 MIDI module
 games-action/openlierox:breakpad - Compile with support for breakpad crash reporting system
+games-action/trine2:launcher - Install gtk+ launcher
+games-action/trine2:system-libs - Use system provided libraries.
 games-arcade/bomns:editor - enables building the level editor
 games-arcade/burgerspace:network - Enable client-server support
 games-arcade/jumpnbump:music - Enable playing of background music
@@ -1969,6 +1969,7 @@ games-emulation/snes9x:netplay - Enable playing ROMs over the network (not recom
 games-emulation/snes9x:xrandr - Enable support for the X xrandr extension
 games-emulation/vbam:link - Enable GBA linking functionality
 games-emulation/xmess:net - Add network support
+games-emulation/yabause:qt4 - Use qt4 gui instead of gtk+
 games-emulation/zsnes:debug - Enable the builtin debugger
 games-emulation/zsnes:pax_kernel - Triggers a paxmarking of the binary
 games-engines/frobtads:tads2compiler - Build TADS2 compiler
@@ -2961,6 +2962,7 @@ media-sound/ario:idle - Enable experimental support for MPD's idle command to re
 media-sound/audacious:chardet - Try to handle non-UTF8 chinese/japanese/korean ID3 tags
 media-sound/audacious:gtk3 - Link against version 3 of the GIMP Toolkit instead of version 2 (x11-libs/gtk+)
 media-sound/audacity:id3tag - Enables ID3 tagging with id3tag library
+media-sound/audacity:libsoxr - Uses media-libs/soxr as audio resampling library: Better quality than the included resampler and much faster than libsamplerate while keeping almost the same quality.
 media-sound/audacity:midi - Enables MIDI support
 media-sound/audacity:sbsms - Enables sbsms library support for pitch and tempo changing
 media-sound/audacity:soundtouch - Enables soundtouch library support for pitch and tempo changing
@@ -3036,7 +3038,6 @@ media-sound/herrie:xspf - Enable support for reading and saving XSPF playlists
 media-sound/hydrogen:archive - Use libarchive instead of libtar
 media-sound/jack-audio-connection-kit:coreaudio - Build the CoreAudio driver on Mac OS X systems
 media-sound/jack-audio-connection-kit:cpudetection - Enables runtime cpudetection
-media-sound/jack-audio-connection-kit:netjack - Build with support for Realtime Audio Transport over generic IP
 media-sound/jack-audio-connection-kit:pam - Add basic realime configuration via sys-auth/realtime-base
 media-sound/jalv:gtk2 - Adds support for GTK+2 in addition to GTK+3 controlled by the gtk useflag.
 media-sound/jalv:gtkmm - Adds support for dev-cpp/gtkmm: C++ interface for GTK+2
@@ -3120,6 +3121,7 @@ media-sound/pulseaudio:gdbm - Use sys-libs/gdbm to store PulseAudio databases. R
 media-sound/pulseaudio:glib - Add support to dev-libs/glib-based mainloop for the libpulse client library, to allow using libpulse on glib-based programs.
 media-sound/pulseaudio:gnome - Use GConf to store user preferences on streams and so on. Don't enable this flag if you want to use a system wide instance. If unsure, enable this flag.
 media-sound/pulseaudio:oss - Enable OSS sink/source (output/input). Deprecated, upstream does not support this on systems where other sink/source systems are available (i.e.: Linux). The padsp wrapper is now always build if the system supports OSS at all.
+media-sound/pulseaudio:qt - Pull in deps for the equalizer GUI qpaeq (requires dev-python/PyQt4).
 media-sound/pulseaudio:realtime - Makes PulseAudio use RealtimeKit (sys-auth/rtkit) to get real-time priority while running.
 media-sound/pulseaudio:ssl - Use dev-libs/openssl to provide support for RAOP (AirPort) streaming.
 media-sound/pulseaudio:system-wide - Allow preparation and installation of the system-wide init script for PulseAudio. Since this support is only supported for embedded situations, do not enable without reading the upstream instructions at http://pulseaudio.org/wiki/WhatIsWrongWithSystemMode .
@@ -4324,7 +4326,6 @@ net-libs/ptlib:tts - Enable Text-To-Speech server support
 net-libs/ptlib:video - Enable video support
 net-libs/ptlib:vxml - Enable VoiceXML support
 net-libs/ptlib:wav - Enable WAVFILE support
-net-libs/qxmpp:extras - Obsolete flag left for compability with leechcraft ebuilds
 net-libs/rest:gnome - Extract proxy information using net-libs/libsoup-gnome
 net-libs/telepathy-glib:vala - Enable bindings for dev-lang/vala
 net-libs/telepathy-qt:farsight - Enable support for farsight connection manager
@@ -4519,6 +4520,7 @@ net-misc/icecast:yp - Build support for yp public directory listings
 net-misc/iputils:SECURITY_HAZARD - Allow non-root users to flood (ping -f). This is generally a very bad idea.
 net-misc/knock:server - Installs the knockd server daemon.
 net-misc/leechcraft-blogique:metida - Support for the LiveJournal blogging platform
+net-misc/leechcraft-full:unstable - Pull plugins from ~arch
 net-misc/leechcraft-netstoremanager:googledrive - Support Google Drive storage backend
 net-misc/leechcraft-netstoremanager:yandexdisk - Support Yandex.Disk storage backend
 net-misc/lldpd:cdp - Enable Cisco Discovery Protocol
@@ -4768,6 +4770,7 @@ net-p2p/rtorrent:color - Add custom color support for torrent list
 net-p2p/rtorrent:daemon - Uses app-misc/screen to daemonize this application
 net-p2p/transmission:lightweight - Optimize transmission for low-resource systems (smaller cache size, prefer unencrypted peer connections, etc.)
 net-p2p/transmission:xfs - Enable XFS filesystem capabilities by using sys-fs/xfsprogs headers (in building of fdlimit(.c))
+net-p2p/transmission-remote-cli:rdns - Enable support for host name resolution
 net-p2p/transmission-remote-gtk:libproxy - Use net-libs/libproxy for getting the HTTP/HTTPS/SOCKS proxy configuration.
 net-p2p/transmission-remote-gtk:unique - Enable single instance support using dev-libs/libunique
 net-p2p/tribler:vlc - Enable vlc support.
@@ -5059,7 +5062,7 @@ sci-libs/cholmod:metis - Enable the Partition module to cholmod using sci-libs/m
 sci-libs/cholmod:supernodal - Enable the Supernodal module (needs virtual/lapack)
 sci-libs/fftw:avx - Adds support for Advanced Vector Extensions
 sci-libs/fftw:float - Link default library to single precision instead of double (symlinks only and fftw-2.1)
-sci-libs/fftw:fma - Use the Fused Multiply Add instruction set
+sci-libs/fftw:fma - Use the Fused Multiply Add instruction set (fma3/fma4 either one)
 sci-libs/fftw:paired-single - Adds support for pair-single optimizations of mips
 sci-libs/fftw:quad - Build quadruple precision lib
 sci-libs/fftw:zbus - Adds support for ZBus cycle-counter of mips
@@ -5191,6 +5194,7 @@ sci-mathematics/octave:qrupdate - Add support for sci-libs/qrupdatefor QR and Ch
 sci-mathematics/octave:sparse - Add enhanced support for sparse matrix algebra with SuiteSparse
 sci-mathematics/pari:data - Add additional data (elldata, galdata, seadata, nftables)
 sci-mathematics/polymake:libpolymake - Build the polymake library to build applications using the C++ interface.
+sci-mathematics/rstudio:server - Build and install the RStudio server
 sci-mathematics/singular:boost - Compile against external boost headers (dev-libs/boost)
 sci-mathematics/spass:isabelle - Add integration support for the Isabelle/HOL theorem prover.
 sci-mathematics/unuran:prng - Use sci-mathematics/prng library
@@ -5759,6 +5763,7 @@ sys-process/htop:vserver - Enable vserver support
 sys-process/lsof:rpc - support looking up RPC service info
 sys-process/procps:ncurses - Build programs that use ncurses: top, slabtop, watch
 virtual/ffmpeg:vaapi - Enables VAAPI (Video Acceleration API) for hardware decoding
+virtual/linux-sources:firmware - Install linux kernel firmware
 virtual/mpi:romio - Enable romio, a high-performance portable MPI-IO
 virtual/mysql:embedded - Build embedded server (libmysqld)
 virtual/udev:gudev - Build and install libgudev support
@@ -5968,7 +5973,7 @@ x11-base/xorg-server:xorg - Build the Xorg X server (HIGHLY RECOMMENDED)
 x11-base/xorg-server:xvfb - Build the Xvfb server
 x11-drivers/ati-drivers:disable-watermark - Do a potentially dangerous binary search and replace to disable watermark
 x11-drivers/ati-drivers:modules - Build the kernel modules
-x11-drivers/ati-drivers:pax_kernel - Enable if the user plans to run the package under a pax enabled hardened kernel
+x11-drivers/ati-drivers:pax_kernel - Enable pax kernel specific patches
 x11-drivers/ati-drivers:qt4 - Install qt4 dependent optional tools (e.g Catalyst Control Panel)
 x11-drivers/nvidia-drivers:X - Controls whether the X.org driver, OpenGL libraries, XvMC libraries, and VDPAU libraries are installed
 x11-drivers/nvidia-drivers:pax_kernel - PaX patches from the PaX project

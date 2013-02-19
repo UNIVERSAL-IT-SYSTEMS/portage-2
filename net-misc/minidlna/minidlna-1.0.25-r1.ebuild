@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/minidlna/minidlna-1.0.25-r1.ebuild,v 1.7 2013/02/11 21:30:08 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/minidlna/minidlna-1.0.25-r1.ebuild,v 1.9 2013/02/17 17:38:11 ago Exp $
 
 EAPI=4
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV}_src.tar.gz"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~x86"
+KEYWORDS="amd64 ~arm x86"
 IUSE=""
 
 RDEPEND="dev-db/sqlite
@@ -47,6 +47,9 @@ src_prepare() {
 	sed -e "/^DB_PATH=/s:\".*\":\"${EPREFIX}/var/lib/${PN}\":" \
 		-e "/^LOG_PATH=/s:\".*\":\"${EPREFIX}/var/log\":" \
 		-i ./genconfig.sh || die
+
+	sed -e 's:@$(CC):$(CC):' \
+		-i Makefile || die
 }
 
 src_configure() {
