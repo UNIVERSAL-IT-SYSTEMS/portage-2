@@ -1,11 +1,9 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-calculators/galculator/galculator-2.1.ebuild,v 1.1 2013/02/20 11:33:46 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-calculators/galculator/galculator-2.0.ebuild,v 1.3 2012/11/17 12:39:19 pacho Exp $
 
-EAPI=5
-GCONF_DEBUG=no
-
-inherit gnome2
+EAPI=4
+inherit gnome2-utils
 
 DESCRIPTION="GTK+ based algebraic and RPN calculator"
 HOMEPAGE="http://galculator.sourceforge.net/"
@@ -23,7 +21,7 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	virtual/pkgconfig"
 
-DOCS="AUTHORS ChangeLog NEWS README THANKS doc/shortcuts"
+DOCS="AUTHORS ChangeLog NEWS README THANKS TODO doc/shortcuts"
 
 src_prepare() {
 	cat <<-EOF >> po/POTFILES.skip
@@ -33,5 +31,9 @@ src_prepare() {
 	ui/prefs-ume.ui
 	EOF
 
-	gnome2_src_prepare
+	gnome2_disable_deprecation_warning
 }
+
+pkg_preinst() {	gnome2_icon_savelist; }
+pkg_postinst() { gnome2_icon_cache_update; }
+pkg_postrm() { gnome2_icon_cache_update; }
