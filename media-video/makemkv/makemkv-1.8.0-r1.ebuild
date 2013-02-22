@@ -1,9 +1,9 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/makemkv/makemkv-1.8.0.ebuild,v 1.2 2013/02/22 04:57:53 mattm Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/makemkv/makemkv-1.8.0-r1.ebuild,v 1.1 2013/02/22 12:56:13 mattm Exp $
 
 EAPI=4
-inherit eutils gnome2-utils multilib
+inherit eutils gnome2-utils multilib flag-o-matic
 
 MY_P=makemkv-oss-${PV}
 MY_PB=makemkv-bin-${PV}
@@ -37,6 +37,10 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-makefile.linux.patch
 }
 
+src_configure() {
+	replace-flags -O* -Os
+}
+
 src_compile() {
 	emake GCC="$(tc-getCC) ${CFLAGS} ${LDFLAGS}" -f makefile.linux
 }
@@ -54,7 +58,7 @@ src_install() {
 
 	local res
 	for res in 16 22 32 64 128; do
-		newicon -s ${res} makemkvgui/share/icons/${res}/makemkv.png ${PN}.png
+		newicon -s ${res} makemkvgui/share/icons/${res}x${res}/makemkv.png ${PN}.png
 	done
 
 	make_desktop_entry ${PN} MakeMKV ${PN} 'Qt;AudioVideo;Video'
