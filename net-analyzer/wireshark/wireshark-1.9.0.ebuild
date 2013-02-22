@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/wireshark-1.9.0.ebuild,v 1.1 2013/02/22 15:56:14 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/wireshark-1.9.0.ebuild,v 1.6 2013/02/22 18:28:26 jer Exp $
 
-EAPI="5"
+EAPI=5
 PYTHON_DEPEND="python? 2"
 inherit autotools eutils fcaps flag-o-matic python toolchain-funcs user
 
@@ -15,48 +15,52 @@ LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="
-	adns doc doc-pdf geoip +filecaps gtk crypt ipv6 kerberos libadns lua
+	adns crypt doc doc-pdf +filecaps geoip gtk ipv6 kerberos libadns lua +pcap
 	portaudio profile python selinux smi ssl zlib
 "
 RDEPEND="
 	>=dev-libs/glib-2.14:2
-	zlib? ( sys-libs/zlib
-		!=sys-libs/zlib-1.2.4 )
-	smi? ( net-libs/libsmi )
-	gtk? ( >=x11-libs/gtk+-2.4.0:2
-		x11-libs/pango
-		dev-libs/atk
-		x11-misc/xdg-utils )
-	ssl? ( net-libs/gnutls dev-libs/libgcrypt )
+	dev-libs/libnl
+	adns? ( !libadns? ( >=net-dns/c-ares-1.5 ) )
 	crypt? ( dev-libs/libgcrypt )
-	kerberos? ( virtual/krb5 )
-	portaudio? ( media-libs/portaudio )
-	adns? (
-		!libadns? ( >=net-dns/c-ares-1.5 )
-	)
-	libadns? ( net-libs/adns )
 	geoip? ( dev-libs/geoip )
+	gtk? (
+		>=x11-libs/gtk+-2.4.0:2
+		dev-libs/atk
+		x11-libs/pango
+		x11-misc/xdg-utils
+	)
+	kerberos? ( virtual/krb5 )
+	libadns? ( net-libs/adns )
 	lua? ( >=dev-lang/lua-5.1 )
+	pcap? ( net-libs/libpcap )
+	portaudio? ( media-libs/portaudio )
 	selinux? ( sec-policy/selinux-wireshark )
+	smi? ( net-libs/libsmi )
+	ssl? ( net-libs/gnutls dev-libs/libgcrypt )
+	zlib? ( sys-libs/zlib !=sys-libs/zlib-1.2.4 )
 "
 
 DEPEND="
 	${RDEPEND}
-	doc? ( dev-libs/libxslt
-		dev-libs/libxml2
-		app-doc/doxygen
-		doc-pdf? ( dev-java/fop ) )
-	virtual/pkgconfig
 	dev-lang/perl
-	sys-devel/bison
+	doc? (
+		app-doc/doxygen
+		dev-libs/libxml2
+		dev-libs/libxslt
+		doc-pdf? ( dev-java/fop )
+	)
 	sys-apps/sed
+	sys-devel/bison
 	sys-devel/flex
+	virtual/pkgconfig
 "
 
 S=${WORKDIR}/${MY_P}
 
 pkg_pretend() {
-	if [[ $(gcc-major-version) -lt 3 || ( $(gcc-major-version) -eq 3 &&
+	if [[ $(gcc-major-version) -lt 3 ||
+		( $(gcc-major-version) -eq 3 &&
 		$(gcc-minor-version) -le 4 ) ]] ; then
 		die "Unsupported compiler version, please upgrade."
 	fi
@@ -103,6 +107,7 @@ src_configure() {
 			myconf+=( "--without-adns --without-c-ares" )
 		fi
 	fi
+
 	# Workaround bug #213705. If krb5-config --libs has -lcrypto then pass
 	# --with-ssl to ./configure. (Mimics code from acinclude.m4).
 	if use kerberos; then
@@ -122,18 +127,18 @@ src_configure() {
 
 	# dumpcap requires libcap, setuid-install requires dumpcap
 	econf \
-		$(use_enable !filecaps setuid-install) \
-		$(use_enable filecaps setcap-install) \
+		$(use pcap && use_enable !filecaps setuid-install) \
+		$(use pcap && use_enable filecaps setcap-install) \
 		$(use_enable gtk wireshark) \
 		$(use_enable ipv6) \
 		$(use_enable profile profile-build) \
 		$(use_with crypt gcrypt) \
-		$(use_with filecaps dumpcap-group wireshark) \
 		$(use_with filecaps libcap) \
-		$(use_with filecaps pcap) \
 		$(use_with geoip) \
 		$(use_with kerberos krb5) \
 		$(use_with lua) \
+		$(use_with pcap dumpcap-group wireshark) \
+		$(use_with pcap) \
 		$(use_with portaudio) \
 		$(use_with python) \
 		$(use_with smi libsmi) \
@@ -184,16 +189,18 @@ src_install() {
 		done
 		domenu wireshark.desktop
 	fi
-	use filecaps && chmod o-x "${ED}"/usr/bin/dumpcap #357237
+	use pcap && chmod o-x "${ED}"/usr/bin/dumpcap #357237
 }
 
 pkg_postinst() {
 	# Add group for users allowed to sniff.
 	enewgroup wireshark
 
-	fcaps -o 0 -g wireshark -m 0750 -M 550 \
-		cap_dac_read_search,cap_net_raw,cap_net_admin \
-		"${EROOT}"/usr/bin/dumpcap
+	if use pcap; then
+		fcaps -o 0 -g wireshark -m 0750 -M 0750 \
+			cap_dac_read_search,cap_net_raw,cap_net_admin \
+			"${EROOT}"/usr/bin/dumpcap
+	fi
 
 	ewarn "NOTE: To run wireshark as normal user you have to add yourself to"
 	ewarn "the wireshark group. This security measure ensures that only trusted"
