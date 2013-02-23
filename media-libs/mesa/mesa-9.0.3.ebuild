@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/mesa-9.1_rc1.ebuild,v 1.1 2013/02/11 06:51:53 mattst88 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/mesa-9.0.3.ebuild,v 1.2 2013/02/23 02:49:21 mattst88 Exp $
 
-EAPI=5
+EAPI=4
 
 EGIT_REPO_URI="git://anongit.freedesktop.org/mesa/mesa"
 
@@ -16,8 +16,8 @@ inherit base autotools multilib flag-o-matic toolchain-funcs ${GIT_ECLASS}
 OPENGL_DIR="xorg-x11"
 
 MY_PN="${PN/m/M}"
-MY_P="${MY_PN}-${PV/_rc1/-devel}"
-MY_SRC_P="${MY_PN}Lib-${PV/_rc1/-devel}"
+MY_P="${MY_PN}-${PV/_/-}"
+MY_SRC_P="${MY_PN}Lib-${PV/_/-}"
 
 FOLDER="${PV/_rc*/}"
 
@@ -46,19 +46,21 @@ for card in ${VIDEO_CARDS}; do
 done
 
 IUSE="${IUSE_VIDEO_CARDS}
-	bindist +classic debug +egl +gallium gbm gles1 gles2 +llvm +nptl
+	bindist +classic debug +egl g3dvl +gallium gbm gles1 gles2 +llvm +nptl
 	openvg osmesa pax_kernel pic r600-llvm-compiler selinux +shared-glapi vdpau
 	wayland xvmc xa xorg kernel_FreeBSD"
 
 REQUIRED_USE="
+	g3dvl?  ( gallium )
 	llvm?   ( gallium )
 	openvg? ( egl gallium )
 	gbm?    ( shared-glapi )
-	gles1?  ( egl )
-	gles2?  ( egl )
+	g3dvl? ( || ( vdpau xvmc ) )
+	vdpau? ( g3dvl )
 	r600-llvm-compiler? ( gallium llvm || ( video_cards_r600 video_cards_radeon ) )
 	xa?  ( gallium )
 	xorg?  ( gallium )
+	xvmc?  ( g3dvl )
 	video_cards_intel?  ( || ( classic gallium ) )
 	video_cards_i915?   ( || ( classic gallium ) )
 	video_cards_i965?   ( classic )
@@ -72,15 +74,15 @@ REQUIRED_USE="
 	video_cards_vmware? ( gallium )
 "
 
-LIBDRM_DEPSTRING=">=x11-libs/libdrm-2.4.42"
+LIBDRM_DEPSTRING=">=x11-libs/libdrm-2.4.39"
 # keep correct libdrm and dri2proto dep
 # keep blocks in rdepend for binpkg
-RDEPEND="
-	!<x11-base/xorg-server-1.7
+# gtest file collision bug #411825
+RDEPEND="!<x11-base/xorg-server-1.7
 	!<=x11-proto/xf86driproto-2.0.3
 	classic? ( app-admin/eselect-mesa )
 	gallium? ( app-admin/eselect-mesa )
-	>=app-admin/eselect-opengl-1.2.7
+	>=app-admin/eselect-opengl-1.2.6
 	dev-libs/expat
 	gbm? ( virtual/udev )
 	>=x11-libs/libX11-1.3.99.901
@@ -112,14 +114,15 @@ done
 DEPEND="${RDEPEND}
 	llvm? (
 		>=sys-devel/llvm-2.9
-		r600-llvm-compiler? ( >=sys-devel/llvm-3.1 )
-		video_cards_radeonsi? ( >=sys-devel/llvm-3.1 )
+		r600-llvm-compiler? ( =sys-devel/llvm-3.1* )
+		video_cards_radeonsi? ( =sys-devel/llvm-3.1* )
 	)
 	=dev-lang/python-2*
 	dev-libs/libxml2[python]
 	sys-devel/bison
 	sys-devel/flex
 	virtual/pkgconfig
+	x11-misc/makedepend
 	>=x11-proto/dri2proto-2.6
 	>=x11-proto/glproto-1.4.15-r1
 	>=x11-proto/xextproto-7.0.99.1
@@ -143,7 +146,9 @@ pkg_setup() {
 
 src_unpack() {
 	default
-	[[ $PV = 9999* ]] && git-2_src_unpack
+	if [[ ${PV} = 9999* ]]; then
+		git-2_src_unpack
+	fi
 }
 
 src_prepare() {
@@ -210,6 +215,7 @@ src_configure() {
 
 	if use gallium; then
 		myconf+="
+			$(use_enable g3dvl gallium-g3dvl)
 			$(use_enable llvm gallium-llvm)
 			$(use_enable openvg)
 			$(use_enable r600-llvm-compiler)
@@ -240,7 +246,6 @@ src_configure() {
 		"
 	fi
 
-	# build fails with BSD indent, bug #428112
 	use userland_GNU || export INDENT=cat
 
 	econf \
@@ -270,6 +275,11 @@ src_install() {
 
 	if use !bindist; then
 		dodoc docs/patents.txt
+	fi
+
+	# Save the glsl-compiler for later use
+	if ! tc-is-cross-compiler; then
+		dobin "${S}"/src/glsl/glsl_compiler
 	fi
 
 	# Install config file for eselect mesa
