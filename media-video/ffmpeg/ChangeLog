@@ -1,6 +1,27 @@
 # ChangeLog for media-video/ffmpeg
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/ChangeLog,v 1.608 2013/02/23 13:24:23 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/ChangeLog,v 1.614 2013/03/04 12:12:35 aballier Exp $
+
+  04 Mar 2013; Alexis Ballier <aballier@gentoo.org> -ffmpeg-1.0.4.ebuild,
+  -ffmpeg-1.1.2.ebuild:
+  remove old
+
+  04 Mar 2013; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  fix vaapi/vdpau useflags that are now disabled by default
+
+  04 Mar 2013; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  add iconv useflag
+
+  04 Mar 2013; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  do not compress examples, they are mainly useless compressed
+
+  04 Mar 2013; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  do an out-of-tree build
+
+*ffmpeg-1.0.5 (04 Mar 2013)
+
+  04 Mar 2013; Alexis Ballier <aballier@gentoo.org> +ffmpeg-1.0.5.ebuild:
+  version bump
 
   23 Feb 2013; Alexis Ballier <aballier@gentoo.org> ffmpeg-1.0.4.ebuild:
   drop alpha/arm/ia64 keywords because of bug #458100
