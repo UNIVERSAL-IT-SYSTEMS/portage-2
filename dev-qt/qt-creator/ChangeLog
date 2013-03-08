@@ -1,6 +1,15 @@
 # ChangeLog for dev-qt/qt-creator
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-qt/qt-creator/ChangeLog,v 1.2 2013/03/05 16:41:03 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-qt/qt-creator/ChangeLog,v 1.4 2013/03/08 09:24:01 pesa Exp $
+
+*qt-creator-2.7.0_rc (08 Mar 2013)
+
+  08 Mar 2013; Davide Pesavento <pesa@gentoo.org> +qt-creator-2.7.0_rc.ebuild,
+  -qt-creator-2.7.0_beta.ebuild:
+  Version bump. Always use system botan.
+
+  08 Mar 2013; Davide Pesavento <pesa@gentoo.org> -qt-creator-2.6.1.ebuild:
+  Remove old.
 
   05 Mar 2013; Agostino Sarubbo <ago@gentoo.org> qt-creator-2.6.2.ebuild:
   Stable for amd64, wrt bug #460230
