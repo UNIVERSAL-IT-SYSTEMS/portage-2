@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-workbench/mysql-workbench-5.2.44.ebuild,v 1.5 2013/01/17 16:06:34 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-workbench/mysql-workbench-5.2.47.ebuild,v 1.1 2013/03/08 06:39:26 graaff Exp $
 
-EAPI=4
+EAPI=5
 GCONF_DEBUG="no"
 PYTHON_DEPEND=2
 
@@ -19,7 +19,7 @@ SRC_URI="mirror://mysql/Downloads/MySQLGUITools/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
 IUSE="debug doc gnome-keyring nls static-libs"
 
 # Build system bundles an unreleased copy of dev-libs/antlr-c 3.4 so we
@@ -51,7 +51,7 @@ CDEPEND="dev-db/sqlite:3
 	nls? ( sys-devel/gettext )"
 RDEPEND="${CDEPEND}
 	app-admin/sudo
-	sys-apps/net-tools"
+	>=sys-apps/net-tools-1.60_p20120127084908"
 DEPEND="${CDEPEND}
 	virtual/pkgconfig"
 
@@ -64,9 +64,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# ifconfig isn't in the normal path
-	sed -i -e 's:ifconfig:/sbin/ifconfig:' plugins/wb.admin/backend/wb_server_control.py || die
-
 	# Remove hardcoded CXXFLAGS
 	sed -i -e 's/debug_flags="-ggdb3 /debug_flags="/' configure || die
 	sed -i -e 's/-O0 -g3//' ext/scintilla/gtk/Makefile.in ext/scintilla/gtk/Makefile.am || die
@@ -76,6 +73,8 @@ src_prepare() {
 	# 357539.
 	rm -rf ext/ctemplate || die
 	mkdir -p ext/ctemplate/ctemplate-src || die
+
+	epatch "${FILESDIR}"/${PN}-5.2.44-my_lib.patch
 
 	# Regenerate autotools files to work around broken libtool for
 	# antlr, bug 431756.
