@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/hexchat/hexchat-2.9.4.ebuild,v 1.11 2013/03/08 12:30:10 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/hexchat/hexchat-2.9.4.ebuild,v 1.14 2013/03/09 13:26:11 ago Exp $
 
 EAPI=5
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.hexchat.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 arm hppa ~ia64 ppc ppc64 sparc x86 ~amd64-linux"
+KEYWORDS="alpha amd64 arm hppa ~ia64 ppc ppc64 sparc x86 ~amd64-linux"
 IUSE="dbus fastscroll +gtk ipv6 libnotify libproxy nls ntlm perl +plugins python spell ssl threads"
 
 RDEPEND="dev-libs/glib:2
@@ -48,6 +48,11 @@ src_prepare() {
 	if [[ $(get_libdir) != "lib" ]] ; then
 		sed -e 's:${prefix}/lib/hexchat:${libdir}/hexchat:' \
 			-i configure.ac || die 'sed failed'
+	fi
+
+	# Fix to compile with USE=-gtk when there is no gtk installed
+	if ! use gtk ; then
+		sed -i 's/AM_PATH_GTK_2_0//' configure.ac || die 'sed failed'
 	fi
 
 	mkdir "m4" || die "mkdir failed"

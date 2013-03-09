@@ -1,6 +1,13 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.719 2013/03/08 10:26:42 hanno Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.721 2013/03/09 13:13:02 mgorny Exp $
+
+  09 Mar 2013; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass:
+  Use doins instead of dodoc to install examples, due to PMS limitations. Bug
+  #460516.
+
+  09 Mar 2013; Sven Vermeulen <swift@gentoo.org> selinux-policy-2.eclass:
+  Do not load unconfined module with strict policy
 
   08 Mar 2013; Hanno Boeck <hanno@gentoo.org> apache-2.eclass:
   Remove re-setting of permissions every time apache gets reinstalled. See bug
