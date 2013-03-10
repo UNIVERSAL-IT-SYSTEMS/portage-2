@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/eudev/eudev-9999.ebuild,v 1.21 2013/02/09 07:58:36 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/eudev/eudev-9999.ebuild,v 1.23 2013/03/10 19:08:23 blueness Exp $
 
 EAPI=5
 
@@ -34,7 +34,7 @@ COMMON_DEPEND="gudev? ( dev-libs/glib:2 )
 	!<sys-libs/glibc-2.11"
 
 DEPEND="${COMMON_DEPEND}
-	dev-util/gperf
+	keymap? ( dev-util/gperf )
 	>=dev-util/intltool-0.40.0
 	virtual/pkgconfig
 	virtual/os-headers

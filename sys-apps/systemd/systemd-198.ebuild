@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-198.ebuild,v 1.4 2013/03/10 15:14:56 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-198.ebuild,v 1.7 2013/03/10 17:57:28 mgorny Exp $
 
 EAPI=5
 
@@ -59,6 +59,7 @@ DEPEND="${COMMON_DEPEND}
 
 # eautomake will likely trigger a full autoreconf
 DEPEND+=" dev-libs/gobject-introspection
+	>=dev-libs/libgcrypt-1.4.5
 	>=dev-util/gtk-doc-1.18"
 
 src_prepare() {
@@ -127,6 +128,7 @@ src_install() {
 	prune_libtool_files --modules
 
 	# move nss_myhostname to rootfs (bug #460640)
+	dodir /$(get_libdir)
 	mv "${D}"/usr/$(get_libdir)/libnss_myhostname* "${D}"/$(get_libdir)/ \
 		|| die "Unable to move nss_myhostname to rootfs"
 
@@ -188,6 +190,10 @@ optfeature() {
 
 pkg_postinst() {
 	enewgroup systemd-journal
+	if use http; then
+		enewgroup systemd-journal-gateway
+		enewuser systemd-journal-gateway -1 -1 -1 systemd-journal-gateway
+	fi
 	systemd_update_catalog
 
 	mkdir -p "${ROOT}"/run || ewarn "Unable to mkdir /run, this could mean trouble."
