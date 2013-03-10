@@ -1,23 +1,23 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/hardened-sources/hardened-sources-2.6.32-r152.ebuild,v 1.2 2013/03/09 21:07:30 tomwij Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/hardened-sources/hardened-sources-3.8.2-r1.ebuild,v 1.1 2013/03/10 03:09:53 blueness Exp $
 
-EAPI="5"
+EAPI="4"
 
 ETYPE="sources"
-K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="48"
+K_WANT_GENPATCHES="base"
+K_GENPATCHES_VER="3"
 K_DEBLOB_AVAILABLE="1"
 
 inherit kernel-2
 detect_version
 
-HGPV="${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-156"
+HGPV="${KV_MAJOR}.${KV_MINOR}.${KV_PATCH}-2"
 HGPV_URI="http://dev.gentoo.org/~blueness/hardened-sources/hardened-patches/hardened-patches-${HGPV}.extras.tar.bz2"
 SRC_URI="${KERNEL_URI} ${HGPV_URI} ${GENPATCHES_URI} ${ARCH_URI}"
 
 UNIPATCH_LIST="${DISTDIR}/hardened-patches-${HGPV}.extras.tar.bz2"
-UNIPATCH_EXCLUDE="4200_fbcondecor-0.9.6.patch"
+UNIPATCH_EXCLUDE="2900_dev-root-proc-mount-fix.patch 4200_fbcondecor-0.9.6.patch"
 
 DESCRIPTION="Hardened kernel sources (kernel series ${KV_MAJOR}.${KV_MINOR})"
 HOMEPAGE="http://www.gentoo.org/proj/en/hardened/"
@@ -32,14 +32,6 @@ pkg_postinst() {
 
 	local GRADM_COMPAT="sys-apps/gradm-2.9.1*"
 
-	ewarn
-	ewarn "Hardened Gentoo provides three different predefined grsecurity level:"
-	ewarn "[server], [workstation], and [virtualization]."
-	ewarn
-	ewarn "Those who intend to use one of these predefined grsecurity levels"
-	ewarn "should read the help associated with the level.  Users importing a"
-	ewarn "kernel configuration from a kernel prior to ${PN}-2.6.32,"
-	ewarn "should review their selected grsecurity/PaX options carefully."
 	ewarn
 	ewarn "Users of grsecurity's RBAC system must ensure they are using"
 	ewarn "${GRADM_COMPAT}, which is compatible with ${PF}."
