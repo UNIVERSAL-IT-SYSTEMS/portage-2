@@ -1,6 +1,25 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.725 2013/03/09 13:52:55 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.731 2013/03/09 21:36:07 robbat2 Exp $
+
+  09 Mar 2013; Robin H. Johnson <robbat2@gentoo.org> mysql-autotools.eclass:
+  Bug #401733: nested configure scripts in MySQL generate unrecognized options
+  false positives when toplevel configure passes downwards.
+
+  09 Mar 2013; Tom Wijsman <TomWij@gentoo.org> kernel-2.eclass:
+  Kernel sources and (gen)patches now use xz instead of bz2. Bug #421721.
+
+  09 Mar 2013; Julian Ospald <hasufell@gentoo.org> +multilib-minimal.eclass:
+  add multilib-minimal.eclass
+
+  09 Mar 2013; Maxim Koltsov <maksbotan@gentoo.org> leechcraft.eclass:
+  Fix leechcraft.eclass to support new category, bug #460958.
+
+  09 Mar 2013; Michał Górny <mgorny@gentoo.org> eutils.eclass:
+  Disable epunt_cxx warning since epunt_cxx is broken nowadays.
+
+  09 Mar 2013; Michał Górny <mgorny@gentoo.org> eutils.eclass:
+  Fix epunt_cxx not to subshell.
 
   09 Mar 2013; Michał Górny <mgorny@gentoo.org> python-r1.eclass:
   Clean up redundant USE flag check calls, replace them with a single call in

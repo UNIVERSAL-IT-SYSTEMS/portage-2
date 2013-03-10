@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-doc/devmanual/devmanual-9999.ebuild,v 1.6 2013/02/26 18:31:19 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-doc/devmanual/devmanual-9999.ebuild,v 1.7 2013/03/09 17:13:03 hwoarang Exp $
 
 EAPI=5
 
@@ -22,10 +22,12 @@ DEPEND="dev-libs/libxslt
 
 DOC_CONTENTS="In order to browse the Gentoo Development Guide in
 	offline mode, point your browser to the following url:
-	/usr/share/doc/devmanual-9999/html/index.html"
+	/usr/share/doc/devmanual/html/index.html"
 
 src_install() {
 	dohtml -r *
+	einfo "Creating symlink from ${P} to ${PN} for preserving bookmarks"
+	dosym /usr/share/doc/${P} /usr/share/doc/${PN}
 	readme.gentoo_create_doc
 }
 
