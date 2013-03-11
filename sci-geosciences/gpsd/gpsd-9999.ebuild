@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/gpsd-9999.ebuild,v 1.8 2013/03/02 23:21:19 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/gpsd-9999.ebuild,v 1.9 2013/03/11 17:24:59 vapier Exp $
 
 EAPI="4"
 
@@ -61,8 +61,9 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-3.3-ldflags.patch
-	epatch "${FILESDIR}"/${PN}-3.4-always-install-man-pages.patch
+	epatch "${FILESDIR}"/${PN}-3.8-ldflags.patch
+	epatch "${FILESDIR}"/${PN}-3.8-libgps.patch
+	epatch "${FILESDIR}"/${PN}-3.8-udev.patch
 	epatch "${FILESDIR}"/${PN}-3.4-no-man-gen.patch
 	epatch "${FILESDIR}"/${PN}-3.7-rpath.patch
 
@@ -90,14 +91,13 @@ src_prepare() {
 			"${FILESDIR}"/${PN}-3.3-setup.py > setup.py || die
 		distutils_src_prepare
 	fi
-
-	sed -i -e "s:/lib/udev:$(udev_get_udevdir):" gpsd.rules SConstruct || die
 }
 
 src_configure() {
 	myesconsargs=(
 		prefix="${EPREFIX}/usr"
 		libdir="\$prefix/$(get_libdir)"
+		udevdir="$(udev_get_udevdir)"
 		chrpath=False
 		gpsd_user=gpsd
 		gpsd_group=uucp
