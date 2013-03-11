@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/qxmpp/qxmpp-9999.ebuild,v 1.13 2013/03/02 22:58:08 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/qxmpp/qxmpp-9999.ebuild,v 1.14 2013/03/11 10:14:05 pinkbyte Exp $
 
 EAPI=5
 
@@ -44,6 +44,6 @@ src_install() {
 	qt4-r2_src_install
 	if use doc; then
 		# Use proper path for documentation
-		mv "${ED}"/usr/share/doc/${PN} "${ED}"/usr/share/doc/${P} || die "doc mv failed"
+		mv "${ED}"/usr/share/doc/${PN} "${ED}"/usr/share/doc/${PF} || die "doc mv failed"
 	fi
 }
