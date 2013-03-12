@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/midori/midori-9999.ebuild,v 1.45 2013/02/06 12:56:37 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/midori/midori-9999.ebuild,v 1.46 2013/03/12 10:19:16 ssuominen Exp $
 
 EAPI=5
 
@@ -25,7 +25,7 @@ HOMEPAGE="http://twotoasts.de/index.php/midori/"
 
 LICENSE="LGPL-2.1 MIT"
 SLOT="0"
-IUSE="+deprecated doc gnome libnotify nls +unique zeitgeist"
+IUSE="+deprecated doc gnome libnotify nls +unique webkit2 zeitgeist"
 
 RDEPEND=">=dev-db/sqlite-3.6.19:3
 	>=dev-libs/glib-2.22
@@ -39,7 +39,7 @@ RDEPEND=">=dev-db/sqlite-3.6.19:3
 		)
 	!deprecated? (
 		>=app-crypt/gcr-3
-		net-libs/webkit-gtk:3
+		>=net-libs/webkit-gtk-1.10.2:3
 		x11-libs/gtk+:3
 		unique? ( dev-libs/libunique:3 )
 		)
@@ -77,6 +77,9 @@ src_prepare() {
 src_configure() {
 	strip-linguas -i po
 
+	local myconf
+	use deprecated || myconf="$(use_enable webkit2)"
+
 	VALAC="$(type -P valac-${VALA_VERSION})" \
 	waf-utils_src_configure \
 		--disable-docs \
@@ -87,7 +90,8 @@ src_configure() {
 		--enable-addons \
 		$(use_enable nls) \
 		$(use_enable !deprecated gtk3) \
-		$(use_enable zeitgeist)
+		$(use_enable zeitgeist) \
+		${myconf}
 }
 
 pkg_preinst() {
