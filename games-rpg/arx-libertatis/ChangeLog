@@ -1,6 +1,14 @@
 # ChangeLog for games-rpg/arx-libertatis
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/games-rpg/arx-libertatis/ChangeLog,v 1.13 2013/03/03 02:08:24 pesa Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-rpg/arx-libertatis/ChangeLog,v 1.15 2013/03/14 01:02:50 hasufell Exp $
+
+  14 Mar 2013; Julian Ospald <hasufell@gentoo.org>
+  -arx-libertatis-1.0.2-r1.ebuild, -files/arx-libertatis-1.0.2-cmake2.8.patch,
+  -files/arx-libertatis-1.0.2-gentoo.patch, metadata.xml:
+  remove old
+
+  14 Mar 2013; Julian Ospald <hasufell@gentoo.org> arx-libertatis-1.0.3.ebuild:
+  remove cdinstall and demo useflag in preparation for arx-fatalis-data revbump
 
   03 Mar 2013; Davide Pesavento <pesa@gentoo.org> metadata.xml:
   Adjust metadata for Qt category move.
