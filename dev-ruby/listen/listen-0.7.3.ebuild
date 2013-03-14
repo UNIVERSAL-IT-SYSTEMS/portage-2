@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/listen/listen-0.7.2.ebuild,v 1.2 2013/01/15 06:43:37 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/listen/listen-0.7.3.ebuild,v 1.1 2013/03/14 06:34:25 graaff Exp $
 
 EAPI=5
 
@@ -24,4 +24,4 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~x64-macos"
 IUSE=""
 
-ruby_add_rdepend ">=dev-ruby/rb-inotify-0.8.8"
+ruby_add_rdepend ">=dev-ruby/rb-inotify-0.9.0"
