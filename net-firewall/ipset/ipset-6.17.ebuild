@@ -1,12 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-firewall/ipset/ipset-6.10.ebuild,v 1.1 2011/12/17 03:30:59 pva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-firewall/ipset/ipset-6.17.ebuild,v 1.1 2013/03/16 21:42:09 pinkbyte Exp $
 
-EAPI="4"
+EAPI="5"
 inherit autotools linux-info linux-mod
-
-# Maintainer: with version bump take a look on:
-# http://git.netfilter.org/cgi-bin/gitweb.cgi?p=ipset.git;a=commit;h=70fdf030545f00888bcebb5fca8243a6dccca95b
 
 DESCRIPTION="IPset tool for iptables, successor to ippool."
 HOMEPAGE="http://ipset.netfilter.org/"
@@ -14,12 +11,14 @@ SRC_URI="http://ipset.netfilter.org/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="modules"
 
-RDEPEND=">=net-firewall/iptables-1.4.4
+RDEPEND=">=net-firewall/iptables-1.4.7
 	net-libs/libmnl"
 DEPEND="${RDEPEND}"
+
+DOCS=( ChangeLog INSTALL README UPGRADE )
 
 # configurable from outside, e.g. /etc/make.conf
 IP_NF_SET_MAX=${IP_NF_SET_MAX:-256}
@@ -55,7 +54,7 @@ pkg_setup() {
 				eerror "There is IP{,_NF}_SET or NETFILTER_XT_SET support in your kernel."
 				eerror "Please either build ipset with modules USE flag disabled"
 				eerror "or rebuild kernel without IP_SET support and make sure"
-				eerror "there is NO kernel ip_set* modules in /lib/modules/<you_kernel>/... ."
+				eerror "there is NO kernel ip_set* modules in /lib/modules/<your_kernel>/... ."
 				die "USE=modules and in-kernel ipset support detected."
 			else
 				einfo "Modular kernel detected. Gonna build kernel modules..."
@@ -77,8 +76,10 @@ src_prepare() {
 
 src_configure() {
 	econf \
+		$(use_with modules kmod) \
+		--disable-static \
 		--with-maxsets=${IP_NF_SET_MAX} \
-		--libdir="${EPREFIX}"/$(get_libdir) \
+		--libdir="${EPREFIX}/$(get_libdir)" \
 		--with-ksource="${KV_DIR}" \
 		--with-kbuild="${KV_OUT_DIR}"
 }
@@ -96,15 +97,15 @@ src_compile() {
 
 src_install() {
 	einfo "Installing userspace"
-	emake DESTDIR="${D}" install
+	default
+	prune_libtool_files
+
+	newinitd "${FILESDIR}"/ipset.initd-r2 ${PN}
+	newconfd "${FILESDIR}"/ipset.confd ${PN}
+	keepdir /var/lib/ipset
 
 	if [[ ${build_modules} -eq 1 ]]; then
 		einfo "Installing kernel modules"
 		linux-mod_src_install
 	fi
-
-	newinitd ${FILESDIR}/ipset.initd-r2 ${PN}
-	newconfd ${FILESDIR}/ipset.confd ${PN}
-	keepdir /var/lib/ipset
-	find "${ED}" \( -name '*.la' -o -name '*.a' \) -exec rm -f '{}' +
 }
