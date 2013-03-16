@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-auth/consolekit/consolekit-0.4.5_p20120320-r1.ebuild,v 1.18 2013/03/14 02:56:28 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-auth/consolekit/consolekit-0.4.5_p20120320-r1.ebuild,v 1.19 2013/03/16 17:11:49 ssuominen Exp $
 
 EAPI=5
 inherit autotools eutils linux-info pam systemd
@@ -46,8 +46,6 @@ DEPEND="${COMMON_DEPEND}
 
 S=${WORKDIR}/${MY_P}
 
-QA_MULTILIB_PATHS="usr/lib/ConsoleKit/udev-acl"
-
 pkg_setup() {
 	if use kernel_linux; then
 		# This is from http://bugs.gentoo.org/376939
@@ -74,7 +72,6 @@ src_configure() {
 
 	econf \
 		XMLTO_FLAGS='--skip-validation' \
-		--libexecdir="${EPREFIX}"/usr/lib/${MY_PN} \
 		--localstatedir="${EPREFIX}"/var \
 		$(use_enable pam pam-module) \
 		$(use_enable doc docbook-docs) \
