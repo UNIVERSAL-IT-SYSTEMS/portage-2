@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.14554 2013/03/13 22:51:02 tomwij Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.14556 2013/03/16 11:24:37 tomwij Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,6 +31,11 @@
 
 #--- END OF EXAMPLES ---
 
+# Samuli Suominen <ssuominen@gentoo.org> (16 Mar 2013)
+# Temporary mask, waiting for the emul-linux-x86-soundlibs
+# to be bumped for abi_x86_32 here.
+>=media-libs/libmikmod-3.2.0-r1
+
 # Tom Wijsman <TomWij@gentoo.org> (13 Mar 2013)
 # Masking vulnerable versions of Meteor.
 <www-servers/meteor-0.5.7.1
@@ -47,11 +52,9 @@
 =sys-kernel/openvz-sources-2.6.18*
 
 # Tom Wijsman <TomWij@gentoo.org> (12 Mar 2013)
-# 2.5.* has known security and other issues due to bundled ffmpeg,
-# see bugs #446468 and #444262.
-# 2.6.* is broken, need to be revised into multiple packages in
-# order for it to be maintainable, see bug #461496 comment #5.
-media-video/avidemux
+# 2.5.* has known security and other issues due to an affected
+# bundled ffmpeg, see bugs #446468 and #444262.
+<media-video/avidemux-2.6.2
 
 # Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (11 Mar 2013)
 # Does not build against modern xorg-server, dead upstream
