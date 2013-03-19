@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/python-3.2.3.ebuild,v 1.17 2012/09/30 17:15:28 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/python/python-3.2.3.ebuild,v 1.19 2013/03/19 03:33:57 vapier Exp $
 
 EAPI="3"
 WANT_AUTOMAKE="none"
@@ -20,7 +20,7 @@ LICENSE="PSF-2"
 SLOT="3.2"
 PYTHON_ABI="${SLOT}"
 KEYWORDS="alpha amd64 arm ~hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
-IUSE="build doc elibc_uclibc examples gdbm ipv6 +ncurses +readline sqlite +ssl +threads tk +wide-unicode wininst +xml"
+IUSE="build doc elibc_uclibc examples gdbm hardened ipv6 +ncurses +readline sqlite +ssl +threads tk +wide-unicode wininst +xml"
 
 RDEPEND="app-arch/bzip2
 		>=sys-libs/zlib-1.1.3
@@ -144,6 +144,9 @@ src_configure() {
 			-e "/^HOSTPYTHON/s:=.*:=./hostpython:" \
 			-e "/^HOSTPGEN/s:=.*:=./Parser/hostpgen:" \
 			Makefile.pre.in || die "sed failed"
+
+		# The configure script assumes it's buggy when cross-compiling.
+		export ac_cv_buggy_getaddrinfo=no
 	fi
 
 	# Export CXX so it ends up in /usr/lib/python3.X/config/Makefile.
