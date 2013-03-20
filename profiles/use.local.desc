@@ -2502,7 +2502,6 @@ kde-base/perlqt:qscintilla - Compile bindings for x11-libs/qscintilla.
 kde-base/perlqt:qthelp - Compile bindings for QtHelp from dev-qt/qthelp.
 kde-base/perlqt:qwt - Compile bindings for x11-libs/qwt.
 kde-base/perlqt:webkit - Compile bindings for dev-qt/qtwebkit.
-kde-base/plasma-workspace:google-gadgets - Add google-gadgets support
 kde-base/plasma-workspace:json - Enable JSON support via dev-libs/qjson
 kde-base/plasma-workspace:qalculate - Enable Qalculate runner using sci-libs/libqalculate
 kde-base/powerdevil:pm-utils - Adds support for suspend/resume the system through sys-power/pm-utils
@@ -2810,6 +2809,8 @@ media-libs/alure:fluidsynth - Enables Fluidsynth MIDI software synthesis
 media-libs/avidemux-core:aften - Enable A/52 (AC-3) audio encoder support
 media-libs/avidemux-core:amr - Enable Adaptive Multi-Rate format support via media-libs/opencore-amr
 media-libs/avidemux-core:system-ffmpeg - Use the ffmpeg provided by the system.
+media-libs/avidemux-plugins:aften - Enable A/52 (AC-3) audio encoder support
+media-libs/avidemux-plugins:amr - Enable Adaptive Multi-Rate format support via media-libs/opencore-amr
 media-libs/babl:introspection - Use dev-libs/gobject-introspection for introspection
 media-libs/babl:vala - Enable bindings for dev-lang/vala
 media-libs/cal3d:16bit-indices - Enables use of 16bit indices
@@ -5940,6 +5941,7 @@ sys-power/powerman:snmppower - Add support for SNMP based power controllers
 sys-power/powermgmt-base:pm-utils - Adds support for on_ac_power through sys-power/pm-utils
 sys-power/suspend:crypt - Allows suspend and resume from encrypted disk
 sys-power/suspend:fbsplash - Add support for framebuffer splash
+sys-power/upower:deprecated - Use sys-power/pm-utils (deprecated) instead of sys-apps/systemd
 sys-process/cronie:anacron - Install the periodic anacron command scheduler.
 sys-process/cronie:inotify - Enable inotify filesystem monitoring support.
 sys-process/fcron:debug - Enable debug code and output. Since version 3.0.5 this will no longer force foreground execution, and fcron will be able to run as a service properly.
