@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.21 2013/03/10 17:57:28 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.22 2013/03/23 07:46:53 mgorny Exp $
 
 EAPI=5
 
@@ -177,8 +177,7 @@ src_install() {
 	fi
 
 	# Disable storing coredumps in journald, bug #433457
-	mv "${D}"/usr/lib/sysctl.d/coredump.conf \
-		"${D}"/etc/sysctl.d/coredump.conf.disabled || die
+	mv "${D}"/usr/lib/sysctl.d/50-coredump.conf{,.disabled} || die
 
 	# Preserve empty dirs in /etc & /var, bug #437008
 	keepdir /etc/binfmt.d /etc/modules-load.d /etc/tmpfiles.d \
