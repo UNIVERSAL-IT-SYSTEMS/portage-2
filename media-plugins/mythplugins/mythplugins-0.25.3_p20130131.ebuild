@@ -1,11 +1,11 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/mythplugins/mythplugins-0.25.2_p20120716.ebuild,v 1.1 2012/07/17 01:30:53 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/mythplugins/mythplugins-0.25.3_p20130131.ebuild,v 1.1 2013/03/24 17:24:46 cardoe Exp $
 
 EAPI=4
 
 PYTHON_DEPEND="2:2.6"
-BACKPORTS="4e446508ec"
+BACKPORTS="ff8c4960"
 MY_P=${P%_p*}
 
 inherit eutils python

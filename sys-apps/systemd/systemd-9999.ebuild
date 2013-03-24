@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.22 2013/03/23 07:46:53 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.23 2013/03/24 17:03:21 mgorny Exp $
 
 EAPI=5
 
@@ -22,20 +22,21 @@ SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz"
 LICENSE="GPL-2 LGPL-2.1 MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc64 ~x86"
-IUSE="acl audit cryptsetup efi gcrypt http +kmod lzma pam python
-	qrcode selinux tcpd vanilla xattr"
+IUSE="acl audit cryptsetup doc efi gcrypt gudev http
+	introspection +kmod lzma pam python qrcode selinux tcpd vanilla xattr"
 
 MINKV="2.6.39"
 
 COMMON_DEPEND=">=sys-apps/dbus-1.6.8-r1
 	>=sys-apps/util-linux-2.20
-	~sys-fs/udev-${PV}[acl?]
 	sys-libs/libcap
 	acl? ( sys-apps/acl )
 	audit? ( >=sys-process/audit-2 )
 	cryptsetup? ( >=sys-fs/cryptsetup-1.4.2 )
 	gcrypt? ( >=dev-libs/libgcrypt-1.4.5 )
+	gudev? ( >=dev-libs/glib-2 )
 	http? ( net-libs/libmicrohttpd )
+	introspection? ( >=dev-libs/gobject-introspection-1.31.1 )
 	kmod? ( >=sys-apps/kmod-12 )
 	lzma? ( app-arch/xz-utils )
 	pam? ( virtual/pam )
@@ -46,14 +47,14 @@ COMMON_DEPEND=">=sys-apps/dbus-1.6.8-r1
 	xattr? ( sys-apps/attr )"
 
 RDEPEND="${COMMON_DEPEND}
-	sys-apps/hwids
+	>=sys-apps/hwids-20130309-r1[udev]
 	|| (
 		>=sys-apps/util-linux-2.22
 		<sys-apps/sysvinit-2.88-r4
 	)
 	!sys-auth/nss-myhostname
 	!<sys-libs/glibc-2.10
-	!<sys-fs/udev-197-r3"
+	!sys-fs/udev"
 
 # sys-fs/quota is necessary to store correct paths in unit files
 DEPEND="${COMMON_DEPEND}
@@ -61,47 +62,42 @@ DEPEND="${COMMON_DEPEND}
 	app-text/docbook-xsl-stylesheets
 	dev-libs/libxslt
 	dev-util/gperf
-	dev-util/intltool
+	>=dev-util/intltool-0.50
 	sys-fs/quota
-	>=sys-kernel/linux-headers-${MINKV}"
+	>=sys-kernel/linux-headers-${MINKV}
+	virtual/pkgconfig
+	doc? ( >=dev-util/gtk-doc-1.18 )"
 
-# eautomake will likely trigger a full autoreconf
-DEPEND+=" dev-libs/gobject-introspection
+#if LIVE
+DEPEND="${DEPEND}
+	app-text/docbook-xsl-stylesheets
+	dev-libs/libxslt
+	dev-libs/gobject-introspection
 	>=dev-libs/libgcrypt-1.4.5
 	>=dev-util/gtk-doc-1.18"
 
-#if LIVE
 SRC_URI=
 KEYWORDS=
 
 pkg_pretend() {
 	ewarn "Please note that the live systemd ebuild is not actively maintained"
-	ewarn "and since the udev split, it is an easy way to get your system broken"
-	ewarn "and unbootable. Please consider using the release ebuilds instead."
+	ewarn "and it is an easy way to get your system broken and unbootable."
+	ewarn "Please consider using the release ebuilds instead."
 }
 #endif
 
 src_prepare() {
-	# link against external udev.
-	sed -i -e 's:lib\(udev\)\.la:-l\1:' Makefile.am
-
-	local PATCHES=(
-		"${FILESDIR}"/199-0001-Disable-udev-targets.patch
-	)
-
 #if LIVE
 	gtkdocize --docdir docs/ || die
 #endif
 
 	autotools-utils_src_prepare
-
-	# XXX: support it within eclass
-	eautomake
 }
 
 src_configure() {
 	local myeconfargs=(
 		--localstatedir=/var
+		--with-firmware-path="/lib/firmware/updates:/lib/firmware"
 		# install everything to /usr
 		--with-rootprefix=/usr
 		--with-rootlibdir=/usr/$(get_libdir)
@@ -109,22 +105,20 @@ src_configure() {
 		--with-pamlibdir=/$(get_libdir)/security
 		# make sure we get /bin:/sbin in $PATH
 		--enable-split-usr
-		# disable sysv compatibility
-		--with-sysvinit-path=
-		--with-sysvrcnd-path=
-		# udev parts
-		--disable-introspection
-		--disable-gtk-doc
-		--disable-gudev
+		# no deps
+		--enable-keymap
 		# just text files
 		--enable-polkit
 		# optional components/dependencies
 		$(use_enable acl)
 		$(use_enable audit)
 		$(use_enable cryptsetup libcryptsetup)
+		$(use_enable doc gtk-doc)
 		$(use_enable efi)
 		$(use_enable gcrypt)
+		$(use_enable gudev)
 		$(use_enable http microhttpd)
+		$(use_enable introspection)
 		$(use_enable kmod)
 		$(use_enable lzma xz)
 		$(use_enable pam)
@@ -140,8 +134,7 @@ src_configure() {
 }
 
 src_install() {
-	autotools-utils_src_install \
-		udevlibexecdir=/lib/udev
+	autotools-utils_src_install
 
 	# zsh completion
 	insinto /usr/share/zsh/site-functions
@@ -211,6 +204,9 @@ optfeature() {
 }
 
 pkg_postinst() {
+	# for udev rules
+	enewgroup dialout
+
 	enewgroup systemd-journal
 	if use http; then
 		enewgroup systemd-journal-gateway

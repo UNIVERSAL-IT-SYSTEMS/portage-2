@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/cups-9999.ebuild,v 1.22 2013/03/17 15:08:23 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/cups-9999.ebuild,v 1.23 2013/03/24 16:27:24 dilfridge Exp $
 
 EAPI=4
 
@@ -68,7 +68,7 @@ DEPEND="${RDEPEND}
 PDEPEND="
 	app-text/ghostscript-gpl[cups]
 	>=app-text/poppler-0.12.3-r3[utils]
-	net-print/cups-filters
+	>=net-print/cups-filters-1.0.30
 	filters? ( net-print/foomatic-filters )
 "
 
@@ -84,7 +84,6 @@ PATCHES=(
 	"${FILESDIR}/${PN}-1.6.0-fix-install-perms.patch"
 	"${FILESDIR}/${PN}-1.4.4-nostrip.patch"
 	"${FILESDIR}/${PN}-1.5.0-systemd-socket.patch"		# systemd support
-	"${FILESDIR}/${PN}-1.5.2-browsing.patch"		# browsing off by default
 )
 
 pkg_setup() {
@@ -279,8 +278,15 @@ pkg_postinst() {
 		echo
 		elog "CUPS-1.6 no longer supports automatic remote printers or implicit classes"
 		elog "via the CUPS, LDAP, or SLP protocols, i.e. \"network browsing\"."
-		elog "You will have to find printers using zeroconf/avahi instead, or enter"
-		elog "the location manually."
+		elog "You will have to find printers using zeroconf/avahi instead, enter"
+		elog "the location manually, or run cups-browsed from net-print/cups-filters"
+		elog "which re-adds that functionality as a separate daemon."
+		echo
+	elif [[ "${REPLACING_VERSIONS}" ]] && [[ "${REPLACING_VERSIONS}" < "1.6.2" ]]; then
+		echo
+		elog "Starting with net-print/cups-filters-1.0.30, that package provides"
+		elog "a daemon cups-browsed which implements printer discovery via the"
+		elog "Cups-1.5 protocol. Not much tested so far though."
 		echo
 	fi
 }
