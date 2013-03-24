@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/cups-9999.ebuild,v 1.23 2013/03/24 16:27:24 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/cups-9999.ebuild,v 1.26 2013/03/24 21:59:55 dilfridge Exp $
 
-EAPI=4
+EAPI=5
 
 PYTHON_DEPEND="python? 2:2.5"
 
@@ -28,9 +28,9 @@ SLOT="0"
 IUSE="acl avahi dbus debug +filters gnutls java kerberos pam
 	python selinux +ssl static-libs systemd +threads usb X xinetd zeroconf"
 
-LANGS="ca es ja"
+LANGS="ca es fr ja ru"
 for X in ${LANGS} ; do
-	IUSE="${IUSE} linguas_${X}"
+	IUSE="${IUSE} +linguas_${X}"
 done
 
 RDEPEND="
@@ -67,7 +67,7 @@ DEPEND="${RDEPEND}
 
 PDEPEND="
 	app-text/ghostscript-gpl[cups]
-	>=app-text/poppler-0.12.3-r3[utils]
+	app-text/poppler[utils]
 	>=net-print/cups-filters-1.0.30
 	filters? ( net-print/foomatic-filters )
 "
@@ -143,11 +143,8 @@ src_prepare() {
 src_configure() {
 	export DSOFLAGS="${LDFLAGS}"
 
-	# locale support
-	strip-linguas ${LANGS}
-	if [ -z "${LINGUAS}" ] ; then
-		export LINGUAS=none
-	fi
+	einfo LANGS=\"${LANGS}\"
+	einfo LINGUAS=\"${LINGUAS}\"
 
 	local myconf
 	if use ssl ; then
@@ -264,16 +261,14 @@ pkg_postinst() {
 	gnome2_icon_cache_update
 	fdo-mime_desktop_database_update
 
-	echo
-	elog "For information about installing a printer and general cups setup"
-	elog "take a look at: http://www.gentoo.org/doc/en/printing-howto.xml"
-	echo
-	elog "Network browsing for printers is now switched off by default in the config file."
-	elog "To (re-)enable it, edit /etc/cups/cupsd.conf and set \"Browsing On\", "
-	elog "afterwards re-start or reload cups."
-	echo
-
 	# not slotted - at most one value
+	if ! [[ "${REPLACING_VERSIONS}" ]]; then
+		echo
+		elog "For information about installing a printer and general cups setup"
+		elog "take a look at: http://www.gentoo.org/doc/en/printing-howto.xml"
+		echo
+	fi
+
 	if [[ "${REPLACING_VERSIONS}" ]] && [[ "${REPLACING_VERSIONS}" < "1.6" ]]; then
 		echo
 		elog "CUPS-1.6 no longer supports automatic remote printers or implicit classes"
