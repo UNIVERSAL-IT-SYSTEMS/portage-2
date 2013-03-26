@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.207 2013/03/24 09:26:55 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.210 2013/03/26 19:23:33 ssuominen Exp $
 
 EAPI=5
 
@@ -43,7 +43,7 @@ COMMON_DEPEND=">=sys-apps/util-linux-2.20
 	kmod? ( >=sys-apps/kmod-12 )
 	selinux? ( >=sys-libs/libselinux-2.1.9 )
 	!<sys-libs/glibc-2.11
-	!<sys-apps/systemd-${PV}"
+	!sys-apps/systemd"
 
 DEPEND="${COMMON_DEPEND}
 	virtual/os-headers
@@ -88,7 +88,7 @@ udev_check_KV() {
 check_default_rules() {
 	# Make sure there are no sudden changes to upstream rules file
 	# (more for my own needs than anything else ...)
-	local udev_rules_md5=e602584bcabf09cde0f7f9a3c1adda28
+	local udev_rules_md5=3708dcb06e69ef2d3597cad0c98625e1
 	MD5=$(md5sum < "${S}"/rules/50-udev-default.rules)
 	MD5=${MD5/  -/}
 	if [[ ${MD5} != ${udev_rules_md5} ]]; then
@@ -361,15 +361,6 @@ pkg_preinst() {
 	preserve_old_lib /{,usr/}$(get_libdir)/libudev$(get_libname 0)
 }
 
-# This function determines if a directory is a mount point.
-# It was lifted from dracut.
-ismounted() {
-	while read a m a; do
-		[[ $m = $1 ]] && return 0
-	done < "${ROOT}"/proc/mounts
-	return 1
-}
-
 pkg_postinst() {
 	mkdir -p "${ROOT}"run
 
@@ -390,24 +381,6 @@ pkg_postinst() {
 	if [[ -f ${old_dm_rules} ]]; then
 		rm -f "${old_dm_rules}"
 		einfo "Removed unneeded file ${old_dm_rules}"
-	fi
-
-	if ismounted /usr; then
-		ewarn
-		ewarn "Your system has /usr on a separate partition. This means"
-		ewarn "you will need to use an initramfs to pre-mount /usr before"
-		ewarn "udev runs."
-		ewarn
-		ewarn "If this is not set up before your next reboot, udev may work;"
-		ewarn "However, you also may experience failures which are very"
-		ewarn "difficult to troubleshoot."
-		ewarn
-		ewarn "For a more detailed explanation, see the following URL:"
-		ewarn "http://www.freedesktop.org/wiki/Software/systemd/separate-usr-is-broken"
-		ewarn
-		ewarn "For more information on setting up an initramfs, see the"
-		ewarn "following URL:"
-		ewarn "http://www.gentoo.org/doc/en/initramfs-guide.xml"
 	fi
 
 	local fstab="${ROOT}"etc/fstab dev path fstype rest
@@ -464,8 +437,10 @@ pkg_postinst() {
 	ewarn "http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames"
 	ewarn
 	ewarn "Example command to get the information for the new interface name before booting"
-	ewarn "(replace ifname with, for example, eth0):"
+	ewarn "(replace <ifname> with, for example, eth0):"
 	ewarn "# udevadm test-builtin net_id /sys/class/net/<ifname> 2> /dev/null"
+	ewarn
+	ewarn "You can use kernel command net.ifnames= to control this feature."
 
 	ewarn
 	ewarn "You need to restart udev as soon as possible to make the upgrade go"

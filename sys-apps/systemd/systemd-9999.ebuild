@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.27 2013/03/26 16:24:26 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.30 2013/03/26 17:29:23 mgorny Exp $
 
 EAPI=5
 
@@ -22,7 +22,7 @@ SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz"
 LICENSE="GPL-2 LGPL-2.1 MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc64 ~x86"
-IUSE="acl audit cryptsetup doc efi gcrypt gudev http
+IUSE="acl audit cryptsetup doc gcrypt gudev http
 	introspection +kmod lzma pam python qrcode selinux static-libs
 	tcpd vanilla xattr"
 
@@ -47,7 +47,9 @@ COMMON_DEPEND=">=sys-apps/dbus-1.6.8-r1
 	tcpd? ( sys-apps/tcp-wrappers )
 	xattr? ( sys-apps/attr )"
 
+# baselayout-2.2 has /run
 RDEPEND="${COMMON_DEPEND}
+	>=sys-apps/baselayout-2.2
 	>=sys-apps/hwids-20130309-r1[udev]
 	|| (
 		>=sys-apps/util-linux-2.22
@@ -106,19 +108,19 @@ src_configure() {
 		--with-pamlibdir=/$(get_libdir)/security
 		# make sure we get /bin:/sbin in $PATH
 		--enable-split-usr
-		# no deps
-		--enable-keymap
 		# disable sysv compatibility
 		--with-sysvinit-path=
 		--with-sysvrcnd-path=
 		# just text files
 		--enable-polkit
+		# no deps
+		--enable-keymap
+		--enable-efi
 		# optional components/dependencies
 		$(use_enable acl)
 		$(use_enable audit)
 		$(use_enable cryptsetup libcryptsetup)
 		$(use_enable doc gtk-doc)
-		$(use_enable efi)
 		$(use_enable gcrypt)
 		$(use_enable gudev)
 		$(use_enable http microhttpd)
@@ -228,7 +230,6 @@ pkg_postinst() {
 	fi
 	systemd_update_catalog
 
-	mkdir -p "${ROOT}"/run || ewarn "Unable to mkdir /run, this could mean trouble."
 	if [[ ! -L "${ROOT}"/etc/mtab ]]; then
 		ewarn "Upstream suggests that the /etc/mtab file should be a symlink to /proc/mounts."
 		ewarn "It is known to cause users being unable to unmount user mounts. If you don't"
@@ -241,13 +242,19 @@ pkg_postinst() {
 	elog "be installed:"
 	optfeature 'for GTK+ systemadm UI and gnome-ask-password-agent' \
 		'sys-apps/systemd-ui'
-	elog
 
-	ewarn "Please note this is a work-in-progress and many packages in Gentoo"
-	ewarn "do not supply systemd unit files yet. You are testing it on your own"
-	ewarn "responsibility. Please remember than you can pass:"
-	ewarn "	init=/sbin/init"
-	ewarn "to your kernel to boot using sysvinit / OpenRC."
+	# read null-terminated argv[0] from PID 1
+	# and see which path to systemd was used (if any)
+	local init_path
+	IFS= read -r -d '' init_path < /proc/1/cmdline
+	if [[ ${init_path} == */bin/systemd ]]; then
+		ewarn
+		ewarn "You are using a compatibility symlink to run systemd. The symlink"
+		ewarn "will be removed in near future. Please update your bootloader"
+		ewarn "to use:"
+		ewarn
+		ewarn "	init=/usr/lib/systemd/systemd"
+	fi
 }
 
 pkg_prerm() {
