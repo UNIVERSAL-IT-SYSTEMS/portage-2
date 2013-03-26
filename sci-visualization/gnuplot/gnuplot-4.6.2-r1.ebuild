@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-visualization/gnuplot/gnuplot-4.6.1-r1.ebuild,v 1.5 2013/03/07 20:35:32 ottxor Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-visualization/gnuplot/gnuplot-4.6.2-r1.ebuild,v 1.1 2013/03/26 07:35:48 ulm Exp $
 
 EAPI=5
 
@@ -36,7 +36,7 @@ RDEPEND="
 	!emacs? ( xemacs? (
 		app-editors/xemacs
 		app-xemacs/xemacs-base ) )
-	gd? ( media-libs/gd[png] )
+	gd? ( >=media-libs/gd-2.0.35-r3[png] )
 	ggi? ( media-libs/libggi )
 	latex? (
 		virtual/latex-base
@@ -77,7 +77,8 @@ E_SITEFILE="lisp/50${PN}-gentoo.el"
 TEXMF="${EPREFIX}/usr/share/texmf-site"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-eldoc.patch"
+	epatch "${FILESDIR}/${PN}-4.6.1-eldoc.patch"
+	epatch "${FILESDIR}/${PN}-4.6.2-gdversion.patch" #462996
 
 	if [[ -z ${PV%%*9999} ]]; then
 		local dir
