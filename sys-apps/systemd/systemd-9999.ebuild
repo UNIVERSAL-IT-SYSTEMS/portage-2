@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.31 2013/03/26 22:02:45 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.33 2013/03/29 15:49:38 mgorny Exp $
 
 EAPI=5
 
@@ -73,8 +73,6 @@ DEPEND="${COMMON_DEPEND}
 
 #if LIVE
 DEPEND="${DEPEND}
-	app-text/docbook-xsl-stylesheets
-	dev-libs/libxslt
 	dev-libs/gobject-introspection
 	>=dev-libs/libgcrypt-1.4.5
 	>=dev-util/gtk-doc-1.18"
@@ -87,15 +85,13 @@ pkg_pretend() {
 	ewarn "and it is an easy way to get your system broken and unbootable."
 	ewarn "Please consider using the release ebuilds instead."
 }
-#endif
 
 src_prepare() {
-#if LIVE
 	gtkdocize --docdir docs/ || die
-#endif
 
 	autotools-utils_src_prepare
 }
+#endif
 
 src_configure() {
 	local myeconfargs=(
@@ -152,6 +148,13 @@ src_install() {
 		udevlibexecdir="${MY_UDEVDIR}" \
 		dist_udevhwdb_DATA=
 
+	# keep udev working without initramfs, for openrc compat
+	dodir /sbin
+	mv "${D}"/usr/lib/systemd/systemd-udevd "${D}"/sbin/udevd || die
+	mv "${D}"/usr/bin/udevadm "${D}"/sbin/udevadm || die
+	dosym ../../../sbin/udevd /usr/lib/systemd/systemd-udevd
+	dosym ../../sbin/udevadm /usr/bin/udevadm
+
 	# zsh completion
 	insinto /usr/share/zsh/site-functions
 	newins shell-completion/systemd-zsh-completion.zsh "_${PN}"
@@ -188,8 +191,12 @@ src_install() {
 		/etc/systemd/ntp-units.d /etc/systemd/user /var/lib/systemd
 
 	# Check whether we won't break user's system.
-	[[ -x "${D}"/bin/systemd ]] || die '/bin/systemd symlink broken, aborting.'
-	[[ -x "${D}"/usr/bin/systemd ]] || die '/usr/bin/systemd symlink broken, aborting.'
+	local x
+	for x in /bin/systemd /usr/bin/systemd \
+		/usr/bin/udevadm /usr/lib/systemd/systemd-udevd
+	do
+		[[ -x ${D}${x} ]] || die "${x} symlink broken, aborting."
+	done
 }
 
 pkg_preinst() {
