@@ -18,6 +18,8 @@ app-accessibility/freetts:mbrola - Adds support for mbrola voices
 app-accessibility/gnome-speech:espeak - Adds support for the espeak speech driver (default)
 app-accessibility/gnome-speech:festival - Adds support for the festival speech driver
 app-accessibility/gnome-speech:freetts - Adds support for the freetts speech driver
+app-accessibility/simon:kdepim - Use kde-base/kdepimlibs
+app-accessibility/simon:opencv - Use media-libs/opencv
 app-accessibility/speech-dispatcher:espeak - Adds support for espeak speech engine
 app-accessibility/speech-dispatcher:flite - Adds support for flite speech engine
 app-accessibility/speechd-el:brltty - brltty support
@@ -3414,6 +3416,7 @@ media-tv/mythtv:xmltv - Pulls in the media-tv/xmltv TV listing grabbers for user
 media-tv/tvbrowser:themes - Install extra theme packs
 media-tv/tvheadend:xmltv - Use media-tv/xmltv
 media-tv/tvtime:alsa - Enables an EXPERIMENTAL ALSA patch by the Ubuntu maintainers. Several problems were reported, use with care.
+media-tv/v4l-dvb-saa716x:firmware - Install firmware
 media-tv/xawtv:xext - Enable use of XFree extensions (DGA,VidMode,DPMS)
 media-tv/xawtv:zvbi - Enable VBI Decoding Library for Zapping
 media-tv/xbmc:airplay - enable AirPlay support
