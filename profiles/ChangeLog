@@ -1,10 +1,26 @@
 # ChangeLog for profile directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.7681 2013/04/01 10:52:32 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.7685 2013/04/01 13:58:11 kensington Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  01 Apr 2013; Michael Palimaka <kensington@gentoo.org> +updates/2Q-2013:
+  Move kde-misc/print-manager to kde-base/print-manager.
+
+  01 Apr 2013; Michael Palimaka <kensington@gentoo.org> package.mask:
+  Last rites for kde-base/printer-applet and
+  kde-base/system-config-printer-kde.
+
+  01 Apr 2013; Gilles Dartiguelongue <eva@gentoo.org>
+  arch/alpha/package.use.mask, arch/arm/package.use.mask,
+  arch/ia64/package.use.mask:
+  Mask ivorbis USE flag on media-libs/gst-plugins-base, bug #453200.
+
+  01 Apr 2013; Gilles Dartiguelongue <eva@gentoo.org>
+  arch/alpha/package.use.mask:
+  Clean up package.mask, lots of keywording has been done.
 
   01 Apr 2013; Pacho Ramos <pacho@gentoo.org>
   eapi-5-files/package.use.stable.mask:
