@@ -1037,6 +1037,7 @@ app-text/yagf:tesseract - Enable support for the app-text/tesseract OCR engine.
 app-text/zathura-meta:cb - Install plug-in for ComicBook support
 app-vim/gentoo-syntax:ignore-glep31 - Remove GLEP 31 (UTF-8 file encodings) settings
 app-vim/vim-latex:html - Install HTML documentation
+app-vim/vim-latex:python - Enable python support which can help speed up some functionality
 dev-cpp/glog:gflags - Use dev-cpp/gflags for flag parsing
 dev-cpp/glog:unwind - Use sys-libs/libunwind for stack unwinding instead of glibc/gcc (may be more reliable on x86_64)
 dev-cpp/libcmis:man - Build and install man pages.
@@ -3424,6 +3425,7 @@ media-tv/xbmc:airplay - enable AirPlay support
 media-tv/xbmc:bluray - Enable playback of Blu-ray filesystems
 media-tv/xbmc:cec - Enable support for HDMI-CEC devices via libcec
 media-tv/xbmc:fishbmc - Enable fishBMC visualization plugin
+media-tv/xbmc:gles - Enable support for GLES
 media-tv/xbmc:goom - Enable GOOM visualization plugin
 media-tv/xbmc:midi - Support MIDI files
 media-tv/xbmc:nfs - Enable NFS client support
