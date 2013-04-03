@@ -213,6 +213,7 @@ app-admin/ulogd:pcap - Build PCAP output plugin to save packets in libpcap file 
 app-admin/ulogd:postgres - Build PGSQL output plugin to save packets in a postgres database.
 app-admin/ulogd:sqlite - Build SQLITE3 output plugin to save packets in a sqlite database.
 app-admin/webalizer:xtended - Include the 404 extension
+app-admin/yaala:storable - Support for persistence of Perl data structures.
 app-antivirus/clamav:clamdtop - A Top like tool which shows what clamd is currently scanning amongst other things
 app-arch/cabextract:extra-tools - Install experimental tools: wince_info and wince_rename for examining and processing Windows CE installation cabinet header files; cabinfo for examining the structure of a cab file.
 app-arch/cfv:bittorrent - Enable support for checking .torrent files
@@ -3106,6 +3107,7 @@ media-plugins/mythplugins:mythmusic - Adds the ability for MythTV to act as a mu
 media-plugins/mythplugins:mythnetvision - Adds the ability to view netvision devices within MythTV
 media-plugins/mythplugins:mythnews - Adds a news viewer within MythTV
 media-plugins/mythplugins:mythweather - Adds weather information within MythTV
+media-plugins/mythplugins:mythzoneminder - Adds support for zoneminder (requires a server with the appropriate mythtv daemon somewhere on the network).
 media-plugins/mythplugins:raw - Allows MythGallery to view photos saved in RAW format
 media-plugins/vdr-burn:dvdarchive - DMH DVD - Archive
 media-plugins/vdr-burn:projectx - Enables support for media-video/projectx
