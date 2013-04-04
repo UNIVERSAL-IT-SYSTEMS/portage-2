@@ -1,12 +1,12 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libxtract/libxtract-0.6.3.ebuild,v 1.5 2013/04/04 08:31:12 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libxtract/libxtract-0.6.6.ebuild,v 1.1 2013/04/04 08:37:00 aballier Exp $
 
 EAPI=5
 
 DESCRIPTION="A simple, portable, lightweight library of audio feature extraction functions"
 HOMEPAGE="http://github.com/jamiebullock/LibXtract"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="http://github.com/downloads/jamiebullock/LibXtract/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -28,6 +28,6 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install
 	find "${ED}" -name "*.la" -delete
-	dodoc README TODO AUTHORS
+	dodoc README.md TODO AUTHORS
 	use doc && dohtml doc/html/*
 }
