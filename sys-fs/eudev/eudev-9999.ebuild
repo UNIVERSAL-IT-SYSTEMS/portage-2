@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/eudev/eudev-9999.ebuild,v 1.23 2013/03/10 19:08:23 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/eudev/eudev-9999.ebuild,v 1.24 2013/04/05 20:45:09 axs Exp $
 
 EAPI=5
 
@@ -22,7 +22,7 @@ HOMEPAGE="https://github.com/gentoo/eudev"
 
 LICENSE="LGPL-2.1 MIT GPL-2"
 SLOT="0"
-IUSE="doc gudev hwdb kmod introspection keymap +modutils +openrc selinux static-libs legacy-libudev"
+IUSE="doc gudev hwdb kmod introspection legacy-libudev keymap +modutils +openrc rule-generator selinux static-libs"
 
 RESTRICT="test"
 
@@ -88,6 +88,12 @@ pkg_pretend()
 	ewarn ""
 	ewarn "Add USE=legacy-libudev to tell eudev to install a copy of libudev.so.0, if"
 	ewarn "you wish to continue to use your system while migrating to libudev.so.1"
+	else
+	ewarn "You are installing eudev with USE=legacy-libudev , this should only be used"
+	ewarn "to support binary-only applications or legacy applications while in the"
+	ewarn "process of doing a full systems upgrade, that require libudev.so.0 -- it is"
+	ewarn "HIGHLY RECOMMENDED to leave this flag disabled unless absolutely necessary."
+	ewarn ""
 	fi
 }
 
@@ -167,6 +173,7 @@ src_configure()
 		$(use_enable modutils modules)
 		$(use_enable selinux)
 		$(use_enable static-libs static)
+		$(use_enable rule-generator)
 		$(use_enable legacy-libudev legacylib)
 	)
 	econf "${econf_args[@]}"
@@ -182,6 +189,7 @@ src_install()
 	# install gentoo-specific rules
 	insinto /lib/udev/rules.d
 	doins "${FILESDIR}"/40-gentoo.rules
+	use rule-generator && use openrc && doinitd "${FILESDIR}"/udev-postmount
 
 	# drop distributed hwdb files, they override sys-apps/hwids
 	rm -f "${ED}"/etc/udev/hwdb.d/*.hwdb
@@ -231,6 +239,14 @@ pkg_postinst()
 	ewarn "You need to restart eudev as soon as possible to make the"
 	ewarn "upgrade go into effect:"
 	ewarn "\t/etc/init.d/udev --nodeps restart"
+
+	if use rule-generator && use openrc; then
+		ewarn
+		ewarn "Please add the udev-postmount init script to your default runlevel"
+		ewarn "to ensure the legacy rule-generator functionality works as reliably"
+		ewarn "as possible."
+		ewarn "\trc-update add udev-postmount default"
+	fi
 
 	elog
 	elog "For more information on eudev on Gentoo, writing udev rules, and"
