@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/powertop/powertop-9999.ebuild,v 1.17 2013/03/08 06:16:03 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/powertop/powertop-9999.ebuild,v 1.18 2013/04/07 15:14:40 zerochaos Exp $
 
-EAPI="4"
+EAPI="5"
 
 inherit eutils linux-info
 if [[ ${PV} == "9999" ]] ; then
@@ -24,16 +24,17 @@ IUSE="unicode X"
 COMMON_DEPEND="
 	dev-libs/libnl:3
 	sys-apps/pciutils
-	sys-devel/gettext
 	sys-libs/ncurses[unicode?]
 "
 
 DEPEND="${COMMON_DEPEND}
 	virtual/pkgconfig
+	sys-devel/gettext
 "
 RDEPEND="
 	${COMMON_DEPEND}
 	X? ( x11-apps/xset )
+	virtual/libintl
 "
 
 DOCS=( TODO README )
