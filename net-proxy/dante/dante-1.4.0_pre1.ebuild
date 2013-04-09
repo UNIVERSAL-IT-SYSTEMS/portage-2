@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/dante/dante-1.4.0_pre1.ebuild,v 1.2 2013/03/06 06:17:37 tomwij Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/dante/dante-1.4.0_pre1.ebuild,v 1.3 2013/04/09 18:09:40 tomwij Exp $
 
 EAPI="5"
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://www.inet.no/dante/"
 MY_P="${P/_/-}"
 SRC_URI="ftp://ftp.inet.no/pub/socks/${MY_P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="BSD GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
 IUSE="debug kerberos pam selinux static-libs tcpd"
