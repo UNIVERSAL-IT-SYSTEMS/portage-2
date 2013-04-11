@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/php-5.4.13-r3.ebuild,v 1.2 2013/04/02 19:10:34 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/php-5.4.14.ebuild,v 1.1 2013/04/11 10:28:46 olemarkus Exp $
 
 EAPI=5
 
@@ -86,14 +86,14 @@ IUSE="${IUSE} bcmath berkdb bzip2 calendar cdb cjk
 
 DEPEND="
 	>=app-admin/eselect-php-0.7.0[apache2?,fpm?]
-	>=dev-libs/libpcre-8.12[unicode]
+	>=dev-libs/libpcre-8.32[unicode]
 	apache2? ( www-servers/apache[threads=] )
 	berkdb? ( =sys-libs/db-4* )
 	bzip2? ( app-arch/bzip2 )
 	cdb? ( || ( dev-db/cdb dev-db/tinycdb ) )
 	cjk? ( !gd? (
 		virtual/jpeg
-		media-libs/libpng
+		media-libs/libpng:0=
 		sys-libs/zlib
 	) )
 	crypt? ( >=dev-libs/libmcrypt-2.4 )
@@ -101,11 +101,11 @@ DEPEND="
 	enchant? ( app-text/enchant )
 	exif? ( !gd? (
 		virtual/jpeg
-		media-libs/libpng
+		media-libs/libpng:0=
 		sys-libs/zlib
 	) )
 	firebird? ( dev-db/firebird )
-	gd? ( virtual/jpeg media-libs/libpng sys-libs/zlib )
+	gd? ( virtual/jpeg media-libs/libpng:0= sys-libs/zlib )
 	gdbm? ( >=sys-libs/gdbm-1.8.0 )
 	gmp? ( >=dev-libs/gmp-4.1.2 )
 	iconv? ( virtual/libiconv )
@@ -141,7 +141,7 @@ DEPEND="
 		=media-libs/freetype-2*
 		>=media-libs/t1lib-5.0.0
 		!gd? (
-			virtual/jpeg media-libs/libpng sys-libs/zlib )
+			virtual/jpeg media-libs/libpng:0= sys-libs/zlib )
 	)
 	unicode? ( dev-libs/oniguruma )
 	wddx? ( >=dev-libs/libxml2-2.6.8 )
@@ -152,7 +152,7 @@ DEPEND="
 	xpm? (
 		x11-libs/libXpm
 		virtual/jpeg
-		media-libs/libpng sys-libs/zlib
+		media-libs/libpng:0= sys-libs/zlib
 	)
 	xsl? ( dev-libs/libxslt >=dev-libs/libxml2-2.6.8 )
 	zip? ( sys-libs/zlib )
