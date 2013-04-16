@@ -1,43 +1,50 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-headers/alsa-headers-9999.ebuild,v 1.8 2011/09/21 08:11:50 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/alsa-headers/alsa-headers-9999.ebuild,v 1.10 2013/04/16 04:13:09 ssuominen Exp $
 
-inherit eutils git-2
+EAPI=5
+
+if [[ ${PV} = 9999* ]]; then
+	inherit git-2
+else
+	MY_P=${P/headers/driver}
+	SRC_URI="mirror://alsaproject/driver/${MY_P}.tar.bz2"
+	S=${WORKDIR}/${MY_P}
+	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
+fi
+
+inherit eutils
 
 DESCRIPTION="Header files for Advanced Linux Sound Architecture kernel modules"
 HOMEPAGE="http://www.alsa-project.org/"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS=""
 IUSE=""
-
-DEPEND=""
-RDEPEND=""
 
 RESTRICT="binchecks strip"
 
 EGIT_REPO_URI="git://git.alsa-project.org/alsa-kmirror.git
 	http://git.alsa-project.org/http/alsa-kmirror.git"
 
-# Remove the sound symlink workaround...
 pkg_setup() {
-	if [[ -L "${ROOT}/usr/include/sound" ]]; then
-		rm	"${ROOT}/usr/include/sound"
+	local obsolete_symlink="${ROOT}"/usr/include/sound
+	if [[ -L ${obsolete_symlink} ]]; then
+		ebegin "Removing obsolete symlink ${obsolete_symlink}"
+		rm "${obsolete_symlink}"
+		eend $?
 	fi
 }
 
-src_unpack() {
-	git-2_src_unpack
-
-	cd "${S}"
-	epatch "${FILESDIR}/${PN}-1.0.6a-user.patch"
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-1.0.6a-user.patch
 }
 
-src_compile() { : ; }
+src_configure() { :; }
+src_compile() { :; }
 
 src_install() {
-	cd "${S}/include"
+	[[ ${PV} = 9999* ]] || cd alsa-kernel
 	insinto /usr/include/sound
-	doins *.h || die "include failed"
+	doins include/*.h
 }
