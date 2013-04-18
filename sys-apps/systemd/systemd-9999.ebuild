@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.50 2013/04/17 22:29:15 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999.ebuild,v 1.52 2013/04/18 05:36:01 mgorny Exp $
 
 EAPI=5
 
@@ -68,6 +68,7 @@ DEPEND="${COMMON_DEPEND}
 	dev-libs/libxslt
 	dev-util/gperf
 	>=dev-util/intltool-0.50
+	>=sys-devel/gcc-4.6
 	>=sys-kernel/linux-headers-${MINKV}
 	virtual/pkgconfig
 	doc? ( >=dev-util/gtk-doc-1.18 )"
@@ -93,13 +94,27 @@ pkg_pretend() {
 		~FANOTIFY ~HOTPLUG ~INOTIFY_USER ~IPV6 ~NET ~PROC_FS ~SIGNALFD
 		~SYSFS ~!IDE ~!SYSFS_DEPRECATED ~!SYSFS_DEPRECATED_V2"
 
+	if [[ ${MERGE_TYPE} != binary ]]; then
+		if [[ $(gcc-major-version) -lt 3
+			|| ( $(gcc-major-version) -eq 3 && $(gcc-minor-version) -lt 6 ) ]]
+		then
+			eerror "systemd requires at least gcc 4.6 to build. Please switch the active"
+			eerror "gcc version using gcc-config."
+			die "systemd requires at least gcc 4.6"
+		fi
+	fi
+
 	if [[ ${MERGE_TYPE} != buildonly ]]; then
 		if kernel_is -lt ${MINKV//./ }; then
 			ewarn "Kernel version at least ${MINKV} required"
 		fi
 
 		if use firmware-loader; then
-			CONFIG_CHECK+=" ~FW_LOADER"
+			if kernel_is -ge 3 9; then
+				CONFIG_CHECK+=" ~FW_LOADER_USER_HELPER"
+			else
+				CONFIG_CHECK+=" ~FW_LOADER"
+			fi
 		elif kernel_is -lt 3 8; then
 			ewarn "You seem to be using kernel older than 3.8. Those kernel versions"
 			ewarn "require systemd with USE=firmware-loader to support loading"
