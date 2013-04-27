@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/opencascade/opencascade-6.5.0.ebuild,v 1.1 2013/04/26 20:33:00 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/opencascade/opencascade-6.5.0.ebuild,v 1.2 2013/04/27 08:25:37 xmw Exp $
 
 EAPI=5
 
@@ -13,19 +13,21 @@ SRC_URI="http://files.opencascade.com/OCCT/OCC_${PV}_release/OpenCASCADE${PV//\.
 LICENSE="Open-CASCADE-Technology-Public-License-6.5"
 SLOT="${PV}"
 KEYWORDS=""
-IUSE="debug doc examples gl2ps java"
+IUSE="debug doc examples freeimage gl2ps java +tbb"
 
-DEPEND="media-libs/ftgl
+DEPEND="app-admin/eselect-opencascade
+	dev-lang/tcl
+	dev-lang/tk
+	dev-tcltk/itcl
+	dev-tcltk/itk
+	dev-tcltk/tix
+	media-libs/ftgl
 	virtual/glu
 	virtual/opengl
 	x11-libs/libXmu
-	>=dev-lang/tcl-8.4
-	>=dev-lang/tk-8.4
-	>=dev-tcltk/itcl-3.2
-	>=dev-tcltk/itk-3.2
-	>=dev-tcltk/tix-8.4.2
-	gl2ps? ( x11-libs/gl2ps )"
-#freeimage? ( media-libs/freeimage )
+	freeimage? ( media-libs/freeimage )
+	gl2ps? ( x11-libs/gl2ps )
+	tbb? ( dev-cpp/tbb )"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/ros
@@ -48,7 +50,8 @@ src_prepare() {
 	epatch \
 		"${FILESDIR}"/${PN}-6.5-ftgl.patch \
 		"${FILESDIR}"/${PN}-6.5-fixed-DESTDIR.patch \
-		"${FILESDIR}"/${PN}-6.5-tcl8.6.patch
+		"${FILESDIR}"/${PN}-6.5-tcl8.6.patch \
+		"${FILESDIR}"/${PN}-6.5.4-fixed-tbb-VERSION.patch
 
 	# Feed environment variables used by Opencascade compilation
 	my_install_dir=${EROOT}usr/$(get_libdir)/${P}/ros
@@ -116,7 +119,10 @@ src_configure() {
 		--with-tcl="${EROOT}usr/$(get_libdir)" --with-tk="${EROOT}usr/$(get_libdir)" \
 		--with-freetype="${EROOT}usr" \
 		--with-ftgl="${EROOT}usr" \
-		$(usex gl2ps "--with-gl2ps=\"${EROOT}usr\"" "") \
+		$(usex freeimage "--with-freeimage=${EROOT}usr" "") \
+		$(usex gl2ps "--with-gl2ps=${EROOT}usr" "") \
+		$(usex tbb "--with-tbb-include=${EROOT}usr" "") \
+		$(usex tbb "--with-tbb-library=${EROOT}usr" "") \
 		$(use java && echo "--with-java-include=$(java-config -O)/include" || echo "--without-java-include") \
 		$(use_enable debug) \
 		$(use_enable !debug production)

@@ -195,6 +195,7 @@ app-admin/salt:openssl - Add support for using TLS via OpenSSL.
 app-admin/salt:redis - Support returning data to a redis database.
 app-admin/sshguard:ipfilter - Enable ipfilter firewall support (only for *bsd)
 app-admin/sudo:offensive - Let sudo print insults when the user types the wrong password.
+app-admin/sysklogd:logrotate - use app-admin/logrotate for rotating logs rather than custom cron scripts
 app-admin/syslog-ng:json - Enable support for JSON template formatting via dev-libs/json-glib
 app-admin/syslog-ng:mongodb - Enable support for mongodb destinations
 app-admin/syslog-ng:spoof-source - Enable support for spoofed source addresses
@@ -5368,6 +5369,7 @@ sci-libs/netcdf:dap - Support for remote data access with the built-in OPeNDAP c
 sci-libs/netcdf:hdf - Add support for the Hierarchical Data Format v.4 sci-libs/hdf
 sci-libs/netcdf:tools - Build the utilities nccopy, ncgen and ncdump
 sci-libs/nlopt:octave - Add plugin for sci-mathematics/octave
+sci-libs/opencascade:freeimage - Enable support for image i/o via media-libs/freeimage
 sci-libs/opencascade:gl2ps - Use gl2ps PostScript printing library
 sci-libs/opencascade:tbb - tEnable multithreading with the Intel Threads Building Block dev-cpp/tbb
 sci-libs/openmm:cuda - enable cuda back-end
