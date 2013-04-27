@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/st/st-0.4.ebuild,v 1.2 2013/04/02 23:33:56 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/st/st-0.4.ebuild,v 1.3 2013/04/27 17:19:31 jer Exp $
 
 EAPI=5
 
@@ -21,6 +21,7 @@ RDEPEND="media-libs/fontconfig
 	x11-libs/libXft"
 DEPEND="${RDEPEND}
 	sys-libs/ncurses
+	virtual/pkgconfig
 	x11-proto/xextproto
 	x11-proto/xproto"
 
