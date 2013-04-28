@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libbtbb/libbtbb-9999.ebuild,v 1.8 2013/02/05 04:18:58 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libbtbb/libbtbb-9999.ebuild,v 1.9 2013/04/27 23:03:47 zerochaos Exp $
 
 EAPI=5
 
@@ -23,13 +23,13 @@ else
 fi
 
 LICENSE="GPL-2"
-SLOT="0"
+SLOT="0/${PV}"
 IUSE="+wireshark"
 
 RDEPEND="
 	wireshark? (
 		dev-libs/glib
-		>=net-analyzer/wireshark-1.8.3-r1
+		>=net-analyzer/wireshark-1.8.3-r1:=
 	)
 "
 DEPEND="${RDEPEND}
