@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libfm/libfm-9999.ebuild,v 1.32 2012/12/23 14:40:40 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libfm/libfm-9999.ebuild,v 1.33 2013/04/28 18:12:32 hwoarang Exp $
 
 EAPI=5
 
@@ -12,7 +12,7 @@ DESCRIPTION="A library for file management"
 HOMEPAGE="http://pcmanfm.sourceforge.net/"
 
 LICENSE="GPL-2"
-SLOT="0"
+SLOT="0/4.0.0" #copy ABI_VERSION because it seems upstream change it randomly
 IUSE="debug doc examples vala"
 KEYWORDS=""
 
@@ -54,6 +54,18 @@ src_prepare() {
 	sed -i "/@LN_S@ @PACKAGE@-@FMLIBVER@/d" src/Makefile.am \
 		|| die "failed to remove the includedir symlink"
 
+	# subslot sanity check
+	local sub_slot=${SLOT#*/}
+	local libfm_major_abi=$(sed -rne '/ABI_VERSION/s:.*=::p' src/Makefile.am | tr ':' '.')
+
+	if [[ ${sub_slot} != ${libfm_major_abi} ]]; then
+		eerror "Ebuild sub-slot (${sub_slot}) does not match ABI_VERSION(${libfm_major_abi})"
+		eerror "Please update SLOT variable as follows:"
+		eerror "    SLOT=\"${SLOT%%/*}/${libfm_major_abi}\""
+		eerror
+		die "sub-slot sanity check failed"
+	fi
+
 	eautoreconf
 	rm -r autom4te.cache || die
 	use vala && export VALAC="$(type -p valac-$(vala_best_api_version))"
@@ -85,7 +97,7 @@ pkg_preinst() {
 	[[ -d "${ROOT}"/usr/include/${PN} ]] && \
 		rm -rf "${ROOT}"/usr/include/${PN}
 	if [[ -d "${D}"/usr/include/${PN}-1.0 ]]; then
-		cd ${D}/usr/include
+		cd "${D}"/usr/include
 		ln -s --force ${PN}-1.0 ${PN}
 	fi
 }
