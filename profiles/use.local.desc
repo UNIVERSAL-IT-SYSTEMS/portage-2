@@ -2211,6 +2211,9 @@ games-fps/qudos:qmax - Build the pretty version (quake max)
 games-fps/qudos:textures - Install the enhanced textures (quake2-textures)
 games-fps/rott:demo - Install the shareware version
 games-fps/sauerbraten:server - Compile server support
+games-fps/turtlearena:mumble - Adds player-location (positional audio) support to VoIP
+games-fps/turtlearena:server - Build server target
+games-fps/turtlearena:voice - Adds VoIP support
 games-fps/unreal-tournament-goty:S3TC - Add the extra fancy textures to UT ... only works on certain cards (nvidia/ati/s3)
 games-fps/urbanterror:server - Build server target
 games-fps/warsow:angelscript - Enable AngelScript support
@@ -6421,6 +6424,7 @@ x11-terms/rxvt-unicode:secondary-wheel - Support for wheel scrolling on secondar
 x11-terms/rxvt-unicode:unicode3 - Use 21 instead of 16 bits to represent unicode characters
 x11-terms/rxvt-unicode:wcwidth - Enable wide char width support
 x11-terms/terminator:libnotify - Enables desktop notifications viadev-python/notify-python
+x11-terms/xterm:openpty - Use openpty() in preference to posix_openpt()
 x11-terms/xterm:toolbar - Enable the xterm toolbar to be built
 x11-themes/bespin:windeco - Enable window decoration for KWin.
 x11-themes/comix-xcursors:lefthanded - Install lefthanded version of theme in addition to default one
