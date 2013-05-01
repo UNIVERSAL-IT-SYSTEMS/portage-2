@@ -1,12 +1,12 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/alsa-lib/alsa-lib-1.0.26.ebuild,v 1.2 2012/09/09 08:32:27 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/alsa-lib/alsa-lib-1.0.27.ebuild,v 1.1 2013/05/01 11:52:28 ssuominen Exp $
 
-EAPI=4
+EAPI=5
 
-PYTHON_DEPEND="python? 2:2.6"
+PYTHON_COMPAT=( python2_7 )
 
-inherit autotools eutils multilib python
+inherit autotools eutils multilib python-single-r1
 
 DESCRIPTION="Advanced Linux Sound Architecture Library"
 HOMEPAGE="http://www.alsa-project.org/"
@@ -17,21 +17,22 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc debug alisp python"
 
-RDEPEND=""
-DEPEND=">=media-sound/alsa-headers-1.0.25
+RDEPEND="python? ( ${PYTHON_DEPS} )"
+DEPEND="${RDEPEND}
+	>=media-sound/alsa-headers-1.0.25-r1
 	doc? ( >=app-doc/doxygen-1.2.6 )"
 
 pkg_setup() {
-	if use python; then
-		python_set_active_version 2
-		python_pkg_setup
-	fi
+	use python && python-single-r1_pkg_setup
 }
 
 src_prepare() {
 	epatch "${FILESDIR}"/1.0.25-extraneous-cflags.diff
+	sed -i -e 's:AM_CONFIG_HEADER:AC_CONFIG_HEADERS:' configure.in || die #466980
 	eautoreconf
-	epunt_cxx
+	# if eautoreconf'd with recent autoconf, then epunt_cxx is
+	# unncessary wrt #460974
+#	epunt_cxx
 }
 
 src_configure() {
