@@ -1,9 +1,9 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/sphinx/sphinx-2.0.5.ebuild,v 1.2 2012/09/20 05:20:57 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/sphinx/sphinx-2.0.8.ebuild,v 1.1 2013/05/02 19:16:45 graaff Exp $
 
-EAPI=4
-inherit eutils autotools
+EAPI=5
+inherit eutils autotools toolchain-funcs
 
 #MY_P=${P/_/-}
 MY_P=${P}-release
@@ -19,7 +19,7 @@ SRC_URI="http://sphinxsearch.com/files/${MY_P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~sparc ~x86 ~amd64-linux ~ppc-macos ~x86-macos ~sparc-solaris ~sparc64-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86 ~amd64-linux ~ppc-macos ~x86-macos ~sparc-solaris ~sparc64-solaris"
 IUSE="debug id64 mysql odbc postgres stemmer test"
 
 RDEPEND="mysql? ( virtual/mysql )
@@ -70,7 +70,7 @@ src_configure() {
 }
 
 src_compile() {
-	emake || die "emake failed"
+	emake AR="$(tc-getAR)" || die "emake failed"
 
 	emake -j 1 -C api/libsphinxclient || die "emake libsphinxclient failed"
 }
@@ -88,7 +88,6 @@ src_install() {
 
 	dodir /var/lib/sphinx
 	dodir /var/log/sphinx
-	dodir /var/run/sphinx
 
 	newinitd "${FILESDIR}"/searchd.rc searchd
 
