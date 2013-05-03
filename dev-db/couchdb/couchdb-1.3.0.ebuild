@@ -1,18 +1,18 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/couchdb/couchdb-1.2.0.ebuild,v 1.6 2012/10/19 09:15:55 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/couchdb/couchdb-1.3.0.ebuild,v 1.4 2013/05/03 11:46:22 djc Exp $
 
-EAPI="2"
+EAPI=5
 
-inherit eutils multilib user
+inherit eutils multilib pax-utils user
 
 DESCRIPTION="Apache CouchDB is a distributed, fault-tolerant and schema-free document-oriented database."
 HOMEPAGE="http://couchdb.apache.org/"
-SRC_URI="mirror://apache/couchdb/releases/${PV}/apache-${P}.tar.gz"
+SRC_URI="mirror://apache/couchdb/source/${PV}/apache-${P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="test"
 
 RDEPEND=">=dev-libs/icu-4.3.1
@@ -30,6 +30,10 @@ pkg_setup() {
 	enewuser couchdb -1 -1 /var/lib/couchdb couchdb
 }
 
+src_prepare() {
+	sed -i ./src/couchdb/priv/Makefile.* -e 's|-Werror||g'
+}
+
 src_configure() {
 	econf \
 		--with-erlang=/usr/lib/erlang/usr/include \
@@ -39,13 +43,20 @@ src_configure() {
 	sed -e "s#localdocdir = /usr/share/doc/couchdb#localdocdir = /usr/share/doc/${PF}#" -i Makefile || die "sed failed"
 }
 
-src_install() {
-	emake DESTDIR="${D}" install || die "install failed"
+src_compile() {
+	emake
+	# bug 442616
+	pax-mark mr src/couchdb/priv/couchjs
+}
 
-	insinto /var/run/couchdb
+src_test() {
+	emake check
+}
+
+src_install() {
+	emake DESTDIR="${D}" install
 
 	fowners couchdb:couchdb \
-		/var/run/couchdb \
 		/var/lib/couchdb \
 		/var/log/couchdb
 
@@ -55,8 +66,8 @@ src_install() {
 	done
 	fperms 664 /etc/couchdb/default.ini
 
-	newinitd "${FILESDIR}/couchdb.init-2" couchdb || die
-	newconfd "${FILESDIR}/couchdb.conf-0.10" couchdb || die
+	newinitd "${FILESDIR}/couchdb.init-4" couchdb
+	newconfd "${FILESDIR}/couchdb.conf-2" couchdb
 
 	sed -i -e "s:LIBDIR:$(get_libdir):" "${D}/etc/conf.d/couchdb"
 }
