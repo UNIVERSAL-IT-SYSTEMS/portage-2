@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libemf/libemf-1.0.4.ebuild,v 1.10 2012/05/09 18:00:30 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libemf/libemf-1.0.4.ebuild,v 1.11 2013/05/03 14:23:42 jlec Exp $
 
 EAPI=4
 
@@ -9,7 +9,7 @@ AUTOTOOLS_AUTORECONF=true
 inherit autotools-utils
 
 MY_P="${P/emf/EMF}"
-DESCRIPTION="Library implementation of ECMA-234 API for the generation of enhanced metafiles."
+DESCRIPTION="Library implementation of ECMA-234 API for the generation of enhanced metafiles"
 HOMEPAGE="http://libemf.sourceforge.net/"
 SRC_URI="mirror://sourceforge/libemf/${MY_P}.tar.gz"
 
