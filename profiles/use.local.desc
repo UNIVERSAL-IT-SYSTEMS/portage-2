@@ -618,6 +618,7 @@ app-i18n/ibus:gtk3 - Enable support for gtk+3
 app-i18n/ibus:introspection - Use dev-libs/gobject-introspection for introspection
 app-i18n/ibus:vala - Enable support for dev-lang/vala
 app-i18n/ibus-anthy:deprecated - Install deprecated pygtk2 library
+app-i18n/ibus-handwrite:zinnia - Build with app-i18n/zinnia engine.
 app-i18n/ibus-m17n:gtk - Build the preference interfaces, based on x11-libs/gtk+ (GTK+ 2).
 app-i18n/ibus-pinyin:boost - Compile against dev-libs/boost libraries
 app-i18n/ibus-pinyin:opencc - Enable support for app-i18n/opencc
@@ -1778,6 +1779,7 @@ dev-python/pyudev:pyqt4 - Install PyQt4 binding
 dev-python/pyudev:pyside - Install PySide binding
 dev-python/pyyaml:libyaml - enable libyaml support
 dev-python/pyzor:pyzord - enable support for pyzord
+dev-python/rarfile:compressed - Enables the module to support compressed v3 archives by calling the app-arch/unrar.
 dev-python/rdflib:redland - enable support for Redland triplestore
 dev-python/restkit:cli - Install the restcli command line interface/tool, based on dev-python/ipython
 dev-python/scrapy:boto - Add support for Amazon S3 via dev-python/boto

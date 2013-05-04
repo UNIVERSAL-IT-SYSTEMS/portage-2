@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pandas/pandas-0.10.1.ebuild,v 1.2 2013/02/07 08:52:22 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pandas/pandas-0.10.1.ebuild,v 1.3 2013/05/04 11:13:58 jlec Exp $
 
 EAPI=5
 
@@ -60,7 +60,7 @@ python_compile_all() {
 
 	# To build docs the need be located in $BUILD_DIR, else PYTHONPATH points to unusable modules.
 	if use doc; then
-		cd ${BUILD_DIR}/lib/ || die
+		cd "${BUILD_DIR}"/lib/ || die
 		cp -ar "${S}"/doc . && cd doc || die
 		PYTHONPATH=. "${PYTHON}" make.py html
 	fi
@@ -69,16 +69,15 @@ python_compile_all() {
 python_test() {
 	# test can't survive py2.6, alternately patch to skip under unittest2
 	if [[ ${EPYTHON} == "python2.6" ]]; then
-		rm -f $(find ${BUILD_DIR} -name test_array.py) || die
+		rm -f $(find "${BUILD_DIR}" -name test_array.py) || die
 	fi
 	cd "${BUILD_DIR}"/lib/ || die
 	PYTHONPATH=. MPLCONFIGDIR=. HOME=. nosetests -v pandas || die
 }
 
 python_install_all() {
-
 	if use doc; then
-		cd  ${BUILD_DIR}/lib/ || die
+		cd  "${BUILD_DIR}"/lib/ || die
 		dohtml -r doc/build/html/
 		einfo "An initial build of docs are absent of references to scikits_statsmodels"
 		einfo "due to circular dependency. To have them included, emerge"
