@@ -2600,11 +2600,15 @@ mail-client/alpine:topal - Enable support for net-mail/topal
 mail-client/balsa:crypt - Adds support for GnuPG encryption
 mail-client/balsa:gtkspell - Use gtkspell for dictionary support
 mail-client/balsa:rubrica - Adds support for app-office/rubrica addressbook
+mail-client/claws-mail:archive - Enable archiving plugin
 mail-client/claws-mail:bogofilter - Build mail-filter/bogofilter plugin
 mail-client/claws-mail:dillo - Enables support for inline HTTP email viewing with a plugin (which depends on the www-client/dillo browser)
+mail-client/claws-mail:gdata - Enable plugin for access to Google data providers
+mail-client/claws-mail:gtk3 - Build support for GTK+3
+mail-client/claws-mail:pgp - Enable PGP support
 mail-client/claws-mail:smime - Build plugin for S/MIME support
+mail-client/claws-mail:spam-report - Enable plugin for spam reporting to various services
 mail-client/claws-mail:spamassassin - Build mail-filter/spamassassin plugin
-mail-client/claws-mail:ssl - Use gnutls for Secure Socket Layer transactions (deprecated, USE=gnutls should be used)
 mail-client/evolution:bogofilter - Build mail-filter/bogofilter plugin
 mail-client/evolution:clutter - Build with clutter support for animation effects
 mail-client/evolution:connman - Enable net-misc/connman support (requires 'networkmanager' USE flag to be disabled).
@@ -6001,6 +6005,7 @@ sys-kernel/dracut:device-mapper - Set of helper modules providing support for de
 sys-kernel/dracut:net - Set of helper modules providing networking support. You need to enable this only if emerge says so.
 sys-kernel/dracut:optimization - Build optimized version of dracut_install function. It will be used instead of the one written in bash.
 sys-kernel/genkernel:cryptsetup - Enable support for Luks disk enrcyption using sys-fs/cryptsetup
+sys-kernel/genkernel-next:cryptsetup - Enable support for Luks disk enrcyption using sys-fs/cryptsetup
 sys-kernel/gentoo-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/hardened-sources:deblob - Remove binary blobs from kernel sources to provide libre license compliance.
 sys-kernel/linux-docs:html - Install HTML documentation
