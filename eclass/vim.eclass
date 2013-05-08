@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/vim.eclass,v 1.212 2013/04/24 01:49:40 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/vim.eclass,v 1.214 2013/05/08 08:37:40 radhermit Exp $
 
 # Authors:
 # 	Jim Ramsay <lack@gentoo.org>
@@ -505,10 +505,6 @@ vim_src_configure() {
 		myconf="${myconf} `use_enable nls` `use_enable acl`"
 	fi
 
-	# Note: If USE=gpm, then ncurses will still be required. See bug #93970
-	# for the reasons behind the USE flag change.
-	myconf="${myconf} --with-tlib=curses"
-
 	myconf="${myconf} --disable-selinux"
 
 	# Let Portage do the stripping. Some people like that.
@@ -615,9 +611,11 @@ vim_src_install() {
 		dosym gvim /usr/bin/gview
 		dosym gvim /usr/bin/rgvim
 		dosym gvim /usr/bin/rgview
-		dosym vim.1.gz /usr/share/man/man1/gvim.1.gz
-		dosym vim.1.gz /usr/share/man/man1/gview.1.gz
-		dosym vimdiff.1.gz /usr/share/man/man1/gvimdiff.1.gz
+
+		dodir /usr/share/man/man1
+		echo ".so vim.1" > "${ED}"/usr/share/man/man1/gvim.1
+		echo ".so vim.1" > "${ED}"/usr/share/man/man1/gview.1
+		echo ".so vimdiff.1" > "${ED}"/usr/share/man/man1/gvimdiff.1
 
 		insinto /etc/vim
 		newins "${FILESDIR}"/gvimrc${GVIMRC_FILE_SUFFIX} gvimrc
