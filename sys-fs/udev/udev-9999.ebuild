@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.225 2013/04/27 11:10:43 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.226 2013/05/09 16:16:02 ssuominen Exp $
 
 EAPI=5
 
@@ -89,7 +89,7 @@ udev_check_KV() {
 check_default_rules() {
 	# Make sure there are no sudden changes to upstream rules file
 	# (more for my own needs than anything else ...)
-	local udev_rules_md5=3708dcb06e69ef2d3597cad0c98625e1
+	local udev_rules_md5=7d3733faee4203fd7c75c3f3c0d55741
 	MD5=$(md5sum < "${S}"/rules/50-udev-default.rules)
 	MD5=${MD5/  -/}
 	if [[ ${MD5} != ${udev_rules_md5} ]]; then
