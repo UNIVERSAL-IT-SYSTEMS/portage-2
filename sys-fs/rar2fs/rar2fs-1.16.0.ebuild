@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/rar2fs/rar2fs-1.16.0.ebuild,v 1.2 2013/05/01 11:37:08 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/rar2fs/rar2fs-1.16.0.ebuild,v 1.3 2013/05/09 18:16:03 ssuominen Exp $
 
 EAPI=5
 inherit autotools eutils
@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-RDEPEND=">=app-arch/unrar-4.2:=
+RDEPEND="=app-arch/unrar-4.2*:=
 	sys-fs/fuse"
 DEPEND="${RDEPEND}"
 
