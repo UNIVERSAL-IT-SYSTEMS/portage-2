@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pypy/pypy-2.0_beta2.ebuild,v 1.2 2013/05/05 23:23:59 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pypy/pypy-2.0_beta2.ebuild,v 1.4 2013/05/08 23:59:43 floppym Exp $
 
 EAPI=5
 
@@ -33,6 +33,9 @@ pkg_pretend() {
 	CHECKREQS_MEMORY="2G"
 	use amd64 && CHECKREQS_MEMORY="4G"
 	check-reqs_pkg_pretend
+	if [[ ${MERGE_TYPE} != binary && "$(gcc_version)" == "4.8" ]]; then
+		die "PyPy does not build correctly with GCC 4.8"
+	fi
 }
 
 pkg_setup() {
@@ -94,6 +97,7 @@ src_install() {
 	insinto "/usr/$(get_libdir)/pypy${SLOT}"
 	doins -r include lib_pypy lib-python pypy-c
 	fperms a+x ${INSDESTTREE}/pypy-c
+	use jit && pax-mark m "${ED%/}${INSDESTTREE}/pypy-c"
 	dosym ../$(get_libdir)/pypy${SLOT}/pypy-c /usr/bin/pypy-c${SLOT}
 	dodoc README.rst
 
