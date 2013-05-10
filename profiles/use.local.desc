@@ -520,7 +520,6 @@ app-emulation/qemu:virtfs - Enable VirtFS via virtio-9p-pci / fsdev. See http://
 app-emulation/qemu:xattr - Add support for getting and setting POSIX extended attributes, through sys-apps/attr. Requisite for the virtfs backend.
 app-emulation/qemu:xen - Enables support for Xen backends
 app-emulation/qemu:xfs - Support xfsctl() notification and syncing for XFS backed virtual disks.
-app-emulation/qemu-guest-agent:systemd - Install SystemD init script instead of OpenRC
 app-emulation/spice:client - Build the spicec client app (does not reduce dependencies at the moment).
 app-emulation/spice:gui - Build some GUI components (inside the guest window).
 app-emulation/spice:smartcard - Enable smartcard remoting using app-emulation/libcacard
@@ -918,7 +917,6 @@ app-pda/gtkpod:webkit - Enable webkit support for finding coverart
 app-pda/libopensync-plugin-irmc:irda - Enable infrared support
 app-pda/libopensync-plugin-syncml:http - Enable http transports
 app-pda/libopensync-plugin-syncml:obex - Enable obex transports
-app-pda/libplist:cython - Build cython-based python bindings
 app-pda/libplist:python - Build swig-based python bindings
 app-pda/libsyncml:http - Enable http transports
 app-pda/libsyncml:obex - Enable obex transports
@@ -1067,7 +1065,6 @@ dev-db/firebird:xinetd - Install ClassicServer
 dev-db/haildb:debug - Enable extra debug codepaths and assertions. If disabled, both the debug code and assertions are removed from the resulting binaries. Optimisations are untouched.
 dev-db/haildb:zlib - Add support for compressed tables through sys-libs/zlib.
 dev-db/hyperdex:trace-player - Build a primitive trace-replay tool
-dev-db/libzdb:sqliteunlock - Enable SQLite unlock notification api
 dev-db/maatkit:udf - Build the MySQL UDFs shipped with maatkit, requires non-minimal MySQL
 dev-db/mariadb:big-tables - Make tables contain up to 1.844E+19 rows
 dev-db/mariadb:cluster - Add support for NDB clustering (deprecated)
@@ -1111,7 +1108,6 @@ dev-db/phpmyadmin:setup - Installs the phpMyAdmin setup utility. Users who don't
 dev-db/postgis:geos - Add the sci-libs/geos library for exact topological tests
 dev-db/postgis:gtk - Build shp2pgsql-gui a graphical interface to shp2pgsql
 dev-db/postgis:proj - Add the sci-libs/proj library for reprojection features
-dev-db/postgresql-base:pg-intdatetime - Enable --enable-integer-datetimes configure option, which changes PG to use 64-bit integers for timestamp storage
 dev-db/postgresql-base:pg_legacytimestamp - Use double precision floating-point numbers instead of 64-bit integers for timestamp storage.
 dev-db/postgresql-server:pg_legacytimestamp - Use double precision floating-point numbers instead of 64-bit integers for timestamp storage.
 dev-db/postgresql-server:uuid - Enable server side UUID generation (via dev-libs/ossp-uuid)
@@ -1606,7 +1602,6 @@ dev-lisp/gcl:custreloc - Build a GCL which uses custom GCL code for linking
 dev-lisp/gcl:dlopen - Build a GCL which uses dlopen for linking
 dev-lisp/gcl:gprof - Build a GCL with profiling support
 dev-lisp/sbcl:asdf - Include support for dev-lisp/asdf in SBCL
-dev-lisp/sbcl:cobalt - mips only: use mipsel binary instead of mips big endian binary to bootstrap
 dev-lisp/sbcl:ldb - Include support for the SBCL low level debugger
 dev-lisp/sbcl:pax_kernel - Enable if the user plans to run the package under a pax enabled hardened kernel
 dev-lua/luarocks:curl - Uses net-misc/curl for fetching lua packages instead of net-misc/wget.
@@ -1659,7 +1654,6 @@ dev-php/ZendFramework:cli - Enables the CLI
 dev-php/ZendFramework:doc - Installs the documentation
 dev-php/ZendFramework:examples - Installs the examples
 dev-php/ZendFramework:minimal - Installs the minimal version without Dojo toolkit, tests and demos
-dev-php/eaccelerator:contentcache - Enable content caching
 dev-php/eaccelerator:disassembler - Enable the eA disassembler
 dev-php/eaccelerator:doccommentinclusion - If you want eAccelerator to retain doc-comments in internal php structures.
 dev-php/eaccelerator:inode - Use inode-based caching
