@@ -1,10 +1,12 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail/claws-mail-3.9.1.ebuild,v 1.1 2013/05/08 04:36:33 fauli Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/claws-mail/claws-mail-3.9.1.ebuild,v 1.4 2013/05/10 20:30:30 fauli Exp $
 
 EAPI="5"
 
-inherit autotools-utils multilib gnome2-utils eutils
+PYTHON_COMPAT=( python2_{5,6,7} )
+
+inherit autotools-utils multilib gnome2-utils eutils python-single-r1
 
 DESCRIPTION="An email client (and news reader) based on GTK+"
 HOMEPAGE="http://www.claws-mail.org/"
@@ -15,7 +17,7 @@ SLOT="0"
 LICENSE="GPL-3"
 KEYWORDS="~amd64 ~mips ~x86 ~x86-fbsd"
 
-IUSE="archive bogofilter calendar clamav debug dbus doc gdata gtk3 +imap ipv6 ldap networkmanager nntp +libnotify pda pdf perl +pgp python rss session smime spamassassin spam-report spell +gnutls startup-notification webkit xface"
+IUSE="archive bogofilter calendar clamav dbus debug doc gdata gtk3 +imap ipv6 ldap networkmanager nntp +libnotify pda pdf perl +pgp python rss session smime spamassassin spam-report spell +gnutls startup-notification valgrind webkit xface"
 REQUIRED_USE="networkmanager? ( dbus )"
 
 # Plugins are all integrated or dropped since 3.9.1
@@ -49,7 +51,7 @@ COMMONDEPEND=">=sys-devel/gettext-0.12.1
 	gnutls? ( >=net-libs/gnutls-2.2.0 )
 	ldap? ( >=net-nds/openldap-2.0.7 )
 	pgp? ( >=app-crypt/gpgme-0.4.5 )
-	debug? ( dev-util/valgrind )
+	valgrind? ( dev-util/valgrind )
 	dbus? ( >=dev-libs/dbus-glib-0.60 )
 	spell? ( >=app-text/enchant-1.0.0 )
 	imap? ( >=net-libs/libetpan-0.57 )
@@ -82,17 +84,21 @@ RDEPEND="${COMMONDEPEND}
 	clamav? ( app-antivirus/clamav )
 	networkmanager? ( net-misc/networkmanager )
 	perl? ( dev-lang/perl )
-	python? ( dev-lang/python
+	python? ( ${PYTHON_DEPS}
 		>=dev-python/pygtk-2.10.3 )
 	rss? ( net-misc/curl
 		dev-libs/libxml2 )
 	app-misc/mime-types
 	x11-misc/shared-mime-info"
 
+src_prepare() {
+	epatch "${FILESDIR}/${P}_libsoup-check-fix.patch"
+}
+
 src_configure() {
 	local myeconfargs=(
 		$(use_enable debug crash-dialog)
-		$(use_enable debug valgrind)
+		$(use_enable valgrind valgrind)
 		$(use_enable doc manual)
 		$(use_enable gtk3)
 		$(use_enable ipv6)
