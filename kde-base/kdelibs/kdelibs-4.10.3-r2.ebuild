@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/kdelibs-4.10.3-r1.ebuild,v 1.1 2013/05/09 04:15:35 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-base/kdelibs/kdelibs-4.10.3-r2.ebuild,v 1.1 2013/05/12 15:24:45 johu Exp $
 
 EAPI=5
 
@@ -140,6 +140,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-4.9.3-werror.patch"
 	"${FILESDIR}/${PN}-4.10.0-udisks.patch"
 	"${FILESDIR}/${PN}-4.10.2-security-url-dont-show-password.patch"
+	"${FILESDIR}/${PN}-4.10.3-dialog-quit-crash.patch"
 )
 
 pkg_pretend() {
@@ -280,7 +281,7 @@ pkg_postinst() {
 
 	if use zeroconf; then
 		echo
-		elog "To make zeroconf support available in KDE make sure that the 'mdnsd' daemon"
+		elog "To make zeroconf support available in KDE make sure that the avahi daemon"
 		elog "is running."
 		echo
 		einfo "If you also want to use zeroconf for hostname resolution, emerge sys-auth/nss-mdns"
