@@ -1,11 +1,14 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.139 2013/04/14 00:32:20 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.140 2013/05/13 07:19:51 tetromino Exp $
 
 EAPI="5"
 
 AUTOTOOLS_AUTORECONF=1
-inherit autotools-multilib eutils flag-o-matic gnome2-utils multilib pax-utils toolchain-funcs virtualx
+PLOCALES="ar bg ca cs da de el en en_US eo es fa fi fr he hi hu it ja ko lt ml nb_NO nl or pa pl pt_BR pt_PT rm ro ru sk sl sr_RS@cyrillic sr_RS@latin sv te th tr uk wa zh_CN zh_TW"
+PLOCALE_BACKUP="en"
+
+inherit autotools-multilib eutils flag-o-matic gnome2-utils l10n multilib pax-utils toolchain-funcs virtualx
 
 if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="git://source.winehq.org/git/wine.git"
@@ -21,7 +24,7 @@ fi
 
 GV="1.9"
 MV="0.0.8"
-PULSE_PATCHES="winepulse-patches-1.5.25"
+PULSE_PATCHES="winepulse-patches-1.5.30"
 WINE_GENTOO="wine-gentoo-2012.11.24"
 DESCRIPTION="Free implementation of Windows(tm) on Unix"
 HOMEPAGE="http://www.winehq.org/"
@@ -154,6 +157,8 @@ src_unpack() {
 
 	unpack "${PULSE_PATCHES}.tar.bz2"
 	unpack "${WINE_GENTOO}.tar.bz2"
+
+	l10n_find_plocales_changes "${S}/po" "" ".po"
 }
 
 src_prepare() {
@@ -163,6 +168,7 @@ src_prepare() {
 		"${FILESDIR}"/${PN}-1.4_rc2-multilib-portage.patch #395615
 		"${FILESDIR}"/${PN}-1.5.17-osmesa-check.patch #429386
 		"${FILESDIR}"/${PN}-1.5.23-winebuild-CCAS.patch #455308
+		"${FILESDIR}"/${PN}-1.5.30-libwine.patch #http://bugs.winehq.org/show_bug.cgi?id=33560
 	)
 	[[ ${PV} == "9999" ]] || PATCHES+=(
 		"../${PULSE_PATCHES}"/*.patch #421365
@@ -176,6 +182,8 @@ src_prepare() {
 	fi
 	sed -i '/^UPDATE_DESKTOP_DATABASE/s:=.*:=true:' tools/Makefile.in || die
 	sed -i '/^MimeType/d' tools/wine.desktop || die #117785
+
+	l10n_get_locales > po/LINGUAS # otherwise wine doesn't respect LINGUAS
 }
 
 do_configure() {
@@ -287,6 +295,11 @@ src_install() {
 		dosym /usr/bin/wine{64,} # 404331
 		dosym /usr/bin/wine{64,}-preloader
 	fi
+
+	# respect LINGUAS when installing man pages, #469418
+	for l in de fr pl; do
+		use linguas_${l} || rm -r "${D}"usr/share/man/${l}*
+	done
 }
 
 pkg_preinst() {
