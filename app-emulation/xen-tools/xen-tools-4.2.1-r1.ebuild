@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/xen-tools-4.2.1-r1.ebuild,v 1.8 2013/02/22 10:36:08 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/xen-tools-4.2.1-r1.ebuild,v 1.9 2013/05/15 17:47:47 idella4 Exp $
 
 EAPI=5
 
@@ -183,9 +183,9 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-4.1.1-bridge.patch"
 
 	# Don't build ipxe with pie on hardened, Bug #360805
-#	if gcc-specs-pie; then
-#		epatch "${FILESDIR}"/ipxe-nopie.patch
-#	fi
+	if gcc-specs-pie; then
+		epatch "${FILESDIR}"/ipxe-nopie.patch
+	fi
 
 	# Prevent double stripping of files at install
 	epatch "${FILESDIR}"/${PN/-tools/}-4.2.0-nostrip.patch
