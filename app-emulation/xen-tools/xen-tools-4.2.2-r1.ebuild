@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/xen-tools-4.2.2.ebuild,v 1.1 2013/05/15 17:47:47 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/xen-tools/xen-tools-4.2.2-r1.ebuild,v 1.1 2013/05/15 20:33:05 zx2c4 Exp $
 
 EAPI=5
 
@@ -36,7 +36,8 @@ IUSE="api custom-cflags debug doc flask hvm qemu pygrub screen static-libs xend"
 
 REQUIRED_USE="hvm? ( qemu )"
 
-CDEPEND="dev-libs/yajl
+CDEPEND="dev-libs/lzo:2
+	dev-libs/yajl
 	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/pypam[${PYTHON_USEDEP}]
 	dev-python/pyxml[${PYTHON_USEDEP}]
@@ -192,13 +193,15 @@ src_prepare() {
 	# fix jobserver in Makefile
 	epatch "${FILESDIR}"/${PN/-tools/}-4.2.0-jserver.patch
 
-        # add missing header
-        epatch "${FILESDIR}"/xen-4-ulong.patch
+	# add missing header
+	epatch "${FILESDIR}"/xen-4-ulong.patch
 
 	#Sec patch, currently valid
 	epatch "${FILESDIR}"/xen-4-CVE-2012-6075-XSA-41.patch \
 		"${FILESDIR}"/xen-4-CVE-2013-1922-XSA-48.patch \
 		"${FILESDIR}"/xen-4-CVE-2013-1952-XSA-49.patch
+
+	epatch_user
 }
 
 src_compile() {
