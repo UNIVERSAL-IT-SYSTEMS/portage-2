@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/avidemux-plugins/avidemux-plugins-2.6.2-r2.ebuild,v 1.2 2013/05/16 06:28:04 tomwij Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/avidemux-plugins/avidemux-plugins-2.6.4.ebuild,v 1.1 2013/05/16 07:03:47 tomwij Exp $
 
 EAPI="5"
 
@@ -18,11 +18,36 @@ SRC_URI="mirror://sourceforge/${MY_PN}/${PV}/${MY_P}.tar.gz"
 # Multiple licenses because of all the bundled stuff.
 LICENSE="GPL-1 GPL-2 MIT PSF-2 public-domain"
 KEYWORDS="~amd64 ~x86"
-IUSE="aften a52 alsa amr debug dts fontconfig jack lame libsamplerate mmx oss nls qt4 sdl vorbis truetype xvid x264 xv"
+IUSE="aften a52 alsa amr debug dts faac faad fontconfig fribidi jack lame libsamplerate mmx opengl oss qt4 vorbis truetype twolame xvid x264 vpx"
 
-# TODO: Figure out which dependencies can be moved out of avidemux-core and avidemux into here.
-RDEPEND="=media-video/avidemux-${PV}-r1"
-DEPEND="$RDEPEND"
+DEPEND="
+	=media-video/avidemux-${PV}[opengl?,qt4?]
+	>=dev-lang/spidermonkey-1.5-r2
+	dev-libs/libxml2
+	media-libs/libpng
+	virtual/libiconv
+	aften? ( media-libs/aften )
+	alsa? ( >=media-libs/alsa-lib-1.0.3b-r2 )
+	amr? ( media-libs/opencore-amr )
+	dts? ( media-libs/libdca )
+	faac? ( media-libs/faac )
+	faad? ( media-libs/faad2 )
+	fontconfig? ( media-libs/fontconfig )
+	fribidi? ( dev-libs/fribidi )
+	jack? (
+		media-sound/jack-audio-connection-kit
+		libsamplerate? ( media-libs/libsamplerate )
+	)
+	lame? ( media-sound/lame )
+	oss? ( virtual/os-headers )
+	truetype? ( >=media-libs/freetype-2.1.5 )
+	twolame? ( media-sound/twolame )
+	x264? ( media-libs/x264 )
+	xvid? ( media-libs/xvid )
+	vorbis? ( media-libs/libvorbis )
+	vpx? ( media-libs/libvpx )
+"
+RDEPEND="$DEPEND"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -32,17 +57,14 @@ PROCESSES="buildPluginsCommon:avidemux_plugins
 use qt4 && PROCESSES+=" buildPluginsQt4:avidemux_plugins"
 
 src_configure() {
-	local x mycmakeargs plugin_ui
+	local x mycmakeargs plugin_ui extra_mycmakeargs
 
 	mycmakeargs="
-		$(for x in ${IUSE}; do cmake-utils_use ${x/#-/}; done)
-		$(cmake-utils_use amr OPENCORE_AMRWB)
-		$(cmake-utils_use amr OPENCORE_AMRNB)
-		$(cmake-utils_use dts LIBDCA)
-		$(cmake-utils_use nls GETTEXT)
+		$(cmake-utils_use fontconfig FONTCONFIG)
 		$(cmake-utils_use truetype FREETYPE2)
-		$(cmake-utils_use xv XVIDEO)
+		$(cmake-utils_use x264 X264)
 	"
+
 	use debug && POSTFIX="_debug" && mycmakeargs+="-DVERBOSE=1 -DCMAKE_BUILD_TYPE=Debug"
 
 	for PROCESS in ${PROCESSES} ; do
@@ -54,15 +76,26 @@ src_configure() {
 
 		if [[ "${SOURCE}" == "buildPluginsCommon" ]] ; then
 			plugin_ui="-DPLUGIN_UI=COMMON"
+
+			extra_mycmakeargs="
+				$(cmake-utils_use amr OPENCORE_AMRWB)
+				$(cmake-utils_use amr OPENCORE_AMRNB)
+				$(cmake-utils_use dts LIBDCA)
+				$(cmake-utils_use faad FAAD)
+				$(cmake-utils_use jack JACK)
+				$(cmake-utils_use vorbis VORBIS)
+			"
 		elif [[ "${SOURCE}" == "buildPluginsCLI" ]] ; then
 			plugin_ui="-DPLUGIN_UI=CLI"
+			extra_mycmakeargs=""
 		elif [[ "${SOURCE}" == "buildPluginsQt4" ]] ; then
 			plugin_ui="-DPLUGIN_UI=QT4"
+			extra_mycmakeargs=""
 		fi
 
 		cmake -DAVIDEMUX_SOURCE_DIR="${S}" \
 			-DCMAKE_INSTALL_PREFIX="/usr" \
-			${mycmakeargs} ${plugin_ui} -G "Unix Makefiles" ../"${DEST}${POSTFIX}/" || die "cmake failed."
+			${mycmakeargs} ${extra_mycmakeargs} ${plugin_ui} -G "Unix Makefiles" ../"${DEST}${POSTFIX}/" || die "cmake failed."
 	done
 }
 
