@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tex/chktex/chktex-1.7.0.ebuild,v 1.2 2012/06/22 15:42:23 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-tex/chktex/chktex-1.7.2.ebuild,v 1.1 2013/05/17 11:01:24 aballier Exp $
 
 EAPI=4
 AUTOTOOLS_AUTORECONF=true
@@ -25,7 +25,7 @@ DEPEND="${RDEPEND}
 	sys-apps/groff
 	doc? ( dev-tex/latex2html )"
 
-PATCHES=( "${FILESDIR}/${P}-asneeded.patch" )
+PATCHES=( "${FILESDIR}/${PN}-1.7.1-asneeded.patch" )
 DOCS=( NEWS )
 
 src_configure() {
