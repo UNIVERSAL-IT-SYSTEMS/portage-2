@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/mafft/mafft-7.037.ebuild,v 1.2 2013/04/29 10:19:17 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/mafft/mafft-7.037.ebuild,v 1.3 2013/05/21 18:04:05 jlec Exp $
 
 EAPI=5
 
@@ -22,7 +22,7 @@ S="${WORKDIR}"/${P}${EXTENSIONS}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-respect.patch
 	use threads && append-flags -Denablemultithread
-	sed "s:GENTOOLIBDIR:$(get_libdir):g" -i core/Makefile
+	sed "s:GENTOOLIBDIR:$(get_libdir):g" -i core/Makefile || die
 	sed -i -e "s/(PREFIX)\/man/(PREFIX)\/share\/man/" "${S}"/core/Makefile || die "sed failed"
 }
 
@@ -32,14 +32,13 @@ src_compile() {
 		$(usex threads ENABLE_MULTITHREAD="-Denablemultithread" ENABLE_MULTITHREAD="") \
 		PREFIX="${EPREFIX}"/usr \
 		CC="$(tc-getCC)" \
-		CFLAGS="${CFLAGS}" \
-		|| die "make failed"
+		CFLAGS="${CFLAGS}"
 	popd
 }
 
 src_install() {
 	pushd core
-	emake PREFIX="${ED}usr" install || die "install failed"
+	emake PREFIX="${ED}usr" install
 	popd
-	dodoc readme || die
+	dodoc readme
 }
