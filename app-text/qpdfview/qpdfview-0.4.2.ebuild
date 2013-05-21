@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/qpdfview/qpdfview-0.4.2.ebuild,v 1.1 2013/04/23 11:18:08 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/qpdfview/qpdfview-0.4.2.ebuild,v 1.3 2013/05/20 17:37:34 hwoarang Exp $
 
 EAPI=5
 
