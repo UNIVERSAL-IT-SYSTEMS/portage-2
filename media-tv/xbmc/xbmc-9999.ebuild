@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.143 2013/04/23 01:33:23 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-tv/xbmc/xbmc-9999.ebuild,v 1.144 2013/05/23 21:23:51 vapier Exp $
 
 EAPI=5
 
@@ -50,7 +50,6 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	app-arch/zip
 	app-i18n/enca
 	airplay? ( app-pda/libplist )
-	>=dev-lang/python-2.4
 	dev-libs/boost
 	dev-libs/fribidi
 	dev-libs/libcdio[-minimal]
