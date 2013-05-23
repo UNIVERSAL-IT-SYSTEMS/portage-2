@@ -1,6 +1,29 @@
 # ChangeLog for dev-python/jinja
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/jinja/ChangeLog,v 1.65 2013/05/20 14:51:15 djc Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/jinja/ChangeLog,v 1.71 2013/05/23 01:44:48 floppym Exp $
+
+  23 May 2013; Mike Gilbert <floppym@gentoo.org> +files/jinja-2.7-docs.patch,
+  jinja-2.7.ebuild:
+  Fix error building docs, bug 470856.
+
+  23 May 2013; Mike Gilbert <floppym@gentoo.org> jinja-2.7.ebuild:
+  Simplify docs build.
+
+  23 May 2013; Mike Gilbert <floppym@gentoo.org>
+  files/jinja-2.6-python3.3.patch, jinja-2.6-r2.ebuild:
+  Cleanup python3.3 patch based on feedback from Arfrever.
+
+  23 May 2013; Mike Gilbert <floppym@gentoo.org> jinja-2.6-r100.ebuild:
+  Don't apply python3.3 patch.
+
+  23 May 2013; Mike Gilbert <floppym@gentoo.org> jinja-2.6-r100.ebuild:
+  Don't install the vim syntax files in the compat ebuild.
+
+*jinja-2.6-r100 (23 May 2013)
+
+  23 May 2013; Mike Gilbert <floppym@gentoo.org> +jinja-2.6-r100.ebuild:
+  Create 'compat' slot for packages requiring python 2.5, 3.1, or 3.2, which
+  >=jinja-2.7 does not support.
 
 *jinja-2.7 (20 May 2013)
 
