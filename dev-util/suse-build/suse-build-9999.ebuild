@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/suse-build/suse-build-9999.ebuild,v 1.6 2013/03/18 10:18:58 miska Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/suse-build/suse-build-9999.ebuild,v 1.7 2013/05/27 16:38:29 miska Exp $
 
 EAPI=5
 
@@ -25,7 +25,8 @@ HOMEPAGE="https://build.opensuse.org/package/show?package=build&project=openSUSE
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="symlink"
-[[ "${PV}" == "9999" ]] || KEYWORDS="~amd64 ~x86"
+[[ "${PV}" == "9999" ]] || \
+KEYWORDS="amd64 x86"
 
 RDEPEND="
 	virtual/perl-Digest-MD5
@@ -33,6 +34,7 @@ RDEPEND="
 	dev-perl/XML-Parser
 	dev-perl/TimeDate
 	app-shells/bash
+	app-arch/cpio
 	app-arch/rpm
 "
 
@@ -45,11 +47,11 @@ src_install() {
 	cd "${ED}"/usr
 	find bin -type l | while read i; do
 		mv "${i}" "${i/bin\//bin/suse-}"
-		use symlink && dosym "${i/bin\//suse-}" "/usr/${i}"
+		use !symlink || dosym "${i/bin\//suse-}" "/usr/${i}"
 	done
 	find share/man/man1 -type f | while read i; do
 		mv "${i}" "${i/man1\//man1/suse-}"
-		use symlink && dosym "${i/man1\//suse-}" "/usr/${i}"
+		use !symlink || dosym "${i/man1\//suse-}" "/usr/${i}"
 	done
 	find . -type f -exec sed -i 's|/usr/lib/build|/usr/libexec/suse-build|' {} +
 }

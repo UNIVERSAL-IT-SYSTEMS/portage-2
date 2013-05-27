@@ -1,11 +1,12 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/osc/osc-9999.ebuild,v 1.9 2013/05/04 21:28:50 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/osc/osc-9999.ebuild,v 1.10 2013/05/27 16:23:57 miska Exp $
 
 EAPI=5
 
 EGIT_REPO_URI="git://github.com/openSUSE/osc.git"
-PYTHON_DEPEND="2:2.6"
+
+PYTHON_COMPAT=( python{2_6,2_7} )
 
 if [[ "${PV}" == "9999" ]]; then
 	EXTRA_ECLASS="git-2"
@@ -14,7 +15,7 @@ else
 	EXTRA_ECLASS="obs-download"
 fi
 
-inherit distutils ${EXTRA_ECLASS}
+inherit distutils-r1 ${EXTRA_ECLASS}
 unset EXTRA_ECLASS
 
 DESCRIPTION="Command line tool for Open Build Service"
@@ -31,23 +32,23 @@ IUSE=""
 KEYWORDS="~amd64 ~x86"
 
 DEPEND="
-	dev-python/urlgrabber
-	dev-python/pyxml
-	app-arch/rpm[python]
-	dev-python/m2crypto
+	dev-python/urlgrabber[${PYTHON_USEDEP}]
+	dev-python/pyxml[${PYTHON_USEDEP}]
+	app-arch/rpm[python,${PYTHON_USEDEP}]
+	dev-python/m2crypto[${PYTHON_USEDEP}]
 "
-RDEPEND="${DEPEND}
+PDEPEND="${DEPEND}
 	app-admin/sudo
 	dev-util/obs-service-meta
 "
 
-pkg_setup() {
-	python_set_active_version 2
-	python_pkg_setup
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-out-of-tree-build.patch
+	distutils-r1_src_prepare
 }
 
 src_install() {
-	distutils_src_install
+	distutils-r1_src_install
 	dosym osc-wrapper.py /usr/bin/osc
 	keepdir /usr/lib/osc/source_validators
 	cd "${ED}"/usr/
