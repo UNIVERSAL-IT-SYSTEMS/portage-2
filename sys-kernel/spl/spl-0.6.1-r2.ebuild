@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/spl/spl-0.6.1-r2.ebuild,v 1.1 2013/05/28 13:07:09 ryao Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/spl/spl-0.6.1-r2.ebuild,v 1.4 2013/05/29 02:00:17 ryao Exp $
 
 EAPI="4"
 AUTOTOOLS_AUTORECONF="1"
@@ -45,6 +45,8 @@ pkg_setup() {
 		MODULES
 		KALLSYMS
 		!PAX_KERNEXEC_PLUGIN_METHOD_OR
+		!UIDGID_STRICT_TYPE_CHECKS
+		!USER_NS
 		ZLIB_DEFLATE
 		ZLIB_INFLATE
 	"
@@ -68,8 +70,6 @@ src_prepare() {
 
 		# Block tasks properly
 		epatch "${FILESDIR}/${PN}-0.6.1-fix-delay.patch"
-
-		spl-0.6.1-fix-delay.patch
 
 		if kernel_is ge 3 8
 		then
