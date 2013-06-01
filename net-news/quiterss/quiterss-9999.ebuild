@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-news/quiterss/quiterss-9999.ebuild,v 1.2 2013/05/28 12:37:27 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-news/quiterss/quiterss-9999.ebuild,v 1.3 2013/06/01 19:36:15 pinkbyte Exp $
 
 EAPI=5
 
@@ -25,13 +25,12 @@ RDEPEND="${DEPEND}"
 
 DOCS=( AUTHORS HISTORY_EN HISTORY_RU README )
 
-rm_loc() {
-	sed -i -e "s:lang/${PN}_${1}.ts::" lang/lang.pri || die 'sed on lang.pri failed'
-}
-
 src_prepare() {
+	my_rm_loc() {
+		sed -i -e "s:lang/${PN}_${1}.ts::" lang/lang.pri || die 'sed on lang.pri failed'
+	}
 	l10n_find_plocales_changes "lang" "${PN}_" '.ts'
-	l10n_for_each_disabled_locale_do rm_loc
+	l10n_for_each_disabled_locale_do my_rm_loc
 
 	qt4-r2_src_prepare
 }
