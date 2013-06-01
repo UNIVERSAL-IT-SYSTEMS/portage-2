@@ -1,10 +1,25 @@
 # ChangeLog for profile directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.7898 2013/06/01 03:05:23 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.7903 2013/06/01 17:29:30 floppym Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  01 Jun 2013; Mike Gilbert <floppym@gentoo.org> package.mask:
+  Remove dev-python/django-registration-0.8-r2 mask.
+
+  01 Jun 2013; Michael Palimaka <kensington@gentoo.org> use.desc:
+  Add new global USE flag qt5.
+
+  01 Jun 2013; Jeroen Roovers <jer@gentoo.org> desc/linguas.desc:
+  Add Haitian locale.
+
+  01 Jun 2013; Ian Delaney <idella4@gentoo.org> package.mask:
+  mask django-registration-0.8-r2
+
+  01 Jun 2013; Jeroen Roovers <jer@gentoo.org> package.mask:
+  Remove www-plugins/diamondx.
 
   01 Jun 2013; Anthony G. Basile <blueness@gentoo.org>
   hardened/linux/uclibc/amd64/use.mask:
