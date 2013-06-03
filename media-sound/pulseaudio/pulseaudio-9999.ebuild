@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/pulseaudio-9999.ebuild,v 1.36 2013/04/10 20:43:51 vincent Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/pulseaudio/pulseaudio-9999.ebuild,v 1.37 2013/06/03 19:23:05 ford_prefect Exp $
 
 EAPI="5"
 
@@ -101,7 +101,11 @@ pkg_setup() {
 	fi
 }
 
-EGIT_BOOTSTRAP="./bootstrap.sh"
+EGIT_BOOTSTRAP="NOCONFIGURE=1 ./bootstrap.sh"
+
+src_prepare() {
+	epatch_user
+}
 
 src_configure() {
 	if use gdbm; then
