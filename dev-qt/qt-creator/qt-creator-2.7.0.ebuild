@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-qt/qt-creator/qt-creator-2.7.0.ebuild,v 1.3 2013/04/24 08:25:19 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-qt/qt-creator/qt-creator-2.7.0.ebuild,v 1.4 2013/06/03 08:01:44 pesa Exp $
 
 EAPI=5
 
@@ -19,7 +19,8 @@ if [[ ${PV} == *9999* ]]; then
 else
 	MY_PV=${PV/_/-}
 	MY_P=${PN}-${MY_PV}-src
-	SRC_URI="http://releases.qt-project.org/qtcreator/${MY_PV}/${MY_P}.tar.gz"
+	[[ ${MY_PV} == ${PV} ]] && MY_REL=official || MY_REL=development
+	SRC_URI="http://download.qt-project.org/${MY_REL}_releases/${PN/-}/${PV%.*}/${MY_PV}/${MY_P}.tar.gz"
 	S=${WORKDIR}/${MY_P}
 fi
 
