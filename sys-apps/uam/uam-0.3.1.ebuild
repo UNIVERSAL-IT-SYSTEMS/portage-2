@@ -1,15 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/uam/uam-9999.ebuild,v 1.2 2013/06/04 06:59:54 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/uam/uam-0.3.1.ebuild,v 1.1 2013/06/04 07:02:16 mgorny Exp $
 
 EAPI=5
-
-#if LIVE
-AUTOTOOLS_AUTORECONF=yes
-EGIT_REPO_URI="http://bitbucket.org/mgorny/${PN}.git"
-
-inherit git-2
-#endif
 
 inherit autotools-utils udev user
 
@@ -25,11 +18,6 @@ IUSE=""
 RDEPEND="virtual/udev"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
-
-#if LIVE
-KEYWORDS=
-SRC_URI=
-#endif
 
 pkg_postinst() {
 	# The plugdev group is created by pam, pmount and many other ebuilds
