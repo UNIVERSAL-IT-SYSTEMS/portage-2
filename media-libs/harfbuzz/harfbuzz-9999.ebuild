@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/harfbuzz/harfbuzz-9999.ebuild,v 1.13 2013/02/27 23:34:03 ottxor Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/harfbuzz/harfbuzz-9999.ebuild,v 1.14 2013/06/05 11:29:56 scarabeus Exp $
 
 EAPI=5
 
@@ -17,16 +17,17 @@ LICENSE="Old-MIT ISC icu"
 SLOT="0"
 [[ ${PV} == 9999 ]] || \
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux ~x86-macos ~x64-macos ~x64-solaris"
-IUSE="static-libs"
+IUSE="+cairo +glib +graphite icu static-libs +truetype"
 
 RDEPEND="
-	dev-libs/glib:2
-	dev-libs/icu:=
-	media-gfx/graphite2:=
-	media-libs/freetype:2=
-	x11-libs/cairo:=
+	cairo? ( x11-libs/cairo:= )
+	glib? ( dev-libs/glib:2 )
+	graphite? ( media-gfx/graphite2:= )
+	icu? ( dev-libs/icu:= )
+	truetype? ( media-libs/freetype:2= )
 "
 DEPEND="${RDEPEND}
+	dev-util/ragel
 	virtual/pkgconfig
 "
 
@@ -48,7 +49,15 @@ src_prepare() {
 
 src_configure() {
 	econf \
-		$(use_enable static-libs static)
+		--without-coretext \
+		--without-uniscribe \
+		$(use_enable static-libs static) \
+		$(use_with cairo) \
+		$(use_with glib) \
+		$(use_with graphite graphite2) \
+		$(use_with icu) \
+		$(use_with truetype freetype)
+
 }
 
 src_install() {
