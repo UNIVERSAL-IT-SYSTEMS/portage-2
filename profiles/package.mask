@@ -1,6 +1,6 @@
 ####################################################################
 
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.14805 2013/06/06 09:52:35 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.14807 2013/06/06 13:20:11 jlec Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -32,6 +32,11 @@
 
 #--- END OF EXAMPLES ---
 
+# Michael Weber <xmw@gentoo.org> (6 Jun 2013)
+# Masked for testing due non-maint commit (bug 440086)
+=media-libs/openjpeg-1.5.1
+=media-libs/openjpeg-2.0.0
+
 # Ian Delaney <idella4@gentoo.org> (06 Jun 2013)
 # Masked for removal in ~ 30 days. Upstream inactive
 dev-python/elixir
@@ -52,7 +57,6 @@ dev-util/lafilefixer
 # Justin Lecher <jlec@gentoo.org> (28 May 2013)
 # Mask for new version schema, coot is a dependency
 >=sci-libs/clipper-2.2
-sci-chemistry/coot
 
 # Mike Gilbert <floppym@gentoo.org (27 May 2013)
 # Masked until reverse dependencies are tested bug 401009.
