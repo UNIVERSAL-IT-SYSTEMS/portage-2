@@ -1,13 +1,13 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/jmupdf/jmupdf-0.4.1.ebuild,v 1.1 2013/06/10 08:45:58 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/jmupdf/jmupdf-0.4.1.ebuild,v 1.3 2013/06/10 11:35:21 xmw Exp $
 
 EAPI=5
 
 inherit eutils flag-o-matic java-pkg-2 java-ant-2 multilib
 EANT_BUILD_TARGET=${PN}
 
-DESCRIPTION="java library for rendering PDF, XPS and CBZ (Comic Book) documents"
+DESCRIPTION="Java library for rendering PDF, XPS and CBZ (Comic Book) documents"
 HOMEPAGE="https://code.google.com/p/jmupdf/"
 SRC_URI="https://jmupdf.googlecode.com/files/2012-02-23-source-${P}.7z"
 
@@ -21,7 +21,8 @@ REQUIRED_USE="!system-mupdf"
 RDEPEND="system-mupdf? ( >=app-text/mupdf-1.2 )
 	virtual/jdk:1.7"
 DEPEND="${RDEPEND}
-	app-arch/p7zip"
+	app-arch/p7zip
+	media-libs/libbmp"
 
 S=${WORKDIR}/${PN}/${PN}
 
