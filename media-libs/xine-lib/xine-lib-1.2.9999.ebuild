@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/xine-lib/xine-lib-1.2.9999.ebuild,v 1.21 2013/05/16 18:41:45 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/xine-lib/xine-lib-1.2.9999.ebuild,v 1.22 2013/06/10 14:08:36 ssuominen Exp $
 
-EAPI=4
+EAPI=5
 
 inherit flag-o-matic libtool multilib
 
@@ -25,7 +25,7 @@ HOMEPAGE="http://xine.sourceforge.net/"
 
 LICENSE="GPL-2"
 SLOT="1"
-IUSE="a52 aac aalib +alsa altivec bluray +css directfb dts dvb dxr3 fbcon flac fusion gtk imagemagick ipv6 jack libcaca mad +mmap mng modplug musepack opengl oss pulseaudio samba sdl speex theora truetype v4l vcd vdpau vdr vidix +vis vorbis wavpack +X +xcb xinerama +xv xvmc ${NLS_IUSE}"
+IUSE="a52 aac aalib +alsa altivec bluray +css directfb dts dvb dxr3 fbcon flac fusion gtk imagemagick ipv6 jack jpeg libcaca mad +mmap mng modplug musepack opengl oss pulseaudio samba sdl speex theora truetype v4l vaapi vcd vdpau vdr vidix +vis vorbis wavpack +X +xcb xinerama +xv xvmc ${NLS_IUSE}"
 
 RDEPEND="${NLS_RDEPEND}
 	dev-libs/libxdg-basedir
@@ -48,6 +48,7 @@ RDEPEND="${NLS_RDEPEND}
 	gtk? ( x11-libs/gdk-pixbuf:2 )
 	imagemagick? ( || ( media-gfx/imagemagick media-gfx/graphicsmagick ) )
 	jack? ( >=media-sound/jack-audio-connection-kit-0.100 )
+	jpeg? ( virtual/jpeg )
 	libcaca? ( media-libs/libcaca )
 	mad? ( media-libs/libmad )
 	mng? ( media-libs/libmng )
@@ -73,6 +74,7 @@ RDEPEND="${NLS_RDEPEND}
 		media-libs/freetype:2
 		)
 	v4l? ( media-libs/libv4l )
+	vaapi? ( x11-libs/libva )
 	vcd? (
 		>=media-video/vcdimager-0.7.23
 		dev-libs/libcdio[-minimal]
@@ -150,6 +152,7 @@ src_configure() {
 		$(use_enable xinerama) \
 		$(use_enable xvmc) \
 		$(use_enable vdpau) \
+		$(use_enable vaapi) \
 		$(use_enable dvb) \
 		--disable-gnomevfs \
 		$(use_enable samba) \
@@ -160,6 +163,7 @@ src_configure() {
 		$(use_enable a52 a52dec) \
 		$(use_enable aac faad) \
 		$(use_enable gtk gdkpixbuf) \
+		$(use_enable jpeg libjpeg) \
 		$(use_enable dts) \
 		$(use_enable mad) \
 		$(use_enable modplug) \
