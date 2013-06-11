@@ -1,6 +1,17 @@
 # ChangeLog for sys-devel/llvm
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/ChangeLog,v 1.109 2013/03/21 09:12:55 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/ChangeLog,v 1.111 2013/06/10 22:26:20 voyageur Exp $
+
+  10 Jun 2013; Bernard Cafarelli <voyageur@gentoo.org> llvm-2.8-r2.ebuild,
+  llvm-2.9-r2.ebuild:
+  Allow 2.8 compilation with gcc 4.7, add epatch_user to 2.8/2.9
+
+*llvm-3.3_rc3 (10 Jun 2013)
+
+  10 Jun 2013; Bernard Cafarelli <voyageur@gentoo.org> llvm-3.2.ebuild,
+  +llvm-3.3_rc3.ebuild, llvm-9999.ebuild:
+  3.3_rc bump, bug #469896. Clean PPC patch from >= 3.3, bug #462444. Fix
+  doc/man compilation, bug #456326. Thanks everyone involved in these bugs
 
   21 Mar 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
   llvm-9999.ebuild:

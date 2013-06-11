@@ -1,18 +1,24 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-2.9-r2.ebuild,v 1.12 2013/06/10 22:26:20 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-3.3_rc3.ebuild,v 1.1 2013/06/10 21:56:12 voyageur Exp $
 
-EAPI="4"
-inherit eutils flag-o-matic multilib toolchain-funcs pax-utils
+EAPI=5
+
+# pypy gives me around 1700 unresolved tests due to open file limit
+# being exceeded. probably GC does not close them fast enough.
+PYTHON_COMPAT=( python{2_5,2_6,2_7} )
+
+inherit eutils flag-o-matic multilib python-any-r1 toolchain-funcs pax-utils
 
 DESCRIPTION="Low Level Virtual Machine"
 HOMEPAGE="http://llvm.org/"
-SRC_URI="http://llvm.org/releases/${PV}/${P}.tgz"
+SRC_URI="http://llvm.org/pre-releases/${PV/_rc*}/${PV/3.3_}/${PN}-source-${PV/_}.tar.gz"
+#	!doc? ( http://dev.gentoo.org/~voyageur/distfiles/${P}-manpages.tar.bz2 )"
 
 LICENSE="UoI-NCSA"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos"
-IUSE="debug +libffi llvm-gcc multitarget ocaml test udis86 vim-syntax"
+KEYWORDS="~amd64 ~arm ~ppc ~x86 ~amd64-fbsd ~x86-fbsd ~x64-freebsd ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos"
+IUSE="debug doc gold +libffi multitarget ocaml test udis86 vim-syntax video_cards_radeon"
 
 DEPEND="dev-lang/perl
 	>=sys-devel/make-3.79
@@ -20,17 +26,23 @@ DEPEND="dev-lang/perl
 	>=sys-devel/bison-1.875d
 	|| ( >=sys-devel/gcc-3.0 >=sys-devel/gcc-apple-4.2.1 )
 	|| ( >=sys-devel/binutils-2.18 >=sys-devel/binutils-apple-3.2.3 )
+	doc? ( dev-python/sphinx )
+	gold? ( >=sys-devel/binutils-2.22[cxx] )
 	libffi? ( virtual/pkgconfig
 		virtual/libffi )
 	ocaml? ( dev-lang/ocaml )
-	udis86? ( dev-libs/udis86[pic(+)] )"
+	udis86? ( dev-libs/udis86[pic(+)] )
+	${PYTHON_DEPS}"
 RDEPEND="dev-lang/perl
 	libffi? ( virtual/libffi )
 	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )"
 
-S=${WORKDIR}/${PN}-${PV/_pre*}
+S=${WORKDIR}/${PN}.src
 
 pkg_setup() {
+	# Required for test and build
+	python-any-r1_pkg_setup
+
 	# need to check if the active compiler is ok
 
 	broken_gcc=" 3.2.2 3.2.3 3.3.2 4.1.1 "
@@ -56,12 +68,12 @@ pkg_setup() {
 
 	if [[ ${CHOST} == x86_64-* && ${broken_gcc_amd64} == *" ${version} "* ]];
 	then
-		 elog "Your version of gcc is known to miscompile llvm in amd64"
-		 elog "architectures.  Check"
-		 elog "http://www.llvm.org/docs/GettingStarted.html for possible"
-		 elog "solutions."
+		elog "Your version of gcc is known to miscompile llvm in amd64"
+		elog "architectures.  Check"
+		elog "http://www.llvm.org/docs/GettingStarted.html for possible"
+		elog "solutions."
 		die "Your currently active version of gcc is known to miscompile llvm"
-	 fi
+	fi
 }
 
 src_prepare() {
@@ -72,22 +84,23 @@ src_prepare() {
 		-e 's,^PROJ_etcdir.*,PROJ_etcdir := '"${EPREFIX}"'/etc/llvm,' \
 		-e 's,^PROJ_libdir.*,PROJ_libdir := $(PROJ_prefix)/'$(get_libdir)/${PN}, \
 		-i Makefile.config.in || die "Makefile.config sed failed"
-	sed -e 's,$ABS_RUN_DIR/lib,'"${EPREFIX}"/usr/$(get_libdir)/${PN}, \
-		-i tools/llvm-config/llvm-config.in.in || die "llvm-config sed failed"
+	sed -e "/ActiveLibDir = ActivePrefix/s/lib/$(get_libdir)\/${PN}/" \
+		-i tools/llvm-config/llvm-config.cpp || die "llvm-config sed failed"
 
 	einfo "Fixing rpath and CFLAGS"
 	sed -e 's,\$(RPATH) -Wl\,\$(\(ToolDir\|LibDir\)),$(RPATH) -Wl\,'"${EPREFIX}"/usr/$(get_libdir)/${PN}, \
 		-e '/OmitFramePointer/s/-fomit-frame-pointer//' \
 		-i Makefile.rules || die "rpath sed failed"
+	if use gold; then
+		sed -e 's,\$(SharedLibDir),'"${EPREFIX}"/usr/$(get_libdir)/${PN}, \
+			-i tools/gold/Makefile || die "gold rpath sed failed"
+	fi
 
-	epatch "${FILESDIR}"/${PN}-2.6-commandguide-nops.patch
-	epatch "${FILESDIR}"/${PN}-2.9-nodoctargz.patch
+	# FileCheck is needed at least for dragonegg tests
+	sed -e "/NO_INSTALL = 1/s/^/#/" -i utils/FileCheck/Makefile \
+		|| die "FileCheck Makefile sed failed"
 
-	# Upstream commit r131062
-	epatch "${FILESDIR}"/${P}-Operator.h-c++0x.patch
-
-	# Additional unistd.h include for GCC 4.7
-	epatch "${FILESDIR}"/${P}-gcc4.7.patch
+	epatch "${FILESDIR}"/${PN}-3.2-nodoctargz.patch
 
 	# User patches
 	epatch_user
@@ -103,39 +116,16 @@ src_configure() {
 	if use multitarget; then
 		CONF_FLAGS="${CONF_FLAGS} --enable-targets=all"
 	else
-		CONF_FLAGS="${CONF_FLAGS} --enable-targets=host-only"
+		CONF_FLAGS="${CONF_FLAGS} --enable-targets=host,cpp"
 	fi
 
 	if use amd64; then
 		CONF_FLAGS="${CONF_FLAGS} --enable-pic"
 	fi
 
-	# things would be built differently depending on whether llvm-gcc is
-	# used or not.
-	local LLVM_GCC_DIR=/dev/null
-	local LLVM_GCC_DRIVER=nope ; local LLVM_GPP_DRIVER=nope
-	if use llvm-gcc ; then
-		if has_version sys-devel/llvm-gcc; then
-			LLVM_GCC_DIR=$(ls -d ${EROOT}/usr/$(get_libdir)/llvm-gcc* 2> /dev/null)
-			LLVM_GCC_DRIVER=$(find ${LLVM_GCC_DIR} -name 'llvm*-gcc' 2> /dev/null)
-			if [[ -z ${LLVM_GCC_DRIVER} ]] ; then
-				die "failed to find installed llvm-gcc, LLVM_GCC_DIR=${LLVM_GCC_DIR}"
-			fi
-			einfo "Using $LLVM_GCC_DRIVER"
-			LLVM_GPP_DRIVER=${LLVM_GCC_DRIVER/%-gcc/-g++}
-		else
-			eerror "llvm-gcc USE flag enabled, but sys-devel/llvm-gcc was not found"
-			eerror "Building with standard gcc, re-merge this package after installing"
-			eerror "llvm-gcc to build with it"
-			eerror "This is normal behavior on first LLVM merge"
-		fi
+	if use gold; then
+		CONF_FLAGS="${CONF_FLAGS} --with-binutils-include=${EPREFIX}/usr/include/"
 	fi
-
-	CONF_FLAGS="${CONF_FLAGS} \
-		--with-llvmgccdir=${LLVM_GCC_DIR} \
-		--with-llvmgcc=${LLVM_GCC_DRIVER} \
-		--with-llvmgxx=${LLVM_GPP_DRIVER}"
-
 	if use ocaml; then
 		CONF_FLAGS="${CONF_FLAGS} --enable-bindings=ocaml"
 	else
@@ -146,24 +136,46 @@ src_configure() {
 		CONF_FLAGS="${CONF_FLAGS} --with-udis86"
 	fi
 
+	if use video_cards_radeon; then
+		CONF_FLAGS="${CONF_FLAGS}
+		--enable-experimental-targets=R600"
+	fi
+
 	if use libffi; then
 		append-cppflags "$(pkg-config --cflags libffi)"
 	fi
 	CONF_FLAGS="${CONF_FLAGS} $(use_enable libffi)"
-	econf ${CONF_FLAGS} || die "econf failed"
+
+	# llvm prefers clang over gcc, so we may need to force that
+	tc-export CC CXX
+	econf ${CONF_FLAGS}
 }
 
 src_compile() {
-	emake VERBOSE=1 KEEP_SYMBOLS=1 REQUIRES_RTTI=1 || die "emake failed"
+	emake VERBOSE=1 KEEP_SYMBOLS=1 REQUIRES_RTTI=1
+
+	if use doc; then
+		emake -C docs -f Makefile.sphinx man
+		emake -C docs -f Makefile.sphinx html
+	fi
 
 	pax-mark m Release/bin/lli
 	if use test; then
 		pax-mark m unittests/ExecutionEngine/JIT/Release/JITTests
+		pax-mark m unittests/ExecutionEngine/MCJIT/Release/MCJITTests
+		pax-mark m unittests/Support/Release/SupportTests
 	fi
 }
 
 src_install() {
-	emake KEEP_SYMBOLS=1 DESTDIR="${D}" install || die "install failed"
+	emake KEEP_SYMBOLS=1 DESTDIR="${D}" install
+
+	if use doc; then
+		doman docs/_build/man/*.1
+		dohtml -r docs/_build/html/
+	#else
+	#	doman "${WORKDIR}"/${P}-manpages/*.1
+	fi
 
 	if use vim-syntax; then
 		insinto /usr/share/vim/vimfiles/syntax
@@ -172,9 +184,11 @@ src_install() {
 
 	# Fix install_names on Darwin.  The build system is too complicated
 	# to just fix this, so we correct it post-install
-	local lib= f= odylib=
+	local lib= f= odylib= libpv=${PV}
 	if [[ ${CHOST} == *-darwin* ]] ; then
-		for lib in lib{EnhancedDisassembly,LLVM-${PV},LTO}.dylib {BugpointPasses,LLVMHello,profile_rt}.dylib ; do
+		eval $(grep PACKAGE_VERSION= configure)
+		[[ -n ${PACKAGE_VERSION} ]] && libpv=${PACKAGE_VERSION}
+		for lib in lib{EnhancedDisassembly,LLVM-${libpv},LTO,profile_rt}.dylib {BugpointPasses,LLVMHello}.dylib ; do
 			# libEnhancedDisassembly is Darwin10 only, so non-fatal
 			[[ -f ${ED}/usr/lib/${PN}/${lib} ]] || continue
 			ebegin "fixing install_name of $lib"
@@ -184,11 +198,11 @@ src_install() {
 			eend $?
 		done
 		for f in "${ED}"/usr/bin/* "${ED}"/usr/lib/${PN}/libLTO.dylib ; do
-			odylib=$(scanmacho -BF'%n#f' "${f}" | tr ',' '\n' | grep libLLVM-${PV}.dylib)
+			odylib=$(scanmacho -BF'%n#f' "${f}" | tr ',' '\n' | grep libLLVM-${libpv}.dylib)
 			ebegin "fixing install_name reference to ${odylib} of ${f##*/}"
 			install_name_tool \
 				-change "${odylib}" \
-					"${EPREFIX}"/usr/lib/${PN}/libLLVM-${PV}.dylib \
+					"${EPREFIX}"/usr/lib/${PN}/libLLVM-${libpv}.dylib \
 				"${f}"
 			eend $?
 		done
