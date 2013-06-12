@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/wireshark-1.10.0-r1.ebuild,v 1.1 2013/06/11 23:39:29 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/wireshark-1.10.0-r1.ebuild,v 1.3 2013/06/12 16:07:13 jer Exp $
 
 EAPI=5
 inherit autotools eutils fcaps flag-o-matic user
@@ -40,7 +40,11 @@ RDEPEND="
 	lua? ( >=dev-lang/lua-5.1 )
 	pcap? ( net-libs/libpcap[-netlink] )
 	portaudio? ( media-libs/portaudio )
-	qt4? ( dev-qt/qtcore:4 dev-qt/qtgui:4 )
+	qt4? (
+		dev-qt/qtcore:4
+		dev-qt/qtgui:4
+		x11-misc/xdg-utils
+		)
 	selinux? ( sec-policy/selinux-wireshark )
 	smi? ( net-libs/libsmi )
 	ssl? ( net-libs/gnutls )
@@ -177,7 +181,7 @@ src_install() {
 	insinto /usr/include/wiretap
 	doins wiretap/wtap.h
 
-	if use gtk; then
+	if use gtk || use qt4; then
 		for c in hi lo; do
 			for d in 16 32 48; do
 				insinto /usr/share/icons/${c}color/${d}x${d}/apps
