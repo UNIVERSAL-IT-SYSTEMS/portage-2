@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/crash/crash-5.1.7.ebuild,v 1.2 2011/08/17 14:49:31 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/crash/crash-7.0.0.ebuild,v 1.1 2013/06/13 13:36:20 cardoe Exp $
 
-EAPI=4
+EAPI=5
 
 inherit eutils
 
