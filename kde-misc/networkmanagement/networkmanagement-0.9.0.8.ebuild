@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/kde-misc/networkmanagement/networkmanagement-0.9.0.8.ebuild,v 1.3 2013/04/30 09:44:25 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/kde-misc/networkmanagement/networkmanagement-0.9.0.8.ebuild,v 1.4 2013/06/16 11:55:10 johu Exp $
 
 EAPI=5
 
@@ -10,7 +10,7 @@ KDE_SCM="git"
 inherit kde4-base
 
 DESCRIPTION="KDE frontend for NetworkManager"
-HOMEPAGE="http://www.kde.org/"
+HOMEPAGE="https://projects.kde.org/projects/extragear/base/networkmanagement"
 [[ ${PV} = 9999* ]] || SRC_URI="mirror://kde/unstable/${PN}/${PV}/src/${P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2"
