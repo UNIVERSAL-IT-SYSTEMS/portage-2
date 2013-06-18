@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-im/choqok/choqok-1.3.ebuild,v 1.3 2012/04/18 21:50:42 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-im/choqok/choqok-1.3.ebuild,v 1.4 2013/06/18 18:56:07 johu Exp $
 
 EAPI=4
 
