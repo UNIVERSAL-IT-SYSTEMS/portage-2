@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/freebsd.eclass,v 1.26 2013/06/17 20:00:37 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/freebsd.eclass,v 1.28 2013/06/18 17:30:56 aballier Exp $
 #
 # Diego Pettenò <flameeyes@gentoo.org>
 
@@ -105,9 +105,6 @@ freebsd_src_compile() {
 
 	mymakeopts="${mymakeopts} NO_MANCOMPRESS= NO_INFOCOMPRESS= NO_FSCHG="
 
-	# Many things breaks when using ricer flags here
-	[[ -z "${NOFLAGSTRIP}" ]] && strip-flags
-
 	# Make sure to use FreeBSD definitions while crosscompiling
 	[[ -z "${BMAKE}" ]] && BMAKE="$(freebsd_get_bmake)"
 
@@ -147,6 +144,8 @@ freebsd_multilib_multibuild_wrapper() {
 	mymakeopts="${mymakeopts} TARGET=${target} MACHINE=${target} MACHINE_ARCH=${target} SHLIBDIR=/usr/$(get_libdir) LIBDIR=/usr/$(get_libdir)"
 	if use multilib && [ "${ABI}" != "${DEFAULT_ABI}" ] ; then
 		mymakeopts="${mymakeopts} COMPAT_32BIT="
+		# Teach gcc where to find crt* files.
+		export LDFLAGS="${LDFLAGS} -L/usr/$(get_libdir) -B/usr/$(get_libdir)"
 	fi
 
 	einfo "Building for ABI=${ABI} and TARGET=${target}"
