@@ -1,10 +1,20 @@
 # ChangeLog for profile directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.7958 2013/06/19 05:12:52 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.7961 2013/06/19 17:18:48 aballier Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  19 Jun 2013; Alexis Ballier <aballier@gentoo.org> package.mask:
+  mask multilib lame
+
+  19 Jun 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  package.mask:
+  Update mesa mask for opencl.
+
+  19 Jun 2013; Alexis Ballier <aballier@gentoo.org> package.mask:
+  mask multilib media-libs/xvid
 
   19 Jun 2013; Sébastien Fabbro <bicatali@gentoo.org> package.mask:
   Masked >=sci-mathematics/glpk-4.49
