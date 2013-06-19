@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/setuptools/setuptools-0.7.2-r1.ebuild,v 1.1 2013/06/15 00:44:05 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/setuptools/setuptools-0.7.2-r1.ebuild,v 1.2 2013/06/18 23:25:49 floppym Exp $
 
 EAPI="5"
 PYTHON_COMPAT=( python{2_5,2_6,2_7,3_1,3_2,3_3} pypy{1_9,2_0} )
@@ -40,4 +40,9 @@ python_prepare_all() {
 
 python_test() {
 	esetup.py test
+}
+
+python_install() {
+	export DISTRIBUTE_DISABLE_VERSIONED_EASY_INSTALL_SCRIPT=1
+	distutils-r1_python_install
 }
