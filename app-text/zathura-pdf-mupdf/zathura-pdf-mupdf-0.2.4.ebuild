@@ -1,27 +1,24 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/zathura-pdf-mupdf/zathura-pdf-mupdf-9999.ebuild,v 1.4 2013/06/20 11:25:55 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/zathura-pdf-mupdf/zathura-pdf-mupdf-0.2.4.ebuild,v 1.1 2013/06/20 10:54:48 xmw Exp $
 
 EAPI=5
 
-inherit eutils git-2 toolchain-funcs
+inherit eutils toolchain-funcs
 
 DESCRIPTION="PDF plug-in for zathura"
 HOMEPAGE="http://pwmt.org/projects/zathura/"
-EGIT_REPO_URI="git://git.pwmt.org/${PN}.git"
-EGIT_BRANCH="mupdf-git"
+SRC_URI="http://pwmt.org/projects/zathura/plugins/download/${P}.tar.gz"
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="!app-text/zathura-pdf-poppler
-	>=app-text/mupdf-9999:=
+	>=app-text/mupdf-1.2:=
+	<app-text/mupdf-9999
 	>=app-text/zathura-0.2.0
-	media-libs/jbig2dec
-	media-libs/openjpeg:2
-	virtual/jpeg
 	x11-libs/cairo:="
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
@@ -35,13 +32,6 @@ pkg_setup() {
 		VERBOSE=1
 		DESTDIR="${D}"
 	)
-}
-
-src_prepare() {
-	epatch \
-		"${FILESDIR}"/${P}-mupdf-fz_new_text_page.patch \
-		"${FILESDIR}"/${P}-mupdf-pkgconfig.patch \
-		"${FILESDIR}"/${P}-mupdf-split-headers.patch
 }
 
 src_compile() {
