@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/clipgrab/clipgrab-3.2.0.11.ebuild,v 1.1 2013/04/21 07:26:45 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/clipgrab/clipgrab-3.2.0.10.ebuild,v 1.2 2013/03/02 22:59:40 hwoarang Exp $
 
 EAPI=4
 
@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}
 	virtual/ffmpeg"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-3.2.0.10-obey.patch"
+	"${FILESDIR}/${P}-obey.patch"
 )
 
 src_install() {
