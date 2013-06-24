@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/opal/opal-3.12.4.ebuild,v 1.2 2013/06/24 16:43:40 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/opal/opal-3.12.4.ebuild,v 1.1 2013/06/22 19:28:34 scarabeus Exp $
 
 EAPI=5
 
@@ -202,11 +202,11 @@ src_install() {
 		local exampledir="/usr/share/doc/${PF}/examples"
 		local basedir="samples"
 		local sampledirs="`ls ${basedir} --hide=configure* \
-			--hide=opal_samples.mak.in --hide=ReadMe.txt`"
+			--hide=opal_samples.mak.in`"
 
 		# first, install files
 		insinto ${exampledir}/
-		doins ${basedir}/{configure*,opal_samples*,ReadMe.txt}
+		doins ${basedir}/{configure*,opal_samples*}
 
 		# now, all examples
 		for x in ${sampledirs}; do
