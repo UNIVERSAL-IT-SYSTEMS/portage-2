@@ -1,6 +1,34 @@
 # ChangeLog for media-libs/libvpx
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libvpx/ChangeLog,v 1.78 2013/06/19 13:38:03 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libvpx/ChangeLog,v 1.86 2013/06/25 17:38:42 aballier Exp $
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  it builds fine now with -ggdb3, drop the replace-flags
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  drop debug useflag that only adds -g and doesnt build. bug #378557
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  do not build examples that will not be installed, bug #336426
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  ssse3 requires sse2, bug #405813
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  set AS to yasm based on CHOST which seems to be the sanest to do, bug #345161
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> -libvpx-0.9.6.ebuild,
+  -libvpx-0.9.7.ebuild, -libvpx-0.9.7-r1.ebuild, -libvpx-1.0.0.ebuild,
+  -libvpx-1.0.0-r1.ebuild, -files/libvpx-0.9.5-enable-shared.patch,
+  -files/libvpx-1.0.0-support-arm.patch:
+  remove old
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  use proper abi_x86 flags for the yasm dep; leave the *-fbsd ones until it has
+  abi_x86 support
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  Go multilib and add missing yasm dep for amd64-fbsd
 
   19 Jun 2013; Jeroen Roovers <jer@gentoo.org> libvpx-1.1.0.ebuild:
   Stable for HPPA too.
