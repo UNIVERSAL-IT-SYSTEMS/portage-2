@@ -1,6 +1,34 @@
 # ChangeLog for media-libs/libvpx
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libvpx/ChangeLog,v 1.86 2013/06/25 17:38:42 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libvpx/ChangeLog,v 1.93 2013/06/25 20:48:44 aballier Exp $
+
+*libvpx-1.2.0_pre20130625 (25 Jun 2013)
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org>
+  +libvpx-1.2.0_pre20130625.ebuild:
+  Take a snapshot of the 1.2.0 tag upstream. Name it _pre in case upstream
+  releases a 1.2.0 tarball some day. Bug #468076.
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  copy some more addpredict from php-pear-r1.eclass; hopefully this should fix
+  all the sandbox violations. bug #465988. Also actually install the docs we
+  built.
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  test the libvpx.so we just built, not the system one
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  add a comment on how to generate the testdata tarball
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  provide a testdata tarball so that it doesnt try to redownload them in
+  src_test
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  do not mess with MAKEOPTS, pass it to emake directly
+
+  25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
+  dont build tests if they will not be ran
 
   25 Jun 2013; Alexis Ballier <aballier@gentoo.org> libvpx-9999.ebuild:
   it builds fine now with -ggdb3, drop the replace-flags
