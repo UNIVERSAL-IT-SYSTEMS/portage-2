@@ -1,6 +1,6 @@
 ####################################################################
 
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.14861 2013/06/26 13:29:37 lu_zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.14864 2013/06/26 17:22:24 aballier Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -198,13 +198,6 @@ dev-util/lafilefixer
 # Masked until reverse dependencies are tested bug 401009.
 =dev-python/imaging-2.0.0
 
-# Joerg Bornkessel <hd_brummy@gentoo.org> (26 May 2013)
-# dead on upstream, homepage dead
-# failed on compile >=media-video/vdr-1.7.27
-# see wrt bug 414245 414177, use as alternative media-plugins/vdr-cdplayer
-# Removal in ~ 30 days
-media-plugins/vdr-vdrcd
-
 # Justin Lecher <jlec@gentoo.org> (25 May 2013)
 # Upstream dropped support long ago
 # Switch to sys-fs/aufs3 or
@@ -258,10 +251,6 @@ dev-python/gdl-python
 # Queries kernel source location wrong wrt #370099
 # And fails to build with Linux 3.8+
 media-sound/line6usb
-
-# Tom Wijsman <TomWij@gentoo.org> (05 May 2013)
-# Masking media-video/handbrake until =media-video/ffmpeg-1.2 is unmasked.
-media-video/handbrake
 
 # Kacper Kowalik <xarthisius@gentoo.org> (01 May 2013)
 # Removal due to licensing issue wrt #452420
@@ -528,7 +517,6 @@ app-text/cuneiform
 >=media-sound/twolame-0.3.13-r1
 >=media-sound/wavpack-4.60.1-r1
 >=media-sound/gsm-1.0.13-r1
->=media-libs/xvid-1.3.2-r1
 
 # Markos Chandras <hwoarang@gentoo.org> (13 Mar 2013)
 # Mask because breaking updates out of the blue is bad
@@ -588,10 +576,6 @@ media-gfx/yafaray
 # Jeroen Roovers <jer@gentoo.org> (22 Feb 2013)
 # Masked until bug #456788 is fixed.
 =net-analyzer/mtr-0.83
-
-# Markos Chandras <hwoarang@gentoo.org> (17 Feb 2013)
-# Does not build with libav-0.8
-=media-video/qx11grab-0.4.7
 
 # Alexis Ballier <aballier@gentoo.org> (15 Feb 2013)
 # Starting from this version, some decoders and encoders (like AAC or APE)
