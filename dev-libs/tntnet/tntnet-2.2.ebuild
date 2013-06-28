@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/tntnet/tntnet-2.1.ebuild,v 1.2 2013/06/28 19:22:59 zzam Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/tntnet/tntnet-2.2.ebuild,v 1.1 2013/06/28 19:42:16 zzam Exp $
 
-EAPI="4"
+EAPI="5"
 
 inherit autotools eutils
 
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE="cgi doc examples gnutls server sdk ssl"
 
-RDEPEND="=dev-libs/cxxtools-2.1*
+RDEPEND="=dev-libs/cxxtools-2.2*
 	sys-libs/zlib[minizip]
 	ssl? (
 		gnutls? (
@@ -35,7 +35,7 @@ src_prepare() {
 
 	eautoreconf
 
-	sed -i -e 's:@localstatedir@:/var:' etc/tntnet/tntnet.conf.in || die
+	sed -i -e 's:@localstatedir@:/var:' etc/tntnet/tntnet.xml.in || die
 }
 
 src_configure() {
