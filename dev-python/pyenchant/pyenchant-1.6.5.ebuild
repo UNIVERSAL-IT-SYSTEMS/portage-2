@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pyenchant/pyenchant-1.6.5.ebuild,v 1.6 2011/02/13 17:24:39 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pyenchant/pyenchant-1.6.5.ebuild,v 1.7 2013/06/29 15:36:53 jlec Exp $
 
 EAPI="3"
 SUPPORT_PYTHON_ABIS="1"
@@ -18,8 +18,9 @@ SLOT="0"
 KEYWORDS="amd64 hppa ppc ppc64 sparc x86"
 IUSE=""
 
-DEPEND=">=app-text/enchant-${PV%.*}
-	dev-python/setuptools"
+DEPEND="
+	>=app-text/enchant-${PV%.*}
+	<dev-python/setuptools-0.7"
 RDEPEND="${DEPEND}"
 
 DOCS="README.txt TODO.txt"
