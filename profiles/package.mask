@@ -1,6 +1,6 @@
 ####################################################################
 
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.14874 2013/06/29 19:42:48 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.14882 2013/06/30 11:38:35 pacho Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,6 +31,10 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Joerg Bornkessel <hd_brummy@gentoo.org> (30 Jun 2013)
+# temp masked for testing, wrt bug 474888
+=media-plugins/vdr-music-0.9.9
 
 # Alexis Ballier <aballier@gentoo.org> (27 Jun 2013)
 # TeX Live 2013 mask.
@@ -533,6 +537,12 @@ net-irc/xchatosd
 >=gnome-base/gnome-common-3.7.4
 >=media-gfx/colorhug-client-0.2.0
 >=gnome-extra/gnome-shell-extensions-topicons-16
+games-puzzle/five-or-more
+games-board/four-in-a-row
+games-board/gnome-chess
+games-puzzle/gnome-klotski
+games-board/gnome-mines
+games-arcade/gnome-robots
 
 # Jeroen Roovers <jer@gentoo.org> (25 Mar 2013)
 # Unlocking fails (bug #463180)
