@@ -1,9 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-news/quiterss/quiterss-9999.ebuild,v 1.6 2013/06/25 09:48:20 pinkbyte Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-news/quiterss/quiterss-9999.ebuild,v 1.7 2013/07/03 17:23:54 maksbotan Exp $
 
 EAPI=5
 
+PLOCALES="ar cs de el_GR es fa fr hu it ja ko lt nl pl pt_BR pt_PT ru sk sr sv tg_TJ th tr uk vi zh_CN zh_TW"
 PLOCALES="ar cs de el_GR es fa fr hu it ja ko lt nl pl pt_BR ru sk sr sv tg_TJ th tr uk zh_CN zh_TW"
 EHG_REPO_URI="https://code.google.com/p/quite-rss"
 inherit l10n qt4-r2 mercurial
