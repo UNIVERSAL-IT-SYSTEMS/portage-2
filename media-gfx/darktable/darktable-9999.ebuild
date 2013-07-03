@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/darktable/darktable-9999.ebuild,v 1.9 2013/06/13 12:28:27 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/darktable/darktable-9999.ebuild,v 1.10 2013/07/03 09:43:13 radhermit Exp $
 
 EAPI=5
 
@@ -13,9 +13,8 @@ HOMEPAGE="http://www.darktable.org/"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS=""
 IUSE="colord flickr geo gnome-keyring gphoto2 graphicsmagick jpeg2k kde
-nls opencl openmp pax_kernel +rawspeed +slideshow web-services"
+nls opencl openmp pax_kernel +rawspeed +slideshow +squish web-services"
 
 CDEPEND="
 	dev-db/sqlite:3
@@ -81,6 +80,7 @@ src_configure() {
 		$(cmake-utils_use_use opencl OPENCL)
 		$(cmake-utils_use_use openmp OPENMP)
 		$(cmake-utils_use !rawspeed DONT_USE_RAWSPEED)
+		$(cmake-utils_use_use squish SQUISH)
 		$(cmake-utils_use_build slideshow SLIDESHOW)
 		$(cmake-utils_use_use web-services GLIBJSON)
 		-DCUSTOM_CFLAGS=ON
