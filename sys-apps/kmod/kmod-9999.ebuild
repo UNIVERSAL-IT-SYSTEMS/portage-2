@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/kmod/kmod-9999.ebuild,v 1.55 2013/06/14 21:59:30 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/kmod/kmod-9999.ebuild,v 1.56 2013/07/04 17:03:31 ssuominen Exp $
 
 EAPI=5
 
@@ -41,12 +41,10 @@ DEPEND="${RDEPEND}
 
 pkg_setup() {
 	CONFIG_CHECK="~MODULES ~MODULE_UNLOAD"
-
 	linux-info_pkg_setup
 }
 
-src_prepare()
-{
+src_prepare() {
 	if [ ! -e configure ]; then
 		if use doc; then
 			gtkdocize --copy --docdir libkmod/docs || die
@@ -57,10 +55,14 @@ src_prepare()
 	else
 		elibtoolize
 	fi
+
+	# Restore possibility of running --enable-static wrt #472608
+	sed -i \
+		-e '/--enable-static is not supported by kmod/s:as_fn_error:echo:' \
+		configure || die
 }
 
-src_configure()
-{
+src_configure() {
 	econf \
 		--bindir=/bin \
 		--with-rootlibdir=/$(get_libdir) \
@@ -73,8 +75,7 @@ src_configure()
 		$(use_with zlib)
 }
 
-src_install()
-{
+src_install() {
 	default
 	prune_libtool_files
 
