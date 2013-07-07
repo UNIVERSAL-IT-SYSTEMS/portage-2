@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcpcd/dhcpcd-5.6.8.ebuild,v 1.1 2013/04/23 22:58:25 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcpcd/dhcpcd-6.0.2.ebuild,v 1.1 2013/07/07 01:12:52 williamh Exp $
 
 EAPI=5
 
@@ -22,7 +22,7 @@ DESCRIPTION="A fully featured, yet light weight RFC2131 compliant DHCP client"
 HOMEPAGE="http://roy.marples.name/projects/dhcpcd/"
 LICENSE="BSD-2"
 SLOT="0"
-IUSE="+zeroconf elibc_glibc"
+IUSE="elibc_glibc"
 
 DEPEND=""
 RDEPEND=""
@@ -30,14 +30,6 @@ RDEPEND=""
 src_prepare()
 {
 	epatch_user
-	if ! use zeroconf; then
-		elog "Disabling zeroconf support"
-		{
-			echo
-			echo "# dhcpcd ebuild requested no zeroconf"
-			echo "noipv4ll"
-		} >> dhcpcd.conf
-	fi
 }
 
 src_configure()
@@ -59,11 +51,6 @@ src_install()
 	systemd_dounit "${FILESDIR}"/${PN}.service
 }
 
-pkg_preinst()
-{
-	has_version 'net-misc/dhcpcd[zeroconf]' && prev_zero=true || prev_zero=false
-}
-
 pkg_postinst()
 {
 	# Upgrade the duid file to the new format if needed
@@ -78,12 +65,18 @@ pkg_postinst()
 		cp -p "${old_duid}" "${new_duid}"
 	fi
 
-	if use zeroconf && ! $prev_zero; then
-		elog "You have installed dhcpcd with zeroconf support."
-		elog "This means that it will always obtain an IP address even if no"
-		elog "DHCP server can be contacted, which will break any existing"
-		elog "failover support you may have configured in your net configuration."
-		elog "This behaviour can be controlled with the -L flag."
-		elog "See the dhcpcd man page for more details."
+	elog
+	elog "dhcpcd has zeroconf support active by default."
+	elog "This means it will always obtain an IP address even if no"
+	elog "DHCP server can be contacted, which will break any existing"
+	elog "failover support you may have configured in your net configuration."
+	elog "This behaviour can be controlled with the noipv4ll configuration"
+	elog "file option or the -L command line switch."
+	elog "See the dhcpcd and dhcpcd.conf man pages for more details."
+
+	if ! has_version net-dns/bind-tools; then
+		elog
+		elog "If you activate the lookup-hostname hook to look up your hostname"
+		elog "using the dns, you need to install net-dns/bind-tools."
 	fi
 }
