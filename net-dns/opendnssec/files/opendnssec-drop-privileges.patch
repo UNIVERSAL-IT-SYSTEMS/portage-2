@@ -1,5 +1,7 @@
---- conf/conf.xml.in.orig	2013-05-12 22:36:47.530988182 +0200
-+++ conf/conf.xml.in	2013-05-12 22:37:56.459817918 +0200
+Index: conf/conf.xml.in
+===================================================================
+--- conf/conf.xml.in	(revision 3022)
++++ conf/conf.xml.in	(working copy)
 @@ -38,12 +38,10 @@
  	</Common>
  
@@ -10,10 +12,10 @@
  			<Group>opendnssec</Group>
  		</Privileges>
 --->
- <!-- NOTE: Enforcer worker threads are not used; this option is ignored -->
- <!--
- 		<WorkerThreads>4</WorkerThreads>
-@@ -60,12 +58,10 @@
+ 
+ 		<Datastore><SQLite>@OPENDNSSEC_STATE_DIR@/kasp.db</SQLite></Datastore>
+ 		<Interval>PT3600S</Interval>
+@@ -56,12 +54,10 @@
  	</Enforcer>
  
  	<Signer>
@@ -25,4 +27,17 @@
 --->
  
  		<WorkingDirectory>@OPENDNSSEC_STATE_DIR@/tmp</WorkingDirectory>
- 		<WorkerThreads>4</WorkerThreads>
+ 		<WorkerThreads>8</WorkerThreads>
+@@ -80,12 +76,10 @@
+ 	</Signer>
+ 
+ 	<Auditor>
+-<!--
+ 		<Privileges>
+ 			<User>opendnssec</User>
+ 			<Group>opendnssec</Group>
+ 		</Privileges>
+--->
+ 
+ 		<WorkingDirectory>@OPENDNSSEC_STATE_DIR@/tmp</WorkingDirectory>
+ 	</Auditor>
