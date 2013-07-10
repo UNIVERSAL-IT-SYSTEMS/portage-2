@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pastescript/pastescript-1.7.5-r2.ebuild,v 1.1 2013/07/03 13:26:20 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pastescript/pastescript-1.7.5-r2.ebuild,v 1.3 2013/07/10 01:42:02 floppym Exp $
 
 EAPI=5
 
@@ -23,9 +23,9 @@ IUSE="doc"
 RDEPEND="
 	dev-python/cheetah[${PYTHON_USEDEP}]
 	>=dev-python/paste-1.3[${PYTHON_USEDEP}]
-	dev-python/pastedeploy[${PYTHON_USEDEP}]"
+	dev-python/pastedeploy[${PYTHON_USEDEP}]
+	dev-python/setuptools[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
-	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? (
 		dev-python/pygments[${PYTHON_USEDEP}]
 		dev-python/sphinx[${PYTHON_USEDEP}]
@@ -50,6 +50,6 @@ python_install_all() {
 
 	if use doc; then
 		cd "${BUILD_DIR}"/sphinx/html || die
-		dohtml -r [a-z]* _static "${ED}usr/share/doc/${PF}/html"
+		dohtml -r [a-z]* _static
 	fi
 }
