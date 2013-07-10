@@ -4016,7 +4016,6 @@ net-analyzer/scapy:tcpreplay - Enable net-analyzer/tcpreply support for fast pac
 net-analyzer/scapy:visual - Enable dev-python/visual support for 3d graphs
 net-analyzer/smokeping:dig - Install net-dns/bind-tools for dig functionality
 net-analyzer/smokeping:echoping - Install net-analyzer/echoping for echoping functionality
-net-analyzer/smokeping:speedy - Use dev-perl/SpeedyCGI instead of perl to speed up cgi scripts
 net-analyzer/smokeping:ssh - Install ssh functionality
 net-analyzer/smokeping:telnet - Install dev-perl/Net-Telnet for telnet functionality
 net-analyzer/snort:active-response - Enables support for automatically sending TCP resets and ICMP unreachable messages to terminate connections. Used with inline deployments.
@@ -6012,14 +6011,6 @@ sys-freebsd/freebsd-usbin:audit - Build auditing tools.
 sys-freebsd/freebsd-usbin:floppy - Enable floppy disk utilities (fdcontrol, fdformat, fdread, fdwrite).
 sys-freebsd/freebsd-usbin:isdn - Enable ISDN support.
 sys-freebsd/freebsd-usbin:netware - Build libraries and tools to work with NetWare protocols (IPX and NCP).
-sys-fs/aufs2:debug - Enable additional debugging support
-sys-fs/aufs2:fuse - Enable fuse support
-sys-fs/aufs2:hfs - Enable hfs support
-sys-fs/aufs2:inotify - Enable inotify support
-sys-fs/aufs2:kernel-patch - Patch the current kernel for aufs2 support
-sys-fs/aufs2:nfs - Enable support for nfs export
-sys-fs/aufs2:pax_kernel - Apply patch needed for pax enabled kernels
-sys-fs/aufs2:ramfs - Enable initramfs/rootfs support
 sys-fs/aufs3:debug - Enable additional debugging support
 sys-fs/aufs3:fuse - Enable fuse support
 sys-fs/aufs3:hfs - Enable hfs support
