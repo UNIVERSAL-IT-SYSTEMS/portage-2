@@ -5475,6 +5475,7 @@ sci-libs/fftw:fma - Use the Fused Multiply Add instruction set (fma3/fma4 either
 sci-libs/fftw:paired-single - Adds support for pair-single optimizations of mips
 sci-libs/fftw:quad - Build quadruple precision lib
 sci-libs/fftw:zbus - Adds support for ZBus cycle-counter of mips
+sci-libs/flann:cuda - Enable support for nVidia CUDA
 sci-libs/flann:octave - Add bindings for sci-mathematics/octave
 sci-libs/gdal:armadillo - Use sci-libs/armadillo for faster TPS transform computation
 sci-libs/gdal:aux_xml - Enable Portable Auxilliary Metadata generation
@@ -5899,6 +5900,8 @@ sys-cluster/moosefs:cgi - Install CGI server and scripts.
 sys-cluster/moosefs:fuse - Install the mfsmount utility.
 sys-cluster/mpi-dotnet:doc - Install tutorials for C# and IronPython (requires a Word document reader)
 sys-cluster/mpi-dotnet:examples - Install small, illustrative projects using MPI.Net
+sys-cluster/mpich:mpi-threads - Enable MPI_THREAD_MULTIPLE
+sys-cluster/mpich:romio - Build the ROMIO MPI-IO component
 sys-cluster/mpich2:mpi-threads - Enable MPI_THREAD_MULTIPLE
 sys-cluster/mpich2:romio - Enable romio, a high-performance portable MPI-IO implementation
 sys-cluster/mvapich2:large-cluster - Automatically generated description for large-cluster
