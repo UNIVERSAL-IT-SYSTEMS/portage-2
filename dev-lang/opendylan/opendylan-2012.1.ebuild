@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/opendylan/opendylan-2012.1.ebuild,v 1.2 2013/02/08 09:26:19 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/opendylan/opendylan-2012.1.ebuild,v 1.3 2013/07/12 03:47:54 patrick Exp $
 EAPI=4
 
 inherit autotools
@@ -27,7 +27,7 @@ DEPEND="app-arch/unzip
 	dev-libs/boehm-gc[static-libs]
 	dev-lang/perl
 	dev-perl/XML-Parser
-	|| ( dev-lang/opendylan-bin dev-lang/opendylan )
+	|| ( <=dev-lang/opendylan-bin-2012.1 dev-lang/opendylan )
 	x86? ( <dev-libs/mps-1.108 )"
 RDEPEND="${DEPEND}"
 
