@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/mc/mc-9999.ebuild,v 1.12 2013/07/09 10:11:06 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/mc/mc-9999.ebuild,v 1.13 2013/07/12 15:56:18 slyfox Exp $
 
-EAPI=4
+EAPI=5
 
 if [[ ${PV} = *9999* ]]; then
 	EGIT_REPO_URI="git://github.com/MidnightCommander/mc.git http://github.com/MidnightCommander/mc.git git://midnight-commander.org/git/mc.git"
@@ -93,6 +93,11 @@ src_install() {
 	if use kernel_linux && [[ ${EUID} == 0 ]] ; then
 		fowners root:tty /usr/libexec/mc/cons.saver
 		fperms g+s /usr/libexec/mc/cons.saver
+	fi
+
+	if ! use xdg ; then
+		sed 's@MC_XDG_OPEN="xdg-open"@MC_XDG_OPEN="/bin/false"@' \
+			-i "${ED}"/usr/libexec/mc/ext.d/*.sh || die
 	fi
 }
 
