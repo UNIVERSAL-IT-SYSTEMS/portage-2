@@ -1,15 +1,18 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/freerdp/freerdp-9999.1.ebuild,v 1.16 2013/07/14 18:59:29 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/freerdp/freerdp-1.1.0_alpha20121004-r1.ebuild,v 1.3 2013/07/14 18:26:48 floppym Exp $
 
-EAPI="5"
+EAPI="4"
 
-inherit cmake-utils vcs-snapshot
+inherit cmake-utils
 
 if [[ ${PV} != 9999* ]]; then
-	COMMIT="780d451afad21a22d2af6bd030ee71311856f038"
-	SRC_URI="https://github.com/FreeRDP/FreeRDP/archive/${COMMIT}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~x86"
+	MY_P=${P/alpha/pre}
+	SRC_URI="mirror://github/FreeRDP/FreeRDP/${MY_P}.tar.gz
+		mirror://gentoo/${MY_P}.tar.gz
+		http://dev.gentoo.org/~floppym/distfiles/${MY_P}.tar.gz"
+	KEYWORDS="amd64 x86"
+	S=${WORKDIR}/${MY_P}
 else
 	inherit git-2
 	SRC_URI=""
@@ -24,7 +27,8 @@ HOMEPAGE="http://www.freerdp.com/"
 LICENSE="Apache-2.0"
 SLOT="0"
 IUSE="alsa +channels +client cups debug directfb doc ffmpeg gstreamer jpeg
-	pulseaudio server smartcard sse2 test X xinerama xv"
+	pulseaudio smartcard sse2 X xinerama xv"
+RESTRICT="test"
 
 RDEPEND="
 	dev-libs/openssl
@@ -36,8 +40,6 @@ RDEPEND="
 		X? (
 			x11-libs/libXcursor
 			x11-libs/libXext
-			x11-libs/libXi
-			x11-libs/libXrender
 			xinerama? ( x11-libs/libXinerama )
 			xv? ( x11-libs/libXv )
 		)
@@ -50,15 +52,6 @@ RDEPEND="
 	)
 	jpeg? ( virtual/jpeg )
 	pulseaudio? ( media-sound/pulseaudio )
-	server? (
-		X? (
-			x11-libs/libXcursor
-			x11-libs/libXdamage
-			x11-libs/libXext
-			x11-libs/libXfixes
-			xinerama? ( x11-libs/libXinerama )
-		)
-	)
 	smartcard? ( sys-apps/pcsc-lite )
 	X? (
 		x11-libs/libX11
@@ -73,6 +66,10 @@ DEPEND="${RDEPEND}
 "
 
 DOCS=( README )
+PATCHES=(
+	"${FILESDIR}/${MY_P}-argb.patch"
+	"${FILESDIR}/${MY_P}-debug.patch"
+)
 
 src_configure() {
 	local mycmakeargs=(
@@ -87,13 +84,14 @@ src_configure() {
 		$(cmake-utils_use_with gstreamer GSTREAMER)
 		$(cmake-utils_use_with jpeg JPEG)
 		$(cmake-utils_use_with pulseaudio PULSEAUDIO)
-		$(cmake-utils_use_with server SERVER)
 		$(cmake-utils_use_with smartcard PCSC)
 		$(cmake-utils_use_with sse2 SSE2)
 		$(cmake-utils_use_with X X11)
+		$(cmake-utils_use_with X XCURSOR)
+		$(cmake-utils_use_with X XEXT)
+		$(cmake-utils_use_with X XKBFILE)
 		$(cmake-utils_use_with xinerama XINERAMA)
 		$(cmake-utils_use_with xv XV)
-		$(cmake-utils_use_build test TESTING)
 	)
 	cmake-utils_src_configure
 }
