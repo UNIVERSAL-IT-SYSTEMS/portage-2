@@ -1,10 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/facter/facter-1.7.1.ebuild,v 1.1 2013/05/31 08:52:05 dev-zero Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/facter/facter-1.7.2.ebuild,v 1.1 2013/07/16 05:32:44 graaff Exp $
 
 EAPI=5
 
-USE_RUBY="ruby18 ruby19 ree18 jruby"
+USE_RUBY="ruby18 ruby19 jruby"
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_RECIPE_TEST="rspec"
 RUBY_FAKEGEM_EXTRADOC="README.md"
@@ -29,12 +29,22 @@ CDEPEND="
 RDEPEND+=" ${CDEPEND}"
 DEPEND+=" test? ( ${CDEPEND} )"
 
-RUBY_PATCHES=( ${P}-fix-proc-self-status.patch )
+#RUBY_PATCHES=( ${P}-fix-proc-self-status.patch )
 
-ruby_add_bdepend "test? ( =dev-ruby/mocha-0.10.5 )"
+ruby_add_bdepend "test? ( >=dev-ruby/mocha-0.10.5:0.10 )"
 
-ruby_all_prepare() {
+all_ruby_prepare() {
 	# Provide explicit path since /sbin is not in the default PATH on
 	# Gentoo.
-	sed -i -e 's:arp -an:/sbin/arp -an:' lib/facter/util/ec2.rb || die
+	sed -i -e 's:arp -an:/sbin/arp -an:' lib/facter/util/ec2.rb spec/unit/util/ec2_spec.rb || die
+
+	# Ensure the correct version of mocha is used without using bundler.
+	sed -i -e '9igem "mocha", "~>0.10.5"' spec/spec_helper.rb || die
+}
+
+all_ruby_install() {
+	all_fakegem_install
+
+	# Create the directory for custom facts.
+	keepdir /etc/facter/facts.d
 }
