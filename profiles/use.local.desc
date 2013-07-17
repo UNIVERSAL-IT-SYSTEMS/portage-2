@@ -2246,11 +2246,13 @@ games-fps/doom-data:doomsday - Add wrapper to run it within doomsday
 games-fps/doom3:roe - Adds support for the Resurrection of Evil expansion
 games-fps/doomsday:demo - Install launcher dor doom1.wad from games-fps/doom-data
 games-fps/doomsday:doom - Install launcher for jdoom game
+games-fps/doomsday:fluidsynth - Build the FluidSynth sound driver
 games-fps/doomsday:freedoom - Install launcher for doom1.wad from games-fps/freefoom
 games-fps/doomsday:heretic - Install launcher for jheretic game
 games-fps/doomsday:hexen - Install launcher for jhexen game
 games-fps/doomsday:resources - Enable support for games-fps/doomsday-resources in jdoom launcher
 games-fps/doomsday:snowberry - Install Snowberry doomsday front-end
+games-fps/doomsday:tools - Build additional tools such as doomsday-shell, md2tool and texc
 games-fps/duke3d:demo - Install the demo files
 games-fps/duke3d:pic - disable optimized assembly code that is not PIC friendly
 games-fps/eduke32:demo - Install games-fps/duke3d-demodata as well
@@ -6453,10 +6455,12 @@ x11-drivers/xf86-video-qxl:xspice - Build the xspice driver
 x11-libs/agg:gpc - Enable gpc polygon clipper library
 x11-libs/cairo:drm - Use Linux DRM for backend acceleration
 x11-libs/cairo:gallium - Use Mesa's Gallium backend for acceleration
+x11-libs/cairo:gles2 - Use OpenGL ES 2 backend for acceleration.
 x11-libs/cairo:glib - Compile with GLib Object System support
 x11-libs/cairo:legacy-drivers - Include the buggy gradients patch (for legacy drivers, such as nvidia-drivers older than 304.30)
 x11-libs/cairo:opengl - Use Mesa backend for acceleration
 x11-libs/cairo:openvg - Use OpenVG for backend acceleration
+x11-libs/cairo:valgrind - Built-in support to mark memory regions
 x11-libs/colord-gtk:vala - Generate bindings for dev-lang/vala
 x11-libs/fltk:games - Builds and installs some extra games
 x11-libs/glamor:gles - Build glamor based on gles2
