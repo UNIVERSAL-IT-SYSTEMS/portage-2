@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/vzctl/vzctl-9999.ebuild,v 1.15 2013/05/31 15:20:52 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/vzctl/vzctl-9999.ebuild,v 1.16 2013/07/21 08:19:29 maksbotan Exp $
 
 EAPI="5"
 
@@ -23,7 +23,7 @@ RDEPEND="net-firewall/iptables
 		sys-apps/ed
 		>=sys-apps/iproute2-3.3.0
 		vz-kernel? ( sys-fs/vzquota )
-		ploop? ( >=sys-cluster/ploop-1.6 )
+		ploop? ( >=sys-cluster/ploop-1.8 )
 		vanilla-kernel? ( >=dev-libs/libcgroup-0.37 )
 		"
 
