@@ -20,7 +20,7 @@
    always a description without a lang attribute. Also there are no overlapping
    descriptions allowed (multiple description tags with the same language)
 
-   $Header: /var/cvsroot/gentoo/xml/htdocs/proj/en/metastructure/herds/herds.xml,v 1.1038 2013/07/21 08:29:04 pacho Exp $
+   $Header: /var/cvsroot/gentoo/xml/htdocs/proj/en/metastructure/herds/herds.xml,v 1.1042 2013/07/21 10:24:16 pacho Exp $
 
 -->
 <herds>
@@ -317,11 +317,6 @@
     <email>tetromino@gentoo.org</email>
     <name>Alexandre Rostovtsev</name>
   </maintainer>
-</herd>
-<herd>
-  <name>gdesklets</name>
-  <email>gdesklets@gentoo.org</email>
-  <description>GDesklets packages</description>
 </herd>
 <herd>
   <name>gpe</name>
@@ -678,11 +673,6 @@
     <name>George Shapovalov</name>
   </maintainer>
   <maintainer>
-    <email>phosphan@gentoo.org</email>
-    <name>Patrick Kursawe</name>
-    <role>bugzilla scanner with not much time</role>
-  </maintainer>
-  <maintainer>
   <email>je_fro@gentoo.org</email>
   <name>Jeff Gardner</name>
   </maintainer>
@@ -754,11 +744,6 @@
   <maintainer>
     <email>dberkholz@gentoo.org</email>
     <name>Donnie Berkholz</name>
-  </maintainer>
-  <maintainer>
-    <email>phosphan@gentoo.org</email>
-    <name>Patrick Kursawe</name>
-    <role>bugzilla scanner with not much time</role>
   </maintainer>
   <maintainer>
     <email>je_fro@gentoo.org</email>
@@ -1170,11 +1155,6 @@
   <email>media-video@gentoo.org</email>
   <description>Video related programs that don't fit into media-tv</description>
   <maintainer>
-    <email>phosphan@gentoo.org</email>
-    <name>Patrick Kursawe</name>
-    <role>Can test webcam related stuff if needed</role>
-  </maintainer>
-  <maintainer>
     <email>lu_zero@gentoo.org</email>
     <name>Luca Barbato</name>
   </maintainer>
@@ -1489,10 +1469,6 @@
   <name>net-dialup</name>
   <email>net-dialup@gentoo.org</email>
   <description>Dialup connection tools</description>
-  <maintainer>
-    <email>sbriesen@gentoo.org</email>
-    <name>Stefan Briesenick</name>
-  </maintainer>
   <maintainer>
     <email>pinkbyte@gentoo.org</email>
     <name>Sergey Popov</name>
@@ -2086,11 +2062,6 @@
         <email>radhermit@gentoo.org</email>
         <name>Tim Harder</name>
     </maintainer>
-</herd>
-<herd>
-    <name>sgml</name>
-    <email>sgml@gentoo.org</email>
-    <description>SGML and docbook packages (split of text-markup)</description>
 </herd>
 <herd>
     <name>theology</name>
