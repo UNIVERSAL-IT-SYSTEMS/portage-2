@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/bash-completion-r1.eclass,v 1.5 2013/07/15 23:54:03 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/bash-completion-r1.eclass,v 1.7 2013/07/22 11:38:59 ssuominen Exp $
 
 # @ECLASS: bash-completion-r1.eclass
 # @MAINTAINER:
@@ -14,13 +14,13 @@
 # src_configure() {
 # 	econf \
 #		--with-bash-completion-dir="$(get_bashcompdir)"
-#	}
+# }
 #
 # src_install() {
 # 	default
 #
 # 	newbashcomp contrib/${PN}.bash-completion ${PN}
-#	}
+# }
 # @CODE
 
 inherit toolchain-funcs
@@ -40,8 +40,8 @@ esac
 _bash-completion-r1_get_bashdir() {
 	debug-print-function ${FUNCNAME} "${@}"
 
-	if $($(tc-getPKG_CONFIG) --exists bash-completion); then
-	echo "$($(tc-getPKG_CONFIG) --variable=$1 bash-completion)"
+	if $(tc-getPKG_CONFIG) --exists bash-completion; then
+		echo "$($(tc-getPKG_CONFIG) --variable=$1 bash-completion)"
 	else
 		echo $2
 	fi
@@ -66,9 +66,9 @@ _bash-completion-r1_get_bashcompdir() {
 # @DESCRIPTION:
 # Get unprefixed bash-completion helpers directory.
 _bash-completion-r1_get_bashhelpersdir() {
-    debug-print-function ${FUNCNAME} "${@}"
+	debug-print-function ${FUNCNAME} "${@}"
 
-	 _bash-completion-r1_get_bashdir helpersdir /usr/share/bash-completion/helpers
+	_bash-completion-r1_get_bashdir helpersdir /usr/share/bash-completion/helpers
 }
 
 # @FUNCTION: get_bashcompdir
@@ -77,7 +77,7 @@ _bash-completion-r1_get_bashhelpersdir() {
 get_bashcompdir() {
 	debug-print-function ${FUNCNAME} "${@}"
 
-	echo "${EPREFIX}$(_bash-completion-r1_get_bashcompdir)"
+	echo "$(_bash-completion-r1_get_bashcompdir)"
 }
 
 # @FUNCTION: get_bashhelpersdir
@@ -87,7 +87,7 @@ get_bashcompdir() {
 get_bashhelpersdir() {
 	debug-print-function ${FUNCNAME} "${@}"
 
-	echo "${EPREFIX}$(_bash-completion-r1_get_bashhelpersdir)"
+	echo "$(_bash-completion-r1_get_bashhelpersdir)"
 }
 
 # @FUNCTION: dobashcomp
