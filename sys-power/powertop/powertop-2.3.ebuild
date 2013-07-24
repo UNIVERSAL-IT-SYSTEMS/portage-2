@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/powertop/powertop-2.3.ebuild,v 1.5 2013/07/20 03:30:31 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/powertop/powertop-2.3.ebuild,v 1.6 2013/07/24 14:09:16 zerochaos Exp $
 
 EAPI="5"
 
@@ -15,7 +15,7 @@ else
 fi
 
 DESCRIPTION="tool that helps you find what software is using the most power"
-HOMEPAGE="https://01.org/powertop/ http://www.lesswatts.org/projects/powertop/"
+HOMEPAGE="https://01.org/powertop/"
 
 LICENSE="GPL-2"
 SLOT="0"
