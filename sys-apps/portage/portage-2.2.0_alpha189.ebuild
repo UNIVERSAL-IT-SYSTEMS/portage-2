@@ -1,19 +1,21 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/portage-9999.ebuild,v 1.85 2013/07/26 08:05:39 zmedico Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/portage-2.2.0_alpha189.ebuild,v 1.3 2013/07/26 07:50:52 zmedico Exp $
 
+# Require EAPI 2 since we now require at least python-2.6 (for python 3
+# syntax support) which also requires EAPI 2.
 EAPI=3
 PYTHON_COMPAT=(
 	pypy1_9 pypy2_0
 	python3_1 python3_2 python3_3 python3_4
 	python2_6 python2_7
 )
-inherit git-2 eutils multilib
+inherit eutils multilib
 
 DESCRIPTION="Portage is the package management and distribution system for Gentoo"
 HOMEPAGE="http://www.gentoo.org/proj/en/portage/index.xml"
 LICENSE="GPL-2"
-KEYWORDS=""
+KEYWORDS="~amd64-fbsd ~sparc-fbsd ~x86-fbsd"
 SLOT="0"
 IUSE="build doc epydoc +ipc linguas_ru pypy2_0 python2 python3 selinux xattr"
 
@@ -45,12 +47,13 @@ python_dep="${python_dep}
 	python_targets_python3_4? ( dev-lang/python:3.4 )
 "
 
+# The pysqlite blocker is for bug #282760.
 # make-3.82 is for bug #455858
 DEPEND="${python_dep}
 	>=sys-devel/make-3.82
 	>=sys-apps/sed-4.0.5 sys-devel/patch
 	doc? ( app-text/xmlto ~app-text/docbook-xml-dtd-4.4 )
-	epydoc? ( >=dev-python/epydoc-2.0 )"
+	epydoc? ( >=dev-python/epydoc-2.0 !<=dev-python/pysqlite-2.4.1 )"
 # Require sandbox-2.2 for bug #288863.
 # For xattr, we can spawn getfattr and setfattr from sys-apps/attr, but that's
 # quite slow, so it's not considered in the dependencies as an alternative to
@@ -91,8 +94,21 @@ prefix_src_archives() {
 	done
 }
 
-EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/portage.git"
-S="${WORKDIR}"/${PN}
+PV_PL="2.1.2"
+PATCHVER_PL=""
+TARBALL_PV=2.2.0_alpha175
+SRC_URI="mirror://gentoo/${PN}-${TARBALL_PV}.tar.bz2
+	$(prefix_src_archives ${PN}-${TARBALL_PV}.tar.bz2)"
+
+PATCHVER=
+[[ $TARBALL_PV = $PV ]] || PATCHVER=$PV
+if [ -n "${PATCHVER}" ]; then
+	SRC_URI="${SRC_URI} mirror://gentoo/${PN}-${PATCHVER}.patch.bz2
+	$(prefix_src_archives ${PN}-${PATCHVER}.patch.bz2)"
+fi
+
+S="${WORKDIR}"/${PN}-${TARBALL_PV}
+S_PL="${WORKDIR}"/${PN}-${PV_PL}
 
 compatible_python_is_selected() {
 	[[ $("${EPREFIX}/usr/bin/python" -c 'import sys ; sys.stdout.write(sys.hexversion >= 0x2060000 and "good" or "bad")') = good ]]
@@ -204,22 +220,19 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch_user
-
-	einfo "Producing ChangeLog from Git history..."
-	pushd "${S}/.git" >/dev/null || die
-	git log ebcf8975b37a8aae9735eb491a9b4cb63549bd5d^.. \
-		> "${S}"/ChangeLog || die
-	popd >/dev/null || die
-
-	local _version=$(cd "${S}/.git" && git describe --tags | sed -e 's|-\([0-9]\+\)-.\+$|_p\1|')
-	_version=${_version:1}
-	einfo "Setting portage.VERSION to ${_version} ..."
-	sed -e "s/^VERSION=.*/VERSION='${_version}'/" -i pym/portage/__init__.py || \
+	if [ -n "${PATCHVER}" ] ; then
+		if [[ -L $S/bin/ebuild-helpers/portageq ]] ; then
+			rm "$S/bin/ebuild-helpers/portageq" \
+				|| die "failed to remove portageq helper symlink"
+		fi
+		epatch "${WORKDIR}/${PN}-${PATCHVER}.patch"
+	fi
+	einfo "Setting portage.VERSION to ${PVR} ..."
+	sed -e "s/^VERSION=.*/VERSION=\"${PVR}\"/" -i pym/portage/__init__.py || \
 		die "Failed to patch portage.VERSION"
-	sed -e "1s/VERSION/${_version}/" -i doc/fragment/version || \
+	sed -e "1s/VERSION/${PVR}/" -i doc/fragment/version || \
 		die "Failed to patch VERSION in doc/fragment/version"
-	sed -e "1s/VERSION/${_version}/" -i $(find man -type f) || \
+	sed -e "1s/VERSION/${PVR}/" -i $(find man -type f) || \
 		die "Failed to patch VERSION in man page headers"
 
 	if ! use ipc ; then
@@ -317,7 +330,10 @@ src_compile() {
 }
 
 src_test() {
-	./runtests.sh || die "tests failed"
+	# make files executable, in case they were created by patch
+	find bin -type f | xargs chmod +x
+	call_with_python_impl \
+	emake test || die
 }
 
 src_install() {
@@ -376,7 +392,7 @@ src_install() {
 pkg_preinst() {
 	if [[ $ROOT == / ]] ; then
 		# Run some minimal tests as a sanity check.
-		local test_runner=$(find "${ED}" -name runTests)
+		local test_runner=$(find "$ED" -name runTests)
 		if [[ -n $test_runner && -x $test_runner ]] ; then
 			einfo "Running preinst sanity tests..."
 			"$test_runner" || die "preinst sanity tests failed"
@@ -407,6 +423,53 @@ pkg_preinst() {
 		! { [ -e "${EROOT}"var/lib/portage/preserved_libs_registry ] && \
 		has_version ">=${CATEGORY}/${PN}-2.1.6_rc" ; } \
 		&& NEEDED_REBUILD_UPGRADE=true || NEEDED_REBUILD_UPGRADE=false
+
+	if has_version "<${CATEGORY}/${PN}-2.1.13" || \
+		{
+			has_version ">=${CATEGORY}/${PN}-2.2_rc0" && \
+			has_version "<${CATEGORY}/${PN}-2.2.0_alpha189"
+		} ; then
+		USERPRIV_UPGRADE=true
+		USERSYNC_UPGRADE=true
+		REPOS_CONF_UPGRADE=true
+		REPOS_CONF_SYNC=
+		type portageq >/dev/null 2>&1 && \
+			REPOS_CONF_SYNC=$(portageq envvar SYNC)
+	else
+		USERPRIV_UPGRADE=false
+		USERSYNC_UPGRADE=false
+		REPOS_CONF_UPGRADE=false
+	fi
+}
+
+get_ownership() {
+	case ${USERLAND} in
+		BSD)
+			stat -f '%Su:%Sg' "${1}"
+			;;
+		*)
+			stat -c '%U:%G' "${1}"
+			;;
+	esac
+}
+
+new_config_protect() {
+	# Generate a ._cfg file even if the target file
+	# does not exist, ensuring that the user will
+	# notice the config change.
+	local basename=${1##*/}
+	local dirname=${1%/*}
+	local i=0
+	while true ; do
+		local filename=$(
+			echo -n "${dirname}/._cfg"
+			printf "%04d" ${i}
+			echo -n "_${basename}"
+		)
+		[[ -e ${filename} ]] || break
+		(( i++ ))
+	done
+	echo "${filename}"
 }
 
 pkg_postinst() {
@@ -431,5 +494,52 @@ pkg_postinst() {
 				echo "${newline:3}" >> "${cpv}/NEEDED.ELF.2"
 			done < "${cpv}/NEEDED"
 		done
+	fi
+
+	local distdir=${PORTAGE_ACTUAL_DISTDIR-${DISTDIR}}
+	if ${USERPRIV_UPGRADE} && \
+		[[ -d ${distdir} && -w ${distdir} ]] ; then
+		local ownership=$(get_ownership "${distdir}")
+		if [[ ${ownership#*:} == portage ]] ; then
+			einfo "Adjusting DISTDIR permissions for userpriv"
+			find "${distdir}" -maxdepth 1 -type d -uid 0 \
+				-exec chown -R portage:portage {} +
+		fi
+	fi
+
+	if ${USERSYNC_UPGRADE} && \
+		[[ -d ${PORTDIR} && -w ${PORTDIR} ]] ; then
+		local ownership=$(get_ownership "${PORTDIR}")
+		if [[ -n ${ownership} ]] ; then
+			einfo "Adjusting PORTDIR permissions for usersync"
+			find "${PORTDIR}" -path "${distdir%/}" -prune -o \
+				! \( -user "${ownership%:*}" -a -group "${ownership#*:}" \) \
+				-exec chown "${ownership}" {} +
+		fi
+	fi
+
+	if ${REPOS_CONF_UPGRADE} ; then
+		einfo "Generating repos.conf"
+		local repo_name=
+		[[ -f ${PORTDIR}/profiles/repo_name ]] && \
+			repo_name=$(< "${PORTDIR}/profiles/repo_name")
+		if [[ -z ${REPOS_CONF_SYNC} ]] ; then
+			REPOS_CONF_SYNC=$(grep "^sync-uri =" "${EROOT}/usr/share/portage/config/repos.conf")
+			REPOS_CONF_SYNC=${REPOS_CONF_SYNC##* }
+		fi
+		cat <<-EOF > "${T}/repos.conf"
+		[DEFAULT]
+		main-repo = ${repo_name:-gentoo}
+
+		[${repo_name:-gentoo}]
+		location = ${PORTDIR:-${EPREFIX}/usr/portage}
+		sync-type = rsync
+		sync-uri = ${REPOS_CONF_SYNC}
+		EOF
+		local dest=${EROOT}/etc/portage/repos.conf
+		if [[ ! -f ${dest} ]] && mkdir -p "${dest}" 2>/dev/null ; then
+			dest=${EROOT}/etc/portage/repos.conf/${repo_name:-gentoo}.conf
+		fi
+		mv "${T}/repos.conf" "$(new_config_protect "${dest}")"
 	fi
 }
