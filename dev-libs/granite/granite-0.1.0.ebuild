@@ -1,8 +1,9 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/granite/granite-0.1.0.ebuild,v 1.3 2013/05/12 11:56:06 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/granite/granite-0.1.0.ebuild,v 1.4 2013/07/27 21:29:21 jlec Exp $
 
 EAPI=4
+
 VALA_MIN_API_VERSION="0.14"
 
 inherit cmake-utils multilib vala
@@ -16,7 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=">=dev-libs/glib-2
+RDEPEND="
+	dev-libs/glib:2
 	dev-libs/gobject-introspection
 	dev-libs/libgee:0
 	x11-libs/gtk+:3"
