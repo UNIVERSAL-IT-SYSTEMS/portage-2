@@ -1,6 +1,31 @@
 # ChangeLog for media-video/mplayer
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/ChangeLog,v 1.900 2013/07/28 21:13:48 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/ChangeLog,v 1.908 2013/07/29 20:55:00 aballier Exp $
+
+  29 Jul 2013; Alexis Ballier <aballier@gentoo.org> mplayer-9999.ebuild:
+  allow snapshots named _pre
+
+  29 Jul 2013; Alexis Ballier <aballier@gentoo.org> mplayer-9999.ebuild:
+  Add a warning for libav users.
+
+  29 Jul 2013; Alexis Ballier <aballier@gentoo.org> files/prepare_mplayer.sh:
+  Fix ffmpeg clone URL and bump version in the snapshotter.
+
+  29 Jul 2013; Alexis Ballier <aballier@gentoo.org> mplayer-9999.ebuild:
+  Drop some more default enabled useflags.
+
+  29 Jul 2013; Alexis Ballier <aballier@gentoo.org> mplayer-9999.ebuild:
+  do not default enable rtc, by Nikoli, bug #476316
+
+  29 Jul 2013; Alexis Ballier <aballier@gentoo.org> mplayer-9999.ebuild:
+  remove comment about win32codecs
+
+  29 Jul 2013; Alexis Ballier <aballier@gentoo.org> mplayer-9999.ebuild:
+  Sort alphabetically REQUIRED_USE entries and make enca require iconv, by
+  Nikoli, bug #476322.
+
+  29 Jul 2013; Alexis Ballier <aballier@gentoo.org> mplayer-9999.ebuild:
+  EAPI5, add slot dep on ffmpeg, x264 and libav. Fix ffmpeg dep.
 
   28 Jul 2013; Alexis Ballier <aballier@gentoo.org> mplayer-1.1.1-r1.ebuild,
   mplayer-9999.ebuild:

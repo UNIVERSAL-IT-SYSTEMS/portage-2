@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/mplayer-9999.ebuild,v 1.145 2013/07/28 21:13:48 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mplayer/mplayer-9999.ebuild,v 1.152 2013/07/29 20:55:00 aballier Exp $
 
-EAPI=4
+EAPI=5
 
 EGIT_REPO_URI="git://git.videolan.org/ffmpeg.git"
 ESVN_REPO_URI="svn://svn.mplayerhq.hu/mplayer/trunk"
@@ -10,15 +10,15 @@ ESVN_REPO_URI="svn://svn.mplayerhq.hu/mplayer/trunk"
 
 inherit toolchain-funcs eutils flag-o-matic multilib base ${SVN_ECLASS}
 
-IUSE="3dnow 3dnowext +a52 aalib +alsa altivec aqua bidi bindist bl bluray
+IUSE="3dnow 3dnowext a52 aalib +alsa altivec aqua bidi bindist bl bluray
 bs2b cddb +cdio cdparanoia cpudetection debug dga
-directfb doc +dts +dv dvb +dvd +dvdnav dxr3 +enca +encode faac +faad fbcon
+directfb doc dts dv dvb +dvd +dvdnav dxr3 +enca +encode faac faad fbcon
 ftp gif ggi gsm +iconv ipv6 jack joystick jpeg jpeg2k kernel_linux ladspa
-+libass libcaca libmpeg2 lirc +live lzo mad md5sum +mmx mmxext mng +mp3 nas
-+network nut openal +opengl +osdmenu oss png pnm pulseaudio pvr
-radio +rar +rtc rtmp samba +shm sdl +speex sse sse2 ssse3
-tga +theora tremor +truetype +toolame +twolame +unicode v4l vdpau vidix
-+vorbis +X +x264 xanim xinerama +xscreensaver +xv +xvid xvmc zoran"
++libass libcaca libmpeg2 lirc live lzo mad md5sum +mmx mmxext mng mp3 nas
++network nut openal opengl +osdmenu oss png pnm pulseaudio pvr
+radio rar rtc rtmp samba +shm sdl speex sse sse2 ssse3
+tga theora tremor +truetype toolame twolame +unicode v4l vdpau vidix
+vorbis +X x264 xanim xinerama +xscreensaver +xv xvid xvmc zoran"
 
 VIDEO_CARDS="s3virge mga tdfx"
 for x in ${VIDEO_CARDS}; do
@@ -32,7 +32,7 @@ FONT_URI="
 "
 if [[ ${PV} == *9999* ]]; then
 	RELEASE_URI=""
-elif [ "${PV%_rc*}" = "${PV}" ]; then
+elif [ "${PV%_rc*}" = "${PV}" -a "${PV%_pre*}" = "${PV}" ]; then
 	MY_P="MPlayer-${PV}"
 	S="${WORKDIR}/${MY_P}"
 	RELEASE_URI="mirror://mplayer/releases/${MY_P}.tar.xz"
@@ -60,7 +60,7 @@ RDEPEND+="
 	sys-libs/ncurses
 	app-arch/bzip2
 	sys-libs/zlib
-	|| ( >=media-video/ffmpeg-1.1 >=media-video/libav-9 )
+	|| ( >=media-video/ffmpeg-2.0:= >=media-video/libav-9:= )
 	a52? ( media-libs/a52dec )
 	aalib? ( media-libs/aalib )
 	alsa? ( media-libs/alsa-lib )
@@ -81,7 +81,7 @@ RDEPEND+="
 		twolame? ( media-sound/twolame )
 		faac? ( media-libs/faac )
 		mp3? ( media-sound/lame )
-		x264? ( >=media-libs/x264-0.0.20100423 )
+		x264? ( >=media-libs/x264-0.0.20100423:= )
 		xvid? ( media-libs/xvid )
 	)
 	enca? ( app-i18n/enca )
@@ -162,25 +162,27 @@ else
 	KEYWORDS=""
 fi
 
-# faac codecs are nonfree, win32codecs are nonfree
+# faac codecs are nonfree
 # libcdio support: prefer libcdio over cdparanoia and don't check for cddb w/cdio
 # dvd navigation requires dvd read support
 # ass and freetype font require iconv and ass requires freetype fonts
 # unicode transformations are usefull only with iconv
 # radio requires oss or alsa backend
 # xvmc requires xvideo support
-REQUIRED_USE="bindist? ( !faac )
-	dvdnav? ( dvd )
-	libass? ( truetype )
-	truetype? ( iconv )
-	dxr3? ( X )
-	ggi? ( X )
-	xinerama? ( X )
+REQUIRED_USE="
+	bindist? ( !faac )
 	dga? ( X )
+	dvdnav? ( dvd )
+	dxr3? ( X )
+	enca? ( iconv )
+	ggi? ( X )
+	libass? ( truetype )
 	opengl? ( X )
 	osdmenu? ( X )
+	truetype? ( iconv )
 	vdpau? ( X )
 	vidix? ( X )
+	xinerama? ( X )
 	xscreensaver? ( X )
 	xv? ( X )
 	xvmc? ( xv )"
@@ -204,6 +206,12 @@ pkg_setup() {
 		ewarn "You won't need this turned on if you are only building"
 		ewarn "mplayer for this system. Also, if your compile fails, try"
 		ewarn "disabling this use flag."
+	fi
+
+	if has_version 'media-video/libav' ; then
+		ewarn "Please note that upstream uses media-video/ffmpeg."
+		ewarn "media-video/libav should be fine in theroy but if you"
+		ewarn "experience any problem, try to move to media-video/ffmpeg."
 	fi
 }
 
