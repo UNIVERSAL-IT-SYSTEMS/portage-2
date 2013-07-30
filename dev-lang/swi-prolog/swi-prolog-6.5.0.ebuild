@@ -1,22 +1,22 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/swi-prolog/swi-prolog-6.2.5.ebuild,v 1.5 2013/01/21 14:05:20 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/swi-prolog/swi-prolog-6.5.0.ebuild,v 1.1 2013/07/30 14:49:36 keri Exp $
 
 EAPI=4
 
 inherit eutils flag-o-matic java-pkg-opt-2 multilib
 
-PATCHSET_VER="1"
+PATCHSET_VER="0"
 
 DESCRIPTION="free, small, and standard compliant Prolog compiler"
 HOMEPAGE="http://www.swi-prolog.org/"
-SRC_URI="http://www.swi-prolog.org/download/stable/src/pl-${PV}.tar.gz
+SRC_URI="http://www.swi-prolog.org/download/devel/src/pl-${PV}.tar.gz
 	mirror://gentoo/${P}-gentoo-patchset-${PATCHSET_VER}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 ppc x86 ~amd64-linux ~x86-linux ~x86-macos"
-IUSE="archive debug doc gmp hardened java minimal odbc readline ssl static-libs test zlib X"
+KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
+IUSE="archive debug doc +gmp hardened java minimal odbc +readline ssl static-libs test zlib X"
 
 RDEPEND="sys-libs/ncurses
 	archive? ( app-arch/libarchive )
@@ -60,6 +60,8 @@ src_configure() {
 	# specific stuff
 	export ARCH=${CHOST}
 
+	export CC_FOR_BUILD=$(tc-getBUILD_CC)
+
 	cd "${S}"/src
 	econf \
 		--libdir="${EPREFIX}"/usr/$(get_libdir) \
@@ -79,27 +81,10 @@ src_configure() {
 		econf \
 			--libdir="${EPREFIX}"/usr/$(get_libdir) \
 			$(use_with archive) \
-			--with-chr \
-			--with-clib \
-			--with-clpqr \
-			--with-cpp \
-			--with-http \
 			$(use_with java jpl) \
 			${jpltestconf} \
-			--with-nlp \
 			$(use_with odbc) \
-			--with-PDT \
-			--with-pldoc \
-			--with-plunit \
-			--with-protobufs \
-			--with-R \
-			--with-RDF \
-			--with-semweb \
-			--with-sgml \
 			$(use_with ssl) \
-			--with-table \
-			--with-tipc \
-			--with-utf8proc \
 			$(use_with X xpce) \
 			$(use_with zlib) \
 			COFLAGS='"${CFLAGS}"'
