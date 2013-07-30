@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/autofs/autofs-9999.ebuild,v 1.2 2013/06/13 15:03:59 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/autofs/autofs-9999.ebuild,v 1.3 2013/07/30 07:31:20 maksbotan Exp $
 
 EAPI=5
 
@@ -24,6 +24,7 @@ REQUIRED_USE="sasl? ( ldap )"
 
 # currently, sasl code assumes the presence of kerberosV
 RDEPEND=">=sys-apps/util-linux-2.20
+	dmalloc? ( dev-libs/dmalloc[threads] )
 	hesiod? ( net-dns/hesiod )
 	ldap? ( >=net-nds/openldap-2.0
 		sasl? (
@@ -39,11 +40,6 @@ DEPEND="${RDEPEND}
 	virtual/yacc"
 
 CONFIG_CHECK="~AUTOFS4_FS"
-
-src_prepare() {
-	epatch_user
-	autotools-utils_src_prepare
-}
 
 src_configure() {
 	# --with-confdir is for bug #361481
@@ -62,10 +58,14 @@ src_configure() {
 		$(use_enable mount-locking)
 		--disable-ext-env
 		--enable-sloppy-mount
-		--enable-forced-shutdown
+		--enable-force-shutdown
 		--enable-ignore-busy
 	)
 	autotools-utils_src_configure
+}
+
+src_compile() {
+	autotools-utils_src_compile DONTSTRIP=1
 }
 
 src_install() {
