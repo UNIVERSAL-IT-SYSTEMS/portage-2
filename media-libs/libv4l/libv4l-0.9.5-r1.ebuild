@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libv4l/libv4l-0.9.5-r1.ebuild,v 1.4 2013/07/13 22:15:31 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libv4l/libv4l-0.9.5-r1.ebuild,v 1.7 2013/07/31 16:34:30 aballier Exp $
 
 EAPI=5
 inherit eutils linux-info udev multilib-minimal
@@ -16,15 +16,14 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux"
 IUSE=""
 
-# baselibs is for 32bit libjpeg, pending on converting libjpeg-turbo to multilib build
-RDEPEND="virtual/jpeg:=
+# The libraries only link to -ljpeg, therefore multilib depend only for virtual/jpeg.
+RDEPEND=">=virtual/jpeg-0-r1:=[${MULTILIB_USEDEP}]
 	virtual/glu
 	virtual/opengl
 	x11-libs/libX11:=
 	!media-tv/v4l2-ctl
 	!<media-tv/ivtv-utils-1.4.0-r2
-	amd64? ( abi_x86_32? ( app-emulation/emul-linux-x86-baselibs[development] ) )
-	abi_x86_32? ( !<=app-emulation/emul-linux-x86-medialibs-20130224-r2
+	abi_x86_32? ( !<=app-emulation/emul-linux-x86-medialibs-20130224-r5
 		!app-emulation/emul-linux-x86-medialibs[-abi_x86_32(-)] )"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
@@ -38,11 +37,8 @@ pkg_setup() {
 	linux-info_pkg_setup
 }
 
-src_prepare() {
-	multilib_copy_sources
-}
-
 multilib_src_configure() {
+	ECONF_SOURCE=${S} \
 	econf \
 		--disable-static \
 		--disable-qv4l2 \

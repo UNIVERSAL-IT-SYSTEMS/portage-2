@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/chromium-9999-r1.ebuild,v 1.204 2013/07/25 15:36:55 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/chromium-9999-r1.ebuild,v 1.205 2013/07/31 15:40:26 phajdan.jr Exp $
 
 EAPI="5"
 PYTHON_COMPAT=( python{2_6,2_7} )
@@ -58,6 +58,7 @@ RDEPEND=">=app-accessibility/speech-dispatcher-0.8:=
 	>=media-libs/libjpeg-turbo-1.2.0-r1:=
 	media-libs/libpng:0=
 	media-libs/libvpx:=
+	>=media-libs/libwebp-0.3.1:=
 	!arm? ( !x86? ( >=media-libs/mesa-9.1:=[gles2] ) )
 	media-libs/opus:=
 	media-libs/speex:=
@@ -70,7 +71,6 @@ RDEPEND=">=app-accessibility/speech-dispatcher-0.8:=
 	sys-apps/pciutils:=
 	sys-libs/zlib:=[minizip]
 	virtual/udev
-	virtual/libusb:1=
 	x11-libs/gtk+:2=
 	x11-libs/libXinerama:=
 	x11-libs/libXScrnSaver:=
@@ -224,7 +224,7 @@ src_prepare() {
 		\! -path 'third_party/libjingle/*' \
 		\! -path 'third_party/libphonenumber/*' \
 		\! -path 'third_party/libsrtp/*' \
-		\! -path 'third_party/libwebp/*' \
+		\! -path 'third_party/libusb/*' \
 		\! -path 'third_party/libxml/chromium/*' \
 		\! -path 'third_party/libXNVCtrl/*' \
 		\! -path 'third_party/libyuv/*' \
@@ -292,7 +292,7 @@ src_configure() {
 	# Use system-provided libraries.
 	# TODO: use_system_hunspell (upstream changes needed).
 	# TODO: use_system_libsrtp (bug #459932).
-	# TODO: use_system_libwebp (requires internal header format_constants.h).
+	# TODO: use_system_libusb (http://crbug.com/266149).
 	# TODO: use_system_ssl (http://crbug.com/58087).
 	# TODO: use_system_sqlite (http://crbug.com/22208).
 	myconf+="
@@ -304,8 +304,8 @@ src_configure() {
 		-Duse_system_libevent=1
 		-Duse_system_libjpeg=1
 		-Duse_system_libpng=1
-		-Duse_system_libusb=1
 		-Duse_system_libvpx=1
+		-Duse_system_libwebp=1
 		-Duse_system_libxml=1
 		-Duse_system_libxslt=1
 		-Duse_system_minizip=1
@@ -368,6 +368,10 @@ src_configure() {
 	# TODO: use the file at run time instead of effectively compiling it in.
 	myconf+="
 		-Dusb_ids_path=/usr/share/misc/usb.ids"
+
+	# Save space by removing DLOG and DCHECK messages (about 6% reduction).
+	myconf+="
+		-Dlogging_like_official_build=1"
 
 	# Enable SUID sandbox.
 	myconf+="

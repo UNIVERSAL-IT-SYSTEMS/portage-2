@@ -1,6 +1,16 @@
 # ChangeLog for media-libs/libv4l
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libv4l/ChangeLog,v 1.91 2013/07/13 22:15:31 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libv4l/ChangeLog,v 1.94 2013/07/31 16:34:30 aballier Exp $
+
+  31 Jul 2013; Alexis Ballier <aballier@gentoo.org> libv4l-0.9.5-r1.ebuild:
+  add emul blocker so that it is stacked for medialibs -r6
+
+  31 Jul 2013; Samuli Suominen <ssuominen@gentoo.org> libv4l-0.9.5-r1.ebuild:
+  Remove now unnecessary emul- baselibs USE="development" requirement now that
+  we have multilib virtual/jpeg.
+
+  31 Jul 2013; Samuli Suominen <ssuominen@gentoo.org> libv4l-0.9.5-r1.ebuild:
+  Missing multilib depend for virtual/jpeg.
 
   13 Jul 2013; Michał Górny <mgorny@gentoo.org> libv4l-0.9.5-r1.ebuild:
   Add abi_x86_32 blockers for emul-linux.
