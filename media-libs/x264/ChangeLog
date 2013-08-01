@@ -1,6 +1,27 @@
 # ChangeLog for media-libs/x264
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/x264/ChangeLog,v 1.90 2013/06/26 04:38:09 chutzpah Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/x264/ChangeLog,v 1.96 2013/08/01 17:41:00 aballier Exp $
+
+*x264-0.0.20130731 (01 Aug 2013)
+
+  01 Aug 2013; Alexis Ballier <aballier@gentoo.org> +x264-0.0.20130731.ebuild:
+  new snapshot with the accumulated fixes
+
+  01 Aug 2013; Alexis Ballier <aballier@gentoo.org> x264-9999.ebuild:
+  Go multilib and stack for for medialibs r8
+
+  01 Aug 2013; Alexis Ballier <aballier@gentoo.org> x264-9999.ebuild,
+  +files/x264-cflags.patch:
+  Do not mess too much with CFLAGS. Should fix bug #413661 and bug #351219.
+
+  01 Aug 2013; Alexis Ballier <aballier@gentoo.org> x264-9999.ebuild:
+  drop custom-cflags useflag, bug #473816
+
+  01 Aug 2013; Alexis Ballier <aballier@gentoo.org> x264-9999.ebuild:
+  inherit eutils for the x32 patch
+
+  01 Aug 2013; Alexis Ballier <aballier@gentoo.org> x264-9999.ebuild:
+  Give a subslot even to -9999 and update soname
 
   26 Jun 2013; Patrick McLean <chutzpah@gentoo.org> x264-0.0.20130506.ebuild,
   x264-9999.ebuild:
