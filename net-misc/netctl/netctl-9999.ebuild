@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/netctl/netctl-9999.ebuild,v 1.9 2013/06/14 00:00:09 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/netctl/netctl-9999.ebuild,v 1.10 2013/08/02 16:26:09 floppym Exp $
 
 EAPI=5
 
@@ -16,7 +16,9 @@ else
 fi
 
 DESCRIPTION="Profile based network connection tool from Arch Linux"
-HOMEPAGE="https://www.archlinux.org/netctl/"
+HOMEPAGE="https://wiki.archlinux.org/index.php/Netctl
+	https://www.archlinux.org/packages/core/any/netctl/
+	https://projects.archlinux.org/netctl.git/"
 LICENSE="BSD"
 SLOT="0"
 IUSE=""
@@ -65,14 +67,13 @@ optfeature() {
 
 pkg_postinst() {
 	if [[ -z ${REPLACING_VERSIONS} ]]; then
-		elog "To get additional features, a number of option runtime dependencies may be"
+		elog "To get additional features, a number of optional runtime dependencies may be"
 		elog "installed."
 		optfeature "DHCP support" net-misc/dhcpcd ">=net-misc/dhcp-5.6.7[client]"
 		optfeature "WPA support" net-wireless/wpa_supplicant
 		optfeature "interactive assistant" dev-util/dialog
 		optfeature "automatic connection" sys-apps/ifplugd
 		optfeature "bonding support" net-misc/ifenslave
-		optfeature "bridge support" net-misc/bridge-utils
 		optfeature "dialup support" net-dialup/ppp
 	fi
 }

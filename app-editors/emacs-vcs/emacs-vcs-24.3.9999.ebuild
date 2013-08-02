@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-vcs/emacs-vcs-24.3.9999.ebuild,v 1.14 2013/06/09 07:11:06 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs-vcs/emacs-vcs-24.3.9999.ebuild,v 1.17 2013/08/02 17:54:55 ulm Exp $
 
 EAPI=5
 
@@ -12,9 +12,10 @@ if [[ ${PV##*.} = 9999 ]]; then
 	EBZR_REPO_URI="bzr://bzr.savannah.gnu.org/emacs/${EBZR_BRANCH}/"
 	# "Nosmart" is much faster for initial branching.
 	EBZR_INITIAL_URI="nosmart+${EBZR_REPO_URI}"
+	EBZR_UNPACK_DIR="${WORKDIR}/emacs"
 	EBZR_WORKDIR_CHECKOUT="t"	#434746
 	inherit bzr
-	SRC_URI=""
+	S="${EBZR_UNPACK_DIR}"
 else
 	SRC_URI="mirror://gentoo/emacs-${PV}.tar.xz
 		mirror://gnu-alpha/emacs/pretest/emacs-${PV}.tar.xz"
@@ -55,7 +56,7 @@ RDEPEND="sys-libs/ncurses
 		gconf? ( >=gnome-base/gconf-2.26.2 )
 		gsettings? ( >=dev-libs/glib-2.28.6 )
 		gif? ( media-libs/giflib )
-		jpeg? ( virtual/jpeg )
+		jpeg? ( virtual/jpeg:0= )
 		png? ( >=media-libs/libpng-1.4:0= )
 		svg? ( >=gnome-base/librsvg-2.0 )
 		tiff? ( media-libs/tiff )
@@ -306,7 +307,7 @@ src_install () {
 	use X && DOC_CONTENTS+="\\n\\nYou need to install some fonts for Emacs.
 		Installing media-fonts/font-adobe-{75,100}dpi on the X server's
 		machine would satisfy basic Emacs requirements under X11.
-		See also http://www.gentoo.org/proj/en/lisp/emacs/xft.xml
+		See also https://wiki.gentoo.org/wiki/Project:Emacs/Xft_support
 		for how to enable anti-aliased fonts."
 	use aqua && DOC_CONTENTS+="\\n\\nEmacs${EMACS_SUFFIX#emacs}.app is in
 		\"${EPREFIX}/Applications/Gentoo\". You may want to copy or symlink
