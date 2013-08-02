@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/mesa-9.2_pre20130528.ebuild,v 1.1 2013/05/28 13:27:33 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/mesa-9.1.6.ebuild,v 1.1 2013/08/02 12:52:38 chithanh Exp $
 
 EAPI=5
 
@@ -18,19 +18,19 @@ inherit base autotools multilib flag-o-matic python-single-r1 toolchain-funcs ${
 OPENGL_DIR="xorg-x11"
 
 MY_PN="${PN/m/M}"
-MY_P="${MY_PN}-${PV/_/-}"
-MY_SRC_P="${MY_PN}Lib-${PV/_/-}"
+MY_P="${MY_PN}-${PV/_rc/-rc}"
+MY_SRC_P="${MY_PN}Lib-${PV/_rc/-rc}"
 
 FOLDER="${PV/_rc*/}"
 
 DESCRIPTION="OpenGL-like graphic library for Linux"
 HOMEPAGE="http://mesa3d.sourceforge.net/"
 
-#SRC_PATCHES="mirror://gentoo/${P}-gentoo-patches-01.tar.bz2"
+#SRC_PATCHES="mirror://gentoo/${PN}-9.1-gentoo-patches-05.tar.bz2"
 if [[ $PV = 9999* ]]; then
 	SRC_URI="${SRC_PATCHES}"
 else
-	SRC_URI="mirror://gentoo/${P}.tar.xz
+	SRC_URI="ftp://ftp.freedesktop.org/pub/mesa/${FOLDER}/${MY_SRC_P}.tar.bz2
 		${SRC_PATCHES}"
 fi
 
@@ -40,9 +40,9 @@ LICENSE="MIT SGI-B-2.0"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~amd64-linux ~arm-linux ~ia64-linux ~x86-linux ~sparc-solaris ~x64-solaris ~x86-solaris"
 
-INTEL_CARDS="i915 i965 ilo intel"
+INTEL_CARDS="i915 i965 intel"
 RADEON_CARDS="r100 r200 r300 r600 radeon radeonsi"
-VIDEO_CARDS="${INTEL_CARDS} ${RADEON_CARDS} freedreno nouveau vmware"
+VIDEO_CARDS="${INTEL_CARDS} ${RADEON_CARDS} nouveau vmware"
 for card in ${VIDEO_CARDS}; do
 	IUSE_VIDEO_CARDS+=" video_cards_${card}"
 done
@@ -62,11 +62,9 @@ REQUIRED_USE="
 	wayland? ( egl )
 	xa?  ( gallium )
 	xorg?  ( gallium )
-	video_cards_freedreno?  ( gallium )
 	video_cards_intel?  ( || ( classic gallium ) )
 	video_cards_i915?   ( || ( classic gallium ) )
 	video_cards_i965?   ( classic )
-	video_cards_ilo?    ( gallium )
 	video_cards_nouveau? ( || ( classic gallium ) )
 	video_cards_radeon? ( || ( classic gallium ) )
 	video_cards_r100?   ( classic )
@@ -77,7 +75,7 @@ REQUIRED_USE="
 	video_cards_vmware? ( gallium )
 "
 
-LIBDRM_DEPSTRING=">=x11-libs/libdrm-2.4.45"
+LIBDRM_DEPSTRING=">=x11-libs/libdrm-2.4.42"
 # keep correct libdrm and dri2proto dep
 # keep blocks in rdepend for binpkg
 RDEPEND="
@@ -96,11 +94,11 @@ RDEPEND="
 	vdpau? ( >=x11-libs/libvdpau-0.4.1 )
 	wayland? ( >=dev-libs/wayland-1.0.3 )
 	xorg? (
-		x11-base/xorg-server:=
+		x11-base/xorg-server:=[-minimal]
 		x11-libs/libdrm[libkms]
 	)
 	xvmc? ( >=x11-libs/libXvMC-1.0.6 )
-	${LIBDRM_DEPSTRING}[video_cards_freedreno?,video_cards_nouveau?,video_cards_vmware?]
+	${LIBDRM_DEPSTRING}[video_cards_nouveau?,video_cards_vmware?]
 "
 for card in ${INTEL_CARDS}; do
 	RDEPEND="${RDEPEND}
@@ -151,7 +149,6 @@ pkg_setup() {
 src_unpack() {
 	default
 	[[ $PV = 9999* ]] && git-2_src_unpack
-	mv "${WORKDIR}"/${PN}-* "${WORKDIR}/${MY_P}" || die
 }
 
 src_prepare() {
@@ -192,8 +189,8 @@ src_configure() {
 	# Intel code
 		driver_enable video_cards_i915 i915
 		driver_enable video_cards_i965 i965
-		if ! use video_cards_i915 && \
-			! use video_cards_i965; then
+			if ! use video_cards_i915 && \
+				! use video_cards_i965; then
 			driver_enable video_cards_intel i915 i965
 		fi
 
@@ -228,9 +225,7 @@ src_configure() {
 		gallium_enable video_cards_vmware svga
 		gallium_enable video_cards_nouveau nouveau
 		gallium_enable video_cards_i915 i915
-		gallium_enable video_cards_ilo ilo
-		if ! use video_cards_i915 && \
-			! use video_cards_i965; then
+		if ! use video_cards_i915; then
 			gallium_enable video_cards_intel i915
 		fi
 
@@ -241,8 +236,6 @@ src_configure() {
 				! use video_cards_r600; then
 			gallium_enable video_cards_radeon r300 r600
 		fi
-
-		gallium_enable video_cards_freedreno freedreno
 	fi
 
 	# x86 hardened pax_kernel needs glx-rts, bug 240956
@@ -287,7 +280,7 @@ src_install() {
 
 	# Install config file for eselect mesa
 	insinto /usr/share/mesa
-	newins "${FILESDIR}/eselect-mesa.conf.9.2" eselect-mesa.conf
+	newins "${FILESDIR}/eselect-mesa.conf.8.1" eselect-mesa.conf
 
 	# Move libGL and others from /usr/lib to /usr/lib/opengl/blah/lib
 	# because user can eselect desired GL provider.
