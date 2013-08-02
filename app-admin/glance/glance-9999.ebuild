@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/glance/glance-9999.ebuild,v 1.3 2013/04/11 07:25:24 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/glance/glance-9999.ebuild,v 1.4 2013/08/02 18:17:27 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -11,6 +11,7 @@ DESCRIPTION="Provides services for discovering, registering, and retrieving
 virtual machine images with Openstack"
 HOMEPAGE="https://launchpad.net/glance"
 EGIT_REPO_URI="https://github.com/openstack/glance.git"
+EGIT_BRANCH="master"
 
 LICENSE="Apache-2.0"
 SLOT="0"
@@ -26,7 +27,8 @@ RDEPEND="${DEPEND}
 	>=dev-python/greenlet-0.3.1[${PYTHON_USEDEP}]
 	dev-python/httplib2[${PYTHON_USEDEP}]
 	dev-python/iso8601[${PYTHON_USEDEP}]
-	dev-python/jsonschema[${PYTHON_USEDEP}]
+	>=dev-python/jsonschema-0.7[${PYTHON_USEDEP}]
+	<dev-python/jsonschema-1[${PYTHON_USEDEP}]
 	dev-python/kombu[${PYTHON_USEDEP}]
 	dev-python/lxml[${PYTHON_USEDEP}]
 	>=dev-python/oslo-config-1.1.0[${PYTHON_USEDEP}]
@@ -45,11 +47,11 @@ RDEPEND="${DEPEND}
 		<dev-python/python-swiftclient-2[${PYTHON_USEDEP}]
 	)
 	sqlite? ( >=dev-python/sqlalchemy-0.7[sqlite]
-	          <=dev-python/sqlalchemy-0.7.9[sqlite] )
+	          <=dev-python/sqlalchemy-0.8[sqlite] )
 	mysql? ( >=dev-python/sqlalchemy-0.7[mysql]
-	         <=dev-python/sqlalchemy-0.7.9[mysql] )
+	         <=dev-python/sqlalchemy-0.8[mysql] )
 	postgres? ( >=dev-python/sqlalchemy-0.7[postgres]
-	            <=dev-python/sqlalchemy-0.7.9[postgres] )
+	            <=dev-python/sqlalchemy-0.8[postgres] )
 	ldap? ( dev-python/python-ldap )"
 
 python_install() {
@@ -62,7 +64,20 @@ python_install() {
 	done
 
 	diropts -m 0750
-	dodir /var/run/glance /var/log/nova /var/lock/nova
-	#removed because it conflicts with glanceclient, which we install in rdepend
-	rm ${D}"/usr/bin/glance" ${D}"/usr/bin/glance-python2.7"
+	dodir /var/run/glance /var/log/glance /var/lib/glance/images /var/lib/glance/scrubber
+	keepdir /etc/glance
+	keepdir /var/log/glance
+	keepdir /var/lib/glance/images
+	keepdir /var/lib/glance/scrubber
+	insinto /etc/glance
+
+	doins "etc/glance-api-paste.ini"
+	doins "etc/glance-api.conf"
+	doins "etc/glance-cache.conf"
+	doins "etc/glance-registry-paste.ini"
+	doins "etc/glance-registry.conf"
+	doins "etc/glance-scrubber.conf"
+	doins "etc/logging.cnf.sample"
+	doins "etc/policy.json"
+	doins "etc/schema-image.json"
 }
