@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/portage-2.2.0_alpha188.ebuild,v 1.3 2013/07/28 09:21:49 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/portage-2.2.0_alpha193.ebuild,v 1.1 2013/08/03 22:44:58 zmedico Exp $
 
 # Require EAPI 2 since we now require at least python-2.6 (for python 3
 # syntax support) which also requires EAPI 2.
@@ -96,7 +96,7 @@ prefix_src_archives() {
 
 PV_PL="2.1.2"
 PATCHVER_PL=""
-TARBALL_PV=2.2.0_alpha175
+TARBALL_PV=2.2.0_alpha190
 SRC_URI="mirror://gentoo/${PN}-${TARBALL_PV}.tar.bz2
 	$(prefix_src_archives ${PN}-${TARBALL_PV}.tar.bz2)"
 
@@ -288,10 +288,16 @@ src_prepare() {
 		done < <(find . -type f -print0)
 
 		einfo "Adjusting make.globals ..."
-		sed -e 's|^SYNC=.*|SYNC="rsync://rsync.prefix.freens.org/gentoo-portage-prefix"|' \
-			-e "s|^\(PORTDIR=\)\(/usr/portage\)|\\1\"${EPREFIX}\\2\"|" \
-			-e "s|^\(PORTAGE_TMPDIR=\)\(/var/tmp\)|\\1\"${EPREFIX}\\2\"|" \
+		sed -e "s|\(/usr/portage\)|${EPREFIX}\\1|" \
+			-e "s|^\(PORTAGE_TMPDIR=\"\)\(/var/tmp\"\)|\\1${EPREFIX}\\2|" \
 			-i cnf/make.globals || die "sed failed"
+
+		einfo "Adjusting repos.conf ..."
+		sed -e "s|^\(main-repo = \).*|\\1gentoo_prefix|" \
+			-e "s|^\\[gentoo\\]|[gentoo_prefix]|" \
+			-e "s|^\(location = \)\(/usr/portage\)|\\1${EPREFIX}\\2|" \
+			-e "s|^\(sync-uri = \).*|\\1rsync://rsync.prefix.freens.org/gentoo-portage-prefix|" \
+			-i cnf/repos.conf || die "sed failed"
 
 		einfo "Adding FEATURES=force-prefix to make.globals ..."
 		echo -e '\nFEATURES="${FEATURES} force-prefix"' >> cnf/make.globals \
@@ -299,8 +305,8 @@ src_prepare() {
 	fi
 
 	cd "${S}/cnf" || die
-	if [ -f "make.conf.${ARCH}".diff ]; then
-		patch make.conf "make.conf.${ARCH}".diff || \
+	if [ -f "make.conf.example.${ARCH}".diff ]; then
+		patch make.conf.example "make.conf.example.${ARCH}".diff || \
 			die "Failed to patch make.conf.example"
 	else
 		eerror ""
@@ -408,24 +414,113 @@ pkg_preinst() {
 		chmod g+s,ug+rwx "${ED}"var/log/portage{,/elog}
 	fi
 
-	has_version "<=${CATEGORY}/${PN}-2.2_pre5" \
-		&& WORLD_MIGRATION_UPGRADE=true || WORLD_MIGRATION_UPGRADE=false
-
 	# If portage-2.1.6 is installed and the preserved_libs_registry exists,
 	# assume that the NEEDED.ELF.2 files have already been generated.
 	has_version "<=${CATEGORY}/${PN}-2.2_pre7" && \
 		! { [ -e "${EROOT}"var/lib/portage/preserved_libs_registry ] && \
 		has_version ">=${CATEGORY}/${PN}-2.1.6_rc" ; } \
 		&& NEEDED_REBUILD_UPGRADE=true || NEEDED_REBUILD_UPGRADE=false
+
+	if has_version "<${CATEGORY}/${PN}-2.1.13" || \
+		{
+			has_version ">=${CATEGORY}/${PN}-2.2_rc0" && \
+			has_version "<${CATEGORY}/${PN}-2.2.0_alpha189"
+		} ; then
+		USERPRIV_UPGRADE=true
+		USERSYNC_UPGRADE=true
+		REPOS_CONF_UPGRADE=true
+		REPOS_CONF_SYNC=
+		type portageq >/dev/null 2>&1 && \
+			REPOS_CONF_SYNC=$(portageq envvar SYNC)
+	else
+		USERPRIV_UPGRADE=false
+		USERSYNC_UPGRADE=false
+		REPOS_CONF_UPGRADE=false
+	fi
+}
+
+get_ownership() {
+	case ${USERLAND} in
+		BSD)
+			stat -f '%Su:%Sg' "${1}"
+			;;
+		*)
+			stat -c '%U:%G' "${1}"
+			;;
+	esac
+}
+
+new_config_protect() {
+	# Generate a ._cfg file even if the target file
+	# does not exist, ensuring that the user will
+	# notice the config change.
+	local basename=${1##*/}
+	local dirname=${1%/*}
+	local i=0
+	while true ; do
+		local filename=$(
+			echo -n "${dirname}/._cfg"
+			printf "%04d" ${i}
+			echo -n "_${basename}"
+		)
+		[[ -e ${filename} ]] || break
+		(( i++ ))
+	done
+	echo "${filename}"
 }
 
 pkg_postinst() {
-	if $WORLD_MIGRATION_UPGRADE && \
-		grep -q "^@" "${EROOT}/var/lib/portage/world"; then
-		einfo "moving set references from the worldfile into world_sets"
-		cd "${EROOT}/var/lib/portage/"
-		grep "^@" world >> world_sets
-		sed -i -e '/^@/d' world
+
+	if ${REPOS_CONF_UPGRADE} ; then
+		einfo "Generating repos.conf"
+		local repo_name=
+		[[ -f ${PORTDIR}/profiles/repo_name ]] && \
+			repo_name=$(< "${PORTDIR}/profiles/repo_name")
+		if [[ -z ${REPOS_CONF_SYNC} ]] ; then
+			REPOS_CONF_SYNC=$(grep "^sync-uri =" "${EROOT}/usr/share/portage/config/repos.conf")
+			REPOS_CONF_SYNC=${REPOS_CONF_SYNC##* }
+		fi
+		local sync_type=
+		[[ ${REPOS_CONF_SYNC} == git://* ]] && sync_type=git
+
+		cat <<-EOF > "${T}/repos.conf"
+		[DEFAULT]
+		main-repo = ${repo_name:-gentoo}
+
+		[${repo_name:-gentoo}]
+		location = ${PORTDIR:-${EPREFIX}/usr/portage}
+		sync-type = ${sync_type:-rsync}
+		sync-uri = ${REPOS_CONF_SYNC}
+		EOF
+		local dest=${EROOT}/etc/portage/repos.conf
+		if [[ ! -f ${dest} ]] && mkdir -p "${dest}" 2>/dev/null ; then
+			dest=${EROOT}/etc/portage/repos.conf/${repo_name:-gentoo}.conf
+		fi
+		# Don't install the config update if the desired repos.conf directory
+		# and config file exist, since users may accept it blindly and break
+		# their config (bug #478726).
+		[[ -e ${EROOT}/etc/portage/repos.conf/${repo_name:-gentoo}.conf ]] || \
+			mv "${T}/repos.conf" "$(new_config_protect "${dest}")"
+
+		if [[ ${PORTDIR} == ${EPREFIX}/usr/portage ]] ; then
+			einfo "Generating make.conf PORTDIR setting for backward compatibility"
+			for dest in "${EROOT}/etc/make.conf" "${EROOT}/etc/portage/make.conf" ; do
+				[[ -e ${dest} ]] && break
+			done
+			[[ -d ${dest} ]] && dest=${dest}/portdir.conf
+			rm -rf "${T}/make.conf"
+			[[ -f ${dest} ]] && cat "${dest}" > "${T}/make.conf"
+			cat <<-EOF >> "${T}/make.conf"
+
+			# Set PORTDIR for backward compatibility with various tools:
+			#   gentoo-bashcomp - bug #478444
+			#   euse - bug #474574
+			#   euses and ufed - bug #478318
+			PORTDIR="${EPREFIX}/usr/portage"
+			EOF
+			mkdir -p "${dest%/*}"
+			mv "${T}/make.conf" "$(new_config_protect "${dest}")"
+		fi
 	fi
 
 	if ${NEEDED_REBUILD_UPGRADE} ; then
@@ -441,5 +536,31 @@ pkg_postinst() {
 				echo "${newline:3}" >> "${cpv}/NEEDED.ELF.2"
 			done < "${cpv}/NEEDED"
 		done
+	fi
+
+	local distdir=${PORTAGE_ACTUAL_DISTDIR-${DISTDIR}}
+
+	if ${USERSYNC_UPGRADE} && \
+		[[ -d ${PORTDIR} && -w ${PORTDIR} ]] ; then
+		local ownership=$(get_ownership "${PORTDIR}")
+		if [[ -n ${ownership} ]] ; then
+			einfo "Adjusting PORTDIR permissions for usersync"
+			find "${PORTDIR}" -path "${distdir%/}" -prune -o \
+				! \( -user "${ownership%:*}" -a -group "${ownership#*:}" \) \
+				-exec chown "${ownership}" {} +
+		fi
+	fi
+
+	# Do this last, since it could take a long time if there
+	# are lots of live sources, and the user may be tempted
+	# to kill emerge while it is running.
+	if ${USERPRIV_UPGRADE} && \
+		[[ -d ${distdir} && -w ${distdir} ]] ; then
+		local ownership=$(get_ownership "${distdir}")
+		if [[ ${ownership#*:} == portage ]] ; then
+			einfo "Adjusting DISTDIR permissions for userpriv"
+			find "${distdir}" -maxdepth 1 -type d -uid 0 \
+				-exec chown -R portage:portage {} +
+		fi
 	fi
 }
