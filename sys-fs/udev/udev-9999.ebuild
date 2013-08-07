@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.241 2013/07/30 17:37:35 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.242 2013/08/07 18:24:04 ssuominen Exp $
 
 EAPI=5
 
@@ -11,7 +11,7 @@ else
 	KV_min=2.6.32
 fi
 
-inherit autotools eutils linux-info multilib toolchain-funcs versionator
+inherit autotools eutils linux-info multilib toolchain-funcs versionator multilib-minimal
 
 if [[ ${PV} = 9999* ]]; then
 	EGIT_REPO_URI="git://anongit.freedesktop.org/systemd/systemd"
@@ -73,7 +73,10 @@ PDEPEND=">=virtual/udev-206
 
 S=${WORKDIR}/systemd-${PV}
 
-#QA_MULTILIB_PATHS="lib/systemd/systemd-udevd"
+# The multilib-build.eclass doesn't handle situation where the installed headers
+# are different in ABIs. In this case, we install libgudev headers in native
+# ABI but not for non-native ABI.
+multilib_check_headers() { :; }
 
 udev_check_KV() {
 	if kernel_is lt ${KV_min//./ }; then
@@ -190,7 +193,7 @@ src_prepare() {
 	fi
 }
 
-src_configure() {
+multilib_src_configure() {
 	tc-export CC #463846
 
 	local econf_args
@@ -203,7 +206,6 @@ src_configure() {
 		--libdir=/usr/$(get_libdir)
 		--with-html-dir=/usr/share/doc/${PF}/html
 		--with-rootprefix=
-		--with-rootlibdir=/$(get_libdir)
 		--without-python
 		--disable-audit
 		--disable-coredump
@@ -224,20 +226,36 @@ src_configure() {
 		--disable-polkit
 		--disable-tmpfiles
 		--disable-machined
-		--enable-introspection=$(usex introspection)
-		$(use_enable acl)
-		$(use_enable doc gtk-doc)
-		$(use_enable gudev)
-		$(use_enable kmod)
-		$(use_enable selinux)
-		$(use_enable static-libs static)
 	)
+	if multilib_is_native_abi; then
+		econf_args+=(
+			--with-rootlibdir=/$(get_libdir)
+			$(use_enable acl)
+			$(use_enable doc gtk-doc)
+			$(use_enable gudev)
+			$(use_enable kmod)
+			$(use_enable selinux)
+			$(use_enable static-libs static)
+			--enable-introspection=$(usex introspection)
+		)
+	else
+		econf_args+=(
+			--with-rootlibdir=/usr/$(get_libdir)
+			--disable-acl
+			--disable-gtk-doc
+			--disable-gudev
+			--disable-kmod
+			--disable-selinux
+			--disable-static
+			--enable-introspection=no
+		)
+	fi
 	use firmware-loader && econf_args+=( --with-firmware-path="/lib/firmware/updates:/lib/firmware" )
 
-	econf "${econf_args[@]}"
+	ECONF_SOURCE=${S} econf "${econf_args[@]}"
 }
 
-src_compile() {
+multilib_src_compile() {
 	echo 'BUILT_SOURCES: $(BUILT_SOURCES)' > "${T}"/Makefile.extra
 	emake -f Makefile -f "${T}"/Makefile.extra BUILT_SOURCES
 
@@ -245,90 +263,118 @@ src_compile() {
 	# but not everything -- separate building of the binaries as a workaround,
 	# which will force internal libraries required for the helpers to be built
 	# early enough, like eg. libsystemd-shared.la
-	local lib_targets=( libudev.la )
-	use gudev && lib_targets+=( libgudev-1.0.la )
-	emake "${lib_targets[@]}"
+	if multilib_is_native_abi; then
+		local lib_targets=( libudev.la )
+		use gudev && lib_targets+=( libgudev-1.0.la )
+		emake "${lib_targets[@]}"
 
-	local exec_targets=(
-		systemd-udevd
-		udevadm
+		local exec_targets=(
+			systemd-udevd
+			udevadm
 		)
-	emake "${exec_targets[@]}"
+		emake "${exec_targets[@]}"
 
-	local helper_targets=(
-		ata_id
-		cdrom_id
-		collect
-		scsi_id
-		v4l_id
-		accelerometer
-		mtd_probe
+		local helper_targets=(
+			ata_id
+			cdrom_id
+			collect
+			scsi_id
+			v4l_id
+			accelerometer
+			mtd_probe
 		)
-	emake "${helper_targets[@]}"
+		emake "${helper_targets[@]}"
 
-	if [[ ${PV} = 9999* ]]; then
-		local man_targets=(
-			man/udev.7
-			man/udevadm.8
-			man/systemd-udevd.service.8
-		)
-		emake "${man_targets[@]}"
-	fi
+		if [[ ${PV} = 9999* ]]; then
+			local man_targets=(
+				man/udev.7
+				man/udevadm.8
+				man/systemd-udevd.service.8
+			)
+			emake "${man_targets[@]}"
+		fi
 
-	if use doc; then
-		emake -C docs/libudev
-		use gudev && emake -C docs/gudev
+		if use doc; then
+			emake -C docs/libudev
+			use gudev && emake -C docs/gudev
+		fi
+	else
+		local lib_targets=( libudev.la )
+		emake "${lib_targets[@]}"
 	fi
 }
 
-src_install() {
-	local lib_LTLIBRARIES="libudev.la" \
-		pkgconfiglib_DATA="src/libudev/libudev.pc"
+multilib_src_install() {
+	if multilib_is_native_abi; then
+		local lib_LTLIBRARIES="libudev.la" \
+			pkgconfiglib_DATA="src/libudev/libudev.pc"
 
-	local targets=(
-		install-libLTLIBRARIES
-		install-includeHEADERS
-		install-libgudev_includeHEADERS
-		install-rootbinPROGRAMS
-		install-rootlibexecPROGRAMS
-		install-udevlibexecPROGRAMS
-		install-dist_udevconfDATA
-		install-dist_udevrulesDATA
-		install-girDATA
-		install-man7
-		install-man8
-		install-pkgconfiglibDATA
-		install-sharepkgconfigDATA
-		install-typelibsDATA
-		install-dist_docDATA
-		libudev-install-hook
-		install-directories-hook
-		install-dist_bashcompletionDATA
-	)
+		local targets=(
+			install-libLTLIBRARIES
+			install-includeHEADERS
+			install-libgudev_includeHEADERS
+			install-rootbinPROGRAMS
+			install-rootlibexecPROGRAMS
+			install-udevlibexecPROGRAMS
+			install-dist_udevconfDATA
+			install-dist_udevrulesDATA
+			install-girDATA
+			install-man7
+			install-man8
+			install-pkgconfiglibDATA
+			install-sharepkgconfigDATA
+			install-typelibsDATA
+			install-dist_docDATA
+			libudev-install-hook
+			install-directories-hook
+			install-dist_bashcompletionDATA
+		)
 
-	if use gudev; then
-		lib_LTLIBRARIES+=" libgudev-1.0.la"
-		pkgconfiglib_DATA+=" src/gudev/gudev-1.0.pc"
+		if use gudev; then
+			lib_LTLIBRARIES+=" libgudev-1.0.la"
+			pkgconfiglib_DATA+=" src/gudev/gudev-1.0.pc"
+		fi
+
+		# add final values of variables:
+		targets+=(
+			rootlibexec_PROGRAMS=systemd-udevd
+			rootbin_PROGRAMS=udevadm
+			lib_LTLIBRARIES="${lib_LTLIBRARIES}"
+			MANPAGES="man/udev.7 man/udevadm.8 \
+					man/systemd-udevd.service.8"
+			MANPAGES_ALIAS=""
+			pkgconfiglib_DATA="${pkgconfiglib_DATA}"
+			INSTALL_DIRS='$(sysconfdir)/udev/rules.d \
+					$(sysconfdir)/udev/hwdb.d'
+			dist_bashcompletion_DATA="shell-completion/bash/udevadm"
+		)
+		emake -j1 DESTDIR="${D}" "${targets[@]}"
+
+		if use doc; then
+			emake -C docs/libudev DESTDIR="${D}" install
+			use gudev && emake -C docs/gudev DESTDIR="${D}" install
+		fi
+	else
+		local lib_LTLIBRARIES="libudev.la" \
+			pkgconfiglib_DATA="src/libudev/libudev.pc" \
+			include_HEADERS="src/libudev/libudev.h"
+
+		local targets=(
+			install-libLTLIBRARIES
+			install-includeHEADERS
+			install-pkgconfiglibDATA
+		)
+
+		targets+=(
+			lib_LTLIBRARIES="${lib_LTLIBRARIES}"
+			pkgconfiglib_DATA="${pkgconfiglib_DATA}"
+			include_HEADERS="${include_HEADERS}"
+			)
+		emake -j1 DESTDIR="${D}" "${targets[@]}"
 	fi
+}
 
-	# add final values of variables:
-	targets+=(
-		rootlibexec_PROGRAMS=systemd-udevd
-		rootbin_PROGRAMS=udevadm
-		lib_LTLIBRARIES="${lib_LTLIBRARIES}"
-		MANPAGES="man/udev.7 man/udevadm.8 \
-				man/systemd-udevd.service.8"
-		MANPAGES_ALIAS=""
-		pkgconfiglib_DATA="${pkgconfiglib_DATA}"
-		INSTALL_DIRS='$(sysconfdir)/udev/rules.d \
-				$(sysconfdir)/udev/hwdb.d'
-		dist_bashcompletion_DATA="shell-completion/bash/udevadm"
-	)
-	emake -j1 DESTDIR="${D}" "${targets[@]}"
-	if use doc; then
-		emake -C docs/libudev DESTDIR="${D}" install
-		use gudev && emake -C docs/gudev DESTDIR="${D}" install
-	fi
+multilib_src_install_all() {
 	dodoc TODO
 
 	prune_libtool_files --all
