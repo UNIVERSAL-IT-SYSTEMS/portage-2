@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999-r1.ebuild,v 1.6 2013/08/04 08:15:08 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999-r1.ebuild,v 1.7 2013/08/08 09:03:56 mgorny Exp $
 
 EAPI=5
 
@@ -15,7 +15,8 @@ inherit git-2
 AUTOTOOLS_PRUNE_LIBTOOL_FILES=all
 PYTHON_COMPAT=( python2_7 )
 inherit autotools-utils bash-completion-r1 fcaps linux-info multilib \
-	pam python-single-r1 systemd toolchain-funcs udev user
+	multilib-minimal pam python-single-r1 systemd toolchain-funcs udev \
+	user
 
 DESCRIPTION="System and service manager for Linux"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
@@ -41,13 +42,15 @@ COMMON_DEPEND=">=sys-apps/dbus-1.6.8-r1
 	http? ( net-libs/libmicrohttpd )
 	introspection? ( >=dev-libs/gobject-introspection-1.31.1 )
 	kmod? ( >=sys-apps/kmod-14-r1 )
-	lzma? ( app-arch/xz-utils )
+	lzma? ( app-arch/xz-utils[${MULTILIB_USEDEP}] )
 	pam? ( virtual/pam )
 	python? ( ${PYTHON_DEPS} )
 	qrcode? ( media-gfx/qrencode )
 	selinux? ( sys-libs/libselinux )
 	tcpd? ( sys-apps/tcp-wrappers )
-	xattr? ( sys-apps/attr )"
+	xattr? ( sys-apps/attr )
+	abi_x86_32? ( !<=app-emulation/emul-linux-x86-baselibs-20130224-r7
+		!app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)] )"
 
 # baselayout-2.2 has /run
 RDEPEND="${COMMON_DEPEND}
@@ -131,7 +134,7 @@ pkg_setup() {
 	use python && python-single-r1_pkg_setup
 }
 
-src_configure() {
+multilib_src_configure() {
 	local myeconfargs=(
 		--localstatedir=/var
 		--with-pamlibdir=$(getpam_mod_dir)
@@ -183,22 +186,91 @@ src_configure() {
 		)
 	fi
 
+	if ! multilib_is_native_abi; then
+		myeconfargs+=(
+			ac_cv_search_cap_init=
+			ac_cv_header_sys_capability_h=yes
+
+			--disable-acl
+			--disable-audit
+			--disable-gcrypt
+			--disable-gtk-doc
+			--disable-gudev
+			--disable-introspection
+			--disable-kmod
+			--disable-libcryptsetup
+			--disable-microhttpd
+			--disable-pam
+			--disable-polkit
+			--disable-qrencode
+			--disable-selinux
+			--disable-tcpwrap
+			--disable-tests
+			--disable-xattr
+			--disable-xz
+			--without-python
+		)
+	fi
+
 	# Work around bug 463846.
 	tc-export CC
 
 	autotools-utils_src_configure
 }
 
-src_compile() {
-	autotools-utils_src_compile \
+multilib_src_compile() {
+	local mymakeopts=(
 		udevlibexecdir="${MY_UDEVDIR}"
+	)
+
+	if multilib_is_native_abi; then
+		emake "${mymakeopts[@]}"
+	else
+		echo 'gentoo: $(lib_LTLIBRARIES) $(pkgconfigdata_DATA)' | \
+		emake "${mymakeopts[@]}" -f Makefile -f - gentoo
+	fi
 }
 
 src_install() {
-	autotools-utils_src_install -j1 \
-		udevlibexecdir="${MY_UDEVDIR}" \
-		dist_udevhwdb_DATA=
+	MULTILIB_WRAPPED_HEADERS=()
 
+	if use gudev; then
+		MULTILIB_WRAPPED_HEADERS+=(
+			/usr/include/gudev-1.0/gudev/gudev.h
+			/usr/include/gudev-1.0/gudev/gudevclient.h
+			/usr/include/gudev-1.0/gudev/gudevdevice.h
+			/usr/include/gudev-1.0/gudev/gudevenumerator.h
+			/usr/include/gudev-1.0/gudev/gudevenums.h
+			/usr/include/gudev-1.0/gudev/gudevenumtypes.h
+			/usr/include/gudev-1.0/gudev/gudevtypes.h
+		)
+	fi
+
+	multilib-minimal_src_install
+}
+
+multilib_src_install() {
+	local mymakeopts=(
+		udevlibexecdir="${MY_UDEVDIR}"
+		dist_udevhwdb_DATA=
+		DESTDIR="${D}"
+	)
+
+	if multilib_is_native_abi; then
+		emake "${mymakeopts[@]}" -j1 install
+	else
+		mymakeopts+=(
+			install-libLTLIBRARIES
+			install-pkgconfigdataDATA
+			install-includeHEADERS
+			install-pkgincludeHEADERS
+		)
+
+		emake "${mymakeopts[@]}"
+	fi
+}
+
+multilib_src_install_all() {
 	# zsh completion
 	insinto /usr/share/zsh/site-functions
 	doins shell-completion/zsh/_*
