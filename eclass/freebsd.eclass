@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/freebsd.eclass,v 1.30 2013/08/09 13:58:47 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/freebsd.eclass,v 1.34 2013/08/09 20:10:20 aballier Exp $
 #
 # Diego Pettenò <flameeyes@gentoo.org>
 
@@ -25,6 +25,7 @@ SYS="freebsd-sys-${PV}"
 INCLUDE="freebsd-include-${PV}"
 RESCUE="freebsd-rescue-${PV}"
 CDDL="freebsd-cddl-${PV}"
+SECURE="freebsd-secure-${PV}"
 
 # Release version (5.3, 5.4, 6.0, etc)
 RV="$(get_version_component_range 1-2)"
@@ -97,6 +98,13 @@ freebsd_src_unpack() {
 
 	freebsd_do_patches
 	freebsd_rename_libraries
+
+	# Starting from FreeBSD 9.2, its install command supports the -l option and
+	# they now use it. Emulate it if we are on a system that does not have it.
+	if [[ ${RV} > 9.1 ]] && ! has_version '>=sys-freebsd/freebsd-ubin-9.2_beta1' ; then
+		export INSTALL_LINK="ln -f"
+		export INSTALL_SYMLINK="ln -fs"
+	fi
 }
 
 freebsd_src_compile() {
@@ -114,7 +122,7 @@ freebsd_src_compile() {
 		mkmake obj || die
 	fi
 
-	bsdmk_src_compile
+	bsdmk_src_compile "$@"
 }
 
 # Helper function to make a multilib build with FreeBSD Makefiles.
