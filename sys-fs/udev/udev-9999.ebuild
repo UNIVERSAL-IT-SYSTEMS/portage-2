@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.248 2013/08/11 17:47:52 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.250 2013/08/11 19:01:21 ssuominen Exp $
 
 EAPI=5
 
@@ -359,6 +359,14 @@ multilib_src_install() {
 			emake -C docs/libudev DESTDIR="${D}" install
 			use gudev && emake -C docs/gudev DESTDIR="${D}" install
 		fi
+
+		# install udevadm compatibility symlink
+		dosym {../bin,sbin}/udevadm
+
+		# install udevd to /sbin and remove empty and redudant directory
+		# /lib/systemd because systemd is installed to /usr wrt #462750
+		mv "${D}"/{lib/systemd/systemd-,sbin/}udevd || die
+		rm -r "${D}"/lib/systemd
 	else
 		local lib_LTLIBRARIES="libudev.la" \
 			pkgconfiglib_DATA="src/libudev/libudev.pc" \
@@ -391,14 +399,6 @@ multilib_src_install_all() {
 	insinto /lib/udev/rules.d
 	doins "${T}"/40-gentoo.rules
 	doman "${T}"/{systemd-,}udevd.8
-
-	# install udevadm compatibility symlink
-	dosym {../bin,sbin}/udevadm
-
-	# install udevd to /sbin and remove empty and redudant directory
-	# /lib/systemd because systemd is installed to /usr wrt #462750
-	mv "${D}"/{lib/systemd/systemd-,sbin/}udevd || die
-	rm -r "${D}"/lib/systemd
 }
 
 pkg_preinst() {
@@ -514,6 +514,9 @@ pkg_postinst() {
 	if has_version 'sys-apps/hwids[udev]'; then
 		udevadm hwdb --update --root="${ROOT%/}"
 		# http://cgit.freedesktop.org/systemd/systemd/commit/?id=1fab57c209035f7e66198343074e9cee06718bda
+		if [[ ${ROOT} != "" ]] && [[ ${ROOT} != "/" ]]; then
+			return 0
+		fi
 		udevadm control --reload
 	fi
 }
