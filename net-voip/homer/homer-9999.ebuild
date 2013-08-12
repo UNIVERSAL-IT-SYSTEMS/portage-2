@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-voip/homer/homer-9999.ebuild,v 1.6 2013/08/11 22:59:22 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-voip/homer/homer-9999.ebuild,v 1.7 2013/08/12 19:45:35 hwoarang Exp $
 
-EAPI=4
+EAPI=5
 
 inherit eutils multilib toolchain-funcs
 
@@ -31,7 +31,7 @@ DEPEND=">=dev-libs/openssl-1.0
 	media-libs/portaudio[alsa]
 	media-libs/sdl-mixer
 	media-libs/sdl-sound
-	media-libs/x264
+	media-libs/x264:*
 	media-video/ffmpeg:0[X]
 	net-libs/sofia-sip
 	dev-qt/qtcore:4
