@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-base.eclass,v 1.128 2013/08/15 14:52:58 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/kde4-base.eclass,v 1.131 2013/08/15 15:36:26 kensington Exp $
 
 # @ECLASS: kde4-base.eclass
 # @MAINTAINER:
@@ -336,6 +336,7 @@ if [[ ${PN} != oxygen-icons ]]; then
 	kderdepend+=" $(add_kdebase_dep oxygen-icons)"
 fi
 
+# add a dependency over kde-l10n
 if [[ ${KDEBASE} != "kde-base" && -n ${KDE_LINGUAS} ]]; then
 	for _lingua in ${KDE_LINGUAS}; do
 		# if our package has lignuas, pull in kde-l10n with selected lingua enabled,
@@ -375,28 +376,6 @@ case ${KDE_SELINUX_MODULE} in
 	*)
 		IUSE+=" selinux"
 		kdecommondepend+=" selinux? ( sec-policy/selinux-${KDE_SELINUX_MODULE} )"
-		;;
-esac
-
-# These dependencies are added as they are unconditionally required by kde-workspace.
-# They are not necessarily required by individual applications but are pulled in to prevent
-# bugs like bug #444438. This list is subject to change in the future so do not rely on it
-# in ebuilds - always set correct dependencies.
-case ${KMNAME} in
-	kde-workspace)
-		kdedepend+="
-			x11-libs/xcb-util
-			x11-libs/libX11
-			x11-libs/libXcomposite
-			x11-libs/libXcursor
-			x11-libs/libXdamage
-			x11-libs/libXfixes
-			x11-libs/libxkbfile
-			x11-libs/libXrandr
-			x11-libs/libXrender
-		"
-		;;
-	*)
 		;;
 esac
 
@@ -444,13 +423,7 @@ _calculate_src_uri() {
 
 	# calculate tarball module name
 	if [[ -n ${KMNAME} ]]; then
-		# fixup kdebase-apps name
-		case ${KMNAME} in
-			kdebase-apps)
-				_kmname="kdebase" ;;
-			*)
-				_kmname="${KMNAME}" ;;
-		esac
+		_kmname="${KMNAME}"
 	else
 		_kmname=${PN}
 	fi
@@ -647,7 +620,6 @@ kde4-base_src_unpack() {
 	if [[ ${KDE_BUILD_TYPE} = live ]]; then
 		case ${KDE_SCM} in
 			svn)
-				migrate_store_dir
 				subversion_src_unpack
 				;;
 			git)
