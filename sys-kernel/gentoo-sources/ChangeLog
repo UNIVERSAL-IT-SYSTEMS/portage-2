@@ -1,6 +1,29 @@
 # ChangeLog for sys-kernel/gentoo-sources
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/ChangeLog,v 1.1169 2013/08/12 10:56:35 tomwij Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/ChangeLog,v 1.1171 2013/08/15 23:56:03 tomwij Exp $
+
+  15 Aug 2013; Tom Wijsman <TomWij@gentoo.org> gentoo-sources-3.10.7.ebuild:
+  Removed 2300_USB-mount-extd-inq-cmd-fix.patch from 3.10.7 to avoid
+  inconsistent behavior when trying to apply it twice, as it is already applied
+  upstream in 0ac10bd036f0f3b8ce7ac2390446eab9531c72eb; thanks to Bertrand
+  Jacquin (beber) to report this on the gentoo-kernel ML. Since this fixes a
+  build issue, no revision bump is needed; the removal of the inconsistent
+  behavior does in no way change the behavior of the kernel code.
+
+*gentoo-sources-3.4.58 (15 Aug 2013)
+*gentoo-sources-3.0.91 (15 Aug 2013)
+*gentoo-sources-3.10.7 (15 Aug 2013)
+
+  15 Aug 2013; Tom Wijsman <TomWij@gentoo.org> +gentoo-sources-3.0.91.ebuild,
+  +gentoo-sources-3.10.7.ebuild, +gentoo-sources-3.4.58.ebuild,
+  -gentoo-sources-3.0.87.ebuild, -gentoo-sources-3.10.4.ebuild,
+  -gentoo-sources-3.10.5-r1.ebuild, -gentoo-sources-3.10.6.ebuild,
+  -gentoo-sources-3.4.54.ebuild:
+  Version bumps 3.0.91, 3.4.58 and 3.10.7. Removed old. 3.10.7 is the new stable
+  candidate. Added patches for a Nouveau build fix as well as enabling TMPFS and
+  DEVTMPFS by default; this behavior alongside an experiment with init system
+  configuration, as well as possible more future behavior can be controlled in a
+  new Gentoo Linux menu.
 
 *gentoo-sources-3.0.90 (12 Aug 2013)
 *gentoo-sources-3.4.57 (12 Aug 2013)
