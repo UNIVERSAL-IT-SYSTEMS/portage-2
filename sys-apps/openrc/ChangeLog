@@ -1,6 +1,17 @@
 # ChangeLog for sys-apps/openrc
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/ChangeLog,v 1.276 2013/08/16 17:39:21 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/openrc/ChangeLog,v 1.279 2013/08/16 20:31:21 axs Exp $
+
+  16 Aug 2013; Ian Stakenvicius <axs@gentoo.org> openrc-0.11.8.ebuild:
+  added blocker on net-misc/netifrc to openrc-0.11.8 just in case it helps
+  ensure net.lo is replaced
+
+  16 Aug 2013; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
+  sync live ebuild
+
+  16 Aug 2013; William Hubbs <williamh@gentoo.org> -files/net.confd.comment,
+  openrc-0.12.ebuild:
+  move the net comment into a here document.
 
   16 Aug 2013; William Hubbs <williamh@gentoo.org> openrc-9999.ebuild:
   partially sync live ebuild
