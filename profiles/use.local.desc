@@ -693,6 +693,10 @@ app-leechcraft/lc-azoth:shx - Build shell command executor plugin
 app-leechcraft/lc-azoth:standardstyles - Build support for standard Azoth styles engine
 app-leechcraft/lc-azoth:vader - Bulid Vader, the MRIM (Mail.Ru Agent) protocol support plugin
 app-leechcraft/lc-azoth:xtazy - Build Xtazy for publishing currently playing tune
+app-leechcraft/lc-blasq:deathnote - Support LiveJournal FotoBilder service
+app-leechcraft/lc-blasq:rappor - Support VKontakte service
+app-leechcraft/lc-blasq:spegnersi - Support Flickr service
+app-leechcraft/lc-blasq:vangog - Support Picasa service
 app-leechcraft/lc-blogique:hestia - Allows one to keep a local blog
 app-leechcraft/lc-blogique:metida - Support for the LiveJournal blogging platform
 app-leechcraft/lc-gmailnotifier:notify - Pull in a plugin to show notifications from GMail Notiifer
@@ -2627,6 +2631,7 @@ kde-base/libkdcraw:jasper - Use media-libs/jasper to support RedOne digital movi
 kde-base/libplasmaclock:holidays - Include support for holidays in plasma calendar
 kde-base/marble:designer-plugin - Enable designer plugin
 kde-base/marble:shapefile - Enable support for ESRI shapefiles
+kde-base/marble:zip - Enable support for reading and displaying .kmz files
 kde-base/nepomuk-core:epub - Adds support for reading EPUB ebook metadata
 kde-base/okular:chm - Enable support for Microsoft Compiled HTML Help files
 kde-base/okular:ebook - Add E-Book support
@@ -4717,6 +4722,7 @@ net-libs/ptlib:tts - Enable Text-To-Speech server support
 net-libs/ptlib:video - Enable video support
 net-libs/ptlib:vxml - Enable VoiceXML support
 net-libs/ptlib:wav - Enable WAVFILE support
+net-libs/qxmpp:vpx - Enable VP8 codec support via media-libs/libvpx
 net-libs/rabbitmq-c:tools - Builds cli tools to interact with brokers
 net-libs/rest:gnome - Extract proxy information using net-libs/libsoup-gnome
 net-libs/telepathy-glib:vala - Enable bindings for dev-lang/vala
@@ -5910,8 +5916,6 @@ sys-block/gparted:ntfs - Include NTFS support (sys-fs/ntfsprogs)
 sys-block/gparted:reiser4 - Include ReiserFS4 support (sys-fs/reiser4progs)
 sys-block/gparted:reiserfs - Include ReiserFS support (sys-fs/reiserfsprogs)
 sys-block/gparted:xfs - Include XFS support (sys-fs/xfsprogs, sys-fs/xfsdump)
-sys-block/open-iscsi:modules - Build the open-iscsi kernel modules
-sys-block/open-iscsi:utils - Build the open-iscsi utilities
 sys-block/parted:debug - Enable debugging as encouraged by upstream: [The default configuration] includes --enable-debug (by default), which contains many assertions. Obviously, these "waste" space, but in the past, they have caught potentially dangerous bugs before they would have done damage, so we think it's worth it. Also, it means we get more bug reports ;)
 sys-block/parted:device-mapper - Enable device-mapper support from sys-fs/lvm2 in parted
 sys-block/partimage:nologin - Do not include login support when connecting partimaged
