@@ -1,6 +1,39 @@
 # ChangeLog for www-client/chromium
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/ChangeLog,v 1.933 2013/08/18 02:33:26 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/ChangeLog,v 1.940 2013/09/02 01:41:53 floppym Exp $
+
+*chromium-30.0.1599.22 (02 Sep 2013)
+
+  02 Sep 2013; Mike Gilbert <floppym@gentoo.org> +chromium-30.0.1599.22.ebuild,
+  -chromium-30.0.1599.0-r1.ebuild:
+  Beta channel bump.
+
+*chromium-31.0.1612.0 (31 Aug 2013)
+
+  31 Aug 2013; Pawel Hajdan jr <phajdan.jr@gentoo.org>
+  +chromium-31.0.1612.0.ebuild, chromium-9999-r1.ebuild:
+  Dev channel bump.
+
+  23 Aug 2013; Mike Gilbert <floppym@gentoo.org> -chromium-28.0.1500.95.ebuild,
+  -chromium-29.0.1547.32.ebuild, -chromium-29.0.1547.41.ebuild:
+  Remove old.
+
+*chromium-30.0.1599.15 (23 Aug 2013)
+
+  23 Aug 2013; Mike Gilbert <floppym@gentoo.org> +chromium-30.0.1599.15.ebuild,
+  -chromium-30.0.1588.0.ebuild:
+  Bump.
+
+  21 Aug 2013; Agostino Sarubbo <ago@gentoo.org> chromium-29.0.1547.57.ebuild:
+  Stable for x86, wrt bug #481990
+
+  21 Aug 2013; Agostino Sarubbo <ago@gentoo.org> chromium-29.0.1547.57.ebuild:
+  Stable for amd64, wrt bug #481990
+
+*chromium-29.0.1547.57 (21 Aug 2013)
+
+  21 Aug 2013; Mike Gilbert <floppym@gentoo.org> +chromium-29.0.1547.57.ebuild:
+  Stable channel bump.
 
   18 Aug 2013; Mike Gilbert <floppym@gentoo.org> chromium-9999-r1.ebuild:
   Apply previous change to the live ebuild.

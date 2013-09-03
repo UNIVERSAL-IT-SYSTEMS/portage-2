@@ -1,6 +1,6 @@
 ####################################################################
 
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15047 2013/08/20 02:39:17 cardoe Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15083 2013/09/03 04:05:22 creffett Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -31,9 +31,113 @@
 
 #--- END OF EXAMPLES ---
 
-# Doug Goldstein <cardoe@gentoo.org> (19 Aug 2013)
-# Masked for development (not complete, do not use)
-=sys-firmware/seabios-1.7.3
+# Chris Reffett <creffett@gentoo.org> (03 Sep 2013)
+# Dead upstream, outstanding security bug #260956.
+# Masked for removal in 30 days.
+dev-games/neoengine
+dev-games/neotools
+
+# Alexandre Rostovtsev <tetromino@gentoo.org> (02 Sep 2013)
+# Silent API/ABI change; mask until seahorse is patched; bug #483414
+>=app-crypt/libsecret-0.16
+
+# Tom Wijsman <TomWij@gentoo.org> (28 Aug 2013)
+# Gentoo sources 3.8.13 masked due to security bug #475618: CVE-2013-1059:
+# Linux Kernel Ceph NULL Pointer Dereference Denial of Service Vulnerability
+#
+# This kernel also contains other security bugs due to its old age (May 11).
+#
+# We advice users to upgrade to the new stable kernel 3.10.7; alternatively, if
+# necessary, users can also choose to accept keywords and accept a kernel from
+# the earlier long term stable branches (3.0.X or 3.4.Y), this might be the case
+# if you have older hardware or an unfortunate stability bug on 3.10.7.
+#
+# You can accept keywords by adding sys-kernel/gentoo-sources to the file 
+# /etc/portage/package.accept_keywords after which you can run
+# `emerge sys-kernel/gentoo-sources:X.Y.Z` to select a specific LTS kernel.
+# When you choose to turn back to stable later, don't forget to remove that.
+#
+# For proprietary NVIDIA drivers users, we temporarily keep 3.9.11-r1 around
+# as some of them experience problems with the new stable kernel 3.10.7; we aim
+# to mask it in one of the next weeks when the new branch 3.11 is out.
+#
+# References:
+#
+# - http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1059
+# - https://secunia.com/advisories/54042/
+# - https://bugs.gentoo.org/show_bug.cgi?id=475618
+# - https://bugs.gentoo.org/buglist.cgi?quicksearch=assignee%3Asecurity%20kernel
+#
+=sys-kernel/gentoo-sources-3.8.13
+
+# Markos Chandras <hwoarang@gentoo.org> (30 Aug 2013)
+# Masked for proper testing in production
+=dev-util/buildbot-0.8.8
+=dev-util/buildbot-slave-0.8.8
+
+# Gilles Dartiguelongue <eva@gentoo.org> (30 Aug 2013)
+# libsoup-gnome was split again. Mask the inappropriate
+# unsplit revisions to avoid accidental downgrades by users
+=net-libs/libsoup-2.42.2
+=net-libs/libsoup-2.42.1
+
+# Agostino Sarubbo <ago@gentoo.org> (29 Aug 2013)
+# Mask 5.1 series because the backport of the CVE-2012-5627
+# has not be done. bug #446240 comment 2
+=dev-db/mariadb-5.1.67
+
+# Tom Wijsman <TomWij@gentoo.org> (28 Aug 2013)
+# on behalf of Luca Barbato <lu_zero@gentoo.org>
+# Masked new bash-completion, because it breaks
+# starting bash for some users, has broken
+# bash completions (eg. git) and some people
+# manually need to source bash completions after
+# a lot of confusion what is really going on.
+#
+# These packages need one or more of: a news
+# article explaining what is going on and what
+# the new way of using bash completions is, bug
+# fixes such that a large share just works and
+# consider to bring back lost the lost eselect.
+#
+# References:
+#
+# - Bug #395091 Comment #17: Is there any plan?
+# - Bug #476992 Comment #5: This doesn't imply that I like ...
+# - Bug #477920: 'git-prompt' is not really a bash-completion file.
+# - Bug #477380: Tracker for changed install paths.
+# - Bug #482732: After upgrade, 'bash' hangs on startup.
+# - Bugs: https://bugs.gentoo.org/buglist.cgi?quicksearch=bash-completion
+# - Bugs: https://bugs.gentoo.org/buglist.cgi?quicksearch="bash%20completion"
+# - Forum: http://forums.gentoo.org/viewtopic-t-964768.html
+#
+# Masked for QA problems and regressions.
+=app-shells/bash-completion-2.1-r1
+=app-shells/gentoo-bashcomp-20130804
+
+# Sergey Popov <pinkbyte@gentoo.org> (27 Aug 2013)
+# Masked for testing
+~dev-util/boost-build-1.54.0
+~dev-libs/boost-1.54.0
+
+# Ian Stakenvicius <axs@gentoo.org> (26 Aug 2013)
+# on behalf of mozilla@gentoo.org
+# Severely outdated, no interest in maintaining,
+# only a matter of time before it breaks
+# Masked for removal in 30 days.
+www-plugins/mozplugger
+
+# Julian Ospald <hasufell@gentoo.org> (25 Aug 2013)
+# experimental alpha software, may be insecure
+# https://github.com/Bitmessage/PyBitmessage/issues/376
+# https://bitmessage.org/forum/index.php/topic,1666.0.html
+net-p2p/pybitmessage
+
+# Mike Gilbert <floppym@gentoo.org> (23 Aug 2013)
+# Dev channel releases are only for people who are developers or want more
+# experimental features and accept a more unstable release.
+>=www-client/chromium-31
+>=dev-lang/v8-3.21
 
 # Manuel Rüger <mrueg@gentoo.org> (19 Aug 2013)
 # Last release in 2005, Homepage dead, unclear license situation
@@ -49,10 +153,6 @@ net-im/kf
 # Outdated documentation as ruby18 will be removed soon.
 # Masked for removal in 30 days.
 dev-ruby/programming-ruby
-
-# Doug Goldstein <cardoe@gentoo.org> (16 Aug 2013)
-# Masked for development (not complete, do not use)
-=app-emulation/qemu-1.6.0
 
 # Michał Górny <mgorny@gentoo.org> (16 Aug 2013)
 # Getting more broken every day. No commit for 5 years. Nothing
@@ -175,10 +275,6 @@ dev-vcs/bzr-svn
 # Mask while awaiting bump to dep Djblets-0.7.16
 =dev-util/reviewboard-1.7.12
 
-# Matt Turner <mattst88@gentoo.org> (31 Jul 2013)
-# Masked for removal. Bug 478720.
-dev-perl/gnome2-gconf
-
 # Jeroen Roovers <jer@gentoo.org> (31 Jul 2013)
 # Needs >=dev-lang/lua-5.2
 ~net-analyzer/nmap-6.40
@@ -207,83 +303,6 @@ dev-perl/gnome2-gconf
 # there is a working release.
 sci-geosciences/googleearth
 
-# Pacho Ramos <pacho@gentoo.org> (21 Jul 2013)
-# Doesn't compile with gcc-4.7 (#414143), lib is no longer
-# opensource or free. Removal in a month.
-media-libs/openinventor
-
-# Pacho Ramos <pacho@gentoo.org> (21 Jul 2013)
-# Doesn't compile with boost-1.50 and with automake-1.13
-# (#425448). Removal in a month.
-dev-cpp/libebt
-
-# Pacho Ramos <pacho@gentoo.org> (21 Jul 2013)
-# Doesn't compile and not useful with kernel >= 2.6 (#428728).
-# Removal in a month.
-sys-kernel/ksymoops
-
-# Pacho Ramos <pacho@gentoo.org> (21 Jul 2013)
-# Fails to build with glibc-2.16 (#428738), upstream dead.
-# Removal in a month.
-net-p2p/bitstormlite
-
-# Pacho Ramos <pacho@gentoo.org> (21 Jul 2013)
-# Fails to build with gcc-4.7, upstream dead (#429362).
-# Removal in a month.
-net-p2p/mutella
-
-# Pacho Ramos <pacho@gentoo.org> (21 Jul 2013)
-# Doesn't build with gcc-4.7, nothing requires it.
-# (#465896). Removal in a month.
-dev-cpp/IceE
-
-# Hans de Graaff <graaff@gentoo.org> (21 Jul 2013)
-# Mask ruby18-only packages in dev-ruby for removal in 30 days.
-# ruby18 is EOL and no longer supported upstream. These packages
-# are only marked for ruby18 and most have not seen releases in
-# a long time. All of them don't have reverse dependencies.
-# All will be removed unless it can be verified that they do
-# work with newer ruby versions.
-dev-ruby/autotest-rails
-dev-ruby/canny
-dev-ruby/cgikit
-dev-ruby/color-tools
-dev-ruby/diff
-dev-ruby/eruby
-dev-ruby/extensions
-dev-ruby/fusefs
-dev-ruby/imlib2-ruby
-dev-ruby/IO-Reactor
-dev-ruby/jabber4r
-dev-ruby/mega-modules
-dev-ruby/merb-slices
-dev-ruby/nano-methods
-dev-ruby/needle
-dev-ruby/net-geoip
-dev-ruby/nora
-dev-ruby/osmlib-base
-dev-ruby/piston
-dev-ruby/plruby
-dev-ruby/quixml
-dev-ruby/rbbr
-dev-ruby/rflickr
-dev-ruby/ruby-breakpoint
-dev-ruby/ruby-chasen
-dev-ruby/ruby-eb
-dev-ruby/rubyfilter
-dev-ruby/ruby-freedb
-dev-ruby/ruby-gd
-dev-ruby/ruby-gsl
-dev-ruby/ruby-irc
-dev-ruby/ruby-password
-dev-ruby/ruby-pcap
-dev-ruby/shipping
-dev-ruby/stompserver
-dev-ruby/tclink
-dev-ruby/webrat
-dev-ruby/xml-mapping
-dev-ruby/xmpp4r
-
 # Alexis Ballier <aballier@gentoo.org> (20 Jul 2013)
 # New major release and lots of packages fail to build.
 # Tracker bug is: https://bugs.gentoo.org/show_bug.cgi?id=476490
@@ -293,12 +312,6 @@ dev-ruby/xmpp4r
 # Uses vulnerable versions of bzip2, but these versions are 
 # necessary to reconstruct older archives. Use at your own risk.
 =app-portage/deltup-0.4.5
-
-# Mike Gilbert <floppym@gentoo.org> (18 Jul 2013)
-# Dev channel releases are only for people who are developers or want more
-# experimental features and accept a more unstable release.
->=www-client/chromium-30
->=dev-lang/v8-3.20
 
 # Michael Weber <xmw@gentoo.org> (17 Jul 2013)
 # Upstream next versions
@@ -310,28 +323,6 @@ dev-ruby/xmpp4r
 # superseeded by sci-biology/allpathslg
 # Upstream wants anybody to move over
 sci-biology/allpaths
-
-# Hans de Graaff <graaff@gentoo.org> (16 Jul 2013)
-# Mask for removal. Upstream dead, recommends no longer using
-# this. Nothing in the tree depends on it. dev-ruby/listen
-# can be used as an alternative.
-dev-ruby/fssm
-
-# Samuli Suominen <ssuominen@gentoo.org> (15 Jul 2013)
-# The separate media-sound/alsa-headers package has been obsoleted
-# by letting sys-kernel/linux-headers install the required sound/
-# headers.
-#
-# The instructions to migrate follows:
-# emerge -C alsa-headers
-# emerge -1 linux-headers
-#
-# The separate package will be removed in 30 days
-media-sound/alsa-headers
-
-# Sergei Trofimovich <slyfox@gentoo.org> (12 Jul 2013)
-# live ebuild
-=app-misc/mc-9999
 
 # Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (11 Jul 2013)
 # pwlib/openh323 masked for removal, bugs #290062 and #290063
@@ -348,21 +339,9 @@ net-libs/openh323
 # Do not lastrite this, just leave mask by Lars Wendler's request.
 net-irc/xchat-otr
 
-# Hanno Boeck <hanno@gentoo.org> (9 Jul 2013)
-# Part of old and deprecated openvas versions,
-# removal in about 30 days
-net-analyzer/openvas-client
-net-analyzer/openvas-libnasl
-net-analyzer/openvas-plugins
-net-analyzer/openvas-server
-
 # Michael Weber <xmw@gentoo.org> (9 Jul 2013)
 # Masked for security bug 450746, CVE-2012-6095
 <net-ftp/proftpd-1.3.4c
-
-# Michael Weber <xmw@gentoo.org> (9 Jul 2013)
-# Masked for security bug 469956, CVE-2013-2094
-<sys-kernel/openvz-sources-2.6.32.76.8
 
 # Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (25 Jun 2013)
 # Prerelease ebuild, mostly untested and held together by duct tape.
@@ -423,19 +402,13 @@ app-editors/fte
 >dev-db/postgresql-base-9.3_beta1
 >dev-db/postgresql-server-9.3_beta1
 
-# Diego Elio Pettenò <flameeyes@gentoo.org> (31 May 2013)
-# Waiting for final release
-=sys-libs/freeipmi-1.3*
-
 # Mike Gilbert <floppym@gentoo.org (27 May 2013)
 # Masked until reverse dependencies are tested bug 401009.
 =dev-python/imaging-2.0.0
 
 # Markos Chandras <hwoarang@gentoo.org> (25 May 2013)
 # Mask 0.7.0 release for testing
-# Mask -9999 ebuild per Gentoo policy
 ~dev-embedded/openocd-0.7.0
-=dev-embedded/openocd-9999
 
 # Tim Harder <radhermit@gentoo.org> (22 May 2013)
 # masked for testing
@@ -463,11 +436,6 @@ x11-misc/pcmanfm-qt
 # Patrick Lauer <patrick@gentoo.org> (09 Apr 2013)
 # Masked to get 0.10 tested
 =net-libs/nodejs-0.11*
-
-# Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (05 Apr 2013)
-# Mask new mesa packages due to chromium build failure, bug #475444
-=media-libs/mesa-9.2_pre*
-=virtual/opencl-0-r3
 
 # Ian Stakenvicius <axs@gentoo.org> (05 Apr 2013)
 # <eudev@gentoo.org>
@@ -552,11 +520,6 @@ media-gfx/yafaray
 # Masked for development
 =sys-block/open-iscsi-2.0.873
 
-# Mike Gilbert <floppym@gentoo.org (18 Jan 2013)
-# Release made by unofficial maintainer. Drops support for Python 3 with
-# very few improvements. Should be replaced by dev-python/charade eventually.
-=dev-python/chardet-2.1.1
-
 # Jeroen Roovers <jer@gentoo.org> (09 Jan 2013)
 # Testing branch, unstable upstream
 >net-nntp/tin-2.1
@@ -591,12 +554,6 @@ dev-haskell/wxhaskell:2.9
 #net-wireless/madwifi-ng-tools
 net-wireless/madwifi-ng
 
-# Michał Górny <mgorny@gentoo.org> (07 Dec 2012)
-# Experimental version disabling XDM-AUTHENTICATION-1 (in favor
-# of MIT-MAGIC-COOKIE-1). It should fix bug #306223 but it can also
-# raise unknown issues. Bug #445662 for more details.
-=x11-apps/xdm-1.1.11-r2
-
 # Tim Harder <radhermit@gentoo.org> (27 Nov 2012)
 # Masked for testing
 =media-libs/libsfml-2*
@@ -607,10 +564,6 @@ net-wireless/madwifi-ng
 # and nobody will take care of it now (#351225#c7).
 # Looks like a proxy maintainer is working on this...
 net-dialup/hsfmodem
-
-# Richard Freeman <rich0@gentoo.org> (24 Nov 2012)
-# Live ebuild.
-=app-misc/sleepyhead-9999
 
 # Robin H. Johnson <robbat2@gentoo.org> (18 Nov 2012)
 # Dead upstream, replaced by gitolite
@@ -625,10 +578,6 @@ dev-vcs/gitosis-gentoo
 # Masked for testing
 app-benchmarks/ltp
 
-# Ulrich Müller <ulm@gentoo.org> (02 Nov 2012)
-# Emacs live ebuilds. Use at your own risk.
-~app-editors/emacs-vcs-24.3.9999
-
 # Alexis Ballier <aballier@gentoo.org> (1 Nov 2012)
 # Still requires ocaml-3, mask it until it is ported. If this does not happen in
 # the near future, we should consider removing it.
@@ -638,10 +587,6 @@ dev-ml/ocamlduce
 # See tracker bug #440342. Will probably require GNOME 3.6 to be
 # unmasked first.
 =dev-libs/libtasn1-3*
-
-# Sébastien Fabbro <bicatali@gentoo.org> (31 Oct 2012)
-# live ebuild
-=sys-fs/redirfs-9999
 
 # Pacho Ramos <pacho@gentoo.org> (25 Oct 2012)
 # obexd changed its API without any warning, it's recommended to ship
@@ -700,10 +645,6 @@ dev-ml/ocamlduce
 # Users of trigger plugin, update asap.
 <app-admin/bcfg2-1.2.2-r1
 
-# Andreas K. Huettel <dilfridge@gentoo.org> (25 Jun 2012)
-# Mask live ebuild
-=net-print/cups-9999
-
 # Ian Stakenvicius <axs@gentoo.org> (19 Jun 2012)
 # Mask new spidermonkeys until rdeps can accept it
 # 1.8.7 will be masked indefinitely and will be removed
@@ -715,9 +656,8 @@ dev-ml/ocamlduce
 >sci-electronics/magic-8
 
 # Markos Chandras <hwoarang@gentoo.org> (27 May 2012)
-# Mask alpha release and live ebuild
+# Mask alpha release
 =sci-electronics/qelectrotech-0.30_alpha*
-=sci-electronics/qelectrotech-9999
 
 # Benda Xu <heroxbd@gentoo.org> (20 May 2012)
 # geant-4.9.5_p01 has a major class declaration change that renders
@@ -783,10 +723,6 @@ www-client/opera-next
 =app-editors/emacs-22*
 <virtual/emacs-23
 
-# Christoph Junghans <ottxor@gentoo.org> (15 Nov 2011)
-# current version of google-talkplugin never clear what you get
-=www-plugins/google-talkplugin-9999
-
 # Diego E. Pettenò <flameeyes@gentoo.org> (30 Oct 2011)
 # Working on more reliable versioning, consider experimental for now.
 #
@@ -815,10 +751,6 @@ games-strategy/savage-bin
 # of 2.3.x to continue to get updates (if any).
 <sys-cluster/torque-2.4
 dev-perl/perl-PBS
-
-# Joerg Bornkessel <hd_brummy@gentoo.org> (17 Sep 2011)
-# media-video/vdr-xvdr-9999, masked git live ebuild
-=media-plugins/vdr-xvdr-9999
 
 # Alexis Ballier <aballier@gentoo.org> (20 Aug 2011)
 # dev-tex/pdftex-1.40.11 is 100% identical to the one in TeX Live 2010;
@@ -905,12 +837,6 @@ net-analyzer/ncrack
 # mask beta release
 =net-analyzer/tcpreplay-3.5*
 
-# Markos Chandras <hwoarang@gentoo.org> (26 Oct 2010)
-# master branch is heavily broken at the moment. Use
-# 2.0.9999 instead if you want a kmess
-# that actually builds
-=net-im/kmess-9999
-
 # Luca Barbato <lu_zero@gentoo.org> (21 Jul 2010)
 # Not ready for public consumption, clashes with current mesa-git
 media-libs/shivavg
@@ -944,10 +870,6 @@ app-crypt/hmaccalc
 # Masking libmapi as it depends on masked samba4
 >=net-libs/libmapi-0.9
 
-# Joerg Bornkessel <hd_brummy@gentoo.org> (02 Dec 2009)
-# cvs ebuild vdr-xineliboutput-9999 masked for lifetime
-=media-plugins/vdr-xineliboutput-9999
-
 # Peter Alfredsen <loki_val@gentoo.org> (21 Oct 2009)
 # Masked because this needs a patch to be applied to portage
 # to not install the kitchensink and everything else
@@ -965,18 +887,43 @@ sys-auth/pam_keystore
 # live ebuilds, nor the availability of the server hosting them. As
 # per QA team policy, all these need to be kept masked by default, if
 # available in the tree.
-~app-i18n/skk-jisyo-9999
-net-misc/netcomics-cvs
-app-portage/layman-dbtools
-sci-astronomy/casa-data
-# rdep on the one above
-sci-astronomy/casacore
-dev-ruby/rcsparse
-# rdep on the one above
-dev-vcs/fromcvs
-sci-biology/picard
-~dev-libs/libg15-9999
 ~app-doc/devmanual-9999
+~app-editors/emacs-vcs-24.3.9999
+~app-i18n/skk-jisyo-9999
+=app-misc/mc-9999
+~app-misc/screenfetch-9999
+=app-misc/sleepyhead-9999
+=app-pda/libsyncml-9999
+=app-pda/libopensync-9999
+=app-pda/osynctool-9999
+=app-pda/libopensync-plugin-evolution2-9999
+=app-pda/libopensync-plugin-file-9999
+=app-pda/libopensync-plugin-gnokii-9999
+=app-pda/libopensync-plugin-gpe-9999
+=app-pda/libopensync-plugin-irmc-9999
+=app-pda/libopensync-plugin-palm-9999
+=app-pda/libopensync-plugin-python-9999
+=app-pda/libopensync-plugin-syncml-9999
+=app-pda/libopensync-plugin-vformat-9999
+app-portage/layman-dbtools
+=dev-embedded/openocd-9999
+~dev-libs/libg15-9999
+=net-print/cups-9999
+# rdep of dev-vcs/fromcvs
+dev-ruby/rcsparse
+dev-vcs/fromcvs
+=net-im/kmess-9999
+net-misc/netcomics-cvs
+=media-plugins/vdr-xineliboutput-9999
+=media-plugins/vdr-xvdr-9999
+# rdep for sci-astronomy/casacore
+sci-astronomy/casa-data
+sci-astronomy/casacore
+sci-biology/picard
+=sci-electronics/qelectrotech-9999
+=sys-fs/redirfs-9999
+=www-plugins/google-talkplugin-9999
+~x11-wm/openbox-9999
 
 # Federico Ferri <mescalinum@gentoo.org> (08 Aug 2009)
 # Doesn't build with Tcl 8.5, has several bugs open
@@ -998,7 +945,6 @@ dev-lisp/gcl
 
 # Tiziano Müller <dev-zero@gentoo.org> (08 Apr 2009)
 # pre-releases
-net-libs/libinfinity
 >=app-editors/gobby-0.4.91
 
 # Paul Varner <fuzzyray@gentoo.org> (06 Apr 2009)
@@ -1056,21 +1002,6 @@ games-fps/doom3-roe
 games-fps/quake4-bin
 games-fps/quake4-data
 games-fps/quake4-demo
-
-# Piotr Jaroszyński <peper@gentoo.org> (26 Nov 2007)
-# opensync live ebuilds
-=app-pda/libsyncml-9999
-=app-pda/libopensync-9999
-=app-pda/osynctool-9999
-=app-pda/libopensync-plugin-evolution2-9999
-=app-pda/libopensync-plugin-file-9999
-=app-pda/libopensync-plugin-gnokii-9999
-=app-pda/libopensync-plugin-gpe-9999
-=app-pda/libopensync-plugin-irmc-9999
-=app-pda/libopensync-plugin-palm-9999
-=app-pda/libopensync-plugin-python-9999
-=app-pda/libopensync-plugin-syncml-9999
-=app-pda/libopensync-plugin-vformat-9999
 
 # MATSUU Takuto <matsuu@gentoo.org> (05 Apr 2007)
 # to be tested, seems unstable

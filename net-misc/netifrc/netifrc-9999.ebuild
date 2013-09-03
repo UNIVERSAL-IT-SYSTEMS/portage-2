@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/netifrc/netifrc-9999.ebuild,v 1.1 2013/08/14 06:37:32 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/netifrc/netifrc-9999.ebuild,v 1.5 2013/08/28 16:15:28 robbat2 Exp $
 
 EAPI=5
 
@@ -10,7 +10,7 @@ DESCRIPTION="Gentoo Network Interface Management Scripts"
 HOMEPAGE="http://www.gentoo.org/proj/en/base/openrc/"
 
 if [[ ${PV} == "9999" ]]; then
-	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/gentoo-oldnet.git"
+	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/${PN}.git"
 	inherit git-2
 else
 	SRC_URI="http://dev.gentoo.org/~williamh/dist/${P}.tar.bz2"
@@ -23,7 +23,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=">=sys-apps/openrc-0.12
-!<sys-apps/openrc-0.12"
+	!<sys-apps/openrc-0.12"
 
 src_prepare() {
 	sed -i 's:0444:0644:' mk/sys.mk || die
@@ -32,6 +32,8 @@ src_prepare() {
 	if [[ ${PV} == "9999" ]] ; then
 		local ver="git-${EGIT_VERSION:0:6}"
 		sed -i "/^GITVER[[:space:]]*=/s:=.*:=${ver}:" mk/git.mk || die
+		einfo "Producing ChangeLog from Git history"
+		GIT_DIR="${S}/.git" git log >"${S}"/ChangeLog
 	fi
 
 	# Allow user patches to be applied without modifying the ebuild
@@ -49,4 +51,14 @@ src_compile() {
 
 src_install() {
 	emake ${MAKE_ARGS} DESTDIR="${D}" install
+	dodoc README CREDITS FEATURE-REMOVAL-SCHEDULE STYLE TODO ChangeLog
+}
+
+pkg_postinst() {
+	if [[ ! -e "${EROOT}"/etc/conf.d/net && -z $REPLACING_VERSIONS ]]; then
+		elog "The network configuration scripts will use dhcp by"
+		elog "default to set up your interfaces."
+		elog "If you need to set up something more complete, see"
+		elog "${EROOT}/usr/share/doc/${P}/README"
+	fi
 }

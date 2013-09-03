@@ -1,6 +1,27 @@
 # ChangeLog for app-shells/zsh
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/zsh/ChangeLog,v 1.216 2013/07/16 19:18:18 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/zsh/ChangeLog,v 1.223 2013/09/03 11:52:24 ago Exp $
+
+  03 Sep 2013; Agostino Sarubbo <ago@gentoo.org> zsh-5.0.2-r3.ebuild:
+  Stable for ia64, wrt bug #482626
+
+  02 Sep 2013; Agostino Sarubbo <ago@gentoo.org> zsh-5.0.2-r3.ebuild:
+  Stable for alpha, wrt bug #482626
+
+  01 Sep 2013; Jeff Horelick <jdhore@gentoo.org> zsh-5.0.2-r3.ebuild:
+  marked x86 per bug 482626
+
+  31 Aug 2013; Agostino Sarubbo <ago@gentoo.org> zsh-5.0.2-r3.ebuild:
+  Stable for arm, wrt bug #482626
+
+  31 Aug 2013; Agostino Sarubbo <ago@gentoo.org> zsh-5.0.2-r3.ebuild:
+  Stable for amd64, wrt bug #482626
+
+  27 Aug 2013; Jeroen Roovers <jer@gentoo.org> zsh-5.0.2-r3.ebuild:
+  Stable for HPPA (bug #482626).
+
+  27 Aug 2013; Tim Harder <radhermit@gentoo.org> metadata.xml:
+  Set myself as the primary maintainer.
 
   16 Jul 2013; Tim Harder <radhermit@gentoo.org> -zsh-4.3.17.ebuild,
   -zsh-5.0.0.ebuild, -zsh-5.0.2-r1.ebuild, -zsh-5.0.2-r2.ebuild,

@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-puzzle/gnome-sudoku/gnome-sudoku-3.8.1.ebuild,v 1.2 2013/08/12 21:12:08 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-puzzle/gnome-sudoku/gnome-sudoku-3.8.1.ebuild,v 1.5 2013/08/31 08:20:33 pinkbyte Exp $
 
 EAPI="5"
 GCONF_DEBUG="no"
@@ -13,7 +13,7 @@ HOMEPAGE="https://wiki.gnome.org/GnomeSudoku"
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm"
 IUSE=""
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -48,4 +48,9 @@ src_configure() {
 	gnome-games_src_configure \
 		--prefix="${EPREFIX}/usr" \
 		--bindir="${GAMES_BINDIR}"
+}
+
+src_install() {
+	python_fix_shebang src
+	gnome-games_src_install
 }

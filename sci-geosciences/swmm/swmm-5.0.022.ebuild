@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/swmm/swmm-5.0.022.ebuild,v 1.3 2013/06/25 12:57:32 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/swmm/swmm-5.0.022.ebuild,v 1.5 2013/09/01 16:58:43 ulm Exp $
 
 EAPI=5
 
@@ -41,8 +41,8 @@ src_prepare() {
 src_compile(){
 	# 'sed' command has to accomodate DOS formatted file.
 	sed -i \
-	    -e 's;^#define DLL;//#define DLL;' \
-	    -e 's;^//#define CLE;#define CLE;' \
+		-e 's;^#define DLL;//#define DLL;' \
+		-e 's;^//#define CLE;#define CLE;' \
 		swmm5.c || die
 	emake
 }

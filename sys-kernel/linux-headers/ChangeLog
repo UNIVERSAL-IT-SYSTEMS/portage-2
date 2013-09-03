@@ -1,6 +1,29 @@
 # ChangeLog for sys-kernel/linux-headers
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-headers/ChangeLog,v 1.388 2013/08/17 01:35:06 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-headers/ChangeLog,v 1.395 2013/09/03 11:55:48 ago Exp $
+
+  03 Sep 2013; Agostino Sarubbo <ago@gentoo.org> linux-headers-3.9.ebuild:
+  Stable for ia64, wrt bug #470648
+
+*linux-headers-3.11 (03 Sep 2013)
+
+  03 Sep 2013; Mike Frysinger <vapier@gentoo.org> +linux-headers-3.11.ebuild:
+  Version bump.
+
+  02 Sep 2013; Rick Farina <zerochaos@gentoo.org> linux-headers-3.9.ebuild:
+  added a blocker to ease transition from alsa-headers to linux-headers
+
+  01 Sep 2013; Agostino Sarubbo <ago@gentoo.org> linux-headers-3.9.ebuild:
+  Stable for alpha, wrt bug #470648
+
+  31 Aug 2013; Agostino Sarubbo <ago@gentoo.org> linux-headers-3.9.ebuild:
+  Stable for arm, wrt bug #470648
+
+  31 Aug 2013; Agostino Sarubbo <ago@gentoo.org> linux-headers-3.9.ebuild:
+  Stable for amd64, wrt bug #470648
+
+  25 Aug 2013; Jeroen Roovers <jer@gentoo.org> linux-headers-3.9.ebuild:
+  Stable for HPPA (bug #470648).
 
   17 Aug 2013; Patrick Lauer <patrick@gentoo.org> linux-headers-3.10.ebuild:
   Fix alsa-headers block

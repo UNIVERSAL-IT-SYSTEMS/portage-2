@@ -1,6 +1,22 @@
 # ChangeLog for x11-drivers/nvidia-drivers
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/ChangeLog,v 1.473 2013/08/06 17:05:27 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/ChangeLog,v 1.477 2013/08/27 16:07:52 jer Exp $
+
+  27 Aug 2013; Jeroen Roovers <jer@gentoo.org> nvidia-drivers-319.49.ebuild:
+  Stable for AMD64 x86 too.
+
+*nvidia-drivers-304.108 (26 Aug 2013)
+
+  26 Aug 2013; Jeroen Roovers <jer@gentoo.org> +nvidia-drivers-304.108.ebuild:
+  Version bump (bug #482460 by Jack).
+
+  23 Aug 2013; Jeroen Roovers <jer@gentoo.org> nvidia-drivers-319.49.ebuild:
+  Raise compatible kernel version by one.
+
+*nvidia-drivers-319.49 (20 Aug 2013)
+
+  20 Aug 2013; Jeroen Roovers <jer@gentoo.org> +nvidia-drivers-319.49.ebuild:
+  Version bump.
 
   06 Aug 2013; Jeroen Roovers <jer@gentoo.org> nvidia-drivers-325.15.ebuild:
   Do not apply nvidia-drivers-pax-const.patch (bug #479944 by Martin Väth).

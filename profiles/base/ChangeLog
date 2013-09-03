@@ -1,6 +1,44 @@
 # ChangeLog for Gentoo base-profile
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/ChangeLog,v 1.585 2013/08/16 15:35:01 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/ChangeLog,v 1.598 2013/09/01 22:41:13 jdhore Exp $
+
+  01 Sep 2013; Jeff Horelick <jdhore@gentoo.org> package.use.mask:
+  mask sid for >=media-plugins/audacious-plugins-3.4
+
+  31 Aug 2013; Julian Ospald <hasufell@gentoo.org> package.use.mask:
+  mask custom-cflags for media-libs/libsdl2 since it's unsupported
+
+  27 Aug 2013; Ulrich Müller <ulm@gentoo.org> packages:
+  Temporarily add sys-apps/openrc to the system set, until bug 373219 is
+  resolved.
+
+  23 Aug 2013; Sven Vermeulen <swift@gentoo.org> package.mask:
+  Removed selinux-tvtime, see bug #479642 (tvtime package was removed earlier
+  on)
+
+  23 Aug 2013; Ole Markus With <olemarkus@gentoo.org> make.defaults:
+  Changing PHP_TARGETS to php5.5, as it has now been stabilised
+
+  23 Aug 2013; Andreas K. Huettel <dilfridge@gentoo.org> make.defaults:
+  Make emerge messages default to English as per Council decision
+
+  23 Aug 2013; Mike Gilbert <floppym@gentoo.org> package.use.mask:
+  Mask >=www-client/chromium-30[system-ffmpeg]
+
+  22 Aug 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  package.use.mask:
+  Mask openvg flag for recent gnash snapshots
+
+  22 Aug 2013; Michael Weber <xmw@gentoo.org> package.use.mask:
+  Expand mask to revisions.
+
+  22 Aug 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  package.use.mask, use.mask:
+  Drop global opencl masks.
+
+  21 Aug 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  package.use.mask:
+  Mask opencl flag for mesa-9.2.0_rc1
 
   16 Aug 2013; Jeroen Roovers <jer@gentoo.org> package.use.mask:
   Fix date.

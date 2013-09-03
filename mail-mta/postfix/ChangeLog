@@ -1,6 +1,18 @@
 # ChangeLog for mail-mta/postfix
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/ChangeLog,v 1.458 2013/08/06 13:13:50 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-mta/postfix/ChangeLog,v 1.460 2013/09/02 05:49:12 eras Exp $
+
+*postfix-2.11_pre20130825 (02 Sep 2013)
+
+  02 Sep 2013; Eray Aslan <eras@gentoo.org> +postfix-2.11_pre20130825.ebuild,
+  -postfix-2.11_pre20130818.ebuild:
+  Version bump
+
+*postfix-2.11_pre20130818 (22 Aug 2013)
+
+  22 Aug 2013; Eray Aslan <eras@gentoo.org> +postfix-2.11_pre20130818.ebuild,
+  -postfix-2.11_pre20130710.ebuild:
+  Version bump
 
   06 Aug 2013; Agostino Sarubbo <ago@gentoo.org> postfix-2.10.1.ebuild:
   Stable for s390, wrt bug #476970

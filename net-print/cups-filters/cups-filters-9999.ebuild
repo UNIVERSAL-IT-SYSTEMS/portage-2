@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups-filters/cups-filters-9999.ebuild,v 1.39 2013/08/14 10:37:28 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups-filters/cups-filters-9999.ebuild,v 1.41 2013/08/27 15:27:57 kensington Exp $
 
 EAPI=5
 
@@ -24,7 +24,7 @@ SLOT="0"
 IUSE="jpeg perl png static-libs tiff zeroconf"
 
 RDEPEND="
-	app-text/ghostscript-gpl
+	>=app-text/ghostscript-gpl-9.09
 	app-text/poppler:=[cxx,jpeg?,lcms,tiff?,xpdf-headers(+)]
 	>=app-text/qpdf-3.0.2:=
 	media-libs/fontconfig
@@ -34,7 +34,7 @@ RDEPEND="
 	!<=net-print/cups-1.5.9999
 	sys-devel/bc
 	sys-libs/zlib
-	jpeg? ( virtual/jpeg )
+	jpeg? ( virtual/jpeg:0 )
 	perl? ( dev-lang/perl )
 	png? ( media-libs/libpng:0= )
 	tiff? ( media-libs/tiff )
@@ -85,8 +85,9 @@ src_install() {
 		popd > /dev/null
 	fi
 
-	# remove duplicate files until they are gone in ghostscript, bug 480942
-	rm -fv "${ED}"/usr/libexec/cups/filter/{gstoraster,gstopxl}
+	# workaround: some printer drivers still require pstoraster and pstopxl, bug #383831
+	dosym /usr/libexec/cups/filter/gstoraster /usr/libexec/cups/filter/pstoraster
+	dosym /usr/libexec/cups/filter/gstopxl /usr/libexec/cups/filter/pstopxl
 
 	prune_libtool_files --all
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-headers/linux-headers-3.9.ebuild,v 1.2 2013/05/14 20:41:21 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-headers/linux-headers-3.9.ebuild,v 1.8 2013/09/03 11:55:48 ago Exp $
 
 EAPI="3"
 
@@ -13,10 +13,15 @@ PATCH_VER="1"
 SRC_URI="mirror://gentoo/gentoo-headers-base-${PV}.tar.xz
 	${PATCH_VER:+mirror://gentoo/gentoo-headers-${PV}-${PATCH_VER}.tar.xz}"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-linux ~arm-linux ~x86-linux"
+KEYWORDS="alpha amd64 arm hppa ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-linux ~arm-linux ~x86-linux"
 
 DEPEND="app-arch/xz-utils
-	dev-lang/perl"
+	dev-lang/perl
+	!media-sound/alsa-headers"
+	#blocker was added to help transition from alsa-headers
+	#providing the files to linux-headers providing the same
+	#files. portage isn't smart enough to remove alsa-headers
+	#if it is already on systems
 RDEPEND=""
 
 S=${WORKDIR}/gentoo-headers-base-${PV}

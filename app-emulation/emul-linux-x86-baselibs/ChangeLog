@@ -1,6 +1,23 @@
 # ChangeLog for app-emulation/emul-linux-x86-baselibs
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/emul-linux-x86-baselibs/ChangeLog,v 1.156 2013/08/16 12:36:26 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/emul-linux-x86-baselibs/ChangeLog,v 1.160 2013/08/24 08:00:08 ssuominen Exp $
+
+  24 Aug 2013; Samuli Suominen <ssuominen@gentoo.org>
+  emul-linux-x86-baselibs-20130224-r13.ebuild:
+  Raise media-libs/tiff dependency to skip non-multilib -r4.
+
+  22 Aug 2013; Michał Górny <mgorny@gentoo.org> metadata.xml:
+  Change maintainer to the multilib project.
+
+  21 Aug 2013; Michał Górny <mgorny@gentoo.org> files/remove-native:
+  Add /usr/lib32/terminfo to the removal list.
+
+*emul-linux-x86-baselibs-20130224-r13 (21 Aug 2013)
+
+  21 Aug 2013; Alexis Ballier <aballier@gentoo.org>
+  -emul-linux-x86-baselibs-20130224-r12.ebuild,
+  +emul-linux-x86-baselibs-20130224-r13.ebuild, files/remove-native:
+  new revision featuring migrated e2fsprogs-libs, ncurses and gpm
 
 *emul-linux-x86-baselibs-20130224-r12 (16 Aug 2013)
 

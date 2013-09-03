@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/fontconfig/fontconfig-2.10.92.ebuild,v 1.4 2013/08/12 17:38:54 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/fontconfig/fontconfig-2.10.92.ebuild,v 1.10 2013/09/02 11:13:54 ago Exp $
 
 EAPI=5
 AUTOTOOLS_AUTORECONF=yes
@@ -13,27 +13,24 @@ SRC_URI="http://fontconfig.org/release/${P}.tar.bz2"
 
 LICENSE="MIT"
 SLOT="1.0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~arm-linux ~amd64-linux ~x86-linux"
+KEYWORDS="alpha ~amd64 arm hppa ia64 ~m68k ~mips ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~amd64-linux ~arm-linux ~x86-linux"
 IUSE="doc static-libs"
 
 # Purposefully dropped the xml USE flag and libxml2 support.  Expat is the
 # default and used by every distro.  See bug #283191.
 
-RDEPEND="
+RDEPEND=">=dev-libs/expat-1.95.3[${MULTILIB_USEDEP}]
 	>=media-libs/freetype-2.2.1[${MULTILIB_USEDEP}]
-	>=dev-libs/expat-1.95.3[${MULTILIB_USEDEP}]
-	abi_x86_32? ( !app-emulation/emul-linux-x86-xlibs[-abi_x86_32(-)] )
-"
+	abi_x86_32? ( !app-emulation/emul-linux-x86-xlibs[-abi_x86_32(-)] )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	doc? (
-		app-text/docbook-sgml-utils[jadetex]
 		=app-text/docbook-sgml-dtd-3.1*
-	)
-"
+		app-text/docbook-sgml-utils[jadetex]
+	)"
 PDEPEND="app-admin/eselect-fontconfig
-	virtual/ttf-fonts
-"
+	virtual/ttf-fonts"
+
 PATCHES=(
 	"${FILESDIR}"/${PN}-2.7.1-latin-reorder.patch	# 130466
 	"${FILESDIR}"/${PN}-2.10.2-docbook.patch	# 310157

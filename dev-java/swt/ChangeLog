@@ -1,6 +1,17 @@
 # ChangeLog for dev-java/swt
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/swt/ChangeLog,v 1.146 2013/05/15 09:02:02 tomwij Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/swt/ChangeLog,v 1.148 2013/08/24 21:53:16 dirtyepic Exp $
+
+  24 Aug 2013; Ryan Hill <dirtyepic@gentoo.org> swt-3.7.2-r1.ebuild,
+  +files/swt-3.7.2-gio_launch-URI-x86.patch:
+  Fix gio_launch patch on 32bit.
+
+*swt-3.7.2-r1 (21 Aug 2013)
+
+  21 Aug 2013; Ryan Hill <dirtyepic@gentoo.org> +swt-3.7.2-r1.ebuild,
+  +files/swt-3.7.2-gio_launch-URI.patch:
+  Add patch for bug #424151 (gio_launch fails when opening by URI, causing
+  unnecessary dependencies on gnome libs).
 
 *swt-4.2-r2 (15 May 2013)
 

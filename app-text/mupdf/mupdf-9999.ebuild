@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/mupdf/mupdf-9999.ebuild,v 1.40 2013/07/22 19:44:33 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/mupdf/mupdf-9999.ebuild,v 1.42 2013/08/28 22:26:18 xmw Exp $
 
 EAPI=5
 
@@ -12,7 +12,7 @@ EGIT_REPO_URI="git://git.ghostscript.com/mupdf.git"
 #EGIT_HAS_SUBMODULES=1
 
 LICENSE="AGPL-3"
-SLOT="0/1.2"
+SLOT="0/1.3"
 KEYWORDS=""
 IUSE="X vanilla static static-libs"
 
@@ -38,21 +38,21 @@ src_prepare() {
 	rm -rf thirdparty || die
 
 	epatch \
-		"${FILESDIR}"/${P}-CFLAGS.patch \
-		"${FILESDIR}"/${P}-openjpeg2.patch \
-		"${FILESDIR}"/${P}-pkg-config.patch \
-		"${FILESDIR}"/${P}-sys_curl.patch
+		"${FILESDIR}"/${PN}-1.3-CFLAGS.patch \
+		"${FILESDIR}"/${PN}-1.3-openjpeg2.patch \
+		"${FILESDIR}"/${PN}-1.3-pkg-config.patch \
+		"${FILESDIR}"/${PN}-1.3-sys_curl.patch
 
 	sed -e "/^libdir=/s:/lib:/$(get_libdir):" \
 		-e "/^prefix=/s:=.*:=${EROOR}/usr:" \
 		-i platform/debian/${PN}.pc || die
 
 	use vanilla || epatch \
-		"${FILESDIR}"/${P}-zoom-2.patch \
-		"${FILESDIR}"/${P}-forward_back.patch
+		"${FILESDIR}"/${PN}-1.3-zoom-2.patch \
+		"${FILESDIR}"/${PN}-1.3-forward_back.patch
 
 	#http://bugs.ghostscript.com/show_bug.cgi?id=693467
-	sed -e '/^Actions=/s:=.*:=View;:' \
+	sed -e '/^\(Actions\|MimeType\)=/s:\(.*\):\1;:' \
 		-i platform/debian/${PN}.desktop || die
 
 	sed -e "\$aOS = Linux" \
@@ -93,32 +93,32 @@ src_prepare() {
 src_compile() {
 	emake XCFLAGS="-fpic"
 	use static-libs && \
-		emake -C "${S}"-static build/debug/libmupdf{,-js-none}.a
+		emake -C "${S}"-static build/debug/lib${PN}{,-js-none}.a
 	use static && \
 		emake -C "${S}"-static XLIBS="-static"
 }
 
 src_install() {
 	if use X ; then
-		domenu platform/debian/mupdf.desktop
-		doicon platform/debian/mupdf.xpm
+		domenu platform/debian/${PN}.desktop
+		doicon platform/debian/${PN}.xpm
 	else
-		rm docs/man/mupdf.1
+		rm docs/man/${PN}.1
 	fi
 
 	emake install
-	dosym ${my_soname} /usr/$(get_libdir)/libmupdf.so
+	dosym ${my_soname} /usr/$(get_libdir)/lib${PN}.so
 
 	use static-libs && \
-		dolib.a "${S}"-static/build/debug/libmupdf{,-js-none}.a
+		dolib.a "${S}"-static/build/debug/lib${PN}{,-js-none}.a
 	if use static ; then
 		dobin "${S}"-static/build/debug/mu{tool,draw}
-		use X && dobin "${S}"-static/build/debug/mupdf-x11
+		use X && dobin "${S}"-static/build/debug/${PN}-x11
 	fi
-	use X && dosym mupdf-x11 /usr/bin/mupdf
+	use X && dosym ${PN}-x11 /usr/bin/${PN}
 
 	insinto /usr/$(get_libdir)/pkgconfig
-	doins platform/debian/mupdf.pc
+	doins platform/debian/${PN}.pc
 
 	dodoc README docs/*.{txt,c}
 }

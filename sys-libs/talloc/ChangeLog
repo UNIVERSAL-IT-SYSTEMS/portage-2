@@ -1,6 +1,25 @@
 # ChangeLog for sys-libs/talloc
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/talloc/ChangeLog,v 1.50 2013/08/07 13:15:16 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/talloc/ChangeLog,v 1.56 2013/09/01 16:05:19 ago Exp $
+
+  01 Sep 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8.ebuild:
+  Stable for alpha, wrt bug #466710
+
+  29 Aug 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8.ebuild:
+  Stable for ia64, wrt bug #466710
+
+  26 Aug 2013; Agostino Sarubbo <ago@gentoo.org> talloc-2.0.8.ebuild:
+  Stable for ppc, wrt bug #466710
+
+  25 Aug 2013; Markus Meier <maekke@gentoo.org> talloc-2.0.8.ebuild,
+  talloc-2.0.8-r1.ebuild:
+  stabilize correct version for bug #478260
+
+  25 Aug 2013; Markus Meier <maekke@gentoo.org> talloc-2.0.8-r1.ebuild:
+  arm stable, bug #478260
+
+  24 Aug 2013; Jeroen Roovers <jer@gentoo.org> talloc-2.0.8.ebuild:
+  Stable for HPPA (bug #466710).
 
   07 Aug 2013; Lars Wendler <polynomial-c@gentoo.org> metadata.xml:
   Removed unused local USE flag description.

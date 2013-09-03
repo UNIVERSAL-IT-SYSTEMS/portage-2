@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libosmocore/libosmocore-0.6.2.ebuild,v 1.1 2013/07/08 20:33:07 chithanh Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/libosmocore/libosmocore-0.6.2.ebuild,v 1.2 2013/08/26 19:50:06 zerochaos Exp $
 
 EAPI="4"
 
@@ -12,7 +12,7 @@ SRC_URI="http://cgit.osmocom.org/cgit/libosmocore/snapshot/${P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="embedded"
 
 RDEPEND=""

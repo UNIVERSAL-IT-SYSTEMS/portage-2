@@ -1,12 +1,12 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/ninja-ide/ninja-ide-2.3.ebuild,v 1.2 2013/08/13 14:19:00 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/ninja-ide/ninja-ide-2.3.ebuild,v 1.4 2013/08/28 11:14:06 ago Exp $
 
 # XXX: tests
 
 EAPI=5
 
-PYTHON_COMPAT=( python2_6 python2_7 python3_1 python3_2 python3_3 )
+PYTHON_COMPAT=( python2_6 python2_7 )
 
 inherit eutils gnome2-utils distutils-r1 vcs-snapshot
 
@@ -16,7 +16,7 @@ SRC_URI="https://github.com/ninja-ide/ninja-ide/tarball/v${PV} -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 RDEPEND="

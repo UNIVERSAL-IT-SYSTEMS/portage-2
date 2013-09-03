@@ -1,6 +1,24 @@
 # ChangeLog for dev-util/gtk-doc-am
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/gtk-doc-am/ChangeLog,v 1.82 2013/06/06 16:58:44 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/gtk-doc-am/ChangeLog,v 1.88 2013/09/03 11:52:58 ago Exp $
+
+  03 Sep 2013; Agostino Sarubbo <ago@gentoo.org> gtk-doc-am-1.19.ebuild:
+  Stable for ia64, wrt bug #482886
+
+  02 Sep 2013; Agostino Sarubbo <ago@gentoo.org> gtk-doc-am-1.19.ebuild:
+  Stable for alpha, wrt bug #482886
+
+  02 Sep 2013; Agostino Sarubbo <ago@gentoo.org> gtk-doc-am-1.19.ebuild:
+  Stable for x86, wrt bug #482886
+
+  31 Aug 2013; Agostino Sarubbo <ago@gentoo.org> gtk-doc-am-1.19.ebuild:
+  Stable for arm, wrt bug #482886
+
+  31 Aug 2013; Agostino Sarubbo <ago@gentoo.org> gtk-doc-am-1.19.ebuild:
+  Stable for amd64, wrt bug #482886
+
+  29 Aug 2013; Jeroen Roovers <jer@gentoo.org> gtk-doc-am-1.19.ebuild:
+  Stable for HPPA (bug #482886).
 
   06 Jun 2013; Pacho Ramos <pacho@gentoo.org> gtk-doc-am-1.19.ebuild:
   Drop keyword due yelp-tools DEPEND on gtk-doc and blocker against older

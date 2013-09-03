@@ -1,6 +1,56 @@
 # ChangeLog for sys-kernel/vanilla-sources
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.1215 2013/08/16 19:48:19 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.1223 2013/09/02 22:43:02 mpagano Exp $
+
+*vanilla-sources-3.11.0 (02 Sep 2013)
+
+  02 Sep 2013; Michael Pagano <mpagano@gentoo.org>
+  +vanilla-sources-3.11.0.ebuild:
+  Linux version 3.11.0
+
+*vanilla-sources-3.10.10 (29 Aug 2013)
+
+  29 Aug 2013; Michael Pagano <mpagano@gentoo.org>
+  -vanilla-sources-3.10.9.ebuild, +vanilla-sources-3.10.10.ebuild:
+  Version bump. Remove old version
+
+*vanilla-sources-3.4.60 (29 Aug 2013)
+*vanilla-sources-3.0.94 (29 Aug 2013)
+
+  29 Aug 2013; Michael Pagano <mpagano@gentoo.org>
+  -vanilla-sources-3.0.93.ebuild, +vanilla-sources-3.0.94.ebuild,
+  -vanilla-sources-3.4.59.ebuild, +vanilla-sources-3.4.60.ebuild:
+  Version bumps. Remove old
+
+*vanilla-sources-3.10.9 (20 Aug 2013)
+
+  20 Aug 2013; Greg Kroah-Hartman <gregkh@gentoo.org>
+  +vanilla-sources-3.10.9.ebuild, -vanilla-sources-3.10.8.ebuild:
+  3.10.9 kernel version bump
+
+*vanilla-sources-3.0.93 (20 Aug 2013)
+
+  20 Aug 2013; Greg Kroah-Hartman <gregkh@gentoo.org>
+  +vanilla-sources-3.0.93.ebuild, -vanilla-sources-3.0.92.ebuild:
+  version bump to 3.0.93
+
+*vanilla-sources-3.10.8 (20 Aug 2013)
+
+  20 Aug 2013; Greg Kroah-Hartman <gregkh@gentoo.org>
+  +vanilla-sources-3.10.8.ebuild, -vanilla-sources-3.10.7.ebuild:
+  version bump for 3.10.8 kernel release
+
+*vanilla-sources-3.4.59 (20 Aug 2013)
+
+  20 Aug 2013; Greg Kroah-Hartman <gregkh@gentoo.org>
+  +vanilla-sources-3.4.59.ebuild, -vanilla-sources-3.4.58.ebuild:
+  version bump for 3.4.59 kernel release
+
+*vanilla-sources-3.0.92 (20 Aug 2013)
+
+  20 Aug 2013; Greg Kroah-Hartman <gregkh@gentoo.org>
+  +vanilla-sources-3.0.92.ebuild, -vanilla-sources-3.0.91.ebuild:
+  version bump 3.0.92 kernel release
 
   16 Aug 2013; Agostino Sarubbo <ago@gentoo.org> -vanilla-sources-3.0.90.ebuild,
   -vanilla-sources-3.10.6.ebuild, -vanilla-sources-3.4.57.ebuild,

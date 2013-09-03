@@ -1,10 +1,131 @@
 # ChangeLog for profile directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.8172 2013/08/19 14:28:00 titanofold Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.8211 2013/09/03 06:00:31 graaff Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  03 Sep 2013; Hans de Graaff <graaff@gentoo.org> base/package.use.force:
+  Force ruby20 on the core ruby packages for ruby 2.0 since too many packages
+  still depend on an unqualified dev-lang/ruby, bug 483254.
+
+  03 Sep 2013; <creffett@gentoo.org> package.mask:
+  Lastrite dev-games/neo{engine,tools} 
+
+  02 Sep 2013; Alexandre Rostovtsev <tetromino@gentoo.org> package.mask:
+  Temporarily mask libsecret-0.16 due to API/ABI change (bug #483414).
+
+  02 Sep 2013; Pacho Ramos <pacho@gentoo.org> arch/alpha/package.use.mask:
+  Mask forgotten stuff (#483314)
+
+  01 Sep 2013; Julian Ospald <hasufell@gentoo.org> license_groups:
+  add Q3AEULA-20000111 to EULA license group
+
+  01 Sep 2013; Pacho Ramos <pacho@gentoo.org> arch/alpha/package.use.mask,
+  arch/mips/package.use.mask:
+  CONFIG_AUDITSYSCALL=y is not implemented, bug #438368
+
+  31 Aug 2013; Tom Wijsman <TomWij@gentoo.org> package.mask:
+  Gentoo sources 3.8.13 masked due to security bug #475618: CVE-2013-1059:
+  Linux Kernel Ceph NULL Pointer Dereference Denial of Service Vulnerability
+
+  31 Aug 2013; Pacho Ramos <pacho@gentoo.org> package.mask:
+  Clean mask entries
+
+  31 Aug 2013; Michał Górny <mgorny@gentoo.org> package.mask:
+  Unmask old xdm version that has been replaced already.
+
+  31 Aug 2013; Ulrich Müller <ulm@gentoo.org> package.mask:
+  Remove mask for app-admin/eselect, there is app-admin/eselect-bashcomp now.
+
+  31 Aug 2013; Markos Chandras <hwoarang@gentoo.org> package.mask:
+  Collect all live ebuild in the same place
+
+  30 Aug 2013; Markos Chandras <hwoarang@gentoo.org> package.mask:
+  Mask screefetch live ebuild
+
+  30 Aug 2013; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Update libsoup mask.
+
+  30 Aug 2013; Markos Chandras <hwoarang@gentoo.org> package.mask:
+  Mask new buildbot/buildbot-slave for testing in production
+
+  29 Aug 2013; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Add libsoup re-split mask.
+
+  29 Aug 2013; Agostino Sarubbo <ago@gentoo.org> package.mask:
+  Mask =dev-db/mariadb-5.1.67 because of the security bug #446240
+
+  28 Aug 2013; Patrick Lauer <patrick@gentoo.org> package.mask:
+  Adding gentoo-bashcomp to bash-completion mask
+
+  27 Aug 2013; Mike Gilbert <floppym@gentoo.org> package.mask:
+  Remove mask on dev-python/chardet-2.1.1.
+
+  27 Aug 2013; Tom Wijsman <TomWij@gentoo.org> package.mask:
+  Clarified what eselect was exactly masked for, expanded 'it'.
+
+  27 Aug 2013; Tom Wijsman <TomWij@gentoo.org> package.mask:
+  Masked =app-admin/eselect-1.3.7 and =apps-shells/bash-completion-2.1-r1 on
+  behalf of Luca Barbato <lu_zero@gentoo.org> for QA problems and regressions,
+  see package.mask entry for details.
+
+  27 Aug 2013; Ian Stakenvicius <axs@gentoo.org> desc/lirc_devices.desc:
+  Add lirc_devices setting 'zotac' for bug 462595.
+
+  27 Aug 2013; Michael Palimaka <kensington@gentoo.org> package.mask:
+  Remove no longer needed mask for net-libs/libinfinity.
+
+  27 Aug 2013; Sergey Popov <pinkbyte@gentoo.org> package.mask:
+  Remove obsolete mask on sys-kernel/openvz-sources
+
+  27 Aug 2013; Sergey Popov <pinkbyte@gentoo.org> package.mask:
+  Add masks for Boost 1.54
+
+  25 Aug 2013; Julian Ospald <hasufell@gentoo.org> package.mask:
+  mask net-p2p/pybitmessage experimental
+
+  25 Aug 2013; Mike Gilbert <floppym@gentoo.org> updates/3Q-2013:
+  slotmove dev-python/pydns 0 2
+
+  24 Aug 2013; Markos Chandras <hwoarang@gentoo.org> package.mask:
+  Mask openbox live ebuild
+
+  24 Aug 2013; Hans de Graaff <graaff@gentoo.org> package.mask:
+  First batch of ruby18-only packages is now removed, remove mask.
+
+  24 Aug 2013; Hans de Graaff <graaff@gentoo.org> package.mask:
+  Masked package dev-ruby/fssm is now removed.
+
+  23 Aug 2013; Mike Gilbert <floppym@gentoo.org> package.mask:
+  Unmask chromium-31 again after masking the system-ffmpeg use flag.
+
+  23 Aug 2013; Mike Gilbert <floppym@gentoo.org> package.mask:
+  Re-mask chromium-30 due to ffmpeg dep.
+
+  23 Aug 2013; Mike Gilbert <floppym@gentoo.org> package.mask:
+  Update the chromium dev channel mask for M31.
+
+  22 Aug 2013; Diego E. Pettenò <flameeyes@gentoo.org> package.mask:
+  Remove freeipmi mask.
+
+  21 Aug 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  package.mask:
+  Drop mask on mesa-9.2, bug #475444.
+
+  21 Aug 2013; Justin Lecher <jlec@gentoo.org> package.mask:
+  Fixed version in PDEPEND of aufs-sources
+
+  21 Aug 2013; Patrick Lauer <patrick@gentoo.org> package.mask:
+  Masking aufs-sources version missing dependencies
+
+  20 Aug 2013; Sébastien Fabbro <bicatali@gentoo.org> updates/3Q-2013:
+  Move sci-libs/scikits_statsmodels to dev-python/statsmodels
+
+  20 Aug 2013; Michael Palimaka <kensington@gentoo.org>
+  +targets/desktop/kde/package.use.force, targets/desktop/kde/use.force:
+  Don't force USE="consolekit" on newer KDE versions wrt bug #468500.
 
   19 Aug 2013; Aaron W. Swenson <titanofold@gentoo.org> package.mask:
   Remove mask for PostGIS 2.1.0.

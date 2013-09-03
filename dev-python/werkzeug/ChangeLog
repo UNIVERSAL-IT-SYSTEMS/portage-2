@@ -1,6 +1,14 @@
 # ChangeLog for dev-python/werkzeug
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/werkzeug/ChangeLog,v 1.43 2013/07/27 09:26:24 djc Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/werkzeug/ChangeLog,v 1.45 2013/08/31 09:44:28 ago Exp $
+
+  31 Aug 2013; Agostino Sarubbo <ago@gentoo.org> werkzeug-0.9.3.ebuild:
+  Stable for amd64, wrt bug #482540
+
+*werkzeug-0.9.4 (26 Aug 2013)
+
+  26 Aug 2013; Dirkjan Ochtman <djc@gentoo.org> +werkzeug-0.9.4.ebuild:
+  Version bump werkzeug to 0.9.4.
 
   27 Jul 2013; Dirkjan Ochtman <djc@gentoo.org> werkzeug-0.9.3.ebuild:
   Update Manifest for Werkzeug-0.9.3.tar.gz (bug 478202).

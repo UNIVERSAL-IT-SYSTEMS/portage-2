@@ -1,10 +1,28 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.502 2013/08/16 15:35:01 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.511 2013/09/01 22:41:13 jdhore Exp $
 
 # This file requires >=portage-2.1.1
 # New entries go on top.
 #
+
+# Jeff Horelick <jdhore@gentoo.org> (1 Sep 2013)
+# Dependency (media-libs/libsidplayfp) only keyworded
+# on x86 and amd64. Will unmask there.
+>=media-plugins/audacious-plugins-3.4 sid
+
+# Julian Ospald <hasufell@gentoo.org> (31 Aug 2013)
+# Randomly breaks consumers at runtime. Do not report
+# gentoo bugs.
+media-libs/libsdl2 custom-cflags
+
+# Mike Gilbert <floppym@gentoo.org> (23 Aug 2013)
+# Requires hard-masked ffmpeg.
+>=www-client/chromium-30 system-ffmpeg
+
+# Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (22 Aug 2013)
+# Causes build to fail, issue is being discussed with upstream
+>=www-plugins/gnash-0.8.10_p20130822 openvg
 
 # Tim Harder <radhermit@gentoo.org> (13 Aug 2013)
 # Requires dev-lang/luajit which is not keyworded by most arches.
@@ -51,7 +69,7 @@ sys-libs/libcxxrt libunwind
 
 # Michael Weber <xmw@gentoo.org>  (19 Jun 2013)
 # Not fit for production
-=www-client/netsurf-3.0 fbcon pdf-writer gstreamer
+=www-client/netsurf-3.0* fbcon pdf-writer gstreamer
 
 # Anthony G. Basile <blueness@gentoo.org> (18 Jun 2013)
 # Only work on amd64/x86
