@@ -2013,7 +2013,6 @@ dev-ruby/barby:png - Add support for writing PNG images using dev-ruby/chunky_pn
 dev-ruby/barby:prawn - Add support for writing PDF documents using dev-ruby/prawn.
 dev-ruby/barby:qrcode - Add support for QRCode 2D codes using dev-ruby/rqrcode.
 dev-ruby/barby:rmagick - Add support for writing images (among others PNG, GIF and JPEG) using dev-ruby/rmagick. Not available on JRuby.
-dev-ruby/camping:mongrel - Also install www-servers/mongrel
 dev-ruby/facter:dmi - Use sys-apps/dmidecode to determine hardware system properties
 dev-ruby/facter:pciutils - Use sys-apps/pciutils to determine hardware system properties
 dev-ruby/rails:asset-pipeline - Also install the default components for the asset pipeline. These are not required but they are activated automatically in new Rails projects by default.
@@ -3574,6 +3573,7 @@ media-sound/squeezeslave:display - Enable a text-based display
 media-sound/squeezeslave:tremor - Use a fixed-point version of the Ogg Vorbis decoder (media-libs/tremor)
 media-sound/squeezeslave:wma - Enable support for streaming Windows Media Audio
 media-sound/squeezeslave:zones - Pairs surround sound speakers into stereo zones (requires 5.1 setup or better)
+media-sound/teamspeak-server-bin:tsdns - Make use of TeamSpeak DNS.
 media-sound/tomahawk:twitter - Enable twitter support
 media-sound/traverso:lv2 - Add support for Ladspa V2
 media-sound/umurmur:polarssl - Use net-libs/polarssl instead of dev-libs/openssl
