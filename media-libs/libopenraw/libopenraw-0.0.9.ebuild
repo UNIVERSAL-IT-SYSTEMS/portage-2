@@ -1,8 +1,10 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libopenraw/libopenraw-0.0.9.ebuild,v 1.13 2012/10/12 02:07:42 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libopenraw/libopenraw-0.0.9.ebuild,v 1.14 2013/09/03 22:16:23 eva Exp $
 
 EAPI=4
+
+inherit gnome2-utils
 
 DESCRIPTION="A decoding library for RAW image formats"
 HOMEPAGE="http://libopenraw.freedesktop.org/wiki/"
@@ -36,4 +38,16 @@ src_configure() {
 src_install() {
 	default
 	find "${ED}"usr -name '*.la' -exec rm -f {} +
+}
+
+pkg_preinst() {
+	gnome2_gdk_pixbuf_savelist
+}
+
+pkg_postinst() {
+	gnome2_gdk_pixbuf_update
+}
+
+pkg_postinst() {
+	gnome2_gdk_pixbuf_update
 }
