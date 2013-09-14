@@ -1,6 +1,44 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.953 2013/09/08 22:54:23 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.963 2013/09/13 15:08:37 mgorny Exp $
+
+  13 Sep 2013; Michał Górny <mgorny@gentoo.org> git-r3.eclass:
+  Fail early on unreachable URLs. If ls-remote fails due to server being
+  unreachable, there is no point in attempting to fetch.
+
+  13 Sep 2013; Michał Górny <mgorny@gentoo.org> git-r3.eclass:
+  Do not leak EGIT_NONSHALLOW over loop iterations. Failing URL may cause
+  non-shallow attempt to be made. When attempting next URL in the list, we
+  should try shallow again.
+
+  13 Sep 2013; Michał Górny <mgorny@gentoo.org> eutils.eclass:
+  Commit the version of einstalldocs() Council agreed upon.
+
+  12 Sep 2013; Michał Górny <mgorny@gentoo.org> python-r1.eclass,
+  python-single-r1.eclass:
+  Depend on SLOT 0 of python-exec, for future compatibility.
+
+  12 Sep 2013; Michał Górny <mgorny@gentoo.org> systemd.eclass:
+  Introduce systemd_install_serviced() to install foo.service.d/00gentoo.conf
+  files.
+
+  11 Sep 2013; Michał Górny <mgorny@gentoo.org> systemd.eclass:
+  Change @USAGE style.
+
+  11 Sep 2013; Michał Górny <mgorny@gentoo.org> systemd.eclass:
+  Deprecate systemd_to_myeconfargs(). It's redundant and unnecessarily
+  confusing.
+
+  11 Sep 2013; Michał Górny <mgorny@gentoo.org> systemd.eclass:
+  Use subshells instead of "local INSDESTTREE" for doins/newins since that
+  confuses people less.
+
+  10 Sep 2013; Michał Górny <mgorny@gentoo.org> multibuild.eclass:
+  Add new enough coreutils dep wrt bug #484454.
+
+  09 Sep 2013; Michał Górny <mgorny@gentoo.org> git-r3.eclass:
+  Introduce smart switching between "git fetch" and "git fetch --depth 1" to
+  save bandwidth.
 
   08 Sep 2013; Michał Górny <mgorny@gentoo.org> git-2.eclass:
   Inherit git-r3 unconditionally to avoid metadata variancy. The eclass is

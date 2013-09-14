@@ -1,6 +1,6 @@
 ####################################################################
 
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15093 2013/09/09 05:12:47 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15105 2013/09/14 13:59:29 tomwij Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,36 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Michał Górny <mgorny@gentoo.org> (13 Sep 2013)
+# Segfaults for me in pam_unix.so. As this makes it impossible to
+# log in, 'su' or anything like that without either downgrading PAM
+# (assuming you have a root shell at hand) or using some kind
+# of recovery tools, I have taken the freedom of masking it while
+# investigating the issue. Bug #484732.
+=sys-libs/pam-1.1.7
+
+# Michał Górny <mgorny@gentoo.org> (13 Sep 2013)
+# Upstream decided to merge the Python 2&3 variants of pyparsing back
+# into a single package. We no longer support the split variants,
+# and therefore the virtual is unnecessary. Please simply depend
+# on dev-python/pyparsing instead. Removal in 30 days.
+# Including a mask on removed py2&3 variants to enforce upgrade.
+dev-python/pyparsing:py2
+dev-python/pyparsing:py3
+virtual/pyparsing
+
+# Michał Górny <mgorny@gentoo.org> (12 Sep 2013)
+# All currently supported Python implementations have built-in json
+# module already. This renders the virtual no longer needed. Please
+# remove your dependencies on it and enjoy json out-of-the-box.
+# Removal in 30 days.
+virtual/python-json
+
+# Andreas K. Hüttel <dilfridge@gentoo.org> (11 Sep 2013)
+# Not needed anymore, same version is provided by stable
+# dev-texlive/texlive-latex already and that should be used
+dev-tex/natbib
 
 # Ian Stakenvicius <axs@gentoo.org> (08 Sep 2013)
 # Collides with emul-linux-x86-sdl, will unmask after
@@ -95,11 +125,6 @@ sys-fs/cdfs
 # Removal in a month.
 =dev-cpp/libxmlpp-1.0*
 
-# Pacho Ramos <pacho@gentoo.org> (07 Sep 2013)
-# Incompatible with latest rar (#483588), abandoned
-# for years. Removal in a month.
-app-arch/xarchiver
-
 # Chris Reffett <creffett@gentoo.org> (03 Sep 2013)
 # Dead upstream, outstanding security bug #260956.
 # Masked for removal in 30 days.
@@ -111,8 +136,16 @@ dev-games/neotools
 >=app-crypt/libsecret-0.16
 
 # Tom Wijsman <TomWij@gentoo.org> (28 Aug 2013)
-# Gentoo sources 3.8.13 masked due to security bug #475618: CVE-2013-1059:
-# Linux Kernel Ceph NULL Pointer Dereference Denial of Service Vulnerability
+# =sys-kernel/gentoo-sources-3.8.13 is masked due to multiple security bugs:
+# 
+# 1. Security Bug #475618: CVE-2013-1059:
+# Linux Kernel: Ceph: NULL Pointer Dereference Denial of Service Vulnerability
+#
+# 2. Security Bug #480200: CVE-2013-4205:
+# Linux Kernel: CLONE_NEWUSER local DoS
+#
+# 3. Security Bug #482896: From CVE-2013-2888 to CVE-2013-2899:
+# Linux Kernel: HID security flaws (Memory writes and leaks, NULL DoS, etc...)
 #
 # This kernel also contains other security bugs due to its old age (May 11).
 #
@@ -128,21 +161,18 @@ dev-games/neotools
 #
 # For proprietary NVIDIA drivers users, we temporarily keep 3.9.11-r1 around
 # as some of them experience problems with the new stable kernel 3.10.7; we aim
-# to mask it in one of the next weeks when the new branch 3.11 is out.
+# to mask it in one of the next weeks when the time is right.
 #
 # References:
 #
 # - http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-1059
 # - https://secunia.com/advisories/54042/
 # - https://bugs.gentoo.org/show_bug.cgi?id=475618
+# - https://bugs.gentoo.org/show_bug.cgi?id=480200
+# - https://bugs.gentoo.org/show_bug.cgi?id=482896
 # - https://bugs.gentoo.org/buglist.cgi?quicksearch=assignee%3Asecurity%20kernel
 #
 =sys-kernel/gentoo-sources-3.8.13
-
-# Markos Chandras <hwoarang@gentoo.org> (30 Aug 2013)
-# Masked for proper testing in production
-=dev-util/buildbot-0.8.8
-=dev-util/buildbot-slave-0.8.8
 
 # Gilles Dartiguelongue <eva@gentoo.org> (30 Aug 2013)
 # libsoup-gnome was split again. Mask the inappropriate
@@ -238,19 +268,6 @@ dev-python/pyme
 # broken; needs a version bump from bug #475552.
 dev-java/itext:5
 
-# Hans de Graaff <graaff@gentoo.org> (14 Aug 2013)
-# Last release in 2009. ruby18-only. Uses deprecated
-# ruby-gnome2 components that have been removed upstream
-# quite some time ago. No maintainer.
-# Also remove the deprecated ruby-gnome2 components.
-# Masked for removal in 30 days.
-app-dicts/fantasdic
-rox-extra/rox-rename
-dev-ruby/ruby-gconf2
-dev-ruby/ruby-gnomecanvas2
-dev-ruby/ruby-libart2
-dev-ruby/ruby-libglade2
-
 # Justin Lecher <jlec@gentoo.org> (11 Aug 2013)
 # Not needed anymore
 # All consumer upstreams moved away from it
@@ -261,14 +278,7 @@ sci-libs/mccp4
 # ree18 is already removed from the tree, and ruby18 will
 # follow soon. These packages don't have dependencies in the
 # tree. Removal in 30 days.
-dev-ruby/cerberus
 dev-ruby/delocalize
-dev-ruby/linecache
-dev-ruby/rubigen
-dev-ruby/ruby-bz2
-dev-ruby/ruby-debug-base
-dev-ruby/ruby-debug
-dev-ruby/zoom
 
 # Ole Markus With <olemarkus@gentoo.org> (10 Aug 2013)
 # About a year since upstream stopped maintaining symfony 1.x.
@@ -367,8 +377,20 @@ net-irc/xchat-otr
 # Sun JDK and JRE contain critical vulnerabilities and receive no further
 # updates; masking to make users aware of this, users that still need this
 # package and have no alternative can unmask at their own risk. See bug #473830.
+#
+# This is continued by Oracle Corproation, which has acquired Sun Microsystems
+# in early 2010; as per http://en.wikipedia.org/wiki/Sun_acquisition_by_Oracle
+#
+# Users are suggested to upgrade to one of the newer Oracle packages like
+# dev-java/oracle-jdk-bin or dev-java/oracle/jre-bin or choose another
+# alternative we provide; eg. the IBM JDK/JRE or the open source IcedTea.
+#
+# Most of these packages provide a jce USE flag for those whom need the
+# Java Cryptographic Extension Unlimited Strength Policy USE flag; whether that
+# works depends from VM to VM, it seems to work for most except for the IBM VMs.
 dev-java/sun-jdk
 dev-java/sun-jre-bin
+dev-java/sun-jce-bin
 
 # Joerg Bornkessel <hd_brummy@gentoo.org> (30 Jun 2013)
 # temp masked for testing, wrt bug 474888
@@ -409,14 +431,6 @@ media-plugins/vdr-channelscan
 # Upstream stalled, improper rendering (#470818),
 # use app-editors/efte instead.
 =app-editors/fte-20110708
-
-# Aaron W. Swenson <titanofold@gentoo.org> (12 Jun 2013)
-# Beta and rc packages are pre-release and not considered production
-# ready. Use at your own risk. Please report any bugs you encounter at
-# bugs.gentoo.org.
->dev-db/postgresql-docs-9.3_beta1
->dev-db/postgresql-base-9.3_beta1
->dev-db/postgresql-server-9.3_beta1
 
 # Mike Gilbert <floppym@gentoo.org (27 May 2013)
 # Masked until reverse dependencies are tested bug 401009.
@@ -915,10 +929,13 @@ sys-auth/pam_keystore
 =app-pda/libopensync-plugin-vformat-9999
 app-portage/layman-dbtools
 =dev-embedded/openocd-9999
+~dev-lang/jimtcl-9999
 ~dev-libs/libg15-9999
 =net-print/cups-9999
 # rdep of dev-vcs/fromcvs
 dev-ruby/rcsparse
+~dev-util/buildbot-9999
+~dev-util/buildbot-slave-9999
 dev-vcs/fromcvs
 =net-im/kmess-9999
 net-misc/netcomics-cvs

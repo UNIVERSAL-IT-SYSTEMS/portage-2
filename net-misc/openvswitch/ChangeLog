@@ -1,6 +1,25 @@
 # ChangeLog for net-misc/openvswitch
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/openvswitch/ChangeLog,v 1.9 2013/08/03 09:45:50 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/openvswitch/ChangeLog,v 1.13 2013/09/14 09:30:50 prometheanfire Exp $
+
+  14 Sep 2013; Matthew Thode <prometheanfire@gentoo.org>
+  openvswitch-1.11.0.ebuild:
+  fixes ovs-1.11.0 build failure
+
+  12 Sep 2013; Matthew Thode <prometheanfire@gentoo.org> metadata.xml:
+  formally adding myself as a maintainer
+
+*openvswitch-1.11.0 (12 Sep 2013)
+
+  12 Sep 2013; Matthew Thode <prometheanfire@gentoo.org>
+  +openvswitch-1.11.0.ebuild:
+  why not add 1.11.0 at the same time
+
+*openvswitch-1.9.0-r1 (12 Sep 2013)
+
+  12 Sep 2013; Matthew Thode <prometheanfire@gentoo.org>
+  +openvswitch-1.9.0-r1.ebuild:
+  fully up to date with distutils-r1 and fixing bug 469500
 
   03 Aug 2013; Michał Górny <mgorny@gentoo.org> openvswitch-1.9.0.ebuild:
   Move dev-python/twisted to dev-python/twisted-core.

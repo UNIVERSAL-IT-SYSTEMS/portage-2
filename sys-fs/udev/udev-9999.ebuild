@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.254 2013/08/16 16:28:40 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-9999.ebuild,v 1.255 2013/09/13 10:51:33 ssuominen Exp $
 
 EAPI=5
 
@@ -125,7 +125,7 @@ pkg_setup() {
 src_prepare() {
 	if ! [[ ${PV} = 9999* ]]; then
 		# secure_getenv() disable for non-glibc systems wrt bug #443030
-		if ! [[ $(grep -r secure_getenv * | wc -l) -eq 19 ]]; then
+		if ! [[ $(grep -r secure_getenv * | wc -l) -eq 20 ]]; then
 			eerror "The line count for secure_getenv() failed, see bug #443030"
 			die
 		fi
@@ -369,6 +369,12 @@ multilib_src_install() {
 		# /lib/systemd because systemd is installed to /usr wrt #462750
 		mv "${D}"/{lib/systemd/systemd-,sbin/}udevd || die
 		rm -r "${D}"/lib/systemd
+
+		if [[ ${PV} = 9999* ]]; then
+			doman man/{udev.7,udevadm.8,systemd-udevd.service.8}
+		else
+			doman "${S}"/man/{udev.7,udevadm.8,systemd-udevd.service.8}
+		fi
 	else
 		local lib_LTLIBRARIES="libudev.la" \
 			pkgconfiglib_DATA="src/libudev/libudev.pc" \
@@ -396,9 +402,6 @@ multilib_src_install_all() {
 	rm -f \
 		"${D}"/lib/udev/rules.d/99-systemd.rules \
 		"${D}"/usr/share/doc/${PF}/LICENSE.*
-
-	# install-man7, install-man8 targets are unreliable wrt #480924
-	doman man/{udev.7,udevadm.8,systemd-udevd.service.8}
 
 	# see src_prepare() for content of these files
 	insinto /lib/udev/rules.d

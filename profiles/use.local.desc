@@ -248,7 +248,6 @@ app-arch/rpm5:xar - Build support for xar archives using app-arch/xar
 app-arch/tar:minimal - just install `tar`
 app-arch/unzip:natspec - Use dev-libs/libnatspec to correctly decode non-ascii file names archived in Windows.
 app-arch/zip:natspec - Use dev-libs/libnatspec to correctly decode non-ascii file names archived in Windows.
-app-backup/amanda:devpay - Support for using Amazon DevPay with S3
 app-backup/amanda:s3 - Support for backing up to the Amazon S3 system
 app-backup/amanda:xfs - Support for backing up raw XFS filesystems using xfsdump
 app-backup/backup-manager:s3 - Support for backing up to the Amazon S3 system
@@ -872,6 +871,7 @@ app-office/calligra:marble - Enable displaying of maps using Marble
 app-office/calligra:okular - Enable bindings for kde-base/okular
 app-office/calligra:opengtl - Enable support for transformation algorithms via media-libs/opengtl
 app-office/calligra:spacenav - Enable support for the 3Dconnexion spacenav input device via dev-libs/libspnav
+app-office/calligra:vc - Enable support for dev-libs/vc, could be a significant speed boost on kria
 app-office/calligra:word-perfect - Enable support for various WordPerfect file formats
 app-office/calligra:xbase - Enable support for xbase compatible database formats
 app-office/calligra:xslt - Enable xslt and exslt support format support
@@ -891,6 +891,7 @@ app-office/libreoffice:jemalloc - Use dev-libs/jemalloc for allocations
 app-office/libreoffice:odk - Build the Office Development Kit
 app-office/libreoffice:telepathy - Enable document colaboration features using telepathy communication framework.
 app-office/libreoffice:vba - Enable support for VBA compatibility and ActiveX embedding
+app-office/libreoffice:vlc - Use media-video/vlc for video embedding
 app-office/libreoffice:webdav - Adds support for HTTP content adding via net-libs/neon
 app-office/libreoffice-l10n:offlinehelp - Install help files locally instead of using the LibreOffice Wiki
 app-office/lyx:aspell - Add support for aspell spellchecking
@@ -1077,6 +1078,7 @@ app-text/zathura-ps:deprecated - Use x11-libs/gtk+:2 instead of x11-libs/gtk+:3
 app-vim/gentoo-syntax:ignore-glep31 - Remove GLEP 31 (UTF-8 file encodings) settings
 app-vim/vim-latex:html - Install HTML documentation
 app-vim/vim-latex:python - Enable python support which can help speed up some functionality
+app-vim/youcompleteme:clang - Enable semantic support for C-family languages using sys-devel/clang
 dev-cpp/glog:gflags - Use dev-cpp/gflags for flag parsing
 dev-cpp/glog:unwind - Use sys-libs/libunwind for stack unwinding instead of glibc/gcc (may be more reliable on x86_64)
 dev-cpp/libcmis:man - Build and install man pages.
@@ -1237,7 +1239,9 @@ dev-games/physfs:qpak - Enable Quake I/II QPAK archive support
 dev-games/physfs:wad - Enable Doom WAD archive support
 dev-games/physfs:zip - Enable ZIP archive support
 dev-haskell/abstract-deque:usecas - Enable the reference implementation to use hardware compare-and-swap.
+dev-haskell/aeson:developer - Operate in developer mode.'
 dev-haskell/cabal-install:noprefs - Ignore 'preferred-versions' file from hackage's tarball.
+dev-haskell/cgi:extensible-exceptions-in-base - Required to be enabled for >=dev-lang/ghc-7.
 dev-haskell/citeproc-hs:bibutils - use Chris Putnam's app-text/bibutils
 dev-haskell/citeproc-hs:embed_data_files - Embed locale files into the library (needed for windows packaging)
 dev-haskell/citeproc-hs:hexpat - use dev-haskell/hexpat instead of dev-haskell/xml for XML parsing
@@ -1246,6 +1250,7 @@ dev-haskell/citeproc-hs:small_base - Choose the new smaller, split-up base packa
 dev-haskell/cmdargs:quotation - Build quote module
 dev-haskell/cmdargs:testprog - Build the test program
 dev-haskell/crypto-api:all_cpolys - Build all the CMAC polynomes up to 10000 bits instead of just the usual ones
+dev-haskell/crypto-pubkey:benchmark - Build benchmarks.
 dev-haskell/cryptohash:cryptoapi - Defines crypto-api instances
 dev-haskell/filestore:maxcount - Make use of a recent (>= 2.3.0) Darcs feature which vastly improves the performance of 'latest'. You should disable this flag if you plan to use gitit with an older version of Darcs, or 'latest' will raise an error.
 dev-haskell/glut:usenativewindowslibraries - When compiling under Windows, use the native libraries instead of e.g. the ones coming with Cygwin.
@@ -1271,13 +1276,22 @@ dev-haskell/monad-control:instancest - If enabled this package will export Monad
 dev-haskell/persistent-sqlite:systemlib - Use the system-wide sqlite library
 dev-haskell/quickcheck:template_haskell - Enable additional test modules requiring Template Haskell support.
 dev-haskell/sendfile:portable - Explicitly enable portable sendfile support (implemented in Haskell)
+dev-haskell/shakespeare:test_export - Test export.
+dev-haskell/shakespeare-js:test_coffee - Test coffee.
+dev-haskell/shakespeare-js:test_export - Test export.
+dev-haskell/shakespeare-js:test_roy - Test roy.
 dev-haskell/skein:big-endian - When manually selecting the endianness, use big-endian (default is little-endian).
-dev-haskell/skein:force-endianness - Use a manually selected endian when compiling (see flag 'big-endian')
+dev-haskell/skein:force-endianness - Use a manually selected endian when compiling (see flag 'big-endian').
+dev-haskell/skein:reference - Use the reference implementation instead of the optimized one.
+dev-haskell/tagsoup:download - Build with Download module.
+dev-haskell/tasty:colors - Enable colorful output
 dev-haskell/texmath:cgi - Build texmath-cgi executable.
 dev-haskell/text:developer - operate in developer mode
 dev-haskell/tls:compat - Accept SSLv2 compatible handshake
 dev-haskell/unix-compat:old-time - build against old-time package
 dev-haskell/void:safe - dissable effective but unsafe coersions
+dev-haskell/wai-app-static:print - print debug info.
+dev-haskell/warp:allow-sendfilefd - Allow use of sendfileFd (not available on GNU/kFreeBSD).
 dev-haskell/x11:screensaver - whether to build XScreenSaver.
 dev-haskell/yaml:system-libyaml - Use system libyaml instead on generic one
 dev-haskell/zip-archive:executable - Build the Zip executable.
@@ -1332,6 +1346,7 @@ dev-java/icedtea:nss - Enable NSS security provider support.
 dev-java/icedtea:pax_kernel - For building when running a PaX enabled kernel.
 dev-java/icedtea:systemtap - Enable SystemTap probes in HotSpot.
 dev-java/icedtea:webstart - Enable Web Start support (via NetX).
+dev-java/icedtea:zero - Enable Zero assembler port (usually for non-HotSpot architectures)
 dev-java/icedtea-web:gtk2 - Use x11-libs/gtk+:2 instead of x11-libs/gtk+:3
 dev-java/icedtea-web:gtk3 - Use x11-libs/gtk+:3 (default)
 dev-java/icedtea-web:javascript - Enable support for using proxy auto config (PAC) files.
@@ -1581,6 +1596,8 @@ dev-libs/libpeas:glade - Install the glade catalog
 dev-libs/libpeas:python - Build support for loading dev-lang/python plugins
 dev-libs/libpeas:seed - Build support for loading JavaScript plugins using dev-libs/seed
 dev-libs/librra:recurrence - Enable recurrence support (EXPERIMENTAL)
+dev-libs/libsodium:asm - Enables assembly implementations
+dev-libs/libsodium:urandom - Use /dev/urandom instead of /dev/random
 dev-libs/libsqlora8:orathreads - Use Oracle threads
 dev-libs/libunique:introspection - Use dev-libs/gobject-introspection for introspection
 dev-libs/libverto:glib - Support event loops using dev-libs/glib
@@ -3462,6 +3479,7 @@ media-sound/mp3splt-gtk:gtk3 - Link against x11-libs/gtk+:3 instead of x11-libs/
 media-sound/mpd:cdio - Use libcdio for ISO9660 parsing support
 media-sound/mpd:cue - Support CUE Sheet Parser Library
 media-sound/mpd:curl - Support for web stream listening
+media-sound/mpd:faad - Use external faad library for AAC decoding
 media-sound/mpd:fifo - Support writing audio to a FIFO
 media-sound/mpd:fluidsynth - Enables Fluidsynth MIDI software synthesis
 media-sound/mpd:gme - Enables support for media-libs/game-music-emu for playing various video game music formats.
@@ -3550,6 +3568,7 @@ media-sound/rhythmbox:clutter - Build the visualizer plugin which uses media-lib
 media-sound/rhythmbox:daap - Build the local network music sharing plugin which uses the DAAP protocol using net-libs/libdmapsharing
 media-sound/rhythmbox:html - Use net-libs/webkit-gtk for detecting and displaying HTML podcast episode descriptions.
 media-sound/rhythmbox:libsecret - Enable libsecret support to store login credentials
+media-sound/rhythmbox:visualizer - Enable support for visualizations using media-plugins/gst-plugins-libvisual
 media-sound/rhythmbox:zeitgeist - Build the plugin to inject events to gnome-extra/zeitgeist
 media-sound/rubyripper:cdrdao - Add support for advanced toc scanning using app-cdr/cdrdao
 media-sound/rubyripper:cli - Build command line interface rubyripper
@@ -6386,6 +6405,8 @@ www-apps/blohg:git - Enable Git support
 www-apps/bugzilla:extras - Optional Perl modules
 www-apps/bugzilla:modperl - Enable www-apache/mod_perl support
 www-apps/cgit:highlight - Enable source code highlighting
+www-apps/drupal:accelerator - Add dependency on a php accelerator
+www-apps/drupal:uploadprogress - Install dev-php/pecl-uploadprogress package
 www-apps/egroupware:gallery - Install gallery2 port for eGW
 www-apps/egroupware:jpgraph - Add dev-php/jpgraph support
 www-apps/gallery:netpbm - Add media-libs/netpbm support
@@ -6414,7 +6435,6 @@ www-apps/viewvc:mod_wsgi - Add www-apache/mod_wsgi support
 www-apps/viewvc:pygments - Add dev-python/pygments support for syntax highlighting
 www-apps/webdavcgi:rcs - Adds support for a revision controlled backend with RCS (dev-vcs/rcs)
 www-client/chromium:bindist - Disable patent-encumbered HTML5 video codecs
-www-client/chromium:system-ffmpeg - Use system ffmpeg instead of bundled ffmpeg.
 www-client/chromium:system-sqlite - Use system sqlite instead of bundled sqlite. This breaks WebSQL on websites, please report compatibility issues to https://bugs.gentoo.org .
 www-client/chromium:tcmalloc - Use bundled tcmalloc instead of system malloc.
 www-client/dwb:gtk3 - Link against x11-libs/gtk+:3 instead of x11-libs/gtk+:2

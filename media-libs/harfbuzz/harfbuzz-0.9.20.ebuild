@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/harfbuzz/harfbuzz-0.9.20.ebuild,v 1.1 2013/09/02 19:28:22 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/harfbuzz/harfbuzz-0.9.20.ebuild,v 1.4 2013/09/13 20:03:19 grobian Exp $
 
 EAPI=5
 
@@ -30,10 +30,14 @@ RDEPEND="
 	truetype? ( media-libs/freetype:2= )
 "
 DEPEND="${RDEPEND}
-	>=dev-libs/gobject-introspection-common-1.32
 	dev-util/gtk-doc-am
-	dev-util/ragel
 	virtual/pkgconfig
+"
+# eautoreconf requires gobject-introspection-common
+# ragel needed if regenerating *.hh files from *.rl
+[[ ${PV} = 9999 ]] && DEPEND="${DEPEND}
+	>=dev-libs/gobject-introspection-common-1.32
+	dev-util/ragel
 "
 
 src_prepare() {
@@ -47,9 +51,14 @@ src_prepare() {
 		sed -i \
 			-e '/libharfbuzz_la_LINK = /s/\<LINK\>/CXXLINK/' \
 			src/Makefile.in || die
+		# can't find how to patch this in .am file
+		sed -i \
+			-e '/AM_V_CCLD/s/\<LINK\>/CXXLINK/' \
+			test/api/Makefile.in || die
 	fi
 
 	[[ ${PV} == 9999 ]] && eautoreconf
+	elibtoolize # for Solaris
 }
 
 src_configure() {

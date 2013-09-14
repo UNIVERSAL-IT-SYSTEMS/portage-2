@@ -1,6 +1,54 @@
 # ChangeLog for net-analyzer/wireshark
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/ChangeLog,v 1.537 2013/09/05 18:58:48 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/ChangeLog,v 1.548 2013/09/14 14:42:24 jer Exp $
+
+  14 Sep 2013; Jeroen Roovers <jer@gentoo.org> -wireshark-1.8.9.ebuild,
+  -wireshark-1.10.1.ebuild, -files/wireshark-1.8.3-gnutls3.patch,
+  -files/wireshark-1.10.1-pod.patch:
+  Old.
+
+  14 Sep 2013; Agostino Sarubbo <ago@gentoo.org> wireshark-1.10.2.ebuild,
+  wireshark-1.8.10.ebuild:
+  Stable for sparc, wrt bug #484582
+
+  14 Sep 2013; Agostino Sarubbo <ago@gentoo.org> wireshark-1.10.2.ebuild,
+  wireshark-1.8.10.ebuild:
+  Stable for alpha, wrt bug #484582
+
+  12 Sep 2013; Jeroen Roovers <jer@gentoo.org> wireshark-1.10.2.ebuild:
+  Stable for HPPA (bug #484582).
+
+  12 Sep 2013; Jeroen Roovers <jer@gentoo.org> wireshark-1.8.10.ebuild:
+  Stable for HPPA (bug #484582).
+
+  11 Sep 2013; Agostino Sarubbo <ago@gentoo.org> wireshark-1.10.2.ebuild,
+  wireshark-1.8.10.ebuild:
+  Stable for ppc64, wrt bug #484582
+
+  11 Sep 2013; Agostino Sarubbo <ago@gentoo.org> wireshark-1.10.2.ebuild,
+  wireshark-1.8.10.ebuild:
+  Stable for ppc, wrt bug #484582
+
+  11 Sep 2013; Agostino Sarubbo <ago@gentoo.org> wireshark-1.10.2.ebuild,
+  wireshark-1.8.10.ebuild:
+  Stable for x86, wrt bug #484582
+
+  11 Sep 2013; Agostino Sarubbo <ago@gentoo.org> wireshark-1.10.2.ebuild,
+  wireshark-1.8.10.ebuild:
+  Stable for amd64, wrt bug #484582
+
+  11 Sep 2013; Jeroen Roovers <jer@gentoo.org> wireshark-1.8.10.ebuild:
+  Remove USE=profile usage.
+
+  11 Sep 2013; Jeroen Roovers <jer@gentoo.org> wireshark-1.8.10.ebuild:
+  Remove USE=profile here too.
+
+*wireshark-1.10.2 (11 Sep 2013)
+*wireshark-1.8.10 (11 Sep 2013)
+
+  11 Sep 2013; Jeroen Roovers <jer@gentoo.org> +wireshark-1.8.10.ebuild,
+  -wireshark-1.10.1-r1.ebuild, +wireshark-1.10.2.ebuild:
+  Version bump (bug #484582).
 
   05 Sep 2013; Michał Górny <mgorny@gentoo.org> wireshark-1.8.9.ebuild:
   Clean up PYTHON_COMPAT from old implementations.

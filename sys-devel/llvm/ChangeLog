@@ -1,6 +1,12 @@
 # ChangeLog for sys-devel/llvm
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/ChangeLog,v 1.135 2013/09/07 13:08:03 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/ChangeLog,v 1.137 2013/09/13 15:10:34 mgorny Exp $
+
+  13 Sep 2013; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Add github LLVM mirror as git backup URL. Requested in bug #484748.
+
+  10 Sep 2013; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
+  Declare EGIT_REPO_URI to make smart-live-rebuild a bit happier.
 
   07 Sep 2013; Michał Górny <mgorny@gentoo.org> llvm-9999.ebuild:
   Use official git mirror for the live ebuild since git-r3 is more space- and

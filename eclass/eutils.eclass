@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/eutils.eclass,v 1.424 2013/06/21 23:57:03 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/eutils.eclass,v 1.426 2013/09/13 11:22:52 mgorny Exp $
 
 # @ECLASS: eutils.eclass
 # @MAINTAINER:
@@ -356,7 +356,7 @@ EPATCH_FORCE="no"
 # epatch is designed to greatly simplify the application of patches.  It can
 # process patch files directly, or directories of patches.  The patches may be
 # compressed (bzip/gzip/etc...) or plain text.  You generally need not specify
-# the -p option as epatch will automatically attempt -p0 to -p5 until things
+# the -p option as epatch will automatically attempt -p0 to -p4 until things
 # apply successfully.
 #
 # If you do not specify any patches/dirs, then epatch will default to the
@@ -1643,6 +1643,30 @@ prune_libtool_files() {
 	if [[ ${queue[@]} ]]; then
 		rm -f "${queue[@]}"
 	fi
+}
+
+einstalldocs() {
+	debug-print-function ${FUNCNAME} "${@}"
+
+	if ! declare -p DOCS &>/dev/null ; then
+		local d
+		for d in README* ChangeLog AUTHORS NEWS TODO CHANGES \
+				THANKS BUGS FAQ CREDITS CHANGELOG ; do
+			[[ -s ${d} ]] && dodoc "${d}"
+		done
+	elif [[ $(declare -p DOCS) == "declare -a"* ]] ; then
+		[[ ${DOCS[@]} ]] && dodoc -r "${DOCS[@]}"
+	else
+		[[ ${DOCS} ]] && dodoc -r ${DOCS}
+	fi
+
+	if [[ $(declare -p HTML_DOCS 2>/dev/null) == "declare -a"* ]] ; then
+		[[ ${HTML_DOCS[@]} ]] && dohtml -r "${HTML_DOCS[@]}"
+	else
+		[[ ${HTML_DOCS} ]] && dohtml -r ${HTML_DOCS}
+	fi
+
+	return 0
 }
 
 check_license() { die "you no longer need this as portage supports ACCEPT_LICENSE itself"; }

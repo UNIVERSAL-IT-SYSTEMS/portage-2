@@ -1,6 +1,42 @@
 # ChangeLog for sys-apps/portage
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/ChangeLog,v 1.1352 2013/09/08 12:47:55 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/ChangeLog,v 1.1358 2013/09/14 10:56:43 ago Exp $
+
+  14 Sep 2013; Agostino Sarubbo <ago@gentoo.org> portage-2.2.1.ebuild:
+  Stable for alpha, wrt bug #478904
+
+  14 Sep 2013; Agostino Sarubbo <ago@gentoo.org> portage-2.2.1.ebuild:
+  Stable for ia64, wrt bug #478904
+
+*portage-2.2.4 (13 Sep 2013)
+
+  13 Sep 2013; Zac Medico <zmedico@gentoo.org> +portage-2.2.4.ebuild,
+  -portage-2.2.3.ebuild:
+  2.2.4 version bump. This fixes a regression in 2.2.2 which caused dohtml -r
+  html/. to create an extra html subdirectory. Bug #484436 tracks all bugs fixed
+  since portage-2.2.1.
+
+  12 Sep 2013; Agostino Sarubbo <ago@gentoo.org> portage-2.2.1.ebuild:
+  Stable for ppc64, wrt bug #478904
+
+*portage-2.2.3 (11 Sep 2013)
+
+  11 Sep 2013; Zac Medico <zmedico@gentoo.org> +portage-2.2.3.ebuild,
+  -portage-2.2.2.ebuild:
+  2.2.3 version bump. This fixes a regression in 2.2.2 which caused dohtml to
+  trigger a sandbox violation when called after docinto. Bug #484436 tracks all
+  bugs fixed since portage-2.2.1.
+
+*portage-2.2.2 (10 Sep 2013)
+
+  10 Sep 2013; Zac Medico <zmedico@gentoo.org> +portage-2.2.2.ebuild:
+  2.2.2 version bump. This fixes bug #358211 (handle os.kill EPERM error with
+  hardened kernel) bug #470992 (fix hang in chown prefix wrapper), bug #476738
+  (eqawarn for case-sensitive unpack), bug #481762 (add keepdir executable), bug
+  #482650 (show file name for package.accept_keywords syntax error message).,
+  bug #483628 (fix emerge --info buffering/formatting for pipe), and bug #484332
+  (fix doins, doexe, and newins to use mktemp). Bug #484436 tracks all bugs
+  fixed since portage-2.2.1.
 
   08 Sep 2013; Agostino Sarubbo <ago@gentoo.org> portage-2.2.1.ebuild:
   Stable for amd64, wrt bug #478904

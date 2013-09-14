@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999-r1.ebuild,v 1.13 2013/08/11 21:34:00 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999-r1.ebuild,v 1.15 2013/09/14 14:28:23 mgorny Exp $
 
 EAPI=5
 
@@ -22,7 +22,7 @@ DESCRIPTION="System and service manager for Linux"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
 SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz"
 
-LICENSE="GPL-2 LGPL-2.1 MIT"
+LICENSE="GPL-2 LGPL-2.1 MIT public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
 IUSE="acl audit cryptsetup doc +firmware-loader gcrypt gudev http introspection
@@ -99,11 +99,14 @@ src_prepare() {
 
 pkg_pretend() {
 	local CONFIG_CHECK="~AUTOFS4_FS ~BLK_DEV_BSG ~CGROUPS ~DEVTMPFS
-		~FANOTIFY ~HOTPLUG ~INOTIFY_USER ~IPV6 ~NET ~PROC_FS ~SIGNALFD
-		~SYSFS ~!IDE ~!SYSFS_DEPRECATED ~!SYSFS_DEPRECATED_V2"
-#		~!FW_LOADER_USER_HELPER"
+		~EPOLL ~FANOTIFY ~FHANDLE ~INOTIFY_USER ~IPV6 ~NET ~PROC_FS
+		~SECCOMP ~SIGNALFD ~SYSFS ~TIMERFD
+		~!IDE ~!SYSFS_DEPRECATED ~!SYSFS_DEPRECATED_V2"
 
+	use acl && CONFIG_CHECK+=" ~TMPFS_POSIX_ACL"
 	use pam && CONFIG_CHECK+=" ~AUDITSYSCALL"
+	kernel_is -lt 3 7 && CONFIG_CHECK+=" ~HOTPLUG"
+	use firmware-loader || CONFIG_CHECK+=" ~!FW_LOADER_USER_HELPER"
 
 	if [[ ${MERGE_TYPE} != binary ]]; then
 		if [[ $(gcc-major-version) -lt 4
@@ -161,7 +164,7 @@ multilib_src_configure() {
 		$(use_enable lzma xz)
 		$(use_enable pam)
 		$(use_enable policykit polkit)
-		$(use_with python)
+		$(use_enable python python-devel)
 		$(use python && echo PYTHON_CONFIG=/usr/bin/python-config-${EPYTHON#python})
 		$(use_enable qrcode qrencode)
 		$(use_enable selinux)
@@ -235,6 +238,12 @@ multilib_src_compile() {
 	fi
 }
 
+multilib_src_test() {
+	multilib_is_native_abi || continue
+
+	default
+}
+
 multilib_src_install() {
 	local mymakeopts=(
 		udevlibexecdir="${MY_UDEVDIR}"
@@ -243,7 +252,7 @@ multilib_src_install() {
 	)
 
 	if multilib_is_native_abi; then
-		emake "${mymakeopts[@]}" -j1 install
+		emake "${mymakeopts[@]}" install
 	else
 		mymakeopts+=(
 			install-libLTLIBRARIES
@@ -261,10 +270,6 @@ multilib_src_install() {
 multilib_src_install_all() {
 	prune_libtool_files --modules
 
-	# zsh completion
-	insinto /usr/share/zsh/site-functions
-	doins shell-completion/zsh/_*
-
 	# we just keep sysvinit tools, so no need for the mans
 	rm "${D}"/usr/share/man/man8/{halt,poweroff,reboot,runlevel,shutdown,telinit}.8 \
 		|| die
@@ -276,20 +281,9 @@ multilib_src_install_all() {
 	# Preserve empty dirs in /etc & /var, bug #437008
 	keepdir /etc/binfmt.d /etc/modules-load.d /etc/tmpfiles.d \
 		/etc/systemd/ntp-units.d /etc/systemd/user /var/lib/systemd
-}
 
-optfeature() {
-	local i desc=${1} text
-	shift
-
-	text="  [\e[1m$(has_version ${1} && echo I || echo ' ')\e[0m] ${1}"
-	shift
-
-	for i; do
-		elog "${text}"
-		text="& [\e[1m$(has_version ${1} && echo I || echo ' ')\e[0m] ${1}"
-	done
-	elog "${text} (${desc})"
+	# Symlink /etc/sysctl.conf for easy migration.
+	dosym ../sysctl.conf /etc/sysctl.d/99-sysctl.conf
 }
 
 pkg_postinst() {
@@ -317,17 +311,18 @@ pkg_postinst() {
 	fcaps cap_dac_override,cap_sys_ptrace=ep usr/bin/systemd-detect-virt
 
 	if [[ ! -L "${ROOT}"/etc/mtab ]]; then
-		ewarn "Upstream suggests that the /etc/mtab file should be a symlink to /proc/mounts."
-		ewarn "It is known to cause users being unable to unmount user mounts. If you don't"
-		ewarn "require that specific feature, please call:"
-		ewarn "	$ ln -sf '${ROOT}proc/self/mounts' '${ROOT}etc/mtab'"
+		ewarn "Upstream mandates the /etc/mtab file should be a symlink to /proc/mounts."
+		ewarn "Not having it is not supported by upstream and will cause tools like 'df'"
+		ewarn "and 'mount' to not work properly. Please run:"
+		ewarn "	# ln -sf '${ROOT}proc/self/mounts' '${ROOT}etc/mtab'"
 		ewarn
 	fi
 
-	elog "To get additional features, a number of optional runtime dependencies may"
-	elog "be installed:"
-	optfeature 'for GTK+ systemadm UI and gnome-ask-password-agent' \
-		'sys-apps/systemd-ui'
+	if ! has_version sys-apps/systemd-ui; then
+		elog "To get additional features, a number of optional runtime dependencies may"
+		elog "be installed:"
+		elog "- sys-apps/systemd-ui: for GTK+ systemadm UI and gnome-ask-password-agent"
+	fi
 }
 
 pkg_prerm() {
