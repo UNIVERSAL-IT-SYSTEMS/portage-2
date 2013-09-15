@@ -1,6 +1,6 @@
 ####################################################################
 
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15107 2013/09/15 05:52:28 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15109 2013/09/15 14:41:14 hd_brummy Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,13 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Joerg Bornkessel <hd_brummy@gentoo.org> (15 Sep 2013)
+# removal on ~15 Oct 2013
+# dead on upstream since ~2006
+# fails on compile >=vdr-2.0
+# Bug #420883 #414177
+media-plugins/vdr-prefermenu
 
 # Michał Górny <mgorny@gentoo.org> (13 Sep 2013)
 # Segfaults for me in pam_unix.so. As this makes it impossible to
@@ -404,12 +411,6 @@ dev-java/sun-jce-bin
 # Mask new ptlib/opal for breakage, tracked in bug #474742
 =net-libs/ptlib-2.12.4
 =net-libs/opal-3.12.4
-
-# Joerg Bornkessel <hd_brummy@gentoo.org> (23 Jun 2013)
-# Mask for removal ~2013/07/23
-# depends on wrt bug 474480 155253 414177
-# use as alternative the console tool media-tv/w_scan
-media-plugins/vdr-channelscan
 
 # Sebastien Fabbro <bicatali@gentoo.org> (18 Jun 2013)
 # Masked for some API incompatibility with previous versions
