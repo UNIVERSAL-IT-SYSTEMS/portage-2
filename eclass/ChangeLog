@@ -1,6 +1,26 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.966 2013/09/16 17:58:15 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.971 2013/09/17 13:33:55 mgorny Exp $
+
+  17 Sep 2013; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass,
+  python-r1.eclass, python-single-r1.eclass, python-utils-r1.eclass:
+  Support python-exec:2.
+
+  17 Sep 2013; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  multilib-build.eclass:
+  Add eclass doc for multilib_build_binaries
+
+  17 Sep 2013; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass,
+  tests/python-utils-r1.sh:
+  Introduce PYTHON_SCRIPTDIR for python-exec:2 script location.
+
+  17 Sep 2013; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass,
+  python-r1.eclass, python-utils-r1.eclass:
+  Clean up Python script install/wrapping functions.
+
+  17 Sep 2013; Thomas Sachau (Tommy[D]) <tommy@gentoo.org>
+  multilib-build.eclass:
+  Add multilib_build_binaries function to multilib-build eclass
 
   16 Sep 2013; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
   Deprecate python_get_PYTHON and python_get_EPYTHON.

@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/distutils-r1.eclass,v 1.77 2013/08/25 21:15:28 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/distutils-r1.eclass,v 1.79 2013/09/17 13:33:55 mgorny Exp $
 
 # @ECLASS: distutils-r1
 # @MAINTAINER:
@@ -409,39 +409,48 @@ distutils-r1_python_test() {
 	:
 }
 
-# @FUNCTION: _distutils-r1_rename_scripts
+# @FUNCTION: _distutils-r1_wrap_scripts
 # @USAGE: <path>
 # @INTERNAL
 # @DESCRIPTION:
-# Renames installed Python scripts to be implementation-suffixed.
-# ${EPYTHON} needs to be set to the implementation name.
-#
-# All executable scripts having shebang referencing ${EPYTHON}
-# in given path will be renamed.
-_distutils-r1_rename_scripts() {
+# Moves and wraps all installed scripts/executables as necessary.
+_distutils-r1_wrap_scripts() {
 	debug-print-function ${FUNCNAME} "${@}"
 
 	local path=${1}
 	[[ ${path} ]] || die "${FUNCNAME}: no path given"
 
+	if ! _python_want_python_exec2; then
+		local PYTHON_SCRIPTDIR=${EPREFIX}/usr/bin
+	fi
+
+	mkdir -p "${path}/usr/bin" || die
 	local f
 	while IFS= read -r -d '' f; do
-		debug-print "${FUNCNAME}: found executable at ${f#${D}/}"
+		local basename=${f##*/}
+		debug-print "${FUNCNAME}: found executable at ${f#${path}/}"
 
 		local shebang
 		read -r shebang < "${f}"
-		if [[ ${shebang} == '#!'*${EPYTHON}* ]]
-		then
+		if [[ ${shebang} == '#!'*${EPYTHON}* ]]; then
 			debug-print "${FUNCNAME}: matching shebang: ${shebang}"
 
-			local newf=${f}-${EPYTHON}
-			debug-print "${FUNCNAME}: renaming to ${newf#${D}/}"
-			mv "${f}" "${newf}" || die
+			if ! _python_want_python_exec2; then
+				local newf=${f%/*}/${basename}-${EPYTHON}
+				debug-print "${FUNCNAME}: renaming to ${newf#${path}}"
+				mv "${f}" "${newf}" || die
+			fi
 
-			debug-print "${FUNCNAME}: installing wrapper at ${f#${D}/}"
-			_python_ln_rel "${path}${EPREFIX}"/usr/bin/python-exec "${f}" || die
+			debug-print "${FUNCNAME}: installing wrapper at /usr/bin/${basename}"
+			_python_ln_rel "${path}${EPREFIX}"$(_python_get_wrapper_path) \
+				"${path}${EPREFIX}/usr/bin/${basename}" || die
+		elif _python_want_python_exec2; then
+			debug-print "${FUNCNAME}: non-matching shebang: ${shebang}"
+
+			debug-print "${FUNCNAME}: moving to /usr/bin/${basename}"
+			mv "${f}" "${path}${EPREFIX}/usr/bin/${basename}" || die
 		fi
-	done < <(find "${path}" -type f -executable -print0)
+	done < <(find "${path}${PYTHON_SCRIPTDIR}" -type f -print0)
 }
 
 # @FUNCTION: distutils-r1_python_install
@@ -474,15 +483,23 @@ distutils-r1_python_install() {
 
 	local root=${D}/_${EPYTHON}
 	[[ ${DISTUTILS_SINGLE_IMPL} ]] && root=${D}
+	flags+=( --root="${root}" )
 
-	esetup.py install "${flags[@]}" --root="${root}" "${@}"
+	if [[ ! ${DISTUTILS_SINGLE_IMPL} ]] && _python_want_python_exec2
+	then
+		local PYTHON_SCRIPTDIR
+		python_export PYTHON_SCRIPTDIR
+		flags+=( --install-scripts="${PYTHON_SCRIPTDIR}" )
+	fi
+
+	esetup.py install "${flags[@]}" "${@}"
 
 	if [[ -d ${root}$(python_get_sitedir)/tests ]]; then
 		die "Package installs 'tests' package, file collisions likely."
 	fi
 
 	if [[ ! ${DISTUTILS_SINGLE_IMPL} ]]; then
-		_distutils-r1_rename_scripts "${root}"
+		_distutils-r1_wrap_scripts "${root}"
 		multibuild_merge_root "${root}" "${D}"
 	fi
 }
