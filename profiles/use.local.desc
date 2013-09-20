@@ -605,6 +605,7 @@ app-forensics/libewf:rawio - Enables raw IO handling
 app-forensics/libewf:uuid - Enable UUID support in the ewftools
 app-forensics/openscap:nss - Prefer NSS over libgcrypt as the crypto engine
 app-forensics/openscap:rpm - Compiles the RPM probes
+app-forensics/openscap:sce - Enables Script Check Engine (SCE) support
 app-forensics/openscap:sql - Build the sql independant probes
 app-forensics/ovaldi:rpm - Enable the RPM probes
 app-forensics/sleuthkit:aff - Enable extra aff formats
@@ -4196,6 +4197,8 @@ net-analyzer/zabbix:proxy - Enable proxy support
 net-analyzer/zabbix:server - Enable zabbix server
 net-analyzer/zabbix:ssh - SSH v2 based checks
 net-analyzer/zabbix:static - Build statically linked binaries
+net-analyzer/zmap:json - Add support to store results JSON based
+net-analyzer/zmap:redis - Add support for storing in a redis DB via dev-libs/hiredis
 net-dialup/accel-ppp:shaper - Support for traffic shaping
 net-dialup/capi4k-utils:fax - Install capi-fax demo programs
 net-dialup/capi4k-utils:pppd - Installs pppdcapiplugin modules
