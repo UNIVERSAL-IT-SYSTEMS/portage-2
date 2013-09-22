@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/grub-9999.ebuild,v 1.104 2013/09/21 17:56:16 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/grub-9999.ebuild,v 1.107 2013/09/21 21:44:55 floppym Exp $
 
 EAPI=5
 
@@ -8,7 +8,7 @@ if [[ ${PV} == 9999 ]]; then
 	AUTOTOOLS_AUTORECONF=1
 fi
 
-inherit autotools-utils bash-completion-r1 eutils flag-o-matic multibuild pax-utils toolchain-funcs versionator
+inherit autotools-utils bash-completion-r1 eutils flag-o-matic mount-boot multibuild pax-utils toolchain-funcs versionator
 
 if [[ ${PV} != 9999 ]]; then
 	if [[ ${PV} == *_alpha* || ${PV} == *_beta* || ${PV} == *_rc* ]]; then
@@ -249,8 +249,23 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "For information on how to configure grub-2 please refer to the guide:"
+	mount-boot_mount_boot_partition
+
+	if [[ -e "${ROOT%/}/boot/grub2/grub.cfg" && ! -e "${ROOT%/}/boot/grub/grub.cfg" ]]; then
+		mkdir -p "${ROOT%/}/boot/grub"
+		ln -s ../grub2/grub.cfg "${ROOT%/}/boot/grub/grub.cfg"
+	fi
+
+	mount-boot_pkg_postinst
+
+	elog "For information on how to configure GRUB2 please refer to the guide:"
 	elog "    http://wiki.gentoo.org/wiki/GRUB2_Quick_Start"
+
+	if has_version 'sys-boot/grub:0'; then
+		elog "A migration guide for GRUB Legacy users is available:"
+		elog "    http://www.gentoo.org/doc/en/grub2-migration.xml"
+	fi
+
 	if [[ -z ${REPLACING_VERSIONS} ]]; then
 		if ! has_version sys-boot/os-prober; then
 			elog "Install sys-boot/os-prober to enable detection of other operating systems using grub2-mkconfig."
