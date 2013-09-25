@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/thunderbird-24.0.ebuild,v 1.1 2013/09/24 00:18:46 anarchy Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/thunderbird/thunderbird-24.0-r1.ebuild,v 1.1 2013/09/25 02:17:37 anarchy Exp $
 
 EAPI="3"
 WANT_AUTOCONF="2.1"
@@ -51,7 +51,7 @@ SRC_URI="${SRC_URI}
 
 ASM_DEPEND=">=dev-lang/yasm-1.1"
 
-RDEPEND="
+RDEPEND="	
 	>=sys-devel/binutils-2.16.1
 	>=dev-libs/nss-3.15.1
 	>=dev-libs/nspr-4.10
@@ -206,6 +206,7 @@ src_configure() {
 	# Use enable features
 	mozconfig_use_enable gstreamer
 	mozconfig_use_enable pulseaudio
+	mozconfig_use_enable system-cairo
 	mozconfig_use_enable system-sqlite
 	mozconfig_use_with system-jpeg
 	mozconfig_use_with system-icu
@@ -213,10 +214,7 @@ src_configure() {
 	mozconfig_use_enable lightning calendar
 	mozconfig_use_enable ldap
 	# Feature is know to cause problems on hardened
-	mozconfig_use_enable jit methodjit
-	mozconfig_use_enable jit tracejit
 	mozconfig_use_enable jit ion
-	mozconfig_use_enable system-cairo
 
 	# Bug #72667
 	if use mozdom; then
@@ -279,7 +277,7 @@ src_install() {
 		>> "${S}/${obj_dir}/mozilla/dist/bin/defaults/pref/all-gentoo.js" || die
 
 	# Pax mark xpcshell for hardened support, only used for startupcache creation.
-		pax-mark m "${S}"/${obj_dir}/mozilla/dist/bin/xpcshell
+	pax-mark m "${S}"/${obj_dir}/mozilla/dist/bin/xpcshell
 
 	MOZ_MAKE_FLAGS="${MAKEOPTS}" \
 	emake DESTDIR="${D}" install || die "emake install failed"
@@ -310,20 +308,15 @@ src_install() {
 	fi
 
 	if use lightning ; then
-		emid="{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}"
+		emid="{3550f703-e582-4d05-9a08-453d09bdfdc6}"
 		dodir ${MOZILLA_FIVE_HOME}/extensions/${emid}
 		cd "${ED}"${MOZILLA_FIVE_HOME}/extensions/${emid}
-		unzip "${S}"/${obj_dir}/mozilla/dist/xpi-stage/gdata-provider.xpi
-
-		emid="calendar-timezones@mozilla.org"
-		dodir ${MOZILLA_FIVE_HOME}/extensions/${emid}
-		cd "${ED}"${MOZILLA_FIVE_HOME}/extensions/${emid}
-		unzip "${S}"/${obj_dir}/mozilla/dist/xpi-stage/calendar-timezones.xpi
+		unzip "${S}"/${obj_dir}/mozilla/dist/xpi-stage/gdata-provider-*.xpi
 
 		emid="{e2fda1a4-762b-4020-b5ad-a41df1933103}"
 		dodir ${MOZILLA_FIVE_HOME}/extensions/${emid}
 		cd "${ED}"${MOZILLA_FIVE_HOME}/extensions/${emid}
-		unzip "${S}"/${obj_dir}/mozilla/dist/xpi-stage/lightning.xpi
+		unzip "${S}"/${obj_dir}/mozilla/dist/xpi-stage/lightning-*.xpi
 
 		# Fix mimetype so it shows up as a calendar application in GNOME 3
 		# This requires that the .desktop file was already installed earlier
@@ -337,9 +330,6 @@ src_install() {
 	# Plugin-container needs to be pax-marked for hardened to ensure plugins such as flash
 	# continue to work as expected.
 	pax-mark m "${ED}"${MOZILLA_FIVE_HOME}/plugin-container
-
-	# Plugins dir
-	share_plugins_dir
 
 	if use minimal; then
 		rm -rf "${ED}"/usr/include "${ED}"${MOZILLA_FIVE_HOME}/{idl,include,lib,sdk} || \
