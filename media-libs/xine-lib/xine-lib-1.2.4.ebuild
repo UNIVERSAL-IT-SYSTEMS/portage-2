@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/xine-lib/xine-lib-1.2.3.ebuild,v 1.4 2013/09/25 08:05:54 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/xine-lib/xine-lib-1.2.4.ebuild,v 1.2 2013/09/25 08:47:58 ssuominen Exp $
 
 EAPI=5
 
@@ -59,7 +59,7 @@ RDEPEND="${NLS_RDEPEND}
 		virtual/opengl
 		)
 	pulseaudio? ( media-sound/pulseaudio )
-	samba? ( <net-fs/samba-4 )
+	samba? ( net-fs/samba )
 	sdl? ( media-libs/libsdl )
 	speex? (
 		media-libs/libogg
@@ -113,8 +113,6 @@ REQUIRED_USE="vidix? ( || ( X fbcon ) )
 	xinerama? ( X )"
 
 src_prepare() {
-	cp "${FILESDIR}"/accel_vaapi.h src/xine-engine/
-
 	sed -i -e '/define VDR_ABS_FIFO_DIR/s|".*"|"/var/vdr/xine"|' src/vdr/input_vdr.c || die
 
 	if [[ ${PV} == *9999* ]]; then
@@ -123,6 +121,11 @@ src_prepare() {
 	else
 		elibtoolize
 	fi
+
+	local x
+	for x in 0 1 2 3; do
+		sed -i -e "/^O${x}_CFLAGS=\"-O${x}\"/d" configure || die
+	done
 }
 
 src_configure() {
