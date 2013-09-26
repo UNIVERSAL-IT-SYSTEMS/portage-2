@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/eapi-5-files/package.use.stable.mask,v 1.24 2013/09/21 17:25:23 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/eapi-5-files/package.use.stable.mask,v 1.26 2013/09/26 15:07:59 floppym Exp $
 
 # This file requires eapi 5 or later. New entries go on top.
 # Please use the same syntax as in package.use.mask
@@ -28,12 +28,6 @@ app-portage/eix clang
 # Samuli Suominen <ssuominen@gentoo.org> (01 Aug 2013)
 # The dependencies for these flags are still in ~arch.
 sys-fs/lvm2 clvm cman
-
-# Agostino Sarubbo <ago@gentoo.org> (24 May 2013)
-# Justin Lecher <jlec@gentoo.org> (30 May 2313)
-# Temporary mask because it needs texinfo-5
-# hvm needs qemu #471122
->=app-emulation/xen-tools-4.2.1-r3 qemu hvm ocaml
 
 # Chris Reffett <creffett@gentoo.org> (23 Nov 2012)
 # CMake's PHP module can't find our install location, so
