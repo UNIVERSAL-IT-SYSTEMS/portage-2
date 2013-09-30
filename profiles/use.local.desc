@@ -2444,6 +2444,11 @@ games-strategy/heroes3:music - Installs optional music data
 games-strategy/heroes3:sounds - Installs optional sound data
 games-strategy/ja2-stracciatella:editor - Adds necessary file to run the editor
 games-strategy/ja2-stracciatella:linguas_ru_gold - Support for russian gold ja2 version
+games-strategy/liquidwar6:doc - Convert the info pages to html
+games-strategy/liquidwar6:gtk - Used to display error/critical messages
+games-strategy/liquidwar6:maps - Install extra maps
+games-strategy/liquidwar6:ogg - Enable mod-ogg via media-libs/sdl-mixer (currently the only sound provider)
+games-strategy/liquidwar6:readline - Enable interactive script shell for hacking
 games-strategy/megaglest:editor - Build map editor
 games-strategy/megaglest:model-viewer - Build model viewer
 games-strategy/megaglest:streflop - Use the library streflop. Out of synchs may occur if not enabled.
@@ -6441,6 +6446,7 @@ www-apps/ikiwiki:extras - Installs additional modules used by ikiwiki plugins
 www-apps/lxr:freetext - Adds support for freetext search using swish-e
 www-apps/nikola:jinja - Add support for dev-python/jinja as alternative templating engine to Mako
 www-apps/nikola:markdown - Add support for Markdown as alternative markup language to reStructuredText
+www-apps/novnc:nova - Installs Openstack Nova for it's libraries
 www-apps/otrs:mod_perl - Provide all dependencies for use of mod_perl instead of cgi
 www-apps/postfixadmin:vacation - Install vacation.pl script and dependencies
 www-apps/redmine:openid - Enable support for OpenID
