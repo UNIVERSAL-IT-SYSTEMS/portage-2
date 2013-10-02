@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-208.ebuild,v 1.1 2013/10/02 09:11:49 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-208-r1.ebuild,v 1.2 2013/10/02 12:52:39 mgorny Exp $
 
 EAPI=5
 
@@ -12,7 +12,7 @@ inherit autotools-utils bash-completion-r1 fcaps linux-info multilib \
 
 DESCRIPTION="System and service manager for Linux"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
-SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz"
+SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz -> ${P}-r1.tar.xz"
 
 LICENSE="GPL-2 LGPL-2.1 MIT public-domain"
 SLOT="0/1"
@@ -111,16 +111,6 @@ pkg_pretend() {
 
 pkg_setup() {
 	use python && python-single-r1_pkg_setup
-}
-
-src_prepare() {
-	local PATCHES=(
-		# missing linking, bug #479038
-		"${FILESDIR}"/${PV}-0001-Work-around-link-libsystemd-label-to-libsystemd-logi.patch
-		"${FILESDIR}"/${PV}-0002-Update-Makefile.in.patch
-	)
-
-	autotools-utils_src_prepare
 }
 
 multilib_src_configure() {
