@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999-r1.ebuild,v 1.18 2013/09/26 19:46:56 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-9999-r1.ebuild,v 1.19 2013/10/02 09:11:49 mgorny Exp $
 
 EAPI=5
 
@@ -23,7 +23,7 @@ HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
 SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz"
 
 LICENSE="GPL-2 LGPL-2.1 MIT public-domain"
-SLOT="0"
+SLOT="0/1"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
 IUSE="acl audit cryptsetup doc +firmware-loader gcrypt gudev http introspection
 	+kmod lzma openrc pam policykit python qrcode selinux tcpd test
