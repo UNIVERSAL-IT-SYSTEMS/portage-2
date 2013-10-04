@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/surf/surf-0.6-r1.ebuild,v 1.2 2013/09/12 15:33:09 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/surf/surf-0.6-r1.ebuild,v 1.5 2013/10/04 14:52:10 jer Exp $
 
 EAPI=5
 inherit eutils savedconfig toolchain-funcs
@@ -12,20 +12,23 @@ SRC_URI="http://dl.suckless.org/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-DEPEND="
+COMMON_DEPEND="
 	dev-libs/glib
 	net-libs/libsoup
 	net-libs/webkit-gtk:2
 	x11-libs/gtk+:2
 	x11-libs/libX11
 "
+DEPEND="
+	${COMMON_DEPEND}
+	virtual/pkgconfig
+"
 RDEPEND="
 	!sci-chemistry/surf
+	${COMMON_DEPEND}
 	x11-apps/xprop
 	x11-misc/dmenu
-	${DEPEND}
 "
 
 pkg_setup() {
@@ -36,31 +39,26 @@ pkg_setup() {
 		elog "installed to support the download function."
 		elog "Without those, downloads will fail (gracefully)."
 		elog "You can fix this by:"
-		elog " 1) Installing these packages, or"
-		elog " 2) Setting USE=savedconfig and changing config.h accordingly."
+		elog "1) Installing these packages, or"
+		elog "2) Setting USE=savedconfig and changing config.h accordingly."
 	fi
 }
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-gentoo.patch
 	epatch_user
-	sed -i \
-		-e 's|{|(|g;s|}|)|g' \
-		-e 's|\t@|\t|g;s|echo|@&|g' \
-		-e 's|^LIBS.*|LIBS = $(GTKLIB) -lgthread-2.0|g' \
-		-e 's|^LDFLAGS.*|LDFLAGS += $(LIBS)|g' \
-		-e 's|^CC.*|CC ?= gcc|g' \
-		-e 's|^CFLAGS.*|CFLAGS += -std=c99 -pedantic -Wall $(INCS) $(CPPFLAGS)|g' \
-		config.mk Makefile || die
 	restore_config config.h
-	tc-export CC
+	tc-export CC PKG_CONFIG
 }
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX="/usr" install
+	default
 	save_config config.h
 }
 
 pkg_postinst() {
-	ewarn "Please correct the permissions of your \$HOME/.surf/ directory"
-	ewarn "and its contents to no longer be world readable (see bug #404983)"
+	if [[ ${REPLACING_VERSIONS} ]] && [[ ${REPLACING_VERSIONS} < 0.4.1-r1 ]]; then
+		ewarn "Please correct the permissions of your \$HOME/.surf/ directory"
+		ewarn "and its contents to no longer be world readable (see bug #404983)"
+	fi
 }
