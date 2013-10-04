@@ -1,9 +1,9 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/connman/connman-1.15.ebuild,v 1.6 2013/09/05 10:46:10 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/connman/connman-1.13.ebuild,v 1.1 2013/04/30 15:38:44 chainsaw Exp $
 
 EAPI="5"
-inherit base systemd
+inherit base
 
 DESCRIPTION="Provides a daemon for managing internet connections"
 HOMEPAGE="http://connman.net"
@@ -11,7 +11,7 @@ SRC_URI="mirror://kernel/linux/network/${PN}/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 arm ppc ppc64 ~x86"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
 IUSE="bluetooth debug doc examples +ethernet ofono openvpn policykit threads tools vpnc +wifi"
 
 RDEPEND=">=dev-libs/glib-2.16
@@ -53,11 +53,10 @@ src_configure() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dobin client/connmanctl || die "client installation failed"
 
-	keepdir /var/lib/${PN}
-	newinitd "${FILESDIR}"/${PN}.initd2 ${PN}
-	newconfd "${FILESDIR}"/${PN}.confd ${PN}
-	systemd_dounit "${FILESDIR}"/connman.service
+	keepdir /var/lib/${PN} || die
+	newinitd "${FILESDIR}"/${PN}.initd2 ${PN} || die
+	newconfd "${FILESDIR}"/${PN}.confd ${PN} || die
 }
