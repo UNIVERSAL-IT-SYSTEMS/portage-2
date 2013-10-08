@@ -1,6 +1,12 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1012 2013/10/07 12:21:14 hd_brummy Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1014 2013/10/08 11:19:48 mgorny Exp $
+
+  08 Oct 2013; Michał Górny <mgorny@gentoo.org> git-2.eclass, git-r3.eclass:
+  Fix git-r3 -> git-2 dependency leak, as noted in bug #487026.
+
+  08 Oct 2013; Michał Górny <mgorny@gentoo.org> autotools-utils.eclass:
+  Remove deprecated autotools-utils_autoreconf.
 
   07 Oct 2013; Joerg Bornkessel <hd_brummy@gentoo.org> vdr-plugin-2.eclass:
   small modification on output from function dev_check

@@ -1,6 +1,18 @@
 # ChangeLog for sys-fs/aufs3
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/aufs3/ChangeLog,v 1.68 2013/09/28 09:20:39 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/aufs3/ChangeLog,v 1.70 2013/10/08 13:24:12 jlec Exp $
+
+  08 Oct 2013; Justin Lecher <jlec@gentoo.org> aufs3-3_p20130506.ebuild,
+  aufs3-3_p20130519.ebuild, aufs3-3_p20130708.ebuild, aufs3-3_p20130722.ebuild,
+  aufs3-3_p20130811.ebuild, aufs3-3_p20130812.ebuild, aufs3-3_p20130821.ebuild,
+  aufs3-3_p20130915.ebuild, aufs3-3_p20130928.ebuild, aufs3-3_p20131007.ebuild:
+  Fix error message to work around the chicken and egg problem, thanks Thomas
+  D. bringing this to my attention.
+
+*aufs3-3_p20131007 (08 Oct 2013)
+
+  08 Oct 2013; Justin Lecher <jlec@gentoo.org> +aufs3-3_p20131007.ebuild:
+  Bump to latest aufs3
 
 *aufs3-3_p20130928 (28 Sep 2013)
 
