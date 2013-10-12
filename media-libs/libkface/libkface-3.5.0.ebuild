@@ -1,8 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/libmediawiki/libmediawiki-3.3.0.ebuild,v 1.2 2013/09/01 02:06:52 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libkface/libkface-3.5.0.ebuild,v 1.1 2013/10/12 16:49:32 dilfridge Exp $
 
-EAPI=4
+EAPI=5
+
+DIGIKAMPN=digikam
 
 KDE_LINGUAS=""
 KDE_MINIMAL="4.10"
@@ -15,7 +17,7 @@ MY_PV=${PV/_/-}
 MY_P="digikam-${MY_PV}"
 SRC_URI="mirror://kde/stable/digikam/${MY_P}.tar.bz2"
 
-DESCRIPTION="KDE C++ interface for MediaWiki based web service as wikipedia.org"
+DESCRIPTION="Qt/C++ wrapper around LibFace to perform face recognition and detection"
 HOMEPAGE="http://www.digikam.org/"
 
 LICENSE="GPL-2"
@@ -23,7 +25,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 SLOT=4
 
-DEPEND=""
+DEPEND=">=media-libs/opencv-2.4.5"
 RDEPEND=${DEPEND}
 
 S=${WORKDIR}/${MY_P}/extra/${PN}
