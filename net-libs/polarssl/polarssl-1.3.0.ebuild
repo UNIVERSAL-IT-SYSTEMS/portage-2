@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/polarssl/polarssl-1.3.0.ebuild,v 1.5 2013/10/09 17:10:55 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/polarssl/polarssl-1.3.0.ebuild,v 1.7 2013/10/13 10:32:20 ago Exp $
 
 EAPI=5
 
@@ -12,7 +12,7 @@ SRC_URI="http://polarssl.org/download/${P}-gpl.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 arm ~hppa ~ppc ppc64 ~s390 sparc ~x86 ~amd64-fbsd ~x86-fbsd"
+KEYWORDS="amd64 arm ~hppa ~ppc ppc64 ~s390 sparc x86 ~amd64-fbsd ~x86-fbsd"
 IUSE="examples havege sse2 static-libs zlib"
 
 RDEPEND="zlib? ( sys-libs/zlib )"
@@ -47,10 +47,10 @@ src_compile() {
 
 src_test() {
 	cd programs || die
-	emake test/selftest || die "emake selftest failed"
+	emake test/selftest $(usex zlib "ZLIB=1" "") || die "emake selftest failed"
 	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:../library" ./test/selftest || die "selftest failed"
 	cd "${S}" || die
-	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:../library" emake check
+	LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:../library" emake check $(usex zlib "ZLIB=1" "")
 }
 
 src_install() {
