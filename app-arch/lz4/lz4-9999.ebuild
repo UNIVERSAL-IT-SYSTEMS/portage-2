@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-arch/lz4/lz4-9999.ebuild,v 1.7 2013/10/13 11:33:59 ryao Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-arch/lz4/lz4-9999.ebuild,v 1.8 2013/10/13 12:13:49 ryao Exp $
 
 EAPI=5
 
@@ -28,7 +28,12 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	[ ${PV} == "9999" ] && subversion_src_prepare
+	if [ ${PV} == "9999" ]
+	then
+		subversion_src_prepare
+	else
+		epatch "${FILESDIR}/${P}-install-to-bindir.patch"
+	fi
 	cmake-utils_src_prepare
 }
 
@@ -40,7 +45,7 @@ src_configure() {
 src_install() {
 	dodir /usr
 	dodir "/usr/$(get_libdir)"
-	ln -s "${ED}/usr/$(get_libdir)" "${ED}usr/lib" || \
+	ln -s "$(get_libdir)" "${ED}usr/lib" || \
 		die "Cannot create temporary symlink from usr/lib to usr/$(get_libdir)"
 
 	cmake-utils_src_install
@@ -49,8 +54,8 @@ src_install() {
 
 	if [ -f "${ED}usr/bin/lz4c64" ]
 	then
-		dosym /usr/bin/{lz4c64,lz4c}
+		dosym lz4c64 /usr/bin/lz4c
 	else
-		dosym /usr/bin/{lz4c32,lz4c}
+		dosym lz4c32 /usr/bin/lz4c
 	fi
 }
