@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ruby-1.9.3_p429.ebuild,v 1.13 2013/06/09 15:59:04 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ruby-2.0.0_p247-r2.ebuild,v 1.1 2013/10/14 18:38:57 graaff Exp $
 
-EAPI=4
+EAPI=5
 
 #PATCHSET=1
 
@@ -15,8 +15,7 @@ S=${WORKDIR}/${MY_P}
 
 SLOT=$(get_version_component_range 1-2)
 MY_SUFFIX=$(delete_version_separator 1 ${SLOT})
-# 1.9.3 still uses 1.9.1
-RUBYVERSION=1.9.1
+RUBYVERSION=2.0.0
 
 if [[ -n ${PATCHSET} ]]; then
 	if [[ ${PVR} == ${PV} ]]; then
@@ -30,15 +29,12 @@ fi
 
 DESCRIPTION="An object-oriented scripting language"
 HOMEPAGE="http://www.ruby-lang.org/"
-SRC_URI="mirror://ruby/1.9/${MY_P}.tar.bz2
+SRC_URI="mirror://ruby/2.0/${MY_P}.tar.bz2
 		 http://dev.gentoo.org/~flameeyes/ruby-team/${PN}-patches-${PATCHSET}.tar.bz2"
 
 LICENSE="|| ( Ruby-BSD BSD-2 )"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~x86-fbsd"
-IUSE="berkdb debug doc examples gdbm ipv6 +rdoc rubytests socks5 ssl tk xemacs ncurses +readline +yaml" #libedit
-
-# libedit support is removed everywhere because of this upstream bug:
-# http://redmine.ruby-lang.org/issues/show/3698
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
+IUSE="berkdb debug doc examples gdbm ipv6 +rdoc rubytests socks5 ssl tk xemacs ncurses +readline"
 
 RDEPEND="
 	berkdb? ( sys-libs/db )
@@ -48,30 +44,32 @@ RDEPEND="
 	tk? ( dev-lang/tk[threads] )
 	ncurses? ( sys-libs/ncurses )
 	readline?  ( sys-libs/readline )
-	yaml? ( dev-libs/libyaml )
+	dev-libs/libyaml
 	virtual/libffi
 	sys-libs/zlib
 	>=app-admin/eselect-ruby-20100402
 	!<dev-ruby/rdoc-3.9.4
 	!<dev-ruby/rubygems-1.8.10-r1"
-#	libedit? ( dev-libs/libedit )
-#	!libedit? ( readline? ( sys-libs/readline ) )
 
 DEPEND="${RDEPEND}"
 PDEPEND="
-	>=dev-ruby/rubygems-1.8.10-r1[ruby_targets_ruby19]
-	rdoc? ( >=dev-ruby/rdoc-3.9.4[ruby_targets_ruby19] )
+	>=dev-ruby/rubygems-2.0.2[ruby_targets_ruby20]
+	>=dev-ruby/json-1.7.7[ruby_targets_ruby20]
+	>=dev-ruby/rake-0.9.6[ruby_targets_ruby20]
+	rdoc? ( >=dev-ruby/rdoc-4.0.0[ruby_targets_ruby20] )
 	xemacs? ( app-xemacs/ruby-modes )"
 
 src_prepare() {
 	EPATCH_FORCE="yes" EPATCH_SUFFIX="patch" \
 		epatch "${WORKDIR}/patches"
 
+	# We can no longer unbundle all of rake because rubygems now depends
+	# on this. We leave the actual rake code around to bootstrap
+	# rubygems, but remove the bits that would cause a file collision.
 	einfo "Unbundling gems..."
 	cd "$S"
 	rm -r \
 		{bin,lib}/rake lib/rake.rb man/rake.1 \
-		ext/json \
 		bin/gem || die "removal failed"
 
 	# Fix a hardcoded lib path in configure script
@@ -119,11 +117,13 @@ src_configure() {
 #	fi
 	myconf="${myconf} $(use_with readline)"
 
-	econf \
+	INSTALL="${EPREFIX}/usr/bin/install -c" econf \
 		--program-suffix=${MY_SUFFIX} \
 		--with-soname=ruby${MY_SUFFIX} \
 		--enable-shared \
 		--enable-pthread \
+		--enable-psych \
+		--disable-rpath \
 		$(use_enable socks5 socks) \
 		$(use_enable doc install-doc) \
 		--enable-ipv6 \
@@ -133,7 +133,6 @@ src_configure() {
 		$(use_with ssl openssl) \
 		$(use_with tk) \
 		$(use_with ncurses curses) \
-		$(use_with yaml psych) \
 		${myconf} \
 		--enable-option-checking=no \
 		|| die "econf failed"
@@ -162,6 +161,11 @@ src_test() {
 }
 
 src_install() {
+	# Remove the remaining bundled gems. We do this late in the process
+	# since they are used during the build to e.g. create the
+	# documentation.
+	rm -rf ext/json || die
+
 	# Ruby is involved in the install process, we don't want interference here.
 	unset RUBYOPT
 
@@ -190,7 +194,12 @@ src_install() {
 		doins -r sample
 	fi
 
-	dodoc ChangeLog NEWS doc/NEWS* README* ToDo || die
+	dosym "libruby${MY_SUFFIX}$(get_libname ${PV%_*})" \
+		"/usr/$(get_libdir)/libruby$(get_libname ${PV%.*})"
+	dosym "libruby${MY_SUFFIX}$(get_libname ${PV%_*})" \
+		"/usr/$(get_libdir)/libruby$(get_libname ${PV%_*})"
+
+	dodoc ChangeLog NEWS doc/NEWS* README* || die
 
 	if use rubytests; then
 		pushd test
