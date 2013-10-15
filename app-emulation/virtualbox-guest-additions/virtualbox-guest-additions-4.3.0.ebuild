@@ -1,13 +1,13 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-guest-additions/virtualbox-guest-additions-4.2.16.ebuild,v 1.1 2013/07/08 14:52:10 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/virtualbox-guest-additions/virtualbox-guest-additions-4.3.0.ebuild,v 1.2 2013/10/15 14:19:58 polynomial-c Exp $
 
 EAPI=5
 
 inherit eutils linux-mod systemd user
 
 MY_PV="${PV/beta/BETA}"
-MY_PV="${PV/rc/RC}"
+MY_PV="${MY_PV/rc/RC}"
 MY_P=VirtualBox-${MY_PV}
 DESCRIPTION="VirtualBox kernel modules and user-space tools for Gentoo guests"
 HOMEPAGE="http://www.virtualbox.org/"
@@ -102,7 +102,8 @@ src_compile() {
 		/src/VBox/Additions/linux/{sharedfolders,daemon} ; do
 				cd "${S}"${each}
 				MAKE="kmk" emake TOOL_YASM_AS=yasm \
-				KBUILD_PATH="${S}/kBuild"
+				KBUILD_PATH="${S}/kBuild" \
+				KBUILD_VERBOSE=2
 		done
 
 		if use X; then
