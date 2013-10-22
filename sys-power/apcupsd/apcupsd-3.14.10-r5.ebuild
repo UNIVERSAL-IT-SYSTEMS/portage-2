@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/apcupsd/apcupsd-3.14.10-r3.ebuild,v 1.1 2013/10/15 09:50:20 mattm Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/apcupsd/apcupsd-3.14.10-r5.ebuild,v 1.1 2013/10/21 22:01:49 mattm Exp $
 
 EAPI=4
 
@@ -16,9 +16,12 @@ KEYWORDS=""
 IUSE="snmp +usb cgi nls gnome kernel_linux systemd"
 
 DEPEND="
+	||	( >=sys-apps/util-linux-2.23[tty-helpers(-)]
+		  <=sys-apps/sysvinit-2.88-r4
+		)
 	cgi? ( >=media-libs/gd-1.8.4 )
 	nls? ( sys-devel/gettext )
-	snmp? ( net-analyzer/net-snmp )
+	snmp? ( >=net-analyzer/net-snmp-5.7.2 )
 	gnome? ( >=x11-libs/gtk+-2.4.0:2
 		dev-libs/glib:2
 		>=gnome-base/gconf-2.0 )"
@@ -38,6 +41,9 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-3.14.9-aliasing.patch"
+	if use snmp; then
+		epatch "${FILESDIR}/${PN}-snmp-5.7.2.patch"
+	fi
 }
 
 src_configure() {
