@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/ecdsa/ecdsa-0.9.ebuild,v 1.1 2013/10/02 11:16:59 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/ecdsa/ecdsa-0.9.ebuild,v 1.2 2013/10/24 13:35:38 blueness Exp $
 
 EAPI=5
 
@@ -16,12 +16,4 @@ SRC_URI="https://github.com/warner/python-${PN}/tarball/python-${P} -> ${P}.tar.
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
-
-DEPEND="test? ( dev-libs/openssl:0 )"
-
-python_test() {
-	cd "${TMPDIR}" || die
-	"${PYTHON}" "${BUILD_DIR}"/lib/${PN}/test_pyecdsa.py \
-		|| die "Tests fail with ${EPYTHON}"
-}
+IUSE=""
