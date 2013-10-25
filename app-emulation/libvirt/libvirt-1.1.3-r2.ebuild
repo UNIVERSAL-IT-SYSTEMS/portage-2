@@ -1,10 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-1.1.3.ebuild,v 1.3 2013/10/13 10:32:11 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/libvirt/libvirt-1.1.3-r2.ebuild,v 1.1 2013/10/25 20:06:42 cardoe Exp $
 
 EAPI=5
 
-BACKPORTS=e3fb8465
+BACKPORTS=062ad8b2
 AUTOTOOLIZE=yes
 
 MY_P="${P/_rc/-rc}"
@@ -24,7 +24,7 @@ else
 		ftp://libvirt.org/libvirt/${MY_P}.tar.gz
 		${BACKPORTS:+
 			http://dev.gentoo.org/~cardoe/distfiles/${MY_P}-${BACKPORTS}.tar.xz}"
-	KEYWORDS="amd64 x86"
+	KEYWORDS="~amd64 ~x86"
 fi
 S="${WORKDIR}/${P%_rc*}"
 
@@ -221,7 +221,7 @@ src_prepare() {
 	local iscsi_init=
 	local rbd_init=
 	local firewalld_init=
-	cp "${FILESDIR}/libvirtd.init-r12" "${S}/libvirtd.init"
+	cp "${FILESDIR}/libvirtd.init-r13" "${S}/libvirtd.init"
 	use avahi && avahi_init='avahi-daemon'
 	use iscsi && iscsi_init='iscsid'
 	use rbd && rbd_init='ceph'
@@ -371,6 +371,7 @@ src_install() {
 
 	newinitd "${S}/libvirtd.init" libvirtd || die
 	newconfd "${FILESDIR}/libvirtd.confd-r4" libvirtd || die
+	newinitd "${FILESDIR}/virtlockd.init" virtlockd || die
 
 	keepdir /var/lib/libvirt/images
 
