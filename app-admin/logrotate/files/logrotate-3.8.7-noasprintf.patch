@@ -1,7 +1,7 @@
-diff -Nur a/config.c b/config.c
---- a/config.c	2013-06-10 14:02:36.000000000 +0200
-+++ b/config.c	2013-06-18 18:39:26.799999700 +0200
-@@ -45,39 +45,6 @@
+diff -Nuar a/config.c b/config.c
+--- a/config.c	2013-10-26 18:07:19.179999410 +0200
++++ b/config.c	2013-10-26 18:12:21.599999402 +0200
+@@ -49,39 +49,6 @@
  #include "asprintf.c"
  #endif
  
@@ -41,9 +41,9 @@ diff -Nur a/config.c b/config.c
  #if !defined(strndup)
  char *strndup(const char *s, size_t n)
  {
-diff -Nur a/logrotate.h b/logrotate.h
---- a/logrotate.h	2013-06-10 14:02:36.000000000 +0200
-+++ b/logrotate.h	2013-06-18 18:39:38.149999700 +0200
+diff -Nuar a/logrotate.h b/logrotate.h
+--- a/logrotate.h	2013-06-10 13:29:16.000000000 +0200
++++ b/logrotate.h	2013-10-26 18:12:37.429999402 +0200
 @@ -67,8 +67,5 @@
  extern int debug;
  
