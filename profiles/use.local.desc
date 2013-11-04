@@ -601,6 +601,7 @@ app-emulation/xen-tools:api - Build the C libxenapi bindings
 app-emulation/xen-tools:flask - Enable the Flask XSM module from NSA
 app-emulation/xen-tools:hvm - Enable support for hardware based virtualization (VT-x,AMD-v)
 app-emulation/xen-tools:ocaml - Enable support for the ocaml language
+app-emulation/xen-tools:pam - Enable pam support
 app-emulation/xen-tools:pygrub - Install the pygrub boot loader
 app-emulation/xen-tools:qemu - Enable IOEMU support via the use of qemu-dm
 app-emulation/xen-tools:screen - Enable support for running domain U console in an app-misc/screen session
@@ -2172,6 +2173,7 @@ dev-util/intel-ocl-sdk:tools - Install Intel Offline Compiler
 dev-util/kdevelop:cmake - Enable support for CMake build system
 dev-util/kdevelop:okteta - Enable hex editor plugin
 dev-util/kdevelop:qthelp - Enable support for QtHelp documentation browsing
+dev-util/kdevelop:reviewboard - Enable reviewboard support
 dev-util/kdevplatform:reviewboard - Enable reviewboard support
 dev-util/ltrace:unwind - Use sys-libs/libunwind for frame unwinding support
 dev-util/meld:highlight - Enable source code highlighting via dev-python/pygtksourceview
@@ -6674,7 +6676,7 @@ www-servers/pshs:netlink - Use libnetlink (sys-apps/iproute2) to get network int
 www-servers/resin:admin - Enable Resin admin webapp
 www-servers/tomcat:extra-webapps - Build also the docs and examples webapp
 www-servers/uwsgi:carbon - Enable support for sending statistics to a carbon server (see http://projects.unbit.it/uwsgi/wiki/Carbon).
-www-servers/uwsgi:erlang - Let the uWSGI server as as an Erlang C-Node and exchange messages and rpc with Erlang nodes. Together with the USE=python this enables erlang support in python (see the mappings table in http://projects.unbit.it/uwsgi/wiki/ErlangIntegration).
+www-servers/uwsgi:erlang - Let the uWSGI server act as an Erlang C-Node and exchange messages and rpc with Erlang nodes. Together with the USE=python this enables erlang support in python (see the mappings table in http://projects.unbit.it/uwsgi/wiki/ErlangIntegration).
 www-servers/uwsgi:gevent - Use dev-python/gevent for async request dispatching and as LoopEngine (see http://projects.unbit.it/uwsgi/wiki/Gevent).
 www-servers/uwsgi:graylog2 - Enable logging to graylog2 (see http://graylog2.org/).
 www-servers/uwsgi:json - Support json as a configuration file format.
