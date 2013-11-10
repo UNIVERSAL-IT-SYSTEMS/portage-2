@@ -836,10 +836,8 @@ app-misc/tablix:pvm - Add support for parallel virtual machine (sys-cluster/pvm)
 app-misc/tasque:hiveminder - Allows you to use http://www.hiveminder.com/ as your storage backend.
 app-misc/tasque:rememberthemilk - Allows you to use http://www.rememberthemilk.com/ as your storage backend.
 app-misc/towitoko:moneyplex - Makes libtowitoko work for the moneyplex home banking software
-app-misc/tracker:applet - Build tracker monitor applet
 app-misc/tracker:cue - Enable cue sheet parsing
 app-misc/tracker:firefox-bookmarks - Install bookmark data miner plugin for www-client/firefox and www-client/firefox-bin
-app-misc/tracker:flickr - Build flickr data miner
 app-misc/tracker:gsf - Enable gnome-extra/libgsf based data extractor and for ODT.
 app-misc/tracker:iptc - Enable extraction of IPTC data from pictures
 app-misc/tracker:iso - Enable extraction of metadata from ISO disk images
@@ -2066,6 +2064,7 @@ dev-ruby/barby:qrcode - Add support for QRCode 2D codes using dev-ruby/rqrcode.
 dev-ruby/barby:rmagick - Add support for writing images (among others PNG, GIF and JPEG) using dev-ruby/rmagick. Not available on JRuby.
 dev-ruby/facter:dmi - Use sys-apps/dmidecode to determine hardware system properties
 dev-ruby/facter:pciutils - Use sys-apps/pciutils to determine hardware system properties
+dev-ruby/maruku:highlight - Enable source code highlighting via dev-ruby/syntax
 dev-ruby/rails:asset-pipeline - Also install the default components for the asset pipeline. These are not required but they are activated automatically in new Rails projects by default.
 dev-ruby/ruby-sdl:image - Enable media-libs/sdl-image support
 dev-ruby/ruby-sdl:mixer - Enable media-libs/sdl-mixer support
@@ -4786,7 +4785,6 @@ net-libs/gnutls:bindist - Disallow building LZO support, because of a license in
 net-libs/gnutls:dane - Build libgnutls-dane, implementing DNS-based Authentication of Named Entities. Requires net-dns/unbound.
 net-libs/gnutls:nettle - Use dev-libs/nettle as crypto backend
 net-libs/gnutls:pkcs11 - Add support for PKCS#11 through app-crypt/p11-kit
-net-libs/gssdp:introspection - Use dev-libs/gobject-introspection for introspection
 net-libs/gtk-vnc:gtk3 - Build the gtk3 gtk-vnc library and other gtk3 assets
 net-libs/gtk-vnc:introspection - Use dev-libs/gobject-introspection for introspection
 net-libs/gtk-vnc:vala - Enable bindings for dev-lang/vala
@@ -6745,7 +6743,6 @@ x11-libs/cairo:xlib-xcb - Use XCB renderer backend for acceleration over xlib
 x11-libs/colord-gtk:vala - Generate bindings for dev-lang/vala
 x11-libs/fltk:games - Builds and installs some extra games
 x11-libs/glamor:gles - Build glamor based on gles2
-x11-libs/goocanvas:introspection - Use dev-libs/gobject-introspection for introspection
 x11-libs/gtk+:colord - Use x11-misc/colord for color management in printing
 x11-libs/gtk+:egl - Use EGL surfaces and Cairo GL in the wayland backend. This flag has no effect on X or aqua backends.
 x11-libs/gtk+:packagekit - Enable support for the distro-neutral package manager GUI app-admin/packagekit in application chooser
