@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/nova/nova-2013.2.9999.ebuild,v 1.2 2013/10/23 04:12:48 prometheanfire Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/nova/nova-2013.2.9999.ebuild,v 1.3 2013/11/11 03:21:57 prometheanfire Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -64,6 +64,8 @@ RDEPEND="sqlite? ( >=dev-python/sqlalchemy-0.7.8[sqlite,${PYTHON_USEDEP}]
 		>=dev-python/oslo-config-1.2.0[${PYTHON_USEDEP}]
 		app-emulation/libvirt[${PYTHON_USEDEP}]
 		novncproxy? ( www-apps/novnc )
+		sys-apps/iproute2
+		net-misc/openvswitch
 		kvm? ( app-emulation/qemu )
 		xen? ( app-emulation/xen
 			   app-emulation/xen-tools )"
