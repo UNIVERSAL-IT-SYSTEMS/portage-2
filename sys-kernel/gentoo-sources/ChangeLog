@@ -1,6 +1,33 @@
 # ChangeLog for sys-kernel/gentoo-sources
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/ChangeLog,v 1.1210 2013/11/09 20:40:35 tomwij Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/ChangeLog,v 1.1214 2013/11/14 18:03:09 mpagano Exp $
+
+  14 Nov 2013; Michael Pagano <mpagano@gentoo.org>
+  -gentoo-sources-3.0.100.ebuild, -gentoo-sources-3.2.48.ebuild,
+  -gentoo-sources-3.2.51.ebuild, -gentoo-sources-3.4.63.ebuild,
+  -gentoo-sources-3.4.64.ebuild, -gentoo-sources-3.4.65.ebuild,
+  -gentoo-sources-3.10.14.ebuild, -gentoo-sources-3.10.15.ebuild,
+  -gentoo-sources-3.10.16.ebuild, -gentoo-sources-3.11.3.ebuild,
+  -gentoo-sources-3.11.4.ebuild, -gentoo-sources-3.11.5.ebuild:
+  Cleanup old, unsupported versions
+
+*gentoo-sources-3.4.69 (14 Nov 2013)
+
+  14 Nov 2013; Michael Pagano <mpagano@gentoo.org>
+  +gentoo-sources-3.4.69.ebuild:
+  Linux patch 3.4.69
+
+*gentoo-sources-3.10.19 (14 Nov 2013)
+
+  14 Nov 2013; Michael Pagano <mpagano@gentoo.org>
+  +gentoo-sources-3.10.19.ebuild:
+  Linux patch 3.10.19
+
+*gentoo-sources-3.11.8 (14 Nov 2013)
+
+  14 Nov 2013; Michael Pagano <mpagano@gentoo.org>
+  +gentoo-sources-3.11.8.ebuild:
+  Linux patch 3.11.8
 
   09 Nov 2013; Tom Wijsman <TomWij@gentoo.org> gentoo-sources-3.10.18.ebuild,
   gentoo-sources-3.11.7.ebuild:
