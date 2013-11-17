@@ -1,11 +1,11 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/perf/perf-3.8-r1.ebuild,v 1.2 2013/11/17 04:48:21 naota Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/perf/perf-3.12.ebuild,v 1.1 2013/11/17 06:44:21 naota Exp $
 
-EAPI="4"
+EAPI="5"
 
-PYTHON_DEPEND="python? 2"
-inherit versionator eutils toolchain-funcs python linux-info
+PYTHON_COMPAT=( python{2_5,2_6,2_7} )
+inherit versionator eutils toolchain-funcs python-single-r1 linux-info
 
 MY_PV="${PV/_/-}"
 MY_PV="${MY_PV/-pre/-git}"
@@ -53,7 +53,8 @@ DEPEND="${RDEPEND}
 		app-text/sgml-common
 		app-text/xmlto
 		sys-process/time
-	)"
+	)
+	python? ( ${PYTHON_DEPS} )"
 
 S_K="${WORKDIR}/linux-${LINUX_VER}"
 S="${S_K}/tools/perf"
@@ -62,7 +63,7 @@ CONFIG_CHECK="~PERF_EVENTS ~KALLSYMS"
 
 pkg_setup() {
 	linux-info_pkg_setup
-	use python && python_set_active_version 2
+	python-single-r1_pkg_setup
 }
 
 src_unpack() {
@@ -108,14 +109,15 @@ src_prepare() {
 		-e '/^ALL_CFLAGS =/s:$: $(CFLAGS_OPTIMIZE):' \
 		-e '/^ALL_LDFLAGS =/s:$: $(LDFLAGS_OPTIMIZE):' \
 		-e 's:$(sysconfdir_SQ)/bash_completion.d:/usr/share/bash-completion:' \
-		"${S}"/Makefile
+		"${S}"/Makefile || die
+	sed -i -e 's:-Werror::' "${S_K}"/tools/lib/lk/Makefile || die
 	sed -i \
 		-e '/.FORCE-PERF-VERSION-FILE/s,.FORCE-PERF-VERSION-FILE,,g' \
 		"${S}"/Makefile \
-		"${S}"/Documentation/Makefile
+		"${S}"/Documentation/Makefile || die
 
 	# Avoid the call to make kernelversion
-	echo "PERF_VERSION = ${MY_PV}" > PERF-VERSION-FILE
+	echo "#define PERF_VERSION \"${MY_PV}\"" > PERF-VERSION-FILE
 
 	# The code likes to compile local assembly files which lack ELF markings.
 	find -name '*.S' -exec sed -i '$a.section .note.GNU-stack,"",%progbits' {} +
@@ -137,6 +139,7 @@ perf_make() {
 		NO_LIBPYTHON=$(puse python) \
 		NO_LIBUNWIND=$(puse unwind) \
 		NO_NEWT=$(puse slang) \
+		WERROR=0 \
 		"$@"
 }
 
