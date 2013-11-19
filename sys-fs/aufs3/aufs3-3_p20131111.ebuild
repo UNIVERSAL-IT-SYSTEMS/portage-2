@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/aufs3/aufs3-3_p20131111.ebuild,v 1.1 2013/11/11 15:45:39 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/aufs3/aufs3-3_p20131111.ebuild,v 1.3 2013/11/19 09:29:28 jlec Exp $
 
 EAPI=5
 
@@ -11,6 +11,8 @@ AUFS_VERSION="${PV%%_p*}"
 PATCH_MAX_VER=12
 # highest supported version
 KERN_MAX_VER=13
+# lowest supported version
+KERN_MIN_VER=9
 
 DESCRIPTION="An entirely re-designed and re-implemented Unionfs"
 HOMEPAGE="http://aufs.sourceforge.net/"
@@ -46,7 +48,7 @@ pkg_setup() {
 	[ -n "$PKG_SETUP_HAS_BEEN_RAN" ] && return
 
 	get_version
-	kernel_is lt 3 0 0 && die "kernel too old, Please use sys-fs/aufs2"
+	kernel_is lt 3 ${KERN_MIN_VER} 0 && die "the kernel version isn't supported by upstream anymore. Please upgrade."
 	kernel_is gt 3 ${KERN_MAX_VER} 99 && die "kernel too new"
 
 	linux-mod_pkg_setup
@@ -75,8 +77,8 @@ pkg_setup() {
 	cd ${PN}-standalone || die
 	local module_branch=origin/${PN}.${PATCH_BRANCH}
 	git checkout -q -b local-gentoo ${module_branch} || die
-	combinediff ${PN}-base.patch ${PN}-mmap.patch > "${T}"/combined-1.patch
-	combinediff ${PN}-standalone.patch  "${T}"/combined-1.patch > ${PN}-standalone-base-mmap-combined.patch
+	combinediff ${PN}-base.patch ${PN}-standalone.patch  > "${T}"/combined-1.patch
+	combinediff "${T}"/combined-1.patch ${PN}-mmap.patch > ${PN}-standalone-base-mmap-combined.patch
 	if ! ( patch -p1 --dry-run --force -R -d ${KV_DIR} < ${PN}-standalone-base-mmap-combined.patch > /dev/null ); then
 		if use kernel-patch; then
 			cd ${KV_DIR}
