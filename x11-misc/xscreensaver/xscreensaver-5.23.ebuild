@@ -1,8 +1,8 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xscreensaver/xscreensaver-5.20.ebuild,v 1.11 2013/08/27 15:05:35 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xscreensaver/xscreensaver-5.23.ebuild,v 1.1 2013/11/23 16:59:11 jer Exp $
 
-EAPI=4
+EAPI=5
 inherit autotools eutils flag-o-matic multilib pam
 
 DESCRIPTION="A modular screen saver and locker for the X Window System"
@@ -11,7 +11,7 @@ SRC_URI="http://www.jwz.org/xscreensaver/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x64-solaris ~x86-solaris"
 IUSE="gdm jpeg new-login opengl pam +perl selinux suid xinerama"
 
 COMMON_DEPEND="dev-libs/libxml2
@@ -57,6 +57,10 @@ DEPEND="${COMMON_DEPEND}
 	xinerama? ( x11-proto/xineramaproto )"
 
 src_prepare() {
+	sed -i configure.in -e '/^ALL_LINGUAS=/d' || die
+	strip-linguas -i po/
+	export ALL_LINGUAS="${LINGUAS}"
+
 	if use new-login && ! use gdm; then #392967
 		sed -i \
 			-e "/default_l.*1/s:gdmflexiserver -ls:${EPREFIX}/usr/libexec/lightdm/&:" \
@@ -64,14 +68,12 @@ src_prepare() {
 	fi
 
 	epatch \
-		"${FILESDIR}"/${PN}-5.15-gentoo.patch \
+		"${FILESDIR}"/${PN}-5.21-gentoo.patch \
 		"${FILESDIR}"/${PN}-5.05-interix.patch \
 		"${FILESDIR}"/${PN}-5.20-blurb-hndl-test-passwd.patch \
-		"${FILESDIR}"/${PN}-5.20-check-largefile-support.patch \
 		"${FILESDIR}"/${PN}-5.20-conf264.patch \
 		"${FILESDIR}"/${PN}-5.20-test-passwd-segv-tty.patch \
-		"${FILESDIR}"/${PN}-5.20-tests-miscfix.patch \
-		"${FILESDIR}"/${PN}-5.20-parallel-build.patch
+		"${FILESDIR}"/${PN}-5.20-tests-miscfix.patch
 
 	eautoconf
 	eautoheader
@@ -83,40 +85,40 @@ src_configure() {
 		append-flags -U__VEC__
 	fi
 
-	unset LINGUAS #113681
 	unset BC_ENV_ARGS #24568
 	export RPM_PACKAGE_VERSION=no #368025
 
 	econf \
-		--x-includes="${EPREFIX}"/usr/include \
-		--x-libraries="${EPREFIX}"/usr/$(get_libdir) \
-		--enable-locking \
-		--with-hackdir="${EPREFIX}"/usr/$(get_libdir)/misc/${PN} \
-		--with-configdir="${EPREFIX}"/usr/share/${PN}/config \
-		--with-x-app-defaults="${EPREFIX}"/usr/share/X11/app-defaults \
-		--with-dpms-ext \
-		$(use_with xinerama xinerama-ext) \
-		--with-xinput-ext \
-		--with-xf86vmode-ext \
-		--with-xf86gamma-ext \
-		--with-randr-ext \
-		--with-proc-interrupts \
-		$(use_with pam) \
-		--without-kerberos \
-		$(use_with new-login login-manager) \
-		--with-gtk \
-		$(use_with opengl gl) \
-		--without-gle \
-		--with-pixbuf \
 		$(use_with jpeg) \
-		--with-xshm-ext \
-		--with-xdbe-ext \
+		$(use_with new-login login-manager) \
+		$(use_with opengl gl) \
+		$(use_with pam) \
+		$(use_with suid setuid-hacks) \
+		$(use_with xinerama xinerama-ext) \
+		--enable-locking \
+		--with-configdir="${EPREFIX}"/usr/share/${PN}/config \
+		--with-dpms-ext \
+		--with-gtk \
+		--with-hackdir="${EPREFIX}"/usr/$(get_libdir)/misc/${PN} \
+		--with-pixbuf \
+		--with-proc-interrupts \
+		--with-randr-ext \
 		--with-text-file="${EPREFIX}"/etc/gentoo-release \
-		$(use_with suid setuid-hacks)
+		--with-x-app-defaults="${EPREFIX}"/usr/share/X11/app-defaults \
+		--with-xdbe-ext \
+		--with-xf86gamma-ext \
+		--with-xf86vmode-ext \
+		--with-xinput-ext \
+		--with-xshm-ext \
+		--without-gle \
+		--without-kerberos \
+		--x-includes="${EPREFIX}"/usr/include \
+		--x-libraries="${EPREFIX}"/usr/$(get_libdir)
 }
 
 src_install() {
 	emake install_prefix="${D}" install
+
 	dodoc README{,.hacking}
 
 	use pam && fperms 755 /usr/bin/${PN}
