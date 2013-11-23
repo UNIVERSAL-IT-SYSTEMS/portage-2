@@ -1,11 +1,11 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/capybara/capybara-1.1.3.ebuild,v 1.2 2012/11/21 07:15:02 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/capybara/capybara-2.2.0.ebuild,v 1.1 2013/11/23 09:02:10 graaff Exp $
 
-EAPI=4
-USE_RUBY="ruby18 ruby19 ree18"
+EAPI=5
+USE_RUBY="ruby19 ruby20"
 
-RUBY_FAKEGEM_EXTRADOC="History.txt README.rdoc"
+RUBY_FAKEGEM_EXTRADOC="History.md README.md"
 
 # Rake tasks are not distributed in the gem.
 RUBY_FAKEGEM_TASK_DOC=""
@@ -18,26 +18,22 @@ HOMEPAGE="http://github.com/jnicklas/capybara"
 LICENSE="MIT"
 
 KEYWORDS="~amd64"
-SLOT="0"
+SLOT="2"
 IUSE="test"
 
-# Restrict tests until launchy is part of the main tree. With it
-# installed all tests should pass.
-RESTRICT="test"
+DEPEND="${DEPEND} test? ( www-client/firefox )"
 
-#ruby_add_bdepend "test? ( dev-ruby/rspec:2 dev-ruby/launchy www-client/firefox )"
+ruby_add_bdepend "test? ( dev-ruby/rspec:2 dev-ruby/launchy >=dev-ruby/selenium-webdriver-2.0 )"
 
 ruby_add_rdepend "
 	>=dev-ruby/mime-types-1.16
 	>=dev-ruby/nokogiri-1.3.3
 	>=dev-ruby/rack-1.0.0
 	>=dev-ruby/rack-test-0.5.4
-
-	>=dev-ruby/selenium-webdriver-2.0
-	>=dev-ruby/xpath-0.1.4:0"
+	>=dev-ruby/xpath-2.0.0:2"
 
 all_ruby_prepare() {
-	sed -i -e '/bundler/d' spec/spec_helper.rb || die
+	sed -i -e '/bundler/d' -e '/pry/d' spec/spec_helper.rb || die
 }
 
 each_ruby_test() {
