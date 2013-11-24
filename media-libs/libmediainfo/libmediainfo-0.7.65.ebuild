@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libmediainfo/libmediainfo-0.7.63.ebuild,v 1.2 2013/06/01 01:58:26 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libmediainfo/libmediainfo-0.7.65.ebuild,v 1.1 2013/11/23 23:00:27 radhermit Exp $
 
 EAPI=5
 
@@ -8,7 +8,7 @@ inherit autotools eutils flag-o-matic multilib
 
 MY_PN="MediaInfo"
 DESCRIPTION="MediaInfo libraries"
-HOMEPAGE="http://mediainfo.sourceforge.net/"
+HOMEPAGE="http://mediaarea.net/mediainfo/"
 SRC_URI="mirror://sourceforge/mediainfo/${PN}_${PV}.tar.bz2"
 
 LICENSE="BSD-2"
@@ -31,7 +31,7 @@ src_prepare() {
 	sed -i 's:-O2::' configure.ac || die
 	append-cppflags -DMEDIAINFO_LIBMMS_DESCRIBE_SUPPORT=0
 
-	epatch "${FILESDIR}"/${P}-pkgconfig.patch
+	epatch "${FILESDIR}"/${PN}-0.7.63-pkgconfig.patch
 
 	eautoreconf
 }
