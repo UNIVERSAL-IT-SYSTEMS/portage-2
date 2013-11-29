@@ -3253,6 +3253,7 @@ media-libs/mesa:gles - Enable GLES (both v1 and v2) support.
 media-libs/mesa:gles1 - Enable GLESv1 support.
 media-libs/mesa:gles2 - Enable GLESv2 support.
 media-libs/mesa:llvm - Enable LLVM backend for Gallium3D.
+media-libs/mesa:llvm-shared-libs - Dynamically link Gallium3D drivers against LLVM.
 media-libs/mesa:opencl - Enable the Clover Gallium OpenCL state tracker.
 media-libs/mesa:openvg - Enable the OpenVG 2D acceleration API for Gallium3D.
 media-libs/mesa:osmesa - Build the Mesa library for off-screen rendering.
@@ -4605,6 +4606,7 @@ net-im/skype:qt-static - Install the main skype binary with internal copy of Qt
 net-im/telepathy-connection-managers:irc - Enable Internet Relay Chat (IRC) support.
 net-im/telepathy-connection-managers:jabber - Enable XMPP protocol handler (this is also Google Talk).
 net-im/telepathy-connection-managers:sip - Enable SIP/SIMPLE messaging and calling.
+net-im/telepathy-connection-managers:sipe - Enable Sip Exchange Protocol.
 net-im/telepathy-connection-managers:yahoo - Enable Yahoo! messaging support.
 net-im/telepathy-connection-managers:zeroconf - Enable Link-Local Messaging via the zeroconf or Bonjour protocol.
 net-im/telepathy-mission-control:upower - Use sys-power/upower to detect suspend and resume
