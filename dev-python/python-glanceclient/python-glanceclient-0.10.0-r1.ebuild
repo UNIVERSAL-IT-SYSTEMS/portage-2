@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-glanceclient/python-glanceclient-0.10.0-r1.ebuild,v 1.1 2013/11/28 13:03:45 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-glanceclient/python-glanceclient-0.10.0-r1.ebuild,v 1.2 2013/11/30 09:48:57 idella4 Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -31,7 +31,7 @@ DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 				dev-python/mox[${PYTHON_USEDEP}]
 				>=dev-python/mock-0.8.0[${PYTHON_USEDEP}]
 			)
-		doc? ( dev-python/sphinx )
+		doc? ( >=dev-python/sphinx-1.1.2[${PYTHON_USEDEP}] )
 	"
 RDEPEND="virtual/python-argparse[${PYTHON_USEDEP}]
 		>=dev-python/d2to1-0.2.10[${PYTHON_USEDEP}]
