@@ -1385,6 +1385,7 @@ dev-java/gnu-classpath:gstreamer - Build with GStreamer javax.sound.sampler prov
 dev-java/gnu-classpath:gtk - Build with Gtk+ AWT peers
 dev-java/gnu-classpath:qt4 - Build with Qt4 AWT peers
 dev-java/gnu-classpath:xml - Build with native XML backend
+dev-java/httpcomponents-client:deprecated - Build deprecated classes
 dev-java/httpcomponents-core:deprecated - Build deprecated classes
 dev-java/ibm-jdk-bin:javacomm - Enable Java Communications API support
 dev-java/icedtea:X - Make X buildtime-only depenency.
@@ -5420,11 +5421,17 @@ net-p2p/ktorrent:shutdown - Shutdown when done
 net-p2p/ktorrent:stats - Shows statistics about torrents in several graphs
 net-p2p/ktorrent:webinterface - Allows control of KTorrent via a web interface
 net-p2p/ktorrent:zeroconf - Discover peers on the local network using the Zeroconf protocol
+net-p2p/litecoin-qt:qrcode - Enable generation of QR Codes for receiving payments
+net-p2p/litecoind:logrotate - Use app-admin/logrotate for rotating logs
 net-p2p/mldonkey:bittorrent - enable bittorrent support
 net-p2p/mldonkey:fasttrack - enable fasttrack support
 net-p2p/mldonkey:gnutella - enable gnutella and gnutella2 support
 net-p2p/mldonkey:guionly - enable client build only
 net-p2p/mldonkey:magic - enable use of libmagic
+net-p2p/ppcoin-qt:qrcode - Enable generation of QR Codes for receiving payments
+net-p2p/ppcoind:logrotate - Use app-admin/logrotate for rotating logs
+net-p2p/primecoin-qt:qrcode - Enable generation of QR Codes for receiving payments
+net-p2p/primecoind:logrotate - Use app-admin/logrotate for rotating logs
 net-p2p/retroshare:cli - Enables the CLI version of RetroShare
 net-p2p/retroshare:feedreader - Enables the Feedreader plugin
 net-p2p/retroshare:links-cloud - Enables LinkClouds plugin
