@@ -1,11 +1,11 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/tcpdump/tcpdump-4.4.0.ebuild,v 1.2 2013/05/29 20:02:35 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/tcpdump/tcpdump-4.5.1-r1.ebuild,v 1.2 2013/12/06 06:33:37 radhermit Exp $
 
 EAPI=5
 
 AUTOTOOLS_AUTO_DEPEND="no" # Only cross-compiling
-inherit eutils flag-o-matic user
+inherit autotools eutils flag-o-matic toolchain-funcs user
 
 DESCRIPTION="A Tool for network monitoring and data acquisition"
 HOMEPAGE="http://www.tcpdump.org/"
@@ -15,15 +15,17 @@ SRC_URI="http://www.tcpdump.org/release/${P}.tar.gz
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~arm-linux ~x86-linux"
-IUSE="+chroot smi ssl ipv6 -samba suid test"
+IUSE="+drop-root smi ssl ipv6 -samba suid test"
 
 RDEPEND="
+	drop-root? ( sys-libs/libcap-ng )
 	net-libs/libpcap
 	smi? ( net-libs/libsmi )
 	ssl? ( >=dev-libs/openssl-0.9.6m )
 "
 DEPEND="
 	${RDEPEND}
+	drop-root? ( virtual/pkgconfig )
 	test? (
 		|| ( app-arch/sharutils sys-freebsd/freebsd-ubin )
 		dev-lang/perl
@@ -36,51 +38,71 @@ pkg_setup() {
 		ewarn "CAUTION !!! CAUTION !!! CAUTION"
 		ewarn
 		ewarn "You're about to compile tcpdump with samba printing support"
-		ewarn "Upstream tags it as 'possibly-buggy SMB printer'"
+		ewarn "Upstream tags it with:"
+		ewarn "WARNING: The SMB printer may have exploitable buffer overflows!!!"
 		ewarn "So think twice whether this is fine with you"
 		ewarn
 		ewarn "CAUTION !!! CAUTION !!! CAUTION"
 		ewarn
 	fi
-	enewgroup tcpdump
-	enewuser tcpdump -1 -1 -1 tcpdump
+	if use drop-root || use suid; then
+		enewgroup tcpdump
+		enewuser tcpdump -1 -1 -1 tcpdump
+	fi
 }
 
+src_prepare() {
+	sed -i aclocal.m4 -e 's|\"-O2\"|\"\"|g' || die
+	eautoconf
+}
 src_configure() {
-	# tcpdump needs some optymalization. see bug #108391
-	( ! is-flag -O? || is-flag -O0 ) && append-flags -O2
+	# tcpdump needs some optimization. see bug #108391
+	# but do not replace -Os
+	filter-flags -O[0-9]
+	has -O? ${CFLAGS} || append-cflags -O2
 
-	replace-flags -O[3-9] -O2
 	filter-flags -finline-functions
 
+	if use drop-root; then
+		append-cppflags -DHAVE_CAP_NG_H
+		export LIBS=$( $(tc-getPKG_CONFIG) --libs libcap-ng )
+	fi
+
 	econf \
-		--with-user=tcpdump \
-		$(use_with ssl crypto "${EPREFIX}/usr") \
-		$(use_with smi) \
 		$(use_enable ipv6) \
 		$(use_enable samba smb) \
-		$(use_with chroot chroot "${EPREFIX}/var/lib/tcpdump")
+		$(use_with drop-root chroot '') \
+		$(use_with smi) \
+		$(use_with ssl crypto "${EPREFIX}/usr") \
+		$(usex drop-root "--with-user=tcpdump" "")
 }
 
 src_test() {
-	sed '/^\(espudp1\|eapon1\)/d;' -i tests/TESTLIST
-	emake check
+	if [[ ${EUID} -ne 0 ]] || ! use drop-root; then
+		sed -i '/^\(espudp1\|eapon1\)/d;' -i tests/TESTLIST
+		emake check
+	else
+		ewarn "If you want to run the test suite, make sure you either"
+		ewarn "set FEATURES=userpriv or set USE=-drop-root"
+	fi
 }
 
 src_install() {
 	dosbin tcpdump
 	doman tcpdump.1
 	dodoc *.awk
-	dodoc CHANGES CREDITS README
+	dodoc CHANGES CREDITS README.md
 
-	if use chroot; then
-		keepdir /var/lib/tcpdump
-		fperms 700 /var/lib/tcpdump
-		fowners tcpdump:tcpdump /var/lib/tcpdump
-	fi
 	if use suid; then
 		fowners root:tcpdump /usr/sbin/tcpdump
 		fperms 4110 /usr/sbin/tcpdump
+	fi
+}
+
+pkg_preinst() {
+	if use drop-root || use suid; then
+		enewgroup tcpdump
+		enewuser tcpdump -1 -1 -1 tcpdump
 	fi
 }
 
