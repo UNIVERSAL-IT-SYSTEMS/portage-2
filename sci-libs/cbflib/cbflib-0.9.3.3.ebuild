@@ -1,10 +1,10 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/cbflib/cbflib-0.9.2.10.ebuild,v 1.3 2013/12/06 10:13:27 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/cbflib/cbflib-0.9.3.3.ebuild,v 1.1 2013/12/06 12:25:04 jlec Exp $
 
 EAPI=5
 
-inherit eutils flag-o-matic fortran-2 toolchain-funcs
+inherit cmake-utils eutils flag-o-matic fortran-2 toolchain-funcs
 
 MY_P1="CBFlib-${PV}"
 #MY_P2="CBFlib_${PV}"
@@ -31,34 +31,27 @@ DEPEND="${RDEPEND}"
 
 RESTRICT="test"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-unbundle.patch
+)
+
 src_prepare(){
-	rm -rf Py* drel* dRel* ply*
-	epatch "${FILESDIR}"/${PV}-Makefile.patch
-	cp Makefile_LINUX_gcc42 Makefile
+	rm -rf Py* drel* dRel* ply* || die
 
 	append-fflags -fno-range-check
-	append-cflags -D_USE_XOPEN_EXTENDED -DCBF_DONT_USE_LONG_LONG
 
-	sed \
-		-e "s|^SOLDFLAGS.*$|SOLDFLAGS = -shared ${LDFLAGS}|g" \
-		-i Makefile || die
 	tc-export CC CXX AR RANLIB
+	cmake-utils_src_prepare
 }
 
-src_compile() {
-	emake -j1 shared
-}
-
-src_test(){
-	emake -j1 basic
+src_configure() {
+	local mycmakeargs=(
+		-DUNPACKED_DIRECTORY="${S}"
+	)
+	cmake-utils_src_configure
 }
 
 src_install() {
-	insinto /usr/include/${PN}
-	doins include/*.h
-
-	dolib.so solib/lib*
-
-	dodoc README
-	use doc && dohtml -r README.html html_graphics doc
+	cmake-utils_src_install
+	dosym ${PN} /usr/include/cbf
 }
