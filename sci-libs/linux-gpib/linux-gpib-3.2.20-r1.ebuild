@@ -1,13 +1,13 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/linux-gpib/linux-gpib-3.2.20.ebuild,v 1.2 2013/12/14 23:15:41 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/linux-gpib/linux-gpib-3.2.20-r1.ebuild,v 1.1 2013/12/14 23:47:03 dilfridge Exp $
 
-EAPI=4
+EAPI=5
 PERL_EXPORT_PHASE_FUNCTIONS=no
 GENTOO_DEPEND_ON_PERL=no
-PYTHON_DEPEND="python? 2"
+PYTHON_COMPAT=( python{2_6,2_7} )
 
-inherit base linux-mod autotools perl-module python toolchain-funcs udev user
+inherit base linux-mod autotools perl-module python-single-r1 toolchain-funcs udev user
 
 DESCRIPTION="Kernel module and driver library for GPIB (IEEE 488.2) hardware"
 HOMEPAGE="http://linux-gpib.sourceforge.net/"
@@ -24,12 +24,15 @@ COMMONDEPEND="
 	guile? ( dev-scheme/guile )
 	perl? ( dev-lang/perl )
 	php? ( dev-lang/php )
+	python? ( ${PYTHON_DEPS} )
 	firmware? ( sys-apps/fxload )"
 RDEPEND="${COMMONDEPEND}"
 DEPEND="${COMMONDEPEND}
 	virtual/pkgconfig
 	doc? ( app-text/docbook-sgml-utils )
 	perl? ( virtual/perl-ExtUtils-MakeMaker )"
+
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-3.2.15-build.patch
@@ -39,8 +42,7 @@ PATCHES=(
 
 pkg_setup () {
 	use perl && perl-module_pkg_setup
-	python_pkg_setup
-	python_set_active_version 2
+	use python && python_setup
 	linux-mod_pkg_setup
 
 	if kernel_is -lt 2 6 8; then
@@ -60,7 +62,6 @@ src_prepare () {
 
 src_configure() {
 	set_arch_to_kernel
-	export PYTHON=$(PYTHON -2 -a)
 	econf \
 		$(use_enable isa) \
 		$(use_enable pcmcia) \
