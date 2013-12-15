@@ -2363,6 +2363,13 @@ games-emulation/higan:profile_accuracy - Compile a binary optimized for accuracy
 games-emulation/higan:profile_balanced - Compile a binary with balanced optimization
 games-emulation/higan:profile_performance - Compile a binary optimized for performance
 games-emulation/mednafen:debugger - Build with internal debugger
+games-emulation/mupen64plus:audio-sdl - Enable SDL audio plugin.
+games-emulation/mupen64plus:input-sdl - Enable SDL input plugin.
+games-emulation/mupen64plus:rsp-hle - Enable HLE RSP plugin.
+games-emulation/mupen64plus:ui-console - Enable default console UI.
+games-emulation/mupen64plus:ui-m64py - Enable PyQt4 UI using games-emulation/m64py.
+games-emulation/mupen64plus:video-glide64mk2 - Enable Glide64mk2 video plugin.
+games-emulation/mupen64plus:video-rice - Enable Rice video plugin.
 games-emulation/mupen64plus-core:new-dynarec - Enable new experimental dynamic recompiler implementation (only for x86 and arm)
 games-emulation/mupen64plus-core:osd - Overlay emulator messages using on-screen-display
 games-emulation/mupen64plus-video-glide64mk2:hires - Support hi-resolution textures (requires dev-libs/boost)
@@ -4206,7 +4213,10 @@ net-analyzer/linkchecker:login - login form submission
 net-analyzer/linkchecker:nagios - Install nagios cli plugin
 net-analyzer/linkchecker:sqlite - Mozilla Bookmark parsing
 net-analyzer/linkchecker:syntax-check - HTML/CSS syntax checks
+net-analyzer/metasploit:development - Install dependancies needed for metasploit and exploit development
 net-analyzer/metasploit:gui - Enable Java GUI
+net-analyzer/metasploit:lorcon - Enable lorcon for raw packet injection
+net-analyzer/metasploit:pcap - Enable libpcap for packet sniffing
 net-analyzer/munin:apache - Set up the configuration of the CGI generation of HTML and graphs to work with Apache. This also install an include-able configuration file.
 net-analyzer/munin:asterisk - Install the packages required for monitoring Asterisk. Disabling the flag does not remove any plugin files.
 net-analyzer/munin:cgi - Install the CGI-compatible scripts for on-the-fly generation of web pages and graphs. This is only meaningful if the minimal USE flag is disabled.
