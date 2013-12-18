@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pinger/pinger-0.32e.ebuild,v 1.3 2013/12/18 16:16:55 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pinger/pinger-0.32e.ebuild,v 1.6 2013/12/18 17:38:36 jer Exp $
 
 EAPI=5
 
@@ -13,11 +13,16 @@ SRC_URI="http://aa.vslib.cz/silk/projekty/pinger/download/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="gtk nls"
+IUSE="gtk ncurses nls"
+
+REQUIRED_USE="
+	!gtk? ( ncurses )
+	!ncurses? ( gtk )
+"
 
 RDEPEND="
 	gtk? ( >=x11-libs/gtk+-2.4:2 )
-	sys-libs/ncurses
+	ncurses? ( sys-libs/ncurses )
 "
 DEPEND="
 	${RDEPEND}
@@ -40,9 +45,5 @@ src_prepare() {
 src_configure() {
 	append-cppflags -D_GNU_SOURCE
 
-	econf $(use_enable gtk) $(use_enable nls)
-}
-
-src_install() {
-	dobin src/pinger
+	econf $(use_enable gtk) $(use_enable ncurses) $(use_enable nls)
 }
