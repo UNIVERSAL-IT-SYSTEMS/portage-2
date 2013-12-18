@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/curl-7.32.0.ebuild,v 1.1 2013/08/12 10:58:13 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/curl-7.34.0.ebuild,v 1.1 2013/12/18 15:30:58 blueness Exp $
 
 EAPI="5"
 
@@ -47,8 +47,7 @@ RDEPEND="ldap? ( net-nds/openldap )
 #	rtmp? (
 #		media-video/rtmpdump
 #		curl_ssl_gnutls? ( media-video/rtmpdump[gnutls] )
-#		curl_ssl_polarssl? ( media-video/rtmpdump[polarssl] )
-#		curl_ssl_openssl? ( media-video/rtmpdump[-gnutls,-polarssl,ssl] )
+#		curl_ssl_openssl? ( media-video/rtmpdump[-gnutls,ssl] )
 #	)
 
 # ssl providers to be added:
@@ -182,7 +181,8 @@ src_configure() {
 		$(use_with idn libidn) \
 		$(use_with kerberos gssapi "${EPREFIX}"/usr) \
 		--without-krb4 \
-		$(use_with metalink libmetalink)  \
+		$(use_with metalink libmetalink) \
+		--without-nghttp2 \
 		$(use_with rtmp librtmp) \
 		--without-spnego \
 		--without-winidn \
