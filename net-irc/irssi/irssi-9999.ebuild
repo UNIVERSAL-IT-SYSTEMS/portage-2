@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-irc/irssi/irssi-9999.ebuild,v 1.5 2012/09/29 11:04:12 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-irc/irssi/irssi-9999.ebuild,v 1.6 2013/12/26 15:57:35 jer Exp $
 
 EAPI=4
 
@@ -15,9 +15,9 @@ HOMEPAGE="http://irssi.org/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="ipv6 +perl ssl socks5"
+IUSE="ipv6 +perl ssl socks5 tinfo"
 
-RDEPEND="sys-libs/ncurses
+RDEPEND="sys-libs/ncurses[tinfo=]
 	>=dev-libs/glib-2.6.0
 	ssl? ( dev-libs/openssl )
 	perl? ( dev-lang/perl )
@@ -41,7 +41,8 @@ src_prepare() {
 src_configure() {
 	econf \
 		--with-proxy \
-		--with-ncurses \
+		$(usex tinfo '--with-terminfo --without-ncurses' \
+			"--without-terminfo --with-ncurses="${EPREFIX}"/usr") \
 		--with-perl-lib=vendor \
 		$(use_with perl) \
 		$(use_with socks5 socks) \

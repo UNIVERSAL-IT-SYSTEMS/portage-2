@@ -1,6 +1,18 @@
 # ChangeLog for Gentoo base-profile
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/ChangeLog,v 1.617 2013/12/18 19:48:00 johu Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/ChangeLog,v 1.621 2013/12/26 23:12:41 eva Exp $
+
+  26 Dec 2013; Gilles Dartiguelongue <eva@gentoo.org> package.use.mask:
+  Add missing version to libpeas python mask.
+
+  24 Dec 2013; Gilles Dartiguelongue <eva@gentoo.org> package.use.mask:
+  Add relevant USE mask for libpeas.
+
+  23 Dec 2013; Gilles Dartiguelongue <eva@gentoo.org> package.use.mask:
+  Add gstreamer use mask for new cogl release.
+
+  20 Dec 2013; Rick Farina <zerochaos@gentoo.org> package.use.mask:
+  Masking test and development for metasploit until gentoo has rake 10
 
   18 Dec 2013; Johannes Huber <johu@gentoo.org> package.use.mask:
   Mask >=kde-base/kopete-4.12.0[otr] because of package mask on 
