@@ -1,6 +1,15 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1091 2013/12/27 21:39:36 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1094 2013/12/28 00:25:53 robbat2 Exp $
+
+  28 Dec 2013; Robin H. Johnson <robbat2@gentoo.org> flag-o-matic.eclass:
+  Spelling fixes.
+
+  27 Dec 2013; Julian Ospald <hasufell@gentoo.org> multilib-minimal.eclass:
+  add debug print function wrt #493214
+
+  27 Dec 2013; Ryan Hill <dirtyepic@gentoo.org> toolchain.eclass:
+  Initial EAPI support (bug #474358).
 
   27 Dec 2013; Robin H. Johnson <robbat2@gentoo.org> flag-o-matic.eclass:
   Per discussion with Flameeyes, make -l and -L always valid, and only warn

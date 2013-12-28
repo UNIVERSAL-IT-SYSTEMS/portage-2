@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups-filters/cups-filters-1.0.36-r2.ebuild,v 1.3 2013/11/04 23:29:39 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups-filters/cups-filters-1.0.43.ebuild,v 1.1 2013/12/27 22:32:17 dilfridge Exp $
 
 EAPI=5
 
@@ -14,7 +14,8 @@ if [[ "${PV}" == "9999" ]] ; then
 	KEYWORDS=""
 else
 	SRC_URI="http://www.openprinting.org/download/${PN}/${P}.tar.xz"
-	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~s390 ~x86 ~amd64-fbsd"
+#	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86 ~amd64-fbsd ~m68k-mint"
+	KEYWORDS=""
 fi
 DESCRIPTION="Cups PDF filters"
 HOMEPAGE="http://www.linuxfoundation.org/collaborate/workgroups/openprinting/pdfasstandardprintjobformat"
@@ -34,6 +35,7 @@ RDEPEND="
 	!<=net-print/cups-1.5.9999
 	sys-devel/bc
 	sys-libs/zlib
+	!net-print/foomatic-filters
 	jpeg? ( virtual/jpeg:0 )
 	perl? ( dev-lang/perl )
 	png? ( media-libs/libpng:0= )
@@ -41,8 +43,6 @@ RDEPEND="
 	zeroconf? ( net-dns/avahi[dbus] )
 "
 DEPEND="${RDEPEND}"
-
-PATCHES=( "${FILESDIR}/${P}-parallel.patch" )
 
 src_prepare() {
 	base_src_prepare
@@ -94,15 +94,14 @@ src_install() {
 	prune_libtool_files --all
 
 	cp "${FILESDIR}"/cups-browsed.init.d "${T}"/cups-browsed || die
-	cp "${FILESDIR}/cups-browsed.service" "${T}"/ || die
 
 	if ! use zeroconf ; then
 		sed -i -e 's:need cupsd avahi-daemon:need cupsd:g' "${T}"/cups-browsed || die
-		sed -i -e 's:cups\.service avahi-daemon\.service:cups.service:g' "${T}"/cups-browsed.service || die
+		sed -i -e 's:cups\.service avahi-daemon\.service:cups.service:g' "${S}"/utils/cups-browsed.service || die
 	fi
 
 	doinitd "${T}"/cups-browsed
-	systemd_dounit "${T}/cups-browsed.service"
+	systemd_dounit "${S}/utils/cups-browsed.service"
 }
 
 pkg_postinst() {
