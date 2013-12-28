@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/dracut/dracut-034.ebuild,v 1.2 2013/10/27 17:51:45 swift Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/dracut/dracut-034-r3.ebuild,v 1.1 2013/12/28 15:48:33 aidecoe Exp $
 
 EAPI=4
 
@@ -75,7 +75,7 @@ RDEPEND="${CDEPEND}
 	>=app-shells/bash-4.0
 	>=sys-apps/baselayout-1.12.14-r1
 	>sys-apps/kmod-5[tools]
-	>=sys-apps/sysvinit-2.87-r3
+	|| ( >=sys-apps/sysvinit-2.87-r3 sys-apps/systemd-sysv-utils )
 	>=sys-apps/util-linux-2.21
 	virtual/pkgconfig
 
@@ -162,14 +162,26 @@ src_prepare() {
 	epatch "${FILESDIR}/${PV}-0003-gentoo.conf-let-udevdir-be-handled-by-.patch"
 	epatch "${FILESDIR}/${PV}-0004-Use-the-same-paths-in-dracut.sh-as-tho.patch"
 	epatch "${FILESDIR}/${PV}-0005-Install-dracut-install-into-libexec-di.patch"
+	epatch "${FILESDIR}/${PV}-0006-resume-fix-swap-detection-in-hostonly.patch"
+	epatch "${FILESDIR}/${PV}-0007-dracut.sh-also-mkdir-run-lock-which-is.patch"
+	epatch "${FILESDIR}/${PV}-0008-dracut.sh-no-need-to-make-subdirs-in-r.patch"
+	epatch "${FILESDIR}/${PV}-0009-lvm-install-thin-utils-for-non-hostonl.patch"
+	epatch "${FILESDIR}/${PV}-0010-module-setup.sh-add-comments-for-dracu.patch"
+	epatch "${FILESDIR}/${PV}-0011-lvm-fix-thin-recognition.patch"
+	epatch "${FILESDIR}/${PV}-0012-lvm-always-install-thin-utils-for-lvm.patch"
+	epatch "${FILESDIR}/${PV}-0013-usrmount-always-install.patch"
+	epatch "${FILESDIR}/${PV}-0014-udev-rules-add-eudev-rules.patch"
 
-	local libdirs ldir
+	local libdirs
 
-	for ldir in $(get_all_libdirs); do
-		libdirs+=" /$ldir /usr/$ldir"
-	done
+	#local ldir
+	#for ldir in $(get_all_libdirs); do
+	#	libdirs+=" /$ldir /usr/$ldir"
+	#done
+	#libdirs="${libdirs# }"
 
-	libdirs="${libdirs# }"
+	libdirs="/$(get_libdir) /usr/$(get_libdir)"
+	[[ $libdirs =~ /lib\  ]] || libdirs+=" /lib /usr/lib"
 	einfo "Setting libdirs to \"${libdirs}\" ..."
 	sed -e "3alibdirs=\"${libdirs}\"" \
 		-i "${S}/dracut.conf.d/gentoo.conf.example" || die
@@ -184,6 +196,8 @@ src_prepare() {
 		sed -e "6asystemdsystemunitdir=\"${systemdsystemunitdir}\"" \
 			-i "${S}/dracut.conf.d/gentoo.conf.example" || die
 	fi
+
+	epatch_user
 }
 
 src_configure() {
