@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/mpv/mpv-9999.ebuild,v 1.33 2013/12/28 20:22:12 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/mpv/mpv-9999.ebuild,v 1.34 2013/12/29 19:11:34 tomwij Exp $
 
 EAPI=5
 
@@ -11,10 +11,9 @@ inherit base waf-utils pax-utils
 
 DESCRIPTION="Video player based on MPlayer/mplayer2"
 HOMEPAGE="http://mpv.io/"
-[[ ${PV} == *9999* ]] || \
-SRC_URI="https://github.com/mpv-player/mpv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-[[ ${PV} == *9999* ]] && \
 SRC_URI="https://waf.googlecode.com/files/waf-1.7.13"
+[[ ${PV} == *9999* ]] || \
+SRC_URI+=" https://github.com/mpv-player/mpv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -152,12 +151,12 @@ pkg_setup() {
 src_unpack() {
 	if [[ ${PV} == *9999* ]]; then
 		git-r3_src_unpack
-
-		cp "${DISTDIR}"/waf-1.7.13 "${S}"/waf || die
-		chmod 0755 "${S}"/waf || die
 	else
 		default_src_unpack
 	fi
+
+	cp "${DISTDIR}"/waf-1.7.13 "${S}"/waf || die
+	chmod 0755 "${S}"/waf || die
 }
 
 src_prepare() {
