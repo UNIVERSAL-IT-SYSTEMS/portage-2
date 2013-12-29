@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libcxx/libcxx-9999.ebuild,v 1.26 2013/12/22 17:51:28 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/libcxx/libcxx-9999.ebuild,v 1.25 2013/10/14 18:21:00 mgorny Exp $
 
 EAPI=5
 
@@ -98,9 +98,8 @@ multilib_src_test() {
 		CC="clang++ $(get_abi_CFLAGS) ${CXXFLAGS}" \
 		HEADER_INCLUDE="-I${BUILD_DIR}/include" \
 		SOURCE_LIB="-L${BUILD_DIR}/lib" \
-		LIBS="-lm $(usex libcxxrt -lcxxrt "")" \
+		LIBS="-lm" \
 		./testit || die
-	# TODO: fix link against libsupc++
 }
 
 # Usage: deps

@@ -1,6 +1,7 @@
-diff -Naur qelectrotech-0.3-src.orig/qelectrotech.pro qelectrotech-0.3-src/qelectrotech.pro
---- qelectrotech-0.3-src.orig/qelectrotech.pro	2013-12-22 17:27:31.919047334 +0100
-+++ qelectrotech-0.3-src/qelectrotech.pro	2013-12-22 17:29:28.576908241 +0100
+Index: qelectrotech-0.3a-src/qelectrotech.pro
+===================================================================
+--- qelectrotech-0.3a-src.orig/qelectrotech.pro
++++ qelectrotech-0.3a-src/qelectrotech.pro
 @@ -5,20 +5,20 @@
  # Chemins utilises pour la compilation et l'installation de QET
  unix {
@@ -25,10 +26,10 @@ diff -Naur qelectrotech-0.3-src.orig/qelectrotech.pro qelectrotech-0.3-src/qelec
  	QET_ICONS_PATH             = 'share/icons/hicolor/'
 -	QET_MAN_PATH               = 'man/'
 +	QET_MAN_PATH               = 'share/man/'
- 	QET_APPDATA_PATH           = 'share/appdata'
  }
  win32 {
-@@ -108,9 +108,6 @@
+ 	# Chemins Windows
+@@ -102,9 +102,6 @@ lang.files         = $$replace(TRANSLATI
  examples.path      = $$join(INSTALL_PREFIX,,,$${QET_EXAMPLES_PATH})
  examples.files     = examples/*
  
@@ -38,7 +39,7 @@ diff -Naur qelectrotech-0.3-src.orig/qelectrotech.pro qelectrotech-0.3-src/qelec
  mime_xml.path      = $$join(INSTALL_PREFIX,,,$${QET_MIME_XML_PATH})
  mime_xml.files     = misc/x-qet-*.xml
  
-@@ -140,7 +137,7 @@
+@@ -131,7 +128,7 @@ man.files          = man/files/*
  man.extra          = sh man/compress_man_pages.sh
  
  # L'installation comprend la copie du binaire, des elements, des fichiers de langue et du fichier LICENSE
@@ -46,4 +47,4 @@ diff -Naur qelectrotech-0.3-src.orig/qelectrotech.pro qelectrotech-0.3-src/qelec
 +INSTALLS += target elements tbt lang
  # Sous Unix, on installe egalement l'icone, un fichier .desktop, des fichiers mime et les pages de manuel
  unix {
- 	INSTALLS += desktop mime_xml mime_desktop mime_package icons man examples appdata
+ 	INSTALLS += desktop mime_xml mime_desktop mime_package icons man examples

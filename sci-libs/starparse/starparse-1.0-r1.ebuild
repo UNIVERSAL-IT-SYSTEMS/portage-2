@@ -1,8 +1,8 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/starparse/starparse-1.0-r1.ebuild,v 1.4 2013/12/28 19:13:20 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/starparse/starparse-1.0-r1.ebuild,v 1.3 2012/07/26 08:37:31 jlec Exp $
 
-EAPI=5
+EAPI=4
 
 AUTOTOOLS_AUTORECONF=yes
 
@@ -17,11 +17,9 @@ SRC_URI="http://dev.gentooexperimental.org/~jlec/distfiles/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="guile static-libs test"
+IUSE="guile static-libs"
 
-REQUIRED_USE="test? ( guile )"
-
-RDEPEND="guile? ( dev-scheme/guile:12 )"
+RDEPEND="guile? ( dev-scheme/guile )"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
@@ -30,4 +28,12 @@ PATCHES=( "${FILESDIR}"/${P}-guile1.8.patch )
 src_configure() {
 	local myeconfargs=( $(use_enable guile) )
 	autotools-utils_src_configure
+}
+
+src_test() {
+	if use guile; then
+		autotools-utils_src_test
+	else
+		ewarn "Skipping tests because USE guile is disabled"
+	fi
 }
