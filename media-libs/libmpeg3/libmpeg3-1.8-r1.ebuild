@@ -1,19 +1,19 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libmpeg3/libmpeg3-1.7.ebuild,v 1.21 2010/11/11 10:18:47 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libmpeg3/libmpeg3-1.8-r1.ebuild,v 1.1 2013/12/30 07:24:22 aballier Exp $
 
-EAPI=2
-inherit eutils autotools toolchain-funcs
+EAPI=5
 
-PATCHLEVEL="1"
+inherit eutils autotools toolchain-funcs multilib-minimal
+
 DESCRIPTION="An mpeg library for linux"
 HOMEPAGE="http://heroinewarrior.com/libmpeg3.php"
 SRC_URI="mirror://sourceforge/heroines/${P}-src.tar.bz2
-	mirror://gentoo/${P}-gentoo.tar.bz2"
+	mirror://gentoo/${PN}-1.7-gentoo.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86"
 IUSE="mmx"
 
 RDEPEND="sys-libs/zlib
@@ -23,41 +23,39 @@ DEPEND="${RDEPEND}
 	mmx? ( dev-lang/nasm )"
 
 src_prepare() {
-	epatch "${WORKDIR}"/${P}-mpeg3split.patch
-	epatch "${WORKDIR}"/${P}-textrel.patch
-	epatch "${WORKDIR}"/${P}-gnustack.patch
-	epatch "${WORKDIR}"/${P}-a52.patch
-	epatch "${WORKDIR}"/${P}-all_gcc4.patch
-	epatch "${WORKDIR}"/${P}-all_pthread.patch
+	epatch "${WORKDIR}"/${PN}-1.7-mpeg3split.patch
+	epatch "${WORKDIR}"/${PN}-1.7-textrel.patch
+	epatch "${WORKDIR}"/${PN}-1.7-gnustack.patch
+	epatch "${WORKDIR}"/${PN}-1.7-a52.patch
+	epatch "${WORKDIR}"/${PN}-1.7-all_gcc4.patch
+	epatch "${WORKDIR}"/${PN}-1.7-all_pthread.patch
 
-	# warning: incompatible implicit declaration of built-in function memcpy
-	epatch "${FILESDIR}"/${P}-memcpy.patch
+	epatch "${FILESDIR}/${P}-impldecl.patch"
 
-	cp -rf "${WORKDIR}"/${PV}/* .
+	cp -rf "${WORKDIR}"/1.7/* .
 	eautoreconf
 }
 
-src_configure() {
+multilib_src_configure() {
 	#disabling css since it's a fake one.
 	#One can find in the sources this message :
 	#  Stubs for deCSS which can't be distributed in source form
 
-	econf \
+	ECONF_SOURCE="${S}" econf \
 		$(use_enable mmx) \
 		--disable-css
 }
 
-src_install() {
-	emake DESTDIR="${D}" install || die
+multilib_src_install_all() {
 	dohtml -r docs
 	# This is a workaround, it wants to rebuild
 	# everything if the headers	 have changed
 	# So we patch them after install...
-	cd "${D}/usr/include/libmpeg3"
+	cd "${ED}/usr/include/libmpeg3"
 	# This patch patches the .h files that get installed into /usr/include
 	# to show the correct include syntax '<>' instead of '""'  This patch
 	# was also generated using info from SF's src.rpm
 	epatch "${WORKDIR}"/gentoo-p2.patch
 
-	find "${D}" -name '*.la' -exec rm -f '{}' +
+	find "${ED}" -name '*.la' -exec rm -f '{}' +
 }

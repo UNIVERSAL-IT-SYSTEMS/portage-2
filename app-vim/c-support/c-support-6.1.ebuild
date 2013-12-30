@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-vim/c-support/c-support-5.19.ebuild,v 1.1 2012/08/05 23:40:00 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-vim/c-support/c-support-6.1.ebuild,v 1.1 2013/12/30 08:10:47 radhermit Exp $
 
-EAPI="4"
+EAPI="5"
 
 inherit vim-plugin
 
@@ -10,9 +10,8 @@ DESCRIPTION="vim plugin: C/C++-IDE -- Write and run programs using menus and hot
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=213"
 LICENSE="public-domain"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
 
-VIM_PLUGIN_HELPFILES="csupport.txt"
+VIM_PLUGIN_HELPFILES="${PN}"
 
 src_install() {
 	dodoc ${PN}/doc/{ChangeLog,c-hotkeys.pdf}
