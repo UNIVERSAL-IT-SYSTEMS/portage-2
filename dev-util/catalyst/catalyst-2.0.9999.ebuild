@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/catalyst/catalyst-2.0.15.ebuild,v 1.2 2014/01/02 20:40:19 jmbsvicetto Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/catalyst/catalyst-2.0.9999.ebuild,v 1.1 2014/01/02 20:30:23 jmbsvicetto Exp $
 
 EAPI=5
 
@@ -8,13 +8,13 @@ if [[ ${PV} == *9999* ]]; then
 	SRC_ECLASS="git-2"
 	EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/catalyst.git"
 	EGIT_MASTER="master"
+	EGIT_BRANCH="2.X"
 	SRC_URI=""
 	KEYWORDS=""
 	S="${WORKDIR}/${PN}"
 else
 	SRC_URI="mirror://gentoo/${P}.tar.bz2
 		http://dev.gentoo.org/~jmbsvicetto/distfiles/${P}.tar.bz2
-		http://dev.gentoo.org/~mattst88/distfiles/${P}.tar.bz2
 		http://dev.gentoo.org/~zerochaos/distfiles/${P}.tar.bz2"
 	KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
 fi
