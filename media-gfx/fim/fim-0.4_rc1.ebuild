@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/fim/fim-0.4_pre.ebuild,v 1.3 2014/01/11 01:31:35 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/fim/fim-0.4_rc1.ebuild,v 1.1 2014/01/11 02:06:24 xmw Exp $
 
 EAPI=5
 
@@ -8,7 +8,7 @@ inherit autotools eutils
 
 DESCRIPTION="Fbi-IMproved is a framebuffer image viewer based on Fbi and inspired from Vim"
 HOMEPAGE="http://savannah.nongnu.org/projects/fbi-improved"
-SRC_URI="http://download.savannah.gnu.org/releases/fbi-improved/${P/_pre/-trunk}.tar.bz2"
+SRC_URI="http://download.savannah.gnu.org/releases/fbi-improved/${P/_rc/-rc}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -20,7 +20,7 @@ RDEPEND="media-fonts/terminus-font
 	dia? ( app-office/dia )
 	djvu? ( app-text/djvu )
 	exif? ( media-libs/libexif )
-	gif? ( <media-libs/giflib-4.2 )
+	gif? ( media-libs/giflib )
 	graphicsmagick? ( media-gfx/graphicsmagick )
 	imagemagick? ( || ( media-gfx/graphicsmagick[imagemagick] media-gfx/imagemagick ) )
 	jpeg? ( virtual/jpeg )
@@ -36,13 +36,12 @@ DEPEND="${RDEPEND}
 	sys-devel/bison
 	sys-devel/flex"
 
-S=${WORKDIR}/${P/_pre/-trunk}
+S=${WORKDIR}/${P/_rc/-rc}
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-automake-1.12.patch \
-		"${FILESDIR}"/${P}-nosvn.patch
+	epatch "${FILESDIR}"/${P}-nosvn.patch
 	if use graphicsmagick ; then
-		epatch "${FILESDIR}"/${P}-graphicsmagick.patch
+		epatch "${FILESDIR}"/${PN}-0.4_pre-graphicsmagick.patch
 	fi
 	eautoreconf
 }
