@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15332 2014/01/13 10:21:35 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15336 2014/01/14 19:17:50 hd_brummy Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,24 @@
 
 #--- END OF EXAMPLES ---
 
+# Joerg Bornkessel <hd_brummy@gentoo.org> (14 Jan 2014)
+# plugin fails on compile >=vdr-1.7.27
+# dead on upstream, wrt bug 414887
+# removal ~ 14/02/2014
+media-plugins/vdr-skinclassic
+
+# Joerg Bornkessel <hd_brummy@gentoo.org> (14 Jan 2014)
+# plugin fails on compile
+# dead on upstream, wrt bug 420869
+# removal ~ 14/02/2014
+media-plugins/vdr-sky
+
+# Joerg Bornkessel <hd_brummy@gentoo.org> (14 Jan 2014)
+# vdr-skinreel fails on compile >=vdr-1.7.27
+# see wrt bug 420873
+# removal ~ 14/02/2014
+media-plugins/vdr-skinreel
+
 # Tony Vroon <chainsaw@gentoo.org> (13 Jan 2014)
 # Asterisk 12 is a short term "standard" release 
 # containing significant architectural changes.
@@ -45,11 +63,6 @@
 # Gcc 4.8.2-r1 has default ssp and need testing,
 # See #484714
 =sys-devel/gcc-4.8.2-r1
-
-# Justin Lecher <jlec@gentoo.org> (10 Jan 2014)
-# aufs3 patches do not apply cleanly onto 3.12.7
-sys-kernel/aufs-sources:3.12.7
-sys-kernel/aufs-sources:3.10.26
 
 # Tom Wijsman <TomWij@gentoo.org> (09 Jan 2014)
 # Monolithic dev-dotnet/{gnome,gtk}-sharp introduction mask, see bug #382491.
