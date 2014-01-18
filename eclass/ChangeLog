@@ -1,6 +1,12 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1123 2014/01/18 00:43:03 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1125 2014/01/18 15:06:56 floppym Exp $
+
+  18 Jan 2014; Mike Gilbert <floppym@gentoo.org> distutils-r1.eclass:
+  Silence sandbox for /usr/local, bug 498232.
+
+  18 Jan 2014; Mike Gilbert <floppym@gentoo.org> kernel-2.eclass:
+  Convert to python-any-r1.eclass
 
   18 Jan 2014; Andreas K. Huettel <dilfridge@gentoo.org> kde4-base.eclass:
   Sync from kde overlay, adds subslot
