@@ -1,14 +1,14 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitolite/gitolite-3.3.ebuild,v 1.2 2013/04/05 06:17:31 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitolite-gentoo/gitolite-gentoo-3.5.3.1.ebuild,v 1.2 2014/01/19 17:48:59 idl0r Exp $
 
 EAPI=5
 
-inherit perl-module user versionator vcs-snapshot
+inherit perl-module user versionator
 
-DESCRIPTION="Highly flexible server for git directory version tracker"
-HOMEPAGE="http://github.com/sitaramc/gitolite"
-SRC_URI="https://github.com/sitaramc/gitolite/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+DESCRIPTION="Highly flexible server for git directory version tracker, Gentoo fork"
+HOMEPAGE="http://git.overlays.gentoo.org/gitweb/?p=proj/gitolite-gentoo.git;a=summary"
+SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -20,7 +20,8 @@ DEPEND="dev-lang/perl
 	virtual/perl-File-Temp
 	>=dev-vcs/git-1.6.6"
 RDEPEND="${DEPEND}
-	!dev-vcs/gitolite-gentoo
+	!dev-vcs/gitolite
+	dev-perl/Net-SSH-AuthorizedKeysFile
 	vim-syntax? ( app-vim/gitolite-syntax )"
 
 pkg_setup() {
@@ -29,7 +30,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	echo $PF > src/VERSION
+	echo "${PF}-gentoo" > src/VERSION
 }
 
 src_install() {
@@ -70,13 +71,21 @@ src_install() {
 pkg_postinst() {
 	if [ "$(get_major_version $REPLACING_VERSIONS)" = "2" ]; then
 		ewarn
-		elog "***NOTE** This is a major upgrade and will likely break your existing gitolite-2.x setup!"
+		elog "***NOTE*** This is a major upgrade and will likely break your existing gitolite-2.x setup!"
 		elog "Please read http://sitaramc.github.com/gitolite/install.html#migr first!"
+		ewarn
+		elog "***NOTE*** If you're using the \"umask\" feature of ${PN}-2.x:"
+		elog "You'll have to replace each \"umask = ...\" option by \"option umask = ...\""
+		elog "And you'll also have to enable the \"RepoUmask\" module in your .gitolite.rc"
+		ewarn
 	fi
 
 	# bug 352291
-	ewarn
-	elog "Please make sure that your 'git' user has the correct homedir (/var/lib/gitolite)."
-	elog "Especially if you're migrating from gitosis."
-	ewarn
+	gitolite_home=$(awk -F: '$1 == "git" { print $6 }' /etc/passwd)
+	if [ -n "${gitolite_home}" -a "${gitolite_home}" != "/var/lib/gitolite" ]; then
+		ewarn
+		elog "Please make sure that your 'git' user has the correct homedir (/var/lib/gitolite)."
+		elog "Especially if you're migrating from gitosis."
+		ewarn
+	fi
 }
