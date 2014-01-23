@@ -1,13 +1,13 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/openexr_viewers/openexr_viewers-2.0.0.ebuild,v 1.1 2013/03/12 21:45:31 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/openexr_viewers/openexr_viewers-2.1.0.ebuild,v 1.1 2014/01/22 18:35:01 ssuominen Exp $
 
 EAPI=5
 inherit autotools eutils flag-o-matic
 
 DESCRIPTION="OpenEXR Viewers"
 HOMEPAGE="http://openexr.com/"
-SRC_URI="http://dev.gentoo.org/~ssuominen/openexr-${PV}.tar.gz"
+SRC_URI="http://download.savannah.gnu.org/releases/openexr/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -17,7 +17,7 @@ IUSE="cg opengl"
 RDEPEND=">=media-libs/ilmbase-${PV}:=
 	>=media-libs/openexr-${PV}:=
 	media-libs/ctl:=
-	media-libs/openexr_ctl:=
+	>=media-libs/openexr_ctl-1.0.1-r2:=
 	opengl? (
 		virtual/opengl
 		x11-libs/fltk:1[opengl]
@@ -26,11 +26,9 @@ RDEPEND=">=media-libs/ilmbase-${PV}:=
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
-S=${WORKDIR}/openexr-${PV}/OpenEXR_Viewers
-
 src_prepare() {
 	sed -i -e 's:AM_CONFIG_HEADER:AC_CONFIG_HEADERS:' configure.ac || die
-	epatch "${FILESDIR}"/${P}-nvidia-automagic.patch
+	epatch "${FILESDIR}"/${PN}-2.0.0-nvidia-automagic.patch
 	eautoreconf
 }
 
@@ -39,7 +37,7 @@ src_configure() {
 
 	if use cg; then
 		myconf="--with-cg-prefix=/opt/nvidia-cg-toolkit"
-		append-flags $(no-as-needed) # binary-only libCg is not properly linked
+		append-flags "$(no-as-needed)" # binary-only libCg is not properly linked
 	fi
 
 	econf \
@@ -51,8 +49,8 @@ src_configure() {
 src_install() {
 	emake \
 		DESTDIR="${D}" \
-		docdir="/usr/share/doc/${PF}/pdf" \
-		install || die
+		docdir=/usr/share/doc/${PF}/pdf \
+		install
 
 	dodoc AUTHORS ChangeLog NEWS README
 }
