@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/mesa-10.0.2.ebuild,v 1.2 2014/01/09 22:14:07 mattst88 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/mesa-10.0.2-r1.ebuild,v 1.1 2014/01/26 03:24:22 mattst88 Exp $
 
 EAPI=5
 
@@ -146,7 +146,7 @@ DEPEND="${RDEPEND}
 "
 
 python_check_deps() {
-	has_version "dev-libs/libxml2[python,${PYTHON_USEDEP}]"
+	has_version --host-root "dev-libs/libxml2[python,${PYTHON_USEDEP}]"
 }
 
 S="${WORKDIR}/${MY_P}"
@@ -178,6 +178,9 @@ src_prepare() {
 		EPATCH_SUFFIX="patch" \
 		epatch
 	fi
+
+	# Bug 491644
+	epatch "${FILESDIR}"/mesa-10.0.2-update-glxext.h.patch
 
 	# relax the requirement that r300 must have llvm, bug 380303
 	epatch "${FILESDIR}"/mesa-9.2-dont-require-llvm-for-r300.patch
