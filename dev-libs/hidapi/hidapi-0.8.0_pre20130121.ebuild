@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/hidapi/hidapi-0.8.0_pre20130121.ebuild,v 1.4 2014/01/26 11:44:57 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/hidapi/hidapi-0.8.0_pre20130121.ebuild,v 1.5 2014/01/26 13:51:06 blueness Exp $
 
 EAPI=4
 
@@ -28,7 +28,7 @@ RDEPEND="virtual/libusb:0"
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )
 	virtual/pkgconfig
-	X? ( x11-libs/fox )"
+	X? ( x11-libs/fox:1.6 )"
 
 src_prepare() {
 	eautoreconf
