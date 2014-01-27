@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-9999-r2.ebuild,v 1.207 2014/01/25 20:34:27 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-9999-r2.ebuild,v 1.209 2014/01/27 15:35:49 scarabeus Exp $
 
 EAPI=5
 
@@ -97,6 +97,7 @@ COMMON_DEPEND="
 	app-arch/unzip
 	>=app-text/hunspell-1.3.2-r3
 	app-text/mythes
+	app-text/libabw
 	>=app-text/libexttextcat-3.2
 	app-text/libebook
 	app-text/libetonyek
@@ -236,9 +237,6 @@ DEPEND="${COMMON_DEPEND}
 PATCHES=(
 	# not upstreamable stuff
 	"${FILESDIR}/${PN}-3.7-system-pyuno.patch"
-
-	# staged for git master
-	"${FILESDIR}/${PN}-9999-curl-config.patch"
 )
 
 REQUIRED_USE="
