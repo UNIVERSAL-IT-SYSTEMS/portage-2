@@ -3475,6 +3475,8 @@ media-plugins/vdr-text2skin:contrib - Install user contributed scripts
 media-plugins/vdr-vdrmanager:stream - Add support for streaming Video to Android client
 media-plugins/vdr-weatherng:dxr3 - enables lower osd color depth for dxr3 cards
 media-plugins/vdr-xine:yaepg - Enables support for the plugin vdr-yaepg (showing scaled video besides OSD)
+media-plugins/vdr-xineliboutput:bluray - Enable BluRay metadata support through media-libs/libbluray
+media-plugins/vdr-xineliboutput:cec - Enable CEC support through dev-libs/libcec
 media-plugins/vdr-xineliboutput:libextractor - Use media-libs/libextract to gather files' metadata in media-player
 media-plugins/vdr-xineliboutput:vdr - Compile the vdr output plugin to use local or remote xine as output
 media-plugins/vdr-xineliboutput:xine - Compile the xine input plugin for displaying vdr video and OSD
@@ -6518,6 +6520,7 @@ sys-fs/owfs:server - Enable building the OWFS server (owserver)
 sys-fs/quota:netlink - Compile daemon receiving quota messages via netlink
 sys-fs/quota:rpc - Enable quota interaction via RPC
 sys-fs/s3ql:contrib - Install additional contributed scripts
+sys-fs/squashfs-tools:lz4 - Enable support for LZ4 compression using app-arch/lz4
 sys-fs/squashfs-tools:xz - Enable support for XZ ("LZMA2") compression using app-arch/xz-utils
 sys-fs/udev:firmware-loader - Enable userspace firmware loader (DEPRECATED, replaced by in-kernel loader in 3.8+)
 sys-fs/udev:gudev - Build the gobject interface library
