@@ -1,27 +1,30 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pmacct/pmacct-0.14.2.ebuild,v 1.3 2013/02/03 19:32:38 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/pmacct/pmacct-1.5.0_rc2.ebuild,v 1.1 2014/02/01 12:07:33 jer Exp $
 
-EAPI=4
+EAPI=5
 inherit eutils toolchain-funcs
 
 DESCRIPTION="A network tool to gather IP traffic information"
 HOMEPAGE="http://www.pmacct.net/"
-SRC_URI="http://www.pmacct.net/${P}.tar.gz"
+SRC_URI="http://www.pmacct.net/${P/_}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS=""
 IUSE="64bit debug geoip ipv6 mongodb mysql postgres sqlite threads ulog"
 
 DEPEND="
 	net-libs/libpcap
+	geoip? ( dev-libs/geoip )
 	mongodb? ( dev-libs/mongo-c-driver )
 	mysql? ( virtual/mysql )
 	postgres? ( dev-db/postgresql-base )
 	sqlite? ( =dev-db/sqlite-3* )
 "
 RDEPEND="${DEPEND}"
+
+S="${WORKDIR}/${P/_/}"
 
 DOCS=(
 	CONFIG-KEYS ChangeLog FAQS KNOWN-BUGS QUICKSTART README TODO TOOLS UPGRADE
@@ -56,7 +59,7 @@ src_install() {
 
 	for dirname in examples sql; do
 		docinto ${dirname}
-		dodoc ${dirname}/*
+		dodoc -r ${dirname}/*
 	done
 
 	newinitd "${FILESDIR}"/pmacctd-init.d pmacctd
