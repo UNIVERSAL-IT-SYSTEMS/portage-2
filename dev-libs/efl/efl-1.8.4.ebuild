@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/efl/efl-1.8.4.ebuild,v 1.1 2014/01/25 15:02:41 tommy Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/efl/efl-1.8.4.ebuild,v 1.2 2014/02/01 15:12:17 tommy Exp $
 
 EAPI="5"
 
@@ -66,7 +66,7 @@ RDEPEND="
 	tiff? ( media-libs/tiff )
 	tslib? ( x11-libs/tslib )
 	wayland? (
-		>=dev-libs/wayland-1.2.0
+		>=dev-libs/wayland-1.3.0
 		>=x11-libs/libxkbcommon-0.3.1
 		media-libs/mesa[gles2,wayland]
 	)
@@ -247,6 +247,18 @@ src_configure() {
 	"
 
 	enlightenment_src_configure
+}
+
+src_compile() {
+	ewarn "If the following compile phase fails with a message including"
+	ewarn "lib/edje/.libs/libedje.so: undefined reference to 'eet_mmap'"
+	ewarn "then most likely the @preserved-rebuild feature of portage"
+	ewarn "preserved the 1.7 libraries, which cause the build failure."
+	ewarn "As a workaround, either remove those libs manually or"
+	ewarn "uninstall all packages still using those old libs with"
+	ewarn "emerge -aC @preserved-rebuild"
+
+	enlightenment_src_compile
 }
 
 src_install() {
