@@ -1,45 +1,48 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/coinor-cgl/coinor-cgl-0.58.5.ebuild,v 1.2 2014/01/15 19:36:06 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/coinor-blis/coinor-blis-0.93.10.ebuild,v 1.2 2014/02/04 09:55:14 jlec Exp $
 
 EAPI=5
 
 inherit autotools-utils multilib
 
-MYPN=Cgl
+MYPN=Blis
 
-DESCRIPTION="COIN-OR cutting-plane generators library"
-HOMEPAGE="https://projects.coin-or.org/Cgl/"
+DESCRIPTION="COIN-OR BiCePS Linear Integer Solver"
+HOMEPAGE="https://projects.coin-or.org/CHiPPS/"
 SRC_URI="http://www.coin-or.org/download/source/${MYPN}/${MYPN}-${PV}.tgz"
 
-LICENSE="EPL-1.0"
-SLOT="0"
+LICENSE="CPL-1.0"
+SLOT="0/1"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
-IUSE="doc examples static-libs test"
+IUSE="examples static-libs test"
 
 RDEPEND="
-	sci-libs/coinor-clp:=
-	sci-libs/coinor-dylp:=
-	sci-libs/coinor-osi:=
 	sci-libs/coinor-utils:=
-	sci-libs/coinor-vol:="
+	sci-libs/coinor-bcps:=
+	sci-libs/coinor-clp:=
+	sci-libs/coinor-alps:="
 DEPEND="${RDEPEND}
 	virtual/pkgconfig
-	doc? ( app-doc/doxygen[dot] )
 	test? ( sci-libs/coinor-sample )"
 
 S="${WORKDIR}/${MYPN}-${PV}/${MYPN}"
 
+src_prepare() {
+	# needed for the --with-coin-instdir
+	dodir /usr
+	sed -i \
+		-e "s:lib/pkgconfig:$(get_libdir)/pkgconfig:g" \
+		configure || die
+	autotools-utils_src_prepare
+}
+
 src_configure() {
 	local myeconfargs=(
 		--enable-dependency-linking
-		$(use_with doc dot)
+		--with-coin-instdir="${ED}"/usr
 	)
 	autotools-utils_src_configure
-}
-
-src_compile() {
-	autotools-utils_src_compile all $(use doc && echo doxydoc)
 }
 
 src_test() {
@@ -47,10 +50,7 @@ src_test() {
 }
 
 src_install() {
-	use doc && HTML_DOC=("${BUILD_DIR}/doxydocs/html/")
 	autotools-utils_src_install
-	# already installed
-	rm "${ED}"/usr/share/coin/doc/${MYPN}/{README,AUTHORS,LICENSE} || die
 	if use examples; then
 		insinto /usr/share/doc/${PF}
 		doins -r examples

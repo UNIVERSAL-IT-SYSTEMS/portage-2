@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/webkit-gtk/webkit-gtk-2.2.4.ebuild,v 1.2 2014/02/03 23:05:03 eva Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/webkit-gtk/webkit-gtk-2.2.4.ebuild,v 1.4 2014/02/04 08:37:19 eva Exp $
 
 EAPI="5"
 
@@ -19,10 +19,11 @@ KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd
 IUSE="aqua coverage debug +egl +geoloc gles2 +gstreamer +introspection +jit libsecret +opengl spell +webgl"
 # bugs 372493, 416331
 REQUIRED_USE="
-	^^ ( gles2 opengl )
 	geoloc? ( introspection )
 	introspection? ( gstreamer )
 	gles2? ( egl )
+	webgl? ( ^^ ( gles2 opengl ) )
+	!webgl? ( ?? ( gles2 opengl ) )
 "
 
 # use sqlite, svg by default
@@ -167,7 +168,7 @@ src_prepare() {
 		-i Source/WebKit/gtk/GNUmakefile.am || die
 
 	if ! use gstreamer; then
-		# webkit2's TestWebKitWebView requires <video> support, bug #???
+		# webkit2's TestWebKitWebView requires <video> support, upstream bug #128164
 		sed -e '/Programs\/WebKit2APITests\/TestWebKitWebView/ d' \
 			-i Tools/TestWebKitAPI/GNUmakefile.am || die
 	fi
@@ -178,7 +179,7 @@ src_prepare() {
 	# bug #459978, upstream bug #113397
 	epatch "${FILESDIR}/${PN}-1.11.90-gtk-docize-fix.patch"
 
-	# Do not build unittests unless requested, upstream bug #???
+	# Do not build unittests unless requested, upstream bug #128163
 	epatch "${FILESDIR}"/${PN}-2.2.4-unittests-build.patch
 
 	# Prevent maintainer mode from being triggered during make
@@ -201,7 +202,9 @@ src_configure() {
 
 	local myconf=""
 
-	if has_version "virtual/rubygems[ruby_targets_ruby20]"; then
+	if has_version "virtual/rubygems[ruby_targets_ruby21]"; then
+		myconf="${myconf} RUBY=$(type -P ruby21)"
+	elif has_version "virtual/rubygems[ruby_targets_ruby20]"; then
 		myconf="${myconf} RUBY=$(type -P ruby20)"
 	elif has_version "virtual/rubygems[ruby_targets_ruby19]"; then
 		myconf="${myconf} RUBY=$(type -P ruby19)"

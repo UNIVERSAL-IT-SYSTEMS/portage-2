@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-libs/coinor-cbc/coinor-cbc-2.8.8.ebuild,v 1.2 2014/01/15 19:35:03 bicatali Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-libs/coinor-cbc/coinor-cbc-2.8.9.ebuild,v 1.2 2014/02/04 09:57:27 jlec Exp $
 
 EAPI=5
 
@@ -31,9 +31,19 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MYPN}-${PV}/${MYPN}"
 
+src_prepare() {
+	# needed for the --with-coin-instdir
+	dodir /usr
+	sed -i \
+		-e "s:lib/pkgconfig:$(get_libdir)/pkgconfig:g" \
+		configure || die
+	autotools-utils_src_prepare
+}
+
 src_configure() {
 	local myeconfargs=(
 		--enable-dependency-linking
+		--with-coin-instdir="${ED}"/usr
 		$(use_with doc dot)
 	)
 	autotools-utils_src_configure
@@ -43,7 +53,7 @@ src_compile() {
 	# hack for parallel build, to overcome not patching Makefile.am above
 	autotools-utils_src_compile -C src libCbc.la
 	autotools-utils_src_compile -C src libCbcSolver.la
-	autotools-utils_src_compile all $(use doc && echo doxydoc)
+	autotools-utils_src_compile all $(use doc doxydoc "")
 }
 
 src_test() {
