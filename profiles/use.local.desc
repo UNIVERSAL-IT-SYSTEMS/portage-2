@@ -1569,6 +1569,7 @@ dev-libs/boost:doc - Install the full API documentation documentation. This take
 dev-libs/boost:nls - Build libboost_locale. This library requires compatible C library interfaces, which might not be provided by uClibc or other embedded libraries.
 dev-libs/boost:threads - Build multi-thread-compatible libraries instead of single-threaded only.
 dev-libs/boost:tools - Build and install the boost tools (bcp, quickbook, inspect, wave)
+dev-libs/c-blosc:cuda - Enable NVIDIA CUDA toolkit support
 dev-libs/check:subunit - Enable support for the subunit unit test protocol
 dev-libs/cyberjack:fox - Enable installation of x11-libs/fox based fxcyberjack program
 dev-libs/cyrus-sasl:authdaemond - Add Courier-IMAP authdaemond unix socket support (net-mail/courier-imap, mail-mta/courier)
@@ -1899,8 +1900,6 @@ dev-python/PyQtMobility:versit - Build bindings for the QtVersit module
 dev-python/amqplib:extras - Install extra tools to generate initial Python mod from an AMQP XML file
 dev-python/anyvc:bazaar - Add support for Bazaar
 dev-python/anyvc:mercurial - Add support for Mercurial
-dev-python/atpy:fits - Enable support for reading and FITS with dev-python/pyfits.
-dev-python/atpy:votable - Enable support for reading and VOTABLE with dev-python/vo.
 dev-python/bpython:urwid - Backend based on dev-python/urwid
 dev-python/celery:sql - Adds SQL support
 dev-python/cgkit:3ds - Enable support for importing 3D Studio models
