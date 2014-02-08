@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-workbench/mysql-workbench-6.0.7.ebuild,v 1.1 2013/10/19 13:48:58 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-workbench/mysql-workbench-6.0.9.ebuild,v 1.1 2014/02/08 09:37:50 graaff Exp $
 
 EAPI=5
 GCONF_DEBUG="no"
@@ -65,10 +65,7 @@ S="${WORKDIR}"/"${MY_P}"
 
 src_prepare() {
 	## Patch CMakeLists.txt
-	epatch "${FILESDIR}/${PN}-${PV}-CMakeLists.patch"
-
-		## fix breakage with as-needed ld flag and PCRE functions
-		epatch "${FILESDIR}/${PN}-${PV}-PCRE-as_needed.patch"
+	epatch "${FILESDIR}/${PN}-6.0.8-CMakeLists.patch"
 
 	## remove hardcoded CXXFLAGS
 	sed -i -e 's/-O0 -g3//' ext/scintilla/gtk/CMakeLists.txt || die
