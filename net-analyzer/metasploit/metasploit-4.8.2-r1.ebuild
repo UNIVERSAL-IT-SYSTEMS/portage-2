@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/metasploit/metasploit-9999.ebuild,v 1.11 2014/02/10 16:35:27 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/metasploit/metasploit-4.8.2-r1.ebuild,v 1.1 2014/02/10 16:03:00 zerochaos Exp $
 
 EAPI="5"
 
@@ -13,7 +13,6 @@ else
 	#https://github.com/rapid7/metasploit-framework/wiki/Downloads-by-Version
 	SRC_URI="http://downloads.metasploit.com/data/releases/archive/framework-${PV}.tar.bz2"
 	KEYWORDS="~amd64 ~arm ~x86"
-	S="${WORKDIR}"/msf3
 fi
 
 #ruby18 is well beyond EoL
@@ -23,9 +22,9 @@ inherit eutils ruby-ng
 
 DESCRIPTION="Advanced open-source framework for developing, testing, and using vulnerability exploit code"
 HOMEPAGE="http://www.metasploit.org/"
-SLOT="9999"
+SLOT="4.8"
 LICENSE="BSD"
-IUSE="development +java lorcon oracle +pcap test"
+IUSE="development +java lorcon +pcap test"
 
 #multiple known bugs with tests reported upstream and ignored
 #http://dev.metasploit.com/redmine/issues/8418 - worked around (fix user creation when possible)
@@ -45,7 +44,6 @@ RUBY_COMMON_DEPEND="virtual/ruby-ssl
 	dev-ruby/kissfft
 	java? ( dev-ruby/rjb )
 	lorcon? ( net-wireless/lorcon[ruby] )
-	oracle? ( dev-ruby/ruby-oci8 )
 	pcap? ( dev-ruby/pcaprub
 		dev-ruby/network_interface )
 	dev-ruby/bundler
