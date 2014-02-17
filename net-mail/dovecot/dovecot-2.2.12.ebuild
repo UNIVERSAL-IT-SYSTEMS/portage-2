@@ -1,13 +1,13 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/dovecot/dovecot-2.2.5.ebuild,v 1.11 2013/09/07 20:16:06 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/dovecot/dovecot-2.2.12.ebuild,v 1.1 2014/02/17 16:55:34 eras Exp $
 
 EAPI=5
 inherit eutils multilib ssl-cert systemd user versionator
 
 MY_P="${P/_/.}"
 major_minor="$(get_version_component_range 1-2)"
-sieve_version="0.4.1"
+sieve_version="0.4.2"
 SRC_URI="http://dovecot.org/releases/${major_minor}/${MY_P}.tar.gz
 	sieve? (
 	http://www.rename-it.nl/dovecot/${major_minor}/${PN}-${major_minor}-pigeonhole-${sieve_version}.tar.gz
@@ -20,18 +20,22 @@ HOMEPAGE="http://www.dovecot.org/"
 
 SLOT="0"
 LICENSE="LGPL-2.1 MIT"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 ~sh sparc x86"
+KEYWORDS="~amd64 ~arm ~hppa ~ia64 ~x86"
 
 IUSE_DOVECOT_AUTH="kerberos ldap mysql pam postgres sqlite vpopmail"
 IUSE_DOVECOT_STORAGE="cydir imapc +maildir mbox mdbox pop3c sdbox"
-IUSE_DOVECOT_OTHER="bzip2 caps doc ipv6 lucene managesieve selinux sieve solr +ssl static-libs suid tcpd zlib"
+IUSE_DOVECOT_COMPRESS="bzip2 lzma lz4 zlib"
+IUSE_DOVECOT_OTHER="caps doc ipv6 lucene managesieve selinux sieve solr +ssl static-libs suid tcpd"
 
-IUSE="${IUSE_DOVECOT_AUTH} ${IUSE_DOVECOT_STORAGE} ${IUSE_DOVECOT_OTHER}"
+IUSE="${IUSE_DOVECOT_AUTH} ${IUSE_DOVECOT_STORAGE} ${IUSE_DOVECOT_COMPRESS} ${IUSE_DOVECOT_OTHER}"
 
-DEPEND="caps? ( sys-libs/libcap )
+DEPEND="bzip2? ( app-arch/bzip2 )
+	caps? ( sys-libs/libcap )
 	kerberos? ( virtual/krb5 )
 	ldap? ( net-nds/openldap )
 	lucene? ( >=dev-cpp/clucene-2.3 )
+	lzma? ( app-arch/xz-utils )
+	lz4? ( app-arch/lz4 )
 	mysql? ( virtual/mysql )
 	pam? ( virtual/pam )
 	postgres? ( dev-db/postgresql-base !dev-db/postgresql-base[ldap,threads] )
@@ -41,6 +45,7 @@ DEPEND="caps? ( sys-libs/libcap )
 	ssl? ( dev-libs/openssl )
 	tcpd? ( sys-apps/tcp-wrappers )
 	vpopmail? ( net-mail/vpopmail )
+	zlib? ( sys-libs/zlib )
 	virtual/libiconv"
 
 RDEPEND="${DEPEND}
