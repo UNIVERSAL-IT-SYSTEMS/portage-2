@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/gnuserv/gnuserv-3.12.8-r2.ebuild,v 1.1 2014/02/17 20:22:23 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/gnuserv/gnuserv-3.12.8-r2.ebuild,v 1.4 2014/02/18 00:33:10 ulm Exp $
 
 EAPI=5
 
@@ -18,7 +18,11 @@ IUSE="X"
 DEPEND=">=app-admin/eselect-emacs-1.15
 	X? ( x11-libs/libXau )"
 RDEPEND="${DEPEND}
-	!app-emacs/gnuserv-programs"
+	!!app-emacs/gnuserv-programs
+	!!<app-editors/xemacs-21.4.22-r3
+	!!~app-editors/xemacs-21.5.29 !!~app-editors/xemacs-21.5.30
+	!!~app-editors/xemacs-21.5.31 !!~app-editors/xemacs-21.5.33
+	!!=app-editors/xemacs-21.5.34 !!=app-editors/xemacs-21.5.34-r1"
 
 SITEFILE="50${PN}-gentoo-${PVR}.el"
 
@@ -57,11 +61,13 @@ src_install() {
 }
 
 pkg_postinst() {
+	elisp-site-regen
 	use X && fdo-mime_desktop_database_update
 	eselect gnuclient update ifunset
 }
 
 pkg_postrm() {
+	elisp-site-regen
 	use X && fdo-mime_desktop_database_update
 	eselect gnuclient update ifunset
 }
