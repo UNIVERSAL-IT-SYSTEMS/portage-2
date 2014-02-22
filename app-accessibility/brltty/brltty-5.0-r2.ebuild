@@ -1,22 +1,23 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-accessibility/brltty/brltty-4.2-r1.ebuild,v 1.4 2013/06/18 16:51:25 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-accessibility/brltty/brltty-5.0-r2.ebuild,v 1.1 2014/02/22 19:52:12 teiresias Exp $
 
-EAPI="4"
+EAPI=5
+
 FINDLIB_USE="ocaml"
 
 inherit findlib eutils multilib toolchain-funcs java-pkg-opt-2 flag-o-matic \
-	autotools udev
+	autotools udev systemd
 
 DESCRIPTION="Daemon that provides access to the Linux/Unix console for a blind person"
 HOMEPAGE="http://mielke.cc/brltty/"
-SRC_URI="http://mielke.cc/brltty/releases/${P}.tar.gz"
+SRC_URI="http://mielke.cc/brltty/archive/${P}.tar.xz"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~x86"
 IUSE="+api +beeper bluetooth +contracted-braille doc +fm gpm iconv icu
-		java +learn-mode +midi nls ocaml +pcm python usb +speech
+		java +midi ncurses nls ocaml +pcm python usb +speech
 		tcl X"
 REQUIRED_USE="doc? ( api )
 	java? ( api )
@@ -27,9 +28,10 @@ REQUIRED_USE="doc? ( api )
 COMMON_DEP="bluetooth? ( net-wireless/bluez )
 	gpm? ( >=sys-libs/gpm-1.20 )
 	iconv? ( virtual/libiconv )
-	icu? ( dev-libs/icu )
+	icu? ( dev-libs/icu:= )
+	ncurses? ( sys-libs/ncurses )
 	nls? ( virtual/libintl )
-	python? ( >=dev-python/pyrex-0.9.4.1 )
+	python? ( >=dev-python/cython-0.16 )
 	tcl? ( >=dev-lang/tcl-8.4.15 )
 	usb? ( virtual/libusb:0 )
 	X? ( x11-libs/libXaw )"
@@ -40,11 +42,9 @@ RDEPEND="java? ( >=virtual/jre-1.4 )
 	${COMMON_DEP}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-fix-a2.patch
-	epatch "${FILESDIR}"/${P}-fix-ldflags.patch
-	epatch "${FILESDIR}"/${P}-fix-ocaml-install.patch
-	epatch "${FILESDIR}"/${P}-fix-svnversion.patch
-	epatch "${FILESDIR}"/${P}-glibc-212.patch
+	epatch "${FILESDIR}"/${P}-fix-ldflags.patch \
+		"${FILESDIR}"/${P}-udev.patch \
+		"${FILESDIR}"/${P}-respect-AR.patch
 
 	java-pkg-opt-2_src_prepare
 
@@ -55,6 +55,7 @@ src_prepare() {
 }
 
 src_configure() {
+	tc-export AR LD
 	# override prefix in order to install into /
 	# braille terminal needs to be available as soon in the boot process as
 	# possible
@@ -63,28 +64,30 @@ src_configure() {
 	# Disable stripping since we do that ourselves.
 	econf \
 		--prefix=/ \
+		--localedir=/usr/share/locale \
 		--includedir=/usr/include \
 		--localstatedir=/var \
 		--disable-stripping \
 		--with-install-root="${D}" \
+		--with-writable-directory="/run/brltty" \
 		$(use_enable api) \
-		$(use_enable beeper beeper-support) \
+		$(use_with beeper beep-package) \
 		$(use_enable contracted-braille) \
-		$(use_enable fm fm-support) \
+		$(use_with fm fm-package) \
 		$(use_enable gpm) \
 		$(use_enable iconv) \
 		$(use_enable icu) \
 		$(use_enable java java-bindings) \
-		$(use_enable learn-mode) \
-		$(use_enable midi midi-support) \
+		$(use_with midi midi-package) \
 		$(use_enable nls i18n) \
-		$(use_enable ocaml caml-bindings) \
-		$(use_enable pcm pcm-support) \
+		$(use_enable ocaml ocaml-bindings) \
+		$(use_with pcm pcm-package) \
 		$(use_enable python python-bindings) \
 		$(use_enable speech speech-support) \
 		$(use_enable tcl tcl-bindings) \
 		$(use_enable X x) \
 		$(use_with bluetooth bluetooth-package) \
+		$(use_with ncurses curses) \
 		$(use_with usb usb-package)
 }
 
@@ -96,8 +99,7 @@ src_compile() {
 		JAVAC_CONF="${JAVAC} -encoding UTF-8 $(java-pkg_javac-args)"
 	fi
 
-	# workaround for parallel build failure, bug #340903.
-	emake -j1 JAVA_JNI_FLAGS="${OUR_JNI_FLAGS}" JAVAC="${JAVAC_CONF}"
+	emake JAVA_JNI_FLAGS="${OUR_JNI_FLAGS}" JAVAC="${JAVAC_CONF}"
 }
 
 src_install() {
@@ -116,8 +118,10 @@ src_install() {
 
 	insinto /etc
 	doins Documents/brltty.conf
-	udev_newrules Hotplug/udev.rules 70-brltty.rules
+	udev_newrules Autostart/Udev/udev.rules 70-brltty.rules
 	newinitd "${FILESDIR}"/brltty.rc brltty
+	systemd_dounit Autostart/Systemd/brltty.service
+	systemd_dotmpfilesd "${FILESDIR}/${PN}.tmpfiles.conf"
 
 	libdir="$(get_libdir)"
 	mkdir -p "${D}"/usr/${libdir}/
