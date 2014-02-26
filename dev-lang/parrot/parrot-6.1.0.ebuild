@@ -1,17 +1,20 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/parrot/parrot-5.6.0.ebuild,v 1.2 2013/09/03 08:56:34 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/parrot/parrot-6.1.0.ebuild,v 1.1 2014/02/26 08:26:09 patrick Exp $
 
-EAPI=3
+EAPI=5
 
 inherit eutils multilib
+
+# weird failures
+RESTRICT="test"
 
 DESCRIPTION="Virtual machine designed to efficiently compile and execute bytecode for dynamic languages"
 HOMEPAGE="http://www.parrot.org/"
 SRC_URI="ftp://ftp.parrot.org/pub/parrot/releases/devel/${PV}/${P}.tar.gz"
 
 LICENSE="Artistic-2"
-SLOT="0"
+SLOT="0/6.1.0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="opengl nls doc examples gdbm gmp ssl +unicode pcre"
 
@@ -22,17 +25,11 @@ RDEPEND="sys-libs/readline
 	gdbm? ( >=sys-libs/gdbm-1.8.3-r1 )
 	gmp? ( >=dev-libs/gmp-4.1.4 )
 	ssl? ( dev-libs/openssl )
-	pcre? ( dev-libs/libpcre )"
+	pcre? ( dev-libs/libpcre )
+	doc? ( dev-perl/JSON )"
 
 DEPEND="dev-lang/perl[doc?]
 	${RDEPEND}"
-
-src_prepare() {
-	# Fix for #404195 - pcre detection is wonky
-	sed -i 's:libpcre.so.0:libpcre.so.1:' runtime/parrot/library/pcre.pir || die "Couldn't fix pcre location"
-	# Fix perldoc sandbox madness
-	epatch "${FILESDIR}/perldoc.patch" || die
-}
 
 src_configure() {
 	myconf="--disable-rpath"

@@ -1,17 +1,12 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/nqp/nqp-2013.12.1.ebuild,v 1.1 2014/01/09 07:51:58 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/nqp/nqp-2014.02.ebuild,v 1.1 2014/02/26 08:27:24 patrick Exp $
 
 EAPI=5
 
 inherit eutils multilib
 
-# MoarVM isn't reliable enough yet
-
-# upstream knows about test fail
-RESTRICT="test"
-
-GITCRAP=52dd202
+GITCRAP=f8a6106
 PARROT_VERSION="5.9.0"
 
 DESCRIPTION="Not Quite Perl, a Perl 6 bootstrapping compiler"
@@ -20,13 +15,13 @@ SRC_URI="http://github.com/perl6/${PN}/tarball/${PV} -> ${P}.tar.gz"
 
 LICENSE="Artistic-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="doc +parrot java"
-REQUIRED_USE="|| ( parrot java )"
+KEYWORDS="~x86 ~amd64"
+IUSE="doc +parrot java moar"
+REQUIRED_USE="|| ( parrot java moar )"
 
-RDEPEND="parrot? ( >=dev-lang/parrot-${PARROT_VERSION}[unicode] )
-	java? ( virtual/jre )"
-	#moar? ( =dev-lang/moarvm-2013.10.1 )"
+RDEPEND="parrot? ( >=dev-lang/parrot-${PARROT_VERSION}:=[unicode] )
+	java? ( virtual/jre )
+	moar? ( =dev-lang/moarvm-${PV} )"
 DEPEND="${RDEPEND}
 	java? ( virtual/jdk )
 	dev-lang/perl"
@@ -36,7 +31,7 @@ S=${WORKDIR}/perl6-nqp-${GITCRAP}
 src_configure() {
 	use java && myconf+="jvm,"
 	use parrot && myconf+="parrot,"
-	#use moar && myconf+="moar,"
+	use moar && myconf+="moar,"
 	perl Configure.pl --backend=${myconf} --prefix=/usr || die
 }
 
