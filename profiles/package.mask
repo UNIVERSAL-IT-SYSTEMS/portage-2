@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15454 2014/03/08 08:39:35 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15460 2014/03/09 12:58:21 aballier Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -101,6 +101,8 @@ dev-libs/libgcrypt:11
 >=app-emulation/emul-linux-x86-gtklibs-20131008-r3
 >=media-gfx/graphite2-1.2.4-r1
 >=media-libs/harfbuzz-0.9.26-r1
+# libass needs multilib harfbuzz, unmask at the same time (aballier@g.o)
+>=media-libs/libass-0.11
 >=x11-libs/pango-1.36.2-r1
 >=x11-libs/pangox-compat-0.0.2-r1
 >=app-emulation/emul-linux-x86-gtklibs-20131008-r4
@@ -146,15 +148,27 @@ dev-libs/libmateweather
 mate-base/libmatekbd
 mate-base/mate-common
 mate-base/mate-desktop
+mate-base/mate-file-manager
 mate-base/mate-menus
 mate-base/mate-panel
 mate-base/mate-session-manager
 mate-base/mate-settings-daemon
+mate-extra/mate-calc
+mate-extra/mate-character-map
 mate-extra/mate-dialogs
 mate-extra/mate-polkit
+mate-extra/mate-power-manager
+mate-extra/mate-screensaver
+mate-extra/mate-sensors-applet
+mate-extra/mate-system-monitor
+mate-extra/mate-utils
 net-wireless/mate-bluetooth
 x11-libs/libmatewnck
+x11-terms/mate-terminal
+x11-themes/mate-backgrounds
 x11-themes/mate-icon-theme
+x11-themes/mate-themes
+x11-wm/marco
 x11-wm/mate-window-manager
 
 # Tom Wijsman <TomWij@gentoo.org> (21 Feb 2014)
@@ -167,15 +181,27 @@ x11-wm/mate-window-manager
 >=mate-base/libmatekbd-1.7
 >=mate-base/mate-common-1.7
 >=mate-base/mate-desktop-1.7
+>=mate-base/mate-file-manager-1.7
 >=mate-base/mate-menus-1.7
 >=mate-base/mate-panel-1.7
 >=mate-base/mate-session-manager-1.7
 >=mate-base/mate-settings-daemon-1.7
+>=mate-extra/mate-calc-1.7
+>=mate-extra/mate-character-map-1.7
 >=mate-extra/mate-dialogs-1.7
 >=mate-extra/mate-polkit-1.7
+>=mate-extra/mate-power-manager-1.7
+>=mate-extra/mate-screensaver-1.7
+>=mate-extra/mate-sensors-applet-1.7
+>=mate-extra/mate-system-monitor-1.7
+>=mate-extra/mate-utils-1.7
 >=net-wireless/mate-bluetooth-1.7
 >=x11-libs/libmatewnck-1.7
+>=x11-terms/mate-terminal-1.7
+>=x11-themes/mate-backgrounds-1.7
 >=x11-themes/mate-icon-theme-1.7
+>=x11-themes/mate-themes-1.7
+>=x11-wm/marco-1.7
 >=x11-wm/mate-window-manager-1.7
 
 # Ulrich Müller <ulm@gentoo.org> (21 Feb 2014)
@@ -638,16 +664,6 @@ dev-java/sun-jdk
 dev-java/sun-jre-bin
 dev-java/sun-jce-bin
 
-# Alexis Ballier <aballier@gentoo.org> (26 Jun 2013)
-# New major release. Rev. deps need to be checked first.
->=media-libs/flac-1.3.0
-
-# Alexis Ballier <aballier@gentoo.org> (26 Jun 2013)
-# These break build of the other drivers (x11-libs/libva-vdpau-driver and
-# x11-libs/xvba-video)
->=x11-libs/libva-1.2.0
->=x11-libs/libva-intel-driver-1.2.0
-
 # Julian Ospald <hasufell@gentoo.org> (26 Jun 2013)
 # Depends on masked dev-lang/lua-5.2
 >=games-emulation/sdlmame-0.149
@@ -671,11 +687,6 @@ dev-java/sun-jce-bin
 # Patrick Lauer <patrick@gentoo.org> (21 May 2013)
 # broken dependencies -> uninstallable #470712
 app-portage/g-ctan
-
-# Alexis Ballier <aballier@gentoo.org> (08 May 2013)
-# Breaks it sole rev. dep: vlc
-# Keep it masked until fixed.
->=media-libs/libdvbpsi-1.1.0
 
 # Markos Chandras <hwoarang@gentoo.org> (28 Apr 2013)
 # Early release of pcmanfm Qt4 port
