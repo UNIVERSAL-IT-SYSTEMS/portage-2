@@ -2312,14 +2312,17 @@ dev-vcs/git:ppcsha1 - Make use of a bundled routine that is optimized for the PP
 dev-vcs/git:subversion - Include git-svn for dev-vcs/subversion support
 dev-vcs/git:webdav - Adds support for push'ing to HTTP/HTTPS repositories via DAV
 dev-vcs/git-annex:android - Building for Android
+dev-vcs/git-annex:androidsplice - Get TH splices for Android.
 dev-vcs/git-annex:assistant - Enable git-annex assistant and watch command
 dev-vcs/git-annex:cryptohash - Enable use of cryptohash for checksumming
 dev-vcs/git-annex:dns - Enable the haskell DNS library for DNS lookup
+dev-vcs/git-annex:ekg - Enable use of EKG to monitor git-annex as it runs.
 dev-vcs/git-annex:feed - Enable podcast feed support
 dev-vcs/git-annex:pairing - Enable pairing of git annex repositories
 dev-vcs/git-annex:production - Enable production build (slower build; faster binary)
 dev-vcs/git-annex:quvi - Enable use of quvi to download videos
 dev-vcs/git-annex:s3 - Enable Amazon S3 remote
+dev-vcs/git-annex:tahoe - Enable the tahoe special remote
 dev-vcs/git-annex:tdfa - Use regex-tdfa for wildcards
 dev-vcs/git-annex:testsuite - Embed the test suite into git-annex
 dev-vcs/git-annex:webapp - Enable git-annex webapp
@@ -3432,6 +3435,7 @@ media-libs/x264:10bit - Set output bit depth to 10, this may not be compatible w
 media-libs/x264:interlaced - enable interlaced encoding support, this can decrease encoding speed by up to 2%
 media-libs/x264:opencl - Add support for OpenCL.
 media-libs/x264:pic - disable optimized assembly code that is not PIC friendly
+media-libs/x265:10bit - Set output bit depth to 10.
 media-libs/xine-lib:bluray - Enable playback of Blu-ray filesystems using media-libs/libbluray
 media-libs/xine-lib:dxr3 - Enable support for DXR3 mpeg acceleration cards.
 media-libs/xine-lib:flac - Build the media-libs/flac based FLAC demuxer and decoder. This flag is not needed for playing FLAC content, neither standalone nor in Ogg container (OggFLAC), but might have better support for exotic features like 24-bit samples or 96kHz sample rates.
@@ -3965,6 +3969,7 @@ media-video/ffmpeg:twolame - Enables MP2 encoding via media-sound/twolame as an 
 media-video/ffmpeg:vaapi - Enables VAAPI (Video Acceleration API) for hardware decoding
 media-video/ffmpeg:vis - Adds support for SIMD optimizations for UltraSPARC processors.
 media-video/ffmpeg:vpx - Enables vp8 codec support using libvpx: Decoding vp8 does not require this to be enabled but libvpx can also be used for decoding; encoding vp8 requires this useflag to be enabled though.
+media-video/ffmpeg:x265 - Enables HEVC encoding with media-libs/x265.
 media-video/ffmpeg:zvbi - Enables media-libs/zvbi based teletext decoder.
 media-video/ffmpeg2theora:kate - Adds support for Ogg Kate subtitles via libkate.
 media-video/gnome-mplayer:dconf - Enable support for gnome-base/dconf
