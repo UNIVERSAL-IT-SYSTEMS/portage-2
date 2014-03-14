@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/gdb/gdb-7.7.ebuild,v 1.4 2014/03/09 00:04:37 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/gdb/gdb-7.7-r1.ebuild,v 1.1 2014/03/14 06:11:30 vapier Exp $
 
 EAPI="4"
 PYTHON_COMPAT=( python{2_7,3_3} )
@@ -43,7 +43,7 @@ case ${PV} in
 	;;
 esac
 
-PATCH_VER=""
+PATCH_VER="1"
 DESCRIPTION="GNU debugger"
 HOMEPAGE="http://sourceware.org/gdb/"
 SRC_URI="${SRC_URI} ${PATCH_VER:+mirror://gentoo/${P}-patches-${PATCH_VER}.tar.xz}"
@@ -73,6 +73,7 @@ S=${WORKDIR}/${PN}-${MY_PV}
 src_prepare() {
 	[[ -n ${RPM} ]] && rpm_spec_epatch "${WORKDIR}"/gdb.spec
 	use vanilla || [[ -n ${PATCH_VER} ]] && EPATCH_SUFFIX="patch" epatch "${WORKDIR}"/patch
+	epatch_user
 	strip-linguas -u bfd/po opcodes/po
 }
 
