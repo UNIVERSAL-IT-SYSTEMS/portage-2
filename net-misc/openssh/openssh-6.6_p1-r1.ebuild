@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/openssh/openssh-6.6_p1-r1.ebuild,v 1.2 2014/03/20 20:58:31 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/openssh/openssh-6.6_p1-r1.ebuild,v 1.4 2014/03/21 18:43:09 vapier Exp $
 
 EAPI="4"
 inherit eutils user flag-o-matic multilib autotools pam systemd versionator
@@ -134,7 +134,12 @@ src_prepare() {
 		# Disable fortify flags ... our gcc does this for us
 		-e 's:-D_FORTIFY_SOURCE=2::'
 	)
-	sed -i "${sed_args[@]}" configure{,.ac} || die
+	# The -ftrapv flag ICEs on hppa #505182
+	use hppa && sed_args+=(
+		-e '/CFLAGS/s:-ftrapv:-fdisable-this-test:'
+		-e '/OSSH_CHECK_CFLAG_LINK.*-ftrapv/d'
+	)
+	sed -i "${sed_args[@]}" configure{.ac,} || die
 
 	epatch_user #473004
 
