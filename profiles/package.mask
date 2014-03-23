@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15497 2014/03/22 21:22:23 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15499 2014/03/23 15:45:05 ulm Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -29,6 +29,12 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Ulrich Müller <ulm@gentoo.org> (23 Mar 2014)
+# Reintegrated into app-emacs/gnuserv.
+# See bug 177936, comment #9 and following for details.
+# Masked for removal in 30 days, bug 505432.
+app-emacs/gnuserv-programs
 
 # Rick Farina <zerochaos@gentoo.org> (22 Mar 2014)
 # Upstream has replaced dev-util/dissy with dev-util/emilpro
@@ -194,20 +200,6 @@ app-emacs/delicious
 # the TOC2 protocol for the AIM service.
 # Masked for removal in 30 days, bug 502322.
 app-emacs/tnt
-
-# Ulrich Müller <ulm@gentoo.org> (21 Feb 2014)
-# Included with Emacs since version 23.
-# Last stand-alone release in 2008.
-# Masked for removal in 30 days, bug 501964.
-app-emacs/mairix
-
-# Ulrich Müller <ulm@gentoo.org> (20 Feb 2014)
-# Abandoned by upstream: Last release in 2003, last visible
-# upstream activity in 2004. Does not work with Emacs 24.
-# File a bug for moving app-emacs/oddmuse (currently in emacs
-# overlay) to the main tree if you need a replacement.
-# Masked for removal in 30 days, bug 501926.
-app-emacs/http-emacs
 
 # Ulrich Müller <ulm@gentoo.org> (15 Feb 2014)
 # Support library for app-emacs/prime-el, which is masked
