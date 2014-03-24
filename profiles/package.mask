@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15505 2014/03/24 07:34:43 moult Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15509 2014/03/24 21:40:51 hd_brummy Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -29,6 +29,24 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Joerg Bornkessel <hd_brummy@gentoo.org (24 Mar 2014)
+# mask for removal, depending on wrt bug #502278
+# ~ 24 Apr 2014
+# not converted to xgettext handling, dead on upstream since ~2007
+media-plugins/vdr-eggtimer
+
+# Joerg Bornkessel <hd_brummy@gentoo.org (24 Mar 2014)
+# mask for removal, depending on wrt bug #502274
+# ~ 24 Apr 2014
+# not converted to xgettext handling, dead on upstream since ~2007
+media-plugins/vdr-ac3mode
+
+# Joerg Bornkessel <hd_brummy@gentoo.org (24 Mar 2014)
+# mask for removal, depending on wrt bug #502276
+# ~ 24 Apr 2014
+# not converted to xgettext handling, dead on upstream since ~2008
+media-plugins/vdr-bitstreamout
 
 # Ulrich Müller <ulm@gentoo.org> (23 Mar 2014)
 # Reintegrated into app-emacs/gnuserv.
@@ -249,71 +267,6 @@ media-gfx/kgraphviewer
 >=sys-apps/systemd-sysv-utils-210
 
 # Tom Wijsman <TomWij@gentoo.org> (21 Feb 2014)
-# MATE Desktop Environment 1.6 introduction mask:
-#
-# MATE is in the progress of being brought to the Portage tree; if you see this
-# mask message when you install it from the Portage tree, we suggest you to
-# wait a few days until MATE has been fully brought to the Portage tree.
-#
-# New ebuild request bug:
-#
-#     https://bugs.gentoo.org/show_bug.cgi?id=387487
-#
-# MATE overlay users that see this message can use the following package.unmask:
-#
-#     https://gist.github.com/TomWij/cf9cdd0fe90ac08b8ded
-#
-# If you use another overlay, replace the ::mate-overlay suffix by that overlay.
-app-admin/mate-system-tools
-app-arch/mate-file-archiver
-app-editors/mate-text-editor
-app-text/mate-doc-utils
-app-text/mate-document-viewer
-dev-libs/libmateweather
-dev-python/python-caja
-mate-base/libmatekbd
-mate-base/libmatekeyring
-mate-base/mate
-mate-base/mate-applets
-mate-base/mate-common
-mate-base/mate-control-center
-mate-base/mate-desktop
-mate-base/mate-file-manager
-mate-base/mate-keyring
-mate-base/mate-menus
-mate-base/mate-panel
-mate-base/mate-session-manager
-mate-base/mate-settings-daemon
-mate-extra/caja-dropbox
-mate-extra/mate-calc
-mate-extra/mate-character-map
-mate-extra/mate-dialogs
-mate-extra/mate-file-manager-image-converter
-mate-extra/mate-file-manager-open-terminal
-mate-extra/mate-file-manager-sendto
-mate-extra/mate-file-manager-share
-mate-extra/mate-media
-mate-extra/mate-polkit
-mate-extra/mate-power-manager
-mate-extra/mate-screensaver
-mate-extra/mate-sensors-applet
-mate-extra/mate-system-monitor
-mate-extra/mate-user-share
-mate-extra/mate-utils
-media-gfx/mate-image-viewer
-net-analyzer/mate-netspeed
-net-wireless/mate-bluetooth
-x11-libs/libmatewnck
-x11-misc/mate-menu-editor
-x11-misc/mate-notification-daemon
-x11-terms/mate-terminal
-x11-themes/mate-backgrounds
-x11-themes/mate-icon-theme
-x11-themes/mate-icon-theme-faenza
-x11-themes/mate-themes
-x11-wm/mate-window-manager
-
-# Tom Wijsman <TomWij@gentoo.org> (21 Feb 2014)
 # MATE Desktop Environment >=1.7 introduction mask:
 #
 # Given that MATE Desktop Environment 1.8 will release soon, this mask is
@@ -394,11 +347,6 @@ dev-lang/python:3.4
 # Unmaintained, has several problems on modern systems,
 # superseded by net-analyzer/ifstatus (bug #501432)
 net-analyzer/ethstatus
-
-# Joerg Bornkessel <hd_brummy@gentoo.org> (08 Feb 2014)
-# removal ~08/Mar/2014 , depend on i18n issues
-# wrt bug #424255
-media-plugins/vdr-amarok
 
 # Tim Harder <radhermit@gentoo.org> (04 Feb 2014)
 # Masked for testing
@@ -789,10 +737,6 @@ net-wireless/madwifi-ng
 # Dead upstream, replaced by gitolite
 dev-vcs/gitosis
 dev-vcs/gitosis-gentoo
-
-# Joerg Bornkessel <hd_brummy@gentoo.org> (04 Nov 2012)
-# masked for testing, bug #422605
-=media-plugins/vdr-softdevice-0.5.0.20110417
 
 # Markos Chandras <hwoarang@gentoo.org> (03 Nov 2012)
 # Masked for testing
