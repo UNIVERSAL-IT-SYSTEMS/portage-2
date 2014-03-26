@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ball/ball-1.4.1-r1.ebuild,v 1.6 2013/09/05 19:03:42 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-chemistry/ball/ball-1.4.1-r1.ebuild,v 1.7 2014/03/26 11:20:39 jlec Exp $
 
 EAPI=5
 
@@ -61,9 +61,7 @@ PATCHES=(
 	)
 
 pkg_setup() {
-	use python \
-		&& python_set_active_version 2 \
-		&& python_pkg_setup
+	use python && python-single-r1_pkg_setup
 }
 
 src_configure() {
