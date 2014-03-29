@@ -1,24 +1,22 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/tinyxml2/tinyxml2-1.0.1_p20120531.ebuild,v 1.5 2012/09/20 12:39:00 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/tinyxml2/tinyxml2-2.0.2.ebuild,v 1.1 2014/03/29 00:30:49 radhermit Exp $
 
-EAPI="4"
-CMAKE_MIN_VERSION="2.8.5"
+EAPI=5
 
 inherit cmake-utils
 
 DESCRIPTION="A simple, small, efficient, C++ XML parser"
-HOMEPAGE="http://www.grinninglizard.com/tinyxml2/"
-SRC_URI="http://dev.gentoo.org/~radhermit/distfiles/${P}.tar.bz2"
+HOMEPAGE="http://www.grinninglizard.com/tinyxml2/ https://github.com/leethomason/tinyxml2/"
+SRC_URI="https://github.com/leethomason/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="ZLIB"
-SLOT="0"
-KEYWORDS="amd64 x86"
+SLOT="0/2"
+KEYWORDS="~amd64 ~x86"
 IUSE="static-libs test"
 
 PATCHES=(
-	"${FILESDIR}"/${P}-test.patch
-	"${FILESDIR}"/${P}-test-return-status.patch
+	"${FILESDIR}"/${PN}-1.0.9_p20121123-test.patch
 )
 
 src_configure() {
