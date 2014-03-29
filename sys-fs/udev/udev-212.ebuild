@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-212-r1.ebuild,v 1.4 2014/03/28 18:51:45 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-212.ebuild,v 1.2 2014/03/28 18:32:16 mgorny Exp $
 
 EAPI=5
 
@@ -10,7 +10,7 @@ if [[ ${PV} = 9999* ]]; then
 	EGIT_REPO_URI="git://anongit.freedesktop.org/systemd/systemd"
 	inherit git-2
 else
-	patchset=1
+	patchset=
 	SRC_URI="http://www.freedesktop.org/software/systemd/systemd-${PV}.tar.xz"
 	if [[ -n "${patchset}" ]]; then
 				SRC_URI="${SRC_URI}
@@ -31,7 +31,7 @@ RESTRICT="test"
 
 COMMON_DEPEND=">=sys-apps/util-linux-2.20
 	acl? ( sys-apps/acl )
-	gudev? ( >=dev-libs/glib-2.22[${MULTILIB_USEDEP}] )
+	gudev? ( >=dev-libs/glib-2.22 )
 	introspection? ( >=dev-libs/gobject-introspection-1.31.1 )
 	kmod? ( >=sys-apps/kmod-16 )
 	selinux? ( >=sys-libs/libselinux-2.1.9 )
@@ -197,7 +197,6 @@ multilib_src_configure() {
 		--disable-logind
 		--disable-polkit
 		--disable-myhostname
-		$(use_enable gudev)
 		--enable-split-usr
 		--with-html-dir=/usr/share/doc/${PF}/html
 		--without-python
@@ -218,6 +217,7 @@ multilib_src_configure() {
 			$(use_enable acl)
 			$(use_enable kmod)
 			$(use_enable selinux)
+			$(use_enable gudev)
 			--with-rootlibdir=/$(get_libdir)
 		)
 	else
@@ -228,6 +228,7 @@ multilib_src_configure() {
 			--disable-acl
 			--disable-kmod
 			--disable-selinux
+			--disable-gudev
 			--disable-manpages
 			--with-rootlibdir=/usr/$(get_libdir)
 		)
@@ -283,7 +284,6 @@ multilib_src_compile() {
 		fi
 	else
 		local lib_targets=( libudev.la )
-		use gudev && lib_targets+=( libgudev-1.0.la )
 		emake "${lib_targets[@]}"
 	fi
 }
@@ -352,11 +352,6 @@ multilib_src_install() {
 			install-includeHEADERS
 			install-pkgconfiglibDATA
 		)
-
-		if use gudev; then
-			lib_LTLIBRARIES+=" libgudev-1.0.la"
-			pkgconfiglib_DATA+=" src/gudev/gudev-1.0.pc"
-		fi
 
 		targets+=(
 			lib_LTLIBRARIES="${lib_LTLIBRARIES}"
