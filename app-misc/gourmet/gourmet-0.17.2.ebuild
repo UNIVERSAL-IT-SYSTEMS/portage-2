@@ -1,9 +1,9 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/gourmet/gourmet-0.16.1-r2.ebuild,v 1.1 2013/11/19 02:45:49 nixphoeni Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/gourmet/gourmet-0.17.2.ebuild,v 1.1 2014/04/06 21:45:15 nixphoeni Exp $
 
 EAPI="5"
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="sqlite"
 # Parallel builds fail when building translations
 DISTUTILS_NO_PARALLEL_BUILD=1
@@ -35,12 +35,8 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	>=dev-python/python-distutils-extra-2.37-r1[${PYTHON_USEDEP}]"
 
-PATCHES=( ${FILESDIR}/no-docs.patch \
-	${FILESDIR}/nutritional-db-fix.patch \
-	${FILESDIR}/desktop-entry.patch \
-	${FILESDIR}/${P}-PIL-png.patch )
-# distutils gets a bunch of default docs
-DOCS=( ChangeLog CODING FAQ TESTS TODO )
+PATCHES=( ${FILESDIR}/no-docs-0.17.0.patch )
+DOCS=( ChangeLog CODING.md FAQ README.md TESTS TODO.md )
 
 python_prepare_all() {
 	# Modify these lines before copying them out
