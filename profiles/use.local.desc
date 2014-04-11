@@ -7348,13 +7348,16 @@ xfce-base/xfce4-session:gnome-keyring - Enable password storage support using gn
 xfce-base/xfce4-settings:libcanberra - Enable sound event support using media-libs/libcanberra
 xfce-base/xfce4-settings:xklavier - Enable keyboard layout selection support using x11-libs/libxklavier
 xfce-base/xfdesktop:thunar - Build support for desktop icons (for example, launchers and folders)
+xfce-extra/multiload-nandhp:lxpanel - Build the applet for lxde-base/lxpanel, you can set XFCE_PLUGINS="" if you don't want the Xfce dependencies.
 xfce-extra/tumbler:odf - Enable support for .odf thumbnailers by using gnome-extra/libgsf
 xfce-extra/xfce4-clipman-plugin:qrcode - Enable support for media-gfx/qrencode
+xfce-extra/xfce4-mixer:keybinder - Enable shortcut support using dev-libs/keybinder
 xfce-extra/xfce4-mpc-plugin:libmpd - Build using media-libs/libmpd backend, instead of native fallback which is preferred
 xfce-extra/xfce4-playercontrol-plugin:audacious - Enable Audacious support
 xfce-extra/xfce4-playercontrol-plugin:mpd - Enable Music Player Daemon support
 xfce-extra/xfce4-power-manager:udisks - Pull in sys-fs/udisks for spindown support
 xfce-extra/xfce4-soundmenu-plugin:glyr - Enable music metadata searchengine support using media-libs/glyr
+xfce-extra/xfce4-soundmenu-plugin:keybinder - Enable shortcut support using dev-libs/keybinder
 xfce-extra/xfce4-soundmenu-plugin:lastfm - Enable last.fm support using media-libs/libclastfm
 xfce-extra/xfce4-taskmanager:gksu - Build against x11-libs/libgksu to provide "Run as root" option in the application's menu
 xfce-extra/xfswitch-plugin:gdm - Use gdmflexiserver from gnome-base/gdm instead of x11-misc/lightdm
