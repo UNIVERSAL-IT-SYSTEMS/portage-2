@@ -1,8 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-docs/linux-docs-3.12.13.ebuild,v 1.1 2014/02/25 14:37:28 mpagano Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/linux-docs/linux-docs-3.13.9.ebuild,v 1.1 2014/04/14 14:39:00 mpagano Exp $
 
-EAPI=3
+EAPI=5
 inherit toolchain-funcs
 
 MY_P=linux-${PV}
@@ -14,7 +14,7 @@ SRC_URI="mirror://kernel/linux/kernel/v3.x/${MY_P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 
 IUSE="html"
 DEPEND="app-text/docbook-sgml-utils
