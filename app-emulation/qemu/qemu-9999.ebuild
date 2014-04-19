@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu/qemu-9999.ebuild,v 1.62 2014/03/24 17:39:55 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emulation/qemu/qemu-9999.ebuild,v 1.65 2014/04/19 17:41:33 vapier Exp $
 
 EAPI=5
 
@@ -10,7 +10,7 @@ PYTHON_REQ_USE="ncurses,readline"
 inherit eutils flag-o-matic linux-info toolchain-funcs multilib python-r1 \
 	user udev fcaps readme.gentoo
 
-#BACKPORTS=49bdd50f
+BACKPORTS=
 
 if [[ ${PV} = *9999* ]]; then
 	EGIT_REPO_URI="git://git.qemu.org/qemu.git"
@@ -226,8 +226,6 @@ pkg_pretend() {
 
 pkg_setup() {
 	enewgroup kvm 78
-
-	python_export_best
 }
 
 src_prepare() {
@@ -237,12 +235,13 @@ src_prepare() {
 		Makefile Makefile.target || die
 
 	epatch "${FILESDIR}"/qemu-1.7.0-cflags.patch
+	epatch "${FILESDIR}"/qemu-9999-virtfs-proxy-helper-accept.patch
 	[[ -n ${BACKPORTS} ]] && \
 		EPATCH_FORCE=yes EPATCH_SUFFIX="patch" EPATCH_SOURCE="${S}/patches" \
 			epatch
 
 	# Fix ld and objcopy being called directly
-	tc-export LD OBJCOPY
+	tc-export AR LD OBJCOPY
 
 	# Verbose builds
 	MAKEOPTS+=" V=1"
@@ -374,6 +373,8 @@ qemu_src_configure() {
 }
 
 src_configure() {
+	python_export_best
+
 	softmmu_targets=
 	user_targets=
 
