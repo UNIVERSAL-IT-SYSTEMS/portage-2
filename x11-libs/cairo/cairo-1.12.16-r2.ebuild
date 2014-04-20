@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/cairo/cairo-9999.ebuild,v 1.38 2014/04/20 17:55:37 tetromino Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/cairo/cairo-1.12.16-r2.ebuild,v 1.1 2014/04/20 17:55:37 tetromino Exp $
 
 EAPI=5
 
@@ -32,7 +32,7 @@ RDEPEND="dev-libs/lzo[${MULTILIB_USEDEP}]
 	media-libs/freetype:2[${MULTILIB_USEDEP}]
 	media-libs/libpng:0=[${MULTILIB_USEDEP}]
 	sys-libs/zlib[${MULTILIB_USEDEP}]
-	>=x11-libs/pixman-0.30.0[${MULTILIB_USEDEP}]
+	>=x11-libs/pixman-0.28.0[${MULTILIB_USEDEP}]
 	directfb? ( dev-libs/DirectFB )
 	gles2? ( media-libs/mesa[gles2,${MULTILIB_USEDEP}] )
 	glib? ( >=dev-libs/glib-2.28.6:2[${MULTILIB_USEDEP}] )
