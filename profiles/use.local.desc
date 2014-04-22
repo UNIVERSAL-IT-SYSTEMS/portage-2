@@ -1482,7 +1482,7 @@ dev-lang/gdl:udunits - Add support for manipulating units of physical quantities
 dev-lang/ghc:binary - Install the binary version directly, rather than using it to build the source version.
 dev-lang/ghc:ghcbootstrap - Bootstrap from an existing GHC installation.
 dev-lang/ghc:ghcmakebinary - Build with less runtime depends (bundle libffi for building bootstrap binaries).
-dev-lang/ghc:llvm - Enable llvm code geenrator for ghc (-fllvm).
+dev-lang/ghc:llvm - Enable llvm code generator for ghc (-fllvm).
 dev-lang/gnat-gcc:lto - Add support for link-time optimizations (unsupported, use at your own risk).
 dev-lang/icc:eclipse - Install the dev-util/eclipse-sdk plugins
 dev-lang/icon:iplsrc - install the icon programming library source
@@ -7359,8 +7359,6 @@ x11-wm/xpra:vpx - Enable vpx image format support
 x11-wm/xpra:webp - Enable webp image format support
 xfce-base/libxfce4ui:glade - Build support for Glade 3's GtkBuilder implementation
 xfce-base/libxfcegui4:glade - Build glade bindings
-xfce-base/xfce4-session:consolekit - Enable authentication support using sys-auth/consolekit
-xfce-base/xfce4-session:gnome-keyring - Enable password storage support using gnome-base/gnome-keyring
 xfce-base/xfce4-settings:libcanberra - Enable sound event support using media-libs/libcanberra
 xfce-base/xfce4-settings:xklavier - Enable keyboard layout selection support using x11-libs/libxklavier
 xfce-base/xfdesktop:thunar - Build support for desktop icons (for example, launchers and folders)
