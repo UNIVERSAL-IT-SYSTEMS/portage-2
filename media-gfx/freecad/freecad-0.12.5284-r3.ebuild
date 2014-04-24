@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/freecad/freecad-0.12.5284-r3.ebuild,v 1.1 2013/04/27 22:49:15 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/freecad/freecad-0.12.5284-r3.ebuild,v 1.2 2014/04/23 22:49:07 xmw Exp $
 
 EAPI=5
 
@@ -66,7 +66,7 @@ src_prepare() {
 		"${FILESDIR}"/${P}-nopivy.patch \
 		"${FILESDIR}"/${P}-no-permissive.patch
 
-	local my_cas_version=$(eselect opencascadee show 2>/dev/null || echo 6.5)
+	local my_cas_version=$(eselect opencascade show 2>/dev/null || echo 6.5)
 	if [ "${my_cas_version}" > "6.5.0" ] ; then
 		epatch  "${FILESDIR}"/${P}-occ-6.5.5.patch
 		epatch  "${FILESDIR}"/${P}-salomesmesh-occ-6.5.5.patch
