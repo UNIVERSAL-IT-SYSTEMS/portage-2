@@ -1,14 +1,16 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rjb/rjb-1.4.5.ebuild,v 1.1 2013/12/15 16:41:32 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rjb/rjb-1.4.9.ebuild,v 1.1 2014/04/25 05:36:25 graaff Exp $
 
 EAPI=5
 
-USE_RUBY="ruby19"
+USE_RUBY="ruby19 ruby20 ruby21"
 
 RUBY_FAKEGEM_EXTRADOC="readme.txt ChangeLog"
-RUBY_FAKEGEM_TASK_DOC=""
+RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 RUBY_FAKEGEM_TASK_TEST=""
+
+RUBY_FAKEGEM_EXTRAINSTALL="data"
 
 inherit java-pkg-2 ruby-ng ruby-fakegem
 
@@ -29,6 +31,14 @@ pkg_setup() {
 	java-pkg-2_pkg_setup
 }
 
+all_ruby_prepare() {
+	# The console is not available for testing.
+	sed -i -e '/test_noarg_sinvoke/,/end/ s:^:#:' test/test.rb || die
+
+	# Avoid encoding tests since not all locales may be available.
+	sed -i -e '/test_kjconv/,/^  end/ s:^:#:' test/test.rb || die
+}
+
 each_ruby_prepare() {
 	#dev-lang/ruby might need the "hardened" flag to enforce the following:
 	if use hardened; then
@@ -43,7 +53,7 @@ each_ruby_configure() {
 }
 
 each_ruby_compile() {
-	emake -C ext CFLAGS="${CFLAGS} -fPIC" archflags="${LDFLAGS}" || die "emake failed"
+	emake V=1 -C ext CFLAGS="${CFLAGS} -fPIC" archflags="${LDFLAGS}"
 }
 
 each_ruby_install() {
@@ -52,10 +62,12 @@ each_ruby_install() {
 	# currently no elegant way to do this (bug #352765)
 	ruby_fakegem_newins ext/rjbcore.so lib/rjbcore.so
 
-	ruby_fakegem_doins -r data
-
 	if use examples; then
 		insinto /usr/share/doc/${PF}
-		doins -r samples || die "installing samples failed"
+		doins -r samples
 	fi
+}
+
+each_ruby_test() {
+	${RUBY} -C test -I../lib:.:../ext test.rb || die
 }
