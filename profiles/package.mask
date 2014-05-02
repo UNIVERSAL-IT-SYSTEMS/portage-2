@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15637 2014/05/01 08:19:18 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15641 2014/05/02 12:17:26 tomwij Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -29,6 +29,17 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Tom Wijsman <TomWij@gentoo.org> (02 May 2014)
+# Bluetooth support in MATE has incompatibilities with recent BlueZ versions.
+# If you want to try to get this working, unmask net-wireless/mate-bluetooth as 
+# well as the bluetooth USE flag on mate-extra/mate-user-share; I can't support 
+# this until the relevant upstreams have moved forward with their compatibility.
+#
+# https://bugs.gentoo.org/show_bug.cgi?id=508086
+# https://github.com/mate-desktop/mate-bluetooth/issues/22
+# http://mate-desktop.org/blog/2014-03-11-mate-desktop-singing-the-bluez
+net-wireless/mate-bluetooth
 
 # Justin Lecher <jlec@gentoo.org> (03 Apr 2014)
 # Wrong license 465690
@@ -533,6 +544,11 @@ lxde-base/lxpolkit
 >=media-libs/sdl-sound-1.0.3-r1
 >=media-libs/sdl-gfx-2.0.24-r1
 >=app-emulation/emul-linux-x86-sdl-20140406-r1
+>=sys-apps/acl-2.2.52-r1
+>=sys-apps/util-linux-2.24.1-r3
+>=sys-devel/libtool-2.4.2-r1
+>=virtual/acl-0-r2
+>=app-emulation/emul-linux-x86-baselibs-20140406-r3
 
 # Tom Wijsman <TomWij@gentoo.org> (21 Feb 2014)
 # MATE Desktop Environment >=1.7 introduction mask:
