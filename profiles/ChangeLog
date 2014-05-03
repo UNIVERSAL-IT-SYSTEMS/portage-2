@@ -1,10 +1,22 @@
 # ChangeLog for profile directory
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.8914 2014/05/03 08:49:34 pacho Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.8918 2014/05/03 10:49:35 mgorny Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  03 May 2014; Michał Górny <mgorny@gentoo.org> package.mask:
+  Add updated emul-linux-x86-sdl to multilib p.mask.
+
+  03 May 2014; Michał Górny <mgorny@gentoo.org> package.mask:
+  Add SDL mixer library to multilib p.mask.
+
+  03 May 2014; Michał Górny <mgorny@gentoo.org> package.mask:
+  Mask multilib fluidsynth.
+
+  03 May 2014; Michał Górny <mgorny@gentoo.org> package.mask:
+  Mask multilib ladspa-cmt.
 
   03 May 2014; Pacho Ramos <pacho@gentoo.org> package.mask:
   Clean some mask entries
