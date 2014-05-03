@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15648 2014/05/03 10:49:35 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15650 2014/05/03 17:44:44 tomwij Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -29,6 +29,10 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Tom Wijsman <TomWij@gentoo.org> (03 May 2014)
+# Needs to be further tested and revised by both Java and Ruby herds. 
+>=dev-java/jruby-1.7.12
 
 # Tom Wijsman <TomWij@gentoo.org> (02 May 2014)
 # Bluetooth support in MATE has incompatibilities with recent BlueZ versions.
@@ -467,10 +471,6 @@ dev-libs/clens
 # Compatibility packages masked for removal in 30 days.
 <dev-lang/python-exec-0.3.1-r1:0
 <dev-lang/python-exec-2.0.1-r1:2
-
-# Michał Górny <mgorny@gentoo.org> (05 Mar 2014)
-# Seems to cause more trouble than it fixes. Bugs #503470, #503472.
-=sys-apps/systemd-208.277
 
 # Mike Gilbert <floppym@gentoo.org> (04 Mar 2014)
 # Dev channel releases are only for people who are developers or want more
