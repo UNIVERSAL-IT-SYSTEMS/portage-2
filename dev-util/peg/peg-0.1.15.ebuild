@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/peg/peg-0.1.15.ebuild,v 1.2 2014/05/10 10:52:39 jauhien Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/peg/peg-0.1.15.ebuild,v 1.1 2014/05/09 21:47:14 jauhien Exp $
 
 EAPI=5
 
@@ -16,6 +16,9 @@ IUSE="test"
 # FIXME: tests don't respect {C,LD}FLAGS and build stuff in runtime.
 RESTRICT="test"
 
+DEPEND=""
+RDEPEND="${DEPEND}"
+
 src_prepare() {
 	sed -i \
 		-e '/strip/d' \
@@ -25,7 +28,7 @@ src_prepare() {
 }
 
 src_install() {
-	dodir "/usr/bin"
+	mkdir -p "${D}/usr/bin" || die "mkdir failed"
 	emake ROOT="${D}" PREFIX="/usr" install
 	rm -rf "${D}/usr/man" || die "rm failed"
 	doman src/${PN}.1
