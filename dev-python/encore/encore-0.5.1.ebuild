@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/encore/encore-0.5.1.ebuild,v 1.3 2014/05/05 15:17:43 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/encore/encore-0.5.1.ebuild,v 1.1 2014/05/03 08:30:43 patrick Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python2_7 pypy )
+PYTHON_COMPAT=( python{2_6,2_7} )
 
 inherit distutils-r1
 
@@ -15,23 +15,38 @@ SRC_URI="mirror://pypi/${P:0:1}/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
-IUSE="test"
+IUSE="doc examples test"
 
-RDEPEND="virtual/python-futures[${PYTHON_USEDEP}]
-	dev-python/requests[${PYTHON_USEDEP}]"
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
-	test? ( ${RDEPEND}
+RDEPEND=""
+DEPEND="${RDEPEND}
+	dev-python/setuptools[${PYTHON_USEDEP}]
+	doc? ( dev-python/sphinx[${PYTHON_USEDEP}] )
+	test? (
 		dev-python/nose[${PYTHON_USEDEP}]
-		dev-python/mock[${PYTHON_USEDEP}] )"
+		virtual/python-futures[${PYTHON_USEDEP}]
+		dev-python/requests[${PYTHON_USEDEP}]
+		dev-python/mock[${PYTHON_USEDEP}]
+	)"
 
-PATCHES=( "${FILESDIR}"/${P}-pypy-tests.patch )
+python_compile_all() {
+	use doc && emake -C docs html
+}
 
 python_test() {
-	"${PYTHON}" -m unittest discover ./${PN}/events || die
-	# PYTHONPATH goes astray & '-m unittest discover' loses its way. nose works
-	# https://github.com/enthought/encore/issues/84
-	# tests for storage simply aren't written to cater to pypy
-	if [[ "${EPYTHON}" == python2.7 ]]; then
-		nosetests ./${PN}/storage || die
+	if [[ ${EPYTHON} == python2.6 ]]; then
+		ewarn "Tests disabled for ${EPYTHON}"
+		return 0
+	fi
+	nosetests || die
+}
+
+python_install_all() {
+	distutils-r1_python_install_all
+
+	use doc && dohtml -r docs/build/html/*
+
+	if use examples; then
+		insinto /usr/share/doc/${PF}
+		doins -r examples
 	fi
 }

@@ -1,39 +1,6 @@
 # ChangeLog for app-editors/emacs
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs/ChangeLog,v 1.618 2014/05/10 13:23:15 ulm Exp $
-
-*emacs-23.4-r11 (10 May 2014)
-
-  10 May 2014; Ulrich Müller <ulm@gentoo.org> +emacs-23.4-r11.ebuild:
-  Backport xz support to Emacs 23.4.
-
-  09 May 2014; Jeroen Roovers <jer@gentoo.org> emacs-23.4-r10.ebuild,
-  emacs-24.3-r6.ebuild:
-  Stable for HPPA (bug #509830).
-
-*emacs-24.3-r6 (09 May 2014)
-*emacs-23.4-r10 (09 May 2014)
-
-  09 May 2014; Ulrich Müller <ulm@gentoo.org> -emacs-23.4-r9.ebuild,
-  +emacs-23.4-r10.ebuild, -emacs-24.3-r5.ebuild, +emacs-24.3-r6.ebuild:
-  Use upstream patch for browse-url, CVE-2014-3423, bug 509830.
-
-*emacs-24.3-r5 (08 May 2014)
-*emacs-23.4-r9 (08 May 2014)
-
-  08 May 2014; Ulrich Müller <ulm@gentoo.org> +emacs-23.4-r9.ebuild,
-  +emacs-24.3-r5.ebuild:
-  Fix multiple issues with insecure use of temporary files, CVE-2014-3421,
-  CVE-2014-3422, CVE-2014-3423, CVE-2014-3424, bug 509830.
-
-*emacs-24.3-r4 (05 May 2014)
-*emacs-23.4-r8 (05 May 2014)
-*emacs-22.3-r12 (05 May 2014)
-
-  05 May 2014; Ulrich Müller <ulm@gentoo.org> -emacs-22.3-r11.ebuild,
-  +emacs-22.3-r12.ebuild, -emacs-23.4-r7.ebuild, +emacs-23.4-r8.ebuild,
-  -emacs-24.3-r3.ebuild, +emacs-24.3-r4.ebuild:
-  Access shared game score files in /var/games/emacs, compliant with the FHS.
+# $Header: /var/cvsroot/gentoo-x86/app-editors/emacs/ChangeLog,v 1.613 2014/04/23 11:38:37 ulm Exp $
 
   23 Apr 2014; Ulrich Müller <ulm@gentoo.org> -emacs-18.59-r8.ebuild:
   Remove old.

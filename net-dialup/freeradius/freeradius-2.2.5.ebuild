@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-dialup/freeradius/freeradius-2.2.5.ebuild,v 1.4 2014/05/06 04:12:34 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dialup/freeradius/freeradius-2.2.5.ebuild,v 1.3 2014/05/04 08:20:23 ago Exp $
 
 EAPI=5
 
@@ -150,10 +150,6 @@ src_configure() {
 		${myconf}
 }
 
-src_compile() {
-	emake LIBTOOL=libtool
-}
-
 src_install() {
 	dodir /etc
 	diropts -m0750 -o root -g radius
@@ -163,7 +159,7 @@ src_install() {
 	keepdir /var/log/radius/radacct
 	diropts
 
-	emake LIBTOOL=libtool R="${D}" install
+	emake R="${D}" install
 
 	fowners -R root:radius /etc/raddb
 
