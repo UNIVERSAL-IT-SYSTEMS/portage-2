@@ -6509,6 +6509,8 @@ sys-cluster/charm:numa - Support memory affinity with NUMA
 sys-cluster/charm:syncft - Compile with Charm++ fault tolerance support
 sys-cluster/charm:tcp - Use TCP (instead of UPD) for socket communication
 sys-cluster/cinder:api - Installs the initscripts for the cinder api service
+sys-cluster/cinder:iscsi - Allow using an iSCSI remote storage server as pool for disk image storage
+sys-cluster/cinder:lvm - Allow using the Logical Volume Manager (sys-apps/lvm2) as pool for disk image storage
 sys-cluster/cinder:scheduler - Installs the initscripts for the cinder scheduler service
 sys-cluster/cinder:volume - Installs the initscripts for the cinder volume service
 sys-cluster/cluster-glue:large-cluster - Extend messages length limits for resource heavy clusters
@@ -6538,9 +6540,10 @@ sys-cluster/mvapich2:large-cluster - Automatically generated description for lar
 sys-cluster/mvapich2:medium-cluster - Automatically generated description for medium-cluster
 sys-cluster/mvapich2:romio - Automatically generated description for romio
 sys-cluster/neutron:dhcp - Installs the initscripts for the neutron dhcp service
-sys-cluster/neutron:l3 - Installs the initscripts for the neutron l3 service
-sys-cluster/neutron:metadata - Installs the initscripts for the neutron metadata service
-sys-cluster/neutron:openvswitch - Installs the initscripts for the neutron openvswitch service
+sys-cluster/neutron:l3 - Installs the initscripts for the neutron l3 agent service
+sys-cluster/neutron:linuxbridge - Installs the initscripts for the neutron linuxbridge agent service
+sys-cluster/neutron:metadata - Installs the initscripts for the neutron metadata agent service
+sys-cluster/neutron:openvswitch - Installs the initscripts for the neutron openvswitch agent service
 sys-cluster/neutron:server - Installs the initscripts for the neutron server service
 sys-cluster/nova:api - Installs the initscripts for the nova api service
 sys-cluster/nova:cert - Installs the initscripts for the nova scheduler service
