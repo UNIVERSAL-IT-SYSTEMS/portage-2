@@ -1,6 +1,13 @@
 # ChangeLog for dev-python/pypy
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pypy/ChangeLog,v 1.60 2014/04/11 08:20:55 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pypy/ChangeLog,v 1.62 2014/05/10 01:50:09 floppym Exp $
+
+  10 May 2014; Mike Gilbert <floppym@gentoo.org> pypy-2.2.1.ebuild:
+  Add optional dependency on dev-tcltk/tix, bug 413393.
+
+  09 May 2014; Michał Górny <mgorny@gentoo.org> pypy-2.2.1.ebuild:
+  Add USE=tk for tkinter modules. Update the list of cffi-compiled modules. Bug
+  #509794.
 
   11 Apr 2014; Michał Górny <mgorny@gentoo.org> pypy-2.0.2-r1.ebuild,
   pypy-2.2.1.ebuild:
