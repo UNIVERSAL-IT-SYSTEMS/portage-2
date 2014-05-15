@@ -575,6 +575,7 @@ app-emulation/virt-manager:spice - Support connecting to SPICE-enabled virtual m
 app-emulation/virt-manager:vnc - Support connecting to VNC-enabled virtual machines.
 app-emulation/virt-viewer:spice - Support connecting to SPICE-enabled virtual machines.
 app-emulation/virt-viewer:vnc - Support connecting to VNC-enabled virtual machines.
+app-emulation/virt-what:dmi - Use sys-apps/dmidecode to read firmware data
 app-emulation/virtualbox:additions - Install Guest System Tools ISO
 app-emulation/virtualbox:extensions - Install extension module packages
 app-emulation/virtualbox:headless - Build without any graphic frontend
@@ -5080,7 +5081,7 @@ net-libs/gtk-vnc:introspection - Use dev-libs/gobject-introspection for introspe
 net-libs/gtk-vnc:vala - Enable bindings for dev-lang/vala
 net-libs/gupnp-igd:introspection - Use dev-libs/gobject-introspection for introspection
 net-libs/h323plus:aec - Enable acoustic echo cancellation
-net-libs/h323plus:audio - Enable audio codecs
+net-libs/h323plus:sound - Enable audio codecs
 net-libs/h323plus:video - Enable video codecs
 net-libs/iax:snomhack - Use slower memset for SNOM phoneem
 net-libs/ldns:ecdsa - Enable ECDSA support
@@ -5768,7 +5769,6 @@ net-proxy/dansguardian:trickledm - Enable support for the trickle download manag
 net-proxy/haproxy:tools - Install additional tools (halog, iprange).
 net-proxy/rejik:banlists - Install upstream provided simple banlists
 net-proxy/squid:ecap - Adds support for loadable content adaptation modules (http://www.e-cap.org)
-net-proxy/squid:epoll - Enables Linux epoll() support
 net-proxy/squid:esi - Enable ESI for accelerators, will cause squid reverse proxies to be capable of the Edge Acceleration Specification (www.esi.org)
 net-proxy/squid:htcp - Enable HTCP protocol
 net-proxy/squid:icap-client - Adds ICAP client support
@@ -5781,7 +5781,6 @@ net-proxy/squid:ssl-crtd - Adds support for dynamic SSL certificate generation i
 net-proxy/squid:tproxy - Enables real Transparent Proxy support for Linux Netfilter TPROXY
 net-proxy/squid:wccp - Enable Web Cache Coordination Protocol
 net-proxy/squid:wccpv2 - Enable Web Cache Coordination V2 Protocol
-net-proxy/squid:zero-penalty-hit - Add Zero Penalty Hit patch (http://zph.bratcheda.org)
 net-proxy/sshproxy:client-only - Install only the client wrappers
 net-proxy/tinyproxy:filter-proxy - Enable filtering of domains/URLS
 net-proxy/tinyproxy:reverse-proxy - Enable reverse proxying
