@@ -1,15 +1,16 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/proftpd/proftpd-1.3.4c.ebuild,v 1.10 2013/07/14 17:37:56 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/proftpd/proftpd-1.3.4e.ebuild,v 1.1 2014/05/16 21:08:45 slyfox Exp $
 
-EAPI=4
+EAPI=5
 inherit eutils multilib systemd
 
 MOD_CASE="0.7"
 MOD_CLAMAV="0.11rc"
 MOD_DISKUSE="0.9"
 MOD_GSS="1.3.3"
-MOD_VROOT="0.9.2"
+MOD_MSG="0.4.1"
+MOD_VROOT="0.9.3"
 
 DESCRIPTION="An advanced and very configurable FTP server."
 HOMEPAGE="http://www.proftpd.org/
@@ -21,16 +22,18 @@ SRC_URI="ftp://ftp.proftpd.org/distrib/source/${P/_/}.tar.gz
 	clamav? ( https://secure.thrallingpenguin.com/redmine/attachments/download/1/mod_clamav-${MOD_CLAMAV}.tar.gz )
 	diskuse? ( http://www.castaglia.org/${PN}/modules/${PN}-mod-diskuse-${MOD_DISKUSE}.tar.gz )
 	kerberos? ( mirror://sourceforge/gssmod/mod_gss-${MOD_GSS}.tar.gz )
-	vroot? ( http://www.castaglia.org/${PN}/modules/${PN}-mod-vroot-${MOD_VROOT}.tar.gz )"
+	msg? ( http://www.castaglia.org/${PN}/modules/${PN}-mod-msg-${MOD_MSG}.tar.gz )
+	vroot? ( https://github.com/Castaglia/${PN}-mod_vroot/archive/mod_vroot-${MOD_VROOT}.tar.gz )"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ~ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
-IUSE="acl authfile ban +caps case clamav copy ctrls deflate diskuse doc dso exec ifsession ifversion ident ipv6
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+IUSE="acl authfile ban +caps case clamav copy ctrls deflate diskuse doc dso dynmasq exec ifsession ifversion ident ipv6
 	kerberos ldap linguas_bg_BG linguas_en_US linguas_fr_FR linguas_it_IT linguas_ja_JP linguas_ko_KR
-	linguas_ru_RU linguas_zh_CN linguas_zh_TW memcache mysql ncurses nls openssl pam +pcre postgres qos radius
+	linguas_ru_RU linguas_zh_CN linguas_zh_TW memcache msg mysql ncurses nls openssl pam +pcre postgres qos radius
 	ratio readme rewrite selinux sftp shaper sitemisc softquota sqlite ssl tcpd test trace vroot xinetd"
 REQUIRED_USE="ban? ( ctrls )
+	msg? ( ctrls )
 	sftp? ( openssl )
 	shaper? ( ctrls )
 	ssl? ( openssl )"
@@ -59,13 +62,17 @@ RDEPEND="${CDEPEND}
 S="${WORKDIR}/${P/_/}"
 
 __prepare_module() {
-	mv "${WORKDIR}"/$1/$1.c contrib
-	mv "${WORKDIR}"/$1/$1.html doc/contrib
-	rm -r "${WORKDIR}"/$1
+	local mod_name=$1
+	local mod_topdir=${WORKDIR}/${2:-${mod_name}}
+
+	mv "${mod_topdir}/${mod_name}.c" contrib || die
+	mv "${mod_topdir}/${mod_name}.html" doc/contrib || die
+	rm -r "${mod_topdir}" || die
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-fix-build-noipv6.patch #465134
+	epatch "${FILESDIR}"/${P}-link-tests.patch
+	epatch "${FILESDIR}"/${PN}-1.3.4d-memset-fix.patch
 
 	# Skip 'install-conf' / Support LINGUAS
 	sed -i -e "/install-all/s/ install-conf//" Makefile.in
@@ -78,7 +85,8 @@ src_prepare() {
 		epatch "${WORKDIR}"/mod_clamav-${MOD_CLAMAV}/${PN}.patch
 		rm -r "${WORKDIR}"/mod_clamav-${MOD_CLAMAV}
 	fi
-	use vroot && __prepare_module mod_vroot
+	use msg && __prepare_module mod_msg
+	use vroot && __prepare_module mod_vroot ${PN}-mod_vroot-mod_vroot-${MOD_VROOT}
 
 	# Prepare external kerberos module
 	if use kerberos ; then
@@ -114,6 +122,7 @@ src_configure() {
 		rm -r "${WORKDIR}"/mod_diskuse
 		m="${m}:mod_diskuse"
 	fi
+	use dynmasq && mym="${mym}:mod_dynmasq"
 	use exec && m="${m}:mod_exec"
 	use ifsession && m="${m}:mod_ifsession"
 	use ifversion && m="${m}:mod_ifversion"
@@ -134,6 +143,7 @@ src_configure() {
 		m="${m}:mod_gss:mod_auth_gss"
 	fi
 	use ldap && m="${m}:mod_ldap"
+	use msg && mym="${mym}:mod_msg"
 	if use mysql || use postgres || use sqlite ; then
 		m="${m}:mod_sql:mod_sql_passwd"
 		use mysql && m="${m}:mod_sql_mysql"
@@ -197,6 +207,8 @@ src_test() {
 src_install() {
 	default
 	[ -z ${LINGUAS} ] && rm -r "${ED}"/usr/share/locale
+	rm -rf "${ED}"/var/run
+
 	newinitd "${FILESDIR}"/proftpd.initd proftpd
 	insinto /etc/proftpd
 	doins "${FILESDIR}"/proftpd.conf.sample
