@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/imlib2/imlib2-9999.ebuild,v 1.19 2014/05/17 07:54:31 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/imlib2/imlib2-9999.ebuild,v 1.18 2013/09/28 09:37:31 vapier Exp $
 
 EAPI="4"
 
@@ -11,33 +11,33 @@ if [[ ${PV} != "9999" ]] ; then
 	EKEY_STATE="stable"
 fi
 
-inherit enlightenment toolchain-funcs multilib-minimal
+inherit enlightenment toolchain-funcs
 
 DESCRIPTION="Version 2 of an advanced replacement library for libraries like libXpm"
 HOMEPAGE="http://www.enlightenment.org/"
 
 IUSE="bzip2 gif jpeg mmx mp3 png static-libs tiff X zlib"
 
-RDEPEND="=media-libs/freetype-2*[${MULTILIB_USEDEP}]
-	bzip2? ( app-arch/bzip2[${MULTILIB_USEDEP}] )
-	zlib? ( sys-libs/zlib[${MULTILIB_USEDEP}] )
-	gif? ( >=media-libs/giflib-4.1.0[${MULTILIB_USEDEP}] )
-	png? ( media-libs/libpng:0[${MULTILIB_USEDEP}] )
-	jpeg? ( virtual/jpeg:0[${MULTILIB_USEDEP}] )
-	tiff? ( media-libs/tiff:0[${MULTILIB_USEDEP}] )
+RDEPEND="=media-libs/freetype-2*
+	bzip2? ( app-arch/bzip2 )
+	zlib? ( sys-libs/zlib )
+	gif? ( >=media-libs/giflib-4.1.0 )
+	png? ( media-libs/libpng:0 )
+	jpeg? ( virtual/jpeg:0 )
+	tiff? ( media-libs/tiff:0 )
 	X? (
-		x11-libs/libX11[${MULTILIB_USEDEP}]
-		x11-libs/libXext[${MULTILIB_USEDEP}]
+		x11-libs/libX11
+		x11-libs/libXext
 	)
-	mp3? ( media-libs/libid3tag[${MULTILIB_USEDEP}] )"
+	mp3? ( media-libs/libid3tag )"
 DEPEND="${RDEPEND}
-	png? ( virtual/pkgconfig[${MULTILIB_USEDEP}] )
+	png? ( virtual/pkgconfig )
 	X? (
-		x11-proto/xextproto[${MULTILIB_USEDEP}]
-		x11-proto/xproto[${MULTILIB_USEDEP}]
+		x11-proto/xextproto
+		x11-proto/xproto
 	)"
 
-multilib_src_configure() {
+src_configure() {
 	# imlib2 has diff configure options for x86/amd64 mmx
 	if [[ $(tc-arch) == amd64 ]]; then
 		E_ECONF+=( $(use_enable mmx amd64) --disable-mmx )
@@ -47,7 +47,6 @@ multilib_src_configure() {
 
 	[[ $(gcc-major-version) -ge 4 ]] && E_ECONF+=( --enable-visibility-hiding )
 
-	ECONF_SOURCE="${S}" \
 	E_ECONF+=(
 		$(use_enable static-libs static)
 		$(use_with X x)
@@ -63,6 +62,9 @@ multilib_src_configure() {
 	enlightenment_src_configure
 }
 
-multilib_src_install() {
+src_install() {
 	enlightenment_src_install
+
+	# enlightenment_src_install should take care of this for us, but it doesn't
+	find "${ED}" -name '*.la' -delete
 }

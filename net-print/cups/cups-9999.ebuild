@@ -1,14 +1,14 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/cups-9999.ebuild,v 1.55 2014/05/14 08:47:24 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/cups-9999.ebuild,v 1.54 2014/04/15 21:26:13 dilfridge Exp $
 
 EAPI=5
 
 PYTHON_COMPAT=( python{2_6,2_7} )
 
 inherit autotools base fdo-mime gnome2-utils flag-o-matic linux-info \
-	multilib multilib-minimal pam python-single-r1 user versionator \
-	java-pkg-opt-2 systemd toolchain-funcs
+	multilib pam python-single-r1 user versionator java-pkg-opt-2 systemd \
+	toolchain-funcs
 
 MY_P=${P/_rc/rc}
 MY_P=${MY_P/_beta/b}
@@ -48,7 +48,7 @@ RDEPEND="
 			sys-apps/attr
 		)
 	)
-	dbus? ( sys-apps/dbus[${MULTILIB_USEDEP}] )
+	dbus? ( sys-apps/dbus )
 	java? ( >=virtual/jre-1.6 )
 	kerberos? ( virtual/krb5 )
 	!lprng-compat? ( !net-print/lprng )
@@ -57,23 +57,19 @@ RDEPEND="
 	selinux? ( sec-policy/selinux-cups )
 	ssl? (
 		gnutls? (
-			dev-libs/libgcrypt:0[${MULTILIB_USEDEP}]
-			net-libs/gnutls[${MULTILIB_USEDEP}]
+			dev-libs/libgcrypt:0
+			net-libs/gnutls
 		)
-		!gnutls? ( >=dev-libs/openssl-0.9.8g[${MULTILIB_USEDEP}] )
+		!gnutls? ( >=dev-libs/openssl-0.9.8g )
 	)
 	usb? ( virtual/libusb:1 )
 	X? ( x11-misc/xdg-utils )
 	xinetd? ( sys-apps/xinetd )
-	zeroconf? ( net-dns/avahi[${MULTILIB_USEDEP}] )
-	abi_x86_32? (
-		!<=app-emulation/emul-linux-x86-baselibs-20140508
-		!app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)]
-	)
+	zeroconf? ( net-dns/avahi )
 "
 
 DEPEND="${RDEPEND}
-	virtual/pkgconfig[${MULTILIB_USEDEP}]
+	virtual/pkgconfig
 "
 
 PDEPEND="
@@ -147,45 +143,39 @@ src_prepare() {
 	base_src_prepare
 	use systemd && epatch "${FILESDIR}/${PN}-1.7.2-systemd-socket-2.patch"
 
-	# Fix install-sh, posix sh does not have 'function'.
-	sed 's#function gzipcp#gzipcp()#g' -i "${S}/install-sh"
-
 	AT_M4DIR=config-scripts eaclocal
 	eautoconf
-
-	# custom Makefiles
-	multilib_copy_sources
 }
 
-multilib_src_configure() {
+src_configure() {
 	export DSOFLAGS="${LDFLAGS}"
 
 	einfo LANGS=\"${LANGS}\"
 	einfo LINGUAS=\"${LINGUAS}\"
 
-	local myconf=()
+	local myconf
 	if use ssl ; then
-		myconf+=(
+		myconf+="
 			$(use_enable gnutls)
 			$(use_enable !gnutls openssl)
-		)
+		"
 	else
-		myconf+=(
+		myconf+="
 			--disable-gnutls
 			--disable-openssl
-		)
+		"
 	fi
 
 	if tc-is-static-only; then
-		myconf+=(
+		myconf+="
 			--disable-shared
-		)
+		"
 	fi
 
 	if use systemd; then
-		myconf+=(
+		myconf+="
 			--with-systemdsystemunitdir="$(systemd_get_unitdir)"
-		)
+		"
 	fi
 
 	econf \
@@ -197,24 +187,24 @@ multilib_src_configure() {
 		--with-docdir="${EPREFIX}"/usr/share/cups/html \
 		--with-languages="${LINGUAS}" \
 		--with-system-groups=lpadmin \
-		$(multilib_native_use_enable acl) \
+		$(use_enable acl) \
 		$(use_enable zeroconf avahi) \
 		$(use_enable dbus) \
 		$(use_enable debug) \
 		$(use_enable debug debug-guards) \
-		$(multilib_native_use_enable kerberos gssapi) \
-		$(multilib_native_use_enable pam) \
+		$(use_enable kerberos gssapi) \
+		$(use_enable pam) \
 		$(use_enable static-libs static) \
 		$(use_enable threads) \
-		$(multilib_native_use_enable usb libusb) \
+		$(use_enable usb libusb) \
 		--disable-dnssd \
-		$(multilib_native_use_with java) \
+		$(use_with java) \
 		--without-perl \
 		--without-php \
-		$(multilib_native_use_with python python "${PYTHON}") \
-		$(multilib_native_use_with xinetd xinetd /etc/xinetd.d) \
-		$(multilib_is_native_abi && echo --enable-libpaper || echo --disable-libpaper) \
-		"${myconf[@]}"
+		$(use_with python python "${PYTHON}") \
+		$(use_with xinetd xinetd /etc/xinetd.d) \
+		--enable-libpaper \
+		${myconf}
 
 	# install in /usr/libexec always, instead of using /usr/lib/cups, as that
 	# makes more sense when facing multilib support.
@@ -223,27 +213,11 @@ multilib_src_configure() {
 	sed -i -e "s:cups_serverbin=.*:cups_serverbin=\"${EPREFIX}/usr/libexec/cups\":" cups-config || die
 }
 
-multilib_src_compile() {
-	if multilib_is_native_abi; then
-		default
-	else
-		emake libs
-	fi
-}
+src_install() {
+	# Fix install-sh, posix sh does not have 'function'.
+	sed 's#function gzipcp#gzipcp()#g' -i "${S}/install-sh"
 
-multilib_src_test() {
-	multilib_is_native_abi && default
-}
-
-multilib_src_install() {
-	if multilib_is_native_abi; then
-		emake BUILDROOT="${D}" install
-	else
-		emake BUILDROOT="${D}" install-libs install-headers
-	fi
-}
-
-multilib_src_install_all() {
+	emake BUILDROOT="${D}" install
 	dodoc {CHANGES,CREDITS,README}.txt
 
 	# move the default config file to docs

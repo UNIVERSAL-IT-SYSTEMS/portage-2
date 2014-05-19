@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-jre-bin/sun-jre-bin-1.6.0.45.ebuild,v 1.4 2014/05/16 19:06:15 swift Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/sun-jre-bin/sun-jre-bin-1.6.0.45.ebuild,v 1.3 2013/04/23 09:10:31 ago Exp $
 
 EAPI="5"
 
@@ -26,7 +26,7 @@ SRC_URI="
 LICENSE="Oracle-BCLA-JavaSE"
 SLOT="1.6"
 KEYWORDS="amd64 x86"
-IUSE="X alsa jce nsplugin pax_kernel selinux"
+IUSE="X alsa jce nsplugin pax_kernel"
 
 RESTRICT="fetch strip"
 QA_PREBUILT="*"
@@ -41,13 +41,11 @@ RDEPEND="
 	)
 	alsa? ( media-libs/alsa-lib )
 	jce? ( dev-java/sun-jce-bin:1.6 )
-	!prefix? ( sys-libs/glibc )
-	selinux? ( sec-policy/selinux-java )"
+	!prefix? ( sys-libs/glibc )"
 # scanelf won't create a PaX header, so depend on paxctl to avoid fallback
 # marking. #427642
 DEPEND="
-	pax_kernel? ( sys-apps/paxctl )
-	selinux? ( sec-policy/selinux-java )"
+	pax_kernel? ( sys-apps/paxctl )"
 
 S="${WORKDIR}/jre${S_PV}"
 

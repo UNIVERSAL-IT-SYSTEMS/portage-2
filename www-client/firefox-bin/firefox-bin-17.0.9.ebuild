@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/firefox-bin/firefox-bin-17.0.9.ebuild,v 1.4 2014/05/17 14:42:21 swift Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/firefox-bin/firefox-bin-17.0.9.ebuild,v 1.3 2013/09/21 10:56:29 ago Exp $
 
 EAPI="4"
 MOZ_ESR="1"
@@ -41,10 +41,9 @@ RESTRICT="strip mirror binchecks"
 KEYWORDS="-* amd64 x86"
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
-IUSE="selinux startup-notification"
+IUSE="startup-notification"
 
-DEPEND="app-arch/unzip
-	selinux? ( sec-policy/selinux-mozilla )"
+DEPEND="app-arch/unzip"
 RDEPEND="dev-libs/dbus-glib
 	gnome-base/gconf
 	gnome-base/orbit
@@ -53,7 +52,6 @@ RDEPEND="dev-libs/dbus-glib
 	x11-libs/libXt
 	x11-libs/libXmu
 
-	selinux? ( sec-policy/selinux-mozilla )
 	>=x11-libs/gtk+-2.2:2
 	>=media-libs/alsa-lib-1.0.16
 	!net-libs/libproxy[spidermonkey]

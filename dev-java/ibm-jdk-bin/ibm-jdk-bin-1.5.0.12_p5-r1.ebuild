@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/ibm-jdk-bin/ibm-jdk-bin-1.5.0.12_p5-r1.ebuild,v 1.2 2014/05/16 19:18:46 swift Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/ibm-jdk-bin/ibm-jdk-bin-1.5.0.12_p5-r1.ebuild,v 1.1 2011/11/23 18:51:46 sera Exp $
 
 EAPI="4"
 
@@ -55,7 +55,7 @@ LICENSE="IBM-J1.5"
 SLOT="1.5"
 KEYWORDS="-* ~amd64 ~ppc ~ppc64 ~x86"
 RESTRICT="fetch"
-IUSE="X alsa doc examples javacomm nsplugin odbc selinux"
+IUSE="X alsa doc examples javacomm nsplugin odbc"
 
 RDEPEND="=virtual/libstdc++-3.3
 	X? (
@@ -74,10 +74,7 @@ RDEPEND="=virtual/libstdc++-3.3
 		x86? ( =x11-libs/gtk+-2* =x11-libs/gtk+-1* )
 		ppc? ( =x11-libs/gtk+-1* )
 	)
-	odbc? ( dev-db/unixODBC )
-	selinux? ( sec-policy/selinux-java )"
-
-DEPEND="selinux? ( sec-policy/selinux-java )"
+	odbc? ( dev-db/unixODBC )"
 
 QA_EXECSTACK_amd64="opt/${P}/jre/bin/libjclscar_23.so
 	opt/${P}/jre/bin/libj9vrb23.so

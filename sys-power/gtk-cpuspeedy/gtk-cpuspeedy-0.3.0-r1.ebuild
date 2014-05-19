@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-power/gtk-cpuspeedy/gtk-cpuspeedy-0.3.0-r1.ebuild,v 1.7 2014/05/12 10:04:07 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-power/gtk-cpuspeedy/gtk-cpuspeedy-0.3.0-r1.ebuild,v 1.6 2012/12/31 14:26:07 pacho Exp $
 
-EAPI=5
+EAPI=1
 
 DESCRIPTION="Graphical GTK+ 2 frontend for cpuspeedy"
 HOMEPAGE="http://cpuspeedy.sourceforge.net/"
@@ -13,12 +13,29 @@ SLOT="0"
 KEYWORDS="~ppc x86"
 IUSE=""
 
-COMMON_DEPEND="x11-libs/gtk+:2"
-RDEPEND="${COMMON_DEPEND}
-	>=sys-power/cpuspeedy-0.2
-	x11-libs/gksu"
-DEPEND="${COMMON_DEPEND}
+DEPEND="
 	sys-apps/texinfo
-	virtual/pkgconfig"
+	virtual/pkgconfig
+	dev-libs/glib:2
+	dev-libs/atk
+	x11-libs/pango
+	media-libs/fontconfig
+	media-libs/freetype
+	dev-libs/expat
+	x11-libs/gtk+:2
+	x11-libs/cairo"
+RDEPEND=">=sys-power/cpuspeedy-0.2
+	dev-libs/atk
+	dev-libs/expat
+	dev-libs/glib:2
+	media-libs/fontconfig
+	media-libs/freetype
+	x11-libs/gtk+:2
+	x11-libs/pango
+	x11-libs/gksu
+	x11-libs/cairo"
 
-DOCS="AUTHORS ChangeLog README TODO"
+src_install() {
+	einstall || die "einstall failed"
+	dodoc AUTHORS ChangeLog README TODO
+}

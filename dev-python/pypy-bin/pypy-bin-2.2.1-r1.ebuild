@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pypy-bin/pypy-bin-2.2.1-r1.ebuild,v 1.3 2014/05/12 20:49:04 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pypy-bin/pypy-bin-2.2.1-r1.ebuild,v 1.1 2014/05/03 18:00:20 mgorny Exp $
 
 EAPI=5
 
@@ -56,19 +56,22 @@ REQUIRED_USE="!jit? ( !shadowstack )
 LICENSE="MIT"
 SLOT="0/$(get_version_component_range 1-2 ${PV})"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc +jit shadowstack sqlite sse2 test tk"
+IUSE="doc +jit shadowstack sqlite sse2 test"
 
 # yep, world would be easier if people started filling subslots...
 RDEPEND="
-	app-arch/bzip2:0
-	dev-libs/expat:0
-	dev-libs/libffi:0
-	dev-libs/openssl:0
-	sys-libs/glibc:2.2
-	sys-libs/ncurses:5
-	sys-libs/zlib:0
+	~app-arch/bzip2-1.0.6:0
+	~dev-libs/expat-2.1.0:0
+	( <dev-libs/libffi-3.0.14:0
+		>=dev-libs/libffi-3.0.11:0 )
+	( <dev-libs/openssl-1.0.1h:0
+		>=dev-libs/openssl-1.0.1c:0 )
+	( <sys-libs/glibc-2.20:2.2
+		>=sys-libs/glibc-2.15:2.2 )
+	~sys-libs/ncurses-5.9:5
+	( <sys-libs/zlib-1.2.9:0
+		>=sys-libs/zlib-1.2.7:0 )
 	sqlite? ( dev-db/sqlite:3 )
-	tk? ( dev-lang/tk:0 )
 	!dev-python/pypy:0"
 DEPEND="app-arch/xz-utils
 	doc? ( dev-python/sphinx )
@@ -118,14 +121,8 @@ src_install() {
 	dodoc README.rst
 
 	if ! use sqlite; then
-		rm -r "${ED%/}${INSDESTTREE}"/lib-python/*2.7/sqlite3 \
-			"${ED%/}${INSDESTTREE}"/lib_pypy/_sqlite3.py \
-			"${ED%/}${INSDESTTREE}"/lib-python/*2.7/test/test_sqlite.py || die
-	fi
-	if ! use tk; then
-		rm -r "${ED%/}${INSDESTTREE}"/lib-python/*2.7/{idlelib,lib-tk} \
-			"${ED%/}${INSDESTTREE}"/lib_pypy/_tkinter \
-			"${ED%/}${INSDESTTREE}"/lib-python/*2.7/test/test_{tcl,tk,ttk*}.py || die
+		rm -r "${ED%/}${INSDESTTREE}"/lib-python/*2.7/sqlite3 || die
+		rm "${ED%/}${INSDESTTREE}"/lib_pypy/_sqlite3.py || die
 	fi
 
 	# Install docs
@@ -149,13 +146,9 @@ src_install() {
 		|| die "Generation of Grammar and PatternGrammar pickles failed"
 
 	# Generate cffi cache
-	"${PYTHON}" -c "import _curses" || die "Failed to import _curses (cffi)"
-	"${PYTHON}" -c "import syslog" || die "Failed to import syslog (cffi)"
+	"${PYTHON}" -c "import _curses" || die "Failed to import _curses"
 	if use sqlite; then
-		"${PYTHON}" -c "import _sqlite3" || die "Failed to import _sqlite3 (cffi)"
-	fi
-	if use tk; then
-		"${PYTHON}" -c "import _tkinter" || die "Failed to import _tkinter (cffi)"
+		"${PYTHON}" -c "import _sqlite3" || die "Failed to import _sqlite3"
 	fi
 
 	# compile the installed modules

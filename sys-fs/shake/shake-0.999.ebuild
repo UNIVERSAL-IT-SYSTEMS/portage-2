@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/shake/shake-0.999.ebuild,v 1.7 2014/05/13 06:53:13 voyageur Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/shake/shake-0.999.ebuild,v 1.6 2013/03/22 17:20:47 ago Exp $
 
 EAPI=5
 inherit cmake-utils eutils
@@ -20,7 +20,6 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${PN}-fs-${PV}
 
-PATCHES=(
-	"${FILESDIR}"/${P}-fix_stat_include.patch
-	"${FILESDIR}"/${P}-uclibc.patch
-	)
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-fix_stat_include.patch
+}

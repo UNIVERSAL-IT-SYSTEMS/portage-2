@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/distcc/distcc-3.0-r4.ebuild,v 1.17 2014/05/16 19:53:04 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/distcc/distcc-3.0-r4.ebuild,v 1.15 2012/09/15 22:03:36 vapier Exp $
 
-EAPI=5
+EAPI=1
 inherit eutils fdo-mime flag-o-matic multilib toolchain-funcs user
 
 DESCRIPTION="a program to distribute compilation of C code across several machines on a network"
@@ -44,7 +44,9 @@ pkg_setup() {
 	enewuser distcc 240 -1 -1 daemon
 }
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
 	epatch "${FILESDIR}/${P}-gentoo.patch"
 	epatch "${FILESDIR}/${P}-svn617.patch"
 	epatch "${FILESDIR}/${P}-xinetd.patch"
@@ -60,7 +62,7 @@ src_prepare() {
 	sed -i -e "s:-Werror::" configure* include_server/setup.py || die
 }
 
-src_configure() {
+src_compile() {
 	# More legacy stuff?
 	[ "$(gcc-major-version)" = "2" ] && filter-lfs-flags
 
@@ -72,12 +74,13 @@ src_configure() {
 		$(use_with gtk) \
 		$(use_with gnome) \
 		$(use_enable ipv6 rfc2553) \
-		--with-docdir="/usr/share/doc/${PF}"
+		--with-docdir="/usr/share/doc/${PF}" || die "econf failed"
+	emake || die "emake failed"
 }
 
 src_install() {
 	# In rare cases, parallel make install failed, bug #249695
-	emake -j1 DESTDIR="${D}" install
+	emake -j1 DESTDIR="${D}" install || die
 
 	dobin "${FILESDIR}/${PV}/distcc-config"
 
@@ -129,6 +132,7 @@ src_install() {
 	rm -rf "${D}/etc/default"
 	rm -f "${D}/etc/distcc/clients.allow"
 	rm -f "${D}/etc/distcc/commands.allow.sh"
+	prepalldocs
 }
 
 pkg_postinst() {
@@ -136,7 +140,7 @@ pkg_postinst() {
 
 	if use ipv6; then
 		elog
-		elog "IPv6 is not supported yet by ${P}."
+		elog "IPv6 has not supported yet by ${P}."
 	fi
 	elog
 	elog "Tips on using distcc with Gentoo can be found at"
