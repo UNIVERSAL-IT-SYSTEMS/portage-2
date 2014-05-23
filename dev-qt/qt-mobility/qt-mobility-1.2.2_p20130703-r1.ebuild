@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-qt/qt-mobility/qt-mobility-1.2.2_p20130703.ebuild,v 1.5 2014/05/23 13:03:55 pesa Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-qt/qt-mobility/qt-mobility-1.2.2_p20130703-r1.ebuild,v 1.1 2014/05/23 13:57:23 pesa Exp $
 
 EAPI=5
 
@@ -11,10 +11,10 @@ HOMEPAGE="http://qt-project.org/wiki/Category:Developing_with_Qt::QtMobility"
 SRC_URI="http://dev.gentoo.org/~pesa/distfiles/${P}.tar.xz"
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 ~arm x86"
+KEYWORDS="~amd64 ~arm ~x86"
 
-QT_MOBILITY_MODULES=(bearer connectivity +contacts feedback gallery
-		location messaging multimedia organizer publishsubscribe
+QT_MOBILITY_MODULES=(connectivity +contacts feedback gallery location
+		messaging multimedia organizer publishsubscribe
 		sensors serviceframework systeminfo versit)
 IUSE="bluetooth debug doc networkmanager pulseaudio qml +tools
 	${QT_MOBILITY_MODULES[@]}"
@@ -26,12 +26,6 @@ REQUIRED_USE="
 
 RDEPEND="
 	>=dev-qt/qtcore-4.8.0:4
-	bearer? (
-		networkmanager? (
-			net-misc/networkmanager
-			>=dev-qt/qtdbus-4.8.0:4
-		)
-	)
 	connectivity? (
 		>=dev-qt/qtdbus-4.8.0:4
 		bluetooth? ( net-wireless/bluez )
@@ -45,6 +39,8 @@ RDEPEND="
 	)
 	messaging? ( >=net-libs/qmf-4.0 )
 	multimedia? (
+		>=dev-qt/qtgui-4.8.0-r4:4[xv]
+		>=dev-qt/qtopengl-4.8.0:4
 		media-libs/alsa-lib
 		media-libs/gstreamer:0.10
 		media-libs/gst-plugins-bad:0.10
@@ -52,8 +48,6 @@ RDEPEND="
 		x11-libs/libX11
 		x11-libs/libXext
 		x11-libs/libXv
-		>=dev-qt/qtgui-4.8.0-r4:4[xv]
-		>=dev-qt/qtopengl-4.8.0:4
 		pulseaudio? ( media-sound/pulseaudio[alsa] )
 	)
 	publishsubscribe? (
@@ -66,12 +60,12 @@ RDEPEND="
 		tools? ( >=dev-qt/qtgui-4.8.0:4 )
 	)
 	systeminfo? (
-		sys-apps/util-linux
-		virtual/udev
-		x11-libs/libX11
-		x11-libs/libXrandr
 		>=dev-qt/qtdbus-4.8.0:4
 		>=dev-qt/qtgui-4.8.0:4
+		sys-apps/util-linux
+		virtual/libudev:=
+		x11-libs/libX11
+		x11-libs/libXrandr
 		bluetooth? ( net-wireless/bluez )
 		networkmanager? ( net-misc/networkmanager )
 	)
@@ -85,11 +79,6 @@ DEPEND="${RDEPEND}
 		x11-proto/videoproto
 	)
 	systeminfo? ( sys-kernel/linux-headers )
-"
-PDEPEND="
-	connectivity? (
-		bluetooth? ( app-mobilephone/obexd )
-	)
 "
 
 src_prepare() {
