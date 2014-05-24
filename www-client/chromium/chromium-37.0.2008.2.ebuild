@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/chromium-35.0.1916.99.ebuild,v 1.1 2014/05/10 18:17:55 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/chromium/chromium-37.0.2008.2.ebuild,v 1.1 2014/05/24 08:47:22 phajdan.jr Exp $
 
 EAPI="5"
 PYTHON_COMPAT=( python{2_6,2_7} )
@@ -38,6 +38,7 @@ RDEPEND=">=app-accessibility/speech-dispatcher-0.8:=
 	)
 	>=dev-libs/elfutils-0.149
 	dev-libs/expat:=
+	dev-libs/icu:=
 	>=dev-libs/jsoncpp-0.5.0-r1:=
 	>=dev-libs/libevent-1.4.13:=
 	dev-libs/libxml2:=[icu]
@@ -50,6 +51,7 @@ RDEPEND=">=app-accessibility/speech-dispatcher-0.8:=
 	>=media-libs/alsa-lib-1.0.19:=
 	media-libs/flac:=
 	media-libs/harfbuzz:=[icu(+)]
+	media-libs/libexif:=
 	>=media-libs/libjpeg-turbo-1.2.0-r1:=
 	media-libs/libpng:0=
 	>=media-libs/libwebp-0.4.0:=
@@ -60,6 +62,7 @@ RDEPEND=">=app-accessibility/speech-dispatcher-0.8:=
 	>=sys-libs/libcap-2.22:=
 	sys-libs/zlib:=[minizip]
 	virtual/udev
+	x11-libs/libdrm
 	x11-libs/gtk+:2=
 	>=x11-libs/libXi-1.6.0:=
 	x11-libs/libXinerama:=
@@ -157,8 +160,6 @@ src_prepare() {
 	#	touch out/Release/gen/sdk/toolchain/linux_x86_newlib/stamp.untar || die
 	# fi
 
-	epatch "${FILESDIR}/${PN}-system-zlib-r0.patch"
-
 	epatch_user
 
 	# Remove most bundled libraries. Some are still needed.
@@ -174,6 +175,7 @@ src_prepare() {
 		'base/third_party/xdg_user_dirs' \
 		'breakpad/src/third_party/curl' \
 		'chrome/third_party/mozilla_security_manager' \
+		'courgette/third_party' \
 		'crypto/third_party/nss' \
 		'net/third_party/mozilla_security_manager' \
 		'net/third_party/nss' \
@@ -188,7 +190,7 @@ src_prepare() {
 		'third_party/flot' \
 		'third_party/hunspell' \
 		'third_party/iccjpeg' \
-		'third_party/icu' \
+		'third_party/icu/icu.isolate' \
 		'third_party/jinja2' \
 		'third_party/jstemplate' \
 		'third_party/khronos' \
@@ -210,9 +212,9 @@ src_prepare() {
 		'third_party/modp_b64' \
 		'third_party/mt19937ar' \
 		'third_party/npapi' \
-		'third_party/nss.isolate' \
 		'third_party/opus' \
 		'third_party/ots' \
+		'third_party/pdfium' \
 		'third_party/polymer' \
 		'third_party/ply' \
 		'third_party/protobuf' \
@@ -264,7 +266,6 @@ src_configure() {
 
 	# Use system-provided libraries.
 	# TODO: use_system_hunspell (upstream changes needed).
-	# TODO: use_system_icu (resolve startup crash).
 	# TODO: use_system_libsrtp (bug #459932).
 	# TODO: use_system_libvpx (http://crbug.com/347823).
 	# TODO: use_system_libusb (http://crbug.com/266149).
@@ -276,6 +277,7 @@ src_configure() {
 		-Duse_system_bzip2=1
 		-Duse_system_flac=1
 		-Duse_system_harfbuzz=1
+		-Duse_system_icu=1
 		-Duse_system_jsoncpp=1
 		-Duse_system_libevent=1
 		-Duse_system_libjpeg=1
@@ -292,6 +294,9 @@ src_configure() {
 		-Duse_system_xdg_utils=1
 		-Duse_system_zlib=1"
 
+	# Needed for system icu - we don't need additional data files.
+	myconf+=" -Dicu_use_data_file_flag=0"
+
 	# TODO: patch gyp so that this arm conditional is not needed.
 	if ! use arm; then
 		myconf+="
@@ -307,7 +312,7 @@ src_configure() {
 		$(gyp_use gnome-keyring linux_link_gnome_keyring)
 		$(gyp_use kerberos)
 		$(gyp_use pulseaudio)
-		$(gyp_use tcmalloc linux_use_tcmalloc)"
+		$(gyp_use tcmalloc use_allocator tcmalloc none)"
 
 	# Use explicit library dependencies instead of dlopen.
 	# This makes breakages easier to detect by revdep-rebuild.
@@ -327,7 +332,8 @@ src_configure() {
 
 	# Never use bundled gold binary. Disable gold linker flags for now.
 	myconf+="
-		-Dlinux_use_gold_binary=0
+		-Dlinux_use_bundled_binutils=0
+		-Dlinux_use_bundled_gold=0
 		-Dlinux_use_gold_flags=0"
 
 	# TODO: enable mojo after fixing compile failures.
@@ -423,7 +429,7 @@ src_configure() {
 	# Re-configure bundled ffmpeg. See bug #491378 for example reasons.
 	einfo "Configuring bundled ffmpeg..."
 	pushd third_party/ffmpeg > /dev/null || die
-	chromium/scripts/build_ffmpeg.sh linux ${ffmpeg_target_arch} "${PWD}" config-only || die
+	chromium/scripts/build_ffmpeg.py --config-only linux ${ffmpeg_target_arch} || die
 	chromium/scripts/copy_config.sh || die
 	popd > /dev/null || die
 
@@ -603,7 +609,6 @@ src_install() {
 	popd
 
 	insinto "${CHROMIUM_HOME}"
-	doins out/Release/icudtl.dat || die
 	doins out/Release/*.pak || die
 
 	doins -r out/Release/locales || die
@@ -613,6 +618,7 @@ src_install() {
 	newman out/Release/chrome.1 chromium-browser${CHROMIUM_SUFFIX}.1 || die
 
 	doexe out/Release/libffmpegsumo.so || die
+	doexe out/Release/libpdf.so || die
 
 	# Install icons and desktop entry.
 	local branding size
