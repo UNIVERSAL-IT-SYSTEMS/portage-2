@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-power-manager/xfce4-power-manager-1.2.0_p20140511.ebuild,v 1.4 2014/05/26 19:40:50 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-power-manager/xfce4-power-manager-1.2.0_p20140527.ebuild,v 1.1 2014/05/27 11:31:00 ssuominen Exp $
 
 EAPI=5
 [[ ${PV} == *_p* ]] && EAUTORECONF=1
@@ -13,7 +13,7 @@ SRC_URI="http://dev.gentoo.org/~ssuominen/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-#KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
 KEYWORDS=""
 IUSE="debug kernel_linux networkmanager policykit +udisks +xfce_plugins_brightness"
 
