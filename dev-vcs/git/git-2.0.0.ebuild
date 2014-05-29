@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/git/git-9999-r1.ebuild,v 1.2 2014/05/28 23:44:51 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/git/git-2.0.0.ebuild,v 1.1 2014/05/29 00:12:26 robbat2 Exp $
 
 EAPI=5
 
@@ -10,7 +10,7 @@ GENTOO_DEPEND_ON_PERL=no
 PYTHON_COMPAT=( python2_{6,7} )
 [[ ${PV} == *9999 ]] && SCM="git-2"
 EGIT_REPO_URI="git://git.kernel.org/pub/scm/git/git.git"
-EGIT_MASTER=maint
+EGIT_MASTER=pu
 
 inherit toolchain-funcs eutils elisp-common perl-module bash-completion-r1 python-single-r1 systemd ${SCM}
 
@@ -225,7 +225,7 @@ src_unpack() {
 
 src_prepare() {
 	# bug #350330 - automagic CVS when we don't want it is bad.
-	epatch "${FILESDIR}"/git-1.9.0_rc3-optional-cvs.patch
+	epatch "${FILESDIR}"/git-2.0.0-optional-cvs.patch
 
 	# install mediawiki perl modules also in vendor_dir
 	# hack, needs better upstream solution
