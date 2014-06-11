@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/firefox-bin/firefox-bin-24.4.0.ebuild,v 1.4 2014/05/17 14:42:21 swift Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/firefox-bin/firefox-bin-24.6.0.ebuild,v 1.2 2014/06/11 19:06:08 axs Exp $
 
 EAPI="5"
 MOZ_ESR="1"
@@ -38,7 +38,7 @@ SRC_URI="${SRC_URI}
 HOMEPAGE="http://www.mozilla.com/firefox"
 RESTRICT="strip mirror"
 
-KEYWORDS="-* amd64 x86"
+KEYWORDS="-* ~amd64 ~x86"
 SLOT="0"
 LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
 IUSE="selinux startup-notification"
@@ -54,8 +54,6 @@ RDEPEND="dev-libs/dbus-glib
 	selinux? ( sec-policy/selinux-mozilla )
 	>=x11-libs/gtk+-2.2:2
 	>=media-libs/alsa-lib-1.0.16
-
-	!net-libs/libproxy[spidermonkey]
 "
 
 QA_PREBUILT="
