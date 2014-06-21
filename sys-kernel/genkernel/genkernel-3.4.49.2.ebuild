@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/genkernel-3.4.49.2.ebuild,v 1.4 2014/06/19 18:07:06 maekke Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/genkernel/genkernel-3.4.49.2.ebuild,v 1.6 2014/06/21 05:13:41 patrick Exp $
 
 # genkernel-9999        -> latest Git branch "master"
 # genkernel-VERSION     -> normal genkernel release
@@ -96,6 +96,9 @@ src_prepare() {
 		-e "s:VERSION_GPG:$VERSION_GPG:" \
 		"${S}"/defaults/software.sh \
 		|| die "Could not adjust versions"
+
+	# wtfbbq ? see #514112
+	#epatch_user || die
 }
 
 src_compile() {
