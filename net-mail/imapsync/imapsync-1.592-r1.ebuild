@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/imapsync/imapsync-1.584.ebuild,v 1.1 2014/02/14 07:35:13 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/imapsync/imapsync-1.592-r1.ebuild,v 1.1 2014/06/23 15:30:50 radhermit Exp $
 
 EAPI=5
 
@@ -15,7 +15,9 @@ KEYWORDS="~amd64 ~ppc ~x86"
 DEPEND="dev-lang/perl"
 RDEPEND="${DEPEND}
 	dev-perl/Digest-HMAC
+	dev-perl/File-Copy-Recursive
 	dev-perl/IO-Socket-SSL
+	dev-perl/IO-Tee
 	dev-perl/Mail-IMAPClient
 	dev-perl/TermReadKey
 	virtual/perl-Digest-MD5
