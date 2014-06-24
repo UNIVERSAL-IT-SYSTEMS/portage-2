@@ -1,9 +1,9 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/evemu/evemu-1.2.0.ebuild,v 1.1 2013/12/22 11:10:12 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/evemu/evemu-2.0.0.ebuild,v 1.1 2014/06/24 04:30:55 radhermit Exp $
 
 EAPI=5
-PYTHON_COMPAT=( python2_{6,7} )
+PYTHON_COMPAT=( python2_7 )
 AUTOTOOLS_AUTORECONF=1
 AUTOTOOLS_IN_SOURCE_BUILD=1
 
@@ -19,15 +19,18 @@ KEYWORDS="~amd64 ~x86"
 IUSE="python static-libs"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
-RDEPEND="python? ( ${PYTHON_DEPS} )"
+RDEPEND="python? ( ${PYTHON_DEPS} )
+	>=dev-libs/libevdev-0.5"
 DEPEND="app-arch/xz-utils
 	${RDEPEND}"
+
+PATCHES=( "${FILESDIR}"/${PN}-1.2.0-install-man.patch )
 
 src_prepare() {
 	if ! use python ; then
 		sed '/SUBDIRS/s/python//' -i Makefile.am || die
-		autotools-utils_src_prepare
 	fi
+	autotools-utils_src_prepare
 }
 
 src_test() {
