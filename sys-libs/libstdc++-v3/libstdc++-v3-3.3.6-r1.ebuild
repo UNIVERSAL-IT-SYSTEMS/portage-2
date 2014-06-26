@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libstdc++-v3/libstdc++-v3-3.3.6-r1.ebuild,v 1.13 2014/06/26 08:24:44 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/libstdc++-v3/libstdc++-v3-3.3.6-r1.ebuild,v 1.12 2014/02/16 19:29:29 vapier Exp $
 
 inherit eutils flag-o-matic libtool multilib
 
@@ -101,8 +101,6 @@ do_filter_flags() {
 	# Bug #442784
 	filter-flags '-W*'
 
-	filter-flags -frecord-gcc-switches
-
 	# ...sure, why not?
 	strip-unsupported-flags
 
@@ -121,7 +119,7 @@ SLOT="5"
 KEYWORDS="amd64 ~mips ppc -ppc64 sparc x86 ~x86-fbsd"
 IUSE="multilib nls"
 
-DEPEND="<sys-devel/bison-3"
+DEPEND="sys-devel/bison"
 RDEPEND=""
 
 S=${WORKDIR}/gcc-${PV}
