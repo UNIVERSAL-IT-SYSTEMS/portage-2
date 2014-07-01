@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/gentoo-sources-3.10.46.ebuild,v 1.1 2014/07/01 13:17:18 mpagano Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/gentoo-sources/gentoo-sources-3.10.46.ebuild,v 1.2 2014/07/01 16:17:53 mpagano Exp $
 
 EAPI="5"
 ETYPE="sources"
@@ -22,6 +22,7 @@ pkg_postinst() {
 	kernel-2_pkg_postinst
 	einfo "For more info on this patchset, and how to report problems, see:"
 	einfo "${HOMEPAGE}"
+
 }
 
 pkg_postrm() {
