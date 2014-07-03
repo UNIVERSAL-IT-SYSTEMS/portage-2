@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/multilib-build.eclass,v 1.59 2014/06/29 08:32:46 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/multilib-build.eclass,v 1.61 2014/07/03 08:27:01 mgorny Exp $
 
 # @ECLASS: multilib-build.eclass
 # @MAINTAINER:
@@ -46,6 +46,8 @@ _MULTILIB_FLAGS=(
 	abi_mips_o32:o32
 	abi_ppc_32:ppc
 	abi_ppc_64:ppc64
+	abi_s390_32:s390
+	abi_s390_64:s390x
 )
 
 # @ECLASS-VARIABLE: MULTILIB_COMPAT
@@ -56,8 +58,15 @@ _MULTILIB_FLAGS=(
 #
 # This variable is intended for use in prebuilt multilib packages that
 # can provide binaries only for a limited set of ABIs. If ABIs need to
-# be limited due to a bug in source code, package.use.mask is
-# recommended instead.
+# be limited due to a bug in source code, package.use.mask is to be used
+# instead. Along with MULTILIB_COMPAT, KEYWORDS should contain '-*'.
+#
+# Note that setting this variable effectively disables support for all
+# other ABIs, including other architectures. For example, specifying
+# abi_x86_{32,64} disables support for MIPS as well.
+#
+# The value of MULTILIB_COMPAT determines the value of IUSE. If set, it
+# also enables REQUIRED_USE constraints.
 #
 # Example use:
 # @CODE
@@ -112,6 +121,8 @@ _multilib_build_set_globals() {
 	local usedeps=${flags[@]/%/(-)?}
 
 	IUSE=${flags[*]}
+	REQUIRED_USE="|| ( ${flags[*]} )"
+
 	MULTILIB_USEDEP=${usedeps// /,}
 }
 _multilib_build_set_globals
