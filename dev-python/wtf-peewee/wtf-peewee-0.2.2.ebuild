@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/wtf-peewee/wtf-peewee-0.2.3.ebuild,v 1.1 2014/06/04 08:22:32 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/wtf-peewee/wtf-peewee-0.2.2.ebuild,v 1.1 2014/05/26 07:48:43 patrick Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
