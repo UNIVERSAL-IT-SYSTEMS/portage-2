@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/bfgminer/bfgminer-4.3.0.ebuild,v 1.1 2014/06/30 23:52:38 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/bfgminer/bfgminer-4.4.0.ebuild,v 1.1 2014/07/07 21:57:26 blueness Exp $
 
 EAPI=5
 
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~mips ~ppc ~ppc64 ~x86"
 
 # TODO: knc (needs i2c-tools header)
-IUSE="adl antminer avalon bfx bifury bitforce bfsb bigpic bitfury cpumining drillbit dualminer examples gridseed hardened hashbuster hashbuster2 hashfast icarus klondike +libusb littlefury lm_sensors metabank modminer nanofury ncurses opencl proxy proxy_getwork proxy_stratum rockminer scrypt twinfury +udev unicode x6500 zeusminer ztex"
+IUSE="adl antminer avalon bfx bifury bitforce bfsb bigpic bitfury cpumining drillbit dualminer examples gridseed hardened hashbuster hashbuster2 hashfast icarus jingtian klondike +libusb littlefury lm_sensors metabank modminer nanofury ncurses opencl proxy proxy_getwork proxy_stratum rockminer scrypt twinfury +udev unicode x6500 zeusminer ztex"
 REQUIRED_USE='
 	|| ( antminer avalon bfsb bfx bifury bigpic bitforce bitfury cpumining drillbit dualminer gridseed hashbuster hashbuster2 hashfast icarus klondike littlefury metabank modminer nanofury opencl proxy twinfury x6500 ztex )
 	adl? ( opencl )
@@ -136,6 +136,7 @@ src_configure() {
 		$(use_enable hashbuster2 hashbusterusb) \
 		$(use_enable hashfast) \
 		$(use_enable icarus) \
+		$(use_enable jingtian) \
 		$(use_enable klondike) \
 		$(use_enable littlefury) \
 		$(use_enable metabank) \
