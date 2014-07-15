@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-215.ebuild,v 1.4 2014/07/15 11:52:44 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/udev/udev-215.ebuild,v 1.6 2014/07/15 15:52:06 ssuominen Exp $
 
 EAPI=5
 
@@ -11,14 +11,14 @@ if [[ ${PV} = 9999* ]]; then
 	inherit git-2
 	patchset=
 else
-	patchset=1
+	patchset=2
 	SRC_URI="http://www.freedesktop.org/software/systemd/systemd-${PV}.tar.xz"
 	if [[ -n "${patchset}" ]]; then
 				SRC_URI="${SRC_URI}
 					http://dev.gentoo.org/~ssuominen/${P}-patches-${patchset}.tar.xz
 					http://dev.gentoo.org/~williamh/dist/${P}-patches-${patchset}.tar.xz"
 			fi
-	KEYWORDS="~alpha amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86"
+	KEYWORDS="~alpha amd64 arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86"
 fi
 
 DESCRIPTION="Linux dynamic and persistent device naming support (aka userspace devfs)"
