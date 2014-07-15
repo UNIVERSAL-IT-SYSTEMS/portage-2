@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/netty-common/netty-common-4.0.19.ebuild,v 1.2 2014/07/15 07:50:55 ercpe Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/netty-transport/netty-transport-4.0.21.ebuild,v 1.2 2014/07/15 08:22:42 ercpe Exp $
 
 EAPI="5"
 
@@ -18,25 +18,22 @@ LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-CDEPEND="dev-java/commons-logging:0
-	dev-java/javassist:3
-	dev-java/log4j:0
-	dev-java/slf4j-api:0"
+CDEPEND="dev-java/${MY_PN}-buffer:0
+	dev-java/${MY_PN}-common:0"
+
 RDEPEND=">=virtual/jre-1.6
-		${CDEPEND}"
+	${CDEPEND}"
+
 DEPEND=">=virtual/jdk-1.6
-		${CDEPEND}"
+	${CDEPEND}"
 
 S="${WORKDIR}/${MY_PN}-${MY_P}.Final/${PN/${MY_PN}-}"
 
 EANT_BUILD_TARGET="package"
+EANT_GENTOO_CLASSPATH="${MY_PN}-buffer,${MY_PN}-common"
 JAVA_ANT_REWRITE_CLASSPATH="true"
-EANT_GENTOO_CLASSPATH="commons-logging,log4j,javassist-3,slf4j-api"
 
-# Tests fail as they might need logging to be properly set up and/or compatible.
-#
-# junit.framework.AssertionFailedError: expected:<[foo]> but was:<[NOP]>
-# at io.netty.util.internal.logging.Slf4JLoggerFactoryTest.testCreation
+# error: package ch.qos.logback.classic does not exist
 RESTRICT="test"
 
 java_prepare() {

@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-java/netty-common/netty-common-4.0.19.ebuild,v 1.2 2014/07/15 07:50:55 ercpe Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-java/netty-codec/netty-codec-4.0.21.ebuild,v 1.1 2014/07/15 08:24:05 ercpe Exp $
 
 EAPI="5"
 
@@ -16,36 +16,41 @@ SRC_URI="https://github.com/${MY_PN}/${MY_PN}/archive/${MY_P}.Final.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
-CDEPEND="dev-java/commons-logging:0
-	dev-java/javassist:3
-	dev-java/log4j:0
-	dev-java/slf4j-api:0"
+CDEPEND="dev-java/${MY_PN}-buffer:0
+	dev-java/${MY_PN}-common:0
+	dev-java/${MY_PN}-transport:0
+	dev-java/jboss-marshalling:0
+	dev-java/jzlib:1.1.3
+	dev-libs/protobuf[java]"
+
 RDEPEND=">=virtual/jre-1.6
-		${CDEPEND}"
+	${CDEPEND}"
+
 DEPEND=">=virtual/jdk-1.6
-		${CDEPEND}"
+	${CDEPEND}"
 
 S="${WORKDIR}/${MY_PN}-${MY_P}.Final/${PN/${MY_PN}-}"
 
 EANT_BUILD_TARGET="package"
+EANT_GENTOO_CLASSPATH="${MY_PN}-buffer,${MY_PN}-common,jboss-marshalling,${MY_PN}-transport,jzlib-1.1.3,protobuf"
 JAVA_ANT_REWRITE_CLASSPATH="true"
-EANT_GENTOO_CLASSPATH="commons-logging,log4j,javassist-3,slf4j-api"
-
-# Tests fail as they might need logging to be properly set up and/or compatible.
-#
-# junit.framework.AssertionFailedError: expected:<[foo]> but was:<[NOP]>
-# at io.netty.util.internal.logging.Slf4JLoggerFactoryTest.testCreation
-RESTRICT="test"
 
 java_prepare() {
 	cp "${FILESDIR}"/${P}-build.xml build.xml || die
 }
 
+#    [junit] Testcase: testZLIB_OR_NONE2 took 0.008 sec
+#    [junit] 	Caused an ERROR
+#    [junit] null
+#    [junit] java.lang.InstantiationException
+#    [junit] 	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+RESTRICT="test"
+
 src_install() {
 	java-pkg_newjar target/${MY_PN}-*.jar ${PN}.jar
 
 	use doc && java-pkg_dojavadoc target/site/apidocs
-	use source && java-pkg_dosrc src/main/java/*
+	use source && java-pkg_dosrc src/main/java
 }
