@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/curl-7.36.0.ebuild,v 1.15 2014/05/14 16:10:31 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/curl/curl-7.36.0.ebuild,v 1.17 2014/07/15 09:40:13 blueness Exp $
 
 EAPI="5"
 
