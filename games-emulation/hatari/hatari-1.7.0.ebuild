@@ -1,14 +1,13 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-emulation/hatari/hatari-1.6.1-r1.ebuild,v 1.2 2014/05/15 16:37:13 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/hatari/hatari-1.7.0.ebuild,v 1.1 2014/07/16 02:48:29 mr_bones_ Exp $
 
 EAPI=5
-
 PYTHON_COMPAT=( python2_6 python2_7 )
 inherit eutils toolchain-funcs cmake-utils python-single-r1 games
 
 DESCRIPTION="Atari ST emulator"
-HOMEPAGE="http://hatari.berlios.de/"
+HOMEPAGE="http://hatari.tuxfamily.org/"
 SRC_URI="http://download.tuxfamily.org/hatari/${PV}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
@@ -66,7 +65,7 @@ src_configure() {
 src_install() {
 	DOCS="readme.txt doc/*.txt" cmake-utils_src_install
 	dohtml -r doc/
-	python_fix_shebang "${ED%/}"/usr/share/games/hatari/{hatariui,hconsole}/*.py
+	python_fix_shebang "${ED%/}"/usr/share/games/hatari/{hatariui,hconsole}/
 	prepgamesdirs
 }
 

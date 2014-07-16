@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-util/joystick/joystick-1.4.2.ebuild,v 1.6 2012/06/13 06:43:27 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-util/joystick/joystick-1.4.7.ebuild,v 1.1 2014/07/16 01:19:15 mr_bones_ Exp $
 
-EAPI=4
+EAPI=5
 inherit eutils toolchain-funcs
 
 MY_P="linuxconsoletools-${PV}"
@@ -12,10 +12,10 @@ SRC_URI="mirror://sourceforge/linuxconsole/files/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~ppc x86"
+KEYWORDS="~amd64 ~arm ~ppc ~x86"
 IUSE="sdl"
 
-DEPEND="sdl? ( media-libs/libsdl[video] )
+DEPEND="sdl? ( media-libs/libsdl:0[video] )
 	!<x11-libs/tslib-1.0-r2"
 RDEPEND="${DEPEND}"
 
