@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/nss/nss-3.16.1.ebuild,v 1.2 2014/07/04 19:51:37 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/nss/nss-3.16.3.ebuild,v 1.1 2014/07/24 09:49:22 polynomial-c Exp $
 
 EAPI=5
 inherit eutils flag-o-matic multilib toolchain-funcs multilib-minimal
@@ -240,19 +240,26 @@ multilib_src_install() {
 
 	dodir /usr/$(get_libdir)
 	cp -L */lib/*$(get_libname) "${ED}"/usr/$(get_libdir) || die "copying shared libs failed"
-	# We generate these after stripping the libraries, else they don't match.
-	#cp -L */lib/*.chk "${ED}"/usr/$(get_libdir) || die "copying chk files failed"
-	cp -L */lib/libcrmf.a "${ED}"/usr/$(get_libdir) || die "copying libs failed"
+	cp -L -t "${ED}"/usr/$(get_libdir) */lib/{libcrmf,libfreebl}.a || die "copying libs failed"
 
 	# Install nss-config and pkgconfig file
 	dodir /usr/bin
-	cp -L */bin/nss-config "${ED}"/usr/bin
+	cp -L */bin/nss-config "${ED}"/usr/bin || die
 	dodir /usr/$(get_libdir)/pkgconfig
-	cp -L */lib/pkgconfig/nss.pc "${ED}"/usr/$(get_libdir)/pkgconfig
+	cp -L */lib/pkgconfig/nss.pc "${ED}"/usr/$(get_libdir)/pkgconfig || die
+
+	# create an nss-softokn.pc from nss.pc for libfreebl and some private headers
+	# bug 517266
+	sed 	-e 's#Libs:#Libs: -lfreebl#' \
+		-e 's#Cflags:#Cflags: -I${includedir}/private#' \
+		*/lib/pkgconfig/nss.pc >"${ED}"/usr/$(get_libdir)/pkgconfig/nss-softokn.pc \
+		|| die "could not create nss-softokn.pc"
 
 	# all the include files
 	insinto /usr/include/nss
 	doins public/nss/*.h
+	insinto /usr/include/nss/private
+	doins private/nss/{blapi,alghmac}.h
 
 	popd >/dev/null || die
 
