@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/gnuradio/gnuradio-9999.ebuild,v 1.13 2014/07/22 15:28:39 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/gnuradio/gnuradio-9999.ebuild,v 1.15 2014/07/26 05:59:21 zerochaos Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -46,6 +46,7 @@ RDEPEND="${PYTHON_DEPS}
 	alsa? (
 		media-libs/alsa-lib[${PYTHON_USEDEP}]
 	)
+	ctrlport? ( dev-libs/Ice )
 	fcd? ( virtual/libusb:1 )
 	filter? ( sci-libs/scipy )
 	grc? (
@@ -97,11 +98,14 @@ src_prepare() {
 	# Useless UI element would require qt3support, bug #365019
 	sed -i '/qPixmapFromMimeSource/d' "${S}"/gr-qtgui/lib/spectrumdisplayform.ui || die
 	epatch "${FILESDIR}"/${PN}-3.6.1-automagic-audio.patch
+	epatch "${FILESDIR}/${P}-build-type-nonfatal.patch"
 }
 
 src_configure() {
 	# TODO: docs are installed to /usr/share/doc/${PN} not /usr/share/doc/${PF}
 	# SYSCONFDIR/GR_PREFSDIR default to install below CMAKE_INSTALL_PREFIX
+		#this flag breaks everything, but more likely it's a sign we need to work on this
+		#-DENABLE_DEFAULT=OFF
 	mycmakeargs=(
 		$(cmake-utils_use_enable alsa GR_AUDIO_ALSA) \
 		$(cmake-utils_use_enable analog GR_ANALOG) \
