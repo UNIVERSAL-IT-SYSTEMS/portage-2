@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15940 2014/08/03 22:07:23 robbat2 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15944 2014/08/04 04:36:26 robbat2 Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -784,11 +784,6 @@ net-wireless/madwifi-ng
 # don't work with it.
 =media-libs/libsfml-2*
 
-# Robin H. Johnson <robbat2@gentoo.org> (18 Nov 2012)
-# Dead upstream, replaced by gitolite
-dev-vcs/gitosis
-dev-vcs/gitosis-gentoo
-
 # Markos Chandras <hwoarang@gentoo.org> (03 Nov 2012)
 # Masked for testing
 app-benchmarks/ltp
@@ -819,8 +814,6 @@ dev-ml/ocamlduce
 # Masked for testing
 # 2014/08/03: Cleanup in progress, as they pass testsuite, they are being unmasked
 =sys-libs/db-5.2*
-=sys-libs/db-5.1*
-=sys-libs/db-5.0*
 
 # Ralph Sennhauser <sera@gentoo.org> (18 Jul 2012)
 # Unmaintained, multiple vulnarabilities. #351626
@@ -973,11 +966,6 @@ net-misc/asterisk-spandsp_codec_g726
 # No actual Gentoo support yet. If you're interested, please see bug #295993
 net-misc/netcf
 
-# Robin H. Johnson <robbat2@gentoo.org> (09 Jun 2010)
-# Fails to self-verify/sign in FIPS mode, pending upstream response before
-# usage for GSoC project.
-app-crypt/hmaccalc
-
 # Patrick Lauer <patrick@gentoo.org> (07 Apr 2010)
 # Lars Wendler <polynomial-c@gentoo.org> (14 Oct 2013)
 # Keeping samba-4.0 masked until bug #447022 is fixed. 4.1 masked for testing.
@@ -1046,14 +1034,6 @@ net-misc/netcomics-cvs
 sys-kernel/zen-sources
 =www-plugins/google-talkplugin-9999
 ~x11-wm/openbox-9999
-
-# Jeremy Olexa <darkside@gentoo.org> (28 Jul 2009)
-# On behalf of Robin H. Johnson <robbat2@gentoo.org>.
-# These versions are vulnerable to GLSA's and should not be used. They will stay
-# in the tree because they are useful to tracking down bugs. You have been
-# warned. bug 271686
-<dev-db/mysql-5.1.56
-<virtual/mysql-5.1
 
 # Tiziano Müller <dev-zero@gentoo.org> (08 Apr 2009)
 # pre-releases
