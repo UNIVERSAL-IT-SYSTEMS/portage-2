@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/printrun/printrun-20140730.ebuild,v 1.1 2014/08/07 17:03:47 amynka Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/printrun/printrun-20140730.ebuild,v 1.4 2014/08/10 14:01:06 amynka Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 
 inherit distutils-r1
 
@@ -23,5 +23,9 @@ DEPEND="dev-python/pyserial
 	dev-python/dbus-python
 	media-gfx/cairosvg"
 RDEPEND="${DEPEND}"
+
+PATCHES=(
+	"${FILESDIR}/printrun-no-py-in-binaries.patch"
+)
 
 S="${WORKDIR}/Printrun-${P}"

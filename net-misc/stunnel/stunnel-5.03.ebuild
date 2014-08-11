@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/stunnel/stunnel-5.03.ebuild,v 1.1 2014/08/08 11:20:58 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/stunnel/stunnel-5.03.ebuild,v 1.3 2014/08/08 14:30:46 jer Exp $
 
 EAPI="5"
 
@@ -12,7 +12,7 @@ SRC_URI="http://www.stunnel.org/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86 ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x86-macos"
+KEYWORDS="~alpha ~amd64 ~arm hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86 ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x86-macos"
 IUSE="ipv6 selinux tcpd"
 
 DEPEND="tcpd? ( sys-apps/tcp-wrappers )
@@ -54,11 +54,11 @@ src_install() {
 		tools/importCA.html
 
 	insinto /etc/stunnel
-	newins "${FILESDIR}"/stunnel.conf-r1 stunnel.conf
-	newinitd "${FILESDIR}"/stunnel.rc7 stunnel
+	doins "${FILESDIR}"/stunnel.conf
+	doinitd "${FILESDIR}"/stunnel
 
 	systemd_dounit "${S}/tools/stunnel.service"
-	systemd_newtmpfilesd "${FILESDIR}"/stunnel.tmpfiles.conf-r1 stunnel.conf
+	systemd_newtmpfilesd "${FILESDIR}"/stunnel.tmpfiles.conf stunnel.conf
 }
 
 pkg_postinst() {
