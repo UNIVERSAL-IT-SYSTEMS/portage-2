@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15979 2014/08/22 03:44:33 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.15981 2014/08/22 22:17:09 ssuominen Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,13 @@
 
 #--- END OF EXAMPLES ---
 
+# Samuli Suominen <ssuominen@gentoo.org> (23 Aug 2014)
+# Some compile problems with media-libs/openexr >= 2.2.0
+# See http://bugs.gentoo.org/520240 for more information
+>=media-libs/ilmbase-2.2.0
+>=media-libs/openexr-2.2.0
+>=media-gfx/openexr_viewers-2.2.0
+
 # Brian Evans <grknight@gentoo.org> (21 Aug 2014)
 # Old versions of dev-db/mariadb masked for removal in 30 days
 # Please upgrade to the 5.5 series
@@ -42,11 +49,6 @@
 # t7004-tag.sh testsuite causes segfault when run in portage's sandbox
 # (bug #520270).
 =dev-vcs/git-2.1.0
-
-# Sergei Trofimovich <slyfox@gentoo.org> (19 Aug 2014)
-# Handling complex conditions broke php's lexer (bug #518904).
-# Working on it upstream.
->=dev-util/re2c-0.13.7.2
 
 # Sergey Popov <pinkbyte@gentoo.org> (14 Aug 2014)
 # Mask new version of Boost - it's known to cause breakages,
