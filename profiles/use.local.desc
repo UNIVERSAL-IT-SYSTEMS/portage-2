@@ -1337,8 +1337,10 @@ dev-games/crystalspace:cg - NVIDIA toolkit plugin
 dev-games/crystalspace:ode - include support for Open Dynamics Engine
 dev-games/guichan:allegro - Build the Allegro frontend
 dev-games/mygui:linguas_ru - Install some additional russian docs if 'doc' useflag enabled
+dev-games/mygui:ogre - Use the ogre render subsystem. (cannot combine with opengl)
+dev-games/mygui:opengl - Use the opengl render subsystem. (cannot combine with ogre)
 dev-games/mygui:plugins - Build MyGUI plugins
-dev-games/mygui:samples - Install MyGUI demos
+dev-games/mygui:samples - Install MyGUI demos (needs ogre USE flag)
 dev-games/mygui:tools - Build the tools for development
 dev-games/ode:double-precision - more precise calculations at the expense of speed
 dev-games/ode:gyroscopic - enable gyroscopic term (may cause instability)
@@ -2603,7 +2605,8 @@ games-engines/odamex:server - Build server target.
 games-engines/renpy:development - Install IDE for game developers and an empty game template
 games-engines/scummvm:fluidsynth - compile with support for fluidsynth
 games-engines/scummvm:mpeg2 - enable mpeg2 codec for cutscenes
-games-engines/solarus:luajit - Use LuaJIT instead of default Lua
+games-engines/solarus:doc - Install doxygen developer documentation.
+games-engines/solarus:luajit - Use LuaJIT instead of default Lua.
 games-fps/alienarena:vidmode - Link against x11-libs/libXxf86vm. Required for full-screen support.
 games-fps/darkplaces:cdsound - Enables using CD audio in the engine
 games-fps/darkplaces:demo - Uses the demo data from quake1 (quake1-demodata)
