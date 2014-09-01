@@ -1,18 +1,18 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp/gimp-2.8.10.ebuild,v 1.2 2014/07/24 18:05:29 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/gimp/gimp-2.8.14.ebuild,v 1.1 2014/09/01 18:11:40 sping Exp $
 
-EAPI="3"
-PYTHON_DEPEND="python? 2:2.5"
+EAPI=5
+PYTHON_COMPAT=( python2_7 )
 
-inherit versionator autotools eutils gnome2 fdo-mime multilib python
+inherit versionator autotools eutils gnome2 fdo-mime multilib python-single-r1
 
 DESCRIPTION="GNU Image Manipulation Program"
 HOMEPAGE="http://www.gimp.org/"
 SRC_URI="mirror://gimp/v$(get_version_component_range 1-2)/${P}.tar.bz2"
 LICENSE="GPL-3 LGPL-3"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-interix ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-interix ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
 
 LANGS="am ar ast az be bg br ca ca@valencia cs csb da de dz el en_CA en_GB eo es et eu fa fi fr ga gl gu he hi hr hu id is it ja ka kk km kn ko lt lv mk ml ms my nb nds ne nl nn oc pa pl pt pt_BR ro ru rw si sk sl sr sr@latin sv ta te th tr tt uk vi xh yi zh_CN zh_HK zh_TW"
 IUSE="alsa aalib altivec aqua bzip2 curl dbus debug doc exif gnome postscript jpeg jpeg2k lcms mmx mng pdf png python smp sse svg tiff udev webkit wmf xpm"
@@ -38,6 +38,7 @@ RDEPEND=">=dev-libs/glib-2.30.2:2
 	>=media-libs/gegl-0.2.0
 	aalib? ( media-libs/aalib )
 	alsa? ( media-libs/alsa-lib )
+	aqua? ( x11-libs/gtk-mac-integration )
 	curl? ( net-misc/curl )
 	dbus? ( dev-libs/dbus-glib )
 	gnome? ( gnome-base/gvfs )
@@ -49,7 +50,10 @@ RDEPEND=">=dev-libs/glib-2.30.2:2
 	mng? ( media-libs/libmng )
 	pdf? ( >=app-text/poppler-0.12.4[cairo] )
 	png? ( >=media-libs/libpng-1.2.37:0 )
-	python?	( >=dev-python/pygtk-2.10.4:2 )
+	python?	(
+		${PYTHON_DEPS}
+		>=dev-python/pygtk-2.10.4:2[${PYTHON_USEDEP}]
+	)
 	tiff? ( >=media-libs/tiff-3.5.7:0 )
 	svg? ( >=gnome-base/librsvg-2.36.0:2 )
 	wmf? ( >=media-libs/libwmf-0.2.8 )
@@ -57,12 +61,12 @@ RDEPEND=">=dev-libs/glib-2.30.2:2
 	sys-libs/zlib
 	bzip2? ( app-arch/bzip2 )
 	postscript? ( app-text/ghostscript-gpl )
-	udev? ( virtual/libgudev )"
+	udev? ( virtual/libgudev:= )"
 DEPEND="${RDEPEND}
 	sys-apps/findutils
 	virtual/pkgconfig
 	>=dev-util/intltool-0.40.1
-	>=sys-devel/gettext-0.17
+	>=sys-devel/gettext-0.19
 	doc? ( >=dev-util/gtk-doc-1 )
 	>=sys-devel/libtool-2.2
 	>=sys-devel/automake-1.11
@@ -71,6 +75,8 @@ DEPEND="${RDEPEND}
 DOCS="AUTHORS ChangeLog* HACKING NEWS README*"
 
 S="${WORKDIR}"/${P}
+
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 pkg_setup() {
 	G2CONF="--enable-default-binary \
@@ -105,16 +111,16 @@ pkg_setup() {
 		--without-xvfb-run"
 
 	if use python; then
-		python_set_active_version 2
-		python_pkg_setup
+		python-single-r1_pkg_setup
 	fi
 }
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.7.4-no-deprecation.patch  # bug 395695, comment 9 and 16
+	epatch "${FILESDIR}"/${PN}-2.8.10-clang.patch # bug 449370 compile with clang
+	sed -i -e 's/== "xquartz"/= "xquartz"/' configure.ac || die #494864
 	eautoreconf  # If you remove this: remove dev-util/gtk-doc-am from DEPEND, too
 
-	echo '#!/bin/sh' > py-compile
 	gnome2_src_prepare
 }
 
@@ -133,15 +139,14 @@ src_install() {
 	gnome2_src_install
 
 	if use python; then
-		python_convert_shebangs -r $(python_get_version) "${ED}"
-		python_need_rebuild
+		python_optimize
 	fi
 
 	# Workaround for bug #321111 to give GIMP the least
 	# precedence on PDF documents by default
 	mv "${ED}"/usr/share/applications/{,zzz-}gimp.desktop || die
 
-	find "${ED}" -name '*.la' -delete || die
+	prune_libtool_files --all
 
 	# Prevent dead symlink gimp-console.1 from downstream man page compression (bug #433527)
 	local gimp_app_version=$(get_version_component_range 1-2)
@@ -152,14 +157,8 @@ src_install() {
 
 pkg_postinst() {
 	gnome2_pkg_postinst
-
-	use python && python_mod_optimize /usr/$(get_libdir)/gimp/2.0/python \
-		/usr/$(get_libdir)/gimp/2.0/plug-ins
 }
 
 pkg_postrm() {
 	gnome2_pkg_postrm
-
-	use python && python_mod_cleanup /usr/$(get_libdir)/gimp/2.0/python \
-		/usr/$(get_libdir)/gimp/2.0/plug-ins
 }
