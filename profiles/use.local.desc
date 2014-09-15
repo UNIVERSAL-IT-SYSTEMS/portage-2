@@ -338,6 +338,7 @@ app-crypt/ekeyd:munin - Install a plugin for net-analyzer/munin to graph statist
 app-crypt/ekeyd:usb - Build the libusb-based userland daemon for accessing the EntropyKey (alternative to the CDC USB driver). It is suggested to use this option by default, as the CDC driver in the kernel often seems to be fragile (or the gadget implementation on the EntropyKey is too buggy), and can cause various problems.
 app-crypt/gnupg:mta - Build mta support using virtual/mta.
 app-crypt/gnupg:smartcard - Build scdaemon software. Enables usage of OpenPGP cards. For other type of smartcards, try app-crypt/gnupg-pkcs11-scd.
+app-crypt/gnupg:tools - Install extra tools.
 app-crypt/gnupg:usb - Build direct CCID access for scdaemon; requires dev-libs/libusb.
 app-crypt/gpgme:common-lisp - Install common-lisp files
 app-crypt/hashcat-gui:cuda - Install oclhashcat-{plus,lite}-bin to take advantage of hardware cuda support.
@@ -7232,8 +7233,6 @@ www-client/netsurf:svgtiny - SVG image support via media-libs/svgatiny instead o
 www-client/netsurf:webp - WebP image support (media-libs/libwebp)
 www-client/opera:gtk - Install support libraries and runtime dependencies to support GTK+/GNOME desktop integration
 www-client/opera:kde - Install support libraries and runtime dependencies to support KDE desktop integration
-www-client/opera-next:gtk - Install support libraries and runtime dependencies to support GTK+/GNOME desktop integration
-www-client/opera-next:kde - Install support libraries and runtime dependencies to support KDE desktop integration
 www-client/qupzilla:nonblockdialogs - Enable fancy non-blocking JavaScript dialogs shown inside the page, not blocking the application window. When closing browser windows with open dialogs, this can crash the application.
 www-client/rekonq:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 www-client/rekonq:opera - Support for Opera sync handler
