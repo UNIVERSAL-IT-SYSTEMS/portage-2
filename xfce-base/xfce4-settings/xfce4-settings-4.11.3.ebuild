@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-settings/xfce4-settings-4.11.2-r1.ebuild,v 1.2 2014/07/24 10:53:39 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-settings/xfce4-settings-4.11.3.ebuild,v 1.1 2014/09/16 10:52:21 ssuominen Exp $
 
 EAPI=5
 inherit xfconf
@@ -39,8 +39,6 @@ DEPEND="${RDEPEND}
 	x11-proto/xproto"
 
 pkg_setup() {
-	PATCHES=( "${FILESDIR}"/${P}-upower-0.99.patch )
-
 	XFCONF=(
 		$(use_enable upower upower-glib)
 		$(use_enable libnotify)

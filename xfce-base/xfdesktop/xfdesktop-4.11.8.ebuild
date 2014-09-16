@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfdesktop/xfdesktop-4.11.7.ebuild,v 1.1 2014/08/20 07:13:26 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfdesktop/xfdesktop-4.11.8.ebuild,v 1.1 2014/09/16 10:57:14 ssuominen Exp $
 
 EAPI=5
 inherit xfconf
