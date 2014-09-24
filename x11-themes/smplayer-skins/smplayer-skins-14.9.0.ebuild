@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-themes/smplayer-skins/smplayer-skins-20121029.ebuild,v 1.1 2013/05/25 07:41:29 yngwin Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-themes/smplayer-skins/smplayer-skins-14.9.0.ebuild,v 1.2 2014/09/24 08:30:44 yngwin Exp $
 
 EAPI=5
 
@@ -16,12 +16,8 @@ IUSE=""
 DEPEND=""
 RDEPEND="media-video/smplayer"
 
-# Override it as default will call make that will catch the install target...
-src_compile() {
-	:
-}
-
 src_install() {
+	rm themes/Makefile
 	insinto /usr/share/smplayer
 	doins -r themes
 	dodoc Changelog README.txt
