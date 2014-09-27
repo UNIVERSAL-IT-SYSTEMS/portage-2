@@ -1,13 +1,13 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/blender-2.70.ebuild,v 1.2 2014/05/15 17:08:04 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/blender-2.72.ebuild,v 1.1 2014/09/27 12:10:16 hasufell Exp $
 
 # TODO:
 #   bundled-deps: bullet is modified
 #   multiple python abi?
 
 EAPI=5
-PYTHON_COMPAT=( python3_3 )
+PYTHON_COMPAT=( python3_4 )
 #PATCHSET="1"
 
 inherit multilib fdo-mime gnome2-utils cmake-utils eutils python-single-r1 versionator flag-o-matic toolchain-funcs pax-utils check-reqs
@@ -39,8 +39,8 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}
 
 RDEPEND="
 	${PYTHON_DEPS}
-	dev-cpp/gflags
-	dev-cpp/glog[gflags]
+	>=dev-cpp/gflags-2.1.1-r1
+	>=dev-cpp/glog-0.3.3-r1[gflags]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	>=media-libs/freetype-2.0
@@ -58,7 +58,7 @@ RDEPEND="
 	x11-libs/libX11
 	boost? ( >=dev-libs/boost-1.44[nls?,threads(+)] )
 	collada? ( media-libs/opencollada )
-	colorio? ( media-libs/opencolorio )
+	colorio? ( <=media-libs/opencolorio-1.0.9 )
 	cycles? (
 		media-libs/openimageio
 	)
@@ -108,12 +108,14 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/01-${PN}-2.68-doxyfile.patch \
-		"${FILESDIR}"/02-${PN}-2.68-unbundle-colamd.patch \
-		"${FILESDIR}"/03-${PN}-2.68-remove-binreloc.patch \
-		"${FILESDIR}"/04-${PN}-2.70-unbundle-glog.patch \
-		"${FILESDIR}"/05-${PN}-2.68-unbundle-eigen3.patch \
+		"${FILESDIR}"/02-${PN}-2.71-unbundle-colamd.patch \
+		"${FILESDIR}"/04-${PN}-2.71-unbundle-glog.patch \
+		"${FILESDIR}"/05-${PN}-2.72-unbundle-eigen3.patch \
 		"${FILESDIR}"/06-${PN}-2.68-fix-install-rules.patch \
-		"${FILESDIR}"/07-${PN}-2.70-sse2.patch
+		"${FILESDIR}"/07-${PN}-2.70-sse2.patch \
+		"${FILESDIR}"/08-${PN}-2.71-gflags.patch
+
+	epatch_user
 
 	# remove some bundled deps
 	rm -r \
@@ -121,14 +123,8 @@ src_prepare() {
 		extern/libopenjpeg \
 		extern/glew \
 		extern/colamd \
-		extern/binreloc \
 		extern/libmv/third_party/{glog,gflags} \
 		|| die
-
-	# turn off binreloc (not cached)
-	sed -i \
-		-e 's#set(WITH_BINRELOC ON)#set(WITH_BINRELOC OFF)#' \
-		CMakeLists.txt || die
 
 	# we don't want static glew, but it's scattered across
 	# thousand files
@@ -146,8 +142,9 @@ src_prepare() {
 		rm -r "${S}"/release/datafiles/locale || die
 	else
 		if [[ -n "${LINGUAS+x}" ]] ; then
-			for i in "${S}"/release/datafiles/locale/* ; do
-				mylang=${i##*/}
+			cd "${S}"/release/datafiles/locale/po
+			for i in *.po ; do
+				mylang=${i%.po}
 				has ${mylang} ${LINGUAS} || { rm -r ${i} || die ; }
 			done
 		fi

@@ -1,8 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-radio/xastir/xastir-2.0.4.ebuild,v 1.6 2014/09/27 12:01:19 tomjbe Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-radio/xastir/xastir-2.0.6.ebuild,v 1.1 2014/09/27 14:51:00 tomjbe Exp $
 
-EAPI=4
+EAPI=5
 inherit autotools eutils flag-o-matic toolchain-funcs
 
 DESCRIPTION="X Amateur Station Tracking and Information Reporting"
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="festival gdal geotiff graphicsmagick"
 
 DEPEND=">=x11-libs/motif-2.3:0
@@ -34,20 +34,17 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	# fix script location (bug #407185)
-	epatch "${FILESDIR}"/${P}-scripts.diff
+	epatch "${FILESDIR}"/${PN}-2.0.4-scripts.diff
 
 	# fix __FORTIFY_SOURCE warning (bug #337365)
-	epatch 	"${FILESDIR}"/${P}-fortify.diff
+	epatch 	"${FILESDIR}"/${PN}-2.0.4-fortify.diff
 
 	# do not use builtin shapelib if sci-libs/shapelib is not installed
 	# instead build without shapelib support (bug #430704)
-	epatch "${FILESDIR}"/${P}-no-builtin-shapelib.diff
+	epatch "${FILESDIR}"/${PN}-2.0.4-no-builtin-shapelib.diff
 
 	# do not filter duplicate flags (see bug 411095)
 	epatch "${FILESDIR}"/${PN}-2.0.0-dont-filter-flags.diff
-
-	# fix deprectated AM_CONFIG_HEADER macro
-	sed -i -e "s/AM_CONFIG_HEADER/AC_CONFIG_HEADERS/" configure.ac || die
 
 	eautoreconf
 }

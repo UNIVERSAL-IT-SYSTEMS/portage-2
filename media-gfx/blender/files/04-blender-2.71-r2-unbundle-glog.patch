@@ -27,7 +27,16 @@ diff --git a/extern/libmv/CMakeLists.txt b/extern/libmv/CMakeLists.txt
 index 2c9a219..7061e04 100644
 --- a/extern/libmv/CMakeLists.txt
 +++ b/extern/libmv/CMakeLists.txt
-@@ -87,10 +87,6 @@
+@@ -44,8 +44,6 @@
+ 	)
+ 
+ 	list(APPEND INC
+-		third_party/gflags
+-		third_party/glog/src
+ 		third_party/ceres/include
+ 		../../intern/guardedalloc
+ 	)
+@@ -92,10 +90,6 @@
  		libmv/tracking/track_region.cc
  		libmv/tracking/trklt_region_tracker.cc
  
@@ -35,10 +44,10 @@ index 2c9a219..7061e04 100644
 -		third_party/gflags/gflags_completions.cc
 -		third_party/gflags/gflags_reporting.cc
 -
+ 		libmv-util.h
+ 		libmv/base/aligned_malloc.h
  		libmv/base/id_generator.h
- 		libmv/base/scoped_ptr.h
- 		libmv/base/vector.h
-@@ -140,12 +136,6 @@
+@@ -149,12 +143,6 @@
  		libmv/tracking/track_region.h
  		libmv/tracking/trklt_region_tracker.h
  
@@ -51,7 +60,7 @@ index 2c9a219..7061e04 100644
  		third_party/msinttypes/inttypes.h
  		third_party/msinttypes/stdint.h
  	)
-@@ -186,42 +176,6 @@
+@@ -195,38 +183,6 @@
  				third_party/msinttypes
  			)
  		endif()
@@ -87,14 +96,10 @@ index 2c9a219..7061e04 100644
 -			third_party/glog/src/symbolize.h
 -			third_party/glog/src/utilities.h
 -		)
--
--		list(APPEND INC
--			third_party/glog/src
--		)
  	endif()
  else()
  	list(APPEND SRC
-@@ -229,7 +183,9 @@
+@@ -234,7 +190,9 @@
  	)
  endif()
  

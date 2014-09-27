@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/blender-2.71-r1.ebuild,v 1.1 2014/07/16 15:31:42 hasufell Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-gfx/blender/blender-2.71-r2.ebuild,v 1.1 2014/09/27 14:55:43 hasufell Exp $
 
 # TODO:
 #   bundled-deps: bullet is modified
@@ -19,7 +19,7 @@ case ${PV} in
 	*_p*)
 		SRC_URI="http://dev.gentoo.org/~lu_zero/${P}.tar.gz" ;;
 	*)
-		SRC_URI="http://download.blender.org/source/${P}.tar.gz" ;;
+		SRC_URI="http://download.blender.org/source/${P}.tar.gz -> ${PF}.tar.gz" ;;
 esac
 
 if [[ -n ${PATCHSET} ]]; then
@@ -41,6 +41,7 @@ RDEPEND="
 	${PYTHON_DEPS}
 	>=dev-cpp/gflags-2.1.1-r1
 	>=dev-cpp/glog-0.3.3-r1[gflags]
+	>=dev-libs/lzo-2.08:2
 	dev-python/numpy[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	>=media-libs/freetype-2.0
@@ -90,6 +91,8 @@ DEPEND="${RDEPEND}
 	)
 	nls? ( sys-devel/gettext )"
 
+S=${WORKDIR}/${PN}-v${PV}
+
 pkg_pretend() {
 	if use openmp && ! tc-has-openmp; then
 		eerror "You are using gcc built without 'openmp' USE."
@@ -108,12 +111,13 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/01-${PN}-2.68-doxyfile.patch \
-		"${FILESDIR}"/02-${PN}-2.71-unbundle-colamd.patch \
-		"${FILESDIR}"/04-${PN}-2.71-unbundle-glog.patch \
+		"${FILESDIR}"/02-${PN}-2.68-unbundle-colamd.patch \
+		"${FILESDIR}"/04-${PN}-2.71-r2-unbundle-glog.patch \
 		"${FILESDIR}"/05-${PN}-2.68-unbundle-eigen3.patch \
 		"${FILESDIR}"/06-${PN}-2.68-fix-install-rules.patch \
 		"${FILESDIR}"/07-${PN}-2.70-sse2.patch \
-		"${FILESDIR}"/08-${PN}-2.71-gflags.patch
+		"${FILESDIR}"/08-${PN}-2.71-gflags.patch \
+		"${FILESDIR}"/09-${PN}-2.72-unbundle-minilzo.patch
 
 	epatch_user
 
@@ -123,6 +127,7 @@ src_prepare() {
 		extern/libopenjpeg \
 		extern/glew \
 		extern/colamd \
+		extern/lzo \
 		extern/libmv/third_party/{glog,gflags} \
 		|| die
 
