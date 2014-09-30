@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/protobuf/protobuf-2.6.0.ebuild,v 1.1 2014/09/30 06:58:29 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/protobuf/protobuf-2.6.0.ebuild,v 1.3 2014/09/30 17:31:23 radhermit Exp $
 
 EAPI=5
 JAVA_PKG_IUSE="source"
-PYTHON_COMPAT=( python{2_6,2_7} )
+PYTHON_COMPAT=( python2_7 )
 DISTUTILS_OPTIONAL=1
 
 inherit autotools eutils flag-o-matic distutils-r1 java-pkg-opt-2 elisp-common
@@ -20,13 +20,10 @@ IUSE="emacs examples java python static-libs vim-syntax"
 
 CDEPEND="emacs? ( virtual/emacs )
 	python? ( ${PYTHON_DEPS} )"
-# python-dateutil uses deprecated distutils eclass.
 DEPEND="${CDEPEND}
 	java? ( >=virtual/jdk-1.5 )
 	python? (
 		dev-python/google-apputils[${PYTHON_USEDEP}]
-		dev-python/python-dateutil:python-2
-		dev-python/python-gflags[${PYTHON_USEDEP}]
 		dev-python/setuptools[${PYTHON_USEDEP}]
 	)"
 RDEPEND="${CDEPEND}
