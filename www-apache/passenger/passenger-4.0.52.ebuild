@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-apache/passenger/passenger-4.0.45.ebuild,v 1.1 2014/06/13 07:04:21 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-apache/passenger/passenger-4.0.52.ebuild,v 1.1 2014/09/30 04:46:38 graaff Exp $
 
 EAPI=5
 USE_RUBY="ruby19 ruby20 ruby21"
@@ -39,13 +39,16 @@ pkg_setup() {
 }
 
 all_ruby_prepare() {
-	epatch "${FILESDIR}"/${PN}-4.0.33-gentoo.patch
+	epatch "${FILESDIR}"/${PN}-4.0.49-gentoo.patch
 
 	# Change these with sed instead of a patch so that we can easily use
 	# the toolchain-funcs methods.
 	sed -i -e "s/gcc/$(tc-getCC)/" \
 		-e "s/g++/$(tc-getCXX)/" \
 		-e 's/PlatformInfo.debugging_cflags//' build/basics.rb || die
+
+	# Avoid fixed debugging CFLAGs.
+	sed -e '/debugging_cflags/areturn ""' -i lib/phusion_passenger/platform_info/compiler.rb || die
 
 	# Use sed here so that we can dynamically set the documentation directory.
 	sed -i -e "s:/usr/share/doc/passenger:/usr/share/doc/${P}:" \
