@@ -5197,7 +5197,6 @@ net-libs/gnutls:pkcs11 - Add support for PKCS#11 through app-crypt/p11-kit
 net-libs/gtk-vnc:gtk3 - Build the gtk3 gtk-vnc library and other gtk3 assets
 net-libs/gtk-vnc:introspection - Use dev-libs/gobject-introspection for introspection
 net-libs/gtk-vnc:vala - Enable bindings for dev-lang/vala
-net-libs/gupnp-igd:introspection - Use dev-libs/gobject-introspection for introspection
 net-libs/h323plus:aec - Enable acoustic echo cancellation
 net-libs/h323plus:sound - Enable audio codecs
 net-libs/h323plus:video - Enable video codecs
@@ -5824,7 +5823,9 @@ net-p2p/amule:daemon - Enable amule daemon
 net-p2p/amule:remote - Enable remote controlling of the client
 net-p2p/amule:stats - Enable statistic reporting
 net-p2p/bitcoin-qt:1stclassmsg - Enable first-class Bitcoin message tools
+net-p2p/bitcoin-qt:ljr - Enable Luke Dashjr's patches
 net-p2p/bitcoin-qt:qrcode - Enable generation of QR Codes for receiving payments
+net-p2p/bitcoind:ljr - Enable Luke Dashjr's patches
 net-p2p/bitcoind:logrotate - Use app-admin/logrotate for rotating logs
 net-p2p/bitcoind:upnp - Enable Universal Plug and Play
 net-p2p/bitcoind:wallet - Enable wallet support
