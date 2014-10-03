@@ -1,21 +1,28 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/www-servers/thttpd/thttpd-2.26.4-r2.ebuild,v 1.8 2014/08/10 20:09:17 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-servers/thttpd/thttpd-2.27.0.ebuild,v 1.1 2014/10/03 19:30:31 blueness Exp $
 
-EAPI="4"
+EAPI="5"
 
-inherit eutils flag-o-matic toolchain-funcs user
+inherit autotools eutils flag-o-matic toolchain-funcs user
 
-MY_P="s${P}"
+if [[ ${PV} = 9999* ]]
+then
+	EGIT_REPO_URI="git://opensource.dyc.edu/s${PN}.git"
+	inherit git-2
+	KEYWORDS=""
+else
+	MY_P="s${P}"
+	S="${WORKDIR}/${MY_P}"
+	SRC_URI="http://opensource.dyc.edu/pub/sthttpd/${MY_P}.tar.gz"
+	KEYWORDS="~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~arm-linux ~x86-linux"
+fi
 
 DESCRIPTION="Fork of thttpd, a small, fast, multiplexing webserver"
 HOMEPAGE="http://opensource.dyc.edu/sthttpd"
-SRC_URI="http://opensource.dyc.edu/pub/sthttpd/${MY_P}.tar.gz"
-S="${WORKDIR}/${MY_P}"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
-KEYWORDS="amd64 arm ~hppa ~mips ppc ppc64 sparc x86 ~amd64-linux ~arm-linux ~x86-linux"
 IUSE=""
 
 RDEPEND=""
@@ -35,8 +42,10 @@ pkg_setup() {
 	enewuser ${THTTPD_USER} -1 -1 -1 ${THTTPD_GROUP}
 }
 
-src_prepare () {
-	epatch "${FILESDIR}"/thttpd-fix-world-readable-log.patch
+src_prepare() {
+	epatch "${FILESDIR}"/thttpd-renamed-htpasswd.patch
+	mv "${S}"/extras/{htpasswd.c,th_htpasswd.c}
+	eautoreconf -f -i
 }
 
 src_configure() {
