@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-libs/webkit-gtk/webkit-gtk-2.2.6-r200.ebuild,v 1.9 2014/04/21 10:30:20 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-libs/webkit-gtk/webkit-gtk-2.2.6-r200.ebuild,v 1.11 2014/10/06 10:37:26 pacho Exp $
 
 EAPI="5"
 PYTHON_COMPAT=( python{2_6,2_7} )
