@@ -1,12 +1,12 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/cppcheck/cppcheck-1.65.ebuild,v 1.1 2014/05/19 15:50:29 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/cppcheck/cppcheck-1.65-r1.ebuild,v 1.1 2014/10/09 23:16:33 xmw Exp $
 
 EAPI=5
 
 PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3} )
 
-inherit distutils-r1 eutils qt4-r2 toolchain-funcs
+inherit distutils-r1 eutils flag-o-matic qt4-r2 toolchain-funcs
 
 DESCRIPTION="static analyzer of C/C++ code"
 HOMEPAGE="http://cppcheck.sourceforge.net"
@@ -17,16 +17,24 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="htmlreport qt4"
 
-DEPEND="htmlreport? ( ${PYTHON_DEPS} )
+RDEPEND="htmlreport? ( ${PYTHON_DEPS} )
 	>=dev-libs/tinyxml2-2
 	qt4? ( dev-qt/qtgui:4 )"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	virtual/pkgconfig"
 
 src_prepare() {
-	# Do not use bundled tinyxml2
-	epatch \
-		"${FILESDIR}"/${P}-tinyxml2.patch \
-		"${FILESDIR}"/${P}-c++0x.patch
+	# Drop bundled libs, patch Makefile generator and re-run it
+	rm -r externals || die
+	epatch "${FILESDIR}"/${PF}-tinyxml2.patch
+	emake dmake \
+		CPPFLAGS="${CPPFLAGS}" \
+		CXX="$(tc-getCXX)" \
+		CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}" \
+	./dmake || die
+
+	epatch "${FILESDIR}"/${P}-c++0x.patch
 }
 
 src_configure() {
@@ -39,9 +47,17 @@ src_configure() {
 }
 
 src_compile() {
-	emake CFLAGS="${CFLAGS}" \
-		CFGDIR="/usr/share/${PN}/cfg" \
-		TINYXML="-ltinyxml2"
+	local my_inc=$(pkg-config --cflags-only-I tinyxml2)
+	emake CFGDIR="/usr/share/${PN}/cfg" \
+		CPPFLAGS="${CPPFLAGS}" \
+		CXX="$(tc-getCXX)" \
+		CXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}" \
+		INCLUDE_FOR_LIB="-Ilib ${my_inc}" \
+		INCLUDE_FOR_CLI="-Ilib ${my_inc}" \
+		INCLUDE_FOR_TEST="-Ilib -Icli ${my_inc}" \
+		LIBS="$(pkg-config --libs tinyxml2)"
+
 	if use qt4 ; then
 		pushd gui
 		qt4-r2_src_compile
@@ -55,11 +71,12 @@ src_compile() {
 }
 
 src_test() {
-	emake TINYXML="-ltinyxml2" check
+	emake check \
+		LIBS="$(pkg-config --libs tinyxml2)"
 }
 
 src_install() {
-	emake install DESTDIR="${D}" TINYXML="-ltinyxml2"
+	emake install DESTDIR="${D}"
 	dodoc readme.txt
 	insinto "/usr/share/${PN}/cfg"
 	doins cfg/*.cfg
