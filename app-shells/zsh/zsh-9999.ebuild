@@ -1,40 +1,25 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-shells/zsh/zsh-5.0.2-r3.ebuild,v 1.11 2013/09/07 20:13:48 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-shells/zsh/zsh-9999.ebuild,v 1.1 2014/10/17 05:29:12 radhermit Exp $
 
 EAPI=5
 
-# doc package for -dev version exists?
-doc_available=true
-
 inherit eutils flag-o-matic multilib prefix
 
-MY_PV=${PV/_p/-dev-}
-S=${WORKDIR}/${PN}-${MY_PV}
-
-zsh_ftp="ftp://ftp.zsh.org/pub"
-
-if [[ ${PV} != "${MY_PV}" ]] ; then
-	ZSH_URI="${zsh_ftp}/development/${PN}-${MY_PV}.tar.bz2"
-	if ${doc_available} ; then
-		ZSH_DOC_URI="${zsh_ftp}/development/${PN}-${MY_PV}-doc.tar.bz2"
-	else
-		ZSH_DOC_URI="${zsh_ftp}/${PN}-${PV%_*}-doc.tar.bz2"
-	fi
+if [[ ${PV} == 9999* ]] ; then
+	inherit git-r3 autotools
+	EGIT_REPO_URI="git://git.code.sf.net/p/zsh/code"
 else
-	ZSH_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
-		${zsh_ftp}/${P}.tar.bz2"
-	ZSH_DOC_URI="${zsh_ftp}/${PN}-${PV%_*}-doc.tar.bz2"
+	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+	SRC_URI="http://www.zsh.org/pub/${P}.tar.bz2
+		doc? ( http://www.zsh.org/pub/${P}-doc.tar.bz2 )"
 fi
 
 DESCRIPTION="UNIX Shell similar to the Korn shell"
 HOMEPAGE="http://www.zsh.org/"
-SRC_URI="${ZSH_URI}
-	doc? ( ${ZSH_DOC_URI} )"
 
 LICENSE="ZSH gdbm? ( GPL-2 )"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE="caps debug doc examples gdbm maildir pcre static unicode"
 
 RDEPEND="
@@ -50,6 +35,14 @@ DEPEND="sys-apps/groff
 PDEPEND="
 	examples? ( app-doc/zsh-lovers )
 "
+if [[ ${PV} == 9999* ]] ; then
+	DEPEND+=" app-text/yodl
+		doc? (
+			sys-apps/texinfo
+			app-text/texi2html
+			virtual/latex-base
+		)"
+fi
 
 src_prepare() {
 	# fix zshall problem with soelim
@@ -58,8 +51,6 @@ src_prepare() {
 	soelim Doc/zshall.1.soelim > Doc/zshall.1
 
 	epatch "${FILESDIR}"/${PN}-init.d-gentoo-r1.diff
-	epatch "${FILESDIR}"/${PN}-fix-parameter-modifier-crash.patch
-	epatch "${FILESDIR}"/${PN}-5.0.2-texinfo-5.1.patch
 
 	cp "${FILESDIR}"/zprofile-1 "${T}"/zprofile || die
 	eprefixify "${T}"/zprofile || die
@@ -68,10 +59,15 @@ src_prepare() {
 	else
 		sed -i -e 's|@ZSH_NOPREFIX@||' -e '/@ZSH_PREFIX@/d' -e 's|""||' "${T}"/zprofile || die
 	fi
+
+	if [[ ${PV} == 9999* ]] ; then
+		sed -i "/^VERSION=/s/=.*/=${PV}/" Config/version.mk || die
+		eautoreconf
+	fi
 }
 
 src_configure() {
-	local myconf=
+	local myconf
 
 	if use static ; then
 		myconf+=" --disable-dynamic"
@@ -95,10 +91,10 @@ src_configure() {
 		--bindir="${EPREFIX}"/bin \
 		--libdir="${EPREFIX}"/usr/$(get_libdir) \
 		--enable-etcdir="${EPREFIX}"/etc/zsh \
+		--enable-runhelpdir="${EPREFIX}"/usr/share/zsh/${PV%_*}/help \
 		--enable-fndir="${EPREFIX}"/usr/share/zsh/${PV%_*}/functions \
 		--enable-site-fndir="${EPREFIX}"/usr/share/zsh/site-functions \
 		--enable-function-subdirs \
-		--with-term-lib="ncursesw ncurses" \
 		--with-tcsetpgrp \
 		$(use_enable maildir maildir-support) \
 		$(use_enable pcre) \
@@ -110,11 +106,10 @@ src_configure() {
 	if use static ; then
 		# compile all modules statically, see Bug #27392
 		# removed cap and curses because linking failes
-		sed -i \
-			-e "s,link=no,link=static,g" \
+		sed -e "s,link=no,link=static,g" \
 			-e "/^name=zsh\/cap/s,link=static,link=no," \
 			-e "/^name=zsh\/curses/s,link=static,link=no," \
-			"${S}"/config.modules || die
+			-i "${S}"/config.modules || die
 		if ! use gdbm ; then
 			sed -i '/^name=zsh\/db\/gdbm/s,link=static,link=no,' \
 				"${S}"/config.modules || die
@@ -122,10 +117,18 @@ src_configure() {
 	fi
 }
 
+src_compile() {
+	default
+
+	if [[ ${PV} == 9999* ]] && use doc ; then
+		emake -C Doc everything
+	fi
+}
+
 src_test() {
-	local i
 	addpredict /dev/ptmx
-	for i in C02cond.ztst Y01completion.ztst Y02compmatch.ztst Y03arguments.ztst ; do
+	local i
+	for i in C02cond.ztst V08zpty.ztst X02zlevi.ztst Y01completion.ztst Y02compmatch.ztst Y03arguments.ztst ; do
 		rm "${S}"/Test/${i} || die
 	done
 	emake check
@@ -143,8 +146,9 @@ src_install() {
 
 	# install miscellaneous scripts; bug #54520
 	local i
-	sed -i -e "s:/usr/local/bin/perl:${EPREFIX}/usr/bin/perl:g" \
-		-e "s:/usr/local/bin/zsh:${EPREFIX}/bin/zsh:g" "${S}"/{Util,Misc}/* || die
+	sed -e "s:/usr/local/bin/perl:${EPREFIX}/usr/bin/perl:g" \
+		-e "s:/usr/local/bin/zsh:${EPREFIX}/bin/zsh:g" \
+		-i "${S}"/{Util,Misc}/* || die
 	for i in Util Misc ; do
 		insinto /usr/share/zsh/${PV%_*}/${i}
 		doins ${i}/*
