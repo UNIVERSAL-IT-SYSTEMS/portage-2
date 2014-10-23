@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/xrdp/xrdp-0.6.1.ebuild,v 1.1 2014/10/23 08:19:10 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/xrdp/xrdp-0.6.1.ebuild,v 1.3 2014/10/23 11:12:09 mgorny Exp $
 
 EAPI=5
 
@@ -41,7 +41,9 @@ src_configure() {
 		&& ewarn "Both kerberos & pam auth enabled, kerberos will take precedence."
 
 	local myconf=(
-		# configure.ac is completed flawed
+		# warning: configure.ac is completed flawed
+
+		--localstatedir="${EPREFIX}"/var
 
 		# -- authentication backends --
 		# kerberos is inside !SESMAN_NOPAM conditional for no reason
@@ -87,5 +89,17 @@ pkg_preinst() {
 		einfo "Running xrdp-keygen to generate new rsakeys.ini ..."
 		"${S}"/keygen/xrdp-keygen xrdp "${ED}"/etc/xrdp/rsakeys.ini \
 			|| die "xrdp-keygen failed to generate RSA keys"
+	fi
+}
+
+pkg_postinst() {
+	# check for use of bundled rsakeys.ini (installed by default upstream)
+	if [[ $(cksum "${EROOT}"/etc/xrdp/rsakeys.ini) == '2935297193 1019 '* ]]
+	then
+		ewarn "You seem to be using upstream bundled rsakeys.ini. This means that"
+		ewarn "your communications are encrypted using a well-known key. Please"
+		ewarn "consider regenerating rsakeys.ini using the following command:"
+		ewarn
+		ewarn "  ${EROOT}/usr/bin/xrdp-keygen xrdp ${EROOT}/etc/xrdp/rsakeys.ini"
 	fi
 }
