@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-i18n/pology/pology-9999.ebuild,v 1.4 2014/08/10 17:52:30 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-i18n/pology/pology-9999.ebuild,v 1.5 2014/10/24 17:43:00 mgorny Exp $
 
 EAPI=4
 
@@ -50,7 +50,8 @@ src_install() {
 
 	dosym /usr/share/pology/syntax/kate/synder.xml /usr/share/apps/katepart/syntax/synder.xml
 
-	newbashcomp "${ED}"/usr/share/pology/completion/bash/pology ${PN}
+	newbashcomp "${ED}"/usr/share/pology/completion/bash/pology posieve
+	bashcomp_alias {posieve,poediff}{,.py}
 
 	einfo "You should also consider following packages to install:"
 	einfo "    app-text/aspell"
