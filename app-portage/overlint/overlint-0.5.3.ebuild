@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/overlint/overlint-0.5.2.ebuild,v 1.9 2014/10/25 23:31:53 sping Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/overlint/overlint-0.5.3.ebuild,v 1.1 2014/10/25 23:29:19 sping Exp $
 
 EAPI="5"
 
