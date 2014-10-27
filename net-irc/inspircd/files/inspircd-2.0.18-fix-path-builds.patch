@@ -1,6 +1,6 @@
 diff -Nuar a/docs/conf/inspircd.conf.example b/docs/conf/inspircd.conf.example
---- a/docs/conf/inspircd.conf.example	2014-04-06 16:28:11.000000000 +0200
-+++ b/docs/conf/inspircd.conf.example	2014-05-15 14:27:09.739916165 +0200
+--- a/docs/conf/inspircd.conf.example	2014-10-26 18:05:40.000000000 +0100
++++ b/docs/conf/inspircd.conf.example	2014-10-27 15:03:54.039999807 +0100
 @@ -412,11 +412,11 @@
  
  # This file has all the information about oper classes, types and o:lines.
@@ -57,8 +57,8 @@ diff -Nuar a/docs/conf/inspircd.conf.example b/docs/conf/inspircd.conf.example
  
  #########################################################################
 diff -Nuar a/make/template/main.mk b/make/template/main.mk
---- a/make/template/main.mk	2014-04-06 16:28:11.000000000 +0200
-+++ b/make/template/main.mk	2014-05-15 14:31:36.029914669 +0200
+--- a/make/template/main.mk	2014-10-26 18:05:40.000000000 +0100
++++ b/make/template/main.mk	2014-10-27 15:08:05.289999800 +0100
 @@ -34,7 +34,7 @@
  SYSTEM = @SYSTEM@
  BUILDPATH = @BUILD_DIR@
@@ -71,7 +71,7 @@ diff -Nuar a/make/template/main.mk b/make/template/main.mk
 @@ -51,9 +51,9 @@
  INSTMODE_LIB = 0644
  
- @IFEQ $(CC) icc
+ @IFEQ $(CC) icpc
 -  CXXFLAGS += -Wshadow
 +  MYCXXFLAGS += -Wshadow
  @ELSE
@@ -106,7 +106,7 @@ diff -Nuar a/make/template/main.mk b/make/template/main.mk
 -  CXXFLAGS += -O2
 +@IFEQ $(DEBUGLEVEL) 0
 +  MYCXXFLAGS += -O2
- @IFEQ $(CC) gcc
+ @IFEQ $(CC) g++
 -    CXXFLAGS += -g1
 +    MYCXXFLAGS += -g1
  @ENDIF
@@ -195,9 +195,9 @@ diff -Nuar a/make/template/main.mk b/make/template/main.mk
  @GNU_ONLY RCS_FILES = $(wildcard .git/index src/version.sh)
  @BSD_ONLY RCS_FILES = src/version.sh
 diff -Nuar a/make/unit-cc.pl b/make/unit-cc.pl
---- a/make/unit-cc.pl	2014-04-06 16:28:11.000000000 +0200
-+++ b/make/unit-cc.pl	2014-05-15 14:31:58.389914544 +0200
-@@ -97,7 +97,7 @@
+--- a/make/unit-cc.pl	2014-10-26 18:05:40.000000000 +0100
++++ b/make/unit-cc.pl	2014-10-27 15:08:33.819999800 +0100
+@@ -113,7 +113,7 @@
  	my $libs = '';
  	my $binary = $ENV{RUNCC};
  	if ($do_compile) {
