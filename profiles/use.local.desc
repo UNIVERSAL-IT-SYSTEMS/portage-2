@@ -5590,8 +5590,10 @@ net-misc/freerdp:client - Build client binaries
 net-misc/freerdp:server - Build server binaries
 net-misc/gsasl:gcrypt - Use dev-libs/libgcrypt for low-level crypto
 net-misc/gsasl:ntlm - Add support for Microsoft's NTLM mechanism using net-libs/libntlm
+net-misc/guacamole-server:pango - enable pango rendering
 net-misc/guacamole-server:ssh - enable support for ssh connections
 net-misc/guacamole-server:telnet - enable support for telnet connections
+net-misc/guacamole-server:terminal - enable support for terminal sessions
 net-misc/gwget:epiphany - Build epiphany extensions
 net-misc/hotot:chrome - Build chrome browser extension
 net-misc/htbinit:esfq - Add support for Enhanced Stochastic Fairness queueing discipline.
@@ -7507,6 +7509,7 @@ x11-libs/gtkdatabox:glade - Build with libglade and glade-3 supports, which incl
 x11-libs/gtkmathview:mathml - Install additional fonts for proper mathml support.
 x11-libs/gtkmathview:t1lib - Enable media-libs/t1lib support
 x11-libs/gtksourceview:glade - Install a glade catalog file
+x11-libs/libQGLViewer:designer - Installs dev-qt/designer plugin.
 x11-libs/libSM:uuid - Use UUID for session identification instead of IP address and system time.
 x11-libs/libXaw:deprecated - Install deprecated Xaw6 library.
 x11-libs/libXfont:bzip2 - Support bzip2 compressed PCF fonts.
