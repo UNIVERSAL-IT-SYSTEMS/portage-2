@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ml/dose3/dose3-3.3_beta2.ebuild,v 1.1 2014/10/28 08:29:16 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ml/dose3/dose3-3.3_beta2-r2.ebuild,v 1.1 2014/10/29 09:11:11 aballier Exp $
 
 EAPI=5
 
@@ -33,9 +33,13 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/${MY_P}"
 
+src_prepare() {
+	sed -e 's/INSTALLOPTS=-s/INSTALLOPTS=/' -i Makefile.config.in || die
+}
+
 src_configure() {
 	econf \
-		$(use_with !ocamlopt bytecodeonly) \
+		$(use ocamlopt || echo "--with-bytecodeonly") \
 		$(use parmap && echo "--with-parmap") \
 		$(use zip && echo "--with-zip") \
 		$(use bzip2 && echo "--with-bz2") \
