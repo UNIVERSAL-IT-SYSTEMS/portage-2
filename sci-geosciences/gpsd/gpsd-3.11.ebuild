@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/gpsd-9999.ebuild,v 1.18 2014/10/30 21:20:36 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-geosciences/gpsd/gpsd-3.11.ebuild,v 1.1 2014/10/30 21:32:38 vapier Exp $
 
 EAPI="5"
 
@@ -26,7 +26,7 @@ SLOT="0"
 
 GPSD_PROTOCOLS=(
 	aivdm ashtech earthmate evermore fury fv18 garmin garmintxt
-	geostar gpsclock itrax mtk3301 navcom nmea0183 nmea2000 ntrip
+	geostar gpsclock itrax mtk3301 navcom nmea nmea2000 ntrip
 	oceanserver oncore rtcm104v2 rtcm104v3 sirf superstar2 tnt
 	tripmate tsip ublox
 )
@@ -71,7 +71,8 @@ src_prepare() {
 
 	epatch "${FILESDIR}"/${PN}-3.8-ldflags.patch
 	epatch "${FILESDIR}"/${PN}-3.11-rpath.patch
-	epatch "${FILESDIR}"/${PN}-3.11-hotplug-config.patch #511584
+	epatch "${FILESDIR}"/${PN}-3.11-hotplug-config.patch
+	epatch "${FILESDIR}"/${PN}-3.11-no-ntpshm.patch
 
 	# Avoid useless -L paths to the install dir
 	sed -i \
