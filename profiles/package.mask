@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16127 2014/10/29 08:02:34 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16130 2014/10/30 03:41:59 idella4 Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,9 +30,10 @@
 
 #--- END OF EXAMPLES ---
 
-# Ian Delaney <idella4@gentoo.org> (29 Oct 2014)
-# Masked until dynd-python and dev-libs/libdynd are bumped to 0.6.5
-=dev-python/blaze-0.6.5
+# Michael Sterrett <mr_bones_@gentoo.org> (29 Oct 2014)
+# Merged with games-engines/scummvm
+# masked for removal on 20141128
+games-engines/sarien
 
 # Andreas K. Huettel <dilfridge@gentoo.org> (27 Oct 2014)
 # Multiple QA issues (#344187, #319433, #317575, #174466) 
@@ -375,11 +376,6 @@ dev-php/pecl-sca_sdo
 # Mask new setup.py based release due to regressions
 # A new fixed version is being released soon
 =sys-apps/portage-2.2.13
-
-# Michael Sterrett <mr_bones_@gentoo.org> (24 Sep 2014)
-# No updates since 2007 and games-board/scid is actively maintained.
-# masked for removal on 20141024
-games-board/chessdb
 
 # Michał Górny <mgorny@gentoo.org> (15 Sep 2014)
 # Causes undefined references few layers down (in mediastreamer),
