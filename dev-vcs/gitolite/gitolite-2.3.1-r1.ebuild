@@ -1,14 +1,14 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitolite-gentoo/gitolite-gentoo-2.3.1.ebuild,v 1.4 2012/07/05 13:20:12 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/gitolite/gitolite-2.3.1-r1.ebuild,v 1.1 2014/11/03 10:23:32 zlogene Exp $
 
-EAPI=4
+EAPI=5
 
-inherit eutils perl-module user
+inherit perl-module user
 
-DESCRIPTION="Highly flexible server for git directory version tracker, Gentoo fork"
-HOMEPAGE="http://git.overlays.gentoo.org/gitweb/?p=proj/gitolite-gentoo.git;a=summary"
-SRC_URI="mirror://gentoo/${P}.tar.bz2"
+DESCRIPTION="Highly flexible server for git directory version tracker"
+HOMEPAGE="http://github.com/sitaramc/gitolite"
+SRC_URI="http://milki.github.com/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -20,20 +20,19 @@ DEPEND="dev-lang/perl
 	virtual/perl-File-Temp
 	>=dev-vcs/git-1.6.6"
 RDEPEND="${DEPEND}
-	!dev-vcs/gitolite
-	dev-perl/Net-SSH-AuthorizedKeysFile
+	!dev-vcs/gitolite-gentoo
 	vim-syntax? ( app-vim/gitolite-syntax )"
 
 pkg_setup() {
 	enewgroup git
-	enewuser git -1 /bin/bash /var/lib/gitolite git
+	enewuser git -1 /bin/sh /var/lib/gitolite git
 }
 
 src_prepare() {
 	rm Makefile doc/COPYING || die
 	rm -rf contrib/{gitweb,vim} || die
 
-	echo "${PF}-gentoo" > conf/VERSION
+	echo "${PF}" > conf/VERSION
 }
 
 src_install() {
@@ -42,6 +41,7 @@ src_install() {
 
 	dodir /usr/share/gitolite/{conf,hooks} /usr/bin || die
 
+	# install using upstream method
 	export PATH="${gl_bin}:${PATH}"
 	./src/gl-system-install ${gl_bin} \
 		"${D}"/usr/share/gitolite/conf "${D}"/usr/share/gitolite/hooks || die
@@ -69,9 +69,5 @@ pkg_postinst() {
 	ewarn
 	elog "Please make sure that your 'git' user has the correct homedir (/var/lib/gitolite)."
 	elog "Especially if you're migrating from gitosis."
-	ewarn
-	ewarn
-	elog "If you use the umask feature and upgrade from <=gitolite-gentoo-1.5.9.1"
-	elog "then please check the permissions of all repositories using the umask feature"
 	ewarn
 }
