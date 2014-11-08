@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubygems/rubygems-2.2.2.ebuild,v 1.2 2014/11/08 07:50:48 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/rubygems/rubygems-2.4.2.ebuild,v 1.1 2014/11/08 08:38:55 graaff Exp $
 
 EAPI=5
 
@@ -27,6 +27,7 @@ ruby_add_bdepend "
 	)"
 
 all_ruby_prepare() {
+
 	mkdir -p lib/rubygems/defaults || die
 	cp "${FILESDIR}/gentoo-defaults.rb" lib/rubygems/defaults/operating_system.rb || die
 
@@ -34,6 +35,7 @@ all_ruby_prepare() {
 
 	# Disable broken tests when changing default values:
 	sed -i -e '/test_check_executable_overwrite_default_bin_dir/,/^  end/ s:^:#:' test/rubygems/test_gem_installer.rb || die
+	sed -i -e '/test_default_path/,/^  end/ s:^:#:' test/rubygems/test_gem.rb || die
 
 	# Remove a test that fails when yard is installed.
 	sed -i -e '/test_self_attribute_names/,/^  end/ s:^:#:' test/rubygems/test_gem_specification.rb || die
