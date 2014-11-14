@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/gns3-gui/gns3-gui-1.1.ebuild,v 1.3 2014/11/13 11:45:38 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/gns3-gui/gns3-gui-1.1.ebuild,v 1.1 2014/11/14 09:54:47 patrick Exp $
 
 EAPI="5"
 
