@@ -1,12 +1,12 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/eric/eric-5.4.6.ebuild,v 1.2 2014/09/20 00:52:53 pesa Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/eric/eric-5.5.0.ebuild,v 1.1 2014/11/17 02:59:21 pesa Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python3_{3,4} )
+PYTHON_COMPAT=( python{2_7,3_3,3_4} )
 PYTHON_REQ_USE="sqlite,xml"
-PLOCALES="cs de en es fr it ru tr zh_CN"
+PLOCALES="cs de en es fr it pt ru tr zh_CN"
 
 inherit eutils l10n python-single-r1
 
@@ -35,8 +35,8 @@ DEPEND="
 	>=dev-python/qscintilla-python-2.7.1[${PYTHON_USEDEP}]
 "
 RDEPEND="${DEPEND}
-	>=dev-python/chardet-2.0.1[${PYTHON_USEDEP}]
-	>=dev-python/coverage-3.2[${PYTHON_USEDEP}]
+	>=dev-python/chardet-2.2.1[${PYTHON_USEDEP}]
+	>=dev-python/coverage-3.7.1[${PYTHON_USEDEP}]
 	>=dev-python/pygments-1.6[${PYTHON_USEDEP}]
 "
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
