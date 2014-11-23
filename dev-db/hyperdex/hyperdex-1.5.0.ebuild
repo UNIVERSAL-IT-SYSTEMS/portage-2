@@ -1,21 +1,24 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/hyperdex/hyperdex-1.1.0.ebuild,v 1.1 2014/02/21 03:34:49 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/hyperdex/hyperdex-1.5.0.ebuild,v 1.2 2014/11/23 13:52:45 patrick Exp $
 EAPI=5
 
+# Tests fail, again
 RESTRICT="test"
-PYTHON_DEPEND="2:2.6"
-inherit eutils python
+
+PYTHON_COMPAT=( python2_7)
+inherit eutils python-r1 autotools
 
 DESCRIPTION="A searchable distributed Key-Value Store"
 
 HOMEPAGE="http://hyperdex.org"
-SRC_URI="http://hyperdex.org/src/${P}.tar.gz"
+SRC_URI="http://hyperdex.org/src/${P}.tar.gz
+	http://dev.gentooexperimental.org/~patrick/autotools-java.tar"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE="+python"
+IUSE="test +python"
 # need to add ruby and java useflags too
 
 DEPEND="dev-cpp/glog
@@ -25,13 +28,18 @@ DEPEND="dev-cpp/glog
 	dev-libs/libe
 	dev-libs/busybee
 	dev-libs/popt
-	dev-libs/replicant"
+	dev-libs/replicant
+	dev-libs/libmacaroons
+	dev-libs/json-c"
 RDEPEND="${DEPEND}"
 
-pkg_setup() {
-	python_set_active_version 2
-}
+REQUIRED_USE="test? ( python )"
 
+src_prepare() {
+	cp "${WORKDIR}/"*.m4 m4/
+	sed -i -e 's~json/json.h~json-c/json.h~' configure.ac common/datatype_document.cc daemon/index_document.cc || die "Blergh!"
+	eautoreconf
+}
 src_configure() {
 	econf --disable-static \
 		$(use_enable python python-bindings)
