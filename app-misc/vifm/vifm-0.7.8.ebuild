@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/vifm/vifm-0.7.6.ebuild,v 1.5 2014/07/15 23:10:35 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/vifm/vifm-0.7.8.ebuild,v 1.2 2014/11/26 16:15:34 nimiux Exp $
 
 EAPI=5
 
-inherit base vim-doc
+inherit autotools eutils vim-doc
 
 DESCRIPTION="Console file manager with vi(m)-like keybindings"
 HOMEPAGE="http://vifm.sourceforge.net/"
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/vifm/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ~s390 x86"
+KEYWORDS="~amd64 ~ppc ~s390 ~x86"
 IUSE="X developer +extended-keys gtk +magic vim vim-syntax"
 
 DEPEND="
@@ -27,7 +27,12 @@ RDEPEND="
 	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )
 "
 
-DOCS=( AUTHORS FAQ NEWS README TODO )
+DOCS="AUTHORS FAQ NEWS README TODO"
+
+src_prepare() {
+	epatch "${FILESDIR}/${P}-fix-ncurses-tinfo.patch"
+	eautoreconf
+}
 
 src_configure() {
 	econf \
@@ -38,14 +43,19 @@ src_configure() {
 		$(use_with X X11)
 }
 
+src_compile() {
+	default
+}
+
 src_install() {
-	base_src_install
+	einstall
+	dodoc ${DOCS}
 
 	if use vim; then
 		local t
-		for t in doc plugin; do
+		for t in app plugin; do
 			insinto /usr/share/vim/vimfiles/"${t}"
-			doins "${S}"/data/vim/"${t}"/"${PN}".*
+			doins "${S}"/data/vim/doc/"${t}"/"${PN}"*
 		done
 	fi
 
