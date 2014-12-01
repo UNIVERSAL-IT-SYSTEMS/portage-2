@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/spl/spl-9999.ebuild,v 1.43 2014/12/01 05:45:21 ryao Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/spl/spl-0.6.3-r1.ebuild,v 1.1 2014/12/01 06:57:33 ryao Exp $
 
 EAPI="4"
 AUTOTOOLS_AUTORECONF="1"
@@ -12,9 +12,9 @@ if [[ ${PV} == "9999" ]] ; then
 	EGIT_REPO_URI="https://github.com/zfsonlinux/${PN}.git"
 else
 	inherit eutils versionator
-	MY_PV=$(replace_version_separator 3 '-')
-	SRC_URI="https://github.com/zfsonlinux/${PN}/archive/${PN}-${MY_PV}.tar.gz"
-	S="${WORKDIR}/${PN}-${PN}-${MY_PV}"
+	SRC_URI="https://github.com/zfsonlinux/${PN}/archive/${P}.tar.gz
+		http://dev.gentoo.org/~ryao/dist/${P}-patches-${PR}.tar.xz"
+	S="${WORKDIR}/${PN}-${P}"
 	KEYWORDS="~amd64"
 fi
 
@@ -59,7 +59,7 @@ pkg_setup() {
 	kernel_is ge 2 6 26 || die "Linux 2.6.26 or newer required"
 
 	[ ${PV} != "9999" ] && \
-		{ kernel_is le 3 16 || die "Linux 3.16 is the latest supported version."; }
+		{ kernel_is le 3 17 || die "Linux 3.17 is the latest supported version."; }
 
 	check_extra_config
 }
@@ -68,6 +68,14 @@ src_prepare() {
 	# Workaround for hard coded path
 	sed -i "s|/sbin/lsmod|/bin/lsmod|" "${S}/scripts/check.sh" || \
 		die "Cannot patch check.sh"
+
+	if [ ${PV} != "9999" ]
+	then
+		# Apply patch set
+		EPATCH_SUFFIX="patch" \
+		EPATCH_FORCE="yes" \
+		epatch "${WORKDIR}/${P}-patches"
+	fi
 
 	# splat is unnecessary unless we are debugging
 	use debug || sed -e 's/^subdir-m += splat$//' -i "${S}/module/Makefile.in"
