@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16191 2014/11/29 13:14:58 ryao Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16193 2014/12/01 09:33:15 aballier Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -29,6 +29,26 @@
 ## app-misc/some-package
 
 #--- END OF EXAMPLES ---
+
+# Alexis Ballier <aballier@gentoo.org> (01 Dec 2014)
+# Does not build with any recent ocaml compiler.
+# Unmaintained upstream.
+# Removal after 01 Jan 2015
+dev-ml/obrowser
+
+# Manuel Rüger <mrueg@gentoo.org> (01 Dec 2014)
+# No support for ruby 2.0 or later.
+# Ruby 1.9 is EOL
+# Masked for removal in 30 days
+dev-ruby/storable
+dev-ruby/rye
+dev-ruby/sysinfo
+dev-ruby/tryouts
+dev-ruby/hexoid
+dev-ruby/gibbler
+dev-ruby/attic
+dev-ruby/caesars
+app-admin/rudy
 
 # Richard Yao <ryao@gentoo.org> (29 Nov 2014)
 # Depends on media-libs/lcms:0, which has unspecified security vulnerabilities.
