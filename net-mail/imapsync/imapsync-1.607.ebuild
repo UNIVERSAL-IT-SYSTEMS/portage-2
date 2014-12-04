@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/imapsync/imapsync-1.567.ebuild,v 1.4 2014/01/26 11:03:51 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/imapsync/imapsync-1.607.ebuild,v 1.1 2014/12/04 04:21:10 radhermit Exp $
 
 EAPI=5
 
@@ -10,12 +10,14 @@ SRC_URI="https://fedorahosted.org/released/${PN}/${P}.tgz"
 
 LICENSE="WTFPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 DEPEND="dev-lang/perl"
 RDEPEND="${DEPEND}
 	dev-perl/Digest-HMAC
+	dev-perl/File-Copy-Recursive
 	dev-perl/IO-Socket-SSL
+	dev-perl/IO-Tee
 	dev-perl/Mail-IMAPClient
 	dev-perl/TermReadKey
 	virtual/perl-Digest-MD5
@@ -24,8 +26,9 @@ RDEPEND="${DEPEND}
 RESTRICT="test"
 
 src_prepare() {
-	sed -i -e "s/^install: testp/install:/" \
-		-e "/^DO_IT/,/^$/d" "${S}"/Makefile || die
+	sed -e "s/^install: testp/install:/" \
+		-e "/^DO_IT/,/^$/d" \
+		-i "${S}"/Makefile || die
 }
 
 src_compile() { :; }
