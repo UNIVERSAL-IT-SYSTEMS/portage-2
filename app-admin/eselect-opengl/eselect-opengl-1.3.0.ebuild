@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-opengl/eselect-opengl-1.3.0.ebuild,v 1.2 2014/12/08 20:16:12 mattst88 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-admin/eselect-opengl/eselect-opengl-1.3.0.ebuild,v 1.3 2014/12/08 23:18:22 mgorny Exp $
 
 EAPI=5
 
@@ -14,7 +14,7 @@ GLEXT="85"
 GLXEXT="34"
 
 MIRROR="http://dev.gentoo.org/~mattst88/distfiles"
-SRC_URI="http://dev.gentoo.org/~mgorny/dist/opengl.eselect-1.3.0.xz"
+SRC_URI="http://dev.gentoo.org/~mgorny/dist/opengl.eselect-${PV}.xz"
 #	${MIRROR}/${P}.tar.xz"
 
 LICENSE="GPL-2"
