@@ -1412,6 +1412,7 @@ dev-haskell/cabal-install:noprefs - Ignore 'preferred-versions' file from hackag
 dev-haskell/certificate:executable - Build the executable
 dev-haskell/cgi:extensible-exceptions-in-base - Required to be enabled for >=dev-lang/ghc-7.
 dev-haskell/chell:color-output - use colors in program output
+dev-haskell/cipher-aes:support_aesni - allow compilation with AESNI on system and architecture that supports it.
 dev-haskell/citeproc-hs:bibutils - use Chris Putnam's app-text/bibutils
 dev-haskell/citeproc-hs:embed_data_files - Embed locale files into the library (needed for windows packaging)
 dev-haskell/citeproc-hs:hexpat - use dev-haskell/hexpat instead of dev-haskell/xml for XML parsing
@@ -1458,6 +1459,8 @@ dev-haskell/hslua:system-lua - Use the system-wide lua instead of the bundled co
 dev-haskell/hsopenssl:fast-bignum - Enable fast moving of bignums between OpenSSL and GMP (GHC Only)
 dev-haskell/hstringtemplate:quasi-quotation - Build module providing a quasi-quoter
 dev-haskell/hstringtemplate:syb-with-class - Generic instances for TOSElem
+dev-haskell/http:conduit10 - Use version 1.0.x or below of the conduit package (for the test suite).
+dev-haskell/http:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/http-client:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/httpd-shed:buildexamples - Build example executables.
 dev-haskell/httpd-shed:network-uri - Get Network.URI from the network-uri package.
@@ -1493,10 +1496,16 @@ dev-haskell/persistent:nooverlap - Use OverlappingInstances only for String. Onl
 dev-haskell/persistent-sqlite:build-sanity-exe - Build a sanity check test executable.
 dev-haskell/persistent-sqlite:systemlib - Use the system-wide sqlite library.
 dev-haskell/quickcheck:template_haskell - Enable additional test modules requiring Template Haskell support.
+dev-haskell/recaptcha:network-uri - Get Network.URI from the network-uri package.
 dev-haskell/rfc5051:mkunicodedata - build codes generator itself
 dev-haskell/scientific:bytestring-builder - Provide the Data.ByteString.Builder.Scientific module (requires bytestring >= 0.10).
+dev-haskell/semigroupoids:comonad - You can disable the use of the `comonad` package using `-f-comonad`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Comonad`
+dev-haskell/semigroupoids:containers - You can disable the use of the `containers` package using `-f-containers`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/semigroupoids:contravariant - You can disable the use of the `contravariant` package using `-f-contravariant`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Contravariant`
+dev-haskell/semigroupoids:distributive - You can disable the use of the `distributive` package using `-f-distributive`. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If disabled we will not supply instances of `Distributive`
 dev-haskell/semigroups:bytestring - You can disable the use of the `bytestring` package using USE=-bytestring. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semigroups:containers - You can disable the use of the `containers` package using USE=-containers. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
+dev-haskell/semigroups:deepseq - You can disable the use of the `deepseq` package using `-f-deepseq`. Disabing this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semigroups:hashable - You can disable the use of the `hashable` package using USE=-hashable. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users. If set we will not supply an instance of `Hashable`.
 dev-haskell/semigroups:text - You can disable the use of the `text` package using USE=-text. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
 dev-haskell/semigroups:unordered-containers - You can disable the use of the `unordered-containers` package using USE=-unordered-containers. Disabling this is an unsupported configuration, but it may be useful for accelerating builds in sandboxes for expert users.
@@ -1516,8 +1525,9 @@ dev-haskell/snap-core:portable - No non-haskell unportable code.
 dev-haskell/snap-server:openssl - enable https support using dev-haskell/hsopenssl
 dev-haskell/snap-server:portable - no non-haskell unportable code.
 dev-haskell/tagsoup:download - Build with Download module.
+dev-haskell/tagsoup:testprog - Build the test program.
 dev-haskell/tasty:colors - Enable colorful output
-dev-haskell/texmath:cgi - Build texmath-cgi executable.
+dev-haskell/texmath:executable - Compile test executable.
 dev-haskell/text:developer - operate in developer mode
 dev-haskell/tls:compat - Accept SSLv2 compatible handshake
 dev-haskell/transformers-base:orphaninstances - Build instances for orphan datatypes.
