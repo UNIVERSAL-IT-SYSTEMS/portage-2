@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/netatalk/netatalk-3.1.1.ebuild,v 1.2 2014/08/05 11:35:37 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/netatalk/netatalk-3.1.7.ebuild,v 1.1 2014/12/15 10:59:35 jlec Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python2_{6,7} )
+PYTHON_COMPAT=( python2_7 )
 
 AUTOTOOLS_AUTORECONF=yes
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/project/${PN}/${PN}/$(get_version_component_range 
 
 LICENSE="GPL-2 BSD"
 SLOT="0"
-KEYWORDS=" ~amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd"
 IUSE="acl avahi cracklib dbus debug pgp kerberos ldap pam quota samba +shadow ssl static-libs tracker tcpd +utils"
 
 CDEPEND="
@@ -56,7 +56,7 @@ REQUIRED_USE="
 	ldap? ( acl )
 	utils? ( ${PYTHON_REQUIRED_USE} )"
 
-PATCHES=( "${FILESDIR}"/${PN}-3.1.0-gentoo.patch )
+PATCHES=( "${FILESDIR}"/${P}-gentoo.patch )
 
 src_prepare() {
 	if ! use utils; then
