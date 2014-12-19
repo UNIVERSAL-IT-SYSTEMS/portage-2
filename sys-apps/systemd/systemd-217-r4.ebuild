@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-217-r1.ebuild,v 1.1 2014/11/04 19:24:27 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/systemd/systemd-217-r4.ebuild,v 1.2 2014/12/19 17:36:41 pacho Exp $
 
 EAPI=5
 
@@ -12,14 +12,15 @@ inherit autotools-utils bash-completion-r1 linux-info multilib \
 
 DESCRIPTION="System and service manager for Linux"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/systemd"
-SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz"
+SRC_URI="http://www.freedesktop.org/software/systemd/${P}.tar.xz
+	http://dev.gentoo.org/~floppym/dist/systemd-gentoo-patches-217-r1.tar.xz"
 
 LICENSE="GPL-2 LGPL-2.1 MIT public-domain"
 SLOT="0/2"
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="acl apparmor audit cryptsetup curl doc elfutils gcrypt gudev http
 	idn introspection kdbus +kmod lz4 lzma pam policykit python qrcode +seccomp
-	selinux ssl terminal test vanilla"
+	selinux ssl sysv-utils terminal test vanilla"
 
 MINKV="3.8"
 
@@ -47,6 +48,9 @@ COMMON_DEPEND=">=sys-apps/util-linux-2.25:0=
 	qrcode? ( media-gfx/qrencode:0= )
 	seccomp? ( sys-libs/libseccomp:0= )
 	selinux? ( sys-libs/libselinux:0= )
+	sysv-utils? (
+		!sys-apps/systemd-sysv-utils
+		!sys-apps/sysvinit )
 	terminal? ( dev-libs/libevdev:0=
 		>=x11-libs/libxkbcommon-0.4:0=
 		x11-libs/libdrm:0= )
@@ -58,6 +62,7 @@ RDEPEND="${COMMON_DEPEND}
 	>=sys-apps/baselayout-2.2
 	!sys-auth/nss-myhostname
 	!<sys-libs/glibc-2.14
+	!sys-fs/eudev
 	!sys-fs/udev"
 
 # sys-apps/dbus: the daemon only (+ build-time lib dep for tests)
@@ -90,6 +95,7 @@ src_prepare() {
 	cp "${FILESDIR}"/217-systemd-consoled.service.in \
 		units/user/systemd-consoled.service.in || die
 
+	EPATCH_FORCE=yes EPATCH_SUFFIX=patch epatch
 	autotools-utils_src_prepare
 }
 
@@ -318,10 +324,16 @@ multilib_src_install_all() {
 	prune_libtool_files --modules
 	einstalldocs
 
-	# we just keep sysvinit tools, so no need for the mans
-	rm "${D}"/usr/share/man/man8/{halt,poweroff,reboot,runlevel,shutdown,telinit}.8 \
-		|| die
-	rm "${D}"/usr/share/man/man1/init.1 || die
+	if use sysv-utils; then
+		for app in halt poweroff reboot runlevel shutdown telinit; do
+			dosym "..${ROOTPREFIX}/bin/systemctl" /sbin/${app}
+		done
+	else
+		# we just keep sysvinit tools, so no need for the mans
+		rm "${D}"/usr/share/man/man8/{halt,poweroff,reboot,runlevel,shutdown,telinit}.8 \
+			|| die
+		rm "${D}"/usr/share/man/man1/init.1 || die
+	fi
 
 	# Disable storing coredumps in journald, bug #433457
 	mv "${D}"/usr/lib/sysctl.d/50-coredump.conf{,.disabled} || die
