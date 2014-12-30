@@ -1,6 +1,73 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1471 2014/12/21 14:30:08 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1490 2014/12/30 07:24:52 williamh Exp $
+
+  30 Dec 2014; William Hubbs <williamh@gentoo.org> eutils.eclass:
+  Allow 512x512 icons to be installed (this was approved by ssuominen).
+
+  28 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> gstreamer.eclass:
+  Add workaround for new orc break gstreamer ebuilds, bug #533664.
+
+  28 Dec 2014; Michał Górny <mgorny@gentoo.org> python-single-r1.eclass:
+  Add python_gen_usedep, python_gen_useflags and python_gen_cond_dep to
+  python-single-r1.
+
+  28 Dec 2014; Michał Górny <mgorny@gentoo.org> python-r1.eclass:
+  Spelling, pointed out by floppym.
+
+  28 Dec 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Make the invalid function/variable checks non-fatal for now.
+
+  28 Dec 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Do not check for PYTHON_TEST_VERBOSITY, it is intended for make.conf.
+
+  28 Dec 2014; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass,
+  python-r1.eclass:
+  Verbosely deprecate python_parallel_foreach_impl and
+  DISTUTILS_NO_PARALLEL_BUILD.
+
+  28 Dec 2014; Hans de Graaff <graaff@gentoo.org> ruby-fakegem.eclass:
+  Add test recipe for rspec:3 slot.
+
+  28 Dec 2014; Hans de Graaff <graaff@gentoo.org> ruby-fakegem.eclass,
+  ruby-ng.eclass:
+  Use rspec-2 wrapper for the rspec recipe. This enables us to add rspec 3.x to
+  the tree while still being able to run rspec 2 specs. The changes have been
+  made in a way that is backwards compatible with the current situation.
+
+  27 Dec 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Update banned var docs.
+
+  27 Dec 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Add PYTHON_{CPPFLAGS,CFLAGS,CXXFLAGS,LDFLAGS,MODNAME} to the banned variable
+  list.
+
+  27 Dec 2014; Hans de Graaff <graaff@gentoo.org> ruby-ng.eclass:
+  Add ruby22 RUBY_TARGET support.
+
+  27 Dec 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Add die-checks for python.eclass & distutils.eclass variables.
+
+  27 Dec 2014; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass:
+  Add die-replacements for distutils.eclass functions, to help finding mistakes
+  in conversions.
+
+  27 Dec 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass:
+  Add die-replacements for python.eclass functions, to help finding mistakes in
+  conversions.
+
+  27 Dec 2014; Michał Górny <mgorny@gentoo.org> waf-utils.eclass:
+  Add new API warnings.
+
+  26 Dec 2014; Michael Palimaka <kensington@gentoo.org> kde4-base.eclass:
+  Sync with KDE overlay.
+
+  25 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> waf-utils.eclass:
+  Reflect reality of the status of waf-utils eclass maintenance as announced
+  months ago on gentoo-dev mailing list.
+
+  24 Dec 2014; Michael Weber <xmw@gentoo.org> netsurf.eclass:
+  remove base.eclass inherit
 
   21 Dec 2014; Michał Górny <mgorny@gentoo.org> tests/python-utils-r1.sh:
   Update tests for unsupported python3.2.

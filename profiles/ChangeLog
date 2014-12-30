@@ -1,10 +1,80 @@
 # ChangeLog for profile directory
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.9629 2014/12/22 14:25:37 kensington Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.9651 2014/12/29 14:14:56 ulm Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
+
+  29 Dec 2014; Ulrich Müller <ulm@gentoo.org> package.mask:
+  Mask app-emacs/cedet for removal.
+
+  29 Dec 2014; Ian Delaney <idella4@gentoo.org> package.mask:
+  Masked dev-python/cl for removal in 30 days.
+
+  28 Dec 2014; Aaron W. Swenson <titanofold@gentoo.org> package.mask:
+  Mask unmaintained dev-db/postgresql-{docs,base,server} packages for a while.
+
+  28 Dec 2014; Ulrich Müller <ulm@gentoo.org> updates/4Q-2014:
+  [QA] Revert package move for postgresql, moving several packages onto one
+  target is not possible.
+
+  28 Dec 2014; Aaron W. Swenson <titanofold@gentoo.org> updates/4Q-2014:
+  Package move dev-db/postgresql-{docs,base,server} and virtual/postgresql to
+  dev-db/postgresql.
+
+  27 Dec 2014; Hans de Graaff <graaff@gentoo.org> desc/ruby_targets.desc:
+  Document ruby22 RUBY_TARGET.
+
+  27 Dec 2014; Hans de Graaff <graaff@gentoo.org> base/use.mask:
+  Update ruby_targets comments, remove duplicate entry.
+
+  26 Dec 2014; Ulrich Müller <ulm@gentoo.org> license_groups:
+  Add VTK license to the MISC-FREE group. This is a variant of the BSD license.
+
+  26 Dec 2014; Michael Palimaka <kensington@gentoo.org> package.mask:
+  Mask dev-libs/grantlee:5 due to masked Qt 5 dependency.
+
+  25 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Unmask libmediaart-0.7 and friends.
+
+  25 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Gnome 3.14 is complete in tree, remove mask.
+
+  25 Dec 2014; Mike Gilbert <floppym@gentoo.org> package.mask:
+  Mask sci-physics/camfr.
+
+  25 Dec 2014; Ulrich Müller <ulm@gentoo.org> license_groups:
+  Add CLX license to MISC-FREE group, bug 533400.
+
+  24 Dec 2014; Mart Raudsepp <leio@gentoo.org> thirdpartymirrors:
+  Update gnome mirror to current upstream preferred location, which actually
+  ends up using upstream geolocation powered mirroring system
+
+  24 Dec 2014; Michael Orlitzky <mjo@gentoo.org> package.mask:
+  Mask net-analyzer/nagios-imagepack for removal in 30 days.
+
+  24 Dec 2014; Sergey Popov <pinkbyte@gentoo.org> package.mask:
+  Adjust mask for dev-libs/boost and dev-util/boost-build
+
+  24 Dec 2014; Ian Delaney <idella4@gentoo.org> package.mask:
+  masking dev-python/orm, dev-python/testoob for removal in 'usual' time
+
+  24 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Add gitg (webkit:4) and farstream (glib) to Gnome 3.14 mask.
+
+  23 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Add tracker and nautilus-tracker-tags to libmediaart mask.
+
+  23 Dec 2014; Gilles Dartiguelongue <eva@gentoo.org> package.mask:
+  Add mask for newer rygel releases.
+
+  23 Dec 2014; Markos Chandras <hwoarang@gentoo.org> package.mask:
+  Mask app-misc/fixdos for removal. Bug #533222
+
+  22 Dec 2014; Tim Harder <radhermit@gentoo.org> package.mask:
+  Drop old dev-util/freshmeat-submit and dev-util/freecode-submit masks, pkgs
+  removed from the tree.
 
   22 Dec 2014; Michael Palimaka <kensington@gentoo.org> package.mask:
   Mask >=kde-misc/about-distro-2.0.0 due to masked Qt5 dependency.
