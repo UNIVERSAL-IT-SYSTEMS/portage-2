@@ -1,22 +1,27 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sci-biology/mira/mira-3.9.18.ebuild,v 1.4 2015/01/23 11:25:31 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/sci-biology/mira/mira-4.0.2.ebuild,v 1.1 2015/01/23 11:48:13 jlec Exp $
 
 EAPI=5
 
 MIRA_3RDPARTY_PV="06-07-2012"
+MY_PV="${PV/_}" # convert from mira-4.0_rc2 (Gentoo ebuild filename derived) to mira-4.0rc2 (upstream fromat)
 
 inherit autotools eutils multilib
 
 DESCRIPTION="Whole Genome Shotgun and EST Sequence Assembler for Sanger, 454 and Solexa / Illumina"
 HOMEPAGE="http://www.chevreux.org/projects_mira.html"
 SRC_URI="
-	http://sourceforge.net/projects/mira-assembler/files/MIRA/development/${P}.tar.bz2
+	http://sourceforge.net/projects/mira-assembler/files/MIRA/stable/"${PN}"-"${MY_PV}".tar.bz2
 	mirror://sourceforge/mira-assembler/mira_3rdparty_${MIRA_3RDPARTY_PV}.tar.bz2"
+#	http://sourceforge.net/projects/mira-assembler/files/MIRA/development/${P}.tar.bz2
+#	mirror://sourceforge/mira-assembler/mira_3rdparty_${MIRA_3RDPARTY_PV}.tar.bz2"
+
+S="${WORKDIR}"/"${PN}"-"${MY_PV}"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux ~x86-macos"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~x86-macos"
 IUSE="doc"
 
 CDEPEND="
@@ -41,8 +46,7 @@ src_prepare() {
 		-e "s:-funroll-loops::g" \
 		-i configure.ac || die
 
-	ln -s config/m4 . || die
-	AT_M4DIR="config/m4" eautoreconf
+	eautoreconf
 }
 
 src_configure() {
