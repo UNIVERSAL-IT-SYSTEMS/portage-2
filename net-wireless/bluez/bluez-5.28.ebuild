@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez/bluez-5.27.ebuild,v 1.2 2015/02/11 16:10:08 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/bluez/bluez-5.28.ebuild,v 1.1 2015/02/11 17:31:18 pacho Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
@@ -32,6 +32,7 @@ CDEPEND="
 	)
 "
 DEPEND="${CDEPEND}
+	app-arch/xz-utils
 	virtual/pkgconfig
 	test? (
 		${PYTHON_DEPS}
@@ -146,7 +147,7 @@ multilib_src_install() {
 	if multilib_is_native_abi; then
 		emake DESTDIR="${D}" install
 
-		# Upstream don't install this, bug #524640
+		# Upstream doesn't install this, bug #524640
 		# http://permalink.gmane.org/gmane.linux.bluez.kernel/53115
 		# http://comments.gmane.org/gmane.linux.bluez.kernel/54564
 		# gatttool is only built with readline, bug #530776
@@ -171,7 +172,7 @@ multilib_src_install_all() {
 	keepdir /var/lib/bluetooth
 
 	# Upstream don't want people to play with them
-	# But we keep installing them due 'historical' reasons
+	# But we keep installing them due to 'historical' reasons
 	insinto /etc/bluetooth
 	local d
 	for d in input network proximity; do
@@ -179,11 +180,6 @@ multilib_src_install_all() {
 	done
 	doins src/main.conf
 	doins src/bluetooth.conf
-
-# FIXME:
-# Looks like upstream installs it only for systemd, probably not needed
-#	insinto /usr/share/dbus-1/system-services
-#	doins src/org.bluez.service
 
 	newinitd "${FILESDIR}"/bluetooth-init.d-r3 bluetooth
 	newinitd "${FILESDIR}"/rfcomm-init.d-r2 rfcomm
