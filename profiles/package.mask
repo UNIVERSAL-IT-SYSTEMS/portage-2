@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16351 2015/02/12 02:37:14 patrick Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16354 2015/02/12 06:43:43 idella4 Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,10 +30,16 @@
 
 #--- END OF EXAMPLES ---
 
+# Ian Delaney <idella4@gentoo.org> (12 Feb 2015)
+# upstream found to be dead, hash values now fail,
+# no longer has relevance, masked for removal in 30 days
+app-office/openerp-client
+app-office/openerp-server
+app-office/openerp-web
+
 # Michał Górny <mgorny@gentoo.org> (11 Feb 2015)
 # Potentially destructive to @world, bug #539746.
->=sys-apps/portage-2.2.16
-=app-portage/layman-2.3.0
+=sys-apps/portage-2.2.16
 
 # Manuel Rüger <mrueg@gentoo.org> (10 Feb 2015)
 # Breaks build for cups-filters-1.0.61
@@ -283,11 +289,6 @@ www-apps/trac-downloads
 # Reverse dependencies need to be tested and fixed, bug #521406.
 >=dev-libs/protobuf-2.6.0
 
-# Brian Dolbec <dolsen@gentoo.org> (25 Sep 2014)
-# Mask new setup.py based release due to regressions
-# A new fixed version is being released soon
-=sys-apps/portage-2.2.13
-
 # Michał Górny <mgorny@gentoo.org> (15 Sep 2014)
 # Causes undefined references few layers down (in mediastreamer),
 # someone needs to investigate.
@@ -309,11 +310,6 @@ x11-themes/amsn-skins
 # website not working anymore and will stay like this,
 # tool is useless. See bug 504734
 app-admin/hwreport
-
-# Brian Dolbec <dolsen@gentoo.org> (1 sept 2014)
-# Mask NON-MAINTAINER commit, due lack of testing portage team, releng
-# Mask for review
-=sys-apps/portage-2.2.12-r1
 
 # Sergey Popov <pinkbyte@gentoo.org> (28 Aug 2014)
 # Security mask, wrt bug #519650
@@ -438,13 +434,6 @@ dev-java/ibm-jdk-bin:1.5
 # Ryan Hill <rhill@gentoo.org> (22 May 2014)
 # Big API break.  Masked until something needs it.
 >=dev-libs/isl-0.13
-
-# Ian Delaney <idella4@gentoo.org> (22 May 2014)
-# The bumped version has been given added py3.4 support.
-# Given testsuite failures, a period of masking allows for possible
-# patching from upstream to be added to this version.
-# Masked until py3.4 support is added to media-gfx/cairosvg
-=dev-python/weasyprint-0.22
 
 # Justin Lecher <jlec@gentoo.org> (07 May 2014)
 # Still doesn't work as expected
