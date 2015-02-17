@@ -2942,6 +2942,7 @@ gnome-base/gdm:fprint - Enables experimental fingerprint authentication using sy
 gnome-base/gdm:plymouth - Enable support for smooth transition from sys-boot/plymouth
 gnome-base/gnome:classic - Install gnome-extra/gnome-shell-extensions for the Gnome Shell Classic mode
 gnome-base/gnome:extras - Install additional GNOME applications
+gnome-base/gnome-common:autoconf-archive - Pull in sys-devel/autoconf-archive for ax_*.m4 files instead of installing them from the gnome-common tarball
 gnome-base/gnome-control-center:colord - Support color management using x11-misc/colord
 gnome-base/gnome-control-center:gnome-online-accounts - Enable configuration panel for net-libs/gnome-online-accounts accounts
 gnome-base/gnome-control-center:i18n - Enable support for enhanced input methods through app-i18n/ibus
@@ -6188,7 +6189,7 @@ net-wireless/wireless-tools:multicall - Build the most commonly used tools as on
 net-wireless/wpa_supplicant:ap - Add support for access point mode
 net-wireless/wpa_supplicant:eap-sim - Add support for EAP-SIM authentication algorithm
 net-wireless/wpa_supplicant:fasteap - Add support for FAST-EAP authentication algorithm
-net-wireless/wpa_supplicant:hs2.0 - Add support for 802.11u and Passpoint for HotSpot 2.0
+net-wireless/wpa_supplicant:hs2-0 - Add support for 802.11u and Passpoint for HotSpot 2.0
 net-wireless/wpa_supplicant:p2p - Add support for Wi-Fi Direct mode
 net-wireless/wpa_supplicant:ps3 - Add support for ps3 hypervisor driven gelic wifi
 net-wireless/wpa_supplicant:smartcard - Add support for smartcards
