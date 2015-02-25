@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/squid-3.4.10.ebuild,v 1.1 2014/12/10 15:47:16 eras Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/squid/squid-3.4.12.ebuild,v 1.1 2015/02/25 11:04:26 eras Exp $
 
 EAPI=5
 inherit autotools eutils linux-info pam toolchain-funcs user versionator
@@ -31,9 +31,8 @@ COMMON_DEPEND="caps? ( >=sys-libs/libcap-2.16 )
 	esi? ( dev-libs/expat dev-libs/libxml2 )
 	!x86-fbsd? ( logrotate? ( app-admin/logrotate ) )
 	>=sys-libs/db-4
-	sys-devel/libtool
 	dev-lang/perl
-	sys-devel/libtool"
+	dev-libs/libltdl"
 DEPEND="${COMMON_DEPEND}
 	ecap? ( virtual/pkgconfig )
 	sys-apps/ed
@@ -51,7 +50,7 @@ REQUIRED_USE="tproxy? ( caps )
 
 pkg_pretend() {
 	if use tproxy; then
-		local CONFIG_CHECK="~NF_CONNTRACK ~NETFILTER_TPROXY ~NETFILTER_XT_MATCH_SOCKET ~NETFILTER_XT_TARGET_TPROXY"
+		local CONFIG_CHECK="~NF_CONNTRACK ~NETFILTER_XT_MATCH_SOCKET ~NETFILTER_XT_TARGET_TPROXY"
 		linux-info_pkg_setup
 	fi
 }
