@@ -3427,6 +3427,7 @@ media-fonts/culmus-ancient:fontforge - Use media-gfx/fontforge to build fonts fr
 media-fonts/dejavu:fontforge - Use media-gfx/fontforge to build fonts from source
 media-fonts/intlfonts:bdf - Installs BDF fonts in addition to PCF
 media-fonts/liberation-fonts:fontforge - Use media-gfx/fontforge to build fonts from source
+media-fonts/libertine:opentype - Prefer installing OpenType over TrueType fonts
 media-fonts/montecarlo:bdf - Install BDF fonts in addition to PCF
 media-fonts/mplus-outline-fonts:ipafont - Generates new fonts merged with media-fonts/ja-ipafonts
 media-fonts/sil-charis:compact - Use more compactly spaced font
@@ -7846,6 +7847,7 @@ x11-wm/windowmaker:vdesktop - Enable dynamic virtual desktop (conflicts with sof
 x11-wm/windowmaker:webp - Enables WebP image format support using media-libs/libwebp
 x11-wm/windowmaker:xrandr - Enable XRandR window extension support
 x11-wm/xmonad:default-term - Pull terminal specified in default xmonad config to be a bit less hostile by default.
+x11-wm/xmonad:no-autorepeat-keys - Allow ignoring of keyboard autorepeat.
 x11-wm/xpra:client - Build client-side code
 x11-wm/xpra:clipboard - Enable clipboard support
 x11-wm/xpra:csc - Enable csc softscaler support
