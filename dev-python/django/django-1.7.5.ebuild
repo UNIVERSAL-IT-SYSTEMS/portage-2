@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/django/django-1.7.5.ebuild,v 1.1 2015/02/28 12:59:28 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/django/django-1.7.5.ebuild,v 1.2 2015/02/28 18:08:42 jlec Exp $
 
 EAPI=5
 
@@ -21,13 +21,23 @@ SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="doc sqlite test"
 
-RDEPEND="
-	dev-python/setuptools[${PYTHON_USEDEP}]
-	virtual/python-imaging[${PYTHON_USEDEP}]
-"
+RDEPEND=""
 DEPEND="${RDEPEND}
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	doc? ( >=dev-python/sphinx-1.0.7[${PYTHON_USEDEP}] )
-	test? ( ${PYTHON_DEPS//sqlite?/sqlite} )"
+	test? (
+		${PYTHON_DEPS//sqlite?/sqlite}
+		dev-python/docutils[${PYTHON_USEDEP}]
+		dev-python/numpy[$(python_gen_usedep 'python*')]
+		dev-python/pillow[${PYTHON_USEDEP}]
+		dev-python/pytz[${PYTHON_USEDEP}]
+		dev-python/pyyaml[${PYTHON_USEDEP}]
+		)"
+
+#		dev-python/python-sqlparse[${PYTHON_USEDEP}]
+#		dev-python/bcrypt[${PYTHON_USEDEP}]
+#		dev-python/selenium[${PYTHON_USEDEP}]
+#		sci-libs/gdal[geos,${PYTHON_USEDEP}]
 
 S="${WORKDIR}/${MY_P}"
 
@@ -49,15 +59,13 @@ python_prepare_all() {
 }
 
 python_compile_all() {
-	if use doc; then
-		emake -C docs html
-	fi
+	use doc && emake -C docs html
 }
 
 python_test() {
 	# Tests have non-standard assumptions about PYTHONPATH,
 	# and don't work with ${BUILD_DIR}/lib.
-	PYTHONPATH=. "${PYTHON}" tests/runtests.py --settings=test_sqlite -v1 \
+	PYTHONPATH=. "${PYTHON}" tests/runtests.py --settings=test_sqlite -v2 \
 		|| die "Tests fail with ${EPYTHON}"
 }
 
@@ -67,8 +75,11 @@ src_install() {
 
 	elog "Additional Backend support can be enabled via"
 	optfeature "MySQL backend support in python 2.7 only" dev-python/mysql-python
-	optfeature "MySQL backend support in python 2.7 - 3.4" dev-python/mysql-connector-python
+	optfeature "MySQL backend support in python 2.7 - 3.4" dev-python/mysqlcient
 	optfeature "PostgreSQL backend support" dev-python/psycopg:2
+	optfeature "GEO Django" sci-libs/gdal[geos]
+	optfeature "Memcached support" dev-python/python-memcached
+	optfeature "ImageField Support" virtual/python-imaging
 	echo ""
 }
 
@@ -77,7 +88,7 @@ python_install_all() {
 	bashcomp_alias ${PN}-admin django-admin.py
 
 	if use doc; then
-		rm -fr docs/_build/html/_sources
+		rm -fr docs/_build/html/_sources || die
 		local HTML_DOCS=( docs/_build/html/. )
 	fi
 
