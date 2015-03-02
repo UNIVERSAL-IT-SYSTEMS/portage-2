@@ -1,6 +1,8 @@
---- root/Makefile.orig	2012-07-13 13:42:46.000000000 +0400
-+++ root/Makefile	2012-07-22 00:15:03.282994389 +0400
-@@ -1087,16 +1087,7 @@
+diff --git a/Makefile b/Makefile
+index 600e8db..afad025 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1072,16 +1072,7 @@ $(ROOTPCH): $(ROOTCLINGSTAGE1DEP) $(ALLHDRS) $(CLINGETCPCH) $(ORDER_) $(ALLLIBS)
  
  ifeq ($(BUILDX11),yes)
  ifeq ($(BUILDASIMAGE),yes)
@@ -18,8 +20,10 @@
  	@$(MAKEHTML)
  else
  html:
---- root/build/unix/makehtml.sh.orig	2012-06-28 11:33:36.000000000 +0400
-+++ root/build/unix/makehtml.sh	2012-07-22 00:18:58.705804436 +0400
+diff --git a/build/unix/makehtml.sh b/build/unix/makehtml.sh
+index a94e790..8b4589d 100755
+--- a/build/unix/makehtml.sh
++++ b/build/unix/makehtml.sh
 @@ -1,16 +1,16 @@
  #! /bin/sh
  
@@ -29,23 +33,23 @@
  cd tutorials
  # we need tutorials/hsimple.root
  if [ ! -f hsimple.root ]; then
--   $ROOT -l -b -q hsimple.C
-+   $ROOT -l -b -q hsimple.C && exit 1
+-   $ROOT -n -l -b -q hsimple.C
++   $ROOT -n -l -b -q hsimple.C && exit 1
  fi
  cd tree
  # we need tutorials/tree/cernstaff.root
  if [ ! -f cernstaff.root ]; then
--   $ROOT -l -b -q cernbuild.C
-+   $ROOT -l -b -q cernbuild.C || exit 1
+-   $ROOT -n -l -b -q cernbuild.C
++   $ROOT -n -l -b -q cernbuild.C || exit 1
  fi
  cd $dir
  
-@@ -20,7 +20,7 @@
+@@ -20,7 +20,7 @@ echo ""
  
  # To generate the full documentation, we do need to
  # use the graphics engine, so do not use '-b'.
--$ROOT -l <<makedoc
-+$ROOT -l <<makedoc || exit 1
+-$ROOT -n -l <<makedoc
++$ROOT -n -l <<makedoc || exit 1
      THtml h;
      h.LoadAllLibs();
      h.MakeAll();
