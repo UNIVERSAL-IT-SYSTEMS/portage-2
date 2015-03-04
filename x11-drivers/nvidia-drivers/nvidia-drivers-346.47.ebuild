@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/nvidia-drivers-340.76.ebuild,v 1.4 2015/03/04 10:19:40 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-drivers/nvidia-drivers/nvidia-drivers-346.47.ebuild,v 1.2 2015/03/04 11:53:43 jer Exp $
 
 EAPI=5
 
@@ -24,10 +24,14 @@ SRC_URI="
 
 LICENSE="GPL-2 NVIDIA-r2"
 SLOT="0"
-KEYWORDS="-* amd64 x86 ~amd64-fbsd ~x86-fbsd"
-IUSE="acpi multilib kernel_FreeBSD kernel_linux pax_kernel +tools +X uvm"
+KEYWORDS="-* ~amd64 ~x86 ~amd64-fbsd ~x86-fbsd"
 RESTRICT="bindist mirror strip"
 EMULTILIB_PKG="true"
+
+IUSE="acpi multilib kernel_FreeBSD kernel_linux pax_kernel +tools gtk2 gtk3 +X uvm"
+REQUIRED_USE="
+	tools? ( X || ( gtk2 gtk3 ) )
+"
 
 COMMON="
 	app-admin/eselect-opencl
@@ -48,7 +52,8 @@ RDEPEND="
 		dev-libs/atk
 		dev-libs/glib:2
 		x11-libs/gdk-pixbuf
-		>=x11-libs/gtk+-2.4:2
+		gtk2? ( >=x11-libs/gtk+-2.4:2 )
+		gtk3? ( x11-libs/gtk+:3 )
 		x11-libs/libX11
 		x11-libs/libXext
 		x11-libs/pango[X]
@@ -68,25 +73,22 @@ RDEPEND="
 	)
 "
 
-REQUIRED_USE="tools? ( X )"
-
 QA_PREBUILT="opt/* usr/lib*"
 
 S=${WORKDIR}/
 
 pkg_pretend() {
-
 	if use amd64 && has_multilib_profile && \
 		[ "${DEFAULT_ABI}" != "amd64" ]; then
 		eerror "This ebuild doesn't currently support changing your default ABI"
 		die "Unexpected \${DEFAULT_ABI} = ${DEFAULT_ABI}"
 	fi
 
-	if use kernel_linux && kernel_is ge 3 18 ; then
+	if use kernel_linux && kernel_is ge 3 20 ; then
 		ewarn "Gentoo supports kernels which are supported by NVIDIA"
 		ewarn "which are limited to the following kernels:"
-		ewarn "<sys-kernel/gentoo-sources-3.18"
-		ewarn "<sys-kernel/vanilla-sources-3.18"
+		ewarn "<sys-kernel/gentoo-sources-3.20"
+		ewarn "<sys-kernel/vanilla-sources-3.20"
 		ewarn ""
 		ewarn "You are free to utilize epatch_user to provide whatever"
 		ewarn "support you feel is appropriate, but will not receive"
@@ -171,8 +173,8 @@ src_prepare() {
 		ewarn "Using PAX patches is not supported. You will be asked to"
 		ewarn "use a standard kernel should you have issues. Should you"
 		ewarn "need support with these patches, contact the PaX team."
-		epatch "${FILESDIR}"/${PN}-331.13-pax-usercopy.patch
-		epatch "${FILESDIR}"/${PN}-337.12-pax-constify.patch
+		epatch "${FILESDIR}"/${PN}-346.16-pax-usercopy.patch
+		epatch "${FILESDIR}"/${PN}-346.16-pax-constify.patch
 	fi
 
 	# Allow user patches so they can support RC kernels and whatever else
@@ -189,7 +191,7 @@ src_compile() {
 		MAKE="$(get_bmake)" CFLAGS="-Wno-sign-compare" emake CC="$(tc-getCC)" \
 			LD="$(tc-getLD)" LDFLAGS="$(raw-ldflags)" || die
 	elif use kernel_linux; then
-		use uvm && MAKEOPTS=-j1
+		MAKEOPTS=-j1
 		linux-mod_src_compile
 	fi
 }
@@ -281,6 +283,12 @@ src_install() {
 		# Xorg GLX driver
 		donvidia ${NV_X11}/libglx.so ${NV_SOVER} \
 			/usr/$(get_libdir)/opengl/nvidia/extensions
+
+		# Xorg nvidia.conf
+		if has_version '>=x11-base/xorg-server-1.16'; then
+			insinto /usr/share/X11/xorg.conf.d
+			newins {,50-}nvidia-drm-outputclass.conf
+		fi
 	fi
 
 	# OpenCL ICD for NVIDIA
@@ -335,6 +343,8 @@ src_install() {
 
 	if use tools; then
 		doexe ${NV_OBJ}/nvidia-settings
+		use gtk2 && donvidia libnvidia-gtk2.so ${PV}
+		use gtk3 && donvidia libnvidia-gtk3.so ${PV}
 		insinto /usr/share/nvidia/
 		doins nvidia-application-profiles-${PV}-key-documentation
 		insinto /etc/nvidia
