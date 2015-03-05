@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ml/camlp4/camlp4-4.02.0_p1-r1.ebuild,v 1.1 2014/11/29 14:53:17 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ml/camlp4/camlp4-4.02.1_p3.ebuild,v 1.1 2015/03/05 17:46:09 aballier Exp $
 
 EAPI=5
 
@@ -18,15 +18,16 @@ IUSE="+ocamlopt"
 
 DEPEND=">=dev-lang/ocaml-4.02:=[ocamlopt?]"
 RDEPEND="${DEPEND}
+	!<dev-lang/ocaml-4.02
 	!<dev-ml/findlib-1.5.5-r1"
 
 S=${WORKDIR}/${P/_p/-}
 
 src_configure() {
 	./configure \
-		--bindir="${ED}/usr/bin" \
-		--libdir="${D}$(ocamlc -where)" \
-		--pkgdir="${D}$(ocamlc -where)" \
+		--bindir="${EPREFIX}/usr/bin" \
+		--libdir="$(ocamlc -where)" \
+		--pkgdir="$(ocamlc -where)" \
 		|| die
 }
 
@@ -36,6 +37,6 @@ src_compile() {
 }
 
 src_install() {
-	emake install install-META
+	emake DESTDIR="${D}" install install-META
 	dodoc CHANGES.md README.md
 }
