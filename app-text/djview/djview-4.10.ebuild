@@ -1,10 +1,10 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/djview/djview-4.7.ebuild,v 1.11 2013/03/02 19:41:41 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/djview/djview-4.10.ebuild,v 1.1 2015/03/09 08:06:56 aballier Exp $
 
-EAPI="4"
+EAPI=4
 
-inherit eutils autotools versionator toolchain-funcs multilib nsplugins fdo-mime flag-o-matic
+inherit autotools gnome2-utils fdo-mime flag-o-matic versionator toolchain-funcs multilib nsplugins
 
 MY_P=${PN}-$(replace_version_separator 2 '-')
 
@@ -14,18 +14,17 @@ SRC_URI="mirror://sourceforge/djvu/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~x86"
 IUSE="debug nsplugin"
 
 RDEPEND="
 	>=app-text/djvu-3.5.22-r1
+	dev-qt/qtdbus:4
 	dev-qt/qtgui:4"
 DEPEND="${RDEPEND}
 	>=sys-devel/autoconf-2.67
 	virtual/pkgconfig
 	nsplugin? ( dev-libs/glib:2 )"
-
-S=${WORKDIR}/${PN}-$(get_version_component_range 1-2)
 
 src_prepare() {
 	# Force XEmbed instead of Xt-based mainloop (disable Xt autodep)
@@ -48,7 +47,7 @@ src_configure() {
 }
 
 src_compile() {
-	emake CC=$(tc-getCC) CXX=$(tc-getCXX)
+	emake CC="$(tc-getCC)" CXX="$(tc-getCXX)"
 }
 
 src_install() {
@@ -60,18 +59,25 @@ src_install() {
 
 	cd desktopfiles
 	insinto /usr/share/icons/hicolor/32x32/apps
-	newins hi32-djview4.png djvulibre-djview4.png
+	newins prebuilt-hi32-djview4.png djvulibre-djview4.png
 	insinto /usr/share/icons/hicolor/64x64/apps
-	newins hi64-djview4.png djvulibre-djview4.png
+	newins prebuilt-hi64-djview4.png djvulibre-djview4.png
 	insinto /usr/share/icons/hicolor/scalable/apps
 	newins djview.svg djvulibre-djview4.svg
+	sed -i -e 's/Exec=djview4/Exec=djview/' djvulibre-djview4.desktop
 	domenu djvulibre-djview4.desktop
+}
+
+pkg_preinst() {
+	gnome2_icon_savelist
 }
 
 pkg_postinst() {
 	fdo-mime_desktop_database_update
+	gnome2_icon_cache_update
 }
 
 pkg_postrm() {
 	fdo-mime_desktop_database_update
+	gnome2_icon_cache_update
 }
