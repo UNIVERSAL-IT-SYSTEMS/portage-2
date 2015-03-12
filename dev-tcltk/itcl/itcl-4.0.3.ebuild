@@ -1,18 +1,19 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/itcl/itcl-4.0.0-r1.ebuild,v 1.1 2013/01/13 12:23:26 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/itcl/itcl-4.0.3.ebuild,v 1.1 2015/03/12 09:21:36 jlec Exp $
 
-EAPI=4
+EAPI=5
 
 inherit eutils multilib versionator
 
 MY_P="${PN}${PV}"
-TCL_VER="8.6.0"
+TCL_VER="8.6.2"
 
 DESCRIPTION="Object Oriented Enhancements for Tcl/Tk"
 HOMEPAGE="http://incrtcl.sourceforge.net/"
-#SRC_URI="mirror://sourceforge/incrtcl/%5BIncr%20Tcl_Tk%5D-source/$(get_version_component_range 1-2)/${MY_P}.tar.gz"
-SRC_URI="mirror://sourceforge/project/tcl/Tcl/${TCL_VER}/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge/project/incrtcl/%5Bincr%20Tcl_Tk%5D-4-source/itcl%20${PV}/${MY_P}.tar.gz"
+#SRC_URI="mirror://sourceforge/project/incrtcl/%5Bincr%20Tcl_Tk%5D-4-source/itcl%204.0.2/itcl4.0.2.tar.gz"
+#SRC_URI="mirror://sourceforge/project/tcl/Tcl/${TCL_VER}/${MY_P}.tar.gz"
 
 SLOT="0"
 LICENSE="BSD"
@@ -25,7 +26,7 @@ DEPEND="${RDEPEND}"
 S="${WORKDIR}/${PN}${PV}"
 
 # somehow broken
-RESTRICT=test
+#RESTRICT=test
 
 src_configure() {
 	econf \
@@ -59,7 +60,7 @@ src_install() {
 		-i "${ED}"/usr/$(get_libdir)/${MY_P}/itclConfig.sh || die
 
 	cat >> "${T}"/34${PN} <<- EOF
-	LDPATH="${EPREFIX}/usr/$(get_libdir)/${PN}$(get_version_component_range 1-2)/"
+	LDPATH="${EPREFIX}/usr/$(get_libdir)/${PN}$(get_version_component_range 1-3)/"
 	EOF
 	doenvd "${T}"/34${PN}
 }
