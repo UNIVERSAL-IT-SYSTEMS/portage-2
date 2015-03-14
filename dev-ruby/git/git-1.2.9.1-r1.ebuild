@@ -1,13 +1,15 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/git/git-1.2.8.ebuild,v 1.2 2014/08/15 13:22:49 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/git/git-1.2.9.1-r1.ebuild,v 1.1 2015/03/14 05:31:16 graaff Exp $
 
 EAPI=5
-USE_RUBY="ruby19 ruby20 ruby21"
+USE_RUBY="ruby19 ruby20 ruby21 ruby22"
 
 RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 
-RUBY_FAKEGEM_EXTRADOC="History.txt README.md"
+RUBY_FAKEGEM_EXTRADOC="CHANGELOG README.md"
+
+RUBY_FAKEGEM_GEMSPEC="git.gemspec"
 
 inherit ruby-fakegem
 
@@ -18,7 +20,7 @@ RUBY_S="ruby-git-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="test"
 
 DEPEND+="test? ( >=dev-vcs/git-1.6.0.0 app-arch/tar )"
