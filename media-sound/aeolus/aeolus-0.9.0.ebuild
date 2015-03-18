@@ -1,8 +1,10 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-sound/aeolus/aeolus-0.8.2.ebuild,v 1.2 2015/03/18 10:00:45 aballier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-sound/aeolus/aeolus-0.9.0.ebuild,v 1.1 2015/03/18 11:58:28 aballier Exp $
 
-inherit versionator toolchain-funcs multilib
+EAPI=5
+
+inherit versionator toolchain-funcs multilib flag-o-matic
 
 MY_P=${PN}-$(replace_version_separator 3 '-')
 
@@ -12,35 +14,37 @@ SRC_URI="http://kokkinizita.linuxaudio.org/linuxaudio/downloads/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND=">=media-libs/libclalsadrv-1.2.2
-	>=media-libs/libclthreads-2.2.1
-	>=media-libs/libclxclient-3.3.2
+DEPEND="
+	media-libs/zita-alsa-pcmi
+	>=media-libs/libclthreads-2.4.0
+	>=media-libs/libclxclient-3.6.1
 	x11-libs/libXft
 	x11-libs/libX11
 	>=media-sound/jack-audio-connection-kit-0.109.2
 	media-libs/alsa-lib
-	sys-libs/readline"
+	sys-libs/readline:0"
 
 RDEPEND="${DEPEND}
 	media-libs/stops"
 
-S=${WORKDIR}/${PN}-$(get_version_component_range 1-3)
+S=${WORKDIR}/${PN}-$(get_version_component_range 1-3)/source
 
 src_compile() {
 	tc-export CXX
+	append-cppflags $($(tc-getPKG_CONFIG) --cflags xft)
 	sed -i -e "s/-O3//" Makefile || die "Failed to remove forced CFLAGS"
-	sed -i -e "s:/sbin/ldconfig:true:" Makefile || die "Failed to remove ldconfig call CFLAGS"
+	sed -i -e "s:ldconfig:true:" Makefile || die "Failed to remove ldconfig call"
 	sed -i -e "s/g++/$(tc-getCXX)/" Makefile || die "Failed to set correct compiler"
-	emake PREFIX="/usr" LIBDIR=$(get_libdir) || die "make failed"
+	sed -i -e "s/-lXft/`$(tc-getPKG_CONFIG) --libs xft`/" Makefile || die
+	emake PREFIX="/usr" LIBDIR=$(get_libdir)
 }
 
 src_install() {
-	dodir /usr/bin
-	emake PREFIX="${D}/usr" install || die "make install failed"
-	dodoc README AUTHORS
+	emake PREFIX="${D}/usr" install
+	dodoc ../README ../AUTHORS
 	echo "-S /usr/share/stops" > "${T}/aeolus.conf"
 	insinto /etc
 	doins "${T}/aeolus.conf"
