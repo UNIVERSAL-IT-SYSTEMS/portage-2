@@ -1,33 +1,34 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/freerdp/freerdp-9999.1.ebuild,v 1.25 2015/03/27 22:39:52 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/freerdp/freerdp-1.1.0_beta1_p20150312.ebuild,v 1.1 2015/03/27 22:28:06 floppym Exp $
 
 EAPI="5"
 
 inherit cmake-utils vcs-snapshot
 
 if [[ ${PV} != 9999* ]]; then
-	COMMIT="aa2181dcf2dd98693767ba738c5b2ad8c3d742d4"
+	COMMIT="770c67d340d5f0a7b48d53a1ae0fc23aff748fc4"
 	SRC_URI="https://github.com/FreeRDP/FreeRDP/archive/${COMMIT}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+	KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~x86"
 else
-	inherit git-r3
+	inherit git-2
 	SRC_URI=""
 	EGIT_REPO_URI="git://github.com/FreeRDP/FreeRDP.git
 		https://github.com/FreeRDP/FreeRDP.git"
+	KEYWORDS=""
 fi
 
 DESCRIPTION="Free implementation of the Remote Desktop Protocol"
 HOMEPAGE="http://www.freerdp.com/"
 
 LICENSE="Apache-2.0"
-SLOT="0/1.2"
-IUSE="alsa +client cups debug doc ffmpeg gstreamer jpeg
-	pulseaudio server smartcard cpu_flags_x86_sse2 test usb wayland X xinerama xv"
+SLOT="0"
+IUSE="alsa +client cups debug directfb doc ffmpeg gstreamer jpeg
+	pulseaudio server smartcard cpu_flags_x86_sse2 test usb X xinerama xv"
 
 RDEPEND="
-	dev-libs/openssl:0
-	sys-libs/zlib:0
+	dev-libs/openssl
+	sys-libs/zlib
 	alsa? ( media-libs/alsa-lib )
 	cups? ( net-print/cups )
 	client? (
@@ -46,13 +47,14 @@ RDEPEND="
 			xv? ( x11-libs/libXv )
 		)
 	)
+	directfb? ( dev-libs/DirectFB )
 	ffmpeg? ( virtual/ffmpeg )
 	gstreamer? (
-		media-libs/gstreamer:1.0
-		media-libs/gst-plugins-base:1.0
+		media-libs/gstreamer:0.10
+		media-libs/gst-plugins-base:0.10
 		x11-libs/libXrandr
 	)
-	jpeg? ( virtual/jpeg:0 )
+	jpeg? ( virtual/jpeg )
 	pulseaudio? ( media-sound/pulseaudio )
 	server? (
 		X? (
@@ -64,13 +66,13 @@ RDEPEND="
 		)
 	)
 	smartcard? ( sys-apps/pcsc-lite )
-	wayland? ( dev-libs/wayland )
 	X? (
 		x11-libs/libX11
 		x11-libs/libxkbfile
 	)
 "
 DEPEND="${RDEPEND}
+	<dev-util/cmake-3.1
 	virtual/pkgconfig
 	client? ( X? ( doc? (
 		app-text/docbook-xml-dtd:4.1.2
@@ -80,6 +82,11 @@ DEPEND="${RDEPEND}
 
 DOCS=( README )
 
+PATCHES=(
+	"${FILESDIR}/${PN}-1.1.0_beta1_p20130710-uclibc.patch"
+	"${FILESDIR}/${PN}-1.1.0_beta1_p20130710-cmake.patch"
+)
+
 src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use_with alsa ALSA)
@@ -87,8 +94,9 @@ src_configure() {
 		$(cmake-utils_use_with cups CUPS)
 		$(cmake-utils_use_with debug DEBUG_ALL)
 		$(cmake-utils_use_with doc MANPAGES)
+		$(cmake-utils_use_with directfb DIRECTFB)
 		$(cmake-utils_use_with ffmpeg FFMPEG)
-		$(cmake-utils_use_with gstreamer GSTREAMER_1_0)
+		$(cmake-utils_use_with gstreamer GSTREAMER)
 		$(cmake-utils_use_with jpeg JPEG)
 		$(cmake-utils_use_with pulseaudio PULSE)
 		$(cmake-utils_use_with server SERVER)
@@ -99,7 +107,6 @@ src_configure() {
 		$(cmake-utils_use_with xinerama XINERAMA)
 		$(cmake-utils_use_with xv XV)
 		$(cmake-utils_use_build test TESTING)
-		$(cmake-utils_use_with wayland WAYLAND)
 	)
 	cmake-utils_src_configure
 }
