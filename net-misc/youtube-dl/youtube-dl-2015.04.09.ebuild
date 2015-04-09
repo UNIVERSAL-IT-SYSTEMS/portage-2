@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-dl/youtube-dl-2015.03.28.ebuild,v 1.1 2015/03/29 07:10:51 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/youtube-dl/youtube-dl-2015.04.09.ebuild,v 1.1 2015/04/09 03:56:24 jer Exp $
 
 EAPI=5
 
@@ -33,9 +33,9 @@ src_prepare() {
 			alphaporno anysex behindkink drtuber empflix eporner eroprofile
 			extremetube fourtube foxgay goshgay hellporno hentaistigma
 			hornbunny keezmovies mofosex motherless pornhd pornotube
-			pornoxo redtube sexykarma sexu sunporno slutload spankwire thisav
-			tnaflix trutube tube8 vporn xbef xhamster xnxx xtube xvideos
-			xxxymovies youjizz youporn
+			pornovoisines pornoxo redtube sexykarma sexu sunporno slutload
+			spankbang spankwire thisav tnaflix trutube tube8 vporn xbef
+			xhamster xnxx xtube xvideos xxxymovies youjizz youporn
 		)
 		# these have multi-line import statements
 		local mxxx=(
