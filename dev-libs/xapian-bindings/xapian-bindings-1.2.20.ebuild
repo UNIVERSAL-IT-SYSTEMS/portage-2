@@ -1,14 +1,13 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/xapian-bindings/xapian-bindings-1.2.18.ebuild,v 1.13 2015/04/08 17:51:56 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/xapian-bindings/xapian-bindings-1.2.20.ebuild,v 1.1 2015/04/20 23:05:51 blueness Exp $
 
 EAPI="5"
 
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="threads"
-USE_PYTHON='2.6 2.7'
 
-USE_PHP="php5-4"
+USE_PHP="php5-4 php5-5 php5-6"
 
 PHP_EXT_NAME="xapian"
 PHP_EXT_INI="yes"
@@ -24,16 +23,16 @@ SRC_URI="http://oligarchy.co.uk/xapian/${PV}/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 #IUSE="java lua mono perl php python ruby tcl"
 #REQUIRED_USE="|| ( java lua mono perl php python ruby tcl )"
 IUSE="java lua perl php python ruby tcl"
 REQUIRED_USE="|| ( java lua perl php python ruby tcl )"
 
 COMMONDEPEND="=dev-libs/xapian-${PV}*
-	lua? ( >=dev-lang/lua-5.1 )
+	lua? ( dev-lang/lua:= )
 	perl? ( dev-lang/perl:= )
-	ruby? ( dev-lang/ruby )
+	ruby? ( dev-lang/ruby:= )
 	tcl? ( >=dev-lang/tcl-8.1:0= )"
 #	mono? ( >=dev-lang/mono-1.0.8 )
 DEPEND="${COMMONDEPEND}
@@ -43,6 +42,10 @@ RDEPEND="${COMMONDEPEND}
 
 pkg_setup() {
 	java-pkg-opt-2_pkg_setup
+}
+
+src_unpack() {
+	default
 }
 
 src_prepare() {
@@ -85,12 +88,25 @@ src_configure() {
 		$(use_with tcl)
 #		$(use_with mono csharp) \
 
-	# Python bindings are built/tested/installed manually.
+	# PHP and Python bindings are built/tested/installed manually.
+	sed -e "/SUBDIRS =/s/ php//" -i Makefile || die "sed Makefile"
 	sed -e "/SUBDIRS =/s/ python//" -i Makefile || die "sed Makefile"
 }
 
 src_compile() {
 	default
+
+	if use php; then
+		local php_slot
+		for php_slot in $(php_get_slots); do
+			cp -r php php-${php_slot}
+			emake -C php-${php_slot} \
+				PHP="${EPREFIX}/usr/$(get_libdir)/${php_slot}/bin/php" \
+				PHP_CONFIG="${EPREFIX}/usr/$(get_libdir)/${php_slot}/bin/php-config" \
+				PHP_EXTENSION_DIR="$("${EPREFIX}/usr/$(get_libdir)/${php_slot}/bin/php-config" --extension-dir)" \
+				PHP_INC="$("${EPREFIX}/usr/$(get_libdir)/${php_slot}/bin/php-config" --includes)"
+		done
+	fi
 
 	if use python; then
 		python_copy_sources
@@ -115,6 +131,18 @@ src_compile() {
 src_test() {
 	default
 
+	if use php; then
+		local php_slot
+		for php_slot in $(php_get_slots); do
+			emake -C php-${php_slot} \
+				PHP="${EPREFIX}/usr/$(get_libdir)/${php_slot}/bin/php" \
+				PHP_CONFIG="${EPREFIX}/usr/$(get_libdir)/${php_slot}/bin/php-config" \
+				PHP_EXTENSION_DIR="$("${EPREFIX}/usr/$(get_libdir)/${php_slot}/bin/php-config" --extension-dir)" \
+				PHP_INC="$("${EPREFIX}/usr/$(get_libdir)/${php_slot}/bin/php-config" --includes)" \
+				check
+		done
+	fi
+
 	if use python; then
 		testing() {
 			emake -C python \
@@ -128,7 +156,7 @@ src_test() {
 }
 
 src_install () {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" install
 
 	if use java; then
 		java-pkg_dojar java/built/xapian_jni.jar
@@ -137,6 +165,20 @@ src_install () {
 		rm "${D}/${S}/java/built/libxapian_jni.so"
 		rmdir -p "${D}/${S}/java/built"
 		rmdir -p "${D}/${S}/java/native"
+	fi
+
+	if use php; then
+		local php_slot
+		for php_slot in $(php_get_slots); do
+			emake DESTDIR="${D}" -C php-${php_slot} \
+				PHP="${EPREFIX}/usr/$(get_libdir)/${php_slot}/bin/php" \
+				PHP_CONFIG="${EPREFIX}/usr/$(get_libdir)/${php_slot}/bin/php-config" \
+				PHP_EXTENSION_DIR="$("${EPREFIX}/usr/$(get_libdir)/${php_slot}/bin/php-config" --extension-dir)" \
+				PHP_INC="$("${EPREFIX}/usr/$(get_libdir)/${php_slot}/bin/php-config" --includes)" \
+				install
+		done
+
+		php-ext-source-r2_createinifiles
 	fi
 
 	if use python; then
@@ -151,20 +193,10 @@ src_install () {
 		python_foreach_impl installation
 	fi
 
-	if use php; then
-		php-ext-source-r2_createinifiles
-	fi
-
 	# For some USE combinations this directory is not created
 	if [[ -d "${D}/usr/share/doc/xapian-bindings" ]]; then
 		mv "${D}/usr/share/doc/xapian-bindings" "${D}/usr/share/doc/${PF}"
 	fi
 
-	dodoc AUTHORS HACKING NEWS TODO README || die "dodoc failed"
-}
-
-pkg_postinst() {
-	if use php_targets_php5-4; then
-		ewarn "Note: subclassing Xapian classes in PHP currently doesn't work with PHP 5.4"
-	fi
+	dodoc AUTHORS HACKING NEWS TODO README
 }

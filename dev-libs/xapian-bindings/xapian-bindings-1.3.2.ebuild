@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-libs/xapian-bindings/xapian-bindings-1.2.14.ebuild,v 1.12 2015/03/20 10:16:32 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-libs/xapian-bindings/xapian-bindings-1.3.2.ebuild,v 1.1 2015/04/20 23:05:51 blueness Exp $
 
 EAPI="5"
 
@@ -15,23 +15,23 @@ PHP_EXT_NAME="xapian"
 PHP_EXT_INI="yes"
 PHP_EXT_OPTIONAL_USE="php"
 
-inherit java-pkg-opt-2 mono php-ext-source-r2 python
+inherit java-pkg-opt-2 mono-env php-ext-source-r2 python
 
 DESCRIPTION="SWIG and JNI bindings for Xapian"
 HOMEPAGE="http://www.xapian.org/"
-SRC_URI="http://oligarchy.co.uk/xapian/${PV}/${P}.tar.gz"
+SRC_URI="http://oligarchy.co.uk/xapian/${PV}/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE="java lua mono perl php python ruby tcl"
 REQUIRED_USE="|| ( java lua mono perl php python ruby tcl )"
 
 COMMONDEPEND="=dev-libs/xapian-${PV}*
-	lua? ( >=dev-lang/lua-5.1 )
+	lua? ( dev-lang/lua:= )
 	mono? ( >=dev-lang/mono-1.0.8 )
 	perl? ( dev-lang/perl:= )
-	ruby? ( dev-lang/ruby )
+	ruby? ( dev-lang/ruby:= )
 	tcl? ( >=dev-lang/tcl-8.1:0= )"
 DEPEND="${COMMONDEPEND}
 	java? ( >=virtual/jdk-1.3 )"
@@ -39,6 +39,7 @@ RDEPEND="${COMMONDEPEND}
 	java? ( >=virtual/jre-1.3 )"
 
 pkg_setup() {
+	mono-env_pkg_setup
 	java-pkg-opt-2_pkg_setup
 
 	if use python; then
@@ -48,11 +49,6 @@ pkg_setup() {
 
 src_prepare() {
 	java-pkg-opt-2_src_prepare
-	if use java; then
-		sed \
-			-e 's/$(JAVAC)/$(JAVAC) $(JAVACFLAGS)/' \
-			-i java{/,/org/xapian/errors/,/org/xapian/}Makefile.in || die "sed failed"
-	fi
 
 	if use python; then
 		sed \
