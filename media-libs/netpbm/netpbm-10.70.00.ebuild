@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/netpbm/netpbm-10.66.00.ebuild,v 1.17 2015/04/29 04:00:38 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/netpbm/netpbm-10.70.00.ebuild,v 1.1 2015/04/29 04:42:39 vapier Exp $
 
 EAPI="4"
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://gentoo/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm arm64 hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE="doc jbig jpeg jpeg2k png rle cpu_flags_x86_sse2 static-libs svga tiff X xml zlib"
 
 RDEPEND="jbig? ( media-libs/jbigkit )
@@ -56,19 +56,11 @@ netpbm_config() {
 src_prepare() {
 	epatch "${FILESDIR}"/netpbm-10.31-build.patch
 	epatch "${FILESDIR}"/netpbm-10.66-test.patch #450530
-	epatch "${FILESDIR}"/netpbm-10.66-jasper-hack.patch #513240
-	epatch "${FILESDIR}"/netpbm-10.66-options-case.patch
-	epatch "${FILESDIR}"/netpbm-10.66-jpeg-dirs.patch
-	epatch "${FILESDIR}"/netpbm-10.66-jbig-2.patch
-	epatch "${FILESDIR}"/netpbm-10.66-failing-tests.patch
-	epatch "${FILESDIR}"/netpbm-10.66-wordaccess_be_aligned.patch #547252
+	epatch "${FILESDIR}"/netpbm-10.70-system-libs.patch
 
-	# make sure we use system urt
+	# make sure we use system libs
 	sed -i '/SUPPORT_SUBDIRS/s:urt::' GNUmakefile || die
-	rm -rf urt
-
-	# avoid mixing the local copy of jbig with the system
-	rm converter/other/jbig/jbig.h || die
+	rm -r urt converter/other/jbig/libjbig converter/other/jpeg2000/libjasper || die
 
 	# disable certain tests based on active USE flags
 	local del=(
