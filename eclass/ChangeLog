@@ -1,6 +1,27 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1700 2015/07/05 09:10:53 graaff Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1706 2015/07/09 15:43:03 mgorny Exp $
+
+  09 Jul 2015; Michał Górny <mgorny@gentoo.org> gnome2.eclass:
+  Remove meaningless nonfatal from elibtoolize call, bug #551154.
+
+  09 Jul 2015; Hans de Graaff <graaff@gentoo.org> ruby-single.eclass:
+  Update documentation.
+
+  08 Jul 2015; Bernard Cafarelli <voyageur@gentoo.org> webapp.eclass:
+  Fix elog in webapp_serverowned and ebeep in newer EAPIs
+
+  07 Jul 2015; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  -mozconfig-v4.31.eclass, -mozconfig-v5.33.eclass, +mozconfig-v6.38.eclass,
+  +mozconfig-v6.39.eclass:
+  removed old mozconfig eclasses, added new
+
+  06 Jul 2015; William Hubbs <williamh@gentoo.org> golang-build.eclass:
+  Add back the subslot operator in the dependency on Go. We need this so that
+  we have the Go version the package was built with recorded.
+
+  06 Jul 2015; Michael Palimaka <kensington@gentoo.org> kde5.eclass:
+  Add missing USE dependency default wrt bug #554056.
 
   05 Jul 2015; Hans de Graaff <graaff@gentoo.org> ruby-fakegem.eclass:
   Document that some variables must be set before inheriting the eclass.

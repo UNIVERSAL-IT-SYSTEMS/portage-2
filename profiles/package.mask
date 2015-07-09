@@ -1,5 +1,5 @@
 ####################################################################
-# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16653 2015/07/05 11:45:17 monsieurp Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/package.mask,v 1.16658 2015/07/09 03:13:09 williamh Exp $
 #
 # When you add an entry to the top of this file, add your name, the date, and
 # an explanation of why something is getting masked. Please be extremely
@@ -30,6 +30,16 @@
 
 #--- END OF EXAMPLES ---
 
+# Patrice Clement <monsieurp@gentoo.org> (7 Jul 2015)
+# Upstream dead. No update since 2007.
+# Removal in 30 days. See bug #164536.
+dev-uti/fujaba
+
+# Patrice Clement <monsieurp@gentoo.org> (5 Jul 2015)
+# SRC_URI unreachable. Upstream looks dead. 
+# Removal in 30 days. See bug #502994.
+app-arch/dczip
+
 # Patrice Clement <monsieurp@gentoo.org> (5 Jul 2015)
 # Package does not compile with recent JDKs (>= jdk-1.8). More recent versions
 # use Gradle which we don't have packaged in Gentoo yet.
@@ -41,7 +51,7 @@ net-p2p/frostwire
 # Removal in 30 days
 app-text/deplate
 app-text/migemo
-dev-utils/travis-yaml
+dev-util/travis-yaml
 
 # Hans de Graaff <graaff@gentoo.org> (5 Jul 2015)
 # Mask for removal in 30 days. This is an old slot with a supporting
@@ -96,8 +106,9 @@ app-backup/cyphertite
 
 # Mike Gilbert <floppym@gentoo.org> (19 Jun 2015)
 # Masked until all libgudev providers have been updated, bug 552036.
-~sys-fs/udev-221
+~sys-fs/udev-222
 ~sys-apps/systemd-221
+~sys-apps/systemd-222
 ~virtual/libgudev-230
 
 # Jauhien Piatlicki <jauhien@gentoo.org> (16 Jun 2015)
