@@ -1,22 +1,21 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-proxy/mysql-proxy-0.8.2-r1.ebuild,v 1.2 2015/07/17 02:33:02 neurogeek Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-db/mysql-proxy/mysql-proxy-0.8.2-r1.ebuild,v 1.1 2015/02/01 18:19:07 neurogeek Exp $
 
 EAPI=5
 
-inherit eutils versionator
+inherit eutils
 
-MY_PV=$(get_version_component_range 1-2)
 DESCRIPTION="A Proxy for the MySQL Client/Server protocol"
-HOMEPAGE="http://dev.mysql.com/doc/mysql-proxy/en/"
-SRC_URI="https://launchpad.net/${PN}/${MY_PV}/${PV}/+download/${P}.tar.gz"
+HOMEPAGE="http://forge.mysql.com/wiki/MySQL_Proxy"
+SRC_URI="mirror://mysql/Downloads/MySQL-Proxy/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples"
 RDEPEND=">=dev-libs/libevent-2.1
 	>=dev-libs/glib-2.16
-	>=dev-lang/lua-5.1:0"
+	>=dev-lang/lua-5.1"
 DEPEND="${RDEPEND}
 	>=virtual/mysql-5.0
 	virtual/pkgconfig"
@@ -49,4 +48,12 @@ src_install() {
 	insinto /etc/mysql
 	insopts -m0660
 	doins "${FILESDIR}"/${PN}.cnf || die
+}
+
+pkg_postinst() {
+	einfo
+	einfo "You might want to have a look at"
+	einfo "http://dev.mysql.com/tech-resources/articles/proxy-gettingstarted.html"
+	einfo "on how to get started with MySQL Proxy."
+	einfo
 }

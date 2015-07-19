@@ -1,10 +1,8 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-cdr/cdw/cdw-0.8.0.ebuild,v 1.5 2015/07/16 04:06:40 mr_bones_ Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-cdr/cdw/cdw-0.8.0.ebuild,v 1.4 2015/03/25 14:01:35 ago Exp $
 
 EAPI=5
-inherit eutils
-
 DESCRIPTION="An ncurses based console frontend for cdrtools and dvd+rw-tools"
 HOMEPAGE="http://cdw.sourceforge.net"
 SRC_URI="mirror://sourceforge/cdw/${P}.tar.gz"
@@ -19,11 +17,6 @@ DEPEND="virtual/cdrtools
 	dev-libs/libburn
 	dev-libs/libcdio[-minimal]
 	sys-libs/ncurses[unicode]"
-RDEPEND=${DEPEND}
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-uclibc.patch
-}
 
 src_install() {
 	DOCS="AUTHORS ChangeLog NEWS README THANKS cdw.conf" \
