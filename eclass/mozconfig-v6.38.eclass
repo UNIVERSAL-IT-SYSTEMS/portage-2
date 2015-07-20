@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/mozconfig-v6.38.eclass,v 1.1 2015/07/07 14:11:37 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/mozconfig-v6.38.eclass,v 1.4 2015/07/17 18:25:45 axs Exp $
 #
 # @ECLASS: mozconfig-v5.33.eclass
 # @MAINTAINER:
@@ -73,10 +73,10 @@ RDEPEND=">=app-text/hunspell-1.2
 	>=sys-libs/zlib-1.2.3
 	>=virtual/libffi-3.0.10
 	gstreamer? (
-		>=media-libs/gstreamer-1.2.3:1.0
-		>=media-libs/gst-plugins-base-1.2.3:1.0
-		>=media-libs/gst-plugins-good-1.2.3:1.0
-		>=media-plugins/gst-plugins-libav-1.1.0_pre20130128-r1:1.0
+		>=media-libs/gstreamer-1.4.5:1.0
+		>=media-libs/gst-plugins-base-1.4.5:1.0
+		>=media-libs/gst-plugins-good-1.4.5:1.0
+		>=media-plugins/gst-plugins-libav-1.4.5:1.0
 	)
 	gstreamer-0? (
 		media-plugins/gst-plugins-meta:0.10[ffmpeg]
@@ -121,6 +121,9 @@ DEPEND="app-arch/zip
 
 RDEPEND+="
 	selinux? ( sec-policy/selinux-mozilla )"
+
+# only one of gstreamer and gstreamer-0 can be enabled at a time, so set REQUIRED_USE to signify this
+REQUIRED_USE="?? ( gstreamer gstreamer-0 )"
 
 # @FUNCTION: mozconfig_config
 # @DESCRIPTION:
@@ -218,12 +221,10 @@ mozconfig_config() {
 	mozconfig_annotate '' --target="${CTARGET:-${CHOST}}"
 	mozconfig_annotate '' --build="${CTARGET:-${CHOST}}"
 
-	if use gstreamer || use gstreamer-0 ; then
-		if use gstreamer-0 ; then
-			mozconfig_annotate '+gstreamer-0' --enable-gstreamer=0.10
-		else
-			mozconfig_annotate '+gstreamer' --enable-gstreamer=1.0
-		fi
+	if use gstreamer ; then
+		mozconfig_annotate '+gstreamer' --enable-gstreamer=1.0
+	elif use gstreamer-0 ; then
+		mozconfig_annotate '+gstreamer-0' --enable-gstreamer=0.10
 	else
 		mozconfig_annotate '' --disable-gstreamer
 	fi

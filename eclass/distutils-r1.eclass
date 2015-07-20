@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/distutils-r1.eclass,v 1.114 2015/07/04 15:26:17 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/distutils-r1.eclass,v 1.116 2015/07/18 00:07:01 floppym Exp $
 
 # @ECLASS: distutils-r1
 # @MAINTAINER:
@@ -505,7 +505,7 @@ distutils-r1_python_install() {
 
 	# python likes to compile any module it sees, which triggers sandbox
 	# failures if some packages haven't compiled their modules yet.
-	addpredict "$(python_get_sitedir)"
+	addpredict "${EPREFIX}/usr/$(get_libdir)/${EPYTHON}"
 	addpredict /usr/lib/portage/pym
 	addpredict /usr/local # bug 498232
 
@@ -549,9 +549,13 @@ distutils-r1_python_install() {
 
 	esetup.py install --root="${root}" "${args[@]}"
 
-	if [[ -d ${root}$(python_get_sitedir)/tests ]]; then
-		die "Package installs 'tests' package, file collisions likely."
-	fi
+	local forbidden_package_names=( examples test tests )
+	local p
+	for p in "${forbidden_package_names[@]}"; do
+		if [[ -d ${root}$(python_get_sitedir)/${p} ]]; then
+			die "Package installs '${p}' package which is forbidden and likely a bug in the build system."
+		fi
+	done
 	if [[ -d ${root}/usr/$(get_libdir)/pypy/share ]]; then
 		eqawarn "Package installs 'share' in PyPy prefix, see bug #465546."
 	fi
