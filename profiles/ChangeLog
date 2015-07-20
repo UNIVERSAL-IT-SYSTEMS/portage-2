@@ -1,29 +1,10 @@
 # ChangeLog for profile directory
 # Copyright 1999-2015 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.10194 2015/07/19 22:27:14 chewi Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/ChangeLog,v 1.10188 2015/07/15 13:01:12 monsieurp Exp $
 #
 # This ChangeLog should include records for all changes in profiles directory.
 # Only typo fixes which don't affect portage/repoman behaviour could be avoided
 # here. If in doubt put a record here!
-
-  19 Jul 2015; James Le Cuirot <chewi@gentoo.org> package.mask:
-  Remove dev-java/itext:5 mask as bug #475552 now looks good.
-
-  19 Jul 2015; James Le Cuirot <chewi@gentoo.org> package.mask:
-  app-eselect/eselect-ecj has been removed.
-
-  18 Jul 2015; Fabian Groffen <grobian@gentoo.org> package.mask:
-  Extend Exim 4.86 RC mask
-
-  17 Jul 2015; Thomas Beierlein <tomjbe@gentoo.org> package.mask:
-  Dropped old mask. Got enough time for testing
-
-  16 Jul 2015; Ian Stakenvicius (_AxS_) <axs@gentoo.org> package.mask:
-  remove old spidermonkey-1.8.7 mask as ebuild removed, mask thunderbird-24 as
-  its not supported.
-
-  15 Jul 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
-  Mask dev-java/exolab{core,tools} for removal.
 
   15 Jul 2015; Patrice Clement <monsieurp@gentoo.org> package.mask:
   Mask dev-java/burlap and dev-java/caucho-services for removal.
