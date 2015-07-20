@@ -1,11 +1,11 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/pure-ftpd/pure-ftpd-1.0.41.ebuild,v 1.2 2015/07/16 05:47:30 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/pure-ftpd/pure-ftpd-1.0.41.ebuild,v 1.1 2015/06/30 07:39:02 polynomial-c Exp $
 
 EAPI=5
 inherit eutils confutils flag-o-matic
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~x86"
 
 DESCRIPTION="Fast, production-quality, standard-conformant FTP server"
 HOMEPAGE="http://www.pureftpd.org/"
@@ -25,7 +25,7 @@ DEPEND="caps? ( sys-libs/libcap )
 	mysql? ( virtual/mysql )
 	pam? ( virtual/pam )
 	postgres? ( dev-db/postgresql:= )
-	ssl? ( >=dev-libs/openssl-0.9.6g:0=[-bindist] )
+	ssl? ( >=dev-libs/openssl-0.9.6g:0= )
 	sysquota? ( sys-fs/quota[-rpc] )
 	xinetd? ( virtual/inetd )"
 
