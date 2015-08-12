@@ -9,9 +9,9 @@ inherit eutils user flag-o-matic multilib autotools pam systemd versionator
 # and _p? releases.
 PARCH=${P/_}
 
-HPN_PATCH="${PN}-6.9p1-r1-hpnssh14v5.tar.xz"
+HPN_PATCH="${PN}-7.0p1-hpnssh14v5.tar.xz"
 LDAP_PATCH="${PN}-lpk-6.8p1-0.3.14.patch.xz"
-X509_VER="8.4" X509_PATCH="${PN}-6.9p1+x509-${X509_VER}.diff.gz"
+#X509_VER="8.4" X509_PATCH="${PN}-6.9p1+x509-${X509_VER}.diff.gz"
 
 DESCRIPTION="Port of OpenBSD's free SSH release"
 HOMEPAGE="http://www.openssh.org/"
@@ -28,7 +28,7 @@ SRC_URI="mirror://openbsd/OpenSSH/portable/${PARCH}.tar.gz
 
 LICENSE="BSD GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm arm64 hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~arm-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~arm-linux ~x86-linux"
 # Probably want to drop ssl defaulting to on in a future version.
 IUSE="bindist debug ${HPN_PATCH:++}hpn kerberos kernel_linux ldap ldns libedit pam +pie sctp selinux skey ssh1 +ssl static X X509"
 REQUIRED_USE="ldns? ( ssl )
@@ -304,8 +304,9 @@ pkg_postinst() {
 	if has_version "<${CATEGORY}/${PN}-6.9_p1" ; then
 		elog "Starting with openssh-6.9p1, ssh1 support is disabled by default."
 	fi
-	ewarn "Remember to merge your config files in /etc/ssh/ and then"
-	ewarn "reload sshd: '/etc/init.d/sshd reload'."
-	elog "Note: openssh-6.7 versions no longer support USE=tcpd as upstream has"
-	elog "      dropped it.  Make sure to update any configs that you might have."
+	if has_version "<${CATEGORY}/${PN}-7.0_p1" ; then
+		elog "Starting with openssh-6.7, support for USE=tcpd has been dropped by upstream."
+		elog "Make sure to update any configs that you might have.  Note that xinetd might"
+		elog "be an alternative for you as it supports USE=tcpd."
+	fi
 }
