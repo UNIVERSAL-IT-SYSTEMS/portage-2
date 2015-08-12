@@ -998,7 +998,6 @@ app-office/abiword:plugins - Enable plugins build (see http://www.abisource.com/
 app-office/abiword:redland - Enables support redland and raptor libs.
 app-office/abiword:thesaurus - Enable thesaurus support
 app-office/abiword:wordperfect - Enable wordperfect file support via app-text/libwpd
-app-office/akonadi-server:soprano - Enable deprecated dev-libs/soprano, needed for nepomuk search
 app-office/calligra:attica - Get hot stuff with dev-libs/libattica
 app-office/calligra:eigen - Enable dev-cpp/eigen mathematical templates support
 app-office/calligra:glew - Enable media-libs/glew opengl extension library support
@@ -1008,7 +1007,6 @@ app-office/calligra:import-filter - Enable support for various import filter fil
 app-office/calligra:kdcraw - Enable support for KDE image manipulating interface via kde-apps/libkdcraw
 app-office/calligra:kdepim - Enable support for KDEPIM resources integration
 app-office/calligra:marble - Enable displaying of maps using Marble
-app-office/calligra:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 app-office/calligra:okular - Enable bindings for kde-apps/okular
 app-office/calligra:spacenav - Enable support for the 3Dconnexion spacenav input device via dev-libs/libspnav
 app-office/calligra:vc - Enable support for dev-libs/vc, could be a significant speed boost on krita
@@ -1171,6 +1169,7 @@ app-text/poppler:introspection - Enable GObject introspection.
 app-text/poppler:utils - Install command-line PDF converters and various utilities.
 app-text/qpdfview:fitz - Use experimental fitz rendering, provided by app-text/mupdf, instead of poppler
 app-text/qpdfview:synctex - Add support for searching TeX sources
+app-text/rnv:scheme - Enable scheme support based on dev-scheme/scm
 app-text/sgmltools-lite:jadetex - Add support for app-text/jadetex (for processing tex files produced by the TeX backend of Jade)
 app-text/stardict:espeak - Enable text to speech synthesizer using espeak engine
 app-text/stardict:gucharmap - Enable gucharmap dictionary plugin
@@ -3165,13 +3164,11 @@ kde-apps/kdebase-kioslaves:sftp - Enable SFTP protocol support using net-libs/li
 kde-apps/kdebase-meta:display-manager - Pull in a graphical display manager
 kde-apps/kdebase-meta:wallpapers - Install the KDE wallpapers
 kde-apps/kdebase-runtime-meta:crash-reporter - Builds a gui tool to submit crash information to the upstream backtracker
-kde-apps/kdebase-runtime-meta:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 kde-apps/kdenetwork-meta:ppp - Enable support for net-dialup/ppp.
 kde-apps/kdeutils-meta:floppy - Install kde-base/kfloppy to format and create DOS or ext2fs filesystems in a floppy.
 kde-apps/kget:bittorrent - Enable bittorrent transfer plugin through net-libs/libktorrent
 kde-apps/kget:gpg - Enable signature verification by QGpgME via kde-base/kdepimlibs
 kde-apps/kget:mms - Enable MMS (Microsoft Media Server) plugin through media-libs/libmms
-kde-apps/kget:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 kde-apps/kget:webkit - Enable KdeWebkit browser plugin using kde-misc/kwebkitpart
 kde-apps/kig:scripting - Support Python scripting
 kde-apps/kmix:canberra - Enable sound event support using media-libs/libcanberra
@@ -3208,7 +3205,6 @@ kde-apps/ksnapshot:kipi - Support for the KDE Image Plugin Interface.
 kde-apps/kstars:fits - Enable support for the FITS image format through cfitsio
 kde-apps/kstars:indi - Enable support for Astronomical control library using libindi
 kde-apps/kwalletd:gpg - Support wallets with GnuPG encryption additionally to default blowfish-encrypted file
-kde-apps/lokalize:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 kde-apps/marble:designer-plugin - Enable designer plugin
 kde-apps/marble:phonon - Enable sound support via media-libs/phonon
 kde-apps/marble:shapefile - Enable support for ESRI shapefiles
@@ -3300,7 +3296,6 @@ kde-base/smokeqt:qwt - Compile bindings for x11-libs/qwt.
 kde-base/smokeqt:webkit - Compile bindings for dev-qt/qtwebkit.
 kde-base/smokeqt:xmlpatterns - Compile bindings for dev-qt/qtxmlpatterns.
 kde-base/systemsettings:kscreen - Use kde-misc/kscreen for screen management
-kde-base/systemsettings:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 kde-frameworks/kdesignerplugin:designer - Build KF5 widgets plugin for QtDesigner
 kde-frameworks/kdesignerplugin:webkit - Build kdewebkit plugin for QtDesigner
 kde-frameworks/kfilemetadata:epub - Adds support for reading EPUB ebook metadata
@@ -3322,7 +3317,6 @@ kde-misc/networkmanagement:openconnect - Build support for the OpenConnect VPN c
 kde-misc/plasma-nm:modemmanager - Enable support for mobile broadband devices
 kde-misc/plasma-nm:openconnect - Build support for the OpenConnect VPN client
 kde-misc/tellico:addressbook - Add support for kdepim addressbook (kabc)
-kde-misc/tellico:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 kde-plasma/kdeplasma-addons:ibus - Use ibus input method via app-i18n/ibus
 kde-plasma/kdeplasma-addons:scim - Enable applets that use app-i18n/scim
 kde-plasma/kfilemetadata:epub - Adds support for reading EPUB ebook metadata
@@ -3639,7 +3633,6 @@ media-gfx/digikam:addressbook - Add support for kdepim
 media-gfx/digikam:linguas_ha - Hausa translation
 media-gfx/digikam:linguas_mi - Maori translation
 media-gfx/digikam:linguas_ven - Venda translation
-media-gfx/digikam:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 media-gfx/digikam:themedesigner - Build the digikam theme designer
 media-gfx/digikam:thumbnails - Enable thumbnails database support
 media-gfx/digikam:video - Pull in mplayerthumbs to enable video thumbnails
@@ -4099,7 +4092,6 @@ media-sound/amarok:embedded - Use libmysqld, MySQL embedded server library. Try 
 media-sound/amarok:lastfm - Enable Last.fm streaming services support through media-libs/liblastfm
 media-sound/amarok:mp3tunes - Enable mp3tunes integration
 media-sound/amarok:mtp - Enable support for libMTP (Plays4Sure) devices access through libmtp
-media-sound/amarok:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 media-sound/amarok:ofa - Use media-libs/libofa to compute MusicDNS acoustic fingerprints (used by MusicBrainz)
 media-sound/amarok:utils - Build the utils - old media-sound/amarok-utils
 media-sound/amsynth:dssi - Enable support for DSSI Soft Synth Interface
@@ -4566,7 +4558,6 @@ media-video/handbrake:gstreamer - Support for the streaming media framework from
 media-video/handbrake:gtk - Support for Gimp ToolKit + from x11-libs/gtk+, requirement for a GUI-based HandBrake.
 media-video/handbrake:libav-aac - Support for encoding AAC using media-libs/libav's internal encoder.
 media-video/handbrake:x265 - Support for encoding h265 using media-libs/x265.
-media-video/kdenlive:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 media-video/kino:gpac - Enable GPAC support when exporting to 3GPP format
 media-video/kmplayer:npp - Compile the npp backend that plays xembed style browser plugins.
 media-video/libav:aac - Use external vo-aacenc library for AAC encoding
@@ -4672,7 +4663,6 @@ media-video/ogmrip:ogm - Support for OGM container format
 media-video/ogmrip:srt - Support for SRT subtitle format
 media-video/parole:clutter - Compile in Clutter GTK+ support
 media-video/pgcedit:video - Add support for video preview
-media-video/plasma-mediacenter:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 media-video/qgifer:imagemagick - Use imagemagick for image operations
 media-video/rtmpdump:gnutls - Use GnuTLS library instead of the default OpenSSL
 media-video/rtmpdump:polarssl - Use PolarSSL library instead of the default OpenSSL
@@ -7661,7 +7651,6 @@ www-client/netsurf:webp - WebP image support (media-libs/libwebp)
 www-client/opera:gtk - Install support libraries and runtime dependencies to support GTK+/GNOME desktop integration
 www-client/opera:kde - Install support libraries and runtime dependencies to support KDE desktop integration
 www-client/qupzilla:nonblockdialogs - Enable fancy non-blocking JavaScript dialogs shown inside the page, not blocking the application window. When closing browser windows with open dialogs, this can crash the application.
-www-client/rekonq:nepomuk - Enable Nepomuk based semantic desktop support (deprecated)
 www-client/rekonq:opera - Support for Opera sync handler
 www-client/seamonkey:chatzilla - Build Mozilla's IRC client (default on)
 www-client/seamonkey:custom-optimization - Fine-tune custom compiler optimizations (-Os, -O0, -O1, -O2, -O3)
