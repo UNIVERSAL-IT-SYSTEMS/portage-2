@@ -1298,6 +1298,8 @@ dev-db/mariadb-galera:systemtap - Build support for profiling and tracing using 
 dev-db/mariadb-galera:test - Install upstream testsuites for end use.
 dev-db/mariadb-galera:tokudb - Add support for TokuDB storage engine
 dev-db/mariadb-galera:tools - Build the command line tools (mysql, mysqldump, mysqladmin, etc)
+dev-db/maxscale:jemalloc - Use dev-libs/jemalloc for allocations
+dev-db/maxscale:rabbitmq - Add support for RabbitMQ message queue
 dev-db/mongodb:mms-agent - Install the MongoDB Monitoring Service agent
 dev-db/mongodb:sharedclient - build client shared library libmongoclient.so
 dev-db/mongodb:spidermonkey - Use embedded SpiderMonkey engine (dev-lang/spidermonkey) instead of v8
