@@ -1,27 +1,27 @@
-From 14abbe4e6c888148caecbf16231ae48499d6d2b2 Mon Sep 17 00:00:00 2001
+From aaa7cde91e4b086164f0c7f46569a34bfbb4e479 Mon Sep 17 00:00:00 2001
 From: hasufell <hasufell@gentoo.org>
-Date: Mon, 27 Oct 2014 20:39:50 +0100
-Subject: [PATCH 1/2] respect flags and compiler
+Date: Sun, 3 May 2015 15:05:43 +0200
+Subject: [PATCH] Respect flags and compiler
 
 ---
- source/Makefile         |  5 ++---
- source/rltiles/Makefile | 22 +++++++++++-----------
+ Makefile         |  5 ++---
+ rltiles/Makefile | 22 +++++++++++-----------
  2 files changed, 13 insertions(+), 14 deletions(-)
 
-diff --git a/source/Makefile b/source/Makefile
-index db39bd9..df51e70 100644
---- a/source/Makefile
-+++ b/source/Makefile
-@@ -101,7 +101,7 @@ include Makefile.obj
+diff --git a/Makefile b/Makefile
+index 8b9efd9..0f37edf 100644
+--- a/Makefile
++++ b/Makefile
+@@ -103,7 +103,7 @@ include Makefile.obj
  #
  
  
 -CFOTHERS := -pipe $(EXTERNAL_FLAGS)
 +CFOTHERS := $(EXTERNAL_FLAGS)
- CFWARN := -Wall -Wformat-security
- CFWARN_L := -Wundef
+ CFWARN := 
+ CFWARN_L := -Wall -Wformat-security -Wundef
  
-@@ -770,7 +770,6 @@ ifdef FULLDEBUG
+@@ -809,7 +809,6 @@ ifdef FULLDEBUG
  DEFINES += -DFULLDEBUG
  endif
  ifdef DEBUG
@@ -29,19 +29,19 @@ index db39bd9..df51e70 100644
  DEFINES += -DDEBUG
  endif
  ifndef NOWIZARD
-@@ -1559,7 +1558,7 @@ ifdef ANDROID
+@@ -1627,7 +1626,7 @@ ifdef ANDROID
          # prove that tiles were generated properly
  	grep tile_info rltiles/*.cc| head
  else
 -	+$(MAKE) -C $(RLTILES) all ARCH=$(ARCH) TILES=$(TILES)$(WEBTILES)
-+	+$(MAKE) -C $(RLTILES) all V=$(V) ARCH=$(ARCH) DEBUG=$(DEBUG) TILES=$(TILES)$(WEBTILES)
++	$(MAKE) -C $(RLTILES) all V=$(V) ARCH=$(ARCH) DEBUG=$(DEBUG) TILES=$(TILES)$(WEBTILES)
  endif
  
  $(TILEDEFSRCS) $(TILEDEFHDRS) $(ORIGTILEFILES): build-rltiles
-diff --git a/source/rltiles/Makefile b/source/rltiles/Makefile
-index aacd551..41b3ebe 100644
---- a/source/rltiles/Makefile
-+++ b/source/rltiles/Makefile
+diff --git a/rltiles/Makefile b/rltiles/Makefile
+index ae11f43..464424f 100644
+--- a/rltiles/Makefile
++++ b/rltiles/Makefile
 @@ -1,7 +1,7 @@
  uname_S := $(shell uname -s)
  
@@ -60,14 +60,14 @@ index aacd551..41b3ebe 100644
  
  ifdef ANDROID
    CXXFLAGS :=
-@@ -35,24 +35,24 @@ ifdef TILES
+@@ -27,24 +27,24 @@ ifdef TILES
      PNG_LIB := ../contrib/install/$(ARCH)/lib/libpng.a ../contrib/install/$(ARCH)/lib/libz.a
    endif
  
--  CFLAGS += $(SDL_CFLAGS) $(PNG_INCLUDE)
--  LDFLAGS += $(SDL_LDFLAGS) $(PNG_LIB)
-+  CXXFLAGS += $(SDL_CFLAGS) $(PNG_INCLUDE)
-+  LIBS += $(SDL_LDFLAGS) $(PNG_LIB)
+-  CFLAGS += $(PNG_INCLUDE)
+-  LDFLAGS += $(PNG_LIB)
++  CXXFLAGS += $(PNG_INCLUDE)
++  LIBS += $(PNG_LIB)
  
 -  CFLAGS += -DUSE_TILE
 +  CXXFLAGS += -DUSE_TILE
@@ -79,11 +79,11 @@ index aacd551..41b3ebe 100644
  endif
  
  ifneq (,$(findstring MINGW,$(uname_S)))
--LDFLAGS += -lgdi32 -lwinmm
-+LIBS += -lgdi32 -lwinmm
+-LDFLAGS += -lgdi32 -lwinmm -lole32 -loleaut32 -limm32 -lshell32 -lversion -luuid 
++LIBS += -lgdi32 -lwinmm -lole32 -loleaut32 -limm32 -lshell32 -lversion -luuid 
  endif
  ifeq ($(uname_S),Darwin)
- LDFLAGS += -framework AppKit -framework AudioUnit -framework Carbon -framework IOKit -framework OpenGL
+ LDFLAGS += -framework AppKit -framework AudioUnit -framework CoreAudio -framework ForceFeedback -framework Carbon -framework IOKit -framework OpenGL
  endif
  ifeq ($(uname_S),Linux)
 -LDFLAGS += -ldl -lpthread
@@ -91,7 +91,7 @@ index aacd551..41b3ebe 100644
  endif
  
  # Attempt to use a full compiler name, to make
-@@ -137,10 +137,10 @@ clean:
+@@ -129,10 +129,10 @@ clean:
  
  distclean: clean
  
@@ -106,5 +106,5 @@ index aacd551..41b3ebe 100644
  
  .PHONY: all clean distclean
 -- 
-2.1.2
+2.3.5
 
