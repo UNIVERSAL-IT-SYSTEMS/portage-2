@@ -55,7 +55,7 @@ COMMONDEPEND="
 		media-libs/phonon[qt4]
 		x11-libs/libXrandr
 	)
-	redeyes? ( >=media-libs/opencv-2.4.9 <media-libs/opencv-3.0.0 )
+	redeyes? ( >=media-libs/opencv-2.4.9 )
 	scanner? (
 		$(add_kdeapps_dep libksane)
 		media-gfx/sane-backends

@@ -5,7 +5,7 @@
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE='threads(+)'
-inherit eutils waf-utils python-any-r1
+inherit waf-utils python-any-r1
 
 DESCRIPTION="A GTK+ widget for interactive graph-like environments"
 HOMEPAGE="http://drobilla.net/software/ganv/"
@@ -26,10 +26,6 @@ DEPEND="${RDEPEND}
 	nls? ( virtual/libintl )"
 
 DOCS=( AUTHORS NEWS README )
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-no-fdgl.patch
-}
 
 src_configure() {
 	waf-utils_src_configure \
