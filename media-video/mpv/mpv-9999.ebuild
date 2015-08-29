@@ -229,6 +229,7 @@ src_configure() {
 
 		# hwaccels
 		$(use_enable vaapi vaapi-hwaccel)
+		$(use_enable vdpau vdpau-hwaccel)
 
 		# tv features
 		$(use_enable v4l tv)

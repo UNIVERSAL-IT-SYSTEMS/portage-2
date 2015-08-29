@@ -1,11 +1,9 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
-
 EGIT_REPO_URI="git://neil.brown.name/portmap"
-inherit toolchain-funcs user git-r3
+inherit toolchain-funcs user git-2
 
 DESCRIPTION="Netkit - portmapper"
 HOMEPAGE="ftp://ftp.porcupine.org/pub/security/index.html"
@@ -31,14 +29,14 @@ pkg_setup() {
 
 src_compile() {
 	tc-export CC
-	emake NO_TCP_WRAPPER="$(use tcpd || echo NO)"
+	emake NO_TCP_WRAPPER="$(use tcpd || echo NO)" || die
 }
 
 src_install() {
 	into /
-	dosbin portmap
+	dosbin portmap || die "portmap"
 	into /usr
-	dosbin pmap_dump pmap_set
+	dosbin pmap_dump pmap_set || die "pmap"
 
 	doman *.8
 	dodoc BLURBv5 CHANGES README*
