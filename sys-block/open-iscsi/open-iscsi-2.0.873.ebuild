@@ -80,12 +80,10 @@ src_install() {
 	insinto /etc/iscsi
 	newins "${FILESDIR}"/initiatorname.iscsi initiatorname.iscsi.example
 	# udev pieces
-	insinto /lib/udev/rules.d
-	doins "${FILESDIR}"/99-iscsi.rules
-	insopts -m0755
 	insinto /etc/udev/scripts
 	doins "${FILESDIR}"/iscsidev.sh
-	insopts -m0644
+	insinto /lib/udev/rules.d
+	doins "${FILESDIR}"/99-iscsi.rules
 
 	newconfd "${FILESDIR}"/iscsid-conf.d iscsid
 	newinitd "${FILESDIR}"/iscsid-init.d iscsid

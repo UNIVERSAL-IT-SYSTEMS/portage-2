@@ -42,8 +42,7 @@ RDEPEND="
 	vorbis? ( media-libs/libvorbis )
 	zlib? ( sys-libs/zlib )"
 DEPEND="${RDEPEND}
-	virtual/pkgconfig
-	qt5? ( dev-qt/linguist-tools:5 )"
+	virtual/pkgconfig"
 
 DOCS="README ChangeLog TODO AUTHORS"
 

@@ -34,7 +34,6 @@ HTML_DOCS=( doc/. )
 src_configure() {
 	local mycmakeargs=(
 		"-DFREEGLUT_GLES=OFF"
-		"-DFREEGLUT_BUILD_STATIC_LIBS=$(usex static-libs ON OFF)"
 	)
 #	$(cmake-utils_use gles FREEGLUT_GLES)
 	cmake-multilib_src_configure

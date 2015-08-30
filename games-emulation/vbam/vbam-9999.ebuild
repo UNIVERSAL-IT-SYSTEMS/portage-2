@@ -4,27 +4,22 @@
 
 EAPI=5
 WX_GTK_VER="3.0"
-inherit cmake-utils wxwidgets gnome2-utils fdo-mime games
+inherit cmake-utils wxwidgets subversion gnome2-utils fdo-mime games
 
-if [[ ${PV} == 9999 ]]; then
-	ESVN_REPO_URI="https://svn.code.sf.net/p/vbam/code/trunk"
-	inherit subversion
-else
-	SRC_URI="https://dev.gentoo.org/~radhermit/distfiles/${P}.tar.xz"
-	KEYWORDS="~amd64 ~x86"
-fi
+ESVN_REPO_URI="https://vbam.svn.sourceforge.net/svnroot/vbam/trunk"
 
 DESCRIPTION="Game Boy, GBC, and GBA emulator forked from VisualBoyAdvance"
 HOMEPAGE="http://sourceforge.net/projects/vbam/"
 
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS=""
 IUSE="cairo ffmpeg gtk link lirc nls openal +sdl wxwidgets"
 REQUIRED_USE="|| ( sdl gtk wxwidgets )"
 
 RDEPEND=">=media-libs/libpng-1.4:0=
 	media-libs/libsdl[joystick]
-	link? ( >=media-libs/libsfml-2.0 )
+	link? ( <media-libs/libsfml-2.0 )
 	sys-libs/zlib
 	virtual/glu
 	virtual/opengl
@@ -45,9 +40,12 @@ DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )
 	virtual/pkgconfig"
 
-src_prepare() {
-	[[ ${PV} == 9999 ]] && subversion_src_prepare
+src_unpack() {
+	subversion_src_unpack
+}
 
+src_prepare() {
+	subversion_src_prepare
 	# fix issue with zlib-1.2.5.1 macros (bug #383179)
 	sed -i '1i#define OF(x) x' src/common/memgzio.c || die
 
@@ -95,8 +93,7 @@ src_install() {
 }
 
 pkg_preinst() {
-	[[ ${PV} == 9999 ]] && subversion_pkg_preinst
-
+	subversion_pkg_preinst
 	games_pkg_preinst
 	if use gtk || use wxwidgets ; then
 		gnome2_icon_savelist
