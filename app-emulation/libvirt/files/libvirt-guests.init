@@ -38,32 +38,20 @@ do_virsh() {
 
 libvirtd_dom_list() {
 	# Only work with domains by their UUIDs
-	local hvuri=$1
-	shift
-
-	do_virsh "${hvuri}" list --uuid $@
+	do_virsh "$1" list --uuid $2
 }
 
 libvirtd_dom_count() {
-	local hvuri=$1
-	shift
-
-	libvirtd_dom_list "${hvuri}" $@ | wc -l
+	libvirtd_dom_list "$1" $2 | wc -l
 }
 
 libvirtd_net_list() {
 	# Only work with networks by their UUIDs
-	local hvuri=$1
-	shift
-
-	do_virsh "${hvuri}" net-list --uuid $@
+	do_virsh "$1" net-list --uuid $2
 }
 
 libvirtd_net_count() {
-	local hvuri=$1
-	shift
-
-	libvirtd_net_list "${hvuri}" $@ | wc -l
+	libvirtd_net_list "$1" $2 | wc -l
 }
 
 libvirtd_dom_stop() {
@@ -76,7 +64,6 @@ libvirtd_dom_stop() {
 	local shutdown_type=${LIBVIRT_SHUTDOWN}
 	local counter=${LIBVIRT_MAXWAIT}
 	local dom_name=
-	local dom_as=
 	local dom_ids=
 	local uuid=
 	local dom_count=
@@ -93,18 +80,10 @@ libvirtd_dom_stop() {
 		# Get the name
 		dom_name=$(do_virsh ${uri} domname ${uuid})
 		einfo "  ${dom_name}"
-		# Get autostart state
-		dom_as=$(do_virsh ${uri} dominfo ${uuid} | \
-			awk '$1 == "Autostart:" { print $2 }')
 
 		if [ "${persist}" = "--persistent" ]; then
-			# Save our running state only if LIBVIRT_IGNORE_AUTOSTART != yes
-			if  [ "x${LIBVIRT_IGNORE_AUTOSTART}" = "xyes" ] && \
-				[ ${dom_as} = "enabled" ]; then
-				:
-			else
-				echo "${uri} ${uuid}" >> ${gueststatefile}
-			fi
+			# Save our running state
+			echo "${uri} ${uuid}" >> ${gueststatefile}
 
 		fi
 

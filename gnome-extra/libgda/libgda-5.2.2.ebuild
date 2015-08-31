@@ -33,8 +33,8 @@ RDEPEND="
 	>=dev-libs/glib-2.32:2
 	>=dev-libs/libxml2-2
 	dev-libs/libxslt
-	sys-libs/readline:0=
-	sys-libs/ncurses:0=
+	sys-libs/readline:=
+	sys-libs/ncurses:=
 	berkdb?   ( sys-libs/db )
 	firebird? ( dev-db/firebird )
 	gtk? (

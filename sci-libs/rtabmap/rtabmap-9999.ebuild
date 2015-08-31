@@ -28,7 +28,7 @@ IUSE="ieee1394 openni2 qt4 qt5"
 
 RDEPEND="
 	media-libs/opencv:=
-	sci-libs/pcl[openni,vtk]
+	sci-libs/pcl[openni]
 	sci-libs/vtk
 	sys-libs/zlib
 	ieee1394? ( media-libs/libdc1394 )
@@ -38,7 +38,6 @@ RDEPEND="
 			dev-qt/qtgui:4
 			dev-qt/qtsvg:4
 			dev-qt/qtcore:4
-			media-libs/opencv[-qt5(-)]
 		)
 	)
 	qt5? (
@@ -46,18 +45,16 @@ RDEPEND="
 		dev-qt/qtcore:5
 		dev-qt/qtgui:5
 		dev-qt/qtsvg:5
-		media-libs/opencv[qt5(-)]
 	)
 "
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 src_configure() {
-	local mycmakeargs=(
-		"-DWITH_QT=$(usex qt4 ON "$(usex qt5 ON OFF)")"
-		"-DRTABMAP_QT_VERSION=$(usex qt5 5 4)"
-		"-DWITH_DC1394=$(usex ieee1394 ON OFF)"
-		"-DWITH_OPENNI2=$(usex openni2 ON OFF)"
-	)
+	local mycmakeargs=()
+	use ieee1394 || mycmakeargs+=( "-DCMAKE_DISABLE_FIND_PACKAGE_DC1394=TRUE" )
+	use openni2  || mycmakeargs+=( "-DCMAKE_DISABLE_FIND_PACKAGE_OpenNI2=TRUE" )
+	use qt4      || mycmakeargs+=( "-DCMAKE_DISABLE_FIND_PACKAGE_Qt4=TRUE" )
+	use qt5      && mycmakeargs+=( "-DRTABMAP_QT_VERSION=5" )
 	cmake-utils_src_configure
 }

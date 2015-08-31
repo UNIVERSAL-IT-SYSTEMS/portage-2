@@ -23,21 +23,16 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE="curl debug java libeai motif +nsplugin opencl osc +sox static-libs"
 
-COMMONDEPEND="x11-libs/libICE
-	x11-libs/libSM
-	x11-libs/libX11
+COMMONDEPEND="x11-libs/libXau
+	x11-libs/libXdmcp
 	x11-libs/libXext
-	x11-libs/libXmu
-	x11-libs/libXt
-	x11-libs/libXxf86vm
-	motif? ( x11-libs/motif:0= )
+	x11-libs/libX11
+	motif? ( x11-libs/motif )
 	!motif? ( x11-libs/libXaw )
 	media-libs/mesa
 	virtual/opengl
-	media-libs/freealut
-	media-libs/openal
-	media-libs/libpng:0=
-	virtual/jpeg:0=
+	media-libs/libpng
+	virtual/jpeg
 	media-libs/imlib2
 	>=media-libs/freetype-2
 	media-libs/fontconfig
@@ -58,6 +53,10 @@ RDEPEND="${COMMONDEPEND}
 	sox? ( media-sound/sox )"
 
 src_prepare() {
+	if [[ ${PV} != "9999" ]]; then
+	epatch "${FILESDIR}"/${P}-fontconfig-match.patch
+	epatch "${FILESDIR}"/${P}-mozjs187-config.patch
+	fi
 	epatch_user
 	eautoreconf
 }
