@@ -67,7 +67,7 @@ src_configure() {
 	# This comes up when cross-compiling, doing multilib builds, upgrading,
 	# or installing for the first time.  Build a local copy of tic whenever
 	# the host version isn't available. #249363 #557598
-	if ! ROOT=/ has_version "~sys-libs/${P}" ; then
+	if ! ROOT=/ has_version "~sys-libs/${P}:0" ; then
 		# We can't re-use the multilib BUILD_DIR because we run outside of it.
 		BUILD_DIR="${WORKDIR}" \
 		CHOST=${CBUILD} \
@@ -159,8 +159,8 @@ do_configure() {
 	fi
 	# See comments in src_configure.
 	if [[ ${target} != "cross" ]] ; then
-		local tic_path="${WORKDIR}/cross/progs/tic"
-		[[ -d ${tic_path} ]] && export TIC_PATH=${tic_path}
+		local cross_path="${WORKDIR}/cross"
+		[[ -d ${cross_path} ]] && export TIC_PATH="${cross_path}/progs/tic"
 	fi
 
 	# Force bash until upstream rebuilds the configure script with a newer
