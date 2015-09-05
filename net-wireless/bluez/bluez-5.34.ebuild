@@ -85,9 +85,6 @@ src_prepare() {
 	# ???
 	epatch "${FILESDIR}"/0004-agent-Assert-possible-infinite-loop.patch
 
-	# Ubuntu workaround for bug #501120
-	epatch "${FILESDIR}"/0001-work-around-Logitech-diNovo-Edge-keyboard-firmware-i.patch
-
 	if use cups; then
 		sed -i \
 			-e "s:cupsdir = \$(libdir)/cups:cupsdir = $(cups-config --serverbin):" \
@@ -127,6 +124,7 @@ multilib_src_configure() {
 		--enable-tools \
 		--enable-manpages \
 		--enable-monitor \
+		--disable-valgrind \
 		$(multilib_native_use_enable cups) \
 		$(multilib_native_use_enable obex) \
 		$(multilib_native_use_enable readline client) \
@@ -185,7 +183,6 @@ multilib_src_install_all() {
 		doins profiles/${d}/${d}.conf
 	done
 	doins src/main.conf
-	doins src/bluetooth.conf
 
 	newinitd "${FILESDIR}"/bluetooth-init.d-r3 bluetooth
 	newinitd "${FILESDIR}"/rfcomm-init.d-r2 rfcomm
