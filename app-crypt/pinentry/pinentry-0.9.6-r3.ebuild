@@ -18,6 +18,7 @@ IUSE="emacs gtk ncurses qt4 caps gnome-keyring static"
 RDEPEND="
 	>=dev-libs/libgpg-error-1.17
 	>=dev-libs/libassuan-2
+	>=dev-libs/libgcrypt-1.6.3
 	app-eselect/eselect-pinentry
 	caps? ( sys-libs/libcap )
 	gtk? ( x11-libs/gtk+:2 )
@@ -28,7 +29,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	sys-devel/gettext
 	virtual/pkgconfig
-	gnome-keyring? ( app-crypt/libsecret )
+	gnome-keyring? ( app-crypt/libsecret app-crypt/gcr )
 "
 REQUIRED_USE="
 	|| ( ncurses gtk qt4 )
@@ -41,7 +42,7 @@ DOCS=( AUTHORS ChangeLog NEWS README THANKS TODO )
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-0.8.2-ncurses.patch"
-	epatch "${FILESDIR}/${P}-Disable-Qt5-support-to-force-Qt4.patch"
+	epatch "${FILESDIR}/${P}-Remove-detection-of-Qt5.patch"
 	eautoreconf
 }
 
