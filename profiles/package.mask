@@ -31,6 +31,46 @@
 #--- END OF EXAMPLES ---
 
 # Dion Moult <moult@gentoo.org> (24 Sep 2015)
+# Masked for removal in 30 days. Bug #547406
+# Package no longer builds, module now in kernel.
+net-wireless/rtl8180
+
+# Dion Moult <moult@gentoo.org> (24 Sep 2015)
+# Masked for removal in 30 days. Bug #552284
+# Upstream disappeared. Use sci-chemistry/openbabel instead.
+sci-chemistry/babel
+
+# Dion Moult <moult@gentoo.org> (24 Sep 2015)
+# Masked for removal in 30 days.
+# Upstream disappeared. Bug #510594
+app-cdr/nero
+
+# Dion Moult <moult@gentoo.org> (24 Sep 2015)
+# Masked for removal in 30 days.
+# Upstream disappeared. Bug #528020
+app-crypt/aesutil
+
+# Dion Moult <moult@gentoo.org> (24 Sep 2015)
+# Masked for removal in 30 days.
+# Obsoleted in new pysnmp. Bug #513092
+dev-python/twistedsnmp
+
+# Dion Moult <moult@gentoo.org> (24 Sep 2015)
+# Masked for removal in 30 days.
+# Upstream dead. Functionality bugs. Bug #553356
+net-im/birdie
+
+# Dion Moult <moult@gentoo.org> (24 Sep 2015)
+# Masked for removal in 30 days. Obsoleted and uninstallable.
+# Bug #553182
+gnome-extra/zeitgeist-datahub
+
+# Dion Moult <moult@gentoo.org> (24 Sep 2015)
+# Masked for removal in 30 days. Upstream dead.
+# Bug #551282
+net-news/yarssr
+
+# Dion Moult <moult@gentoo.org> (24 Sep 2015)
 # Masked for removal in 30 days.
 # Broken and replaced by dev-lang/ekopath. Bug #559510
 dev-lang/path64
@@ -196,11 +236,6 @@ dev-libs/iniparser:4
 # on CPAN and nothing in the tree depends on it.
 # See bug #556640 for more info. Removal in 30 days.
 dev-perl/gtk2-fu
-
-# Mike Gilbert <floppym@gentoo.org> (03 Aug 2015)
-# Unmaintained upstream. Fails to build. Removal in 30 days.
-# Bugs: 478174, 546192, 556200.
-sys-apps/systemd-ui
 
 # Sergei Trofimovich <slyfox@gentoo.org> (2 Aug 2015)
 # This package is a part of >=dev-lang/ghc-7.4. Gentoo
