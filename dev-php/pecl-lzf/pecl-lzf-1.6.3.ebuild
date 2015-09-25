@@ -4,20 +4,17 @@
 
 EAPI=5
 
-MY_PV="${PV/rc/RC}"
-
+PHP_EXT_NAME="lzf"
+PHP_EXT_PECL_PKG="LZF"
+PHP_EXT_INI="yes"
+PHP_EXT_ZENDEXT="no"
 USE_PHP="php5-6 php5-5 php5-4"
 
 inherit php-ext-pecl-r2
 
 KEYWORDS="~amd64 ~x86"
 
-DESCRIPTION="PHP wrapper for the ImageMagick library"
-LICENSE="PHP-3.01"
+DESCRIPTION="This package handles LZF de/compression"
+LICENSE="PHP-3"
 SLOT="0"
-IUSE="examples"
-
-DEPEND=">=media-gfx/imagemagick-6.2.4"
-RDEPEND="${DEPEND}"
-
-my_conf="--with-imagick=/usr"
+IUSE=""
