@@ -14,19 +14,22 @@ SRC_URI="http://plugins.geany.org/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ia64 ppc ppc64 sparc x86"
-IUSE="+autoclose +commander debugger +defineformat devhelp enchant gpg gtkspell lua markdown multiterm nls python scope soup webkit"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+IUSE="+autoclose +automark +commander ctags debugger +defineformat devhelp enchant git gpg gtkspell lua markdown multiterm nls +overview python scope soup webkit"
 
 LINGUAS="be ca da de es fr gl ja pt pt_BR ru tr zh_CN"
 
 COMMON_DEPEND=">=dev-util/geany-$(get_version_component_range 1-2)
-	<dev-util/geany-1.25
 	autoclose? ( x11-libs/gtk+:2 )
 	commander? ( x11-libs/gtk+:2 )
 	defineformat? ( x11-libs/gtk+:2 )
 	dev-libs/libxml2:2
 	dev-libs/glib:2
-	debugger? ( x11-libs/vte:0 )
+	ctags? ( dev-util/ctags )
+	debugger? (
+		x11-libs/vte:0
+		dev-util/geany[-gtk3]
+		)
 	devhelp? (
 		dev-util/devhelp
 		gnome-base/gconf:2
@@ -36,8 +39,9 @@ COMMON_DEPEND=">=dev-util/geany-$(get_version_component_range 1-2)
 		)
 	enchant? ( app-text/enchant )
 	gpg? ( app-crypt/gpgme )
+	git? ( <dev-libs/libgit2-0.23.0 )
 	gtkspell? ( app-text/gtkspell:2 )
-	lua? ( dev-lang/lua:* )
+	lua? ( =dev-lang/lua-5.1*:= )
 	markdown? (
 		app-text/discount
 		net-libs/webkit-gtk:2
@@ -90,23 +94,27 @@ src_configure() {
 		--disable-peg-markdown
 		--enable-geanymacro
 		--enable-geanynumberedbookmarks
-		--enable-gproject
+		--enable-projectorganizer
 		--enable-pretty-printer
 		--enable-tableconvert
 		--enable-treebrowser
 		--enable-xmlsnippets
 		$(use_enable autoclose)
+		$(use_enable automark)
 		$(use_enable commander)
+		$(use_enable ctags geanyctags)
 		$(use_enable debugger)
 		$(use_enable defineformat)
 		$(use_enable devhelp)
 		$(use_enable enchant spellcheck)
 		$(use_enable gpg geanypg)
+		$(use_enable git gitchangebar)
 		$(use_enable gtkspell)
 		$(use_enable markdown)
 		$(use_enable multiterm)
 		$(use_enable lua geanylua)
 		$(use_enable nls)
+		$(use_enable overview)
 		$(use_enable python geanypy)
 		$(use_enable scope)
 		# Having updatechecker… when you’re using a package manager?
