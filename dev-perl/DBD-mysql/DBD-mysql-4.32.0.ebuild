@@ -5,13 +5,13 @@
 EAPI=5
 
 MODULE_AUTHOR=CAPTTOFU
-MODULE_VERSION=4.031
+MODULE_VERSION=4.032
 inherit eutils perl-module
 
 DESCRIPTION="The Perl DBD:mysql Module"
 
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 IUSE="embedded test"
 
 RDEPEND="dev-perl/DBI
