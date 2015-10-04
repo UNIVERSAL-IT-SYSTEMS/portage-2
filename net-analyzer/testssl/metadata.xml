@@ -2,10 +2,9 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<email>ottxor@gentoo.org</email>
-		<name>Christoph Junghans</name>
+		<email>kensington@gentoo.org</email>
 	</maintainer>
-	<upstream>
-		<remote-id type="github">losalamos/Byfl</remote-id>
-	</upstream>
+	<use>
+		<flag name="bundled-openssl">Install precompiled versions of OpenSSL for greater testing coverage</flag>
+	</use>
 </pkgmetadata>
