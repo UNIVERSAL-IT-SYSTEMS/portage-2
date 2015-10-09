@@ -30,9 +30,6 @@ src_prepare() {
 	sed -i -e '/^\.\/test_dns$/d' tests/test_list || \
 		die "failed to disable network tests"
 
-	# Bug #533862
-	epatch "${FILESDIR}"/avoid-pie-static.patch
-
 	eautoreconf
 }
 
@@ -46,6 +43,6 @@ src_install() {
 	dodoc ChangeLog README.md TODO doc/notes/DEBUG doc/socks/{SOCKS5,socks-extensions.txt}
 
 	#Remove libtool .la files
-	cd "${D}"/usr/$(get_libdir)/torsocks
+	cd "${D}"/usr/$(get_libdir)/torsocks || die
 	rm -f *.la
 }
