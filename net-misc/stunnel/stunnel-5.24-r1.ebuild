@@ -18,13 +18,17 @@ SRC_URI="ftp://ftp.stunnel.org/stunnel/archive/${PV%%.*}.x/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha"
-IUSE="ipv6 selinux tcpd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86 ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x86-macos"
+IUSE="ipv6 libressl selinux stunnel3 tcpd"
 
 DEPEND="tcpd? ( sys-apps/tcp-wrappers )
-	dev-libs/openssl:="
+	!libressl? ( dev-libs/openssl:0 )
+	libressl? ( dev-libs/libressl )"
 RDEPEND="${DEPEND}
+	stunnel3? ( dev-lang/perl )
 	selinux? ( sec-policy/selinux-stunnel )"
+
+RESTRICT="test"
 
 pkg_setup() {
 	enewgroup stunnel
@@ -51,8 +55,9 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install
 	rm -rf "${ED}"/usr/share/doc/${PN}
-	rm -f "${ED}"/etc/stunnel/stunnel.conf-sample "${ED}"/usr/bin/stunnel3 \
+	rm -f "${ED}"/etc/stunnel/stunnel.conf-sample \
 		"${ED}"/usr/share/man/man8/stunnel.{fr,pl}.8
+	use stunnel3 || rm -f "${ED}"/usr/bin/stunnel3
 
 	# The binary was moved to /usr/bin with 4.21,
 	# symlink for backwards compatibility
