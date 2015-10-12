@@ -17,7 +17,7 @@ SRC_URI="http://download.gna.org/relax/${P}.src.tar.bz2"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
-IUSE=""
+IUSE="test"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -37,7 +37,9 @@ RDEPEND="
 	sci-visualization/opendx
 	x11-libs/wxGTK:${WX_GTK_VER}[X]"
 DEPEND="${RDEPEND}
-	media-gfx/pngcrush"
+	media-gfx/pngcrush
+	test? ( ${RDEPEND} )
+	"
 
 pkg_setup() {
 	python-single-r1_pkg_setup
