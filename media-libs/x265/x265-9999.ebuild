@@ -22,10 +22,10 @@ HOMEPAGE="http://x265.org/"
 LICENSE="GPL-2"
 # subslot = libx265 soname
 SLOT="0/75"
-IUSE="+10bit test"
+IUSE="+10bit numa pic test"
 
 ASM_DEPEND=">=dev-lang/yasm-1.2.0"
-RDEPEND=""
+RDEPEND="numa? ( >=sys-process/numactl-2.0.10-r1[${MULTILIB_USEDEP}] )"
 DEPEND="${RDEPEND}
 	abi_x86_32? ( ${ASM_DEPEND} )
 	abi_x86_64? ( ${ASM_DEPEND} )"
@@ -47,6 +47,7 @@ multilib_src_configure() {
 	local mycmakeargs=(
 		$(cmake-utils_use_enable test TESTS)
 		$(multilib_is_native_abi || echo "-DENABLE_CLI=OFF")
+		-DCMAKE_DISABLE_FIND_PACKAGE_Numa=$(usex numa OFF ON)
 		-DHIGH_BIT_DEPTH=$(usex 10bit "ON" "OFF")
 		-DLIB_INSTALL_DIR="$(get_libdir)"
 	)
@@ -54,6 +55,11 @@ multilib_src_configure() {
 	if [[ ${ABI} = x86 ]] ; then
 		use 10bit && ewarn "Disabling 10bit support on x86 as it does not build (or requires to disable assembly optimizations)"
 		mycmakeargs+=( -DHIGH_BIT_DEPTH=OFF )
+		# Bug #528202
+		if use pic ; then
+			ewarn "PIC has been requested but x86 asm is not PIC-safe, disabling it."
+			mycmakeargs+=( -DENABLE_ASSEMBLY=OFF )
+		fi
 	elif [[ ${ABI} = x32 ]] ; then
 		# bug #510890
 		mycmakeargs+=( -DENABLE_ASSEMBLY=OFF )
@@ -67,11 +73,11 @@ src_configure() {
 }
 
 multilib_src_test() {
-	if has ${MULTILIB_ABI_FLAG} abi_x86_32 abi_x86_64 ; then
-		cd "${BUILD_DIR}/test" || die
-		for i in TestBench ; do
-			./${i} || die
-		done
+	if [ -x "${BUILD_DIR}/test/TestBench" ] ; then
+		"${BUILD_DIR}/test/TestBench" || die
+	else
+		einfo "Unit tests check only assembly, and you do not seem to have any."
+		einfo "Skipping tests."
 	fi
 }
 
