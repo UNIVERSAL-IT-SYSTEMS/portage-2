@@ -30,6 +30,32 @@
 
 #--- END OF EXAMPLES ---
 
+# James Le Cuirot <chewi@gentoo.org> (19 Oct 2015)
+# Dead projects with no revdeps. Removal in 30 days.
+dev-java/commons-attributes
+dev-java/xjavadoc
+
+# Mike Frysinger <vapier@gentoo.org> (18 Oct 2015)
+# apache-2.4.17 includes support for http2 now.
+www-apache/mod_h2
+
+# Ian Delaney <idella4@gwntoo.org (18 Oct 2015)
+# Amy Winston <amynka@gentoo.org> (18 Oct 2015)
+# Fails to build for ages. Lot of bugs repaired
+# in new version. Masked for removal in 30 days.
+=sci-geosciences/grass-6.4.2
+sci-geosciences/gdal-grass
+
+# Patrice Clement <monsieurp@gentoo.org> (18 Oct 2015)
+# Project discontinued by the ASF and now superseded by dev-java/tomcat-jstl-*
+# ebuilds. Masked for removal in 30 days. See bug #551032.
+dev-java/jakarta-jstl
+
+# Pawel Hajdan, Jr. <phajdan.jr@gentoo.org> (16 Oct 2015)
+# Dev channel releases are only for people who are developers or want more
+# experimental features and accept a more unstable release.
+>=www-client/chromium-48
+
 # Hans de Graaff <graaff@gentoo.org> (11 Oct 2015)
 # Ruby 1.9 is no longer maintained upstream since January
 # 2015, bug 536852.
@@ -103,11 +129,6 @@ dev-java/mx4j-tools
 dev-java/proxool
 www-servers/axis:1
 
-# Dion Moult <moult@gentoo.org> (27 Sep 2015)
-# Masked for removal in 30 days. Bug #514514
-# Fails to build for ages.
-sci-geosciences/grass
-sci-geosciences/gdal-grass
 
 # Patrice Clement <monsieurp@gentoo.org> (24 Sep 2015)
 # This package was never marked stable 
@@ -264,11 +285,6 @@ app-portage/lightweight-cvs-toolkit
 # Masked for testing
 >=net-fs/samba-4.3.0
 
-# Pawel Hajdan, Jr. <phajdan.jr@gentoo.org> (08 Sep 2015)
-# Dev channel releases are only for people who are developers or want more
-# experimental features and accept a more unstable release.
->=www-client/chromium-47
-
 # Michael Palimaka <kensington@gentoo.org> (01 Sep 2015)
 # Fails to build (bug #559330). Dead upstream.
 # Masked for removal in 30 days.
@@ -289,6 +305,7 @@ app-emulation/kvm-kmod
 # Lars Wendler <polynomial-c@gentoo.org> (20 Aug 2015)
 # Masked for testing
 =net-misc/iputils-20150815
+=net-misc/iputils-20150815-r1
 
 # Brian Evans <grknight@gentoo.org> (16 Aug 2015)
 # Mask new PEAR installer as it is likely to break
@@ -305,12 +322,6 @@ dev-libs/iniparser:4
 # on CPAN and nothing in the tree depends on it.
 # See bug #556640 for more info. Removal in 30 days.
 dev-perl/gtk2-fu
-
-# Sergei Trofimovich <slyfox@gentoo.org> (2 Aug 2015)
-# This package is a part of >=dev-lang/ghc-7.4. Gentoo
-# ebuilds use that. You can safely uninstall dev-haskell/deepseq
-# and fix leftovers with 'haskell-updater' run.
-dev-haskell/deepseq
 
 # Davide Pesavento <pesa@gentoo.org> (23 Jul 2015)
 # Standalone version of qtwebkit from the 2.3 upstream branch.

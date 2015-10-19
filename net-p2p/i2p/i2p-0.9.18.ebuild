@@ -13,7 +13,7 @@ SRC_URI="https://download.i2p2.de/releases/${PV}/i2psource_${PV}.tar.bz2"
 LICENSE="Apache-2.0 Artistic BSD CC-BY-2.5 CC-BY-3.0 CC-BY-SA-3.0 EPL-1.0 GPL-2 GPL-3 LGPL-2.1 LGPL-3 MIT public-domain WTFPL-2"
 SLOT="0"
 # Until the deps reach other arches
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 IUSE="nls"
 # dev-java/ant-core is automatically added due to java-ant-2.eclass
 DEPEND=">=dev-java/bcprov-1.50
