@@ -33,7 +33,7 @@ RDEPEND="${COMMON_DEPEND}
 
 AT_M4DIR="config"
 AUTOTOOLS_IN_SOURCE_BUILD="1"
-DOCS=( AUTHORS DISCLAIMER README.markdown )
+DOCS=( AUTHORS DISCLAIMER )
 
 pkg_setup() {
 	linux-info_pkg_setup
