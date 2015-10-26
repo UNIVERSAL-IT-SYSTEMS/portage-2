@@ -12,13 +12,13 @@ SRC_URI="https://dev.gentoo.org/~pesa/distfiles/${P}.tar.xz"
 
 LICENSE="|| ( LGPL-2.1 GPL-3 )"
 SLOT="0"
-KEYWORDS="alpha amd64 arm ~arm64 hppa ia64 ~mips ppc ppc64 sparc x86 ~amd64-fbsd ~x86-fbsd"
-IUSE="qt5 test"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
+IUSE="test"
 
-DEPEND="qt5? ( test? (
+DEPEND="test? (
 		dev-qt/qtcore:5
 		dev-qt/qttest:5
-	) )"
+	)"
 RDEPEND="
 	!<dev-qt/assistant-4.8.6:4
 	!<dev-qt/designer-4.8.6:4
@@ -58,8 +58,6 @@ src_compile() {
 }
 
 src_test() {
-	use qt5 || return
-
 	pushd tests/auto >/dev/null || die
 	eqmake5
 	popd >/dev/null || die
